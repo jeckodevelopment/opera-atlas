@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "language": "it",
+  "reviewed_on": "2026-11-20",
+  "note": "Campi storici documentati con fonti. L'anno di composizione è riportato esclusivamente dove indipendentemente confermato; non è inferito dall'anno della prima.",
+  "works": {
+    "la-traviata": {
+      "librettist": "Francesco Maria Piave",
+      "premiere_year": 1853,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000028188"
+      ]
+    },
+    "italiana-in-algeri": {
+      "librettist": "Angelo Anelli",
+      "premiere_year": 1813,
+      "premiere_venue": "Teatro San Benedetto",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.rossinioperafestival.it/soggetti/litaliana-in-algeri/"
+      ]
+    },
+    "edgar": {
+      "librettist": "Ferdinando Fontana",
+      "premiere_year": 1889,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/libretto/DMBM20250"
+      ]
+    },
+    "salome": {
+      "librettist": "Hedwig Lachmann (traduzione tedesca del testo di Oscar Wilde)",
+      "premiere_year": 1905,
+      "premiere_venue": "Hofoper",
+      "premiere_city": "Dresda",
+      "sources": [
+        "https://www.rohcollections.org.uk/work.aspx?work=683"
+      ]
+    },
+    "cavalleria-rusticana": {
+      "librettist": "Giovanni Targioni-Tozzetti; Guido Menasci",
+      "premiere_year": 1890,
+      "premiere_venue": "Teatro Costanzi",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/cavalleria-rusticana/"
+      ],
+      "composition_year": 1889
+    },
+    "pagliacci": {
+      "librettist": "Ruggero Leoncavallo",
+      "premiere_year": 1892,
+      "premiere_venue": "Teatro Dal Verme",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://ruggeroleoncavallo-epistolario.ch/index.php/it/leoncavallo/prime-rappresentazioni"
+      ]
+    },
+    "la-boheme": {
+      "librettist": "Luigi Illica; Giuseppe Giacosa",
+      "premiere_year": 1896,
+      "premiere_venue": "Teatro Regio",
+      "premiere_city": "Torino",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000005570"
+      ]
+    },
+    "iris": {
+      "librettist": "Luigi Illica",
+      "premiere_year": 1898,
+      "premiere_venue": "Teatro Costanzi",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/iris/"
+      ]
+    },
+    "carmen": {
+      "librettist": "Henri Meilhac; Ludovic Halévy",
+      "premiere_year": 1875,
+      "premiere_venue": "Opéra-Comique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000001339"
+      ]
+    },
+    "evgenij-onegin": {
+      "librettist": "Pëtr Il’ič Čajkovskij; Konstantin Šilovskij",
+      "premiere_year": 1879,
+      "premiere_venue": "Teatro Malyj",
+      "premiere_city": "Mosca",
+      "sources": [
+        "https://site.mariinsky.ru/en/playbill/repertoire/opera/onegin/"
+      ]
+    },
+    "turandot": {
+      "librettist": "Giuseppe Adami; Renato Simoni",
+      "premiere_year": 1926,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://www.operabase.com/productions/turandot-306424/en"
+      ]
+    },
+    "un-ballo-in-maschera": {
+      "librettist": "Antonio Somma",
+      "premiere_year": 1859,
+      "premiere_venue": "Teatro Apollo",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000029314"
+      ]
+    },
+    "death-in-venice": {
+      "librettist": "Myfanwy Piper",
+      "premiere_year": 1973,
+      "premiere_venue": "Snape Maltings Concert Hall",
+      "premiere_city": "Snape, Suffolk",
+      "sources": [
+        "https://www.brittenpearsarts.org/music/death-in-venice"
+      ]
+    },
+    "otello": {
+      "librettist": "Arrigo Boito",
+      "premiere_year": 1887,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000082306"
+      ]
+    },
+    "aida": {
+      "librettist": "Antonio Ghislanzoni",
+      "premiere_year": 1871,
+      "premiere_venue": "Teatro dell’Opera khediviale",
+      "premiere_city": "Il Cairo",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000008692"
+      ]
+    },
+    "fedora": {
+      "librettist": "Arturo Colautti",
+      "premiere_year": 1898,
+      "premiere_venue": "Teatro Lirico",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000002557"
+      ]
+    },
+    "samson-et-dalila": {
+      "librettist": "Ferdinand Lemaire",
+      "premiere_year": 1877,
+      "premiere_venue": "Teatro granducale",
+      "premiere_city": "Weimar",
+      "sources": [
+        "https://catalogue.bnf.fr/ark:/12148/cb432519120"
+      ]
+    },
+    "macbeth": {
+      "librettist": "Francesco Maria Piave",
+      "premiere_year": 1847,
+      "premiere_venue": "Teatro della Pergola",
+      "premiere_city": "Firenze",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000028519"
+      ]
+    },
+    "madama-butterfly": {
+      "librettist": "Luigi Illica; Giuseppe Giacosa",
+      "premiere_year": 1904,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000006090"
+      ]
+    },
+    "jenufa": {
+      "librettist": "Leoš Janáček (dal dramma di Gabriela Preissová)",
+      "premiere_year": 1904,
+      "premiere_venue": "Teatro di Veveří",
+      "premiere_city": "Brno",
+      "sources": [
+        "https://www.narodni-divadlo.cz/en/show/jeji-pastorkyna-Jf-g1CcVSOWgvmDPYmoYEQ"
+      ]
+    },
+    "lucia-di-lammermoor": {
+      "librettist": "Salvatore Cammarano",
+      "premiere_year": 1835,
+      "premiere_venue": "Teatro di San Carlo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://www.librettidopera.it/lucialam/lucialam.html"
+      ]
+    },
+    "tosca": {
+      "librettist": "Luigi Illica; Giuseppe Giacosa",
+      "premiere_year": 1900,
+      "premiere_venue": "Teatro Costanzi",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000006442"
+      ]
+    },
+    "don-giovanni": {
+      "librettist": "Lorenzo Da Ponte",
+      "premiere_year": 1787,
+      "premiere_venue": "Ständetheater",
+      "premiere_city": "Praga",
+      "sources": [
+        "https://www.nationalopera.gr/en/news-features/item/3675-don-giovanni-greek-national-opera-s-new-international-co-production-starts-its-journey-from-athens-and-gno-tv"
+      ]
+    },
+    "nabucco": {
+      "librettist": "Temistocle Solera",
+      "premiere_year": 1842,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000043536"
+      ]
+    },
+    "rigoletto": {
+      "librettist": "Francesco Maria Piave",
+      "premiere_year": 1851,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000029612"
+      ]
+    }
+  }
+}
