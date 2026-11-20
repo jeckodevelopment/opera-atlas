@@ -24,6 +24,7 @@ window.OperaAtlasCatalog = (() => {
       work: PREFIX + "/opere/" + work + "/",
       venue: PREFIX + "/" + city + "/" + theatre + "/",
       staging: PREFIX + staging,
+      production: event.production_group_id ? PREFIX + "/produzioni/" + event.production_group_id + "/" : PREFIX + staging,
     };
   }
 
@@ -48,6 +49,24 @@ window.OperaAtlasCatalog = (() => {
     return part[key];
   }
 
+  async function productionGroupMap(byStaging) {
+    const doc = await jsonFrom(BASE+"production-groups.json");
+    if(doc.schema_version!==1||!Array.isArray(doc.groups)) throw Error("Invalid production groups");
+    const map=new Map(), ids=new Set();
+    for(const group of doc.groups){
+      if(!group||typeof group.id!=="string"||!/^oa-g-[a-z0-9-]+$/.test(group.id)||
+         ids.has(group.id)||!Array.isArray(group.staging_ids)||!group.staging_ids.length)
+        throw Error("Invalid group identity");
+      ids.add(group.id);
+      for(const id of group.staging_ids){
+        const staging=byStaging.get(id);
+        if(!staging || staging.work_id!==group.work_id || map.has(id))
+          throw Error("Conflicting production group");
+        map.set(id,group.id);
+      }
+    }
+    return map;
+  }
   async function remote() {
     const manifest = await jsonFrom(BASE + "manifest.json");
     if (manifest.schema_version !== 2 || !manifest.files || !/^\d{4}-\d{2}-\d{2}$/.test(manifest.reviewed_on)) {
@@ -68,6 +87,8 @@ window.OperaAtlasCatalog = (() => {
     const byStaging = new Map(stagings.map(x=>[x.id,x]));
     if (byWork.size !== works.length || byVenue.size !== venues.length
         || byStaging.size !== stagings.length) throw new Error("Duplicate canonical IDs");
+    let groups=new Map(), groupWarning=null;
+    try{groups=await productionGroupMap(byStaging);}catch{groupWarning="Associazioni fra sedi temporaneamente non verificabili: le produzioni possono apparire separate per teatro.";}
     const ids = new Set();
     const performances = recite.map(item => {
       if (ids.has(item.id)) throw new Error("Duplicate performance ID");
@@ -81,6 +102,7 @@ window.OperaAtlasCatalog = (() => {
       }
       return {
         id:item.id, legacy_id:item.legacy_id, staging_id:staging.id,work_id:work.id,venue_id:venue.id,
+        production_group_id:groups.get(staging.id)||null,
         staging_url:staging.url, season:staging.season, work_slug:work.slug,
         venue_slug:venue.slug, city_slug:venue.city_slug,
         local_date:item.local_date,starts_at:item.starts_at,
@@ -90,7 +112,7 @@ window.OperaAtlasCatalog = (() => {
         sources:Array.isArray(item.sources) && item.sources.length ? item.sources : [staging.source_url],
       };
     });
-    return {schema_version:1,performances,source:"github",reviewed_on:manifest.reviewed_on};
+    return {schema_version:1,performances,source:"github",reviewed_on:manifest.reviewed_on,warning:groupWarning};
   }
 
   async function load() {
