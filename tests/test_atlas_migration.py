@@ -74,7 +74,12 @@ class AtlasMigrationTests(unittest.TestCase):
         self.assertNotIn("paramiko",script)
         self.assertNotIn("FTP()",script)
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
-        self.assertIn("ATLAS_FTPS_PASSWORD",workflow)
+        self.assertIn("ATLAS_FTPS_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}",workflow)
+        for suffix in ("HOST", "USERNAME", "PASSWORD", "REMOTE_DIR"):
+            self.assertIn("secrets.ATLAS_SFTP_" + suffix,workflow)
+            self.assertNotIn("secrets.ATLAS_FTPS_" + suffix,workflow)
+        self.assertIn("ATLAS_FTPS_PORT: '21'",workflow)
+        self.assertNotIn("secrets.ATLAS_SFTP_PORT",workflow)
         self.assertNotIn("ATLAS_SFTP_KNOWN_HOSTS",workflow)
 
     def test_json_only_catalog_refresh_never_triggers_ftps(self):
