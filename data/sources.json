@@ -31,6 +31,56 @@
       "city": "Pesaro",
       "kind": "festival",
       "access_status": "pending"
+    },
+    {
+      "key": "teatro-alla-scala",
+      "name": "Teatro alla Scala",
+      "official_url": "https://www.teatroallascala.org/",
+      "calendar_url": "https://www.teatroallascala.org/it/stagione/2026-2027/index.html",
+      "region": "Lombardia",
+      "city": "Milano",
+      "kind": "theatre",
+      "access_status": "pending"
+    },
+    {
+      "key": "teatro-la-fenice",
+      "name": "Teatro La Fenice",
+      "official_url": "https://www.teatrolafenice.it/",
+      "calendar_url": "https://www.teatrolafenice.it/calendario/",
+      "region": "Veneto",
+      "city": "Venezia",
+      "kind": "theatre",
+      "access_status": "pending"
+    },
+    {
+      "key": "fondazione-arena-verona",
+      "name": "Fondazione Arena di Verona",
+      "official_url": "https://www.arena.it/",
+      "calendar_url": "https://www.arena.it/calendario/",
+      "region": "Veneto",
+      "city": "Verona",
+      "kind": "foundation",
+      "access_status": "pending"
+    },
+    {
+      "key": "teatro-regio-parma",
+      "name": "Teatro Regio di Parma",
+      "official_url": "https://teatroregioparma.it/",
+      "calendar_url": "https://teatroregioparma.it/calendario/",
+      "region": "Emilia-Romagna",
+      "city": "Parma",
+      "kind": "theatre",
+      "access_status": "pending"
+    },
+    {
+      "key": "teatro-massimo-palermo",
+      "name": "Teatro Massimo di Palermo",
+      "official_url": "https://www.teatromassimo.it/",
+      "calendar_url": "https://www.teatromassimo.it/la-stagione-2026-27/",
+      "region": "Sicilia",
+      "city": "Palermo",
+      "kind": "theatre",
+      "access_status": "pending"
     }
   ]
 }
