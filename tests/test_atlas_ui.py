@@ -79,6 +79,14 @@ class AtlasInterfaceTests(unittest.TestCase):
         self.assertIn('"/produzioni/"', code)
         self.assertIn('kind:"group"', (SITE / "detail.js").read_text(encoding="utf-8"))
 
+    def test_geographic_reference_covers_current_catalog_cities(self):
+        manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        file = ROOT / "public/catalog/v2" / manifest["files"]["venues"]["path"]
+        cities = {v["city"].lower() for v in json.loads(file.read_text(encoding="utf-8"))["venues"]}
+        code = (SITE / "app.js").read_text(encoding="utf-8")
+        for city in cities:
+            self.assertIn('"' + city + '":[', code)
+
     def test_editorial_synopses_are_short_and_no_html(self):
         content = json.loads((SITE / "work-synopses.json").read_text(encoding="utf-8"))
         for slug, summary in content["synopses"].items():
