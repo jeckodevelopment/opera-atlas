@@ -35,3 +35,22 @@ Le sorgenti sono inizialmente `pending`: nessuna scansione automatica è attivat
 
 ## Importazione offline: primo connettore
 Disponibile la pipeline di parsing, riconciliazione ed esportazione JSON per snapshot salvati delle pagine di dettaglio del Teatro Regio di Torino. **Non è ancora attiva una scansione automatica del sito.** Il parser richiede date/ore effettive, opera e compositore canonici, fonte approvata e luogo verificato; ignora i periodi generici delle stagioni. Vedi [guida al connettore](docs/REGIO_CONNECTOR.md) e relativi test.
+
+### Controllo dell'accesso e monitoraggio
+Il modulo `opera_atlas.scan_cli` consente una **singola** richiesta HTTP per pagina, solo se il gestore ha già verificato e approvato la fonte nel database. Richiede `--allow-network` e controlla `robots.txt` prima della pagina; indisponibilità o divieto bloccano l'accesso. Nessun crawler periodico è attivato. Gli esiti sono in `source_checks` (solo metadati), migrazione v4. Dettagli in [REGIO_CONNECTOR](docs/REGIO_CONNECTOR.md).
+
+## Esecuzione controllata e audit (migrazione v4)
+Il 20/11/2026 il percorso ufficiale `/opera-e-balletto-2026-2027/la-traviata` mostrava 11 righe distinte di recite (dal 26 febbraio al 10 marzo 2027), tra cui recite pomeridiane alle 15:00. Questa verifica è stata fatta consultando la pagina pubblica, **non** eseguendo il crawler della repository. Il parser rimane da confrontare con la sorgente HTML effettivamente scaricabile, che può avere struttura diversa da quella visibile nelle pagine renderizzate.
+
+`robots.txt` non è risultato accessibile dal sistema di verifica; il comportamento necessario è **fail closed** fino a verifica da ambiente operativo. Nessuna approvazione di crawling discende dalla presenza di un URL pubblico.
+
+```sh
+# Esegue una singola verifica controllata (solo se fonte già approvata nel DB)
+python -m opera_atlas.scan_cli --db atlas.sqlite3 --url https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata --source-id 1 --venue-id 1 --production-id 1 --title "La traviata" --composer "Giuseppe Verdi" --allow-network
+# Il comando senza --apply esegue rollback delle modifiche e non conserva il log.
+# Con --apply salva recite e metadati di verifica nel database (mai HTML integrale).
+```
+
+La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiesta robots.txt precedente alla pagina, User-Agent identificabile, response HTML, limite 2 MB, timeout 12 secondi. Nessun retry e nessuna scansione ricorsiva. Lo storico `source_checks` registra esito, impronta SHA-256, dimensione e numero di recite, senza copiare il testo dell'ente. Le scansioni negate registrano solo il motivo tecnico se `--apply` è usato.
+
+**Limiti:** la soluzione non gestisce rate limiting globale tra esecuzioni, ETag/304, parser per altri teatri, errori di import con log persistente o gestione completa degli spostamenti di programma. Prima di abilitare schedulazioni serviranno policy di accesso verificate, monitoraggio delle frequenze e collaudi live. Le fixture di test sono sintesi redatte autonomamente, non copie della pagina.
