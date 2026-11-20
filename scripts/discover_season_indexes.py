@@ -22,17 +22,52 @@ from scripts.publish_catalog_v2 import ROOT
 # successful live scan. Future unknown URLs remain candidates for review.
 # A URL is never considered an opera merely because it shares a URL prefix.
 EXCLUDED_PATHS={
+    "scala-season-2026-27": frozenset({
+        "otello-anteprima-under30.html",
+    }),
     "arena-festival-2027": frozenset({
+        # Explicitly classified non-opera events, never a generic genre guess.
+        "romeo-e-giulietta",
+
         "regolamento", "preparati-allopera", "spettacoli-prossima-stagione",
         "roberto-bolle-friends", "carmina-burana", "kaufmann",
         "paganini-paradise", "domande-frequenti", "artisti",
         "viva-vivaldi",
     }),
     "parma-opera-2027": frozenset({
+        # Explicitly classified non-opera events, never a generic genre guess.
+        "concerto-di-capodanno-27",
+        "prima-che-si-alzi-il-sipario-2",
+        "orchestra-e-corpo-di-ballo-della-fondazione-arena-di-verona",
+        "regio-in-tour-aspettando-mondi-lontani",
+        "natale-insieme-2026",
+        "verdi-off-los-angeles",
+
         "prima-che-si-alzi-il-sipario", "prove-under30", "prove-aperte",
         "lanno-che-verra", "veleno", "regio198", "la-principessa-sissi",
     }),
     "massimo-season-2026-27": frozenset({
+        # Explicitly classified non-opera events, never a generic genre guess.
+        "orchestra-jazz-siciliana-the-brass-group-3",
+        "gabriele-ferro-adagi",
+        "fabio-biondi-beethoven",
+        "nuovo-cinema-paradiso",
+        "gaetano-despinosa-beethoven",
+        "giovanni-sollima-beethoven",
+        "robert-trevino-ravel",
+        "despinosa-beethoven-settima",
+        "recital-minasyan-brownlee",
+        "concerto-di-capodanno-3",
+        "orchestra-nazionale-dei-conservatori-2",
+        "omaggio-a-salvatore-sciarrino-klangforum-wien",
+        "orchestra-nazionale-barocca-dei-conservatori-4",
+        "orchestra-del-conservatorio-scarlatti-2",
+        "biancaneve-2",
+        "recital-daniil-trifonov",
+        "lo-schiaccianoci-4",
+        "gabriele-ferro-beethoven",
+        "non-dirmi-che-hai-paura",
+
         "biancaneve", "il-grande-gatsby", "sylvia", "balanchine-caikovskij",
         "lo-schiaccianoci",
     }),
