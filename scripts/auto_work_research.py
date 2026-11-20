@@ -234,7 +234,8 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
                       *,today:date)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
-    done={x["candidate_id"] for x in existing.get("works",[])}
+    done={x["candidate_id"] for x in existing.get("works",[])
+          if isinstance(x.get("history"),dict)}
     options=[]
     for item in candidates.get("candidates",[]):
         if item.get("status")!="needs_review" or item.get("id") in done:continue
