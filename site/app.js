@@ -76,10 +76,19 @@ function dateLabel(iso) {
 function createCard(event) {
   const article = node("article","event");
   article.append(node("div","date",dateLabel(event.local_date)));
-  article.append(node("h3",null,event.title));
+  const workHeading = node("h3");
+  const workLink = node("a",null,event.title);
+  workLink.href = "./detail.html?type=work&key="+encodeURIComponent(normalized(event.title));
+  workHeading.append(workLink);
+  article.append(workHeading);
   if (event.composer) article.append(node("p","composer",event.composer));
   const details = node("div","event-details");
-  details.append(node("div","venue",event.venue));
+  const venueField = node("div","venue");
+  const venueLink = node("a",null,event.venue);
+  venueLink.href = "./detail.html?type=venue&key="+encodeURIComponent(
+    normalized(event.venue)+"|"+normalized(event.municipality));
+  venueField.append(venueLink);
+  details.append(venueField);
   details.append(node("div","city",[event.municipality,event.region].filter(Boolean).join(" · ")));
   const time = node("div","time"+(event.time_known?"":" unknown"),
     event.time_known ? "Ore "+event.starts_at.slice(11,16) : "Orario da confermare");
@@ -97,6 +106,9 @@ function createCard(event) {
     item.append(anchor);
     links.append(item);
   }
+  const detail = node("a","detail-link","Scheda della recita");
+  detail.href = "./detail.html?type=performance&key="+encodeURIComponent(String(event.id));
+  article.append(detail);
   article.append(links);
   return article;
 }
