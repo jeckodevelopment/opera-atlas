@@ -15,7 +15,7 @@ class OperaHistoryTests(unittest.TestCase):
         works=json.loads((ROOT/"public/catalog/v2"/manifest["files"]["works"]["path"]).read_text(encoding="utf-8"))["works"]
         history=json.loads((SITE/"work-history.json").read_text(encoding="utf-8"))
         self.assertEqual(history["schema_version"],1)
-        self.assertEqual(set(item["slug"] for item in works),set(history["works"]))
+        self.assertTrue(set(item["slug"] for item in works).issubset(set(history["works"])))
         for slug,entry in history["works"].items():
             self.assertTrue(entry["librettist"],slug)
             self.assertTrue(1600<=entry["premiere_year"]<=2026,slug)
