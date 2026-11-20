@@ -158,3 +158,7 @@ Sotto la sinossi della **scheda Opera**, la sezione «L’opera in breve» prese
 ## Logo senza fondino bianco — 20 novembre 2026
 
 Il logo Opera+ Atlas approvato conserva lettering e dettagli dorati ma non mostra più un rettangolo bianco. L'asset SVG applica un filtro locale di eliminazione del colore chiaro del supporto PNG incorporato (senza modificare il disegno originale); il CSS `.brand-logo` ha sfondo trasparente. Test automatico di regressione per filtro e assenza di sfondo bianco. Verificare in browser che il fondo della testata appaia continuo su desktop e mobile. Nessuna modifica alla navigazione o al catalogo.
+
+## Immagine associata all'opera nei programmi dei festival — 20/11/2026
+
+Nella pagina specifica di un festival, le schede relative a produzioni (es. *Aida* all'Arena di Verona) devono mostrare il **manifesto dell'opera** identificato tramite `work_slug`, non la fotografia della sede del festival. La fotografia dell'Arena resta correttamente associata al luogo/festival. Corretto il renderer di directory con `imageKind:work` per le card dei titoli in cartellone, preservando l'identità dell'opera; vale per tutti i festival e non solo per Aida. Test di regressione in `tests/test_festival_artwork_identity.py`. Nessuna modifica ai dati delle rappresentazioni o al feed.

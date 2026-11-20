@@ -46,8 +46,13 @@ function imageFor(item){
   const fallback=node("div","directory-image image-placeholder");
   fallback.setAttribute("role","img");fallback.setAttribute("aria-label","Fotografia non disponibile");
   if(!images || typeof images.element!=="function")return fallback;
-  const type=section==="opere"?"work":section==="teatri"?"venue":"festival";
-  try{return images.element(images[type](section==="opere"?{title:item.title}:section==="teatri"?{city:item.city,municipality:item.city,venue:item.title}:{city:item.city,name:item.title}),"directory-image");}
+  const type=item.imageKind|| (section==="opere"?"work":section==="teatri"?"venue":"festival");
+  const identity=type==="work"
+    ? {title:item.title,work_slug:item.work_slug}
+    : type==="venue"
+      ? {city:item.city,municipality:item.city,venue:item.title}
+      : {city:item.city,name:item.title};
+  try{return images.element(images[type](identity),"directory-image");}
   catch(error){console.warn("Atlas image fallback",error);return fallback;}
 }
 function normalize(s){return String(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("it");}
@@ -97,7 +102,7 @@ async function initialize(){
         }
         for(const event of stages.values()){
           const url=window.OperaAtlasCatalog.urls(event).staging;
-          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · dal "+dateLabel(event.local_date),city:event.municipality});
+          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · dal "+dateLabel(event.local_date),city:event.municipality,imageKind:"work",work_slug:event.work_slug});
         }
         const footer=node("section","official-links");footer.append(node("h2",null,"Informazioni e biglietti"),official);grid.after(footer);
         if(!entries.length)status.textContent="Il programma sarà disponibile prossimamente.";
@@ -118,7 +123,7 @@ async function initialize(){
       const url=section==="opere"?urls.work:urls.venue;
       if(!grouped.has(url)){
         const profile=editorial.venues[e.municipality+"|"+e.venue];
-        grouped.set(url,{url,title:section==="opere"?e.title:e.venue,
+        grouped.set(url,{url,title:section==="opere"?e.title:e.venue,work_slug:section==="opere"?e.work_slug:undefined,
           subtitle:section==="opere"?e.composer||"":e.municipality+" · "+(e.region||"Italia"),city:e.municipality,
           description:section==="opere"?editorial.synopses[e.work_slug]||"":profile?.description||""});
       }
