@@ -107,3 +107,10 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Rifiuto di robots assente, malformato/HTML, negato o rediretto; test di non-accesso alle pagine vietate.
 - [ ] Verificare il primo risultato di GitHub Actions da rete del runner: non dichiarare acquisizione funzionante se robots è negato o non leggibile.
 - [ ] Validare sul sito l'HTML reale e la resa del parser, espandendo poi il catalogo di opere/sedi.
+
+### F2 — estensione del calendario Regio 2026/27
+- [x] Due nuove opere / messe in scena: *Edgar* (Puccini, 7 recite) e *Salome* (Strauss, 6 recite) al Teatro Regio Torino, con giorno/ora verificati su pagina ufficiale.
+- [x] 13 nuovi ID permanenti replica e 2 nuovi ID opera/messa in scena; nessun cambiamento agli ID dei record precedenti.
+- [x] Nuove pagine di produzione incluse nell'allowlist editoriale e nel monitoraggio condizionato giornaliero di `opera-atlas`, con controllo robots runtime.
+- [x] Test su integrità referenziale, date/orari, URL canonici e conteggi: 32 recite, 4 opere, 5 teatri, 7 messe in scena.
+- [ ] Ampliare a nuove città e fonti oltre Regio/OperaLombardia; verificare altre opere del Regio con eventuali caratteristiche del parser differenti.
