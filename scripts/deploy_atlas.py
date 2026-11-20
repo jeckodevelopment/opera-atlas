@@ -85,7 +85,7 @@ def settings(env: dict | None = None) -> dict:
     target = posixpath.normpath(env["ATLAS_SFTP_REMOTE_DIR"])
     if not target.startswith("/") or target in ("/", "/atlas") or not target.endswith("/atlas"):
         raise ValueError("ATLAS_SFTP_REMOTE_DIR must be the absolute account path ending in /atlas, not the document root")
-    port = int(env.get("ATLAS_SFTP_PORT", "22"))
+    port = int(env.get("ATLAS_SFTP_PORT") or "22")
     if not 1 <= port <= 65535:raise ValueError("Invalid ATLAS_SFTP_PORT")
     return {"host":env["ATLAS_SFTP_HOST"],"username":env["ATLAS_SFTP_USERNAME"],
             "known_hosts":env["ATLAS_SFTP_KNOWN_HOSTS"],"password":password,
