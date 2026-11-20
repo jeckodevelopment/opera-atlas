@@ -69,7 +69,7 @@ Design ispirato alla grammatica visiva di Opera+ Funding: base avorio, schede bi
 - Controllare 19 recite, 2 opere, 5 teatri, 8 orari ignoti e collegamenti alle due pagine ufficiali.
 - Verificare che tutte le 11 recite torinesi riportino ora locale, che le altre 8 presentino “Orario da confermare” e che due date già passate restino correttamente nello storico.
 - Verificare schede, riepiloghi, filtri, paginazione, pagine di dettaglio, accessibilità su smartphone e coerenza grafica con Funding.
-- Confermare la nuova pubblicazione con `jeckodevsite` e l'esito HTTPS di tutti gli asset.
+- Confermare la nuova pubblicazione con il workflow `opera-atlas` e l'esito HTTPS di tutti gli asset.
 
 ## Nuovo feed canonico separato dal deploy (catalogo v2)
 Il frontend consulta `raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/manifest.json` e quattro canali JSON: opere, teatri, messe in scena e repliche. Verifica SHA-256 e integrità referenziale, presenta le schede con dati verificati e, se non può leggere il feed remoto, usa il JSON locale dell'ultimo deploy come **fallback dichiaratamente non aggiornato**. Non pubblica falsi dati correnti o variazioni non riconciliate.
