@@ -30,7 +30,7 @@
       "title": "Edgar",
       "composer": "Giacomo Puccini",
       "access_status": "approved",
-      "approval_evidence": "Operator authorization 2026-11-20 for daily conditional robots-gated retrieval of factual show dates. First successful live source check of same official Regio host at GitHub Actions run 44785598242; every page request must recheck robots permission at runtime."
+      "approval_evidence": "Operator authorization 2026-11-20, conditional robots-gated official factual recite retrieval. Individual page robots NOT verified at onboarding; same Regio host was successfully scanned in Actions run 44785598242. Must recheck robots permission at runtime for every page request."
     },
     {
       "key": "regio-salome-2027",
@@ -40,7 +40,7 @@
       "title": "Salome",
       "composer": "Richard Strauss",
       "access_status": "approved",
-      "approval_evidence": "Operator authorization 2026-11-20 for daily conditional robots-gated retrieval of factual show dates. First successful live source check of same official Regio host at GitHub Actions run 44785598242; every page request must recheck robots permission at runtime."
+      "approval_evidence": "Operator authorization 2026-11-20, conditional robots-gated official factual recite retrieval. Individual page robots NOT verified at onboarding; same Regio host was successfully scanned in Actions run 44785598242. Must recheck robots permission at runtime for every page request."
     }
   ]
 }
