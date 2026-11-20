@@ -81,13 +81,13 @@ def official_local_time(day: str, clock: str) -> str:
     """
     naive = datetime.fromisoformat(day + "T" + clock + ":00")
     local = naive.replace(tzinfo=ITALIAN_TIMEZONE)
-    alternate = local.replace(fold=1)
-    if alternate.utcoffset() != local.utcoffset():
-        raise ValueError("ambiguous Italian local performance time")
     if local.astimezone(timezone.utc).astimezone(ITALIAN_TIMEZONE).replace(
         tzinfo=None
     ) != naive:
         raise ValueError("nonexistent Italian local performance time")
+    alternate = local.replace(fold=1)
+    if alternate.utcoffset() != local.utcoffset():
+        raise ValueError("ambiguous Italian local performance time")
     return local.isoformat(timespec="seconds")
 
 
