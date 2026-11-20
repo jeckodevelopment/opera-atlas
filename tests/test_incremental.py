@@ -72,6 +72,29 @@ class IncrementalTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             acknowledge_delta(self.conn,1,reason="again")
 
+    def test_official_stable_id_date_change_enters_existing_review(self):
+        old = ('<h1>La traviata | Giuseppe Verdi</h1>'
+               '<time data-event-id="recita-34" datetime="2027-02-26T20:00:00+01:00"></time>')
+        moved = ('<h1>La traviata | Giuseppe Verdi</h1>'
+                 '<time data-event-id="recita-34" datetime="2027-03-02T20:00:00+01:00"></time>')
+        first=self.ingest(old)
+        second=self.ingest(moved)
+        self.assertEqual(first.linked,1)
+        self.assertEqual(second.review,1)
+        self.assertEqual(second.linked,0)
+        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM performances").fetchone()[0],1)
+        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM reconciliation_reviews").fetchone()[0],1)
+        external=self.conn.execute("SELECT external_id FROM source_events").fetchone()[0]
+        self.assertTrue(external.endswith(":event:recita-34"))
+
+    def test_stable_id_conflicting_times_refused(self):
+        invalid=('<h1>La traviata | Giuseppe Verdi</h1>'
+                 '<time data-event-id="recita-34" datetime="2027-02-26T20:00:00+01:00"></time>'
+                 '<time data-event-id="recita-34" datetime="2027-03-02T20:00:00+01:00"></time>')
+        with self.assertRaises(ValueError):
+            self.ingest(invalid)
+        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM performances").fetchone()[0],0)
+
     def test_migration_repeated(self):
         migrate(self.conn)
         self.assertEqual(self.conn.execute("SELECT count(*) FROM schema_migrations").fetchone()[0],6)
