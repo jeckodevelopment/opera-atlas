@@ -25,6 +25,7 @@ from opera_atlas.controlled_fetch import (
 )
 from opera_atlas.db import connect, migrate
 from opera_atlas.operalombardia import parse_dates_only
+from opera_atlas.operalombardia_calendar import parse_calendar
 from opera_atlas.fraschini_parser import parse_fraschini_detail
 from opera_atlas.regio_parser import parse_regio_detail
 from scripts.build_verified_catalog import MANIFEST
@@ -33,7 +34,7 @@ from scripts.publish_catalog_v2 import REGISTRY, assemble
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "data" / "daily-source-config.json"
 HEALTH = ROOT / "data" / "catalog-source-health.json"
-VALID_ADAPTERS = {"regio", "operalombardia", "fraschini"}
+VALID_ADAPTERS = {"regio", "operalombardia", "fraschini", "operalombardia_calendar"}
 
 
 def validate_source_config(document: dict) -> list[dict]:
@@ -70,6 +71,10 @@ def validate_source_config(document: dict) -> list[dict]:
             raise ValueError("Regio adapter host mismatch")
         if item["adapter"] == "fraschini" and url.hostname != "www.teatrofraschini.it":
             raise ValueError("Fraschini adapter host mismatch")
+        if item["adapter"] == "operalombardia_calendar" and (
+            url.hostname != "www.operalombardia.it" or url.path != "/calendario/"
+        ):
+            raise ValueError("OperaLombardia index host/path mismatch")
         if item["adapter"] == "operalombardia" and url.hostname != "www.operalombardia.it":
             raise ValueError("OperaLombardia adapter host mismatch")
         if item["access_status"] == "approved" and (
@@ -98,6 +103,8 @@ def _find_production(facts: dict, item: dict, venue: str, city: str) -> dict | N
 
 
 def _parse(item: dict, html: str) -> list[tuple[str, str, str, str | None]]:
+    if item["adapter"] == "operalombardia_calendar":
+        return parse_calendar(html)
     if item["adapter"] == "regio":
         parsed = parse_regio_detail(
             html, source_url=item["url"], expected_title=item["title"],
@@ -166,8 +173,23 @@ def scan_approved(
             observed = {}
             anomalies = []
             mapped = {}
-            for venue, city, day, hour in parsed:
-                product = _find_production(updated_facts, item, venue, city)
+            for record in parsed:
+                if item["adapter"] == "operalombardia_calendar":
+                    title, venue, city, day, hour = record
+                    matches = [
+                        p for p in updated_facts["productions"]
+                        if p["title"].casefold() == title.casefold()
+                        and p["venue"].casefold() == venue.casefold()
+                        and p["municipality"].casefold() == city.casefold()
+                    ]
+                    if len(matches) != 1:
+                        anomalies.append({"kind":"unknown_or_ambiguous_staging",
+                                          "title":title,"venue":venue,"city":city})
+                        continue
+                    product = matches[0]
+                else:
+                    venue, city, day, hour = record
+                    product = _find_production(updated_facts, item, venue, city)
                 if product is None:
                     anomalies.append({"kind":"unknown_staging","venue":venue,"city":city})
                     continue
@@ -199,6 +221,10 @@ def scan_approved(
                         anomalies.append({"kind":"time_changed",
                                           "production":prod_key,"date":day})
                 for day in sorted(added):
+                    if (item["adapter"] == "operalombardia_calendar"
+                        and product["source_url"] != item["url"]):
+                        anomalies.append({"kind":"additional_secondary_source_date",
+                                          "production":prod_key,"date":day})
                     if prod_key + "|" + day in updated_registry["performances"]:
                         anomalies.append({"kind":"registry_collision",
                                           "production":prod_key,"date":day})
