@@ -37,7 +37,7 @@ Implementati nel frontend statico:
 - Homepage conforme all'ordine approvato: ricerca, produzioni vicino a te, prossimi festival, opere, teatri.
 - Ricerca iniziale Torino, raggio 100 km, 30 giorni, ordinamento cronologico, schede raggruppate per produzione. Filtri avanzati richiudibili e possibilità di visualizzare tutta Italia.
 - Vista calendario mensile con repliche individuali e vista mappa geografica **schematica** delle città con produzioni verificate. Nessun servizio di mappe a pagamento, nessun dato o contatore inventato.
-- Distanze calcolate in linea d'aria su coordinate indicative dei **centri delle dieci città attualmente censite**; non sono distanze teatro-teatro né stradali. Se una città futura è priva di coordinate, non viene inclusa nei risultati entro un raggio finché non viene registrata la sua posizione. L'opzione «Tutta Italia» include tutti gli eventi.
+- Distanze calcolate in linea d'aria su coordinate indicative dei **centri delle quattordici città attualmente censite**; non sono distanze teatro-teatro né stradali. Se una città futura è priva di coordinate, non viene inclusa nei risultati entro un raggio finché non viene registrata la sua posizione. L'opzione «Tutta Italia» include tutti gli eventi.
 - Localizzazione solo su richiesta esplicita: la posizione dell'utente viene convertita nella città censita più vicina, solo entro 80 km, e non è memorizzata.
 - Directory dedicate Opere, Teatri, Festival; una breve sinossi originale per le opere note; schede produzione con date future e link alle fonti ufficiali per ogni replica.
 - Indice festival editoriale in \`public/catalog/v2/festival-index.json\`, letto da GitHub indipendentemente dal deploy SFTP. Una manifestazione con programmazione futura viene mostrata solo se associata a ID di produzioni già presenti nel feed verificato. Le fonti censite senza date non diventano eventi.
@@ -58,3 +58,6 @@ Implementati nel frontend statico:
 
 ### Pubblicazione e responsabilità
 Test, script, controlli e feed esclusivamente nel repository \`opera-atlas\`. L'unico ruolo di \`jeckodevsite\` è il workflow SFTP per HTML, CSS, JS e asset quando necessario. Nessuna modifica ai JSON richiede rilascio del frontend.
+
+### Coproduzioni OperaLombardia 2026/27
+Il registro di gruppo unisce, senza confondere le diverse opere, le sei produzioni condivise di L'italiana in Algeri, Turandot, Death in Venice, Cavalleria rusticana, Pagliacci e Un ballo in maschera. Il teatro di Torino rimane distinto dalle coproduzioni del circuito. Il feed canonico attuale comprende 208 recite e 14 teatri; le date senza ora restano esplicitamente non confermate.
