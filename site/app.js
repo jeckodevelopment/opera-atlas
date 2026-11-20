@@ -431,8 +431,8 @@ async function initialize() {
 
     fillOptions(controls.city,catalog.map(x=>x.municipality));
     populateLocations();
-    await loadWorkDescriptions();
     renderDiscoveries();
+    loadWorkDescriptions().then(renderDiscoveries).catch(error=>console.warn("Opera descriptions unavailable",error));
     renderFestivals();
     fillOptions(controls.region,catalog.map(x=>x.region));
     render();
