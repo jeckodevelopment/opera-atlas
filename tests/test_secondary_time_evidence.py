@@ -17,8 +17,8 @@ class SecondaryTimeEvidenceTests(unittest.TestCase):
     def test_official_clocks_preserve_existing_recite_ids(self):
         data = build(self.facts, self.evidence)
         events = {x["id"]: x for x in data["performances"]}
-        self.assertEqual(len(events), 81)
-        self.assertEqual(sum(x["time_known"] for x in events.values()), 79)
+        self.assertEqual(len(events), 91)
+        self.assertEqual(sum(x["time_known"] for x in events.values()), 89)
         self.assertEqual(sum(not x["time_known"] for x in events.values()), 2)
         for key, evidence in self.evidence["times"].items():
             staging, day = key.split("|")
@@ -42,7 +42,7 @@ class SecondaryTimeEvidenceTests(unittest.TestCase):
             self.assertEqual(replica["starts_at"][11:16], item["time"])
             self.assertEqual(replica["sources"][1], item["url"])
         _, manifest = release_parts(self.facts, self.registry)
-        self.assertEqual(manifest["files"]["performances"]["count"], 81)
+        self.assertEqual(manifest["files"]["performances"]["count"], 91)
 
     def test_unauthorized_or_unrelated_secondary_source_fails(self):
         bad = copy.deepcopy(self.evidence)

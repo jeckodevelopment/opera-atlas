@@ -57,10 +57,10 @@ class RegioSeasonCompletenessTests(unittest.TestCase):
 
     def test_catalog_ids_and_all_nine_routes(self):
         graph=assemble(self.facts,self.ids)
-        self.assertEqual(len(graph["performances"]),81)
-        self.assertEqual(len(graph["works"]),10)
+        self.assertEqual(len(graph["performances"]),91)
+        self.assertEqual(len(graph["works"]),13)
         self.assertEqual(len(graph["venues"]),5)
-        self.assertEqual(len(graph["stagings"]),13)
+        self.assertEqual(len(graph["stagings"]),18)
         routes={x["url"] for x in graph["stagings"]}
         for p in self.facts["productions"]:
             if p["key"] in EXPECT:

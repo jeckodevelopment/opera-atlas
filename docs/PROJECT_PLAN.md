@@ -122,3 +122,10 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Orari locali verificati in ottobre e dopo passaggio ora legale; acquisizione quotidiana condizionata a robots valida.
 - [ ] Eventi educativi, eventi in sede Piccolo Regio Puccini e possibili programmi fuori dalla sala principale: perimetro distinto, da censire dopo verifica del genere.
 - [ ] Completare le altre quattro produzioni OperaLombardia 2026/27 e quindi gli altri sei enti del registro fonti.
+
+### F2 — OperaLombardia, programmi verificati Teatro Fraschini Pavia
+- [x] Verifica delle altre quattro produzioni della stagione 2026/27 presso il partner Teatro Fraschini Pavia: Turandot (2 recite), Cavalleria rusticana/Pagliacci (2 date, 2 opere), Un ballo in maschera (2 recite), Death in Venice (2 recite).
+- [x] Dieci nuove repliche, cinque nuove messe in scena, tre nuove opere canoniche e zero nuove sedi fittizie; gli ID restano immutabili.
+- [x] Adapter Fraschini che accetta soltanto intestazione opera con compositore e coppia di date/orari espliciti, previa verifica robots.txt; controllo idempotenza e provenienza.
+- [ ] Completare la copertura di tutte le sedi della rete OperaLombardia per i quattro spettacoli (Como, Brescia, Cremona e altri partner effettivamente documentati) con date/ore esatte o null quando assenti.
+- [ ] Completare altri sei enti del registro fonti.
