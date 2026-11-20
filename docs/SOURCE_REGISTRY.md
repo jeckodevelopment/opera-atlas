@@ -115,9 +115,22 @@
 - Verificare sedi temporanee 2026 e loro date di utilizzo, senza attribuire nuove recite a sedi storiche per default.
 
 ## Registro strutturato iniziale (F1)
-Il file `data/sources.json` contiene i primi tre punti di partenza ufficiali ricontrollati il 20/11/2026: Teatro Regio di Torino (`/calendario`), OperaLombardia (`/calendario/`) e Rossini Opera Festival (`/il-festival/calendario/`). La validazione verifica HTTPS, campi obbligatori, assenza duplicati e stato di accesso `pending`. Il comando di caricamento nel database **non effettua richieste di rete** e **non autorizza lo scraping**. Rimangono da verificare robots.txt, termini e licenze, struttura delle pagine e tutte le restanti fonti.
+Il file `data/sources.json` contiene otto punti di partenza ufficiali ricontrollati il 20/11/2026: Teatro Regio Torino, OperaLombardia, Rossini Opera Festival, Teatro alla Scala, Teatro La Fenice, Fondazione Arena di Verona, Teatro Regio di Parma e Teatro Massimo di Palermo. La validazione verifica HTTPS, campi obbligatori, assenza duplicati e stato di accesso `pending`. Il comando di caricamento nel database **non effettua richieste di rete** e **non autorizza lo scraping**. Rimangono da verificare robots.txt, termini e licenze, struttura delle pagine e tutte le restanti fonti.
 
 Avvio locale (Python 3.12+):
 ```bash
 python -c "from opera_atlas.db import connect,migrate; from opera_atlas.source_registry import seed_sources; c=connect('atlas.sqlite3'); migrate(c); print(seed_sources(c)); c.commit(); c.close()"
 ```
+
+## Ampliamento fonti ufficiali — 20 novembre 2026
+Al registro JSON, oltre alle tre fonti già presenti, sono stati aggiunti:
+
+| Ente | Stagione/calendario ufficiale | Stato acquisizione |
+|---|---|---|
+| Teatro alla Scala | https://www.teatroallascala.org/it/stagione/2026-2027/index.html | pending |
+| Teatro La Fenice | https://www.teatrolafenice.it/calendario/ | pending |
+| Fondazione Arena di Verona | https://www.arena.it/calendario/ | pending |
+| Teatro Regio di Parma | https://teatroregioparma.it/calendario/ | pending |
+| Teatro Massimo di Palermo | https://www.teatromassimo.it/la-stagione-2026-27/ | pending |
+
+Gli URL sono ingressi ufficiali verificati, **non** certificazioni di disponibilità di ogni recita, e non implicano alcuna autorizzazione a crawling automatico. Le pagine possono contenere anche balletto, concerti e prosa; i connettori futuri dovranno filtrare il repertorio e identificare le recite effettive. Il censimento completo del perimetro nazionale resta aperto (#1).
