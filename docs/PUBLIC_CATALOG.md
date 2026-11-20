@@ -82,3 +82,19 @@ Gli ID `oa-w-...`, `oa-v-...`, `oa-s-...`, `oa-r-...` sono registrati una volta 
 4. Verificare che il frontend prelevi manifesto e quattro canali via HTTPS direttamente da GitHub, senza SFTP; interrompere la rete e verificare avviso di fallback.
 5. Un file JSON danneggiato o senza relazione canonica deve provocare fallback/errore esplicito, non un catalogo parziale.
 6. Controllare la schedulazione, i permessi `contents:write` limitati al workflow e l'assenza di job di scansione non approvata.
+
+## URL leggibili e pagine per messa in scena
+La home offre **Per data** (ogni replica) e **Per messa in scena** (produzione in un teatro, con calendario delle repliche). I link sono generati da ID e slug canonici del feed, **mai dal titolo preso dalla query**. La pagina `/opere/<opera>/` aggrega tutte le messe in scena nazionali censite, con le date raggruppate per teatro; `/<citta>/<teatro>/` raccoglie le programmazioni del teatro; `/<citta>/<teatro>/<opera>/` mostra un'unica messa in scena, con tutte le sue repliche e orari noti/sconosciuti.
+
+Le riscritture Apache sono in `site/.htaccess` e inviano soltanto i percorsi whitelist a `detail.html`, senza invocare un backend. Il tag `<base href="/dev/opera-atlas/">` rende CSS, JavaScript e fallback JSON raggiungibili anche dai percorsi annidati. Gli URL legacy `detail.html?type=work|venue|performance&key=...` continuano a essere risolti tramite il catalogo e canonizzati nel browser. Il vecchio identificatore `curated:...` viene trasportato in `legacy_id` accanto all'ID `oa-r-...` per la compatibilità.
+
+**Nota di hosting:** per gli URL deep link serve un server Apache con `mod_rewrite` e `AllowOverride` abilitati. Il collaudo post-deploy deve richiedere direttamente le tre tipologie di URL, verificare 200 e contenuto HTML corretto, oltre al JSON GitHub via CORS; in caso contrario il publisher deve interrompersi/ripristinare i file.
+
+### Test manuali
+1. Dalla home selezionare **Per messa in scena**: 5 schede corrispondenti a 5 programmazioni, a fronte delle 19 repliche in modalità **Per data**.
+2. Aprire `/dev/opera-atlas/opere/la-traviata/`: raggruppamenti per teatro, 11 recite al Teatro Regio.
+3. Aprire `/dev/opera-atlas/torino/teatro-regio/`: La traviata, 11 repliche.
+4. Aprire `/dev/opera-atlas/torino/teatro-regio/la-traviata/`: una sola scheda con undici giorni e orari, senza undici pagine distinte.
+5. Aprire `/dev/opera-atlas/opere/italiana-in-algeri/`: quattro teatri e otto recite senza ora; nessun `00:00`.
+6. Verificare i vecchi link parametrizzati, le richieste dirette e il refresh del browser su URL profondi, su desktop e smartphone.
+7. Controllare che il deploy del frontend non sia rieseguito per le modifiche dei soli JSON.
