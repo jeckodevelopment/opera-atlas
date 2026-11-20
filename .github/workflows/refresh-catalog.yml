@@ -6,6 +6,11 @@ on:
   push:
     branches: [main]
     paths:
+      # Every adapter/parser change must validate and refresh the public feed,
+      # not merely pass the separate Python test workflow.
+      - 'opera_atlas/**'
+      - 'scripts/**'
+      - 'tests/**'
       - 'data/identity-registry.json'
       - 'data/verified-launch-catalog.json'
       - 'data/daily-source-config.json'
