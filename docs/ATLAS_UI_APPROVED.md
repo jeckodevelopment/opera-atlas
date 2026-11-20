@@ -137,3 +137,9 @@ La pagina `site/privacy.html` omette l'indirizzo civico della sede del titolare,
 ## Manifesti verticali anche nelle produzioni — 20/11/2026
 
 Il manifesto storico mantiene il rapporto verticale **anche nelle pagine Produzione e Produzione condivisa**, non soltanto nella pagina Opera. L'immagine è visualizzata senza ritagli con `object-fit:contain`, a destra del breve testo quando lo schermo è sufficientemente ampio, e su una riga separata su mobile. Le schede Teatro, le date selezionabili, i mini-calendari e i link di biglietteria mantengono le dimensioni e la collocazione precedentemente approvate. La verifica automatica controlla entrambe le tipologie di produzione e l'assenza di crop.
+
+## Correzione urgente schede Teatro (20/11/2026)
+
+Segnalato un allungamento indefinito delle card quando si scorre la pagina di un teatro, riproducibile in particolare nella pagina del Teatro Regio Torino. Causa nel CSS introdotto per l'allineamento delle CTA: `height:100%` con `min-height:100%` applicati a item di griglia con altezza automatica, generando un possibile ciclo nel calcolo dell'altezza. Le percentuali sono rimosse (`height:auto`, `min-height:0`), il contenitore mantiene `align-self:stretch` e la CTA `margin-top:auto` per restare allineata al fondo. Il selettore delle date non forza il riempimento dell'altezza (`flex:0 0 auto`); il riquadro con la recita selezionata non usa più margini verticali automatici.
+
+Collaudi: Torino Teatro Regio con card contenenti uno o più file di date, scorrimento dall'inizio al footer, altezza stabile dopo selezione di date diverse, titoli leggibili e azione finale in basso. Verificare anche mobile e altre sedi con numero di rappresentazioni differente. Regression test automatico sulla rimozione di altezze percentuali.
