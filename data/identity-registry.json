@@ -215,6 +215,38 @@
       "name": "Teatro Regio di Parma",
       "city": "Parma",
       "region": "Emilia-Romagna"
+    },
+    "Novara|Teatro Coccia": {
+      "id": "oa-v-000011",
+      "slug": "teatro-coccia",
+      "city_slug": "novara",
+      "name": "Teatro Coccia",
+      "city": "Novara",
+      "region": "Piemonte"
+    },
+    "Bergamo|Teatro Donizetti": {
+      "id": "oa-v-000012",
+      "slug": "teatro-donizetti",
+      "city_slug": "bergamo",
+      "name": "Teatro Donizetti",
+      "city": "Bergamo",
+      "region": "Lombardia"
+    },
+    "Reggio Emilia|Teatro Valli": {
+      "id": "oa-v-000013",
+      "slug": "teatro-valli",
+      "city_slug": "reggio-emilia",
+      "name": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "region": "Emilia-Romagna"
+    },
+    "Ravenna|Teatro Dante Alighieri": {
+      "id": "oa-v-000014",
+      "slug": "teatro-dante-alighieri",
+      "city_slug": "ravenna",
+      "name": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "region": "Emilia-Romagna"
     }
   },
   "stagings": {
@@ -448,6 +480,158 @@
       "venue_id": "oa-v-000009",
       "slug": "tosca",
       "source_url": "https://www.teatromassimo.it/event/tosca-2/",
+      "season": "2026-2027"
+    },
+    "lombardia-turandot-como": {
+      "id": "oa-s-000030",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000002",
+      "slug": "turandot",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-turandot-cremona": {
+      "id": "oa-s-000031",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000005",
+      "slug": "turandot",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-turandot-brescia": {
+      "id": "oa-s-000032",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000004",
+      "slug": "turandot",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-turandot-novara": {
+      "id": "oa-s-000033",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000011",
+      "slug": "turandot",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-turandot-bergamo": {
+      "id": "oa-s-000034",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000012",
+      "slug": "turandot",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-death-venice-brescia": {
+      "id": "oa-s-000035",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000004",
+      "slug": "death-in-venice",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-death-venice-como": {
+      "id": "oa-s-000036",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000002",
+      "slug": "death-in-venice",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-death-venice-reggio-emilia": {
+      "id": "oa-s-000037",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000013",
+      "slug": "death-in-venice",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-death-venice-cremona": {
+      "id": "oa-s-000038",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000005",
+      "slug": "death-in-venice",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-death-venice-ravenna": {
+      "id": "oa-s-000039",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000014",
+      "slug": "death-in-venice",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-cavalleria-como": {
+      "id": "oa-s-000040",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000002",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-cavalleria-brescia": {
+      "id": "oa-s-000041",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000004",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-cavalleria-cremona": {
+      "id": "oa-s-000042",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000005",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-pagliacci-como": {
+      "id": "oa-s-000043",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000002",
+      "slug": "pagliacci",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-pagliacci-brescia": {
+      "id": "oa-s-000044",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000004",
+      "slug": "pagliacci",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-pagliacci-cremona": {
+      "id": "oa-s-000045",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000005",
+      "slug": "pagliacci",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-ballo-cremona": {
+      "id": "oa-s-000046",
+      "work_id": "oa-w-000012",
+      "venue_id": "oa-v-000005",
+      "slug": "un-ballo-in-maschera",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-ballo-como": {
+      "id": "oa-s-000047",
+      "work_id": "oa-w-000012",
+      "venue_id": "oa-v-000002",
+      "slug": "un-ballo-in-maschera",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "lombardia-ballo-bergamo": {
+      "id": "oa-s-000048",
+      "work_id": "oa-w-000012",
+      "venue_id": "oa-v-000012",
+      "slug": "un-ballo-in-maschera",
+      "source_url": "https://www.operalombardia.it/calendario/",
       "season": "2026-2027"
     }
   },
@@ -1471,6 +1655,234 @@
       "staging_id": "oa-s-000029",
       "original_date": "2027-04-29",
       "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "lombardia-turandot-como|2026-09-24": {
+      "id": "oa-r-000171",
+      "staging_id": "oa-s-000030",
+      "original_date": "2026-09-24",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-como|2026-09-26": {
+      "id": "oa-r-000172",
+      "staging_id": "oa-s-000030",
+      "original_date": "2026-09-26",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-cremona|2026-10-02": {
+      "id": "oa-r-000173",
+      "staging_id": "oa-s-000031",
+      "original_date": "2026-10-02",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-cremona|2026-10-04": {
+      "id": "oa-r-000174",
+      "staging_id": "oa-s-000031",
+      "original_date": "2026-10-04",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-brescia|2026-10-16": {
+      "id": "oa-r-000175",
+      "staging_id": "oa-s-000032",
+      "original_date": "2026-10-16",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-brescia|2026-10-18": {
+      "id": "oa-r-000176",
+      "staging_id": "oa-s-000032",
+      "original_date": "2026-10-18",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-novara|2026-10-23": {
+      "id": "oa-r-000177",
+      "staging_id": "oa-s-000033",
+      "original_date": "2026-10-23",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-novara|2026-10-25": {
+      "id": "oa-r-000178",
+      "staging_id": "oa-s-000033",
+      "original_date": "2026-10-25",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-bergamo|2027-01-08": {
+      "id": "oa-r-000179",
+      "staging_id": "oa-s-000034",
+      "original_date": "2027-01-08",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-turandot-bergamo|2027-01-10": {
+      "id": "oa-r-000180",
+      "staging_id": "oa-s-000034",
+      "original_date": "2027-01-10",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-brescia|2026-09-25": {
+      "id": "oa-r-000181",
+      "staging_id": "oa-s-000035",
+      "original_date": "2026-09-25",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-brescia|2026-09-27": {
+      "id": "oa-r-000182",
+      "staging_id": "oa-s-000035",
+      "original_date": "2026-09-27",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-como|2026-10-09": {
+      "id": "oa-r-000183",
+      "staging_id": "oa-s-000036",
+      "original_date": "2026-10-09",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-como|2026-10-11": {
+      "id": "oa-r-000184",
+      "staging_id": "oa-s-000036",
+      "original_date": "2026-10-11",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-reggio-emilia|2027-01-29": {
+      "id": "oa-r-000185",
+      "staging_id": "oa-s-000037",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-reggio-emilia|2027-01-31": {
+      "id": "oa-r-000186",
+      "staging_id": "oa-s-000037",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-cremona|2027-02-05": {
+      "id": "oa-r-000187",
+      "staging_id": "oa-s-000038",
+      "original_date": "2027-02-05",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-cremona|2027-02-07": {
+      "id": "oa-r-000188",
+      "staging_id": "oa-s-000038",
+      "original_date": "2027-02-07",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-ravenna|2027-02-12": {
+      "id": "oa-r-000189",
+      "staging_id": "oa-s-000039",
+      "original_date": "2027-02-12",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-death-venice-ravenna|2027-02-14": {
+      "id": "oa-r-000190",
+      "staging_id": "oa-s-000039",
+      "original_date": "2027-02-14",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-cavalleria-como|2026-12-04": {
+      "id": "oa-r-000191",
+      "staging_id": "oa-s-000040",
+      "original_date": "2026-12-04",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-cavalleria-como|2026-12-06": {
+      "id": "oa-r-000192",
+      "staging_id": "oa-s-000040",
+      "original_date": "2026-12-06",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-cavalleria-brescia|2026-12-11": {
+      "id": "oa-r-000193",
+      "staging_id": "oa-s-000041",
+      "original_date": "2026-12-11",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-cavalleria-brescia|2026-12-13": {
+      "id": "oa-r-000194",
+      "staging_id": "oa-s-000041",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-cavalleria-cremona|2027-01-22": {
+      "id": "oa-r-000195",
+      "staging_id": "oa-s-000042",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-cavalleria-cremona|2027-01-24": {
+      "id": "oa-r-000196",
+      "staging_id": "oa-s-000042",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-pagliacci-como|2026-12-04": {
+      "id": "oa-r-000197",
+      "staging_id": "oa-s-000043",
+      "original_date": "2026-12-04",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-pagliacci-como|2026-12-06": {
+      "id": "oa-r-000198",
+      "staging_id": "oa-s-000043",
+      "original_date": "2026-12-06",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-pagliacci-brescia|2026-12-11": {
+      "id": "oa-r-000199",
+      "staging_id": "oa-s-000044",
+      "original_date": "2026-12-11",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-pagliacci-brescia|2026-12-13": {
+      "id": "oa-r-000200",
+      "staging_id": "oa-s-000044",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-pagliacci-cremona|2027-01-22": {
+      "id": "oa-r-000201",
+      "staging_id": "oa-s-000045",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-pagliacci-cremona|2027-01-24": {
+      "id": "oa-r-000202",
+      "staging_id": "oa-s-000045",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-ballo-cremona|2026-11-27": {
+      "id": "oa-r-000203",
+      "staging_id": "oa-s-000046",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-ballo-cremona|2026-11-29": {
+      "id": "oa-r-000204",
+      "staging_id": "oa-s-000046",
+      "original_date": "2026-11-29",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-ballo-como|2027-01-15": {
+      "id": "oa-r-000205",
+      "staging_id": "oa-s-000047",
+      "original_date": "2027-01-15",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-ballo-como|2027-01-17": {
+      "id": "oa-r-000206",
+      "staging_id": "oa-s-000047",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-ballo-bergamo|2027-01-29": {
+      "id": "oa-r-000207",
+      "staging_id": "oa-s-000048",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "lombardia-ballo-bergamo|2027-01-31": {
+      "id": "oa-r-000208",
+      "staging_id": "oa-s-000048",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.operalombardia.it/calendario/"
     }
   }
 }
