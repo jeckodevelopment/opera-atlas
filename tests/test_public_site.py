@@ -84,7 +84,7 @@ class PublicCatalogTests(unittest.TestCase):
             html = (SITE / page).read_text(encoding="utf-8")
             self.assertIn('<base href="/atlas/">', html)
         code = (SITE / "catalog-client.js").read_text(encoding="utf-8")
-        self.assertIn('PREFIX = "/dev/opera-atlas"', code)
+        self.assertIn('PREFIX = new URL(document.baseURI).pathname', code)
         self.assertIn('"/opere/" + work + "/"', code)
         self.assertNotIn("/dev/opera-atlas", code)
         detail = (SITE / "detail.js").read_text(encoding="utf-8")
