@@ -64,6 +64,26 @@ class FetchTests(unittest.TestCase):
                                 network_enabled=True,opener=opener)
         self.assertEqual(len(opener.calls),1)
 
+    def test_robots_html_placeholder_is_not_permission(self):
+        opener = FakeOpener(robots=b"<html><body>Temporarily unavailable</body></html>")
+        with self.assertRaises(FetchUnavailable):
+            fetch_official_html(self.conn,source_id=1,url=URL,
+                                network_enabled=True,opener=opener)
+        self.assertEqual(opener.calls,[SOURCE+"robots.txt"])
+
+    def test_robot_rules_permit_specific_page_but_not_forbidden_path(self):
+        opener = FakeOpener(
+            robots=b"User-agent: *\\nDisallow: /private/\\nAllow: /opera-e-balletto-2026-2027/\\n"
+        )
+        fetch_official_html(self.conn,source_id=1,url=URL,
+                            network_enabled=True,opener=opener)
+        self.assertEqual(len(opener.calls),2)
+        forbidden = FakeOpener(robots=b"User-agent: *\\nDisallow: /\\n")
+        with self.assertRaises(AccessDenied):
+            fetch_official_html(self.conn,source_id=1,url=URL,
+                                network_enabled=True,opener=forbidden)
+        self.assertEqual(len(forbidden.calls),1)
+
     def test_explicit_approved_fetch_after_robots(self):
         opener = FakeOpener()
         result = fetch_official_html(self.conn,source_id=1,url=URL,
