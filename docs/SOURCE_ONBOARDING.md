@@ -184,3 +184,20 @@ La coda storica non viene cancellata solo perché un collegamento non appare pi�
 Il primo job live delle nuove pagine di dettaglio ha restituito dieci casi senza metadati `Event` strutturati sufficienti, **zero recite nuove**. Il collector tenta ora un secondo parser **soltanto** per Scala e Arena, e **soltanto** quando l'URL corrisponde in modo univoco allo slug di un'opera già presente nel registro canonico con titolo e compositore verificati. In tal caso utilizza i parser Scala/Arena già collaudati: la pagina ufficiale deve contenere davvero il titolo, il compositore e coppie complete data+ora; ora locale Europe/Rome con gestione DST. La nuova evidenza è comunque registrata solo in coda di revisione, non pubblicata come replica.
 
 Per opere non ancora presenti nel registro, slug ambigui, compositor mancante, pagine incomplete, sostituzioni o nuove strutture non viene creato alcun dato fittizio. Fenice, Parma e Palermo richiedono ulteriori parser dedicati ove non espongano JSON-LD Event affidabile. La scheda e la sinossi originale di un'opera nuova restano un requisito obbligatorio prima di promuoverla in catalogo.
+
+
+## F2 — auto-catalogazione canonica senza riconciliazione manuale
+
+Il requisito di prodotto è **interamente unattended**: scoprire, classificare, identificare e pubblicare automaticamente nuove opere/produzioni/recite quando tutti i dati necessari possono essere verificati senza ambiguità. Gli errori, le fonti inaccessibili e le identità non risolvibili non devono diventare una coda di lavoro umano obbligatoria: rimangono osservazioni diagnostiche, saranno ritentate nelle scansioni successive e il catalogo valido continua a essere servito.
+
+Il primo motore di promozione `scripts.auto_catalogue` usa la coda persistente dei cinque indici nazionali e le evidenze delle pagine di dettaglio. **Nel primo perimetro operativo Scala e Arena**, per una produzione non ancora censita:
+- la pagina deve provenire dall'esatto host e sezione autorizzati e superare il controllo robots.txt nel collector;
+- la riga deve contenere **opera e compositore già univocamente riconosciuti nel repertorio canonico**, non soltanto un titolo o uno slug somigliante;
+- teatro e città devono corrispondere esattamente a una sede canonica; giorno e ora sono verificati con timestamp esplicito e fuso `Europe/Rome`;
+- non deve esistere una seconda messa in scena ambigua della stessa opera nello stesso teatro, né un orario contrastante;
+- il job attribuisce senza intervento umano ID permanenti a nuova produzione e singole recite, aggiornando il manifesto editoriale, registry, registro degli URL ufficiali approvati per l'import automatico e il feed versionato nella stessa pubblicazione GitHub;
+- il record JSON della scheda opera esiste già per i titoli riconosciuti e ha una breve sinossi. Niente SFTP per il refresh dati.
+
+I test verificano import al primo passaggio, ID stabili al secondo, dati di fonte non valida, compositore errato, data/ora dubbie, collisioni, e ripetibilità del feed. Il motore **non** assume che `Event` JSON-LD identifichi sicuramente un'opera lirica. Per opere assenti dal repertorio serve in futuro una fonte autorevole utilizzabile per la coppia titolo/compositore e una sinossi originale **fattualmente affidabile**: non è accettabile inventarne una da un URL o dichiarare automatica la creazione dell'opera quando la descrizione non è supportata dai dati. Tali casi rimangono automaticamente ritentabili, senza chiedere azioni di riconciliazione all'operatore.
+
+Questo percorso sostituisce progressivamente l'onboarding manuale, ma **non dichiara ancora realizzata l'autonomia totale su tutte le fonti**, né garantisce un impossibile aggiornamento corretto quando gli organizzatori bloccano l'accesso. Occorreranno parser affidabili per nuove opere e per Fenice, Parma, Palermo, Regio Torino/OperaLombardia e ROF. Resta la politica last-known-good e nessuna pubblicazione basata su informazioni inconcludenti.
