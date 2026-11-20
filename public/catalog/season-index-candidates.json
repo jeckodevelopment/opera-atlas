@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "candidates": [
+    {
+      "id": "oa-index-0215b13de4c993b44706",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-05e3307781f3a1f0668e",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello-anteprima-under30.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-0b53a302925a2b86cdef",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/viva-vivaldi/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-0ed3159d77688a6ce0ee",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-0fb5e32e18297321df20",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/jenufa/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-10a6fcc1016e991f6b31",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-11def56ae568ccce9f61",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-18853d99c59fe0755e13",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-1a59967acac40b5e8b1c",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/regolamento/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-24cebce7bb9240992447",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-2958474e6d41169197d9",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-3b731f9ff09ab7dc5294",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/carmenaxelrod/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-3fa0cb85b2727f9e1e71",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/partenope/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-54f0eebbc01abdef253e",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/preparati-allopera/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-559b2402d287d446c7b2",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-58413a3bbbee689b82bc",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-5a26b109198336516529",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/spettacoli-prossima-stagione/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-5d418650c96075ff3ff4",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/roberto-bolle-friends/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-62da655021bdc4f62ba7",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-6cd199691f7145a4d048",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-7ec9d774a82a64ecaa73",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-7f4bc91ba66978263199",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/normatebar/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-8676dac9bb2f419b8a63",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/fedora/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-8e417ad6e506eaf0929d",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/carmen/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-92b69a8ac1040b0537be",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-93c5f576f90532fd4b77",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/carmina-burana/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-97514cec9448be1a563d",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/nozze-istriane/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-9a4c8e6f9ca9682d8d9d",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-a77154badf30929b95dc",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-a79283af9834d87bf204",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/kaufmann/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-b436ab84dadc93595c82",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/paganini-paradise/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-b67d637b2f593f6756c7",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-b809ddd0a4d8d8cb712e",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/zsigmond-gerloczy/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-b831ef3f759719021c7d",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/nabucco/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-bec860aa12e82378f67b",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/domande-frequenti/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-d610eb9b9a480ae8cbf1",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-d7a3053257b5915753f9",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-dffa1564495e6f1f12a7",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-eaefe8edde44acf2edd9",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-ecad847d0d03d7d78caa",
+      "source_key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-ef66d28ddc0afb7c8b8c",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/romeo-e-giulietta/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-f08abe1f6518b001a598",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/percorsi-della-danza-cinema-e-danza-il-musical/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-f2e706992e9fbbf83950",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-f437d2811434d3e312c2",
+      "source_key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/artisti/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-f536a0b8d30f1d46dc14",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/concertoriccardofrizzasinopoliperosi/",
+      "status": "needs_review",
+      "first_seen": "2026-11-20T21:01:08+00:00",
+      "last_seen": "2026-11-20T21:01:08+00:00"
+    }
+  ]
+}
