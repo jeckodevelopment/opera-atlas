@@ -38,7 +38,7 @@ Il rilascio non è concluso finché non sono verificati DNS/TLS, configurazione 
 
 ## Risoluzione problemi
 
-- **Login FTP rifiutato:** verificare username/password esistenti e permessi dell'account.
+- **Login FTP rifiutato:** confrontare host e utente realmente usati in FileZilla (senza pubblicare la password) con quelli nell'environment GitHub, verificare che l'account FTP non limiti gli IP sorgenti o le connessioni da servizi cloud. Un codice `530` può anche indicare host/account/ACL non corrispondenti.
 - **Directory FTP non valida:** controllare la document root vista dall'account FTP e la directory padre di `/atlas`.
 - **403/404 asset o rewrite:** controllare pubblicazione web, `.htaccess` e riscritture delle URL annidate.
 - **Verifica HTTPS fallita:** il job tenta rollback; consultare il log GitHub Actions.
