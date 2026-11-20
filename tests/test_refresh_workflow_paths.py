@@ -26,7 +26,7 @@ class RefreshWorkflowPathTests(unittest.TestCase):
         self.assertTrue(any("data/candidate-reconciliation-health.json" in line
                             for line in stage))
         self.assertIn("git diff --cached --quiet",workflow)
-        self.assertIn("git push origin HEAD:main",workflow)
+        self.assertIn("python -m scripts.safe_push_catalog",workflow)
 
 if __name__=="__main__":
     unittest.main()
