@@ -45,8 +45,28 @@ class PublicCatalogTests(unittest.TestCase):
         self.assertEqual(parser.labels, 6)
         self.assertIn("./styles.css", parser.links)
         self.assertIn("./app.js", parser.scripts)
-        for name in ("styles.css", "app.js", "performances.json"):
+        for name in ("styles.css", "app.js", "detail.html", "detail.js", "performances.json"):
             self.assertTrue((SITE / name).is_file())
+
+    def test_detail_page_uses_shared_assets_and_semantic_landmarks(self):
+        parser = Markup()
+        parser.feed((SITE / "detail.html").read_text(encoding="utf-8"))
+        self.assertTrue({"dettaglio", "detail-title", "detail-content",
+                         "detail-events", "detail-status"}.issubset(parser.ids))
+        self.assertIn("./styles.css", parser.links)
+        self.assertIn("./detail.js", parser.scripts)
+
+    def test_details_do_not_invent_times_and_keep_source_validation(self):
+        script = (SITE / "detail.js").read_text(encoding="utf-8")
+        self.assertIn("Orario da confermare", script)
+        self.assertIn('e.starts_at.slice(11,16)', script)
+        self.assertIn('textContent', script)
+        self.assertNotIn('innerHTML', script)
+        self.assertIn('u.protocol === "https:"', script)
+        self.assertIn('URLSearchParams', script)
+        catalogue = (SITE / "app.js").read_text(encoding="utf-8")
+        for kind in ("performance", "work", "venue"):
+            self.assertIn("type="+kind, catalogue)
 
     def test_empty_catalog_is_real_not_sample_recite(self):
         payload = json.loads((SITE / "performances.json").read_text(encoding="utf-8"))
@@ -88,6 +108,9 @@ class PublicCatalogTests(unittest.TestCase):
             check=False, capture_output=True, text=True,
         )
         self.assertEqual(run.returncode, 0, run.stderr)
+        detail = subprocess.run(["node", "--check", str(SITE / "detail.js")],
+                                check=False, capture_output=True, text=True)
+        self.assertEqual(detail.returncode, 0, detail.stderr)
 
 
 if __name__ == "__main__":

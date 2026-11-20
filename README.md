@@ -81,3 +81,8 @@ python -m opera_atlas.ingest_cli --db atlas.sqlite3 export --output site/perform
 python -m http.server 8000 --directory site
 ```
 **Esportare solo un database con fonti approvate e dati effettivamente verificati.** Vedi [guida catalogo](docs/PUBLIC_CATALOG.md). La mappa, le pagine di dettaglio e le altre funzionalità F3 sono ancora da realizzare.
+
+### Schede di dettaglio e pubblicazione
+Il catalogo comprende le schede dinamiche per **opera, recita e teatro** in `site/detail.html` (parametri `type` e `key`), tutte derivate dall'export pubblico verificato e navigabili dalle schede del calendario. Le recite con orario mancante conservano la dicitura **Orario da confermare** anche nel dettaglio. Non vengono copiati testi editoriali o immagini di terzi.
+
+Il frontend viene distribuito in `https://jeckodevelopment.com/dev/opera-atlas/` tramite il workflow SFTP dedicato **nel repository `jeckodevelopment/jeckodevsite`**, che utilizza gli stessi secret SFTP e il rollback già operativi per le altre applicazioni. Il deploy verifica via HTTPS ogni asset pubblicato; l'export iniziale rimane `performances: []`, non vengono inventate recite. Vedi [catalogo pubblico](docs/PUBLIC_CATALOG.md).
