@@ -125,6 +125,18 @@ def heading_work(html:str,registry:dict)->dict|None:
              if normalized(work["title"])==normalized(reader.first)]
     return matches[0] if len(matches)==1 else None
 
+def known_arena_edition_work(slug:str,registry:dict)->dict|None:
+    """An exact official edition slug may refer to an existing work.
+
+    Distinct productions retain their original source URLs. We never infer
+    composer from the slug; parse_showtimes must confirm it in official HTML.
+    """
+    if not slug.startswith("aida-ed-") or len(slug)>80:
+        return None
+    matches=[w for w in registry.get("works",{}).values()
+             if normalized(w["title"])=="aida" and normalized(w["composer"])=="giuseppe verdi"]
+    return matches[0] if len(matches)==1 else None
+
 def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->list[dict]:
     """Fallback only for unambiguous canonical title+composer and verified HTML.
 
@@ -146,8 +158,13 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
     else:
         slug=urlsplit(url).path.rstrip("/").split("/")[-1].removesuffix(".html")
         known=[work for work in registry.get("works",{}).values() if work.get("slug")==slug]
-        if len(known)!=1:return []
-        work=known[0]
+        if len(known)==1:
+            work=known[0]
+        elif not known and adapter=="arena":
+            work=known_arena_edition_work(slug,registry)
+            if work is None:return []
+        else:
+            return []
         raw=parse_showtimes(html,url=url,title=work["title"],
                             composer=work["composer"],adapter=adapter)
         venue="Teatro alla Scala" if adapter=="scala" else "Arena di Verona"
@@ -217,7 +234,9 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
         path=urlsplit(item["official_url"]).path.rstrip("/").split("/")[-1]
         slug=path.removesuffix(".html")
         if (item["source_key"] in ("scala-season-2026-27","arena-festival-2027")
-            and slug in known_slugs):
+            and (slug in known_slugs or
+                 (item["source_key"]=="arena-festival-2027" and
+                  known_arena_edition_work(slug,registry) is not None))):
             recognized.append(item)
         else:
             other.append(item)
