@@ -27,11 +27,11 @@ class OperaHistoryTests(unittest.TestCase):
     def test_production_summaries_and_historical_render(self):
         js=(SITE/"detail.js").read_text(encoding="utf-8")
         self.assertIn("async function appendHistory(event)",js)
-        self.assertIn('["Libretto",history.librettist]',js)
-        self.assertIn('["Composizione",Number.isInteger(history.composition_year)',js)
-        self.assertIn('["Prima rappresentazione",Number.isInteger(history.premiere_year)',js)
-        self.assertIn('["Teatro della prima",history.premiere_venue]',js)
-        self.assertIn('["Città della prima",history.premiere_city]',js)
+        self.assertIn('const librettists=String(history.librettist||"").trim()',js)
+        self.assertIn('Number.isInteger(history.composition_year)',js)
+        self.assertIn('Number.isInteger(history.premiere_year)',js)
+        self.assertIn('history.premiere_venue,history.premiere_city',js)
+        self.assertIn('node("p","work-history-story",historyParts.join(" "))',js)
         self.assertEqual(js.count("await appendSynopsis(first);"),3) # opera, shared production, individual production
         self.assertIn('await appendHistory(first);',js)
         self.assertIn('results.after(references)',js)
