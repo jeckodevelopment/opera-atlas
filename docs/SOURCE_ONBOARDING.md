@@ -252,3 +252,16 @@ La scansione giornaliera delle pagine di produzione e la ricerca automatica dell
 Il collector riserva fino a **quattro delle dieci scansioni** per opere non riconosciute, anche quando ci sono più di dieci produzioni già note. Le restanti richieste favoriscono le produzioni verificabili immediatamente, senza mai impedire la scoperta progressiva. Quando una delle due classi è vuota, la capacità passa all'altra. La ricerca di identità Wikidata/sinossi mantiene il limite di tre nuove opere per giorno, visitando a rotazione anche code con 3, 6, 9 o altri multipli. I test simulano 12–30 giorni di lavoro e verificano che tutti gli ID prima o poi siano considerati, senza nuove richieste al singolo sito oltre al budget quotidiano.
 
 Nessuna azione editoriale è richiesta come parte del normale ciclo di acquisizione. I record insufficienti restano protetti dal fail-closed, ma il lavoro di recupero procede autonomamente nelle esecuzioni successive.
+
+
+## F2 — registro delle otto fonti sincronizzato automaticamente
+
+Per evitare riconciliazioni e discrepanze tra documentazione e operatività, `scripts.sync_source_registry` aggiorna `data/sources.json` durante **ogni** refresh del catalogo, dopo la raccolta e prima della generazione della copertura. Il registro non deve più restare con tutte le otto fonti nello stato `pending` quando i job eseguono già accessi approvati. Due aspetti sono tenuti separati:
+
+- `access_status = approved` significa che **almeno un** URL dettagliato o indice di quella fonte è abilitato nelle configurazioni operativamente approvate; **non** significa che tutto il sito o tutta la stagione siano accessibili.
+- `monitoring_status = index_verified` soltanto se la scansione reale dell'indice della fonte ha restituito `success`; `detail_verified` soltanto se almeno una pagina monitorata ha avuto successo; `configured_unverified` se programmata ma la verifica live non riesce; `not_started` se nessuna scansione è abilitata.
+- `automated_index` registra la verifica dell'indice. `autonomous_publication_verified` resta `false` finché non esiste un collaudo effettivo, non viene dedotto dalla sola presenza di adapter o test sintetici.
+
+Per il perimetro attualmente configurato, sette fonti risultano approvate per almeno un accesso, mentre **Rossini Opera Festival** resta `pending/not_started` fino all'onboarding tecnico reale. L'indice delle cinque fonti nazionali è subordinato ai controlli robots.txt e ai report di acquisizione; Torino e OperaLombardia mantengono i propri adapter specifici. Il job aggiorna il registro insieme al JSON di copertura in GitHub, senza SFTP. Sono previsti test di fallimento degli indici, approvazioni mancanti, idempotenza e integrità del perimetro di otto fonti.
+
+**Limite:** questo intervento corregge il monitoraggio e la rendicontazione, non attiva da solo nuovi adapter ROF né la ricerca automatica delle stagioni future. Questi interventi rimangono necessari per raggiungere il requisito unattended pluriennale.
