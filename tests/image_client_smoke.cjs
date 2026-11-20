@@ -2,36 +2,57 @@
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
 const vm=require("node:vm");
-const source=fs.readFileSync(require("node:path").join(__dirname,"../site/image-client.js"),"utf8");
-const images=[];
-const hero={
-  complete:true,naturalWidth:0,handlers:{},classList:{add(){}},
-  addEventListener(type,fn){this.handlers[type]=fn},
-  removeAttribute(name){delete this[name]}
-};
+const path=require("node:path");
+const root=path.join(__dirname,"..");
+const source=fs.readFileSync(path.join(root,"site/image-client.js"),"utf8");
+const photos=[];
+const hero={addEventListener(type,handler){this[type]=handler},src:"broken",classList:{add(){}}};
 const doc={
   querySelector(sel){return sel===".hero-image"?hero:null},
   createElement(tag){
     assert.equal(tag,"img");
-    const image={tag,handlers:{},classList:{added:[],add(v){this.added.push(v)}},
-      addEventListener(type,fn){this.handlers[type]=fn},
-      removeAttribute(name){delete this[name]}};
-    images.push(image);return image;
+    const img={handlers:{},classList:{add(){}},addEventListener(type,handler){this.handlers[type]=handler}};
+    photos.push(img);return img;
   }
 };
 const context={window:{},document:doc,console};
 vm.runInNewContext(source,context);
 const lib=context.window.OperaAtlasImages;
-assert.ok(lib);
-assert.match(hero.src,/opera-stage\.svg$/);
-for(const work of ["Carmen","La traviata","Tosca","Rigoletto"]){
-  const photo=lib.element(lib.work({title:work}),"event-image");
-  assert.match(photo.src,/commons.wikimedia.org\/wiki\/Special:Redirect\/file\//);
-  photo.handlers.error();
-  assert.equal(photo.src,"./opera-stage.svg");
-  assert.deepEqual(photo.classList.added,["image-fallback"]);
+assert.ok(lib,"image library must initialize");
+assert.equal(Object.keys(lib.FILES).length,15,"one theatre photo per city and a separate festival venue");
+assert.ok(Object.keys(lib.WORKS).length>=12,"opera-specific historic posters");
+const venues=[
+  ["Torino","Teatro Regio"],["Como","Teatro Sociale"],["Pavia","Teatro Fraschini"],
+  ["Brescia","Teatro Grande"],["Cremona","Teatro Ponchielli"],["Milano","Teatro alla Scala"],
+  ["Verona","Arena di Verona"],["Venezia","Teatro La Fenice"],["Palermo","Teatro Massimo"],
+  ["Parma","Teatro Regio di Parma"],["Novara","Teatro Coccia"],["Bergamo","Teatro Donizetti"],
+  ["Reggio Emilia","Teatro Valli"],["Ravenna","Teatro Dante Alighieri"]
+];
+const ids=new Set(venues.map(([city,name])=>lib.venue({municipality:city,venue:name}).src));
+assert.equal(ids.size,venues.length,"each theatre needs a different image");
+for(const [city,name] of venues){
+  const item=lib.venue({municipality:city,venue:name});
+  assert.ok(item.src.startsWith("https://commons.wikimedia.org/wiki/Special:Redirect/file/"),city);
+  const img=lib.element(item,"directory-image");
+  assert.ok(img.handlers.error,city);
+  img.handlers.error();
+  assert.ok(img.src.startsWith("data:image/svg+xml"),"theatre fallback is self-contained");
 }
-assert.match(lib.venue({city:"Venezia"}).src,/Teatro-la-fenice/);
-assert.match(lib.venue({city:"Torino"}).src,/Teatro_Regio/);
-assert.ok(fs.statSync(require("node:path").join(__dirname,"../site/opera-stage.svg")).size>1000);
-process.stdout.write("image library loaded; opera, venue and local fallbacks verified\n");
+const posterWorks=[
+ "La traviata","L'italiana in Algeri","Edgar","Salome","Cavalleria rusticana",
+ "Pagliacci","La bohème","Iris","Carmen","Evgenij Onegin","Turandot",
+ "Un ballo in maschera","Death in Venice","Otello","Aida","Fedora",
+ "Samson et Dalila","Macbeth","Madama Butterfly","Jenůfa","Lucia di Lammermoor",
+ "Tosca","Don Giovanni","Nabucco","Rigoletto"];
+const images=posterWorks.map(title=>lib.work({title}));
+assert.equal(new Set(images.map(x=>x.src)).size,images.length,"every opera needs a distinct image");
+for(const item of images){
+  if(item.src.startsWith("https://")){
+    const img=lib.element(item,"event-image");
+    img.handlers.error();
+    assert.ok(img.src.startsWith("data:image/svg+xml"),"historical poster fallback must be unique");
+  }else assert.ok(item.src.startsWith("data:image/svg+xml"));
+}
+hero.error();
+assert.ok(hero.src.startsWith("data:image/svg+xml"),"hero should not be an empty image");
+console.log("theatre photos: 14 distinct; opera art: 25 distinct; fallback self-contained");
