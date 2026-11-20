@@ -13,6 +13,12 @@ const search=document.getElementById("directory-search");
 const status=document.getElementById("directory-status");
 const entries=[];
 let festivalListings=[];
+let editorial={synopses:{},venues:{}};
+async function loadEditorial(){
+  const [works,theatres]=await Promise.allSettled(["./work-synopses.json","./theatre-profiles.json"].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error("Editorial content unavailable");return r.json();})));
+  if(works.status==="fulfilled"&&works.value.schema_version===1)editorial.synopses=works.value.synopses||{};
+  if(theatres.status==="fulfilled"&&theatres.value.schema_version===1)editorial.venues=theatres.value.venues||{};
+}
 function node(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
 function todayItaly(){const p=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());const v=k=>p.find(x=>x.type===k).value;return v("year")+"-"+v("month")+"-"+v("day");}
 function dateLabel(d){return new Intl.DateTimeFormat("it-IT",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(d+"T12:00:00Z"));}
@@ -29,12 +35,13 @@ function normalize(s){return String(s||"").normalize("NFKD").replace(/[\u0300-\u
 function render(){
   grid.replaceChildren();
   const q=normalize(search.value);
-  const filtered=entries.filter(x=>normalize([x.title,x.subtitle].join(" ")).includes(q));
+  const filtered=entries.filter(x=>normalize([x.title,x.subtitle,x.description].join(" ")).includes(q));
   for(const item of filtered){
     const card=node("article","directory-card");
     card.append(imageFor(item));
     const heading=node("h2"),link=node("a",null,item.title);link.href=item.url;heading.append(link);
     card.append(heading,node("p",null,item.subtitle));
+    if(item.description)card.append(node("p","directory-description",item.description));
     const action=node("a","detail-link",section==="opere"?"Scopri l’opera":section==="festival"?"Esplora il festival":"Scopri il teatro");
     action.href=item.url;card.append(action);grid.append(card);
   }
@@ -46,6 +53,7 @@ function render(){
 async function initialize(){
   try {
     const data=await window.OperaAtlasCatalog.load();
+    await loadEditorial();
     if(section==="festival"){
       const records=await window.OperaAtlasFestivals.load();
       const focus=params.get("id");
@@ -59,7 +67,7 @@ async function initialize(){
         if(!found){status.textContent="Festival non disponibile.";return;}
         const x=found.item;
         document.getElementById("directory-title").textContent=x.name+(x.edition?" · "+x.edition:"");
-        document.getElementById("directory-desc").textContent=x.city+" · "+x.region+" — "+x.note;
+        document.getElementById("directory-desc").textContent=x.description||x.city+" · "+x.region;
         search.hidden=true;
         const official=node("a","detail-link","Visita il sito del festival");
         official.href=x.official_url;official.target="_blank";official.rel="noopener noreferrer";
@@ -78,7 +86,7 @@ async function initialize(){
         for(const found of festivalListings){
           const x=found.item;
           entries.push({url:"./directory.html?section=festival&id="+encodeURIComponent(x.id),
-            title:x.name+(x.edition?" · "+x.edition:""),city:x.city,
+            title:x.name+(x.edition?" · "+x.edition:""),city:x.city,description:x.description||"",
             subtitle:x.city+" · "+x.region+" · "+(found.future.length?found.future.length+" date in programma":"Scopri il festival")});
         }
       }
@@ -89,7 +97,12 @@ async function initialize(){
       if(typeof e.title!=="string"||typeof e.venue!=="string"||!e.local_date)continue;
       const urls=window.OperaAtlasCatalog.urls(e);
       const url=section==="opere"?urls.work:urls.venue;
-      if(!grouped.has(url))grouped.set(url,{url,title:section==="opere"?e.title:e.venue,subtitle:section==="opere"?e.composer||"":e.municipality+" · "+(e.region||"Italia"),city:e.municipality});
+      if(!grouped.has(url)){
+        const profile=editorial.venues[e.municipality+"|"+e.venue];
+        grouped.set(url,{url,title:section==="opere"?e.title:e.venue,
+          subtitle:section==="opere"?e.composer||"":e.municipality+" · "+(e.region||"Italia"),city:e.municipality,
+          description:section==="opere"?editorial.synopses[e.work_slug]||"":profile?.description||""});
+      }
     }
     entries.push(...[...grouped.values()].sort((a,b)=>a.title.localeCompare(b.title,"it")));
     if(data.warning)status.textContent=data.warning;
