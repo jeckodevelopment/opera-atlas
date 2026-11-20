@@ -21,11 +21,11 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 - [ ] Pianificazione GitHub Actions con rispetto di robots.txt, condizioni di utilizzo, rate limit e caching.
 
 ### F3 — Portale pubblico
-- [ ] Catalogo eventi con filtri (date, opera, compositore, città, regione, teatro, festival). **Contratto JSON aggiornato per includere recite con ora sconosciuta; interfaccia web da implementare.**
+- [ ] Catalogo eventi con filtri (date, opera, compositore, città, regione, teatro, festival). **Prima UI statica con ricerca opera/compositore/teatro, filtri città/regione/date/orario e paginazione implementata; filtro festival e funzioni avanzate da sviluppare.**
 - [ ] Pagine opera, produzione, recita e luogo; URL ufficiale della biglietteria quando disponibile.
 - [ ] Mappa Leaflet/OSM con gruppi di marcatori, filtri e route esterne.
 - [ ] Geolocalizzazione solo su consenso, senza archiviazione delle coordinate personali.
-- [ ] UI responsive, accessibilità, chiarezza dati incompleti e data ultimo aggiornamento.
+- [ ] UI responsive, accessibilità, chiarezza dati incompleti e data ultimo aggiornamento. **Prima versione responsive con etichette, focus e visualizzazione esplicita di orario mancante; verifiche browser/accessibilità e metadati aggiornamento ancora da completare.**
 
 ### F4 — Osservatorio e rilascio
 - [ ] KPI coerenti (opere distinte, produzioni, recite, teatri attivi, regioni, classifiche).
@@ -43,7 +43,7 @@ Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati te
 Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
 
 ## Stato attuale
-Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter Teatro Regio, fetch opt-in, audit scansioni v4 e stati recite v5 implementati; batch multi-produzione e confronti incrementali delle recite disponibili; staging date-only OperaLombardia v7 disponibile e recite con dati essenziali esportabili nel catalogo pubblico; ROF da verificare per blocco HTTP 403; nessun job schedulato o catalogo pubblico online. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter Teatro Regio, fetch opt-in, audit scansioni v4 e stati recite v5 implementati; batch multi-produzione e confronti incrementali delle recite disponibili; staging date-only OperaLombardia v7 disponibile e recite con dati essenziali esportabili nel catalogo pubblico; ROF da verificare per blocco HTTP 403; nessun job schedulato o catalogo pubblico online; prima UI statica in `site/` sviluppata con dataset vuoto finché non vengono autorizzati ed esportati eventi verificati. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
 
 ## Esecuzione controllata e audit (migrazione v4)
 Il 20/11/2026 il percorso ufficiale `/opera-e-balletto-2026-2027/la-traviata` mostrava 11 righe distinte di recite (dal 26 febbraio al 10 marzo 2027), tra cui recite pomeridiane alle 15:00. Questa verifica è stata fatta consultando la pagina pubblica, **non** eseguendo il crawler della repository. Il parser rimane da confrontare con la sorgente HTML effettivamente scaricabile, che può avere struttura diversa da quella visibile nelle pagine renderizzate.

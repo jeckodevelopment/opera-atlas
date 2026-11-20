@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Opera Atlas: rappresentazioni operistiche in Italia da fonti ufficiali.">
+  <title>Opera Atlas — Calendario delle recite</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#catalogo">Vai alle recite</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="brand" aria-label="Opera Atlas — Home">
+        <span class="brand-symbol" aria-hidden="true">◉</span><span>Opera Atlas</span>
+      </a>
+      <span class="header-subtitle">Cartellone dell'opera in Italia</span>
+    </div>
+  </header>
+  <main class="container" id="catalogo">
+    <section class="intro" aria-labelledby="page-heading">
+      <p class="eyebrow">Il repertorio, vicino a te</p>
+      <h1 id="page-heading">Scopri le prossime recite</h1>
+      <p class="lede">Programmazioni tratte da fonti ufficiali. Quando conosciamo il giorno ma non l'ora, trovi comunque la recita con l'indicazione <strong>Orario da confermare</strong>.</p>
+    </section>
+    <section class="filter-panel" aria-labelledby="filter-heading">
+      <div class="filter-heading">
+        <h2 id="filter-heading">Cerca nel calendario</h2>
+        <button type="button" id="reset" class="reset">Azzera filtri</button>
+      </div>
+      <form id="filters" role="search">
+        <div class="form-grid">
+          <label>Opera, compositore o teatro
+            <input type="search" id="search" autocomplete="off" placeholder="Es. Rigoletto, Verdi, Scala">
+          </label>
+          <label>Città
+            <select id="city"><option value="">Tutte le città</option></select>
+          </label>
+          <label>Regione
+            <select id="region"><option value="">Tutte le regioni</option></select>
+          </label>
+          <label>Dal giorno
+            <input type="date" id="from">
+          </label>
+          <label>Al giorno
+            <input type="date" id="to">
+          </label>
+          <label>Orario
+            <select id="time-filter">
+              <option value="">Tutti gli orari</option>
+              <option value="known">Con orario</option>
+              <option value="unknown">Orario da confermare</option>
+            </select>
+          </label>
+        </div>
+      </form>
+    </section>
+    <div class="results-heading">
+      <h2>Le recite</h2>
+      <p id="count" role="status" aria-live="polite">Caricamento in corso…</p>
+    </div>
+    <div id="message" role="status" aria-live="polite"></div>
+    <div id="events" class="events"></div>
+    <nav class="pagination" aria-label="Navigazione risultati">
+      <button id="previous" type="button" disabled>Precedenti</button>
+      <span id="page-label" aria-live="polite"></span>
+      <button id="next" type="button" disabled>Successivi</button>
+    </nav>
+    <p class="data-note">Gli orari e le programmazioni possono cambiare. Verifica sempre i dettagli sul sito ufficiale prima di organizzare la visita.</p>
+  </main>
+  <footer class="site-footer"><div class="container">Opera Atlas · Catalogo informativo, non biglietteria · <a href="https://github.com/jeckodevelopment/opera-atlas">Codice e documentazione</a></div></footer>
+</body>
+</html>
