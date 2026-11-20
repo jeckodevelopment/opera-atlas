@@ -271,8 +271,16 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
     # Advance by one position per day. The previous stride of MAX_RESEARCH
     # could starve candidates permanently whenever the queue length was a
     # multiple of that budget (3, 6, 9, ...).
-    offset=today.toordinal()%len(options)
-    return (options[offset:]+options[:offset])[:MAX_RESEARCH]
+    # Verified source material may already exist for an uncatalogued
+    # work. Check those candidates first; all others retain fair rotation.
+    prepared=preverified_work_material()
+    ready=[x for x in options if slugify(official_title_hint(x)) in prepared]
+    other=[x for x in options if slugify(official_title_hint(x)) not in prepared]
+    def rotate(items):
+        if not items:return []
+        offset=today.toordinal()%len(items)
+        return items[offset:]+items[:offset]
+    return (rotate(ready)+rotate(other))[:MAX_RESEARCH]
 
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
