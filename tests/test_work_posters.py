@@ -25,6 +25,41 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertEqual(got["source_url"],url)
         self.assertIn("teatro",got["credit"])
 
+    def test_unrelated_open_graph_people_and_concerts_never_pass_for_work_posters(self):
+        # Observed real upstream metadata: conductor portraits and unrelated
+        # symphonic concerts appeared on official opera production pages.
+        bad=[
+            ("Anna Bolena","https://www.teatroallascala.org/static/upload/cia/ciampa-2-scaled.jpg"),
+            ("Don Quichotte","https://www.teatroallascala.org/static/upload/ber/bertrand-de-billy.jpg"),
+            ("I puritani","https://www.teatroallascala.org/static/upload/202/2025-concerto-fabio-luisi.jpg"),
+            ("Macbeth","https://www.teatroallascala.org/static/upload/202/2025-filarmonica-con-chung.jpg"),
+            ("Nixon in China","https://www.teatroallascala.org/static/upload/ken/kent-nagano---symphonie-de-beethoven.jpg"),
+        ]
+        for work,image_url in bad:
+            with self.subTest(work=work):
+                self.assertFalse(posters.image_matches_work(image_url,work))
+                html=f'<meta property="og:image" content="{image_url}">'
+                self.assertIsNone(posters.extract_official_poster(
+                    html,"https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",work))
+        self.assertTrue(posters.image_matches_work(
+            "https://www.teatroallascala.org/static/upload/la-/la-boheme--7-.jpg","La bohème"))
+
+    def test_seven_recently_published_works_have_real_archival_fallbacks(self):
+        required={"al-cavallino-bianco","il-pipistrello","partenope",
+                  "don-quichotte","norma","nozze-istriane","adriana-lecouvreur"}
+        archive=posters.load_archival_art(required)
+        self.assertEqual(set(archive),required)
+        for slug,record in archive.items():
+            with self.subTest(work=slug):
+                self.assertEqual(record["kind"],"archival_work_image")
+                self.assertTrue(record["image_url"].startswith(
+                    "https://commons.wikimedia.org/wiki/Special:Redirect/file/"))
+                self.assertTrue(record["source_url"].startswith(
+                    "https://commons.wikimedia.org/wiki/File:"))
+                self.assertTrue(record["credit"])
+                self.assertTrue(record["license"])
+                self.assertIn("non allestimento",record["alt"].lower() if "non allestimento" in record["alt"].lower() else "non allestimento")
+
     def test_never_accepts_logos_trackers_unsafe_hosts_or_landscape_banners(self):
         url="https://www.teatrolafenice.it/event/norma/"
         bad=[
@@ -60,7 +95,7 @@ class PosterPublicationTests(unittest.TestCase):
                  "official_root":"https://www.teatrolafenice.it/",
                  "source_url":"https://www.teatrolafenice.it/event/normatebar/"},
             ]
-            html='''<meta property="og:image" content="/wp-content/uploads/adriana-poster.jpg">
+            html='''<meta property="og:image" content="/wp-content/uploads/adriana-lecouvreur-poster.jpg">
             <meta property="og:image:width" content="700">
             <meta property="og:image:height" content="1000">'''
             calls=[]
@@ -83,7 +118,7 @@ class PosterPublicationTests(unittest.TestCase):
                 self.assertEqual(result["works"]["adriana-lecouvreur"]["kind"],
                                  "official_production_image")
                 self.assertEqual(result["works"]["norma"]["kind"],
-                                 "original_editorial_cover")
+                                 "archival_work_image")
                 self.assertEqual(len(calls),2)
                 self.assertTrue(published.exists())
                 evidence=json.loads(stored.read_text())
