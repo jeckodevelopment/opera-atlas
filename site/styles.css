@@ -275,7 +275,7 @@
 }
 
 /* Official Opera+ Atlas mark and legal reading experience */
-.brand-logo{display:block;width:96px;height:74px;object-fit:contain;background:#fff;flex-shrink:0}
+.brand-logo{display:block;width:96px;height:74px;object-fit:contain;background:transparent;flex-shrink:0}
 .site-header .brand{padding:0;min-width:96px}
 .footer-inner{display:flex;gap:8px 18px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
 .footer-inner strong{font-weight:700;color:inherit}
