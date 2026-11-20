@@ -146,13 +146,14 @@ async function appendHistory(event) {
       const history=Array.isArray(doc.works)?doc.works.find(w=>w.slug===slug)?.history:doc.works[slug];
       if(!history)return;
       const historyParts=[];
-      const librettists=String(history.librettist||"").trim();
+      const librettists=String(history.librettist||"").trim().replace(/;\s*/g," e ");
       const composed=Number.isInteger(history.composition_year)?history.composition_year:null;
       const premiered=Number.isInteger(history.premiere_year)?history.premiere_year:null;
       const place=[history.premiere_venue,history.premiere_city].filter(x=>typeof x==="string"&&x.trim()).join(" di ");
       if(composed){
-        historyParts.push("Composta nel "+composed+(librettists?", su libretto di "+librettists:"")+
-          ", "+event.title+" è un’opera di "+event.composer+".");
+        historyParts.push(event.title+" fu composta nel "+composed+
+          (event.composer?" da "+event.composer:"")+
+          (librettists?", su libretto di "+librettists:"")+".");
       }else if(librettists){
         historyParts.push("Il libretto di "+event.title+" è di "+librettists+".");
       }
