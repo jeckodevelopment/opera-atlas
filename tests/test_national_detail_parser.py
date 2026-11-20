@@ -38,6 +38,29 @@ class NationalDetailsTests(unittest.TestCase):
         self.assertEqual(actual,[("2027-02-19","20:00"),("2027-02-21","15:30"),
                                  ("2027-02-23","20:00"),("2027-02-25","20:00")])
 
+    def test_live_parma_layout_has_cast_navigation_before_ticket_cards(self):
+        # Mirrors the official Rigoletto detail page: "Cast" occurs in
+        # a navigation bar well before any day/time cards.
+        html="""<nav>Spettacoli | Stagione 27 | Opera</nav>
+        <h1>Rigoletto</h1><p>Giuseppe Verdi</p>
+        <ul><li>14 feb 2027</li><li>17 feb 2027</li><li>19 feb 2027</li>
+        <li>21 feb 2027</li><li>23 feb 2027</li><li>25 feb 2027</li></ul>
+        <nav><a>Spettacolo</a><a>Cast</a><a>Informazioni</a></nav>
+        <h2>Spettacolo</h2><p>Musica&nbsp;Giuseppe Verdi</p>
+        <p>Melodramma in tre atti</p><p>Teatro Regio di Parma</p>
+        <section><p>dom 14 feb</p><p>20:00</p><p>Prova Under30</p>
+        <p>mer 17 feb</p><p>15:30</p><p>Prova Aperta</p>
+        <p>ven 19 feb</p><p>20:00</p><p>TURNO A</p>
+        <p>dom 21 feb</p><p>15:30</p><p>TURNO D</p>
+        <p>mar 23 feb</p><p>20:00</p><p>TURNO B</p>
+        <p>gio 25 feb</p><p>20:00</p><p>TURNO C</p></section>
+        <p>Tickets for the open rehearsal will be available later</p>
+        <h2>Cast</h2><p>Rigoletto</p>"""
+        actual=parse_national_showtimes(html,source_key="parma-opera-2027",
+                  url=PARMA_URL,title="Rigoletto",composer="Giuseppe Verdi")
+        self.assertEqual(actual,[("2027-02-19","20:00"),("2027-02-21","15:30"),
+                                 ("2027-02-23","20:00"),("2027-02-25","20:00")])
+
     def test_palermo_date_summary_proves_year(self):
         html="""<section>Date <p>5 Febbraio</p><p>19:00</p><p>Turno Prime</p>
         <p>7 Febbraio</p><p>17:30</p><p>Turno D</p>

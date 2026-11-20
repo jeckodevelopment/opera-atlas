@@ -94,8 +94,14 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
             r"\b\d{1,2}\s+(?:"+MONTH_RE+r")\s+(20\d{2})\b",header,re.I)}
         if len(year_hits)!=1:raise ValueError("Parma year ambiguous")
         year=next(iter(year_hits))
-        # Restrict to the ticketing card list, excluding the footer.
-        segment=re.split(r"(?i)\b(?:Tickets for|acquista 19|Cast)\b",text,maxsplit=1)[0]
+        # Parma places an anchor navigation ("Spettacolo / Cast /
+        # Informazioni") BEFORE the actual date cards. Splitting at "Cast"
+        # truncated every live showtime. Start after the opera's composer
+        # section and end at the ticket-information paragraph instead.
+        detail=re.split(r"(?i)\bMusica\s+"+re.escape(composer)+r"\b",text,maxsplit=1)
+        if len(detail)!=2:
+            raise ValueError("missing Parma composer section")
+        segment=re.split(r"(?i)\bTickets for\b",detail[1],maxsplit=1)[0]
         rx=re.compile(r"(?i)\b"+WEEKDAY+r"\s+(\d{1,2})\s+("+MONTH_RE+
                       r")\s+"+CLOCK+r"\b")
         matches=list(rx.finditer(segment))
