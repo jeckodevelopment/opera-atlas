@@ -2,7 +2,7 @@
 
 Catalogo nazionale delle rappresentazioni di opera lirica in Italia e osservatorio statistico collegato al progetto culturale Opera+.
 
-> Stato: sviluppo Fasi 1–3 — modello SQLite, acquisizioni controllate e **primo catalogo web statico** disponibili. Nessuna programmazione reale è stata ancora pubblicata: il dataset iniziale è vuoto fino a verifica delle fonti e delle recite.
+> Stato: sviluppo Fasi 1–3 — modello SQLite, acquisizioni controllate e **primo catalogo web statico** disponibili. Prima pubblicazione editoriale di 19 recite confermate sulle pagine ufficiali di due organizzatori, con data e sede verificati; acquisizione automatica continua e completezza nazionale da completare.
 
 ## Obiettivi
 
@@ -75,14 +75,24 @@ Per finalizzare manualmente gli orari servono ulteriori prove dalle fonti uffici
 Nel catalogo, una recita verificata con **opera, data, teatro e città** è un contenuto utile e deve essere mostrato anche senza orario. Il JSON esporta recite complete e parziali nello stesso array `performances`; per quelle senza ora usa `starts_at: null` e `time_known: false`, mantenendo giorno, opera, teatro, città, URL originale e label `Orario da confermare`. Quando una recita con ora confermata presenta lo stesso titolo, teatro, città e giorno, prevale la scheda completa nell'export; la prova parziale rimane nel database. La futura UI dovrà rendere visibile l'indicatore e non formattare un valore null come mezzanotte.
 
 ## Primo catalogo web pubblico (Fase 3, implementazione iniziale)
-È disponibile `site/index.html` con ricerca, filtri per città/regione/date/orario e schede delle recite tratte dal JSON esportato dal database. Le recite prive di orario sono mostrate come **Orario da confermare**. Il file `site/performances.json` iniziale è vuoto: nessun evento inventato. Per il collaudo locale:
+È disponibile `site/index.html` con ricerca, filtri per città/regione/date/orario e schede delle recite tratte dal JSON esportato dal database. Le recite prive di orario sono mostrate come **Orario da confermare**. Il file `site/performances.json` contiene **19 recite verificate singolarmente** da Teatro Regio Torino e OperaLombardia, rigenerabili dal manifesto editoriale `data/verified-launch-catalog.json`. Nessun evento inventato. Per il collaudo locale:
 ```sh
 python -m opera_atlas.ingest_cli --db atlas.sqlite3 export --output site/performances.json
 python -m http.server 8000 --directory site
 ```
-**Esportare solo un database con fonti approvate e dati effettivamente verificati.** Vedi [guida catalogo](docs/PUBLIC_CATALOG.md). La mappa, le pagine di dettaglio e le altre funzionalità F3 sono ancora da realizzare.
+**Esportare solo un database con fonti approvate e dati effettivamente verificati.** Vedi [guida catalogo](docs/PUBLIC_CATALOG.md). La mappa e le altre funzionalità F3 sono ancora da realizzare.
 
 ### Schede di dettaglio e pubblicazione
 Il catalogo comprende le schede dinamiche per **opera, recita e teatro** in `site/detail.html` (parametri `type` e `key`), tutte derivate dall'export pubblico verificato e navigabili dalle schede del calendario. Le recite con orario mancante conservano la dicitura **Orario da confermare** anche nel dettaglio. Non vengono copiati testi editoriali o immagini di terzi.
 
 Il frontend viene distribuito in `https://jeckodevelopment.com/dev/opera-atlas/` tramite il workflow SFTP dedicato **nel repository `jeckodevelopment/jeckodevsite`**, che utilizza gli stessi secret SFTP e il rollback già operativi per le altre applicazioni. Il deploy verifica via HTTPS ogni asset pubblicato; l'export iniziale rimane `performances: []`, non vengono inventate recite. Vedi [catalogo pubblico](docs/PUBLIC_CATALOG.md).
+
+### Primo popolamento editoriale e identità grafica
+Il 20 novembre 2026 sono stati verificati sulle pagine ufficiali: **11 recite di La traviata** al Teatro Regio di Torino (26/02–10/03/2027, orari riportati), **8 recite di L’italiana in Algeri** per OperaLombardia (13/11–12/12/2026: teatro e data, ma nessun orario). Le pagine ufficiali sono collegate in ogni evento. Il manifesto sorgente curato è `data/verified-launch-catalog.json`; rigenerare o controllare il JSON pubblicabile con:
+```sh
+python -m scripts.build_verified_catalog --check
+python -m unittest discover -s tests -v
+```
+Non è una scansione automatica, non cambia lo stato delle fonti nel database SQLite e non dimostra la copertura nazionale. Conservare la provenienza e aggiornare le date solo dopo nuova verifica ufficiale; non ripubblicare dati obsoleti in automatico.
+
+Il frontend adotta una **prima identità grafica Opera Atlas**, ispirata a Opera+ Funding senza riprenderne logo o marchio: palette avorio/bianco con accenti oro, titoli serif, controlli compatti, metriche sintetiche e schede orizzontali con data laterale. Il marchio è per ora testuale, predisposto per un futuro logo specifico.
