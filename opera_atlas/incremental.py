@@ -73,6 +73,6 @@ def acknowledge_delta(conn: sqlite3.Connection, delta_id: int, *, reason: str) -
         raise ValueError("unknown or already acknowledged delta")
     conn.execute(
         """UPDATE source_snapshot_deltas SET state='acknowledged',
-           acknowledged_at=CURRENT_TIMESTAMP WHERE id=?""",
-        (delta_id,),
+           acknowledged_at=CURRENT_TIMESTAMP, acknowledged_reason=? WHERE id=?""",
+        (reason.strip(),delta_id),
     )
