@@ -61,3 +61,13 @@ Test, script, controlli e feed esclusivamente nel repository \`opera-atlas\`. L'
 
 ### Coproduzioni OperaLombardia 2026/27
 Il registro di gruppo unisce, senza confondere le diverse opere, le sei produzioni condivise di L'italiana in Algeri, Turandot, Death in Venice, Cavalleria rusticana, Pagliacci e Un ballo in maschera. Il teatro di Torino rimane distinto dalle coproduzioni del circuito. Il feed canonico attuale comprende 208 recite e 14 teatri; le date senza ora restano esplicitamente non confermate.
+
+## Rifinitura editoriale e fotografica — 20 novembre 2026
+
+Le card non sono più elenchi tecnici privi di immagini: i cataloghi mostrano fotografie illustrative con attribuzione documentata in `site/credits.html` e componenti visivi condivisi da `site/image-client.js`. Per le immagini le fonti e le licenze sono verificate su Wikimedia Commons; foto storiche e documentarie **non** sono spacciate per immagini delle produzioni attualmente in vendita. Non vengono copiate le immagini temporanee delle demo senza autorizzazione.
+
+Layout approvato: 3 colonne per la vista elenco delle produzioni, 4 per le directory su desktop; riduzione responsiva fino a 2 colonne su mobile, con fallback a 1 solo su schermi molto stretti. Homepage con fotografia editoriale e cataloghi di scoperta illustrati.
+
+Copy destinato ai visitatori e non agli operatori: eliminati ripetitivi avvisi di audit e disponibilità dai cataloghi, rimossi i collegamenti «Fonte ufficiale» dalle card, conservate le verifiche nel backend e i link dell'organizzatore soltanto in fondo alle **schede di dettaglio** sotto «Programma e biglietti». Festival con etichette semplici, non tecniche. Permangono messaggi di errore essenziali se il catalogo non viene caricato e l'avvertenza sulle distanze stimate.
+
+Verificare: il correttissimo comportamento delle card a 3/4/2 colonne, il caricamento delle immagini (con fallback cromatico), l'accessibilità delle fotografie, i link dei crediti e l'effettiva assenza di collegamenti esterni ufficiali nelle viste catalogo. Il publisher SFTP di jeckodevsite deve includere i nuovi asset `credits.html` e `image-client.js`, senza aggiungere logica o test applicativi.
