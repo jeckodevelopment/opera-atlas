@@ -37,8 +37,8 @@ def normalized(value: str) -> str:
     return unicodedata.normalize("NFKC", value).casefold()
 
 
-def assemble(facts: dict, registry: dict) -> dict:
-    legacy = legacy_build(facts)
+def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = None) -> dict:
+    legacy = legacy_build(facts, approved_extra=approved_extra)
     by_legacy = {item["id"]: item for item in legacy["performances"]}
     if registry.get("schema_version") != 1:
         raise ValueError("unknown identity registry")

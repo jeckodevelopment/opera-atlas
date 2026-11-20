@@ -65,6 +65,34 @@ TIME_EVIDENCE_URLS = {
 }
 
 
+AUTO_SOURCE_URLS = ROOT / "data" / "auto-source-urls.json"
+
+def validate_auto_sources(urls: list[str]) -> set[str]:
+    """Only exact official production URLs from approved national indexes."""
+    from scripts.discover_season_indexes import CONFIG, validate_config, eligible
+    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    sources = [x for x in validate_config(config) if x["access_status"] == "approved"]
+    if not isinstance(urls,list) or len(urls)!=len(set(urls)):
+        raise ValueError("invalid auto source registry")
+    allowed = set()
+    for url in urls:
+        if not isinstance(url,str) or not url.startswith("https://"):
+            raise ValueError("invalid automatic official URL")
+        parsed=urlsplit(url)
+        if (parsed.query or parsed.fragment or parsed.username or parsed.password
+            or parsed.port is not None or not any(
+                parsed.hostname==urlsplit(x["official_url"]).hostname
+                and eligible(x["key"],url) for x in sources)):
+            raise ValueError("automatic source outside an approved official production section")
+        allowed.add(url)
+    return allowed
+
+def auto_approved_pages() -> set[str]:
+    if not AUTO_SOURCE_URLS.exists():return set()
+    doc=json.loads(AUTO_SOURCE_URLS.read_text(encoding="utf-8"))
+    if doc.get("schema_version")!=1:return set()
+    return validate_auto_sources(doc["urls"])
+
 def validate_time_evidence(manifest: dict, evidence: dict) -> dict:
     """Validate additional official showtimes, bound to known staging/date.
 
@@ -118,17 +146,18 @@ def official_local_time(day: str, clock: str) -> str:
     return local.isoformat(timespec="seconds")
 
 
-def build(manifest: dict, evidence: dict | None = None) -> dict:
+def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[str] | None = None) -> dict:
     if manifest.get("schema_version") != 1 or not isinstance(manifest.get("productions"), list):
         raise ValueError("invalid editorial manifest")
     if evidence is None:
         evidence = json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
     showtimes = validate_time_evidence(manifest, evidence)
+    permitted = APPROVED_PAGES | (auto_approved_pages() if approved_extra is None else approved_extra)
     events = []
     keys = set()
     for production in manifest["productions"]:
         url = production["source_url"]
-        if url not in APPROVED_PAGES:
+        if url not in permitted:
             raise ValueError("non-reviewed source page")
         for field in ("key", "title", "composer", "venue", "municipality", "region"):
             if not isinstance(production.get(field), str) or not production[field].strip():
@@ -151,7 +180,7 @@ def build(manifest: dict, evidence: dict | None = None) -> dict:
                 raise ValueError("duplicate editorial performance")
             keys.add(uid)
             # The curated Regio dates are all outside Italy's DST period.
-            if hour is not None and url not in APPROVED_PAGES - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
+            if hour is not None and url not in permitted - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
                 raise ValueError("no verified time for this source")
             if hour is None and url not in {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
                 raise ValueError("expected exact Regio performance hour")
