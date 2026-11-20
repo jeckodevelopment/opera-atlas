@@ -115,9 +115,9 @@ class PosterPublicationTests(unittest.TestCase):
                  patch.object(posters,"connect",return_value=FakeDB()),patch.object(posters,"migrate"):
                 result=posters.publish(network_enabled=True,fetcher=mock,
                                        today=date(2026,11,21),max_pages=2)
-                self.assertEqual(result["works"]["adriana-lecouvreur"]["kind"],
+                self.assertEqual(result["works"]["oa-w-000033"]["kind"],
                                  "official_production_image")
-                self.assertEqual(result["works"]["norma"]["kind"],
+                self.assertEqual(result["works"]["oa-w-000031"]["kind"],
                                  "archival_work_image")
                 self.assertEqual(len(calls),2)
                 self.assertTrue(published.exists())
@@ -127,11 +127,52 @@ class PosterPublicationTests(unittest.TestCase):
                                 today=date(2026,11,21),max_pages=2)
                 self.assertEqual(len(calls),2) # no repeat within cooldown
 
+    def test_homonymous_operas_get_distinct_permanent_poster_identities(self):
+        from scripts.publish_catalog_v2 import REGISTRY
+        works=list(json.loads(REGISTRY.read_text(encoding="utf-8"))["works"].values())
+        duplicates=[w for w in works if w["slug"]=="la-boheme"]
+        self.assertEqual(len(duplicates),2)
+        self.assertNotEqual(duplicates[0]["id"],duplicates[1]["id"])
+        # Real feed must contain a distinct entry for *every* canonical work
+        # and must not silently merge the two La bohème composers.
+        with TemporaryDirectory() as temp:
+            root=Path(temp)
+            with patch.object(posters,"EVIDENCE",root/"empty-evidence.json"),\
+                 patch.object(posters,"OUTPUT",root/"work-posters.json"),\
+                 patch.object(posters,"HEALTH",root/"health.json"),\
+                 patch.object(posters,"connect"),patch.object(posters,"migrate"),\
+                 patch.object(posters,"canonical_sources",return_value=[]):
+                result=posters.publish(network_enabled=False,max_pages=0)
+        self.assertEqual(result["schema_version"],2)
+        self.assertEqual(len(result["works"]),len(works))
+        self.assertEqual({d["id"] for d in duplicates} &
+                         set(result["works"]),{d["id"] for d in duplicates})
+        self.assertTrue(all(item["work_id"]==work_id
+                            for work_id,item in result["works"].items()))
+
+    def test_poster_schema_refuses_mismatched_work_id(self):
+        from scripts.publish_catalog_v2 import REGISTRY
+        works=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
+        with TemporaryDirectory() as temp:
+            output=Path(temp)/"posters.json"
+            content={"schema_version":2,"works":{
+                w["id"]:{"work_id":w["id"],"kind":"original_editorial_cover",
+                         "alt":w["title"]} for w in works.values()}}
+            output.write_text(json.dumps(content),encoding="utf-8")
+            with patch.object(posters,"OUTPUT",output):
+                posters.check()
+                key=next(iter(content["works"]))
+                content["works"][key]["work_id"]="oa-w-999999"
+                output.write_text(json.dumps(content),encoding="utf-8")
+                with self.assertRaises(ValueError):
+                    posters.check()
+
     def test_frontend_loads_posters_without_redeploying_on_each_new_work(self):
         root=Path(__file__).resolve().parents[1]
         image_js=(root/"site/image-client.js").read_text(encoding="utf-8")
         self.assertIn("public/catalog/work-posters.json",image_js)
         self.assertIn("chosen.kind===\"official_production_image\"",image_js)
+        self.assertIn("posters[event?.work_id]",image_js)
         for name in ("app.js","detail.js","directory.js"):
             text=(root/"site"/name).read_text(encoding="utf-8")
             self.assertIn("await window.OperaAtlasImages?.load?.()",text)
