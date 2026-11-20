@@ -4544,6 +4544,24 @@
       ]
     },
     {
+      "id": "curated:auto-9a4c8e6f9ca9682d:2027-08-12",
+      "starts_at": "2027-08-12T21:00:00+02:00",
+      "local_date": "2027-08-12",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+      ]
+    },
+    {
       "id": "curated:auto-8e417ad6e506eaf0:2027-08-13",
       "starts_at": "2027-08-13T21:00:00+02:00",
       "local_date": "2027-08-13",
@@ -4634,6 +4652,24 @@
       ]
     },
     {
+      "id": "curated:auto-9a4c8e6f9ca9682d:2027-08-22",
+      "starts_at": "2027-08-22T21:00:00+02:00",
+      "local_date": "2027-08-22",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+      ]
+    },
+    {
       "id": "curated:auto-b67d637b2f593f67:2027-08-26",
       "starts_at": "2027-08-26T21:00:00+02:00",
       "local_date": "2027-08-26",
@@ -4667,6 +4703,42 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/carmen/"
+      ]
+    },
+    {
+      "id": "curated:auto-9a4c8e6f9ca9682d:2027-08-28",
+      "starts_at": "2027-08-28T21:00:00+02:00",
+      "local_date": "2027-08-28",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+      ]
+    },
+    {
+      "id": "curated:auto-9a4c8e6f9ca9682d:2027-09-02",
+      "starts_at": "2027-09-02T21:00:00+02:00",
+      "local_date": "2027-09-02",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
       ]
     },
     {
@@ -4721,6 +4793,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/carmen/"
+      ]
+    },
+    {
+      "id": "curated:auto-9a4c8e6f9ca9682d:2027-09-08",
+      "starts_at": "2027-09-08T21:00:00+02:00",
+      "local_date": "2027-09-08",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
       ]
     },
     {

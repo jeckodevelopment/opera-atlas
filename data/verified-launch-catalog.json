@@ -1667,6 +1667,37 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-9a4c8e6f9ca9682d",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
+      "dates": [
+        [
+          "2027-08-12",
+          "21:00"
+        ],
+        [
+          "2027-08-22",
+          "21:00"
+        ],
+        [
+          "2027-08-28",
+          "21:00"
+        ],
+        [
+          "2027-09-02",
+          "21:00"
+        ],
+        [
+          "2027-09-08",
+          "21:00"
+        ]
+      ]
     }
   ]
 }

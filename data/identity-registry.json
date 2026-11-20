@@ -713,6 +713,15 @@
       "slug": "rigoletto",
       "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
       "season": "2027"
+    },
+    "auto-9a4c8e6f9ca9682d": {
+      "id": "oa-s-000056",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000007",
+      "slug": "aida",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
+      "season": "2027",
+      "route_slug": "aida-ed-stefano-poda"
     }
   },
   "performances": {
@@ -2305,6 +2314,36 @@
       "staging_id": "oa-s-000055",
       "original_date": "2027-02-25",
       "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/"
+    },
+    "auto-9a4c8e6f9ca9682d|2027-08-12": {
+      "id": "oa-r-000266",
+      "staging_id": "oa-s-000056",
+      "original_date": "2027-08-12",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+    },
+    "auto-9a4c8e6f9ca9682d|2027-08-22": {
+      "id": "oa-r-000267",
+      "staging_id": "oa-s-000056",
+      "original_date": "2027-08-22",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+    },
+    "auto-9a4c8e6f9ca9682d|2027-08-28": {
+      "id": "oa-r-000268",
+      "staging_id": "oa-s-000056",
+      "original_date": "2027-08-28",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+    },
+    "auto-9a4c8e6f9ca9682d|2027-09-02": {
+      "id": "oa-r-000269",
+      "staging_id": "oa-s-000056",
+      "original_date": "2027-09-02",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+    },
+    "auto-9a4c8e6f9ca9682d|2027-09-08": {
+      "id": "oa-r-000270",
+      "staging_id": "oa-s-000056",
+      "original_date": "2027-09-08",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
     }
   }
 }

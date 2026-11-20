@@ -193,6 +193,51 @@
       ]
     },
     {
+      "candidate_id": "oa-index-9a4c8e6f9ca9682d8d9d",
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
+      "content_sha256": "4c4a84ada44a8ba561356af10dd90d41f08e1eaeb7fbd52301674aea21bc21b7",
+      "checked_at": "2026-11-20T22:54:53+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-08-12",
+          "starts_at": "2027-08-12T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-08-22",
+          "starts_at": "2027-08-22T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-08-28",
+          "starts_at": "2027-08-28T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-09-02",
+          "starts_at": "2027-09-02T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-09-08",
+          "starts_at": "2027-09-08T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-b67d637b2f593f6756c7",
       "source_key": "arena-festival-2027",
       "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
