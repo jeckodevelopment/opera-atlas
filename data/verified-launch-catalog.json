@@ -790,6 +790,217 @@
           "17:00"
         ]
       ]
+    },
+    {
+      "key": "fenice-jenufa-2027",
+      "title": "Jenůfa",
+      "composer": "Leoš Janáček",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/",
+      "dates": [
+        [
+          "2027-03-12",
+          "19:00"
+        ],
+        [
+          "2027-03-14",
+          "15:30"
+        ],
+        [
+          "2027-03-16",
+          "19:00"
+        ],
+        [
+          "2027-03-18",
+          "19:00"
+        ],
+        [
+          "2027-03-20",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "fenice-madama-butterfly-2027",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/",
+      "dates": [
+        [
+          "2027-01-30",
+          "19:00"
+        ],
+        [
+          "2027-01-31",
+          "15:30"
+        ],
+        [
+          "2027-02-02",
+          "19:00"
+        ],
+        [
+          "2027-02-03",
+          "19:00"
+        ],
+        [
+          "2027-02-04",
+          "19:00"
+        ],
+        [
+          "2027-02-05",
+          "19:00"
+        ],
+        [
+          "2027-02-06",
+          "15:30"
+        ],
+        [
+          "2027-02-07",
+          "17:00"
+        ],
+        [
+          "2027-02-09",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "fenice-carmen-2027",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/",
+      "dates": [
+        [
+          "2027-04-23",
+          "19:00"
+        ],
+        [
+          "2027-04-24",
+          "19:00"
+        ],
+        [
+          "2027-04-27",
+          "19:00"
+        ],
+        [
+          "2027-04-28",
+          "19:00"
+        ],
+        [
+          "2027-04-29",
+          "19:00"
+        ],
+        [
+          "2027-04-30",
+          "19:00"
+        ],
+        [
+          "2027-05-02",
+          "15:30"
+        ],
+        [
+          "2027-05-04",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "massimo-lucia-lammermoor-2027",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/",
+      "dates": [
+        [
+          "2027-03-05",
+          "20:00"
+        ],
+        [
+          "2027-03-06",
+          "20:00"
+        ],
+        [
+          "2027-03-07",
+          "17:30"
+        ],
+        [
+          "2027-03-09",
+          "18:30"
+        ],
+        [
+          "2027-03-10",
+          "19:00"
+        ],
+        [
+          "2027-03-11",
+          "18:30"
+        ],
+        [
+          "2027-03-12",
+          "19:00"
+        ],
+        [
+          "2027-03-13",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "massimo-tosca-2027",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/",
+      "dates": [
+        [
+          "2027-04-18",
+          "19:00"
+        ],
+        [
+          "2027-04-20",
+          "19:00"
+        ],
+        [
+          "2027-04-21",
+          "18:30"
+        ],
+        [
+          "2027-04-22",
+          "19:00"
+        ],
+        [
+          "2027-04-23",
+          "20:00"
+        ],
+        [
+          "2027-04-24",
+          "18:30"
+        ],
+        [
+          "2027-04-27",
+          "19:00"
+        ],
+        [
+          "2027-04-28",
+          "18:30"
+        ],
+        [
+          "2027-04-29",
+          "19:00"
+        ]
+      ]
     }
   ]
 }
