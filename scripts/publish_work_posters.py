@@ -161,8 +161,8 @@ def canonical_sources()->list[dict]:
         if len(matches)!=1:continue
         work=matches[0]
         slug=work["slug"]
-        if (slug,url) in seen:continue
-        seen.add((slug,url))
+        if (work["id"],url) in seen:continue
+        seen.add((work["id"],url))
         rows.append({"slug":slug,"work_id":work["id"],"title":title,
                      "source_key":source["key"],
                      "official_root":source["official_url"],"source_url":url})
@@ -173,23 +173,36 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
     if not 0<=max_pages<=MAX_PAGES:raise ValueError("invalid poster fetch limit")
     current=json.loads(EVIDENCE.read_text(encoding="utf-8")) if EVIDENCE.exists() else {
         "schema_version":1,"posters":{},"checks":{}}
-    if current.get("schema_version")!=1 or not isinstance(current.get("posters"),dict):
+    if current.get("schema_version") not in (1,2) or not isinstance(current.get("posters"),dict):
         raise ValueError("invalid poster evidence")
-    posters={k:v.copy() for k,v in current["posters"].items()}
     checks=current.get("checks",{}).copy()
     sources=canonical_sources()
-    source_slugs={x["slug"] for x in sources}
-    # Candidate metadata must not leak into the published feed unless the
-    # work already exists in the verified canonical manifest.
-    known_slugs={x["slug"] for x in json.loads(
-        REGISTRY.read_text(encoding="utf-8"))["works"].values()}
-    by_slug={w["slug"]:w for w in json.loads(
-        REGISTRY.read_text(encoding="utf-8"))["works"].values()}
-    # Correct previously accepted OpenGraph images that depict conductors
-    # or unrelated concerts, rather than the claimed opera.
-    posters={k:v for k,v in posters.items() if k in known_slugs and
-             image_matches_work(v.get("image_url",""),by_slug[k]["title"])}
-    archival=load_archival_art(known_slugs)
+    registry_works=list(json.loads(REGISTRY.read_text(encoding="utf-8"))["works"].values())
+    by_id={w["id"]:w for w in registry_works}
+    ids_by_slug={}
+    for w in registry_works:
+        ids_by_slug.setdefault(w["slug"],[]).append(w["id"])
+    # Migrate the older slug-keyed evidence safely. When two compositions
+    # share a title (Puccini and Leoncavallo's La bohème), only an explicit
+    # matching permanent work_id permits reuse of a historical image.
+    posters={}
+    for key,value in current["posters"].items():
+        if not isinstance(value,dict):continue
+        wid=value.get("work_id")
+        if not isinstance(wid,str) or wid not in by_id:
+            options=ids_by_slug.get(key,[])
+            wid=options[0] if len(options)==1 else None
+        if (wid in by_id and
+                image_matches_work(value.get("image_url",""),by_id[wid]["title"])):
+            posters[wid]={"work_id":wid,**value}
+    archive_by_slug=load_archival_art({w["slug"] for w in registry_works})
+    # An archival image is keyed by title in the source bank; only attach
+    # it if that title resolves to one and only one canonical composition.
+    archive={
+        w["id"]:archive_by_slug[w["slug"]]
+        for w in registry_works
+        if len(ids_by_slug[w["slug"]])==1 and w["slug"] in archive_by_slug
+    }
     deadline=today or date.today()
     checked=0
     outcomes=[]
@@ -197,8 +210,8 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
     try:
         migrate(db)
         for row in sources:
-            slug,url=row["slug"],row["source_url"]
-            if slug in posters or checked>=max_pages:continue
+            slug,url,wid=row["slug"],row["source_url"],row["work_id"]
+            if wid in posters or checked>=max_pages:continue
             previous=checks.get(url,{})
             until=previous.get("retry_after")
             if isinstance(until,str) and until>deadline.isoformat():continue
@@ -212,10 +225,10 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
                 page=fetcher(db,source_id=source_id,url=url,network_enabled=True)
                 found=extract_official_poster(page.html,url,row["title"])
                 if found:
-                    if any(x["image_url"]==found["image_url"] and k!=slug
+                    if any(x["image_url"]==found["image_url"] and k!=wid
                            for k,x in posters.items()):
                         raise ValueError("same promotional image already assigned to another opera")
-                    posters[slug]={"work_id":row["work_id"],**found}
+                    posters[wid]={"work_id":wid,**found}
                     outcomes.append({"slug":slug,"status":"verified_official_metadata"})
                 else:
                     outcomes.append({"slug":slug,"status":"no_suitable_official_poster"})
@@ -227,13 +240,12 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
         db.close()
     # Every published work has an image plan: official art if available,
     # otherwise the original editorial cover created by image-client.js.
-    manifest={"schema_version":1,"works":{
-        slug:posters.get(slug,archival.get(slug,{"kind":"original_editorial_cover",
-              "alt":"Copertina editoriale originale per "+item["title"]}))
-        for slug,item in sorted(((w["slug"],w) for w in json.loads(
-            REGISTRY.read_text(encoding="utf-8"))["works"].values()),
-            key=lambda entry:entry[0])}}
-    _write_atomic(EVIDENCE,{"schema_version":1,"posters":posters,"checks":checks})
+    manifest={"schema_version":2,"works":{
+        w["id"]:{"work_id":w["id"],**posters.get(w["id"],archive.get(
+            w["id"],{"kind":"original_editorial_cover",
+                     "alt":"Copertina editoriale originale per "+w["title"]}))}
+        for w in sorted(registry_works,key=lambda entry:entry["id"])}}
+    _write_atomic(EVIDENCE,{"schema_version":2,"posters":posters,"checks":checks})
     _write_atomic(OUTPUT,manifest)
     _write_atomic(HEALTH,{"schema_version":1,
         "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -250,11 +262,13 @@ def check()->None:
     from scripts.publish_catalog_v2 import REGISTRY
     current=json.loads(OUTPUT.read_text(encoding="utf-8"))
     works=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
-    if current.get("schema_version")!=1 or set(current.get("works",{}))!={
-        w["slug"] for w in works.values()}:
-        raise ValueError("poster feed does not match published opera registry")
-    titles={w["slug"]:w["title"] for w in works.values()}
+    if current.get("schema_version")!=2 or set(current.get("works",{}))!={
+        w["id"] for w in works.values()}:
+        raise ValueError("poster feed does not match each canonical work ID")
+    titles={w["id"]:w["title"] for w in works.values()}
     for slug,item in current["works"].items():
+        if item.get("work_id")!=slug:
+            raise ValueError("poster work ID does not match the record identity")
         if item["kind"]=="official_production_image":
             if (not allowed_image_url(item["image_url"],item["source_url"]) or
                 not image_matches_work(item["image_url"],titles[slug])):
