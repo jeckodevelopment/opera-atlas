@@ -152,7 +152,10 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
     if evidence is None:
         evidence = json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
     showtimes = validate_time_evidence(manifest, evidence)
-    permitted = APPROVED_PAGES | (auto_approved_pages() if approved_extra is None else approved_extra)
+    # Extra in-memory URLs for the pending transaction must NOT replace the
+    # already-persisted approved URLs: after a successful import tests rebuild
+    # the expanded canonical catalog, not the original static launch seed.
+    permitted = APPROVED_PAGES | auto_approved_pages() | (approved_extra or set())
     events = []
     keys = set()
     for production in manifest["productions"]:

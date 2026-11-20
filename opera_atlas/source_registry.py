@@ -9,6 +9,8 @@ from urllib.parse import urlsplit
 DEFAULT_REGISTRY = Path(__file__).resolve().parent.parent / "data" / "sources.json"
 REQUIRED = {"key", "name", "official_url", "calendar_url", "region", "city", "kind", "access_status"}
 KINDS = {"theatre", "foundation", "festival", "circuit", "other"}
+OPTIONAL = {"monitoring_status", "automated_index", "autonomous_publication_verified"}
+MONITORING = {"index_verified", "detail_verified", "configured_unverified", "not_started"}
 
 
 def read_registry(path: str | Path = DEFAULT_REGISTRY) -> list[dict]:
@@ -20,7 +22,8 @@ def read_registry(path: str | Path = DEFAULT_REGISTRY) -> list[dict]:
     urls = set()
     output = []
     for source in doc["sources"]:
-        if not isinstance(source, dict) or set(source) != REQUIRED:
+        if (not isinstance(source, dict) or not REQUIRED.issubset(source)
+                or set(source)-REQUIRED-OPTIONAL):
             raise ValueError("invalid source fields")
         for name in ("key", "name", "official_url", "calendar_url", "region"):
             if not isinstance(source[name], str) or not source[name].strip():
@@ -29,8 +32,18 @@ def read_registry(path: str | Path = DEFAULT_REGISTRY) -> list[dict]:
             not isinstance(source["city"], str) or not source["city"].strip()
         ):
             raise ValueError("invalid city")
-        if source["kind"] not in KINDS or source["access_status"] != "pending":
-            raise ValueError("seed sources must await access permission checks")
+        if source["kind"] not in KINDS or source["access_status"] not in (
+            "pending", "approved", "blocked"
+        ):
+            raise ValueError("invalid source access status")
+        if ("monitoring_status" in source and
+                source["monitoring_status"] not in MONITORING):
+            raise ValueError("invalid source monitoring status")
+        for name in ("automated_index", "autonomous_publication_verified"):
+            if name in source and not isinstance(source[name], bool):
+                raise ValueError("invalid source monitoring flag")
+        # Approval in JSON is only descriptive. The SQLite seeder below
+        # starts new entries pending, regardless of this reported status.
         for field in ("official_url", "calendar_url"):
             parts = urlsplit(source[field])
             if parts.scheme != "https" or not parts.netloc or parts.username or parts.password:

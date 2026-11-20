@@ -8,7 +8,7 @@ from scripts.auto_catalogue import promote
 from scripts.build_verified_catalog import MANIFEST, validate_auto_sources
 from scripts.publish_catalog_v2 import REGISTRY, assemble
 
-URL="https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+URL="https://www.teatroallascala.org/it/stagione/2026-2027/opera/fixture-new-staging.html"
 CID="oa-index-test-macbeth"
 
 class AutoCatalogueTests(unittest.TestCase):
@@ -16,9 +16,19 @@ class AutoCatalogueTests(unittest.TestCase):
     def setUpClass(cls):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        staged={(p["title"].casefold(),p["composer"].casefold())
+                for p in cls.facts["productions"]
+                if p["municipality"]=="Milano" and p["venue"]=="Teatro alla Scala"}
+        cls.unstaged=next((w for w in cls.registry["works"].values()
+                          if (w["title"].casefold(),w["composer"].casefold())
+                          not in staged),None)
+        if cls.unstaged is None:
+            raise AssertionError("No unstaged canonical opera for isolated test")
 
-    def fixture(self,*,composer="Giuseppe Verdi", hour="2027-02-05T20:00:00+01:00",
-                title="Macbeth",status="needs_review",url=URL):
+    def fixture(self,*,composer=None, hour="2027-02-05T20:00:00+01:00",
+                title=None,status="needs_review",url=URL):
+        title=title or self.unstaged["title"]
+        composer=composer or self.unstaged["composer"]
         candidates={"schema_version":1,"candidates":[
             {"id":CID,"source_key":"scala-season-2026-27","official_url":url,
              "status":status}]}
@@ -51,7 +61,7 @@ class AutoCatalogueTests(unittest.TestCase):
         self.assertEqual(again_urls,urls)
 
     def test_unknown_or_wrong_composer_requires_no_human_reconciliation(self):
-        for composer in ("Unknown Composer","Another Giuseppe Verdi"):
+        for composer in ("Unknown Composer","Another Composer with No Matching Opera"):
             evidence,candidates=self.fixture(composer=composer)
             facts,ids,urls,report=promote(self.facts,self.registry,evidence,
                                             candidates,[],today=date(2026,11,20))
