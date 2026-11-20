@@ -103,13 +103,13 @@ def resolve_identity(title_hint:str,*,fetch=read_api)->dict|None:
 def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
     result=fetch("https://it.wikipedia.org/w/api.php?"+urlencode({
         "action":"query","format":"json","prop":"extracts",
-        "exintro":"1","explaintext":"1","titles":identity["wikipedia_title"]}))
+        "explaintext":"1","titles":identity["wikipedia_title"]}))
     pages=result.get("query",{}).get("pages",{})
     matches=[x.get("extract","") for x in pages.values() if isinstance(x,dict)]
     if len(matches)!=1:return None
     extract=" ".join(matches[0].split())
     if not 140<=len(extract)<=12000:return None
-    return extract[:3000]
+    return extract[:6000]
 
 def make_synopsis(identity:dict,article_text:str,*,api_key:str,model:str="gpt-6-luna")->str|None:
     """Low-cost JSON-schema output; model may decline if the plot is absent."""
@@ -126,7 +126,7 @@ def make_synopsis(identity:dict,article_text:str,*,api_key:str,model:str="gpt-6-
                   "Se il testo non contiene abbastanza trama, supported=false e synopsis vuota."},
                  {"role":"user","content":
                   "Opera: "+identity["title"]+"; compositore: "+identity["composer"]+
-                  "; fonte enciclopedica: "+article_text[:3000]}],
+                  "; fonte enciclopedica: "+article_text[:6000]}],
              "text":{"format":{"type":"json_schema","name":"opera_synopsis",
                                "strict":True,"schema":schema}}}
     req=Request("https://api.openai.com/v1/responses",data=json.dumps(payload).encode(),
@@ -186,7 +186,7 @@ def make_history(identity:dict, article_text:str, *,api_key:str,
             "se non esplicito usa null e composition_evidence vuota."},
                    {"role":"user","content":"Opera: "+identity["title"]+
                     "; composer: "+identity["composer"]+
-                    "; source: "+article_text[:3000]}],
+                    "; source: "+article_text[:6000]}],
           "text":{"format":{"type":"json_schema","name":"opera_history",
                              "strict":True,"schema":schema}}}
     request=Request("https://api.openai.com/v1/responses",
