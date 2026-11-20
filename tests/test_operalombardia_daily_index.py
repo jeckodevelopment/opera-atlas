@@ -85,7 +85,8 @@ class IndexDailyTests(unittest.TestCase):
 
     def test_duplicate_and_prohibited_calendar_rows_fail(self):
         html=fixture(self.facts)
-        piece="<tr><td>8</td><td>TURANDOT</td><td>Bergamo, Teatro Donizetti</td></tr>"
+        piece="<tr><td>8</td><td><a>TURANDOT</a></td><td>Bergamo, Teatro Donizetti</td></tr>"
+        self.assertIn(piece,html)
         bad=html.replace(piece,piece+piece)
         with self.assertRaises(ValueError):
             parse_calendar(bad)
