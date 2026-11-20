@@ -8,98 +8,139 @@
       "name": "Teatro Regio",
       "address": "Piazza Castello 215",
       "description": "Nel cuore di Torino, il Regio ospita stagioni d’opera e balletto a pochi passi da Piazza Castello.",
-      "website": "https://www.teatroregio.torino.it/"
+      "website": "https://www.teatroregio.torino.it/",
+      "opening_year": 1740,
+      "history": "Inaugurato nel 1740 come teatro della corte sabauda, il Regio fu distrutto da un incendio nel 1936. La sala attuale, progettata da Carlo Mollino, riaprì nel 1973 con I vespri siciliani di Verdi: dietro la facciata settecentesca si scopre così una sorprendente architettura moderna.",
+      "source": "https://www.teatroregio.torino.it/il-regio/storia"
     },
     "Como|Teatro Sociale": {
       "city": "Como",
       "name": "Teatro Sociale",
       "address": "Piazza Verdi 1",
       "description": "Affacciato su Piazza Verdi, il Teatro Sociale è uno dei luoghi di riferimento dell’opera a Como e parte del circuito OperaLombardia.",
-      "website": "https://teatrosocialecomo.it/"
+      "website": "https://teatrosocialecomo.it/",
+      "opening_year": 1813,
+      "history": "Inaugurato nel 1813, il Teatro Sociale sorse nell'area dell'antico Castello della Torre Rotonda. La sua storia attraversa due secoli di spettacolo cittadino; oggi affianca alla programmazione lirica progetti di educazione musicale rivolti a pubblici di tutte le età.",
+      "source": "https://teatrosocialecomo.it/chi-siamo/storia/"
     },
     "Pavia|Teatro Fraschini": {
       "city": "Pavia",
       "name": "Teatro Fraschini",
       "address": "Corso Strada Nuova 136",
       "description": "Il teatro storico di Pavia accoglie spettacoli d’opera, musica e danza e partecipa alle produzioni di OperaLombardia.",
-      "website": "https://www.teatrofraschini.it/"
+      "website": "https://www.teatrofraschini.it/",
+      "opening_year": 1773,
+      "history": "Il teatro fu inaugurato nel 1773, dopo la costruzione affidata ad Antonio Galli Bibiena. La sala, studiata anche per la sua acustica, venne in seguito intitolata a Gaetano Fraschini, celebre tenore verdiano originario di Pavia.",
+      "source": "https://www.teatrofraschini.it/storia/"
     },
     "Brescia|Teatro Grande": {
       "city": "Brescia",
       "name": "Teatro Grande",
       "address": "Corso Giuseppe Zanardelli 9/A",
       "description": "Nel centro storico di Brescia, il Teatro Grande ospita opera e musica, tra le sedi del circuito OperaLombardia.",
-      "website": "https://www.teatrogrande.it/"
+      "website": "https://www.teatrogrande.it/",
+      "opening_year": 1810,
+      "history": "Il Teatro Grande raccoglie l'eredità dell'Accademia degli Erranti, attiva nella vita teatrale bresciana dal Seicento. La sala attuale risale al 1810; nel 1904 accolse con successo Madama Butterfly, contribuendo al rilancio dell'opera dopo la difficile prima milanese.",
+      "source": "https://www.italia.it/it/lombardia/teatro-grande"
     },
     "Cremona|Teatro Ponchielli": {
       "city": "Cremona",
       "name": "Teatro Ponchielli",
       "address": "Corso Vittorio Emanuele II 52",
       "description": "Il Teatro Ponchielli fa parte della tradizione lirica cremonese e ospita produzioni condivise di OperaLombardia.",
-      "website": "https://www.teatroponchielli.it/"
+      "website": "https://www.teatroponchielli.it/",
+      "opening_year": 1808,
+      "history": "La tradizione del teatro cremonese risale al Settecento, ma l'edificio nella forma attuale fu realizzato nel 1808 come Teatro della Concordia. La sala a ferro di cavallo, con palchi sovrapposti, custodisce una storia musicale poi legata al nome del compositore cremonese Amilcare Ponchielli.",
+      "source": "https://www.turismocremona.it/it/teatro-amilcare-ponchielli"
     },
     "Milano|Teatro alla Scala": {
       "city": "Milano",
       "name": "Teatro alla Scala",
       "address": "Piazza della Scala",
       "description": "Nel centro di Milano, la Scala è uno dei teatri d’opera più conosciuti al mondo.",
-      "website": "https://www.teatroallascala.org/"
+      "website": "https://www.teatroallascala.org/",
+      "opening_year": 1778,
+      "history": "La Scala fu inaugurata nel 1778 con Europa riconosciuta di Antonio Salieri, su progetto di Giuseppe Piermarini. Nel corso dell'Ottocento divenne uno dei centri della vita musicale europea, legando profondamente la propria storia alle opere di Giuseppe Verdi.",
+      "source": "https://www.teatroallascala.org/it/il-teatro/storia.html"
     },
     "Verona|Arena di Verona": {
       "city": "Verona",
       "name": "Arena di Verona",
       "address": "Piazza Bra",
       "description": "L’anfiteatro romano di Verona accoglie il festival lirico estivo all’aperto.",
-      "website": "https://www.arena.it/"
+      "website": "https://www.arena.it/",
+      "history": "Costruita in epoca romana, probabilmente nel I secolo d.C., l'Arena è un anfiteatro ancora oggi capace di accogliere grandi spettacoli. La sua storia operistica moderna iniziò nel 1913 con Aida di Verdi, dando origine alla tradizione estiva del festival lirico sotto le stelle.",
+      "source": "https://www.arena.it/arena-opera-festival/preparati-allopera/visitare-l-arena-di-verona/"
     },
     "Venezia|Teatro La Fenice": {
       "city": "Venezia",
       "name": "Teatro La Fenice",
       "address": "Campo San Fantin 1965",
       "description": "Nel sestiere di San Marco, La Fenice è uno dei palcoscenici storici dell’opera italiana.",
-      "website": "https://www.teatrolafenice.it/"
+      "website": "https://www.teatrolafenice.it/",
+      "opening_year": 1792,
+      "history": "Inaugurata nel 1792, La Fenice deve il suo nome all'idea di rinascita. Due incendi, nel 1836 e nel 1996, ne hanno segnato profondamente la storia; il teatro è tornato a vivere nel 2003, conservando il suo ruolo nella tradizione lirica veneziana.",
+      "source": "https://www.teatrolafenice.it/la-fenice-e-venezia/"
     },
     "Palermo|Teatro Massimo": {
       "city": "Palermo",
       "name": "Teatro Massimo",
       "address": "Piazza Giuseppe Verdi",
       "description": "Nel centro di Palermo, il Teatro Massimo presenta opere, balletti e concerti.",
-      "website": "https://www.teatromassimo.it/"
+      "website": "https://www.teatromassimo.it/",
+      "opening_year": 1897,
+      "history": "Il Teatro Massimo aprì il 16 maggio 1897 con Falstaff di Giuseppe Verdi. Nato dalla volontà di dotare Palermo di un grande teatro d'opera, è diventato uno dei monumenti più riconoscibili della città e un punto di riferimento della vita musicale siciliana.",
+      "source": "https://www.teatromassimo.it/chi-siamo/storia/"
     },
     "Parma|Teatro Regio di Parma": {
       "city": "Parma",
       "name": "Teatro Regio di Parma",
       "address": "Strada Giuseppe Garibaldi 16/A",
       "description": "Il Teatro Regio di Parma è uno dei luoghi simbolo della tradizione operistica cittadina.",
-      "website": "https://teatroregioparma.it/"
+      "website": "https://teatroregioparma.it/",
+      "opening_year": 1829,
+      "history": "Voluto dalla duchessa Maria Luigia d'Asburgo-Lorena e progettato da Nicola Bettoli, il teatro fu inaugurato nel 1829 con Zaira di Vincenzo Bellini. La sua sala neoclassica è uno dei luoghi simbolo del legame fra Parma e il melodramma.",
+      "source": "https://teatroregioparma.it/il-teatro/storia/"
     },
     "Novara|Teatro Coccia": {
       "city": "Novara",
       "name": "Teatro Coccia",
       "address": "Via Fratelli Rosselli",
       "description": "Il Teatro Coccia è il principale teatro lirico di Novara e ospita opere e produzioni in tournée.",
-      "website": "https://www.fondazioneteatrococcia.it/"
+      "website": "https://www.fondazioneteatrococcia.it/",
+      "opening_year": 1888,
+      "history": "Il teatro attuale fu inaugurato il 22 dicembre 1888 con Gli ugonotti di Meyerbeer, diretti dal giovane Arturo Toscanini. L'edificio ottocentesco ampliava il precedente teatro civico, già dedicato al compositore Carlo Coccia, e divenne il fulcro della vita musicale novarese.",
+      "source": "https://sias-archivi.cultura.gov.it/cgi-bin/pagina.pl?Chiave=79487&RicProgetto=as-novara&TipoPag=prodente"
     },
     "Bergamo|Teatro Donizetti": {
       "city": "Bergamo",
       "name": "Teatro Donizetti",
       "address": "Piazza Cavour 15",
       "description": "Situato nella Bergamo bassa, il Donizetti ospita opere e spettacoli nel cuore della città.",
-      "website": "https://www.teatrodonizetti.it/"
+      "website": "https://www.teatrodonizetti.it/",
+      "opening_year": 1791,
+      "history": "Inaugurato nel 1791 come Teatro Riccardi, divenne uno dei principali palcoscenici di Bergamo. Nel 1897, centenario della nascita di Gaetano Donizetti, assunse il nome del compositore, a cui la città dedica ancora oggi una parte importante della propria vita musicale.",
+      "source": "https://www.teatrodonizetti.it/it/la-storia-del-teatro-donizetti/"
     },
     "Reggio Emilia|Teatro Valli": {
       "city": "Reggio Emilia",
       "name": "Teatro Valli",
       "address": "Piazza Martiri del 7 Luglio 7",
       "description": "Il Teatro Municipale Romolo Valli accoglie opera, musica e danza nel centro di Reggio Emilia.",
-      "website": "https://www.iteatri.re.it/"
+      "website": "https://www.iteatri.re.it/",
+      "opening_year": 1857,
+      "history": "Il Teatro Municipale fu inaugurato nel 1857, su progetto di Cesare Costa, e rappresenta uno degli esempi più riconoscibili di teatro all'italiana. Dal 1980 porta il nome dell'attore reggiano Romolo Valli e continua a ospitare opera, danza e musica.",
+      "source": "https://www.iteatri.re.it/la-storia/"
     },
     "Ravenna|Teatro Dante Alighieri": {
       "city": "Ravenna",
       "name": "Teatro Dante Alighieri",
       "address": "Via Angelo Mariani 2",
       "description": "Il teatro storico di Ravenna ospita opera, concerti e parte della programmazione del Ravenna Festival.",
-      "website": "https://comune.ravenna.it/vivere-il-comune/luoghi/teatro/teatro-dante-alighieri/"
+      "website": "https://comune.ravenna.it/vivere-il-comune/luoghi/teatro/teatro-dante-alighieri/",
+      "opening_year": 1852,
+      "history": "Il Teatro Alighieri fu inaugurato nel 1852 con Roberto il diavolo di Meyerbeer e Medea di Pacini. Cuore dell'attività teatrale cittadina, conserva una forte vocazione lirica e ospita anche appuntamenti del Ravenna Festival.",
+      "source": "https://comune.ravenna.it/vivere-il-comune/luoghi/teatro/teatro-dante-alighieri/"
     }
   }
 }
