@@ -75,41 +75,52 @@ function dateLabel(iso) {
 
 function createCard(event) {
   const article = node("article","event");
-  article.append(node("div","date",dateLabel(event.local_date)));
-  const workHeading = node("h3");
-  const workLink = node("a",null,event.title);
-  workLink.href = "./detail.html?type=work&key="+encodeURIComponent(normalized(event.title));
-  workHeading.append(workLink);
-  article.append(workHeading);
-  if (event.composer) article.append(node("p","composer",event.composer));
+  const main = node("div","event-main");
+  main.append(node("div","event-meta","Opera lirica · "+event.municipality));
+  const heading = node("h3");
+  const title = node("a",null,event.title);
+  title.href = "./detail.html?type=work&key="+encodeURIComponent(normalized(event.title));
+  heading.append(title);
+  main.append(heading);
+  if (event.composer) main.append(node("p","composer",event.composer));
   const details = node("div","event-details");
-  const venueField = node("div","venue");
+  const venue = node("div","venue");
   const venueLink = node("a",null,event.venue);
   venueLink.href = "./detail.html?type=venue&key="+encodeURIComponent(
     normalized(event.venue)+"|"+normalized(event.municipality));
-  venueField.append(venueLink);
-  details.append(venueField);
+  venue.append(venueLink);
+  details.append(venue);
   details.append(node("div","city",[event.municipality,event.region].filter(Boolean).join(" · ")));
-  const time = node("div","time"+(event.time_known?"":" unknown"),
-    event.time_known ? "Ore "+event.starts_at.slice(11,16) : "Orario da confermare");
-  details.append(time);
-  article.append(details);
+  details.append(node("div","time"+(event.time_known?"":" unknown"),
+    event.time_known ? "Ore "+event.starts_at.slice(11,16) : "Orario da confermare"));
+  main.append(details);
+  const detail = node("a","detail-link","Esamina la recita");
+  detail.href = "./detail.html?type=performance&key="+encodeURIComponent(String(event.id));
+  main.append(detail);
   const links = node("ul","source-links");
   for (const url of [...new Set(event.sources)]) {
     const href = safeSource(url);
     if (!href) continue;
-    const item = node("li");
+    const li = node("li");
     const anchor = node("a",null,"Fonte ufficiale");
     anchor.href = href;
     anchor.target = "_blank";
     anchor.rel = "noopener noreferrer";
-    item.append(anchor);
-    links.append(item);
+    li.append(anchor);
+    links.append(li);
   }
-  const detail = node("a","detail-link","Scheda della recita");
-  detail.href = "./detail.html?type=performance&key="+encodeURIComponent(String(event.id));
-  article.append(detail);
-  article.append(links);
+  main.append(links);
+  article.append(main);
+  const side = node("div","event-side");
+  const calendar = node("div","calendar");
+  const parts = event.local_date.split("-");
+  const month = new Intl.DateTimeFormat("it-IT",{month:"short",timeZone:"UTC"})
+    .format(new Date(event.local_date+"T12:00:00Z"));
+  calendar.append(node("span","calendar-month",month));
+  calendar.append(node("span","calendar-day",String(Number(parts[2]))));
+  calendar.append(node("span","calendar-year",parts[0]));
+  side.append(calendar);
+  article.append(side);
   return article;
 }
 
@@ -155,6 +166,13 @@ async function initialize() {
     if (raw.length !== catalog.length) {
       message.textContent = "Alcune recite con dati non validi non sono state mostrate.";
     }
+    document.getElementById("metric-events").textContent = String(catalog.length);
+    document.getElementById("metric-works").textContent =
+      String(new Set(catalog.map(x=>normalized(x.title))).size);
+    document.getElementById("metric-venues").textContent =
+      String(new Set(catalog.map(x=>normalized(x.venue)+"|"+normalized(x.municipality))).size);
+    document.getElementById("metric-unknown").textContent =
+      String(catalog.filter(x=>!x.time_known).length);
     fillOptions(controls.city,catalog.map(x=>x.municipality));
     fillOptions(controls.region,catalog.map(x=>x.region));
     render();
