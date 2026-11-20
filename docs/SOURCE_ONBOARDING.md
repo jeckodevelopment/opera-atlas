@@ -276,3 +276,14 @@ La nuova URL verificata viene salvata automaticamente in `data/season-index-conf
 Le nuove produzioni e opere riconosciute ricevono inoltre la stagione derivata dall'URL ufficiale (Scala, Fenice e Palermo), oppure dall'anno della recita verificata quando l'indice non espone una stagione annuale, **non** il valore fisso 2026/2027. Il cambio riguarda l'indice attivo quando la pagina successiva diventa disponibile e passa i controlli; non elimina stagioni passate dal catalogo, non inferisce cancellazioni e non autorizza URL esterni. Ulteriori miglioramenti potranno mantenere **simultaneamente** due indici stagionali se una stagione si sovrappone alla successiva; questo primo meccanismo garantisce il proseguimento automatico senza dover modificare annualmente la configurazione.
 
 Collaudi: `tests/test_season_rollover.py` verifica percorso dei tre indici futuri, test positivo simulato con sorgenti integre, controlli di mancato accesso e contenuto incompleto e rifiuto di anni incoerenti. Il job continua a segnalare le fonti senza accesso affidabile, incluso il Rossini Opera Festival, invece di aggirare limitazioni di rete.
+
+
+## F2 — collaudo in due passaggi sul catalogo che cresce realmente
+
+Il workflow reale ha dimostrato che i test sulle PR possono essere verdi ma la pubblicazione fallire **dopo** un'importazione riuscita. Il run `44824586103` ha generato in memoria **3 nuove produzioni e 29 nuove recite**; il secondo passaggio di test, successivo all'ingest, è però fallito. Le cause corrette nella PR di ripristino sono:
+- `opera_atlas.source_registry.read_registry` accetta ora i campi diagnostici generati giornalmente e gli stati di accesso realmente approvati, continuando a far nascere qualunque nuova riga SQLite sempre in `pending` (non autorizza da solo nuovi crawl).
+- `scripts.build_verified_catalog.build` unisce le sorgenti ufficiali con i **tutti gli URL auto-approvati già persistiti**, più gli URL nuovi della transazione corrente. Una verifica isolata non può invalidare il resto del catalogo dinamico.
+- I test di nuove produzioni utilizzano un'opera canonica non ancora rappresentata nella sede del test e una URL fittizia di fixture (mai richiesta alla rete), anziché assumere per sempre che Macbeth alla Scala non sia mai stato importato.
+- I test degli indici confrontano la classificazione delle URL con il registro delle produzioni **al momento del test**, senza numeri rigidi che cambiano quando una recita entra davvero nel catalogo.
+
+**Criterio di chiusura:** devono riuscire sia la suite precedente all'acquisizione sia la suite post-ingest del workflow, seguite da generazione di `public/catalog/v2/manifest.json`, `public/catalog/work-editorial.json`, commit dati e verifica dei nuovi contatori. La PR di ripristino non dichiara pubblicate le 29 recite finché non è completata un'esecuzione live su `main`; mantiene fail-closed e non abbassa i controlli dei dati ufficiali.
