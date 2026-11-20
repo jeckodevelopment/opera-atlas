@@ -61,7 +61,9 @@ const CITY_CENTERS = Object.freeze({
   "torino":[45.0703,7.6869],"milano":[45.4642,9.1900],"como":[45.8081,9.0852],
   "pavia":[45.1847,9.1582],"brescia":[45.5416,10.2118],"cremona":[45.1332,10.0227],
   "verona":[45.4384,10.9916],"venezia":[45.4408,12.3155],
-  "palermo":[38.1157,13.3615],"parma":[44.8015,10.3279]
+  "palermo":[38.1157,13.3615],"parma":[44.8015,10.3279],
+  "novara":[45.445,8.622],"bergamo":[45.695,9.670],
+  "reggio emilia":[44.698,10.631],"ravenna":[44.418,12.204]
 });
 function haversine(a,b) {
   const rad = Math.PI/180;
