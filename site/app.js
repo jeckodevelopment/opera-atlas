@@ -162,6 +162,16 @@ function fillOptions(select, values) {
   }
 }
 
+function compactDate(event) {
+  const date=new Date(event.local_date+"T12:00:00Z");
+  const tile=node("span","home-calendar");
+  const month=new Intl.DateTimeFormat("it-IT",{month:"short",timeZone:"UTC"}).format(date).replace(".","").toUpperCase();
+  const day=new Intl.DateTimeFormat("it-IT",{weekday:"short",timeZone:"UTC"}).format(date).replace(".","");
+  tile.append(node("span","home-calendar-month",month));
+  tile.append(node("span","home-calendar-day",String(date.getUTCDate())));
+  tile.append(node("span","home-calendar-weekday",day));
+  return tile;
+}
 function createStagingCard(events) {
   const first = events[0];
   const article = node("article","event");
@@ -179,13 +189,16 @@ function createStagingCard(events) {
   main.append(theatre);
   const km=distanceFor(first);
   if(km!==null && controls.location.value)main.append(node("p","distance-label","A circa "+km+" km da "+controls.location.value));
-  const dates = node("div","staging-repliche");
-  for (const recita of events.slice(0,2)) {
-    dates.append(node("span","replica-chip",
-      dateLabel(recita.local_date)+" · "+
-      (recita.time_known ? recita.starts_at.slice(11,16) : "Ora da confermare")));
+  const dates=node("div","home-calendar-list");
+  dates.setAttribute("aria-label","Prossime date delle rappresentazioni");
+  for(const recita of events.slice(0,3)){
+    const dateLink=node("a","home-calendar-link");
+    dateLink.href=window.OperaAtlasCatalog.urls(recita).production;
+    dateLink.setAttribute("aria-label","Vai alle date: "+dateLabel(recita.local_date));
+    dateLink.append(compactDate(recita));
+    dates.append(dateLink);
   }
-  if (events.length>2) dates.append(node("span","replica-chip","+"+(events.length-2)+" altre date"));
+  if(events.length>3)dates.append(node("span","home-calendar-more","+"+(events.length-3)+" altre"));
   main.append(dates);
   const link = node("a","detail-link","Dettagli e rappresentazioni");
   link.href = window.OperaAtlasCatalog.urls(first).production;
@@ -204,13 +217,28 @@ function groupByStaging(events) {
   return [...groups.values()].map(group=>group.sort((a,b)=>a.local_date.localeCompare(b.local_date))).sort((a,b)=>a[0].local_date.localeCompare(b[0].local_date));
 }
 
-function imageTile(url,title,subtitle,image){
+let workDescriptions={};
+async function loadWorkDescriptions(){
+  const sources=["./work-synopses.json","https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/work-synopses.json"];
+  for(const uri of sources){
+    try{
+      const response=await fetch(uri,{cache:"no-store"});
+      if(!response.ok)continue;
+      const data=await response.json();
+      if(data.schema_version===1 && data.synopses && Object.keys(data.synopses).length>=20){
+        workDescriptions=data.synopses;return;
+      }
+    }catch(error){console.warn("Opera summaries unavailable from",uri,error);}
+  }
+}
+function imageTile(url,title,subtitle,image,description=""){
   const a=node("a","discovery-card");
   a.href=url;
   a.append(image);
   const inside=node("span","discovery-card-body");
   inside.append(node("strong",null,title));
   if(subtitle)inside.append(node("small",null,subtitle));
+  if(description)inside.append(node("span","discovery-description",description));
   a.append(inside);
   return a;
 }
@@ -226,7 +254,7 @@ function renderDiscoveries() {
   workBox.replaceChildren();
   venueBox.replaceChildren();
   for(const [url,event] of [...works].sort((a,b)=>a[1].title.localeCompare(b[1].title,"it")).slice(0,6)){
-    workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image")));
+    workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image"),workDescriptions[event.work_slug]||""));
   }
   for(const [url,event] of [...venues].sort((a,b)=>a[1].venue.localeCompare(b[1].venue,"it")).slice(0,6)){
     venueBox.append(imageTile(url,event.venue,event.municipality,editorialImage("venue",event,"discovery-image")));
@@ -361,7 +389,10 @@ function render() {
       list.append(empty);
     }
   }
-  count.textContent=(viewMode==="staging"?groupByStaging(filtered).length+" produzioni · ":"")+filtered.length+" rappresentazioni";
+  const productionCount=groupByStaging(filtered).length;
+  const resultTitle=document.getElementById("results-title");
+  resultTitle.textContent=productionCount+" "+(productionCount===1?"opera":"opere")+" in scena vicino a te";
+  count.textContent=(viewMode==="staging"?productionCount+" produzioni · ":"")+filtered.length+" rappresentazioni";
   prev.disabled=page===0;next.disabled=page>=pages-1;
   pageLabel.textContent=pages?"Pagina "+(page+1)+" di "+pages:"";
 }
@@ -400,6 +431,7 @@ async function initialize() {
 
     fillOptions(controls.city,catalog.map(x=>x.municipality));
     populateLocations();
+    await loadWorkDescriptions();
     renderDiscoveries();
     renderFestivals();
     fillOptions(controls.region,catalog.map(x=>x.region));
