@@ -88,7 +88,7 @@ def validate_source_config(document: dict) -> list[dict]:
         ):
             raise ValueError("approved source must document robots/terms review")
         sources.append(item)
-    if len(sources) > 20:
+    if len(sources) > 48:
         raise ValueError("too many scans per daily run")
     return sources
 
