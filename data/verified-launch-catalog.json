@@ -1001,6 +1001,367 @@
           "19:00"
         ]
       ]
+    },
+    {
+      "key": "lombardia-turandot-como",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-09-24",
+          null
+        ],
+        [
+          "2026-09-26",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-turandot-cremona",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Ponchielli",
+      "municipality": "Cremona",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-10-02",
+          null
+        ],
+        [
+          "2026-10-04",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-turandot-brescia",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Grande",
+      "municipality": "Brescia",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-10-16",
+          null
+        ],
+        [
+          "2026-10-18",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-turandot-novara",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-10-23",
+          null
+        ],
+        [
+          "2026-10-25",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-turandot-bergamo",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-01-08",
+          null
+        ],
+        [
+          "2027-01-10",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-death-venice-brescia",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Grande",
+      "municipality": "Brescia",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-09-25",
+          null
+        ],
+        [
+          "2026-09-27",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-death-venice-como",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-10-09",
+          null
+        ],
+        [
+          "2026-10-11",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-death-venice-reggio-emilia",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-01-29",
+          null
+        ],
+        [
+          "2027-01-31",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-death-venice-cremona",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Ponchielli",
+      "municipality": "Cremona",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-02-05",
+          null
+        ],
+        [
+          "2027-02-07",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-death-venice-ravenna",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-02-12",
+          null
+        ],
+        [
+          "2027-02-14",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-cavalleria-como",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-12-04",
+          null
+        ],
+        [
+          "2026-12-06",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-cavalleria-brescia",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Grande",
+      "municipality": "Brescia",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-12-11",
+          null
+        ],
+        [
+          "2026-12-13",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-cavalleria-cremona",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Ponchielli",
+      "municipality": "Cremona",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-01-22",
+          null
+        ],
+        [
+          "2027-01-24",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-pagliacci-como",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-12-04",
+          null
+        ],
+        [
+          "2026-12-06",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-pagliacci-brescia",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Grande",
+      "municipality": "Brescia",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-12-11",
+          null
+        ],
+        [
+          "2026-12-13",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-pagliacci-cremona",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Ponchielli",
+      "municipality": "Cremona",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-01-22",
+          null
+        ],
+        [
+          "2027-01-24",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-ballo-cremona",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Ponchielli",
+      "municipality": "Cremona",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2026-11-27",
+          null
+        ],
+        [
+          "2026-11-29",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-ballo-como",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-01-15",
+          null
+        ],
+        [
+          "2027-01-17",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-ballo-bergamo",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "dates": [
+        [
+          "2027-01-29",
+          null
+        ],
+        [
+          "2027-01-31",
+          null
+        ]
+      ]
     }
   ]
 }
