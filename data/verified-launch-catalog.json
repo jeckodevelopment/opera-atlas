@@ -469,6 +469,101 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "lombardia-turandot-pavia",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "source_url": "https://www.teatrofraschini.it/programma/turandot/",
+      "dates": [
+        [
+          "2026-10-09",
+          "20:00"
+        ],
+        [
+          "2026-10-11",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-cavalleria-pavia",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
+      "dates": [
+        [
+          "2026-10-30",
+          "20:00"
+        ],
+        [
+          "2026-10-31",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-pagliacci-pavia",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
+      "dates": [
+        [
+          "2026-10-30",
+          "20:00"
+        ],
+        [
+          "2026-10-31",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-ballo-pavia",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "source_url": "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/",
+      "dates": [
+        [
+          "2026-12-03",
+          "20:00"
+        ],
+        [
+          "2026-12-05",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-death-venice-pavia",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "source_url": "https://www.teatrofraschini.it/programma/death-in-venice/",
+      "dates": [
+        [
+          "2027-01-15",
+          "20:00"
+        ],
+        [
+          "2027-01-17",
+          "15:30"
+        ]
+      ]
     }
   ]
 }
