@@ -8,8 +8,8 @@ from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY,assemble
 from scripts.publish_work_editorial import EDITORIAL,build_editorial
 
-URL="https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
-CID="oa-index-test-new-anna"
+URL="https://www.teatroallascala.org/it/stagione/2026-2027/opera/fixture-opera.html"
+CID="oa-index-test-new-fixture"
 
 class NewOperaPromotionTests(unittest.TestCase):
     @classmethod
@@ -26,7 +26,7 @@ class NewOperaPromotionTests(unittest.TestCase):
             "candidate_id":CID,"source_key":"scala-season-2026-27",
             "source_url":URL,"status":"needs_editorial_review",
             "event_facts":[{
-                "event_title":"Anna Bolena","composer":"Gaetano Donizetti",
+                "event_title":"Fixture Opera","composer":"Gaetano Donizetti",
                 "date":"2027-06-02",
                 "starts_at":"2027-06-02T20:00:00+02:00",
                 "venue":"Teatro alla Scala"}
@@ -34,8 +34,8 @@ class NewOperaPromotionTests(unittest.TestCase):
         enrichment={"schema_version":1,"works":[{
             "candidate_id":CID,"source_key":"scala-season-2026-27",
             "source_url":URL,"wikidata_id":"Q111",
-            "title":"Anna Bolena","composer":"Gaetano Donizetti",
-            "synopsis":"Anna Bolena affronta le tensioni della corte e un destino "
+            "title":"Fixture Opera","composer":"Gaetano Donizetti",
+            "synopsis":"Fixture Opera affronta le tensioni della corte e un destino "
                        "segnato da passioni e lotte per il potere."
         }]}
         return evidence,candidates,enrichment
@@ -48,20 +48,20 @@ class NewOperaPromotionTests(unittest.TestCase):
         self.assertEqual((report["new_works"],report["new_stagings"],report["new_recite"]),
                          (1,1,1))
         self.assertEqual(len(ids["works"]),len(self.registry["works"])+1)
-        self.assertIn("anna-bolena",editorial["synopses"])
+        self.assertIn("fixture-opera",editorial["synopses"])
         self.assertEqual(urls,[URL])
         graph=assemble(facts,ids,approved_extra=set(urls))
         self.assertEqual(len(graph["performances"]),len(self.registry["performances"])+1)
         from scripts.publish_work_editorial import HISTORY
         history=json.loads(HISTORY.read_text(encoding="utf-8"))
-        history["works"]["anna-bolena"]={
+        history["works"]["fixture-opera"]={
             "librettist":"Giovanni Example","premiere_year":1830,
             "premiere_venue":"Teatro Nuovo","premiere_city":"Milano",
             "sources":["https://www.wikidata.org/wiki/Q111"]}
         card=build_editorial(facts,ids,editorial,approved_extra=set(urls),
                              history=history)
         self.assertEqual(len(card["works"]),len(ids["works"]))
-        self.assertTrue(any(x["slug"]=="anna-bolena" for x in card["works"]))
+        self.assertTrue(any(x["slug"]=="fixture-opera" for x in card["works"]))
         second=promote_new_works(facts,ids,evidence,candidates,enrichment,editorial,urls,
                                  today=date(2026,11,20))
         self.assertEqual(second[-1]["new_works"],0)
@@ -84,10 +84,10 @@ class NewOperaPromotionTests(unittest.TestCase):
         accepted=promote_new_works(self.facts,self.registry,evidence,candidates,pending,
                                   self.editorial,[],today=date(2026,11,20),history=existing)
         self.assertEqual(accepted[-1]["new_works"],1)
-        self.assertEqual(accepted[4]["works"]["anna-bolena"]["premiere_year"],1830)
+        self.assertEqual(accepted[4]["works"]["fixture-opera"]["premiere_year"],1830)
         output=build_editorial(accepted[0],accepted[1],accepted[3],
                               approved_extra=set(accepted[2]),history=accepted[4])
-        self.assertEqual(next(x for x in output["works"] if x["slug"]=="anna-bolena")
+        self.assertEqual(next(x for x in output["works"] if x["slug"]=="fixture-opera")
                          ["history"]["librettist"],"Giovanni Example")
 
     def test_wrong_composer_or_unproven_date_cannot_create_new_work(self):
@@ -120,7 +120,7 @@ class NewOperaPromotionTests(unittest.TestCase):
                               self.editorial,[],today=date(2026,11,20))
         self.assertEqual(one[-1]["new_works"],0)
         bad=copy.deepcopy(candidates)
-        bad["candidates"][0]["official_url"]="https://evil.example/opera/anna-bolena.html"
+        bad["candidates"][0]["official_url"]="https://evil.example/opera/fixture-opera.html"
         two=promote_new_works(self.facts,self.registry,evidence,bad,enrichment,
                               self.editorial,[],today=date(2026,11,20))
         self.assertEqual(two[-1]["new_works"],0)
