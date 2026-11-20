@@ -35,7 +35,7 @@ class RegioExpandedCatalogTests(unittest.TestCase):
         self.assertGreaterEqual(len(graph["venues"]),10)
         self.assertGreaterEqual(len(graph["stagings"]),24)
         self.assertEqual(len(graph["performances"]),sum(len(p["dates"]) for p in self.facts["productions"]))
-        self.assertEqual(graph["performances"][-1]["starts_at"],"2027-08-07T21:00:00+02:00")
+        self.assertEqual(next(r["starts_at"] for r in graph["performances"] if r["legacy_id"]=="curated:regio-edgar-2027:2027-02-06"),"2027-02-06T15:00:00+01:00")
         self.assertEqual(self.registry["stagings"]["regio-edgar-2027"]["id"],"oa-s-000006")
         self.assertEqual(self.registry["stagings"]["regio-salome-2027"]["id"],"oa-s-000007")
         self.assertEqual(self.registry["performances"]["regio-salome-2027|2027-04-17"]["id"],"oa-r-000032")
