@@ -32,3 +32,6 @@ Gli otto ingressi ufficiali iniziali verificati sono in [data/sources.json](data
 python -c "from opera_atlas.db import connect,migrate; from opera_atlas.source_registry import seed_sources; c=connect('atlas.sqlite3'); migrate(c); print(seed_sources(c)); c.commit(); c.close()"
 ```
 Le sorgenti sono inizialmente `pending`: nessuna scansione automatica è attivata da questa operazione.
+
+## Importazione offline: primo connettore
+Disponibile la pipeline di parsing, riconciliazione ed esportazione JSON per snapshot salvati delle pagine di dettaglio del Teatro Regio di Torino. **Non è ancora attiva una scansione automatica del sito.** Il parser richiede date/ore effettive, opera e compositore canonici, fonte approvata e luogo verificato; ignora i periodi generici delle stagioni. Vedi [guida al connettore](docs/REGIO_CONNECTOR.md) e relativi test.
