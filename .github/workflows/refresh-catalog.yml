@@ -1,0 +1,50 @@
+name: Refresh public Opera Atlas catalog
+on:
+  schedule:
+    - cron: '17 7 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/identity-registry.json'
+      - 'data/verified-launch-catalog.json'
+      - 'scripts/build_verified_catalog.py'
+      - 'scripts/publish_catalog_v2.py'
+      - '.github/workflows/refresh-catalog.yml'
+permissions:
+  contents: write
+concurrency:
+  group: opera-atlas-public-feed
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout canonical data
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Validate canon and all catalog tests
+        run: |
+          python -m unittest discover -s tests -v
+          python -m scripts.build_verified_catalog --check
+      - name: Generate immutable JSON channels, manifest last
+        run: |
+          python -m scripts.publish_catalog_v2
+          python -m scripts.publish_catalog_v2 --check
+      - name: Publish only changed validated data (no SFTP)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/catalog/v2/
+          if git diff --cached --quiet; then
+            echo "No changes in reviewed catalog; no commit or deployment."
+            exit 0
+          fi
+          git commit -m "data(catalog): publish reviewed canonical JSON v2 [skip ci]"
+          git push origin HEAD:main

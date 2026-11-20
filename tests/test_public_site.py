@@ -46,7 +46,8 @@ class PublicCatalogTests(unittest.TestCase):
         self.assertEqual(parser.labels, 6)
         self.assertIn("./styles.css", parser.links)
         self.assertIn("./app.js", parser.scripts)
-        for name in ("styles.css", "app.js", "detail.html", "detail.js", "performances.json"):
+        self.assertIn("./catalog-client.js", parser.scripts)
+        for name in ("styles.css", "app.js", "detail.html", "detail.js", "catalog-client.js", "performances.json"):
             self.assertTrue((SITE / name).is_file())
 
     def test_detail_page_uses_shared_assets_and_semantic_landmarks(self):
@@ -56,6 +57,7 @@ class PublicCatalogTests(unittest.TestCase):
                          "detail-events", "detail-status"}.issubset(parser.ids))
         self.assertIn("./styles.css", parser.links)
         self.assertIn("./detail.js", parser.scripts)
+        self.assertIn("./catalog-client.js", parser.scripts)
 
     def test_details_do_not_invent_times_and_keep_source_validation(self):
         script = (SITE / "detail.js").read_text(encoding="utf-8")
@@ -115,6 +117,9 @@ class PublicCatalogTests(unittest.TestCase):
         detail = subprocess.run(["node", "--check", str(SITE / "detail.js")],
                                 check=False, capture_output=True, text=True)
         self.assertEqual(detail.returncode, 0, detail.stderr)
+        loader = subprocess.run(["node", "--check", str(SITE / "catalog-client.js")],
+                                check=False, capture_output=True, text=True)
+        self.assertEqual(loader.returncode, 0, loader.stderr)
 
 
 if __name__ == "__main__":

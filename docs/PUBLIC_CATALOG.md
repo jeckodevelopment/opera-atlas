@@ -67,3 +67,18 @@ Design ispirato alla grammatica visiva di Opera+ Funding: base avorio, schede bi
 - Verificare che tutte le 11 recite torinesi riportino ora locale, che le altre 8 presentino “Orario da confermare” e che due date già passate restino correttamente nello storico.
 - Verificare schede, riepiloghi, filtri, paginazione, pagine di dettaglio, accessibilità su smartphone e coerenza grafica con Funding.
 - Confermare la nuova pubblicazione con `jeckodevsite` e l'esito HTTPS di tutti gli asset.
+
+## Nuovo feed canonico separato dal deploy (catalogo v2)
+Il frontend consulta `raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/manifest.json` e quattro canali JSON: opere, teatri, messe in scena e repliche. Verifica SHA-256 e integrità referenziale, presenta le schede con dati verificati e, se non può leggere il feed remoto, usa il JSON locale dell'ultimo deploy come **fallback dichiaratamente non aggiornato**. Non pubblica falsi dati correnti o variazioni non riconciliate.
+
+Gli ID `oa-w-...`, `oa-v-...`, `oa-s-...`, `oa-r-...` sono registrati una volta in `data/identity-registry.json`. Gli slug `/opere/la-traviata/`, `/torino/teatro-regio/`, `/torino/teatro-regio/la-traviata/` sono identità editoriali separabili e richiedono la futura configurazione delle rewrite per il supporto HTTP diretto. La corrente interfaccia mantiene ancora `detail.html?type=...`, perciò non si dichiarano già pubblicati gli URL SEO.
+
+**Regola di pubblicazione:** modifiche a catalogo e schedule agiscono esclusivamente in `opera-atlas`. Un aggiornamento del feed non deve invocare SFTP; solo nuove versioni HTML/CSS/JS transitano da `jeckodevsite`. Il workflow quotidiano non esegue ancora fetch di siti con permessi non verificati. Prima di aggiungere nuovi eventi, occorre registrare ID permanenti e provenienza nell'archivio editoriale, verificare e pubblicare, senza sovrascrivere arbitrariamente i record precedenti.
+
+### Collaudi da eseguire
+1. Validare `python -m scripts.publish_catalog_v2 --check` dopo generazione; controllare 2 opere, 5 teatri, 5 messe in scena, 19 repliche.
+2. Ripetere generazione senza dati cambiati: nessun cambiamento di hash, nessun commit di pubblicazione.
+3. Cambiare una data senza risolverne identità: il generatore deve interrompersi e preservare il feed precedente.
+4. Verificare che il frontend prelevi manifesto e quattro canali via HTTPS direttamente da GitHub, senza SFTP; interrompere la rete e verificare avviso di fallback.
+5. Un file JSON danneggiato o senza relazione canonica deve provocare fallback/errore esplicito, non un catalogo parziale.
+6. Controllare la schedulazione, i permessi `contents:write` limitati al workflow e l'assenza di job di scansione non approvata.

@@ -2,7 +2,7 @@
 
 /* The only external input is a generated, operator-reviewed JSON export.
    Render via DOM text nodes, not innerHTML; never invent missing times. */
-const SOURCE = "./performances.json";
+/* Data are loaded from the canonical GitHub feed, not the SFTP copy. */
 const PAGE_SIZE = 12;
 const controls = {
   query: document.getElementById("search"),
@@ -154,9 +154,8 @@ function render() {
 
 async function initialize() {
   try {
-    const response = await fetch(SOURCE, {cache:"no-store"});
-    if (!response.ok) throw new Error("HTTP "+response.status);
-    const documentData = await response.json();
+    const documentData = await window.OperaAtlasCatalog.load();
+    if (documentData.warning) message.textContent = documentData.warning;
     if (!documentData || documentData.schema_version !== 1 || !Array.isArray(documentData.performances)) {
       throw new Error("schema non supportato");
     }

@@ -2,7 +2,7 @@
 
 /* Details are derived exclusively from the verified, public JSON snapshot.
    Escaping is automatic: all source text is inserted as textContent. */
-const dataset = "./performances.json";
+/* Data are loaded from the canonical GitHub feed, not the SFTP copy. */
 const params = new URLSearchParams(window.location.search);
 const type = params.get("type");
 const key = params.get("key");
@@ -98,9 +98,8 @@ async function init() {
     return;
   }
   try {
-    const response = await fetch(dataset,{cache:"no-store"});
-    if (!response.ok) throw Error("data unavailable");
-    const data = await response.json();
+    const data = await window.OperaAtlasCatalog.load();
+    if (data.warning) status.textContent = data.warning;
     if (data.schema_version !== 1 || !Array.isArray(data.performances)) throw Error("bad schema");
     const events = data.performances.filter(acceptable);
     let related;
