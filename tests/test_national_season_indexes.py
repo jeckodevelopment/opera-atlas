@@ -32,6 +32,31 @@ class NationalIndexTests(unittest.TestCase):
                   '<a href="/event/fedora/">Fedora</a>'
                   '<a href="/news/other/">News</a>',2)
         self.assertEqual(len(f),2)
+    def test_parma_and_palermo_official_links_without_nonopera(self):
+        parma="https://teatroregioparma.it/categoria-spettacoli/opera/"
+        p=extract("parma-opera-2027",parma,
+                  '<a href="/spettacolo/boris-godunov/">Boris Godunov</a>'
+                  '<a href="/spettacolo/rigoletto/">Rigoletto</a>'
+                  '<a href="/spettacolo/madama-butterfly/">Madama Butterfly</a>'
+                  '<a href="/spettacolo/prove-under30/">Prove Under30</a>',3)
+        self.assertEqual(len(p),3)
+        massimo="https://www.teatromassimo.it/la-stagione-2026-27/"
+        m=extract("massimo-season-2026-27",massimo,
+                  ''.join('<a href="/event/'+slug+'/">'+slug+'</a>'
+                          for slug in ("samson-et-dalila","macbeth",
+                                       "lucia-di-lammermoor-2","tosca-2",
+                                       "falstaff","ernani","biancaneve",
+                                       "sylvia")),6)
+        self.assertEqual(len(m),6)
+        self.assertTrue(all("biancaneve" not in u for u in m))
+        self.assertTrue(all("sylvia" not in u for u in m))
+
+    def test_all_five_indexes_are_explicitly_configured(self):
+        self.assertEqual({x["key"] for x in self.config["sources"]},{
+            "scala-season-2026-27", "arena-festival-2027",
+            "fenice-opera-2026-27","parma-opera-2027",
+            "massimo-season-2026-27"})
+
     def test_incomplete_index_is_rejected(self):
         with self.assertRaises(ValueError):
             extract("scala-season-2026-27",
@@ -51,16 +76,19 @@ class NationalIndexTests(unittest.TestCase):
             html=htmls[key]
             return FetchResult(url,html,"a"*64,len(html))
         empty={"schema_version":1,"candidates":[]}
-        first,status=scan(self.config,empty,fetcher=fake,network_enabled=True,
+        subset=copy.deepcopy(self.config)
+        for row in subset["sources"][3:]:row["access_status"]="blocked"
+        first,status=scan(subset,empty,fetcher=fake,network_enabled=True,
                           now="2026-11-20T20:00:00+00:00")
         self.assertEqual(len(first["candidates"]),7)
         self.assertEqual(len([x for x in first["candidates"] if x["status"]=="needs_review"]),2)
         self.assertEqual(len([x for x in first["candidates"] if x["status"]=="already_catalogued"]),5)
         self.assertTrue(all("date" not in x and "composer" not in x for x in first["candidates"]))
-        second,_=scan(self.config,first,fetcher=fake,network_enabled=True,
+        second,_=scan(subset,first,fetcher=fake,network_enabled=True,
                        now="2026-11-20T20:00:00+00:00")
         self.assertEqual(second,first)
-        self.assertTrue(all(x["status"]=="success" for x in status))
+        self.assertEqual([x["status"] for x in status[:3]],["success"]*3)
+        self.assertEqual([x["status"] for x in status[3:]],["blocked"]*2)
     def test_first_live_scan_support_pages_are_not_opera(self):
         for suffix in ("regolamento","preparati-allopera",
                        "spettacoli-prossima-stagione","roberto-bolle-friends",
