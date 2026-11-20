@@ -45,3 +45,88 @@
   .mobile-nav a[aria-current]{color:#171717;background:#f5efdf;font-weight:700}
   .discovery-section{padding:26px 0}
 }
+
+
+/* 2026-11 Opera+ Atlas: visitor journey, layout, and accessible views */
+:root{--bg:#f7f5f0;--paper:#ffffff;--ink:#171717;--muted:#5c6063;--gold:#ad8120;--line:#dedbd4;--focus:#8b6310}
+.brand-name{border-left:0;padding-left:0}.brand-name strong{font-weight:600;font-size:27px}.brand-plus{color:#b38922}.brand-atlas{font-family:system-ui,sans-serif;font-size:.62em;font-weight:650;letter-spacing:.075em}
+.primary-nav a:hover{color:#906815}
+.hero{padding:70px 0 38px;max-width:900px}.hero h1{font-size:clamp(38px,5vw,65px)}.hero .lede{font-size:16px;max-width:650px}
+.filter-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.form-grid.search-main{display:grid;grid-template-columns:1.5fr 1fr 1.25fr auto;align-items:end;border:0;box-shadow:none;padding:0}
+.form-grid.advanced-grid{grid-template-columns:repeat(4,minmax(0,1fr));border:0;box-shadow:none;padding:15px 0 0;background:transparent}
+.form-grid label{font-size:12px;color:#4a4a4a}
+.form-grid input,.form-grid select{font-size:14px;min-height:44px}
+.primary-action{min-height:44px;background:#171717;color:#fff;border:1px solid #171717;border-radius:9px;padding:0 19px;font-size:13px;font-weight:700;white-space:nowrap}
+.primary-action:hover{background:#373737}
+.advanced-filters{margin-top:16px;border-top:1px solid var(--line);padding-top:13px}
+.advanced-filters summary{cursor:pointer;width:max-content;color:#775817;font-weight:700;font-size:13px}
+.search-note{font-size:12px;color:#656463;line-height:1.6;margin:14px 0}
+.program-section{padding:24px 0 45px}
+.results-heading{padding:0 0 18px;align-items:center}
+.results-heading>div:first-child p{margin-top:7px}
+.catalog-view{margin:0;gap:5px}
+.view-tab{border-radius:9px;min-height:39px}
+.legacy-date{display:none}
+.distance-label{font-size:12px;color:#775817;font-weight:600}
+.event{border-radius:13px}
+.event h3{font-size:25px}.event h3 a{color:#171717}
+.detail-link{display:inline-flex;align-items:center;margin-top:10px}
+.detail-link::after{content:" →"}
+.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.section-heading a{font-size:13px;color:#80601c;text-decoration:none;font-weight:700}
+.discovery-section{margin:0;padding:40px 0 45px}
+.discovery-links{gap:12px}.discovery-link{display:inline-flex;align-items:center;min-height:45px;line-height:1.4}
+.month-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.month-header button{border:1px solid var(--line);border-radius:8px;background:#fff;padding:10px 13px}
+.month-header h3{text-transform:capitalize;font:500 24px Georgia,serif;text-align:center}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.weekday{font-size:11px;font-weight:700;text-align:center;padding:8px}
+.calendar-cell,.calendar-blank{border:1px solid var(--line);border-radius:9px;background:#fff;min-height:111px;padding:9px;min-width:0}
+.calendar-blank{background:transparent;border-color:transparent}
+.calendar-cell strong{display:block;font-size:13px;margin-bottom:6px}
+.calendar-event{display:block;border-radius:6px;margin:4px 0;padding:7px;background:#f3eddf;color:#5d461d;text-decoration:none;font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+.calendar-event:hover{background:#e7d6b7}
+.atlas-map{background:linear-gradient(160deg,#faf9f5,#edeae2);border:1px solid var(--line);border-radius:12px;min-height:250px;padding:12px}
+.atlas-map svg{width:100%;max-height:600px;display:block}
+.atlas-map svg a{cursor:pointer}
+.atlas-map svg a:hover circle{fill:#171717}
+.directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 50px}
+.directory-card{border:1px solid var(--line);padding:20px;border-radius:12px;background:#fff;display:flex;flex-direction:column;gap:9px;min-width:0}
+.directory-card h2{font:500 22px Georgia,serif;margin:0}
+.directory-card a{color:var(--ink);text-decoration:none}
+.directory-card a:hover{text-decoration:underline}
+.directory-card p{font-size:13px;color:var(--muted);margin:0}
+.directory-card .detail-link{color:#80601c}
+@media(max-width:970px){.form-grid.search-main{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid.advanced-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+  .hero{padding:36px 0 26px}.hero h1{font-size:40px}.hero .lede{font-size:14px}
+  .filter-panel{padding:15px}.form-grid.search-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .form-grid.search-main label:first-child,.form-grid.search-main .primary-action{grid-column:1/-1}
+  .form-grid.advanced-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .primary-action{width:100%}
+  .results-heading{align-items:flex-start;flex-direction:column}
+  .calendar-grid{gap:2px}.calendar-cell,.calendar-blank{padding:3px;min-height:68px}
+  .calendar-event{padding:3px;font-size:9px}
+  .month-header h3{font-size:17px}.month-header button{font-size:11px;padding:8px}
+  .directory-grid{grid-template-columns:1fr}
+}
+@media(max-width:430px){.form-grid.search-main{grid-template-columns:1fr}.form-grid.search-main label:first-child,.form-grid.search-main .primary-action{grid-column:auto}.section-heading{align-items:flex-start;flex-direction:column;gap:8px}.catalog-view{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}}
+
+
+.location-control{display:flex;align-items:stretch;gap:6px}
+.location-control select{flex:1;min-width:0}
+.location-control button{border:1px solid #d9dad9;background:#fff;border-radius:8px;padding:0 13px;font-size:20px;color:#86641d;min-height:44px}
+.location-control button:hover{background:#f4ebd8}
+.directory-search{display:block;font-size:13px;font-weight:700;max-width:500px}
+.directory-search input{display:block;margin-top:8px;width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:#fff;font:inherit}
+.brief-synopsis h2{font:500 22px Georgia,serif;margin:0 0 9px}
+.brief-synopsis{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:20px}
+.brief-synopsis p{font-size:14px;line-height:1.7}
+@media(max-width:700px){
+.mobile-nav a::before{display:block;font-size:17px;line-height:1.2;margin-bottom:4px;color:#ad8120}
+.mobile-nav a[href*="spettacoli"]::before{content:"▣"}
+.mobile-nav a[href*="opere"]::before{content:"♫"}
+.mobile-nav a[href*="teatri"]::before{content:"⌂"}
+.mobile-nav a[href*="festival"]::before{content:"▦"}
+}
