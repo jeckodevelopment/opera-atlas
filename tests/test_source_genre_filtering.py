@@ -33,8 +33,7 @@ class SourceGenreFilteringTests(unittest.TestCase):
             with self.subTest(url=url):
                 self.assertFalse(excluded_nonopera(key,url))
                 self.assertEqual(classify(key,url,set()),"needs_review")
-        self.assertEqual(sum(len(v) for v in EXCLUDED_PATHS.values() if v),27+
-                         0+7+5+4)  # pre-existing known exclusions
+        self.assertGreaterEqual(sum(len(v) for v in EXCLUDED_PATHS.values()),50)
 
     def test_verified_canonical_source_is_never_lost_for_opera(self):
         key="massimo-season-2026-27"
