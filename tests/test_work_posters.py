@@ -58,7 +58,7 @@ class PosterPublicationTests(unittest.TestCase):
                     "https://commons.wikimedia.org/wiki/File:"))
                 self.assertTrue(record["credit"])
                 self.assertTrue(record["license"])
-                self.assertIn("non allestimento",record["alt"].lower() if "non allestimento" in record["alt"].lower() else "non allestimento")
+                self.assertTrue(any(word in record["alt"].lower() for word in ("storico","storica","archivio")))
 
     def test_never_accepts_logos_trackers_unsafe_hosts_or_landscape_banners(self):
         url="https://www.teatrolafenice.it/event/norma/"
