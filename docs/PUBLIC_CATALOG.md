@@ -101,3 +101,11 @@ Le riscritture Apache sono in `site/.htaccess` e inviano soltanto i percorsi whi
 
 ## Freschezza dei dati e controllo giornaliero
 Il catalogo mostra la data di verifica editoriale proveniente dal manifesto GitHub; è distinta dalla data di esecuzione del workflow. Il job quotidiano può leggere pagine soltanto quando il file `data/daily-source-config.json` segnala approvazione documentata. Un errore di robots o pagina incompleta non rimuove eventi e non pubblica dati fittizi. I risultati di scansione autorizzata sono registrati separatamente in `data/catalog-source-health.json` e non causano mai un deploy SFTP. Il dettaglio dei controlli e le regole di onboarding sono in [SOURCE_ONBOARDING](SOURCE_ONBOARDING.md).
+
+## Arricchimento degli orari da più fonti ufficiali
+
+La fonte aggregatrice OperaLombardia documenta **opera, teatro e data** ma non l'ora. Il registro `data/verified-time-evidence.json` conserva ulteriori prove ufficiali relative a **specifici ID di replica**. Il frontend mantiene il collegamento al circuito e mostra anche la fonte che prova l'ora; non crea una seconda recita. La regola di pubblicazione è: orari solo da evidenza esplicita collegata a produzione e data; altrimenti `starts_at: null` e «Orario da confermare».
+
+Evidenze del 20 novembre 2026: Teatro Sociale di Como (13/11 20:00, 15/11 15:30), Teatro Fraschini di Pavia (20/11 20:00, 22/11 15:30), Comune di Cremona (Teatro Ponchielli 10/12 20:00, 12/12 16:00). Brescia 26 e 28 novembre rimane senza orario. Il catalogo resta a 19 repliche: **17 orari noti, 2 sconosciuti**. L'arricchimento avviene con JSON in `opera-atlas`, senza nuova pubblicazione SFTP per i dati; se occorre modificare il renderer web, solo quella modifica passa nel workflow SFTP.
+
+Test: `python -m unittest discover -s tests -v`, `python -m scripts.build_verified_catalog --check`, `python -m scripts.publish_catalog_v2 --check` (quest'ultimo dopo la rigenerazione dei canali). Verificare con browser le 6 repliche, i due URL ufficiali per ciascuna e la permanenza degli ID nel link canonico.
