@@ -86,7 +86,7 @@ class ChangeTests(unittest.TestCase):
 
     def test_migration_repeated(self):
         migrate(self.conn)
-        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0],6)
+        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0],7)
 
 
 if __name__=="__main__":
