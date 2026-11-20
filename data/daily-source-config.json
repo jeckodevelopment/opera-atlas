@@ -189,8 +189,8 @@
       "official_url": "https://www.arena.it/",
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
-      "access_status": "pending",
-      "approval_evidence": null
+      "access_status": "approved",
+      "approval_evidence": "Operator-authorized conditional robots-gated scan. Live GitHub Actions source-probe run 44809106408 on 2026-11-20 confirmed robots allowed retrieval and exact match of 6 Nabucco showtimes. Each daily fetch must recheck robots; substitution of 27 August with Carmen must remain excluded."
     }
   ]
 }

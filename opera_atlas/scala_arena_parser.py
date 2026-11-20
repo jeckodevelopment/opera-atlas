@@ -56,20 +56,15 @@ def parse_showtimes(html: str, *, url: str, title: str, composer: str,
     if title.casefold() not in text.casefold() or composer.casefold() not in text.casefold():
         raise ValueError("opera or composer not found in official page")
     if adapter=="scala":
-        start=text.find("Date ")
-        end=text.find("ROLEX",start+5)
-        if start<0 or end<0 or end<=start: raise ValueError("Scala schedule section missing")
-        segment=text[start:end]
+        # The public HTML does not always include the visual "Date" heading
+        # or the sponsor label: do not depend on either. Full day/month/year
+        # directly followed by "Ore HH:MM" is the evidence. Cast snippets
+        # without an adjacent clock cannot become performances.
+        segment=text
     else:
-        start=text.find("Prossimi spettacoli")
-        # The first occurrence is sometimes the navigation link. Use the last
-        # heading that precedes the first actual dated performance.
         anchors=list(re.finditer("Prossimi spettacoli",text))
         start=anchors[-1].end() if anchors else -1
         if start<0: raise ValueError("Arena dated schedule missing")
-        # Cast cards themselves mention the word "Cast" between performances;
-        # do not mistake it for the end of the calendar. Only dates followed
-        # immediately by an explicit clock count as recite.
         segment=text[start:]
     dates=list(DATE.finditer(segment))
     if not dates:raise ValueError("no individual performance dates")
@@ -78,10 +73,10 @@ def parse_showtimes(html: str, *, url: str, title: str, composer: str,
         following=segment[match.end():dates[i+1].start() if i+1<len(dates) else len(segment)]
         # In Arena cards a second mention of the date may occur inside cast
         # metadata. Only an immediate "ore HH:MM" counts as the showtime.
-        strict=CLOCK.match(following.lstrip()) if adapter=="arena" else None
-        if adapter=="arena" and strict is None:
+        strict=CLOCK.match(following.lstrip())
+        if strict is None:
             continue
-        hours=[strict.groups()] if strict else CLOCK.findall(following)
+        hours=[strict.groups()]
         if len(hours)!=1:raise ValueError("ambiguous or missing exact performance time")
         day=date(int(match.group(3)),MONTHS[match.group(2).lower()],int(match.group(1))).isoformat()
         hour,minute=map(int,hours[0])
