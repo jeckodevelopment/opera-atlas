@@ -57,7 +57,7 @@ def parse_showtimes(html: str, *, url: str, title: str, composer: str,
         raise ValueError("opera or composer not found in official page")
     if adapter=="scala":
         start=text.find("Date ")
-        end=text.find(" Opera ",start+5)
+        end=text.find("ROLEX",start+5)
         if start<0 or end<0 or end<=start: raise ValueError("Scala schedule section missing")
         segment=text[start:end]
     else:
