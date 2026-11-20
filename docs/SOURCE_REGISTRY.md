@@ -134,3 +134,6 @@ Al registro JSON, oltre alle tre fonti già presenti, sono stati aggiunti:
 | Teatro Massimo di Palermo | https://www.teatromassimo.it/la-stagione-2026-27/ | pending |
 
 Gli URL sono ingressi ufficiali verificati, **non** certificazioni di disponibilità di ogni recita, e non implicano alcuna autorizzazione a crawling automatico. Le pagine possono contenere anche balletto, concerti e prosa; i connettori futuri dovranno filtrare il repertorio e identificare le recite effettive. Il censimento completo del perimetro nazionale resta aperto (#1).
+
+## Analisi primo connettore (20 novembre 2026)
+La pagina https://www.teatroregio.torino.it/calendario/opera mescola opere e balletti e mostra spesso intervalli di programmazione. Le pagine di produzione, per esempio https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata , riportano le singole recite con date, ore e fuso Europe/Rome. Il primo connettore accetta snapshot HTML **salvati** e analizza soltanto dettagli che contengono timestamp completi. Nessun crawler attivo fino a verifica condizioni d'uso e policy d'accesso. La compatibilità puntuale del parser con il markup HTML non è stata ancora verificata da una scansione end-to-end live. Vedi `docs/REGIO_CONNECTOR.md`.
