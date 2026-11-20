@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "policy": "No network fetch unless access_status approved with explicit human-reviewed robots/terms evidence. Unknown pages are not scanned.",
+  "sources": [
+    {
+      "key": "regio-traviata-2027",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "access_status": "pending",
+      "approval_evidence": null
+    },
+    {
+      "key": "lombardia-italiana-2026",
+      "adapter": "operalombardia",
+      "url": "https://www.operalombardia.it/l-italiana-in-algeri/",
+      "official_url": "https://www.operalombardia.it/",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "access_status": "pending",
+      "approval_evidence": null
+    }
+  ]
+}
