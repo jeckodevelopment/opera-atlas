@@ -382,6 +382,8 @@ function populateLocations(){
 async function initialize() {
   try {
     const documentData = await window.OperaAtlasCatalog.load();
+    await window.OperaAtlasImages?.load?.();
+
     if (documentData.warning) message.textContent = documentData.warning;
 
     if (!documentData || documentData.schema_version !== 1 || !Array.isArray(documentData.performances)) {
