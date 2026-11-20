@@ -32,7 +32,7 @@ class CoverageTests(unittest.TestCase):
             self.assertGreater(by[key]["verified_recite"],0)
         self.assertEqual(by["rossini-opera-festival"]["monitoring"],"not_started")
         self.assertEqual(by["opera-lombardia"]["scheduled_pages"],7)
-        self.assertEqual(by["regio-torino"]["scheduled_pages"],9)
+        self.assertEqual(by["regio-torino"]["scheduled_pages"],11)
 
     def test_honest_monitoring_depends_on_actual_scan_result(self):
         fake={"checked_at":"2026-11-20T10:00:00+00:00",
