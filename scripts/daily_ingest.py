@@ -25,6 +25,7 @@ from opera_atlas.controlled_fetch import (
 )
 from opera_atlas.db import connect, migrate
 from opera_atlas.operalombardia import parse_dates_only
+from opera_atlas.fraschini_parser import parse_fraschini_detail
 from opera_atlas.regio_parser import parse_regio_detail
 from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY, assemble
@@ -32,7 +33,7 @@ from scripts.publish_catalog_v2 import REGISTRY, assemble
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "data" / "daily-source-config.json"
 HEALTH = ROOT / "data" / "catalog-source-health.json"
-VALID_ADAPTERS = {"regio", "operalombardia"}
+VALID_ADAPTERS = {"regio", "operalombardia", "fraschini"}
 
 
 def validate_source_config(document: dict) -> list[dict]:
@@ -67,6 +68,8 @@ def validate_source_config(document: dict) -> list[dict]:
             "www.teatroregio.torino.it", "teatroregio.torino.it"
         ):
             raise ValueError("Regio adapter host mismatch")
+        if item["adapter"] == "fraschini" and url.hostname != "www.teatrofraschini.it":
+            raise ValueError("Fraschini adapter host mismatch")
         if item["adapter"] == "operalombardia" and url.hostname != "www.operalombardia.it":
             raise ValueError("OperaLombardia adapter host mismatch")
         if item["access_status"] == "approved" and (
@@ -103,6 +106,9 @@ def _parse(item: dict, html: str) -> list[tuple[str, str, str, str | None]]:
         return [("Teatro Regio", "Torino",
                  fact.starts_at.date().isoformat(),
                  fact.starts_at.strftime("%H:%M")) for fact in parsed]
+    if item["adapter"] == "fraschini":
+        rows = parse_fraschini_detail(html, url=item["url"], title=item["title"], composer=item["composer"])
+        return [("Teatro Fraschini", "Pavia", day, hour) for day, hour in rows]
     parsed = parse_dates_only(html, url=item["url"], title=item["title"])
     return [(fact.venue_name,fact.city,fact.local_date,None) for fact in parsed]
 
