@@ -2,6 +2,91 @@
   "schema_version": 1,
   "works": [
     {
+      "candidate_id": "oa-index-0da766cb52d550c48c16",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+      "title": "Al cavallino bianco",
+      "composer": "Ralph Benatzky",
+      "synopsis": "In un albergo sul lago austriaco, il cameriere Leopoldo ama la proprietaria Josepha. Fra ospiti, equivoci e corteggiamenti, le vacanze diventano imprevedibili.",
+      "history": {
+        "librettist": "Hans Müller-Einigen; Erik Charell; testi di Robert Gilbert",
+        "premiere_year": 1930,
+        "premiere_venue": "Großes Schauspielhaus",
+        "premiere_city": "Berlino",
+        "sources": [
+          "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+          "https://www.regione.marche.it/Regione-Utile/Cultura/News-ed-eventi/Post/83868/Ven-8-e-dom-10-aprile-a-CINGOLI-va-in-scena-l-operetta-AL-CAVALLINO-BIANCO-al-Teatro-Pergolesi-di-Jesi-il-24-aprile"
+        ]
+      },
+      "wikidata_id": "Q1659560",
+      "authority_url": "https://www.wikidata.org/wiki/Q1659560",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Al_cavallino_bianco",
+      "verified_at": "2026-11-20T23:19:07+00:00"
+    },
+    {
+      "candidate_id": "oa-index-1fdf598fde99e1e32112",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
+      "title": "Il pipistrello",
+      "composer": "Johann Strauss",
+      "synopsis": "Una festa in maschera offre al dottor Falke l'occasione di vendicarsi di Eisenstein con una burla. Travestimenti e malintesi si rincorrono fino a un vivace chiarimento.",
+      "history": {
+        "librettist": "Carl Haffner; Richard Genée",
+        "premiere_year": 1874,
+        "premiere_venue": "Theater an der Wien",
+        "premiere_city": "Vienna",
+        "sources": [
+          "https://archiviostorico.operaroma.it/operetta/il-pipistrello-die-fledermaus/"
+        ]
+      },
+      "wikidata_id": "Q464930",
+      "authority_url": "https://www.wikidata.org/wiki/Q464930",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Il_pipistrello",
+      "verified_at": "2026-11-20T23:18:59+00:00"
+    },
+    {
+      "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/",
+      "title": "Partenope",
+      "composer": "Georg Friedrich Händel",
+      "synopsis": "La regina Partenope è corteggiata da diversi pretendenti, mentre una donna sotto falsa identità cerca di riconquistare l'uomo amato.",
+      "history": {
+        "librettist": "Adattamento anonimo del libretto di Silvio Stampiglia",
+        "premiere_year": 1730,
+        "premiere_venue": "King's Theatre",
+        "premiere_city": "Londra",
+        "sources": [
+          "https://handelhendrix.org/discover/learn-about-handel/opera-synopses/partenope-hwv-27"
+        ]
+      },
+      "wikidata_id": "Q954048",
+      "authority_url": "https://www.wikidata.org/wiki/Q954048",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Partenope_(H%C3%A4ndel)",
+      "verified_at": "2026-11-20T23:18:59+00:00"
+    },
+    {
+      "candidate_id": "oa-index-62da655021bdc4f62ba7",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+      "title": "Don Quichotte",
+      "composer": "Jules Massenet",
+      "synopsis": "Don Chisciotte si mette in viaggio per conquistare la fiducia di Dulcinée e recuperare un gioiello perduto, accompagnato dal fedele Sancho Panza.",
+      "history": {
+        "librettist": "Henri Cain",
+        "premiere_year": 1910,
+        "premiere_venue": "Opéra de Monte-Carlo",
+        "premiere_city": "Monte Carlo",
+        "sources": [
+          "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/don-quichotte-2762/"
+        ]
+      },
+      "wikidata_id": "Q727793",
+      "authority_url": "https://www.wikidata.org/wiki/Q727793",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Don_Quichotte_(opera_lirica)",
+      "verified_at": "2026-11-20T23:19:01+00:00"
+    },
+    {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
@@ -21,6 +106,69 @@
       "authority_url": "https://www.wikidata.org/wiki/Q189234",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Rigoletto",
       "verified_at": "2026-11-20T22:10:17+00:00"
+    },
+    {
+      "candidate_id": "oa-index-7f4bc91ba66978263199",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "synopsis": "La sacerdotessa Norma nasconde il suo amore per il romano Pollione, mentre la giovane Adalgisa ne conquista il cuore. Lealtà e gelosia sfociano in un dramma.",
+      "history": {
+        "librettist": "Felice Romani",
+        "premiere_year": 1831,
+        "premiere_venue": "Teatro alla Scala",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/norma-20302/"
+        ]
+      },
+      "wikidata_id": "Q320353",
+      "authority_url": "https://www.wikidata.org/wiki/Q320353",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Norma_(opera)",
+      "verified_at": "2026-11-20T23:19:02+00:00"
+    },
+    {
+      "candidate_id": "oa-index-97514cec9448be1a563d",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/",
+      "title": "Nozze istriane",
+      "composer": "Antonio Smareglia",
+      "synopsis": "In un villaggio istriano, un matrimonio atteso si intreccia a gelosie e rivalità che mettono in crisi l'amore tra i giovani protagonisti.",
+      "history": {
+        "librettist": "Luigi Illica",
+        "premiere_year": 1895,
+        "premiere_venue": "Teatro Comunale",
+        "premiere_city": "Trieste",
+        "sources": [
+          "https://corago.unibo.it/opera/0000281163"
+        ]
+      },
+      "wikidata_id": "Q966299",
+      "authority_url": "https://www.wikidata.org/wiki/Q966299",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Nozze_istriane",
+      "verified_at": "2026-11-20T23:19:04+00:00"
+    },
+    {
+      "candidate_id": "oa-index-d7a3053257b5915753f9",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
+      "title": "Adriana Lecouvreur",
+      "composer": "Francesco Cilea",
+      "synopsis": "L'attrice Adriana Lecouvreur si innamora di Maurizio, ma una potente rivale condivide il suo sentimento. Gelosia e inganni trasformano la passione in tragedia.",
+      "history": {
+        "librettist": "Arturo Colautti",
+        "premiere_year": 1902,
+        "premiere_venue": "Teatro Lirico",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://www.themorgan.org/music-manuscripts-and-printed-music/248689"
+        ]
+      },
+      "wikidata_id": "Q375063",
+      "authority_url": "https://www.wikidata.org/wiki/Q375063",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Adriana_Lecouvreur_(opera)",
+      "verified_at": "2026-11-20T23:19:05+00:00"
     }
   ]
 }

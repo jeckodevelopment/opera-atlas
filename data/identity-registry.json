@@ -157,6 +157,48 @@
       "slug": "rigoletto",
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi"
+    },
+    "al cavallino bianco|ralph benatzky": {
+      "id": "oa-w-000027",
+      "slug": "al-cavallino-bianco",
+      "title": "Al cavallino bianco",
+      "composer": "Ralph Benatzky"
+    },
+    "il pipistrello|johann strauss": {
+      "id": "oa-w-000028",
+      "slug": "il-pipistrello",
+      "title": "Il pipistrello",
+      "composer": "Johann Strauss"
+    },
+    "partenope|georg friedrich händel": {
+      "id": "oa-w-000029",
+      "slug": "partenope",
+      "title": "Partenope",
+      "composer": "Georg Friedrich Händel"
+    },
+    "don quichotte|jules massenet": {
+      "id": "oa-w-000030",
+      "slug": "don-quichotte",
+      "title": "Don Quichotte",
+      "composer": "Jules Massenet"
+    },
+    "norma|vincenzo bellini": {
+      "id": "oa-w-000031",
+      "slug": "norma",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini"
+    },
+    "nozze istriane|antonio smareglia": {
+      "id": "oa-w-000032",
+      "slug": "nozze-istriane",
+      "title": "Nozze istriane",
+      "composer": "Antonio Smareglia"
+    },
+    "adriana lecouvreur|francesco cilea": {
+      "id": "oa-w-000033",
+      "slug": "adriana-lecouvreur",
+      "title": "Adriana Lecouvreur",
+      "composer": "Francesco Cilea"
     }
   },
   "venues": {
@@ -729,6 +771,62 @@
       "venue_id": "oa-v-000009",
       "slug": "carmen",
       "source_url": "https://www.teatromassimo.it/event/carmen-3/",
+      "season": "2026-2027"
+    },
+    "auto-0da766cb52d550c4": {
+      "id": "oa-s-000058",
+      "work_id": "oa-w-000027",
+      "venue_id": "oa-v-000010",
+      "slug": "al-cavallino-bianco",
+      "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+      "season": "2026"
+    },
+    "auto-1fdf598fde99e1e3": {
+      "id": "oa-s-000059",
+      "work_id": "oa-w-000028",
+      "venue_id": "oa-v-000010",
+      "slug": "il-pipistrello",
+      "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
+      "season": "2026"
+    },
+    "auto-3fa0cb85b2727f9e": {
+      "id": "oa-s-000060",
+      "work_id": "oa-w-000029",
+      "venue_id": "oa-v-000008",
+      "slug": "partenope",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/",
+      "season": "2026-2027"
+    },
+    "auto-62da655021bdc4f6": {
+      "id": "oa-s-000061",
+      "work_id": "oa-w-000030",
+      "venue_id": "oa-v-000006",
+      "slug": "don-quichotte",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+      "season": "2026-2027"
+    },
+    "auto-7f4bc91ba6697826": {
+      "id": "oa-s-000062",
+      "work_id": "oa-w-000031",
+      "venue_id": "oa-v-000008",
+      "slug": "norma",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/",
+      "season": "2026-2027"
+    },
+    "auto-97514cec9448be1a": {
+      "id": "oa-s-000063",
+      "work_id": "oa-w-000032",
+      "venue_id": "oa-v-000008",
+      "slug": "nozze-istriane",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/",
+      "season": "2026-2027"
+    },
+    "auto-d7a3053257b59157": {
+      "id": "oa-s-000064",
+      "work_id": "oa-w-000033",
+      "venue_id": "oa-v-000008",
+      "slug": "adriana-lecouvreur",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
       "season": "2026-2027"
     }
   },
@@ -2400,6 +2498,198 @@
       "staging_id": "oa-s-000057",
       "original_date": "2027-12-02",
       "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-0da766cb52d550c4|2026-12-06": {
+      "id": "oa-r-000279",
+      "staging_id": "oa-s-000058",
+      "original_date": "2026-12-06",
+      "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/"
+    },
+    "auto-1fdf598fde99e1e3|2026-12-19": {
+      "id": "oa-r-000280",
+      "staging_id": "oa-s-000059",
+      "original_date": "2026-12-19",
+      "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/"
+    },
+    "auto-3fa0cb85b2727f9e|2027-09-02": {
+      "id": "oa-r-000281",
+      "staging_id": "oa-s-000060",
+      "original_date": "2027-09-02",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/"
+    },
+    "auto-3fa0cb85b2727f9e|2027-09-04": {
+      "id": "oa-r-000282",
+      "staging_id": "oa-s-000060",
+      "original_date": "2027-09-04",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/"
+    },
+    "auto-3fa0cb85b2727f9e|2027-09-07": {
+      "id": "oa-r-000283",
+      "staging_id": "oa-s-000060",
+      "original_date": "2027-09-07",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/"
+    },
+    "auto-3fa0cb85b2727f9e|2027-09-09": {
+      "id": "oa-r-000284",
+      "staging_id": "oa-s-000060",
+      "original_date": "2027-09-09",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/"
+    },
+    "auto-3fa0cb85b2727f9e|2027-09-12": {
+      "id": "oa-r-000285",
+      "staging_id": "oa-s-000060",
+      "original_date": "2027-09-12",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/"
+    },
+    "auto-62da655021bdc4f6|2027-05-23": {
+      "id": "oa-r-000286",
+      "staging_id": "oa-s-000061",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html"
+    },
+    "auto-62da655021bdc4f6|2027-05-29": {
+      "id": "oa-r-000287",
+      "staging_id": "oa-s-000061",
+      "original_date": "2027-05-29",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html"
+    },
+    "auto-62da655021bdc4f6|2027-06-04": {
+      "id": "oa-r-000288",
+      "staging_id": "oa-s-000061",
+      "original_date": "2027-06-04",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html"
+    },
+    "auto-62da655021bdc4f6|2027-06-09": {
+      "id": "oa-r-000289",
+      "staging_id": "oa-s-000061",
+      "original_date": "2027-06-09",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html"
+    },
+    "auto-62da655021bdc4f6|2027-06-11": {
+      "id": "oa-r-000290",
+      "staging_id": "oa-s-000061",
+      "original_date": "2027-06-11",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html"
+    },
+    "auto-62da655021bdc4f6|2027-06-14": {
+      "id": "oa-r-000291",
+      "staging_id": "oa-s-000061",
+      "original_date": "2027-06-14",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html"
+    },
+    "auto-7f4bc91ba6697826|2027-09-24": {
+      "id": "oa-r-000292",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-09-24",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-09-25": {
+      "id": "oa-r-000293",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-09-25",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-09-26": {
+      "id": "oa-r-000294",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-09-26",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-09-28": {
+      "id": "oa-r-000295",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-09-28",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-09-29": {
+      "id": "oa-r-000296",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-09-29",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-09-30": {
+      "id": "oa-r-000297",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-09-30",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-10-01": {
+      "id": "oa-r-000298",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-10-01",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-10-02": {
+      "id": "oa-r-000299",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-10-02",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-7f4bc91ba6697826|2027-10-03": {
+      "id": "oa-r-000300",
+      "staging_id": "oa-s-000062",
+      "original_date": "2027-10-03",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    "auto-97514cec9448be1a|2027-06-18": {
+      "id": "oa-r-000301",
+      "staging_id": "oa-s-000063",
+      "original_date": "2027-06-18",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/"
+    },
+    "auto-97514cec9448be1a|2027-06-20": {
+      "id": "oa-r-000302",
+      "staging_id": "oa-s-000063",
+      "original_date": "2027-06-20",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/"
+    },
+    "auto-97514cec9448be1a|2027-06-22": {
+      "id": "oa-r-000303",
+      "staging_id": "oa-s-000063",
+      "original_date": "2027-06-22",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/"
+    },
+    "auto-97514cec9448be1a|2027-06-24": {
+      "id": "oa-r-000304",
+      "staging_id": "oa-s-000063",
+      "original_date": "2027-06-24",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/"
+    },
+    "auto-97514cec9448be1a|2027-06-27": {
+      "id": "oa-r-000305",
+      "staging_id": "oa-s-000063",
+      "original_date": "2027-06-27",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/"
+    },
+    "auto-d7a3053257b59157|2027-10-22": {
+      "id": "oa-r-000306",
+      "staging_id": "oa-s-000064",
+      "original_date": "2027-10-22",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+    },
+    "auto-d7a3053257b59157|2027-10-24": {
+      "id": "oa-r-000307",
+      "staging_id": "oa-s-000064",
+      "original_date": "2027-10-24",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+    },
+    "auto-d7a3053257b59157|2027-10-26": {
+      "id": "oa-r-000308",
+      "staging_id": "oa-s-000064",
+      "original_date": "2027-10-26",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+    },
+    "auto-d7a3053257b59157|2027-10-28": {
+      "id": "oa-r-000309",
+      "staging_id": "oa-s-000064",
+      "original_date": "2027-10-28",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+    },
+    "auto-d7a3053257b59157|2027-10-30": {
+      "id": "oa-r-000310",
+      "staging_id": "oa-s-000064",
+      "original_date": "2027-10-30",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
     }
   }
 }

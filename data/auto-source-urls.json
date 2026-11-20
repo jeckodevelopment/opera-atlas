@@ -1,11 +1,18 @@
 {
   "schema_version": 1,
   "urls": [
+    "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+    "https://teatroregioparma.it/spettacolo/il-pipistrello/",
     "https://teatroregioparma.it/spettacolo/rigoletto/",
     "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
     "https://www.arena.it/arena-opera-festival/carmen/",
     "https://www.arena.it/arena-opera-festival/la-traviata/",
+    "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
     "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+    "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
+    "https://www.teatrolafenice.it/event/normatebar/",
+    "https://www.teatrolafenice.it/event/nozze-istriane/",
+    "https://www.teatrolafenice.it/event/partenope/",
     "https://www.teatromassimo.it/event/carmen-3/"
   ]
 }

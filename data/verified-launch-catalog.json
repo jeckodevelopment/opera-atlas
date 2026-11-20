@@ -1741,6 +1741,211 @@
           "18:30"
         ]
       ]
+    },
+    {
+      "key": "auto-0da766cb52d550c4",
+      "title": "Al cavallino bianco",
+      "composer": "Ralph Benatzky",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+      "dates": [
+        [
+          "2026-12-06",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1fdf598fde99e1e3",
+      "title": "Il pipistrello",
+      "composer": "Johann Strauss",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
+      "dates": [
+        [
+          "2026-12-19",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-3fa0cb85b2727f9e",
+      "title": "Partenope",
+      "composer": "Georg Friedrich Händel",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/",
+      "dates": [
+        [
+          "2027-09-02",
+          "19:00"
+        ],
+        [
+          "2027-09-04",
+          "17:00"
+        ],
+        [
+          "2027-09-07",
+          "19:00"
+        ],
+        [
+          "2027-09-09",
+          "19:00"
+        ],
+        [
+          "2027-09-12",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-62da655021bdc4f6",
+      "title": "Don Quichotte",
+      "composer": "Jules Massenet",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+      "dates": [
+        [
+          "2027-05-23",
+          "20:00"
+        ],
+        [
+          "2027-05-29",
+          "20:00"
+        ],
+        [
+          "2027-06-04",
+          "20:00"
+        ],
+        [
+          "2027-06-09",
+          "20:00"
+        ],
+        [
+          "2027-06-11",
+          "20:00"
+        ],
+        [
+          "2027-06-14",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-7f4bc91ba6697826",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/",
+      "dates": [
+        [
+          "2027-09-24",
+          "19:00"
+        ],
+        [
+          "2027-09-25",
+          "19:00"
+        ],
+        [
+          "2027-09-26",
+          "15:30"
+        ],
+        [
+          "2027-09-28",
+          "19:00"
+        ],
+        [
+          "2027-09-29",
+          "19:00"
+        ],
+        [
+          "2027-09-30",
+          "19:00"
+        ],
+        [
+          "2027-10-01",
+          "19:00"
+        ],
+        [
+          "2027-10-02",
+          "15:30"
+        ],
+        [
+          "2027-10-03",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-97514cec9448be1a",
+      "title": "Nozze istriane",
+      "composer": "Antonio Smareglia",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/",
+      "dates": [
+        [
+          "2027-06-18",
+          "19:00"
+        ],
+        [
+          "2027-06-20",
+          "17:00"
+        ],
+        [
+          "2027-06-22",
+          "19:00"
+        ],
+        [
+          "2027-06-24",
+          "19:00"
+        ],
+        [
+          "2027-06-27",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-d7a3053257b59157",
+      "title": "Adriana Lecouvreur",
+      "composer": "Francesco Cilea",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
+      "dates": [
+        [
+          "2027-10-22",
+          "19:00"
+        ],
+        [
+          "2027-10-24",
+          "15:30"
+        ],
+        [
+          "2027-10-26",
+          "19:00"
+        ],
+        [
+          "2027-10-28",
+          "19:00"
+        ],
+        [
+          "2027-10-30",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

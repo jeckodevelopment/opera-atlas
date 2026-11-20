@@ -1,11 +1,47 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:09:15+00:00",
+  "checked_at": "2026-11-20T23:19:55+00:00",
   "total": 86,
   "states": {
-    "already_catalogued": 20,
+    "already_catalogued": 27,
     "excluded_nonopera": 41,
-    "needs_review": 25
+    "needs_review": 18
   },
-  "changes": []
+  "changes": [
+    {
+      "candidate_id": "oa-index-0da766cb52d550c48c16",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-1fdf598fde99e1e32112",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-62da655021bdc4f62ba7",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-7f4bc91ba66978263199",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-97514cec9448be1a563d",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-d7a3053257b5915753f9",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    }
+  ]
 }

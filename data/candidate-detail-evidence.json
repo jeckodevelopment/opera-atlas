@@ -2,6 +2,137 @@
   "schema_version": 1,
   "evidence": [
     {
+      "candidate_id": "oa-index-0da766cb52d550c48c16",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+      "content_sha256": "1ac56c83f1ab714cf41a6b5762a486aa86fa1b35c804366bdc33ed97fe3bd0bd",
+      "checked_at": "2026-11-20T23:19:35+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Al cavallino bianco",
+          "composer": "Ralph Benatzky",
+          "date": "2026-12-06",
+          "starts_at": "2026-12-06T17:00:00+01:00",
+          "venue": "Teatro Regio di Parma"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-1fdf598fde99e1e32112",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
+      "content_sha256": "2df48b543f2368cc8f50752f7e05ed2e3916d902f7502b9e588c69731209f0bc",
+      "checked_at": "2026-11-20T23:19:44+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il pipistrello",
+          "composer": "Johann Strauss",
+          "date": "2026-12-19",
+          "starts_at": "2026-12-19T17:00:00+01:00",
+          "venue": "Teatro Regio di Parma"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/",
+      "content_sha256": "7c0ebda72d49f12c95ebe5ff77f2af678013dd4b4270565da74f928d70244b5a",
+      "checked_at": "2026-11-20T23:19:45+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Partenope",
+          "composer": "Georg Friedrich Händel",
+          "date": "2027-09-02",
+          "starts_at": "2027-09-02T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Partenope",
+          "composer": "Georg Friedrich Händel",
+          "date": "2027-09-04",
+          "starts_at": "2027-09-04T17:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Partenope",
+          "composer": "Georg Friedrich Händel",
+          "date": "2027-09-07",
+          "starts_at": "2027-09-07T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Partenope",
+          "composer": "Georg Friedrich Händel",
+          "date": "2027-09-09",
+          "starts_at": "2027-09-09T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Partenope",
+          "composer": "Georg Friedrich Händel",
+          "date": "2027-09-12",
+          "starts_at": "2027-09-12T17:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-62da655021bdc4f62ba7",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+      "content_sha256": "0b6ad7f47e5d73f0f65f88f9bf06af6626c5cfa62f999a78df078956b0b44263",
+      "checked_at": "2026-11-20T23:19:51+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Don Quichotte",
+          "composer": "Jules Massenet",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Don Quichotte",
+          "composer": "Jules Massenet",
+          "date": "2027-05-29",
+          "starts_at": "2027-05-29T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Don Quichotte",
+          "composer": "Jules Massenet",
+          "date": "2027-06-04",
+          "starts_at": "2027-06-04T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Don Quichotte",
+          "composer": "Jules Massenet",
+          "date": "2027-06-09",
+          "starts_at": "2027-06-09T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Don Quichotte",
+          "composer": "Jules Massenet",
+          "date": "2027-06-11",
+          "starts_at": "2027-06-11T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Don Quichotte",
+          "composer": "Jules Massenet",
+          "date": "2027-06-14",
+          "starts_at": "2027-06-14T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-6339afba8bcc8028e395",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/carmen-3/",
@@ -172,6 +303,79 @@
       ]
     },
     {
+      "candidate_id": "oa-index-7f4bc91ba66978263199",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/",
+      "content_sha256": "48aae49ef602c4f225aaf919f04d51c05ebfe9b4b780619c4710a48c5b4d5c0d",
+      "checked_at": "2026-11-20T23:19:25+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-09-24",
+          "starts_at": "2027-09-24T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-09-25",
+          "starts_at": "2027-09-25T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-09-26",
+          "starts_at": "2027-09-26T15:30:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-09-28",
+          "starts_at": "2027-09-28T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-09-29",
+          "starts_at": "2027-09-29T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-09-30",
+          "starts_at": "2027-09-30T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-10-01",
+          "starts_at": "2027-10-01T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-10-02",
+          "starts_at": "2027-10-02T15:30:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-10-03",
+          "starts_at": "2027-10-03T15:30:00+02:00",
+          "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-8e417ad6e506eaf0929d",
       "source_key": "arena-festival-2027",
       "source_url": "https://www.arena.it/arena-opera-festival/carmen/",
@@ -255,6 +459,51 @@
           "date": "2027-09-10",
           "starts_at": "2027-09-10T21:00:00+02:00",
           "venue": "Arena di Verona"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-97514cec9448be1a563d",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/",
+      "content_sha256": "0f9ed11f6b8c65a31e3e51df30a096d1916706e644d71ffd7e76da6089433579",
+      "checked_at": "2026-11-20T23:19:08+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Nozze istriane",
+          "composer": "Antonio Smareglia",
+          "date": "2027-06-18",
+          "starts_at": "2027-06-18T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Nozze istriane",
+          "composer": "Antonio Smareglia",
+          "date": "2027-06-20",
+          "starts_at": "2027-06-20T17:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Nozze istriane",
+          "composer": "Antonio Smareglia",
+          "date": "2027-06-22",
+          "starts_at": "2027-06-22T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Nozze istriane",
+          "composer": "Antonio Smareglia",
+          "date": "2027-06-24",
+          "starts_at": "2027-06-24T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Nozze istriane",
+          "composer": "Antonio Smareglia",
+          "date": "2027-06-27",
+          "starts_at": "2027-06-27T17:00:00+02:00",
+          "venue": "Teatro La Fenice"
         }
       ]
     },
@@ -380,6 +629,51 @@
           "date": "2027-09-11",
           "starts_at": "2027-09-11T21:00:00+02:00",
           "venue": "Arena di Verona"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-d7a3053257b5915753f9",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
+      "content_sha256": "c9d4dcd926e4e5dd422b02b14b7202f767cb9d26a76a2433adcbe5a221277984",
+      "checked_at": "2026-11-20T23:19:28+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "date": "2027-10-22",
+          "starts_at": "2027-10-22T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "date": "2027-10-24",
+          "starts_at": "2027-10-24T15:30:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "date": "2027-10-26",
+          "starts_at": "2027-10-26T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "date": "2027-10-28",
+          "starts_at": "2027-10-28T19:00:00+02:00",
+          "venue": "Teatro La Fenice"
+        },
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "date": "2027-10-30",
+          "starts_at": "2027-10-30T15:30:00+02:00",
+          "venue": "Teatro La Fenice"
         }
       ]
     }
