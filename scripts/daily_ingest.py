@@ -34,7 +34,7 @@ from scripts.publish_catalog_v2 import REGISTRY, assemble
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "data" / "daily-source-config.json"
 HEALTH = ROOT / "data" / "catalog-source-health.json"
-VALID_ADAPTERS = {"regio", "operalombardia", "fraschini", "operalombardia_calendar"}
+VALID_ADAPTERS = {"regio", "regio_piccolo", "operalombardia", "fraschini", "operalombardia_calendar"}
 
 
 def validate_source_config(document: dict) -> list[dict]:
@@ -65,7 +65,7 @@ def validate_source_config(document: dict) -> list[dict]:
             or url.username or url.password or url.port is not None
             or url.query or url.fragment):
             raise ValueError("URL not exact official HTTPS host")
-        if item["adapter"] == "regio" and url.hostname not in (
+        if item["adapter"] in ("regio","regio_piccolo") and url.hostname not in (
             "www.teatroregio.torino.it", "teatroregio.torino.it"
         ):
             raise ValueError("Regio adapter host mismatch")
@@ -105,12 +105,12 @@ def _find_production(facts: dict, item: dict, venue: str, city: str) -> dict | N
 def _parse(item: dict, html: str) -> list[tuple[str, str, str, str | None]]:
     if item["adapter"] == "operalombardia_calendar":
         return parse_calendar(html)
-    if item["adapter"] == "regio":
+    if item["adapter"] in ("regio","regio_piccolo"):
         parsed = parse_regio_detail(
             html, source_url=item["url"], expected_title=item["title"],
             expected_composer=item["composer"],
         )
-        return [("Teatro Regio", "Torino",
+        return [("Piccolo Regio Puccini" if item["adapter"] == "regio_piccolo" else "Teatro Regio", "Torino",
                  fact.starts_at.date().isoformat(),
                  fact.starts_at.strftime("%H:%M")) for fact in parsed]
     if item["adapter"] == "fraschini":
