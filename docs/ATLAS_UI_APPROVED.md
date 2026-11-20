@@ -85,3 +85,7 @@ Da collaudare: tab Opere/Teatri/Festival anche con blocco del server immagini, s
 ## Ripristino fotografie — 20 novembre 2026
 
 Corretto il blocco dell'intera libreria immagini: tre asset referenziati (Traviata, Tosca e Fenice) erano usati senza dichiarazione e causavano un errore JavaScript all'avvio. Il client usa il redirect pubblico Wikimedia Commons e, per singole fotografie non raggiungibili, passa automaticamente a `site/opera-stage.svg`, un'illustrazione locale originale in palette nero/oro, indipendente da fornitori esterni. Il fallback è valido anche per l'immagine hero della homepage. Introdotto uno smoke Node in `tests/image_client_smoke.cjs` per inizializzazione, immagini caratteristiche e gestione degli errori di caricamento. Il publisher SFTP di `jeckodevsite` deve trasferire `opera-stage.svg` insieme agli asset HTML e JS, senza eseguire test applicativi.
+
+## Schede editoriali essenziali — 20 novembre 2026
+
+Le descrizioni delle opere e dei teatri approvate per Atlas non devono restare nascoste nei file JSON: le directory visualizzano brevi testi direttamente sotto titolo e località/compositore, mentre le pagine di dettaglio mantengono l'introduzione e il calendario degli spettacoli. Le sinossi sono presenti per tutti i titoli canonici, compresi Don Giovanni e Nabucco. Le pagine Festival leggono solo il campo pubblico `description`, non note operative di censimento o verifica; gli indicatori di completezza restano esclusivamente nei dati o nel sistema di manutenzione. Nessun corso o approfondimento enciclopedico in Atlas.
