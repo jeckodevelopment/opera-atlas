@@ -22,6 +22,9 @@ class AtlasLegalBrandTests(unittest.TestCase):
     def test_logo_in_every_public_page(self):
         logo=(SITE/"atlas-logo.svg").read_text()
         self.assertIn('data:image/png;base64,',logo)
+        self.assertIn('filter="url(#remove-paper)"',logo)
+        self.assertIn('-1 -1 -1 0 3',logo)
+        self.assertIn('.brand-logo{display:block;width:96px;height:74px;object-fit:contain;background:transparent;',(SITE/"styles.css").read_text())
         data=re.search(r'base64,([A-Za-z0-9+/=]+)',logo)
         self.assertIsNotNone(data)
         import base64
