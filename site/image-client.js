@@ -14,12 +14,15 @@ window.OperaAtlasImages=Object.freeze((()=>{
   const arena=photo("Verona-Arena-206-Poltronissima leer-1997-gje.jpg","L'Arena di Verona in una fotografia storica");
   function work(event){
     if(event && /carmen/i.test(event.title||""))return stage;
+    if(event && /traviata/i.test(event.title||""))return traviata;
+    if(event && /tosca/i.test(event.title||""))return tosca;
     if(event && /aida/i.test(event.title||"") && /verona/i.test(event.municipality||""))return arena;
     return theatre;
   }
   function venue(event){
     if(event && /torino/i.test(event.municipality||event.city||""))return torino;
     if(event && /verona/i.test(event.municipality||event.city||""))return arena;
+    if(event && /venezia/i.test(event.municipality||event.city||""))return fenice;
     return theatre;
   }
   function festival(event){return event && /verona/i.test(event.city||"")?arena:theatre;}
@@ -33,5 +36,5 @@ window.OperaAtlasImages=Object.freeze((()=>{
     picture.referrerPolicy="no-referrer";
     return picture;
   }
-  return {theatre,stage,operaHouse,torino,arena,work,venue,festival,element};
+  return {theatre,stage,operaHouse,torino,arena,fenice,traviata,tosca,work,venue,festival,element};
 })());
