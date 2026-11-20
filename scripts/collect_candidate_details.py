@@ -133,9 +133,23 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
         possible.append(x)
     possible.sort(key=lambda x:x["id"])
     if not possible:return []
-    offset=((today or date.today()).toordinal()*MAX_PAGES)%len(possible)
-    ordered=possible[offset:]+possible[:offset]
-    return ordered[:MAX_PAGES]
+    # Prioritize candidates we can already recognize deterministically:
+    # they can become published productions on this very same execution.
+    registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    known_slugs={work["slug"] for work in registry["works"].values()}
+    recognized=[]
+    other=[]
+    for item in possible:
+        path=urlsplit(item["official_url"]).path.rstrip("/").split("/")[-1]
+        slug=path.removesuffix(".html")
+        if (item["source_key"] in ("scala-season-2026-27","arena-festival-2027")
+            and slug in known_slugs):
+            recognized.append(item)
+        else:
+            other.append(item)
+    offset=((today or date.today()).toordinal()*MAX_PAGES)%len(other) if other else 0
+    rotated=other[offset:]+other[:offset]
+    return (recognized+rotated)[:MAX_PAGES]
 
 def collect(candidates:dict,previous:dict,*,network_enabled:bool,
             fetcher=fetch_official_html,today:date|None=None):
