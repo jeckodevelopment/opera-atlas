@@ -8,7 +8,7 @@ window.OperaAtlasCatalog = (() => {
   const MIRROR = "https://cdn.jsdelivr.net/gh/jeckodevelopment/opera-atlas@main/public/catalog/v2/";
   const CHANNELS = ["works","venues","stagings","performances"];
 
-  const PREFIX = "/dev/opera-atlas";
+  const PREFIX = new URL(document.baseURI).pathname.replace(/\/$/, "");
 
   function slugify(text) {
     return String(text || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
