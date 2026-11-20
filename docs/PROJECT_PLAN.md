@@ -13,9 +13,9 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 - [ ] Tests schema, validazione dati e registrazione della provenienza. **Suite iniziale e test di riconciliazione disponibili; ulteriori integrazioni necessarie.**
 
 ### F2 — Acquisizione automatica
-- [ ] Connettori per fonti HTML strutturate, JSON-LD/API e PDF quando autorizzati. **Adapter HTML offline Teatro Regio implementato, senza fetch automatico; altri formati e fonti ancora aperti.**
+- [ ] Connettori per fonti HTML strutturate, JSON-LD/API e PDF quando autorizzati. **Adapter HTML Teatro Regio implementato; fetch manuale con robots fail-closed e audit v4 disponibili; altri formati e fonti ancora aperti.**
 - [ ] Parsing e normalizzazione di date, orari, produzione, venue e collegamenti. **Timestamp espliciti e identità canoniche già gestiti nel primo adapter, verifica su HTML live necessaria.**
-- [ ] Import incrementale con idempotenza, riconciliazione e deduplicazione tra festival e teatri. **Pipeline transazionale offline sul modello SQLite disponibile; deduplicazione reale multi-fonte ancora da provare.**
+- [ ] Import incrementale con idempotenza, riconciliazione e deduplicazione tra festival e teatri. **Pipeline transazionale SQLite e import opt-in di una pagina disponibili; deduplicazione reale multi-fonte ancora da provare.**
 - [ ] Gestione modifiche/rinvii/annullamenti, senza cancellazioni silenziose.
 - [ ] Monitoraggio scansioni, errori, obsolescenza, copertura e casi da verificare.
 - [ ] Pianificazione GitHub Actions con rispetto di robots.txt, condizioni di utilizzo, rate limit e caching.
@@ -43,4 +43,20 @@ Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati te
 Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
 
 ## Stato attuale
-Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter offline di Teatro Regio e export JSON implementati; nessun crawler automatico o catalogo pubblico online. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter Teatro Regio, fetch opt-in e audit v4 implementati; nessun job schedulato o catalogo pubblico online. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+
+## Esecuzione controllata e audit (migrazione v4)
+Il 20/11/2026 il percorso ufficiale `/opera-e-balletto-2026-2027/la-traviata` mostrava 11 righe distinte di recite (dal 26 febbraio al 10 marzo 2027), tra cui recite pomeridiane alle 15:00. Questa verifica è stata fatta consultando la pagina pubblica, **non** eseguendo il crawler della repository. Il parser rimane da confrontare con la sorgente HTML effettivamente scaricabile, che può avere struttura diversa da quella visibile nelle pagine renderizzate.
+
+`robots.txt` non è risultato accessibile dal sistema di verifica; il comportamento necessario è **fail closed** fino a verifica da ambiente operativo. Nessuna approvazione di crawling discende dalla presenza di un URL pubblico.
+
+```sh
+# Esegue una singola verifica controllata (solo se fonte già approvata nel DB)
+python -m opera_atlas.scan_cli --db atlas.sqlite3 --url https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata --source-id 1 --venue-id 1 --production-id 1 --title "La traviata" --composer "Giuseppe Verdi" --allow-network
+# Il comando senza --apply esegue rollback delle modifiche e non conserva il log.
+# Con --apply salva recite e metadati di verifica nel database (mai HTML integrale).
+```
+
+La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiesta robots.txt precedente alla pagina, User-Agent identificabile, response HTML, limite 2 MB, timeout 12 secondi. Nessun retry e nessuna scansione ricorsiva. Lo storico `source_checks` registra esito, impronta SHA-256, dimensione e numero di recite, senza copiare il testo dell'ente. Le scansioni negate registrano solo il motivo tecnico se `--apply` è usato.
+
+**Limiti:** la soluzione non gestisce rate limiting globale tra esecuzioni, ETag/304, parser per altri teatri, errori di import con log persistente o gestione completa degli spostamenti di programma. Prima di abilitare schedulazioni serviranno policy di accesso verificate, monitoraggio delle frequenze e collaudi live. Le fixture di test sono sintesi redatte autonomamente, non copie della pagina.
