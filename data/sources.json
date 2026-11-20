@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-11-20",
+  "sources": [
+    {
+      "key": "regio-torino",
+      "name": "Teatro Regio Torino",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "calendar_url": "https://www.teatroregio.torino.it/calendario",
+      "region": "Piemonte",
+      "city": "Torino",
+      "kind": "theatre",
+      "access_status": "pending"
+    },
+    {
+      "key": "opera-lombardia",
+      "name": "OperaLombardia",
+      "official_url": "https://www.operalombardia.it/",
+      "calendar_url": "https://www.operalombardia.it/calendario/",
+      "region": "Lombardia",
+      "city": null,
+      "kind": "circuit",
+      "access_status": "pending"
+    },
+    {
+      "key": "rossini-opera-festival",
+      "name": "Rossini Opera Festival",
+      "official_url": "https://www.rossinioperafestival.it/",
+      "calendar_url": "https://www.rossinioperafestival.it/il-festival/calendario/",
+      "region": "Marche",
+      "city": "Pesaro",
+      "kind": "festival",
+      "access_status": "pending"
+    }
+  ]
+}
