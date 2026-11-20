@@ -259,11 +259,12 @@ def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
 
 def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                       intelligence:dict,editorial:dict,approved_urls:list[str],*,
-                      today:date):
-    """One unattended all-or-nothing canonical work+staging+recita transaction."""
+                      today:date, history:dict|None=None):
+    """One unattended all-or-nothing work+history+staging+recita transaction."""
     next_facts=copy.deepcopy(facts)
     next_registry=copy.deepcopy(registry)
     next_editorial=copy.deepcopy(editorial)
+    next_history=copy.deepcopy(history) if history is not None else None
     allowed=set(approved_urls)
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
@@ -294,6 +295,12 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
             continue
         summary=summary.strip()
         if not 45<=len(summary)<=300:continue
+        historical=item.get("history")
+        if next_history is not None:
+            from scripts.publish_work_editorial import validate_history
+            if not validate_history(historical):
+                result["auto_skipped"].append({"candidate_id":cid,"reason":"incomplete_historical_profile"})
+                continue
         if not isinstance(item.get("wikidata_id"),str) or not __import__("re").fullmatch(
                 r"Q[1-9][0-9]*",item["wikidata_id"]):continue
         work_key=normalized(title)+"|"+normalized(composer)
@@ -334,6 +341,7 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         next_registry["works"][work_key]={
             "id":work_id,"slug":slug,"title":title,"composer":composer}
         next_editorial["synopses"][slug]=summary
+        if next_history is not None:next_history["works"][slug]=historical
         next_registry["stagings"][staging_key]={
             "id":stage_id,"work_id":work_id,"venue_id":canonical_venue["id"],
             "slug":slug,"source_url":url,
@@ -352,6 +360,8 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         result["new_stagings"]+=1
         result["new_recite"]+=len(date_rows)
     if result["new_recite"]:next_facts["reviewed_on"]=today.isoformat()
+    if next_history is not None:
+        return next_facts,next_registry,sorted(allowed),next_editorial,next_history,result
     return next_facts,next_registry,sorted(allowed),next_editorial,result
 
 def main():
@@ -375,9 +385,11 @@ def main():
     intelligence=(json.loads(RESEARCH.read_text(encoding="utf-8"))
                   if RESEARCH.exists() else {"schema_version":1,"works":[]})
     editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
-    next_facts,next_registry,urls,next_editorial,newworks=promote_new_works(
+    from scripts.publish_work_editorial import HISTORY, validate_history
+    historical=json.loads(HISTORY.read_text(encoding="utf-8"))
+    next_facts,next_registry,urls,next_editorial,next_history,newworks=promote_new_works(
         next_facts,next_registry,evidence,candidates,intelligence,editorial,urls,
-        today=date.today())
+        today=date.today(),history=historical)
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]
@@ -386,12 +398,15 @@ def main():
     from scripts.build_verified_catalog import validate_auto_sources
     validate_auto_sources(urls)
     assemble(next_facts,next_registry,approved_extra=set(urls))
-    build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls))
+    build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls),
+                   history=next_history)
     if report["new_recite"]:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
         _write_atomic(SOURCE_ALLOWLIST,{"schema_version":1,"urls":urls})
-        if report["new_works"]:_write_atomic(EDITORIAL,next_editorial)
+        if report["new_works"]:
+            _write_atomic(EDITORIAL,next_editorial)
+            _write_atomic(HISTORY,next_history)
     _write_atomic(HEALTH,{"schema_version":1,**report})
     print(json.dumps(report,ensure_ascii=False))
 if __name__=="__main__":
