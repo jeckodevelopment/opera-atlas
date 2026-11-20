@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from datetime import datetime,timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -115,7 +116,8 @@ def eligible(key:str,url:str)->bool:
     if excluded_nonopera(key,url):
         return False
     if key=="scala-season-2026-27":
-        return path.startswith("/it/stagione/2026-2027/opera/") and path.endswith(".html")
+        match=re.fullmatch(r"/it/stagione/(20\\d{2})-(20\\d{2})/opera/[a-z0-9-]+\\.html",path)
+        return bool(match and int(match.group(2))==int(match.group(1))+1)
     if key=="arena-festival-2027":
         rest=path.removeprefix("/arena-opera-festival/")
         return (path.startswith("/arena-opera-festival/") and
@@ -169,7 +171,24 @@ def validate_config(config:dict)->list[dict]:
         seen.add(key)
         index=urlsplit(item["url"])
         host,path=allowed[key]
-        if (index.scheme!="https" or index.hostname!=host or index.path!=path
+        if key in ("scala-season-2026-27","fenice-opera-2026-27",
+                   "massimo-season-2026-27"):
+            if key=="scala-season-2026-27":
+                season=re.fullmatch(r"/it/stagione/(20\\d{2})-(20\\d{2})/index\\.html",
+                                    index.path)
+                valid_season=bool(season and int(season[2])==int(season[1])+1
+                                  and 2026<=int(season[1])<=2098)
+            else:
+                pattern=(r"/event-category/opera-(20\\d{2})-(\\d{2})/"
+                         if key=="fenice-opera-2026-27"
+                         else r"/la-stagione-(20\\d{2})-(\\d{2})/")
+                season=re.fullmatch(pattern,index.path)
+                valid_season=bool(season and
+                    (int(season[1])+1)%100==int(season[2]) and
+                    2026<=int(season[1])<=2098)
+        else:
+            valid_season=index.path==path
+        if (index.scheme!="https" or index.hostname!=host or not valid_season
             or index.query or index.fragment or index.port is not None
             or item["official_url"]!="https://"+host+"/"):
             raise ValueError("index URL outside exact official allowlist")
