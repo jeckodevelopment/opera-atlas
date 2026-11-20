@@ -14,10 +14,11 @@ class Element {
 }
 const ids={};
 const document={
+  baseURI:"https://opera.plus/atlas/",
   getElementById(id){return ids[id]||(ids[id]=new Element("div"));},
   createElement(tag){return new Element(tag);}
 };
-const context={document,window:{OperaAtlasCatalog:{urls(e){return {work:"/dev/opera-atlas/opere/"+e.work_slug+"/"};}}},console,URL,
+const context={document,window:{OperaAtlasCatalog:{urls(e){return {work:"/atlas/opere/"+e.work_slug+"/"};}}},console,URL,
   fetch:async url=>{
     let file;
     if(String(url).includes("public/catalog/work-editorial.json"))file="public/catalog/work-editorial.json";
