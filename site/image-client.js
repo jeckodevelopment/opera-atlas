@@ -44,7 +44,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "samson-et-dalila":"\"Samson and Delilah\" opera poster, Yerevan Opera Theatre.jpg",
     "lucia-di-lammermoor":"Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg",
     "edgar":"Romilda Pantaleoni as Tigrana in Puccini's Edgar - Milan 1889.png",
-    "fedora":"Ida Aalberg i titelrollen i operan Fedora av Umberto Giordano - 1900 SLSA 1270 34 foto 29.jpg"
+    "fedora":"Ida Aalberg i titelrollen i operan Fedora av Umberto Giordano - 1900 SLSA 1270 34 foto 29.jpg",
+    "death-in-venice":"-13.2- Thomas Mann Atlas Haack.jpg"
   };
   const normalize=value=>String(value||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
     .replace(/^l['’]/i,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
@@ -94,7 +95,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     const title=event?.title||"Opera";
     const slug=event?.work_slug||normalize(title);
     const file=WORKS[slug];
-    return file?photo(file,"Locandina o immagine storica di "+title,title):
+    return file?photo(file,"Documento d’archivio legato a "+title+" (non allestimento in calendario)",title):
       {src:poster(title),alt:"Illustrazione editoriale originale per "+title};
   }
   function venue(event){
