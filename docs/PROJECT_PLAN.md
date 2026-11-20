@@ -169,3 +169,12 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Report generato nel workflow `opera-atlas`, nessun nuovo backend né deploy SFTP.
 - [ ] Avviare la verifica e parser per Rossini Opera Festival; abilitare i calendari/stagioni completi di Scala, Fenice, Arena, Parma, Massimo.
 - [ ] Certificare la completezza di ciascuna stagione solo confrontando tutti i titoli/date della fonte ufficiale, non tramite semplice somma dei record presenti.
+
+### F2 — espansione Scala e Arena da fonti ufficiali (20/11/2026)
+- [x] Aggiunte 24 singole date/ore documentate: Don Giovanni 10, La bohème (Puccini) 8, Nabucco 6.
+- [x] Regolate le identità permanenti senza confondere La bohème di Puccini con quella di Leoncavallo già pubblicata a Torino.
+- [x] Escluso il 27/08/2027 come Nabucco: sostituito ufficialmente da Carmen.
+- [x] Introdotti parser conservativi e controlli di dominio per Scala/Arena, con suite di test dedicata.
+- [ ] Confermare su HTML reale robots-gated la robustezza dei nuovi parser e attivare l'acquisizione quotidiana solo con esito verificato.
+- [ ] Completare le altre produzioni delle stagioni di Scala, Arena, Fenice, Parma, Massimo, e il ROF, con verifica delle singole recite e delle eventuali cancellazioni.
+- [ ] Completare OperaLombardia e Torino anche per le programmazioni non incluse nell'indice di stagione corrente: evitare dichiarazioni premature di completezza.
