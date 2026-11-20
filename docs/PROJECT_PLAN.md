@@ -114,3 +114,11 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Nuove pagine di produzione incluse nell'allowlist editoriale e nel monitoraggio condizionato giornaliero di `opera-atlas`, con controllo robots runtime.
 - [x] Test su integrità referenziale, date/orari, URL canonici e conteggi: 32 recite, 4 opere, 5 teatri, 7 messe in scena.
 - [ ] Ampliare a nuove città e fonti oltre Regio/OperaLombardia; verificare altre opere del Regio con eventuali caratteristiche del parser differenti.
+
+### F2 — chiusura cartellone principale Regio 2026/27 (20/11/2026)
+- [x] Nove opere rappresentate nella sala principale: 73 recite puntuali verificate nelle pagine ufficiali, 49 appena aggiunte.
+- [x] Distinzione titolo/compositore (*La bohème* di Leoncavallo) e due opere del dittico Cavalleria/Pagliacci che condividono giorno/ora senza fondere gli ID opera.
+- [x] Balletti, concerti e oratorio *Juditha triumphans* esclusi coerentemente dal genere opera.
+- [x] Orari locali verificati in ottobre e dopo passaggio ora legale; acquisizione quotidiana condizionata a robots valida.
+- [ ] Eventi educativi, eventi in sede Piccolo Regio Puccini e possibili programmi fuori dalla sala principale: perimetro distinto, da censire dopo verifica del genere.
+- [ ] Completare le altre quattro produzioni OperaLombardia 2026/27 e quindi gli altri sei enti del registro fonti.

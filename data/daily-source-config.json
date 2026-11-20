@@ -41,6 +41,66 @@
       "composer": "Richard Strauss",
       "access_status": "approved",
       "approval_evidence": "Operator authorization 2026-11-20, conditional robots-gated official factual recite retrieval. Individual page robots NOT verified at onboarding; same Regio host was successfully scanned in Actions run 44785598242. Must recheck robots permission at runtime for every page request."
+    },
+    {
+      "key": "regio-cavalleria-rusticana-2026",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, factual event data only, conditional runtime robots.txt control. Source production page individually reviewed with dated recite; every daily request must recheck robots permission. Robots authorization on this exact page NOT verified at editorial onboarding; checked dynamically at runtime before each fetch."
+    },
+    {
+      "key": "regio-pagliacci-2026",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, factual event data only, conditional runtime robots.txt control. Source production page individually reviewed with dated recite; every daily request must recheck robots permission. Robots authorization on this exact page NOT verified at editorial onboarding; checked dynamically at runtime before each fetch."
+    },
+    {
+      "key": "regio-boheme-leoncavallo-2026",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, factual event data only, conditional runtime robots.txt control. Source production page individually reviewed with dated recite; every daily request must recheck robots permission. Robots authorization on this exact page NOT verified at editorial onboarding; checked dynamically at runtime before each fetch."
+    },
+    {
+      "key": "regio-iris-2026",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, factual event data only, conditional runtime robots.txt control. Source production page individually reviewed with dated recite; every daily request must recheck robots permission. Robots authorization on this exact page NOT verified at editorial onboarding; checked dynamically at runtime before each fetch."
+    },
+    {
+      "key": "regio-carmen-2027",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, factual event data only, conditional runtime robots.txt control. Source production page individually reviewed with dated recite; every daily request must recheck robots permission. Robots authorization on this exact page NOT verified at editorial onboarding; checked dynamically at runtime before each fetch."
+    },
+    {
+      "key": "regio-evgenij-onegin-2027",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, factual event data only, conditional runtime robots.txt control. Source production page individually reviewed with dated recite; every daily request must recheck robots permission. Robots authorization on this exact page NOT verified at editorial onboarding; checked dynamically at runtime before each fetch."
     }
   ]
 }
