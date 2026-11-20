@@ -287,3 +287,14 @@ Il workflow reale ha dimostrato che i test sulle PR possono essere verdi ma la p
 - I test degli indici confrontano la classificazione delle URL con il registro delle produzioni **al momento del test**, senza numeri rigidi che cambiano quando una recita entra davvero nel catalogo.
 
 **Criterio di chiusura:** devono riuscire sia la suite precedente all'acquisizione sia la suite post-ingest del workflow, seguite da generazione di `public/catalog/v2/manifest.json`, `public/catalog/work-editorial.json`, commit dati e verifica dei nuovi contatori. La PR di ripristino non dichiara pubblicate le 29 recite finché non è completata un'esecuzione live su `main`; mantiene fail-closed e non abbassa i controlli dei dati ufficiali.
+
+
+## F2 — ingresso automatico delle opere già documentate, senza servizio linguistico a pagamento
+
+La catalogazione autonoma distingue ora due casi di **opera nuova per il catalogo**. Se la scheda breve originale è già in `site/work-synopses.json` e l'intero profilo storico documentato è già in `site/work-history.json`, `scripts.auto_work_research` può riutilizzare quei dati senza chiamare un modello linguistico a pagamento. **Non è sufficiente possedere una sinossi:** Wikidata deve identificare in modo univoco opera e compositore, e la singola pagina ufficiale del teatro deve confermare titolo, compositore, recite e orari prima della promozione. In caso di discordanza non viene pubblicata alcuna nuova opera.
+
+È un percorso generale, non una scorciatoia riservata a un titolo: l'insieme di schede già documentate viene derivato dai file esistenti, validando sinossi e storia. Il primo esempio è **Rigoletto**, già dotato di breve sinossi originale e dati storici con fonte Corago, ma non ancora presente nel registro dei 25 titoli pubblicati. L'identità viene risolta tramite l'API pubblica Wikidata e la conferma dei dati sul sito ufficiale di Parma; non si inventa il compositore dallo slug. La nuova opera riceve ID permanente, profilo storico, sinossi e recite nello stesso passaggio di pubblicazione.
+
+Le richieste giornaliere rispettano gli stessi limiti, ma i titoli con scheda già pronta hanno precedenza nella ricerca autorevole (3 al giorno) e nella lettura delle pagine di dettaglio (10 al giorno). La scansione degli altri titoli mantiene rotazione equa. Quando **non** esiste già una sinossi e un profilo storico verificati, resta invece necessario il percorso di sintesi documentata tramite API linguistica: senza `ATLAS_OPENAI_API_KEY` la nuova scheda non viene inventata, e il sistema ritenta autonomamente.
+
+Collaudi: `tests/test_auto_work_research.py` verifica identità con compositore, riuso di sinossi e fonti storiche, nessuna chiamata a pagamento, idempotenza; `tests/test_candidate_detail_evidence.py` verifica la priorità della nuova opera documentata nel budget giornaliero. L'effettiva pubblicazione live va verificata nel manifest prima di incrementare i contatori.

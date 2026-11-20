@@ -48,6 +48,43 @@ class AutoWorkResearchTests(unittest.TestCase):
             }}}
         self.assertIsNone(resolve_identity("anna bolena",fetch=fake))
 
+    def test_preverified_rigoletto_is_enriched_without_paid_model(self):
+        from scripts.auto_work_research import preverified_work_material
+        material=preverified_work_material()
+        self.assertIn("rigoletto",material)
+        self.assertEqual(material["rigoletto"]["history"]["premiere_year"],1851)
+        candidate={"id":"rigoletto-new","source_key":"parma-opera-2027",
+                   "official_url":"https://teatroregioparma.it/spettacolo/rigoletto/",
+                   "status":"needs_review"}
+        calls=[]
+        def resolve(title):
+            calls.append(title)
+            return {"title":"Rigoletto","composer":"Giuseppe Verdi",
+                    "wikidata_id":"Q123","authority_url":"https://www.wikidata.org/wiki/Q123",
+                    "wikipedia_url":"https://it.wikipedia.org/wiki/Rigoletto"}
+        result,outcomes=research({"schema_version":1,"candidates":[candidate]},
+                                 {"schema_version":1,"works":[]},set(),
+                                 today=date(2026,11,20),resolve=resolve,
+                                 extract=lambda x: (_ for _ in ()).throw(
+                                     AssertionError("paid excerpt pipeline must not run")),
+                                 generate=lambda *a,**k: (_ for _ in ()).throw(
+                                     AssertionError("paid synthesis must not run")),
+                                 generate_history=lambda *a,**k: (_ for _ in ()).throw(
+                                     AssertionError("paid history synthesis must not run")),
+                                 api_key="",allow_authority=True)
+        self.assertEqual(calls,["rigoletto"])
+        self.assertEqual(outcomes[0]["status"],"enriched")
+        self.assertEqual(result["works"][0]["composer"],"Giuseppe Verdi")
+        self.assertEqual(result["works"][0]["synopsis"],material["rigoletto"]["synopsis"])
+        self.assertEqual(result["works"][0]["history"],material["rigoletto"]["history"])
+        again,events=research({"schema_version":1,"candidates":[candidate]},result,set(),
+                              today=date(2026,11,21),
+                              resolve=lambda x: (_ for _ in ()).throw(
+                                  AssertionError("already enriched")),
+                              api_key="",allow_authority=True)
+        self.assertEqual(again,result)
+        self.assertEqual(events,[])
+
     def test_canonical_identity_and_missing_key_do_not_invoke_external_api(self):
         doc={"schema_version":1,"candidates":[CANDIDATE]}
         calls=[]
