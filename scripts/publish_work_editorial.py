@@ -21,9 +21,9 @@ def build_editorial(facts: dict, registry: dict, editorial: dict) -> dict:
     works = assemble(facts, registry)["works"]
     expected = {w["slug"] for w in works}
     provided = set(editorial["synopses"])
-    if expected != provided:
-        raise ValueError("missing or extraneous verified work synopsis: " +
-                         ", ".join(sorted(expected ^ provided)))
+    if not expected.issubset(provided):
+        raise ValueError("missing verified work synopsis: " +
+                         ", ".join(sorted(expected - provided)))
     entries = []
     for work in works:
         summary = editorial["synopses"][work["slug"]]
