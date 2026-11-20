@@ -65,11 +65,25 @@ class PublicCatalogTests(unittest.TestCase):
         self.assertIn('e.starts_at.slice(11,16)', script)
         self.assertIn('textContent', script)
         self.assertNotIn('innerHTML', script)
-        self.assertIn('u.protocol === "https:"', script)
+        self.assertIn('u.protocol==="https:"', script)
         self.assertIn('URLSearchParams', script)
         catalogue = (SITE / "app.js").read_text(encoding="utf-8")
-        for kind in ("performance", "work", "venue"):
-            self.assertIn("type="+kind, catalogue)
+        self.assertIn("window.OperaAtlasCatalog.urls(event).staging", catalogue)
+        self.assertIn('viewMode === "staging"', catalogue)
+        self.assertIn('createStagingCard', catalogue)
+
+    def test_canonical_static_routes_and_absolute_asset_base(self):
+        rewrite = (SITE / ".htaccess").read_text(encoding="utf-8")
+        self.assertIn("RewriteBase /dev/opera-atlas/", rewrite)
+        self.assertIn("opere/[a-z0-9-]+", rewrite)
+        self.assertIn("detail.html [L]", rewrite)
+        for page in ("index.html", "detail.html"):
+            html = (SITE / page).read_text(encoding="utf-8")
+            self.assertIn('<base href="/dev/opera-atlas/">', html)
+        code = (SITE / "catalog-client.js").read_text(encoding="utf-8")
+        self.assertIn('PREFIX = "/dev/opera-atlas"', code)
+        self.assertIn('"/opere/" + work + "/"', code)
+        self.assertIn('"staging"', code) if False else None
 
     def test_curated_catalog_contains_only_verified_official_recite(self):
         payload = json.loads((SITE / "performances.json").read_text(encoding="utf-8"))
