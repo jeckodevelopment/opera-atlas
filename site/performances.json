@@ -2,6 +2,402 @@
   "schema_version": 1,
   "performances": [
     {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-10-13",
+      "starts_at": "2026-10-13T20:00:00+01:00",
+      "local_date": "2026-10-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-10-13",
+      "starts_at": "2026-10-13T20:00:00+01:00",
+      "local_date": "2026-10-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-10-15",
+      "starts_at": "2026-10-15T19:00:00+01:00",
+      "local_date": "2026-10-15",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-10-15",
+      "starts_at": "2026-10-15T19:00:00+01:00",
+      "local_date": "2026-10-15",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-10-18",
+      "starts_at": "2026-10-18T15:00:00+01:00",
+      "local_date": "2026-10-18",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-10-18",
+      "starts_at": "2026-10-18T15:00:00+01:00",
+      "local_date": "2026-10-18",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-10-22",
+      "starts_at": "2026-10-22T20:00:00+01:00",
+      "local_date": "2026-10-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-10-22",
+      "starts_at": "2026-10-22T20:00:00+01:00",
+      "local_date": "2026-10-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-leoncavallo-2026:2026-10-23",
+      "starts_at": "2026-10-23T20:00:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-10-24",
+      "starts_at": "2026-10-24T15:00:00+02:00",
+      "local_date": "2026-10-24",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-10-24",
+      "starts_at": "2026-10-24T15:00:00+02:00",
+      "local_date": "2026-10-24",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-leoncavallo-2026:2026-10-27",
+      "starts_at": "2026-10-27T20:00:00+01:00",
+      "local_date": "2026-10-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:regio-iris-2026:2026-10-29",
+      "starts_at": "2026-10-29T20:00:00+01:00",
+      "local_date": "2026-10-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-10-30",
+      "starts_at": "2026-10-30T20:00:00+01:00",
+      "local_date": "2026-10-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-10-30",
+      "starts_at": "2026-10-30T20:00:00+01:00",
+      "local_date": "2026-10-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-leoncavallo-2026:2026-10-31",
+      "starts_at": "2026-10-31T15:00:00+01:00",
+      "local_date": "2026-10-31",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:regio-iris-2026:2026-11-05",
+      "starts_at": "2026-11-05T20:00:00+01:00",
+      "local_date": "2026-11-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-leoncavallo-2026:2026-11-06",
+      "starts_at": "2026-11-06T20:00:00+01:00",
+      "local_date": "2026-11-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-11-07",
+      "starts_at": "2026-11-07T20:00:00+01:00",
+      "local_date": "2026-11-07",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-11-07",
+      "starts_at": "2026-11-07T20:00:00+01:00",
+      "local_date": "2026-11-07",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-iris-2026:2026-11-08",
+      "starts_at": "2026-11-08T15:00:00+01:00",
+      "local_date": "2026-11-08",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
+      "id": "curated:regio-iris-2026:2026-11-10",
+      "starts_at": "2026-11-10T20:00:00+01:00",
+      "local_date": "2026-11-10",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-como:2026-11-13",
       "starts_at": "2026-11-13T20:00:00+01:00",
       "local_date": "2026-11-13",
@@ -18,6 +414,78 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-leoncavallo-2026:2026-11-13",
+      "starts_at": "2026-11-13T20:00:00+01:00",
+      "local_date": "2026-11-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-11-14",
+      "starts_at": "2026-11-14T20:00:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-11-14",
+      "starts_at": "2026-11-14T20:00:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-iris-2026:2026-11-15",
+      "starts_at": "2026-11-15T15:00:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
       ]
     },
     {
@@ -40,6 +508,42 @@
       ]
     },
     {
+      "id": "curated:regio-iris-2026:2026-11-17",
+      "starts_at": "2026-11-17T20:00:00+01:00",
+      "local_date": "2026-11-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
+      "id": "curated:regio-iris-2026:2026-11-18",
+      "starts_at": "2026-11-18T15:00:00+01:00",
+      "local_date": "2026-11-18",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Iris",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-pavia:2026-11-20",
       "starts_at": "2026-11-20T20:00:00+01:00",
       "local_date": "2026-11-20",
@@ -56,6 +560,60 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://www.teatrofraschini.it/programma/litaliana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:regio-cavalleria-rusticana-2026:2026-11-21",
+      "starts_at": "2026-11-21T20:00:00+01:00",
+      "local_date": "2026-11-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+      ]
+    },
+    {
+      "id": "curated:regio-pagliacci-2026:2026-11-21",
+      "starts_at": "2026-11-21T20:00:00+01:00",
+      "local_date": "2026-11-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-leoncavallo-2026:2026-11-22",
+      "starts_at": "2026-11-22T15:00:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
       ]
     },
     {
@@ -581,6 +1139,330 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-14",
+      "starts_at": "2027-05-14T19:30:00+02:00",
+      "local_date": "2027-05-14",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-15",
+      "starts_at": "2027-05-15T19:30:00+02:00",
+      "local_date": "2027-05-15",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-16",
+      "starts_at": "2027-05-16T15:00:00+02:00",
+      "local_date": "2027-05-16",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-19",
+      "starts_at": "2027-05-19T19:30:00+02:00",
+      "local_date": "2027-05-19",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-21",
+      "starts_at": "2027-05-21T19:30:00+02:00",
+      "local_date": "2027-05-21",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-22",
+      "starts_at": "2027-05-22T19:30:00+02:00",
+      "local_date": "2027-05-22",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-23",
+      "starts_at": "2027-05-23T15:00:00+02:00",
+      "local_date": "2027-05-23",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-25",
+      "starts_at": "2027-05-25T15:00:00+02:00",
+      "local_date": "2027-05-25",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-26",
+      "starts_at": "2027-05-26T19:30:00+02:00",
+      "local_date": "2027-05-26",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-28",
+      "starts_at": "2027-05-28T19:30:00+02:00",
+      "local_date": "2027-05-28",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-carmen-2027:2027-05-29",
+      "starts_at": "2027-05-29T15:00:00+02:00",
+      "local_date": "2027-05-29",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-evgenij-onegin-2027:2027-06-13",
+      "starts_at": "2027-06-13T15:00:00+02:00",
+      "local_date": "2027-06-13",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:regio-evgenij-onegin-2027:2027-06-15",
+      "starts_at": "2027-06-15T20:00:00+02:00",
+      "local_date": "2027-06-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:regio-evgenij-onegin-2027:2027-06-18",
+      "starts_at": "2027-06-18T20:00:00+02:00",
+      "local_date": "2027-06-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:regio-evgenij-onegin-2027:2027-06-20",
+      "starts_at": "2027-06-20T15:00:00+02:00",
+      "local_date": "2027-06-20",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:regio-evgenij-onegin-2027:2027-06-22",
+      "starts_at": "2027-06-22T20:00:00+02:00",
+      "local_date": "2027-06-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:regio-evgenij-onegin-2027:2027-06-27",
+      "starts_at": "2027-06-27T15:00:00+02:00",
+      "local_date": "2027-06-27",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:regio-evgenij-onegin-2027:2027-06-29",
+      "starts_at": "2027-06-29T20:00:00+02:00",
+      "local_date": "2027-06-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
       ]
     }
   ]
