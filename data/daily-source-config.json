@@ -169,8 +169,8 @@
       "official_url": "https://www.teatroallascala.org/",
       "title": "Don Giovanni",
       "composer": "Wolfgang Amadeus Mozart",
-      "access_status": "pending",
-      "approval_evidence": null
+      "access_status": "approved",
+      "approval_evidence": "Operator authorized conditional factual opera-calendar monitoring; live GitHub Actions source-probe run 44809794379 on 2026-11-20 verified fresh robots permission and complete exact production schedule (10 Don Giovanni or 8 La bohème showtimes). Every daily fetch still requires a fresh robots check and fail-closed validation."
     },
     {
       "key": "scala-boheme-puccini-2027",
@@ -179,8 +179,8 @@
       "official_url": "https://www.teatroallascala.org/",
       "title": "La bohème",
       "composer": "Giacomo Puccini",
-      "access_status": "pending",
-      "approval_evidence": null
+      "access_status": "approved",
+      "approval_evidence": "Operator authorized conditional factual opera-calendar monitoring; live GitHub Actions source-probe run 44809794379 on 2026-11-20 verified fresh robots permission and complete exact production schedule (10 Don Giovanni or 8 La bohème showtimes). Every daily fetch still requires a fresh robots check and fail-closed validation."
     },
     {
       "key": "arena-nabucco-2027",
