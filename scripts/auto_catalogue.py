@@ -154,6 +154,85 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             {"new_stagings":created_stagings,"new_recite":created_recite,
              "auto_skipped":issues})
 
+def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
+    """Automatically onboard date-only OperaLombardia stagings of known operas.
+
+    Never infer composer if the same title maps to multiple canonical works.
+    The calendar's exact venue and city must already be verified in Atlas.
+    """
+    next_facts=copy.deepcopy(facts)
+    next_registry=copy.deepcopy(registry)
+    accepted=0
+    created=0
+    skipped=[]
+    from scripts.daily_ingest import CONFIG as DAILY_CONFIG, validate_source_config
+    sources={x["key"]:x for x in validate_source_config(json.loads(
+        DAILY_CONFIG.read_text(encoding="utf-8")))}
+    source=sources.get("opera-lombardia-calendar-2026-27")
+    if source is None or source["access_status"]!="approved":
+        return next_facts,next_registry,{"new_stagings":0,"new_recite":0,"auto_skipped":[]}
+    for scan in health.get("sources",[]):
+        if scan.get("key")!="opera-lombardia-calendar-2026-27" or scan.get("outcome")!="review_required":
+            continue
+        for row in scan.get("candidates",[]):
+            title,city,venue,day=(row.get(k) for k in ("title","city","venue","date"))
+            if not all(isinstance(v,str) and v.strip() for v in (title,city,venue,day)):
+                continue
+            if row.get("time") is not None:continue
+            try:date.fromisoformat(day)
+            except ValueError:continue
+            works=[w for w in next_registry["works"].values()
+                   if normalized(w["title"])==normalized(title)]
+            venue_key=city+"|"+venue
+            canonical_venue=next_registry["venues"].get(venue_key)
+            if len(works)!=1 or canonical_venue is None:
+                skipped.append({"title":title,"city":city,"reason":"identity_requires_more_evidence"})
+                continue
+            work=works[0]
+            collisions=[x for x in next_facts["productions"]
+                        if x["municipality"]==city and x["venue"]==venue
+                        and normalized(x["title"])==normalized(work["title"])
+                        and normalized(x["composer"])==normalized(work["composer"])]
+            exact=[x for x in collisions if x["source_url"]==source["url"]]
+            if (len(exact)>1 or (collisions and not exact)):
+                skipped.append({"title":title,"city":city,"reason":"venue_work_route_collision"})
+                continue
+            if exact:
+                production=exact[0]
+            else:
+                key="auto-lombardia-"+hashlib.sha256(
+                    (source["key"]+"|"+work["id"]+"|"+venue_key).encode()).hexdigest()[:16]
+                if key in next_registry["stagings"]:continue
+                production={"key":key,"title":work["title"],
+                            "composer":work["composer"],"venue":venue,
+                            "municipality":city,"region":canonical_venue["region"],
+                            "source_url":source["url"],"dates":[]}
+                next_registry["stagings"][key]={
+                    "id":next_id(next_registry["stagings"],"oa-s-"),
+                    "work_id":work["id"],"venue_id":canonical_venue["id"],
+                    "slug":work["slug"],"source_url":source["url"],
+                    "season":"2026-2027"}
+                next_facts["productions"].append(production)
+                created+=1
+            if day in dict(production["dates"]):
+                if dict(production["dates"])[day] is not None:
+                    continue
+                continue
+            recita_key=production["key"]+"|"+day
+            if recita_key in next_registry["performances"]:
+                continue
+            next_registry["performances"][recita_key]={
+                "id":f"oa-r-{_next_replica_id(next_registry):06d}",
+                "staging_id":next_registry["stagings"][production["key"]]["id"],
+                "original_date":day,"source_url":source["url"]}
+            production["dates"].append([day,None])
+            production["dates"].sort(key=lambda x:x[0])
+            accepted+=1
+    if accepted:
+        next_facts["reviewed_on"]=today.isoformat()
+    return next_facts,next_registry,{"new_stagings":created,
+                                     "new_recite":accepted,"auto_skipped":skipped}
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -163,6 +242,13 @@ def main():
     approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8")) if SOURCE_ALLOWLIST.exists() else {"schema_version":1,"urls":[]}
     next_facts,next_registry,urls,report=promote(
         facts,registry,evidence,candidates,approved["urls"],today=date.today())
+    from scripts.daily_ingest import HEALTH as DAILY_HEALTH
+    health=json.loads(DAILY_HEALTH.read_text(encoding="utf-8")) if DAILY_HEALTH.exists() else {"sources":[]}
+    next_facts,next_registry,calendar=promote_calendar(
+        next_facts,next_registry,health,today=date.today())
+    report["new_stagings"]+=calendar["new_stagings"]
+    report["new_recite"]+=calendar["new_recite"]
+    report["auto_skipped"]+=calendar["auto_skipped"]
     # Only write after the full canonical graph validates against the expanded
     # source allowlist; rollback-like behavior by pre-validating in memory.
     from scripts.build_verified_catalog import validate_auto_sources
