@@ -107,10 +107,23 @@ function missing(message) {
 }
 async function appendSynopsis(event) {
   try {
-    const response=await fetch("./work-synopses.json");
-    if(!response.ok)return;
-    const doc=await response.json();
-    if(doc.schema_version!==1||!doc.synopses)return;
+    let doc=null;
+    for(const url of [
+      "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/work-editorial.json",
+      "./work-synopses.json"
+    ]){
+      try{
+        const response=await fetch(url,{cache:"no-store"});
+        if(!response.ok)continue;
+        const candidate=await response.json();
+        if(candidate.schema_version!==1)continue;
+        doc=Array.isArray(candidate.works)
+          ? {synopses:Object.fromEntries(candidate.works.map(w=>[w.slug,w.synopsis]))}
+          : candidate;
+        if(doc.synopses)break;
+      }catch{/* Try the last deployed static fallback. */}
+    }
+    if(!doc||!doc.synopses)return;
     const slug=event.work_slug||window.OperaAtlasCatalog.urls(event).work.split("/").filter(Boolean).pop();
     const text=doc.synopses[slug];
     if(typeof text!=="string"||!text.trim())return;
