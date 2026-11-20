@@ -8,10 +8,11 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import unicodedata
 from datetime import date,datetime,timezone,timedelta
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urljoin,urlsplit
+from urllib.parse import urljoin,urlsplit,quote,unquote
 
 from opera_atlas.controlled_fetch import (AccessDenied,FetchUnavailable,
                                            fetch_official_html)
@@ -24,6 +25,7 @@ from scripts.discover_season_indexes import CONFIG,validate_config
 EVIDENCE=ROOT/"data"/"work-poster-evidence.json"
 OUTPUT=ROOT/"public"/"catalog"/"work-posters.json"
 HEALTH=ROOT/"data"/"work-poster-health.json"
+ARCHIVE=ROOT/"data"/"archival-work-images.json"
 MAX_PAGES=18
 RETRY_DAYS=7
 # Common image CDNs accepted only when the image URL is declared explicitly
@@ -70,6 +72,49 @@ def allowed_image_url(raw:str,official_url:str)->str|None:
         return None
     return url
 
+def image_matches_work(image_url:str,work_title:str)->bool:
+    """Demand the opera title in the image filename, not just page OG tags.
+
+    The official La Scala OpenGraph data sometimes names a conductor from an
+    unrelated concert. A generic OpenGraph image is NOT an opera poster.
+    """
+    stem=unquote(urlsplit(image_url).path.split("/")[-1])
+    stem=re.sub(r"\\.(?:jpe?g|png|webp)$","",stem,flags=re.I)
+    def tokens(value):
+        value=unicodedata.normalize("NFKD",value)
+        value="".join(c for c in value if not unicodedata.combining(c))
+        return [x for x in re.split(r"[^a-z0-9]+",value.lower()) if x]
+    title=[x for x in tokens(work_title) if x not in {"il","la","le","lo","l","di","de","and","in"}]
+    filename=tokens(stem)
+    if not title:return False
+    return all(x in filename for x in title)
+
+def load_archival_art(known_slugs:set[str])->dict:
+    if not ARCHIVE.exists():return {}
+    data=json.loads(ARCHIVE.read_text(encoding="utf-8"))
+    if data.get("schema_version")!=1 or not isinstance(data.get("works"),dict):
+        raise ValueError("invalid curated Wikimedia artwork registry")
+    result={}
+    for slug,entry in data["works"].items():
+        if slug not in known_slugs:continue
+        if not isinstance(entry,dict) or not all(
+            isinstance(entry.get(k),str) and entry[k]
+            for k in ("file","description","credit","license")):
+            raise ValueError("invalid archival artwork for "+slug)
+        filename=entry["file"]
+        if (len(filename)>220 or "/" in filename or "\\\\" in filename or
+                not re.search(r"\\.(?:jpe?g|png|webp)$",filename,re.I)):
+            raise ValueError("unsafe Commons artwork filename")
+        encoded=quote(filename.replace(" ","_"),safe="()_'-")
+        result[slug]={
+            "kind":"archival_work_image",
+            "image_url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/"+encoded+"?width=720",
+            "source_url":"https://commons.wikimedia.org/wiki/File:"+encoded,
+            "alt":entry["description"],
+            "credit":entry["credit"],"license":entry["license"],
+        }
+    return result
+
 def extract_official_poster(html:str,official_url:str,work_title:str)->dict|None:
     parser=ImageMeta()
     parser.feed(html[:250000])
@@ -77,7 +122,7 @@ def extract_official_poster(html:str,official_url:str,work_title:str)->dict|None
     raw=(data.get("og:image:secure_url") or data.get("og:image") or
          data.get("twitter:image"))
     url=allowed_image_url(raw,official_url)
-    if not url:return None
+    if not url or not image_matches_work(url,work_title):return None
     alt=(data.get("og:image:alt") or data.get("twitter:image:alt") or "").strip()
     if any(word in alt.casefold() for word in ("logo","favicon","placeholder")):
         return None
@@ -138,7 +183,13 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
     # work already exists in the verified canonical manifest.
     known_slugs={x["slug"] for x in json.loads(
         REGISTRY.read_text(encoding="utf-8"))["works"].values()}
-    posters={k:v for k,v in posters.items() if k in known_slugs}
+    by_slug={w["slug"]:w for w in json.loads(
+        REGISTRY.read_text(encoding="utf-8"))["works"].values()}
+    # Correct previously accepted OpenGraph images that depict conductors
+    # or unrelated concerts, rather than the claimed opera.
+    posters={k:v for k,v in posters.items() if k in known_slugs and
+             image_matches_work(v.get("image_url",""),by_slug[k]["title"])}
+    archival=load_archival_art(known_slugs)
     deadline=today or date.today()
     checked=0
     outcomes=[]
@@ -177,8 +228,8 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
     # Every published work has an image plan: official art if available,
     # otherwise the original editorial cover created by image-client.js.
     manifest={"schema_version":1,"works":{
-        slug:posters.get(slug,{"kind":"original_editorial_cover",
-              "alt":"Copertina editoriale originale per "+item["title"]})
+        slug:posters.get(slug,archival.get(slug,{"kind":"original_editorial_cover",
+              "alt":"Copertina editoriale originale per "+item["title"]}))
         for slug,item in sorted(((w["slug"],w) for w in json.loads(
             REGISTRY.read_text(encoding="utf-8"))["works"].values()),
             key=lambda entry:entry[0])}}
@@ -204,6 +255,12 @@ def check()->None:
         if item["kind"]=="official_production_image":
             if not allowed_image_url(item["image_url"],item["source_url"]):
                 raise ValueError("unapproved official poster URL for "+slug)
+        elif item["kind"]=="archival_work_image":
+            if (not isinstance(item.get("source_url"),str) or
+                    not item["source_url"].startswith("https://commons.wikimedia.org/wiki/File:") or
+                    not item.get("image_url","").startswith(
+                        "https://commons.wikimedia.org/wiki/Special:Redirect/file/")):
+                raise ValueError("invalid Wikimedia artwork provenance for "+slug)
         elif item["kind"]!="original_editorial_cover":
             raise ValueError("unrecognized poster provenance for "+slug)
 
