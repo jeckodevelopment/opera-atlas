@@ -36,7 +36,7 @@ vm.runInContext(code,context);
   const content=ids["detail-content"];
   assert.ok(content.children.some(x=>x.className==="brief-synopsis"),"synopsis appended");
   await vm.runInContext("appendHistory",context)(sample);
-  const history=content.children.find(x=>x.className==="work-history");
+  const history=content.children.find(x=>x.className.split(" ").includes("work-history"));
   assert.ok(history,"history appended");
   const story=history.children.find(x=>x.className==="work-history-story");
   assert.ok(story,"narrative paragraph expected");
