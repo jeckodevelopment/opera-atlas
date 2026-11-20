@@ -419,6 +419,22 @@ for(const [name,control] of Object.entries(controls)){
   });
   if(name==="query")control.addEventListener("input",()=>{page=0;render();});
 }
+document.getElementById("locate-me").addEventListener("click",()=>{
+  if(!navigator.geolocation){message.textContent="Posizione non disponibile in questo browser.";return;}
+  navigator.geolocation.getCurrentPosition(position=>{
+    const coords=[position.coords.latitude,position.coords.longitude];
+    const candidates=[...controls.location.options].filter(option=>option.value&&CITY_CENTERS[normalized(option.value)])
+      .map(option=>({city:option.value,distance:Math.round(haversine(coords,CITY_CENTERS[normalized(option.value)]))}))
+      .sort((a,b)=>a.distance-b.distance);
+    if(!candidates.length||candidates[0].distance>80){
+      message.textContent="Nessuna città censita sufficientemente vicina. Scegli una località manualmente.";
+      return;
+    }
+    controls.location.value=candidates[0].city;page=0;render();
+    message.textContent="Località impostata sulla città censita più vicina ("+candidates[0].city+"). La posizione esatta non viene conservata.";
+  },()=>{message.textContent="Localizzazione non autorizzata o non disponibile. Puoi scegliere una città manualmente.";},
+  {enableHighAccuracy:false,timeout:9000,maximumAge:0});
+});
 document.getElementById("reset").addEventListener("click",()=>{
   controls.query.value=controls.city.value=controls.region.value=controls.time.value="";
   controls.location.value="Torino";controls.radius.value="100";controls.period.value="30";controls.sort.value="date";
