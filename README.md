@@ -126,3 +126,9 @@ La stessa GitHub Action `refresh-catalog.yml`, eseguita una volta al giorno nel 
 Lo stato canonico sopravvive ai runner effimeri attraverso il manifesto editoriale e il registro degli ID. Nuove date non ambigue di una produzione curata ricevono un ID permanente, senza cancellare date che scompaiono da una scansione; cambi di orario, rinvii probabili e sedi ignote entrano nella coda di verifica, senza alterazione automatica. Eventuali problemi non azzerano il catalogo pubblico. Lo stato operativo delle fonti approvate è in `data/catalog-source-health.json`; l'ultima data di verifica editoriale è visibile sul frontend. Il processo non esegue SFTP.
 
 Procedura per l'approvazione sicura, limiti e collaudi: [SOURCE_ONBOARDING](docs/SOURCE_ONBOARDING.md).
+
+### Arricchimento incrociato degli orari verificati (Fase 2)
+
+Una singola pagina del circuito può certificare data e sede senza indicare l'ora. Opera Atlas ora supporta `data/verified-time-evidence.json`, che associa a una **replica già censita** l'orario e una **seconda fonte ufficiale** (teatro o Comune). Il generatore conserva gli ID `oa-r-...`, la pagina originale di OperaLombardia e la nuova fonte dell'orario. Un orario non verificato rimane `null`; una fonte estranea, un giorno sbagliato o un'ora contraddittoria bloccano la build.
+
+Prima tranche: 6 orari confermati per L’italiana in Algeri (Como 13/15 novembre, Pavia 20/22 novembre, Cremona 10/12 dicembre 2026). Rimangono 2 recite di Brescia senza ora. **Il catalogo contiene ancora 19 repliche: 17 con ora e 2 senza.** Nessun nuovo connettore live è stato autorizzato. Le fonti e la policy sono spiegate in [SOURCE_ONBOARDING](docs/SOURCE_ONBOARDING.md). Gli aggiornamenti del JSON v2 seguono il normale workflow di `opera-atlas`, senza SFTP.

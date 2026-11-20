@@ -3,10 +3,10 @@
   "performances": [
     {
       "id": "curated:lombardia-italiana-como:2026-11-13",
-      "starts_at": null,
+      "starts_at": "2026-11-13T20:00:00+01:00",
       "local_date": "2026-11-13",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "20:00",
       "status": "announced",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
@@ -16,15 +16,16 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/"
       ]
     },
     {
       "id": "curated:lombardia-italiana-como:2026-11-15",
-      "starts_at": null,
+      "starts_at": "2026-11-15T15:30:00+01:00",
       "local_date": "2026-11-15",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "15:30",
       "status": "announced",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
@@ -34,15 +35,16 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/"
       ]
     },
     {
       "id": "curated:lombardia-italiana-pavia:2026-11-20",
-      "starts_at": null,
+      "starts_at": "2026-11-20T20:00:00+01:00",
       "local_date": "2026-11-20",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "20:00",
       "status": "announced",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
@@ -52,15 +54,16 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://www.teatrofraschini.it/programma/litaliana-in-algeri/"
       ]
     },
     {
       "id": "curated:lombardia-italiana-pavia:2026-11-22",
-      "starts_at": null,
+      "starts_at": "2026-11-22T15:30:00+01:00",
       "local_date": "2026-11-22",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "15:30",
       "status": "announced",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
@@ -70,7 +73,8 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://www.teatrofraschini.it/programma/litaliana-in-algeri/"
       ]
     },
     {
@@ -111,10 +115,10 @@
     },
     {
       "id": "curated:lombardia-italiana-cremona:2026-12-10",
-      "starts_at": null,
+      "starts_at": "2026-12-10T20:00:00+01:00",
       "local_date": "2026-12-10",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "20:00",
       "status": "announced",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
@@ -124,15 +128,16 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri"
       ]
     },
     {
       "id": "curated:lombardia-italiana-cremona:2026-12-12",
-      "starts_at": null,
+      "starts_at": "2026-12-12T16:00:00+01:00",
       "local_date": "2026-12-12",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "16:00",
       "status": "announced",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
@@ -142,7 +147,8 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri-0"
       ]
     },
     {

@@ -87,7 +87,7 @@ window.OperaAtlasCatalog = (() => {
         time_known:item.time_known, status:item.status,
         title:work.title, composer:work.composer,
         venue:venue.name,municipality:venue.city,region:venue.region,
-        sources:[staging.source_url],
+        sources:Array.isArray(item.sources) && item.sources.length ? item.sources : [staging.source_url],
       };
     });
     return {schema_version:1,performances,source:"github",reviewed_on:manifest.reviewed_on};

@@ -39,6 +39,7 @@ def normalized(value: str) -> str:
 
 def assemble(facts: dict, registry: dict) -> dict:
     legacy = legacy_build(facts)
+    by_legacy = {item["id"]: item for item in legacy["performances"]}
     if registry.get("schema_version") != 1:
         raise ValueError("unknown identity registry")
     all_ids = []
@@ -85,12 +86,14 @@ def assemble(facts: dict, registry: dict) -> dict:
             item = dict(registry["performances"][rk])
             if item["staging_id"] != staging["id"] or item["source_url"] != product["source_url"]:
                 raise ValueError("recita identity or provenance changed unexpectedly")
+            legacy_event = by_legacy[f"curated:{sk}:{day}"]
             item.update({
-                "legacy_id": f"curated:{sk}:{day}",
+                "legacy_id": legacy_event["id"],
                 "local_date": day,
-                "starts_at": f"{day}T{time}:00+01:00" if time else None,
-                "time_known": time is not None,
-                "status": "announced",
+                "starts_at": legacy_event["starts_at"],
+                "time_known": legacy_event["time_known"],
+                "sources": legacy_event["sources"],
+                "status": legacy_event["status"],
             })
             performances.append(item)
     if set(works) != {p["id"] for p in registry["works"].values()}:
