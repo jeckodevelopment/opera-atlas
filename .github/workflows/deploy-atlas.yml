@@ -14,7 +14,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: opera-atlas-sftp-production
+  group: opera-atlas-ftps-production
   cancel-in-progress: false
 jobs:
   publish:
