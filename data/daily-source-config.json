@@ -161,6 +161,26 @@
       "composer": "Multiple canonical composers",
       "access_status": "approved",
       "approval_evidence": "Owner authorization 2026-11-20 for official factual OperaLombardia calendar with mandatory fresh robots.txt check before every request. Exact index reviewed editorially; parsing must fail closed on unexpected titles, dates, theatres, partial HTML or robots denial. Never infer start times. Robots authorization for this exact index page NOT verified at editorial onboarding; runtime check is mandatory and errors deny collection."
+    },
+    {
+      "key": "regio-tragedie-carmen-piccolo-2027",
+      "adapter": "regio_piccolo",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "La Tragédie de Carmen",
+      "composer": "Marius Constant",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for factual opera performances on official Regio pages, conditional runtime robots.txt and exact approved URL. Robots permission for these exact paths NOT verified at editorial onboarding; runtime check is mandatory before each page."
+    },
+    {
+      "key": "regio-boheme-primo-amore-piccolo-2027",
+      "adapter": "regio_piccolo",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "La bohème, il primo amore",
+      "composer": "Giacomo Puccini",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for factual opera performances on official Regio pages, conditional runtime robots.txt and exact approved URL. Robots permission for these exact paths NOT verified at editorial onboarding; runtime check is mandatory before each page."
     }
   ]
 }
