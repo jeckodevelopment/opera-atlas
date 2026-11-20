@@ -1,0 +1,25 @@
+# Modello dati e integrità — proposta iniziale
+
+## Entità
+- **work**: identificatore canonico, titolo, varianti/alias, compositore, genere, anno (se affidabile).
+- **production**: work_id, soggetto produttore, edizione, regia e altri crediti opzionali, intervallo di validità. Una coproduzione può avere più organizzatori.
+- **performance**: production_id, venue_id, inizio con timezone Europe/Rome, stato (annunciata/confermata/rinviata/annullata), URL programma/biglietti, note fattuali verificate. Ogni recita è distinta.
+- **venue**: nome, alias, indirizzo verificato, comune, provincia, regione, coordinate, stato di verifica; sedi temporanee e alternative rappresentabili.
+- **organizer**: fondazione, teatro operatore, festival o circuito; URL canonico e alias. Organizzatori e luoghi sono distinti.
+- **festival/season**: edizione, organizzatore, periodo, relazione many-to-many con produzione/recita.
+- **source**: URL ufficiale, tipologia pagina e metodo di acquisizione, frequenza, restrizioni, stato, ultima verifica.
+- **observation**: snapshot di fatti estratti, timestamp, URL e fingerprint contenuto; storia delle correzioni.
+
+## Invarianti
+1. La stessa recita pubblicizzata da festival, circuito e teatro deve essere una sola entità, con più provenance/source.
+2. Un titolo identico senza compositore o contesto non autorizza la fusione automatica di opere.
+3. Gli spettacoli senza data precisa sono annunci di produzione, non recite inventate.
+4. La deduplicazione incrocia opera canonica, venue, timestamp locale, organizzazione/produzione e URL, con revisione delle collisioni.
+5. Nessuna interpretazione di 'attivo' da un semplice censimento: teatro attivo = almeno una recita nel periodo scelto, non venue presente in elenco.
+6. Metriche distinte per opere, produzioni e recite; 'opera rara' significa una sola produzione nel periodo selezionato fino a definizione statistica più sofisticata.
+7. Coordinate e URL non verificati rimangono null, senza sostituti ipotetici.
+8. Rinvii e annullamenti conservano storicità e riferimenti; rappresentazioni future di default escludono annullate.
+9. Copertura dichiarata per fonte e periodo: dati parziali non sono una fotografia esaustiva dell'Italia.
+
+## Contratto di acquisizione
+Per ogni connettore: input URL, policy e limiti, parser versionato, confidence dei campi, data estrazione, osservazioni, warnings, mapping canonical, test con fixture e log degli esiti.
