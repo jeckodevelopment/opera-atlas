@@ -8,6 +8,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 SCHEMA_PATH = Path(__file__).resolve().parent / "schema.sql"
+SCHEMA_V2_PATH = Path(__file__).resolve().parent / "schema_v2.sql"
 ITALY = ZoneInfo("Europe/Rome")
 
 
@@ -24,6 +25,9 @@ def migrate(connection: sqlite3.Connection) -> None:
     connection.execute(
         "INSERT OR IGNORE INTO schema_migrations(version) VALUES (1)"
     )
+    if connection.execute("SELECT 1 FROM schema_migrations WHERE version=2").fetchone() is None:
+        connection.executescript(SCHEMA_V2_PATH.read_text(encoding="utf-8"))
+        connection.execute("INSERT INTO schema_migrations(version) VALUES (2)")
     connection.commit()
 
 
