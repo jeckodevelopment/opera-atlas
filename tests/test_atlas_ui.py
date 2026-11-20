@@ -61,6 +61,24 @@ class AtlasInterfaceTests(unittest.TestCase):
             self.assertTrue(festival["official_url"].startswith("https://"))
             self.assertTrue(set(festival["staging_ids"]).issubset(ids))
 
+    def test_shared_production_ids_preserve_work_and_venue_specific_stagings(self):
+        manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        path = ROOT / "public/catalog/v2" / manifest["files"]["stagings"]["path"]
+        by_id = {x["id"]: x for x in json.loads(path.read_text(encoding="utf-8"))["stagings"]}
+        groups = json.loads((ROOT / "public/catalog/v2/production-groups.json").read_text(encoding="utf-8"))
+        claimed = set()
+        for group in groups["groups"]:
+            self.assertGreater(len(group["staging_ids"]), 1)
+            self.assertTrue(group["official_source"].startswith("https://"))
+            for staging_id in group["staging_ids"]:
+                self.assertNotIn(staging_id, claimed)
+                claimed.add(staging_id)
+                self.assertEqual(by_id[staging_id]["work_id"], group["work_id"])
+        code = (SITE / "catalog-client.js").read_text(encoding="utf-8")
+        self.assertIn("production_group_id", code)
+        self.assertIn('"/produzioni/"', code)
+        self.assertIn('kind:"group"', (SITE / "detail.js").read_text(encoding="utf-8"))
+
     def test_editorial_synopses_are_short_and_no_html(self):
         content = json.loads((SITE / "work-synopses.json").read_text(encoding="utf-8"))
         for slug, summary in content["synopses"].items():
