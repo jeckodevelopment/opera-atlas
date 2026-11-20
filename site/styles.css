@@ -24,3 +24,24 @@
 .staging-group p{margin:4px 0 10px;font-size:12px;color:var(--muted)}
 .staging-group a{color:#815d2c;font-weight:700;font-size:12px}
 @media(max-width:520px){.replica-row{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* Opera+ Atlas visitor navigation and discovery sections. */
+:root{--ink:#171717;--gold:#b58b24;--bg:#f7f5f0;--accent:#171717}
+.primary-nav{display:flex;gap:24px;align-items:center}
+.primary-nav a{font-size:13px;font-weight:650;text-decoration:none;color:var(--ink);padding:10px 0}
+.primary-nav a[aria-current]{border-bottom:2px solid var(--gold)}
+.discovery-section{padding:34px 0;border-top:1px solid var(--line);margin-top:24px}
+.discovery-section h2{font:500 27px/1.2 Georgia,serif;margin:0 0 9px}
+.discovery-section p{color:var(--muted);font-size:13px;margin:0 0 16px}
+.discovery-links{display:flex;gap:9px;flex-wrap:wrap}
+.discovery-link{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 14px;color:var(--ink);font-size:13px;text-decoration:none}
+.discovery-link:hover{border-color:var(--gold)}
+.mobile-nav{display:none}
+@media(max-width:700px){
+  .primary-nav{display:none}
+  body{padding-bottom:78px}
+  .mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-top:1px solid var(--line);padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom));box-shadow:0 -3px 16px #0000000b}
+  .mobile-nav a{display:block;color:#555;text-align:center;text-decoration:none;padding:9px 2px;font-size:12px;border-radius:8px}
+  .mobile-nav a[aria-current]{color:#171717;background:#f5efdf;font-weight:700}
+  .discovery-section{padding:26px 0}
+}
