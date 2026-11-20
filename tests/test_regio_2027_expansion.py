@@ -27,15 +27,15 @@ class RegioExpandedCatalogTests(unittest.TestCase):
         self.assertEqual(by_key["regio-salome-2027"]["dates"],[list(x) for x in SALOME])
         self.assertTrue(by_key["regio-edgar-2027"]["source_url"].endswith("/edgar"))
         self.assertTrue(by_key["regio-salome-2027"]["source_url"].endswith("/salome"))
-        self.assertEqual(len(self.facts["productions"]),7)
+        self.assertEqual(len(self.facts["productions"]),13)
 
     def test_new_stagings_and_replica_ids_are_stable(self):
         graph=assemble(self.facts,self.registry)
-        self.assertEqual(len(graph["works"]),4)
+        self.assertEqual(len(graph["works"]),10)
         self.assertEqual(len(graph["venues"]),5)
-        self.assertEqual(len(graph["stagings"]),7)
-        self.assertEqual(len(graph["performances"]),32)
-        self.assertEqual(graph["performances"][-1]["starts_at"],"2027-04-17T15:00:00+02:00")
+        self.assertEqual(len(graph["stagings"]),13)
+        self.assertEqual(len(graph["performances"]),81)
+        self.assertEqual(graph["performances"][-1]["starts_at"],"2027-06-29T20:00:00+02:00")
         self.assertEqual(self.registry["stagings"]["regio-edgar-2027"]["id"],"oa-s-000006")
         self.assertEqual(self.registry["stagings"]["regio-salome-2027"]["id"],"oa-s-000007")
         self.assertEqual(self.registry["performances"]["regio-salome-2027|2027-04-17"]["id"],"oa-r-000032")
@@ -50,10 +50,10 @@ class RegioExpandedCatalogTests(unittest.TestCase):
         originals=[r for r in graph["performances"] if int(r["id"].split("-")[-1])<=19]
         self.assertEqual(len(originals),19)
         self.assertEqual(sum(not e["time_known"] for e in graph["performances"]),2)
-        self.assertEqual(sum(e["time_known"] for e in graph["performances"]),30)
-        self.assertEqual(len({e["id"] for e in graph["performances"]}),32)
+        self.assertEqual(sum(e["time_known"] for e in graph["performances"]),79)
+        self.assertEqual(len({e["id"] for e in graph["performances"]}),81)
         _,manifest=release_parts(self.facts,self.registry)
-        self.assertEqual(manifest["files"]["performances"]["count"],32)
+        self.assertEqual(manifest["files"]["performances"]["count"],81)
 
 
 if __name__=="__main__":
