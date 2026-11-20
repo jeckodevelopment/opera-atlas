@@ -170,3 +170,10 @@ Il parser legge **esclusivamente fatti espliciti** nei blocchi `application/ld+j
 I JSON `data/candidate-detail-evidence.json` e `public/catalog/candidate-detail-evidence.json` conservano identificativo candidato, URL fonte, hash della pagina e righe strutturate; `data/candidate-detail-health.json` registra gli esiti della scansione. Le acquisizioni inconcludenti o negate non eliminano evidenze precedenti. Il file pubblico è **diagnostico e di revisione**, non viene unito a `public/catalog/v2`.
 
 Collaudi: test `tests/test_candidate_detail_evidence.py` e suite completa; controllare dopo il merge il numero di pagine con `facts_found` e i casi `unavailable_or_unstructured`, senza dichiarare completamento delle stagioni. L'assenza di JSON-LD su una pagina richiederà un adapter specifico collaudato sul markup reale, non estrazione euristica o date inventate. Il job dati opera solo su `opera-atlas` e non richiede SFTP.
+
+
+### F2 — confinamento alle sezioni stagionali reali
+
+Dopo il primo controllo live Parma e Palermo sono risultati leggibili, ma gli indici HTML contengono anche collegamenti alla navigazione generale. Il parser dei due siti usa ora una sezione semantica delimitata per evitare falsi positivi: **Parma** solo dopo l'intestazione `h1 Opera` e prima del footer; **Palermo** solo fra `h2 CALENDARIO OPERE E BALLETTI` e la successiva sezione `h2 CALENDARIO CONCERTI`. Gli URL fuori da queste aree non vengono considerati candidate nuove. Rimangono i controlli di dominio HTTPS, path esatto, esclusioni di balletto/prove e soglia minima di completezza; se la struttura cambia, il job non sovrascrive i dati buoni e segnala errore.
+
+La coda storica non viene cancellata solo perché un collegamento non appare più nella nuova estrazione: eventuali variazioni stagionali devono essere valutate prima di marcare un evento cancellato. I test simulano menu, footer e sezione concerti presenti nella stessa pagina.
