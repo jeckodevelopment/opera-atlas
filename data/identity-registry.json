@@ -25,6 +25,42 @@
       "slug": "salome",
       "title": "Salome",
       "composer": "Richard Strauss"
+    },
+    "cavalleria rusticana|pietro mascagni": {
+      "id": "oa-w-000005",
+      "slug": "cavalleria-rusticana",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni"
+    },
+    "pagliacci|ruggero leoncavallo": {
+      "id": "oa-w-000006",
+      "slug": "pagliacci",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo"
+    },
+    "la bohème|ruggero leoncavallo": {
+      "id": "oa-w-000007",
+      "slug": "la-boheme",
+      "title": "La bohème",
+      "composer": "Ruggero Leoncavallo"
+    },
+    "iris|pietro mascagni": {
+      "id": "oa-w-000008",
+      "slug": "iris",
+      "title": "Iris",
+      "composer": "Pietro Mascagni"
+    },
+    "carmen|georges bizet": {
+      "id": "oa-w-000009",
+      "slug": "carmen",
+      "title": "Carmen",
+      "composer": "Georges Bizet"
+    },
+    "evgenij onegin|pëtr il'ič čajkovskij": {
+      "id": "oa-w-000010",
+      "slug": "evgenij-onegin",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij"
     }
   },
   "venues": {
@@ -124,6 +160,54 @@
       "venue_id": "oa-v-000001",
       "slug": "salome",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
+      "season": "2026-2027"
+    },
+    "regio-cavalleria-rusticana-2026": {
+      "id": "oa-s-000008",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000001",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana",
+      "season": "2026-2027"
+    },
+    "regio-pagliacci-2026": {
+      "id": "oa-s-000009",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000001",
+      "slug": "pagliacci",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci",
+      "season": "2026-2027"
+    },
+    "regio-boheme-leoncavallo-2026": {
+      "id": "oa-s-000010",
+      "work_id": "oa-w-000007",
+      "venue_id": "oa-v-000001",
+      "slug": "la-boheme",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme",
+      "season": "2026-2027"
+    },
+    "regio-iris-2026": {
+      "id": "oa-s-000011",
+      "work_id": "oa-w-000008",
+      "venue_id": "oa-v-000001",
+      "slug": "iris",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris",
+      "season": "2026-2027"
+    },
+    "regio-carmen-2027": {
+      "id": "oa-s-000012",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000001",
+      "slug": "carmen",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen",
+      "season": "2026-2027"
+    },
+    "regio-evgenij-onegin-2027": {
+      "id": "oa-s-000013",
+      "work_id": "oa-w-000010",
+      "venue_id": "oa-v-000001",
+      "slug": "evgenij-onegin",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin",
       "season": "2026-2027"
     }
   },
@@ -319,6 +403,300 @@
       "staging_id": "oa-s-000007",
       "original_date": "2027-04-17",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+    },
+    "regio-cavalleria-rusticana-2026|2026-10-13": {
+      "id": "oa-r-000033",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-10-13",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-10-15": {
+      "id": "oa-r-000034",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-10-15",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-10-18": {
+      "id": "oa-r-000035",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-10-18",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-10-22": {
+      "id": "oa-r-000036",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-10-22",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-10-24": {
+      "id": "oa-r-000037",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-10-24",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-10-30": {
+      "id": "oa-r-000038",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-10-30",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-11-07": {
+      "id": "oa-r-000039",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-11-07",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-11-14": {
+      "id": "oa-r-000040",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-cavalleria-rusticana-2026|2026-11-21": {
+      "id": "oa-r-000041",
+      "staging_id": "oa-s-000008",
+      "original_date": "2026-11-21",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana"
+    },
+    "regio-pagliacci-2026|2026-10-13": {
+      "id": "oa-r-000042",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-10-13",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-10-15": {
+      "id": "oa-r-000043",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-10-15",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-10-18": {
+      "id": "oa-r-000044",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-10-18",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-10-22": {
+      "id": "oa-r-000045",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-10-22",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-10-24": {
+      "id": "oa-r-000046",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-10-24",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-10-30": {
+      "id": "oa-r-000047",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-10-30",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-11-07": {
+      "id": "oa-r-000048",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-11-07",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-11-14": {
+      "id": "oa-r-000049",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-pagliacci-2026|2026-11-21": {
+      "id": "oa-r-000050",
+      "staging_id": "oa-s-000009",
+      "original_date": "2026-11-21",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+    },
+    "regio-boheme-leoncavallo-2026|2026-10-23": {
+      "id": "oa-r-000051",
+      "staging_id": "oa-s-000010",
+      "original_date": "2026-10-23",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+    },
+    "regio-boheme-leoncavallo-2026|2026-10-27": {
+      "id": "oa-r-000052",
+      "staging_id": "oa-s-000010",
+      "original_date": "2026-10-27",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+    },
+    "regio-boheme-leoncavallo-2026|2026-10-31": {
+      "id": "oa-r-000053",
+      "staging_id": "oa-s-000010",
+      "original_date": "2026-10-31",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+    },
+    "regio-boheme-leoncavallo-2026|2026-11-06": {
+      "id": "oa-r-000054",
+      "staging_id": "oa-s-000010",
+      "original_date": "2026-11-06",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+    },
+    "regio-boheme-leoncavallo-2026|2026-11-13": {
+      "id": "oa-r-000055",
+      "staging_id": "oa-s-000010",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+    },
+    "regio-boheme-leoncavallo-2026|2026-11-22": {
+      "id": "oa-r-000056",
+      "staging_id": "oa-s-000010",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+    },
+    "regio-iris-2026|2026-10-29": {
+      "id": "oa-r-000057",
+      "staging_id": "oa-s-000011",
+      "original_date": "2026-10-29",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+    },
+    "regio-iris-2026|2026-11-05": {
+      "id": "oa-r-000058",
+      "staging_id": "oa-s-000011",
+      "original_date": "2026-11-05",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+    },
+    "regio-iris-2026|2026-11-08": {
+      "id": "oa-r-000059",
+      "staging_id": "oa-s-000011",
+      "original_date": "2026-11-08",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+    },
+    "regio-iris-2026|2026-11-10": {
+      "id": "oa-r-000060",
+      "staging_id": "oa-s-000011",
+      "original_date": "2026-11-10",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+    },
+    "regio-iris-2026|2026-11-15": {
+      "id": "oa-r-000061",
+      "staging_id": "oa-s-000011",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+    },
+    "regio-iris-2026|2026-11-17": {
+      "id": "oa-r-000062",
+      "staging_id": "oa-s-000011",
+      "original_date": "2026-11-17",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+    },
+    "regio-iris-2026|2026-11-18": {
+      "id": "oa-r-000063",
+      "staging_id": "oa-s-000011",
+      "original_date": "2026-11-18",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+    },
+    "regio-carmen-2027|2027-05-14": {
+      "id": "oa-r-000064",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-14",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-15": {
+      "id": "oa-r-000065",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-15",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-16": {
+      "id": "oa-r-000066",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-16",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-19": {
+      "id": "oa-r-000067",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-19",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-21": {
+      "id": "oa-r-000068",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-22": {
+      "id": "oa-r-000069",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-23": {
+      "id": "oa-r-000070",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-25": {
+      "id": "oa-r-000071",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-25",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-26": {
+      "id": "oa-r-000072",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-26",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-28": {
+      "id": "oa-r-000073",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-28",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-carmen-2027|2027-05-29": {
+      "id": "oa-r-000074",
+      "staging_id": "oa-s-000012",
+      "original_date": "2027-05-29",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+    },
+    "regio-evgenij-onegin-2027|2027-06-13": {
+      "id": "oa-r-000075",
+      "staging_id": "oa-s-000013",
+      "original_date": "2027-06-13",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+    },
+    "regio-evgenij-onegin-2027|2027-06-15": {
+      "id": "oa-r-000076",
+      "staging_id": "oa-s-000013",
+      "original_date": "2027-06-15",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+    },
+    "regio-evgenij-onegin-2027|2027-06-18": {
+      "id": "oa-r-000077",
+      "staging_id": "oa-s-000013",
+      "original_date": "2027-06-18",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+    },
+    "regio-evgenij-onegin-2027|2027-06-20": {
+      "id": "oa-r-000078",
+      "staging_id": "oa-s-000013",
+      "original_date": "2027-06-20",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+    },
+    "regio-evgenij-onegin-2027|2027-06-22": {
+      "id": "oa-r-000079",
+      "staging_id": "oa-s-000013",
+      "original_date": "2027-06-22",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+    },
+    "regio-evgenij-onegin-2027|2027-06-27": {
+      "id": "oa-r-000080",
+      "staging_id": "oa-s-000013",
+      "original_date": "2027-06-27",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+    },
+    "regio-evgenij-onegin-2027|2027-06-29": {
+      "id": "oa-r-000081",
+      "staging_id": "oa-s-000013",
+      "original_date": "2027-06-29",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
     }
   }
 }
