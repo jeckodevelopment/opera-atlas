@@ -60,7 +60,8 @@ def evaluate(config: dict, facts: dict, *, fetcher=fetch_official_html) -> dict:
                                 "missing_rows":len(set(expected)-observed)})
             except (AccessDenied,FetchUnavailable,ValueError,sqlite3.Error) as exc:
                 reports.append({"key":source["key"],"status":"not_verified",
-                                "reason":type(exc).__name__})
+                                "reason":type(exc).__name__,
+                                "diagnostic":str(exc)[:120]})
     finally:
         db.close()
     return {"checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
