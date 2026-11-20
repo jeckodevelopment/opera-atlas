@@ -3,7 +3,7 @@
 /* Static deep-route details: an opera lists every staging in Italy, a theatre
    lists its stagings, and one staging owns all of its date/time replicas.
    No client-supplied path is used as a remote URL. */
-const root = "/dev/opera-atlas/";
+const root = new URL(document.baseURI).pathname;
 const title = document.getElementById("detail-title");
 const subtitle = document.getElementById("detail-subtitle");
 const kind = document.getElementById("kind");

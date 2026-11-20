@@ -12,11 +12,12 @@ class El {
   addEventListener(name,fn){this.handlers[name]=fn;}
 }
 const elements={};
-const document={createElement(tag){return new El(tag)},getElementById(id){return elements[id]||(elements[id]=new El("div"))}};
+const document={
+  baseURI:"https://opera.plus/atlas/",createElement(tag){return new El(tag)},getElementById(id){return elements[id]||(elements[id]=new El("div"))}};
 const root=path.join(__dirname,"..");
 let code=fs.readFileSync(path.join(root,"site/detail.js"),"utf8");
 code=code.replace(/\ninitialize\(\);\s*$/,"");
-const context={document,console,window:{location:{pathname:"/dev/opera-atlas/"}}};
+const context={document,console,URL,window:{location:{pathname:"/atlas/"}}};
 vm.createContext(context);
 vm.runInContext(code,context);
 const dateSelector=vm.runInContext("dateSelector",context);

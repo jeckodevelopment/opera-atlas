@@ -4,6 +4,7 @@ const fs=require("node:fs");
 const path=require("node:path");
 const ROOT=path.resolve(__dirname,"..");
 global.window=global;
+global.document={baseURI:"https://opera.plus/atlas/"};
 if(!global.crypto || !global.crypto.subtle)Object.defineProperty(global,"crypto",{value:require("node:crypto").webcrypto,configurable:true});
 const RAW="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/";
 const MIRROR="https://cdn.jsdelivr.net/gh/jeckodevelopment/opera-atlas@main/public/catalog/v2/";

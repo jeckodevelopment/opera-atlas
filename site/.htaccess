@@ -1,7 +1,7 @@
 # Opera Atlas is a static frontend. Route readable URLs to detail.html.
 # No dynamic backend or PHP; all catalog data comes from GitHub's public JSON.
 RewriteEngine On
-RewriteBase /dev/opera-atlas/
+RewriteBase /atlas/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(opere/[a-z0-9-]+|produzioni/oa-g-[a-z0-9-]+|[a-z0-9-]+/[a-z0-9-]+(/[a-z0-9-]+)?)/?$ detail.html [L]

@@ -13,7 +13,7 @@ Catalogo nazionale delle rappresentazioni di opera lirica in Italia e osservator
 
 ## Interfaccia visitatori
 
-L'esperienza pubblica è in `site/`: ricerca geografica indicativa, viste elenco/calendario/mappa schematica, directory Opere/Teatri/Festival e schede produzione orientate alle rappresentazioni future. Le decisioni UX, i limiti geografici e i collaudi sono documentati in [docs/ATLAS_UI_APPROVED.md](docs/ATLAS_UI_APPROVED.md). Il catalogo, i gruppi di coproduzione e l'indice festival sono pubblicati da `opera-atlas` su GitHub, separatamente dalla pubblicazione SFTP del frontend.
+L'esperienza pubblica è in `site/`: ricerca geografica indicativa, viste elenco/calendario, directory Opere/Teatri/Festival e schede produzione orientate alle rappresentazioni future. Le decisioni UX, i limiti geografici e i collaudi sono documentati in [docs/ATLAS_UI_APPROVED.md](docs/ATLAS_UI_APPROVED.md). Il catalogo, i gruppi di coproduzione e l'indice festival sono pubblicati da `opera-atlas` su GitHub, separatamente dalla pubblicazione SFTP del frontend.
 
 ## Sviluppo locale
 
@@ -89,7 +89,7 @@ python -m http.server 8000 --directory site
 ### Schede di dettaglio e pubblicazione
 Il catalogo comprende le schede dinamiche per **opera, recita e teatro** in `site/detail.html` (parametri `type` e `key`), tutte derivate dall'export pubblico verificato e navigabili dalle schede del calendario. Le recite con orario mancante conservano la dicitura **Orario da confermare** anche nel dettaglio. Non vengono copiati testi editoriali o immagini di terzi.
 
-Il frontend viene distribuito in `https://jeckodevelopment.com/dev/opera-atlas/` tramite il workflow SFTP dedicato **nel repository `jeckodevelopment/jeckodevsite`**, che utilizza gli stessi secret SFTP e il rollback già operativi per le altre applicazioni. Il deploy verifica via HTTPS ogni asset pubblicato; l'export iniziale rimane `performances: []`, non vengono inventate recite. Vedi [catalogo pubblico](docs/PUBLIC_CATALOG.md).
+**Nuova destinazione:** https://opera.plus/atlas/. Il frontend è distribuito esclusivamente dalla repository `jeckodevelopment/opera-atlas` tramite `.github/workflows/deploy-atlas.yml` e `scripts/deploy_atlas.py`, su un account SFTP configurato per il nuovo spazio web. Il publisher verifica byte, deep link e ripristina il rilascio precedente se il collaudo HTTPS fallisce. **Non dipende più da `jeckodevsite`**. Prima del primo deploy servono le credenziali SFTP e la cartella pubblica `/atlas` sulla piattaforma ospitante; vedere [procedura di migrazione e rilascio](docs/DEPLOY_OPERA_PLUS.md).
 
 ### Primo popolamento editoriale e identità grafica
 Il 20 novembre 2026 sono stati verificati sulle pagine ufficiali: **11 recite di La traviata** al Teatro Regio di Torino (26/02–10/03/2027, orari riportati), **8 recite di L’italiana in Algeri** per OperaLombardia (13/11–12/12/2026: teatro e data, ma nessun orario). Le pagine ufficiali sono collegate in ogni evento. Il manifesto sorgente curato è `data/verified-launch-catalog.json`; rigenerare o controllare il JSON pubblicabile con:
@@ -105,7 +105,7 @@ Il frontend adotta una **prima identità grafica Opera Atlas**, ispirata a Opera
 
 La fonte canonica è `data/verified-launch-catalog.json` con registro di identità permanente `data/identity-registry.json`. Il modulo `scripts.publish_catalog_v2` genera quattro insiemi JSON separati (`works`, `venues`, `stagings`, `performances`) sotto `public/catalog/v2/data/`. Ogni file ha un nome legato al digest SHA-256; il puntatore pubblico `public/catalog/v2/manifest.json` è scritto **dopo** i dati. Un aggiornamento non può cambiare un ID senza revisione: anche un cambio di data non provoca una nuova identità automatica.
 
-Il frontend ha una libreria condivisa `site/catalog-client.js`: consulta direttamente l'endpoint statico GitHub `https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/manifest.json`, verifica i digest dei file, ricompone le entità e conserva un fallback dell'ultima versione SFTP con avviso di dati non verificati in quel momento. I cambi di catalogo **non richiedono SFTP**. L'aggiornamento dei file web continua a usare il publisher dedicato in `jeckodevsite` solo quando cambia l'interfaccia.
+Il frontend ha una libreria condivisa `site/catalog-client.js`: consulta direttamente l'endpoint statico GitHub `https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/manifest.json`, verifica i digest dei file, ricompone le entità e conserva un fallback dell'ultima versione SFTP con avviso di dati non verificati in quel momento. I cambi di catalogo **non richiedono SFTP**. L'aggiornamento dei file web usa esclusivamente il publisher nativo di `opera-atlas` quando cambia l'interfaccia, senza trasferire i dati a ogni scansione.
 
 ```sh
 python -m unittest discover -s tests -v
@@ -117,9 +117,9 @@ Il workflow `refresh-catalog.yml` in **opera-atlas** esegue validazione e rigene
 
 ### URL leggibili e schede raggruppate (Fase 3)
 Le nuove schede statiche sono raggiungibili tramite URL **senza query** quando l'hosting Apache applica le rewrite presenti in `site/.htaccess`:
-- `/dev/opera-atlas/opere/la-traviata/` — tutte le messe in scena censite in Italia, raggruppate per teatro.
-- `/dev/opera-atlas/torino/teatro-regio/` — tutte le messe in scena di un teatro.
-- `/dev/opera-atlas/torino/teatro-regio/la-traviata/` — **un'unica messa in scena con tutte le sue repliche**, anche se alcune non hanno orario.
+- `/atlas/opere/la-traviata/` — tutte le messe in scena censite in Italia, raggruppate per teatro.
+- `/atlas/torino/teatro-regio/` — tutte le messe in scena di un teatro.
+- `/atlas/torino/teatro-regio/la-traviata/` — **un'unica messa in scena con tutte le sue repliche**, anche se alcune non hanno orario.
 
 Il frontend offre le modalità **Per data** e **Per messa in scena**. Gli ID permanenti nel feed JSON restano indipendenti dai percorsi; i vecchi link `detail.html?type=...` sono ancora riconosciuti e instradati verso la pagina canonica. I cambi dei dati si propagano tramite il JSON GitHub senza nuova pubblicazione SFTP. Dopo un deploy UI è indispensabile il collaudo HTTP delle rewrite, perché il funzionamento dipende dal server.
 

@@ -42,16 +42,19 @@ Da ciascuna scheda del catalogo sono disponibili link a `detail.html?type=work&k
 
 Gli URL non validi o senza corrispondenza hanno uno stato vuoto comprensibile. È vietato inserire markup HTML proveniente dal JSON: i contenuti sono visualizzati solo come testo e i link alle fonti accettano esclusivamente HTTPS. I parametri in query non autorizzano a leggere file o URL di terze parti.
 
-## Distribuzione tramite jeckodevsite
-Publisher di riferimento: `jeckodevelopment/jeckodevsite`, script `scripts/deploy_opera_atlas.py`, workflow `.github/workflows/publish-opera-atlas.yml`. Destinazione: **https://jeckodevelopment.com/dev/opera-atlas/**. Il workflow usa la stessa configurazione SFTP/host key e rollback delle altre applicazioni `/dev/`, verificando byte-per-byte i sei asset via HTTPS. Non è previsto un nuovo secret né la pubblicazione dell'intero sito. Un cambiamento del frontend in questa repository richiede un trigger al publisher (`deploy-requests/opera-atlas.txt`) o il relativo avvio manuale; le due repository non condividono segreti.
+## Distribuzione autonoma su opera.plus/atlas/
 
-L'interfaccia può essere pubblicata con JSON iniziale vuoto, ma non è prova della disponibilità di recite reali: l'autorizzazione delle fonti e i collaudi di acquisizione restano requisiti separati.
+La destinazione canonica del frontend è **https://opera.plus/atlas/**. Il publisher risiede esclusivamente in `jeckodevelopment/opera-atlas`: `.github/workflows/deploy-atlas.yml` e `scripts/deploy_atlas.py`. Nessuna richiesta di pubblicazione è più necessaria in `jeckodevsite`. Si usa un account SFTP del nuovo hosting con chiave host fissata in un secret dedicato, una allowlist di file statici, upload verificato su area temporanea, cambio di directory, collaudo HTTPS degli asset e delle rewrite e ripristino del rilascio precedente in caso di errore. Il percorso remoto è sempre una **cartella specifica terminante in /atlas**, non la document root dell'intero dominio.
+
+Per il primo rilascio utilizzare l'avvio manuale: l'automazione dopo merge resta sospesa finché non si configura `ATLAS_DEPLOY_ENABLED=true`. Vedere [DEPLOY_OPERA_PLUS](DEPLOY_OPERA_PLUS.md) per credenziali, preparazione webroot, controllo DNS/TLS, eventuale server senza mod_rewrite e strategia di taglio dal vecchio sito.
+
+Le date, le opere e le nuove schede continuano ad aggiornarsi direttamente tramite il JSON canonico GitHub; i rilasci SFTP riguardano solo nuove versioni dell'interfaccia. Il fallback JSON locale viene aggiornato solo quando cambia il contenuto del frontend. L'assenza di credenziali o di un server web compatibile impedisce il deploy, senza alterare il sito corrente.
 
 ### Ulteriori collaudi
-- Dalla home aprire le schede opera, recita e teatro usando un JSON di test locale autorizzato; verificare titoli/luogo/fonti e link di ritorno.
-- Confermare che una recita senza orario conservi la dicitura anche nel dettaglio.
-- Verificare link errati o di eventi rimossi: messaggio `Scheda non disponibile`, nessun errore JavaScript.
-- Controllare la risposta HTTPS di `index.html`, `detail.html`, CSS/JS e JSON dopo la pubblicazione; il deploy deve essere isolato dai percorsi degli altri progetti.
+- Dalla homepage aprire schede opera, produzione e teatro con il nuovo prefisso `/atlas/`.
+- Confermare il corretto caricamento dei feed GitHub, compresi nuovi titoli e repliche, e il fallback.
+- Verificare che le repliche senza orario rimangano senza orario inventato.
+- Controllare HTTPS e impronte SHA-256 di ogni asset, la navigazione alle pagine profonde e la risoluzione di `.htaccess`.
 
 ## Primo catalogo editoriale verificato — 20/11/2026
 
@@ -66,14 +69,14 @@ Design ispirato alla grammatica visiva di Opera+ Funding: base avorio, schede bi
 - Controllare 19 recite, 2 opere, 5 teatri, 8 orari ignoti e collegamenti alle due pagine ufficiali.
 - Verificare che tutte le 11 recite torinesi riportino ora locale, che le altre 8 presentino “Orario da confermare” e che due date già passate restino correttamente nello storico.
 - Verificare schede, riepiloghi, filtri, paginazione, pagine di dettaglio, accessibilità su smartphone e coerenza grafica con Funding.
-- Confermare la nuova pubblicazione con `jeckodevsite` e l'esito HTTPS di tutti gli asset.
+- Confermare la nuova pubblicazione con il workflow `opera-atlas` e l'esito HTTPS di tutti gli asset.
 
 ## Nuovo feed canonico separato dal deploy (catalogo v2)
 Il frontend consulta `raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/manifest.json` e quattro canali JSON: opere, teatri, messe in scena e repliche. Verifica SHA-256 e integrità referenziale, presenta le schede con dati verificati e, se non può leggere il feed remoto, usa il JSON locale dell'ultimo deploy come **fallback dichiaratamente non aggiornato**. Non pubblica falsi dati correnti o variazioni non riconciliate.
 
 Gli ID `oa-w-...`, `oa-v-...`, `oa-s-...`, `oa-r-...` sono registrati una volta in `data/identity-registry.json`. Gli slug `/opere/la-traviata/`, `/torino/teatro-regio/`, `/torino/teatro-regio/la-traviata/` sono identità editoriali separabili e richiedono la futura configurazione delle rewrite per il supporto HTTP diretto. La corrente interfaccia mantiene ancora `detail.html?type=...`, perciò non si dichiarano già pubblicati gli URL SEO.
 
-**Regola di pubblicazione:** modifiche a catalogo e schedule agiscono esclusivamente in `opera-atlas`. Un aggiornamento del feed non deve invocare SFTP; solo nuove versioni HTML/CSS/JS transitano da `jeckodevsite`. Il workflow quotidiano non esegue ancora fetch di siti con permessi non verificati. Prima di aggiungere nuovi eventi, occorre registrare ID permanenti e provenienza nell'archivio editoriale, verificare e pubblicare, senza sovrascrivere arbitrariamente i record precedenti.
+**Regola di pubblicazione:** modifiche a catalogo e schedule agiscono esclusivamente in `opera-atlas`. Un aggiornamento del feed non deve invocare SFTP; solo nuove versioni HTML/CSS/JS transitano dal workflow SFTP nativo `opera-atlas`. Il workflow quotidiano non esegue ancora fetch di siti con permessi non verificati. Prima di aggiungere nuovi eventi, occorre registrare ID permanenti e provenienza nell'archivio editoriale, verificare e pubblicare, senza sovrascrivere arbitrariamente i record precedenti.
 
 ### Collaudi da eseguire
 1. Validare `python -m scripts.publish_catalog_v2 --check` dopo generazione; controllare 2 opere, 5 teatri, 5 messe in scena, 19 repliche.
@@ -86,16 +89,16 @@ Gli ID `oa-w-...`, `oa-v-...`, `oa-s-...`, `oa-r-...` sono registrati una volta 
 ## URL leggibili e pagine per messa in scena
 La home offre **Per data** (ogni replica) e **Per messa in scena** (produzione in un teatro, con calendario delle repliche). I link sono generati da ID e slug canonici del feed, **mai dal titolo preso dalla query**. La pagina `/opere/<opera>/` aggrega tutte le messe in scena nazionali censite, con le date raggruppate per teatro; `/<citta>/<teatro>/` raccoglie le programmazioni del teatro; `/<citta>/<teatro>/<opera>/` mostra un'unica messa in scena, con tutte le sue repliche e orari noti/sconosciuti.
 
-Le riscritture Apache sono in `site/.htaccess` e inviano soltanto i percorsi whitelist a `detail.html`, senza invocare un backend. Il tag `<base href="/dev/opera-atlas/">` rende CSS, JavaScript e fallback JSON raggiungibili anche dai percorsi annidati. Gli URL legacy `detail.html?type=work|venue|performance&key=...` continuano a essere risolti tramite il catalogo e canonizzati nel browser. Il vecchio identificatore `curated:...` viene trasportato in `legacy_id` accanto all'ID `oa-r-...` per la compatibilità.
+Le riscritture Apache sono in `site/.htaccess` e inviano soltanto i percorsi whitelist a `detail.html`, senza invocare un backend. Il tag `<base href="/atlas/">` rende CSS, JavaScript e fallback JSON raggiungibili anche dai percorsi annidati. Gli URL legacy `detail.html?type=work|venue|performance&key=...` continuano a essere risolti tramite il catalogo e canonizzati nel browser. Il vecchio identificatore `curated:...` viene trasportato in `legacy_id` accanto all'ID `oa-r-...` per la compatibilità.
 
 **Nota di hosting:** per gli URL deep link serve un server Apache con `mod_rewrite` e `AllowOverride` abilitati. Il collaudo post-deploy deve richiedere direttamente le tre tipologie di URL, verificare 200 e contenuto HTML corretto, oltre al JSON GitHub via CORS; in caso contrario il publisher deve interrompersi/ripristinare i file.
 
 ### Test manuali
 1. Dalla home selezionare **Per messa in scena**: 5 schede corrispondenti a 5 programmazioni, a fronte delle 19 repliche in modalità **Per data**.
-2. Aprire `/dev/opera-atlas/opere/la-traviata/`: raggruppamenti per teatro, 11 recite al Teatro Regio.
-3. Aprire `/dev/opera-atlas/torino/teatro-regio/`: La traviata, 11 repliche.
-4. Aprire `/dev/opera-atlas/torino/teatro-regio/la-traviata/`: una sola scheda con undici giorni e orari, senza undici pagine distinte.
-5. Aprire `/dev/opera-atlas/opere/italiana-in-algeri/`: quattro teatri e otto recite senza ora; nessun `00:00`.
+2. Aprire `/atlas/opere/la-traviata/`: raggruppamenti per teatro, 11 recite al Teatro Regio.
+3. Aprire `/atlas/torino/teatro-regio/`: La traviata, 11 repliche.
+4. Aprire `/atlas/torino/teatro-regio/la-traviata/`: una sola scheda con undici giorni e orari, senza undici pagine distinte.
+5. Aprire `/atlas/opere/italiana-in-algeri/`: quattro teatri e otto recite senza ora; nessun `00:00`.
 6. Verificare i vecchi link parametrizzati, le richieste dirette e il refresh del browser su URL profondi, su desktop e smartphone.
 7. Controllare che il deploy del frontend non sia rieseguito per le modifiche dei soli JSON.
 
@@ -106,7 +109,7 @@ Il catalogo mostra la data di verifica editoriale proveniente dal manifesto GitH
 
 La fonte aggregatrice OperaLombardia documenta **opera, teatro e data** ma non l'ora. Il registro `data/verified-time-evidence.json` conserva ulteriori prove ufficiali relative a **specifici ID di replica**. Il frontend mantiene il collegamento al circuito e mostra anche la fonte che prova l'ora; non crea una seconda recita. La regola di pubblicazione è: orari solo da evidenza esplicita collegata a produzione e data; altrimenti `starts_at: null` e «Orario da confermare».
 
-Evidenze del 20 novembre 2026: Teatro Sociale di Como (13/11 20:00, 15/11 15:30), Teatro Fraschini di Pavia (20/11 20:00, 22/11 15:30), Comune di Cremona (Teatro Ponchielli 10/12 20:00, 12/12 16:00). Brescia 26 e 28 novembre rimane senza orario. Il catalogo resta a 19 repliche: **17 orari noti, 2 sconosciuti**. L'arricchimento avviene con JSON in `opera-atlas`, senza nuova pubblicazione SFTP per i dati; se occorre modificare il renderer web, solo quella modifica passa nel workflow SFTP.
+Evidenze del 20 novembre 2026: Teatro Sociale di Como (13/11 20:00, 15/11 15:30), Teatro Fraschini di Pavia (20/11 20:00, 22/11 15:30), Comune di Cremona (Teatro Ponchielli 10/12 20:00, 12/12 16:00). Brescia 26 e 28 novembre rimane senza orario. Il catalogo resta a 19 repliche: **17 orari noti, 2 sconosciuti**. L'arricchimento avviene con JSON in `opera-atlas`, senza nuova pubblicazione SFTP per i dati; se occorre modificare il renderer web, solo quella modifica passa nel workflow SFTP nativo.
 
 Test: `python -m unittest discover -s tests -v`, `python -m scripts.build_verified_catalog --check`, `python -m scripts.publish_catalog_v2 --check` (quest'ultimo dopo la rigenerazione dei canali). Verificare con browser le 6 repliche, i due URL ufficiali per ciascuna e la permanenza degli ID nel link canonico.
 
@@ -154,7 +157,7 @@ La UI usa di default la ricerca Torino/100 km/30 giorni e produce un elenco per 
 
 Per evitare che una produzione condivisa su più teatri venga duplicata, il file pubblico `public/catalog/v2/production-groups.json` conserva un **ID di produzione condivisa** e gli ID delle messe in scena territoriali. Il client verifica che tutte le messe in scena dello stesso gruppo si riferiscano alla medesima opera, che gli ID siano noti e che non vi siano assegnazioni multiple. Nel catalogo si visualizza una sola scheda condivisa; la pagina `/produzioni/<id>/` aggrega le rappresentazioni per teatro, preservando i link specifici a ogni sede. Un errore di caricamento delle relazioni è segnalato e non inventa gruppi.
 
-L'indice indipendente `public/catalog/v2/festival-index.json` collega esclusivamente festival e ID di staging verificati, mostrando in homepage solo quelli con date future. Le fonti monitorate senza programmazione verificata non sono annunciate come festival in arrivo. I due indici possono essere aggiornati nel repository `opera-atlas` senza deploy SFTP, mentre l'interfaccia richiede una pubblicazione isolata tramite `jeckodevsite`.
+L'indice indipendente `public/catalog/v2/festival-index.json` collega esclusivamente festival e ID di staging verificati, mostrando in homepage solo quelli con date future. Le fonti monitorate senza programmazione verificata non sono annunciate come festival in arrivo. I due indici possono essere aggiornati nel repository `opera-atlas` senza deploy SFTP, mentre l'interfaccia richiede una pubblicazione isolata tramite il publisher nativo di `opera-atlas`.
 
 Collaudi aggiuntivi: `python -m unittest discover -s tests -v`, sintassi JS, ricerca per raggio, opt-in geolocalizzazione, gruppi condivisi nella homepage e pagina gruppo, calendario, mappa, link delle singole sedi, festival senza date e modalità mobile. Il logo ufficiale binario e il collaudo visuale restano attività non eseguite in questo intervento.
 
