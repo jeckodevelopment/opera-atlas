@@ -54,8 +54,8 @@ class NationalIndexTests(unittest.TestCase):
         first,status=scan(self.config,empty,fetcher=fake,network_enabled=True,
                           now="2026-11-20T20:00:00+00:00")
         self.assertEqual(len(first["candidates"]),7)
-        self.assertEqual(len([x for x in first["candidates"] if x["status"]=="needs_review"]),1)
-        self.assertEqual(len([x for x in first["candidates"] if x["status"]=="already_catalogued"]),6)
+        self.assertEqual(len([x for x in first["candidates"] if x["status"]=="needs_review"]),2)
+        self.assertEqual(len([x for x in first["candidates"] if x["status"]=="already_catalogued"]),5)
         self.assertTrue(all("date" not in x and "composer" not in x for x in first["candidates"]))
         second,_=scan(self.config,first,fetcher=fake,network_enabled=True,
                        now="2026-11-20T20:00:00+00:00")
