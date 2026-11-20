@@ -253,6 +253,20 @@ class CandidateDetailTests(unittest.TestCase):
         self.assertEqual(len(report["evidence"]),1)
         self.assertEqual(report["evidence"][0]["status"],"needs_editorial_review")
         self.assertEqual(len(report["evidence"][0]["event_facts"]),1)
+    def test_failure_health_explains_canonical_and_authority_parser_rejections(self):
+        html="<h1>Unknown production</h1><p>Dates not provided</p>"
+        def fake(db,*,source_id,url,network_enabled):
+            return FetchResult(url,html,"b"*64,len(html))
+        result,health=collect(self.candidates,self.empty,
+                              network_enabled=True,fetcher=fake,today=date(2026,11,20))
+        self.assertEqual(result,self.empty)
+        self.assertEqual(health[0]["reason"],"no_verified_showtimes")
+        self.assertEqual(len(health[0]["diagnostic"]),3)
+        self.assertTrue(health[0]["diagnostic"][0].startswith("canonical_work:"))
+        self.assertTrue(health[0]["diagnostic"][1].startswith("authority_work:"))
+        self.assertTrue(health[0]["diagnostic"][2].startswith("schema_event:"))
+        self.assertNotIn(html,json.dumps(health))
+
     def test_robots_failure_preserves_last_evidence(self):
         past={"schema_version":1,"evidence":[{
             "candidate_id":"candidate-a","event_facts":[{"date":"2027-05-02"}]}]}
