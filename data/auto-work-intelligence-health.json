@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T22:05:39+00:00",
+  "checked_at": "2026-11-20T22:10:17+00:00",
   "outcomes": [
     {
-      "candidate_id": "oa-index-a8590c90fe0f6dea649d",
+      "candidate_id": "oa-index-74ce9c00c158699bd2cc",
+      "status": "enriched"
+    },
+    {
+      "candidate_id": "oa-index-1fdf598fde99e1e32112",
       "status": "model_not_configured"
     },
     {
-      "candidate_id": "oa-index-af061781b5421a61f2f1",
-      "status": "model_not_configured"
-    },
-    {
-      "candidate_id": "oa-index-b372b317894fe260b18e",
+      "candidate_id": "oa-index-35be56b50cfb2da6f65b",
       "status": "model_not_configured"
     }
   ]

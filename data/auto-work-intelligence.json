@@ -1,4 +1,26 @@
 {
   "schema_version": 1,
-  "works": []
+  "works": [
+    {
+      "candidate_id": "oa-index-74ce9c00c158699bd2cc",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Il buffone Rigoletto cerca di proteggere la figlia Gilda dagli intrighi della corte del Duca di Mantova.",
+      "history": {
+        "librettist": "Francesco Maria Piave",
+        "premiere_year": 1851,
+        "premiere_venue": "Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000029612"
+        ]
+      },
+      "wikidata_id": "Q189234",
+      "authority_url": "https://www.wikidata.org/wiki/Q189234",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Rigoletto",
+      "verified_at": "2026-11-20T22:10:17+00:00"
+    }
+  ]
 }
