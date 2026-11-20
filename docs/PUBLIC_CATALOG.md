@@ -157,3 +157,11 @@ Per evitare che una produzione condivisa su più teatri venga duplicata, il file
 L'indice indipendente `public/catalog/v2/festival-index.json` collega esclusivamente festival e ID di staging verificati, mostrando in homepage solo quelli con date future. Le fonti monitorate senza programmazione verificata non sono annunciate come festival in arrivo. I due indici possono essere aggiornati nel repository `opera-atlas` senza deploy SFTP, mentre l'interfaccia richiede una pubblicazione isolata tramite `jeckodevsite`.
 
 Collaudi aggiuntivi: `python -m unittest discover -s tests -v`, sintassi JS, ricerca per raggio, opt-in geolocalizzazione, gruppi condivisi nella homepage e pagina gruppo, calendario, mappa, link delle singole sedi, festival senza date e modalità mobile. Il logo ufficiale binario e il collaudo visuale restano attività non eseguite in questo intervento.
+
+### Scala e Arena: nuove schede 2026/27
+**Fonti ufficiali consultate:**
+- [Don Giovanni](https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html) — 3, 6, 9, 11, 13, 18, 20, 23, 25 e 28 febbraio 2027; ultima recita ore 14:30, le altre ore 20:00.
+- [La bohème, Puccini](https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html) — 16, 17, 19, 21, 24, 26 febbraio; 4 e 7 marzo 2027. Le due domeniche ore 14:30, le altre ore 20:00. Distinguere dall'opera omonima di Leoncavallo.
+- [Nabucco](https://www.arena.it/arena-opera-festival/nabucco/) — 29 luglio ore 21:15, 5/15/21 agosto ore 21:00, 3/9 settembre ore 21:00. Il 27 agosto **non** è una recita attiva di Nabucco, perché è stata sostituita da Carmen.
+
+Dati pubblicabili solo dopo validazione: **232 recite, 25 opere, 14 teatri, 51 messe in scena**. Gli orari già sconosciuti restano `null`; nessun testo editoriale o immagine di terzi viene copiato. URL canonici: `/milano/teatro-alla-scala/don-giovanni/`, `/milano/teatro-alla-scala/la-boheme/`, `/verona/arena-di-verona/nabucco/`. Nuovi record nel feed GitHub, senza deploy SFTP.
