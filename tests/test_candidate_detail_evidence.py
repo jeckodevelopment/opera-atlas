@@ -49,6 +49,21 @@ class CandidateDetailTests(unittest.TestCase):
                                     "<h1>Macbeth by another composer</h1>"
                                     "<p>5 febbraio 2027 ore 20:00</p>",registry)
 
+    def test_publishable_known_works_are_scanned_before_unknown_titles(self):
+        candidates={"schema_version":1,"candidates":[]}
+        for i in range(25):
+            candidates["candidates"].append({
+                "id":f"candidate-{i:03d}","source_key":"scala-season-2026-27",
+                "official_url":f"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{i}.html",
+                "status":"needs_review"})
+        candidates["candidates"].append({
+            "id":"candidate-z-macbeth","source_key":"scala-season-2026-27",
+            "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+            "status":"needs_review"})
+        chosen=selected_candidates(candidates,today=date(2026,11,20))
+        self.assertEqual(len(chosen),10)
+        self.assertEqual(chosen[0]["id"],"candidate-z-macbeth")
+
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[
             {"@type":"MusicEvent","name":"Anna Bolena",
