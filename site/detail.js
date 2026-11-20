@@ -129,38 +129,42 @@ async function appendSynopsis(event) {
     const text=doc.synopses[slug];
     if(typeof text!=="string"||!text.trim())return;
     const section=node("section","brief-synopsis");
-    section.append(node("h2",null,"In breve"),node("p",null,text));
+    section.append(node("h2",null,"La trama"),node("p",null,text));
     content.prepend(section);
   }catch{/* Optional editorial synopsis must never block performance dates. */}
 }
 async function appendHistory(event) {
   const slug=event.work_slug||window.OperaAtlasCatalog.urls(event).work.split("/").filter(Boolean).pop();
-  for(const url of ["./work-history.json",
+  for(const url of ["https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/work-editorial.json",
+    "./work-history.json",
     "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/work-history.json"]){
     try{
       const response=await fetch(url,{cache:"no-store"});
       if(!response.ok)continue;
       const doc=await response.json();
       if(doc.schema_version!==1||!doc.works||typeof doc.works!=="object")continue;
-      const history=doc.works[slug];
+      const history=Array.isArray(doc.works)?doc.works.find(w=>w.slug===slug)?.history:doc.works[slug];
       if(!history)return;
-      const fields=[
-        ["Libretto",history.librettist],
-        ["Composizione",Number.isInteger(history.composition_year)?String(history.composition_year):""],
-        ["Prima rappresentazione",Number.isInteger(history.premiere_year)?String(history.premiere_year):""],
-        ["Teatro della prima",history.premiere_venue],
-        ["Città della prima",history.premiere_city]
-      ].filter(([label,value])=>typeof value==="string"&&value.trim());
-      if(!fields.length)return;
-      const section=node("section","work-history");
-      section.append(node("h2",null,"L’opera in breve"));
-      const grid=node("dl","work-history-grid");
-      for(const [label,value] of fields){
-        const item=node("div","work-history-item");
-        item.append(node("dt",null,label),node("dd",null,value));
-        grid.append(item);
+      const historyParts=[];
+      const librettists=String(history.librettist||"").trim().replace(/;\s*/g," e ");
+      const composed=Number.isInteger(history.composition_year)?history.composition_year:null;
+      const premiered=Number.isInteger(history.premiere_year)?history.premiere_year:null;
+      const place=[history.premiere_venue,history.premiere_city].filter(x=>typeof x==="string"&&x.trim()).join(" di ");
+      if(composed){
+        historyParts.push(event.title+" fu composta nel "+composed+
+          (event.composer?" da "+event.composer:"")+
+          (librettists?", su libretto di "+librettists:"")+".");
+      }else if(librettists){
+        historyParts.push("Il libretto di "+event.title+" è di "+librettists+".");
       }
-      section.append(grid);
+      if(premiered && place)historyParts.push("La prima rappresentazione ebbe luogo nel "+
+        premiered+" al "+place+".");
+      else if(premiered)historyParts.push("L’opera debuttò nel "+premiered+".");
+      else if(place)historyParts.push("La prima rappresentazione ebbe luogo al "+place+".");
+      if(!historyParts.length)return;
+      const section=node("section","work-history work-history-narrative");
+      section.append(node("h2",null,"La storia dell’opera"),
+        node("p","work-history-story",historyParts.join(" ")));
       content.append(section);
       // Historical references are kept at the very end of the opera detail.
       const source=Array.isArray(history.sources)?history.sources.map(safeSource).find(Boolean):null;

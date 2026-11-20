@@ -103,13 +103,13 @@ def resolve_identity(title_hint:str,*,fetch=read_api)->dict|None:
 def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
     result=fetch("https://it.wikipedia.org/w/api.php?"+urlencode({
         "action":"query","format":"json","prop":"extracts",
-        "exintro":"1","explaintext":"1","titles":identity["wikipedia_title"]}))
+        "explaintext":"1","titles":identity["wikipedia_title"]}))
     pages=result.get("query",{}).get("pages",{})
     matches=[x.get("extract","") for x in pages.values() if isinstance(x,dict)]
     if len(matches)!=1:return None
     extract=" ".join(matches[0].split())
     if not 140<=len(extract)<=12000:return None
-    return extract[:3000]
+    return extract[:6000]
 
 def make_synopsis(identity:dict,article_text:str,*,api_key:str,model:str="gpt-6-luna")->str|None:
     """Low-cost JSON-schema output; model may decline if the plot is absent."""
@@ -126,7 +126,7 @@ def make_synopsis(identity:dict,article_text:str,*,api_key:str,model:str="gpt-6-
                   "Se il testo non contiene abbastanza trama, supported=false e synopsis vuota."},
                  {"role":"user","content":
                   "Opera: "+identity["title"]+"; compositore: "+identity["composer"]+
-                  "; fonte enciclopedica: "+article_text[:3000]}],
+                  "; fonte enciclopedica: "+article_text[:6000]}],
              "text":{"format":{"type":"json_schema","name":"opera_synopsis",
                                "strict":True,"schema":schema}}}
     req=Request("https://api.openai.com/v1/responses",data=json.dumps(payload).encode(),
@@ -151,11 +151,91 @@ def make_synopsis(identity:dict,article_text:str,*,api_key:str,model:str="gpt-6-
            for i in range(max(0,len(actual)-11))):return None
     return summary
 
+def make_history(identity:dict, article_text:str, *,api_key:str,
+                 model:str="gpt-6-luna")->dict|None:
+    """Only publish historical facts paired with verbatim evidence from the article.
+
+    A missing composition year is explicit null, never copied from the premiere.
+    A candidate lacking premiere/libretto evidence remains unpublished for a later
+    automatic retry rather than receiving a fictional biography.
+    """
+    if not api_key:return None
+    schema={"type":"object","properties":{
+        "supported":{"type":"boolean"},
+        "librettist":{"type":"string"},
+        "premiere_year":{"type":"integer"},
+        "premiere_venue":{"type":"string"},
+        "premiere_city":{"type":"string"},
+        "composition_year":{"type":["integer","null"]},
+        "libretto_evidence":{"type":"string"},
+        "premiere_evidence":{"type":"string"},
+        "composition_evidence":{"type":"string"}},
+        "required":["supported","librettist","premiere_year","premiere_venue",
+                    "premiere_city","composition_year","libretto_evidence",
+                    "premiere_evidence","composition_evidence"],
+        "additionalProperties":False}
+    data={"model":model,"max_output_tokens":750,"reasoning":{"effort":"none"},
+          "input":[{"role":"system","content":
+            "Sei un estrattore di fatti d'archivio, non uno scrittore creativo. "
+            "Usa SOLO il testo fornito. supported=true soltanto se il testo "
+            "dichiara chiaramente librettista, anno, teatro e città della PRIMA "
+            "rappresentazione mondiale. Per ogni fatto indica un estratto ESATTO "
+            "dal testo, copiato letteralmente, rispettivamente nei campi evidence. "
+            "Se assente un dato obbligatorio: supported=false. "
+            "Non dedurre mai l'anno di composizione dall'anno di debutto; "
+            "se non esplicito usa null e composition_evidence vuota."},
+                   {"role":"user","content":"Opera: "+identity["title"]+
+                    "; composer: "+identity["composer"]+
+                    "; source: "+article_text[:6000]}],
+          "text":{"format":{"type":"json_schema","name":"opera_history",
+                             "strict":True,"schema":schema}}}
+    request=Request("https://api.openai.com/v1/responses",
+                    data=json.dumps(data).encode("utf-8"),
+                    headers={"Authorization":"Bearer "+api_key,
+                             "Content-Type":"application/json"},method="POST")
+    with urlopen(request,timeout=35) as response:
+        raw=response.read(80_001)
+        if len(raw)>80_000:raise ValueError("historical extraction too large")
+    result=json.loads(raw.decode("utf-8"))
+    output=[x.get("text","") for o in result.get("output",[])
+            for x in o.get("content",[]) if x.get("type")=="output_text"]
+    if len(output)!=1:return None
+    parsed=json.loads(output[0])
+    if parsed.get("supported") is not True:return None
+    for key in ("librettist","premiere_venue","premiere_city"):
+        if not isinstance(parsed.get(key),str) or not 3<=len(parsed[key].strip())<=140:
+            return None
+    year=parsed.get("premiere_year")
+    composed=parsed.get("composition_year")
+    if type(year)!=int or not 1600<=year<=date.today().year:return None
+    if composed is not None and (type(composed)!=int or not 1500<=composed<=year):
+        return None
+    normalized_source=" ".join(article_text.casefold().split())
+    for key in ("libretto_evidence","premiere_evidence"):
+        evidence=parsed.get(key,"")
+        if not isinstance(evidence,str) or len(evidence.strip())<15 or (
+            " ".join(evidence.casefold().split()) not in normalized_source):
+            return None
+    if composed is not None:
+        evidence=parsed.get("composition_evidence","")
+        if not isinstance(evidence,str) or str(composed) not in evidence or (
+            " ".join(evidence.casefold().split()) not in normalized_source):
+            return None
+    if str(year) not in parsed["premiere_evidence"]:return None
+    # Keep evidence text private to evaluation; publish only facts and provenance.
+    return {"librettist":parsed["librettist"].strip(),
+            "premiere_year":year,"premiere_venue":parsed["premiere_venue"].strip(),
+            "premiere_city":parsed["premiere_city"].strip(),
+            **({"composition_year":composed} if composed is not None else {}),
+            "sources":[identity["authority_url"],identity["wikipedia_url"]]}
+
+
 def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
                       *,today:date)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
-    done={x["candidate_id"] for x in existing.get("works",[])}
+    done={x["candidate_id"] for x in existing.get("works",[])
+          if isinstance(x.get("history"),dict)}
     options=[]
     for item in candidates.get("candidates",[]):
         if item.get("status")!="needs_review" or item.get("id") in done:continue
@@ -177,7 +257,7 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
 
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
-             generate=make_synopsis,api_key:str=""):
+             generate=make_synopsis,generate_history=make_history,api_key:str=""):
     existing_works={x["candidate_id"]:x.copy() for x in existing.get("works",[])}
     statuses=[]
     for item in choose_candidates(candidates,existing,known_slugs,today=today):
@@ -192,11 +272,13 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             if not excerpt:raise ValueError("no_sufficient_plot_source")
             summary=generate(identity,excerpt,api_key=api_key)
             if not summary:raise ValueError("synopsis_not_supported")
+            history=generate_history(identity,excerpt,api_key=api_key)
+            if not history:raise ValueError("history_not_supported")
             existing_works[cid]={
                 "candidate_id":cid,"source_key":item["source_key"],
                 "source_url":item["official_url"],
                 "title":identity["title"],"composer":identity["composer"],
-                "synopsis":summary,"wikidata_id":identity["wikidata_id"],
+                "synopsis":summary,"history":history,"wikidata_id":identity["wikidata_id"],
                 "authority_url":identity["authority_url"],
                 "wikipedia_url":identity["wikipedia_url"],
                 "verified_at":datetime.now(timezone.utc).isoformat(timespec="seconds")}

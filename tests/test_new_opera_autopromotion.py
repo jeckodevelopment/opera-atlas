@@ -52,7 +52,14 @@ class NewOperaPromotionTests(unittest.TestCase):
         self.assertEqual(urls,[URL])
         graph=assemble(facts,ids,approved_extra=set(urls))
         self.assertEqual(len(graph["performances"]),len(self.registry["performances"])+1)
-        card=build_editorial(facts,ids,editorial,approved_extra=set(urls))
+        from scripts.publish_work_editorial import HISTORY
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))
+        history["works"]["anna-bolena"]={
+            "librettist":"Giovanni Example","premiere_year":1830,
+            "premiere_venue":"Teatro Nuovo","premiere_city":"Milano",
+            "sources":["https://www.wikidata.org/wiki/Q111"]}
+        card=build_editorial(facts,ids,editorial,approved_extra=set(urls),
+                             history=history)
         self.assertEqual(len(card["works"]),len(ids["works"]))
         self.assertTrue(any(x["slug"]=="anna-bolena" for x in card["works"]))
         second=promote_new_works(facts,ids,evidence,candidates,enrichment,editorial,urls,
@@ -60,6 +67,28 @@ class NewOperaPromotionTests(unittest.TestCase):
         self.assertEqual(second[-1]["new_works"],0)
         self.assertEqual(second[0],facts)
         self.assertEqual(second[1],ids)
+
+    def test_unattended_promotion_requires_full_historical_profile(self):
+        evidence,candidates,enrichment=self.fixture()
+        from scripts.publish_work_editorial import HISTORY
+        existing=json.loads(HISTORY.read_text(encoding="utf-8"))
+        pending=copy.deepcopy(enrichment)
+        nohistory=promote_new_works(self.facts,self.registry,evidence,candidates,pending,
+                                   self.editorial,[],today=date(2026,11,20),history=existing)
+        self.assertEqual(nohistory[-1]["new_works"],0)
+        self.assertEqual(nohistory[4],existing)
+        pending["works"][0]["history"]={
+            "librettist":"Giovanni Example","premiere_year":1830,
+            "premiere_venue":"Teatro Nuovo","premiere_city":"Milano",
+            "sources":["https://www.wikidata.org/wiki/Q111"]}
+        accepted=promote_new_works(self.facts,self.registry,evidence,candidates,pending,
+                                  self.editorial,[],today=date(2026,11,20),history=existing)
+        self.assertEqual(accepted[-1]["new_works"],1)
+        self.assertEqual(accepted[4]["works"]["anna-bolena"]["premiere_year"],1830)
+        output=build_editorial(accepted[0],accepted[1],accepted[3],
+                              approved_extra=set(accepted[2]),history=accepted[4])
+        self.assertEqual(next(x for x in output["works"] if x["slug"]=="anna-bolena")
+                         ["history"]["librettist"],"Giovanni Example")
 
     def test_wrong_composer_or_unproven_date_cannot_create_new_work(self):
         evidence,candidates,enrichment=self.fixture()

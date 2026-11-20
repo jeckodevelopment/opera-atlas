@@ -77,10 +77,16 @@ class AutoWorkResearchTests(unittest.TestCase):
                     "rapporti difficili e scelte che cambiano il suo destino.")
         result,status=research(doc,{"schema_version":1,"works":[]},set(),
                                today=date(2026,11,20),resolve=resolver,
-                               extract=article,generate=model,api_key="fake-key")
+                               extract=article,generate=model,
+            generate_history=lambda obj,text,*,api_key:{
+                "librettist":"Giovanni Example","premiere_year":1830,
+                "premiere_venue":"Teatro Example","premiere_city":"Milano",
+                "sources":[obj["authority_url"],obj["wikipedia_url"]]},
+            api_key="fake-key")
         self.assertEqual(calls,["fake-key"])
         self.assertEqual(status[0]["status"],"enriched")
         self.assertEqual(result["works"][0]["composer"],"Gaetano Donizetti")
+        self.assertIn("history",result["works"][0])
         self.assertNotIn("source_excerpt",result["works"][0])
         again,events=research(doc,result,set(),today=date(2026,11,21),
                               resolve=lambda x: (_ for _ in ()).throw(AssertionError("refetched")),
