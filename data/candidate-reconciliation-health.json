@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:07:15+00:00",
+  "checked_at": "2026-11-20T23:09:15+00:00",
   "total": 86,
   "states": {
     "already_catalogued": 20,
-    "needs_review": 52,
-    "excluded_nonopera": 14
+    "excluded_nonopera": 41,
+    "needs_review": 25
   },
   "changes": []
 }
