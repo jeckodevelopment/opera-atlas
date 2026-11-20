@@ -22,7 +22,7 @@ class AutoWorkResearchTests(unittest.TestCase):
                 return {"entities":{"Q111":{
                     "labels":{"it":{"value":"Anna Bolena"}},
                     "claims":{
-                        "P31":[{"mainsnak":{"datavalue":{"value":{"id":"Q1344"}}}}],
+                        "P7937":[{"mainsnak":{"datavalue":{"value":{"id":"Q1344"}}}}],
                         "P86":[{"mainsnak":{"datavalue":{"value":{"id":"Q333"}}}}],
                     },
                     "sitelinks":{"itwiki":{"title":"Anna Bolena"}}
