@@ -66,7 +66,17 @@ def official_title_hint(candidate:dict)->str|None:
     key=candidate.get("source_key","")
     url=candidate.get("official_url","")
     if not isinstance(url,str):return None
-    path=urlsplit(url).path.rstrip("/").split("/")[-1].removesuffix(".html")
+    approved={row["key"]:row for row in validate_config(
+        json.loads(CONFIG.read_text(encoding="utf-8")))
+        if row["access_status"]=="approved"}
+    source=approved.get(key)
+    target=urlsplit(url)
+    if (source is None or target.scheme!="https" or
+        target.hostname!=urlsplit(source["official_url"]).hostname or
+        target.port is not None or target.username or target.password or
+        target.query or target.fragment):
+        return None
+    path=target.path.rstrip("/").split("/")[-1].removesuffix(".html")
     if not re.fullmatch(r"[a-z0-9-]{3,80}",path) or not eligible(key,url):
         return None
     if path.endswith("-anteprima-under30"):return None
