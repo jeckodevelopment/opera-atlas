@@ -109,7 +109,7 @@ def _find_production(facts: dict, item: dict, venue: str, city: str) -> dict | N
 
 def _parse(item: dict, html: str) -> list[tuple[str, str, str, str | None]]:
     if item["adapter"] == "operalombardia_calendar":
-        return parse_calendar(html)
+        return parse_calendar(html, allow_unknown_for_review=True)
     if item["adapter"] == "regio":
         parsed = parse_regio_detail(
             html, source_url=item["url"], expected_title=item["title"],

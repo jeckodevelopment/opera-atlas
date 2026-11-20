@@ -83,6 +83,34 @@ class IndexDailyTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_calendar("<table><tr><td>OTTOBRE 2026</td></tr><tr><td>9</td><td>TURANDOT</td><td>Pavia, Teatro Fraschini</td></tr></table>")
 
+    def test_unknown_opera_is_reviewed_not_published(self):
+        html=fixture(self.facts)
+        modified=html.replace("TURANDOT","NEW UNRECOGNIZED OPERA",1)
+        rows=parse_calendar(modified,allow_unknown_for_review=True)
+        self.assertTrue(any(r[0]=="NEW UNRECOGNIZED OPERA" for r in rows))
+        def fetch(*args,**kwargs):
+            return FetchResult(SOURCE,modified,"e"*64,len(modified))
+        facts,registry,health,added=scan_approved(
+            self.facts,self.registry,[self.index],network_enabled=True,
+            fetcher=fetch,today=date(2026,11,20))
+        self.assertEqual(added,0)
+        self.assertEqual(facts,self.facts)
+        self.assertEqual(registry,self.registry)
+        self.assertEqual(health[0]["outcome"],"review_required")
+        self.assertTrue(any(c["title"]=="NEW UNRECOGNIZED OPERA"
+                            for c in health[0]["candidates"]))
+
+    def test_review_mode_still_rejects_incomplete_and_cancelled_rows(self):
+        html=fixture(self.facts)
+        with self.assertRaises(ValueError):
+            parse_calendar("<table><tr><td>OTTOBRE 2026</td></tr>"
+                           "<tr><td>9</td><td>UNKNOWN OPERA</td>"
+                           "<td>Pavia, Teatro Fraschini</td></tr></table>",
+                           allow_unknown_for_review=True)
+        altered=html.replace("TURANDOT","ANNULLATA TURANDOT",1)
+        with self.assertRaises(ValueError):
+            parse_calendar(altered,allow_unknown_for_review=True)
+
     def test_duplicate_and_prohibited_calendar_rows_fail(self):
         html=fixture(self.facts)
         piece="<tr><td>8</td><td><a>TURANDOT</a></td><td>Bergamo, Teatro Donizetti</td></tr>"

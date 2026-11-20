@@ -102,3 +102,10 @@ Il monitoraggio di un calendario ufficiale può incontrare nuove produzioni o se
 - La promozione a produzione reale richiede riconciliazione con repertorio, compositore, teatro e identità canonica, confronto completo della fonte e test. Non assumere che una riga dell'indice equivalga a una nuova produzione sicura.
 
 Collaudo: `python -m unittest discover -s tests -v`, quindi workflow `Refresh public Opera Atlas catalog` e verifica che `discovery.json` sia coerente con il registro; nessun SFTP. Le altre fonti ancora editorial-only devono prima acquisire connettori di calendario consentiti: questa funzionalità non costituisce copertura completa delle otto stagioni.
+
+
+### F2 — correzione scoperta titoli sconosciuti (PR successiva alla #56)
+
+Il parser dell'indice OperaLombardia conserva la modalità rigorosa preesistente: una chiamata senza opzioni rifiuta titoli non riconosciuti. **Solo** la pipeline di scansione giornaliera abilita `allow_unknown_for_review=True`: una riga con titolo sconosciuto e città, teatro, data validi viene inoltrata alla coda di scoperta introdotta dalla PR #56. Il titolo sconosciuto NON è considerato opera verificata: potrebbe anche essere un evento non lirico e richiede classificazione editoriale.
+
+Restano fail-closed calendario parziale, date malformate, righe duplicate, cancellazioni e rinvii. Per una pagina con candidato sconosciuto l'esito è `review_required`, nessuna nuova replica viene pubblicata dalla pagina; il dato fattuale è invece conservato nella coda per successiva validazione. Test: `tests/test_operalombardia_daily_index.py`, oltre alla suite completa. Questo intervento abilita la scoperta effettiva solo per l'indice già approvato di OperaLombardia; **non** dichiara attivi gli indici delle altre sette fonti.
