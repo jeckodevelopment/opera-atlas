@@ -133,6 +133,80 @@
           null
         ]
       ]
+    },
+    {
+      "key": "regio-edgar-2027",
+      "title": "Edgar",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar",
+      "dates": [
+        [
+          "2027-01-22",
+          "20:00"
+        ],
+        [
+          "2027-01-26",
+          "20:00"
+        ],
+        [
+          "2027-01-28",
+          "20:00"
+        ],
+        [
+          "2027-01-30",
+          "15:00"
+        ],
+        [
+          "2027-02-02",
+          "15:00"
+        ],
+        [
+          "2027-02-04",
+          "20:00"
+        ],
+        [
+          "2027-02-06",
+          "15:00"
+        ]
+      ]
+    },
+    {
+      "key": "regio-salome-2027",
+      "title": "Salome",
+      "composer": "Richard Strauss",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
+      "dates": [
+        [
+          "2027-04-02",
+          "20:00"
+        ],
+        [
+          "2027-04-06",
+          "20:00"
+        ],
+        [
+          "2027-04-09",
+          "20:00"
+        ],
+        [
+          "2027-04-11",
+          "15:00"
+        ],
+        [
+          "2027-04-14",
+          "20:00"
+        ],
+        [
+          "2027-04-17",
+          "15:00"
+        ]
+      ]
     }
   ]
 }
