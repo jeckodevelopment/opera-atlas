@@ -15,11 +15,11 @@ from zoneinfo import ZoneInfo
 
 REGIO_HOST = "www.teatroregio.torino.it"
 DATE_RE = re.compile(
-    r"(?<!\\d)(20\\d{2}-\\d{2}-\\d{2})[ T](\\d{2}:\\d{2}:\\d{2})"
-    r"\\s*(?:Europe/Rome)(?![\\w/])"
+    r"(?<!\d)(20\d{2}-\d{2}-\d{2})[ T](\d{2}:\d{2}:\d{2})"
+    r"\s*(?:Europe/Rome)(?![\w/])"
 )
 TIMEZONE = ZoneInfo("Europe/Rome")
-NON_OPERA = re.compile(r"\\b(ballet|balletto|danza|concert[oi])\\b", re.I)
+NON_OPERA = re.compile(r"\b(ballet|balletto|danza|concert[oi])\b", re.I)
 
 
 @dataclass(frozen=True)
