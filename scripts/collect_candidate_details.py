@@ -217,9 +217,23 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
             recognized.append(item)
         else:
             other.append(item)
-    offset=((today or date.today()).toordinal()*MAX_PAGES)%len(other) if other else 0
-    rotated=other[offset:]+other[:offset]
-    return (recognized+rotated)[:MAX_PAGES]
+    # Daily advancement must be coprime with every possible queue size.
+    # A stride of MAX_PAGES can permanently starve half the queue when the
+    # number of candidates shares a factor with the scan budget.
+    ordinal=(today or date.today()).toordinal()
+    def rotate(items):
+        if not items:return []
+        offset=ordinal%len(items)
+        return items[offset:]+items[:offset]
+    recognized=rotate(recognized)
+    other=rotate(other)
+    # Reserve four daily slots for unknown works: otherwise large queues of
+    # known works can prevent any new-opera discovery indefinitely.
+    reserved=min(4,len(other)) if recognized else min(MAX_PAGES,len(other))
+    known_take=min(len(recognized),MAX_PAGES-reserved)
+    other_take=min(len(other),MAX_PAGES-known_take)
+    known_take=min(len(recognized),MAX_PAGES-other_take)
+    return recognized[:known_take]+other[:other_take]
 
 def collect(candidates:dict,previous:dict,*,network_enabled:bool,
             fetcher=fetch_official_html,today:date|None=None):
