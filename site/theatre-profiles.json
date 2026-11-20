@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-20",
+  "notes": "Schede editoriali basate su siti dei teatri e portali comunali; sede fisica distinta dal soggetto produttore.",
+  "venues": {
+    "Torino|Teatro Regio": {
+      "city": "Torino",
+      "name": "Teatro Regio",
+      "address": "Piazza Castello 215",
+      "description": "Nel cuore di Torino, il Regio ospita stagioni d’opera e balletto a pochi passi da Piazza Castello.",
+      "website": "https://www.teatroregio.torino.it/"
+    },
+    "Como|Teatro Sociale": {
+      "city": "Como",
+      "name": "Teatro Sociale",
+      "address": "Piazza Verdi 1",
+      "description": "Affacciato su Piazza Verdi, il Teatro Sociale è uno dei luoghi di riferimento dell’opera a Como e parte del circuito OperaLombardia.",
+      "website": "https://teatrosocialecomo.it/"
+    },
+    "Pavia|Teatro Fraschini": {
+      "city": "Pavia",
+      "name": "Teatro Fraschini",
+      "address": "Corso Strada Nuova 136",
+      "description": "Il teatro storico di Pavia accoglie spettacoli d’opera, musica e danza e partecipa alle produzioni di OperaLombardia.",
+      "website": "https://www.teatrofraschini.it/"
+    },
+    "Brescia|Teatro Grande": {
+      "city": "Brescia",
+      "name": "Teatro Grande",
+      "address": "Corso Giuseppe Zanardelli 9/A",
+      "description": "Nel centro storico di Brescia, il Teatro Grande ospita opera e musica, tra le sedi del circuito OperaLombardia.",
+      "website": "https://www.teatrogrande.it/"
+    },
+    "Cremona|Teatro Ponchielli": {
+      "city": "Cremona",
+      "name": "Teatro Ponchielli",
+      "address": "Corso Vittorio Emanuele II 52",
+      "description": "Il Teatro Ponchielli fa parte della tradizione lirica cremonese e ospita produzioni condivise di OperaLombardia.",
+      "website": "https://www.teatroponchielli.it/"
+    },
+    "Milano|Teatro alla Scala": {
+      "city": "Milano",
+      "name": "Teatro alla Scala",
+      "address": "Piazza della Scala",
+      "description": "Nel centro di Milano, la Scala è uno dei teatri d’opera più conosciuti al mondo.",
+      "website": "https://www.teatroallascala.org/"
+    },
+    "Verona|Arena di Verona": {
+      "city": "Verona",
+      "name": "Arena di Verona",
+      "address": "Piazza Bra",
+      "description": "L’anfiteatro romano di Verona accoglie il festival lirico estivo all’aperto.",
+      "website": "https://www.arena.it/"
+    },
+    "Venezia|Teatro La Fenice": {
+      "city": "Venezia",
+      "name": "Teatro La Fenice",
+      "address": "Campo San Fantin 1965",
+      "description": "Nel sestiere di San Marco, La Fenice è uno dei palcoscenici storici dell’opera italiana.",
+      "website": "https://www.teatrolafenice.it/"
+    },
+    "Palermo|Teatro Massimo": {
+      "city": "Palermo",
+      "name": "Teatro Massimo",
+      "address": "Piazza Giuseppe Verdi",
+      "description": "Nel centro di Palermo, il Teatro Massimo presenta opere, balletti e concerti.",
+      "website": "https://www.teatromassimo.it/"
+    },
+    "Parma|Teatro Regio di Parma": {
+      "city": "Parma",
+      "name": "Teatro Regio di Parma",
+      "address": "Strada Giuseppe Garibaldi 16/A",
+      "description": "Il Teatro Regio di Parma è uno dei luoghi simbolo della tradizione operistica cittadina.",
+      "website": "https://teatroregioparma.it/"
+    },
+    "Novara|Teatro Coccia": {
+      "city": "Novara",
+      "name": "Teatro Coccia",
+      "address": "Via Fratelli Rosselli",
+      "description": "Il Teatro Coccia è il principale teatro lirico di Novara e ospita opere e produzioni in tournée.",
+      "website": "https://www.fondazioneteatrococcia.it/"
+    },
+    "Bergamo|Teatro Donizetti": {
+      "city": "Bergamo",
+      "name": "Teatro Donizetti",
+      "address": "Piazza Cavour 15",
+      "description": "Situato nella Bergamo bassa, il Donizetti ospita opere e spettacoli nel cuore della città.",
+      "website": "https://www.teatrodonizetti.it/"
+    },
+    "Reggio Emilia|Teatro Valli": {
+      "city": "Reggio Emilia",
+      "name": "Teatro Valli",
+      "address": "Piazza Martiri del 7 Luglio 7",
+      "description": "Il Teatro Municipale Romolo Valli accoglie opera, musica e danza nel centro di Reggio Emilia.",
+      "website": "https://www.iteatri.re.it/"
+    },
+    "Ravenna|Teatro Dante Alighieri": {
+      "city": "Ravenna",
+      "name": "Teatro Dante Alighieri",
+      "address": "Via Angelo Mariani 2",
+      "description": "Il teatro storico di Ravenna ospita opera, concerti e parte della programmazione del Ravenna Festival.",
+      "website": "https://comune.ravenna.it/vivere-il-comune/luoghi/teatro/teatro-dante-alighieri/"
+    }
+  }
+}
