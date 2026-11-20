@@ -361,7 +361,7 @@ def main():
     from scripts.build_verified_catalog import validate_auto_sources
     validate_auto_sources(urls)
     assemble(next_facts,next_registry,approved_extra=set(urls))
-    build_editorial(next_facts,next_registry,next_editorial)
+    build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls))
     if report["new_recite"]:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
