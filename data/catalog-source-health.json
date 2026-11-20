@@ -1,139 +1,158 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T20:23:28+00:00",
+  "checked_at": "2026-11-20T20:56:10+00:00",
   "sources": [
     {
       "key": "regio-traviata-2027",
       "outcome": "success",
       "added": 0,
       "observed": 11,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "lombardia-italiana-2026",
       "outcome": "success",
       "added": 0,
       "observed": 8,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-edgar-2027",
       "outcome": "success",
       "added": 0,
       "observed": 7,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-salome-2027",
       "outcome": "success",
       "added": 0,
       "observed": 6,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-cavalleria-rusticana-2026",
       "outcome": "success",
       "added": 0,
       "observed": 9,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-pagliacci-2026",
       "outcome": "success",
       "added": 0,
       "observed": 9,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-boheme-leoncavallo-2026",
       "outcome": "success",
       "added": 0,
       "observed": 6,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-iris-2026",
       "outcome": "success",
       "added": 0,
       "observed": 7,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-carmen-2027",
       "outcome": "success",
       "added": 0,
       "observed": 11,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "regio-evgenij-onegin-2027",
       "outcome": "success",
       "added": 0,
       "observed": 7,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "lombardia-turandot-pavia",
       "outcome": "success",
       "added": 0,
       "observed": 2,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "lombardia-cavalleria-pavia",
       "outcome": "success",
       "added": 0,
       "observed": 2,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "lombardia-pagliacci-pavia",
       "outcome": "success",
       "added": 0,
       "observed": 2,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "lombardia-ballo-pavia",
       "outcome": "success",
       "added": 0,
       "observed": 2,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "lombardia-death-venice-pavia",
       "outcome": "success",
       "added": 0,
       "observed": 2,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "opera-lombardia-calendar-2026-27",
       "outcome": "success",
       "added": 0,
       "observed": 54,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "scala-don-giovanni-2027",
       "outcome": "success",
       "added": 0,
       "observed": 10,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "scala-boheme-puccini-2027",
       "outcome": "success",
       "added": 0,
       "observed": 8,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     },
     {
       "key": "arena-nabucco-2027",
       "outcome": "success",
       "added": 0,
       "observed": 6,
-      "anomalies": []
+      "anomalies": [],
+      "candidates": []
     }
   ]
 }
