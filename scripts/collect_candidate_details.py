@@ -329,16 +329,28 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 # page-specific showtime. Generic Event JSON-LD alone has no
                 # authoritative work identity and must never outrank those.
                 facts=[]
-                for parse in (
-                    lambda:parse_known_opera_detail(item["source_key"],
-                                                     item["official_url"],page.html,registry),
-                    lambda:parse_authoritative_new_work_detail(item,page.html,intelligence),
-                    lambda:parse_event_facts(page.html),
+                diagnostic=[]
+                for name,parse in (
+                    ("canonical_work",lambda:parse_known_opera_detail(
+                        item["source_key"],item["official_url"],page.html,registry)),
+                    ("authority_work",lambda:parse_authoritative_new_work_detail(
+                        item,page.html,intelligence)),
+                    ("schema_event",lambda:parse_event_facts(page.html)),
                 ):
-                    try:facts=parse()
-                    except ValueError:continue
+                    try:
+                        facts=parse()
+                        if not facts:diagnostic.append(name+":no_evidence")
+                    except ValueError as exc:
+                        # These are our own validation errors, not raw HTML.
+                        diagnostic.append(name+":"+str(exc)[:100])
+                        continue
                     if facts:break
-                if not facts:raise ValueError("no unambiguous structured event facts")
+                if not facts:
+                    health.append({"candidate_id":item["id"],
+                                   "outcome":"unavailable_or_unstructured",
+                                   "reason":"no_verified_showtimes",
+                                   "diagnostic":diagnostic,"rows":0})
+                    continue
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
                     "source_url":item["official_url"],"content_sha256":page.sha256,
