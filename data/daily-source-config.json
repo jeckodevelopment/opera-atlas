@@ -160,7 +160,7 @@
       "title": "OperaLombardia calendar 2026/27",
       "composer": "Multiple canonical composers",
       "access_status": "approved",
-      "approval_evidence": "Owner authorization 2026-11-20 for official factual OperaLombardia calendar with mandatory fresh robots.txt check before every request. Exact index reviewed editorially; parsing must fail closed on unexpected titles, dates, theatres, partial HTML or robots denial. Never infer start times."
+      "approval_evidence": "Owner authorization 2026-11-20 for official factual OperaLombardia calendar with mandatory fresh robots.txt check before every request. Exact index reviewed editorially; parsing must fail closed on unexpected titles, dates, theatres, partial HTML or robots denial. Never infer start times. Robots authorization for this exact index page NOT verified at editorial onboarding; runtime check is mandatory and errors deny collection."
     }
   ]
 }
