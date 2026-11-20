@@ -27,14 +27,14 @@ class RegioExpandedCatalogTests(unittest.TestCase):
         self.assertEqual(by_key["regio-salome-2027"]["dates"],[list(x) for x in SALOME])
         self.assertTrue(by_key["regio-edgar-2027"]["source_url"].endswith("/edgar"))
         self.assertTrue(by_key["regio-salome-2027"]["source_url"].endswith("/salome"))
-        self.assertEqual(len(self.facts["productions"]),24)
+        self.assertEqual(len(self.facts["productions"]),29)
 
     def test_new_stagings_and_replica_ids_are_stable(self):
         graph=assemble(self.facts,self.registry)
         self.assertEqual(len(graph["works"]),19)
         self.assertEqual(len(graph["venues"]),10)
-        self.assertEqual(len(graph["stagings"]),24)
-        self.assertEqual(len(graph["performances"]),131)
+        self.assertEqual(len(graph["stagings"]),29)
+        self.assertEqual(len(graph["performances"]),141)
         self.assertEqual(graph["performances"][-1]["starts_at"],"2027-08-07T21:00:00+02:00")
         self.assertEqual(self.registry["stagings"]["regio-edgar-2027"]["id"],"oa-s-000006")
         self.assertEqual(self.registry["stagings"]["regio-salome-2027"]["id"],"oa-s-000007")
@@ -50,10 +50,10 @@ class RegioExpandedCatalogTests(unittest.TestCase):
         originals=[r for r in graph["performances"] if int(r["id"].split("-")[-1])<=19]
         self.assertEqual(len(originals),19)
         self.assertEqual(sum(not e["time_known"] for e in graph["performances"]),2)
-        self.assertEqual(sum(e["time_known"] for e in graph["performances"]),129)
-        self.assertEqual(len({e["id"] for e in graph["performances"]}),131)
+        self.assertEqual(sum(e["time_known"] for e in graph["performances"]),139)
+        self.assertEqual(len({e["id"] for e in graph["performances"]}),141)
         _,manifest=release_parts(self.facts,self.registry)
-        self.assertEqual(manifest["files"]["performances"]["count"],131)
+        self.assertEqual(manifest["files"]["performances"]["count"],141)
 
 
 if __name__=="__main__":
