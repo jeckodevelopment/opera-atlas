@@ -27,6 +27,12 @@ APPROVED_PAGES = {
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin",
     "https://www.operalombardia.it/l-italiana-in-algeri/",
+    "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+    "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+    "https://www.teatrolafenice.it/event/fedora/",
+    "https://www.teatromassimo.it/event/samson-et-dalila/",
+    "https://www.teatromassimo.it/event/macbeth/",
+    "https://teatroregioparma.it/spettacolo/madama-butterfly/",
     "https://www.teatrofraschini.it/programma/turandot/",
     "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
     "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/",
@@ -136,7 +142,7 @@ def build(manifest: dict, evidence: dict | None = None) -> dict:
                 raise ValueError("duplicate editorial performance")
             keys.add(uid)
             # The curated Regio dates are all outside Italy's DST period.
-            if hour is not None and not (url.startswith("https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/") or url.startswith("https://www.teatrofraschini.it/programma/")):
+            if hour is not None and url not in APPROVED_PAGES - {"https://www.operalombardia.it/l-italiana-in-algeri/"}:
                 raise ValueError("no verified time for this source")
             if hour is None and url != "https://www.operalombardia.it/l-italiana-in-algeri/":
                 raise ValueError("expected exact Regio performance hour")
