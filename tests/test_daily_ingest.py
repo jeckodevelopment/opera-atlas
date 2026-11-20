@@ -71,11 +71,11 @@ class DailyIngestionTests(unittest.TestCase):
         facts,registry,health,added=self.scan(self.html(extra="2027-03-11"))
         self.assertEqual(added,1)
         self.assertEqual(health[0]["outcome"],"success")
-        self.assertEqual(len(registry["performances"]),132)
+        self.assertEqual(len(registry["performances"]),len(self.registry["performances"])+1)
         self.assertEqual(registry["performances"]["regio-traviata-2027|2027-02-26"],
                          self.registry["performances"]["regio-traviata-2027|2027-02-26"])
         self.assertEqual(registry["performances"]["regio-traviata-2027|2027-03-11"]["id"],
-                         "oa-r-000132")
+                         f"oa-r-{max(int(e[\"id\"].split(\"-\")[-1]) for e in self.registry[\"performances\"].values())+1:06d}")
         self.assertEqual(facts["reviewed_on"],"2026-11-20")
         facts2,registry2,health2,added2=scan_approved(
             facts,registry,[self.source],network_enabled=True,
