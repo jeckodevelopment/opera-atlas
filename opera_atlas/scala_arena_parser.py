@@ -74,11 +74,17 @@ def parse_showtimes(html: str, *, url: str, title: str, composer: str,
     results={}
     for i,match in enumerate(dates):
         following=segment[match.end():dates[i+1].start() if i+1<len(dates) else len(segment)]
-        hours=CLOCK.findall(following)
+        # In Arena cards a second mention of the date may occur inside cast
+        # metadata. Only an immediate "ore HH:MM" counts as the showtime.
+        strict=CLOCK.match(following.lstrip()) if adapter=="arena" else None
+        if adapter=="arena" and strict is None:
+            continue
+        hours=[strict.groups()] if strict else CLOCK.findall(following)
         if len(hours)!=1:raise ValueError("ambiguous or missing exact performance time")
         day=date(int(match.group(3)),MONTHS[match.group(2).lower()],int(match.group(1))).isoformat()
         hour,minute=map(int,hours[0])
         if not(0<=hour<=23 and 0<=minute<=59): raise ValueError("invalid performance time")
         if day in results: raise ValueError("duplicate official performance day")
         results[day]=f"{hour:02}:{minute:02}"
+    if not results: raise ValueError("no complete date/time pairs")
     return sorted(results.items())
