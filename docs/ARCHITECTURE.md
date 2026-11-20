@@ -12,7 +12,7 @@
 | Archivio canonico | SQLite locale/operator + registro ID JSON Git | Riconciliazione, audit e identità | Nessun DBaaS |
 | Pubblicazione JSON | `opera-atlas/public/catalog/v2/` | Feed pubblico tramite GitHub Raw | Nessun server dedicato |
 | UI | `opera.plus/atlas/` | HTML/CSS/JS statici, caricamento feed CORS | Hosting esistente |
-| Deploy frontend | Workflow SFTP nativo `opera-atlas` | Trasferimento sui cambi UI, credenziali proprie e rollback | Segreti del nuovo hosting |
+| Deploy frontend | Workflow FTPS nativo `opera-atlas` | Trasferimento sui cambi UI, credenziali proprie e rollback | Segreti del nuovo hosting |
 
 ### Identità (catalogo v2)
 
@@ -34,7 +34,7 @@ Le future acquisizioni devono poter operare esclusivamente su sorgenti con `acce
 
 ### Pubblicazione della UI e verifiche
 
-Frontend SFTP indipendente: solo il repository `opera-atlas` contiene `.github/workflows/deploy-atlas.yml`, il publisher `scripts/deploy_atlas.py` e i test applicativi. Il deploy usa credenziali del nuovo hosting, trasferisce file frontend statici nella cartella `/atlas`, verifica via HTTPS anche i deep link e, in caso di esito negativo, ripristina la versione precedente. Il workflow dati rimane distinto: `site/catalog-client.js` carica il catalogo JSON su GitHub tramite HTTPS/CORS con digest e fallback locale. `jeckodevsite` non è coinvolto nel nuovo processo.
+Frontend FTPS indipendente: solo il repository `opera-atlas` contiene `.github/workflows/deploy-atlas.yml`, il publisher `scripts/deploy_atlas.py` e i test applicativi. Il deploy usa credenziali del nuovo hosting, trasferisce file frontend statici nella cartella `/atlas`, verifica via HTTPS anche i deep link e, in caso di esito negativo, ripristina la versione precedente. Il workflow dati rimane distinto: `site/catalog-client.js` carica il catalogo JSON su GitHub tramite HTTPS/CORS con digest e fallback locale. `jeckodevsite` non è coinvolto nel nuovo processo.
 
 La configurazione dell'hosting, la compatibilità delle rewrite, la gestione offline e il comportamento su browser mobili richiedono collaudo end-to-end. Per versioni future, valutare uno snapshot di riserva periodico solo se necessario, senza introdurre SFTP quotidiano né un backend dedicato.
 

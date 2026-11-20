@@ -14,7 +14,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: opera-atlas-sftp-production
+  group: opera-atlas-ftps-production
   cancel-in-progress: false
 jobs:
   publish:
@@ -40,16 +40,11 @@ jobs:
           python -m unittest discover -s tests -v
           python -m scripts.publish_catalog_v2 --check
           python -m scripts.publish_work_editorial --check
-      - name: Install pinned SFTP transport
-        run: python -m pip install paramiko==3.5.1
       - name: Publish owned /atlas folder and verify HTTPS (rollback on error)
         env:
-          ATLAS_SFTP_HOST: ${{ secrets.ATLAS_SFTP_HOST }}
-          ATLAS_SFTP_PORT: ${{ secrets.ATLAS_SFTP_PORT }}
-          ATLAS_SFTP_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
-          ATLAS_SFTP_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
-          ATLAS_SFTP_KNOWN_HOSTS: ${{ secrets.ATLAS_SFTP_KNOWN_HOSTS }}
-          ATLAS_SFTP_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}
-          ATLAS_SFTP_PRIVATE_KEY: ${{ secrets.ATLAS_SFTP_PRIVATE_KEY }}
-          ATLAS_SFTP_KEY_PASSPHRASE: ${{ secrets.ATLAS_SFTP_KEY_PASSPHRASE }}
+          ATLAS_FTPS_HOST: ${{ secrets.ATLAS_FTPS_HOST }}
+          ATLAS_FTPS_PORT: ${{ secrets.ATLAS_FTPS_PORT }}
+          ATLAS_FTPS_USERNAME: ${{ secrets.ATLAS_FTPS_USERNAME }}
+          ATLAS_FTPS_REMOTE_DIR: ${{ secrets.ATLAS_FTPS_REMOTE_DIR }}
+          ATLAS_FTPS_PASSWORD: ${{ secrets.ATLAS_FTPS_PASSWORD }}
         run: timeout --signal=TERM --kill-after=90s 11m python -u scripts/deploy_atlas.py
