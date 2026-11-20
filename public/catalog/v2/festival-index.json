@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-20",
+  "festivals": [
+    {
+      "id": "arena-opera-festival-2027",
+      "name": "Arena Opera Festival",
+      "edition": "2027",
+      "city": "Verona",
+      "region": "Veneto",
+      "official_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+      "staging_ids": [
+        "oa-s-000020"
+      ],
+      "note": "Programmazione parziale: solo le produzioni confermate nel catalogo Atlas"
+    },
+    {
+      "id": "rossini-opera-festival",
+      "name": "Rossini Opera Festival",
+      "edition": null,
+      "city": "Pesaro",
+      "region": "Marche",
+      "official_url": "https://www.rossinioperafestival.it/",
+      "staging_ids": [],
+      "note": "Fonte ufficiale censita; nessuna rappresentazione associata e verificata"
+    }
+  ]
+}
