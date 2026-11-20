@@ -13,6 +13,18 @@
       "slug": "italiana-in-algeri",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini"
+    },
+    "edgar|giacomo puccini": {
+      "id": "oa-w-000003",
+      "slug": "edgar",
+      "title": "Edgar",
+      "composer": "Giacomo Puccini"
+    },
+    "salome|richard strauss": {
+      "id": "oa-w-000004",
+      "slug": "salome",
+      "title": "Salome",
+      "composer": "Richard Strauss"
     }
   },
   "venues": {
@@ -96,6 +108,22 @@
       "venue_id": "oa-v-000005",
       "slug": "italiana-in-algeri",
       "source_url": "https://www.operalombardia.it/l-italiana-in-algeri/",
+      "season": "2026-2027"
+    },
+    "regio-edgar-2027": {
+      "id": "oa-s-000006",
+      "work_id": "oa-w-000003",
+      "venue_id": "oa-v-000001",
+      "slug": "edgar",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar",
+      "season": "2026-2027"
+    },
+    "regio-salome-2027": {
+      "id": "oa-s-000007",
+      "work_id": "oa-w-000004",
+      "venue_id": "oa-v-000001",
+      "slug": "salome",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
       "season": "2026-2027"
     }
   },
@@ -213,6 +241,84 @@
       "staging_id": "oa-s-000005",
       "original_date": "2026-12-12",
       "source_url": "https://www.operalombardia.it/l-italiana-in-algeri/"
+    },
+    "regio-edgar-2027|2027-01-22": {
+      "id": "oa-r-000020",
+      "staging_id": "oa-s-000006",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+    },
+    "regio-edgar-2027|2027-01-26": {
+      "id": "oa-r-000021",
+      "staging_id": "oa-s-000006",
+      "original_date": "2027-01-26",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+    },
+    "regio-edgar-2027|2027-01-28": {
+      "id": "oa-r-000022",
+      "staging_id": "oa-s-000006",
+      "original_date": "2027-01-28",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+    },
+    "regio-edgar-2027|2027-01-30": {
+      "id": "oa-r-000023",
+      "staging_id": "oa-s-000006",
+      "original_date": "2027-01-30",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+    },
+    "regio-edgar-2027|2027-02-02": {
+      "id": "oa-r-000024",
+      "staging_id": "oa-s-000006",
+      "original_date": "2027-02-02",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+    },
+    "regio-edgar-2027|2027-02-04": {
+      "id": "oa-r-000025",
+      "staging_id": "oa-s-000006",
+      "original_date": "2027-02-04",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+    },
+    "regio-edgar-2027|2027-02-06": {
+      "id": "oa-r-000026",
+      "staging_id": "oa-s-000006",
+      "original_date": "2027-02-06",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+    },
+    "regio-salome-2027|2027-04-02": {
+      "id": "oa-r-000027",
+      "staging_id": "oa-s-000007",
+      "original_date": "2027-04-02",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+    },
+    "regio-salome-2027|2027-04-06": {
+      "id": "oa-r-000028",
+      "staging_id": "oa-s-000007",
+      "original_date": "2027-04-06",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+    },
+    "regio-salome-2027|2027-04-09": {
+      "id": "oa-r-000029",
+      "staging_id": "oa-s-000007",
+      "original_date": "2027-04-09",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+    },
+    "regio-salome-2027|2027-04-11": {
+      "id": "oa-r-000030",
+      "staging_id": "oa-s-000007",
+      "original_date": "2027-04-11",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+    },
+    "regio-salome-2027|2027-04-14": {
+      "id": "oa-r-000031",
+      "staging_id": "oa-s-000007",
+      "original_date": "2027-04-14",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+    },
+    "regio-salome-2027|2027-04-17": {
+      "id": "oa-r-000032",
+      "staging_id": "oa-s-000007",
+      "original_date": "2027-04-17",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
     }
   }
 }
