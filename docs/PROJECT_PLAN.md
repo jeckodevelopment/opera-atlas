@@ -60,3 +60,12 @@ python -m opera_atlas.scan_cli --db atlas.sqlite3 --url https://www.teatroregio.
 La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiesta robots.txt precedente alla pagina, User-Agent identificabile, response HTML, limite 2 MB, timeout 12 secondi. Nessun retry e nessuna scansione ricorsiva. Lo storico `source_checks` registra esito, impronta SHA-256, dimensione e numero di recite, senza copiare il testo dell'ente. Le scansioni negate registrano solo il motivo tecnico se `--apply` è usato.
 
 **Limiti:** la soluzione non gestisce rate limiting globale tra esecuzioni, ETag/304, parser per altri teatri, errori di import con log persistente o gestione completa degli spostamenti di programma. Prima di abilitare schedulazioni serviranno policy di accesso verificate, monitoraggio delle frequenze e collaudi live. Le fixture di test sono sintesi redatte autonomamente, non copie della pagina.
+
+## Blocco implementativo — feed canonico v2 (2026-11-20)
+- [x] Registro di ID opachi immutabili: 2 opere, 5 teatri, 5 messe in scena, 19 repliche. Lo slug è separato dall'identità.
+- [x] Feed statici distinti e versionati per entità, con hash SHA-256 e puntatore pubblico scritto per ultimo.
+- [x] Frontend collegato al feed GitHub, con fallback esplicito allo snapshot SFTP in caso di problemi di rete.
+- [x] Job quotidiano di validazione e pubblicazione canonica su GitHub Actions nella repository del prodotto, senza servizio server o SFTP.
+- [ ] Import quotidiano dalle pagine ufficiali: fonti e policy live ancora da approvare; niente scraping implicito.
+- [ ] Routing SEO leggibile su hosting e pagine delle messe in scena raggruppate: registri e URL canonici già modellati, frontend e server rewrite da integrare.
+- [ ] Risoluzione automatica sicura dei cambi identità in presenza di date modificabili e fonte non stabile: revisione umana ancora necessaria.
