@@ -101,3 +101,9 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Ora locale `Europe/Rome`, corretta in estate e inverno, con esclusione di ore inesistenti o ambigue.
 - [x] Test per mutazioni parziali, duplicati conflittuali, passaggi ora legale e fonti ancora non autorizzate.
 - [ ] Concludere la verifica dei permessi robots/termini e collaudare HTML live autorizzato **prima** di attivare i crawler.
+
+### F2 — autorizzazione condizionata a scansioni robots-gated
+- [x] Consenso dell'operatore registrato per provare la lettura delle due pagine ufficiali, sempre con controllo robots.txt runtime prima di ogni fetch.
+- [x] Rifiuto di robots assente, malformato/HTML, negato o rediretto; test di non-accesso alle pagine vietate.
+- [ ] Verificare il primo risultato di GitHub Actions da rete del runner: non dichiarare acquisizione funzionante se robots è negato o non leggibile.
+- [ ] Validare sul sito l'HTML reale e la resa del parser, espandendo poi il catalogo di opere/sedi.
