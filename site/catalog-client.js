@@ -80,7 +80,7 @@ window.OperaAtlasCatalog = (() => {
         throw new Error("Invalid canonical relationship");
       }
       return {
-        id:item.id, staging_id:staging.id,work_id:work.id,venue_id:venue.id,
+        id:item.id, legacy_id:item.legacy_id, staging_id:staging.id,work_id:work.id,venue_id:venue.id,
         staging_url:staging.url, season:staging.season, work_slug:work.slug,
         venue_slug:venue.slug, city_slug:venue.city_slug,
         local_date:item.local_date,starts_at:item.starts_at,
