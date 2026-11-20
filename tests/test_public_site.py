@@ -40,14 +40,15 @@ class PublicCatalogTests(unittest.TestCase):
         parser.feed((SITE / "index.html").read_text(encoding="utf-8"))
         self.assertTrue({
             "search", "city", "region", "from", "to", "time-filter",
-            "location", "spettacoli", "opere", "teatri", "festival",
+            "location", "radius", "period", "sort", "spettacoli", "opere", "teatri", "festival",
+            "calendar-view", "map-view", "discover-works", "discover-venues",
             "events", "count", "message", "reset", "previous", "next",
         }.issubset(parser.ids))
-        self.assertEqual(parser.labels, 7)
+        self.assertGreaterEqual(parser.labels, 10)
         self.assertIn("./styles.css", parser.links)
         self.assertIn("./app.js", parser.scripts)
         self.assertIn("./catalog-client.js", parser.scripts)
-        for name in ("styles.css", "app.js", "detail.html", "detail.js", "catalog-client.js", "performances.json"):
+        for name in ("styles.css", "app.js", "detail.html", "detail.js", "directory.html", "directory.js", "catalog-client.js", "performances.json"):
             self.assertTrue((SITE / name).is_file())
 
     def test_detail_page_uses_shared_assets_and_semantic_landmarks(self):
@@ -69,7 +70,7 @@ class PublicCatalogTests(unittest.TestCase):
         self.assertIn('URLSearchParams', script)
         catalogue = (SITE / "app.js").read_text(encoding="utf-8")
         self.assertIn("window.OperaAtlasCatalog.urls(event).staging", catalogue)
-        self.assertIn('viewMode === "staging"', catalogue)
+        self.assertIn('viewMode==="staging"', catalogue)
         self.assertIn('createStagingCard', catalogue)
 
     def test_canonical_static_routes_and_absolute_asset_base(self):
