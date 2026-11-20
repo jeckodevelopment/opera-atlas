@@ -11,8 +11,8 @@
 | Elaborazione | `opera-atlas/scripts` e Python stdlib | Validazioni, catalogo versionato e controlli | Quota GitHub Actions |
 | Archivio canonico | SQLite locale/operator + registro ID JSON Git | Riconciliazione, audit e identità | Nessun DBaaS |
 | Pubblicazione JSON | `opera-atlas/public/catalog/v2/` | Feed pubblico tramite GitHub Raw | Nessun server dedicato |
-| UI | `jeckodevelopment.com/dev/opera-atlas/` | HTML/CSS/JS statici, caricamento feed CORS | Hosting esistente |
-| Deploy frontend | Workflow SFTP `jeckodevsite` | Trasferimento esclusivamente su cambi UI | Servizi/segreti esistenti |
+| UI | `opera.plus/atlas/` | HTML/CSS/JS statici, caricamento feed CORS | Hosting esistente |
+| Deploy frontend | Workflow SFTP nativo `opera-atlas` | Trasferimento sui cambi UI, credenziali proprie e rollback | Segreti del nuovo hosting |
 
 ### Identità (catalogo v2)
 
@@ -34,7 +34,7 @@ Le future acquisizioni devono poter operare esclusivamente su sorgenti con `acce
 
 ### Pubblicazione della UI e verifiche
 
-Frontend SFTP indipendente: la repository `jeckodevsite` contiene solo il workflow di pubblicazione e lo script di trasporto, mentre test e pipeline dati risiedono su `opera-atlas`. La libreria `site/catalog-client.js` carica il feed remoto con CORS HTTPS, valida i digest e offre uno snapshot locale di riserva (mostrato con avviso). Il fallback statico è uno strumento di resilienza, **non** un catalogo automaticamente aggiornato.
+Frontend SFTP indipendente: solo il repository `opera-atlas` contiene `.github/workflows/deploy-atlas.yml`, il publisher `scripts/deploy_atlas.py` e i test applicativi. Il deploy usa credenziali del nuovo hosting, trasferisce file frontend statici nella cartella `/atlas`, verifica via HTTPS anche i deep link e, in caso di esito negativo, ripristina la versione precedente. Il workflow dati rimane distinto: `site/catalog-client.js` carica il catalogo JSON su GitHub tramite HTTPS/CORS con digest e fallback locale. `jeckodevsite` non è coinvolto nel nuovo processo.
 
 La configurazione dell'hosting, la compatibilità delle rewrite, la gestione offline e il comportamento su browser mobili richiedono collaudo end-to-end. Per versioni future, valutare uno snapshot di riserva periodico solo se necessario, senza introdurre SFTP quotidiano né un backend dedicato.
 
@@ -43,3 +43,7 @@ Gli URL canonici sono risolti dal browser dalla path, con rewrite Apache **solo*
 
 ## Schedulazione incrementale autorizzata
 La pipeline di `refresh-catalog.yml` contiene `scripts.daily_ingest`, che usa uno SQLite **in memoria e temporaneo** soltanto per imporre le regole del fetch ufficiale. I dati persistenti sono due JSON nel Git: osservazioni curate e registry ID, aggiornati solo per nuove date non ambigue. Un'integrazione GitHub Actions pubblica stato e JSON in uno stesso commit, senza SFTP. I connettori iniziali restano disabilitati finché accesso e parser non sono verificati: il sistema fallisce in modo sicuro senza scartare recite già pubblicate. Vedi [SOURCE_ONBOARDING](SOURCE_ONBOARDING.md).
+
+## Migrazione hosting Opera+ — 20/11/2026
+
+Destinazione pubblica `https://opera.plus/atlas/`, con `<base href="/atlas/">` su tutte le pagine, `RewriteBase /atlas/` e prefisso delle route ricavato da `document.baseURI`, senza riferimenti al dominio o alla directory del vecchio hosting nel codice. I feed GitHub canonici sono volutamente URL assoluti esterni, perché i loro aggiornamenti sono indipendenti da SFTP. La riscrittura richiede Apache con `.htaccess`/mod_rewrite o regole equivalenti configurate sull'hosting. **Pubblicazione non attiva finché mancano le credenziali SFTP del nuovo spazio e la verifica DNS/TLS:** per configurazione e collaudi vedere [DEPLOY_OPERA_PLUS](DEPLOY_OPERA_PLUS.md).
