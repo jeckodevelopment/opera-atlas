@@ -27,6 +27,14 @@ EXCLUDED_PATHS={
         "paganini-paradise", "domande-frequenti", "artisti",
         "viva-vivaldi",
     }),
+    "parma-opera-2027": frozenset({
+        "prima-che-si-alzi-il-sipario", "prove-under30", "prove-aperte",
+        "lanno-che-verra", "veleno", "regio198", "la-principessa-sissi",
+    }),
+    "massimo-season-2026-27": frozenset({
+        "biancaneve", "il-grande-gatsby", "sylvia", "balanchine-caikovskij",
+        "lo-schiaccianoci",
+    }),
     "fenice-opera-2026-27": frozenset({
         "piccolo-orso-e-la-montagna-di-ghiaccio",
         "zsigmond-gerloczy",
@@ -80,6 +88,10 @@ def eligible(key:str,url:str)->bool:
                              "arena-per-tutti","programma","festival"})
     if key=="fenice-opera-2026-27":
         return path.startswith("/event/") and bool(path.removeprefix("/event/"))
+    if key=="parma-opera-2027":
+        return path.startswith("/spettacolo/") and bool(path.removeprefix("/spettacolo/"))
+    if key=="massimo-season-2026-27":
+        return path.startswith("/event/") and bool(path.removeprefix("/event/"))
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
@@ -107,6 +119,8 @@ def validate_config(config:dict)->list[dict]:
         "scala-season-2026-27":("www.teatroallascala.org","/it/stagione/2026-2027/index.html"),
         "arena-festival-2027":("www.arena.it","/arena-opera-festival/spettacoli/"),
         "fenice-opera-2026-27":("www.teatrolafenice.it","/event-category/opera-2026-27/"),
+        "parma-opera-2027":("teatroregioparma.it","/categoria-spettacoli/opera/"),
+        "massimo-season-2026-27":("www.teatromassimo.it","/la-stagione-2026-27/"),
     }
     seen=set()
     for item in config["sources"]:

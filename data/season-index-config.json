@@ -22,6 +22,20 @@
       "url": "https://www.teatrolafenice.it/event-category/opera-2026-27/",
       "access_status": "approved",
       "min_links": 2
+    },
+    {
+      "key": "parma-opera-2027",
+      "official_url": "https://teatroregioparma.it/",
+      "url": "https://teatroregioparma.it/categoria-spettacoli/opera/",
+      "access_status": "approved",
+      "min_links": 3
+    },
+    {
+      "key": "massimo-season-2026-27",
+      "official_url": "https://www.teatromassimo.it/",
+      "url": "https://www.teatromassimo.it/la-stagione-2026-27/",
+      "access_status": "approved",
+      "min_links": 6
     }
   ]
 }
