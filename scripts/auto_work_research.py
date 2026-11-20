@@ -67,8 +67,9 @@ def resolve_identity(title_hint:str,*,fetch=read_api)->dict|None:
     query=fetch(wikidata_url("wbsearchentities",search=title_hint,language="it",
                             uselang="it",type="item",limit=8))
     matches=[x for x in query.get("search",[])
-             if isinstance(x.get("id"),str) and
-             slugify(x.get("label",""))==slugify(title_hint)]
+             if isinstance(x.get("id"),str) and isinstance(x.get("label"),str)
+             and x["label"].strip() and
+             slugify(x["label"])==slugify(title_hint)]
     if not matches:return None
     ids="|".join(sorted({x["id"] for x in matches}))
     batch=fetch(wikidata_url("wbgetentities",ids=ids,
@@ -78,7 +79,9 @@ def resolve_identity(title_hint:str,*,fetch=read_api)->dict|None:
         labels=entity.get("labels",{})
         label=labels.get("it",labels.get("en",{})).get("value","")
         if not label or slugify(label)!=slugify(title_hint):continue
-        if "Q1344" not in claim_ids(entity,"P31"):continue  # opera
+        # Wikidata currently prefers P7937 (form of creative work) for opera;
+        # historic entities may still use P31. Never infer from title only.
+        if "Q1344" not in (claim_ids(entity,"P7937") | claim_ids(entity,"P31")):continue
         composers=claim_ids(entity,"P86")
         wiki=entity.get("sitelinks",{}).get("itwiki",{}).get("title")
         if len(composers)!=1 or not isinstance(wiki,str) or len(wiki)>150:continue
