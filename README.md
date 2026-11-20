@@ -2,7 +2,7 @@
 
 Catalogo nazionale delle rappresentazioni di opera lirica in Italia e osservatorio statistico collegato al progetto culturale Opera+.
 
-> Stato: avvio del progetto. Nessuna programmazione pubblicata finché le fonti e le recite non saranno state verificate.
+> Stato: fase 1 — schema SQLite iniziale e test disponibili. Nessuna programmazione pubblicata finché le fonti e le recite non saranno state verificate.
 
 ## Obiettivi
 
@@ -11,8 +11,17 @@ Catalogo nazionale delle rappresentazioni di opera lirica in Italia e osservator
 - Raccolta automatica e tracciabile da fonti ufficiali, con controlli di qualità.
 - Statistiche sul repertorio e sulla distribuzione geografica e temporale.
 
-## Sviluppo
+## Sviluppo locale
 
-Le quattro fasi e i requisiti saranno tracciati nelle issue e nella documentazione di progetto. Tutte le modifiche funzionali avverranno tramite pull request con test e documentazione coerente.
+Richiede Python 3.12+ e SQLite con JSON1 (nessuna dipendenza Python esterna per lo storage).
 
-Licenze e policy per raccolta dati, mappe e materiali di terze parti saranno valutate prima della pubblicazione.
+```bash
+python -m unittest discover -s tests -v
+python -c "from opera_atlas.db import connect, migrate; c=connect('atlas.sqlite3'); migrate(c); c.close()"
+```
+
+Il file `atlas.sqlite3` è un artefatto locale di lavorazione, non un dataset pubblico di spettacoli. Vedi [schema e limitazioni](docs/STORAGE.md), [piano 1.0.0](docs/PROJECT_PLAN.md) e [registro delle fonti](docs/SOURCE_REGISTRY.md).
+
+## Processo
+
+Tutte le modifiche funzionali tramite pull request con test, documentazione nella stessa PR e Semantic Versioning. Licenze e policy di raccolta dati, mappe e materiali di terze parti saranno verificate prima della pubblicazione.
