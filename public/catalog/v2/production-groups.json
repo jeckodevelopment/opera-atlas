@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-20",
+  "groups": [
+    {
+      "id": "oa-g-lombardia-italiana-2026",
+      "work_id": "oa-w-000002",
+      "name": "L’italiana in Algeri — OperaLombardia",
+      "staging_ids": [
+        "oa-s-000002",
+        "oa-s-000003",
+        "oa-s-000004",
+        "oa-s-000005"
+      ],
+      "official_source": "https://www.operalombardia.it/l-italiana-in-algeri/"
+    }
+  ]
+}
