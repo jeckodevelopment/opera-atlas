@@ -118,3 +118,11 @@ Le nuove schede statiche sono raggiungibili tramite URL **senza query** quando l
 - `/dev/opera-atlas/torino/teatro-regio/la-traviata/` — **un'unica messa in scena con tutte le sue repliche**, anche se alcune non hanno orario.
 
 Il frontend offre le modalità **Per data** e **Per messa in scena**. Gli ID permanenti nel feed JSON restano indipendenti dai percorsi; i vecchi link `detail.html?type=...` sono ancora riconosciuti e instradati verso la pagina canonica. I cambi dei dati si propagano tramite il JSON GitHub senza nuova pubblicazione SFTP. Dopo un deploy UI è indispensabile il collaudo HTTP delle rewrite, perché il funzionamento dipende dal server.
+
+## Scansione giornaliera con accesso autorizzato (Fase 2)
+
+La stessa GitHub Action `refresh-catalog.yml`, eseguita una volta al giorno nel repository Opera Atlas, ora integra `scripts.daily_ingest`: verifica il registro `data/daily-source-config.json` e **scarica esclusivamente pagine esplicitamente approvate**, con controllo `robots.txt` obbligatorio, un URL per produzione, timeout e limiti. Oggi le due fonti iniziali sono ancora `pending`: il job aggiorna e valida il catalogo editoriale, ma non può affermare di scoprire nuove recite via web finché le verifiche di accesso e parser live non saranno completate.
+
+Lo stato canonico sopravvive ai runner effimeri attraverso il manifesto editoriale e il registro degli ID. Nuove date non ambigue di una produzione curata ricevono un ID permanente, senza cancellare date che scompaiono da una scansione; cambi di orario, rinvii probabili e sedi ignote entrano nella coda di verifica, senza alterazione automatica. Eventuali problemi non azzerano il catalogo pubblico. Lo stato operativo delle fonti approvate è in `data/catalog-source-health.json`; l'ultima data di verifica editoriale è visibile sul frontend. Il processo non esegue SFTP.
+
+Procedura per l'approvazione sicura, limiti e collaudi: [SOURCE_ONBOARDING](docs/SOURCE_ONBOARDING.md).

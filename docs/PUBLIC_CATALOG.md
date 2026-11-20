@@ -98,3 +98,6 @@ Le riscritture Apache sono in `site/.htaccess` e inviano soltanto i percorsi whi
 5. Aprire `/dev/opera-atlas/opere/italiana-in-algeri/`: quattro teatri e otto recite senza ora; nessun `00:00`.
 6. Verificare i vecchi link parametrizzati, le richieste dirette e il refresh del browser su URL profondi, su desktop e smartphone.
 7. Controllare che il deploy del frontend non sia rieseguito per le modifiche dei soli JSON.
+
+## Freschezza dei dati e controllo giornaliero
+Il catalogo mostra la data di verifica editoriale proveniente dal manifesto GitHub; è distinta dalla data di esecuzione del workflow. Il job quotidiano può leggere pagine soltanto quando il file `data/daily-source-config.json` segnala approvazione documentata. Un errore di robots o pagina incompleta non rimuove eventi e non pubblica dati fittizi. I risultati di scansione autorizzata sono registrati separatamente in `data/catalog-source-health.json` e non causano mai un deploy SFTP. Il dettaglio dei controlli e le regole di onboarding sono in [SOURCE_ONBOARDING](SOURCE_ONBOARDING.md).

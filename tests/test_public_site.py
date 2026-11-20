@@ -87,9 +87,9 @@ class PublicCatalogTests(unittest.TestCase):
     def test_curated_catalog_contains_only_verified_official_recite(self):
         payload = json.loads((SITE / "performances.json").read_text(encoding="utf-8"))
         self.assertEqual(payload["schema_version"], 1)
-        self.assertEqual(len(payload["performances"]), 19)
+        self.assertGreaterEqual(len(payload["performances"]), 19)
         self.assertTrue(all(e["sources"] for e in payload["performances"]))
-        self.assertEqual(sum(not e["time_known"] for e in payload["performances"]), 8)
+        self.assertGreaterEqual(sum(not e["time_known"] for e in payload["performances"]), 8)
 
     def test_export_is_directly_compatible_with_date_only_cards(self):
         conn = connect()

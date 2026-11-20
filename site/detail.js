@@ -135,6 +135,8 @@ async function initialize() {
   try {
     const data=await window.OperaAtlasCatalog.load();
     if(data.warning)status.textContent=data.warning;
+    else if(data.reviewed_on)
+      status.textContent="Dati verificati il "+data.reviewed_on.split("-").reverse().join("/");
     const events=data.performances.filter(validEvent);
     const selected=resolve(events);
     if(!selected.kind || !selected.events.length) {

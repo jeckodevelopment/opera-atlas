@@ -40,3 +40,6 @@ La configurazione dell'hosting, la compatibilità delle rewrite, la gestione off
 
 ## Routing statico e costi
 Gli URL canonici sono risolti dal browser dalla path, con rewrite Apache **solo** verso `detail.html`. Non occorre rigenerare HTML per ogni messa in scena, quindi nuove schede e nuovi teatri diventano navigabili subito dopo l'aggiornamento del feed, senza SFTP. L'unica configurazione server consiste nel file `site/.htaccess`, da pubblicare e collaudare con la prima modifica del frontend. I vecchi URL query rimangono compatibili; mantenere `legacy_id` finché serviranno le migrazioni dei vecchi link.
+
+## Schedulazione incrementale autorizzata
+La pipeline di `refresh-catalog.yml` contiene `scripts.daily_ingest`, che usa uno SQLite **in memoria e temporaneo** soltanto per imporre le regole del fetch ufficiale. I dati persistenti sono due JSON nel Git: osservazioni curate e registry ID, aggiornati solo per nuove date non ambigue. Un'integrazione GitHub Actions pubblica stato e JSON in uno stesso commit, senza SFTP. I connettori iniziali restano disabilitati finché accesso e parser non sono verificati: il sistema fallisce in modo sicuro senza scartare recite già pubblicate. Vedi [SOURCE_ONBOARDING](SOURCE_ONBOARDING.md).
