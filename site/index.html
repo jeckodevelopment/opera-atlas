@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/dev/opera-atlas/">
   <meta name="description" content="Opera Atlas: rappresentazioni operistiche in Italia da fonti ufficiali.">
   <title>Opera Atlas — Calendario delle recite</title>
   <link rel="stylesheet" href="./styles.css">
@@ -63,6 +64,10 @@
         </div>
       </form>
     </section>
+    <div class="catalog-view" role="group" aria-label="Modalità catalogo">
+      <button type="button" class="view-tab active" data-catalog-view="date" aria-pressed="true">Per data</button>
+      <button type="button" class="view-tab" data-catalog-view="staging" aria-pressed="false">Per messa in scena</button>
+    </div>
     <div class="results-heading">
       <h2>Cartellone delle recite</h2>
       <p id="count" role="status" aria-live="polite">Caricamento in corso…</p>
