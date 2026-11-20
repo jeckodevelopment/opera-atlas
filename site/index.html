@@ -13,20 +13,26 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="./" class="brand" aria-label="Opera Atlas — Home">
-        <span class="brand-symbol" aria-hidden="true">◉</span><span>Opera Atlas</span>
+        <span class="brand-name"><strong>Opera Atlas</strong><small>Osservatorio dell’opera in Italia</small></span>
       </a>
-      <span class="header-subtitle">Cartellone dell'opera in Italia</span>
+      <span class="header-subtitle">Dati da fonti ufficiali</span>
     </div>
   </header>
   <main class="container" id="catalogo">
     <section class="intro" aria-labelledby="page-heading">
-      <p class="eyebrow">Il repertorio, vicino a te</p>
-      <h1 id="page-heading">Scopri le prossime recite</h1>
-      <p class="lede">Programmazioni tratte da fonti ufficiali. Quando conosciamo il giorno ma non l'ora, trovi comunque la recita con l'indicazione <strong>Orario da confermare</strong>.</p>
+      <p class="eyebrow">OPERA ATLAS / CARTELLONE</p>
+      <h1 id="page-heading">L’opera, teatro per teatro.</h1>
+      <p class="lede">Un calendario essenziale delle rappresentazioni operistiche italiane, costruito su fonti ufficiali. Le recite con data e teatro verificati sono visibili anche senza ora, segnalata come <strong>Orario da confermare</strong>.</p>
+    </section>
+    <section class="overview" aria-label="Dati del catalogo">
+      <div class="metric"><span class="metric-value" id="metric-events">—</span><span class="metric-caption">Recite in catalogo</span></div>
+      <div class="metric"><span class="metric-value" id="metric-works">—</span><span class="metric-caption">Opere distinte</span></div>
+      <div class="metric"><span class="metric-value" id="metric-venues">—</span><span class="metric-caption">Teatri</span></div>
+      <div class="metric"><span class="metric-value" id="metric-unknown">—</span><span class="metric-caption">Orari da confermare</span></div>
     </section>
     <section class="filter-panel" aria-labelledby="filter-heading">
       <div class="filter-heading">
-        <h2 id="filter-heading">Cerca nel calendario</h2>
+        <h2 id="filter-heading">Esplora le rappresentazioni</h2>
         <button type="button" id="reset" class="reset">Azzera filtri</button>
       </div>
       <form id="filters" role="search">
@@ -57,7 +63,7 @@
       </form>
     </section>
     <div class="results-heading">
-      <h2>Le recite</h2>
+      <h2>Cartellone delle recite</h2>
       <p id="count" role="status" aria-live="polite">Caricamento in corso…</p>
     </div>
     <div id="message" role="status" aria-live="polite"></div>
