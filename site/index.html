@@ -17,28 +17,30 @@
       <a href="./" class="brand" aria-label="Opera Atlas — Home">
         <span class="brand-name"><strong>Opera Atlas</strong><small>Osservatorio dell’opera in Italia</small></span>
       </a>
-      <span class="header-subtitle">Dati da fonti ufficiali</span>
+      <nav class="primary-nav" aria-label="Navigazione principale">
+        <a href="./#spettacoli" aria-current="page">Spettacoli</a>
+        <a href="./#opere">Opere</a>
+        <a href="./#teatri">Teatri</a>
+        <a href="./#festival">Festival</a>
+      </nav>
     </div>
   </header>
   <main class="container" id="catalogo">
     <section class="intro" aria-labelledby="page-heading">
-      <p class="eyebrow">OPERA ATLAS / CARTELLONE</p>
-      <h1 id="page-heading">L’opera, teatro per teatro.</h1>
-      <p class="lede">Un calendario essenziale delle rappresentazioni operistiche italiane, costruito su fonti ufficiali. Le recite con data e teatro verificati sono visibili anche senza ora, segnalata come <strong>Orario da confermare</strong>.</p>
+      <p class="eyebrow">OPERA+ ATLAS / SPETTACOLI IN ITALIA</p>
+      <h1 id="page-heading">L’opera vicino a te.</h1>
+      <p class="lede">Scopri le produzioni in programma nei teatri italiani e consulta date e biglietterie ufficiali. Inizia dalla località e dal periodo che preferisci.</p>
     </section>
-    <section class="overview" aria-label="Dati del catalogo">
-      <div class="metric"><span class="metric-value" id="metric-events">—</span><span class="metric-caption">Recite in catalogo</span></div>
-      <div class="metric"><span class="metric-value" id="metric-works">—</span><span class="metric-caption">Opere distinte</span></div>
-      <div class="metric"><span class="metric-value" id="metric-venues">—</span><span class="metric-caption">Teatri</span></div>
-      <div class="metric"><span class="metric-value" id="metric-unknown">—</span><span class="metric-caption">Orari da confermare</span></div>
-    </section>
-    <section class="filter-panel" aria-labelledby="filter-heading">
+    <section id="spettacoli" class="filter-panel" aria-labelledby="filter-heading">
       <div class="filter-heading">
-        <h2 id="filter-heading">Esplora le rappresentazioni</h2>
+        <h2 id="filter-heading">Trova uno spettacolo</h2>
         <button type="button" id="reset" class="reset">Azzera filtri</button>
       </div>
       <form id="filters" role="search">
         <div class="form-grid">
+          <label>Località di riferimento
+            <input type="text" id="location" value="Torino" autocomplete="address-level2" placeholder="Es. Torino">
+          </label>
           <label>Opera, compositore o teatro
             <input type="search" id="search" autocomplete="off" placeholder="Es. Rigoletto, Verdi, Scala">
           </label>
@@ -65,11 +67,11 @@
       </form>
     </section>
     <div class="catalog-view" role="group" aria-label="Modalità catalogo">
-      <button type="button" class="view-tab active" data-catalog-view="date" aria-pressed="true">Per data</button>
-      <button type="button" class="view-tab" data-catalog-view="staging" aria-pressed="false">Per messa in scena</button>
+      <button type="button" class="view-tab" data-catalog-view="date" aria-pressed="false">Per data</button>
+      <button type="button" class="view-tab active" data-catalog-view="staging" aria-pressed="true">Per produzione</button>
     </div>
     <div class="results-heading">
-      <h2>Cartellone delle recite</h2>
+      <h2>In scena vicino a te</h2>
       <p id="count" role="status" aria-live="polite">Caricamento in corso…</p>
     </div>
     <div id="message" role="status" aria-live="polite"></div>
@@ -79,8 +81,12 @@
       <span id="page-label" aria-live="polite"></span>
       <button id="next" type="button" disabled>Successivi</button>
     </nav>
+    <section id="festival" class="discovery-section"><h2>Prossimi festival</h2><p>Le edizioni e i programmi verificati saranno disponibili qui quando presenti nel catalogo.</p></section>
+    <section id="opere" class="discovery-section"><h2>Esplora le opere</h2><p>Scopri le opere liriche attraverso le produzioni attualmente censite.</p><div id="discover-works" class="discovery-links"></div></section>
+    <section id="teatri" class="discovery-section"><h2>Scopri i teatri</h2><p>Consulta le programmazioni delle sedi presenti nel catalogo.</p><div id="discover-venues" class="discovery-links"></div></section>
     <p class="data-note">Gli orari e le programmazioni possono cambiare. Verifica sempre i dettagli sul sito ufficiale prima di organizzare la visita.</p>
   </main>
+  <nav class="mobile-nav" aria-label="Navigazione mobile"><a href="./#spettacoli" aria-current="page">Spettacoli</a><a href="./#opere">Opere</a><a href="./#teatri">Teatri</a><a href="./#festival">Festival</a></nav>
   <footer class="site-footer"><div class="container">Opera Atlas · Catalogo informativo, non biglietteria · <a href="https://github.com/jeckodevelopment/opera-atlas">Codice e documentazione</a></div></footer>
 </body>
 </html>
