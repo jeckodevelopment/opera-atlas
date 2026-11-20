@@ -1,0 +1,27 @@
+name: Verify candidate official opera calendars
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/probe_pending_sources.py'
+      - 'opera_atlas/scala_arena_parser.py'
+      - '.github/workflows/source-probe.yml'
+permissions:
+  contents: read
+concurrency:
+  group: opera-atlas-official-source-probe
+  cancel-in-progress: false
+jobs:
+  verify-candidate-pages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Verify robots policy, read official HTML and compare with catalog
+        run: python -m scripts.probe_pending_sources

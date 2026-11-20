@@ -178,3 +178,8 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [ ] Confermare su HTML reale robots-gated la robustezza dei nuovi parser e attivare l'acquisizione quotidiana solo con esito verificato.
 - [ ] Completare le altre produzioni delle stagioni di Scala, Arena, Fenice, Parma, Massimo, e il ROF, con verifica delle singole recite e delle eventuali cancellazioni.
 - [ ] Completare OperaLombardia e Torino anche per le programmazioni non incluse nell'indice di stagione corrente: evitare dichiarazioni premature di completezza.
+
+### F2 — collaudo live di Scala e Arena prima della raccolta quotidiana
+- [x] Workflow separato `source-probe.yml` per verificare robots.txt e corrispondenza esatta date/ore del catalogo con i siti Scala/Arena.
+- [x] Nessun write al catalogo o promozione automatica delle fonti in caso di errore.
+- [ ] Seguire l'esecuzione live dopo merge, risolvere eventuali cambi HTML/parser e attivare le fonti solo a esito documentato.
