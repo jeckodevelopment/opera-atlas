@@ -124,7 +124,7 @@ function resolve(events) {
   if(type==="venue")return {kind:"venue",events:events.filter(e=>
     normalize(e.venue)+"|"+normalize(e.municipality)===key)};
   if(type==="performance") {
-    const hit=events.find(e=>String(e.id)===key || e.id==="curated:"+key);
+    const hit=events.find(e=>String(e.id)===key || e.legacy_id===key);
     return hit ? {kind:"staging",events:events.filter(e=>
       window.OperaAtlasCatalog.urls(e).staging===window.OperaAtlasCatalog.urls(hit).staging)}
       : {kind:null,events:[]};
