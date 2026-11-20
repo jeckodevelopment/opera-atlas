@@ -169,7 +169,10 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
         options.append(item)
     options.sort(key=lambda x:x["id"])
     if not options:return []
-    offset=(today.toordinal()*MAX_RESEARCH)%len(options)
+    # Advance by one position per day. The previous stride of MAX_RESEARCH
+    # could starve candidates permanently whenever the queue length was a
+    # multiple of that budget (3, 6, 9, ...).
+    offset=today.toordinal()%len(options)
     return (options[offset:]+options[:offset])[:MAX_RESEARCH]
 
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
