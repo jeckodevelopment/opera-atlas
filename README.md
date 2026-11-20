@@ -65,8 +65,11 @@ Le conferme, i rinvii e gli annullamenti verificati possono essere registrati tr
 La migrazione SQLite v6 registra anomalie tra scansioni della stessa pagina (`source_snapshot_deltas`). Il parser può usare ID ufficiali `data-event-id` quando presenti; senza tali ID, scomparsa e comparsa contemporanea di date avviano una revisione e **non creano recite duplicative**. I dati storici restano intatti. Vedi [REGIO_CONNECTOR](docs/REGIO_CONNECTOR.md) per prove e limitazioni.
 
 ### Fonti con calendari parziali (OperaLombardia)
-Il modulo `opera_atlas.operalombardia` e la CLI `opera_atlas.stage_cli` conservano nel database **soltanto come dati da approfondire** le date e sedi di produzioni ufficiali senza orario. L'importazione è offline, richiede fonte approvata e `--apply` esplicito. I dati parziali non compaiono nell'export pubblico.
+Il modulo `opera_atlas.operalombardia` e la CLI `opera_atlas.stage_cli` conservano nel database **soltanto come dati da approfondire** le date e sedi di produzioni ufficiali senza orario. L'importazione è offline, richiede fonte approvata e `--apply` esplicito. **Le date con titolo dell'opera, teatro e città espliciti compaiono nell'export pubblico**, anche senza orario, con `starts_at: null`, `time_known: false`, `time_label: "Orario da confermare"` e URL della fonte. Nessun orario viene inventato. Le date scartate/in revisione e le fonti non approvate restano escluse.
 ```sh
 python -m opera_atlas.stage_cli --db atlas.sqlite3 --html path/to/authorized-page.html --url https://www.operalombardia.it/l-italiana-in-algeri/ --title "L’italiana in Algeri" --source-id 2
 ```
 Per finalizzare manualmente gli orari servono ulteriori prove dalle fonti ufficiali. Il ROF non è ancora integrato a causa di risposte 403 nella verifica delle pagine. Vedi [SOURCE_REGISTRY](docs/SOURCE_REGISTRY.md).
+
+### Regola editoriale: recite con orario non disponibile
+Nel catalogo, una recita verificata con **opera, data, teatro e città** è un contenuto utile e deve essere mostrato anche senza orario. Il JSON esporta recite complete e parziali nello stesso array `performances`; per quelle senza ora usa `starts_at: null` e `time_known: false`, mantenendo giorno, opera, teatro, città, URL originale e label `Orario da confermare`. Quando una recita con ora confermata presenta lo stesso titolo, teatro, città e giorno, prevale la scheda completa nell'export; la prova parziale rimane nel database. La futura UI dovrà rendere visibile l'indicatore e non formattare un valore null come mezzanotte.
