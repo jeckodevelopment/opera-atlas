@@ -48,6 +48,18 @@ class AutoWorkResearchTests(unittest.TestCase):
             }}}
         self.assertIsNone(resolve_identity("anna bolena",fetch=fake))
 
+    def test_piccolo_orso_is_opera_with_documented_world_premiere(self):
+        from scripts.auto_work_research import preverified_work_material
+        material=preverified_work_material()
+        card=material["piccolo-orso-e-la-montagna-di-ghiaccio"]
+        self.assertIn("Piccolo Orso",card["synopsis"])
+        self.assertEqual(card["history"]["librettist"],"Giancarlo De Cataldo")
+        self.assertEqual(card["history"]["premiere_year"],2026)
+        self.assertEqual(card["history"]["premiere_venue"],"Teatro Malibran")
+        self.assertEqual(card["history"]["premiere_city"],"Venezia")
+        self.assertTrue(any("teatrolafenice.it" in x
+                            for x in card["history"]["sources"]))
+
     def test_additional_ten_original_opera_cards_have_archival_histories(self):
         from scripts.auto_work_research import preverified_work_material
         material=preverified_work_material()
