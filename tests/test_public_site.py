@@ -40,6 +40,7 @@ class PublicCatalogTests(unittest.TestCase):
         parser.feed((SITE / "index.html").read_text(encoding="utf-8"))
         self.assertTrue({
             "search", "city", "region", "from", "to", "time-filter",
+            "metric-events", "metric-works", "metric-venues", "metric-unknown",
             "events", "count", "message", "reset", "previous", "next",
         }.issubset(parser.ids))
         self.assertEqual(parser.labels, 6)
@@ -68,9 +69,12 @@ class PublicCatalogTests(unittest.TestCase):
         for kind in ("performance", "work", "venue"):
             self.assertIn("type="+kind, catalogue)
 
-    def test_empty_catalog_is_real_not_sample_recite(self):
+    def test_curated_catalog_contains_only_verified_official_recite(self):
         payload = json.loads((SITE / "performances.json").read_text(encoding="utf-8"))
-        self.assertEqual(payload, {"schema_version": 1, "performances": []})
+        self.assertEqual(payload["schema_version"], 1)
+        self.assertEqual(len(payload["performances"]), 19)
+        self.assertTrue(all(e["sources"] for e in payload["performances"]))
+        self.assertEqual(sum(not e["time_known"] for e in payload["performances"]), 8)
 
     def test_export_is_directly_compatible_with_date_only_cards(self):
         conn = connect()
