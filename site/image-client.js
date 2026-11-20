@@ -42,7 +42,9 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "un-ballo-in-maschera":"\"Un ballo in maschera\" opera poster, January, 1959, Yerevan Opera Theatre.jpg",
     "macbeth":"Locandina macbeth a firenze, 1847.jpg",
     "samson-et-dalila":"\"Samson and Delilah\" opera poster, Yerevan Opera Theatre.jpg",
-    "lucia-di-lammermoor":"Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg"
+    "lucia-di-lammermoor":"Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg",
+    "edgar":"Romilda Pantaleoni as Tigrana in Puccini's Edgar - Milan 1889.png",
+    "fedora":"Ida Aalberg i titelrollen i operan Fedora av Umberto Giordano - 1900 SLSA 1270 34 foto 29.jpg"
   };
   const normalize=value=>String(value||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
     .replace(/^l['’]/i,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
