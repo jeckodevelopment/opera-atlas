@@ -4,90 +4,86 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/dev/opera-atlas/">
-  <meta name="description" content="Opera Atlas: rappresentazioni operistiche in Italia da fonti ufficiali.">
-  <title>Opera Atlas — Calendario delle recite</title>
+  <meta name="description" content="Opera+ Atlas: scopri gli spettacoli d'opera in Italia, i teatri e le date delle rappresentazioni.">
+  <title>Opera+ Atlas — L'opera vicino a te</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./catalog-client.js" defer></script>
+  <script src="./festival-client.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#catalogo">Vai alle recite</a>
+  <a class="skip" href="#spettacoli">Vai agli spettacoli</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="./" class="brand" aria-label="Opera Atlas — Home">
-        <span class="brand-name"><strong>Opera Atlas</strong><small>Osservatorio dell’opera in Italia</small></span>
+      <a href="./" class="brand" aria-label="Opera+ Atlas — homepage">
+        <span class="brand-name"><strong>Opera<span class="brand-plus">+</span> <span class="brand-atlas">ATLAS</span></strong><small>Il teatro d'opera vicino a te</small></span>
       </a>
       <nav class="primary-nav" aria-label="Navigazione principale">
         <a href="./#spettacoli" aria-current="page">Spettacoli</a>
-        <a href="./#opere">Opere</a>
-        <a href="./#teatri">Teatri</a>
-        <a href="./#festival">Festival</a>
+        <a href="./directory.html?section=opere">Opere</a>
+        <a href="./directory.html?section=teatri">Teatri</a>
+        <a href="./directory.html?section=festival">Festival</a>
       </nav>
     </div>
   </header>
-  <main class="container" id="catalogo">
-    <section class="intro" aria-labelledby="page-heading">
-      <p class="eyebrow">OPERA+ ATLAS / SPETTACOLI IN ITALIA</p>
-      <h1 id="page-heading">L’opera vicino a te.</h1>
-      <p class="lede">Scopri le produzioni in programma nei teatri italiani e consulta date e biglietterie ufficiali. Inizia dalla località e dal periodo che preferisci.</p>
+  <main id="catalogo" class="container">
+    <section class="intro hero" aria-labelledby="page-heading">
+      <p class="eyebrow">IL TEATRO D'OPERA, VICINO A TE</p>
+      <h1 id="page-heading">L'opera ti aspetta.</h1>
+      <p class="lede">Scopri gli spettacoli in programma in Italia, scegli il teatro e la data che preferisci e consulta la biglietteria ufficiale.</p>
     </section>
     <section id="spettacoli" class="filter-panel" aria-labelledby="filter-heading">
-      <div class="filter-heading">
-        <h2 id="filter-heading">Trova uno spettacolo</h2>
-        <button type="button" id="reset" class="reset">Azzera filtri</button>
-      </div>
+      <div class="filter-heading"><h2 id="filter-heading">Trova il tuo prossimo spettacolo</h2><button type="button" id="reset" class="reset">Ripristina ricerca</button></div>
       <form id="filters" role="search">
-        <div class="form-grid">
-          <label>Città (filtro provvisorio)
-            <input type="text" id="location" value="Torino" autocomplete="address-level2" placeholder="Es. Torino">
+        <div class="form-grid search-main">
+          <label>Località
+            <span class="location-control"><select id="location" aria-describedby="distance-note"><option value="Torino">Torino</option></select><button id="locate-me" type="button" aria-label="Usa la mia posizione con il mio consenso" title="Usa la mia posizione">◎</button></span>
           </label>
-          <label>Opera, compositore o teatro
-            <input type="search" id="search" autocomplete="off" placeholder="Es. Rigoletto, Verdi, Scala">
+          <label>Distanza
+            <select id="radius"><option value="25">Entro 25 km</option><option value="50">Entro 50 km</option><option value="100" selected>Entro 100 km</option><option value="200">Entro 200 km</option><option value="all">Tutta Italia</option></select>
           </label>
-          <label>Città
-            <select id="city"><option value="">Tutte le città</option></select>
+          <label>Periodo
+            <select id="period"><option value="7">Prossimi 7 giorni</option><option value="30" selected>Prossimi 30 giorni</option><option value="90">Prossimi 3 mesi</option><option value="all">Tutte le date future</option></select>
           </label>
-          <label>Regione
-            <select id="region"><option value="">Tutte le regioni</option></select>
-          </label>
-          <label>Dal giorno
-            <input type="date" id="from">
-          </label>
-          <label>Al giorno
-            <input type="date" id="to">
-          </label>
-          <label>Orario
-            <select id="time-filter">
-              <option value="">Tutti gli orari</option>
-              <option value="known">Con orario</option>
-              <option value="unknown">Orario da confermare</option>
-            </select>
-          </label>
+          <button type="submit" class="primary-action">Scopri gli spettacoli</button>
         </div>
+        <details class="advanced-filters" id="advanced-filters">
+          <summary>Altri filtri</summary>
+          <div class="form-grid advanced-grid">
+            <label>Opera, compositore o teatro<input type="search" id="search" autocomplete="off" placeholder="Es. Verdi, Tosca, La Scala"></label>
+            <label>Città esatta<select id="city"><option value="">Tutte le città</option></select></label>
+            <label>Regione<select id="region"><option value="">Tutte le regioni</option></select></label>
+            <label>Dal giorno<input type="date" id="from"></label>
+            <label>Al giorno<input type="date" id="to"></label>
+            <label>Orario<select id="time-filter"><option value="">Tutti gli orari</option><option value="known">Con orario</option><option value="unknown">Orario da confermare</option></select></label>
+            <label>Ordina per<select id="sort"><option value="date">Prossima data</option><option value="distance">Distanza crescente</option><option value="title">Titolo dell'opera</option></select></label>
+          </div>
+        </details>
       </form>
+      <p id="distance-note" class="search-note">Distanze indicative in linea d'aria tra i centri cittadini, non distanze stradali. La posizione non viene rilevata automaticamente.</p>
     </section>
-    <p class="data-note">La ricerca entro 100 km richiede coordinate verificate dei teatri: per ora il filtro geografico seleziona soltanto la città indicata. Svuota il campo per esplorare tutta Italia.</p>
-    <div class="catalog-view" role="group" aria-label="Modalità catalogo">
-      <button type="button" class="view-tab" data-catalog-view="date" aria-pressed="false">Per data</button>
-      <button type="button" class="view-tab active" data-catalog-view="staging" aria-pressed="true">Per produzione</button>
-    </div>
-    <div class="results-heading">
-      <h2>In scena vicino a te</h2>
-      <p id="count" role="status" aria-live="polite">Caricamento in corso…</p>
-    </div>
-    <div id="message" role="status" aria-live="polite"></div>
-    <div id="events" class="events"></div>
-    <nav class="pagination" aria-label="Navigazione risultati">
-      <button id="previous" type="button" disabled>Precedenti</button>
-      <span id="page-label" aria-live="polite"></span>
-      <button id="next" type="button" disabled>Successivi</button>
-    </nav>
-    <section id="festival" class="discovery-section"><h2>Prossimi festival</h2><p>Le edizioni e i programmi verificati saranno disponibili qui quando presenti nel catalogo.</p></section>
-    <section id="opere" class="discovery-section"><h2>Esplora le opere</h2><p>Scopri le opere liriche attraverso le produzioni attualmente censite.</p><div id="discover-works" class="discovery-links"></div></section>
-    <section id="teatri" class="discovery-section"><h2>Scopri i teatri</h2><p>Consulta le programmazioni delle sedi presenti nel catalogo.</p><div id="discover-venues" class="discovery-links"></div></section>
-    <p class="data-note">Gli orari e le programmazioni possono cambiare. Verifica sempre i dettagli sul sito ufficiale prima di organizzare la visita.</p>
+    <section class="program-section" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div><h2 id="results-title">In scena vicino a te</h2><p id="count" role="status" aria-live="polite">Caricamento del catalogo…</p></div>
+        <div class="catalog-view" role="group" aria-label="Visualizzazione spettacoli">
+          <button type="button" class="view-tab active" data-catalog-view="staging" aria-pressed="true">Elenco</button>
+          <button type="button" class="view-tab" data-catalog-view="calendar" aria-pressed="false">Calendario</button>
+          <button type="button" class="view-tab" data-catalog-view="map" aria-pressed="false">Mappa</button>
+          <button type="button" class="view-tab legacy-date" data-catalog-view="date" aria-pressed="false">Per data</button>
+        </div>
+      </div>
+      <div id="message" role="status" aria-live="polite"></div>
+      <div id="events" class="events"></div>
+      <div id="calendar-view" hidden></div>
+      <div id="map-view" hidden><div id="atlas-map" class="atlas-map" role="region" aria-label="Mappa dei teatri"></div><p class="search-note">I punti rappresentano i centri cittadini. Consulta la scheda teatro per i dettagli della sede.</p><div id="map-venues" class="discovery-links"></div></div>
+      <nav class="pagination" aria-label="Navigazione risultati"><button id="previous" type="button" disabled>Precedenti</button><span id="page-label" aria-live="polite"></span><button id="next" type="button" disabled>Successivi</button></nav>
+    </section>
+    <section id="festival" class="discovery-section" aria-labelledby="festival-heading"><div class="section-heading"><div><p class="eyebrow">IL CARTELLONE ITALIANO</p><h2 id="festival-heading">Prossimi festival</h2></div></div><p>Le manifestazioni operistiche censite e la loro programmazione, quando verificate.</p><div id="discover-festivals" class="discovery-links" role="status"></div></section>
+    <section id="opere" class="discovery-section" aria-labelledby="works-heading"><div class="section-heading"><div><p class="eyebrow">IL REPERTORIO</p><h2 id="works-heading">Esplora le opere</h2></div><a href="./directory.html?section=opere">Tutte le opere →</a></div><p>Una breve introduzione alle opere e i collegamenti alle produzioni in Italia.</p><div id="discover-works" class="discovery-links"></div></section>
+    <section id="teatri" class="discovery-section" aria-labelledby="venues-heading"><div class="section-heading"><div><p class="eyebrow">I LUOGHI</p><h2 id="venues-heading">Scopri i teatri</h2></div><a href="./directory.html?section=teatri">Tutti i teatri →</a></div><p>Le sedi e gli spettacoli futuri disponibili nel catalogo.</p><div id="discover-venues" class="discovery-links"></div></section>
+    <p class="data-note">Atlas riporta programmi provenienti da fonti ufficiali. Orari, sedi e disponibilità dei biglietti possono cambiare: verifica sempre sul sito dell'organizzatore.</p>
   </main>
-  <nav class="mobile-nav" aria-label="Navigazione mobile"><a href="./#spettacoli" aria-current="page">Spettacoli</a><a href="./#opere">Opere</a><a href="./#teatri">Teatri</a><a href="./#festival">Festival</a></nav>
-  <footer class="site-footer"><div class="container">Opera Atlas · Catalogo informativo, non biglietteria · <a href="https://github.com/jeckodevelopment/opera-atlas">Codice e documentazione</a></div></footer>
+  <nav class="mobile-nav" aria-label="Navigazione mobile"><a href="./#spettacoli" aria-current="page">Spettacoli</a><a href="./directory.html?section=opere">Opere</a><a href="./directory.html?section=teatri">Teatri</a><a href="./directory.html?section=festival">Festival</a></nav>
+  <footer class="site-footer"><div class="container">Opera+ Atlas · Guida agli spettacoli, non biglietteria · <a href="https://github.com/jeckodevelopment/opera-atlas">Informazioni sul progetto</a></div></footer>
 </body>
 </html>

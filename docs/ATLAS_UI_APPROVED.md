@@ -30,3 +30,34 @@ Le sezioni festival sono attualmente vuote senza manifestazioni/edizioni validat
 
 ## Interventi successivi (non dichiarati completati)
 Geocodifica affidabile delle sedi e ricerca entro 100 km; viste calendario e mappa; feed festival con edizioni; effettivo logo approvato; controllo accessibilità e screenshot mobile/desktop; eventuale gestione preferenze locale e sinossi editoriali brevi validate.
+
+## Iterazione di interfaccia completa — 20 novembre 2026
+
+Implementati nel frontend statico:
+- Homepage conforme all'ordine approvato: ricerca, produzioni vicino a te, prossimi festival, opere, teatri.
+- Ricerca iniziale Torino, raggio 100 km, 30 giorni, ordinamento cronologico, schede raggruppate per produzione. Filtri avanzati richiudibili e possibilità di visualizzare tutta Italia.
+- Vista calendario mensile con repliche individuali e vista mappa geografica **schematica** delle città con produzioni verificate. Nessun servizio di mappe a pagamento, nessun dato o contatore inventato.
+- Distanze calcolate in linea d'aria su coordinate indicative dei **centri delle quattordici città attualmente censite**; non sono distanze teatro-teatro né stradali. Se una città futura è priva di coordinate, non viene inclusa nei risultati entro un raggio finché non viene registrata la sua posizione. L'opzione «Tutta Italia» include tutti gli eventi.
+- Localizzazione solo su richiesta esplicita: la posizione dell'utente viene convertita nella città censita più vicina, solo entro 80 km, e non è memorizzata.
+- Directory dedicate Opere, Teatri, Festival; una breve sinossi originale per le opere note; schede produzione con date future e link alle fonti ufficiali per ogni replica.
+- Indice festival editoriale in \`public/catalog/v2/festival-index.json\`, letto da GitHub indipendentemente dal deploy SFTP. Una manifestazione con programmazione futura viene mostrata solo se associata a ID di produzioni già presenti nel feed verificato. Le fonti censite senza date non diventano eventi.
+- Barra inferiore mobile, quattro destinazioni principali e test di compatibilità statica più verifica della sintassi JavaScript.
+
+**Limitazioni ancora presenti:** la vista mappa è una rappresentazione schematica per località e non un servizio cartografico stradale; i punti non sono coordinate geocodificate delle singole sedi. Il catalogo nazionale e il programma dei festival non sono ancora completi. La pagina Teatro non può mostrare indirizzo o accessibilità finché non sono presenti nell'export. Non è stata verificata visivamente la resa in un browser reale o su dispositivo mobile. Il logo raster fornito dall'utente resta da includere come asset effettivo; il marchio nell'header è testuale, coerente nella palette ma non sostituisce il logo originale.
+
+### Comportamenti da collaudare
+1. Torino, 100 km, 30 giorni e vista elenco di default; nessuna recita fuori intervallo.
+2. Raggio 25/50/100/200 km, oppure tutta Italia; etichetta distanza solo quando calcolabile per i centri cittadini.
+3. Cambio intervallo, ricerca testuale e filtri avanzati; reset della ricerca.
+4. Calendario: singole date corrette, navigazione mesi e link produzione; mappa: pin e link corrispondenti alle città del filtro.
+5. Geolocalizzazione negata e accettata (solo dopo azione utente); nessuna necessità di permesso per la ricerca manuale.
+6. Festival con/senza staging verificati, assenza di recite inventate, feed disponibile senza nuovo SFTP.
+7. Opera → produzione → teatro e link alle fonti con orari sconosciuti conservati.
+8. Mobile: bottom navigation senza sovrapposizioni, focus/tastiera e layout di filtri e calendario.
+9. Sintassi dei JS, test Python, integrità della build JSON e verifica statica delle sorgenti.
+
+### Pubblicazione e responsabilità
+Test, script, controlli e feed esclusivamente nel repository \`opera-atlas\`. L'unico ruolo di \`jeckodevsite\` è il workflow SFTP per HTML, CSS, JS e asset quando necessario. Nessuna modifica ai JSON richiede rilascio del frontend.
+
+### Coproduzioni OperaLombardia 2026/27
+Il registro di gruppo unisce, senza confondere le diverse opere, le sei produzioni condivise di L'italiana in Algeri, Turandot, Death in Venice, Cavalleria rusticana, Pagliacci e Un ballo in maschera. Il teatro di Torino rimane distinto dalle coproduzioni del circuito. Il feed canonico attuale comprende 208 recite e 14 teatri; le date senza ora restano esplicitamente non confermate.
