@@ -162,3 +162,10 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Riconciliazione alle messe in scena canoniche e protezione di orari verificati indipendentemente.
 - [x] Test con fixture sintetiche per parsing, titoli sconosciuti, pagina incompleta e import idempotente.
 - [ ] Verificare primo esito live sul runner GitHub e risolvere eventuale differenza tra markup effettivo e fixture, senza aggirare robots.
+
+### F2 — monitoraggio trasparente dell'intero perimetro iniziale
+- [x] Stato di copertura deterministico e JSON pubblico per le 8 fonti ufficiali concordate, con conteggi e ultimo esito dell'acquisizione.
+- [x] Distinzione fra calendario stagionale controllato, dettaglio già monitorato, seed editoriale non automatizzato e fonte priva di eventi.
+- [x] Report generato nel workflow `opera-atlas`, nessun nuovo backend né deploy SFTP.
+- [ ] Avviare la verifica e parser per Rossini Opera Festival; abilitare i calendari/stagioni completi di Scala, Fenice, Arena, Parma, Massimo.
+- [ ] Certificare la completezza di ciascuna stagione solo confrontando tutti i titoli/date della fonte ufficiale, non tramite semplice somma dei record presenti.
