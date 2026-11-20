@@ -155,3 +155,10 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] ID canonici persistenti, 14 teatri / 48 messe in scena / 208 repliche, collegamento alla pagina ufficiale.
 - [ ] Parsing automatico dell'indice completo per accorgersi di nuove produzioni e cambi; il monitoraggio corrente controlla solo le pagine di produzione approvate.
 - [ ] Verifica incrociata di tutti gli orari tramite le singole biglietterie; non indovinare.
+
+### F2 — indice OperaLombardia monitorato
+- [x] Parser per calendario ufficiale multi-produzione 2026/27, titolo/teatro/data verificati.
+- [x] Un controllo robots-gated quotidiano dell'indice, senza 19 fetch duplicati.
+- [x] Riconciliazione alle messe in scena canoniche e protezione di orari verificati indipendentemente.
+- [x] Test con fixture sintetiche per parsing, titoli sconosciuti, pagina incompleta e import idempotente.
+- [ ] Verificare primo esito live sul runner GitHub e risolvere eventuale differenza tra markup effettivo e fixture, senza aggirare robots.
