@@ -89,14 +89,13 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
     elif source_key=="parma-opera-2027":
         # The page includes a dated header and detailed day/time cards.
         # A full date in the header independently establishes the year.
-        header=text.split("## Spettacolo",1)[0]
+        header=text.split("Musica",1)[0]
         year_hits={int(y) for y in re.findall(
             r"\b\d{1,2}\s+(?:"+MONTH_RE+r")\s+(20\d{2})\b",header,re.I)}
         if len(year_hits)!=1:raise ValueError("Parma year ambiguous")
         year=next(iter(year_hits))
         # Restrict to the ticketing card list, excluding the footer.
-        segment=text.split("Teatro Regio di Parma",1)[-1]
-        segment=segment.split("Informazioni",1)[0]
+        segment=re.split(r"(?i)\\b(?:Tickets for|acquista 19|Cast)\\b",text,maxsplit=1)[0]
         rx=re.compile(r"(?i)\b"+WEEKDAY+r"\s+(\d{1,2})\s+("+MONTH_RE+
                       r")\s+"+CLOCK+r"\b")
         matches=list(rx.finditer(segment))
