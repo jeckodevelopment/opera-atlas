@@ -167,11 +167,12 @@ function createStagingCard(events) {
   main.append(node("div","event-meta",first.municipality+" · "+events.length+" repliche"));
   const heading = node("h3");
   const title = node("a",null,first.title);
-  title.href = window.OperaAtlasCatalog.urls(first).staging;
+  title.href = window.OperaAtlasCatalog.urls(first).production;
   heading.append(title);
   main.append(heading);
   if (first.composer) main.append(node("p","composer",first.composer));
-  const theatre = node("p","composer",first.venue+" · "+first.municipality);
+  const uniqueVenues=[...new Set(events.map(e=>e.venue+" · "+e.municipality))];
+  const theatre=node("p","composer",uniqueVenues.length===1?uniqueVenues[0]:uniqueVenues.length+" teatri · "+uniqueVenues.join(" · "));
   main.append(theatre);
   const km=distanceFor(first);
   if(km!==null && controls.location.value)main.append(node("p","distance-label","Circa "+km+" km in linea d’aria dal centro di "+controls.location.value));
@@ -184,7 +185,7 @@ function createStagingCard(events) {
   if (events.length>12) dates.append(node("span","replica-chip","+"+(events.length-12)+" altre"));
   main.append(dates);
   const link = node("a","detail-link","Dettagli e rappresentazioni");
-  link.href = window.OperaAtlasCatalog.urls(first).staging;
+  link.href = window.OperaAtlasCatalog.urls(first).production;
   main.append(link);
   article.append(main);
   return article;
@@ -193,7 +194,7 @@ function createStagingCard(events) {
 function groupByStaging(events) {
   const groups = new Map();
   for (const e of events) {
-    const key = e.staging_id || window.OperaAtlasCatalog.urls(e).staging;
+    const key = e.production_group_id || e.staging_id || window.OperaAtlasCatalog.urls(e).staging;
     if (!groups.has(key)) groups.set(key,[]);
     groups.get(key).push(e);
   }
@@ -283,7 +284,7 @@ function calendarMonth(events) {
     cell.append(node("strong",null,String(day)));
     for(const e of events.filter(x=>x.local_date===iso)){
       const link=node("a","calendar-event",e.title+" · "+e.municipality+(e.time_known?" · "+e.starts_at.slice(11,16):""));
-      link.href=window.OperaAtlasCatalog.urls(e).staging;
+      link.href=window.OperaAtlasCatalog.urls(e).production;
       cell.append(link);
     }
     grid.append(cell);
