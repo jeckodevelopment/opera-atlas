@@ -45,6 +45,15 @@ const posterWorks=[
  "Samson et Dalila","Macbeth","Madama Butterfly","Jenůfa","Lucia di Lammermoor",
  "Tosca","Don Giovanni","Nabucco","Rigoletto"];
 const images=posterWorks.map(title=>lib.work({title}));
+assert.equal(Object.keys(lib.WORKS).length,25,"all 25 unique opera records need archival source images");
+for(const title of posterWorks){
+  const item=lib.work({title});
+  assert.ok(item.src.startsWith("https://commons.wikimedia.org/"),
+    title+" must use archival material, never a fictional primary poster");
+}
+assert.match(lib.WORKS["cavalleria-rusticana"],/Cavalleria rusticana poster/);
+assert.match(lib.WORKS["pagliacci"],/Pagliacci Original Score Cover/);
+
 assert.equal(new Set(images.map(x=>x.src)).size,images.length,"every opera needs a distinct image");
 for(const item of images){
   if(item.src.startsWith("https://")){
