@@ -182,6 +182,7 @@ def scan_approved(
             # must not cause unrelated partial additions from the same page.
             observed = {}
             anomalies = []
+            candidates = []
             mapped = {}
             for record in parsed:
                 if item["adapter"] == "operalombardia_calendar":
@@ -195,6 +196,10 @@ def scan_approved(
                     if len(matches) != 1:
                         anomalies.append({"kind":"unknown_or_ambiguous_staging",
                                           "title":title,"venue":venue,"city":city})
+                        if len(matches) == 0:
+                            candidates.append({"title":title,"composer":None,
+                                               "venue":venue,"city":city,
+                                               "date":day,"time":hour})
                         continue
                     product = matches[0]
                 else:
@@ -202,6 +207,9 @@ def scan_approved(
                     product = _find_production(updated_facts, item, venue, city)
                 if product is None:
                     anomalies.append({"kind":"unknown_staging","venue":venue,"city":city})
+                    candidates.append({"title":item["title"],"composer":item["composer"],
+                                       "venue":venue,"city":city,
+                                       "date":day,"time":hour})
                     continue
                 key = product["key"]
                 if (key,day) in observed:
@@ -264,7 +272,7 @@ def scan_approved(
                     product["dates"].sort(key=lambda v:v[0])
             health.append({"key":item["key"],"outcome":"review_required" if anomalies else "success",
                            "added":new_for_source,"observed":len(parsed),
-                           "anomalies":anomalies})
+                           "anomalies":anomalies,"candidates":candidates})
         if additions:
             updated_facts["reviewed_on"] = current.isoformat()
         # Validate the entire canonical graph before allowing any write.
