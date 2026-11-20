@@ -1,52 +1,44 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:33:06+00:00",
-  "checked_pages": 18,
-  "official_images": 6,
-  "editorial_fallbacks": 29,
+  "checked_at": "2026-11-20T23:38:48+00:00",
+  "checked_pages": 11,
+  "official_images": 8,
+  "editorial_fallbacks": 27,
   "outcomes": [
     {
-      "slug": "i-puritani",
+      "slug": "don-giovanni",
       "status": "verified_official_metadata"
     },
     {
-      "slug": "anna-bolena",
-      "status": "verified_official_metadata"
-    },
-    {
-      "slug": "nixon-in-china",
-      "status": "verified_official_metadata"
-    },
-    {
-      "slug": "adriana-lecouvreur",
+      "slug": "tosca",
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "nozze-istriane",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "norma",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "don-quichotte",
-      "status": "verified_official_metadata"
-    },
-    {
-      "slug": "partenope",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "il-pipistrello",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "al-cavallino-bianco",
+      "slug": "lucia-di-lammermoor",
       "status": "no_suitable_official_poster"
     },
     {
       "slug": "carmen",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "madama-butterfly",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "jenufa",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "madama-butterfly",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "samson-et-dalila",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "fedora",
       "status": "no_suitable_official_poster"
     },
     {
@@ -54,27 +46,7 @@
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "rigoletto",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "la-traviata",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "carmen",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "macbeth",
-      "status": "verified_official_metadata"
-    },
-    {
-      "slug": "nabucco",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "la-boheme",
+      "slug": "otello",
       "status": "verified_official_metadata"
     }
   ]

@@ -34,8 +34,12 @@
       "alt": "Copertina editoriale originale per Death in Venice"
     },
     "don-giovanni": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Don Giovanni"
+      "work_id": "oa-w-000023",
+      "image_url": "https://www.teatroallascala.org/static/upload/don/don-giovanni-713213badg-ph-brescia-e-amisano-ridotta.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Don Giovanni",
+      "kind": "official_production_image"
     },
     "don-quichotte": {
       "work_id": "oa-w-000030",
@@ -130,8 +134,12 @@
       "alt": "Copertina editoriale originale per Nozze istriane"
     },
     "otello": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Otello"
+      "work_id": "oa-w-000014",
+      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-filarmonica-con-chung-752563badg-ph-brescia-e-amisano---teatro-alla-scala.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Otello",
+      "kind": "official_production_image"
     },
     "pagliacci": {
       "kind": "original_editorial_cover",
