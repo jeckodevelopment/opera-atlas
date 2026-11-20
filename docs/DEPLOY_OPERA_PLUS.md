@@ -20,7 +20,7 @@
    - `ATLAS_FTPS_PASSWORD`: password FTPS, da inserire soltanto come secret.
    - `ATLAS_FTPS_REMOTE_DIR`: cartella `atlas` vista dall'utente FTP, con percorso assoluto **all'interno del suo spazio FTP**, per esempio `/atlas` se l'account è confinato nella webroot o `/public_html/atlas` se vede la directory superiore. Non utilizzare percorsi locali dedotti da SSH.
 5. Il server deve supportare **FTPS esplicito** (`AUTH TLS` prima del login, `PBSZ 0` e `PROT P` per cifrare il trasferimento dati), con certificato TLS valido e hostname corrispondente. Il client verifica automaticamente catena e nome del certificato mediante le CA attendibili; **FTP in chiaro non è ammesso**. Non è necessaria una chiave SSH `known_hosts`.
-6. Gli eventuali vecchi segreti `ATLAS_FTPS_*` non vengono letti dal nuovo workflow; dopo il collaudo si possono eliminare dall'environment. Non pubblicare password né chiavi in issue, log o chat.
+6. Gli eventuali vecchi segreti `ATLAS_SFTP_*` non vengono letti dal nuovo workflow; dopo il collaudo si possono eliminare dall'environment. Non pubblicare password né chiavi in issue, log o chat.
 
 ## Prima pubblicazione controllata
 
