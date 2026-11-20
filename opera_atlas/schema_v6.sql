@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS source_snapshot_deltas (
     state TEXT NOT NULL DEFAULT 'open' CHECK(state IN ('open','acknowledged')),
     detected_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     acknowledged_at TEXT,
+    acknowledged_reason TEXT,
     UNIQUE(source_id,source_url,production_id,old_external_ids,new_external_ids)
 );
 CREATE INDEX IF NOT EXISTS idx_source_snapshot_deltas_state
