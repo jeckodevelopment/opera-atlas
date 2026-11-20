@@ -16,7 +16,9 @@ from opera_atlas.controlled_fetch import AccessDenied,FetchUnavailable,fetch_off
 from opera_atlas.db import connect,migrate
 from scripts.daily_ingest import _write_atomic
 from scripts.discover_season_indexes import CONFIG,OUTPUT as INDEX,validate_config,eligible
-from scripts.publish_catalog_v2 import ROOT
+from scripts.publish_catalog_v2 import ROOT,REGISTRY
+from scripts.build_verified_catalog import official_local_time
+from opera_atlas.scala_arena_parser import parse_showtimes
 
 OUTPUT=ROOT/"data"/"candidate-detail-evidence.json"
 PUBLIC=ROOT/"public"/"catalog"/"candidate-detail-evidence.json"
@@ -94,6 +96,25 @@ def parse_event_facts(html:str)->list[dict]:
     rows.sort(key=lambda x:(x["date"],x["starts_at"] or "",x["event_title"]))
     return rows
 
+def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->list[dict]:
+    """Fallback only for unambiguous canonical title+composer and verified HTML.
+
+    Never infer metadata for a newly discovered work from a URL slug alone.
+    """
+    adapter={"scala-season-2026-27":"scala",
+             "arena-festival-2027":"arena"}.get(source_key)
+    if adapter is None:return []
+    slug=urlsplit(url).path.rstrip("/").split("/")[-1].removesuffix(".html")
+    known=[work for work in registry.get("works",{}).values() if work.get("slug")==slug]
+    if len(known)!=1:return []
+    work=known[0]
+    raw=parse_showtimes(html,url=url,title=work["title"],
+                        composer=work["composer"],adapter=adapter)
+    venue="Teatro alla Scala" if adapter=="scala" else "Arena di Verona"
+    return [{"event_title":work["title"],"composer":work["composer"],
+             "date":day,"starts_at":official_local_time(day,hour),
+             "venue":venue} for day,hour in raw]
+
 def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     if candidates.get("schema_version")!=1 or not isinstance(candidates.get("candidates"),list):
         raise ValueError("invalid discovery candidate registry")
@@ -122,6 +143,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
         raise ValueError("invalid previous evidence")
     retained={x["candidate_id"]:x.copy() for x in previous["evidence"]}
     chosen=selected_candidates(candidates,today=today)
+    registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))}
     health=[]
     db=connect()
@@ -137,6 +159,9 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                      (source["official_url"],)).fetchone()["id"]
                 page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
                 facts=parse_event_facts(page.html)
+                if not facts:
+                    facts=parse_known_opera_detail(item["source_key"],
+                                                  item["official_url"],page.html,registry)
                 if not facts:raise ValueError("no unambiguous structured event facts")
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],

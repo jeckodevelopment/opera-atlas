@@ -4,7 +4,8 @@ import unittest
 from datetime import date
 
 from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
-from scripts.collect_candidate_details import parse_event_facts,selected_candidates,collect
+from scripts.collect_candidate_details import parse_event_facts,selected_candidates,collect,parse_known_opera_detail
+from scripts.publish_catalog_v2 import REGISTRY
 
 class CandidateDetailTests(unittest.TestCase):
     def setUp(self):
@@ -19,6 +20,35 @@ class CandidateDetailTests(unittest.TestCase):
             {"id":"candidate-c","source_key":"fenice-opera-2026-27",
              "official_url":"https://other.example/event/fake/","status":"needs_review"}
         ]}
+    def test_verified_scala_work_parser_produces_review_only_date(self):
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        url="https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+        html="<h1>Macbeth Giuseppe Verdi</h1><p>5 febbraio 2027 ore 20:00</p>"
+        rows=parse_known_opera_detail("scala-season-2026-27",url,html,registry)
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]["composer"],"Giuseppe Verdi")
+        self.assertEqual(rows[0]["venue"],"Teatro alla Scala")
+        self.assertEqual(rows[0]["date"],"2027-02-05")
+        self.assertIn("+01:00",rows[0]["starts_at"])
+
+    def test_verified_arena_known_work_and_unknown_rejected(self):
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        url="https://www.arena.it/arena-opera-festival/carmen/"
+        html="<h1>Carmen Georges Bizet</h1><h2>Prossimi spettacoli</h2><p>12 giugno 2027 ore 21:00</p>"
+        rows=parse_known_opera_detail("arena-festival-2027",url,html,registry)
+        self.assertEqual(len(rows),1)
+        self.assertIn("+02:00",rows[0]["starts_at"])
+        unknown="https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-opera.html"
+        self.assertEqual(parse_known_opera_detail("scala-season-2026-27",unknown,html,registry),[])
+
+    def test_incorrect_composer_does_not_produce_evidence(self):
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        url="https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+        with self.assertRaises(ValueError):
+            parse_known_opera_detail("scala-season-2026-27",url,
+                                    "<h1>Macbeth by another composer</h1>"
+                                    "<p>5 febbraio 2027 ore 20:00</p>",registry)
+
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[
             {"@type":"MusicEvent","name":"Anna Bolena",
