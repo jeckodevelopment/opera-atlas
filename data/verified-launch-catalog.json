@@ -1362,6 +1362,52 @@
           null
         ]
       ]
+    },
+    {
+      "key": "regio-tragedie-carmen-piccolo-2027",
+      "title": "La Tragédie de Carmen",
+      "composer": "Marius Constant",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen",
+      "dates": [
+        [
+          "2027-03-20",
+          "18:00"
+        ],
+        [
+          "2027-03-21",
+          "16:00"
+        ],
+        [
+          "2027-03-25",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "regio-boheme-primo-amore-piccolo-2027",
+      "title": "La bohème, il primo amore",
+      "composer": "Giacomo Puccini",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore",
+      "dates": [
+        [
+          "2027-04-18",
+          "16:00"
+        ],
+        [
+          "2027-04-30",
+          "20:00"
+        ],
+        [
+          "2027-05-02",
+          "16:00"
+        ]
+      ]
     }
   ]
 }
