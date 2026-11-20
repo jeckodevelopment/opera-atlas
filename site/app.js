@@ -218,8 +218,28 @@ function renderDiscoveries() {
     }
     if (!items.size) target.append(node("p",null,"Nessun contenuto verificato disponibile."));
   }
-  const festival=document.getElementById("discover-festivals");
-  if(festival) festival.replaceChildren(node("p",null,"Al momento non risultano edizioni di festival con un programma verificato e associato nel feed Atlas."));
+
+}
+async function renderFestivals(){
+  const target=document.getElementById("discover-festivals");
+  if(!target)return;
+  target.replaceChildren(node("p",null,"Verifica dei programmi festivalieri…"));
+  try{
+    const festivals=await window.OperaAtlasFestivals.load();
+    target.replaceChildren();
+    let count=0;
+    for(const festival of festivals){
+      const future=catalog.filter(e=>festival.staging_ids.includes(e.staging_id)&&e.local_date>=todayInItaly());
+      if(!future.length)continue;
+      const link=node("a","discovery-link",festival.name+(festival.edition?" · "+festival.edition:"")+" · "+future.length+" rappresentazioni censite");
+      link.href="./directory.html?section=festival&id="+encodeURIComponent(festival.id);
+      target.append(link);count++;
+    }
+    if(!count)target.append(node("p",null,"Nessun festival con date future verificate nel catalogo. Consulta la sezione Festival per le fonti monitorate."));
+    const all=node("a","detail-link","Esplora i festival");all.href="./directory.html?section=festival";target.append(all);
+  }catch{
+    target.replaceChildren(node("p",null,"Programmazione festivaliera momentaneamente non verificabile."));
+  }
 }
 function todayInItaly() {
   const parts = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
@@ -371,6 +391,7 @@ async function initialize() {
     fillOptions(controls.city,catalog.map(x=>x.municipality));
     populateLocations();
     renderDiscoveries();
+    renderFestivals();
     fillOptions(controls.region,catalog.map(x=>x.region));
     render();
   } catch {
