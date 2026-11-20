@@ -329,6 +329,97 @@
       "sources": [
         "https://kv.mozarteum.at/de/work/die-zauberflote-7137"
       ]
+    },
+    "don-quichotte": {
+      "librettist": "Henri Cain",
+      "premiere_year": 1910,
+      "premiere_venue": "Opéra de Monte-Carlo",
+      "premiere_city": "Monte Carlo",
+      "sources": [
+        "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/don-quichotte-2762/"
+      ]
+    },
+    "the-rake-s-progress": {
+      "librettist": "W. H. Auden; Chester Kallman",
+      "premiere_year": 1951,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.rohcollections.org.uk/work.aspx?work=517"
+      ]
+    },
+    "leonora": {
+      "librettist": "Giovanni Schmidt",
+      "premiere_year": 1804,
+      "premiere_venue": "Kleines Churfürstliches Theater",
+      "premiere_city": "Dresda",
+      "sources": [
+        "https://www.opernprojekt.uni-mainz.de/details/werk?id=1322"
+      ]
+    },
+    "les-pecheurs-de-perles": {
+      "librettist": "Eugène Cormon; Michel Carré",
+      "premiere_year": 1863,
+      "premiere_venue": "Théâtre Lyrique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://www.rohcollections.org.uk/Work.aspx?work=472"
+      ]
+    },
+    "boris-godunov": {
+      "librettist": "Modest Musorgskij",
+      "premiere_year": 1874,
+      "premiere_venue": "Teatro Mariinskij",
+      "premiere_city": "San Pietroburgo",
+      "sources": [
+        "https://www.rohcollections.org.uk/work.aspx?work=1433"
+      ]
+    },
+    "nozze-istriane": {
+      "librettist": "Luigi Illica",
+      "premiere_year": 1895,
+      "premiere_venue": "Teatro Comunale",
+      "premiere_city": "Trieste",
+      "sources": [
+        "https://corago.unibo.it/opera/0000281163"
+      ]
+    },
+    "partenope": {
+      "librettist": "Adattamento anonimo del libretto di Silvio Stampiglia",
+      "premiere_year": 1730,
+      "premiere_venue": "King's Theatre",
+      "premiere_city": "Londra",
+      "sources": [
+        "https://handelhendrix.org/discover/learn-about-handel/opera-synopses/partenope-hwv-27"
+      ]
+    },
+    "al-cavallino-bianco": {
+      "librettist": "Hans Müller-Einigen; Erik Charell; testi di Robert Gilbert",
+      "premiere_year": 1930,
+      "premiere_venue": "Großes Schauspielhaus",
+      "premiere_city": "Berlino",
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+        "https://www.regione.marche.it/Regione-Utile/Cultura/News-ed-eventi/Post/83868/Ven-8-e-dom-10-aprile-a-CINGOLI-va-in-scena-l-operetta-AL-CAVALLINO-BIANCO-al-Teatro-Pergolesi-di-Jesi-il-24-aprile"
+      ]
+    },
+    "norma": {
+      "librettist": "Felice Romani",
+      "premiere_year": 1831,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/norma-20302/"
+      ]
+    },
+    "l-arca-di-noe": {
+      "librettist": "Adattamento di Benjamin Britten da un mistero medievale del ciclo di Chester",
+      "premiere_year": 1958,
+      "premiere_venue": "Orford Church",
+      "premiere_city": "Orford",
+      "sources": [
+        "https://www.boosey.com/pages/opera/moredetails?musicid=5735"
+      ]
     }
   }
 }
