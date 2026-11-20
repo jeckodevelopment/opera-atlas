@@ -1,13 +1,12 @@
-"""Independent Opera Atlas explicit-FTPS TLS release with HTTPS verification and rollback.
+"""Independent Opera Atlas plain FTP release with HTTPS verification and rollback.
 
 Only the application-owned /atlas directory can be changed; the main site is untouched.
-No dependency on jeckodevsite or insecure plain FTP.
+No dependency on jeckodevsite. Plain FTP sends credentials and files unencrypted.
 """
 from __future__ import annotations
 import hashlib
 import io
-from ftplib import FTP_TLS, error_perm
-import ssl
+from ftplib import FTP, error_perm
 import json
 import os
 import posixpath
@@ -74,35 +73,34 @@ def build(destination: Path) -> None:
 
 def settings(env: dict | None = None) -> dict:
     env = os.environ if env is None else env
-    required = ("ATLAS_FTPS_HOST", "ATLAS_FTPS_USERNAME",
-                "ATLAS_FTPS_REMOTE_DIR", "ATLAS_FTPS_PASSWORD")
+    required = ("ATLAS_FTP_HOST", "ATLAS_FTP_USERNAME",
+                "ATLAS_FTP_REMOTE_DIR", "ATLAS_FTP_PASSWORD")
     missing = [key for key in required if not env.get(key, "").strip()]
     if missing:
-        raise ValueError("Missing FTPS deployment configuration: " + ", ".join(missing))
-    host = env["ATLAS_FTPS_HOST"].strip()
+        raise ValueError("Missing FTP deployment configuration: " + ", ".join(missing))
+    host = env["ATLAS_FTP_HOST"].strip()
     if "://" in host or "/" in host or "@" in host or not host:
-        raise ValueError("ATLAS_FTPS_HOST must be a bare host name")
-    target = posixpath.normpath(env["ATLAS_FTPS_REMOTE_DIR"].strip())
+        raise ValueError("ATLAS_FTP_HOST must be a bare host name")
+    target = posixpath.normpath(env["ATLAS_FTP_REMOTE_DIR"].strip())
     if not target.startswith("/") or target == "/" or not target.endswith("/atlas"):
-        raise ValueError("ATLAS_FTPS_REMOTE_DIR must be an absolute folder ending in /atlas")
+        raise ValueError("ATLAS_FTP_REMOTE_DIR must be an absolute folder ending in /atlas")
     # FTP servers often chroot users into their account's webroot; /atlas is valid.
-    port = int(env.get("ATLAS_FTPS_PORT") or "21")
+    port = int(env.get("ATLAS_FTP_PORT") or "21")
     if not 1 <= port <= 65535:
-        raise ValueError("Invalid ATLAS_FTPS_PORT")
-    return {"host": host, "username": env["ATLAS_FTPS_USERNAME"].strip(),
-            "password": env["ATLAS_FTPS_PASSWORD"], "port": port, "target": target}
+        raise ValueError("Invalid ATLAS_FTP_PORT")
+    return {"host": host, "username": env["ATLAS_FTP_USERNAME"].strip(),
+            "password": env["ATLAS_FTP_PASSWORD"], "port": port, "target": target}
 
 
 def connect(config):
-    """Require AUTH TLS, verified server certificate, and encrypted data channel."""
-    context = ssl.create_default_context()
-    context.minimum_version = ssl.TLSVersion.TLSv1_2
-    ftp = FTP_TLS(context=context, timeout=30, encoding="utf-8")
-    ftp.connect(config["host"], config["port"], timeout=30)
+    """Connect with plain FTP on port 21, as required by the hosting service.
+
+    Warning: FTP sends the username, password, and transferred files unencrypted.
+    """
+    ftp = FTP(timeout=30, encoding="utf-8")
     try:
-        ftp.auth()       # Explicit TLS *before* sending credentials.
+        ftp.connect(config["host"], config["port"], timeout=30)
         ftp.login(config["username"], config["password"])
-        ftp.prot_p()     # TLS also for all file and directory data transfers.
         ftp.set_pasv(True)
         return ftp
     except BaseException:
@@ -165,7 +163,7 @@ def verify_live(folder: Path) -> None:
 def publish(ftp, folder: Path, target: str, verifier=verify_live) -> None:
     parent = posixpath.dirname(target)
     if not is_dir(ftp, parent):
-        raise ValueError("FTPS parent directory unavailable: verify document root")
+        raise ValueError("FTP parent directory unavailable: verify document root")
     token = uuid.uuid4().hex[:16]
     stage = posixpath.join(parent, ".atlas-stage-" + token)
     backup = posixpath.join(parent, ".atlas-backup-" + token)
@@ -181,7 +179,7 @@ def publish(ftp, folder: Path, target: str, verifier=verify_live) -> None:
             chunks = []
             ftp.retrbinary("RETR " + posixpath.join(stage, name), chunks.append)
             if sha(b"".join(chunks)) != sha((folder / name).read_bytes()):
-                raise RuntimeError("FTPS uploaded file digest mismatch: " + name)
+                raise RuntimeError("FTP uploaded file digest mismatch: " + name)
         if is_dir(ftp, target):
             # Never switch an existing directory that includes unknown files.
             # The first migration requires a clean /atlas directory.
