@@ -11,6 +11,8 @@ on:
       - 'data/daily-source-config.json'
       - 'data/season-index-config.json'
       - 'scripts/discover_season_indexes.py'
+      - 'scripts/collect_candidate_details.py'
+      - 'tests/test_candidate_detail_evidence.py'
       - 'tests/test_national_season_indexes.py'
       - 'data/verified-time-evidence.json'
       - 'site/work-synopses.json'
@@ -54,6 +56,8 @@ jobs:
         run: python -m scripts.daily_ingest --allow-network
       - name: Discover production links from approved national season indexes
         run: python -m scripts.discover_season_indexes --allow-network
+      - name: Collect structured facts from bounded discovered detail pages
+        run: python -m scripts.collect_candidate_details --allow-network
       - name: Persist unrecognized productions in review-only discovery feed
         run: python -m scripts.discovery_queue
       - name: Regenerate and verify editorial snapshot and canonical feed
@@ -71,7 +75,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/catalog/v2/ public/catalog/season-index-candidates.json data/season-index-candidates.json data/season-index-health.json public/catalog/work-editorial.json public/catalog/coverage.json public/catalog/discovery.json data/discovery-candidates.json data/verified-launch-catalog.json data/identity-registry.json site/performances.json
+          git add public/catalog/v2/ public/catalog/candidate-detail-evidence.json data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/season-index-candidates.json data/season-index-candidates.json data/season-index-health.json public/catalog/work-editorial.json public/catalog/coverage.json public/catalog/discovery.json data/discovery-candidates.json data/verified-launch-catalog.json data/identity-registry.json site/performances.json
           if [ -f data/catalog-source-health.json ]; then git add data/catalog-source-health.json; fi
           if git diff --cached --quiet; then
             echo "No changes in reviewed catalog; no commit or deployment."
