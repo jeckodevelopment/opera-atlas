@@ -4,7 +4,7 @@
    Asset links use Wikimedia Commons Special:FilePath (no unlicensed scraping). */
 window.OperaAtlasImages=Object.freeze((()=>{
   const photo=(file,alt)=>({
-    src:"https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(file)+"?width=900",
+    src:"https://commons.wikimedia.org/wiki/Special:Redirect/file/"+encodeURIComponent(file.replaceAll(" ","_"))+"?width=900",
     alt
   });
   const theatre=photo("Before the Opera begins.jpg","La sala di un teatro d'opera prima dell'inizio dello spettacolo");
@@ -29,12 +29,27 @@ window.OperaAtlasImages=Object.freeze((()=>{
   function element(image,cls="card-image"){
     const picture=document.createElement("img");
     picture.className=cls;
-    picture.src=image.src;
     picture.alt=image.alt;
+    picture.addEventListener("error",()=>fallback(picture),{once:true});
+    picture.src=image.src;
     picture.loading="lazy";
     picture.decoding="async";
     picture.referrerPolicy="no-referrer";
     return picture;
   }
+  function fallback(picture){
+    picture.onerror=null;
+    picture.removeAttribute("src");
+    picture.src="./opera-stage.svg";
+    picture.alt="Illustrazione di un palcoscenico teatrale";
+    picture.classList.add("image-fallback");
+  }
+  function bindHero(){
+    const image=document.querySelector(".hero-image");
+    if(!image)return;
+    image.addEventListener("error",()=>fallback(image),{once:true});
+    if(image.complete && image.naturalWidth===0)fallback(image);
+  }
+  bindHero();
   return {theatre,stage,operaHouse,torino,arena,fenice,traviata,tosca,work,venue,festival,element};
 })());
