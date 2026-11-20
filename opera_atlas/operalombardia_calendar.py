@@ -62,7 +62,7 @@ class _Table(HTMLParser):
             self.table_depth -= 1
 
 
-def parse_calendar(html: str) -> list[tuple[str,str,str,str,None]]:
+def parse_calendar(html: str, *, allow_unknown_for_review: bool = False) -> list[tuple[str,str,str,str,None]]:
     if not isinstance(html, str) or not html:
         raise ValueError("missing official season HTML")
     parser = _Table()
@@ -102,7 +102,13 @@ def parse_calendar(html: str) -> list[tuple[str,str,str,str,None]]:
             for key,value in OPERA_TITLES.items()
         }.get(title)
         if recognized is None:
-            raise ValueError("unrecognized production: " + title[:100])
+            if not allow_unknown_for_review:
+                raise ValueError("unrecognized production: " + title[:100])
+            # Unknown titles are ONLY factual review candidates, never
+            # validated operatic works or public events.
+            if len(title) > 120 or not re.fullmatch(r"[A-ZÀ-ÖØ-Ý0-9 '’.,:;!?()/-]+", title):
+                raise ValueError("invalid unknown calendar title")
+            recognized = (cells[1].strip(),)
         if len(cells) != 3:
             raise ValueError("ambiguous venue columns")
         venue_parts = [p.strip() for p in cells[2].split(",", 1)]
