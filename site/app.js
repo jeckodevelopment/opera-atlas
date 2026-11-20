@@ -8,6 +8,9 @@ let viewMode = "staging";
 const controls = {
   query: document.getElementById("search"),
   location: document.getElementById("location"),
+  radius: document.getElementById("radius"),
+  period: document.getElementById("period"),
+  sort: document.getElementById("sort"),
   city: document.getElementById("city"),
   region: document.getElementById("region"),
   from: document.getElementById("from"),
@@ -23,6 +26,7 @@ const prev = document.getElementById("previous");
 const next = document.getElementById("next");
 let catalog = [];
 let page = 0;
+let monthOffset = 0;
 
 function safeSource(uri) {
   try {
@@ -51,16 +55,38 @@ function normalized(value) {
   return String(value || "").normalize("NFKC").toLocaleLowerCase("it").trim();
 }
 
+// Approximate municipal centers, not theatre geocodes. Values used solely for
+// indicative straight-line city distance and the diagram map.
+const CITY_CENTERS = Object.freeze({
+  "torino":[45.0703,7.6869],"milano":[45.4642,9.1900],"como":[45.8081,9.0852],
+  "pavia":[45.1847,9.1582],"brescia":[45.5416,10.2118],"cremona":[45.1332,10.0227],
+  "verona":[45.4384,10.9916],"venezia":[45.4408,12.3155],
+  "palermo":[38.1157,13.3615],"parma":[44.8015,10.3279]
+});
+function haversine(a,b) {
+  const rad = Math.PI/180;
+  const dLat=(b[0]-a[0])*rad, dLon=(b[1]-a[1])*rad;
+  const h=Math.sin(dLat/2)**2+Math.cos(a[0]*rad)*Math.cos(b[0]*rad)*Math.sin(dLon/2)**2;
+  return 6371*2*Math.atan2(Math.sqrt(h),Math.sqrt(1-h));
+}
+function distanceFor(event) {
+  const start=CITY_CENTERS[normalized(controls.location.value)];
+  const end=CITY_CENTERS[normalized(event.municipality)];
+  return start && end ? Math.round(haversine(start,end)) : null;
+}
 function matches(event) {
-  const phrase = normalized(controls.query.value);
-  if (phrase && !normalized([event.title, event.composer, event.venue, event.municipality, event.region].join(" ")).includes(phrase)) return false;
-  if (normalized(controls.location.value) && !normalized(event.municipality).includes(normalized(controls.location.value))) return false;
+  const phrase=normalized(controls.query.value);
+  if (phrase && !normalized([event.title,event.composer,event.venue,event.municipality,event.region].join(" ")).includes(phrase)) return false;
   if (controls.city.value && event.municipality !== controls.city.value) return false;
-  if (controls.region.value && (event.region || "") !== controls.region.value) return false;
+  if (controls.region.value && (event.region||"") !== controls.region.value) return false;
   if (controls.from.value && event.local_date < controls.from.value) return false;
   if (controls.to.value && event.local_date > controls.to.value) return false;
-  if (controls.time.value === "known" && !event.time_known) return false;
-  if (controls.time.value === "unknown" && event.time_known) return false;
+  if (controls.time.value==="known" && !event.time_known) return false;
+  if (controls.time.value==="unknown" && event.time_known) return false;
+  if (controls.radius.value!=="all" && controls.location.value!=="") {
+    const distance=distanceFor(event);
+    if (distance===null || distance>Number(controls.radius.value)) return false;
+  }
   return true;
 }
 
@@ -96,7 +122,7 @@ function createCard(event) {
   details.append(node("div","time"+(event.time_known?"":" unknown"),
     event.time_known ? "Ore "+event.starts_at.slice(11,16) : "Orario da confermare"));
   main.append(details);
-  const detail = node("a","detail-link","Esamina la recita");
+  const detail = node("a","detail-link","Dettagli e date");
   detail.href = window.OperaAtlasCatalog.urls(event).staging;
   main.append(detail);
   const links = node("ul","source-links");
@@ -141,12 +167,15 @@ function createStagingCard(events) {
   main.append(node("div","event-meta",first.municipality+" · "+events.length+" repliche"));
   const heading = node("h3");
   const title = node("a",null,first.title);
-  title.href = window.OperaAtlasCatalog.urls(first).staging;
+  title.href = window.OperaAtlasCatalog.urls(first).production;
   heading.append(title);
   main.append(heading);
   if (first.composer) main.append(node("p","composer",first.composer));
-  const theatre = node("p","composer",first.venue+" · "+first.municipality);
+  const uniqueVenues=[...new Set(events.map(e=>e.venue+" · "+e.municipality))];
+  const theatre=node("p","composer",uniqueVenues.length===1?uniqueVenues[0]:uniqueVenues.length+" teatri · "+uniqueVenues.join(" · "));
   main.append(theatre);
+  const km=distanceFor(first);
+  if(km!==null && controls.location.value)main.append(node("p","distance-label","Circa "+km+" km in linea d’aria dal centro di "+controls.location.value));
   const dates = node("div","staging-repliche");
   for (const recita of events.slice(0,12)) {
     dates.append(node("span","replica-chip",
@@ -155,8 +184,8 @@ function createStagingCard(events) {
   }
   if (events.length>12) dates.append(node("span","replica-chip","+"+(events.length-12)+" altre"));
   main.append(dates);
-  const link = node("a","detail-link","Esamina la messa in scena");
-  link.href = window.OperaAtlasCatalog.urls(first).staging;
+  const link = node("a","detail-link","Dettagli e rappresentazioni");
+  link.href = window.OperaAtlasCatalog.urls(first).production;
   main.append(link);
   article.append(main);
   return article;
@@ -165,11 +194,11 @@ function createStagingCard(events) {
 function groupByStaging(events) {
   const groups = new Map();
   for (const e of events) {
-    const key = e.staging_id || window.OperaAtlasCatalog.urls(e).staging;
+    const key = e.production_group_id || e.staging_id || window.OperaAtlasCatalog.urls(e).staging;
     if (!groups.has(key)) groups.set(key,[]);
     groups.get(key).push(e);
   }
-  return [...groups.values()];
+  return [...groups.values()].map(group=>group.sort((a,b)=>a.local_date.localeCompare(b.local_date))).sort((a,b)=>a[0].local_date.localeCompare(b[0].local_date));
 }
 
 function renderDiscoveries() {
@@ -190,6 +219,28 @@ function renderDiscoveries() {
     }
     if (!items.size) target.append(node("p",null,"Nessun contenuto verificato disponibile."));
   }
+
+}
+async function renderFestivals(){
+  const target=document.getElementById("discover-festivals");
+  if(!target)return;
+  target.replaceChildren(node("p",null,"Verifica dei programmi festivalieri…"));
+  try{
+    const festivals=await window.OperaAtlasFestivals.load();
+    target.replaceChildren();
+    let count=0;
+    for(const festival of festivals){
+      const future=catalog.filter(e=>festival.staging_ids.includes(e.staging_id)&&e.local_date>=todayInItaly());
+      if(!future.length)continue;
+      const link=node("a","discovery-link",festival.name+(festival.edition?" · "+festival.edition:"")+" · "+future.length+" rappresentazioni censite");
+      link.href="./directory.html?section=festival&id="+encodeURIComponent(festival.id);
+      target.append(link);count++;
+    }
+    if(!count)target.append(node("p",null,"Nessun festival con date future verificate nel catalogo. Consulta la sezione Festival per le fonti monitorate."));
+    const all=node("a","detail-link","Esplora i festival");all.href="./directory.html?section=festival";target.append(all);
+  }catch{
+    target.replaceChildren(node("p",null,"Programmazione festivaliera momentaneamente non verificabile."));
+  }
 }
 function todayInItaly() {
   const parts = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
@@ -203,28 +254,123 @@ function defaultPeriod() {
   controls.from.value = today;
   controls.to.value = end.toISOString().slice(0,10);
 }
-function render() {
-  const filtered = catalog.filter(matches);
-  const entries = viewMode === "staging" ? groupByStaging(filtered) : filtered;
-  const pages = Math.ceil(entries.length / PAGE_SIZE);
-  page = Math.max(0, Math.min(page, Math.max(0,pages-1)));
-  list.replaceChildren();
-  const visible = entries.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
-  if (viewMode === "staging") visible.forEach(group=>list.append(createStagingCard(group)));
-  else visible.forEach(event=>list.append(createCard(event)));
-  if (!filtered.length) {
-    const empty = node("div","empty");
-    empty.append(node("strong",null,catalog.length ? "Nessuna recita per questi filtri." : "Nessuna recita pubblicata."));
-    empty.append(node("p",null,catalog.length ? "Prova a modificare o azzerare i filtri." : "Le recite verranno mostrate quando saranno disponibili dati ufficiali verificati."));
-    list.append(empty);
+function orderedEvents() {
+  const filtered=catalog.filter(matches);
+  if(controls.sort.value==="title") filtered.sort((a,b)=>a.title.localeCompare(b.title,"it")||a.local_date.localeCompare(b.local_date));
+  else if(controls.sort.value==="distance")filtered.sort((a,b)=>(distanceFor(a)??Infinity)-(distanceFor(b)??Infinity)||a.local_date.localeCompare(b.local_date));
+  return filtered;
+}
+function calendarMonth(events) {
+  const panel=document.getElementById("calendar-view");
+  panel.replaceChildren();
+  const current=new Date(todayInItaly()+"T12:00:00Z");
+  const month=new Date(Date.UTC(current.getUTCFullYear(),current.getUTCMonth()+monthOffset,1,12));
+  const year=month.getUTCFullYear(),m=month.getUTCMonth();
+  const header=node("div","month-header");
+  const back=node("button",null,"‹ Mese precedente"), nextMonth=node("button",null,"Mese successivo ›");
+  back.type=nextMonth.type="button";
+  back.addEventListener("click",()=>{monthOffset--;calendarMonth(events);});
+  nextMonth.addEventListener("click",()=>{monthOffset++;calendarMonth(events);});
+  header.append(back,node("h3",null,new Intl.DateTimeFormat("it-IT",{month:"long",year:"numeric",timeZone:"UTC"}).format(month)),nextMonth);
+  panel.append(header);
+  const grid=node("div","calendar-grid");
+  for(const name of ["Lun","Mar","Mer","Gio","Ven","Sab","Dom"])grid.append(node("div","weekday",name));
+  const first=(month.getUTCDay()+6)%7;
+  for(let i=0;i<first;i++)grid.append(node("div","calendar-blank"));
+  const total=new Date(Date.UTC(year,m+1,0)).getUTCDate();
+  for(let day=1;day<=total;day++){
+    const iso=year+"-"+String(m+1).padStart(2,"0")+"-"+String(day).padStart(2,"0");
+    const cell=node("div","calendar-cell");
+    cell.append(node("strong",null,String(day)));
+    for(const e of events.filter(x=>x.local_date===iso)){
+      const link=node("a","calendar-event",e.title+" · "+e.municipality+(e.time_known?" · "+e.starts_at.slice(11,16):""));
+      link.href=window.OperaAtlasCatalog.urls(e).production;
+      cell.append(link);
+    }
+    grid.append(cell);
   }
-  count.textContent = viewMode === "staging"
-    ? entries.length+" messe in scena · "+filtered.length+" recite"
-    : (filtered.length === 1 ? "1 recita" : filtered.length+" recite");
-  pager.hidden = pages <= 1;
-  prev.disabled = page===0;
-  next.disabled = page>=pages-1;
-  pageLabel.textContent = pages ? "Pagina "+(page+1)+" di "+pages : "";
+  panel.append(grid);
+}
+function renderMap(events) {
+  const holder=document.getElementById("atlas-map");
+  const venueLinks=document.getElementById("map-venues");
+  holder.replaceChildren();venueLinks.replaceChildren();
+  const byVenue=new Map();
+  for(const event of events) {
+    const key=window.OperaAtlasCatalog.urls(event).venue;
+    if(!byVenue.has(key))byVenue.set(key,{event,count:0});
+    byVenue.get(key).count++;
+  }
+  const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+  svg.setAttribute("viewBox","0 0 720 690");svg.setAttribute("role","img");
+  svg.setAttribute("aria-label","Mappa schematica delle città con spettacoli, non una cartografia stradale");
+  const addSvg=(tag,attrs,parent=svg)=>{
+    const n=document.createElementNS("http://www.w3.org/2000/svg",tag);
+    for(const [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));
+    parent.append(n);return n;
+  };
+  // Geographical plate in latitude/longitude coordinates; no external tiles or tracking.
+  for(let lat=37;lat<=47;lat+=2) addSvg("line",{x1:65,y1:(47-lat)*54+35,x2:675,y2:(47-lat)*54+35,stroke:"#e7e2d8"});
+  for(let lon=7;lon<=18;lon+=2) addSvg("line",{x1:(lon-6)*51+65,y1:35,x2:(lon-6)*51+65,y2:630,stroke:"#e7e2d8"});
+  for(const {event,count} of byVenue.values()) {
+    const coord=CITY_CENTERS[normalized(event.municipality)];
+    if(!coord)continue;
+    const x=(coord[1]-6)*51+65,y=(47-coord[0])*54+35;
+    const anchor=addSvg("a",{href:window.OperaAtlasCatalog.urls(event).venue});
+    addSvg("circle",{cx:x,cy:y,r:12,fill:"#b58b24",stroke:"#ffffff","stroke-width":3},anchor);
+    const tip=addSvg("title",{},anchor);tip.textContent=event.venue+" · "+event.municipality+" · "+count+" recite";
+    const label=addSvg("text",{x:x+16,y:y+4,"font-size":14,fill:"#222"},anchor);
+    label.textContent=event.municipality;
+    const a=node("a","discovery-link",event.venue+" · "+event.municipality+" ("+count+" recite)");
+    a.href=window.OperaAtlasCatalog.urls(event).venue;venueLinks.append(a);
+  }
+  holder.append(svg);
+  if(!byVenue.size)holder.append(node("p","empty","Nessuna sede nei risultati."));
+}
+function render() {
+  const filtered=orderedEvents();
+  const entries=viewMode==="staging"?groupByStaging(filtered):filtered;
+  const pages=Math.ceil(entries.length/PAGE_SIZE);
+  page=Math.max(0,Math.min(page,Math.max(0,pages-1)));
+  list.replaceChildren();
+  const isCalendar=viewMode==="calendar",isMap=viewMode==="map";
+  list.hidden=isCalendar||isMap;
+  document.getElementById("calendar-view").hidden=!isCalendar;
+  document.getElementById("map-view").hidden=!isMap;
+  pager.hidden=isCalendar||isMap||pages<=1;
+  if(isCalendar)calendarMonth(filtered);
+  else if(isMap)renderMap(filtered);
+  else{
+    const visible=entries.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
+    if(viewMode==="staging")visible.forEach(group=>list.append(createStagingCard(group)));
+    else visible.forEach(event=>list.append(createCard(event)));
+    if(!filtered.length){
+      const empty=node("div","empty");
+      empty.append(node("strong",null,catalog.length?"Nessuno spettacolo per questa ricerca.":"Nessuna recita pubblicata."));
+      empty.append(node("p",null,"Prova ad ampliare distanza o periodo oppure seleziona «Tutta Italia»."));
+      list.append(empty);
+    }
+  }
+  count.textContent=(viewMode==="staging"?groupByStaging(filtered).length+" produzioni · ":"")+filtered.length+" rappresentazioni";
+  prev.disabled=page===0;next.disabled=page>=pages-1;
+  pageLabel.textContent=pages?"Pagina "+(page+1)+" di "+pages:"";
+}
+function syncPeriod(){
+  const today=todayInItaly();
+  controls.from.value=today;
+  if(controls.period.value==="all")controls.to.value="";
+  else{
+    const end=new Date(today+"T12:00:00Z");
+    end.setUTCDate(end.getUTCDate()+Number(controls.period.value)-1);
+    controls.to.value=end.toISOString().slice(0,10);
+  }
+}
+function populateLocations(){
+  const cities=[...new Set(catalog.map(x=>x.municipality))].sort((a,b)=>a.localeCompare(b,"it"));
+  controls.location.replaceChildren(node("option",null,"Tutta Italia"));
+  controls.location.firstChild.value="";
+  for(const city of cities){const opt=node("option",null,city);opt.value=city;controls.location.append(opt);}
+  controls.location.value=cities.includes("Torino")?"Torino":"";
 }
 
 async function initialize() {
@@ -244,7 +390,9 @@ async function initialize() {
     }
 
     fillOptions(controls.city,catalog.map(x=>x.municipality));
+    populateLocations();
     renderDiscoveries();
+    renderFestivals();
     fillOptions(controls.region,catalog.map(x=>x.region));
     render();
   } catch {
@@ -254,26 +402,46 @@ async function initialize() {
   }
 }
 
-document.getElementById("filters").addEventListener("submit",event=>event.preventDefault());
+document.getElementById("filters").addEventListener("submit",event=>{event.preventDefault();page=0;render();document.getElementById("results-title").scrollIntoView({behavior:"smooth"});});
 document.querySelectorAll("[data-catalog-view]").forEach(button=>{
   button.addEventListener("click",()=>{
-    viewMode = button.dataset.catalogView;
+    viewMode=button.dataset.catalogView;
     document.querySelectorAll("[data-catalog-view]").forEach(item=>{
-      const active = item === button;
-      item.classList.toggle("active",active);
+      const active=item===button;item.classList.toggle("active",active);
       item.setAttribute("aria-pressed",active?"true":"false");
     });
     page=0;render();
   });
 });
-Object.values(controls).forEach(control=>control.addEventListener("input",()=>{page=0;render();}));
+for(const [name,control] of Object.entries(controls)){
+  control.addEventListener("change",()=>{
+    if(name==="period")syncPeriod();
+    page=0;render();
+  });
+  if(name==="query")control.addEventListener("input",()=>{page=0;render();});
+}
+document.getElementById("locate-me").addEventListener("click",()=>{
+  if(!navigator.geolocation){message.textContent="Posizione non disponibile in questo browser.";return;}
+  navigator.geolocation.getCurrentPosition(position=>{
+    const coords=[position.coords.latitude,position.coords.longitude];
+    const candidates=[...controls.location.options].filter(option=>option.value&&CITY_CENTERS[normalized(option.value)])
+      .map(option=>({city:option.value,distance:Math.round(haversine(coords,CITY_CENTERS[normalized(option.value)]))}))
+      .sort((a,b)=>a.distance-b.distance);
+    if(!candidates.length||candidates[0].distance>80){
+      message.textContent="Nessuna città censita sufficientemente vicina. Scegli una località manualmente.";
+      return;
+    }
+    controls.location.value=candidates[0].city;page=0;render();
+    message.textContent="Località impostata sulla città censita più vicina ("+candidates[0].city+"). La posizione esatta non viene conservata.";
+  },()=>{message.textContent="Localizzazione non autorizzata o non disponibile. Puoi scegliere una città manualmente.";},
+  {enableHighAccuracy:false,timeout:9000,maximumAge:0});
+});
 document.getElementById("reset").addEventListener("click",()=>{
-  Object.values(controls).forEach(control=>control.value="");
-  controls.location.value="Torino";
-  defaultPeriod();
-  page=0;render();controls.query.focus();
+  controls.query.value=controls.city.value=controls.region.value=controls.time.value="";
+  controls.location.value="Torino";controls.radius.value="100";controls.period.value="30";controls.sort.value="date";
+  syncPeriod();page=0;render();
 });
 prev.addEventListener("click",()=>{page--;render();});
 next.addEventListener("click",()=>{page++;render();});
-defaultPeriod();
+syncPeriod();
 initialize();
