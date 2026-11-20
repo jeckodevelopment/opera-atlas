@@ -298,3 +298,12 @@ La catalogazione autonoma distingue ora due casi di **opera nuova per il catalog
 Le richieste giornaliere rispettano gli stessi limiti, ma i titoli con scheda già pronta hanno precedenza nella ricerca autorevole (3 al giorno) e nella lettura delle pagine di dettaglio (10 al giorno). La scansione degli altri titoli mantiene rotazione equa. Quando **non** esiste già una sinossi e un profilo storico verificati, resta invece necessario il percorso di sintesi documentata tramite API linguistica: senza `ATLAS_OPENAI_API_KEY` la nuova scheda non viene inventata, e il sistema ritenta autonomamente.
 
 Collaudi: `tests/test_auto_work_research.py` verifica identità con compositore, riuso di sinossi e fonti storiche, nessuna chiamata a pagamento, idempotenza; `tests/test_candidate_detail_evidence.py` verifica la priorità della nuova opera documentata nel budget giornaliero. L'effettiva pubblicazione live va verificata nel manifest prima di incrementare i contatori.
+
+
+### F2 — correzione verificata del parser della pagina ufficiale Regio Parma
+
+Il primo run reale successivo alla PR #82 ha **risolto automaticamente identità, compositore, sinossi e storia di Rigoletto**, senza API linguistica, ma non ha ancora pubblicato le recite. Sul sito del Teatro Regio di Parma la barra di navigazione `Spettacolo / Cast / Informazioni` precede il calendario: il parser tagliava l'HTML al primo `Cast`, eliminando quindi tutte le date prima di tentare l'estrazione.
+
+Il parser ora legge il blocco **a partire dalla dicitura ufficiale `Musica <compositore>`** e fino all'inizio delle istruzioni per acquistare i biglietti; richiede esattamente titolo/compositore verificati, un unico anno nelle date della testata e coppie giorno/ora nei cartellini. Esclude ancora `Prova Under30` e `Prova Aperta` e rifiuta date contraddittorie. Nessun dato viene forzato in catalogo se l'HTML cambia.
+
+Nuovo test di regressione `test_live_parma_layout_has_cast_navigation_before_ticket_cards`: riproduce il layout reale e verifica quattro recite ordinarie del Rigoletto, escludendo le due prove. Dopo merge il criterio di chiusura è un workflow live riuscito, con **26 opere e almeno quattro nuove recite** nel manifest soltanto se la fonte continua a confermare i dati. Non incrementare i contatori sulla sola base del test unitario.
