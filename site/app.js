@@ -242,13 +242,7 @@ async function initialize() {
     if (raw.length !== catalog.length) {
       message.textContent = "Alcune recite con dati non validi non sono state mostrate.";
     }
-    document.getElementById("metric-events").textContent = String(catalog.length);
-    document.getElementById("metric-works").textContent =
-      String(new Set(catalog.map(x=>normalized(x.title))).size);
-    document.getElementById("metric-venues").textContent =
-      String(new Set(catalog.map(x=>normalized(x.venue)+"|"+normalized(x.municipality))).size);
-    document.getElementById("metric-unknown").textContent =
-      String(catalog.filter(x=>!x.time_known).length);
+
     fillOptions(controls.city,catalog.map(x=>x.municipality));
     renderDiscoveries();
     fillOptions(controls.region,catalog.map(x=>x.region));
