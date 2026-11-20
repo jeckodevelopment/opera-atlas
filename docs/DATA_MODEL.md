@@ -33,3 +33,6 @@ Per ogni connettore: input URL, policy e limiti, parser versionato, confidence d
 
 ## Risoluzione controllata delle revisioni (F1)
 La funzione `resolve_review` consente di scegliere esplicitamente una recita già esistente (verificando opera, sede e istante) oppure creare una nuova recita usando la proposta registrata. Il record di review passa a `resolved`; le osservazioni storiche rimangono, mentre la provenienza attiva viene collegata alla recita confermata. Non esiste auto-risoluzione basata sul titolo. Il sistema non include ancora un'interfaccia web di moderazione.
+
+## Registro canonico del repertorio (Fase 1, issue #2)
+`opera_atlas.catalog` introduce `register_work`, `register_alias` e `find_work`, con corrispondenze esplicite basate su titolo canonico o alias approvato e compositore fornito. Titolo senza compositore: risultato ignoto (`None`); più opere compatibili: eccezione `AmbiguousWorkError`, quindi richiesta revisione. Nessuna fusione implicita. La classificazione controllata include `opera`, `operetta`, `music_theatre`, `concert`, `ballet`, `prose`, `other` per distinguere i contenuti nelle future metriche. La classificazione dei singoli programmi rimane responsabilità dei connettori verificati.
