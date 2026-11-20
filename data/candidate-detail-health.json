@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-20T21:16:07+00:00",
+  "attempted": 10,
+  "outcomes": [
+    {
+      "candidate_id": "oa-index-ec6c5d7342d617e4d1f8",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-ef019182f129777d75f0",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-ef66d28ddc0afb7c8b8c",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-f2e706992e9fbbf83950",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-f3b183b4da3667d91d5d",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-f7aecfa5ae27e46b50e6",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-fc275749d78556b44e50",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-05c2c0e38ba2a356b5ba",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-05e3307781f3a1f0668e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    }
+  ]
+}
