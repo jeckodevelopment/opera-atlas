@@ -133,6 +133,24 @@
       "slug": "tosca",
       "title": "Tosca",
       "composer": "Giacomo Puccini"
+    },
+    "don giovanni|wolfgang amadeus mozart": {
+      "id": "oa-w-000023",
+      "slug": "don-giovanni",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart"
+    },
+    "la bohème|giacomo puccini": {
+      "id": "oa-w-000024",
+      "slug": "la-boheme",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini"
+    },
+    "nabucco|giuseppe verdi": {
+      "id": "oa-w-000025",
+      "slug": "nabucco",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi"
     }
   },
   "venues": {
@@ -632,6 +650,30 @@
       "venue_id": "oa-v-000012",
       "slug": "un-ballo-in-maschera",
       "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "scala-don-giovanni-2027": {
+      "id": "oa-s-000049",
+      "work_id": "oa-w-000023",
+      "venue_id": "oa-v-000006",
+      "slug": "don-giovanni",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
+      "season": "2026-2027"
+    },
+    "scala-boheme-puccini-2027": {
+      "id": "oa-s-000050",
+      "work_id": "oa-w-000024",
+      "venue_id": "oa-v-000006",
+      "slug": "la-boheme",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
+      "season": "2026-2027"
+    },
+    "arena-nabucco-2027": {
+      "id": "oa-s-000051",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000007",
+      "slug": "nabucco",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/",
       "season": "2026-2027"
     }
   },
@@ -1883,6 +1925,150 @@
       "staging_id": "oa-s-000048",
       "original_date": "2027-01-31",
       "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "scala-don-giovanni-2027|2027-02-03": {
+      "id": "oa-r-000209",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-03",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-06": {
+      "id": "oa-r-000210",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-06",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-09": {
+      "id": "oa-r-000211",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-09",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-11": {
+      "id": "oa-r-000212",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-11",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-13": {
+      "id": "oa-r-000213",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-13",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-18": {
+      "id": "oa-r-000214",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-18",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-20": {
+      "id": "oa-r-000215",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-20",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-23": {
+      "id": "oa-r-000216",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-23",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-25": {
+      "id": "oa-r-000217",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-25",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-don-giovanni-2027|2027-02-28": {
+      "id": "oa-r-000218",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-02-28",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+    },
+    "scala-boheme-puccini-2027|2027-02-16": {
+      "id": "oa-r-000219",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-02-16",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "scala-boheme-puccini-2027|2027-02-17": {
+      "id": "oa-r-000220",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-02-17",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "scala-boheme-puccini-2027|2027-02-19": {
+      "id": "oa-r-000221",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-02-19",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "scala-boheme-puccini-2027|2027-02-21": {
+      "id": "oa-r-000222",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-02-21",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "scala-boheme-puccini-2027|2027-02-24": {
+      "id": "oa-r-000223",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-02-24",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "scala-boheme-puccini-2027|2027-02-26": {
+      "id": "oa-r-000224",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-02-26",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "scala-boheme-puccini-2027|2027-03-04": {
+      "id": "oa-r-000225",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-03-04",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "scala-boheme-puccini-2027|2027-03-07": {
+      "id": "oa-r-000226",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-03-07",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+    },
+    "arena-nabucco-2027|2027-07-29": {
+      "id": "oa-r-000227",
+      "staging_id": "oa-s-000051",
+      "original_date": "2027-07-29",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/"
+    },
+    "arena-nabucco-2027|2027-08-05": {
+      "id": "oa-r-000228",
+      "staging_id": "oa-s-000051",
+      "original_date": "2027-08-05",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/"
+    },
+    "arena-nabucco-2027|2027-08-15": {
+      "id": "oa-r-000229",
+      "staging_id": "oa-s-000051",
+      "original_date": "2027-08-15",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/"
+    },
+    "arena-nabucco-2027|2027-08-21": {
+      "id": "oa-r-000230",
+      "staging_id": "oa-s-000051",
+      "original_date": "2027-08-21",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/"
+    },
+    "arena-nabucco-2027|2027-09-03": {
+      "id": "oa-r-000231",
+      "staging_id": "oa-s-000051",
+      "original_date": "2027-09-03",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/"
+    },
+    "arena-nabucco-2027|2027-09-09": {
+      "id": "oa-r-000232",
+      "staging_id": "oa-s-000051",
+      "original_date": "2027-09-09",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/"
     }
   }
 }

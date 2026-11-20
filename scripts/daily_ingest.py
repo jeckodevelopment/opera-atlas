@@ -28,13 +28,14 @@ from opera_atlas.operalombardia import parse_dates_only
 from opera_atlas.operalombardia_calendar import parse_calendar
 from opera_atlas.fraschini_parser import parse_fraschini_detail
 from opera_atlas.regio_parser import parse_regio_detail
+from opera_atlas.scala_arena_parser import parse_showtimes
 from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY, assemble
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "data" / "daily-source-config.json"
 HEALTH = ROOT / "data" / "catalog-source-health.json"
-VALID_ADAPTERS = {"regio", "operalombardia", "fraschini", "operalombardia_calendar"}
+VALID_ADAPTERS = {"regio", "operalombardia", "fraschini", "operalombardia_calendar", "scala", "arena"}
 
 
 def validate_source_config(document: dict) -> list[dict]:
@@ -69,6 +70,10 @@ def validate_source_config(document: dict) -> list[dict]:
             "www.teatroregio.torino.it", "teatroregio.torino.it"
         ):
             raise ValueError("Regio adapter host mismatch")
+        if item["adapter"] == "scala" and url.hostname != "www.teatroallascala.org":
+            raise ValueError("Scala adapter host mismatch")
+        if item["adapter"] == "arena" and url.hostname != "www.arena.it":
+            raise ValueError("Arena adapter host mismatch")
         if item["adapter"] == "fraschini" and url.hostname != "www.teatrofraschini.it":
             raise ValueError("Fraschini adapter host mismatch")
         if item["adapter"] == "operalombardia_calendar" and (
@@ -113,6 +118,11 @@ def _parse(item: dict, html: str) -> list[tuple[str, str, str, str | None]]:
         return [("Teatro Regio", "Torino",
                  fact.starts_at.date().isoformat(),
                  fact.starts_at.strftime("%H:%M")) for fact in parsed]
+    if item["adapter"] in ("scala", "arena"):
+        rows=parse_showtimes(html, url=item["url"], title=item["title"],
+                             composer=item["composer"], adapter=item["adapter"])
+        venue,city=("Teatro alla Scala","Milano") if item["adapter"]=="scala" else ("Arena di Verona","Verona")
+        return [(venue,city,day,hour) for day,hour in rows]
     if item["adapter"] == "fraschini":
         rows = parse_fraschini_detail(html, url=item["url"], title=item["title"], composer=item["composer"])
         return [("Teatro Fraschini", "Pavia", day, hour) for day, hour in rows]

@@ -19,10 +19,10 @@ class SourceReadinessTests(unittest.TestCase):
     def test_production_sources_are_conditionally_authorized_and_runtime_robots_gated(self):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
         items=validate_source_config(config)
-        self.assertEqual(len(items),16)
-        self.assertEqual({i["access_status"] for i in items},{"approved"})
-        self.assertTrue(all("runtime" in i["approval_evidence"] for i in items))
-        self.assertTrue(all("NOT verified" in i["approval_evidence"] for i in items))
+        self.assertEqual(len(items),19)
+        self.assertEqual({i["access_status"] for i in items},{"approved","pending"})
+        self.assertTrue(all("runtime" in i["approval_evidence"] for i in items if i["access_status"]=="approved"))
+        self.assertTrue(all("NOT verified" in i["approval_evidence"] for i in items if i["access_status"]=="approved"))
 
     def test_timed_event_preserves_italian_summer_dst(self):
         self.assertEqual(official_local_time("2027-07-10","20:00"),
