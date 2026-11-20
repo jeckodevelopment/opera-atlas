@@ -98,6 +98,29 @@ class DailyIngestionTests(unittest.TestCase):
         self.assertEqual(registry,self.registry)
         self.assertIn("time_changed",[a["kind"] for a in health[0]["anomalies"]])
 
+    def test_new_date_is_blocked_when_existing_hour_changed_same_page(self):
+        facts,registry,health,added=self.scan(
+            self.html(extra="2027-03-11", change_time=True)
+        )
+        self.assertEqual(added,0)
+        self.assertEqual(facts,self.facts)
+        self.assertEqual(registry,self.registry)
+        self.assertEqual(health[0]["outcome"],"review_required")
+        self.assertIn("time_changed",
+                      [x["kind"] for x in health[0]["anomalies"]])
+
+    def test_duplicate_dates_block_entire_page(self):
+        html=self.html(extra="2027-03-11")
+        html += "<p>2027-03-11 20:00:00 Europe/Rome</p>"
+        # The Regio parser deduplicates identical source timestamps; a
+        # genuinely contradictory record is the correct rejection scenario.
+        html += "<p>2027-03-11 21:00:00 Europe/Rome</p>"
+        facts,registry,health,added=self.scan(html)
+        self.assertEqual(added,0)
+        self.assertEqual(facts,self.facts)
+        self.assertEqual(registry,self.registry)
+        self.assertEqual(health[0]["outcome"],"review_required")
+
     def test_fetch_failure_preserves_last_known_good(self):
         def unavailable(*args,**kwargs):
             raise FetchUnavailable("robots.txt unavailable")
