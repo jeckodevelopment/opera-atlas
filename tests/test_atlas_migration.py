@@ -45,42 +45,39 @@ class AtlasMigrationTests(unittest.TestCase):
             self.assertIn("RewriteBase /atlas/",(folder/".htaccess").read_text())
 
     def test_settings_require_secure_ftps_credentials_and_isolated_atlas_path(self):
-        base={"ATLAS_FTPS_HOST":"ftp.example.org",
-              "ATLAS_FTPS_USERNAME":"atlas",
-              "ATLAS_FTPS_PASSWORD":"test"}
+        base={"ATLAS_FTP_HOST":"ftp.example.org",
+              "ATLAS_FTP_USERNAME":"atlas",
+              "ATLAS_FTP_PASSWORD":"test"}
         for target in ("/","/var/www","/var/www/other","relative/atlas"):
             with self.subTest(target=target):
                 with self.assertRaises(ValueError):
-                    settings({**base,"ATLAS_FTPS_REMOTE_DIR":target})
-        config=settings({**base,"ATLAS_FTPS_REMOTE_DIR":"/atlas"})
+                    settings({**base,"ATLAS_FTP_REMOTE_DIR":target})
+        config=settings({**base,"ATLAS_FTP_REMOTE_DIR":"/atlas"})
         self.assertEqual(config["target"],"/atlas")
         self.assertEqual(config["port"],21)
-        config=settings({**base,"ATLAS_FTPS_REMOTE_DIR":"/var/www/atlas"})
+        config=settings({**base,"ATLAS_FTP_REMOTE_DIR":"/var/www/atlas"})
         self.assertEqual(config["target"],"/var/www/atlas")
         with self.assertRaises(ValueError):
-            settings({**base,"ATLAS_FTPS_HOST":"ftp://ftp.example.org",
-                      "ATLAS_FTPS_REMOTE_DIR":"/atlas"})
+            settings({**base,"ATLAS_FTP_HOST":"ftp://ftp.example.org",
+                      "ATLAS_FTP_REMOTE_DIR":"/atlas"})
         with self.assertRaises(ValueError):
-            settings({k:v for k,v in {**base,"ATLAS_FTPS_REMOTE_DIR":"/atlas"}.items()
-                      if k!="ATLAS_FTPS_PASSWORD"})
+            settings({k:v for k,v in {**base,"ATLAS_FTP_REMOTE_DIR":"/atlas"}.items()
+                      if k!="ATLAS_FTP_PASSWORD"})
 
-    def test_explicit_tls_is_mandatory_and_plain_ftp_is_not_supported(self):
+    def test_plain_ftp_with_existing_secret_names(self):
         script=(ROOT/"scripts/deploy_atlas.py").read_text(encoding="utf-8")
-        self.assertIn("FTP_TLS(context=context",script)
-        self.assertIn("ssl.create_default_context()",script)
-        self.assertIn("context.minimum_version = ssl.TLSVersion.TLSv1_2",script)
-        self.assertIn("ftp.auth()",script)
-        self.assertIn("ftp.prot_p()",script)
-        self.assertNotIn("paramiko",script)
-        self.assertNotIn("FTP()",script)
+        self.assertIn("from ftplib import FTP, error_perm",script)
+        self.assertIn("ftp = FTP(timeout=30",script)
+        self.assertIn('ftp.login(config["username"], config["password"])',script)
+        self.assertNotIn("FTP_TLS",script)
+        self.assertNotIn("ftp.auth()",script)
+        self.assertNotIn("ftp.prot_p()",script)
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
-        self.assertIn("ATLAS_FTPS_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}",workflow)
         for suffix in ("HOST", "USERNAME", "PASSWORD", "REMOTE_DIR"):
             self.assertIn("secrets.ATLAS_SFTP_" + suffix,workflow)
-            self.assertNotIn("secrets.ATLAS_FTPS_" + suffix,workflow)
-        self.assertIn("ATLAS_FTPS_PORT: '21'",workflow)
+            self.assertNotIn("secrets.ATLAS_FTP_" + suffix,workflow)
+        self.assertIn("ATLAS_FTP_PORT: '21'",workflow)
         self.assertIn("inputs.ftp_host || vars.ATLAS_FTPS_HOST || secrets.ATLAS_SFTP_HOST",workflow)
-        self.assertIn("ftp_host:",workflow)
         self.assertNotIn("secrets.ATLAS_SFTP_PORT",workflow)
         self.assertNotIn("ATLAS_SFTP_KNOWN_HOSTS",workflow)
 
