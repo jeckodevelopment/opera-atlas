@@ -307,3 +307,10 @@ Il primo run reale successivo alla PR #82 ha **risolto automaticamente identità
 Il parser ora legge il blocco **a partire dalla dicitura ufficiale `Musica <compositore>`** e fino all'inizio delle istruzioni per acquistare i biglietti; richiede esattamente titolo/compositore verificati, un unico anno nelle date della testata e coppie giorno/ora nei cartellini. Esclude ancora `Prova Under30` e `Prova Aperta` e rifiuta date contraddittorie. Nessun dato viene forzato in catalogo se l'HTML cambia.
 
 Nuovo test di regressione `test_live_parma_layout_has_cast_navigation_before_ticket_cards`: riproduce il layout reale e verifica quattro recite ordinarie del Rigoletto, escludendo le due prove. Dopo merge il criterio di chiusura è un workflow live riuscito, con **26 opere e almeno quattro nuove recite** nel manifest soltanto se la fonte continua a confermare i dati. Non incrementare i contatori sulla sola base del test unitario.
+
+
+### F2 — ogni modifica ai connettori avvia il refresh reale
+
+Il merge della PR #83 (correzione del parser Regio Parma) ha prodotto una suite Python verde, ma **non** il workflow di pubblicazione: il filtro `on.push.paths` di `refresh-catalog.yml` non includeva `opera_atlas/national_detail_parser.py`. Da questo intervento, le modifiche ai parser, al codice di acquisizione e ai test sotto `opera_atlas/**`, `scripts/**` e `tests/**` avviano automaticamente anche il refresh canonico completo su `main`. Il percorso programmato giornaliero e `workflow_dispatch` restano attivi. I JSON generati non sono inclusi in un pattern indiscriminato, così il commit automatico dei dati non innesca un ciclo ricorsivo di workflow.
+
+Test automatico `tests/test_refresh_workflow_paths.py`: controlla la presenza dei trigger globali per connettori e script e la continuità della generazione v2. Per considerare risolto il blocco Rigoletto è obbligatorio verificare anche il run live scatenato da questa PR: il numero di opere deve aumentare soltanto se l'estrazione ufficiale delle recite produce evidenze valide e la pipeline pubblica effettivamente il nuovo manifest.
