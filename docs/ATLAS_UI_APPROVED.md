@@ -192,3 +192,11 @@ La sezione «La storia dell’opera» comincia ora preferibilmente con «La prim
 ## Placeholder ricerca homepage — 20 novembre 2026
 
 L'etichetta del filtro resta «Opera, compositore o teatro». Il suggerimento della casella di ricerca segue lo stesso ordine semantico: **«Es. Rigoletto, Verdi, La Scala»**. Non cambiano logica dei filtri né risultati.
+
+## Mappa homepage: scala adattiva e stato vuoto comprensibile — 20 novembre 2026
+
+La visualizzazione **Mappa** si basava su un SVG schematico fisso esteso a tutta l'Italia, rendendo poco visibili i punti in presenza di filtri locali (impostazione predefinita Torino, raggio 100 km, prossimi 30 giorni). Con la nuova implementazione la finestra SVG si adatta dinamicamente alle città dei teatri effettivamente presenti nei risultati filtrati: anche un unico teatro produce un punto chiaramente individuabile, con area cliccabile, etichetta testuale e collegamento accessibile al dettaglio. Se le sedi sono più di una, la scala le comprende tutte. I collegamenti testuali sotto il disegno rimangono disponibili per navigazione da tastiera e lettori di schermo.
+
+Se non ci sono spettacoli nei filtri correnti, la Mappa indica «Nessun teatro corrisponde ai filtri attuali» e suggerisce di ampliare periodo/località; non disattiva o sovrascrive i filtri dell'utente. Il disegno continua a essere una **mappa schematica indicativa**, non una mappa stradale o una geocodifica dell'ingresso del teatro: usa soltanto le coordinate pubbliche già presenti nel catalogo, non raccoglie posizione dell'utente e non richiede servizi cartografici di terzi. Il messaggio descrive tale limite. Test automatici Node e Python verificano un teatro, più teatri e zero risultati, URL dei punti, conta delle recite e viewport adattivo.
+
+**Collaudo manuale necessario:** dal sito pubblico selezionare «Mappa» con Torino/100 km e poi con «Tutta Italia»; verificare la visualizzazione dei punti, i link verso i teatri, il passaggio Elenco/Calendario/Mappa, la modifica dei filtri e la visualizzazione mobile. L'accesso live al sito non è garantito nell'ambiente di controllo e il deploy deve essere confermato prima di dichiarare il problema chiuso.
