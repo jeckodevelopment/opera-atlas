@@ -6,7 +6,7 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 ## Fasi e criteri di completamento
 
 ### F1 — Fondamenta
-- [ ] Inventario completo delle sedi e degli organizzatori/festival con URL ufficiali verificati, stato e data di verifica.
+- [ ] Inventario completo delle sedi e degli organizzatori/festival con URL ufficiali verificati, stato e data di verifica. **Tre fonti iniziali in JSON strutturato con accesso pending; inventario nazionale e policy di accesso ancora da completare.**
 - [ ] Modello dati completamente validato: work, production, performance, venue, organizer, festival, season, source, observation. **Schema SQLite baseline implementato; validazioni/casi limite e deduplicazione cross-source deterministica implementata; API di risoluzione manuale disponibile; rimangono mapping canonici verificati, UI e integrazione con fonti reali.**
 - [ ] Tassonomia editoriale: opera lirica distinta da balletto, concerto e prosa; eccezioni esplicite. **Tipi codificati e validati via API; policy editoriale sui casi limite da completare.**
 - [ ] Normalizzazione titoli, alias e compositori; gestione verificata delle sedi temporanee. **Normalizzazione Unicode/whitespace/case e alias curati disponibili; mapping da fonti reali ancora da validare.**
@@ -43,4 +43,4 @@ Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati te
 Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
 
 ## Stato attuale
-Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; fonti ancora da verificare e nessun connettore/catologo pubblico completato. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; tre fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e nessun connettore/catalogo pubblico completato. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
