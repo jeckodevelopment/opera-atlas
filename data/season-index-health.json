@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T21:11:37+00:00",
+  "checked_at": "2026-11-20T21:13:23+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
@@ -19,6 +19,18 @@
       "status": "success",
       "links": 11,
       "new_review_candidates": 7
+    },
+    {
+      "key": "parma-opera-2027",
+      "status": "success",
+      "links": 14,
+      "new_review_candidates": 13
+    },
+    {
+      "key": "massimo-season-2026-27",
+      "status": "success",
+      "links": 27,
+      "new_review_candidates": 23
     }
   ]
 }
