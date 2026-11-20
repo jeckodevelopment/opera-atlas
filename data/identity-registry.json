@@ -391,6 +391,46 @@
       "slug": "madama-butterfly",
       "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/",
       "season": "2026-2027"
+    },
+    "lombardia-turandot-como": {
+      "id": "oa-s-000025",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000002",
+      "slug": "turandot",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "season": "2026-2027"
+    },
+    "lombardia-death-venice-como": {
+      "id": "oa-s-000026",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000002",
+      "slug": "death-in-venice",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "season": "2026-2027"
+    },
+    "lombardia-cavalleria-como": {
+      "id": "oa-s-000027",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000002",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "season": "2026-2027"
+    },
+    "lombardia-pagliacci-como": {
+      "id": "oa-s-000028",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000002",
+      "slug": "pagliacci",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "season": "2026-2027"
+    },
+    "lombardia-ballo-como": {
+      "id": "oa-s-000029",
+      "work_id": "oa-w-000012",
+      "venue_id": "oa-v-000002",
+      "slug": "un-ballo-in-maschera",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "season": "2026-2027"
     }
   },
   "performances": {
@@ -1179,6 +1219,66 @@
       "staging_id": "oa-s-000024",
       "original_date": "2027-04-24",
       "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+    },
+    "lombardia-turandot-como|2026-09-24": {
+      "id": "oa-r-000132",
+      "staging_id": "oa-s-000025",
+      "original_date": "2026-09-24",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-turandot-como|2026-09-26": {
+      "id": "oa-r-000133",
+      "staging_id": "oa-s-000025",
+      "original_date": "2026-09-26",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-death-venice-como|2026-10-09": {
+      "id": "oa-r-000134",
+      "staging_id": "oa-s-000026",
+      "original_date": "2026-10-09",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-death-venice-como|2026-10-11": {
+      "id": "oa-r-000135",
+      "staging_id": "oa-s-000026",
+      "original_date": "2026-10-11",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-cavalleria-como|2026-12-04": {
+      "id": "oa-r-000136",
+      "staging_id": "oa-s-000027",
+      "original_date": "2026-12-04",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-cavalleria-como|2026-12-06": {
+      "id": "oa-r-000137",
+      "staging_id": "oa-s-000027",
+      "original_date": "2026-12-06",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-pagliacci-como|2026-12-04": {
+      "id": "oa-r-000138",
+      "staging_id": "oa-s-000028",
+      "original_date": "2026-12-04",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-pagliacci-como|2026-12-06": {
+      "id": "oa-r-000139",
+      "staging_id": "oa-s-000028",
+      "original_date": "2026-12-06",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-ballo-como|2027-01-15": {
+      "id": "oa-r-000140",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-01-15",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
+    },
+    "lombardia-ballo-como|2027-01-17": {
+      "id": "oa-r-000141",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-01-17",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/"
     }
   }
 }
