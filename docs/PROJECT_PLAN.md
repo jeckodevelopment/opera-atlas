@@ -13,9 +13,9 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 - [ ] Tests schema, validazione dati e registrazione della provenienza. **Suite iniziale e test di riconciliazione disponibili; ulteriori integrazioni necessarie.**
 
 ### F2 — Acquisizione automatica
-- [ ] Connettori per fonti HTML strutturate, JSON-LD/API e PDF quando autorizzati.
-- [ ] Parsing e normalizzazione di date, orari, produzione, venue e collegamenti.
-- [ ] Import incrementale con idempotenza, riconciliazione e deduplicazione tra festival e teatri.
+- [ ] Connettori per fonti HTML strutturate, JSON-LD/API e PDF quando autorizzati. **Adapter HTML offline Teatro Regio implementato, senza fetch automatico; altri formati e fonti ancora aperti.**
+- [ ] Parsing e normalizzazione di date, orari, produzione, venue e collegamenti. **Timestamp espliciti e identità canoniche già gestiti nel primo adapter, verifica su HTML live necessaria.**
+- [ ] Import incrementale con idempotenza, riconciliazione e deduplicazione tra festival e teatri. **Pipeline transazionale offline sul modello SQLite disponibile; deduplicazione reale multi-fonte ancora da provare.**
 - [ ] Gestione modifiche/rinvii/annullamenti, senza cancellazioni silenziose.
 - [ ] Monitoraggio scansioni, errori, obsolescenza, copertura e casi da verificare.
 - [ ] Pianificazione GitHub Actions con rispetto di robots.txt, condizioni di utilizzo, rate limit e caching.
@@ -43,4 +43,4 @@ Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati te
 Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
 
 ## Stato attuale
-Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e nessun connettore/catalogo pubblico completato. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter offline di Teatro Regio e export JSON implementati; nessun crawler automatico o catalogo pubblico online. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
