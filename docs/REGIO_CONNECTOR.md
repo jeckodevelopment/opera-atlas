@@ -76,3 +76,21 @@ python -m opera_atlas.batch_cli --db atlas.sqlite3 --manifest path/to/verified-p
 - Ripetere l'importazione della recita: non deve annullare lo stato aggiornato.
 - Provare URL non collegati o fonti bloccate: nessun aggiornamento.
 - Verificare l'esclusione delle recite annullate dal JSON pubblico senza eliminazione dell'archivio storico.
+
+## Identità stabili e differenze incrementali (migrazione v6)
+
+Il parser conserva l'identificatore `data-event-id` **soltanto se effettivamente pubblicato** in un elemento `<time datetime="...">` con timezone esplicita. Quando presente, la chiave di provenienza è `<path>:event:<id>`, indipendente dalla data. Se una nuova scansione modifica il giorno/orario dello stesso identificatore, la riconciliazione crea una voce `changed_identity` da verificare, senza spostare la recita o crearne un'altra. ID duplicati associati a due date diverse nella stessa pagina provocano un errore.
+
+Quando **non esiste** un ID ufficiale stabile, il connettore mantiene per compatibilità la chiave `<path>:<timestamp>`. In tal caso confronta le identità note della stessa pagina/produzione con quelle della scansione completa appena elaborata. Se risultano contemporaneamente date scomparse e nuove date, il motore scrive una voce idempotente in `source_snapshot_deltas` e **non importa automaticamente le nuove date**: potrebbero essere rinvii, non nuove recite. Gli eventi precedenti non vengono annullati o cancellati. Se compaiono solo nuove recite, possono essere importate; se spariscono solo vecchie recite, vengono mantenute in archivio. Un'estrazione senza alcuna recita esplicita è rifiutata: potrebbe trattarsi di una pagina troncata o di markup cambiato.
+
+`opera_atlas.incremental.acknowledge_delta(conn, id, reason=...)` consente di annotare la presa in carico con motivazione; **non** approva nuove date e **non** risolve automaticamente l'associazione tra vecchia e nuova recita. L'operatore deve verificare la programmazione ufficiale e applicare, ove opportuno, le API di riconciliazione o stato. Le osservazioni pregresse restano conservate.
+
+### Collaudi da eseguire
+1. Importare una recita, poi ripetere lo snapshot con giorno modificato ma stesso `data-event-id`: deve nascere una review, non una seconda recita.
+2. Ripetere la prova senza `data-event-id`: deve nascere una discrepanza in `source_snapshot_deltas`, senza nuova recita.
+3. Aggiungere una sola nuova data senza eliminarne altre: deve essere importata regolarmente.
+4. Rimuovere una data senza aggiunte: l'evento precedente deve rimanere presente e non risultare annullato.
+5. Alimentare il parser con zero recite o con lo stesso ID ufficiale associato a due date: l'import deve fallire, senza modifiche permanenti se il chiamante effettua rollback.
+6. Ripetere le scansioni invariate: nessun nuovo delta; verificare l'idempotenza delle migrazioni 1–6.
+
+**Limitazione verificabile:** la presenza di `data-event-id` è un contratto opzionale, non confermato per l'HTML live del Teatro Regio; non deduciamo che sia disponibile nelle pagine reali. Non si considera chiusa l'acquisizione incrementale finché il parser non supera il collaudo su HTML autorizzato e sulle diverse fonti.
