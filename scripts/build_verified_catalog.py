@@ -7,7 +7,8 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import date, datetime
+from datetime import date, datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -70,6 +71,26 @@ def validate_time_evidence(manifest: dict, evidence: dict) -> dict:
     return evidence["times"]
 
 
+ITALIAN_TIMEZONE = ZoneInfo("Europe/Rome")
+
+
+def official_local_time(day: str, clock: str) -> str:
+    """Create an offset-aware Italian start time; reject DST gaps/overlaps.
+
+    An absent hour is intentionally represented as null upstream.
+    """
+    naive = datetime.fromisoformat(day + "T" + clock + ":00")
+    local = naive.replace(tzinfo=ITALIAN_TIMEZONE)
+    alternate = local.replace(fold=1)
+    if alternate.utcoffset() != local.utcoffset():
+        raise ValueError("ambiguous Italian local performance time")
+    if local.astimezone(timezone.utc).astimezone(ITALIAN_TIMEZONE).replace(
+        tzinfo=None
+    ) != naive:
+        raise ValueError("nonexistent Italian local performance time")
+    return local.isoformat(timespec="seconds")
+
+
 def build(manifest: dict, evidence: dict | None = None) -> dict:
     if manifest.get("schema_version") != 1 or not isinstance(manifest.get("productions"), list):
         raise ValueError("invalid editorial manifest")
@@ -109,7 +130,7 @@ def build(manifest: dict, evidence: dict | None = None) -> dict:
                 raise ValueError("expected exact Regio performance hour")
             events.append({
                 "id": uid,
-                "starts_at": f"{local_day}T{effective_hour}:00+01:00" if effective_hour else None,
+                "starts_at": official_local_time(local_day, effective_hour) if effective_hour else None,
                 "local_date": local_day,
                 "time_known": effective_hour is not None,
                 "time_label": effective_hour or "Orario da confermare",
