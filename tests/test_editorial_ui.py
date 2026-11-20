@@ -38,8 +38,8 @@ class EditorialUITests(unittest.TestCase):
         self.assertIn("#discover-works,#discover-venues,#discover-festivals",css)
         app=(SITE/"app.js").read_text(encoding="utf-8")
         directory=(SITE/"directory.js").read_text(encoding="utf-8")
-        self.assertIn("window.OperaAtlasImages.element",app)
-        self.assertIn("window.OperaAtlasImages.element",directory)
+        self.assertIn("editorialImage(",app)
+        self.assertIn("imageFor(",directory)
     def test_official_sources_only_on_detail_bottom(self):
         app=(SITE/"app.js").read_text(encoding="utf-8")
         detail=(SITE/"detail.js").read_text(encoding="utf-8")
