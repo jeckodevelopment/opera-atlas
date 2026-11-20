@@ -184,3 +184,7 @@ Per ogni teatro censito, la pagina di dettaglio mostra ora **un'introduzione sin
 Il catalogo Teatri continua a mostrare la descrizione breve nelle card: il racconto storico più ampio compare soltanto nella pagina del singolo teatro. La futura acquisizione di nuovi teatri dovrà usare lo stesso schema, senza inferire date sconosciute.
 
 **Collaudi:** 14 profili con racconto e fonte, Regio Torino 1740/1936/1973, Arena I secolo/1913, riquadro «Dove si trova» compatto su desktop/mobile, nessun overflow e date/recite inalterate. Regression test in `tests/test_theatre_editorial_history.py`. Solo SFTP frontend via `jeckodevsite`; codice, contenuti e test in `opera-atlas`.
+
+## Formula storica centrata sulla prima rappresentazione — 20/11/2026
+
+La sezione «La storia dell’opera» comincia ora preferibilmente con «La prima rappresentazione ebbe luogo nel {anno} al {teatro} di {città} su libretto di {librettista}.»; se esiste una data completa verificata nel record `premiere_date` (ISO `YYYY-MM-DD`, coerente con `premiere_year`) si usa «il {giorno mese anno}». La frase iniziale integra tutti i dati accertati, senza inventare campi mancanti. L’anno di composizione, ove documentato, compare dopo, in una frase separata. Il modello è unico per schede presenti e per quelle aggiunte dal processo automatico di catalogazione, perché è costruito dai dati storici strutturati al momento del rendering. Restano invariati i testi della trama, le fonti in fondo pagina e i manifesti verticali.
