@@ -74,6 +74,32 @@ class NationalDetailsTests(unittest.TestCase):
         self.assertEqual(actual,[("2027-02-05","19:00"),("2027-02-07","17:30"),
                                  ("2027-02-09","19:00")])
 
+    def test_palermo_carmen_hidden_early_navigation_does_not_truncate_dates(self):
+        # The site can place a "Lo spettacolo" navigation link before the
+        # actual ticket cards. Use the *verified summary* as the delimiter.
+        html="""<nav><a>Date</a><a>Lo spettacolo</a><a>Cast</a></nav>
+        <h2>Date</h2>
+        <p>24 Novembre</p><p>19:00</p><p>Turno Prime</p>
+        <p>25 Novembre</p><p>19:00</p><p>Fuori abbonamento</p>
+        <p>26 Novembre</p><p>19:00</p><p>Turno B</p>
+        <p>27 Novembre</p><p>20:00</p><p>Turno F</p>
+        <p>28 Novembre</p><p>17:30</p><p>Turno D</p>
+        <p>30 Novembre</p><p>19:00</p><p>Fuori abbonamento</p>
+        <p>1 Dicembre</p><p>19:00</p><p>Turno C</p>
+        <p>2 Dicembre</p><p>18:30</p><p>Turno Scuola</p>
+        <h2>Lo spettacolo</h2>
+        <p>24, 25, 26, 27, 28, 30 novembre, 1, 2 dicembre 2027 | Sala Grande</p>
+        <h1>Carmen</h1><p>Musiche di Georges Bizet</p>"""
+        actual=parse_national_showtimes(
+            html,source_key="massimo-season-2026-27",
+            url="https://www.teatromassimo.it/event/carmen-3/",
+            title="Carmen",composer="Georges Bizet")
+        self.assertEqual(actual,[
+            ("2027-11-24","19:00"),("2027-11-25","19:00"),
+            ("2027-11-26","19:00"),("2027-11-27","20:00"),
+            ("2027-11-28","17:30"),("2027-11-30","19:00"),
+            ("2027-12-01","19:00"),("2027-12-02","18:30")])
+
     def test_palermo_ernani_across_october_and_november(self):
         html="""<h2>Date</h2>
         <p>31 Ottobre</p><p>20:00</p><p>Turno Prime</p>
