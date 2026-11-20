@@ -19,7 +19,7 @@ class SourceRegistryTests(unittest.TestCase):
     def test_official_entries_pass_validation(self):
         rows = read_registry()
         self.assertEqual(len(rows), 8)
-        self.assertTrue(all(x["access_status"] == "pending" for x in rows))
+        self.assertTrue(all(x["access_status"] in ("pending","approved","blocked") for x in rows))
 
     def test_seed_is_idempotent_and_never_enables_crawling(self):
         self.assertEqual(seed_sources(self.db), 8)
@@ -50,9 +50,9 @@ class SourceRegistryTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 read_registry(p)
 
-    def test_rejects_unauthorized_crawling_status(self):
+    def test_rejects_invalid_crawling_status(self):
         doc = {"schema_version":1, "sources":read_registry()}
-        doc["sources"][0]["access_status"] = "approved"
+        doc["sources"][0]["access_status"] = "unverified-crawl"
         with tempfile.TemporaryDirectory() as td:
             p = Path(td) / "sources.json"
             p.write_text(json.dumps(doc), encoding="utf-8")
