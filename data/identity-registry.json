@@ -115,6 +115,24 @@
       "slug": "madama-butterfly",
       "title": "Madama Butterfly",
       "composer": "Giacomo Puccini"
+    },
+    "jenůfa|leoš janáček": {
+      "id": "oa-w-000020",
+      "slug": "jenufa",
+      "title": "Jenůfa",
+      "composer": "Leoš Janáček"
+    },
+    "lucia di lammermoor|gaetano donizetti": {
+      "id": "oa-w-000021",
+      "slug": "lucia-di-lammermoor",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti"
+    },
+    "tosca|giacomo puccini": {
+      "id": "oa-w-000022",
+      "slug": "tosca",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini"
     }
   },
   "venues": {
@@ -390,6 +408,46 @@
       "venue_id": "oa-v-000010",
       "slug": "madama-butterfly",
       "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/",
+      "season": "2026-2027"
+    },
+    "fenice-jenufa-2027": {
+      "id": "oa-s-000025",
+      "work_id": "oa-w-000020",
+      "venue_id": "oa-v-000008",
+      "slug": "jenufa",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/",
+      "season": "2026-2027"
+    },
+    "fenice-madama-butterfly-2027": {
+      "id": "oa-s-000026",
+      "work_id": "oa-w-000019",
+      "venue_id": "oa-v-000008",
+      "slug": "madama-butterfly",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/",
+      "season": "2026-2027"
+    },
+    "fenice-carmen-2027": {
+      "id": "oa-s-000027",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000008",
+      "slug": "carmen",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/",
+      "season": "2026-2027"
+    },
+    "massimo-lucia-lammermoor-2027": {
+      "id": "oa-s-000028",
+      "work_id": "oa-w-000021",
+      "venue_id": "oa-v-000009",
+      "slug": "lucia-di-lammermoor",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/",
+      "season": "2026-2027"
+    },
+    "massimo-tosca-2027": {
+      "id": "oa-s-000029",
+      "work_id": "oa-w-000022",
+      "venue_id": "oa-v-000009",
+      "slug": "tosca",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/",
       "season": "2026-2027"
     }
   },
@@ -1179,6 +1237,240 @@
       "staging_id": "oa-s-000024",
       "original_date": "2027-04-24",
       "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+    },
+    "fenice-jenufa-2027|2027-03-12": {
+      "id": "oa-r-000132",
+      "staging_id": "oa-s-000025",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/"
+    },
+    "fenice-jenufa-2027|2027-03-14": {
+      "id": "oa-r-000133",
+      "staging_id": "oa-s-000025",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/"
+    },
+    "fenice-jenufa-2027|2027-03-16": {
+      "id": "oa-r-000134",
+      "staging_id": "oa-s-000025",
+      "original_date": "2027-03-16",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/"
+    },
+    "fenice-jenufa-2027|2027-03-18": {
+      "id": "oa-r-000135",
+      "staging_id": "oa-s-000025",
+      "original_date": "2027-03-18",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/"
+    },
+    "fenice-jenufa-2027|2027-03-20": {
+      "id": "oa-r-000136",
+      "staging_id": "oa-s-000025",
+      "original_date": "2027-03-20",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/"
+    },
+    "fenice-madama-butterfly-2027|2027-01-30": {
+      "id": "oa-r-000137",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-01-30",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-01-31": {
+      "id": "oa-r-000138",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-02-02": {
+      "id": "oa-r-000139",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-02-02",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-02-03": {
+      "id": "oa-r-000140",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-02-03",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-02-04": {
+      "id": "oa-r-000141",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-02-04",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-02-05": {
+      "id": "oa-r-000142",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-02-05",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-02-06": {
+      "id": "oa-r-000143",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-02-06",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-02-07": {
+      "id": "oa-r-000144",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-02-07",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-madama-butterfly-2027|2027-02-09": {
+      "id": "oa-r-000145",
+      "staging_id": "oa-s-000026",
+      "original_date": "2027-02-09",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+    },
+    "fenice-carmen-2027|2027-04-23": {
+      "id": "oa-r-000146",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-04-23",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "fenice-carmen-2027|2027-04-24": {
+      "id": "oa-r-000147",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-04-24",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "fenice-carmen-2027|2027-04-27": {
+      "id": "oa-r-000148",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-04-27",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "fenice-carmen-2027|2027-04-28": {
+      "id": "oa-r-000149",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-04-28",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "fenice-carmen-2027|2027-04-29": {
+      "id": "oa-r-000150",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-04-29",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "fenice-carmen-2027|2027-04-30": {
+      "id": "oa-r-000151",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-04-30",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "fenice-carmen-2027|2027-05-02": {
+      "id": "oa-r-000152",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-05-02",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "fenice-carmen-2027|2027-05-04": {
+      "id": "oa-r-000153",
+      "staging_id": "oa-s-000027",
+      "original_date": "2027-05-04",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-05": {
+      "id": "oa-r-000154",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-05",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-06": {
+      "id": "oa-r-000155",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-06",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-07": {
+      "id": "oa-r-000156",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-07",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-09": {
+      "id": "oa-r-000157",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-09",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-10": {
+      "id": "oa-r-000158",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-10",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-11": {
+      "id": "oa-r-000159",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-11",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-12": {
+      "id": "oa-r-000160",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-lucia-lammermoor-2027|2027-03-13": {
+      "id": "oa-r-000161",
+      "staging_id": "oa-s-000028",
+      "original_date": "2027-03-13",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+    },
+    "massimo-tosca-2027|2027-04-18": {
+      "id": "oa-r-000162",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-18",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-20": {
+      "id": "oa-r-000163",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-20",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-21": {
+      "id": "oa-r-000164",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-21",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-22": {
+      "id": "oa-r-000165",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-22",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-23": {
+      "id": "oa-r-000166",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-23",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-24": {
+      "id": "oa-r-000167",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-24",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-27": {
+      "id": "oa-r-000168",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-27",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-28": {
+      "id": "oa-r-000169",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-28",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    "massimo-tosca-2027|2027-04-29": {
+      "id": "oa-r-000170",
+      "staging_id": "oa-s-000029",
+      "original_date": "2027-04-29",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/"
     }
   }
 }
