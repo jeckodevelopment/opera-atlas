@@ -67,6 +67,13 @@ def reconcile(
     if conn.execute("SELECT 1 FROM sources WHERE id=?", (source_id,)).fetchone() is None:
         raise ValueError("unknown source")
 
+    conn.execute(
+        """INSERT OR IGNORE INTO observations
+           (source_id,external_id,fingerprint,payload_json)
+           VALUES (?,?,?,?)""",
+        (source_id, external_id, fingerprint,
+         json.dumps(payload, ensure_ascii=False, sort_keys=True)),
+    )
     instant = starts_at.astimezone(timezone.utc)
     existing = conn.execute(
         "SELECT id, performance_id FROM source_events WHERE source_id=? AND external_id=?",
