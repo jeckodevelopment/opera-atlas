@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "policy": "Conditional owner-authorized monitoring of exactly three official season listing pages; fresh robots permission required at every run. Factual links only; no following discovered pages, no inference of title/composer/dates.",
+  "sources": [
+    {
+      "key": "scala-season-2026-27",
+      "official_url": "https://www.teatroallascala.org/",
+      "url": "https://www.teatroallascala.org/it/stagione/2026-2027/index.html",
+      "access_status": "approved",
+      "min_links": 3
+    },
+    {
+      "key": "arena-festival-2027",
+      "official_url": "https://www.arena.it/",
+      "url": "https://www.arena.it/arena-opera-festival/spettacoli/",
+      "access_status": "approved",
+      "min_links": 2
+    },
+    {
+      "key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/",
+      "url": "https://www.teatrolafenice.it/event-category/opera-2026-27/",
+      "access_status": "approved",
+      "min_links": 2
+    }
+  ]
+}
