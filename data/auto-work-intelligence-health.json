@@ -1,7 +1,22 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:23:51+00:00",
+  "checked_at": "2026-11-20T23:28:11+00:00",
   "outcomes": [
+    {
+      "candidate_id": "oa-index-559b2402d287d446c7b2",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-6cd199691f7145a4d048",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "status": "automatic_retry",
@@ -34,33 +49,6 @@
     },
     {
       "candidate_id": "oa-index-f2e706992e9fbbf83950",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-0ed3159d77688a6ce0ee",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-11def56ae568ccce9f61",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-18853d99c59fe0755e13",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-559b2402d287d446c7b2",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
       "status": "automatic_retry",
       "reason": "ValueError"
     },

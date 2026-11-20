@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:23:46+00:00",
+  "checked_at": "2026-11-20T23:28:06+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
       "status": "success",
       "links": 13,
-      "new_review_candidates": 8
+      "new_review_candidates": 5
     },
     {
       "key": "arena-festival-2027",

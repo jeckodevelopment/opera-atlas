@@ -1,27 +1,11 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:24:15+00:00",
+  "checked_at": "2026-11-20T23:28:31+00:00",
   "total": 86,
   "states": {
     "already_catalogued": 30,
     "excluded_nonopera": 41,
     "needs_review": 15
   },
-  "changes": [
-    {
-      "candidate_id": "oa-index-0ed3159d77688a6ce0ee",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-11def56ae568ccce9f61",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-18853d99c59fe0755e13",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    }
-  ]
+  "changes": []
 }
