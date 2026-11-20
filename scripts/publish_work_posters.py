@@ -79,7 +79,7 @@ def image_matches_work(image_url:str,work_title:str)->bool:
     unrelated concert. A generic OpenGraph image is NOT an opera poster.
     """
     stem=unquote(urlsplit(image_url).path.split("/")[-1])
-    stem=re.sub(r"\\.(?:jpe?g|png|webp)$","",stem,flags=re.I)
+    stem=re.sub(r"\.(?:jpe?g|png|webp)$","",stem,flags=re.I)
     def tokens(value):
         value=unicodedata.normalize("NFKD",value)
         value="".join(c for c in value if not unicodedata.combining(c))
@@ -103,7 +103,7 @@ def load_archival_art(known_slugs:set[str])->dict:
             raise ValueError("invalid archival artwork for "+slug)
         filename=entry["file"]
         if (len(filename)>220 or "/" in filename or "\\\\" in filename or
-                not re.search(r"\\.(?:jpe?g|png|webp)$",filename,re.I)):
+                not re.search(r"\.(?:jpe?g|png|webp)$",filename,re.I)):
             raise ValueError("unsafe Commons artwork filename")
         encoded=quote(filename.replace(" ","_"),safe="()_'-")
         result[slug]={
