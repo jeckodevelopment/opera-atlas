@@ -137,3 +137,16 @@ Il job `scripts.discover_season_indexes` prende in esame **tre ingressi ufficial
 - Gli indici di Regio Parma e Massimo Palermo, così come il calendario ROF eventualmente inaccessibile, restano fuori dall'attivazione e richiedono un adapter specifico verificato.
 
 Collaudo: `python -m unittest discover -s tests -v`, poi l'esecuzione del workflow `Refresh public Opera Atlas catalog`. Controllare i tre esiti e la coda JSON; nessun SFTP per l'acquisizione. La prima modifica JavaScript frontend del feed editoriale deve essere distribuita separatamente solo con il workflow SFTP di `jeckodevsite`.
+
+
+## F2 — triage dei primi 45 link live Scala/Arena/Fenice
+
+La prima esecuzione reale degli indici in GitHub Actions (20/11/2026 21:01 UTC) ha letto 14 link Scala, 16 Arena, 15 Fenice. **Un link di sezione non costituisce prova che si tratti di opera lirica**, perciò il nuovo triage distingue:
+
+- `already_catalogued`: URL di produzione esattamente presente nel manifesto editoriale verificato, non una nuova scoperta.
+- `excluded_nonopera`: URL già identificato come pagina di servizio o programma non lirico dalla prima acquisizione, su allowlist negativa **esatta** per sito (regolamenti, danza, concerti e pagine informative). Nessuna esclusione generalizzata di titoli nuovi.
+- `needs_review`: nuovi link potenzialmente pertinenti, che **non diventano automaticamente opere o recite pubbliche**. Occorre verificarne genere, compositore, calendario ufficiale, teatro e descrizione originale breve.
+
+La classificazione del registro persistente viene aggiornata anche per gli elementi storici; rimangono ID stabili, `first_seen` e `last_seen`, senza cancellazioni. Una voce già risolta editorialmente con stato diverso dai tre stati automatici non viene riaperta. Il filtro dei nuovi link impedisce di creare candidate per pagine di servizio note senza sovrastimare la copertura.
+
+Collaudi: `python -m unittest discover -s tests -v` (test dei link esclusi, controllo URL canonici e preservazione delle candidate); verifica successiva di `data/season-index-candidates.json` e `data/season-index-health.json` dal job giornaliero. Le nuove recite e le schede opera complete di sinossi sono un successivo passaggio di acquisizione dopo verifica delle pagine puntuali. Non modificare `jeckodevsite` per questi JSON.
