@@ -230,6 +230,25 @@ def make_history(identity:dict, article_text:str, *,api_key:str,
             "sources":[identity["authority_url"],identity["wikipedia_url"]]}
 
 
+def preverified_work_material() -> dict[str, dict]:
+    """Already-sourced original synopses and histories, outside canonical works.
+
+    This reusable path performs no LLM calls and does not relax the composer
+    check: Wikidata and the official theatre page still establish identity.
+    """
+    from scripts.publish_work_editorial import EDITORIAL,HISTORY,validate_history
+    synopses=json.loads(EDITORIAL.read_text(encoding="utf-8"))
+    histories=json.loads(HISTORY.read_text(encoding="utf-8"))
+    if synopses.get("schema_version")!=1 or histories.get("schema_version")!=1:
+        raise ValueError("invalid preverified material")
+    result={}
+    for slug,summary in synopses["synopses"].items():
+        record=histories["works"].get(slug)
+        if (isinstance(summary,str) and 45<=len(summary.strip())<=300
+                and validate_history(record)):
+            result[slug]={"synopsis":summary.strip(),"history":record}
+    return result
+
 def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
                       *,today:date)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
@@ -257,23 +276,35 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
 
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
-             generate=make_synopsis,generate_history=make_history,api_key:str=""):
+             generate=make_synopsis,generate_history=make_history,api_key:str="",
+             allow_authority:bool=False,prepared:dict|None=None):
     existing_works={x["candidate_id"]:x.copy() for x in existing.get("works",[])}
+    prepared=preverified_work_material() if prepared is None else prepared
     statuses=[]
-    for item in choose_candidates(candidates,existing,known_slugs,today=today):
+    options=choose_candidates(candidates,existing,known_slugs,today=today)
+    # Move ready-made, sourced work cards to the front while retaining the
+    # normal fair rotation for all remaining unseen operas.
+    options.sort(key=lambda x:slugify(official_title_hint(x)) not in prepared)
+    for item in options:
         cid=item["id"]
-        if not api_key:
+        slug=slugify(official_title_hint(item))
+        material=prepared.get(slug)
+        if not api_key and not (allow_authority and material):
             statuses.append({"candidate_id":cid,"status":"model_not_configured"})
             continue
         try:
             identity=resolve(official_title_hint(item))
             if identity is None:raise ValueError("authority_not_unique")
-            excerpt=extract(identity)
-            if not excerpt:raise ValueError("no_sufficient_plot_source")
-            summary=generate(identity,excerpt,api_key=api_key)
-            if not summary:raise ValueError("synopsis_not_supported")
-            history=generate_history(identity,excerpt,api_key=api_key)
-            if not history:raise ValueError("history_not_supported")
+            if material is not None:
+                summary=material["synopsis"]
+                history=material["history"]
+            else:
+                excerpt=extract(identity)
+                if not excerpt:raise ValueError("no_sufficient_plot_source")
+                summary=generate(identity,excerpt,api_key=api_key)
+                if not summary:raise ValueError("synopsis_not_supported")
+                history=generate_history(identity,excerpt,api_key=api_key)
+                if not history:raise ValueError("history_not_supported")
             existing_works[cid]={
                 "candidate_id":cid,"source_key":item["source_key"],
                 "source_url":item["official_url"],
@@ -300,7 +331,8 @@ def main():
         "schema_version":1,"works":[]}
     api_key=os.environ.get("ATLAS_OPENAI_API_KEY","") if args.allow_network else ""
     result,statuses=research(candidates,previous,{x["slug"] for x in known["works"].values()},
-                             today=date.today(),api_key=api_key)
+                             today=date.today(),api_key=api_key,
+                             allow_authority=args.allow_network)
     _write_atomic(OUT,result)
     _write_atomic(HEALTH,{"schema_version":1,"checked_at":datetime.now(timezone.utc).isoformat(
         timespec="seconds"),"outcomes":statuses})
