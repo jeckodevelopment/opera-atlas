@@ -203,3 +203,7 @@
 .theatre-location p{font-size:14px;margin:0 0 14px;color:var(--ink)}
 .theatre-location a{display:inline-flex;color:#796025;font-size:13px;font-weight:650;text-decoration:underline}
 .image-placeholder{background:linear-gradient(145deg,#e9e1d2,#c9b994);min-height:110px;}
+
+/* Brief editorial introductions in visual catalogs. */
+.directory-card .directory-description{font-size:13px;line-height:1.55;color:#48443e;padding:10px 17px 4px;margin:0;flex:1;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+@media(max-width:700px){.directory-card .directory-description{padding:8px 11px 3px;font-size:12px;-webkit-line-clamp:4}}
