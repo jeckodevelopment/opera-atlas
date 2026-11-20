@@ -31,20 +31,28 @@ function safeSource(url) {
     return u.protocol==="https:" ? u.href : null;
   } catch { return null; }
 }
-function sourceLinks(parent, events) {
-  const list=node("ul","source-links");
-  for (const url of new Set(events.flatMap(e=>e.sources||[]))) {
-    const href=safeSource(url);
-    if (!href) continue;
-    const li=node("li");
-    const a=node("a",null,"Fonte ufficiale");
-    a.href=href;
-    a.rel="noopener noreferrer";
-    a.target="_blank";
-    li.append(a);
-    list.append(li);
+function sourceLinks(events) {
+  const urls=new Map();
+  for(const event of events){
+    for(const url of event.sources||[]){
+      const href=safeSource(url);
+      if(!href||urls.has(href))continue;
+      urls.set(href,event.venue+" · "+event.municipality);
+    }
   }
-  parent.append(list);
+  if(!urls.size)return;
+  const panel=node("section","official-links");
+  panel.append(node("h2",null,"Programma e biglietti"));
+  panel.append(node("p",null,"Per scegliere i posti e conoscere le condizioni di acquisto, consulta il sito del teatro."));
+  const list=node("ul","official-link-list");
+  for(const [href,venue] of urls){
+    const li=node("li");
+    const a=node("a",null,urls.size===1?"Vai al sito del teatro":"Vai al sito · "+venue);
+    a.href=href;a.target="_blank";a.rel="noopener noreferrer";
+    li.append(a);list.append(li);
+  }
+  panel.append(list);
+  results.after(panel);
 }
 function link(text, url, css="detail-link") {
   const a=node("a",css,text);
@@ -93,8 +101,6 @@ function replicaLine(e) {
   row.append(node("strong",null,dateLabel(e.local_date)));
   row.append(node("span","time"+(e.time_known?"":" unknown"),
     e.time_known ? "Ore "+e.starts_at.slice(11,16) : "Orario da confermare"));
-  const sources=(e.sources||[]).map(safeSource).filter(Boolean);
-  if(sources.length){const a=link("Programma e biglietti sul sito ufficiale",sources[0]);a.target="_blank";a.rel="noopener noreferrer";row.append(a);}
   return row;
 }
 function stagingGroup(events, owner) {
@@ -105,7 +111,7 @@ function stagingGroup(events, owner) {
     ? first.venue+" · "+first.municipality
     : first.title, window.OperaAtlasCatalog.urls(first).staging,""));
   section.append(heading);
-  section.append(node("p",null,events.length+" repliche in catalogo"));
+  section.append(node("p",null,events.length+" date"));
   const calendar=node("div","staging-repliche");
   for (const e of events.filter(x=>x.local_date>=todayInItaly()).slice(0,24)) {
     calendar.append(node("span","replica-chip",dateLabel(e.local_date)+
@@ -114,7 +120,6 @@ function stagingGroup(events, owner) {
   if(events.length>24)calendar.append(node("span","replica-chip","Consulta tutte le date nel dettaglio"));
   section.append(calendar);
   section.append(link("Apri la messa in scena",window.OperaAtlasCatalog.urls(first).staging));
-  sourceLinks(section,events);
   results.append(section);
 }
 function todayInItaly(){
@@ -157,9 +162,7 @@ function resolve(events) {
 async function initialize() {
   try {
     const data=await window.OperaAtlasCatalog.load();
-    if(data.warning)status.textContent=data.warning;
-    else if(data.reviewed_on)
-      status.textContent="Dati verificati il "+data.reviewed_on.split("-").reverse().join("/");
+    if(data.warning)status.textContent="Alcuni aggiornamenti non sono momentaneamente disponibili.";
     const events=data.performances.filter(validEvent);
     const selected=resolve(events);
     if(!selected.kind || !selected.events.length) {
@@ -168,7 +171,6 @@ async function initialize() {
     }
     const first=selected.events[0];
     const future=selected.events.filter(e=>e.local_date>=todayInItaly());
-    results.before(node("p","search-note","Le date future sono mostrate per prime. Gli eventi conclusi restano nello storico del catalogo."));
     if(selected.kind==="work") {
       kind.textContent="Opera del repertorio";
       title.textContent=first.title;
@@ -179,7 +181,7 @@ async function initialize() {
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche censite in Italia"));
       content.append(node("p",null,
-        "Tutte le programmazioni di quest’opera presenti nel catalogo, raggruppate per teatro."));
+        "Le prossime rappresentazioni nei teatri italiani."));
       for(const group of grouping(future))stagingGroup(group,"work");
       if(!future.length)results.append(node("p","empty","Non risultano prossime rappresentazioni verificate di questa opera nel catalogo Atlas."));
     }else if(selected.kind==="venue") {
@@ -217,7 +219,9 @@ async function initialize() {
         results.append(replicaLine(e));
       if(!future.length)results.append(node("p","empty","Questa produzione non ha date future censite."));
     }
-    sourceLinks(content,selected.events);
+    const photo=selected.kind==="venue"?window.OperaAtlasImages.venue(first):window.OperaAtlasImages.work(first);
+    content.prepend(window.OperaAtlasImages.element(photo,"detail-image"));
+    sourceLinks(selected.events);
     document.title=title.textContent+" — Opera+ Atlas";
     // Canonicalize old query-based links after resolution; never change identity.
     if(pathnameIsLegacy()) {
