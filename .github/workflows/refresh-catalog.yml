@@ -11,6 +11,8 @@ on:
       - 'data/daily-source-config.json'
       - 'data/verified-time-evidence.json'
       - 'scripts/daily_ingest.py'
+      - 'scripts/source_coverage.py'
+      - 'tests/test_source_coverage.py'
       - 'scripts/build_verified_catalog.py'
       - 'scripts/publish_catalog_v2.py'
       - 'scripts/source_coverage.py'

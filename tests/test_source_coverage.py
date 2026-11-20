@@ -28,7 +28,14 @@ class CoverageTests(unittest.TestCase):
         by={s["source_key"]:s for s in report["sources"]}
         for key in ("teatro-alla-scala","teatro-la-fenice",
                     "fondazione-arena-verona","teatro-regio-parma","teatro-massimo-palermo"):
-            self.assertIn(by[key]["monitoring"],("editorial_only","configured_not_verified"))
+            if key in ("teatro-alla-scala","fondazione-arena-verona"):
+                self.assertIn(by[key]["monitoring"],(
+                    "editorial_only","configured_not_verified","detail_pages_verified"
+                ))
+            else:
+                self.assertIn(by[key]["monitoring"],(
+                    "editorial_only","configured_not_verified"
+                ))
             self.assertGreater(by[key]["verified_recite"],0)
         self.assertEqual(by["rossini-opera-festival"]["monitoring"],"not_started")
         self.assertGreaterEqual(by["opera-lombardia"]["scheduled_pages"],7)
