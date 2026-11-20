@@ -87,10 +87,6 @@
 .calendar-cell strong{display:block;font-size:13px;margin-bottom:6px}
 .calendar-event{display:block;border-radius:6px;margin:4px 0;padding:7px;background:#f3eddf;color:#5d461d;text-decoration:none;font-size:11px;line-height:1.4;overflow-wrap:anywhere}
 .calendar-event:hover{background:#e7d6b7}
-.atlas-map{background:linear-gradient(160deg,#faf9f5,#edeae2);border:1px solid var(--line);border-radius:12px;min-height:250px;padding:12px}
-.atlas-map svg{width:100%;max-height:600px;display:block}
-.atlas-map svg a{cursor:pointer}
-.atlas-map svg a:hover circle{fill:#171717}
 .directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 50px}
 .directory-card{border:1px solid var(--line);padding:20px;border-radius:12px;background:#fff;display:flex;flex-direction:column;gap:9px;min-width:0}
 .directory-card h2{font:500 22px Georgia,serif;margin:0}
@@ -375,14 +371,4 @@
   .theatre-location{padding:13px 15px}
 }
 
-/* Map result view: responsive markers, clear empty state and readable venue controls. */
-.atlas-map{min-height:210px;padding:16px;overflow:hidden}
-.atlas-map svg{display:block;width:100%;height:auto;max-height:560px;min-height:210px}
-.atlas-map svg a{cursor:pointer;outline:none}
-.atlas-map svg a:hover circle:first-child,.atlas-map svg a:focus circle:first-child{fill:#89651b;stroke:#1d2931;stroke-width:4}
-.atlas-map svg a:focus-visible{text-decoration:underline}
-.map-caption{font-size:12px;line-height:1.5;color:#606a6c;margin:13px 0 0}
-.map-empty{display:flex;flex-direction:column;gap:8px;margin:0;min-height:150px;align-items:flex-start;justify-content:center;line-height:1.65;color:#515c62}
-.map-empty strong{font-size:15px;color:#2c3437}
-#map-venues{margin:15px 0 22px}
 @media(max-width:700px){.atlas-map{padding:10px}.atlas-map svg{min-height:180px}.map-caption{font-size:11px}}

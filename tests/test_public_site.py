@@ -41,9 +41,11 @@ class PublicCatalogTests(unittest.TestCase):
         self.assertTrue({
             "search", "city", "region", "from", "to", "time-filter",
             "location", "radius", "period", "sort", "spettacoli", "opere", "teatri", "festival",
-            "calendar-view", "map-view", "discover-works", "discover-venues",
+            "calendar-view", "discover-works", "discover-venues",
             "events", "count", "message", "reset", "previous", "next",
         }.issubset(parser.ids))
+        self.assertNotIn("map-view", parser.ids)
+        self.assertNotIn("atlas-map", parser.ids)
         self.assertGreaterEqual(parser.labels, 10)
         self.assertIn("./styles.css", parser.links)
         self.assertIn("./app.js", parser.scripts)

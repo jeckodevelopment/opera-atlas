@@ -56,7 +56,7 @@ function normalized(value) {
 }
 
 // Approximate municipal centers, not theatre geocodes. Values used solely for
-// indicative straight-line city distance and the diagram map.
+// Indicative straight-line distance between cities for geographic filters.
 const CITY_CENTERS = Object.freeze({
   "torino":[45.0703,7.6869],"milano":[45.4642,9.1900],"como":[45.8081,9.0852],
   "pavia":[45.1847,9.1582],"brescia":[45.5416,10.2118],"cremona":[45.1332,10.0227],
@@ -332,98 +332,17 @@ function calendarMonth(events) {
   }
   panel.append(grid);
 }
-function renderMap(events) {
-  const holder=document.getElementById("atlas-map");
-  const venueLinks=document.getElementById("map-venues");
-  holder.replaceChildren();venueLinks.replaceChildren();
-  const byVenue=new Map();
-  for(const event of events) {
-    const url=window.OperaAtlasCatalog.urls(event).venue;
-    if(!byVenue.has(url))byVenue.set(url,{event,count:0});
-    byVenue.get(url).count++;
-  }
-  const locations=[...byVenue.values()].map(({event,count})=>({
-    event,count,coord:CITY_CENTERS[normalized(event.municipality)]
-  })).filter(item=>Array.isArray(item.coord));
-  if(!locations.length){
-    const empty=node("p","map-empty");
-    empty.append(node("strong",null,events.length
-      ?"Non sono disponibili coordinate per le sedi filtrate."
-      :"Nessun teatro corrisponde ai filtri attuali."));
-    empty.append(node("span",null,
-      " Per esplorare altre sedi, amplia il periodo oppure seleziona «Tutta Italia» nei filtri."));
-    holder.append(empty);
-    return;
-  }
-  const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
-  svg.setAttribute("role","group");
-  svg.setAttribute("aria-label","Posizione indicativa dei teatri nei risultati. Seleziona un punto o un collegamento sotto la mappa.");
-  const addSvg=(tag,attrs,parent=svg)=>{
-    const n=document.createElementNS("http://www.w3.org/2000/svg",tag);
-    for(const [key,value] of Object.entries(attrs))n.setAttribute(key,String(value));
-    parent.append(n);return n;
-  };
-  const projected=locations.map(item=>({
-    ...item,
-    x:(item.coord[1]-6)*51+65,
-    y:(47-item.coord[0])*54+35
-  }));
-  const minX=Math.min(...projected.map(v=>v.x)),maxX=Math.max(...projected.map(v=>v.x));
-  const minY=Math.min(...projected.map(v=>v.y)),maxY=Math.max(...projected.map(v=>v.y));
-  // Zoom to *visible* venues, avoiding a near-empty Italy-wide plate for one city.
-  // Wide enough for readable labels and marker hit areas, including one location.
-  const width=Math.max(300,maxX-minX+160),height=Math.max(185,maxY-minY+110);
-  const midX=(minX+maxX)/2,midY=(minY+maxY)/2;
-  svg.setAttribute("viewBox",[midX-width/2,midY-height/2,width,height].join(" "));
-  svg.setAttribute("preserveAspectRatio","xMidYMid meet");
-  // Light geographical reference grid; schematic, not navigational cartography.
-  const left=midX-width/2,top=midY-height/2;
-  for(let i=0;i<Math.ceil(width/85)+1;i++){
-    const x=Math.floor(left/85)*85+i*85;
-    addSvg("line",{x1:x,y1:top,x2:x,y2:top+height,stroke:"#e7e2d8","stroke-width":1});
-  }
-  for(let i=0;i<Math.ceil(height/85)+1;i++){
-    const y=Math.floor(top/85)*85+i*85;
-    addSvg("line",{x1:left,y1:y,x2:left+width,y2:y,stroke:"#e7e2d8","stroke-width":1});
-  }
-  const collisions=new Map();
-  for(const place of projected){
-    const url=window.OperaAtlasCatalog.urls(place.event).venue;
-    const key=place.coord.join(",");
-    const ordinal=collisions.get(key)||0;
-    collisions.set(key,ordinal+1);
-    const x=place.x+ordinal*18,y=place.y+ordinal*20;
-    const anchor=addSvg("a",{href:url,"aria-label":place.event.venue+" a "+place.event.municipality+
-      ", "+place.count+" rappresentazioni; apri la scheda del teatro"});
-    addSvg("circle",{cx:x,cy:y,r:15,fill:"#b58b24",stroke:"#fff","stroke-width":3},anchor);
-    addSvg("circle",{cx:x,cy:y,r:6,fill:"#262018"},anchor);
-    addSvg("text",{x:x+21,y:y+5,"font-size":13,fill:"#24292b","font-weight":600},anchor)
-      .textContent=place.event.municipality;
-    addSvg("title",{},anchor).textContent=place.event.venue+" · "+place.count+" rappresentazioni";
-    const link=node("a","discovery-link",place.event.venue+" · "+
-      place.event.municipality+" ("+place.count+" recite)");
-    link.href=url;venueLinks.append(link);
-  }
-  holder.append(svg);
-  const caption=node("p","map-caption",locations.length+" "+
-    (locations.length===1?"teatro localizzato":"teatri localizzati")+
-    " nei risultati filtrati. Posizioni indicative per città; seleziona un punto o un teatro per i dettagli.");
-  holder.append(caption);
-}
-
 function render() {
   const filtered=orderedEvents();
   const entries=viewMode==="staging"?groupByStaging(filtered):filtered;
   const pages=Math.ceil(entries.length/PAGE_SIZE);
   page=Math.max(0,Math.min(page,Math.max(0,pages-1)));
   list.replaceChildren();
-  const isCalendar=viewMode==="calendar",isMap=viewMode==="map";
-  list.hidden=isCalendar||isMap;
+  const isCalendar=viewMode==="calendar";
+  list.hidden=isCalendar;
   document.getElementById("calendar-view").hidden=!isCalendar;
-  document.getElementById("map-view").hidden=!isMap;
-  pager.hidden=isCalendar||isMap||pages<=1;
+  pager.hidden=isCalendar||pages<=1;
   if(isCalendar)calendarMonth(filtered);
-  else if(isMap)renderMap(filtered);
   else{
     const visible=entries.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
     if(viewMode==="staging")visible.forEach(group=>list.append(createStagingCard(group)));

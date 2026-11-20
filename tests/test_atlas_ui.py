@@ -30,15 +30,23 @@ class AtlasInterfaceTests(unittest.TestCase):
         dom = Dom()
         dom.feed((SITE / "index.html").read_text(encoding="utf-8"))
         for field in ("location", "radius", "period", "sort", "advanced-filters",
-                      "calendar-view", "map-view", "atlas-map", "discover-festivals"):
+                      "calendar-view", "discover-festivals"):
             self.assertIn(field, dom.ids)
         script = (SITE / "app.js").read_text(encoding="utf-8")
-        for feature in ("haversine(", "groupByStaging(", "calendarMonth(", "renderMap(",
+        for feature in ("haversine(", "groupByStaging(", "calendarMonth(",
                         "renderFestivals(", "syncPeriod(", "todayInItaly("):
             self.assertIn(feature, script)
         self.assertIn('let viewMode = "staging"', script)
         self.assertIn('controls.period.value="30"', script)
         self.assertIn('controls.radius.value="100"', script)
+        markup = (SITE / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn('data-catalog-view="map"',markup)
+        self.assertNotIn('id="map-view"',markup)
+        self.assertNotIn('id="atlas-map"',markup)
+        self.assertNotIn("function renderMap(",script)
+        self.assertNotIn('getElementById("map-view")',script)
+        self.assertIn('data-catalog-view="staging"',markup)
+        self.assertIn('data-catalog-view="calendar"',markup)
 
     def test_shared_navigation_and_assets(self):
         for name in ("index.html", "detail.html", "directory.html"):
