@@ -3,7 +3,7 @@ import copy
 import json
 import unittest
 from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
-from scripts.discover_season_indexes import CONFIG,extract,scan
+from scripts.discover_season_indexes import CONFIG,extract,scan,classify,eligible,reviewed_source_urls
 
 class NationalIndexTests(unittest.TestCase):
     @classmethod
@@ -54,12 +54,56 @@ class NationalIndexTests(unittest.TestCase):
         first,status=scan(self.config,empty,fetcher=fake,network_enabled=True,
                           now="2026-11-20T20:00:00+00:00")
         self.assertEqual(len(first["candidates"]),7)
-        self.assertTrue(all(x["status"]=="needs_review" for x in first["candidates"]))
+        self.assertEqual(len([x for x in first["candidates"] if x["status"]=="needs_review"]),2)
+        self.assertEqual(len([x for x in first["candidates"] if x["status"]=="already_catalogued"]),5)
         self.assertTrue(all("date" not in x and "composer" not in x for x in first["candidates"]))
         second,_=scan(self.config,first,fetcher=fake,network_enabled=True,
                        now="2026-11-20T20:00:00+00:00")
         self.assertEqual(second,first)
         self.assertTrue(all(x["status"]=="success" for x in status))
+    def test_first_live_scan_support_pages_are_not_opera(self):
+        for suffix in ("regolamento","preparati-allopera",
+                       "spettacoli-prossima-stagione","roberto-bolle-friends",
+                       "carmina-burana","artisti","viva-vivaldi"):
+            url="https://www.arena.it/arena-opera-festival/"+suffix+"/"
+            self.assertFalse(eligible("arena-festival-2027",url),url)
+            self.assertEqual(classify("arena-festival-2027",url,set()),
+                             "excluded_nonopera")
+        for slug in ("piccolo-orso-e-la-montagna-di-ghiaccio",
+                     "percorsi-della-danza-cinema-e-danza-il-musical",
+                     "concertoriccardofrizzasinopoliperosi"):
+            url="https://www.teatrolafenice.it/event/"+slug+"/"
+            self.assertFalse(eligible("fenice-opera-2026-27",url))
+            self.assertEqual(classify("fenice-opera-2026-27",url,set()),
+                             "excluded_nonopera")
+
+    def test_verified_production_is_not_a_new_candidate(self):
+        known=reviewed_source_urls()
+        url="https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+        self.assertIn(url,known)
+        self.assertEqual(classify("scala-season-2026-27",url,known),
+                         "already_catalogued")
+        unknown="https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+        self.assertEqual(classify("scala-season-2026-27",unknown,known),
+                         "needs_review")
+
+    def test_historical_live_links_are_classified_without_deletion(self):
+        existing={"schema_version":1,"candidates":[
+            {"id":"old-arena","source_key":"arena-festival-2027",
+             "official_url":"https://www.arena.it/arena-opera-festival/regolamento/",
+             "status":"needs_review","first_seen":"old","last_seen":"old"},
+            {"id":"old-scala","source_key":"scala-season-2026-27",
+             "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+             "status":"needs_review","first_seen":"old","last_seen":"old"}
+        ]}
+        config=copy.deepcopy(self.config)
+        for item in config["sources"]:
+            item["access_status"]="blocked"
+        out,_=scan(config,existing,network_enabled=False,now="2026-11-20T21:00:00+00:00")
+        self.assertEqual({x["id"]:x["status"] for x in out["candidates"]},
+                         {"old-arena":"excluded_nonopera","old-scala":"already_catalogued"})
+        self.assertTrue(all(x["first_seen"]=="old" for x in out["candidates"]))
+
     def test_access_and_robots_failure_preserve_last_good(self):
         source=copy.deepcopy(self.config)
         source["sources"][0]["access_status"]="blocked"

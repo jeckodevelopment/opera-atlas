@@ -17,6 +17,41 @@ from opera_atlas.db import connect,migrate
 from scripts.daily_ingest import _write_atomic
 from scripts.publish_catalog_v2 import ROOT
 
+# Explicitly reviewed non-operatic/utility links encountered in the first
+# successful live scan. Future unknown URLs remain candidates for review.
+# A URL is never considered an opera merely because it shares a URL prefix.
+EXCLUDED_PATHS={
+    "arena-festival-2027": frozenset({
+        "regolamento", "preparati-allopera", "spettacoli-prossima-stagione",
+        "roberto-bolle-friends", "carmina-burana", "kaufmann",
+        "paganini-paradise", "domande-frequenti", "artisti",
+        "viva-vivaldi",
+    }),
+    "fenice-opera-2026-27": frozenset({
+        "piccolo-orso-e-la-montagna-di-ghiaccio",
+        "zsigmond-gerloczy",
+        "percorsi-della-danza-cinema-e-danza-il-musical",
+        "concertoriccardofrizzasinopoliperosi",
+    }),
+}
+
+def excluded_nonopera(key:str,url:str)->bool:
+    return urlsplit(url).path.rstrip("/").split("/")[-1] in EXCLUDED_PATHS.get(key,frozenset())
+
+def reviewed_source_urls()->set[str]:
+    # Catalog identity comes from verified official production entries, not
+    # slug matching, so a similarly named new staging stays in review.
+    from scripts.build_verified_catalog import MANIFEST
+    document=json.loads(MANIFEST.read_text(encoding="utf-8"))
+    return {row["source_url"] for row in document["productions"]}
+
+def classify(key:str,url:str,reviewed:set[str])->str:
+    if excluded_nonopera(key,url):
+        return "excluded_nonopera"
+    if url in reviewed:
+        return "already_catalogued"
+    return "needs_review"
+
 CONFIG=ROOT/"data"/"season-index-config.json"
 OUTPUT=ROOT/"data"/"season-index-candidates.json"
 PUBLIC=ROOT/"public"/"catalog"/"season-index-candidates.json"
@@ -33,6 +68,8 @@ class AnchorParser(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     path=urlsplit(url).path.lower().rstrip("/")
+    if excluded_nonopera(key,url):
+        return False
     if key=="scala-season-2026-27":
         return path.startswith("/it/stagione/2026-2027/opera/") and path.endswith(".html")
     if key=="arena-festival-2027":
@@ -97,6 +134,12 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
     if existing.get("schema_version")!=1 or not isinstance(existing.get("candidates"),list):
         raise ValueError("invalid index candidate registry")
     seen={x["id"]:x.copy() for x in existing["candidates"]}
+    reviewed=reviewed_source_urls()
+    # Reconcile the historical 45 raw links from the first successful live
+    # scan, keeping the audit trail rather than silently deleting entries.
+    for candidate in seen.values():
+        if candidate.get("status") in ("needs_review","excluded_nonopera","already_catalogued"):
+            candidate["status"]=classify(candidate["source_key"],candidate["official_url"],reviewed)
     statuses=[]
     timestamp=now or datetime.now(timezone.utc).isoformat(timespec="seconds")
     db=connect()
@@ -120,11 +163,14 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 uid="oa-index-"+hashlib.sha256((item["key"]+"|"+url).encode()).hexdigest()[:20]
                 if uid not in seen:
                     seen[uid]={"id":uid,"source_key":item["key"],
-                               "official_url":url,"status":"needs_review",
+                               "official_url":url,"status":classify(item["key"],url,reviewed),
                                "first_seen":timestamp,"last_seen":timestamp}
                 elif seen[uid]["status"]=="needs_review":
                     seen[uid]["last_seen"]=timestamp
-            statuses.append({"key":item["key"],"status":"success","links":len(urls)})
+            statuses.append({"key":item["key"],"status":"success","links":len(urls),
+                             "new_review_candidates":sum(
+                                 x["source_key"]==item["key"] and x["status"]=="needs_review"
+                                 for x in seen.values())})
     finally:
         db.close()
     return {"schema_version":1,"candidates":sorted(seen.values(),key=lambda x:x["id"])},statuses
