@@ -96,3 +96,17 @@ python -m unittest discover -s tests -v
 Non è una scansione automatica, non cambia lo stato delle fonti nel database SQLite e non dimostra la copertura nazionale. Conservare la provenienza e aggiornare le date solo dopo nuova verifica ufficiale; non ripubblicare dati obsoleti in automatico.
 
 Il frontend adotta una **prima identità grafica Opera Atlas**, ispirata a Opera+ Funding senza riprenderne logo o marchio: palette avorio/bianco con accenti oro, titoli serif, controlli compatti, metriche sintetiche e schede orizzontali con data laterale. Il marchio è per ora testuale, predisposto per un futuro logo specifico.
+
+## Architettura durevole catalogo v2 — ID e dati indipendenti dal frontend
+
+La fonte canonica è `data/verified-launch-catalog.json` con registro di identità permanente `data/identity-registry.json`. Il modulo `scripts.publish_catalog_v2` genera quattro insiemi JSON separati (`works`, `venues`, `stagings`, `performances`) sotto `public/catalog/v2/data/`. Ogni file ha un nome legato al digest SHA-256; il puntatore pubblico `public/catalog/v2/manifest.json` è scritto **dopo** i dati. Un aggiornamento non può cambiare un ID senza revisione: anche un cambio di data non provoca una nuova identità automatica.
+
+Il frontend ha una libreria condivisa `site/catalog-client.js`: consulta direttamente l'endpoint statico GitHub `https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/manifest.json`, verifica i digest dei file, ricompone le entità e conserva un fallback dell'ultima versione SFTP con avviso di dati non verificati in quel momento. I cambi di catalogo **non richiedono SFTP**. L'aggiornamento dei file web continua a usare il publisher dedicato in `jeckodevsite` solo quando cambia l'interfaccia.
+
+```sh
+python -m unittest discover -s tests -v
+python -m scripts.publish_catalog_v2
+python -m scripts.publish_catalog_v2 --check
+```
+
+Il workflow `refresh-catalog.yml` in **opera-atlas** esegue validazione e rigenerazione **quotidianamente alle 07:17 UTC** (e a fronte di modifiche del manifesto o del codice). Esegue commit solo se il contenuto approvato cambia, preservando la versione precedente e minimizzando il consumo di Actions. **Attenzione: non significa ancora scansione live automatica delle fonti**. Tutte le otto fonti registrate restano da verificare/autorizzare per una raccolta schedulata. Il job quotidiano oggi valida, pubblica e mantiene accessibili le osservazioni già approvate. Gli eventuali parser futuri dovranno inserirsi nella pipeline soltanto dopo approvazione della fonte e controllo di robots/termini, senza cancellazioni per errori di fetch. Nessun database cloud o backend è richiesto. Dettagli in [ARCHITECTURE](docs/ARCHITECTURE.md).
