@@ -44,7 +44,7 @@ Gli URL non validi o senza corrispondenza hanno uno stato vuoto comprensibile. �
 
 ## Distribuzione autonoma su opera.plus/atlas/
 
-La destinazione canonica del frontend è **https://opera.plus/atlas/**. Il publisher risiede esclusivamente in `jeckodevelopment/opera-atlas`: `.github/workflows/deploy-atlas.yml` e `scripts/deploy_atlas.py`. Nessuna richiesta di pubblicazione è più necessaria in `jeckodevsite`. Si usa un account SFTP del nuovo hosting con chiave host fissata in un secret dedicato, una allowlist di file statici, upload verificato su area temporanea, cambio di directory, collaudo HTTPS degli asset e delle rewrite e ripristino del rilascio precedente in caso di errore. Il percorso remoto è sempre una **cartella specifica terminante in /atlas**, non la document root dell'intero dominio.
+La destinazione canonica del frontend è **https://opera.plus/atlas/**. Il publisher risiede esclusivamente in `jeckodevelopment/opera-atlas`: `.github/workflows/deploy-atlas.yml` e `scripts/deploy_atlas.py`. Nessuna richiesta di pubblicazione è più necessaria in `jeckodevsite`. Si usa un account FTPS esplicito del nuovo hosting, con verifica TLS del certificato, una allowlist di file statici, upload verificato su area temporanea, cambio di directory, collaudo HTTPS degli asset e delle rewrite e ripristino del rilascio precedente in caso di errore. Il percorso remoto è sempre una **cartella specifica terminante in /atlas**, non la document root dell'intero dominio.
 
 Per il primo rilascio utilizzare l'avvio manuale: l'automazione dopo merge resta sospesa finché non si configura `ATLAS_DEPLOY_ENABLED=true`. Vedere [DEPLOY_OPERA_PLUS](DEPLOY_OPERA_PLUS.md) per credenziali, preparazione webroot, controllo DNS/TLS, eventuale server senza mod_rewrite e strategia di taglio dal vecchio sito.
 
@@ -76,7 +76,7 @@ Il frontend consulta `raw.githubusercontent.com/jeckodevelopment/opera-atlas/mai
 
 Gli ID `oa-w-...`, `oa-v-...`, `oa-s-...`, `oa-r-...` sono registrati una volta in `data/identity-registry.json`. Gli slug `/opere/la-traviata/`, `/torino/teatro-regio/`, `/torino/teatro-regio/la-traviata/` sono identità editoriali separabili e richiedono la futura configurazione delle rewrite per il supporto HTTP diretto. La corrente interfaccia mantiene ancora `detail.html?type=...`, perciò non si dichiarano già pubblicati gli URL SEO.
 
-**Regola di pubblicazione:** modifiche a catalogo e schedule agiscono esclusivamente in `opera-atlas`. Un aggiornamento del feed non deve invocare SFTP; solo nuove versioni HTML/CSS/JS transitano dal workflow SFTP nativo `opera-atlas`. Il workflow quotidiano non esegue ancora fetch di siti con permessi non verificati. Prima di aggiungere nuovi eventi, occorre registrare ID permanenti e provenienza nell'archivio editoriale, verificare e pubblicare, senza sovrascrivere arbitrariamente i record precedenti.
+**Regola di pubblicazione:** modifiche a catalogo e schedule agiscono esclusivamente in `opera-atlas`. Un aggiornamento del feed non deve invocare SFTP; solo nuove versioni HTML/CSS/JS transitano dal workflow FTPS nativo `opera-atlas`. Il workflow quotidiano non esegue ancora fetch di siti con permessi non verificati. Prima di aggiungere nuovi eventi, occorre registrare ID permanenti e provenienza nell'archivio editoriale, verificare e pubblicare, senza sovrascrivere arbitrariamente i record precedenti.
 
 ### Collaudi da eseguire
 1. Validare `python -m scripts.publish_catalog_v2 --check` dopo generazione; controllare 2 opere, 5 teatri, 5 messe in scena, 19 repliche.
