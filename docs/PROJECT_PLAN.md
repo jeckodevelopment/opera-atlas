@@ -195,3 +195,7 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Entrambe le pagine Scala promosse a monitoraggio giornaliero, Arena già attiva; stesso perimetro URL e controllo robots a ogni richiesta.
 - [x] Allowlist cap 48 pagine e durata massima 25 minuti, evitando l'impossibilità di registrare altre produzioni.
 - [ ] Coprire le restanti programmazioni di tutti gli otto enti e ridurre progressivamente il numero di fetch mediante indici ufficiali validati.
+
+### F2 — chiusura regressione di coverage post-promozione
+- [x] Stati di copertura dei connettori aggiornati nei test: Scala/Arena possono essere `detail_pages_verified` quando confermate dalle scansioni, non le altre fonti ancora editoriali.
+- [x] Trigger della pipeline aggiornato per modifiche ai test/report di copertura, evitando stato di pubblicazione non verificato dopo migrazioni dei connettori.
