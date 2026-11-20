@@ -7,6 +7,27 @@ window.OperaAtlasCatalog = (() => {
   const BASE = "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/";
   const CHANNELS = ["works","venues","stagings","performances"];
 
+  const PREFIX = "/dev/opera-atlas";
+
+  function slugify(text) {
+    return String(text || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+      .toLocaleLowerCase("it").replace(/^l['’]/, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+
+  function urls(event) {
+    const city = event.city_slug || slugify(event.municipality);
+    const theatre = event.venue_slug || slugify(event.venue);
+    const work = event.work_slug || slugify(event.title);
+    const staging = event.staging_url || ("/" + city + "/" + theatre + "/" + work + "/");
+    return {
+      work: PREFIX + "/opere/" + work + "/",
+      venue: PREFIX + "/" + city + "/" + theatre + "/",
+      staging: PREFIX + staging,
+    };
+  }
+
+
   async function jsonFrom(url, digest) {
     const response = await fetch(url, {cache:"no-store"});
     if (!response.ok) throw new Error("Catalog HTTP " + response.status);
@@ -83,5 +104,5 @@ window.OperaAtlasCatalog = (() => {
       return {...snapshot,source:"fallback",warning:"Catalogo di riserva: l’aggiornamento remoto non è momentaneamente verificabile."};
     }
   }
-  return Object.freeze({load});
+  return Object.freeze({load, urls, slugify});
 })();
