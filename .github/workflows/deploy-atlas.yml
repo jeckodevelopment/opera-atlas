@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       ftp_host:
-        description: 'Optional explicit FTPS server hostname (leave blank to use existing ATLAS_SFTP_HOST secret)'
+        description: 'Optional FTP server hostname (leave blank to use existing ATLAS_SFTP_HOST secret)'
         required: false
         type: string
         default: ''
@@ -20,7 +20,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: opera-atlas-ftps-production
+  group: opera-atlas-ftp-production
   cancel-in-progress: false
 jobs:
   publish:
@@ -48,9 +48,9 @@ jobs:
           python -m scripts.publish_work_editorial --check
       - name: Publish owned /atlas folder and verify HTTPS (rollback on error)
         env:
-          ATLAS_FTPS_HOST: ${{ inputs.ftp_host || vars.ATLAS_FTPS_HOST || secrets.ATLAS_SFTP_HOST }}
-          ATLAS_FTPS_PORT: '21' # Explicit FTPS; legacy SFTP port 22 must not be reused
-          ATLAS_FTPS_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
-          ATLAS_FTPS_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
-          ATLAS_FTPS_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}
+          ATLAS_FTP_HOST: ${{ inputs.ftp_host || vars.ATLAS_FTPS_HOST || secrets.ATLAS_SFTP_HOST }}
+          ATLAS_FTP_PORT: '21' # Plain FTP; legacy SFTP port 22 must not be reused
+          ATLAS_FTP_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
+          ATLAS_FTP_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
+          ATLAS_FTP_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}
         run: timeout --signal=TERM --kill-after=90s 11m python -u scripts/deploy_atlas.py
