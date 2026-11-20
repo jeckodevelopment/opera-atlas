@@ -95,7 +95,7 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
         if len(year_hits)!=1:raise ValueError("Parma year ambiguous")
         year=next(iter(year_hits))
         # Restrict to the ticketing card list, excluding the footer.
-        segment=re.split(r"(?i)\\b(?:Tickets for|acquista 19|Cast)\\b",text,maxsplit=1)[0]
+        segment=re.split(r"(?i)\b(?:Tickets for|acquista 19|Cast)\b",text,maxsplit=1)[0]
         rx=re.compile(r"(?i)\b"+WEEKDAY+r"\s+(\d{1,2})\s+("+MONTH_RE+
                       r")\s+"+CLOCK+r"\b")
         matches=list(rx.finditer(segment))
