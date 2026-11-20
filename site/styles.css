@@ -300,7 +300,9 @@
 .work-overview-copy .brief-synopsis h2{font:500 26px/1.25 Georgia,serif;margin:0 0 15px}
 .work-overview-copy .brief-synopsis p{font-size:16px;line-height:1.85;max-width:68ch}
 .work-overview-copy .staging-summary{font-size:13px;color:#696560}
-.work-overview-figure{margin:0;min-width:0;display:flex;justify-content:center;align-items:flex-start}
+.work-overview-figure{margin:0;min-width:0;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:.55rem}
+.work-image-credit{font-size:.74rem;line-height:1.45;color:var(--muted,#746c61);text-align:center;max-width:355px}
+.work-image-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .work-cover-image{display:block;width:100%;max-width:355px;max-height:570px;aspect-ratio:3/4;object-fit:contain;object-position:center top;border-radius:9px;background:#f1ecdf;box-shadow:0 10px 30px #19191912}
 @media(max-width:700px){
   .work-overview{grid-template-columns:minmax(0,1fr);gap:24px}
