@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T22:59:26+00:00",
+  "checked_at": "2026-11-20T23:06:07+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
@@ -30,7 +30,7 @@
       "key": "massimo-season-2026-27",
       "status": "success",
       "links": 11,
-      "new_review_candidates": 23
+      "new_review_candidates": 22
     }
   ]
 }

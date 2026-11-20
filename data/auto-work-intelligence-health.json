@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T22:59:26+00:00",
+  "checked_at": "2026-11-20T23:06:07+00:00",
   "outcomes": [
-    {
-      "candidate_id": "oa-index-b372b317894fe260b18e",
-      "status": "model_not_configured"
-    },
     {
       "candidate_id": "oa-index-b4180540983902f703af",
       "status": "model_not_configured"
     },
     {
       "candidate_id": "oa-index-c8884398af891aeb2492",
+      "status": "model_not_configured"
+    },
+    {
+      "candidate_id": "oa-index-d30d8809ab9bf16b07b7",
       "status": "model_not_configured"
     }
   ]
