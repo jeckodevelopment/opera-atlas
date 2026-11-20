@@ -790,6 +790,101 @@
           "17:00"
         ]
       ]
+    },
+    {
+      "key": "lombardia-turandot-como",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "dates": [
+        [
+          "2026-09-24",
+          "20:00"
+        ],
+        [
+          "2026-09-26",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-death-venice-como",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "dates": [
+        [
+          "2026-10-09",
+          "20:00"
+        ],
+        [
+          "2026-10-11",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-cavalleria-como",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "dates": [
+        [
+          "2026-12-04",
+          "20:00"
+        ],
+        [
+          "2026-12-06",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-pagliacci-como",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "dates": [
+        [
+          "2026-12-04",
+          "20:00"
+        ],
+        [
+          "2026-12-06",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-ballo-como",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
+      "dates": [
+        [
+          "2027-01-15",
+          "20:00"
+        ],
+        [
+          "2027-01-17",
+          "15:30"
+        ]
+      ]
     }
   ]
 }
