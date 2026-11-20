@@ -30,6 +30,7 @@ on:
       - 'data/verified-time-evidence.json'
       - 'site/work-synopses.json'
       - 'site/work-history.json'
+      - 'data/archival-work-images.json'
       - 'scripts/publish_work_editorial.py'
       - 'tests/test_work_editorial_feed.py'
       - 'scripts/daily_ingest.py'

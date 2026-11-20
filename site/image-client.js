@@ -119,12 +119,14 @@ window.OperaAtlasImages=Object.freeze((()=>{
     const title=event?.title||"Opera";
     const slug=event?.work_slug||normalize(title);
     const chosen=posters[slug];
-    if(chosen && chosen.kind==="official_production_image" &&
+    if(chosen && (chosen.kind==="official_production_image" ||
+                  chosen.kind==="archival_work_image") &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
       return {src:chosen.image_url,
         alt:chosen.alt||"Immagine ufficiale della produzione di "+title,
         fallbackSrc:poster(title),
-        sourceUrl:chosen.source_url,credit:chosen.credit};
+        sourceUrl:chosen.source_url,credit:chosen.credit,
+        license:chosen.license||"",kind:chosen.kind};
     }
     const file=WORKS[slug];
     return file?photo(file,"Documento d’archivio legato a "+title+" (non allestimento in calendario)",title):
@@ -154,6 +156,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     picture.addEventListener("error",()=>{
       if(item.fallbackSrc && picture.src!==item.fallbackSrc)picture.src=item.fallbackSrc;
     },{once:true});
+    if(item.credit)picture.title=item.credit+(item.license?" · "+item.license:"");
     picture.src=item.src;
     return picture;
   }

@@ -205,6 +205,19 @@ function arrangeWorkOverview(event) {
   poster.className="work-cover-image";
   poster.loading="eager";
   figure.append(poster);
+  const imageInfo=window.OperaAtlasImages?.work?.(event);
+  if(imageInfo?.sourceUrl){
+    const caption=node("figcaption","work-image-credit");
+    const anchor=node("a",null,
+      imageInfo.kind==="archival_work_image"
+        ?"Immagine storica · fonte e licenza"
+        :"Immagine della produzione · fonte ufficiale");
+    anchor.href=imageInfo.sourceUrl;
+    anchor.target="_blank";
+    anchor.rel="noopener noreferrer";
+    caption.append(anchor);
+    figure.append(caption);
+  }
   layout.append(copy,figure);
   content.append(layout);
 }

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "works": {
+    "al-cavallino-bianco": {
+      "file": "Im weißen Rößl (Ralph Benatzky) - LABW - Generallandesarchiv Karlsruhe 57-3 Nr. 7798.jpg",
+      "description": "Fotografia d'archivio legata all'operetta Al cavallino bianco, non allestimento in calendario",
+      "credit": "Landesarchiv Baden-Württemberg, Generallandesarchiv Karlsruhe 57-3 Nr. 7798 / Gerd Weiss",
+      "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/"
+    },
+    "il-pipistrello": {
+      "file": "Johann Strauss Operetta Fledermaus.png",
+      "description": "Copertina storica dell'operetta Il pipistrello, non allestimento in calendario",
+      "credit": "Archivio storico, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "partenope": {
+      "file": "Georg Friedrich Händel - Partenope - title page of the libretto - London 1730.png",
+      "description": "Frontespizio storico del libretto di Partenope di Händel, non allestimento in calendario",
+      "credit": "Libretto storico londinese del 1730, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "don-quichotte": {
+      "file": "Georges Rochegrosse's poster for Jules Massenet's Don Quichotte - original.jpg",
+      "description": "Manifesto storico di Don Quichotte di Jules Massenet, non allestimento in calendario",
+      "credit": "Georges-Antoine Rochegrosse, manifesto storico, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "norma": {
+      "file": "Bellin-Norma poster for 1831 premiere.jpg",
+      "description": "Manifesto storico della prima di Norma di Bellini, non allestimento in calendario",
+      "credit": "Manifesto storico della prima di Norma, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "nozze-istriane": {
+      "file": "Libretto Nozze Istriane 1908.jpg",
+      "description": "Copertina del libretto storico di Nozze istriane di Antonio Smareglia, non allestimento in calendario",
+      "credit": "Libretto storico del 1908, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "adriana-lecouvreur": {
+      "file": "Krushelnytska - Adriana.jpg",
+      "description": "Solomija Krušel'nyc'ka nel ruolo di Adriana Lecouvreur, fotografia storica e non locandina della produzione",
+      "credit": "Fotografia storica di Solomija Krušel'nyc'ka nel ruolo di Adriana Lecouvreur, Wikimedia Commons",
+      "license": "Public domain"
+    }
+  }
+}
