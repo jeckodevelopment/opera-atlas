@@ -18,13 +18,13 @@ class SourceRegistryTests(unittest.TestCase):
 
     def test_official_entries_pass_validation(self):
         rows = read_registry()
-        self.assertEqual(len(rows), 3)
+        self.assertEqual(len(rows), 8)
         self.assertTrue(all(x["access_status"] == "pending" for x in rows))
 
     def test_seed_is_idempotent_and_never_enables_crawling(self):
-        self.assertEqual(seed_sources(self.db), 3)
+        self.assertEqual(seed_sources(self.db), 8)
         self.assertEqual(seed_sources(self.db), 0)
-        self.assertEqual(self.db.execute("SELECT count(*) FROM sources").fetchone()[0], 3)
+        self.assertEqual(self.db.execute("SELECT count(*) FROM sources").fetchone()[0], 8)
         self.assertEqual(self.db.execute(
             "SELECT count(*) FROM sources WHERE access_status='approved'"
         ).fetchone()[0], 0)
