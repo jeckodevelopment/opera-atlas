@@ -114,6 +114,39 @@ class CandidateDetailTests(unittest.TestCase):
                 self.assertEqual(facts[0]["composer"],composer)
                 self.assertTrue(facts[0]["starts_at"].endswith(("+01:00","+02:00")))
 
+    def test_rotation_eventually_visits_every_candidate_even_at_budget_multiple(self):
+        rows=[]
+        for i in range(20):
+            rows.append({"id":f"unknown-{i:03d}","source_key":"scala-season-2026-27",
+                "official_url":f"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{i}.html",
+                "status":"needs_review"})
+        candidates={"schema_version":1,"candidates":rows}
+        observed=set()
+        for offset in range(30):
+            day=date.fromordinal(date(2026,11,20).toordinal()+offset)
+            observed.update(x["id"] for x in selected_candidates(candidates,today=day))
+        self.assertEqual(observed,{x["id"] for x in rows})
+
+    def test_reserved_slots_for_unknown_opera_with_large_known_work_queue(self):
+        rows=[]
+        for i in range(20):
+            rows.append({"id":f"known-{i:03d}","source_key":"scala-season-2026-27",
+                "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+                "status":"needs_review"})
+        for i in range(12):
+            rows.append({"id":f"unknown-{i:03d}","source_key":"scala-season-2026-27",
+                "official_url":f"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{i}.html",
+                "status":"needs_review"})
+        candidates={"schema_version":1,"candidates":rows}
+        seen=set()
+        for offset in range(30):
+            day=date.fromordinal(date(2026,11,20).toordinal()+offset)
+            chosen=selected_candidates(candidates,today=day)
+            self.assertEqual(len(chosen),10)
+            self.assertGreaterEqual(len([x for x in chosen if x["id"].startswith("unknown")]),4)
+            seen.update(x["id"] for x in chosen)
+        self.assertEqual(seen,{x["id"] for x in rows})
+
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[
             {"@type":"MusicEvent","name":"Anna Bolena",

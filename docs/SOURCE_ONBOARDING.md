@@ -243,3 +243,12 @@ Il sistema non si limita più ai collegamenti d'indice per queste tre fonti: `op
 Le pagine non pertinenti e quelle senza identificazione univoca di titolo e compositore non possono generare recite; il collector conserva sempre l'ultima evidenza valida in caso di assenza dati, errori di rete o pagine modificate. Le evidenze valide passano a `scripts.auto_catalogue`, che ora riconosce anche le sedi canoniche Venezia/Teatro La Fenice, Parma/Teatro Regio di Parma e Palermo/Teatro Massimo. Il relativo motore crea nuovi ID e pubblica i JSON automaticamente solo dopo il controllo dell'intero grafo.
 
 Test: `tests/test_national_detail_parser.py` (date, orari, prove, esclusioni, anno e composer) e `tests/test_candidate_detail_evidence.py`, oltre alla suite Python completa. La riuscita dei test con fixture non equivale al collaudo live: dopo merge occorre verificare `data/candidate-detail-health.json`, `data/autonomous-catalogue-health.json` e i contatori pubblici. Nessun workflow SFTP e nessun aggiornamento manuale dei JSON.
+
+
+## F2 — scansione equa: nessuna candidata trascurata indefinitamente
+
+La scansione giornaliera delle pagine di produzione e la ricerca automatica delle opere sconosciute utilizzano ora una **rotazione giornaliera di una posizione**, indipendente dalla dimensione della coda. La precedente rotazione con salto pari al budget (10 pagine o 3 ricerche) poteva riesaminare sempre lo stesso sottoinsieme quando il numero dei candidati era multiplo del budget. Si trattava di una fonte di mancato aggiornamento silenzioso incompatibile con l'obiettivo unattended.
+
+Il collector riserva fino a **quattro delle dieci scansioni** per opere non riconosciute, anche quando ci sono più di dieci produzioni già note. Le restanti richieste favoriscono le produzioni verificabili immediatamente, senza mai impedire la scoperta progressiva. Quando una delle due classi è vuota, la capacità passa all'altra. La ricerca di identità Wikidata/sinossi mantiene il limite di tre nuove opere per giorno, visitando a rotazione anche code con 3, 6, 9 o altri multipli. I test simulano 12–30 giorni di lavoro e verificano che tutti gli ID prima o poi siano considerati, senza nuove richieste al singolo sito oltre al budget quotidiano.
+
+Nessuna azione editoriale è richiesta come parte del normale ciclo di acquisizione. I record insufficienti restano protetti dal fail-closed, ma il lavoro di recupero procede autonomamente nelle esecuzioni successive.
