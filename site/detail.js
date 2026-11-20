@@ -110,7 +110,8 @@ async function appendSynopsis(event) {
     let doc=null;
     for(const url of [
       "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/work-editorial.json",
-      "./work-synopses.json"
+      "./work-synopses.json",
+      "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/work-synopses.json"
     ]){
       try{
         const response=await fetch(url,{cache:"no-store"});
@@ -131,6 +132,49 @@ async function appendSynopsis(event) {
     section.append(node("h2",null,"In breve"),node("p",null,text));
     content.prepend(section);
   }catch{/* Optional editorial synopsis must never block performance dates. */}
+}
+async function appendHistory(event) {
+  const slug=event.work_slug||window.OperaAtlasCatalog.urls(event).work.split("/").filter(Boolean).pop();
+  for(const url of ["./work-history.json",
+    "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/work-history.json"]){
+    try{
+      const response=await fetch(url,{cache:"no-store"});
+      if(!response.ok)continue;
+      const doc=await response.json();
+      if(doc.schema_version!==1||!doc.works||typeof doc.works!=="object")continue;
+      const history=doc.works[slug];
+      if(!history)return;
+      const fields=[
+        ["Libretto",history.librettist],
+        ["Composizione",Number.isInteger(history.composition_year)?String(history.composition_year):""],
+        ["Prima rappresentazione",Number.isInteger(history.premiere_year)?String(history.premiere_year):""],
+        ["Teatro della prima",history.premiere_venue],
+        ["Città della prima",history.premiere_city]
+      ].filter(([label,value])=>typeof value==="string"&&value.trim());
+      if(!fields.length)return;
+      const section=node("section","work-history");
+      section.append(node("h2",null,"L’opera in breve"));
+      const grid=node("dl","work-history-grid");
+      for(const [label,value] of fields){
+        const item=node("div","work-history-item");
+        item.append(node("dt",null,label),node("dd",null,value));
+        grid.append(item);
+      }
+      section.append(grid);
+      content.append(section);
+      // Historical references are kept at the very end of the opera detail.
+      const source=Array.isArray(history.sources)?history.sources.map(safeSource).find(Boolean):null;
+      if(source){
+        const references=node("section","official-links work-references");
+        references.append(node("h2",null,"Per approfondire"));
+        const anchor=link("Consulta la scheda archivistica dell’opera",source);
+        anchor.target="_blank";anchor.rel="noopener noreferrer";
+        references.append(anchor);
+        results.after(references);
+      }
+      return;
+    }catch(error){console.warn("Opera history data unavailable",error);}
+  }
 }
 function arrangeWorkOverview(event) {
   // The copy and cover belong to one editorial composition; listings stay below.
@@ -221,7 +265,7 @@ function stagingGroup(events,owner) {
   section.append(heading);
   if(owner==="venue" && first.composer)section.append(node("p","staging-composer",first.composer));
   section.append(dateSelector(events));
-  section.append(link("Scopri la produzione",window.OperaAtlasCatalog.urls(first).production));
+  section.append(link("Scopri la produzione",window.OperaAtlasCatalog.urls(first).production,"detail-link staging-action"));
   results.append(section);
 }
 function todayInItaly(){
@@ -280,6 +324,7 @@ async function initialize() {
       subtitle.textContent=first.composer||"Compositore non verificato";
       document.querySelector(".detail-related h2").textContent="Dove vedere "+first.title;
       await appendSynopsis(first);
+      await appendHistory(first);
       content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche censite in Italia"));
@@ -304,6 +349,7 @@ async function initialize() {
       const venues=[...new Set(selected.events.map(e=>e.venue+" · "+e.municipality))];
       subtitle.textContent=venues.length+" teatri · "+(first.composer||"");
       document.querySelector(".detail-related h2").textContent="Dove e quando vedere questa produzione";
+      await appendSynopsis(first);
       content.append(node("p","staging-summary","Una produzione condivisa, "+venues.length+" sedi e "+selected.events.length+" rappresentazioni censite."));
       content.append(link("Scopri l'opera",window.OperaAtlasCatalog.urls(first).work));
       for(const group of grouping(future))stagingGroup(group,"work");
@@ -314,6 +360,7 @@ async function initialize() {
       title.textContent=first.title;
       subtitle.textContent=first.venue+" · "+first.municipality+
         (first.season ? " · Stagione "+first.season : "");
+      await appendSynopsis(first);
       content.append(node("p","staging-summary",
         "Una messa in scena, "+selected.events.length+" repliche in calendario."));
       content.append(link("Scopri l’opera",window.OperaAtlasCatalog.urls(first).work));
