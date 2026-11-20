@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+<title id="title">Palcoscenico lirico</title><desc id="desc">Illustrazione stilizzata di un palcoscenico teatrale con drappeggi scuri e luci dorate.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#090c14"/><stop offset=".7" stop-color="#2d211b"/><stop offset="1" stop-color="#4b3323"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#fae1a0" stop-opacity=".8"/><stop offset=".6" stop-color="#d6aa50" stop-opacity=".22"/><stop offset="1" stop-color="#d6aa50" stop-opacity="0"/></radialGradient>
+<linearGradient id="curtain"><stop stop-color="#0c1721"/><stop offset=".34" stop-color="#25343d"/><stop offset=".7" stop-color="#141b27"/><stop offset="1" stop-color="#07121e"/></linearGradient>
+<linearGradient id="stage" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7a572f"/><stop offset="1" stop-color="#261c1a"/></linearGradient></defs>
+<rect width="1200" height="740" fill="url(#bg)"/>
+<ellipse cx="610" cy="326" rx="440" ry="320" fill="url(#glow)"/>
+<path d="M80 0Q600 115 1120 0L1080 110Q600 250 120 110Z" fill="#0b1923" stroke="#b58d4c" stroke-width="8"/>
+<path d="M0 0H150Q240 220 175 510L115 740H0Z" fill="url(#curtain)"/>
+<path d="M1200 0H1050Q960 220 1025 510L1085 740H1200Z" fill="url(#curtain)"/>
+<g fill="none" stroke="#c4a26a" stroke-opacity=".3" stroke-width="5"><path d="M85 0Q200 320 50 740"/><path d="M160 0Q270 350 155 740"/><path d="M1115 0Q1000 320 1150 740"/><path d="M1040 0Q930 350 1045 740"/></g>
+<path d="M260 600Q600 490 940 600L1130 740H65Z" fill="url(#stage)"/>
+<path d="M230 595Q600 503 968 595" stroke="#ddb46b" stroke-width="7" fill="none"/>
+<path d="M380 595L432 535H763L820 595Z" fill="#141a22" opacity=".55"/>
+<path d="M555 580C530 528 536 491 562 463C540 440 544 416 560 403C570 387 585 387 598 399C622 421 617 443 598 460C630 490 636 539 623 580L658 594H527Z" fill="#151d27"/>
+<path d="M568 455L518 518L483 548M604 457L669 516L713 541" fill="none" stroke="#151d27" stroke-width="22" stroke-linecap="round"/>
+<g fill="#ddba7a" opacity=".83"><circle cx="420" cy="150" r="6"/><circle cx="780" cy="150" r="6"/><circle cx="600" cy="125" r="8"/></g>
+<g fill="none" stroke="#e0b973" stroke-opacity=".28"><path d="M420 150L340 550L500 550Z"/><path d="M780 150L700 550L860 550Z"/><path d="M600 125L490 590L710 590Z"/></g>
+<path d="M0 716Q600 675 1200 716" fill="none" stroke="#c6a46c" stroke-width="4"/>
+</svg>
