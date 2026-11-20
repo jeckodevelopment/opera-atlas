@@ -13,6 +13,70 @@
         "oa-s-000005"
       ],
       "official_source": "https://www.operalombardia.it/l-italiana-in-algeri/"
+    },
+    {
+      "id": "oa-g-lombardia-turandot-2026",
+      "work_id": "oa-w-000011",
+      "name": "Turandot — OperaLombardia",
+      "staging_ids": [
+        "oa-s-000014",
+        "oa-s-000030",
+        "oa-s-000031",
+        "oa-s-000032",
+        "oa-s-000033",
+        "oa-s-000034"
+      ],
+      "official_source": "https://www.operalombardia.it/calendario/"
+    },
+    {
+      "id": "oa-g-lombardia-death-in-venice-2026",
+      "work_id": "oa-w-000013",
+      "name": "Death in Venice — OperaLombardia",
+      "staging_ids": [
+        "oa-s-000018",
+        "oa-s-000035",
+        "oa-s-000036",
+        "oa-s-000037",
+        "oa-s-000038",
+        "oa-s-000039"
+      ],
+      "official_source": "https://www.operalombardia.it/calendario/"
+    },
+    {
+      "id": "oa-g-lombardia-cavalleria-2026",
+      "work_id": "oa-w-000005",
+      "name": "Cavalleria rusticana — OperaLombardia",
+      "staging_ids": [
+        "oa-s-000015",
+        "oa-s-000040",
+        "oa-s-000041",
+        "oa-s-000042"
+      ],
+      "official_source": "https://www.operalombardia.it/calendario/"
+    },
+    {
+      "id": "oa-g-lombardia-pagliacci-2026",
+      "work_id": "oa-w-000006",
+      "name": "Pagliacci — OperaLombardia",
+      "staging_ids": [
+        "oa-s-000016",
+        "oa-s-000043",
+        "oa-s-000044",
+        "oa-s-000045"
+      ],
+      "official_source": "https://www.operalombardia.it/calendario/"
+    },
+    {
+      "id": "oa-g-lombardia-ballo-2026",
+      "work_id": "oa-w-000012",
+      "name": "Un ballo in maschera — OperaLombardia",
+      "staging_ids": [
+        "oa-s-000017",
+        "oa-s-000046",
+        "oa-s-000047",
+        "oa-s-000048"
+      ],
+      "official_source": "https://www.operalombardia.it/calendario/"
     }
   ]
 }
