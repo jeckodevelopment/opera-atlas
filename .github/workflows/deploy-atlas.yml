@@ -48,7 +48,7 @@ jobs:
           python -m scripts.publish_work_editorial --check
       - name: Publish owned /atlas folder and verify HTTPS (rollback on error)
         env:
-          ATLAS_FTP_HOST: ${{ inputs.ftp_host || vars.ATLAS_FTPS_HOST || secrets.ATLAS_SFTP_HOST }}
+          ATLAS_FTP_HOST: ${{ inputs.ftp_host || secrets.ATLAS_SFTP_HOST }}
           ATLAS_FTP_PORT: '21' # Plain FTP; legacy SFTP port 22 must not be reused
           ATLAS_FTP_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
           ATLAS_FTP_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
