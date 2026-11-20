@@ -1,21 +1,24 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T21:01:16+00:00",
+  "checked_at": "2026-11-20T21:11:37+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
       "status": "success",
-      "links": 14
+      "links": 14,
+      "new_review_candidates": 11
     },
     {
       "key": "arena-festival-2027",
       "status": "success",
-      "links": 16
+      "links": 6,
+      "new_review_candidates": 4
     },
     {
       "key": "fenice-opera-2026-27",
       "status": "success",
-      "links": 15
+      "links": 11,
+      "new_review_candidates": 7
     }
   ]
 }
