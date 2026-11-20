@@ -1,7 +1,7 @@
 "use strict";
 /* Photo selections are historical/illustrative, never photos of the current production.
    Commons file pages and license/attribution sources are listed in credits.html.
-   Every venue gets its own Commons image; other operas have individually composed artwork. */
+   Venue photos and opera artwork are selected independently; historical cover documents are preferred. Missing archival items remain visibly editorial, never represented as historical posters. */
 window.OperaAtlasImages=Object.freeze((()=>{
   const FILES={
     "torino":"Teatro Regio - foto aerea.jpg",
@@ -33,7 +33,16 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "otello":"Poster Otello by Giuseppe Verdi.jpg",
     "madama-butterfly":"Hohenstein Madama Butterfly.jpg",
     "don-giovanni":"Theatre Poster for Don Giovanni.jpg",
-    "iris":"Iris, opera by Pietro Mascagni, poster by Adolf Hohenstein.jpg"
+    "iris":"Iris, opera by Pietro Mascagni, poster by Adolf Hohenstein.jpg",
+    "cavalleria-rusticana":"Cavalleria rusticana poster.jpg",
+    "pagliacci":"Pagliacci Original Score Cover.jpg",
+    "italiana-in-algeri":"1930-Italiana-in-Algeri.jpg",
+    "jenufa":"Jenufa.jpg",
+    "evgenij-onegin":"\"Eugene Onegin\" opera poster,1937, Yerevan Opera Theatre.jpg",
+    "un-ballo-in-maschera":"\"Un ballo in maschera\" opera poster, January, 1959, Yerevan Opera Theatre.jpg",
+    "macbeth":"Locandina macbeth a firenze, 1847.jpg",
+    "samson-et-dalila":"\"Samson and Delilah\" opera poster, Yerevan Opera Theatre.jpg",
+    "lucia-di-lammermoor":"Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg"
   };
   const normalize=value=>String(value||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
     .replace(/^l['’]/i,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
