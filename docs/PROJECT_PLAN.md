@@ -79,3 +79,11 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Compatibilità dei vecchi link parametrizzati quando gli ID legacy sono riconosciuti.
 - [ ] Collisioni fra stagioni/produzioni successive: il generatore v2 rifiuta conflitti; assegnazione di slug qualificati e alias da automatizzare.
 - [ ] Verifica accessibilità nel browser e collaudo SEO dei percorsi dopo deploy.
+
+## F2 — acquisizione schedulata fail-closed
+- [x] Job quotidiano in `opera-atlas` con fetch condizionato a `access_status=approved` ed evidenza di review del permesso.
+- [x] Stato persistente nel Git: osservazioni normalizzate e ID canonici, senza servizio SQLite gestito.
+- [x] Aggiunta idempotente di nuove date sicure e blocco dei possibili rinvii, cambi orario, venue ignote e fonti non raggiungibili.
+- [x] Registro compatto degli esiti delle scansioni approvate e data dell'ultima verifica editoriale nel frontend.
+- [ ] Approvazione effettiva delle fonti: entrambe le pagine iniziali ancora `pending`, robots non verificabile; nessun fetch live autorizzato al momento.
+- [ ] Connettori per nuove produzioni e teatri oltre alle due pagine iniziali, calibrazione su HTML reale autorizzato.
