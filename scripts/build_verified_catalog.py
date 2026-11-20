@@ -18,6 +18,8 @@ OUTPUT = ROOT / "site" / "performances.json"
 TIME_EVIDENCE = ROOT / "data" / "verified-time-evidence.json"
 APPROVED_PAGES = {
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
     "https://www.operalombardia.it/l-italiana-in-algeri/",
 }
 
@@ -124,7 +126,7 @@ def build(manifest: dict, evidence: dict | None = None) -> dict:
                 raise ValueError("duplicate editorial performance")
             keys.add(uid)
             # The curated Regio dates are all outside Italy's DST period.
-            if hour is not None and url != "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata":
+            if hour is not None and not url.startswith("https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/"):
                 raise ValueError("no verified time for this source")
             if hour is None and url != "https://www.operalombardia.it/l-italiana-in-algeri/":
                 raise ValueError("expected exact Regio performance hour")
