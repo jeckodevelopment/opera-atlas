@@ -48,6 +48,36 @@ class AutoWorkResearchTests(unittest.TestCase):
             }}}
         self.assertIsNone(resolve_identity("anna bolena",fetch=fake))
 
+    def test_additional_ten_original_opera_cards_have_archival_histories(self):
+        from scripts.auto_work_research import preverified_work_material
+        material=preverified_work_material()
+        expected={
+            "don-quichotte","the-rake-s-progress","leonora",
+            "les-pecheurs-de-perles","boris-godunov","nozze-istriane",
+            "partenope","al-cavallino-bianco","norma","l-arca-di-noe"}
+        self.assertTrue(expected.issubset(material))
+        for slug in expected:
+            with self.subTest(slug=slug):
+                self.assertGreaterEqual(len(material[slug]["synopsis"]),45)
+                self.assertEqual(len(material[slug]["history"]["sources"])>=1,True)
+                self.assertGreaterEqual(material[slug]["history"]["premiere_year"],1600)
+
+    def test_official_fenice_title_aliases_are_exact_and_checked_by_authority(self):
+        for slug,title in (
+            ("normatebar","Norma"),
+            ("ilbarbieredisivigliapercacciolo","Il barbiere di Siviglia")):
+            with self.subTest(slug=slug):
+                item={"id":slug,"source_key":"fenice-opera-2026-27",
+                      "official_url":"https://www.teatrolafenice.it/event/"+slug+"/",
+                      "status":"needs_review"}
+                self.assertEqual(official_title_hint(item),title)
+        unrelated={"id":"unrelated","source_key":"fenice-opera-2026-27",
+                   "official_url":"https://www.teatrolafenice.it/event/normatebar-other/",
+                   "status":"needs_review"}
+        self.assertEqual(official_title_hint(unrelated),"normatebar other")
+        untrusted=dict(unrelated,official_url="https://evil.example/event/normatebar/")
+        self.assertIsNone(official_title_hint(untrusted))
+
     def test_eleven_sourced_opera_cards_are_suitable_for_automated_authority_checks(self):
         from scripts.auto_work_research import preverified_work_material,MAX_PREVERIFIED
         material=preverified_work_material()
