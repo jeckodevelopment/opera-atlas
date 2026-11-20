@@ -57,3 +57,6 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 
 ### Batch di produzioni (Fase 2)
 Disponibile `python -m opera_atlas.batch_cli` con manifesto JSON verificato, massimo 20 pagine, preflight delle sorgenti e savepoint di isolamento per pagina. Richiede `--allow-network` per qualsiasi accesso e `--apply` per salvare il risultato. Nessuna scansione periodica o autorizzazione implicita. Vedi [guida al connettore](docs/REGIO_CONNECTOR.md).
+
+### Variazioni di stato delle recite
+Le conferme, i rinvii e gli annullamenti verificati possono essere registrati tramite `opera_atlas.changes.set_performance_status` con fonte approvata e motivazione. La cronologia è append-only nella migrazione SQLite v5. Non sono dedotti annullamenti dalle recite scomparse e non è ancora attivo il rilevamento automatico dei cambi data. [Dettagli e collaudi](docs/REGIO_CONNECTOR.md).
