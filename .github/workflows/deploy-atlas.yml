@@ -4,7 +4,11 @@ on:
   push:
     branches: [main]
     paths:
-      - 'site/**'
+      - 'site/*.html'
+      - 'site/*.js'
+      - 'site/*.css'
+      - 'site/*.svg'
+      - 'site/.htaccess'
       - 'scripts/deploy_atlas.py'
       - '.github/workflows/deploy-atlas.yml'
 permissions:
