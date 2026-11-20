@@ -12,7 +12,7 @@
       "staging_ids": [
         "oa-s-000020"
       ],
-      "note": "Programmazione parziale: solo le produzioni confermate nel catalogo Atlas"
+      "description": "L’opera incontra il fascino dell’Arena di Verona: grandi titoli del repertorio lirico sotto le stelle, nel suggestivo anfiteatro romano."
     },
     {
       "id": "rossini-opera-festival",
@@ -22,7 +22,7 @@
       "region": "Marche",
       "official_url": "https://www.rossinioperafestival.it/",
       "staging_ids": [],
-      "note": "Fonte ufficiale censita; nessuna rappresentazione associata e verificata"
+      "description": "A Pesaro, città natale di Gioachino Rossini, il festival celebra ogni estate il compositore con nuove produzioni, grandi interpreti e appuntamenti musicali."
     }
   ]
 }
