@@ -88,6 +88,20 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(again,result)
         self.assertEqual(events,[])
 
+    def test_unseen_opera_research_rotates_fairly_with_six_candidates(self):
+        rows=[{"id":f"unseen-{i:02d}","source_key":"scala-season-2026-27",
+               "official_url":f"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{i}.html",
+               "status":"needs_review"} for i in range(6)]
+        doc={"schema_version":1,"candidates":rows}
+        existing={"schema_version":1,"works":[]}
+        seen=set()
+        for offset in range(12):
+            day=date.fromordinal(date(2026,11,20).toordinal()+offset)
+            batch=choose_candidates(doc,existing,set(),today=day)
+            self.assertEqual(len(batch),3)
+            seen.update(x["id"] for x in batch)
+        self.assertEqual(seen,{x["id"] for x in rows})
+
     def test_never_search_outside_exact_approved_url(self):
         self.assertIsNone(official_title_hint({
             "source_key":"scala-season-2026-27",
