@@ -12,7 +12,10 @@ const grid=document.getElementById("directory-grid");
 const search=document.getElementById("directory-search");
 const status=document.getElementById("directory-status");
 const entries=[];
+let festivalListings=[];
 function node(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
+function todayItaly(){const p=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());const v=k=>p.find(x=>x.type===k).value;return v("year")+"-"+v("month")+"-"+v("day");}
+function dateLabel(d){return new Intl.DateTimeFormat("it-IT",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(d+"T12:00:00Z"));}
 function normalize(s){return String(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("it");}
 function render(){
   grid.replaceChildren();
@@ -22,7 +25,7 @@ function render(){
     const card=node("article","directory-card");
     const heading=node("h2"),link=node("a",null,item.title);link.href=item.url;heading.append(link);
     card.append(heading,node("p",null,item.subtitle));
-    const action=node("a","detail-link",section==="opere"?"Vedi dove è in scena":"Consulta il programma");
+    const action=node("a","detail-link",section==="opere"?"Vedi dove è in scena":section==="festival"?"Vedi il festival":"Consulta il programma");
     action.href=item.url;card.append(action);grid.append(card);
   }
   if(!filtered.length){
@@ -34,7 +37,40 @@ async function initialize(){
   try {
     const data=await window.OperaAtlasCatalog.load();
     if(section==="festival"){
-      // Festival entities need edition/venue relationships; never infer them from venue names.
+      const records=await window.OperaAtlasFestivals.load();
+      const focus=params.get("id");
+      festivalListings=records.map(item=>{
+        const associated=data.performances.filter(e=>item.staging_ids.includes(e.staging_id));
+        const future=associated.filter(e=>e.local_date>=todayItaly());
+        return {item,associated,future};
+      });
+      if(focus){
+        const found=festivalListings.find(x=>x.item.id===focus);
+        if(!found){status.textContent="Festival non disponibile.";return;}
+        const x=found.item;
+        document.getElementById("directory-title").textContent=x.name+(x.edition?" · "+x.edition:"");
+        document.getElementById("directory-desc").textContent=x.city+" · "+x.region+" — "+x.note;
+        search.hidden=true;
+        const official=node("a","detail-link","Fonte ufficiale del festival");
+        official.href=x.official_url;official.target="_blank";official.rel="noopener noreferrer";
+        grid.before(official);
+        const stages=new Map();
+        for(const event of found.future){
+          if(!stages.has(event.staging_id))stages.set(event.staging_id,event);
+        }
+        for(const event of stages.values()){
+          const url=window.OperaAtlasCatalog.urls(event).staging;
+          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · dal "+dateLabel(event.local_date)});
+        }
+        if(!entries.length)status.textContent="Nessuna rappresentazione futura verificata associata a questa edizione.";
+      }else{
+        for(const found of festivalListings){
+          const x=found.item;
+          entries.push({url:"./directory.html?section=festival&id="+encodeURIComponent(x.id),
+            title:x.name+(x.edition?" · "+x.edition:""),
+            subtitle:x.city+" · "+x.region+" · "+(found.future.length?found.future.length+" rappresentazioni future censite":"Programma non ancora censito")});
+        }
+      }
       render();return;
     }
     const grouped=new Map();
