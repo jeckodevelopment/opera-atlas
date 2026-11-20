@@ -94,3 +94,10 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Feed v1 e v2 sincronizzati con orari arricchiti (19 recite, 17 con ora, 2 senza) e metadati di provenienza.
 - [x] Workflow di aggiornamento in grado di rigenerare il v2 quando l'input approvato cambia senza fallire prima della build.
 - [ ] Verifica e autorizzazione formale della scansione ricorrente; fonti nuove e connettori live ancora `pending`.
+
+### F2 — source readiness e correzioni di affidabilità
+- [x] Verifica delle pagine di dettaglio ufficiali Regio/OperaLombardia; robots.txt non verificabile: entrambe le fonti rimangono `pending` (nessuna falsa autorizzazione).
+- [x] Riconciliazione della singola pagina tutta-o-niente: una qualsiasi anomalia blocca ogni nuova recita proposta dalla pagina, senza cancellare il catalogo valido.
+- [x] Ora locale `Europe/Rome`, corretta in estate e inverno, con esclusione di ore inesistenti o ambigue.
+- [x] Test per mutazioni parziali, duplicati conflittuali, passaggi ora legale e fonti ancora non autorizzate.
+- [ ] Concludere la verifica dei permessi robots/termini e collaudare HTML live autorizzato **prima** di attivare i crawler.
