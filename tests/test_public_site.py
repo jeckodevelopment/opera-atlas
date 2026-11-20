@@ -83,7 +83,6 @@ class PublicCatalogTests(unittest.TestCase):
         code = (SITE / "catalog-client.js").read_text(encoding="utf-8")
         self.assertIn('PREFIX = "/dev/opera-atlas"', code)
         self.assertIn('"/opere/" + work + "/"', code)
-        self.assertIn('"staging"', code) if False else None
 
     def test_curated_catalog_contains_only_verified_official_recite(self):
         payload = json.loads((SITE / "performances.json").read_text(encoding="utf-8"))
