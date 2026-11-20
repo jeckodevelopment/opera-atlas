@@ -10,7 +10,7 @@ Una recita parziale con **titolo, data, teatro e città** ha una scheda normale 
 L'interfaccia include etichette per i campi, regioni live per il conteggio risultati, focus visibile, link per saltare al contenuto e layout responsivo.
 
 ## Avvio locale e pubblicazione
-La prima distribuzione non contiene recite dimostrative. Il file `site/performances.json` iniziale è volutamente `{"schema_version":1,"performances":[]}`.
+La prima distribuzione era intenzionalmente vuota. L’aggiornamento editoriale del 20/11/2026 include **19 recite verificate sulle pagine ufficiali** (11 La traviata Torino, 8 L’italiana in Algeri OperaLombardia). Nessuna recita dimostrativa è pubblicata.
 
 Dopo una importazione **autorizzata** e una verifica editoriale, esportare soltanto dati effettivamente presenti nel DB:
 
@@ -52,3 +52,18 @@ L'interfaccia può essere pubblicata con JSON iniziale vuoto, ma non è prova de
 - Confermare che una recita senza orario conservi la dicitura anche nel dettaglio.
 - Verificare link errati o di eventi rimossi: messaggio `Scheda non disponibile`, nessun errore JavaScript.
 - Controllare la risposta HTTPS di `index.html`, `detail.html`, CSS/JS e JSON dopo la pubblicazione; il deploy deve essere isolato dai percorsi degli altri progetti.
+
+## Primo catalogo editoriale verificato — 20/11/2026
+
+**Fonti:** [Teatro Regio Torino – La traviata](https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata), con 11 recite tra il 26 febbraio e il 10 marzo 2027, ed [OperaLombardia – L’italiana in Algeri](https://www.operalombardia.it/l-italiana-in-algeri/), con 8 recite in Como, Pavia, Brescia e Cremona tra il 13 novembre e il 12 dicembre 2026. I dati minimi sono titolo/compositore, data, teatro, città, regione e URL ufficiale. **Non** sono copiate fotografie, cast, descrizioni, testi di programma o pagine HTML.
+
+La procedura `python -m scripts.build_verified_catalog --check` confronta `site/performances.json` con il manifesto `data/verified-launch-catalog.json`, rifiutando fonti non previste, duplicati, date o orari malformati. Il catalogo è un **seed editoriale manuale** e non disattiva le condizioni di approvazione dei crawler: nessun job di fetch o polling viene abilitato. Gli orari OperaLombardia rimangono sconosciuti (null e dicitura “Orario da confermare”). Queste date potrebbero cambiare; il visitatore è invitato a controllare la fonte ufficiale.
+
+## Identità grafica iniziale
+Design ispirato alla grammatica visiva di Opera+ Funding: base avorio, schede bianche leggere, grigi caldi, accenti oro, titoli serif, metriche riassuntive, filtri compatti e recite in righe orizzontali con mini-calendario. **Non** è stato utilizzato il logo di Opera+ Funding: Opera Atlas conserva una testata testuale in attesa del logo definitivo. Non sono incorporati asset o fotografie di terzi.
+
+### Collaudi aggiuntivi
+- Controllare 19 recite, 2 opere, 5 teatri, 8 orari ignoti e collegamenti alle due pagine ufficiali.
+- Verificare che tutte le 11 recite torinesi riportino ora locale, che le altre 8 presentino “Orario da confermare” e che due date già passate restino correttamente nello storico.
+- Verificare schede, riepiloghi, filtri, paginazione, pagine di dettaglio, accessibilità su smartphone e coerenza grafica con Funding.
+- Confermare la nuova pubblicazione con `jeckodevsite` e l'esito HTTPS di tutti gli asset.
