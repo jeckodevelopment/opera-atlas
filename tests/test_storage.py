@@ -38,7 +38,7 @@ class StorageTests(unittest.TestCase):
         migrate(self.db)
         self.assertEqual(
             self.db.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0],
-            3,
+            4,
         )
 
     def test_normalization_without_inventing_identity(self):
