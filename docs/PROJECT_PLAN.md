@@ -189,3 +189,9 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Nabucco promosso a monitoraggio giornaliero con verifica robots a ogni esecuzione.
 - [x] Scala: rimosso l'assunto fragile su intestazione/sponsor che impediva la lettura live.
 - [ ] Ripetere probe Scala Don Giovanni/La bohème su HTML ufficiale; promuovere solo le fonti che restituiscono 100% delle recite previste, senza dati inventati.
+
+### F2 — verifica e attivazione delle tre pagine Scala/Arena
+- [x] Live probe `44809794379`: match completo di Don Giovanni 10/10, La bohème Puccini 8/8 e Nabucco 6/6, senza differenze e con robots permissivo a runtime.
+- [x] Entrambe le pagine Scala promosse a monitoraggio giornaliero, Arena già attiva; stesso perimetro URL e controllo robots a ogni richiesta.
+- [x] Allowlist cap 48 pagine e durata massima 25 minuti, evitando l'impossibilità di registrare altre produzioni.
+- [ ] Coprire le restanti programmazioni di tutti gli otto enti e ridurre progressivamente il numero di fetch mediante indici ufficiali validati.

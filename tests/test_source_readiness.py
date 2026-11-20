@@ -20,9 +20,24 @@ class SourceReadinessTests(unittest.TestCase):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
         items=validate_source_config(config)
         self.assertEqual(len(items),19)
-        self.assertEqual({i["access_status"] for i in items},{"approved","pending"})
+        self.assertEqual({i["access_status"] for i in items},{"approved"})
         self.assertTrue(all("robots" in i["approval_evidence"].lower() for i in items if i["access_status"]=="approved"))
         self.assertTrue(all(isinstance(i["approval_evidence"], str) and len(i["approval_evidence"]) > 20 for i in items if i["access_status"]=="approved"))
+
+    def test_source_budget_supports_future_onboarding_but_is_bounded(self):
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
+        original=config["sources"]
+        # Repeat one official entry with unique keys: this checks capacity,
+        # not source discovery or permission expansion.
+        for i in range(19,48):
+            extra=dict(original[0])
+            extra["key"]="budget-check-"+str(i)
+            config["sources"].append(extra)
+        self.assertEqual(len(validate_source_config(config)),48)
+        extra=dict(original[0]);extra["key"]="budget-check-48"
+        config["sources"].append(extra)
+        with self.assertRaises(ValueError):
+            validate_source_config(config)
 
     def test_timed_event_preserves_italian_summer_dst(self):
         self.assertEqual(official_local_time("2027-07-10","20:00"),
