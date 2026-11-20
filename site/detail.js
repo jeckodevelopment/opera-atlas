@@ -1,11 +1,9 @@
 "use strict";
 
-/* Details are derived exclusively from the verified, public JSON snapshot.
-   Escaping is automatic: all source text is inserted as textContent. */
-/* Data are loaded from the canonical GitHub feed, not the SFTP copy. */
-const params = new URLSearchParams(window.location.search);
-const type = params.get("type");
-const key = params.get("key");
+/* Static deep-route details: an opera lists every staging in Italy, a theatre
+   lists its stagings, and one staging owns all of its date/time replicas.
+   No client-supplied path is used as a remote URL. */
+const root = "/dev/opera-atlas/";
 const title = document.getElementById("detail-title");
 const subtitle = document.getElementById("detail-subtitle");
 const kind = document.getElementById("kind");
@@ -13,139 +11,184 @@ const status = document.getElementById("detail-status");
 const content = document.getElementById("detail-content");
 const results = document.getElementById("detail-events");
 
-function textNode(tag, cls, value) {
-  const n = document.createElement(tag);
-  if (cls) n.className = cls;
-  n.textContent = value ?? "";
-  return n;
+function node(tag, cls, value) {
+  const element = document.createElement(tag);
+  if (cls) element.className = cls;
+  if (value !== undefined) element.textContent = value;
+  return element;
 }
 function normalize(value) {
-  return String(value ?? "").normalize("NFKC").toLocaleLowerCase("it").trim();
+  return String(value || "").normalize("NFKC").toLocaleLowerCase("it").trim();
 }
-function venueKey(e) {
-  return normalize(e.venue) + "|" + normalize(e.municipality);
+function dateLabel(day) {
+  return new Intl.DateTimeFormat("it-IT", {
+    day:"numeric",month:"long",year:"numeric",timeZone:"UTC",
+  }).format(new Date(day+"T12:00:00Z"));
 }
-function validSource(value) {
+function safeSource(url) {
   try {
-    const u = new URL(value);
-    return u.protocol === "https:" ? u.href : null;
+    const u=new URL(url);
+    return u.protocol==="https:" ? u.href : null;
   } catch { return null; }
 }
-function showSources(parent, events) {
-  const list = textNode("ul", "source-links");
-  const unique = [...new Set(events.flatMap(e => e.sources || []))];
-  for (const source of unique) {
-    const uri = validSource(source);
-    if (!uri) continue;
-    const item = textNode("li");
-    const link = textNode("a", null, "Sito ufficiale");
-    link.href = uri;
-    link.rel = "noopener noreferrer";
-    link.target = "_blank";
-    item.append(link);
-    list.append(item);
+function sourceLinks(parent, events) {
+  const list=node("ul","source-links");
+  for (const url of new Set(events.flatMap(e=>e.sources||[]))) {
+    const href=safeSource(url);
+    if (!href) continue;
+    const li=node("li");
+    const a=node("a",null,"Fonte ufficiale");
+    a.href=href;
+    a.rel="noopener noreferrer";
+    a.target="_blank";
+    li.append(a);
+    list.append(li);
   }
   parent.append(list);
 }
-function urlFor(type, key) {
-  return "./detail.html?type=" + encodeURIComponent(type)
-    + "&key=" + encodeURIComponent(key);
-}
-function dateLabel(day) {
-  return new Intl.DateTimeFormat("it-IT",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"})
-    .format(new Date(day + "T12:00:00Z"));
-}
-function linkCard(label, target) {
-  const link = textNode("a","detail-link",label);
-  link.href = target;
-  return link;
-}
-function showEvent(e) {
-  const card = textNode("article","event");
-  card.append(textNode("div","date",dateLabel(e.local_date)));
-  const heading = textNode("h3");
-  heading.append(linkCard(e.title,urlFor("work",normalize(e.title))));
-  card.append(heading);
-  const place = textNode("p","composer");
-  place.append(linkCard(e.venue + " · " + e.municipality,
-    urlFor("venue",venueKey(e))));
-  card.append(place);
-  card.append(textNode("p","time"+(e.time_known?"":" unknown"),
-    e.time_known ? "Ore " + e.starts_at.slice(11,16) : "Orario da confermare"));
-  const eventLink = linkCard("Dettaglio recita",urlFor("performance",String(e.id)));
-  card.append(eventLink);
-  showSources(card,[e]);
-  results.append(card);
+function link(text, url, css="detail-link") {
+  const a=node("a",css,text);
+  a.href=url;
+  return a;
 }
 function missing(message) {
-  title.textContent = "Scheda non disponibile";
-  subtitle.textContent = "";
-  status.textContent = message;
+  title.textContent="Scheda non disponibile";
+  subtitle.textContent="";
+  status.textContent=message;
 }
-function acceptable(e) {
-  return e && (typeof e.id === "number" || typeof e.id === "string")
-    && typeof e.title === "string" && e.title.trim()
-    && typeof e.venue === "string" && e.venue.trim()
-    && typeof e.municipality === "string" && e.municipality.trim()
-    && typeof e.local_date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(e.local_date)
-    && typeof e.time_known === "boolean"
-    && (!e.time_known || (typeof e.starts_at === "string" && e.starts_at.startsWith(e.local_date)))
-    && Array.isArray(e.sources) && e.sources.some(validSource);
+function validEvent(e) {
+  return e && typeof e.id==="string" && typeof e.title==="string" && e.title
+    && typeof e.venue==="string" && e.venue
+    && typeof e.municipality==="string" && e.municipality
+    && typeof e.local_date==="string" && /^\d{4}-\d{2}-\d{2}$/.test(e.local_date)
+    && typeof e.time_known==="boolean"
+    && (e.time_known ? typeof e.starts_at==="string" : e.starts_at===null)
+    && Array.isArray(e.sources) && e.sources.some(safeSource);
 }
-async function init() {
-  if (!["work","performance","venue"].includes(type) || !key || key.length > 512) {
-    missing("Il collegamento non identifica una scheda valida.");
-    return;
+function grouping(events) {
+  const map=new Map();
+  for (const e of events) {
+    const key=e.staging_id || window.OperaAtlasCatalog.urls(e).staging;
+    if (!map.has(key)) map.set(key,[]);
+    map.get(key).push(e);
   }
+  return [...map.values()].sort((a,b)=>a[0].local_date.localeCompare(b[0].local_date));
+}
+function replicaLine(e) {
+  const row=node("div","replica-row");
+  row.append(node("strong",null,dateLabel(e.local_date)));
+  row.append(node("span","time"+(e.time_known?"":" unknown"),
+    e.time_known ? "Ore "+e.starts_at.slice(11,16) : "Orario da confermare"));
+  return row;
+}
+function stagingGroup(events, owner) {
+  const first=events[0];
+  const section=node("section","staging-group");
+  const heading=node("h3");
+  heading.append(link(owner==="work"
+    ? first.venue+" · "+first.municipality
+    : first.title, window.OperaAtlasCatalog.urls(first).staging,""));
+  section.append(heading);
+  section.append(node("p",null,events.length+" repliche in catalogo"));
+  const calendar=node("div","staging-repliche");
+  for (const e of events.slice(0,24)) {
+    calendar.append(node("span","replica-chip",dateLabel(e.local_date)+
+      (e.time_known ? " · "+e.starts_at.slice(11,16) : " · Orario da confermare")));
+  }
+  if(events.length>24)calendar.append(node("span","replica-chip","+"+(events.length-24)+" altre"));
+  section.append(calendar);
+  section.append(link("Apri la messa in scena",window.OperaAtlasCatalog.urls(first).staging));
+  sourceLinks(section,events);
+  results.append(section);
+}
+function resolve(events) {
+  const pathname=decodeURI(window.location.pathname);
+  const path=pathname.startsWith(root) ? pathname.slice(root.length) : "";
+  const pieces=path.split("/").filter(Boolean);
+  if(pieces.length && pieces.every(part=>/^[a-z0-9-]+$/.test(part))) {
+    if(pieces.length===2 && pieces[0]==="opere")
+      return {kind:"work",events:events.filter(e=>
+        window.OperaAtlasCatalog.urls(e).work===root+pieces.join("/")+"/")};
+    if(pieces.length===2)
+      return {kind:"venue",events:events.filter(e=>
+        window.OperaAtlasCatalog.urls(e).venue===root+pieces.join("/")+"/")};
+    if(pieces.length===3)
+      return {kind:"staging",events:events.filter(e=>
+        window.OperaAtlasCatalog.urls(e).staging===root+pieces.join("/")+"/")};
+  }
+  // Backward-compatible query-string URLs from older catalog editions.
+  const args=new URLSearchParams(window.location.search);
+  const type=args.get("type"),key=args.get("key");
+  if(!key || key.length>512)return {kind:null,events:[]};
+  if(type==="work")return {kind:"work",events:events.filter(e=>normalize(e.title)===key)};
+  if(type==="venue")return {kind:"venue",events:events.filter(e=>
+    normalize(e.venue)+"|"+normalize(e.municipality)===key)};
+  if(type==="performance") {
+    const hit=events.find(e=>String(e.id)===key || e.id==="curated:"+key);
+    return hit ? {kind:"staging",events:events.filter(e=>
+      window.OperaAtlasCatalog.urls(e).staging===window.OperaAtlasCatalog.urls(hit).staging)}
+      : {kind:null,events:[]};
+  }
+  return {kind:null,events:[]};
+}
+async function initialize() {
   try {
-    const data = await window.OperaAtlasCatalog.load();
-    if (data.warning) status.textContent = data.warning;
-    if (data.schema_version !== 1 || !Array.isArray(data.performances)) throw Error("bad schema");
-    const events = data.performances.filter(acceptable);
-    let related;
-    if (type === "performance") {
-      related = events.filter(e=>String(e.id)===key);
-      if (related.length > 1) {
-        missing("Identificatore di recita ambiguo.");
-        return;
-      }
-    } else if (type === "work") {
-      related = events.filter(e=>normalize(e.title)===key);
-    } else {
-      related = events.filter(e=>venueKey(e)===key);
-    }
-    if (!related.length) {
-      missing("Questa scheda non è presente nei dati pubblicati.");
+    const data=await window.OperaAtlasCatalog.load();
+    if(data.warning)status.textContent=data.warning;
+    const events=data.performances.filter(validEvent);
+    const selected=resolve(events);
+    if(!selected.kind || !selected.events.length) {
+      missing("Questo indirizzo non corrisponde a una scheda pubblicata.");
       return;
     }
-    const first = related[0];
-    if (type === "performance") {
-      kind.textContent = "Recita";
-      title.textContent = first.title;
-      subtitle.textContent = dateLabel(first.local_date) + " · " + first.venue + ", " + first.municipality;
-      content.append(textNode("p","time"+(first.time_known?"":" unknown"),
-        first.time_known ? "Ore " + first.starts_at.slice(11,16) : "Orario da confermare"));
-      content.append(textNode("p",null,"Stato: "+ (first.status === "confirmed" ? "Confermata" : "Annunciata")));
-      content.append(linkCard("Vai alla scheda dell'opera",urlFor("work",normalize(first.title))));
-      content.append(textNode("p"));
-      content.append(linkCard("Vai alla scheda del teatro",urlFor("venue",venueKey(first))));
-    } else if (type === "work") {
-      kind.textContent = "Opera";
-      title.textContent = first.title;
-      subtitle.textContent = first.composer ? "Compositore: " + first.composer : "Compositore non verificato";
-      content.append(textNode("p",null,related.length+" recite in catalogo"));
-    } else {
-      kind.textContent = "Teatro";
-      title.textContent = first.venue;
-      subtitle.textContent = [first.municipality,first.region].filter(Boolean).join(" · ");
-      content.append(textNode("p",null,related.length+" recite in catalogo"));
+    const first=selected.events[0];
+    if(selected.kind==="work") {
+      kind.textContent="Opera del repertorio";
+      title.textContent=first.title;
+      subtitle.textContent=first.composer||"Compositore non verificato";
+      content.append(node("p","staging-summary",
+        grouping(selected.events).length+" messe in scena · "+
+        selected.events.length+" repliche censite in Italia"));
+      content.append(node("p",null,
+        "Tutte le programmazioni di quest’opera presenti nel catalogo, raggruppate per teatro."));
+      for(const group of grouping(selected.events))stagingGroup(group,"work");
+    }else if(selected.kind==="venue") {
+      kind.textContent="Teatro";
+      title.textContent=first.venue;
+      subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
+      content.append(node("p","staging-summary",
+        grouping(selected.events).length+" messe in scena · "+
+        selected.events.length+" repliche"));
+      for(const group of grouping(selected.events))stagingGroup(group,"venue");
+    }else{
+      kind.textContent="Messa in scena";
+      title.textContent=first.title;
+      subtitle.textContent=first.venue+" · "+first.municipality+
+        (first.season ? " · Stagione "+first.season : "");
+      content.append(node("p","staging-summary",
+        "Una messa in scena, "+selected.events.length+" repliche in calendario."));
+      content.append(link("Scopri l’opera",window.OperaAtlasCatalog.urls(first).work));
+      content.append(node("span",null," · "));
+      content.append(link("Scopri il teatro",window.OperaAtlasCatalog.urls(first).venue));
+      for(const e of selected.events.sort((a,b)=>a.local_date.localeCompare(b.local_date)))
+        results.append(replicaLine(e));
     }
-    showSources(content,related);
-    for (const e of related.slice(0,60)) showEvent(e);
-    if (related.length>60) status.textContent="Sono visualizzate le prime 60 recite.";
+    sourceLinks(content,selected.events);
     document.title=title.textContent+" — Opera Atlas";
-  } catch {
+    // Canonicalize old query-based links after resolution; never change identity.
+    if(pathnameIsLegacy()) {
+      const canonical=selected.kind==="work"
+        ? window.OperaAtlasCatalog.urls(first).work
+        : selected.kind==="venue"
+          ? window.OperaAtlasCatalog.urls(first).venue
+          : window.OperaAtlasCatalog.urls(first).staging;
+      window.history.replaceState(null,"",canonical);
+    }
+  }catch {
     missing("Non è stato possibile caricare il catalogo.");
   }
 }
-init();
+function pathnameIsLegacy() {
+  return window.location.pathname.endsWith("/detail.html");
+}
+initialize();
