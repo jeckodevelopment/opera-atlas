@@ -14,11 +14,12 @@ EDITORIAL = ROOT / "site" / "work-synopses.json"
 OUTPUT = ROOT / "public" / "catalog" / "work-editorial.json"
 
 
-def build_editorial(facts: dict, registry: dict, editorial: dict) -> dict:
+def build_editorial(facts: dict, registry: dict, editorial: dict, *,
+                    approved_extra: set[str] | None = None) -> dict:
     if (editorial.get("schema_version") != 1 or editorial.get("language") != "it"
             or not isinstance(editorial.get("synopses"), dict)):
         raise ValueError("invalid editorial work source")
-    works = assemble(facts, registry)["works"]
+    works = assemble(facts, registry, approved_extra=approved_extra)["works"]
     expected = {w["slug"] for w in works}
     provided = set(editorial["synopses"])
     if not expected.issubset(provided):

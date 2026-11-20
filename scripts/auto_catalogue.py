@@ -233,6 +233,102 @@ def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
     return next_facts,next_registry,{"new_stagings":created,
                                      "new_recite":accepted,"auto_skipped":skipped}
 
+def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
+                      intelligence:dict,editorial:dict,approved_urls:list[str],*,
+                      today:date):
+    """One unattended all-or-nothing canonical work+staging+recita transaction."""
+    next_facts=copy.deepcopy(facts)
+    next_registry=copy.deepcopy(registry)
+    next_editorial=copy.deepcopy(editorial)
+    allowed=set(approved_urls)
+    sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
+             if x["access_status"]=="approved"}
+    candidates_by_id={x["id"]:x for x in candidates.get("candidates",[])
+                      if x.get("status")=="needs_review"}
+    event_by_id={x["candidate_id"]:x for x in evidence.get("evidence",[])
+                 if x.get("status")=="needs_editorial_review"}
+    result={"new_works":0,"new_stagings":0,"new_recite":0,"auto_skipped":[]}
+    if next_editorial.get("schema_version")!=1 or not isinstance(
+            next_editorial.get("synopses"),dict):
+        raise ValueError("invalid original editorial synopsis registry")
+    for item in sorted(intelligence.get("works",[]),key=lambda x:x.get("candidate_id","")):
+        cid=item.get("candidate_id")
+        candidate=candidates_by_id.get(cid)
+        detail=event_by_id.get(cid)
+        if not candidate or not detail:continue
+        source_key=item.get("source_key")
+        url=item.get("source_url")
+        source=sources.get(source_key)
+        if (source_key not in VENUE_BY_SOURCE or source is None
+            or not isinstance(url,str) or not eligible(source_key,url)
+            or urlsplit(url).hostname!=urlsplit(source["official_url"]).hostname
+            or candidate.get("official_url")!=url or candidate.get("source_key")!=source_key
+            or detail.get("source_url")!=url or detail.get("source_key")!=source_key):
+            continue
+        title,composer,summary=(item.get(k) for k in ("title","composer","synopsis"))
+        if not all(isinstance(x,str) and x.strip() for x in (title,composer,summary)):
+            continue
+        summary=summary.strip()
+        if not 45<=len(summary)<=300:continue
+        if not isinstance(item.get("wikidata_id"),str) or not __import__("re").fullmatch(
+                r"Q[1-9][0-9]*",item["wikidata_id"]):continue
+        work_key=normalized(title)+"|"+normalized(composer)
+        slug=slugify(title)
+        if (work_key in next_registry["works"] or
+            any(x["slug"]==slug for x in next_registry["works"].values())):
+            continue
+        city,venue=VENUE_BY_SOURCE[source_key]
+        venue_key=city+"|"+venue
+        canonical_venue=next_registry["venues"].get(venue_key)
+        if canonical_venue is None:continue
+        rows=detail.get("event_facts",[])
+        if not isinstance(rows,list) or not rows:continue
+        date_rows={}
+        invalid=False
+        for row in rows:
+            if (not isinstance(row,dict) or normalized(row.get("event_title",""))!=normalized(title)
+                or normalized(row.get("composer",""))!=normalized(composer)
+                or row.get("venue")!=venue):invalid=True;break
+            try:
+                local_day=date.fromisoformat(row["date"]).isoformat()
+                stamp=__import__("datetime").datetime.fromisoformat(row["starts_at"])
+                from zoneinfo import ZoneInfo
+                if stamp.tzinfo is None or stamp.utcoffset() is None:raise ValueError
+                local=stamp.astimezone(ZoneInfo("Europe/Rome"))
+                if local.date().isoformat()!=local_day:raise ValueError
+                hour=local.strftime("%H:%M")
+                if local_day in date_rows and date_rows[local_day]!=hour:raise ValueError
+                date_rows[local_day]=hour
+            except (KeyError,TypeError,ValueError):invalid=True;break
+        if invalid or not date_rows:continue
+        # The canonical work route must remain unique; no title-based
+        # overwrites and no guessing which composer an old URL identifies.
+        staging_key="auto-"+hashlib.sha256((source_key+"|"+url).encode()).hexdigest()[:16]
+        if staging_key in next_registry["stagings"]:continue
+        work_id=next_id(next_registry["works"],"oa-w-")
+        stage_id=next_id(next_registry["stagings"],"oa-s-")
+        next_registry["works"][work_key]={
+            "id":work_id,"slug":slug,"title":title,"composer":composer}
+        next_editorial["synopses"][slug]=summary
+        next_registry["stagings"][staging_key]={
+            "id":stage_id,"work_id":work_id,"venue_id":canonical_venue["id"],
+            "slug":slug,"source_url":url,"season":"2026-2027"}
+        next_facts["productions"].append({
+            "key":staging_key,"title":title,"composer":composer,"venue":venue,
+            "municipality":city,"region":canonical_venue["region"],
+            "source_url":url,
+            "dates":[[day,hour] for day,hour in sorted(date_rows.items())]})
+        for day in sorted(date_rows):
+            next_registry["performances"][staging_key+"|"+day]={
+                "id":f"oa-r-{_next_replica_id(next_registry):06d}",
+                "staging_id":stage_id,"original_date":day,"source_url":url}
+        allowed.add(url)
+        result["new_works"]+=1
+        result["new_stagings"]+=1
+        result["new_recite"]+=len(date_rows)
+    if result["new_recite"]:next_facts["reviewed_on"]=today.isoformat()
+    return next_facts,next_registry,sorted(allowed),next_editorial,result
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -249,15 +345,28 @@ def main():
     report["new_stagings"]+=calendar["new_stagings"]
     report["new_recite"]+=calendar["new_recite"]
     report["auto_skipped"]+=calendar["auto_skipped"]
+    from scripts.auto_work_research import OUT as RESEARCH
+    from scripts.publish_work_editorial import EDITORIAL, build_editorial
+    intelligence=(json.loads(RESEARCH.read_text(encoding="utf-8"))
+                  if RESEARCH.exists() else {"schema_version":1,"works":[]})
+    editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
+    next_facts,next_registry,urls,next_editorial,newworks=promote_new_works(
+        next_facts,next_registry,evidence,candidates,intelligence,editorial,urls,
+        today=date.today())
+    report["new_works"]=newworks["new_works"]
+    report["new_stagings"]+=newworks["new_stagings"]
+    report["new_recite"]+=newworks["new_recite"]
     # Only write after the full canonical graph validates against the expanded
     # source allowlist; rollback-like behavior by pre-validating in memory.
     from scripts.build_verified_catalog import validate_auto_sources
     validate_auto_sources(urls)
     assemble(next_facts,next_registry,approved_extra=set(urls))
+    build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls))
     if report["new_recite"]:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
         _write_atomic(SOURCE_ALLOWLIST,{"schema_version":1,"urls":urls})
+        if report["new_works"]:_write_atomic(EDITORIAL,next_editorial)
     _write_atomic(HEALTH,{"schema_version":1,**report})
     print(json.dumps(report,ensure_ascii=False))
 if __name__=="__main__":

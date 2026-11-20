@@ -115,6 +115,26 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
              "date":day,"starts_at":official_local_time(day,hour),
              "venue":venue} for day,hour in raw]
 
+def parse_authoritative_new_work_detail(item:dict,html:str,
+                                        intelligence:dict)->list[dict]:
+    """The official page must confirm both composer and individually dated shows."""
+    matches=[w for w in intelligence.get("works",[])
+             if w.get("candidate_id")==item["id"] and
+                w.get("source_url")==item["official_url"] and
+                w.get("source_key")==item["source_key"] and
+                isinstance(w.get("synopsis"),str) and 45<=len(w["synopsis"])<=300]
+    if len(matches)!=1:return []
+    info=matches[0]
+    adapter={"scala-season-2026-27":"scala",
+             "arena-festival-2027":"arena"}.get(item["source_key"])
+    if adapter is None:return []
+    rows=parse_showtimes(html,url=item["official_url"],title=info["title"],
+                         composer=info["composer"],adapter=adapter)
+    venue="Teatro alla Scala" if adapter=="scala" else "Arena di Verona"
+    return [{"event_title":info["title"],"composer":info["composer"],
+             "date":day,"starts_at":official_local_time(day,hour),
+             "venue":venue} for day,hour in rows]
+
 def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     if candidates.get("schema_version")!=1 or not isinstance(candidates.get("candidates"),list):
         raise ValueError("invalid discovery candidate registry")
@@ -158,6 +178,9 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
     retained={x["candidate_id"]:x.copy() for x in previous["evidence"]}
     chosen=selected_candidates(candidates,today=today)
     registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    from scripts.auto_work_research import OUT as RESEARCH
+    intelligence=(json.loads(RESEARCH.read_text(encoding="utf-8"))
+                  if RESEARCH.exists() else {"schema_version":1,"works":[]})
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))}
     health=[]
     db=connect()
@@ -172,10 +195,19 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 source_id=db.execute("SELECT id FROM sources WHERE official_url=?",
                                      (source["official_url"],)).fetchone()["id"]
                 page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
-                facts=parse_event_facts(page.html)
-                if not facts:
-                    facts=parse_known_opera_detail(item["source_key"],
-                                                  item["official_url"],page.html,registry)
+                # Prefer parsers which verify the canonical composer and
+                # page-specific showtime. Generic Event JSON-LD alone has no
+                # authoritative work identity and must never outrank those.
+                facts=[]
+                for parse in (
+                    lambda:parse_known_opera_detail(item["source_key"],
+                                                     item["official_url"],page.html,registry),
+                    lambda:parse_authoritative_new_work_detail(item,page.html,intelligence),
+                    lambda:parse_event_facts(page.html),
+                ):
+                    try:facts=parse()
+                    except ValueError:continue
+                    if facts:break
                 if not facts:raise ValueError("no unambiguous structured event facts")
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
