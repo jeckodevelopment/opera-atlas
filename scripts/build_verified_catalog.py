@@ -17,6 +17,9 @@ MANIFEST = ROOT / "data" / "verified-launch-catalog.json"
 OUTPUT = ROOT / "site" / "performances.json"
 TIME_EVIDENCE = ROOT / "data" / "verified-time-evidence.json"
 APPROVED_PAGES = {
+    "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
+    "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
+    "https://www.arena.it/arena-opera-festival/nabucco/",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
