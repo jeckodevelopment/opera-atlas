@@ -1,63 +1,64 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T22:15:07+00:00",
+  "checked_at": "2026-11-20T22:26:28+00:00",
   "attempted": 10,
   "outcomes": [
     {
-      "candidate_id": "oa-index-74ce9c00c158699bd2cc",
-      "outcome": "facts_found",
-      "rows": 4
-    },
-    {
-      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
+      "candidate_id": "oa-index-ef66d28ddc0afb7c8b8c",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-92b69a8ac1040b0537be",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-97514cec9448be1a563d",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-97623fff7b8b02413f70",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9a4c8e6f9ca9682d8d9d",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a02901b14e6eae69df5c",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a77154badf30929b95dc",
+      "candidate_id": "oa-index-d7a3053257b5915753f9",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
       "candidate_id": "oa-index-a8590c90fe0f6dea649d",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-af061781b5421a61f2f1",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-b372b317894fe260b18e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-b4180540983902f703af",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-c8884398af891aeb2492",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-d30d8809ab9bf16b07b7",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "ValueError",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-d4c75ba7e833c2d11211",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
