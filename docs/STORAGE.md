@@ -45,3 +45,12 @@ Il codice offre `opera_atlas.review.resolve_review(conn, review_id, action='link
 
 9. Risolvere una review con la scelta esplicita della recita corretta; verificare stato resolved e provenance.
 10. Risolvere un rinvio creando una nuova recita; verificare che l'evento storico resti censito e che la fonte punti al nuovo.
+
+## Normalizzazione del repertorio
+`opera_atlas.catalog.register_work` registra un titolo con compositore e genere espliciti. `register_alias` aggiunge esclusivamente alias confermati; `find_work(conn,title,composer=...,genre=...)` restituisce ID solo se univoco. Se il compositore manca non effettua match, se più opere corrispondono genera `AmbiguousWorkError`. L'inserimento di un'opera non certifica da solo un programma reale. I generi non operistici devono essere esclusi dai conteggi lirici, secondo la definizione statistica documentata.
+
+### Collaudi aggiuntivi
+11. Creare opera e alias e verificare il riconoscimento con case/spazi differenti.
+12. Verificare che senza compositore il sistema non deduca l'opera da un titolo omonimo.
+13. Verificare che due opere con medesimo titolo e compositore generino ambiguità anziché fusione automatica.
+14. Registrare un concerto e verificare che il filtro `genre='opera'` non lo trovi.
