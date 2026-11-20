@@ -56,6 +56,12 @@ class EditorialUITests(unittest.TestCase):
         self.assertNotIn("Edizioni e programmi festivalieri verificati",directory)
         self.assertNotIn("rappresentazioni future censite",directory)
     @unittest.skipUnless(shutil.which("node"),"Node not installed")
+    def test_photo_library_and_fallback(self):
+        result=subprocess.run(["node",str(ROOT/"tests/image_client_smoke.cjs")],
+                              capture_output=True,text=True,cwd=ROOT)
+        self.assertEqual(result.returncode,0,result.stdout+"\n"+result.stderr)
+
+    @unittest.skipUnless(shutil.which("node"),"Node not installed")
     def test_js_syntax(self):
         for name in ("app.js","directory.js","detail.js","image-client.js"):
             result=subprocess.run(["node","--check",str(SITE/name)],capture_output=True,text=True)

@@ -81,3 +81,7 @@ Le 14 schede Teatro riportano un breve testo introduttivo e indirizzo verificato
 Fonti per gli indirizzi: pagine contatti/biglietteria dei teatri e siti istituzionali comunali (Torino, Como, Pavia, Brescia, Cremona, Milano, Verona, Venezia, Palermo, Parma, Novara, Bergamo, Reggio Emilia e Ravenna). Le coordinate dei luoghi non sono confuse con i centri cittadini usati dal filtro geografico. Il profilo viene caricato indipendentemente dal feed, e un suo errore non impedisce la consultazione del calendario.
 
 Da collaudare: tab Opere/Teatri/Festival anche con blocco del server immagini, scena con 30+ date che mostra il solo link pertinente, «Come arrivare», area di biglietteria al fondo, confronto con il feed GitHub e con fallback locale.
+
+## Ripristino fotografie — 20 novembre 2026
+
+Corretto il blocco dell'intera libreria immagini: tre asset referenziati (Traviata, Tosca e Fenice) erano usati senza dichiarazione e causavano un errore JavaScript all'avvio. Il client usa il redirect pubblico Wikimedia Commons e, per singole fotografie non raggiungibili, passa automaticamente a `site/opera-stage.svg`, un'illustrazione locale originale in palette nero/oro, indipendente da fornitori esterni. Il fallback è valido anche per l'immagine hero della homepage. Introdotto uno smoke Node in `tests/image_client_smoke.cjs` per inizializzazione, immagini caratteristiche e gestione degli errori di caricamento. Il publisher SFTP di `jeckodevsite` deve trasferire `opera-stage.svg` insieme agli asset HTML e JS, senza eseguire test applicativi.
