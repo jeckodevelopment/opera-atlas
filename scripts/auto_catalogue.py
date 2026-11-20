@@ -27,6 +27,26 @@ VENUE_BY_SOURCE={
     "parma-opera-2027":("Parma","Teatro Regio di Parma"),
     "massimo-season-2026-27":("Palermo","Teatro Massimo"),
 }
+def season_from_source(source_key:str,url:str,days)->str:
+    """Use the exact official season URL or observed dates, never 2026-27."""
+    import re
+    path=urlsplit(url).path
+    if source_key=="scala-season-2026-27":
+        match=re.search(r"/it/stagione/(20\d{2})-(20\d{2})/opera/",path)
+        if match and int(match[2])==int(match[1])+1:
+            return match[1]+"-"+match[2]
+    if source_key in ("fenice-opera-2026-27","massimo-season-2026-27"):
+        source=next((x for x in validate_config(json.loads(
+            CONFIG.read_text(encoding="utf-8"))) if x["key"]==source_key),None)
+        if source:
+            start=re.search(r"(20\d{2})-(\d{2})",source["url"])
+            if start and int(start[2])==(int(start[1])+1)%100:
+                return str(int(start[1]))+"-"+str(int(start[1])+1)
+    if days:
+        y=int(min(days)[:4])
+        return str(y)
+    raise ValueError("cannot determine official source season")
+
 def next_id(entries:dict,prefix:str)->str:
     numeric=[int(x["id"][len(prefix):]) for x in entries.values()
              if x["id"].startswith(prefix) and x["id"][len(prefix):].isdigit()]
@@ -134,7 +154,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             next_registry["stagings"][staging_key]={
                 "id":next_id(next_registry["stagings"],"oa-s-"),
                 "work_id":work["id"],"venue_id":canonical_venue["id"],
-                "slug":work["slug"],"source_url":url,"season":"2026-2027"}
+                "slug":work["slug"],"source_url":url,
+                "season":season_from_source(key,url,dates)}
             next_facts["productions"].append(production)
             created_stagings+=1
         for day,hour in sorted(dates.items()):
@@ -214,7 +235,7 @@ def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
                     "id":next_id(next_registry["stagings"],"oa-s-"),
                     "work_id":work["id"],"venue_id":canonical_venue["id"],
                     "slug":work["slug"],"source_url":source["url"],
-                    "season":"2026-2027"}
+                    "season":season_from_source(source["key"],source["url"],[day])}
                 next_facts["productions"].append(production)
                 created+=1
             if day in dict(production["dates"]):
@@ -315,7 +336,8 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         next_editorial["synopses"][slug]=summary
         next_registry["stagings"][staging_key]={
             "id":stage_id,"work_id":work_id,"venue_id":canonical_venue["id"],
-            "slug":slug,"source_url":url,"season":"2026-2027"}
+            "slug":slug,"source_url":url,
+            "season":season_from_source(source_key,url,date_rows)}
         next_facts["productions"].append({
             "key":staging_key,"title":title,"composer":composer,"venue":venue,
             "municipality":city,"region":canonical_venue["region"],
