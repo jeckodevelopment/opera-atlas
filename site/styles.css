@@ -314,10 +314,10 @@
 }
 /* Theatre listings: equal-height cards, date grid may naturally wrap, action fixed at bottom. */
 .detail-related #detail-events.events{align-items:stretch}
-.detail-related .theatre-production{display:flex;flex-direction:column;align-self:stretch;min-height:100%;height:100%;padding:20px 20px 16px}
-.detail-related .theatre-production .date-picker-section{display:flex;flex-direction:column;flex:1 0 auto}
+.detail-related .theatre-production{display:flex;flex-direction:column;align-self:stretch;min-height:0;height:auto;padding:20px 20px 16px}
+.detail-related .theatre-production .date-picker-section{display:flex;flex-direction:column;flex:0 0 auto}
 .detail-related .theatre-production .mini-calendar-list{align-content:start}
-.detail-related .theatre-production .selected-replica{margin-top:auto}
+.detail-related .theatre-production .selected-replica{margin-top:10px}
 .detail-related .theatre-production > .detail-link{display:inline-flex;align-items:center;align-self:stretch;width:auto;border-top:1px solid #dfd9cd;margin-top:auto;padding:14px 1px 2px;text-decoration:none;font-weight:700;color:#826424}
 .detail-related .theatre-production > .detail-link:hover{text-decoration:underline}
 @media(max-width:700px){
