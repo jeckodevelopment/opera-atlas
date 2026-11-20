@@ -83,6 +83,37 @@ class CandidateDetailTests(unittest.TestCase):
                 item,"<h1>Anna Bolena altro autore</h1><p>2 giugno 2027 ore 20:00</p>",
                 intelligence)
 
+    def test_three_national_official_pages_with_canonical_identity(self):
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        cases=[
+            ("fenice-opera-2026-27",
+             "https://www.teatrolafenice.it/event/jenufa/",
+             "<h1>Jenůfa</h1><p>Leoš Janáček</p><p>Seleziona una data:</p>"
+             "<a>venerdì 12 Marzo 2027 19:00 ACQUISTA</a>",
+             "Jenůfa","Leoš Janáček","2027-03-12"),
+            ("parma-opera-2027",
+             "https://teatroregioparma.it/spettacolo/madama-butterfly/",
+             "<h1>Madama Butterfly</h1><p>Giacomo Puccini</p><p>19 feb 2027</p>"
+             "<p>Musica Giacomo Puccini</p><h2>Teatro Regio di Parma</h2>"
+             "<p>ven 19 feb</p><p>20:00</p><p>TURNO A</p>",
+             "Madama Butterfly","Giacomo Puccini","2027-02-19"),
+            ("massimo-season-2026-27",
+             "https://www.teatromassimo.it/event/macbeth/",
+             "<h2>Date</h2><p>5 Febbraio</p><p>19:00</p>"
+             "<p>7 Febbraio</p><p>17:30</p><h2>Lo spettacolo</h2>"
+             "<p>5, 7 febbraio 2027 | Sala Grande</p>"
+             "<h1>Macbeth</h1><p>Musiche di Giuseppe Verdi</p>",
+             "Macbeth","Giuseppe Verdi","2027-02-05"),
+        ]
+        for key,url,html,title,composer,day in cases:
+            with self.subTest(key=key):
+                facts=parse_known_opera_detail(key,url,html,registry)
+                self.assertTrue(facts)
+                self.assertEqual(facts[0]["date"],day)
+                self.assertEqual(facts[0]["event_title"],title)
+                self.assertEqual(facts[0]["composer"],composer)
+                self.assertTrue(facts[0]["starts_at"].endswith(("+01:00","+02:00")))
+
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[
             {"@type":"MusicEvent","name":"Anna Bolena",

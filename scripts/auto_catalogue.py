@@ -23,6 +23,9 @@ HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
     "scala-season-2026-27":("Milano","Teatro alla Scala"),
     "arena-festival-2027":("Verona","Arena di Verona"),
+    "fenice-opera-2026-27":("Venezia","Teatro La Fenice"),
+    "parma-opera-2027":("Parma","Teatro Regio di Parma"),
+    "massimo-season-2026-27":("Palermo","Teatro Massimo"),
 }
 def next_id(entries:dict,prefix:str)->str:
     numeric=[int(x["id"][len(prefix):]) for x in entries.values()

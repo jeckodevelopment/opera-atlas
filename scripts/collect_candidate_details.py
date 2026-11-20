@@ -19,6 +19,8 @@ from scripts.discover_season_indexes import CONFIG,OUTPUT as INDEX,validate_conf
 from scripts.publish_catalog_v2 import ROOT,REGISTRY
 from scripts.build_verified_catalog import official_local_time
 from opera_atlas.scala_arena_parser import parse_showtimes
+from opera_atlas.national_detail_parser import parse_national_showtimes, VisibleText
+from scripts.publish_catalog_v2 import normalized
 
 OUTPUT=ROOT/"data"/"candidate-detail-evidence.json"
 PUBLIC=ROOT/"public"/"catalog"/"candidate-detail-evidence.json"
@@ -96,6 +98,29 @@ def parse_event_facts(html:str)->list[dict]:
     rows.sort(key=lambda x:(x["date"],x["starts_at"] or "",x["event_title"]))
     return rows
 
+class FirstHeading(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.in_heading=False
+        self.parts=[]
+        self.first=None
+    def handle_starttag(self,tag,attrs):
+        if tag=="h1" and self.first is None:self.in_heading=True
+    def handle_endtag(self,tag):
+        if tag=="h1" and self.in_heading:
+            self.first=" ".join("".join(self.parts).split())
+            self.in_heading=False
+    def handle_data(self,text):
+        if self.in_heading:self.parts.append(text)
+
+def heading_work(html:str,registry:dict)->dict|None:
+    reader=FirstHeading()
+    reader.feed(html)
+    if not reader.first:return None
+    matches=[work for work in registry.get("works",{}).values()
+             if normalized(work["title"])==normalized(reader.first)]
+    return matches[0] if len(matches)==1 else None
+
 def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->list[dict]:
     """Fallback only for unambiguous canonical title+composer and verified HTML.
 
@@ -103,14 +128,25 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
     """
     adapter={"scala-season-2026-27":"scala",
              "arena-festival-2027":"arena"}.get(source_key)
-    if adapter is None:return []
-    slug=urlsplit(url).path.rstrip("/").split("/")[-1].removesuffix(".html")
-    known=[work for work in registry.get("works",{}).values() if work.get("slug")==slug]
-    if len(known)!=1:return []
-    work=known[0]
-    raw=parse_showtimes(html,url=url,title=work["title"],
-                        composer=work["composer"],adapter=adapter)
-    venue="Teatro alla Scala" if adapter=="scala" else "Arena di Verona"
+    if adapter is None and source_key not in (
+            "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27"):
+        return []
+    if adapter is None:
+        work=heading_work(html,registry)
+        if work is None:return []
+        raw=parse_national_showtimes(html,source_key=source_key,url=url,
+                                     title=work["title"],composer=work["composer"])
+        venue={"fenice-opera-2026-27":"Teatro La Fenice",
+               "parma-opera-2027":"Teatro Regio di Parma",
+               "massimo-season-2026-27":"Teatro Massimo"}[source_key]
+    else:
+        slug=urlsplit(url).path.rstrip("/").split("/")[-1].removesuffix(".html")
+        known=[work for work in registry.get("works",{}).values() if work.get("slug")==slug]
+        if len(known)!=1:return []
+        work=known[0]
+        raw=parse_showtimes(html,url=url,title=work["title"],
+                            composer=work["composer"],adapter=adapter)
+        venue="Teatro alla Scala" if adapter=="scala" else "Arena di Verona"
     return [{"event_title":work["title"],"composer":work["composer"],
              "date":day,"starts_at":official_local_time(day,hour),
              "venue":venue} for day,hour in raw]
@@ -127,10 +163,24 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
     info=matches[0]
     adapter={"scala-season-2026-27":"scala",
              "arena-festival-2027":"arena"}.get(item["source_key"])
-    if adapter is None:return []
-    rows=parse_showtimes(html,url=item["official_url"],title=info["title"],
-                         composer=info["composer"],adapter=adapter)
-    venue="Teatro alla Scala" if adapter=="scala" else "Arena di Verona"
+    if adapter is None and item["source_key"] not in (
+            "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27"):
+        return []
+    if adapter is None:
+        heading=FirstHeading()
+        heading.feed(html)
+        if normalized(heading.first)!=normalized(info["title"]):
+            raise ValueError("opera title mismatches official page heading")
+        rows=parse_national_showtimes(html,source_key=item["source_key"],
+                                     url=item["official_url"],title=info["title"],
+                                     composer=info["composer"])
+        venue={"fenice-opera-2026-27":"Teatro La Fenice",
+               "parma-opera-2027":"Teatro Regio di Parma",
+               "massimo-season-2026-27":"Teatro Massimo"}[item["source_key"]]
+    else:
+        rows=parse_showtimes(html,url=item["official_url"],title=info["title"],
+                             composer=info["composer"],adapter=adapter)
+        venue="Teatro alla Scala" if adapter=="scala" else "Arena di Verona"
     return [{"event_title":info["title"],"composer":info["composer"],
              "date":day,"starts_at":official_local_time(day,hour),
              "venue":venue} for day,hour in rows]

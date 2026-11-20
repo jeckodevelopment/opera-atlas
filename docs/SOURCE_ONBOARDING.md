@@ -230,3 +230,16 @@ Le API Wikimedia di interrogazione dei dati sono pubbliche. La sintesi originale
 ### Collaudi automatici
 
 `python -m unittest discover -s tests -v` include un'identità Wikidata simulata con compositore univoco, rifiuto delle omonimie/classi estranee, mancanza di credenziali, idempotenza della ricerca, creazione in memoria di opera + sinossi + recita, mancata pubblicazione per composer/ora/venue non validi e mantenimento degli URL di provenienza. Il flusso pubblico usa solo le modifiche già validate e genera un commit insieme ai manifest JSON; nessun deploy frontend viene invocato. La generazione reale della sinossi non può essere considerata collaudata senza un secret API valido.
+
+
+## F2 — acquisizione autonoma di recite Fenice, Parma e Palermo
+
+Il sistema non si limita più ai collegamenti d'indice per queste tre fonti: `opera_atlas.national_detail_parser` estrae **date e ore individuali** dal markup ufficiale delle produzioni, quando titolo e compositore coincidono con un'opera canonica o con un'identità acquisita da fonte autorevole. È richiamato da `scripts.collect_candidate_details` sulle singole pagine dopo il controllo robots.txt già previsto.
+
+- **Teatro La Fenice:** legge la sequenza dei biglietti «Seleziona una data» con giorno, mese, anno e ora espliciti, fermandosi prima dei suggerimenti di altri eventi.
+- **Teatro Regio di Parma:** collega l'anno riportato nel programma alle schede giorno/ora, escludendo automaticamente prove aperte e Under30, che non sono recite ordinarie. Se l'anno non è univoco, non pubblica.
+- **Teatro Massimo Palermo:** richiede la concordanza completa fra l'elenco dei giorni/orari e il riepilogo della produzione che identifica mese e anno. Rifiuta calendari parziali e date incoerenti.
+
+Le pagine non pertinenti e quelle senza identificazione univoca di titolo e compositore non possono generare recite; il collector conserva sempre l'ultima evidenza valida in caso di assenza dati, errori di rete o pagine modificate. Le evidenze valide passano a `scripts.auto_catalogue`, che ora riconosce anche le sedi canoniche Venezia/Teatro La Fenice, Parma/Teatro Regio di Parma e Palermo/Teatro Massimo. Il relativo motore crea nuovi ID e pubblica i JSON automaticamente solo dopo il controllo dell'intero grafo.
+
+Test: `tests/test_national_detail_parser.py` (date, orari, prove, esclusioni, anno e composer) e `tests/test_candidate_detail_evidence.py`, oltre alla suite Python completa. La riuscita dei test con fixture non equivale al collaudo live: dopo merge occorre verificare `data/candidate-detail-health.json`, `data/autonomous-catalogue-health.json` e i contatori pubblici. Nessun workflow SFTP e nessun aggiornamento manuale dei JSON.
