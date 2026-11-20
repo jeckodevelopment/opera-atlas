@@ -195,12 +195,19 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 source_id=db.execute("SELECT id FROM sources WHERE official_url=?",
                                      (source["official_url"],)).fetchone()["id"]
                 page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
-                facts=parse_event_facts(page.html)
-                if not facts:
-                    facts=parse_known_opera_detail(item["source_key"],
-                                                  item["official_url"],page.html,registry)
-                if not facts:
-                    facts=parse_authoritative_new_work_detail(item,page.html,intelligence)
+                # Prefer parsers which verify the canonical composer and
+                # page-specific showtime. Generic Event JSON-LD alone has no
+                # authoritative work identity and must never outrank those.
+                facts=[]
+                for parse in (
+                    lambda:parse_known_opera_detail(item["source_key"],
+                                                     item["official_url"],page.html,registry),
+                    lambda:parse_authoritative_new_work_detail(item,page.html,intelligence),
+                    lambda:parse_event_facts(page.html),
+                ):
+                    try:facts=parse()
+                    except ValueError:continue
+                    if facts:break
                 if not facts:raise ValueError("no unambiguous structured event facts")
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
