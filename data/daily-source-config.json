@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "policy": "No network fetch unless access_status approved with explicit human-reviewed robots/terms evidence. Unknown pages are not scanned.",
+  "policy": "Operator authorizes conditional daily checking of these specific official production pages; every request to a production page requires a fresh, successful robots.txt permission check in the same execution. Unavailable, denied or malformed robots.txt blocks the page; no bypass. Factual recita data only; no copied editorial content.",
   "sources": [
     {
       "key": "regio-traviata-2027",
@@ -9,8 +9,8 @@
       "official_url": "https://www.teatroregio.torino.it/",
       "title": "La traviata",
       "composer": "Giuseppe Verdi",
-      "access_status": "pending",
-      "approval_evidence": null
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for conditional robots-gated retrieval of factual event dates; robots availability and permit NOT verified at authorization time. Must check fresh at runtime and deny on uncertainty."
     },
     {
       "key": "lombardia-italiana-2026",
@@ -19,8 +19,8 @@
       "official_url": "https://www.operalombardia.it/",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
-      "access_status": "pending",
-      "approval_evidence": null
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for conditional robots-gated retrieval of factual event dates; robots availability and permit NOT verified at authorization time. Must check fresh at runtime and deny on uncertainty."
     }
   ]
 }

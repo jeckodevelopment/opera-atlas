@@ -44,7 +44,11 @@ class DailyIngestionTests(unittest.TestCase):
         )
 
     def test_disabled_by_default_no_fetch(self):
-        sources=validate_source_config(self.config)
+        pending=copy.deepcopy(self.config)
+        for item in pending["sources"]:
+            item["access_status"]="pending"
+            item["approval_evidence"]=None
+        sources=validate_source_config(pending)
         def forbidden(*args, **kwargs):
             raise AssertionError("unapproved source must not fetch")
         facts,registry,status,added=scan_approved(
@@ -59,6 +63,7 @@ class DailyIngestionTests(unittest.TestCase):
     def test_approval_requires_review_evidence(self):
         invalid=copy.deepcopy(self.config)
         invalid["sources"][0]["access_status"]="approved"
+        invalid["sources"][0]["approval_evidence"]=None
         with self.assertRaises(ValueError):
             validate_source_config(invalid)
 
