@@ -123,13 +123,16 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(status[0]["status"],"model_not_configured")
 
     def test_original_synopsis_is_saved_only_if_grounded(self):
-        doc={"schema_version":1,"candidates":[CANDIDATE]}
-        identity={"title":"Anna Bolena","composer":"Gaetano Donizetti","wikidata_id":"Q111",
+        doc={"schema_version":1,"candidates":[{
+            "id":"oa-index-fake-for-paid-path","source_key":"scala-season-2026-27",
+            "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/fixture-new-opera.html",
+            "status":"needs_review"}]}
+        identity={"title":"Fixture New Opera","composer":"Gaetano Donizetti","wikidata_id":"Q111",
                   "authority_url":"https://www.wikidata.org/wiki/Q111",
                   "wikipedia_url":"https://it.wikipedia.org/wiki/Anna_Bolena"}
         calls=[]
         def resolver(title):
-            self.assertEqual(title,"anna bolena")
+            self.assertEqual(title,"fixture new opera")
             return identity
         def article(obj):
             return "La vicenda di Anna Bolena e dei suoi rapporti con Enrico VIII, " * 4
