@@ -86,6 +86,7 @@ def assemble(facts: dict, registry: dict) -> dict:
             if item["staging_id"] != staging["id"] or item["source_url"] != product["source_url"]:
                 raise ValueError("recita identity or provenance changed unexpectedly")
             item.update({
+                "legacy_id": f"curated:{sk}:{day}",
                 "local_date": day,
                 "starts_at": f"{day}T{time}:00+01:00" if time else None,
                 "time_known": time is not None,
