@@ -177,3 +177,10 @@ Collaudi: test `tests/test_candidate_detail_evidence.py` e suite completa; contr
 Dopo il primo controllo live Parma e Palermo sono risultati leggibili, ma gli indici HTML contengono anche collegamenti alla navigazione generale. Il parser dei due siti usa ora una sezione semantica delimitata per evitare falsi positivi: **Parma** solo dopo l'intestazione `h1 Opera` e prima del footer; **Palermo** solo fra `h2 CALENDARIO OPERE E BALLETTI` e la successiva sezione `h2 CALENDARIO CONCERTI`. Gli URL fuori da queste aree non vengono considerati candidate nuove. Rimangono i controlli di dominio HTTPS, path esatto, esclusioni di balletto/prove e soglia minima di completezza; se la struttura cambia, il job non sovrascrive i dati buoni e segnala errore.
 
 La coda storica non viene cancellata solo perché un collegamento non appare più nella nuova estrazione: eventuali variazioni stagionali devono essere valutate prima di marcare un evento cancellato. I test simulano menu, footer e sezione concerti presenti nella stessa pagina.
+
+
+### F2 — recupero delle date quando manca JSON-LD (Scala e Arena)
+
+Il primo job live delle nuove pagine di dettaglio ha restituito dieci casi senza metadati `Event` strutturati sufficienti, **zero recite nuove**. Il collector tenta ora un secondo parser **soltanto** per Scala e Arena, e **soltanto** quando l'URL corrisponde in modo univoco allo slug di un'opera già presente nel registro canonico con titolo e compositore verificati. In tal caso utilizza i parser Scala/Arena già collaudati: la pagina ufficiale deve contenere davvero il titolo, il compositore e coppie complete data+ora; ora locale Europe/Rome con gestione DST. La nuova evidenza è comunque registrata solo in coda di revisione, non pubblicata come replica.
+
+Per opere non ancora presenti nel registro, slug ambigui, compositor mancante, pagine incomplete, sostituzioni o nuove strutture non viene creato alcun dato fittizio. Fenice, Parma e Palermo richiedono ulteriori parser dedicati ove non espongano JSON-LD Event affidabile. La scheda e la sinossi originale di un'opera nuova restano un requisito obbligatorio prima di promuoverla in catalogo.
