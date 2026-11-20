@@ -89,3 +89,16 @@ Il workflow di collaudo `source-probe.yml` (run 44809106408) ha verificato tutte
 
 ### Attivazione Scala verificata 2026-11-20
 Il secondo collaudo live [run 44809794379](https://github.com/jeckodevelopment/opera-atlas/actions/runs/44809794379) ha confermato **tutti** gli eventi attesi sulle pagine ufficiali Scala Don Giovanni (10) e La bohème di Puccini (8) e Arena Nabucco (6), con robots accessibile e permissivo. Le tre pagine hanno quindi un monitor giornaliero approvato in modo condizionato: ogni nuovo fetch ricontrolla robots. Il limite operativo di sorgenti del singolo job passa da 20 a 48, con timeout massimo 25 minuti; non è un'autorizzazione implicita a nuove URL, che devono essere approvate singolarmente.
+
+
+## F2 — scoperta quotidiana delle produzioni non ancora censite
+
+Il monitoraggio di un calendario ufficiale può incontrare nuove produzioni o sedi non ancora presenti nel registro canonico. Il job giornaliero salva ora le righe fattuali non riconosciute (titolo, teatro, città, data e ora quando presente, fonte) in una **coda separata di revisione**, senza importarle come spettacoli pubblici e senza generare automaticamente nuovi ID di messa in scena.
+
+- `scripts.daily_ingest` conserva `candidates` negli esiti delle fonti approvate che richiedono revisione. Se la stessa pagina contiene dati non riconosciuti, continua a non pubblicare alcuna modifica parziale di quella pagina.
+- `scripts.discovery_queue` consolida giornalmente gli identificativi candidati deterministici, le date osservate, la prima e l'ultima osservazione.
+- `data/discovery-candidates.json` è il registro persistente; `public/catalog/discovery.json` rende il risultato disponibile per diagnostica e futura UI di revisione. Non sostituisce e non alimenta automaticamente il feed canonico `public/catalog/v2`.
+- La coda include soltanto fatti provenienti da pagine effettivamente lette durante scansioni consentite dal controllo robots runtime; fonti pending, blocked, errori di rete o scansioni non valide non producono candidate.
+- La promozione a produzione reale richiede riconciliazione con repertorio, compositore, teatro e identità canonica, confronto completo della fonte e test. Non assumere che una riga dell'indice equivalga a una nuova produzione sicura.
+
+Collaudo: `python -m unittest discover -s tests -v`, quindi workflow `Refresh public Opera Atlas catalog` e verifica che `discovery.json` sia coerente con il registro; nessun SFTP. Le altre fonti ancora editorial-only devono prima acquisire connettori di calendario consentiti: questa funzionalità non costituisce copertura completa delle otto stagioni.
