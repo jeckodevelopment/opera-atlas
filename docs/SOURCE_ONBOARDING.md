@@ -109,3 +109,17 @@ Collaudo: `python -m unittest discover -s tests -v`, quindi workflow `Refresh pu
 Il parser dell'indice OperaLombardia conserva la modalità rigorosa preesistente: una chiamata senza opzioni rifiuta titoli non riconosciuti. **Solo** la pipeline di scansione giornaliera abilita `allow_unknown_for_review=True`: una riga con titolo sconosciuto e città, teatro, data validi viene inoltrata alla coda di scoperta introdotta dalla PR #56. Il titolo sconosciuto NON è considerato opera verificata: potrebbe anche essere un evento non lirico e richiede classificazione editoriale.
 
 Restano fail-closed calendario parziale, date malformate, righe duplicate, cancellazioni e rinvii. Per una pagina con candidato sconosciuto l'esito è `review_required`, nessuna nuova replica viene pubblicata dalla pagina; il dato fattuale è invece conservato nella coda per successiva validazione. Test: `tests/test_operalombardia_daily_index.py`, oltre alla suite completa. Questo intervento abilita la scoperta effettiva solo per l'indice già approvato di OperaLombardia; **non** dichiara attivi gli indici delle altre sette fonti.
+
+
+## F2/F3 — nuove opere: scheda editoriale obbligatoria e distribuzione senza SFTP
+
+Il rilevamento di una produzione non equivale automaticamente alla pubblicazione dell'opera. Prima di promuovere un candidato di `data/discovery-candidates.json` è obbligatorio:
+1. Stabilire che sia realmente un'opera lirica e verificare **titolo canonico, eventuali omonimie, compositore, teatro, località, produzione, data e provenienza ufficiale**. Se un titolo coincide ma il compositore è diverso, non unificare le opere.
+2. Verificare l'identità nel registro canonico e attribuire ID permanenti a nuova opera, sede (solo se realmente nuova), messa in scena e repliche. La coda non produce automaticamente questi identificativi.
+3. Scrivere una **sinossi breve e originale in italiano**, indicativamente 1–2 frasi, orientata ad accompagnare il pubblico alla rappresentazione; niente materiali didattici, trame estese, testo copiato dagli organizzatori o informazioni inventate.
+4. Includere la sinossi nella fonte editoriale versionata `site/work-synopses.json`; il job `scripts.publish_work_editorial` verifica la corrispondenza 1:1 con le opere canoniche e ne impedisce la pubblicazione se una descrizione manca o non ha lunghezza adeguata.
+5. Distribuire `public/catalog/work-editorial.json` assieme al feed v2 tramite GitHub Actions in `opera-atlas`. Le pagine directory/dettaglio leggono il JSON GitHub, con fallback alla precedente copia locale.
+
+**Collaudo:** eseguire `python -m unittest discover -s tests -v`, `python -m scripts.publish_work_editorial`, `python -m scripts.publish_work_editorial --check`; eliminare in fixture una sinossi e verificare il blocco. Dopo la prima pubblicazione SFTP del frontend aggiornato tramite il solo workflow di `jeckodevsite`, ogni nuova sinossi nel feed diventa disponibile senza ulteriori deploy delle pagine. L'aggiornamento dei dati resta esclusivamente nelle Actions di `opera-atlas`.
+
+**Limite esplicito:** non viene generata automaticamente una sinossi sulla sola base di un titolo non classificato. Per nuove opere non già censite occorre un processo affidabile di arricchimento e verifica, da estendere insieme ai connettori completi di Scala, Arena, Fenice, Parma e Palermo. Questa PR implementa il vincolo di completezza e la distribuzione, non dichiara quei connettori completi.
