@@ -6,7 +6,7 @@ Una fonte nell'inventario non equivale a un teatro pienamente catalogato. Questo
 | Fonte iniziale | Produzioni già documentate | Stato copertura | Acquisizione giornaliera |
 |---|---|---|---|
 | Teatro Regio Torino | 9 opere del cartellone principale 2026/27, 73 recite | Cartellone principale censito; altri programmi separati | **Attiva**, robots-gated |
-| OperaLombardia | 5 titoli presso Teatro Fraschini Pavia (10 recite) + L'italiana in Algeri in 4 teatri (8 recite) | **Parziale**: tournée delle altre opere in Como, Brescia, Cremona e altre sedi da verificare | **Attiva** per 1 pagina circuito + 4 pagine partner; robots-gated |
+| OperaLombardia | 5 titoli presso Teatro Fraschini Pavia (10 recite), 5 titoli presso Teatro Sociale Como (10 nuove recite + 2 già censite), e L'italiana in Algeri nelle altre sedi | **Parziale**: tournée delle altre opere in Como, Brescia, Cremona e altre sedi da verificare | **Attiva** per 1 pagina circuito + 4 pagine partner; robots-gated |
 | Teatro alla Scala Milano | Otello di Verdi, 9 recite tra dicembre 2026 e gennaio 2027 | Parziale: ulteriori opere e stagioni da censire | **Non attiva**: adattatore e robots da testare |
 | Fondazione Arena di Verona | Aida, allestimento Gianfranco de Bosio, 9 recite estate 2027 | Parziale: Aida Stefano Poda e altre opere del festival, distinguere allestimenti e Teatro Filarmonico | **Non attiva** |
 | Teatro La Fenice Venezia | Fedora, 7 recite novembre 2026 | Parziale: altre opere e sede Teatro Malibran da verificare. **13/11 annullata**, non pubblicata come recita attiva | **Non attiva** |
@@ -25,3 +25,6 @@ Una fonte nell'inventario non equivale a un teatro pienamente catalogato. Questo
 L'import di questa tranche è **editoriale e verificato**, non una nuova scansione live; i sei URL sono nell'allowlist del generatore e sono collegati a ciascun evento. Non sono stati aggiunti a `daily-source-config.json` con `approved` perché gli adapter dei nuovi host non sono stati collaudati. Il catalogo v2 resta servito da GitHub in maniera automatica senza SFTP.
 
 Per completare davvero il mandato: (1) continuare OperaLombardia nei singoli teatri e riconciliare le coproduzioni; (2) censire le ulteriori produzioni e orari delle cinque fonti con primo campione; (3) affrontare ROF tramite pagine ufficiali singole liberamente raggiungibili, senza aggirare il calendario bloccato; (4) sviluppare test parser e controlli robots per ogni dominio, solo dopo verifiche reali; (5) mantenere ID e percorsi permanenti, distinguendo produzioni diverse della stessa opera e stesso teatro per stagione/allestimento.
+
+### Avanzamento Como
+Il 20/11/2026 sono state verificate sul [programma Opera 2026/27](https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/) le quattro produzioni oltre all'Italiana già censita, con 10 date/ore per i singoli titoli (il dittico verista contribuisce quattro righe). L'import è editoriale; il dominio Como non è stato abilitato allo scraping automatico. Restano da riconciliare la tournée presso Brescia, Cremona e altri teatri partecipanti.
