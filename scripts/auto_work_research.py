@@ -24,7 +24,8 @@ from scripts.publish_catalog_v2 import ROOT,REGISTRY,slugify,normalized
 
 OUT=ROOT/"data"/"auto-work-intelligence.json"
 HEALTH=ROOT/"data"/"auto-work-intelligence-health.json"
-MAX_RESEARCH=3
+MAX_RESEARCH=3  # max unknown works/model calls per day
+MAX_PREVERIFIED=16  # free Wikidata identity checks for already sourced work cards
 MAX_BYTES=300_000
 UA="OperaAtlasResearch/0.1 (+https://github.com/jeckodevelopment/opera-atlas)"
 
@@ -280,7 +281,9 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
         if not items:return []
         offset=today.toordinal()%len(items)
         return items[offset:]+items[:offset]
-    return (rotate(ready)+rotate(other))[:MAX_RESEARCH]
+    # All pre-sourced works can be checked with public authoritative APIs, without
+    # consuming the paid model budget reserved for truly undocumented titles.
+    return rotate(ready)[:MAX_PREVERIFIED]+rotate(other)[:MAX_RESEARCH]
 
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
