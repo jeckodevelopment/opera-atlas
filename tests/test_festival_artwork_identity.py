@@ -11,13 +11,14 @@ class FestivalArtworkTests(unittest.TestCase):
         source=(SITE/"directory.js").read_text(encoding="utf-8")
         self.assertIn('imageKind:"work",work_slug:event.work_slug',source)
         self.assertIn('const type=item.imageKind||',source)
-        self.assertIn('{title:item.title,work_slug:item.work_slug}',source)
+        self.assertIn('{title:item.title,work_slug:item.work_slug,work_id:item.work_id',source)
         self.assertIn('images[type](identity)',source)
     def test_aida_has_unique_opera_poster_and_arena_is_venue(self):
         source=(SITE/"image-client.js").read_text(encoding="utf-8")
         self.assertIn('"aida":"Giuseppe Verdi - Hippodrome Opera Company - Aida poster.jpg"',source)
         self.assertIn('"verona":"Arena di Verona esterno.jpg"',source)
-        self.assertIn('const file=WORKS[slug]',source)
+        self.assertIn('WORKS[slug]',source)
+        self.assertIn('posters[event?.work_id]',source)
         self.assertIn('const file=FILES[city]',source)
     def test_catalogue_uses_stable_work_slug(self):
         manifest=json.loads((ROOT/"public/catalog/v2/manifest.json").read_text(encoding="utf-8"))

@@ -52,6 +52,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
   // newly catalogued operas automatically gain an image reference.
   const POSTER_FEED="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/work-posters.json";
   let posters={};
+  let posterSchema=0;
   let pending=null;
   function load(){
     if(pending)return pending;
@@ -60,8 +61,10 @@ window.OperaAtlasImages=Object.freeze((()=>{
         const response=await fetch(POSTER_FEED,{cache:"no-store"});
         if(!response.ok)throw new Error("poster registry unavailable");
         const body=await response.json();
-        if(body.schema_version!==1 || !body.works || Array.isArray(body.works))
+        if(![1,2].includes(body.schema_version) || !body.works ||
+           Array.isArray(body.works))
           throw new Error("invalid poster registry");
+        posterSchema=body.schema_version;
         posters=body.works;
       }catch(error){
         // The original generated cover remains available even when the
@@ -118,7 +121,9 @@ window.OperaAtlasImages=Object.freeze((()=>{
   function work(event){
     const title=event?.title||"Opera";
     const slug=event?.work_slug||normalize(title);
-    const chosen=posters[slug];
+    // V2 is keyed by permanent work ID, not by title; e.g. Puccini and
+    // Leoncavallo both have an opera called La bohème.
+    const chosen=(posterSchema===2 ? posters[event?.work_id] : posters[slug]);
     if(chosen && (chosen.kind==="official_production_image" ||
                   chosen.kind==="archival_work_image") &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
@@ -128,7 +133,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
         sourceUrl:chosen.source_url,credit:chosen.credit,
         license:chosen.license||"",kind:chosen.kind};
     }
-    const file=WORKS[slug];
+    const file=slug==="la-boheme" && /leoncavallo/i.test(event?.composer||"")
+      ? null : WORKS[slug];
     return file?photo(file,"Documento d’archivio legato a "+title+" (non allestimento in calendario)",title):
       {src:poster(title),alt:"Copertina editoriale originale per "+title};
   }
