@@ -132,6 +132,19 @@ async function appendSynopsis(event) {
     content.prepend(section);
   }catch{/* Optional editorial synopsis must never block performance dates. */}
 }
+function arrangeWorkOverview(event) {
+  // The copy and cover belong to one editorial composition; listings stay below.
+  const layout=node("div","work-overview");
+  const copy=node("div","work-overview-copy");
+  while(content.firstChild)copy.append(content.firstChild);
+  const figure=node("figure","work-overview-figure");
+  const poster=editorialImage("work",event);
+  poster.className="work-cover-image";
+  poster.loading="eager";
+  figure.append(poster);
+  layout.append(copy,figure);
+  content.append(layout);
+}
 function validEvent(e) {
   return e && typeof e.id==="string" && typeof e.title==="string" && e.title
     && typeof e.venue==="string" && e.venue
@@ -309,7 +322,8 @@ async function initialize() {
       if(future.length)results.append(dateSelector(future));
       if(!future.length)results.append(node("p","empty","Questa produzione non ha date future censite."));
     }
-    content.prepend(editorialImage(selected.kind==="venue"?"venue":"work",first));
+    if(selected.kind==="work")arrangeWorkOverview(first);
+    else content.prepend(editorialImage(selected.kind==="venue"?"venue":"work",first));
     sourceLinks(selected.events,selected.kind,theatreProfile);
     document.title=title.textContent+" — Opera+ Atlas";
     // Canonicalize old query-based links after resolution; never change identity.

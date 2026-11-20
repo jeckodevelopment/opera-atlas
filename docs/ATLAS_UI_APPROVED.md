@@ -122,3 +122,14 @@ Test catalogo: default, conteggio dinamico e filtri; homepage miniature e foto/s
 - Conformità definitiva subordinata a verifica hosting, contratti, durata log e sessione browser reale.
 
 Collaudi: homepage Torino primo, copertine Arena e Samson, nomi teatri visibili, logo su tutte le pagine, footer legale, policy raggiungibile anche su mobile, test statici assenza tracking, geolocalizzazione solo volontaria e verifica del dominio pubblico. SFTP unicamente sul publisher `jeckodevsite`.
+
+
+## Refinement: pagine Opera, schede Teatro e contatti privacy — 20/11/2026
+
+La scheda di ciascuna **opera** conserva l'intestazione con titolo e compositore, ma presenta una composizione editoriale a due colonne: **sinossi e breve testo a sinistra**, **manifesto storico verticale a destra**, con `object-fit:contain` per non tagliare la locandina. Sui dispositivi più stretti le colonne si dispongono verticalmente, testo prima dell'immagine. L'elenco «Dove vedere...» segue sotto questa introduzione. Le pagine Produzione conservano invece il precedente calendario e layout, senza variazioni.
+
+Nelle schede della pagina **Teatro** i calendari piccoli possono svilupparsi su una o più righe. Le card della stessa riga sono alte quanto la card maggiore; il blocco date si espande e il collegamento **«Scopri la produzione»** è allineato al fondo, dopo una sottile linea divisoria. La separazione visiva deve restare visibile anche in mobile.
+
+La pagina `site/privacy.html` omette l'indirizzo civico della sede del titolare, non espressamente richiesto dall'art. 13 GDPR se sono disponibili dati di contatto idonei. Rimangono la denominazione, la sede nel Comune di Torino, il C.F. e l'email ordinaria, cui viene aggiunta la PEC **operaplus@pec.it** comunicata dall'Associazione. Non modificare altri dati o termini di retention senza una verifica dell'hosting.
+
+**Test:** `tests/test_work_detail_layout.py` verifica PEC e assenza della via nell'informativa, la griglia intro/manifesto verticale, l'impaginazione mobile e la posizione dell'azione con bordo superiore. Validare in browser anche card Teatro con date distribuite su due file e la proporzione della copertina. Tutti i test e lo sviluppo restano su `opera-atlas`, con sola pubblicazione SFTP su `jeckodevsite`.
