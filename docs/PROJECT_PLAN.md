@@ -147,3 +147,11 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [ ] Connettori automatici Fenice e Massimo, ancora da sviluppare e collaudare con robots.txt runtime; **non** equiparare una fonte editoriale verificata a un feed automatico.
 - [ ] Completamento per stagione delle prime fonti Regio Torino e OperaLombardia (indice generale e nuove produzioni non ancora monitorate).
 - [ ] Completamento altre fonti in `data/sources.json`: Scala, Arena, Fenice, Parma, Massimo e Rossini Opera Festival.
+
+
+### F2 — completamento primo inventario OperaLombardia 2026/27
+- [x] 38 nuove date documentate dalla pagina di calendario 2026/27, con 19 nuove messe in scena ed estensione a quattro nuove città.
+- [x] Nessuna ora indovinata: 38 nuove date con `time_known: false`, conservazione degli orari dimostrati da fonti partner per le recite già esistenti.
+- [x] ID canonici persistenti, 14 teatri / 48 messe in scena / 208 repliche, collegamento alla pagina ufficiale.
+- [ ] Parsing automatico dell'indice completo per accorgersi di nuove produzioni e cambi; il monitoraggio corrente controlla solo le pagine di produzione approvate.
+- [ ] Verifica incrociata di tutti gli orari tramite le singole biglietterie; non indovinare.
