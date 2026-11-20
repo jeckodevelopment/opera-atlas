@@ -188,3 +188,7 @@ Il catalogo Teatri continua a mostrare la descrizione breve nelle card: il racco
 ## Formula storica centrata sulla prima rappresentazione — 20/11/2026
 
 La sezione «La storia dell’opera» comincia ora preferibilmente con «La prima rappresentazione ebbe luogo nel {anno} al {teatro} di {città} su libretto di {librettista}.»; se esiste una data completa verificata nel record `premiere_date` (ISO `YYYY-MM-DD`, coerente con `premiere_year`) si usa «il {giorno mese anno}». La frase iniziale integra tutti i dati accertati, senza inventare campi mancanti. L’anno di composizione, ove documentato, compare dopo, in una frase separata. Il modello è unico per schede presenti e per quelle aggiunte dal processo automatico di catalogazione, perché è costruito dai dati storici strutturati al momento del rendering. Restano invariati i testi della trama, le fonti in fondo pagina e i manifesti verticali.
+
+## Placeholder ricerca homepage — 20 novembre 2026
+
+L'etichetta del filtro resta «Opera, compositore o teatro». Il suggerimento della casella di ricerca segue lo stesso ordine semantico: **«Es. Rigoletto, Verdi, La Scala»**. Non cambiano logica dei filtri né risultati.
