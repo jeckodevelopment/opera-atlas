@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -104,8 +105,22 @@ def export_public_catalog(conn: sqlite3.Connection, destination: str | Path) -> 
            ORDER BY pf.starts_at,pf.id"""
     ).fetchall()
     out = []
+    # A timed performance is the authoritative public representation when
+    # the matching work, exact venue, town and calendar day are known.
+    def canonical(value: str) -> str:
+        return " ".join(unicodedata.normalize("NFKC",value).casefold().split())
+
+    timed_keys = set()
+    for row in rows:
+        timed_keys.add((
+            canonical(row["title"]), canonical(row["venue"]),
+            canonical(row["municipality"]), row["starts_at"][:10],
+        ))
     for row in rows:
         item = dict(row)
+        item["local_date"] = row["starts_at"][:10]
+        item["time_known"] = True
+        item["time_label"] = row["starts_at"][11:16]
         item["sources"] = [
             x["source_url"] for x in conn.execute(
                 """SELECT DISTINCT ps.source_url FROM performance_sources ps
@@ -115,6 +130,51 @@ def export_public_catalog(conn: sqlite3.Connection, destination: str | Path) -> 
             )
         ]
         out.append(item)
+    # Date-only official observations have sufficient factual fields for
+    # discovery. Keep them distinct from fully timed canonical records and
+    # never invent a midnight start time or a composer.
+    staged = conn.execute(
+        """SELECT st.id,st.work_title,st.venue_name,st.city,st.local_date,
+                  st.production_url
+           FROM staged_recite st
+           JOIN sources s ON s.id=st.source_id
+           WHERE st.state='needs_time' AND s.access_status='approved'
+           ORDER BY st.local_date,st.id"""
+    ).fetchall()
+    grouped = {}
+    for row in staged:
+        key = (
+            canonical(row["work_title"]),canonical(row["venue_name"]),
+            canonical(row["city"]),row["local_date"],
+        )
+        # A complete event from the same work and venue supersedes the
+        # date-only card. If venue spelling differs, remain conservative.
+        if key in timed_keys:
+            continue
+        if key not in grouped:
+            grouped[key] = {
+                "id": f"staged:{row['id']}",
+                "starts_at": None,
+                "local_date": row["local_date"],
+                "time_known": False,
+                "time_label": "Orario da confermare",
+                "status": "announced",
+                "title": row["work_title"],
+                "composer": None,
+                "venue": row["venue_name"],
+                "municipality": row["city"],
+                "region": None,
+                "latitude": None,
+                "longitude": None,
+                "sources": [],
+            }
+        if row["production_url"] not in grouped[key]["sources"]:
+            grouped[key]["sources"].append(row["production_url"])
+    out.extend(grouped.values())
+    out.sort(key=lambda item: (
+        item["local_date"], item["starts_at"] or "",
+        str(item["id"]),
+    ))
     path = Path(destination)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
