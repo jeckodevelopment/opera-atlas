@@ -92,11 +92,11 @@ class CandidateDetailTests(unittest.TestCase):
              "<a>venerdì 12 Marzo 2027 19:00 ACQUISTA</a>",
              "Jenůfa","Leoš Janáček","2027-03-12"),
             ("parma-opera-2027",
-             "https://teatroregioparma.it/spettacolo/rigoletto/",
-             "<h1>Rigoletto</h1><p>Giuseppe Verdi</p><p>19 feb 2027</p>"
-             "<p>Musica Giuseppe Verdi</p><h2>Teatro Regio di Parma</h2>"
+             "https://teatroregioparma.it/spettacolo/madama-butterfly/",
+             "<h1>Madama Butterfly</h1><p>Giacomo Puccini</p><p>19 feb 2027</p>"
+             "<p>Musica Giacomo Puccini</p><h2>Teatro Regio di Parma</h2>"
              "<p>ven 19 feb</p><p>20:00</p><p>TURNO A</p>",
-             "Rigoletto","Giuseppe Verdi","2027-02-19"),
+             "Madama Butterfly","Giacomo Puccini","2027-02-19"),
             ("massimo-season-2026-27",
              "https://www.teatromassimo.it/event/macbeth/",
              "<h2>Date</h2><p>5 Febbraio</p><p>19:00</p>"
