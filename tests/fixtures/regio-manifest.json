@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "productions": [
+    {
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
+      "source_id": 1,
+      "venue_id": 1,
+      "production_id": 1,
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi"
+    }
+  ]
+}
