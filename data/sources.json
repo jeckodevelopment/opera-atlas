@@ -10,7 +10,10 @@
       "region": "Piemonte",
       "city": "Torino",
       "kind": "theatre",
-      "access_status": "pending"
+      "access_status": "approved",
+      "monitoring_status": "detail_verified",
+      "automated_index": false,
+      "autonomous_publication_verified": false
     },
     {
       "key": "opera-lombardia",
@@ -20,7 +23,10 @@
       "region": "Lombardia",
       "city": null,
       "kind": "circuit",
-      "access_status": "pending"
+      "access_status": "approved",
+      "monitoring_status": "detail_verified",
+      "automated_index": false,
+      "autonomous_publication_verified": false
     },
     {
       "key": "rossini-opera-festival",
@@ -30,7 +36,10 @@
       "region": "Marche",
       "city": "Pesaro",
       "kind": "festival",
-      "access_status": "pending"
+      "access_status": "pending",
+      "monitoring_status": "not_started",
+      "automated_index": false,
+      "autonomous_publication_verified": false
     },
     {
       "key": "teatro-alla-scala",
@@ -40,7 +49,10 @@
       "region": "Lombardia",
       "city": "Milano",
       "kind": "theatre",
-      "access_status": "pending"
+      "access_status": "approved",
+      "monitoring_status": "index_verified",
+      "automated_index": true,
+      "autonomous_publication_verified": false
     },
     {
       "key": "teatro-la-fenice",
@@ -50,7 +62,10 @@
       "region": "Veneto",
       "city": "Venezia",
       "kind": "theatre",
-      "access_status": "pending"
+      "access_status": "approved",
+      "monitoring_status": "index_verified",
+      "automated_index": true,
+      "autonomous_publication_verified": false
     },
     {
       "key": "fondazione-arena-verona",
@@ -60,7 +75,10 @@
       "region": "Veneto",
       "city": "Verona",
       "kind": "foundation",
-      "access_status": "pending"
+      "access_status": "approved",
+      "monitoring_status": "index_verified",
+      "automated_index": true,
+      "autonomous_publication_verified": false
     },
     {
       "key": "teatro-regio-parma",
@@ -70,7 +88,10 @@
       "region": "Emilia-Romagna",
       "city": "Parma",
       "kind": "theatre",
-      "access_status": "pending"
+      "access_status": "approved",
+      "monitoring_status": "index_verified",
+      "automated_index": true,
+      "autonomous_publication_verified": false
     },
     {
       "key": "teatro-massimo-palermo",
@@ -80,7 +101,10 @@
       "region": "Sicilia",
       "city": "Palermo",
       "kind": "theatre",
-      "access_status": "pending"
+      "access_status": "approved",
+      "monitoring_status": "index_verified",
+      "automated_index": true,
+      "autonomous_publication_verified": false
     }
   ]
 }

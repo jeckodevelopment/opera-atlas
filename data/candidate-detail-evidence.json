@@ -1,4 +1,238 @@
 {
   "schema_version": 1,
-  "evidence": []
+  "evidence": [
+    {
+      "candidate_id": "oa-index-7ec9d774a82a64ecaa73",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+      "content_sha256": "fa668c2fed3abacf11b8f23a560203c852eee0af0d1c1efc39eaa64668d867a1",
+      "checked_at": "2026-11-20T22:03:20+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-04",
+          "starts_at": "2027-05-04T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-06",
+          "starts_at": "2027-05-06T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-08",
+          "starts_at": "2027-05-08T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-11",
+          "starts_at": "2027-05-11T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-13",
+          "starts_at": "2027-05-13T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-15",
+          "starts_at": "2027-05-15T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-18",
+          "starts_at": "2027-05-18T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-22",
+          "starts_at": "2027-05-22T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-8e417ad6e506eaf0929d",
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/",
+      "content_sha256": "0af2990a5070024451080558ba844972f635b32c052c0826e203b9d8f14c8737",
+      "checked_at": "2026-11-20T22:03:21+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-07-02",
+          "starts_at": "2027-07-02T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-07-09",
+          "starts_at": "2027-07-09T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-07-17",
+          "starts_at": "2027-07-17T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-07-24",
+          "starts_at": "2027-07-24T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-07-30",
+          "starts_at": "2027-07-30T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-08-06",
+          "starts_at": "2027-08-06T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-08-13",
+          "starts_at": "2027-08-13T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-08-19",
+          "starts_at": "2027-08-19T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-08-27",
+          "starts_at": "2027-08-27T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-09-05",
+          "starts_at": "2027-09-05T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-09-10",
+          "starts_at": "2027-09-10T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-b67d637b2f593f6756c7",
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
+      "content_sha256": "646fe49f40ce063bc9d3d51fa49ca7a625226d566cc4105771f61442d9b6a292",
+      "checked_at": "2026-11-20T22:03:20+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-06-25",
+          "starts_at": "2027-06-25T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-07-03",
+          "starts_at": "2027-07-03T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-07-10",
+          "starts_at": "2027-07-10T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-07-16",
+          "starts_at": "2027-07-16T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-07-22",
+          "starts_at": "2027-07-22T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-07-31",
+          "starts_at": "2027-07-31T21:15:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-08-14",
+          "starts_at": "2027-08-14T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-08-26",
+          "starts_at": "2027-08-26T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-09-04",
+          "starts_at": "2027-09-04T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-09-11",
+          "starts_at": "2027-09-11T21:00:00+02:00",
+          "venue": "Arena di Verona"
+        }
+      ]
+    }
+  ]
 }

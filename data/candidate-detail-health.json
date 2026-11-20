@@ -1,64 +1,61 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T21:19:12+00:00",
+  "checked_at": "2026-11-20T22:03:25+00:00",
   "attempted": 10,
   "outcomes": [
     {
-      "candidate_id": "oa-index-ec6c5d7342d617e4d1f8",
+      "candidate_id": "oa-index-b67d637b2f593f6756c7",
+      "outcome": "facts_found",
+      "rows": 10
+    },
+    {
+      "candidate_id": "oa-index-7ec9d774a82a64ecaa73",
+      "outcome": "facts_found",
+      "rows": 8
+    },
+    {
+      "candidate_id": "oa-index-8e417ad6e506eaf0929d",
+      "outcome": "facts_found",
+      "rows": 11
+    },
+    {
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-ef019182f129777d75f0",
+      "candidate_id": "oa-index-92b69a8ac1040b0537be",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-ef66d28ddc0afb7c8b8c",
+      "candidate_id": "oa-index-97514cec9448be1a563d",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-f2e706992e9fbbf83950",
+      "candidate_id": "oa-index-97623fff7b8b02413f70",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-f3b183b4da3667d91d5d",
+      "candidate_id": "oa-index-9a4c8e6f9ca9682d8d9d",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-f7aecfa5ae27e46b50e6",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-fc275749d78556b44e50",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-05c2c0e38ba2a356b5ba",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-05e3307781f3a1f0668e",
+      "candidate_id": "oa-index-a02901b14e6eae69df5c",
       "outcome": "unavailable_or_unstructured",
       "reason": "ValueError",
       "rows": 0

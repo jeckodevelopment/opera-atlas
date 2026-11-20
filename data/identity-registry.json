@@ -675,6 +675,30 @@
       "slug": "nabucco",
       "source_url": "https://www.arena.it/arena-opera-festival/nabucco/",
       "season": "2026-2027"
+    },
+    "auto-7ec9d774a82a64ec": {
+      "id": "oa-s-000052",
+      "work_id": "oa-w-000018",
+      "venue_id": "oa-v-000006",
+      "slug": "macbeth",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+      "season": "2026-2027"
+    },
+    "auto-8e417ad6e506eaf0": {
+      "id": "oa-s-000053",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000007",
+      "slug": "carmen",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/",
+      "season": "2027"
+    },
+    "auto-b67d637b2f593f67": {
+      "id": "oa-s-000054",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000007",
+      "slug": "la-traviata",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -2069,6 +2093,180 @@
       "staging_id": "oa-s-000051",
       "original_date": "2027-09-09",
       "source_url": "https://www.arena.it/arena-opera-festival/nabucco/"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-04": {
+      "id": "oa-r-000233",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-04",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-06": {
+      "id": "oa-r-000234",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-06",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-08": {
+      "id": "oa-r-000235",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-08",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-11": {
+      "id": "oa-r-000236",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-11",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-13": {
+      "id": "oa-r-000237",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-13",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-15": {
+      "id": "oa-r-000238",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-15",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-18": {
+      "id": "oa-r-000239",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-18",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-7ec9d774a82a64ec|2027-05-22": {
+      "id": "oa-r-000240",
+      "staging_id": "oa-s-000052",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+    },
+    "auto-8e417ad6e506eaf0|2027-07-02": {
+      "id": "oa-r-000241",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-07-02",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-07-09": {
+      "id": "oa-r-000242",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-07-09",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-07-17": {
+      "id": "oa-r-000243",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-07-17",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-07-24": {
+      "id": "oa-r-000244",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-07-24",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-07-30": {
+      "id": "oa-r-000245",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-07-30",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-08-06": {
+      "id": "oa-r-000246",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-08-06",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-08-13": {
+      "id": "oa-r-000247",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-08-13",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-08-19": {
+      "id": "oa-r-000248",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-08-19",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-08-27": {
+      "id": "oa-r-000249",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-08-27",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-09-05": {
+      "id": "oa-r-000250",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-09-05",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-8e417ad6e506eaf0|2027-09-10": {
+      "id": "oa-r-000251",
+      "staging_id": "oa-s-000053",
+      "original_date": "2027-09-10",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/"
+    },
+    "auto-b67d637b2f593f67|2027-06-25": {
+      "id": "oa-r-000252",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-06-25",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-07-03": {
+      "id": "oa-r-000253",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-07-03",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-07-10": {
+      "id": "oa-r-000254",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-07-10",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-07-16": {
+      "id": "oa-r-000255",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-07-16",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-07-22": {
+      "id": "oa-r-000256",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-07-22",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-07-31": {
+      "id": "oa-r-000257",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-07-31",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-08-14": {
+      "id": "oa-r-000258",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-08-14",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-08-26": {
+      "id": "oa-r-000259",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-08-26",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-09-04": {
+      "id": "oa-r-000260",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-09-04",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-b67d637b2f593f67|2027-09-11": {
+      "id": "oa-r-000261",
+      "staging_id": "oa-s-000054",
+      "original_date": "2027-09-11",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
     }
   }
 }

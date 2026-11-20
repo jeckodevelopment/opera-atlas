@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-20T22:03:20+00:00",
+  "outcomes": [
+    {
+      "candidate_id": "oa-index-a8590c90fe0f6dea649d",
+      "status": "model_not_configured"
+    },
+    {
+      "candidate_id": "oa-index-af061781b5421a61f2f1",
+      "status": "model_not_configured"
+    },
+    {
+      "candidate_id": "oa-index-b372b317894fe260b18e",
+      "status": "model_not_configured"
+    }
+  ]
+}
