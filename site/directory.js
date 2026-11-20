@@ -15,9 +15,21 @@ const entries=[];
 let festivalListings=[];
 let editorial={synopses:{},venues:{}};
 async function loadEditorial(){
-  const [works,theatres]=await Promise.allSettled(["./work-synopses.json","./theatre-profiles.json"].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error("Editorial content unavailable");return r.json();})));
-  if(works.status==="fulfilled"&&works.value.schema_version===1)editorial.synopses=works.value.synopses||{};
-  if(theatres.status==="fulfilled"&&theatres.value.schema_version===1)editorial.venues=theatres.value.venues||{};
+  async function load(name){
+    const urls=["./"+name,"https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/"+name];
+    for(const url of urls){
+      try{
+        const response=await fetch(url,{cache:"no-store"});
+        if(!response.ok)continue;
+        const data=await response.json();
+        if(data.schema_version===1)return data;
+      }catch(error){console.warn("Editorial data unavailable",url,error);}
+    }
+    return null;
+  }
+  const [works,theatres]=await Promise.all([load("work-synopses.json"),load("theatre-profiles.json")]);
+  editorial.synopses=works?.synopses||{};
+  editorial.venues=theatres?.venues||{};
 }
 function node(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
 function todayItaly(){const p=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());const v=k=>p.find(x=>x.type===k).value;return v("year")+"-"+v("month")+"-"+v("day");}
