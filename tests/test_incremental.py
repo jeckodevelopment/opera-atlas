@@ -97,7 +97,7 @@ class IncrementalTests(unittest.TestCase):
 
     def test_migration_repeated(self):
         migrate(self.conn)
-        self.assertEqual(self.conn.execute("SELECT count(*) FROM schema_migrations").fetchone()[0],6)
+        self.assertEqual(self.conn.execute("SELECT count(*) FROM schema_migrations").fetchone()[0],7)
 
 if __name__=="__main__":
     unittest.main()

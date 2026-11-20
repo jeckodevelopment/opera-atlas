@@ -156,3 +156,17 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 
 ## Verifica HTML e policy — 20 novembre 2026
 Il calendario generale del Teatro Regio contiene anche balletto; la pagina di dettaglio di *La traviata* contiene orari individuali per 11 recite (26/02–10/03/2027), con timezone `Europe/Rome`. La verifica pubblica è distinta dai test del software: si dispone di fixture sintetiche, non di una cattura HTTP autorizzata dalla pipeline. `robots.txt` è risultato indisponibile nel contesto di verifica; pertanto l'accesso automatico resta `pending` e il fetch applicativo fallisce se non riesce a leggere le policy. Non alterare `access_status` senza verifica esplicita delle condizioni applicabili.
+
+## Evidenze ufficiali OperaLombardia / ROF — 20 novembre 2026
+
+OperaLombardia pubblica sulle pagine di produzione (esempio [L’italiana in Algeri](https://www.operalombardia.it/l-italiana-in-algeri/)) l'elenco RECITE con **teatri, città e date**, ma talvolta senza l'orario. Per questa ragione il modulo `opera_atlas.operalombardia` conserva date e sedi osservate in `staged_recite`, migrazione SQLite v7, **senza creare rappresentazioni nel catalogo canonico**. Il dato richiede fonte `approved`, HTML salvato localmente con diritto di utilizzo e verifica degli orari su fonti ufficiali. La verifica del modulo è eseguita su fixture sintetica corrispondente alla struttura documentata; **non** costituisce un import live.
+
+Rossini Opera Festival: il [calendario ufficiale](https://www.rossinioperafestival.it/il-festival/calendario/) e alcune [pagine della stagione 2026](https://www.rossinioperafestival.it/archivio/stagione-2026/) sono indicizzati sul web, ma le richieste di verifica hanno prodotto HTTP 403 per alcune pagine. Nessun parser ROF o tentativo di aggirare il blocco viene attivato; occorre un canale autorizzato o accesso ripristinato. Non impostare `approved` per la scansione in presenza di esito non verificabile.
+
+### Collaudi da eseguire
+1. Aprire e verificare una pagina ufficiale OperaLombardia di produzione e controllare la sezione RECITE con più città.
+2. Eseguire `python -m unittest discover -s tests -v`: date, sedi e città distinte; nessun orario inventato.
+3. Ripetere staging: otto righe uniche per il caso di test, nessuna riga `performances`.
+4. Disabilitare la fonte nel database: import rifiutato.
+5. Provare pagina priva di RECITE o senza date riconosciute: import non consentito.
+6. Verificare la fonte ROF con accesso conforme alle policy; non eludere eventuali blocchi.

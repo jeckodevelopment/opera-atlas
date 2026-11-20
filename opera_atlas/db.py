@@ -13,6 +13,7 @@ SCHEMA_V3_PATH = Path(__file__).resolve().parent / "schema_v3.sql"
 SCHEMA_V4_PATH = Path(__file__).resolve().parent / "schema_v4.sql"
 SCHEMA_V5_PATH = Path(__file__).resolve().parent / "schema_v5.sql"
 SCHEMA_V6_PATH = Path(__file__).resolve().parent / "schema_v6.sql"
+SCHEMA_V7_PATH = Path(__file__).resolve().parent / "schema_v7.sql"
 ITALY = ZoneInfo("Europe/Rome")
 
 
@@ -44,6 +45,9 @@ def migrate(connection: sqlite3.Connection) -> None:
     if connection.execute("SELECT 1 FROM schema_migrations WHERE version=6").fetchone() is None:
         connection.executescript(SCHEMA_V6_PATH.read_text(encoding="utf-8"))
         connection.execute("INSERT INTO schema_migrations(version) VALUES (6)")
+    if connection.execute("SELECT 1 FROM schema_migrations WHERE version=7").fetchone() is None:
+        connection.executescript(SCHEMA_V7_PATH.read_text(encoding="utf-8"))
+        connection.execute("INSERT INTO schema_migrations(version) VALUES (7)")
     connection.commit()
 
 
