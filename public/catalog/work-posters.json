@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "works": {
+    "adriana-lecouvreur": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Adriana Lecouvreur"
+    },
+    "aida": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Aida"
+    },
+    "al-cavallino-bianco": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Al cavallino bianco"
+    },
+    "anna-bolena": {
+      "work_id": "oa-w-000035",
+      "image_url": "https://www.teatroallascala.org/static/upload/cia/ciampa-2-scaled.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Anna Bolena",
+      "kind": "official_production_image"
+    },
+    "carmen": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Carmen"
+    },
+    "cavalleria-rusticana": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Cavalleria rusticana"
+    },
+    "death-in-venice": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Death in Venice"
+    },
+    "don-giovanni": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Don Giovanni"
+    },
+    "don-quichotte": {
+      "work_id": "oa-w-000030",
+      "image_url": "https://www.teatroallascala.org/static/upload/ber/bertrand-de-billy.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Don Quichotte",
+      "kind": "official_production_image"
+    },
+    "edgar": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Edgar"
+    },
+    "evgenij-onegin": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Evgenij Onegin"
+    },
+    "fedora": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Fedora"
+    },
+    "i-puritani": {
+      "work_id": "oa-w-000036",
+      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-concerto-fabio-luisi-gn1a7176-ph-brescia-e-amisano---teatro-alla-scala.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di I puritani",
+      "kind": "official_production_image"
+    },
+    "il-pipistrello": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Il pipistrello"
+    },
+    "iris": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Iris"
+    },
+    "italiana-in-algeri": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per L’italiana in Algeri"
+    },
+    "jenufa": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Jenůfa"
+    },
+    "la-boheme": {
+      "work_id": "oa-w-000024",
+      "image_url": "https://www.teatroallascala.org/static/upload/la-/la-boheme--7-.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di La bohème",
+      "kind": "official_production_image"
+    },
+    "la-traviata": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per La traviata"
+    },
+    "lucia-di-lammermoor": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Lucia di Lammermoor"
+    },
+    "macbeth": {
+      "work_id": "oa-w-000018",
+      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-filarmonica-con-chung-752574badg-ph-brescia-e-amisano---teatro-alla-scala.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Macbeth",
+      "kind": "official_production_image"
+    },
+    "madama-butterfly": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Madama Butterfly"
+    },
+    "nabucco": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Nabucco"
+    },
+    "nixon-in-china": {
+      "work_id": "oa-w-000034",
+      "image_url": "https://www.teatroallascala.org/static/upload/ken/kent-nagano---antoine-saito---symphonie-de-beethoven.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Nixon in China",
+      "kind": "official_production_image"
+    },
+    "norma": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Norma"
+    },
+    "nozze-istriane": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Nozze istriane"
+    },
+    "otello": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Otello"
+    },
+    "pagliacci": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Pagliacci"
+    },
+    "partenope": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Partenope"
+    },
+    "rigoletto": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Rigoletto"
+    },
+    "salome": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Salome"
+    },
+    "samson-et-dalila": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Samson et Dalila"
+    },
+    "tosca": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Tosca"
+    },
+    "turandot": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Turandot"
+    },
+    "un-ballo-in-maschera": {
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Un ballo in maschera"
+    }
+  }
+}
