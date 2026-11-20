@@ -27,6 +27,7 @@ APPROVED_PAGES = {
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin",
     "https://www.operalombardia.it/l-italiana-in-algeri/",
+    "https://teatrosocialecomo.it/spettacoli/abbonamento-opera-2026-27/",
     "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
     "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
     "https://www.teatrolafenice.it/event/fedora/",
