@@ -112,3 +112,21 @@
   .directory-grid{grid-template-columns:1fr}
 }
 @media(max-width:430px){.form-grid.search-main{grid-template-columns:1fr}.form-grid.search-main label:first-child,.form-grid.search-main .primary-action{grid-column:auto}.section-heading{align-items:flex-start;flex-direction:column;gap:8px}.catalog-view{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}}
+
+
+.location-control{display:flex;align-items:stretch;gap:6px}
+.location-control select{flex:1;min-width:0}
+.location-control button{border:1px solid #d9dad9;background:#fff;border-radius:8px;padding:0 13px;font-size:20px;color:#86641d;min-height:44px}
+.location-control button:hover{background:#f4ebd8}
+.directory-search{display:block;font-size:13px;font-weight:700;max-width:500px}
+.directory-search input{display:block;margin-top:8px;width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:#fff;font:inherit}
+.brief-synopsis h2{font:500 22px Georgia,serif;margin:0 0 9px}
+.brief-synopsis{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:20px}
+.brief-synopsis p{font-size:14px;line-height:1.7}
+@media(max-width:700px){
+.mobile-nav a::before{display:block;font-size:17px;line-height:1.2;margin-bottom:4px;color:#ad8120}
+.mobile-nav a[href*="spettacoli"]::before{content:"▣"}
+.mobile-nav a[href*="opere"]::before{content:"♫"}
+.mobile-nav a[href*="teatri"]::before{content:"⌂"}
+.mobile-nav a[href*="festival"]::before{content:"▦"}
+}
