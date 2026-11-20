@@ -323,3 +323,10 @@ Dal primo import reale di Rigoletto abbiamo verificato che la scansione dell'ind
 La scansione di dettaglio mantiene un tetto di **10 URL giornalieri complessivi**, ma distribuisce una prima richiesta, quando possibile, a **ogni fonte nazionale attiva con candidate**. La capacità residua continua a favorire opere con identità canonica certa senza sottrarre la quota per le opere nuove (fino a quattro URL); eventuali schede già documentate ricevono un piccolo vantaggio senza impedire indefinitamente l'esplorazione di altri titoli. L'avanzamento giornaliero dei puntatori evita cicli fissi che lascino una fonte senza scansioni.
 
 Test: `test_same_run_candidate_reconciliation.py` verifica promozione allo stato catalogato, idempotenza, storia preservata, esclusioni e stati non automatici; `test_candidate_detail_evidence.py` simula 75 URL su cinque fonti e 80 giornate con budget invariato, verificando che **tutte** le candidate siano progressivamente selezionate. La nuova riconciliazione resta distinta dalla pubblicazione stessa: un URL non viene segnato `already_catalogued` finché la relativa produzione non è scritta nel manifesto validato. Nessun intervento SFTP o modifica a `jeckodevsite`.
+
+
+### F2 — protezione del comando di commit del refresh
+
+Il primo run reale dopo la PR #86 ha superato **291 test**, comprese la generazione dei feed e la seconda suite post-acquisizione, ma è fallito all'ultimo passo perché il comando shell di staging conteneva accidentalmente `git add ... git add ...`. Git ha quindi interpretato `git` come path inesistente e non ha potuto pubblicare i JSON generati.
+
+Il comando è stato corretto in un'unica invocazione `git add` che include anche `data/candidate-reconciliation-health.json`. Il nuovo test `test_catalog_git_staging_has_no_embedded_duplicate_command` verifica la sintassi di tutte le righe di staging, la presenza del report di riconciliazione, il controllo del diff staged e il push su `main`. La riuscita dei test non equivale ancora a pubblicazione: il job di refresh successivo a questa PR deve concludersi con commit dei dati e manifest leggibile.
