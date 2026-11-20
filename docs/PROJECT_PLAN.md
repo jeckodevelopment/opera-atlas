@@ -138,3 +138,12 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [ ] Teatro Regio Parma, Scala, Arena, Fenice e Massimo: estendere alle altre produzioni, completare adapters e permessi robots.
 - [ ] Rossini Opera Festival: recuperare dati puntuali tramite pagine ufficiali accessibili; calendario originario con blocco 403, non aggirarlo.
 - [ ] Completare OperaLombardia per tutti i teatri coinvolti e deduplicare le tournée.
+
+
+### F2 — estensione verificata 2026/27 (Venezia, Palermo)
+- [x] Registrate cinque nuove messe in scena da pagine ufficiali individuali con 39 date/ore, ID canonici e relazioni teatrali preservate.
+- [x] Riutilizzati gli ID delle opere Carmen e Madama Butterfly già esistenti; nuove identità solo per nuove opere o messe in scena.
+- [x] Test su numeri, date/orari, fonti, DST e assenza di duplicati; JSON locale di compatibilità aggiornato insieme agli input.
+- [ ] Connettori automatici Fenice e Massimo, ancora da sviluppare e collaudare con robots.txt runtime; **non** equiparare una fonte editoriale verificata a un feed automatico.
+- [ ] Completamento per stagione delle prime fonti Regio Torino e OperaLombardia (indice generale e nuove produzioni non ancora monitorate).
+- [ ] Completamento altre fonti in `data/sources.json`: Scala, Arena, Fenice, Parma, Massimo e Rossini Opera Festival.

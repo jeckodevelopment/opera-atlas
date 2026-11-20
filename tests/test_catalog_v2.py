@@ -75,7 +75,7 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         self.assertEqual(manifest1,manifest2)
         self.assertTrue(all(path.startswith("data/") for path in files1))
         self.assertEqual(manifest1["schema_version"],2)
-        self.assertEqual(manifest1["files"]["performances"]["count"],131)
+        self.assertEqual(manifest1["files"]["performances"]["count"],sum(len(p["dates"]) for p in self.facts["productions"]))
 
 
 if __name__=="__main__":

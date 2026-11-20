@@ -1358,6 +1358,42 @@
       ]
     },
     {
+      "id": "curated:fenice-madama-butterfly-2027:2027-01-30",
+      "starts_at": "2027-01-30T19:00:00+01:00",
+      "local_date": "2027-01-30",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
+      "id": "curated:fenice-madama-butterfly-2027:2027-01-31",
+      "starts_at": "2027-01-31T15:30:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-02-02",
       "starts_at": "2027-02-02T15:00:00+01:00",
       "local_date": "2027-02-02",
@@ -1376,6 +1412,60 @@
       ]
     },
     {
+      "id": "curated:fenice-madama-butterfly-2027:2027-02-02",
+      "starts_at": "2027-02-02T19:00:00+01:00",
+      "local_date": "2027-02-02",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
+      "id": "curated:fenice-madama-butterfly-2027:2027-02-03",
+      "starts_at": "2027-02-03T19:00:00+01:00",
+      "local_date": "2027-02-03",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
+      "id": "curated:fenice-madama-butterfly-2027:2027-02-04",
+      "starts_at": "2027-02-04T19:00:00+01:00",
+      "local_date": "2027-02-04",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-02-04",
       "starts_at": "2027-02-04T20:00:00+01:00",
       "local_date": "2027-02-04",
@@ -1391,6 +1481,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+      ]
+    },
+    {
+      "id": "curated:fenice-madama-butterfly-2027:2027-02-05",
+      "starts_at": "2027-02-05T19:00:00+01:00",
+      "local_date": "2027-02-05",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
       ]
     },
     {
@@ -1430,6 +1538,42 @@
       ]
     },
     {
+      "id": "curated:fenice-madama-butterfly-2027:2027-02-06",
+      "starts_at": "2027-02-06T15:30:00+01:00",
+      "local_date": "2027-02-06",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
+      "id": "curated:fenice-madama-butterfly-2027:2027-02-07",
+      "starts_at": "2027-02-07T17:00:00+01:00",
+      "local_date": "2027-02-07",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
       "id": "curated:massimo-macbeth-2027:2027-02-07",
       "starts_at": "2027-02-07T17:30:00+01:00",
       "local_date": "2027-02-07",
@@ -1445,6 +1589,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
+      "id": "curated:fenice-madama-butterfly-2027:2027-02-09",
+      "starts_at": "2027-02-09T19:00:00+01:00",
+      "local_date": "2027-02-09",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
       ]
     },
     {
@@ -1610,6 +1772,24 @@
       ]
     },
     {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-05",
+      "starts_at": "2027-03-05T20:00:00+01:00",
+      "local_date": "2027-03-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
       "id": "curated:regio-traviata-2027:2027-03-05",
       "starts_at": "2027-03-05T20:00:00+01:00",
       "local_date": "2027-03-05",
@@ -1625,6 +1805,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-06",
+      "starts_at": "2027-03-06T20:00:00+01:00",
+      "local_date": "2027-03-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
       ]
     },
     {
@@ -1664,6 +1862,42 @@
       ]
     },
     {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-07",
+      "starts_at": "2027-03-07T17:30:00+01:00",
+      "local_date": "2027-03-07",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-09",
+      "starts_at": "2027-03-09T18:30:00+01:00",
+      "local_date": "2027-03-09",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
       "id": "curated:regio-traviata-2027:2027-03-09",
       "starts_at": "2027-03-09T20:00:00+01:00",
       "local_date": "2027-03-09",
@@ -1697,6 +1931,168 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-10",
+      "starts_at": "2027-03-10T19:00:00+01:00",
+      "local_date": "2027-03-10",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-11",
+      "starts_at": "2027-03-11T18:30:00+01:00",
+      "local_date": "2027-03-11",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:fenice-jenufa-2027:2027-03-12",
+      "starts_at": "2027-03-12T19:00:00+01:00",
+      "local_date": "2027-03-12",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Jenůfa",
+      "composer": "Leoš Janáček",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/jenufa/"
+      ]
+    },
+    {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-12",
+      "starts_at": "2027-03-12T19:00:00+01:00",
+      "local_date": "2027-03-12",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:massimo-lucia-lammermoor-2027:2027-03-13",
+      "starts_at": "2027-03-13T20:00:00+01:00",
+      "local_date": "2027-03-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:fenice-jenufa-2027:2027-03-14",
+      "starts_at": "2027-03-14T15:30:00+01:00",
+      "local_date": "2027-03-14",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Jenůfa",
+      "composer": "Leoš Janáček",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/jenufa/"
+      ]
+    },
+    {
+      "id": "curated:fenice-jenufa-2027:2027-03-16",
+      "starts_at": "2027-03-16T19:00:00+01:00",
+      "local_date": "2027-03-16",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Jenůfa",
+      "composer": "Leoš Janáček",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/jenufa/"
+      ]
+    },
+    {
+      "id": "curated:fenice-jenufa-2027:2027-03-18",
+      "starts_at": "2027-03-18T19:00:00+01:00",
+      "local_date": "2027-03-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Jenůfa",
+      "composer": "Leoš Janáček",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/jenufa/"
+      ]
+    },
+    {
+      "id": "curated:fenice-jenufa-2027:2027-03-20",
+      "starts_at": "2027-03-20T15:30:00+01:00",
+      "local_date": "2027-03-20",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Jenůfa",
+      "composer": "Leoš Janáček",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/jenufa/"
       ]
     },
     {
@@ -1844,6 +2240,78 @@
       ]
     },
     {
+      "id": "curated:massimo-tosca-2027:2027-04-18",
+      "starts_at": "2027-04-18T19:00:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-20",
+      "starts_at": "2027-04-20T19:00:00+02:00",
+      "local_date": "2027-04-20",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-21",
+      "starts_at": "2027-04-21T18:30:00+02:00",
+      "local_date": "2027-04-21",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-22",
+      "starts_at": "2027-04-22T19:00:00+02:00",
+      "local_date": "2027-04-22",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
       "id": "curated:parma-madama-butterfly-2027:2027-04-22",
       "starts_at": "2027-04-22T20:00:00+02:00",
       "local_date": "2027-04-22",
@@ -1862,6 +2330,42 @@
       ]
     },
     {
+      "id": "curated:fenice-carmen-2027:2027-04-23",
+      "starts_at": "2027-04-23T19:00:00+02:00",
+      "local_date": "2027-04-23",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-23",
+      "starts_at": "2027-04-23T20:00:00+02:00",
+      "local_date": "2027-04-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
       "id": "curated:parma-madama-butterfly-2027:2027-04-24",
       "starts_at": "2027-04-24T17:00:00+02:00",
       "local_date": "2027-04-24",
@@ -1877,6 +2381,204 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-24",
+      "starts_at": "2027-04-24T18:30:00+02:00",
+      "local_date": "2027-04-24",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:fenice-carmen-2027:2027-04-24",
+      "starts_at": "2027-04-24T19:00:00+02:00",
+      "local_date": "2027-04-24",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:fenice-carmen-2027:2027-04-27",
+      "starts_at": "2027-04-27T19:00:00+02:00",
+      "local_date": "2027-04-27",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-27",
+      "starts_at": "2027-04-27T19:00:00+02:00",
+      "local_date": "2027-04-27",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-28",
+      "starts_at": "2027-04-28T18:30:00+02:00",
+      "local_date": "2027-04-28",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:fenice-carmen-2027:2027-04-28",
+      "starts_at": "2027-04-28T19:00:00+02:00",
+      "local_date": "2027-04-28",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:fenice-carmen-2027:2027-04-29",
+      "starts_at": "2027-04-29T19:00:00+02:00",
+      "local_date": "2027-04-29",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:massimo-tosca-2027:2027-04-29",
+      "starts_at": "2027-04-29T19:00:00+02:00",
+      "local_date": "2027-04-29",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:fenice-carmen-2027:2027-04-30",
+      "starts_at": "2027-04-30T19:00:00+02:00",
+      "local_date": "2027-04-30",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:fenice-carmen-2027:2027-05-02",
+      "starts_at": "2027-05-02T15:30:00+02:00",
+      "local_date": "2027-05-02",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:fenice-carmen-2027:2027-05-04",
+      "starts_at": "2027-05-04T19:00:00+02:00",
+      "local_date": "2027-05-04",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/carmenaxelrod/"
       ]
     },
     {

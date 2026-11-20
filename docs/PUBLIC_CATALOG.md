@@ -125,3 +125,16 @@ Le prime dieci nuove recite presso il partner territoriale Teatro Fraschini Pavi
 
 ## Primo catalogo da cinque nuovi teatri — 20/11/2026
 Dati verificati e pubblicabili da sei specifiche pagine ufficiali, **non scansioni automatiche attive**: Otello Scala 9 recite, Aida ed. 1913 Arena di Verona 9, Fedora La Fenice 7 (escluso il **13 novembre 2026 annullato**), Samson et Dalila Teatro Massimo 6, Macbeth Teatro Massimo 5, Madama Butterfly Regio Parma 4 (escluse le prove del 12 e 14 aprile). Nessun dato inferito da intervalli di programmazione; ogni record ha giorno/ora, teatro, città, titolo, compositore, fonte HTTPS e nuovo ID canonico. Totalizzazione prevista: **131 recite, 19 opere, 10 teatri, 24 messe in scena; 129 ore note, 2 sconosciute**. I dati aggiornati vengono distribuiti da `opera-atlas/public/catalog/v2/` senza SFTP. Per i limiti della copertura nazionale e le fonti primarie, vedi [INITIAL_SOURCE_COVERAGE_2026-11-20](INITIAL_SOURCE_COVERAGE_2026-11-20.md).
+
+
+## Estensione del catalogo ufficiale — 20 novembre 2026
+Sono state verificate 39 repliche su cinque schede di produzione ufficiali (nessun dato copiato salvo fatti di calendario):
+- [Jenůfa](https://www.teatrolafenice.it/event/jenufa/) — Teatro La Fenice, Venezia: 12, 14, 16, 18, 20 marzo 2027 (5).
+- [Madama Butterfly](https://www.teatrolafenice.it/event/madamabutterflycallegari/) — Teatro La Fenice, Venezia: 30 e 31 gennaio; 2, 3, 4, 5, 6, 7, 9 febbraio 2027 (9).
+- [Carmen](https://www.teatrolafenice.it/event/carmenaxelrod/) — Teatro La Fenice, Venezia: 23, 24, 27, 28, 29, 30 aprile; 2 e 4 maggio 2027 (8).
+- [Lucia di Lammermoor](https://www.teatromassimo.it/event/lucia-di-lammermoor-2/) — Teatro Massimo Palermo: 5, 6, 7, 9, 10, 11, 12, 13 marzo 2027 (8).
+- [Tosca](https://www.teatromassimo.it/event/tosca-2/) — Teatro Massimo Palermo: 18, 20, 21, 22, 23, 24, 27, 28, 29 aprile 2027 (9).
+
+Orari conformi alle fonti individuali e offset italiano calcolato con `Europe/Rome`. Le nuove rappresentazioni ricevono ID immutabili, con ID opera preesistenti riusati quando appropriato. Non vengono inventati teatri, biglietti, orari, cast o coordinate. **Totale del catalogo dopo la build: 170 recite, 22 opere, 29 messe in scena e 10 teatri**, con 2 orari ancora da confermare.
+
+**Nota operativa:** le cinque pagine sono fonti editoriali manualmente verificate; non sono state automaticamente aggiunte a `daily-source-config.json`, poiché i parser Fenice e Massimo devono ancora essere sottoposti a test di estrazione e controllo robots in un job GitHub Actions. L'aggiunta di dati pubblici avviene solo via JSON GitHub, senza nuove pubblicazioni SFTP.
