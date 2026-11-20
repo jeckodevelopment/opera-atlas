@@ -40,10 +40,10 @@ class PublicCatalogTests(unittest.TestCase):
         parser.feed((SITE / "index.html").read_text(encoding="utf-8"))
         self.assertTrue({
             "search", "city", "region", "from", "to", "time-filter",
-            "metric-events", "metric-works", "metric-venues", "metric-unknown",
+            "location", "spettacoli", "opere", "teatri", "festival",
             "events", "count", "message", "reset", "previous", "next",
         }.issubset(parser.ids))
-        self.assertEqual(parser.labels, 6)
+        self.assertEqual(parser.labels, 7)
         self.assertIn("./styles.css", parser.links)
         self.assertIn("./app.js", parser.scripts)
         self.assertIn("./catalog-client.js", parser.scripts)
