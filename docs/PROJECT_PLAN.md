@@ -87,3 +87,10 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Registro compatto degli esiti delle scansioni approvate e data dell'ultima verifica editoriale nel frontend.
 - [ ] Approvazione effettiva delle fonti: entrambe le pagine iniziali ancora `pending`, robots non verificabile; nessun fetch live autorizzato al momento.
 - [ ] Connettori per nuove produzioni e teatri oltre alle due pagine iniziali, calibrazione su HTML reale autorizzato.
+
+### F2 — evidenza oraria da più fonti (20/11/2026)
+- [x] Entità replica immutabile anche quando una fonte teatro/comune precisa un'ora assente nella fonte circuito.
+- [x] Evidenze orarie per sei repliche da tre siti ufficiali; tutte con pagina fonte conservata e controlli per teatro, giorno, formato e contraddizioni.
+- [x] Feed v1 e v2 sincronizzati con orari arricchiti (19 recite, 17 con ora, 2 senza) e metadati di provenienza.
+- [x] Workflow di aggiornamento in grado di rigenerare il v2 quando l'input approvato cambia senza fallire prima della build.
+- [ ] Verifica e autorizzazione formale della scansione ricorrente; fonti nuove e connettori live ancora `pending`.
