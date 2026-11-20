@@ -73,12 +73,12 @@ class FetchTests(unittest.TestCase):
 
     def test_robot_rules_permit_specific_page_but_not_forbidden_path(self):
         opener = FakeOpener(
-            robots=b"User-agent: *\\nDisallow: /private/\\nAllow: /opera-e-balletto-2026-2027/\\n"
+            robots=b"User-agent: *\nDisallow: /private/\nAllow: /opera-e-balletto-2026-2027/\n"
         )
         fetch_official_html(self.conn,source_id=1,url=URL,
                             network_enabled=True,opener=opener)
         self.assertEqual(len(opener.calls),2)
-        forbidden = FakeOpener(robots=b"User-agent: *\\nDisallow: /\\n")
+        forbidden = FakeOpener(robots=b"User-agent: *\nDisallow: /\n")
         with self.assertRaises(AccessDenied):
             fetch_official_html(self.conn,source_id=1,url=URL,
                                 network_enabled=True,opener=forbidden)
