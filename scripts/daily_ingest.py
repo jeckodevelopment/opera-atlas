@@ -217,7 +217,11 @@ def scan_approved(
                     anomalies.append({"kind":"missing_from_source",
                                       "production":prod_key,"dates":sorted(missing)})
                 for day in sorted(set(before) & set(actual)):
-                    if before[day] != actual[day]:
+                    # A date-only overview cannot negate a verified time
+                    # from a theatre's specific performance page.
+                    if (before[day] != actual[day]
+                        and not (item["adapter"] == "operalombardia_calendar"
+                                 and actual[day] is None)):
                         anomalies.append({"kind":"time_changed",
                                           "production":prod_key,"date":day})
                 for day in sorted(added):
