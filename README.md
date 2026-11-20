@@ -2,7 +2,7 @@
 
 Catalogo nazionale delle rappresentazioni di opera lirica in Italia e osservatorio statistico collegato al progetto culturale Opera+.
 
-> Stato: fase 1 — schema SQLite iniziale e test disponibili. Nessuna programmazione pubblicata finché le fonti e le recite non saranno state verificate.
+> Stato: fase 1 — schema SQLite, riconciliazione delle recite cross-source e test disponibili. Nessuna programmazione pubblicata finché le fonti e le recite non saranno state verificate.
 
 ## Obiettivi
 
@@ -20,7 +20,7 @@ python -m unittest discover -s tests -v
 python -c "from opera_atlas.db import connect, migrate; c=connect('atlas.sqlite3'); migrate(c); c.close()"
 ```
 
-Il file `atlas.sqlite3` è un artefatto locale di lavorazione, non un dataset pubblico di spettacoli. Vedi [schema e limitazioni](docs/STORAGE.md), [piano 1.0.0](docs/PROJECT_PLAN.md) e [registro delle fonti](docs/SOURCE_REGISTRY.md).
+Il file `atlas.sqlite3` è un artefatto locale di lavorazione, non un dataset pubblico di spettacoli. Vedi [schema, riconciliazione e limitazioni](docs/STORAGE.md), [piano 1.0.0](docs/PROJECT_PLAN.md) e [registro delle fonti](docs/SOURCE_REGISTRY.md).
 
 ## Processo
 
