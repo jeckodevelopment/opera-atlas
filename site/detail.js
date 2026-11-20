@@ -31,28 +31,69 @@ function safeSource(url) {
     return u.protocol==="https:" ? u.href : null;
   } catch { return null; }
 }
-function sourceLinks(events) {
+function sourceLinks(events,kind,profile) {
+  // Opera overview links to productions inside Atlas; it is not a source directory.
+  if(kind==="work")return;
+  const first=events[0];
   const urls=new Map();
-  for(const event of events){
-    for(const url of event.sources||[]){
-      const href=safeSource(url);
-      if(!href||urls.has(href))continue;
-      urls.set(href,event.venue+" · "+event.municipality);
+  if(kind==="venue" && profile && safeSource(profile.website)){
+    urls.set(profile.website,"Sito del "+first.venue);
+  }else{
+    for(const event of events){
+      const href=(event.sources||[]).map(safeSource).find(Boolean);
+      if(!href || urls.has(href))continue;
+      let label;
+      if(kind==="group"){
+        label=event.venue+" · "+event.municipality+" — programma e biglietti";
+      }else{
+        label=first.title+" al "+first.venue+" — programma e biglietti";
+      }
+      urls.set(href,label);
     }
   }
   if(!urls.size)return;
   const panel=node("section","official-links");
-  panel.append(node("h2",null,"Programma e biglietti"));
-  panel.append(node("p",null,"Per scegliere i posti e conoscere le condizioni di acquisto, consulta il sito del teatro."));
+  panel.append(node("h2",null,kind==="venue"?"Il sito del teatro":"Programma e biglietti"));
   const list=node("ul","official-link-list");
-  for(const [href,venue] of urls){
-    const li=node("li");
-    const a=node("a",null,urls.size===1?"Vai al sito del teatro":"Vai al sito · "+venue);
-    a.href=href;a.target="_blank";a.rel="noopener noreferrer";
+  for(const [href,label] of urls){
+    const li=node("li"),a=node("a",null,label);
+    a.href=href;a.rel="noopener noreferrer";a.target="_blank";
     li.append(a);list.append(li);
   }
   panel.append(list);
   results.after(panel);
+}
+function editorialImage(kind,event){
+  const images=window.OperaAtlasImages;
+  if(images && typeof images.element==="function"){
+    try{return images.element(images[kind](event),"detail-image");}
+    catch(error){console.warn("Atlas image fallback",error);}
+  }
+  const fallback=node("div","detail-image image-placeholder");
+  fallback.setAttribute("role","img");
+  fallback.setAttribute("aria-label","Fotografia non disponibile");
+  return fallback;
+}
+async function appendTheatreProfile(event){
+  try{
+    const response=await fetch("./theatre-profiles.json");
+    if(!response.ok) return null;
+    const doc=await response.json();
+    if(doc.schema_version!==1||!doc.venues)return null;
+    const profile=doc.venues[event.municipality+"|"+event.venue];
+    if(!profile)return null;
+    const section=node("section","theatre-introduction");
+    section.append(node("p","theatre-description",profile.description));
+    const place=node("div","theatre-location");
+    place.append(node("h2",null,"Dove si trova"));
+    place.append(node("p",null,profile.address+" · "+event.municipality));
+    const direction=link("Come arrivare", "https://www.openstreetmap.org/search?query="+encodeURIComponent(profile.address+", "+event.municipality+", Italia"));
+    direction.target="_blank";direction.rel="noopener noreferrer";
+    place.append(direction);
+    section.append(place);
+    content.append(section);
+    return profile;
+  }catch(error){console.warn("Theatre profile unavailable",error);return null;}
 }
 function link(text, url, css="detail-link") {
   const a=node("a",css,text);
@@ -171,6 +212,7 @@ async function initialize() {
     }
     const first=selected.events[0];
     const future=selected.events.filter(e=>e.local_date>=todayInItaly());
+    let theatreProfile=null;
     if(selected.kind==="work") {
       kind.textContent="Opera del repertorio";
       title.textContent=first.title;
@@ -189,6 +231,7 @@ async function initialize() {
       document.querySelector(".detail-related h2").textContent="Spettacoli in programma";
       title.textContent=first.venue;
       subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
+      theatreProfile=await appendTheatreProfile(first);
       content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche"));
@@ -219,9 +262,8 @@ async function initialize() {
         results.append(replicaLine(e));
       if(!future.length)results.append(node("p","empty","Questa produzione non ha date future censite."));
     }
-    const photo=selected.kind==="venue"?window.OperaAtlasImages.venue(first):window.OperaAtlasImages.work(first);
-    content.prepend(window.OperaAtlasImages.element(photo,"detail-image"));
-    sourceLinks(selected.events);
+    content.prepend(editorialImage(selected.kind==="venue"?"venue":"work",first));
+    sourceLinks(selected.events,selected.kind,theatreProfile);
     document.title=title.textContent+" — Opera+ Atlas";
     // Canonicalize old query-based links after resolution; never change identity.
     if(pathnameIsLegacy()) {
@@ -234,8 +276,9 @@ async function initialize() {
             : window.OperaAtlasCatalog.urls(first).staging;
       window.history.replaceState(null,"",canonical);
     }
-  }catch {
-    missing("Non è stato possibile caricare il catalogo.");
+  }catch(error) {
+    console.error("Atlas detail page error",error);
+    missing("Non è stato possibile aprire questa scheda.");
   }
 }
 function pathnameIsLegacy() {

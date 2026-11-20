@@ -104,9 +104,21 @@ function dateLabel(iso) {
   return new Intl.DateTimeFormat("it-IT", {day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(d);
 }
 
+function editorialImage(type,event,cls) {
+  // Photographic assets are optional: they must never prevent catalog rendering.
+  const images=window.OperaAtlasImages;
+  if(images && typeof images.element==="function" && typeof images[type]==="function") {
+    try{return images.element(images[type](event),cls);}catch(error){console.warn("Atlas image fallback",error);}
+  }
+  const placeholder=node("div",cls+" image-placeholder");
+  placeholder.setAttribute("role","img");
+  placeholder.setAttribute("aria-label","Illustrazione non disponibile");
+  return placeholder;
+}
+
 function createCard(event) {
   const article = node("article","event");
-  article.append(window.OperaAtlasImages.element(window.OperaAtlasImages.work(event),"event-image"));
+  article.append(editorialImage("work",event,"event-image"));
   const main = node("div","event-main");
   main.append(node("div","event-meta","Opera lirica · "+event.municipality));
   const heading = node("h3");
@@ -153,7 +165,7 @@ function fillOptions(select, values) {
 function createStagingCard(events) {
   const first = events[0];
   const article = node("article","event");
-  article.append(window.OperaAtlasImages.element(window.OperaAtlasImages.work(first),"event-image"));
+  article.append(editorialImage("work",first,"event-image"));
   const main = node("div","event-main");
   main.append(node("div","event-meta",first.municipality+" · "+events.length+" repliche"));
   const heading = node("h3");
@@ -195,7 +207,7 @@ function groupByStaging(events) {
 function imageTile(url,title,subtitle,image){
   const a=node("a","discovery-card");
   a.href=url;
-  a.append(window.OperaAtlasImages.element(image,"discovery-image"));
+  a.append(image);
   const inside=node("span","discovery-card-body");
   inside.append(node("strong",null,title));
   if(subtitle)inside.append(node("small",null,subtitle));
@@ -214,10 +226,10 @@ function renderDiscoveries() {
   workBox.replaceChildren();
   venueBox.replaceChildren();
   for(const [url,event] of [...works].sort((a,b)=>a[1].title.localeCompare(b[1].title,"it")).slice(0,6)){
-    workBox.append(imageTile(url,event.title,event.composer,window.OperaAtlasImages.work(event)));
+    workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image")));
   }
   for(const [url,event] of [...venues].sort((a,b)=>a[1].venue.localeCompare(b[1].venue,"it")).slice(0,6)){
-    venueBox.append(imageTile(url,event.venue,event.municipality,window.OperaAtlasImages.venue(event)));
+    venueBox.append(imageTile(url,event.venue,event.municipality,editorialImage("venue",event,"discovery-image")));
   }
 }
 async function renderFestivals(){
@@ -232,7 +244,7 @@ async function renderFestivals(){
       const future=catalog.filter(e=>festival.staging_ids.includes(e.staging_id)&&e.local_date>=todayInItaly());
       if(!future.length)continue;
       const url="./directory.html?section=festival&id="+encodeURIComponent(festival.id);
-      target.append(imageTile(url,festival.name,festival.city+(festival.edition?" · "+festival.edition:""),window.OperaAtlasImages.festival(festival)));count++;
+      target.append(imageTile(url,festival.name,festival.city+(festival.edition?" · "+festival.edition:""),editorialImage("festival",festival,"discovery-image")));count++;
     }
     if(!count)target.append(node("p",null,"Il prossimo festival da scoprire arriverà presto."));
     const all=node("a","detail-link","Esplora i festival");all.href="./directory.html?section=festival";target.append(all);
@@ -392,7 +404,8 @@ async function initialize() {
     renderFestivals();
     fillOptions(controls.region,catalog.map(x=>x.region));
     render();
-  } catch {
+  } catch (error) {
+    console.error("Opera Atlas catalog initialization failed",error);
     count.textContent = "Dati non disponibili";
     list.replaceChildren(node("p","empty","Non è stato possibile caricare il catalogo verificato. Riprova più tardi."));
     pager.hidden = true;

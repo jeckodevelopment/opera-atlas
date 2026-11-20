@@ -16,6 +16,15 @@ let festivalListings=[];
 function node(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
 function todayItaly(){const p=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());const v=k=>p.find(x=>x.type===k).value;return v("year")+"-"+v("month")+"-"+v("day");}
 function dateLabel(d){return new Intl.DateTimeFormat("it-IT",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(d+"T12:00:00Z"));}
+function imageFor(item){
+  const images=window.OperaAtlasImages;
+  const fallback=node("div","directory-image image-placeholder");
+  fallback.setAttribute("role","img");fallback.setAttribute("aria-label","Fotografia non disponibile");
+  if(!images || typeof images.element!=="function")return fallback;
+  const type=section==="opere"?"work":section==="teatri"?"venue":"festival";
+  try{return images.element(images[type](section==="opere"?{title:item.title}:{city:item.city,municipality:item.city}),"directory-image");}
+  catch(error){console.warn("Atlas image fallback",error);return fallback;}
+}
 function normalize(s){return String(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("it");}
 function render(){
   grid.replaceChildren();
@@ -23,8 +32,7 @@ function render(){
   const filtered=entries.filter(x=>normalize([x.title,x.subtitle].join(" ")).includes(q));
   for(const item of filtered){
     const card=node("article","directory-card");
-    const image=section==="opere"?window.OperaAtlasImages.work({title:item.title}):section==="teatri"?window.OperaAtlasImages.venue({municipality:item.city||item.subtitle}):window.OperaAtlasImages.festival({city:item.city});
-    card.append(window.OperaAtlasImages.element(image,"directory-image"));
+    card.append(imageFor(item));
     const heading=node("h2"),link=node("a",null,item.title);link.href=item.url;heading.append(link);
     card.append(heading,node("p",null,item.subtitle));
     const action=node("a","detail-link",section==="opere"?"Scopri l’opera":section==="festival"?"Esplora il festival":"Scopri il teatro");
@@ -86,7 +94,7 @@ async function initialize(){
     entries.push(...[...grouped.values()].sort((a,b)=>a.title.localeCompare(b.title,"it")));
     if(data.warning)status.textContent=data.warning;
     render();
-  }catch {status.textContent="Catalogo momentaneamente non disponibile.";}
+  }catch(error){console.error("Atlas directory initialization failed",error);status.textContent="Il catalogo non è momentaneamente consultabile. Riprova tra poco.";}
 }
 search.addEventListener("input",render);
 initialize();

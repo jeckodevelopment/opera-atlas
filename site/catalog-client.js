@@ -5,6 +5,7 @@
    with an explicit warning. The SFTP fallback is not a live data source. */
 window.OperaAtlasCatalog = (() => {
   const BASE = "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/";
+  const MIRROR = "https://cdn.jsdelivr.net/gh/jeckodevelopment/opera-atlas@main/public/catalog/v2/";
   const CHANNELS = ["works","venues","stagings","performances"];
 
   const PREFIX = "/dev/opera-atlas";
@@ -49,8 +50,8 @@ window.OperaAtlasCatalog = (() => {
     return part[key];
   }
 
-  async function productionGroupMap(byStaging) {
-    const doc = await jsonFrom(BASE+"production-groups.json");
+  async function productionGroupMap(byStaging,base) {
+    const doc = await jsonFrom(base+"production-groups.json");
     if(doc.schema_version!==1||!Array.isArray(doc.groups)) throw Error("Invalid production groups");
     const map=new Map(), ids=new Set();
     for(const group of doc.groups){
@@ -67,8 +68,8 @@ window.OperaAtlasCatalog = (() => {
     }
     return map;
   }
-  async function remote() {
-    const manifest = await jsonFrom(BASE + "manifest.json");
+  async function remote(base) {
+    const manifest = await jsonFrom(base + "manifest.json");
     if (manifest.schema_version !== 2 || !manifest.files || !/^\d{4}-\d{2}-\d{2}$/.test(manifest.reviewed_on)) {
       throw new Error("Unsupported manifest");
     }
@@ -78,7 +79,7 @@ window.OperaAtlasCatalog = (() => {
           || !/^[a-f0-9]{64}$/.test(spec.sha256) || !Number.isSafeInteger(spec.count)) {
         throw new Error("Unsafe catalog reference");
       }
-      const doc = await jsonFrom(BASE + spec.path + "?v=" + spec.sha256.slice(0,16), spec.sha256);
+      const doc = await jsonFrom(base + spec.path + "?v=" + spec.sha256.slice(0,16), spec.sha256);
       return validateChannel(channel,manifest,doc);
     }));
     const [works,venues,stagings,recite] = parts;
@@ -88,7 +89,7 @@ window.OperaAtlasCatalog = (() => {
     if (byWork.size !== works.length || byVenue.size !== venues.length
         || byStaging.size !== stagings.length) throw new Error("Duplicate canonical IDs");
     let groups=new Map(), groupWarning=null;
-    try{groups=await productionGroupMap(byStaging);}catch{groupWarning="Associazioni fra sedi temporaneamente non verificabili: le produzioni possono apparire separate per teatro.";}
+    try{groups=await productionGroupMap(byStaging,base);}catch{groupWarning="Alcune produzioni condivise potrebbero apparire separate per teatro.";}
     const ids = new Set();
     const performances = recite.map(item => {
       if (ids.has(item.id)) throw new Error("Duplicate performance ID");
@@ -116,14 +117,25 @@ window.OperaAtlasCatalog = (() => {
   }
 
   async function load() {
-    try {
-      return await remote();
-    } catch (error) {
-      // Preserve the previous usable public catalog, but NEVER imply it is current.
-      const snapshot = await jsonFrom("./performances.json");
-      if (snapshot.schema_version !== 1 || !Array.isArray(snapshot.performances))
-        throw new Error("No valid remote or fallback catalog");
-      return {...snapshot,source:"fallback",warning:"Catalogo di riserva: l’aggiornamento remoto non è momentaneamente verificabile."};
+    const failures=[];
+    for(const base of [BASE,MIRROR]){
+      try{
+        const data=await remote(base);
+        if(base===MIRROR)data.warning=data.warning||"Il catalogo è stato caricato dal canale alternativo.";
+        return data;
+      }catch(error){
+        failures.push(error);
+        console.warn("Opera Atlas feed endpoint failed",base,error);
+      }
+    }
+    try{
+      const snapshot=await jsonFrom("./performances.json");
+      if(snapshot.schema_version!==1 || !Array.isArray(snapshot.performances))
+        throw new Error("Invalid snapshot");
+      return {...snapshot,source:"fallback",warning:"Alcuni aggiornamenti del calendario potrebbero non essere ancora visibili."};
+    }catch(error){
+      console.error("Opera Atlas: all catalog endpoints failed",{failures,snapshot:error});
+      throw new Error("Unable to load remote or local catalog");
     }
   }
   return Object.freeze({load, urls, slugify});
