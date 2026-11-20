@@ -137,3 +137,22 @@ Gli URL sono ingressi ufficiali verificati, **non** certificazioni di disponibil
 
 ## Analisi primo connettore (20 novembre 2026)
 La pagina https://www.teatroregio.torino.it/calendario/opera mescola opere e balletti e mostra spesso intervalli di programmazione. Le pagine di produzione, per esempio https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata , riportano le singole recite con date, ore e fuso Europe/Rome. Il primo connettore accetta snapshot HTML **salvati** e analizza soltanto dettagli che contengono timestamp completi. Nessun crawler attivo fino a verifica condizioni d'uso e policy d'accesso. La compatibilità puntuale del parser con il markup HTML non è stata ancora verificata da una scansione end-to-end live. Vedi `docs/REGIO_CONNECTOR.md`.
+
+## Esecuzione controllata e audit (migrazione v4)
+Il 20/11/2026 il percorso ufficiale `/opera-e-balletto-2026-2027/la-traviata` mostrava 11 righe distinte di recite (dal 26 febbraio al 10 marzo 2027), tra cui recite pomeridiane alle 15:00. Questa verifica è stata fatta consultando la pagina pubblica, **non** eseguendo il crawler della repository. Il parser rimane da confrontare con la sorgente HTML effettivamente scaricabile, che può avere struttura diversa da quella visibile nelle pagine renderizzate.
+
+`robots.txt` non è risultato accessibile dal sistema di verifica; il comportamento necessario è **fail closed** fino a verifica da ambiente operativo. Nessuna approvazione di crawling discende dalla presenza di un URL pubblico.
+
+```sh
+# Esegue una singola verifica controllata (solo se fonte già approvata nel DB)
+python -m opera_atlas.scan_cli --db atlas.sqlite3 --url https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata --source-id 1 --venue-id 1 --production-id 1 --title "La traviata" --composer "Giuseppe Verdi" --allow-network
+# Il comando senza --apply esegue rollback delle modifiche e non conserva il log.
+# Con --apply salva recite e metadati di verifica nel database (mai HTML integrale).
+```
+
+La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiesta robots.txt precedente alla pagina, User-Agent identificabile, response HTML, limite 2 MB, timeout 12 secondi. Nessun retry e nessuna scansione ricorsiva. Lo storico `source_checks` registra esito, impronta SHA-256, dimensione e numero di recite, senza copiare il testo dell'ente. Le scansioni negate registrano solo il motivo tecnico se `--apply` è usato.
+
+**Limiti:** la soluzione non gestisce rate limiting globale tra esecuzioni, ETag/304, parser per altri teatri, errori di import con log persistente o gestione completa degli spostamenti di programma. Prima di abilitare schedulazioni serviranno policy di accesso verificate, monitoraggio delle frequenze e collaudi live. Le fixture di test sono sintesi redatte autonomamente, non copie della pagina.
+
+## Verifica HTML e policy — 20 novembre 2026
+Il calendario generale del Teatro Regio contiene anche balletto; la pagina di dettaglio di *La traviata* contiene orari individuali per 11 recite (26/02–10/03/2027), con timezone `Europe/Rome`. La verifica pubblica è distinta dai test del software: si dispone di fixture sintetiche, non di una cattura HTTP autorizzata dalla pipeline. `robots.txt` è risultato indisponibile nel contesto di verifica; pertanto l'accesso automatico resta `pending` e il fetch applicativo fallisce se non riesce a leggere le policy. Non alterare `access_status` senza verifica esplicita delle condizioni applicabili.
