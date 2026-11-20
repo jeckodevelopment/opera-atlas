@@ -230,6 +230,105 @@
       "sources": [
         "https://corago.unibo.it/opera/Z000029612"
       ]
+    },
+    "anna-bolena": {
+      "librettist": "Felice Romani",
+      "premiere_year": 1830,
+      "premiere_venue": "Teatro Carcano",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000001986"
+      ]
+    },
+    "i-puritani": {
+      "librettist": "Carlo Pepoli",
+      "premiere_year": 1835,
+      "premiere_venue": "Théâtre-Italien",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://www.studibelliniani.eu/biografia"
+      ]
+    },
+    "il-barbiere-di-siviglia": {
+      "librettist": "Cesare Sterbini",
+      "premiere_year": 1816,
+      "premiere_venue": "Teatro Argentina",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/il-barbiere-di-siviglia/"
+      ]
+    },
+    "ernani": {
+      "librettist": "Francesco Maria Piave",
+      "premiere_year": 1844,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://corago.unibo.it/libretto/DMBM23457"
+      ]
+    },
+    "falstaff": {
+      "librettist": "Arrigo Boito",
+      "premiere_year": 1893,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://www.rohcollections.org.uk/work.aspx?work=554"
+      ]
+    },
+    "la-clemenza-di-tito": {
+      "librettist": "Caterino Mazzolà",
+      "premiere_year": 1791,
+      "premiere_venue": "Teatro degli Stati",
+      "premiere_city": "Praga",
+      "sources": [
+        "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/the-clemency-of-titus-20737/"
+      ]
+    },
+    "adriana-lecouvreur": {
+      "librettist": "Arturo Colautti",
+      "premiere_year": 1902,
+      "premiere_venue": "Teatro Lirico",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://www.themorgan.org/music-manuscripts-and-printed-music/248689"
+      ]
+    },
+    "nixon-in-china": {
+      "librettist": "Alice Goodman",
+      "premiere_year": 1987,
+      "premiere_venue": "Houston Grand Opera",
+      "premiere_city": "Houston",
+      "sources": [
+        "https://www.nonesuch.com/albums/nixon-china"
+      ]
+    },
+    "hansel-und-gretel": {
+      "librettist": "Adelheid Wette",
+      "premiere_year": 1893,
+      "premiere_venue": "Hoftheater",
+      "premiere_city": "Weimar",
+      "sources": [
+        "https://theaterzettel-weimar.de/item/ThHStAW_performance_00050927?tx_jotheaterzettel_pi1001%5BjoOpenDetail%5D=1"
+      ]
+    },
+    "il-pipistrello": {
+      "librettist": "Carl Haffner; Richard Genée",
+      "premiere_year": 1874,
+      "premiere_venue": "Theater an der Wien",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://archiviostorico.operaroma.it/operetta/il-pipistrello-die-fledermaus/"
+      ]
+    },
+    "die-zauberflote": {
+      "librettist": "Emanuel Schikaneder",
+      "premiere_year": 1791,
+      "premiere_venue": "Theater auf der Wieden",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://kv.mozarteum.at/de/work/die-zauberflote-7137"
+      ]
     }
   }
 }

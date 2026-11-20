@@ -48,6 +48,31 @@ class AutoWorkResearchTests(unittest.TestCase):
             }}}
         self.assertIsNone(resolve_identity("anna bolena",fetch=fake))
 
+    def test_eleven_sourced_opera_cards_are_suitable_for_automated_authority_checks(self):
+        from scripts.auto_work_research import preverified_work_material,MAX_PREVERIFIED
+        material=preverified_work_material()
+        expected={
+            "anna-bolena","i-puritani","il-barbiere-di-siviglia",
+            "ernani","falstaff","la-clemenza-di-tito",
+            "adriana-lecouvreur","nixon-in-china","hansel-und-gretel",
+            "il-pipistrello","die-zauberflote"
+        }
+        self.assertTrue(expected.issubset(material))
+        self.assertGreaterEqual(MAX_PREVERIFIED,len(expected))
+        for slug in expected:
+            with self.subTest(work=slug):
+                self.assertTrue(45<=len(material[slug]["synopsis"])<=300)
+                self.assertGreaterEqual(len(material[slug]["history"]["sources"]),1)
+        # All eleven have their own approved official production link.
+        options={"schema_version":1,"candidates":[
+            {"id":"work-"+slug,"source_key":"scala-season-2026-27",
+             "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/"+
+                 slug+".html","status":"needs_review"} for slug in sorted(expected)]}
+        batch=choose_candidates(options,{"schema_version":1,"works":[]},set(),
+                                today=date(2026,11,20))
+        self.assertEqual({x["id"] for x in batch},
+                         {"work-"+slug for slug in expected})
+
     def test_preverified_rigoletto_is_enriched_without_paid_model(self):
         from scripts.auto_work_research import preverified_work_material
         material=preverified_work_material()
@@ -98,13 +123,16 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(status[0]["status"],"model_not_configured")
 
     def test_original_synopsis_is_saved_only_if_grounded(self):
-        doc={"schema_version":1,"candidates":[CANDIDATE]}
-        identity={"title":"Anna Bolena","composer":"Gaetano Donizetti","wikidata_id":"Q111",
+        doc={"schema_version":1,"candidates":[{
+            "id":"oa-index-fake-for-paid-path","source_key":"scala-season-2026-27",
+            "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/fixture-new-opera.html",
+            "status":"needs_review"}]}
+        identity={"title":"Fixture New Opera","composer":"Gaetano Donizetti","wikidata_id":"Q111",
                   "authority_url":"https://www.wikidata.org/wiki/Q111",
                   "wikipedia_url":"https://it.wikipedia.org/wiki/Anna_Bolena"}
         calls=[]
         def resolver(title):
-            self.assertEqual(title,"anna bolena")
+            self.assertEqual(title,"fixture new opera")
             return identity
         def article(obj):
             return "La vicenda di Anna Bolena e dei suoi rapporti con Enrico VIII, " * 4
