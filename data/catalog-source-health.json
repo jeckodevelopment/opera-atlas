@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T19:40:17+00:00",
+  "checked_at": "2026-11-20T20:08:37+00:00",
   "sources": [
     {
       "key": "regio-traviata-2027",
@@ -113,6 +113,24 @@
       "added": 0,
       "observed": 54,
       "anomalies": []
+    },
+    {
+      "key": "scala-don-giovanni-2027",
+      "outcome": "pending",
+      "added": 0,
+      "observed": 0
+    },
+    {
+      "key": "scala-boheme-puccini-2027",
+      "outcome": "pending",
+      "added": 0,
+      "observed": 0
+    },
+    {
+      "key": "arena-nabucco-2027",
+      "outcome": "pending",
+      "added": 0,
+      "observed": 0
     }
   ]
 }
