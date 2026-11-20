@@ -52,7 +52,14 @@ class NewOperaPromotionTests(unittest.TestCase):
         self.assertEqual(urls,[URL])
         graph=assemble(facts,ids,approved_extra=set(urls))
         self.assertEqual(len(graph["performances"]),len(self.registry["performances"])+1)
-        card=build_editorial(facts,ids,editorial,approved_extra=set(urls))
+        from scripts.publish_work_editorial import HISTORY
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))
+        history["works"]["anna-bolena"]={
+            "librettist":"Giovanni Example","premiere_year":1830,
+            "premiere_venue":"Teatro Nuovo","premiere_city":"Milano",
+            "sources":["https://www.wikidata.org/wiki/Q111"]}
+        card=build_editorial(facts,ids,editorial,approved_extra=set(urls),
+                             history=history)
         self.assertEqual(len(card["works"]),len(ids["works"]))
         self.assertTrue(any(x["slug"]=="anna-bolena" for x in card["works"]))
         second=promote_new_works(facts,ids,evidence,candidates,enrichment,editorial,urls,
