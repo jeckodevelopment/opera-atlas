@@ -119,7 +119,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
     const title=event?.title||"Opera";
     const slug=event?.work_slug||normalize(title);
     const chosen=posters[slug];
-    if(chosen && chosen.kind==="official_production_image" &&
+    if(chosen && (chosen.kind==="official_production_image" ||
+                  chosen.kind==="archival_work_image") &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
       return {src:chosen.image_url,
         alt:chosen.alt||"Immagine ufficiale della produzione di "+title,
@@ -154,6 +155,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     picture.addEventListener("error",()=>{
       if(item.fallbackSrc && picture.src!==item.fallbackSrc)picture.src=item.fallbackSrc;
     },{once:true});
+    if(item.credit)picture.title=item.credit+(item.license?" · "+item.license:"");
     picture.src=item.src;
     return picture;
   }
