@@ -2,24 +2,28 @@
   "schema_version": 1,
   "works": {
     "adriana-lecouvreur": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Adriana Lecouvreur"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Krushelnytska_-_Adriana.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Krushelnytska_-_Adriana.jpg",
+      "alt": "Solomija Krušel'nyc'ka nel ruolo di Adriana Lecouvreur, fotografia storica e non locandina della produzione",
+      "credit": "Fotografia storica di Solomija Krušel'nyc'ka nel ruolo di Adriana Lecouvreur, Wikimedia Commons",
+      "license": "Public domain"
     },
     "aida": {
       "kind": "original_editorial_cover",
       "alt": "Copertina editoriale originale per Aida"
     },
     "al-cavallino-bianco": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Al cavallino bianco"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Im_wei%C3%9Fen_R%C3%B6%C3%9Fl_(Ralph_Benatzky)_-_LABW_-_Generallandesarchiv_Karlsruhe_57-3_Nr._7798.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Im_wei%C3%9Fen_R%C3%B6%C3%9Fl_(Ralph_Benatzky)_-_LABW_-_Generallandesarchiv_Karlsruhe_57-3_Nr._7798.jpg",
+      "alt": "Fotografia d'archivio legata all'operetta Al cavallino bianco, non allestimento in calendario",
+      "credit": "Landesarchiv Baden-Württemberg, Generallandesarchiv Karlsruhe 57-3 Nr. 7798 / Gerd Weiss",
+      "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/"
     },
     "anna-bolena": {
-      "work_id": "oa-w-000035",
-      "image_url": "https://www.teatroallascala.org/static/upload/cia/ciampa-2-scaled.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Anna Bolena",
-      "kind": "official_production_image"
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Anna Bolena"
     },
     "carmen": {
       "kind": "original_editorial_cover",
@@ -42,12 +46,12 @@
       "kind": "official_production_image"
     },
     "don-quichotte": {
-      "work_id": "oa-w-000030",
-      "image_url": "https://www.teatroallascala.org/static/upload/ber/bertrand-de-billy.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Don Quichotte",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Georges_Rochegrosse's_poster_for_Jules_Massenet's_Don_Quichotte_-_original.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Georges_Rochegrosse's_poster_for_Jules_Massenet's_Don_Quichotte_-_original.jpg",
+      "alt": "Manifesto storico di Don Quichotte di Jules Massenet, non allestimento in calendario",
+      "credit": "Georges-Antoine Rochegrosse, manifesto storico, Wikimedia Commons",
+      "license": "Public domain"
     },
     "edgar": {
       "kind": "original_editorial_cover",
@@ -62,16 +66,16 @@
       "alt": "Copertina editoriale originale per Fedora"
     },
     "i-puritani": {
-      "work_id": "oa-w-000036",
-      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-concerto-fabio-luisi-gn1a7176-ph-brescia-e-amisano---teatro-alla-scala.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di I puritani",
-      "kind": "official_production_image"
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per I puritani"
     },
     "il-pipistrello": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Il pipistrello"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Johann_Strauss_Operetta_Fledermaus.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Johann_Strauss_Operetta_Fledermaus.png",
+      "alt": "Copertina storica dell'operetta Il pipistrello, non allestimento in calendario",
+      "credit": "Archivio storico, Wikimedia Commons",
+      "license": "Public domain"
     },
     "iris": {
       "kind": "original_editorial_cover",
@@ -102,12 +106,8 @@
       "alt": "Copertina editoriale originale per Lucia di Lammermoor"
     },
     "macbeth": {
-      "work_id": "oa-w-000018",
-      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-filarmonica-con-chung-752574badg-ph-brescia-e-amisano---teatro-alla-scala.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Macbeth",
-      "kind": "official_production_image"
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Macbeth"
     },
     "madama-butterfly": {
       "kind": "original_editorial_cover",
@@ -118,36 +118,40 @@
       "alt": "Copertina editoriale originale per Nabucco"
     },
     "nixon-in-china": {
-      "work_id": "oa-w-000034",
-      "image_url": "https://www.teatroallascala.org/static/upload/ken/kent-nagano---antoine-saito---symphonie-de-beethoven.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Nixon in China",
-      "kind": "official_production_image"
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Nixon in China"
     },
     "norma": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Norma"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bellin-Norma_poster_for_1831_premiere.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bellin-Norma_poster_for_1831_premiere.jpg",
+      "alt": "Manifesto storico della prima di Norma di Bellini, non allestimento in calendario",
+      "credit": "Manifesto storico della prima di Norma, Wikimedia Commons",
+      "license": "Public domain"
     },
     "nozze-istriane": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Nozze istriane"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Libretto_Nozze_Istriane_1908.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Libretto_Nozze_Istriane_1908.jpg",
+      "alt": "Copertina del libretto storico di Nozze istriane di Antonio Smareglia, non allestimento in calendario",
+      "credit": "Libretto storico del 1908, Wikimedia Commons",
+      "license": "Public domain"
     },
     "otello": {
-      "work_id": "oa-w-000014",
-      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-filarmonica-con-chung-752563badg-ph-brescia-e-amisano---teatro-alla-scala.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Otello",
-      "kind": "official_production_image"
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Otello"
     },
     "pagliacci": {
       "kind": "original_editorial_cover",
       "alt": "Copertina editoriale originale per Pagliacci"
     },
     "partenope": {
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Partenope"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Georg_Friedrich_H%C3%A4ndel_-_Partenope_-_title_page_of_the_libretto_-_London_1730.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Georg_Friedrich_H%C3%A4ndel_-_Partenope_-_title_page_of_the_libretto_-_London_1730.png",
+      "alt": "Frontespizio storico del libretto di Partenope di Händel, non allestimento in calendario",
+      "credit": "Libretto storico londinese del 1730, Wikimedia Commons",
+      "license": "Public domain"
     },
     "rigoletto": {
       "kind": "original_editorial_cover",

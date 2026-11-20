@@ -1,53 +1,14 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:38:48+00:00",
-  "checked_pages": 11,
-  "official_images": 8,
-  "editorial_fallbacks": 27,
+  "checked_at": "2026-11-20T23:40:51+00:00",
+  "checked_pages": 1,
+  "official_images": 2,
+  "archival_images": 7,
+  "editorial_fallbacks": 26,
   "outcomes": [
     {
-      "slug": "don-giovanni",
-      "status": "verified_official_metadata"
-    },
-    {
-      "slug": "tosca",
+      "slug": "macbeth",
       "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "lucia-di-lammermoor",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "carmen",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "madama-butterfly",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "jenufa",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "madama-butterfly",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "samson-et-dalila",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "fedora",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "aida",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "otello",
-      "status": "verified_official_metadata"
     }
   ]
 }

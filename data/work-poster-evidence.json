@@ -1,46 +1,6 @@
 {
   "schema_version": 1,
   "posters": {
-    "i-puritani": {
-      "work_id": "oa-w-000036",
-      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-concerto-fabio-luisi-gn1a7176-ph-brescia-e-amisano---teatro-alla-scala.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di I puritani",
-      "kind": "official_production_image"
-    },
-    "anna-bolena": {
-      "work_id": "oa-w-000035",
-      "image_url": "https://www.teatroallascala.org/static/upload/cia/ciampa-2-scaled.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Anna Bolena",
-      "kind": "official_production_image"
-    },
-    "nixon-in-china": {
-      "work_id": "oa-w-000034",
-      "image_url": "https://www.teatroallascala.org/static/upload/ken/kent-nagano---antoine-saito---symphonie-de-beethoven.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Nixon in China",
-      "kind": "official_production_image"
-    },
-    "don-quichotte": {
-      "work_id": "oa-w-000030",
-      "image_url": "https://www.teatroallascala.org/static/upload/ber/bertrand-de-billy.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Don Quichotte",
-      "kind": "official_production_image"
-    },
-    "macbeth": {
-      "work_id": "oa-w-000018",
-      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-filarmonica-con-chung-752574badg-ph-brescia-e-amisano---teatro-alla-scala.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Macbeth",
-      "kind": "official_production_image"
-    },
     "la-boheme": {
       "work_id": "oa-w-000024",
       "image_url": "https://www.teatroallascala.org/static/upload/la-/la-boheme--7-.jpg",
@@ -55,14 +15,6 @@
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di Don Giovanni",
-      "kind": "official_production_image"
-    },
-    "otello": {
-      "work_id": "oa-w-000014",
-      "image_url": "https://www.teatroallascala.org/static/upload/202/2025-filarmonica-con-chung-752563badg-ph-brescia-e-amisano---teatro-alla-scala.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Otello",
       "kind": "official_production_image"
     }
   },
@@ -152,6 +104,9 @@
       "retry_after": "2026-11-27"
     },
     "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html": {
+      "retry_after": "2026-11-27"
+    },
+    "https://www.teatromassimo.it/event/macbeth/": {
       "retry_after": "2026-11-27"
     }
   }
