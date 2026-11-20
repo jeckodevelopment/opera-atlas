@@ -239,6 +239,8 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
         "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "checked_pages":checked,"official_images":sum(
             row["kind"]=="official_production_image" for row in manifest["works"].values()),
+        "archival_images":sum(
+            row["kind"]=="archival_work_image" for row in manifest["works"].values()),
         "editorial_fallbacks":sum(
             row["kind"]=="original_editorial_cover" for row in manifest["works"].values()),
         "outcomes":outcomes})
@@ -251,10 +253,12 @@ def check()->None:
     if current.get("schema_version")!=1 or set(current.get("works",{}))!={
         w["slug"] for w in works.values()}:
         raise ValueError("poster feed does not match published opera registry")
+    titles={w["slug"]:w["title"] for w in works.values()}
     for slug,item in current["works"].items():
         if item["kind"]=="official_production_image":
-            if not allowed_image_url(item["image_url"],item["source_url"]):
-                raise ValueError("unapproved official poster URL for "+slug)
+            if (not allowed_image_url(item["image_url"],item["source_url"]) or
+                not image_matches_work(item["image_url"],titles[slug])):
+                raise ValueError("wrong or unapproved official poster for "+slug)
         elif item["kind"]=="archival_work_image":
             if (not isinstance(item.get("source_url"),str) or
                     not item["source_url"].startswith("https://commons.wikimedia.org/wiki/File:") or
