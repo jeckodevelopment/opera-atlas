@@ -3212,6 +3212,42 @@
       ]
     },
     {
+      "id": "curated:auto-11def56ae568ccce:2027-03-30",
+      "starts_at": "2027-03-30T20:00:00+02:00",
+      "local_date": "2027-03-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
+      "id": "curated:auto-11def56ae568ccce:2027-04-01",
+      "starts_at": "2027-04-01T20:00:00+02:00",
+      "local_date": "2027-04-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-02",
       "starts_at": "2027-04-02T20:00:00+02:00",
       "local_date": "2027-04-02",
@@ -3227,6 +3263,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-11def56ae568ccce:2027-04-03",
+      "starts_at": "2027-04-03T20:00:00+02:00",
+      "local_date": "2027-04-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
+      "id": "curated:auto-11def56ae568ccce:2027-04-06",
+      "starts_at": "2027-04-06T20:00:00+02:00",
+      "local_date": "2027-04-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
       ]
     },
     {
@@ -3266,6 +3338,24 @@
       ]
     },
     {
+      "id": "curated:auto-11def56ae568ccce:2027-04-10",
+      "starts_at": "2027-04-10T20:00:00+02:00",
+      "local_date": "2027-04-10",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-11",
       "starts_at": "2027-04-11T15:00:00+02:00",
       "local_date": "2027-04-11",
@@ -3284,6 +3374,24 @@
       ]
     },
     {
+      "id": "curated:auto-11def56ae568ccce:2027-04-13",
+      "starts_at": "2027-04-13T20:00:00+02:00",
+      "local_date": "2027-04-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-14",
       "starts_at": "2027-04-14T20:00:00+02:00",
       "local_date": "2027-04-14",
@@ -3299,6 +3407,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-11def56ae568ccce:2027-04-16",
+      "starts_at": "2027-04-16T20:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
       ]
     },
     {
@@ -4184,6 +4310,24 @@
       ]
     },
     {
+      "id": "curated:auto-18853d99c59fe075:2027-06-15",
+      "starts_at": "2027-06-15T20:00:00+02:00",
+      "local_date": "2027-06-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
       "id": "curated:regio-evgenij-onegin-2027:2027-06-15",
       "starts_at": "2027-06-15T20:00:00+02:00",
       "local_date": "2027-06-15",
@@ -4199,6 +4343,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-18853d99c59fe075:2027-06-17",
+      "starts_at": "2027-06-17T20:00:00+02:00",
+      "local_date": "2027-06-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
       ]
     },
     {
@@ -4235,6 +4397,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-18853d99c59fe075:2027-06-19",
+      "starts_at": "2027-06-19T20:00:00+02:00",
+      "local_date": "2027-06-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
       ]
     },
     {
@@ -4292,6 +4472,24 @@
       ]
     },
     {
+      "id": "curated:auto-18853d99c59fe075:2027-06-21",
+      "starts_at": "2027-06-21T20:00:00+02:00",
+      "local_date": "2027-06-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
       "id": "curated:auto-97514cec9448be1a:2027-06-22",
       "starts_at": "2027-06-22T19:00:00+02:00",
       "local_date": "2027-06-22",
@@ -4325,6 +4523,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-18853d99c59fe075:2027-06-23",
+      "starts_at": "2027-06-23T20:00:00+02:00",
+      "local_date": "2027-06-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
       ]
     },
     {
@@ -4364,6 +4580,24 @@
       ]
     },
     {
+      "id": "curated:auto-18853d99c59fe075:2027-06-25",
+      "starts_at": "2027-06-25T20:00:00+02:00",
+      "local_date": "2027-06-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
       "id": "curated:auto-b67d637b2f593f67:2027-06-25",
       "starts_at": "2027-06-25T21:15:00+02:00",
       "local_date": "2027-06-25",
@@ -4379,6 +4613,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/la-traviata/"
+      ]
+    },
+    {
+      "id": "curated:auto-0ed3159d77688a6c:2027-06-26",
+      "starts_at": "2027-06-26T20:00:00+02:00",
+      "local_date": "2027-06-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nixon in China",
+      "composer": "John Adams",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html"
       ]
     },
     {
@@ -4418,6 +4670,42 @@
       ]
     },
     {
+      "id": "curated:auto-0ed3159d77688a6c:2027-06-28",
+      "starts_at": "2027-06-28T20:00:00+02:00",
+      "local_date": "2027-06-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nixon in China",
+      "composer": "John Adams",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html"
+      ]
+    },
+    {
+      "id": "curated:auto-18853d99c59fe075:2027-06-29",
+      "starts_at": "2027-06-29T20:00:00+02:00",
+      "local_date": "2027-06-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
       "id": "curated:regio-evgenij-onegin-2027:2027-06-29",
       "starts_at": "2027-06-29T20:00:00+02:00",
       "local_date": "2027-06-29",
@@ -4433,6 +4721,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-18853d99c59fe075:2027-07-01",
+      "starts_at": "2027-07-01T20:00:00+02:00",
+      "local_date": "2027-07-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
       ]
     },
     {
@@ -4490,6 +4796,42 @@
       ]
     },
     {
+      "id": "curated:auto-0ed3159d77688a6c:2027-07-05",
+      "starts_at": "2027-07-05T20:00:00+02:00",
+      "local_date": "2027-07-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nixon in China",
+      "composer": "John Adams",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html"
+      ]
+    },
+    {
+      "id": "curated:auto-0ed3159d77688a6c:2027-07-07",
+      "starts_at": "2027-07-07T20:00:00+02:00",
+      "local_date": "2027-07-07",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nixon in China",
+      "composer": "John Adams",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html"
+      ]
+    },
+    {
       "id": "curated:auto-8e417ad6e506eaf0:2027-07-09",
       "starts_at": "2027-07-09T21:15:00+02:00",
       "local_date": "2027-07-09",
@@ -4541,6 +4883,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:auto-0ed3159d77688a6c:2027-07-13",
+      "starts_at": "2027-07-13T20:00:00+02:00",
+      "local_date": "2027-07-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nixon in China",
+      "composer": "John Adams",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html"
       ]
     },
     {

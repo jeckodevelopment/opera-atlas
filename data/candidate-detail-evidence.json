@@ -19,6 +19,176 @@
       ]
     },
     {
+      "candidate_id": "oa-index-0ed3159d77688a6ce0ee",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
+      "content_sha256": "475d381d5f9be112034805969cf3bf1d455ea4a02dd60439f447f6d704971baa",
+      "checked_at": "2026-11-20T23:24:03+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Nixon in China",
+          "composer": "John Adams",
+          "date": "2027-06-26",
+          "starts_at": "2027-06-26T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Nixon in China",
+          "composer": "John Adams",
+          "date": "2027-06-28",
+          "starts_at": "2027-06-28T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Nixon in China",
+          "composer": "John Adams",
+          "date": "2027-07-05",
+          "starts_at": "2027-07-05T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Nixon in China",
+          "composer": "John Adams",
+          "date": "2027-07-07",
+          "starts_at": "2027-07-07T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Nixon in China",
+          "composer": "John Adams",
+          "date": "2027-07-13",
+          "starts_at": "2027-07-13T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-11def56ae568ccce9f61",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
+      "content_sha256": "52619e0568042eaaba210533f6e5f35ccfee27124bef327cf3cae13a99e1555f",
+      "checked_at": "2026-11-20T23:24:04+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Anna Bolena",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-03-30",
+          "starts_at": "2027-03-30T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Anna Bolena",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-01",
+          "starts_at": "2027-04-01T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Anna Bolena",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-03",
+          "starts_at": "2027-04-03T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Anna Bolena",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-06",
+          "starts_at": "2027-04-06T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Anna Bolena",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-10",
+          "starts_at": "2027-04-10T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Anna Bolena",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-13",
+          "starts_at": "2027-04-13T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Anna Bolena",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-18853d99c59fe0755e13",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
+      "content_sha256": "a83274f7297a6d78b003b60af09d748582e2cd8b08732d1b4348e4a113e9dc57",
+      "checked_at": "2026-11-20T23:24:05+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-06-15",
+          "starts_at": "2027-06-15T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-06-17",
+          "starts_at": "2027-06-17T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-06-19",
+          "starts_at": "2027-06-19T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-06-21",
+          "starts_at": "2027-06-21T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-06-23",
+          "starts_at": "2027-06-23T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-06-25",
+          "starts_at": "2027-06-25T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-06-29",
+          "starts_at": "2027-06-29T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "I puritani",
+          "composer": "Vincenzo Bellini",
+          "date": "2027-07-01",
+          "starts_at": "2027-07-01T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-1fdf598fde99e1e32112",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",

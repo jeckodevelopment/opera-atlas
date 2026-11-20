@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:18:58+00:00",
+  "checked_at": "2026-11-20T23:23:46+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
       "status": "success",
       "links": 13,
-      "new_review_candidates": 9
+      "new_review_candidates": 8
     },
     {
       "key": "arena-festival-2027",
@@ -18,13 +18,13 @@
       "key": "fenice-opera-2026-27",
       "status": "success",
       "links": 11,
-      "new_review_candidates": 7
+      "new_review_candidates": 3
     },
     {
       "key": "parma-opera-2027",
       "status": "success",
       "links": 6,
-      "new_review_candidates": 6
+      "new_review_candidates": 4
     },
     {
       "key": "massimo-season-2026-27",

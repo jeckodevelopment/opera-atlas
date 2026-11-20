@@ -1,38 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:19:07+00:00",
+  "checked_at": "2026-11-20T23:23:51+00:00",
   "outcomes": [
-    {
-      "candidate_id": "oa-index-1fdf598fde99e1e32112",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-559b2402d287d446c7b2",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-62da655021bdc4f62ba7",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-7f4bc91ba66978263199",
-      "status": "enriched"
-    },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "status": "automatic_retry",
@@ -44,17 +13,14 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-97514cec9448be1a563d",
-      "status": "enriched"
-    },
-    {
       "candidate_id": "oa-index-b372b317894fe260b18e",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-d7a3053257b5915753f9",
-      "status": "enriched"
+      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "status": "automatic_retry",
+      "reason": "ValueError"
     },
     {
       "candidate_id": "oa-index-eaefe8edde44acf2edd9",
@@ -72,19 +38,42 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-0da766cb52d550c48c16",
+      "candidate_id": "oa-index-0ed3159d77688a6ce0ee",
       "status": "enriched"
     },
     {
+      "candidate_id": "oa-index-11def56ae568ccce9f61",
+      "status": "enriched"
+    },
+    {
+      "candidate_id": "oa-index-18853d99c59fe0755e13",
+      "status": "enriched"
+    },
+    {
+      "candidate_id": "oa-index-559b2402d287d446c7b2",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-6cd199691f7145a4d048",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-58413a3bbbee689b82bc",
+      "status": "model_not_configured"
+    },
+    {
+      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
+      "status": "model_not_configured"
+    },
+    {
       "candidate_id": "oa-index-a02901b14e6eae69df5c",
-      "status": "model_not_configured"
-    },
-    {
-      "candidate_id": "oa-index-a77154badf30929b95dc",
-      "status": "model_not_configured"
-    },
-    {
-      "candidate_id": "oa-index-b4180540983902f703af",
       "status": "model_not_configured"
     }
   ]

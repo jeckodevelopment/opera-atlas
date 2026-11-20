@@ -24,6 +24,69 @@
       "verified_at": "2026-11-20T23:19:07+00:00"
     },
     {
+      "candidate_id": "oa-index-0ed3159d77688a6ce0ee",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
+      "title": "Nixon in China",
+      "composer": "John Adams",
+      "synopsis": "Durante la storica visita del presidente americano Nixon in Cina nel 1972, gli incontri diplomatici si intrecciano ai pensieri e ai ricordi privati dei protagonisti.",
+      "history": {
+        "librettist": "Alice Goodman",
+        "premiere_year": 1987,
+        "premiere_venue": "Houston Grand Opera",
+        "premiere_city": "Houston",
+        "sources": [
+          "https://www.nonesuch.com/albums/nixon-china"
+        ]
+      },
+      "wikidata_id": "Q1146706",
+      "authority_url": "https://www.wikidata.org/wiki/Q1146706",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Nixon_in_China",
+      "verified_at": "2026-11-20T23:23:49+00:00"
+    },
+    {
+      "candidate_id": "oa-index-11def56ae568ccce9f61",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
+      "title": "Anna Bolena",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "Anna Bolena, regina d'Inghilterra, vede vacillare il proprio matrimonio con Enrico VIII mentre gli intrighi di corte e la rivalità amorosa la conducono verso un destino tragico.",
+      "history": {
+        "librettist": "Felice Romani",
+        "premiere_year": 1830,
+        "premiere_venue": "Teatro Carcano",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000001986"
+        ]
+      },
+      "wikidata_id": "Q559848",
+      "authority_url": "https://www.wikidata.org/wiki/Q559848",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Anna_Bolena_(opera)",
+      "verified_at": "2026-11-20T23:23:50+00:00"
+    },
+    {
+      "candidate_id": "oa-index-18853d99c59fe0755e13",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "synopsis": "Nel conflitto fra puritani e realisti, Elvira teme di essere stata abbandonata da Arturo; tra equivoci, separazioni e passioni, il loro amore è messo a dura prova.",
+      "history": {
+        "librettist": "Carlo Pepoli",
+        "premiere_year": 1835,
+        "premiere_venue": "Théâtre-Italien",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.studibelliniani.eu/biografia"
+        ]
+      },
+      "wikidata_id": "Q470886",
+      "authority_url": "https://www.wikidata.org/wiki/Q470886",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/I_puritani",
+      "verified_at": "2026-11-20T23:23:50+00:00"
+    },
+    {
       "candidate_id": "oa-index-1fdf598fde99e1e32112",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
