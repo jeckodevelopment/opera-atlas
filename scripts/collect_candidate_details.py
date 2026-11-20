@@ -15,7 +15,7 @@ from pathlib import Path
 from opera_atlas.controlled_fetch import AccessDenied,FetchUnavailable,fetch_official_html
 from opera_atlas.db import connect,migrate
 from scripts.daily_ingest import _write_atomic
-from scripts.discover_season_indexes import CONFIG,OUTPUT as INDEX,validate_config
+from scripts.discover_season_indexes import CONFIG,OUTPUT as INDEX,validate_config,eligible
 from scripts.publish_catalog_v2 import ROOT
 
 OUTPUT=ROOT/"data"/"candidate-detail-evidence.json"
@@ -107,7 +107,7 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
         if source is None:continue
         url=urlsplit(x.get("official_url",""))
         parent=urlsplit(source["official_url"])
-        if (url.scheme!="https" or url.hostname!=parent.hostname or url.port is not None
+        if (url.scheme!="https" or url.hostname!=parent.hostname or not eligible(key,x["official_url"]) or url.port is not None
             or url.query or url.fragment or url.username or url.password):continue
         possible.append(x)
     possible.sort(key=lambda x:x["id"])
