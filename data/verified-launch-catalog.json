@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-20",
+  "editorial_policy": "Only individual recite explicitly shown by official source; unknown hours remain null; no third-party copy.",
+  "productions": [
+    {
+      "key": "regio-traviata-2027",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
+      "dates": [
+        [
+          "2027-02-26",
+          "20:00"
+        ],
+        [
+          "2027-02-27",
+          "20:00"
+        ],
+        [
+          "2027-02-28",
+          "15:00"
+        ],
+        [
+          "2027-03-02",
+          "20:00"
+        ],
+        [
+          "2027-03-03",
+          "20:00"
+        ],
+        [
+          "2027-03-04",
+          "20:00"
+        ],
+        [
+          "2027-03-05",
+          "20:00"
+        ],
+        [
+          "2027-03-06",
+          "20:00"
+        ],
+        [
+          "2027-03-07",
+          "15:00"
+        ],
+        [
+          "2027-03-09",
+          "20:00"
+        ],
+        [
+          "2027-03-10",
+          "15:00"
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-italiana-como",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Sociale",
+      "municipality": "Como",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/l-italiana-in-algeri/",
+      "dates": [
+        [
+          "2026-11-13",
+          null
+        ],
+        [
+          "2026-11-15",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-italiana-pavia",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/l-italiana-in-algeri/",
+      "dates": [
+        [
+          "2026-11-20",
+          null
+        ],
+        [
+          "2026-11-22",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-italiana-brescia",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Grande",
+      "municipality": "Brescia",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/l-italiana-in-algeri/",
+      "dates": [
+        [
+          "2026-11-26",
+          null
+        ],
+        [
+          "2026-11-28",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "lombardia-italiana-cremona",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Ponchielli",
+      "municipality": "Cremona",
+      "region": "Lombardia",
+      "source_url": "https://www.operalombardia.it/l-italiana-in-algeri/",
+      "dates": [
+        [
+          "2026-12-10",
+          null
+        ],
+        [
+          "2026-12-12",
+          null
+        ]
+      ]
+    }
+  ]
+}
