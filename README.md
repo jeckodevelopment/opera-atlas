@@ -2,7 +2,7 @@
 
 Catalogo nazionale delle rappresentazioni di opera lirica in Italia e osservatorio statistico collegato al progetto culturale Opera+.
 
-> Stato: fase 1 — schema SQLite, riconciliazione delle recite cross-source e test disponibili. Nessuna programmazione pubblicata finché le fonti e le recite non saranno state verificate.
+> Stato: sviluppo Fasi 1–3 — modello SQLite, acquisizioni controllate e **primo catalogo web statico** disponibili. Nessuna programmazione reale è stata ancora pubblicata: il dataset iniziale è vuoto fino a verifica delle fonti e delle recite.
 
 ## Obiettivi
 
@@ -73,3 +73,11 @@ Per finalizzare manualmente gli orari servono ulteriori prove dalle fonti uffici
 
 ### Regola editoriale: recite con orario non disponibile
 Nel catalogo, una recita verificata con **opera, data, teatro e città** è un contenuto utile e deve essere mostrato anche senza orario. Il JSON esporta recite complete e parziali nello stesso array `performances`; per quelle senza ora usa `starts_at: null` e `time_known: false`, mantenendo giorno, opera, teatro, città, URL originale e label `Orario da confermare`. Quando una recita con ora confermata presenta lo stesso titolo, teatro, città e giorno, prevale la scheda completa nell'export; la prova parziale rimane nel database. La futura UI dovrà rendere visibile l'indicatore e non formattare un valore null come mezzanotte.
+
+## Primo catalogo web pubblico (Fase 3, implementazione iniziale)
+È disponibile `site/index.html` con ricerca, filtri per città/regione/date/orario e schede delle recite tratte dal JSON esportato dal database. Le recite prive di orario sono mostrate come **Orario da confermare**. Il file `site/performances.json` iniziale è vuoto: nessun evento inventato. Per il collaudo locale:
+```sh
+python -m opera_atlas.ingest_cli --db atlas.sqlite3 export --output site/performances.json
+python -m http.server 8000 --directory site
+```
+**Esportare solo un database con fonti approvate e dati effettivamente verificati.** Vedi [guida catalogo](docs/PUBLIC_CATALOG.md). La mappa, le pagine di dettaglio e le altre funzionalità F3 sono ancora da realizzare.
