@@ -150,3 +150,12 @@ La prima esecuzione reale degli indici in GitHub Actions (20/11/2026 21:01 UTC) 
 La classificazione del registro persistente viene aggiornata anche per gli elementi storici; rimangono ID stabili, `first_seen` e `last_seen`, senza cancellazioni. Una voce già risolta editorialmente con stato diverso dai tre stati automatici non viene riaperta. Il filtro dei nuovi link impedisce di creare candidate per pagine di servizio note senza sovrastimare la copertura.
 
 Collaudi: `python -m unittest discover -s tests -v` (test dei link esclusi, controllo URL canonici e preservazione delle candidate); verifica successiva di `data/season-index-candidates.json` e `data/season-index-health.json` dal job giornaliero. Le nuove recite e le schede opera complete di sinossi sono un successivo passaggio di acquisizione dopo verifica delle pagine puntuali. Non modificare `jeckodevsite` per questi JSON.
+
+
+## F2 — estensione scoperta a Regio Parma e Teatro Massimo Palermo
+
+All'individuazione giornaliera di link Scala, Arena e Fenice si aggiungono due indici ufficiali puntuali: `https://teatroregioparma.it/categoria-spettacoli/opera/` (Stagione Opera 2027) e `https://www.teatromassimo.it/la-stagione-2026-27/` (Stagione 2026/27). Sono pagine già individuate come sorgenti ufficiali; i fetch periodici rimangono **sempre subordinati alla verifica robots.txt runtime** con rifiuto di pagina non accessibile, robots negato, redirect e pagina incompleta.
+
+Il parser raccoglie solo URL dell'esatto host e delle sezioni produzione `/spettacolo/` (Parma) e `/event/` (Palermo); esclude collegamenti già identificati come prove, iniziative non liriche e balletto. Poiché gli indici possono includere anche manifestazioni diverse, qualsiasi URL non riconosciuto entra **soltanto in revisione**: non costituisce attestazione di opera, compositore o recita. Per la pubblicazione canonica occorrono lettura consentita e verifica dettagliata della pagina, date/orari, classificazione di genere, deduplicazione e scheda opera con sinossi originale breve.
+
+Controlli: test di estrazione Parma/Palermo, esiti di cinque fonti giornaliere, conservazione dell'ultima versione valida, e `public/catalog/season-index-candidates.json`. Nessun deploy SFTP dei dati. Rossini Opera Festival resta da verificare per accessibilità/policy; non aggirare un eventuale 403. Non dichiarare nessuna stagione completa sulla sola base degli indici.
