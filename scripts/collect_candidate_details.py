@@ -227,6 +227,13 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
         return items[offset:]+items[:offset]
     recognized=rotate(recognized)
     other=rotate(other)
+    # Works with already sourced historical cards can be promoted without
+    # using a paid language service. Do not bury them in the general queue.
+    from scripts.auto_work_research import preverified_work_material
+    prepared=preverified_work_material()
+    other.sort(key=lambda x:
+        urlsplit(x["official_url"]).path.rstrip("/").split("/")[-1].removesuffix(".html")
+        not in prepared)
     # Reserve four daily slots for unknown works: otherwise large queues of
     # known works can prevent any new-opera discovery indefinitely.
     reserved=min(4,len(other)) if recognized else min(MAX_PAGES,len(other))
