@@ -77,7 +77,7 @@ class PublicCatalogTests(unittest.TestCase):
 
     def test_canonical_static_routes_and_absolute_asset_base(self):
         rewrite = (SITE / ".htaccess").read_text(encoding="utf-8")
-        self.assertIn("RewriteBase /dev/opera-atlas/", rewrite)
+        self.assertIn("RewriteBase /atlas/", rewrite)
         self.assertIn("opere/[a-z0-9-]+", rewrite)
         self.assertIn("detail.html [L]", rewrite)
         for page in ("index.html", "detail.html"):
@@ -86,6 +86,11 @@ class PublicCatalogTests(unittest.TestCase):
         code = (SITE / "catalog-client.js").read_text(encoding="utf-8")
         self.assertIn('PREFIX = "/dev/opera-atlas"', code)
         self.assertIn('"/opere/" + work + "/"', code)
+        self.assertNotIn("/dev/opera-atlas", code)
+        detail = (SITE / "detail.js").read_text(encoding="utf-8")
+        self.assertIn("new URL(document.baseURI).pathname", detail)
+        self.assertNotIn("/dev/opera-atlas", detail)
+
 
     def test_curated_catalog_contains_only_verified_official_recite(self):
         payload = json.loads((SITE / "performances.json").read_text(encoding="utf-8"))
