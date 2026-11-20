@@ -2,6 +2,44 @@
   "schema_version": 1,
   "evidence": [
     {
+      "candidate_id": "oa-index-74ce9c00c158699bd2cc",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
+      "content_sha256": "fea950b1e211a702767eac60fb7658bd93b1ef84cab6d7cd01f60b4bd26ce2fe",
+      "checked_at": "2026-11-20T22:14:59+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-02-19",
+          "starts_at": "2027-02-19T20:00:00+01:00",
+          "venue": "Teatro Regio di Parma"
+        },
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-02-21",
+          "starts_at": "2027-02-21T15:30:00+01:00",
+          "venue": "Teatro Regio di Parma"
+        },
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-02-23",
+          "starts_at": "2027-02-23T20:00:00+01:00",
+          "venue": "Teatro Regio di Parma"
+        },
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-02-25",
+          "starts_at": "2027-02-25T20:00:00+01:00",
+          "venue": "Teatro Regio di Parma"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-7ec9d774a82a64ecaa73",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",

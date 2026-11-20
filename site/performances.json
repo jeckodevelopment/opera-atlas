@@ -2492,6 +2492,24 @@
       ]
     },
     {
+      "id": "curated:auto-74ce9c00c158699b:2027-02-19",
+      "starts_at": "2027-02-19T20:00:00+01:00",
+      "local_date": "2027-02-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/rigoletto/"
+      ]
+    },
+    {
       "id": "curated:scala-boheme-puccini-2027:2027-02-19",
       "starts_at": "2027-02-19T20:00:00+01:00",
       "local_date": "2027-02-19",
@@ -2546,6 +2564,42 @@
       ]
     },
     {
+      "id": "curated:auto-74ce9c00c158699b:2027-02-21",
+      "starts_at": "2027-02-21T15:30:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/rigoletto/"
+      ]
+    },
+    {
+      "id": "curated:auto-74ce9c00c158699b:2027-02-23",
+      "starts_at": "2027-02-23T20:00:00+01:00",
+      "local_date": "2027-02-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/rigoletto/"
+      ]
+    },
+    {
       "id": "curated:scala-don-giovanni-2027:2027-02-23",
       "starts_at": "2027-02-23T20:00:00+01:00",
       "local_date": "2027-02-23",
@@ -2579,6 +2633,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-74ce9c00c158699b:2027-02-25",
+      "starts_at": "2027-02-25T20:00:00+01:00",
+      "local_date": "2027-02-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/rigoletto/"
       ]
     },
     {

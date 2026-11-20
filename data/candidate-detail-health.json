@@ -1,13 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T22:10:25+00:00",
+  "checked_at": "2026-11-20T22:15:07+00:00",
   "attempted": 10,
   "outcomes": [
     {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",

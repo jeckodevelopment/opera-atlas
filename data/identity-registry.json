@@ -151,6 +151,12 @@
       "slug": "nabucco",
       "title": "Nabucco",
       "composer": "Giuseppe Verdi"
+    },
+    "rigoletto|giuseppe verdi": {
+      "id": "oa-w-000026",
+      "slug": "rigoletto",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi"
     }
   },
   "venues": {
@@ -698,6 +704,14 @@
       "venue_id": "oa-v-000007",
       "slug": "la-traviata",
       "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
+      "season": "2027"
+    },
+    "auto-74ce9c00c158699b": {
+      "id": "oa-s-000055",
+      "work_id": "oa-w-000026",
+      "venue_id": "oa-v-000010",
+      "slug": "rigoletto",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
       "season": "2027"
     }
   },
@@ -2267,6 +2281,30 @@
       "staging_id": "oa-s-000054",
       "original_date": "2027-09-11",
       "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
+    },
+    "auto-74ce9c00c158699b|2027-02-19": {
+      "id": "oa-r-000262",
+      "staging_id": "oa-s-000055",
+      "original_date": "2027-02-19",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/"
+    },
+    "auto-74ce9c00c158699b|2027-02-21": {
+      "id": "oa-r-000263",
+      "staging_id": "oa-s-000055",
+      "original_date": "2027-02-21",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/"
+    },
+    "auto-74ce9c00c158699b|2027-02-23": {
+      "id": "oa-r-000264",
+      "staging_id": "oa-s-000055",
+      "original_date": "2027-02-23",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/"
+    },
+    "auto-74ce9c00c158699b|2027-02-25": {
+      "id": "oa-r-000265",
+      "staging_id": "oa-s-000055",
+      "original_date": "2027-02-25",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/"
     }
   }
 }

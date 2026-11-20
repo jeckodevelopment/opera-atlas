@@ -1640,6 +1640,33 @@
           "21:00"
         ]
       ]
+    },
+    {
+      "key": "auto-74ce9c00c158699b",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
+      "dates": [
+        [
+          "2027-02-19",
+          "20:00"
+        ],
+        [
+          "2027-02-21",
+          "15:30"
+        ],
+        [
+          "2027-02-23",
+          "20:00"
+        ],
+        [
+          "2027-02-25",
+          "20:00"
+        ]
+      ]
     }
   ]
 }
