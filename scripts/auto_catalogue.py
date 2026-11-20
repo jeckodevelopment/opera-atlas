@@ -130,9 +130,24 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                    if x["municipality"]==city and x["venue"]==venue
                    and normalized(x["title"])==title and normalized(x["composer"])==composer]
         exact=[x for x in colliding if x["source_url"]==url]
+        # Distinct official productions of the same opera in the same
+        # theatre are legitimate (e.g. two different Aida stagings at
+        # Verona). Preserve the original route and assign an edition URL
+        # for the new staging, within the existing three-segment contract.
+        edition_slug=None
         if colliding and not exact:
-            issues.append({"candidate_id":cid,"reason":"venue_work_route_collision"})
-            continue
+            from urllib.parse import unquote
+            edition=slugify(unquote(urlsplit(url).path.rstrip("/").split("/")[-1]
+                                       .removesuffix(".html")))
+            edition_slug=(edition if edition.startswith(work["slug"]+"-")
+                          else work["slug"]+"-"+edition)
+            existing_routes={
+                x.get("route_slug",x["slug"])
+                for key2,x in next_registry["stagings"].items()
+                if x["venue_id"]==canonical_venue["id"]}
+            if edition_slug in existing_routes:
+                issues.append({"candidate_id":cid,"reason":"venue_work_route_collision"})
+                continue
         if len(exact)>1:
             issues.append({"candidate_id":cid,"reason":"ambiguous_existing_staging"})
             continue
@@ -155,7 +170,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 "id":next_id(next_registry["stagings"],"oa-s-"),
                 "work_id":work["id"],"venue_id":canonical_venue["id"],
                 "slug":work["slug"],"source_url":url,
-                "season":season_from_source(key,url,dates)}
+                "season":season_from_source(key,url,dates),
+                **({"route_slug":edition_slug} if edition_slug else {})}
             next_facts["productions"].append(production)
             created_stagings+=1
         for day,hour in sorted(dates.items()):

@@ -70,9 +70,18 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
             raise ValueError("identity and public route mapping require human review")
         works[work["id"]] = dict(work)
         venues[venue["id"]] = dict(venue)
-        route = venue["city_slug"] + "/" + venue["slug"] + "/" + work["slug"]
+        # Existing URLs keep their exact three-segment route. Multiple
+        # distinct stagings of the same work at one theatre receive a stable
+        # approved edition slug in the *third* segment, so the static
+        # frontend needs no SFTP or routing change.
+        route_slug=staging.get("route_slug",work["slug"])
+        if (not isinstance(route_slug,str) or not route_slug
+            or slugify(route_slug)!=route_slug
+            or (route_slug!=work["slug"] and
+                not route_slug.startswith(work["slug"]+"-"))):
+            raise ValueError("invalid official staging edition route slug")
+        route = venue["city_slug"] + "/" + venue["slug"] + "/" + route_slug
         if route in route_keys:
-            # A new staging in the same theatre needs a season-specific suffix.
             raise ValueError("ambiguous public staging URL: " + route)
         route_keys.add(route)
         staging_record = dict(staging)
