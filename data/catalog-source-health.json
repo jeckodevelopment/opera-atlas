@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T19:30:03+00:00",
+  "checked_at": "2026-11-20T19:36:52+00:00",
   "sources": [
     {
       "key": "regio-traviata-2027",
@@ -105,6 +105,13 @@
       "outcome": "success",
       "added": 0,
       "observed": 2,
+      "anomalies": []
+    },
+    {
+      "key": "opera-lombardia-calendar-2026-27",
+      "outcome": "success",
+      "added": 0,
+      "observed": 54,
       "anomalies": []
     }
   ]
