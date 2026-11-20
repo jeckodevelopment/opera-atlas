@@ -327,6 +327,8 @@ function resolve(events) {
 async function initialize() {
   try {
     const data=await window.OperaAtlasCatalog.load();
+    await window.OperaAtlasImages?.load?.();
+
     if(data.warning)status.textContent="Alcuni aggiornamenti non sono momentaneamente disponibili.";
     const events=data.performances.filter(validEvent);
     const selected=resolve(events);
