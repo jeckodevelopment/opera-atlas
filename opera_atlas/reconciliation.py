@@ -99,9 +99,9 @@ def reconcile(
         if existing is None:
             cursor = conn.execute(
                 """INSERT INTO source_events
-                   (source_id,external_id,last_fingerprint,state)
-                   VALUES (?,?,?,'review')""",
-                (source_id, external_id, fingerprint),
+                   (source_id,external_id,last_fingerprint,source_url,state)
+                   VALUES (?,?,?,?,'review')""",
+                (source_id, external_id, fingerprint, source_url),
             )
             event_id = cursor.lastrowid
         else:
@@ -116,15 +116,15 @@ def reconcile(
     if existing is None:
         conn.execute(
             """INSERT INTO source_events
-               (source_id,external_id,performance_id,last_fingerprint,state)
-               VALUES (?,?,?,?,'linked')""",
-            (source_id, external_id, performance_id, fingerprint),
+               (source_id,external_id,performance_id,last_fingerprint,source_url,state)
+               VALUES (?,?,?,?,?,'linked')""",
+            (source_id, external_id, performance_id, fingerprint, source_url),
         )
     else:
         conn.execute(
             """UPDATE source_events SET performance_id=?,last_fingerprint=?,
-               state='linked',last_seen_at=CURRENT_TIMESTAMP WHERE id=?""",
-            (performance_id, fingerprint, existing["id"]),
+               state='linked',source_url=?,last_seen_at=CURRENT_TIMESTAMP WHERE id=?""",
+            (performance_id, fingerprint, source_url, existing["id"]),
         )
     conn.execute(
         """INSERT OR IGNORE INTO performance_sources

@@ -7,7 +7,7 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 
 ### F1 — Fondamenta
 - [ ] Inventario completo delle sedi e degli organizzatori/festival con URL ufficiali verificati, stato e data di verifica.
-- [ ] Modello dati completamente validato: work, production, performance, venue, organizer, festival, season, source, observation. **Schema SQLite baseline implementato; validazioni/casi limite e deduplicazione cross-source deterministica implementata; revisione manuale e altri casi limite ancora aperti.**
+- [ ] Modello dati completamente validato: work, production, performance, venue, organizer, festival, season, source, observation. **Schema SQLite baseline implementato; validazioni/casi limite e deduplicazione cross-source deterministica implementata; API di risoluzione manuale disponibile; rimangono mapping canonici verificati, UI e integrazione con fonti reali.**
 - [ ] Tassonomia editoriale: opera lirica distinta da balletto, concerto e prosa; eccezioni esplicite.
 - [ ] Normalizzazione titoli, alias e compositori; gestione verificata delle sedi temporanee. **Disponibile soltanto normalizzazione Unicode/whitespace/case.**
 - [ ] Tests schema, validazione dati e registrazione della provenienza. **Suite iniziale e test di riconciliazione disponibili; ulteriori integrazioni necessarie.**
@@ -43,4 +43,4 @@ Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati te
 Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
 
 ## Stato attuale
-Schema e test dell'issue #2 in corso; riconciliazione deterministica dell'issue #3 implementata, ma non sono presenti connettori reali o UI di revisione; fonti ancora da verificare e nessun connettore/catologo pubblico completato. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+Schema e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; fonti ancora da verificare e nessun connettore/catologo pubblico completato. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.

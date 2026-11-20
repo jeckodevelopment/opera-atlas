@@ -30,3 +30,6 @@ Per ogni connettore: input URL, policy e limiti, parser versionato, confidence d
 - La ripetizione della stessa fonte è idempotente e conserva fingerprint e JSON delle osservazioni.
 - Un evento già collegato che cambia identità geografica/temporale/editoriale resta sul riferimento precedente e produce una revisione umana, senza sovrascrittura silenziosa.
 - La corrispondenza tra titoli e compositori **non è ancora automatica**: gli ID delle opere devono essere canonici e verificati. Non sono ancora disponibili connettori reali, interfaccia di risoluzione dei conflitti né gestione automatica di rinvii/annullamenti.
+
+## Risoluzione controllata delle revisioni (F1)
+La funzione `resolve_review` consente di scegliere esplicitamente una recita già esistente (verificando opera, sede e istante) oppure creare una nuova recita usando la proposta registrata. Il record di review passa a `resolved`; le osservazioni storiche rimangono, mentre la provenienza attiva viene collegata alla recita confermata. Non esiste auto-risoluzione basata sul titolo. Il sistema non include ancora un'interfaccia web di moderazione.
