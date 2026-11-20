@@ -79,6 +79,42 @@
       "slug": "death-in-venice",
       "title": "Death in Venice",
       "composer": "Benjamin Britten"
+    },
+    "otello|giuseppe verdi": {
+      "id": "oa-w-000014",
+      "slug": "otello",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi"
+    },
+    "aida|giuseppe verdi": {
+      "id": "oa-w-000015",
+      "slug": "aida",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi"
+    },
+    "fedora|umberto giordano": {
+      "id": "oa-w-000016",
+      "slug": "fedora",
+      "title": "Fedora",
+      "composer": "Umberto Giordano"
+    },
+    "samson et dalila|camille saint-saëns": {
+      "id": "oa-w-000017",
+      "slug": "samson-et-dalila",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns"
+    },
+    "macbeth|giuseppe verdi": {
+      "id": "oa-w-000018",
+      "slug": "macbeth",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi"
+    },
+    "madama butterfly|giacomo puccini": {
+      "id": "oa-w-000019",
+      "slug": "madama-butterfly",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini"
     }
   },
   "venues": {
@@ -121,6 +157,46 @@
       "name": "Teatro Ponchielli",
       "city": "Cremona",
       "region": "Lombardia"
+    },
+    "Milano|Teatro alla Scala": {
+      "id": "oa-v-000006",
+      "slug": "teatro-alla-scala",
+      "city_slug": "milano",
+      "name": "Teatro alla Scala",
+      "city": "Milano",
+      "region": "Lombardia"
+    },
+    "Verona|Arena di Verona": {
+      "id": "oa-v-000007",
+      "slug": "arena-di-verona",
+      "city_slug": "verona",
+      "name": "Arena di Verona",
+      "city": "Verona",
+      "region": "Veneto"
+    },
+    "Venezia|Teatro La Fenice": {
+      "id": "oa-v-000008",
+      "slug": "teatro-la-fenice",
+      "city_slug": "venezia",
+      "name": "Teatro La Fenice",
+      "city": "Venezia",
+      "region": "Veneto"
+    },
+    "Palermo|Teatro Massimo": {
+      "id": "oa-v-000009",
+      "slug": "teatro-massimo",
+      "city_slug": "palermo",
+      "name": "Teatro Massimo",
+      "city": "Palermo",
+      "region": "Sicilia"
+    },
+    "Parma|Teatro Regio di Parma": {
+      "id": "oa-v-000010",
+      "slug": "teatro-regio-di-parma",
+      "city_slug": "parma",
+      "name": "Teatro Regio di Parma",
+      "city": "Parma",
+      "region": "Emilia-Romagna"
     }
   },
   "stagings": {
@@ -266,6 +342,54 @@
       "venue_id": "oa-v-000003",
       "slug": "death-in-venice",
       "source_url": "https://www.teatrofraschini.it/programma/death-in-venice/",
+      "season": "2026-2027"
+    },
+    "scala-otello-2026": {
+      "id": "oa-s-000019",
+      "work_id": "oa-w-000014",
+      "venue_id": "oa-v-000006",
+      "slug": "otello",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+      "season": "2026-2027"
+    },
+    "arena-aida-de-bosio-2027": {
+      "id": "oa-s-000020",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000007",
+      "slug": "aida",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+      "season": "2026-2027"
+    },
+    "fenice-fedora-2026": {
+      "id": "oa-s-000021",
+      "work_id": "oa-w-000016",
+      "venue_id": "oa-v-000008",
+      "slug": "fedora",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/",
+      "season": "2026-2027"
+    },
+    "massimo-samson-dalila-2026": {
+      "id": "oa-s-000022",
+      "work_id": "oa-w-000017",
+      "venue_id": "oa-v-000009",
+      "slug": "samson-et-dalila",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/",
+      "season": "2026-2027"
+    },
+    "massimo-macbeth-2027": {
+      "id": "oa-s-000023",
+      "work_id": "oa-w-000018",
+      "venue_id": "oa-v-000009",
+      "slug": "macbeth",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/",
+      "season": "2026-2027"
+    },
+    "parma-madama-butterfly-2027": {
+      "id": "oa-s-000024",
+      "work_id": "oa-w-000019",
+      "venue_id": "oa-v-000010",
+      "slug": "madama-butterfly",
+      "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/",
       "season": "2026-2027"
     }
   },
@@ -815,6 +939,246 @@
       "staging_id": "oa-s-000018",
       "original_date": "2027-01-17",
       "source_url": "https://www.teatrofraschini.it/programma/death-in-venice/"
+    },
+    "scala-otello-2026|2026-12-07": {
+      "id": "oa-r-000092",
+      "staging_id": "oa-s-000019",
+      "original_date": "2026-12-07",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2026-12-10": {
+      "id": "oa-r-000093",
+      "staging_id": "oa-s-000019",
+      "original_date": "2026-12-10",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2026-12-13": {
+      "id": "oa-r-000094",
+      "staging_id": "oa-s-000019",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2026-12-16": {
+      "id": "oa-r-000095",
+      "staging_id": "oa-s-000019",
+      "original_date": "2026-12-16",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2026-12-19": {
+      "id": "oa-r-000096",
+      "staging_id": "oa-s-000019",
+      "original_date": "2026-12-19",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2026-12-22": {
+      "id": "oa-r-000097",
+      "staging_id": "oa-s-000019",
+      "original_date": "2026-12-22",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2026-12-29": {
+      "id": "oa-r-000098",
+      "staging_id": "oa-s-000019",
+      "original_date": "2026-12-29",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2027-01-02": {
+      "id": "oa-r-000099",
+      "staging_id": "oa-s-000019",
+      "original_date": "2027-01-02",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "scala-otello-2026|2027-01-05": {
+      "id": "oa-r-000100",
+      "staging_id": "oa-s-000019",
+      "original_date": "2027-01-05",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+    },
+    "arena-aida-de-bosio-2027|2027-06-12": {
+      "id": "oa-r-000101",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-06-12",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-06-19": {
+      "id": "oa-r-000102",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-06-19",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-06-24": {
+      "id": "oa-r-000103",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-06-24",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-07-04": {
+      "id": "oa-r-000104",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-07-04",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-07-11": {
+      "id": "oa-r-000105",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-07-11",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-07-18": {
+      "id": "oa-r-000106",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-07-18",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-07-23": {
+      "id": "oa-r-000107",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-07-23",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-08-01": {
+      "id": "oa-r-000108",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-08-01",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "arena-aida-de-bosio-2027|2027-08-07": {
+      "id": "oa-r-000109",
+      "staging_id": "oa-s-000020",
+      "original_date": "2027-08-07",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+    },
+    "fenice-fedora-2026|2026-11-14": {
+      "id": "oa-r-000110",
+      "staging_id": "oa-s-000021",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/"
+    },
+    "fenice-fedora-2026|2026-11-15": {
+      "id": "oa-r-000111",
+      "staging_id": "oa-s-000021",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/"
+    },
+    "fenice-fedora-2026|2026-11-17": {
+      "id": "oa-r-000112",
+      "staging_id": "oa-s-000021",
+      "original_date": "2026-11-17",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/"
+    },
+    "fenice-fedora-2026|2026-11-18": {
+      "id": "oa-r-000113",
+      "staging_id": "oa-s-000021",
+      "original_date": "2026-11-18",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/"
+    },
+    "fenice-fedora-2026|2026-11-19": {
+      "id": "oa-r-000114",
+      "staging_id": "oa-s-000021",
+      "original_date": "2026-11-19",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/"
+    },
+    "fenice-fedora-2026|2026-11-20": {
+      "id": "oa-r-000115",
+      "staging_id": "oa-s-000021",
+      "original_date": "2026-11-20",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/"
+    },
+    "fenice-fedora-2026|2026-11-22": {
+      "id": "oa-r-000116",
+      "staging_id": "oa-s-000021",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/"
+    },
+    "massimo-samson-dalila-2026|2026-11-22": {
+      "id": "oa-r-000117",
+      "staging_id": "oa-s-000022",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/"
+    },
+    "massimo-samson-dalila-2026|2026-11-25": {
+      "id": "oa-r-000118",
+      "staging_id": "oa-s-000022",
+      "original_date": "2026-11-25",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/"
+    },
+    "massimo-samson-dalila-2026|2026-11-26": {
+      "id": "oa-r-000119",
+      "staging_id": "oa-s-000022",
+      "original_date": "2026-11-26",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/"
+    },
+    "massimo-samson-dalila-2026|2026-11-27": {
+      "id": "oa-r-000120",
+      "staging_id": "oa-s-000022",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/"
+    },
+    "massimo-samson-dalila-2026|2026-11-28": {
+      "id": "oa-r-000121",
+      "staging_id": "oa-s-000022",
+      "original_date": "2026-11-28",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/"
+    },
+    "massimo-samson-dalila-2026|2026-11-29": {
+      "id": "oa-r-000122",
+      "staging_id": "oa-s-000022",
+      "original_date": "2026-11-29",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/"
+    },
+    "massimo-macbeth-2027|2027-02-05": {
+      "id": "oa-r-000123",
+      "staging_id": "oa-s-000023",
+      "original_date": "2027-02-05",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/"
+    },
+    "massimo-macbeth-2027|2027-02-07": {
+      "id": "oa-r-000124",
+      "staging_id": "oa-s-000023",
+      "original_date": "2027-02-07",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/"
+    },
+    "massimo-macbeth-2027|2027-02-09": {
+      "id": "oa-r-000125",
+      "staging_id": "oa-s-000023",
+      "original_date": "2027-02-09",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/"
+    },
+    "massimo-macbeth-2027|2027-02-11": {
+      "id": "oa-r-000126",
+      "staging_id": "oa-s-000023",
+      "original_date": "2027-02-11",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/"
+    },
+    "massimo-macbeth-2027|2027-02-13": {
+      "id": "oa-r-000127",
+      "staging_id": "oa-s-000023",
+      "original_date": "2027-02-13",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/"
+    },
+    "parma-madama-butterfly-2027|2027-04-16": {
+      "id": "oa-r-000128",
+      "staging_id": "oa-s-000024",
+      "original_date": "2027-04-16",
+      "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+    },
+    "parma-madama-butterfly-2027|2027-04-18": {
+      "id": "oa-r-000129",
+      "staging_id": "oa-s-000024",
+      "original_date": "2027-04-18",
+      "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+    },
+    "parma-madama-butterfly-2027|2027-04-22": {
+      "id": "oa-r-000130",
+      "staging_id": "oa-s-000024",
+      "original_date": "2027-04-22",
+      "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+    },
+    "parma-madama-butterfly-2027|2027-04-24": {
+      "id": "oa-r-000131",
+      "staging_id": "oa-s-000024",
+      "original_date": "2027-04-24",
+      "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
     }
   }
 }

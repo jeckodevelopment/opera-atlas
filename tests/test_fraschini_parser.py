@@ -29,12 +29,12 @@ class FraschiniTests(unittest.TestCase):
         facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         ids=json.loads(REGISTRY.read_text(encoding="utf-8"))
         graph=assemble(facts,ids)
-        self.assertEqual(len(graph["works"]),13)
-        self.assertEqual(len(graph["stagings"]),18)
-        self.assertEqual(len(graph["performances"]),91)
+        self.assertEqual(len(graph["works"]),19)
+        self.assertEqual(len(graph["stagings"]),24)
+        self.assertEqual(len(graph["performances"]),131)
         self.assertEqual(sum(not x["time_known"] for x in graph["performances"]),2)
-        self.assertEqual(len({x["id"] for x in graph["performances"]}),91)
-        self.assertEqual(sum(x["id"]>="oa-r-000082" for x in graph["performances"]),10)
+        self.assertEqual(len({x["id"] for x in graph["performances"]}),131)
+        self.assertEqual(sum("oa-r-000082" <= x["id"] <= "oa-r-000091" for x in graph["performances"]),10)
     def test_daily_source_is_approved_only_under_robots_gate(self):
         cfg=validate_source_config(json.loads(CONFIG.read_text(encoding="utf-8")))
         sources=[x for x in cfg if x["adapter"]=="fraschini"]

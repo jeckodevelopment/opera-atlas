@@ -129,3 +129,12 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Adapter Fraschini che accetta soltanto intestazione opera con compositore e coppia di date/orari espliciti, previa verifica robots.txt; controllo idempotenza e provenienza.
 - [ ] Completare la copertura di tutte le sedi della rete OperaLombardia per i quattro spettacoli (Como, Brescia, Cremona e altri partner effettivamente documentati) con date/ore esatte o null quando assenti.
 - [ ] Completare altri sei enti del registro fonti.
+
+### F2 — prime produzioni dalle altre sei fonti (20/11/2026)
+- [x] Prima tranche editoriale verificata su Scala (Otello, 9 recite), Arena di Verona (Aida de Bosio, 9), La Fenice (Fedora, 7 attive), Teatro Massimo Palermo (Samson et Dalila 6, Macbeth 5) e Teatro Regio Parma (Madama Butterfly, 4): 40 nuove recite.
+- [x] Cinque nuove sedi canonicalizzate, 6 opere nuove, 6 messe in scena e 40 ID replica senza alterare i 91 precedenti.
+- [x] Annullamento Fedora del 13/11/26 escluso e prove Butterfly 12/14 aprile escluse dalle recite ordinarie.
+- [x] Rapporto di copertura per tutte le otto fonti richieste con separazione esplicita censimento/completezza/automazione.
+- [ ] Teatro Regio Parma, Scala, Arena, Fenice e Massimo: estendere alle altre produzioni, completare adapters e permessi robots.
+- [ ] Rossini Opera Festival: recuperare dati puntuali tramite pagine ufficiali accessibili; calendario originario con blocco 403, non aggirarlo.
+- [ ] Completare OperaLombardia per tutti i teatri coinvolti e deduplicare le tournée.

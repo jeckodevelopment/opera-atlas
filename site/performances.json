@@ -543,6 +543,24 @@
       ]
     },
     {
+      "id": "curated:fenice-fedora-2026:2026-11-14",
+      "starts_at": "2026-11-14T15:30:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-11-14",
       "starts_at": "2026-11-14T20:00:00+01:00",
       "local_date": "2026-11-14",
@@ -597,6 +615,24 @@
       ]
     },
     {
+      "id": "curated:fenice-fedora-2026:2026-11-15",
+      "starts_at": "2026-11-15T15:30:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-como:2026-11-15",
       "starts_at": "2026-11-15T15:30:00+01:00",
       "local_date": "2026-11-15",
@@ -613,6 +649,24 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:fenice-fedora-2026:2026-11-17",
+      "starts_at": "2026-11-17T19:00:00+01:00",
+      "local_date": "2026-11-17",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/fedora/"
       ]
     },
     {
@@ -649,6 +703,60 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
+      "id": "curated:fenice-fedora-2026:2026-11-18",
+      "starts_at": "2026-11-18T19:00:00+01:00",
+      "local_date": "2026-11-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
+      "id": "curated:fenice-fedora-2026:2026-11-19",
+      "starts_at": "2026-11-19T19:00:00+01:00",
+      "local_date": "2026-11-19",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
+      "id": "curated:fenice-fedora-2026:2026-11-20",
+      "starts_at": "2026-11-20T19:00:00+01:00",
+      "local_date": "2026-11-20",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/fedora/"
       ]
     },
     {
@@ -725,6 +833,24 @@
       ]
     },
     {
+      "id": "curated:fenice-fedora-2026:2026-11-22",
+      "starts_at": "2026-11-22T15:30:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-pavia:2026-11-22",
       "starts_at": "2026-11-22T15:30:00+01:00",
       "local_date": "2026-11-22",
@@ -741,6 +867,42 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://www.teatrofraschini.it/programma/litaliana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:massimo-samson-dalila-2026:2026-11-22",
+      "starts_at": "2026-11-22T18:00:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
+      "id": "curated:massimo-samson-dalila-2026:2026-11-25",
+      "starts_at": "2026-11-25T19:00:00+01:00",
+      "local_date": "2026-11-25",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/samson-et-dalila/"
       ]
     },
     {
@@ -762,6 +924,42 @@
       ]
     },
     {
+      "id": "curated:massimo-samson-dalila-2026:2026-11-26",
+      "starts_at": "2026-11-26T18:30:00+01:00",
+      "local_date": "2026-11-26",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
+      "id": "curated:massimo-samson-dalila-2026:2026-11-27",
+      "starts_at": "2026-11-27T19:00:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-brescia:2026-11-28",
       "starts_at": null,
       "local_date": "2026-11-28",
@@ -777,6 +975,42 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:massimo-samson-dalila-2026:2026-11-28",
+      "starts_at": "2026-11-28T20:00:00+01:00",
+      "local_date": "2026-11-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
+      "id": "curated:massimo-samson-dalila-2026:2026-11-29",
+      "starts_at": "2026-11-29T17:30:00+01:00",
+      "local_date": "2026-11-29",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/samson-et-dalila/"
       ]
     },
     {
@@ -816,6 +1050,24 @@
       ]
     },
     {
+      "id": "curated:scala-otello-2026:2026-12-07",
+      "starts_at": "2026-12-07T18:00:00+01:00",
+      "local_date": "2026-12-07",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-cremona:2026-12-10",
       "starts_at": "2026-12-10T20:00:00+01:00",
       "local_date": "2026-12-10",
@@ -835,6 +1087,24 @@
       ]
     },
     {
+      "id": "curated:scala-otello-2026:2026-12-10",
+      "starts_at": "2026-12-10T20:00:00+01:00",
+      "local_date": "2026-12-10",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-cremona:2026-12-12",
       "starts_at": "2026-12-12T16:00:00+01:00",
       "local_date": "2026-12-12",
@@ -851,6 +1121,132 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri-0"
+      ]
+    },
+    {
+      "id": "curated:scala-otello-2026:2026-12-13",
+      "starts_at": "2026-12-13T20:00:00+01:00",
+      "local_date": "2026-12-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:scala-otello-2026:2026-12-16",
+      "starts_at": "2026-12-16T20:00:00+01:00",
+      "local_date": "2026-12-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:scala-otello-2026:2026-12-19",
+      "starts_at": "2026-12-19T20:00:00+01:00",
+      "local_date": "2026-12-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:scala-otello-2026:2026-12-22",
+      "starts_at": "2026-12-22T20:00:00+01:00",
+      "local_date": "2026-12-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:scala-otello-2026:2026-12-29",
+      "starts_at": "2026-12-29T20:00:00+01:00",
+      "local_date": "2026-12-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:scala-otello-2026:2027-01-02",
+      "starts_at": "2027-01-02T20:00:00+01:00",
+      "local_date": "2027-01-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:scala-otello-2026:2027-01-05",
+      "starts_at": "2027-01-05T20:00:00+01:00",
+      "local_date": "2027-01-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
       ]
     },
     {
@@ -998,6 +1394,24 @@
       ]
     },
     {
+      "id": "curated:massimo-macbeth-2027:2027-02-05",
+      "starts_at": "2027-02-05T19:00:00+01:00",
+      "local_date": "2027-02-05",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-02-06",
       "starts_at": "2027-02-06T15:00:00+01:00",
       "local_date": "2027-02-06",
@@ -1013,6 +1427,78 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+      ]
+    },
+    {
+      "id": "curated:massimo-macbeth-2027:2027-02-07",
+      "starts_at": "2027-02-07T17:30:00+01:00",
+      "local_date": "2027-02-07",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
+      "id": "curated:massimo-macbeth-2027:2027-02-09",
+      "starts_at": "2027-02-09T19:00:00+01:00",
+      "local_date": "2027-02-09",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
+      "id": "curated:massimo-macbeth-2027:2027-02-11",
+      "starts_at": "2027-02-11T19:00:00+01:00",
+      "local_date": "2027-02-11",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
+      "id": "curated:massimo-macbeth-2027:2027-02-13",
+      "starts_at": "2027-02-13T19:00:00+01:00",
+      "local_date": "2027-02-13",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/macbeth/"
       ]
     },
     {
@@ -1304,6 +1790,24 @@
       ]
     },
     {
+      "id": "curated:parma-madama-butterfly-2027:2027-04-16",
+      "starts_at": "2027-04-16T20:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-17",
       "starts_at": "2027-04-17T15:00:00+02:00",
       "local_date": "2027-04-17",
@@ -1319,6 +1823,60 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:parma-madama-butterfly-2027:2027-04-18",
+      "starts_at": "2027-04-18T15:30:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+      ]
+    },
+    {
+      "id": "curated:parma-madama-butterfly-2027:2027-04-22",
+      "starts_at": "2027-04-22T20:00:00+02:00",
+      "local_date": "2027-04-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+      ]
+    },
+    {
+      "id": "curated:parma-madama-butterfly-2027:2027-04-24",
+      "starts_at": "2027-04-24T17:00:00+02:00",
+      "local_date": "2027-04-24",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/madama-butterfly/"
       ]
     },
     {
@@ -1520,6 +2078,24 @@
       ]
     },
     {
+      "id": "curated:arena-aida-de-bosio-2027:2027-06-12",
+      "starts_at": "2027-06-12T21:30:00+02:00",
+      "local_date": "2027-06-12",
+      "time_known": true,
+      "time_label": "21:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
       "id": "curated:regio-evgenij-onegin-2027:2027-06-13",
       "starts_at": "2027-06-13T15:00:00+02:00",
       "local_date": "2027-06-13",
@@ -1574,6 +2150,24 @@
       ]
     },
     {
+      "id": "curated:arena-aida-de-bosio-2027:2027-06-19",
+      "starts_at": "2027-06-19T21:15:00+02:00",
+      "local_date": "2027-06-19",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
       "id": "curated:regio-evgenij-onegin-2027:2027-06-20",
       "starts_at": "2027-06-20T15:00:00+02:00",
       "local_date": "2027-06-20",
@@ -1610,6 +2204,24 @@
       ]
     },
     {
+      "id": "curated:arena-aida-de-bosio-2027:2027-06-24",
+      "starts_at": "2027-06-24T21:15:00+02:00",
+      "local_date": "2027-06-24",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
       "id": "curated:regio-evgenij-onegin-2027:2027-06-27",
       "starts_at": "2027-06-27T15:00:00+02:00",
       "local_date": "2027-06-27",
@@ -1643,6 +2255,114 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:arena-aida-de-bosio-2027:2027-07-04",
+      "starts_at": "2027-07-04T21:15:00+02:00",
+      "local_date": "2027-07-04",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:arena-aida-de-bosio-2027:2027-07-11",
+      "starts_at": "2027-07-11T21:15:00+02:00",
+      "local_date": "2027-07-11",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:arena-aida-de-bosio-2027:2027-07-18",
+      "starts_at": "2027-07-18T21:15:00+02:00",
+      "local_date": "2027-07-18",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:arena-aida-de-bosio-2027:2027-07-23",
+      "starts_at": "2027-07-23T21:15:00+02:00",
+      "local_date": "2027-07-23",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:arena-aida-de-bosio-2027:2027-08-01",
+      "starts_at": "2027-08-01T21:00:00+02:00",
+      "local_date": "2027-08-01",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:arena-aida-de-bosio-2027:2027-08-07",
+      "starts_at": "2027-08-07T21:00:00+02:00",
+      "local_date": "2027-08-07",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
       ]
     }
   ]
