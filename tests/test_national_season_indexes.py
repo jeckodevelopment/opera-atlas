@@ -35,21 +35,29 @@ class NationalIndexTests(unittest.TestCase):
     def test_parma_and_palermo_official_links_without_nonopera(self):
         parma="https://teatroregioparma.it/categoria-spettacoli/opera/"
         p=extract("parma-opera-2027",parma,
+                  '<nav><a href="/spettacolo/false/">Off page</a></nav>'
+                  '<h1>Opera</h1>'
                   '<a href="/spettacolo/boris-godunov/">Boris Godunov</a>'
                   '<a href="/spettacolo/rigoletto/">Rigoletto</a>'
                   '<a href="/spettacolo/madama-butterfly/">Madama Butterfly</a>'
-                  '<a href="/spettacolo/prove-under30/">Prove Under30</a>',3)
+                  '<a href="/spettacolo/prove-under30/">Prove Under30</a>'
+                  '<footer><a href="/spettacolo/not-an-opera/">Footer</a></footer>',3)
         self.assertEqual(len(p),3)
         massimo="https://www.teatromassimo.it/la-stagione-2026-27/"
         m=extract("massimo-season-2026-27",massimo,
-                  ''.join('<a href="/event/'+slug+'/">'+slug+'</a>'
+                  '<h2>CALENDARIO OPERE E BALLETTI 2026-27</h2>'
+                  +''.join('<a href="/event/'+slug+'/">'+slug+'</a>'
                           for slug in ("samson-et-dalila","macbeth",
                                        "lucia-di-lammermoor-2","tosca-2",
                                        "falstaff","ernani","biancaneve",
-                                       "sylvia")),6)
+                                       "sylvia"))
+                  +'<h2>CALENDARIO CONCERTI 2026-27</h2>'
+                  +'<a href="/event/concerto-non-opera/">Concerto</a>',6)
         self.assertEqual(len(m),6)
         self.assertTrue(all("biancaneve" not in u for u in m))
         self.assertTrue(all("sylvia" not in u for u in m))
+        self.assertTrue(all("concerto-non-opera" not in u for u in m))
+        self.assertTrue(all("false" not in u for u in p))
 
     def test_all_five_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{

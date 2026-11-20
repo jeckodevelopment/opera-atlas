@@ -74,6 +74,42 @@ class AnchorParser(HTMLParser):
             url=dict(attrs).get("href")
             if isinstance(url,str):self.links.append(url)
 
+class ScopedSeasonAnchors(HTMLParser):
+    """Read production anchors only from the official season content block.
+
+    Parma mixes footer/sidebar links with the opera card list; Palermo's
+    season page contains a distinct concerts section after opere e balletti.
+    """
+    def __init__(self,key:str):
+        super().__init__(convert_charrefs=True)
+        self.key=key
+        self.links=[]
+        self.in_section=False
+        self.heading=None
+        self.heading_text=[]
+    def handle_starttag(self,tag,attrs):
+        if tag in ("h1","h2"):
+            self.heading=tag
+            self.heading_text=[]
+        if tag=="footer":
+            self.in_section=False
+        if tag=="a" and self.in_section:
+            href=dict(attrs).get("href")
+            if isinstance(href,str):self.links.append(href)
+    def handle_data(self,data):
+        if self.heading is not None:self.heading_text.append(data)
+    def handle_endtag(self,tag):
+        if tag==self.heading:
+            label=" ".join(" ".join(self.heading_text).upper().split())
+            if self.key=="parma-opera-2027" and tag=="h1":
+                if label=="OPERA":self.in_section=True
+                elif self.in_section:self.in_section=False
+            if self.key=="massimo-season-2026-27" and tag=="h2":
+                if "CALENDARIO OPERE E BALLETTI" in label:self.in_section=True
+                elif self.in_section:self.in_section=False
+            self.heading=None
+            self.heading_text=[]
+
 def eligible(key:str,url:str)->bool:
     path=urlsplit(url).path.lower().rstrip("/")
     if excluded_nonopera(key,url):
@@ -95,7 +131,9 @@ def eligible(key:str,url:str)->bool:
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
-    parser=AnchorParser()
+    parser=(ScopedSeasonAnchors(key)
+            if key in {"parma-opera-2027","massimo-season-2026-27"}
+            else AnchorParser())
     parser.feed(html)
     hostname=urlsplit(index_url).hostname
     result=set()
