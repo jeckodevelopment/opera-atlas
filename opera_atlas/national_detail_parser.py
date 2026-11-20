@@ -158,7 +158,10 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
         for group in groups:
             for day in re.findall(r"\d{1,2}",group[1]):
                 expected.add(_date(day,group[2],year))
-        segment=re.split(r"(?i)\bLo spettacolo\b",text,maxsplit=1)[0]
+        # A navigation anchor may also say "Lo spettacolo" *before* the
+        # ticket calendar. Split at the validated date-summary position,
+        # not at the first occurrence of that navigation label.
+        segment=text[:summary.start()]
         rx=re.compile(r"(?i)\b(\d{1,2})\s+("+MONTH_RE+r")\s+"+CLOCK+r"\b")
         for m in rx.finditer(segment):
             day=_date(m[1],m[2],year)
