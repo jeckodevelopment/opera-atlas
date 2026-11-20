@@ -59,6 +59,14 @@ class AtlasMigrationTests(unittest.TestCase):
             settings({**base,"ATLAS_SFTP_REMOTE_DIR":"/var/www/atlas",
                       "ATLAS_SFTP_PRIVATE_KEY":"also supplied"})
 
+    def test_json_only_catalog_refresh_never_triggers_sftp(self):
+        workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
+        self.assertIn("'site/*.js'",workflow)
+        self.assertIn("'site/*.html'",workflow)
+        self.assertNotIn("'site/**'",workflow)
+        self.assertNotIn("'site/*.json'",workflow)
+        self.assertIn("ATLAS_DEPLOY_ENABLED",workflow)
+
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_actual_catalog_url_builder(self):
         test=subprocess.run(["node",str(ROOT/"tests/atlas_routes_smoke.cjs")],
