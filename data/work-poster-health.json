@@ -1,14 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:40:51+00:00",
-  "checked_pages": 1,
+  "checked_at": "2026-11-20T23:46:59+00:00",
+  "checked_pages": 0,
   "official_images": 2,
   "archival_images": 7,
-  "editorial_fallbacks": 26,
-  "outcomes": [
-    {
-      "slug": "macbeth",
-      "status": "no_suitable_official_poster"
-    }
-  ]
+  "editorial_fallbacks": 27,
+  "outcomes": []
 }

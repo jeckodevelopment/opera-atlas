@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "posters": {
-    "la-boheme": {
+    "oa-w-000024": {
       "work_id": "oa-w-000024",
       "image_url": "https://www.teatroallascala.org/static/upload/la-/la-boheme--7-.jpg",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
@@ -9,7 +9,7 @@
       "alt": "Immagine della produzione di La bohème",
       "kind": "official_production_image"
     },
-    "don-giovanni": {
+    "oa-w-000023": {
       "work_id": "oa-w-000023",
       "image_url": "https://www.teatroallascala.org/static/upload/don/don-giovanni-713213badg-ph-brescia-e-amisano-ridotta.jpg",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
