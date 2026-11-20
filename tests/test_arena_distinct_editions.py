@@ -8,7 +8,10 @@ from scripts.publish_catalog_v2 import REGISTRY,assemble
 from scripts.auto_catalogue import promote
 from scripts.collect_candidate_details import parse_known_opera_detail
 
-URL="https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+OFFICIAL_URL="https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+# Synthetic and never fetched: the staging test must remain valid even
+# after the REAL Stefano Poda production enters the public catalog.
+URL="https://www.arena.it/arena-opera-festival/aida-ed-unit-test-edition/"
 CID="test-aida-poda-official-edition"
 
 class ArenaEditionTests(unittest.TestCase):
@@ -23,11 +26,11 @@ class ArenaEditionTests(unittest.TestCase):
         <h2>Prossimi spettacoli</h2>
         <h3>12 agosto 2027</h3><p>ore 21:00</p>
         <h3>22 agosto 2027</h3><p>ore 21:00</p>"""
-        rows=parse_known_opera_detail("arena-festival-2027",URL,html,self.registry)
+        rows=parse_known_opera_detail("arena-festival-2027",OFFICIAL_URL,html,self.registry)
         self.assertEqual([x["date"] for x in rows],["2027-08-12","2027-08-22"])
         self.assertEqual(rows[0]["composer"],"Giuseppe Verdi")
         with self.assertRaises(ValueError):
-            parse_known_opera_detail("arena-festival-2027",URL,
+            parse_known_opera_detail("arena-festival-2027",OFFICIAL_URL,
                 html.replace("Giuseppe Verdi","Other composer"),self.registry)
 
     def test_distinct_arena_production_keeps_existing_aida_route_and_ids(self):
@@ -46,10 +49,10 @@ class ArenaEditionTests(unittest.TestCase):
         self.assertEqual(report["new_recite"],1)
         self.assertIn(URL,urls)
         staging=next(v for v in ids["stagings"].values() if v["source_url"]==URL)
-        self.assertEqual(staging["route_slug"],"aida-ed-stefano-poda")
+        self.assertEqual(staging["route_slug"],"aida-ed-unit-test-edition")
         graph=assemble(data,ids,approved_extra=set(urls))
         newer=next(x for x in graph["stagings"] if x["id"]==staging["id"])
-        self.assertEqual(newer["url"],"/verona/arena-di-verona/aida-ed-stefano-poda/")
+        self.assertEqual(newer["url"],"/verona/arena-di-verona/aida-ed-unit-test-edition/")
         original=next(x for x in graph["stagings"]
                       if x["source_url"].endswith("/aida-ed-gianfranco-de-bosio/"))
         self.assertEqual(original["url"],"/verona/arena-di-verona/aida/")
