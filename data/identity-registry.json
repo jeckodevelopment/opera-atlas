@@ -61,6 +61,24 @@
       "slug": "evgenij-onegin",
       "title": "Evgenij Onegin",
       "composer": "Pëtr Il'ič Čajkovskij"
+    },
+    "turandot|giacomo puccini": {
+      "id": "oa-w-000011",
+      "slug": "turandot",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini"
+    },
+    "un ballo in maschera|giuseppe verdi": {
+      "id": "oa-w-000012",
+      "slug": "un-ballo-in-maschera",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi"
+    },
+    "death in venice|benjamin britten": {
+      "id": "oa-w-000013",
+      "slug": "death-in-venice",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten"
     }
   },
   "venues": {
@@ -208,6 +226,46 @@
       "venue_id": "oa-v-000001",
       "slug": "evgenij-onegin",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin",
+      "season": "2026-2027"
+    },
+    "lombardia-turandot-pavia": {
+      "id": "oa-s-000014",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000003",
+      "slug": "turandot",
+      "source_url": "https://www.teatrofraschini.it/programma/turandot/",
+      "season": "2026-2027"
+    },
+    "lombardia-cavalleria-pavia": {
+      "id": "oa-s-000015",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000003",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
+      "season": "2026-2027"
+    },
+    "lombardia-pagliacci-pavia": {
+      "id": "oa-s-000016",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000003",
+      "slug": "pagliacci",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
+      "season": "2026-2027"
+    },
+    "lombardia-ballo-pavia": {
+      "id": "oa-s-000017",
+      "work_id": "oa-w-000012",
+      "venue_id": "oa-v-000003",
+      "slug": "un-ballo-in-maschera",
+      "source_url": "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/",
+      "season": "2026-2027"
+    },
+    "lombardia-death-venice-pavia": {
+      "id": "oa-s-000018",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000003",
+      "slug": "death-in-venice",
+      "source_url": "https://www.teatrofraschini.it/programma/death-in-venice/",
       "season": "2026-2027"
     }
   },
@@ -697,6 +755,66 @@
       "staging_id": "oa-s-000013",
       "original_date": "2027-06-29",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+    },
+    "lombardia-turandot-pavia|2026-10-09": {
+      "id": "oa-r-000082",
+      "staging_id": "oa-s-000014",
+      "original_date": "2026-10-09",
+      "source_url": "https://www.teatrofraschini.it/programma/turandot/"
+    },
+    "lombardia-turandot-pavia|2026-10-11": {
+      "id": "oa-r-000083",
+      "staging_id": "oa-s-000014",
+      "original_date": "2026-10-11",
+      "source_url": "https://www.teatrofraschini.it/programma/turandot/"
+    },
+    "lombardia-cavalleria-pavia|2026-10-30": {
+      "id": "oa-r-000084",
+      "staging_id": "oa-s-000015",
+      "original_date": "2026-10-30",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
+    },
+    "lombardia-cavalleria-pavia|2026-10-31": {
+      "id": "oa-r-000085",
+      "staging_id": "oa-s-000015",
+      "original_date": "2026-10-31",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
+    },
+    "lombardia-pagliacci-pavia|2026-10-30": {
+      "id": "oa-r-000086",
+      "staging_id": "oa-s-000016",
+      "original_date": "2026-10-30",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
+    },
+    "lombardia-pagliacci-pavia|2026-10-31": {
+      "id": "oa-r-000087",
+      "staging_id": "oa-s-000016",
+      "original_date": "2026-10-31",
+      "source_url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
+    },
+    "lombardia-ballo-pavia|2026-12-03": {
+      "id": "oa-r-000088",
+      "staging_id": "oa-s-000017",
+      "original_date": "2026-12-03",
+      "source_url": "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/"
+    },
+    "lombardia-ballo-pavia|2026-12-05": {
+      "id": "oa-r-000089",
+      "staging_id": "oa-s-000017",
+      "original_date": "2026-12-05",
+      "source_url": "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/"
+    },
+    "lombardia-death-venice-pavia|2027-01-15": {
+      "id": "oa-r-000090",
+      "staging_id": "oa-s-000018",
+      "original_date": "2027-01-15",
+      "source_url": "https://www.teatrofraschini.it/programma/death-in-venice/"
+    },
+    "lombardia-death-venice-pavia|2027-01-17": {
+      "id": "oa-r-000091",
+      "staging_id": "oa-s-000018",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.teatrofraschini.it/programma/death-in-venice/"
     }
   }
 }
