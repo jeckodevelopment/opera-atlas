@@ -41,10 +41,10 @@ class NationalSourceExpansionTests(unittest.TestCase):
 
     def test_distinct_staging_urls_and_continuous_ids(self):
         graph=assemble(self.facts,self.registry)
-        self.assertEqual(len(graph["performances"]),131)
+        self.assertEqual(len(graph["performances"]),141)
         self.assertEqual(len(graph["works"]),19)
         self.assertEqual(len(graph["venues"]),10)
-        self.assertEqual(len(graph["stagings"]),24)
+        self.assertEqual(len(graph["stagings"]),29)
         self.assertEqual(sum(not e["time_known"] for e in graph["performances"]),2)
         paths={p["url"] for p in graph["stagings"]}
         for url in ("/milano/teatro-alla-scala/otello/",
@@ -65,7 +65,7 @@ class NationalSourceExpansionTests(unittest.TestCase):
                          "2026-12-07T18:00:00+01:00")
         self.assertEqual(events["curated:massimo-macbeth-2027:2027-02-07"]["time_label"],
                          "17:30")
-        self.assertEqual(len(events),131)
+        self.assertEqual(len(events),141)
 
 if __name__=="__main__":
     unittest.main()
