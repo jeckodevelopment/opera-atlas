@@ -237,3 +237,39 @@
   .theatre-production h3{font-size:23px}
   .selected-replica{padding:12px;gap:6px 14px;flex-direction:column}
 }
+
+/* Compact dates in homepage cards and theatre listings; production detail unchanged. */
+.home-calendar-list{display:flex;flex-wrap:wrap;align-items:flex-start;gap:7px;margin:11px 0 18px;width:100%}
+.home-calendar-link{text-decoration:none!important;color:inherit!important;display:inline-flex;border-radius:7px}
+.home-calendar{width:53px;min-height:67px;display:flex;flex-direction:column;align-items:stretch;background:#fff;border:1px solid #d9ceb8;border-radius:7px;overflow:hidden}
+.home-calendar-month{display:block;font-size:9px;text-align:center;font-weight:750;background:#b38d45;color:#fff;letter-spacing:.06em;padding:2px 0}
+.home-calendar-day{font:600 23px/1.13 Georgia,serif;text-align:center;padding:3px 0 0;color:#262017}
+.home-calendar-weekday{font-size:9px;text-align:center;padding:0 0 4px;color:#625b51;text-transform:capitalize}
+.home-calendar-more{font-size:12px;align-self:center;color:#705829}
+.home-calendar-link:hover .home-calendar,.home-calendar-link:focus-visible .home-calendar{border-color:#846222;box-shadow:0 2px 8px #00000016}
+#festival{position:relative;padding:56px 0 62px;margin:20px 0 12px;isolation:isolate;color:#fbf8ef}
+#festival::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;background:linear-gradient(115deg,#18242a 0%,#253132 55%,#293b37 100%)}
+#festival .eyebrow,#festival h2,#festival>p{color:#f8f0dc}
+#festival>p{font-size:14px;color:#d7d9d2}
+#festival .discovery-card{background:#f7f5f0;border-color:#d0bc92}
+#festival .detail-link{color:#ead39a}
+#festival .discovery-links p{color:#e8dfcb}
+.discovery-description{font-size:12px;color:#53534d;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin-top:7px}
+.detail-related .theatre-production h3{font-size:30px!important;line-height:1.14!important}
+.detail-related .theatre-production h3 a{font:inherit!important;color:#171717!important;font-weight:500!important}
+.detail-related .theatre-production .mini-calendar-list{grid-template-columns:repeat(auto-fill,55px)!important;gap:7px;margin:11px 0}
+.detail-related .theatre-production .mini-calendar{min-height:68px;border-radius:7px}
+.detail-related .theatre-production .mini-calendar-month{font-size:9px;padding:3px 1px}
+.detail-related .theatre-production .mini-calendar-day{font-size:22px;line-height:1.18;padding:2px 1px 0}
+.detail-related .theatre-production .mini-calendar-weekday{font-size:9px;padding:0 0 4px}
+.detail-related .theatre-production .selected-replica{padding:10px 13px;gap:7px 15px;font-size:12px}
+.detail-related .theatre-production .selected-replica-time{font-size:12px}
+.detail-related .theatre-production .selected-replica-venue{font-size:11px}
+@media(max-width:700px){
+  #festival{padding:40px 0 50px}
+  .detail-related .theatre-production h3{font-size:26px!important}
+  .detail-related .theatre-production .mini-calendar-list{grid-template-columns:repeat(auto-fill,52px)!important}
+  .detail-related .theatre-production .mini-calendar{min-height:66px}
+  .home-calendar{width:48px;min-height:63px}
+  .home-calendar-day{font-size:21px}
+}
