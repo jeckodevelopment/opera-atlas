@@ -162,6 +162,26 @@ class CandidateDetailTests(unittest.TestCase):
         self.assertIn("verified-rigoletto",{x["id"] for x in batch})
         self.assertLessEqual(len(batch),10)
 
+    def test_daily_budget_covers_each_of_five_active_theatres(self):
+        bases={
+            "scala-season-2026-27":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{}.html",
+            "arena-festival-2027":"https://www.arena.it/arena-opera-festival/unknown-{}/",
+            "fenice-opera-2026-27":"https://www.teatrolafenice.it/event/unknown-{}/",
+            "parma-opera-2027":"https://teatroregioparma.it/spettacolo/unknown-{}/",
+            "massimo-season-2026-27":"https://www.teatromassimo.it/event/unknown-{}/"}
+        rows=[{"id":f"{key}-{index}","source_key":key,
+               "official_url":template.format(index),"status":"needs_review"}
+              for key,template in bases.items() for index in range(15)]
+        candidates={"schema_version":1,"candidates":rows}
+        chosen=selected_candidates(candidates,today=date(2026,11,20))
+        self.assertEqual(len(chosen),10)
+        self.assertEqual({x["source_key"] for x in chosen},set(bases))
+        visited=set()
+        for offset in range(80):
+            day=date.fromordinal(date(2026,11,20).toordinal()+offset)
+            visited.update(x["id"] for x in selected_candidates(candidates,today=day))
+        self.assertEqual(visited,{x["id"] for x in rows})
+
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[
             {"@type":"MusicEvent","name":"Anna Bolena",

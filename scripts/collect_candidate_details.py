@@ -217,9 +217,9 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
             recognized.append(item)
         else:
             other.append(item)
-    # Daily advancement must be coprime with every possible queue size.
-    # A stride of MAX_PAGES can permanently starve half the queue when the
-    # number of candidates shares a factor with the scan budget.
+    # Every theatre receives one first-pass opportunity per day (up to
+    # MAX_PAGES sources), rather than allowing a dense Scala index to take
+    # every slot. Within each category advance by one position per day.
     ordinal=(today or date.today()).toordinal()
     def rotate(items):
         if not items:return []
@@ -227,20 +227,45 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
         return items[offset:]+items[:offset]
     recognized=rotate(recognized)
     other=rotate(other)
-    # Works with already sourced historical cards can be promoted without
-    # using a paid language service. Do not bury them in the general queue.
     from scripts.auto_work_research import preverified_work_material
     prepared=preverified_work_material()
-    other.sort(key=lambda x:
-        urlsplit(x["official_url"]).path.rstrip("/").split("/")[-1].removesuffix(".html")
-        not in prepared)
-    # Reserve four daily slots for unknown works: otherwise large queues of
-    # known works can prevent any new-opera discovery indefinitely.
+    def has_card(item):
+        slug=urlsplit(item["official_url"]).path.rstrip("/").split("/")[-1].removesuffix(".html")
+        return slug in prepared
+    # Reserve up to two fast-path slots for already sourced new operas;
+    # rotate the remaining unknowns rather than starving them indefinitely.
+    ready=[x for x in other if has_card(x)]
+    unexplored=[x for x in other if not has_card(x)]
+    other=ready[:2]+unexplored+ready[2:]
     reserved=min(4,len(other)) if recognized else min(MAX_PAGES,len(other))
-    known_take=min(len(recognized),MAX_PAGES-reserved)
-    other_take=min(len(other),MAX_PAGES-known_take)
-    known_take=min(len(recognized),MAX_PAGES-other_take)
-    return recognized[:known_take]+other[:other_take]
+    target_known=min(len(recognized),MAX_PAGES-reserved)
+    target_other=min(len(other),MAX_PAGES-target_known)
+    target_known=min(len(recognized),MAX_PAGES-target_other)
+    selected=[]
+    seen_ids=set()
+    counts={"known":0,"other":0}
+    def take(item,kind,limit):
+        if item["id"] in seen_ids or counts[kind]>=limit:return False
+        seen_ids.add(item["id"])
+        selected.append(item)
+        counts[kind]+=1
+        return True
+    sources=sorted({x["source_key"] for x in recognized+other})
+    # One candidate per source where feasible; prefer recognizable pages,
+    # but respect the separate unknown-work quota.
+    for source in sources:
+        if len(selected)>=MAX_PAGES:break
+        for kind,items,limit in (("known",recognized,target_known),
+                                 ("other",other,target_other)):
+            item=next((x for x in items if x["source_key"]==source
+                       and x["id"] not in seen_ids),None)
+            if item is not None and take(item,kind,limit):break
+    for kind,items,limit in (("known",recognized,target_known),
+                             ("other",other,target_other)):
+        for item in items:
+            if counts[kind]>=limit:break
+            take(item,kind,limit)
+    return selected
 
 def collect(candidates:dict,previous:dict,*,network_enabled:bool,
             fetcher=fetch_official_html,today:date|None=None):
