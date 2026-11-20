@@ -36,3 +36,19 @@ La pubblicazione del JSON è una decisione esplicita dell'operatore: non committ
 
 ## Limiti reali
 È il **primo catalogo navigabile**, non la Fase 3 completa: mancano pagine dettaglio dedicate, filtri per festival, mappa, geolocalizzazione e dashboard KPI. Non è stato eseguito un test browser visuale in CI. L'export data-only non inventa regione, compositore o coordinate: tali campi rimangono null o vuoti e non sono selezionabili tramite il filtro regione finché non vengono verificati.
+
+## Schede di opera, recita e teatro
+Da ciascuna scheda del catalogo sono disponibili link a `detail.html?type=work&key=…`, `detail.html?type=venue&key=…` e `detail.html?type=performance&key=…`. La pagina legge lo stesso `performances.json` e risolve le associazioni attraverso i dati pubblicati, senza una chiamata server o un database pubblico. Titoli, compositori, date, orari, sedi e fonti ufficiali vengono mostrati solo quando presenti. Se `starts_at` è null, compare **Orario da confermare**. Il dettaglio di una recita ha collegamenti all'opera e al teatro; quello di un'opera o teatro elenca le recite abbinate.
+
+Gli URL non validi o senza corrispondenza hanno uno stato vuoto comprensibile. È vietato inserire markup HTML proveniente dal JSON: i contenuti sono visualizzati solo come testo e i link alle fonti accettano esclusivamente HTTPS. I parametri in query non autorizzano a leggere file o URL di terze parti.
+
+## Distribuzione tramite jeckodevsite
+Publisher di riferimento: `jeckodevelopment/jeckodevsite`, script `scripts/deploy_opera_atlas.py`, workflow `.github/workflows/publish-opera-atlas.yml`. Destinazione: **https://jeckodevelopment.com/dev/opera-atlas/**. Il workflow usa la stessa configurazione SFTP/host key e rollback delle altre applicazioni `/dev/`, verificando byte-per-byte i sei asset via HTTPS. Non è previsto un nuovo secret né la pubblicazione dell'intero sito. Un cambiamento del frontend in questa repository richiede un trigger al publisher (`deploy-requests/opera-atlas.txt`) o il relativo avvio manuale; le due repository non condividono segreti.
+
+L'interfaccia può essere pubblicata con JSON iniziale vuoto, ma non è prova della disponibilità di recite reali: l'autorizzazione delle fonti e i collaudi di acquisizione restano requisiti separati.
+
+### Ulteriori collaudi
+- Dalla home aprire le schede opera, recita e teatro usando un JSON di test locale autorizzato; verificare titoli/luogo/fonti e link di ritorno.
+- Confermare che una recita senza orario conservi la dicitura anche nel dettaglio.
+- Verificare link errati o di eventi rimossi: messaggio `Scheda non disponibile`, nessun errore JavaScript.
+- Controllare la risposta HTTPS di `index.html`, `detail.html`, CSS/JS e JSON dopo la pubblicazione; il deploy deve essere isolato dai percorsi degli altri progetti.
