@@ -30,7 +30,10 @@ class OperaHistoryTests(unittest.TestCase):
         self.assertIn('const librettists=String(history.librettist||"").trim()',js)
         self.assertIn('Number.isInteger(history.composition_year)',js)
         self.assertIn('Number.isInteger(history.premiere_year)',js)
-        self.assertIn('history.premiere_venue,history.premiere_city',js)
+        self.assertIn('String(history.premiere_venue||"").trim()',js)
+        self.assertIn('String(history.premiere_city||"").trim()',js)
+        self.assertIn('"La prima rappresentazione ebbe luogo "+when+" al "+place+',js)
+        self.assertIn('history.premiere_date',js)
         self.assertIn('node("p","work-history-story",historyParts.join(" "))',js)
         self.assertEqual(js.count("await appendSynopsis(first);"),3) # opera, shared production, individual production
         self.assertIn('await appendHistory(first);',js)

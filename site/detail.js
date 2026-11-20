@@ -155,18 +155,27 @@ async function appendHistory(event) {
       const librettists=String(history.librettist||"").trim().replace(/;\s*/g," e ");
       const composed=Number.isInteger(history.composition_year)?history.composition_year:null;
       const premiered=Number.isInteger(history.premiere_year)?history.premiere_year:null;
-      const place=[history.premiere_venue,history.premiere_city].filter(x=>typeof x==="string"&&x.trim()).join(" di ");
-      if(composed){
-        historyParts.push(event.title+" fu composta nel "+composed+
-          (event.composer?" da "+event.composer:"")+
-          (librettists?", su libretto di "+librettists:"")+".");
+      const date=typeof history.premiere_date==="string" && /^\d{4}-\d{2}-\d{2}$/.test(history.premiere_date)
+        && Number.isInteger(premiered) && history.premiere_date.startsWith(String(premiered)+"-")
+        && !Number.isNaN(Date.parse(history.premiere_date+"T12:00:00Z"))
+        ? dateLabel(history.premiere_date):null;
+      const theatre=String(history.premiere_venue||"").trim();
+      const city=String(history.premiere_city||"").trim();
+      const place=[theatre,city].filter(Boolean).join(" di ");
+      const when=date?"il "+date:premiered?"nel "+premiered:"";
+      if(when && place){
+        historyParts.push("La prima rappresentazione ebbe luogo "+when+" al "+place+
+          (librettists?" su libretto di "+librettists:"")+".");
+      }else if(when){
+        historyParts.push("La prima rappresentazione ebbe luogo "+when+
+          (librettists?" su libretto di "+librettists:"")+".");
+      }else if(place){
+        historyParts.push("La prima rappresentazione ebbe luogo al "+place+
+          (librettists?" su libretto di "+librettists:"")+".");
       }else if(librettists){
-        historyParts.push("Il libretto di "+event.title+" è di "+librettists+".");
+        historyParts.push("Il libretto dell’opera è di "+librettists+".");
       }
-      if(premiered && place)historyParts.push("La prima rappresentazione ebbe luogo nel "+
-        premiered+" al "+place+".");
-      else if(premiered)historyParts.push("L’opera debuttò nel "+premiered+".");
-      else if(place)historyParts.push("La prima rappresentazione ebbe luogo al "+place+".");
+      if(composed)historyParts.push("L’opera fu composta nel "+composed+".");
       if(!historyParts.length)return;
       const section=node("section","work-history work-history-narrative");
       section.append(node("h2",null,"La storia dell’opera"),
