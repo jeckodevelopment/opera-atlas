@@ -81,7 +81,7 @@ window.OperaAtlasCatalog = (() => {
       }
       return {
         id:item.id, staging_id:staging.id,work_id:work.id,venue_id:venue.id,
-        staging_url:staging.url, work_slug:work.slug,
+        staging_url:staging.url, season:staging.season, work_slug:work.slug,
         venue_slug:venue.slug, city_slug:venue.city_slug,
         local_date:item.local_date,starts_at:item.starts_at,
         time_known:item.time_known, status:item.status,
