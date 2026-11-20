@@ -113,3 +113,11 @@
 - Scomporre le voci multi-città in sedi reali dopo verifica delle date pubblicate.
 - Registrare per ogni fonte URL ufficiale, URL calendario, metodo di acquisizione, licenza/policy, frequenza, ultimo controllo, risultato.
 - Verificare sedi temporanee 2026 e loro date di utilizzo, senza attribuire nuove recite a sedi storiche per default.
+
+## Registro strutturato iniziale (F1)
+Il file `data/sources.json` contiene i primi tre punti di partenza ufficiali ricontrollati il 20/11/2026: Teatro Regio di Torino (`/calendario`), OperaLombardia (`/calendario/`) e Rossini Opera Festival (`/il-festival/calendario/`). La validazione verifica HTTPS, campi obbligatori, assenza duplicati e stato di accesso `pending`. Il comando di caricamento nel database **non effettua richieste di rete** e **non autorizza lo scraping**. Rimangono da verificare robots.txt, termini e licenze, struttura delle pagine e tutte le restanti fonti.
+
+Avvio locale (Python 3.12+):
+```bash
+python -c "from opera_atlas.db import connect,migrate; from opera_atlas.source_registry import seed_sources; c=connect('atlas.sqlite3'); migrate(c); print(seed_sources(c)); c.commit(); c.close()"
+```

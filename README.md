@@ -25,3 +25,10 @@ Il file `atlas.sqlite3` è un artefatto locale di lavorazione, non un dataset pu
 ## Processo
 
 Tutte le modifiche funzionali tramite pull request con test, documentazione nella stessa PR e Semantic Versioning. Licenze e policy di raccolta dati, mappe e materiali di terze parti saranno verificate prima della pubblicazione.
+
+## Registro sorgenti
+I primi ingressi ufficiali verificati sono in [data/sources.json](data/sources.json). Per validarli e importarli nel database di lavorazione, dopo la migrazione:
+```bash
+python -c "from opera_atlas.db import connect,migrate; from opera_atlas.source_registry import seed_sources; c=connect('atlas.sqlite3'); migrate(c); print(seed_sources(c)); c.commit(); c.close()"
+```
+Le sorgenti sono inizialmente `pending`: nessuna scansione automatica è attivata da questa operazione.
