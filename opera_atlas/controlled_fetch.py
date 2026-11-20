@@ -81,8 +81,13 @@ def fetch_official_html(
             robots = raw_robots.decode("utf-8", errors="replace")
     except (HTTPError, URLError, OSError, TimeoutError) as exc:
         raise FetchUnavailable("robots.txt unavailable") from exc
+    # A successful HTTP response can still be a proxy/login error page.
+    # Never interpret such a response as permission to scrape.
+    rules = robots.splitlines()
+    if not any(line.strip().casefold().startswith("user-agent:") for line in rules):
+        raise FetchUnavailable("robots.txt malformed or no user-agent directives")
     parser = RobotFileParser()
-    parser.parse(robots.splitlines())
+    parser.parse(rules)
     if not parser.can_fetch(USER_AGENT, url):
         raise AccessDenied("robots.txt denies access")
     try:
