@@ -106,6 +106,7 @@ function dateLabel(iso) {
 
 function createCard(event) {
   const article = node("article","event");
+  article.append(window.OperaAtlasImages.element(window.OperaAtlasImages.work(event),"event-image"));
   const main = node("div","event-main");
   main.append(node("div","event-meta","Opera lirica · "+event.municipality));
   const heading = node("h3");
@@ -127,19 +128,6 @@ function createCard(event) {
   const detail = node("a","detail-link","Dettagli e date");
   detail.href = window.OperaAtlasCatalog.urls(event).staging;
   main.append(detail);
-  const links = node("ul","source-links");
-  for (const url of [...new Set(event.sources)]) {
-    const href = safeSource(url);
-    if (!href) continue;
-    const li = node("li");
-    const anchor = node("a",null,"Fonte ufficiale");
-    anchor.href = href;
-    anchor.target = "_blank";
-    anchor.rel = "noopener noreferrer";
-    li.append(anchor);
-    links.append(li);
-  }
-  main.append(links);
   article.append(main);
   const side = node("div","event-side");
   const calendar = node("div","calendar");
@@ -165,6 +153,7 @@ function fillOptions(select, values) {
 function createStagingCard(events) {
   const first = events[0];
   const article = node("article","event");
+  article.append(window.OperaAtlasImages.element(window.OperaAtlasImages.work(first),"event-image"));
   const main = node("div","event-main");
   main.append(node("div","event-meta",first.municipality+" · "+events.length+" repliche"));
   const heading = node("h3");
@@ -174,17 +163,17 @@ function createStagingCard(events) {
   main.append(heading);
   if (first.composer) main.append(node("p","composer",first.composer));
   const uniqueVenues=[...new Set(events.map(e=>e.venue+" · "+e.municipality))];
-  const theatre=node("p","composer",uniqueVenues.length===1?uniqueVenues[0]:uniqueVenues.length+" teatri · "+uniqueVenues.join(" · "));
+  const theatre=node("p","composer",uniqueVenues.length===1?uniqueVenues[0]:uniqueVenues.length+" teatri · "+uniqueVenues.slice(0,2).join(" · ")+(uniqueVenues.length>2?" e altre sedi":""));
   main.append(theatre);
   const km=distanceFor(first);
-  if(km!==null && controls.location.value)main.append(node("p","distance-label","Circa "+km+" km in linea d’aria dal centro di "+controls.location.value));
+  if(km!==null && controls.location.value)main.append(node("p","distance-label","A circa "+km+" km da "+controls.location.value));
   const dates = node("div","staging-repliche");
-  for (const recita of events.slice(0,12)) {
+  for (const recita of events.slice(0,2)) {
     dates.append(node("span","replica-chip",
       dateLabel(recita.local_date)+" · "+
       (recita.time_known ? recita.starts_at.slice(11,16) : "Ora da confermare")));
   }
-  if (events.length>12) dates.append(node("span","replica-chip","+"+(events.length-12)+" altre"));
+  if (events.length>2) dates.append(node("span","replica-chip","+"+(events.length-2)+" altre date"));
   main.append(dates);
   const link = node("a","detail-link","Dettagli e rappresentazioni");
   link.href = window.OperaAtlasCatalog.urls(first).production;
@@ -203,25 +192,33 @@ function groupByStaging(events) {
   return [...groups.values()].map(group=>group.sort((a,b)=>a.local_date.localeCompare(b.local_date))).sort((a,b)=>a[0].local_date.localeCompare(b[0].local_date));
 }
 
+function imageTile(url,title,subtitle,image){
+  const a=node("a","discovery-card");
+  a.href=url;
+  a.append(window.OperaAtlasImages.element(image,"discovery-image"));
+  const inside=node("span","discovery-card-body");
+  inside.append(node("strong",null,title));
+  if(subtitle)inside.append(node("small",null,subtitle));
+  a.append(inside);
+  return a;
+}
 function renderDiscoveries() {
-  const works = new Map(), venues = new Map();
-  for (const event of catalog) {
-    const urls = window.OperaAtlasCatalog.urls(event);
-    if (!works.has(urls.work)) works.set(urls.work, event.title);
-    if (!venues.has(urls.venue)) venues.set(urls.venue, event.venue+" · "+event.municipality);
+  const works=new Map(),venues=new Map();
+  for(const event of catalog){
+    const urls=window.OperaAtlasCatalog.urls(event);
+    if(!works.has(urls.work))works.set(urls.work,event);
+    if(!venues.has(urls.venue))venues.set(urls.venue,event);
   }
-  for (const [id, items] of [["discover-works",works],["discover-venues",venues]]) {
-    const target = document.getElementById(id);
-    if (!target) continue;
-    target.replaceChildren();
-    for (const [href, label] of [...items].sort((a,b)=>a[1].localeCompare(b[1],"it")).slice(0,12)) {
-      const a = node("a","discovery-link",label);
-      a.href = href;
-      target.append(a);
-    }
-    if (!items.size) target.append(node("p",null,"Nessun contenuto verificato disponibile."));
+  const workBox=document.getElementById("discover-works");
+  const venueBox=document.getElementById("discover-venues");
+  workBox.replaceChildren();
+  venueBox.replaceChildren();
+  for(const [url,event] of [...works].sort((a,b)=>a[1].title.localeCompare(b[1].title,"it")).slice(0,6)){
+    workBox.append(imageTile(url,event.title,event.composer,window.OperaAtlasImages.work(event)));
   }
-
+  for(const [url,event] of [...venues].sort((a,b)=>a[1].venue.localeCompare(b[1].venue,"it")).slice(0,6)){
+    venueBox.append(imageTile(url,event.venue,event.municipality,window.OperaAtlasImages.venue(event)));
+  }
 }
 async function renderFestivals(){
   const target=document.getElementById("discover-festivals");
@@ -234,14 +231,13 @@ async function renderFestivals(){
     for(const festival of festivals){
       const future=catalog.filter(e=>festival.staging_ids.includes(e.staging_id)&&e.local_date>=todayInItaly());
       if(!future.length)continue;
-      const link=node("a","discovery-link",festival.name+(festival.edition?" · "+festival.edition:"")+" · "+future.length+" rappresentazioni censite");
-      link.href="./directory.html?section=festival&id="+encodeURIComponent(festival.id);
-      target.append(link);count++;
+      const url="./directory.html?section=festival&id="+encodeURIComponent(festival.id);
+      target.append(imageTile(url,festival.name,festival.city+(festival.edition?" · "+festival.edition:""),window.OperaAtlasImages.festival(festival)));count++;
     }
-    if(!count)target.append(node("p",null,"Nessun festival con date future verificate nel catalogo. Consulta la sezione Festival per le fonti monitorate."));
+    if(!count)target.append(node("p",null,"Il prossimo festival da scoprire arriverà presto."));
     const all=node("a","detail-link","Esplora i festival");all.href="./directory.html?section=festival";target.append(all);
   }catch{
-    target.replaceChildren(node("p",null,"Programmazione festivaliera momentaneamente non verificabile."));
+    target.replaceChildren(node("p",null,"I festival torneranno presto disponibili."));
   }
 }
 function todayInItaly() {
@@ -379,8 +375,7 @@ async function initialize() {
   try {
     const documentData = await window.OperaAtlasCatalog.load();
     if (documentData.warning) message.textContent = documentData.warning;
-    else if (documentData.reviewed_on)
-      message.textContent = "Dati verificati il " + documentData.reviewed_on.split("-").reverse().join("/");
+
     if (!documentData || documentData.schema_version !== 1 || !Array.isArray(documentData.performances)) {
       throw new Error("schema non supportato");
     }
@@ -388,7 +383,7 @@ async function initialize() {
     catalog = raw.filter(validEvent).sort((a,b)=>a.local_date.localeCompare(b.local_date) ||
       (a.starts_at || "").localeCompare(b.starts_at || ""));
     if (raw.length !== catalog.length) {
-      message.textContent = "Alcune recite con dati non validi non sono state mostrate.";
+      message.textContent = "Alcuni spettacoli non sono disponibili.";
     }
 
     fillOptions(controls.city,catalog.map(x=>x.municipality));
