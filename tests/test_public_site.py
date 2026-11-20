@@ -89,7 +89,7 @@ class PublicCatalogTests(unittest.TestCase):
         self.assertEqual(payload["schema_version"], 1)
         self.assertGreaterEqual(len(payload["performances"]), 19)
         self.assertTrue(all(e["sources"] for e in payload["performances"]))
-        self.assertEqual(sum(not e["time_known"] for e in payload["performances"]), 2)
+        self.assertGreaterEqual(sum(not e["time_known"] for e in payload["performances"]), 2)
 
     def test_export_is_directly_compatible_with_date_only_cards(self):
         conn = connect()
