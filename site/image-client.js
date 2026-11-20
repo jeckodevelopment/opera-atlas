@@ -125,7 +125,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
       return {src:chosen.image_url,
         alt:chosen.alt||"Immagine ufficiale della produzione di "+title,
         fallbackSrc:poster(title),
-        sourceUrl:chosen.source_url,credit:chosen.credit};
+        sourceUrl:chosen.source_url,credit:chosen.credit,
+        license:chosen.license||"",kind:chosen.kind};
     }
     const file=WORKS[slug];
     return file?photo(file,"Documento d’archivio legato a "+title+" (non allestimento in calendario)",title):
