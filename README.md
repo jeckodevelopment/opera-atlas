@@ -11,6 +11,10 @@ Catalogo nazionale delle rappresentazioni di opera lirica in Italia e osservator
 - Raccolta automatica e tracciabile da fonti ufficiali, con controlli di qualità.
 - Statistiche sul repertorio e sulla distribuzione geografica e temporale.
 
+## Interfaccia visitatori
+
+L'esperienza pubblica è in `site/`: ricerca geografica indicativa, viste elenco/calendario/mappa schematica, directory Opere/Teatri/Festival e schede produzione orientate alle rappresentazioni future. Le decisioni UX, i limiti geografici e i collaudi sono documentati in [docs/ATLAS_UI_APPROVED.md](docs/ATLAS_UI_APPROVED.md). Il catalogo e l'indice festival sono pubblicati da `opera-atlas` su GitHub, separatamente dalla pubblicazione SFTP del frontend.
+
 ## Sviluppo locale
 
 Richiede Python 3.12+ e SQLite con JSON1 (nessuna dipendenza Python esterna per lo storage).
