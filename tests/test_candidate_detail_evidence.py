@@ -147,6 +147,21 @@ class CandidateDetailTests(unittest.TestCase):
             seen.update(x["id"] for x in chosen)
         self.assertEqual(seen,{x["id"] for x in rows})
 
+    def test_preverified_rigoletto_receives_daily_candidate_priority(self):
+        candidates={"schema_version":1,"candidates":[]}
+        for i in range(24):
+            candidates["candidates"].append({
+                "id":f"other-{i:02d}","source_key":"parma-opera-2027",
+                "official_url":f"https://teatroregioparma.it/spettacolo/unknown-{i}/",
+                "status":"needs_review"})
+        candidates["candidates"].append({
+            "id":"verified-rigoletto","source_key":"parma-opera-2027",
+            "official_url":"https://teatroregioparma.it/spettacolo/rigoletto/",
+            "status":"needs_review"})
+        batch=selected_candidates(candidates,today=date(2026,11,20))
+        self.assertIn("verified-rigoletto",{x["id"] for x in batch})
+        self.assertLessEqual(len(batch),10)
+
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[
             {"@type":"MusicEvent","name":"Anna Bolena",
