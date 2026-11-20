@@ -134,10 +134,13 @@ def scan_approved(
                 health.append({"key":item["key"],"outcome":item["access_status"],
                                "added":0,"observed":0})
                 continue
-            source_id = db.execute(
-                "INSERT INTO sources(official_url,access_status) VALUES (?, 'approved')",
+            db.execute(
+                "INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",
                 (item["official_url"],),
-            ).lastrowid
+            )
+            source_id = db.execute(
+                "SELECT id FROM sources WHERE official_url=?", (item["official_url"],)
+            ).fetchone()["id"]
             try:
                 if not network_enabled:
                     raise AccessDenied("network access requires --allow-network")
