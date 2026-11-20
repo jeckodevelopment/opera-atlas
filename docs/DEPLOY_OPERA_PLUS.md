@@ -13,14 +13,15 @@
 1. Verificare che il dominio **opera.plus** punti all'hosting corretto e disponga di certificato HTTPS valido.
 2. Creare una cartella web dedicata `atlas` **sotto la document root pubblica di opera.plus**. Il percorso FTP visibile dall'utente dipende dal provider (per esempio `/atlas` in account confinati alla webroot). Il workflow verifica che il percorso termini in `/atlas`.
 3. Verificare che la directory padre sia accessibile in lettura/scrittura all'utente FTPS e che Apache gestisca `.htaccess` e `mod_rewrite`. Per Nginx o hosting che ignora `.htaccess`, predisporre manualmente rewrite equivalenti per `/atlas/opere/{slug}/`, `/atlas/produzioni/{id}/`, `/atlas/{città}/{teatro}/` e `/atlas/{città}/{teatro}/{opera}/` verso `/atlas/detail.html` prima del primo deploy.
-4. Collegare i seguenti **GitHub Actions Secrets** nell'environment `opera-plus-atlas` della repository `jeckodevelopment/opera-atlas`:
-   - `ATLAS_FTPS_HOST`: hostname del server FTP/FTPS, senza `ftps://`.
-   - `ATLAS_FTPS_PORT`: porta (facoltativa; **21** di default per FTPS esplicito).
-   - `ATLAS_FTPS_USERNAME`: utente del servizio FTPS.
-   - `ATLAS_FTPS_PASSWORD`: password FTPS, da inserire soltanto come secret.
-   - `ATLAS_FTPS_REMOTE_DIR`: cartella `atlas` vista dall'utente FTP, con percorso assoluto **all'interno del suo spazio FTP**, per esempio `/atlas` se l'account è confinato nella webroot o `/public_html/atlas` se vede la directory superiore. Non utilizzare percorsi locali dedotti da SSH.
-5. Il server deve supportare **FTPS esplicito** (`AUTH TLS` prima del login, `PBSZ 0` e `PROT P` per cifrare il trasferimento dati), con certificato TLS valido e hostname corrispondente. Il client verifica automaticamente catena e nome del certificato mediante le CA attendibili; **FTP in chiaro non è ammesso**. Non è necessaria una chiave SSH `known_hosts`.
-6. Gli eventuali vecchi segreti `ATLAS_SFTP_*` non vengono letti dal nuovo workflow; dopo il collaudo si possono eliminare dall'environment. Non pubblicare password né chiavi in issue, log o chat.
+4. Riutilizzare i **secret già configurati** nell'environment `opera-plus-atlas`, mantenendo i nomi storici anche dopo il passaggio da SFTP a FTPS:
+   - `ATLAS_SFTP_HOST`: hostname FTPS, senza prefisso di protocollo.
+   - `ATLAS_SFTP_USERNAME`: utente FTPS.
+   - `ATLAS_SFTP_PASSWORD`: password FTPS.
+   - `ATLAS_SFTP_REMOTE_DIR`: cartella `atlas` nel filesystem visibile via FTP, con percorso assoluto nel relativo account (per esempio `/atlas` o `/public_html/atlas`).
+   Non occorre rinominare o reinserire questi quattro secret. I nomi `ATLAS_FTPS_*` sono usati **solo internamente allo script** come variabili d'ambiente del processo: il workflow li popola dai secret `ATLAS_SFTP_*` già presenti.
+5. La connessione è sempre **FTPS esplicito sulla porta 21**, fissata nel workflow e indipendente dall'eventuale precedente secret `ATLAS_SFTP_PORT` (SFTP SSH su porta 22). Il server deve supportare `AUTH TLS` e `PROT P` con certificato TLS valido. Niente FTP in chiaro.
+6. I vecchi `ATLAS_SFTP_KNOWN_HOSTS`, `ATLAS_SFTP_PRIVATE_KEY` e `ATLAS_SFTP_KEY_PASSPHRASE` non servono a FTPS e vengono ignorati; non occorre eliminarli per pubblicare. Non pubblicare credenziali in chat, issue o log.
+7. Se il precedente `ATLAS_SFTP_REMOTE_DIR` indica un percorso visibile solo via SSH/SFTP e non via FTP, la connessione FTPS può comunque fallire: verificare dai log il path effettivamente visibile all'account prima di apportare modifiche. Non assumere che i due filesystem abbiano la stessa radice.
 
 ## Prima pubblicazione controllata
 
@@ -45,4 +46,4 @@ Il rilascio non è concluso finché non sono verificati DNS/TLS, configurazione 
 
 ## Confini di sicurezza
 
-Il publisher rifiuta destinazioni come `/`, `/atlas` o qualsiasi cartella non terminante in `/atlas`; non segue i symlink locali, non copia file fuori allowlist e non incorpora segreti nell'artefatto. Il deploy è deliberatamente limitato alla sottocartella Atlas, per non sovrascrivere il sito principale opera.plus.
+Il publisher rifiuta destinazioni come `/` e qualsiasi cartella non terminante in `/atlas` (mentre `/atlas` è consentita per un account FTPS confinato); non segue i symlink locali, non copia file fuori allowlist e non incorpora segreti nell'artefatto. Il deploy è deliberatamente limitato alla sottocartella Atlas, per non sovrascrivere il sito principale opera.plus.
