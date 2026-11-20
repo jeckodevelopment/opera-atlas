@@ -88,7 +88,7 @@ class ReconciliationTests(unittest.TestCase):
     def test_migration_repeated_without_loss(self):
         self.ingest(1,"one",1)
         migrate(self.db)
-        self.assertEqual(self.db.execute("SELECT count(*) FROM schema_migrations").fetchone()[0], 4)
+        self.assertEqual(self.db.execute("SELECT count(*) FROM schema_migrations").fetchone()[0], 5)
         self.assertEqual(self.db.execute("SELECT count(*) FROM source_events").fetchone()[0],1)
 
 
