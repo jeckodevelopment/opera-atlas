@@ -2060,6 +2060,24 @@
       ]
     },
     {
+      "id": "curated:scala-don-giovanni-2027:2027-02-03",
+      "starts_at": "2027-02-03T20:00:00+01:00",
+      "local_date": "2027-02-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
       "id": "curated:fenice-madama-butterfly-2027:2027-02-04",
       "starts_at": "2027-02-04T19:00:00+01:00",
       "local_date": "2027-02-04",
@@ -2186,6 +2204,24 @@
       ]
     },
     {
+      "id": "curated:scala-don-giovanni-2027:2027-02-06",
+      "starts_at": "2027-02-06T20:00:00+01:00",
+      "local_date": "2027-02-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
       "id": "curated:lombardia-death-venice-cremona:2027-02-07",
       "starts_at": null,
       "local_date": "2027-02-07",
@@ -2276,6 +2312,24 @@
       ]
     },
     {
+      "id": "curated:scala-don-giovanni-2027:2027-02-09",
+      "starts_at": "2027-02-09T20:00:00+01:00",
+      "local_date": "2027-02-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
       "id": "curated:massimo-macbeth-2027:2027-02-11",
       "starts_at": "2027-02-11T19:00:00+01:00",
       "local_date": "2027-02-11",
@@ -2291,6 +2345,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
+      "id": "curated:scala-don-giovanni-2027:2027-02-11",
+      "starts_at": "2027-02-11T20:00:00+01:00",
+      "local_date": "2027-02-11",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
       ]
     },
     {
@@ -2330,6 +2402,24 @@
       ]
     },
     {
+      "id": "curated:scala-don-giovanni-2027:2027-02-13",
+      "starts_at": "2027-02-13T20:00:00+01:00",
+      "local_date": "2027-02-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
       "id": "curated:lombardia-death-venice-ravenna:2027-02-14",
       "starts_at": null,
       "local_date": "2027-02-14",
@@ -2345,6 +2435,168 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:scala-boheme-puccini-2027:2027-02-16",
+      "starts_at": "2027-02-16T20:00:00+01:00",
+      "local_date": "2027-02-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:scala-boheme-puccini-2027:2027-02-17",
+      "starts_at": "2027-02-17T20:00:00+01:00",
+      "local_date": "2027-02-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:scala-don-giovanni-2027:2027-02-18",
+      "starts_at": "2027-02-18T20:00:00+01:00",
+      "local_date": "2027-02-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
+      "id": "curated:scala-boheme-puccini-2027:2027-02-19",
+      "starts_at": "2027-02-19T20:00:00+01:00",
+      "local_date": "2027-02-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:scala-don-giovanni-2027:2027-02-20",
+      "starts_at": "2027-02-20T20:00:00+01:00",
+      "local_date": "2027-02-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
+      "id": "curated:scala-boheme-puccini-2027:2027-02-21",
+      "starts_at": "2027-02-21T14:30:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "14:30",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:scala-don-giovanni-2027:2027-02-23",
+      "starts_at": "2027-02-23T20:00:00+01:00",
+      "local_date": "2027-02-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
+      "id": "curated:scala-boheme-puccini-2027:2027-02-24",
+      "starts_at": "2027-02-24T20:00:00+01:00",
+      "local_date": "2027-02-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:scala-don-giovanni-2027:2027-02-25",
+      "starts_at": "2027-02-25T20:00:00+01:00",
+      "local_date": "2027-02-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
       ]
     },
     {
@@ -2366,6 +2618,24 @@
       ]
     },
     {
+      "id": "curated:scala-boheme-puccini-2027:2027-02-26",
+      "starts_at": "2027-02-26T20:00:00+01:00",
+      "local_date": "2027-02-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
       "id": "curated:regio-traviata-2027:2027-02-27",
       "starts_at": "2027-02-27T20:00:00+01:00",
       "local_date": "2027-02-27",
@@ -2381,6 +2651,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:scala-don-giovanni-2027:2027-02-28",
+      "starts_at": "2027-02-28T14:30:00+01:00",
+      "local_date": "2027-02-28",
+      "time_known": true,
+      "time_label": "14:30",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
       ]
     },
     {
@@ -2456,6 +2744,24 @@
       ]
     },
     {
+      "id": "curated:scala-boheme-puccini-2027:2027-03-04",
+      "starts_at": "2027-03-04T20:00:00+01:00",
+      "local_date": "2027-03-04",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
       "id": "curated:massimo-lucia-lammermoor-2027:2027-03-05",
       "starts_at": "2027-03-05T20:00:00+01:00",
       "local_date": "2027-03-05",
@@ -2525,6 +2831,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:scala-boheme-puccini-2027:2027-03-07",
+      "starts_at": "2027-03-07T14:30:00+01:00",
+      "local_date": "2027-03-07",
+      "time_known": true,
+      "time_label": "14:30",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
       ]
     },
     {
@@ -3716,6 +4040,24 @@
       ]
     },
     {
+      "id": "curated:arena-nabucco-2027:2027-07-29",
+      "starts_at": "2027-07-29T21:15:00+02:00",
+      "local_date": "2027-07-29",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/nabucco/"
+      ]
+    },
+    {
       "id": "curated:arena-aida-de-bosio-2027:2027-08-01",
       "starts_at": "2027-08-01T21:00:00+02:00",
       "local_date": "2027-08-01",
@@ -3734,6 +4076,24 @@
       ]
     },
     {
+      "id": "curated:arena-nabucco-2027:2027-08-05",
+      "starts_at": "2027-08-05T21:00:00+02:00",
+      "local_date": "2027-08-05",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/nabucco/"
+      ]
+    },
+    {
       "id": "curated:arena-aida-de-bosio-2027:2027-08-07",
       "starts_at": "2027-08-07T21:00:00+02:00",
       "local_date": "2027-08-07",
@@ -3749,6 +4109,78 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:arena-nabucco-2027:2027-08-15",
+      "starts_at": "2027-08-15T21:00:00+02:00",
+      "local_date": "2027-08-15",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:arena-nabucco-2027:2027-08-21",
+      "starts_at": "2027-08-21T21:00:00+02:00",
+      "local_date": "2027-08-21",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:arena-nabucco-2027:2027-09-03",
+      "starts_at": "2027-09-03T21:00:00+02:00",
+      "local_date": "2027-09-03",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:arena-nabucco-2027:2027-09-09",
+      "starts_at": "2027-09-09T21:00:00+02:00",
+      "local_date": "2027-09-09",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/arena-opera-festival/nabucco/"
       ]
     }
   ]
