@@ -54,3 +54,6 @@ python -m opera_atlas.scan_cli --db atlas.sqlite3 --url https://www.teatroregio.
 La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiesta robots.txt precedente alla pagina, User-Agent identificabile, response HTML, limite 2 MB, timeout 12 secondi. Nessun retry e nessuna scansione ricorsiva. Lo storico `source_checks` registra esito, impronta SHA-256, dimensione e numero di recite, senza copiare il testo dell'ente. Le scansioni negate registrano solo il motivo tecnico se `--apply` è usato.
 
 **Limiti:** la soluzione non gestisce rate limiting globale tra esecuzioni, ETag/304, parser per altri teatri, errori di import con log persistente o gestione completa degli spostamenti di programma. Prima di abilitare schedulazioni serviranno policy di accesso verificate, monitoraggio delle frequenze e collaudi live. Le fixture di test sono sintesi redatte autonomamente, non copie della pagina.
+
+### Batch di produzioni (Fase 2)
+Disponibile `python -m opera_atlas.batch_cli` con manifesto JSON verificato, massimo 20 pagine, preflight delle sorgenti e savepoint di isolamento per pagina. Richiede `--allow-network` per qualsiasi accesso e `--apply` per salvare il risultato. Nessuna scansione periodica o autorizzazione implicita. Vedi [guida al connettore](docs/REGIO_CONNECTOR.md).

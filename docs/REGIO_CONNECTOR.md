@@ -43,3 +43,24 @@ python -m opera_atlas.scan_cli --db atlas.sqlite3 --url https://www.teatroregio.
 La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiesta robots.txt precedente alla pagina, User-Agent identificabile, response HTML, limite 2 MB, timeout 12 secondi. Nessun retry e nessuna scansione ricorsiva. Lo storico `source_checks` registra esito, impronta SHA-256, dimensione e numero di recite, senza copiare il testo dell'ente. Le scansioni negate registrano solo il motivo tecnico se `--apply` è usato.
 
 **Limiti:** la soluzione non gestisce rate limiting globale tra esecuzioni, ETag/304, parser per altri teatri, errori di import con log persistente o gestione completa degli spostamenti di programma. Prima di abilitare schedulazioni serviranno policy di accesso verificate, monitoraggio delle frequenze e collaudi live. Le fixture di test sono sintesi redatte autonomamente, non copie della pagina.
+
+## Importazioni multiple in una sola esecuzione (Fase 2)
+Il modulo `opera_atlas.batch` introduce una pipeline limitata a 20 pagine di dettaglio, con mapping opera/compositore/produzione/venue/sorgente già verificati dall'operatore. Il manifesto segue il formato di `tests/fixtures/regio-manifest.json` (esempio *sintetico*: gli ID non sono dati pre-caricati e i timestamp delle fixture non sono dati di catalogo).
+
+```sh
+python -m unittest discover -s tests -v
+python -m opera_atlas.batch_cli --db atlas.sqlite3 --manifest path/to/verified-productions.json --allow-network
+# Dopo esame degli esiti, usare --apply soltanto su un database già popolato e verificato.
+```
+
+**Garanzie:** controllo di tutti gli ID e delle fonti approvate prima della prima richiesta; nessuna auto-discovery; una pagina per voce e nessun retry; validazione HTTPS e della path della stagione; rollback per singola pagina in caso di errore di import, con log `import_error`; report riepilogativo complessivo. Lo script non automatizza approvazioni, non esegue scansioni periodiche e per impostazione predefinita annulla la transazione. Una pagina senza date esplicite restituisce zero recite: il caso va verificato manualmente, non convertito in un calendario presunto.
+
+### Collaudi del batch
+1. Preparare un database con opere, produzioni, sedi e fonti approvate, usando ID reali e verificati.
+2. Eseguire un manifesto di più pagine con `--allow-network` (senza `--apply`), previa conferma di policy e robots.
+3. Controllare risultati aggregati e righe `source_checks` soltanto dopo importazione con `--apply`.
+4. Ripetere lo stesso batch e confermare che il numero delle recite non aumenta.
+5. Simulare errore di mapping su una sola produzione e verificare che le altre siano importate integralmente e l'errore sia isolato.
+6. Confermare che un manifesto con ID sconosciuti o fonte non approvata sia rifiutato prima di qualsiasi HTTP.
+
+**Limite esplicito:** il batch è un passo operativo, non ancora un crawler automatico per scoprire autonomamente opere e date dalle stagioni. Il sito deve permettere fetch nel contesto di esecuzione e il parser deve essere collaudato con HTML reale prima dell'uso in produzione.
