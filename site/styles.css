@@ -207,3 +207,33 @@
 /* Brief editorial introductions in visual catalogs. */
 .directory-card .directory-description{font-size:13px;line-height:1.55;color:#48443e;padding:10px 17px 4px;margin:0;flex:1;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 @media(max-width:700px){.directory-card .directory-description{padding:8px 11px 3px;font-size:12px;-webkit-line-clamp:4}}
+
+/* A production's dates are little calendar leaves, not a list of date/time strings. */
+.mini-calendar-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,94px));gap:11px;margin:16px 0}
+.mini-calendar{appearance:none;padding:0;display:flex;flex-direction:column;background:#fff;border:1px solid #d8d0bf;border-radius:10px;overflow:hidden;align-items:stretch;min-height:103px;color:#191919;transition:border-color .15s,box-shadow .15s}
+.mini-calendar-month{display:block;padding:6px;background:#f2ede3;font-size:10px;letter-spacing:.07em;text-align:center;font-weight:700}
+.mini-calendar-day{display:block;padding:4px 4px 0;font:600 30px/1.25 Georgia,serif;text-align:center}
+.mini-calendar-weekday{display:block;text-align:center;font-size:11px;color:#56524c;padding:0 0 8px;text-transform:capitalize}
+.mini-calendar:hover,.mini-calendar:focus-visible{border-color:#a9812a;box-shadow:0 2px 12px #11111112}
+.mini-calendar.is-selected{border:2px solid #b18a32;box-shadow:0 2px 12px #8e71261c}
+.mini-calendar.is-selected .mini-calendar-month{background:#a98535;color:#fff;padding:5px}
+.selected-replica{border-radius:12px;background:#f5f1e9;padding:16px 19px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;margin:12px 0 16px}
+.selected-replica-date{font-weight:700;color:#191919}
+.selected-replica-time{font-size:14px}
+.selected-replica-venue{color:#605d56;font-size:13px}
+.staging-group{border:1px solid var(--line);background:#fff;border-radius:13px;padding:20px;margin-bottom:18px}
+.staging-group h3{font:500 24px/1.25 Georgia,serif;margin:0 0 5px}
+.staging-group h3 a{color:#171717;text-decoration:none}
+.staging-group h3 a:hover{text-decoration:underline}
+.staging-composer{color:#5e5d5b;font-size:13px;margin:0 0 10px}
+.theatre-production h3{font-size:27px;line-height:1.22;letter-spacing:-.02em}
+.date-picker-section{margin-top:8px}
+@media(max-width:700px){
+  .mini-calendar-list{grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:8px}
+  .mini-calendar{min-height:90px}
+  .mini-calendar-day{font-size:26px}
+  .staging-group{padding:15px}
+  .staging-group h3{font-size:22px}
+  .theatre-production h3{font-size:23px}
+  .selected-replica{padding:12px;gap:6px 14px;flex-direction:column}
+}
