@@ -183,3 +183,9 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [x] Workflow separato `source-probe.yml` per verificare robots.txt e corrispondenza esatta date/ore del catalogo con i siti Scala/Arena.
 - [x] Nessun write al catalogo o promozione automatica delle fonti in caso di errore.
 - [ ] Seguire l'esecuzione live dopo merge, risolvere eventuali cambi HTML/parser e attivare le fonti solo a esito documentato.
+
+### F2 — esiti primo probe live e attivazione selettiva
+- [x] Arena Nabucco: confronto live completo 6/6 e controllo robots effettuati su GitHub Actions run 44809106408.
+- [x] Nabucco promosso a monitoraggio giornaliero con verifica robots a ogni esecuzione.
+- [x] Scala: rimosso l'assunto fragile su intestazione/sponsor che impediva la lettura live.
+- [ ] Ripetere probe Scala Don Giovanni/La bohème su HTML ufficiale; promuovere solo le fonti che restituiscono 100% delle recite previste, senza dati inventati.
