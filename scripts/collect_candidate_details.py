@@ -73,7 +73,7 @@ def parse_event_facts(html:str)->list[dict]:
         try:loaded=json.loads(script)
         except (ValueError,TypeError):continue
         for event in _nodes(loaded):
-            if not any(t in ("Event","MusicEvent","TheaterEvent") or t.endswith("/Event")
+            if not any(t.split("/")[-1] in ("Event","MusicEvent","TheaterEvent")
                        for t in _types(event) if isinstance(t,str)):
                 continue
             start=_event_day(event.get("startDate"))
