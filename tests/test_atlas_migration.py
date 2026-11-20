@@ -44,22 +44,40 @@ class AtlasMigrationTests(unittest.TestCase):
             self.assertNotIn("/dev/opera-atlas",html)
             self.assertIn("RewriteBase /atlas/",(folder/".htaccess").read_text())
 
-    def test_settings_cannot_deploy_to_account_root_or_wrong_host(self):
-        base={"ATLAS_SFTP_HOST":"sftp.example",
-              "ATLAS_SFTP_USERNAME":"atlas",
-              "ATLAS_SFTP_KNOWN_HOSTS":"sftp.example ssh-ed25519 AAAATEST",
-              "ATLAS_SFTP_PASSWORD":"test"}
-        for target in ("/","/atlas","/var/www","/var/www/other","relative/atlas"):
+    def test_settings_require_secure_ftps_credentials_and_isolated_atlas_path(self):
+        base={"ATLAS_FTPS_HOST":"ftp.example.org",
+              "ATLAS_FTPS_USERNAME":"atlas",
+              "ATLAS_FTPS_PASSWORD":"test"}
+        for target in ("/","/var/www","/var/www/other","relative/atlas"):
             with self.subTest(target=target):
                 with self.assertRaises(ValueError):
-                    settings({**base,"ATLAS_SFTP_REMOTE_DIR":target})
-        config=settings({**base,"ATLAS_SFTP_REMOTE_DIR":"/var/www/atlas"})
+                    settings({**base,"ATLAS_FTPS_REMOTE_DIR":target})
+        config=settings({**base,"ATLAS_FTPS_REMOTE_DIR":"/atlas"})
+        self.assertEqual(config["target"],"/atlas")
+        self.assertEqual(config["port"],21)
+        config=settings({**base,"ATLAS_FTPS_REMOTE_DIR":"/var/www/atlas"})
         self.assertEqual(config["target"],"/var/www/atlas")
         with self.assertRaises(ValueError):
-            settings({**base,"ATLAS_SFTP_REMOTE_DIR":"/var/www/atlas",
-                      "ATLAS_SFTP_PRIVATE_KEY":"also supplied"})
+            settings({**base,"ATLAS_FTPS_HOST":"ftp://ftp.example.org",
+                      "ATLAS_FTPS_REMOTE_DIR":"/atlas"})
+        with self.assertRaises(ValueError):
+            settings({k:v for k,v in {**base,"ATLAS_FTPS_REMOTE_DIR":"/atlas"}.items()
+                      if k!="ATLAS_FTPS_PASSWORD"})
 
-    def test_json_only_catalog_refresh_never_triggers_sftp(self):
+    def test_explicit_tls_is_mandatory_and_plain_ftp_is_not_supported(self):
+        script=(ROOT/"scripts/deploy_atlas.py").read_text(encoding="utf-8")
+        self.assertIn("FTP_TLS(context=context",script)
+        self.assertIn("ssl.create_default_context()",script)
+        self.assertIn("context.minimum_version = ssl.TLSVersion.TLSv1_2",script)
+        self.assertIn("ftp.auth()",script)
+        self.assertIn("ftp.prot_p()",script)
+        self.assertNotIn("paramiko",script)
+        self.assertNotIn("FTP()",script)
+        workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
+        self.assertIn("ATLAS_FTPS_PASSWORD",workflow)
+        self.assertNotIn("ATLAS_SFTP_KNOWN_HOSTS",workflow)
+
+    def test_json_only_catalog_refresh_never_triggers_ftps(self):
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
         self.assertIn("'site/*.js'",workflow)
         self.assertIn("'site/*.html'",workflow)
