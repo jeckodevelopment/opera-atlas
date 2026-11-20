@@ -4,9 +4,10 @@
    Render via DOM text nodes, not innerHTML; never invent missing times. */
 /* Data are loaded from the canonical GitHub feed, not the SFTP copy. */
 const PAGE_SIZE = 12;
-let viewMode = "date";
+let viewMode = "staging";
 const controls = {
   query: document.getElementById("search"),
+  location: document.getElementById("location"),
   city: document.getElementById("city"),
   region: document.getElementById("region"),
   from: document.getElementById("from"),
@@ -53,6 +54,7 @@ function normalized(value) {
 function matches(event) {
   const phrase = normalized(controls.query.value);
   if (phrase && !normalized([event.title, event.composer, event.venue, event.municipality, event.region].join(" ")).includes(phrase)) return false;
+  if (normalized(controls.location.value) && !normalized(event.municipality).includes(normalized(controls.location.value))) return false;
   if (controls.city.value && event.municipality !== controls.city.value) return false;
   if (controls.region.value && (event.region || "") !== controls.region.value) return false;
   if (controls.from.value && event.local_date < controls.from.value) return false;
@@ -170,6 +172,37 @@ function groupByStaging(events) {
   return [...groups.values()];
 }
 
+function renderDiscoveries() {
+  const works = new Map(), venues = new Map();
+  for (const event of catalog) {
+    const urls = window.OperaAtlasCatalog.urls(event);
+    if (!works.has(urls.work)) works.set(urls.work, event.title);
+    if (!venues.has(urls.venue)) venues.set(urls.venue, event.venue+" · "+event.municipality);
+  }
+  for (const [id, items] of [["discover-works",works],["discover-venues",venues]]) {
+    const target = document.getElementById(id);
+    if (!target) continue;
+    target.replaceChildren();
+    for (const [href, label] of [...items].sort((a,b)=>a[1].localeCompare(b[1],"it")).slice(0,12)) {
+      const a = node("a","discovery-link",label);
+      a.href = href;
+      target.append(a);
+    }
+    if (!items.size) target.append(node("p",null,"Nessun contenuto verificato disponibile."));
+  }
+}
+function todayInItaly() {
+  const parts = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+  const part = key => parts.find(p=>p.type===key).value;
+  return part("year")+"-"+part("month")+"-"+part("day");
+}
+function defaultPeriod() {
+  const today = todayInItaly();
+  const end = new Date(today+"T12:00:00Z");
+  end.setUTCDate(end.getUTCDate()+29);
+  controls.from.value = today;
+  controls.to.value = end.toISOString().slice(0,10);
+}
 function render() {
   const filtered = catalog.filter(matches);
   const entries = viewMode === "staging" ? groupByStaging(filtered) : filtered;
@@ -217,6 +250,7 @@ async function initialize() {
     document.getElementById("metric-unknown").textContent =
       String(catalog.filter(x=>!x.time_known).length);
     fillOptions(controls.city,catalog.map(x=>x.municipality));
+    renderDiscoveries();
     fillOptions(controls.region,catalog.map(x=>x.region));
     render();
   } catch {
@@ -241,8 +275,11 @@ document.querySelectorAll("[data-catalog-view]").forEach(button=>{
 Object.values(controls).forEach(control=>control.addEventListener("input",()=>{page=0;render();}));
 document.getElementById("reset").addEventListener("click",()=>{
   Object.values(controls).forEach(control=>control.value="");
+  controls.location.value="Torino";
+  defaultPeriod();
   page=0;render();controls.query.focus();
 });
 prev.addEventListener("click",()=>{page--;render();});
 next.addEventListener("click",()=>{page++;render();});
+defaultPeriod();
 initialize();
