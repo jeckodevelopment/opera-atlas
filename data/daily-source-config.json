@@ -21,6 +21,26 @@
       "composer": "Gioachino Rossini",
       "access_status": "approved",
       "approval_evidence": "Operator authorization 2026-11-20 for conditional robots-gated retrieval of factual event dates; robots availability and permit NOT verified at authorization time. Must check fresh at runtime and deny on uncertainty."
+    },
+    {
+      "key": "regio-edgar-2027",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "Edgar",
+      "composer": "Giacomo Puccini",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, conditional robots-gated official factual recite retrieval. Individual page robots NOT verified at onboarding; same Regio host was successfully scanned in Actions run 44785598242. Must recheck robots permission at runtime for every page request."
+    },
+    {
+      "key": "regio-salome-2027",
+      "adapter": "regio",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "title": "Salome",
+      "composer": "Richard Strauss",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20, conditional robots-gated official factual recite retrieval. Individual page robots NOT verified at onboarding; same Regio host was successfully scanned in Actions run 44785598242. Must recheck robots permission at runtime for every page request."
     }
   ]
 }
