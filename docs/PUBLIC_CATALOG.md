@@ -147,3 +147,13 @@ La pagina del circuito non espone l'ora delle singole rappresentazioni: le nuove
 
 ## Controllo continuo dell'indice OperaLombardia
 Un'unica scansione quotidiana del calendario ufficiale OperaLombardia controlla titoli, città, teatri e giorni (dopo robots.txt). Il parser suddivide Cavalleria e Pagliacci come due opere, senza indovinare orari. Gli ID restano invariati, e gli orari presenti su pagine partner non sono sovrascritti da un indice privo di ore. Eventi nuovi non riconosciuti, rimozioni, cambi formato o rinvii non causano aggiornamenti parziali: gli esiti e le anomalie sono registrati in `data/catalog-source-health.json`. Nessun nuovo deploy SFTP necessario.
+
+## Esperienza visitatore e coproduzioni condivise (20/11/2026)
+
+La UI usa di default la ricerca Torino/100 km/30 giorni e produce un elenco per produzione, vista calendario mensile e mappa schematica delle città. I chilometri sono distanze indicative fra centri città. L'utente può rifiutare la geolocalizzazione e scegliere manualmente una località. Opere, Teatri e Festival hanno directory e collegamenti propri.
+
+Per evitare che una produzione condivisa su più teatri venga duplicata, il file pubblico `public/catalog/v2/production-groups.json` conserva un **ID di produzione condivisa** e gli ID delle messe in scena territoriali. Il client verifica che tutte le messe in scena dello stesso gruppo si riferiscano alla medesima opera, che gli ID siano noti e che non vi siano assegnazioni multiple. Nel catalogo si visualizza una sola scheda condivisa; la pagina `/produzioni/<id>/` aggrega le rappresentazioni per teatro, preservando i link specifici a ogni sede. Un errore di caricamento delle relazioni è segnalato e non inventa gruppi.
+
+L'indice indipendente `public/catalog/v2/festival-index.json` collega esclusivamente festival e ID di staging verificati, mostrando in homepage solo quelli con date future. Le fonti monitorate senza programmazione verificata non sono annunciate come festival in arrivo. I due indici possono essere aggiornati nel repository `opera-atlas` senza deploy SFTP, mentre l'interfaccia richiede una pubblicazione isolata tramite `jeckodevsite`.
+
+Collaudi aggiuntivi: `python -m unittest discover -s tests -v`, sintassi JS, ricerca per raggio, opt-in geolocalizzazione, gruppi condivisi nella homepage e pagina gruppo, calendario, mappa, link delle singole sedi, festival senza date e modalità mobile. Il logo ufficiale binario e il collaudo visuale restano attività non eseguite in questo intervento.
