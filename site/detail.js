@@ -84,6 +84,12 @@ async function appendTheatreProfile(event){
     if(!profile)return null;
     const section=node("section","theatre-introduction");
     section.append(node("p","theatre-description",profile.description));
+    if(typeof profile.history==="string" && profile.history.trim()){
+      const history=node("section","theatre-history");
+      history.append(node("h2",null,"La storia del teatro"),
+        node("p","theatre-history-text",profile.history));
+      section.append(history);
+    }
     const place=node("div","theatre-location");
     place.append(node("h2",null,"Dove si trova"));
     place.append(node("p",null,profile.address+" · "+event.municipality));
