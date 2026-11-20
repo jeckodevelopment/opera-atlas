@@ -1,16 +1,17 @@
-"""Independent, allowlisted Opera Atlas SFTP release with HTTPS validation and rollback.
+"""Independent Opera Atlas explicit-FTPS TLS release with HTTPS verification and rollback.
 
-SFTP remote directory points to the atlas *application* folder itself, never
-the hosting account's web root. No dependency on jeckodevsite.
+Only the application-owned /atlas directory can be changed; the main site is untouched.
+No dependency on jeckodevsite or insecure plain FTP.
 """
 from __future__ import annotations
 import hashlib
 import io
+from ftplib import FTP_TLS, error_perm
+import ssl
 import json
 import os
 import posixpath
 import re
-import stat
 import tempfile
 import time
 import uuid
@@ -73,67 +74,68 @@ def build(destination: Path) -> None:
 
 def settings(env: dict | None = None) -> dict:
     env = os.environ if env is None else env
-    required = ("ATLAS_SFTP_HOST", "ATLAS_SFTP_USERNAME",
-                "ATLAS_SFTP_REMOTE_DIR", "ATLAS_SFTP_KNOWN_HOSTS")
+    required = ("ATLAS_FTPS_HOST", "ATLAS_FTPS_USERNAME",
+                "ATLAS_FTPS_REMOTE_DIR", "ATLAS_FTPS_PASSWORD")
     missing = [key for key in required if not env.get(key, "").strip()]
     if missing:
-        raise ValueError("Missing deployment configuration: " + ", ".join(missing))
-    password = env.get("ATLAS_SFTP_PASSWORD", "")
-    private = env.get("ATLAS_SFTP_PRIVATE_KEY", "")
-    if bool(password) == bool(private):
-        raise ValueError("Exactly one of ATLAS_SFTP_PASSWORD or ATLAS_SFTP_PRIVATE_KEY is required")
-    target = posixpath.normpath(env["ATLAS_SFTP_REMOTE_DIR"])
-    if not target.startswith("/") or target in ("/", "/atlas") or not target.endswith("/atlas"):
-        raise ValueError("ATLAS_SFTP_REMOTE_DIR must be the absolute account path ending in /atlas, not the document root")
-    port = int(env.get("ATLAS_SFTP_PORT") or "22")
-    if not 1 <= port <= 65535:raise ValueError("Invalid ATLAS_SFTP_PORT")
-    return {"host":env["ATLAS_SFTP_HOST"],"username":env["ATLAS_SFTP_USERNAME"],
-            "known_hosts":env["ATLAS_SFTP_KNOWN_HOSTS"],"password":password,
-            "private_key":private,"passphrase":env.get("ATLAS_SFTP_KEY_PASSPHRASE",""),
-            "port":port,"target":target}
+        raise ValueError("Missing FTPS deployment configuration: " + ", ".join(missing))
+    host = env["ATLAS_FTPS_HOST"].strip()
+    if "://" in host or "/" in host or "@" in host or not host:
+        raise ValueError("ATLAS_FTPS_HOST must be a bare host name")
+    target = posixpath.normpath(env["ATLAS_FTPS_REMOTE_DIR"].strip())
+    if not target.startswith("/") or target == "/" or not target.endswith("/atlas"):
+        raise ValueError("ATLAS_FTPS_REMOTE_DIR must be an absolute folder ending in /atlas")
+    # FTP servers often chroot users into their account's webroot; /atlas is valid.
+    port = int(env.get("ATLAS_FTPS_PORT") or "21")
+    if not 1 <= port <= 65535:
+        raise ValueError("Invalid ATLAS_FTPS_PORT")
+    return {"host": host, "username": env["ATLAS_FTPS_USERNAME"].strip(),
+            "password": env["ATLAS_FTPS_PASSWORD"], "port": port, "target": target}
 
 
 def connect(config):
-    import paramiko
-    client = paramiko.SSHClient()
-    entries = 0
-    for line in config["known_hosts"].splitlines():
-        if not line.strip() or line.lstrip().startswith("#"):continue
-        entry = paramiko.hostkeys.HostKeyEntry.from_line(line)
-        if not entry:raise ValueError("Invalid pinned host key")
-        for host in entry.hostnames:
-            client.get_host_keys().add(host,entry.key.get_name(),entry.key)
-            entries += 1
-    if not entries:raise ValueError("No pinned SFTP host key")
-    client.set_missing_host_key_policy(paramiko.RejectPolicy())
-    key = None
-    if config["private_key"]:
-        for key_cls in (paramiko.Ed25519Key,paramiko.RSAKey,paramiko.ECDSAKey):
-            try:
-                key = key_cls.from_private_key(io.StringIO(config["private_key"]),
-                                               password=config["passphrase"] or None)
-                break
-            except (ValueError,paramiko.SSHException):
-                continue
-        if key is None:raise ValueError("Unsupported SFTP private key")
-    client.connect(config["host"],port=config["port"],
-                   username=config["username"],password=config["password"] or None,
-                   pkey=key,allow_agent=False,look_for_keys=False,timeout=25,
-                   banner_timeout=25,auth_timeout=25)
-    return client
+    """Require AUTH TLS, verified server certificate, and encrypted data channel."""
+    context = ssl.create_default_context()
+    context.minimum_version = ssl.TLSVersion.TLSv1_2
+    ftp = FTP_TLS(context=context, timeout=30, encoding="utf-8")
+    ftp.connect(config["host"], config["port"], timeout=30)
+    try:
+        ftp.auth()       # Explicit TLS *before* sending credentials.
+        ftp.login(config["username"], config["password"])
+        ftp.prot_p()     # TLS also for all file and directory data transfers.
+        ftp.set_pasv(True)
+        return ftp
+    except BaseException:
+        ftp.close()
+        raise
 
 
-def exists(sftp, filename: str) -> bool:
-    try:sftp.lstat(filename);return True
-    except FileNotFoundError:return False
+def is_dir(ftp, directory: str) -> bool:
+    previous = ftp.pwd()
+    try:
+        ftp.cwd(directory)
+        return True
+    except error_perm as error:
+        if not str(error).startswith(("550", "553")):
+            raise
+        return False
+    finally:
+        ftp.cwd(previous)
 
 
-def clean(sftp, directory: str) -> None:
-    for entry in sftp.listdir_attr(directory):
-        path = posixpath.join(directory,entry.filename)
-        if stat.S_ISDIR(entry.st_mode):clean(sftp,path)
-        else:sftp.remove(path)
-    sftp.rmdir(directory)
+def delete_owned_files(ftp, directory: str) -> None:
+    """Remove only allowlisted top-level application files in a known snapshot."""
+    if not is_dir(ftp, directory):
+        return
+    # Do not remove arbitrary user uploads or subdirectories inside /atlas.
+    for name in sorted(FILES):
+        try:
+            ftp.delete(posixpath.join(directory, name))
+        except error_perm as error:
+            if not str(error).startswith(("550", "553")):
+                raise
+    # If unknown files remain, RMD fails rather than deleting them.
+    ftp.rmd(directory)
 
 
 def verify_live(folder: Path) -> None:
@@ -160,49 +162,60 @@ def verify_live(folder: Path) -> None:
             time.sleep(3)
 
 
-def publish(sftp,folder:Path,target:str,verifier=verify_live) -> None:
-    parent=posixpath.dirname(target)
-    if not stat.S_ISDIR(sftp.stat(parent).st_mode):
-        raise ValueError("Atlas parent directory unavailable")
-    # Never touch files outside the configured /atlas folder or own stage/backup.
-    token=uuid.uuid4().hex[:16]
-    stage=posixpath.join(parent,".atlas-stage-"+token)
-    backup=posixpath.join(parent,".atlas-backup-"+token)
-    failed=posixpath.join(parent,".atlas-failed-"+token)
-    deployed=False
-    backed_up=False
-    sftp.mkdir(stage)
+def publish(ftp, folder: Path, target: str, verifier=verify_live) -> None:
+    parent = posixpath.dirname(target)
+    if not is_dir(ftp, parent):
+        raise ValueError("FTPS parent directory unavailable: verify document root")
+    token = uuid.uuid4().hex[:16]
+    stage = posixpath.join(parent, ".atlas-stage-" + token)
+    backup = posixpath.join(parent, ".atlas-backup-" + token)
+    failed = posixpath.join(parent, ".atlas-failed-" + token)
+    deployed = False
+    backed_up = False
+    ftp.mkd(stage)
     try:
-        for file in sorted(FILES):
-            sftp.put(str(folder/file),posixpath.join(stage,file))
-        for file in sorted(FILES):
-            with sftp.open(posixpath.join(stage,file),"rb") as remote:
-                if sha(remote.read())!=sha((folder/file).read_bytes()):
-                    raise RuntimeError("SFTP upload checksum mismatch: "+file)
-        if exists(sftp,target):
-            if not stat.S_ISDIR(sftp.lstat(target).st_mode):
-                raise ValueError("Target is not a directory")
-            sftp.rename(target,backup)
-            backed_up=True
+        for name in sorted(FILES):
+            with (folder / name).open("rb") as source:
+                ftp.storbinary("STOR " + posixpath.join(stage, name), source)
+        for name in sorted(FILES):
+            chunks = []
+            ftp.retrbinary("RETR " + posixpath.join(stage, name), chunks.append)
+            if sha(b"".join(chunks)) != sha((folder / name).read_bytes()):
+                raise RuntimeError("FTPS uploaded file digest mismatch: " + name)
+        if is_dir(ftp, target):
+            # Never switch an existing directory that includes unknown files.
+            # The first migration requires a clean /atlas directory.
+            unexpected = []
+            for entry in ftp.nlst(target):
+                basename = posixpath.basename(entry.rstrip("/"))
+                if basename and basename not in FILES:
+                    unexpected.append(basename)
+            if unexpected:
+                raise ValueError("Atlas target contains unmanaged files; refusing deploy: " +
+                                 ", ".join(sorted(unexpected)))
+            ftp.rename(target, backup)
+            backed_up = True
         try:
-            sftp.rename(stage,target)
-            deployed=True
+            ftp.rename(stage, target)
+            deployed = True
             verifier(folder)
-        except Exception:
+        except BaseException:
             if deployed:
-                sftp.rename(target,failed)
+                ftp.rename(target, failed)
             if backed_up:
-                sftp.rename(backup,target)
-                backed_up=False
+                ftp.rename(backup, target)
+                backed_up = False
             raise
         if backed_up:
-            clean(sftp,backup)
-            backed_up=False
+            delete_owned_files(ftp, backup)
+            backed_up = False
     finally:
-        # On rollback, retain only a failed snapshot if it could not be cleaned
-        # without touching another path. The prior valid website is restored.
-        if exists(sftp,stage):clean(sftp,stage)
-        if exists(sftp,failed):clean(sftp,failed)
+        # Never mask a deployment error with an ancillary cleanup failure.
+        # Never clean directories not owned by this invocation.
+        if is_dir(ftp, stage):
+            delete_owned_files(ftp, stage)
+        if is_dir(ftp, failed):
+            delete_owned_files(ftp, failed)
 
 
 def main():
@@ -210,12 +223,14 @@ def main():
     with tempfile.TemporaryDirectory(prefix="atlas-release-") as temp:
         folder=Path(temp)
         build(folder)  # fail before connecting for missing assets or invalid URLs
-        client=connect(config)
+        ftp=connect(config)
         try:
-            with client.open_sftp() as sftp:
-                publish(sftp,folder,config["target"])
+            publish(ftp,folder,config["target"])
         finally:
-            client.close()
+            try:
+                ftp.quit()
+            except Exception:
+                ftp.close()
     print("Published and verified "+PUBLIC_URL)
 
 
