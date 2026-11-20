@@ -47,6 +47,30 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "fedora":"Ida Aalberg i titelrollen i operan Fedora av Umberto Giordano - 1900 SLSA 1270 34 foto 29.jpg",
     "death-in-venice":"-13.2- Thomas Mann Atlas Haack.jpg"
   };
+  // Published by the catalog workflow, not by an FTPS site rebuild.
+  // A static site update is needed once to enable this feed; subsequent
+  // newly catalogued operas automatically gain an image reference.
+  const POSTER_FEED="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/work-posters.json";
+  let posters={};
+  let pending=null;
+  function load(){
+    if(pending)return pending;
+    pending=(async()=>{
+      try{
+        const response=await fetch(POSTER_FEED,{cache:"no-store"});
+        if(!response.ok)throw new Error("poster registry unavailable");
+        const body=await response.json();
+        if(body.schema_version!==1 || !body.works || Array.isArray(body.works))
+          throw new Error("invalid poster registry");
+        posters=body.works;
+      }catch(error){
+        // The original generated cover remains available even when the
+        // feed or a third-party image provider is inaccessible.
+        console.warn("Atlas poster registry unavailable",error);
+      }
+    })();
+    return pending;
+  }
   const normalize=value=>String(value||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
     .replace(/^l['’]/i,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
   const commune=value=>String(value||"").toLowerCase().trim();
@@ -94,9 +118,17 @@ window.OperaAtlasImages=Object.freeze((()=>{
   function work(event){
     const title=event?.title||"Opera";
     const slug=event?.work_slug||normalize(title);
+    const chosen=posters[slug];
+    if(chosen && chosen.kind==="official_production_image" &&
+       typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
+      return {src:chosen.image_url,
+        alt:chosen.alt||"Immagine ufficiale della produzione di "+title,
+        fallbackSrc:poster(title),
+        sourceUrl:chosen.source_url,credit:chosen.credit};
+    }
     const file=WORKS[slug];
     return file?photo(file,"Documento d’archivio legato a "+title+" (non allestimento in calendario)",title):
-      {src:poster(title),alt:"Illustrazione editoriale originale per "+title};
+      {src:poster(title),alt:"Copertina editoriale originale per "+title};
   }
   function venue(event){
     const city=commune(event?.municipality||event?.city);
@@ -131,5 +163,5 @@ window.OperaAtlasImages=Object.freeze((()=>{
     hero.addEventListener("error",()=>{hero.src=poster("Il teatro d'opera");},{once:true});
   }
   bindHero();
-  return {work,venue,festival,element,poster,FILES,WORKS};
+  return {work,venue,festival,element,poster,load,FILES,WORKS};
 })());

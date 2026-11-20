@@ -77,6 +77,8 @@ function render(){
 async function initialize(){
   try {
     const data=await window.OperaAtlasCatalog.load();
+    await window.OperaAtlasImages?.load?.();
+
     await loadEditorial();
     if(section==="festival"){
       const records=await window.OperaAtlasFestivals.load();
