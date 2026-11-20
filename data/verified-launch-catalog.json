@@ -564,6 +564,232 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "scala-otello-2026",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+      "dates": [
+        [
+          "2026-12-07",
+          "18:00"
+        ],
+        [
+          "2026-12-10",
+          "20:00"
+        ],
+        [
+          "2026-12-13",
+          "20:00"
+        ],
+        [
+          "2026-12-16",
+          "20:00"
+        ],
+        [
+          "2026-12-19",
+          "20:00"
+        ],
+        [
+          "2026-12-22",
+          "20:00"
+        ],
+        [
+          "2026-12-29",
+          "20:00"
+        ],
+        [
+          "2027-01-02",
+          "20:00"
+        ],
+        [
+          "2027-01-05",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "arena-aida-de-bosio-2027",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena di Verona",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+      "dates": [
+        [
+          "2027-06-12",
+          "21:30"
+        ],
+        [
+          "2027-06-19",
+          "21:15"
+        ],
+        [
+          "2027-06-24",
+          "21:15"
+        ],
+        [
+          "2027-07-04",
+          "21:15"
+        ],
+        [
+          "2027-07-11",
+          "21:15"
+        ],
+        [
+          "2027-07-18",
+          "21:15"
+        ],
+        [
+          "2027-07-23",
+          "21:15"
+        ],
+        [
+          "2027-08-01",
+          "21:00"
+        ],
+        [
+          "2027-08-07",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "fenice-fedora-2026",
+      "title": "Fedora",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/",
+      "dates": [
+        [
+          "2026-11-14",
+          "15:30"
+        ],
+        [
+          "2026-11-15",
+          "15:30"
+        ],
+        [
+          "2026-11-17",
+          "19:00"
+        ],
+        [
+          "2026-11-18",
+          "19:00"
+        ],
+        [
+          "2026-11-19",
+          "19:00"
+        ],
+        [
+          "2026-11-20",
+          "19:00"
+        ],
+        [
+          "2026-11-22",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "massimo-samson-dalila-2026",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/",
+      "dates": [
+        [
+          "2026-11-22",
+          "18:00"
+        ],
+        [
+          "2026-11-25",
+          "19:00"
+        ],
+        [
+          "2026-11-26",
+          "18:30"
+        ],
+        [
+          "2026-11-27",
+          "19:00"
+        ],
+        [
+          "2026-11-28",
+          "20:00"
+        ],
+        [
+          "2026-11-29",
+          "17:30"
+        ]
+      ]
+    },
+    {
+      "key": "massimo-macbeth-2027",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/",
+      "dates": [
+        [
+          "2027-02-05",
+          "19:00"
+        ],
+        [
+          "2027-02-07",
+          "17:30"
+        ],
+        [
+          "2027-02-09",
+          "19:00"
+        ],
+        [
+          "2027-02-11",
+          "19:00"
+        ],
+        [
+          "2027-02-13",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "parma-madama-butterfly-2027",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/",
+      "dates": [
+        [
+          "2027-04-16",
+          "20:00"
+        ],
+        [
+          "2027-04-18",
+          "15:30"
+        ],
+        [
+          "2027-04-22",
+          "20:00"
+        ],
+        [
+          "2027-04-24",
+          "17:00"
+        ]
+      ]
     }
   ]
 }
