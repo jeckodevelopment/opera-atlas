@@ -60,6 +60,27 @@ def _insert(out,day,hour):
         raise ValueError("conflicting official showtime for one day")
     out[day]=hour
 
+def explicit_cancelled_dates(text:str)->set[str]:
+    """Read explicit Italian cancellation notices without inferring a date.
+
+    Unknown or ambiguous notice dates invalidate the page; an official
+    cancellation must never be silently published as an active performance.
+    """
+    cue=re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie]|sospes[oaie])\b|non\s+(?:avrà|avra)\s+luogo|non\s+si\s+terrà")
+    day_rx=re.compile(r"(?i)\b(\d{1,2})\s+("+MONTH_RE+r")\s+(20\d{2})\b")
+    cancelled=set()
+    for match in cue.finditer(text):
+        before=re.split(r"[.;!?]",text[max(0,match.start()-160):match.start()])[-1]
+        after=re.split(r"[.;!?]",text[match.end():match.end()+160])[0]
+        candidates=list(day_rx.finditer(before))
+        if not candidates:
+            candidates=list(day_rx.finditer(after))
+        if len(candidates)!=1:
+            raise ValueError("ambiguous official cancellation date")
+        found=candidates[0]
+        cancelled.add(_date(found[1],found[2],found[3]))
+    return cancelled
+
 def parse_national_showtimes(html: str, *, source_key:str,url:str,
                             title:str,composer:str)->list[tuple[str,str]]:
     expected=HOSTS.get(source_key)
@@ -82,10 +103,13 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
         segment=segment.split("Seleziona una data",1)[1]
         rx=re.compile(r"(?i)\b"+WEEKDAY+r"\s+(\d{1,2})\s+("+MONTH_RE+
                       r")\s+(20\d{2})\s+"+CLOCK+r"\b")
+        cancelled=explicit_cancelled_dates(text)
         for m in rx.finditer(segment):
+            day=_date(m[1],m[2],m[3])
             trailing=segment[m.end():m.end()+50]
-            if CANCELLED.search(trailing):raise ValueError("cancelled date in ticket calendar")
-            _insert(dates,_date(m[1],m[2],m[3]),f"{int(m[4]):02d}:{m[5]}")
+            if day in cancelled or CANCELLED.search(trailing):
+                continue
+            _insert(dates,day,f"{int(m[4]):02d}:{m[5]}")
     elif source_key=="parma-opera-2027":
         # The page includes a dated header and detailed day/time cards.
         # A full date in the header independently establishes the year.
@@ -111,20 +135,37 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
             if REHEARSAL.search(following[:100]):continue
             _insert(dates,_date(m[1],m[2],year),f"{int(m[3]):02d}:{m[4]}")
     else:
-        # Palermo's date cards omit the year; the same official page gives
-        # a year-stamped summary of exactly those days in the show description.
-        description=re.search(r"(?i)\b(\d{1,2}(?:\s*,\s*\d{1,2})+)\s+("+
-                              MONTH_RE+r")\s+(20\d{2})\s*\|",text)
-        if not description:raise ValueError("dated Palermo summary missing")
-        days={int(d) for d in re.findall(r"\d{1,2}",description[1])}
-        month,year=description[2],description[3]
+        # Ticket cards omit the year. The official description supplies
+        # full dates, sometimes crossing two months (e.g. Ernani: October
+        # and November 2027); all cards must match the dated summary.
+        summary=re.search(
+            r"(?i)\bLo spettacolo\b\s*"
+            r"(?P<calendar>(?:\d{1,2}(?:\s*,\s*\d{1,2})*\s+"+
+            MONTH_RE+r"\s*,?\s*){1,3})"
+            r"(?P<year>20\d{2})\s*\|",text)
+        if not summary:raise ValueError("dated Palermo summary missing")
+        year=summary["year"]
+        groups=list(re.finditer(r"(?i)(\d{1,2}(?:\s*,\s*\d{1,2})*)\s+("+
+                                MONTH_RE+r")",summary["calendar"]))
+        if not groups or len(groups)>3:
+            raise ValueError("ambiguous Palermo summary")
+        months=[MONTHS[group[2].casefold()] for group in groups]
+        if months!=sorted(months):
+            # December-to-January needs an independently stated year per
+            # month; do not assume both months belong to the same year.
+            raise ValueError("Palermo summary crosses a year boundary")
+        expected=set()
+        for group in groups:
+            for day in re.findall(r"\d{1,2}",group[1]):
+                expected.add(_date(day,group[2],year))
         segment=re.split(r"(?i)\bLo spettacolo\b",text,maxsplit=1)[0]
         rx=re.compile(r"(?i)\b(\d{1,2})\s+("+MONTH_RE+r")\s+"+CLOCK+r"\b")
         for m in rx.finditer(segment):
-            if int(m[1]) not in days or MONTHS[m[2].casefold()]!=MONTHS[month.casefold()]:
+            day=_date(m[1],m[2],year)
+            if day not in expected:
                 continue
-            _insert(dates,_date(m[1],m[2],year),f"{int(m[3]):02d}:{m[4]}")
-        if {int(d.split("-")[-1]) for d in dates}!=days:
+            _insert(dates,day,f"{int(m[3]):02d}:{m[4]}")
+        if set(dates)!=expected:
             raise ValueError("Palermo cards incomplete versus dated summary")
     if not dates:raise ValueError("no verified official opera recite")
     return sorted(dates.items())

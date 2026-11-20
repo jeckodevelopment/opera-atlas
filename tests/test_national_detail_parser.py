@@ -74,6 +74,67 @@ class NationalDetailsTests(unittest.TestCase):
         self.assertEqual(actual,[("2027-02-05","19:00"),("2027-02-07","17:30"),
                                  ("2027-02-09","19:00")])
 
+    def test_palermo_ernani_across_october_and_november(self):
+        html="""<h2>Date</h2>
+        <p>31 Ottobre</p><p>20:00</p><p>Turno Prime</p>
+        <p>2 Novembre</p><p>18:30</p><p>Turno Opera</p>
+        <p>3 Novembre</p><p>19:00</p><p>Turno B</p>
+        <p>4 Novembre</p><p>18:30</p><p>Turno Scuola</p>
+        <p>5 Novembre</p><p>19:00</p><p>Turno C</p>
+        <p>6 Novembre</p><p>19:00</p><p>Turno E</p>
+        <p>7 Novembre</p><p>17:30</p><p>Turno D</p>
+        <h2>Lo spettacolo</h2>
+        <p>31 ottobre, 2, 3, 4, 5, 6, 7 novembre 2027 | Sala Grande</p>
+        <h1>Ernani</h1><p>Musiche di Giuseppe Verdi</p>"""
+        actual=parse_national_showtimes(
+            html,source_key="massimo-season-2026-27",
+            url="https://www.teatromassimo.it/event/ernani-2/",
+            title="Ernani",composer="Giuseppe Verdi")
+        self.assertEqual(actual,[
+            ("2027-10-31","20:00"),("2027-11-02","18:30"),
+            ("2027-11-03","19:00"),("2027-11-04","18:30"),
+            ("2027-11-05","19:00"),("2027-11-06","19:00"),
+            ("2027-11-07","17:30")])
+
+    def test_palermo_multimonth_incomplete_cards_fail_closed(self):
+        html="""<h2>Date</h2><p>31 Ottobre</p><p>20:00</p>
+        <h2>Lo spettacolo</h2>
+        <p>31 ottobre, 2 novembre 2027 | Sala Grande</p>
+        <h1>Ernani</h1><p>Musiche di Giuseppe Verdi</p>"""
+        with self.assertRaises(ValueError):
+            parse_national_showtimes(html,
+                source_key="massimo-season-2026-27",
+                url="https://www.teatromassimo.it/event/ernani-2/",
+                title="Ernani",composer="Giuseppe Verdi")
+
+    def test_fenice_explicit_cancellation_not_published_as_active(self):
+        html="""<h1>Fedora</h1><p>Umberto Giordano</p>
+        <p>La prima recita di Fedora prevista venerdì 13 novembre 2026
+        al Teatro La Fenice non avrà luogo; le altre recite si svolgeranno regolarmente.</p>
+        <h2>Seleziona una data:</h2>
+        <a>venerdì 13 novembre 2026 19:00 ACQUISTA</a>
+        <a>sabato 14 novembre 2026 19:00 ACQUISTA</a>
+        <a>domenica 15 novembre 2026 15:30 ACQUISTA</a>
+        <h2>I prossimi eventi</h2>"""
+        actual=parse_national_showtimes(
+            html,source_key="fenice-opera-2026-27",
+            url="https://www.teatrolafenice.it/event/fedora/",
+            title="Fedora",composer="Umberto Giordano")
+        self.assertEqual(actual,[("2026-11-14","19:00"),
+                                 ("2026-11-15","15:30")])
+
+    def test_fenice_ambiguous_cancellation_blocks_page(self):
+        html="""<h1>Fedora</h1><p>Umberto Giordano</p>
+        <p>Una recita è stata annullata.</p>
+        <h2>Seleziona una data:</h2>
+        <a>sabato 14 novembre 2026 19:00 ACQUISTA</a>
+        <h2>I prossimi eventi</h2>"""
+        with self.assertRaises(ValueError):
+            parse_national_showtimes(
+                html,source_key="fenice-opera-2026-27",
+                url="https://www.teatrolafenice.it/event/fedora/",
+                title="Fedora",composer="Umberto Giordano")
+
     def test_fail_closed_on_missing_year_or_composer(self):
         with self.assertRaises(ValueError):
             parse_national_showtimes("<h1>Jenůfa</h1><p>12 Marzo 2027 19:00</p>",
