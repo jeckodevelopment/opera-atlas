@@ -138,3 +138,9 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [ ] Teatro Regio Parma, Scala, Arena, Fenice e Massimo: estendere alle altre produzioni, completare adapters e permessi robots.
 - [ ] Rossini Opera Festival: recuperare dati puntuali tramite pagine ufficiali accessibili; calendario originario con blocco 403, non aggirarlo.
 - [ ] Completare OperaLombardia per tutti i teatri coinvolti e deduplicare le tournée.
+
+### F2 — OperaLombardia: cartellone Teatro Sociale Como 2026/27
+- [x] Cinque produzioni stagionali al Sociale Como, dieci nuove repliche, in aggiunta alle due dell'Italiana già censite.
+- [x] Identità opera condivise con Pavia senza mescolare i calendari delle messe in scena delle due città; il dittico verista ha due ID opera.
+- [x] Catalogo previsto 141 recite, 19 opere, 10 sedi e 29 messinscene, 139 ore note e 2 ignote.
+- [ ] Completare altre città OperaLombardia (Brescia, Cremona e partner ulteriori) e relativi adapter autorizzati.
