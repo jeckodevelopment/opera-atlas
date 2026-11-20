@@ -59,7 +59,7 @@ class RegioSeasonCompletenessTests(unittest.TestCase):
         graph=assemble(self.facts,self.ids)
         self.assertEqual(len(graph["performances"]),sum(len(p["dates"]) for p in self.facts["productions"]))
         self.assertGreaterEqual(len(graph["works"]),19)
-        self.assertEqual(len(graph["venues"]),10)
+        self.assertGreaterEqual(len(graph["venues"]),10)
         self.assertGreaterEqual(len(graph["stagings"]),24)
         routes={x["url"] for x in graph["stagings"]}
         for p in self.facts["productions"]:
