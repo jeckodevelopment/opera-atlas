@@ -4,7 +4,7 @@ import unittest
 from datetime import date
 
 from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
-from scripts.collect_candidate_details import parse_event_facts,selected_candidates,collect,parse_known_opera_detail
+from scripts.collect_candidate_details import parse_event_facts,selected_candidates,collect,parse_known_opera_detail,parse_authoritative_new_work_detail
 from scripts.publish_catalog_v2 import REGISTRY
 
 class CandidateDetailTests(unittest.TestCase):
@@ -63,6 +63,25 @@ class CandidateDetailTests(unittest.TestCase):
         chosen=selected_candidates(candidates,today=date(2026,11,20))
         self.assertEqual(len(chosen),10)
         self.assertEqual(chosen[0]["id"],"candidate-z-macbeth")
+
+    def test_untested_new_opera_requires_authority_and_official_composer(self):
+        item={"id":"oa-index-new-anna","source_key":"scala-season-2026-27",
+              "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"}
+        intelligence={"schema_version":1,"works":[{
+            "candidate_id":item["id"],"source_key":item["source_key"],
+            "source_url":item["official_url"],"title":"Anna Bolena",
+            "composer":"Gaetano Donizetti","synopsis":
+            "La protagonista affronta intrighi di corte, rapporti difficili "
+            "e le conseguenze di decisioni che segnano il suo destino."
+        }]}
+        html="<h1>Anna Bolena Gaetano Donizetti</h1><p>2 giugno 2027 ore 20:00</p>"
+        facts=parse_authoritative_new_work_detail(item,html,intelligence)
+        self.assertEqual(facts[0]["composer"],"Gaetano Donizetti")
+        self.assertIn("+02:00",facts[0]["starts_at"])
+        with self.assertRaises(ValueError):
+            parse_authoritative_new_work_detail(
+                item,"<h1>Anna Bolena altro autore</h1><p>2 giugno 2027 ore 20:00</p>",
+                intelligence)
 
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[
