@@ -133,6 +133,18 @@
       "slug": "tosca",
       "title": "Tosca",
       "composer": "Giacomo Puccini"
+    },
+    "la tragédie de carmen|marius constant": {
+      "id": "oa-w-000023",
+      "slug": "la-tragedie-de-carmen",
+      "title": "La Tragédie de Carmen",
+      "composer": "Marius Constant"
+    },
+    "la bohème, il primo amore|giacomo puccini": {
+      "id": "oa-w-000024",
+      "slug": "la-boheme-il-primo-amore",
+      "title": "La bohème, il primo amore",
+      "composer": "Giacomo Puccini"
     }
   },
   "venues": {
@@ -247,6 +259,14 @@
       "name": "Teatro Dante Alighieri",
       "city": "Ravenna",
       "region": "Emilia-Romagna"
+    },
+    "Torino|Piccolo Regio Puccini": {
+      "id": "oa-v-000015",
+      "slug": "piccolo-regio-puccini",
+      "city_slug": "torino",
+      "name": "Piccolo Regio Puccini",
+      "city": "Torino",
+      "region": "Piemonte"
     }
   },
   "stagings": {
@@ -632,6 +652,22 @@
       "venue_id": "oa-v-000012",
       "slug": "un-ballo-in-maschera",
       "source_url": "https://www.operalombardia.it/calendario/",
+      "season": "2026-2027"
+    },
+    "regio-tragedie-carmen-piccolo-2027": {
+      "id": "oa-s-000049",
+      "work_id": "oa-w-000023",
+      "venue_id": "oa-v-000015",
+      "slug": "la-tragedie-de-carmen",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen",
+      "season": "2026-2027"
+    },
+    "regio-boheme-primo-amore-piccolo-2027": {
+      "id": "oa-s-000050",
+      "work_id": "oa-w-000024",
+      "venue_id": "oa-v-000015",
+      "slug": "la-boheme-il-primo-amore",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore",
       "season": "2026-2027"
     }
   },
@@ -1883,6 +1919,42 @@
       "staging_id": "oa-s-000048",
       "original_date": "2027-01-31",
       "source_url": "https://www.operalombardia.it/calendario/"
+    },
+    "regio-tragedie-carmen-piccolo-2027|2027-03-20": {
+      "id": "oa-r-000209",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-03-20",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen"
+    },
+    "regio-tragedie-carmen-piccolo-2027|2027-03-21": {
+      "id": "oa-r-000210",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-03-21",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen"
+    },
+    "regio-tragedie-carmen-piccolo-2027|2027-03-25": {
+      "id": "oa-r-000211",
+      "staging_id": "oa-s-000049",
+      "original_date": "2027-03-25",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen"
+    },
+    "regio-boheme-primo-amore-piccolo-2027|2027-04-18": {
+      "id": "oa-r-000212",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-04-18",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore"
+    },
+    "regio-boheme-primo-amore-piccolo-2027|2027-04-30": {
+      "id": "oa-r-000213",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-04-30",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore"
+    },
+    "regio-boheme-primo-amore-piccolo-2027|2027-05-02": {
+      "id": "oa-r-000214",
+      "staging_id": "oa-s-000050",
+      "original_date": "2027-05-02",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore"
     }
   }
 }
