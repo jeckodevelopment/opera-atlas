@@ -173,3 +173,14 @@ Il ciclo autonomo `refresh-catalog.yml` distingue tre momenti all'interno della 
 Se mancano sinossi, autore del libretto o dati verificati della prima mondiale, **nessuna scheda incompleta viene pubblicata**. Il candidato resta nel circuito automatico, con tentativi successivi; non si sostituisce l'anno di composizione con l'anno del debutto. La disponibilità effettiva di fonti e della chiave API del modello determina la capacità di completare nuovi titoli: non è lecito dichiarare pubblicabile ogni opera del mondo senza fonte. La validazione del feed editoriale impone profilo storico e sinossi per ogni opera pubblicata. La ricerca non salva nel catalogo i passaggi copiati dalle fonti.
 
 Collaudi: schede attuali con due paragrafi, anno composizione omesso se sconosciuto, titolo appena scoperto con tutti i dati pubblicato contestualmente a recita/identità; record con dati storici incompleti respinto automaticamente e rivalutabile in futuro. Invariati gli URL pubblici e l'estetica delle locandine.
+
+
+## Schede Teatro: storia e scheda indirizzo compatta — 20 novembre 2026
+
+Per ogni teatro censito, la pagina di dettaglio mostra ora **un'introduzione sintetica**, seguita da «La storia del teatro»: un breve racconto originale di circa due o tre frasi che evidenzia inaugurazione, vicende architettoniche e una particolarità culturale quando documentata. La data di inaugurazione è registrata in `opening_year` soltanto per i teatri con un anno preciso verificato: per l'Arena di Verona non si finge una data d'inaugurazione moderna, ma si racconta la costruzione romana del I secolo e l'inizio del festival lirico nel 1913. Ogni storia dispone di `source` HTTPS a supporto nel JSON `site/theatre-profiles.json`; non vengono riprodotti testi dei siti ufficiali.
+
+«Dove si trova» diventa un **riquadro allineato a sinistra e largo soltanto quanto il suo contenuto** (con limite al 100% dell'area disponibile): non lascia più un grande spazio bianco a destra del recapito. Il link a OpenStreetMap resta quello già funzionante. In mobile il riquadro si adatta alla larghezza disponibile. La lista di produzioni e i mini-calendari sono invariati.
+
+Il catalogo Teatri continua a mostrare la descrizione breve nelle card: il racconto storico più ampio compare soltanto nella pagina del singolo teatro. La futura acquisizione di nuovi teatri dovrà usare lo stesso schema, senza inferire date sconosciute.
+
+**Collaudi:** 14 profili con racconto e fonte, Regio Torino 1740/1936/1973, Arena I secolo/1913, riquadro «Dove si trova» compatto su desktop/mobile, nessun overflow e date/recite inalterate. Regression test in `tests/test_theatre_editorial_history.py`. Solo SFTP frontend via `jeckodevsite`; codice, contenuti e test in `opera-atlas`.
