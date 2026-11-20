@@ -154,20 +154,26 @@ def scan_approved(
                 health.append({"key":item["key"],"outcome":"unavailable_or_invalid",
                                "added":0,"observed":0,"reason":type(exc).__name__})
                 continue
+            # Build a complete source-scoped proposal before altering any facts.
+            # A changed time, unknown venue, duplicate date or suspected move
+            # must not cause unrelated partial additions from the same page.
             observed = {}
             anomalies = []
             mapped = {}
             for venue, city, day, hour in parsed:
-                product = _find_production(updated_facts,item,venue,city)
+                product = _find_production(updated_facts, item, venue, city)
                 if product is None:
                     anomalies.append({"kind":"unknown_staging","venue":venue,"city":city})
                     continue
                 key = product["key"]
-                if (key,day) in observed and observed[(key,day)] != hour:
-                    anomalies.append({"kind":"conflicting_time","production":key,"date":day})
+                if (key,day) in observed:
+                    anomalies.append({"kind":"duplicate_or_conflicting_date",
+                                      "production":key,"date":day})
+                    continue
                 observed[(key,day)] = hour
                 mapped[key] = product
-            new_for_source = 0
+
+            candidate_dates = {}
             for prod_key, product in mapped.items():
                 actual = {day:hour for (key,day),hour in observed.items() if key==prod_key}
                 before = dict(product["dates"])
@@ -176,37 +182,40 @@ def scan_approved(
                 }
                 added = set(actual)-set(before)
                 if missing and added:
-                    anomalies.append({
-                        "kind":"possible_reschedule","production":prod_key,
-                        "missing":sorted(missing),"appeared":sorted(added),
-                    })
-                    continue
+                    anomalies.append({"kind":"possible_reschedule",
+                                      "production":prod_key,
+                                      "missing":sorted(missing),"appeared":sorted(added)})
+                elif missing:
+                    anomalies.append({"kind":"missing_from_source",
+                                      "production":prod_key,"dates":sorted(missing)})
                 for day in sorted(set(before) & set(actual)):
                     if before[day] != actual[day]:
-                        # An hour change or newly confirmed time needs review;
-                        # preserving the existing ID does not prove equivalence.
-                        anomalies.append({
-                            "kind":"time_changed","production":prod_key,"date":day,
-                        })
+                        anomalies.append({"kind":"time_changed",
+                                          "production":prod_key,"date":day})
                 for day in sorted(added):
-                    key = prod_key + "|" + day
-                    if key in updated_registry["performances"]:
-                        anomalies.append({"kind":"registry_collision","date":day})
-                        continue
-                    item_id = _next_replica_id(updated_registry)
-                    updated_registry["performances"][key] = {
-                        "id":f"oa-r-{item_id:06d}",
-                        "staging_id":updated_registry["stagings"][prod_key]["id"],
-                        "original_date":day,
-                        "source_url":item["url"],
-                    }
-                    product["dates"].append([day,actual[day]])
-                    new_for_source += 1
-                    additions += 1
-                product["dates"].sort(key=lambda v:v[0])
-                if missing and not added:
-                    anomalies.append({"kind":"missing_from_source","production":prod_key,
-                                      "dates":sorted(missing)})
+                    if prod_key + "|" + day in updated_registry["performances"]:
+                        anomalies.append({"kind":"registry_collision",
+                                          "production":prod_key,"date":day})
+                candidate_dates[prod_key] = [(day,actual[day]) for day in sorted(added)]
+
+            # In particular, a page with both a valid new date and a
+            # conflicting record publishes nothing until an operator reviews.
+            new_for_source = 0
+            if not anomalies:
+                for prod_key, entries in candidate_dates.items():
+                    product = mapped[prod_key]
+                    for day,hour in entries:
+                        item_id = _next_replica_id(updated_registry)
+                        updated_registry["performances"][prod_key+"|"+day] = {
+                            "id":f"oa-r-{item_id:06d}",
+                            "staging_id":updated_registry["stagings"][prod_key]["id"],
+                            "original_date":day,
+                            "source_url":item["url"],
+                        }
+                        product["dates"].append([day,hour])
+                        new_for_source += 1
+                        additions += 1
+                    product["dates"].sort(key=lambda v:v[0])
             health.append({"key":item["key"],"outcome":"review_required" if anomalies else "success",
                            "added":new_for_source,"observed":len(parsed),
                            "anomalies":anomalies})
