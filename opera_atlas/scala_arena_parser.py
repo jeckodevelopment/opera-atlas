@@ -66,9 +66,11 @@ def parse_showtimes(html: str, *, url: str, title: str, composer: str,
         # heading that precedes the first actual dated performance.
         anchors=list(re.finditer("Prossimi spettacoli",text))
         start=anchors[-1].end() if anchors else -1
-        end=text.find(" Cast ",start)
-        if start<0 or end<0 or end<=start: raise ValueError("Arena dated schedule missing")
-        segment=text[start:end]
+        if start<0: raise ValueError("Arena dated schedule missing")
+        # Cast cards themselves mention the word "Cast" between performances;
+        # do not mistake it for the end of the calendar. Only dates followed
+        # immediately by an explicit clock count as recite.
+        segment=text[start:]
     dates=list(DATE.finditer(segment))
     if not dates:raise ValueError("no individual performance dates")
     results={}
