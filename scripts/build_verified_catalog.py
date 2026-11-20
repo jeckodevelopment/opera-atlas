@@ -20,6 +20,12 @@ APPROVED_PAGES = {
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin",
     "https://www.operalombardia.it/l-italiana-in-algeri/",
 }
 
