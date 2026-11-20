@@ -1698,6 +1698,49 @@
           "21:00"
         ]
       ]
+    },
+    {
+      "key": "auto-6339afba8bcc8028",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/",
+      "dates": [
+        [
+          "2027-11-24",
+          "19:00"
+        ],
+        [
+          "2027-11-25",
+          "19:00"
+        ],
+        [
+          "2027-11-26",
+          "19:00"
+        ],
+        [
+          "2027-11-27",
+          "20:00"
+        ],
+        [
+          "2027-11-28",
+          "17:30"
+        ],
+        [
+          "2027-11-30",
+          "19:00"
+        ],
+        [
+          "2027-12-01",
+          "19:00"
+        ],
+        [
+          "2027-12-02",
+          "18:30"
+        ]
+      ]
     }
   ]
 }

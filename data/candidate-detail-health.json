@@ -1,12 +1,18 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T22:56:13+00:00",
-  "attempted": 54,
+  "checked_at": "2026-11-20T23:00:37+00:00",
+  "attempted": 53,
   "outcomes": [
     {
-      "candidate_id": "oa-index-9a4c8e6f9ca9682d8d9d",
-      "outcome": "facts_found",
-      "rows": 5
+      "candidate_id": "oa-index-ef66d28ddc0afb7c8b8c",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
@@ -164,14 +170,8 @@
     },
     {
       "candidate_id": "oa-index-6339afba8bcc8028e395",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Palermo cards incomplete versus dated summary",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 8
     },
     {
       "candidate_id": "oa-index-6cd199691f7145a4d048",
@@ -450,17 +450,6 @@
     },
     {
       "candidate_id": "oa-index-ef019182f129777d75f0",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-ef66d28ddc0afb7c8b8c",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [

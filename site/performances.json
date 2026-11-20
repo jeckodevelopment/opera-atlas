@@ -4866,6 +4866,150 @@
       "sources": [
         "https://www.arena.it/arena-opera-festival/la-traviata/"
       ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-11-24",
+      "starts_at": "2027-11-24T19:00:00+01:00",
+      "local_date": "2027-11-24",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-11-25",
+      "starts_at": "2027-11-25T19:00:00+01:00",
+      "local_date": "2027-11-25",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-11-26",
+      "starts_at": "2027-11-26T19:00:00+01:00",
+      "local_date": "2027-11-26",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-11-27",
+      "starts_at": "2027-11-27T20:00:00+01:00",
+      "local_date": "2027-11-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-11-28",
+      "starts_at": "2027-11-28T17:30:00+01:00",
+      "local_date": "2027-11-28",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-11-30",
+      "starts_at": "2027-11-30T19:00:00+01:00",
+      "local_date": "2027-11-30",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-12-01",
+      "starts_at": "2027-12-01T19:00:00+01:00",
+      "local_date": "2027-12-01",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6339afba8bcc8028:2027-12-02",
+      "starts_at": "2027-12-02T18:30:00+01:00",
+      "local_date": "2027-12-02",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/carmen-3/"
+      ]
     }
   ]
 }

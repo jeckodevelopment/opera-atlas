@@ -2,6 +2,72 @@
   "schema_version": 1,
   "evidence": [
     {
+      "candidate_id": "oa-index-6339afba8bcc8028e395",
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/",
+      "content_sha256": "cbc4e5feab35f5979db841ffe519325e9e0f7398bdda67d49ba3c50cb1345a46",
+      "checked_at": "2026-11-20T22:59:48+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-11-24",
+          "starts_at": "2027-11-24T19:00:00+01:00",
+          "venue": "Teatro Massimo"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-11-25",
+          "starts_at": "2027-11-25T19:00:00+01:00",
+          "venue": "Teatro Massimo"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-11-26",
+          "starts_at": "2027-11-26T19:00:00+01:00",
+          "venue": "Teatro Massimo"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-11-27",
+          "starts_at": "2027-11-27T20:00:00+01:00",
+          "venue": "Teatro Massimo"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-11-28",
+          "starts_at": "2027-11-28T17:30:00+01:00",
+          "venue": "Teatro Massimo"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-11-30",
+          "starts_at": "2027-11-30T19:00:00+01:00",
+          "venue": "Teatro Massimo"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-12-01",
+          "starts_at": "2027-12-01T19:00:00+01:00",
+          "venue": "Teatro Massimo"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-12-02",
+          "starts_at": "2027-12-02T18:30:00+01:00",
+          "venue": "Teatro Massimo"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",

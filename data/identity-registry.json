@@ -722,6 +722,14 @@
       "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
       "season": "2027",
       "route_slug": "aida-ed-stefano-poda"
+    },
+    "auto-6339afba8bcc8028": {
+      "id": "oa-s-000057",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000009",
+      "slug": "carmen",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/",
+      "season": "2026-2027"
     }
   },
   "performances": {
@@ -2344,6 +2352,54 @@
       "staging_id": "oa-s-000056",
       "original_date": "2027-09-08",
       "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
+    },
+    "auto-6339afba8bcc8028|2027-11-24": {
+      "id": "oa-r-000271",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-11-24",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-6339afba8bcc8028|2027-11-25": {
+      "id": "oa-r-000272",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-11-25",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-6339afba8bcc8028|2027-11-26": {
+      "id": "oa-r-000273",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-11-26",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-6339afba8bcc8028|2027-11-27": {
+      "id": "oa-r-000274",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-11-27",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-6339afba8bcc8028|2027-11-28": {
+      "id": "oa-r-000275",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-11-28",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-6339afba8bcc8028|2027-11-30": {
+      "id": "oa-r-000276",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-11-30",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-6339afba8bcc8028|2027-12-01": {
+      "id": "oa-r-000277",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-12-01",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
+    },
+    "auto-6339afba8bcc8028|2027-12-02": {
+      "id": "oa-r-000278",
+      "staging_id": "oa-s-000057",
+      "original_date": "2027-12-02",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/"
     }
   }
 }

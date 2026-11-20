@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T22:56:13+00:00",
+  "checked_at": "2026-11-20T23:00:38+00:00",
   "total": 86,
   "states": {
-    "already_catalogued": 19,
-    "needs_review": 53,
+    "already_catalogued": 20,
+    "needs_review": 52,
     "excluded_nonopera": 14
   },
   "changes": [
     {
-      "candidate_id": "oa-index-9a4c8e6f9ca9682d8d9d",
+      "candidate_id": "oa-index-6339afba8bcc8028e395",
       "before": "needs_review",
       "after": "already_catalogued"
     }
