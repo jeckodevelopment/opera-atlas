@@ -9,6 +9,7 @@ from pathlib import Path
 from .catalog import find_work
 from .reconciliation import reconcile
 from .regio_parser import parse_regio_detail
+from .incremental import compare_snapshot
 
 
 @dataclass(frozen=True)
@@ -56,8 +57,20 @@ def import_regio_snapshot(
         html, source_url=source_url, expected_title=expected_title,
         expected_composer=expected_composer,
     )
-    linked = review = 0
+    if not recite:
+        raise ValueError("no explicit recite: incomplete or unsupported page")
+    delta = compare_snapshot(
+        conn, source_id=source_id, source_url=source_url,
+        production_id=production_id,
+        external_ids=[fact.external_id for fact in recite],
+    )
+    linked = 0
+    review = int(delta.review_id is not None)
     for fact in recite:
+        if delta.review_id is not None and fact.external_id in delta.added:
+            # A disappearance alongside a new timestamp may be a moved show.
+            # Never create a second canonical performance automatically.
+            continue
         res = reconcile(
             conn, source_id=source_id, external_id=fact.external_id,
             source_url=fact.source_url, production_id=production_id,

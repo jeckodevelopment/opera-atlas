@@ -16,7 +16,7 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 - [ ] Connettori per fonti HTML strutturate, JSON-LD/API e PDF quando autorizzati. **Adapter HTML Teatro Regio implementato; fetch manuale con robots fail-closed e audit v4 disponibili; altri formati e fonti ancora aperti.**
 - [ ] Parsing e normalizzazione di date, orari, produzione, venue e collegamenti. **Timestamp espliciti e identità canoniche già gestiti nel primo adapter, verifica su HTML live necessaria.**
 - [ ] Import incrementale con idempotenza, riconciliazione e deduplicazione tra festival e teatri. **Pipeline transazionale SQLite e import opt-in multi-pagina (massimo 20, mapping curati e savepoint per pagina) disponibili; deduplicazione reale multi-fonte ancora da provare.**
-- [ ] Gestione modifiche/rinvii/annullamenti, senza cancellazioni silenziose. **API di cambio stato con prova ufficiale e cronologia v5 implementata; riconoscimento automatico di eventi rimossi, cambio date e ricostruzione dal calendario ancora aperti.**
+- [ ] Gestione modifiche/rinvii/annullamenti, senza cancellazioni silenziose. **API di cambio stato con prova ufficiale e cronologia v5 implementata; rilevamento conservativo di date rimosse/aggiunte e di ID ufficiali stabili implementato (v6); risoluzione dei casi ambigui e collaudo live ancora aperti.**
 - [ ] Monitoraggio scansioni, errori, obsolescenza, copertura e casi da verificare.
 - [ ] Pianificazione GitHub Actions con rispetto di robots.txt, condizioni di utilizzo, rate limit e caching.
 
@@ -43,7 +43,7 @@ Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati te
 Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
 
 ## Stato attuale
-Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter Teatro Regio, fetch opt-in, audit scansioni v4 e stati recite v5 implementati; batch multi-produzione approvato manualmente disponibile; nessun job schedulato o catalogo pubblico online. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter Teatro Regio, fetch opt-in, audit scansioni v4 e stati recite v5 implementati; batch multi-produzione e confronti incrementali delle recite disponibili; nessun job schedulato o catalogo pubblico online. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
 
 ## Esecuzione controllata e audit (migrazione v4)
 Il 20/11/2026 il percorso ufficiale `/opera-e-balletto-2026-2027/la-traviata` mostrava 11 righe distinte di recite (dal 26 febbraio al 10 marzo 2027), tra cui recite pomeridiane alle 15:00. Questa verifica è stata fatta consultando la pagina pubblica, **non** eseguendo il crawler della repository. Il parser rimane da confrontare con la sorgente HTML effettivamente scaricabile, che può avere struttura diversa da quella visibile nelle pagine renderizzate.

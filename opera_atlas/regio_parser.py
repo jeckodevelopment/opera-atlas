@@ -38,8 +38,17 @@ class _PageText(HTMLParser):
         self.heading: list[str] = []
         self.in_h1 = 0
         self.skip = 0
+        self.structured_times = []
 
     def handle_starttag(self, tag, attrs):
+        if tag == "time":
+            fields = dict(attrs)
+            event_id = fields.get("data-event-id")
+            datetime_text = fields.get("datetime")
+            if event_id is not None and datetime_text is not None:
+                if not re.fullmatch(r"[A-Za-z0-9_-]{1,100}", event_id):
+                    raise ValueError("invalid official event ID")
+                self.structured_times.append((event_id, datetime_text))
         if tag in ("script", "style", "noscript"):
             self.skip += 1
         elif tag == "h1":
@@ -103,5 +112,24 @@ def parse_regio_detail(
         parsed[key] = PerformanceFact(
             expected_title.strip(), expected_composer.strip(), start,
             source_url, f"{uri.path}:{key}",
+        )
+    for event_id, datetime_text in parser.structured_times:
+        try:
+            event_time = datetime.fromisoformat(datetime_text)
+        except ValueError as exc:
+            raise ValueError("invalid official event time") from exc
+        if event_time.tzinfo is None or event_time.utcoffset() is None:
+            raise ValueError("official event time requires timezone offset")
+        event_time = event_time.astimezone(TIMEZONE)
+        key = event_time.isoformat(timespec="seconds")
+        # Remove the timestamp fallback if both formats describe the same show.
+        parsed.pop(key, None)
+        upstream_key = f"{uri.path}:event:{event_id}"
+        if any(fact.external_id == upstream_key and fact.starts_at != event_time
+               for fact in parsed.values()):
+            raise ValueError("conflicting times for stable event ID")
+        parsed["upstream:" + event_id] = PerformanceFact(
+            expected_title.strip(), expected_composer.strip(),
+            event_time, source_url, upstream_key,
         )
     return list(parsed.values())

@@ -60,3 +60,6 @@ Disponibile `python -m opera_atlas.batch_cli` con manifesto JSON verificato, mas
 
 ### Variazioni di stato delle recite
 Le conferme, i rinvii e gli annullamenti verificati possono essere registrati tramite `opera_atlas.changes.set_performance_status` con fonte approvata e motivazione. La cronologia è append-only nella migrazione SQLite v5. Non sono dedotti annullamenti dalle recite scomparse e non è ancora attivo il rilevamento automatico dei cambi data. [Dettagli e collaudi](docs/REGIO_CONNECTOR.md).
+
+### Riconciliazione incrementale
+La migrazione SQLite v6 registra anomalie tra scansioni della stessa pagina (`source_snapshot_deltas`). Il parser può usare ID ufficiali `data-event-id` quando presenti; senza tali ID, scomparsa e comparsa contemporanea di date avviano una revisione e **non creano recite duplicative**. I dati storici restano intatti. Vedi [REGIO_CONNECTOR](docs/REGIO_CONNECTOR.md) per prove e limitazioni.
