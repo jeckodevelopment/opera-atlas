@@ -2,6 +2,42 @@
   "schema_version": 1,
   "performances": [
     {
+      "id": "curated:lombardia-turandot-pavia:2026-10-09",
+      "starts_at": "2026-10-09T20:00:00+02:00",
+      "local_date": "2026-10-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/turandot/"
+      ]
+    },
+    {
+      "id": "curated:lombardia-turandot-pavia:2026-10-11",
+      "starts_at": "2026-10-11T15:30:00+02:00",
+      "local_date": "2026-10-11",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/turandot/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-10-13",
       "starts_at": "2026-10-13T20:00:00+02:00",
       "local_date": "2026-10-13",
@@ -236,6 +272,42 @@
       ]
     },
     {
+      "id": "curated:lombardia-cavalleria-pavia:2026-10-30",
+      "starts_at": "2026-10-30T20:00:00+01:00",
+      "local_date": "2026-10-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:lombardia-pagliacci-pavia:2026-10-30",
+      "starts_at": "2026-10-30T20:00:00+01:00",
+      "local_date": "2026-10-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-10-30",
       "starts_at": "2026-10-30T20:00:00+01:00",
       "local_date": "2026-10-30",
@@ -287,6 +359,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:lombardia-cavalleria-pavia:2026-10-31",
+      "starts_at": "2026-10-31T20:00:00+01:00",
+      "local_date": "2026-10-31",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:lombardia-pagliacci-pavia:2026-10-31",
+      "starts_at": "2026-10-31T20:00:00+01:00",
+      "local_date": "2026-10-31",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/"
       ]
     },
     {
@@ -672,6 +780,42 @@
       ]
     },
     {
+      "id": "curated:lombardia-ballo-pavia:2026-12-03",
+      "starts_at": "2026-12-03T20:00:00+01:00",
+      "local_date": "2026-12-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/"
+      ]
+    },
+    {
+      "id": "curated:lombardia-ballo-pavia:2026-12-05",
+      "starts_at": "2026-12-05T20:00:00+01:00",
+      "local_date": "2026-12-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-cremona:2026-12-10",
       "starts_at": "2026-12-10T20:00:00+01:00",
       "local_date": "2026-12-10",
@@ -707,6 +851,42 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri-0"
+      ]
+    },
+    {
+      "id": "curated:lombardia-death-venice-pavia:2027-01-15",
+      "starts_at": "2027-01-15T20:00:00+01:00",
+      "local_date": "2027-01-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/death-in-venice/"
+      ]
+    },
+    {
+      "id": "curated:lombardia-death-venice-pavia:2027-01-17",
+      "starts_at": "2027-01-17T15:30:00+01:00",
+      "local_date": "2027-01-17",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Fraschini",
+      "municipality": "Pavia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrofraschini.it/programma/death-in-venice/"
       ]
     },
     {
