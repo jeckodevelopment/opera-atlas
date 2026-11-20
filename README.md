@@ -63,3 +63,10 @@ Le conferme, i rinvii e gli annullamenti verificati possono essere registrati tr
 
 ### Riconciliazione incrementale
 La migrazione SQLite v6 registra anomalie tra scansioni della stessa pagina (`source_snapshot_deltas`). Il parser può usare ID ufficiali `data-event-id` quando presenti; senza tali ID, scomparsa e comparsa contemporanea di date avviano una revisione e **non creano recite duplicative**. I dati storici restano intatti. Vedi [REGIO_CONNECTOR](docs/REGIO_CONNECTOR.md) per prove e limitazioni.
+
+### Fonti con calendari parziali (OperaLombardia)
+Il modulo `opera_atlas.operalombardia` e la CLI `opera_atlas.stage_cli` conservano nel database **soltanto come dati da approfondire** le date e sedi di produzioni ufficiali senza orario. L'importazione è offline, richiede fonte approvata e `--apply` esplicito. I dati parziali non compaiono nell'export pubblico.
+```sh
+python -m opera_atlas.stage_cli --db atlas.sqlite3 --html path/to/authorized-page.html --url https://www.operalombardia.it/l-italiana-in-algeri/ --title "L’italiana in Algeri" --source-id 2
+```
+Per finalizzare manualmente gli orari servono ulteriori prove dalle fonti ufficiali. Il ROF non è ancora integrato a causa di risposte 403 nella verifica delle pagine. Vedi [SOURCE_REGISTRY](docs/SOURCE_REGISTRY.md).
