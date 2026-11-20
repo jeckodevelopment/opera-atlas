@@ -162,6 +162,16 @@ async function appendHistory(event) {
       }
       section.append(grid);
       content.append(section);
+      // Historical references are kept at the very end of the opera detail.
+      const source=Array.isArray(history.sources)?history.sources.map(safeSource).find(Boolean):null;
+      if(source){
+        const references=node("section","official-links work-references");
+        references.append(node("h2",null,"Per approfondire"));
+        const anchor=link("Consulta la scheda archivistica dell’opera",source);
+        anchor.target="_blank";anchor.rel="noopener noreferrer";
+        references.append(anchor);
+        results.after(references);
+      }
       return;
     }catch(error){console.warn("Opera history data unavailable",error);}
   }
