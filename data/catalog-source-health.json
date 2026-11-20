@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T18:32:19+00:00",
+  "checked_at": "2026-11-20T18:41:06+00:00",
   "sources": [
     {
       "key": "regio-traviata-2027",
@@ -70,6 +70,41 @@
       "outcome": "success",
       "added": 0,
       "observed": 7,
+      "anomalies": []
+    },
+    {
+      "key": "lombardia-turandot-pavia",
+      "outcome": "success",
+      "added": 0,
+      "observed": 2,
+      "anomalies": []
+    },
+    {
+      "key": "lombardia-cavalleria-pavia",
+      "outcome": "success",
+      "added": 0,
+      "observed": 2,
+      "anomalies": []
+    },
+    {
+      "key": "lombardia-pagliacci-pavia",
+      "outcome": "success",
+      "added": 0,
+      "observed": 2,
+      "anomalies": []
+    },
+    {
+      "key": "lombardia-ballo-pavia",
+      "outcome": "success",
+      "added": 0,
+      "observed": 2,
+      "anomalies": []
+    },
+    {
+      "key": "lombardia-death-venice-pavia",
+      "outcome": "success",
+      "added": 0,
+      "observed": 2,
       "anomalies": []
     }
   ]
