@@ -23,3 +23,10 @@
 
 ## Contratto di acquisizione
 Per ogni connettore: input URL, policy e limiti, parser versionato, confidence dei campi, data estrazione, osservazioni, warnings, mapping canonical, test con fixture e log degli esiti.
+
+## Riconciliazione implementata (F1 / #3)
+- `source_events` assegna una identità stabile alla coppia (source_id, external_id), con puntatore alla recita canonica.
+- Nuova osservazione con **opera canonica già identificata**, stessa sede e medesimo istante UTC: un solo candidato -> collegamento a una recita esistente e provenienza aggiuntiva. Nessun candidato -> crea recita; più candidati -> `reconciliation_reviews`.
+- La ripetizione della stessa fonte è idempotente e conserva fingerprint e JSON delle osservazioni.
+- Un evento già collegato che cambia identità geografica/temporale/editoriale resta sul riferimento precedente e produce una revisione umana, senza sovrascrittura silenziosa.
+- La corrispondenza tra titoli e compositori **non è ancora automatica**: gli ID delle opere devono essere canonici e verificati. Non sono ancora disponibili connettori reali, interfaccia di risoluzione dei conflitti né gestione automatica di rinvii/annullamenti.
