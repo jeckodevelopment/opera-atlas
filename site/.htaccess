@@ -5,3 +5,10 @@ RewriteBase /dev/opera-atlas/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(opere/[a-z0-9-]+|produzioni/oa-g-[a-z0-9-]+|[a-z0-9-]+/[a-z0-9-]+(/[a-z0-9-]+)?)/?$ detail.html [L]
+
+# Privacy by default: do not disclose browsing paths to image/data hosts.
+<IfModule mod_headers.c>
+  Header always set Referrer-Policy "no-referrer"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Permissions-Policy "geolocation=(self)"
+</IfModule>

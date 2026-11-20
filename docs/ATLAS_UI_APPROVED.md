@@ -109,3 +109,16 @@ La precedente libreria immagine riutilizzava lo stesso segnaposto per la maggior
 
 ### Verifiche
 Test catalogo: default, conteggio dinamico e filtri; homepage miniature e foto/sinossi; dimensioni differenziate fra Teatro e Produzione; festival full-bleed, leggibilità mobile; mappa/calendario generale e deep link inalterati. Regres­sioni automatiche in `tests/test_home_refinements.py` e `tests/image_client_smoke.cjs`. Nessuna modifica a `jeckodevsite` se non il normale workflow SFTP di pubblicazione frontend.
+
+## Identità, privacy e ulteriori rifiniture — 20/11/2026
+
+- Home, ordine dei teatri in evidenza: **Teatro Regio di Torino per primo**, poi gli altri secondo denominazione; nessun cambiamento all'ordinamento cronologico dei risultati delle rappresentazioni.
+- Fotografia Arena di Verona: esterno dell'anfiteatro dalla Piazza Bra, file Wikimedia Commons `Arena di Verona esterno.jpg`, distinto dall'immagine precedentemente scelta dell'interno.
+- Copertina *Samson et Dalila*: manifesto storico di Georges-Antoine Rochegrosse, `Samson et Dalila. Opéra de C. Saint-Saens affiche, Georges Antoine Rochegrosse.jpg`, file catalogato in Wikimedia Commons.
+- Pagina Opera: nome del teatro sotto «Dove vedere...» aumentato a 27px desktop/23px mobile, eliminata la vecchia sovrascrittura da 12px sui link.
+- Intestazione: usa **il logo approvato dall'utente**, conservando il disegno Opera+ e lo swoosh dorato. Per ridurre il traffico la versione pubblicabile è incorporata nell'asset SVG locale `site/atlas-logo.svg`; non viene sostituita con un logo ricreato.
+- Footer: su tutte le pagine «Associazione Opera+ · C.F. 97925160018» con link a Privacy e cookie e ai crediti fotografici.
+- Informativa unica in `site/privacy.html`; dettagli tecnici, audit e verifiche residue in `docs/PRIVACY_COOKIE_AUDIT.md`. Nessun banner per cookie non necessari finché il codice rimane senza tali cookie e l'audit in produzione non rileva tecnologie che lo rendano necessario.
+- Conformità definitiva subordinata a verifica hosting, contratti, durata log e sessione browser reale.
+
+Collaudi: homepage Torino primo, copertine Arena e Samson, nomi teatri visibili, logo su tutte le pagine, footer legale, policy raggiungibile anche su mobile, test statici assenza tracking, geolocalizzazione solo volontaria e verifica del dominio pubblico. SFTP unicamente sul publisher `jeckodevsite`.

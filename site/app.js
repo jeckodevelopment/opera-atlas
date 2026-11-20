@@ -256,7 +256,10 @@ function renderDiscoveries() {
   for(const [url,event] of [...works].sort((a,b)=>a[1].title.localeCompare(b[1].title,"it")).slice(0,6)){
     workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image"),workDescriptions[event.work_slug]||""));
   }
-  for(const [url,event] of [...venues].sort((a,b)=>a[1].venue.localeCompare(b[1].venue,"it")).slice(0,6)){
+  for(const [url,event] of [...venues].sort((a,b)=>{
+    const priority=x=>x.municipality==="Torino" && x.venue==="Teatro Regio" ? 0 : 1;
+    return priority(a[1])-priority(b[1]) || a[1].venue.localeCompare(b[1].venue,"it");
+  }).slice(0,6)){
     venueBox.append(imageTile(url,event.venue,event.municipality,editorialImage("venue",event,"discovery-image")));
   }
 }
