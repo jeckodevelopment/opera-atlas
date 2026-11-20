@@ -7,10 +7,10 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 
 ### F1 — Fondamenta
 - [ ] Inventario completo delle sedi e degli organizzatori/festival con URL ufficiali verificati, stato e data di verifica.
-- [ ] Modello dati: work, production, performance, venue, organizer, festival, season, source, observation.
+- [ ] Modello dati completamente validato: work, production, performance, venue, organizer, festival, season, source, observation. **Schema SQLite baseline implementato; validazioni/casi limite e deduplicazione cross-source ancora aperti.**
 - [ ] Tassonomia editoriale: opera lirica distinta da balletto, concerto e prosa; eccezioni esplicite.
-- [ ] Normalizzazione titoli, alias e compositori; gestione verificata delle sedi temporanee.
-- [ ] Tests schema, validazione dati e registrazione della provenienza.
+- [ ] Normalizzazione titoli, alias e compositori; gestione verificata delle sedi temporanee. **Disponibile soltanto normalizzazione Unicode/whitespace/case.**
+- [ ] Tests schema, validazione dati e registrazione della provenienza. **Suite iniziale disponibile; ulteriori integrazioni necessarie.**
 
 ### F2 — Acquisizione automatica
 - [ ] Connettori per fonti HTML strutturate, JSON-LD/API e PDF quando autorizzati.
@@ -31,7 +31,7 @@ Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, c
 - [ ] KPI coerenti (opere distinte, produzioni, recite, teatri attivi, regioni, classifiche).
 - [ ] Definizione e trasparenza delle metriche, inclusi denominatori e filtri temporali.
 - [ ] Esportazione aggregati, controlli di qualità e verifica copertura fonti.
-- [ ] CI, release SemVer, documentazione, pubblicazione e collaudi finali.
+- [ ] CI, release SemVer, documentazione, pubblicazione e collaudi finali. **CI unit test introdotta in F1; non equivale al completamento F4.**
 
 ## Definizione di completamento (DoD)
 Ogni issue funzionale chiusa deve avere implementazione verificata, test automatici ove applicabile, istruzioni di collaudo manuale e aggiornamento della documentazione nella stessa PR. Non si considera implementato ciò che è solo previsto o abbozzato.
@@ -42,5 +42,5 @@ Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati te
 ## Esclusioni iniziali
 Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
 
-## Stato iniziale
-Pianificazione e inventario ricevuto; tutti i requisiti implementativi restano da completare.
+## Stato attuale
+Prima implementazione schema e test dell'issue #2 in corso; fonti ancora da verificare e nessun connettore/catologo pubblico completato. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
