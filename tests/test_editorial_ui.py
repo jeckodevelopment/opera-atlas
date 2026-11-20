@@ -49,7 +49,7 @@ class EditorialUITests(unittest.TestCase):
         self.assertNotIn('"Fonte ufficiale"',directory)
         self.assertNotIn("sourceLinks(section,events)",detail)
         self.assertIn("results.after(panel)",detail)
-        self.assertIn("sourceLinks(selected.events)",detail)
+        self.assertIn("sourceLinks(selected.events,selected.kind,theatreProfile)",detail)
         self.assertNotIn("Programma e biglietti sul sito ufficiale",detail)
     def test_no_technical_catalog_copy(self):
         directory=(SITE/"directory.js").read_text(encoding="utf-8")
