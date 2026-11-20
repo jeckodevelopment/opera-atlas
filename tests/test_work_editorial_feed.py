@@ -20,14 +20,14 @@ class WorkEditorialTests(unittest.TestCase):
     def test_new_work_without_synopsis_must_block_publication(self):
         editorial=copy.deepcopy(self.editorial)
         editorial["synopses"].pop(next(iter(editorial["synopses"])))
-        with self.assertRaisesRegex(ValueError,"missing or extraneous"):
+        with self.assertRaisesRegex(ValueError,"missing verified work synopsis"):
             build_editorial(self.facts,self.registry,editorial)
 
-    def test_unreviewed_extra_synopsis_is_rejected(self):
+    def test_prepared_extra_synopsis_is_allowed_but_not_published(self):
         editorial=copy.deepcopy(self.editorial)
         editorial["synopses"]["not-in-catalog"]="Description that should not be published without a canonical work and a staging."
-        with self.assertRaises(ValueError):
-            build_editorial(self.facts,self.registry,editorial)
+        result=build_editorial(self.facts,self.registry,editorial)
+        self.assertNotIn("not-in-catalog",{x["slug"] for x in result["works"]})
 
     def test_empty_or_long_synopsis_is_rejected(self):
         editorial=copy.deepcopy(self.editorial)
