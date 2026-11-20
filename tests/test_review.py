@@ -61,7 +61,7 @@ class ReviewTests(unittest.TestCase):
     def test_migrations_idempotent(self):
         self.ingest(self.when)
         migrate(self.db)
-        self.assertEqual(self.db.execute("SELECT count(*) FROM schema_migrations").fetchone()[0], 4)
+        self.assertEqual(self.db.execute("SELECT count(*) FROM schema_migrations").fetchone()[0], 5)
 
 
 if __name__ == "__main__":
