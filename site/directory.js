@@ -48,7 +48,7 @@ function imageFor(item){
   if(!images || typeof images.element!=="function")return fallback;
   const type=item.imageKind|| (section==="opere"?"work":section==="teatri"?"venue":"festival");
   const identity=type==="work"
-    ? {title:item.title,work_slug:item.work_slug}
+    ? {title:item.title,work_slug:item.work_slug,work_id:item.work_id,composer:item.composer}
     : type==="venue"
       ? {city:item.city,municipality:item.city,venue:item.title}
       : {city:item.city,name:item.title};
@@ -104,7 +104,7 @@ async function initialize(){
         }
         for(const event of stages.values()){
           const url=window.OperaAtlasCatalog.urls(event).staging;
-          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · dal "+dateLabel(event.local_date),city:event.municipality,imageKind:"work",work_slug:event.work_slug});
+          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · dal "+dateLabel(event.local_date),city:event.municipality,imageKind:"work",work_slug:event.work_slug,work_id:event.work_id,composer:event.composer});
         }
         const footer=node("section","official-links");footer.append(node("h2",null,"Informazioni e biglietti"),official);grid.after(footer);
         if(!entries.length)status.textContent="Il programma sarà disponibile prossimamente.";
@@ -126,6 +126,8 @@ async function initialize(){
       if(!grouped.has(url)){
         const profile=editorial.venues[e.municipality+"|"+e.venue];
         grouped.set(url,{url,title:section==="opere"?e.title:e.venue,work_slug:section==="opere"?e.work_slug:undefined,
+          work_id:section==="opere"?e.work_id:undefined,
+          composer:section==="opere"?e.composer:undefined,
           subtitle:section==="opere"?e.composer||"":e.municipality+" · "+(e.region||"Italia"),city:e.municipality,
           description:section==="opere"?editorial.synopses[e.work_slug]||"":profile?.description||""});
       }
