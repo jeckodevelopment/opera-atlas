@@ -198,6 +198,8 @@ async function initialize() {
   try {
     const documentData = await window.OperaAtlasCatalog.load();
     if (documentData.warning) message.textContent = documentData.warning;
+    else if (documentData.reviewed_on)
+      message.textContent = "Dati verificati il " + documentData.reviewed_on.split("-").reverse().join("/");
     if (!documentData || documentData.schema_version !== 1 || !Array.isArray(documentData.performances)) {
       throw new Error("schema non supportato");
     }
