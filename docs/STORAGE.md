@@ -22,7 +22,7 @@ python -c "from opera_atlas.db import connect, migrate; c=connect('atlas.sqlite3
 - Un duplicato con stessa produzione, sede e data/ora è idempotente; riconciliazione cross-source deterministica disponibile: stesso ID opera canonica, sede e istante UTC; conflitti salvati in revisione, senza merge silenziosi.
 - Opera omonima o titolo normalizzato non identificano da soli un'unica opera; l'aliasing richiede revisione.
 - Venue senza coordinate è legittima; un solo valore lat/lon non è ammesso.
-- Database di lavorazione locale, nessun server pubblico esposto. Migratore baseline idempotente, migrazione v2 separata versionata in `schema_v2.sql`.
+- Database di lavorazione locale, nessun server pubblico esposto. Migratore baseline idempotente, migrazioni separate v2/v3 in `schema_v2.sql` e `schema_v3.sql`.
 - I dati demo rimangono soltanto nei test, mai nel catalogo pubblico.
 
 ## Test manuali
@@ -34,8 +34,14 @@ python -c "from opera_atlas.db import connect, migrate; c=connect('atlas.sqlite3
 ## API di riconciliazione
 `opera_atlas.reconciliation.reconcile(conn, source_id=..., external_id=..., source_url=..., production_id=..., venue_id=..., starts_at=aware_datetime, payload={...})` restituisce `ReconcileResult(state, performance_id, review_id)`. La chiamata usa una connessione locale SQLite e il chiamante gestisce il commit; tutte le API di scrittura assumono un solo writer. Non usarla per dati pubblici finché non saranno verificati i mapping delle opere, le fonti e l'accessibilità dei calendari.
 
+## Risoluzione manuale dei conflitti
+Il codice offre `opera_atlas.review.resolve_review(conn, review_id, action='link', selected_performance_id=...)` oppure `action='create'`. Il revisore deve controllare la fonte prima di chiamare la funzione; una recita già collegata non viene modificata automaticamente. La storia della review e delle osservazioni rimane disponibile. Il chiamante gestisce commit/rollback e single-writer.
+
 ## Verifiche manuali aggiuntive
 5. Importare la stessa opera/recita da due fonti con diverse produzioni e verificare una sola riga in `performances`, due in `performance_sources`.
 6. Ripetere l'import con lo stesso external ID e verificare che i conteggi restino invariati.
 7. Cambiare la data di un evento già conosciuto e verificare che compaia una voce in `reconciliation_reviews`, senza spostare la recita.
 8. Introdurre due recite già presenti con identico titolo canonico/luogo/istante ma produzioni diverse; la terza fonte deve andare in revisione.
+
+9. Risolvere una review con la scelta esplicita della recita corretta; verificare stato resolved e provenance.
+10. Risolvere un rinvio creando una nuova recita; verificare che l'evento storico resti censito e che la fonte punti al nuovo.
