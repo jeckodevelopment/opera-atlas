@@ -54,6 +54,14 @@ def claim_ids(entity:dict,property_id:str)->set[str]:
             result.add(value["id"])
     return result
 
+# The official venue occasionally embeds conductor/production names in an
+# opaque URL slug. Use exact keys, then independently verify composer and
+# dated performances; never infer genre from a fuzzy filename match.
+OFFICIAL_TITLE_ALIASES={
+    ("fenice-opera-2026-27","normatebar"):"Norma",
+    ("fenice-opera-2026-27","ilbarbieredisivigliapercacciolo"):"Il barbiere di Siviglia",
+}
+
 def official_title_hint(candidate:dict)->str|None:
     key=candidate.get("source_key","")
     url=candidate.get("official_url","")
@@ -62,7 +70,7 @@ def official_title_hint(candidate:dict)->str|None:
     if not re.fullmatch(r"[a-z0-9-]{3,80}",path) or not eligible(key,url):
         return None
     if path.endswith("-anteprima-under30"):return None
-    return path.replace("-"," ")
+    return OFFICIAL_TITLE_ALIASES.get((key,path),path.replace("-"," "))
 
 def resolve_identity(title_hint:str,*,fetch=read_api)->dict|None:
     query=fetch(wikidata_url("wbsearchentities",search=title_hint,language="it",
