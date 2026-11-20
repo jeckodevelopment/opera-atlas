@@ -16,13 +16,20 @@ let festivalListings=[];
 let editorial={synopses:{},venues:{}};
 async function loadEditorial(){
   async function load(name){
-    const urls=["./"+name,"https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/"+name];
+    const urls=name==="work-synopses.json"
+      ? ["https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/work-editorial.json","./"+name]
+      : ["./"+name,"https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/"+name];
     for(const url of urls){
       try{
         const response=await fetch(url,{cache:"no-store"});
         if(!response.ok)continue;
         const data=await response.json();
-        if(data.schema_version===1)return data;
+        if(data.schema_version===1){
+          if(name==="work-synopses.json" && Array.isArray(data.works)){
+            return {schema_version:1,synopses:Object.fromEntries(data.works.map(w=>[w.slug,w.synopsis]))};
+          }
+          return data;
+        }
       }catch(error){console.warn("Editorial data unavailable",url,error);}
     }
     return null;
