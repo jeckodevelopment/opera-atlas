@@ -28,7 +28,7 @@ function imageFor(item){
   fallback.setAttribute("role","img");fallback.setAttribute("aria-label","Fotografia non disponibile");
   if(!images || typeof images.element!=="function")return fallback;
   const type=section==="opere"?"work":section==="teatri"?"venue":"festival";
-  try{return images.element(images[type](section==="opere"?{title:item.title}:{city:item.city,municipality:item.city}),"directory-image");}
+  try{return images.element(images[type](section==="opere"?{title:item.title}:section==="teatri"?{city:item.city,municipality:item.city,venue:item.title}:{city:item.city,name:item.title}),"directory-image");}
   catch(error){console.warn("Atlas image fallback",error);return fallback;}
 }
 function normalize(s){return String(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("it");}

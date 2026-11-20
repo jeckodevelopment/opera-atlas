@@ -63,7 +63,7 @@ class PublicCatalogTests(unittest.TestCase):
     def test_details_do_not_invent_times_and_keep_source_validation(self):
         script = (SITE / "detail.js").read_text(encoding="utf-8")
         self.assertIn("Orario da confermare", script)
-        self.assertIn('e.starts_at.slice(11,16)', script)
+        self.assertIn('event.starts_at.slice(11,16)', script)
         self.assertIn('textContent', script)
         self.assertNotIn('innerHTML', script)
         self.assertIn('u.protocol==="https:"', script)
