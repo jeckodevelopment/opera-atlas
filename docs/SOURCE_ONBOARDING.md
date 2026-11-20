@@ -123,3 +123,17 @@ Il rilevamento di una produzione non equivale automaticamente alla pubblicazione
 **Collaudo:** eseguire `python -m unittest discover -s tests -v`, `python -m scripts.publish_work_editorial`, `python -m scripts.publish_work_editorial --check`; eliminare in fixture una sinossi e verificare il blocco. Dopo la prima pubblicazione SFTP del frontend aggiornato tramite il solo workflow di `jeckodevsite`, ogni nuova sinossi nel feed diventa disponibile senza ulteriori deploy delle pagine. L'aggiornamento dei dati resta esclusivamente nelle Actions di `opera-atlas`.
 
 **Limite esplicito:** non viene generata automaticamente una sinossi sulla sola base di un titolo non classificato. Per nuove opere non già censite occorre un processo affidabile di arricchimento e verifica, da estendere insieme ai connettori completi di Scala, Arena, Fenice, Parma e Palermo. Questa PR implementa il vincolo di completezza e la distribuzione, non dichiara quei connettori completi.
+
+
+## F2 — monitoraggio degli indici nazionali Scala, Arena, Fenice
+
+Il job `scripts.discover_season_indexes` prende in esame **tre ingressi ufficiali esatti**: stagione lirica Scala 2026/27, spettacoli Arena Opera Festival 2027, categoria opera Fenice 2026/27. Le richieste sono limitate a una pagina di indice per fonte e al relativo robots.txt; lo scanner non segue i collegamenti e non copia pagine di dettaglio.
+
+- Configurazione `data/season-index-config.json`: sorgenti esplicite con controllo runtime robots fail-closed e soglia minima di link; non è una concessione del teatro ad acquisire qualsiasi contenuto del sito.
+- I collegamenti candidati devono avere HTTPS, host identico e struttura coerente con la sezione ufficiale prevista. URL esterni, query string e sezioni escluse sono ignorati.
+- Identificativi candidati deterministici, `first_seen`, `last_seen`, stato `needs_review` in `data/season-index-candidates.json` e `public/catalog/season-index-candidates.json`. Esiti tecnici in `data/season-index-health.json`.
+- In caso di robots negato/indisponibile, pagina incompleta, struttura mutata o errore HTML: nessun nuovo collegamento e conservazione delle candidate precedenti.
+- **Non equivale a importare automaticamente le nuove opere:** i collegamenti non dimostrano ancora genere, compositore, teatro, singole recite o cancellazioni. Occorre verifica della pagina di dettaglio e creazione delle entità canoniche, includendo la scheda editoriale e la sinossi originale come richiesto nel blocco F2/F3 precedente.
+- Gli indici di Regio Parma e Massimo Palermo, così come il calendario ROF eventualmente inaccessibile, restano fuori dall'attivazione e richiedono un adapter specifico verificato.
+
+Collaudo: `python -m unittest discover -s tests -v`, poi l'esecuzione del workflow `Refresh public Opera Atlas catalog`. Controllare i tre esiti e la coda JSON; nessun SFTP per l'acquisizione. La prima modifica JavaScript frontend del feed editoriale deve essere distribuita separatamente solo con il workflow SFTP di `jeckodevsite`.
