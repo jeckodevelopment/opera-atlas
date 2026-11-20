@@ -37,3 +37,6 @@ Le future acquisizioni devono poter operare esclusivamente su sorgenti con `acce
 Frontend SFTP indipendente: la repository `jeckodevsite` contiene solo il workflow di pubblicazione e lo script di trasporto, mentre test e pipeline dati risiedono su `opera-atlas`. La libreria `site/catalog-client.js` carica il feed remoto con CORS HTTPS, valida i digest e offre uno snapshot locale di riserva (mostrato con avviso). Il fallback statico è uno strumento di resilienza, **non** un catalogo automaticamente aggiornato.
 
 La configurazione dell'hosting, la compatibilità delle rewrite, la gestione offline e il comportamento su browser mobili richiedono collaudo end-to-end. Per versioni future, valutare uno snapshot di riserva periodico solo se necessario, senza introdurre SFTP quotidiano né un backend dedicato.
+
+## Routing statico e costi
+Gli URL canonici sono risolti dal browser dalla path, con rewrite Apache **solo** verso `detail.html`. Non occorre rigenerare HTML per ogni messa in scena, quindi nuove schede e nuovi teatri diventano navigabili subito dopo l'aggiornamento del feed, senza SFTP. L'unica configurazione server consiste nel file `site/.htaccess`, da pubblicare e collaudare con la prima modifica del frontend. I vecchi URL query rimangono compatibili; mantenere `legacy_id` finché serviranno le migrazioni dei vecchi link.

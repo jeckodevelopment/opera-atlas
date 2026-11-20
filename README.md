@@ -110,3 +110,11 @@ python -m scripts.publish_catalog_v2 --check
 ```
 
 Il workflow `refresh-catalog.yml` in **opera-atlas** esegue validazione e rigenerazione **quotidianamente alle 07:17 UTC** (e a fronte di modifiche del manifesto o del codice). Esegue commit solo se il contenuto approvato cambia, preservando la versione precedente e minimizzando il consumo di Actions. **Attenzione: non significa ancora scansione live automatica delle fonti**. Tutte le otto fonti registrate restano da verificare/autorizzare per una raccolta schedulata. Il job quotidiano oggi valida, pubblica e mantiene accessibili le osservazioni già approvate. Gli eventuali parser futuri dovranno inserirsi nella pipeline soltanto dopo approvazione della fonte e controllo di robots/termini, senza cancellazioni per errori di fetch. Nessun database cloud o backend è richiesto. Dettagli in [ARCHITECTURE](docs/ARCHITECTURE.md).
+
+### URL leggibili e schede raggruppate (Fase 3)
+Le nuove schede statiche sono raggiungibili tramite URL **senza query** quando l'hosting Apache applica le rewrite presenti in `site/.htaccess`:
+- `/dev/opera-atlas/opere/la-traviata/` — tutte le messe in scena censite in Italia, raggruppate per teatro.
+- `/dev/opera-atlas/torino/teatro-regio/` — tutte le messe in scena di un teatro.
+- `/dev/opera-atlas/torino/teatro-regio/la-traviata/` — **un'unica messa in scena con tutte le sue repliche**, anche se alcune non hanno orario.
+
+Il frontend offre le modalità **Per data** e **Per messa in scena**. Gli ID permanenti nel feed JSON restano indipendenti dai percorsi; i vecchi link `detail.html?type=...` sono ancora riconosciuti e instradati verso la pagina canonica. I cambi dei dati si propagano tramite il JSON GitHub senza nuova pubblicazione SFTP. Dopo un deploy UI è indispensabile il collaudo HTTP delle rewrite, perché il funzionamento dipende dal server.

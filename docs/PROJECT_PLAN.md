@@ -69,3 +69,13 @@ La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiest
 - [ ] Import quotidiano dalle pagine ufficiali: fonti e policy live ancora da approvare; niente scraping implicito.
 - [ ] Routing SEO leggibile su hosting e pagine delle messe in scena raggruppate: registri e URL canonici già modellati, frontend e server rewrite da integrare.
 - [ ] Risoluzione automatica sicura dei cambi identità in presenza di date modificabili e fonte non stabile: revisione umana ancora necessaria.
+
+## F3 — URL canonici e calendario di produzione
+- [x] Frontend: doppia vista per recita e per messa in scena; una messa in scena raggruppa le repliche.
+- [x] Scheda opera: tutte le messe in scena nazionali presenti nel feed v2, per teatro e date.
+- [x] Scheda teatro: elenco delle messe in scena e loro repliche.
+- [x] Scheda messa in scena: replica/date/orario e fonte condivisi.
+- [x] URL canonici descrittivi e rewrite Apache, con base href che preserva gli asset nei percorsi profondi; controllo live sul server da completare dopo deploy.
+- [x] Compatibilità dei vecchi link parametrizzati quando gli ID legacy sono riconosciuti.
+- [ ] Collisioni fra stagioni/produzioni successive: il generatore v2 rifiuta conflitti; assegnazione di slug qualificati e alias da automatizzare.
+- [ ] Verifica accessibilità nel browser e collaudo SEO dei percorsi dopo deploy.

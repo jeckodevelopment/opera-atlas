@@ -4,6 +4,7 @@
    Render via DOM text nodes, not innerHTML; never invent missing times. */
 /* Data are loaded from the canonical GitHub feed, not the SFTP copy. */
 const PAGE_SIZE = 12;
+let viewMode = "date";
 const controls = {
   query: document.getElementById("search"),
   city: document.getElementById("city"),
@@ -79,15 +80,14 @@ function createCard(event) {
   main.append(node("div","event-meta","Opera lirica · "+event.municipality));
   const heading = node("h3");
   const title = node("a",null,event.title);
-  title.href = "./detail.html?type=work&key="+encodeURIComponent(normalized(event.title));
+  title.href = window.OperaAtlasCatalog.urls(event).work;
   heading.append(title);
   main.append(heading);
   if (event.composer) main.append(node("p","composer",event.composer));
   const details = node("div","event-details");
   const venue = node("div","venue");
   const venueLink = node("a",null,event.venue);
-  venueLink.href = "./detail.html?type=venue&key="+encodeURIComponent(
-    normalized(event.venue)+"|"+normalized(event.municipality));
+  venueLink.href = window.OperaAtlasCatalog.urls(event).venue;
   venue.append(venueLink);
   details.append(venue);
   details.append(node("div","city",[event.municipality,event.region].filter(Boolean).join(" · ")));
@@ -95,7 +95,7 @@ function createCard(event) {
     event.time_known ? "Ore "+event.starts_at.slice(11,16) : "Orario da confermare"));
   main.append(details);
   const detail = node("a","detail-link","Esamina la recita");
-  detail.href = "./detail.html?type=performance&key="+encodeURIComponent(String(event.id));
+  detail.href = window.OperaAtlasCatalog.urls(event).staging;
   main.append(detail);
   const links = node("ul","source-links");
   for (const url of [...new Set(event.sources)]) {
@@ -132,20 +132,62 @@ function fillOptions(select, values) {
   }
 }
 
+function createStagingCard(events) {
+  const first = events[0];
+  const article = node("article","event");
+  const main = node("div","event-main");
+  main.append(node("div","event-meta",first.municipality+" · "+events.length+" repliche"));
+  const heading = node("h3");
+  const title = node("a",null,first.title);
+  title.href = window.OperaAtlasCatalog.urls(first).staging;
+  heading.append(title);
+  main.append(heading);
+  if (first.composer) main.append(node("p","composer",first.composer));
+  const theatre = node("p","composer",first.venue+" · "+first.municipality);
+  main.append(theatre);
+  const dates = node("div","staging-repliche");
+  for (const recita of events.slice(0,12)) {
+    dates.append(node("span","replica-chip",
+      dateLabel(recita.local_date)+" · "+
+      (recita.time_known ? recita.starts_at.slice(11,16) : "Ora da confermare")));
+  }
+  if (events.length>12) dates.append(node("span","replica-chip","+"+(events.length-12)+" altre"));
+  main.append(dates);
+  const link = node("a","detail-link","Esamina la messa in scena");
+  link.href = window.OperaAtlasCatalog.urls(first).staging;
+  main.append(link);
+  article.append(main);
+  return article;
+}
+
+function groupByStaging(events) {
+  const groups = new Map();
+  for (const e of events) {
+    const key = e.staging_id || window.OperaAtlasCatalog.urls(e).staging;
+    if (!groups.has(key)) groups.set(key,[]);
+    groups.get(key).push(e);
+  }
+  return [...groups.values()];
+}
+
 function render() {
   const filtered = catalog.filter(matches);
-  const pages = Math.ceil(filtered.length / PAGE_SIZE);
+  const entries = viewMode === "staging" ? groupByStaging(filtered) : filtered;
+  const pages = Math.ceil(entries.length / PAGE_SIZE);
   page = Math.max(0, Math.min(page, Math.max(0,pages-1)));
   list.replaceChildren();
-  const visible = filtered.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
-  visible.forEach(event=>list.append(createCard(event)));
+  const visible = entries.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
+  if (viewMode === "staging") visible.forEach(group=>list.append(createStagingCard(group)));
+  else visible.forEach(event=>list.append(createCard(event)));
   if (!filtered.length) {
     const empty = node("div","empty");
     empty.append(node("strong",null,catalog.length ? "Nessuna recita per questi filtri." : "Nessuna recita pubblicata."));
     empty.append(node("p",null,catalog.length ? "Prova a modificare o azzerare i filtri." : "Le recite verranno mostrate quando saranno disponibili dati ufficiali verificati."));
     list.append(empty);
   }
-  count.textContent = filtered.length === 1 ? "1 recita" : filtered.length+" recite";
+  count.textContent = viewMode === "staging"
+    ? entries.length+" messe in scena · "+filtered.length+" recite"
+    : (filtered.length === 1 ? "1 recita" : filtered.length+" recite");
   pager.hidden = pages <= 1;
   prev.disabled = page===0;
   next.disabled = page>=pages-1;
@@ -183,6 +225,17 @@ async function initialize() {
 }
 
 document.getElementById("filters").addEventListener("submit",event=>event.preventDefault());
+document.querySelectorAll("[data-catalog-view]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    viewMode = button.dataset.catalogView;
+    document.querySelectorAll("[data-catalog-view]").forEach(item=>{
+      const active = item === button;
+      item.classList.toggle("active",active);
+      item.setAttribute("aria-pressed",active?"true":"false");
+    });
+    page=0;render();
+  });
+});
 Object.values(controls).forEach(control=>control.addEventListener("input",()=>{page=0;render();}));
 document.getElementById("reset").addEventListener("click",()=>{
   Object.values(controls).forEach(control=>control.value="");
