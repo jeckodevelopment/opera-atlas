@@ -75,7 +75,7 @@ class DailyIngestionTests(unittest.TestCase):
         self.assertEqual(registry["performances"]["regio-traviata-2027|2027-02-26"],
                          self.registry["performances"]["regio-traviata-2027|2027-02-26"])
         self.assertEqual(registry["performances"]["regio-traviata-2027|2027-03-11"]["id"],
-                         f"oa-r-{max(int(e[\"id\"].split(\"-\")[-1]) for e in self.registry[\"performances\"].values())+1:06d}")
+                         "oa-r-" + str(max(int(e["id"].split("-")[-1]) for e in self.registry["performances"].values())+1).zfill(6))
         self.assertEqual(facts["reviewed_on"],"2026-11-20")
         facts2,registry2,health2,added2=scan_approved(
             facts,registry,[self.source],network_enabled=True,
