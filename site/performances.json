@@ -2780,6 +2780,60 @@
       ]
     },
     {
+      "id": "curated:regio-tragedie-carmen-piccolo-2027:2027-03-20",
+      "starts_at": "2027-03-20T18:00:00+01:00",
+      "local_date": "2027-03-20",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La Tragédie de Carmen",
+      "composer": "Marius Constant",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-tragedie-carmen-piccolo-2027:2027-03-21",
+      "starts_at": "2027-03-21T16:00:00+01:00",
+      "local_date": "2027-03-21",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La Tragédie de Carmen",
+      "composer": "Marius Constant",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen"
+      ]
+    },
+    {
+      "id": "curated:regio-tragedie-carmen-piccolo-2027:2027-03-25",
+      "starts_at": "2027-03-25T20:00:00+01:00",
+      "local_date": "2027-03-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Tragédie de Carmen",
+      "composer": "Marius Constant",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-02",
       "starts_at": "2027-04-02T20:00:00+02:00",
       "local_date": "2027-04-02",
@@ -2921,6 +2975,24 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-primo-amore-piccolo-2027:2027-04-18",
+      "starts_at": "2027-04-18T16:00:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La bohème, il primo amore",
+      "composer": "Giacomo Puccini",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore"
       ]
     },
     {
@@ -3230,6 +3302,24 @@
       ]
     },
     {
+      "id": "curated:regio-boheme-primo-amore-piccolo-2027:2027-04-30",
+      "starts_at": "2027-04-30T20:00:00+02:00",
+      "local_date": "2027-04-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème, il primo amore",
+      "composer": "Giacomo Puccini",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore"
+      ]
+    },
+    {
       "id": "curated:fenice-carmen-2027:2027-05-02",
       "starts_at": "2027-05-02T15:30:00+02:00",
       "local_date": "2027-05-02",
@@ -3245,6 +3335,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:regio-boheme-primo-amore-piccolo-2027:2027-05-02",
+      "starts_at": "2027-05-02T16:00:00+02:00",
+      "local_date": "2027-05-02",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La bohème, il primo amore",
+      "composer": "Giacomo Puccini",
+      "venue": "Piccolo Regio Puccini",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore"
       ]
     },
     {
