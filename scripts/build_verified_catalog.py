@@ -18,6 +18,8 @@ OUTPUT = ROOT / "site" / "performances.json"
 TIME_EVIDENCE = ROOT / "data" / "verified-time-evidence.json"
 APPROVED_PAGES = {
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-tragedie-de-carmen",
+    "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme-il-primo-amore",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/cavalleria-rusticana",
