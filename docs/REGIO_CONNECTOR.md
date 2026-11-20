@@ -64,3 +64,15 @@ python -m opera_atlas.batch_cli --db atlas.sqlite3 --manifest path/to/verified-p
 6. Confermare che un manifesto con ID sconosciuti o fonte non approvata sia rifiutato prima di qualsiasi HTTP.
 
 **Limite esplicito:** il batch è un passo operativo, non ancora un crawler automatico per scoprire autonomamente opere e date dalle stagioni. Il sito deve permettere fetch nel contesto di esecuzione e il parser deve essere collaudato con HTML reale prima dell'uso in produzione.
+
+## Variazioni di stato e cronologia (migrazione v5)
+`opera_atlas.changes.set_performance_status` consente, **solo dopo verifica umana**, di aggiornare una recita da `announced` a `confirmed`, `postponed` o `cancelled` secondo le transizioni consentite. Richiede sempre URL HTTPS della **fonte già collegata e approvata** e motivazione non vuota. Registra una riga in `performance_status_history`, con stato precedente, nuovo stato, URL e decisione. Una ripetizione dello stesso stato è idempotente; una transizione non consentita è rifiutata. L'export pubblico esclude eventi `cancelled` e `postponed`, ma li conserva nel database.
+
+**Regola editoriale:** la scomparsa di una recita dal calendario non equivale a cancellazione. Non applicare automaticamente `cancelled` per differenze di numero tra due acquisizioni. Il parser attuale genera ancora identificatori basati su URL e timestamp; quindi **non rileva automaticamente spostamenti di una data come variazioni dello stesso evento**. Riconciliazione e risoluzione controllata per cambi di identità restano requisiti aperti. Evitare qualsiasi aggiornamento automatico non suffragato da una comunicazione ufficiale.
+
+### Verifiche di regressione
+- Registrare una conferma e un annullamento con due motivazioni; verificare due eventi storici e stato corrente `cancelled`.
+- Ripetere `cancelled`: nessuna nuova riga di cronologia.
+- Ripetere l'importazione della recita: non deve annullare lo stato aggiornato.
+- Provare URL non collegati o fonti bloccate: nessun aggiornamento.
+- Verificare l'esclusione delle recite annullate dal JSON pubblico senza eliminazione dell'archivio storico.
