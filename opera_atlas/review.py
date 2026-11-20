@@ -38,7 +38,7 @@ def resolve_review(
     proposed_work = conn.execute(
         "SELECT work_id FROM productions WHERE id=?",
         (review["proposed_production_id"],),
-    )["work_id"]
+    ).fetchone()["work_id"]
 
     if action == "create":
         if selected_performance_id is not None:
