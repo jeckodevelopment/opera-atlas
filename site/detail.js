@@ -323,7 +323,15 @@ async function initialize() {
       if(!future.length)results.append(node("p","empty","Questa produzione non ha date future censite."));
     }
     if(selected.kind==="work")arrangeWorkOverview(first);
-    else content.prepend(editorialImage(selected.kind==="venue"?"venue":"work",first));
+    else if(selected.kind==="staging" || selected.kind==="group"){
+      const figure=node("figure","production-cover-figure");
+      const poster=editorialImage("work",first);
+      poster.className="production-cover-image";
+      figure.append(poster);
+      content.prepend(figure);
+      content.classList.add("production-detail");
+    }
+    else content.prepend(editorialImage("venue",first));
     sourceLinks(selected.events,selected.kind,theatreProfile);
     document.title=title.textContent+" — Opera+ Atlas";
     // Canonicalize old query-based links after resolution; never change identity.

@@ -29,6 +29,18 @@ class DetailPolishTests(unittest.TestCase):
         self.assertIn('object-fit:contain',css)
         self.assertIn('.work-overview{grid-template-columns:minmax(0,1fr)',css)
 
+    def test_production_and_touring_posters_are_portrait_uncropped(self):
+        js=(SITE/"detail.js").read_text(encoding="utf-8")
+        css=(SITE/"styles.css").read_text(encoding="utf-8")
+        self.assertIn('selected.kind==="staging" || selected.kind==="group"',js)
+        self.assertIn('poster.className="production-cover-image"',js)
+        self.assertIn('content.classList.add("production-detail")',js)
+        self.assertIn('.production-cover-image{display:block;',css)
+        self.assertIn('aspect-ratio:3/4;object-fit:contain;',css)
+        self.assertIn('.production-cover-figure{float:none;',css)
+        self.assertIn('if(selected.kind==="work")arrangeWorkOverview(first)',js)
+        self.assertIn('results.append(dateSelector(future))',js)
+
     def test_theatre_calendar_action_bottom_with_separator(self):
         js=(SITE/"detail.js").read_text(encoding="utf-8")
         css=(SITE/"styles.css").read_text(encoding="utf-8")

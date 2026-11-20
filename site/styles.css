@@ -324,3 +324,12 @@
   .detail-related .theatre-production{padding:15px}
   .detail-related .theatre-production > .detail-link{padding-top:13px}
 }
+
+/* Production and touring-production covers share the same uncropped portrait treatment as opera posters. */
+.production-detail{display:flow-root}
+.production-cover-figure{float:right;width:min(36%,320px);margin:0 0 24px clamp(20px,3vw,40px);display:flex;justify-content:center}
+.production-cover-image{display:block;width:100%;height:auto;max-height:520px;aspect-ratio:3/4;object-fit:contain;object-position:center top;border-radius:9px;background:#f1ecdf;box-shadow:0 10px 30px #19191912}
+@media(max-width:700px){
+  .production-cover-figure{float:none;width:min(78%,290px);margin:0 auto 24px}
+  .production-cover-image{max-height:440px}
+}
