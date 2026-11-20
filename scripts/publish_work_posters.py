@@ -180,7 +180,8 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
         slug:posters.get(slug,{"kind":"original_editorial_cover",
               "alt":"Copertina editoriale originale per "+item["title"]})
         for slug,item in sorted(((w["slug"],w) for w in json.loads(
-            REGISTRY.read_text(encoding="utf-8"))["works"].values()))}}
+            REGISTRY.read_text(encoding="utf-8"))["works"].values()),
+            key=lambda entry:entry[0])}}
     _write_atomic(EVIDENCE,{"schema_version":1,"posters":posters,"checks":checks})
     _write_atomic(OUTPUT,manifest)
     _write_atomic(HEALTH,{"schema_version":1,
