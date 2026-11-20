@@ -56,6 +56,20 @@ function missing(message) {
   subtitle.textContent="";
   status.textContent=message;
 }
+async function appendSynopsis(event) {
+  try {
+    const response=await fetch("./work-synopses.json");
+    if(!response.ok)return;
+    const doc=await response.json();
+    if(doc.schema_version!==1||!doc.synopses)return;
+    const slug=event.work_slug||window.OperaAtlasCatalog.urls(event).work.split("/").filter(Boolean).pop();
+    const text=doc.synopses[slug];
+    if(typeof text!=="string"||!text.trim())return;
+    const section=node("section","brief-synopsis");
+    section.append(node("h2",null,"In breve"),node("p",null,text));
+    content.prepend(section);
+  }catch{/* Optional editorial synopsis must never block performance dates. */}
+}
 function validEvent(e) {
   return e && typeof e.id==="string" && typeof e.title==="string" && e.title
     && typeof e.venue==="string" && e.venue
@@ -157,6 +171,8 @@ async function initialize() {
       kind.textContent="Opera del repertorio";
       title.textContent=first.title;
       subtitle.textContent=first.composer||"Compositore non verificato";
+      document.querySelector(".detail-related h2").textContent="Dove vedere "+first.title;
+      await appendSynopsis(first);
       content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche censite in Italia"));
@@ -166,6 +182,7 @@ async function initialize() {
       if(!future.length)results.append(node("p","empty","Non risultano prossime rappresentazioni verificate di questa opera nel catalogo Atlas."));
     }else if(selected.kind==="venue") {
       kind.textContent="Teatro";
+      document.querySelector(".detail-related h2").textContent="Spettacoli in programma";
       title.textContent=first.venue;
       subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
       content.append(node("p","staging-summary",
@@ -174,7 +191,8 @@ async function initialize() {
       for(const group of grouping(future))stagingGroup(group,"venue");
       if(!future.length)results.append(node("p","empty","Nessun prossimo spettacolo verificato presso questo teatro nel catalogo Atlas."));
     }else{
-      kind.textContent="Messa in scena";
+      kind.textContent="Produzione";
+      document.querySelector(".detail-related h2").textContent="Date e informazioni biglietti";
       title.textContent=first.title;
       subtitle.textContent=first.venue+" · "+first.municipality+
         (first.season ? " · Stagione "+first.season : "");
