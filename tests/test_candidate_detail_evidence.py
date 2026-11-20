@@ -4,7 +4,7 @@ import unittest
 from datetime import date
 
 from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
-from scripts.collect_candidate_details import parse_event_facts,selected_candidates,collect,parse_known_opera_detail,parse_authoritative_new_work_detail
+from scripts.collect_candidate_details import parse_event_facts,selected_candidates,collect,parse_known_opera_detail,parse_authoritative_new_work_detail,MAX_PAGES,MAX_PER_SOURCE
 from scripts.publish_catalog_v2 import REGISTRY
 
 class CandidateDetailTests(unittest.TestCase):
@@ -61,7 +61,7 @@ class CandidateDetailTests(unittest.TestCase):
             "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
             "status":"needs_review"})
         chosen=selected_candidates(candidates,today=date(2026,11,20))
-        self.assertEqual(len(chosen),10)
+        self.assertEqual(len(chosen),24)
         self.assertEqual(chosen[0]["id"],"candidate-z-macbeth")
 
     def test_untested_new_opera_requires_authority_and_official_composer(self):
@@ -142,7 +142,7 @@ class CandidateDetailTests(unittest.TestCase):
         for offset in range(30):
             day=date.fromordinal(date(2026,11,20).toordinal()+offset)
             chosen=selected_candidates(candidates,today=day)
-            self.assertEqual(len(chosen),10)
+            self.assertEqual(len(chosen),24)
             self.assertGreaterEqual(len([x for x in chosen if x["id"].startswith("unknown")]),4)
             seen.update(x["id"] for x in chosen)
         self.assertEqual(seen,{x["id"] for x in rows})
@@ -160,7 +160,7 @@ class CandidateDetailTests(unittest.TestCase):
             "status":"needs_review"})
         batch=selected_candidates(candidates,today=date(2026,11,20))
         self.assertIn("verified-rigoletto",{x["id"] for x in batch})
-        self.assertLessEqual(len(batch),10)
+        self.assertEqual(len(batch),24)
 
     def test_daily_budget_covers_each_of_five_active_theatres(self):
         bases={
@@ -174,13 +174,52 @@ class CandidateDetailTests(unittest.TestCase):
               for key,template in bases.items() for index in range(15)]
         candidates={"schema_version":1,"candidates":rows}
         chosen=selected_candidates(candidates,today=date(2026,11,20))
-        self.assertEqual(len(chosen),10)
+        self.assertEqual(len(chosen),60)
         self.assertEqual({x["source_key"] for x in chosen},set(bases))
         visited=set()
         for offset in range(80):
             day=date.fromordinal(date(2026,11,20).toordinal()+offset)
             visited.update(x["id"] for x in selected_candidates(candidates,today=day))
         self.assertEqual(visited,{x["id"] for x in rows})
+
+    def test_full_current_queue_covered_without_daily_ten_page_artificial_limit(self):
+        self.assertEqual(MAX_PAGES,60)
+        self.assertEqual(MAX_PER_SOURCE,24)
+        bases={
+            "scala-season-2026-27":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{}.html",
+            "arena-festival-2027":"https://www.arena.it/arena-opera-festival/unknown-{}/",
+            "fenice-opera-2026-27":"https://www.teatrolafenice.it/event/unknown-{}/",
+            "parma-opera-2027":"https://teatroregioparma.it/spettacolo/unknown-{}/",
+            "massimo-season-2026-27":"https://www.teatromassimo.it/event/unknown-{}/",
+        }
+        sizes=[10,2,7,12,23]  # 54 pending productions observed in live catalog
+        rows=[{"id":f"{key}-{i}","source_key":key,
+               "official_url":url.format(i),"status":"needs_review"}
+              for (key,url),size in zip(bases.items(),sizes) for i in range(size)]
+        chosen=selected_candidates({"schema_version":1,"candidates":rows},
+                                  today=date(2026,11,20))
+        self.assertEqual(len(chosen),54)
+        self.assertEqual(len({x["id"] for x in chosen}),54)
+        from collections import Counter
+        by_source=Counter(x["source_key"] for x in chosen)
+        self.assertEqual(max(by_source.values()),23)
+
+    def test_network_pacing_is_injected_and_testable_without_waiting(self):
+        rows=[]
+        for i in range(3):
+            rows.append({"id":f"pacing-{i}",
+                "source_key":"fenice-opera-2026-27",
+                "official_url":f"https://www.teatrolafenice.it/event/example-{i}/",
+                "status":"needs_review"})
+        waits=[]
+        def fake(db,*,source_id,url,network_enabled):
+            return FetchResult(url,"<p>no supported events</p>","a"*64,26)
+        _,health=collect({"schema_version":1,"candidates":rows},self.empty,
+                         network_enabled=True,fetcher=fake,
+                         today=date(2026,11,20),pause=waits.append)
+        self.assertEqual(len(health),3)
+        self.assertEqual(len(waits),2)
+        self.assertTrue(all(0<x<=1 for x in waits))
 
     def test_structured_dates_and_explicit_timezone_only(self):
         html='<script type="application/ld+json">'+json.dumps({"@graph":[

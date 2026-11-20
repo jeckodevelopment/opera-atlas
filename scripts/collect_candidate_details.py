@@ -25,7 +25,11 @@ from scripts.publish_catalog_v2 import normalized
 OUTPUT=ROOT/"data"/"candidate-detail-evidence.json"
 PUBLIC=ROOT/"public"/"catalog"/"candidate-detail-evidence.json"
 HEALTH=ROOT/"data"/"candidate-detail-health.json"
-MAX_PAGES=10
+MAX_PAGES=60
+MAX_PER_SOURCE=24
+# Pause between individual official page requests. Every fetch also checks
+# current robots.txt and its source policy before reading HTML.
+REQUEST_GAP_SECONDS=0.75
 MAX_EVENTS=80
 
 class JsonLdReader(HTMLParser):
@@ -244,9 +248,14 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     selected=[]
     seen_ids=set()
     counts={"known":0,"other":0}
+    per_source={}
     def take(item,kind,limit):
-        if item["id"] in seen_ids or counts[kind]>=limit:return False
+        source=item["source_key"]
+        if (item["id"] in seen_ids or counts[kind]>=limit or
+                per_source.get(source,0)>=MAX_PER_SOURCE):
+            return False
         seen_ids.add(item["id"])
+        per_source[source]=per_source.get(source,0)+1
         selected.append(item)
         counts[kind]+=1
         return True
@@ -268,7 +277,8 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     return selected
 
 def collect(candidates:dict,previous:dict,*,network_enabled:bool,
-            fetcher=fetch_official_html,today:date|None=None):
+            fetcher=fetch_official_html,today:date|None=None,
+            pause=None):
     if previous.get("schema_version")!=1 or not isinstance(previous.get("evidence"),list):
         raise ValueError("invalid previous evidence")
     retained={x["candidate_id"]:x.copy() for x in previous["evidence"]}
@@ -279,11 +289,16 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                   if RESEARCH.exists() else {"schema_version":1,"works":[]})
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))}
     health=[]
+    # Network pacing is injected only by the production CLI; unit tests use
+    # deterministic mocked page fetchers and never wait or perform HTTP.
+    pause=pause or (lambda seconds:None)
     db=connect()
     try:
         migrate(db)
-        for item in chosen:
+        for index,item in enumerate(chosen):
             source=sources[item["source_key"]]
+            if network_enabled and index:
+                pause(REQUEST_GAP_SECONDS)
             try:
                 if not network_enabled:raise AccessDenied("network disabled")
                 db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",
@@ -327,7 +342,9 @@ def main():
     candidates=json.loads(INDEX.read_text(encoding="utf-8"))
     previous=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {
         "schema_version":1,"evidence":[]}
-    result,health=collect(candidates,previous,network_enabled=parsed.allow_network)
+    import time
+    result,health=collect(candidates,previous,network_enabled=parsed.allow_network,
+                          pause=time.sleep)
     _write_atomic(OUTPUT,result)
     _write_atomic(PUBLIC,result)
     _write_atomic(HEALTH,{"schema_version":1,
