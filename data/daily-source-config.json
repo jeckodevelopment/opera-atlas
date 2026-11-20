@@ -101,6 +101,56 @@
       "composer": "Pëtr Il'ič Čajkovskij",
       "access_status": "approved",
       "approval_evidence": "Operator authorization 2026-11-20, factual event data only, conditional runtime robots.txt control. Source production page individually reviewed with dated recite; every daily request must recheck robots permission. Robots authorization on this exact page NOT verified at editorial onboarding; checked dynamically at runtime before each fetch."
+    },
+    {
+      "key": "lombardia-turandot-pavia",
+      "adapter": "fraschini",
+      "url": "https://www.teatrofraschini.it/programma/turandot/",
+      "official_url": "https://www.teatrofraschini.it/",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for factual information from official OperaLombardia partner theatres, conditional runtime robots.txt gate. Robots access on exact page NOT verified at onboarding; every request must check at runtime."
+    },
+    {
+      "key": "lombardia-cavalleria-pavia",
+      "adapter": "fraschini",
+      "url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
+      "official_url": "https://www.teatrofraschini.it/",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for factual information from official OperaLombardia partner theatres, conditional runtime robots.txt gate. Robots access on exact page NOT verified at onboarding; every request must check at runtime."
+    },
+    {
+      "key": "lombardia-pagliacci-pavia",
+      "adapter": "fraschini",
+      "url": "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
+      "official_url": "https://www.teatrofraschini.it/",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for factual information from official OperaLombardia partner theatres, conditional runtime robots.txt gate. Robots access on exact page NOT verified at onboarding; every request must check at runtime."
+    },
+    {
+      "key": "lombardia-ballo-pavia",
+      "adapter": "fraschini",
+      "url": "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/",
+      "official_url": "https://www.teatrofraschini.it/",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for factual information from official OperaLombardia partner theatres, conditional runtime robots.txt gate. Robots access on exact page NOT verified at onboarding; every request must check at runtime."
+    },
+    {
+      "key": "lombardia-death-venice-pavia",
+      "adapter": "fraschini",
+      "url": "https://www.teatrofraschini.it/programma/death-in-venice/",
+      "official_url": "https://www.teatrofraschini.it/",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "access_status": "approved",
+      "approval_evidence": "Operator authorization 2026-11-20 for factual information from official OperaLombardia partner theatres, conditional runtime robots.txt gate. Robots access on exact page NOT verified at onboarding; every request must check at runtime."
     }
   ]
 }
