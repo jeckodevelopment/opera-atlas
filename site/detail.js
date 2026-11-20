@@ -127,6 +127,8 @@ function resolve(events) {
   const path=pathname.startsWith(root) ? pathname.slice(root.length) : "";
   const pieces=path.split("/").filter(Boolean);
   if(pieces.length && pieces.every(part=>/^[a-z0-9-]+$/.test(part))) {
+    if(pieces.length===2 && pieces[0]==="produzioni")
+      return {kind:"group",events:events.filter(e=>e.production_group_id===pieces[1])};
     if(pieces.length===2 && pieces[0]==="opere")
       return {kind:"work",events:events.filter(e=>
         window.OperaAtlasCatalog.urls(e).work===root+pieces.join("/")+"/")};
@@ -190,6 +192,16 @@ async function initialize() {
         selected.events.length+" repliche"));
       for(const group of grouping(future))stagingGroup(group,"venue");
       if(!future.length)results.append(node("p","empty","Nessun prossimo spettacolo verificato presso questo teatro nel catalogo Atlas."));
+    }else if(selected.kind==="group"){
+      kind.textContent="Produzione condivisa";
+      title.textContent=first.title;
+      const venues=[...new Set(selected.events.map(e=>e.venue+" · "+e.municipality))];
+      subtitle.textContent=venues.length+" teatri · "+(first.composer||"");
+      document.querySelector(".detail-related h2").textContent="Dove e quando vedere questa produzione";
+      content.append(node("p","staging-summary","Una produzione condivisa, "+venues.length+" sedi e "+selected.events.length+" rappresentazioni censite."));
+      content.append(link("Scopri l'opera",window.OperaAtlasCatalog.urls(first).work));
+      for(const group of grouping(future))stagingGroup(group,"work");
+      if(!future.length)results.append(node("p","empty","Non risultano rappresentazioni future verificate di questa produzione."));
     }else{
       kind.textContent="Produzione";
       document.querySelector(".detail-related h2").textContent="Date e informazioni biglietti";
@@ -213,7 +225,9 @@ async function initialize() {
         ? window.OperaAtlasCatalog.urls(first).work
         : selected.kind==="venue"
           ? window.OperaAtlasCatalog.urls(first).venue
-          : window.OperaAtlasCatalog.urls(first).staging;
+          : selected.kind==="group"
+            ? window.OperaAtlasCatalog.urls(first).production
+            : window.OperaAtlasCatalog.urls(first).staging;
       window.history.replaceState(null,"",canonical);
     }
   }catch {
