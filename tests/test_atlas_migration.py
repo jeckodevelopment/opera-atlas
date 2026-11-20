@@ -79,6 +79,8 @@ class AtlasMigrationTests(unittest.TestCase):
             self.assertIn("secrets.ATLAS_SFTP_" + suffix,workflow)
             self.assertNotIn("secrets.ATLAS_FTPS_" + suffix,workflow)
         self.assertIn("ATLAS_FTPS_PORT: '21'",workflow)
+        self.assertIn("inputs.ftp_host || vars.ATLAS_FTPS_HOST || secrets.ATLAS_SFTP_HOST",workflow)
+        self.assertIn("ftp_host:",workflow)
         self.assertNotIn("secrets.ATLAS_SFTP_PORT",workflow)
         self.assertNotIn("ATLAS_SFTP_KNOWN_HOSTS",workflow)
 

@@ -19,9 +19,10 @@
    - `ATLAS_SFTP_PASSWORD`: password FTPS.
    - `ATLAS_SFTP_REMOTE_DIR`: cartella `atlas` nel filesystem visibile via FTP, con percorso assoluto nel relativo account (per esempio `/atlas` o `/public_html/atlas`).
    Non occorre rinominare o reinserire questi quattro secret. I nomi `ATLAS_FTPS_*` sono usati **solo internamente allo script** come variabili d'ambiente del processo: il workflow li popola dai secret `ATLAS_SFTP_*` già presenti.
-5. La connessione è sempre **FTPS esplicito sulla porta 21**, fissata nel workflow e indipendente dall'eventuale precedente secret `ATLAS_SFTP_PORT` (SFTP SSH su porta 22). Il server deve supportare `AUTH TLS` e `PROT P` con certificato TLS valido. Niente FTP in chiaro.
-6. I vecchi `ATLAS_SFTP_KNOWN_HOSTS`, `ATLAS_SFTP_PRIVATE_KEY` e `ATLAS_SFTP_KEY_PASSPHRASE` non servono a FTPS e vengono ignorati; non occorre eliminarli per pubblicare. Non pubblicare credenziali in chat, issue o log.
-7. Se il precedente `ATLAS_SFTP_REMOTE_DIR` indica un percorso visibile solo via SSH/SFTP e non via FTP, la connessione FTPS può comunque fallire: verificare dai log il path effettivamente visibile all'account prima di apportare modifiche. Non assumere che i due filesystem abbiano la stessa radice.
+5. Se l'hostname storico `ATLAS_SFTP_HOST` punta a un servizio che non supporta `AUTH TLS` (errore server `500 This security scheme is not implemented`), usare l'hostname FTP/FTPS esplicito comunicato dal provider: si può passare nel campo facoltativo `ftp_host` di **Run workflow**, oppure salvare il solo hostname non segreto come variabile di repository `ATLAS_FTPS_HOST`. La precedenza è input manuale → variabile → secret storico. Le credenziali non cambiano. Non inserire URL con protocollo o porta nel campo hostname e non usare FTP in chiaro. Un errore `500` su `AUTH TLS` non può essere risolto cambiando codice se l'endpoint raggiunto non implementa FTPS esplicito.
+6. La connessione è sempre **FTPS esplicito sulla porta 21**, fissata nel workflow e indipendente dall'eventuale precedente secret `ATLAS_SFTP_PORT` (SFTP SSH su porta 22). Il server deve supportare `AUTH TLS` e `PROT P` con certificato TLS valido. Niente FTP in chiaro.
+7. I vecchi `ATLAS_SFTP_KNOWN_HOSTS`, `ATLAS_SFTP_PRIVATE_KEY` e `ATLAS_SFTP_KEY_PASSPHRASE` non servono a FTPS e vengono ignorati; non occorre eliminarli per pubblicare. Non pubblicare credenziali in chat, issue o log.
+8. Se il precedente `ATLAS_SFTP_REMOTE_DIR` indica un percorso visibile solo via SSH/SFTP e non via FTP, la connessione FTPS può comunque fallire: verificare dai log il path effettivamente visibile all'account prima di apportare modifiche. Non assumere che i due filesystem abbiano la stessa radice.
 
 ## Prima pubblicazione controllata
 

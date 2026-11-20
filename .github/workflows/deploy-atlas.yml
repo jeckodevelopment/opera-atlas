@@ -1,6 +1,12 @@
 name: Publish Opera Atlas to opera.plus/atlas
 on:
   workflow_dispatch:
+    inputs:
+      ftp_host:
+        description: 'Optional explicit FTPS server hostname (leave blank to use existing ATLAS_SFTP_HOST secret)'
+        required: false
+        type: string
+        default: ''
   push:
     branches: [main]
     paths:
@@ -42,7 +48,7 @@ jobs:
           python -m scripts.publish_work_editorial --check
       - name: Publish owned /atlas folder and verify HTTPS (rollback on error)
         env:
-          ATLAS_FTPS_HOST: ${{ secrets.ATLAS_SFTP_HOST }}
+          ATLAS_FTPS_HOST: ${{ inputs.ftp_host || vars.ATLAS_FTPS_HOST || secrets.ATLAS_SFTP_HOST }}
           ATLAS_FTPS_PORT: '21' # Explicit FTPS; legacy SFTP port 22 must not be reused
           ATLAS_FTPS_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
           ATLAS_FTPS_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
