@@ -113,6 +113,13 @@
       "url": "https://www.liricocagliari.it/categoria-evento/opera/",
       "access_status": "approved",
       "min_links": 7
+    },
+    {
+      "key": "bellini-catania-opera-2026-27",
+      "official_url": "https://www.teatromassimobellini.it/",
+      "url": "https://www.teatromassimobellini.it/opere-e-balletto/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }
