@@ -85,8 +85,8 @@ class SafePushTests(unittest.TestCase):
     def test_deferred_push_emits_workflow_retry_output(self):
         with TemporaryDirectory() as tmp:
             output=Path(tmp)/"github_output"
-            for result,expected in (("deferred","deferred=true\\n"),
-                                    ("published","deferred=false\\n")):
+            for result,expected in (("deferred","deferred=true\n"),
+                                    ("published","deferred=false\n")):
                 output.write_text("")
                 with patch.dict(os.environ,{"GITHUB_OUTPUT":str(output)}):
                     with patch.object(safe_push_catalog,"safe_push",return_value=result):
