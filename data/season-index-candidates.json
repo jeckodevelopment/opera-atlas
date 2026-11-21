@@ -42,6 +42,14 @@
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
     {
+      "id": "oa-index-05aab24f386e6aa86884",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/la-clemenza-di-tito/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-05c2c0e38ba2a356b5ba",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/orchestra-jazz-siciliana-the-brass-group-3/",
@@ -54,8 +62,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T22:37:11+00:00"
     },
     {
       "id": "oa-index-05e3307781f3a1f0668e",
@@ -88,6 +96,22 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T14:28:24+00:00",
       "last_seen": "2026-11-21T17:17:07+00:00"
+    },
+    {
+      "id": "oa-index-08102433798cc6aa1215",
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-0a7e4f31ff7370ffc325",
+      "source_key": "bellini-catania-opera-2026-27",
+      "official_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-0b53a302925a2b86cdef",
@@ -149,9 +173,9 @@
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "last_seen": "2026-11-21T22:37:11+00:00"
     },
     {
       "id": "oa-index-16181b2d47cf17dea1e4",
@@ -183,7 +207,23 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-1a02a18e39758285a976",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-1a517d22f1477341131c",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/la-cenerentola-2/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-1a59967acac40b5e8b1c",
@@ -194,6 +234,14 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-1d35c5f06b99b17bd41f",
+      "source_key": "ferrara-macbeth-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-1e15e89ae5b2a2ec45f9",
       "source_key": "verdi-trieste-season-2026-27",
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
@@ -202,12 +250,28 @@
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
     {
+      "id": "oa-index-1e27375a038df76a1ea6",
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-1e384fa01b8a144db9c7",
       "source_key": "carlo-felice-season-2026-27",
       "official_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
       "status": "already_catalogued",
       "first_seen": "2026-11-21T11:54:39+00:00",
       "last_seen": "2026-11-21T12:02:51+00:00"
+    },
+    {
+      "id": "oa-index-1ea669503ea5640af931",
+      "source_key": "ferrara-boccanegra-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-1ee4c3ee491b262e30a9",
@@ -239,15 +303,15 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "last_seen": "2026-11-21T22:37:11+00:00"
     },
     {
       "id": "oa-index-212db41a4c6f7afcbcda",
@@ -290,6 +354,14 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-29e61184f06223faaa86",
+      "source_key": "ferrara-barbiere-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-2ab0ba26f1806086b52a",
       "source_key": "verdi-trieste-season-2026-27",
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
@@ -314,6 +386,14 @@
       "last_seen": "2026-11-21T15:38:33+00:00"
     },
     {
+      "id": "oa-index-357ebb275673ae888623",
+      "source_key": "ferrara-dido-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-35be56b50cfb2da6f65b",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/prima-che-si-alzi-il-sipario-2/",
@@ -334,8 +414,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T22:37:11+00:00"
     },
     {
       "id": "oa-index-3b731f9ff09ab7dc5294",
@@ -439,7 +519,7 @@
       "official_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:11:04+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-54f0eebbc01abdef253e",
@@ -519,7 +599,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-669472f18fdc8ab6bd13",
@@ -544,6 +624,22 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T20:34:43+00:00"
+    },
+    {
+      "id": "oa-index-6ad3d8aa3ac55b149e99",
+      "source_key": "bellini-catania-opera-2026-27",
+      "official_url": "https://www.teatromassimobellini.it/eventi/carmen-2026/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-6c5243260ad25ecab396",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/lanno-che-verra/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-6cd199691f7145a4d048",
@@ -591,7 +687,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-790b965de8129382aa04",
@@ -605,9 +701,9 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -624,6 +720,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-20T22:03:17+00:00"
+    },
+    {
+      "id": "oa-index-7ee44d5187617ce9e1b7",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-7f4bc91ba66978263199",
@@ -679,7 +783,7 @@
       "official_url": "https://www.liricocagliari.it/evento/candide/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-8a4ea2e4cf761a147ffb",
@@ -688,6 +792,22 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-21T19:23:40+00:00"
+    },
+    {
+      "id": "oa-index-8aa427dd9ba609755fb6",
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-8bc8b40e1da92efab27d",
+      "source_key": "bellini-catania-opera-2026-27",
+      "official_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-8d2b9a6be734bb249434",
@@ -730,6 +850,14 @@
       "last_seen": "2026-11-21T18:57:57+00:00"
     },
     {
+      "id": "oa-index-93538b402fa3e844ca69",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-93c5f576f90532fd4b77",
       "source_key": "arena-festival-2027",
       "official_url": "https://www.arena.it/arena-opera-festival/carmina-burana/",
@@ -766,8 +894,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T22:37:11+00:00"
     },
     {
       "id": "oa-index-9c8f948971aebfd24d5e",
@@ -775,7 +903,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -794,12 +922,20 @@
       "last_seen": "2026-11-21T20:34:43+00:00"
     },
     {
+      "id": "oa-index-9fdcd7eba240da4540af",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/siberia/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-a02901b14e6eae69df5c",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-a0eba5854831ebbf26c0",
@@ -856,6 +992,14 @@
       "status": "excluded_nonopera",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-20T21:15:46+00:00"
+    },
+    {
+      "id": "oa-index-a98083086627ce6e0225",
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/veleno/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-a9e0eff95e96e71fd958",
@@ -935,7 +1079,15 @@
       "official_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:11:04+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-b79b2b7737225d1a67dc",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-b809ddd0a4d8d8cb712e",
@@ -957,9 +1109,9 @@
       "id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:50:36.994Z",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "last_seen": "2026-11-21T22:37:11+00:00"
     },
     {
       "id": "oa-index-bc101d1d7cf587ef8441",
@@ -978,6 +1130,14 @@
       "last_seen": "2026-11-20T21:13:13+00:00"
     },
     {
+      "id": "oa-index-bce266e873c77688b385",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/aida/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-bec860aa12e82378f67b",
       "source_key": "arena-festival-2027",
       "official_url": "https://www.arena.it/arena-opera-festival/domande-frequenti/",
@@ -986,12 +1146,20 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-bf715bf96f42b6bf0ef7",
+      "source_key": "ferrara-clemenza-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
       "id": "oa-index-bf778bbaf1cca4ef8024",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/code-unknown/",
       "status": "needs_review",
       "first_seen": "2026-11-21T19:46:19+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-c03e9ef77c219026cd5c",
@@ -1031,7 +1199,15 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-ce1e653a2de54a52cad2",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/lanno-che-verra/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-ce32b1104cdb579dc299",
@@ -1040,6 +1216,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T14:28:24+00:00",
       "last_seen": "2026-11-21T15:38:33+00:00"
+    },
+    {
+      "id": "oa-index-cef30865a6bd9d93804f",
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-cfd5a4967756ff1d51dd",
@@ -1064,6 +1248,14 @@
       "status": "excluded_nonopera",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-20T21:15:46+00:00"
+    },
+    {
+      "id": "oa-index-d54e9b021b5167cfb735",
+      "source_key": "bellini-catania-opera-2026-27",
+      "official_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T22:34:11+00:00",
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-d610eb9b9a480ae8cbf1",
@@ -1126,8 +1318,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T22:37:11+00:00"
     },
     {
       "id": "oa-index-dfe824fe3301174d2165",
@@ -1183,7 +1375,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -1207,7 +1399,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -1247,7 +1439,7 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-eedca6da108bd27e8d30",
@@ -1255,7 +1447,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-ef019182f129777d75f0",
@@ -1383,15 +1575,15 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T21:30:14+00:00"
+      "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
       "id": "oa-index-feadef19a246de079ccb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
       "first_seen": "2026-11-21T21:01:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T21:32:33+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T22:37:11+00:00"
     }
   ]
 }

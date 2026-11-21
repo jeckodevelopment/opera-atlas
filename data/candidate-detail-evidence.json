@@ -114,10 +114,34 @@
       "official_season": "2025/2026"
     },
     {
+      "candidate_id": "oa-index-05aab24f386e6aa86884",
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/la-clemenza-di-tito/",
+      "content_sha256": "ccb92125400c599c1a07b9869beba65e64fe5b6bbaf3e86e1408884528fae4b5",
+      "checked_at": "2026-11-21T22:37:02+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-03-05",
+          "starts_at": "2027-03-05T20:00:00+01:00",
+          "venue": "Teatro Municipale"
+        },
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-03-07",
+          "starts_at": "2027-03-07T15:30:00+01:00",
+          "venue": "Teatro Municipale"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -249,6 +273,22 @@
           "venue": "Teatro Petruzzelli",
           "date": "2027-02-02",
           "starts_at": "2027-02-02T18:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-0a7e4f31ff7370ffc325",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+      "content_sha256": "ac05c3168eb393df0b4134e848754d060a70718429a18625c2d7151cf0cc0f12",
+      "checked_at": "2026-11-21T22:36:42+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La bella addormentata",
+          "date": "2026-12-01",
+          "starts_at": null,
+          "venue": "Teatro Metropolitan."
         }
       ]
     },
@@ -422,7 +462,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -553,6 +593,54 @@
       ]
     },
     {
+      "candidate_id": "oa-index-1a517d22f1477341131c",
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/la-cenerentola-2/",
+      "content_sha256": "a8f58f1911ada42cfff057d938322bc83a9d6016166160d569062d772b31e10c",
+      "checked_at": "2026-11-21T22:36:46+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-12",
+          "starts_at": "2027-02-12T20:00:00+01:00",
+          "venue": "Teatro Municipale"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-14",
+          "starts_at": "2027-02-14T15:30:00+01:00",
+          "venue": "Teatro Municipale"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-1d35c5f06b99b17bd41f",
+      "source_key": "ferrara-macbeth-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
+      "checked_at": "2026-11-21T22:35:37+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2026-11-27",
+          "starts_at": "2026-11-27T20:00:00+01:00"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2026-11-29",
+          "starts_at": "2026-11-29T16:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-1e15e89ae5b2a2ec45f9",
       "source_key": "verdi-trieste-season-2026-27",
       "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
@@ -664,6 +752,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-1ea669503ea5640af931",
+      "source_key": "ferrara-boccanegra-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
+      "checked_at": "2026-11-21T22:35:28+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-04-09",
+          "starts_at": "2027-04-09T20:00:00+02:00"
+        },
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-04-11",
+          "starts_at": "2027-04-11T16:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-1fdf598fde99e1e32112",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
@@ -729,7 +841,7 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -802,6 +914,30 @@
           "date": "2026-12-13",
           "starts_at": "2026-12-13T15:30:00+01:00",
           "venue": "Teatro Grande"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-29e61184f06223faaa86",
+      "source_key": "ferrara-barbiere-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
+      "checked_at": "2026-11-21T22:35:25+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-01-15",
+          "starts_at": "2027-01-15T20:00:00+01:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-01-17",
+          "starts_at": "2027-01-17T16:00:00+01:00"
         }
       ]
     },
@@ -903,10 +1039,34 @@
       ]
     },
     {
+      "candidate_id": "oa-index-357ebb275673ae888623",
+      "source_key": "ferrara-dido-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
+      "checked_at": "2026-11-21T22:35:34+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Dido and Aeneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-02-20",
+          "starts_at": "2027-02-20T20:00:00+01:00"
+        },
+        {
+          "event_title": "Dido and Aeneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-02-21",
+          "starts_at": "2027-02-21T16:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1527,6 +1687,65 @@
       ]
     },
     {
+      "candidate_id": "oa-index-6ad3d8aa3ac55b149e99",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/carmen-2026/",
+      "content_sha256": "fe58783c8be6d54849536df3d5280de5c809643403566f499a3c63946644dc40",
+      "checked_at": "2026-11-21T22:35:15+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-02-14",
+          "starts_at": "2027-02-14T20:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-02-16",
+          "starts_at": "2027-02-16T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-02-17",
+          "starts_at": "2027-02-17T20:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-02-18",
+          "starts_at": "2027-02-18T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-02-19",
+          "starts_at": "2027-02-19T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-02-20",
+          "starts_at": "2027-02-20T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Carmen",
+          "composer": "Georges Bizet",
+          "date": "2027-02-21",
+          "starts_at": "2027-02-21T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-6cd199691f7145a4d048",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
@@ -1728,7 +1947,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T21:30:52+00:00",
+      "checked_at": "2026-11-21T22:36:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1841,6 +2060,30 @@
           "date": "2027-05-22",
           "starts_at": "2027-05-22T20:00:00+02:00",
           "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-7ee44d5187617ce9e1b7",
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "content_sha256": "77f0a9362af423b34dbd3be8886332e489edca0fd061fdfd51ef85816bca9b35",
+      "checked_at": "2026-11-21T22:35:58+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "GIUSEPPE VERDI",
+          "venue": "Teatro Municipale",
+          "date": "2027-04-02",
+          "starts_at": "2027-04-02T20:00:00+02:00"
+        },
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "GIUSEPPE VERDI",
+          "venue": "Teatro Municipale",
+          "date": "2027-04-04",
+          "starts_at": "2027-04-04T15:30:00+02:00"
         }
       ]
     },
@@ -2117,6 +2360,22 @@
           "date": "2027-11-07",
           "starts_at": "2027-11-07T17:30:00+01:00",
           "venue": "Teatro Massimo"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-8bc8b40e1da92efab27d",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "content_sha256": "20e3164b70b66b77835d3be0510b30d05519bd54d7ef5e1cd5960904389586ea",
+      "checked_at": "2026-11-21T22:36:12+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il quinto moschettiere",
+          "date": "2026-12-16",
+          "starts_at": null,
+          "venue": "Teatro Sangiorgi"
         }
       ]
     },
@@ -2398,7 +2657,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2473,6 +2732,30 @@
           "venue": "Teatro dell'Opera di Roma",
           "date": "2027-04-27",
           "starts_at": "2027-04-27T20:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-9fdcd7eba240da4540af",
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/siberia/",
+      "content_sha256": "fa330fa4af7f7e543cbc70862f8c368b389f0c53ec34d74ce6dd668f1bf2bd7e",
+      "checked_at": "2026-11-21T22:36:15+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Siberia",
+          "composer": "UMBERTO GIORDANO",
+          "venue": "Teatro Municipale",
+          "date": "2026-12-18",
+          "starts_at": "2026-12-18T20:00:00+01:00"
+        },
+        {
+          "event_title": "Siberia",
+          "composer": "UMBERTO GIORDANO",
+          "venue": "Teatro Municipale",
+          "date": "2026-12-20",
+          "starts_at": "2026-12-20T15:30:00+01:00"
         }
       ]
     },
@@ -2999,7 +3282,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3092,11 +3375,59 @@
       ]
     },
     {
+      "candidate_id": "oa-index-bce266e873c77688b385",
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/aida/",
+      "content_sha256": "4421eea524df641d849bc17d3388808d64f8fd6b9381b991cbf8ea311369017d",
+      "checked_at": "2026-11-21T22:36:57+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-11-19",
+          "starts_at": "2027-11-19T20:00:00+01:00",
+          "venue": "Teatro Municipale"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-11-21",
+          "starts_at": "2027-11-21T15:30:00+01:00",
+          "venue": "Teatro Municipale"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-bf715bf96f42b6bf0ef7",
+      "source_key": "ferrara-clemenza-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
+      "checked_at": "2026-11-21T22:35:31+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-03-12",
+          "starts_at": "2027-03-12T20:00:00+01:00"
+        },
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Comunale Claudio Abbado",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T16:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
       "content_sha256": "58713c19798541f9d6411b782da1b5d03a15c4fcc7951fde1aeff4114ff1d78b",
-      "checked_at": "2026-11-21T22:33:18+00:00",
+      "checked_at": "2026-11-21T22:35:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3204,6 +3535,22 @@
           "venue": "Teatro Comunale di Bologna",
           "date": "2027-03-07",
           "starts_at": "2027-03-07T16:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-d54e9b021b5167cfb735",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "content_sha256": "d70a05310b12bb0dbe7f0042c1c63ec739b13d1c0abeb12ec85893a7609ebb49",
+      "checked_at": "2026-11-21T22:36:27+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le nozze dell’Orso",
+          "date": "2026-12-10",
+          "starts_at": null,
+          "venue": "Teatro Sangiorgi"
         }
       ]
     },
@@ -3487,7 +3834,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4008,7 +4355,7 @@
       "candidate_id": "oa-index-feadef19a246de079ccb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
-      "checked_at": "2026-11-21T21:32:33+00:00",
+      "checked_at": "2026-11-21T22:37:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
