@@ -48,7 +48,7 @@ class FlorenceCalendarTests(unittest.TestCase):
         self.assertTrue(eligible(SOURCE,DETAIL))
         self.assertFalse(eligible(SOURCE,"https://www.maggiofiorentino.com/blog/not-opera"))
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
-        self.assertEqual(len(validate_config(config)),13)
+        self.assertEqual(len(validate_config(config)),14)
 
     def test_traviata_four_recite_with_real_clock_composer_venue(self):
         rows=parse_month(page(),url=INDEX,registry=self.registry,today=date(2026,11,21))
