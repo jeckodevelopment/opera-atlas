@@ -128,6 +128,7 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
     if len(verified)!=1:return None
     qid,title,composer,wiki_title=verified[0]
     return {"title":title,"composer":composer,"wikidata_id":qid,
+            "title_candidate_count":len(accepted),
             "wikipedia_title":wiki_title,
             "authority_url":"https://www.wikidata.org/wiki/"+qid,
             "wikipedia_url":"https://it.wikipedia.org/wiki/"+
@@ -357,6 +358,11 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             identity=(resolve(official_title_hint(item),composer_hint=composer_hint)
                       if composer_hint else resolve(official_title_hint(item)))
             if identity is None:raise ValueError("authority_not_unique")
+            # Preverified cards are keyed only by title. For multiple known
+            # compositions, even an independently resolved composer must use
+            # new composition-specific history and synopsis evidence.
+            if identity.get("title_candidate_count",1)>1:
+                material=None
             if material is not None:
                 summary=material["synopsis"]
                 history=material["history"]
