@@ -747,3 +747,28 @@ alla loro effettiva presenza nel manifest v2. Gli spettacoli di
 costruzione del catalogo e rifiuto dei casi incongruenti. Nel workflow,
 controllare `data/maggio-calendar-health.json`, il checkpoint delle
 evidenze, la promozione e il manifest pubblico. Nessun deploy SFTP.
+
+## Prima acquisizione verificata del calendario di Firenze
+
+Per non lasciare il nuovo connettore in attesa del successivo refresh live,
+sono state registrate come **evidenze candidate, non ancora come recite
+pubblicate**, quattro occorrenze de *La traviata* (Giuseppe Verdi) tratte
+dal calendario Opera ufficiale del Maggio Musicale Fiorentino, gennaio 2027:
+15/01 20:00, 17/01 15:30, 20/01 20:00, 22/01 20:00. Sono registrate
+con URL del dettaglio `/events/la-traviata-2027`, sede `Teatro del
+Maggio Musicale Fiorentino`, data/ora Europe/Rome e la stessa identità
+permanente di candidata che il nuovo estrattore genererà nei refresh futuri.
+La documentazione del calendario è
+`https://www.maggiofiorentino.com/calendario/2027/01/opera`, che
+specifica singole date, ore e sala; la scheda di dettaglio conferma Verdi.
+Un connettore che non può leggere una pagina per `robots.txt` non
+sovrascrive queste evidenze verificate già persistite.
+
+Questi fatti sono destinati alla promozione con la procedura ordinaria,
+che convalida ID, titolo/compositore, sede e URL approvato prima di
+pubblicare i JSON. La loro mera presenza nelle prove candidate **non**
+garantisce che il feed v2 sia aggiornato; verificarlo sul manifest e sul
+registro delle produzioni dopo l'esecuzione di GitHub Actions. Il job
+`Publish cached verified Opera Atlas recite` può pubblicare questi
+fatti senza richieste esterne, lasciando il mantenimento successivo al
+connettore mensile. Nessun deploy SFTP.
