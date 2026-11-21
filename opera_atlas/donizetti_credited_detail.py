@@ -10,7 +10,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit
 
 from opera_atlas.italian_detail_parser import parse_detail
-from scripts.publish_catalog_v2 import normalized
+from scripts.publish_catalog_v2 import normalized,slugify
 
 class BlockLines(HTMLParser):
     BLOCKS=frozenset({"h1","h2","h3","h4","p","div","li","section"})
@@ -48,6 +48,11 @@ def parse_credited_detail(html:str,*,url:str):
     title=h.first
     if not isinstance(title,str) or not 4<=len(title)<=160:
         raise ValueError("missing official Donizetti opera heading")
+    event_slug=parsed.path.rstrip("/").split("/")[-1]
+    if re.fullmatch(r"20[0-9]{2}-[0-9]{2}-[0-9]{2}",event_slug):
+        event_slug=parsed.path.rstrip("/").split("/")[-2]
+    if slugify(title)!=event_slug:
+        raise ValueError("official Donizetti heading contradicts event URL")
 
     blocks=BlockLines()
     blocks.feed(html)
@@ -79,4 +84,19 @@ def parse_credited_detail(html:str,*,url:str):
         raise ValueError("invalid or generic first-party composer credit")
     venue,recite=parse_detail(html,source_key="donizetti-opera-2026",
                               url=url,title=title,composer=composer)
+    from opera_atlas.national_detail_parser import clean
+    visible=clean(html)
+    info=re.search(r"\bInfo\b",visible,re.I)
+    if not info:
+        raise ValueError("missing official festival calendar section")
+    tail=visible[info.end():]
+    end=re.search(r"\bLuogo\b",tail,re.I)
+    if not end:
+        raise ValueError("missing official festival venue")
+    calendar=tail[:end.start()]
+    # All explicitly listed dates must have validated individual hours.
+    months="gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre"
+    listed=re.findall(r"\b[0-3]?\d\s+(?:"+months+r")\s+20\d{2}\s*\|",calendar,re.I)
+    if len(listed)!=len(recite):
+        raise ValueError("incomplete official festival showtime evidence")
     return title,composer,venue,recite
