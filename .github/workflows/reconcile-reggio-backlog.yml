@@ -8,6 +8,7 @@ on:
       - 'opera_atlas/reggio_opera_parser.py'
       - 'tests/test_reggio_valli_source.py'
       - 'scripts/auto_catalogue.py'
+      - 'scripts/collect_candidate_details.py'
       - 'data/verified-work-authority-seeds.json'
       - 'data/archival-work-images.json'
 permissions:
@@ -36,7 +37,7 @@ jobs:
       - name: Read all currently pending Reggio Emilia official opera pages
         run: |
           python -m scripts.collect_candidate_details --allow-network --source-key reggio-valli-opera-2026-27
-          python -c 'import json; d=json.load(open("data/candidate-detail-health.json")); print("Reggio official candidate diagnostics:",json.dumps(d.get("outcomes",[]),ensure_ascii=False))'
+          python -c 'import json; d=json.load(open("data/candidate-detail-health-partial.json")); print("Reggio official candidate diagnostics:",json.dumps(d.get("outcomes",[]),ensure_ascii=False))'
           python -m scripts.reconcile_published_candidates
       - name: Checkpoint official evidence and closed historic candidates
         id: evidence
