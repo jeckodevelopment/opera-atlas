@@ -45,18 +45,23 @@ def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
     return matches
 
 def verified_other_season_evidence(evidence:dict)->set[tuple[str,str]]:
-    """Only first-party, source-scoped Rome detail evidence can retire a URL."""
+    """Only exact source-bound dated official season proof can retire a URL."""
     import re
     result=set()
     for row in evidence.get("evidence",[]):
-        if (not isinstance(row,dict)
-                or row.get("status")!="out_of_monitored_season"
-                or row.get("source_key")!="opera-roma-season-2026-27"
-                or not isinstance(row.get("source_url"),str)
-                or not row["source_url"].startswith("https://www.operaroma.it/spettacoli/")
-                or not re.fullmatch(r"20[0-9]{2}/20[0-9]{2}",
-                                    row.get("official_season",""))
-                or row["official_season"]=="2026/2027"
+        if not isinstance(row,dict) or row.get("status")!="out_of_monitored_season":
+            continue
+        key,url,season=row.get("source_key"),row.get("source_url"),row.get("official_season")
+        rome=(key=="opera-roma-season-2026-27"
+              and isinstance(url,str) and url.startswith("https://www.operaroma.it/spettacoli/")
+              and re.fullmatch(r"20[0-9]{2}/20[0-9]{2}",season or "")
+              and season!="2026/2027")
+        petruzzelli=(key in ("petruzzelli-opera-2026","petruzzelli-opera-2027")
+                     and isinstance(url,str)
+                     and re.fullmatch(r"https://www\\.fondazionepetruzzelli\\.it/eventi/[a-z0-9-]+/",url)
+                     and re.fullmatch(r"20[0-9]{2}",season or "")
+                     and season!=key.rsplit("-",1)[-1])
+        if (not (rome or petruzzelli)
                 or not re.fullmatch(r"[a-f0-9]{64}",
                                     row.get("content_sha256",""))):
             continue
