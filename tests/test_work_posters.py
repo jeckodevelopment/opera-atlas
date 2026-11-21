@@ -230,6 +230,33 @@ class PosterPublicationTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     posters.check()
 
+    def test_full_catalog_poster_coverage_and_stable_work_provenance(self):
+        from scripts.publish_catalog_v2 import REGISTRY
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
+        works=list(registry.values())
+        published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
+        self.assertEqual({w["id"] for w in works},set(published))
+        editorial=[w for w in works if published[w["id"]]["kind"]=="original_editorial_cover"]
+        # Only contemporary works without a verified reusable production
+        # photograph remain represented by *truthfully labelled* original art.
+        self.assertEqual({w["title"] for w in editorial},
+                         {"Death in Venice","Nixon in China"})
+        self.assertEqual(sum(v["kind"]=="archival_work_image" for v in published.values()),32)
+        self.assertEqual(sum(v["kind"]=="official_production_image" for v in published.values()),2)
+        for work in works:
+            image=published[work["id"]]
+            self.assertEqual(image["work_id"],work["id"])
+            if image["kind"]=="archival_work_image":
+                self.assertTrue(image["image_url"].startswith(
+                    "https://commons.wikimedia.org/wiki/Special:Redirect/file/"))
+                self.assertTrue(image["source_url"].startswith(
+                    "https://commons.wikimedia.org/wiki/File:"))
+                self.assertIn("non rappresenta",image["alt"].lower())
+                self.assertTrue(image["credit"])
+                self.assertTrue(image["license"])
+        self.assertNotEqual(published["oa-w-000007"]["image_url"],
+                            published["oa-w-000024"]["image_url"])
+
     def test_frontend_loads_posters_without_redeploying_on_each_new_work(self):
         root=Path(__file__).resolve().parents[1]
         image_js=(root/"site/image-client.js").read_text(encoding="utf-8")
