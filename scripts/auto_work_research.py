@@ -377,8 +377,9 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             # composer evidence matching the authority and no competing title.
             # Otherwise use a factual identity-only introduction, not a
             # made-up synopsis. Historical facts remain optional until sourced.
-            if material is not None and composer_hint and (
-                    slugify(composer_hint)==slugify(identity["composer"])):
+            if (material is not None and identity.get("title_candidate_count",1)==1
+                    and (not composer_hint or
+                         slugify(composer_hint)==slugify(identity["composer"]))):
                 summary=material["synopsis"]
                 history=material["history"]
             else:
