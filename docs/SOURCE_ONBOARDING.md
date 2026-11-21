@@ -863,3 +863,42 @@ controllo nel workflow delle sette date con ore, dell'ID stabile,
 dell'assenza di anteprime, dell'attribuzione alla corretta sala,
 dell'idempotenza e del manifesto pubblico v2. Nessun SFTP;
 la raccolta di ulteriori opere segue il normale refresh nazionale.
+
+## Bari — Teatro Petruzzelli: stagione 2027 e Nabucco
+
+La fonte ufficiale di Bari è
+`https://www.fondazionepetruzzelli.it/opera-e-balletto-2027/`,
+con dettagli operistici `https://www.fondazionepetruzzelli.it/eventi/<slug>/`.
+È un indice approvato con scansione controllata da `robots.txt` a ogni
+accesso; le candidate non sono automaticamente equiparate a opere liriche:
+un titolo di balletto o un concerto è escluso dalla pubblicazione se
+non supera le verifiche sul compositore, l'opera canonica e il calendario.
+
+Il primo dettaglio verificato è
+`https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/`.
+Il teatro presenta il compositore **Giuseppe Verdi** e sette recite di
+*Nabucco* il 12, 13, 14, 16, 17, 18 e 19 marzo 2027, con orari
+20:30, 18:00, 18:00, 20:30, 20:30, 20:30, 18:00. Il parser
+`opera_atlas.petruzzelli_detail_parser` richiede l'esatto dominio
+ufficiale, il credito dell'opera nel titolo della scheda, la sezione
+`Orari Spettacoli`, giorni della settimana compatibili con le date,
+orari HH:MM per **tutte** le recite e nessun annullamento.
+
+La conferenza di presentazione del 4 marzo non viene scambiata
+per una replica operistica. Sedi o festival terzi non vengono assegnati
+automaticamente al Petruzzelli. La prima promozione assegna il nuovo
+ID canonico `Bari|Teatro Petruzzelli` (regione Puglia) solo insieme
+alla prima produzione valida. Le identità dei compositori e dei
+titoli sono quelle già verificate nel registro del repertorio;
+non vengono create nuove opere sulla base dei soli URL.
+
+Le sette recite sono registrate come **evidenze di prima acquisizione**
+per la pipeline rapida di promozione e pubblicazione, che provvede agli
+ID permanenti e alla rigenerazione del JSON v2 in un commit controllato.
+Né la PR né le evidenze costituiscono prova di pubblicazione:
+questa è verificata solo quando il manifest e il feed contengono le
+sette rappresentazioni. Non è richiesto un deploy SFTP.
+
+**Collaudi:** `python -m unittest discover -s tests -v`, in particolare
+`tests/test_petruzzelli_calendar.py`, poi lettura del JSON canonico
+e del report del workflow sul sito del teatro e sul repository.
