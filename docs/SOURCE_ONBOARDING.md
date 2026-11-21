@@ -534,3 +534,27 @@ Collaudo: test Python; il link datato di Alahor deve essere scoperto con gli alt
 ## Ricerca autoritativa dei titoli del Donizetti Opera 2026
 
 I tre URL del programma 2026 hanno adesso un nome d’opera esplicito e verificato per la ricerca delle autorità esterne: *L’esule di Roma*, *Alahor in Granata* e *Le convenienze ed inconvenienze teatrali*. La normalizzazione dal solo slug URL non è affidabile per articoli apostrofati (ad esempio `l-esule` non corrisponde a `L’esule` nella funzione slugify). Le alias qui configurate correggono **esclusivamente la stringa di ricerca**; non autorizzano l’identificazione automatica di un’opera o l’attribuzione del compositore senza validazione indipendente della fonte autoritativa, del dettaglio ufficiale e della corretta sede.
+
+## Diagnostica attendibilità dell'indice di stagione (21/11/2026)
+
+Il job `discover_season_indexes` registra ora per ogni connettore:
+`last_attempt_at`, `last_success_at`, `last_successful_links`,
+`required_links` e `current_scan_verified`. Una fonte che ha funzionato
+ieri ma fallisce oggi **non** risulta verificata: l'ultimo esito positivo
+resta distinto dall'attuale tentativo. Il report non deduce mai una prima
+scansione riuscita quando non esistono prove precedenti.
+
+In caso di errore i codici deterministici `access_denied_or_robots_disallowed`,
+`official_source_unavailable`, `index_incomplete_or_markup_changed` e
+`invalid_index_or_source_config` permettono di distinguere divieti di
+accesso, problemi del sito e cambi di struttura dell'indice; non vengono
+esposti messaggi arbitrari ricevuti dai server. In particolare il connettore
+Donizetti 2026 non deve più limitarsi alla generica etichetta `ValueError`.
+Un errore non elimina i candidati scoperti in precedenza e non attesta
+la copertura dell'intera stagione.
+
+Collaudo: suite Python, poi workflow `Refresh public Opera Atlas catalog`.
+Controllare in `data/season-index-health.json` che Bergamo, Brescia e Genova
+abbiano `current_scan_verified: true` solo dopo una lettura riuscita con
+`robots.txt` consentito; controllare separatamente la raccolta di evidenze
+e la pubblicazione delle repliche. Nessun deploy SFTP è richiesto.
