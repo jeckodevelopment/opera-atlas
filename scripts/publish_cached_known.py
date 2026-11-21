@@ -36,7 +36,7 @@ def prepare(facts,registry,evidence,candidates,authorized,verified_times,*,today
     return after,ids,urls,updated_times,report
 
 def promote_cached_verified_new_works(facts,registry,evidence,candidates,
-                                    approved,*,today):
+                                    approved,*,today,editorial_snapshot=None,history_snapshot=None):
     """Publish only fully researched first-party works in the Maggio feed.
 
     No new factual claims are generated: all the details have been reviewed,
@@ -51,8 +51,10 @@ def promote_cached_verified_new_works(facts,registry,evidence,candidates,
               if x.get("source_key")=="maggio-fiorentino-calendar-2027"
               and x.get("wikidata_id") and x.get("history")
               and x.get("synopsis")]}
-    editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
-    historical=json.loads(HISTORY.read_text(encoding="utf-8"))
+    editorial=(editorial_snapshot if editorial_snapshot is not None else
+               json.loads(EDITORIAL.read_text(encoding="utf-8")))
+    historical=(history_snapshot if history_snapshot is not None else
+                json.loads(HISTORY.read_text(encoding="utf-8")))
     after,ids,urls,new_editorial,new_history,report=promote_new_works(
         facts,registry,evidence,candidates,selected,editorial,approved,
         today=today,history=historical)
