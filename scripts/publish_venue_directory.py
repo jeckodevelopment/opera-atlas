@@ -44,7 +44,7 @@ def build(source:dict, registry:dict)->dict:
             authority=existing.get(venue["canonical_venue_id"])
             if not authority or venue["id"]!=authority["id"] or venue["slug"]!=authority["slug"] or venue["city_slug"]!=authority["city_slug"]:
                 raise ValueError("existing performance venue identity changed")
-        elif not re.fullmatch(r"oa-vd-\\d{6}",venue["id"]):
+        elif not re.fullmatch(r"oa-vd-\d{6}",venue["id"]):
             raise ValueError("new venues require reserved directory-only IDs")
     if not set(existing).issubset(ids):
         raise ValueError("canonical performance venues missing from directory")
