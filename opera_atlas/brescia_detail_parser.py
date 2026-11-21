@@ -110,12 +110,12 @@ def parse_brescia_double_bill(html:str,*,url:str,works:dict):
     text=clean(html)
     # Both independently credited works must be documented on this same
     # official page; combined slash title alone is insufficient.
-    if not re.search(r"(?i)\\bCavalleria\\s+Rusticana\\s+"
-                     r"Melodramma\\s+in\\s+un\\s+atto\\b.{0,250}?"
-                     r"Musica\\s+di\\s+Pietro\\s+Mascagni\\b",text):
+    if not re.search(r"(?i)\bCavalleria\s+Rusticana\s+"
+                     r"Melodramma\s+in\s+un\s+atto\b.{0,250}?"
+                     r"Musica\s+di\s+Pietro\s+Mascagni\b",text):
         raise ValueError("Cavalleria independent work credit missing")
-    if not re.search(r"(?i)\\bPagliacci\\s+Dramma\\s+in\\s+un\\s+prologo\\b"
-                     r".{0,250}?Parole\\s+e\\s+musica\\s+di\\s+Ruggero\\s+Leoncavallo\\b",text):
+    if not re.search(r"(?i)\bPagliacci\s+Dramma\s+in\s+un\s+prologo\b"
+                     r".{0,250}?Parole\s+e\s+musica\s+di\s+Ruggero\s+Leoncavallo\b",text):
         raise ValueError("Pagliacci independent work credit missing")
     identities=(("Cavalleria rusticana","Pietro Mascagni"),
                 ("Pagliacci","Ruggero Leoncavallo"))
