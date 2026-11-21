@@ -21,6 +21,20 @@ class PetruzzelliOfficialSeasonScopeTests(unittest.TestCase):
     def test_2027_extracts_only_official_season_card_links(self):
         self.assertEqual(extract(SOURCE,INDEX,page(),min_links=3),sorted(OFFICIAL))
 
+    def test_real_wordpress_div_heading_not_h1_or_h2(self):
+        """The live season title may be a div, followed by h2 production cards."""
+        html=("<nav><a href='/opera-e-balletto-2027/'>OPERA E BALLETTO 2027</a>"
+              "<a href='"+OLD+"'>Archivio</a></nav>"
+              "<div class='elementor-heading-title'>OPERA E BALLETTO 2027</div>"
+              "<h2>Opere in programma</h2>"
+              +"".join("<article><h2>Scheda</h2><a href='"+u+
+                       "'>Opera</a></article>" for u in OFFICIAL)
+              +"<footer><a href='"+OLD+"'>Archivio</a></footer>")
+        self.assertEqual(extract(SOURCE,INDEX,html,min_links=3),sorted(OFFICIAL))
+        with self.assertRaisesRegex(ValueError,"season index incomplete"):
+            extract(SOURCE,INDEX,"<nav><a href='"+OFFICIAL[0]+
+                    "'>OPERA E BALLETTO 2027</a></nav>",min_links=1)
+
     def test_old_candidate_keeps_audit_but_not_research_status(self):
         seen={
             "old":{"id":"old","source_key":SOURCE,"official_url":OLD,
