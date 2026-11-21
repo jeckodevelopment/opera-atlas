@@ -183,3 +183,13 @@ Le due opere di Henri Murger sono composizioni **distinte** e non possono condiv
 - Il registro conserva lo slug normalizzato `la-boheme` per compatibilità nella risoluzione delle produzioni, ma assegna un `route_slug` pubblico diverso per opera. Il feed canonico e il client usano `work_id` per sinossi e storia; le immagini sono già associate ai due ID separati.
 - Il generatore rifiuta in modo esplicito i duplicati di URL opera e la pubblicazione di contenuti editoriali ambigui per due opere omonime. Non vengono spostate o reidentificate le repliche originarie.
 - **Collaudo**: verificare le due URL pubbliche, elenco opere (due voci), link dalla homepage e da ciascuna produzione, sinossi e storia specifiche, relativi manifesti, e assenza di repliche della Scala nella scheda Leoncavallo e viceversa. Le modifiche JavaScript richiedono una pubblicazione del frontend con il workflow SFTP di `opera-atlas`; gli aggiornamenti del catalogo JSON continuano senza FTP/SFTP.
+
+## Denominazione pubblica del Teatro Regio di Torino — 21/11/2026
+
+Il nome mostrato al pubblico per la sede di Torino è **Teatro Regio di Torino**, per distinguere chiaramente il teatro dal **Teatro Regio di Parma**. La correzione è un alias di presentazione nel registro delle sedi canoniche:
+
+- ID immutabile `oa-v-000001`; chiave originale `Torino|Teatro Regio`; `name: Teatro Regio` conservato come identità sorgente.
+- `display_name: Teatro Regio di Torino` esposto dal feed v2 e dal frontend; `site/theatre-profiles.json` allineato.
+- URL esistenti invariati: `/atlas/torino/teatro-regio/` e `/atlas/torino/teatro-regio/<opera>/`. Nessuna modifica alle repliche o al titolo del Teatro Regio di Parma.
+- Anche il fallback al catalogo locale `site/performances.json` presenta il nome esteso senza riscrivere le chiavi sorgenti o gli slug. Le ricerche e i dettagli mostrano il nome approvato.
+- Collaudi: pagina teatro, elenco teatri, schede spettacolo, homepage e ricerca; verificare che i link profondi precedenti continuino a funzionare, che il profilo della sede venga caricato e che Parma resti distinto. La modifica al codice frontend richiede la consueta pubblicazione SFTP di `opera-atlas` e non tocca credenziali né workflow.

@@ -109,7 +109,7 @@ window.OperaAtlasCatalog = (() => {
         local_date:item.local_date,starts_at:item.starts_at,
         time_known:item.time_known, status:item.status,
         title:work.title, composer:work.composer,
-        venue:venue.name,municipality:venue.city,region:venue.region,
+        venue:venue.display_name||venue.name,municipality:venue.city,region:venue.region,
         sources:Array.isArray(item.sources) && item.sources.length ? item.sources : [staging.source_url],
       };
     });
@@ -132,7 +132,11 @@ window.OperaAtlasCatalog = (() => {
       const snapshot=await jsonFrom("./performances.json");
       if(snapshot.schema_version!==1 || !Array.isArray(snapshot.performances))
         throw new Error("Invalid snapshot");
-      return {...snapshot,source:"fallback",warning:"Alcuni aggiornamenti del calendario potrebbero non essere ancora visibili."};
+      // Keep historic registry keys and static URLs unchanged when rendering a label.
+      const performances=snapshot.performances.map(event=>
+        event.municipality==="Torino" && event.venue==="Teatro Regio"
+          ? {...event,venue:"Teatro Regio di Torino",venue_slug:"teatro-regio",city_slug:"torino"} : event);
+      return {...snapshot,performances,source:"fallback",warning:"Alcuni aggiornamenti del calendario potrebbero non essere ancora visibili."};
     }catch(error){
       console.error("Opera Atlas: all catalog endpoints failed",{failures,snapshot:error});
       throw new Error("Unable to load remote or local catalog");

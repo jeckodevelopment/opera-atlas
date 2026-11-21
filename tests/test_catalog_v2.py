@@ -60,6 +60,17 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"duplicate public work route"):
             assemble(self.facts,registry)
 
+    def test_regio_torino_display_name_does_not_change_identity(self):
+        report=assemble(self.facts,self.registry)
+        torino=next(v for v in report["venues"] if v["city"]=="Torino" and v["slug"]=="teatro-regio")
+        self.assertEqual(torino["id"],"oa-v-000001")
+        self.assertEqual(torino["name"],"Teatro Regio")
+        self.assertEqual(torino["display_name"],"Teatro Regio di Torino")
+        self.assertEqual(torino["slug"],"teatro-regio")
+        self.assertEqual(report["stagings"][0]["url"],"/torino/teatro-regio/la-traviata/")
+        parma=next(v for v in report["venues"] if v["city"]=="Parma")
+        self.assertEqual(parma["name"],"Teatro Regio di Parma")
+
     def test_adding_production_requires_persisted_ids(self):
         changed=copy.deepcopy(self.facts)
         changed["productions"][0]["key"]="untracked-new-production"

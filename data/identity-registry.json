@@ -228,7 +228,8 @@
       "city_slug": "torino",
       "name": "Teatro Regio",
       "city": "Torino",
-      "region": "Piemonte"
+      "region": "Piemonte",
+      "display_name": "Teatro Regio di Torino"
     },
     "Como|Teatro Sociale": {
       "id": "oa-v-000002",
