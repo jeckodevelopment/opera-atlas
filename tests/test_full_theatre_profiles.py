@@ -16,9 +16,9 @@ class FullTheatreProfileTests(unittest.TestCase):
         cls.directory=json.loads(SOURCE.read_text(encoding="utf-8"))["venues"]
         cls.profiles=json.loads((SITE/"theatre-profiles.json").read_text(encoding="utf-8"))["venues"]
 
-    def test_all_fifty_have_real_profiles_and_map_addresses(self):
-        self.assertEqual(len(self.directory),50)
-        self.assertEqual(len(self.profiles),50)
+    def test_all_fifty_two_have_real_profiles_and_map_addresses(self):
+        self.assertEqual(len(self.directory),52)
+        self.assertEqual(len(self.profiles),52)
         for venue in self.directory:
             key=venue.get("profile_key",venue["city"]+"|"+venue["name"])
             self.assertIn(key,self.profiles,key)
@@ -32,14 +32,16 @@ class FullTheatreProfileTests(unittest.TestCase):
 
     def test_all_active_venues_have_individual_illustrations_and_credits(self):
         photos=[v for v in self.directory if v.get("photo_file")]
-        self.assertEqual(len(photos),49)
+        self.assertEqual(len(photos),50)
         for venue in photos:
             self.assertTrue(venue["photo_source_url"].startswith(
                 "https://commons.wikimedia.org/wiki/File:"),venue["id"])
             self.assertTrue(venue.get("photo_credit"),venue["id"])
         without=[v for v in self.directory if not v.get("photo_file")]
-        self.assertEqual([(v["name"],v.get("status")) for v in without],
-            [("Teatro Comunale Nouveau","sede_storica_cessata")])
+        self.assertEqual({v["name"] for v in without},
+                         {"Teatro Comunale Nouveau","Teatro Politeama Greco"})
+        self.assertEqual(next(v["photo_status"] for v in without if v["name"]=="Teatro Politeama Greco"),
+                         "review_pending")
         self.assertNotEqual(next(v["photo_file"] for v in photos if v["name"]=="Arena di Verona"),
                             next(v["photo_file"] for v in photos if v["name"]=="Teatro Filarmonico"))
 
@@ -48,7 +50,8 @@ class FullTheatreProfileTests(unittest.TestCase):
         directory=(SITE/"directory.js").read_text(encoding="utf-8")
         for content in (detail,directory):
             self.assertNotIn("La sede è censita. Il programma degli spettacoli non è ancora stato acquisito.",content)
-            self.assertNotIn("Calendario non ancora acquisito",content)
+            if content==directory:
+                self.assertNotIn("Calendario non ancora acquisito",content)
         self.assertIn('node("section","theatre-history")',detail)
         self.assertIn('link("Come arrivare"',detail)
         self.assertIn("openstreetmap.org/search",detail)
@@ -58,6 +61,11 @@ class FullTheatreProfileTests(unittest.TestCase):
         script=(SITE/"image-client.js").read_text(encoding="utf-8")
         self.assertIn("event?.photo_file",script)
         self.assertIn("event?.no_city_fallback",script)
+        self.assertIn('selected.venue?.calendar_status==="acquired"',detail)
+        self.assertIn("Calendario non ancora acquisito · consulta il ",detail)
+        self.assertIn("Non risultano prossimi spettacoli in programma.",detail)
+        for text in ("sede teatrale censita","Le rappresentazioni saranno collegate"):
+            for venue in self.directory:self.assertNotIn(text,venue["description"])
 
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_javascript_is_syntactically_valid(self):
