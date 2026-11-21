@@ -54,6 +54,44 @@
       ]
     },
     {
+      "candidate_id": "oa-index-01efa4320f81204200f1",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/",
+      "content_sha256": "a641f7690f214aeea596528c87a065c46bbc59a75c80d0f8445151ddc3e1f98f",
+      "checked_at": "2026-11-21T15:02:43+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-12",
+          "starts_at": "2026-11-12T20:30:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-13",
+          "starts_at": "2026-11-13T20:30:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-14",
+          "starts_at": "2026-11-14T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-15",
+          "starts_at": "2026-11-15T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
@@ -178,7 +216,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T14:50:24+00:00",
+      "checked_at": "2026-11-21T15:03:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -347,11 +385,49 @@
       ]
     },
     {
+      "candidate_id": "oa-index-207df538679e00657fe1",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+      "content_sha256": "58064a544563a68eb2a9bc06169806daee8b9573b20cf56d3d28141a6aeee63c",
+      "checked_at": "2026-11-21T15:02:57+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-09-14",
+          "starts_at": "2026-09-14T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-09-16",
+          "starts_at": "2026-09-16T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-09-18",
+          "starts_at": "2026-09-18T18:00:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-09-20",
+          "starts_at": "2026-09-20T18:00:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "6589e96016a63d340bb3c00e7575100a30a50ff369c7ced91142adb9b8469a3e",
-      "checked_at": "2026-11-21T14:49:27+00:00",
+      "content_sha256": "ba72d8e9e2dc126f4c37e5e852ee074b541ef33f5ad3cb65922f78f05371d34f",
+      "checked_at": "2026-11-21T15:01:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -379,7 +455,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T14:49:36+00:00",
+      "checked_at": "2026-11-21T15:01:51+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -413,11 +489,70 @@
       ]
     },
     {
+      "candidate_id": "oa-index-26db4f73989b1c14282c",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/",
+      "content_sha256": "dab7dfe5df92e876d57f98b818ee3d020d155d9a26f22992f7ba6de9afad429f",
+      "checked_at": "2026-11-21T15:01:43+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-04-18",
+          "starts_at": "2026-04-18T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-04-19",
+          "starts_at": "2026-04-19T18:00:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-04-21",
+          "starts_at": "2026-04-21T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-04-22",
+          "starts_at": "2026-04-22T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-04-23",
+          "starts_at": "2026-04-23T18:00:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-04-24",
+          "starts_at": "2026-04-24T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-04-26",
+          "starts_at": "2026-04-26T18:00:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-2ffd782e0a99b2433e13",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
-      "content_sha256": "0cce75f66397881bec60de84844f057c8278542c4954b6684525463b2c4bfd03",
-      "checked_at": "2026-11-21T14:49:44+00:00",
+      "content_sha256": "b0eb4ba38674366d61f2e9575c19f4a0eab17caa2dede2488160ad897515cf42",
+      "checked_at": "2026-11-21T15:01:26+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -461,8 +596,8 @@
       "candidate_id": "oa-index-3c920820abeb859e7ffa",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
-      "content_sha256": "ea14d680acf1115a5341208894c2c60226091a67c65d7da506b3b13fc68eae61",
-      "checked_at": "2026-11-21T14:49:45+00:00",
+      "content_sha256": "a6440a25d1185e013fe85213843147dab7d4080c9ad160b51bb269b4389b3ac5",
+      "checked_at": "2026-11-21T15:01:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -748,6 +883,44 @@
       ]
     },
     {
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
+      "content_sha256": "64b0fba2573e41ec2a0fb84a1c28a57c596711b1d1ad6354ed18431152929416",
+      "checked_at": "2026-11-21T15:01:57+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-05-21",
+          "starts_at": "2026-05-21T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-05-22",
+          "starts_at": "2026-05-22T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-05-23",
+          "starts_at": "2026-05-23T18:00:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-05-24",
+          "starts_at": "2026-05-24T18:00:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
@@ -790,7 +963,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T14:49:54+00:00",
+      "checked_at": "2026-11-21T15:02:01+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -813,8 +986,8 @@
       "candidate_id": "oa-index-7adb8eed9d624ca82bf5",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
-      "content_sha256": "89a712a2d4e0199fc6adeadca0d65f6ec00e2153196f36e6d6497c5f8701df70",
-      "checked_at": "2026-11-21T14:49:55+00:00",
+      "content_sha256": "139cb4db29a8ffea8a6e22fa2c9a7a979e151f62e5503db8e184b21019ab25b6",
+      "checked_at": "2026-11-21T15:02:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -976,6 +1149,58 @@
           "date": "2027-10-03",
           "starts_at": "2027-10-03T15:30:00+02:00",
           "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-8d2b9a6be734bb249434",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
+      "content_sha256": "33fb8f78b12e9c32c873c967ddcdc109c957616d0a452731fda745397e8e01d3",
+      "checked_at": "2026-11-21T15:02:06+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-12-16",
+          "starts_at": "2026-12-16T20:30:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-12-17",
+          "starts_at": "2026-12-17T20:30:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-12-18",
+          "starts_at": "2026-12-18T20:30:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-12-19",
+          "starts_at": "2026-12-19T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-12-20",
+          "starts_at": "2026-12-20T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-12-22",
+          "starts_at": "2026-12-22T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
         }
       ]
     },
@@ -1403,7 +1628,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T14:50:24+00:00",
+      "checked_at": "2026-11-21T15:03:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1440,8 +1665,8 @@
       "candidate_id": "oa-index-ce32b1104cdb579dc299",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
-      "content_sha256": "40b1da079c0b86260b048827c8e01dcb8c09c7b454f6fdb4ba73a9400a3de77b",
-      "checked_at": "2026-11-21T14:50:09+00:00",
+      "content_sha256": "ddeaa151586303c950d42e3113aae222eb3580bf37363fc8abe3d83470a4262d",
+      "checked_at": "2026-11-21T15:02:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1464,8 +1689,8 @@
       "candidate_id": "oa-index-cfd5a4967756ff1d51dd",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
-      "content_sha256": "43af2bdea64739ebba0f99fbc54b79ced2b665354967313c17202f1395350f29",
-      "checked_at": "2026-11-21T14:50:10+00:00",
+      "content_sha256": "0fb8f87cc3a5bdb5c384972101abb1b34817dcbcb8406c0f094acddb770ec034",
+      "checked_at": "2026-11-21T15:02:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1606,8 +1831,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "3cc14934c429f9213026f03149beb7be6cc20298cb1ec8f2e42bc987849fbf73",
-      "checked_at": "2026-11-21T14:50:14+00:00",
+      "content_sha256": "85dedec8753034b4b3313a58bb88c87f2eb1b77552c706763c64f6bb9f4176ef",
+      "checked_at": "2026-11-21T15:02:28+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1630,6 +1855,58 @@
           "date": "2026-11-27",
           "starts_at": "2026-11-27T20:00:00+01:00",
           "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-eedca6da108bd27e8d30",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+      "content_sha256": "355282549c5aad2ca2824dea3c2fe8a99fe50dd930ec660dc3b98efab79f0156",
+      "checked_at": "2026-11-21T15:02:34+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-18",
+          "starts_at": "2026-10-18T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-20",
+          "starts_at": "2026-10-20T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-21",
+          "starts_at": "2026-10-21T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-23",
+          "starts_at": "2026-10-23T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-25",
+          "starts_at": "2026-10-25T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-27",
+          "starts_at": "2026-10-27T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
         }
       ]
     },
@@ -1747,8 +2024,8 @@
       "candidate_id": "oa-index-f7e2bc909527aff17c03",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
-      "content_sha256": "0e305f85b6f7c42a62a0972b507570aa8829c5067f904036065af772d6a11756",
-      "checked_at": "2026-11-21T14:49:18+00:00",
+      "content_sha256": "79a1b3dd058176e0afdc6b52f267e173f84b71eec87c90a91a819b2a50574ec9",
+      "checked_at": "2026-11-21T15:02:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {

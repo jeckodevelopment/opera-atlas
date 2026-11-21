@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T14:50:24+00:00",
-  "attempted": 36,
+  "checked_at": "2026-11-21T15:03:12+00:00",
+  "attempted": 45,
   "outcomes": [
     {
-      "candidate_id": "oa-index-f7e2bc909527aff17c03",
+      "candidate_id": "oa-index-2ffd782e0a99b2433e13",
       "outcome": "facts_found",
-      "rows": 3
+      "rows": 5
     },
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -21,7 +21,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -32,7 +32,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-f2e706992e9fbbf83950",
+      "candidate_id": "oa-index-a77154badf30929b95dc",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -48,7 +48,7 @@
       "rows": 3
     },
     {
-      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
+      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -70,7 +70,12 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-027fde14d101fca6bf3e",
+      "candidate_id": "oa-index-26db4f73989b1c14282c",
+      "outcome": "facts_found",
+      "rows": 7
+    },
+    {
+      "candidate_id": "oa-index-790b965de8129382aa04",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -81,7 +86,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "candidate_id": "oa-index-559b2402d287d446c7b2",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -97,58 +102,9 @@
       "rows": 4
     },
     {
-      "candidate_id": "oa-index-559b2402d287d446c7b2",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-05e9aa51dbd5a114e2f0",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:official title and composer credit not confirmed",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-073615054167b041e7f7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-2ffd782e0a99b2433e13",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
       "candidate_id": "oa-index-3c920820abeb859e7ffa",
       "outcome": "facts_found",
       "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
     },
     {
       "candidate_id": "oa-index-58413a3bbbee689b82bc",
@@ -162,15 +118,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-790b965de8129382aa04",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -181,6 +131,22 @@
       "candidate_id": "oa-index-7adb8eed9d624ca82bf5",
       "outcome": "facts_found",
       "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-8d2b9a6be734bb249434",
+      "outcome": "facts_found",
+      "rows": 6
     },
     {
       "candidate_id": "oa-index-8f21a476359ed30f939d",
@@ -216,17 +182,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-a77154badf30929b95dc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-b4180540983902f703af",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -239,6 +194,17 @@
     },
     {
       "candidate_id": "oa-index-b756ca3bab6062c03ef8",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-cde049d5c057e0c050b2",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -264,7 +230,7 @@
       "rows": 3
     },
     {
-      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
+      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -273,6 +239,92 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-eedca6da108bd27e8d30",
+      "outcome": "facts_found",
+      "rows": 6
+    },
+    {
+      "candidate_id": "oa-index-f2e706992e9fbbf83950",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-f7e2bc909527aff17c03",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-01efa4320f81204200f1",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-027fde14d101fca6bf3e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-05e9aa51dbd5a114e2f0",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official title and composer credit not confirmed",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-073615054167b041e7f7",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-207df538679e00657fe1",
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-6cd199691f7145a4d048",
@@ -331,6 +383,17 @@
     },
     {
       "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
