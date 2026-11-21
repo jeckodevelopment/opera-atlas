@@ -190,14 +190,25 @@ async function appendHistory(event) {
       const city=String(history.premiere_city||"").trim();
       const place=[theatre,city].filter(Boolean).join(" di ");
       const when=date?"il "+date:premiered?"nel "+premiered:"";
+      // An announced world premiere is not a historical event yet. Compare
+      // against the calendar date in Italy, rather than the visitor's timezone.
+      const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",
+        year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+      const part=type=>today.find(item=>item.type===type)?.value||"";
+      const todayISO=part("year")+"-"+part("month")+"-"+part("day");
+      const futurePremiere=Boolean(
+        (history.premiere_date && /^\\d{4}-\\d{2}-\\d{2}$/.test(history.premiere_date) &&
+         history.premiere_date>todayISO) ||
+        (!history.premiere_date && premiered>Number(part("year"))));
+      const beginning=futurePremiere?"La prima assoluta è prevista ":"La prima rappresentazione ebbe luogo ";
       if(when && place){
-        historyParts.push("La prima rappresentazione ebbe luogo "+when+" al "+place+
+        historyParts.push(beginning+when+" al "+place+
           (librettists?" su libretto di "+librettists:"")+".");
       }else if(when){
-        historyParts.push("La prima rappresentazione ebbe luogo "+when+
+        historyParts.push(beginning+when+
           (librettists?" su libretto di "+librettists:"")+".");
       }else if(place){
-        historyParts.push("La prima rappresentazione ebbe luogo al "+place+
+        historyParts.push(beginning+"al "+place+
           (librettists?" su libretto di "+librettists:"")+".");
       }else if(librettists){
         historyParts.push("Il libretto dell’opera è di "+librettists+".");
