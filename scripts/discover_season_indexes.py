@@ -71,6 +71,8 @@ EXCLUDED_PATHS={
         "biancaneve", "il-grande-gatsby", "sylvia", "balanchine-caikovskij",
         "lo-schiaccianoci",
     }),
+    "donizetti-opera-2026": frozenset(),
+    "teatro-grande-opera-2026": frozenset(),
     "carlo-felice-season-2026-27": frozenset({
         "lo-schiaccianoci", "giselle", "il-lago-dei-cigni",
         "deledda", "sergio-bernal-dance-company",
@@ -145,6 +147,12 @@ class ScopedSeasonAnchors(HTMLParser):
             if self.key=="parma-opera-2027" and tag=="h1":
                 if label=="OPERA":self.in_section=True
                 elif self.in_section:self.in_section=False
+            if self.key=="donizetti-opera-2026" and tag=="h1":
+                if label=="OPERE 2026":self.in_section=True
+                elif self.in_section:self.in_section=False
+            if self.key=="teatro-grande-opera-2026" and tag=="h2":
+                if label=="OPERA E BALLETTO":self.in_section=True
+                elif self.in_section:self.in_section=False
             if self.key=="massimo-season-2026-27" and tag=="h2":
                 if "CALENDARIO OPERE E BALLETTI" in label:self.in_section=True
                 elif self.in_section:self.in_section=False
@@ -166,6 +174,10 @@ def eligible(key:str,url:str)->bool:
                              "arena-per-tutti","programma","festival"})
     if key=="fenice-opera-2026-27":
         return path.startswith("/event/") and bool(path.removeprefix("/event/"))
+    if key=="donizetti-opera-2026":
+        return bool(re.fullmatch(r"/it/evento/[a-z0-9-]+",path))
+    if key=="teatro-grande-opera-2026":
+        return bool(re.fullmatch(r"/it/stagioni/20\d{2}/[a-z0-9-]+",path))
     if key=="carlo-felice-season-2026-27":
         return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
     if key=="parma-opera-2027":
@@ -176,7 +188,8 @@ def eligible(key:str,url:str)->bool:
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
     parser=(ScopedSeasonAnchors(key)
-            if key in {"parma-opera-2027","massimo-season-2026-27"}
+            if key in {"parma-opera-2027","massimo-season-2026-27",
+                       "donizetti-opera-2026","teatro-grande-opera-2026"}
             else AnchorParser())
     parser.feed(html)
     hostname=urlsplit(index_url).hostname
@@ -204,6 +217,8 @@ def validate_config(config:dict)->list[dict]:
         "parma-opera-2027":("teatroregioparma.it","/categoria-spettacoli/opera/"),
         "massimo-season-2026-27":("www.teatromassimo.it","/la-stagione-2026-27/"),
         "carlo-felice-season-2026-27":("www.carlofelice.it","/rassegna-stagione-opera-danza-musical-2026-27/"),
+        "donizetti-opera-2026":("www.donizettiopera.org","/it/opere-2026/"),
+        "teatro-grande-opera-2026":("teatrogrande.it","/it"),
     }
     seen=set()
     for item in config["sources"]:
@@ -229,6 +244,11 @@ def validate_config(config:dict)->list[dict]:
                 valid_season=bool(season and
                     (int(season[1])+1)%100==int(season[2]) and
                     2026<=int(season[1])<=2098)
+        elif key=="donizetti-opera-2026":
+            season=re.fullmatch(r"/it/opere-(20\d{2})/",index.path)
+            valid_season=bool(season and 2026<=int(season[1])<=2098)
+        elif key=="teatro-grande-opera-2026":
+            valid_season=index.path=="/it"
         elif key=="carlo-felice-season-2026-27":
             season=re.fullmatch(r"/rassegna-stagione-opera-danza-musical-(20\d{2})-(\d{2})/",index.path)
             valid_season=bool(season and (int(season[1])+1)%100==int(season[2]) and 2026<=int(season[1])<=2098)
