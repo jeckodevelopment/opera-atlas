@@ -120,6 +120,8 @@ jobs:
         run: python -m scripts.discover_season_indexes --allow-network
       - name: Collect structured facts from bounded discovered detail pages
         run: python -m scripts.collect_candidate_details --allow-network
+      - name: Collect exact monthly opera performances in Firenze
+        run: python -m scripts.collect_maggio_calendar --allow-network
       - name: Persist source discovery and verified detail evidence early
         id: source_checkpoint
         run: |
@@ -129,7 +131,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/season-index-config.json data/season-rollover-health.json data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json
-          git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json
+          git add data/candidate-detail-evidence.json data/candidate-detail-health.json data/maggio-calendar-health.json public/catalog/candidate-detail-evidence.json data/maggio-calendar-health.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
             echo "No new official candidate evidence."
