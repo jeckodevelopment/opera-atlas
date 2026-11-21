@@ -135,7 +135,7 @@ window.OperaAtlasCatalog = (() => {
       // Keep historic registry keys and static URLs unchanged when rendering a label.
       const performances=snapshot.performances.map(event=>
         event.municipality==="Torino" && event.venue==="Teatro Regio"
-          ? {...event,venue:"Teatro Regio di Torino"} : event);
+          ? {...event,venue:"Teatro Regio di Torino",venue_slug:"teatro-regio",city_slug:"torino"} : event);
       return {...snapshot,performances,source:"fallback",warning:"Alcuni aggiornamenti del calendario potrebbero non essere ancora visibili."};
     }catch(error){
       console.error("Opera Atlas: all catalog endpoints failed",{failures,snapshot:error});
