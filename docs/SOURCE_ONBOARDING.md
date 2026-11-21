@@ -808,3 +808,15 @@ verifica del workflow indipendente dopo il merge e presenza della
 nuova opera con **quattro recite** nel manifest pubblico v2.
 La sola aggiunta delle evidenze o l'approvazione della PR non viene
 conteggiata come pubblicazione effettiva.
+
+## Commit atomico dei dati editoriali in pubblicazione rapida
+
+Le nuove opere possono essere promosse da `publish_cached_known` solo con
+Wikidata, credito del compositore sulla fonte ufficiale, sinossi originale e
+dati storici verificati. Il workflow rapido e il primo passaggio del workflow
+nazionale aggiungono ora **anche** `site/work-synopses.json` e
+`site/work-history.json` nello stesso commit che aggiorna il manifest,
+le identità canoniche e il feed editoriale pubblico. Questa transazione evita
+che la scheda di una nuova opera sia pubblicata senza le relative fonti
+dell'editoriale; non modifica i controlli degli URL o gli ID permanenti.
+La suite Python contiene un controllo statico esplicito dei due workflow.

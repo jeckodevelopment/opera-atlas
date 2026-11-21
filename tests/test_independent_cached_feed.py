@@ -16,6 +16,9 @@ class CachedFeedWorkflowTests(unittest.TestCase):
         self.assertIn("cached-catalog-retry",fast)
         self.assertIn("steps.commit_catalog.outputs.deferred == 'true'",fast)
         self.assertIn("python -m scripts.publish_cached_known",fast)
+        for workflow in (fast,slow):
+            self.assertIn("git add data/verified-launch-catalog.json",workflow)
+            self.assertIn("site/work-synopses.json site/work-history.json",workflow)
         self.assertIn("python -m scripts.publish_catalog_v2 --check",fast)
         self.assertIn("python -m unittest discover -s tests -v",fast)
         self.assertIn("[skip ci]",fast)
