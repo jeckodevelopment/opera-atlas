@@ -36,6 +36,71 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(result["wikidata_id"],"Q111")
         self.assertTrue(result["wikipedia_url"].startswith("https://it.wikipedia.org/"))
 
+    def test_two_barbiere_compositions_resolve_only_with_official_composer(self):
+        def claim(qid):
+            return [{"mainsnak":{"datavalue":{"value":{"id":qid}}}}]
+        def entity(composer_id):
+            return {"labels":{"it":{"value":"Il barbiere di Siviglia"}},
+                    "claims":{"P7937":claim("Q1344"),"P86":claim(composer_id)},
+                    "sitelinks":{"itwiki":{"title":"Il barbiere di Siviglia"}}}
+        def fake(url):
+            if "wbsearchentities" in url:
+                return {"search":[{"id":"Q101","label":"Il barbiere di Siviglia"},
+                                  {"id":"Q102","label":"Il barbiere di Siviglia"}]}
+            if "ids=Q101%7CQ102" in url:
+                return {"entities":{"Q101":entity("Q201"),
+                                    "Q102":entity("Q202")}}
+            if "ids=Q201%7CQ202" in url:
+                return {"entities":{
+                    "Q201":{"labels":{"it":{"value":"Gioachino Rossini"}}},
+                    "Q202":{"labels":{"it":{"value":"Giovanni Paisiello"}}}}}
+            raise AssertionError(url)
+        self.assertIsNone(resolve_identity("Il barbiere di Siviglia",fetch=fake))
+        rossini=resolve_identity("Il barbiere di Siviglia",
+                                 composer_hint="Gioachino Rossini",fetch=fake)
+        paisiello=resolve_identity("Il barbiere di Siviglia",
+                                   composer_hint="Giovanni Paisiello",fetch=fake)
+        self.assertEqual(rossini["wikidata_id"],"Q101")
+        self.assertEqual(paisiello["wikidata_id"],"Q102")
+        self.assertIsNone(resolve_identity("Il barbiere di Siviglia",
+                          composer_hint="Giacomo Puccini",fetch=fake))
+
+    def test_known_title_is_researched_for_new_composer(self):
+        from scripts.auto_work_research import preverified_work_material
+        options={"schema_version":1,"candidates":[CANDIDATE]}
+        # Known title must not bypass authority lookup: it may be a homonym.
+        choices=choose_candidates(options,{"schema_version":1,"works":[]},
+                                  {"anna-bolena"},today=date(2026,11,20))
+        self.assertEqual(len(choices),1)
+        captured=[]
+        def resolve(title,*,composer_hint=None):
+            captured.append(composer_hint)
+            return {"title":"Anna Bolena","composer":"Second Composer",
+                    "wikidata_id":"Q101",
+                    "authority_url":"https://www.wikidata.org/wiki/Q101",
+                    "wikipedia_url":"https://it.wikipedia.org/wiki/Anna_Bolena"}
+        work_evidence={"evidence":[{
+            "candidate_id":CANDIDATE["id"],"source_key":CANDIDATE["source_key"],
+            "source_url":CANDIDATE["official_url"],"status":"needs_editorial_review",
+            "event_facts":[{"event_title":"Anna Bolena",
+                            "composer":"Second Composer"}]}]}
+        output,status=research(options,{"schema_version":1,"works":[]},
+                               {"anna-bolena"},today=date(2026,11,20),
+                               evidence=work_evidence,resolve=resolve,
+                               prepared=preverified_work_material(),
+                               extract=lambda obj:"Source " * 45,
+                               generate=lambda *a,**k:"Nuova composizione con una storia documentata e autonoma.",
+                               generate_history=lambda *a,**k:{
+                                   "librettist":"Giovanni Example",
+                                   "premiere_year":1900,
+                                   "premiere_venue":"Teatro Nuovo",
+                                   "premiere_city":"Milano",
+                                   "sources":["https://www.wikidata.org/wiki/Q101"]},
+                               api_key="test")
+        self.assertEqual(captured,["Second Composer"])
+        self.assertEqual(status[0]["status"],"enriched")
+        self.assertEqual(output["works"][0]["composer"],"Second Composer")
+
     def test_missing_opera_type_rejected(self):
         def fake(url):
             if "wbsearchentities" in url:
