@@ -8,6 +8,20 @@ from pathlib import Path
 from scripts.deploy_atlas import ROOT, SOURCE, FILES, PUBLIC_URL, build, settings
 
 class AtlasMigrationTests(unittest.TestCase):
+    def test_deploy_regenerates_canonical_feeds_before_checking_them(self):
+        workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
+        build_step=workflow.index("- name: Build current canonical feed for preflight")
+        check_step=workflow.index("- name: Verify canonical routes and app")
+        sftp_step=workflow.index("- name: Upload Atlas static files via SFTP")
+        self.assertLess(build_step,check_step)
+        self.assertLess(check_step,sftp_step)
+        for cmd in ("python -m scripts.build_verified_catalog",
+                    "python -m scripts.publish_catalog_v2",
+                    "python -m scripts.publish_work_editorial"):
+            self.assertIn(cmd,workflow[build_step:check_step])
+            self.assertIn(cmd+" --check",workflow[check_step:sftp_step])
+        self.assertNotIn("git push",workflow)
+
     def test_all_static_pages_point_to_new_base(self):
         for name in ("index.html","detail.html","directory.html","privacy.html","credits.html"):
             html=(SOURCE/name).read_text(encoding="utf-8")

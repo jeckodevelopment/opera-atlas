@@ -193,3 +193,11 @@ Il nome mostrato al pubblico per la sede di Torino è **Teatro Regio di Torino**
 - URL esistenti invariati: `/atlas/torino/teatro-regio/` e `/atlas/torino/teatro-regio/<opera>/`. Nessuna modifica alle repliche o al titolo del Teatro Regio di Parma.
 - Anche il fallback al catalogo locale `site/performances.json` presenta il nome esteso senza riscrivere le chiavi sorgenti o gli slug. Le ricerche e i dettagli mostrano il nome approvato.
 - Collaudi: pagina teatro, elenco teatri, schede spettacolo, homepage e ricerca; verificare che i link profondi precedenti continuino a funzionare, che il profilo della sede venga caricato e che Parma resti distinto. La modifica al codice frontend richiede la consueta pubblicazione SFTP di `opera-atlas` e non tocca credenziali né workflow.
+
+## Preflight di pubblicazione SFTP resiliente ai feed in rigenerazione (21/11/2026)
+
+Il workflow `deploy-atlas.yml` deve consentire una pubblicazione manuale del solo frontend anche immediatamente dopo modifiche a nomi, opere o sedi: la generazione dei feed JSON pubblici avviene nel processo indipendente `refresh-catalog.yml`, potenzialmente ancora in corso. Il checkout della pubblicazione può quindi contenere temporaneamente un manifest content-addressed obsoleto, senza che questo indichi un difetto applicativo o un problema SFTP.
+
+Per evitare falsi blocchi, il preflight del deploy genera **in locale** e senza rete i file derivati da `data/verified-launch-catalog.json` e `data/identity-registry.json` tramite `build_verified_catalog`, `publish_catalog_v2` e `publish_work_editorial`, quindi verifica la corrispondenza con `--check` e con la suite. Questa rigenerazione non committa, non fa push e **non trasferisce feed JSON dinamici via SFTP**. La pubblicazione dei dati continua esclusivamente nel workflow apposito. Non cambia secret, ID o URL canonici.
+
+Collaudo: avviare `Publish Opera Atlas` su `main` con un feed v2 obsoleto rispetto al registro canonico; il preflight non deve fallire con `missing or changed content-addressed feed`. Il job prosegue all'upload SFTP e alla verifica HTTPS; i test devono ancora bloccare dati o URL realmente inconsistenti.
