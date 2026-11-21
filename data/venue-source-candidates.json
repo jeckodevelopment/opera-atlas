@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "added_on": "2026-11-21",
+  "notes": "Le due sedi sono censite; i connettori restano candidati, non dichiarati attivi o automatizzati.",
+  "candidates": [
+    {
+      "key": "teatro-politeama-greco-lecce",
+      "venue_id": "oa-vd-000051",
+      "name": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "official_url": "https://www.politeamagreco.it/",
+      "calendar_url": "https://www.politeamagreco.it/",
+      "status": "pending",
+      "automated": false
+    },
+    {
+      "key": "teatro-apollo-lecce",
+      "venue_id": "oa-vd-000052",
+      "name": "Teatro Apollo",
+      "city": "Lecce",
+      "official_url": "https://www.comune.lecce.it/",
+      "calendar_url": "https://www.comune.lecce.it/news/dettaglio/2026/09/04/stagione-2026-27-dei-teatri-apollo-e-paisiello-gli-appuntamenti-in-cartellone",
+      "status": "pending",
+      "automated": false
+    }
+  ]
+}

@@ -40,8 +40,14 @@ def build(source:dict, registry:dict)->dict:
         if venue.get("photo_file"):
             if not isinstance(venue.get("photo_source_url"),str) or not venue["photo_source_url"].startswith("https://commons.wikimedia.org/wiki/File:"):
                 raise ValueError("theatre photo needs provenance: "+venue["id"])
-        elif venue.get("status")!="sede_storica_cessata":
+        elif venue.get("status")!="sede_storica_cessata" and venue.get("photo_status")!="review_pending":
             raise ValueError("theatre photo missing: "+venue["id"])
+        # An acquired calendar with no future recite differs from an
+        # official calendar that has not yet been ingested.
+        if venue.get("calendar_status") not in ("acquired","not_acquired"):
+            raise ValueError("missing calendar acquisition state: "+venue["id"])
+        if re.search(r"sede teatrale censita|le rappresentazioni saranno collegate|calendario non ancora acquisito",venue["description"],re.I):
+            raise ValueError("generic theatre card: "+venue["id"])
         if not venue["source_url"].startswith("https://"):
             raise ValueError("source must be HTTPS")
         if venue.get("website") and not str(venue["website"]).startswith("https://"):
