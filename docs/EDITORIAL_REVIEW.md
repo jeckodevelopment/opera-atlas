@@ -105,6 +105,21 @@ possibile classificare gli ostacoli per fonte e per opera dal report
 generato dallo stesso refresh, senza dedurli a posteriori dagli URL.
 I report più vecchi non possiedono questi nuovi campi.
 
+## Promozione delle recite con titoli alternativi
+
+Il riconoscimento editoriale e la pubblicazione delle recite applicano la
+stessa identità canonica. Quando il titolo dell'evento ufficiale differisce
+dal titolo dell'opera già pubblicata, il promotore accetta l'abbinamento
+**solo** se la candidate possiede un arricchimento Wikidata associato
+all'esatto URL e fonte dell'evento e se lo stesso QID è registrato per
+la composizione canonica (o nella sua attribuzione editoriale).
+Il compositore deve corrispondere in entrambi i record.
+
+La scheda dell'opera conserva titolo e identificativo originali, evitando
+copie o composizioni omonime fuse; le date e la sede seguono gli stessi
+controlli delle altre recite. Un QID assente o contraddittorio lascia
+in attesa soltanto la candidate interessata.
+
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
 `.github/workflows/refresh-catalog.yml` esegue
