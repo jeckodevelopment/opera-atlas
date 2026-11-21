@@ -151,7 +151,7 @@ def parse_month(html:str,*,url:str,registry:dict,today:date,
             author=credit[len(primary)+1:]
             # Exact capitalized full person credit after independently checked
             # title; reject staff roles and any unstructured trailing details.
-            if (not re.fullmatch(r"[a-zà-ÿ][\\w'’.-]+(?:\\s+[a-zà-ÿ][\\w'’.-]+){1,4}",author,re.I)
+            if (not re.fullmatch(r"[a-zà-ÿ][\w'’.-]+(?:\s+[a-zà-ÿ][\w'’.-]+){1,4}",author,re.I)
                 or author.split()[0] in {"direttore","regia","maestro","soprano",
                                           "tenore","baritono","coro","orchestra"}):
                 continue
