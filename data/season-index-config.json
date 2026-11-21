@@ -204,6 +204,48 @@
       "url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "jesi-trittico-opera-2026",
+      "official_url": "https://www.fondazionepergolesispontini.com/",
+      "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "jesi-don-pasquale-opera-2026",
+      "official_url": "https://www.fondazionepergolesispontini.com/",
+      "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "jesi-esecuzione-opera-2026",
+      "official_url": "https://www.fondazionepergolesispontini.com/",
+      "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "jesi-nabucco-opera-2026",
+      "official_url": "https://www.fondazionepergolesispontini.com/",
+      "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "ancona-elisir-opera-2026",
+      "official_url": "https://www.fondazionemuse.org/",
+      "url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "ancona-cavalleria-program-2026",
+      "official_url": "https://www.fondazionemuse.org/",
+      "url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }
