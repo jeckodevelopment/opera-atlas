@@ -750,6 +750,23 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         health.append({"candidate_id":item["id"],
                                        "outcome":"verified_other_season","rows":0})
                         continue
+                if item["source_key"] in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
+                    from opera_atlas.petruzzelli_detail_parser import official_petruzzelli_other_year
+                    other=official_petruzzelli_other_year(
+                        page.html,url=item["official_url"],
+                        season_year=int(item["source_key"].rsplit("-",1)[-1]))
+                    if other is not None:
+                        # A 2022 opera linked from the 2027 index cannot
+                        # create invented recite in 2027. Preserve the
+                        # original source hash, page and actual year.
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],"source_key":item["source_key"],
+                            "source_url":item["official_url"],"content_sha256":page.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                            "status":"out_of_monitored_season","official_season":other}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_other_season","rows":0})
+                        continue
                 # Source-specific adapters may supply a compound official bill.
                 # The central program publisher handles all compound programs
                 # identically; never mislabel the whole ticket as one opera.
