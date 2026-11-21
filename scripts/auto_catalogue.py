@@ -265,8 +265,14 @@ def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
             if row.get("time") is not None:continue
             try:date.fromisoformat(day)
             except ValueError:continue
+            # A calendar title alone is never evidence of the composer:
+            # Rossini/Paisiello and Puccini/Leoncavallo must not be merged,
+            # even if only one version is currently registered.
+            composer=row.get("composer")
             works=[w for w in next_registry["works"].values()
-                   if normalized(w["title"])==normalized(title)]
+                   if isinstance(composer,str) and composer.strip()
+                   and normalized(w["title"])==normalized(title)
+                   and normalized(w["composer"])==normalized(composer)]
             venue_key=city+"|"+venue
             canonical_venue=next_registry["venues"].get(venue_key)
             if len(works)!=1 or canonical_venue is None:
