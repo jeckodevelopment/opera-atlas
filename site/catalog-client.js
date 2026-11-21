@@ -102,8 +102,9 @@ window.OperaAtlasCatalog = (() => {
         if(typeof component.title!=="string"||typeof component.composer!=="string")
           throw new Error("Invalid independently credited program component");
         const work=component.work_id ? byWork.get(component.work_id) : null;
-        if(component.work_id && (!work || work.title!==component.title ||
-           work.composer!==component.composer))
+        if(component.work_id && (!work || slugify(work.title)!==slugify(component.title) ||
+           work.composer.normalize("NFKC").toLocaleLowerCase("it")!==
+           component.composer.normalize("NFKC").toLocaleLowerCase("it")))
           throw new Error("Composite work identity mismatch");
         return {...component,work_route_slug:work?.route_slug||work?.slug||null};
       });
