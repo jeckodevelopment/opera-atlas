@@ -1,12 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T23:24:26+00:00",
-  "attempted": 1,
-  "outcomes": [
-    {
-      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "outcome": "verified_other_season",
-      "rows": 0
-    }
-  ]
+  "checked_at": "2026-11-21T23:27:42+00:00",
+  "attempted": 0,
+  "outcomes": []
 }
