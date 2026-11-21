@@ -678,3 +678,34 @@ la sola presenza delle URL candidate non costituisce pubblicazione.
 ## Concorrenza del refresh nazionale
 
 Le scansioni ufficiali sono abbastanza lunghe da poter essere interrotte dai numerosi merge concorrenti. Il workflow nazionale ora usa `cancel-in-progress: false` per completare un'acquisizione già avviata; una nuova rimane in coda. Il push finale non sovrascrive mai codice o dati arrivati nel frattempo: `safe_push_catalog` rinvia i dati obsoleti e richiede un refresh sulla `main` aggiornata. Il pubblicatore rapido dei dati già verificati utilizza una coda indipendente. Nessun SFTP è coinvolto. Collaudo: eseguire suite Python e seguire il workflow completo fino alla pubblicazione dei JSON e dei manifesti di nuove opere, distinguendo candidati, evidenze e recite pubblicate.
+
+## Checkpoint autonomo delle fonti ufficiali prima della ricerca autoritativa
+
+Il workflow `Refresh public Opera Atlas catalog` adotta una pubblicazione
+intermedia degli **indici e delle evidenze candidate ufficiali** subito
+dopo `discover_season_indexes` e `collect_candidate_details`:
+`data/season-index-{candidates,health}.json`,
+`data/candidate-detail-{evidence,health}.json` e i corrispondenti
+file pubblici di sola revisione, insieme al report di rollover.
+Prima il processo scriveva questi dati su GitHub solo dopo l'intera
+ricerca Wikidata, l'arricchimento dei manifesti, la generazione di tutti
+i feed e i collaudi finali. Un errore tardivo impediva quindi anche di
+leggere le diagnosi delle fonti già verificate, dando l'impressione di un
+catalogo non aggiornato.
+
+Il checkpoint **non** inserisce produzioni, recite, opere o identità
+nuove nel catalogo canonico; le evidenze restano in stato di revisione
+fino a titolo/compositore e orari convalidati. Pubblica in sicurezza
+tramite `safe_push_catalog`, senza forzare mai commit concorrenti.
+Se `main` avanza nel frattempo, un evento di retry richiede una nuova
+esecuzione sulla versione corrente. Le fasi successive continuano
+normalmente a riconciliare e pubblicare il catalogo definitivo. I
+commit di dati utilizzano `[skip ci]` per non creare loop. Nessun
+SFTP o servizio di generazione a pagamento è necessario.
+
+**Collaudi:** suite Python, verifica che il checkpoint preceda
+`auto_work_research` e `publish_work_posters`, conferma del suo
+commit review-only e poi controllo separato di
+`data/verified-launch-catalog.json` e
+`public/catalog/v2/manifest.json`. Un checkpoint riuscito non
+significa che tutte le recite siano pubblicate.

@@ -120,6 +120,29 @@ jobs:
         run: python -m scripts.discover_season_indexes --allow-network
       - name: Collect structured facts from bounded discovered detail pages
         run: python -m scripts.collect_candidate_details --allow-network
+      - name: Persist source discovery and verified detail evidence early
+        id: source_checkpoint
+        run: |
+          # Source discovery and official details are independently useful
+          # even when subsequent authority research or poster enrichment fails.
+          # These are REVIEW-ONLY inputs; do not publish unverified recite here.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/season-index-config.json data/season-rollover-health.json data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json
+          git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+            echo "No new official candidate evidence."
+          else
+            git commit -m "data(sources): checkpoint verified official source evidence [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Requeue source discovery checkpoint if main advanced
+        if: steps.source_checkpoint.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       - name: Resolve unseen opera identities and prepare verified short introductions
         run: python -m scripts.auto_work_research --allow-network
       - name: Promote fully verified candidate dates without manual reconciliation
