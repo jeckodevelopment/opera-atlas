@@ -6,6 +6,7 @@ from opera_atlas.bologna_detail_parser import parse_detail,normalize_event_fact
 import json
 
 KEY="bologna-comunale-opera-2027"
+CURRENT="bologna-comunale-opera-2026"
 BASE="https://www.tcbo.it/"
 URL=BASE+"evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
 MANZONI=BASE+"evento/opera/la-straniera-2027/"
