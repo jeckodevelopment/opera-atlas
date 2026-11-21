@@ -31,6 +31,7 @@ VENUE_BY_SOURCE={
     "teatro-grande-opera-2026":("Brescia","Teatro Grande"),
     "maggio-fiorentino-calendar-2027":("Firenze","Teatro del Maggio Musicale Fiorentino"),
     "opera-roma-season-2026-27":("Roma","Teatro dell\u0027Opera di Roma"),
+    "bologna-comunale-opera-2027":("Bologna","Teatro Comunale di Bologna"),
 }
 
 def verified_venue(source_key:str,rows:list[dict],registry:dict):
@@ -42,7 +43,9 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
     if len(named)!=1:return None
     venue=next(iter(named))
     permitted=({"Teatro Donizetti","Teatro Sociale"}
-               if source_key=="donizetti-opera-2026" else {default_venue})
+               if source_key=="donizetti-opera-2026" else
+               {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"}
+               if source_key=="bologna-comunale-opera-2027" else {default_venue})
     if venue not in permitted:return None
     found=[(key,value) for key,value in registry["venues"].items()
            if value["city"]==city and value["name"]==venue
@@ -52,7 +55,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio"}.get(city)
+    region={"Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bologna":"Emilia-Romagna"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
