@@ -1,57 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T22:29:33+00:00",
-  "attempted": 10,
+  "checked_at": "2026-11-21T22:33:18+00:00",
+  "attempted": 1,
   "outcomes": [
     {
       "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
       "outcome": "facts_found",
       "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-03fa95f1d0382ffee131",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-67ef6842ba33e2d6015d",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-73348de657104a8b911f",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-857515ac803f6ce8e75f",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a764d9a221b8659804fb",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-b71caef92f53a984ed36",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-c03e9ef77c219026cd5c",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-dcb294addc2abadaa6b0",
-      "outcome": "verified_other_season",
-      "rows": 0
     }
   ]
 }
