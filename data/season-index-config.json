@@ -120,6 +120,13 @@
       "url": "https://www.teatromassimobellini.it/opere-e-balletto/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "modena-opera-2026-27",
+      "official_url": "https://www.comune.modena.it/",
+      "url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-opera-2026-2027",
+      "access_status": "approved",
+      "min_links": 9
     }
   ]
 }
