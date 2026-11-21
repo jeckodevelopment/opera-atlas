@@ -20,7 +20,7 @@
    I nomi storici `SFTP` sono usati per compatibilità; non indicano il protocollo effettivo. Porta 21 fissata nel workflow, il secret storico `ATLAS_SFTP_PORT` non viene utilizzato.
 4. Non esistono override dell'hostname: il workflow legge direttamente `ATLAS_SFTP_HOST`. Evitare duplicati o override di configurazione.
 5. **Avvertenza di sicurezza:** FTP semplice **non cifra credenziali, comandi né file trasferiti**; il traffico può essere intercettato sulla rete. Usare un account dedicato con privilegi circoscritti a `/atlas`; restringere gli IP sorgenti presso il provider se disponibile e preferire il ripristino di un trasporto cifrato appena possibile. Nessuna credenziale deve apparire nel repository o nei log.
-6. Il deploy usa `lftp` con FTP passivo senza TLS: crea/aggiorna i file statici previsti sotto `/atlas` e non cancella gli altri file. Non esegue rinomine atomiche o rollback: è un caricamento diretto e semplificato. Il controllo dei file sorgente avviene prima della connessione. Non considerare una pubblicazione riuscita prima del collaudo della pagina HTTPS.
+6. Il deploy usa `lftp` con FTP passivo senza TLS: crea/aggiorna i file statici previsti sotto `/atlas` e non cancella gli altri file. La copia usa `mirror --reverse --overwrite --no-perms` e un `put` esplicito per `.htaccess` (l'opzione `mirror --all` non è supportata da `lftp`). Non esegue rinomine atomiche o rollback: è un caricamento diretto e semplificato. Il controllo dei file sorgente avviene prima della connessione. Non considerare una pubblicazione riuscita prima del collaudo della pagina HTTPS.
 7. Le chiavi SSH/known_hosts storiche non sono usate.
 
 ## Prima pubblicazione controllata
@@ -39,7 +39,7 @@ Il rilascio non è concluso finché non sono verificati configurazione FTP, URL 
 ## Risoluzione problemi
 
 - **Login FTP rifiutato:** confrontare host e utente realmente usati in FileZilla (senza pubblicare la password) con quelli nell'environment GitHub, verificare che l'account FTP non limiti gli IP sorgenti o le connessioni da servizi cloud. Un codice `530` può anche indicare host/account/ACL non corrispondenti.
-- **Directory FTP non valida:** controllare la document root vista dall'account FTP e la directory padre di `/atlas`.
+- **Directory FTP non valida:** controllare la document root vista dall'account FTP e la directory padre di `/atlas`. OVH può mostrare un percorso fisico tipo `/homez.2168/operapw`; non aggiungerlo automaticamente alla destinazione FTP, perché il login può già essere confinato in quella home. Dopo il login verificare il percorso effettivo con `pwd` e confrontarlo con la directory pubblica del dominio.
 - **403/404 asset o rewrite:** controllare pubblicazione web, `.htaccess` e riscritture delle URL annidate.
 - **Verifica HTTPS fallita:** controllare gli asset pubblicati e ripetere il deploy dopo la correzione; il caricamento diretto non prevede rollback.
 - **Aggiornamenti JSON:** continuano dal catalogo Git pubblico, senza deploy FTP.
