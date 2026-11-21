@@ -59,11 +59,24 @@ class NationalIndexTests(unittest.TestCase):
         self.assertTrue(all("concerto-non-opera" not in u for u in m))
         self.assertTrue(all("false" not in u for u in p))
 
-    def test_all_five_indexes_are_explicitly_configured(self):
+    def test_carlo_felice_index_filters_nonopera_and_external_links(self):
+        url="https://www.carlofelice.it/rassegna-stagione-opera-danza-musical-2026-27/"
+        slugs=("le-nozze-di-figaro","i-capuleti-e-i-montecchi",
+               "pagliacci","litaliana-in-algeri","turandot",
+               "evgenij-onegin","nabucco","deledda","giselle",
+               "lo-schiaccianoci","il-lago-dei-cigni",
+               "sergio-bernal-dance-company","the-phantom-of-the-opera")
+        html="".join('<a href="/spettacolo/'+slug+'/">Dettaglio</a>' for slug in slugs)
+        html+='<a href="https://other.example/spettacolo/false/">External</a>'
+        urls=extract("carlo-felice-season-2026-27",url,html,7)
+        self.assertEqual(len(urls),7)
+        self.assertFalse(any("giselle" in x or "deledda" in x for x in urls))
+
+    def test_all_six_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
             "scala-season-2026-27", "arena-festival-2027",
             "fenice-opera-2026-27","parma-opera-2027",
-            "massimo-season-2026-27"})
+            "massimo-season-2026-27","carlo-felice-season-2026-27"})
 
     def test_incomplete_index_is_rejected(self):
         with self.assertRaises(ValueError):
@@ -103,7 +116,7 @@ class NationalIndexTests(unittest.TestCase):
                        now="2026-11-20T20:00:00+00:00")
         self.assertEqual(second,first)
         self.assertEqual([x["status"] for x in status[:3]],["success"]*3)
-        self.assertEqual([x["status"] for x in status[3:]],["blocked"]*2)
+        self.assertEqual([x["status"] for x in status[3:]],["blocked"]*3)
     def test_first_live_scan_support_pages_are_not_opera(self):
         for suffix in ("regolamento","preparati-allopera",
                        "spettacoli-prossima-stagione","roberto-bolle-friends",
