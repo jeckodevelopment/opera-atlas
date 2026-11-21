@@ -473,6 +473,35 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         health.append({"candidate_id":item["id"],
                                        "outcome":"verified_composite_program","rows":len(facts)})
                         continue
+                if item["source_key"]=="teatro-grande-opera-2026":
+                    from opera_atlas.brescia_detail_parser import parse_brescia_double_bill, Heading
+                    from scripts.build_verified_catalog import official_local_time
+                    try:
+                        rows=parse_brescia_double_bill(
+                            page.html,url=item["official_url"],works=registry.get("works",{}))
+                    except ValueError:
+                        pass
+                    else:
+                        reader=Heading()
+                        reader.feed(page.html)
+                        credits=[
+                            {"title":"Cavalleria rusticana","composer":"Pietro Mascagni"},
+                            {"title":"Pagliacci","composer":"Ruggero Leoncavallo"}]
+                        facts=[
+                            {"event_title":r["event_title"],"composer":r["composer"],
+                             "date":r["date"],
+                             "starts_at":official_local_time(r["date"],r["clock"]),
+                             "venue":r["venue"]} for r in rows]
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],"source_key":item["source_key"],
+                            "source_url":item["official_url"],"content_sha256":page.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                            "status":"needs_program_review","program_heading":reader.h1,
+                            "program_heading_source_url":item["official_url"],
+                            "program_components":credits,"event_facts":facts}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_composite_program","rows":len(facts)})
+                        continue
                 # Prefer parsers which verify the canonical composer and
                 # page-specific showtime. Generic Event JSON-LD alone has no
                 # authoritative work identity and must never outrank those.
