@@ -42,6 +42,34 @@ class MultiWorkProgramTests(unittest.TestCase):
         self.assertEqual(len({p["id"] for p in bill["performances"]}),7)
         self.assertEqual(self.build(),bill)
 
+    def test_generic_shared_schedule_no_duplicate_tickets(self):
+        detail=copy.deepcopy(self.details)
+        detail["source_key"]="teatro-grande-opera-2026"
+        detail["source_url"]="https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
+        detail["program_heading"]="Cavalleria Rusticana/Pagliacci di Pietro Mascagni/Ruggero Leoncavallo"
+        detail["program_components"]=[
+            {"title":"Cavalleria rusticana","composer":"Pietro Mascagni"},
+            {"title":"Pagliacci","composer":"Ruggero Leoncavallo"}]
+        detail["event_facts"]=[
+            {"event_title":part["title"],"composer":part["composer"],
+             "date":day,"starts_at":stamp,"venue":"Teatro Grande"}
+            for day,stamp in (("2026-12-11","2026-12-11T20:00:00+01:00"),
+                              ("2026-12-13","2026-12-13T15:30:00+01:00"))
+            for part in detail["program_components"]]
+        candidate={"source_key":detail["source_key"],"official_url":detail["source_url"]}
+        def build(d):
+            return program_from_evidence(
+                heading=d["program_heading"],source_key=d["source_key"],
+                source_url=d["source_url"],candidate=candidate,detail=d,
+                registry=self.registry,venue="Teatro Grande",
+                city="Brescia",region="Lombardia")
+        bill=build(detail)
+        self.assertEqual(len(bill["components"]),2)
+        self.assertEqual(len(bill["performances"]),2)
+        bad=copy.deepcopy(detail)
+        bad["event_facts"][-1]["starts_at"]="2026-12-13T16:00:00+01:00"
+        with self.assertRaises(ValueError):build(bad)
+
     def test_reject_incomplete_or_ambiguous_credits(self):
         for heading in ("Pagliacci di Ruggero Leoncavallo",
                         "Pagliacci di Ruggero Leoncavallo | Pagliacci di Ruggero Leoncavallo",
