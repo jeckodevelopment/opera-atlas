@@ -367,8 +367,71 @@ def canonical_editorial_material(identity:dict)->dict|None:
     return {"synopsis":summary.strip(),"history":history}
 
 
+def already_canonical(candidate:dict,evidence:dict|None,
+                      registry:dict)->dict|None:
+    """Identify existing published composition from official *structured* facts.
+
+    This is not research into a new opera: the existing-work performance
+    promoter processes its schedule independently. Never treat URL slugs
+    or uncredited event titles as evidence of a canonical identity.
+    """
+    if evidence is None:return None
+    rows=[entry for entry in evidence.get("evidence",[])
+          if entry.get("candidate_id")==candidate.get("id")
+          and entry.get("source_key")==candidate.get("source_key")
+          and entry.get("source_url")==candidate.get("official_url")
+          and entry.get("status")=="needs_editorial_review"]
+    if len(rows)!=1:return None
+    facts=rows[0].get("event_facts")
+    if not isinstance(facts,list) or not facts:return None
+    identities=set()
+    for fact in facts:
+        if (not isinstance(fact,dict) or
+                not isinstance(fact.get("event_title"),str) or
+                not isinstance(fact.get("composer"),str) or
+                not fact["event_title"].strip() or not fact["composer"].strip()):
+            return None
+        identities.add((normalized(fact["event_title"]),
+                        normalized(fact["composer"])))
+    if len(identities)!=1:return None
+    title,composer=next(iter(identities))
+    matches=[work for work in registry.get("works",{}).values()
+             if normalized(work["title"])==title
+             and normalized(work["composer"])==composer]
+    return matches[0] if len(matches)==1 else None
+
+
+def official_identity_evidence(candidate:dict,evidence:dict|None)->bool:
+    """Require exactly one attributed work/composer from the linked official page.
+
+    A slug, marketing title, or URL mentioning a surname is not enough to
+    identify new operas with recurring titles and artistic adaptations.
+    """
+    if evidence is None:return False
+    records=[record for record in evidence.get("evidence",[])
+             if record.get("candidate_id")==candidate.get("id")
+             and record.get("source_key")==candidate.get("source_key")
+             and record.get("source_url")==candidate.get("official_url")
+             and record.get("status")=="needs_editorial_review"]
+    if len(records)!=1:return False
+    facts=records[0].get("event_facts")
+    if not isinstance(facts,list) or not facts:return False
+    identities=set()
+    for fact in facts:
+        if (not isinstance(fact,dict)
+                or not isinstance(fact.get("event_title"),str)
+                or not isinstance(fact.get("composer"),str)
+                or not fact["event_title"].strip()
+                or not fact["composer"].strip()):
+            return False
+        identities.add((normalized(fact["event_title"]),
+                        normalized(fact["composer"])))
+    return len(identities)==1
+
+
 def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
-                      *,today:date,evidence:dict|None=None)->list[dict]:
+                      *,today:date,evidence:dict|None=None,
+                      strict_evidence:bool=False)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
     # An identity-only introduction must never suppress later editorial research.
@@ -399,8 +462,20 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
     # Verified source material may already exist for an uncatalogued
     # work. Check those candidates first; all others retain fair rotation.
     prepared=preverified_work_material()
-    ready=[x for x in options if slugify(official_title_hint(x,evidence)) in prepared]
-    other=[x for x in options if slugify(official_title_hint(x,evidence)) not in prepared]
+    # A known opera no longer needs new-opera authority requests; isolate
+    # it before the bounded queue is chosen so existing theatre schedules
+    # cannot starve genuinely uncatalogued compositions.
+    registry=json.loads(REGISTRY.read_text(encoding="utf-8")) if evidence else None
+    already=[x for x in options if registry and
+             already_canonical(x,evidence,registry) is not None]
+    known_ids={x["id"] for x in already}
+    unseen=[x for x in options if x["id"] not in known_ids]
+    waiting=[x for x in unseen if strict_evidence
+             and not official_identity_evidence(x,evidence)]
+    waiting_ids={x["id"] for x in waiting}
+    unseen=[x for x in unseen if x["id"] not in waiting_ids]
+    ready=[x for x in unseen if slugify(official_title_hint(x,evidence)) in prepared]
+    other=[x for x in unseen if slugify(official_title_hint(x,evidence)) not in prepared]
     def rotate(items):
         if not items:return []
         offset=today.toordinal()%len(items)
@@ -417,7 +492,10 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
     def prioritized(items):
         return sorted(rotate(items),key=lambda item:
                       earliest.get(item["id"],"9999-12-31"))
-    return prioritized(ready)[:MAX_PREVERIFIED]+prioritized(other)[:MAX_RESEARCH]
+    return (prioritized(ready)[:MAX_PREVERIFIED]
+            +prioritized(other)[:MAX_RESEARCH]
+            +prioritized(already)[:MAX_PREVERIFIED]
+            +prioritized(waiting)[:MAX_PREVERIFIED])
 
 def identity_introduction(identity:dict)->str:
     """Original, factual two-sentence card from verified authority fields.
@@ -440,12 +518,25 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
     existing_works={x["candidate_id"]:x.copy() for x in existing.get("works",[])}
     prepared=preverified_work_material() if prepared is None else prepared
     statuses=[]
-    options=choose_candidates(candidates,existing,known_slugs,today=today,evidence=evidence)
+    registry=json.loads(REGISTRY.read_text(encoding="utf-8")) if allow_authority else None
+    options=choose_candidates(candidates,existing,known_slugs,
+                              today=today,evidence=evidence,
+                              strict_evidence=(allow_authority and evidence is not None))
     # Move ready-made, sourced work cards to the front while retaining the
     # normal fair rotation for all remaining unseen operas.
     options.sort(key=lambda x:slugify(official_title_hint(x,evidence) or "") not in prepared)
     for item in options:
         cid=item["id"]
+        # Already catalogued works need no editorial/knowledge API retry:
+        # verified official dates are handled by auto_catalogue.promote.
+        known=already_canonical(item,evidence,registry) if registry else None
+        if known is not None:
+            statuses.append({"candidate_id":cid,"status":"existing_canonical_work",
+                             "work_id":known["id"]})
+            continue
+        if allow_authority and evidence is not None and not official_identity_evidence(item,evidence):
+            statuses.append({"candidate_id":cid,"status":"awaiting_official_identity_evidence"})
+            continue
         slug=slugify(official_title_hint(item,evidence))
         # A prewritten title-keyed synopsis is not safe for a new homonym.
         # Resolve its own facts instead of copying the established work card.
