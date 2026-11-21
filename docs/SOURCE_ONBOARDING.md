@@ -927,3 +927,78 @@ Per il Teatro Comunale di Bologna il monitoraggio degli indici ufficiali 2026 (`
 Il calendario mensile del Maggio Fiorentino viene scandito su dodici mesi consecutivi a partire dal mese attuale: questo comprende novembre/dicembre 2026 e il programma 2027, senza sostituire il calendario annuale. Sono trattate come valide soltanto le schede con titolo, compositore, sala, data e ora esplicitamente corrispondenti a un'opera canonica. La fonte di dettaglio ufficiale rimane registrata per ogni rappresentazione.
 
 L'ampliamento delle fonti non certifica da solo la completezza del catalogo: consultare gli stati di `data/season-index-health.json`, `data/maggio-calendar-health.json` e la pubblicazione del feed canonico dopo il refresh. Il sistema mantiene le osservazioni già verificate quando un indice non è temporaneamente raggiungibile.
+
+## Petruzzelli 2027 — copertura dell'intera stagione lirica
+
+L'indice ufficiale `opera-e-balletto-2027` individua nove collegamenti;
+è **un elenco di candidati**, non nove produzioni liriche pubblicabili.
+Per tutte le singole opere il parser ora distingue il **titolo e
+compositore nell'H1** da un **credito operistico esplicito** nella
+presentazione ufficiale. Per esempio, *La bohème* non porta il compositore
+nell'H1, ma lo riporta nell'indicazione `presenta l’opera La Bohème di
+Giacomo Puccini`; si associa quindi alla *Bohème* di Puccini, non a quella
+di Leoncavallo. I direttori d'orchestra e i nomi citati nelle conferenze
+non costituiscono prova del compositore; se due crediti divergono,
+l'intera scheda è bloccata.
+
+Il dettaglio ufficiale deve avere calendario 2027, `Orari Spettacoli`,
+date e ore complete e controlli di giorno della settimana. La raccolta
+può produrre prove candidate anche per opere **non ancora nel registro
+canonico**: l'identità resta subordinata alla ricerca indipendente
+Wikidata di titolo+compositore. Tale ricerca prende il titolo soltanto
+dalle evidenze validate del teatro, **mai dallo slug della URL** (che
+potrebbe rappresentare un balletto o un programma misto). A quel punto
+la normale transazione di catalogazione può pubblicare la scheda senza
+aggiustamenti manuali successivi, se tutte le verifiche sono soddisfatte.
+
+Prime prove ufficiali completate (27 recite con orario):
+
+- *La bohème*, Giacomo Puccini — 8 recite, 17–27/12/2027, pubblicabile
+  come opera **già canonica**.
+- *Le nozze di Figaro*, Wolfgang Amadeus Mozart — 6 recite, 12–19/09/2027.
+- *Fidelio*, Ludwig van Beethoven — 5 recite, 19–25/11/2027.
+- *Zenobia*, Niccolò Piccinni — 4 recite, 27/01–02/02/2027.
+- *Arlecchino*, Ferruccio Busoni — 4 recite, 15–23/05/2027.
+
+Le righe candidate hanno le date e gli orari copiati solo dalla rispettiva
+pagina ufficiale e la stessa chiave di fonte del crawler. Il programma
+*L'Arlésienne* / *Pagliacci* è una **serata composta da due lavori**:
+non va attribuito alla sola opera *Pagliacci*. I dati preesistenti che
+attribuivano le sette recite al solo Leoncavallo devono essere esclusi
+dalla promozione finché non è disponibile una rappresentazione di
+programma misto esplicita, collegata ad entrambe le opere e ai relativi
+compositori. *Lo schiaccianoci* è balletto, mentre il collegamento
+*La notte di San Nicola* è una pagina storica del 2022, non spettacolo
+della stagione 2027. Non devono aumentare i contatori delle recite
+operistiche del 2027.
+
+**Collaudi:** `python -m unittest discover -s tests -v`, inclusi
+`test_petruzzelli_full_season`. Prima e dopo il refresh verificare
+separatamente `data/candidate-detail-evidence.json`,
+`data/auto-work-intelligence.json` e il catalogo canonico v2. Le 27
+prove candidate non equivalgono a 27 recite già pubblicate; il
+pubblicatore rapido può promuovere subito solo le otto recite de
+*La bohème* di Puccini. Nessun deploy SFTP o API a pagamento.
+
+## Correzione del programma misto già pubblicato
+
+L'aggiornamento nazionale aveva erroneamente promosso a Bari una serata
+condivisa `L'Arlésienne` (Georges Bizet) / `Pagliacci` (Ruggero
+Leoncavallo) come sette rappresentazioni di **soli** `Pagliacci`.
+La prima correzione isola l'evidenza in `needs_program_review`; l'azione
+`scripts.repair_petruzzelli_mixed_program` rimuove esclusivamente quel
+singolo staging erroneo (`auto-a12dbb283b490075`) e i sette ID recita
+a esso collegati, preservando tutti gli altri lavori, teatri, URL
+e identificativi delle recite. La fonte ufficiale e il programma composto
+restano candidati verificabili per un futuro modello di rappresentazione
+con più opere, ma non vengono presentati come una produzione singola.
+Entrambi i workflow di pubblicazione eseguono questa correzione
+**prima** della promozione e della rigenerazione del manifest pubblico.
+L'azione è idempotente e rifiuta di intervenire se i dati non corrispondono
+esattamente alla situazione documentata, così non cancella per errore
+allestimenti diversi.
+
+La stessa correzione riguarda sia il connettore Petruzzelli 2027
+sia l'individuazione distinta della stagione 2026: nessun link 2022
+o balletto è attribuito all'opera 2027. Prima di conteggiare le nuove
+recite, verificare la pubblicazione canonica post-merge nel JSON v2.
