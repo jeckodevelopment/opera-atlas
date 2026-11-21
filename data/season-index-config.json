@@ -106,6 +106,13 @@
       "url": "https://www.teatroverdi-trieste.com/it/calendario-spettacoli/?a=0&t=lirica",
       "access_status": "approved",
       "min_links": 6
+    },
+    {
+      "key": "lirico-cagliari-opera-2027",
+      "official_url": "https://www.liricocagliari.it/",
+      "url": "https://www.liricocagliari.it/categoria-evento/opera/",
+      "access_status": "approved",
+      "min_links": 7
     }
   ]
 }
