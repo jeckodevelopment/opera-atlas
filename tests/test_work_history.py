@@ -58,7 +58,9 @@ class OperaHistoryTests(unittest.TestCase):
         self.assertIn('Number.isInteger(history.premiere_year)',js)
         self.assertIn('String(history.premiere_venue||"").trim()',js)
         self.assertIn('String(history.premiere_city||"").trim()',js)
-        self.assertIn('"La prima rappresentazione ebbe luogo "+when+" al "+place+',js)
+        self.assertIn('const beginning=futurePremiere?"La prima assoluta è prevista ":"La prima rappresentazione ebbe luogo ";',js)
+        self.assertIn('history.premiere_date>todayISO',js)
+        self.assertIn('beginning+when+" al "+place',js)
         self.assertIn('history.premiere_date',js)
         self.assertIn('node("p","work-history-story",historyParts.join(" "))',js)
         self.assertEqual(js.count("await appendSynopsis(first);"),3) # opera, shared production, individual production
