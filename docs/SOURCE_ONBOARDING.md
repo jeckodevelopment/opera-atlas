@@ -1004,3 +1004,31 @@ o balletto è attribuito all'opera 2027. Prima di conteggiare le nuove
 recite, verificare la pubblicazione canonica post-merge nel JSON v2.
 
 La raccolta delle stagioni 2026 e 2027 mantiene due sorgenti distinte pur condividendo lo stesso teatro canonico. Il ritiro delle sette recite attribuite alla sola opera *Pagliacci* è verificato anche a livello di identificativi pubblici, senza riutilizzarli per nuovi allestimenti.
+
+## Ritiro selettivo delle attribuzioni errate del Petruzzelli 2026
+
+Un successivo refresh ha reso visibile un secondo bug: cinque produzioni
+2026 diverse da *La traviata* erano state pubblicate come *La traviata*
+di Giuseppe Verdi. Il problema riguarda le pagine della compagnia con
+titoli reali `Le lac des cygnes` (balletto), `Bona Sforza`,
+`Il gobbo del califfo`, `Il barbiere di Siviglia` e `Il trovatore`.
+La vera produzione `la-traviata-verdi-18-26-aprile` rimane invariata.
+
+La funzione di riparazione gestisce sei allestimenti erronei noti:
+i cinque del 2026 e il programma misto *L'Arlésienne/Pagliacci* del 2027.
+Per ciascuno confronta **chiave canonica stabile, URL ufficiale, titolo,
+compositore impropriamente attribuito, teatro, date esatte, identità
+dell'opera nel registro, collegamento agli ID delle rappresentazioni**.
+Se anche uno di questi controlli non corrisponde, non rimuove nulla.
+Quando tutti i controlli passano, ritira esattamente 31 recite erronee
+(24 del 2026 e 7 del 2027, qualora ancora pubblicate), senza rinumerare
+gli ID delle restanti rappresentazioni o toccare *Nabucco* e la vera
+*Traviata*. La correzione è idempotente e fa parte della pubblicazione
+rapida e del refresh nazionale prima della ricostruzione JSON v2.
+
+Le vecchie evidenze 2026 non vengono attribuite ad altre opere
+indovinando titoli e autori: sono marcate
+`needs_source_identity_review` e potranno rientrare nel catalogo soltanto
+quando il parser ufficiale riacquisirà correttamente il titolo,
+il compositore e la stagione reale. Non si usa il dato storico del
+catalogo per ricostruire identità mancanti.
