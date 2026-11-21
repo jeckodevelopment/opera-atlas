@@ -278,3 +278,10 @@ Collaudo: homepage con le sei card nell'ordine sopra, senza Coccia e Dante nella
 La selezione delle foto nella homepage e nelle schede del catalogo usa solo una fotografia associata esplicitamente alla singola sede (oppure una deroga nominativa verificata), mai un'immagine scelta in base alla sola città. In mancanza di un'immagine verificata, compare una copertina editoriale dichiarata come tale: evita di mostrare il Teatro Comunale storico come se fosse il Comunale Nouveau, o un altro teatro leccese al posto del Politeama Greco.
 
 Per **Comunale Nouveau** e **Politeama Greco** esistono fotografie autentiche nelle fonti istituzionali e nelle gallerie ufficiali, ma il riuso delle immagini non è ancora autorizzato o documentato con licenza compatibile. Non si inseriscono URL di fotografie di terzi prima di averne attestato provenienza, licenza e attribuzione. Le anteprime non equivalgono a pubblicazione: le modifiche frontend vanno distribuite separatamente dal feed dati GitHub.
+
+
+## Fotografia autentica del Politeama Greco (21/11/2026)
+
+La scheda di Lecce ora riferisce una fotografia dell'interno del Teatro Politeama Greco pubblicata da Salento Sagre Eventi, con attribuzione espressa a **Regione Puglia / viaggiareinpuglia.it** e licenza dichiarata **CC BY 4.0** sulla pagina di provenienza. Il credito è conservato nei dati e nella scheda teatro. La fonte fotografica ripubblicata è https://salentosagreeventi.it/places/teatro-politeama-greco-lecce; la scheda originale della Regione è https://www.viaggiareinpuglia.it/at/teatro-politeama-greco. Le fotografie extra-Commons non si inferiscono dalla città, e richiedono URL HTTPS, provenienza, credito e licenza dichiarata.
+
+Per il Comunale Nouveau di Bologna non è ancora stata identificata una fotografia della sede con licenza riutilizzabile verificabile. L'illustrazione di ripiego resta intenzionale per non attribuire la Sala Bibiena storica alla sede temporanea. Il deploy dei file statici resta distinto dall'aggiornamento del feed GitHub.
