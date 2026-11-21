@@ -57,7 +57,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-21T15:40:34+00:00",
+      "checked_at": "2026-11-21T16:41:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -215,7 +215,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T15:40:34+00:00",
+      "checked_at": "2026-11-21T16:41:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -245,6 +245,37 @@
           "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2027-01-02",
           "starts_at": "2027-01-02T17:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+      "content_sha256": "1b6c35ae33d605b55838da484a6eefcfc67785f79592a96c3e0e39edad5c96b5",
+      "checked_at": "2026-11-21T16:40:39+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'esule di Roma",
+          "composer": "Gaetano Donizetti",
+          "date": "2026-11-13",
+          "starts_at": "2026-11-13T20:00:00+01:00",
+          "venue": "Teatro Donizetti"
+        },
+        {
+          "event_title": "L'esule di Roma",
+          "composer": "Gaetano Donizetti",
+          "date": "2026-11-21",
+          "starts_at": "2026-11-21T20:00:00+01:00",
+          "venue": "Teatro Donizetti"
+        },
+        {
+          "event_title": "L'esule di Roma",
+          "composer": "Gaetano Donizetti",
+          "date": "2026-11-29",
+          "starts_at": "2026-11-29T15:30:00+01:00",
+          "venue": "Teatro Donizetti"
         }
       ]
     },
@@ -387,8 +418,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "481634714fbccd7bd79b0b2659aed946b097bb0b2e9bc21e49b4027728629ba4",
-      "checked_at": "2026-11-21T15:39:07+00:00",
+      "content_sha256": "add3ac1edd942ae62d86c21bc16529fd25d8587c79b530ae3768d79e47ae36b8",
+      "checked_at": "2026-11-21T16:40:43+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -416,7 +447,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T15:39:20+00:00",
+      "checked_at": "2026-11-21T16:40:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -498,7 +529,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-21T15:40:34+00:00",
+      "checked_at": "2026-11-21T16:41:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -923,7 +954,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T15:40:09+00:00",
+      "checked_at": "2026-11-21T16:41:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1293,7 +1324,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-21T15:40:34+00:00",
+      "checked_at": "2026-11-21T16:41:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1574,7 +1605,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T15:40:34+00:00",
+      "checked_at": "2026-11-21T16:41:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1774,11 +1805,48 @@
       ]
     },
     {
+      "candidate_id": "oa-index-dd5d16aec544e6737e1e",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
+      "checked_at": "2026-11-21T16:41:56+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-05-20",
+          "starts_at": "2027-05-20T19:00:00+02:00"
+        },
+        {
+          "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T15:30:00+02:00"
+        },
+        {
+          "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-05-26",
+          "starts_at": "2027-05-26T19:00:00+02:00"
+        },
+        {
+          "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-05-29",
+          "starts_at": "2027-05-29T15:30:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "38fc95156590dc3e8b3eadd426df7cb46fcb9723e947a3de92bbc0836bec36c2",
-      "checked_at": "2026-11-21T15:39:00+00:00",
+      "content_sha256": "6f18a85b2ad3017794bb37072c5f85caf6d773702d8fea2734365363060c50c8",
+      "checked_at": "2026-11-21T16:41:44+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
