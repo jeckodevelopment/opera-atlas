@@ -66,8 +66,11 @@ class DoubleBillTests(unittest.TestCase):
     def test_both_existing_stagings_enriched_without_new_id(self):
         rows,evidence,candidates=self.evidence()
         enriched,count=enrich_double_bill_times(self.facts,evidence,candidates,self.prior)
-        self.assertEqual(count,4)
-        self.assertEqual(len(enriched["times"]),len(self.prior["times"])+4)
+        expected=sum(1 for work in ("cavalleria","pagliacci")
+                     for day in ("2026-12-11","2026-12-13")
+                     if f"lombardia-{work}-brescia|{day}" not in self.prior["times"])
+        self.assertEqual(count,expected)
+        self.assertEqual(len(enriched["times"]),len(self.prior["times"])+expected)
         for work in ("cavalleria","pagliacci"):
             self.assertEqual(enriched["times"][f"lombardia-{work}-brescia|2026-12-11"],
                              {"time":"20:00","url":URL})
