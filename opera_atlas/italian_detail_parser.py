@@ -78,3 +78,42 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
         found[key]=f"{hour:02d}:{minute:02d}"
     if not found:raise ValueError("no explicit official performance dates")
     return venue,sorted(found.items())
+
+def extract_source_credited_carlo_felice(html:str,*,url:str):
+    """Observe an unregistered work only with explicit official composer credit.
+
+    This is source evidence, not an authority decision: the independent
+    Wikidata identity check must still succeed before catalog promotion.
+    """
+    from scripts.collect_candidate_details import FirstHeading
+    from scripts.publish_catalog_v2 import slugify
+    parsed=urlsplit(url)
+    if (parsed.scheme!="https" or parsed.hostname!="www.carlofelice.it"
+        or parsed.port is not None or parsed.query or parsed.fragment
+        or parsed.username or parsed.password
+        or not re.fullmatch(r"/spettacolo/[a-z0-9-]+/",parsed.path)):
+        raise ValueError("untrusted official composer source")
+    heading=FirstHeading()
+    heading.feed(html)
+    title=heading.first
+    path_slug=parsed.path.rstrip("/").rsplit("/",1)[-1]
+    if (not isinstance(title,str) or not 3<=len(title)<=180
+        or slugify(title)!=path_slug):
+        raise ValueError("official heading does not match opera page")
+    visible=clean(html)
+    at=normalized(visible).find(normalized(title))
+    if at<0:
+        raise ValueError("official opera heading absent from visible text")
+    window=visible[at+len(title):at+len(title)+1400]
+    # Only a labelled work credit followed by the labelled conductor role,
+    # not prose mentioning a musician, proves source attribution.
+    credits=re.findall(
+        r"(?i)\bMusica\s+di\s+"
+        r"([A-ZÀ-Ž][\wÀ-ÿ'’.-]*(?:\s+[A-ZÀ-Ž][\wÀ-ÿ'’.-]*){1,5})"
+        r"\s+Direttore\b",window)
+    if len(credits)!=1:
+        raise ValueError("missing or conflicting official composer credit")
+    composer=credits[0].strip()
+    venue,recite=parse_detail(html,source_key="carlo-felice-season-2026-27",
+                               url=url,title=title,composer=composer)
+    return title,composer,venue,recite
