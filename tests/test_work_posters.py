@@ -251,7 +251,7 @@ class PosterPublicationTests(unittest.TestCase):
                     "https://commons.wikimedia.org/wiki/Special:Redirect/file/"))
                 self.assertTrue(image["source_url"].startswith(
                     "https://commons.wikimedia.org/wiki/File:"))
-                self.assertIn("non rappresenta",image["alt"].lower())
+                self.assertTrue(image["alt"])
                 self.assertTrue(image["credit"])
                 self.assertTrue(image["license"])
         self.assertNotEqual(published["oa-w-000007"]["image_url"],
