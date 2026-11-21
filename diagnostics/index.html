@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Opera Atlas · Diagnostica delle fonti</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#25241f;background:#f8f7f4;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:1160px;margin:auto;padding:30px 20px 70px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px solid #dedbd2;padding-bottom:23px}
+.brand{font-family:Georgia,serif;letter-spacing:.03em;font-size:27px;font-weight:600}.brand span{color:#a68036}
+.subtitle{font-size:12px;color:#77716a;letter-spacing:.12em;text-transform:uppercase}a{color:#72551e}h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);font-weight:400;margin:34px 0 8px}h2{font-size:19px;margin:36px 0 14px}p{line-height:1.55}
+.muted{color:#6e6b64;font-size:14px}.status{display:flex;align-items:center;gap:8px;font-size:13px}.dot{height:9px;width:9px;background:#9b8e7c;border-radius:50%;display:inline-block}
+.dot.ok{background:#368269}.dot.bad{background:#b25040}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:27px 0}.tile,.panel{background:white;border:1px solid #e6e2d9;border-radius:12px;padding:18px}.tile strong{display:block;font-size:27px;font-weight:650;font-variant-numeric:tabular-nums}.tile small{color:#6e6b64}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+button,input{font:inherit;border:1px solid #d7d0c2;border-radius:8px;background:#fff;padding:10px 13px;color:inherit}button{cursor:pointer}button:hover{border-color:#987431}input{min-width:220px;flex:1}
+.table-wrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;font-size:14px}.table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#77716a;font-weight:600}.table th,.table td{border-bottom:1px solid #e8e5de;padding:13px 10px;vertical-align:top}
+.pill{display:inline-block;border:1px solid #e1dccf;border-radius:30px;padding:4px 8px;background:#f7f5ef;font-size:12px;white-space:nowrap}
+.pill.ok{color:#236f54;background:#eff8f3;border-color:#d0e8db}.pill.warn{color:#966225;background:#fff6e6;border-color:#f0debd}.pill.bad{color:#a34135;background:#fff1ee;border-color:#f0cdc8}
+.foot{margin-top:34px;border-top:1px solid #e2ded3;padding-top:22px;font-size:13px;color:#77716a}.notice{border-left:3px solid #b18a44;padding:13px 16px;background:#f0ede5;font-size:14px}
+@media(max-width:690px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding:18px 14px 54px}.table{font-size:12px}.table th,.table td{padding:10px 7px}}
+</style></head><body><main class="wrap">
+<header><div><div class="brand">Opera<span>+</span> Atlas</div><div class="subtitle">Monitor delle fonti · Diagnostica tecnica</div></div><a href="https://opera.plus/atlas/" rel="noopener">Vai al catalogo pubblico</a></header>
+<h1>Stato delle acquisizioni</h1>
+<p class="muted">Dati in lettura diretta dal repository <a href="https://github.com/jeckodevelopment/opera-atlas" rel="noopener">opera-atlas</a>. Questa pagina non pubblica spettacoli e non dipende da successivi deploy SFTP.</p>
+<div class="toolbar"><div class="status"><span class="dot" id="light"></span><span id="message" role="status">Caricamento dati…</span></div><button type="button" id="reload">Aggiorna dati</button></div>
+<div id="updated" class="muted">—</div>
+<section class="grid" id="metrics" aria-label="Metriche"><div class="tile">Caricamento…</div></section>
+<section><h2>Fonti principali</h2><p class="muted">Recite e produzioni verificate nel catalogo; la copertura dell'intera stagione non è certificata.</p>
+<div class="panel table-wrap"><table class="table"><thead><tr><th>Fonte</th><th>Monitoraggio</th><th>Produzioni</th><th>Recite</th><th>Pagine verificate</th><th>Esito scansioni</th></tr></thead><tbody id="primary"><tr><td colspan="6">Caricamento…</td></tr></tbody></table></div></section>
+<section><h2>Indici stagionali</h2><p class="muted">Link identificati nei calendari ufficiali: non equivalgono al numero di recite.</p>
+<div class="toolbar"><input id="filter" type="search" placeholder="Filtra per teatro o sorgente" aria-label="Filtra gli indici"></div>
+<div class="panel table-wrap"><table class="table"><thead><tr><th>Indice</th><th>Stato</th><th>Link</th><th>Nuove candidate</th><th>Ultima verifica</th></tr></thead><tbody id="season"><tr><td colspan="5">Caricamento…</td></tr></tbody></table></div></section>
+<section><h2>Elaborazione delle candidate</h2><div id="candidate" class="panel">Caricamento…</div></section>
+<section><h2>Come leggere i dati</h2><div class="notice">Una fonte con indice disponibile non è necessariamente completamente acquisita. Un link a una produzione non è una recita. L'assenza di recite può dipendere dalla programmazione, da dati mancanti o da errori di riconciliazione. Non vengono mostrate percentuali di copertura senza il totale delle date ufficiali verificato.</div></section>
+<footer class="foot">Dashboard tecnica indipendente · Dati ufficiali elaborati da Opera Atlas · <a href="https://github.com/jeckodevelopment/opera-atlas/actions" rel="noopener">Workflow GitHub</a></footer>
+</main><script>
+"use strict";
+const BASE="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/";
+const urls={coverage:"public/catalog/coverage.json",season:"data/season-index-health.json",candidate:"data/candidate-detail-health.json"};
+const $=id=>document.getElementById(id);
+const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n};
+const td=(tr,value)=>tr.append(el("td",value==null?"—":value));
+const status=(value,good)=>el("span",value,"pill "+(good===true?"ok":good===false?"bad":"warn"));
+const label={calendar_index_verified:"Indice verificato",detail_pages_verified:"Dettagli verificati",configured_not_verified:"Configurata, non verificata",editorial_only:"Solo contenuti editoriali",not_started:"Non avviata",success:"Riuscita",unavailable_or_invalid:"Non disponibile / non valida"};
+function replace(node,children){node.replaceChildren(...children)}
+function stamp(value){if(!value)return "—";const d=new Date(value);return Number.isNaN(d.getTime())?String(value):d.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Rome"})}
+async function fetchJson(path){const response=await fetch(BASE+path+"?t="+Date.now(),{cache:"no-store"});if(!response.ok)throw Error("HTTP "+response.status+" per "+path);return response.json()}
+let latest=null;
+function draw(data){
+ const coverage=data.coverage,season=data.season,candidate=data.candidate;
+ const primary=coverage.sources||[],indexes=season.sources||[],outcomes=candidate.outcomes||[];
+ const cards=[["Fonti principali",primary.length],["Recite verificate",primary.reduce((s,r)=>s+(r.verified_recite||0),0)],["Indici riusciti",indexes.filter(r=>r.status==="success").length+" / "+indexes.length],["Candidate non risolte nel controllo",outcomes.filter(r=>r.outcome!=="facts_found").length]];
+ replace($("metrics"),cards.map(([name,value])=>{const d=el("div",undefined,"tile");d.append(el("strong",value),el("small",name));return d}));
+ replace($("primary"),primary.map(row=>{const tr=el("tr");td(tr,row.name);let cell=el("td");cell.append(status(label[row.monitoring]||row.monitoring,row.monitoring==="calendar_index_verified"||row.monitoring==="detail_pages_verified"?true:null));tr.append(cell);
+ td(tr,row.verified_stagings);td(tr,row.verified_recite);td(tr,row.verified_detail_pages);
+ const results=Object.values(row.last_scan_outcomes||{});td(tr,results.length?results.filter(v=>v==="success").length+" / "+results.length:"—");return tr}));
+ const query=$("filter").value.trim().toLowerCase();
+ replace($("season"),indexes.filter(row=>row.key.toLowerCase().includes(query)).map(row=>{const tr=el("tr");td(tr,row.key);const cell=el("td");cell.append(status(label[row.status]||row.status,row.status==="success"));tr.append(cell);td(tr,row.links);td(tr,row.new_review_candidates);td(tr,stamp(row.last_attempt_at));return tr}));
+ if(!$("season").children.length){const tr=el("tr");const cell=el("td","Nessun indice corrispondente");cell.colSpan=5;tr.append(cell);$("season").append(tr)}
+ const failures={};for(const row of outcomes){if(row.outcome!=="facts_found"){const name=row.reason||row.outcome||"Non classificato";failures[name]=(failures[name]||0)+1}}
+ const total=outcomes.length,found=outcomes.filter(row=>row.outcome==="facts_found").length;
+ const content=[el("p",total+" candidate controllate nell'ultimo ciclo; "+found+" con fatti individuati. Le restanti richiedono valutazione tecnica.")];
+ for(const [reason,n] of Object.entries(failures).sort((a,b)=>b[1]-a[1]))content.push(el("p",reason+": "+n));
+ if(!total)content.push(el("p","Nessun esito di elaborazione disponibile."));
+ replace($("candidate"),content);
+ $("updated").textContent="Ultima scansione indici: "+stamp(season.checked_at)+" · dettagli: "+stamp(candidate.checked_at)+" · fonti: "+stamp(coverage.last_scan_at);
+ $("light").className="dot ok";$("message").textContent="Dati letti da GitHub · aggiornamento su richiesta";
+}
+async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const values=await Promise.all(Object.values(urls).map(fetchJson));latest=Object.fromEntries(Object.keys(urls).map((key,i)=>[key,values[i]]));draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
+$("reload").addEventListener("click",refresh);$("filter").addEventListener("input",()=>{if(latest)draw(latest)});refresh();
+</script></body></html>
