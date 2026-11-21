@@ -1000,3 +1000,16 @@ La produzione ufficiale `https://www.fondazionepetruzzelli.it/eventi/il-barbiere
 ### Upgrade legittimo delle locandine dopo il refresh
 
 Un'opera già censita con un'immagine storica di Wikimedia Commons può ricevere successivamente una fotografia o locandina ufficiale verificata dalla pagina del teatro. Il test `test_barbiere_2026_is_canonically_published_with_verified_poster` non richiede più rigidamente `archival_work_image`: ammette `official_production_image` soltanto con validazione di URL, corrispondenza opera/manifesto e provenienza tramite `publish_work_posters.check()`. Il comportamento evita falsi errori durante gli aggiornamenti automatici senza abbassare il livello di verifica sulle immagini.
+
+## Copertura immagini per opere appena acquisite (21/11/2026)
+
+L'elenco pubblico `public/catalog/work-posters.json` è indicizzato per **ID permanente dell'opera**, non soltanto per titolo. Il generatore `scripts/publish_work_posters.py` usa `data/archival-work-images.json` come banca storica persistente, controllando anche l'esatta corrispondenza con il compositore in `works_by_id` prima di assegnare l'immagine. Sono stati aggiunti materiali d'archivio pertinenti e con provenienza documentata per:
+
+- *Tristan und Isolde* (Wagner): bozzetto scenografico di Nicholas Roerich (1912), https://commons.wikimedia.org/wiki/File:Tristan_and_Isolde_by_Nicholas_Roerich_03.jpg
+- *La straniera* (Bellini): frontespizio del libretto di Milano (1829), https://commons.wikimedia.org/wiki/File:Vincenzo_Bellini_-_La_straniera_-_titlepage_of_the_libretto_-_Milan_1829.png
+- *I due Foscari* (Verdi): frontespizio del libretto di Roma (1844), https://commons.wikimedia.org/wiki/File:Giuseppe_Verdi_-_I_due_Foscari_-_titlepage_of_the_libretto_-_Rome_1844.png
+- *Il ritorno di Ulisse in patria* (Monteverdi): frontespizio del libretto di Venezia (1641), https://commons.wikimedia.org/wiki/File:Claudio_Monteverdi_-_Il_ritorno_d%27Ulisse_in_patria_-_title_page_of_the_libretto_-_Venice_1641.png
+
+Le opere contemporanee *Vanessa* (Samuel Barber) e *Accabadora* (Francesco Filidei) mantengono una **copertina editoriale originale identificata correttamente come tale**, in mancanza di immagini di produzione verificabili e riutilizzabili. È vietato attribuire immagini di altre opere, manifesti inventati o fotografia della produzione corrente non confermata. Il fallback SVG del frontend è specifico al titolo ed è renderizzato come immagine effettiva; non viene presentato come manifesto storico.
+
+La sincronizzazione deve mantenere un record di immagine per ogni ID canonico (inclusi gli editoriali), preservare autore, credito e licenza, e rigenerare i feed JSON senza necessità di SFTP. I regression test verificano i quattro nuovi abbinamenti permanenti e i due fallback legittimi.
