@@ -863,3 +863,9 @@ controllo nel workflow delle sette date con ore, dell'ID stabile,
 dell'assenza di anteprime, dell'attribuzione alla corretta sala,
 dell'idempotenza e del manifesto pubblico v2. Nessun SFTP;
 la raccolta di ulteriori opere segue il normale refresh nazionale.
+
+## Teatro Comunale di Bologna — opera 2027 (21/11/2026)
+
+Fonte ufficiale: https://www.tcbo.it/stagione-futura/?_tipo=opera. La pagina distingue 9 produzioni operistiche, 39 rappresentazioni annunciate nel 2027, di cui due produzioni al Teatro Auditorium Manzoni. Gli orari non vengono mai inferiti dalla pagina di stagione: il parser `opera_atlas/bologna_detail_parser.py` legge esclusivamente le singole schede `/evento/opera/<slug>-<anno>/` e richiede titolo H1, compositore esplicitamente dichiarato, data, orario e sede nel blocco «Date e turni». I concerti, la danza e le attività dell'Accademia non sono assunti come opera.
+
+La nuova fonte `bologna-comunale-opera-2027` entra nella scansione giornaliera robot-gated e genera prima candidati e prove. Solo le identità canoniche univoche sono promosse automaticamente; le nuove composizioni richiedono riconciliazione d'autorità automatica, e i casi irrisolti restano fuori dalle recite pubbliche. Le recite al Manzoni non vengono mai attribuite alla sala storica di Largo Respighi. La pagina del Comunale storico è già censita; la sede provvisoria Nouveau non viene ripristinata. Dopo il merge la scansione completa può iniziare automaticamente dal workflow `refresh-catalog` senza deploy SFTP.
