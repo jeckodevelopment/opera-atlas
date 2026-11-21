@@ -51,6 +51,25 @@ class CandidateDetailTests(unittest.TestCase):
                 "https://untrusted.example/event/ernani-2/",
                 common+"<p>Musiche di Giuseppe Verdi</p><p>Dramma lirico</p>")
 
+    def test_fenice_real_venue_and_school_only_dates(self):
+        from scripts.collect_candidate_details import parse_source_credited_opera_detail
+        from opera_atlas.national_detail_parser import fenice_primary_credits
+        url="https://www.teatrolafenice.it/event/larca-di-noe/"
+        html=("<h1>L'arca di Noè</h1><p>Benjamin Britten</p>"
+              "<p>Teatro Malibran</p><p>Seleziona una data:</p>"
+              "<a>mercoledì 17 Marzo 2027 11:00 RISERVATO ALLE SCUOLE</a>"
+              "<a>sabato 20 Marzo 2027 15:30 ACQUISTA</a>")
+        self.assertEqual(fenice_primary_credits(html),
+                         ("L'arca di Noè","Benjamin Britten","Teatro Malibran"))
+        rows=parse_source_credited_opera_detail("fenice-opera-2026-27",url,html)
+        self.assertEqual([(x["date"],x["venue"]) for x in rows],
+                         [("2027-03-20","Teatro Malibran")])
+        with self.assertRaises(ValueError):
+            fenice_primary_credits(html.replace("Benjamin Britten",""))
+        with self.assertRaises(ValueError):
+            parse_source_credited_opera_detail("fenice-opera-2026-27",
+                "https://fake.example/event/larca-di-noe/",html)
+
     def test_structured_music_composer_is_preserved_not_conductor(self):
         event={"@type":"MusicEvent","name":"Il barbiere di Siviglia",
                "startDate":"2027-05-09T20:00:00+02:00",
