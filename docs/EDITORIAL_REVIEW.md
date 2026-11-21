@@ -90,6 +90,21 @@ gli errori in un generico `ValueError`. Le candidate non risolte
 continuano a essere monitorate, senza impedire nuove pubblicazioni
 che superano i controlli.
 
+## Titoli tradotti e diagnostica operativa
+
+Quando lo stesso QID Wikidata documentato identifica una composizione
+già pubblicata, il riuso dei contenuti validati è consentito anche se
+la denominazione ufficiale del teatro è un titolo alternativo in un'altra
+lingua. Il compositore deve coincidere; un titolo diverso senza QID
+documentato non è sufficiente. La regola impedisce di trasferire
+trame tra opere omonime o composizioni distinte.
+
+Ogni esito di ricerca riporta inoltre `source_key`, `official_url`
+e `title_hint`, oltre a codice di errore e candidate ID: è così
+possibile classificare gli ostacoli per fonte e per opera dal report
+generato dallo stesso refresh, senza dedurli a posteriori dagli URL.
+I report più vecchi non possiedono questi nuovi campi.
+
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
 `.github/workflows/refresh-catalog.yml` esegue
