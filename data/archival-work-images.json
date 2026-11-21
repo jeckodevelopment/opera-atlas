@@ -240,6 +240,30 @@
       "description": "Pagina della partitura autografa ottocentesca delle Convenienze teatrali di Donizetti, antecedente alla versione riveduta del 1831; non immagine dell'allestimento di Bergamo del 2026",
       "credit": "Gaetano Donizetti, manoscritto autografo (1827–1837), Bibliothèque nationale de France / Gallica via Wikimedia Commons",
       "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "lohengrin": {
+      "file": "Uhlig lohengrin.jpg",
+      "description": "Frontespizio della riduzione storica per pianoforte dell'opera Lohengrin di Wagner, a cura di Theodor Uhlig; non immagine dell'allestimento di Trieste",
+      "credit": "Theodor Uhlig, edizione storica dell'opera di Richard Wagner · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Uhlig_lohengrin.jpg"
+    },
+    "don-carlos": {
+      "file": "Don Carlos poster.png",
+      "description": "Manifesto storico dell'opera Don Carlos di Giuseppe Verdi del 1867; non fotografia della produzione di Cagliari del 2027",
+      "credit": "Locandina della prima produzione parigina del 1867 · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Don_Carlos_poster.png"
+    },
+    "alcina": {
+      "file": "Georg Friedrich Händel - Alcina title page of the libretto - London 1735.png",
+      "description": "Frontespizio originale londinese del libretto dell'opera Alcina di Händel, 1735; non immagine dell'allestimento di Cagliari del 2027",
+      "credit": "Libretto dell'opera Alcina, Londra 1735 · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Georg_Friedrich_H%C3%A4ndel_-_Alcina_title_page_of_the_libretto_-_London_1735.png"
+    },
+    "maria-stuarda": {
+      "file": "Gaetano Donizetti - Maria Stuarda - titlepage of the libretto - Milan 1835.png",
+      "description": "Frontespizio milanese del libretto originale del 1835 della Maria Stuarda di Gaetano Donizetti; non immagine dell'allestimento di Cagliari del 2027",
+      "credit": "Libretto dell'opera Maria Stuarda, Milano 1835 · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_Maria_Stuarda_-_titlepage_of_the_libretto_-_Milan_1835.png"
     }
   },
   "works_by_id": {
