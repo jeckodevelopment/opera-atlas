@@ -37,6 +37,9 @@ class Heading(HTMLParser):
     def handle_data(self,data):
         if self.in_h1:self.buf.append(data)
 
+def canonical_text(value:str)->str:
+    return normalized(value).replace("’","\u0027")
+
 def parse_brescia_detail(html:str,*,url:str,title:str,composer:str):
     parsed=urlsplit(url)
     if (parsed.scheme!="https" or parsed.hostname!="teatrogrande.it"
@@ -49,7 +52,7 @@ def parse_brescia_detail(html:str,*,url:str,title:str,composer:str):
     # A combined programme requires separate canonical work paths.
     if not heading.h1 or "/" in heading.h1.split(" di ")[0]:
         raise ValueError("combined bill requires separate work evidence")
-    if normalized(heading.h1)!=normalized(title+" di "+composer):
+    if canonical_text(heading.h1)!=canonical_text(title+" di "+composer):
         raise ValueError("official opera or composer heading mismatch")
     text=clean(html)
     # Delimit ticket cards before the actual work heading; this excludes
