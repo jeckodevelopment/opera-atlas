@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "new_stagings": 2,
-  "new_recite": 12,
+  "new_stagings": 0,
+  "new_recite": 0,
   "auto_skipped": [
     {
       "candidate_id": "oa-index-0a7e4f31ff7370ffc325",
@@ -46,14 +46,6 @@
     {
       "candidate_id": "oa-index-9fdcd7eba240da4540af",
       "reason": "verified_work_image_missing"
-    },
-    {
-      "candidate_id": "oa-index-cde049d5c057e0c050b2",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-eedca6da108bd27e8d30",
-      "reason": "incomplete_work_editorial"
     },
     {
       "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
