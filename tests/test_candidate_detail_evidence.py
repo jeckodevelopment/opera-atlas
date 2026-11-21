@@ -248,6 +248,25 @@ class CandidateDetailTests(unittest.TestCase):
         self.assertIn("verified-rigoletto",{x["id"] for x in batch})
         self.assertEqual(len(batch),24)
 
+    def test_rome_official_seed_is_selected_before_historical_backlog(self):
+        # A first-party opera with completed, source-bound editorial facts
+        # must be read even when its composition is not yet a site work.
+        rows=[{
+            "id":f"rome-historical-{i:02d}",
+            "source_key":"opera-roma-season-2026-27",
+            "official_url":f"https://www.operaroma.it/spettacoli/old-{i}/",
+            "status":"needs_review"} for i in range(24)]
+        rows.append({
+            "id":"rome-code-unknown",
+            "source_key":"opera-roma-season-2026-27",
+            "official_url":"https://www.operaroma.it/spettacoli/code-unknown/",
+            "status":"needs_review"})
+        picked=selected_candidates(
+            {"schema_version":1,"candidates":rows},today=date(2026,11,21))
+        self.assertEqual(len(picked),MAX_PER_SOURCE)
+        self.assertEqual(picked[0]["id"],"rome-code-unknown")
+        self.assertEqual(len({x["id"] for x in picked}),MAX_PER_SOURCE)
+
     def test_daily_budget_covers_each_of_five_active_theatres(self):
         bases={
             "scala-season-2026-27":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{}.html",
