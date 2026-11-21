@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/reconcile-petruzzelli-backlog.yml'
+      - 'opera_atlas/petruzzelli_detail_parser.py'
+      - 'tests/test_petruzzelli_recovered_evidence.py'
 permissions:
   contents: write
 concurrency:
