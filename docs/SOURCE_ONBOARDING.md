@@ -558,3 +558,7 @@ Controllare in `data/season-index-health.json` che Bergamo, Brescia e Genova
 abbiano `current_scan_verified: true` solo dopo una lettura riuscita con
 `robots.txt` consentito; controllare separatamente la raccolta di evidenze
 e la pubblicazione delle repliche. Nessun deploy SFTP è richiesto.
+
+## Carlo Felice: credito del compositore per Evgenij Onegin (21/11/2026)
+
+Il compositore nel registro canonico è scritto `Pëtr Il\u0027ič Čajkovskij`, mentre la pagina ufficiale del Carlo Felice utilizza l’apostrofo tipografico `Pëtr Il’ič Čajkovskij`. Il confronto del credito normalizza **soltanto** le due varianti di apostrofo, conservando tutte le lettere, i segni diacritici e il cognome. L’autore diverso resta rifiutato. Con questa correzione il parser può acquisire le singole date e ore di *Evgenij Onegin* senza duplicare l’opera o allentare il controllo di identità. La scansione live deve comunque produrre evidenze e il catalogo pubblico deve essere verificato dopo il refresh.
