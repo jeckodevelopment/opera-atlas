@@ -1055,3 +1055,8 @@ Questo intervento sostituisce nelle schede le immagini delle produzioni contempo
 La banca storica degli omonimi rimane disambiguata per work ID e compositore: il manifesto di Puccini non deve mai essere assegnato all'opera omonima di Leoncavallo; altrettanto vale per Rossini e Paisiello. Per opere contemporanee senza fonti storiche adeguate e disponibili (attualmente *Vanessa* e *Accabadora*) è ammessa **solo** un'immagine ufficiale, pertinente e proveniente da fonte verificata, mai una copertina inventata.
 
 In futuro la ricerca automatica delle immagini dovrà cercare materiale storico autorevole prima del ripiego sulla grafica di stagione, verificando i diritti di ciascuna risorsa. La mera presenza su Commons non prova automaticamente il pubblico dominio in ogni Paese.
+
+
+## Roma: ripristino dell'indice ufficiale delle opere (21/11/2026)
+
+L'indice `https://www.operaroma.it/opere/` non è più la pagina consultabile del cartellone: il refresh lo registrava come `official_source_unavailable`, lasciando la fonte senza una scansione verificata. Il link ufficiale aggiornato è **`https://www.operaroma.it/genre/opera/`**; su quella pagina il teatro elenca le produzioni 2026/2027 e pubblica collegamenti a dettagli sotto `/spettacoli/<slug>/`. Il monitor ha ora lo stesso URL nel file `data/season-index-config.json` e nell'allowlist stretta del validatore: il percorso superato è rigettato. La lettura resta soggetta a robots.txt e verifica di URL esatto; la disponibilità dell'indice non equivale alla pubblicabilità automatica delle date, che richiedono orari verificati nella pagina dello spettacolo. Copertura pagina 1 distinta dalla copertura dell'intera stagione, anche in presenza di paginazione sul portale ufficiale.
