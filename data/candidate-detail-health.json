@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T11:24:00+00:00",
+  "checked_at": "2026-11-21T11:34:16+00:00",
   "attempted": 15,
   "outcomes": [
     {
@@ -72,12 +72,7 @@
     {
       "candidate_id": "oa-index-58413a3bbbee689b82bc",
       "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
+      "reason": "FetchUnavailable",
       "rows": 0
     },
     {
