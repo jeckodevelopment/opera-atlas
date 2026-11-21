@@ -236,6 +236,10 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                 and x.get("source_key")==item["source_key"]
                 and x.get("source_url")==item["official_url"]
                 and x.get("status")=="needs_editorial_review"]
+        if item["source_key"]=="bologna-comunale-opera-2027":
+            from opera_atlas.bologna_detail_parser import normalize_event_fact
+            detail=[{**d,"event_facts":[normalize_event_fact(x)
+                     for x in d.get("event_facts",[])]} for d in detail]
         composers={normalized(x.get("composer","")):x.get("composer")
                    for d in detail for x in d.get("event_facts",[])
                    if isinstance(x,dict) and isinstance(x.get("composer"),str)
