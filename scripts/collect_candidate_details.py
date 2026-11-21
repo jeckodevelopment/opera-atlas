@@ -446,6 +446,33 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 source_id=db.execute("SELECT id FROM sources WHERE official_url=?",
                                      (source["official_url"],)).fetchone()["id"]
                 page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
+                # Source-specific adapters may supply a compound official bill.
+                # The central program publisher handles all compound programs
+                # identically; never mislabel the whole ticket as one opera.
+                if item["source_key"] in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
+                    from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_program_detail
+                    from scripts.build_verified_catalog import official_local_time
+                    try:
+                        heading,components,venue,dates=parse_petruzzelli_program_detail(
+                            page.html,url=item["official_url"],
+                            season_year=int(item["source_key"].rsplit("-",1)[-1]))
+                    except ValueError:
+                        pass  # ordinary single-opera parser runs below
+                    else:
+                        anchor=components[0]
+                        facts=[{"event_title":anchor["title"],"composer":anchor["composer"],
+                                "date":day,"starts_at":official_local_time(day,hour),
+                                "venue":venue} for day,hour in dates]
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],"source_key":item["source_key"],
+                            "source_url":item["official_url"],"content_sha256":page.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                            "status":"needs_program_review","program_heading":heading,
+                            "program_heading_source_url":item["official_url"],
+                            "event_facts":facts}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_composite_program","rows":len(facts)})
+                        continue
                 # Prefer parsers which verify the canonical composer and
                 # page-specific showtime. Generic Event JSON-LD alone has no
                 # authoritative work identity and must never outrank those.
