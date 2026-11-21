@@ -1036,6 +1036,23 @@
       "photo_credit": "Gobbler, Wikimedia Commons — CC BY-SA 3.0",
       "photo_license": "CC BY-SA 3.0",
       "calendar_status": "not_acquired"
+    },
+    {
+      "id": "oa-vd-000056",
+      "name": "Teatro Nazionale",
+      "city": "Roma",
+      "region": "Lazio",
+      "slug": "teatro-nazionale",
+      "city_slug": "roma",
+      "website": "https://www.operaroma.it/",
+      "source_url": "https://www.operaroma.it/luoghi/teatro-nazionale/",
+      "description": "Sala romana del Teatro dell'Opera dedicata anche a produzioni liriche e contemporanee, nel quartiere del Viminale.",
+      "monitoring_status": "programma_censito",
+      "profile_key": "Roma|Teatro Nazionale",
+      "address": "Via del Viminale, angolo via Agostino Depretis",
+      "history": "Nato nel 1925 come Supercinema, progettato dagli architetti Arnaldo Foschini e Attilio Spaccarelli, fu acquistato dal Comune di Roma alla fine degli anni Novanta e affidato al Teatro dell'Opera. Oggi accoglie anche produzioni musicali e sperimentali.",
+      "photo_status": "review_pending",
+      "calendar_status": "not_acquired"
     }
   ],
   "related_organizations": [
