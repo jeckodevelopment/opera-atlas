@@ -450,6 +450,51 @@
       "alt": "Stampa storica del 1863 di Les pêcheurs de perles di Georges Bizet, dalla Bibliothèque nationale de France; non è l'allestimento 2027",
       "credit": "Bibliothèque nationale de France, département Arts du spectacle, 4-ICO THE-2042 (1863) / Wikimedia Commons",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Les_pêcheurs_de_perles,_opéra_de_Georges_Bizet_-_estampes_-_btv1b84056636_(1_of_5).jpg"
+    },
+    "oa-w-000051": {
+      "work_id": "oa-w-000051",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Donizetti_-_L'esule_di_Roma_-_title_page_of_the_libretto%2C_Naples_1828.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Donizetti_-_L'esule_di_Roma_-_title_page_of_the_libretto%2C_Naples_1828.png",
+      "alt": "Frontespizio storico del libretto di L'esule di Roma di Gaetano Donizetti, Napoli 1828; non rappresenta l'allestimento in calendario",
+      "credit": "Frontespizio del libretto di Domenico Gilardoni e Gaetano Donizetti, Napoli 1828; Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000052": {
+      "work_id": "oa-w-000052",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dido's_lament_opening.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dido's_lament_opening.png",
+      "alt": "Incipit storico del lamento di Didone dall'opera Dido and Æneas di Henry Purcell; illustrazione musicale, non allestimento teatrale moderno",
+      "credit": "Partitura storica del Lamento di Didone di Henry Purcell · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Dido%27s_lament_opening.png"
+    },
+    "oa-w-000053": {
+      "work_id": "oa-w-000053",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/William_Hogarth%2C_A_Rake's_Progress_-_pl.1%2C_1735%2C_NGA_30373.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:William_Hogarth%2C_A_Rake's_Progress_-_pl.1%2C_1735%2C_NGA_30373.jpg",
+      "alt": "Incisione originale del 1735 di William Hogarth, A Rake's Progress, opera figurativa che ispirò il libretto di Stravinskij; non è il manifesto della prima del 1951",
+      "credit": "William Hogarth · Rosenwald Collection, National Gallery of Art, Washington, 1735 · Wikimedia Commons",
+      "license": "CC0 1.0 · https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "oa-w-000054": {
+      "work_id": "oa-w-000054",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Adolfo_Hohenstein_-_Poster_for_first_French_production_of_Giuseppe_Verdi's_Falstaff.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Adolfo_Hohenstein_-_Poster_for_first_French_production_of_Giuseppe_Verdi's_Falstaff.png",
+      "alt": "Manifesto storico di Adolfo Hohenstein per il Falstaff di Giuseppe Verdi, 1894; non allestimento in calendario",
+      "credit": "Adolfo Hohenstein, manifesto per Falstaff di Giuseppe Verdi, 1894; Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000055": {
+      "work_id": "oa-w-000055",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vincenzo_Bellini_-_I_Capuleti_e_i_Montecchi_-_titlepage_of_the_libretto_-_Venice_1830.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vincenzo_Bellini_-_I_Capuleti_e_i_Montecchi_-_titlepage_of_the_libretto_-_Venice_1830.png",
+      "alt": "Frontespizio del libretto originale di I Capuleti e i Montecchi di Vincenzo Bellini, Venezia 1830; non allestimento in calendario",
+      "credit": "Vincenzo Bellini e Felice Romani, libretto veneziano del 1830; Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
     }
   }
 }

@@ -3102,6 +3102,165 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-184e57e1cd9f38d5",
+      "title": "L'esule di Roma",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+      "dates": [
+        [
+          "2026-11-13",
+          "20:00"
+        ],
+        [
+          "2026-11-21",
+          "20:00"
+        ],
+        [
+          "2026-11-29",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-58413a3bbbee689b",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+      "dates": [
+        [
+          "2027-10-26",
+          "20:00"
+        ],
+        [
+          "2027-10-28",
+          "20:00"
+        ],
+        [
+          "2027-11-02",
+          "20:00"
+        ],
+        [
+          "2027-11-06",
+          "20:00"
+        ],
+        [
+          "2027-11-10",
+          "20:00"
+        ],
+        [
+          "2027-11-13",
+          "20:00"
+        ],
+        [
+          "2027-11-16",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-92b69a8ac1040b05",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
+      "dates": [
+        [
+          "2027-04-17",
+          "20:00"
+        ],
+        [
+          "2027-04-20",
+          "20:00"
+        ],
+        [
+          "2027-04-22",
+          "20:00"
+        ],
+        [
+          "2027-04-24",
+          "20:00"
+        ],
+        [
+          "2027-04-27",
+          "20:00"
+        ],
+        [
+          "2027-04-30",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b4180540983902f7",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/",
+      "dates": [
+        [
+          "2027-05-16",
+          "20:00"
+        ],
+        [
+          "2027-05-18",
+          "18:30"
+        ],
+        [
+          "2027-05-19",
+          "19:00"
+        ],
+        [
+          "2027-05-20",
+          "18:30"
+        ],
+        [
+          "2027-05-21",
+          "19:00"
+        ],
+        [
+          "2027-05-22",
+          "19:00"
+        ],
+        [
+          "2027-05-23",
+          "18:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-dfe824fe3301174d",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
+      "dates": [
+        [
+          "2026-11-22",
+          "15:00"
+        ],
+        [
+          "2026-11-25",
+          "20:00"
+        ],
+        [
+          "2026-11-27",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

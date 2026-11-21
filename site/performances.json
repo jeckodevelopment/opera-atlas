@@ -848,6 +848,24 @@
       ]
     },
     {
+      "id": "curated:auto-184e57e1cd9f38d5:2026-11-13",
+      "starts_at": "2026-11-13T20:00:00+01:00",
+      "local_date": "2026-11-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L'esule di Roma",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-como:2026-11-13",
       "starts_at": "2026-11-13T20:00:00+01:00",
       "local_date": "2026-11-13",
@@ -1121,6 +1139,24 @@
       ]
     },
     {
+      "id": "curated:auto-184e57e1cd9f38d5:2026-11-21",
+      "starts_at": "2026-11-21T20:00:00+01:00",
+      "local_date": "2026-11-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L'esule di Roma",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-11-21",
       "starts_at": "2026-11-21T20:00:00+01:00",
       "local_date": "2026-11-21",
@@ -1154,6 +1190,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:auto-dfe824fe3301174d:2026-11-22",
+      "starts_at": "2026-11-22T15:00:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
       ]
     },
     {
@@ -1248,6 +1302,24 @@
       ]
     },
     {
+      "id": "curated:auto-dfe824fe3301174d:2026-11-25",
+      "starts_at": "2026-11-25T20:00:00+01:00",
+      "local_date": "2026-11-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
+      ]
+    },
+    {
       "id": "curated:massimo-samson-dalila-2026:2026-11-26",
       "starts_at": "2026-11-26T18:30:00+01:00",
       "local_date": "2026-11-26",
@@ -1321,6 +1393,24 @@
       ]
     },
     {
+      "id": "curated:auto-dfe824fe3301174d:2026-11-27",
+      "starts_at": "2026-11-27T20:00:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-brescia:2026-11-28",
       "starts_at": "2026-11-28T15:30:00+01:00",
       "local_date": "2026-11-28",
@@ -1373,6 +1463,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-184e57e1cd9f38d5:2026-11-29",
+      "starts_at": "2026-11-29T15:30:00+01:00",
+      "local_date": "2026-11-29",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "L'esule di Roma",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
       ]
     },
     {
@@ -4838,6 +4946,24 @@
       ]
     },
     {
+      "id": "curated:auto-92b69a8ac1040b05:2027-04-17",
+      "starts_at": "2027-04-17T20:00:00+02:00",
+      "local_date": "2027-04-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+      ]
+    },
+    {
       "id": "curated:auto-4579632f6d774477:2027-04-18",
       "starts_at": "2027-04-18T15:00:00+02:00",
       "local_date": "2027-04-18",
@@ -4928,6 +5054,24 @@
       ]
     },
     {
+      "id": "curated:auto-92b69a8ac1040b05:2027-04-20",
+      "starts_at": "2027-04-20T20:00:00+02:00",
+      "local_date": "2027-04-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+      ]
+    },
+    {
       "id": "curated:auto-4579632f6d774477:2027-04-21",
       "starts_at": "2027-04-21T17:00:00+02:00",
       "local_date": "2027-04-21",
@@ -4979,6 +5123,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-92b69a8ac1040b05:2027-04-22",
+      "starts_at": "2027-04-22T20:00:00+02:00",
+      "local_date": "2027-04-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
       ]
     },
     {
@@ -5090,6 +5252,24 @@
       ]
     },
     {
+      "id": "curated:auto-92b69a8ac1040b05:2027-04-24",
+      "starts_at": "2027-04-24T20:00:00+02:00",
+      "local_date": "2027-04-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+      ]
+    },
+    {
       "id": "curated:fenice-carmen-2027:2027-04-27",
       "starts_at": "2027-04-27T19:00:00+02:00",
       "local_date": "2027-04-27",
@@ -5123,6 +5303,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-92b69a8ac1040b05:2027-04-27",
+      "starts_at": "2027-04-27T20:00:00+02:00",
+      "local_date": "2027-04-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
       ]
     },
     {
@@ -5213,6 +5411,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/carmenaxelrod/"
+      ]
+    },
+    {
+      "id": "curated:auto-92b69a8ac1040b05:2027-04-30",
+      "starts_at": "2027-04-30T20:00:00+02:00",
+      "local_date": "2027-04-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
       ]
     },
     {
@@ -5558,6 +5774,42 @@
       ]
     },
     {
+      "id": "curated:auto-b4180540983902f7:2027-05-16",
+      "starts_at": "2027-05-16T20:00:00+02:00",
+      "local_date": "2027-05-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/falstaff-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4180540983902f7:2027-05-18",
+      "starts_at": "2027-05-18T18:30:00+02:00",
+      "local_date": "2027-05-18",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/falstaff-2/"
+      ]
+    },
+    {
       "id": "curated:auto-7ec9d774a82a64ec:2027-05-18",
       "starts_at": "2027-05-18T20:00:00+02:00",
       "local_date": "2027-05-18",
@@ -5594,6 +5846,24 @@
       ]
     },
     {
+      "id": "curated:auto-b4180540983902f7:2027-05-19",
+      "starts_at": "2027-05-19T19:00:00+02:00",
+      "local_date": "2027-05-19",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/falstaff-2/"
+      ]
+    },
+    {
       "id": "curated:regio-carmen-2027:2027-05-19",
       "starts_at": "2027-05-19T19:30:00+02:00",
       "local_date": "2027-05-19",
@@ -5609,6 +5879,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:auto-b4180540983902f7:2027-05-20",
+      "starts_at": "2027-05-20T18:30:00+02:00",
+      "local_date": "2027-05-20",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/falstaff-2/"
       ]
     },
     {
@@ -5645,6 +5933,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4180540983902f7:2027-05-21",
+      "starts_at": "2027-05-21T19:00:00+02:00",
+      "local_date": "2027-05-21",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/falstaff-2/"
       ]
     },
     {
@@ -5699,6 +6005,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4180540983902f7:2027-05-22",
+      "starts_at": "2027-05-22T19:00:00+02:00",
+      "local_date": "2027-05-22",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/falstaff-2/"
       ]
     },
     {
@@ -5807,6 +6131,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4180540983902f7:2027-05-23",
+      "starts_at": "2027-05-23T18:30:00+02:00",
+      "local_date": "2027-05-23",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/falstaff-2/"
       ]
     },
     {
@@ -8402,6 +8744,24 @@
       ]
     },
     {
+      "id": "curated:auto-58413a3bbbee689b:2027-10-26",
+      "starts_at": "2027-10-26T20:00:00+02:00",
+      "local_date": "2027-10-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+      ]
+    },
+    {
       "id": "curated:auto-559b2402d287d446:2027-10-27",
       "starts_at": "2027-10-27T20:00:00+02:00",
       "local_date": "2027-10-27",
@@ -8438,6 +8798,24 @@
       ]
     },
     {
+      "id": "curated:auto-58413a3bbbee689b:2027-10-28",
+      "starts_at": "2027-10-28T20:00:00+02:00",
+      "local_date": "2027-10-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+      ]
+    },
+    {
       "id": "curated:auto-559b2402d287d446:2027-10-29",
       "starts_at": "2027-10-29T20:00:00+02:00",
       "local_date": "2027-10-29",
@@ -8471,6 +8849,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+      ]
+    },
+    {
+      "id": "curated:auto-58413a3bbbee689b:2027-11-02",
+      "starts_at": "2027-11-02T20:00:00+01:00",
+      "local_date": "2027-11-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
       ]
     },
     {
@@ -8546,6 +8942,24 @@
       ]
     },
     {
+      "id": "curated:auto-58413a3bbbee689b:2027-11-06",
+      "starts_at": "2027-11-06T20:00:00+01:00",
+      "local_date": "2027-11-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+      ]
+    },
+    {
       "id": "curated:auto-ad08a1d14a8510a5:2027-11-07",
       "starts_at": "2027-11-07T16:00:00+01:00",
       "local_date": "2027-11-07",
@@ -8579,6 +8993,60 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-58413a3bbbee689b:2027-11-10",
+      "starts_at": "2027-11-10T20:00:00+01:00",
+      "local_date": "2027-11-10",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+      ]
+    },
+    {
+      "id": "curated:auto-58413a3bbbee689b:2027-11-13",
+      "starts_at": "2027-11-13T20:00:00+01:00",
+      "local_date": "2027-11-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+      ]
+    },
+    {
+      "id": "curated:auto-58413a3bbbee689b:2027-11-16",
+      "starts_at": "2027-11-16T20:00:00+01:00",
+      "local_date": "2027-11-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
       ]
     },
     {

@@ -271,10 +271,10 @@
     "falstaff": {
       "librettist": "Arrigo Boito",
       "premiere_year": 1893,
-      "premiere_venue": "Teatro alla Scala",
+      "premiere_venue": "teatro alla Scala",
       "premiere_city": "Milano",
       "sources": [
-        "https://www.rohcollections.org.uk/work.aspx?work=554"
+        "https://www.wikidata.org/wiki/Q318455"
       ]
     },
     "la-clemenza-di-tito": {
@@ -341,12 +341,13 @@
       ]
     },
     "the-rake-s-progress": {
-      "librettist": "W. H. Auden; Chester Kallman",
+      "librettist": "W. H. Auden e Chester Kallman",
       "premiere_year": 1951,
       "premiere_venue": "Teatro La Fenice",
       "premiere_city": "Venezia",
       "sources": [
-        "https://www.rohcollections.org.uk/work.aspx?work=517"
+        "https://www.boosey.com/pages/cr/catalogue/cat_detail?musicid=4670",
+        "https://asac.labiennale.org/attivita/musica/272795"
       ]
     },
     "leonora": {
@@ -550,18 +551,26 @@
       "premiere_venue": "Teatro di San Carlo",
       "premiere_city": "Napoli",
       "sources": [
-        "https://www.wikidata.org/wiki/Q471164",
-        "https://www.donizettiopera.org/it/evento/esule-di-roma/"
+        "https://www.wikidata.org/wiki/Q471164"
       ]
     },
     "i-capuleti-e-i-montecchi": {
       "librettist": "Felice Romani",
       "premiere_year": 1830,
-      "premiere_venue": "Teatro La Fenice",
+      "premiere_venue": "Gran Teatro La Fenice",
       "premiere_city": "Venezia",
       "sources": [
-        "https://archiviostorico.operaroma.it/opera/i-capuleti-e-i-montecchi/",
         "https://www.wikidata.org/wiki/Q1071307"
+      ]
+    },
+    "dido-and-aeneas": {
+      "librettist": "Nahum Tate",
+      "premiere_year": 1689,
+      "premiere_venue": "Scuola di Josias Priest a Chelsea",
+      "premiere_city": "Londra",
+      "sources": [
+        "https://www.naxos.com/LibrettiSungText/Libretti?id=49E7F4F6-F251-495D-B275-6D5C390FA24F",
+        "https://imslp.org/wiki/Dido_and_Aeneas%2C_Z.626_(Purcell%2C_Henry)"
       ]
     }
   },

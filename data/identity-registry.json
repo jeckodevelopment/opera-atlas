@@ -316,6 +316,41 @@
       "title": "Les Pêcheurs de perles",
       "composer": "Georges Bizet",
       "authority_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+    },
+    "l'esule di roma|gaetano donizetti": {
+      "id": "oa-w-000051",
+      "slug": "esule-di-roma",
+      "title": "L'esule di Roma",
+      "composer": "Gaetano Donizetti",
+      "wikidata_id": "Q471164"
+    },
+    "dido and æneas|henry purcell": {
+      "id": "oa-w-000052",
+      "slug": "dido-and-aeneas",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "authority_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "the rake's progress|igor' stravinskij": {
+      "id": "oa-w-000053",
+      "slug": "the-rake-s-progress",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "authority_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+    },
+    "falstaff|giuseppe verdi": {
+      "id": "oa-w-000054",
+      "slug": "falstaff",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "wikidata_id": "Q318455"
+    },
+    "i capuleti e i montecchi|vincenzo bellini": {
+      "id": "oa-w-000055",
+      "slug": "i-capuleti-e-i-montecchi",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "wikidata_id": "Q1071307"
     }
   },
   "venues": {
@@ -1283,6 +1318,46 @@
       "slug": "les-pecheurs-de-perles",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
       "season": "2026-2027"
+    },
+    "auto-184e57e1cd9f38d5": {
+      "id": "oa-s-000104",
+      "work_id": "oa-w-000051",
+      "venue_id": "oa-v-000012",
+      "slug": "esule-di-roma",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+      "season": "2026"
+    },
+    "auto-58413a3bbbee689b": {
+      "id": "oa-s-000105",
+      "work_id": "oa-w-000052",
+      "venue_id": "oa-v-000006",
+      "slug": "dido-and-aeneas",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+      "season": "2026-2027"
+    },
+    "auto-92b69a8ac1040b05": {
+      "id": "oa-s-000106",
+      "work_id": "oa-w-000053",
+      "venue_id": "oa-v-000006",
+      "slug": "the-rake-s-progress",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
+      "season": "2026-2027"
+    },
+    "auto-b4180540983902f7": {
+      "id": "oa-s-000107",
+      "work_id": "oa-w-000054",
+      "venue_id": "oa-v-000009",
+      "slug": "falstaff",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/",
+      "season": "2026-2027"
+    },
+    "auto-dfe824fe3301174d": {
+      "id": "oa-s-000108",
+      "work_id": "oa-w-000055",
+      "venue_id": "oa-v-000015",
+      "slug": "i-capuleti-e-i-montecchi",
+      "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -4285,6 +4360,162 @@
       "staging_id": "oa-s-000103",
       "original_date": "2027-02-07",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+    },
+    "auto-184e57e1cd9f38d5|2026-11-13": {
+      "id": "oa-r-000516",
+      "staging_id": "oa-s-000104",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+    },
+    "auto-184e57e1cd9f38d5|2026-11-21": {
+      "id": "oa-r-000517",
+      "staging_id": "oa-s-000104",
+      "original_date": "2026-11-21",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+    },
+    "auto-184e57e1cd9f38d5|2026-11-29": {
+      "id": "oa-r-000518",
+      "staging_id": "oa-s-000104",
+      "original_date": "2026-11-29",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+    },
+    "auto-58413a3bbbee689b|2027-10-26": {
+      "id": "oa-r-000519",
+      "staging_id": "oa-s-000105",
+      "original_date": "2027-10-26",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "auto-58413a3bbbee689b|2027-10-28": {
+      "id": "oa-r-000520",
+      "staging_id": "oa-s-000105",
+      "original_date": "2027-10-28",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "auto-58413a3bbbee689b|2027-11-02": {
+      "id": "oa-r-000521",
+      "staging_id": "oa-s-000105",
+      "original_date": "2027-11-02",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "auto-58413a3bbbee689b|2027-11-06": {
+      "id": "oa-r-000522",
+      "staging_id": "oa-s-000105",
+      "original_date": "2027-11-06",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "auto-58413a3bbbee689b|2027-11-10": {
+      "id": "oa-r-000523",
+      "staging_id": "oa-s-000105",
+      "original_date": "2027-11-10",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "auto-58413a3bbbee689b|2027-11-13": {
+      "id": "oa-r-000524",
+      "staging_id": "oa-s-000105",
+      "original_date": "2027-11-13",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "auto-58413a3bbbee689b|2027-11-16": {
+      "id": "oa-r-000525",
+      "staging_id": "oa-s-000105",
+      "original_date": "2027-11-16",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+    },
+    "auto-92b69a8ac1040b05|2027-04-17": {
+      "id": "oa-r-000526",
+      "staging_id": "oa-s-000106",
+      "original_date": "2027-04-17",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+    },
+    "auto-92b69a8ac1040b05|2027-04-20": {
+      "id": "oa-r-000527",
+      "staging_id": "oa-s-000106",
+      "original_date": "2027-04-20",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+    },
+    "auto-92b69a8ac1040b05|2027-04-22": {
+      "id": "oa-r-000528",
+      "staging_id": "oa-s-000106",
+      "original_date": "2027-04-22",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+    },
+    "auto-92b69a8ac1040b05|2027-04-24": {
+      "id": "oa-r-000529",
+      "staging_id": "oa-s-000106",
+      "original_date": "2027-04-24",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+    },
+    "auto-92b69a8ac1040b05|2027-04-27": {
+      "id": "oa-r-000530",
+      "staging_id": "oa-s-000106",
+      "original_date": "2027-04-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+    },
+    "auto-92b69a8ac1040b05|2027-04-30": {
+      "id": "oa-r-000531",
+      "staging_id": "oa-s-000106",
+      "original_date": "2027-04-30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+    },
+    "auto-b4180540983902f7|2027-05-16": {
+      "id": "oa-r-000532",
+      "staging_id": "oa-s-000107",
+      "original_date": "2027-05-16",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    "auto-b4180540983902f7|2027-05-18": {
+      "id": "oa-r-000533",
+      "staging_id": "oa-s-000107",
+      "original_date": "2027-05-18",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    "auto-b4180540983902f7|2027-05-19": {
+      "id": "oa-r-000534",
+      "staging_id": "oa-s-000107",
+      "original_date": "2027-05-19",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    "auto-b4180540983902f7|2027-05-20": {
+      "id": "oa-r-000535",
+      "staging_id": "oa-s-000107",
+      "original_date": "2027-05-20",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    "auto-b4180540983902f7|2027-05-21": {
+      "id": "oa-r-000536",
+      "staging_id": "oa-s-000107",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    "auto-b4180540983902f7|2027-05-22": {
+      "id": "oa-r-000537",
+      "staging_id": "oa-s-000107",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    "auto-b4180540983902f7|2027-05-23": {
+      "id": "oa-r-000538",
+      "staging_id": "oa-s-000107",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    "auto-dfe824fe3301174d|2026-11-22": {
+      "id": "oa-r-000539",
+      "staging_id": "oa-s-000108",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
+    },
+    "auto-dfe824fe3301174d|2026-11-25": {
+      "id": "oa-r-000540",
+      "staging_id": "oa-s-000108",
+      "original_date": "2026-11-25",
+      "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
+    },
+    "auto-dfe824fe3301174d|2026-11-27": {
+      "id": "oa-r-000541",
+      "staging_id": "oa-s-000108",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
     }
   }
 }
