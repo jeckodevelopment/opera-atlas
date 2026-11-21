@@ -1,11 +1,17 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T21:45:57+00:00",
+  "checked_at": "2026-11-21T21:50:29+00:00",
   "total": 174,
   "states": {
-    "already_catalogued": 89,
+    "already_catalogued": 90,
     "excluded_nonopera": 43,
-    "needs_review": 42
+    "needs_review": 41
   },
-  "changes": []
+  "changes": [
+    {
+      "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    }
+  ]
 }
