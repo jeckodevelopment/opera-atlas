@@ -142,6 +142,30 @@ L'assenza di una sezione identificabile univocamente o di due
 relazioni narrative esplicite comporta un retry, mai una trama
 inventata.
 
+## Candidate già canoniche e candidate prive di credito ufficiale
+
+Il research budget è dedicato alle **composizioni non ancora censite**
+che hanno un titolo e un compositore esplicitamente attribuiti dalla
+pagina ufficiale della produzione. Una candidata che corrisponde in modo
+univoco a un'opera già censita, con identici titolo e compositore
+nell'evidenza strutturata del teatro, assume lo stato
+`existing_canonical_work`: le sue eventuali nuove rappresentazioni
+sono esaminate autonomamente da `scripts.auto_catalogue`, senza nuovi
+download enciclopedici o duplicazione della scheda opera.
+
+Una candidata per la quale il connettore non ha acquisito titolo e
+compositore verificati resta `awaiting_official_identity_evidence`.
+Questo **non equivale a opera completata né a recita pubblicata**.
+Il connettore continuerà a essere monitorato e l'opera potrà entrare
+nella ricerca quando l'evidenza ufficiale sarà sufficiente.
+Una semplice parola nell'URL non è prova di un'opera: il sistema non
+deve trasformare programmi didattici, adattamenti o opere omonime
+in schede inventate.
+
+Le due categorie non consumano il budget destinato alle opere davvero
+nuove. Il report mantiene il legame a candidate, fonte e URL ufficiali
+per verificare l'esito in un refresh successivo.
+
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
 `.github/workflows/refresh-catalog.yml` esegue
