@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T11:33:40+00:00",
+  "checked_at": "2026-11-21T11:54:46+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
@@ -31,6 +31,12 @@
       "status": "success",
       "links": 8,
       "new_review_candidates": 3
+    },
+    {
+      "key": "carlo-felice-season-2026-27",
+      "status": "success",
+      "links": 7,
+      "new_review_candidates": 7
     }
   ]
 }
