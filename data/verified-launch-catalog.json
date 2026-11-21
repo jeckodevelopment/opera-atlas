@@ -3467,6 +3467,115 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-697328f32e7cfa32",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
+      "dates": [
+        [
+          "2027-01-17",
+          "19:00"
+        ],
+        [
+          "2027-01-19",
+          "20:00"
+        ],
+        [
+          "2027-01-20",
+          "20:00"
+        ],
+        [
+          "2027-01-21",
+          "20:00"
+        ],
+        [
+          "2027-01-23",
+          "18:00"
+        ],
+        [
+          "2027-01-24",
+          "16:30"
+        ],
+        [
+          "2027-01-26",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-9eea54a8395ff3d6",
+      "title": "Iphigénie en Tauride",
+      "composer": "Christoph Willibald Gluck",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
+      "dates": [
+        [
+          "2027-04-18",
+          "19:00"
+        ],
+        [
+          "2027-04-20",
+          "20:00"
+        ],
+        [
+          "2027-04-22",
+          "18:00"
+        ],
+        [
+          "2027-04-24",
+          "16:30"
+        ],
+        [
+          "2027-04-27",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-bc101d1d7cf587ef",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
+      "dates": [
+        [
+          "2027-06-22",
+          "20:00"
+        ],
+        [
+          "2027-06-23",
+          "20:00"
+        ],
+        [
+          "2027-06-25",
+          "20:00"
+        ],
+        [
+          "2027-06-26",
+          "18:00"
+        ],
+        [
+          "2027-06-27",
+          "16:30"
+        ],
+        [
+          "2027-06-30",
+          "20:00"
+        ],
+        [
+          "2027-07-01",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

@@ -531,6 +531,33 @@
       "alt": "Frontespizio originale del libretto veneziano del 1750 de Il mondo alla roversa di Baldassarre Galuppi, non immagine dell'allestimento in calendario",
       "credit": "Libretto originale di Carlo Goldoni per Baldassarre Galuppi, Venezia 1750, Wikimedia Commons",
       "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000060": {
+      "work_id": "oa-w-000060",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Andrea_Chenier_Poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Andrea_Chenier_Poster.jpg",
+      "alt": "Locandina storica del 1896 dell'opera Andrea Chénier di Umberto Giordano; non rappresenta l'allestimento romano del 2027",
+      "credit": "Locandina del 1896, autore ignoto · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Andrea_Chenier_Poster.jpg"
+    },
+    "oa-w-000061": {
+      "work_id": "oa-w-000061",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Iphig%C3%A9nie_en_Tauride_frontespizio_partitura.JPG?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Iphig%C3%A9nie_en_Tauride_frontespizio_partitura.JPG",
+      "alt": "Frontespizio originale della prima edizione della partitura di Iphigénie en Tauride di Christoph Willibald Gluck (1779), non produzione 2027",
+      "credit": "Frontespizio della prima edizione della partitura di Gluck, Parigi 1779 · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Iphig%C3%A9nie_en_Tauride_frontespizio_partitura.JPG"
+    },
+    "oa-w-000062": {
+      "work_id": "oa-w-000062",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Il_trovatore_by_Luigi_Morgari_-_Original.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Il_trovatore_by_Luigi_Morgari_-_Original.jpg",
+      "alt": "Manifesto storico ottocentesco di Il trovatore di Giuseppe Verdi, realizzato dopo la prima del 1853; non produzione 2027",
+      "credit": "Luigi Morgari, incisione storica, Bibliothèque nationale de France / Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Il_trovatore_by_Luigi_Morgari_-_Original.jpg"
     }
   }
 }

@@ -2336,6 +2336,60 @@
       ]
     },
     {
+      "id": "curated:auto-697328f32e7cfa32:2027-01-17",
+      "starts_at": "2027-01-17T19:00:00+01:00",
+      "local_date": "2027-01-17",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-697328f32e7cfa32:2027-01-19",
+      "starts_at": "2027-01-19T20:00:00+01:00",
+      "local_date": "2027-01-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-697328f32e7cfa32:2027-01-20",
+      "starts_at": "2027-01-20T20:00:00+01:00",
+      "local_date": "2027-01-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+      ]
+    },
+    {
       "id": "curated:auto-b932c89149fad91c:2027-01-20",
       "starts_at": "2027-01-20T20:00:00+01:00",
       "local_date": "2027-01-20",
@@ -2351,6 +2405,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/la-traviata-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-697328f32e7cfa32:2027-01-21",
+      "starts_at": "2027-01-21T20:00:00+01:00",
+      "local_date": "2027-01-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
       ]
     },
     {
@@ -2498,6 +2570,24 @@
       ]
     },
     {
+      "id": "curated:auto-697328f32e7cfa32:2027-01-23",
+      "starts_at": "2027-01-23T18:00:00+01:00",
+      "local_date": "2027-01-23",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+      ]
+    },
+    {
       "id": "curated:lombardia-cavalleria-cremona:2027-01-24",
       "starts_at": null,
       "local_date": "2027-01-24",
@@ -2585,6 +2675,42 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/la-straniera-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-697328f32e7cfa32:2027-01-24",
+      "starts_at": "2027-01-24T16:30:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-697328f32e7cfa32:2027-01-26",
+      "starts_at": "2027-01-26T20:00:00+01:00",
+      "local_date": "2027-01-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
       ]
     },
     {
@@ -5360,6 +5486,24 @@
       ]
     },
     {
+      "id": "curated:auto-9eea54a8395ff3d6:2027-04-18",
+      "starts_at": "2027-04-18T19:00:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Iphigénie en Tauride",
+      "composer": "Christoph Willibald Gluck",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+      ]
+    },
+    {
       "id": "curated:massimo-tosca-2027:2027-04-18",
       "starts_at": "2027-04-18T19:00:00+02:00",
       "local_date": "2027-04-18",
@@ -5432,6 +5576,24 @@
       ]
     },
     {
+      "id": "curated:auto-9eea54a8395ff3d6:2027-04-20",
+      "starts_at": "2027-04-20T20:00:00+02:00",
+      "local_date": "2027-04-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Iphigénie en Tauride",
+      "composer": "Christoph Willibald Gluck",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+      ]
+    },
+    {
       "id": "curated:auto-4579632f6d774477:2027-04-21",
       "starts_at": "2027-04-21T17:00:00+02:00",
       "local_date": "2027-04-21",
@@ -5465,6 +5627,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-9eea54a8395ff3d6:2027-04-22",
+      "starts_at": "2027-04-22T18:00:00+02:00",
+      "local_date": "2027-04-22",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Iphigénie en Tauride",
+      "composer": "Christoph Willibald Gluck",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
       ]
     },
     {
@@ -5555,6 +5735,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-9eea54a8395ff3d6:2027-04-24",
+      "starts_at": "2027-04-24T16:30:00+02:00",
+      "local_date": "2027-04-24",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Iphigénie en Tauride",
+      "composer": "Christoph Willibald Gluck",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
       ]
     },
     {
@@ -5681,6 +5879,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+      ]
+    },
+    {
+      "id": "curated:auto-9eea54a8395ff3d6:2027-04-27",
+      "starts_at": "2027-04-27T20:00:00+02:00",
+      "local_date": "2027-04-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Iphigénie en Tauride",
+      "composer": "Christoph Willibald Gluck",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
       ]
     },
     {
@@ -7196,6 +7412,24 @@
       ]
     },
     {
+      "id": "curated:auto-bc101d1d7cf587ef:2027-06-22",
+      "starts_at": "2027-06-22T20:00:00+02:00",
+      "local_date": "2027-06-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+      ]
+    },
+    {
       "id": "curated:regio-evgenij-onegin-2027:2027-06-22",
       "starts_at": "2027-06-22T20:00:00+02:00",
       "local_date": "2027-06-22",
@@ -7229,6 +7463,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
+      "id": "curated:auto-bc101d1d7cf587ef:2027-06-23",
+      "starts_at": "2027-06-23T20:00:00+02:00",
+      "local_date": "2027-06-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
       ]
     },
     {
@@ -7286,6 +7538,24 @@
       ]
     },
     {
+      "id": "curated:auto-bc101d1d7cf587ef:2027-06-25",
+      "starts_at": "2027-06-25T20:00:00+02:00",
+      "local_date": "2027-06-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+      ]
+    },
+    {
       "id": "curated:auto-b67d637b2f593f67:2027-06-25",
       "starts_at": "2027-06-25T21:15:00+02:00",
       "local_date": "2027-06-25",
@@ -7301,6 +7571,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/la-traviata/"
+      ]
+    },
+    {
+      "id": "curated:auto-bc101d1d7cf587ef:2027-06-26",
+      "starts_at": "2027-06-26T18:00:00+02:00",
+      "local_date": "2027-06-26",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
       ]
     },
     {
@@ -7337,6 +7625,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-bc101d1d7cf587ef:2027-06-27",
+      "starts_at": "2027-06-27T16:30:00+02:00",
+      "local_date": "2027-06-27",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
       ]
     },
     {
@@ -7412,6 +7718,24 @@
       ]
     },
     {
+      "id": "curated:auto-bc101d1d7cf587ef:2027-06-30",
+      "starts_at": "2027-06-30T20:00:00+02:00",
+      "local_date": "2027-06-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+      ]
+    },
+    {
       "id": "curated:auto-18853d99c59fe075:2027-07-01",
       "starts_at": "2027-07-01T20:00:00+02:00",
       "local_date": "2027-07-01",
@@ -7427,6 +7751,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
+      "id": "curated:auto-bc101d1d7cf587ef:2027-07-01",
+      "starts_at": "2027-07-01T20:00:00+02:00",
+      "local_date": "2027-07-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
       ]
     },
     {

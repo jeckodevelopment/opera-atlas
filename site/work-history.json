@@ -583,6 +583,36 @@
         "https://corago.unibo.it/libretto/DRT0028887",
         "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
       ]
+    },
+    "andrea-chenier": {
+      "librettist": "Luigi Illica",
+      "premiere_year": 1896,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/libretto/0000140770",
+        "https://www.naxos.com/LibrettiSungText/Libretti?id=796947D9-DC2F-4CB0-99DC-BDF770B62F0A"
+      ]
+    },
+    "iphigenie-en-tauride": {
+      "librettist": "Nicolas-François Guillard",
+      "premiere_year": 1779,
+      "premiere_venue": "Académie royale de musique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://catalogue.bnf.fr/ark:/12148/cb39764059p",
+        "https://www.opera-orchestre-montpellier.fr/wp-content/uploads/2023/03/2023-OONM-DP-IphigenieTauride-def.pdf"
+      ]
+    },
+    "il-trovatore": {
+      "librettist": "Salvatore Cammarano e Leone Emanuele Bardare",
+      "premiere_year": 1853,
+      "premiere_venue": "Teatro Apollo",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://movio.beniculturali.it/asrm/ilteatronellazio/it/117/il-trovatore/show/26/198",
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+      ]
     }
   },
   "works_by_id": {

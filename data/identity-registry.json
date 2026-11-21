@@ -379,6 +379,27 @@
       "title": "Il mondo alla roversa o sia le donne che comandano",
       "composer": "Baldassarre Galuppi",
       "authority_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+    },
+    "andrea chénier|umberto giordano": {
+      "id": "oa-w-000060",
+      "slug": "andrea-chenier",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "authority_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "iphigénie en tauride|christoph willibald gluck": {
+      "id": "oa-w-000061",
+      "slug": "iphigenie-en-tauride",
+      "title": "Iphigénie en Tauride",
+      "composer": "Christoph Willibald Gluck",
+      "authority_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+    },
+    "il trovatore|giuseppe verdi": {
+      "id": "oa-w-000062",
+      "slug": "il-trovatore",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "authority_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
     }
   },
   "venues": {
@@ -1449,6 +1470,30 @@
       "venue_id": "oa-v-000022",
       "slug": "il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+      "season": "2027"
+    },
+    "auto-697328f32e7cfa32": {
+      "id": "oa-s-000115",
+      "work_id": "oa-w-000060",
+      "venue_id": "oa-v-000017",
+      "slug": "andrea-chenier",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
+      "season": "2027"
+    },
+    "auto-9eea54a8395ff3d6": {
+      "id": "oa-s-000116",
+      "work_id": "oa-w-000061",
+      "venue_id": "oa-v-000017",
+      "slug": "iphigenie-en-tauride",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
+      "season": "2027"
+    },
+    "auto-bc101d1d7cf587ef": {
+      "id": "oa-s-000117",
+      "work_id": "oa-w-000062",
+      "venue_id": "oa-v-000017",
+      "slug": "il-trovatore",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
       "season": "2027"
     }
   },
@@ -4818,6 +4863,120 @@
       "staging_id": "oa-s-000114",
       "original_date": "2027-02-02",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+    },
+    "auto-697328f32e7cfa32|2027-01-17": {
+      "id": "oa-r-000577",
+      "staging_id": "oa-s-000115",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "auto-697328f32e7cfa32|2027-01-19": {
+      "id": "oa-r-000578",
+      "staging_id": "oa-s-000115",
+      "original_date": "2027-01-19",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "auto-697328f32e7cfa32|2027-01-20": {
+      "id": "oa-r-000579",
+      "staging_id": "oa-s-000115",
+      "original_date": "2027-01-20",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "auto-697328f32e7cfa32|2027-01-21": {
+      "id": "oa-r-000580",
+      "staging_id": "oa-s-000115",
+      "original_date": "2027-01-21",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "auto-697328f32e7cfa32|2027-01-23": {
+      "id": "oa-r-000581",
+      "staging_id": "oa-s-000115",
+      "original_date": "2027-01-23",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "auto-697328f32e7cfa32|2027-01-24": {
+      "id": "oa-r-000582",
+      "staging_id": "oa-s-000115",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "auto-697328f32e7cfa32|2027-01-26": {
+      "id": "oa-r-000583",
+      "staging_id": "oa-s-000115",
+      "original_date": "2027-01-26",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+    },
+    "auto-9eea54a8395ff3d6|2027-04-18": {
+      "id": "oa-r-000584",
+      "staging_id": "oa-s-000116",
+      "original_date": "2027-04-18",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+    },
+    "auto-9eea54a8395ff3d6|2027-04-20": {
+      "id": "oa-r-000585",
+      "staging_id": "oa-s-000116",
+      "original_date": "2027-04-20",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+    },
+    "auto-9eea54a8395ff3d6|2027-04-22": {
+      "id": "oa-r-000586",
+      "staging_id": "oa-s-000116",
+      "original_date": "2027-04-22",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+    },
+    "auto-9eea54a8395ff3d6|2027-04-24": {
+      "id": "oa-r-000587",
+      "staging_id": "oa-s-000116",
+      "original_date": "2027-04-24",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+    },
+    "auto-9eea54a8395ff3d6|2027-04-27": {
+      "id": "oa-r-000588",
+      "staging_id": "oa-s-000116",
+      "original_date": "2027-04-27",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+    },
+    "auto-bc101d1d7cf587ef|2027-06-22": {
+      "id": "oa-r-000589",
+      "staging_id": "oa-s-000117",
+      "original_date": "2027-06-22",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "auto-bc101d1d7cf587ef|2027-06-23": {
+      "id": "oa-r-000590",
+      "staging_id": "oa-s-000117",
+      "original_date": "2027-06-23",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "auto-bc101d1d7cf587ef|2027-06-25": {
+      "id": "oa-r-000591",
+      "staging_id": "oa-s-000117",
+      "original_date": "2027-06-25",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "auto-bc101d1d7cf587ef|2027-06-26": {
+      "id": "oa-r-000592",
+      "staging_id": "oa-s-000117",
+      "original_date": "2027-06-26",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "auto-bc101d1d7cf587ef|2027-06-27": {
+      "id": "oa-r-000593",
+      "staging_id": "oa-s-000117",
+      "original_date": "2027-06-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "auto-bc101d1d7cf587ef|2027-06-30": {
+      "id": "oa-r-000594",
+      "staging_id": "oa-s-000117",
+      "original_date": "2027-06-30",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "auto-bc101d1d7cf587ef|2027-07-01": {
+      "id": "oa-r-000595",
+      "staging_id": "oa-s-000117",
+      "original_date": "2027-07-01",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
     }
   }
 }
