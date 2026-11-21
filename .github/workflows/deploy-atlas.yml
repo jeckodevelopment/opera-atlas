@@ -11,6 +11,7 @@ on:
       - 'site/.htaccess'
       - 'scripts/deploy_atlas.py'
       - 'scripts/deploy_atlas_simple_ftp.py'
+      - 'scripts/deploy_atlas_sftp.py'
       - '.github/workflows/deploy-atlas.yml'
 permissions:
   contents: read
@@ -41,13 +42,15 @@ jobs:
           python -m unittest discover -s tests -v
           python -m scripts.publish_catalog_v2 --check
           python -m scripts.publish_work_editorial --check
-      - name: Install standard FTP client
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
-      - name: Upload Atlas static files via plain FTP (OVH)
+      - name: Install SFTP transport
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Upload Atlas static files via SFTP port 22 (OVH)
         env:
-          ATLAS_FTP_HOST: ${{ secrets.ATLAS_SFTP_HOST }}
-          ATLAS_FTP_PORT: '21' # Plain FTP; legacy SFTP port 22 must not be reused
-          ATLAS_FTP_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
-          ATLAS_FTP_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
-          ATLAS_FTP_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}
-        run: timeout --signal=TERM --kill-after=90s 11m python -u -m scripts.deploy_atlas_simple_ftp
+          ATLAS_SFTP_HOST: ${{ secrets.ATLAS_SFTP_HOST }}
+          ATLAS_SFTP_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
+          ATLAS_SFTP_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
+          ATLAS_SFTP_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}
+          ATLAS_SFTP_PRIVATE_KEY: ${{ secrets.ATLAS_SFTP_PRIVATE_KEY }}
+          ATLAS_SFTP_KEY_PASSPHRASE: ${{ secrets.ATLAS_SFTP_KEY_PASSPHRASE }}
+          ATLAS_SFTP_KNOWN_HOSTS: ${{ secrets.ATLAS_SFTP_KNOWN_HOSTS }}
+        run: timeout --signal=TERM --kill-after=90s 11m python -u -m scripts.deploy_atlas_sftp
