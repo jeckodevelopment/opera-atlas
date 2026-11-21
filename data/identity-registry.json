@@ -913,6 +913,14 @@
       "slug": "italiana-in-algeri",
       "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
       "season": "2027"
+    },
+    "auto-4579632f6d774477": {
+      "id": "oa-s-000072",
+      "work_id": "oa-w-000010",
+      "venue_id": "oa-v-000015",
+      "slug": "evgenij-onegin",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -3039,6 +3047,36 @@
       "staging_id": "oa-s-000071",
       "original_date": "2027-02-28",
       "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+    },
+    "auto-4579632f6d774477|2027-04-16": {
+      "id": "oa-r-000355",
+      "staging_id": "oa-s-000072",
+      "original_date": "2027-04-16",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+    },
+    "auto-4579632f6d774477|2027-04-17": {
+      "id": "oa-r-000356",
+      "staging_id": "oa-s-000072",
+      "original_date": "2027-04-17",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+    },
+    "auto-4579632f6d774477|2027-04-18": {
+      "id": "oa-r-000357",
+      "staging_id": "oa-s-000072",
+      "original_date": "2027-04-18",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+    },
+    "auto-4579632f6d774477|2027-04-20": {
+      "id": "oa-r-000358",
+      "staging_id": "oa-s-000072",
+      "original_date": "2027-04-20",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+    },
+    "auto-4579632f6d774477|2027-04-21": {
+      "id": "oa-r-000359",
+      "staging_id": "oa-s-000072",
+      "original_date": "2027-04-21",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
     }
   }
 }

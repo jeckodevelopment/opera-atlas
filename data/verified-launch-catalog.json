@@ -2199,6 +2199,37 @@
           "15:00"
         ]
       ]
+    },
+    {
+      "key": "auto-4579632f6d774477",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+      "dates": [
+        [
+          "2027-04-16",
+          "20:00"
+        ],
+        [
+          "2027-04-17",
+          "15:00"
+        ],
+        [
+          "2027-04-18",
+          "15:00"
+        ],
+        [
+          "2027-04-20",
+          "20:00"
+        ],
+        [
+          "2027-04-21",
+          "17:00"
+        ]
+      ]
     }
   ]
 }

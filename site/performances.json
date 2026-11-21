@@ -1122,24 +1122,6 @@
       ]
     },
     {
-      "id": "curated:lombardia-italiana-brescia:2026-11-26",
-      "starts_at": null,
-      "local_date": "2026-11-26",
-      "time_known": false,
-      "time_label": "Orario da confermare",
-      "status": "announced",
-      "title": "L’italiana in Algeri",
-      "composer": "Gioachino Rossini",
-      "venue": "Teatro Grande",
-      "municipality": "Brescia",
-      "region": "Lombardia",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
-      ]
-    },
-    {
       "id": "curated:massimo-samson-dalila-2026:2026-11-26",
       "starts_at": "2026-11-26T18:30:00+01:00",
       "local_date": "2026-11-26",
@@ -1155,6 +1137,25 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
+      "id": "curated:lombardia-italiana-brescia:2026-11-26",
+      "starts_at": "2026-11-26T20:00:00+01:00",
+      "local_date": "2026-11-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Grande",
+      "municipality": "Brescia",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri"
       ]
     },
     {
@@ -1195,10 +1196,10 @@
     },
     {
       "id": "curated:lombardia-italiana-brescia:2026-11-28",
-      "starts_at": null,
+      "starts_at": "2026-11-28T15:30:00+01:00",
       "local_date": "2026-11-28",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "15:30",
       "status": "announced",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
@@ -1208,7 +1209,8 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/l-italiana-in-algeri/"
+        "https://www.operalombardia.it/l-italiana-in-algeri/",
+        "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri"
       ]
     },
     {
@@ -1448,10 +1450,10 @@
     },
     {
       "id": "curated:lombardia-cavalleria-brescia:2026-12-11",
-      "starts_at": null,
+      "starts_at": "2026-12-11T20:00:00+01:00",
       "local_date": "2026-12-11",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "20:00",
       "status": "announced",
       "title": "Cavalleria rusticana",
       "composer": "Pietro Mascagni",
@@ -1461,15 +1463,16 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/calendario/"
+        "https://www.operalombardia.it/calendario/",
+        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
       ]
     },
     {
       "id": "curated:lombardia-pagliacci-brescia:2026-12-11",
-      "starts_at": null,
+      "starts_at": "2026-12-11T20:00:00+01:00",
       "local_date": "2026-12-11",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "20:00",
       "status": "announced",
       "title": "Pagliacci",
       "composer": "Ruggero Leoncavallo",
@@ -1479,7 +1482,8 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/calendario/"
+        "https://www.operalombardia.it/calendario/",
+        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
       ]
     },
     {
@@ -1503,10 +1507,10 @@
     },
     {
       "id": "curated:lombardia-cavalleria-brescia:2026-12-13",
-      "starts_at": null,
+      "starts_at": "2026-12-13T15:30:00+01:00",
       "local_date": "2026-12-13",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "15:30",
       "status": "announced",
       "title": "Cavalleria rusticana",
       "composer": "Pietro Mascagni",
@@ -1516,15 +1520,16 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/calendario/"
+        "https://www.operalombardia.it/calendario/",
+        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
       ]
     },
     {
       "id": "curated:lombardia-pagliacci-brescia:2026-12-13",
-      "starts_at": null,
+      "starts_at": "2026-12-13T15:30:00+01:00",
       "local_date": "2026-12-13",
-      "time_known": false,
-      "time_label": "Orario da confermare",
+      "time_known": true,
+      "time_label": "15:30",
       "status": "announced",
       "title": "Pagliacci",
       "composer": "Ruggero Leoncavallo",
@@ -1534,7 +1539,8 @@
       "latitude": null,
       "longitude": null,
       "sources": [
-        "https://www.operalombardia.it/calendario/"
+        "https://www.operalombardia.it/calendario/",
+        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
       ]
     },
     {
@@ -3752,6 +3758,24 @@
       ]
     },
     {
+      "id": "curated:auto-4579632f6d774477:2027-04-16",
+      "starts_at": "2027-04-16T20:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+      ]
+    },
+    {
       "id": "curated:parma-madama-butterfly-2027:2027-04-16",
       "starts_at": "2027-04-16T20:00:00+02:00",
       "local_date": "2027-04-16",
@@ -3770,6 +3794,24 @@
       ]
     },
     {
+      "id": "curated:auto-4579632f6d774477:2027-04-17",
+      "starts_at": "2027-04-17T15:00:00+02:00",
+      "local_date": "2027-04-17",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-17",
       "starts_at": "2027-04-17T15:00:00+02:00",
       "local_date": "2027-04-17",
@@ -3785,6 +3827,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-4579632f6d774477:2027-04-18",
+      "starts_at": "2027-04-18T15:00:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
       ]
     },
     {
@@ -3839,6 +3899,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/tosca-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-4579632f6d774477:2027-04-20",
+      "starts_at": "2027-04-20T20:00:00+02:00",
+      "local_date": "2027-04-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+      ]
+    },
+    {
+      "id": "curated:auto-4579632f6d774477:2027-04-21",
+      "starts_at": "2027-04-21T17:00:00+02:00",
+      "local_date": "2027-04-21",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Evgenij Onegin",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
       ]
     },
     {
