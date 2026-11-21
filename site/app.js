@@ -245,7 +245,7 @@ function imageTile(url,title,subtitle,image,description=""){
 // Curated editorial selection (not alphabetical, and not tied to feed ordering).
 const HOME_REPERTOIRE_IDS=Object.freeze([
   "oa-w-000026", // Rigoletto — Verdi
-  "oa-w-000015", // Aida — Verdi
+  "oa-w-000038", // Il barbiere di Siviglia — Rossini
   "oa-w-000023", // Don Giovanni — Mozart
   "oa-w-000031", // Norma — Bellini
   "oa-w-000022", // Tosca — Puccini

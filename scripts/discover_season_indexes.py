@@ -332,7 +332,26 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",(item["official_url"],))
                 row=db.execute("SELECT id FROM sources WHERE official_url=?",(item["official_url"],)).fetchone()
                 page=fetcher(db,source_id=row["id"],url=item["url"],network_enabled=True)
-                urls=extract(item["key"],item["url"],page.html,item["min_links"])
+                try:
+                    urls=extract(item["key"],item["url"],page.html,item["min_links"])
+                except ValueError as exc:
+                    # TCBO's current-season opera filter explicitly reports
+                    # zero results when its programme has no remaining operas.
+                    # Accept only this exact filtered empty state and only if
+                    # no eligible opera links were present in the HTML.
+                    if (item["key"]=="bologna-comunale-opera-2026"
+                        and str(exc)=="season index incomplete or structure changed"
+                        and "Nessun evento trovato" in page.html):
+                        anchors=AnchorParser()
+                        anchors.feed(page.html)
+                        actual=[href for href in anchors.links
+                                if eligible(item["key"],urljoin(item["url"],href))]
+                        if not actual:
+                            urls=[]
+                        else:
+                            raise
+                    else:
+                        raise
             except (AccessDenied,FetchUnavailable,ValueError) as exc:
                 # Keep exceptions from upstream retrieval out of public
                 # diagnostics. Report deterministic, actionable failure
@@ -358,6 +377,8 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 elif seen[uid]["status"]=="needs_review":
                     seen[uid]["last_seen"]=timestamp
             statuses.append({"key":item["key"],"status":"success","links":len(urls),
+                             "empty_official_opera_calendar":(
+                                 item["key"]=="bologna-comunale-opera-2026" and len(urls)==0),
                              "required_links":item["min_links"],
                              "new_review_candidates":sum(
                                  x["source_key"]==item["key"] and x["status"]=="needs_review"

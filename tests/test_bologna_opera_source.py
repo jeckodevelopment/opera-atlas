@@ -1,9 +1,10 @@
 """Official Bologna index and fact extraction regression tests."""
 import unittest
-from scripts.discover_season_indexes import extract,eligible,validate_config,CONFIG
+from scripts.discover_season_indexes import extract,eligible,validate_config,CONFIG,scan,source_health_history
 from scripts.collect_candidate_details import parse_known_opera_detail,parse_source_credited_opera_detail
 from opera_atlas.bologna_detail_parser import parse_detail,normalize_event_fact
 import json
+from opera_atlas.controlled_fetch import FetchResult
 
 KEY="bologna-comunale-opera-2027"
 CURRENT="bologna-comunale-opera-2026"
@@ -44,6 +45,48 @@ class BolognaSourceTests(unittest.TestCase):
         html=fixture(title="Samson et Dalila",composer="Camille Saint-Saëns",
                      dates=(("13 Nov 2026","20:00"),))
         self.assertEqual(parse_detail(html,url=url)[3],[("2026-11-13","20:00")])
+
+    def test_2028_and_later_operas_are_discovered_from_stable_future_index(self):
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
+        index=next(x for x in validate_config(config) if x["key"]==KEY)
+        links=extract(KEY,index["url"],
+                      '<a href="/evento/opera/new-work-2028/">Future opera</a>'
+                      '<a href="/evento/opera/new-work-2029/">Another</a>',
+                      2)
+        self.assertEqual(len(links),2)
+        self.assertTrue(all(eligible(KEY,link) for link in links))
+
+    def test_current_2026_empty_opera_filter_is_valid_but_missing_markup_is_not(self):
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
+        for source in config["sources"]:
+            if source["key"] not in (CURRENT,KEY):
+                source["access_status"]="pending"
+        # A complete and explicit empty result is valid, even though the
+        # remaining 2026 concerts and dances are not operas.
+        html='<main>Stagione 2026 Opera Nessun evento trovato.</main>'
+        future='<a href="/evento/opera/first-opera-2027/">Opera</a>'
+        def fetch(_db,*,source_id,url,network_enabled):
+            body=html if "stagione-presente" in url else future
+            return FetchResult(url,body,"a"*64,len(body))
+        config["sources"][next(i for i,v in enumerate(config["sources"])
+                                if v["key"]==KEY)]["min_links"]=1
+        result,status=scan(config,{"schema_version":1,"candidates":[]},
+                           fetcher=fetch,network_enabled=True)
+        source=next(x for x in status if x["key"]==CURRENT)
+        self.assertEqual(source["status"],"success")
+        self.assertEqual(source["links"],0)
+        self.assertTrue(source["empty_official_opera_calendar"])
+        reviewed=source_health_history(status,{},checked_at="2026-11-21T12:00:00+00:00")
+        self.assertTrue(next(x for x in reviewed if x["key"]==CURRENT)["current_scan_verified"])
+        self.assertEqual(len(result["candidates"]),1)
+
+        def malformed(_db,*,source_id,url,network_enabled):
+            body='<main>Stagione 2026 Opera, markup no longer valid</main>' if "stagione-presente" in url else future
+            return FetchResult(url,body,"b"*64,len(body))
+        _other,status=scan(config,{"schema_version":1,"candidates":[]},
+                           fetcher=malformed,network_enabled=True)
+        self.assertEqual(next(x for x in status if x["key"]==CURRENT)["status"],
+                         "unavailable_or_invalid")
 
     def test_ticket_dates_clock_composer_and_real_venue(self):
         title,composer,venue,rows=parse_detail(fixture(),url=URL)

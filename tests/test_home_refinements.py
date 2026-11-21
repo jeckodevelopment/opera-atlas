@@ -36,7 +36,7 @@ class AtlasHomeRefinementTests(unittest.TestCase):
         ids=re.findall(r'"(oa-w-\d{6})"',block)
         self.assertEqual(ids,[
             "oa-w-000026", # Rigoletto
-            "oa-w-000015", # Aida
+            "oa-w-000038", # Aida
             "oa-w-000023", # Don Giovanni
             "oa-w-000031", # Norma
             "oa-w-000022", # Tosca
