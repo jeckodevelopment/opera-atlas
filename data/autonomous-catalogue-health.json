@@ -1,21 +1,8 @@
 {
   "schema_version": 1,
-  "new_stagings": 3,
-  "new_recite": 9,
-  "auto_skipped": [
-    {
-      "candidate_id": "oa-index-80ebc1deec00ed9ff908",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-a77154badf30929b95dc",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-b372b317894fe260b18e",
-      "reason": "unknown_work_needs_authority_data"
-    }
-  ],
-  "new_works": 3,
+  "new_stagings": 0,
+  "new_recite": 0,
+  "auto_skipped": [],
+  "new_works": 0,
   "enriched_recite_times": 0
 }
