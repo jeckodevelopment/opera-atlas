@@ -1,0 +1,76 @@
+name: Publish cached verified Opera Atlas recite
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [cached-catalog-retry]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'opera_atlas/**'
+      - 'data/candidate-detail-evidence.json'
+      - 'data/season-index-candidates.json'
+      - 'data/verified-launch-catalog.json'
+      - 'data/identity-registry.json'
+      - 'data/auto-source-urls.json'
+      - 'data/verified-time-evidence.json'
+      - 'tests/test_cached_known_publication.py'
+      - '.github/workflows/publish-cached-catalog.yml'
+permissions:
+  contents: write
+# Independent from the slow national refresh: a new source PR cannot cancel
+# a short run that is already publishing verified cached opera recite.
+concurrency:
+  group: opera-atlas-cached-feed
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout latest canonical main
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Verify existing catalog and parser compatibility
+        run: |
+          python -m unittest discover -s tests -v
+          python -m scripts.build_verified_catalog --check
+      - name: Promote stored official evidence for already verified works
+        run: python -m scripts.publish_cached_known
+      - name: Rebuild and validate public data without a new network crawl
+        run: |
+          python -m scripts.build_verified_catalog
+          python -m scripts.publish_catalog_v2
+          python -m scripts.publish_work_editorial
+          python -m scripts.publish_venue_directory
+          python -m scripts.sync_source_registry
+          python -m scripts.source_coverage
+          python -m scripts.build_verified_catalog --check
+          python -m scripts.publish_catalog_v2 --check
+          python -m scripts.publish_work_editorial --check
+          python -m unittest discover -s tests -v
+      - name: Publish validated cached JSON on main
+        id: commit_catalog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/verified-launch-catalog.json data/identity-registry.json data/auto-source-urls.json data/verified-time-evidence.json site/performances.json public/catalog/v2/ public/catalog/work-editorial.json public/catalog/coverage.json public/catalog/venue-directory.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+            echo "The cached public catalog is already current."
+          else
+            git commit -m "data(catalog): publish cached verified recite [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Retry on latest main after a safe push deferral
+        if: steps.commit_catalog.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=cached-catalog-retry

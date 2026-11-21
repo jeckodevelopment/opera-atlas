@@ -645,3 +645,32 @@ Verifica: `python -m unittest discover -s tests -v`, con test di
 controllare la riconciliazione autoritativa, la successiva promozione e i
 manifesti nel workflow. Le evidenze candidate non equivalgono ancora a
 recite pubblicate sul sito.
+
+## Canale indipendente di pubblicazione rapida verificata
+
+`.github/workflows/publish-cached-catalog.yml` pubblica autonomamente i dati
+già acquisiti e verificati, **senza attendere** la scansione nazionale completa.
+Il workflow ha una coda GitHub Actions separata
+(`opera-atlas-cached-feed`, `cancel-in-progress: false`): i merge frequenti
+di PR che modificano `main` non possono interrompere il lavoro rapido a
+metà. Usa i JSON persistiti di evidenze candidate (che sono già passate per
+`robots.txt` e per le verifiche ufficiali) e applica esclusivamente
+`scripts.publish_cached_known`, che non crea nuove identità di opere,
+non inventa calendari e non fa chiamate a servizi esterni.
+
+Prima del push rigenera e verifica i feed pubblici, le identità canoniche,
+la vista sedi e le schede editoriali. Un conflitto di `main` non autorizza
+un push forzato: `safe_push_catalog` segnala `deferred` e il job richiede
+un retry sulla HEAD corrente tramite evento `cached-catalog-retry`. Un
+catalogo già aggiornato non produce un nuovo commit, un refresh riuscito
+non si riattiva da sé, e i commit dei dati portano `[skip ci]` per evitare
+cicli. Il normale refresh completo continua separatamente a scoprire opere
+inedite, verificare nuove recite, immagini e schede, e aggiorna le evidenze
+per il passaggio rapido successivo. Niente SFTP.
+
+**Controllo funzionale:** la produzione del Carlo Felice ha quattro schede
+con almeno 24 repliche documentate in `data/candidate-detail-evidence.json`,
+pubblicabili nella prima fase rapida. Verificare dopo l'esecuzione che le
+relative produzioni e repliche risultino sia in
+`data/verified-launch-catalog.json` sia in `public/catalog/v2/`;
+la sola presenza delle URL candidate non costituisce pubblicazione.
