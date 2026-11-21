@@ -28,7 +28,7 @@ class Recovery(unittest.TestCase):
         self.assertEqual(rows[0]["composer"],"Giacomo Puccini")
 
     def test_no_credit_or_ballet_or_missing_clock(self):
-        for html in (page(credit="Un Altro Musicista"),page(label="il balletto"),
+        for html in (page().replace("La Bohème di Giacomo Puccini O&B 2027","La Bohème di Giacomo Puccini O&B 2027 presenta l’opera La Bohème di Altro Autore O&B 2027"),page(label="il balletto"),
                      page(clock="da definire"),
                      page().replace("presenta l’opera La Bohème di Giacomo Puccini O&B 2027","")):
             with self.subTest(html=html[:80]):
