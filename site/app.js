@@ -118,12 +118,12 @@ function editorialImage(type,event,cls) {
 
 function createCard(event) {
   const article = node("article","event");
-  article.append(editorialImage("work",event,"event-image"));
+  article.append(event.program_id?node("div","event-image image-placeholder"):editorialImage("work",event,"event-image"));
   const main = node("div","event-main");
-  main.append(node("div","event-meta","Opera lirica · "+event.municipality));
+  main.append(node("div","event-meta",(event.program_id?"Programma composto":"Opera lirica")+" · "+event.municipality));
   const heading = node("h3");
   const title = node("a",null,event.title);
-  title.href = window.OperaAtlasCatalog.urls(event).work;
+  title.href = event.program_id?window.OperaAtlasCatalog.urls(event).staging:window.OperaAtlasCatalog.urls(event).work;
   heading.append(title);
   main.append(heading);
   if (event.composer) main.append(node("p","composer",event.composer));
@@ -175,7 +175,7 @@ function compactDate(event) {
 function createStagingCard(events) {
   const first = events[0];
   const article = node("article","event");
-  article.append(editorialImage("work",first,"event-image"));
+  article.append(first.program_id?node("div","event-image image-placeholder"):editorialImage("work",first,"event-image"));
   const main = node("div","event-main");
   main.append(node("div","event-meta",first.municipality+" · "+events.length+" repliche"));
   const heading = node("h3");
@@ -274,7 +274,7 @@ function renderDiscoveries() {
   const works=new Map(),venues=new Map();
   for(const event of catalog){
     const urls=window.OperaAtlasCatalog.urls(event);
-    if(!works.has(urls.work))works.set(urls.work,event);
+    if(!event.program_id&&!works.has(urls.work))works.set(urls.work,event);
     if(!venues.has(urls.venue))venues.set(urls.venue,event);
   }
   const workBox=document.getElementById("discover-works");
