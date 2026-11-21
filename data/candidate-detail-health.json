@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T17:01:08+00:00",
-  "attempted": 36,
+  "checked_at": "2026-11-21T17:18:38+00:00",
+  "attempted": 35,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -16,12 +16,18 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
-      "outcome": "facts_found",
-      "rows": 3
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
-      "candidate_id": "oa-index-a77154badf30929b95dc",
+      "candidate_id": "oa-index-6cd199691f7145a4d048",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -59,105 +65,25 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-eedca6da108bd27e8d30",
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-027fde14d101fca6bf3e",
+      "candidate_id": "oa-index-790b965de8129382aa04",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-212db41a4c6f7afcbcda",
-      "outcome": "facts_found",
-      "rows": 4
-    },
-    {
-      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-01efa4320f81204200f1",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-05e9aa51dbd5a114e2f0",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-073615054167b041e7f7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-207df538679e00657fe1",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -174,26 +100,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-790b965de8129382aa04",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-212db41a4c6f7afcbcda",
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -218,6 +127,7 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -229,6 +139,7 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -240,12 +151,25 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
       "candidate_id": "oa-index-a12dbb283b4900754d28",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a77154badf30929b95dc",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -284,6 +208,7 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -300,17 +225,84 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
+      "candidate_id": "oa-index-eedca6da108bd27e8d30",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-01efa4320f81204200f1",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-027fde14d101fca6bf3e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-073615054167b041e7f7",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-207df538679e00657fe1",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -361,6 +353,17 @@
     },
     {
       "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
