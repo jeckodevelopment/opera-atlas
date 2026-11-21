@@ -24,14 +24,14 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
         # registry: provide one approved identity in-memory for venue tests.
         from scripts.publish_catalog_v2 import slugify
         import copy
-        cls.ids=copy.deepcopy(cls.ids)
+        cls.ids_donizetti=copy.deepcopy(cls.ids)
         title,composer="L’esule di Roma","Gaetano Donizetti"
         from scripts.publish_catalog_v2 import normalized
         key=normalized(title)+"|"+normalized(composer)
-        if key not in cls.ids["works"]:
+        if key not in cls.ids_donizetti["works"]:
             numeric=max(int(w["id"].split("-")[-1])
-                        for w in cls.ids["works"].values())
-            cls.ids["works"][key]={
+                        for w in cls.ids_donizetti["works"].values())
+            cls.ids_donizetti["works"][key]={
                 "id":f"oa-w-{numeric+1:06d}","slug":slugify(title),
                 "title":title,"composer":composer}
 
@@ -51,8 +51,9 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
         for key,url,title,composer,venue,city in CASES:
             with self.subTest(venue=venue):
                 evidence,candidates=self.fixture(key,url,title,composer,venue)
+                baseline=self.ids_donizetti if key=="donizetti-opera-2026" else self.ids
                 facts,ids,urls,result=promote(
-                    self.facts,self.ids,evidence,candidates,[],today=date(2026,11,21))
+                    self.facts,baseline,evidence,candidates,[],today=date(2026,11,21))
                 self.assertEqual(result["new_recite"],1,result)
                 self.assertEqual(result["new_stagings"],1)
                 self.assertIn(url,urls)
@@ -75,19 +76,19 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
             with self.subTest(venue=wrong):
                 evidence,candidates=self.fixture(key,url,title,composer,wrong)
                 facts,ids,urls,result=promote(
-                    self.facts,self.ids,evidence,candidates,[],today=date(2026,11,21))
+                    self.facts,self.ids_donizetti,evidence,candidates,[],today=date(2026,11,21))
                 self.assertEqual(result["new_recite"],0)
                 self.assertEqual(result["auto_skipped"][0]["reason"],
                                  "unknown_or_conflicting_venue")
                 self.assertEqual(facts,self.facts)
-                self.assertEqual(ids,self.ids)
+                self.assertEqual(ids,self.ids_donizetti)
                 self.assertEqual(urls,[])
         evidence,candidates=self.fixture(key,url,title,composer,venue)
         evidence["evidence"][0]["event_facts"].append(
             {**evidence["evidence"][0]["event_facts"][0],"venue":"Teatro Donizetti",
              "date":"2027-03-13","starts_at":"2027-03-13T20:00:00+01:00"})
         facts,ids,urls,result=promote(
-            self.facts,self.ids,evidence,candidates,[],today=date(2026,11,21))
+            self.facts,self.ids_donizetti,evidence,candidates,[],today=date(2026,11,21))
         self.assertEqual(result["new_recite"],0)
         self.assertEqual(facts,self.facts)
 
