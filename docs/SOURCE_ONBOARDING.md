@@ -1218,3 +1218,14 @@ Una fonte già **pubblicata** prevale su questa classificazione.
 In assenza di prova positiva dell'anno o in presenza di calendario
 incompleto, la candidata rimane aperta; non si esclude un titolo in
 base all'URL o a un errore del parser.
+
+### Donizetti Opera: raccordo fra connettore e collector
+
+L'adattatore `donizetti_credited_detail.parse_credited_detail` viene
+invocato nel **dispatcher** `collect_candidate_details.collect`
+per la fonte `donizetti-opera-2026`, anche quando l'opera non è
+ancora nel registro canonico. La prova end-to-end
+`test_real_collection_dispatches_new_work_adapter` verifica che il
+collector salvi titolo, compositore, sede, date e orari nella
+`candidate-detail-evidence.json`. La sola presenza di un parser
+sul filesystem non è sufficiente per dichiarare automatizzata la fonte.
