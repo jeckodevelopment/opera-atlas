@@ -7,7 +7,7 @@ from opera_atlas.controlled_fetch import FetchResult
 from scripts.collect_maggio_calendar import (
     SOURCE,month_url,months_from,parse_month,combine
 )
-from scripts.auto_catalogue import promote
+from scripts.auto_catalogue import promote, SOURCE_ALLOWLIST
 from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY,assemble
 from scripts.discover_season_indexes import eligible,validate_config,CONFIG
@@ -80,10 +80,14 @@ class FlorenceCalendarTests(unittest.TestCase):
             rows,at="2026-11-21T13:00:00+00:00")
         self.assertEqual(len(candidates["candidates"]),1)
         self.assertEqual(len(evidence["evidence"]),1)
+        approved_before=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
+        existing=next((x for x in self.facts["productions"]
+                       if x["municipality"]=="Firenze" and x["title"]=="La traviata"),None)
         facts,registry,urls,report=promote(
-            self.facts,self.registry,evidence,candidates,[],today=date(2026,11,21))
-        self.assertEqual(report["new_stagings"],1,report)
-        self.assertEqual(report["new_recite"],4,report)
+            self.facts,self.registry,evidence,candidates,approved_before,
+            today=date(2026,11,21))
+        self.assertEqual(report["new_stagings"],0 if existing else 1,report)
+        self.assertEqual(report["new_recite"],0 if existing else 4,report)
         new=[p for p in facts["productions"] if p["municipality"]=="Firenze"]
         self.assertEqual(len(new),1)
         self.assertEqual(new[0]["title"],"La traviata")
