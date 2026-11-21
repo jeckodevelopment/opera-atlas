@@ -263,3 +263,11 @@ Le card «Scopri i teatri» della homepage nascono dalle rappresentazioni verifi
 Per evitare che il caricamento asincrono iniziale lasci visibile una copertina editoriale sul **Teatro Carlo Felice di Genova**, il client immagini conserva anche un riferimento statico specifico alla fotografia Commons [Genova - Teatro Carlo Felice.jpg](https://commons.wikimedia.org/wiki/File:Genova_-_Teatro_Carlo_Felice.jpg), autore Marek Śliwecki, licenza CC BY-SA 4.0; non è un fallback generico di Genova e non viene applicato ad altre sedi. Fonte/diritti restano nella scheda del teatro.
 
 **Collaudi:** homepage «Scopri i teatri»: Carlo Felice deve avere l'immagine reale sia prima sia dopo il caricamento del feed nazionale; nessun'altra sede a Genova deve ereditare la sua foto; le schede e il dettaglio delle sedi continuano a usare foto pertinenti; verificare anche la connessione con il catalogo aggiornato e la visualizzazione durante un eventuale errore di rete.
+
+## Selezione editoriale dei sei teatri della homepage (21/11/2026)
+
+La sezione «Scopri i teatri» utilizza ora una **selezione esplicita di sei sedi**, senza dipendere dall'ordinamento alfabetico delle sedi con rappresentazioni. Le sei card, in ordine, sono: Teatro Regio di Torino, Arena di Verona, Teatro alla Scala, Teatro Carlo Felice, Teatro La Fenice di Venezia e Teatro di San Carlo di Napoli. La Fenice e il San Carlo **sostituiscono** rispettivamente Teatro Coccia di Novara e Teatro Dante Alighieri di Ravenna nella sola homepage; questi ultimi restano naturalmente nel catalogo nazionale e mantengono le loro schede.
+
+I percorsi sono identificati da `city_slug/venue_slug`, non dal nome ambiguo. Le foto vengono ricavate dall'anagrafica nazionale dei teatri. La card del San Carlo deve essere visibile anche se nel catalogo delle rappresentazioni non sono ancora presenti sue recite: viene costruita dal profilo della sede, con URL e immagine pertinenti, senza inventare alcuno spettacolo. La selezione esatta delle sei sedi, i link e le fonti fotografiche sono soggetti a test automatico.
+
+Collaudo: homepage con le sei card nell'ordine sopra, senza Coccia e Dante nella selezione; presenza di La Fenice (Venezia) e San Carlo (Napoli) con foto corretta, URL canonico e scheda di dettaglio raggiungibile; verifica che Coccia e Dante siano ancora presenti nella directory Teatri.
