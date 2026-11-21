@@ -49,7 +49,7 @@ class Anchors(HTMLParser):
             self.link=dict(attrs).get("href")
             self.parts=[]
     def handle_data(self,data):
-        if self.link is not None:self.parts.append(data)
+        if self.link is not None:self.parts.append(' '+data+' ')
     def handle_endtag(self,tag):
         if tag=="a" and self.link is not None:
             self.items.append((self.link," ".join("".join(self.parts).split())))
