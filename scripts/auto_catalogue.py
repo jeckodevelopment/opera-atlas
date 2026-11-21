@@ -88,9 +88,9 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
                      normalized(x.get("composer","")))
                     for x in rows}
         venues={x.get("venue") for x in rows}
-        if len(identities)!=1 or len(venues)!=1 or
-           next(iter(venues)) not in ("Teatro Comunale di Bologna",
-                                      "Teatro Auditorium Manzoni"):
+        if (len(identities)!=1 or len(venues)!=1 or
+            next(iter(venues)) not in ("Teatro Comunale di Bologna",
+                                       "Teatro Auditorium Manzoni")):
             continue
         title=rows[0].get("event_title")
         composer=rows[0].get("composer")
