@@ -838,6 +838,44 @@
       ]
     },
     {
+      "candidate_id": "oa-index-207df538679e00657fe1",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+      "content_sha256": "beef9ac9d9ef7f2652bb37f9f9f76253ada7f89cb24676025bfb40a4ea5531b7",
+      "checked_at": "2026-11-21T23:40:31+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "BONA SFORZA",
+          "composer": "Zygmunt Krauze",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-09-14",
+          "starts_at": "2026-09-14T20:30:00+02:00"
+        },
+        {
+          "event_title": "BONA SFORZA",
+          "composer": "Zygmunt Krauze",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-09-16",
+          "starts_at": "2026-09-16T20:30:00+02:00"
+        },
+        {
+          "event_title": "BONA SFORZA",
+          "composer": "Zygmunt Krauze",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-09-18",
+          "starts_at": "2026-09-18T18:00:00+02:00"
+        },
+        {
+          "event_title": "BONA SFORZA",
+          "composer": "Zygmunt Krauze",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-09-20",
+          "starts_at": "2026-09-20T18:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
@@ -1615,6 +1653,44 @@
           "date": "2027-12-02",
           "starts_at": "2027-12-02T18:30:00+01:00",
           "venue": "Teatro Massimo"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
+      "content_sha256": "e6290817bc02cbe625145ccd7ceda8faaba54b5b56eadbcd0f7981b51f7d65cf",
+      "checked_at": "2026-11-21T23:40:18+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "IL GOBBO DEL CALIFFO",
+          "composer": "Franco Casavola",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-05-21",
+          "starts_at": "2026-05-21T20:30:00+02:00"
+        },
+        {
+          "event_title": "IL GOBBO DEL CALIFFO",
+          "composer": "Franco Casavola",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-05-22",
+          "starts_at": "2026-05-22T20:30:00+02:00"
+        },
+        {
+          "event_title": "IL GOBBO DEL CALIFFO",
+          "composer": "Franco Casavola",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-05-23",
+          "starts_at": "2026-05-23T18:00:00+02:00"
+        },
+        {
+          "event_title": "IL GOBBO DEL CALIFFO",
+          "composer": "Franco Casavola",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-05-24",
+          "starts_at": "2026-05-24T18:00:00+02:00"
         }
       ]
     },
@@ -3486,6 +3562,58 @@
       "official_season": "2025/2026"
     },
     {
+      "candidate_id": "oa-index-cde049d5c057e0c050b2",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
+      "content_sha256": "04dd9c30323827af2d7fd4d72d9bd1823bec8b700f9688a70f6ffe10c4bba783",
+      "checked_at": "2026-11-21T23:40:21+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-03-07",
+          "starts_at": "2026-03-07T20:30:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-03-08",
+          "starts_at": "2026-03-08T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-03-11",
+          "starts_at": "2026-03-11T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-03-13",
+          "starts_at": "2026-03-13T20:30:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-03-14",
+          "starts_at": "2026-03-14T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-03-15",
+          "starts_at": "2026-03-15T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-ce32b1104cdb579dc299",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
@@ -4118,6 +4246,58 @@
       ]
     },
     {
+      "candidate_id": "oa-index-eedca6da108bd27e8d30",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+      "content_sha256": "9d2d6bffb4afcdcf348a83c51e6aa93f46259b081494880e6809c5c79c3a05f8",
+      "checked_at": "2026-11-21T23:40:24+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-18",
+          "starts_at": "2026-10-18T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-20",
+          "starts_at": "2026-10-20T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-21",
+          "starts_at": "2026-10-21T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-23",
+          "starts_at": "2026-10-23T20:30:00+02:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-25",
+          "starts_at": "2026-10-25T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-27",
+          "starts_at": "2026-10-27T18:00:00+01:00",
+          "venue": "Teatro Petruzzelli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-ef3fc228eb643db30288",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
@@ -4366,6 +4546,44 @@
           "date": "2027-02-28",
           "starts_at": "2027-02-28T15:00:00+01:00",
           "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
+      "content_sha256": "830af2d82d9bf5376e36314dc444e25412e7cf3698e280077b6fa16603d705fa",
+      "checked_at": "2026-11-21T23:40:28+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "LA CECCHINA",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-01-21",
+          "starts_at": "2026-01-21T20:30:00+01:00"
+        },
+        {
+          "event_title": "LA CECCHINA",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-01-23",
+          "starts_at": "2026-01-23T20:30:00+01:00"
+        },
+        {
+          "event_title": "LA CECCHINA",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-01-25",
+          "starts_at": "2026-01-25T18:00:00+01:00"
+        },
+        {
+          "event_title": "LA CECCHINA",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2026-01-28",
+          "starts_at": "2026-01-28T18:00:00+01:00"
         }
       ]
     },
