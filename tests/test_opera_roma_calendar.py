@@ -130,6 +130,23 @@ class RomeOperaTests(unittest.TestCase):
         self.assertTrue(all(x["composer"]=="Christoph Willibald Gluck"
                             for x in rows))
 
+    def test_rome_2027_cyrillic_transliterated_composer_unicode(self):
+        url="https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+        html=page().replace("Lucia di Lammermoor",
+            "Una Lady Macbeth del distretto di Mzensk").replace(
+            "Gaetano Donizetti","Dmitrij Šostakovič")
+        rows=parse_source_credited_opera_detail(SOURCE,url,html)
+        self.assertEqual(len(rows),7)
+        self.assertEqual({x["composer"] for x in rows},{"Dmitrij Šostakovič"})
+        self.assertEqual({x["venue"] for x in rows},{"Teatro dell'Opera di Roma"})
+        for invalid in ("Musica di Autori Vari",
+                        "Musica di Direttore Esemplare",
+                        "Musica di D. 123",
+                        "Musica di Artista <script>"):
+            with self.subTest(invalid=invalid),self.assertRaises(ValueError):
+                parse_roma_credited_detail(html.replace(
+                    "Musica di Dmitrij Šostakovič",invalid),url=url)
+
     def test_same_official_season_september_performances_use_verified_year(self):
         url="https://www.operaroma.it/spettacoli/la-rondine/"
         heading=page().split("<h3>Le date</h3>")[0].replace(
