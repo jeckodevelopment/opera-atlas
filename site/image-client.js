@@ -39,7 +39,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "la-boheme":"La Boheme poster by Hohenstein.PNG",
     "turandot":"Poster Turandot.jpg",
     "salome":"Max Tilke- Poster-of-opera-salome-richard-strauss.jpg",
-    "nabucco":"Nabucco poster.jpg",
+    "nabucco":"Nabucco (libretto, 1842).jpg",
     "otello":"Poster Otello by Giuseppe Verdi.jpg",
     "madama-butterfly":"Hohenstein Madama Butterfly.jpg",
     "don-giovanni":"Theatre Poster for Don Giovanni.jpg",
@@ -129,8 +129,24 @@ window.OperaAtlasImages=Object.freeze((()=>{
   function photo(file,alt,key){
     return {src:commons(file),alt,fallbackSrc:poster(key||alt)};
   }
+  // Permanent, composer-aware historic art for these six opera titles.
+  // Even a cached/stale official-photo feed must not replace their posters.
+  const RESTORED_HISTORIC=Object.freeze({
+    "oa-w-000001":"Traviata.jpg",
+    "oa-w-000002":"1930-Italiana-in-Algeri.jpg",
+    "oa-w-000006":"Pagliacci Original Score Cover.jpg",
+    "oa-w-000010":"\"Eugene Onegin\" opera poster,1937, Yerevan Opera Theatre.jpg",
+    "oa-w-000011":"Poster Turandot.jpg",
+    "oa-w-000025":"Nabucco (libretto, 1842).jpg"
+  });
   function work(event){
     const title=event?.title||"Opera";
+    const pinned=RESTORED_HISTORIC[event?.work_id];
+    if(pinned)return {src:commons(pinned),
+      alt:"Manifesto o frontespizio storico di "+title,
+      fallbackSrc:null,kind:"archival_work_image",
+      sourceUrl:"https://commons.wikimedia.org/wiki/File:"+
+        encodeURIComponent(pinned.replaceAll(" ","_"))};
     const slug=event?.work_slug||normalize(title);
     // V2 is keyed by permanent work ID, not by title; e.g. Puccini and
     // Leoncavallo both have an opera called La bohème.
