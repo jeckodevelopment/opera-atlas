@@ -776,6 +776,26 @@ def enrich_double_bill_times(facts:dict,evidence:dict,candidates:dict,previous:d
         total+=added
     return result,total
 
+def merge_official_poster_cache(previous:dict|None,additions:dict)->dict|None:
+    """Merge only newly verified official images; archival images need no cache write.
+
+    For archival-only new works the poster generator resolves the independently
+    verified Commons provenance from the stable archival registry.
+    """
+    if not additions:
+        return None
+    if (not isinstance(previous,dict)
+            or previous.get("schema_version")!=2
+            or not isinstance(previous.get("posters"),dict)):
+        raise ValueError("invalid existing artwork evidence")
+    merged=copy.deepcopy(previous)
+    for work_id,proof in additions.items():
+        if not isinstance(proof,dict) or proof.get("work_id")!=work_id:
+            raise ValueError("inconsistent official poster work identity")
+        merged["posters"][work_id]=proof
+    return merged
+
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -853,12 +873,8 @@ def main():
     previous_images=None
     if image_additions:
         from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
-        previous_images=json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8"))
-        if (previous_images.get("schema_version")!=2
-                or not isinstance(previous_images.get("posters"),dict)):
-            raise ValueError("invalid existing artwork evidence")
-        for work_id,proof in image_additions.items():
-            previous_images["posters"][work_id]=proof
+        previous_images=merge_official_poster_cache(
+            json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8")),image_additions)
     if report["new_recite"]:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
