@@ -30,6 +30,36 @@ class CanonicalEditorialReuseTests(unittest.TestCase):
             "title":original["title"],"composer":original["composer"],
             "wikidata_id":"Q999999999","title_candidate_count":1}))
 
+    def test_translated_title_reuses_only_when_qid_is_exact(self):
+        from scripts.publish_catalog_v2 import REGISTRY
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        # A published canonical work with its own independently verified QID.
+        sourced=next((w for w in registry["works"].values()
+                      if isinstance(w.get("wikidata_id"),str)),None)
+        self.assertIsNotNone(sourced)
+        qid=sourced["wikidata_id"]
+        identity={"title":"Alternative exact title for testing",
+                  "composer":sourced["composer"],"wikidata_id":qid,
+                  "title_candidate_count":2}
+        result=canonical_editorial_material(identity)
+        self.assertIsNotNone(result)
+        self.assertGreaterEqual(len(result["synopsis"]),45)
+        self.assertIsNone(canonical_editorial_material(
+            {**identity,"wikidata_id":"Q999999999"}))
+
+    def test_retry_report_includes_verified_candidate_context(self):
+        candidate={"id":"ctx-test","source_key":"scala-season-2026-27",
+                   "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-ctx.html",
+                   "status":"needs_review"}
+        result,status=research({"candidates":[candidate]},
+                               {"schema_version":1,"works":[]},set(),
+                               today=date(2026,11,21),prepared={},
+                               resolve=lambda _:None)
+        self.assertEqual(result["works"],[])
+        self.assertEqual(status[0]["source_key"],candidate["source_key"])
+        self.assertEqual(status[0]["official_url"],candidate["official_url"])
+        self.assertEqual(status[0]["title_hint"],"unknown ctx")
+
     def test_completed_exact_qid_reused_between_venues(self):
         previous={"candidate_id":"previous","source_key":"fenice-opera-2026-27",
                   "source_url":"https://www.teatrolafenice.it/event/norma/",
