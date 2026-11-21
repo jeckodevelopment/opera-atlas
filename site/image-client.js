@@ -125,7 +125,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     // Leoncavallo both have an opera called La bohème.
     // Legacy title-keyed artwork is not authoritative for a canonical work.
     // Only work-ID keyed evidence may select a published poster.
-    const chosen=(posterSchema===2 && event?.work_id ? posters[event.work_id] : null);
+    const chosen=(posterSchema===2 && event?.work_id ? posters[event?.work_id] : null);
     if(chosen && (chosen.kind==="official_production_image" ||
                   chosen.kind==="archival_work_image") &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
