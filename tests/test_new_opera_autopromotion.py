@@ -40,6 +40,35 @@ class NewOperaPromotionTests(unittest.TestCase):
         }]}
         return evidence,candidates,enrichment
 
+    def test_new_work_is_deferred_until_authentic_poster_is_verified(self):
+        evidence,candidates,enrichment=self.fixture()
+        skipped=promote_new_works(
+            self.facts,self.registry,evidence,candidates,enrichment,
+            self.editorial,[],today=date(2026,11,20),require_image=True)
+        self.assertEqual(skipped[-1]["new_works"],0)
+        self.assertTrue(any(x["reason"]=="verified_work_image_missing"
+                            for x in skipped[-1]["auto_skipped"]))
+        self.assertEqual(skipped[1],self.registry)
+
+        poster={"image_url":"https://www.teatroallascala.org/static/upload/fixture/fixture-opera-poster.jpg",
+                "source_url":URL,"kind":"official_production_image",
+                "alt":"Fixture Opera, immagine ufficiale", "credit":"Teatro alla Scala"}
+        evidence["evidence"][0]["poster_evidence"]=poster
+        result=promote_new_works(
+            self.facts,self.registry,evidence,candidates,enrichment,
+            self.editorial,[],today=date(2026,11,20),require_image=True)
+        self.assertEqual(result[-1]["new_works"],1)
+        for invalid in (
+            {**poster,"image_url":"https://example.org/fixture-opera.jpg"},
+            {**poster,"image_url":"https://www.teatroallascala.org/static/upload/other/nabucco.jpg"},
+            {**poster,"source_url":"https://www.teatroallascala.org/it/fake.html"},
+        ):
+            evidence["evidence"][0]["poster_evidence"]=invalid
+            denied=promote_new_works(
+                self.facts,self.registry,evidence,candidates,enrichment,
+                self.editorial,[],today=date(2026,11,20),require_image=True)
+            self.assertEqual(denied[-1]["new_works"],0)
+
     def test_new_opera_and_synopsis_are_published_as_one_graph(self):
         evidence,candidates,enrichment=self.fixture()
         facts,ids,urls,editorial,report=promote_new_works(
