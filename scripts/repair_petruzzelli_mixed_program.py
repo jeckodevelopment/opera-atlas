@@ -3,7 +3,7 @@
 The 2026 first-run parser matched the cross-linked title "La traviata" on
 other operas' pages. In 2027 a combined L'Arlésienne/Pagliacci programme
 was published as solo Pagliacci. Every immutable ID is checked before any
-correction; authentic La traviata, Nabucco and all other venues are retained.
+correction; authentic La traviata, Nabucco, Rossini's Barbiere and all other venues are retained.
 """
 from __future__ import annotations
 import copy
@@ -25,8 +25,6 @@ WRONG=(
      "La traviata","Giuseppe Verdi","2026-09-14,16,18,20"),
     ("auto-663c5bda82d136bb","il-gobbo-del-califfo-casavola-21-24-maggio",
      "La traviata","Giuseppe Verdi","2026-05-21,22,23,24"),
-    ("auto-8d2b9a6be734bb24","il-barbiere-di-siviglia-rossini-16-22-dicembre",
-     "La traviata","Giuseppe Verdi","2026-12-16,17,18,19,20,22"),
     ("auto-eedca6da108bd27e","il-trovatore-verdi-18-27-ottobre",
      "La traviata","Giuseppe Verdi","2026-10-18,20,21,23,25,27"),
 )

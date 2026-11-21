@@ -15,7 +15,7 @@ class IncorrectPetruzzelliRepairTests(unittest.TestCase):
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
 
-    def test_only_six_wrong_stagings_are_quarantined_idempotently(self):
+    def test_only_known_wrong_stagings_are_quarantined_idempotently(self):
         keys={x[0] for x in WRONG}
         bad_urls={BASE+x[1]+"/" for x in WRONG}
         preserved=[p for p in self.facts["productions"] if p["key"] not in keys]
@@ -40,6 +40,8 @@ class IncorrectPetruzzelliRepairTests(unittest.TestCase):
                             and "la-traviata-verdi" in p["source_url"]
                             for p in facts["productions"]))
         self.assertTrue(assemble(facts,ids,approved_extra=set(urls))["performances"])
+        self.assertIn("auto-8d2b9a6be734bb24",ids["stagings"])
+        self.assertTrue(any(p["title"]=="Il barbiere di Siviglia" and p["municipality"]=="Bari" for p in facts["productions"]))
         again,again_ids,again_urls,second=repair(facts,ids,urls)
         self.assertEqual(second,0)
         self.assertEqual(again,facts)

@@ -93,8 +93,10 @@ class PetruzzelliTests(unittest.TestCase):
               '<h2>Orari Spettacoli</h2>'
               '<p>MERCOLEDì 16 DICEMBRE 2026 - 20:30 | TURNO A</p>'
               '<h3>Interpretato Da</h3>')
-        self.assertEqual(parse_known_opera_detail("petruzzelli-opera-2026",
-                                                  url,html,self.registry),[])
+        rows=parse_known_opera_detail("petruzzelli-opera-2026",url,html,self.registry)
+        self.assertEqual(len(rows),1)
+        self.assertEqual((rows[0]["event_title"],rows[0]["composer"]),
+                         ("Il barbiere di Siviglia","Gioachino Rossini"))
         with self.assertRaises(ValueError):
             parse_petruzzelli_detail(html,url=url,title="La traviata",
                                      composer="Giuseppe Verdi",season_year=2026)
@@ -103,6 +105,29 @@ class PetruzzelliTests(unittest.TestCase):
                                               composer="Gioachino Rossini"))
         self.assertFalse(verified_work_heading(html,title="La traviata",
                                                composer="Giuseppe Verdi"))
+
+    def test_barbiere_2026_is_canonically_published_with_verified_poster(self):
+        from scripts.publish_work_posters import OUTPUT as POSTERS
+        url="https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+        matches=[p for p in self.facts["productions"] if p["source_url"]==url]
+        self.assertEqual(len(matches),1)
+        production=matches[0]
+        self.assertEqual((production["title"],production["composer"]),
+                         ("Il barbiere di Siviglia","Gioachino Rossini"))
+        self.assertEqual(production["dates"],[
+            ["2026-12-16","20:30"],["2026-12-17","20:30"],
+            ["2026-12-18","20:30"],["2026-12-19","18:00"],
+            ["2026-12-20","18:00"],["2026-12-22","18:00"]])
+        identity=self.registry["works"]["il barbiere di siviglia|gioachino rossini"]
+        self.assertEqual(identity["id"],"oa-w-000038")
+        staging=self.registry["stagings"][production["key"]]
+        self.assertEqual(staging["work_id"],identity["id"])
+        self.assertEqual(staging["venue_id"],self.registry["venues"]["Bari|Teatro Petruzzelli"]["id"])
+        catalog=assemble(self.facts,self.registry)
+        self.assertEqual(sum(x["staging_id"]==staging["id"]
+                             for x in catalog["performances"]),6)
+        posters=json.loads(POSTERS.read_text(encoding="utf-8"))["works"]
+        self.assertEqual(posters[identity["id"]]["kind"],"archival_work_image")
 
     def test_seven_verified_nabucco_recite_and_no_conference(self):
         venue,dates=parse_petruzzelli_detail(

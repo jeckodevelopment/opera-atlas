@@ -1706,6 +1706,60 @@
       ]
     },
     {
+      "id": "curated:auto-8d2b9a6be734bb24:2026-12-16",
+      "starts_at": "2026-12-16T20:30:00+01:00",
+      "local_date": "2026-12-16",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-8d2b9a6be734bb24:2026-12-17",
+      "starts_at": "2026-12-17T20:30:00+01:00",
+      "local_date": "2026-12-17",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-8d2b9a6be734bb24:2026-12-18",
+      "starts_at": "2026-12-18T20:30:00+01:00",
+      "local_date": "2026-12-18",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+      ]
+    },
+    {
       "id": "curated:auto-1fdf598fde99e1e3:2026-12-19",
       "starts_at": "2026-12-19T17:00:00+01:00",
       "local_date": "2026-12-19",
@@ -1721,6 +1775,24 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/il-pipistrello/"
+      ]
+    },
+    {
+      "id": "curated:auto-8d2b9a6be734bb24:2026-12-19",
+      "starts_at": "2026-12-19T18:00:00+01:00",
+      "local_date": "2026-12-19",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
       ]
     },
     {
@@ -1757,6 +1829,42 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+      ]
+    },
+    {
+      "id": "curated:auto-8d2b9a6be734bb24:2026-12-20",
+      "starts_at": "2026-12-20T18:00:00+01:00",
+      "local_date": "2026-12-20",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-8d2b9a6be734bb24:2026-12-22",
+      "starts_at": "2026-12-22T18:00:00+01:00",
+      "local_date": "2026-12-22",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
       ]
     },
     {

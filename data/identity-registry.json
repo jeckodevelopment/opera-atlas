@@ -226,6 +226,12 @@
       "title": "Les contes d'Hoffmann",
       "composer": "Jacques Offenbach",
       "wikidata_id": "Q335012"
+    },
+    "il barbiere di siviglia|gioachino rossini": {
+      "id": "oa-w-000038",
+      "slug": "il-barbiere-di-siviglia",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini"
     }
   },
   "venues": {
@@ -1049,6 +1055,14 @@
       "slug": "adriana-lecouvreur",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "season": "2027"
+    },
+    "auto-8d2b9a6be734bb24": {
+      "id": "oa-s-000087",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000018",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -3547,6 +3561,42 @@
       "staging_id": "oa-s-000086",
       "original_date": "2027-10-19",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+    },
+    "auto-8d2b9a6be734bb24|2026-12-16": {
+      "id": "oa-r-000432",
+      "staging_id": "oa-s-000087",
+      "original_date": "2026-12-16",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+    },
+    "auto-8d2b9a6be734bb24|2026-12-17": {
+      "id": "oa-r-000433",
+      "staging_id": "oa-s-000087",
+      "original_date": "2026-12-17",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+    },
+    "auto-8d2b9a6be734bb24|2026-12-18": {
+      "id": "oa-r-000434",
+      "staging_id": "oa-s-000087",
+      "original_date": "2026-12-18",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+    },
+    "auto-8d2b9a6be734bb24|2026-12-19": {
+      "id": "oa-r-000435",
+      "staging_id": "oa-s-000087",
+      "original_date": "2026-12-19",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+    },
+    "auto-8d2b9a6be734bb24|2026-12-20": {
+      "id": "oa-r-000436",
+      "staging_id": "oa-s-000087",
+      "original_date": "2026-12-20",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+    },
+    "auto-8d2b9a6be734bb24|2026-12-22": {
+      "id": "oa-r-000437",
+      "staging_id": "oa-s-000087",
+      "original_date": "2026-12-22",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
     }
   }
 }
