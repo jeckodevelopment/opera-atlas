@@ -345,6 +345,10 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                    if isinstance(x,dict) and isinstance(x.get("composer"),str)
                    and x["composer"].strip()}
         # Multiple contradictory composer observations cannot be resolved.
+        if len(composers)>1:
+            statuses.append({"candidate_id":cid,"status":"automatic_retry",
+                             "reason":"conflicting_official_composers"})
+            continue
         composer_hint=next(iter(composers.values())) if len(composers)==1 else None
         if not api_key and not (allow_authority and material):
             statuses.append({"candidate_id":cid,"status":"model_not_configured"})
