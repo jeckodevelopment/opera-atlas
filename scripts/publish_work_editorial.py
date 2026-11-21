@@ -65,11 +65,19 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
             raise ValueError("invalid short synopsis: " + work["slug"])
         historical=history_by_id.get(work["id"],history["works"].get(work["slug"]))
         official_url=work.get("authority_url")
+        # Source-agnostic verified first-party identity. A source must be
+        # officially approved, its production URL eligible, and a canonical
+        # staging for this very work must point to that exact document.
+        from urllib.parse import urlsplit
+        from scripts.discover_season_indexes import CONFIG,validate_config,eligible
+        configured={x["key"]:x for x in validate_config(json.loads(
+            CONFIG.read_text(encoding="utf-8")))
+            if x["access_status"]=="approved"}
         has_first_party_authority=(
             isinstance(official_url,str) and
-            bool(__import__("re").fullmatch(
-                r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
-                official_url)) and
+            any(eligible(key,official_url)
+                and urlsplit(source["official_url"]).hostname==urlsplit(official_url).hostname
+                for key,source in configured.items()) and
             any(stage["work_id"]==work["id"] and stage["source_url"]==official_url
                 for stage in graph["stagings"]))
         has_verified_authority=(
