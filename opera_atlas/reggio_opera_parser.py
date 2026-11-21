@@ -8,7 +8,7 @@ from opera_atlas.national_detail_parser import clean
 
 HOST="www.iteatri.re.it"
 KEY="reggio-valli-opera-2026-27"
-VENUE="Teatro Valli"
+VENUES={"Teatro Municipale Valli":"Teatro Valli","Teatro Ariosto":"Teatro Ariosto"}
 TITLE_RE=re.compile(r"^(.+?)$")
 
 
@@ -44,11 +44,11 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     body=clean(html)
     # Scope to the single work, never the recommended concerts in the footer.
     start=body.find(title)
-    category=re.search(r"\bTeatro Municipale Valli\s+Opera\b",body[start:],re.I)
+    category=re.search(r"\b(Teatro Municipale Valli|Teatro Ariosto)\s+Opera\b",body[start:],re.I)
     if start<0 or not category:
-        raise ValueError("not an opera at Teatro Municipale Valli")
+        raise ValueError("not an opera at an approved Reggio Emilia venue")
     leading=body[start:start+category.end()]
-    m=re.search(r"\bMusica di\s+(.+?)\s+(?:Cast|Descrizione|Extra|Acquista)\b",leading,re.I)
+    m=re.search(r"\bMusica\s+di\s+(.+?)\s+(?:Libretto|Cast|Descrizione|Extra|Acquista)\b",leading,re.I)
     if not m:raise ValueError("official opera composer missing")
     composer=" ".join(m.group(1).split())
     if (not re.fullmatch(r"[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3}",composer)):
@@ -79,4 +79,4 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         raise ValueError("no ordinary ticketed Valli recite")
     if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",leading):
         raise ValueError("cancelled event requires review")
-    return title,composer,VENUE,sorted(found.items())
+    return title,composer,VENUES[category.group(1)],sorted(found.items())
