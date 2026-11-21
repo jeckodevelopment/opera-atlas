@@ -287,7 +287,7 @@ biografia; tratta gli orari individualmente e non pubblica spettacoli
 con data o sede ambigue.
 
 La scheda breve e la storia della prima versione riveduta del 1831
-(Milano, Teatro alla Canobbiana) sono legate all'esatto evento ufficiale
+(Napoli, Teatro del Fondo) sono legate all'esatto evento ufficiale
 nel registro delle fonti. L'opera originaria del 1827 è distinta dalla
 versione riveduta del 1831 nella documentazione storica. Come immagine
 stabile si utilizza una pagina autografa di Donizetti, digitalizzata
