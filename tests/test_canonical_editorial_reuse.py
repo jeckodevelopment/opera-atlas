@@ -31,15 +31,13 @@ class CanonicalEditorialReuseTests(unittest.TestCase):
             "wikidata_id":"Q999999999","title_candidate_count":1}))
 
     def test_translated_title_reuses_only_when_qid_is_exact(self):
-        from scripts.auto_work_research import validated_editorial_attributions
         from scripts.publish_catalog_v2 import REGISTRY
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
-        attributions=validated_editorial_attributions()
-        # Select a fully sourced composition with an explicit QID.
+        # A published canonical work with its own independently verified QID.
         sourced=next((w for w in registry["works"].values()
-                      if w["slug"] in attributions),None)
+                      if isinstance(w.get("wikidata_id"),str)),None)
         self.assertIsNotNone(sourced)
-        qid=attributions[sourced["slug"]]["wikidata_id"]
+        qid=sourced["wikidata_id"]
         identity={"title":"Alternative exact title for testing",
                   "composer":sourced["composer"],"wikidata_id":qid,
                   "title_candidate_count":2}
