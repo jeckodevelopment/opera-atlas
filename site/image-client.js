@@ -20,6 +20,16 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "ravenna":"Teatro Dante Alighieri Ravenna.jpg",
     "pesaro":"TeatroRossiniPesaro.jpg"
   };
+  // Legacy homepage cards without a venue-directory record: exact identities only.
+  const VENUE_NAMES={
+    "torino":["Teatro Regio"],"como":["Teatro Sociale"],"pavia":["Teatro Fraschini"],
+    "brescia":["Teatro Grande"],"cremona":["Teatro Ponchielli"],
+    "milano":["Teatro alla Scala"],"verona":["Arena di Verona"],
+    "venezia":["Teatro La Fenice"],"palermo":["Teatro Massimo"],
+    "parma":["Teatro Regio di Parma"],"novara":["Teatro Coccia"],
+    "bergamo":["Teatro Donizetti"],"reggio emilia":["Teatro Valli"],
+    "ravenna":["Teatro Dante Alighieri"],"pesaro":["Teatro Rossini"]
+  };
   const WORKS={
     "la-traviata":"Traviata.jpg",
     "carmen":"1875 Carmen poster.jpg",
@@ -169,7 +179,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     // Never infer a photographed building from its city. A city can host
     // multiple theatres, including distinct historic and temporary venues.
     const file=typeof verified==="string" && /^[^/\\]+\.(jpe?g|png|webp)$/i.test(verified)
-      ? verified : null;
+      ? verified : (VENUE_NAMES[city]?.includes(title) ? FILES[city] : null);
     if(!file)return {src:poster(title,"venue"),alt:"Illustrazione editoriale del "+title};
     const result=photo(file,"Fotografia del "+title+" a "+(event?.municipality||event?.city),title);
     if(verified && event.photo_source_url)result.sourceUrl=event.photo_source_url;
