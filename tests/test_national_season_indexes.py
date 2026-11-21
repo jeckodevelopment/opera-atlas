@@ -100,12 +100,13 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual(len(urls),2)
         self.assertFalse(any("brahms" in x for x in urls))
 
-    def test_all_eight_indexes_are_explicitly_configured(self):
+    def test_all_nine_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
             "scala-season-2026-27", "arena-festival-2027",
             "fenice-opera-2026-27","parma-opera-2027",
             "massimo-season-2026-27","carlo-felice-season-2026-27",
-            "donizetti-opera-2026","teatro-grande-opera-2026"})
+            "donizetti-opera-2026","teatro-grande-opera-2026",
+            "maggio-fiorentino-calendar-2027"})
 
     def test_incomplete_index_is_rejected(self):
         with self.assertRaises(ValueError):
@@ -145,7 +146,8 @@ class NationalIndexTests(unittest.TestCase):
                        now="2026-11-20T20:00:00+00:00")
         self.assertEqual(second,first)
         self.assertEqual([x["status"] for x in status[:3]],["success"]*3)
-        self.assertEqual([x["status"] for x in status[3:]],["blocked"]*5)
+        self.assertEqual([x["status"] for x in status[3:]],
+                         ["blocked"]*(len(self.config["sources"])-3))
     def test_first_live_scan_support_pages_are_not_opera(self):
         for suffix in ("regolamento","preparati-allopera",
                        "spettacoli-prossima-stagione","roberto-bolle-friends",

@@ -29,6 +29,7 @@ VENUE_BY_SOURCE={
     "carlo-felice-season-2026-27":("Genova","Teatro Carlo Felice"),
     "donizetti-opera-2026":("Bergamo","Teatro Donizetti"),
     "teatro-grande-opera-2026":("Brescia","Teatro Grande"),
+    "maggio-fiorentino-calendar-2027":("Firenze","Teatro del Maggio Musicale Fiorentino"),
 }
 
 def verified_venue(source_key:str,rows:list[dict],registry:dict):
@@ -50,7 +51,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Genova":"Liguria","Bergamo":"Lombardia"}.get(city)
+    region={"Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue

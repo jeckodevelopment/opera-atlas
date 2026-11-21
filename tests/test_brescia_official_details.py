@@ -104,8 +104,10 @@ class BresciaDetailsTests(unittest.TestCase):
                                    "official_url":SINGLE,"status":"needs_review"}]}
         original=json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
         updated,count=enrich_existing_times(facts,evidence,candidates,original)
-        self.assertEqual(count,2)
-        self.assertEqual(len(updated["times"]),len(original["times"])+2)
+        expected=sum(1 for day in ("2026-11-26","2026-11-28")
+                     if "lombardia-italiana-brescia|"+day not in original["times"])
+        self.assertEqual(count,expected)
+        self.assertEqual(len(updated["times"]),len(original["times"])+expected)
         self.assertEqual(updated["times"]["lombardia-italiana-brescia|2026-11-26"],
                          {"time":"20:00","url":SINGLE})
         self.assertEqual(updated["times"]["lombardia-italiana-brescia|2026-11-28"],
