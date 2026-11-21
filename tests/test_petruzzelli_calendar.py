@@ -43,7 +43,7 @@ class PetruzzelliTests(unittest.TestCase):
 
     def test_index_only_approved_official_detail_pages(self):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
-        self.assertEqual(len(validate_config(config)),11)
+        self.assertEqual(len(validate_config(config)),12)
         self.assertTrue(eligible(SOURCE,DETAIL))
         links=extract(SOURCE,INDEX,
             '<a href="/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/">Nabucco</a>'
