@@ -326,7 +326,7 @@ def parse_official_parma_work_detail(url:str,html:str)->list[dict]:
         raise ValueError("unverified Parma performance venue")
     credit=re.compile(
         r"(?i)\bmusica\s+"
-        r"([A-ZÀ-Ž][\\w'’.-]+(?:\s+[A-ZÀ-Ž][\\w'’.-]+){1,5})"
+        r"([A-ZÀ-Ž][\w'’.-]+(?:\s+[A-ZÀ-Ž][\w'’.-]+){1,5})"
         r"\s+(?=(?:Dramma|Opera|Commedia|Libretto|Melodramma|"
         r"Singspiel|Farsa|Oratorio|Tragedia)\b)")
     matches=credit.findall(section)
