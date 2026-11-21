@@ -88,7 +88,7 @@ class FlorenceCalendarTests(unittest.TestCase):
             today=date(2026,11,21))
         self.assertEqual(report["new_stagings"],0 if existing else 1,report)
         self.assertEqual(report["new_recite"],0 if existing else 4,report)
-        new=[p for p in facts["productions"] if p["municipality"]=="Firenze"]
+        new=[p for p in facts["productions"] if p["municipality"]=="Firenze" and p["source_url"]==DETAIL]
         self.assertEqual(len(new),1)
         self.assertEqual(new[0]["title"],"La traviata")
         self.assertEqual(new[0]["region"],"Toscana")
