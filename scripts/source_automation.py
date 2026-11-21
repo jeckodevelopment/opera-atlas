@@ -27,6 +27,7 @@ INDEX_VENUES = {
     "bellini-catania-opera-2026-27": ("Catania|Teatro Massimo Bellini",),
     "modena-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
     "giglio-lucca-opera-2026-27": ("Lucca|Teatro del Giglio Giacomo Puccini",),
+    "piacenza-opera-2026-27": ("Piacenza|Teatro Municipale",),
     "arena-festival-2027": ("Verona|Arena di Verona",),
     "fenice-opera-2026-27": ("Venezia|Teatro La Fenice", "Venezia|Teatro Malibran"),
     "parma-opera-2027": ("Parma|Teatro Regio di Parma",),
