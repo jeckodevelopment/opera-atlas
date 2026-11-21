@@ -54,12 +54,34 @@ class AtlasHomeRefinementTests(unittest.TestCase):
         self.assertEqual(carlo["photo_file"],"Genova - Teatro Carlo Felice.jpg")
         self.assertIn("const homeVenueProfiles=new Map()",home)
         self.assertIn("const entries=await window.OperaAtlasCatalog.venues()",home)
-        self.assertIn('const path=event.city_slug+"/"+event.venue_slug',home)
+        self.assertIn('const path of HOME_THEATRE_ROUTES',home)
         self.assertIn("photo_file:profile?.photo_file",home)
         self.assertIn("loadHomeVenueProfiles().catch",home)
         self.assertIn('city==="genova" && title==="Teatro Carlo Felice"',images)
         self.assertIn('"Genova - Teatro Carlo Felice.jpg"',images)
         self.assertIn("const verified=event?.photo_file || knownVenueFile;",images)
+
+    def test_curated_home_theatres_have_requested_six_venues(self):
+        import re,json
+        home=(SITE/"app.js").read_text(encoding="utf-8")
+        raw=home.split("const HOME_THEATRE_ROUTES=Object.freeze([",1)[1].split("]);",1)[0]
+        routes=re.findall(r'"([a-z-]+/[a-z-]+)"',raw)
+        self.assertEqual(routes,[
+            "torino/teatro-regio","verona/arena-di-verona",
+            "milano/teatro-alla-scala","genova/teatro-carlo-felice",
+            "venezia/teatro-la-fenice","napoli/teatro-di-san-carlo"])
+        self.assertNotIn("novara/teatro-coccia",routes)
+        self.assertNotIn("ravenna/teatro-dante-alighieri",routes)
+        self.assertIn("for(const path of HOME_THEATRE_ROUTES)",home)
+        self.assertIn("const matching=[...venues].find",home)
+        self.assertIn("const event=matching?.[1] || (profile ?",home)
+        self.assertIn("window.OperaAtlasCatalog.urls(event).venue",home)
+        directory=json.loads((SITE.parent/"data/venue-directory.json").read_text(encoding="utf-8"))
+        records={v["city_slug"]+"/"+v["slug"]:v for v in directory["venues"]}
+        for route in routes:
+            self.assertIn(route,records)
+            self.assertTrue(records[route].get("photo_file"),route)
+            self.assertTrue(records[route].get("photo_source_url","").startswith("https://commons.wikimedia.org/"),route)
 
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_distinct_archival_works_not_fictional_primary_poster(self):
