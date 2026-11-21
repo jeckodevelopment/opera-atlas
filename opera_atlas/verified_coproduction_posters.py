@@ -21,13 +21,18 @@ def verified_coproduction_poster(*,source_url:str,title:str,composer:str)->dict|
     doc=json.loads(REGISTRY.read_text(encoding="utf-8"))
     if doc.get("schema_version")!=1 or not isinstance(doc.get("posters"),list):
         raise ValueError("invalid verified co-production poster registry")
+    # Case is presentation, not a different composition. Keep the exact
+    # official URL and full composer bound, and do not normalize away any
+    # other title characters or punctuation.
     matches=[x for x in doc["posters"]
-             if (x.get("source_url"),x.get("title"),x.get("composer"))
-                ==(source_url,title,composer)]
+             if x.get("source_url")==source_url
+             and isinstance(x.get("title"),str)
+             and x["title"].casefold()==title.casefold()
+             and x.get("composer")==composer]
     if len(matches)>1:raise ValueError("ambiguous co-production poster")
     if not matches:return None
     row=matches[0]
-    expected=APPROVED_PROVENANCE.get((source_url,title,composer))
+    expected=APPROVED_PROVENANCE.get((source_url,row["title"],composer))
     if not expected or (row.get("provenance_url"),row.get("image_url"))!=expected:
         return None
     for key in ("image_url","source_url","provenance_url"):
