@@ -531,7 +531,7 @@ document.getElementById("locate-me").addEventListener("click",()=>{
 document.getElementById("reset").addEventListener("click",()=>{
   controls.query.value=controls.city.value=controls.region.value=controls.time.value="";
   controls.location.value="Torino";controls.radius.value="100";controls.period.value="30";controls.sort.value="date";
-  automaticPeriod=true;syncPeriod();page=0;render();
+  automaticPeriod=true;automaticPeriodNotice="";syncPeriod();page=0;render();
 });
 prev.addEventListener("click",()=>{page--;render();});
 next.addEventListener("click",()=>{page++;render();});
