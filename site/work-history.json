@@ -714,6 +714,16 @@
         "https://www.operaroma.it/spettacoli/code-unknown/",
         "https://www.operaroma.it/news/il-dolce-suono-mi-colpi-la-stagione-2026-2027-del-teatro-dellopera-di-roma/"
       ]
+    },
+    "siberia": {
+      "librettist": "Luigi Illica",
+      "premiere_year": 1903,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/libretto/DMBM16973",
+        "https://www.magiadellopera.com/pdf/aavv_pdf/2013/Giordano-Umberto.pdf"
+      ]
     }
   },
   "works_by_id": {

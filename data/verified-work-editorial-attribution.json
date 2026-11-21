@@ -54,6 +54,12 @@
       "composer": "Vincenzo Bellini",
       "wikidata_id": "Q320353",
       "synopsis_source": "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/norma-20302/"
+    },
+    {
+      "slug": "siberia",
+      "composer": "Umberto Giordano",
+      "wikidata_id": "Q2292268",
+      "synopsis_source": "https://www.magiadellopera.com/pdf/aavv_pdf/2013/Giordano-Umberto.pdf"
     }
   ]
 }
