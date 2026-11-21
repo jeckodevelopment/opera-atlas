@@ -9,7 +9,7 @@ KEY="lirico-cagliari-opera-2027"
 INDEX="https://www.liricocagliari.it/categoria-evento/opera/"
 DETAIL="https://www.liricocagliari.it/evento/don-carlos/"
 
-def html(dates, title="Don Carlos", composer="Giuseppe Verdi"):
+def html(dates, title="Don Carlos", composer="Giuseppe Verdi", extra_heading=False):
     return (
         "<html><nav><h2>Opera</h2><h2>Stagione 2027</h2></nav>"
         "<main><h1>"+title+"</h1><h2>"+composer+"</h2>"
@@ -17,7 +17,7 @@ def html(dates, title="Don Carlos", composer="Giuseppe Verdi"):
         "<span>ore 20:00 merc 24/06</span>"
         +dates+
         "<h3>Personaggi e interpreti</h3><p>Cast: 23/01</p>"
-        "</main><aside><h1>Other work</h1></aside></html>"
+        "</main>"+("<aside><h1>Other work</h1></aside>" if extra_heading else "")+"</html>"
     )
 
 class CagliariSourceTests(unittest.TestCase):
@@ -69,7 +69,7 @@ class CagliariSourceTests(unittest.TestCase):
 
     def test_ambiguous_other_work_heading_rejected(self):
         with self.assertRaises(ValueError):
-            parse_detail(html("<p>ore 19:00 ven 22/01/2027</p>"),url=DETAIL)
+            parse_detail(html("<p>ore 19:00 ven 22/01/2027</p>",extra_heading=True),url=DETAIL)
 
 if __name__=="__main__":
     unittest.main()
