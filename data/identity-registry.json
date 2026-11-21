@@ -302,6 +302,20 @@
       "title": "Fidelio",
       "composer": "Ludwig van Beethoven",
       "authority_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+    },
+    "leonora|ferdinando paër": {
+      "id": "oa-w-000049",
+      "slug": "leonora",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "authority_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+    },
+    "les pêcheurs de perles|georges bizet": {
+      "id": "oa-w-000050",
+      "slug": "les-pecheurs-de-perles",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "authority_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
     }
   },
   "venues": {
@@ -1253,6 +1267,22 @@
       "slug": "fidelio",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/",
       "season": "2027"
+    },
+    "auto-eaefe8edde44acf2": {
+      "id": "oa-s-000102",
+      "work_id": "oa-w-000049",
+      "venue_id": "oa-v-000006",
+      "slug": "leonora",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
+      "season": "2026-2027"
+    },
+    "auto-ecad847d0d03d7d7": {
+      "id": "oa-s-000103",
+      "work_id": "oa-w-000050",
+      "venue_id": "oa-v-000006",
+      "slug": "les-pecheurs-de-perles",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
+      "season": "2026-2027"
     }
   },
   "performances": {
@@ -4189,6 +4219,72 @@
       "staging_id": "oa-s-000101",
       "original_date": "2027-11-25",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+    },
+    "auto-eaefe8edde44acf2|2027-09-11": {
+      "id": "oa-r-000505",
+      "staging_id": "oa-s-000102",
+      "original_date": "2027-09-11",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+    },
+    "auto-eaefe8edde44acf2|2027-09-13": {
+      "id": "oa-r-000506",
+      "staging_id": "oa-s-000102",
+      "original_date": "2027-09-13",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+    },
+    "auto-eaefe8edde44acf2|2027-09-15": {
+      "id": "oa-r-000507",
+      "staging_id": "oa-s-000102",
+      "original_date": "2027-09-15",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+    },
+    "auto-eaefe8edde44acf2|2027-09-18": {
+      "id": "oa-r-000508",
+      "staging_id": "oa-s-000102",
+      "original_date": "2027-09-18",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+    },
+    "auto-eaefe8edde44acf2|2027-09-23": {
+      "id": "oa-r-000509",
+      "staging_id": "oa-s-000102",
+      "original_date": "2027-09-23",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+    },
+    "auto-eaefe8edde44acf2|2027-09-26": {
+      "id": "oa-r-000510",
+      "staging_id": "oa-s-000102",
+      "original_date": "2027-09-26",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+    },
+    "auto-ecad847d0d03d7d7|2027-01-22": {
+      "id": "oa-r-000511",
+      "staging_id": "oa-s-000103",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+    },
+    "auto-ecad847d0d03d7d7|2027-01-24": {
+      "id": "oa-r-000512",
+      "staging_id": "oa-s-000103",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+    },
+    "auto-ecad847d0d03d7d7|2027-01-27": {
+      "id": "oa-r-000513",
+      "staging_id": "oa-s-000103",
+      "original_date": "2027-01-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+    },
+    "auto-ecad847d0d03d7d7|2027-01-30": {
+      "id": "oa-r-000514",
+      "staging_id": "oa-s-000103",
+      "original_date": "2027-01-30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+    },
+    "auto-ecad847d0d03d7d7|2027-02-07": {
+      "id": "oa-r-000515",
+      "staging_id": "oa-s-000103",
+      "original_date": "2027-02-07",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
     }
   }
 }

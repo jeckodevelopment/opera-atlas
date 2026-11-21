@@ -432,6 +432,24 @@
       "alt": "Locandina storica di una rappresentazione del Fidelio di Ludwig van Beethoven a Bonn, non produzione attuale",
       "credit": "Wikimedia Commons · documento storico teatrale di Bonn",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Fidelio.jpg"
+    },
+    "oa-w-000049": {
+      "work_id": "oa-w-000049",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Paer_-_Leonora_-_italian_title_page_of_the_libretto_-_Dresden_1804.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Paer_-_Leonora_-_italian_title_page_of_the_libretto_-_Dresden_1804.png",
+      "alt": "Frontespizio originale del libretto italiano di Leonora di Ferdinando Paër, Dresda 1804; non è l'allestimento della Scala 2027",
+      "credit": "Libretto italiano Leonora, Dresda 1804; SLUB Dresden / Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Paer_-_Leonora_-_italian_title_page_of_the_libretto_-_Dresden_1804.png"
+    },
+    "oa-w-000050": {
+      "work_id": "oa-w-000050",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Les_p%C3%AAcheurs_de_perles%2C_op%C3%A9ra_de_Georges_Bizet_-_estampes_-_btv1b84056636_(1_of_5).jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Les_p%C3%AAcheurs_de_perles%2C_op%C3%A9ra_de_Georges_Bizet_-_estampes_-_btv1b84056636_(1_of_5).jpg",
+      "alt": "Stampa storica del 1863 di Les pêcheurs de perles di Georges Bizet, dalla Bibliothèque nationale de France; non è l'allestimento 2027",
+      "credit": "Bibliothèque nationale de France, département Arts du spectacle, 4-ICO THE-2042 (1863) / Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Les_pêcheurs_de_perles,_opéra_de_Georges_Bizet_-_estampes_-_btv1b84056636_(1_of_5).jpg"
     }
   }
 }

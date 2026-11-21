@@ -2246,6 +2246,24 @@
       ]
     },
     {
+      "id": "curated:auto-ecad847d0d03d7d7:2027-01-22",
+      "starts_at": "2027-01-22T20:00:00+01:00",
+      "local_date": "2027-01-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-01-22",
       "starts_at": "2027-01-22T20:00:00+01:00",
       "local_date": "2027-01-22",
@@ -2318,6 +2336,24 @@
       ]
     },
     {
+      "id": "curated:auto-ecad847d0d03d7d7:2027-01-24",
+      "starts_at": "2027-01-24T14:30:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "14:30",
+      "status": "announced",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
+      ]
+    },
+    {
       "id": "curated:auto-1e384fa01b8a144d:2027-01-24",
       "starts_at": "2027-01-24T15:00:00+01:00",
       "local_date": "2027-01-24",
@@ -2369,6 +2405,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+      ]
+    },
+    {
+      "id": "curated:auto-ecad847d0d03d7d7:2027-01-27",
+      "starts_at": "2027-01-27T20:00:00+01:00",
+      "local_date": "2027-01-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
       ]
     },
     {
@@ -2531,6 +2585,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:auto-ecad847d0d03d7d7:2027-01-30",
+      "starts_at": "2027-01-30T20:00:00+01:00",
+      "local_date": "2027-01-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
       ]
     },
     {
@@ -2909,6 +2981,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
+      "id": "curated:auto-ecad847d0d03d7d7:2027-02-07",
+      "starts_at": "2027-02-07T20:00:00+01:00",
+      "local_date": "2027-02-07",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html"
       ]
     },
     {
@@ -7412,6 +7502,24 @@
       ]
     },
     {
+      "id": "curated:auto-eaefe8edde44acf2:2027-09-11",
+      "starts_at": "2027-09-11T20:00:00+02:00",
+      "local_date": "2027-09-11",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+      ]
+    },
+    {
       "id": "curated:auto-b67d637b2f593f67:2027-09-11",
       "starts_at": "2027-09-11T21:00:00+02:00",
       "local_date": "2027-09-11",
@@ -7484,6 +7592,24 @@
       ]
     },
     {
+      "id": "curated:auto-eaefe8edde44acf2:2027-09-13",
+      "starts_at": "2027-09-13T20:00:00+02:00",
+      "local_date": "2027-09-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+      ]
+    },
+    {
       "id": "curated:auto-027fde14d101fca6:2027-09-14",
       "starts_at": "2027-09-14T20:30:00+02:00",
       "local_date": "2027-09-14",
@@ -7517,6 +7643,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-eaefe8edde44acf2:2027-09-15",
+      "starts_at": "2027-09-15T20:00:00+02:00",
+      "local_date": "2027-09-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
       ]
     },
     {
@@ -7571,6 +7715,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-eaefe8edde44acf2:2027-09-18",
+      "starts_at": "2027-09-18T20:00:00+02:00",
+      "local_date": "2027-09-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
       ]
     },
     {
@@ -7643,6 +7805,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-eaefe8edde44acf2:2027-09-23",
+      "starts_at": "2027-09-23T20:00:00+02:00",
+      "local_date": "2027-09-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
       ]
     },
     {
@@ -7733,6 +7913,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-eaefe8edde44acf2:2027-09-26",
+      "starts_at": "2027-09-26T20:00:00+02:00",
+      "local_date": "2027-09-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
       ]
     },
     {

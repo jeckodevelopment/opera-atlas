@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "new_stagings": 0,
-  "new_recite": 0,
+  "new_stagings": 2,
+  "new_recite": 11,
   "auto_skipped": [
     {
       "candidate_id": "oa-index-184e57e1cd9f38d554d5",
@@ -60,6 +60,6 @@
       "reason": "unknown_work_needs_authority_data"
     }
   ],
-  "new_works": 0,
+  "new_works": 2,
   "enriched_recite_times": 0
 }

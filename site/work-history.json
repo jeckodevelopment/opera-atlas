@@ -352,19 +352,21 @@
     "leonora": {
       "librettist": "Giovanni Schmidt",
       "premiere_year": 1804,
-      "premiere_venue": "Kleines Churfürstliches Theater",
+      "premiere_venue": "Kleines Kurfürstliches Theater",
       "premiere_city": "Dresda",
       "sources": [
-        "https://www.opernprojekt.uni-mainz.de/details/werk?id=1322"
+        "https://www.opernprojekt.uni-mainz.de/details/werk?id=1322",
+        "https://librettidopera.it/leonora/rid.html"
       ]
     },
     "les-pecheurs-de-perles": {
-      "librettist": "Eugène Cormon; Michel Carré",
+      "librettist": "Michel Carré e Eugène Cormon",
       "premiere_year": 1863,
-      "premiere_venue": "Théâtre Lyrique",
+      "premiere_venue": "Théâtre-Lyrique",
       "premiere_city": "Parigi",
       "sources": [
-        "https://www.rohcollections.org.uk/Work.aspx?work=472"
+        "https://pad.philharmoniedeparis.fr/EXPLOITATION/ermes/player.aspx?id=0999417",
+        "https://www.opera-comique.com/fr/spectacles/les-pecheurs-de-perles"
       ]
     },
     "boris-godunov": {
