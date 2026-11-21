@@ -214,7 +214,7 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
             raise ValueError("incomplete historical poster evidence: "+wid)
         filename=entry["file"]
         if (len(filename)>220 or "/" in filename or "\\\\" in filename or
-                not re.search(r"\\.(?:jpe?g|png|webp)$",filename,re.I)):
+                not re.search(r"\.(?:jpe?g|png|webp)$",filename,re.I)):
             raise ValueError("unsafe historical poster filename: "+wid)
         encoded=quote(filename.replace(" ","_"),safe="()_'-")
         archive_by_id[wid]={
