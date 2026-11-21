@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1000" role="img" aria-labelledby="title desc">
+<title id="title">Nixon in China — John Adams</title>
+<desc id="desc">Copertina editoriale originale di Opera Atlas con due forme astratte che si incontrano e il titolo dell'opera.</desc>
+<rect width="750" height="1000" fill="#141b22"/>
+<rect x="38" y="38" width="674" height="924" fill="none" stroke="#c6a56c" stroke-width="2"/>
+<text x="375" y="99" text-anchor="middle" fill="#d3b788" font-family="Georgia,serif" font-size="21" letter-spacing="7">OPERA ATLAS</text>
+<rect x="102" y="155" width="546" height="3" fill="#c5a16b"/>
+<path d="M70 208H350V638H70Z" fill="#a82d31"/>
+<path d="M400 208H680V638H400Z" fill="#d0a64b"/>
+<path d="M350 282L477 282L432 365L477 440L350 440Z" fill="#e0cba5" opacity=".9"/>
+<path d="M400 282L273 282L318 365L273 440L400 440Z" fill="#e0cba5" opacity=".9"/>
+<path d="M260 548H490" stroke="#141b22" stroke-width="22" stroke-linecap="square"/>
+<text x="375" y="746" text-anchor="middle" fill="#f4e9d9" font-family="Georgia,serif" font-size="82" font-weight="bold" letter-spacing="2">NIXON</text>
+<text x="375" y="830" text-anchor="middle" fill="#f4e9d9" font-family="Georgia,serif" font-size="67" letter-spacing="4">IN CHINA</text>
+<text x="375" y="889" text-anchor="middle" fill="#d3b788" font-family="Georgia,serif" font-size="27" letter-spacing="4">JOHN ADAMS</text>
+<text x="375" y="943" text-anchor="middle" fill="#b4a590" font-family="sans-serif" font-size="15" letter-spacing="3">COPERTINA EDITORIALE ORIGINALE</text>
+</svg>
