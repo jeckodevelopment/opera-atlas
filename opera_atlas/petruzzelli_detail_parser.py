@@ -220,7 +220,7 @@ def extract_official_petr_opera(html:str,*,url:str,season_year:int=2027):
         # A slash or multiple works in the heading must be handled by the
         # dedicated program parser. A season-only suffix is harmless.
         if (not title_text or "/" in title_text or len(parts)>2):
-            raise ValueError("unsupported multi-work or uncredited official bill")
+            raise ValueError("unsupported multi-work or uncredited official bill: "+repr((heading.first or "")[:110]))
         match=re.fullmatch(r"(.+?)\s+di\s+(.+)",title_text,re.I)
         if match:
             title,composer=(value.strip() for value in match.groups())
