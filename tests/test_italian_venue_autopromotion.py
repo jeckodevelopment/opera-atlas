@@ -9,10 +9,10 @@ from scripts.publish_catalog_v2 import REGISTRY,assemble
 CASES=[
  ("carlo-felice-season-2026-27","https://www.carlofelice.it/spettacolo/pagliacci/",
   "Pagliacci","Ruggero Leoncavallo","Teatro Carlo Felice","Genova"),
- ("donizetti-opera-2026","https://www.donizettiopera.org/it/evento/italiana-in-algeri/",
-  "L’italiana in Algeri","Gioachino Rossini","Teatro Sociale","Bergamo"),
- ("donizetti-opera-2026","https://www.donizettiopera.org/it/evento/italiana-in-algeri/",
-  "L’italiana in Algeri","Gioachino Rossini","Teatro Donizetti","Bergamo"),
+ ("donizetti-opera-2026","https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+  "L’esule di Roma","Gaetano Donizetti","Teatro Sociale","Bergamo"),
+ ("donizetti-opera-2026","https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+  "L’esule di Roma","Gaetano Donizetti","Teatro Donizetti","Bergamo"),
 ]
 
 class VerifiedVenuePromotionTests(unittest.TestCase):
@@ -20,6 +20,21 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         cls.ids=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        # The 2026 festival's real titles are not in the initial canonical
+        # registry: provide one approved identity in-memory for venue tests.
+        from scripts.publish_catalog_v2 import slugify
+        import copy
+        cls.ids=copy.deepcopy(cls.ids)
+        title,composer="L’esule di Roma","Gaetano Donizetti"
+        from scripts.publish_catalog_v2 import normalized
+        key=normalized(title)+"|"+normalized(composer)
+        if key not in cls.ids["works"]:
+            numeric=max(int(w["id"].split("-")[-1])
+                        for w in cls.ids["works"].values())
+            cls.ids["works"][key]={
+                "id":f"oa-w-{numeric+1:06d}","slug":slugify(title),
+                "title":title,"composer":composer}
+
 
     def fixture(self,key,url,title,composer,venue):
         candidate={"id":"fixture-venue","source_key":key,"official_url":url,
