@@ -74,22 +74,36 @@ function editorialImage(kind,event){
   fallback.setAttribute("aria-label","Fotografia non disponibile");
   return fallback;
 }
-async function appendTheatreProfile(event){
+async function appendTheatreProfile(event,venueRecord=null){
+  let stored=null;
   try{
     const response=await fetch("./theatre-profiles.json");
-    if(!response.ok) return null;
-    const doc=await response.json();
-    if(doc.schema_version!==1||!doc.venues)return null;
-    const profile=doc.venues[event.municipality+"|"+(event.municipality==="Torino" && event.venue==="Teatro Regio di Torino"?"Teatro Regio":event.venue)];
-    if(!profile)return null;
-    const section=node("section","theatre-introduction");
-    section.append(node("p","theatre-description",profile.description));
-    if(typeof profile.history==="string" && profile.history.trim()){
-      const history=node("section","theatre-history");
-      history.append(node("h2",null,"La storia del teatro"),
-        node("p","theatre-history-text",profile.history));
-      section.append(history);
+    if(response.ok){
+      const doc=await response.json();
+      if(doc.schema_version===1 && doc.venues){
+        const lookup=event.municipality+"|"+
+          (event.municipality==="Torino" && event.venue==="Teatro Regio di Torino"?"Teatro Regio":event.venue);
+        stored=doc.venues[lookup]||null;
+      }
     }
+  }catch(error){console.warn("Theatre historical profile unavailable",error);}
+  // The independently catalogued national venues have a factual, sourced
+  // short profile even without a legacy history or any registered performance.
+  const profile=stored || (venueRecord ? {
+    description:venueRecord.description,
+    website:venueRecord.website||venueRecord.source_url,
+    source:venueRecord.source_url
+  } : null);
+  if(!profile)return null;
+  const section=node("section","theatre-introduction");
+  if(profile.description)section.append(node("p","theatre-description",profile.description));
+  if(typeof profile.history==="string" && profile.history.trim()){
+    const history=node("section","theatre-history");
+    history.append(node("h2",null,"La storia del teatro"),
+      node("p","theatre-history-text",profile.history));
+    section.append(history);
+  }
+  if(typeof profile.address==="string" && profile.address.trim()){
     const place=node("div","theatre-location");
     place.append(node("h2",null,"Dove si trova"));
     place.append(node("p",null,profile.address+" · "+event.municipality));
@@ -97,9 +111,9 @@ async function appendTheatreProfile(event){
     direction.target="_blank";direction.rel="noopener noreferrer";
     place.append(direction);
     section.append(place);
-    content.append(section);
-    return profile;
-  }catch(error){console.warn("Theatre profile unavailable",error);return null;}
+  }
+  content.append(section);
+  return profile;
 }
 function link(text, url, css="detail-link") {
   const a=node("a",css,text);
@@ -311,7 +325,7 @@ function todayInItaly(){
   const get=key=>parts.find(x=>x.type===key).value;
   return get("year")+"-"+get("month")+"-"+get("day");
 }
-function resolve(events) {
+function resolve(events,venues=[]) {
   const pathname=decodeURI(window.location.pathname);
   const path=pathname.startsWith(root) ? pathname.slice(root.length) : "";
   const pieces=path.split("/").filter(Boolean);
@@ -321,9 +335,12 @@ function resolve(events) {
     if(pieces.length===2 && pieces[0]==="opere")
       return {kind:"work",events:events.filter(e=>
         window.OperaAtlasCatalog.urls(e).work===root+pieces.join("/")+"/")};
-    if(pieces.length===2)
-      return {kind:"venue",events:events.filter(e=>
-        window.OperaAtlasCatalog.urls(e).venue===root+pieces.join("/")+"/")};
+    if(pieces.length===2){
+      const url=root+pieces.join("/")+"/";
+      const venue=venues.find(v=>v.city_slug===pieces[0] && v.slug===pieces[1])||null;
+      return {kind:"venue",venue,events:events.filter(e=>
+        window.OperaAtlasCatalog.urls(e).venue===url)};
+    }
     if(pieces.length===3)
       return {kind:"staging",events:events.filter(e=>
         window.OperaAtlasCatalog.urls(e).staging===root+pieces.join("/")+"/")};
@@ -352,12 +369,19 @@ async function initialize() {
 
     if(data.warning)status.textContent="Alcuni aggiornamenti non sono momentaneamente disponibili.";
     const events=data.performances.filter(validEvent);
-    const selected=resolve(events);
-    if(!selected.kind || !selected.events.length) {
+    const venues=await window.OperaAtlasCatalog.venues();
+    const selected=resolve(events,venues);
+    if(!selected.kind || (!selected.events.length && !(selected.kind==="venue" && selected.venue))) {
       missing("Questo indirizzo non corrisponde a una scheda pubblicata.");
       return;
     }
-    const first=selected.events[0];
+    const first=selected.events[0] || (selected.kind==="venue" && selected.venue ? {
+      venue:selected.venue.name,
+      municipality:selected.venue.city,
+      region:selected.venue.region,
+      venue_slug:selected.venue.slug,
+      city_slug:selected.venue.city_slug
+    } : null);
     const future=selected.events.filter(e=>e.local_date>=todayInItaly());
     let theatreProfile=null;
     if(selected.kind==="work") {
@@ -379,12 +403,16 @@ async function initialize() {
       document.querySelector(".detail-related h2").textContent="Spettacoli in programma";
       title.textContent=first.venue;
       subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
-      theatreProfile=await appendTheatreProfile(first);
-      content.append(node("p","staging-summary",
+      theatreProfile=await appendTheatreProfile(first,selected.venue);
+      if(selected.events.length)content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche"));
+      else content.append(node("p","staging-summary",
+        "La sede è censita. Il programma degli spettacoli non è ancora stato acquisito."));
       for(const group of grouping(future))stagingGroup(group,"venue");
-      if(!future.length)results.append(node("p","empty","Nessun prossimo spettacolo verificato presso questo teatro nel catalogo Atlas."));
+      if(!future.length)results.append(node("p","empty",
+        selected.events.length?"Nessun prossimo spettacolo verificato presso questo teatro nel catalogo Atlas.":
+        "Le prossime rappresentazioni saranno pubblicate dopo la verifica delle fonti ufficiali."));
     }else if(selected.kind==="group"){
       kind.textContent="Produzione condivisa";
       title.textContent=first.title;
@@ -421,7 +449,7 @@ async function initialize() {
       content.classList.add("production-detail");
     }
     else content.prepend(editorialImage("venue",first));
-    sourceLinks(selected.events,selected.kind,theatreProfile);
+    sourceLinks(selected.events.length?selected.events:[first],selected.kind,theatreProfile);
     document.title=title.textContent+" — Opera+ Atlas";
     // Canonicalize old query-based links after resolution; never change identity.
     if(pathnameIsLegacy()) {
