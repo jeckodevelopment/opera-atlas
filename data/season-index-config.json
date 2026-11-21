@@ -127,6 +127,13 @@
       "url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-opera-2026-2027",
       "access_status": "approved",
       "min_links": 9
+    },
+    {
+      "key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/",
+      "url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/",
+      "access_status": "approved",
+      "min_links": 4
     }
   ]
 }
