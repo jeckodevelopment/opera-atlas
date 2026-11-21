@@ -371,6 +371,8 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)} for day,clock in recite]
     if source_key=="fenice-opera-2026-27":
+        if urlsplit(url).hostname!="www.teatrolafenice.it":
+            return []
         from opera_atlas.national_detail_parser import fenice_primary_credits
         title,composer,venue=fenice_primary_credits(html)
         days=parse_national_showtimes(html,source_key=source_key,url=url,
