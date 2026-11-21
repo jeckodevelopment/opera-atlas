@@ -50,9 +50,10 @@ class SourceIndependentPromotion(unittest.TestCase):
                             for x in candidate_rows.values()))
         archival=load_archival_art({"le-nozze-di-figaro","fidelio","zenobia","arlecchino"})
         self.assertEqual(len(archival),4)
+        chosen={"schema_version":1,"works":list(candidate_rows.values())}
         output=promote_new_works(
             self.facts,self.registry,self.details,self.candidates,
-            intelligence,self.editorial,self.urls,today=date(2026,11,21),
+            chosen,self.editorial,self.urls,today=date(2026,11,21),
             history=self.history,require_image=True)
         facts,registry,urls,editorial,history,report=output
         remaining={name:count for name,count in EXPECTED.items()
@@ -67,7 +68,7 @@ class SourceIndependentPromotion(unittest.TestCase):
             self.assertEqual(len(rows),1)
             self.assertEqual(len(rows[0]["dates"]),count)
         again=promote_new_works(facts,registry,self.details,self.candidates,
-             intelligence,editorial,urls,today=date(2026,11,21),
+             chosen,editorial,urls,today=date(2026,11,21),
              history=history,require_image=True)
         self.assertEqual(again[-1]["new_recite"],0)
 
