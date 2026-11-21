@@ -62,6 +62,10 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str):
         visible[:split],re.I)
     presentation_match=(len(presentations)==1 and
                         normalized(presentations[0]).replace("’","'").strip()==official)
+    if re.search(r"presenta\s+il\s+balletto\b",visible[:split],re.I):
+        raise ValueError("non-operatic ballet must not be catalogued as opera")
+    if presentations and not presentation_match:
+        raise ValueError("conflicting first-party composer or opera title")
     if not (h1_match or (prefix==t and presentation_match)):
         raise ValueError("official title and composer credit not confirmed")
     if "|" in (heading.first or "").split(" | ")[0] and not h1_match:
