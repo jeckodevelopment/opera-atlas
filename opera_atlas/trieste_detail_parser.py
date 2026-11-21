@@ -58,7 +58,7 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
     # Remove only one exact, documented musical-genre label after a
     # full two-word author name, never infer an author from the title.
     composer = re.sub(
-        r"\s+(?:Opera|Tragedia|Melodramma|Dramma|Operetta|Ed|Maestro|Regia|Direzione|Stagione)$",
+        r"(?:\s+(?:Opera|Tragedia|Melodramma|Dramma|Operetta|Ed|Maestro|Regia|Direzione|Stagione))+$",
         "", credits.group(1))
     if len(composer.split())<2:
         raise ValueError("incomplete official composer credit")
