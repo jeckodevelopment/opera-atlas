@@ -20,6 +20,23 @@ class CandidateDetailTests(unittest.TestCase):
             {"id":"candidate-c","source_key":"fenice-opera-2026-27",
              "official_url":"https://other.example/event/fake/","status":"needs_review"}
         ]}
+    def test_structured_music_composer_is_preserved_not_conductor(self):
+        event={"@type":"MusicEvent","name":"Il barbiere di Siviglia",
+               "startDate":"2027-05-09T20:00:00+02:00",
+               "location":{"@type":"Place","name":"Teatro alla Scala"},
+               "performer":{"name":"Other Conductor"},
+               "workPerformed":{"@type":"MusicComposition",
+                                "composer":{"@type":"Person","name":"Giovanni Paisiello"}}}
+        html='<script type="application/ld+json">'+json.dumps(event)+'</script>'
+        result=parse_event_facts(html)
+        self.assertEqual(len(result),1)
+        self.assertEqual(result[0]["composer"],"Giovanni Paisiello")
+        self.assertEqual(result[0]["event_title"],"Il barbiere di Siviglia")
+        del event["workPerformed"]
+        result=parse_event_facts('<script type="application/ld+json">'+
+                                 json.dumps(event)+'</script>')
+        self.assertNotIn("composer",result[0])
+
     def test_verified_scala_work_parser_produces_review_only_date(self):
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         url="https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
