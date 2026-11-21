@@ -54,44 +54,6 @@
       ]
     },
     {
-      "candidate_id": "oa-index-01efa4320f81204200f1",
-      "source_key": "petruzzelli-opera-2026",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/",
-      "content_sha256": "a641f7690f214aeea596528c87a065c46bbc59a75c80d0f8445151ddc3e1f98f",
-      "checked_at": "2026-11-21T15:02:43+00:00",
-      "status": "needs_editorial_review",
-      "event_facts": [
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-11-12",
-          "starts_at": "2026-11-12T20:30:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-11-13",
-          "starts_at": "2026-11-13T20:30:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-11-14",
-          "starts_at": "2026-11-14T18:00:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-11-15",
-          "starts_at": "2026-11-15T18:00:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        }
-      ]
-    },
-    {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
@@ -385,44 +347,6 @@
       ]
     },
     {
-      "candidate_id": "oa-index-207df538679e00657fe1",
-      "source_key": "petruzzelli-opera-2026",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
-      "content_sha256": "58064a544563a68eb2a9bc06169806daee8b9573b20cf56d3d28141a6aeee63c",
-      "checked_at": "2026-11-21T15:02:57+00:00",
-      "status": "needs_editorial_review",
-      "event_facts": [
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-09-14",
-          "starts_at": "2026-09-14T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-09-16",
-          "starts_at": "2026-09-16T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-09-18",
-          "starts_at": "2026-09-18T18:00:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-09-20",
-          "starts_at": "2026-09-20T18:00:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        }
-      ]
-    },
-    {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
@@ -485,65 +409,6 @@
           "date": "2026-12-13",
           "venue": "Teatro Grande",
           "starts_at": "2026-12-13T15:30:00+01:00"
-        }
-      ]
-    },
-    {
-      "candidate_id": "oa-index-26db4f73989b1c14282c",
-      "source_key": "petruzzelli-opera-2026",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/",
-      "content_sha256": "dab7dfe5df92e876d57f98b818ee3d020d155d9a26f22992f7ba6de9afad429f",
-      "checked_at": "2026-11-21T15:01:43+00:00",
-      "status": "needs_editorial_review",
-      "event_facts": [
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-04-18",
-          "starts_at": "2026-04-18T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-04-19",
-          "starts_at": "2026-04-19T18:00:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-04-21",
-          "starts_at": "2026-04-21T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-04-22",
-          "starts_at": "2026-04-22T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-04-23",
-          "starts_at": "2026-04-23T18:00:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-04-24",
-          "starts_at": "2026-04-24T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-04-26",
-          "starts_at": "2026-04-26T18:00:00+02:00",
-          "venue": "Teatro Petruzzelli"
         }
       ]
     },
@@ -883,44 +748,6 @@
       ]
     },
     {
-      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
-      "source_key": "petruzzelli-opera-2026",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
-      "content_sha256": "64b0fba2573e41ec2a0fb84a1c28a57c596711b1d1ad6354ed18431152929416",
-      "checked_at": "2026-11-21T15:01:57+00:00",
-      "status": "needs_editorial_review",
-      "event_facts": [
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-05-21",
-          "starts_at": "2026-05-21T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-05-22",
-          "starts_at": "2026-05-22T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-05-23",
-          "starts_at": "2026-05-23T18:00:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-05-24",
-          "starts_at": "2026-05-24T18:00:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        }
-      ]
-    },
-    {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
@@ -1149,58 +976,6 @@
           "date": "2027-10-03",
           "starts_at": "2027-10-03T15:30:00+02:00",
           "venue": "Teatro La Fenice"
-        }
-      ]
-    },
-    {
-      "candidate_id": "oa-index-8d2b9a6be734bb249434",
-      "source_key": "petruzzelli-opera-2026",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
-      "content_sha256": "33fb8f78b12e9c32c873c967ddcdc109c957616d0a452731fda745397e8e01d3",
-      "checked_at": "2026-11-21T15:02:06+00:00",
-      "status": "needs_editorial_review",
-      "event_facts": [
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-12-16",
-          "starts_at": "2026-12-16T20:30:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-12-17",
-          "starts_at": "2026-12-17T20:30:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-12-18",
-          "starts_at": "2026-12-18T20:30:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-12-19",
-          "starts_at": "2026-12-19T18:00:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-12-20",
-          "starts_at": "2026-12-20T18:00:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-12-22",
-          "starts_at": "2026-12-22T18:00:00+01:00",
-          "venue": "Teatro Petruzzelli"
         }
       ]
     },
@@ -1855,58 +1630,6 @@
           "date": "2026-11-27",
           "starts_at": "2026-11-27T20:00:00+01:00",
           "venue": "Teatro Carlo Felice"
-        }
-      ]
-    },
-    {
-      "candidate_id": "oa-index-eedca6da108bd27e8d30",
-      "source_key": "petruzzelli-opera-2026",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
-      "content_sha256": "355282549c5aad2ca2824dea3c2fe8a99fe50dd930ec660dc3b98efab79f0156",
-      "checked_at": "2026-11-21T15:02:34+00:00",
-      "status": "needs_editorial_review",
-      "event_facts": [
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-10-18",
-          "starts_at": "2026-10-18T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-10-20",
-          "starts_at": "2026-10-20T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-10-21",
-          "starts_at": "2026-10-21T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-10-23",
-          "starts_at": "2026-10-23T20:30:00+02:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-10-25",
-          "starts_at": "2026-10-25T18:00:00+01:00",
-          "venue": "Teatro Petruzzelli"
-        },
-        {
-          "event_title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "date": "2026-10-27",
-          "starts_at": "2026-10-27T18:00:00+01:00",
-          "venue": "Teatro Petruzzelli"
         }
       ]
     },
