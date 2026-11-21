@@ -37,6 +37,34 @@ def credited_components(heading: str) -> list[dict]:
         parts.append({"title":title,"composer":composer})
     return parts
 
+def heading_from_html(html:str)->str|None:
+    """Find a complete independently credited multi-work primary heading.
+
+    Never treat a slash in an URL or a title alone as a verified component.
+    """
+    from html.parser import HTMLParser
+    class Heading(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.active=False
+            self.found=None
+            self.parts=[]
+        def handle_starttag(self,tag,attrs):
+            if tag.lower()=="h1" and self.found is None:self.active=True
+        def handle_data(self,data):
+            if self.active:self.parts.append(data)
+        def handle_endtag(self,tag):
+            if tag.lower()=="h1" and self.active:
+                self.found=" ".join("".join(self.parts).split())
+                self.active=False
+    h=Heading()
+    h.feed(html[:250000])
+    if not h.found:return None
+    try:credited_components(h.found)
+    except ValueError:return None
+    return h.found
+
+
 def program_from_evidence(*,heading:str,source_key:str,source_url:str,
                           candidate:dict,detail:dict,registry:dict,venue:str,
                           city:str,region:str) -> dict:
