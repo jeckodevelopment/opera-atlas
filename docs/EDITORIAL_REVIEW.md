@@ -205,3 +205,11 @@ o miglioramenti concreti.
 `python -m scripts.editorial_review_queue && python -m scripts.editorial_review_queue --check`.
 Il codice del catalogo rimane in `opera-atlas`; nessuna pubblicazione SFTP
 o modifica a `jeckodevsite` è richiesta per questa coda.
+
+## Schede recuperate da fonti specialistiche verificate (21 novembre 2026)
+
+Le schede di *La clemenza di Tito* (Mozart, Parma), *L'arca di Noè* / `Noye's Fludde` (Britten, La Fenice) e *La rondine* (Puccini, Opera di Roma) non devono attendere indefinitamente che Wikipedia produca automaticamente una trama o che il record Wikidata completo resti sotto i limiti dell'API. I riferimenti editoriali sono conservati in `data/verified-work-authority-seeds.json`; restano legati all'**esatto URL dell'evento ufficiale** e al compositore verificato nella sua evidenza, non al solo titolo o allo slug.
+
+Fonti: Corago, Università di Bologna e Opéra national de Paris per *La clemenza di Tito*; Britten Pears Arts e Boosey & Hawkes per *Noye's Fludde*; Puccini Museum e Opéra de Monte-Carlo per *La rondine*. Il poster originale del libretto (1791) e la locandina storica (1917) sono associati tramite Wikimedia Commons e identificati in `data/archival-work-images.json`. Per Britten, in mancanza di un manifesto storico liberamente verificato, si usa soltanto l'immagine già documentata dalla pagina ufficiale della produzione, senza spacciare immagini di scena per un manifesto del 1958.
+
+La pubblicazione richiede comunque compositore, sede, date e orari esatti dalla fonte ufficiale, sinossi narrativa originale, storia della prima verificata e immagine con provenienza. `tests/test_verified_blocked_opera_editorials.py` esercita la transazione e la sua idempotenza. Le altre candidate prive di prove ufficiali sufficienti **non vengono promosse**.
