@@ -14,6 +14,35 @@ CID="oa-index-test-new-fixture"
 
 class NewOperaPromotionTests(unittest.TestCase):
     @classmethod
+    def test_ready_cached_works_get_editorial_before_publication(self):
+        from scripts.auto_catalogue import complete_cached_verified_work_cards
+        from scripts.auto_work_research import OUT
+        from scripts.collect_candidate_details import OUTPUT
+        doc=json.loads(OUT.read_text(encoding="utf-8"))
+        evidence=json.loads(OUTPUT.read_text(encoding="utf-8"))
+        complete=complete_cached_verified_work_cards(doc,evidence)
+        targets={
+            "oa-index-184e57e1cd9f38d554d5":"Gaetano Donizetti",
+            "oa-index-b4180540983902f703af":"Giuseppe Verdi",
+            "oa-index-dfe824fe3301174d2165":"Vincenzo Bellini"}
+        actual={x["candidate_id"]:x for x in complete["works"]}
+        for cid,composer in targets.items():
+            with self.subTest(candidate=cid):
+                self.assertEqual(actual[cid]["composer"],composer)
+                self.assertTrue(45<=len(actual[cid]["synopsis"])<=300)
+                self.assertIsNotNone(actual[cid]["history"])
+        self.assertIsNone(next(x for x in doc["works"] if x["candidate_id"]==
+            "oa-index-b4180540983902f703af").get("synopsis"))
+        # A spoofed official composer must not inherit an unrelated synopsis.
+        forged=json.loads(json.dumps(evidence))
+        match=next(x for x in forged["evidence"] if x["candidate_id"]==
+                   "oa-index-b4180540983902f703af")
+        match["event_facts"][0]["composer"]="Different Composer"
+        blocked=complete_cached_verified_work_cards(doc,forged)
+        cached=next(x for x in blocked["works"] if x["candidate_id"]==
+                    "oa-index-b4180540983902f703af")
+        self.assertIsNone(cached.get("synopsis"))
+
     def setUpClass(cls):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
