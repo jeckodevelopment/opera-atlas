@@ -93,6 +93,13 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
         names=[(normalized(p["title"]),normalized(p["composer"])) for p in parts]
         if len(set(names))!=len(names) or heading!=detail.get("program_heading"):
             raise ValueError("ambiguous credited program")
+        # Structured credits must also be visibly reflected in the official
+        # composite heading. A modified or contradictory heading cannot be
+        # accepted solely because the adapter supplied component identities.
+        expected="/".join(p["title"] for p in parts)+" di "+"/".join(
+            p["composer"] for p in parts)
+        if normalized(heading)!=normalized(expected):
+            raise ValueError("official program heading contradicts component credits")
     else:
         parts=credited_components(heading)
     works=list(registry.get("works",{}).values())
