@@ -31,7 +31,10 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
         if not eligible("donizetti-opera-2026",url):
             raise ValueError("untrusted Donizetti detail path")
     text=clean(html)
-    if not text or normalized(composer) not in normalized(text):
+    # Official typography can differ only in the apostrophe: for example
+    # Pëtr Il’ič Čajkovskij versus the canonical Pëtr Il\u0027ič Čajkovskij.
+    # Preserve every other character, including diacritics and composer name.
+    if not text or normalized(composer).replace("’","\u0027") not in normalized(text).replace("’","\u0027"):
         raise ValueError("composer absent from official detail")
     # Verify the actual heading, rather than a title occurring in a footer.
     from scripts.collect_candidate_details import FirstHeading
