@@ -96,6 +96,9 @@ jobs:
           python -m scripts.auto_catalogue
           python -m scripts.publish_work_posters
           python -m scripts.publish_programs
+          # A cached new opera may be published before the slow discovery
+          # phase. Close its candidate in the SAME early checkpoint.
+          python -m scripts.reconcile_published_candidates
           python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
           python -m scripts.publish_work_editorial
@@ -117,6 +120,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/verified-launch-catalog.json data/identity-registry.json data/auto-source-urls.json data/verified-time-evidence.json site/work-synopses.json site/work-history.json site/performances.json public/catalog/v2/ public/catalog/work-editorial.json public/catalog/coverage.json public/catalog/recite-coverage.json public/catalog/source-automation.json public/catalog/venue-directory.json
           git add data/work-poster-evidence.json data/work-poster-health.json public/catalog/work-posters.json data/autonomous-catalogue-health.json public/catalog/programs.json
+          git add data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
             echo "No new cached verified facts to publish."
