@@ -541,6 +541,26 @@
         "https://www.beethoven.de/en/work/view/ag9iZWV0aG92ZW4tdml1cjNyEQsSBHdvcmsYgICAnPmr7QgM/%22Fidelio%22%2C%20opera%20in%20two%20%26",
         "https://www.naxos.com/LibrettiSungText/Libretti?id=78D90860-2506-41CA-9C88-41D95C5A38BB"
       ]
+    },
+    "l-esule-di-roma": {
+      "librettist": "Domenico Gilardoni",
+      "premiere_year": 1828,
+      "premiere_venue": "Teatro di San Carlo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q471164",
+        "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+      ]
+    },
+    "i-capuleti-e-i-montecchi": {
+      "librettist": "Felice Romani",
+      "premiere_year": 1830,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/i-capuleti-e-i-montecchi/",
+        "https://www.wikidata.org/wiki/Q1071307"
+      ]
     }
   },
   "works_by_id": {
