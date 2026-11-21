@@ -54,6 +54,43 @@
       ]
     },
     {
+      "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
+      "checked_at": "2026-11-21T15:28:12+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-09-16",
+          "starts_at": "2027-09-16T20:00:00+02:00"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-09-19",
+          "starts_at": "2027-09-19T15:30:00+02:00"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-09-22",
+          "starts_at": "2027-09-22T20:00:00+02:00"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-09-25",
+          "starts_at": "2027-09-25T18:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
@@ -178,7 +215,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T15:03:13+00:00",
+      "checked_at": "2026-11-21T15:28:12+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -350,8 +387,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "ba72d8e9e2dc126f4c37e5e852ee074b541ef33f5ad3cb65922f78f05371d34f",
-      "checked_at": "2026-11-21T15:01:36+00:00",
+      "content_sha256": "70e06fd9ef93b7650386c22fe5a96f7a75f5cde10dd401c8f22fa2396afc1756",
+      "checked_at": "2026-11-21T15:26:48+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -379,7 +416,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T15:01:51+00:00",
+      "checked_at": "2026-11-21T15:27:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -416,8 +453,8 @@
       "candidate_id": "oa-index-2ffd782e0a99b2433e13",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
-      "content_sha256": "b0eb4ba38674366d61f2e9575c19f4a0eab17caa2dede2488160ad897515cf42",
-      "checked_at": "2026-11-21T15:01:26+00:00",
+      "content_sha256": "187332c5638dec4f92d9fbbb2ca80cdb2dbb95df60e5596f6e274fee9d223332",
+      "checked_at": "2026-11-21T15:26:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -458,11 +495,27 @@
       ]
     },
     {
+      "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
+      "checked_at": "2026-11-21T15:28:12+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-09-12",
+          "starts_at": "2027-09-12T17:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-3c920820abeb859e7ffa",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
-      "content_sha256": "a6440a25d1185e013fe85213843147dab7d4080c9ad160b51bb269b4389b3ac5",
-      "checked_at": "2026-11-21T15:01:53+00:00",
+      "content_sha256": "0fa86829c116bd2492be4e625d616fc44c1b781274992e1fa797c12c03c21435",
+      "checked_at": "2026-11-21T15:27:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -790,7 +843,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T15:02:01+00:00",
+      "checked_at": "2026-11-21T15:27:05+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -813,8 +866,8 @@
       "candidate_id": "oa-index-7adb8eed9d624ca82bf5",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
-      "content_sha256": "139cb4db29a8ffea8a6e22fa2c9a7a979e151f62e5503db8e184b21019ab25b6",
-      "checked_at": "2026-11-21T15:02:02+00:00",
+      "content_sha256": "c7897fc96074b2becb4a3b6d4c8d05ab101ec74e61929344a9694de6fb36231e",
+      "checked_at": "2026-11-21T15:27:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1157,6 +1210,43 @@
       ]
     },
     {
+      "candidate_id": "oa-index-9c8433ba74501efca6eb",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
+      "checked_at": "2026-11-21T15:28:12+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-10-10",
+          "starts_at": "2027-10-10T17:00:00+02:00"
+        },
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-10-14",
+          "starts_at": "2027-10-14T20:00:00+02:00"
+        },
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-10-17",
+          "starts_at": "2027-10-17T15:30:00+02:00"
+        },
+        {
+          "event_title": "Adriana Lecouvreur",
+          "composer": "Francesco Cilea",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "date": "2027-10-19",
+          "starts_at": "2027-10-19T20:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-a12dbb283b4900754d28",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
@@ -1404,7 +1494,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T15:03:13+00:00",
+      "checked_at": "2026-11-21T15:28:12+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1441,8 +1531,8 @@
       "candidate_id": "oa-index-ce32b1104cdb579dc299",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
-      "content_sha256": "ddeaa151586303c950d42e3113aae222eb3580bf37363fc8abe3d83470a4262d",
-      "checked_at": "2026-11-21T15:02:23+00:00",
+      "content_sha256": "9065c66433ddae06310e9a8ae0791650fededbec8b14816e23e33a5134281936",
+      "checked_at": "2026-11-21T15:27:30+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1465,8 +1555,8 @@
       "candidate_id": "oa-index-cfd5a4967756ff1d51dd",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
-      "content_sha256": "0fb8f87cc3a5bdb5c384972101abb1b34817dcbcb8406c0f094acddb770ec034",
-      "checked_at": "2026-11-21T15:02:24+00:00",
+      "content_sha256": "b3cfd08070c2e6251b6dd2fb800280f4eef38586e7d52a68dedc35c2f8cec8c4",
+      "checked_at": "2026-11-21T15:27:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1607,8 +1697,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "85dedec8753034b4b3313a58bb88c87f2eb1b77552c706763c64f6bb9f4176ef",
-      "checked_at": "2026-11-21T15:02:28+00:00",
+      "content_sha256": "f581fd24cfbc29a5ac9bedb9d5a44b879792c5d805e5be901022084ca85de67d",
+      "checked_at": "2026-11-21T15:27:34+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1748,8 +1838,8 @@
       "candidate_id": "oa-index-f7e2bc909527aff17c03",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
-      "content_sha256": "79a1b3dd058176e0afdc6b52f267e173f84b71eec87c90a91a819b2a50574ec9",
-      "checked_at": "2026-11-21T15:02:37+00:00",
+      "content_sha256": "3e103cef96b1cb8e55b84c8985a9b4ca02979834ff35df2a05ac4eafc827d937",
+      "checked_at": "2026-11-21T15:27:43+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
