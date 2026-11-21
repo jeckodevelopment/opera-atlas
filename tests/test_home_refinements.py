@@ -54,7 +54,7 @@ class AtlasHomeRefinementTests(unittest.TestCase):
         self.assertEqual(carlo["photo_file"],"Genova - Teatro Carlo Felice.jpg")
         self.assertIn("const homeVenueProfiles=new Map()",home)
         self.assertIn("const entries=await window.OperaAtlasCatalog.venues()",home)
-        self.assertIn('const path=event.city_slug+"/"+event.venue_slug',home)
+        self.assertIn('const path of HOME_THEATRE_ROUTES',home)
         self.assertIn("photo_file:profile?.photo_file",home)
         self.assertIn("loadHomeVenueProfiles().catch",home)
         self.assertIn('city==="genova" && title==="Teatro Carlo Felice"',images)
