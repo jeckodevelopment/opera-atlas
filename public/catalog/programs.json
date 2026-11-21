@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "programs": [
+    {
+      "id": "oa-p-a12dbb283b490075",
+      "title": "L’ARLÉSIENNE / PAGLIACCI",
+      "components": [
+        {
+          "title": "L’ARLÉSIENNE",
+          "composer": "Georges Bizet",
+          "work_id": null
+        },
+        {
+          "title": "PAGLIACCI",
+          "composer": "Ruggero Leoncavallo",
+          "work_id": "oa-w-000006"
+        }
+      ],
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "route_slug": "arlesienne-pagliacci",
+      "performances": [
+        {
+          "id": "oa-pr-9d7450bde8f3ea78",
+          "program_id": "oa-p-a12dbb283b490075",
+          "local_date": "2027-10-13",
+          "starts_at": "2027-10-13T20:30:00+02:00"
+        },
+        {
+          "id": "oa-pr-6627c63849278dfa",
+          "program_id": "oa-p-a12dbb283b490075",
+          "local_date": "2027-10-14",
+          "starts_at": "2027-10-14T20:30:00+02:00"
+        },
+        {
+          "id": "oa-pr-d798c81264e186dc",
+          "program_id": "oa-p-a12dbb283b490075",
+          "local_date": "2027-10-15",
+          "starts_at": "2027-10-15T20:30:00+02:00"
+        },
+        {
+          "id": "oa-pr-ab764ed66e4ecf76",
+          "program_id": "oa-p-a12dbb283b490075",
+          "local_date": "2027-10-16",
+          "starts_at": "2027-10-16T18:00:00+02:00"
+        },
+        {
+          "id": "oa-pr-8cf7cbe4a2987ae7",
+          "program_id": "oa-p-a12dbb283b490075",
+          "local_date": "2027-10-17",
+          "starts_at": "2027-10-17T18:00:00+02:00"
+        },
+        {
+          "id": "oa-pr-e5a70bba677fa4fc",
+          "program_id": "oa-p-a12dbb283b490075",
+          "local_date": "2027-10-19",
+          "starts_at": "2027-10-19T20:30:00+02:00"
+        },
+        {
+          "id": "oa-pr-04dd6fb6c454eb74",
+          "program_id": "oa-p-a12dbb283b490075",
+          "local_date": "2027-10-20",
+          "starts_at": "2027-10-20T18:00:00+02:00"
+        }
+      ]
+    }
+  ]
+}
