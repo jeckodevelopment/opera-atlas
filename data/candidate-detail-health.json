@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T18:55:05+00:00",
+  "checked_at": "2026-11-21T18:59:02+00:00",
   "attempted": 27,
   "outcomes": [
     {
@@ -48,6 +48,7 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:unverified Parma performance venue",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -185,14 +186,8 @@
     },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 3
     },
     {
       "candidate_id": "oa-index-92b69a8ac1040b0537be",
@@ -201,14 +196,8 @@
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 2
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
@@ -217,6 +206,7 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
+        "official_composer_credit:conflicting official showtime for one day",
         "schema_event:no_evidence"
       ],
       "rows": 0

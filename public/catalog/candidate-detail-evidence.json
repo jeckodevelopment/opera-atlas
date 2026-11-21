@@ -108,7 +108,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-21T18:55:05+00:00",
+      "checked_at": "2026-11-21T18:59:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -368,7 +368,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T18:55:05+00:00",
+      "checked_at": "2026-11-21T18:59:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -571,8 +571,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "f8ab88e28d01aaab0a7e45e383a334ae81b793c3244f6fb279c062e736e18245",
-      "checked_at": "2026-11-21T18:54:23+00:00",
+      "content_sha256": "45f1072ffb43ce6195614a719a6097cb159043df359f67e37c14330c692ec756",
+      "checked_at": "2026-11-21T18:58:19+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -694,7 +694,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-21T18:55:05+00:00",
+      "checked_at": "2026-11-21T18:59:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -962,8 +962,8 @@
       "candidate_id": "oa-index-58413a3bbbee689b82bc",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
-      "content_sha256": "47cac18a039dd680a1163ecde1770ddd957332eefda84ad941e649bc6ee8b453",
-      "checked_at": "2026-11-21T18:54:32+00:00",
+      "content_sha256": "b8f699806880752595adaebb6a6ba26e87857bcbd8db1374f51b9ede33973b45",
+      "checked_at": "2026-11-21T18:58:28+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1022,7 +1022,7 @@
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/die-zauberflote/",
       "content_sha256": "9f604974d820c6fc93c73f9ae6ed89cd2b8f2d91970ad3bfe0f4afb1cb56d45d",
-      "checked_at": "2026-11-21T18:55:05+00:00",
+      "checked_at": "2026-11-21T18:59:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1206,7 +1206,7 @@
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
       "content_sha256": "da060231353c9f82948f8cb1c137d9b8906dd9bb8cc2bff6456c5f92803dd04f",
-      "checked_at": "2026-11-21T18:54:22+00:00",
+      "checked_at": "2026-11-21T18:58:18+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1326,7 +1326,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T18:54:34+00:00",
+      "checked_at": "2026-11-21T18:58:30+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1516,11 +1516,49 @@
       ]
     },
     {
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
+      "content_sha256": "8b6e00982448a33493bd9bfb7049677cff03629f12be9a6723507fa3dcfb4260",
+      "checked_at": "2026-11-21T18:58:55+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Boris Godunov",
+          "composer": "Modest Petrovič Musorgskij",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T20:00:00+01:00"
+        },
+        {
+          "event_title": "Boris Godunov",
+          "composer": "Modest Petrovič Musorgskij",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T15:30:00+01:00"
+        },
+        {
+          "event_title": "Boris Godunov",
+          "composer": "Modest Petrovič Musorgskij",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-01-28",
+          "starts_at": "2027-01-28T20:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/05/TRP-26-BANNER-1920x1080-OPERA-BORIS-GODUNOV.png",
+        "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Boris Godunov",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/ernani-2/",
       "content_sha256": "486594c0db36fa218e4f5b8ce8d93bbac86896285286eacc9e0bc0d276134f02",
-      "checked_at": "2026-11-21T18:54:24+00:00",
+      "checked_at": "2026-11-21T18:58:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1665,8 +1703,8 @@
       "candidate_id": "oa-index-92b69a8ac1040b0537be",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
-      "content_sha256": "3bbc0e6b8e3e933f01dc8a0230dc28e00618f9befff42c903e0ecbed0059c117",
-      "checked_at": "2026-11-21T18:54:59+00:00",
+      "content_sha256": "256c651fed0e69b6989a8c8868543874ac9b93b623388ec34cc9673b9bb35dd9",
+      "checked_at": "2026-11-21T18:58:55+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1807,7 +1845,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-21T18:55:05+00:00",
+      "checked_at": "2026-11-21T18:59:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1951,7 +1989,7 @@
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "content_sha256": "6a6892fb108c70e4610be23672d1d9601e9bdeda010fefec202fe6a46cc72044",
-      "checked_at": "2026-11-21T18:54:35+00:00",
+      "checked_at": "2026-11-21T18:58:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2075,11 +2113,42 @@
       ]
     },
     {
+      "candidate_id": "oa-index-b372b317894fe260b18e",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
+      "content_sha256": "65576ade05c214527d0e4101b7ee574d495d0484a31e315691c0b7329c7959ef",
+      "checked_at": "2026-11-21T18:58:57+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-03-19",
+          "starts_at": "2027-03-19T20:00:00+01:00"
+        },
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-03-21",
+          "starts_at": "2027-03-21T15:30:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/05/TRP-26-BANNER-1920x1080-OPERA-CLEMENZA-TITO.png",
+        "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di La clemenza di Tito",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-b4180540983902f703af",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/falstaff-2/",
       "content_sha256": "7b4be0ec6eb621e9fb8fd013c363ab3a4c1e651280ccfc4f14d5577eb2f46d71",
-      "checked_at": "2026-11-21T18:54:37+00:00",
+      "checked_at": "2026-11-21T18:58:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2217,7 +2286,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T18:55:05+00:00",
+      "checked_at": "2026-11-21T18:59:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2420,7 +2489,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-21T18:55:05+00:00",
+      "checked_at": "2026-11-21T18:59:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2457,8 +2526,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "134c239993119837c98dbe36429fd7dc68a3a56f6328c8fb950c494f03c1abda",
-      "checked_at": "2026-11-21T18:54:42+00:00",
+      "content_sha256": "670083e6c23cc962c58d25ec88659a3c8be231e5b00a78bee5b709605a9dd420",
+      "checked_at": "2026-11-21T18:58:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2488,8 +2557,8 @@
       "candidate_id": "oa-index-eaefe8edde44acf2edd9",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
-      "content_sha256": "9ce4ec5c19d4b37122fdacabfb9dab3168c5fec050a551e4f0c6cca0e0789228",
-      "checked_at": "2026-11-21T18:55:03+00:00",
+      "content_sha256": "2f57d6fb77c8a6a68a1307302b92b87bff18d2eb94fa7f47a7309b7e3ad1deab",
+      "checked_at": "2026-11-21T18:59:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2540,8 +2609,8 @@
       "candidate_id": "oa-index-ecad847d0d03d7d78caa",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
-      "content_sha256": "8c2fabc9ac92fb3a102a90a9d4684644009744e254ef27a7ef2cea49e7d4618b",
-      "checked_at": "2026-11-21T18:55:04+00:00",
+      "content_sha256": "eb933912a403a29887fdf5ce272c1205b4db7fcc4a46ee46b15476cc913ca001",
+      "checked_at": "2026-11-21T18:59:01+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
