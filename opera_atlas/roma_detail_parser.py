@@ -143,9 +143,21 @@ def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple
     for line in intro[title_ix+1:]:
         m=re.fullmatch(r"Musica\s+di\s+(.{4,100})",line,re.I)
         if m:credits.append(m[1].strip())
-    if len(credits)!=1 or not re.fullmatch(
-        r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ.'’ -]{3,99}",credits[0]
-    ):
+    # Names in the approved first-party credits can contain letters outside
+    # Latin-1 (e.g. Šostakovič). Match Unicode letters, not an arbitrary
+    # historical European character interval. Disallow digits, role labels,
+    # symbols and single-word attributions; never infer a composer from slug.
+    def credible_person_name(value:str)->bool:
+        if not 4<=len(value)<=100:return False
+        if not all(char.isalpha() or char in " .-'’" for char in value):
+            return False
+        tokens=[token for token in re.split(r"[ .-'’]+",value) if token]
+        return (len(tokens)>=2 and all(any(ch.isalpha() for ch in token)
+                                      for token in tokens)
+                and tokens[0].casefold() not in {
+                    "direttore","regia","maestro","coro","orchestra","autori",
+                    "anonimo","soprano","tenore"})
+    if len(credits)!=1 or not credible_person_name(credits[0]):
         raise ValueError("unambiguous official Rome composer credit missing")
     composer=credits[0]
     venue,dates=parse_roma_detail(html,url=url,title=title,composer=composer)
