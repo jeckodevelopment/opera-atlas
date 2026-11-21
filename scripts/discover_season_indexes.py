@@ -160,7 +160,10 @@ class ScopedSeasonAnchors(HTMLParser):
             self.heading_text=[]
 
 def eligible(key:str,url:str)->bool:
-    path=urlsplit(url).path.lower().rstrip("/")
+    parsed=urlsplit(url)
+    if parsed.query or parsed.fragment or parsed.username or parsed.password or parsed.port is not None:
+        return False
+    path=parsed.path.lower().rstrip("/")
     if excluded_nonopera(key,url):
         return False
     if key=="scala-season-2026-27":
