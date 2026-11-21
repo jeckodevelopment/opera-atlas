@@ -63,7 +63,7 @@ def parse_brescia_detail(html:str,*,url:str,title:str,composer:str):
     start=re.search(r"(?i)\bTurno\s+A\b",prefix)
     if not start:raise ValueError("official ticket showtime cards absent")
     segment=prefix[start.start():]
-    if CANCEL.search(segment):raise ValueError("cancelled or moved performance")
+    if CANCEL.search(prefix):raise ValueError("cancelled or moved performance")
     matches=list(DATES.finditer(segment))
     if not matches:raise ValueError("no dated Sala Grande ticket showtimes")
     # Every ticket turn label must have an independently dated showtime.
