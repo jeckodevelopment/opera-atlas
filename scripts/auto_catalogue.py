@@ -224,6 +224,39 @@ def next_id(entries:dict,prefix:str)->str:
              if x["id"].startswith(prefix) and x["id"][len(prefix):].isdigit()]
     return prefix+f"{max(numeric,default=0)+1:06d}"
 
+def canonicalize_cached_trieste_credit(rows:list[dict],registry:dict)->list[dict]:
+    """Repair an older verified Trieste checkpoint only for known works.
+
+    Old official text rendered the following genre as part of the author's
+    name. Remove it ONLY where the exact title + corrected author already
+    identify a unique canonical work. The official source is checked by the
+    caller; individual clocks and venues are never rewritten.
+    """
+    if not isinstance(rows,list) or not rows or not all(isinstance(x,dict) for x in rows):
+        return rows
+    changed=[]
+    for row in rows:
+        title,composer=row.get("event_title"),row.get("composer")
+        if not isinstance(title,str) or not isinstance(composer,str):
+            return rows
+        genre=next((g for g in (" Opera"," Tragedia"," Melodramma")
+                    if composer.endswith(g)),None)
+        if genre is None:return rows
+        correct=composer[:-len(genre)]
+        matches=[w for w in registry.get("works",{}).values()
+                 if normalized(w["title"]).replace("’","'")==
+                    normalized(title).replace("’","'")
+                 and normalized(w["composer"])==normalized(correct)]
+        if len(matches)!=1:return rows
+        changed.append({**row,"event_title":matches[0]["title"],
+                        "composer":matches[0]["composer"]})
+    # Mixed or partially corrupted credit observations may never be repaired.
+    if len(changed)!=len(rows) or len({(x["event_title"],x["composer"])
+                                       for x in changed})!=1:
+        return rows
+    return changed
+
+
 def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             authorized_urls:list[str], *, today:date,
             intelligence:dict|None=None)->tuple[dict,dict,list[str],dict]:
@@ -265,6 +298,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             # do not require refetching all already verified showtimes.
             from opera_atlas.bologna_detail_parser import normalize_event_fact
             rows=[normalize_event_fact(row) for row in rows]
+        if key=="verdi-trieste-season-2026-27":
+            rows=canonicalize_cached_trieste_credit(rows,next_registry)
         if not rows or not all(isinstance(x,dict) and
                isinstance(x.get("composer"),str) and isinstance(x.get("event_title"),str)
                and isinstance(x.get("date"),str) and isinstance(x.get("starts_at"),str)
