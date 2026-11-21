@@ -7,6 +7,7 @@ window.OperaAtlasCatalog = (() => {
   const BASE = "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/v2/";
   const MIRROR = "https://cdn.jsdelivr.net/gh/jeckodevelopment/opera-atlas@main/public/catalog/v2/";
   const CHANNELS = ["works","venues","stagings","performances"];
+  const VENUE_FEED = "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/venue-directory.json";
 
   const PREFIX = new URL(document.baseURI).pathname.replace(/\/$/, "");
 
@@ -116,6 +117,32 @@ window.OperaAtlasCatalog = (() => {
     return {schema_version:1,performances,source:"github",reviewed_on:manifest.reviewed_on,warning:groupWarning};
   }
 
+  // Theatre catalogue is independent of performance publication, including
+  // venues with zero currently known recite and future national onboarding.
+  async function venues() {
+    try {
+      const document=await jsonFrom(VENUE_FEED);
+      if(document.schema_version!==1 || !Array.isArray(document.venues))
+        throw Error("Invalid venue directory");
+      const ids=new Set(),routes=new Set();
+      for(const venue of document.venues){
+        if(!venue || typeof venue.id!=="string" || typeof venue.name!=="string" ||
+           !/^[a-z0-9-]+$/.test(venue.slug||"") ||
+           !/^[a-z0-9-]+$/.test(venue.city_slug||"") ||
+           !String(venue.source_url||"").startsWith("https://"))
+          throw Error("Unsafe venue directory entry");
+        const route=venue.city_slug+"/"+venue.slug;
+        if(ids.has(venue.id)||routes.has(route))
+          throw Error("Duplicate venue directory entry");
+        ids.add(venue.id);routes.add(route);
+      }
+      return document.venues;
+    }catch(error){
+      console.warn("Atlas national venue directory unavailable",error);
+      return [];
+    }
+  }
+
   async function load() {
     const failures=[];
     for(const base of [BASE,MIRROR]){
@@ -142,5 +169,5 @@ window.OperaAtlasCatalog = (() => {
       throw new Error("Unable to load remote or local catalog");
     }
   }
-  return Object.freeze({load, urls, slugify});
+  return Object.freeze({load, urls, slugify, venues});
 })();
