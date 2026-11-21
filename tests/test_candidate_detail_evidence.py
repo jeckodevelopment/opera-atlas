@@ -258,6 +258,26 @@ class CandidateDetailTests(unittest.TestCase):
     def test_selection_only_review_and_exact_official_domains(self):
         chosen=selected_candidates(self.candidates,today=date(2026,11,20))
         self.assertEqual([x["id"] for x in chosen],["candidate-a"])
+    def test_collect_captures_title_specific_image_from_verified_official_page(self):
+        url=self.candidates["candidates"][0]["official_url"]
+        html=('<h1>Anna Bolena</h1>'
+              '<meta property="og:image" content="/static/upload/ann/anna-bolena.jpg">'
+              '<script type="application/ld+json">'+json.dumps({
+                  "@type":"MusicEvent","name":"Anna Bolena",
+                  "startDate":"2027-05-02T20:00:00+02:00",
+                  "location":{"@type":"Place","name":"Teatro alla Scala"},
+                  "workPerformed":{"@type":"MusicComposition",
+                       "composer":{"name":"Gaetano Donizetti"}}})+'</script>')
+        def mock(db,*,source_id,url,network_enabled):
+            return FetchResult(url,html,"a"*64,len(html))
+        evidence,health=collect(self.candidates,self.empty,network_enabled=True,
+                                fetcher=mock,today=date(2026,11,20))
+        record=evidence["evidence"][0]
+        proof=record["poster_evidence"]
+        self.assertEqual(proof["kind"],"official_production_image")
+        self.assertEqual(proof["source_url"],url)
+        self.assertIn("anna-bolena.jpg",proof["image_url"])
+
     def test_success_preserves_evidence_and_does_not_create_recite(self):
         html='<script type="application/ld+json">'+json.dumps({
             "@type":"MusicEvent","name":"Anna Bolena",

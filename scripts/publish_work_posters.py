@@ -137,9 +137,11 @@ def extract_official_poster(html:str,official_url:str,work_title:str)->dict|None
         width,height=int(data.get("og:image:width","0")),int(data.get("og:image:height","0"))
     except ValueError:
         return None
-    # Explicit landscape OG banners are not opera posters; do not present
-    # them as portrait artwork. Unknown dimensions remain unverified art.
-    if width>0 and height>0 and width>height*1.35:
+    # An index banner from a different source is never an opera poster.
+    # Title-specific artwork on the same official production domain is
+    # authentic even when the theatre uses a wide 16:9 season visual.
+    if (width>0 and height>0 and width>height*1.35 and
+            urlsplit(url).hostname!=urlsplit(official_url).hostname):
         return None
     return {
         "image_url":url,"source_url":official_url,

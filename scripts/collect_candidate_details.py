@@ -473,11 +473,24 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 if item["source_key"] in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
                     from opera_atlas.bologna_detail_parser import normalize_event_fact
                     facts=[normalize_event_fact(row) for row in facts]
+                # Capture authenticated image metadata during the same
+                # robots-gated production fetch. An unrelated promotional
+                # picture must not become the new canonical opera's cover.
+                image=None
+                identities={(normalized(x.get("event_title","")),
+                             normalized(x.get("composer","")))
+                            for x in facts if isinstance(x,dict)}
+                if len(identities)==1:
+                    from scripts.publish_work_posters import extract_official_poster
+                    title=facts[0].get("event_title","")
+                    if isinstance(title,str) and title.strip():
+                        image=extract_official_poster(page.html,item["official_url"],title)
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
                     "source_url":item["official_url"],"content_sha256":page.sha256,
                     "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
                     "status":"needs_editorial_review","event_facts":facts,
+                    **({"poster_evidence":image} if image else {}),
                 }
                 health.append({"candidate_id":item["id"],"outcome":"facts_found",
                                "rows":len(facts)})
