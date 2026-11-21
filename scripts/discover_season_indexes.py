@@ -78,6 +78,14 @@ EXCLUDED_PATHS={
         "deledda", "sergio-bernal-dance-company",
         "the-phantom-of-the-opera",
     }),
+    "petruzzelli-opera-2026": frozenset({
+        # Official programme title is the classical ballet, not an opera.
+        "le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre",
+    }),
+    "petruzzelli-opera-2027": frozenset({
+        # Tchaikovsky\u0027s Nutcracker is a ballet, even in an opera/ballet index.
+        "lo-schiaccianoci-di-petr-ilic-cajkovskij-11-14-febbraio",
+    }),
     "fenice-opera-2026-27": frozenset({
         "piccolo-orso-e-la-montagna-di-ghiaccio",
         "zsigmond-gerloczy",
