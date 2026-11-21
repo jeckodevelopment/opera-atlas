@@ -21,11 +21,12 @@ indipendentemente dal teatro; il budget di ricerca per le opere sconosciute
 è di dodici candidati per ciclo, con rotazione equa per quelle senza data.
 
 Quando non esistono ancora fatti sufficienti per formulare una trama
-originale affidabile, il sistema registra
-`verified_plot_and_history_unavailable` e **non inventa una sinossi**.
-Questo è un limite esplicito: la ricerca automatica attuale non scrive
-una trama nuova usando un modello linguistico. La pubblicazione delle
-altre opere e dei calendari verificati prosegue normalmente.
+originale affidabile, il sistema registra `verified_plot_unavailable`.
+Quando la trama esiste ma non si riescono a documentare i dati storici,
+registra `verified_premiere_history_unavailable`. La ricerca
+**non inventa né la sinossi né i dati di prima rappresentazione**.
+Gli elementi già verificati vengono conservati e completati nei refresh
+successivi, senza fermare il resto del calendario.
 
 ## Sintesi originale da fonti enciclopediche verificate
 
@@ -44,6 +45,31 @@ non abilita da sola la pubblicazione: sono richiesti anche fatti storici
 documentati e tutti i controlli del catalogo. Quando mancano, il testo
 viene conservato per i cicli successivi senza fermare le altre opere.
 Nessuna chiave API o servizio a pagamento è necessario.
+
+## Completamento integrato della scheda prima della pubblicazione
+
+Il medesimo ciclo di refresh esegue questi controlli prima della promozione
+nel catalogo: (1) identità Wikidata univoca coerente con il compositore
+della fonte ufficiale; (2) riuso della sinossi specifica già verificata,
+altrimenti ricerca della sezione `Trama` italiana e costruzione prudente
+di un nuovo testo originale; (3) riuso del profilo di prima rappresentazione,
+altrimenti recupero da **Wikidata P87** (librettista), **P1191**
+(data della prima), **P4647** (luogo della prima) e **P131**
+(località in cui si trova il teatro). Il recupero storico fallisce
+esplicitamente se un dato è assente, contraddittorio o non univoco.
+
+`scripts/work_history_research.py` ricostruisce il profilo storico
+solo dal QID **della stessa composizione** che ha superato la disambiguazione,
+registrando l'URL della fonte. L'anno della prima non viene dedotto
+dall'anno di composizione; non si confondono opere omonime.
+Una scheda editoriale completa viene promossa nello stesso ciclo, previa
+verifica delle date e delle immagini richiesta dal catalogo. Per una
+scheda parziale rimangono in coda esclusivamente i dati mancanti, senza
+pubblicazioni provvisorie e senza blocco globale.
+
+Il generatore grammaticale rimane conservativo: non è un LLM e non può
+scrivere trame per ogni opera. La mancanza di una fonte non è un motivo
+per riportare una presentazione generica come se fosse una sinossi.
 
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
