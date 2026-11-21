@@ -426,18 +426,18 @@ async function initialize() {
       document.querySelector(".detail-related h2").textContent="Spettacoli in programma";
       title.textContent=first.venue;
       subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
+      if(!selected.events.length)
+        document.querySelector(".detail-related").hidden=true;
       theatreProfile=selected.venue
         ? await appendTheatreProfile(first,selected.venue)
         : await appendTheatreProfile(first);
       if(selected.events.length)content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche"));
-      else content.append(node("p","staging-summary",
-        "La sede è censita. Il programma degli spettacoli non è ancora stato acquisito."));
+
       for(const group of grouping(future))stagingGroup(group,"venue");
-      if(!future.length)results.append(node("p","empty",
-        selected.events.length?"Nessun prossimo spettacolo verificato presso questo teatro nel catalogo Atlas.":
-        "Le prossime rappresentazioni saranno pubblicate dopo la verifica delle fonti ufficiali."));
+      if(!future.length && selected.events.length)
+        results.append(node("p","empty","Non risultano prossimi spettacoli in programma."));
     }else if(selected.kind==="group"){
       kind.textContent="Produzione condivisa";
       title.textContent=first.title;
@@ -473,7 +473,24 @@ async function initialize() {
       content.prepend(figure);
       content.classList.add("production-detail");
     }
-    else content.prepend(editorialImage("venue",first));
+    else {
+      const venueImageEvent={
+        ...first,
+        photo_file:selected.venue?.photo_file || theatreProfile?.photo_file,
+        photo_source_url:selected.venue?.photo_source_url || theatreProfile?.photo_source_url,
+        no_city_fallback:!!selected.venue
+      };
+      const figure=node("figure","theatre-cover-figure");
+      figure.append(editorialImage("venue",venueImageEvent));
+      const photoSource=venueImageEvent.photo_source_url;
+      if(photoSource && safeSource(photoSource)){
+        const caption=node("figcaption","work-image-credit");
+        const attribution=link("Fotografia del teatro · autore e licenza",photoSource,"");
+        attribution.target="_blank";attribution.rel="noopener noreferrer";
+        caption.append(attribution);figure.append(caption);
+      }
+      content.prepend(figure);
+    }
     if(selected.events.length)sourceLinks(selected.events,selected.kind,theatreProfile);
     else sourceLinks([first],selected.kind,theatreProfile);
     document.title=title.textContent+" — Opera+ Atlas";

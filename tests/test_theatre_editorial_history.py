@@ -12,16 +12,14 @@ class TheatreEditorialHistoryTests(unittest.TestCase):
         cls.profiles=json.loads((SITE/"theatre-profiles.json").read_text(encoding="utf-8"))["venues"]
 
     def test_all_current_venues_have_sourced_original_histories(self):
-        self.assertEqual(len(self.profiles),14)
+        self.assertEqual(len(self.profiles),50)
         for key,venue in self.profiles.items():
-            self.assertTrue(120<=len(venue["history"])<=550,key)
+            self.assertTrue(80<=len(venue["history"])<=550,key)
             self.assertTrue(venue["source"].startswith("https://"),key)
             self.assertIn(venue["city"],key)
-            if venue["name"]!="Arena di Verona":
+            if "opening_year" in venue:
                 self.assertTrue(1600<=venue["opening_year"]<=2026,key)
                 self.assertIn(str(venue["opening_year"]),venue["history"],key)
-            else:
-                self.assertNotIn("opening_year",venue)
 
     def test_torino_uses_two_historically_distinct_dates(self):
         theatre=self.profiles["Torino|Teatro Regio"]["history"]

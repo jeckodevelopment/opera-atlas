@@ -158,10 +158,17 @@ window.OperaAtlasImages=Object.freeze((()=>{
     const title=event?.venue||event?.name||("Teatro di "+(event?.municipality||event?.city||"Italia"));
     // A city may have several opera theatres: do not show an Arena photo
     // as if it were a photograph of Teatro Filarmonico.
-    const file=city==="verona" && !/arena di verona/i.test(title)
-      ? null : FILES[city];
-    return file?photo(file,"Veduta del "+title+" a "+(event?.municipality||event?.city),title):
-      {src:poster(title,"venue"),alt:"Illustrazione editoriale del "+title};
+    // Use each theatre's verified file, never a photo of another venue
+    // in the same city. Unknown images retain a visibly editorial fallback.
+    const verified=event?.photo_file;
+    const file=typeof verified==="string" && /^[^/\\]+\.(jpe?g|png|webp)$/i.test(verified)
+      ? verified
+      : (event?.no_city_fallback ||
+         (city==="verona" && !/arena di verona/i.test(title)) ? null : FILES[city]);
+    if(!file)return {src:poster(title,"venue"),alt:"Illustrazione editoriale del "+title};
+    const result=photo(file,"Fotografia del "+title+" a "+(event?.municipality||event?.city),title);
+    if(verified && event.photo_source_url)result.sourceUrl=event.photo_source_url;
+    return result;
   }
   function festival(event){
     const title=event?.name||"Festival";
