@@ -1,13 +1,15 @@
 """Regression: official-source Scala cards need plot, premiere, archival image before publication."""
 import json
 import unittest
-from scripts.publish_catalog_v2 import ROOT
-from scripts.publish_work_editorial import validate_history
+from scripts.publish_catalog_v2 import ROOT,REGISTRY,normalized
+from scripts.publish_work_editorial import validate_history,EDITORIAL,HISTORY,build_editorial
 from scripts.publish_work_posters import load_archival_art
-from scripts.auto_catalogue import official_identity_candidates
+from scripts.auto_catalogue import official_identity_candidates,promote_new_works,SOURCE_ALLOWLIST
 from scripts.discover_season_indexes import OUTPUT as INDEX
 from scripts.collect_candidate_details import OUTPUT as DETAILS
 from scripts.auto_work_research import OUT as RESEARCH
+from scripts.build_verified_catalog import MANIFEST
+from datetime import date
 
 SOURCES={
     "leonora":("Leonora","Ferdinando Paër",6),
@@ -46,6 +48,41 @@ class ScalaEditorialReadyTests(unittest.TestCase):
                 self.assertIn(slug,artwork)
                 self.assertEqual(artwork[slug]["kind"],"archival_work_image")
                 self.assertIn("commons.wikimedia.org",artwork[slug]["source_url"])
+
+    def test_full_canonical_promotion_is_atomic_and_idempotent(self):
+        read=lambda path:json.loads(path.read_text())
+        facts,registry=read(MANIFEST),read(REGISTRY)
+        detail,candidates=read(DETAILS),read(INDEX)
+        editorial,history=read(EDITORIAL),read(HISTORY)
+        urls=read(SOURCE_ALLOWLIST)["urls"]
+        intelligence=official_identity_candidates(detail,candidates,read(RESEARCH))
+        chosen={"schema_version":1,"works":[w for w in intelligence["works"]
+                   if w.get("source_url","").endswith((
+                     "/leonora.html","/les-pecheurs-de-perles.html"))]}
+        self.assertEqual(len(chosen["works"]),2)
+        prior={(normalized(w["title"]),normalized(w["composer"]))
+               for w in registry["works"].values()}
+        next_facts,ids,approved,news,hist,report=promote_new_works(
+            facts,registry,detail,candidates,chosen,editorial,urls,
+            today=date(2026,11,21),history=history,require_image=True)
+        remaining={title:count for title,composer,count in SOURCES.values()
+                   if (normalized(title),normalized(composer)) not in prior}
+        self.assertEqual(report["new_works"],len(remaining),report)
+        self.assertEqual(report["new_recite"],sum(remaining.values()),report)
+        published=build_editorial(next_facts,ids,news,
+                                  approved_extra=set(approved),history=hist)
+        works={w["title"]:w for w in published["works"]}
+        for name in SOURCES:
+            title,composer,count=SOURCES[name]
+            self.assertIn(title,works)
+            self.assertEqual(len([x for x in next_facts["productions"]
+                                  if normalized(x["title"])==normalized(title)
+                                  and normalized(x["composer"])==normalized(composer)]),1)
+        again=promote_new_works(next_facts,ids,detail,candidates,chosen,
+                                news,approved,today=date(2026,11,21),
+                                history=hist,require_image=True)
+        self.assertEqual(again[-1]["new_works"],0)
+        self.assertEqual(again[-1]["new_recite"],0)
 
 if __name__=="__main__":
     unittest.main()
