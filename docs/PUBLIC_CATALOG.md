@@ -201,3 +201,23 @@ Il workflow `deploy-atlas.yml` deve consentire una pubblicazione manuale del sol
 Per evitare falsi blocchi, il preflight del deploy genera **in locale** e senza rete i file derivati da `data/verified-launch-catalog.json` e `data/identity-registry.json` tramite `build_verified_catalog`, `publish_catalog_v2` e `publish_work_editorial`, quindi verifica la corrispondenza con `--check` e con la suite. Questa rigenerazione non committa, non fa push e **non trasferisce feed JSON dinamici via SFTP**. La pubblicazione dei dati continua esclusivamente nel workflow apposito. Non cambia secret, ID o URL canonici.
 
 Collaudo: avviare `Publish Opera Atlas` su `main` con un feed v2 obsoleto rispetto al registro canonico; il preflight non deve fallire con `missing or changed content-addressed feed`. Il job prosegue all'upload SFTP e alla verifica HTTPS; i test devono ancora bloccare dati o URL realmente inconsistenti.
+
+## Censimento nazionale autonomo dei teatri — 21/11/2026
+
+La sezione **Teatri** non è più derivata esclusivamente dalle rappresentazioni. La fonte di verità editoriale per le sedi fisiche è `data/venue-directory.json`, pubblicata separatamente nel feed `public/catalog/venue-directory.json` attraverso `python -m scripts.publish_venue_directory`. All'adozione iniziale censisce **50 sedi in 16 regioni**, incluse tutte le 14 già presenti nel catalogo degli spettacoli e 36 nuove sedi con URL individuali, fonte, nome, città, regione, testo sintetico e stato di acquisizione.
+
+Le sedi senza repliche mantengono una **scheda individuale navigabile** sul percorso stabile `/atlas/<citta>/<teatro>/`. Vi compaiono nome, città/regione, breve introduzione, collegamento alla fonte e indicazione esplicita che il programma non è ancora stato acquisito; non viene inventata alcuna rappresentazione né una biografia storica non verificata. Le 14 schede con storia documentata conservano la precedente presentazione storica e l'indirizzo. Le immagini sconosciute utilizzano la copertina editoriale di ripiego; in particolare il Teatro Filarmonico non eredita per errore la fotografia dell'Arena di Verona.
+
+L'anagrafica delle **sedi** è distinta dal registro di **circuiti, festival e organizzatori** (`related_organizations` nello stesso file). OperaLombardia, il Circuito Lirico Piemontese, il Teatro dell'Opera Giocosa, Fondazione Haydn, Festival Verdi, Rossini Opera Festival, Festival Puccini, Festival della Valle d'Itria, Ravenna Festival, Monteverdi Festival, Macerata Opera Festival e Luglio Musicale Trapanese non diventano per errore edifici teatrali. Le loro sedi fisiche vengono censite separatamente quando documentate. Alcune sedi di spettacoli all'aperto sono stagionali e altre richiedono verifiche di continuità, esplicitamente distinte dal programma.
+
+Gli ID `oa-v-*` delle 14 sedi già collegate agli spettacoli **non cambiano**. I nuovi record dell'anagrafica usano lo spazio riservato `oa-vd-*`, che non può entrare in collisione con l'assegnazione dei nuovi ID del catalogo delle recite. Il generatore blocca slug di percorso duplicati, fonti HTTP non sicure, campi incompleti e alterazioni degli ID canonici. Le future promozioni nel catalogo eventi dovranno ricondurre esplicitamente la sede alla sua identità esistente, non creare schede duplicate.
+
+Il feed è aggiornabile via GitHub **senza nuovo deploy SFTP per ciascun teatro**. Il frontend richiede una sola pubblicazione SFTP per leggere l'anagrafica autonoma; il workflow di refresh comprende validazione, generazione e commit del feed `venue-directory.json` separatamente dai JSON delle recite.
+
+### Comportamenti da collaudare
+
+1. Pagina `directory.html?section=teatri`: 50 schede, ricerca per nome/città e sedi senza rappresentazioni visibili.
+2. Pagine singole: Carlo Felice Genova, Alfieri Asti, Filarmonico Verona, Verdi Trieste, Teatro delle Muse Ancona, San Carlo Napoli, Petruzzelli Bari, Teatro Lirico Cagliari. Link a fonte e testo prudente sul calendario in acquisizione.
+3. Collegamenti preesistenti `/atlas/torino/teatro-regio/`, `/atlas/milano/teatro-alla-scala/` e relative repliche invariati; Stabile Veneto e più teatri nello stesso comune non devono fondersi.
+4. Controllo delle 13 entità non-sede: nessuna viene impropriamente mostrata come teatro.
+5. Suite `python -m unittest discover -s tests -v`, `python -m scripts.publish_venue_directory --check`, verifica finale del deploy SFTP e lettura HTTPS del feed.
