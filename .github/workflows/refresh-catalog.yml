@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: '17 7 * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [catalog-refresh-retry]
   # Operator-requested recovery refresh: verify Genova, Bergamo and Brescia live.
   push:
     branches: [main]
@@ -51,7 +53,8 @@ permissions:
   contents: write
 concurrency:
   group: opera-atlas-public-feed
-  cancel-in-progress: false
+  # A newer main commit supersedes an obsolete catalog scan.
+  cancel-in-progress: true
 jobs:
   update:
     runs-on: ubuntu-24.04
@@ -108,6 +111,7 @@ jobs:
           python -m scripts.publish_work_posters --check
           python -m unittest discover -s tests -v
       - name: Publish only changed validated data (no SFTP)
+        id: publish_catalog
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -121,3 +125,12 @@ jobs:
           # Bounded, non-forced push; defer stale data if main received a
           # newer adapter or canonical update while the scan was running.
           python -m scripts.safe_push_catalog
+      - name: Retry against newest main if upstream code changed
+        if: steps.publish_catalog.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # The previous safe push refused to overwrite newer source/code.
+          # Dispatch a fresh scan on the canonical default branch, rather
+          # than reporting success and silently waiting until tomorrow.
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
