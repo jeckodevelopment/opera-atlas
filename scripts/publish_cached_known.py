@@ -1,6 +1,6 @@
-"""Publish existing, fully verified known-work recite before slow live scans.
+"""Publish fully verified stored recite before slow live scans.
 
-Offline-only: neither invents unknown works nor bypasses source verification.
+Offline-only: never invents new work identity or bypasses source verification.
 Generated public JSON remains checked by the regular workflow before pushing.
 """
 from __future__ import annotations
@@ -35,6 +35,34 @@ def prepare(facts,registry,evidence,candidates,authorized,verified_times,*,today
     report["enriched_recite_times"]=enriched+double
     return after,ids,urls,updated_times,report
 
+def promote_cached_verified_new_works(facts,registry,evidence,candidates,
+                                    approved,*,today):
+    """Publish only fully researched first-party works in the Maggio feed.
+
+    No new factual claims are generated: all the details have been reviewed,
+    the composer attributed from the theatre's official calendar, the work
+    identity backed by Wikidata and the original synopsis/history recorded.
+    Every canonical graph is validated *before* writing.
+    """
+    from scripts.auto_catalogue import promote_new_works
+    from scripts.auto_work_research import OUT as RESEARCH
+    intelligence=json.loads(RESEARCH.read_text(encoding="utf-8"))
+    selected={"schema_version":1,"works":[x for x in intelligence.get("works",[])
+              if x.get("source_key")=="maggio-fiorentino-calendar-2027"
+              and x.get("wikidata_id") and x.get("history")
+              and x.get("synopsis")]}
+    editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
+    historical=json.loads(HISTORY.read_text(encoding="utf-8"))
+    after,ids,urls,new_editorial,new_history,report=promote_new_works(
+        facts,registry,evidence,candidates,selected,editorial,approved,
+        today=today,history=historical)
+    validate_auto_sources(urls)
+    assemble(after,ids,approved_extra=set(urls))
+    build_editorial(after,ids,new_editorial,approved_extra=set(urls),
+                    history=new_history)
+    return after,ids,urls,new_editorial,new_history,report
+
+
 def main():
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
     registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
@@ -45,10 +73,18 @@ def main():
     after,ids,urls,times,report=prepare(
         facts,registry,evidence,candidates,allowlist["urls"],old_times,
         today=date.today())
+    after,ids,urls,editorial,history,new_works=promote_cached_verified_new_works(
+        after,ids,evidence,candidates,urls,today=date.today())
+    report["new_works"]=new_works["new_works"]
+    report["new_recite"]+=new_works["new_recite"]
+    report["new_stagings"]+=new_works["new_stagings"]
     if report["new_recite"]:
         _write_atomic(MANIFEST,after)
         _write_atomic(REGISTRY,ids)
         _write_atomic(SOURCE_ALLOWLIST,{"schema_version":1,"urls":urls})
+    if report.get("new_works"):
+        _write_atomic(EDITORIAL,editorial)
+        _write_atomic(HISTORY,history)
     if report["enriched_recite_times"]:
         _write_atomic(TIME_EVIDENCE,times)
     print(json.dumps({"cached_verified":report},ensure_ascii=False))
