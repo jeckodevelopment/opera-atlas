@@ -11,6 +11,7 @@ class CachedFeedWorkflowTests(unittest.TestCase):
         self.assertIn("group: opera-atlas-cached-feed",fast)
         self.assertIn("cancel-in-progress: false",fast)
         self.assertIn("group: opera-atlas-public-feed",slow)
+        self.assertIn("cancel-in-progress: false",slow)
         self.assertIn("repository_dispatch:",fast)
         self.assertIn("cached-catalog-retry",fast)
         self.assertIn("steps.commit_catalog.outputs.deferred == 'true'",fast)
