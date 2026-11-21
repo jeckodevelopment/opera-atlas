@@ -431,5 +431,28 @@
         "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
       ]
     }
+  },
+  "works_by_id": {
+    "oa-w-000007": {
+      "librettist": "Ruggero Leoncavallo",
+      "premiere_year": 1897,
+      "premiere_date": "1897-05-06",
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.ruggeroleoncavallo-epistolario.ch/index.php/it/leoncavallo/prime-rappresentazioni",
+        "https://www.librettidopera.it/boheme_l/boheme_l.html"
+      ]
+    },
+    "oa-w-000024": {
+      "librettist": "Luigi Illica; Giuseppe Giacosa",
+      "premiere_year": 1896,
+      "premiere_venue": "Teatro Regio",
+      "premiere_city": "Torino",
+      "sources": [
+        "https://puccini.it/opera/la-boheme/"
+      ],
+      "premiere_date": "1896-02-01"
+    }
   }
 }
