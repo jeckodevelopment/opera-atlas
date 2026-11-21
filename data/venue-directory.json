@@ -1015,6 +1015,27 @@
       "photo_credit": "Sailko, Wikimedia Commons — CC BY-SA 3.0",
       "photo_license": "CC BY-SA 3.0",
       "calendar_status": "acquired"
+    },
+    {
+      "id": "oa-vd-000055",
+      "name": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "region": "Lazio",
+      "city_slug": "roma",
+      "slug": "teatro-valle-franca-valeri",
+      "website": "https://www.teatrodiroma.net/",
+      "source_url": "https://www.turismoroma.it/it/luoghi/teatro-valle-franca-valeri-teatro-di-roma",
+      "description": "Nel rione Sant’Eustachio, il Teatro Valle riaccoglie il pubblico e rievoca la tradizione lirica romana, inclusa la prima di Rossini del 1817.",
+      "monitoring_status": "programma_censito",
+      "profile_key": "Roma|Teatro Valle Franca Valeri",
+      "address": "Via del Teatro Valle 21",
+      "history": "Inaugurato nel 1727 su progetto di Tommaso Morelli, il Teatro Valle ospitò nel 1817 la prima assoluta della Cenerentola di Rossini. Intitolato a Franca Valeri, ha riaperto al pubblico nel 2026 dopo un lungo restauro, tornando a essere una sede viva della scena romana.",
+      "opening_year": 1727,
+      "photo_file": "Roma Teatro Valle.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Roma_Teatro_Valle.jpg",
+      "photo_credit": "Gobbler, Wikimedia Commons — CC BY-SA 3.0",
+      "photo_license": "CC BY-SA 3.0",
+      "calendar_status": "not_acquired"
     }
   ],
   "related_organizations": [
