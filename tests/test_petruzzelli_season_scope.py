@@ -35,6 +35,28 @@ class PetruzzelliOfficialSeasonScopeTests(unittest.TestCase):
             extract(SOURCE,INDEX,"<nav><a href='"+OFFICIAL[0]+
                     "'>OPERA E BALLETTO 2027</a></nav>",min_links=1)
 
+    def test_split_official_season_title_across_nested_spans(self):
+        html=("<nav><a href='"+OFFICIAL[0]+
+              "'>OPERA E BALLETTO <span>2027</span></a></nav>"
+              "<div class='elementor-heading-title'><span>OPERA E BALLETTO</span>"
+              "<span>2027</span></div>"
+              "<h2>Le opere in programma</h2>"
+              +"".join("<article><h2>Produzione</h2><a href='"+u+
+                       "'>Dettagli</a></article>" for u in OFFICIAL)
+              +"<footer><a href='"+OLD+"'>Archivio</a></footer>")
+        self.assertEqual(extract(SOURCE,INDEX,html,min_links=3),sorted(OFFICIAL))
+        with self.assertRaisesRegex(ValueError,"season index incomplete"):
+            extract(SOURCE,INDEX,
+                    "<nav><a href='"+OFFICIAL[0]+
+                    "'>OPERA E BALLETTO <span>2027</span></a></nav>",
+                    min_links=1)
+
+    def test_wrong_season_does_not_open_2027_scope(self):
+        html=("<div><span>OPERA E BALLETTO</span> <span>2026</span></div>"
+              +"".join("<a href='"+u+"'>Other season</a>" for u in OFFICIAL))
+        with self.assertRaisesRegex(ValueError,"season index incomplete"):
+            extract(SOURCE,INDEX,html,min_links=1)
+
     def test_old_candidate_keeps_audit_but_not_research_status(self):
         seen={
             "old":{"id":"old","source_key":SOURCE,"official_url":OLD,
