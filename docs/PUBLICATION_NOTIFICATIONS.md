@@ -7,8 +7,8 @@ Il workflow `.github/workflows/refresh-catalog.yml` invia una notifica per **ogn
 Configurare nella repository `jeckodevelopment/opera-atlas`:
 
 - **Secret** `RESEND_API_KEY`: chiave API Resend con permesso invio.
-- **Variable** `ATLAS_NOTIFICATION_FROM`: mittente verificato in Resend, esempio `Opera Atlas <notifiche@dominio-verificato.example>`.
-- **Variable** `ATLAS_NOTIFICATION_TO`: email destinataria diagnostica.
+- **Secret** `ATLAS_NOTIFICATION_FROM`: mittente verificato in Resend, esempio `Opera Atlas <notifiche@dominio-verificato.example>`.
+- **Secret** `ATLAS_NOTIFICATION_TO`: elenco di indirizzi destinatari separati da virgola (o a capo), ad esempio `primo@example.org,secondo@example.org`. Un'unica richiesta Resend consegna l'avviso a tutti gli indirizzi configurati.
 
 La chiave non deve comparire nei file del progetto. Il dominio mittente deve essere verificato presso Resend. Se manca una delle tre configurazioni, il catalogo continua a pubblicarsi e il workflow registra un warning; non viene effettuato alcun invio di prova verso indirizzi inventati.
 
@@ -18,4 +18,4 @@ Ogni email include tipo dell'evento, titolo, ID permanente, teatro/città o comp
 
 `python -m unittest tests.test_publication_notifications -v`
 
-Collaudi di integrazione: configurare le tre credenziali, pubblicare in staging una nuova opera con relativa produzione, verificare due email; ripetere il refresh senza cambiamenti e verificare zero email; aggiungere una diversa produzione della stessa opera e verificare una sola email; simulare un errore Resend e verificare che il push resti valido. Le nuove recite non devono generare email. I messaggi vengono inviati nel workflow di produzione, non nei test.
+Collaudi di integrazione: configurare le tre credenziali, pubblicare in staging una nuova opera con relativa produzione, verificare due email; ripetere il refresh senza cambiamenti e verificare zero email; aggiungere una diversa produzione della stessa opera e verificare una sola email; simulare un errore Resend e verificare che il push resti valido. Verificare che entrambi i destinatari ricevano la notifica senza che gli indirizzi compaiano nel repository o nei log. Le nuove recite non devono generare email. I messaggi vengono inviati nel workflow di produzione, non nei test.
