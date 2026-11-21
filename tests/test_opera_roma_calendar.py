@@ -12,7 +12,7 @@ from scripts.discover_season_indexes import CONFIG,validate_config,eligible,extr
 
 SOURCE="opera-roma-season-2026-27"
 DETAIL="https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
-INDEX="https://www.operaroma.it/opere/"
+INDEX="https://www.operaroma.it/genre/opera/"
 DATES=[("2027-02-21","19:00"),("2027-02-23","20:00"),
        ("2027-02-24","20:00"),("2027-02-25","20:00"),
        ("2027-02-26","20:00"),("2027-02-27","18:00"),
@@ -43,6 +43,11 @@ class RomeOperaTests(unittest.TestCase):
     def test_strict_rome_source_url_and_index(self):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
         self.assertEqual(len(validate_config(config)),14)
+        self.assertEqual(next(x["url"] for x in config["sources"] if x["key"]==SOURCE),INDEX)
+        with self.assertRaises(ValueError):
+            obsolete=json.loads(json.dumps(config))
+            next(x for x in obsolete["sources"] if x["key"]==SOURCE)["url"]="https://www.operaroma.it/opere/"
+            validate_config(obsolete)
         self.assertTrue(eligible(SOURCE,DETAIL))
         self.assertFalse(eligible(SOURCE,INDEX))
         self.assertFalse(eligible(SOURCE,"https://www.operaroma.it/costanzi/"))
