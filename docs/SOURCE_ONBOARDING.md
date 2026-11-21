@@ -558,3 +558,14 @@ Controllare in `data/season-index-health.json` che Bergamo, Brescia e Genova
 abbiano `current_scan_verified: true` solo dopo una lettura riuscita con
 `robots.txt` consentito; controllare separatamente la raccolta di evidenze
 e la pubblicazione delle repliche. Nessun deploy SFTP è richiesto.
+
+
+## Risoluzione autonoma delle opere omonime — 21/11/2026
+
+La ricerca quotidiana **non esclude più** dal controllo di autorità i titoli che sono già presenti nel registro: un titolo noto può riferirsi a una composizione nuova. `scripts.auto_work_research.resolve_identity` valuta tutte le opere valide restituite da Wikidata per quel titolo e raccoglie il compositore associato a ciascuna; se più opere rimangono compatibili, utilizza **solo** un compositore documentato dalla medesima scheda ufficiale di produzione e conservato nella coda delle evidenze. Le attribuzioni a direttori, interpreti o altri ruoli non sono accettate come compositore.
+
+Per i contenuti ufficiali che espongono `MusicEvent.workPerformed.composer` come dati strutturati, `scripts.collect_candidate_details` conserva questa informazione a fianco della data e della sede. Poiché la lettura delle pagine dettagliate segue la ricerca autorevole nel workflow giornaliero, una nuova evidenza può essere utilizzata nel **ciclo successivo** senza interventi manuali o richieste ulteriori alle stesse pagine nello stesso giorno.
+
+Le opere con titolo già presente **non riutilizzano** le sinossi e i profili storici preparati per un'altra composizione: devono ottenere la propria ricerca e il proprio profilo, e vengono pubblicate con ID e URL autonomi. Titoli senza prove sufficienti, crediti in conflitto e candidati Wikidata multipli non risolti restano in retry automatico; non vengono mai attribuiti per somiglianza a un'opera esistente. Il servizio richiede `ATLAS_OPENAI_API_KEY` per generare sinossi e storie delle nuove omonime senza materiali precensiti; senza questo secret, la pubblicazione di tali opere non è automatica. Le verifiche `robots.txt` sulle pagine ufficiali restano obbligatorie.
+
+I test includono il caso *Il barbiere di Siviglia* (Rossini/Paisiello), la conservazione del compositore nei JSON-LD ufficiali e la ricerca di un titolo già noto con compositore differente. Questo meccanismo non garantisce che ogni teatro renda disponibili prove adeguate: la pubblicazione è intenzionalmente bloccata quando l'identità non è verificabile.
