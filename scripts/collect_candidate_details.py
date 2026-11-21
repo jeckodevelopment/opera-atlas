@@ -411,15 +411,18 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 # authoritative work identity and must never outrank those.
                 facts=[]
                 diagnostic=[]
-                for name,parse in (
+                parsers=[
                     ("canonical_work",lambda:parse_known_opera_detail(
                         item["source_key"],item["official_url"],page.html,registry)),
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
-                    ("official_composer_credit",lambda:parse_source_credited_opera_detail(
-                        item["source_key"],item["official_url"],page.html)),
-                    ("schema_event",lambda:parse_event_facts(page.html)),
-                ):
+                ]
+                if item["source_key"]=="carlo-felice-season-2026-27":
+                    parsers.append(("official_composer_credit",
+                        lambda:parse_source_credited_opera_detail(
+                            item["source_key"],item["official_url"],page.html)))
+                parsers.append(("schema_event",lambda:parse_event_facts(page.html)))
+                for name,parse in parsers:
                     try:
                         facts=parse()
                         if not facts:diagnostic.append(name+":no_evidence")
