@@ -351,6 +351,27 @@
       "title": "I Capuleti e i Montecchi",
       "composer": "Vincenzo Bellini",
       "wikidata_id": "Q1071307"
+    },
+    "die zauberflöte|wolfgang amadeus mozart": {
+      "id": "oa-w-000056",
+      "slug": "die-zauberflote",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "wikidata_id": "Q5064"
+    },
+    "hänsel und gretel|engelbert humperdinck": {
+      "id": "oa-w-000057",
+      "slug": "hansel-und-gretel",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "wikidata_id": "Q1099668"
+    },
+    "ernani|giuseppe verdi": {
+      "id": "oa-w-000058",
+      "slug": "ernani",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "wikidata_id": "Q211279"
     }
   },
   "venues": {
@@ -514,6 +535,14 @@
       "name": "Teatro Auditorium Manzoni",
       "city": "Bologna",
       "region": "Emilia-Romagna"
+    },
+    "Venezia|Teatro Malibran": {
+      "id": "oa-v-000021",
+      "slug": "teatro-malibran",
+      "city_slug": "venezia",
+      "name": "Teatro Malibran",
+      "city": "Venezia",
+      "region": "Veneto"
     }
   },
   "stagings": {
@@ -1358,6 +1387,30 @@
       "slug": "i-capuleti-e-i-montecchi",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
       "season": "2026"
+    },
+    "auto-5ab298c2300ec275": {
+      "id": "oa-s-000109",
+      "work_id": "oa-w-000056",
+      "venue_id": "oa-v-000009",
+      "slug": "die-zauberflote",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/",
+      "season": "2026-2027"
+    },
+    "auto-6cd199691f7145a4": {
+      "id": "oa-s-000110",
+      "work_id": "oa-w-000057",
+      "venue_id": "oa-v-000021",
+      "slug": "hansel-und-gretel",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
+      "season": "2026-2027"
+    },
+    "auto-8a4ea2e4cf761a14": {
+      "id": "oa-s-000111",
+      "work_id": "oa-w-000058",
+      "venue_id": "oa-v-000009",
+      "slug": "ernani",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/",
+      "season": "2026-2027"
     }
   },
   "performances": {
@@ -4516,6 +4569,126 @@
       "staging_id": "oa-s-000108",
       "original_date": "2026-11-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
+    },
+    "auto-5ab298c2300ec275|2027-09-15": {
+      "id": "oa-r-000542",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-15",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-5ab298c2300ec275|2027-09-16": {
+      "id": "oa-r-000543",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-16",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-5ab298c2300ec275|2027-09-17": {
+      "id": "oa-r-000544",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-17",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-5ab298c2300ec275|2027-09-18": {
+      "id": "oa-r-000545",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-18",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-5ab298c2300ec275|2027-09-19": {
+      "id": "oa-r-000546",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-19",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-5ab298c2300ec275|2027-09-21": {
+      "id": "oa-r-000547",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-21",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-5ab298c2300ec275|2027-09-22": {
+      "id": "oa-r-000548",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-22",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-5ab298c2300ec275|2027-09-23": {
+      "id": "oa-r-000549",
+      "staging_id": "oa-s-000109",
+      "original_date": "2027-09-23",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    "auto-6cd199691f7145a4|2027-02-19": {
+      "id": "oa-r-000550",
+      "staging_id": "oa-s-000110",
+      "original_date": "2027-02-19",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/"
+    },
+    "auto-6cd199691f7145a4|2027-02-21": {
+      "id": "oa-r-000551",
+      "staging_id": "oa-s-000110",
+      "original_date": "2027-02-21",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/"
+    },
+    "auto-6cd199691f7145a4|2027-02-23": {
+      "id": "oa-r-000552",
+      "staging_id": "oa-s-000110",
+      "original_date": "2027-02-23",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/"
+    },
+    "auto-6cd199691f7145a4|2027-02-25": {
+      "id": "oa-r-000553",
+      "staging_id": "oa-s-000110",
+      "original_date": "2027-02-25",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/"
+    },
+    "auto-6cd199691f7145a4|2027-02-27": {
+      "id": "oa-r-000554",
+      "staging_id": "oa-s-000110",
+      "original_date": "2027-02-27",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/"
+    },
+    "auto-8a4ea2e4cf761a14|2027-10-31": {
+      "id": "oa-r-000555",
+      "staging_id": "oa-s-000111",
+      "original_date": "2027-10-31",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    "auto-8a4ea2e4cf761a14|2027-11-02": {
+      "id": "oa-r-000556",
+      "staging_id": "oa-s-000111",
+      "original_date": "2027-11-02",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    "auto-8a4ea2e4cf761a14|2027-11-03": {
+      "id": "oa-r-000557",
+      "staging_id": "oa-s-000111",
+      "original_date": "2027-11-03",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    "auto-8a4ea2e4cf761a14|2027-11-04": {
+      "id": "oa-r-000558",
+      "staging_id": "oa-s-000111",
+      "original_date": "2027-11-04",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    "auto-8a4ea2e4cf761a14|2027-11-05": {
+      "id": "oa-r-000559",
+      "staging_id": "oa-s-000111",
+      "original_date": "2027-11-05",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    "auto-8a4ea2e4cf761a14|2027-11-06": {
+      "id": "oa-r-000560",
+      "staging_id": "oa-s-000111",
+      "original_date": "2027-11-06",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    "auto-8a4ea2e4cf761a14|2027-11-07": {
+      "id": "oa-r-000561",
+      "staging_id": "oa-s-000111",
+      "original_date": "2027-11-07",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/"
     }
   }
 }

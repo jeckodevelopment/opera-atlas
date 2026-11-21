@@ -3261,6 +3261,119 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-5ab298c2300ec275",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/",
+      "dates": [
+        [
+          "2027-09-15",
+          "20:00"
+        ],
+        [
+          "2027-09-16",
+          "18:30"
+        ],
+        [
+          "2027-09-17",
+          "19:00"
+        ],
+        [
+          "2027-09-18",
+          "20:00"
+        ],
+        [
+          "2027-09-19",
+          "18:30"
+        ],
+        [
+          "2027-09-21",
+          "18:30"
+        ],
+        [
+          "2027-09-22",
+          "19:00"
+        ],
+        [
+          "2027-09-23",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-6cd199691f7145a4",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
+      "dates": [
+        [
+          "2027-02-19",
+          "19:00"
+        ],
+        [
+          "2027-02-21",
+          "15:30"
+        ],
+        [
+          "2027-02-23",
+          "19:00"
+        ],
+        [
+          "2027-02-25",
+          "19:00"
+        ],
+        [
+          "2027-02-27",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-8a4ea2e4cf761a14",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/",
+      "dates": [
+        [
+          "2027-10-31",
+          "20:00"
+        ],
+        [
+          "2027-11-02",
+          "18:30"
+        ],
+        [
+          "2027-11-03",
+          "19:00"
+        ],
+        [
+          "2027-11-04",
+          "18:30"
+        ],
+        [
+          "2027-11-05",
+          "19:00"
+        ],
+        [
+          "2027-11-06",
+          "19:00"
+        ],
+        [
+          "2027-11-07",
+          "17:30"
+        ]
+      ]
     }
   ]
 }

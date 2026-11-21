@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "new_stagings": 0,
-  "new_recite": 0,
+  "new_stagings": 3,
+  "new_recite": 20,
   "auto_skipped": [
     {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
@@ -14,14 +14,6 @@
     {
       "candidate_id": "oa-index-6cd199691f7145a4d048",
       "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "reason": "same_recita_already_in_official_circuit",
-      "dates": [
-        "2026-11-26",
-        "2026-11-28"
-      ]
     },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
@@ -40,6 +32,6 @@
       "reason": "unknown_work_needs_authority_data"
     }
   ],
-  "new_works": 0,
+  "new_works": 3,
   "enriched_recite_times": 0
 }

@@ -3326,6 +3326,24 @@
       ]
     },
     {
+      "id": "curated:auto-6cd199691f7145a4:2027-02-19",
+      "starts_at": "2027-02-19T19:00:00+01:00",
+      "local_date": "2027-02-19",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/hansel-und-gretel/"
+      ]
+    },
+    {
       "id": "curated:auto-74ce9c00c158699b:2027-02-19",
       "starts_at": "2027-02-19T20:00:00+01:00",
       "local_date": "2027-02-19",
@@ -3452,6 +3470,24 @@
       ]
     },
     {
+      "id": "curated:auto-6cd199691f7145a4:2027-02-21",
+      "starts_at": "2027-02-21T15:30:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/hansel-und-gretel/"
+      ]
+    },
+    {
       "id": "curated:auto-74ce9c00c158699b:2027-02-21",
       "starts_at": "2027-02-21T15:30:00+01:00",
       "local_date": "2027-02-21",
@@ -3485,6 +3521,24 @@
       "longitude": null,
       "sources": [
         "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-6cd199691f7145a4:2027-02-23",
+      "starts_at": "2027-02-23T19:00:00+01:00",
+      "local_date": "2027-02-23",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/hansel-und-gretel/"
       ]
     },
     {
@@ -3575,6 +3629,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-6cd199691f7145a4:2027-02-25",
+      "starts_at": "2027-02-25T19:00:00+01:00",
+      "local_date": "2027-02-25",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/hansel-und-gretel/"
       ]
     },
     {
@@ -3701,6 +3773,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-6cd199691f7145a4:2027-02-27",
+      "starts_at": "2027-02-27T15:30:00+01:00",
+      "local_date": "2027-02-27",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/hansel-und-gretel/"
       ]
     },
     {
@@ -7988,6 +8078,24 @@
       ]
     },
     {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-15",
+      "starts_at": "2027-09-15T20:00:00+02:00",
+      "local_date": "2027-09-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
+      ]
+    },
+    {
       "id": "curated:auto-eaefe8edde44acf2:2027-09-15",
       "starts_at": "2027-09-15T20:00:00+02:00",
       "local_date": "2027-09-15",
@@ -8003,6 +8111,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+      ]
+    },
+    {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-16",
+      "starts_at": "2027-09-16T18:30:00+02:00",
+      "local_date": "2027-09-16",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
       ]
     },
     {
@@ -8042,6 +8168,24 @@
       ]
     },
     {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-17",
+      "starts_at": "2027-09-17T19:00:00+02:00",
+      "local_date": "2027-09-17",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
+      ]
+    },
+    {
       "id": "curated:auto-027fde14d101fca6:2027-09-17",
       "starts_at": "2027-09-17T20:30:00+02:00",
       "local_date": "2027-09-17",
@@ -8057,6 +8201,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-18",
+      "starts_at": "2027-09-18T20:00:00+02:00",
+      "local_date": "2027-09-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
       ]
     },
     {
@@ -8114,6 +8276,60 @@
       ]
     },
     {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-19",
+      "starts_at": "2027-09-19T18:30:00+02:00",
+      "local_date": "2027-09-19",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
+      ]
+    },
+    {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-21",
+      "starts_at": "2027-09-21T18:30:00+02:00",
+      "local_date": "2027-09-21",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
+      ]
+    },
+    {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-22",
+      "starts_at": "2027-09-22T19:00:00+02:00",
+      "local_date": "2027-09-22",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
+      ]
+    },
+    {
       "id": "curated:auto-05dfa4b5d5270a7f:2027-09-22",
       "starts_at": "2027-09-22T20:00:00+02:00",
       "local_date": "2027-09-22",
@@ -8129,6 +8345,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/norma-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-5ab298c2300ec275:2027-09-23",
+      "starts_at": "2027-09-23T19:00:00+02:00",
+      "local_date": "2027-09-23",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/die-zauberflote/"
       ]
     },
     {
@@ -8852,6 +9086,42 @@
       ]
     },
     {
+      "id": "curated:auto-8a4ea2e4cf761a14:2027-10-31",
+      "starts_at": "2027-10-31T20:00:00+01:00",
+      "local_date": "2027-10-31",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/ernani-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-8a4ea2e4cf761a14:2027-11-02",
+      "starts_at": "2027-11-02T18:30:00+01:00",
+      "local_date": "2027-11-02",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/ernani-2/"
+      ]
+    },
+    {
       "id": "curated:auto-58413a3bbbee689b:2027-11-02",
       "starts_at": "2027-11-02T20:00:00+01:00",
       "local_date": "2027-11-02",
@@ -8867,6 +9137,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+      ]
+    },
+    {
+      "id": "curated:auto-8a4ea2e4cf761a14:2027-11-03",
+      "starts_at": "2027-11-03T19:00:00+01:00",
+      "local_date": "2027-11-03",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/ernani-2/"
       ]
     },
     {
@@ -8888,6 +9176,24 @@
       ]
     },
     {
+      "id": "curated:auto-8a4ea2e4cf761a14:2027-11-04",
+      "starts_at": "2027-11-04T18:30:00+01:00",
+      "local_date": "2027-11-04",
+      "time_known": true,
+      "time_label": "18:30",
+      "status": "announced",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/ernani-2/"
+      ]
+    },
+    {
       "id": "curated:auto-ad08a1d14a8510a5:2027-11-04",
       "starts_at": "2027-11-04T20:00:00+01:00",
       "local_date": "2027-11-04",
@@ -8903,6 +9209,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-8a4ea2e4cf761a14:2027-11-05",
+      "starts_at": "2027-11-05T19:00:00+01:00",
+      "local_date": "2027-11-05",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/ernani-2/"
       ]
     },
     {
@@ -8942,6 +9266,24 @@
       ]
     },
     {
+      "id": "curated:auto-8a4ea2e4cf761a14:2027-11-06",
+      "starts_at": "2027-11-06T19:00:00+01:00",
+      "local_date": "2027-11-06",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/ernani-2/"
+      ]
+    },
+    {
       "id": "curated:auto-58413a3bbbee689b:2027-11-06",
       "starts_at": "2027-11-06T20:00:00+01:00",
       "local_date": "2027-11-06",
@@ -8975,6 +9317,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-8a4ea2e4cf761a14:2027-11-07",
+      "starts_at": "2027-11-07T17:30:00+01:00",
+      "local_date": "2027-11-07",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Ernani",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimo.it/event/ernani-2/"
       ]
     },
     {

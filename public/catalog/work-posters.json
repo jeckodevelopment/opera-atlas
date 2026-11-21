@@ -495,6 +495,33 @@
       "alt": "Frontespizio del libretto originale di I Capuleti e i Montecchi di Vincenzo Bellini, Venezia 1830; non allestimento in calendario",
       "credit": "Vincenzo Bellini e Felice Romani, libretto veneziano del 1830; Wikimedia Commons",
       "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000056": {
+      "work_id": "oa-w-000056",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zauberfl%C3%B6te-Theaterzettel1791.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Zauberfl%C3%B6te-Theaterzettel1791.jpg",
+      "alt": "Programma storico della prima del Flauto magico di Mozart, Vienna 1791; non allestimento in calendario",
+      "credit": "Programma della prima viennese del 1791 di Die Zauberflöte, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000057": {
+      "work_id": "oa-w-000057",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hansel_and_Gretel_by_Engelbert_Humperdinck_(theatre_adaptation).jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hansel_and_Gretel_by_Engelbert_Humperdinck_(theatre_adaptation).jpg",
+      "alt": "Manifesto del Federal Theatre Project (1936–1941) per Hänsel und Gretel di Humperdinck, non produzione in calendario",
+      "credit": "Federal Theatre Project, manifesto storico di Hänsel und Gretel; Library of Congress / Wikimedia Commons",
+      "license": "Public domain (US)"
+    },
+    "oa-w-000058": {
+      "work_id": "oa-w-000058",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Verdi_-_Ernani_%2B_Giovanni_Battista_Ferrari_-_Ultimi_giorni_di_Suli_-_Trento_Teatro_sociale_per_la_fiera_di_s._Vigilio_primavera_1857.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Verdi_-_Ernani_%2B_Giovanni_Battista_Ferrari_-_Ultimi_giorni_di_Suli_-_Trento_Teatro_sociale_per_la_fiera_di_s._Vigilio_primavera_1857.jpg",
+      "alt": "Manifesto teatrale storico di Trento, 1857, con Ernani di Giuseppe Verdi e un secondo titolo; non allestimento corrente",
+      "credit": "Manifesto del Teatro Sociale di Trento del 1857 con Ernani di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain"
     }
   }
 }
