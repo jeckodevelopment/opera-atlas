@@ -26,7 +26,44 @@ VENUE_BY_SOURCE={
     "fenice-opera-2026-27":("Venezia","Teatro La Fenice"),
     "parma-opera-2027":("Parma","Teatro Regio di Parma"),
     "massimo-season-2026-27":("Palermo","Teatro Massimo"),
+    "carlo-felice-season-2026-27":("Genova","Teatro Carlo Felice"),
+    "donizetti-opera-2026":("Bergamo","Teatro Donizetti"),
 }
+
+def verified_venue(source_key:str,rows:list[dict],registry:dict):
+    """Resolve exact official venue from evidence; never substitute a home theatre."""
+    if source_key not in VENUE_BY_SOURCE or not rows:
+        return None
+    city,default_venue=VENUE_BY_SOURCE[source_key]
+    named={x.get("venue") for x in rows if isinstance(x,dict)}
+    if len(named)!=1:return None
+    venue=next(iter(named))
+    permitted=({"Teatro Donizetti","Teatro Sociale"}
+               if source_key=="donizetti-opera-2026" else {default_venue})
+    if venue not in permitted:return None
+    found=[(key,value) for key,value in registry["venues"].items()
+           if value["city"]==city and value["name"]==venue
+           and key==city+"|"+venue]
+    return (city,venue,found[0][1] if found else None) if len(found)<=1 else None
+
+def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
+    """Allocate an immutable venue ID only together with a verified staging."""
+    if existing is not None:return existing
+    region={"Genova":"Liguria","Bergamo":"Lombardia"}.get(city)
+    if region is None:
+        raise ValueError("cannot provision venue without verified region")
+    key=city+"|"+venue
+    if key in registry["venues"]:
+        raise ValueError("conflicting canonical venue registry")
+    record={"id":next_id(registry["venues"],"oa-v-"),
+            "slug":slugify(venue),"city_slug":slugify(city),
+            "name":venue,"city":city,"region":region}
+    registry["venues"][key]=record
+    return record
+
+def canonical_venue_id(venue:dict|None)->str|None:
+    return venue["id"] if venue is not None else None
+
 def season_from_source(source_key:str,url:str,days)->str:
     """Use the exact official season URL or observed dates, never 2026-27."""
     import re
@@ -97,13 +134,11 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             issues.append({"candidate_id":cid,"reason":"unknown_work_needs_authority_data"})
             continue
         work=matches[0]
-        city,venue=VENUE_BY_SOURCE[key]
-        venues=[(vk,v) for vk,v in next_registry["venues"].items()
-                if v["city"]==city and v["name"]==venue]
-        if len(venues)!=1:
-            issues.append({"candidate_id":cid,"reason":"unknown_venue"})
+        venue_match=verified_venue(key,rows,next_registry)
+        if venue_match is None:
+            issues.append({"candidate_id":cid,"reason":"unknown_or_conflicting_venue"})
             continue
-        vk,canonical_venue=venues[0]
+        city,venue,canonical_venue=venue_match
         dates={}
         for row in rows:
             try:
@@ -144,7 +179,7 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             existing_routes={
                 x.get("route_slug",x["slug"])
                 for key2,x in next_registry["stagings"].items()
-                if x["venue_id"]==canonical_venue["id"]}
+                if canonical_venue is not None and x["venue_id"]==canonical_venue["id"]}
             if edition_slug in existing_routes:
                 issues.append({"candidate_id":cid,"reason":"venue_work_route_collision"})
                 continue
@@ -162,6 +197,7 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             if staging_key in next_registry["stagings"]:
                 issues.append({"candidate_id":cid,"reason":"identity_collision"})
                 continue
+            canonical_venue=ensure_venue(next_registry,city,venue,canonical_venue)
             production={"key":staging_key,"title":work["title"],
                         "composer":work["composer"],"venue":venue,
                         "municipality":city,"region":canonical_venue["region"],
@@ -324,12 +360,13 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         if (work_key in next_registry["works"] or
             any(x["slug"]==slug for x in next_registry["works"].values())):
             continue
-        city,venue=VENUE_BY_SOURCE[source_key]
-        venue_key=city+"|"+venue
-        canonical_venue=next_registry["venues"].get(venue_key)
-        if canonical_venue is None:continue
         rows=detail.get("event_facts",[])
         if not isinstance(rows,list) or not rows:continue
+        venue_match=verified_venue(source_key,rows,next_registry)
+        if venue_match is None:
+            result["auto_skipped"].append({"candidate_id":cid,"reason":"unknown_or_conflicting_venue"})
+            continue
+        city,venue,canonical_venue=venue_match
         date_rows={}
         invalid=False
         for row in rows:
@@ -352,6 +389,7 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         # overwrites and no guessing which composer an old URL identifies.
         staging_key="auto-"+hashlib.sha256((source_key+"|"+url).encode()).hexdigest()[:16]
         if staging_key in next_registry["stagings"]:continue
+        canonical_venue=ensure_venue(next_registry,city,venue,canonical_venue)
         work_id=next_id(next_registry["works"],"oa-w-")
         stage_id=next_id(next_registry["stagings"],"oa-s-")
         next_registry["works"][work_key]={
