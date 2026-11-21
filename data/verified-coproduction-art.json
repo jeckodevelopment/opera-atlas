@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "images": [
+    {
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+      "title": "Bona Sforza",
+      "composer": "Zygmunt Krauze",
+      "image_url": "https://opera.krakow.pl/media/spectacle_image/bona-finalny_detail_poster.jpg",
+      "coproduction_page_url": "https://opera.krakow.pl/en/spectacles/bona-sforza-1",
+      "credit": "Manifesto ufficiale di Bona Sforza, Katarzyna Zapart / Opera Krakowska",
+      "alt": "Manifesto dell'opera Bona Sforza di Zygmunt Krauze, coproduzione Opera Krakowska e Teatro Petruzzelli",
+      "kind": "official_coproduction_poster"
+    }
+  ]
+}
