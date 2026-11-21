@@ -108,7 +108,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -365,10 +365,55 @@
       ]
     },
     {
+      "candidate_id": "oa-index-129b5be3f35d5762f8bb",
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/",
+      "content_sha256": "b2b09c260ac5ab8260ab57813bf9c1e7b8e3a5746f13c7aaf2a74c6aafb84252",
+      "checked_at": "2026-11-21T21:32:21+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-05-07",
+          "starts_at": "2027-05-07T20:00:00+02:00"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-05-08",
+          "starts_at": "2027-05-08T18:00:00+02:00"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-05-13",
+          "starts_at": "2027-05-13T20:00:00+02:00"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-05-16",
+          "starts_at": "2027-05-16T16:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/06/Aida_2560x640-aspect-ratio-800-500.jpg",
+        "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Aida",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -499,6 +544,65 @@
       ]
     },
     {
+      "candidate_id": "oa-index-1e15e89ae5b2a2ec45f9",
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
+      "content_sha256": "37492c9b91a840387119cfed965063e22894852c7e85dae58ca817bd439ae824",
+      "checked_at": "2026-11-21T21:32:22+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La Bohème",
+          "composer": "Giacomo Puccini Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-03-12",
+          "starts_at": "2027-03-12T20:00:00+01:00"
+        },
+        {
+          "event_title": "La Bohème",
+          "composer": "Giacomo Puccini Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-03-13",
+          "starts_at": "2027-03-13T18:00:00+01:00"
+        },
+        {
+          "event_title": "La Bohème",
+          "composer": "Giacomo Puccini Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T16:00:00+01:00"
+        },
+        {
+          "event_title": "La Bohème",
+          "composer": "Giacomo Puccini Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-03-18",
+          "starts_at": "2027-03-18T20:00:00+01:00"
+        },
+        {
+          "event_title": "La Bohème",
+          "composer": "Giacomo Puccini Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-03-20",
+          "starts_at": "2027-03-20T16:00:00+01:00"
+        },
+        {
+          "event_title": "La Bohème",
+          "composer": "Giacomo Puccini Opera",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-03-21",
+          "starts_at": "2027-03-21T16:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/06/Boheme_2560x640-aspect-ratio-800-500.jpg",
+        "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di La Bohème",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-1e384fa01b8a144db9c7",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
@@ -568,10 +672,55 @@
       ]
     },
     {
+      "candidate_id": "oa-index-20463bc8c3334dacecf8",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
+      "content_sha256": "6ba96fef9891109460c1e82ff23c91afa2b6095cf75f39aec0919b386934640b",
+      "checked_at": "2026-11-21T21:31:46+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Una Lady Macbeth del distretto di Mzensk",
+          "composer": "Dmitrij Šostakovič",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-05-14",
+          "starts_at": "2027-05-14T20:00:00+02:00"
+        },
+        {
+          "event_title": "Una Lady Macbeth del distretto di Mzensk",
+          "composer": "Dmitrij Šostakovič",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-05-16",
+          "starts_at": "2027-05-16T16:30:00+02:00"
+        },
+        {
+          "event_title": "Una Lady Macbeth del distretto di Mzensk",
+          "composer": "Dmitrij Šostakovič",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-05-18",
+          "starts_at": "2027-05-18T20:00:00+02:00"
+        },
+        {
+          "event_title": "Una Lady Macbeth del distretto di Mzensk",
+          "composer": "Dmitrij Šostakovič",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-05-20",
+          "starts_at": "2027-05-20T20:00:00+02:00"
+        },
+        {
+          "event_title": "Una Lady Macbeth del distretto di Mzensk",
+          "composer": "Dmitrij Šostakovič",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-05-22",
+          "starts_at": "2027-05-22T18:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -648,6 +797,58 @@
       ]
     },
     {
+      "candidate_id": "oa-index-2ab0ba26f1806086b52a",
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
+      "content_sha256": "4a8b12e05cf6b55839f6366e58e0ecfbfb7d4dcf2bfdbc0d7349759dc6d97077",
+      "checked_at": "2026-11-21T21:32:26+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini Tragedia",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-06-11",
+          "starts_at": "2027-06-11T20:00:00+02:00"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini Tragedia",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-06-12",
+          "starts_at": "2027-06-12T18:00:00+02:00"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini Tragedia",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-06-13",
+          "starts_at": "2027-06-13T16:00:00+02:00"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini Tragedia",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-06-18",
+          "starts_at": "2027-06-18T20:00:00+02:00"
+        },
+        {
+          "event_title": "Norma",
+          "composer": "Vincenzo Bellini Tragedia",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-06-20",
+          "starts_at": "2027-06-20T16:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/06/Norma_800x500-aspect-ratio-800-500-1.jpg",
+        "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Norma",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-2ffd782e0a99b2433e13",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
@@ -696,7 +897,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -819,6 +1020,51 @@
           "date": "2027-04-21",
           "starts_at": "2027-04-21T17:00:00+02:00",
           "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-4e97b4b93dacf2f5c195",
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/",
+      "content_sha256": "57f3a99c3b96d11f2f00d5f9657ebac9ac9ec57587f9de5614fd832402536d3e",
+      "checked_at": "2026-11-21T21:32:33+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-12-15",
+          "starts_at": "2027-12-15T20:00:00+01:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-12-16",
+          "starts_at": "2027-12-16T19:00:00+01:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-12-17",
+          "starts_at": "2027-12-17T20:00:00+01:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-12-18",
+          "starts_at": "2027-12-18T19:00:00+01:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-12-19",
+          "starts_at": "2027-12-19T17:00:00+01:00",
+          "venue": "Teatro Lirico di Cagliari"
         }
       ]
     },
@@ -1308,6 +1554,65 @@
       ]
     },
     {
+      "candidate_id": "oa-index-6d3d1cab3d4ed61b17c3",
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
+      "content_sha256": "5c05e7792413e8ecb5275fbe48ee7437e05d64740b36ddb9d62edc18514813d6",
+      "checked_at": "2026-11-21T21:32:05+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2026-11-13",
+          "starts_at": "2026-11-13T17:00:00+01:00"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2026-11-14",
+          "starts_at": "2026-11-14T15:00:00+01:00"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2026-11-15",
+          "starts_at": "2026-11-15T15:00:00+01:00"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2026-11-20",
+          "starts_at": "2026-11-20T17:00:00+01:00"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2026-11-21",
+          "starts_at": "2026-11-21T17:00:00+01:00"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T15:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/Lohengrin_800x500-aspect-ratio-800-500-2.jpg",
+        "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Lohengrin",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
@@ -1387,7 +1692,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T20:59:58+00:00",
+      "checked_at": "2026-11-21T21:30:52+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1667,6 +1972,51 @@
       ]
     },
     {
+      "candidate_id": "oa-index-84fd2f377ee783254524",
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
+      "content_sha256": "3a118247a5c441e2d058cb8c3008d64ea4c5cd014bfe9204ac559a202581a955",
+      "checked_at": "2026-11-21T21:31:01+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Maria Stuarda",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-05-19",
+          "starts_at": "2027-05-19T20:00:00+02:00"
+        },
+        {
+          "event_title": "Maria Stuarda",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-05-20",
+          "starts_at": "2027-05-20T19:00:00+02:00"
+        },
+        {
+          "event_title": "Maria Stuarda",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-05-21",
+          "starts_at": "2027-05-21T20:00:00+02:00"
+        },
+        {
+          "event_title": "Maria Stuarda",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-05-22",
+          "starts_at": "2027-05-22T19:00:00+02:00"
+        },
+        {
+          "event_title": "Maria Stuarda",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T17:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/ernani-2/",
@@ -1722,6 +2072,51 @@
           "date": "2027-11-07",
           "starts_at": "2027-11-07T17:30:00+01:00",
           "venue": "Teatro Massimo"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-8d766539708b0cb45f0a",
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/",
+      "content_sha256": "e9311fd9d4326b36bdd239760c59fba2e7e568c3a5254fee6e2a0bacc77777e8",
+      "checked_at": "2026-11-21T21:31:07+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Don Carlos",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T19:00:00+01:00"
+        },
+        {
+          "event_title": "Don Carlos",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T17:00:00+01:00"
+        },
+        {
+          "event_title": "Don Carlos",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-01-26",
+          "starts_at": "2027-01-26T19:00:00+01:00"
+        },
+        {
+          "event_title": "Don Carlos",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-01-28",
+          "starts_at": "2027-01-28T19:00:00+01:00"
+        },
+        {
+          "event_title": "Don Carlos",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-01-30",
+          "starts_at": "2027-01-30T19:00:00+01:00"
         }
       ]
     },
@@ -1958,7 +2353,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2143,6 +2538,51 @@
       "program_heading_source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
     },
     {
+      "candidate_id": "oa-index-a587b66c1f36bad78d65",
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/",
+      "content_sha256": "27d6267749f261698fea28462b75a235d11b2c1c6c055cefd7c0a5f1879d6c9b",
+      "checked_at": "2026-11-21T21:31:10+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Alcina",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-03-10",
+          "starts_at": "2027-03-10T20:00:00+01:00"
+        },
+        {
+          "event_title": "Alcina",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-03-11",
+          "starts_at": "2027-03-11T19:00:00+01:00"
+        },
+        {
+          "event_title": "Alcina",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-03-12",
+          "starts_at": "2027-03-12T20:00:00+01:00"
+        },
+        {
+          "event_title": "Alcina",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-03-13",
+          "starts_at": "2027-03-13T19:00:00+01:00"
+        },
+        {
+          "event_title": "Alcina",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro Lirico di Cagliari",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T17:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-a77154badf30929b95dc",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
@@ -2165,6 +2605,58 @@
         "alt": "Immagine della produzione di L'arca di Noè",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-a9e0eff95e96e71fd958",
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/",
+      "content_sha256": "c4a13e6c8fa7f6fc4f320ca061248926f19be79535e3580ab88e17aedf14a17a",
+      "checked_at": "2026-11-21T21:30:53+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti Melodramma",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-02-12",
+          "starts_at": "2027-02-12T20:00:00+01:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti Melodramma",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-02-13",
+          "starts_at": "2027-02-13T18:00:00+01:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti Melodramma",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-02-14",
+          "starts_at": "2027-02-14T16:00:00+01:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti Melodramma",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-02-18",
+          "starts_at": "2027-02-18T20:00:00+01:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti Melodramma",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-02-20",
+          "starts_at": "2027-02-20T16:00:00+01:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti Melodramma",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-02-21",
+          "starts_at": "2027-02-21T16:00:00+01:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-ad08a1d14a8510a5f0bf",
@@ -2444,7 +2936,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2599,6 +3091,51 @@
       ]
     },
     {
+      "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "content_sha256": "5e68a046a1b9ecfb842cc9e8bdb34a34137ae18105bd5ca3c8f6ae7ec336ccc3",
+      "checked_at": "2026-11-21T21:31:27+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Valle Franca Valeri",
+          "date": "2027-10-01",
+          "starts_at": "2027-10-01T20:00:00+02:00"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Valle Franca Valeri",
+          "date": "2027-10-03",
+          "starts_at": "2027-10-03T17:00:00+02:00"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Valle Franca Valeri",
+          "date": "2027-10-05",
+          "starts_at": "2027-10-05T20:00:00+02:00"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Valle Franca Valeri",
+          "date": "2027-10-07",
+          "starts_at": "2027-10-07T20:00:00+02:00"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Valle Franca Valeri",
+          "date": "2027-10-10",
+          "starts_at": "2027-10-10T17:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-d7a3053257b5915753f9",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
@@ -2640,6 +3177,124 @@
           "date": "2027-10-30",
           "starts_at": "2027-10-30T15:30:00+02:00",
           "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-db7983de674f2fdccdda",
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/",
+      "content_sha256": "648a30cbf5e44430c01e4f1e05500cb74f72c00d9d2b99c9ee28cdc290d8a734",
+      "checked_at": "2026-11-21T21:30:42+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "date": "2027-09-28",
+          "starts_at": "2027-09-28T20:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "date": "2027-09-29",
+          "starts_at": "2027-09-29T20:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "date": "2027-09-30",
+          "starts_at": "2027-09-30T19:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "date": "2027-10-01",
+          "starts_at": "2027-10-01T20:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "date": "2027-10-02",
+          "starts_at": "2027-10-02T19:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "date": "2027-10-03",
+          "starts_at": "2027-10-03T17:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-dc6e8ff3bddba01de089",
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/",
+      "content_sha256": "88c56a58e48ee68c2706e0f7449d5ce8b643a46e39b5461604a9cf1e58fd244f",
+      "checked_at": "2026-11-21T21:30:56+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-09",
+          "starts_at": "2027-04-09T20:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-10",
+          "starts_at": "2027-04-10T19:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-11",
+          "starts_at": "2027-04-11T17:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-13",
+          "starts_at": "2027-04-13T20:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-14",
+          "starts_at": "2027-04-14T20:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-15",
+          "starts_at": "2027-04-15T19:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T20:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-17",
+          "starts_at": "2027-04-17T19:00:00+02:00",
+          "venue": "Teatro Lirico di Cagliari"
         }
       ]
     },
@@ -2706,7 +3361,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3227,7 +3882,7 @@
       "candidate_id": "oa-index-feadef19a246de079ccb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
-      "checked_at": "2026-11-21T21:01:12+00:00",
+      "checked_at": "2026-11-21T21:32:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
