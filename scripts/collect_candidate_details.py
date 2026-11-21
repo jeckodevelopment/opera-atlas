@@ -73,6 +73,27 @@ def _event_day(value):
     except ValueError:
         return None
 
+def structured_composer(event:dict)->str|None:
+    """Trust only an explicitly attributed composer in structured opera data."""
+    def name(value):
+        if isinstance(value,str):return value.strip()
+        if isinstance(value,dict) and isinstance(value.get("name"),str):
+            return value["name"].strip()
+        return ""
+    # MusicComposition.composer under workPerformed is the least ambiguous
+    # schema.org representation; an event performer/conductor is not composer.
+    work=event.get("workPerformed")
+    if not isinstance(work,dict):return None
+    if not any(str(t).split("/")[-1] in ("MusicComposition","CreativeWork")
+               for t in _types(work)):
+        return None
+    composers=work.get("composer")
+    if isinstance(composers,list):
+        values={name(x) for x in composers}
+        return next(iter(values)) if len(values)==1 and "" not in values else None
+    value=name(composers)
+    return value if 3<=len(value)<=100 else None
+
 def parse_event_facts(html:str)->list[dict]:
     parser=JsonLdReader()
     parser.feed(html)
@@ -96,6 +117,8 @@ def parse_event_facts(html:str)->list[dict]:
                     venue=place.strip()
             row={"event_title":title.strip(),"date":start[0],
                  "starts_at":start[1],"venue":venue}
+            composer=structured_composer(event)
+            if composer:row["composer"]=composer
             if row not in rows:
                 rows.append(row)
             if len(rows)>MAX_EVENTS:raise ValueError("too many structured event rows")
