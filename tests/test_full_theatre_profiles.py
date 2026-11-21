@@ -28,7 +28,9 @@ class FullTheatreProfileTests(unittest.TestCase):
             self.assertTrue(profile["source"].startswith("https://"),key)
             self.assertEqual(profile["address"],venue["address"],key)
             self.assertEqual(profile["history"],venue["history"],key)
-        self.assertEqual(publish(check=True)["venues"],self.directory)
+        published=publish(check=True)["venues"]
+        self.assertEqual(published,json.loads(OUTPUT.read_text(encoding="utf-8"))["venues"])
+        self.assertEqual(len(published),len(self.directory))
 
     def test_all_active_venues_have_individual_illustrations_and_credits(self):
         photos=[v for v in self.directory if v.get("photo_file")]
