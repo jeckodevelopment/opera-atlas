@@ -81,6 +81,7 @@ jobs:
         run: |
           # No network access and no new work identities here: only already
           # fetched composer/title/venue/time evidence verified by Atlas.
+          python -m scripts.repair_petruzzelli_mixed_program
           python -m scripts.publish_cached_known
           python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
