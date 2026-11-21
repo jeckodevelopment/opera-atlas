@@ -1153,6 +1153,14 @@ Le schede della stagione ufficiale 2026/27 possono includere recite autunnali **
 
 La pipeline ha acquisito automaticamente i crediti e gli orari ufficiali di *Andrea Chénier* (Giordano, 7 recite), *Iphigénie en Tauride* (Gluck, 5 recite) e *Il trovatore* (Verdi, 7 recite). Prima della promozione vengono ora associati tramite il registro centrale sinossi brevi realmente riferite alle opere, librettisti e dati verificabili della prima, con fonti esterne citate. I frontespizi/manifesti storici vengono da Wikimedia Commons: locandina del 1896 di *Andrea Chénier*, frontespizio originale della partitura del 1779 per *Iphigénie en Tauride*, manifesto ottocentesco di Luigi Morgari per *Il trovatore*. Quest'ultimo **non è il manifesto originale della prima del 1853**. I test verificano anche che 7+5+7 recite vengano promosse una sola volta mediante `promote_new_works` con `require_image=True` e che nessun altro teatro o omonimo sia trattato come la produzione romana. Non è richiesta una pipeline dedicata, né un'immagine generata.
 
-### Pubblicazione rapida delle nuove opere già complete
+### Crediti 2026 nelle intestazioni Petruzzelli
 
-Il job autonomo `publish-cached-catalog.yml` non deve limitarsi a recite di opere già note. Quando vengono aggiornati i fascicoli verificati in `data/verified-work-authority-seeds.json`, le immagini storiche di Commons o le evidenze ufficiali, il workflow rapido applica la stessa pipeline centrale `scripts.auto_catalogue` (gate sinossi breve reale, libretto/storia, identità e immagine verificata), `publish_work_posters` e `publish_programs`, valida il catalogo v2 e pubblica in un'unica transazione i JSON. Non accede alla rete e non inventa date: riutilizza soltanto le evidenze già acquisite e approvate. Il refresh nazionale rimane responsabile di nuove fonti e della raccolta di aggiornamenti, ma non costituisce più un blocco per la pubblicazione di un'opera il cui fascicolo è già completo. Il meccanismo safe-push gestisce aggiornamenti concorrenti di altri workflow.
+Le pagine ufficiali d'opera del 2026 usano anche la forma
+`TITOLO | COGNOME COMPOSITORE | GIORNO – GIORNO MESE` (per esempio
+`FALSTAFF | VERDI | 7 – 15 MARZO`). Il connettore verifica il nome
+completo del compositore **nel primo elemento testuale immediatamente
+successivo al titolo**, ne confronta il cognome con l'intestazione e
+richiede gli orari individuali nella sezione `Orari Spettacoli`.
+Non interpreta il range nel titolo come rappresentazioni, non deriva
+il nome del compositore dal solo cognome e non confonde programmi misti
+con opere singole. La verifica rimane comune alle fonti 2026 e 2027.

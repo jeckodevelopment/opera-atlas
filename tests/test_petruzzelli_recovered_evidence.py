@@ -27,6 +27,44 @@ class Recovery(unittest.TestCase):
         self.assertEqual(len(rows),1)
         self.assertEqual(rows[0]["composer"],"Giacomo Puccini")
 
+    def test_surname_and_date_heading_uses_full_credit_next_to_h1(self):
+        url="https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+        html=(
+            "<h1>FALSTAFF | VERDI | 7 – 15 MARZO</h1>"
+            "<p>Giuseppe Verdi</p>"
+            "<p>Commedia lirica in tre atti, libretto di Arrigo Boito</p>"
+            "<p>direttore Altro Musicista</p>"
+            "<h2>Orari Spettacoli</h2>"
+            "<p>SABATO 7 MARZO 2026 - 20:30 | TURNO A</p>"
+            "<p>DOMENICA 8 MARZO 2026 - 18:00 | fuori abb.</p>"
+            "<h3>Interpretato Da</h3>")
+        title,composer,venue,dates=extract_official_petr_opera(
+            html,url=url,season_year=2026)
+        self.assertEqual((title,composer,venue),
+                         ("FALSTAFF","Giuseppe Verdi","Teatro Petruzzelli"))
+        self.assertEqual(dates,[("2026-03-07","20:30"),
+                                ("2026-03-08","18:00")])
+        rows=parse_source_credited_opera_detail("petruzzelli-opera-2026",
+                                                url,html)
+        self.assertEqual(len(rows),2)
+        self.assertEqual({x["composer"] for x in rows},{"Giuseppe Verdi"})
+
+    def test_surname_heading_never_infers_composer_or_multiple_opera(self):
+        url="https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+        valid=("<h1>FALSTAFF | VERDI | 7 – 15 MARZO</h1>"
+               "<p>Giuseppe Verdi</p><h2>Orari Spettacoli</h2>"
+               "<p>SABATO 7 MARZO 2026 - 20:30</p>")
+        variants=(
+            valid.replace("<p>Giuseppe Verdi</p>","<p>Vincenzo Milletarì</p>"),
+            valid.replace("<p>Giuseppe Verdi</p>","<p>Verdi</p>"),
+            valid.replace("7 – 15 MARZO","PAGLIACCI"),
+            valid.replace("FALSTAFF | VERDI | 7 – 15 MARZO",
+                          "FALSTAFF / PAGLIACCI | VERDI | 7 – 15 MARZO"),
+            valid.replace("20:30","orario da definire"))
+        for html in variants:
+            with self.subTest(html=html[:110]),self.assertRaises(ValueError):
+                extract_official_petr_opera(html,url=url,season_year=2026)
+
     def test_no_credit_or_ballet_or_missing_clock(self):
         for html in (page().replace("La Bohème di Giacomo Puccini O&B 2027","La Bohème di Giacomo Puccini O&B 2027 presenta l’opera La Bohème di Altro Autore O&B 2027"),page(label="il balletto"),
                      page(clock="da definire"),

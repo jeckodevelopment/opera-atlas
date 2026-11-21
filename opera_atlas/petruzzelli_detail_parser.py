@@ -136,26 +136,63 @@ def extract_official_petr_opera(html:str,*,url:str,season_year:int=2027):
                 self.active=False
     heading=H1()
     heading.feed(html)
-    title_text=(heading.first or "").split("|",1)[0].strip()
-    # Composite bills are reserved for a separate bill identity, never
-    # collapsed to one work (Arlésienne/Pagliacci).
-    if (not title_text or "/" in title_text or
-        (heading.first or "").count("|")>1):
-        raise ValueError("unsupported multi-work or uncredited official bill")
-    match=re.fullmatch(r"(.+?)\s+di\s+(.+)",title_text,re.I)
-    if match:
-        title,composer=(value.strip() for value in match.groups())
-    else:
+    parts=[part.strip() for part in (heading.first or "").split("|")]
+    title_text=parts[0]
+    # The official 2026 opera pages use
+    #   FALSTAFF | VERDI | 7 – 15 MARZO
+    # with the *full* composer name immediately after the h1. That third
+    # component is a date range, not a second opera in a composite bill.
+    # We cannot infer the full composer from the surname alone.
+    class NextCredit(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.seen_h1=False
+            self.after_h1=False
+            self.credit=None
+        def handle_endtag(self,tag):
+            if tag=="h1":
+                self.seen_h1=True
+                self.after_h1=True
+        def handle_data(self,data):
+            value=" ".join(data.split())
+            if self.after_h1 and value and self.credit is None:
+                self.credit=value
+                self.after_h1=False
+    after=NextCredit()
+    after.feed(html)
+    surname_credited=(len(parts)==3
+                      and re.fullmatch(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’-]{2,35}",parts[1])
+                      and re.fullmatch(r"\d{1,2}\s*[–-]\s*\d{1,2}\s+"
+                                       r"(?:"+ "|".join(MONTHS)+r")",parts[2],re.I))
+    if surname_credited:
+        if not title_text or "/" in title_text:
+            raise ValueError("unsupported multi-work or uncredited official bill")
         title=title_text
-        visible=clean(html)
-        prefix=visible.split("Orari Spettacoli",1)[0]
-        claims=re.findall(
-            r"presenta\s+l['’]opera\s+(.+?)\s+di\s+"
-            r"([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.\- ]{2,90}?)\s*(?:O&B\s+2027|Orari\s+Spettacoli)",
-            prefix,re.I)
-        if len(claims)!=1 or normalized(claims[0][0])!=normalized(title):
-            raise ValueError("unknown opera lacks explicit official composer")
-        composer=claims[0][1].strip()
+        composer=after.credit
+        if (not isinstance(composer,str) or
+                not re.fullmatch(r"[A-ZÀ-Ü][A-Za-zÀ-ÿ'’.-]{1,40}"
+                                 r"(?:\s+[A-ZÀ-Ü][A-Za-zÀ-ÿ'’.-]{1,40}){1,3}",composer)
+                or normalized(composer).split()[-1]!=normalized(parts[1])):
+            raise ValueError("unverified full composer in official heading")
+    else:
+        # A slash or multiple works in the heading must be handled by the
+        # dedicated program parser. A season-only suffix is harmless.
+        if (not title_text or "/" in title_text or len(parts)>2):
+            raise ValueError("unsupported multi-work or uncredited official bill")
+        match=re.fullmatch(r"(.+?)\s+di\s+(.+)",title_text,re.I)
+        if match:
+            title,composer=(value.strip() for value in match.groups())
+        else:
+            title=title_text
+            visible=clean(html)
+            prefix=visible.split("Orari Spettacoli",1)[0]
+            claims=re.findall(
+                r"presenta\s+l['’]opera\s+(.+?)\s+di\s+"
+                r"([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.\- ]{2,90}?)\s*(?:O&B\s+2027|Orari\s+Spettacoli)",
+                prefix,re.I)
+            if len(claims)!=1 or normalized(claims[0][0])!=normalized(title):
+                raise ValueError("unknown opera lacks explicit official composer")
+            composer=claims[0][1].strip()
     if not (2<=len(title)<=180 and 3<=len(composer)<=100):
         raise ValueError("invalid credited work title/composer")
     venue,dates=parse_petruzzelli_detail(
