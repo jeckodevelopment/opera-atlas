@@ -66,6 +66,8 @@ function render(){
     const heading=node("h2"),link=node("a",null,item.title);link.href=item.url;heading.append(link);
     card.append(heading,node("p",null,item.subtitle));
     if(item.description)card.append(node("p","directory-description",item.description));
+    if(section==="teatri" && item.independentVenue && !item.hasPerformances)
+      card.append(node("p","directory-description","Calendario non ancora acquisito · consulta il sito del teatro"));
     const action=node("a","detail-link",section==="opere"?"Scopri l’opera":section==="festival"?"Esplora il festival":"Scopri il teatro");
     action.href=item.url;card.append(action);grid.append(card);
   }
@@ -119,6 +121,21 @@ async function initialize(){
       render();return;
     }
     const grouped=new Map();
+    if(section==="teatri"){
+      const knownVenues=new Set(data.performances.map(e=>window.OperaAtlasCatalog.urls(e).venue));
+      const national=await window.OperaAtlasCatalog.venues();
+      for(const venue of national){
+        const url="/atlas/"+venue.city_slug+"/"+venue.slug+"/";
+        grouped.set(url,{
+          url,title:venue.name,city:venue.city,
+          subtitle:venue.city+" · "+venue.region,
+          description:venue.description,
+          imageKind:"venue",
+          hasPerformances:knownVenues.has(url),
+          independentVenue:true,
+        });
+      }
+    }
     for(const e of data.performances){
       if(typeof e.title!=="string"||typeof e.venue!=="string"||!e.local_date)continue;
       const urls=window.OperaAtlasCatalog.urls(e);
