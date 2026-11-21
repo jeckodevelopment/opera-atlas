@@ -93,8 +93,13 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
         if not isinstance(rows,list) or not rows or any(
                 not isinstance(x,dict) for x in rows):
             continue
-        identities={(normalized(x.get("event_title","")),
-                     normalized(x.get("composer",""))) for x in rows}
+        if any(not isinstance(x.get("event_title"),str)
+                   or not isinstance(x.get("composer"),str)
+                   or not isinstance(x.get("venue"),str)
+                   or not x["venue"].strip() for x in rows):
+            continue
+        identities={(normalized(x["event_title"]),
+                     normalized(x["composer"])) for x in rows}
         if len(identities)!=1 or any(not part for part in next(iter(identities))):
             continue
         title,composer=rows[0].get("event_title"),rows[0].get("composer")
