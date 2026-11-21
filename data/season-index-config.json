@@ -246,6 +246,13 @@
       "url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "macerata-festival-2027",
+      "official_url": "https://www.sferisterio.it/",
+      "url": "https://www.sferisterio.it/",
+      "access_status": "approved",
+      "min_links": 3
     }
   ]
 }

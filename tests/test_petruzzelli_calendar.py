@@ -43,7 +43,7 @@ class PetruzzelliTests(unittest.TestCase):
 
     def test_index_only_approved_official_detail_pages(self):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
-        self.assertEqual(len(validate_config(config)),35)
+        self.assertEqual(len(validate_config(config)),36)
         self.assertTrue(eligible(SOURCE,DETAIL))
         links=extract(SOURCE,INDEX,
             '<h1>OPERA E BALLETTO 2027</h1>'
