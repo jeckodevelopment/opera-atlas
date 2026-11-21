@@ -48,6 +48,12 @@
       "description": "Manifesto d'archivio dell'opera Les contes d'Hoffmann (1881), non relativo alla produzione in programma",
       "credit": "L. d'Ausbourg, manifesto dell'opera (1881), Wikimedia Commons",
       "license": "CC0 1.0"
+    },
+    "il-barbiere-di-siviglia": {
+      "file": "Barbiere di Siviglia frontespizio.JPG",
+      "description": "Frontespizio del libretto originale de Il barbiere di Siviglia di Rossini (1816), non relativo all'allestimento 2026",
+      "credit": "Stamperia di Crispino Puccinelli, Roma, 1816; Wikimedia Commons",
+      "license": "Public domain"
     }
   },
   "works_by_id": {
