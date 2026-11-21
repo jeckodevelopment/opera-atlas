@@ -330,3 +330,28 @@ corrispondenza dei crediti, 26 date/ore già acquisite, provenienza
 Commons, validità storica e idempotenza della transazione. La
 pubblicazione deve comunque validare integralmente i medesimi fatti,
 senza eccezioni rispetto alle altre opere.
+
+## Due ulteriori candidate documentate: Alahor ed Elisir
+
+*Alahor in Granata* è documentata direttamente dal programma ufficiale
+Donizetti Opera 2026: opera di Gaetano Donizetti, libretto attribuito
+alla sigla M.A. (non espansa arbitrariamente), prima Palermo al Teatro
+Carolino nel 1826; rappresentazioni con ore precise al Teatro Sociale
+il 14, 22 e 27 novembre 2026. Copertina stabile: frontespizio del libretto
+1826 digitalizzato dalla Library of Congress, tramite Wikimedia Commons.
+
+*L’elisir d’amore* ha sei recite triestine già registrate con ore complete.
+Il vecchio parser includeva erroneamente `Melodramma` nel campo
+compositore. Per questa composizione non ancora canonica, il promotore
+rimuove quella parola esclusivamente a fronte di un seed editoriale
+verificato, collegato allo stesso URL ufficiale, con titolo, compositore,
+sinossi e prima documentati; per gli altri titoli rimangono i controlli
+canonici normali. La prima è confermata al Teatro della Canobbiana di
+Milano, 1832, da Rai Cultura e Corago; il frontespizio originale del
+libretto del 1832 proviene da Wikimedia Commons.
+
+Entrambe le schede sono brevi e orientate agli spettacoli, non
+all'enciclopedia. Nessuna data può essere pubblicata sulla base di un
+manifesto o di una sinossi: il sistema richiede sempre evidenza oraria
+della rappresentazione specifica. I test `test_donizetti_alahor_and_elisir.py`
+verificano sorgente, identità, immagini e promozione idempotente.
