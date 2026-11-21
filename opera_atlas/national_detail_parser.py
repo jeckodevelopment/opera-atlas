@@ -81,6 +81,35 @@ def explicit_cancelled_dates(text:str)->set[str]:
         cancelled.add(_date(found[1],found[2],found[3]))
     return cancelled
 
+def fenice_primary_credits(html:str)->tuple[str,str,str]:
+    """Read work, composer and actual performance theatre from one primary block.
+
+    La Fenice's season also uses Teatro Malibran; never silently replace that
+    venue with the main theatre or use other events in the footer as evidence.
+    """
+    from scripts.collect_candidate_details import FirstHeading
+    heading=FirstHeading()
+    heading.feed(html)
+    title=heading.first
+    text=clean(html)
+    marker=text.find("Seleziona una data")
+    if not title or marker<0:
+        raise ValueError("missing Fenice work heading or ticket schedule")
+    start=text.casefold().rfind(title.casefold(),0,marker)
+    if start<0:
+        raise ValueError("Fenice title absent from primary work section")
+    section=text[start+len(title):marker]
+    found=re.search(r"\bTeatro (?:La Fenice|Malibran)\b",section)
+    if not found:
+        raise ValueError("no official Fenice performance venue")
+    composer=section[:found.start()].strip()
+    if (not re.fullmatch(r"[A-ZÀ-Ž][\w'’.-]+"
+                         r"(?:\s+[A-ZÀ-Ž][\w'’.-]+){1,5}",composer)
+        or len(composer)>100):
+        raise ValueError("no unique primary composer credit at Fenice")
+    return title,composer,found.group(0)
+
+
 def parse_national_showtimes(html: str, *, source_key:str,url:str,
                             title:str,composer:str)->list[tuple[str,str]]:
     expected=HOSTS.get(source_key)
@@ -107,7 +136,8 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
         for m in rx.finditer(segment):
             day=_date(m[1],m[2],m[3])
             trailing=segment[m.end():m.end()+50]
-            if day in cancelled or CANCELLED.search(trailing):
+            if (day in cancelled or CANCELLED.search(trailing)
+                or re.search(r"(?i)\bRISERVAT[OAIE]\s+ALLE?\s+SCUOLE\b",trailing)):
                 continue
             _insert(dates,day,f"{int(m[4]):02d}:{m[5]}")
     elif source_key=="parma-opera-2027":
