@@ -133,7 +133,7 @@ def extract_official_petr_opera(html:str,*,url:str,season_year:int=2027):
     heading.feed(html)
     if not heading.text:raise ValueError("missing official opera H1")
     pieces=[x.strip() for x in heading.text.split("|")]
-    if not pieces[0] or len(pieces)>2:
+    if not pieces[0] or len(pieces)>2 or "/" in pieces[0]:
         raise ValueError("ambiguous multi-work bill")
     title_and_author=pieces[0]
     if " di " in title_and_author.casefold():
