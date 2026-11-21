@@ -26,6 +26,7 @@ VENUE_BY_SOURCE={
     "lirico-cagliari-opera-2027":("Cagliari","Teatro Lirico di Cagliari"),
     "bellini-catania-opera-2026-27":("Catania","Teatro Massimo Bellini"),
     "modena-opera-2026-27":("Modena","Teatro Comunale Pavarotti-Freni"),
+    "giglio-lucca-opera-2026-27":("Lucca","Teatro del Giglio Giacomo Puccini"),
     "arena-festival-2027":("Verona","Arena di Verona"),
     "fenice-opera-2026-27":("Venezia","Teatro La Fenice"),
     "parma-opera-2027":("Parma","Teatro Regio di Parma"),
@@ -183,7 +184,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
