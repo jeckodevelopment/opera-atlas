@@ -325,13 +325,13 @@ def parse_official_parma_work_detail(url:str,html:str)->list[dict]:
     if "Teatro Regio di Parma" not in section:
         raise ValueError("unverified Parma performance venue")
     credit=re.compile(
-        r"(?i)\\bmusica\\s+"
-        r"([A-ZÀ-Ž][\\w'’.-]+(?:\\s+[A-ZÀ-Ž][\\w'’.-]+){1,5})"
-        r"\\s+(?=(?:Dramma|Opera|Commedia|Libretto|Melodramma|"
-        r"Singspiel|Farsa|Oratorio|Tragedia)\\b)")
+        r"(?i)\bmusica\s+"
+        r"([A-ZÀ-Ž][\\w'’.-]+(?:\s+[A-ZÀ-Ž][\\w'’.-]+){1,5})"
+        r"\s+(?=(?:Dramma|Opera|Commedia|Libretto|Melodramma|"
+        r"Singspiel|Farsa|Oratorio|Tragedia)\b)")
     matches=credit.findall(section)
     if (len(matches)!=1 or
-        len(re.findall(r"(?i)\\bmusica\\s+[A-ZÀ-Ž]",section))!=1):
+        len(re.findall(r"(?i)\bmusica\s+[A-ZÀ-Ž]",section))!=1):
         raise ValueError("missing or contradictory official Parma composer")
     composer=matches[0]
     dates=parse_national_showtimes(
