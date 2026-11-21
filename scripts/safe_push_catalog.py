@@ -5,6 +5,7 @@ A harmless docs-only concurrent commit may be rebased after validation.
 A substantive concurrent update is deferred to its own/new scheduled refresh.
 """
 from __future__ import annotations
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -74,5 +75,9 @@ def validate_after_rebase(repo:Path):
 def main():
     result=safe_push(Path.cwd(),verify=validate_after_rebase)
     print(f"Catalog push result: {result}")
+    output=os.environ.get("GITHUB_OUTPUT")
+    if output:
+        with open(output,"a",encoding="utf-8") as stream:
+            stream.write(f"deferred={str(result == 'deferred').lower()}\\n")
 if __name__=="__main__":
     main()
