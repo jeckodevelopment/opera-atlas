@@ -99,12 +99,12 @@ def fenice_primary_credits(html:str)->tuple[str,str,str]:
     if start<0:
         raise ValueError("Fenice title absent from primary work section")
     section=text[start+len(title):marker]
-    found=re.search(r"\\bTeatro (?:La Fenice|Malibran)\\b",section)
+    found=re.search(r"\bTeatro (?:La Fenice|Malibran)\b",section)
     if not found:
         raise ValueError("no official Fenice performance venue")
     composer=section[:found.start()].strip()
     if (not re.fullmatch(r"[A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+"
-                         r"(?:\\s+[A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+){1,5}",composer)
+                         r"(?:\s+[A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+){1,5}",composer)
         or len(composer)>100):
         raise ValueError("no unique primary composer credit at Fenice")
     return title,composer,found.group(0)
