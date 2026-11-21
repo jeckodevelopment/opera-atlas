@@ -1120,3 +1120,7 @@ Il workflow `refresh-catalog` rigenera e convalida il canale prima della prima p
 ### Crediti ufficiali Teatro alla Scala 2026–27
 
 Il parser `opera_atlas.scala_credited_detail` acquisisce titolo e compositore dall'intestazione ufficiale (non dallo slug), verifica HTTPS e il percorso del teatro, e registra soltanto date con orario esplicito. Il collector inoltra i fatti alla pipeline centrale per identificazione, sinossi, immagini e pubblicazione. Le opere inedite rispetto al registro canonico, come *Les Pêcheurs de perles* e *Dido and Æneas*, possono così entrare senza falsi collegamenti con opere omonime; nessuna recita viene inventata se titolo/compositore/orario mancano.
+
+### Schede editoriali prima della promozione: Scala 2027
+
+Le candidate *Leonora* (Paër) e *Les Pêcheurs de perles* (Bizet) dispongono di una sinossi breve basata su trama reale, libretto e dati verificabili della prima esecuzione in `data/verified-work-authority-seeds.json`, non di un testo segnaposto. Le corrispondenti immagini storiche sono state documentate su Wikimedia Commons in `data/archival-work-images.json`: frontespizio del libretto originale di Leonora (Dresda 1804), stampa storica BnF dei Pêcheurs (1863). Le opere non ancora censite rimangono escluse se non rispettano tutti i gate di data, identità, sinossi, storia, immagine e licenza; la pubblicazione avviene solo quando il refresh del catalogo esegue e valida l'intera transazione. Non si usano foto degli allestimenti recenti per questi titoli.
