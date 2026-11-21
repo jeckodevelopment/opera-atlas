@@ -98,34 +98,44 @@
       "policy_version": 2
     },
     "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.teatrolafenice.it/event/carmenaxelrod/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.teatrolafenice.it/event/madamabutterflycallegari/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.teatrolafenice.it/event/jenufa/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://teatroregioparma.it/spettacolo/madama-butterfly/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.teatromassimo.it/event/samson-et-dalila/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.teatrolafenice.it/event/fedora/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     },
     "https://www.teatromassimo.it/event/macbeth/": {
-      "retry_after": "2026-11-27"
+      "retry_after": "2026-11-23",
+      "policy_version": 2
     }
   }
 }

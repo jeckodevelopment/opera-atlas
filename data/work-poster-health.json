@@ -1,49 +1,13 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T11:13:30+00:00",
-  "checked_pages": 18,
+  "checked_at": "2026-11-21T11:17:56+00:00",
+  "checked_pages": 10,
   "official_images": 2,
-  "archival_images": 9,
-  "editorial_fallbacks": 25,
+  "archival_images": 32,
+  "editorial_fallbacks": 2,
   "outcomes": [
     {
-      "slug": "i-puritani",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "anna-bolena",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "nixon-in-china",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "adriana-lecouvreur",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "nozze-istriane",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "norma",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "don-quichotte",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "partenope",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "il-pipistrello",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "al-cavallino-bianco",
+      "slug": "lucia-di-lammermoor",
       "status": "no_suitable_official_poster"
     },
     {
@@ -51,19 +15,15 @@
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "aida",
+      "slug": "madama-butterfly",
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "rigoletto",
+      "slug": "jenufa",
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "la-traviata",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "carmen",
+      "slug": "madama-butterfly",
       "status": "no_suitable_official_poster"
     },
     {
@@ -71,11 +31,19 @@
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "nabucco",
+      "slug": "samson-et-dalila",
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "tosca",
+      "slug": "fedora",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "aida",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "otello",
       "status": "no_suitable_official_poster"
     }
   ]
