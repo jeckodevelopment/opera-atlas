@@ -101,8 +101,9 @@ class AutoWorkResearchTests(unittest.TestCase):
                                    "sources":["https://www.wikidata.org/wiki/Q101"]},
                                api_key="test")
         self.assertEqual(captured,["Second Composer"])
-        self.assertEqual(status[0]["status"],"enriched")
-        self.assertEqual(output["works"][0]["composer"],"Second Composer")
+        self.assertEqual(status[0]["status"],"automatic_retry")
+        self.assertEqual(status[0]["reason"],"verified_plot_and_history_unavailable")
+        self.assertEqual(output["works"],[])
 
     def test_verified_opera_without_italian_wikipedia_is_recognized(self):
         def claim(qid):
@@ -266,11 +267,9 @@ class AutoWorkResearchTests(unittest.TestCase):
                                today=date(2026,11,20),resolve=resolver,
                                extract=forbidden,generate=forbidden,
                                generate_history=forbidden,api_key="")
-        self.assertEqual(status[0]["status"],"enriched")
-        card=result["works"][0]
-        self.assertEqual(card["synopsis"],identity_introduction(identity))
-        self.assertIsNone(card["history"])
-        self.assertIn("Giovanni Paisiello",card["synopsis"])
+        self.assertEqual(status[0]["status"],"automatic_retry")
+        self.assertEqual(status[0]["reason"],"verified_plot_and_history_unavailable")
+        self.assertEqual(result["works"],[])
 
     def test_original_synopsis_is_saved_only_if_grounded(self):
         doc={"schema_version":1,"candidates":[{
@@ -299,15 +298,9 @@ class AutoWorkResearchTests(unittest.TestCase):
                 "sources":[obj["authority_url"],obj["wikipedia_url"]]},
             api_key="fake-key")
         self.assertEqual(calls,[])
-        self.assertEqual(status[0]["status"],"enriched")
-        self.assertEqual(result["works"][0]["composer"],"Gaetano Donizetti")
-        self.assertIsNone(result["works"][0]["history"])
-        self.assertNotIn("source_excerpt",result["works"][0])
-        again,events=research(doc,result,set(),today=date(2026,11,21),
-                              resolve=lambda x: (_ for _ in ()).throw(AssertionError("refetched")),
-                              api_key="fake-key")
-        self.assertEqual(again,result)
-        self.assertEqual(events,[])
+        self.assertEqual(status[0]["status"],"automatic_retry")
+        self.assertEqual(result["works"],[])
+        self.assertEqual(calls,[])
 
     def test_unseen_opera_research_rotates_fairly_with_six_candidates(self):
         rows=[{"id":f"unseen-{i:02d}","source_key":"scala-season-2026-27",
@@ -319,9 +312,41 @@ class AutoWorkResearchTests(unittest.TestCase):
         for offset in range(12):
             day=date.fromordinal(date(2026,11,20).toordinal()+offset)
             batch=choose_candidates(doc,existing,set(),today=day)
-            self.assertEqual(len(batch),3)
+            self.assertEqual(len(batch),6)
             seen.update(x["id"] for x in batch)
         self.assertEqual(seen,{x["id"] for x in rows})
+
+    def test_generic_cached_identity_is_retried_and_never_published(self):
+        from scripts.auto_work_research import identity_introduction
+        identity={"title":"Anna Bolena","composer":"Gaetano Donizetti",
+                  "wikidata_id":"Q111","authority_url":"https://www.wikidata.org/wiki/Q111",
+                  "wikipedia_url":None}
+        previous={"schema_version":1,"works":[{
+            "candidate_id":CANDIDATE["id"],"source_key":CANDIDATE["source_key"],
+            "source_url":CANDIDATE["official_url"],**identity,
+            "synopsis":identity_introduction(identity),"history":None}]}
+        checked=[]
+        def lookup(title):
+            checked.append(title)
+            return identity
+        result,status=research({"candidates":[CANDIDATE]},previous,set(),
+                               today=date(2026,11,21),resolve=lookup,prepared={})
+        self.assertEqual(checked,["anna bolena"])
+        self.assertEqual(status[0]["reason"],"verified_plot_and_history_unavailable")
+        self.assertEqual(result,previous)
+
+    def test_earliest_verified_recita_gets_research_priority(self):
+        rows=[{"id":f"candidate-{i:02d}","source_key":"scala-season-2026-27",
+               "official_url":f"https://www.teatroallascala.org/it/stagione/2026-2027/opera/opera-{i}.html",
+               "status":"needs_review"} for i in range(14)]
+        evidence={"evidence":[{
+            "candidate_id":row["id"],"status":"needs_editorial_review",
+            "event_facts":[{"date":"2026-12-01" if i==13 else "2027-09-01"}]}
+            for i,row in enumerate(rows)]}
+        batch=choose_candidates({"candidates":rows},{"works":[]},set(),
+                                today=date(2026,11,21),evidence=evidence)
+        self.assertEqual(len(batch),12)
+        self.assertEqual(batch[0]["id"],"candidate-13")
 
     def test_never_search_outside_exact_approved_url(self):
         self.assertIsNone(official_title_hint({
