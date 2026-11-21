@@ -37,9 +37,19 @@ jobs:
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.12'
+      # The frontend is deployed independently of the daily JSON refresh.
+      # Its checkout may contain old content-addressed feeds immediately
+      # after a canonical venue/work edit: generate deterministic local files
+      # before checking them, without pushing or uploading them over SFTP.
+      - name: Build current canonical feed for preflight
+        run: |
+          python -m scripts.build_verified_catalog
+          python -m scripts.publish_catalog_v2
+          python -m scripts.publish_work_editorial
       - name: Verify canonical routes and app
         run: |
           python -m unittest discover -s tests -v
+          python -m scripts.build_verified_catalog --check
           python -m scripts.publish_catalog_v2 --check
           python -m scripts.publish_work_editorial --check
       - name: Install SFTP transport
