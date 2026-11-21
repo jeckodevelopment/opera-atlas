@@ -36,3 +36,14 @@ La funzione `resolve_review` consente di scegliere esplicitamente una recita gi�
 
 ## Registro canonico del repertorio (Fase 1, issue #2)
 `opera_atlas.catalog` introduce `register_work`, `register_alias` e `find_work`, con corrispondenze esplicite basate su titolo canonico o alias approvato e compositore fornito. Titolo senza compositore: risultato ignoto (`None`); più opere compatibili: eccezione `AmbiguousWorkError`, quindi richiesta revisione. Nessuna fusione implicita. La classificazione controllata include `opera`, `operetta`, `music_theatre`, `concert`, `ballet`, `prose`, `other` per distinguere i contenuti nelle future metriche. La classificazione dei singoli programmi rimane responsabilità dei connettori verificati.
+
+## Opere omonime e nuovi adattamenti — 21/11/2026
+
+- L'identità canonica è l'ID immutabile di **una specifica composizione**. Titolo e compositore verificati sono necessari per riconoscerla; un titolo da solo non dimostra la paternità di una produzione.
+- Il registro può contenere più opere con il medesimo titolo e con compositori differenti. `slug` rappresenta il titolo normalizzato; `route_slug` è un percorso pubblico univoco. Quando il titolo esiste già, le nuove opere ricevono `<slug>-<compositore>` senza cambiare gli URL delle opere già pubblicate.
+- Le schede editoriali, i dati storici e le immagini di opere omonime vengono associati all'**ID dell'opera**, evitando che dati di una composizione finiscano nella scheda dell'altra.
+- Le pagine di dettaglio mostrano collegamenti alle altre opere *effettivamente censite* con lo stesso titolo. Sono collegamenti al repertorio, non una sezione didattica.
+- L'acquisizione di calendari senza compositore verificato lascia la candidata non pubblicata (`identity_requires_more_evidence`), anche quando il registro conosce una sola opera con quel titolo: una futura omonima non deve diventare un errore storico.
+- Le composizioni basate sullo stesso soggetto ma con titoli differenti (per esempio *Manon* e *Manon Lescaut*) rimangono distinte. Una relazione editoriale per soggetto richiederà evidenza esplicita e non può essere dedotta per somiglianza testuale.
+- Regressioni da coprire: *La bohème* (Puccini/Leoncavallo), *Il barbiere di Siviglia* (Paisiello/Rossini), *Manon Lescaut* (Auber/Puccini) e, per titoli differenti, *Manon* (Massenet). Gli ultimi casi non vanno inseriti nel catalogo pubblico in assenza di spettacoli e fonti verificati.
+
