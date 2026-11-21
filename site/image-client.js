@@ -191,6 +191,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
       ? "Genova - Teatro Carlo Felice.jpg" : null;
     // An explicitly sourced and credited venue photograph may be hosted outside Commons.
     const external=event?.photo_url;
+    // Explicitly pin the municipal photograph to this Rome venue: no city-wide
+    // fallback or attribution to the separate Teatro Costanzi.
     if(title==="Teatro Nazionale" && city==="roma" &&
        external==="https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg" &&
        event?.photo_source_url==="https://www.turismoroma.it/it/luoghi/teatro-nazionale" && event?.photo_credit){
