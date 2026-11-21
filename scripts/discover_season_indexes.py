@@ -285,7 +285,8 @@ def validate_config(config:dict)->list[dict]:
         elif key=="opera-roma-season-2026-27":
             valid_season=index.path=="/opere/"
         elif key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
-            valid_season=(index.path=="/stagione-futura/" and index.query=="_tipo=opera")
+            valid_season=(index.path==("/stagione-presente/" if key.endswith("-2026") else "/stagione-futura/")
+                          and index.query=="_tipo=opera")
         elif key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
             valid_season=bool(re.fullmatch(r"/opera-e-balletto-20\d{2}/",index.path)
                               and index.path=="/opera-e-balletto-"+key.rsplit("-",1)[-1]+"/")
