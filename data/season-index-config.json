@@ -183,6 +183,27 @@
       "url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "goldoni-livorno-dido-2026-27",
+      "official_url": "https://www.goldoniteatro.it/",
+      "url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "goldoni-livorno-otello-2026-27",
+      "official_url": "https://www.goldoniteatro.it/",
+      "url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "goldoni-livorno-elisir-2026-27",
+      "official_url": "https://www.goldoniteatro.it/",
+      "url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }
