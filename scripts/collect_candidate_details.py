@@ -25,6 +25,7 @@ from scripts.publish_catalog_v2 import normalized
 OUTPUT=ROOT/"data"/"candidate-detail-evidence.json"
 PUBLIC=ROOT/"public"/"catalog"/"candidate-detail-evidence.json"
 HEALTH=ROOT/"data"/"candidate-detail-health.json"
+PARTIAL_HEALTH=ROOT/"data"/"candidate-detail-health-partial.json"
 MAX_PAGES=60
 MAX_PER_SOURCE=24
 # Pause between individual official page requests. Every fetch also checks
@@ -973,8 +974,16 @@ def main():
                           pause=time.sleep)
     _write_atomic(OUTPUT,result)
     _write_atomic(PUBLIC,result)
-    _write_atomic(HEALTH,{"schema_version":1,
+    # The Roma and priority fast passes are deliberately partial. Never
+    # replace the national acquisition diagnostic with their attempt counts.
+    # Keep an explicitly scoped checkpoint for observing these short scans.
+    is_partial=parsed.source_key is not None or parsed.priority_only
+    health_path=PARTIAL_HEALTH if is_partial else HEALTH
+    _write_atomic(health_path,{"schema_version":1,
         "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "scope":("source" if parsed.source_key else "priority" if parsed.priority_only
+                 else "national"),
+        **({"source_key":parsed.source_key} if parsed.source_key else {}),
         "attempted":len(health),"outcomes":health})
     print(json.dumps({"evidence":len(result["evidence"]),"attempts":len(health),
                       "structured":sum(x["outcome"]=="facts_found" for x in health)}))
