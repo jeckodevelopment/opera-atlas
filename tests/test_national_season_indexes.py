@@ -72,11 +72,35 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual(len(urls),7)
         self.assertFalse(any("giselle" in x or "deledda" in x for x in urls))
 
-    def test_all_six_indexes_are_explicitly_configured(self):
+    def test_donizetti_opera_index_scoped_to_three_operas(self):
+        url="https://www.donizettiopera.org/it/opere-2026/"
+        html='<nav><a href="/it/evento/unrelated/">Menu</a></nav><h1>Opere 2026</h1>'
+        html+=''.join('<a href="/it/evento/'+slug+'/">Opera</a>' for slug in
+                      ("l-esule-di-roma","alahor-in-granata",
+                       "le-convenienze-ed-inconvenienze-teatrali"))
+        html+='<a href="/it/evento/the-donizetti-brunch/2026-11-29/">Brunch</a>'
+        html+='<footer><a href="/it/evento/another/">Footer</a></footer>'
+        urls=extract("donizetti-opera-2026",url,html,3)
+        self.assertEqual(len(urls),3)
+        self.assertFalse(any("brunch" in x or "another" in x for x in urls))
+
+    def test_teatro_grande_index_scoped_to_opera_not_concerts(self):
+        url="https://teatrogrande.it/it"
+        html='<h2>Opera e Balletto</h2>'
+        html+='<a href="/it/stagioni/2026/l-italiana-in-algeri">Italiana</a>'
+        html+='<a href="/it/stagioni/2026/cavalleria-rusticana-pagliacci">Dittico</a>'
+        html+='<h2>Concerti</h2>'
+        html+='<a href="/it/stagioni/2026/brahms-e-kancheli">Concerto</a>'
+        urls=extract("teatro-grande-opera-2026",url,html,2)
+        self.assertEqual(len(urls),2)
+        self.assertFalse(any("brahms" in x for x in urls))
+
+    def test_all_eight_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
             "scala-season-2026-27", "arena-festival-2027",
             "fenice-opera-2026-27","parma-opera-2027",
-            "massimo-season-2026-27","carlo-felice-season-2026-27"})
+            "massimo-season-2026-27","carlo-felice-season-2026-27",
+            "donizetti-opera-2026","teatro-grande-opera-2026"})
 
     def test_incomplete_index_is_rejected(self):
         with self.assertRaises(ValueError):
@@ -116,7 +140,7 @@ class NationalIndexTests(unittest.TestCase):
                        now="2026-11-20T20:00:00+00:00")
         self.assertEqual(second,first)
         self.assertEqual([x["status"] for x in status[:3]],["success"]*3)
-        self.assertEqual([x["status"] for x in status[3:]],["blocked"]*3)
+        self.assertEqual([x["status"] for x in status[3:]],["blocked"]*5)
     def test_first_live_scan_support_pages_are_not_opera(self):
         for suffix in ("regolamento","preparati-allopera",
                        "spettacoli-prossima-stagione","roberto-bolle-friends",
