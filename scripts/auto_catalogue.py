@@ -487,13 +487,13 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                            and item.get("official_authority_url")==url
                            and source["official_url"]=="https://www.tcbo.it/")
         if not (verified_wikidata or verified_official):continue
-        if require_image and verified_candidate_image(detail,title=title,url=url) is None:
-            result["auto_skipped"].append({
-                "candidate_id":cid,"reason":"verified_work_image_missing"})
-            continue
         work_key=normalized(title)+"|"+normalized(composer)
         slug=slugify(title)
         if work_key in next_registry["works"]:
+            continue
+        if require_image and verified_candidate_image(detail,title=title,url=url) is None:
+            result["auto_skipped"].append({
+                "candidate_id":cid,"reason":"verified_work_image_missing"})
             continue
         # A shared title is a legitimate new composition. Keep existing work
         # routes unchanged and allocate a composer-qualified route only to the
