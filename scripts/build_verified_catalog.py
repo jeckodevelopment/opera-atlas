@@ -58,6 +58,9 @@ TIME_EVIDENCE_URLS = {
     "lombardia-italiana-pavia": {
         "https://www.teatrofraschini.it/programma/litaliana-in-algeri/",
     },
+    "lombardia-italiana-brescia": {
+        "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
+    },
     "lombardia-italiana-cremona": {
         "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri",
         "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri-0",
