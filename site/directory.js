@@ -26,7 +26,7 @@ async function loadEditorial(){
         const data=await response.json();
         if(data.schema_version===1){
           if(name==="work-synopses.json" && Array.isArray(data.works)){
-            return {schema_version:1,synopses:Object.fromEntries(data.works.map(w=>[w.slug,w.synopsis]))};
+            return {schema_version:1,synopses:Object.fromEntries(data.works.map(w=>[w.work_id,w.synopsis]))};
           }
           return data;
         }
@@ -35,7 +35,7 @@ async function loadEditorial(){
     return null;
   }
   const [works,theatres]=await Promise.all([load("work-synopses.json"),load("theatre-profiles.json")]);
-  editorial.synopses=works?.synopses||{};
+  editorial.synopses={...(works?.synopses||{}),...(works?.synopses_by_id||{})};
   editorial.venues=theatres?.venues||{};
 }
 function node(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
@@ -129,7 +129,7 @@ async function initialize(){
           work_id:section==="opere"?e.work_id:undefined,
           composer:section==="opere"?e.composer:undefined,
           subtitle:section==="opere"?e.composer||"":e.municipality+" · "+(e.region||"Italia"),city:e.municipality,
-          description:section==="opere"?editorial.synopses[e.work_slug]||"":profile?.description||""});
+          description:section==="opere"?editorial.synopses[e.work_id] || (e.work_slug==="la-boheme"?"":editorial.synopses[e.work_slug]||""):profile?.description||""});
       }
     }
     entries.push(...[...grouped.values()].sort((a,b)=>a.title.localeCompare(b.title,"it")));
