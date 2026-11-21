@@ -36,6 +36,30 @@ class Headings(HTMLParser):
             self.in_h1=False
 
 
+
+class ComposerCredits(HTMLParser):
+    """Take only the first-party music-credit paragraph, not nearby cast text."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.in_p=False
+        self.parts=[]
+        self.credits=[]
+    def handle_starttag(self,tag,attrs):
+        if tag=="p":
+            self.in_p=True
+            self.parts=[]
+    def handle_data(self,data):
+        if self.in_p:
+            self.parts.append(data)
+    def handle_endtag(self,tag):
+        if tag=="p" and self.in_p:
+            text=" ".join(" ".join(self.parts).split())
+            match=re.fullmatch(r"(?i)Musica di\s+(.+)",text)
+            if match:
+                self.credits.append(match.group(1))
+            self.in_p=False
+
+
 def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     loc=urlsplit(url)
     if (loc.scheme!="https" or loc.hostname!=HOST or loc.query or loc.fragment or
@@ -58,11 +82,13 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         raise ValueError("work-specific event heading differs from page title")
     if not re.search(r"\bTeatro del Giglio\s+Lirica\b",text,re.I):
         raise ValueError("event not at Teatro del Giglio or not opera")
-    credit=re.search(r"\bMusica di\s+([A-ZÀ-Ý][A-ZÀ-Ý\s'’-]{2,60})",text)
-    if not credit:
-        raise ValueError("official composer credit missing")
-    composer=" ".join(credit.group(1).split())
-    if len(composer.split())<2:
+    credits=ComposerCredits()
+    credits.feed(html)
+    if len(credits.credits)!=1:
+        raise ValueError("official composer credit missing or ambiguous")
+    composer=" ".join(credits.credits[0].split())
+    if (len(composer.split())<2 or
+        not re.fullmatch(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]+){1,3}",composer)):
         raise ValueError("composer not specific enough")
     # Date and clock always occur together and include the full year.
     rx=re.compile(rf"(?i)\bIl\s+(\d{{1,2}})\s+({MONTH})\s+(20\d{{2}})\s+Ore\s+([01]?\d|2[0-3]):([0-5]\d)\b")
