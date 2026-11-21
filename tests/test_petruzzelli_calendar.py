@@ -46,6 +46,7 @@ class PetruzzelliTests(unittest.TestCase):
         self.assertEqual(len(validate_config(config)),14)
         self.assertTrue(eligible(SOURCE,DETAIL))
         links=extract(SOURCE,INDEX,
+            '<h1>OPERA E BALLETTO 2027</h1>'
             '<a href="/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/">Nabucco</a>'
             '<a href="/eventi/fidelio-di-beethoven/">Fidelio</a>'
             '<a href="/eventi/zenobia-piccinni/">Zenobia</a>'
@@ -62,7 +63,7 @@ class PetruzzelliTests(unittest.TestCase):
         self.assertEqual(sources["petruzzelli-opera-2027"]["url"],INDEX)
         target="https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
         self.assertEqual(extract("petruzzelli-opera-2026",sources["petruzzelli-opera-2026"]["url"],
-                                f'<a href="{target}">Il barbiere di Siviglia</a>',1),[target])
+                                f'<h1>OPERA E BALLETTO 2026</h1><a href="{target}">Il barbiere di Siviglia</a>',1),[target])
 
     def test_barbiere_2026_has_six_exact_evening_and_matinee_times(self):
         url="https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"

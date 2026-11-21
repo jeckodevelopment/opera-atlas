@@ -1164,3 +1164,16 @@ richiede gli orari individuali nella sezione `Orari Spettacoli`.
 Non interpreta il range nel titolo come rappresentazioni, non deriva
 il nome del compositore dal solo cognome e non confonde programmi misti
 con opere singole. La verifica rimane comune alle fonti 2026 e 2027.
+
+### Stagioni Petruzzelli e collegamenti storici
+
+Per il Petruzzelli 2026/2027, i collegamenti candidati devono trovarsi
+**dopo** l'intestazione della stagione esatta (`OPERA E BALLETTO 2026`
+o `OPERA E BALLETTO 2027`) e prima della fine della sezione principale;
+link di navigazione, footer e stagioni precedenti non sono titoli nuovi.
+Dopo un'acquisizione verificata (numero minimo di schede soddisfatto),
+un candidato storico assente dalla stagione corrente conserva il suo ID e
+l'URL nell'audit con stato `not_in_official_season`; non consuma più
+risorse di ricerca o riconciliazione editoriale. Se ricompare nella
+stagione ufficiale, viene nuovamente classificato. Un fallimento della
+lettura dell'indice non autorizza a ritirare nessun candidato.

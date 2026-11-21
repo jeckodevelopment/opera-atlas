@@ -173,6 +173,10 @@ class ScopedSeasonAnchors(HTMLParser):
     def handle_endtag(self,tag):
         if tag==self.heading:
             label=" ".join(" ".join(self.heading_text).upper().split())
+            if self.key in ("petruzzelli-opera-2026","petruzzelli-opera-2027") and tag in ("h1","h2"):
+                expected="OPERA E BALLETTO "+self.key.rsplit("-",1)[-1]
+                if label==expected:self.in_section=True
+                elif self.in_section:self.in_section=False
             if self.key=="parma-opera-2027" and tag=="h1":
                 if label=="OPERA":self.in_section=True
                 elif self.in_section:self.in_section=False
@@ -242,7 +246,8 @@ def eligible(key:str,url:str)->bool:
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
     parser=(ScopedSeasonAnchors(key)
             if key in {"parma-opera-2027","massimo-season-2026-27",
-                       "donizetti-opera-2026","teatro-grande-opera-2026"}
+                       "donizetti-opera-2026","teatro-grande-opera-2026",
+                       "petruzzelli-opera-2026","petruzzelli-opera-2027"}
             else AnchorParser())
     parser.feed(html)
     hostname=urlsplit(index_url).hostname
@@ -334,6 +339,27 @@ def validate_config(config:dict)->list[dict]:
             raise ValueError("invalid index completeness threshold")
     if seen!=set(allowed):raise ValueError("missing national index source")
     return config["sources"]
+
+def reconcile_season_absences(seen:dict,source_key:str,verified_urls:list[str])->None:
+    """Audit obsolete Petruzzelli links only after a verified season scan.
+
+    An old production linked in unrelated navigation is not evidence of a
+    performance in 2027. Preserve its record but stop scheduling editorial
+    retries. If it reappears in a later official season scan, restore it.
+    """
+    if source_key not in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
+        return
+    current=set(verified_urls)
+    reviewed=reviewed_source_urls()
+    for record in seen.values():
+        if record.get("source_key")!=source_key:
+            continue
+        if record.get("official_url") in current:
+            if record.get("status")=="not_in_official_season":
+                record["status"]=classify(source_key,record["official_url"],reviewed)
+        elif record.get("status")=="needs_review":
+            record["status"]="not_in_official_season"
+
 
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
          network_enabled:bool=False,now:str|None=None):
@@ -444,6 +470,7 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 except (AccessDenied,FetchUnavailable,ValueError):
                     page_health={"pages_checked":1,"pagination_complete":False,
                                  "diagnostic":"secondary_page_unavailable_or_invalid"}
+            reconcile_season_absences(seen,item["key"],urls)
             for url in urls:
                 uid="oa-index-"+hashlib.sha256((item["key"]+"|"+url).encode()).hexdigest()[:20]
                 if uid not in seen:
