@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-21T13:55:51+00:00",
+  "sources": [
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2026/11/opera",
+      "status": "verified",
+      "known_recite": 0
+    },
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2026/12/opera",
+      "status": "verified",
+      "known_recite": 0
+    },
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2027/01/opera",
+      "status": "verified",
+      "known_recite": 4
+    },
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2027/02/opera",
+      "status": "verified",
+      "known_recite": 0
+    },
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2027/03/opera",
+      "status": "verified",
+      "known_recite": 0
+    },
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2027/04/opera",
+      "status": "verified",
+      "known_recite": 0
+    },
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2027/05/opera",
+      "status": "verified",
+      "known_recite": 0
+    },
+    {
+      "url": "https://www.maggiofiorentino.com/calendario/2027/06/opera",
+      "status": "verified",
+      "known_recite": 0
+    }
+  ],
+  "observed_recite": 4
+}
