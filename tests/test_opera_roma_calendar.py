@@ -5,8 +5,8 @@ import unittest
 from datetime import date
 from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
 
-from opera_atlas.roma_detail_parser import parse_roma_detail
-from scripts.collect_candidate_details import parse_known_opera_detail
+from opera_atlas.roma_detail_parser import parse_roma_detail,parse_roma_credited_detail
+from scripts.collect_candidate_details import parse_known_opera_detail,parse_source_credited_opera_detail
 from scripts.auto_catalogue import promote, SOURCE_ALLOWLIST
 from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY,assemble
@@ -117,6 +117,41 @@ class RomeOperaTests(unittest.TestCase):
         self.assertEqual({x["venue"] for x in rows},{"Teatro dell'Opera di Roma"})
         self.assertEqual({x["composer"] for x in rows},{"Gaetano Donizetti"})
         self.assertEqual(rows[0]["starts_at"],"2027-02-21T19:00:00+01:00")
+
+    def test_verified_first_party_composer_credit_for_unregistered_opera(self):
+        html=page().replace("Lucia di Lammermoor","Iphigénie en Tauride").replace(
+            "Gaetano Donizetti","Christoph Willibald Gluck")
+        url="https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+        title,composer,venue,dates=parse_roma_credited_detail(html,url=url)
+        self.assertEqual((title,composer),("Iphigénie en Tauride","Christoph Willibald Gluck"))
+        self.assertEqual((venue,len(dates)),("Teatro dell'Opera di Roma",7))
+        rows=parse_source_credited_opera_detail(SOURCE,url,html)
+        self.assertEqual(len(rows),7)
+        self.assertTrue(all(x["composer"]=="Christoph Willibald Gluck"
+                            for x in rows))
+
+    def test_first_party_credit_fails_closed_for_wrong_year_cast_or_fake_author(self):
+        url="https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+        proper=page().replace("Lucia di Lammermoor","Iphigénie en Tauride").replace(
+            "Gaetano Donizetti","Christoph Willibald Gluck")
+        bad=[
+            proper.replace("Stagione 2026/2027","Stagione 2025/2026"),
+            proper.replace("<p>Musica di Christoph Willibald Gluck</p>",""),
+            proper.replace("Teatro Costanzi","Teatro Nazionale"),
+            proper.replace("Musica di Christoph Willibald Gluck","Musica di Unknown",
+                           1),
+            proper.replace("<p>Musica di Christoph Willibald Gluck</p>",
+                "<p>Musica di Christoph Willibald Gluck</p><p>Musica di Falso Autore</p>"),
+        ]
+        # Unknown genuine credits cannot be adjudicated by the parser alone;
+        # the central catalogue's independent authority gate remains required.
+        for html in (bad[0],bad[1],bad[2],bad[4]):
+            with self.subTest(html=html[-100:]),self.assertRaises(ValueError):
+                parse_roma_credited_detail(html,url=url)
+        for other in ("https://example.invalid/spettacoli/iphigenie-en-tauride/",
+                      url+"?preview=true"):
+            with self.subTest(url=other),self.assertRaises(ValueError):
+                parse_roma_credited_detail(proper,url=other)
 
     def test_bad_composer_wrong_year_offsite_or_conflicting_day_fails(self):
         invalid=[page().replace("Gaetano Donizetti","Giuseppe Verdi"),
