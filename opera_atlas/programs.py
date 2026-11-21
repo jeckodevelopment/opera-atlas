@@ -60,6 +60,12 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
         part["work_id"]=found[0]["id"] if found else None
     rows=detail.get("event_facts")
     if not isinstance(rows,list) or not rows:raise ValueError("missing program showtimes")
+    member_identities={(normalized(part["title"]),normalized(part["composer"]))
+                       for part in parts}
+    if any((normalized(row.get("event_title","")),
+            normalized(row.get("composer",""))) not in member_identities
+           for row in rows if isinstance(row,dict)):
+        raise ValueError("program schedule credited to unrelated composition")
     seen=set()
     dates=[]
     for row in rows:
