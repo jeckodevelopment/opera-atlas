@@ -127,7 +127,13 @@ class PetruzzelliTests(unittest.TestCase):
         self.assertEqual(sum(x["staging_id"]==staging["id"]
                              for x in catalog["performances"]),6)
         posters=json.loads(POSTERS.read_text(encoding="utf-8"))["works"]
-        self.assertEqual(posters[identity["id"]]["kind"],"archival_work_image")
+        # The archival illustration can be upgraded when the source-linked
+        # publisher verifies authentic official production art. Both are
+        # acceptable with their respective provenance checks.
+        self.assertIn(posters[identity["id"]]["kind"],
+                      {"archival_work_image","official_production_image"})
+        from scripts.publish_work_posters import check as validate_posters
+        validate_posters()
 
     def test_seven_verified_nabucco_recite_and_no_conference(self):
         venue,dates=parse_petruzzelli_detail(
