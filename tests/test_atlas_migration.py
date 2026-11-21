@@ -99,7 +99,9 @@ class AtlasMigrationTests(unittest.TestCase):
         code=inspect.getsource(publisher.publish)
         self.assertIn('set ftp:ssl-allow no',code)
         self.assertIn('set ftp:passive-mode yes',code)
-        self.assertIn('mirror --reverse --all --overwrite --no-perms',code)
+        self.assertIn('mirror --reverse --overwrite --no-perms',code)
+        self.assertNotIn('mirror --reverse --all',code)
+        self.assertIn("'put ' + quote_lftp(str(folder / '.htaccess'))",code)
         self.assertNotIn('--delete',code)
         self.assertEqual(quote_lftp('a"b'), '"a\\"b"')
         host,user,password,target=configuration({
