@@ -83,6 +83,27 @@ class PetruzzelliTests(unittest.TestCase):
         self.assertEqual(dates[0],("2026-12-16","20:30"))
         self.assertEqual(dates[-1],("2026-12-22","18:00"))
 
+    def test_other_opera_in_conversation_notice_cannot_steal_production_identity(self):
+        # The official 2026 pages reuse a paragraph about La traviata;
+        # that mention is not evidence the currently shown opera is Traviata.
+        url="https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+        html=('<h1>IL BARBIERE DI SIVIGLIA | ROSSINI | 16 – 22 DICEMBRE</h1>'
+              '<p>Gioachino Rossini</p>'
+              '<p>Conversazione sull’opera La traviata di Giuseppe Verdi.</p>'
+              '<h2>Orari Spettacoli</h2>'
+              '<p>MERCOLEDì 16 DICEMBRE 2026 - 20:30 | TURNO A</p>'
+              '<h3>Interpretato Da</h3>')
+        self.assertEqual(parse_known_opera_detail("petruzzelli-opera-2026",
+                                                  url,html,self.registry),[])
+        with self.assertRaises(ValueError):
+            parse_petruzzelli_detail(html,url=url,title="La traviata",
+                                     composer="Giuseppe Verdi",season_year=2026)
+        from opera_atlas.petruzzelli_detail_parser import verified_work_heading
+        self.assertTrue(verified_work_heading(html,title="Il barbiere di Siviglia",
+                                              composer="Gioachino Rossini"))
+        self.assertFalse(verified_work_heading(html,title="La traviata",
+                                               composer="Giuseppe Verdi"))
+
     def test_seven_verified_nabucco_recite_and_no_conference(self):
         venue,dates=parse_petruzzelli_detail(
             page(),url=DETAIL,title="Nabucco",composer="Giuseppe Verdi")
