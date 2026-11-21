@@ -12,7 +12,7 @@ Configurare nella repository `jeckodevelopment/opera-atlas`:
 
 La chiave non deve comparire nei file del progetto. Il dominio mittente deve essere verificato presso Resend. Se manca una delle tre configurazioni, il catalogo continua a pubblicarsi e il workflow registra un warning; non viene effettuato alcun invio di prova verso indirizzi inventati.
 
-Ogni email include tipo dell'evento, titolo, ID permanente, teatro/città o compositore e URL pubblico. L'header `Idempotency-Key` è basato sull'ID immutabile dell'entità per mitigare ripetizioni. Un errore della API Resend viene segnalato nei log senza interrompere il catalogo. Non viene garantita la consegna finale nella casella: una risposta positiva dell'API equivale ad accettazione di invio.
+Ogni email include tipo dell'evento, titolo, ID permanente, teatro/città o compositore e URL pubblico. Il template HTML usa una intestazione testuale OPERA+ ATLAS nero/oro, un pulsante oro verso la scheda, etichette diagnostiche leggibili e layout a tabelle compatibile con client email anche mobili. È inclusa una versione `text/plain` per l'accessibilità e i client che non renderizzano HTML. Tutti i campi provenienti dal catalogo sono escapati; non sono necessari asset remoti, immagini o tracking pixel. L'header `Idempotency-Key` è basato sull'ID immutabile dell'entità per mitigare ripetizioni. Un errore della API Resend viene segnalato nei log senza interrompere il catalogo. Non viene garantita la consegna finale nella casella: una risposta positiva dell'API equivale ad accettazione di invio.
 
 ## Verifiche
 
