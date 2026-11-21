@@ -80,7 +80,7 @@ async function appendTheatreProfile(event){
     if(!response.ok) return null;
     const doc=await response.json();
     if(doc.schema_version!==1||!doc.venues)return null;
-    const profile=doc.venues[event.municipality+"|"+event.venue];
+    const profile=doc.venues[event.municipality+"|"+(event.municipality==="Torino" && event.venue==="Teatro Regio di Torino"?"Teatro Regio":event.venue)];
     if(!profile)return null;
     const section=node("section","theatre-introduction");
     section.append(node("p","theatre-description",profile.description));
