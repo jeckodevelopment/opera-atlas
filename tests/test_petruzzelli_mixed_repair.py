@@ -48,6 +48,34 @@ class IncorrectPetruzzelliRepairTests(unittest.TestCase):
         self.assertEqual(again_ids,ids)
         self.assertEqual(again_urls,urls)
 
+    def test_new_correct_source_staging_never_quarantined_by_old_wrong_key(self):
+        from scripts.repair_petruzzelli_mixed_program import independently_verified_correct_stage
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+        url=BASE+"il-trovatore-verdi-18-27-ottobre/"
+        days=["2026-10-18","2026-10-20","2026-10-21",
+              "2026-10-23","2026-10-25","2026-10-27"]
+        times=["20:30","20:30","20:30","20:30","18:00","18:00"]
+        stage={"title":"Il trovatore","composer":"Giuseppe Verdi",
+               "venue":"Teatro Petruzzelli","source_url":url,
+               "dates":list(zip(days,times))}
+        from scripts.build_verified_catalog import official_local_time
+        detail={"source_url":url,"source_key":"petruzzelli-opera-2026",
+                "status":"needs_editorial_review","content_sha256":"a"*64,
+                "event_facts":[{
+                    "event_title":"Il trovatore","composer":"Giuseppe Verdi",
+                    "venue":"Teatro Petruzzelli","date":day,
+                    "starts_at":official_local_time(day,clock)}
+                    for day,clock in stage["dates"]]}
+        proof={"evidence":[detail]}
+        self.assertTrue(independently_verified_correct_stage(stage,proof))
+        self.assertFalse(independently_verified_correct_stage(
+            {**stage,"title":"La traviata"},proof))
+        self.assertFalse(independently_verified_correct_stage(
+            {**stage,"dates":[(days[0],"18:00"),*stage["dates"][1:]]},proof))
+        self.assertFalse(independently_verified_correct_stage(
+            stage,{"evidence":[{**detail,"content_sha256":"not-a-hash"}]}))
+
     def test_fail_closed_on_identity_or_immutable_performance_mismatch(self):
         key=WRONG[0][0]
         present=any(p["key"]==key for p in self.facts["productions"])

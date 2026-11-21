@@ -34,11 +34,51 @@ def expected_dates(compact:str)->set[str]:
     prefix=first[:8]
     return {first,*[prefix+d for d in other]}
 
+def independently_verified_correct_stage(stage:dict,evidence:dict)->bool:
+    """Preserve a once-misattributed stable URL after verified reimport.
+
+    A historical bad canonical work is identified by title/composer mismatch
+    against full source evidence; a *new correct* stage with the same
+    deterministic key must not be deleted or treated as corrupted.
+    """
+    import re
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    from scripts.publish_catalog_v2 import normalized
+    url=stage.get("source_url")
+    rows=[x for x in evidence.get("evidence",[]) if
+          x.get("source_url")==url and
+          x.get("source_key") in ("petruzzelli-opera-2026","petruzzelli-opera-2027")
+          and x.get("status")=="needs_editorial_review"
+          and re.fullmatch(r"[0-9a-f]{64}",x.get("content_sha256",""))]
+    if len(rows)!=1:return False
+    facts=rows[0].get("event_facts")
+    if not isinstance(facts,list) or not facts:return False
+    actual={}
+    try:
+        for fact in facts:
+            if (normalized(fact["event_title"])!=normalized(stage["title"])
+                    or normalized(fact["composer"])!=normalized(stage["composer"])
+                    or fact["venue"]!=stage["venue"]):
+                return False
+            stamp=datetime.fromisoformat(fact["starts_at"])
+            if stamp.tzinfo is None:return False
+            local=stamp.astimezone(ZoneInfo("Europe/Rome"))
+            day=local.date().isoformat()
+            if fact["date"]!=day or day in actual:return False
+            actual[day]=local.strftime("%H:%M")
+    except (KeyError,TypeError,ValueError):
+        return False
+    return actual==dict(stage.get("dates",[]))
+
+
 def repair(facts:dict,registry:dict,approved_urls:list[str]):
     new_facts=copy.deepcopy(facts)
     new_ids=copy.deepcopy(registry)
     urls=list(approved_urls)
     deleted=0
+    from scripts.collect_candidate_details import OUTPUT as SOURCE_DETAILS
+    evidence=json.loads(SOURCE_DETAILS.read_text(encoding="utf-8"))
     # Validate ALL expected stages before mutating any, so a changed
     # title/venue/ID cannot cause a partially destructive repair.
     plans=[]
@@ -54,6 +94,11 @@ def repair(facts:dict,registry:dict,approved_urls:list[str]):
                 raise ValueError("partially removed repair target")
             continue
         stage=records[0]
+        if (stage.get("source_url")==url
+                and independently_verified_correct_stage(stage,evidence)):
+            # The same stable deterministic key has now been correctly
+            # reimported; deleting it would discard real opera recite.
+            continue
         if (stage.get("source_url")!=url
             or stage.get("title")!=title
             or stage.get("composer")!=composer
