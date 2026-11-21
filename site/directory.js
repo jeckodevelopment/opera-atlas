@@ -125,7 +125,9 @@ async function initialize(){
       const knownVenues=new Set(data.performances.map(e=>window.OperaAtlasCatalog.urls(e).venue));
       const national=await window.OperaAtlasCatalog.venues();
       for(const venue of national){
-        const url="/atlas/"+venue.city_slug+"/"+venue.slug+"/";
+        const url=window.OperaAtlasCatalog.urls({
+          city_slug:venue.city_slug,venue_slug:venue.slug,municipality:venue.city,venue:venue.name
+        }).venue;
         grouped.set(url,{
           url,title:venue.name,city:venue.city,
           subtitle:venue.city+" · "+venue.region,
