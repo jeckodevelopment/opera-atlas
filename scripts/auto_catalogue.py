@@ -893,6 +893,27 @@ def merge_official_poster_cache(previous:dict|None,additions:dict)->dict|None:
     return merged
 
 
+def remove_retries_for_published_works(report:dict,candidates:dict,
+                                      prior_facts:dict,next_facts:dict)->dict:
+    """A newly published work is not an unresolved identity candidate.
+
+    The earlier existing-work pass may mark an unknown work before the
+    *same run* successfully publishes it through the new-work transaction.
+    Correct this diagnostic only when a new canonical production exists,
+    not for candidates merely enriched or still missing showtime evidence.
+    """
+    before={(x.get("source_url"),x.get("key")) for x in prior_facts.get("productions",[])}
+    published_urls={row.get("source_url") for row in next_facts.get("productions",[])
+                    if (row.get("source_url"),row.get("key")) not in before}
+    by_candidate={row.get("id"):row.get("official_url")
+                  for row in candidates.get("candidates",[])}
+    amended=report.copy()
+    amended["auto_skipped"]=[row for row in report.get("auto_skipped",[])
+                             if not (row.get("reason")=="unknown_work_needs_authority_data"
+                                     and by_candidate.get(row.get("candidate_id")) in published_urls)]
+    return amended
+
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -921,9 +942,12 @@ def main():
     editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
     from scripts.publish_work_editorial import HISTORY, validate_history
     historical=json.loads(HISTORY.read_text(encoding="utf-8"))
+    prior_to_new_work_publication=next_facts
     next_facts,next_registry,urls,next_editorial,next_history,newworks=promote_new_works(
         next_facts,next_registry,evidence,candidates,intelligence,editorial,urls,
         today=date.today(),history=historical,require_image=True)
+    report=remove_retries_for_published_works(
+        report,candidates,prior_to_new_work_publication,next_facts)
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]

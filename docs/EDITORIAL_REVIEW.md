@@ -213,3 +213,16 @@ Le schede di *La clemenza di Tito* (Mozart, Parma), *L'arca di Noè* / `Noye's F
 Fonti: Corago, Università di Bologna e Opéra national de Paris per *La clemenza di Tito*; Britten Pears Arts e Boosey & Hawkes per *Noye's Fludde*; Puccini Museum e Opéra de Monte-Carlo per *La rondine*. Il poster originale del libretto (1791) e la locandina storica (1917) sono associati tramite Wikimedia Commons e identificati in `data/archival-work-images.json`. Per Britten, in mancanza di un manifesto storico liberamente verificato, si usa soltanto l'immagine già documentata dalla pagina ufficiale della produzione, senza spacciare immagini di scena per un manifesto del 1958.
 
 La pubblicazione richiede comunque compositore, sede, date e orari esatti dalla fonte ufficiale, sinossi narrativa originale, storia della prima verificata e immagine con provenienza. `tests/test_verified_blocked_opera_editorials.py` esercita la transazione e la sua idempotenza. Le altre candidate prive di prove ufficiali sufficienti **non vengono promosse**.
+
+## Esiti della promozione nella stessa esecuzione
+
+L'algoritmo pubblica prima le recite di opere già canoniche e poi le
+opere nuove con schede editoriali e immagini validate. Nel primo
+passaggio una nuova composizione può risultare temporaneamente
+`unknown_work_needs_authority_data`; se il secondo passaggio la
+pubblica realmente, questo errore viene eliminato dal report finale.
+La riconciliazione controlla il nuovo URL di produzione nel catalogo
+canonico: non elimina i retry delle altre candidate, i problemi di
+orario o le candidate soltanto arricchite ma non pubblicate.
+Questo mantiene la diagnostica coerente con le opere e le recite effettivamente
+aggiunte nello stesso ciclo, senza manipolare i record delle fonti.
