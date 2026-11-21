@@ -582,3 +582,21 @@ Il ciclo ordinario di ricerca e pubblicazione **non usa alcuna API di modelli li
 Una scheda con Wikidata ID verificato può essere pubblicata anche quando mancano librettista, anno e luogo della prima: in quel caso la parte storica è assente, non segnalata come errore e non compilata con supposizioni. La pubblicazione rimane vincolata a evidenze ufficiali delle singole recite, all'unicità del compositore e agli invarianti di catalogo, anche nei casi di omonimia. Le sinossi e le storie già censite e verificate restano immutate. Il job `refresh-catalog.yml` non carica `ATLAS_OPENAI_API_KEY`.
 
 **Limite esplicito:** una breve introduzione basata su titolo e compositore non è una sinossi narrativa della trama. Per le opere nuove prive di una trama riassumibile in modo affidabile, questa scelta è intenzionale: Atlas è un catalogo di spettacoli, non un'enciclopedia.
+
+## Refresh automatico dopo una pubblicazione rinviata
+
+Il processo `safe_push_catalog` protegge i dati: se nel frattempo un nuovo
+commit applicativo ha modificato `main`, non sovrascrive il catalogo aggiornato.
+Il risultato `deferred` viene ora esportato come output del job GitHub Actions.
+Quando accade, un evento `repository_dispatch: catalog-refresh-retry`
+richiede autonomamente un'altra acquisizione usando il codice più recente.
+Un push riuscito non genera il retry. La concorrenza privilegia il commit
+`main` più recente e interrompe le scansioni obsolete, senza force push.
+Il token GitHub Actions già disponibile (`contents: write`) viene usato per
+l'evento di dispatch; non servono token personali aggiuntivi né SFTP.
+
+Verificare `data/verified-launch-catalog.json`, `public/catalog/v2/` e
+`data/autonomous-catalogue-health.json` dopo il refresh reale. La scoperta
+delle sette schede del Teatro Carlo Felice è distinta dalla pubblicazione
+delle singole recite: almeno quattro schede con 24 recite hanno già
+evidenze ufficiali in coda, le altre tre richiedono la raccolta dei dettagli.
