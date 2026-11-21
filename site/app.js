@@ -226,7 +226,7 @@ async function loadWorkDescriptions(){
       if(!response.ok)continue;
       const data=await response.json();
       if(data.schema_version===1 && data.synopses && Object.keys(data.synopses).length>=20){
-        workDescriptions=data.synopses;return;
+        workDescriptions={...data.synopses,...(data.synopses_by_id||{})};return;
       }
     }catch(error){console.warn("Opera summaries unavailable from",uri,error);}
   }
@@ -254,7 +254,7 @@ function renderDiscoveries() {
   workBox.replaceChildren();
   venueBox.replaceChildren();
   for(const [url,event] of [...works].sort((a,b)=>a[1].title.localeCompare(b[1].title,"it")).slice(0,6)){
-    workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image"),workDescriptions[event.work_slug]||""));
+    workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image"),workDescriptions[event.work_id]||(event.work_slug==="la-boheme"?"":workDescriptions[event.work_slug]||"")));
   }
   for(const [url,event] of [...venues].sort((a,b)=>{
     const priority=x=>x.municipality==="Torino" && x.venue==="Teatro Regio" ? 0 : 1;
