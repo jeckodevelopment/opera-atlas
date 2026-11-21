@@ -10,7 +10,7 @@
 
 ## Configurazione OVH: SFTP su porta 22
 
-Il publisher usa **SFTP via SSH sulla porta 22**, non FTP in chiaro o FTPS. Per il cluster 121, quando il secret storico contiene `ftp.cluster121.hosting.ovh.net`, il codice utilizza automaticamente l'endpoint SSH OVH `ssh.cluster121.hosting.ovh.net`. Il nome del secret non cambia; OVH documenta esplicitamente l'hostname `ssh.clusterXXX.hosting.ovh.net` e la porta 22.
+Il publisher usa **SFTP via SSH sulla porta 22**, non FTP in chiaro o FTPS. Il workflow utilizza **esattamente l'hostname presente nel secret `ATLAS_SFTP_HOST`**, senza sostituire `ftp.` con `ssh.`: la verifica della chiave host SSH dipende dall'hostname utilizzato e dalle voci già presenti in `ATLAS_SFTP_KNOWN_HOSTS`. Non sono previsti override automatici.
 
 **Riutilizzo dei secret esistenti** nell'environment GitHub `opera-plus-atlas`:
 
@@ -42,9 +42,9 @@ Il rilascio non è concluso finché non sono verificati autenticazione SFTP, URL
 
 ## Risoluzione problemi
 
-- **Autenticazione SSH/SFTP negata:** verificare che l'utente OVH abbia il protocollo SFTP abilitato; il workflow usa la porta 22 e l'endpoint SSH del cluster.
+- **Autenticazione SSH/SFTP negata:** verificare che l'utente OVH abbia il protocollo SFTP abilitato; il workflow usa l'hostname configurato e la porta 22.
 - **Directory padre assente:** il processo non carica nulla. Confrontare la home SFTP rilevata con la document root assegnata a `opera.plus` nella scheda Multisito OVH; la home fisica non basta a identificare la directory web.
-- **Host key non corrispondente:** aggiornare l'eventuale `ATLAS_SFTP_KNOWN_HOSTS` se contiene l'identità di un server differente. Il publisher non stampa le credenziali.
+- **Host key non corrispondente:** la verifica SSH richiede una voce per l'hostname esatto utilizzato. Il publisher mantiene l'hostname del secret; non accetta automaticamente un'identità differente quando `ATLAS_SFTP_KNOWN_HOSTS` è valorizzato. Il publisher non stampa le credenziali.
 - **Asset 403/404 o URL annidate:** controllare percorso pubblico e rewrite in `.htaccess`.
 - **Catalogo JSON:** continua a essere aggiornato direttamente dal Git pubblico, senza trasferimenti SFTP.
 

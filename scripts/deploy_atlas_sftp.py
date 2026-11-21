@@ -60,12 +60,9 @@ def make_client(cfg):
                 pass
         if key is None:
             raise ValueError("Invalid SFTP private key")
-    # OVH publishes a dedicated SSH endpoint for the same cluster.
-    ssh_host = cfg["host"]
-    if ssh_host.startswith("ftp.cluster") and ssh_host.endswith(".hosting.ovh.net"):
-        ssh_host = "ssh." + ssh_host[len("ftp."):]
+    # Use exactly the configured host: the pinned known_hosts entry is host-specific.
     try:
-        client.connect(ssh_host, port=22, username=cfg["user"],
+        client.connect(cfg["host"], port=22, username=cfg["user"],
                        password=cfg["password"] or None, pkey=key,
                        look_for_keys=False, allow_agent=False,
                        timeout=30, auth_timeout=30, banner_timeout=30)
