@@ -234,13 +234,26 @@ class PosterPublicationTests(unittest.TestCase):
         from scripts.publish_catalog_v2 import REGISTRY
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
         works=list(registry.values())
+        from scripts.publish_catalog_v2 import assemble
+        from scripts.build_verified_catalog import MANIFEST
+        registry_graph=assemble(json.loads(MANIFEST.read_text(encoding="utf-8")),
+                                json.loads(REGISTRY.read_text(encoding="utf-8")))
         published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
         self.assertEqual({w["id"] for w in works},set(published))
         editorial=[w for w in works if published[w["id"]]["kind"]=="original_editorial_cover"]
-        # Only contemporary works without a verified reusable production
-        # photograph remain represented by *truthfully labelled* original art.
-        self.assertEqual({w["title"] for w in editorial},
-                         {"Death in Venice","Nixon in China","Jenůfa"})
+        # The three established illustrated works remain explicit. Future
+        # first-party verified operas can temporarily use a truthful editorial
+        # fallback if no reusable official poster is available. All other
+        # unexplained fallbacks must still fail.
+        established={"Death in Venice","Nixon in China","Jenůfa"}
+        self.assertTrue(established.issubset({w["title"] for w in editorial}))
+        for work in editorial:
+            if work["title"] in established:continue
+            self.assertTrue(work.get("authority_url","").startswith(
+                "https://www.tcbo.it/evento/opera/"),work["title"])
+            self.assertTrue(any(stage["work_id"]==work["id"]
+                                and stage["source_url"]==work["authority_url"]
+                                for stage in registry_graph["stagings"]),work["title"])
         # Each newly catalogued opera must have an approved image plan, but
         # the number of *archival* works changes whenever new canonical IDs
         # are introduced. Never assert a fixed total from a different snapshot.
