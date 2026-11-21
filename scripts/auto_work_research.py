@@ -58,6 +58,9 @@ def claim_ids(entity:dict,property_id:str)->set[str]:
 # opaque URL slug. Use exact keys, then independently verify composer and
 # dated performances; never infer genre from a fuzzy filename match.
 OFFICIAL_TITLE_ALIASES={
+    ("donizetti-opera-2026","l-esule-di-roma"):"L\u0027esule di Roma",
+    ("donizetti-opera-2026","alahor-in-granata"):"Alahor in Granata",
+    ("donizetti-opera-2026","le-convenienze-ed-inconvenienze-teatrali"):"Le convenienze ed inconvenienze teatrali",
     ("fenice-opera-2026-27","normatebar"):"Norma",
     ("fenice-opera-2026-27","ilbarbieredisivigliapercacciolo"):"Il barbiere di Siviglia",
 }
