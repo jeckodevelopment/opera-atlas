@@ -164,7 +164,7 @@ def combine(candidates:dict,evidence:dict,observations:list[dict],*,at:str):
             {"schema_version":1,"evidence":sorted(facts.values(),key=lambda x:x["candidate_id"])})
 
 def scan(*,today:date,fetcher=fetch_official_html,network_enabled:bool=False,
-         horizon:int=8):
+         horizon:int=12):
     config=json.loads(CONFIG.read_text(encoding="utf-8"))
     source=next(x for x in validate_config(config) if x["key"]==SOURCE)
     if source["access_status"]!="approved":
