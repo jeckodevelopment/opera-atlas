@@ -255,3 +255,11 @@ I test del catalogo non devono considerare fissi **14 teatri** o **330 recite**:
 La pagina di copertura delle **otto fonti primarie** non deve affermare di coprire le recite dei nuovi connettori nazionali: il relativo test confronta soltanto le recite provenienti dai domini primari autorizzati, lasciando separate le altre fonti. I test di acquisizione utilizzano date di prova non ancora presenti nel manifest, perché l’acquisizione idempotente deve ignorare le date già pubblicate. La ricerca geografica conosce anche il centro municipale indicativo di Genova e non inventa coordinate per nuove città sconosciute.
 
 Collaudo: nuova recita già verificata al Teatro Carlo Felice, seconda acquisizione idempotente, nessuna collisione o ridenominazione nel catalogo dei 52 teatri, controlli dei domini primari invariati, test Python e release automatizzata del feed senza fallimenti per conteggi rigidi.
+
+## Fotografia del Teatro Carlo Felice nella homepage (21/11/2026)
+
+Le card «Scopri i teatri» della homepage nascono dalle rappresentazioni verificate: questi record non trasportano automaticamente `photo_file`. Dopo il primo rendering, il frontend carica l'anagrafica nazionale separata e associa il profilo fotografico tramite `city_slug/venue_slug` alla stessa identità usata per il link alla scheda. La card viene ridisegnata quando la fonte è disponibile: non si usa il nome della città come prova di identità fotografica.
+
+Per evitare che il caricamento asincrono iniziale lasci visibile una copertina editoriale sul **Teatro Carlo Felice di Genova**, il client immagini conserva anche un riferimento statico specifico alla fotografia Commons [Genova - Teatro Carlo Felice.jpg](https://commons.wikimedia.org/wiki/File:Genova_-_Teatro_Carlo_Felice.jpg), autore Marek Śliwecki, licenza CC BY-SA 4.0; non è un fallback generico di Genova e non viene applicato ad altre sedi. Fonte/diritti restano nella scheda del teatro.
+
+**Collaudi:** homepage «Scopri i teatri»: Carlo Felice deve avere l'immagine reale sia prima sia dopo il caricamento del feed nazionale; nessun'altra sede a Genova deve ereditare la sua foto; le schede e il dettaglio delle sedi continuano a usare foto pertinenti; verificare anche la connessione con il catalogo aggiornato e la visualizzazione durante un eventuale errore di rete.
