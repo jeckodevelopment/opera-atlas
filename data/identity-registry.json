@@ -993,14 +993,6 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
       "season": "2027"
     },
-    "auto-a12dbb283b490075": {
-      "id": "oa-s-000077",
-      "work_id": "oa-w-000006",
-      "venue_id": "oa-v-000018",
-      "slug": "pagliacci",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
-      "season": "2027"
-    },
     "auto-ad08a1d14a8510a5": {
       "id": "oa-s-000078",
       "work_id": "oa-w-000025",
@@ -1025,23 +1017,6 @@
       "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/",
       "season": "2027"
     },
-    "auto-01efa4320f812042": {
-      "id": "oa-s-000081",
-      "work_id": "oa-w-000001",
-      "venue_id": "oa-v-000018",
-      "slug": "la-traviata",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/",
-      "season": "2026"
-    },
-    "auto-207df538679e0065": {
-      "id": "oa-s-000082",
-      "work_id": "oa-w-000001",
-      "venue_id": "oa-v-000018",
-      "slug": "la-traviata",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
-      "season": "2026",
-      "route_slug": "la-traviata-bona-sforza-krautze-14-20-settembre"
-    },
     "auto-26db4f73989b1c14": {
       "id": "oa-s-000083",
       "work_id": "oa-w-000001",
@@ -1050,33 +1025,6 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/",
       "season": "2026",
       "route_slug": "la-traviata-verdi-18-26-aprile"
-    },
-    "auto-663c5bda82d136bb": {
-      "id": "oa-s-000084",
-      "work_id": "oa-w-000001",
-      "venue_id": "oa-v-000018",
-      "slug": "la-traviata",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
-      "season": "2026",
-      "route_slug": "la-traviata-il-gobbo-del-califfo-casavola-21-24-maggio"
-    },
-    "auto-8d2b9a6be734bb24": {
-      "id": "oa-s-000085",
-      "work_id": "oa-w-000001",
-      "venue_id": "oa-v-000018",
-      "slug": "la-traviata",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
-      "season": "2026",
-      "route_slug": "la-traviata-il-barbiere-di-siviglia-rossini-16-22-dicembre"
-    },
-    "auto-eedca6da108bd27e": {
-      "id": "oa-s-000086",
-      "work_id": "oa-w-000001",
-      "venue_id": "oa-v-000018",
-      "slug": "la-traviata",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
-      "season": "2026",
-      "route_slug": "la-traviata-il-trovatore-verdi-18-27-ottobre"
     }
   },
   "performances": {
@@ -3366,48 +3314,6 @@
       "original_date": "2027-03-19",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
     },
-    "auto-a12dbb283b490075|2027-10-13": {
-      "id": "oa-r-000382",
-      "staging_id": "oa-s-000077",
-      "original_date": "2027-10-13",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
-    },
-    "auto-a12dbb283b490075|2027-10-14": {
-      "id": "oa-r-000383",
-      "staging_id": "oa-s-000077",
-      "original_date": "2027-10-14",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
-    },
-    "auto-a12dbb283b490075|2027-10-15": {
-      "id": "oa-r-000384",
-      "staging_id": "oa-s-000077",
-      "original_date": "2027-10-15",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
-    },
-    "auto-a12dbb283b490075|2027-10-16": {
-      "id": "oa-r-000385",
-      "staging_id": "oa-s-000077",
-      "original_date": "2027-10-16",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
-    },
-    "auto-a12dbb283b490075|2027-10-17": {
-      "id": "oa-r-000386",
-      "staging_id": "oa-s-000077",
-      "original_date": "2027-10-17",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
-    },
-    "auto-a12dbb283b490075|2027-10-19": {
-      "id": "oa-r-000387",
-      "staging_id": "oa-s-000077",
-      "original_date": "2027-10-19",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
-    },
-    "auto-a12dbb283b490075|2027-10-20": {
-      "id": "oa-r-000388",
-      "staging_id": "oa-s-000077",
-      "original_date": "2027-10-20",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
-    },
     "auto-ad08a1d14a8510a5|2027-11-03": {
       "id": "oa-r-000389",
       "staging_id": "oa-s-000078",
@@ -3522,54 +3428,6 @@
       "original_date": "2027-04-04",
       "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
     },
-    "auto-01efa4320f812042|2026-11-12": {
-      "id": "oa-r-000408",
-      "staging_id": "oa-s-000081",
-      "original_date": "2026-11-12",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/"
-    },
-    "auto-01efa4320f812042|2026-11-13": {
-      "id": "oa-r-000409",
-      "staging_id": "oa-s-000081",
-      "original_date": "2026-11-13",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/"
-    },
-    "auto-01efa4320f812042|2026-11-14": {
-      "id": "oa-r-000410",
-      "staging_id": "oa-s-000081",
-      "original_date": "2026-11-14",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/"
-    },
-    "auto-01efa4320f812042|2026-11-15": {
-      "id": "oa-r-000411",
-      "staging_id": "oa-s-000081",
-      "original_date": "2026-11-15",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/"
-    },
-    "auto-207df538679e0065|2026-09-14": {
-      "id": "oa-r-000412",
-      "staging_id": "oa-s-000082",
-      "original_date": "2026-09-14",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
-    },
-    "auto-207df538679e0065|2026-09-16": {
-      "id": "oa-r-000413",
-      "staging_id": "oa-s-000082",
-      "original_date": "2026-09-16",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
-    },
-    "auto-207df538679e0065|2026-09-18": {
-      "id": "oa-r-000414",
-      "staging_id": "oa-s-000082",
-      "original_date": "2026-09-18",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
-    },
-    "auto-207df538679e0065|2026-09-20": {
-      "id": "oa-r-000415",
-      "staging_id": "oa-s-000082",
-      "original_date": "2026-09-20",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
-    },
     "auto-26db4f73989b1c14|2026-04-18": {
       "id": "oa-r-000416",
       "staging_id": "oa-s-000083",
@@ -3611,102 +3469,6 @@
       "staging_id": "oa-s-000083",
       "original_date": "2026-04-26",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/"
-    },
-    "auto-663c5bda82d136bb|2026-05-21": {
-      "id": "oa-r-000423",
-      "staging_id": "oa-s-000084",
-      "original_date": "2026-05-21",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
-    },
-    "auto-663c5bda82d136bb|2026-05-22": {
-      "id": "oa-r-000424",
-      "staging_id": "oa-s-000084",
-      "original_date": "2026-05-22",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
-    },
-    "auto-663c5bda82d136bb|2026-05-23": {
-      "id": "oa-r-000425",
-      "staging_id": "oa-s-000084",
-      "original_date": "2026-05-23",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
-    },
-    "auto-663c5bda82d136bb|2026-05-24": {
-      "id": "oa-r-000426",
-      "staging_id": "oa-s-000084",
-      "original_date": "2026-05-24",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
-    },
-    "auto-8d2b9a6be734bb24|2026-12-16": {
-      "id": "oa-r-000427",
-      "staging_id": "oa-s-000085",
-      "original_date": "2026-12-16",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
-    },
-    "auto-8d2b9a6be734bb24|2026-12-17": {
-      "id": "oa-r-000428",
-      "staging_id": "oa-s-000085",
-      "original_date": "2026-12-17",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
-    },
-    "auto-8d2b9a6be734bb24|2026-12-18": {
-      "id": "oa-r-000429",
-      "staging_id": "oa-s-000085",
-      "original_date": "2026-12-18",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
-    },
-    "auto-8d2b9a6be734bb24|2026-12-19": {
-      "id": "oa-r-000430",
-      "staging_id": "oa-s-000085",
-      "original_date": "2026-12-19",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
-    },
-    "auto-8d2b9a6be734bb24|2026-12-20": {
-      "id": "oa-r-000431",
-      "staging_id": "oa-s-000085",
-      "original_date": "2026-12-20",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
-    },
-    "auto-8d2b9a6be734bb24|2026-12-22": {
-      "id": "oa-r-000432",
-      "staging_id": "oa-s-000085",
-      "original_date": "2026-12-22",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
-    },
-    "auto-eedca6da108bd27e|2026-10-18": {
-      "id": "oa-r-000433",
-      "staging_id": "oa-s-000086",
-      "original_date": "2026-10-18",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
-    },
-    "auto-eedca6da108bd27e|2026-10-20": {
-      "id": "oa-r-000434",
-      "staging_id": "oa-s-000086",
-      "original_date": "2026-10-20",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
-    },
-    "auto-eedca6da108bd27e|2026-10-21": {
-      "id": "oa-r-000435",
-      "staging_id": "oa-s-000086",
-      "original_date": "2026-10-21",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
-    },
-    "auto-eedca6da108bd27e|2026-10-23": {
-      "id": "oa-r-000436",
-      "staging_id": "oa-s-000086",
-      "original_date": "2026-10-23",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
-    },
-    "auto-eedca6da108bd27e|2026-10-25": {
-      "id": "oa-r-000437",
-      "staging_id": "oa-s-000086",
-      "original_date": "2026-10-25",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
-    },
-    "auto-eedca6da108bd27e|2026-10-27": {
-      "id": "oa-r-000438",
-      "staging_id": "oa-s-000086",
-      "original_date": "2026-10-27",
-      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
     }
   }
 }
