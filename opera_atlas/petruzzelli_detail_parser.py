@@ -183,9 +183,9 @@ def parse_petruzzelli_program_detail(html:str,*,url:str,season_year:int=2027):
         if idx>=0:schedule=schedule[:idx]
     if CANCELLED.search(schedule):raise ValueError("cancelled or postponed program")
     all_days=re.findall(
-        r"(?i)\\b(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)"
-        r"\\s+[0-3]?\\d\\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|"
-        r"luglio|agosto|settembre|ottobre|novembre|dicembre)\\s+20\\d{2}\\b",
+        r"(?i)\b(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)"
+        r"\s+[0-3]?\d\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|"
+        r"luglio|agosto|settembre|ottobre|novembre|dicembre)\s+20\d{2}\b",
         schedule)
     matches=SCHEDULE.findall(schedule)
     if not matches or len(matches)!=len(all_days):
