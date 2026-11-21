@@ -1,37 +1,13 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T19:24:54+00:00",
+  "checked_at": "2026-11-21T21:01:37+00:00",
   "outcomes": [
     {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "teatro-grande-opera-2026",
-      "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "title_hint": "L’italiana in Algeri"
-    },
-    {
-      "candidate_id": "oa-index-b932c89149fad91c3518",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "title_hint": "La traviata"
-    },
-    {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
-      "status": "automatic_retry",
-      "reason": "external knowledge response too large",
+      "status": "enriched",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
       "title_hint": "Boris Godunov"
-    },
-    {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
-      "status": "enriched",
-      "source_key": "fenice-opera-2026-27",
-      "official_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
-      "title_hint": "Hänsel und Gretel"
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
@@ -42,136 +18,172 @@
       "title_hint": "La clemenza di Tito"
     },
     {
-      "candidate_id": "oa-index-dd5d16aec544e6737e1e",
-      "status": "enriched",
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000002",
+      "source_key": "teatro-grande-opera-2026",
+      "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
+      "title_hint": "L’italiana in Algeri"
+    },
+    {
+      "candidate_id": "oa-index-b932c89149fad91c3518",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000001",
       "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "title_hint": "Tristan und Isolde"
+      "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
+      "title_hint": "La traviata"
+    },
+    {
+      "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000059",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+      "title_hint": "Il mondo alla roversa o sia le donne che comandano"
+    },
+    {
+      "candidate_id": "oa-index-feadef19a246de079ccb",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000062",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
+      "title_hint": "Il trovatore"
     },
     {
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
-      "status": "automatic_retry",
-      "reason": "external knowledge response too large",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000018",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "title_hint": "Macbeth"
     },
     {
-      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
-      "status": "enriched",
-      "source_key": "massimo-season-2026-27",
-      "official_url": "https://www.teatromassimo.it/event/die-zauberflote/",
-      "title_hint": "Die Zauberflöte"
-    },
-    {
-      "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
-      "status": "enriched",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "title_hint": "Norma"
-    },
-    {
-      "candidate_id": "oa-index-9c8433ba74501efca6eb",
-      "status": "enriched",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "title_hint": "Adriana Lecouvreur"
-    },
-    {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
+      "status": "awaiting_official_identity_evidence",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "title_hint": "piccolo orso e la montagna di ghiaccio"
     },
     {
+      "candidate_id": "oa-index-03fa95f1d0382ffee131",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/falstaff/",
+      "title_hint": "falstaff"
+    },
+    {
       "candidate_id": "oa-index-a77154badf30929b95dc",
       "status": "automatic_retry",
-      "reason": "external knowledge response too large",
+      "reason": "verified_plot_unavailable",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "title_hint": "L'arca di Noè"
     },
     {
-      "candidate_id": "oa-index-a02901b14e6eae69df5c",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "parma-opera-2027",
-      "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
-      "title_hint": "otello gamification"
-    },
-    {
-      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
+      "candidate_id": "oa-index-80ebc1deec00ed9ff908",
       "status": "automatic_retry",
       "reason": "verified_plot_unavailable",
-      "source_key": "donizetti-opera-2026",
-      "official_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
-      "title_hint": "Alahor in Granata"
-    },
-    {
-      "candidate_id": "oa-index-cde049d5c057e0c050b2",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "petruzzelli-opera-2026",
-      "official_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
-      "title_hint": "falstaff verdi 7 15 marzo"
-    },
-    {
-      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "petruzzelli-opera-2026",
-      "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "title_hint": "la notte di san nicola 25 28 29 maggio"
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-rondine/",
+      "title_hint": "La rondine"
     },
     {
       "candidate_id": "oa-index-eedca6da108bd27e8d30",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
+      "status": "awaiting_official_identity_evidence",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
       "title_hint": "il trovatore verdi 18 27 ottobre"
     },
     {
       "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
+      "status": "awaiting_official_identity_evidence",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
       "title_hint": "la cecchina piccinni 21 28 gennaio"
     },
     {
+      "candidate_id": "oa-index-20463bc8c3334dacecf8",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
+      "title_hint": "una lady macbeth del distretto di mzensk"
+    },
+    {
       "candidate_id": "oa-index-207df538679e00657fe1",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
+      "status": "awaiting_official_identity_evidence",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
       "title_hint": "bona sforza krautze 14 20 settembre"
     },
     {
       "candidate_id": "oa-index-53ec78e7155f5b9f3210",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
+      "status": "awaiting_official_identity_evidence",
       "source_key": "donizetti-opera-2026",
       "official_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
       "title_hint": "Le convenienze ed inconvenienze teatrali"
     },
     {
       "candidate_id": "oa-index-663c5bda82d136bbbdcc",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
+      "status": "awaiting_official_identity_evidence",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
       "title_hint": "il gobbo del califfo casavola 21 24 maggio"
     },
     {
+      "candidate_id": "oa-index-669472f18fdc8ab6bd13",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/le-cenerentole-quattro-donne-una-storia/",
+      "title_hint": "le cenerentole quattro donne una storia"
+    },
+    {
+      "candidate_id": "oa-index-67ef6842ba33e2d6015d",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
+      "title_hint": "fabbrica offenbach"
+    },
+    {
+      "candidate_id": "oa-index-73348de657104a8b911f",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
+      "title_hint": "il barbiere di siviglia operacamion"
+    },
+    {
+      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/tosca-11/",
+      "title_hint": "tosca 11"
+    },
+    {
+      "candidate_id": "oa-index-857515ac803f6ce8e75f",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+      "title_hint": "il barbiere di siviglia operacamion 2"
+    },
+    {
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
+      "status": "awaiting_official_identity_evidence",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "title_hint": "la notte di san nicola 25 28 29 maggio"
+    },
+    {
+      "candidate_id": "oa-index-a02901b14e6eae69df5c",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "parma-opera-2027",
+      "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
+      "title_hint": "otello gamification"
+    },
+    {
+      "candidate_id": "oa-index-a764d9a221b8659804fb",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/operacamion-tosca/",
+      "title_hint": "operacamion tosca"
     }
   ]
 }

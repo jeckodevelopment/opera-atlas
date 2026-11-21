@@ -90,6 +90,14 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di Turandot",
       "kind": "official_production_image"
+    },
+    "oa-w-000063": {
+      "work_id": "oa-w-000063",
+      "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/05/TRP-26-BANNER-1920x1080-OPERA-BORIS-GODUNOV.png",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Boris Godunov",
+      "kind": "official_production_image"
     }
   },
   "checks": {

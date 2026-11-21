@@ -3576,6 +3576,56 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-feadef19a246de07",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
+      "dates": [
+        [
+          "2027-02-23",
+          "20:00"
+        ],
+        [
+          "2027-02-26",
+          "20:00"
+        ],
+        [
+          "2027-02-28",
+          "15:30"
+        ],
+        [
+          "2027-03-02",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-808c1bd6d5fa592d",
+      "title": "Boris Godunov",
+      "composer": "Modest Petrovič Musorgskij",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
+      "dates": [
+        [
+          "2027-01-22",
+          "20:00"
+        ],
+        [
+          "2027-01-24",
+          "15:30"
+        ],
+        [
+          "2027-01-28",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

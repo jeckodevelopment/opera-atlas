@@ -54,7 +54,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:01:12+00:00"
     },
     {
@@ -141,7 +141,7 @@
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:55:01+00:00",
       "last_seen": "2026-11-21T21:01:12+00:00"
     },
@@ -213,7 +213,7 @@
       "id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:55:01+00:00",
       "last_seen": "2026-11-21T21:01:12+00:00"
     },
@@ -278,7 +278,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:01:12+00:00"
     },
     {
@@ -525,7 +525,7 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T12:00:43+00:00",
       "last_seen": "2026-11-21T20:59:08+00:00"
     },
@@ -557,7 +557,7 @@
       "id": "oa-index-808c1bd6d5fa592d62af",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-21T20:59:08+00:00"
     },
@@ -662,7 +662,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:01:12+00:00"
     },
     {
@@ -837,7 +837,7 @@
       "id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:50:36.994Z",
       "last_seen": "2026-11-21T21:01:12+00:00"
     },
@@ -982,7 +982,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:01:12+00:00"
     },
     {
@@ -1222,7 +1222,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
       "first_seen": "2026-11-21T21:01:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:01:12+00:00"
     }
   ]

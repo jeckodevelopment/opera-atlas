@@ -2498,6 +2498,24 @@
       ]
     },
     {
+      "id": "curated:auto-808c1bd6d5fa592d:2027-01-22",
+      "starts_at": "2027-01-22T20:00:00+01:00",
+      "local_date": "2027-01-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Boris Godunov",
+      "composer": "Modest Petrovič Musorgskij",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/boris-godunov/"
+      ]
+    },
+    {
       "id": "curated:auto-b932c89149fad91c:2027-01-22",
       "starts_at": "2027-01-22T20:00:00+01:00",
       "local_date": "2027-01-22",
@@ -2660,6 +2678,24 @@
       ]
     },
     {
+      "id": "curated:auto-808c1bd6d5fa592d:2027-01-24",
+      "starts_at": "2027-01-24T15:30:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Boris Godunov",
+      "composer": "Modest Petrovič Musorgskij",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/boris-godunov/"
+      ]
+    },
+    {
       "id": "curated:auto-3c920820abeb859e:2027-01-24",
       "starts_at": "2027-01-24T16:00:00+01:00",
       "local_date": "2027-01-24",
@@ -2765,6 +2801,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+      ]
+    },
+    {
+      "id": "curated:auto-808c1bd6d5fa592d:2027-01-28",
+      "starts_at": "2027-01-28T20:00:00+01:00",
+      "local_date": "2027-01-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Boris Godunov",
+      "composer": "Modest Petrovič Musorgskij",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/boris-godunov/"
       ]
     },
     {
@@ -3848,6 +3902,24 @@
       ]
     },
     {
+      "id": "curated:auto-feadef19a246de07:2027-02-23",
+      "starts_at": "2027-02-23T20:00:00+01:00",
+      "local_date": "2027-02-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+      ]
+    },
+    {
       "id": "curated:scala-don-giovanni-2027:2027-02-23",
       "starts_at": "2027-02-23T20:00:00+01:00",
       "local_date": "2027-02-23",
@@ -4007,6 +4079,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:auto-feadef19a246de07:2027-02-26",
+      "starts_at": "2027-02-26T20:00:00+01:00",
+      "local_date": "2027-02-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/il-trovatore-2027"
       ]
     },
     {
@@ -4172,6 +4262,24 @@
       ]
     },
     {
+      "id": "curated:auto-feadef19a246de07:2027-02-28",
+      "starts_at": "2027-02-28T15:30:00+01:00",
+      "local_date": "2027-02-28",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+      ]
+    },
+    {
       "id": "curated:auto-52ff40865866999b:2027-02-28",
       "starts_at": "2027-02-28T16:30:00+01:00",
       "local_date": "2027-02-28",
@@ -4205,6 +4313,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-feadef19a246de07:2027-03-02",
+      "starts_at": "2027-03-02T20:00:00+01:00",
+      "local_date": "2027-03-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/il-trovatore-2027"
       ]
     },
     {

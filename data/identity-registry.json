@@ -400,6 +400,13 @@
       "title": "Il trovatore",
       "composer": "Giuseppe Verdi",
       "authority_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "boris godunov|modest petrovič musorgskij": {
+      "id": "oa-w-000063",
+      "slug": "boris-godunov",
+      "title": "Boris Godunov",
+      "composer": "Modest Petrovič Musorgskij",
+      "wikidata_id": "Q386846"
     }
   },
   "venues": {
@@ -1494,6 +1501,22 @@
       "venue_id": "oa-v-000017",
       "slug": "il-trovatore",
       "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
+      "season": "2027"
+    },
+    "auto-feadef19a246de07": {
+      "id": "oa-s-000118",
+      "work_id": "oa-w-000062",
+      "venue_id": "oa-v-000016",
+      "slug": "il-trovatore",
+      "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
+      "season": "2027"
+    },
+    "auto-808c1bd6d5fa592d": {
+      "id": "oa-s-000119",
+      "work_id": "oa-w-000063",
+      "venue_id": "oa-v-000010",
+      "slug": "boris-godunov",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
       "season": "2027"
     }
   },
@@ -4977,6 +5000,48 @@
       "staging_id": "oa-s-000117",
       "original_date": "2027-07-01",
       "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+    },
+    "auto-feadef19a246de07|2027-02-23": {
+      "id": "oa-r-000596",
+      "staging_id": "oa-s-000118",
+      "original_date": "2027-02-23",
+      "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+    },
+    "auto-feadef19a246de07|2027-02-26": {
+      "id": "oa-r-000597",
+      "staging_id": "oa-s-000118",
+      "original_date": "2027-02-26",
+      "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+    },
+    "auto-feadef19a246de07|2027-02-28": {
+      "id": "oa-r-000598",
+      "staging_id": "oa-s-000118",
+      "original_date": "2027-02-28",
+      "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+    },
+    "auto-feadef19a246de07|2027-03-02": {
+      "id": "oa-r-000599",
+      "staging_id": "oa-s-000118",
+      "original_date": "2027-03-02",
+      "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+    },
+    "auto-808c1bd6d5fa592d|2027-01-22": {
+      "id": "oa-r-000600",
+      "staging_id": "oa-s-000119",
+      "original_date": "2027-01-22",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/"
+    },
+    "auto-808c1bd6d5fa592d|2027-01-24": {
+      "id": "oa-r-000601",
+      "staging_id": "oa-s-000119",
+      "original_date": "2027-01-24",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/"
+    },
+    "auto-808c1bd6d5fa592d|2027-01-28": {
+      "id": "oa-r-000602",
+      "staging_id": "oa-s-000119",
+      "original_date": "2027-01-28",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/"
     }
   }
 }

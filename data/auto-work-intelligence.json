@@ -364,6 +364,27 @@
       "verified_at": "2026-11-20T23:19:02+00:00"
     },
     {
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
+      "title": "Boris Godunov",
+      "composer": "Modest Petrovič Musorgskij",
+      "synopsis": "Lo zar Boris Godunov è tormentato dal sospetto e dal rimorso mentre un pretendente al trono minaccia la stabilità della Russia.",
+      "history": {
+        "librettist": "Modest Musorgskij",
+        "premiere_year": 1874,
+        "premiere_venue": "Teatro Mariinskij",
+        "premiere_city": "San Pietroburgo",
+        "sources": [
+          "https://www.rohcollections.org.uk/work.aspx?work=1433"
+        ]
+      },
+      "wikidata_id": "Q386846",
+      "authority_url": "https://www.wikidata.org/wiki/Q386846",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Boris_Godunov_(opera)",
+      "verified_at": "2026-11-21T21:01:27+00:00"
+    },
+    {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/ernani-2/",
