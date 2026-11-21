@@ -51,6 +51,16 @@ class CompleteFiveEditorials(unittest.TestCase):
             self.assertEqual(poster["kind"],"archival_work_image")
             self.assertIn("commons.wikimedia.org",poster["source_url"])
 
+    def test_published_new_work_candidates_not_marked_for_review(self):
+        queue=read(CANDIDATES)["candidates"]
+        manifest=read(MANIFEST)["productions"]
+        published={x["source_url"] for x in manifest}
+        by_url={x["official_url"]:x["status"] for x in queue}
+        for url in EXPECTED:
+            with self.subTest(url=url):
+                if url in published:
+                    self.assertEqual(by_url[url],"already_catalogued")
+
     def test_autonomous_promotion_is_atomic_and_replay_safe(self):
         facts,registry=read(MANIFEST),read(REGISTRY)
         candidates,evidence=read(CANDIDATES),read(DETAILS)
