@@ -342,6 +342,14 @@
       "name": "Teatro Carlo Felice",
       "city": "Genova",
       "region": "Liguria"
+    },
+    "Firenze|Teatro del Maggio Musicale Fiorentino": {
+      "id": "oa-v-000016",
+      "slug": "teatro-del-maggio-musicale-fiorentino",
+      "city_slug": "firenze",
+      "name": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "region": "Toscana"
     }
   },
   "stagings": {
@@ -920,6 +928,14 @@
       "venue_id": "oa-v-000015",
       "slug": "evgenij-onegin",
       "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+      "season": "2027"
+    },
+    "auto-b932c89149fad91c": {
+      "id": "oa-s-000073",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000016",
+      "slug": "la-traviata",
+      "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
       "season": "2027"
     }
   },
@@ -3077,6 +3093,30 @@
       "staging_id": "oa-s-000072",
       "original_date": "2027-04-21",
       "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+    },
+    "auto-b932c89149fad91c|2027-01-15": {
+      "id": "oa-r-000360",
+      "staging_id": "oa-s-000073",
+      "original_date": "2027-01-15",
+      "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027"
+    },
+    "auto-b932c89149fad91c|2027-01-17": {
+      "id": "oa-r-000361",
+      "staging_id": "oa-s-000073",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027"
+    },
+    "auto-b932c89149fad91c|2027-01-20": {
+      "id": "oa-r-000362",
+      "staging_id": "oa-s-000073",
+      "original_date": "2027-01-20",
+      "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027"
+    },
+    "auto-b932c89149fad91c|2027-01-22": {
+      "id": "oa-r-000363",
+      "staging_id": "oa-s-000073",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027"
     }
   }
 }
