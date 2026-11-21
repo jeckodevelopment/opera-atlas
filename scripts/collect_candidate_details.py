@@ -150,12 +150,12 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
             "teatro-grande-opera-2026"):
         return []
     if source_key=="teatro-grande-opera-2026":
-        from opera_atlas.brescia_detail_parser import Heading,parse_brescia_detail
+        from opera_atlas.brescia_detail_parser import Heading,parse_brescia_detail,canonical_text
         heading=Heading()
         heading.feed(html)
         works=[w for w in registry.get("works",{}).values()
-               if normalized(heading.h1 or "")==
-                  normalized(w["title"]+" di "+w["composer"])]
+               if canonical_text(heading.h1 or "")==
+                  canonical_text(w["title"]+" di "+w["composer"])]
         if len(works)!=1:return []
         work=works[0]
         raw=parse_brescia_detail(html,url=url,title=work["title"],
