@@ -50,7 +50,11 @@ class FullTheatreProfileTests(unittest.TestCase):
 
     def test_all_active_venues_have_individual_illustrations_and_credits(self):
         photos=[v for v in self.directory if v.get("photo_file")]
-        self.assertEqual(len(photos),len(self.directory)-1)
+        # New venue identity and schedule are verified; its photo remains
+        # explicitly pending rather than using a misattributed picture.
+        pending=[v for v in self.directory if v.get("photo_status")=="review_pending"]
+        self.assertEqual([v["name"] for v in pending],["Teatro Nazionale"])
+        self.assertEqual(len(photos),len(self.directory)-2)
         external=[v for v in self.directory if v.get("photo_url")]
         self.assertEqual([v["name"] for v in external],["Teatro Politeama Greco"])
         self.assertEqual(external[0]["photo_license"],"CC BY 4.0")
@@ -59,8 +63,9 @@ class FullTheatreProfileTests(unittest.TestCase):
                 "https://commons.wikimedia.org/wiki/File:"),venue["id"])
             self.assertTrue(venue.get("photo_credit"),venue["id"])
         without=[v for v in self.directory if not v.get("photo_file")]
-        self.assertEqual([v["name"] for v in without],["Teatro Politeama Greco"])
-        self.assertEqual(without[0]["photo_status"],"verified")
+        self.assertEqual({v["name"] for v in without},
+                         {"Teatro Politeama Greco","Teatro Nazionale"})
+        self.assertEqual(next(v for v in without if v["name"]=="Teatro Politeama Greco")["photo_status"],"verified")
         self.assertFalse(any(v["slug"]=="teatro-comunale-nouveau" for v in self.directory))
         self.assertEqual({v["name"] for v in self.directory if v["city"]=="Bologna"},
                          {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"})
