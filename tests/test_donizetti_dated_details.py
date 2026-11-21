@@ -32,7 +32,12 @@ class DatedDonizettiTests(unittest.TestCase):
 
     def test_dated_alias_uses_opera_slug_not_date_in_authority_lookup(self):
         hint=official_title_hint({"source_key":"donizetti-opera-2026","official_url":DATED})
-        self.assertEqual(hint,"alahor in granata")
+        self.assertEqual(hint,"Alahor in Granata")
+        esule=official_title_hint({"source_key":"donizetti-opera-2026",
+                                    "official_url":ESULE})
+        self.assertEqual(esule,"L\u0027esule di Roma")
+        from scripts.publish_catalog_v2 import slugify
+        self.assertEqual(slugify(esule),"esule-di-roma")
 
     def test_official_page_preserves_title_composer_and_actual_sociale_venue(self):
         html=('<h1>Alahor in Granata</h1><p>Musica di Gaetano Donizetti</p>'
