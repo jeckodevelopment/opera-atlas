@@ -70,26 +70,39 @@ def fetch_official_html(
     _official_target(url, source["official_url"])
     client = opener or build_opener(_NoRedirects())
     robots_url = urljoin(source["official_url"].rstrip("/") + "/", "robots.txt")
+    # RFC 9309 section 2.3.1.3: a robots.txt that is *absent* (404/410)
+    # imposes no REP rules. A denied fetch (401/403), server error, malformed
+    # 200, redirect, or network outage is NOT permission and fails closed.
+    robots_missing=False
     try:
         with client.open(Request(robots_url, headers={"User-Agent": USER_AGENT}),
                          timeout=TIMEOUT) as response:
-            if response.status != 200:
+            if response.status in (404,410):
+                robots_missing=True
+            elif response.status != 200:
                 raise FetchUnavailable("robots.txt unavailable")
-            raw_robots = response.read(256_001)
-            if len(raw_robots) > 256_000:
-                raise FetchUnavailable("robots.txt too large")
-            robots = raw_robots.decode("utf-8", errors="replace")
-    except (HTTPError, URLError, OSError, TimeoutError) as exc:
+            else:
+                raw_robots=response.read(256_001)
+                if len(raw_robots)>256_000:
+                    raise FetchUnavailable("robots.txt too large")
+                robots=raw_robots.decode("utf-8",errors="replace")
+    except HTTPError as exc:
+        if exc.code in (404,410):
+            robots_missing=True
+        else:
+            raise FetchUnavailable("robots.txt unavailable") from exc
+    except (URLError,OSError,TimeoutError) as exc:
         raise FetchUnavailable("robots.txt unavailable") from exc
-    # A successful HTTP response can still be a proxy/login error page.
-    # Never interpret such a response as permission to scrape.
-    rules = robots.splitlines()
-    if not any(line.strip().casefold().startswith("user-agent:") for line in rules):
-        raise FetchUnavailable("robots.txt malformed or no user-agent directives")
-    parser = RobotFileParser()
-    parser.parse(rules)
-    if not parser.can_fetch(USER_AGENT, url):
-        raise AccessDenied("robots.txt denies access")
+    if not robots_missing:
+        # Treat malformed 200 or a proxy HTML error as unavailable, never as
+        # implicit crawl permission. An explicit disallow still blocks.
+        rules=robots.splitlines()
+        if not any(line.strip().casefold().startswith("user-agent:") for line in rules):
+            raise FetchUnavailable("robots.txt malformed or no user-agent directives")
+        parser=RobotFileParser()
+        parser.parse(rules)
+        if not parser.can_fetch(USER_AGENT,url):
+            raise AccessDenied("robots.txt denies access")
     try:
         with client.open(Request(url, headers={
             "User-Agent": USER_AGENT, "Accept": "text/html"
