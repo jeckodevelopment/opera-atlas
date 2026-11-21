@@ -1,4 +1,6 @@
 name: Refresh public Opera Atlas catalog
+# Keep network-acquisition runs distinguishable from the Python-only CI.
+run-name: Catalog acquisition · ${{ github.event_name }} · ${{ github.ref_name }}
 on:
   schedule:
     - cron: '17 7 * * *'
