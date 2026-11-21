@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T14:44:08+00:00",
+  "checked_at": "2026-11-21T14:49:17+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
@@ -8,8 +8,8 @@
       "links": 13,
       "required_links": 3,
       "new_review_candidates": 5,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 13,
       "current_scan_verified": true
     },
@@ -19,8 +19,8 @@
       "links": 5,
       "required_links": 2,
       "new_review_candidates": 0,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 5,
       "current_scan_verified": true
     },
@@ -30,8 +30,8 @@
       "links": 11,
       "required_links": 2,
       "new_review_candidates": 3,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 11,
       "current_scan_verified": true
     },
@@ -41,8 +41,8 @@
       "links": 6,
       "required_links": 3,
       "new_review_candidates": 4,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 6,
       "current_scan_verified": true
     },
@@ -52,8 +52,8 @@
       "links": 8,
       "required_links": 6,
       "new_review_candidates": 3,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 8,
       "current_scan_verified": true
     },
@@ -63,8 +63,8 @@
       "links": 7,
       "required_links": 7,
       "new_review_candidates": 2,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 7,
       "current_scan_verified": true
     },
@@ -74,8 +74,8 @@
       "links": 3,
       "required_links": 3,
       "new_review_candidates": 3,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 3,
       "current_scan_verified": true
     },
@@ -85,8 +85,8 @@
       "links": 2,
       "required_links": 2,
       "new_review_candidates": 2,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 2,
       "current_scan_verified": true
     },
@@ -96,8 +96,8 @@
       "links": 3,
       "required_links": 1,
       "new_review_candidates": 1,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 3,
       "current_scan_verified": true
     },
@@ -108,7 +108,7 @@
       "diagnostic": "official_source_unavailable",
       "required_links": 2,
       "links": 0,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
       "last_success_at": null,
       "last_successful_links": null,
       "current_scan_verified": false
@@ -119,8 +119,8 @@
       "links": 9,
       "required_links": 3,
       "new_review_candidates": 7,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 9,
       "current_scan_verified": true
     },
@@ -130,8 +130,8 @@
       "links": 9,
       "required_links": 7,
       "new_review_candidates": 6,
-      "last_attempt_at": "2026-11-21T14:44:08+00:00",
-      "last_success_at": "2026-11-21T14:44:08+00:00",
+      "last_attempt_at": "2026-11-21T14:49:17+00:00",
+      "last_success_at": "2026-11-21T14:49:17+00:00",
       "last_successful_links": 9,
       "current_scan_verified": true
     }

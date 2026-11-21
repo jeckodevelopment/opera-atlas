@@ -178,7 +178,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T14:45:23+00:00",
+      "checked_at": "2026-11-21T14:50:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -350,8 +350,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "e7e72234abbdfdb3bcd6c8c3590da8bda907d29768444df7d8accf7df8f6f110",
-      "checked_at": "2026-11-21T14:44:18+00:00",
+      "content_sha256": "6589e96016a63d340bb3c00e7575100a30a50ff369c7ced91142adb9b8469a3e",
+      "checked_at": "2026-11-21T14:49:27+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -379,7 +379,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T14:44:29+00:00",
+      "checked_at": "2026-11-21T14:49:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -416,8 +416,8 @@
       "candidate_id": "oa-index-2ffd782e0a99b2433e13",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
-      "content_sha256": "6418ea58f20ba41d5739e49484926ca5176d20fb3206bfedf1a8880ba73aa7e0",
-      "checked_at": "2026-11-21T14:44:38+00:00",
+      "content_sha256": "0cce75f66397881bec60de84844f057c8278542c4954b6684525463b2c4bfd03",
+      "checked_at": "2026-11-21T14:49:44+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -461,8 +461,8 @@
       "candidate_id": "oa-index-3c920820abeb859e7ffa",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
-      "content_sha256": "8747df01fb4159dfb5b04fa9b254ddb78d0b5bc97c639bc7e843563d94b5d4dd",
-      "checked_at": "2026-11-21T14:44:39+00:00",
+      "content_sha256": "ea14d680acf1115a5341208894c2c60226091a67c65d7da506b3b13fc68eae61",
+      "checked_at": "2026-11-21T14:49:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -790,7 +790,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T14:44:50+00:00",
+      "checked_at": "2026-11-21T14:49:54+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -813,8 +813,8 @@
       "candidate_id": "oa-index-7adb8eed9d624ca82bf5",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
-      "content_sha256": "48c70186bf4aca0be4d11064ce8c0e7ba873d9552580215155cfb162dc062305",
-      "checked_at": "2026-11-21T14:44:51+00:00",
+      "content_sha256": "89a712a2d4e0199fc6adeadca0d65f6ec00e2153196f36e6d6497c5f8701df70",
+      "checked_at": "2026-11-21T14:49:55+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1403,7 +1403,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T14:45:23+00:00",
+      "checked_at": "2026-11-21T14:50:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1440,8 +1440,8 @@
       "candidate_id": "oa-index-ce32b1104cdb579dc299",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
-      "content_sha256": "d28dc3d3f4f4b2e7918cc9ee322eec9542feaff28176c404ddfddd473076c26b",
-      "checked_at": "2026-11-21T14:45:05+00:00",
+      "content_sha256": "40b1da079c0b86260b048827c8e01dcb8c09c7b454f6fdb4ba73a9400a3de77b",
+      "checked_at": "2026-11-21T14:50:09+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1464,8 +1464,8 @@
       "candidate_id": "oa-index-cfd5a4967756ff1d51dd",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
-      "content_sha256": "7a2ff4a84264c80286756f12a8cd4b0b3347f909b8bb11ddacf531a0bd909e7e",
-      "checked_at": "2026-11-21T14:45:07+00:00",
+      "content_sha256": "43af2bdea64739ebba0f99fbc54b79ced2b665354967313c17202f1395350f29",
+      "checked_at": "2026-11-21T14:50:10+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1606,8 +1606,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "929607c89d475a0060c2187e0fa5449ee89ea08d1b48d1d166bc312d35ed3531",
-      "checked_at": "2026-11-21T14:45:10+00:00",
+      "content_sha256": "3cc14934c429f9213026f03149beb7be6cc20298cb1ec8f2e42bc987849fbf73",
+      "checked_at": "2026-11-21T14:50:14+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1747,8 +1747,8 @@
       "candidate_id": "oa-index-f7e2bc909527aff17c03",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
-      "content_sha256": "4c94f6caecd3cc4da8193342a5d0936969fe7a7292e2788b9cc597015ec237f3",
-      "checked_at": "2026-11-21T14:44:09+00:00",
+      "content_sha256": "0e305f85b6f7c42a62a0972b507570aa8829c5067f904036065af772d6a11756",
+      "checked_at": "2026-11-21T14:49:18+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
