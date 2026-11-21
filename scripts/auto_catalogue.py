@@ -514,7 +514,12 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         if not (verified_wikidata or verified_official):continue
         work_key=normalized(title)+"|"+normalized(composer)
         slug=slugify(title)
-        if work_key in next_registry["works"]:
+        # Canonical dictionaries may retain historical, non-normalized keys.
+        # Identity is the normalized title+composer pair, never just the map key.
+        if (work_key in next_registry["works"] or any(
+                normalized(w["title"])==normalized(title) and
+                normalized(w["composer"])==normalized(composer)
+                for w in next_registry["works"].values())):
             continue
         # Prefer historic, rights-documented Wikimedia artwork over a
         # potentially temporary theatre thumbnail. Require exact title and
