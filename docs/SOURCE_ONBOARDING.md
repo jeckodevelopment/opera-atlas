@@ -1200,3 +1200,21 @@ la copertura minima prevista.
 ### Roma 2027: Teatro Valle Franca Valeri come sede lirica autonoma
 
 La produzione ufficiale `/spettacoli/la-cenerentola-3/` annuncia cinque recite 1, 3, 5, 7 e 10 ottobre **2027**, non al Teatro Costanzi, ma al `Teatro Valle Franca Valeri` in Via del Teatro Valle 21. Il parser legge sempre la sede dal campo ufficiale `Dove` e la confronta con le sedi consentite per la fonte: non attribuisce più automaticamente ogni rappresentazione al Costanzi. La sede dispone di una scheda indipendente, con storia (inaugurazione 1727, prima assoluta di Rossini nel 1817, riapertura 2026), indirizzo e foto specifica di Wikimedia Commons, autore Gobbler, CC BY-SA 3.0. La scheda canonica dell'opera riporta sinossi reale, Jacopo Ferretti, prima 25 gennaio 1817 al Teatro Valle documentata dal Rossini Opera Festival e dall'Archivio Storico del Teatro dell'Opera di Roma. Il frontespizio storico del libretto `Milan 1817` è esplicitamente **successivo** alla prima romana e non è un manifesto 2027. I test assicurano cinque recite puntuali, una sola identità Rossini, risoluzione dell'anno e una sede distinta da Costanzi, senza duplicati al secondo refresh.
+
+### Roma: opere di stagioni precedenti nell'indice generale
+
+L'indice pubblico delle opere di Roma può riportare titoli di più stagioni:
+non tutte le pagine appartengono all'indice monitorato `2026/2027`.
+Il collector registra `out_of_monitored_season` **soltanto** se il
+controllo robots della pagina ufficiale passa e l'introduzione della
+specifica scheda, prima del suo `h1` e fuori da link e menu,
+dichiara espressamente una stagione differente.
+
+Il finalizzatore della coda controlla fonte, URL e SHA del contenuto
+acquisito e riclassifica in `not_in_official_season`: rimangono
+l'identificativo candidato e l'URL nell'audit, ma la pagina non genera
+una scheda opera nuova né consuma ulteriori tentativi editoriali.
+Una fonte già **pubblicata** prevale su questa classificazione.
+In assenza di prova positiva dell'anno o in presenza di calendario
+incompleto, la candidata rimane aperta; non si esclude un titolo in
+base all'URL o a un errore del parser.
