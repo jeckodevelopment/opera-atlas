@@ -121,6 +121,47 @@ class OfficialCredits(HTMLParser):
         self._flush()
 
 
+
+def official_rome_other_season(html:str,*,url:str)->str|None:
+    """Return a conflicting *source-declared* season, not an inferred date.
+
+    The Opera di Roma's genre index mixes multiple seasons. An event
+    explicitly labelled 2025/2026 must not consume editorial attempts for
+    the 2026/2027 source. Only a verified official page, h1 and season label
+    in its own introduction count; recommendations after the work do not.
+    """
+    target=urlsplit(url)
+    if (target.scheme!="https" or target.hostname!="www.operaroma.it"
+        or target.port is not None or target.username or target.password
+        or target.query or target.fragment
+        or not re.fullmatch(r"/spettacoli/[a-z0-9-]+/",target.path)):
+        raise ValueError("untrusted Rome event URL")
+    heading=Heading()
+    heading.feed(html)
+    if not heading.title:
+        return None
+    reader=OfficialCredits()
+    reader.feed(html)
+    reader.close()
+    lines=reader.lines
+    title_index=next((i for i,line in enumerate(lines)
+                      if normalized(line)==normalized(heading.title)),None)
+    if title_index is None:
+        return None
+    preface=" ".join(lines[max(0,title_index-8):title_index])
+    observed=set()
+    for start,finish in re.findall(r"\bStagione\s+(20\d{2})\s*/\s*(20\d{2})\b",
+                                   preface,re.I):
+        a,b=int(start),int(finish)
+        if b!=a+1:
+            return None
+        observed.add(f"{a}/{b}")
+    if len(observed)!=1:
+        return None
+    season=next(iter(observed))
+    return season if season!="2026/2027" else None
+
+
 def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     """Require exact season, official h1, adjacent author credit and timed shows.
 
