@@ -64,15 +64,15 @@ def parse_credited_detail(html:str,*,url:str):
     intro=lines[title_pos+1:end]
     names=[]
     for i,line in enumerate(intro):
-        match=re.fullmatch(r"Musica\\s+di\\s+(.{4,100})",line,re.I)
+        match=re.fullmatch(r"Musica\s+di\s+(.{4,100})",line,re.I)
         if match:names.append(match[1].strip())
-        elif re.fullmatch(r"Musica\\s+di",line,re.I) and i+1<len(intro):
+        elif re.fullmatch(r"Musica\s+di",line,re.I) and i+1<len(intro):
             names.append(intro[i+1].strip())
     if len(names)!=1:
         raise ValueError("missing or conflicting labelled Donizetti composer")
     composer=names[0]
     if (not 4<=len(composer)<=100
-        or not re.fullmatch(r"[A-Za-zÀ-ÿ'’.\\-]+(?:\\s+[A-Za-zÀ-ÿ'’.\\-]+){1,4}",
+        or not re.fullmatch(r"[A-Za-zÀ-ÿ'’.\-]+(?:\s+[A-Za-zÀ-ÿ'’.\-]+){1,4}",
                             composer)
         or composer.split()[0].casefold() in
            ("direttore","compositore","maestro","da","ignoto")):
