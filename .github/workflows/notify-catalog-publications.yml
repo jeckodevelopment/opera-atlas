@@ -1,0 +1,57 @@
+name: Notify directly published Opera Atlas catalog entities
+
+# Catalog commits written by refresh-catalog use GITHUB_TOKEN, which does not
+# trigger recursive push workflows. This workflow covers direct PR merges or
+# manually pushed canonical feed updates, without duplicating refresh alerts.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/catalog/v2/manifest.json'
+  workflow_dispatch:
+    inputs:
+      base_sha:
+        description: 'Prior published revision to compare (for diagnostic replay)'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-atlas-publication-notification
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout published catalog and history
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Notify works and productions actually published by this commit
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ATLAS_NOTIFICATION_FROM: ${{ secrets.ATLAS_NOTIFICATION_FROM }}
+          ATLAS_NOTIFICATION_TO: ${{ secrets.ATLAS_NOTIFICATION_TO }}
+          PUSH_BASE: ${{ github.event.before }}
+          REPLAY_BASE: ${{ inputs.base_sha }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            BASE="$REPLAY_BASE"
+          else
+            BASE="$PUSH_BASE"
+          fi
+          if ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            echo "::warning::Cannot compare prior published commit; no diagnostic email sent."
+            exit 0
+          fi
+          python -m scripts.notify_publications --base "$BASE"
