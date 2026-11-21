@@ -2210,6 +2210,24 @@
       ]
     },
     {
+      "id": "curated:auto-3c920820abeb859e:2027-01-22",
+      "starts_at": "2027-01-22T20:00:00+01:00",
+      "local_date": "2027-01-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La straniera",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/la-straniera-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-b932c89149fad91c:2027-01-22",
       "starts_at": "2027-01-22T20:00:00+01:00",
       "local_date": "2027-01-22",
@@ -2315,6 +2333,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:auto-3c920820abeb859e:2027-01-24",
+      "starts_at": "2027-01-24T16:00:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La straniera",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/la-straniera-2027/"
       ]
     },
     {
@@ -3524,6 +3560,24 @@
       ]
     },
     {
+      "id": "curated:auto-cfd5a4967756ff1d:2027-03-02",
+      "starts_at": "2027-03-02T20:00:00+01:00",
+      "local_date": "2027-03-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il ritorno di Ulisse in patria",
+      "composer": "Claudio Monteverdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+      ]
+    },
+    {
       "id": "curated:regio-traviata-2027:2027-03-02",
       "starts_at": "2027-03-02T20:00:00+01:00",
       "local_date": "2027-03-02",
@@ -3557,6 +3611,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:auto-cfd5a4967756ff1d:2027-03-04",
+      "starts_at": "2027-03-04T20:00:00+01:00",
+      "local_date": "2027-03-04",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il ritorno di Ulisse in patria",
+      "composer": "Claudio Monteverdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
       ]
     },
     {
@@ -3632,6 +3704,24 @@
       ]
     },
     {
+      "id": "curated:auto-cfd5a4967756ff1d:2027-03-06",
+      "starts_at": "2027-03-06T20:00:00+01:00",
+      "local_date": "2027-03-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il ritorno di Ulisse in patria",
+      "composer": "Claudio Monteverdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+      ]
+    },
+    {
       "id": "curated:massimo-lucia-lammermoor-2027:2027-03-06",
       "starts_at": "2027-03-06T20:00:00+01:00",
       "local_date": "2027-03-06",
@@ -3701,6 +3791,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:auto-cfd5a4967756ff1d:2027-03-07",
+      "starts_at": "2027-03-07T16:00:00+01:00",
+      "local_date": "2027-03-07",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Il ritorno di Ulisse in patria",
+      "composer": "Claudio Monteverdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
       ]
     },
     {
@@ -5774,6 +5882,24 @@
       ]
     },
     {
+      "id": "curated:auto-7adb8eed9d624ca8:2027-06-11",
+      "starts_at": "2027-06-11T20:00:00+02:00",
+      "local_date": "2027-06-11",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Vanessa",
+      "composer": "Samuel Barber",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/vanessa-2027/"
+      ]
+    },
+    {
       "id": "curated:arena-aida-de-bosio-2027:2027-06-12",
       "starts_at": "2027-06-12T21:30:00+02:00",
       "local_date": "2027-06-12",
@@ -5807,6 +5933,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-7adb8eed9d624ca8:2027-06-13",
+      "starts_at": "2027-06-13T16:00:00+02:00",
+      "local_date": "2027-06-13",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Vanessa",
+      "composer": "Samuel Barber",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/vanessa-2027/"
       ]
     },
     {
@@ -5861,6 +6005,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-7adb8eed9d624ca8:2027-06-16",
+      "starts_at": "2027-06-16T20:00:00+02:00",
+      "local_date": "2027-06-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Vanessa",
+      "composer": "Samuel Barber",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/vanessa-2027/"
       ]
     },
     {
@@ -7142,6 +7304,24 @@
       ]
     },
     {
+      "id": "curated:auto-ce32b1104cdb579d:2027-09-23",
+      "starts_at": "2027-09-23T20:00:00+02:00",
+      "local_date": "2027-09-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-7f4bc91ba6697826:2027-09-24",
       "starts_at": "2027-09-24T19:00:00+02:00",
       "local_date": "2027-09-24",
@@ -7211,6 +7391,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/normatebar/"
+      ]
+    },
+    {
+      "id": "curated:auto-ce32b1104cdb579d:2027-09-26",
+      "starts_at": "2027-09-26T16:00:00+02:00",
+      "local_date": "2027-09-26",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
       ]
     },
     {
@@ -7340,6 +7538,24 @@
       ]
     },
     {
+      "id": "curated:auto-2ffd782e0a99b243:2027-10-07",
+      "starts_at": "2027-10-07T18:00:00+02:00",
+      "local_date": "2027-10-07",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-559b2402d287d446:2027-10-08",
       "starts_at": "2027-10-08T20:00:00+02:00",
       "local_date": "2027-10-08",
@@ -7358,6 +7574,42 @@
       ]
     },
     {
+      "id": "curated:auto-2ffd782e0a99b243:2027-10-09",
+      "starts_at": "2027-10-09T18:00:00+02:00",
+      "local_date": "2027-10-09",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-2ffd782e0a99b243:2027-10-10",
+      "starts_at": "2027-10-10T16:00:00+02:00",
+      "local_date": "2027-10-10",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-9c8433ba74501efc:2027-10-10",
       "starts_at": "2027-10-10T17:00:00+02:00",
       "local_date": "2027-10-10",
@@ -7373,6 +7625,42 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-2ffd782e0a99b243:2027-10-12",
+      "starts_at": "2027-10-12T18:00:00+02:00",
+      "local_date": "2027-10-12",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-2ffd782e0a99b243:2027-10-13",
+      "starts_at": "2027-10-13T18:00:00+02:00",
+      "local_date": "2027-10-13",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
       ]
     },
     {
@@ -7826,6 +8114,24 @@
       ]
     },
     {
+      "id": "curated:auto-f7e2bc909527aff1:2027-11-26",
+      "starts_at": "2027-11-26T20:00:00+01:00",
+      "local_date": "2027-11-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Accabadora",
+      "composer": "Francesco Filidei",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/accabadora-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-6339afba8bcc8028:2027-11-27",
       "starts_at": "2027-11-27T20:00:00+01:00",
       "local_date": "2027-11-27",
@@ -7862,6 +8168,24 @@
       ]
     },
     {
+      "id": "curated:auto-f7e2bc909527aff1:2027-11-28",
+      "starts_at": "2027-11-28T20:00:00+01:00",
+      "local_date": "2027-11-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Accabadora",
+      "composer": "Francesco Filidei",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/accabadora-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-6339afba8bcc8028:2027-11-30",
       "starts_at": "2027-11-30T19:00:00+01:00",
       "local_date": "2027-11-30",
@@ -7877,6 +8201,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-f7e2bc909527aff1:2027-11-30",
+      "starts_at": "2027-11-30T20:00:00+01:00",
+      "local_date": "2027-11-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Accabadora",
+      "composer": "Francesco Filidei",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/accabadora-2027/"
       ]
     },
     {

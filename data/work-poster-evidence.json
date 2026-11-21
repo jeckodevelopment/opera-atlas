@@ -16,6 +16,14 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di Don Giovanni",
       "kind": "official_production_image"
+    },
+    "oa-w-000038": {
+      "work_id": "oa-w-000038",
+      "image_url": "https://www.teatroallascala.org/static/upload/il-/il-barbiere-di-siviglia.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Il barbiere di Siviglia",
+      "kind": "official_production_image"
     }
   },
   "checks": {
@@ -134,6 +142,78 @@
       "policy_version": 2
     },
     "https://www.teatromassimo.it/event/macbeth/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/accabadora-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/i-due-foscari-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/vanessa-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/la-straniera-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.maggiofiorentino.com/events/norma-2027": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/madama-butterfly-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/carmen-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.tcbo.it/evento/opera/nabucco-2027/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/": {
+      "retry_after": "2026-11-23",
+      "policy_version": 2
+    },
+    "https://www.maggiofiorentino.com/events/les-contes-dhoffmann": {
       "retry_after": "2026-11-23",
       "policy_version": 2
     }

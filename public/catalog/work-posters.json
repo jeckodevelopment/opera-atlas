@@ -324,12 +324,41 @@
     },
     "oa-w-000038": {
       "work_id": "oa-w-000038",
-      "kind": "archival_work_image",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barbiere_di_Siviglia_frontespizio.JPG?width=720",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Barbiere_di_Siviglia_frontespizio.JPG",
-      "alt": "Frontespizio del libretto originale de Il barbiere di Siviglia di Rossini (1816), non relativo all'allestimento 2026",
-      "credit": "Stamperia di Crispino Puccinelli, Roma, 1816; Wikimedia Commons",
-      "license": "Public domain"
+      "image_url": "https://www.teatroallascala.org/static/upload/il-/il-barbiere-di-siviglia.jpg",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Il barbiere di Siviglia",
+      "kind": "official_production_image"
+    },
+    "oa-w-000039": {
+      "work_id": "oa-w-000039",
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Tristan und Isolde"
+    },
+    "oa-w-000040": {
+      "work_id": "oa-w-000040",
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per La straniera"
+    },
+    "oa-w-000041": {
+      "work_id": "oa-w-000041",
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Vanessa"
+    },
+    "oa-w-000042": {
+      "work_id": "oa-w-000042",
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per I due Foscari"
+    },
+    "oa-w-000043": {
+      "work_id": "oa-w-000043",
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Il ritorno di Ulisse in patria"
+    },
+    "oa-w-000044": {
+      "work_id": "oa-w-000044",
+      "kind": "original_editorial_cover",
+      "alt": "Copertina editoriale originale per Accabadora"
     }
   }
 }

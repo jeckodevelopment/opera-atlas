@@ -1,7 +1,22 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T12:03:02+00:00",
+  "checked_at": "2026-11-21T15:40:48+00:00",
   "outcomes": [
+    {
+      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
     {
       "candidate_id": "oa-index-5ab298c2300ec275c2a3",
       "status": "automatic_retry",
@@ -28,41 +43,18 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "status": "enriched"
+    },
+    {
+      "candidate_id": "oa-index-207df538679e00657fe1",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "status": "automatic_retry",
       "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-f2e706992e9fbbf83950",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-559b2402d287d446c7b2",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-58413a3bbbee689b82bc",
-      "status": "model_not_configured"
-    },
-    {
-      "candidate_id": "oa-index-76fee4db156090b664aa",
-      "status": "model_not_configured"
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "status": "model_not_configured"
     }
   ]
 }

@@ -232,6 +232,48 @@
       "slug": "il-barbiere-di-siviglia",
       "title": "Il barbiere di Siviglia",
       "composer": "Gioachino Rossini"
+    },
+    "tristan und isolde|richard wagner": {
+      "id": "oa-w-000039",
+      "slug": "tristan-und-isolde",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "authority_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+    },
+    "la straniera|vincenzo bellini": {
+      "id": "oa-w-000040",
+      "slug": "la-straniera",
+      "title": "La straniera",
+      "composer": "Vincenzo Bellini",
+      "authority_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/"
+    },
+    "vanessa|samuel barber": {
+      "id": "oa-w-000041",
+      "slug": "vanessa",
+      "title": "Vanessa",
+      "composer": "Samuel Barber",
+      "authority_url": "https://www.tcbo.it/evento/opera/vanessa-2027/"
+    },
+    "i due foscari|giuseppe verdi": {
+      "id": "oa-w-000042",
+      "slug": "i-due-foscari",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "authority_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
+    },
+    "il ritorno di ulisse in patria|claudio monteverdi": {
+      "id": "oa-w-000043",
+      "slug": "il-ritorno-di-ulisse-in-patria",
+      "title": "Il ritorno di Ulisse in patria",
+      "composer": "Claudio Monteverdi",
+      "authority_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+    },
+    "accabadora|francesco filidei": {
+      "id": "oa-w-000044",
+      "slug": "accabadora",
+      "title": "Accabadora",
+      "composer": "Francesco Filidei",
+      "authority_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
     }
   },
   "venues": {
@@ -385,6 +427,14 @@
       "slug": "teatro-comunale-di-bologna",
       "city_slug": "bologna",
       "name": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "region": "Emilia-Romagna"
+    },
+    "Bologna|Teatro Auditorium Manzoni": {
+      "id": "oa-v-000020",
+      "slug": "teatro-auditorium-manzoni",
+      "city_slug": "bologna",
+      "name": "Teatro Auditorium Manzoni",
       "city": "Bologna",
       "region": "Emilia-Romagna"
     }
@@ -1079,6 +1129,54 @@
       "slug": "il-barbiere-di-siviglia",
       "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/",
       "season": "2026-2027"
+    },
+    "auto-2ffd782e0a99b243": {
+      "id": "oa-s-000090",
+      "work_id": "oa-w-000039",
+      "venue_id": "oa-v-000019",
+      "slug": "tristan-und-isolde",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
+      "season": "2027"
+    },
+    "auto-3c920820abeb859e": {
+      "id": "oa-s-000091",
+      "work_id": "oa-w-000040",
+      "venue_id": "oa-v-000020",
+      "slug": "la-straniera",
+      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
+      "season": "2027"
+    },
+    "auto-7adb8eed9d624ca8": {
+      "id": "oa-s-000092",
+      "work_id": "oa-w-000041",
+      "venue_id": "oa-v-000019",
+      "slug": "vanessa",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
+      "season": "2027"
+    },
+    "auto-ce32b1104cdb579d": {
+      "id": "oa-s-000093",
+      "work_id": "oa-w-000042",
+      "venue_id": "oa-v-000020",
+      "slug": "i-due-foscari",
+      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
+      "season": "2027"
+    },
+    "auto-cfd5a4967756ff1d": {
+      "id": "oa-s-000094",
+      "work_id": "oa-w-000043",
+      "venue_id": "oa-v-000019",
+      "slug": "il-ritorno-di-ulisse-in-patria",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
+      "season": "2027"
+    },
+    "auto-f7e2bc909527aff1": {
+      "id": "oa-s-000095",
+      "work_id": "oa-w-000044",
+      "venue_id": "oa-v-000019",
+      "slug": "accabadora",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -3715,6 +3813,120 @@
       "staging_id": "oa-s-000089",
       "original_date": "2027-06-01",
       "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+    },
+    "auto-2ffd782e0a99b243|2027-10-07": {
+      "id": "oa-r-000455",
+      "staging_id": "oa-s-000090",
+      "original_date": "2027-10-07",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+    },
+    "auto-2ffd782e0a99b243|2027-10-09": {
+      "id": "oa-r-000456",
+      "staging_id": "oa-s-000090",
+      "original_date": "2027-10-09",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+    },
+    "auto-2ffd782e0a99b243|2027-10-10": {
+      "id": "oa-r-000457",
+      "staging_id": "oa-s-000090",
+      "original_date": "2027-10-10",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+    },
+    "auto-2ffd782e0a99b243|2027-10-12": {
+      "id": "oa-r-000458",
+      "staging_id": "oa-s-000090",
+      "original_date": "2027-10-12",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+    },
+    "auto-2ffd782e0a99b243|2027-10-13": {
+      "id": "oa-r-000459",
+      "staging_id": "oa-s-000090",
+      "original_date": "2027-10-13",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+    },
+    "auto-3c920820abeb859e|2027-01-22": {
+      "id": "oa-r-000460",
+      "staging_id": "oa-s-000091",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/"
+    },
+    "auto-3c920820abeb859e|2027-01-24": {
+      "id": "oa-r-000461",
+      "staging_id": "oa-s-000091",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/"
+    },
+    "auto-7adb8eed9d624ca8|2027-06-11": {
+      "id": "oa-r-000462",
+      "staging_id": "oa-s-000092",
+      "original_date": "2027-06-11",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/"
+    },
+    "auto-7adb8eed9d624ca8|2027-06-13": {
+      "id": "oa-r-000463",
+      "staging_id": "oa-s-000092",
+      "original_date": "2027-06-13",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/"
+    },
+    "auto-7adb8eed9d624ca8|2027-06-16": {
+      "id": "oa-r-000464",
+      "staging_id": "oa-s-000092",
+      "original_date": "2027-06-16",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/"
+    },
+    "auto-ce32b1104cdb579d|2027-09-23": {
+      "id": "oa-r-000465",
+      "staging_id": "oa-s-000093",
+      "original_date": "2027-09-23",
+      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
+    },
+    "auto-ce32b1104cdb579d|2027-09-26": {
+      "id": "oa-r-000466",
+      "staging_id": "oa-s-000093",
+      "original_date": "2027-09-26",
+      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
+    },
+    "auto-cfd5a4967756ff1d|2027-03-02": {
+      "id": "oa-r-000467",
+      "staging_id": "oa-s-000094",
+      "original_date": "2027-03-02",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+    },
+    "auto-cfd5a4967756ff1d|2027-03-04": {
+      "id": "oa-r-000468",
+      "staging_id": "oa-s-000094",
+      "original_date": "2027-03-04",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+    },
+    "auto-cfd5a4967756ff1d|2027-03-06": {
+      "id": "oa-r-000469",
+      "staging_id": "oa-s-000094",
+      "original_date": "2027-03-06",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+    },
+    "auto-cfd5a4967756ff1d|2027-03-07": {
+      "id": "oa-r-000470",
+      "staging_id": "oa-s-000094",
+      "original_date": "2027-03-07",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+    },
+    "auto-f7e2bc909527aff1|2027-11-26": {
+      "id": "oa-r-000471",
+      "staging_id": "oa-s-000095",
+      "original_date": "2027-11-26",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
+    },
+    "auto-f7e2bc909527aff1|2027-11-28": {
+      "id": "oa-r-000472",
+      "staging_id": "oa-s-000095",
+      "original_date": "2027-11-28",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
+    },
+    "auto-f7e2bc909527aff1|2027-11-30": {
+      "id": "oa-r-000473",
+      "staging_id": "oa-s-000095",
+      "original_date": "2027-11-30",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
     }
   }
 }

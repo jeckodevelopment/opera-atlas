@@ -89,6 +89,19 @@
       "verified_at": "2026-11-21T14:02:00+00:00"
     },
     {
+      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+      "title": "L'esule di Roma",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "«L'esule di Roma» è un'opera di Gaetano Donizetti. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
+      "history": null,
+      "wikidata_id": "Q471164",
+      "authority_url": "https://www.wikidata.org/wiki/Q471164",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/L%27esule_di_Roma",
+      "verified_at": "2026-11-21T15:40:48+00:00"
+    },
+    {
       "candidate_id": "oa-index-18853d99c59fe0755e13",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",

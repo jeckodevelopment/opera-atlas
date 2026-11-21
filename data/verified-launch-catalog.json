@@ -2704,6 +2704,148 @@
           "19:00"
         ]
       ]
+    },
+    {
+      "key": "auto-2ffd782e0a99b243",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
+      "dates": [
+        [
+          "2027-10-07",
+          "18:00"
+        ],
+        [
+          "2027-10-09",
+          "18:00"
+        ],
+        [
+          "2027-10-10",
+          "16:00"
+        ],
+        [
+          "2027-10-12",
+          "18:00"
+        ],
+        [
+          "2027-10-13",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-3c920820abeb859e",
+      "title": "La straniera",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
+      "dates": [
+        [
+          "2027-01-22",
+          "20:00"
+        ],
+        [
+          "2027-01-24",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-7adb8eed9d624ca8",
+      "title": "Vanessa",
+      "composer": "Samuel Barber",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
+      "dates": [
+        [
+          "2027-06-11",
+          "20:00"
+        ],
+        [
+          "2027-06-13",
+          "16:00"
+        ],
+        [
+          "2027-06-16",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-ce32b1104cdb579d",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
+      "dates": [
+        [
+          "2027-09-23",
+          "20:00"
+        ],
+        [
+          "2027-09-26",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-cfd5a4967756ff1d",
+      "title": "Il ritorno di Ulisse in patria",
+      "composer": "Claudio Monteverdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
+      "dates": [
+        [
+          "2027-03-02",
+          "20:00"
+        ],
+        [
+          "2027-03-04",
+          "20:00"
+        ],
+        [
+          "2027-03-06",
+          "20:00"
+        ],
+        [
+          "2027-03-07",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f7e2bc909527aff1",
+      "title": "Accabadora",
+      "composer": "Francesco Filidei",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
+      "dates": [
+        [
+          "2027-11-26",
+          "20:00"
+        ],
+        [
+          "2027-11-28",
+          "20:00"
+        ],
+        [
+          "2027-11-30",
+          "20:00"
+        ]
+      ]
     }
   ]
 }
