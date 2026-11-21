@@ -332,13 +332,21 @@
     },
     "oa-w-000039": {
       "work_id": "oa-w-000039",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Tristan und Isolde"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tristan_and_Isolde_by_Nicholas_Roerich_03.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tristan_and_Isolde_by_Nicholas_Roerich_03.jpg",
+      "alt": "Bozzetto scenografico di Nicholas Roerich per Tristan und Isolde di Wagner (1912), non relativo alla produzione attuale",
+      "credit": "Nicholas Roerich, bozzetto per Tristan und Isolde (1912), Wikimedia Commons",
+      "license": "Public domain"
     },
     "oa-w-000040": {
       "work_id": "oa-w-000040",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per La straniera"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vincenzo_Bellini_-_La_straniera_-_titlepage_of_the_libretto_-_Milan_1829.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vincenzo_Bellini_-_La_straniera_-_titlepage_of_the_libretto_-_Milan_1829.png",
+      "alt": "Frontespizio del libretto storico di La straniera di Vincenzo Bellini (Milano, 1829), non relativo alla produzione attuale",
+      "credit": "Vincenzo Bellini e Felice Romani, libretto di La straniera (1829), Wikimedia Commons",
+      "license": "Public domain"
     },
     "oa-w-000041": {
       "work_id": "oa-w-000041",
@@ -347,13 +355,21 @@
     },
     "oa-w-000042": {
       "work_id": "oa-w-000042",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per I due Foscari"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giuseppe_Verdi_-_I_due_Foscari_-_titlepage_of_the_libretto_-_Rome_1844.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Verdi_-_I_due_Foscari_-_titlepage_of_the_libretto_-_Rome_1844.png",
+      "alt": "Frontespizio del libretto originale di I due Foscari di Giuseppe Verdi (Roma, 1844), non relativo alla produzione attuale",
+      "credit": "Giuseppe Verdi e Francesco Maria Piave, libretto di I due Foscari (1844), Wikimedia Commons",
+      "license": "Public domain"
     },
     "oa-w-000043": {
       "work_id": "oa-w-000043",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Il ritorno di Ulisse in patria"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Claudio_Monteverdi_-_Il_ritorno_d'Ulisse_in_patria_-_title_page_of_the_libretto_-_Venice_1641.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Claudio_Monteverdi_-_Il_ritorno_d'Ulisse_in_patria_-_title_page_of_the_libretto_-_Venice_1641.png",
+      "alt": "Frontespizio del libretto originale di Il ritorno d'Ulisse in patria di Claudio Monteverdi (Venezia, 1641), non relativo alla produzione attuale",
+      "credit": "Claudio Monteverdi e Giacomo Badoaro, libretto del 1641, Wikimedia Commons",
+      "license": "Public domain"
     },
     "oa-w-000044": {
       "work_id": "oa-w-000044",
