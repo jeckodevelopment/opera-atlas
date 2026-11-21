@@ -240,6 +240,47 @@ def preverified_work_material() -> dict[str, dict]:
                           "attribution":attributions.get(slug)}
     return result
 
+def canonical_editorial_material(identity:dict)->dict|None:
+    """Reuse validated canonical prose only for the same composition.
+
+    Preserve the composition attribution contract: in the presence of an
+    alias, homonym or competing Wikidata identity, require an explicit,
+    matching QID. Never reuse title-only prose for an ambiguous work.
+    """
+    from scripts.publish_work_editorial import EDITORIAL,HISTORY,validate_history
+    registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    synopses=json.loads(EDITORIAL.read_text(encoding="utf-8"))
+    histories=json.loads(HISTORY.read_text(encoding="utf-8"))
+    matches=[row for row in registry["works"].values()
+             if normalized(row["title"])==normalized(identity["title"])
+             and normalized(row["composer"])==normalized(identity["composer"])]
+    if len(matches)!=1:return None
+    work=matches[0]
+    slug,work_id=work["slug"],work["id"]
+    same_slug=[w for w in registry["works"].values() if w["slug"]==slug]
+    attribution=validated_editorial_attributions().get(slug)
+    if attribution:
+        if (attribution["wikidata_id"]!=identity["wikidata_id"]
+                or normalized(attribution["composer"])!=normalized(identity["composer"])):
+            return None
+    elif work.get("wikidata_id"):
+        if work["wikidata_id"]!=identity["wikidata_id"]:return None
+    elif len(same_slug)>1 or identity.get("title_candidate_count",1)>1:
+        return None
+    by_id=synopses.get("synopses_by_id",{})
+    historic_by_id=histories.get("works_by_id",{})
+    summary=(by_id.get(work_id) if len(same_slug)>1 else
+             by_id.get(work_id,synopses["synopses"].get(slug)))
+    history=(historic_by_id.get(work_id) if len(same_slug)>1 else
+             historic_by_id.get(work_id,histories["works"].get(slug)))
+    if (not isinstance(summary,str) or not 45<=len(summary.strip())<=300
+            or summary.strip().endswith(
+                "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+            or not validate_history(history)):
+        return None
+    return {"synopsis":summary.strip(),"history":history}
+
+
 def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
                       *,today:date,evidence:dict|None=None)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
@@ -357,13 +398,35 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                    and slugify(composer_hint)==slugify(identity["composer"]))
             if identity.get("title_candidate_count",1)>1 and not bound:
                 material=None
+            canonical_material=canonical_editorial_material(identity) if allow_authority else None
+            material=material or canonical_material
             from scripts.publish_work_editorial import validate_history
+            # Share an already completed card only for the same QID and
+            # independently verified composer, across theatre candidates.
+            previous_matches=[entry for entry in existing_works.values()
+                              if entry.get("wikidata_id")==identity["wikidata_id"]
+                              and normalized(entry.get("composer",""))==
+                                  normalized(identity["composer"])
+                              and isinstance(entry.get("synopsis"),str)
+                              and 45<=len(entry["synopsis"].strip())<=300
+                              and not entry["synopsis"].endswith(
+                                  "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+                              and validate_history(entry.get("history"))]
+            exact_cached=False
+            if material is None and previous_matches:
+                first=previous_matches[0]
+                if all(entry["synopsis"]==first["synopsis"] and
+                       entry["history"]==first["history"] for entry in previous_matches):
+                    material={"synopsis":first["synopsis"],"history":first["history"]}
+                    exact_cached=True
             previous=existing_works.get(cid,{})
             same_identity=(previous.get("wikidata_id")==identity["wikidata_id"]
                            and normalized(previous.get("composer",""))==
                                normalized(identity["composer"]))
-            material_ok=(material is not None and slugify(identity["title"])==slug
-                         and (identity.get("title_candidate_count",1)==1 or bound)
+            material_ok=(material is not None
+                         and (canonical_material is not None or exact_cached or
+                              (slugify(identity["title"])==slug and
+                               (identity.get("title_candidate_count",1)==1 or bound)))
                          and (not composer_hint or
                               slugify(composer_hint)==slugify(identity["composer"])))
             summary=(material["synopsis"] if material_ok else None)
@@ -410,7 +473,14 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                 "wikipedia_url":identity["wikipedia_url"],
                 "verified_at":datetime.now(timezone.utc).isoformat(timespec="seconds")}
             statuses.append({"candidate_id":cid,"status":"enriched"})
-        except (HTTPError,URLError,TimeoutError,OSError,ValueError,KeyError,
+        except ValueError as exc:
+            reason=str(exc)
+            if reason not in ("authority_not_unique","invalid external knowledge response",
+                              "external knowledge response too large"):
+                reason="invalid_authority_data"
+            statuses.append({"candidate_id":cid,"status":"automatic_retry",
+                             "reason":reason})
+        except (HTTPError,URLError,TimeoutError,OSError,KeyError,
                 json.JSONDecodeError) as exc:
             statuses.append({"candidate_id":cid,"status":"automatic_retry",
                              "reason":type(exc).__name__})
