@@ -426,18 +426,18 @@ async function initialize() {
       document.querySelector(".detail-related h2").textContent="Spettacoli in programma";
       title.textContent=first.venue;
       subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
+      if(!selected.events.length)
+        document.querySelector(".detail-related").hidden=true;
       theatreProfile=selected.venue
         ? await appendTheatreProfile(first,selected.venue)
         : await appendTheatreProfile(first);
       if(selected.events.length)content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche"));
-      else content.append(node("p","staging-summary",
-        "La sede è censita. Il programma degli spettacoli non è ancora stato acquisito."));
+
       for(const group of grouping(future))stagingGroup(group,"venue");
-      if(!future.length)results.append(node("p","empty",
-        selected.events.length?"Nessun prossimo spettacolo verificato presso questo teatro nel catalogo Atlas.":
-        "Le prossime rappresentazioni saranno pubblicate dopo la verifica delle fonti ufficiali."));
+      if(!future.length && selected.events.length)
+        results.append(node("p","empty","Non risultano prossimi spettacoli in programma."));
     }else if(selected.kind==="group"){
       kind.textContent="Produzione condivisa";
       title.textContent=first.title;
