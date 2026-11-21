@@ -50,6 +50,16 @@ class FlorenceCalendarTests(unittest.TestCase):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
         self.assertEqual(len(validate_config(config)),14)
 
+    def test_goldoni_matches_only_verifiable_florence_route(self):
+        from scripts.auto_catalogue import verified_venue
+        rows=[{"venue":"Teatro Goldoni","event_title":"Il mondo alla roversa",
+               "composer":"Baldassarre Galuppi","date":"2027-01-30",
+               "starts_at":"2027-01-30T17:00:00+01:00"}]
+        city,venue,authority=verified_venue(SOURCE,rows,{"venues":{}})
+        self.assertEqual((city,venue,authority),("Firenze","Teatro Goldoni",None))
+        bad=[{**rows[0],"venue":"Teatro Goldoni Livorno"}]
+        self.assertIsNone(verified_venue(SOURCE,bad,{"venues":{}}))
+
     def test_traviata_four_recite_with_real_clock_composer_venue(self):
         rows=parse_month(page(),url=INDEX,registry=self.registry,today=date(2026,11,21))
         self.assertEqual(len(rows),4)

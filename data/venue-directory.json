@@ -994,6 +994,27 @@
       "photo_credit": "Van Der Meulen Christofle, Wikimedia Commons — CC0 1.0",
       "photo_license": "CC0 1.0",
       "calendar_status": "acquired"
+    },
+    {
+      "id": "oa-vd-000054",
+      "name": "Teatro Goldoni",
+      "city": "Firenze",
+      "region": "Toscana",
+      "city_slug": "firenze",
+      "slug": "teatro-goldoni",
+      "website": "https://www.maggiofiorentino.com/teatri-2/",
+      "source_url": "https://www.maggiofiorentino.com/teatri-2/",
+      "description": "Nel quartiere dell’Oltrarno, a pochi passi da Palazzo Pitti, il Goldoni ospita opera e teatro in una sala storica della Firenze ottocentesca.",
+      "monitoring_status": "programma_censito",
+      "profile_key": "Firenze|Teatro Goldoni",
+      "address": "Via Santa Maria 15",
+      "history": "Inaugurato il 7 aprile 1817 alla presenza di Ferdinando III d’Asburgo-Lorena, il Teatro Goldoni fu un luogo di spettacolo e svago nell’Oltrarno fiorentino. Vicino a Palazzo Pitti, divenne teatro di corte e ospitò la Società Filarmonica Fiorentina, antecedente della Stabile Orchestrale da cui nacque il Maggio Musicale Fiorentino.",
+      "opening_year": 1817,
+      "photo_file": "Teatro goldoni firenze.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_goldoni_firenze.JPG",
+      "photo_credit": "Sailko, Wikimedia Commons — CC BY-SA 3.0",
+      "photo_license": "CC BY-SA 3.0",
+      "calendar_status": "acquired"
     }
   ],
   "related_organizations": [
