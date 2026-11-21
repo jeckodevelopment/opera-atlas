@@ -42,6 +42,28 @@ class DonizettiCreditsTests(unittest.TestCase):
         self.assertEqual({x["composer"] for x in rows},{"Gaetano Donizetti"})
         self.assertEqual(rows[-1]["starts_at"],"2026-11-28T20:00:00+01:00")
 
+    def test_real_collection_dispatches_new_work_adapter(self):
+        from opera_atlas.controlled_fetch import FetchResult
+        from scripts.collect_candidate_details import collect
+        candidate={"schema_version":1,"candidates":[{
+            "id":"oa-index-test-donizetti","source_key":SOURCE,
+            "official_url":URL,"status":"needs_review"}]}
+        html=page()
+        visited=[]
+        def fake(db,*,source_id,url,network_enabled):
+            visited.append(url)
+            return FetchResult(url,html,"a"*64,len(html))
+        result,health=collect(candidate,{"schema_version":1,"evidence":[]},
+                              network_enabled=True,fetcher=fake,
+                              today=date(2026,11,20))
+        self.assertEqual(visited,[URL])
+        self.assertEqual(health[0]["outcome"],"facts_found",health)
+        record=result["evidence"][0]
+        self.assertEqual(record["status"],"needs_editorial_review")
+        self.assertEqual(len(record["event_facts"]),3)
+        self.assertEqual({x["composer"] for x in record["event_facts"]},
+                         {"Gaetano Donizetti"})
+
     def test_must_not_infer_author_from_cast_title_or_url(self):
         cases=[
             page().replace("Musica di Gaetano Donizetti",""),
