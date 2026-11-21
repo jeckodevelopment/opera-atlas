@@ -110,6 +110,7 @@ def send(notice: dict, api_key: str, sender: str, recipients: list[str]) -> None
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base", required=True, help="Git SHA before this publication checkpoint")
+    parser.add_argument("--only-ids", default="", help="Optional comma-separated immutable entity IDs for a controlled replay")
     args = parser.parse_args()
     # Do not notify when GitHub has not actually accepted this catalog commit.
     git("fetch", "--quiet", "origin", "main")
@@ -126,6 +127,9 @@ def main() -> int:
     except (KeyError, ValueError, subprocess.CalledProcessError) as exc:
         print(f"::warning::Atlas notification comparison failed: {exc}", file=sys.stderr)
         return 0
+    if args.only_ids:
+        selected = {item.strip() for item in args.only_ids.split(",") if item.strip()}
+        notices = [notice for notice in notices if notice["id"] in selected]
     print(f"Newly published works/productions: {len(notices)}")
     if not notices:
         return 0
