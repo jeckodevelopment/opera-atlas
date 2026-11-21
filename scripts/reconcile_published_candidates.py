@@ -64,8 +64,51 @@ def verified_other_season_evidence(evidence:dict)->set[tuple[str,str]]:
     return result
 
 
+def verified_cagliari_2027_brochure_urls()->set[str]:
+    """Official 2027 brochure is the authoritative finite season boundary.
+
+    Never use the site's generic all-years opera index to invent events in
+    2027. This evidence is source-scoped, year-scoped and validated before
+    retiring any legacy event link; a refreshed brochure automatically
+    reopens a previously archived candidate if it adds that production.
+    """
+    import re
+    from datetime import date
+    from opera_atlas.cagliari_detail_parser import BROCHURE
+    data=json.loads(BROCHURE.read_text(encoding="utf-8"))
+    official=("https://www.liricocagliari.it/wp-content/uploads/2026/11/"
+              "Pieghevole-Stagione-Opera-2027-21x15-4-ante.pdf")
+    if (data.get("schema_version")!=1 or data.get("year")!=2027
+            or data.get("official_schedule_url")!=official
+            or not isinstance(data.get("works"),list)
+            or len(data["works"])<3):
+        raise ValueError("invalid official Cagliari season proof")
+    urls=set()
+    for item in data["works"]:
+        slug=item.get("slug")
+        if (not isinstance(slug,str)
+            or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",slug)
+            or not isinstance(item.get("title"),str) or not item["title"].strip()
+            or not isinstance(item.get("composer"),str) or not item["composer"].strip()
+            or not isinstance(item.get("dates"),list) or not item["dates"]):
+            raise ValueError("incomplete individually verified Cagliari work")
+        for row in item["dates"]:
+            if (not isinstance(row,list) or len(row)!=2
+                or not isinstance(row[0],str) or not row[0].startswith("2027-")
+                or not isinstance(row[1],str)
+                or not re.fullmatch(r"(?:[01][0-9]|2[0-3]):[0-5][0-9]",row[1])):
+                raise ValueError("invalid first-party Cagliari schedule entry")
+            date.fromisoformat(row[0])
+        url="https://www.liricocagliari.it/evento/"+slug+"/"
+        if url in urls:
+            raise ValueError("duplicate Cagliari season opera")
+        urls.add(url)
+    return urls
+
+
 def reconcile(candidates:dict,verified_urls:set[str],*,
-              other_season_urls:set[tuple[str,str]]|None=None)->tuple[dict,dict]:
+              other_season_urls:set[tuple[str,str]]|None=None,
+              cagliari_season_urls:set[str]|None=None)->tuple[dict,dict]:
     if candidates.get("schema_version")!=1 or not isinstance(candidates.get("candidates"),list):
         raise ValueError("invalid season index candidate registry")
     updated={"schema_version":1,"candidates":[]}
@@ -76,6 +119,13 @@ def reconcile(candidates:dict,verified_urls:set[str],*,
             key=(entry["source_key"],entry["official_url"])
             if entry["official_url"] in verified_urls:
                 now="already_catalogued"
+            elif (entry["source_key"]=="lirico-cagliari-opera-2027"
+                  and cagliari_season_urls is not None):
+                # A candidate not in the verified 2027 programme is an
+                # auditable historical/global-index listing, not 2027 opera.
+                # When the programme adds it, restore review automatically.
+                now=("needs_review" if entry["official_url"] in cagliari_season_urls
+                     else "not_in_official_season")
             elif key in (other_season_urls or set()):
                 now="not_in_official_season"
             elif entry["status"]=="not_in_official_season":
@@ -104,8 +154,10 @@ def run(*,check:bool=False):
     from scripts.collect_candidate_details import OUTPUT as DETAILS
     detail=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     official_older=verified_other_season_evidence(detail)
+    cagliari_2027=verified_cagliari_2027_brochure_urls()
     updated,report=reconcile(original,published,
-                             other_season_urls=official_older)
+                             other_season_urls=official_older,
+                             cagliari_season_urls=cagliari_2027)
     if check:
         if updated!=original:
             raise ValueError("discovery queue out of sync with canonical catalog")
