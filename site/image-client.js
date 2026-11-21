@@ -55,7 +55,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "lucia-di-lammermoor":"Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg",
     "edgar":"Romilda Pantaleoni as Tigrana in Puccini's Edgar - Milan 1889.png",
     "fedora":"Ida Aalberg i titelrollen i operan Fedora av Umberto Giordano - 1900 SLSA 1270 34 foto 29.jpg",
-    "death-in-venice":"-13.2- Thomas Mann Atlas Haack.jpg"
+    "death-in-venice":"Pears death in venice.jpg",
+    "nixon-in-china":"Dortmund Kampstr Nixon in China IMG 20230315 1145.jpg"
   };
   // Published by the catalog workflow, not by an FTPS site rebuild.
   // A static site update is needed once to enable this feed; subsequent
