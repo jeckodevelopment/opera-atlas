@@ -2691,6 +2691,15 @@
       ]
     },
     {
+      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
+      "content_sha256": "b350c83686b2e9249d6fe20eae0bfcab93f2c8572123164ddc05fcd9c9794f87",
+      "checked_at": "2026-11-21T23:24:26+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2022"
+    },
+    {
       "candidate_id": "oa-index-9eea54a8395ff3d6c74e",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
@@ -4001,6 +4010,15 @@
           "venue": "Teatro dell'Opera di Roma"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
+      "content_sha256": "1cda677413db4c57d62612a8ecad97513fdf84fad3c7f342da79e24ca4154063",
+      "checked_at": "2026-11-21T23:24:10+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2022"
     },
     {
       "candidate_id": "oa-index-eaefe8edde44acf2edd9",
