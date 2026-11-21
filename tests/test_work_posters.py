@@ -241,8 +241,16 @@ class PosterPublicationTests(unittest.TestCase):
         # photograph remain represented by *truthfully labelled* original art.
         self.assertEqual({w["title"] for w in editorial},
                          {"Death in Venice","Nixon in China","Jenůfa"})
-        self.assertEqual(sum(v["kind"]=="archival_work_image" for v in published.values()),32)
-        self.assertEqual(sum(v["kind"]=="official_production_image" for v in published.values()),2)
+        # Each newly catalogued opera must have an approved image plan, but
+        # the number of *archival* works changes whenever new canonical IDs
+        # are introduced. Never assert a fixed total from a different snapshot.
+        counts={kind:sum(v["kind"]==kind for v in published.values())
+                for kind in ("archival_work_image","official_production_image",
+                             "original_editorial_cover")}
+        self.assertEqual(counts["official_production_image"],2)
+        self.assertEqual(counts["original_editorial_cover"],len(editorial))
+        self.assertEqual(counts["archival_work_image"],
+                         len(works)-counts["official_production_image"]-len(editorial))
         for work in works:
             image=published[work["id"]]
             self.assertEqual(image["work_id"],work["id"])
