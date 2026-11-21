@@ -134,6 +134,31 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+      # A bounded first-party source checkpoint must not wait behind the
+      # expensive full-national ingestion. It never emits unverifiable recite.
+      - name: Reconcile pending Roma official detail pages ahead of slow crawl
+        run: |
+          python -m scripts.collect_candidate_details --allow-network --source-key opera-roma-season-2026-27
+          python -m scripts.reconcile_published_candidates
+      - name: Checkpoint first-party Roma candidate classifications
+        id: roma_checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+            echo "No new Roma evidence to checkpoint."
+          else
+            git commit -m "data(roma): reconcile official source candidates before full refresh [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Retry deferred Roma checkpoint automatically
+        if: steps.roma_checkpoint.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       - name: Incrementally scan only explicitly approved official pages
         run: python -m scripts.daily_ingest --allow-network
       - name: Verify and adopt next officially published season indexes
