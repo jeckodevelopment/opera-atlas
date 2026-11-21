@@ -15,7 +15,8 @@ from scripts.discover_season_indexes import (
 from scripts.publish_catalog_v2 import ROOT
 
 HEALTH=ROOT/"data"/"candidate-reconciliation-health.json"
-AUTO_STATES=frozenset({"needs_review","already_catalogued","excluded_nonopera"})
+AUTO_STATES=frozenset({"needs_review","already_catalogued","excluded_nonopera",
+                       "not_in_official_season"})
 
 def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
     """Recognize complete independently verified second-source theater dates.
@@ -43,7 +44,28 @@ def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
             matches.add(url)
     return matches
 
-def reconcile(candidates:dict,verified_urls:set[str])->tuple[dict,dict]:
+def verified_other_season_evidence(evidence:dict)->set[tuple[str,str]]:
+    """Only first-party, source-scoped Rome detail evidence can retire a URL."""
+    import re
+    result=set()
+    for row in evidence.get("evidence",[]):
+        if (not isinstance(row,dict)
+                or row.get("status")!="out_of_monitored_season"
+                or row.get("source_key")!="opera-roma-season-2026-27"
+                or not isinstance(row.get("source_url"),str)
+                or not row["source_url"].startswith("https://www.operaroma.it/spettacoli/")
+                or not re.fullmatch(r"20[0-9]{2}/20[0-9]{2}",
+                                    row.get("official_season",""))
+                or row["official_season"]=="2026/2027"
+                or not re.fullmatch(r"[a-f0-9]{64}",
+                                    row.get("content_sha256",""))):
+            continue
+        result.add((row["source_key"],row["source_url"]))
+    return result
+
+
+def reconcile(candidates:dict,verified_urls:set[str],*,
+              other_season_urls:set[tuple[str,str]]|None=None)->tuple[dict,dict]:
     if candidates.get("schema_version")!=1 or not isinstance(candidates.get("candidates"),list):
         raise ValueError("invalid season index candidate registry")
     updated={"schema_version":1,"candidates":[]}
@@ -51,7 +73,15 @@ def reconcile(candidates:dict,verified_urls:set[str])->tuple[dict,dict]:
     for row in candidates["candidates"]:
         entry=row.copy()
         if entry.get("status") in AUTO_STATES:
-            now=classify(entry["source_key"],entry["official_url"],verified_urls)
+            key=(entry["source_key"],entry["official_url"])
+            if entry["official_url"] in verified_urls:
+                now="already_catalogued"
+            elif key in (other_season_urls or set()):
+                now="not_in_official_season"
+            elif entry["status"]=="not_in_official_season":
+                now=entry["status"]  # Historical proof remains in the audit.
+            else:
+                now=classify(entry["source_key"],entry["official_url"],verified_urls)
             if now!=entry["status"]:
                 changes.append({"candidate_id":entry["id"],"before":entry["status"],"after":now})
             entry["status"]=now
@@ -71,7 +101,11 @@ def run(*,check:bool=False):
         manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
         times=json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
         published.update(verified_secondary_source_urls(manifest,times))
-    updated,report=reconcile(original,published)
+    from scripts.collect_candidate_details import OUTPUT as DETAILS
+    detail=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
+    official_older=verified_other_season_evidence(detail)
+    updated,report=reconcile(original,published,
+                             other_season_urls=official_older)
     if check:
         if updated!=original:
             raise ValueError("discovery queue out of sync with canonical catalog")

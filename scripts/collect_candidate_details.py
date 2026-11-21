@@ -617,6 +617,23 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 source_id=db.execute("SELECT id FROM sources WHERE official_url=?",
                                      (source["official_url"],)).fetchone()["id"]
                 page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
+                if item["source_key"]=="opera-roma-season-2026-27":
+                    from opera_atlas.roma_detail_parser import official_rome_other_season
+                    other=official_rome_other_season(page.html,url=item["official_url"])
+                    if other is not None:
+                        # An explicit season on the exact official production
+                        # page is positive evidence of a historical listing;
+                        # do not invent current performances from index links.
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],"source_key":item["source_key"],
+                            "source_url":item["official_url"],
+                            "content_sha256":page.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                            "status":"out_of_monitored_season",
+                            "official_season":other}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_other_season","rows":0})
+                        continue
                 # Source-specific adapters may supply a compound official bill.
                 # The central program publisher handles all compound programs
                 # identically; never mislabel the whole ticket as one opera.

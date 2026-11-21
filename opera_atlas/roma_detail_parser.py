@@ -121,6 +121,56 @@ class OfficialCredits(HTMLParser):
         self._flush()
 
 
+
+def official_rome_other_season(html:str,*,url:str)->str|None:
+    """Return a conflicting *source-declared* season, not an inferred date.
+
+    The Opera di Roma's genre index mixes multiple seasons. An event
+    explicitly labelled 2025/2026 must not consume editorial attempts for
+    the 2026/2027 source. Only a verified official page, h1 and season label
+    in its own introduction count; recommendations after the work do not.
+    """
+    target=urlsplit(url)
+    if (target.scheme!="https" or target.hostname!="www.operaroma.it"
+        or target.port is not None or target.username or target.password
+        or target.query or target.fragment
+        or not re.fullmatch(r"/spettacoli/[a-z0-9-]+/",target.path)):
+        raise ValueError("untrusted Rome event URL")
+    heading=Heading()
+    heading.feed(html)
+    if not heading.title:
+        return None
+    class OfficialIntro(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.blocked=0
+            self.parts=[]
+            self.before_h1=True
+        def handle_starttag(self,tag,attrs):
+            if tag=="h1":
+                self.before_h1=False
+            if tag in ("nav","footer","a"):
+                self.blocked+=1
+        def handle_endtag(self,tag):
+            if tag in ("nav","footer","a"):
+                self.blocked=max(0,self.blocked-1)
+        def handle_data(self,data):
+            if self.before_h1 and self.blocked==0:
+                self.parts.append(data)
+    intro=OfficialIntro()
+    intro.feed(html)
+    preface=" ".join(" ".join(intro.parts).split())[-450:]
+    observed=re.findall(r"\bStagione\s+(20\d{2})\s*/\s*(20\d{2})\b",
+                        preface,re.I)
+    if not observed:
+        return None
+    a,b=map(int,observed[-1])
+    if b!=a+1:
+        return None
+    season=f"{a}/{b}"
+    return season if season!="2026/2027" else None
+
+
 def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     """Require exact season, official h1, adjacent author credit and timed shows.
 
