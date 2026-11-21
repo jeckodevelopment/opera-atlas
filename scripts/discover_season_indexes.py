@@ -257,6 +257,8 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key=="bellini-catania-opera-2026-27":
+        return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key=="lirico-cagliari-opera-2027":
         return (bool(re.fullmatch(r"/evento/[a-z0-9-]+",path))
                 and not path.startswith("/evento/parliamo-dopera")
@@ -313,6 +315,7 @@ def validate_config(config:dict)->list[dict]:
         "petruzzelli-opera-2027":("www.fondazionepetruzzelli.it","/opera-e-balletto-2027/"),
         "verdi-trieste-season-2026-27":("www.teatroverdi-trieste.com","/it/calendario-spettacoli/"),
         "lirico-cagliari-opera-2027":("www.liricocagliari.it","/categoria-evento/opera/"),
+        "bellini-catania-opera-2026-27":("www.teatromassimobellini.it","/opere-e-balletto/"),
     }
     seen=set()
     for item in config["sources"]:
@@ -346,6 +349,8 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key=="bellini-catania-opera-2026-27":
+            valid_season=index.path=="/opere-e-balletto/" and not index.query
         elif key=="lirico-cagliari-opera-2027":
             valid_season=index.path=="/categoria-evento/opera/" and not index.query
         elif key=="verdi-trieste-season-2026-27":
