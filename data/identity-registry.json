@@ -274,6 +274,34 @@
       "title": "Accabadora",
       "composer": "Francesco Filidei",
       "authority_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
+    },
+    "le nozze di figaro|wolfgang amadeus mozart": {
+      "id": "oa-w-000045",
+      "slug": "le-nozze-di-figaro",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "authority_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    "zenobia|niccolò piccinni": {
+      "id": "oa-w-000046",
+      "slug": "zenobia",
+      "title": "Zenobia",
+      "composer": "Niccolò Piccinni",
+      "authority_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+    },
+    "arlecchino|ferruccio busoni": {
+      "id": "oa-w-000047",
+      "slug": "arlecchino",
+      "title": "Arlecchino",
+      "composer": "Ferruccio Busoni",
+      "wikidata_id": "Q922043"
+    },
+    "fidelio|ludwig van beethoven": {
+      "id": "oa-w-000048",
+      "slug": "fidelio",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "authority_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
     }
   },
   "venues": {
@@ -1192,6 +1220,38 @@
       "venue_id": "oa-v-000018",
       "slug": "la-boheme",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/",
+      "season": "2027"
+    },
+    "auto-027fde14d101fca6": {
+      "id": "oa-s-000098",
+      "work_id": "oa-w-000045",
+      "venue_id": "oa-v-000018",
+      "slug": "le-nozze-di-figaro",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/",
+      "season": "2027"
+    },
+    "auto-073615054167b041": {
+      "id": "oa-s-000099",
+      "work_id": "oa-w-000046",
+      "venue_id": "oa-v-000018",
+      "slug": "zenobia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/",
+      "season": "2027"
+    },
+    "auto-790b965de8129382": {
+      "id": "oa-s-000100",
+      "work_id": "oa-w-000047",
+      "venue_id": "oa-v-000018",
+      "slug": "arlecchino",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
+      "season": "2027"
+    },
+    "auto-a0eba5854831ebbf": {
+      "id": "oa-s-000101",
+      "work_id": "oa-w-000048",
+      "venue_id": "oa-v-000018",
+      "slug": "fidelio",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/",
       "season": "2027"
     }
   },
@@ -4015,6 +4075,120 @@
       "staging_id": "oa-s-000097",
       "original_date": "2027-12-27",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-027fde14d101fca6|2027-09-12": {
+      "id": "oa-r-000486",
+      "staging_id": "oa-s-000098",
+      "original_date": "2027-09-12",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    "auto-027fde14d101fca6|2027-09-14": {
+      "id": "oa-r-000487",
+      "staging_id": "oa-s-000098",
+      "original_date": "2027-09-14",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    "auto-027fde14d101fca6|2027-09-15": {
+      "id": "oa-r-000488",
+      "staging_id": "oa-s-000098",
+      "original_date": "2027-09-15",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    "auto-027fde14d101fca6|2027-09-16": {
+      "id": "oa-r-000489",
+      "staging_id": "oa-s-000098",
+      "original_date": "2027-09-16",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    "auto-027fde14d101fca6|2027-09-17": {
+      "id": "oa-r-000490",
+      "staging_id": "oa-s-000098",
+      "original_date": "2027-09-17",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    "auto-027fde14d101fca6|2027-09-19": {
+      "id": "oa-r-000491",
+      "staging_id": "oa-s-000098",
+      "original_date": "2027-09-19",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    "auto-073615054167b041|2027-01-27": {
+      "id": "oa-r-000492",
+      "staging_id": "oa-s-000099",
+      "original_date": "2027-01-27",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+    },
+    "auto-073615054167b041|2027-01-29": {
+      "id": "oa-r-000493",
+      "staging_id": "oa-s-000099",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+    },
+    "auto-073615054167b041|2027-01-31": {
+      "id": "oa-r-000494",
+      "staging_id": "oa-s-000099",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+    },
+    "auto-073615054167b041|2027-02-02": {
+      "id": "oa-r-000495",
+      "staging_id": "oa-s-000099",
+      "original_date": "2027-02-02",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+    },
+    "auto-790b965de8129382|2027-05-15": {
+      "id": "oa-r-000496",
+      "staging_id": "oa-s-000100",
+      "original_date": "2027-05-15",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+    },
+    "auto-790b965de8129382|2027-05-18": {
+      "id": "oa-r-000497",
+      "staging_id": "oa-s-000100",
+      "original_date": "2027-05-18",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+    },
+    "auto-790b965de8129382|2027-05-21": {
+      "id": "oa-r-000498",
+      "staging_id": "oa-s-000100",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+    },
+    "auto-790b965de8129382|2027-05-23": {
+      "id": "oa-r-000499",
+      "staging_id": "oa-s-000100",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+    },
+    "auto-a0eba5854831ebbf|2027-11-19": {
+      "id": "oa-r-000500",
+      "staging_id": "oa-s-000101",
+      "original_date": "2027-11-19",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+    },
+    "auto-a0eba5854831ebbf|2027-11-21": {
+      "id": "oa-r-000501",
+      "staging_id": "oa-s-000101",
+      "original_date": "2027-11-21",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+    },
+    "auto-a0eba5854831ebbf|2027-11-23": {
+      "id": "oa-r-000502",
+      "staging_id": "oa-s-000101",
+      "original_date": "2027-11-23",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+    },
+    "auto-a0eba5854831ebbf|2027-11-24": {
+      "id": "oa-r-000503",
+      "staging_id": "oa-s-000101",
+      "original_date": "2027-11-24",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+    },
+    "auto-a0eba5854831ebbf|2027-11-25": {
+      "id": "oa-r-000504",
+      "staging_id": "oa-s-000101",
+      "original_date": "2027-11-25",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
     }
   }
 }

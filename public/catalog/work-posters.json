@@ -396,6 +396,42 @@
       "alt": "Grafica ufficiale del Teatro Comunale di Bologna per Accabadora di Francesco Filidei, stagione 2027",
       "credit": "Teatro Comunale di Bologna, materiale ufficiale di stagione 2027",
       "license": "© Teatro Comunale di Bologna; diritti riservati, visualizzazione da sito ufficiale"
+    },
+    "oa-w-000045": {
+      "work_id": "oa-w-000045",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Locandina_Nozze_di_Figaro.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Locandina_Nozze_di_Figaro.jpg",
+      "alt": "Locandina storica della prima rappresentazione viennese delle Nozze di Figaro (1786), non produzione attuale",
+      "credit": "Wikimedia Commons · autore ignoto, locandina originale del 1786",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Locandina_Nozze_di_Figaro.jpg"
+    },
+    "oa-w-000046": {
+      "work_id": "oa-w-000046",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Metastasio_-_Zenobia_-_Herissant_Vol.06_-_Paris_1780.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Metastasio_-_Zenobia_-_Herissant_Vol.06_-_Paris_1780.png",
+      "alt": "Illustrazione storica del libretto Zenobia di Pietro Metastasio (1780), testo utilizzato anche da Niccolò Piccinni; non è il manifesto della produzione attuale",
+      "credit": "Jean-Michel Moreau le Jeune · Zenobia di Pietro Metastasio (1780), Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Metastasio_-_Zenobia_-_Herissant_Vol.06_-_Paris_1780.png"
+    },
+    "oa-w-000047": {
+      "work_id": "oa-w-000047",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Turandot-Arlechino_Premier_Poster_600391.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Turandot-Arlechino_Premier_Poster_600391.jpg",
+      "alt": "Manifesto originale del 1917 per la prima di Arlecchino e Turandot di Ferruccio Busoni, non produzione attuale",
+      "credit": "Wikimedia Commons · manifesto storico del 1917, autore ignoto",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Turandot-Arlechino_Premier_Poster_600391.jpg"
+    },
+    "oa-w-000048": {
+      "work_id": "oa-w-000048",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fidelio.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fidelio.jpg",
+      "alt": "Locandina storica di una rappresentazione del Fidelio di Ludwig van Beethoven a Bonn, non produzione attuale",
+      "credit": "Wikimedia Commons · documento storico teatrale di Bonn",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Fidelio.jpg"
     }
   }
 }

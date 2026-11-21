@@ -2916,6 +2916,126 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-027fde14d101fca6",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/",
+      "dates": [
+        [
+          "2027-09-12",
+          "20:30"
+        ],
+        [
+          "2027-09-14",
+          "20:30"
+        ],
+        [
+          "2027-09-15",
+          "18:00"
+        ],
+        [
+          "2027-09-16",
+          "20:30"
+        ],
+        [
+          "2027-09-17",
+          "20:30"
+        ],
+        [
+          "2027-09-19",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-073615054167b041",
+      "title": "Zenobia",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/",
+      "dates": [
+        [
+          "2027-01-27",
+          "20:30"
+        ],
+        [
+          "2027-01-29",
+          "20:30"
+        ],
+        [
+          "2027-01-31",
+          "18:00"
+        ],
+        [
+          "2027-02-02",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-790b965de8129382",
+      "title": "Arlecchino",
+      "composer": "Ferruccio Busoni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
+      "dates": [
+        [
+          "2027-05-15",
+          "20:30"
+        ],
+        [
+          "2027-05-18",
+          "20:30"
+        ],
+        [
+          "2027-05-21",
+          "18:00"
+        ],
+        [
+          "2027-05-23",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-a0eba5854831ebbf",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/",
+      "dates": [
+        [
+          "2027-11-19",
+          "20:30"
+        ],
+        [
+          "2027-11-21",
+          "18:00"
+        ],
+        [
+          "2027-11-23",
+          "20:30"
+        ],
+        [
+          "2027-11-24",
+          "20:30"
+        ],
+        [
+          "2027-11-25",
+          "18:00"
+        ]
+      ]
     }
   ]
 }

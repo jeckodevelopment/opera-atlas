@@ -2372,6 +2372,24 @@
       ]
     },
     {
+      "id": "curated:auto-073615054167b041:2027-01-27",
+      "starts_at": "2027-01-27T20:30:00+01:00",
+      "local_date": "2027-01-27",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Zenobia",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-01-28",
       "starts_at": "2027-01-28T20:00:00+01:00",
       "local_date": "2027-01-28",
@@ -2441,6 +2459,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:auto-073615054167b041:2027-01-29",
+      "starts_at": "2027-01-29T20:30:00+01:00",
+      "local_date": "2027-01-29",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Zenobia",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
       ]
     },
     {
@@ -2570,6 +2606,24 @@
       ]
     },
     {
+      "id": "curated:auto-073615054167b041:2027-01-31",
+      "starts_at": "2027-01-31T18:00:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Zenobia",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-02-02",
       "starts_at": "2027-02-02T15:00:00+01:00",
       "local_date": "2027-02-02",
@@ -2585,6 +2639,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+      ]
+    },
+    {
+      "id": "curated:auto-073615054167b041:2027-02-02",
+      "starts_at": "2027-02-02T18:00:00+01:00",
+      "local_date": "2027-02-02",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Zenobia",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
       ]
     },
     {
@@ -5360,6 +5432,24 @@
       ]
     },
     {
+      "id": "curated:auto-790b965de8129382:2027-05-15",
+      "starts_at": "2027-05-15T20:30:00+02:00",
+      "local_date": "2027-05-15",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Arlecchino",
+      "composer": "Ferruccio Busoni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+      ]
+    },
+    {
       "id": "curated:regio-carmen-2027:2027-05-16",
       "starts_at": "2027-05-16T15:00:00+02:00",
       "local_date": "2027-05-16",
@@ -5396,6 +5486,24 @@
       ]
     },
     {
+      "id": "curated:auto-790b965de8129382:2027-05-18",
+      "starts_at": "2027-05-18T20:30:00+02:00",
+      "local_date": "2027-05-18",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Arlecchino",
+      "composer": "Ferruccio Busoni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+      ]
+    },
+    {
       "id": "curated:regio-carmen-2027:2027-05-19",
       "starts_at": "2027-05-19T19:30:00+02:00",
       "local_date": "2027-05-19",
@@ -5429,6 +5537,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/tristan-und-isolde"
+      ]
+    },
+    {
+      "id": "curated:auto-790b965de8129382:2027-05-21",
+      "starts_at": "2027-05-21T18:00:00+02:00",
+      "local_date": "2027-05-21",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Arlecchino",
+      "composer": "Ferruccio Busoni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
       ]
     },
     {
@@ -5573,6 +5699,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/tristan-und-isolde"
+      ]
+    },
+    {
+      "id": "curated:auto-790b965de8129382:2027-05-23",
+      "starts_at": "2027-05-23T18:00:00+02:00",
+      "local_date": "2027-05-23",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Arlecchino",
+      "composer": "Ferruccio Busoni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
       ]
     },
     {
@@ -7322,6 +7466,60 @@
       ]
     },
     {
+      "id": "curated:auto-027fde14d101fca6:2027-09-12",
+      "starts_at": "2027-09-12T20:30:00+02:00",
+      "local_date": "2027-09-12",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-027fde14d101fca6:2027-09-14",
+      "starts_at": "2027-09-14T20:30:00+02:00",
+      "local_date": "2027-09-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-027fde14d101fca6:2027-09-15",
+      "starts_at": "2027-09-15T18:00:00+02:00",
+      "local_date": "2027-09-15",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
       "id": "curated:auto-05dfa4b5d5270a7f:2027-09-16",
       "starts_at": "2027-09-16T20:00:00+02:00",
       "local_date": "2027-09-16",
@@ -7340,6 +7538,42 @@
       ]
     },
     {
+      "id": "curated:auto-027fde14d101fca6:2027-09-16",
+      "starts_at": "2027-09-16T20:30:00+02:00",
+      "local_date": "2027-09-16",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-027fde14d101fca6:2027-09-17",
+      "starts_at": "2027-09-17T20:30:00+02:00",
+      "local_date": "2027-09-17",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+      ]
+    },
+    {
       "id": "curated:auto-05dfa4b5d5270a7f:2027-09-19",
       "starts_at": "2027-09-19T15:30:00+02:00",
       "local_date": "2027-09-19",
@@ -7355,6 +7589,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/norma-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-027fde14d101fca6:2027-09-19",
+      "starts_at": "2027-09-19T18:00:00+02:00",
+      "local_date": "2027-09-19",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
       ]
     },
     {
@@ -8132,6 +8384,60 @@
       ]
     },
     {
+      "id": "curated:auto-a0eba5854831ebbf:2027-11-19",
+      "starts_at": "2027-11-19T20:30:00+01:00",
+      "local_date": "2027-11-19",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a0eba5854831ebbf:2027-11-21",
+      "starts_at": "2027-11-21T18:00:00+01:00",
+      "local_date": "2027-11-21",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a0eba5854831ebbf:2027-11-23",
+      "starts_at": "2027-11-23T20:30:00+01:00",
+      "local_date": "2027-11-23",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+      ]
+    },
+    {
       "id": "curated:auto-6339afba8bcc8028:2027-11-24",
       "starts_at": "2027-11-24T19:00:00+01:00",
       "local_date": "2027-11-24",
@@ -8147,6 +8453,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/carmen-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-a0eba5854831ebbf:2027-11-24",
+      "starts_at": "2027-11-24T20:30:00+01:00",
+      "local_date": "2027-11-24",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a0eba5854831ebbf:2027-11-25",
+      "starts_at": "2027-11-25T18:00:00+01:00",
+      "local_date": "2027-11-25",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
       ]
     },
     {
