@@ -257,3 +257,21 @@ Il workflow conserva il controllo sulla provenienza dell'immagine e
 l'obbligo di date, sede e compositore ufficiali; l'attivazione non
 costituisce un bypass della validazione né garantisce che una pagina
 incompleta venga pubblicata.
+
+## Chiusura immediata delle candidate già pubblicate
+
+Le candidate che hanno un URL ufficiale **identico** a una produzione
+nel manifesto canonico non sono più una revisione aperta: passano a
+`already_catalogued` e conservano ID, URL e storico delle scansioni.
+La correzione del 21 novembre ha riclassificato in questo modo le
+fonti ufficiali de *La rondine*, *L'arca di Noè* e *La clemenza di Tito*,
+già pubblicate con nove recite complessive.
+
+Il workflow esegue ora `reconcile_published_candidates` anche nella
+fase iniziale di pubblicazione dai dati verificati in cache e salva la
+coda riconciliata nello stesso checkpoint. La riconciliazione continua
+dopo l'acquisizione delle nuove fonti, proteggendo i casi in cui una
+produzione diventi pubblicabile solo durante il refresh corrente.
+La coda non viene azzerata artificialmente: le candidate senza opera,
+compositore o orari verificati restano aperte finché non c'è evidenza
+sufficiente o una classificazione ufficiale di esclusione.

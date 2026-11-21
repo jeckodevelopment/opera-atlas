@@ -24,6 +24,17 @@ class RefreshWorkflowPathTests(unittest.TestCase):
         self.assertIn("python -m scripts.auto_catalogue",text)
         self.assertIn("python -m scripts.publish_work_editorial",text)
         self.assertIn("python -m scripts.publish_work_posters",text)
+    def test_cached_publication_immediately_closes_verified_candidate_status(self):
+        workflow=WORKFLOW.read_text(encoding="utf-8")
+        early=workflow.split("- name: Early publish previously verified known-opera recite",1)[1]
+        early=early.split("- name: Publish cached recite before slow source scans",1)[0]
+        self.assertLess(early.index("python -m scripts.auto_catalogue"),
+                        early.index("python -m scripts.reconcile_published_candidates"))
+        self.assertLess(early.index("python -m scripts.publish_programs"),
+                        early.index("python -m scripts.reconcile_published_candidates"))
+        self.assertIn("git add data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json",workflow)
+        self.assertIn("python -m scripts.reconcile_published_candidates",workflow)
+
     def test_catalog_git_staging_has_no_embedded_duplicate_command(self):
         workflow=WORKFLOW.read_text(encoding="utf-8")
         stage=[line.strip() for line in workflow.splitlines()
