@@ -32,6 +32,10 @@ on:
       - 'tests/test_candidate_detail_evidence.py'
       - 'tests/test_national_season_indexes.py'
       - 'data/verified-time-evidence.json'
+      # Complete authoritative editorial records must publish without
+      # requiring an unrelated parser or test change in the same PR.
+      - 'data/verified-work-authority-seeds.json'
+      - 'data/verified-work-editorial-attribution.json'
       - 'site/work-synopses.json'
       - 'site/work-history.json'
       - 'data/archival-work-images.json'
