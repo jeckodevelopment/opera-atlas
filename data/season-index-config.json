@@ -43,6 +43,20 @@
       "url": "https://www.carlofelice.it/rassegna-stagione-opera-danza-musical-2026-27/",
       "access_status": "approved",
       "min_links": 7
+    },
+    {
+      "key": "donizetti-opera-2026",
+      "official_url": "https://www.donizettiopera.org/",
+      "url": "https://www.donizettiopera.org/it/opere-2026/",
+      "access_status": "approved",
+      "min_links": 3
+    },
+    {
+      "key": "teatro-grande-opera-2026",
+      "official_url": "https://teatrogrande.it/",
+      "url": "https://teatrogrande.it/it",
+      "access_status": "approved",
+      "min_links": 2
     }
   ]
 }
