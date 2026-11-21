@@ -88,7 +88,7 @@ def official_title_hint(candidate:dict)->str|None:
     if path.endswith("-anteprima-under30"):return None
     return OFFICIAL_TITLE_ALIASES.get((key,path),path.replace("-"," "))
 
-def resolve_identity(title_hint:str,*,fetch=read_api)->dict|None:
+def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api)->dict|None:
     query=fetch(wikidata_url("wbsearchentities",search=title_hint,language="it",
                             uselang="it",type="item",limit=8))
     matches=[x for x in query.get("search",[])
@@ -111,14 +111,22 @@ def resolve_identity(title_hint:str,*,fetch=read_api)->dict|None:
         wiki=entity.get("sitelinks",{}).get("itwiki",{}).get("title")
         if len(composers)!=1 or not isinstance(wiki,str) or len(wiki)>150:continue
         accepted.append((qid,label,next(iter(composers)),wiki))
-    if len(accepted)!=1:return None
-    qid,title,composer_id,wiki_title=accepted[0]
-    composer_entity=fetch(wikidata_url("wbgetentities",ids=composer_id,
-                                      props="labels",languages="it|en")).get(
-                                          "entities",{}).get(composer_id,{})
-    labels=composer_entity.get("labels",{})
-    composer=labels.get("it",labels.get("en",{})).get("value")
-    if not isinstance(composer,str) or not 3<=len(composer)<=100:return None
+    if not accepted:return None
+    # Resolve all composer entities, not merely the first title hit. A title
+    # with multiple composers (Rossini/Paisiello, Puccini/Leoncavallo) cannot
+    # establish a unique work without independent official composer evidence.
+    composer_ids=sorted({item[2] for item in accepted})
+    people=fetch(wikidata_url("wbgetentities",ids="|".join(composer_ids),
+                                 props="labels",languages="it|en")).get("entities",{})
+    verified=[]
+    for qid,title,composer_id,wiki_title in accepted:
+        labels=people.get(composer_id,{}).get("labels",{})
+        composer=labels.get("it",labels.get("en",{})).get("value")
+        if not isinstance(composer,str) or not 3<=len(composer)<=100:continue
+        if composer_hint and slugify(composer)!=slugify(composer_hint):continue
+        verified.append((qid,title,composer,wiki_title))
+    if len(verified)!=1:return None
+    qid,title,composer,wiki_title=verified[0]
     return {"title":title,"composer":composer,"wikidata_id":qid,
             "wikipedia_title":wiki_title,
             "authority_url":"https://www.wikidata.org/wiki/"+qid,
@@ -289,7 +297,7 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
         if not isinstance(uri,str) or urlsplit(uri).hostname!=urlsplit(source["official_url"]).hostname:
             continue
         hint=official_title_hint(item)
-        if hint is None or slugify(hint) in known_slugs:continue
+        if hint is None:continue
         options.append(item)
     options.sort(key=lambda x:x["id"])
     if not options:return []
@@ -311,6 +319,7 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
 
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
+             evidence:dict|None=None,
              generate=make_synopsis,generate_history=make_history,api_key:str="",
              allow_authority:bool=False,prepared:dict|None=None):
     existing_works={x["candidate_id"]:x.copy() for x in existing.get("works",[])}
@@ -323,12 +332,26 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
     for item in options:
         cid=item["id"]
         slug=slugify(official_title_hint(item))
-        material=prepared.get(slug)
+        # A prewritten title-keyed synopsis is not safe for a new homonym.
+        # Resolve its own facts instead of copying the established work card.
+        material=prepared.get(slug) if slug not in known_slugs else None
+        detail=[x for x in (evidence or {}).get("evidence",[])
+                if x.get("candidate_id")==cid
+                and x.get("source_key")==item["source_key"]
+                and x.get("source_url")==item["official_url"]
+                and x.get("status")=="needs_editorial_review"]
+        composers={normalized(x.get("composer","")):x.get("composer")
+                   for d in detail for x in d.get("event_facts",[])
+                   if isinstance(x,dict) and isinstance(x.get("composer"),str)
+                   and x["composer"].strip()}
+        # Multiple contradictory composer observations cannot be resolved.
+        composer_hint=next(iter(composers.values())) if len(composers)==1 else None
         if not api_key and not (allow_authority and material):
             statuses.append({"candidate_id":cid,"status":"model_not_configured"})
             continue
         try:
-            identity=resolve(official_title_hint(item))
+            identity=(resolve(official_title_hint(item),composer_hint=composer_hint)
+                      if composer_hint else resolve(official_title_hint(item)))
             if identity is None:raise ValueError("authority_not_unique")
             if material is not None:
                 summary=material["synopsis"]
@@ -365,9 +388,11 @@ def main():
     previous=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {
         "schema_version":1,"works":[]}
     api_key=os.environ.get("ATLAS_OPENAI_API_KEY","") if args.allow_network else ""
+    from scripts.collect_candidate_details import OUTPUT as DETAIL_EVIDENCE
+    evidence=json.loads(DETAIL_EVIDENCE.read_text(encoding="utf-8")) if DETAIL_EVIDENCE.exists() else {"evidence":[]}
     result,statuses=research(candidates,previous,{x["slug"] for x in known["works"].values()},
                              today=date.today(),api_key=api_key,
-                             allow_authority=args.allow_network)
+                             evidence=evidence,allow_authority=args.allow_network)
     _write_atomic(OUT,result)
     _write_atomic(HEALTH,{"schema_version":1,"checked_at":datetime.now(timezone.utc).isoformat(
         timespec="seconds"),"outcomes":statuses})
