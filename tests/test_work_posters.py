@@ -230,6 +230,35 @@ class PosterPublicationTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     posters.check()
 
+    def test_new_historical_images_have_exact_work_identity_and_composer(self):
+        from scripts.publish_catalog_v2 import REGISTRY
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
+        archive=json.loads(posters.ARCHIVE.read_text(encoding="utf-8"))
+        published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
+        cases={
+            "oa-w-000039":("Tristan und Isolde","Richard Wagner"),
+            "oa-w-000040":("La straniera","Vincenzo Bellini"),
+            "oa-w-000042":("I due Foscari","Giuseppe Verdi"),
+            "oa-w-000043":("Il ritorno di Ulisse in patria","Claudio Monteverdi"),
+        }
+        for wid,(title,composer) in cases.items():
+            with self.subTest(title=title):
+                work=next(w for w in registry.values() if w["id"]==wid)
+                self.assertEqual((work["title"],work["composer"]),(title,composer))
+                record=archive["works_by_id"][wid]
+                self.assertEqual(record["work_id"],wid)
+                self.assertEqual(record["composer"],composer)
+                self.assertIn(work["slug"],archive["works"])
+                poster=published[wid]
+                self.assertEqual(poster["kind"],"archival_work_image")
+                self.assertIn("commons.wikimedia.org/wiki/File:",poster["source_url"])
+                self.assertIn("Special:Redirect/file/",poster["image_url"])
+                self.assertEqual(poster["work_id"],wid)
+        for wid in ("oa-w-000041","oa-w-000044"):
+            # Modern works keep distinct, truthfully labelled original covers,
+            # never the historical poster of another composition.
+            self.assertEqual(published[wid]["kind"],"original_editorial_cover")
+
     def test_full_catalog_poster_coverage_and_stable_work_provenance(self):
         from scripts.publish_catalog_v2 import REGISTRY
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
