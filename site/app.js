@@ -252,6 +252,14 @@ const HOME_REPERTOIRE_IDS=Object.freeze([
   "oa-w-000021"  // Lucia di Lammermoor — Donizetti
 ]);
 // Images belong to the venue registry, not to a particular performance.
+const HOME_THEATRE_ROUTES=Object.freeze([
+  "torino/teatro-regio",
+  "verona/arena-di-verona",
+  "milano/teatro-alla-scala",
+  "genova/teatro-carlo-felice",
+  "venezia/teatro-la-fenice",
+  "napoli/teatro-di-san-carlo"
+]);
 const homeVenueProfiles=new Map();
 async function loadHomeVenueProfiles() {
   const entries=await window.OperaAtlasCatalog.venues();
@@ -280,19 +288,25 @@ function renderDiscoveries() {
     const {url,event}=selected;
     workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image"),workDescriptions[event.work_id]||(event.work_slug==="la-boheme"?"":workDescriptions[event.work_slug]||"")));
   }
-  for(const [url,event] of [...venues].sort((a,b)=>{
-    const priority=x=>x.municipality==="Torino" && (x.venue==="Teatro Regio" || x.venue==="Teatro Regio di Torino") ? 0 : 1;
-    return priority(a[1])-priority(b[1]) || a[1].venue.localeCompare(b[1].venue,"it");
-  }).slice(0,6)){
-    const path=event.city_slug+"/"+event.venue_slug;
+  // Six intentionally curated destinations, not the first six alphabetical
+  // performance venues. San Carlo must appear even before its programme
+  // has been ingested into the separate performance feed.
+  for(const path of HOME_THEATRE_ROUTES){
     const profile=homeVenueProfiles.get(path);
+    const matching=[...venues].find(([url])=>url.endsWith("/"+path+"/"));
+    const event=matching?.[1] || (profile ? {
+      venue:profile.name,municipality:profile.city,region:profile.region,
+      city_slug:profile.city_slug,venue_slug:profile.slug
+    } : null);
+    if(!event)continue;
+    const url=matching?.[0] || window.OperaAtlasCatalog.urls(event).venue;
     const illustrated={...event,
       photo_file:profile?.photo_file,
       photo_source_url:profile?.photo_source_url,
-      // Never substitute a city photograph belonging to a different theatre.
       no_city_fallback:!!profile
     };
-    venueBox.append(imageTile(url,event.venue,event.municipality,editorialImage("venue",illustrated,"discovery-image")));
+    venueBox.append(imageTile(url,profile?.name||event.venue,event.municipality,
+      editorialImage("venue",illustrated,"discovery-image")));
   }
 }
 async function renderFestivals(){
