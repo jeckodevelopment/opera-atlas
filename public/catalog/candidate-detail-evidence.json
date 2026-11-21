@@ -178,7 +178,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T14:29:39+00:00",
+      "checked_at": "2026-11-21T14:45:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -350,8 +350,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "48c00660266b6bb7890132e2555ecc3c5c8dc0d6cb42037498795700a7c7df58",
-      "checked_at": "2026-11-21T14:28:45+00:00",
+      "content_sha256": "e7e72234abbdfdb3bcd6c8c3590da8bda907d29768444df7d8accf7df8f6f110",
+      "checked_at": "2026-11-21T14:44:18+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -379,7 +379,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T14:28:53+00:00",
+      "checked_at": "2026-11-21T14:44:29+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -416,44 +416,44 @@
       "candidate_id": "oa-index-2ffd782e0a99b2433e13",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
-      "content_sha256": "a17f3737e7d42a9265a2c2f120800b58383e431e32ef8c98c9e7682954af130b",
-      "checked_at": "2026-11-21T14:29:17+00:00",
+      "content_sha256": "6418ea58f20ba41d5739e49484926ca5176d20fb3206bfedf1a8880ba73aa7e0",
+      "checked_at": "2026-11-21T14:44:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-10-07",
-          "starts_at": "2027-10-07T18:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Richard Wagner (1813-1833)"
+          "starts_at": "2027-10-07T18:00:00+02:00"
         },
         {
           "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-10-09",
-          "starts_at": "2027-10-09T18:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Richard Wagner (1813-1833)"
+          "starts_at": "2027-10-09T18:00:00+02:00"
         },
         {
           "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-10-10",
-          "starts_at": "2027-10-10T16:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Richard Wagner (1813-1833)"
+          "starts_at": "2027-10-10T16:00:00+02:00"
         },
         {
           "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-10-12",
-          "starts_at": "2027-10-12T18:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Richard Wagner (1813-1833)"
+          "starts_at": "2027-10-12T18:00:00+02:00"
         },
         {
           "event_title": "Tristan und Isolde",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-10-13",
-          "starts_at": "2027-10-13T18:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Richard Wagner (1813-1833)"
+          "starts_at": "2027-10-13T18:00:00+02:00"
         }
       ]
     },
@@ -461,23 +461,23 @@
       "candidate_id": "oa-index-3c920820abeb859e7ffa",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
-      "content_sha256": "9f7af9f9e538ed7b3d304b1ca4fc74fd7e6a893c500a3bb67960157aac1f436f",
-      "checked_at": "2026-11-21T14:29:18+00:00",
+      "content_sha256": "8747df01fb4159dfb5b04fa9b254ddb78d0b5bc97c639bc7e843563d94b5d4dd",
+      "checked_at": "2026-11-21T14:44:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "La straniera",
-          "date": "2027-01-22",
-          "starts_at": "2027-01-22T20:00:00+01:00",
+          "composer": "Vincenzo Bellini",
           "venue": "Teatro Auditorium Manzoni",
-          "composer": "Vincenzo Bellini (1801-1835)"
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T20:00:00+01:00"
         },
         {
           "event_title": "La straniera",
-          "date": "2027-01-24",
-          "starts_at": "2027-01-24T16:00:00+01:00",
+          "composer": "Vincenzo Bellini",
           "venue": "Teatro Auditorium Manzoni",
-          "composer": "Vincenzo Bellini (1801-1835)"
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T16:00:00+01:00"
         }
       ]
     },
@@ -790,7 +790,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T14:29:27+00:00",
+      "checked_at": "2026-11-21T14:44:50+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -813,30 +813,30 @@
       "candidate_id": "oa-index-7adb8eed9d624ca82bf5",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
-      "content_sha256": "8854b56058bfb58300baa14dd3b79089a8c16e69103547118dd44fb89305f786",
-      "checked_at": "2026-11-21T14:29:28+00:00",
+      "content_sha256": "48c70186bf4aca0be4d11064ce8c0e7ba873d9552580215155cfb162dc062305",
+      "checked_at": "2026-11-21T14:44:51+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Vanessa",
+          "composer": "Samuel Barber",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-06-11",
-          "starts_at": "2027-06-11T20:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Samuel Barber (1910-1981)"
+          "starts_at": "2027-06-11T20:00:00+02:00"
         },
         {
           "event_title": "Vanessa",
+          "composer": "Samuel Barber",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-06-13",
-          "starts_at": "2027-06-13T16:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Samuel Barber (1910-1981)"
+          "starts_at": "2027-06-13T16:00:00+02:00"
         },
         {
           "event_title": "Vanessa",
+          "composer": "Samuel Barber",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-06-16",
-          "starts_at": "2027-06-16T20:00:00+02:00",
-          "venue": "Teatro Comunale",
-          "composer": "Samuel Barber (1910-1981)"
+          "starts_at": "2027-06-16T20:00:00+02:00"
         }
       ]
     },
@@ -1403,7 +1403,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T14:29:39+00:00",
+      "checked_at": "2026-11-21T14:45:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1440,23 +1440,23 @@
       "candidate_id": "oa-index-ce32b1104cdb579dc299",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
-      "content_sha256": "7c43f50d25fcd2bd66f56a136abff8bb226232fda4e25f91a0ad47bcf5394510",
-      "checked_at": "2026-11-21T14:29:01+00:00",
+      "content_sha256": "d28dc3d3f4f4b2e7918cc9ee322eec9542feaff28176c404ddfddd473076c26b",
+      "checked_at": "2026-11-21T14:45:05+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "I due Foscari",
-          "date": "2027-09-23",
-          "starts_at": "2027-09-23T20:00:00+02:00",
+          "composer": "Giuseppe Verdi",
           "venue": "Teatro Auditorium Manzoni",
-          "composer": "Giuseppe Verdi (1813-1901)"
+          "date": "2027-09-23",
+          "starts_at": "2027-09-23T20:00:00+02:00"
         },
         {
           "event_title": "I due Foscari",
-          "date": "2027-09-26",
-          "starts_at": "2027-09-26T16:00:00+02:00",
+          "composer": "Giuseppe Verdi",
           "venue": "Teatro Auditorium Manzoni",
-          "composer": "Giuseppe Verdi (1813-1901)"
+          "date": "2027-09-26",
+          "starts_at": "2027-09-26T16:00:00+02:00"
         }
       ]
     },
@@ -1464,37 +1464,37 @@
       "candidate_id": "oa-index-cfd5a4967756ff1d51dd",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
-      "content_sha256": "0133eb2d6a9930545227a6c8bcb345910bb73849e6b5aa4b028102ead5b88841",
-      "checked_at": "2026-11-21T14:29:02+00:00",
+      "content_sha256": "7a2ff4a84264c80286756f12a8cd4b0b3347f909b8bb11ddacf531a0bd909e7e",
+      "checked_at": "2026-11-21T14:45:07+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Il ritorno di Ulisse in patria",
+          "composer": "Claudio Monteverdi",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-03-02",
-          "starts_at": "2027-03-02T20:00:00+01:00",
-          "venue": "Teatro Comunale",
-          "composer": "Claudio Monteverdi (1567-1643)"
+          "starts_at": "2027-03-02T20:00:00+01:00"
         },
         {
           "event_title": "Il ritorno di Ulisse in patria",
+          "composer": "Claudio Monteverdi",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-03-04",
-          "starts_at": "2027-03-04T20:00:00+01:00",
-          "venue": "Teatro Comunale",
-          "composer": "Claudio Monteverdi (1567-1643)"
+          "starts_at": "2027-03-04T20:00:00+01:00"
         },
         {
           "event_title": "Il ritorno di Ulisse in patria",
+          "composer": "Claudio Monteverdi",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-03-06",
-          "starts_at": "2027-03-06T20:00:00+01:00",
-          "venue": "Teatro Comunale",
-          "composer": "Claudio Monteverdi (1567-1643)"
+          "starts_at": "2027-03-06T20:00:00+01:00"
         },
         {
           "event_title": "Il ritorno di Ulisse in patria",
+          "composer": "Claudio Monteverdi",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-03-07",
-          "starts_at": "2027-03-07T16:00:00+01:00",
-          "venue": "Teatro Comunale",
-          "composer": "Claudio Monteverdi (1567-1643)"
+          "starts_at": "2027-03-07T16:00:00+01:00"
         }
       ]
     },
@@ -1606,8 +1606,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "1f00c786e18d37a35c4a46ac59742e086767d8a13db45ecd6991c3b0c081dc73",
-      "checked_at": "2026-11-21T14:28:40+00:00",
+      "content_sha256": "929607c89d475a0060c2187e0fa5449ee89ea08d1b48d1d166bc312d35ed3531",
+      "checked_at": "2026-11-21T14:45:10+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1747,30 +1747,30 @@
       "candidate_id": "oa-index-f7e2bc909527aff17c03",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
-      "content_sha256": "cc194adaa87851eef1d26520675c9a3d7715c681c703f105a2e0223d2e4f6804",
-      "checked_at": "2026-11-21T14:29:07+00:00",
+      "content_sha256": "4c94f6caecd3cc4da8193342a5d0936969fe7a7292e2788b9cc597015ec237f3",
+      "checked_at": "2026-11-21T14:44:09+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Accabadora",
+          "composer": "Francesco Filidei",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-11-26",
-          "starts_at": "2027-11-26T20:00:00+01:00",
-          "venue": "Teatro Comunale",
-          "composer": "Francesco Filidei (1973)"
+          "starts_at": "2027-11-26T20:00:00+01:00"
         },
         {
           "event_title": "Accabadora",
+          "composer": "Francesco Filidei",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-11-28",
-          "starts_at": "2027-11-28T20:00:00+01:00",
-          "venue": "Teatro Comunale",
-          "composer": "Francesco Filidei (1973)"
+          "starts_at": "2027-11-28T20:00:00+01:00"
         },
         {
           "event_title": "Accabadora",
+          "composer": "Francesco Filidei",
+          "venue": "Teatro Comunale di Bologna",
           "date": "2027-11-30",
-          "starts_at": "2027-11-30T20:00:00+01:00",
-          "venue": "Teatro Comunale",
-          "composer": "Francesco Filidei (1973)"
+          "starts_at": "2027-11-30T20:00:00+01:00"
         }
       ]
     },
