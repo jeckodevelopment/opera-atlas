@@ -51,7 +51,7 @@ function imageFor(item){
     ? {title:item.title,work_slug:item.work_slug,work_id:item.work_id,composer:item.composer}
     : type==="venue"
       ? {city:item.city,municipality:item.city,venue:item.title,
-         photo_file:item.photo_file,photo_source_url:item.photo_source_url,
+         photo_file:item.photo_file,photo_url:item.photo_url,photo_credit:item.photo_credit,photo_license:item.photo_license,photo_source_url:item.photo_source_url,
          no_city_fallback:item.independentVenue===true}
       : {city:item.city,name:item.title};
   try{return images.element(images[type](identity),"directory-image");}
@@ -133,6 +133,9 @@ async function initialize(){
           subtitle:venue.city+" · "+venue.region,
           description:venue.description,
           photo_file:venue.photo_file,
+          photo_url:venue.photo_url,
+          photo_credit:venue.photo_credit,
+          photo_license:venue.photo_license,
           photo_source_url:venue.photo_source_url,
           imageKind:"venue",
           hasPerformances:knownVenues.has(url),

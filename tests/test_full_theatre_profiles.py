@@ -44,6 +44,9 @@ class FullTheatreProfileTests(unittest.TestCase):
     def test_all_active_venues_have_individual_illustrations_and_credits(self):
         photos=[v for v in self.directory if v.get("photo_file")]
         self.assertEqual(len(photos),50)
+        external=[v for v in self.directory if v.get("photo_url")]
+        self.assertEqual([v["name"] for v in external],["Teatro Politeama Greco"])
+        self.assertEqual(external[0]["photo_license"],"CC BY 4.0")
         for venue in photos:
             self.assertTrue(venue["photo_source_url"].startswith(
                 "https://commons.wikimedia.org/wiki/File:"),venue["id"])
@@ -52,7 +55,7 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertEqual({v["name"] for v in without},
                          {"Teatro Comunale Nouveau","Teatro Politeama Greco"})
         self.assertEqual(next(v["photo_status"] for v in without if v["name"]=="Teatro Politeama Greco"),
-                         "review_pending")
+                         "verified")
         self.assertNotEqual(next(v["photo_file"] for v in photos if v["name"]=="Arena di Verona"),
                             next(v["photo_file"] for v in photos if v["name"]=="Teatro Filarmonico"))
 
@@ -68,7 +71,9 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertIn("openstreetmap.org/search",detail)
         self.assertIn('const venueImageEvent=',detail)
         self.assertIn('photo_file:item.photo_file',directory)
+        self.assertIn('photo_url:item.photo_url',directory)
         self.assertIn('photo_file:venue.photo_file',directory)
+        self.assertIn('photo_url:venue.photo_url',directory)
         script=(SITE/"image-client.js").read_text(encoding="utf-8")
         self.assertIn("event?.photo_file",script)
         self.assertIn('const verified=event?.photo_file || knownVenueFile;',script)

@@ -494,6 +494,9 @@ async function initialize() {
       const venueImageEvent={
         ...first,
         photo_file:selected.venue?.photo_file || theatreProfile?.photo_file,
+        photo_url:selected.venue?.photo_url || theatreProfile?.photo_url,
+        photo_credit:selected.venue?.photo_credit || theatreProfile?.photo_credit,
+        photo_license:selected.venue?.photo_license || theatreProfile?.photo_license,
         photo_source_url:selected.venue?.photo_source_url || theatreProfile?.photo_source_url,
         no_city_fallback:!!selected.venue
       };
@@ -502,7 +505,7 @@ async function initialize() {
       const photoSource=venueImageEvent.photo_source_url;
       if(photoSource && safeSource(photoSource)){
         const caption=node("figcaption","work-image-credit");
-        const attribution=link("Fotografia del teatro · autore e licenza",photoSource,"");
+        const attribution=link(venueImageEvent.photo_credit || "Fotografia del teatro · autore e licenza",photoSource,"");
         attribution.target="_blank";attribution.rel="noopener noreferrer";
         caption.append(attribution);figure.append(caption);
       }

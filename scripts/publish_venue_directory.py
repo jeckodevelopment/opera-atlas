@@ -38,7 +38,17 @@ def build(source:dict, registry:dict)->dict:
             raise ValueError("missing theatre address: "+venue["id"])
         if not isinstance(venue.get("history"),str) or len(venue["history"].strip())<80:
             raise ValueError("missing theatre history: "+venue["id"])
-        if venue.get("photo_file"):
+        if venue.get("photo_url"):
+            # External images require reviewable HTTPS provenance, attribution
+            # and a declared reuse license, never a bare hotlinked image.
+            if not (isinstance(venue["photo_url"],str) and
+                    venue["photo_url"].startswith("https://salentosagreeventi.it/media/places/") and
+                    venue["photo_url"].endswith(".webp") and
+                    isinstance(venue.get("photo_source_url"),str) and
+                    venue["photo_source_url"].startswith("https://") and
+                    venue.get("photo_credit") and venue.get("photo_license")=="CC BY 4.0"):
+                raise ValueError("unverified external theatre photograph: "+venue["id"])
+        elif venue.get("photo_file"):
             if not isinstance(venue.get("photo_source_url"),str) or not venue["photo_source_url"].startswith("https://commons.wikimedia.org/wiki/File:"):
                 raise ValueError("theatre photo needs provenance: "+venue["id"])
         elif venue.get("status")!="sede_storica_cessata" and venue.get("photo_status")!="review_pending":
