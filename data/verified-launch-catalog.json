@@ -4122,6 +4122,159 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-05aab24f386e6aa8",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatripiacenza.it/event/la-clemenza-di-tito/",
+      "dates": [
+        [
+          "2027-03-05",
+          "20:00"
+        ],
+        [
+          "2027-03-07",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1a517d22f1477341",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatripiacenza.it/event/la-cenerentola-2/",
+      "dates": [
+        [
+          "2027-02-12",
+          "20:00"
+        ],
+        [
+          "2027-02-14",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1d35c5f06b99b17b",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "dates": [
+        [
+          "2026-11-27",
+          "20:00"
+        ],
+        [
+          "2026-11-29",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-29e61184f06223fa",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "dates": [
+        [
+          "2027-01-15",
+          "20:00"
+        ],
+        [
+          "2027-01-17",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-6ad3d8aa3ac55b14",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimobellini.it/eventi/carmen-2026/",
+      "dates": [
+        [
+          "2027-02-14",
+          "20:30"
+        ],
+        [
+          "2027-02-16",
+          "17:30"
+        ],
+        [
+          "2027-02-17",
+          "20:30"
+        ],
+        [
+          "2027-02-18",
+          "17:30"
+        ],
+        [
+          "2027-02-19",
+          "17:30"
+        ],
+        [
+          "2027-02-20",
+          "17:30"
+        ],
+        [
+          "2027-02-21",
+          "17:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-bce266e873c77688",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatripiacenza.it/event/aida/",
+      "dates": [
+        [
+          "2027-11-19",
+          "20:00"
+        ],
+        [
+          "2027-11-21",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-bf715bf96f42b6bf",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "dates": [
+        [
+          "2027-03-12",
+          "20:00"
+        ],
+        [
+          "2027-03-14",
+          "16:00"
+        ]
+      ]
     }
   ]
 }

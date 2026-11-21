@@ -1519,6 +1519,24 @@
       ]
     },
     {
+      "id": "curated:auto-1d35c5f06b99b17b:2026-11-27",
+      "starts_at": "2026-11-27T20:00:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-dfe824fe3301174d:2026-11-27",
       "starts_at": "2026-11-27T20:00:00+01:00",
       "local_date": "2026-11-27",
@@ -1607,6 +1625,24 @@
       "longitude": null,
       "sources": [
         "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+      ]
+    },
+    {
+      "id": "curated:auto-1d35c5f06b99b17b:2026-11-29",
+      "starts_at": "2026-11-29T16:00:00+01:00",
+      "local_date": "2026-11-29",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
       ]
     },
     {
@@ -2354,6 +2390,24 @@
       ]
     },
     {
+      "id": "curated:auto-29e61184f06223fa:2027-01-15",
+      "starts_at": "2027-01-15T20:00:00+01:00",
+      "local_date": "2027-01-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-b932c89149fad91c:2027-01-15",
       "starts_at": "2027-01-15T20:00:00+01:00",
       "local_date": "2027-01-15",
@@ -2441,6 +2495,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrofraschini.it/programma/death-in-venice/"
+      ]
+    },
+    {
+      "id": "curated:auto-29e61184f06223fa:2027-01-17",
+      "starts_at": "2027-01-17T16:00:00+01:00",
+      "local_date": "2027-01-17",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
       ]
     },
     {
@@ -3740,6 +3812,24 @@
       ]
     },
     {
+      "id": "curated:auto-1a517d22f1477341:2027-02-12",
+      "starts_at": "2027-02-12T20:00:00+01:00",
+      "local_date": "2027-02-12",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/la-cenerentola-2/"
+      ]
+    },
+    {
       "id": "curated:auto-a9e0eff95e96e71f:2027-02-12",
       "starts_at": "2027-02-12T20:00:00+01:00",
       "local_date": "2027-02-12",
@@ -3830,6 +3920,24 @@
       ]
     },
     {
+      "id": "curated:auto-1a517d22f1477341:2027-02-14",
+      "starts_at": "2027-02-14T15:30:00+01:00",
+      "local_date": "2027-02-14",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/la-cenerentola-2/"
+      ]
+    },
+    {
       "id": "curated:auto-a9e0eff95e96e71f:2027-02-14",
       "starts_at": "2027-02-14T16:00:00+01:00",
       "local_date": "2027-02-14",
@@ -3845,6 +3953,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-14",
+      "starts_at": "2027-02-14T20:30:00+01:00",
+      "local_date": "2027-02-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-16",
+      "starts_at": "2027-02-16T17:30:00+01:00",
+      "local_date": "2027-02-16",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/"
       ]
     },
     {
@@ -3884,6 +4028,42 @@
       ]
     },
     {
+      "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-17",
+      "starts_at": "2027-02-17T20:30:00+01:00",
+      "local_date": "2027-02-17",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-18",
+      "starts_at": "2027-02-18T17:30:00+01:00",
+      "local_date": "2027-02-18",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-a9e0eff95e96e71f:2027-02-18",
       "starts_at": "2027-02-18T20:00:00+01:00",
       "local_date": "2027-02-18",
@@ -3917,6 +4097,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
+      "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-19",
+      "starts_at": "2027-02-19T17:30:00+01:00",
+      "local_date": "2027-02-19",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/"
       ]
     },
     {
@@ -4028,6 +4226,24 @@
       ]
     },
     {
+      "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-20",
+      "starts_at": "2027-02-20T17:30:00+01:00",
+      "local_date": "2027-02-20",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/"
+      ]
+    },
+    {
       "id": "curated:scala-don-giovanni-2027:2027-02-20",
       "starts_at": "2027-02-20T20:00:00+01:00",
       "local_date": "2027-02-20",
@@ -4133,6 +4349,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-21",
+      "starts_at": "2027-02-21T17:30:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/"
       ]
     },
     {
@@ -4730,6 +4964,24 @@
       ]
     },
     {
+      "id": "curated:auto-05aab24f386e6aa8:2027-03-05",
+      "starts_at": "2027-03-05T20:00:00+01:00",
+      "local_date": "2027-03-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/la-clemenza-di-tito/"
+      ]
+    },
+    {
       "id": "curated:massimo-lucia-lammermoor-2027:2027-03-05",
       "starts_at": "2027-03-05T20:00:00+01:00",
       "local_date": "2027-03-05",
@@ -4853,6 +5105,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:auto-05aab24f386e6aa8:2027-03-07",
+      "starts_at": "2027-03-07T15:30:00+01:00",
+      "local_date": "2027-03-07",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/la-clemenza-di-tito/"
       ]
     },
     {
@@ -5090,6 +5360,24 @@
       ]
     },
     {
+      "id": "curated:auto-bf715bf96f42b6bf:2027-03-12",
+      "starts_at": "2027-03-12T20:00:00+01:00",
+      "local_date": "2027-03-12",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-ef3fc228eb643db3:2027-03-12",
       "starts_at": "2027-03-12T20:30:00+01:00",
       "local_date": "2027-03-12",
@@ -5231,6 +5519,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
+      ]
+    },
+    {
+      "id": "curated:auto-bf715bf96f42b6bf:2027-03-14",
+      "starts_at": "2027-03-14T16:00:00+01:00",
+      "local_date": "2027-03-14",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
       ]
     },
     {
@@ -11498,6 +11804,24 @@
       ]
     },
     {
+      "id": "curated:auto-bce266e873c77688:2027-11-19",
+      "starts_at": "2027-11-19T20:00:00+01:00",
+      "local_date": "2027-11-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/aida/"
+      ]
+    },
+    {
       "id": "curated:auto-a0eba5854831ebbf:2027-11-19",
       "starts_at": "2027-11-19T20:30:00+01:00",
       "local_date": "2027-11-19",
@@ -11513,6 +11837,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-bce266e873c77688:2027-11-21",
+      "starts_at": "2027-11-21T15:30:00+01:00",
+      "local_date": "2027-11-21",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/aida/"
       ]
     },
     {

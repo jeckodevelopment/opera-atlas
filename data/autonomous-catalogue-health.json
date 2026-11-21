@@ -4,8 +4,44 @@
   "new_recite": 0,
   "auto_skipped": [
     {
+      "candidate_id": "oa-index-0a7e4f31ff7370ffc325",
+      "reason": "incomplete_work_or_clock"
+    },
+    {
+      "candidate_id": "oa-index-1ea669503ea5640af931",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-357ebb275673ae888623",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "reason": "same_recita_already_in_official_circuit",
+      "dates": [
+        "2026-11-26",
+        "2026-11-28"
+      ]
+    },
+    {
+      "candidate_id": "oa-index-7ee44d5187617ce9e1b7",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-8bc8b40e1da92efab27d",
+      "reason": "incomplete_work_or_clock"
+    },
+    {
+      "candidate_id": "oa-index-9fdcd7eba240da4540af",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
       "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-d54e9b021b5167cfb735",
+      "reason": "incomplete_work_or_clock"
     }
   ],
   "new_works": 0,
