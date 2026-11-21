@@ -1,7 +1,7 @@
 """HTTP safety checks without contacting an external host."""
 import io
 import unittest
-from urllib.error import URLError
+from urllib.error import URLError,HTTPError
 
 from opera_atlas.controlled_fetch import (
     AccessDenied, FetchUnavailable, fetch_official_html, record_source_check,
@@ -63,6 +63,45 @@ class FetchTests(unittest.TestCase):
             fetch_official_html(self.conn,source_id=1,url=URL,
                                 network_enabled=True,opener=opener)
         self.assertEqual(len(opener.calls),1)
+
+    def test_missing_robots_404_410_allows_official_public_page(self):
+        for code in (404,410):
+            with self.subTest(code=code):
+                class MissingRobots(FakeOpener):
+                    def open(self,request,timeout=None):
+                        if request.full_url.endswith("robots.txt"):
+                            self.calls.append(request.full_url)
+                            raise HTTPError(request.full_url,code,"absent",{},None)
+                        return super().open(request,timeout)
+                opener=MissingRobots()
+                result=fetch_official_html(self.conn,source_id=1,url=URL,
+                                            network_enabled=True,opener=opener)
+                self.assertEqual(result.byte_count,15)
+                self.assertEqual(opener.calls,[SOURCE+"robots.txt",URL])
+
+    def test_denied_or_server_robots_remains_fail_closed(self):
+        for code in (401,403,429,500,503):
+            with self.subTest(code=code):
+                class BrokenRobots(FakeOpener):
+                    def open(self,request,timeout=None):
+                        self.calls.append(request.full_url)
+                        raise HTTPError(request.full_url,code,"blocked",{},None)
+                opener=BrokenRobots()
+                with self.assertRaises(FetchUnavailable):
+                    fetch_official_html(self.conn,source_id=1,url=URL,
+                                        network_enabled=True,opener=opener)
+                self.assertEqual(opener.calls,[SOURCE+"robots.txt"])
+
+    def test_missing_robots_not_authorization_for_other_hosts(self):
+        class MissingRobots(FakeOpener):
+            def open(self,request,timeout=None):
+                raise AssertionError("no network on nonapproved hostname")
+        opener=MissingRobots()
+        with self.assertRaises(AccessDenied):
+            fetch_official_html(self.conn,source_id=1,
+                                url="https://untrusted.invalid/opera",
+                                network_enabled=True,opener=opener)
+        self.assertEqual(opener.calls,[])
 
     def test_robots_html_placeholder_is_not_permission(self):
         opener = FakeOpener(robots=b"<html><body>Temporarily unavailable</body></html>")
