@@ -239,6 +239,23 @@
           "https://www.operaroma.it/spettacoli/il-trovatore-3/"
         ]
       }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "synopsis": "Magda, mantenuta dal ricco Rambaldo, si innamora del giovane Ruggero e fugge con lui per una vita nuova. Il peso del suo passato minaccia però la felicità della coppia.",
+      "history": {
+        "librettist": "Giuseppe Adami",
+        "premiere_year": 1917,
+        "premiere_venue": "Théâtre de l'Opéra",
+        "premiere_city": "Monte Carlo",
+        "sources": [
+          "https://puccini.it/opera/la-rondine/",
+          "https://www.puccinimuseum.org/giacomo-puccini/le-opere/la-rondine/"
+        ]
+      }
     }
   ]
 }
