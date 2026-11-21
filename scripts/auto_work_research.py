@@ -87,6 +87,7 @@ def official_title_hint(candidate:dict,evidence:dict|None=None)->str|None:
     if path.endswith("-anteprima-under30"):return None
     # All adapters deliver the same immutable candidate/source pairing.
     # An exact, fully structured official detail outranks the URL slug,
+    # including venue, show date/time and unambiguous composer attribution.
     # which can carry dates, composer names, ballet labels or generic words.
     if evidence is not None:
         matching=[row for row in evidence.get("evidence",[])
@@ -195,7 +196,7 @@ def preverified_work_material() -> dict[str, dict]:
     return result
 
 def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
-                      *,today:date)->list[dict]:
+                      *,today:date,evidence:dict|None=None)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
     done={x["candidate_id"] for x in existing.get("works",[])
@@ -251,7 +252,7 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
     options=choose_candidates(candidates,existing,known_slugs,today=today,evidence=evidence)
     # Move ready-made, sourced work cards to the front while retaining the
     # normal fair rotation for all remaining unseen operas.
-    options.sort(key=lambda x:slugify(official_title_hint(x)) not in prepared)
+    options.sort(key=lambda x:slugify(official_title_hint(x,evidence) or "") not in prepared)
     for item in options:
         cid=item["id"]
         slug=slugify(official_title_hint(item,evidence))

@@ -1046,3 +1046,12 @@ Sono state recuperate senza sovrascrivere i checkpoint più recenti cinque produ
 ## Risoluzione d'autorità indipendente dalla fonte (21/11/2026)
 
 Il motore di ricerca dell'identità dell'opera ora usa prima la coppia titolo/compositore verificata nei `event_facts` di ogni connettore, purché candidato, source_key e URL coincidano e ogni rappresentazione riporti data, orario e sede. In presenza di dati contraddittori o incompleti la candidate non viene risolta dal semplice slug. Il fallback legacy ai titoli deducibili dall'URL rimane solo quando non esiste un'evidenza strutturata verificata; non costituisce autorizzazione a pubblicare. Le identità omonime sono sempre disambiguate dal compositore nella ricerca autoritativa. Questa policy è uguale per teatri e festival. La promozione definitiva delle nuove opere richiede comunque autorità verificata, immagine pubblicabile quando richiesta e validazione transazionale del catalogo; programma doppio e altre evidenze ambigue restano bloccati.
+ndenza dagli host dei teatri.
+
+Questo intervento sostituisce nelle schede le immagini delle produzioni contemporanee con documenti d'archivio di Commons per *La traviata*, *L'italiana in Algeri*, *Pagliacci*, *Evgenij Onegin*, *Turandot*, *Don Giovanni*, *La bohème* di Giacomo Puccini, *Nabucco* e *Il barbiere di Siviglia* di Gioachino Rossini. Le due nuove attribuzioni specifiche sono:
+- *Don Giovanni* (Mozart): copertina del libretto storico 1920, https://commons.wikimedia.org/wiki/File:1920-Mozart-Don_Giovanni.jpg
+- *La bohème* (Puccini): manifesto del 1896 di Adolfo Hohenstein, https://commons.wikimedia.org/wiki/File:La_Boheme_poster_by_Hohenstein.PNG
+
+La banca storica degli omonimi rimane disambiguata per work ID e compositore: il manifesto di Puccini non deve mai essere assegnato all'opera omonima di Leoncavallo; altrettanto vale per Rossini e Paisiello. Per opere contemporanee senza fonti storiche adeguate e disponibili (attualmente *Vanessa* e *Accabadora*) è ammessa **solo** un'immagine ufficiale, pertinente e proveniente da fonte verificata, mai una copertina inventata.
+
+In futuro la ricerca automatica delle immagini dovrà cercare materiale storico autorevole prima del ripiego sulla grafica di stagione, verificando i diritti di ciascuna risorsa. La mera presenza su Commons non prova automaticamente il pubblico dominio in ogni Paese.

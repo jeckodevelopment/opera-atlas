@@ -96,6 +96,12 @@
       "description": "Fotografia di un manifesto autentico dell'opera Nixon in China di John Adams affisso a Dortmund nel 2023; non relativo all'allestimento alla Scala del 2027",
       "credit": "Karlunun, fotografia del manifesto della Oper Dortmund (2023), Wikimedia Commons",
       "license": "CC0 1.0 per la fotografia; diritti del disegno del manifesto non verificati"
+    },
+    "don-giovanni": {
+      "file": "1920-Mozart-Don Giovanni.jpg",
+      "description": "Copertina storica del libretto di Don Giovanni di Mozart, edizione del 1920; non rappresenta la produzione attuale",
+      "credit": "Libretto storico di Don Giovanni di Wolfgang Amadeus Mozart, ed. 1920, Wikimedia Commons",
+      "license": "Public domain; verificare la pagina Wikimedia Commons"
     }
   },
   "works_by_id": {
@@ -346,6 +352,30 @@
       "description": "Fotografia di un manifesto autentico dell'opera Nixon in China di John Adams affisso a Dortmund nel 2023; non relativo all'allestimento alla Scala del 2027",
       "credit": "Karlunun, fotografia del manifesto della Oper Dortmund (2023), Wikimedia Commons",
       "license": "CC0 1.0 per la fotografia; diritti del disegno del manifesto non verificati"
+    },
+    "oa-w-000023": {
+      "work_id": "oa-w-000023",
+      "composer": "Wolfgang Amadeus Mozart",
+      "file": "1920-Mozart-Don Giovanni.jpg",
+      "description": "Copertina storica del libretto di Don Giovanni di Mozart, edizione del 1920; non rappresenta la produzione attuale",
+      "credit": "Libretto storico di Don Giovanni di Wolfgang Amadeus Mozart, ed. 1920, Wikimedia Commons",
+      "license": "Public domain; verificare la pagina Wikimedia Commons"
+    },
+    "oa-w-000024": {
+      "work_id": "oa-w-000024",
+      "composer": "Giacomo Puccini",
+      "file": "La Boheme poster by Hohenstein.PNG",
+      "description": "Manifesto originale del 1896 di La bohème di Giacomo Puccini, disegnato da Adolfo Hohenstein; non rappresenta la produzione attuale",
+      "credit": "Adolfo Hohenstein (1854–1928), manifesto per La bohème (1896), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000038": {
+      "work_id": "oa-w-000038",
+      "composer": "Gioachino Rossini",
+      "file": "Barbiere di Siviglia frontespizio.JPG",
+      "description": "Frontespizio del libretto originale de Il barbiere di Siviglia di Rossini (1816), non relativo all'allestimento 2026",
+      "credit": "Stamperia di Crispino Puccinelli, Roma, 1816; Wikimedia Commons",
+      "license": "Public domain"
     }
   }
 }
