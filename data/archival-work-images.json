@@ -156,6 +156,18 @@
       "description": "Manifesto storico di Adolfo Hohenstein per il Falstaff di Giuseppe Verdi, 1894; non allestimento in calendario",
       "credit": "Adolfo Hohenstein, manifesto per Falstaff di Giuseppe Verdi, 1894; Wikimedia Commons",
       "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "dido-and-aeneas": {
+      "file": "Dido's lament opening.png",
+      "description": "Incipit storico del lamento di Didone dall'opera Dido and Æneas di Henry Purcell; illustrazione musicale, non allestimento teatrale moderno",
+      "credit": "Partitura storica del Lamento di Didone di Henry Purcell · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Dido%27s_lament_opening.png"
+    },
+    "the-rake-s-progress": {
+      "file": "William Hogarth, A Rake's Progress - pl.1, 1735, NGA 30373.jpg",
+      "description": "Incisione originale del 1735 di William Hogarth, A Rake's Progress, opera figurativa che ispirò il libretto di Stravinskij; non è il manifesto della prima del 1951",
+      "credit": "William Hogarth · Rosenwald Collection, National Gallery of Art, Washington, 1735 · Wikimedia Commons",
+      "license": "CC0 1.0 · https://creativecommons.org/publicdomain/zero/1.0/"
     }
   },
   "works_by_id": {
