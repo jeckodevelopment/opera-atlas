@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "source": "https://cartellone.emiliaromagnacultura.it/wp-content/uploads/2026/09/Depliant_Opera_Danza_2026.pdf",
+  "regional_index": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+  "season": "2026-2027",
+  "notes": "Verified producer-issued 2026/27 opera programme. Excludes ballet, Lucio Dalla stage show, school and audience meetings. Exact recite hours taken from the first-party brochure; regional index confirms work and date span.",
+  "works": [
+    {
+      "key": "ferrara-macbeth-opera-2026-27",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "span": [
+        "27 Novembre 2026",
+        "29 Novembre 2026"
+      ],
+      "dates": [
+        [
+          "2026-11-27",
+          "20:00"
+        ],
+        [
+          "2026-11-29",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "ferrara-barbiere-opera-2026-27",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "span": [
+        "15 Gennaio 2027",
+        "17 Gennaio 2027"
+      ],
+      "dates": [
+        [
+          "2027-01-15",
+          "20:00"
+        ],
+        [
+          "2027-01-17",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "ferrara-dido-opera-2026-27",
+      "title": "Dido and Aeneas",
+      "composer": "Henry Purcell",
+      "span": [
+        "20 Febbraio 2027",
+        "21 Febbraio 2027"
+      ],
+      "dates": [
+        [
+          "2027-02-20",
+          "20:00"
+        ],
+        [
+          "2027-02-21",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "ferrara-clemenza-opera-2026-27",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "span": [
+        "12 Marzo 2027",
+        "14 Marzo 2027"
+      ],
+      "dates": [
+        [
+          "2027-03-12",
+          "20:00"
+        ],
+        [
+          "2027-03-14",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "ferrara-boccanegra-opera-2026-27",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "span": [
+        "09 Aprile 2027",
+        "11 Aprile 2027"
+      ],
+      "dates": [
+        [
+          "2027-04-09",
+          "20:00"
+        ],
+        [
+          "2027-04-11",
+          "16:00"
+        ]
+      ]
+    }
+  ]
+}

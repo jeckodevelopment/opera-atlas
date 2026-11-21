@@ -148,6 +148,41 @@
       "url": "https://www.iteatri.re.it/tipo/opera/",
       "access_status": "approved",
       "min_links": 4
+    },
+    {
+      "key": "ferrara-macbeth-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/",
+      "url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "ferrara-barbiere-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/",
+      "url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "ferrara-dido-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/",
+      "url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "ferrara-clemenza-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/",
+      "url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "ferrara-boccanegra-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/",
+      "url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

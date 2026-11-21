@@ -47,7 +47,7 @@ class CataniaSourceTests(unittest.TestCase):
         self.assertEqual(src["url"], INDEX)
         self.assertTrue(eligible(KEY, DETAIL))
         self.assertFalse(eligible(KEY, "https://www.teatromassimobellini.it/news/carmen-2026/"))
-        self.assertEqual(len(sources), 21)
+        self.assertEqual(len(sources), 26)
         markup = '<a href="/eventi/carmen-2026/">Carmen</a>' + (
             '<a href="https://fake.example/eventi/carmen-2026/">External</a>'
             '<a href="/biglietteria/">Tickets</a>')
