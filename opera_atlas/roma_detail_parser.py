@@ -140,9 +140,15 @@ def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple
     if title_ix is None:
         raise ValueError("official Rome title not in source heading")
     credits=[]
-    for line in intro[title_ix+1:]:
+    for index,line in enumerate(intro[title_ix+1:],start=title_ix+1):
         m=re.fullmatch(r"Musica\s+di\s+(.{4,100})",line,re.I)
-        if m:credits.append(m[1].strip())
+        if m:
+            credits.append(m[1].strip())
+        elif re.fullmatch(r"Musica\s+di",line,re.I) and index+1<len(intro):
+            # Some official layouts put the independently credited author
+            # in the immediately following block. Only the exact standalone
+            # "Musica di" label licenses this; never infer a conductor.
+            credits.append(intro[index+1].strip())
     # Names in the approved first-party credits can contain letters outside
     # Latin-1 (e.g. Šostakovič). Match Unicode letters, not an arbitrary
     # historical European character interval. Disallow digits, role labels,
@@ -156,7 +162,8 @@ def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple
                                       for token in tokens)
                 and tokens[0].casefold() not in {
                     "direttore","regia","maestro","coro","orchestra","autori",
-                    "anonimo","soprano","tenore"})
+                    "anonimo","soprano","tenore","compositore","autore",
+                    "da","definire","ignoto","sconosciuto"})
     if len(credits)!=1 or not credible_person_name(credits[0]):
         raise ValueError("unambiguous official Rome composer credit missing")
     composer=credits[0]

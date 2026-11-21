@@ -207,6 +207,23 @@
       }
     },
     {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "synopsis": "Intrappolata in un matrimonio infelice, Katerina si innamora di Sergej. La passione la conduce a una catena di delitti, alla condanna e infine a una tragica resa dei conti.",
+      "history": {
+        "librettist": "Aleksandr Prejs e Dmitrij Šostakovič",
+        "premiere_year": 1934,
+        "premiere_venue": "State Academic Maly Opera Theatre",
+        "premiere_city": "Leningrado",
+        "sources": [
+          "https://www.mariinsky.ru/en/playbill/repertoire/opera/izmailova/",
+          "https://www.boosey.com/pages/Opera/catalogue/cat_detail?musicid=455"
+        ]
+      }
+    },
+    {
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
       "title": "La clemenza di Tito",
@@ -288,23 +305,6 @@
         "sources": [
           "https://www.boosey.com/pages/cr/catalogue/cat_detail?musicid=4670",
           "https://asac.labiennale.org/attivita/musica/272795"
-        ]
-      }
-    },
-    {
-      "source_key": "opera-roma-season-2026-27",
-      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
-      "title": "Una Lady Macbeth del distretto di Mzensk",
-      "composer": "Dmitrij Šostakovič",
-      "synopsis": "Intrappolata in un matrimonio infelice, Katerina si innamora di Sergej. La passione la conduce a una catena di delitti, alla condanna e infine a una tragica resa dei conti.",
-      "history": {
-        "librettist": "Aleksandr Prejs e Dmitrij Šostakovič",
-        "premiere_year": 1934,
-        "premiere_venue": "State Academic Maly Opera Theatre",
-        "premiere_city": "Leningrado",
-        "sources": [
-          "https://www.mariinsky.ru/en/playbill/repertoire/opera/izmailova/",
-          "https://www.boosey.com/pages/Opera/catalogue/cat_detail?musicid=455"
         ]
       }
     }
