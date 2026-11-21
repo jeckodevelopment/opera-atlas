@@ -372,6 +372,13 @@
       "title": "Ernani",
       "composer": "Giuseppe Verdi",
       "wikidata_id": "Q211279"
+    },
+    "il mondo alla roversa o sia le donne che comandano|baldassarre galuppi": {
+      "id": "oa-w-000059",
+      "slug": "il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+      "title": "Il mondo alla roversa o sia le donne che comandano",
+      "composer": "Baldassarre Galuppi",
+      "authority_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
     }
   },
   "venues": {
@@ -543,6 +550,14 @@
       "name": "Teatro Malibran",
       "city": "Venezia",
       "region": "Veneto"
+    },
+    "Firenze|Teatro Goldoni": {
+      "id": "oa-v-000022",
+      "slug": "teatro-goldoni",
+      "city_slug": "firenze",
+      "name": "Teatro Goldoni",
+      "city": "Firenze",
+      "region": "Toscana"
     }
   },
   "stagings": {
@@ -1411,6 +1426,30 @@
       "slug": "ernani",
       "source_url": "https://www.teatromassimo.it/event/ernani-2/",
       "season": "2026-2027"
+    },
+    "auto-e01412b3c8989b4b": {
+      "id": "oa-s-000112",
+      "work_id": "oa-w-000053",
+      "venue_id": "oa-v-000017",
+      "slug": "the-rake-s-progress",
+      "source_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/",
+      "season": "2026"
+    },
+    "auto-e1c70abeff01f79b": {
+      "id": "oa-s-000113",
+      "work_id": "oa-w-000042",
+      "venue_id": "oa-v-000017",
+      "slug": "i-due-foscari",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/",
+      "season": "2027"
+    },
+    "auto-20f405e0ffdc62c5": {
+      "id": "oa-s-000114",
+      "work_id": "oa-w-000059",
+      "venue_id": "oa-v-000022",
+      "slug": "il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+      "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+      "season": "2027"
     }
   },
   "performances": {
@@ -4689,6 +4728,96 @@
       "staging_id": "oa-s-000111",
       "original_date": "2027-11-07",
       "source_url": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    "auto-e01412b3c8989b4b|2026-11-27": {
+      "id": "oa-r-000562",
+      "staging_id": "oa-s-000112",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+    },
+    "auto-e01412b3c8989b4b|2026-11-29": {
+      "id": "oa-r-000563",
+      "staging_id": "oa-s-000112",
+      "original_date": "2026-11-29",
+      "source_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+    },
+    "auto-e01412b3c8989b4b|2026-12-01": {
+      "id": "oa-r-000564",
+      "staging_id": "oa-s-000112",
+      "original_date": "2026-12-01",
+      "source_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+    },
+    "auto-e01412b3c8989b4b|2026-12-03": {
+      "id": "oa-r-000565",
+      "staging_id": "oa-s-000112",
+      "original_date": "2026-12-03",
+      "source_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+    },
+    "auto-e01412b3c8989b4b|2026-12-05": {
+      "id": "oa-r-000566",
+      "staging_id": "oa-s-000112",
+      "original_date": "2026-12-05",
+      "source_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+    },
+    "auto-e1c70abeff01f79b|2027-03-13": {
+      "id": "oa-r-000567",
+      "staging_id": "oa-s-000113",
+      "original_date": "2027-03-13",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/"
+    },
+    "auto-e1c70abeff01f79b|2027-03-14": {
+      "id": "oa-r-000568",
+      "staging_id": "oa-s-000113",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/"
+    },
+    "auto-e1c70abeff01f79b|2027-03-16": {
+      "id": "oa-r-000569",
+      "staging_id": "oa-s-000113",
+      "original_date": "2027-03-16",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/"
+    },
+    "auto-e1c70abeff01f79b|2027-03-17": {
+      "id": "oa-r-000570",
+      "staging_id": "oa-s-000113",
+      "original_date": "2027-03-17",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/"
+    },
+    "auto-e1c70abeff01f79b|2027-03-19": {
+      "id": "oa-r-000571",
+      "staging_id": "oa-s-000113",
+      "original_date": "2027-03-19",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/"
+    },
+    "auto-e1c70abeff01f79b|2027-03-20": {
+      "id": "oa-r-000572",
+      "staging_id": "oa-s-000113",
+      "original_date": "2027-03-20",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/"
+    },
+    "auto-e1c70abeff01f79b|2027-03-21": {
+      "id": "oa-r-000573",
+      "staging_id": "oa-s-000113",
+      "original_date": "2027-03-21",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/"
+    },
+    "auto-20f405e0ffdc62c5|2027-01-30": {
+      "id": "oa-r-000574",
+      "staging_id": "oa-s-000114",
+      "original_date": "2027-01-30",
+      "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+    },
+    "auto-20f405e0ffdc62c5|2027-01-31": {
+      "id": "oa-r-000575",
+      "staging_id": "oa-s-000114",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+    },
+    "auto-20f405e0ffdc62c5|2027-02-02": {
+      "id": "oa-r-000576",
+      "staging_id": "oa-s-000114",
+      "original_date": "2027-02-02",
+      "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
     }
   }
 }

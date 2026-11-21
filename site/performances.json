@@ -1375,6 +1375,24 @@
       ]
     },
     {
+      "id": "curated:auto-e01412b3c8989b4b:2026-11-27",
+      "starts_at": "2026-11-27T19:00:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+      ]
+    },
+    {
       "id": "curated:massimo-samson-dalila-2026:2026-11-27",
       "starts_at": "2026-11-27T19:00:00+01:00",
       "local_date": "2026-11-27",
@@ -1484,6 +1502,24 @@
       ]
     },
     {
+      "id": "curated:auto-e01412b3c8989b4b:2026-11-29",
+      "starts_at": "2026-11-29T16:30:00+01:00",
+      "local_date": "2026-11-29",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+      ]
+    },
+    {
       "id": "curated:massimo-samson-dalila-2026:2026-11-29",
       "starts_at": "2026-11-29T17:30:00+01:00",
       "local_date": "2026-11-29",
@@ -1499,6 +1535,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
+      "id": "curated:auto-e01412b3c8989b4b:2026-12-01",
+      "starts_at": "2026-12-01T20:00:00+01:00",
+      "local_date": "2026-12-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+      ]
+    },
+    {
+      "id": "curated:auto-e01412b3c8989b4b:2026-12-03",
+      "starts_at": "2026-12-03T20:00:00+01:00",
+      "local_date": "2026-12-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
       ]
     },
     {
@@ -1553,6 +1625,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-e01412b3c8989b4b:2026-12-05",
+      "starts_at": "2026-12-05T18:00:00+01:00",
+      "local_date": "2026-12-05",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
       ]
     },
     {
@@ -2660,6 +2750,24 @@
       ]
     },
     {
+      "id": "curated:auto-20f405e0ffdc62c5:2027-01-30",
+      "starts_at": "2027-01-30T17:00:00+01:00",
+      "local_date": "2027-01-30",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Il mondo alla roversa o sia le donne che comandano",
+      "composer": "Baldassarre Galuppi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+      ]
+    },
+    {
       "id": "curated:fenice-madama-butterfly-2027:2027-01-30",
       "starts_at": "2027-01-30T19:00:00+01:00",
       "local_date": "2027-01-30",
@@ -2768,6 +2876,24 @@
       ]
     },
     {
+      "id": "curated:auto-20f405e0ffdc62c5:2027-01-31",
+      "starts_at": "2027-01-31T15:30:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Il mondo alla roversa o sia le donne che comandano",
+      "composer": "Baldassarre Galuppi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+      ]
+    },
+    {
       "id": "curated:fenice-madama-butterfly-2027:2027-01-31",
       "starts_at": "2027-01-31T15:30:00+01:00",
       "local_date": "2027-01-31",
@@ -2855,6 +2981,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
+      "id": "curated:auto-20f405e0ffdc62c5:2027-02-02",
+      "starts_at": "2027-02-02T20:00:00+01:00",
+      "local_date": "2027-02-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il mondo alla roversa o sia le donne che comandano",
+      "composer": "Baldassarre Galuppi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
       ]
     },
     {
@@ -4352,6 +4496,24 @@
       ]
     },
     {
+      "id": "curated:auto-e1c70abeff01f79b:2027-03-13",
+      "starts_at": "2027-03-13T20:00:00+01:00",
+      "local_date": "2027-03-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/i-due-foscari/"
+      ]
+    },
+    {
       "id": "curated:massimo-lucia-lammermoor-2027:2027-03-13",
       "starts_at": "2027-03-13T20:00:00+01:00",
       "local_date": "2027-03-13",
@@ -4385,6 +4547,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/jenufa/"
+      ]
+    },
+    {
+      "id": "curated:auto-e1c70abeff01f79b:2027-03-14",
+      "starts_at": "2027-03-14T16:30:00+01:00",
+      "local_date": "2027-03-14",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/i-due-foscari/"
       ]
     },
     {
@@ -4424,6 +4604,24 @@
       ]
     },
     {
+      "id": "curated:auto-e1c70abeff01f79b:2027-03-16",
+      "starts_at": "2027-03-16T20:00:00+01:00",
+      "local_date": "2027-03-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/i-due-foscari/"
+      ]
+    },
+    {
       "id": "curated:auto-ef3fc228eb643db3:2027-03-16",
       "starts_at": "2027-03-16T20:30:00+01:00",
       "local_date": "2027-03-16",
@@ -4439,6 +4637,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-e1c70abeff01f79b:2027-03-17",
+      "starts_at": "2027-03-17T20:00:00+01:00",
+      "local_date": "2027-03-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/i-due-foscari/"
       ]
     },
     {
@@ -4532,6 +4748,24 @@
       ]
     },
     {
+      "id": "curated:auto-e1c70abeff01f79b:2027-03-19",
+      "starts_at": "2027-03-19T20:00:00+01:00",
+      "local_date": "2027-03-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/i-due-foscari/"
+      ]
+    },
+    {
       "id": "curated:auto-00bc189e26be492b:2027-03-20",
       "starts_at": "2027-03-20T15:00:00+01:00",
       "local_date": "2027-03-20",
@@ -4568,6 +4802,24 @@
       ]
     },
     {
+      "id": "curated:auto-e1c70abeff01f79b:2027-03-20",
+      "starts_at": "2027-03-20T18:00:00+01:00",
+      "local_date": "2027-03-20",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/i-due-foscari/"
+      ]
+    },
+    {
       "id": "curated:auto-00bc189e26be492b:2027-03-21",
       "starts_at": "2027-03-21T15:00:00+01:00",
       "local_date": "2027-03-21",
@@ -4583,6 +4835,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-e1c70abeff01f79b:2027-03-21",
+      "starts_at": "2027-03-21T16:30:00+01:00",
+      "local_date": "2027-03-21",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/i-due-foscari/"
       ]
     },
     {

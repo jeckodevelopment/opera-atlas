@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "new_stagings": 0,
-  "new_recite": 0,
+  "new_stagings": 1,
+  "new_recite": 3,
   "auto_skipped": [
     {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
-      "reason": "incomplete_work_or_clock"
+      "reason": "unknown_work_needs_authority_data"
     },
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -28,6 +28,6 @@
       "reason": "unknown_work_needs_authority_data"
     }
   ],
-  "new_works": 0,
+  "new_works": 1,
   "enriched_recite_times": 0
 }

@@ -572,6 +572,17 @@
         "https://www.naxos.com/LibrettiSungText/Libretti?id=49E7F4F6-F251-495D-B275-6D5C390FA24F",
         "https://imslp.org/wiki/Dido_and_Aeneas%2C_Z.626_(Purcell%2C_Henry)"
       ]
+    },
+    "il-mondo-alla-roversa-o-sia-le-donne-che-comandano": {
+      "librettist": "Carlo Goldoni",
+      "premiere_year": 1750,
+      "premiere_venue": "Teatro San Cassiano",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://corago.unibo.it/opera/0000298002",
+        "https://corago.unibo.it/libretto/DRT0028887",
+        "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+      ]
     }
   },
   "works_by_id": {
