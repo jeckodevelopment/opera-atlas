@@ -66,8 +66,6 @@ function render(){
     const heading=node("h2"),link=node("a",null,item.title);link.href=item.url;heading.append(link);
     card.append(heading,node("p",null,item.subtitle));
     if(item.description)card.append(node("p","directory-description",item.description));
-    if(section==="teatri" && item.independentVenue && !item.hasPerformances)
-      card.append(node("p","directory-description","Calendario non ancora acquisito · consulta il sito del teatro"));
     const action=node("a","detail-link",section==="opere"?"Scopri l’opera":section==="festival"?"Esplora il festival":"Scopri il teatro");
     action.href=item.url;card.append(action);grid.append(card);
   }
