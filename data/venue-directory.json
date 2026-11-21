@@ -953,6 +953,25 @@
       "photo_file": "Teatro Apollo, Lecce.jpg",
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Apollo%2C_Lecce.jpg",
       "photo_credit": "Alfonso Piccarreta · CC BY-SA 4.0 · Wikimedia Commons"
+    },
+    {
+      "id": "oa-vd-000053",
+      "name": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "region": "Emilia-Romagna",
+      "slug": "teatro-auditorium-manzoni",
+      "city_slug": "bologna",
+      "website": "https://www.tcbo.it/il-teatro/teatroauditorimmanzoni/",
+      "source_url": "https://www.tcbo.it/il-teatro/teatroauditorimmanzoni/",
+      "description": "Nel cuore di Bologna, un auditorium dedicato alla musica che ospita concerti e produzioni operistiche in forma di concerto.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via de’ Monari 1/2",
+      "history": "Nato nel 1933 come cinema-teatro nel centro di Bologna, il Manzoni conserva le facciate tardo liberty. Dopo un profondo intervento di riqualificazione, nel 2003 è stato inaugurato nella sua forma attuale di auditorium, divenendo una delle sedi della vita musicale cittadina e della programmazione della Fondazione Teatro Comunale.",
+      "photo_file": "Auditorium Manzoni Bologna.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Auditorium_Manzoni_Bologna.jpg",
+      "photo_credit": "Utintare, Wikimedia Commons — CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0",
+      "calendar_status": "not_acquired"
     }
   ],
   "related_organizations": [
