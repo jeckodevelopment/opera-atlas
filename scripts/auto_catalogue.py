@@ -462,6 +462,54 @@ def verified_candidate_image(detail:dict,*,title:str,url:str)->dict|None:
             if key in image} | ({"license":image["license"]}
                             if isinstance(image.get("license"),str) else {})
 
+def complete_cached_verified_work_cards(intelligence:dict,evidence:dict)->dict:
+    """Finish an already identified composition using source-bound editorial art.
+
+    This is an in-memory prepublication step, not a post-import reconciliation.
+    Only a prior independently resolved Wikidata QID plus the exact official
+    composer/title evidence may attach an original verified plot and history.
+    """
+    from scripts.auto_work_research import (
+        preverified_work_material, validated_editorial_attributions)
+    from scripts.publish_work_editorial import validate_history
+    materials=preverified_work_material()
+    approved=validated_editorial_attributions()
+    observations={x.get("candidate_id"):x for x in evidence.get("evidence",[])
+                  if x.get("status")=="needs_editorial_review"}
+    updated=copy.deepcopy(intelligence)
+    for work in updated.get("works",[]):
+        if not isinstance(work,dict):continue
+        try:
+            slug=slugify(work.get("title",""))
+        except (ValueError,TypeError):
+            continue
+        binding=approved.get(slug)
+        card=materials.get(slug)
+        detail=observations.get(work.get("candidate_id"))
+        if (not binding or not card or not detail or
+            binding.get("wikidata_id")!=work.get("wikidata_id") or
+            normalized(binding.get("composer",""))!=normalized(work.get("composer","")) or
+            detail.get("source_key")!=work.get("source_key") or
+            detail.get("source_url")!=work.get("source_url")):
+            continue
+        rows=detail.get("event_facts",[])
+        if (not isinstance(rows,list) or not rows or any(
+             not isinstance(x,dict)
+             or normalized(x.get("event_title",""))!=normalized(work.get("title",""))
+             or normalized(x.get("composer",""))!=normalized(work.get("composer",""))
+             for x in rows)):
+            continue
+        if not validate_history(card.get("history")):
+            continue
+        if not isinstance(card.get("synopsis"),str) or not 45<=len(card["synopsis"])<=300:
+            continue
+        if work.get("synopsis") is None:
+            work["synopsis"]=card["synopsis"]
+        if not validate_history(work.get("history")):
+            work["history"]=card["history"]
+    return updated
+
+
 def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                       intelligence:dict,editorial:dict,approved_urls:list[str],*,
                       today:date, history:dict|None=None, require_image:bool=False):
@@ -830,6 +878,9 @@ def main():
     intelligence=(json.loads(RESEARCH.read_text(encoding="utf-8"))
                   if RESEARCH.exists() else {"schema_version":1,"works":[]})
     intelligence=official_identity_candidates(evidence,candidates,intelligence)
+    # Previously identified works should not wait for a second remote lookup
+    # when their source-attributed synopsis, history and archival art exist.
+    intelligence=complete_cached_verified_work_cards(intelligence,evidence)
     editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
     from scripts.publish_work_editorial import HISTORY, validate_history
     historical=json.loads(HISTORY.read_text(encoding="utf-8"))
