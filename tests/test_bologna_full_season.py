@@ -35,8 +35,10 @@ class BolognaFullSeasonTests(unittest.TestCase):
         source=[x for x in intelligence["works"]
                 if x["source_key"]=="bologna-comunale-opera-2027"]
         self.assertEqual({x["title"] for x in source},set(remaining))
+        # This regression isolates Bologna, while the shared resolver now covers every source.
+        bologna_intelligence={"schema_version":1,"works":source}
         result=promote_new_works(self.facts,self.registry,self.evidence,
-             self.candidates,intelligence,self.editorial,self.allowed,
+             self.candidates,bologna_intelligence,self.editorial,self.allowed,
              today=date(2026,11,21),history=self.history)
         facts,registry,urls,editorial,history,report=result
         self.assertEqual(report["new_works"],len(remaining))
@@ -61,7 +63,7 @@ class BolognaFullSeasonTests(unittest.TestCase):
                                   approved_extra=set(urls),history=history)
         self.assertEqual(len(published["works"]),len(graph["works"]))
         again=promote_new_works(facts,registry,self.evidence,
-                self.candidates,intelligence,editorial,urls,
+                self.candidates,bologna_intelligence,editorial,urls,
                 today=date(2026,11,21),history=history)
         self.assertEqual(again[-1]["new_recite"],0)
         self.assertEqual(again[0],facts)
