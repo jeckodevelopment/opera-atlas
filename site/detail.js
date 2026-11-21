@@ -125,7 +125,7 @@ async function appendSynopsis(event) {
         const candidate=await response.json();
         if(candidate.schema_version!==1)continue;
         doc=Array.isArray(candidate.works)
-          ? {synopses:Object.fromEntries(candidate.works.map(w=>[w.work_id,w.synopsis]))}
+          ? {synopses:Object.fromEntries(candidate.works.flatMap(w=>[[w.work_id,w.synopsis],[w.slug,w.synopsis]]))}
           : candidate;
         if(doc.synopses)break;
       }catch{/* Try the last deployed static fallback. */}
@@ -152,7 +152,8 @@ async function appendHistory(event) {
       const doc=await response.json();
       if(doc.schema_version!==1||!doc.works||typeof doc.works!=="object")continue;
       const history=Array.isArray(doc.works)
-        ? doc.works.find(w=>w.work_id===event.work_id)?.history
+        ? doc.works.find(w=>event.work_id?w.work_id===event.work_id:
+          (w.slug===slug && slug!=="la-boheme"))?.history
         : doc.works_by_id?.[event.work_id] ||
           (event.work_slug==="la-boheme"?null:doc.works[slug]);
       if(!history)return;
