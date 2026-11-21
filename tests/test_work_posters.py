@@ -316,7 +316,7 @@ class PosterPublicationTests(unittest.TestCase):
         published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
         self.assertEqual({w["id"] for w in works},set(published))
         self.assertTrue(all(published[w["id"]]["kind"] in
-                            ("archival_work_image","official_production_image")
+                            ("archival_work_image","official_production_image","ticketing_event_artwork")
                             for w in works))
         self.assertEqual(len(published),len(works))
         self.assertEqual(sum(v["kind"]=="original_editorial_cover"

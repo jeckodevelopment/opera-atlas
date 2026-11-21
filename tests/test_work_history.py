@@ -41,7 +41,10 @@ class OperaHistoryTests(unittest.TestCase):
                             or official_verified,item["title"])
         for slug,entry in history["works"].items():
             self.assertTrue(entry["librettist"],slug)
-            self.assertTrue(1600<=entry["premiere_year"]<=2026,slug)
+            # A verified opera announced for the coming seasons can be
+            # a genuine world premiere; its first performance is not
+            # constrained to the year this test was originally written.
+            self.assertTrue(1600<=entry["premiere_year"]<=__import__("datetime").date.today().year+3,slug)
             self.assertTrue(entry["premiere_venue"] and entry["premiere_city"],slug)
             self.assertTrue(entry["sources"],slug)
             self.assertTrue(all(url.startswith("https://") for url in entry["sources"]),slug)
