@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T18:49:44+00:00",
+  "checked_at": "2026-11-21T18:55:20+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -14,6 +14,11 @@
     },
     {
       "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-6cd199691f7145a4d048",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
@@ -58,15 +63,6 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
       "candidate_id": "oa-index-b372b317894fe260b18e",
       "status": "automatic_retry",
       "reason": "ValueError"
@@ -77,7 +73,7 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
@@ -90,6 +86,11 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "status": "automatic_retry",
       "reason": "verified_plot_unavailable"
+    },
+    {
+      "candidate_id": "oa-index-a77154badf30929b95dc",
+      "status": "automatic_retry",
+      "reason": "ValueError"
     },
     {
       "candidate_id": "oa-index-58413a3bbbee689b82bc",
@@ -123,11 +124,6 @@
     },
     {
       "candidate_id": "oa-index-a02901b14e6eae69df5c",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-a77154badf30929b95dc",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
