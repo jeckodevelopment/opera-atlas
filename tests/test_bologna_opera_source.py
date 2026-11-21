@@ -1,0 +1,62 @@
+"""Official Bologna index and fact extraction regression tests."""
+import unittest
+from scripts.discover_season_indexes import extract,eligible,validate_config,CONFIG
+from scripts.collect_candidate_details import parse_known_opera_detail,parse_source_credited_opera_detail
+from opera_atlas.bologna_detail_parser import parse_detail
+import json
+
+KEY="bologna-comunale-opera-2027"
+BASE="https://www.tcbo.it/"
+URL=BASE+"evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
+MANZONI=BASE+"evento/opera/la-straniera-2027/"
+
+def fixture(*,title="Il ritorno di Ulisse in patria",composer="Claudio Monteverdi",
+            venue="Teatro Comunale",dates=(("2 Mar 2027","20:00"),("7 Mar 2027","16:00"))):
+    cards=" ".join(f"Prima {day} Ore {clock} In vendita dal 27 nov 2026"
+                   for day,clock in dates)
+    return (f"<h1>{title}</h1><article><h2>L'opera</h2>"
+            f"<p>Opera in tre atti</p><p>Compositore {composer} (1567-1643)</p>"
+            f"<h3>Date e turni</h3>{cards}<h3>Sede</h3>{venue}"
+            f"<h3>Altri eventi</h3>Spettacolo 12 Nov 2027 Ore 20:00</article>")
+
+class BolognaSourceTests(unittest.TestCase):
+    def test_exact_official_opera_links_not_concerts(self):
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
+        source=next(x for x in validate_config(config) if x["key"]==KEY)
+        url=source["url"]
+        html=('<a href="/evento/opera/la-straniera-2027/">Opera</a>'
+              '<a href="/evento/opera/il-ritorno-di-ulisse-in-patria-2027/">Opera</a>'
+              '<a href="/evento/concerto/musica-2027/">Concerto</a>'
+              '<a href="https://other.example/evento/opera/fake-2027/">External</a>')
+        self.assertEqual(len(extract(KEY,url,html,2)),2)
+        self.assertFalse(eligible(KEY,BASE+"evento/concerto/musica-2027/"))
+        self.assertFalse(eligible(KEY,BASE+"evento/opera/musica-2027/?preview=1"))
+    def test_ticket_dates_clock_composer_and_real_venue(self):
+        title,composer,venue,rows=parse_detail(fixture(),url=URL)
+        self.assertEqual((title,composer,venue),
+                         ("Il ritorno di Ulisse in patria","Claudio Monteverdi","Teatro Comunale di Bologna"))
+        self.assertEqual(rows,[("2027-03-02","20:00"),("2027-03-07","16:00")])
+        _,_,place,other=parse_detail(fixture(title="La straniera",composer="Vincenzo Bellini",
+                                           venue="Teatro Auditorium Manzoni",
+                                           dates=(("22 Gen 2027","20:00"),)),
+                                     url=MANZONI)
+        self.assertEqual(place,"Teatro Auditorium Manzoni")
+        self.assertEqual(other,[("2027-01-22","20:00")])
+    def test_invalid_times_cancellations_and_incomplete_page_fail(self):
+        with self.assertRaises(ValueError):
+            parse_detail(fixture().replace("Ore 20:00","Ore 29:00").replace("Ore 16:00","Ore 29:00"),url=URL)
+        with self.assertRaises(ValueError):
+            parse_detail(fixture().replace("In vendita dal","Annullata. In vendita dal",1),url=URL)
+        with self.assertRaises(ValueError):
+            parse_detail(fixture().replace("Teatro Comunale","Teatro ignoto"),url=URL)
+        with self.assertRaises(ValueError):
+            parse_detail(fixture(),url=URL+"?preview=1")
+    def test_source_credited_events_keep_true_location(self):
+        rows=parse_source_credited_opera_detail(KEY,MANZONI,
+            fixture(title="La straniera",composer="Vincenzo Bellini",
+                    venue="Teatro Auditorium Manzoni",dates=(("22 Gen 2027","20:00"),)))
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]["venue"],"Teatro Auditorium Manzoni")
+        self.assertEqual(rows[0]["starts_at"],"2027-01-22T20:00:00+01:00")
+
+if __name__=="__main__":unittest.main()
