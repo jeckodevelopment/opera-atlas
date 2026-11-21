@@ -2873,6 +2873,49 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-05e9aa51dbd5a114",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/",
+      "dates": [
+        [
+          "2027-12-17",
+          "20:30"
+        ],
+        [
+          "2027-12-18",
+          "18:00"
+        ],
+        [
+          "2027-12-19",
+          "18:00"
+        ],
+        [
+          "2027-12-21",
+          "20:30"
+        ],
+        [
+          "2027-12-22",
+          "20:30"
+        ],
+        [
+          "2027-12-23",
+          "20:30"
+        ],
+        [
+          "2027-12-26",
+          "19:00"
+        ],
+        [
+          "2027-12-27",
+          "18:00"
+        ]
+      ]
     }
   ]
 }

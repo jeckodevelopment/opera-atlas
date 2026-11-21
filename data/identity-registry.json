@@ -1185,6 +1185,14 @@
       "slug": "tristan-und-isolde",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "season": "2027"
+    },
+    "auto-05e9aa51dbd5a114": {
+      "id": "oa-s-000097",
+      "work_id": "oa-w-000024",
+      "venue_id": "oa-v-000018",
+      "slug": "la-boheme",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -3959,6 +3967,54 @@
       "staging_id": "oa-s-000096",
       "original_date": "2027-05-29",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-17": {
+      "id": "oa-r-000478",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-17",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-18": {
+      "id": "oa-r-000479",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-18",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-19": {
+      "id": "oa-r-000480",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-19",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-21": {
+      "id": "oa-r-000481",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-21",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-22": {
+      "id": "oa-r-000482",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-22",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-23": {
+      "id": "oa-r-000483",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-23",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-26": {
+      "id": "oa-r-000484",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-26",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+    },
+    "auto-05e9aa51dbd5a114|2027-12-27": {
+      "id": "oa-r-000485",
+      "staging_id": "oa-s-000097",
+      "original_date": "2027-12-27",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
     }
   }
 }
