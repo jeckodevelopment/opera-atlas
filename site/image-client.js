@@ -39,7 +39,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "la-boheme":"La Boheme poster by Hohenstein.PNG",
     "turandot":"Poster Turandot.jpg",
     "salome":"Max Tilke- Poster-of-opera-salome-richard-strauss.jpg",
-    "nabucco":"Nabucco poster.jpg",
+    "nabucco":"Nabucco - 1852 cover.jpg",
     "otello":"Poster Otello by Giuseppe Verdi.jpg",
     "madama-butterfly":"Hohenstein Madama Butterfly.jpg",
     "don-giovanni":"Theatre Poster for Don Giovanni.jpg",
@@ -58,6 +58,17 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "death-in-venice":"Pears death in venice.jpg",
     "nixon-in-china":"Dortmund Kampstr Nixon in China IMG 20230315 1145.jpg"
   };
+  // Identity-pinned historical works: never allow a cached older feed to
+  // restore temporary staging photos of these six operas. ID + composer is
+  // mandatory, so homonymous compositions cannot share a poster.
+  const HISTORIC_POSTER_PINS=Object.freeze({
+    "oa-w-000001":{composer:"Giuseppe Verdi",file:"Traviata.jpg"},
+    "oa-w-000002":{composer:"Gioachino Rossini",file:"1930-Italiana-in-Algeri.jpg"},
+    "oa-w-000006":{composer:"Ruggero Leoncavallo",file:"Pagliacci Original Score Cover.jpg"},
+    "oa-w-000010":{composer:"Pëtr Il'ič Čajkovskij",file:'"Eugene Onegin" opera poster,1937, Yerevan Opera Theatre.jpg'},
+    "oa-w-000011":{composer:"Giacomo Puccini",file:"Poster Turandot.jpg"},
+    "oa-w-000025":{composer:"Giuseppe Verdi",file:"Nabucco - 1852 cover.jpg"}
+  });
   // Published by the catalog workflow, not by an FTPS site rebuild.
   // A static site update is needed once to enable this feed; subsequent
   // newly catalogued operas automatically gain an image reference.
@@ -132,6 +143,17 @@ window.OperaAtlasImages=Object.freeze((()=>{
   function work(event){
     const title=event?.title||"Opera";
     const slug=event?.work_slug||normalize(title);
+    const pinned=event?.work_id && HISTORIC_POSTER_PINS[event.work_id];
+    if(pinned && event?.composer===pinned.composer){
+      return {src:commons(pinned.file),
+        alt:"Manifesto o documento d’archivio di "+title+" — "+pinned.composer,
+        fallbackSrc:null,
+        sourceUrl:"https://commons.wikimedia.org/wiki/File:"+
+          encodeURIComponent(pinned.file.replaceAll(" ","_")),
+        credit:"Documento storico · Wikimedia Commons",
+        kind:"archival_work_image"};
+    }
+
     // V2 is keyed by permanent work ID, not by title; e.g. Puccini and
     // Leoncavallo both have an opera called La bohème.
     // Legacy title-keyed artwork is not authoritative for a canonical work.
