@@ -165,7 +165,7 @@ jobs:
         run: |
           python -m scripts.publish_work_posters --allow-network
           python -m scripts.publish_programs
-      - name: Reconcile candidate queue against newly published canonical productions
+      - name: Finalize all candidate outcomes before atomic public catalog publication
         run: python -m scripts.reconcile_published_candidates
       - name: Persist unrecognized productions in review-only discovery feed
         run: python -m scripts.discovery_queue

@@ -23,8 +23,10 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
                       facts:dict,config:list[dict])->dict:
     approved={s["key"]:s for s in validate_config(config)
               if s["access_status"]=="approved"}
+    # Published programs must remain present and be regenerated/validated at
+    # every refresh; finalization marks them catalogued, not permanently hidden.
     candidates_by_id={c["id"]:c for c in candidates["candidates"]
-                      if c.get("status")=="needs_review"}
+                      if c.get("status") in ("needs_review","already_catalogued")}
     program_ids=set()
     performances=set()
     items=[]

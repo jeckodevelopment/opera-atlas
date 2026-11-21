@@ -31,6 +31,20 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
         self.assertEqual(twice,results)
         self.assertEqual(second["changes"],[])
 
+    def test_published_program_is_stable_across_refreshes(self):
+        program_url="https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+        candidate={"schema_version":1,"candidates":[{
+            "id":"mixed","source_key":"petruzzelli-opera-2027",
+            "official_url":program_url,"status":"needs_review",
+            "first_seen":"old","last_seen":"recent"}]}
+        published={program_url}
+        first,report=reconcile(candidate,published)
+        self.assertEqual(first["candidates"][0]["status"],"already_catalogued")
+        self.assertEqual(first["candidates"][0]["first_seen"],"old")
+        second,again=reconcile(first,published)
+        self.assertEqual(first,second)
+        self.assertFalse(again["changes"])
+
     def test_known_nonopera_is_excluded_but_kept_as_audit_record(self):
         old={"schema_version":1,"candidates":[{
             "id":"irrelevant","source_key":"arena-festival-2027",

@@ -98,11 +98,32 @@ def excluded_nonopera(key:str,url:str)->bool:
     return urlsplit(url).path.rstrip("/").split("/")[-1] in EXCLUDED_PATHS.get(key,frozenset())
 
 def reviewed_source_urls()->set[str]:
-    # Catalog identity comes from verified official production entries, not
-    # slug matching, so a similarly named new staging stays in review.
+    """URLs already published as a canonical opera OR a verified program.
+
+    A multi-work program is one ticketed event. Its official URL must leave
+    the candidate queue just as a solo staging does; never infer publication
+    merely from the presence of a source URL in an evidence checkpoint.
+    """
     from scripts.build_verified_catalog import MANIFEST
     document=json.loads(MANIFEST.read_text(encoding="utf-8"))
-    return {row["source_url"] for row in document["productions"]}
+    reviewed={row["source_url"] for row in document["productions"]}
+    programs=ROOT/"public"/"catalog"/"programs.json"
+    if programs.exists():
+        feed=json.loads(programs.read_text(encoding="utf-8"))
+        if feed.get("schema_version")!=1 or not isinstance(feed.get("programs"),list):
+            raise ValueError("invalid published program feed")
+        for item in feed["programs"]:
+            if (not isinstance(item,dict)
+                or not isinstance(item.get("source_url"),str)
+                or not isinstance(item.get("source_key"),str)
+                or not eligible(item["source_key"],item["source_url"])
+                or not isinstance(item.get("components"),list)
+                or len(item["components"])<2
+                or not isinstance(item.get("performances"),list)
+                or not item["performances"]):
+                raise ValueError("unverified program in published feed")
+            reviewed.add(item["source_url"])
+    return reviewed
 
 def classify(key:str,url:str,reviewed:set[str])->str:
     if excluded_nonopera(key,url):
