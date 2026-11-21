@@ -21,15 +21,22 @@ def git(*args: str) -> str:
     return result.stdout.strip()
 
 
-def registry_at(ref: str) -> dict:
-    return json.loads(git("show", f"{ref}:data/identity-registry.json"))
+def published_at(ref: str) -> dict:
+    """Read the actual public feed at a Git revision, not the draft registry."""
+    manifest = json.loads(git("show", f"{ref}:public/catalog/v2/manifest.json"))
+    channels = {}
+    for channel in ("works", "venues", "stagings"):
+        path = "public/catalog/v2/" + manifest["files"][channel]["path"]
+        contents = json.loads(git("show", f"{ref}:{path}"))
+        channels[channel] = {record["id"]: record for record in contents[channel]}
+    return channels
 
 
 def new_entities(before: dict, after: dict) -> list[dict]:
     """Compare permanent *public* IDs, never title strings or performance dates."""
     notices = []
-    works = {record["id"]: record for record in after["works"].values()}
-    venues = {record["id"]: record for record in after["venues"].values()}
+    works = after["works"]
+    venues = after["venues"]
     for channel in ("works", "stagings"):
         previous_ids = {record["id"] for record in before[channel].values()}
         for record in after[channel].values():
@@ -101,7 +108,7 @@ def main() -> int:
         print("No diagnostic emails: catalog publication deferred.")
         return 0
     try:
-        notices = new_entities(registry_at(args.base), registry_at(head))
+        notices = new_entities(published_at(args.base), published_at(head))
     except (KeyError, ValueError, subprocess.CalledProcessError) as exc:
         print(f"::warning::Atlas notification comparison failed: {exc}", file=sys.stderr)
         return 0
