@@ -137,8 +137,27 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
             uselang="en",type="item",limit=8)))
     if not matches:return None
     ids="|".join(sorted({x["id"] for x in matches}))
-    batch=fetch(wikidata_url("wbgetentities",ids=ids,
-                            props="claims|labels|aliases|sitelinks",languages="it|en"))
+    try:
+        batch=fetch(wikidata_url("wbgetentities",ids=ids,
+                                props="claims|labels|aliases|sitelinks",languages="it|en"))
+    except ValueError as exc:
+        if str(exc)!="external knowledge response too large":
+            raise
+        # Popular operas may have enormous Wikidata statements. Fetch only
+        # the identity claims required for this decision, one QID at a time.
+        entities={}
+        for qid in ids.split("|"):
+            slim=fetch(wikidata_url("wbgetentities",ids=qid,
+                                    props="labels|aliases|sitelinks",languages="it|en"))
+            entity=slim.get("entities",{}).get(qid,{})
+            if not isinstance(entity,dict):
+                continue
+            claims={}
+            for prop in ("P31","P7937","P86"):
+                specific=fetch(wikidata_url("wbgetclaims",entity=qid,property=prop))
+                claims[prop]=specific.get("claims",{}).get(prop,[])
+            entities[qid]={**entity,"claims":claims}
+        batch={"entities":entities}
     accepted=[]
     for qid,entity in batch.get("entities",{}).items():
         labels=entity.get("labels",{})
@@ -189,15 +208,60 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
                             if wiki_title else None)}
 
 def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
-    result=fetch("https://it.wikipedia.org/w/api.php?"+urlencode({
-        "action":"query","format":"json","prop":"extracts",
-        "explaintext":"1","titles":identity["wikipedia_title"]}))
-    pages=result.get("query",{}).get("pages",{})
-    matches=[x.get("extract","") for x in pages.values() if isinstance(x,dict)]
-    if len(matches)!=1:return None
-    extract="\n".join(line.strip() for line in matches[0].splitlines() if line.strip())
-    if not 140<=len(extract)<=12000:return None
-    return extract[:6000]
+    """Read only a named plot section, never an enormous Wikipedia article.
+
+    This avoids over-large article extracts and also reaches plots located
+    after long introduction, performance or reception sections.
+    """
+    from html.parser import HTMLParser
+    from html import unescape
+
+    class PlotText(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.parts=[]
+            self.skip=0
+        def handle_starttag(self,tag,attrs):
+            if tag in ("script","style","sup"):
+                self.skip+=1
+            elif tag in ("p","div","li","h2","h3","br") and not self.skip:
+                self.parts.append("\\n")
+        def handle_endtag(self,tag):
+            if tag in ("script","style","sup") and self.skip:
+                self.skip-=1
+        def handle_data(self,data):
+            if not self.skip:
+                self.parts.append(data)
+
+    title=identity.get("wikipedia_title")
+    if not isinstance(title,str) or not title or len(title)>150:
+        return None
+    base="https://it.wikipedia.org/w/api.php?"
+    sections=fetch(base+urlencode({"action":"parse","format":"json",
+                                   "page":title,"prop":"sections"}))
+    match=[]
+    for section in sections.get("parse",{}).get("sections",[]):
+        heading=section.get("line","")
+        index=str(section.get("index",""))
+        if (isinstance(heading,str) and
+                re.fullmatch(r"(?:La )?(?:trama|argomento|soggetto)(?: dell.opera)?",
+                             heading.strip(),flags=re.I)
+                and re.fullmatch(r"[1-9][0-9]{0,3}",index)):
+            match.append(index)
+    if len(match)!=1:
+        return None
+    page=fetch(base+urlencode({"action":"parse","format":"json",
+                               "page":title,"prop":"text","section":match[0],
+                               "disableeditsection":"1"}))
+    html=page.get("parse",{}).get("text",{}).get("*","")
+    if not isinstance(html,str) or not 90<=len(html)<=150000:
+        return None
+    parser=PlotText()
+    parser.feed(html)
+    content=" ".join(unescape("".join(parser.parts)).split())
+    if not 90<=len(content)<=12000:
+        return None
+    return "== Trama == "+content[:9000]
 
 ATTRIBUTION=ROOT/"data"/"verified-work-editorial-attribution.json"
 
