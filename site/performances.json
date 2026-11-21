@@ -2,6 +2,78 @@
   "schema_version": 1,
   "performances": [
     {
+      "id": "curated:auto-fcae59bb4ff1c516:2026-01-21",
+      "starts_at": "2026-01-21T20:30:00+01:00",
+      "local_date": "2026-01-21",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "LA CECCHINA",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:auto-fcae59bb4ff1c516:2026-01-23",
+      "starts_at": "2026-01-23T20:30:00+01:00",
+      "local_date": "2026-01-23",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "LA CECCHINA",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:auto-fcae59bb4ff1c516:2026-01-25",
+      "starts_at": "2026-01-25T18:00:00+01:00",
+      "local_date": "2026-01-25",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "LA CECCHINA",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:auto-fcae59bb4ff1c516:2026-01-28",
+      "starts_at": "2026-01-28T18:00:00+01:00",
+      "local_date": "2026-01-28",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "LA CECCHINA",
+      "composer": "Niccolò Piccinni",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
       "id": "curated:auto-cde049d5c057e0c0:2026-03-07",
       "starts_at": "2026-03-07T20:30:00+01:00",
       "local_date": "2026-03-07",
@@ -233,6 +305,78 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/"
+      ]
+    },
+    {
+      "id": "curated:auto-663c5bda82d136bb:2026-05-21",
+      "starts_at": "2026-05-21T20:30:00+02:00",
+      "local_date": "2026-05-21",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "IL GOBBO DEL CALIFFO",
+      "composer": "Franco Casavola",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+      ]
+    },
+    {
+      "id": "curated:auto-663c5bda82d136bb:2026-05-22",
+      "starts_at": "2026-05-22T20:30:00+02:00",
+      "local_date": "2026-05-22",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "IL GOBBO DEL CALIFFO",
+      "composer": "Franco Casavola",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+      ]
+    },
+    {
+      "id": "curated:auto-663c5bda82d136bb:2026-05-23",
+      "starts_at": "2026-05-23T18:00:00+02:00",
+      "local_date": "2026-05-23",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "IL GOBBO DEL CALIFFO",
+      "composer": "Franco Casavola",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+      ]
+    },
+    {
+      "id": "curated:auto-663c5bda82d136bb:2026-05-24",
+      "starts_at": "2026-05-24T18:00:00+02:00",
+      "local_date": "2026-05-24",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "IL GOBBO DEL CALIFFO",
+      "composer": "Franco Casavola",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
       ]
     },
     {

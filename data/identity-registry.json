@@ -498,6 +498,20 @@
       "title": "Siberia",
       "composer": "Umberto Giordano",
       "wikidata_id": "Q2292268"
+    },
+    "il gobbo del califfo|franco casavola": {
+      "id": "oa-w-000077",
+      "slug": "il-gobbo-del-califfo",
+      "title": "IL GOBBO DEL CALIFFO",
+      "composer": "Franco Casavola",
+      "authority_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+    },
+    "la cecchina|niccolò piccinni": {
+      "id": "oa-w-000078",
+      "slug": "la-cecchina",
+      "title": "LA CECCHINA",
+      "composer": "Niccolò Piccinni",
+      "authority_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
     }
   },
   "venues": {
@@ -1888,6 +1902,22 @@
       "venue_id": "oa-v-000026",
       "slug": "siberia",
       "source_url": "https://teatripiacenza.it/event/siberia/",
+      "season": "2026"
+    },
+    "auto-663c5bda82d136bb": {
+      "id": "oa-s-000148",
+      "work_id": "oa-w-000077",
+      "venue_id": "oa-v-000018",
+      "slug": "il-gobbo-del-califfo",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
+      "season": "2026"
+    },
+    "auto-fcae59bb4ff1c516": {
+      "id": "oa-s-000149",
+      "work_id": "oa-w-000078",
+      "venue_id": "oa-v-000018",
+      "slug": "la-cecchina",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
       "season": "2026"
     }
   },
@@ -6133,6 +6163,54 @@
       "staging_id": "oa-s-000147",
       "original_date": "2026-12-20",
       "source_url": "https://teatripiacenza.it/event/siberia/"
+    },
+    "auto-663c5bda82d136bb|2026-05-21": {
+      "id": "oa-r-000723",
+      "staging_id": "oa-s-000148",
+      "original_date": "2026-05-21",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+    },
+    "auto-663c5bda82d136bb|2026-05-22": {
+      "id": "oa-r-000724",
+      "staging_id": "oa-s-000148",
+      "original_date": "2026-05-22",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+    },
+    "auto-663c5bda82d136bb|2026-05-23": {
+      "id": "oa-r-000725",
+      "staging_id": "oa-s-000148",
+      "original_date": "2026-05-23",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+    },
+    "auto-663c5bda82d136bb|2026-05-24": {
+      "id": "oa-r-000726",
+      "staging_id": "oa-s-000148",
+      "original_date": "2026-05-24",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+    },
+    "auto-fcae59bb4ff1c516|2026-01-21": {
+      "id": "oa-r-000727",
+      "staging_id": "oa-s-000149",
+      "original_date": "2026-01-21",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+    },
+    "auto-fcae59bb4ff1c516|2026-01-23": {
+      "id": "oa-r-000728",
+      "staging_id": "oa-s-000149",
+      "original_date": "2026-01-23",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+    },
+    "auto-fcae59bb4ff1c516|2026-01-25": {
+      "id": "oa-r-000729",
+      "staging_id": "oa-s-000149",
+      "original_date": "2026-01-25",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+    },
+    "auto-fcae59bb4ff1c516|2026-01-28": {
+      "id": "oa-r-000730",
+      "staging_id": "oa-s-000149",
+      "original_date": "2026-01-28",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
     }
   }
 }

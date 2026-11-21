@@ -682,6 +682,24 @@
       "alt": "Illustrazione storica del volume Siberia di Umberto Giordano (1903), non fotografia di un allestimento",
       "credit": "Internet Archive Book Images / Wikimedia Commons, volume storico del 1903",
       "license": "No known copyright restrictions"
+    },
+    "oa-w-000077": {
+      "work_id": "oa-w-000077",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Il_Gobbo_(baritono)%2C_figurino_di_Paolo_Clausetti_per_Il_Gobbo_del_Califfo_(1929)_-_Archivio_Storico_Ricordi_ICON004971.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Il_Gobbo_(baritono)%2C_figurino_di_Paolo_Clausetti_per_Il_Gobbo_del_Califfo_(1929)_-_Archivio_Storico_Ricordi_ICON004971.jpg",
+      "alt": "Figurino storico del protagonista del Gobbo del Califfo (1929), non fotografia di una produzione attuale",
+      "credit": "Paolo Clausetti / Archivio Storico Ricordi / Wikimedia Commons",
+      "license": "Licenza indicata sulla scheda Wikimedia Commons"
+    },
+    "oa-w-000078": {
+      "work_id": "oa-w-000078",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Piccinni_-_La_buona_figliuola_-_title_page_of_the_libretto%2C_Rome_1760.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Piccinni_-_La_buona_figliuola_-_title_page_of_the_libretto%2C_Rome_1760.png",
+      "alt": "Frontespizio del libretto storico della Buona figliuola, detta La Cecchina (Roma, 1760)",
+      "credit": "Libretto storico Carlo Goldoni / Wikimedia Commons",
+      "license": "Public domain"
     }
   }
 }
