@@ -12,9 +12,9 @@ from scripts.publish_work_posters import load_archival_art
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE="https://www.fondazionepetruzzelli.it/eventi/"
 SPECS=(
-    ("bona-sforza-krautze-14-20-settembre/","BONA SFORZA","Zygmunt Krauze",2024),
-    ("il-gobbo-del-califfo-casavola-21-24-maggio/","IL GOBBO DEL CALIFFO","Franco Casavola",1929),
-    ("la-cecchina-piccinni-21-28-gennaio/","LA CECCHINA","Niccolò Piccinni",1760),
+    ("bona-sforza-krautze-14-20-settembre/","Bona Sforza","Zygmunt Krauze",2024),
+    ("il-gobbo-del-califfo-casavola-21-24-maggio/","Il gobbo del Califfo","Franco Casavola",1929),
+    ("la-cecchina-piccinni-21-28-gennaio/","La Cecchina","Niccolò Piccinni",1760),
 )
 class ThreeBariOperas(unittest.TestCase):
     def test_complete_source_bound_identity_and_short_synopsis(self):
@@ -37,24 +37,24 @@ class ThreeBariOperas(unittest.TestCase):
         self.assertIn("1760",found["la-cecchina"]["alt"])
     def test_official_bona_sforza_coproducer_poster(self):
         url=SOURCE+SPECS[0][0]
-        card=verified_coproduction_poster(source_url=url,title="BONA SFORZA",
+        card=verified_coproduction_poster(source_url=url,title="Bona Sforza",
                                          composer="Zygmunt Krauze")
         self.assertIsNotNone(card)
         self.assertEqual(card["kind"],"official_coproduction_poster")
         self.assertEqual(card["provenance_url"],"https://opera.krakow.pl/spektakle/bona-sforza")
-        self.assertEqual(verified_candidate_image({},title="BONA SFORZA",
+        self.assertEqual(verified_candidate_image({},title="Bona Sforza",
             composer="Zygmunt Krauze",url=url),card)
         self.assertTrue(is_verified_coproduction_poster(
-            card,title="BONA SFORZA",composer="Zygmunt Krauze"))
+            card,title="Bona Sforza",composer="Zygmunt Krauze"))
         for t,c,u in (
-                ("BONA SFORZA","Franco Casavola",url),
-                ("BONA SFORZA","Zygmunt Krauze",SOURCE+SPECS[1][0]),
+                ("Bona Sforza","Franco Casavola",url),
+                ("Bona Sforza","Zygmunt Krauze",SOURCE+SPECS[1][0]),
                 ("Bona Sforza Film","Zygmunt Krauze",url)):
             self.assertIsNone(verified_coproduction_poster(
                 source_url=u,title=t,composer=c))
         self.assertFalse(is_verified_coproduction_poster(
             {**card,"image_url":"https://opera.krakow.pl/media/gallery_image/other.jpg"},
-            title="BONA SFORZA",composer="Zygmunt Krauze"))
+            title="Bona Sforza",composer="Zygmunt Krauze"))
 
 if __name__=="__main__":
     unittest.main()
