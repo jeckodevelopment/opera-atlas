@@ -56,6 +56,31 @@ class RomeTeatroValle(unittest.TestCase):
             "https://commons.wikimedia.org/wiki/File:"))
         self.assertNotEqual(entries[0]["slug"],"teatro-dell-opera-di-roma")
 
+    def test_cached_research_is_completed_from_exact_official_seed(self):
+        rows=parse_source_credited_opera_detail(SOURCE,URL,html())
+        cid="oa-index-"+hashlib.sha256((SOURCE+"|"+URL).encode()).hexdigest()[:20]
+        candidates={"schema_version":1,"candidates":[{
+            "id":cid,"source_key":SOURCE,"official_url":URL,"status":"needs_review"}]}
+        detail={"schema_version":1,"evidence":[{
+            "candidate_id":cid,"source_key":SOURCE,"source_url":URL,
+            "status":"needs_editorial_review","event_facts":rows}]}
+        cached={"schema_version":1,"works":[{
+            "candidate_id":cid,"source_key":SOURCE,"source_url":URL,
+            "title":"La Cenerentola","composer":"Gioachino Rossini",
+            "synopsis":None,"history":None}]}
+        enriched=official_identity_candidates(detail,candidates,cached)["works"]
+        seed=next(w for w in read(ROOT/"data/verified-work-authority-seeds.json")["works"]
+                  if w["source_url"]==URL)
+        self.assertEqual(len(enriched),1)
+        self.assertEqual(enriched[0]["synopsis"],seed["synopsis"])
+        self.assertEqual(enriched[0]["history"],seed["history"])
+        self.assertEqual(enriched[0]["official_authority_url"],URL)
+        wrong={"schema_version":1,"works":[{
+            **cached["works"][0],"composer":"Giovanni Paisiello"}]}
+        unchanged=official_identity_candidates(detail,candidates,wrong)["works"][0]
+        self.assertIsNone(unchanged["synopsis"])
+        self.assertNotIn("official_authority_url",unchanged)
+
     def test_shared_atomic_publication_keeps_valle_venue_separate(self):
         rows=parse_source_credited_opera_detail(SOURCE,URL,html())
         self.assertEqual(len(rows),5)

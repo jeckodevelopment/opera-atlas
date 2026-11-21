@@ -77,7 +77,7 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
            for entry in intelligence.get("works",[])}
     candidates_by_id={x["id"]:x for x in candidates.get("candidates",[])
                       if x.get("status")=="needs_review"}
-    results=list(intelligence.get("works",[]))
+    results=copy.deepcopy(intelligence.get("works",[]))
     for record in evidence.get("evidence",[]):
         key=record.get("source_key")
         if key not in sources or record.get("status")!="needs_editorial_review":
@@ -88,7 +88,7 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
             or candidate.get("official_url")!=url or not isinstance(url,str)
             or not eligible(key,url)
             or urlsplit(url).hostname!=urlsplit(sources[key]["official_url"]).hostname
-            or (key,url) in known or key not in VENUE_BY_SOURCE):
+            or key not in VENUE_BY_SOURCE):
             continue
         rows=record.get("event_facts",[])
         if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
@@ -131,6 +131,20 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
         if seed and (normalized(seed["title"])!=normalized(title)
                      or normalized(seed["composer"])!=normalized(composer)):
             raise ValueError("official source contradicts verified opera identity seed")
+        # The remote research cache may already contain this candidate with
+        # an incomplete editorial record. Reconcile its *exact official URL*
+        # and credited identity before the publication transaction, instead
+        # of skipping source-verified material merely because it was researched.
+        if (key,url) in known:
+            matching=[work for work in results
+                      if work.get("source_key")==key and work.get("source_url")==url]
+            if seed and len(matching)==1 and (
+                    normalized(matching[0].get("title",""))==normalized(title)
+                    and normalized(matching[0].get("composer",""))==normalized(composer)):
+                matching[0]["synopsis"]=seed["synopsis"]
+                matching[0]["history"]=seed["history"]
+                matching[0]["official_authority_url"]=url
+            continue
         summary=(seed["synopsis"] if seed else
                  f"«{title}» è un'opera di {composer}. "
                  "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
