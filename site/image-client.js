@@ -168,7 +168,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     const verified=event?.photo_file || knownVenueFile;
     // Never infer a photographed building from its city. A city can host
     // multiple theatres, including distinct historic and temporary venues.
-    const file=typeof verified==="string" && /^[^/\\\\]+\\.(jpe?g|png|webp)$/i.test(verified)
+    const file=typeof verified==="string" && /^[^/\\]+\.(jpe?g|png|webp)$/i.test(verified)
       ? verified : null;
     if(!file)return {src:poster(title,"venue"),alt:"Illustrazione editoriale del "+title};
     const result=photo(file,"Fotografia del "+title+" a "+(event?.municipality||event?.city),title);
