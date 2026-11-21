@@ -319,8 +319,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         else:
             staging_key="auto-"+hashlib.sha256((key+"|"+url).encode()).hexdigest()[:16]
             if staging_key in next_registry["stagings"]:
-                issues.append({"candidate_id":cid,"reason":"identity_collision"})
-                continue
+                # One official production URL may genuinely present events in
+                # multiple verified venues. Preserve the immutable legacy ID
+                # for its original staging; key additional stagings by venue.
+                staging_key="auto-"+hashlib.sha256(
+                    (key+"|"+url+"|"+city+"|"+venue).encode()).hexdigest()[:16]
+                if staging_key in next_registry["stagings"]:
+                    issues.append({"candidate_id":cid,"reason":"identity_collision"})
+                    continue
             canonical_venue=ensure_venue(next_registry,city,venue,canonical_venue)
             production={"key":staging_key,"title":work["title"],
                         "composer":work["composer"],"venue":venue,
