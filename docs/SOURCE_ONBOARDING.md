@@ -1068,3 +1068,8 @@ La rappresentazione dei dittici (*L'Arlésienne* / *Pagliacci*) resta un requisi
 ## Roma: ripristino indice opere 2026/2027 (21/11/2026)
 
 L'indice storico `/opere/` non è disponibile nell'ultima scansione. L'indice ufficiale corrente è `https://www.operaroma.it/genre/opera/`, con produzioni della stagione 2026/27 e link ai dettagli sotto `/spettacoli/<slug>/`. Il monitor usa il nuovo indirizzo con allowlist HTTPS esatta e controlli robots.txt per ogni lettura. La pubblicazione delle recite rimane subordinata all'estrazione verificata di date, orari, titolo e compositore dai dettagli ufficiali. La prima pagina dell'indice non è una certificazione dell'intera stagione: la paginazione deve essere misurata separatamente.
+
+
+### Roma: recupero della seconda pagina dell'indice ufficiale
+
+L'indice delle opere del teatro è paginato: la prima pagina ufficiale `/genre/opera/` include alcune produzioni 2026/2027, mentre `/genre/opera/page/2/` include, tra le altre, *Lucia di Lammermoor* e *The Rake's Progress*. Il connettore ora legge **entrambe** le pagine con il normale controllo robots.txt e con massimo due richieste d'indice per scansione, accetta soltanto URL `https://www.operaroma.it/spettacoli/...`, deduplica i link e conserva gli ID delle candidate già verificate. Se la seconda pagina è irraggiungibile o anomala, mantiene i link affidabili della prima ma marca lo stato `partial_pagination`, `pagination_complete=false` e `current_scan_verified=false`: **non** può dichiarare la copertura dell'indice riuscita. Due pagine sono un limite di sicurezza, non un'attestazione della copertura di tutto l'archivio storico del teatro; la metrica per stagione richiede controllo dei titoli e delle date ufficiali.
