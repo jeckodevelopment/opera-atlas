@@ -33,6 +33,7 @@ VENUE_BY_SOURCE={
     "opera-roma-season-2026-27":("Roma","Teatro dell\u0027Opera di Roma"),
     "petruzzelli-opera-2026":("Bari","Teatro Petruzzelli"),
     "petruzzelli-opera-2027":("Bari","Teatro Petruzzelli"),
+    "bologna-comunale-opera-2026":("Bologna","Teatro Comunale di Bologna"),
     "bologna-comunale-opera-2027":("Bologna","Teatro Comunale di Bologna"),
 }
 
@@ -47,7 +48,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
     permitted=({"Teatro Donizetti","Teatro Sociale"}
                if source_key=="donizetti-opera-2026" else
                {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"}
-               if source_key=="bologna-comunale-opera-2027" else {default_venue})
+               if source_key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027") else {default_venue})
     if venue not in permitted:return None
     found=[(key,value) for key,value in registry["venues"].items()
            if value["city"]==city and value["name"]==venue
@@ -125,7 +126,7 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         # Both the explicitly named work and composer must be present in the
         # evidence; an Event title alone never establishes a canonical opera.
         rows=item.get("event_facts",[])
-        if key=="bologna-comunale-opera-2027":
+        if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
             # Normalize previous source checkpoint data as well as fresh reads;
             # do not require refetching all already verified showtimes.
             from opera_atlas.bologna_detail_parser import normalize_event_fact

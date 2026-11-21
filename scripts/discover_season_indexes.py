@@ -200,7 +200,7 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/spettacoli/[a-z0-9-]+",path))
     if key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
-    if key=="bologna-comunale-opera-2027":
+    if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
     if key=="carlo-felice-season-2026-27":
         return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
@@ -245,6 +245,7 @@ def validate_config(config:dict)->list[dict]:
         "teatro-grande-opera-2026":("teatrogrande.it","/it"),
         "maggio-fiorentino-calendar-2027":("www.maggiofiorentino.com","/calendario/2027/01/opera"),
         "opera-roma-season-2026-27":("www.operaroma.it","/opere/"),
+        "bologna-comunale-opera-2026":("www.tcbo.it","/stagione-presente/"),
         "bologna-comunale-opera-2027":("www.tcbo.it","/stagione-futura/"),
         "petruzzelli-opera-2026":("www.fondazionepetruzzelli.it","/opera-e-balletto-2026/"),
         "petruzzelli-opera-2027":("www.fondazionepetruzzelli.it","/opera-e-balletto-2027/"),
@@ -283,8 +284,9 @@ def validate_config(config:dict)->list[dict]:
                               and index.path.startswith("/calendario/2027/"))
         elif key=="opera-roma-season-2026-27":
             valid_season=index.path=="/opere/"
-        elif key=="bologna-comunale-opera-2027":
-            valid_season=(index.path=="/stagione-futura/" and index.query=="_tipo=opera")
+        elif key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
+            valid_season=(index.path==("/stagione-presente/" if key.endswith("-2026") else "/stagione-futura/")
+                          and index.query=="_tipo=opera")
         elif key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
             valid_season=bool(re.fullmatch(r"/opera-e-balletto-20\d{2}/",index.path)
                               and index.path=="/opera-e-balletto-"+key.rsplit("-",1)[-1]+"/")
@@ -294,7 +296,7 @@ def validate_config(config:dict)->list[dict]:
         else:
             valid_season=index.path==path
         if (index.scheme!="https" or index.hostname!=host or not valid_season
-            or (index.query and key!="bologna-comunale-opera-2027") or index.fragment or index.port is not None
+            or (index.query and key not in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027")) or index.fragment or index.port is not None
             or item["official_url"]!="https://"+host+"/"):
             raise ValueError("index URL outside exact official allowlist")
         if item["access_status"] not in {"approved","pending","blocked"}:

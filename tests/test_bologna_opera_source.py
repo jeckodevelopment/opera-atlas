@@ -6,6 +6,7 @@ from opera_atlas.bologna_detail_parser import parse_detail,normalize_event_fact
 import json
 
 KEY="bologna-comunale-opera-2027"
+CURRENT="bologna-comunale-opera-2026"
 BASE="https://www.tcbo.it/"
 URL=BASE+"evento/opera/il-ritorno-di-ulisse-in-patria-2027/"
 MANZONI=BASE+"evento/opera/la-straniera-2027/"
@@ -31,6 +32,19 @@ class BolognaSourceTests(unittest.TestCase):
         self.assertEqual(len(extract(KEY,url,html,2)),2)
         self.assertFalse(eligible(KEY,BASE+"evento/concerto/musica-2027/"))
         self.assertFalse(eligible(KEY,BASE+"evento/opera/musica-2027/?preview=1"))
+    def test_both_2026_and_2027_official_indexes_are_kept(self):
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
+        sources={x["key"]:x for x in validate_config(config)}
+        self.assertEqual(sources[CURRENT]["url"],BASE+"stagione-presente/?_tipo=opera")
+        self.assertEqual(sources[KEY]["url"],BASE+"stagione-futura/?_tipo=opera")
+        url=BASE+"evento/opera/samson-et-dalila-2026/"
+        self.assertEqual(extract(CURRENT,sources[CURRENT]["url"],
+                                 f'<a href="{url}">Opera 2026</a>',1),[url])
+        self.assertFalse(eligible(CURRENT,BASE+"evento/concerto/test-2026/"))
+        html=fixture(title="Samson et Dalila",composer="Camille Saint-Saëns",
+                     dates=(("13 Nov 2026","20:00"),))
+        self.assertEqual(parse_detail(html,url=url)[3],[("2026-11-13","20:00")])
+
     def test_ticket_dates_clock_composer_and_real_venue(self):
         title,composer,venue,rows=parse_detail(fixture(),url=URL)
         self.assertEqual((title,composer,venue),

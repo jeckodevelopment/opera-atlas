@@ -82,7 +82,7 @@ def official_title_hint(candidate:dict)->str|None:
           else parts[-1]).removesuffix(".html")
     if not re.fullmatch(r"[a-z0-9-]{3,80}",path) or not eligible(key,url):
         return None
-    if key=="bologna-comunale-opera-2027" and re.search(r"-20\\d{2}$",path):
+    if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027") and re.search(r"-20\\d{2}$",path):
         path=re.sub(r"-20\\d{2}$","",path)
     if path.endswith("-anteprima-under30"):return None
     return OFFICIAL_TITLE_ALIASES.get((key,path),path.replace("-"," "))
@@ -236,7 +236,7 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                 and x.get("source_key")==item["source_key"]
                 and x.get("source_url")==item["official_url"]
                 and x.get("status")=="needs_editorial_review"]
-        if item["source_key"]=="bologna-comunale-opera-2027":
+        if item["source_key"] in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
             from opera_atlas.bologna_detail_parser import normalize_event_fact
             detail=[{**d,"event_facts":[normalize_event_fact(x)
                      for x in d.get("event_facts",[])]} for d in detail]

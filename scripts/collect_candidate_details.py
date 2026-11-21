@@ -166,7 +166,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
 
     Never infer metadata for a newly discovered work from a URL slug alone.
     """
-    if source_key=="bologna-comunale-opera-2027":
+    if source_key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         from opera_atlas.bologna_detail_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
@@ -300,7 +300,7 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
-    if source_key=="bologna-comunale-opera-2027":
+    if source_key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         from opera_atlas.bologna_detail_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
@@ -451,7 +451,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"] in ("carlo-felice-season-2026-27","bologna-comunale-opera-2027"):
+                if item["source_key"] in ("carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
@@ -471,7 +471,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                    "reason":"no_verified_showtimes",
                                    "diagnostic":diagnostic,"rows":0})
                     continue
-                if item["source_key"]=="bologna-comunale-opera-2027":
+                if item["source_key"] in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
                     from opera_atlas.bologna_detail_parser import normalize_event_fact
                     facts=[normalize_event_fact(row) for row in facts]
                 retained[item["id"]]={

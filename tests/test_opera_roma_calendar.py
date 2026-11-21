@@ -42,7 +42,7 @@ class RomeOperaTests(unittest.TestCase):
 
     def test_strict_rome_source_url_and_index(self):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
-        self.assertEqual(len(validate_config(config)),13)
+        self.assertEqual(len(validate_config(config)),14)
         self.assertTrue(eligible(SOURCE,DETAIL))
         self.assertFalse(eligible(SOURCE,INDEX))
         self.assertFalse(eligible(SOURCE,"https://www.operaroma.it/costanzi/"))
