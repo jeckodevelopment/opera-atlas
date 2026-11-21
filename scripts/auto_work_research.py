@@ -62,7 +62,7 @@ OFFICIAL_TITLE_ALIASES={
     ("fenice-opera-2026-27","ilbarbieredisivigliapercacciolo"):"Il barbiere di Siviglia",
 }
 
-def official_title_hint(candidate:dict)->str|None:
+def official_title_hint(candidate:dict,evidence:dict|None=None)->str|None:
     key=candidate.get("source_key","")
     url=candidate.get("official_url","")
     if not isinstance(url,str):return None
@@ -82,6 +82,23 @@ def official_title_hint(candidate:dict)->str|None:
           else parts[-1]).removesuffix(".html")
     if not re.fullmatch(r"[a-z0-9-]{3,80}",path) or not eligible(key,url):
         return None
+    if key=="petruzzelli-opera-2027":
+        # Never mistake a season URL slug (or a mixed bill/ballet) for
+        # the work identity. Require exactly one verified theatre credit.
+        matches=[x for x in (evidence or {}).get("evidence",[])
+                 if x.get("candidate_id")==candidate.get("id")
+                 and x.get("source_key")==key and x.get("source_url")==url
+                 and x.get("status")=="needs_editorial_review"]
+        if len(matches)!=1:return None
+        rows=matches[0].get("event_facts",[])
+        if not rows:return None
+        titles={x.get("event_title") for x in rows if isinstance(x,dict)}
+        composers={x.get("composer") for x in rows if isinstance(x,dict)}
+        if (len(titles)!=1 or len(composers)!=1
+            or any(not isinstance(x,str) or not x.strip()
+                   for x in titles|composers)):
+            return None
+        return next(iter(titles))
     if key=="bologna-comunale-opera-2027" and re.search(r"-20\\d{2}$",path):
         path=re.sub(r"-20\\d{2}$","",path)
     if path.endswith("-anteprima-under30"):return None
@@ -168,7 +185,7 @@ def preverified_work_material() -> dict[str, dict]:
     return result
 
 def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
-                      *,today:date)->list[dict]:
+                      *,today:date,evidence:dict|None=None)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
     done={x["candidate_id"] for x in existing.get("works",[])
@@ -181,7 +198,7 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
         uri=item.get("official_url","")
         if not isinstance(uri,str) or urlsplit(uri).hostname!=urlsplit(source["official_url"]).hostname:
             continue
-        hint=official_title_hint(item)
+        hint=official_title_hint(item,evidence)
         if hint is None:continue
         options.append(item)
     options.sort(key=lambda x:x["id"])
@@ -192,8 +209,8 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
     # Verified source material may already exist for an uncatalogued
     # work. Check those candidates first; all others retain fair rotation.
     prepared=preverified_work_material()
-    ready=[x for x in options if slugify(official_title_hint(x)) in prepared]
-    other=[x for x in options if slugify(official_title_hint(x)) not in prepared]
+    ready=[x for x in options if slugify(official_title_hint(x,evidence)) in prepared]
+    other=[x for x in options if slugify(official_title_hint(x,evidence)) not in prepared]
     def rotate(items):
         if not items:return []
         offset=today.toordinal()%len(items)
@@ -221,13 +238,14 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
     existing_works={x["candidate_id"]:x.copy() for x in existing.get("works",[])}
     prepared=preverified_work_material() if prepared is None else prepared
     statuses=[]
-    options=choose_candidates(candidates,existing,known_slugs,today=today)
+    options=choose_candidates(candidates,existing,known_slugs,today=today,
+                              evidence=evidence)
     # Move ready-made, sourced work cards to the front while retaining the
     # normal fair rotation for all remaining unseen operas.
-    options.sort(key=lambda x:slugify(official_title_hint(x)) not in prepared)
+    options.sort(key=lambda x:slugify(official_title_hint(x,evidence)) not in prepared)
     for item in options:
         cid=item["id"]
-        slug=slugify(official_title_hint(item))
+        slug=slugify(official_title_hint(item,evidence))
         # A prewritten title-keyed synopsis is not safe for a new homonym.
         # Resolve its own facts instead of copying the established work card.
         material=prepared.get(slug) if slug not in known_slugs else None
@@ -251,8 +269,8 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             continue
         composer_hint=next(iter(composers.values())) if len(composers)==1 else None
         try:
-            identity=(resolve(official_title_hint(item),composer_hint=composer_hint)
-                      if composer_hint else resolve(official_title_hint(item)))
+            identity=(resolve(official_title_hint(item,evidence),composer_hint=composer_hint)
+                      if composer_hint else resolve(official_title_hint(item,evidence)))
             if identity is None:raise ValueError("authority_not_unique")
             # Preverified cards are keyed only by title. For multiple known
             # compositions, even an independently resolved composer must use
