@@ -333,6 +333,10 @@ def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
              r"\s+(?=(?:Dramma|Commedia|Singspiel|Melodramma|Opera|Tragedia|"
              r"Oratorio|Farsa|Direttore|Regia)\b)")
     credits=re.findall(pattern,credit)
+    # Every labelled composer mention in this bounded primary block must
+    # resolve to the same single independently credited identity.
+    if len(re.findall(r"(?i)\bMusiche?\s+di\b",credit))!=1:
+        raise ValueError("conflicting Palermo composer credits")
     if len(credits)!=1:
         raise ValueError("missing or ambiguous labelled Palermo composer")
     composer=credits[0]
