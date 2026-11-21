@@ -8,12 +8,12 @@ from __future__ import annotations
 import re
 
 NAME = r"([A-ZÀ-Ü][a-zà-ÿ]{2,24}(?:['’][A-ZÀ-Ü]?[a-zà-ÿ]+)?)"
-PLOT_HEADING = re.compile(r"==\\s*(?:Trama|La trama|Argomento)\\s*==", re.I)
-NEXT_HEADING = re.compile(r"==\\s*[^=]+\\s*==")
-LOVE = re.compile(NAME + r"\\s+(?:si innamora di|ama)\\s+" + NAME + r"\\b")
-QUEST = re.compile(NAME + r"\\s+(?:cerca di|tenta di)\\s+(salvare|liberare|ritrovare|proteggere)\\s+" + NAME + r"\\b", re.I)
-BETRAY = re.compile(NAME + r"\\s+(uccide|tradisce|inganna)\\s+" + NAME + r"\\b", re.I)
-GENERIC = re.compile(r"\\b(?:opera|atto|scena|teatro|personaggi|trama|storia|prologo)\\b", re.I)
+PLOT_HEADING = re.compile(r"==\s*(?:Trama|La trama|Argomento)\s*==", re.I)
+NEXT_HEADING = re.compile(r"==\s*[^=]+\s*==")
+LOVE = re.compile(NAME + r"\s+(?:si innamora di|ama)\s+" + NAME + r"\b")
+QUEST = re.compile(NAME + r"\s+(?:cerca di|tenta di)\s+(salvare|liberare|ritrovare|proteggere)\s+" + NAME + r"\b", re.I)
+BETRAY = re.compile(NAME + r"\s+(uccide|tradisce|inganna)\s+" + NAME + r"\b", re.I)
+GENERIC = re.compile(r"\b(?:opera|atto|scena|teatro|personaggi|trama|storia|prologo)\b", re.I)
 
 
 def synopsis_from_wikipedia_plot(extract: str | None) -> str | None:
