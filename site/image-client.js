@@ -159,8 +159,14 @@ window.OperaAtlasImages=Object.freeze((()=>{
     // Legacy title-keyed artwork is not authoritative for a canonical work.
     // Only work-ID keyed evidence may select a published poster.
     const chosen=(posterSchema===2 && event?.work_id ? posters[event?.work_id] : null);
+    // TicketOne artwork is explicitly approved for this one canonical work.
+    // Never accept arbitrary ticketing artwork by title or for a different work.
+    const approvedTicketingArt=event?.work_id==="oa-w-000074" &&
+      event?.composer==="Nicola Sani" && title==="Code: Unknown" &&
+      chosen?.kind==="ticketing_event_artwork" &&
+      chosen?.image_url==="https://www.ticketone.it/obj/media/IT-eventim/teaser/evo/artwork/2027/code-unknow-biglietti.jpg";
     if(chosen && (chosen.kind==="official_production_image" ||
-                  chosen.kind==="archival_work_image") &&
+                  chosen.kind==="archival_work_image" || approvedTicketingArt) &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
       return {src:chosen.image_url,
         alt:chosen.alt||"Immagine autentica dell’opera "+title,
