@@ -34,7 +34,7 @@ class ReggioSourceTests(unittest.TestCase):
         sources=validate_config(document)
         item=next(x for x in sources if x["key"]==KEY)
         self.assertEqual(item["url"],INDEX)
-        self.assertEqual(len(sources),26)
+        self.assertEqual(len(sources),29)
         self.assertTrue(eligible(KEY,DETAIL))
         self.assertFalse(eligible(KEY,"https://www.iteatri.re.it/2026/09/abbonati-allopera/"))
         slugs=["macbeth-2","death-in-venice","simon-boccanegra-2","la-clemenza-di-tito-2"]
