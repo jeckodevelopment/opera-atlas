@@ -108,7 +108,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-21T18:39:30+00:00",
+      "checked_at": "2026-11-21T18:49:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -368,7 +368,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T18:39:30+00:00",
+      "checked_at": "2026-11-21T18:49:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -406,7 +406,7 @@
       "source_key": "donizetti-opera-2026",
       "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
       "content_sha256": "1b6c35ae33d605b55838da484a6eefcfc67785f79592a96c3e0e39edad5c96b5",
-      "checked_at": "2026-11-21T18:39:13+00:00",
+      "checked_at": "2026-11-21T18:48:57+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -571,8 +571,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "ea9256cf38c6f6170f5f7d817987f4f2eb438c504ba844f14bcc3d1bc617c861",
-      "checked_at": "2026-11-21T18:38:39+00:00",
+      "content_sha256": "0bb9cc78517fb12921c3bd6814f091ba57bf422da28c66155dea12786e7dbf1e",
+      "checked_at": "2026-11-21T18:48:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -694,7 +694,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-21T18:39:30+00:00",
+      "checked_at": "2026-11-21T18:49:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -959,6 +959,131 @@
       ]
     },
     {
+      "candidate_id": "oa-index-58413a3bbbee689b82bc",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+      "content_sha256": "78f44e07e4b439b4db751a72c402012d3b35be410a499b699853cc03322ce71f",
+      "checked_at": "2026-11-21T18:48:35+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "date": "2027-10-26",
+          "starts_at": "2027-10-26T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "date": "2027-10-28",
+          "starts_at": "2027-10-28T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "date": "2027-11-02",
+          "starts_at": "2027-11-02T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "date": "2027-11-06",
+          "starts_at": "2027-11-06T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "date": "2027-11-10",
+          "starts_at": "2027-11-10T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "date": "2027-11-13",
+          "starts_at": "2027-11-13T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "date": "2027-11-16",
+          "starts_at": "2027-11-16T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/",
+      "content_sha256": "9f604974d820c6fc93c73f9ae6ed89cd2b8f2d91970ad3bfe0f4afb1cb56d45d",
+      "checked_at": "2026-11-21T18:49:13+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-15",
+          "starts_at": "2027-09-15T20:00:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-16",
+          "starts_at": "2027-09-16T18:30:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-17",
+          "starts_at": "2027-09-17T19:00:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-18",
+          "starts_at": "2027-09-18T20:00:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-19",
+          "starts_at": "2027-09-19T18:30:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-21",
+          "starts_at": "2027-09-21T18:30:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-22",
+          "starts_at": "2027-09-22T19:00:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Massimo",
+          "date": "2027-09-23",
+          "starts_at": "2027-09-23T19:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
@@ -1156,7 +1281,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T18:38:52+00:00",
+      "checked_at": "2026-11-21T18:48:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1346,6 +1471,65 @@
       ]
     },
     {
+      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/",
+      "content_sha256": "486594c0db36fa218e4f5b8ce8d93bbac86896285286eacc9e0bc0d276134f02",
+      "checked_at": "2026-11-21T18:48:27+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Ernani",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-10-31",
+          "starts_at": "2027-10-31T20:00:00+01:00"
+        },
+        {
+          "event_title": "Ernani",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-11-02",
+          "starts_at": "2027-11-02T18:30:00+01:00"
+        },
+        {
+          "event_title": "Ernani",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-11-03",
+          "starts_at": "2027-11-03T19:00:00+01:00"
+        },
+        {
+          "event_title": "Ernani",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-11-04",
+          "starts_at": "2027-11-04T18:30:00+01:00"
+        },
+        {
+          "event_title": "Ernani",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-11-05",
+          "starts_at": "2027-11-05T19:00:00+01:00"
+        },
+        {
+          "event_title": "Ernani",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-11-06",
+          "starts_at": "2027-11-06T19:00:00+01:00"
+        },
+        {
+          "event_title": "Ernani",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-11-07",
+          "starts_at": "2027-11-07T17:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-8e417ad6e506eaf0929d",
       "source_key": "arena-festival-2027",
       "source_url": "https://www.arena.it/arena-opera-festival/carmen/",
@@ -1429,6 +1613,58 @@
           "date": "2027-09-10",
           "starts_at": "2027-09-10T21:00:00+02:00",
           "venue": "Arena di Verona"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-92b69a8ac1040b0537be",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
+      "content_sha256": "d5fe8dc90c539807ab7ca64f6d5dee518f248c4974c331cc12b1fab9539f0224",
+      "checked_at": "2026-11-21T18:49:06+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2027-04-17",
+          "starts_at": "2027-04-17T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2027-04-20",
+          "starts_at": "2027-04-20T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2027-04-22",
+          "starts_at": "2027-04-22T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2027-04-24",
+          "starts_at": "2027-04-24T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2027-04-27",
+          "starts_at": "2027-04-27T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2027-04-30",
+          "starts_at": "2027-04-30T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
         }
       ]
     },
@@ -1526,7 +1762,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-21T18:39:30+00:00",
+      "checked_at": "2026-11-21T18:49:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1770,6 +2006,65 @@
       ]
     },
     {
+      "candidate_id": "oa-index-b4180540983902f703af",
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/",
+      "content_sha256": "7b4be0ec6eb621e9fb8fd013c363ab3a4c1e651280ccfc4f14d5577eb2f46d71",
+      "checked_at": "2026-11-21T18:48:40+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-05-16",
+          "starts_at": "2027-05-16T20:00:00+02:00"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-05-18",
+          "starts_at": "2027-05-18T18:30:00+02:00"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-05-19",
+          "starts_at": "2027-05-19T19:00:00+02:00"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-05-20",
+          "starts_at": "2027-05-20T18:30:00+02:00"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-05-21",
+          "starts_at": "2027-05-21T19:00:00+02:00"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-05-22",
+          "starts_at": "2027-05-22T19:00:00+02:00"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T18:30:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-b67d637b2f593f6756c7",
       "source_key": "arena-festival-2027",
       "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
@@ -1853,7 +2148,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T18:39:30+00:00",
+      "checked_at": "2026-11-21T18:49:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2056,7 +2351,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-21T18:39:30+00:00",
+      "checked_at": "2026-11-21T18:49:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2093,8 +2388,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "dd4b7239ecd8aa34b6db5b96cd8970699f320f2fd90624ba6c3b1df67336b35d",
-      "checked_at": "2026-11-21T18:39:02+00:00",
+      "content_sha256": "8200a6c87858077959d3f126a5302a15d9c5d2a6d8bcb9462753a32c391a1bc1",
+      "checked_at": "2026-11-21T18:48:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2117,6 +2412,103 @@
           "date": "2026-11-27",
           "starts_at": "2026-11-27T20:00:00+01:00",
           "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
+      "content_sha256": "37a105a234e8cc43bc883950459111e9f475eff4041d1b4cd34ed7d390318049",
+      "checked_at": "2026-11-21T18:49:11+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Leonora",
+          "composer": "Ferdinando Paër",
+          "date": "2027-09-11",
+          "starts_at": "2027-09-11T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Leonora",
+          "composer": "Ferdinando Paër",
+          "date": "2027-09-13",
+          "starts_at": "2027-09-13T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Leonora",
+          "composer": "Ferdinando Paër",
+          "date": "2027-09-15",
+          "starts_at": "2027-09-15T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Leonora",
+          "composer": "Ferdinando Paër",
+          "date": "2027-09-18",
+          "starts_at": "2027-09-18T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Leonora",
+          "composer": "Ferdinando Paër",
+          "date": "2027-09-23",
+          "starts_at": "2027-09-23T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Leonora",
+          "composer": "Ferdinando Paër",
+          "date": "2027-09-26",
+          "starts_at": "2027-09-26T20:00:00+02:00",
+          "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
+      "content_sha256": "d40def9ca880efdeac1a72e7ef2104d3a2f2cbf76bcc760588479b0479fca026",
+      "checked_at": "2026-11-21T18:49:12+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Les Pêcheurs de perles",
+          "composer": "Georges Bizet",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Les Pêcheurs de perles",
+          "composer": "Georges Bizet",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T14:30:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Les Pêcheurs de perles",
+          "composer": "Georges Bizet",
+          "date": "2027-01-27",
+          "starts_at": "2027-01-27T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Les Pêcheurs de perles",
+          "composer": "Georges Bizet",
+          "date": "2027-01-30",
+          "starts_at": "2027-01-30T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
+        },
+        {
+          "event_title": "Les Pêcheurs de perles",
+          "composer": "Georges Bizet",
+          "date": "2027-02-07",
+          "starts_at": "2027-02-07T20:00:00+01:00",
+          "venue": "Teatro alla Scala"
         }
       ]
     },
