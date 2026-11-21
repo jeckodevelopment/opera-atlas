@@ -37,12 +37,17 @@ class NewOperaPromotionTests(unittest.TestCase):
                 self.assertTrue(45<=len(actual[cid]["synopsis"])<=300)
                 self.assertIsNotNone(actual[cid]["history"])
                 self.assertNotIn("Consulta le rappresentazioni",actual[cid]["synopsis"])
-        # A verified plot replaces an earlier identity-only introduction.
-        original=next(x for x in doc["works"] if x["candidate_id"]==
-                      "oa-index-9c8433ba74501efca6eb")
-        completed=actual["oa-index-9c8433ba74501efca6eb"]
-        self.assertIn("Consulta le rappresentazioni",original["synopsis"])
-        self.assertNotIn("Consulta le rappresentazioni",completed["synopsis"])
+        # Test placeholder replacement independently from the mutable public
+        # checkpoint, which may already have a completed synopsis.
+        unresolved=copy.deepcopy(doc)
+        old=next(x for x in unresolved["works"] if x["candidate_id"]==
+                 "oa-index-9c8433ba74501efca6eb")
+        old["synopsis"]=("«Adriana Lecouvreur» è un'opera di Francesco Cilea. "
+                         "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+        completed=complete_cached_verified_work_cards(unresolved,evidence)
+        final=next(x for x in completed["works"] if x["candidate_id"]==
+                   "oa-index-9c8433ba74501efca6eb")
+        self.assertNotIn("Consulta le rappresentazioni",final["synopsis"])
         self.assertIsNone(next(x for x in doc["works"] if x["candidate_id"]==
             "oa-index-b4180540983902f703af").get("synopsis"))
         # A spoofed official composer must not inherit an unrelated synopsis.
