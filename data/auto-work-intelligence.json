@@ -385,6 +385,26 @@
       "verified_at": "2026-11-21T21:01:27+00:00"
     },
     {
+      "candidate_id": "oa-index-84fd2f377ee783254524",
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
+      "title": "Maria Stuarda",
+      "composer": "Gaetano Donizetti",
+      "synopsis": null,
+      "history": {
+        "librettist": "Giuseppe Bardari",
+        "premiere_year": 1835,
+        "premiere_venue": "teatro alla Scala",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q377685"
+        ]
+      },
+      "wikidata_id": "Q377685",
+      "authority_url": "https://www.wikidata.org/wiki/Q377685",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Maria_Stuarda_(opera)"
+    },
+    {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/ernani-2/",
@@ -466,6 +486,26 @@
       "wikidata_id": "Q318455",
       "authority_url": "https://www.wikidata.org/wiki/Q318455",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Falstaff_(Verdi)"
+    },
+    {
+      "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "synopsis": null,
+      "history": {
+        "librettist": "Jacopo Ferretti",
+        "premiere_year": 1817,
+        "premiere_venue": "Teatro Valle",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q176700"
+        ]
+      },
+      "wikidata_id": "Q176700",
+      "authority_url": "https://www.wikidata.org/wiki/Q176700",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/La_Cenerentola"
     },
     {
       "candidate_id": "oa-index-d7a3053257b5915753f9",

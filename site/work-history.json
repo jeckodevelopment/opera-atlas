@@ -634,6 +634,16 @@
         "https://www.brittenpearsarts.org/music/noyes-fludde",
         "https://www.boosey.com/pages/opera/moredetails?musicid=5735"
       ]
+    },
+    "una-lady-macbeth-del-distretto-di-mzensk": {
+      "librettist": "Aleksandr Prejs e Dmitrij Šostakovič",
+      "premiere_year": 1934,
+      "premiere_venue": "State Academic Maly Opera Theatre",
+      "premiere_city": "Leningrado",
+      "sources": [
+        "https://www.mariinsky.ru/en/playbill/repertoire/opera/izmailova/",
+        "https://www.boosey.com/pages/Opera/catalogue/cat_detail?musicid=455"
+      ]
     }
   },
   "works_by_id": {

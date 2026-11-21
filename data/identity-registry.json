@@ -428,6 +428,13 @@
       "title": "La clemenza di Tito",
       "composer": "Wolfgang Amadeus Mozart",
       "authority_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/"
+    },
+    "una lady macbeth del distretto di mzensk|dmitrij šostakovič": {
+      "id": "oa-w-000067",
+      "slug": "una-lady-macbeth-del-distretto-di-mzensk",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "authority_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
     }
   },
   "venues": {
@@ -607,6 +614,14 @@
       "name": "Teatro Goldoni",
       "city": "Firenze",
       "region": "Toscana"
+    },
+    "Cagliari|Teatro Lirico di Cagliari": {
+      "id": "oa-v-000023",
+      "slug": "teatro-lirico-di-cagliari",
+      "city_slug": "cagliari",
+      "name": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "region": "Sardegna"
     }
   },
   "stagings": {
@@ -1562,6 +1577,38 @@
       "venue_id": "oa-v-000010",
       "slug": "la-clemenza-di-tito",
       "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
+      "season": "2027"
+    },
+    "auto-4e97b4b93dacf2f5": {
+      "id": "oa-s-000123",
+      "work_id": "oa-w-000054",
+      "venue_id": "oa-v-000023",
+      "slug": "falstaff",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/",
+      "season": "2027"
+    },
+    "auto-db7983de674f2fdc": {
+      "id": "oa-s-000124",
+      "work_id": "oa-w-000024",
+      "venue_id": "oa-v-000023",
+      "slug": "la-boheme",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/",
+      "season": "2027"
+    },
+    "auto-dc6e8ff3bddba01d": {
+      "id": "oa-s-000125",
+      "work_id": "oa-w-000056",
+      "venue_id": "oa-v-000023",
+      "slug": "die-zauberflote",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/",
+      "season": "2027"
+    },
+    "auto-20463bc8c3334dac": {
+      "id": "oa-s-000126",
+      "work_id": "oa-w-000067",
+      "venue_id": "oa-v-000017",
+      "slug": "una-lady-macbeth-del-distretto-di-mzensk",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
       "season": "2027"
     }
   },
@@ -5141,6 +5188,150 @@
       "staging_id": "oa-s-000122",
       "original_date": "2027-03-21",
       "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/"
+    },
+    "auto-4e97b4b93dacf2f5|2027-12-15": {
+      "id": "oa-r-000612",
+      "staging_id": "oa-s-000123",
+      "original_date": "2027-12-15",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/"
+    },
+    "auto-4e97b4b93dacf2f5|2027-12-16": {
+      "id": "oa-r-000613",
+      "staging_id": "oa-s-000123",
+      "original_date": "2027-12-16",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/"
+    },
+    "auto-4e97b4b93dacf2f5|2027-12-17": {
+      "id": "oa-r-000614",
+      "staging_id": "oa-s-000123",
+      "original_date": "2027-12-17",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/"
+    },
+    "auto-4e97b4b93dacf2f5|2027-12-18": {
+      "id": "oa-r-000615",
+      "staging_id": "oa-s-000123",
+      "original_date": "2027-12-18",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/"
+    },
+    "auto-4e97b4b93dacf2f5|2027-12-19": {
+      "id": "oa-r-000616",
+      "staging_id": "oa-s-000123",
+      "original_date": "2027-12-19",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/"
+    },
+    "auto-db7983de674f2fdc|2027-09-28": {
+      "id": "oa-r-000617",
+      "staging_id": "oa-s-000124",
+      "original_date": "2027-09-28",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/"
+    },
+    "auto-db7983de674f2fdc|2027-09-29": {
+      "id": "oa-r-000618",
+      "staging_id": "oa-s-000124",
+      "original_date": "2027-09-29",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/"
+    },
+    "auto-db7983de674f2fdc|2027-09-30": {
+      "id": "oa-r-000619",
+      "staging_id": "oa-s-000124",
+      "original_date": "2027-09-30",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/"
+    },
+    "auto-db7983de674f2fdc|2027-10-01": {
+      "id": "oa-r-000620",
+      "staging_id": "oa-s-000124",
+      "original_date": "2027-10-01",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/"
+    },
+    "auto-db7983de674f2fdc|2027-10-02": {
+      "id": "oa-r-000621",
+      "staging_id": "oa-s-000124",
+      "original_date": "2027-10-02",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/"
+    },
+    "auto-db7983de674f2fdc|2027-10-03": {
+      "id": "oa-r-000622",
+      "staging_id": "oa-s-000124",
+      "original_date": "2027-10-03",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-09": {
+      "id": "oa-r-000623",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-09",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-10": {
+      "id": "oa-r-000624",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-10",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-11": {
+      "id": "oa-r-000625",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-11",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-13": {
+      "id": "oa-r-000626",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-13",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-14": {
+      "id": "oa-r-000627",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-14",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-15": {
+      "id": "oa-r-000628",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-15",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-16": {
+      "id": "oa-r-000629",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-16",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-dc6e8ff3bddba01d|2027-04-17": {
+      "id": "oa-r-000630",
+      "staging_id": "oa-s-000125",
+      "original_date": "2027-04-17",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    "auto-20463bc8c3334dac|2027-05-14": {
+      "id": "oa-r-000631",
+      "staging_id": "oa-s-000126",
+      "original_date": "2027-05-14",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+    },
+    "auto-20463bc8c3334dac|2027-05-16": {
+      "id": "oa-r-000632",
+      "staging_id": "oa-s-000126",
+      "original_date": "2027-05-16",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+    },
+    "auto-20463bc8c3334dac|2027-05-18": {
+      "id": "oa-r-000633",
+      "staging_id": "oa-s-000126",
+      "original_date": "2027-05-18",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+    },
+    "auto-20463bc8c3334dac|2027-05-20": {
+      "id": "oa-r-000634",
+      "staging_id": "oa-s-000126",
+      "original_date": "2027-05-20",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+    },
+    "auto-20463bc8c3334dac|2027-05-22": {
+      "id": "oa-r-000635",
+      "staging_id": "oa-s-000126",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
     }
   }
 }

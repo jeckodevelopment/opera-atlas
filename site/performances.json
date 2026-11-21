@@ -5432,6 +5432,24 @@
       ]
     },
     {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-09",
+      "starts_at": "2027-04-09T20:00:00+02:00",
+      "local_date": "2027-04-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-09",
       "starts_at": "2027-04-09T20:00:00+02:00",
       "local_date": "2027-04-09",
@@ -5447,6 +5465,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-10",
+      "starts_at": "2027-04-10T19:00:00+02:00",
+      "local_date": "2027-04-10",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
       ]
     },
     {
@@ -5486,6 +5522,24 @@
       ]
     },
     {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-11",
+      "starts_at": "2027-04-11T17:00:00+02:00",
+      "local_date": "2027-04-11",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
+      ]
+    },
+    {
       "id": "curated:auto-11def56ae568ccce:2027-04-13",
       "starts_at": "2027-04-13T20:00:00+02:00",
       "local_date": "2027-04-13",
@@ -5504,6 +5558,42 @@
       ]
     },
     {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-13",
+      "starts_at": "2027-04-13T20:00:00+02:00",
+      "local_date": "2027-04-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
+      ]
+    },
+    {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-14",
+      "starts_at": "2027-04-14T20:00:00+02:00",
+      "local_date": "2027-04-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-14",
       "starts_at": "2027-04-14T20:00:00+02:00",
       "local_date": "2027-04-14",
@@ -5519,6 +5609,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-15",
+      "starts_at": "2027-04-15T19:00:00+02:00",
+      "local_date": "2027-04-15",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
       ]
     },
     {
@@ -5555,6 +5663,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+      ]
+    },
+    {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-16",
+      "starts_at": "2027-04-16T20:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
       ]
     },
     {
@@ -5609,6 +5735,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-dc6e8ff3bddba01d:2027-04-17",
+      "starts_at": "2027-04-17T19:00:00+02:00",
+      "local_date": "2027-04-17",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/die-zauberflote/"
       ]
     },
     {
@@ -6440,6 +6584,24 @@
       ]
     },
     {
+      "id": "curated:auto-20463bc8c3334dac:2027-05-14",
+      "starts_at": "2027-05-14T20:00:00+02:00",
+      "local_date": "2027-05-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+      ]
+    },
+    {
       "id": "curated:auto-dd11dbb7276e1003:2027-05-14",
       "starts_at": "2027-05-14T20:00:00+02:00",
       "local_date": "2027-05-14",
@@ -6530,6 +6692,24 @@
       ]
     },
     {
+      "id": "curated:auto-20463bc8c3334dac:2027-05-16",
+      "starts_at": "2027-05-16T16:30:00+02:00",
+      "local_date": "2027-05-16",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+      ]
+    },
+    {
       "id": "curated:auto-b4180540983902f7:2027-05-16",
       "starts_at": "2027-05-16T20:00:00+02:00",
       "local_date": "2027-05-16",
@@ -6563,6 +6743,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/falstaff-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-20463bc8c3334dac:2027-05-18",
+      "starts_at": "2027-05-18T20:00:00+02:00",
+      "local_date": "2027-05-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
       ]
     },
     {
@@ -6674,6 +6872,24 @@
       ]
     },
     {
+      "id": "curated:auto-20463bc8c3334dac:2027-05-20",
+      "starts_at": "2027-05-20T20:00:00+02:00",
+      "local_date": "2027-05-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+      ]
+    },
+    {
       "id": "curated:auto-790b965de8129382:2027-05-21",
       "starts_at": "2027-05-21T18:00:00+02:00",
       "local_date": "2027-05-21",
@@ -6761,6 +6977,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-20463bc8c3334dac:2027-05-22",
+      "starts_at": "2027-05-22T18:00:00+02:00",
+      "local_date": "2027-05-22",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
       ]
     },
     {
@@ -9428,6 +9662,24 @@
       ]
     },
     {
+      "id": "curated:auto-db7983de674f2fdc:2027-09-28",
+      "starts_at": "2027-09-28T20:00:00+02:00",
+      "local_date": "2027-09-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/la-boheme/"
+      ]
+    },
+    {
       "id": "curated:auto-7f4bc91ba6697826:2027-09-29",
       "starts_at": "2027-09-29T19:00:00+02:00",
       "local_date": "2027-09-29",
@@ -9443,6 +9695,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/normatebar/"
+      ]
+    },
+    {
+      "id": "curated:auto-db7983de674f2fdc:2027-09-29",
+      "starts_at": "2027-09-29T20:00:00+02:00",
+      "local_date": "2027-09-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/la-boheme/"
       ]
     },
     {
@@ -9464,6 +9734,24 @@
       ]
     },
     {
+      "id": "curated:auto-db7983de674f2fdc:2027-09-30",
+      "starts_at": "2027-09-30T19:00:00+02:00",
+      "local_date": "2027-09-30",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/la-boheme/"
+      ]
+    },
+    {
       "id": "curated:auto-7f4bc91ba6697826:2027-10-01",
       "starts_at": "2027-10-01T19:00:00+02:00",
       "local_date": "2027-10-01",
@@ -9482,6 +9770,24 @@
       ]
     },
     {
+      "id": "curated:auto-db7983de674f2fdc:2027-10-01",
+      "starts_at": "2027-10-01T20:00:00+02:00",
+      "local_date": "2027-10-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/la-boheme/"
+      ]
+    },
+    {
       "id": "curated:auto-7f4bc91ba6697826:2027-10-02",
       "starts_at": "2027-10-02T15:30:00+02:00",
       "local_date": "2027-10-02",
@@ -9497,6 +9803,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/normatebar/"
+      ]
+    },
+    {
+      "id": "curated:auto-db7983de674f2fdc:2027-10-02",
+      "starts_at": "2027-10-02T19:00:00+02:00",
+      "local_date": "2027-10-02",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/la-boheme/"
       ]
     },
     {
@@ -9533,6 +9857,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/normatebar/"
+      ]
+    },
+    {
+      "id": "curated:auto-db7983de674f2fdc:2027-10-03",
+      "starts_at": "2027-10-03T17:00:00+02:00",
+      "local_date": "2027-10-03",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/la-boheme/"
       ]
     },
     {
@@ -10598,6 +10940,60 @@
       ]
     },
     {
+      "id": "curated:auto-4e97b4b93dacf2f5:2027-12-15",
+      "starts_at": "2027-12-15T20:00:00+01:00",
+      "local_date": "2027-12-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/falstaff/"
+      ]
+    },
+    {
+      "id": "curated:auto-4e97b4b93dacf2f5:2027-12-16",
+      "starts_at": "2027-12-16T19:00:00+01:00",
+      "local_date": "2027-12-16",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/falstaff/"
+      ]
+    },
+    {
+      "id": "curated:auto-4e97b4b93dacf2f5:2027-12-17",
+      "starts_at": "2027-12-17T20:00:00+01:00",
+      "local_date": "2027-12-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/falstaff/"
+      ]
+    },
+    {
       "id": "curated:auto-05e9aa51dbd5a114:2027-12-17",
       "starts_at": "2027-12-17T20:30:00+01:00",
       "local_date": "2027-12-17",
@@ -10631,6 +11027,42 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-4e97b4b93dacf2f5:2027-12-18",
+      "starts_at": "2027-12-18T19:00:00+01:00",
+      "local_date": "2027-12-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/falstaff/"
+      ]
+    },
+    {
+      "id": "curated:auto-4e97b4b93dacf2f5:2027-12-19",
+      "starts_at": "2027-12-19T17:00:00+01:00",
+      "local_date": "2027-12-19",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/evento/falstaff/"
       ]
     },
     {

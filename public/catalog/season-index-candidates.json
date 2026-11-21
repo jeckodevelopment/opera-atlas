@@ -54,7 +54,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:32:33+00:00"
     },
     {
@@ -149,7 +149,7 @@
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:55:01+00:00",
       "last_seen": "2026-11-21T21:32:33+00:00"
     },
@@ -229,7 +229,7 @@
       "id": "oa-index-20463bc8c3334dacecf8",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -245,7 +245,7 @@
       "id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:55:01+00:00",
       "last_seen": "2026-11-21T21:32:33+00:00"
     },
@@ -334,7 +334,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:32:33+00:00"
     },
     {
@@ -397,7 +397,7 @@
       "id": "oa-index-4e97b4b93dacf2f5c195",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/falstaff/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -605,7 +605,7 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T12:00:43+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -766,7 +766,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:32:33+00:00"
     },
     {
@@ -957,7 +957,7 @@
       "id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:50:36.994Z",
       "last_seen": "2026-11-21T21:32:33+00:00"
     },
@@ -1093,7 +1093,7 @@
       "id": "oa-index-db7983de674f2fdccdda",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/la-boheme/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -1101,7 +1101,7 @@
       "id": "oa-index-dc6e8ff3bddba01de089",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/die-zauberflote/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -1126,7 +1126,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:32:33+00:00"
     },
     {
@@ -1390,7 +1390,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
       "first_seen": "2026-11-21T21:01:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-21T21:32:33+00:00"
     }
   ]

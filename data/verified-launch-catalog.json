@@ -3695,6 +3695,146 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-4e97b4b93dacf2f5",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/",
+      "dates": [
+        [
+          "2027-12-15",
+          "20:00"
+        ],
+        [
+          "2027-12-16",
+          "19:00"
+        ],
+        [
+          "2027-12-17",
+          "20:00"
+        ],
+        [
+          "2027-12-18",
+          "19:00"
+        ],
+        [
+          "2027-12-19",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-db7983de674f2fdc",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/",
+      "dates": [
+        [
+          "2027-09-28",
+          "20:00"
+        ],
+        [
+          "2027-09-29",
+          "20:00"
+        ],
+        [
+          "2027-09-30",
+          "19:00"
+        ],
+        [
+          "2027-10-01",
+          "20:00"
+        ],
+        [
+          "2027-10-02",
+          "19:00"
+        ],
+        [
+          "2027-10-03",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-dc6e8ff3bddba01d",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/",
+      "dates": [
+        [
+          "2027-04-09",
+          "20:00"
+        ],
+        [
+          "2027-04-10",
+          "19:00"
+        ],
+        [
+          "2027-04-11",
+          "17:00"
+        ],
+        [
+          "2027-04-13",
+          "20:00"
+        ],
+        [
+          "2027-04-14",
+          "20:00"
+        ],
+        [
+          "2027-04-15",
+          "19:00"
+        ],
+        [
+          "2027-04-16",
+          "20:00"
+        ],
+        [
+          "2027-04-17",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-20463bc8c3334dac",
+      "title": "Una Lady Macbeth del distretto di Mzensk",
+      "composer": "Dmitrij Šostakovič",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
+      "dates": [
+        [
+          "2027-05-14",
+          "20:00"
+        ],
+        [
+          "2027-05-16",
+          "16:30"
+        ],
+        [
+          "2027-05-18",
+          "20:00"
+        ],
+        [
+          "2027-05-20",
+          "20:00"
+        ],
+        [
+          "2027-05-22",
+          "18:00"
+        ]
+      ]
     }
   ]
 }
