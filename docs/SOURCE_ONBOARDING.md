@@ -600,3 +600,25 @@ Verificare `data/verified-launch-catalog.json`, `public/catalog/v2/` e
 delle sette schede del Teatro Carlo Felice è distinta dalla pubblicazione
 delle singole recite: almeno quattro schede con 24 recite hanno già
 evidenze ufficiali in coda, le altre tre richiedono la raccolta dei dettagli.
+
+## Pubblicazione rapida delle recite già verificate (21/11/2026)
+
+Il refresh esegue adesso **prima delle letture di rete** una promozione
+solo offline delle produzioni con opera e compositore già canonici, sede
+verificata e orari espliciti precedentemente acquisiti da pagine ufficiali
+(`scripts.publish_cached_known`). L'algoritmo riusa le stesse verifiche di
+`scripts.auto_catalogue.promote`; non genera opere inedite, dati editoriali
+o manifesti da uno slug, e non aggira `robots.txt`: usa solo evidenze
+registrate da precedenti scansioni robots-gated. La pubblicazione valida il
+grafo ID e le schede editoriali, rigenera i JSON pubblici e tenta subito
+il push in sicurezza. Solo dopo iniziano le scansioni più lente di nuove
+opere e fonti. La scansione completa mantiene il proprio secondo passaggio
+di riconciliazione e pubblicazione di nuove scoperte.
+
+Se un commit concorrente rende obsoleto il push rapido, non si forzano
+sovrascritture: si richiede il refresh sulla nuova `main`. La procedura
+è idempotente e resta interamente in `opera-atlas`; non richiede SFTP.
+Per Genova, le quattro schede già dotate di date/ore ufficiali
+(*Turandot*, *Pagliacci*, *Nabucco*, *L’italiana in Algeri*) possono quindi
+diventare visibili senza attendere il download di tutte le altre fonti.
+Le altre tre produzioni richiedono prove ancora da acquisire.

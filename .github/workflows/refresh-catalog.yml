@@ -74,6 +74,39 @@ jobs:
           python -m scripts.build_verified_catalog --check
           # A newly-reviewed observation may legitimately differ from the previous public v2 snapshot.
           # Validate the regenerated manifest only after rebuilding all referenced channels.
+      - name: Early publish previously verified known-opera recite
+        run: |
+          # No network access and no new work identities here: only already
+          # fetched composer/title/venue/time evidence verified by Atlas.
+          python -m scripts.publish_cached_known
+          python -m scripts.build_verified_catalog
+          python -m scripts.publish_catalog_v2
+          python -m scripts.publish_work_editorial
+          python -m scripts.publish_venue_directory
+          python -m scripts.sync_source_registry
+          python -m scripts.source_coverage
+          python -m scripts.build_verified_catalog --check
+          python -m scripts.publish_catalog_v2 --check
+          python -m scripts.publish_work_editorial --check
+      - name: Publish cached recite before slow source scans
+        id: cached_publication
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/verified-launch-catalog.json data/identity-registry.json data/auto-source-urls.json data/verified-time-evidence.json site/performances.json public/catalog/v2/ public/catalog/work-editorial.json public/catalog/coverage.json public/catalog/venue-directory.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+            echo "No new cached verified facts to publish."
+          else
+            git commit -m "data(catalog): publish cached verified recite [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Retry fast publication if newer code arrived
+        if: steps.cached_publication.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       - name: Incrementally scan only explicitly approved official pages
         run: python -m scripts.daily_ingest --allow-network
       - name: Verify and adopt next officially published season indexes
