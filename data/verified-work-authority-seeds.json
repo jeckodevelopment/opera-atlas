@@ -459,6 +459,23 @@
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
         ]
       }
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Nella Genova medievale, il doge Simon Boccanegra cerca di riconciliarsi con la figlia perduta, mentre rivalità politiche e vendette minacciano la sua famiglia e la città.",
+      "history": {
+        "librettist": "Francesco Maria Piave (revisione di Arrigo Boito)",
+        "premiere_year": 1857,
+        "premiere_venue": "Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.mariinsky.ru/en/playbill/repertoire/opera/boccanegra/",
+          "https://www.teatrolafenice.it/wp-content/uploads/2025/06/TRAMA-1.pdf"
+        ]
+      }
     }
   ]
 }
