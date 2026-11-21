@@ -37,7 +37,11 @@ class NewOperaPromotionTests(unittest.TestCase):
             "source_url":URL,"wikidata_id":"Q111",
             "title":"Fixture Opera","composer":"Gaetano Donizetti",
             "synopsis":"Fixture Opera affronta le tensioni della corte e un destino "
-                       "segnato da passioni e lotte per il potere."
+                       "segnato da passioni e lotte per il potere.",
+            "history":{"librettist":"Giovanni Example",
+                       "premiere_year":1830,"premiere_venue":"Teatro Nuovo",
+                       "premiere_city":"Milano",
+                       "sources":["https://www.wikidata.org/wiki/Q111"]}
         }]}
         return evidence,candidates,enrichment
 
@@ -121,24 +125,19 @@ class NewOperaPromotionTests(unittest.TestCase):
         self.assertEqual(second[0],facts)
         self.assertEqual(second[1],ids)
 
-    def test_verified_identity_publishes_without_historical_profile(self):
+    def test_verified_identity_without_history_remains_unpublished(self):
         evidence,candidates,enrichment=self.fixture()
+        enrichment["works"][0]["history"]=None
         from scripts.publish_work_editorial import HISTORY
         history=json.loads(HISTORY.read_text(encoding="utf-8"))
         result=promote_new_works(self.facts,self.registry,evidence,candidates,
                                  enrichment,self.editorial,[],
-                                 today=date(2026,11,20),history=history)
-        facts,ids,urls,editorial,historical,report=result
-        self.assertEqual(report["new_works"],1)
-        self.assertNotIn("fixture-opera",historical["works"])
-        new=next(w for w in ids["works"].values()
-                 if w["title"]=="Fixture Opera")
-        self.assertEqual(new["wikidata_id"],"Q111")
-        published=build_editorial(facts,ids,editorial,
-                                   approved_extra=set(urls),history=historical)
-        card=next(w for w in published["works"] if w["work_id"]==new["id"])
-        self.assertIsNone(card["history"])
-        self.assertEqual(card["title"],"Fixture Opera")
+                                 today=date(2026,11,20),history=history,
+                                 require_image=True)
+        self.assertEqual(result[-1]["new_works"],0)
+        self.assertIn({"candidate_id":CID,"reason":"incomplete_work_editorial"},
+                      result[-1]["auto_skipped"])
+        self.assertEqual(result[1],self.registry)
 
     def test_wrong_composer_or_unproven_date_cannot_create_new_work(self):
         evidence,candidates,enrichment=self.fixture()

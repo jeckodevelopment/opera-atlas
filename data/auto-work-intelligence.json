@@ -225,8 +225,17 @@
       "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "title": "Le nozze di Figaro",
       "composer": "Wolfgang Amadeus Mozart",
-      "synopsis": "«Le nozze di Figaro» è un'opera di Wolfgang Amadeus Mozart. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
-      "history": null,
+      "synopsis": "Alla vigilia delle nozze con Susanna, Figaro deve sventare le manovre del conte Almaviva. Fra travestimenti, equivoci e alleanze, i protagonisti difendono il proprio amore e smascherano il potere.",
+      "history": {
+        "librettist": "Lorenzo Da Ponte",
+        "premiere_year": 1786,
+        "premiere_venue": "Burgtheater",
+        "premiere_city": "Vienna",
+        "sources": [
+          "https://corago.unibo.it/libretto/DRT0030541",
+          "https://kv.mozarteum.at/en/work/le-nozze-di-figaro-opera-buffa-commedia-per-musica-in-4-acts-11980"
+        ]
+      },
       "wikidata_id": "Q201873",
       "authority_url": "https://www.wikidata.org/wiki/Q201873",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Le_nozze_di_Figaro",
@@ -238,8 +247,17 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
       "title": "Arlecchino",
       "composer": "Ferruccio Busoni",
-      "synopsis": "«Arlecchino» è un'opera di Ferruccio Busoni. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
-      "history": null,
+      "synopsis": "A Bergamo, Arlecchino corteggia Annunziata mentre il marito Matteo è assorto nei libri. Tra inganni, travestimenti e amori incrociati, la maschera sovverte le convenzioni della commedia.",
+      "history": {
+        "librettist": "Ferruccio Busoni",
+        "premiere_year": 1917,
+        "premiere_venue": "Stadttheater",
+        "premiere_city": "Zurigo",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/arlecchino-o-le-finestre-arlecchino-oder-die-fenster/",
+          "https://www.naxos.com/LibrettiSungText/Libretti?id=30323A54-862C-47B7-A7C4-52A161E74796"
+        ]
+      },
       "wikidata_id": "Q922043",
       "authority_url": "https://www.wikidata.org/wiki/Q922043",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Arlecchino_(opera)",

@@ -499,6 +499,17 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         summary=summary.strip()
         if not 45<=len(summary)<=300:continue
         historical=item.get("history")
+        # A title+composer identification is not a finished Atlas card.
+        # Keep the candidate in the acquisition queue until both a short
+        # real plot and source-backed premiere facts have been acquired.
+        from scripts.publish_work_editorial import validate_history
+        if require_image and (
+                summary.endswith(
+                    "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+                or not validate_history(historical)):
+            result["auto_skipped"].append({
+                "candidate_id":cid,"reason":"incomplete_work_editorial"})
+            continue
         if next_history is not None and historical is not None:
             from scripts.publish_work_editorial import validate_history
             if not validate_history(historical):

@@ -82,7 +82,8 @@ class SourceIndependentPromotion(unittest.TestCase):
         published_works={w["title"]:w for w in published["works"]}
         for title in EXPECTED:
             self.assertIn(title,published_works)
-            self.assertIsNone(published_works[title]["history"])
+            self.assertIsNotNone(published_works[title]["history"])
+            self.assertTrue(published_works[title]["history"]["sources"])
         for name,count in EXPECTED.items():
             rows=[p for p in facts["productions"] if p["municipality"]=="Bari"
                   and p["venue"]=="Teatro Petruzzelli"

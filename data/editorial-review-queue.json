@@ -1,1 +1,8 @@
-{"count":4,"identity_only_count":4,"missing_history_count":4,"purpose":"optional_editorial_improvement","schema_version":1,"works":[{"composer":"Ferruccio Busoni","current_synopsis":"«Arlecchino» è un'opera di Ferruccio Busoni. Consulta le rappresentazioni verificate in programma nei teatri italiani.","existing_history_sources":[],"priority":"high","reasons":["identity_only_introduction","historical_facts_missing"],"route_slug":"arlecchino","title":"Arlecchino","work_id":"oa-w-000047"},{"composer":"Ludwig van Beethoven","current_synopsis":"«Fidelio» è un'opera di Ludwig van Beethoven. Consulta le rappresentazioni verificate in programma nei teatri italiani.","existing_history_sources":[],"priority":"high","reasons":["identity_only_introduction","historical_facts_missing"],"route_slug":"fidelio","title":"Fidelio","work_id":"oa-w-000048"},{"composer":"Wolfgang Amadeus Mozart","current_synopsis":"«Le nozze di Figaro» è un'opera di Wolfgang Amadeus Mozart. Consulta le rappresentazioni verificate in programma nei teatri italiani.","existing_history_sources":[],"priority":"high","reasons":["identity_only_introduction","historical_facts_missing"],"route_slug":"le-nozze-di-figaro","title":"Le nozze di Figaro","work_id":"oa-w-000045"},{"composer":"Niccolò Piccinni","current_synopsis":"«Zenobia» è un'opera di Niccolò Piccinni. Consulta le rappresentazioni verificate in programma nei teatri italiani.","existing_history_sources":[],"priority":"high","reasons":["identity_only_introduction","historical_facts_missing"],"route_slug":"zenobia","title":"Zenobia","work_id":"oa-w-000046"}]}
+{
+  "schema_version": 1,
+  "purpose": "optional_editorial_improvement",
+  "works": [],
+  "count": 0,
+  "identity_only_count": 0,
+  "missing_history_count": 0
+}

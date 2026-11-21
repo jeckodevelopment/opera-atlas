@@ -63,6 +63,11 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
             raise ValueError("ambiguous synopsis needs work ID: "+work["id"])
         if not isinstance(summary, str) or not 35 <= len(summary.strip()) <= 300:
             raise ValueError("invalid short synopsis: " + work["slug"])
+        # A generic identity sentence is not a synopsis. The catalogue
+        # is a theatre guide, but each published work needs a concise plot.
+        if summary.strip().endswith(
+                "Consulta le rappresentazioni verificate in programma nei teatri italiani."):
+            raise ValueError("identity-only text is not a plot synopsis: " + work["id"])
         historical=history_by_id.get(work["id"],history["works"].get(work["slug"]))
         official_url=work.get("authority_url")
         # Source-agnostic verified first-party identity. A source must be
@@ -89,11 +94,9 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
             if not has_verified_authority:
                 raise ValueError("ambiguous history needs work ID: "+work["id"])
             historical=None
-        if historical is None and has_verified_authority:
-            # A verifiable opera identity is enough for an Atlas listing.
-            # Missing archival facts must stay absent, never fabricated.
-            pass
-        elif not validate_history(historical):
+        if not validate_history(historical):
+            # Verified work identity is necessary, but never a substitute for
+            # a documented libretto and premiere in a public editorial card.
             raise ValueError("missing complete sourced work history: "+work["slug"])
         entries.append({"work_id":work["id"], "slug":work["slug"],
                         "title":work["title"],"composer":work["composer"],
