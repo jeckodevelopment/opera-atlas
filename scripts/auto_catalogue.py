@@ -262,7 +262,9 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
     named={x.get("venue") for x in rows if isinstance(x,dict)}
     if len(named)!=1:return None
     venue=next(iter(named))
-    permitted=({"Teatro Donizetti","Teatro Sociale"}
+    permitted=({"Teatro Valli","Teatro Ariosto"}
+               if source_key=="reggio-valli-opera-2026-27" else
+               {"Teatro Donizetti","Teatro Sociale"}
                if source_key=="donizetti-opera-2026" else
                {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"}
                if source_key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027") else
