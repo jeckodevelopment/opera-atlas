@@ -30,7 +30,7 @@ class NarrativeHistoryTests(unittest.TestCase):
                 self.assertTrue(
                     bool(re.fullmatch(r"Q[1-9][0-9]*",wiki)) or
                     bool(re.fullmatch(
-                        r"https://www\\.tcbo\\.it/evento/opera/[a-z0-9-]+-20\\d{2}/",
+                        r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
                         official)),entry["work_id"])
         # Deliberate tampering with a legacy source history must still fail.
         legacy=next(e for e in entries if e["history"] is not None and
