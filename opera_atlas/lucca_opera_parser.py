@@ -13,7 +13,7 @@ from opera_atlas.national_detail_parser import MONTHS, clean
 KEY="giglio-lucca-opera-2026-27"
 HOST="www.teatrodelgigliogiacomopuccini.it"
 ROOT="/it/cartellone/lirica/stagione-2026-2027/"
-VENUE="Teatro del Giglio"
+VENUE="Teatro del Giglio Giacomo Puccini"
 MONTH=r"(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)"
 
 
