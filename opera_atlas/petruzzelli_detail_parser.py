@@ -47,6 +47,13 @@ def verified_work_heading(html:str,*,title:str,composer:str)->bool:
     pieces=[normalized(x).replace("’","'").strip() for x in heading.text.split("|")]
     title_key=normalized(title).replace("’","'")
     composer_key=normalized(composer).replace("’","'")
+    visible=normalized(clean(html)).replace("’","'")
+    before=visible.split("orari spettacoli",1)[0]
+    labels=re.findall(
+        r"\bpresenta\s+l'opera\s+(.+?)\s+o&b\s+20\d{2}\b",before)
+    for label in labels:
+        if label.startswith(title_key+" di ") and label.strip()!=title_key+" di "+composer_key:
+            return False  # Same titled opera, conflicting official composer.
     if pieces[0]==title_key+" di "+composer_key:
         return True
     # The 2026 official pages put the composer's surname in h1 and full
