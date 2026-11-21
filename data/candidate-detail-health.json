@@ -1,22 +1,15 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T17:54:14+00:00",
-  "attempted": 31,
+  "checked_at": "2026-11-21T18:09:27+00:00",
+  "attempted": 29,
   "outcomes": [
     {
-      "candidate_id": "oa-index-76fee4db156090b664aa",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no explicit official performance dates",
-        "authority_work:no explicit official performance dates",
-        "official_composer_credit:no explicit official performance dates",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-dfe824fe3301174d2165",
+      "outcome": "facts_found",
+      "rows": 3
     },
     {
-      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -65,7 +58,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-207df538679e00657fe1",
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -77,7 +70,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-8f21a476359ed30f939d",
+      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -100,23 +93,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-212db41a4c6f7afcbcda",
-      "outcome": "facts_found",
-      "rows": 4
-    },
-    {
-      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "outcome": "facts_found",
       "rows": 2
@@ -128,18 +104,6 @@
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -179,17 +143,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-cde049d5c057e0c050b2",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -200,11 +153,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-dfe824fe3301174d2165",
-      "outcome": "facts_found",
-      "rows": 3
     },
     {
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
@@ -243,7 +191,12 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-01efa4320f81204200f1",
+      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-207df538679e00657fe1",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -255,9 +208,32 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-184e57e1cd9f38d554d5",
+      "candidate_id": "oa-index-212db41a4c6f7afcbcda",
       "outcome": "facts_found",
-      "rows": 3
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-76fee4db156090b664aa",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no explicit official performance dates",
+        "authority_work:no explicit official performance dates",
+        "official_composer_credit:no explicit official performance dates",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
