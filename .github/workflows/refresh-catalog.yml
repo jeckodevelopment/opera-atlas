@@ -130,6 +130,13 @@ jobs:
             git commit -m "data(catalog): publish cached verified recite [skip ci]"
             python -m scripts.safe_push_catalog
           fi
+      - name: Notify newly published cached works and productions
+        if: steps.cached_publication.outputs.deferred != 'true'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ATLAS_NOTIFICATION_FROM: ${{ vars.ATLAS_NOTIFICATION_FROM }}
+          ATLAS_NOTIFICATION_TO: ${{ vars.ATLAS_NOTIFICATION_TO }}
+        run: python -m scripts.notify_publications --base "${{ github.sha }}"
       - name: Retry fast publication if newer code arrived
         if: steps.cached_publication.outputs.deferred == 'true'
         env:
@@ -230,6 +237,7 @@ jobs:
       - name: Publish only changed validated data (no SFTP)
         id: publish_catalog
         run: |
+          echo "baseline=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/editorial-review-queue.json
@@ -243,6 +251,13 @@ jobs:
           # Bounded, non-forced push; defer stale data if main received a
           # newer adapter or canonical update while the scan was running.
           python -m scripts.safe_push_catalog
+      - name: Notify newly published works and productions
+        if: steps.publish_catalog.outputs.deferred != 'true'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ATLAS_NOTIFICATION_FROM: ${{ vars.ATLAS_NOTIFICATION_FROM }}
+          ATLAS_NOTIFICATION_TO: ${{ vars.ATLAS_NOTIFICATION_TO }}
+        run: python -m scripts.notify_publications --base "${{ steps.publish_catalog.outputs.baseline }}"
       - name: Automatically retry the deferred catalog against latest main
         if: steps.publish_catalog.outputs.deferred == 'true'
         env:
