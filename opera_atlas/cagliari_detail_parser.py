@@ -1,8 +1,8 @@
 """First-party opera detail parser for Teatro Lirico di Cagliari.
 
 Never parse a page's related-events carousel or date cast alternations.
-The year comes from an explicit date or a verified 2027 season context,
-never from today's date or the URL slug.
+The year must be explicit on each dated performance; the index year,
+website navigation and URL slug alone are not sufficient evidence.
 """
 from __future__ import annotations
 import re
@@ -57,12 +57,15 @@ def parse_detail(html: str, *, url: str, season_year: int = 2027) -> tuple[str,s
         raise ValueError("unsupported season")
     reader=PageHeadings()
     reader.feed(html)
-    h1=[v for tag,v in reader.headings if tag=="h1"]
-    h2=[v for tag,v in reader.headings if tag=="h2"]
-    if len(h1)!=1 or not h1[0] or not h2:
-        raise ValueError("missing unique work and composer headings")
-    title=h1[0]
-    composer=h2[0]
+    h1=[i for i,(tag,value) in enumerate(reader.headings) if tag=="h1" and value]
+    if len(h1)!=1:
+        raise ValueError("missing unique work heading")
+    pos=h1[0]
+    next_heading=reader.headings[pos+1:pos+2]
+    if not next_heading or next_heading[0][0]!="h2":
+        raise ValueError("missing work-specific composer heading")
+    title=reader.headings[pos][1]
+    composer=next_heading[0][1]
     if composer.casefold().startswith(("incontro", "parliamo", "balletto","concerto")):
         raise ValueError("not an opera composer")
     text=" ".join(" ".join(reader.text).split())
@@ -77,8 +80,7 @@ def parse_detail(html: str, *, url: str, season_year: int = 2027) -> tuple[str,s
     if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",section):
         raise ValueError("ambiguous cancellation")
     # Source markup has a duplicated 24/06 placeholder for many shows.
-    # Require either the explicit year on each date or a first-party
-    # season flag scoped to THIS detail page (not navigation).
+    # Require an explicit year on each date, not a site-wide season menu.
     explicit=re.findall(
         r"(?i)\bore\s+([01]?\d|2[0-3]):([0-5]\d)\s+"
         r"(?:lun|mar|mer|merc|gio|ven|sab|dom)\s+"
