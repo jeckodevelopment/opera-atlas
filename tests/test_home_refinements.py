@@ -29,6 +29,22 @@ class AtlasHomeRefinementTests(unittest.TestCase):
         self.assertIn('workDescriptions[event.work_slug]||""',home)
         self.assertIn('node("span","discovery-description",description)',home)
         self.assertIn('https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/',directory)
+    def test_curated_repertoire_is_in_requested_order(self):
+        import re
+        home=(SITE/"app.js").read_text(encoding="utf-8")
+        block=home.split("const HOME_REPERTOIRE_IDS=Object.freeze([",1)[1].split("]);",1)[0]
+        ids=re.findall(r'"(oa-w-\d{6})"',block)
+        self.assertEqual(ids,[
+            "oa-w-000026", # Rigoletto
+            "oa-w-000015", # Aida
+            "oa-w-000023", # Don Giovanni
+            "oa-w-000031", # Norma
+            "oa-w-000022", # Tosca
+            "oa-w-000021"  # Lucia di Lammermoor
+        ])
+        self.assertIn("for(const id of HOME_REPERTOIRE_IDS)",home)
+        self.assertNotIn("[...works].sort",home)
+
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_distinct_archival_works_not_fictional_primary_poster(self):
         result=subprocess.run(["node",str(SITE.parent/"tests/image_client_smoke.cjs")],

@@ -39,7 +39,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "italiana-in-algeri":"1930-Italiana-in-Algeri.jpg",
     "jenufa":"Jenufa.jpg",
     "evgenij-onegin":"\"Eugene Onegin\" opera poster,1937, Yerevan Opera Theatre.jpg",
-    "un-ballo-in-maschera":"\"Un ballo in maschera\" opera poster, January, 1959, Yerevan Opera Theatre.jpg",
+    "un-ballo-in-maschera":"Giuseppe Verdi, Un Ballo in maschera, Vocal score frontispiece - restoration.jpg",
     "macbeth":"Locandina macbeth a firenze, 1847.jpg",
     "samson-et-dalila":"Samson et Dalila. Opéra de C. Saint-Saens affiche, Georges Antoine Rochegrosse.jpg",
     "lucia-di-lammermoor":"Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg",
@@ -132,6 +132,17 @@ window.OperaAtlasImages=Object.freeze((()=>{
         fallbackSrc:poster(title),
         sourceUrl:chosen.source_url,credit:chosen.credit,
         license:chosen.license||"",kind:chosen.kind};
+    }
+    const originalCovers={
+      "oa-w-000020":"cover-jenufa.svg",
+      "oa-w-000034":"cover-nixon-in-china.svg"
+    };
+    const localCover=originalCovers[event?.work_id] ||
+      (slug==="jenufa"?"cover-jenufa.svg":null) ||
+      (slug==="nixon-in-china"?"cover-nixon-in-china.svg":null);
+    if(localCover){
+      return {src:"./"+localCover,alt:"Copertina editoriale originale per "+title,
+        fallbackSrc:poster(title),kind:"original_editorial_cover"};
     }
     const file=slug==="la-boheme" && /leoncavallo/i.test(event?.composer||"")
       ? null : WORKS[slug];

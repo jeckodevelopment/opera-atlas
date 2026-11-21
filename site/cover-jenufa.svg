@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1000" role="img" aria-labelledby="title desc">
+<title id="title">Jenůfa — Leoš Janáček</title>
+<desc id="desc">Copertina editoriale originale per Jenůfa con titolo ben visibile e illustrazione floreale astratta.</desc>
+<rect width="750" height="1000" fill="#1c3030"/>
+<rect x="40" y="40" width="670" height="920" fill="none" stroke="#c8a679" stroke-width="2"/>
+<text x="375" y="101" text-anchor="middle" fill="#e5cba4" font-family="Georgia,serif" font-size="21" letter-spacing="7">OPERA ATLAS</text>
+<path d="M112 178C280 235 470 235 638 178M112 626C280 572 470 572 638 626" fill="none" stroke="#e2c9a3" stroke-width="3"/>
+<path d="M375 585V306M375 439C286 443 270 380 245 307C349 305 375 356 375 439ZM375 482C464 460 476 403 505 344C403 333 377 389 375 482Z" fill="#b5a778" stroke="#b5a778" stroke-width="8"/>
+<path d="M375 301C255 234 274 163 375 175C482 162 495 231 375 301Z" fill="#d7b69f"/>
+<path d="M375 301C297 261 309 213 375 222C450 210 459 267 375 301Z" fill="#8b494e"/>
+<circle cx="375" cy="292" r="22" fill="#e6c68a"/>
+<text x="375" y="740" text-anchor="middle" fill="#f4e8d7" font-family="Georgia,serif" font-size="117" font-weight="bold" letter-spacing="1">JENŮFA</text>
+<text x="375" y="815" text-anchor="middle" fill="#d5bb95" font-family="Georgia,serif" font-size="31" letter-spacing="4">LEOŠ JANÁČEK</text>
+<path d="M160 854H590" stroke="#c6a578" stroke-width="2"/>
+<text x="375" y="919" text-anchor="middle" fill="#b4a590" font-family="sans-serif" font-size="15" letter-spacing="3">COPERTINA EDITORIALE ORIGINALE</text>
+</svg>

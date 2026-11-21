@@ -48,11 +48,17 @@ const images=posterWorks.map(title=>lib.work({title}));
 assert.equal(Object.keys(lib.WORKS).length,25,"all 25 unique opera records need archival source images");
 for(const title of posterWorks){
   const item=lib.work({title});
-  assert.ok(item.src.startsWith("https://commons.wikimedia.org/"),
+  if(title==="Jenůfa")assert.equal(item.src,"./cover-jenufa.svg");
+  else assert.ok(item.src.startsWith("https://commons.wikimedia.org/"),
     title+" must use archival material, never a fictional primary poster");
 }
 assert.match(lib.WORKS["cavalleria-rusticana"],/Cavalleria rusticana poster/);
 assert.match(lib.WORKS["pagliacci"],/Pagliacci Original Score Cover/);
+assert.match(lib.WORKS["un-ballo-in-maschera"],/Vocal score frontispiece/);
+assert.equal(lib.work({title:"Nixon in China",work_id:"oa-w-000034"}).src,
+  "./cover-nixon-in-china.svg");
+assert.equal(lib.work({title:"Jenůfa",work_id:"oa-w-000020"}).src,
+  "./cover-jenufa.svg");
 
 assert.equal(new Set(images.map(x=>x.src)).size,images.length,"every opera needs a distinct image");
 for(const item of images){
@@ -60,6 +66,10 @@ for(const item of images){
     const img=lib.element(item,"event-image");
     img.handlers.error();
     assert.ok(img.src.startsWith("data:image/svg+xml"),"historical poster fallback must be unique");
+  }else if(item.src.startsWith("./cover-")){
+    const img=lib.element(item,"event-image");
+    img.handlers.error();
+    assert.ok(img.src.startsWith("data:image/svg+xml"),"local cover has reliable fallback");
   }else assert.ok(item.src.startsWith("data:image/svg+xml"));
 }
 hero.error();

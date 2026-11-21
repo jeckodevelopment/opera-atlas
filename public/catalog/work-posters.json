@@ -103,11 +103,11 @@
     "oa-w-000012": {
       "work_id": "oa-w-000012",
       "kind": "archival_work_image",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%22Un_ballo_in_maschera%22_opera_poster%2C_January%2C_1959%2C_Yerevan_Opera_Theatre.jpg?width=720",
-      "source_url": "https://commons.wikimedia.org/wiki/File:%22Un_ballo_in_maschera%22_opera_poster%2C_January%2C_1959%2C_Yerevan_Opera_Theatre.jpg",
-      "alt": "Manifesto storico di Un ballo in maschera a Erevan (1959); non rappresenta l'allestimento attualmente in calendario",
-      "credit": "Beko, Museo di Letteratura e Arti Charents, Wikimedia Commons",
-      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giuseppe_Verdi%2C_Un_Ballo_in_maschera%2C_Vocal_score_frontispiece_-_restoration.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Verdi%2C_Un_Ballo_in_maschera%2C_Vocal_score_frontispiece_-_restoration.jpg",
+      "alt": "Frontespizio Ricordi del 1860 per Un ballo in maschera di Giuseppe Verdi; non è la produzione attuale",
+      "credit": "Francesco Corbetta, frontespizio Ricordi (1860); restauro Adam Cuerden, Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
     },
     "oa-w-000013": {
       "work_id": "oa-w-000013",
@@ -170,12 +170,9 @@
     },
     "oa-w-000020": {
       "work_id": "oa-w-000020",
-      "kind": "archival_work_image",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jenufa.jpg?width=720",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Jenufa.jpg",
-      "alt": "Manifesto storico della prima di Jenůfa di Janáček; non rappresenta l'allestimento attualmente in calendario",
-      "credit": "Documento storico relativo a Jenůfa di Leoš Janáček, Wikimedia Commons",
-      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+      "kind": "original_editorial_cover",
+      "cover_file": "cover-jenufa.svg",
+      "alt": "Copertina editoriale originale Jenůfa di Leoš Janáček con titolo leggibile"
     },
     "oa-w-000021": {
       "work_id": "oa-w-000021",
@@ -295,7 +292,8 @@
     "oa-w-000034": {
       "work_id": "oa-w-000034",
       "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Nixon in China"
+      "cover_file": "cover-nixon-in-china.svg",
+      "alt": "Copertina editoriale originale Nixon in China di John Adams con titolo leggibile"
     },
     "oa-w-000035": {
       "work_id": "oa-w-000035",
