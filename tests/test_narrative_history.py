@@ -2,6 +2,9 @@
 import copy
 import json
 import unittest
+import re
+from urllib.parse import urlsplit
+from scripts.discover_season_indexes import CONFIG,validate_config,eligible
 from scripts.publish_work_editorial import EDITORIAL,HISTORY,MANIFEST,REGISTRY,build_editorial,validate_history
 from pathlib import Path
 
@@ -24,14 +27,18 @@ class NarrativeHistoryTests(unittest.TestCase):
                 # Newly recognized operas with authoritative identity may
                 # legitimately lack historical premiere facts. Never fabricate
                 # a premiere merely to satisfy a static coverage count.
-                import re
                 wiki=canonical.get("wikidata_id","")
                 official=canonical.get("authority_url","")
-                self.assertTrue(
-                    bool(re.fullmatch(r"Q[1-9][0-9]*",wiki)) or
-                    bool(re.fullmatch(
-                        r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
-                        official)),entry["work_id"])
+                approved=[x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
+                          if x["access_status"]=="approved"]
+                stages=[x for x in registry["stagings"].values()
+                        if x["work_id"]==entry["work_id"]]
+                sourced=bool(official and any(
+                    x.get("source_url")==official for x in stages) and any(
+                    urlsplit(x["official_url"]).hostname==urlsplit(official).hostname
+                    and eligible(x["key"],official) for x in approved))
+                self.assertTrue(bool(re.fullmatch(r"Q[1-9][0-9]*",wiki)) or sourced,
+                                entry["work_id"])
         # Deliberate tampering with a legacy source history must still fail.
         legacy=next(e for e in entries if e["history"] is not None and
                     "wikidata_id" not in by_id[e["work_id"]] and
