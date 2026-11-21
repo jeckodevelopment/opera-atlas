@@ -3,6 +3,7 @@ import json
 import unittest
 from unittest.mock import patch, MagicMock
 from scripts.notify_publications import new_entities, send, parse_recipients
+from scripts.notification_email import render_email
 
 
 class PublicationNotificationsTest(unittest.TestCase):
@@ -44,7 +45,30 @@ class PublicationNotificationsTest(unittest.TestCase):
         request = call.call_args.args[0]
         self.assertEqual(request.get_header("Idempotency-key"), "atlas-published-oa-w-1")
         self.assertIn(b"Nuova opera", request.data)
-        self.assertEqual(json.loads(request.data)["to"], ["one@example.org", "two@example.org"])
+        body = json.loads(request.data)
+        self.assertEqual(body["to"], ["one@example.org", "two@example.org"])
+        self.assertIn("OPERA", body["html"])
+        self.assertIn("Nuova opera", body["text"])
+        self.assertIn("Apri la scheda", body["text"])
+
+    def test_branded_template_escapes_catalog_values(self):
+        notice = new_entities(self.before, self.after)[0]
+        notice["title"] = '<script>alert("bad")</script>'
+        notice["details"] = '<img src=x onerror=bad()>'
+        html, plain = render_email(notice)
+        self.assertIn("&lt;script&gt;", html)
+        self.assertNotIn("<script>", html)
+        self.assertIn("&lt;img", html)
+        self.assertIn("OPERA", html)
+        self.assertIn("+ ATLAS", html)
+        self.assertIn("background:#151515", html)
+        self.assertIn("Notifica diagnostica", plain)
+
+    def test_branded_template_rejects_offsite_link(self):
+        notice = new_entities(self.before, self.after)[0]
+        notice["url"] = "https://example.org/phishing"
+        with self.assertRaises(ValueError):
+            render_email(notice)
 
     def test_multiple_secret_recipients_are_trimmed_and_deduplicated(self):
         self.assertEqual(parse_recipients(" one@example.org, two@example.org\nONE@example.org"),
