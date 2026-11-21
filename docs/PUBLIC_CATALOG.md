@@ -271,3 +271,10 @@ La sezione «Scopri i teatri» utilizza ora una **selezione esplicita di sei sed
 I percorsi sono identificati da `city_slug/venue_slug`, non dal nome ambiguo. Le foto vengono ricavate dall'anagrafica nazionale dei teatri. La card del San Carlo deve essere visibile anche se nel catalogo delle rappresentazioni non sono ancora presenti sue recite: viene costruita dal profilo della sede, con URL e immagine pertinenti, senza inventare alcuno spettacolo. La selezione esatta delle sei sedi, i link e le fonti fotografiche sono soggetti a test automatico.
 
 Collaudo: homepage con le sei card nell'ordine sopra, senza Coccia e Dante nella selezione; presenza di La Fenice (Venezia) e San Carlo (Napoli) con foto corretta, URL canonico e scheda di dettaglio raggiungibile; verifica che Coccia e Dante siano ancora presenti nella directory Teatri.
+
+
+## Protezione delle immagini di sede (21/11/2026)
+
+La selezione delle foto nella homepage e nelle schede del catalogo usa solo una fotografia associata esplicitamente alla singola sede (oppure una deroga nominativa verificata), mai un'immagine scelta in base alla sola città. In mancanza di un'immagine verificata, compare una copertina editoriale dichiarata come tale: evita di mostrare il Teatro Comunale storico come se fosse il Comunale Nouveau, o un altro teatro leccese al posto del Politeama Greco.
+
+Per **Comunale Nouveau** e **Politeama Greco** esistono fotografie autentiche nelle fonti istituzionali e nelle gallerie ufficiali, ma il riuso delle immagini non è ancora autorizzato o documentato con licenza compatibile. Non si inseriscono URL di fotografie di terzi prima di averne attestato provenienza, licenza e attribuzione. Le anteprime non equivalgono a pubblicazione: le modifiche frontend vanno distribuite separatamente dal feed dati GitHub.
