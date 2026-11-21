@@ -83,7 +83,10 @@ class AutoWorkResearchTests(unittest.TestCase):
             "candidate_id":CANDIDATE["id"],"source_key":CANDIDATE["source_key"],
             "source_url":CANDIDATE["official_url"],"status":"needs_editorial_review",
             "event_facts":[{"event_title":"Anna Bolena",
-                            "composer":"Second Composer"}]}]}
+                            "composer":"Second Composer",
+                            "venue":"Teatro alla Scala",
+                            "date":"2027-06-02",
+                            "starts_at":"2027-06-02T20:00:00+02:00"}]}]}
         output,status=research(options,{"schema_version":1,"works":[]},
                                {"anna-bolena"},today=date(2026,11,20),
                                evidence=work_evidence,resolve=resolve,
