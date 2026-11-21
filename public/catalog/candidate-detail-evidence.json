@@ -1162,7 +1162,7 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
       "content_sha256": "ffcb9187ab0b096aff08c8ae99bbb525c5c745900cc55225ebad91ce913ab822",
       "checked_at": "2026-11-21T14:29:00+00:00",
-      "status": "needs_editorial_review",
+      "status": "needs_program_review",
       "event_facts": [
         {
           "event_title": "Pagliacci",
@@ -1213,7 +1213,8 @@
           "starts_at": "2027-10-20T18:00:00+02:00",
           "venue": "Teatro Petruzzelli"
         }
-      ]
+      ],
+      "review_reason": "two_official_works_cannot_be_catalogued_as_solo_pagliacci"
     },
     {
       "candidate_id": "oa-index-ad08a1d14a8510a5f0bf",

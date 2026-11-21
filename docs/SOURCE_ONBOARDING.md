@@ -950,3 +950,32 @@ Il test completo di Bologna è **invariante rispetto allo stato del catalogo**: 
 ### Concorrenza del refresh e pubblicazione sicura (21/11/2026)
 
 Un refresh avviato prima di modifiche al ramo `main` può ritrovarsi con più commit locali prodotti dal checkpoint e dalla pubblicazione finale. In questo caso il publisher non deve fallire con `catalog publication history diverged`, né sovrascrivere una versione successiva di codice o dati. `safe_push_catalog` restituisce lo stato verificabile **deferred** quando il proprio commit padre non è più antenato di `main`; il workflow invia il normale evento `catalog-refresh-retry`, che ricostruisce il catalogo sul ramo più recente. Nessun `force push`, nessuna pubblicazione di JSON obsoleti. Regressione verificata con repository Git temporaneo e due commit locali concorrenti.
+
+## Riparazione degli ID di recite attribuiti all'opera sbagliata
+
+Sono state individuate sei produzioni del Petruzzelli erroneamente
+censite come opera singola: la serata composta
+`L'Arlésienne/Pagliacci` (sette date 2027, scambiata per soli
+`Pagliacci`) e cinque produzioni diverse del 2026 (24 recite
+in totale) scambiate per `La traviata`. Una di queste è un
+balletto e non deve diventare un'opera lirica. La vera
+`La traviata` 2026 e `Nabucco` 2027 rimangono invariati.
+
+Lo script idempotente `scripts.repair_petruzzelli_mixed_program`
+identifica **solo** le sei chiavi erronee e verifica, prima di
+rimuovere qualunque recita, il loro URL ufficiale, titolo e
+compositore impropriamente attribuiti, le date, la sede e i
+collegamenti esatti al registro delle identità permanenti.
+In caso di disallineamento rifiuta l'operazione. Quando i
+controlli passano, ritira 31 date e rispettivi staging erronei
+senza rinumerare o alterare le produzioni corrette. La stessa
+operazione è eseguita all'inizio della pubblicazione rapida e
+del refresh nazionale, prima di compilare il feed v2. Alla
+seconda esecuzione non modifica nulla.
+
+Le vecchie evidenze delle cinque produzioni 2026 erano già
+state rimosse dal checkpoint delle fonti perché mal attribuite.
+L'evidenza della serata composita viene contrassegnata
+`needs_program_review`, così il workflow non la ripromuove.
+Le pagine ufficiali verranno rilette e pubblicate con la corretta
+identità di opera+compositore soltanto dopo le verifiche.

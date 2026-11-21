@@ -41,6 +41,8 @@ jobs:
         run: |
           python -m unittest discover -s tests -v
           python -m scripts.build_verified_catalog --check
+      - name: Quarantine falsely attributed Petruzzelli stage IDs
+        run: python -m scripts.repair_petruzzelli_mixed_program
       - name: Promote stored official evidence for already verified works
         run: python -m scripts.publish_cached_known
       - name: Rebuild and validate public data without a new network crawl
