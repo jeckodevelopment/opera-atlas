@@ -65,7 +65,8 @@ class FerraraOfficialSourceTests(unittest.TestCase):
             self.assertEqual(facts[0]["date"],dates[0][0])
             self.assertEqual(facts[0]["venue"],venue)
             self.assertEqual(facts[0]["composer"],composer)
-            self.assertIn("+01:00",facts[0]["starts_at"])
+            expected_offset="+01:00" if dates[0][0]<"2027-03-28" else "+02:00"
+            self.assertTrue(facts[0]["starts_at"].endswith(expected_offset))
 
     def test_no_dance_or_unverified_dates_enter_catalogue(self):
         for key in KEYS:
