@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T17:44:21+00:00",
+  "checked_at": "2026-11-21T17:54:25+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-92b69a8ac1040b0537be",
@@ -58,16 +58,17 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-76fee4db156090b664aa",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
+      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-8f21a476359ed30f939d",
+      "candidate_id": "oa-index-eedca6da108bd27e8d30",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
       "status": "automatic_retry",
       "reason": "ValueError"
     }
