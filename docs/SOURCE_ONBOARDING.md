@@ -772,3 +772,39 @@ registro delle produzioni dopo l'esecuzione di GitHub Actions. Il job
 `Publish cached verified Opera Atlas recite` può pubblicare questi
 fatti senza richieste esterne, lasciando il mantenimento successivo al
 connettore mensile. Nessun deploy SFTP.
+
+## Firenze — promozione autonoma della prima opera nuova del Maggio
+
+Il calendario Opera ufficiale del Maggio Musicale Fiorentino ha pubblicato
+quattro recite di *Les contes d’Hoffmann* di Jacques Offenbach: 20 dicembre
+2026 alle 17:00, 27 dicembre alle 15:30, 30 dicembre alle 20:00 e 2 gennaio
+2027 alle 17:00. Le stesse informazioni compaiono nelle schede delle
+rappresentazioni di dicembre 2026 e gennaio 2027 sul sito ufficiale:
+`https://www.maggiofiorentino.com/calendario/2026/12/opera` e
+`https://www.maggiofiorentino.com/calendario/2027/01/opera`.
+
+La scheda dell'opera è stata confrontata con l'identità Wikidata **Q335012**
+(opera di Jacques Offenbach, non il film omonimo), e con la scheda
+bibliografica BnF, che conferma il librettista Jules Barbier e la prima
+rappresentazione all'Opéra-Comique di Parigi nel 1881. La breve sinossi è
+originale e limitata alla presentazione dell'opera. Le quattro righe di
+evidenza contengono ora titolo, compositore, sede esatta e orario locale
+Europe/Rome: il dato del direttore non viene confuso con il compositore.
+
+Il pubblicatore offline `publish_cached_known` può adesso promuovere
+anche nuove opere del Maggio **solo quando** dispone di evidenza ufficiale
+completa, identità Wikidata, una sinossi originale e un profilo storico
+verificato. Riusa `promote_new_works` e convalida grafo canonico, URL
+approvati e schede editoriali **prima** di scrivere su disco. Non esegue
+richieste esterne, non bypassa robots.txt e non genera un'identità
+basata solo sul titolo. Scrive il nuovo `site/work-synopses.json` e
+`site/work-history.json` soltanto quando la nuova opera è accettata;
+un secondo refresh non crea duplicati. I passaggi di poster e immagini
+restano affidati al workflow dedicato.
+
+**Collaudi**: suite completa Python, inclusi
+`test_offenbach_cached_promotion.py` e i controlli di regressione,
+verifica del workflow indipendente dopo il merge e presenza della
+nuova opera con **quattro recite** nel manifest pubblico v2.
+La sola aggiunta delle evidenze o l'approvazione della PR non viene
+conteggiata come pubblicazione effettiva.

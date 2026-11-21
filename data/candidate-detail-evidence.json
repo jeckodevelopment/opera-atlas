@@ -186,25 +186,29 @@
           "event_title": "Les contes d'Hoffmann",
           "date": "2026-12-20",
           "starts_at": "2026-12-20T17:00:00+01:00",
-          "venue": "Teatro del Maggio - Sala Grande"
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "composer": "Jacques Offenbach"
         },
         {
           "event_title": "Les contes d'Hoffmann",
           "date": "2026-12-27",
           "starts_at": "2026-12-27T15:30:00+01:00",
-          "venue": "Teatro del Maggio - Sala Grande"
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "composer": "Jacques Offenbach"
         },
         {
           "event_title": "Les contes d'Hoffmann",
           "date": "2026-12-30",
           "starts_at": "2026-12-30T20:00:00+01:00",
-          "venue": "Teatro del Maggio - Sala Grande"
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "composer": "Jacques Offenbach"
         },
         {
           "event_title": "Les contes d'Hoffmann",
           "date": "2027-01-02",
           "starts_at": "2027-01-02T17:00:00+01:00",
-          "venue": "Teatro del Maggio - Sala Grande"
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "composer": "Jacques Offenbach"
         }
       ]
     },
