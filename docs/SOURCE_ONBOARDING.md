@@ -1229,3 +1229,16 @@ ancora nel registro canonico. La prova end-to-end
 collector salvi titolo, compositore, sede, date e orari nella
 `candidate-detail-evidence.json`. La sola presenza di un parser
 sul filesystem non è sufficiente per dichiarare automatizzata la fonte.
+
+### Trieste: credito del compositore seguito dal genere
+
+Il dettaglio ufficiale può rendere in testo continuo
+`Musica di Giacomo Puccini Opera`,
+`Musica di Vincenzo Bellini Tragedia` oppure
+`Musica di Gaetano Donizetti Melodramma`. La parola conclusiva
+è l'intestazione del genere, **non** parte del nome dell'autore.
+Il parser rimuove soltanto una singola etichetta riconosciuta quando
+esistono già almeno nome e cognome del compositore, senza ricavare
+l'identità dall'URL o dal titolo. Test di regressione coprono
+*La Bohème*, *Aida*, *Norma* e *L'elisir d'amore*; tutte le date
+e gli orari devono continuare a superare i normali controlli.
