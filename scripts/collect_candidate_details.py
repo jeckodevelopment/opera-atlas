@@ -166,6 +166,12 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
 
     Never infer metadata for a newly discovered work from a URL slug alone.
     """
+    if source_key=="petruzzelli-opera-2027":
+        from opera_atlas.petruzzelli_detail_parser import extract_official_petr_opera
+        title,composer,venue,recite=extract_official_petr_opera(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key=="bologna-comunale-opera-2027":
         from opera_atlas.bologna_detail_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
@@ -191,17 +197,16 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                  "starts_at":official_local_time(x["date"],x["clock"])}
                 for x in entries]
     if source_key=="petruzzelli-opera-2027":
-        from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_detail
-        # The production heading contains 'TITLE di COMPOSER', rather than
-        # a plain canonical title. Never choose an opera from URL slug alone.
-        from opera_atlas.national_detail_parser import clean
-        text=clean(html).lower().replace("’","'")
+        from opera_atlas.petruzzelli_detail_parser import extract_official_petr_opera
+        title,composer,venue,raw=extract_official_petr_opera(html,url=url)
+        # Full title+composer distinguishes Puccini/Leoncavallo Bohème.
         known=[w for w in registry.get("works",{}).values()
-               if (w["title"]+" di "+w["composer"]).lower().replace("’","'") in text]
+               if normalized(w["title"]).replace("’","'")==
+                  normalized(title).replace("’","'")
+               and normalized(w["composer"]).replace("’","'")==
+                   normalized(composer).replace("’","'")]
         if len(known)!=1:return []
         work=known[0]
-        venue,raw=parse_petruzzelli_detail(
-            html,url=url,title=work["title"],composer=work["composer"])
     elif source_key=="opera-roma-season-2026-27":
         from opera_atlas.roma_detail_parser import parse_roma_detail
         work=heading_work(html,registry)
@@ -266,9 +271,14 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
     if adapter is None and item["source_key"] not in (
             "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
             "carlo-felice-season-2026-27","donizetti-opera-2026",
-            "teatro-grande-opera-2026"):
+            "teatro-grande-opera-2026","petruzzelli-opera-2027"):
         return []
-    if item["source_key"]=="teatro-grande-opera-2026":
+    if item["source_key"]=="petruzzelli-opera-2027":
+        from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_detail
+        venue,rows=parse_petruzzelli_detail(
+            html,url=item["official_url"],title=info["title"],
+            composer=info["composer"])
+    elif item["source_key"]=="teatro-grande-opera-2026":
         from opera_atlas.brescia_detail_parser import parse_brescia_detail
         venue="Teatro Grande"
         rows=parse_brescia_detail(html,url=item["official_url"],
@@ -450,7 +460,10 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"]=="carlo-felice-season-2026-27":
+                if item["source_key"] in (
+                        "carlo-felice-season-2026-27",
+                        "bologna-comunale-opera-2027",
+                        "petruzzelli-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
