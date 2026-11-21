@@ -69,6 +69,48 @@ def verified_work_heading(html:str,*,title:str,composer:str)->bool:
     where=visible.find(heading_key)
     return where>=0 and composer_key in visible[where+len(heading_key):where+len(heading_key)+180]
 
+def official_petruzzelli_other_year(html:str,*,url:str,season_year:int)->str|None:
+    """Retire a misindexed event only on its exact official dated timetable.
+
+    All ticketed showtimes must explicitly belong to the *same* other year.
+    Do not treat undated promotional paragraphs, conversation dates or a
+    season-navigation link as evidence. Ambiguous/partial pages stay open.
+    """
+    parsed=urlsplit(url)
+    if (parsed.scheme!="https" or parsed.hostname!="www.fondazionepetruzzelli.it"
+        or parsed.query or parsed.fragment or parsed.port is not None
+        or not re.fullmatch(r"/eventi/[a-z0-9-]+/",parsed.path)):
+        raise ValueError("invalid Petruzzelli official season source")
+    visible=clean(html)
+    if "Orari Spettacoli" not in visible:
+        return None
+    schedule=visible.split("Orari Spettacoli",1)[1]
+    for stop in ("Interpretato Da","La Trama","Chiudi","Privacy Overview"):
+        if stop in schedule:
+            schedule=schedule.split(stop,1)[0]
+    matches=SCHEDULE.findall(schedule)
+    all_days=re.findall(
+        r"(?i)\\b(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)"
+        r"\\s+[0-3]?\\d\\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|"
+        r"luglio|agosto|settembre|ottobre|novembre|dicembre)\\s+20\\d{2}\\b",
+        schedule)
+    if not matches or len(all_days)!=len(matches):
+        return None
+    years=set()
+    for weekday,day,month,year,hour,minute in matches:
+        try:
+            when=date(int(year),MONTHS[month.casefold()],int(day))
+        except ValueError:
+            return None
+        if when.weekday()!=DAYS[weekday.casefold()]:
+            return None
+        years.add(when.year)
+    if len(years)!=1:
+        return None
+    actual=next(iter(years))
+    return str(actual) if actual!=season_year else None
+
+
 def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str,season_year:int=2027):
     target=urlsplit(url)
     if (target.scheme!="https" or target.hostname!="www.fondazionepetruzzelli.it"
