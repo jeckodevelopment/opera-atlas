@@ -107,6 +107,48 @@ class FullPetruzzelliSeasonTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     extract_official_petr_opera(page,url=url)
 
+    def test_all_verified_petruzzelli_2027_pages_persisted_without_mixing_ballet(self):
+        from scripts.collect_candidate_details import OUTPUT as DETAILS
+        from scripts.discover_season_indexes import OUTPUT as INDEX
+        candidates=json.loads(INDEX.read_text(encoding="utf-8"))
+        evidence=json.loads(DETAILS.read_text(encoding="utf-8"))
+        expected={
+            "la-boheme-17-27-dicembre":("La bohème","Giacomo Puccini",8),
+            "le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre":
+                ("Le nozze di Figaro","Wolfgang Amadeus Mozart",6),
+            "fidelio-di-ludwig-van-beethoven-19-25-novembre":
+                ("Fidelio","Ludwig van Beethoven",5),
+            "zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio":
+                ("Zenobia","Niccolò Piccinni",4),
+            "arlecchino-di-ferruccio-busoni-15-18-21-23-maggio":
+                ("Arlecchino","Ferruccio Busoni",4),
+        }
+        latest={x["source_url"].rstrip("/").split("/")[-1]:x
+                for x in evidence["evidence"]
+                if x["source_key"]==SOURCE}
+        official={x["official_url"].rstrip("/").split("/")[-1]:x
+                  for x in candidates["candidates"]
+                  if x["source_key"]==SOURCE}
+        self.assertEqual(sum(v[2] for v in expected.values()),27)
+        for slug,(title,composer,n) in expected.items():
+            self.assertIn(slug,official)
+            self.assertIn(slug,latest)
+            row=latest[slug]
+            self.assertEqual(row["status"],"needs_editorial_review")
+            self.assertEqual(len(row["event_facts"]),n)
+            self.assertEqual({x["event_title"] for x in row["event_facts"]},
+                             {title})
+            self.assertEqual({x["composer"] for x in row["event_facts"]},
+                             {composer})
+            self.assertEqual({x["venue"] for x in row["event_facts"]},
+                             {"Teatro Petruzzelli"})
+            self.assertTrue(all(x["starts_at"].startswith(x["date"]+"T")
+                                and x["starts_at"][-6:] in ("+01:00","+02:00")
+                                for x in row["event_facts"]))
+        mixed=next(x for x in evidence["evidence"]
+                   if "larlesienne-di-georges-bizet-pagliacci" in x["source_url"])
+        self.assertNotEqual(mixed["status"],"needs_editorial_review")
+
     def test_official_puccini_boheme_can_enter_public_feed_once(self):
         # Use live committed candidate/evidence (no invented work identity).
         from scripts.collect_candidate_details import OUTPUT as DETAILS
