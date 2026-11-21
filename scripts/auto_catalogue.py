@@ -413,12 +413,28 @@ def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
     return next_facts,next_registry,{"new_stagings":created,
                                      "new_recite":accepted,"auto_skipped":skipped}
 
-def verified_candidate_image(detail:dict,*,title:str,url:str)->dict|None:
-    """Only first-party, title-matched, production-page poster metadata.
+def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=None)->dict|None:
+    """Validate source-bound historic art first, then official theatre art.
 
-    Revalidate checkpoint JSON because it may have been produced by an older
-    scanner; never trust an image URL merely because it exists in evidence.
+    A Commons label alone is insufficient: cross-check the work identity,
+    file metadata, accepted licence, and exact original source URL.
     """
+    archive=detail.get("archival_poster_evidence")
+    if isinstance(archive,dict) and composer:
+        from scripts.discover_wikimedia_art import historical_candidate
+        source=archive.get("source_url","")
+        raw=archive.get("file","")
+        if (archive.get("kind")=="archival_work_image" and
+            archive.get("title")==title and archive.get("composer")==composer and
+            isinstance(raw,str) and isinstance(source,str) and
+            source.startswith("https://commons.wikimedia.org/wiki/File:") and
+            raw.replace(" ","_") in __import__("urllib.parse",fromlist=["unquote"]).unquote(source).replace(" ","_") and
+            archive.get("license") in ("CC0","CC BY","CC BY-SA",
+                                       "Public domain (Commons declaration)") and
+            isinstance(archive.get("credit"),str) and archive.get("credit")):
+            return {k:archive[k] for k in
+                    ("kind","file","source_url","image_url","alt",
+                     "credit","license","composer","title")}
     image=detail.get("poster_evidence")
     if not isinstance(image,dict) or image.get("kind")!="official_production_image":
         return None
@@ -491,7 +507,7 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         slug=slugify(title)
         if work_key in next_registry["works"]:
             continue
-        if require_image and verified_candidate_image(detail,title=title,url=url) is None:
+        if require_image and verified_candidate_image(detail,title=title,url=url,composer=composer) is None:
             result["auto_skipped"].append({
                 "candidate_id":cid,"reason":"verified_work_image_missing"})
             continue
@@ -742,6 +758,19 @@ def main():
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
     registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
     evidence=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
+    # Commons discovery is a review-only, separately verified input. Never
+    # accept an image for a different candidate or a stale detail URL.
+    from scripts.discover_wikimedia_art import OUTPUT as WIKIMEDIA_ART
+    archival=(json.loads(WIKIMEDIA_ART.read_text(encoding="utf-8"))
+              if WIKIMEDIA_ART.exists() else {"art":[]})
+    by_cid={row["candidate_id"]:row for row in archival.get("art",[])
+            if isinstance(row,dict) and isinstance(row.get("candidate_id"),str)}
+    for item in evidence.get("evidence",[]):
+        row=by_cid.get(item.get("candidate_id"))
+        if (row and row.get("source_url")==item.get("source_url") and
+                isinstance(row.get("poster_evidence"),dict)):
+            item["archival_poster_evidence"]=row["poster_evidence"]
+
     candidates=json.loads(INDEX.read_text(encoding="utf-8")) if INDEX.exists() else {"candidates":[]}
     approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8")) if SOURCE_ALLOWLIST.exists() else {"schema_version":1,"urls":[]}
     next_facts,next_registry,urls,report=promote(
@@ -793,7 +822,7 @@ def main():
         matched=[p for p in next_facts["productions"]
                  if normalized(p["title"])==normalized(work["title"])
                  and normalized(p["composer"])==normalized(work["composer"])]
-        proofs=[verified_candidate_image(e,title=work["title"],url=p["source_url"])
+        proofs=[verified_candidate_image(e,title=work["title"],url=p["source_url"],composer=work["composer"])
                 for p in matched for e in evidence.get("evidence",[])
                 if e.get("source_url")==p["source_url"]]
         proofs=[proof for proof in proofs if proof is not None]
@@ -801,13 +830,23 @@ def main():
             raise ValueError("missing source image for new canonical opera "+work["id"])
         image_additions[work["id"]]={"work_id":work["id"],**proofs[0]}
     if image_additions:
-        from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
+        from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE,ARCHIVE
         previous_images=json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8"))
+        archive_registry=json.loads(ARCHIVE.read_text(encoding="utf-8"))
         if (previous_images.get("schema_version")!=2
-                or not isinstance(previous_images.get("posters"),dict)):
+                or not isinstance(previous_images.get("posters"),dict)
+                or archive_registry.get("schema_version")!=1 or
+                not isinstance(archive_registry.get("works_by_id"),dict)):
             raise ValueError("invalid existing artwork evidence")
         for work_id,proof in image_additions.items():
-            previous_images["posters"][work_id]=proof
+            if proof.get("kind")=="archival_work_image":
+                work=next(w for w in next_registry["works"].values() if w["id"]==work_id)
+                archive_registry["works_by_id"][work_id]={
+                    "work_id":work_id,"composer":work["composer"],
+                    "file":proof["file"],"description":proof["alt"],
+                    "credit":proof["credit"],"license":proof["license"]}
+            else:
+                previous_images["posters"][work_id]=proof
     if report["new_recite"]:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
@@ -817,6 +856,7 @@ def main():
             _write_atomic(HISTORY,next_history)
             from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
             _write_atomic(POSTER_EVIDENCE,previous_images)
+            _write_atomic(ARCHIVE,archive_registry)
     if enriched:
         _write_atomic(TIME_EVIDENCE,next_times)
     _write_atomic(HEALTH,{"schema_version":1,**report})
