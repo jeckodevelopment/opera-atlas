@@ -89,7 +89,10 @@ class DonizettiCreditsTests(unittest.TestCase):
         self.assertTrue(45<=len(seed["synopsis"])<=300)
         self.assertTrue(validate_history(seed["history"]))
         self.assertEqual((seed["history"]["premiere_year"],seed["history"]["premiere_city"]),
-                         (1831,"Milano"))
+                         (1831,"Napoli"))
+        self.assertEqual(seed["history"]["premiere_venue"],"Teatro del Fondo")
+        self.assertIn(URL,seed["history"]["sources"])
+
         art=load_archival_art({"le-convenienze-ed-inconvenienze-teatrali"})
         self.assertEqual(art["le-convenienze-ed-inconvenienze-teatrali"]["kind"],
                          "archival_work_image")
