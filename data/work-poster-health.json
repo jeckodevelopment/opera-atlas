@@ -1,50 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T11:17:56+00:00",
-  "checked_pages": 10,
+  "checked_at": "2026-11-21T11:24:00+00:00",
+  "checked_pages": 0,
   "official_images": 2,
   "archival_images": 32,
   "editorial_fallbacks": 2,
-  "outcomes": [
-    {
-      "slug": "lucia-di-lammermoor",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "carmen",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "madama-butterfly",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "jenufa",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "madama-butterfly",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "macbeth",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "samson-et-dalila",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "fedora",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "aida",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "otello",
-      "status": "no_suitable_official_poster"
-    }
-  ]
+  "outcomes": []
 }
