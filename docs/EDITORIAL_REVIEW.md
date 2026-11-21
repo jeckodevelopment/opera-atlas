@@ -244,3 +244,16 @@ Mariinsky. La scheda verrà pubblicata soltanto quando anche l'evidenza
 della recita, la fonte e un'immagine con provenienza soddisferanno i
 controlli canonici; un testo editoriale già pronto non autorizza date
 ipotetiche o pubblicazione senza manifesto verificato.
+
+## Pubblicazione automatica dei nuovi record editoriali verificati
+
+Un aggiornamento a `data/verified-work-authority-seeds.json` o
+`data/verified-work-editorial-attribution.json` su `main` attiva
+il workflow `refresh-catalog`, anche se nella stessa modifica non
+cambiano script o test. In questo modo una nuova scheda già documentata
+può completare l'intero ciclo di acquisizione, verifica, pubblicazione
+degli indici JSON e diagnostica senza deploy FTP o interventi manuali.
+Il workflow conserva il controllo sulla provenienza dell'immagine e
+l'obbligo di date, sede e compositore ufficiali; l'attivazione non
+costituisce un bypass della validazione né garantisce che una pagina
+incompleta venga pubblicata.
