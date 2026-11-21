@@ -210,6 +210,12 @@
       "description": "Manifesto storico ottocentesco di Il trovatore di Giuseppe Verdi, realizzato dopo la prima del 1853; non produzione 2027",
       "credit": "Luigi Morgari, incisione storica, Bibliothèque nationale de France / Wikimedia Commons",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Il_trovatore_by_Luigi_Morgari_-_Original.jpg"
+    },
+    "la-rondine": {
+      "file": "La rondine.jpg",
+      "description": "Manifesto originale della prima italiana del 1917 di La rondine di Giacomo Puccini; non è una foto dell'allestimento romano del 2027",
+      "credit": "Manifesto della prima italiana (1917), da archivio Centro Studi Giacomo Puccini / Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:La_rondine.jpg"
     }
   },
   "works_by_id": {
