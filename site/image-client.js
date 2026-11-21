@@ -160,7 +160,12 @@ window.OperaAtlasImages=Object.freeze((()=>{
     // as if it were a photograph of Teatro Filarmonico.
     // Use each theatre's verified file, never a photo of another venue
     // in the same city. Unknown images retain a visibly editorial fallback.
-    const verified=event?.photo_file;
+    // The homepage may render a staging before the separate venue directory
+    // has finished loading. Use only a venue-specific, sourced photo here,
+    // never assume all theatres in one city share the same building.
+    const knownVenueFile=city==="genova" && title==="Teatro Carlo Felice"
+      ? "Genova - Teatro Carlo Felice.jpg" : null;
+    const verified=event?.photo_file || knownVenueFile;
     const file=typeof verified==="string" && /^[^/\\]+\.(jpe?g|png|webp)$/i.test(verified)
       ? verified
       : (event?.no_city_fallback ||

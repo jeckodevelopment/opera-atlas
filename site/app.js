@@ -251,6 +251,17 @@ const HOME_REPERTOIRE_IDS=Object.freeze([
   "oa-w-000022", // Tosca — Puccini
   "oa-w-000021"  // Lucia di Lammermoor — Donizetti
 ]);
+// Images belong to the venue registry, not to a particular performance.
+const homeVenueProfiles=new Map();
+async function loadHomeVenueProfiles() {
+  const entries=await window.OperaAtlasCatalog.venues();
+  homeVenueProfiles.clear();
+  for(const venue of entries){
+    if(!venue?.city_slug || !venue?.slug)continue;
+    homeVenueProfiles.set(venue.city_slug+"/"+venue.slug,venue);
+  }
+  renderDiscoveries();
+}
 function renderDiscoveries() {
   const works=new Map(),venues=new Map();
   for(const event of catalog){
@@ -273,7 +284,15 @@ function renderDiscoveries() {
     const priority=x=>x.municipality==="Torino" && (x.venue==="Teatro Regio" || x.venue==="Teatro Regio di Torino") ? 0 : 1;
     return priority(a[1])-priority(b[1]) || a[1].venue.localeCompare(b[1].venue,"it");
   }).slice(0,6)){
-    venueBox.append(imageTile(url,event.venue,event.municipality,editorialImage("venue",event,"discovery-image")));
+    const path=event.city_slug+"/"+event.venue_slug;
+    const profile=homeVenueProfiles.get(path);
+    const illustrated={...event,
+      photo_file:profile?.photo_file,
+      photo_source_url:profile?.photo_source_url,
+      // Never substitute a city photograph belonging to a different theatre.
+      no_city_fallback:!!profile
+    };
+    venueBox.append(imageTile(url,event.venue,event.municipality,editorialImage("venue",illustrated,"discovery-image")));
   }
 }
 async function renderFestivals(){
@@ -412,6 +431,7 @@ async function initialize() {
     fillOptions(controls.city,catalog.map(x=>x.municipality));
     populateLocations();
     renderDiscoveries();
+    loadHomeVenueProfiles().catch(error=>console.warn("Home theatre photos unavailable",error));
     loadWorkDescriptions().then(renderDiscoveries).catch(error=>console.warn("Opera descriptions unavailable",error));
     renderFestivals();
     fillOptions(controls.region,catalog.map(x=>x.region));
