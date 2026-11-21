@@ -46,7 +46,7 @@ class PublicMultiWorkTests(unittest.TestCase):
                  if x.get("status")=="needs_program_review"
                  and x.get("program_heading"))
         row["program_heading"]=row["program_heading"].replace(
-            "Georges Bizet","Unrelated Composer")
+            "Ruggero Leoncavallo","Unrelated Composer")
         with self.assertRaises(ValueError):
             self.build(wrong)
         wrong=copy.deepcopy(self.evidence)
