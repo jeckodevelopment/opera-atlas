@@ -82,3 +82,63 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
     if not found:
         raise ValueError("no dated and timed Rome performances")
     return "Teatro dell'Opera di Roma", sorted(found.items())
+
+
+class OfficialCredits(HTMLParser):
+    """Read block-delimited official composer text, never infer from slug/cast."""
+    BLOCKS={"p","div","section","h1","h2","h3","h4","li"}
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.lines=[]
+        self.line=[]
+    def handle_starttag(self,tag,attrs):
+        if tag in self.BLOCKS:self._flush()
+    def handle_endtag(self,tag):
+        if tag in self.BLOCKS:self._flush()
+    def handle_data(self,data):
+        self.line.append(data)
+    def _flush(self):
+        value=" ".join("".join(self.line).split())
+        if value:self.lines.append(value)
+        self.line=[]
+    def close(self):
+        super().close()
+        self._flush()
+
+
+def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
+    """Require exact season, official h1, adjacent author credit and timed shows.
+
+    Credited works not yet in the canonical registry enter the same centralized
+    authority/editorial pipeline as all other theatres. This is factual evidence,
+    not an autonomous grant of a canonical work ID.
+    """
+    heading=Heading()
+    heading.feed(html)
+    title=heading.title
+    if not title or not 3<=len(title)<=160:
+        raise ValueError("official Rome opera title absent")
+    reader=OfficialCredits()
+    reader.feed(html)
+    reader.close()
+    lines=reader.lines
+    first_date=next((i for i,x in enumerate(lines) if x=="Le date"),len(lines))
+    intro=lines[:first_date]
+    if not any(re.search(r"\bStagione\s+2026\s*/\s*2027\b",line,re.I)
+               for line in intro):
+        raise ValueError("Rome event not in verified 2026/27 season")
+    title_ix=next((i for i,x in enumerate(intro)
+                   if normalized(x)==normalized(title)),None)
+    if title_ix is None:
+        raise ValueError("official Rome title not in source heading")
+    credits=[]
+    for line in intro[title_ix+1:]:
+        m=re.fullmatch(r"Musica\s+di\s+(.{4,100})",line,re.I)
+        if m:credits.append(m[1].strip())
+    if len(credits)!=1 or not re.fullmatch(
+        r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ.'’ -]{3,99}",credits[0]
+    ):
+        raise ValueError("unambiguous official Rome composer credit missing")
+    composer=credits[0]
+    venue,dates=parse_roma_detail(html,url=url,title=title,composer=composer)
+    return title,composer,venue,dates
