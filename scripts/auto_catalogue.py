@@ -40,66 +40,85 @@ VENUE_BY_SOURCE={
 
 
 def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict)->dict:
-    """Discover independently composer-credited TCBO works without a paid API.
+    """Resolve new work identities from consistent, officially credited facts.
 
-    The official source provides title/composer/date/time/venue together, and
-    curated source-specific material may replace the minimal identity summary.
-    Neither a URL slug alone nor unknown/unverified venue text establishes an
-    opera. This is deliberately source-limited until other adapters offer the
-    same evidence guarantees.
+    Applies identical acceptance rules to every approved source. Adapter-specific
+    normalization can prepare fields, but neither slug nor source identity is
+    itself authority to create an opera. Independent Wikidata evidence remains
+    preferable; this path is for first-party, independently credited details.
     """
-    from pathlib import Path
     from scripts.publish_work_editorial import validate_history
-    source_key="bologna-comunale-opera-2027"
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+
     seed_path=ROOT/"data"/"verified-work-authority-seeds.json"
     doc=json.loads(seed_path.read_text(encoding="utf-8"))
     if doc.get("schema_version")!=1 or not isinstance(doc.get("works"),list):
         raise ValueError("invalid official-source identity seed registry")
+    sources={r["key"]:r for r in validate_config(
+        json.loads(CONFIG.read_text(encoding="utf-8")))
+        if r["access_status"]=="approved"}
     seeds={}
     for seed in doc["works"]:
-        url=seed.get("source_url")
-        if (seed.get("source_key")!=source_key or not isinstance(url,str)
-                or not eligible(source_key,url)
-                or url in seeds or not validate_history(seed.get("history"))
+        key,url=seed.get("source_key"),seed.get("source_url")
+        if (key not in sources or not isinstance(url,str)
+                or not eligible(key,url) or (key,url) in seeds
+                or urlsplit(url).hostname!=urlsplit(sources[key]["official_url"]).hostname
+                or not validate_history(seed.get("history"))
                 or not isinstance(seed.get("synopsis"),str)
                 or not 45<=len(seed["synopsis"].strip())<=300):
             raise ValueError("invalid or duplicate source-grounded work seed")
-        seeds[url]=seed
+        seeds[(key,url)]=seed
     known={(entry.get("source_key"),entry.get("source_url"))
            for entry in intelligence.get("works",[])}
     candidates_by_id={x["id"]:x for x in candidates.get("candidates",[])
                       if x.get("status")=="needs_review"}
     results=list(intelligence.get("works",[]))
-    from opera_atlas.bologna_detail_parser import normalize_event_fact
     for record in evidence.get("evidence",[]):
-        if record.get("source_key")!=source_key or record.get("status")!="needs_editorial_review":
+        key=record.get("source_key")
+        if key not in sources or record.get("status")!="needs_editorial_review":
             continue
         candidate=candidates_by_id.get(record.get("candidate_id"))
         url=record.get("source_url")
-        if (not candidate or candidate.get("source_key")!=source_key
+        if (not candidate or candidate.get("source_key")!=key
             or candidate.get("official_url")!=url or not isinstance(url,str)
-            or not eligible(source_key,url) or
-            (source_key,url) in known):
+            or not eligible(key,url)
+            or urlsplit(url).hostname!=urlsplit(sources[key]["official_url"]).hostname
+            or (key,url) in known or key not in VENUE_BY_SOURCE):
             continue
-        rows=[normalize_event_fact(x) for x in record.get("event_facts",[])]
-        if not rows or any(not isinstance(x,dict) for x in rows):
+        rows=record.get("event_facts",[])
+        if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
+            from opera_atlas.bologna_detail_parser import normalize_event_fact
+            rows=[normalize_event_fact(x) for x in rows]
+        if not isinstance(rows,list) or not rows or any(
+                not isinstance(x,dict) for x in rows):
             continue
         identities={(normalized(x.get("event_title","")),
-                     normalized(x.get("composer","")))
-                    for x in rows}
-        venues={x.get("venue") for x in rows}
-        if (len(identities)!=1 or len(venues)!=1 or
-            next(iter(venues)) not in ("Teatro Comunale di Bologna",
-                                       "Teatro Auditorium Manzoni")):
+                     normalized(x.get("composer",""))) for x in rows}
+        if len(identities)!=1 or any(not part for part in next(iter(identities))):
             continue
-        title=rows[0].get("event_title")
-        composer=rows[0].get("composer")
-        if (not isinstance(title,str) or not 3<=len(title)<=140 or
-            not isinstance(composer,str) or not 3<=len(composer)<=100 or
-            not all(isinstance(x.get("starts_at"),str) and
-                    isinstance(x.get("date"),str) for x in rows)):
+        title,composer=rows[0].get("event_title"),rows[0].get("composer")
+        if (not isinstance(title,str) or not 3<=len(title)<=140
+            or not isinstance(composer,str) or not 3<=len(composer)<=100
+            or verified_venue(key,rows,{"venues":{}}) is None):
             continue
-        seed=seeds.get(url)
+        dates=set()
+        valid=True
+        for x in rows:
+            try:
+                day=date.fromisoformat(x["date"])
+                stamp=datetime.fromisoformat(x["starts_at"])
+                if stamp.tzinfo is None or stamp.utcoffset() is None:
+                    raise ValueError("timezone missing")
+                if stamp.astimezone(ZoneInfo("Europe/Rome")).date()!=day:
+                    raise ValueError("local date mismatch")
+                if day in dates:raise ValueError("duplicate calendar date")
+                dates.add(day)
+            except (KeyError,TypeError,ValueError):
+                valid=False
+                break
+        if not valid:continue
+        seed=seeds.get((key,url))
         if seed and (normalized(seed["title"])!=normalized(title)
                      or normalized(seed["composer"])!=normalized(composer)):
             raise ValueError("official source contradicts verified opera identity seed")
@@ -107,11 +126,11 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
                  f"«{title}» è un'opera di {composer}. "
                  "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
         results.append({"candidate_id":record["candidate_id"],
-                        "source_key":source_key,"source_url":url,
+                        "source_key":key,"source_url":url,
                         "title":title,"composer":composer,"synopsis":summary,
                         "history":seed["history"] if seed else None,
                         "official_authority_url":url})
-        known.add((source_key,url))
+        known.add((key,url))
     return {"schema_version":1,"works":results}
 
 def verified_venue(source_key:str,rows:list[dict],registry:dict):
@@ -483,9 +502,10 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         qid=item.get("wikidata_id")
         verified_wikidata=(isinstance(qid,str) and
                            __import__("re").fullmatch(r"Q[1-9][0-9]*",qid))
-        verified_official=(source_key=="bologna-comunale-opera-2027"
-                           and item.get("official_authority_url")==url
-                           and source["official_url"]=="https://www.tcbo.it/")
+        # Identical evidence contract across all approved source adapters.
+        verified_official=(item.get("official_authority_url")==url
+                           and source_key in VENUE_BY_SOURCE
+                           and detail.get("status")=="needs_editorial_review")
         if not (verified_wikidata or verified_official):continue
         work_key=normalized(title)+"|"+normalized(composer)
         slug=slugify(title)
