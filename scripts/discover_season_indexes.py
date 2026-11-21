@@ -134,6 +134,29 @@ def reviewed_source_urls()->set[str]:
 def classify(key:str,url:str,reviewed:set[str])->str:
     if excluded_nonopera(key,url):
         return "excluded_nonopera"
+    if key in {
+        "jesi-trittico-opera-2026","jesi-don-pasquale-opera-2026",
+        "jesi-esecuzione-opera-2026","jesi-nabucco-opera-2026",
+        "ancona-elisir-opera-2026","ancona-cavalleria-program-2026"}:
+        from opera_atlas.marche_2026_parser import PRODUCTIONS,canon
+        from scripts.build_verified_catalog import MANIFEST
+        selected=PRODUCTIONS[key]
+        if selected[5] is not None:
+            programs=ROOT/"public"/"catalog"/"programs.json"
+            if programs.exists():
+                data=json.loads(programs.read_text(encoding="utf-8"))
+                if any(x.get("source_key")==key and x.get("source_url")==url
+                       for x in data.get("programs",[])):
+                    return "already_catalogued"
+            return "needs_review"
+        catalog=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        matches=[x for x in catalog.get("productions",[])
+                 if x.get("source_url")==url
+                 and x.get("municipality")==("Jesi" if key.startswith("jesi-") else "Ancona")
+                 and x.get("venue")==selected[1]
+                 and canon(x.get("title",""))==canon(selected[2])
+                 and canon(x.get("composer",""))==canon(selected[3])]
+        return "already_catalogued" if len(matches)==1 else "needs_review"
     if key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
         from opera_atlas.livorno_opera_parser import SOURCES
         from scripts.build_verified_catalog import MANIFEST
@@ -301,6 +324,10 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key.startswith("jesi-") and key.endswith("-opera-2026"):
+        return path=="/lirica/programma-stagione-lirica-2026"
+    if key.startswith("ancona-") and key.endswith("-2026"):
+        return path=="/stagione-lirica-2026"
     if key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
         return path=="/notizie/la-stagione-lirica"
     if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
@@ -331,6 +358,10 @@ def eligible(key:str,url:str)->bool:
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key.startswith(("jesi-","ancona-")) and key.endswith(("-opera-2026","-program-2026")):
+        from opera_atlas.marche_2026_parser import read_program
+        read_program(html,source_key=key,url=index_url)
+        return [index_url]
     if key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
         from opera_atlas.livorno_opera_parser import parse_detail
         parse_detail(html,url=index_url,source_key=key)
@@ -386,6 +417,12 @@ def validate_config(config:dict)->list[dict]:
         "modena-opera-2026-27":("www.comune.modena.it","/vivere-modena/eventi/2026/stagione-opera-2026-2027"),
         "giglio-lucca-opera-2026-27":("www.teatrodelgigliogiacomopuccini.it","/it/cartellone/lirica/stagione-2026-2027/"),
         "piacenza-opera-2026-27":("teatripiacenza.it","/stagioni/stagione-26-27/"),
+        "jesi-trittico-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
+        "jesi-don-pasquale-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
+        "jesi-esecuzione-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
+        "jesi-nabucco-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
+        "ancona-elisir-opera-2026":("www.fondazionemuse.org","/stagione-lirica-2026/"),
+        "ancona-cavalleria-program-2026":("www.fondazionemuse.org","/stagione-lirica-2026/"),
         "goldoni-livorno-dido-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
         "goldoni-livorno-otello-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
         "goldoni-livorno-elisir-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
@@ -428,6 +465,10 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key.startswith("jesi-") and key.endswith("-opera-2026"):
+            valid_season=index.path=="/lirica/programma-stagione-lirica-2026/" and not index.query
+        elif key.startswith("ancona-") and key.endswith("-2026"):
+            valid_season=index.path=="/stagione-lirica-2026/" and not index.query
         elif key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):

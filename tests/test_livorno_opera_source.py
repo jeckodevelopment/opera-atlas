@@ -32,7 +32,7 @@ class LivornoOperaTests(unittest.TestCase):
     def test_three_distinct_bounded_official_sources(self):
         config=validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
         keys=set(SOURCES)
-        self.assertEqual(len(config),29)
+        self.assertEqual(len(config),35)
         self.assertEqual({x["key"] for x in config if x["key"] in keys},keys)
         for key in keys:
             self.assertTrue(eligible(key,URL))
