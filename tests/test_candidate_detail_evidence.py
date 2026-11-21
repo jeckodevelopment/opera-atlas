@@ -20,6 +20,37 @@ class CandidateDetailTests(unittest.TestCase):
             {"id":"candidate-c","source_key":"fenice-opera-2026-27",
              "official_url":"https://other.example/event/fake/","status":"needs_review"}
         ]}
+    def test_palermo_work_identity_from_official_composer_and_full_calendar(self):
+        from scripts.collect_candidate_details import parse_official_massimo_work_detail
+        url="https://www.teatromassimo.it/event/ernani-2/"
+        html=("<p>Date 31 Ottobre 20:00 Turno Prime "
+              "2 Novembre 18:30 Turno Opera</p>"
+              "<h2>Lo spettacolo</h2><p>31 ottobre, 2 novembre 2027 | Sala Grande</p>"
+              "<h1>Ernani</h1><p>Musiche di Giuseppe Verdi</p>"
+              "<p>Dramma lirico in quattro parti</p><p>Direttore Altro Musicista</p>")
+        rows=parse_official_massimo_work_detail(url,html)
+        self.assertEqual([(x["date"],x["composer"]) for x in rows],
+                         [("2027-10-31","Giuseppe Verdi"),
+                          ("2027-11-02","Giuseppe Verdi")])
+        self.assertTrue(all(x["starts_at"].endswith("+01:00") for x in rows))
+        self.assertEqual(rows[0]["venue"],"Teatro Massimo")
+
+    def test_palermo_uncredited_or_ambiguous_work_fails_closed(self):
+        from scripts.collect_candidate_details import parse_official_massimo_work_detail
+        url="https://www.teatromassimo.it/event/ernani-2/"
+        common=("<p>31 Ottobre 20:00</p><h2>Lo spettacolo</h2>"
+                "<p>31 ottobre 2027 | Sala Grande</p><h1>Ernani</h1>")
+        for credit in ("<p>Direttore Giuseppe Verdi</p>",
+                       "<p>Musiche di Giuseppe Verdi</p><p>Musiche di Altro Compositore</p>",
+                       "<p>Musiche di Giuseppe Verdi</p><p>Il giorno 31 ottobre rinviato</p>"):
+            with self.subTest(credit=credit),self.assertRaises(ValueError):
+                parse_official_massimo_work_detail(url,common+credit+
+                                                  "<p>Dramma lirico</p>")
+        with self.assertRaises(ValueError):
+            parse_official_massimo_work_detail(
+                "https://untrusted.example/event/ernani-2/",
+                common+"<p>Musiche di Giuseppe Verdi</p><p>Dramma lirico</p>")
+
     def test_structured_music_composer_is_preserved_not_conductor(self):
         event={"@type":"MusicEvent","name":"Il barbiere di Siviglia",
                "startDate":"2027-05-09T20:00:00+02:00",

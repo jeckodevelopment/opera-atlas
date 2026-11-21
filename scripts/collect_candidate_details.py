@@ -297,6 +297,57 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
              "date":day,"starts_at":official_local_time(day,hour),
              "venue":venue} for day,hour in rows]
 
+def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
+    """Read explicit Palermo first-party work/composer credits before authority research.
+
+    The site exposes exact showtime cards and a dated season summary but new
+    works cannot yet be matched to the canonical registry. Do not infer a
+    composer from an URL, a performer credit, or an adjacent production.
+    """
+    import re
+    from urllib.parse import urlsplit
+    from opera_atlas.national_detail_parser import clean,parse_national_showtimes
+    target=urlsplit(url)
+    if (target.scheme!="https" or target.hostname!="www.teatromassimo.it"
+        or target.username or target.password or target.port is not None
+        or target.query or target.fragment
+        or not re.fullmatch(r"/event/[a-z0-9-]+/",target.path)):
+        raise ValueError("untrusted Palermo opera detail")
+    heading=FirstHeading()
+    heading.feed(html)
+    title=heading.first
+    if not isinstance(title,str) or not 2<=len(title.strip())<=140:
+        raise ValueError("missing Palermo primary work heading")
+    visible=clean(html)
+    # The heading and its first-party credit must both be in the real
+    # "Lo spettacolo" block, never in the navigation or artist biographies.
+    section=visible.rsplit("Lo spettacolo",1)[-1][:1100]
+    where=section.casefold().find(title.casefold())
+    if where<0:
+        raise ValueError("Palermo work title absent from performance section")
+    credit=section[where+len(title):where+len(title)+400]
+    # Stop at an independently labelled genre: otherwise a free-standing
+    # musician name could swallow directors or character names as composer.
+    pattern=(r"(?i)\bMusiche?\s+di\s+"
+             r"([A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+){1,4})"
+             r"\s+(?=(?:Dramma|Commedia|Singspiel|Melodramma|Opera|Tragedia|"
+             r"Oratorio|Farsa|Direttore|Regia)\b)")
+    credits=re.findall(pattern,credit)
+    # Every labelled composer mention in this bounded primary block must
+    # resolve to the same single independently credited identity.
+    if len(re.findall(r"(?i)\bMusiche?\s+di\b",credit))!=1:
+        raise ValueError("conflicting Palermo composer credits")
+    if len(credits)!=1:
+        raise ValueError("missing or ambiguous labelled Palermo composer")
+    composer=credits[0]
+    dates=parse_national_showtimes(
+        html,source_key="massimo-season-2026-27",url=url,
+        title=title,composer=composer)
+    return [{"event_title":title,"composer":composer,
+             "venue":"Teatro Massimo","date":day,
+             "starts_at":official_local_time(day,hour)} for day,hour in dates]
+
+
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
     if source_key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
@@ -311,6 +362,8 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         title,composer,venue,recite=parse_detail(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)} for day,clock in recite]
+    if source_key=="massimo-season-2026-27":
+        return parse_official_massimo_work_detail(url,html)
     if source_key!="carlo-felice-season-2026-27":
         return []
     from opera_atlas.italian_detail_parser import extract_source_credited_carlo_felice
@@ -513,7 +566,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"] in ("carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
+                if item["source_key"] in ("massimo-season-2026-27","carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
