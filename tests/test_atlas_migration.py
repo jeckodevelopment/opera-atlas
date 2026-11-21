@@ -110,6 +110,25 @@ class AtlasMigrationTests(unittest.TestCase):
         })
         self.assertEqual((host,target),("ftp.cluster121.hosting.ovh.net","/atlas"))
 
+    def test_lftp_failure_reports_status_and_redacts_secrets(self):
+        from scripts.deploy_atlas_simple_ftp import publish
+        from types import SimpleNamespace
+        creds={"ATLAS_FTP_HOST":"ftp.cluster121.hosting.ovh.net",
+               "ATLAS_FTP_USERNAME":"exampleuser",
+               "ATLAS_FTP_PASSWORD":"not-a-real-password",
+               "ATLAS_FTP_REMOTE_DIR":"/atlas"}
+        def fail(command, **kwargs):
+            self.assertEqual(command,["lftp","-f","/dev/stdin"])
+            return SimpleNamespace(returncode=1, stdout="", stderr=
+                "mirror: Login failed: 530 Login authentication failed for exampleuser not-a-real-password")
+        with self.assertRaises(RuntimeError) as caught:
+            publish(env=creds, runner=fail)
+        message=str(caught.exception)
+        self.assertIn("530",message)
+        self.assertIn("Login failed",message)
+        self.assertNotIn(creds["ATLAS_FTP_USERNAME"],message)
+        self.assertNotIn(creds["ATLAS_FTP_PASSWORD"],message)
+
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_actual_catalog_url_builder(self):
         test=subprocess.run(["node",str(ROOT/"tests/atlas_routes_smoke.cjs")],
