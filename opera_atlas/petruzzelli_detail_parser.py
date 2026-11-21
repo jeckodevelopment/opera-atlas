@@ -161,3 +161,41 @@ def extract_official_petr_opera(html:str,*,url:str,season_year:int=2027):
     venue,dates=parse_petruzzelli_detail(
         html,url=url,title=title,composer=composer,season_year=season_year)
     return title,composer,venue,dates
+
+def parse_petruzzelli_program_detail(html:str,*,url:str,season_year:int=2027):
+    """Extract one ticket schedule for a complete, independently credited bill."""
+    from opera_atlas.programs import heading_from_html,credited_components
+    target=urlsplit(url)
+    if (target.scheme!="https" or target.hostname!="www.fondazionepetruzzelli.it"
+        or target.port is not None or target.username or target.password
+        or target.query or target.fragment
+        or not re.fullmatch(r"/eventi/[a-z0-9-]+/",target.path)):
+        raise ValueError("untrusted composite production")
+    heading=heading_from_html(html)
+    if not heading:raise ValueError("multi-work heading not independently credited")
+    components=credited_components(heading)
+    visible=clean(html)
+    split=visible.find("Orari Spettacoli")
+    if split<0:raise ValueError("missing official program schedule")
+    schedule=visible[split+len("Orari Spettacoli"):]
+    for stop in ("Interpretato Da","Chiudi","Privacy Overview"):
+        idx=schedule.find(stop)
+        if idx>=0:schedule=schedule[:idx]
+    if CANCELLED.search(schedule):raise ValueError("cancelled or postponed program")
+    all_days=re.findall(
+        r"(?i)\\b(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)"
+        r"\\s+[0-3]?\\d\\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|"
+        r"luglio|agosto|settembre|ottobre|novembre|dicembre)\\s+20\\d{2}\\b",
+        schedule)
+    matches=SCHEDULE.findall(schedule)
+    if not matches or len(matches)!=len(all_days):
+        raise ValueError("incomplete composite schedule")
+    dates={}
+    for weekday,day,month,year,hour,minute in matches:
+        value=date(int(year),MONTHS[month.casefold()],int(day))
+        if value.weekday()!=DAYS[weekday.casefold()] or value.year!=season_year:
+            raise ValueError("conflicting program weekday or season")
+        stamp=value.isoformat()
+        if stamp in dates:raise ValueError("repeated program date")
+        dates[stamp]=f"{int(hour):02d}:{minute}"
+    return heading,components,"Teatro Petruzzelli",sorted(dates.items())
