@@ -48,16 +48,28 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
     if not expected.issubset(provided):
         raise ValueError("missing verified work synopsis: " +
                          ", ".join(sorted(expected - provided)))
+    same_slug={}
+    for w in works:
+        same_slug.setdefault(w["slug"], []).append(w["id"])
+    synopses_by_id=editorial.get("synopses_by_id",{})
+    history_by_id=history.get("works_by_id",{})
+    if not isinstance(synopses_by_id,dict) or not isinstance(history_by_id,dict):
+        raise ValueError("work-specific editorial data must be dictionaries")
     entries = []
     for work in works:
-        summary = editorial["synopses"][work["slug"]]
+        summary = synopses_by_id.get(work["id"], editorial["synopses"][work["slug"]])
+        if len(same_slug[work["slug"]])>1 and work["id"] not in synopses_by_id:
+            raise ValueError("ambiguous synopsis needs work ID: "+work["id"])
         if not isinstance(summary, str) or not 35 <= len(summary.strip()) <= 300:
             raise ValueError("invalid short synopsis: " + work["slug"])
-        historical=history["works"].get(work["slug"])
+        historical=history_by_id.get(work["id"],history["works"].get(work["slug"]))
+        if len(same_slug[work["slug"]])>1 and work["id"] not in history_by_id:
+            raise ValueError("ambiguous history needs work ID: "+work["id"])
         if not validate_history(historical):
             raise ValueError("missing complete sourced work history: "+work["slug"])
         entries.append({"work_id":work["id"], "slug":work["slug"],
                         "title":work["title"],"composer":work["composer"],
+                        "route_slug":work.get("route_slug",work["slug"]),
                         "synopsis":summary.strip(),"history":historical})
     return {"schema_version":1,"language":"it",
             "works":sorted(entries,key=lambda v:v["work_id"])}

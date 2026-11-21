@@ -168,3 +168,18 @@ Collaudi aggiuntivi: `python -m unittest discover -s tests -v`, sintassi JS, ric
 - [Nabucco](https://www.arena.it/arena-opera-festival/nabucco/) — 29 luglio ore 21:15, 5/15/21 agosto ore 21:00, 3/9 settembre ore 21:00. Il 27 agosto **non** è una recita attiva di Nabucco, perché è stata sostituita da Carmen.
 
 Dati pubblicabili solo dopo validazione: **232 recite, 25 opere, 14 teatri, 51 messe in scena**. Gli orari già sconosciuti restano `null`; nessun testo editoriale o immagine di terzi viene copiato. URL canonici: `/milano/teatro-alla-scala/don-giovanni/`, `/milano/teatro-alla-scala/la-boheme/`, `/verona/arena-di-verona/nabucco/`. Nuovi record nel feed GitHub, senza deploy SFTP.
+
+## Identità delle opere omonime — La bohème (21/11/2026)
+
+Le due opere di Henri Murger sono composizioni **distinte** e non possono condividere l'URL, la sinossi, la storia o le immagini.
+
+| Opera | ID canonico | Scheda opera | Allestimento 2026/27 |
+|---|---|---|---|
+| Ruggero Leoncavallo | `oa-w-000007` | `/atlas/opere/la-boheme-leoncavallo/` | Teatro Regio Torino, `/atlas/torino/teatro-regio/la-boheme/` |
+| Giacomo Puccini | `oa-w-000024` | `/atlas/opere/la-boheme-puccini/` | Teatro alla Scala Milano, `/atlas/milano/teatro-alla-scala/la-boheme/` |
+
+- La prima di Puccini ebbe luogo al Teatro Regio di Torino il **1 febbraio 1896**, su libretto di Luigi Illica e Giuseppe Giacosa; fonte: https://puccini.it/opera/la-boheme/.
+- La prima di Leoncavallo ebbe luogo al Teatro La Fenice di Venezia il **6 maggio 1897**, su libretto dello stesso Leoncavallo; fonti: https://www.ruggeroleoncavallo-epistolario.ch/index.php/it/leoncavallo/prime-rappresentazioni e https://www.librettidopera.it/boheme_l/boheme_l.html.
+- Il registro conserva lo slug normalizzato `la-boheme` per compatibilità nella risoluzione delle produzioni, ma assegna un `route_slug` pubblico diverso per opera. Il feed canonico e il client usano `work_id` per sinossi e storia; le immagini sono già associate ai due ID separati.
+- Il generatore rifiuta in modo esplicito i duplicati di URL opera e la pubblicazione di contenuti editoriali ambigui per due opere omonime. Non vengono spostate o reidentificate le repliche originarie.
+- **Collaudo**: verificare le due URL pubbliche, elenco opere (due voci), link dalla homepage e da ciascuna produzione, sinossi e storia specifiche, relativi manifesti, e assenza di repliche della Scala nella scheda Leoncavallo e viceversa. Le modifiche JavaScript richiedono una pubblicazione del frontend con il workflow SFTP di `opera-atlas`; gli aggiornamenti del catalogo JSON continuano senza FTP/SFTP.

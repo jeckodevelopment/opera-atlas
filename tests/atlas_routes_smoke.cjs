@@ -23,4 +23,21 @@ const group=ctx.window.OperaAtlasCatalog.urls({
 });
 assert.equal(group.production,"/atlas/produzioni/oa-g-lombardia-italiana-2026/");
 assert.ok(Object.values(urls).every(x=>!x.includes("/dev/opera-atlas")));
+const leoncavallo=ctx.window.OperaAtlasCatalog.urls({
+  title:"La bohème",composer:"Ruggero Leoncavallo",work_id:"oa-w-000007",
+  work_slug:"la-boheme",work_route_slug:"la-boheme-leoncavallo",
+  city_slug:"torino",venue_slug:"teatro-regio",
+  staging_url:"/torino/teatro-regio/la-boheme/"
+});
+const puccini=ctx.window.OperaAtlasCatalog.urls({
+  title:"La bohème",composer:"Giacomo Puccini",work_id:"oa-w-000024",
+  work_slug:"la-boheme",work_route_slug:"la-boheme-puccini",
+  city_slug:"milano",venue_slug:"teatro-alla-scala",
+  staging_url:"/milano/teatro-alla-scala/la-boheme/"
+});
+assert.equal(leoncavallo.work,"/atlas/opere/la-boheme-leoncavallo/");
+assert.equal(puccini.work,"/atlas/opere/la-boheme-puccini/");
+assert.notEqual(leoncavallo.work,puccini.work);
+assert.equal(leoncavallo.staging,"/atlas/torino/teatro-regio/la-boheme/");
+assert.equal(puccini.staging,"/atlas/milano/teatro-alla-scala/la-boheme/");
 console.log("Verified new opera.plus/atlas routes for opera, theatre, staging and production group.");
