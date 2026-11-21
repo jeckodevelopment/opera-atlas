@@ -1,12 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T23:08:52+00:00",
-  "attempted": 1,
-  "outcomes": [
-    {
-      "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
-      "outcome": "facts_found",
-      "rows": 5
-    }
-  ]
+  "checked_at": "2026-11-21T23:21:43+00:00",
+  "attempted": 0,
+  "outcomes": []
 }
