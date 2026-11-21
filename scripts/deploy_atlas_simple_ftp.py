@@ -60,7 +60,9 @@ def publish(env=None, runner=subprocess.run):
         completed = runner(['lftp', '-f', '/dev/stdin'], input=commands, text=True, capture_output=True)
         if completed.returncode:
             # Do not dump client output: some clients echo usernames or commands.
-            raise RuntimeError('FTP upload failed (lftp exit code ' + str(completed.returncode) + '). Check FTP login and target in OVH.')
+            codes = sorted(set(re.findall(r'\\b[45][0-9]{2}\\b', (completed.stderr or '') + ' ' + (completed.stdout or ''))))
+            diagnostic = ('FTP reply ' + ','.join(codes) + '; ') if codes else ''
+            raise RuntimeError(diagnostic + 'FTP upload failed (lftp exit code ' + str(completed.returncode) + '). Check FTP login and target in OVH.')
         print('Uploaded ' + str(len(FILES)) + ' Atlas files via plain FTP to ' + PUBLIC_URL)
 
 
