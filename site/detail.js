@@ -426,8 +426,9 @@ async function initialize() {
       document.querySelector(".detail-related h2").textContent="Spettacoli in programma";
       title.textContent=first.venue;
       subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
-      if(!selected.events.length)
-        document.querySelector(".detail-related").hidden=true;
+      // Even without recite, show a contextual calendar status on the detail
+      // page only. The theatre directory never displays acquisition notices.
+      document.querySelector(".detail-related").hidden=false;
       theatreProfile=selected.venue
         ? await appendTheatreProfile(first,selected.venue)
         : await appendTheatreProfile(first);
@@ -436,8 +437,24 @@ async function initialize() {
         selected.events.length+" repliche"));
 
       for(const group of grouping(future))stagingGroup(group,"venue");
-      if(!future.length && selected.events.length)
-        results.append(node("p","empty","Non risultano prossimi spettacoli in programma."));
+      if(!future.length){
+        const acquired=selected.events.length>0 ||
+          selected.venue?.calendar_status==="acquired";
+        if(acquired){
+          results.append(node("p","empty","Non risultano prossimi spettacoli in programma."));
+        }else{
+          const notice=node("p","empty","Calendario non ancora acquisito · consulta il ");
+          const official=theatreProfile?.website || selected.venue?.website;
+          if(safeSource(official)){
+            const website=link("sito del teatro",official,"");
+            website.rel="noopener noreferrer";website.target="_blank";
+            notice.append(website);
+          }else{
+            notice.append(document.createTextNode("sito del teatro"));
+          }
+          results.append(notice);
+        }
+      }
     }else if(selected.kind==="group"){
       kind.textContent="Produzione condivisa";
       title.textContent=first.title;
