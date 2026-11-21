@@ -242,6 +242,15 @@ function imageTile(url,title,subtitle,image,description=""){
   a.append(inside);
   return a;
 }
+// Curated editorial selection (not alphabetical, and not tied to feed ordering).
+const HOME_REPERTOIRE_IDS=Object.freeze([
+  "oa-w-000026", // Rigoletto — Verdi
+  "oa-w-000015", // Aida — Verdi
+  "oa-w-000023", // Don Giovanni — Mozart
+  "oa-w-000031", // Norma — Bellini
+  "oa-w-000022", // Tosca — Puccini
+  "oa-w-000021"  // Lucia di Lammermoor — Donizetti
+]);
 function renderDiscoveries() {
   const works=new Map(),venues=new Map();
   for(const event of catalog){
@@ -253,7 +262,11 @@ function renderDiscoveries() {
   const venueBox=document.getElementById("discover-venues");
   workBox.replaceChildren();
   venueBox.replaceChildren();
-  for(const [url,event] of [...works].sort((a,b)=>a[1].title.localeCompare(b[1].title,"it")).slice(0,6)){
+  const workById=new Map([...works].map(([url,event])=>[event.work_id,{url,event}]));
+  for(const id of HOME_REPERTOIRE_IDS){
+    const selected=workById.get(id);
+    if(!selected)continue;
+    const {url,event}=selected;
     workBox.append(imageTile(url,event.title,event.composer,editorialImage("work",event,"discovery-image"),workDescriptions[event.work_id]||(event.work_slug==="la-boheme"?"":workDescriptions[event.work_slug]||"")));
   }
   for(const [url,event] of [...venues].sort((a,b)=>{
