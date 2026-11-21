@@ -1196,3 +1196,7 @@ Titoli `h2` delle singole produzioni non chiudono la sezione;
 anno errato, link di menu e footer non autorizzano nuove candidate.
 Il checkpoint della fonte resta non verificato se non si raggiunge
 la copertura minima prevista.
+
+### Roma 2027: Teatro Valle Franca Valeri come sede lirica autonoma
+
+La produzione ufficiale `/spettacoli/la-cenerentola-3/` annuncia cinque recite 1, 3, 5, 7 e 10 ottobre **2027**, non al Teatro Costanzi, ma al `Teatro Valle Franca Valeri` in Via del Teatro Valle 21. Il parser legge sempre la sede dal campo ufficiale `Dove` e la confronta con le sedi consentite per la fonte: non attribuisce più automaticamente ogni rappresentazione al Costanzi. La sede dispone di una scheda indipendente, con storia (inaugurazione 1727, prima assoluta di Rossini nel 1817, riapertura 2026), indirizzo e foto specifica di Wikimedia Commons, autore Gobbler, CC BY-SA 3.0. La scheda canonica dell'opera riporta sinossi reale, Jacopo Ferretti, prima 25 gennaio 1817 al Teatro Valle documentata dal Rossini Opera Festival e dall'Archivio Storico del Teatro dell'Opera di Roma. Il frontespizio storico del libretto `Milan 1817` è esplicitamente **successivo** alla prima romana e non è un manifesto 2027. I test assicurano cinque recite puntuali, una sola identità Rossini, risoluzione dell'anno e una sede distinta da Costanzi, senza duplicati al secondo refresh.
