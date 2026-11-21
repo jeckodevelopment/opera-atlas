@@ -141,6 +141,13 @@
       "url": "https://teatripiacenza.it/stagioni/stagione-26-27/",
       "access_status": "approved",
       "min_links": 6
+    },
+    {
+      "key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/",
+      "url": "https://www.iteatri.re.it/tipo/opera/",
+      "access_status": "approved",
+      "min_links": 4
     }
   ]
 }
