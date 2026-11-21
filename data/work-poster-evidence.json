@@ -115,6 +115,15 @@
       "credit": "Immagine promozionale dell'evento pubblicata da TicketOne",
       "alt": "Immagine promozionale di Code: Unknown di Nicola Sani, Teatro dell'Opera di Roma",
       "kind": "ticketing_event_artwork"
+    },
+    "oa-w-000079": {
+      "work_id": "oa-w-000079",
+      "image_url": "https://opera.krakow.pl/media/spectacle_image/bona-finalny_detail_poster.jpg",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+      "provenance_url": "https://opera.krakow.pl/spektakle/bona-sforza",
+      "credit": "Manifesto ufficiale di Bona Sforza, Katarzyna Zapart / Opera Krakowska",
+      "alt": "Manifesto ufficiale Bona Sforza di Zygmunt Krauze: composizione con tre ritratti della regina",
+      "kind": "official_coproduction_poster"
     }
   },
   "checks": {

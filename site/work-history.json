@@ -753,6 +753,16 @@
         "https://corago.unibo.it/opera/7AN0002579",
         "https://archiviostorico.operaroma.it/opera/la-buona-figliola-la-cecchina/"
       ]
+    },
+    "bona-sforza": {
+      "librettist": "Vincenzo de Vivo",
+      "premiere_year": 2024,
+      "premiere_venue": "Opera Krakowska",
+      "premiere_city": "Cracovia",
+      "sources": [
+        "https://zygmuntkrauze.com/en/kompozytor/bona-sforza-2/",
+        "https://opera.krakow.pl/en/spectacles/bona-sforza-1"
+      ]
     }
   },
   "works_by_id": {

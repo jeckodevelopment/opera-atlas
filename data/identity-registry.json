@@ -512,6 +512,13 @@
       "title": "LA CECCHINA",
       "composer": "Niccolò Piccinni",
       "authority_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+    },
+    "bona sforza|zygmunt krauze": {
+      "id": "oa-w-000079",
+      "slug": "bona-sforza",
+      "title": "BONA SFORZA",
+      "composer": "Zygmunt Krauze",
+      "authority_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
     }
   },
   "venues": {
@@ -1918,6 +1925,14 @@
       "venue_id": "oa-v-000018",
       "slug": "la-cecchina",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
+      "season": "2026"
+    },
+    "auto-207df538679e0065": {
+      "id": "oa-s-000150",
+      "work_id": "oa-w-000079",
+      "venue_id": "oa-v-000018",
+      "slug": "bona-sforza",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
       "season": "2026"
     }
   },
@@ -6211,6 +6226,30 @@
       "staging_id": "oa-s-000149",
       "original_date": "2026-01-28",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+    },
+    "auto-207df538679e0065|2026-09-14": {
+      "id": "oa-r-000731",
+      "staging_id": "oa-s-000150",
+      "original_date": "2026-09-14",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+    },
+    "auto-207df538679e0065|2026-09-16": {
+      "id": "oa-r-000732",
+      "staging_id": "oa-s-000150",
+      "original_date": "2026-09-16",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+    },
+    "auto-207df538679e0065|2026-09-18": {
+      "id": "oa-r-000733",
+      "staging_id": "oa-s-000150",
+      "original_date": "2026-09-18",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+    },
+    "auto-207df538679e0065|2026-09-20": {
+      "id": "oa-r-000734",
+      "staging_id": "oa-s-000150",
+      "original_date": "2026-09-20",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
     }
   }
 }

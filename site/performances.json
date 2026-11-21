@@ -380,6 +380,78 @@
       ]
     },
     {
+      "id": "curated:auto-207df538679e0065:2026-09-14",
+      "starts_at": "2026-09-14T20:30:00+02:00",
+      "local_date": "2026-09-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "BONA SFORZA",
+      "composer": "Zygmunt Krauze",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-207df538679e0065:2026-09-16",
+      "starts_at": "2026-09-16T20:30:00+02:00",
+      "local_date": "2026-09-16",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "BONA SFORZA",
+      "composer": "Zygmunt Krauze",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-207df538679e0065:2026-09-18",
+      "starts_at": "2026-09-18T18:00:00+02:00",
+      "local_date": "2026-09-18",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "BONA SFORZA",
+      "composer": "Zygmunt Krauze",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-207df538679e0065:2026-09-20",
+      "starts_at": "2026-09-20T18:00:00+02:00",
+      "local_date": "2026-09-20",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "BONA SFORZA",
+      "composer": "Zygmunt Krauze",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-como:2026-09-24",
       "starts_at": null,
       "local_date": "2026-09-24",
