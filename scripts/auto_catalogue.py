@@ -341,8 +341,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         else:
             staging_key="auto-"+hashlib.sha256((key+"|"+url).encode()).hexdigest()[:16]
             if staging_key in next_registry["stagings"]:
-                issues.append({"candidate_id":cid,"reason":"identity_collision"})
-                continue
+                # The same official listing may identify performances at two
+                # distinct approved theatres. Keep the old production ID and
+                # derive a venue-qualified key only for the additional venue.
+                staging_key="auto-"+hashlib.sha256(
+                    (key+"|"+url+"|"+city+"|"+venue).encode()).hexdigest()[:16]
+                if staging_key in next_registry["stagings"]:
+                    issues.append({"candidate_id":cid,"reason":"identity_collision"})
+                    continue
             canonical_venue=ensure_venue(next_registry,city,venue,canonical_venue)
             production={"key":staging_key,"title":work["title"],
                         "composer":work["composer"],"venue":venue,
