@@ -3,7 +3,7 @@ import json
 import unittest
 from scripts.build_verified_catalog import MANIFEST
 from scripts.daily_ingest import CONFIG,HEALTH
-from scripts.source_coverage import SOURCES, DOMAINS, build_coverage
+from scripts.source_coverage import SOURCES, DOMAINS, build_coverage, hostname
 
 
 class CoverageTests(unittest.TestCase):
@@ -19,8 +19,12 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual(len(rows),8)
         self.assertEqual({s["source_key"] for s in rows},set(DOMAINS))
         self.assertTrue(all(s["season_complete"] is False for s in rows))
-        self.assertEqual(sum(s["verified_recite"] for s in rows),
-                         sum(len(p["dates"]) for p in self.facts["productions"]))
+        # Primary-source coverage is only for the eight approved domains;
+        # autonomous national theatres can have verified performances too.
+        tracked=set().union(*DOMAINS.values())
+        expected=sum(len(p["dates"]) for p in self.facts["productions"]
+                     if hostname(p["source_url"]) in tracked)
+        self.assertEqual(sum(s["verified_recite"] for s in rows),expected)
         self.assertTrue(all(s["calendar_url"].startswith("https://") for s in rows))
 
     def test_seeded_sources_not_falsely_claimed_as_automated(self):
