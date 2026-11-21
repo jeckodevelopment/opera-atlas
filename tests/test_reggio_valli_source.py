@@ -52,6 +52,30 @@ class ReggioSourceTests(unittest.TestCase):
         self.assertEqual(facts[0]["starts_at"],"2026-11-20T20:00:00+01:00")
         self.assertEqual(len(facts),2)
 
+    def test_chamber_opera_at_teatro_ariosto_is_not_excluded(self):
+        url="https://www.iteatri.re.it/spettacolo/veleno/"
+        html=('<h1>Veleno</h1><p>Opera da camera</p>'
+              '<p>Musica di Gaia Aloisi</p>'
+              '<p>Libretto e regia di Stefano Simone Pintor</p>'
+              '<nav>Cast Descrizione Acquista</nav>'
+              '<p>Teatro Ariosto</p><a>Opera</a>'
+              '<h2>Biglietti</h2>'
+              '<p>28/04/2027 | 20:00 | da € 20,00 | Acquista</p>'
+              '<p>30/04/2027 | 20:00 | da € 20,00 | Acquista</p>'
+              '<h2>Riduzioni</h2>')
+        title,composer,venue,days=parse_detail(html,url=url)
+        self.assertEqual((title,composer,venue),
+                         ("Veleno","Gaia Aloisi","Teatro Ariosto"))
+        self.assertEqual(days,[("2027-04-28","20:00"),
+                               ("2027-04-30","20:00")])
+        rows=parse_source_credited_opera_detail(KEY,url,html)
+        self.assertEqual(len(rows),2)
+        self.assertEqual(rows[0]["composer"],"Gaia Aloisi")
+        for corrupt in (html.replace("Musica di Gaia Aloisi","Musica di"),
+                        html.replace("Teatro Ariosto","Teatro Cavallerizza")):
+            with self.subTest(corrupt=corrupt[:100]),self.assertRaises(ValueError):
+                parse_detail(corrupt,url=url)
+
     def test_partial_ticket_calendar_duplicate_and_invalid_origin_rejected(self):
         for html in [
             page(tickets=[("20/11/2026","20:00","da € 35,00"),
