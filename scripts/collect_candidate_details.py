@@ -173,7 +173,6 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                  if normalized(w["title"])==normalized(title)
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
-        from scripts.build_verified_catalog import official_local_time
         return [{"event_title":matches[0]["title"],"composer":matches[0]["composer"],
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in recite]
@@ -468,7 +467,6 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
     """Carry first-party composer evidence to independent authority research."""
     if source_key.startswith("ferrara-") and source_key.endswith("-opera-2026-27"):
         from opera_atlas.ferrara_regional_parser import production
-        from scripts.build_verified_catalog import official_local_time
         title,composer,venue,recite=production(html,source_key=source_key,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)}
@@ -739,8 +737,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 # identically; never mislabel the whole ticket as one opera.
                 if item["source_key"] in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
                     from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_program_detail
-                    from scripts.build_verified_catalog import official_local_time
-                    try:
+                                try:
                         heading,components,venue,dates=parse_petruzzelli_program_detail(
                             page.html,url=item["official_url"],
                             season_year=int(item["source_key"].rsplit("-",1)[-1]))
@@ -763,8 +760,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         continue
                 if item["source_key"]=="teatro-grande-opera-2026":
                     from opera_atlas.brescia_detail_parser import parse_brescia_double_bill, Heading
-                    from scripts.build_verified_catalog import official_local_time
-                    try:
+                                try:
                         rows=parse_brescia_double_bill(
                             page.html,url=item["official_url"],works=registry.get("works",{}))
                     except ValueError:
