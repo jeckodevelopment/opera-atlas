@@ -11,7 +11,7 @@ const doc={
   querySelector(sel){return sel===".hero-image"?hero:null},
   createElement(tag){
     assert.equal(tag,"img");
-    const img={handlers:{},classList:{add(){}},addEventListener(type,handler){this.handlers[type]=handler}};
+    const img={handlers:{},classList:{add(){}},addEventListener(type,handler){this.handlers[type]=handler},removeAttribute(name){if(name==="src")this.src=""}};
     photos.push(img);return img;
   }
 };
@@ -45,33 +45,26 @@ const posterWorks=[
  "Samson et Dalila","Macbeth","Madama Butterfly","Jenůfa","Lucia di Lammermoor",
  "Tosca","Don Giovanni","Nabucco","Rigoletto"];
 const images=posterWorks.map(title=>lib.work({title}));
-assert.equal(Object.keys(lib.WORKS).length,25,"all 25 unique opera records need archival source images");
+assert.ok(Object.keys(lib.WORKS).length>=25,"legacy operas must map to authentic sources");
 for(const title of posterWorks){
   const item=lib.work({title});
-  if(title==="Jenůfa")assert.equal(item.src,"./cover-jenufa.svg");
-  else assert.ok(item.src.startsWith("https://commons.wikimedia.org/"),
+  assert.ok(item.src.startsWith("https://commons.wikimedia.org/"),
     title+" must use archival material, never a fictional primary poster");
 }
 assert.match(lib.WORKS["cavalleria-rusticana"],/Cavalleria rusticana poster/);
 assert.match(lib.WORKS["pagliacci"],/Pagliacci Original Score Cover/);
 assert.match(lib.WORKS["un-ballo-in-maschera"],/Vocal score frontispiece/);
-assert.equal(lib.work({title:"Nixon in China",work_id:"oa-w-000034"}).src,
-  "./cover-nixon-in-china.svg");
-assert.equal(lib.work({title:"Jenůfa",work_id:"oa-w-000020"}).src,
-  "./cover-jenufa.svg");
+assert.ok(lib.work({title:"Nixon in China",work_id:"oa-w-000034"}).src.includes("Dortmund_Kampstr_Nixon_in_China"));
+assert.ok(lib.work({title:"Jenůfa",work_id:"oa-w-000020"}).src.includes("Jenufa.jpg"));
 
 assert.equal(new Set(images.map(x=>x.src)).size,images.length,"every opera needs a distinct image");
 for(const item of images){
   if(item.src.startsWith("https://")){
     const img=lib.element(item,"event-image");
     img.handlers.error();
-    assert.ok(img.src.startsWith("data:image/svg+xml"),"historical poster fallback must be unique");
-  }else if(item.src.startsWith("./cover-")){
-    const img=lib.element(item,"event-image");
-    img.handlers.error();
-    assert.ok(img.src.startsWith("data:image/svg+xml"),"local cover has reliable fallback");
-  }else assert.ok(item.src.startsWith("data:image/svg+xml"));
+    assert.equal(img.hidden,true,"broken historical image must hide instead of showing fictional art");
+  }else assert.equal(item.src,"","missing real artwork must not become fictional art");
 }
 hero.error();
 assert.ok(hero.src.startsWith("data:image/svg+xml"),"hero should not be an empty image");
-console.log("theatre photos: 14 distinct; opera art: 25 distinct; fallback self-contained");
+console.log("theatre photos: 14 distinct; opera art: authentic sourced only; no fictitious covers");
