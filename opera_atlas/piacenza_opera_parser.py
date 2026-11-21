@@ -68,9 +68,13 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if len(parser.title)!=1 or not parser.composers:
         raise ValueError("missing unique official Piacenza production credits")
     title=parser.title[0]
-    credit=parser.composers[0].strip()
-    if not re.fullmatch(r"[A-ZÀ-Ý][A-ZÀ-Ýa-zà-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-ZÀ-Ýa-zà-ÿ'’.-]+){1,3}",credit):
+    # The page may start with a season teaser h6 before the actual composer.
+    # Accept only a clearly named uppercase composer, not "Opera in tre atti".
+    credits=[v for v in parser.composers if re.fullmatch(
+        r"[A-ZÀ-Ý][A-ZÀ-Ý'’.-]+(?:\s+[A-ZÀ-Ý][A-ZÀ-Ý'’.-]+){1,3}",v)]
+    if len(credits)!=1:
         raise ValueError("ambiguous first-party composer")
+    credit=credits[0]
     text=clean(html)
     # Keep the first production facts; the page then repeats the entire
     # season navigation (including other operas, concerts and Young events).
