@@ -22,6 +22,19 @@ class TheatreEditorialHistoryTests(unittest.TestCase):
                 self.assertTrue(1600<=venue["opening_year"]<=2026,key)
                 self.assertIn(str(venue["opening_year"]),venue["history"],key)
 
+    def test_florence_goldoni_is_distinct_from_livorno_goldoni(self):
+        profile=self.profiles["Firenze|Teatro Goldoni"]
+        self.assertIn("1817",profile["history"])
+        self.assertEqual(profile["address"],"Via Santa Maria 15")
+        self.assertIn("maggiofiorentino.com",profile["source"])
+        census=json.loads((ROOT/"data/venue-directory.json").read_text(encoding="utf-8"))
+        florence=next(x for x in census["venues"] if x["name"]=="Teatro Goldoni" and x["city"]=="Firenze")
+        livorno=next(x for x in census["venues"] if x["name"]=="Teatro Goldoni" and x["city"]=="Livorno")
+        self.assertEqual(florence["profile_key"],"Firenze|Teatro Goldoni")
+        self.assertEqual(florence["photo_license"],"CC BY-SA 3.0")
+        self.assertNotEqual(florence["id"],livorno["id"])
+        self.assertNotEqual(profile,self.profiles["Livorno|Teatro Goldoni"])
+
     def test_new_malibran_venue_is_not_conflated_with_fenice(self):
         profile=self.profiles["Venezia|Teatro Malibran"]
         self.assertIn("1678",profile["history"])
