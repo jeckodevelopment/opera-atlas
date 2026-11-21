@@ -33,7 +33,7 @@ class AtlasHomeRefinementTests(unittest.TestCase):
         import re
         home=(SITE/"app.js").read_text(encoding="utf-8")
         block=home.split("const HOME_REPERTOIRE_IDS=Object.freeze([",1)[1].split("]);",1)[0]
-        ids=re.findall(r'"(oa-w-\\d{6})"',block)
+        ids=re.findall(r'"(oa-w-\d{6})"',block)
         self.assertEqual(ids,[
             "oa-w-000026", # Rigoletto
             "oa-w-000015", # Aida
