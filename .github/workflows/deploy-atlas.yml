@@ -9,6 +9,8 @@ on:
       - 'site/*.css'
       - 'site/*.svg'
       - 'site/.htaccess'
+      # Test-only fixes must be able to unblock a previously failed release.
+      - 'tests/**'
       - 'scripts/deploy_atlas.py'
       - 'scripts/deploy_atlas_simple_ftp.py'
       - 'scripts/deploy_atlas_sftp.py'
