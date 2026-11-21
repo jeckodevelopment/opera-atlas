@@ -23,13 +23,23 @@ class NewOperaPromotionTests(unittest.TestCase):
         targets={
             "oa-index-184e57e1cd9f38d554d5":"Gaetano Donizetti",
             "oa-index-b4180540983902f703af":"Giuseppe Verdi",
-            "oa-index-dfe824fe3301174d2165":"Vincenzo Bellini"}
+            "oa-index-dfe824fe3301174d2165":"Vincenzo Bellini",
+            "oa-index-05dfa4b5d5270a7fc051":"Vincenzo Bellini",
+            "oa-index-144db2827af86d96232c":"Jacques Offenbach",
+            "oa-index-9c8433ba74501efca6eb":"Francesco Cilea"}
         actual={x["candidate_id"]:x for x in complete["works"]}
         for cid,composer in targets.items():
             with self.subTest(candidate=cid):
                 self.assertEqual(actual[cid]["composer"],composer)
                 self.assertTrue(45<=len(actual[cid]["synopsis"])<=300)
                 self.assertIsNotNone(actual[cid]["history"])
+                self.assertNotIn("Consulta le rappresentazioni",actual[cid]["synopsis"])
+        # A verified plot replaces an earlier identity-only introduction.
+        original=next(x for x in doc["works"] if x["candidate_id"]==
+                      "oa-index-9c8433ba74501efca6eb")
+        completed=actual["oa-index-9c8433ba74501efca6eb"]
+        self.assertIn("Consulta le rappresentazioni",original["synopsis"])
+        self.assertNotIn("Consulta le rappresentazioni",completed["synopsis"])
         self.assertIsNone(next(x for x in doc["works"] if x["candidate_id"]==
             "oa-index-b4180540983902f703af").get("synopsis"))
         # A spoofed official composer must not inherit an unrelated synopsis.

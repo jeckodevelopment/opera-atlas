@@ -531,7 +531,13 @@ def complete_cached_verified_work_cards(intelligence:dict,evidence:dict)->dict:
             continue
         if not isinstance(card.get("synopsis"),str) or not 45<=len(card["synopsis"])<=300:
             continue
-        if work.get("synopsis") is None:
+        # Identity-only boilerplate from an earlier lookup is not a plot.
+        # The verified work-specific synopsis must replace that placeholder
+        # before the new canonical card passes editorial publication.
+        existing_summary=work.get("synopsis")
+        if (existing_summary is None or
+            (isinstance(existing_summary,str) and existing_summary.strip().endswith(
+                "Consulta le rappresentazioni verificate in programma nei teatri italiani."))):
             work["synopsis"]=card["synopsis"]
         if not validate_history(work.get("history")):
             work["history"]=card["history"]
