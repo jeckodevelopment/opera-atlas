@@ -622,3 +622,26 @@ Per Genova, le quattro schede già dotate di date/ore ufficiali
 (*Turandot*, *Pagliacci*, *Nabucco*, *L’italiana in Algeri*) possono quindi
 diventare visibili senza attendere il download di tutte le altre fonti.
 Le altre tre produzioni richiedono prove ancora da acquisire.
+
+## Composer verificato sulle nuove opere del Carlo Felice
+
+Le schede ufficiali prive di un'identità già censita possono ora produrre
+**evidenze candidate**, ma soltanto quando H1, slug del percorso HTTPS
+ufficiale, credito esplicito `Musica di [autore] Direttore`, sede e
+data/orario di ciascuna recita sono tutti verificati sulla stessa pagina.
+Non si deducono compositori dai titoli, dai direttori o dalle biografie.
+L'attribuzione viene successivamente confrontata con un'identità Wikidata
+autonoma, preservando le eventuali omonimie. Gli orari privi di prove,
+i crediti discordanti e gli avvisi di annullamento non sono pubblicati.
+
+Il refresh ora esegue le letture dei dettagli *prima* del passaggio
+autoritativo, così il compositore rilevato sul sito del teatro è disponibile
+alla ricerca della corretta identità nello stesso ciclo. Non aumenta il
+budget giornaliero di ricerche o richieste AI, e il controllo `robots.txt`
+rimane obbligatorio.
+
+Verifica: `python -m unittest discover -s tests -v`, con test di
+*Le nozze di Figaro* (Mozart) e *I Capuleti e i Montecchi* (Bellini);
+controllare la riconciliazione autoritativa, la successiva promozione e i
+manifesti nel workflow. Le evidenze candidate non equivalgono ancora a
+recite pubblicate sul sito.
