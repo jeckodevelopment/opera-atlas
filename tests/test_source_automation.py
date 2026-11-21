@@ -34,7 +34,8 @@ class SourceAutomationTests(unittest.TestCase):
                      {"sources":[{"key":"opera-roma-season-2026-27",
                                   "status":"success","current_scan_verified":False,
                                   "links":20}]})
-        roma=next(x for x in report["venues"] if x["city"]=="Roma")
+        roma=next(x for x in report["venues"] if x["city"]=="Roma"
+                  and x["venue"]=="Teatro dell'Opera di Roma")
         self.assertEqual(roma["status"],"configured_not_operational")
 
 
