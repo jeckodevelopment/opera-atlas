@@ -27,6 +27,7 @@ const next = document.getElementById("next");
 let catalog = [];
 let page = 0;
 let monthOffset = 0;
+let automaticPeriod = true; // Only the initial or explicitly reset search can expand.
 
 function safeSource(uri) {
   try {
@@ -378,7 +379,29 @@ function calendarMonth(events) {
   }
   panel.append(grid);
 }
+function expandInitialPeriodIfEmpty() {
+  if (!automaticPeriod) return "";
+  const original = controls.period.value;
+  // The initial 30-day window is preferred whenever it contains even one performance.
+  if (orderedEvents().length) return "";
+  if (controls.period.value === "30") {
+    controls.period.value = "90";
+    syncPeriod();
+  }
+  if (!orderedEvents().length && controls.period.value === "90") {
+    controls.period.value = "all";
+    syncPeriod();
+  }
+  if (controls.period.value === original) return "";
+  return controls.period.value === "90"
+    ? "Nessuno spettacolo nei prossimi 30 giorni: mostriamo quelli dei prossimi 3 mesi."
+    : "Nessuno spettacolo nei prossimi 30 giorni o 3 mesi: mostriamo tutte le date future.";
+}
 function render() {
+  const fallbackNotice = expandInitialPeriodIfEmpty();
+  const notice = document.getElementById("automatic-period-note");
+  notice.textContent = fallbackNotice;
+  notice.hidden = !fallbackNotice;
   const filtered=orderedEvents();
   const entries=viewMode==="staging"?groupByStaging(filtered):filtered;
   const pages=Math.ceil(entries.length/PAGE_SIZE);
@@ -396,7 +419,17 @@ function render() {
     if(!filtered.length){
       const empty=node("div","empty");
       empty.append(node("strong",null,catalog.length?"Nessuno spettacolo per questa ricerca.":"Nessuna recita pubblicata."));
-      empty.append(node("p",null,"Prova ad ampliare distanza o periodo oppure seleziona «Tutta Italia»."));
+      empty.append(node("p",null,"Non ci sono spettacoli per i filtri selezionati."));
+      if (controls.radius.value !== "all") {
+        const wider=node("button","reset","Amplia la distanza");
+        wider.type="button";
+        wider.addEventListener("click",()=>{
+          automaticPeriod=false;
+          controls.radius.value=controls.radius.value==="200"?"all":"200";
+          page=0;render();
+        });
+        empty.append(wider);
+      }
       list.append(empty);
     }
   }
@@ -458,7 +491,7 @@ async function initialize() {
   }
 }
 
-document.getElementById("filters").addEventListener("submit",event=>{event.preventDefault();page=0;render();document.getElementById("results-title").scrollIntoView({behavior:"smooth"});});
+document.getElementById("filters").addEventListener("submit",event=>{event.preventDefault();automaticPeriod=false;page=0;render();document.getElementById("results-title").scrollIntoView({behavior:"smooth"});});
 document.querySelectorAll("[data-catalog-view]").forEach(button=>{
   button.addEventListener("click",()=>{
     viewMode=button.dataset.catalogView;
@@ -471,10 +504,11 @@ document.querySelectorAll("[data-catalog-view]").forEach(button=>{
 });
 for(const [name,control] of Object.entries(controls)){
   control.addEventListener("change",()=>{
+    automaticPeriod=false;
     if(name==="period")syncPeriod();
     page=0;render();
   });
-  if(name==="query")control.addEventListener("input",()=>{page=0;render();});
+  if(name==="query")control.addEventListener("input",()=>{automaticPeriod=false;page=0;render();});
 }
 document.getElementById("locate-me").addEventListener("click",()=>{
   if(!navigator.geolocation){message.textContent="Posizione non disponibile in questo browser.";return;}
@@ -487,7 +521,7 @@ document.getElementById("locate-me").addEventListener("click",()=>{
       message.textContent="Nessuna città censita sufficientemente vicina. Scegli una località manualmente.";
       return;
     }
-    controls.location.value=candidates[0].city;page=0;render();
+    automaticPeriod=false;controls.location.value=candidates[0].city;page=0;render();
     message.textContent="Località impostata sulla città censita più vicina ("+candidates[0].city+"). La posizione esatta non viene conservata.";
   },()=>{message.textContent="Localizzazione non autorizzata o non disponibile. Puoi scegliere una città manualmente.";},
   {enableHighAccuracy:false,timeout:9000,maximumAge:0});
@@ -495,7 +529,7 @@ document.getElementById("locate-me").addEventListener("click",()=>{
 document.getElementById("reset").addEventListener("click",()=>{
   controls.query.value=controls.city.value=controls.region.value=controls.time.value="";
   controls.location.value="Torino";controls.radius.value="100";controls.period.value="30";controls.sort.value="date";
-  syncPeriod();page=0;render();
+  automaticPeriod=true;syncPeriod();page=0;render();
 });
 prev.addEventListener("click",()=>{page--;render();});
 next.addEventListener("click",()=>{page++;render();});
