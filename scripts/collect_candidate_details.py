@@ -206,7 +206,8 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
              "arena-festival-2027":"arena"}.get(item["source_key"])
     if adapter is None and item["source_key"] not in (
             "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
-            "carlo-felice-season-2026-27","donizetti-opera-2026"):
+            "carlo-felice-season-2026-27","donizetti-opera-2026",
+            "teatro-grande-opera-2026"):
         return []
     if item["source_key"]=="teatro-grande-opera-2026":
         from opera_atlas.brescia_detail_parser import parse_brescia_detail
