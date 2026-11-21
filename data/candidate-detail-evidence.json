@@ -178,8 +178,8 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "content_sha256": "50a37210690c5a7b89cc97d516b66a24b5f33149ff2f2b6cc852ad3ccaee2b51",
-      "checked_at": "2026-11-21T13:55:20+00:00",
+      "content_sha256": "c41e77c7a85fc1a4dcf7b7df3671040277d460bd28f241d28d392b9090818fec",
+      "checked_at": "2026-11-21T13:57:28+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -347,8 +347,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "bc8bc99c8caf72f66daa32f66bf8807c42bdb96f6e9e2de4714eda55eafc74e9",
-      "checked_at": "2026-11-21T13:55:28+00:00",
+      "content_sha256": "a4c32578518253bec92de4aab7b5f331cfc6a10fbdac81f04bf0b8c1161b68eb",
+      "checked_at": "2026-11-21T13:57:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -376,7 +376,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T13:55:26+00:00",
+      "checked_at": "2026-11-21T13:57:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -660,7 +660,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T13:55:34+00:00",
+      "checked_at": "2026-11-21T13:57:41+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1131,7 +1131,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T13:55:51+00:00",
+      "checked_at": "2026-11-21T13:57:57+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1213,8 +1213,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "7618fbb7fa1e43d79f209c9ec12e2b3c439111ba4ada6b9d19cdd0592c1c7e7f",
-      "checked_at": "2026-11-21T13:55:41+00:00",
+      "content_sha256": "02de052da514aed6eec1a8f82887783322d21f151c5acd9c1377140d4b086278",
+      "checked_at": "2026-11-21T13:57:48+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
