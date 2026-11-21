@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "note": "Editorially verified primary-source identities for a bounded first-party TCBO launch. Not a general inference by title alone; the detail evidence must still match composer, source URL, showtimes, and venue exactly.",
+  "works": [
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
+      "title": "La straniera",
+      "composer": "Vincenzo Bellini",
+      "synopsis": "Nel castello di Montolino, il mistero che circonda Alaide coinvolge Arturo e Isoletta in una vicenda di passioni, identità nascoste e rivalità.",
+      "history": {
+        "librettist": "Felice Romani",
+        "premiere_year": 1829,
+        "premiere_venue": "Teatro alla Scala",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/la-straniera/",
+          "https://www.studibelliniani.eu/biografia"
+        ]
+      }
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
+      "title": "Il ritorno di Ulisse in patria",
+      "composer": "Claudio Monteverdi",
+      "synopsis": "Dopo vent'anni di lontananza, Ulisse torna a Itaca sotto mentite spoglie; Penelope attende ancora il marito mentre i pretendenti insidiano il trono.",
+      "history": {
+        "librettist": "Giacomo Badoaro",
+        "premiere_year": 1640,
+        "premiere_venue": "Teatro San Cassiano",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.teatrolafenice.it/wp-content/uploads/2019/03/MONTEVERDI-450.pdf",
+          "https://corago.unibo.it/opera/Z000003815"
+        ]
+      }
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
+      "title": "Vanessa",
+      "composer": "Samuel Barber",
+      "synopsis": "Vanessa attende il ritorno dell'amore perduto, ma l'arrivo del giovane Anatol sconvolge anche la vita di Erika, fra speranze e sentimenti taciuti.",
+      "history": {
+        "librettist": "Gian Carlo Menotti",
+        "premiere_year": 1958,
+        "premiere_venue": "Metropolitan Opera",
+        "premiere_city": "New York",
+        "sources": [
+          "https://www.bso.org/works/barber-vanessa",
+          "https://www.glyndebourne.com/vanessa-synopsis/"
+        ]
+      }
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Nella Venezia del Quattrocento, il doge Francesco Foscari si trova diviso fra il dovere di governo e il destino del figlio Jacopo, condannato all'esilio.",
+      "history": {
+        "librettist": "Francesco Maria Piave",
+        "premiere_year": 1844,
+        "premiere_venue": "Teatro Argentina",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/i-due-foscari/"
+        ]
+      }
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "synopsis": "Tristano e Isotta, uniti da un amore impossibile e dal conflitto fra desiderio e fedeltà, sfidano le convenzioni della corte di re Marke.",
+      "history": {
+        "librettist": "Richard Wagner",
+        "premiere_year": 1865,
+        "premiere_venue": "Königliches Hof- und Nationaltheater",
+        "premiere_city": "Monaco di Baviera",
+        "sources": [
+          "https://site.mariinsky.ru/en/playbill/repertoire/opera/tristan_und_isolde/"
+        ]
+      }
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
+      "title": "Accabadora",
+      "composer": "Francesco Filidei",
+      "synopsis": "In una comunità sarda, Maria cresce accanto a una donna chiamata a soccorrere chi è prossimo alla morte: affetti, scelte e responsabilità si intrecciano.",
+      "history": {
+        "librettist": "Francesco Filidei; Manuelle Mureddu",
+        "premiere_year": 2026,
+        "premiere_venue": "Théâtre du Jeu de Paume",
+        "premiere_city": "Aix-en-Provence",
+        "sources": [
+          "https://www.festival-aix.com/programmation/opera/accabadora",
+          "https://brahms.ircam.fr/fr/work/accabadora",
+          "https://www.tcbo.it/evento/opera/accabadora-2027/"
+        ]
+      }
+    }
+  ]
+}
