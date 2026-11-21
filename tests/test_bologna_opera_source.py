@@ -2,7 +2,7 @@
 import unittest
 from scripts.discover_season_indexes import extract,eligible,validate_config,CONFIG
 from scripts.collect_candidate_details import parse_known_opera_detail,parse_source_credited_opera_detail
-from opera_atlas.bologna_detail_parser import parse_detail
+from opera_atlas.bologna_detail_parser import parse_detail,normalize_event_fact
 import json
 
 KEY="bologna-comunale-opera-2027"
@@ -51,6 +51,30 @@ class BolognaSourceTests(unittest.TestCase):
             parse_detail(fixture().replace("Teatro Comunale","Teatro ignoto"),url=URL)
         with self.assertRaises(ValueError):
             parse_detail(fixture(),url=URL+"?preview=1")
+    def test_checkpoint_identity_normalization_is_safe_and_idempotent(self):
+        examples=[
+            ("Vincenzo Bellini (1801-1835)","Teatro Auditorium Manzoni",
+             "Vincenzo Bellini","Teatro Auditorium Manzoni"),
+            ("Georges Bizet (1838–1875)","Teatro Comunale",
+             "Georges Bizet","Teatro Comunale di Bologna"),
+            ("Francesco Filidei (1973)","Teatro Comunale",
+             "Francesco Filidei","Teatro Comunale di Bologna"),
+            ("Giuseppe Verdi","Teatro Comunale di Bologna",
+             "Giuseppe Verdi","Teatro Comunale di Bologna"),
+        ]
+        for composer,venue,canonical,place in examples:
+            fact={"event_title":"Opera","composer":composer,"venue":venue,
+                  "date":"2027-05-07","starts_at":"2027-05-07T20:00:00+02:00"}
+            cleaned=normalize_event_fact(fact)
+            self.assertEqual((cleaned["composer"],cleaned["venue"]),(canonical,place))
+            self.assertEqual(cleaned["starts_at"],fact["starts_at"])
+            self.assertEqual(normalize_event_fact(cleaned),cleaned)
+            self.assertEqual(fact["composer"],composer)
+        unsafe=normalize_event_fact({"composer":"Vincenzo Bellini (?–1835)",
+                                     "venue":"Teatro ignoto"})
+        self.assertEqual(unsafe,{"composer":"Vincenzo Bellini (?–1835)",
+                                 "venue":"Teatro ignoto"})
+
     def test_source_credited_events_keep_true_location(self):
         rows=parse_source_credited_opera_detail(KEY,MANZONI,
             fixture(title="La straniera",composer="Vincenzo Bellini",

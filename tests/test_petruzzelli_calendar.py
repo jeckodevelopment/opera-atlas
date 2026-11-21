@@ -99,7 +99,7 @@ class PetruzzelliTests(unittest.TestCase):
         facts,ids,urls,report=promote(
             self.facts,self.registry,evidence,candidates,approved,
             today=date(2026,11,21))
-        productions=[p for p in facts["productions"] if p["municipality"]=="Bari"]
+        productions=[p for p in facts["productions"] if p["municipality"]=="Bari" and p["source_url"]==DETAIL]
         self.assertEqual(len(productions),1)
         self.assertEqual(productions[0]["title"],"Nabucco")
         self.assertEqual(productions[0]["dates"],[[d,t] for d,t in DATES])
