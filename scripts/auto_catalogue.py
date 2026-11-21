@@ -37,6 +37,83 @@ VENUE_BY_SOURCE={
     "bologna-comunale-opera-2027":("Bologna","Teatro Comunale di Bologna"),
 }
 
+
+
+def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict)->dict:
+    """Discover independently composer-credited TCBO works without a paid API.
+
+    The official source provides title/composer/date/time/venue together, and
+    curated source-specific material may replace the minimal identity summary.
+    Neither a URL slug alone nor unknown/unverified venue text establishes an
+    opera. This is deliberately source-limited until other adapters offer the
+    same evidence guarantees.
+    """
+    from pathlib import Path
+    from scripts.publish_work_editorial import validate_history
+    source_key="bologna-comunale-opera-2027"
+    seed_path=ROOT/"data"/"verified-work-authority-seeds.json"
+    doc=json.loads(seed_path.read_text(encoding="utf-8"))
+    if doc.get("schema_version")!=1 or not isinstance(doc.get("works"),list):
+        raise ValueError("invalid official-source identity seed registry")
+    seeds={}
+    for seed in doc["works"]:
+        url=seed.get("source_url")
+        if (seed.get("source_key")!=source_key or not isinstance(url,str)
+                or not eligible(source_key,url)
+                or url in seeds or not validate_history(seed.get("history"))
+                or not isinstance(seed.get("synopsis"),str)
+                or not 45<=len(seed["synopsis"].strip())<=300):
+            raise ValueError("invalid or duplicate source-grounded work seed")
+        seeds[url]=seed
+    known={(entry.get("source_key"),entry.get("source_url"))
+           for entry in intelligence.get("works",[])}
+    candidates_by_id={x["id"]:x for x in candidates.get("candidates",[])
+                      if x.get("status")=="needs_review"}
+    results=list(intelligence.get("works",[]))
+    from opera_atlas.bologna_detail_parser import normalize_event_fact
+    for record in evidence.get("evidence",[]):
+        if record.get("source_key")!=source_key or record.get("status")!="needs_editorial_review":
+            continue
+        candidate=candidates_by_id.get(record.get("candidate_id"))
+        url=record.get("source_url")
+        if (not candidate or candidate.get("source_key")!=source_key
+            or candidate.get("official_url")!=url or not isinstance(url,str)
+            or not eligible(source_key,url) or
+            (source_key,url) in known):
+            continue
+        rows=[normalize_event_fact(x) for x in record.get("event_facts",[])]
+        if not rows or any(not isinstance(x,dict) for x in rows):
+            continue
+        identities={(normalized(x.get("event_title","")),
+                     normalized(x.get("composer","")))
+                    for x in rows}
+        venues={x.get("venue") for x in rows}
+        if (len(identities)!=1 or len(venues)!=1 or
+            next(iter(venues)) not in ("Teatro Comunale di Bologna",
+                                       "Teatro Auditorium Manzoni")):
+            continue
+        title=rows[0].get("event_title")
+        composer=rows[0].get("composer")
+        if (not isinstance(title,str) or not 3<=len(title)<=140 or
+            not isinstance(composer,str) or not 3<=len(composer)<=100 or
+            not all(isinstance(x.get("starts_at"),str) and
+                    isinstance(x.get("date"),str) for x in rows)):
+            continue
+        seed=seeds.get(url)
+        if seed and (normalized(seed["title"])!=normalized(title)
+                     or normalized(seed["composer"])!=normalized(composer)):
+            raise ValueError("official source contradicts verified opera identity seed")
+        summary=(seed["synopsis"] if seed else
+                 f"«{title}» è un'opera di {composer}. "
+                 "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+        results.append({"candidate_id":record["candidate_id"],
+                        "source_key":source_key,"source_url":url,
+                        "title":title,"composer":composer,"synopsis":summary,
+                        "history":seed["history"] if seed else None,
+                        "official_authority_url":url})
+        known.add((source_key,url))
+    return {"schema_version":1,"works":results}
+
 def verified_venue(source_key:str,rows:list[dict],registry:dict):
     """Resolve exact official venue from evidence; never substitute a home theatre."""
     if source_key not in VENUE_BY_SOURCE or not rows:
@@ -380,8 +457,13 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
             if not validate_history(historical):
                 result["auto_skipped"].append({"candidate_id":cid,"reason":"invalid_historical_profile"})
                 continue
-        if not isinstance(item.get("wikidata_id"),str) or not __import__("re").fullmatch(
-                r"Q[1-9][0-9]*",item["wikidata_id"]):continue
+        qid=item.get("wikidata_id")
+        verified_wikidata=(isinstance(qid,str) and
+                           __import__("re").fullmatch(r"Q[1-9][0-9]*",qid))
+        verified_official=(source_key=="bologna-comunale-opera-2027"
+                           and item.get("official_authority_url")==url
+                           and source["official_url"]=="https://www.tcbo.it/")
+        if not (verified_wikidata or verified_official):continue
         work_key=normalized(title)+"|"+normalized(composer)
         slug=slugify(title)
         if work_key in next_registry["works"]:
@@ -400,6 +482,9 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
             continue
         rows=detail.get("event_facts",[])
         if not isinstance(rows,list) or not rows:continue
+        if verified_official:
+            from opera_atlas.bologna_detail_parser import normalize_event_fact
+            rows=[normalize_event_fact(x) for x in rows]
         venue_match=verified_venue(source_key,rows,next_registry)
         if venue_match is None:
             result["auto_skipped"].append({"candidate_id":cid,"reason":"unknown_or_conflicting_venue"})
@@ -432,7 +517,8 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         stage_id=next_id(next_registry["stagings"],"oa-s-")
         next_registry["works"][work_key]={
             "id":work_id,"slug":slug,"title":title,"composer":composer,
-            "wikidata_id":item["wikidata_id"],
+            **({"wikidata_id":qid} if verified_wikidata else
+               {"authority_url":url}),
             **({"route_slug":route_slug} if homonyms else {})}
         if homonyms:
             by_id=next_editorial.setdefault("synopses_by_id",{})
@@ -644,6 +730,7 @@ def main():
     from scripts.publish_work_editorial import EDITORIAL, build_editorial
     intelligence=(json.loads(RESEARCH.read_text(encoding="utf-8"))
                   if RESEARCH.exists() else {"schema_version":1,"works":[]})
+    intelligence=official_identity_candidates(evidence,candidates,intelligence)
     editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
     from scripts.publish_work_editorial import HISTORY, validate_history
     historical=json.loads(HISTORY.read_text(encoding="utf-8"))

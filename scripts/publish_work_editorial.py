@@ -39,7 +39,8 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
     if (editorial.get("schema_version") != 1 or editorial.get("language") != "it"
             or not isinstance(editorial.get("synopses"), dict)):
         raise ValueError("invalid editorial work source")
-    works = assemble(facts, registry, approved_extra=approved_extra)["works"]
+    graph = assemble(facts, registry, approved_extra=approved_extra)
+    works = graph["works"]
     if history is None:history=json.loads(HISTORY.read_text(encoding="utf-8"))
     if history.get("schema_version")!=1 or not isinstance(history.get("works"),dict):
         raise ValueError("invalid historical work registry")
@@ -63,9 +64,19 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
         if not isinstance(summary, str) or not 35 <= len(summary.strip()) <= 300:
             raise ValueError("invalid short synopsis: " + work["slug"])
         historical=history_by_id.get(work["id"],history["works"].get(work["slug"]))
-        has_verified_authority=(isinstance(work.get("wikidata_id"),str)
-                                and bool(__import__("re").fullmatch(
-                                    r"Q[1-9][0-9]*",work["wikidata_id"])))
+        official_url=work.get("authority_url")
+        has_first_party_authority=(
+            isinstance(official_url,str) and
+            bool(__import__("re").fullmatch(
+                r"https://www\\.tcbo\\.it/evento/opera/[a-z0-9-]+-20\\d{2}/",
+                official_url)) and
+            any(stage["work_id"]==work["id"] and stage["source_url"]==official_url
+                for stage in graph["stagings"]))
+        has_verified_authority=(
+            (isinstance(work.get("wikidata_id"),str)
+             and bool(__import__("re").fullmatch(
+                r"Q[1-9][0-9]*",work["wikidata_id"])))
+            or has_first_party_authority)
         if len(same_slug[work["slug"]])>1 and work["id"] not in history_by_id:
             if not has_verified_authority:
                 raise ValueError("ambiguous history needs work ID: "+work["id"])
