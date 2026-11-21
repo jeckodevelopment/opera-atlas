@@ -76,7 +76,7 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
            for entry in intelligence.get("works",[])}
     candidates_by_id={x["id"]:x for x in candidates.get("candidates",[])
                       if x.get("status")=="needs_review"}
-    results=list(intelligence.get("works",[]))
+    results=copy.deepcopy(intelligence.get("works",[]))
     for record in evidence.get("evidence",[]):
         key=record.get("source_key")
         if key not in sources or record.get("status")!="needs_editorial_review":
