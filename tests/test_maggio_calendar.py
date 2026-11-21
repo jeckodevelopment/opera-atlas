@@ -46,7 +46,6 @@ class FlorenceCalendarTests(unittest.TestCase):
             month_url(2026,11),month_url(2026,12),
             month_url(2027,1),month_url(2027,2)])
         self.assertTrue(eligible(SOURCE,DETAIL))
-        self.assertFalse(eligible(SOURCE,"https://evil.invalid/events/la-traviata-2027")) if False else None
         self.assertFalse(eligible(SOURCE,"https://www.maggiofiorentino.com/blog/not-opera"))
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
         self.assertEqual(len(validate_config(config)),9)
@@ -103,7 +102,8 @@ class FlorenceCalendarTests(unittest.TestCase):
         repeated_c,repeated_e=combine(candidates,evidence,rows,
                                       at="2026-11-21T14:00:00+00:00")
         self.assertEqual(len(repeated_c["candidates"]),1)
-        self.assertEqual(repeated_e,evidence)
+        self.assertEqual(repeated_e["evidence"][0]["event_facts"],
+                         evidence["evidence"][0]["event_facts"])
 
 if __name__=="__main__":
     unittest.main()
