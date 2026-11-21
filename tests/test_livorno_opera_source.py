@@ -75,7 +75,7 @@ class LivornoOperaTests(unittest.TestCase):
         for source in SOURCES:
             with self.subTest(source=source):
                 with self.assertRaises(ValueError):
-                    parse_detail(fixture().replace("LA STAGIONE LIRICA 2026/27",
+                    parse_detail(fixture().replace("La STAGIONE LIRICA 2026/27",
                             "La stagione di prosa 2026/27"),
                             url=URL,source_key=source)
 
