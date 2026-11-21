@@ -31,6 +31,17 @@ def build(source:dict, registry:dict)->dict:
                 raise ValueError("incomplete venue: "+str(venue.get("id"))+" "+key)
         if not SLUG.fullmatch(venue["city_slug"]) or not SLUG.fullmatch(venue["slug"]):
             raise ValueError("unsafe public venue route")
+        # A public theatre card must be a complete editorial profile, not
+        # an unverified placeholder dependent on performances.
+        if not isinstance(venue.get("address"),str) or not venue["address"].strip():
+            raise ValueError("missing theatre address: "+venue["id"])
+        if not isinstance(venue.get("history"),str) or len(venue["history"].strip())<80:
+            raise ValueError("missing theatre history: "+venue["id"])
+        if venue.get("photo_file"):
+            if not isinstance(venue.get("photo_source_url"),str) or not venue["photo_source_url"].startswith("https://commons.wikimedia.org/wiki/File:"):
+                raise ValueError("theatre photo needs provenance: "+venue["id"])
+        elif venue.get("status")!="sede_storica_cessata":
+            raise ValueError("theatre photo missing: "+venue["id"])
         if not venue["source_url"].startswith("https://"):
             raise ValueError("source must be HTTPS")
         if venue.get("website") and not str(venue["website"]).startswith("https://"):
