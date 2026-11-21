@@ -1,0 +1,25 @@
+name: Opera Atlas city coverage audit
+on:
+  schedule:
+    - cron: '43 9 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Validate and generate read-only report
+        run: |
+          python -m unittest tests.test_city_coverage_audit -v
+          python -m scripts.city_coverage_audit --output city-coverage-audit.json
+      - name: Preserve audit snapshot
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: city-coverage-audit
+          path: city-coverage-audit.json
+          retention-days: 30
