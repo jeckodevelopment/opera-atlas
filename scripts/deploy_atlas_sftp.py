@@ -11,7 +11,6 @@ import stat
 import tempfile
 from pathlib import Path
 
-import paramiko
 
 from scripts.deploy_atlas import FILES, PUBLIC_URL, build
 
@@ -39,6 +38,7 @@ def configuration(env=None):
 
 
 def make_client(cfg):
+    import paramiko  # installed only by deployment job, not required for stdlib tests
     client = paramiko.SSHClient()
     # Reuse pinned host keys where configured. First-connection fallback
     # follows accept-new behavior; it does not disable SSH encryption.
@@ -49,7 +49,7 @@ def make_client(cfg):
         if entry:
             for hostname in entry.hostnames:
                 client.get_host_keys().add(hostname, entry.key.get_name(), entry.key)
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.set_missing_host_key_policy(paramiko.RejectPolicy() if cfg["known_hosts"].strip() else paramiko.AutoAddPolicy())
     key = None
     if cfg["key"]:
         for kind in (paramiko.Ed25519Key, paramiko.RSAKey, paramiko.ECDSAKey):
@@ -60,8 +60,12 @@ def make_client(cfg):
                 pass
         if key is None:
             raise ValueError("Invalid SFTP private key")
+    # OVH publishes a dedicated SSH endpoint for the same cluster.
+    ssh_host = cfg["host"]
+    if ssh_host.startswith("ftp.cluster") and ssh_host.endswith(".hosting.ovh.net"):
+        ssh_host = "ssh." + ssh_host[len("ftp."):]
     try:
-        client.connect(cfg["host"], port=22, username=cfg["user"],
+        client.connect(ssh_host, port=22, username=cfg["user"],
                        password=cfg["password"] or None, pkey=key,
                        look_for_keys=False, allow_agent=False,
                        timeout=30, auth_timeout=30, banner_timeout=30)
