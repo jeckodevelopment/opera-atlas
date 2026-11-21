@@ -59,7 +59,7 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/",
       "content_sha256": "a641f7690f214aeea596528c87a065c46bbc59a75c80d0f8445151ddc3e1f98f",
       "checked_at": "2026-11-21T15:02:43+00:00",
-      "status": "needs_editorial_review",
+      "status": "needs_source_identity_review",
       "event_facts": [
         {
           "event_title": "La traviata",
@@ -89,7 +89,8 @@
           "starts_at": "2026-11-15T18:00:00+01:00",
           "venue": "Teatro Petruzzelli"
         }
-      ]
+      ],
+      "review_reason": "source_opera_title_disagrees_with_traviata_attribution"
     },
     {
       "candidate_id": "oa-index-027fde14d101fca6bf3e",
@@ -543,7 +544,7 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
       "content_sha256": "58064a544563a68eb2a9bc06169806daee8b9573b20cf56d3d28141a6aeee63c",
       "checked_at": "2026-11-21T15:02:57+00:00",
-      "status": "needs_editorial_review",
+      "status": "needs_source_identity_review",
       "event_facts": [
         {
           "event_title": "La traviata",
@@ -573,7 +574,8 @@
           "starts_at": "2026-09-20T18:00:00+02:00",
           "venue": "Teatro Petruzzelli"
         }
-      ]
+      ],
+      "review_reason": "source_opera_title_disagrees_with_traviata_attribution"
     },
     {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
@@ -1041,7 +1043,7 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
       "content_sha256": "64b0fba2573e41ec2a0fb84a1c28a57c596711b1d1ad6354ed18431152929416",
       "checked_at": "2026-11-21T15:01:57+00:00",
-      "status": "needs_editorial_review",
+      "status": "needs_source_identity_review",
       "event_facts": [
         {
           "event_title": "La traviata",
@@ -1071,7 +1073,8 @@
           "starts_at": "2026-05-24T18:00:00+02:00",
           "venue": "Teatro Petruzzelli"
         }
-      ]
+      ],
+      "review_reason": "source_opera_title_disagrees_with_traviata_attribution"
     },
     {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
@@ -1348,7 +1351,7 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
       "content_sha256": "33fb8f78b12e9c32c873c967ddcdc109c957616d0a452731fda745397e8e01d3",
       "checked_at": "2026-11-21T15:02:06+00:00",
-      "status": "needs_editorial_review",
+      "status": "needs_source_identity_review",
       "event_facts": [
         {
           "event_title": "La traviata",
@@ -1392,7 +1395,8 @@
           "starts_at": "2026-12-22T18:00:00+01:00",
           "venue": "Teatro Petruzzelli"
         }
-      ]
+      ],
+      "review_reason": "source_opera_title_disagrees_with_traviata_attribution"
     },
     {
       "candidate_id": "oa-index-8e417ad6e506eaf0929d",
@@ -2099,7 +2103,7 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
       "content_sha256": "355282549c5aad2ca2824dea3c2fe8a99fe50dd930ec660dc3b98efab79f0156",
       "checked_at": "2026-11-21T15:02:34+00:00",
-      "status": "needs_editorial_review",
+      "status": "needs_source_identity_review",
       "event_facts": [
         {
           "event_title": "La traviata",
@@ -2143,7 +2147,8 @@
           "starts_at": "2026-10-27T18:00:00+01:00",
           "venue": "Teatro Petruzzelli"
         }
-      ]
+      ],
+      "review_reason": "source_opera_title_disagrees_with_traviata_attribution"
     },
     {
       "candidate_id": "oa-index-ef3fc228eb643db30288",
