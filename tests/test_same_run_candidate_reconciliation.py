@@ -55,6 +55,25 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
         self.assertEqual(result["candidates"][0]["first_seen"],"old")
         self.assertEqual(report["total"],1)
 
+    def test_complete_verified_second_theatre_source_is_resolved(self):
+        import json
+        from scripts.publish_catalog_v2 import ROOT
+        from scripts.reconcile_published_candidates import verified_secondary_source_urls
+        manifest=json.loads((ROOT/"data/verified-launch-catalog.json").read_text())
+        verified=json.loads((ROOT/"data/verified-time-evidence.json").read_text())
+        url="https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri"
+        equivalent=verified_secondary_source_urls(manifest,verified)
+        self.assertIn(url,equivalent)
+        candidate={"schema_version":1,"candidates":[{
+            "id":"known-circuit","source_key":"teatro-grande-opera-2026",
+            "official_url":url,"status":"needs_review",
+            "first_seen":"first","last_seen":"last"}]}
+        updated,_=reconcile(candidate,equivalent)
+        self.assertEqual(updated["candidates"][0]["status"],"already_catalogued")
+        partial=copy.deepcopy(verified)
+        partial["times"].pop("lombardia-italiana-brescia|2026-11-28")
+        self.assertNotIn(url,verified_secondary_source_urls(manifest,partial))
+
     def test_invalid_registry_rejected_instead_of_erasing_queue(self):
         with self.assertRaises(ValueError):
             reconcile({"schema_version":1,"candidates":None},set())
