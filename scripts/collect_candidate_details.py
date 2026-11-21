@@ -122,7 +122,8 @@ def heading_work(html:str,registry:dict)->dict|None:
     reader.feed(html)
     if not reader.first:return None
     matches=[work for work in registry.get("works",{}).values()
-             if normalized(work["title"])==normalized(reader.first)]
+             if normalized(work["title"]).replace("’","\u0027")==
+                normalized(reader.first).replace("’","\u0027")]
     return matches[0] if len(matches)==1 else None
 
 def known_arena_edition_work(slug:str,registry:dict)->dict|None:
@@ -271,7 +272,10 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     other=[]
     for item in possible:
         path=urlsplit(item["official_url"]).path.rstrip("/").split("/")[-1]
-        slug=path.removesuffix(".html")
+        slug=(urlsplit(item["official_url"]).path.rstrip("/").split("/")[-2]
+              if item["source_key"]=="donizetti-opera-2026" and
+                 __import__("re").fullmatch(r"20\d{2}-\d{2}-\d{2}",path)
+              else path).removesuffix(".html")
         if (item["source_key"] in ("scala-season-2026-27","arena-festival-2027")
             and (slug in known_slugs or
                  (item["source_key"]=="arena-festival-2027" and
@@ -292,7 +296,10 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     from scripts.auto_work_research import preverified_work_material
     prepared=preverified_work_material()
     def has_card(item):
-        slug=urlsplit(item["official_url"]).path.rstrip("/").split("/")[-1].removesuffix(".html")
+        parts=urlsplit(item["official_url"]).path.rstrip("/").split("/")
+        slug=(parts[-2] if item["source_key"]=="donizetti-opera-2026"
+              and __import__("re").fullmatch(r"20\d{2}-\d{2}-\d{2}",parts[-1])
+              else parts[-1]).removesuffix(".html")
         return slug in prepared
     # Reserve up to two fast-path slots for already sourced new operas;
     # rotate the remaining unknowns rather than starving them indefinitely.

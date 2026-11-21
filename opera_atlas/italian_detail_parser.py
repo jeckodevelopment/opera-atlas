@@ -26,8 +26,10 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
     if source_key=="carlo-felice-season-2026-27":
         if not re.fullmatch(r"/spettacolo/[a-z0-9-]+/",parsed.path):
             raise ValueError("untrusted Carlo Felice detail path")
-    elif not re.fullmatch(r"/it/evento/[a-z0-9-]+/",parsed.path):
-        raise ValueError("untrusted Donizetti detail path")
+    else:
+        from scripts.discover_season_indexes import eligible
+        if not eligible("donizetti-opera-2026",url):
+            raise ValueError("untrusted Donizetti detail path")
     text=clean(html)
     if not text or normalized(composer) not in normalized(text):
         raise ValueError("composer absent from official detail")
@@ -35,7 +37,7 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
     from scripts.collect_candidate_details import FirstHeading
     heading=FirstHeading()
     heading.feed(html)
-    if normalized(heading.first or "")!=normalized(title):
+    if normalized(heading.first or "").replace("’","\u0027")!=normalized(title).replace("’","\u0027"):
         raise ValueError("official detail heading mismatches work")
     if source_key=="carlo-felice-season-2026-27":
         cutoff=re.search(r"(?i)\bDove\s*:",text)

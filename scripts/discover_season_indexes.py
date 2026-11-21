@@ -175,7 +175,20 @@ def eligible(key:str,url:str)->bool:
     if key=="fenice-opera-2026-27":
         return path.startswith("/event/") and bool(path.removeprefix("/event/"))
     if key=="donizetti-opera-2026":
-        return bool(re.fullmatch(r"/it/evento/[a-z0-9-]+",path))
+        # The official 2026 programme links Alahor to a dated event URL.
+        # Accept only the three independently identified opera titles,
+        # never general festival events such as brunches or youth previews.
+        match=re.fullmatch(
+            r"/it/evento/(l-esule-di-roma|alahor-in-granata|"
+            r"le-convenienze-ed-inconvenienze-teatrali)"
+            r"(?:/(20\d{2}-\d{2}-\d{2}))?",path)
+        if not match:return False
+        if match[2]:
+            from datetime import date
+            try:
+                if date.fromisoformat(match[2]).year!=2026:return False
+            except ValueError:return False
+        return True
     if key=="teatro-grande-opera-2026":
         return bool(re.fullmatch(r"/it/stagioni/20\d{2}/[a-z0-9-]+",path))
     if key=="carlo-felice-season-2026-27":
