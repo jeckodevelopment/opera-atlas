@@ -29,7 +29,7 @@
 | Veneto | Rovigo | Teatro Sociale | |
 | Veneto | Padova | Teatro Verdi | |
 | Friuli-Venezia Giulia | Trieste | Teatro Lirico Giuseppe Verdi | |
-| Emilia-Romagna | Bologna | Teatro Comunale | Sede Comunale Nouveau per stagione 2026, verificare |
+| Emilia-Romagna | Bologna | Teatro Comunale | Sede storica canonica; il Comunale Nouveau è stata una sede provvisoria fino a giugno 2026, non una scheda autonoma |
 | Emilia-Romagna | Parma | Teatro Regio | |
 | Emilia-Romagna | Busseto | Teatro Giuseppe Verdi | |
 | Emilia-Romagna | Piacenza | Teatro Municipale | |

@@ -297,3 +297,10 @@ Eseguito audit sul catalogo di 52 sedi: **26 schede avevano descrizione e storia
 ## Sincronizzazione automatica delle schede (21/11/2026)
 
 Le pagine directory e dettaglio teatro consultano ora per prime le schede editoriali JSON sul ramo `main` di GitHub con richiesta senza cache; solo in caso di indisponibilità ricorrono alla copia statica distribuita su SFTP. Le correzioni ai testi di tutte le 52 schede diventano pertanto visibili senza deploy SFTP per ogni modifica editoriale, mantenendo compatibilità offline con la copia del sito.
+
+
+## Bologna — sede canonica unica (21/11/2026)
+
+Su decisione editoriale, il **Teatro Comunale Nouveau** non è più una sede autonoma nel catalogo attuale: ha operato soltanto come sede provvisoria del Teatro Comunale di Bologna durante il restauro, fino a giugno 2026. Il registro nazionale ora censisce **51 teatri** anziché 52 e mantiene la sola scheda **Teatro Comunale di Bologna** (`oa-vd-000025`, percorso `bologna/teatro-comunale-di-bologna/`) con fotografia della sede storica correttamente attribuita. La transizione alla sede provvisoria è ricordata nella storia, non in una scheda separata. Il precedente percorso `bologna/teatro-comunale-nouveau/` esegue un redirect permanente 301 alla scheda canonica. Rimane riservato il vecchio identificativo per non riciclarlo in futuro.
+
+Le tre rappresentazioni dei dati (`data/venue-directory.json`, `site/theatre-profiles.json`, `public/catalog/venue-directory.json`) sono allineate; test e conteggi adeguati. La modifica a `.htaccess` richiede il workflow SFTP dell'interfaccia; i dati JSON canonici continuano a aggiornarsi dal repository.

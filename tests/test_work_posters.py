@@ -241,7 +241,7 @@ class PosterPublicationTests(unittest.TestCase):
         # photograph remain represented by *truthfully labelled* original art.
         self.assertEqual({w["title"] for w in editorial},
                          {"Death in Venice","Nixon in China","Jenůfa"})
-        self.assertEqual(sum(v["kind"]=="archival_work_image" for v in published.values()),31)
+        self.assertEqual(sum(v["kind"]=="archival_work_image" for v in published.values()),32)
         self.assertEqual(sum(v["kind"]=="official_production_image" for v in published.values()),2)
         for work in works:
             image=published[work["id"]]

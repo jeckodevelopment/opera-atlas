@@ -2,6 +2,8 @@
 # No dynamic backend or PHP; all catalog data comes from GitHub's public JSON.
 RewriteEngine On
 RewriteBase /atlas/
+# Retired temporary venue: canonical Bologna theatre page (permanent redirect).
+RewriteRule ^bologna/teatro-comunale-nouveau/?$ /atlas/bologna/teatro-comunale-di-bologna/ [R=301,L,NE]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(opere/[a-z0-9-]+|produzioni/oa-g-[a-z0-9-]+|[a-z0-9-]+/[a-z0-9-]+(/[a-z0-9-]+)?)/?$ detail.html [L]
