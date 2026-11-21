@@ -52,7 +52,16 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
                         body)
     if not credits:
         raise ValueError("missing official composer credit")
-    composer = re.sub(r"\s+(?:Ed|Maestro|Regia|Direzione|Stagione)$", "", credits.group(1))
+    # The theatre renders the next genre heading in the same text stream
+    # as "Musica di <composer>". The lexical regex may otherwise swallow
+    # "Opera", "Tragedia", "Melodramma" etc as the composer's surname.
+    # Remove only one exact, documented musical-genre label after a
+    # full two-word author name, never infer an author from the title.
+    composer = re.sub(
+        r"(?:\s+(?:Opera|Tragedia|Melodramma|Dramma|Operetta|Ed|Maestro|Regia|Direzione|Stagione))+$",
+        "", credits.group(1))
+    if len(composer.split())<2:
+        raise ValueError("incomplete official composer credit")
     # The 'Altre info' section lists actual recite with weekdays, full dates,
     # and times. Cast alternations with day numbers are not performances.
     section = body.rfind("Altre info")
