@@ -314,7 +314,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T13:11:47+00:00",
+      "checked_at": "2026-11-21T13:47:55+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -598,7 +598,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T13:11:33+00:00",
+      "checked_at": "2026-11-21T13:48:05+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1114,8 +1114,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "78a5bcd6f3488d023e92afb33cf0cef0af4c7f805ddf1a24daa1ae3048cf2fde",
-      "checked_at": "2026-11-21T13:11:40+00:00",
+      "content_sha256": "16450aa92a5269b29613f6b43393c8de9131eaf2fde4adde926a8d9aa68ccd5f",
+      "checked_at": "2026-11-21T13:47:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
