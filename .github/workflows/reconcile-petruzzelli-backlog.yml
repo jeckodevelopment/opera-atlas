@@ -7,6 +7,8 @@ on:
       - '.github/workflows/reconcile-petruzzelli-backlog.yml'
       - 'opera_atlas/petruzzelli_detail_parser.py'
       - 'tests/test_petruzzelli_recovered_evidence.py'
+      - 'scripts/repair_petruzzelli_mixed_program.py'
+      - 'tests/test_petruzzelli_mixed_repair.py'
 permissions:
   contents: write
 concurrency:
