@@ -34,6 +34,7 @@ jobs:
           # duplicate Petruzzelli importer. Each approved source is limited to 24
           # pages and only unresolved candidates are considered.
           python -m scripts.collect_candidate_details --allow-network --source-key petruzzelli-opera-2026
+          python -c 'import json; d=json.load(open("data/candidate-detail-health.json")); print("Petruzzelli 2026 candidate diagnostics:",json.dumps(d.get("outcomes",[]),ensure_ascii=False))'
           python -m scripts.collect_candidate_details --allow-network --source-key petruzzelli-opera-2027
           python -m scripts.reconcile_published_candidates
       - name: Checkpoint official evidence and closed historic candidates
