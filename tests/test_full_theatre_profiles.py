@@ -53,11 +53,14 @@ class FullTheatreProfileTests(unittest.TestCase):
         # New venue identity and schedule are verified; its photo remains
         # explicitly pending rather than using a misattributed picture.
         pending=[v for v in self.directory if v.get("photo_status")=="review_pending"]
-        self.assertEqual([v["name"] for v in pending],["Teatro Nazionale"])
+        self.assertEqual(pending,[])
         self.assertEqual(len(photos),len(self.directory)-2)
         external=[v for v in self.directory if v.get("photo_url")]
-        self.assertEqual([v["name"] for v in external],["Teatro Politeama Greco"])
-        self.assertEqual(external[0]["photo_license"],"CC BY 4.0")
+        self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale"})
+        self.assertEqual(next(v for v in external if v["name"]=="Teatro Politeama Greco")["photo_license"],"CC BY 4.0")
+        municipal=next(v for v in external if v["name"]=="Teatro Nazionale")
+        self.assertEqual(municipal["photo_url"],"https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg")
+        self.assertEqual(municipal["photo_status"],"verified")
         for venue in photos:
             self.assertTrue(venue["photo_source_url"].startswith(
                 "https://commons.wikimedia.org/wiki/File:"),venue["id"])
@@ -66,6 +69,7 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertEqual({v["name"] for v in without},
                          {"Teatro Politeama Greco","Teatro Nazionale"})
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Politeama Greco")["photo_status"],"verified")
+        self.assertEqual(next(v for v in without if v["name"]=="Teatro Nazionale")["photo_status"],"verified")
         self.assertFalse(any(v["slug"]=="teatro-comunale-nouveau" for v in self.directory))
         self.assertEqual({v["name"] for v in self.directory if v["city"]=="Bologna"},
                          {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"})
