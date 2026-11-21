@@ -46,6 +46,10 @@ vm.runInContext(code,context);
   assert.match(story.textContent,/L’opera fu composta nel 1889\./);
   assert.match(story.textContent,/1890/);
   assert.match(story.textContent,/Teatro Costanzi di Roma/);
+  assert.ok(!history.children.some(x=>x.tagName==="dl"),"no metadata definition list");
+  const links=ids["detail-events"].insertedAfter;
+  assert.equal(links.length,1,"one historical source section");
+  assert.ok(links[0].children[1].href.includes("archiviostorico.operaroma.it"));
   // Upcoming world premieres must use future tense, including when the
   // editorial feed only provides a year and not an exact date.
   const future={work_id:"oa-w-000074",work_slug:"code-unknown"};
@@ -54,9 +58,5 @@ vm.runInContext(code,context);
     .children.find(x=>x.className==="work-history-story");
   assert.match(futureStory.textContent,/^La prima assoluta è prevista nel 2027 al Teatro Nazionale di Roma/);
   assert.doesNotMatch(futureStory.textContent,/ebbe luogo/);
-  assert.ok(!history.children.some(x=>x.tagName==="dl"),"no metadata definition list");
-  const links=ids["detail-events"].insertedAfter;
-  assert.equal(links.length,1,"one historical source section");
-  assert.ok(links[0].children[1].href.includes("archiviostorico.operaroma.it"));
   console.log("Work synopsis, five sourced fields and one footer archival link verified.");
 })().catch(error=>{console.error(error);process.exitCode=1;});
