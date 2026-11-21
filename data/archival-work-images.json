@@ -43,5 +43,23 @@
       "credit": "Fotografia storica di Solomija Krušel'nyc'ka nel ruolo di Adriana Lecouvreur, Wikimedia Commons",
       "license": "Public domain"
     }
+  },
+  "works_by_id": {
+    "oa-w-000035": {
+      "work_id": "oa-w-000035",
+      "composer": "Gaetano Donizetti",
+      "file": "Gaetano Donizetti - Anna Bolena - titlepage of the libretto, Milan 1830.png",
+      "description": "Frontespizio originale del libretto di Anna Bolena (Milano, 1830), non la produzione attuale",
+      "credit": "Gaetano Donizetti e Felice Romani, libretto del 1830, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000007": {
+      "work_id": "oa-w-000007",
+      "composer": "Ruggero Leoncavallo",
+      "file": "La bohème by Leoncavallo - poster for the 1897 premiere.jpg",
+      "description": "Manifesto storico della prima del 1897 di La bohème di Ruggero Leoncavallo, non l'opera di Puccini né l'allestimento attuale",
+      "credit": "Manifesto anonimo, prima del 1897, riprodotto da Teatro La Fenice / Wikimedia Commons",
+      "license": "Public domain (US); verificare le condizioni d'uso nella propria giurisdizione"
+    }
   }
 }

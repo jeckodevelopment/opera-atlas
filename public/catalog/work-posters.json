@@ -33,8 +33,12 @@
     },
     "oa-w-000007": {
       "work_id": "oa-w-000007",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per La bohème"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_boh%C3%A8me_by_Leoncavallo_-_poster_for_the_1897_premiere.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:La_boh%C3%A8me_by_Leoncavallo_-_poster_for_the_1897_premiere.jpg",
+      "alt": "Manifesto storico della prima del 1897 di La bohème di Ruggero Leoncavallo, non l'opera di Puccini né l'allestimento attuale",
+      "credit": "Manifesto anonimo, prima del 1897, riprodotto da Teatro La Fenice / Wikimedia Commons",
+      "license": "Public domain (US); verificare le condizioni d'uso nella propria giurisdizione"
     },
     "oa-w-000008": {
       "work_id": "oa-w-000008",
@@ -207,8 +211,12 @@
     },
     "oa-w-000035": {
       "work_id": "oa-w-000035",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Anna Bolena"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gaetano_Donizetti_-_Anna_Bolena_-_titlepage_of_the_libretto%2C_Milan_1830.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_Anna_Bolena_-_titlepage_of_the_libretto%2C_Milan_1830.png",
+      "alt": "Frontespizio originale del libretto di Anna Bolena (Milano, 1830), non la produzione attuale",
+      "credit": "Gaetano Donizetti e Felice Romani, libretto del 1830, Wikimedia Commons",
+      "license": "Public domain"
     },
     "oa-w-000036": {
       "work_id": "oa-w-000036",

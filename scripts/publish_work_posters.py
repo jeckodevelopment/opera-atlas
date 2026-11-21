@@ -27,7 +27,9 @@ OUTPUT=ROOT/"public"/"catalog"/"work-posters.json"
 HEALTH=ROOT/"data"/"work-poster-health.json"
 ARCHIVE=ROOT/"data"/"archival-work-images.json"
 MAX_PAGES=18
-RETRY_DAYS=7
+RETRY_DAYS=2
+BLOCKED_RETRY_DAYS=7
+POSTER_POLICY_VERSION=2
 # Common image CDNs accepted only when the image URL is declared explicitly
 # by the approved official page. No arbitrary HTML img tags or tracking URLs.
 IMAGE_CDNS=frozenset({
@@ -119,10 +121,13 @@ def extract_official_poster(html:str,official_url:str,work_title:str)->dict|None
     parser=ImageMeta()
     parser.feed(html[:250000])
     data=parser.values
-    raw=(data.get("og:image:secure_url") or data.get("og:image") or
-         data.get("twitter:image"))
-    url=allowed_image_url(raw,official_url)
-    if not url or not image_matches_work(url,work_title):return None
+    # A production page may expose an unrelated OpenGraph thumbnail while
+    # Twitter metadata contains the correct production photo.
+    candidates=[data.get("og:image:secure_url"),data.get("og:image"),data.get("twitter:image")]
+    url=next((candidate for raw in candidates if
+              (candidate:=allowed_image_url(raw,official_url)) and
+              image_matches_work(candidate,work_title)),None)
+    if not url:return None
     alt=(data.get("og:image:alt") or data.get("twitter:image:alt") or "").strip()
     if any(word in alt.casefold() for word in ("logo","favicon","placeholder")):
         return None
@@ -196,6 +201,28 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
                 image_matches_work(value.get("image_url",""),by_id[wid]["title"])):
             posters[wid]={"work_id":wid,**value}
     archive_by_slug=load_archival_art({w["slug"] for w in registry_works})
+    archival_registry=json.loads(ARCHIVE.read_text(encoding="utf-8")) if ARCHIVE.exists() else {}
+    # Permanent IDs disambiguate homonymous operas; every historical image
+    # must also state its composer to prevent assigning Puccini art to Leoncavallo.
+    archive_by_id={}
+    for wid,entry in archival_registry.get("works_by_id",{}).items():
+        work=by_id.get(wid)
+        if not work or entry.get("work_id")!=wid or entry.get("composer")!=work["composer"]:
+            raise ValueError("historical poster work ID/composer mismatch: "+wid)
+        if not all(isinstance(entry.get(key),str) and entry[key]
+                   for key in ("file","description","credit","license")):
+            raise ValueError("incomplete historical poster evidence: "+wid)
+        filename=entry["file"]
+        if (len(filename)>220 or "/" in filename or "\\\\" in filename or
+                not re.search(r"\.(?:jpe?g|png|webp)$",filename,re.I)):
+            raise ValueError("unsafe historical poster filename: "+wid)
+        encoded=quote(filename.replace(" ","_"),safe="()_'-")
+        archive_by_id[wid]={
+            "kind":"archival_work_image",
+            "image_url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/"+encoded+"?width=720",
+            "source_url":"https://commons.wikimedia.org/wiki/File:"+encoded,
+            "alt":entry["description"],"credit":entry["credit"],"license":entry["license"],
+        }
     # An archival image is keyed by title in the source bank; only attach
     # it if that title resolves to one and only one canonical composition.
     archive={
@@ -203,6 +230,7 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
         for w in registry_works
         if len(ids_by_slug[w["slug"]])==1 and w["slug"] in archive_by_slug
     }
+    archive.update(archive_by_id)
     deadline=today or date.today()
     checked=0
     outcomes=[]
@@ -214,8 +242,10 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
             if wid in posters or checked>=max_pages:continue
             previous=checks.get(url,{})
             until=previous.get("retry_after")
-            if isinstance(until,str) and until>deadline.isoformat():continue
+            if (previous.get("policy_version")==POSTER_POLICY_VERSION and
+                    isinstance(until,str) and until>deadline.isoformat()):continue
             checked+=1
+            retry_days=RETRY_DAYS
             try:
                 if not network_enabled:raise AccessDenied("network disabled")
                 db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",
@@ -233,9 +263,11 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
                 else:
                     outcomes.append({"slug":slug,"status":"no_suitable_official_poster"})
             except (AccessDenied,FetchUnavailable,ValueError) as exc:
+                retry_days=BLOCKED_RETRY_DAYS if isinstance(exc,AccessDenied) else RETRY_DAYS
                 outcomes.append({"slug":slug,"status":"automatic_retry",
                                  "reason":type(exc).__name__})
-            checks[url]={"retry_after":(deadline+timedelta(days=RETRY_DAYS)).isoformat()}
+            checks[url]={"retry_after":(deadline+timedelta(days=retry_days)).isoformat(),
+                         "policy_version":POSTER_POLICY_VERSION}
     finally:
         db.close()
     # Every published work has an image plan: official art if available,
