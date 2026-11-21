@@ -2,10 +2,10 @@
   "schema_version": 1,
   "works": [
     {
-      "slug": "falstaff",
-      "composer": "Giuseppe Verdi",
-      "wikidata_id": "Q318455",
-      "synopsis_source": "https://www.glyndebourne.com/opera-archive/explore-our-operas/explore-falstaff/falstaff-synopsis/"
+      "slug": "adriana-lecouvreur",
+      "composer": "Francesco Cilea",
+      "wikidata_id": "Q375063",
+      "synopsis_source": "https://www.themorgan.org/music-manuscripts-and-printed-music/248689"
     },
     {
       "slug": "esule-di-roma",
@@ -14,10 +14,28 @@
       "synopsis_source": "https://www.donizettiopera.org/it/evento/esule-di-roma/"
     },
     {
+      "slug": "falstaff",
+      "composer": "Giuseppe Verdi",
+      "wikidata_id": "Q318455",
+      "synopsis_source": "https://www.glyndebourne.com/opera-archive/explore-our-operas/explore-falstaff/falstaff-synopsis/"
+    },
+    {
       "slug": "i-capuleti-e-i-montecchi",
       "composer": "Vincenzo Bellini",
       "wikidata_id": "Q1071307",
       "synopsis_source": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
+    },
+    {
+      "slug": "les-contes-d-hoffmann",
+      "composer": "Jacques Offenbach",
+      "wikidata_id": "Q335012",
+      "synopsis_source": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+    },
+    {
+      "slug": "norma",
+      "composer": "Vincenzo Bellini",
+      "wikidata_id": "Q320353",
+      "synopsis_source": "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/norma-20302/"
     }
   ]
 }
