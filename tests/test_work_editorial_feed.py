@@ -17,6 +17,30 @@ class WorkEditorialTests(unittest.TestCase):
         self.assertEqual(len({x["work_id"] for x in report["works"]}),len(report["works"]))
         self.assertTrue(all(x["synopsis"] and x["composer"] for x in report["works"]))
 
+    def test_distinct_bohème_history_and_synopses_by_permanent_identity(self):
+        report=build_editorial(self.facts,self.registry,self.editorial)
+        works={x["work_id"]:x for x in report["works"]}
+        leo=works["oa-w-000007"]
+        puc=works["oa-w-000024"]
+        self.assertEqual(leo["composer"],"Ruggero Leoncavallo")
+        self.assertEqual(puc["composer"],"Giacomo Puccini")
+        self.assertNotEqual(leo["synopsis"],puc["synopsis"])
+        self.assertEqual(leo["history"]["librettist"],"Ruggero Leoncavallo")
+        self.assertEqual(leo["history"]["premiere_year"],1897)
+        self.assertEqual(leo["history"]["premiere_venue"],"Teatro La Fenice")
+        self.assertEqual(leo["history"]["premiere_city"],"Venezia")
+        self.assertEqual(puc["history"]["premiere_year"],1896)
+        self.assertEqual(puc["history"]["premiere_venue"],"Teatro Regio")
+        self.assertEqual(puc["history"]["premiere_city"],"Torino")
+        self.assertEqual(leo["route_slug"],"la-boheme-leoncavallo")
+        self.assertEqual(puc["route_slug"],"la-boheme-puccini")
+
+    def test_missing_identity_specific_editorial_fails_closed(self):
+        editorial=copy.deepcopy(self.editorial)
+        del editorial["synopses_by_id"]["oa-w-000007"]
+        with self.assertRaisesRegex(ValueError,"ambiguous synopsis"):
+            build_editorial(self.facts,self.registry,editorial)
+
     def test_new_work_without_synopsis_must_block_publication(self):
         editorial=copy.deepcopy(self.editorial)
         editorial["synopses"].pop(next(iter(editorial["synopses"])))
