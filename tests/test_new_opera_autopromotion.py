@@ -74,7 +74,7 @@ class NewOperaPromotionTests(unittest.TestCase):
         # A trustworthy archival image is already in the archival work bank.
         # Its lack of an official-production image must not crash main().
         evidence,candidates,enrichment=self.fixture()
-        with patch("scripts.auto_catalogue.load_archival_art",
+        with patch("scripts.publish_work_posters.load_archival_art",
                    return_value={"fixture-opera":{"image_url":
                        "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fixture.png"}}):
             result=promote_new_works(
