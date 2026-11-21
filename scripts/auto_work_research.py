@@ -76,7 +76,10 @@ def official_title_hint(candidate:dict)->str|None:
         target.port is not None or target.username or target.password or
         target.query or target.fragment):
         return None
-    path=target.path.rstrip("/").split("/")[-1].removesuffix(".html")
+    parts=target.path.rstrip("/").split("/")
+    path=(parts[-2] if key=="donizetti-opera-2026" and
+          re.fullmatch(r"20\d{2}-\d{2}-\d{2}",parts[-1])
+          else parts[-1]).removesuffix(".html")
     if not re.fullmatch(r"[a-z0-9-]{3,80}",path) or not eligible(key,url):
         return None
     if path.endswith("-anteprima-under30"):return None
