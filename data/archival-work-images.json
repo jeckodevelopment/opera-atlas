@@ -54,6 +54,30 @@
       "description": "Frontespizio del libretto originale de Il barbiere di Siviglia di Rossini (1816), non relativo all'allestimento 2026",
       "credit": "Stamperia di Crispino Puccinelli, Roma, 1816; Wikimedia Commons",
       "license": "Public domain"
+    },
+    "tristan-und-isolde": {
+      "file": "Tristan and Isolde by Nicholas Roerich 03.jpg",
+      "description": "Bozzetto scenografico di Nicholas Roerich per Tristan und Isolde di Wagner (1912), non relativo alla produzione attuale",
+      "credit": "Nicholas Roerich, bozzetto per Tristan und Isolde (1912), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "la-straniera": {
+      "file": "Vincenzo Bellini - La straniera - titlepage of the libretto - Milan 1829.png",
+      "description": "Frontespizio del libretto storico di La straniera di Vincenzo Bellini (Milano, 1829), non relativo alla produzione attuale",
+      "credit": "Vincenzo Bellini e Felice Romani, libretto di La straniera (1829), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "i-due-foscari": {
+      "file": "Giuseppe Verdi - I due Foscari - titlepage of the libretto - Rome 1844.png",
+      "description": "Frontespizio del libretto originale di I due Foscari di Giuseppe Verdi (Roma, 1844), non relativo alla produzione attuale",
+      "credit": "Giuseppe Verdi e Francesco Maria Piave, libretto di I due Foscari (1844), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "il-ritorno-di-ulisse-in-patria": {
+      "file": "Claudio Monteverdi - Il ritorno d'Ulisse in patria - title page of the libretto - Venice 1641.png",
+      "description": "Frontespizio del libretto originale di Il ritorno d'Ulisse in patria di Claudio Monteverdi (Venezia, 1641), non relativo alla produzione attuale",
+      "credit": "Claudio Monteverdi e Giacomo Badoaro, libretto del 1641, Wikimedia Commons",
+      "license": "Public domain"
     }
   },
   "works_by_id": {
@@ -248,6 +272,38 @@
       "description": "Copertina storica del libretto di I puritani, edizioni Ricordi (1927); non rappresenta l'allestimento attualmente in calendario",
       "credit": "Documento storico relativo a I puritani di Vincenzo Bellini, Wikimedia Commons",
       "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000039": {
+      "work_id": "oa-w-000039",
+      "composer": "Richard Wagner",
+      "file": "Tristan and Isolde by Nicholas Roerich 03.jpg",
+      "description": "Bozzetto scenografico di Nicholas Roerich per Tristan und Isolde di Wagner (1912), non relativo alla produzione attuale",
+      "credit": "Nicholas Roerich, bozzetto per Tristan und Isolde (1912), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000040": {
+      "work_id": "oa-w-000040",
+      "composer": "Vincenzo Bellini",
+      "file": "Vincenzo Bellini - La straniera - titlepage of the libretto - Milan 1829.png",
+      "description": "Frontespizio del libretto storico di La straniera di Vincenzo Bellini (Milano, 1829), non relativo alla produzione attuale",
+      "credit": "Vincenzo Bellini e Felice Romani, libretto di La straniera (1829), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000042": {
+      "work_id": "oa-w-000042",
+      "composer": "Giuseppe Verdi",
+      "file": "Giuseppe Verdi - I due Foscari - titlepage of the libretto - Rome 1844.png",
+      "description": "Frontespizio del libretto originale di I due Foscari di Giuseppe Verdi (Roma, 1844), non relativo alla produzione attuale",
+      "credit": "Giuseppe Verdi e Francesco Maria Piave, libretto di I due Foscari (1844), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000043": {
+      "work_id": "oa-w-000043",
+      "composer": "Claudio Monteverdi",
+      "file": "Claudio Monteverdi - Il ritorno d'Ulisse in patria - title page of the libretto - Venice 1641.png",
+      "description": "Frontespizio del libretto originale di Il ritorno d'Ulisse in patria di Claudio Monteverdi (Venezia, 1641), non relativo alla produzione attuale",
+      "credit": "Claudio Monteverdi e Giacomo Badoaro, libretto del 1641, Wikimedia Commons",
+      "license": "Public domain"
     }
   }
 }
