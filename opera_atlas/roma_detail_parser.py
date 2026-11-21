@@ -140,25 +140,34 @@ def official_rome_other_season(html:str,*,url:str)->str|None:
     heading.feed(html)
     if not heading.title:
         return None
-    reader=OfficialCredits()
-    reader.feed(html)
-    reader.close()
-    lines=reader.lines
-    title_index=next((i for i,line in enumerate(lines)
-                      if normalized(line)==normalized(heading.title)),None)
-    if title_index is None:
+    class OfficialIntro(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.blocked=0
+            self.parts=[]
+            self.before_h1=True
+        def handle_starttag(self,tag,attrs):
+            if tag=="h1":
+                self.before_h1=False
+            if tag in ("nav","footer","a"):
+                self.blocked+=1
+        def handle_endtag(self,tag):
+            if tag in ("nav","footer","a"):
+                self.blocked=max(0,self.blocked-1)
+        def handle_data(self,data):
+            if self.before_h1 and self.blocked==0:
+                self.parts.append(data)
+    intro=OfficialIntro()
+    intro.feed(html)
+    preface=" ".join(" ".join(intro.parts).split())[-450:]
+    observed=re.findall(r"\bStagione\s+(20\d{2})\s*/\s*(20\d{2})\b",
+                        preface,re.I)
+    if not observed:
         return None
-    preface=" ".join(lines[max(0,title_index-8):title_index])
-    observed=set()
-    for start,finish in re.findall(r"\bStagione\s+(20\d{2})\s*/\s*(20\d{2})\b",
-                                   preface,re.I):
-        a,b=int(start),int(finish)
-        if b!=a+1:
-            return None
-        observed.add(f"{a}/{b}")
-    if len(observed)!=1:
+    a,b=map(int,observed[-1])
+    if b!=a+1:
         return None
-    season=next(iter(observed))
+    season=f"{a}/{b}"
     return season if season!="2026/2027" else None
 
 
