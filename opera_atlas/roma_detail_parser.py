@@ -172,7 +172,7 @@ def official_rome_other_season(html:str,*,url:str)->str|None:
     # A split label (e.g. <span>Stagione</span><a>2025/2026</a>)
     # is accepted only when adjacent in this introduction.
     preface=" ".join(intro.parts[-2:])
-    observed=re.findall(r"\\bStagione\\s+(20\\d{2})\\s*/\\s*(20\\d{2})\\s*$",
+    observed=re.findall(r"\bStagione\s+(20\d{2})\s*/\s*(20\d{2})\s*$",
                         preface,re.I)
     if not observed:
         return None
