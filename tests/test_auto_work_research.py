@@ -86,7 +86,7 @@ class AutoWorkResearchTests(unittest.TestCase):
     def test_sourced_cards_bind_exact_wikidata_composition(self):
         from scripts.auto_work_research import preverified_work_material,validated_editorial_attributions
         expected={"falstaff":("Q318455","Giuseppe Verdi"),
-                  "l-esule-di-roma":("Q471164","Gaetano Donizetti"),
+                  "esule-di-roma":("Q471164","Gaetano Donizetti"),
                   "i-capuleti-e-i-montecchi":("Q1071307","Vincenzo Bellini")}
         material=preverified_work_material()
         attributions=validated_editorial_attributions()
