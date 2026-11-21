@@ -13,7 +13,7 @@ window.OperaAtlasCatalog = (() => {
 
   function slugify(text) {
     return String(text || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
-      .toLocaleLowerCase("it").replace(/^l['’]/, "")
+      .toLocaleLowerCase("it").replace(/æ/g,"ae").replace(/œ/g,"oe").replace(/^l['’]/, "")
       .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
 
