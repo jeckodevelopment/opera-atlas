@@ -44,7 +44,7 @@ class RomeOperaTests(unittest.TestCase):
 
     def test_strict_rome_source_url_and_index(self):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
-        self.assertEqual(len(validate_config(config)),15)
+        self.assertEqual(len(validate_config(config)),16)
         self.assertEqual(next(x["url"] for x in config["sources"] if x["key"]==SOURCE),INDEX)
         with self.assertRaises(ValueError):
             obsolete=json.loads(json.dumps(config))
