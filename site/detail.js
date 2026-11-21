@@ -361,9 +361,12 @@ function resolve(events,venues=[]) {
   if(pieces.length && pieces.every(part=>/^[a-z0-9-]+$/.test(part))) {
     if(pieces.length===2 && pieces[0]==="produzioni")
       return {kind:"group",events:events.filter(e=>e.production_group_id===pieces[1])};
+    if(pieces.length===2 && pieces[0]==="programmi")
+      return {kind:"program",events:events.filter(e=>e.program_id===pieces[1])};
     if(pieces.length===2 && pieces[0]==="opere")
       return {kind:"work",events:events.filter(e=>
-        window.OperaAtlasCatalog.urls(e).work===root+pieces.join("/")+"/")};
+        window.OperaAtlasCatalog.urls(e).work===root+pieces.join("/")+"/" ||
+        (e.program_components||[]).some(c=>c.work_route_slug===pieces[1]))};
     if(pieces.length===2){
       const url=root+pieces.join("/")+"/";
       const venue=venues.find(v=>v.city_slug===pieces[0] && v.slug===pieces[1])||null;
@@ -379,7 +382,8 @@ function resolve(events,venues=[]) {
   const type=args.get("type"),key=args.get("key");
   if(!key || key.length>512)return {kind:null,events:[]};
   if(type==="work")return {kind:"work",events:events.filter(e=>
-    (key.startsWith("oa-w-")?e.work_id===key:
+    (key.startsWith("oa-w-")?e.work_id===key ||
+      (e.program_work_ids||[]).includes(key):
       normalize(e.title)+"|"+normalize(e.composer)===key))};
   if(type==="venue")return {kind:"venue",events:events.filter(e=>
     normalize(e.venue)+"|"+normalize(e.municipality)===key)};
@@ -462,6 +466,27 @@ async function initialize() {
           results.append(notice);
         }
       }
+    }else if(selected.kind==="program"){
+      kind.textContent="Programma composto";
+      title.textContent=first.title;
+      subtitle.textContent=first.venue+" · "+first.municipality;
+      document.querySelector(".detail-related h2").textContent="Date dello spettacolo";
+      content.append(node("p","staging-summary",
+        "Un unico spettacolo con "+first.program_components.length+
+        " composizioni e "+selected.events.length+" rappresentazioni verificate."));
+      const components=node("ul","program-components");
+      for(const component of first.program_components){
+        const li=node("li","program-component");
+        if(component.work_route_slug)
+          li.append(link(component.title,root+"opere/"+component.work_route_slug+"/",""));
+        else li.append(node("strong",null,component.title));
+        li.append(document.createTextNode(" — "+component.composer));
+        components.append(li);
+      }
+      content.append(components);
+      content.append(link("Scopri il teatro",window.OperaAtlasCatalog.urls(first).venue));
+      if(future.length)results.append(dateSelector(future));
+      else results.append(node("p","empty","Non risultano rappresentazioni future verificate."));
     }else if(selected.kind==="group"){
       kind.textContent="Produzione condivisa";
       title.textContent=first.title;
@@ -489,6 +514,9 @@ async function initialize() {
       if(!future.length)results.append(node("p","empty","Questa produzione non ha date future censite."));
     }
     if(selected.kind==="work")arrangeWorkOverview(first);
+    else if(selected.kind==="program"){
+      // A composite program has no single-work cover image.
+    }
     else if(selected.kind==="staging" || selected.kind==="group"){
       const figure=node("figure","production-cover-figure");
       const poster=editorialImage("work",first);
