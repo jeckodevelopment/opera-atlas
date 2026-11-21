@@ -15,6 +15,15 @@ class RefreshWorkflowPathTests(unittest.TestCase):
         self.assertIn("schedule:",text)
         self.assertIn("python -m scripts.auto_catalogue",text)
         self.assertIn("python -m scripts.publish_catalog_v2",text)
+    def test_verified_editorial_seed_changes_trigger_full_publication(self):
+        text=WORKFLOW.read_text(encoding="utf-8")
+        for path in ("data/verified-work-authority-seeds.json",
+                     "data/verified-work-editorial-attribution.json"):
+            with self.subTest(path=path):
+                self.assertIn("- '"+path+"'",text)
+        self.assertIn("python -m scripts.auto_catalogue",text)
+        self.assertIn("python -m scripts.publish_work_editorial",text)
+        self.assertIn("python -m scripts.publish_work_posters",text)
     def test_catalog_git_staging_has_no_embedded_duplicate_command(self):
         workflow=WORKFLOW.read_text(encoding="utf-8")
         stage=[line.strip() for line in workflow.splitlines()
