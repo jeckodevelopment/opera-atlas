@@ -82,6 +82,8 @@ def official_title_hint(candidate:dict)->str|None:
           else parts[-1]).removesuffix(".html")
     if not re.fullmatch(r"[a-z0-9-]{3,80}",path) or not eligible(key,url):
         return None
+    if key=="bologna-comunale-opera-2027" and re.search(r"-20\\d{2}$",path):
+        path=re.sub(r"-20\\d{2}$","",path)
     if path.endswith("-anteprima-under30"):return None
     return OFFICIAL_TITLE_ALIASES.get((key,path),path.replace("-"," "))
 
