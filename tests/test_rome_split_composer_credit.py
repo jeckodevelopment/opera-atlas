@@ -17,7 +17,7 @@ def page(credit=None):
     return ("<p>Stagione 2026/2027</p><h1>"+TITLE+"</h1>"
             +credit+
             "<p>Opera in quattro atti</p><p>Libretto di Aleksandr Prejs</p>"
-            "<p>direttore Juraj Valčuha</p><p>Teatro Costanzi</p>"
+            "<p>direttore Juraj Valčuha</p><h3>Dove</h3><p>Teatro Costanzi</p>"
             "<h3>Le date</h3><p>venerdì 14 Mag ORE 20:00 Turno A</p>"
             "<h3>Ti può interessare anche</h3><p>altra opera</p>")
 
