@@ -28,7 +28,10 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
         title,composer="L’esule di Roma","Gaetano Donizetti"
         from scripts.publish_catalog_v2 import normalized
         key=normalized(title)+"|"+normalized(composer)
-        if key not in cls.ids_donizetti["works"]:
+        if key not in cls.ids_donizetti["works"] and not any(
+                slugify(w["title"])==slugify(title) and
+                normalized(w["composer"])==normalized(composer)
+                for w in cls.ids_donizetti["works"].values()):
             numeric=max(int(w["id"].split("-")[-1])
                         for w in cls.ids_donizetti["works"].values())
             cls.ids_donizetti["works"][key]={
@@ -50,8 +53,15 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
     def test_known_operas_publish_to_verified_venues_only(self):
         for key,url,title,composer,venue,city in CASES:
             with self.subTest(venue=venue):
-                evidence,candidates=self.fixture(key,url,title,composer,venue)
                 baseline=self.ids_donizetti if key=="donizetti-opera-2026" else self.ids
+                # Published source data can evolve: use its exact canonical
+                # spelling rather than inserting an apostrophe-only homonym.
+                from scripts.publish_catalog_v2 import slugify,normalized
+                canonical=next((w for w in baseline["works"].values()
+                                if slugify(w["title"])==slugify(title)
+                                and normalized(w["composer"])==normalized(composer)),None)
+                if canonical:title=canonical["title"]
+                evidence,candidates=self.fixture(key,url,title,composer,venue)
                 already=[p for p in self.facts["productions"]
                          if p["source_url"]==url and p["municipality"]==city
                          and p["venue"]==venue and p["title"]==title]
@@ -83,6 +93,11 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
 
     def test_unknown_missing_or_conflicting_venue_never_publishes(self):
         key,url,title,composer,venue,_=CASES[1]
+        from scripts.publish_catalog_v2 import slugify,normalized
+        canonical=next((w for w in self.ids_donizetti["works"].values()
+                        if slugify(w["title"])==slugify(title)
+                        and normalized(w["composer"])==normalized(composer)),None)
+        if canonical:title=canonical["title"]
         for wrong in (None,"Teatro Grande","Teatro Carlo Felice","Teatro Nuovo"):
             with self.subTest(venue=wrong):
                 evidence,candidates=self.fixture(key,url,title,composer,wrong)
@@ -110,9 +125,10 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
         facts,ids,urls,result=promote(
             self.facts,self.ids,evidence,candidates,[],today=date(2026,11,21))
         if result["new_recite"]:
-            key_result=next(p for p in facts["productions"]
-                            if p["source_url"]==url and p["key"].startswith("auto-"))
-            self.assertEqual(key_result["composer"],"Giacomo Puccini")
+            newly_added=[p for p in facts["productions"]
+                         if p["source_url"]==url and p["key"].startswith("auto-")
+                         and p not in self.facts["productions"]]
+            self.assertTrue(all(p["composer"]=="Giacomo Puccini" for p in newly_added))
         self.assertEqual([w for w in ids["works"].values()
                           if w["title"]=="La bohème"],[w for w in self.ids["works"].values()
                           if w["title"]=="La bohème"])

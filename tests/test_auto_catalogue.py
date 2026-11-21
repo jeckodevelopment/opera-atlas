@@ -60,6 +60,35 @@ class AutoCatalogueTests(unittest.TestCase):
         self.assertEqual(again_ids,ids)
         self.assertEqual(again_urls,urls)
 
+    def test_alternate_official_title_uses_exact_canonical_qid(self):
+        evidence,candidates=self.fixture(title="Verified Alternative Title")
+        registry=copy.deepcopy(self.registry)
+        key=next(k for k,v in registry["works"].items()
+                 if v["id"]==self.unstaged["id"])
+        registry["works"][key]["wikidata_id"]="Q987654321"
+        intel={"works":[{
+            "candidate_id":CID,"source_key":"scala-season-2026-27",
+            "source_url":URL,"composer":self.unstaged["composer"],
+            "wikidata_id":"Q987654321"}]}
+        facts,ids,urls,report=promote(self.facts,registry,evidence,candidates,[],
+                                    today=date(2026,11,20),intelligence=intel)
+        self.assertEqual(report["new_stagings"],1)
+        self.assertEqual(report["new_recite"],1)
+        created=[p for p in facts["productions"] if p["source_url"]==URL]
+        self.assertEqual(created[0]["title"],self.unstaged["title"])
+        self.assertEqual(len(ids["works"]),len(registry["works"]))
+
+        for altered in (
+            {**intel["works"][0],"wikidata_id":"Q999999"},
+            {**intel["works"][0],"composer":"Another Composer"},
+            {**intel["works"][0],"source_url":"https://example.org/fake"},
+        ):
+            _,_,urls,report=promote(self.facts,registry,evidence,candidates,[],
+                                    today=date(2026,11,20),
+                                    intelligence={"works":[altered]})
+            self.assertEqual(urls,[])
+            self.assertEqual(report["new_recite"],0)
+
     def test_unknown_or_wrong_composer_requires_no_human_reconciliation(self):
         for composer in ("Unknown Composer","Another Composer with No Matching Opera"):
             evidence,candidates=self.fixture(composer=composer)

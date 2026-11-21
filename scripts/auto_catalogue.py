@@ -202,7 +202,8 @@ def next_id(entries:dict,prefix:str)->str:
     return prefix+f"{max(numeric,default=0)+1:06d}"
 
 def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
-            authorized_urls:list[str], *, today:date)->tuple[dict,dict,list[str],dict]:
+            authorized_urls:list[str], *, today:date,
+            intelligence:dict|None=None)->tuple[dict,dict,list[str],dict]:
     """Return all changes in memory; skip anomalies without publishing bad data."""
     next_facts=copy.deepcopy(facts)
     next_registry=copy.deepcopy(registry)
@@ -212,6 +213,13 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
     config={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
             if x["access_status"]=="approved"}
     issues=[]
+    # Only a QID already associated with the canonical composition can
+    # bridge a translated/alternative official title.
+    resolved_by_candidate={entry.get("candidate_id"):entry
+                           for entry in (intelligence or {}).get("works",[])
+                           if isinstance(entry,dict)}
+    from scripts.auto_work_research import validated_editorial_attributions
+    attributed=validated_editorial_attributions()
     created_stagings=created_recite=0
     for item in sorted(evidence.get("evidence",[]),key=lambda x:x.get("candidate_id","")):
         cid=item.get("candidate_id")
@@ -247,6 +255,20 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         title,composer=next(iter(names))
         matches=[w for w in next_registry["works"].values()
                  if normalized(w["title"])==title and normalized(w["composer"])==composer]
+        if len(matches)!=1:
+            intel=resolved_by_candidate.get(cid)
+            # Require the same official source, the same composer and an exact
+            # independently resolved Wikidata QID. An alternative title on
+            # its own is never sufficient to merge distinct compositions.
+            if (intel and intel.get("source_key")==key
+                    and intel.get("source_url")==url
+                    and normalized(intel.get("composer",""))==composer):
+                qid=intel.get("wikidata_id")
+                matches=[w for w in next_registry["works"].values()
+                         if normalized(w["composer"])==composer
+                         and isinstance(qid,str)
+                         and (w.get("wikidata_id") or
+                              (attributed.get(w["slug"]) or {}).get("wikidata_id"))==qid]
         if len(matches)!=1:
             issues.append({"candidate_id":cid,"reason":"unknown_work_needs_authority_data"})
             continue
@@ -319,8 +341,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         else:
             staging_key="auto-"+hashlib.sha256((key+"|"+url).encode()).hexdigest()[:16]
             if staging_key in next_registry["stagings"]:
-                issues.append({"candidate_id":cid,"reason":"identity_collision"})
-                continue
+                # The same official listing may identify performances at two
+                # distinct approved theatres. Keep the old production ID and
+                # derive a venue-qualified key only for the additional venue.
+                staging_key="auto-"+hashlib.sha256(
+                    (key+"|"+url+"|"+city+"|"+venue).encode()).hexdigest()[:16]
+                if staging_key in next_registry["stagings"]:
+                    issues.append({"candidate_id":cid,"reason":"identity_collision"})
+                    continue
             canonical_venue=ensure_venue(next_registry,city,venue,canonical_venue)
             production={"key":staging_key,"title":work["title"],
                         "composer":work["composer"],"venue":venue,
@@ -864,8 +892,12 @@ def main():
     evidence=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     candidates=json.loads(INDEX.read_text(encoding="utf-8")) if INDEX.exists() else {"candidates":[]}
     approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8")) if SOURCE_ALLOWLIST.exists() else {"schema_version":1,"urls":[]}
+    from scripts.auto_work_research import OUT as RESEARCH
+    intelligence=(json.loads(RESEARCH.read_text(encoding="utf-8"))
+                  if RESEARCH.exists() else {"schema_version":1,"works":[]})
     next_facts,next_registry,urls,report=promote(
-        facts,registry,evidence,candidates,approved["urls"],today=date.today())
+        facts,registry,evidence,candidates,approved["urls"],today=date.today(),
+        intelligence=intelligence)
     from scripts.daily_ingest import HEALTH as DAILY_HEALTH
     health=json.loads(DAILY_HEALTH.read_text(encoding="utf-8")) if DAILY_HEALTH.exists() else {"sources":[]}
     next_facts,next_registry,calendar=promote_calendar(
@@ -873,10 +905,7 @@ def main():
     report["new_stagings"]+=calendar["new_stagings"]
     report["new_recite"]+=calendar["new_recite"]
     report["auto_skipped"]+=calendar["auto_skipped"]
-    from scripts.auto_work_research import OUT as RESEARCH
     from scripts.publish_work_editorial import EDITORIAL, build_editorial
-    intelligence=(json.loads(RESEARCH.read_text(encoding="utf-8"))
-                  if RESEARCH.exists() else {"schema_version":1,"works":[]})
     intelligence=official_identity_candidates(evidence,candidates,intelligence)
     # Previously identified works should not wait for a second remote lookup
     # when their source-attributed synopsis, history and archival art exist.

@@ -49,9 +49,24 @@ class ScalaEditorialReadyTests(unittest.TestCase):
                                     for x in rows[0]["event_facts"]))
                 promoted=[x for x in resolved["works"]
                           if x.get("source_url")==seed["source_url"]]
-                self.assertEqual(len(promoted),1)
-                self.assertEqual(promoted[0]["synopsis"],seed["synopsis"])
-                self.assertEqual(promoted[0]["history"],seed["history"])
+                # Already published canonical works are intentionally skipped
+                # by discovery. Verify the canonical card in that case.
+                canonical=json.loads(REGISTRY.read_text(encoding="utf-8"))
+                known=[w for w in canonical["works"].values()
+                       if normalized(w["title"])==normalized(title)
+                       and normalized(w["composer"])==normalized(composer)]
+                if known:
+                    self.assertEqual(len(known),1)
+                    from scripts.publish_work_editorial import OUTPUT
+                    public=json.loads(OUTPUT.read_text(encoding="utf-8"))
+                    card=next(x for x in public["works"]
+                              if x["work_id"]==known[0]["id"])
+                    self.assertEqual(card["synopsis"],seed["synopsis"])
+                    self.assertEqual(card["history"],seed["history"])
+                else:
+                    self.assertEqual(len(promoted),1)
+                    self.assertEqual(promoted[0]["synopsis"],seed["synopsis"])
+                    self.assertEqual(promoted[0]["history"],seed["history"])
                 self.assertIn(slug,artwork)
                 self.assertEqual(artwork[slug]["kind"],"archival_work_image")
                 self.assertIn("commons.wikimedia.org",artwork[slug]["source_url"])
@@ -67,9 +82,13 @@ class ScalaEditorialReadyTests(unittest.TestCase):
                    if w.get("source_url","").endswith((
                      "/leonora.html","/les-pecheurs-de-perles.html",
                      "/dido-and-aeneas.html","/the-rake-s-progress.html"))]}
-        self.assertEqual(len(chosen["works"]),4)
         prior={(normalized(w["title"]),normalized(w["composer"]))
                for w in registry["works"].values()}
+        # Idempotence: once these four operas have been published, the
+        # discovery queue correctly stops proposing them as NEW works.
+        remaining={title:count for title,composer,count in SOURCES.values()
+                   if (normalized(title),normalized(composer)) not in prior}
+        self.assertEqual(len(chosen["works"]),len(remaining))
         next_facts,ids,approved,news,hist,report=promote_new_works(
             facts,registry,detail,candidates,chosen,editorial,urls,
             today=date(2026,11,21),history=history,require_image=True)
