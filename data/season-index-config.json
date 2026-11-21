@@ -134,6 +134,13 @@
       "url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/",
       "access_status": "approved",
       "min_links": 4
+    },
+    {
+      "key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/",
+      "url": "https://teatripiacenza.it/stagioni/stagione-26-27/",
+      "access_status": "approved",
+      "min_links": 6
     }
   ]
 }

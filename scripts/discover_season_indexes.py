@@ -214,6 +214,10 @@ class ScopedSeasonAnchors(HTMLParser):
             if self.key=="teatro-grande-opera-2026" and tag=="h2":
                 if label=="OPERA E BALLETTO":self.in_section=True
                 elif self.in_section:self.in_section=False
+            if self.key=="piacenza-opera-2026-27" and tag=="h2":
+                # The Fondazione season mixes Opera with Concerti, Danza,
+                # Young and Eventi. Only the Opera section is approved.
+                self.in_section=(label=="OPERA")
             if self.key=="massimo-season-2026-27" and tag=="h2":
                 if "CALENDARIO OPERE E BALLETTI" in label:self.in_section=True
                 elif self.in_section:self.in_section=False
@@ -263,6 +267,8 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key=="piacenza-opera-2026-27":
+        return bool(re.fullmatch(r"/event/[a-z0-9-]+",path))
     if key=="giglio-lucca-opera-2026-27":
         return bool(re.fullmatch(r"/it/cartellone/lirica/stagione-2026-2027/[a-z0-9-]+",path))
     if key=="modena-opera-2026-27":
@@ -288,7 +294,8 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
     parser=(ScopedSeasonAnchors(key)
             if key in {"parma-opera-2027","massimo-season-2026-27",
                        "donizetti-opera-2026","teatro-grande-opera-2026",
-                       "petruzzelli-opera-2026","petruzzelli-opera-2027"}
+                       "petruzzelli-opera-2026","petruzzelli-opera-2027",
+                       "piacenza-opera-2026-27"}
             else AnchorParser())
     parser.feed(html)
     hostname=urlsplit(index_url).hostname
@@ -329,6 +336,7 @@ def validate_config(config:dict)->list[dict]:
         "bellini-catania-opera-2026-27":("www.teatromassimobellini.it","/opere-e-balletto/"),
         "modena-opera-2026-27":("www.comune.modena.it","/vivere-modena/eventi/2026/stagione-opera-2026-2027"),
         "giglio-lucca-opera-2026-27":("www.teatrodelgigliogiacomopuccini.it","/it/cartellone/lirica/stagione-2026-2027/"),
+        "piacenza-opera-2026-27":("teatripiacenza.it","/stagioni/stagione-26-27/"),
     }
     seen=set()
     for item in config["sources"]:
@@ -362,6 +370,8 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key=="piacenza-opera-2026-27":
+            valid_season=(index.path=="/stagioni/stagione-26-27/" and not index.query)
         elif key=="giglio-lucca-opera-2026-27":
             valid_season=(index.path=="/it/cartellone/lirica/stagione-2026-2027/" and not index.query)
         elif key=="modena-opera-2026-27":
