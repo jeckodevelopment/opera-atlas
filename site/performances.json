@@ -5000,6 +5000,24 @@
       ]
     },
     {
+      "id": "curated:auto-b372b317894fe260:2027-03-19",
+      "starts_at": "2027-03-19T20:00:00+01:00",
+      "local_date": "2027-03-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/"
+      ]
+    },
+    {
       "id": "curated:auto-e1c70abeff01f79b:2027-03-19",
       "starts_at": "2027-03-19T20:00:00+01:00",
       "local_date": "2027-03-19",
@@ -5033,6 +5051,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-a77154badf30929b:2027-03-20",
+      "starts_at": "2027-03-20T15:30:00+01:00",
+      "local_date": "2027-03-20",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "L'arca di Noè",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/larca-di-noe/"
       ]
     },
     {
@@ -5087,6 +5123,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-b372b317894fe260:2027-03-21",
+      "starts_at": "2027-03-21T15:30:00+01:00",
+      "local_date": "2027-03-21",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/"
       ]
     },
     {
@@ -8960,6 +9014,24 @@
       ]
     },
     {
+      "id": "curated:auto-80ebc1deec00ed9f:2027-09-18",
+      "starts_at": "2027-09-18T20:00:00+02:00",
+      "local_date": "2027-09-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-rondine/"
+      ]
+    },
+    {
       "id": "curated:auto-eaefe8edde44acf2:2027-09-18",
       "starts_at": "2027-09-18T20:00:00+02:00",
       "local_date": "2027-09-18",
@@ -8993,6 +9065,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/norma-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-80ebc1deec00ed9f:2027-09-19",
+      "starts_at": "2027-09-19T16:30:00+02:00",
+      "local_date": "2027-09-19",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-rondine/"
       ]
     },
     {
@@ -9050,6 +9140,24 @@
       ]
     },
     {
+      "id": "curated:auto-80ebc1deec00ed9f:2027-09-21",
+      "starts_at": "2027-09-21T20:00:00+02:00",
+      "local_date": "2027-09-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-rondine/"
+      ]
+    },
+    {
       "id": "curated:auto-5ab298c2300ec275:2027-09-22",
       "starts_at": "2027-09-22T19:00:00+02:00",
       "local_date": "2027-09-22",
@@ -9083,6 +9191,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/norma-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-80ebc1deec00ed9f:2027-09-22",
+      "starts_at": "2027-09-22T20:00:00+02:00",
+      "local_date": "2027-09-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-rondine/"
       ]
     },
     {
@@ -9137,6 +9263,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+      ]
+    },
+    {
+      "id": "curated:auto-80ebc1deec00ed9f:2027-09-24",
+      "starts_at": "2027-09-24T18:00:00+02:00",
+      "local_date": "2027-09-24",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-rondine/"
       ]
     },
     {
@@ -9227,6 +9371,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/i-due-foscari-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-80ebc1deec00ed9f:2027-09-26",
+      "starts_at": "2027-09-26T16:30:00+02:00",
+      "local_date": "2027-09-26",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-rondine/"
       ]
     },
     {

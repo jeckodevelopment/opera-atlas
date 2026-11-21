@@ -278,12 +278,13 @@
       ]
     },
     "la-clemenza-di-tito": {
-      "librettist": "Caterino Mazzolà",
+      "librettist": "Caterino Mazzolà, da Pietro Metastasio",
       "premiere_year": 1791,
-      "premiere_venue": "Teatro degli Stati",
+      "premiere_venue": "Teatro Nazionale",
       "premiere_city": "Praga",
       "sources": [
-        "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/the-clemency-of-titus-20737/"
+        "https://corago.unibo.it/opera/Z000003860",
+        "https://www.operadeparis.fr/en/season-26-27/opera/la-clemenza-di-tito"
       ]
     },
     "adriana-lecouvreur": {
@@ -612,6 +613,26 @@
       "sources": [
         "https://movio.beniculturali.it/asrm/ilteatronellazio/it/117/il-trovatore/show/26/198",
         "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+      ]
+    },
+    "la-rondine": {
+      "librettist": "Giuseppe Adami, Alfred Maria Willner e Heinz Reichert",
+      "premiere_year": 1917,
+      "premiere_venue": "Théâtre de l'Opéra",
+      "premiere_city": "Monte Carlo",
+      "sources": [
+        "https://www.puccinimuseum.org/giacomo-puccini/le-opere/la-rondine/",
+        "https://www.opera.mc/en/seasons/24-25/la-rondine"
+      ]
+    },
+    "arca-di-noe": {
+      "librettist": "Testo tratto dal Chester Mystery Play",
+      "premiere_year": 1958,
+      "premiere_venue": "Orford Church",
+      "premiere_city": "Orford",
+      "sources": [
+        "https://www.brittenpearsarts.org/music/noyes-fludde",
+        "https://www.boosey.com/pages/opera/moredetails?musicid=5735"
       ]
     }
   },

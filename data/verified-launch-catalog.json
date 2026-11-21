@@ -3626,6 +3626,75 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-80ebc1deec00ed9f",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/",
+      "dates": [
+        [
+          "2027-09-18",
+          "20:00"
+        ],
+        [
+          "2027-09-19",
+          "16:30"
+        ],
+        [
+          "2027-09-21",
+          "20:00"
+        ],
+        [
+          "2027-09-22",
+          "20:00"
+        ],
+        [
+          "2027-09-24",
+          "18:00"
+        ],
+        [
+          "2027-09-26",
+          "16:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-a77154badf30929b",
+      "title": "L'arca di Noè",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
+      "dates": [
+        [
+          "2027-03-20",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b372b317894fe260",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
+      "dates": [
+        [
+          "2027-03-19",
+          "20:00"
+        ],
+        [
+          "2027-03-21",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

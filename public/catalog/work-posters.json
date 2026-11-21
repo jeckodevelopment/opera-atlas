@@ -566,6 +566,32 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di Boris Godunov",
       "kind": "official_production_image"
+    },
+    "oa-w-000064": {
+      "work_id": "oa-w-000064",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_rondine.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:La_rondine.jpg",
+      "alt": "Locandina storica del 1917 dell'opera La rondine di Giacomo Puccini, non fotografia della produzione romana del 2027",
+      "credit": "Locandina per la prima italiana del 1917, Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:La_rondine.jpg"
+    },
+    "oa-w-000065": {
+      "work_id": "oa-w-000065",
+      "image_url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/arca-di-Noè-scaled-e1780661065359-1498x900.jpg",
+      "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di L'arca di Noè",
+      "kind": "official_production_image"
+    },
+    "oa-w-000066": {
+      "work_id": "oa-w-000066",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_clemenza_di_Tito.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:La_clemenza_di_Tito.jpg",
+      "alt": "Frontespizio originale del libretto del 1791 de La clemenza di Tito di Mozart, non fotografia della produzione di Parma del 2027",
+      "credit": "A. Zatta, libretto originale del 1791, Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:La_clemenza_di_Tito.jpg"
     }
   }
 }

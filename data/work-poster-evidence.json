@@ -98,6 +98,14 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di Boris Godunov",
       "kind": "official_production_image"
+    },
+    "oa-w-000065": {
+      "work_id": "oa-w-000065",
+      "image_url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/arca-di-Noè-scaled-e1780661065359-1498x900.jpg",
+      "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di L'arca di Noè",
+      "kind": "official_production_image"
     }
   },
   "checks": {

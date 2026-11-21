@@ -407,6 +407,27 @@
       "title": "Boris Godunov",
       "composer": "Modest Petrovič Musorgskij",
       "wikidata_id": "Q386846"
+    },
+    "la rondine|giacomo puccini": {
+      "id": "oa-w-000064",
+      "slug": "la-rondine",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "authority_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    "l'arca di noè|benjamin britten": {
+      "id": "oa-w-000065",
+      "slug": "arca-di-noe",
+      "title": "L'arca di Noè",
+      "composer": "Benjamin Britten",
+      "authority_url": "https://www.teatrolafenice.it/event/larca-di-noe/"
+    },
+    "la clemenza di tito|wolfgang amadeus mozart": {
+      "id": "oa-w-000066",
+      "slug": "la-clemenza-di-tito",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "authority_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/"
     }
   },
   "venues": {
@@ -1517,6 +1538,30 @@
       "venue_id": "oa-v-000010",
       "slug": "boris-godunov",
       "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
+      "season": "2027"
+    },
+    "auto-80ebc1deec00ed9f": {
+      "id": "oa-s-000120",
+      "work_id": "oa-w-000064",
+      "venue_id": "oa-v-000017",
+      "slug": "la-rondine",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/",
+      "season": "2027"
+    },
+    "auto-a77154badf30929b": {
+      "id": "oa-s-000121",
+      "work_id": "oa-w-000065",
+      "venue_id": "oa-v-000021",
+      "slug": "arca-di-noe",
+      "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
+      "season": "2026-2027"
+    },
+    "auto-b372b317894fe260": {
+      "id": "oa-s-000122",
+      "work_id": "oa-w-000066",
+      "venue_id": "oa-v-000010",
+      "slug": "la-clemenza-di-tito",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
       "season": "2027"
     }
   },
@@ -5042,6 +5087,60 @@
       "staging_id": "oa-s-000119",
       "original_date": "2027-01-28",
       "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/"
+    },
+    "auto-80ebc1deec00ed9f|2027-09-18": {
+      "id": "oa-r-000603",
+      "staging_id": "oa-s-000120",
+      "original_date": "2027-09-18",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    "auto-80ebc1deec00ed9f|2027-09-19": {
+      "id": "oa-r-000604",
+      "staging_id": "oa-s-000120",
+      "original_date": "2027-09-19",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    "auto-80ebc1deec00ed9f|2027-09-21": {
+      "id": "oa-r-000605",
+      "staging_id": "oa-s-000120",
+      "original_date": "2027-09-21",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    "auto-80ebc1deec00ed9f|2027-09-22": {
+      "id": "oa-r-000606",
+      "staging_id": "oa-s-000120",
+      "original_date": "2027-09-22",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    "auto-80ebc1deec00ed9f|2027-09-24": {
+      "id": "oa-r-000607",
+      "staging_id": "oa-s-000120",
+      "original_date": "2027-09-24",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    "auto-80ebc1deec00ed9f|2027-09-26": {
+      "id": "oa-r-000608",
+      "staging_id": "oa-s-000120",
+      "original_date": "2027-09-26",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    "auto-a77154badf30929b|2027-03-20": {
+      "id": "oa-r-000609",
+      "staging_id": "oa-s-000121",
+      "original_date": "2027-03-20",
+      "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/"
+    },
+    "auto-b372b317894fe260|2027-03-19": {
+      "id": "oa-r-000610",
+      "staging_id": "oa-s-000122",
+      "original_date": "2027-03-19",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/"
+    },
+    "auto-b372b317894fe260|2027-03-21": {
+      "id": "oa-r-000611",
+      "staging_id": "oa-s-000122",
+      "original_date": "2027-03-21",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/"
     }
   }
 }
