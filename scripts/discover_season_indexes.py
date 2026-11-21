@@ -288,6 +288,10 @@ def eligible(key:str,url:str)->bool:
     path=parsed.path.lower().rstrip("/")
     if excluded_nonopera(key,url):
         return False
+    if key=="macerata-festival-2027":
+        return path in {"/macerata-opera-festival/tosca",
+                        "/macerata-opera-festival/la-traviata",
+                        "/macerata-opera-festival/elisir-damore"}
     if key=="scala-season-2026-27":
         match=re.fullmatch(r"/it/stagione/(20\d{2})-(20\d{2})/opera/[a-z0-9-]+\.html",path)
         return bool(match and int(match.group(2))==int(match.group(1))+1)
@@ -397,6 +401,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "macerata-festival-2027":("www.sferisterio.it","/"),
         "scala-season-2026-27":("www.teatroallascala.org","/it/stagione/2026-2027/index.html"),
         "arena-festival-2027":("www.arena.it","/arena-opera-festival/spettacoli/"),
         "fenice-opera-2026-27":("www.teatrolafenice.it","/event-category/opera-2026-27/"),
@@ -473,6 +478,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="macerata-festival-2027":
+            valid_season=index.path=="/" and not index.query
         elif key=="reggio-valli-opera-2026-27":
             valid_season=index.path=="/tipo/opera/" and not index.query
         elif key=="piacenza-opera-2026-27":
