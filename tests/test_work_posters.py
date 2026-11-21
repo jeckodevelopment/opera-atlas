@@ -132,7 +132,7 @@ class PosterPublicationTests(unittest.TestCase):
                 self.assertEqual(len(calls),0)  # stable archival art needs no theatre fetch
                 self.assertTrue(published.exists())
                 evidence=json.loads(stored.read_text())
-                self.assertIn("oa-w-000033",evidence["posters"])
+                self.assertNotIn("oa-w-000033",evidence["posters"])  # historical wins without new official evidence
                 posters.publish(network_enabled=True,fetcher=mock,
                                 today=date(2026,11,21),max_pages=2)
                 self.assertEqual(len(calls),0) # archived art is permanently preferred
