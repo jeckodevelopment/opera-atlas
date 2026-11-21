@@ -350,6 +350,12 @@ def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
+    if source_key=="scala-season-2026-27":
+        from opera_atlas.scala_credited_detail import parse_scala_credited_opera
+        title,composer,recite=parse_scala_credited_opera(html,url=url)
+        return [{"event_title":title,"composer":composer,
+                 "date":day,"starts_at":official_local_time(day,hour),
+                 "venue":"Teatro alla Scala"} for day,hour in recite]
     if source_key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
         from opera_atlas.petruzzelli_detail_parser import extract_official_petr_opera
         title,composer,venue,recite=extract_official_petr_opera(
@@ -566,7 +572,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"] in ("massimo-season-2026-27","carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
+                if item["source_key"] in ("scala-season-2026-27","massimo-season-2026-27","carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
