@@ -28,6 +28,13 @@ class FullTheatreProfileTests(unittest.TestCase):
             self.assertTrue(profile["source"].startswith("https://"),key)
             self.assertEqual(profile["address"],venue["address"],key)
             self.assertEqual(profile["history"],venue["history"],key)
+            self.assertEqual(profile["description"],venue["description"],key)
+            # A short introduction must not duplicate the historical text.
+            # This prevents the previous 26 exact duplicates from returning.
+            short=re.sub(r"\\W+"," ",venue["description"].casefold()).strip()
+            history=re.sub(r"\\W+"," ",venue["history"].casefold()).strip()
+            self.assertNotEqual(short,history,key)
+            self.assertLessEqual(len(venue["description"]),260,key)
         published=publish(check=True)["venues"]
         self.assertEqual({v["id"] for v in published},
                          {v["id"] for v in self.directory})
