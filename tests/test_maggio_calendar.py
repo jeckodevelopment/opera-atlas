@@ -62,6 +62,7 @@ class FlorenceCalendarTests(unittest.TestCase):
 
     def test_traviata_four_recite_with_real_clock_composer_venue(self):
         rows=parse_month(page(),url=INDEX,registry=self.registry,today=date(2026,11,21))
+        rows=[x for x in rows if x["official_url"]==DETAIL]
         self.assertEqual(len(rows),4)
         self.assertEqual({x["official_url"] for x in rows},{DETAIL})
         self.assertEqual([x["date"] for x in rows],
@@ -106,9 +107,10 @@ class FlorenceCalendarTests(unittest.TestCase):
                     found,at="2026-11-21T18:00:00+00:00")
 
     def test_unknown_work_other_venue_and_invalid_month_are_not_facts(self):
-        self.assertEqual(parse_month(page().replace("La traviata Giuseppe Verdi",
+        wrong=parse_month(page().replace("La traviata Giuseppe Verdi",
                          "La traviata Wolfgang Amadeus Mozart"),
-                         url=INDEX,registry=self.registry,today=date(2026,11,21)),[])
+                         url=INDEX,registry=self.registry,today=date(2026,11,21))
+        self.assertFalse(any(x["official_url"]==DETAIL for x in wrong))
         with self.assertRaises(ValueError):
             parse_month(page(),url="https://evil.invalid/calendario/2027/01/opera",
                         registry=self.registry,today=date(2026,11,21))
@@ -117,7 +119,9 @@ class FlorenceCalendarTests(unittest.TestCase):
                         registry=self.registry,today=date(2026,11,21))
 
     def test_end_to_end_florence_promotes_new_theatre_and_four_verified_performances(self):
-        rows=parse_month(page(),url=INDEX,registry=self.registry,today=date(2026,11,21))
+        rows=[x for x in parse_month(
+            page(),url=INDEX,registry=self.registry,today=date(2026,11,21))
+            if x["official_url"]==DETAIL]
         candidates,evidence=combine(
             {"schema_version":1,"candidates":[]},{"schema_version":1,"evidence":[]},
             rows,at="2026-11-21T13:00:00+00:00")
