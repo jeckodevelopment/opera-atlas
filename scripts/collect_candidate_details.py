@@ -166,6 +166,16 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
 
     Never infer metadata for a newly discovered work from a URL slug alone.
     """
+    if source_key=="bologna-comunale-opera-2027":
+        from opera_atlas.bologna_detail_parser import parse_detail
+        from scripts.build_verified_catalog import official_local_time
+        title,composer,venue,recite=parse_detail(html,url=url)
+        matches=[w for w in registry.get("works",{}).values()
+                 if normalized(w["title"])==normalized(title) and normalized(w["composer"])==normalized(composer)]
+        if len(matches)!=1:return []
+        work=matches[0]
+        return [{"event_title":work["title"],"composer":work["composer"],"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)} for day,clock in recite]
     adapter={"scala-season-2026-27":"scala",
              "arena-festival-2027":"arena"}.get(source_key)
     if adapter is None and source_key not in (
@@ -277,6 +287,11 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
+    if source_key=="bologna-comunale-opera-2027":
+        from opera_atlas.bologna_detail_parser import parse_detail
+        title,composer,venue,recite=parse_detail(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)} for day,clock in recite]
     if source_key!="carlo-felice-season-2026-27":
         return []
     from opera_atlas.italian_detail_parser import extract_source_credited_carlo_felice
