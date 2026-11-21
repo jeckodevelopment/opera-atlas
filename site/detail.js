@@ -197,7 +197,7 @@ async function appendHistory(event) {
       const part=type=>today.find(item=>item.type===type)?.value||"";
       const todayISO=part("year")+"-"+part("month")+"-"+part("day");
       const futurePremiere=Boolean(
-        (history.premiere_date && /^\\d{4}-\\d{2}-\\d{2}$/.test(history.premiere_date) &&
+        (history.premiere_date && /^\d{4}-\d{2}-\d{2}$/.test(history.premiere_date) &&
          history.premiere_date>todayISO) ||
         (!history.premiere_date && premiered>Number(part("year"))));
       const beginning=futurePremiere?"La prima assoluta è prevista ":"La prima rappresentazione ebbe luogo ";
