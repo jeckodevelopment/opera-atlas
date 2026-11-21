@@ -28,6 +28,7 @@ let catalog = [];
 let page = 0;
 let monthOffset = 0;
 let automaticPeriod = true; // Only the initial or explicitly reset search can expand.
+let automaticPeriodNotice = "";
 
 function safeSource(uri) {
   try {
@@ -398,10 +399,11 @@ function expandInitialPeriodIfEmpty() {
     : "Nessuno spettacolo nei prossimi 30 giorni o 3 mesi: mostriamo tutte le date future.";
 }
 function render() {
-  const fallbackNotice = expandInitialPeriodIfEmpty();
+  if (automaticPeriod) automaticPeriodNotice = expandInitialPeriodIfEmpty() || automaticPeriodNotice;
+  else automaticPeriodNotice = "";
   const notice = document.getElementById("automatic-period-note");
-  notice.textContent = fallbackNotice;
-  notice.hidden = !fallbackNotice;
+  notice.textContent = automaticPeriodNotice;
+  notice.hidden = !automaticPeriodNotice;
   const filtered=orderedEvents();
   const entries=viewMode==="staging"?groupByStaging(filtered):filtered;
   const pages=Math.ceil(entries.length/PAGE_SIZE);
