@@ -3,6 +3,9 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import subprocess
 import unittest
+import os
+from unittest.mock import patch
+from scripts import safe_push_catalog
 
 from scripts.safe_push_catalog import safe_push, source_affecting
 
@@ -78,6 +81,17 @@ class SafePushTests(unittest.TestCase):
             execute(Path(tmp),"clone","-b","main",str(remote),str(clone))
             self.assertEqual((clone/"data/catalog.json").read_text(),"{}\n")
             self.assertEqual((clone/"scripts/adapter.py").read_text(),"NEW_ADAPTER=True\n")
+
+    def test_deferred_push_emits_workflow_retry_output(self):
+        with TemporaryDirectory() as tmp:
+            output=Path(tmp)/"github_output"
+            for result,expected in (("deferred","deferred=true\\n"),
+                                    ("published","deferred=false\\n")):
+                output.write_text("")
+                with patch.dict(os.environ,{"GITHUB_OUTPUT":str(output)}):
+                    with patch.object(safe_push_catalog,"safe_push",return_value=result):
+                        safe_push_catalog.main()
+                self.assertEqual(output.read_text(),expected)
 
     def test_sensitive_prefixes_cover_registry_catalog_and_code(self):
         self.assertTrue(source_affecting(["data/identity-registry.json"]))
