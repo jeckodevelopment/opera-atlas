@@ -15,6 +15,17 @@ class RefreshWorkflowPathTests(unittest.TestCase):
         self.assertIn("schedule:",text)
         self.assertIn("python -m scripts.auto_catalogue",text)
         self.assertIn("python -m scripts.publish_catalog_v2",text)
+    def test_full_network_acquisition_is_labeled_and_enabled(self):
+        workflow=WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("run-name: Catalog acquisition",workflow)
+        self.assertIn("github.event_name",workflow)
+        self.assertIn("workflow_dispatch:",workflow)
+        self.assertIn("python -m scripts.discover_season_indexes --allow-network",workflow)
+        self.assertIn("python -m scripts.collect_candidate_details --allow-network",workflow)
+        self.assertIn("python -m scripts.auto_work_research --allow-network",workflow)
+        self.assertIn("python -m scripts.reconcile_published_candidates",workflow)
+        self.assertIn("python -m scripts.safe_push_catalog",workflow)
+
     def test_verified_editorial_seed_changes_trigger_full_publication(self):
         text=WORKFLOW.read_text(encoding="utf-8")
         for path in ("data/verified-work-authority-seeds.json",
