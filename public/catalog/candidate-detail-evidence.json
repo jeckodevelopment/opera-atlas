@@ -108,7 +108,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-21T19:30:44+00:00",
+      "checked_at": "2026-11-21T19:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -368,7 +368,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T19:30:44+00:00",
+      "checked_at": "2026-11-21T19:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -571,27 +571,29 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "53d97120b7a77cc2858bef25505ac78a289150ed2e3b83017e03d6652033ebf3",
-      "checked_at": "2026-11-21T19:30:11+00:00",
+      "checked_at": "2026-11-21T19:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Il mondo alla roversa o sia le donne che comandano",
+          "composer": "Baldassarre Galuppi",
+          "venue": "Teatro Goldoni",
           "date": "2027-01-30",
-          "starts_at": "2027-01-30T17:00:00+01:00",
-          "venue": "Teatro Goldoni"
+          "starts_at": "2027-01-30T17:00:00+01:00"
         },
         {
           "event_title": "Il mondo alla roversa o sia le donne che comandano",
+          "composer": "Baldassarre Galuppi",
+          "venue": "Teatro Goldoni",
           "date": "2027-01-31",
-          "starts_at": "2027-01-31T15:30:00+01:00",
-          "venue": "Teatro Goldoni"
+          "starts_at": "2027-01-31T15:30:00+01:00"
         },
         {
           "event_title": "Il mondo alla roversa o sia le donne che comandano",
+          "composer": "Baldassarre Galuppi",
+          "venue": "Teatro Goldoni",
           "date": "2027-02-02",
-          "starts_at": "2027-02-02T20:00:00+01:00",
-          "venue": "Teatro Goldoni"
+          "starts_at": "2027-02-02T20:00:00+01:00"
         }
       ]
     },
@@ -694,7 +696,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-21T19:30:44+00:00",
+      "checked_at": "2026-11-21T19:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1326,7 +1328,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T19:30:21+00:00",
+      "checked_at": "2026-11-21T19:47:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1520,7 +1522,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
       "content_sha256": "8b6e00982448a33493bd9bfb7049677cff03629f12be9a6723507fa3dcfb4260",
-      "checked_at": "2026-11-21T19:30:13+00:00",
+      "checked_at": "2026-11-21T19:48:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1845,7 +1847,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-21T19:30:44+00:00",
+      "checked_at": "2026-11-21T19:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1989,7 +1991,7 @@
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "content_sha256": "6a6892fb108c70e4610be23672d1d9601e9bdeda010fefec202fe6a46cc72044",
-      "checked_at": "2026-11-21T19:30:09+00:00",
+      "checked_at": "2026-11-21T19:47:16+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2117,7 +2119,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
       "content_sha256": "65576ade05c214527d0e4101b7ee574d495d0484a31e315691c0b7329c7959ef",
-      "checked_at": "2026-11-21T19:30:42+00:00",
+      "checked_at": "2026-11-21T19:48:41+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2286,7 +2288,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T19:30:44+00:00",
+      "checked_at": "2026-11-21T19:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2489,7 +2491,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-21T19:30:44+00:00",
+      "checked_at": "2026-11-21T19:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2550,6 +2552,110 @@
           "date": "2026-11-27",
           "starts_at": "2026-11-27T20:00:00+01:00",
           "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-e01412b3c8989b4b826b",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/",
+      "content_sha256": "8915bcefff9b6eed307b7567eabd9b4981a8026f312717f2d1eb1958e25dade2",
+      "checked_at": "2026-11-21T19:48:35+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2026-11-27",
+          "starts_at": "2026-11-27T19:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2026-11-29",
+          "starts_at": "2026-11-29T16:30:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2026-12-01",
+          "starts_at": "2026-12-01T20:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2026-12-03",
+          "starts_at": "2026-12-03T20:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "The Rake's Progress",
+          "composer": "Igor' Stravinskij",
+          "date": "2026-12-05",
+          "starts_at": "2026-12-05T18:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-e1c70abeff01f79bde7f",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/",
+      "content_sha256": "ca99133e144ed245a6172969a940081e0466d73d30b008b625ea9954c25d443d",
+      "checked_at": "2026-11-21T19:48:44+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "I due Foscari",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-13",
+          "starts_at": "2027-03-13T20:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "I due Foscari",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T16:30:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "I due Foscari",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-16",
+          "starts_at": "2027-03-16T20:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "I due Foscari",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-17",
+          "starts_at": "2027-03-17T20:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "I due Foscari",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-19",
+          "starts_at": "2027-03-19T20:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "I due Foscari",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-20",
+          "starts_at": "2027-03-20T18:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "I due Foscari",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-21",
+          "starts_at": "2027-03-21T16:30:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
         }
       ]
     },

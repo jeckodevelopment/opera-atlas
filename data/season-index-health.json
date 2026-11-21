@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T19:30:02+00:00",
+  "checked_at": "2026-11-21T19:47:08+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
@@ -9,8 +9,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 3,
       "new_review_candidates": 0,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 13,
       "current_scan_verified": true
     },
@@ -21,8 +21,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 2,
       "new_review_candidates": 0,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 5,
       "current_scan_verified": true
     },
@@ -33,8 +33,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 2,
       "new_review_candidates": 1,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 11,
       "current_scan_verified": true
     },
@@ -45,8 +45,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 3,
       "new_review_candidates": 4,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 6,
       "current_scan_verified": true
     },
@@ -57,8 +57,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 6,
       "new_review_candidates": 0,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 8,
       "current_scan_verified": true
     },
@@ -69,8 +69,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 7,
       "new_review_candidates": 1,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 7,
       "current_scan_verified": true
     },
@@ -81,8 +81,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 3,
       "new_review_candidates": 2,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 3,
       "current_scan_verified": true
     },
@@ -93,8 +93,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 2,
       "new_review_candidates": 1,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 2,
       "current_scan_verified": true
     },
@@ -105,22 +105,24 @@
       "empty_official_opera_calendar": false,
       "required_links": 1,
       "new_review_candidates": 1,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 3,
       "current_scan_verified": true
     },
     {
       "key": "opera-roma-season-2026-27",
-      "status": "unavailable_or_invalid",
-      "reason": "FetchUnavailable",
-      "diagnostic": "official_robots_unavailable_or_invalid",
+      "status": "success",
+      "pages_checked": 2,
+      "pagination_complete": true,
+      "links": 20,
+      "empty_official_opera_calendar": false,
       "required_links": 2,
-      "links": 0,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": null,
-      "last_successful_links": null,
-      "current_scan_verified": false
+      "new_review_candidates": 19,
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
+      "last_successful_links": 20,
+      "current_scan_verified": true
     },
     {
       "key": "petruzzelli-opera-2026",
@@ -129,8 +131,8 @@
       "empty_official_opera_calendar": false,
       "required_links": 1,
       "new_review_candidates": 6,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 8,
       "current_scan_verified": true
     },
@@ -141,34 +143,34 @@
       "empty_official_opera_calendar": false,
       "required_links": 3,
       "new_review_candidates": 1,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
-      "last_success_at": "2026-11-21T19:30:02+00:00",
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
+      "last_success_at": "2026-11-21T19:47:08+00:00",
       "last_successful_links": 8,
       "current_scan_verified": true
     },
     {
       "key": "bologna-comunale-opera-2026",
-      "status": "success",
-      "links": 0,
-      "empty_official_opera_calendar": true,
+      "status": "unavailable_or_invalid",
+      "reason": "FetchUnavailable",
+      "diagnostic": "official_robots_unavailable_or_invalid",
       "required_links": 1,
-      "new_review_candidates": 0,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
+      "links": 0,
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
       "last_success_at": "2026-11-21T19:30:02+00:00",
       "last_successful_links": 0,
-      "current_scan_verified": true
+      "current_scan_verified": false
     },
     {
       "key": "bologna-comunale-opera-2027",
-      "status": "success",
-      "links": 9,
-      "empty_official_opera_calendar": false,
+      "status": "unavailable_or_invalid",
+      "reason": "FetchUnavailable",
+      "diagnostic": "official_robots_unavailable_or_invalid",
       "required_links": 7,
-      "new_review_candidates": 0,
-      "last_attempt_at": "2026-11-21T19:30:02+00:00",
+      "links": 0,
+      "last_attempt_at": "2026-11-21T19:47:08+00:00",
       "last_success_at": "2026-11-21T19:30:02+00:00",
       "last_successful_links": 9,
-      "current_scan_verified": true
+      "current_scan_verified": false
     }
   ]
 }

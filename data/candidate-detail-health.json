@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T19:30:44+00:00",
-  "attempted": 17,
+  "checked_at": "2026-11-21T19:48:45+00:00",
+  "attempted": 36,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -37,12 +37,30 @@
       "rows": 3
     },
     {
-      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
-      "outcome": "facts_found",
-      "rows": 3
+      "candidate_id": "oa-index-03fa95f1d0382ffee131",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Rome event not in verified 2026/27 season",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
-      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
+      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:conflicting official showtime for one day",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-eedca6da108bd27e8d30",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -71,6 +89,29 @@
       "rows": 2
     },
     {
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-20463bc8c3334dacecf8",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-207df538679e00657fe1",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -95,6 +136,94 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-669472f18fdc8ab6bd13",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-67ef6842ba33e2d6015d",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-697328f32e7cfa32252b",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-73348de657104a8b911f",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Rome event not in verified 2026/27 season",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-80ebc1deec00ed9ff908",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-857515ac803f6ce8e75f",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9eea54a8395ff3d6c74e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-a02901b14e6eae69df5c",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -107,7 +236,62 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-a764d9a221b8659804fb",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-b71caef92f53a984ed36",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Rome event not in verified 2026/27 season",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-b756ca3bab6062c03ef8",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-bc101d1d7cf587ef8441",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-c03e9ef77c219026cd5c",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -130,6 +314,33 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-dcb294addc2abadaa6b0",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-e01412b3c8989b4b826b",
+      "outcome": "facts_found",
+      "rows": 5
+    },
+    {
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -142,16 +353,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-eedca6da108bd27e8d30",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
+      "outcome": "facts_found",
+      "rows": 3
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
@@ -159,16 +363,9 @@
       "rows": 2
     },
     {
-      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:conflicting official showtime for one day",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-e1c70abeff01f79bde7f",
+      "outcome": "facts_found",
+      "rows": 7
     }
   ]
 }

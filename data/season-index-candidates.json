@@ -34,6 +34,14 @@
       "last_seen": "2026-11-21T17:17:07+00:00"
     },
     {
+      "id": "oa-index-03fa95f1d0382ffee131",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/falstaff/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
       "id": "oa-index-05c2c0e38ba2a356b5ba",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/orchestra-jazz-siciliana-the-brass-group-3/",
@@ -47,7 +55,7 @@
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
       "status": "needs_review",
-      "last_seen": "2026-11-21T19:30:44+00:00"
+      "last_seen": "2026-11-21T19:48:45+00:00"
     },
     {
       "id": "oa-index-05e3307781f3a1f0668e",
@@ -135,7 +143,7 @@
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-21T19:30:44+00:00"
+      "last_seen": "2026-11-21T19:48:45+00:00"
     },
     {
       "id": "oa-index-184e57e1cd9f38d554d5",
@@ -186,12 +194,20 @@
       "last_seen": "2026-11-20T21:15:46+00:00"
     },
     {
+      "id": "oa-index-20463bc8c3334dacecf8",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
       "id": "oa-index-207df538679e00657fe1",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-20f405e0ffdc62c59cf3",
@@ -199,7 +215,7 @@
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:48:45+00:00"
     },
     {
       "id": "oa-index-212db41a4c6f7afcbcda",
@@ -263,7 +279,7 @@
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
       "status": "needs_review",
-      "last_seen": "2026-11-21T19:30:44+00:00"
+      "last_seen": "2026-11-21T19:48:45+00:00"
     },
     {
       "id": "oa-index-3b731f9ff09ab7dc5294",
@@ -351,7 +367,7 @@
       "official_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:11:04+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-54f0eebbc01abdef253e",
@@ -431,7 +447,31 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
+      "id": "oa-index-669472f18fdc8ab6bd13",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/le-cenerentole-quattro-donne-una-storia/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
+      "id": "oa-index-67ef6842ba33e2d6015d",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
+      "id": "oa-index-697328f32e7cfa32252b",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-6cd199691f7145a4d048",
@@ -440,6 +480,22 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-21T19:23:40+00:00"
+    },
+    {
+      "id": "oa-index-73348de657104a8b911f",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
+      "id": "oa-index-7475e8c93d79a7a7d654",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/tosca-11/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-74ce9c00c158699bd2cc",
@@ -455,7 +511,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-790b965de8129382aa04",
@@ -471,7 +527,7 @@
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -503,7 +559,23 @@
       "official_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
+      "id": "oa-index-80ebc1deec00ed9ff908",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-rondine/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
+      "id": "oa-index-857515ac803f6ce8e75f",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-8676dac9bb2f419b8a63",
@@ -591,7 +663,7 @@
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
       "status": "needs_review",
-      "last_seen": "2026-11-21T19:30:44+00:00"
+      "last_seen": "2026-11-21T19:48:45+00:00"
     },
     {
       "id": "oa-index-9c8f948971aebfd24d5e",
@@ -599,7 +671,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -610,12 +682,20 @@
       "last_seen": "2026-11-20T21:13:13+00:00"
     },
     {
+      "id": "oa-index-9eea54a8395ff3d6c74e",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
       "id": "oa-index-a02901b14e6eae69df5c",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-a0eba5854831ebbf26c0",
@@ -634,12 +714,20 @@
       "last_seen": "2026-11-21T18:30:55+00:00"
     },
     {
+      "id": "oa-index-a764d9a221b8659804fb",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/operacamion-tosca/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
       "id": "oa-index-a77154badf30929b95dc",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-a79283af9834d87bf204",
@@ -687,7 +775,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-b4180540983902f703af",
@@ -714,12 +802,20 @@
       "last_seen": "2026-11-20T22:03:17+00:00"
     },
     {
+      "id": "oa-index-b71caef92f53a984ed36",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/aida-6/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
       "id": "oa-index-b756ca3bab6062c03ef8",
       "source_key": "donizetti-opera-2026",
       "official_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:11:04+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-b809ddd0a4d8d8cb712e",
@@ -743,7 +839,15 @@
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:50:36.994Z",
-      "last_seen": "2026-11-21T19:30:44+00:00"
+      "last_seen": "2026-11-21T19:48:45+00:00"
+    },
+    {
+      "id": "oa-index-bc101d1d7cf587ef8441",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-bc862239853e956d5c69",
@@ -760,6 +864,22 @@
       "status": "excluded_nonopera",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-bf778bbaf1cca4ef8024",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
+      "id": "oa-index-c03e9ef77c219026cd5c",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/hans-werner-henze-100/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-c8884398af891aeb2492",
@@ -783,7 +903,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-ce32b1104cdb579dc299",
@@ -826,12 +946,28 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-d69ff42443cfe2ea9f41",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
       "id": "oa-index-d7a3053257b5915753f9",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-20T23:18:50+00:00"
+    },
+    {
+      "id": "oa-index-dcb294addc2abadaa6b0",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-dd11dbb7276e10032076",
@@ -847,7 +983,7 @@
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
       "status": "needs_review",
-      "last_seen": "2026-11-21T19:30:44+00:00"
+      "last_seen": "2026-11-21T19:48:45+00:00"
     },
     {
       "id": "oa-index-dfe824fe3301174d2165",
@@ -866,12 +1002,28 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-e01412b3c8989b4b826b",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
+    },
+    {
       "id": "oa-index-e1bb2cc8491121303ddb",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/non-dirmi-che-hai-paura/",
       "status": "excluded_nonopera",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-20T23:06:04+00:00"
+    },
+    {
+      "id": "oa-index-e1c70abeff01f79bde7f",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/i-due-foscari/",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T19:46:19+00:00",
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-e2f49853b190843a4677",
@@ -887,7 +1039,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -911,7 +1063,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -951,7 +1103,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     },
     {
       "id": "oa-index-ef019182f129777d75f0",
@@ -1063,7 +1215,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:29:42+00:00"
+      "last_seen": "2026-11-21T19:46:19+00:00"
     }
   ]
 }
