@@ -55,8 +55,9 @@ permissions:
   contents: write
 concurrency:
   group: opera-atlas-public-feed
-  # The latest canonical commit supersedes a stale unfinished scan.
-  cancel-in-progress: true
+  # Don't interrupt an expensive approved crawl for each new PR merge.
+  # Stale outputs remain protected by safe-push and automatic retry.
+  cancel-in-progress: false
 jobs:
   update:
     runs-on: ubuntu-24.04
