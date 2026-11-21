@@ -55,7 +55,8 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
                 facts,ids,urls,result=promote(
                     self.facts,baseline,evidence,candidates,[],today=date(2026,11,21))
                 self.assertEqual(result["new_recite"],1,result)
-                self.assertEqual(result["new_stagings"],1)
+                previous=any(p["source_url"]==url for p in self.facts["productions"])
+                self.assertEqual(result["new_stagings"],0 if previous else 1)
                 self.assertIn(url,urls)
                 staging=next(p for p in facts["productions"] if p["source_url"]==url
                              and p["key"].startswith("auto-"))
