@@ -100,7 +100,9 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         if iso in found:
             raise ValueError("duplicate or conflicting municipal recital")
         found[iso]=time
-    # No extracted recite may be accepted if other schedule hours are present.
-    if not found or len(found)>24 or len(re.findall(r"\bore\s+\d{1,2}",text,re.I))!=len(found):
+    # Every named weekday/date in the bounded section must have a verified
+    # clock. A half-parsed schedule cannot publish a subset of its recite.
+    dated_rows=len(re.findall(r"(?i)\b(?:luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|venerd[iì]|sabato|domenica)\s+\d{1,2}\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)",text))
+    if not found or len(found)>24 or dated_rows!=len(found) or len(re.findall(r"\bore\s+\d{1,2}",text,re.I))!=len(found):
         raise ValueError("incomplete municipal opera recital calendar")
     return title,composer,VENUE,sorted(found.items())
