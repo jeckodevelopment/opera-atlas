@@ -161,6 +161,7 @@ class ScopedSeasonAnchors(HTMLParser):
         self.heading_text=[]
         self.in_anchor=0
         self.in_navigation=0
+        self.season_heading_tail=""
     def handle_starttag(self,tag,attrs):
         if tag in ("h1","h2"):
             self.heading=tag
@@ -180,12 +181,17 @@ class ScopedSeasonAnchors(HTMLParser):
             # The live Petruzzelli WordPress page renders the year-specific
             # label as an ordinary element, not necessarily as h1/h2.
             # Only an exact, non-navigation year heading opens the scope.
-            label=" ".join(data.upper().split())
+            # The year and label may arrive as separate HTML text nodes
+            # (for example inside nested Elementor spans). Limit buffered
+            # context to one short heading, never matching navigation links.
+            self.season_heading_tail=(" ".join(
+                (self.season_heading_tail+" "+data.upper()).split()))[-160:]
             year=self.key.rsplit("-",1)[-1]
-            if label=="OPERA E BALLETTO "+year:
-                self.in_section=True
-            elif label.startswith("OPERA E BALLETTO 20") and label!=("OPERA E BALLETTO "+year):
-                self.in_section=False
+            for match in re.finditer(r"(?<![A-Z0-9])OPERA E BALLETTO (20[0-9]{2})(?![0-9])",
+                                     self.season_heading_tail):
+                self.in_section=(match.group(1)==year)
+                self.season_heading_tail=""
+                break
     def handle_endtag(self,tag):
         if tag=="a":
             self.in_anchor=max(0,self.in_anchor-1)
