@@ -4,6 +4,8 @@ import re
 import shutil
 import subprocess
 import unittest
+from urllib.parse import urlsplit
+from scripts.discover_season_indexes import CONFIG,validate_config,eligible
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -15,6 +17,10 @@ class OperaHistoryTests(unittest.TestCase):
         works=json.loads((ROOT/"public/catalog/v2"/manifest["files"]["works"]["path"]).read_text(encoding="utf-8"))["works"]
         history=json.loads((SITE/"work-history.json").read_text(encoding="utf-8"))
         self.assertEqual(history["schema_version"],1)
+        registry=json.loads((ROOT/"data/identity-registry.json").read_text(encoding="utf-8"))
+        canonical_by_id={w["id"]:w for w in registry["works"].values()}
+        approved=[x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
+                  if x["access_status"]=="approved"]
         import re
         for item in works:
             historical=history.get("works_by_id",{}).get(item["id"],
@@ -22,13 +28,17 @@ class OperaHistoryTests(unittest.TestCase):
             if historical is not None:continue
             # A verified identity without known premiere information is
             # permitted. Never invent a history for a newly sourced opera.
-            wikidata=item.get("wikidata_id","")
-            official=item.get("authority_url","")
-            self.assertTrue(
-                bool(re.fullmatch(r"Q[1-9][0-9]*",wikidata)) or
-                bool(re.fullmatch(
-                    r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
-                    official)),item["title"])
+            canonical=canonical_by_id[item["id"]]
+            wikidata=canonical.get("wikidata_id","")
+            official=canonical.get("authority_url","")
+            staged=[v for v in registry["stagings"].values()
+                    if v["work_id"]==item["id"]]
+            official_verified=bool(official and any(
+                v.get("source_url")==official for v in staged) and any(
+                urlsplit(source["official_url"]).hostname==urlsplit(official).hostname
+                and eligible(source["key"],official) for source in approved))
+            self.assertTrue(bool(re.fullmatch(r"Q[1-9][0-9]*",wikidata))
+                            or official_verified,item["title"])
         for slug,entry in history["works"].items():
             self.assertTrue(entry["librettist"],slug)
             self.assertTrue(1600<=entry["premiere_year"]<=2026,slug)
