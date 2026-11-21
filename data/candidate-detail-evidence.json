@@ -105,6 +105,15 @@
       ]
     },
     {
+      "candidate_id": "oa-index-03fa95f1d0382ffee131",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/falstaff/",
+      "content_sha256": "5fb6f94afea710a7c2331197ff421f4f159e01946079f142ccc109707253107b",
+      "checked_at": "2026-11-21T22:29:13+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
+    },
+    {
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
@@ -1450,6 +1459,15 @@
       ]
     },
     {
+      "candidate_id": "oa-index-67ef6842ba33e2d6015d",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
+      "content_sha256": "8d0079aa96c6f148c8bbc2b059178a894baad984ec422e19086145b70cf62f7d",
+      "checked_at": "2026-11-21T22:29:15+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
+    },
+    {
       "candidate_id": "oa-index-697328f32e7cfa32252b",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
@@ -1611,6 +1629,24 @@
         "alt": "Immagine della produzione di Lohengrin",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-73348de657104a8b911f",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
+      "content_sha256": "51d5cbc8b0e65174fe7e8d9e5b6088d23f682825f661da25e9e7c041de6cacac",
+      "checked_at": "2026-11-21T22:29:18+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
+    },
+    {
+      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/tosca-11/",
+      "content_sha256": "24630734dc8126dd6250515be4d86f0fd447deb3e179edddd7483a1e10fd4017",
+      "checked_at": "2026-11-21T22:29:20+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
     },
     {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
@@ -2015,6 +2051,15 @@
           "starts_at": "2027-05-23T17:00:00+02:00"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-857515ac803f6ce8e75f",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+      "content_sha256": "cd62ae5a4a4d997ffd593dc1a5549daf1e4aa177dbcb1183b6f8c370d265afb9",
+      "checked_at": "2026-11-21T22:29:23+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
     },
     {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
@@ -2583,6 +2628,15 @@
       ]
     },
     {
+      "candidate_id": "oa-index-a764d9a221b8659804fb",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/operacamion-tosca/",
+      "content_sha256": "1348b6b891b16660c62b0098ed5f3160e67ed688ef7e9e052ffcf009bd001333",
+      "checked_at": "2026-11-21T22:29:25+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2024/2025"
+    },
+    {
       "candidate_id": "oa-index-a77154badf30929b95dc",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
@@ -2933,6 +2987,15 @@
       ]
     },
     {
+      "candidate_id": "oa-index-b71caef92f53a984ed36",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/aida-6/",
+      "content_sha256": "4f64e6ac9d121d8bd1041ac62ca4ceab043da777c454997690bf69569c846d8d",
+      "checked_at": "2026-11-21T22:29:28+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
+    },
+    {
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
@@ -3027,6 +3090,60 @@
           "starts_at": "2027-07-01T20:00:00+02:00"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "content_sha256": "58713c19798541f9d6411b782da1b5d03a15c4fcc7951fde1aeff4114ff1d78b",
+      "checked_at": "2026-11-21T22:29:10+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Code: Unknown",
+          "composer": "Nicola Sani",
+          "venue": "Teatro Nazionale",
+          "date": "2027-05-19",
+          "starts_at": "2027-05-19T20:00:00+02:00"
+        },
+        {
+          "event_title": "Code: Unknown",
+          "composer": "Nicola Sani",
+          "venue": "Teatro Nazionale",
+          "date": "2027-05-21",
+          "starts_at": "2027-05-21T18:00:00+02:00"
+        },
+        {
+          "event_title": "Code: Unknown",
+          "composer": "Nicola Sani",
+          "venue": "Teatro Nazionale",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T16:30:00+02:00"
+        },
+        {
+          "event_title": "Code: Unknown",
+          "composer": "Nicola Sani",
+          "venue": "Teatro Nazionale",
+          "date": "2027-05-25",
+          "starts_at": "2027-05-25T20:00:00+02:00"
+        },
+        {
+          "event_title": "Code: Unknown",
+          "composer": "Nicola Sani",
+          "venue": "Teatro Nazionale",
+          "date": "2027-05-26",
+          "starts_at": "2027-05-26T20:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-c03e9ef77c219026cd5c",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/hans-werner-henze-100/",
+      "content_sha256": "ec98db8061718cb127a8fe5d7568ca7476b68b74f61fe6cdc4d8fdae88ff1616",
+      "checked_at": "2026-11-21T22:29:30+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
     },
     {
       "candidate_id": "oa-index-ce32b1104cdb579dc299",
@@ -3297,6 +3414,15 @@
           "venue": "Teatro Lirico di Cagliari"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-dcb294addc2abadaa6b0",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
+      "content_sha256": "ab71d66c83b1a222ba0c89f129f7fa8627e8f488d33211973d3b38697c18a1f4",
+      "checked_at": "2026-11-21T22:29:33+00:00",
+      "status": "out_of_monitored_season",
+      "official_season": "2025/2026"
     },
     {
       "candidate_id": "oa-index-dd11dbb7276e10032076",

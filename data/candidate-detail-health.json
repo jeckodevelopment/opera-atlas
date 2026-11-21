@@ -1,471 +1,57 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T21:32:33+00:00",
-  "attempted": 47,
+  "checked_at": "2026-11-21T22:29:33+00:00",
+  "attempted": 10,
   "outcomes": [
     {
-      "candidate_id": "oa-index-76fee4db156090b664aa",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no explicit official performance dates",
-        "authority_work:no explicit official performance dates",
-        "official_composer_credit:no explicit official performance dates",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-db7983de674f2fdccdda",
-      "outcome": "facts_found",
-      "rows": 6
-    },
-    {
-      "candidate_id": "oa-index-857515ac803f6ce8e75f",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a02901b14e6eae69df5c",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unverified Parma performance venue",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-cde049d5c057e0c050b2",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-a9e0eff95e96e71fd958",
-      "outcome": "facts_found",
-      "rows": 6
-    },
-    {
-      "candidate_id": "oa-index-dc6e8ff3bddba01de089",
-      "outcome": "facts_found",
-      "rows": 8
-    },
-    {
-      "candidate_id": "oa-index-84fd2f377ee783254524",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-877637d643bbfb668688",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:detail calendar conflicts with official 2027 brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:detail calendar conflicts with official 2027 brochure",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-8d766539708b0cb45f0a",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-a587b66c1f36bad78d65",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-a764d9a221b8659804fb",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-b71caef92f53a984ed36",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Rome event not in verified 2026/27 season",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:actual Rome auditorium not confirmed",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-c03e9ef77c219026cd5c",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-c92159dc5d75c3f1caf8",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:production not individually verified in official brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:production not individually verified in official brochure",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
       "outcome": "facts_found",
       "rows": 5
     },
     {
-      "candidate_id": "oa-index-dcb294addc2abadaa6b0",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-ecf1fda1dc67738cab86",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:no verified Trieste opera showtimes",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-eedca6da108bd27e8d30",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-16181b2d47cf17dea1e4",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:production not individually verified in official brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:production not individually verified in official brochure",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-19141fd504da67924d01",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing performance details section",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-20463bc8c3334dacecf8",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-207df538679e00657fe1",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-424f0996b47508273e69",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:production not individually verified in official brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:production not individually verified in official brochure",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-669472f18fdc8ab6bd13",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unambiguous official Rome composer credit missing",
-        "schema_event:no_evidence"
-      ],
+      "candidate_id": "oa-index-03fa95f1d0382ffee131",
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
       "candidate_id": "oa-index-67ef6842ba33e2d6015d",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-6d3d1cab3d4ed61b17c3",
-      "outcome": "facts_found",
-      "rows": 6
-    },
-    {
       "candidate_id": "oa-index-73348de657104a8b911f",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
       "candidate_id": "oa-index-7475e8c93d79a7a7d654",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Rome event not in verified 2026/27 season",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:conflicting official showtime for one day",
-        "schema_event:no_evidence"
-      ],
+      "candidate_id": "oa-index-857515ac803f6ce8e75f",
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-f74f890e392b92a8bd3b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:production not individually verified in official brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:production not individually verified in official brochure",
-        "schema_event:no_evidence"
-      ],
+      "candidate_id": "oa-index-a764d9a221b8659804fb",
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-f7ff40a261425be67b36",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:production not individually verified in official brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:production not individually verified in official brochure",
-        "schema_event:no_evidence"
-      ],
+      "candidate_id": "oa-index-b71caef92f53a984ed36",
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-03fa95f1d0382ffee131",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Rome event not in verified 2026/27 season",
-        "authority_work:no_evidence",
-        "official_composer_credit:Rome event not in verified 2026/27 season",
-        "schema_event:no_evidence"
-      ],
+      "candidate_id": "oa-index-c03e9ef77c219026cd5c",
+      "outcome": "verified_other_season",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-129b5be3f35d5762f8bb",
-      "outcome": "facts_found",
-      "rows": 4
-    },
-    {
-      "candidate_id": "oa-index-1e15e89ae5b2a2ec45f9",
-      "outcome": "facts_found",
-      "rows": 6
-    },
-    {
-      "candidate_id": "oa-index-24979e668286aa66e398",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:production not individually verified in official brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:production not individually verified in official brochure",
-        "schema_event:no_evidence"
-      ],
+      "candidate_id": "oa-index-dcb294addc2abadaa6b0",
+      "outcome": "verified_other_season",
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-2ab0ba26f1806086b52a",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-2ee53a13c924e5c8aa9f",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:production not individually verified in official brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:production not individually verified in official brochure",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-4e97b4b93dacf2f5c195",
-      "outcome": "facts_found",
-      "rows": 5
     }
   ]
 }

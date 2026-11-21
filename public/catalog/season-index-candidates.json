@@ -37,7 +37,7 @@
       "id": "oa-index-03fa95f1d0382ffee131",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/falstaff/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -533,7 +533,7 @@
       "id": "oa-index-67ef6842ba33e2d6015d",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -565,7 +565,7 @@
       "id": "oa-index-73348de657104a8b911f",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -573,7 +573,7 @@
       "id": "oa-index-7475e8c93d79a7a7d654",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/tosca-11/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -661,7 +661,7 @@
       "id": "oa-index-857515ac803f6ce8e75f",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -829,7 +829,7 @@
       "id": "oa-index-a764d9a221b8659804fb",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/operacamion-tosca/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -925,7 +925,7 @@
       "id": "oa-index-b71caef92f53a984ed36",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/aida-6/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -997,7 +997,7 @@
       "id": "oa-index-c03e9ef77c219026cd5c",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/hans-werner-henze-100/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -1109,7 +1109,7 @@
       "id": "oa-index-dcb294addc2abadaa6b0",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
