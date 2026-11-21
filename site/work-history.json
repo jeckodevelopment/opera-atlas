@@ -654,6 +654,46 @@
         "https://archiviostorico.operaroma.it/opera/la-cenerentola/",
         "https://www.rossinioperafestival.it/soggetti/la-cenerentola-ossia-la-bont-in-trionfo/"
       ]
+    },
+    "lohengrin": {
+      "librettist": "Richard Wagner",
+      "premiere_year": 1850,
+      "premiere_venue": "Großherzogliches Hoftheater",
+      "premiere_city": "Weimar",
+      "sources": [
+        "https://www.mariinsky.ru/en/playbill/repertoire/opera/lohengrin/",
+        "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+      ]
+    },
+    "maria-stuarda": {
+      "librettist": "Giuseppe Bardari, da Friedrich Schiller",
+      "premiere_year": 1835,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000002276",
+        "https://www.staatsoper.de/en/productions/maria-stuarda"
+      ]
+    },
+    "don-carlos": {
+      "librettist": "Joseph Méry e Camille du Locle",
+      "premiere_year": 1867,
+      "premiere_venue": "Opéra de Paris",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://corago.unibo.it/libretto/0001167451",
+        "https://www.metopera.org/discover/synopses/don-carlos/"
+      ]
+    },
+    "alcina": {
+      "librettist": "Autore anonimo, da un libretto di Antonio Fanzaglia ispirato all'Orlando furioso",
+      "premiere_year": 1735,
+      "premiere_venue": "Theatre Royal, Covent Garden",
+      "premiere_city": "Londra",
+      "sources": [
+        "https://www.gfhandel.org/handel/worklist/1to42.html",
+        "https://www.staatsoper.de/en/productions/alcina"
+      ]
     }
   },
   "works_by_id": {

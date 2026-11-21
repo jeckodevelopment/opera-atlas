@@ -442,6 +442,34 @@
       "title": "La Cenerentola",
       "composer": "Gioachino Rossini",
       "wikidata_id": "Q176700"
+    },
+    "lohengrin|richard wagner": {
+      "id": "oa-w-000069",
+      "slug": "lohengrin",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+    },
+    "maria stuarda|gaetano donizetti": {
+      "id": "oa-w-000070",
+      "slug": "maria-stuarda",
+      "title": "Maria Stuarda",
+      "composer": "Gaetano Donizetti",
+      "wikidata_id": "Q377685"
+    },
+    "don carlos|giuseppe verdi": {
+      "id": "oa-w-000071",
+      "slug": "don-carlos",
+      "title": "Don Carlos",
+      "composer": "Giuseppe Verdi",
+      "authority_url": "https://www.liricocagliari.it/evento/don-carlos/"
+    },
+    "alcina|georg friedrich händel": {
+      "id": "oa-w-000072",
+      "slug": "alcina",
+      "title": "Alcina",
+      "composer": "Georg Friedrich Händel",
+      "authority_url": "https://www.liricocagliari.it/evento/alcina/"
     }
   },
   "venues": {
@@ -637,6 +665,14 @@
       "name": "Teatro Valle Franca Valeri",
       "city": "Roma",
       "region": "Lazio"
+    },
+    "Trieste|Teatro Lirico Giuseppe Verdi": {
+      "id": "oa-v-000025",
+      "slug": "teatro-lirico-giuseppe-verdi",
+      "city_slug": "trieste",
+      "name": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "region": "Friuli-Venezia Giulia"
     }
   },
   "stagings": {
@@ -1632,6 +1668,38 @@
       "venue_id": "oa-v-000024",
       "slug": "la-cenerentola",
       "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "season": "2027"
+    },
+    "auto-6d3d1cab3d4ed61b": {
+      "id": "oa-s-000128",
+      "work_id": "oa-w-000069",
+      "venue_id": "oa-v-000025",
+      "slug": "lohengrin",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
+      "season": "2026"
+    },
+    "auto-84fd2f377ee78325": {
+      "id": "oa-s-000129",
+      "work_id": "oa-w-000070",
+      "venue_id": "oa-v-000023",
+      "slug": "maria-stuarda",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
+      "season": "2027"
+    },
+    "auto-8d766539708b0cb4": {
+      "id": "oa-s-000130",
+      "work_id": "oa-w-000071",
+      "venue_id": "oa-v-000023",
+      "slug": "don-carlos",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/",
+      "season": "2027"
+    },
+    "auto-a587b66c1f36bad7": {
+      "id": "oa-s-000131",
+      "work_id": "oa-w-000072",
+      "venue_id": "oa-v-000023",
+      "slug": "alcina",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/",
       "season": "2027"
     }
   },
@@ -5385,6 +5453,132 @@
       "staging_id": "oa-s-000127",
       "original_date": "2027-10-10",
       "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/"
+    },
+    "auto-6d3d1cab3d4ed61b|2026-11-13": {
+      "id": "oa-r-000641",
+      "staging_id": "oa-s-000128",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+    },
+    "auto-6d3d1cab3d4ed61b|2026-11-14": {
+      "id": "oa-r-000642",
+      "staging_id": "oa-s-000128",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+    },
+    "auto-6d3d1cab3d4ed61b|2026-11-15": {
+      "id": "oa-r-000643",
+      "staging_id": "oa-s-000128",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+    },
+    "auto-6d3d1cab3d4ed61b|2026-11-20": {
+      "id": "oa-r-000644",
+      "staging_id": "oa-s-000128",
+      "original_date": "2026-11-20",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+    },
+    "auto-6d3d1cab3d4ed61b|2026-11-21": {
+      "id": "oa-r-000645",
+      "staging_id": "oa-s-000128",
+      "original_date": "2026-11-21",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+    },
+    "auto-6d3d1cab3d4ed61b|2026-11-22": {
+      "id": "oa-r-000646",
+      "staging_id": "oa-s-000128",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+    },
+    "auto-84fd2f377ee78325|2027-05-19": {
+      "id": "oa-r-000647",
+      "staging_id": "oa-s-000129",
+      "original_date": "2027-05-19",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/"
+    },
+    "auto-84fd2f377ee78325|2027-05-20": {
+      "id": "oa-r-000648",
+      "staging_id": "oa-s-000129",
+      "original_date": "2027-05-20",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/"
+    },
+    "auto-84fd2f377ee78325|2027-05-21": {
+      "id": "oa-r-000649",
+      "staging_id": "oa-s-000129",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/"
+    },
+    "auto-84fd2f377ee78325|2027-05-22": {
+      "id": "oa-r-000650",
+      "staging_id": "oa-s-000129",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/"
+    },
+    "auto-84fd2f377ee78325|2027-05-23": {
+      "id": "oa-r-000651",
+      "staging_id": "oa-s-000129",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/"
+    },
+    "auto-8d766539708b0cb4|2027-01-22": {
+      "id": "oa-r-000652",
+      "staging_id": "oa-s-000130",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/"
+    },
+    "auto-8d766539708b0cb4|2027-01-24": {
+      "id": "oa-r-000653",
+      "staging_id": "oa-s-000130",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/"
+    },
+    "auto-8d766539708b0cb4|2027-01-26": {
+      "id": "oa-r-000654",
+      "staging_id": "oa-s-000130",
+      "original_date": "2027-01-26",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/"
+    },
+    "auto-8d766539708b0cb4|2027-01-28": {
+      "id": "oa-r-000655",
+      "staging_id": "oa-s-000130",
+      "original_date": "2027-01-28",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/"
+    },
+    "auto-8d766539708b0cb4|2027-01-30": {
+      "id": "oa-r-000656",
+      "staging_id": "oa-s-000130",
+      "original_date": "2027-01-30",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/"
+    },
+    "auto-a587b66c1f36bad7|2027-03-10": {
+      "id": "oa-r-000657",
+      "staging_id": "oa-s-000131",
+      "original_date": "2027-03-10",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/"
+    },
+    "auto-a587b66c1f36bad7|2027-03-11": {
+      "id": "oa-r-000658",
+      "staging_id": "oa-s-000131",
+      "original_date": "2027-03-11",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/"
+    },
+    "auto-a587b66c1f36bad7|2027-03-12": {
+      "id": "oa-r-000659",
+      "staging_id": "oa-s-000131",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/"
+    },
+    "auto-a587b66c1f36bad7|2027-03-13": {
+      "id": "oa-r-000660",
+      "staging_id": "oa-s-000131",
+      "original_date": "2027-03-13",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/"
+    },
+    "auto-a587b66c1f36bad7|2027-03-14": {
+      "id": "oa-r-000661",
+      "staging_id": "oa-s-000131",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/"
     }
   }
 }

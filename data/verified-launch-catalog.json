@@ -3866,6 +3866,134 @@
           "17:00"
         ]
       ]
+    },
+    {
+      "key": "auto-6d3d1cab3d4ed61b",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
+      "dates": [
+        [
+          "2026-11-13",
+          "17:00"
+        ],
+        [
+          "2026-11-14",
+          "15:00"
+        ],
+        [
+          "2026-11-15",
+          "15:00"
+        ],
+        [
+          "2026-11-20",
+          "17:00"
+        ],
+        [
+          "2026-11-21",
+          "17:00"
+        ],
+        [
+          "2026-11-22",
+          "15:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-84fd2f377ee78325",
+      "title": "Maria Stuarda",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
+      "dates": [
+        [
+          "2027-05-19",
+          "20:00"
+        ],
+        [
+          "2027-05-20",
+          "19:00"
+        ],
+        [
+          "2027-05-21",
+          "20:00"
+        ],
+        [
+          "2027-05-22",
+          "19:00"
+        ],
+        [
+          "2027-05-23",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-8d766539708b0cb4",
+      "title": "Don Carlos",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/",
+      "dates": [
+        [
+          "2027-01-22",
+          "19:00"
+        ],
+        [
+          "2027-01-24",
+          "17:00"
+        ],
+        [
+          "2027-01-26",
+          "19:00"
+        ],
+        [
+          "2027-01-28",
+          "19:00"
+        ],
+        [
+          "2027-01-30",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-a587b66c1f36bad7",
+      "title": "Alcina",
+      "composer": "Georg Friedrich Händel",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/",
+      "dates": [
+        [
+          "2027-03-10",
+          "20:00"
+        ],
+        [
+          "2027-03-11",
+          "19:00"
+        ],
+        [
+          "2027-03-12",
+          "20:00"
+        ],
+        [
+          "2027-03-13",
+          "19:00"
+        ],
+        [
+          "2027-03-14",
+          "17:00"
+        ]
+      ]
     }
   ]
 }
