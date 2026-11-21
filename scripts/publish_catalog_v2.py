@@ -24,7 +24,7 @@ CHANNELS = ("works", "venues", "stagings", "performances")
 def slugify(text: str) -> str:
     if not isinstance(text, str) or not text.strip():
         raise ValueError("cannot slugify empty name")
-    value = unicodedata.normalize("NFKD", text.strip().casefold())
+    value = unicodedata.normalize("NFKD", text.strip().casefold().replace("æ","ae").replace("œ","oe"))
     value = "".join(c for c in value if not unicodedata.combining(c))
     value = re.sub(r"^l['’]", "", value)  # L’italiana -> italiana
     value = re.sub(r"[^a-z0-9]+", "-", value).strip("-")
