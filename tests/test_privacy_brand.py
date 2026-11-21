@@ -42,7 +42,7 @@ class AtlasLegalBrandTests(unittest.TestCase):
     def test_home_theatre_order_and_single_opera_theatre_heading(self):
         app=(SITE/"app.js").read_text()
         css=(SITE/"styles.css").read_text()
-        self.assertIn('x.municipality==="Torino"',app)
+        self.assertIn('"torino/teatro-regio"',app)
         self.assertIn('x.venue==="Teatro Regio di Torino"',app)
         self.assertIn('x.venue==="Teatro Regio"',app)
         self.assertIn(".staging-group:not(.theatre-production) h3 a{font:inherit!important",css)
