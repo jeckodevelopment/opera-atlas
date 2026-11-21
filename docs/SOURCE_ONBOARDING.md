@@ -1177,3 +1177,7 @@ l'URL nell'audit con stato `not_in_official_season`; non consuma più
 risorse di ricerca o riconciliazione editoriale. Se ricompare nella
 stagione ufficiale, viene nuovamente classificato. Un fallimento della
 lettura dell'indice non autorizza a ritirare nessun candidato.
+
+### Roma: compositori con caratteri Unicode
+
+Il collector dei crediti della pagina ufficiale valida i nomi delle persone tramite lettere Unicode effettive, non il solo intervallo Latin-1. In particolare, la pagina `una-lady-macbeth-del-distretto-di-mzensk` riporta `Musica di Dmitrij Šostakovič`, con lettere ceche/slave «Š» e «č», che venivano prima respinte come non attendibili. Rimangono obbligatori il titolo h1, un credito `Musica di` univoco, la stagione 2026/27, l'indicazione `Teatro Costanzi` e date/orari puntuali; sono respinti ruoli, numeri e simboli inattesi. Il risultato resta una prova d'identità in attesa di sinossi, storia, manifesto storico e promozione canonica, non una pubblicazione immediata.
