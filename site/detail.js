@@ -125,14 +125,16 @@ async function appendSynopsis(event) {
         const candidate=await response.json();
         if(candidate.schema_version!==1)continue;
         doc=Array.isArray(candidate.works)
-          ? {synopses:Object.fromEntries(candidate.works.map(w=>[w.slug,w.synopsis]))}
+          ? {synopses:Object.fromEntries(candidate.works.map(w=>[w.work_id,w.synopsis]))}
           : candidate;
         if(doc.synopses)break;
       }catch{/* Try the last deployed static fallback. */}
     }
     if(!doc||!doc.synopses)return;
     const slug=event.work_slug||window.OperaAtlasCatalog.urls(event).work.split("/").filter(Boolean).pop();
-    const text=doc.synopses[slug];
+    const text=doc.synopses[event.work_id] ||
+      (doc.synopses_by_id?.[event.work_id]) ||
+      (event.work_slug==="la-boheme"?null:doc.synopses[slug]);
     if(typeof text!=="string"||!text.trim())return;
     const section=node("section","brief-synopsis");
     section.append(node("h2",null,"La trama"),node("p",null,text));
@@ -149,7 +151,10 @@ async function appendHistory(event) {
       if(!response.ok)continue;
       const doc=await response.json();
       if(doc.schema_version!==1||!doc.works||typeof doc.works!=="object")continue;
-      const history=Array.isArray(doc.works)?doc.works.find(w=>w.slug===slug)?.history:doc.works[slug];
+      const history=Array.isArray(doc.works)
+        ? doc.works.find(w=>w.work_id===event.work_id)?.history
+        : doc.works_by_id?.[event.work_id] ||
+          (event.work_slug==="la-boheme"?null:doc.works[slug]);
       if(!history)return;
       const historyParts=[];
       const librettists=String(history.librettist||"").trim().replace(/;\s*/g," e ");
@@ -326,7 +331,9 @@ function resolve(events) {
   const args=new URLSearchParams(window.location.search);
   const type=args.get("type"),key=args.get("key");
   if(!key || key.length>512)return {kind:null,events:[]};
-  if(type==="work")return {kind:"work",events:events.filter(e=>normalize(e.title)===key)};
+  if(type==="work")return {kind:"work",events:events.filter(e=>
+    (key.startsWith("oa-w-")?e.work_id===key:
+      normalize(e.title)+"|"+normalize(e.composer)===key))};
   if(type==="venue")return {kind:"venue",events:events.filter(e=>
     normalize(e.venue)+"|"+normalize(e.municipality)===key)};
   if(type==="performance") {
