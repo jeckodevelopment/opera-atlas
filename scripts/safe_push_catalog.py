@@ -78,6 +78,6 @@ def main():
     output=os.environ.get("GITHUB_OUTPUT")
     if output:
         with open(output,"a",encoding="utf-8") as stream:
-            stream.write(f"deferred={str(result == 'deferred').lower()}\\n")
+            stream.write(f"deferred={str(result == 'deferred').lower()}\n")
 if __name__=="__main__":
     main()
