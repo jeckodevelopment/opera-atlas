@@ -4,18 +4,35 @@
   "works": [
     {
       "source_key": "bologna-comunale-opera-2027",
-      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
-      "title": "La straniera",
-      "composer": "Vincenzo Bellini",
-      "synopsis": "Nel castello di Montolino, il mistero che circonda Alaide coinvolge Arturo e Isoletta in una vicenda di passioni, identità nascoste e rivalità.",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
+      "title": "Accabadora",
+      "composer": "Francesco Filidei",
+      "synopsis": "In una comunità sarda, Maria cresce accanto a una donna chiamata a soccorrere chi è prossimo alla morte: affetti, scelte e responsabilità si intrecciano.",
       "history": {
-        "librettist": "Felice Romani",
-        "premiere_year": 1829,
-        "premiere_venue": "Teatro alla Scala",
-        "premiere_city": "Milano",
+        "librettist": "Francesco Filidei; Manuelle Mureddu",
+        "premiere_year": 2026,
+        "premiere_venue": "Théâtre du Jeu de Paume",
+        "premiere_city": "Aix-en-Provence",
         "sources": [
-          "https://archiviostorico.operaroma.it/opera/la-straniera/",
-          "https://www.studibelliniani.eu/biografia"
+          "https://www.festival-aix.com/programmation/opera/accabadora",
+          "https://brahms.ircam.fr/fr/work/accabadora",
+          "https://www.tcbo.it/evento/opera/accabadora-2027/"
+        ]
+      }
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
+      "title": "I due Foscari",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Nella Venezia del Quattrocento, il doge Francesco Foscari si trova diviso fra il dovere di governo e il destino del figlio Jacopo, condannato all'esilio.",
+      "history": {
+        "librettist": "Francesco Maria Piave",
+        "premiere_year": 1844,
+        "premiere_venue": "Teatro Argentina",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/i-due-foscari/"
         ]
       }
     },
@@ -38,34 +55,18 @@
     },
     {
       "source_key": "bologna-comunale-opera-2027",
-      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
-      "title": "Vanessa",
-      "composer": "Samuel Barber",
-      "synopsis": "Vanessa attende il ritorno dell'amore perduto, ma l'arrivo del giovane Anatol sconvolge anche la vita di Erika, fra speranze e sentimenti taciuti.",
+      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
+      "title": "La straniera",
+      "composer": "Vincenzo Bellini",
+      "synopsis": "Nel castello di Montolino, il mistero che circonda Alaide coinvolge Arturo e Isoletta in una vicenda di passioni, identità nascoste e rivalità.",
       "history": {
-        "librettist": "Gian Carlo Menotti",
-        "premiere_year": 1958,
-        "premiere_venue": "Metropolitan Opera",
-        "premiere_city": "New York",
+        "librettist": "Felice Romani",
+        "premiere_year": 1829,
+        "premiere_venue": "Teatro alla Scala",
+        "premiere_city": "Milano",
         "sources": [
-          "https://www.bso.org/works/barber-vanessa",
-          "https://www.glyndebourne.com/vanessa-synopsis/"
-        ]
-      }
-    },
-    {
-      "source_key": "bologna-comunale-opera-2027",
-      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
-      "title": "I due Foscari",
-      "composer": "Giuseppe Verdi",
-      "synopsis": "Nella Venezia del Quattrocento, il doge Francesco Foscari si trova diviso fra il dovere di governo e il destino del figlio Jacopo, condannato all'esilio.",
-      "history": {
-        "librettist": "Francesco Maria Piave",
-        "premiere_year": 1844,
-        "premiere_venue": "Teatro Argentina",
-        "premiere_city": "Roma",
-        "sources": [
-          "https://archiviostorico.operaroma.it/opera/i-due-foscari/"
+          "https://archiviostorico.operaroma.it/opera/la-straniera/",
+          "https://www.studibelliniani.eu/biografia"
         ]
       }
     },
@@ -87,87 +88,35 @@
     },
     {
       "source_key": "bologna-comunale-opera-2027",
-      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
-      "title": "Accabadora",
-      "composer": "Francesco Filidei",
-      "synopsis": "In una comunità sarda, Maria cresce accanto a una donna chiamata a soccorrere chi è prossimo alla morte: affetti, scelte e responsabilità si intrecciano.",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
+      "title": "Vanessa",
+      "composer": "Samuel Barber",
+      "synopsis": "Vanessa attende il ritorno dell'amore perduto, ma l'arrivo del giovane Anatol sconvolge anche la vita di Erika, fra speranze e sentimenti taciuti.",
       "history": {
-        "librettist": "Francesco Filidei; Manuelle Mureddu",
-        "premiere_year": 2026,
-        "premiere_venue": "Théâtre du Jeu de Paume",
-        "premiere_city": "Aix-en-Provence",
+        "librettist": "Gian Carlo Menotti",
+        "premiere_year": 1958,
+        "premiere_venue": "Metropolitan Opera",
+        "premiere_city": "New York",
         "sources": [
-          "https://www.festival-aix.com/programmation/opera/accabadora",
-          "https://brahms.ircam.fr/fr/work/accabadora",
-          "https://www.tcbo.it/evento/opera/accabadora-2027/"
+          "https://www.bso.org/works/barber-vanessa",
+          "https://www.glyndebourne.com/vanessa-synopsis/"
         ]
       }
     },
     {
-      "source_key": "scala-season-2026-27",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
-      "title": "Leonora",
-      "composer": "Ferdinando Paër",
-      "synopsis": "Per salvare il marito Florestano, imprigionato ingiustamente, Leonora si traveste da Fedele e lavora nel carcere: il suo coraggio sfida il governatore Pizzarro.",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
+      "title": "L'arca di Noè",
+      "composer": "Benjamin Britten",
+      "synopsis": "Noè costruisce un'arca per salvare la famiglia e gli animali dal diluvio. Dopo la tempesta, una colomba torna con un ramo d'ulivo, annunciando il ritorno della pace.",
       "history": {
-        "librettist": "Giovanni Schmidt",
-        "premiere_year": 1804,
-        "premiere_venue": "Kleines Kurfürstliches Theater",
-        "premiere_city": "Dresda",
+        "librettist": "Testo tratto dal Chester Mystery Play",
+        "premiere_year": 1958,
+        "premiere_venue": "Orford Church",
+        "premiere_city": "Orford",
         "sources": [
-          "https://www.opernprojekt.uni-mainz.de/details/werk?id=1322",
-          "https://librettidopera.it/leonora/rid.html"
-        ]
-      }
-    },
-    {
-      "source_key": "scala-season-2026-27",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
-      "title": "Les Pêcheurs de perles",
-      "composer": "Georges Bizet",
-      "synopsis": "A Ceylon, l'amicizia fra i pescatori Nadir e Zurga è minacciata dal ritorno di Leïla, amata da entrambi; il loro conflitto mette alla prova promesse e lealtà.",
-      "history": {
-        "librettist": "Michel Carré e Eugène Cormon",
-        "premiere_year": 1863,
-        "premiere_venue": "Théâtre-Lyrique",
-        "premiere_city": "Parigi",
-        "sources": [
-          "https://pad.philharmoniedeparis.fr/EXPLOITATION/ermes/player.aspx?id=0999417",
-          "https://www.opera-comique.com/fr/spectacles/les-pecheurs-de-perles"
-        ]
-      }
-    },
-    {
-      "source_key": "scala-season-2026-27",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
-      "title": "Dido and Æneas",
-      "composer": "Henry Purcell",
-      "synopsis": "La regina Didone accoglie a Cartagine Enea e se ne innamora. Un inganno delle streghe spinge l’eroe a ripartire per l’Italia, lasciando Didone nella disperazione.",
-      "history": {
-        "librettist": "Nahum Tate",
-        "premiere_year": 1689,
-        "premiere_venue": "Scuola di Josias Priest a Chelsea",
-        "premiere_city": "Londra",
-        "sources": [
-          "https://www.naxos.com/LibrettiSungText/Libretti?id=49E7F4F6-F251-495D-B275-6D5C390FA24F",
-          "https://imslp.org/wiki/Dido_and_Aeneas%2C_Z.626_(Purcell%2C_Henry)"
-        ]
-      }
-    },
-    {
-      "source_key": "scala-season-2026-27",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
-      "title": "The Rake's Progress",
-      "composer": "Igor' Stravinskij",
-      "synopsis": "Tom Rakewell abbandona Anne Trulove inseguendo ricchezza e piaceri. Guidato dal misterioso Nick Shadow, cade in una spirale di inganni che mette a rischio la sua ragione.",
-      "history": {
-        "librettist": "W. H. Auden e Chester Kallman",
-        "premiere_year": 1951,
-        "premiere_venue": "Teatro La Fenice",
-        "premiere_city": "Venezia",
-        "sources": [
-          "https://www.boosey.com/pages/cr/catalogue/cat_detail?musicid=4670",
-          "https://asac.labiennale.org/attivita/musica/272795"
+          "https://www.brittenpearsarts.org/music/noyes-fludde",
+          "https://www.boosey.com/pages/opera/moredetails?musicid=5735"
         ]
       }
     },
@@ -208,6 +157,23 @@
     },
     {
       "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Manrico e il conte di Luna si contendono l'amore di Leonora, senza sapere di essere fratelli. La vendetta della zingara Azucena trascina i protagonisti verso un esito tragico.",
+      "history": {
+        "librettist": "Salvatore Cammarano e Leone Emanuele Bardare",
+        "premiere_year": 1853,
+        "premiere_venue": "Teatro Apollo",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://movio.beniculturali.it/asrm/ilteatronellazio/it/117/il-trovatore/show/26/198",
+          "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+        ]
+      }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
       "title": "Iphigénie en Tauride",
       "composer": "Christoph Willibald Gluck",
@@ -225,18 +191,103 @@
     },
     {
       "source_key": "opera-roma-season-2026-27",
-      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
-      "title": "Il trovatore",
-      "composer": "Giuseppe Verdi",
-      "synopsis": "Manrico e il conte di Luna si contendono l'amore di Leonora, senza sapere di essere fratelli. La vendetta della zingara Azucena trascina i protagonisti verso un esito tragico.",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/",
+      "title": "La rondine",
+      "composer": "Giacomo Puccini",
+      "synopsis": "Magda, attratta da Ruggero, lascia la vita mondana per un amore sincero. Ma il suo passato e le aspettative del giovane mettono in crisi la loro felicità.",
       "history": {
-        "librettist": "Salvatore Cammarano e Leone Emanuele Bardare",
-        "premiere_year": 1853,
-        "premiere_venue": "Teatro Apollo",
-        "premiere_city": "Roma",
+        "librettist": "Giuseppe Adami, Alfred Maria Willner e Heinz Reichert",
+        "premiere_year": 1917,
+        "premiere_venue": "Théâtre de l'Opéra",
+        "premiere_city": "Monte Carlo",
         "sources": [
-          "https://movio.beniculturali.it/asrm/ilteatronellazio/it/117/il-trovatore/show/26/198",
-          "https://www.operaroma.it/spettacoli/il-trovatore-3/"
+          "https://www.puccinimuseum.org/giacomo-puccini/le-opere/la-rondine/",
+          "https://www.opera.mc/en/seasons/24-25/la-rondine"
+        ]
+      }
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "synopsis": "Vitellia spinge Sesto a tradire l'imperatore Tito, suo amico, per vendicarsi. Di fronte alla congiura, Tito sceglie il perdono anziché la condanna.",
+      "history": {
+        "librettist": "Caterino Mazzolà, da Pietro Metastasio",
+        "premiere_year": 1791,
+        "premiere_venue": "Teatro Nazionale",
+        "premiere_city": "Praga",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000003860",
+          "https://www.operadeparis.fr/en/season-26-27/opera/la-clemenza-di-tito"
+        ]
+      }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "synopsis": "La regina Didone accoglie a Cartagine Enea e se ne innamora. Un inganno delle streghe spinge l’eroe a ripartire per l’Italia, lasciando Didone nella disperazione.",
+      "history": {
+        "librettist": "Nahum Tate",
+        "premiere_year": 1689,
+        "premiere_venue": "Scuola di Josias Priest a Chelsea",
+        "premiere_city": "Londra",
+        "sources": [
+          "https://www.naxos.com/LibrettiSungText/Libretti?id=49E7F4F6-F251-495D-B275-6D5C390FA24F",
+          "https://imslp.org/wiki/Dido_and_Aeneas%2C_Z.626_(Purcell%2C_Henry)"
+        ]
+      }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "synopsis": "Per salvare il marito Florestano, imprigionato ingiustamente, Leonora si traveste da Fedele e lavora nel carcere: il suo coraggio sfida il governatore Pizzarro.",
+      "history": {
+        "librettist": "Giovanni Schmidt",
+        "premiere_year": 1804,
+        "premiere_venue": "Kleines Kurfürstliches Theater",
+        "premiere_city": "Dresda",
+        "sources": [
+          "https://www.opernprojekt.uni-mainz.de/details/werk?id=1322",
+          "https://librettidopera.it/leonora/rid.html"
+        ]
+      }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "synopsis": "A Ceylon, l'amicizia fra i pescatori Nadir e Zurga è minacciata dal ritorno di Leïla, amata da entrambi; il loro conflitto mette alla prova promesse e lealtà.",
+      "history": {
+        "librettist": "Michel Carré e Eugène Cormon",
+        "premiere_year": 1863,
+        "premiere_venue": "Théâtre-Lyrique",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://pad.philharmoniedeparis.fr/EXPLOITATION/ermes/player.aspx?id=0999417",
+          "https://www.opera-comique.com/fr/spectacles/les-pecheurs-de-perles"
+        ]
+      }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "synopsis": "Tom Rakewell abbandona Anne Trulove inseguendo ricchezza e piaceri. Guidato dal misterioso Nick Shadow, cade in una spirale di inganni che mette a rischio la sua ragione.",
+      "history": {
+        "librettist": "W. H. Auden e Chester Kallman",
+        "premiere_year": 1951,
+        "premiere_venue": "Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.boosey.com/pages/cr/catalogue/cat_detail?musicid=4670",
+          "https://asac.labiennale.org/attivita/musica/272795"
         ]
       }
     }
