@@ -179,6 +179,12 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
         if seed and (normalized(seed["title"])!=normalized(title)
                      or normalized(seed["composer"])!=normalized(composer)):
             raise ValueError("official source contradicts verified opera identity seed")
+        if seed:
+            # Official theatre headings often use display-only ALL CAPS.
+            # Preserve the independently verified full author spelling from
+            # the exact source-bound card only after the composer and title
+            # agree; the original event facts remain unchanged for auditing.
+            title,composer=seed["title"],seed["composer"]
         # The remote research cache may already contain this candidate with
         # an incomplete editorial record. Reconcile its *exact official URL*
         # and credited identity before the publication transaction, instead
