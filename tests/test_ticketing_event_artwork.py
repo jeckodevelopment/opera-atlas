@@ -28,17 +28,6 @@ class TicketingArtworkTests(unittest.TestCase):
     def test_frontend_renders_only_canonical_ticketing_image(self):
         root=Path(__file__).resolve().parents[1]
         js=json.dumps(str(root/"site/image-client.js"))
-        code=r"""
-const fs=require("node:fs"),vm=require("node:vm");
-const ctx={window:{},document:{querySelector:()=>null},console,URL};
-vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(PATH,"utf8"),ctx);
-const img=ctx.window.OperaAtlasImages;
-const art="https://www.ticketone.it/obj/media/IT-eventim/teaser/evo/artwork/2027/code-unknow-biglietti.jpg";
-const origFetch=ctx.fetch;
-"""
-        # Static inspect anchors the rendering allowlist; behavioral tests exercise
-        # the client with a controlled V2 feed and reject wrong identities.
         code = '''
 const fs=require("node:fs"),vm=require("node:vm"),assert=require("node:assert/strict");
 const source=fs.readFileSync(%s,"utf8");
