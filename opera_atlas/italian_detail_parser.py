@@ -37,7 +37,7 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
     from scripts.collect_candidate_details import FirstHeading
     heading=FirstHeading()
     heading.feed(html)
-    if normalized(heading.first or "")!=normalized(title):
+    if normalized(heading.first or "").replace("’","\u0027")!=normalized(title).replace("’","\u0027"):
         raise ValueError("official detail heading mismatches work")
     if source_key=="carlo-felice-season-2026-27":
         cutoff=re.search(r"(?i)\bDove\s*:",text)
