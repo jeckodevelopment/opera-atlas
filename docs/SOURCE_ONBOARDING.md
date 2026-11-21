@@ -1068,3 +1068,7 @@ La rappresentazione dei dittici (*L'Arlésienne* / *Pagliacci*) resta un requisi
 ## Roma: ripristino indice opere 2026/2027 (21/11/2026)
 
 L'indice storico `/opere/` non è disponibile nell'ultima scansione. L'indice ufficiale corrente è `https://www.operaroma.it/genre/opera/`, con produzioni della stagione 2026/27 e link ai dettagli sotto `/spettacoli/<slug>/`. Il monitor usa il nuovo indirizzo con allowlist HTTPS esatta e controlli robots.txt per ogni lettura. La pubblicazione delle recite rimane subordinata all'estrazione verificata di date, orari, titolo e compositore dai dettagli ufficiali. La prima pagina dell'indice non è una certificazione dell'intera stagione: la paginazione deve essere misurata separatamente.
+
+## Pubblicazione rapida di candidate già verificate
+
+Il workflow `refresh-catalog` esegue in apertura, **senza rete**, la promozione centrale delle evidenze già raccolte (`scripts.auto_catalogue`), la compilazione degli eventuali manifesti storici da Commons già catalogati e la validazione del feed. Questa fase non aspetta il termine della scansione nazionale e non dipende dal teatro specifico. Le candidate incomplete o contraddittorie restano escluse con la motivazione registrata; gli ID canonici non sono ricreati. Il checkpoint pubblica insieme registry, JSON v2, schede editoriali, poster con provenienza e health, con push non forzato e retry in caso di conflitto. Una seconda promozione, identica e condivisa, segue il normale recupero di nuove fonti nella stessa esecuzione. Test: `tests/test_early_candidate_publication.py`.
