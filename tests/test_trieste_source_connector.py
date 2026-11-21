@@ -40,9 +40,7 @@ class TriesteSourceTests(unittest.TestCase):
         self.assertTrue(eligible(SOURCE_KEY, DETAIL_URL))
         self.assertFalse(eligible(SOURCE_KEY,
                          "https://www.teatroverdi-trieste.com/it/news/lohengrin/"))
-        self.assertFalse(eligible(SOURCE_KEY,
-                         "https://other.example/it/spettacoli/lohengrin/") is False
-                         and False)  # only the official extraction can accept host
+        # Host restrictions are enforced by index extraction and detail parsing.
 
     def test_index_selects_only_official_productions(self):
         entries = ["lohengrin", "don-giovanni", "lelisir-damore",
