@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "policy": "Conditional owner-authorized monitoring of exactly three official season listing pages; fresh robots permission required at every run. Factual links only; no following discovered pages, no inference of title/composer/dates.",
+  "policy": "Conditional owner-authorized monitoring of explicitly listed official season indexes; fresh robots permission required for each retrieval. Factual production links only, no inference of composers or performance dates.",
   "sources": [
     {
       "key": "scala-season-2026-27",
@@ -36,6 +36,13 @@
       "url": "https://www.teatromassimo.it/la-stagione-2026-27/",
       "access_status": "approved",
       "min_links": 6
+    },
+    {
+      "key": "carlo-felice-season-2026-27",
+      "official_url": "https://www.carlofelice.it/",
+      "url": "https://www.carlofelice.it/rassegna-stagione-opera-danza-musical-2026-27/",
+      "access_status": "approved",
+      "min_links": 7
     }
   ]
 }
