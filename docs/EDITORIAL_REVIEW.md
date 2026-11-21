@@ -71,6 +71,25 @@ Il generatore grammaticale rimane conservativo: non è un LLM e non può
 scrivere trame per ogni opera. La mancanza di una fonte non è un motivo
 per riportare una presentazione generica come se fosse una sinossi.
 
+## Riuso sicuro dei contenuti già verificati
+
+Il refresh riutilizza le sinossi e i dati di prima rappresentazione pubblicati
+per un'unica composizione riconosciuta con titolo e compositore coincidenti.
+Quando esiste un riferimento editoriale specifico con QID Wikidata, il riuso
+richiede **anche** la corrispondenza del QID: gli alias e le opere omonime
+non autorizzano accorpamenti per titolo. Se il registro contiene più
+composizioni dello stesso titolo, si usano esclusivamente i campi riferiti
+al work ID immutabile. Un secondo teatro può riutilizzare un
+arricchimento completo già raccolto da un'altra fonte soltanto con
+Wikidata QID e compositore identici.
+
+I nuovi report distinguono `authority_not_unique`,
+`invalid_authority_data`, `verified_plot_unavailable` e
+`verified_premiere_history_unavailable`; non aggregano più tutti
+gli errori in un generico `ValueError`. Le candidate non risolte
+continuano a essere monitorate, senza impedire nuove pubblicazioni
+che superano i controlli.
+
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
 `.github/workflows/refresh-catalog.yml` esegue
