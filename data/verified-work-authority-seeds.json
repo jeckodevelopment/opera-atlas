@@ -138,6 +138,57 @@
       }
     },
     {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/",
+      "title": "Alcina",
+      "composer": "Georg Friedrich Händel",
+      "synopsis": "La maga Alcina tiene Ruggiero prigioniero su un'isola incantata. Bradamante arriva travestita per liberarlo, mentre l'amore di Alcina rende fragile il suo stesso potere.",
+      "history": {
+        "librettist": "Autore anonimo, da un libretto di Antonio Fanzaglia ispirato all'Orlando furioso",
+        "premiere_year": 1735,
+        "premiere_venue": "Theatre Royal, Covent Garden",
+        "premiere_city": "Londra",
+        "sources": [
+          "https://www.gfhandel.org/handel/worklist/1to42.html",
+          "https://www.staatsoper.de/en/productions/alcina"
+        ]
+      }
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/",
+      "title": "Don Carlos",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "L'infante Don Carlos ama Elisabetta, promessa al padre Filippo II per ragioni politiche. Tra la gelosia del re, la ragion di Stato e l'amicizia di Rodrigo, l'amore diventa un conflitto senza uscita.",
+      "history": {
+        "librettist": "Joseph Méry e Camille du Locle",
+        "premiere_year": 1867,
+        "premiere_venue": "Opéra de Paris",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://corago.unibo.it/libretto/0001167451",
+          "https://www.metopera.org/discover/synopses/don-carlos/"
+        ]
+      }
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
+      "title": "Maria Stuarda",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "Maria Stuarda, prigioniera di Elisabetta I, spera nella libertà ma la rivalità tra le due regine precipita. Il loro scontro conduce Maria alla condanna e a un ultimo gesto di dignità.",
+      "history": {
+        "librettist": "Giuseppe Bardari, da Friedrich Schiller",
+        "premiere_year": 1835,
+        "premiere_venue": "Teatro alla Scala",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000002276",
+          "https://www.staatsoper.de/en/productions/maria-stuarda"
+        ]
+      }
+    },
+    {
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
       "title": "Il mondo alla roversa o sia le donne che comandano",
@@ -339,6 +390,23 @@
         "sources": [
           "https://www.boosey.com/pages/cr/catalogue/cat_detail?musicid=4670",
           "https://asac.labiennale.org/attivita/musica/272795"
+        ]
+      }
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "synopsis": "Elsa, accusata ingiustamente, viene difesa da un misterioso cavaliere. Lui la sposa a condizione che non gli chieda mai il nome, ma il dubbio mette in pericolo la loro unione.",
+      "history": {
+        "librettist": "Richard Wagner",
+        "premiere_year": 1850,
+        "premiere_venue": "Großherzogliches Hoftheater",
+        "premiere_city": "Weimar",
+        "sources": [
+          "https://www.mariinsky.ru/en/playbill/repertoire/opera/lohengrin/",
+          "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
         ]
       }
     }
