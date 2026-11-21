@@ -4,7 +4,7 @@ import unittest
 from datetime import date
 
 from scripts.auto_work_research import (
-    claim_ids, resolve_identity, choose_candidates, research,make_synopsis,
+    claim_ids, resolve_identity, choose_candidates, research,
     official_title_hint, wiki_excerpt
 )
 
