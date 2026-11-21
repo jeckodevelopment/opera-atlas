@@ -557,7 +557,7 @@
       "id": "oa-index-6d3d1cab3d4ed61b17c3",
       "source_key": "verdi-trieste-season-2026-27",
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -653,7 +653,7 @@
       "id": "oa-index-84fd2f377ee783254524",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -701,7 +701,7 @@
       "id": "oa-index-8d766539708b0cb45f0a",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/don-carlos/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -821,7 +821,7 @@
       "id": "oa-index-a587b66c1f36bad78d65",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/alcina/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
