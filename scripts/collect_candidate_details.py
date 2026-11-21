@@ -271,7 +271,10 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     other=[]
     for item in possible:
         path=urlsplit(item["official_url"]).path.rstrip("/").split("/")[-1]
-        slug=path.removesuffix(".html")
+        slug=(urlsplit(item["official_url"]).path.rstrip("/").split("/")[-2]
+              if item["source_key"]=="donizetti-opera-2026" and
+                 __import__("re").fullmatch(r"20\d{2}-\d{2}-\d{2}",path)
+              else path).removesuffix(".html")
         if (item["source_key"] in ("scala-season-2026-27","arena-festival-2027")
             and (slug in known_slugs or
                  (item["source_key"]=="arena-festival-2027" and
