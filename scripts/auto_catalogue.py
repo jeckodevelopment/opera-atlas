@@ -1046,6 +1046,18 @@ def main():
         today=date.today(),history=historical,require_image=True)
     report=remove_retries_for_published_works(
         report,candidates,prior_to_new_work_publication,next_facts)
+    # The known-opera stage necessarily reports an unknown canonical work
+    # before the verified-new-work stage runs. Prefer the later, actionable
+    # blocker when the same candidate has a validated official identity and
+    # is waiting solely on an authentic work-specific image.
+    image_blocked={entry["candidate_id"] for entry in newworks["auto_skipped"]
+                   if entry.get("reason")=="verified_work_image_missing"}
+    if image_blocked:
+        report["auto_skipped"]=[
+            entry for entry in report["auto_skipped"]
+            if not (entry.get("candidate_id") in image_blocked
+                    and entry.get("reason")=="unknown_work_needs_authority_data")]
+    report["auto_skipped"]+=newworks["auto_skipped"]
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]
