@@ -106,7 +106,8 @@ class NationalIndexTests(unittest.TestCase):
             "fenice-opera-2026-27","parma-opera-2027",
             "massimo-season-2026-27","carlo-felice-season-2026-27",
             "donizetti-opera-2026","teatro-grande-opera-2026",
-            "maggio-fiorentino-calendar-2027","opera-roma-season-2026-27"})
+            "maggio-fiorentino-calendar-2027","opera-roma-season-2026-27",
+            "bologna-comunale-opera-2027"})
 
     def test_incomplete_index_is_rejected(self):
         with self.assertRaises(ValueError):
