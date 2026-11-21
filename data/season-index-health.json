@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T11:54:46+00:00",
+  "checked_at": "2026-11-21T12:00:54+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
@@ -37,6 +37,18 @@
       "status": "success",
       "links": 7,
       "new_review_candidates": 7
+    },
+    {
+      "key": "donizetti-opera-2026",
+      "status": "unavailable_or_invalid",
+      "reason": "ValueError",
+      "links": 0
+    },
+    {
+      "key": "teatro-grande-opera-2026",
+      "status": "success",
+      "links": 2,
+      "new_review_candidates": 2
     }
   ]
 }

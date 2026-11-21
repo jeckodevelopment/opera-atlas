@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T11:54:51+00:00",
+  "checked_at": "2026-11-21T12:00:59+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-5ab298c2300ec275c2a3",
@@ -53,15 +53,15 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-b4180540983902f703af",
+      "candidate_id": "oa-index-58413a3bbbee689b82bc",
       "status": "model_not_configured"
     },
     {
-      "candidate_id": "oa-index-dfe824fe3301174d2165",
+      "candidate_id": "oa-index-76fee4db156090b664aa",
       "status": "model_not_configured"
     },
     {
-      "candidate_id": "oa-index-f942d4e01d9578a95e87",
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "status": "model_not_configured"
     }
   ]

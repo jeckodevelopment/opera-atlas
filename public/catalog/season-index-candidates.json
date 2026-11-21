@@ -7,7 +7,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/turandot/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-0215b13de4c993b44706",
@@ -111,7 +111,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-1ee4c3ee491b262e30a9",
@@ -128,6 +128,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-20T21:15:46+00:00"
+    },
+    {
+      "id": "oa-index-212db41a4c6f7afcbcda",
+      "source_key": "teatro-grande-opera-2026",
+      "official_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T12:00:43+00:00",
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-24cebce7bb9240992447",
@@ -199,7 +207,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-4f17bf18295b36283c77",
@@ -239,7 +247,7 @@
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-58413a3bbbee689b82bc",
@@ -247,7 +255,7 @@
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-5a26b109198336516529",
@@ -263,7 +271,7 @@
       "official_url": "https://www.teatromassimo.it/event/die-zauberflote/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-5b26439c840108c32944",
@@ -303,7 +311,7 @@
       "official_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-74ce9c00c158699bd2cc",
@@ -319,7 +327,15 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
+    },
+    {
+      "id": "oa-index-795566dacc905fc5e7f2",
+      "source_key": "teatro-grande-opera-2026",
+      "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
+      "status": "needs_review",
+      "first_seen": "2026-11-21T12:00:43+00:00",
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-7ec9d774a82a64ecaa73",
@@ -343,7 +359,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-8676dac9bb2f419b8a63",
@@ -359,7 +375,7 @@
       "official_url": "https://www.teatromassimo.it/event/ernani-2/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-8e417ad6e506eaf0929d",
@@ -375,7 +391,7 @@
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-93c5f576f90532fd4b77",
@@ -423,7 +439,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-a77154badf30929b95dc",
@@ -431,7 +447,7 @@
       "official_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-a79283af9834d87bf204",
@@ -463,7 +479,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/nabucco/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-b372b317894fe260b18e",
@@ -471,7 +487,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-b4180540983902f703af",
@@ -479,7 +495,7 @@
       "official_url": "https://www.teatromassimo.it/event/falstaff-2/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-b436ab84dadc93595c82",
@@ -583,7 +599,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-dffa1564495e6f1f12a7",
@@ -631,7 +647,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -639,7 +655,7 @@
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-ebc8b45c7f453cedb0c4",
@@ -663,7 +679,7 @@
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-ef019182f129777d75f0",
@@ -695,7 +711,7 @@
       "official_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-f3b183b4da3667d91d5d",
@@ -735,7 +751,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T11:54:39+00:00"
+      "last_seen": "2026-11-21T12:00:43+00:00"
     },
     {
       "id": "oa-index-fc275749d78556b44e50",
