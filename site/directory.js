@@ -144,6 +144,8 @@ async function initialize(){
       }
     }
     for(const e of data.performances){
+      // A program is a performance, not a new canonical opera.
+      if(section==="opere"&&e.program_id)continue;
       if(typeof e.title!=="string"||typeof e.venue!=="string"||!e.local_date)continue;
       const urls=window.OperaAtlasCatalog.urls(e);
       const url=section==="opere"?urls.work:urls.venue;
