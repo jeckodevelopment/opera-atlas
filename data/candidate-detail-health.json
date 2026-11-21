@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T19:24:39+00:00",
-  "attempted": 20,
+  "checked_at": "2026-11-21T19:30:44+00:00",
+  "attempted": 17,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -27,9 +27,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
+      "candidate_id": "oa-index-a77154badf30929b95dc",
       "outcome": "facts_found",
-      "rows": 5
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
@@ -37,24 +37,12 @@
       "rows": 3
     },
     {
-      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "outcome": "facts_found",
-      "rows": 8
+      "rows": 3
     },
     {
-      "candidate_id": "oa-index-a02901b14e6eae69df5c",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unverified Parma performance venue",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -83,14 +71,40 @@
       "rows": 2
     },
     {
-      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
-      "outcome": "facts_found",
-      "rows": 7
+      "candidate_id": "oa-index-207df538679e00657fe1",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
-      "candidate_id": "oa-index-a77154badf30929b95dc",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a02901b14e6eae69df5c",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unverified Parma performance venue",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-b756ca3bab6062c03ef8",
@@ -138,35 +152,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-207df538679e00657fe1",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
-      "outcome": "facts_found",
-      "rows": 3
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",

@@ -46,8 +46,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T19:24:39+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T19:30:44+00:00"
     },
     {
       "id": "oa-index-05e3307781f3a1f0668e",
@@ -133,9 +133,9 @@
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-21T19:24:39+00:00"
+      "last_seen": "2026-11-21T19:30:44+00:00"
     },
     {
       "id": "oa-index-184e57e1cd9f38d554d5",
@@ -191,7 +191,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-20f405e0ffdc62c59cf3",
@@ -199,7 +199,7 @@
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-212db41a4c6f7afcbcda",
@@ -262,8 +262,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T19:24:39+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T19:30:44+00:00"
     },
     {
       "id": "oa-index-3b731f9ff09ab7dc5294",
@@ -351,7 +351,7 @@
       "official_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:11:04+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-54f0eebbc01abdef253e",
@@ -389,7 +389,7 @@
       "id": "oa-index-5ab298c2300ec275c2a3",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/die-zauberflote/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-21T19:23:40+00:00"
     },
@@ -431,13 +431,13 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-6cd199691f7145a4d048",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-21T19:23:40+00:00"
     },
@@ -455,7 +455,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-790b965de8129382aa04",
@@ -469,9 +469,9 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -503,7 +503,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-8676dac9bb2f419b8a63",
@@ -517,7 +517,7 @@
       "id": "oa-index-8a4ea2e4cf761a147ffb",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/ernani-2/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-21T19:23:40+00:00"
     },
@@ -590,8 +590,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T19:24:39+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T19:30:44+00:00"
     },
     {
       "id": "oa-index-9c8f948971aebfd24d5e",
@@ -599,7 +599,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -615,7 +615,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-a0eba5854831ebbf26c0",
@@ -639,7 +639,7 @@
       "official_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:01:08+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-a79283af9834d87bf204",
@@ -687,7 +687,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-b4180540983902f703af",
@@ -719,7 +719,7 @@
       "official_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
       "status": "needs_review",
       "first_seen": "2026-11-21T13:11:04+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-b809ddd0a4d8d8cb712e",
@@ -741,9 +741,9 @@
       "id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:50:36.994Z",
-      "last_seen": "2026-11-21T19:24:39+00:00"
+      "last_seen": "2026-11-21T19:30:44+00:00"
     },
     {
       "id": "oa-index-bc862239853e956d5c69",
@@ -783,7 +783,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-ce32b1104cdb579dc299",
@@ -846,8 +846,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-21T19:24:39+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-21T19:30:44+00:00"
     },
     {
       "id": "oa-index-dfe824fe3301174d2165",
@@ -887,7 +887,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -911,7 +911,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -951,7 +951,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     },
     {
       "id": "oa-index-ef019182f129777d75f0",
@@ -1063,7 +1063,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-21T19:23:40+00:00"
+      "last_seen": "2026-11-21T19:29:42+00:00"
     }
   ]
 }
