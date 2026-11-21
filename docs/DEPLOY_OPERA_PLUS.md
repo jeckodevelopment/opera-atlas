@@ -29,12 +29,12 @@ Il publisher copia soltanto i file frontend previsti, crea `/atlas` se il padre 
 
 ## Prima pubblicazione controllata
 
-1. Unire la PR applicativa dopo il superamento dei test. Il nuovo workflow, in modalità `push`, non esegue la pubblicazione finché la variabile **`ATLAS_DEPLOY_ENABLED` non è `true`**.
+1. Unire la PR applicativa dopo il superamento dei test. Il workflow pubblica automaticamente ogni modifica a HTML/CSS/JS/SVG su `main` (senza dipendere dalla variabile `ATLAS_DEPLOY_ENABLED`), ma apre la connessione SFTP soltanto dopo la suite di test verde.
 2. Dal repository `opera-atlas` aprire *Actions → Publish Opera Atlas to opera.plus/atlas → Run workflow*. Questo primo rilascio manuale usa lo stesso codice del deploy successivo.
 3. Il publisher crea una cartella temporanea locale con i soli 19 file statici autorizzati e li carica direttamente via SFTP/22. Non rimuove file estranei sul server. Il controllo funzionale della pubblicazione va eseguito tramite HTTPS dopo il caricamento.
 4. Collaudare su **https://opera.plus/atlas/**: Elenco e Calendario; filtri città/raggio/periodo; scheda Opera; scheda Teatro; scheda Produzione; produzione condivisa; manifesto, sinossi e storia; fonti e Privacy; link esterni «Come arrivare».
 5. Aprire in una nuova sessione browser e verificare che nessun collegamento rimandi a `/dev/opera-atlas/`, che CSS/JS restino disponibili nei percorsi annidati e che i JSON GitHub continuino ad aggiornarsi senza deploy FTP.
-6. Solo dopo collaudo riuscito, impostare la variabile repository **`ATLAS_DEPLOY_ENABLED=true`** per attivare i rilasci UI automatici a ogni push su main che cambia gli asset HTML/CSS/JS/SVG o `.htaccess`, lo script publisher o il workflow. I normali refresh del catalogo JSON non avviano questo publisher.
+6. I rilasci UI successivi partono automaticamente a ogni push su `main` che cambia HTML/CSS/JS/SVG, `.htaccess`, lo script publisher o il workflow. I normali refresh del catalogo JSON non avviano questo publisher. In caso di errore dei test o configurazione SFTP incompleta, il job fallisce e non dichiara il deploy riuscito.
 
 ## Verifica del cutover e dismissione del vecchio flusso
 
