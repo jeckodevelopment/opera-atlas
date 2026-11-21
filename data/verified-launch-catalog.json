@@ -2257,6 +2257,33 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-144db2827af86d96",
+      "title": "Les contes d'Hoffmann",
+      "composer": "Jacques Offenbach",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "dates": [
+        [
+          "2026-12-20",
+          "17:00"
+        ],
+        [
+          "2026-12-27",
+          "15:30"
+        ],
+        [
+          "2026-12-30",
+          "20:00"
+        ],
+        [
+          "2027-01-02",
+          "17:00"
+        ]
+      ]
     }
   ]
 }

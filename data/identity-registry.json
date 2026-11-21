@@ -219,6 +219,13 @@
       "slug": "i-puritani",
       "title": "I puritani",
       "composer": "Vincenzo Bellini"
+    },
+    "les contes d'hoffmann|jacques offenbach": {
+      "id": "oa-w-000037",
+      "slug": "les-contes-d-hoffmann",
+      "title": "Les contes d'Hoffmann",
+      "composer": "Jacques Offenbach",
+      "wikidata_id": "Q335012"
     }
   },
   "venues": {
@@ -937,6 +944,14 @@
       "slug": "la-traviata",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
       "season": "2027"
+    },
+    "auto-144db2827af86d96": {
+      "id": "oa-s-000074",
+      "work_id": "oa-w-000037",
+      "venue_id": "oa-v-000016",
+      "slug": "les-contes-d-hoffmann",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "season": "2026"
     }
   },
   "performances": {
@@ -3117,6 +3132,30 @@
       "staging_id": "oa-s-000073",
       "original_date": "2027-01-22",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027"
+    },
+    "auto-144db2827af86d96|2026-12-20": {
+      "id": "oa-r-000364",
+      "staging_id": "oa-s-000074",
+      "original_date": "2026-12-20",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+    },
+    "auto-144db2827af86d96|2026-12-27": {
+      "id": "oa-r-000365",
+      "staging_id": "oa-s-000074",
+      "original_date": "2026-12-27",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+    },
+    "auto-144db2827af86d96|2026-12-30": {
+      "id": "oa-r-000366",
+      "staging_id": "oa-s-000074",
+      "original_date": "2026-12-30",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+    },
+    "auto-144db2827af86d96|2027-01-02": {
+      "id": "oa-r-000367",
+      "staging_id": "oa-s-000074",
+      "original_date": "2027-01-02",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
     }
   }
 }

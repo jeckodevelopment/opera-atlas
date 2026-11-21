@@ -430,6 +430,17 @@
         "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
         "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
       ]
+    },
+    "les-contes-d-hoffmann": {
+      "librettist": "Jules Barbier",
+      "premiere_year": 1881,
+      "premiere_venue": "Opéra-Comique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q335012",
+        "https://catalogue.bnf.fr/ark:/12148/cb44000242h",
+        "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+      ]
     }
   },
   "works_by_id": {
