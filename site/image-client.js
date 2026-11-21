@@ -191,6 +191,13 @@ window.OperaAtlasImages=Object.freeze((()=>{
       ? "Genova - Teatro Carlo Felice.jpg" : null;
     // An explicitly sourced and credited venue photograph may be hosted outside Commons.
     const external=event?.photo_url;
+    if(title==="Teatro Nazionale" && city==="roma" &&
+       external==="https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg" &&
+       event?.photo_source_url==="https://www.turismoroma.it/it/luoghi/teatro-nazionale" && event?.photo_credit){
+      return {src:external,alt:"Fotografia del Teatro Nazionale a Roma",
+        fallbackSrc:poster(title),sourceUrl:event.photo_source_url,
+        credit:event.photo_credit,license:event.photo_license||""};
+    }
     if(typeof external==="string" && /^https:\/\/salentosagreeventi\.it\/media\/places\/[a-zA-Z0-9/_-]+\.webp$/.test(external)
        && event?.photo_source_url && event?.photo_credit){
       return {src:external,alt:"Fotografia del "+title+" a "+(event?.municipality||event?.city),
