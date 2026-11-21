@@ -8,6 +8,18 @@
       "synopsis_source": "https://www.themorgan.org/music-manuscripts-and-printed-music/248689"
     },
     {
+      "slug": "die-zauberflote",
+      "composer": "Wolfgang Amadeus Mozart",
+      "wikidata_id": "Q5064",
+      "synopsis_source": "https://www.teatromassimo.it/event/die-zauberflote/"
+    },
+    {
+      "slug": "ernani",
+      "composer": "Giuseppe Verdi",
+      "wikidata_id": "Q211279",
+      "synopsis_source": "https://www.teatromassimo.it/event/ernani-2/"
+    },
+    {
       "slug": "esule-di-roma",
       "composer": "Gaetano Donizetti",
       "wikidata_id": "Q471164",
@@ -18,6 +30,12 @@
       "composer": "Giuseppe Verdi",
       "wikidata_id": "Q318455",
       "synopsis_source": "https://www.glyndebourne.com/opera-archive/explore-our-operas/explore-falstaff/falstaff-synopsis/"
+    },
+    {
+      "slug": "hansel-und-gretel",
+      "composer": "Engelbert Humperdinck",
+      "wikidata_id": "Q1099668",
+      "synopsis_source": "https://www.teatrolafenice.it/event/hansel-und-gretel/"
     },
     {
       "slug": "i-capuleti-e-i-montecchi",
