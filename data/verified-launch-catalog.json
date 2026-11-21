@@ -3835,6 +3835,37 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-d69ff42443cfe2ea",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Valle Franca Valeri",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "dates": [
+        [
+          "2027-10-01",
+          "20:00"
+        ],
+        [
+          "2027-10-03",
+          "17:00"
+        ],
+        [
+          "2027-10-05",
+          "20:00"
+        ],
+        [
+          "2027-10-07",
+          "20:00"
+        ],
+        [
+          "2027-10-10",
+          "17:00"
+        ]
+      ]
     }
   ]
 }

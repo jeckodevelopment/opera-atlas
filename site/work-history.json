@@ -644,6 +644,16 @@
         "https://www.mariinsky.ru/en/playbill/repertoire/opera/izmailova/",
         "https://www.boosey.com/pages/Opera/catalogue/cat_detail?musicid=455"
       ]
+    },
+    "la-cenerentola": {
+      "librettist": "Jacopo Ferretti",
+      "premiere_year": 1817,
+      "premiere_venue": "Teatro Valle",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/la-cenerentola/",
+        "https://www.rossinioperafestival.it/soggetti/la-cenerentola-ossia-la-bont-in-trionfo/"
+      ]
     }
   },
   "works_by_id": {

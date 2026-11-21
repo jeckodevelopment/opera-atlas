@@ -435,6 +435,13 @@
       "title": "Una Lady Macbeth del distretto di Mzensk",
       "composer": "Dmitrij Šostakovič",
       "authority_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+    },
+    "la cenerentola|gioachino rossini": {
+      "id": "oa-w-000068",
+      "slug": "la-cenerentola",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "wikidata_id": "Q176700"
     }
   },
   "venues": {
@@ -622,6 +629,14 @@
       "name": "Teatro Lirico di Cagliari",
       "city": "Cagliari",
       "region": "Sardegna"
+    },
+    "Roma|Teatro Valle Franca Valeri": {
+      "id": "oa-v-000024",
+      "slug": "teatro-valle-franca-valeri",
+      "city_slug": "roma",
+      "name": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "region": "Lazio"
     }
   },
   "stagings": {
@@ -1609,6 +1624,14 @@
       "venue_id": "oa-v-000017",
       "slug": "una-lady-macbeth-del-distretto-di-mzensk",
       "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
+      "season": "2027"
+    },
+    "auto-d69ff42443cfe2ea": {
+      "id": "oa-s-000127",
+      "work_id": "oa-w-000068",
+      "venue_id": "oa-v-000024",
+      "slug": "la-cenerentola",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
       "season": "2027"
     }
   },
@@ -5332,6 +5355,36 @@
       "staging_id": "oa-s-000126",
       "original_date": "2027-05-22",
       "source_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+    },
+    "auto-d69ff42443cfe2ea|2027-10-01": {
+      "id": "oa-r-000636",
+      "staging_id": "oa-s-000127",
+      "original_date": "2027-10-01",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/"
+    },
+    "auto-d69ff42443cfe2ea|2027-10-03": {
+      "id": "oa-r-000637",
+      "staging_id": "oa-s-000127",
+      "original_date": "2027-10-03",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/"
+    },
+    "auto-d69ff42443cfe2ea|2027-10-05": {
+      "id": "oa-r-000638",
+      "staging_id": "oa-s-000127",
+      "original_date": "2027-10-05",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/"
+    },
+    "auto-d69ff42443cfe2ea|2027-10-07": {
+      "id": "oa-r-000639",
+      "staging_id": "oa-s-000127",
+      "original_date": "2027-10-07",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/"
+    },
+    "auto-d69ff42443cfe2ea|2027-10-10": {
+      "id": "oa-r-000640",
+      "staging_id": "oa-s-000127",
+      "original_date": "2027-10-10",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/"
     }
   }
 }
