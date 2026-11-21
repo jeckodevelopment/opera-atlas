@@ -1168,7 +1168,7 @@ con opere singole. La verifica rimane comune alle fonti 2026 e 2027.
 ### Stagioni Petruzzelli e collegamenti storici
 
 Per il Petruzzelli 2026/2027, i collegamenti candidati devono trovarsi
-**dopo** l'intestazione della stagione esatta (`OPERA E BALLETTO 2026`
+**dopo** il testo visibile della stagione esatta, anche quando il template WordPress lo rende in un elemento diverso da `h1`/`h2`, (`OPERA E BALLETTO 2026`
 o `OPERA E BALLETTO 2027`) e prima della fine della sezione principale;
 link di navigazione, footer e stagioni precedenti non sono titoli nuovi.
 Dopo un'acquisizione verificata (numero minimo di schede soddisfatto),
