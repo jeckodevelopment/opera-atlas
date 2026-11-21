@@ -908,3 +908,55 @@ e del report del workflow sul sito del teatro e sul repository.
 Fonte ufficiale: https://www.tcbo.it/stagione-futura/?_tipo=opera. La pagina distingue 9 produzioni operistiche, 38 rappresentazioni annunciate nel 2027, di cui due produzioni al Teatro Auditorium Manzoni. Gli orari non vengono mai inferiti dalla pagina di stagione: il parser `opera_atlas/bologna_detail_parser.py` legge esclusivamente le singole schede `/evento/opera/<slug>-<anno>/` e richiede titolo H1, compositore esplicitamente dichiarato, data, orario e sede nel blocco «Date e turni». I concerti, la danza e le attività dell'Accademia non sono assunti come opera.
 
 La nuova fonte `bologna-comunale-opera-2027` entra nella scansione giornaliera robot-gated e genera prima candidati e prove. Solo le identità canoniche univoche sono promosse automaticamente; le nuove composizioni richiedono riconciliazione d'autorità automatica, e i casi irrisolti restano fuori dalle recite pubbliche. Le recite al Manzoni non vengono mai attribuite alla sala storica di Largo Respighi. La pagina del Comunale storico è già censita; la sede provvisoria Nouveau non viene ripristinata. Dopo il merge la scansione completa può iniziare automaticamente dal workflow `refresh-catalog` senza deploy SFTP.
+
+## Petruzzelli 2027 — copertura dell'intera stagione lirica
+
+L'indice ufficiale `opera-e-balletto-2027` individua nove collegamenti;
+è **un elenco di candidati**, non nove produzioni liriche pubblicabili.
+Per tutte le singole opere il parser ora distingue il **titolo e
+compositore nell'H1** da un **credito operistico esplicito** nella
+presentazione ufficiale. Per esempio, *La bohème* non porta il compositore
+nell'H1, ma lo riporta nell'indicazione `presenta l’opera La Bohème di
+Giacomo Puccini`; si associa quindi alla *Bohème* di Puccini, non a quella
+di Leoncavallo. I direttori d'orchestra e i nomi citati nelle conferenze
+non costituiscono prova del compositore; se due crediti divergono,
+l'intera scheda è bloccata.
+
+Il dettaglio ufficiale deve avere calendario 2027, `Orari Spettacoli`,
+date e ore complete e controlli di giorno della settimana. La raccolta
+può produrre prove candidate anche per opere **non ancora nel registro
+canonico**: l'identità resta subordinata alla ricerca indipendente
+Wikidata di titolo+compositore. Tale ricerca prende il titolo soltanto
+dalle evidenze validate del teatro, **mai dallo slug della URL** (che
+potrebbe rappresentare un balletto o un programma misto). A quel punto
+la normale transazione di catalogazione può pubblicare la scheda senza
+aggiustamenti manuali successivi, se tutte le verifiche sono soddisfatte.
+
+Prime prove ufficiali completate (27 recite con orario):
+
+- *La bohème*, Giacomo Puccini — 8 recite, 17–27/12/2027, pubblicabile
+  come opera **già canonica**.
+- *Le nozze di Figaro*, Wolfgang Amadeus Mozart — 6 recite, 12–19/09/2027.
+- *Fidelio*, Ludwig van Beethoven — 5 recite, 19–25/11/2027.
+- *Zenobia*, Niccolò Piccinni — 4 recite, 27/01–02/02/2027.
+- *Arlecchino*, Ferruccio Busoni — 4 recite, 15–23/05/2027.
+
+Le righe candidate hanno le date e gli orari copiati solo dalla rispettiva
+pagina ufficiale e la stessa chiave di fonte del crawler. Il programma
+*L'Arlésienne* / *Pagliacci* è una **serata composta da due lavori**:
+non va attribuito alla sola opera *Pagliacci*. I dati preesistenti che
+attribuivano le sette recite al solo Leoncavallo devono essere esclusi
+dalla promozione finché non è disponibile una rappresentazione di
+programma misto esplicita, collegata ad entrambe le opere e ai relativi
+compositori. *Lo schiaccianoci* è balletto, mentre il collegamento
+*La notte di San Nicola* è una pagina storica del 2022, non spettacolo
+della stagione 2027. Non devono aumentare i contatori delle recite
+operistiche del 2027.
+
+**Collaudi:** `python -m unittest discover -s tests -v`, inclusi
+`test_petruzzelli_full_season`. Prima e dopo il refresh verificare
+separatamente `data/candidate-detail-evidence.json`,
+`data/auto-work-intelligence.json` e il catalogo canonico v2. Le 27
+prove candidate non equivalgono a 27 recite già pubblicate; il
+pubblicatore rapido può promuovere subito solo le otto recite de
+*La bohème* di Puccini. Nessun deploy SFTP o API a pagamento.
