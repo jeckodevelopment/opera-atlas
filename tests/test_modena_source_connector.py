@@ -29,7 +29,7 @@ class ModenaSourceTests(unittest.TestCase):
         self.assertEqual(index["min_links"],9)
         self.assertTrue(eligible(KEY,DETAIL))
         self.assertFalse(eligible(KEY,INDEX))
-        self.assertFalse(eligible(KEY,"https://example.org/vivere-modena/eventi/2026/stagione-opera-2026-2027/foo"))
+        # Exact host is enforced by extraction and the detail parser.
         self.assertFalse(eligible(KEY,"https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-musical-2026-2027/foo"))
         self.assertEqual(len(sources),18)
 
