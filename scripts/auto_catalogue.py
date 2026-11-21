@@ -31,6 +31,7 @@ VENUE_BY_SOURCE={
     "teatro-grande-opera-2026":("Brescia","Teatro Grande"),
     "maggio-fiorentino-calendar-2027":("Firenze","Teatro del Maggio Musicale Fiorentino"),
     "opera-roma-season-2026-27":("Roma","Teatro dell\u0027Opera di Roma"),
+    "petruzzelli-opera-2026":("Bari","Teatro Petruzzelli"),
     "petruzzelli-opera-2027":("Bari","Teatro Petruzzelli"),
     "bologna-comunale-opera-2027":("Bologna","Teatro Comunale di Bologna"),
 }
