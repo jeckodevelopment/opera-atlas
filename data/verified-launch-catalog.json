@@ -2284,6 +2284,45 @@
           "17:00"
         ]
       ]
+    },
+    {
+      "key": "auto-52ff40865866999b",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/",
+      "dates": [
+        [
+          "2027-02-21",
+          "19:00"
+        ],
+        [
+          "2027-02-23",
+          "20:00"
+        ],
+        [
+          "2027-02-24",
+          "20:00"
+        ],
+        [
+          "2027-02-25",
+          "20:00"
+        ],
+        [
+          "2027-02-26",
+          "20:00"
+        ],
+        [
+          "2027-02-27",
+          "18:00"
+        ],
+        [
+          "2027-02-28",
+          "16:30"
+        ]
+      ]
     }
   ]
 }

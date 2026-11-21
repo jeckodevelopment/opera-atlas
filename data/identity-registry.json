@@ -357,6 +357,14 @@
       "name": "Teatro del Maggio Musicale Fiorentino",
       "city": "Firenze",
       "region": "Toscana"
+    },
+    "Roma|Teatro dell'Opera di Roma": {
+      "id": "oa-v-000017",
+      "slug": "teatro-dell-opera-di-roma",
+      "city_slug": "roma",
+      "name": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "region": "Lazio"
     }
   },
   "stagings": {
@@ -952,6 +960,14 @@
       "slug": "les-contes-d-hoffmann",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
       "season": "2026"
+    },
+    "auto-52ff40865866999b": {
+      "id": "oa-s-000075",
+      "work_id": "oa-w-000021",
+      "venue_id": "oa-v-000017",
+      "slug": "lucia-di-lammermoor",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -3156,6 +3172,48 @@
       "staging_id": "oa-s-000074",
       "original_date": "2027-01-02",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+    },
+    "auto-52ff40865866999b|2027-02-21": {
+      "id": "oa-r-000368",
+      "staging_id": "oa-s-000075",
+      "original_date": "2027-02-21",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+    },
+    "auto-52ff40865866999b|2027-02-23": {
+      "id": "oa-r-000369",
+      "staging_id": "oa-s-000075",
+      "original_date": "2027-02-23",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+    },
+    "auto-52ff40865866999b|2027-02-24": {
+      "id": "oa-r-000370",
+      "staging_id": "oa-s-000075",
+      "original_date": "2027-02-24",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+    },
+    "auto-52ff40865866999b|2027-02-25": {
+      "id": "oa-r-000371",
+      "staging_id": "oa-s-000075",
+      "original_date": "2027-02-25",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+    },
+    "auto-52ff40865866999b|2027-02-26": {
+      "id": "oa-r-000372",
+      "staging_id": "oa-s-000075",
+      "original_date": "2027-02-26",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+    },
+    "auto-52ff40865866999b|2027-02-27": {
+      "id": "oa-r-000373",
+      "staging_id": "oa-s-000075",
+      "original_date": "2027-02-27",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+    },
+    "auto-52ff40865866999b|2027-02-28": {
+      "id": "oa-r-000374",
+      "staging_id": "oa-s-000075",
+      "original_date": "2027-02-28",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
     }
   }
 }

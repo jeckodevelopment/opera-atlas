@@ -2930,6 +2930,42 @@
       ]
     },
     {
+      "id": "curated:auto-52ff40865866999b:2027-02-21",
+      "starts_at": "2027-02-21T19:00:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-52ff40865866999b:2027-02-23",
+      "starts_at": "2027-02-23T20:00:00+01:00",
+      "local_date": "2027-02-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
       "id": "curated:auto-74ce9c00c158699b:2027-02-23",
       "starts_at": "2027-02-23T20:00:00+01:00",
       "local_date": "2027-02-23",
@@ -2966,6 +3002,24 @@
       ]
     },
     {
+      "id": "curated:auto-52ff40865866999b:2027-02-24",
+      "starts_at": "2027-02-24T20:00:00+01:00",
+      "local_date": "2027-02-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
       "id": "curated:scala-boheme-puccini-2027:2027-02-24",
       "starts_at": "2027-02-24T20:00:00+01:00",
       "local_date": "2027-02-24",
@@ -2981,6 +3035,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-52ff40865866999b:2027-02-25",
+      "starts_at": "2027-02-25T20:00:00+01:00",
+      "local_date": "2027-02-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
       ]
     },
     {
@@ -3017,6 +3089,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
+      "id": "curated:auto-52ff40865866999b:2027-02-26",
+      "starts_at": "2027-02-26T20:00:00+01:00",
+      "local_date": "2027-02-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
       ]
     },
     {
@@ -3071,6 +3161,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-52ff40865866999b:2027-02-27",
+      "starts_at": "2027-02-27T18:00:00+01:00",
+      "local_date": "2027-02-27",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
       ]
     },
     {
@@ -3161,6 +3269,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:auto-52ff40865866999b:2027-02-28",
+      "starts_at": "2027-02-28T16:30:00+01:00",
+      "local_date": "2027-02-28",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
       ]
     },
     {
