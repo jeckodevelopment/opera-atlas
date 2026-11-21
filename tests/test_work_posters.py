@@ -127,6 +127,69 @@ class PosterPublicationTests(unittest.TestCase):
                                 today=date(2026,11,21),max_pages=2)
                 self.assertEqual(len(calls),2) # no repeat within cooldown
 
+    def test_anna_bolena_and_leoncavallo_receive_distinct_archival_images(self):
+        with TemporaryDirectory() as temp:
+            root=Path(temp)
+            with patch.object(posters,"EVIDENCE",root/"empty-evidence.json"),\\
+                 patch.object(posters,"OUTPUT",root/"work-posters.json"),\\
+                 patch.object(posters,"HEALTH",root/"health.json"),\\
+                 patch.object(posters,"connect"),patch.object(posters,"migrate"),\\
+                 patch.object(posters,"canonical_sources",return_value=[]):
+                result=posters.publish(network_enabled=False,max_pages=0)
+        anna=result["works"]["oa-w-000035"]
+        leoncavallo=result["works"]["oa-w-000007"]
+        puccini=result["works"]["oa-w-000024"]
+        self.assertEqual(anna["kind"],"archival_work_image")
+        self.assertIn("Anna_Bolena",anna["image_url"])
+        self.assertEqual(leoncavallo["kind"],"archival_work_image")
+        self.assertIn("Leoncavallo",leoncavallo["image_url"])
+        self.assertNotEqual(leoncavallo["image_url"],puccini.get("image_url"))
+        self.assertEqual(puccini["kind"],"original_editorial_cover")
+
+    def test_retries_old_cooldowns_when_poster_policy_changes(self):
+        with TemporaryDirectory() as temp:
+            root=Path(temp)
+            source_url="https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+            (root/"evidence.json").write_text(json.dumps({
+                "schema_version":2,"posters":{},
+                "checks":{source_url:{"retry_after":"2026-11-27"}}}),encoding="utf-8")
+            calls=[]
+            class FakeDB:
+                def execute(self,*args,**kwargs):
+                    class Cursor:
+                        def fetchone(self):return {"id":1}
+                    return Cursor()
+                def close(self):pass
+            def fetch(db,*,source_id,url,network_enabled):
+                calls.append(url)
+                return FetchResult(url,"<html></html>","x"*64,13)
+            with patch.object(posters,"EVIDENCE",root/"evidence.json"),\\
+                 patch.object(posters,"OUTPUT",root/"work-posters.json"),\\
+                 patch.object(posters,"HEALTH",root/"health.json"),\\
+                 patch.object(posters,"connect",return_value=FakeDB()),\\
+                 patch.object(posters,"migrate"),\\
+                 patch.object(posters,"canonical_sources",return_value=[{
+                     "slug":"anna-bolena","work_id":"oa-w-000035",
+                     "title":"Anna Bolena","source_key":"scala",
+                     "official_root":"https://www.teatroallascala.org/",
+                     "source_url":source_url}]):
+                posters.publish(network_enabled=True,fetcher=fetch,today=date(2026,11,21),max_pages=1)
+                self.assertEqual(calls,[source_url])
+                saved=json.loads((root/"evidence.json").read_text())
+                self.assertEqual(saved["checks"][source_url]["retry_after"],"2026-11-23")
+                self.assertEqual(saved["checks"][source_url]["policy_version"],posters.POSTER_POLICY_VERSION)
+                posters.publish(network_enabled=True,fetcher=fetch,today=date(2026,11,21),max_pages=1)
+                self.assertEqual(len(calls),1)
+
+    def test_twitter_specific_image_can_replace_unrelated_open_graph(self):
+        html='''<meta property="og:image" content="/static/upload/con/conductor.jpg">
+        <meta name="twitter:image" content="/static/upload/ann/anna-bolena-poster.jpg">'''
+        got=posters.extract_official_poster(
+            html,"https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
+            "Anna Bolena")
+        self.assertIsNotNone(got)
+        self.assertTrue(got["image_url"].endswith("anna-bolena-poster.jpg"))
+
     def test_homonymous_operas_get_distinct_permanent_poster_identities(self):
         from scripts.publish_catalog_v2 import REGISTRY
         works=list(json.loads(REGISTRY.read_text(encoding="utf-8"))["works"].values())
