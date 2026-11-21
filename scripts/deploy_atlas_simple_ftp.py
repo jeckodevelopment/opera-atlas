@@ -60,10 +60,10 @@ def publish(env=None, runner=subprocess.run):
         completed = runner(['lftp', '-f', '/dev/stdin'], input=commands, text=True, capture_output=True)
         if completed.returncode:
             # Do not dump client output: some clients echo usernames or commands.
-            codes = sorted(set(re.findall(r'\\b[45][0-9]{2}\\b', (completed.stderr or '') + ' ' + (completed.stdout or ''))))
+            codes = sorted(set(re.findall(r'\b[45][0-9]{2}\b', (completed.stderr or '') + ' ' + (completed.stdout or ''))))
             diagnostic = ('FTP reply ' + ','.join(codes) + '; ') if codes else ''
             # Retain actionable lftp error text but redact all known credentials.
-            lines = ((completed.stderr or '') + '\\n' + (completed.stdout or '')).splitlines()
+            lines = ((completed.stderr or '') + '\n' + (completed.stdout or '')).splitlines()
             descriptions = []
             for line in lines:
                 if any(word in line.lower() for word in ('error', 'failed', 'unknown', 'invalid', 'denied', 'not found', 'not connected', 'no such', 'login', 'mirror:')):
@@ -71,7 +71,7 @@ def publish(env=None, runner=subprocess.run):
                     for secret in (username, password, host):
                         if secret:
                             safe = safe.replace(secret, '[redacted]')
-                    safe = re.sub(r'(?i)(pass(?:word)?[=: ]+)[^\\s]+', r'\\1[redacted]', safe)
+                    safe = re.sub(r'(?i)(pass(?:word)?[=: ]+)[^\s]+', r'\1[redacted]', safe)
                     descriptions.append(safe[:300])
             summary = '; '.join(descriptions[:3])
             raise RuntimeError(diagnostic + 'FTP upload failed (lftp exit code ' + str(completed.returncode) + '). ' + (summary or 'No diagnostic text returned by lftp.'))
