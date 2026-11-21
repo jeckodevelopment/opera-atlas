@@ -176,6 +176,26 @@ def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
     if not 140<=len(extract)<=12000:return None
     return extract[:6000]
 
+ATTRIBUTION=ROOT/"data"/"verified-work-editorial-attribution.json"
+
+def validated_editorial_attributions() -> dict[str,dict]:
+    """Trusted source references bound to one exact composer and Wikidata QID."""
+    if not ATTRIBUTION.exists():return {}
+    doc=json.loads(ATTRIBUTION.read_text(encoding="utf-8"))
+    if doc.get("schema_version")!=1 or not isinstance(doc.get("works"),list):
+        raise ValueError("invalid composition-specific editorial references")
+    result={}
+    for row in doc["works"]:
+        if (not isinstance(row,dict) or set(row)!={"slug","composer","wikidata_id","synopsis_source"}
+            or not isinstance(row["slug"],str) or not re.fullmatch(r"[a-z0-9-]+",row["slug"])
+            or not isinstance(row["composer"],str) or not row["composer"].strip()
+            or not isinstance(row["wikidata_id"],str) or not re.fullmatch(r"Q[1-9][0-9]*",row["wikidata_id"])
+            or not isinstance(row["synopsis_source"],str) or not row["synopsis_source"].startswith("https://")
+            or row["slug"] in result):
+            raise ValueError("invalid or duplicate editorial attribution")
+        result[row["slug"]]=row
+    return result
+
 def preverified_work_material() -> dict[str, dict]:
     """Already-sourced original synopses and histories, outside canonical works.
 
@@ -188,11 +208,13 @@ def preverified_work_material() -> dict[str, dict]:
     if synopses.get("schema_version")!=1 or histories.get("schema_version")!=1:
         raise ValueError("invalid preverified material")
     result={}
+    attributions=validated_editorial_attributions()
     for slug,summary in synopses["synopses"].items():
         record=histories["works"].get(slug)
         if (isinstance(summary,str) and 45<=len(summary.strip())<=300
                 and validate_history(record)):
-            result[slug]={"synopsis":summary.strip(),"history":record}
+            result[slug]={"synopsis":summary.strip(),"history":record,
+                          "attribution":attributions.get(slug)}
     return result
 
 def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
@@ -301,10 +323,16 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             identity=(resolve(official_title_hint(item,evidence),composer_hint=composer_hint)
                       if composer_hint else resolve(official_title_hint(item,evidence)))
             if identity is None:raise ValueError("authority_not_unique")
-            # Preverified cards are keyed only by title. For multiple known
-            # compositions, even an independently resolved composer must use
-            # new composition-specific history and synopsis evidence.
-            if identity.get("title_candidate_count",1)>1:
+            # A title homonym may receive a prepared synopsis only when it is
+            # explicitly bound to the exact independently resolved composition
+            # (Wikidata QID) and an official, matching composer credit.
+            attribution=(material or {}).get("attribution")
+            bound=(isinstance(attribution,dict)
+                   and attribution["wikidata_id"]==identity["wikidata_id"]
+                   and slugify(attribution["composer"])==slugify(identity["composer"])
+                   and composer_hint is not None
+                   and slugify(composer_hint)==slugify(identity["composer"]))
+            if identity.get("title_candidate_count",1)>1 and not bound:
                 material=None
             from scripts.publish_work_editorial import validate_history
             previous=existing_works.get(cid,{})
@@ -312,7 +340,7 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                            and normalized(previous.get("composer",""))==
                                normalized(identity["composer"]))
             material_ok=(material is not None and slugify(identity["title"])==slug
-                         and identity.get("title_candidate_count",1)==1
+                         and (identity.get("title_candidate_count",1)==1 or bound)
                          and (not composer_hint or
                               slugify(composer_hint)==slugify(identity["composer"])))
             summary=(material["synopsis"] if material_ok else None)

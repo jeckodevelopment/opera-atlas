@@ -36,6 +36,48 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(result["wikidata_id"],"Q111")
         self.assertTrue(result["wikipedia_url"].startswith("https://it.wikipedia.org/"))
 
+    def test_sourced_cards_bind_exact_wikidata_composition(self):
+        from scripts.auto_work_research import preverified_work_material,validated_editorial_attributions
+        expected={"falstaff":("Q318455","Giuseppe Verdi"),
+                  "l-esule-di-roma":("Q471164","Gaetano Donizetti"),
+                  "i-capuleti-e-i-montecchi":("Q1071307","Vincenzo Bellini")}
+        material=preverified_work_material()
+        attributions=validated_editorial_attributions()
+        for slug,(qid,composer) in expected.items():
+            with self.subTest(slug=slug):
+                self.assertEqual(attributions[slug]["wikidata_id"],qid)
+                self.assertEqual(attributions[slug]["composer"],composer)
+                self.assertEqual(material[slug]["attribution"],attributions[slug])
+                self.assertTrue(45<=len(material[slug]["synopsis"])<=300)
+
+    def test_falstaff_homonym_cannot_inherit_wrong_composition(self):
+        from scripts.auto_work_research import preverified_work_material
+        item={"id":"test-falstaff","source_key":"massimo-season-2026-27",
+              "official_url":"https://www.teatromassimo.it/event/falstaff-2/","status":"needs_review"}
+        evidence={"evidence":[{"candidate_id":item["id"],
+            "source_key":item["source_key"],"source_url":item["official_url"],
+            "status":"needs_editorial_review","event_facts":[{
+                "event_title":"Falstaff","composer":"Giuseppe Verdi",
+                "date":"2027-01-02","venue":"Teatro Massimo",
+                "starts_at":"2027-01-02T20:00:00+01:00"}]}]}
+        def check(qid):
+            def resolver(title,*,composer_hint=None):
+                self.assertEqual(composer_hint,"Giuseppe Verdi")
+                return {"title":"Falstaff","composer":"Giuseppe Verdi",
+                        "wikidata_id":qid,"title_candidate_count":2,
+                        "authority_url":"https://www.wikidata.org/wiki/"+qid,
+                        "wikipedia_url":"https://it.wikipedia.org/wiki/Falstaff_(Verdi)"}
+            return research({"schema_version":1,"candidates":[item]},
+                            {"schema_version":1,"works":[]},set(),today=date(2026,11,21),
+                            evidence=evidence,resolve=resolver,allow_authority=False,
+                            prepared=preverified_work_material())
+        correct,status=check("Q318455")
+        self.assertEqual(status[0]["status"],"enriched")
+        self.assertIn("Falstaff",correct["works"][0]["synopsis"])
+        incorrect,states=check("Q999999")
+        self.assertEqual(states[0]["reason"],"verified_plot_unavailable")
+        self.assertEqual(incorrect["works"],[])
+
     def test_two_barbiere_compositions_resolve_only_with_official_composer(self):
         def claim(qid):
             return [{"mainsnak":{"datavalue":{"value":{"id":qid}}}}]

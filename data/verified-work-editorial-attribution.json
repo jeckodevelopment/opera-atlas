@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "works": [
+    {
+      "slug": "falstaff",
+      "composer": "Giuseppe Verdi",
+      "wikidata_id": "Q318455",
+      "synopsis_source": "https://www.glyndebourne.com/opera-archive/explore-our-operas/explore-falstaff/falstaff-synopsis/"
+    },
+    {
+      "slug": "l-esule-di-roma",
+      "composer": "Gaetano Donizetti",
+      "wikidata_id": "Q471164",
+      "synopsis_source": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+    },
+    {
+      "slug": "i-capuleti-e-i-montecchi",
+      "composer": "Vincenzo Bellini",
+      "wikidata_id": "Q1071307",
+      "synopsis_source": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
+    }
+  ]
+}
