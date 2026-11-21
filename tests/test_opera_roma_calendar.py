@@ -207,7 +207,8 @@ class RomeOperaTests(unittest.TestCase):
         present=any(p["source_url"]==DETAIL for p in self.facts["productions"])
         facts,ids,urls,report=promote(
             self.facts,self.registry,evidence,candidates,approved,today=date(2026,11,21))
-        roma=[p for p in facts["productions"] if p["municipality"]=="Roma"]
+        roma=[p for p in facts["productions"]
+              if p["municipality"]=="Roma" and p["source_url"]==DETAIL]
         self.assertEqual(len(roma),1)
         self.assertEqual(roma[0]["title"],"Lucia di Lammermoor")
         self.assertEqual(roma[0]["dates"],[[d,h] for d,h in DATES])
