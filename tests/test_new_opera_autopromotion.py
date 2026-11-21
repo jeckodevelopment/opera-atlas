@@ -3,7 +3,8 @@ import copy
 import json
 import unittest
 from datetime import date
-from scripts.auto_catalogue import promote_new_works
+from unittest.mock import patch
+from scripts.auto_catalogue import promote_new_works,merge_official_poster_cache
 from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY,assemble
 from scripts.publish_work_editorial import EDITORIAL,build_editorial
@@ -68,6 +69,29 @@ class NewOperaPromotionTests(unittest.TestCase):
                 self.facts,self.registry,evidence,candidates,enrichment,
                 self.editorial,[],today=date(2026,11,20),require_image=True)
             self.assertEqual(denied[-1]["new_works"],0)
+
+    def test_archival_art_promotes_new_work_without_official_poster_cache(self):
+        # A trustworthy archival image is already in the archival work bank.
+        # Its lack of an official-production image must not crash main().
+        evidence,candidates,enrichment=self.fixture()
+        with patch("scripts.publish_work_posters.load_archival_art",
+                   return_value={"fixture-opera":{"image_url":
+                       "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fixture.png"}}):
+            result=promote_new_works(
+                self.facts,self.registry,evidence,candidates,enrichment,
+                self.editorial,[],today=date(2026,11,20),require_image=True)
+        self.assertEqual(result[-1]["new_works"],1)
+        self.assertEqual(merge_official_poster_cache(None,{}),None)
+        self.assertEqual(merge_official_poster_cache({"schema_version":2,
+                                                      "posters":{}},{}),None)
+        before={"schema_version":2,"posters":{},"checks":{}}
+        image={"work_id":"oa-w-123456","kind":"official_production_image",
+               "image_url":"https://www.teatroallascala.org/example.jpg"}
+        after=merge_official_poster_cache(before,{"oa-w-123456":image})
+        self.assertEqual(after["posters"]["oa-w-123456"],image)
+        self.assertEqual(before["posters"],{})
+        with self.assertRaises(ValueError):
+            merge_official_poster_cache(before,{"oa-w-999999":image})
 
     def test_new_opera_and_synopsis_are_published_as_one_graph(self):
         evidence,candidates,enrichment=self.fixture()

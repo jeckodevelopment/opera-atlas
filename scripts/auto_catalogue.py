@@ -776,6 +776,26 @@ def enrich_double_bill_times(facts:dict,evidence:dict,candidates:dict,previous:d
         total+=added
     return result,total
 
+def merge_official_poster_cache(previous:dict|None,additions:dict)->dict|None:
+    """Merge only newly verified official images; archival images need no cache write.
+
+    For archival-only new works the poster generator resolves the independently
+    verified Commons provenance from the stable archival registry.
+    """
+    if not additions:
+        return None
+    if (not isinstance(previous,dict)
+            or previous.get("schema_version")!=2
+            or not isinstance(previous.get("posters"),dict)):
+        raise ValueError("invalid existing artwork evidence")
+    merged=copy.deepcopy(previous)
+    for work_id,proof in additions.items():
+        if not isinstance(proof,dict) or proof.get("work_id")!=work_id:
+            raise ValueError("inconsistent official poster work identity")
+        merged["posters"][work_id]=proof
+    return merged
+
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -846,14 +866,15 @@ def main():
         if not proofs:
             raise ValueError("missing verified image for new canonical opera "+work["id"])
         image_additions[work["id"]]={"work_id":work["id"],**proofs[0]}
+    # A verified archival Commons image can already be available for a new
+    # work through the persistent archival bank. In that case there is no
+    # newly-fetched official poster to append to the evidence cache.
+    # The next poster publication reads the bank by canonical work identity.
+    previous_images=None
     if image_additions:
         from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
-        previous_images=json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8"))
-        if (previous_images.get("schema_version")!=2
-                or not isinstance(previous_images.get("posters"),dict)):
-            raise ValueError("invalid existing artwork evidence")
-        for work_id,proof in image_additions.items():
-            previous_images["posters"][work_id]=proof
+        previous_images=merge_official_poster_cache(
+            json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8")),image_additions)
     if report["new_recite"]:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
@@ -861,8 +882,9 @@ def main():
         if report["new_works"]:
             _write_atomic(EDITORIAL,next_editorial)
             _write_atomic(HISTORY,next_history)
-            from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
-            _write_atomic(POSTER_EVIDENCE,previous_images)
+            if previous_images is not None:
+                from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
+                _write_atomic(POSTER_EVIDENCE,previous_images)
     if enriched:
         _write_atomic(TIME_EVIDENCE,next_times)
     _write_atomic(HEALTH,{"schema_version":1,**report})
