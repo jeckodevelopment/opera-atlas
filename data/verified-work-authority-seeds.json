@@ -136,6 +136,40 @@
           "https://www.opera-comique.com/fr/spectacles/les-pecheurs-de-perles"
         ]
       }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "synopsis": "La regina Didone accoglie a Cartagine Enea e se ne innamora. Un inganno delle streghe spinge l’eroe a ripartire per l’Italia, lasciando Didone nella disperazione.",
+      "history": {
+        "librettist": "Nahum Tate",
+        "premiere_year": 1689,
+        "premiere_venue": "Scuola di Josias Priest a Chelsea",
+        "premiere_city": "Londra",
+        "sources": [
+          "https://www.naxos.com/LibrettiSungText/Libretti?id=49E7F4F6-F251-495D-B275-6D5C390FA24F",
+          "https://imslp.org/wiki/Dido_and_Aeneas%2C_Z.626_(Purcell%2C_Henry)"
+        ]
+      }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
+      "title": "The Rake's Progress",
+      "composer": "Igor' Stravinskij",
+      "synopsis": "Tom Rakewell abbandona Anne Trulove inseguendo ricchezza e piaceri. Guidato dal misterioso Nick Shadow, cade in una spirale di inganni che mette a rischio la sua ragione.",
+      "history": {
+        "librettist": "W. H. Auden e Chester Kallman",
+        "premiere_year": 1951,
+        "premiere_venue": "Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.boosey.com/pages/cr/catalogue/cat_detail?musicid=4670",
+          "https://asac.labiennale.org/attivita/musica/272795"
+        ]
+      }
     }
   ]
 }
