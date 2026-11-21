@@ -54,10 +54,15 @@ def parse_brescia_detail(html:str,*,url:str,title:str,composer:str):
         raise ValueError("combined bill requires separate work evidence")
     if canonical_text(heading.h1)!=canonical_text(title+" di "+composer):
         raise ValueError("official opera or composer heading mismatch")
+    return ticket_dates(html,url=url,heading=heading.h1)
+
+
+def ticket_dates(html:str,*,url:str,heading:str):
+    parsed=urlsplit(url)
     text=clean(html)
     # Delimit ticket cards before the actual work heading; this excludes
     # price tables and dated accessibility activities lower on the page.
-    head_position=text.find(heading.h1)
+    head_position=text.find(heading)
     if head_position<0:raise ValueError("missing official opera heading in text")
     prefix=text[:head_position]
     start=re.search(r"(?i)\bTurno\s+A\b",prefix)
@@ -79,3 +84,49 @@ def parse_brescia_detail(html:str,*,url:str,title:str,composer:str):
         if key in found:raise ValueError("ambiguous repeated opera date")
         found[key]=f"{int(match[5]):02d}:{match[6]}"
     return sorted(found.items())
+
+
+DOUBLE_TITLE="Cavalleria Rusticana/Pagliacci"
+DOUBLE_COMPOSERS="Pietro Mascagni/Ruggero Leoncavallo"
+
+def parse_brescia_double_bill(html:str,*,url:str,works:dict):
+    """Return two separately identified works sharing one official ticket schedule.
+
+    A shared official bill is not a new opera or duplicate event: each of its
+    two existing work identities receives the same independently dated slots.
+    Fail closed on missing/ambiguous composer or venue evidence.
+    """
+    parsed=urlsplit(url)
+    if (parsed.scheme!="https" or parsed.hostname!="teatrogrande.it"
+        or parsed.query or parsed.fragment or parsed.port is not None
+        or parsed.username or parsed.password
+        or parsed.path!="/it/stagioni/2026/cavalleria-rusticana-pagliacci"):
+        raise ValueError("untrusted Brescia double-bill URL")
+    heading=Heading()
+    heading.feed(html)
+    if canonical_text(heading.h1 or "")!=canonical_text(
+        DOUBLE_TITLE+" di "+DOUBLE_COMPOSERS):
+        raise ValueError("unverified double-bill title and composers")
+    text=clean(html)
+    # Both independently credited works must be documented on this same
+    # official page; combined slash title alone is insufficient.
+    if not re.search(r"(?i)\\bCavalleria\\s+Rusticana\\s+"
+                     r"Melodramma\\s+in\\s+un\\s+atto\\b.{0,250}?"
+                     r"Musica\\s+di\\s+Pietro\\s+Mascagni\\b",text):
+        raise ValueError("Cavalleria independent work credit missing")
+    if not re.search(r"(?i)\\bPagliacci\\s+Dramma\\s+in\\s+un\\s+prologo\\b"
+                     r".{0,250}?Parole\\s+e\\s+musica\\s+di\\s+Ruggero\\s+Leoncavallo\\b",text):
+        raise ValueError("Pagliacci independent work credit missing")
+    identities=(("Cavalleria rusticana","Pietro Mascagni"),
+                ("Pagliacci","Ruggero Leoncavallo"))
+    recognized=[]
+    for title,composer in identities:
+        matches=[w for w in works.values()
+                 if canonical_text(w["title"])==canonical_text(title)
+                 and canonical_text(w["composer"])==canonical_text(composer)]
+        if len(matches)!=1:raise ValueError("ambiguous canonical double-bill work")
+        recognized.append(matches[0])
+    dates=ticket_dates(html,url=url,heading=heading.h1)
+    return [{"event_title":w["title"],"composer":w["composer"],
+             "date":day,"clock":hour,"venue":"Teatro Grande"}
+            for w in recognized for day,hour in dates]
