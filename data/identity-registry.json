@@ -373,6 +373,14 @@
       "name": "Teatro Petruzzelli",
       "city": "Bari",
       "region": "Puglia"
+    },
+    "Bologna|Teatro Comunale di Bologna": {
+      "id": "oa-v-000019",
+      "slug": "teatro-comunale-di-bologna",
+      "city_slug": "bologna",
+      "name": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "region": "Emilia-Romagna"
     }
   },
   "stagings": {
@@ -983,6 +991,22 @@
       "venue_id": "oa-v-000018",
       "slug": "nabucco",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
+      "season": "2027"
+    },
+    "auto-a12dbb283b490075": {
+      "id": "oa-s-000077",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000018",
+      "slug": "pagliacci",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
+      "season": "2027"
+    },
+    "auto-ad08a1d14a8510a5": {
+      "id": "oa-s-000078",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000019",
+      "slug": "nabucco",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/",
       "season": "2027"
     }
   },
@@ -3272,6 +3296,84 @@
       "staging_id": "oa-s-000076",
       "original_date": "2027-03-19",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+    },
+    "auto-a12dbb283b490075|2027-10-13": {
+      "id": "oa-r-000382",
+      "staging_id": "oa-s-000077",
+      "original_date": "2027-10-13",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+    },
+    "auto-a12dbb283b490075|2027-10-14": {
+      "id": "oa-r-000383",
+      "staging_id": "oa-s-000077",
+      "original_date": "2027-10-14",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+    },
+    "auto-a12dbb283b490075|2027-10-15": {
+      "id": "oa-r-000384",
+      "staging_id": "oa-s-000077",
+      "original_date": "2027-10-15",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+    },
+    "auto-a12dbb283b490075|2027-10-16": {
+      "id": "oa-r-000385",
+      "staging_id": "oa-s-000077",
+      "original_date": "2027-10-16",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+    },
+    "auto-a12dbb283b490075|2027-10-17": {
+      "id": "oa-r-000386",
+      "staging_id": "oa-s-000077",
+      "original_date": "2027-10-17",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+    },
+    "auto-a12dbb283b490075|2027-10-19": {
+      "id": "oa-r-000387",
+      "staging_id": "oa-s-000077",
+      "original_date": "2027-10-19",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+    },
+    "auto-a12dbb283b490075|2027-10-20": {
+      "id": "oa-r-000388",
+      "staging_id": "oa-s-000077",
+      "original_date": "2027-10-20",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+    },
+    "auto-ad08a1d14a8510a5|2027-11-03": {
+      "id": "oa-r-000389",
+      "staging_id": "oa-s-000078",
+      "original_date": "2027-11-03",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
+    },
+    "auto-ad08a1d14a8510a5|2027-11-04": {
+      "id": "oa-r-000390",
+      "staging_id": "oa-s-000078",
+      "original_date": "2027-11-04",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
+    },
+    "auto-ad08a1d14a8510a5|2027-11-05": {
+      "id": "oa-r-000391",
+      "staging_id": "oa-s-000078",
+      "original_date": "2027-11-05",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
+    },
+    "auto-ad08a1d14a8510a5|2027-11-06": {
+      "id": "oa-r-000392",
+      "staging_id": "oa-s-000078",
+      "original_date": "2027-11-06",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
+    },
+    "auto-ad08a1d14a8510a5|2027-11-07": {
+      "id": "oa-r-000393",
+      "staging_id": "oa-s-000078",
+      "original_date": "2027-11-07",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
+    },
+    "auto-ad08a1d14a8510a5|2027-11-09": {
+      "id": "oa-r-000394",
+      "staging_id": "oa-s-000078",
+      "original_date": "2027-11-09",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
     }
   }
 }

@@ -6638,6 +6638,132 @@
       ]
     },
     {
+      "id": "curated:auto-a12dbb283b490075:2027-10-13",
+      "starts_at": "2027-10-13T20:30:00+02:00",
+      "local_date": "2027-10-13",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a12dbb283b490075:2027-10-14",
+      "starts_at": "2027-10-14T20:30:00+02:00",
+      "local_date": "2027-10-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a12dbb283b490075:2027-10-15",
+      "starts_at": "2027-10-15T20:30:00+02:00",
+      "local_date": "2027-10-15",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a12dbb283b490075:2027-10-16",
+      "starts_at": "2027-10-16T18:00:00+02:00",
+      "local_date": "2027-10-16",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a12dbb283b490075:2027-10-17",
+      "starts_at": "2027-10-17T18:00:00+02:00",
+      "local_date": "2027-10-17",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a12dbb283b490075:2027-10-19",
+      "starts_at": "2027-10-19T20:30:00+02:00",
+      "local_date": "2027-10-19",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-a12dbb283b490075:2027-10-20",
+      "starts_at": "2027-10-20T18:00:00+02:00",
+      "local_date": "2027-10-20",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
+      ]
+    },
+    {
       "id": "curated:auto-d7a3053257b59157:2027-10-22",
       "starts_at": "2027-10-22T19:00:00+02:00",
       "local_date": "2027-10-22",
@@ -6725,6 +6851,114 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad08a1d14a8510a5:2027-11-03",
+      "starts_at": "2027-11-03T20:00:00+01:00",
+      "local_date": "2027-11-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad08a1d14a8510a5:2027-11-04",
+      "starts_at": "2027-11-04T20:00:00+01:00",
+      "local_date": "2027-11-04",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad08a1d14a8510a5:2027-11-05",
+      "starts_at": "2027-11-05T20:00:00+01:00",
+      "local_date": "2027-11-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad08a1d14a8510a5:2027-11-06",
+      "starts_at": "2027-11-06T18:00:00+01:00",
+      "local_date": "2027-11-06",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad08a1d14a8510a5:2027-11-07",
+      "starts_at": "2027-11-07T16:00:00+01:00",
+      "local_date": "2027-11-07",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/nabucco-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad08a1d14a8510a5:2027-11-09",
+      "starts_at": "2027-11-09T20:00:00+01:00",
+      "local_date": "2027-11-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/nabucco-2027/"
       ]
     },
     {
