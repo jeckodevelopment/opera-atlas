@@ -329,10 +329,11 @@ class CandidateDetailTests(unittest.TestCase):
                               network_enabled=True,fetcher=fake,today=date(2026,11,20))
         self.assertEqual(result,self.empty)
         self.assertEqual(health[0]["reason"],"no_verified_showtimes")
-        self.assertEqual(len(health[0]["diagnostic"]),3)
+        self.assertEqual(len(health[0]["diagnostic"]),4)
         self.assertTrue(health[0]["diagnostic"][0].startswith("canonical_work:"))
         self.assertTrue(health[0]["diagnostic"][1].startswith("authority_work:"))
-        self.assertTrue(health[0]["diagnostic"][2].startswith("schema_event:"))
+        self.assertTrue(health[0]["diagnostic"][2].startswith("official_composer_credit:"))
+        self.assertTrue(health[0]["diagnostic"][3].startswith("schema_event:"))
         self.assertNotIn(html,json.dumps(health))
 
     def test_robots_failure_preserves_last_evidence(self):
