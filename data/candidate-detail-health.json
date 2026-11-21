@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T17:44:02+00:00",
+  "checked_at": "2026-11-21T17:54:14+00:00",
   "attempted": 31,
   "outcomes": [
     {
@@ -9,7 +9,7 @@
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:no explicit official performance dates",
-        "authority_work:no_evidence",
+        "authority_work:no explicit official performance dates",
         "official_composer_credit:no explicit official performance dates",
         "schema_event:no_evidence"
       ],
