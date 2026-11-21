@@ -599,7 +599,30 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     other=rotate(other)
     from scripts.auto_work_research import preverified_work_material
     prepared=preverified_work_material()
+    # An original, source-bound editorial seed is also a completed candidate
+    # card, even before it enters the published site/ JSON. Otherwise the
+    # first-party new-opera pipeline can starve its own most actionable works
+    # behind a national backlog of unstructured historic links.
+    seed_path=ROOT/"data"/"verified-work-authority-seeds.json"
+    seed_doc=json.loads(seed_path.read_text(encoding="utf-8"))
+    if seed_doc.get("schema_version")!=1 or not isinstance(seed_doc.get("works"),list):
+        raise ValueError("invalid official candidate seed registry")
+    from scripts.publish_work_editorial import validate_history
+    seeded_urls=set()
+    for seed in seed_doc["works"]:
+        key,url=seed.get("source_key"),seed.get("source_url")
+        if (key in allowed and isinstance(url,str)
+                and eligible(key,url)
+                and urlsplit(url).hostname==urlsplit(allowed[key]["official_url"]).hostname
+                and isinstance(seed.get("title"),str) and seed["title"].strip()
+                and isinstance(seed.get("composer"),str) and seed["composer"].strip()
+                and isinstance(seed.get("synopsis"),str)
+                and 45<=len(seed["synopsis"].strip())<=300
+                and validate_history(seed.get("history"))):
+            seeded_urls.add((key,url))
     def has_card(item):
+        if (item["source_key"],item["official_url"]) in seeded_urls:
+            return True
         parts=urlsplit(item["official_url"]).path.rstrip("/").split("/")
         slug=(parts[-2] if item["source_key"]=="donizetti-opera-2026"
               and __import__("re").fullmatch(r"20\d{2}-\d{2}-\d{2}",parts[-1])
