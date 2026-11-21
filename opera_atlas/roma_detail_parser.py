@@ -162,7 +162,8 @@ def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple
                                       for token in tokens)
                 and tokens[0].casefold() not in {
                     "direttore","regia","maestro","coro","orchestra","autori",
-                    "anonimo","soprano","tenore"})
+                    "anonimo","soprano","tenore","compositore","autore",
+                    "da","definire","ignoto","sconosciuto"})
     if len(credits)!=1 or not credible_person_name(credits[0]):
         raise ValueError("unambiguous official Rome composer credit missing")
     composer=credits[0]
