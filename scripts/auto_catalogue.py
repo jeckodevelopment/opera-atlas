@@ -413,9 +413,32 @@ def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
     return next_facts,next_registry,{"new_stagings":created,
                                      "new_recite":accepted,"auto_skipped":skipped}
 
+def verified_candidate_image(detail:dict,*,title:str,url:str)->dict|None:
+    """Only first-party, title-matched, production-page poster metadata.
+
+    Revalidate checkpoint JSON because it may have been produced by an older
+    scanner; never trust an image URL merely because it exists in evidence.
+    """
+    image=detail.get("poster_evidence")
+    if not isinstance(image,dict) or image.get("kind")!="official_production_image":
+        return None
+    from scripts.publish_work_posters import allowed_image_url,image_matches_work
+    raw=image.get("image_url","")
+    if (image.get("source_url")!=url or
+            not isinstance(raw,str) or allowed_image_url(raw,url)!=raw or
+            not image_matches_work(raw,title) or
+            not isinstance(image.get("credit"),str) or
+            not image.get("credit") or
+            not isinstance(image.get("alt"),str) or not image.get("alt")):
+        return None
+    return {key:image[key] for key in
+            ("image_url","source_url","credit","alt","kind")
+            if key in image} | ({"license":image["license"]}
+                            if isinstance(image.get("license"),str) else {})
+
 def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                       intelligence:dict,editorial:dict,approved_urls:list[str],*,
-                      today:date, history:dict|None=None):
+                      today:date, history:dict|None=None, require_image:bool=False):
     """One unattended all-or-nothing work+history+staging+recita transaction."""
     next_facts=copy.deepcopy(facts)
     next_registry=copy.deepcopy(registry)
@@ -464,6 +487,10 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                            and item.get("official_authority_url")==url
                            and source["official_url"]=="https://www.tcbo.it/")
         if not (verified_wikidata or verified_official):continue
+        if require_image and verified_candidate_image(detail,title=title,url=url) is None:
+            result["auto_skipped"].append({
+                "candidate_id":cid,"reason":"verified_work_image_missing"})
+            continue
         work_key=normalized(title)+"|"+normalized(composer)
         slug=slugify(title)
         if work_key in next_registry["works"]:
@@ -736,7 +763,7 @@ def main():
     historical=json.loads(HISTORY.read_text(encoding="utf-8"))
     next_facts,next_registry,urls,next_editorial,next_history,newworks=promote_new_works(
         next_facts,next_registry,evidence,candidates,intelligence,editorial,urls,
-        today=date.today(),history=historical)
+        today=date.today(),history=historical,require_image=True)
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]
@@ -754,6 +781,33 @@ def main():
     assemble(next_facts,next_registry,approved_extra=set(urls))
     build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls),
                    history=next_history)
+    # New canonical work IDs must already carry a verified image from
+    # the very same official page, instead of hoping a later crawl finds one.
+    # Preserve source proof through the subsequent poster refresh without
+    # an extra network request or a fabricated editorial illustration.
+    new_ids={w["id"] for w in next_registry["works"].values()}-{
+        w["id"] for w in registry["works"].values()}
+    image_additions={}
+    for work in next_registry["works"].values():
+        if work["id"] not in new_ids:continue
+        matched=[p for p in next_facts["productions"]
+                 if normalized(p["title"])==normalized(work["title"])
+                 and normalized(p["composer"])==normalized(work["composer"])]
+        proofs=[verified_candidate_image(e,title=work["title"],url=p["source_url"])
+                for p in matched for e in evidence.get("evidence",[])
+                if e.get("source_url")==p["source_url"]]
+        proofs=[proof for proof in proofs if proof is not None]
+        if not proofs:
+            raise ValueError("missing source image for new canonical opera "+work["id"])
+        image_additions[work["id"]]={"work_id":work["id"],**proofs[0]}
+    if image_additions:
+        from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
+        previous_images=json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8"))
+        if (previous_images.get("schema_version")!=2
+                or not isinstance(previous_images.get("posters"),dict)):
+            raise ValueError("invalid existing artwork evidence")
+        for work_id,proof in image_additions.items():
+            previous_images["posters"][work_id]=proof
     if report["new_recite"]:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
@@ -761,6 +815,8 @@ def main():
         if report["new_works"]:
             _write_atomic(EDITORIAL,next_editorial)
             _write_atomic(HISTORY,next_history)
+            from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
+            _write_atomic(POSTER_EVIDENCE,previous_images)
     if enriched:
         _write_atomic(TIME_EVIDENCE,next_times)
     _write_atomic(HEALTH,{"schema_version":1,**report})
