@@ -198,7 +198,7 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/events/[a-z0-9-]+",path))
     if key=="opera-roma-season-2026-27":
         return bool(re.fullmatch(r"/spettacoli/[a-z0-9-]+",path))
-    if key=="petruzzelli-opera-2027":
+    if key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key=="bologna-comunale-opera-2027":
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
@@ -246,6 +246,7 @@ def validate_config(config:dict)->list[dict]:
         "maggio-fiorentino-calendar-2027":("www.maggiofiorentino.com","/calendario/2027/01/opera"),
         "opera-roma-season-2026-27":("www.operaroma.it","/opere/"),
         "bologna-comunale-opera-2027":("www.tcbo.it","/stagione-futura/"),
+        "petruzzelli-opera-2026":("www.fondazionepetruzzelli.it","/opera-e-balletto-2026/"),
         "petruzzelli-opera-2027":("www.fondazionepetruzzelli.it","/opera-e-balletto-2027/"),
     }
     seen=set()
@@ -284,9 +285,9 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/opere/"
         elif key=="bologna-comunale-opera-2027":
             valid_season=(index.path=="/stagione-futura/" and index.query=="_tipo=opera")
-        elif key=="petruzzelli-opera-2027":
+        elif key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
             valid_season=bool(re.fullmatch(r"/opera-e-balletto-20\d{2}/",index.path)
-                              and index.path=="/opera-e-balletto-2027/")
+                              and index.path=="/opera-e-balletto-"+key.rsplit("-",1)[-1]+"/")
         elif key=="carlo-felice-season-2026-27":
             season=re.fullmatch(r"/rassegna-stagione-opera-danza-musical-(20\d{2})-(\d{2})/",index.path)
             valid_season=bool(season and (int(season[1])+1)%100==int(season[2]) and 2026<=int(season[1])<=2098)

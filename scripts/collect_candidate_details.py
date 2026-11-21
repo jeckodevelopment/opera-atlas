@@ -181,7 +181,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
             "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
             "carlo-felice-season-2026-27","donizetti-opera-2026",
             "teatro-grande-opera-2026","opera-roma-season-2026-27",
-            "petruzzelli-opera-2027"):
+            "petruzzelli-opera-2026","petruzzelli-opera-2027"):
         return []
     if (source_key=="teatro-grande-opera-2026" and
         urlsplit(url).path=="/it/stagioni/2026/cavalleria-rusticana-pagliacci"):
@@ -190,7 +190,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         return [{**{k:v for k,v in x.items() if k!="clock"},
                  "starts_at":official_local_time(x["date"],x["clock"])}
                 for x in entries]
-    if source_key=="petruzzelli-opera-2027":
+    if source_key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
         from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_detail
         # The production heading contains 'TITLE di COMPOSER', rather than
         # a plain canonical title. Never choose an opera from URL slug alone.
@@ -201,7 +201,8 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         if len(known)!=1:return []
         work=known[0]
         venue,raw=parse_petruzzelli_detail(
-            html,url=url,title=work["title"],composer=work["composer"])
+            html,url=url,title=work["title"],composer=work["composer"],
+            season_year=int(source_key.rsplit("-",1)[-1]))
     elif source_key=="opera-roma-season-2026-27":
         from opera_atlas.roma_detail_parser import parse_roma_detail
         work=heading_work(html,registry)

@@ -1,4 +1,4 @@
-"""Official 2027 Petruzzelli opera: exact ticket dates, no inferred clocks."""
+"""Official Petruzzelli annual opera: exact ticket dates, no inferred clocks."""
 from __future__ import annotations
 import re
 from datetime import date
@@ -19,7 +19,7 @@ SCHEDULE=re.compile(
     r"\s*-\s*([01]?\d|2[0-3]):([0-5]\d)\b",re.I)
 CANCELLED=re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie]|sospes[oaie])\b")
 
-def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str):
+def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str,season_year:int=2027):
     target=urlsplit(url)
     if (target.scheme!="https" or target.hostname!="www.fondazionepetruzzelli.it"
         or target.port is not None or target.username or target.password
@@ -60,7 +60,7 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str):
             value=date(int(year),MONTHS[month.casefold()],int(day))
         except ValueError as exc:
             raise ValueError("invalid official Petruzzelli performance date") from exc
-        if int(year)!=2027 or value.weekday()!=DAYS[weekday.casefold()]:
+        if int(year)!=season_year or value.weekday()!=DAYS[weekday.casefold()]:
             raise ValueError("unexpected season or contradictory date/weekday")
         stamp=value.isoformat()
         hour=f"{int(hh):02d}:{mm}"

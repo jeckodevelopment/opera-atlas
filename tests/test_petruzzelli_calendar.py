@@ -43,7 +43,7 @@ class PetruzzelliTests(unittest.TestCase):
 
     def test_index_only_approved_official_detail_pages(self):
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
-        self.assertEqual(len(validate_config(config)),12)
+        self.assertEqual(len(validate_config(config)),13)
         self.assertTrue(eligible(SOURCE,DETAIL))
         links=extract(SOURCE,INDEX,
             '<a href="/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/">Nabucco</a>'
@@ -53,6 +53,35 @@ class PetruzzelliTests(unittest.TestCase):
             '<a href="https://example.com/eventi/fake/">External</a>',3)
         self.assertEqual(len(links),3)
         self.assertFalse(eligible(SOURCE,INDEX))
+
+    def test_2026_and_2027_indexes_stay_independently_monitored(self):
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
+        sources={s["key"]:s for s in validate_config(config)}
+        self.assertEqual(sources["petruzzelli-opera-2026"]["url"],
+                         "https://www.fondazionepetruzzelli.it/opera-e-balletto-2026/")
+        self.assertEqual(sources["petruzzelli-opera-2027"]["url"],INDEX)
+        target="https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+        self.assertEqual(extract("petruzzelli-opera-2026",sources["petruzzelli-opera-2026"]["url"],
+                                f'<a href="{target}">Il barbiere di Siviglia</a>',1),[target])
+
+    def test_barbiere_2026_has_six_exact_evening_and_matinee_times(self):
+        url="https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+        html=('<h1>IL BARBIERE DI SIVIGLIA | ROSSINI | 16 - 22 DICEMBRE</h1>'
+              '<p>Gioachino Rossini</p><p>Il barbiere di Siviglia di Gioachino Rossini</p>'
+              '<p>direttore Stefano Montanari</p><h2>Orari Spettacoli</h2>'
+              + "".join(f"<p>{day} {num} DICEMBRE 2026 - {time} | TURNO</p>"
+                  for day,num,time in [("MERCOLEDì",16,"20:30"),("GIOVEDì",17,"20:30"),
+                      ("VENERDì",18,"20:30"),("SABATO",19,"18:00"),
+                      ("DOMENICA",20,"18:00"),("MARTEDì",22,"18:00")])
+              + "<h3>Interpretato Da</h3>")
+        with self.assertRaises(ValueError):
+            parse_petruzzelli_detail(html,url=url,title="Il barbiere di Siviglia",composer="Gioachino Rossini")
+        venue,dates=parse_petruzzelli_detail(html,url=url,title="Il barbiere di Siviglia",
+                                             composer="Gioachino Rossini",season_year=2026)
+        self.assertEqual(venue,"Teatro Petruzzelli")
+        self.assertEqual(len(dates),6)
+        self.assertEqual(dates[0],("2026-12-16","20:30"))
+        self.assertEqual(dates[-1],("2026-12-22","18:00"))
 
     def test_seven_verified_nabucco_recite_and_no_conference(self):
         venue,dates=parse_petruzzelli_detail(
