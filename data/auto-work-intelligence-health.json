@@ -1,48 +1,11 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T17:18:50+00:00",
+  "checked_at": "2026-11-21T17:44:21+00:00",
   "outcomes": [
-    {
-      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "status": "enriched"
-    },
-    {
-      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
     {
       "candidate_id": "oa-index-92b69a8ac1040b0537be",
       "status": "automatic_retry",
       "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-9c8433ba74501efca6eb",
-      "status": "enriched"
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
@@ -70,7 +33,32 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-790b965de8129382aa04",
+      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-6cd199691f7145a4d048",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-76fee4db156090b664aa",
       "status": "enriched"
     },
     {
