@@ -43,8 +43,8 @@ class AtlasLegalBrandTests(unittest.TestCase):
         app=(SITE/"app.js").read_text()
         css=(SITE/"styles.css").read_text()
         self.assertIn('"torino/teatro-regio"',app)
-        self.assertIn('x.venue==="Teatro Regio di Torino"',app)
-        self.assertIn('x.venue==="Teatro Regio"',app)
+        self.assertIn('"venezia/teatro-la-fenice"',app)
+        self.assertIn('"napoli/teatro-di-san-carlo"',app)
         self.assertIn(".staging-group:not(.theatre-production) h3 a{font:inherit!important",css)
     def test_specific_licensed_images(self):
         js=(SITE/"image-client.js").read_text()
