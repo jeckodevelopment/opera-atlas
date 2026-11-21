@@ -51,6 +51,26 @@ class CandidateDetailTests(unittest.TestCase):
                 "https://untrusted.example/event/ernani-2/",
                 common+"<p>Musiche di Giuseppe Verdi</p><p>Dramma lirico</p>")
 
+    def test_parma_official_composer_and_only_public_dates(self):
+        from scripts.collect_candidate_details import parse_official_parma_work_detail
+        url="https://teatroregioparma.it/spettacolo/boris-godunov/"
+        html=("<h1>Boris Godunov</h1><p>Modest Petrovič Musorgskij</p>"
+              "<p>18 gen 2027</p><p>22 gen 2027</p>"
+              "<h2>Spettacolo</h2><p>Musica Modest Petrovič Musorgskij</p>"
+              "<p>Dramma musicale in quattro parti</p>"
+              "<h2>Teatro Regio di Parma</h2>"
+              "<p>lun 18 gen 20:00 Prova Under30</p>"
+              "<p>ven 22 gen 20:00 TURNO A</p>"
+              "<p>Biglietti per il pubblico</p>")
+        rows=parse_official_parma_work_detail(url,html)
+        self.assertEqual([(x["date"],x["composer"]) for x in rows],
+                         [("2027-01-22","Modest Petrovič Musorgskij")])
+        self.assertEqual(rows[0]["venue"],"Teatro Regio di Parma")
+        with self.assertRaises(ValueError):
+            parse_official_parma_work_detail(
+                url,html.replace("Musica Modest Petrovič Musorgskij",
+                                 "Direttore Modest Petrovič Musorgskij"))
+
     def test_fenice_real_venue_and_school_only_dates(self):
         from scripts.collect_candidate_details import parse_source_credited_opera_detail
         from opera_atlas.national_detail_parser import fenice_primary_credits
