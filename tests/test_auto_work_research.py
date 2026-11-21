@@ -101,6 +101,24 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(status[0]["status"],"enriched")
         self.assertEqual(output["works"][0]["composer"],"Second Composer")
 
+    def test_verified_opera_without_italian_wikipedia_is_recognized(self):
+        def claim(qid):
+            return [{"mainsnak":{"datavalue":{"value":{"id":qid}}}}]
+        def fake(url):
+            if "wbsearchentities" in url:
+                return {"search":[{"id":"Q987","label":"Opera sconosciuta"}]}
+            if "ids=Q987" in url:
+                return {"entities":{"Q987":{
+                    "labels":{"it":{"value":"Opera sconosciuta"}},
+                    "claims":{"P31":claim("Q1344"),"P86":claim("Q654")}}}}
+            if "ids=Q654" in url:
+                return {"entities":{"Q654":{"labels":{"it":{"value":"Compositore Verificato"}}}}}
+            raise AssertionError(url)
+        item=resolve_identity("Opera sconosciuta",fetch=fake)
+        self.assertEqual(item["wikidata_id"],"Q987")
+        self.assertEqual(item["composer"],"Compositore Verificato")
+        self.assertIsNone(item["wikipedia_url"])
+
     def test_missing_opera_type_rejected(self):
         def fake(url):
             if "wbsearchentities" in url:
