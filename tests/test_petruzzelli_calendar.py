@@ -93,8 +93,10 @@ class PetruzzelliTests(unittest.TestCase):
               '<h2>Orari Spettacoli</h2>'
               '<p>MERCOLEDì 16 DICEMBRE 2026 - 20:30 | TURNO A</p>'
               '<h3>Interpretato Da</h3>')
-        self.assertEqual(parse_known_opera_detail("petruzzelli-opera-2026",
-                                                  url,html,self.registry),[])
+        rows=parse_known_opera_detail("petruzzelli-opera-2026",url,html,self.registry)
+        self.assertEqual(len(rows),1)
+        self.assertEqual((rows[0]["event_title"],rows[0]["composer"]),
+                         ("Il barbiere di Siviglia","Gioachino Rossini"))
         with self.assertRaises(ValueError):
             parse_petruzzelli_detail(html,url=url,title="La traviata",
                                      composer="Giuseppe Verdi",season_year=2026)
