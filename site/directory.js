@@ -130,6 +130,8 @@ async function initialize(){
           url,title:venue.name,city:venue.city,
           subtitle:venue.city+" · "+venue.region,
           description:venue.description,
+          photo_file:venue.photo_file,
+          photo_source_url:venue.photo_source_url,
           imageKind:"venue",
           hasPerformances:knownVenues.has(url),
           independentVenue:true,
