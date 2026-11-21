@@ -90,9 +90,9 @@ def official_petruzzelli_other_year(html:str,*,url:str,season_year:int)->str|Non
             schedule=schedule.split(stop,1)[0]
     matches=SCHEDULE.findall(schedule)
     all_days=re.findall(
-        r"(?i)\\b(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)"
-        r"\\s+[0-3]?\\d\\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|"
-        r"luglio|agosto|settembre|ottobre|novembre|dicembre)\\s+20\\d{2}\\b",
+        r"(?i)\b(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)"
+        r"\s+[0-3]?\d\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|"
+        r"luglio|agosto|settembre|ottobre|novembre|dicembre)\s+20\d{2}\b",
         schedule)
     if not matches or len(all_days)!=len(matches):
         return None
