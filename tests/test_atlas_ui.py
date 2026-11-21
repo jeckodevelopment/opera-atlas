@@ -96,7 +96,7 @@ class AtlasInterfaceTests(unittest.TestCase):
         # release for every newly added municipality.
         for city in cities:
             if '"' + city + '":[' not in code:
-                self.assertIn('if(distance===null || distance>',code)
+                self.assertRegex(code,r'if\s*\(\s*distance===null\s*\|\|\s*distance\s*>')
         self.assertIn('"genova":[',code)
 
     def test_editorial_synopses_are_short_and_no_html(self):
