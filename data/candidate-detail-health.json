@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T17:18:38+00:00",
-  "attempted": 35,
+  "checked_at": "2026-11-21T17:37:30+00:00",
+  "attempted": 31,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no_evidence",
+        "canonical_work:no explicit official performance dates",
         "authority_work:no_evidence",
         "official_composer_credit:no explicit official performance dates",
         "schema_event:no_evidence"
@@ -65,7 +65,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
+      "candidate_id": "oa-index-207df538679e00657fe1",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -77,7 +77,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-790b965de8129382aa04",
+      "candidate_id": "oa-index-8f21a476359ed30f939d",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -105,6 +105,18 @@
       "rows": 4
     },
     {
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:unsupported multi-work or uncredited official bill",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "outcome": "facts_found",
       "rows": 2
@@ -121,31 +133,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-8f21a476359ed30f939d",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a0eba5854831ebbf26c0",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -267,45 +255,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-027fde14d101fca6bf3e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-073615054167b041e7f7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-184e57e1cd9f38d554d5",
       "outcome": "facts_found",
       "rows": 3
-    },
-    {
-      "candidate_id": "oa-index-207df538679e00657fe1",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unsupported multi-work or uncredited official bill",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
     },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
