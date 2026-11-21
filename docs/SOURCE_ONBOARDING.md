@@ -979,3 +979,8 @@ L'evidenza della serata composita viene contrassegnata
 `needs_program_review`, così il workflow non la ripromuove.
 Le pagine ufficiali verranno rilette e pubblicate con la corretta
 identità di opera+compositore soltanto dopo le verifiche.
+
+
+### Teatro Auditorium Manzoni — sede reale separata (21/11/2026)
+
+Le due produzioni liriche 2027 in forma di concerto (`La straniera` e `I due Foscari`) si tengono al **Teatro Auditorium Manzoni**, Via de’ Monari 1/2, Bologna. Non vanno attribuite alla sala storica del Comunale. A differenza del **Comunale Nouveau** (sede temporanea ritirata), il Manzoni è uno spazio indipendente e tuttora attivo. Nato come cinema-teatro nel 1933 e riaperto come auditorium dopo i lavori nel 2003, è censito in `data/venue-directory.json` e `site/theatre-profiles.json` con storia originale, fonte TCBO e fotografia autenticata `Auditorium Manzoni Bologna.jpg` di **Utintare**, `CC BY-SA 4.0`, https://commons.wikimedia.org/wiki/File:Auditorium_Manzoni_Bologna.jpg. Il catalogo delle sedi passa da 51 a 52 voci senza ripristinare il Nouveau; il publisher collegherà l'identità canonica del Manzoni non appena le recite verificate entreranno nel feed.
