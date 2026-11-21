@@ -166,10 +166,10 @@ window.OperaAtlasImages=Object.freeze((()=>{
     const knownVenueFile=city==="genova" && title==="Teatro Carlo Felice"
       ? "Genova - Teatro Carlo Felice.jpg" : null;
     const verified=event?.photo_file || knownVenueFile;
-    const file=typeof verified==="string" && /^[^/\\]+\.(jpe?g|png|webp)$/i.test(verified)
-      ? verified
-      : (event?.no_city_fallback ||
-         (city==="verona" && !/arena di verona/i.test(title)) ? null : FILES[city]);
+    // Never infer a photographed building from its city. A city can host
+    // multiple theatres, including distinct historic and temporary venues.
+    const file=typeof verified==="string" && /^[^/\\\\]+\\.(jpe?g|png|webp)$/i.test(verified)
+      ? verified : null;
     if(!file)return {src:poster(title,"venue"),alt:"Illustrazione editoriale del "+title};
     const result=photo(file,"Fotografia del "+title+" a "+(event?.municipality||event?.city),title);
     if(verified && event.photo_source_url)result.sourceUrl=event.photo_source_url;
