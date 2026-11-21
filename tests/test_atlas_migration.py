@@ -64,25 +64,36 @@ class AtlasMigrationTests(unittest.TestCase):
             settings({k:v for k,v in {**base,"ATLAS_FTP_REMOTE_DIR":"/atlas"}.items()
                       if k!="ATLAS_FTP_PASSWORD"})
 
-    def test_plain_ftp_with_existing_secret_names(self):
-        script=(ROOT/"scripts/deploy_atlas.py").read_text(encoding="utf-8")
-        self.assertIn("from ftplib import FTP, error_perm",script)
-        self.assertIn("ftp = FTP(timeout=30",script)
-        self.assertIn('ftp.login(config["username"], config["password"])',script)
-        self.assertNotIn("FTP_TLS",script)
-        self.assertNotIn("ftp.auth()",script)
-        self.assertNotIn("ftp.prot_p()",script)
+    def test_ovh_sftp_uses_existing_secret_names_and_port22(self):
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
-        for suffix in ("HOST", "USERNAME", "PASSWORD", "REMOTE_DIR"):
+        for suffix in ("HOST", "USERNAME", "PASSWORD", "REMOTE_DIR",
+                       "PRIVATE_KEY", "KNOWN_HOSTS", "KEY_PASSPHRASE"):
             self.assertIn("secrets.ATLAS_SFTP_" + suffix,workflow)
-            self.assertNotIn("secrets.ATLAS_FTP_" + suffix,workflow)
-        self.assertIn("ATLAS_FTP_PORT: '21'",workflow)
-        self.assertIn("ATLAS_FTP_HOST: ${{ secrets.ATLAS_SFTP_HOST }}",workflow)
-        self.assertIn("scripts.deploy_atlas_simple_ftp",workflow)
-        self.assertIn("apt-get install -y -qq lftp",workflow)
-        self.assertNotIn("vars.ATLAS_FTPS_HOST",workflow)
-        self.assertNotIn("secrets.ATLAS_SFTP_PORT",workflow)
-        self.assertNotIn("ATLAS_SFTP_KNOWN_HOSTS",workflow)
+        self.assertIn("scripts.deploy_atlas_sftp",workflow)
+        self.assertIn("paramiko",workflow)
+        self.assertNotIn("scripts.deploy_atlas_simple_ftp",workflow.split("        run: timeout")[-1])
+        script=(ROOT/"scripts/deploy_atlas_sftp.py").read_text(encoding="utf-8")
+        self.assertIn("port=22",script)
+        self.assertIn("sftp.put(",script)
+        self.assertNotIn("sftp.remove(",script)
+
+    def test_sftp_config_and_ovh_home_resolution(self):
+        from scripts.deploy_atlas_sftp import configuration, target_path
+        import stat
+        cfg=configuration({"ATLAS_SFTP_HOST":"ftp.cluster121.hosting.ovh.net",
+                           "ATLAS_SFTP_USERNAME":"user",
+                           "ATLAS_SFTP_PASSWORD":"test",
+                           "ATLAS_SFTP_REMOTE_DIR":"/www/atlas"})
+        self.assertEqual(cfg["target"],"/www/atlas")
+        class FakeSFTP:
+            def normalize(self,path): return "/homez.2168/operapw"
+            def stat(self,path):
+                if path=="/homez.2168/operapw/www":
+                    from types import SimpleNamespace
+                    return SimpleNamespace(st_mode=stat.S_IFDIR | 0o755)
+                raise FileNotFoundError(path)
+        self.assertEqual(target_path(FakeSFTP(),cfg["target"]),
+                         "/homez.2168/operapw/www/atlas")
 
     def test_json_only_catalog_refresh_never_triggers_ftp(self):
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
@@ -91,45 +102,6 @@ class AtlasMigrationTests(unittest.TestCase):
         self.assertNotIn("'site/**'",workflow)
         self.assertNotIn("'site/*.json'",workflow)
         self.assertIn("ATLAS_DEPLOY_ENABLED",workflow)
-
-    def test_simple_ftp_client_uses_plain_passive_mode_without_deleting(self):
-        from scripts.deploy_atlas_simple_ftp import configuration, quote_lftp
-        import inspect
-        import scripts.deploy_atlas_simple_ftp as publisher
-        code=inspect.getsource(publisher.publish)
-        self.assertIn('set ftp:ssl-allow no',code)
-        self.assertIn('set ftp:passive-mode yes',code)
-        self.assertIn('mirror --reverse --overwrite --no-perms',code)
-        self.assertNotIn('mirror --reverse --all',code)
-        self.assertIn("'put ' + quote_lftp(str(folder / '.htaccess'))",code)
-        self.assertNotIn('--delete',code)
-        self.assertEqual(quote_lftp('a"b'), '"a\\"b"')
-        host,user,password,target=configuration({
-            "ATLAS_FTP_HOST":"ftp.cluster121.hosting.ovh.net",
-            "ATLAS_FTP_USERNAME":"user",
-            "ATLAS_FTP_PASSWORD":"password",
-            "ATLAS_FTP_REMOTE_DIR":"/atlas",
-        })
-        self.assertEqual((host,target),("ftp.cluster121.hosting.ovh.net","/atlas"))
-
-    def test_lftp_failure_reports_status_and_redacts_secrets(self):
-        from scripts.deploy_atlas_simple_ftp import publish
-        from types import SimpleNamespace
-        creds={"ATLAS_FTP_HOST":"ftp.cluster121.hosting.ovh.net",
-               "ATLAS_FTP_USERNAME":"exampleuser",
-               "ATLAS_FTP_PASSWORD":"not-a-real-password",
-               "ATLAS_FTP_REMOTE_DIR":"/atlas"}
-        def fail(command, **kwargs):
-            self.assertEqual(command,["lftp","-f","/dev/stdin"])
-            return SimpleNamespace(returncode=1, stdout="", stderr=
-                "mirror: Login failed: 530 Login authentication failed for exampleuser not-a-real-password")
-        with self.assertRaises(RuntimeError) as caught:
-            publish(env=creds, runner=fail)
-        message=str(caught.exception)
-        self.assertIn("530",message)
-        self.assertIn("Login failed",message)
-        self.assertNotIn(creds["ATLAS_FTP_USERNAME"],message)
-        self.assertNotIn(creds["ATLAS_FTP_PASSWORD"],message)
 
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_actual_catalog_url_builder(self):
