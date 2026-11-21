@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T18:23:52+00:00",
+  "checked_at": "2026-11-21T18:32:11+00:00",
   "attempted": 29,
   "outcomes": [
     {
@@ -209,7 +209,7 @@
     },
     {
       "candidate_id": "oa-index-212db41a4c6f7afcbcda",
-      "outcome": "facts_found",
+      "outcome": "verified_composite_program",
       "rows": 4
     },
     {
