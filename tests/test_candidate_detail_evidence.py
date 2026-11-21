@@ -155,7 +155,7 @@ class CandidateDetailTests(unittest.TestCase):
         cases=[
             ("fenice-opera-2026-27",
              "https://www.teatrolafenice.it/event/jenufa/",
-             "<h1>Jenůfa</h1><p>Leoš Janáček</p><p>Seleziona una data:</p>"
+             "<h1>Jenůfa</h1><p>Leoš Janáček</p><p>Teatro La Fenice</p><p>Seleziona una data:</p>"
              "<a>venerdì 12 Marzo 2027 19:00 ACQUISTA</a>",
              "Jenůfa","Leoš Janáček","2027-03-12"),
             ("parma-opera-2027",
