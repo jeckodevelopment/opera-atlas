@@ -307,6 +307,23 @@
           "https://asac.labiennale.org/attivita/musica/272795"
         ]
       }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Angelina, trattata come una serva dal patrigno Don Magnifico e dalle sorellastre, conquista con la sua generosità il principe Ramiro, che la sceglie oltre le apparenze e le ricchezze.",
+      "history": {
+        "librettist": "Jacopo Ferretti",
+        "premiere_year": 1817,
+        "premiere_venue": "Teatro Valle",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/la-cenerentola/",
+          "https://www.rossinioperafestival.it/soggetti/la-cenerentola-ossia-la-bont-in-trionfo/"
+        ]
+      }
     }
   ]
 }
