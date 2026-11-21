@@ -18,6 +18,12 @@ window.OperaAtlasCatalog = (() => {
   }
 
   function urls(event) {
+    if(event.program_id){
+      const route=PREFIX+"/programmi/"+event.program_id+"/";
+      return {work:route,venue:PREFIX+"/"+(event.city_slug||slugify(event.municipality))+
+        "/"+(event.venue_slug||slugify(event.venue))+"/",
+        staging:route,production:route};
+    }
     const city = event.city_slug || slugify(event.municipality);
     const theatre = event.venue_slug || slugify(event.venue);
     const work = event.work_route_slug || event.work_slug || slugify(event.title);
@@ -69,6 +75,59 @@ window.OperaAtlasCatalog = (() => {
     }
     return map;
   }
+  async function programPerformances(base,byWork,byVenue,existing){
+    const endpoint=base.replace(/\/v2\/$/,"/")+"programs.json";
+    // A companion channel permits stable repertoire IDs/manifest compatibility
+    // while new source-independent composite programs are introduced.
+    const response=await fetch(endpoint,{cache:"no-store"});
+    if(response.status===404)return [];
+    if(!response.ok)throw new Error("Program feed HTTP "+response.status);
+    const doc=await response.json();
+    if(doc.schema_version!==1||!Array.isArray(doc.programs))
+      throw new Error("Invalid public program catalog");
+    const ids=new Set(existing.map(x=>x.id));
+    const byRoute=new Set(existing.map(x=>x.staging_url+"|"+x.local_date));
+    const seenPrograms=new Set(),out=[];
+    for(const program of doc.programs){
+      if(!program || !/^oa-p-[a-f0-9]{16}$/.test(program.id)
+          || seenPrograms.has(program.id)
+          || !Array.isArray(program.components) || program.components.length<2
+          || !Array.isArray(program.performances) || program.performances.length<1)
+        throw new Error("Invalid composite program identity");
+      seenPrograms.add(program.id);
+      const venue=[...byVenue.values()].find(v=>v.city===program.municipality &&
+        (v.name===program.venue || v.display_name===program.venue));
+      if(!venue)throw new Error("Unknown program theatre");
+      const components=program.components.map(component=>{
+        if(typeof component.title!=="string"||typeof component.composer!=="string")
+          throw new Error("Invalid independently credited program component");
+        const work=component.work_id ? byWork.get(component.work_id) : null;
+        if(component.work_id && (!work || work.title!==component.title ||
+           work.composer!==component.composer))
+          throw new Error("Composite work identity mismatch");
+        return {...component,work_route_slug:work?.route_slug||work?.slug||null};
+      });
+      const route="/programmi/"+program.id+"/";
+      for(const recita of program.performances){
+        if(!recita || !/^oa-pr-[a-f0-9]{16}$/.test(recita.id) ||
+            recita.program_id!==program.id || ids.has(recita.id) ||
+            !/^20\d\d-\d\d-\d\d$/.test(recita.local_date) ||
+            typeof recita.starts_at!=="string" || !/^20\d\d-\d\d-\d\dT/.test(recita.starts_at) ||
+            byRoute.has(route+"|"+recita.local_date))
+          throw new Error("Invalid or duplicate program performance");
+        ids.add(recita.id);byRoute.add(route+"|"+recita.local_date);
+        out.push({id:recita.id,program_id:program.id,program_components:components,
+          program_work_ids:components.filter(c=>c.work_id).map(c=>c.work_id),
+          staging_id:program.id,staging_url:route,venue_id:venue.id,
+          title:program.title,composer:components.map(c=>c.composer).join(" · "),
+          venue:program.venue,municipality:program.municipality,region:program.region,
+          venue_slug:venue.slug,city_slug:venue.city_slug,
+          local_date:recita.local_date,starts_at:recita.starts_at,time_known:true,
+          status:"announced",sources:[program.source_url]});
+      }
+    }
+    return out;
+  }
   async function remote(base) {
     const manifest = await jsonFrom(base + "manifest.json");
     if (manifest.schema_version !== 2 || !manifest.files || !/^\d{4}-\d{2}-\d{2}$/.test(manifest.reviewed_on)) {
@@ -114,7 +173,9 @@ window.OperaAtlasCatalog = (() => {
         sources:Array.isArray(item.sources) && item.sources.length ? item.sources : [staging.source_url],
       };
     });
-    return {schema_version:1,performances,source:"github",reviewed_on:manifest.reviewed_on,warning:groupWarning};
+    const programs=await programPerformances(base,byWork,byVenue,performances);
+    return {schema_version:1,performances:[...performances,...programs],
+      source:"github",reviewed_on:manifest.reviewed_on,warning:groupWarning};
   }
 
   // Theatre catalogue is independent of performance publication, including
