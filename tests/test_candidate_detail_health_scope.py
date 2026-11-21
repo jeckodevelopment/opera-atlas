@@ -15,18 +15,23 @@ class CandidateDetailHealthScopeTests(unittest.TestCase):
         candidates = {"schema_version": 1, "candidates": []}
         previous = {"schema_version": 1, "evidence": []}
         writes = []
+        def contents(path, *args, **kwargs):
+            if path == details.CONFIG:
+                return "{}"
+            if path == details.INDEX:
+                return __import__("json").dumps(candidates)
+            if path == details.OUTPUT:
+                return __import__("json").dumps(previous)
+            raise AssertionError(f"unexpected read: {path}")
+
         with patch.object(details.argparse.ArgumentParser, "parse_args",
                           return_value=details.argparse.Namespace(
                               allow_network=False, priority_only=False,
                               source_key="opera-roma-season-2026-27")), \
              patch.object(details, "validate_config", return_value=[
                  {"key":"opera-roma-season-2026-27","access_status":"approved"}]), \
-             patch.object(details.CONFIG, "read_text", return_value="{}"), \
-             patch.object(details.INDEX, "read_text",
-                          return_value=__import__("json").dumps(candidates)), \
-             patch.object(details.OUTPUT, "exists", return_value=True), \
-             patch.object(details.OUTPUT, "read_text",
-                          return_value=__import__("json").dumps(previous)), \
+             patch.object(Path, "read_text", contents), \
+             patch.object(Path, "exists", lambda path: path == details.OUTPUT), \
              patch.object(details, "collect",
                           return_value=(previous, [])), \
              patch.object(details, "_write_atomic",
