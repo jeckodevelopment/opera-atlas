@@ -93,6 +93,11 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
 
     def test_unknown_missing_or_conflicting_venue_never_publishes(self):
         key,url,title,composer,venue,_=CASES[1]
+        from scripts.publish_catalog_v2 import slugify,normalized
+        canonical=next((w for w in self.ids_donizetti["works"].values()
+                        if slugify(w["title"])==slugify(title)
+                        and normalized(w["composer"])==normalized(composer)),None)
+        if canonical:title=canonical["title"]
         for wrong in (None,"Teatro Grande","Teatro Carlo Felice","Teatro Nuovo"):
             with self.subTest(venue=wrong):
                 evidence,candidates=self.fixture(key,url,title,composer,wrong)
