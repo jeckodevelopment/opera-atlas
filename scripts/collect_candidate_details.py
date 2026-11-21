@@ -168,7 +168,6 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
     """
     if source_key=="bologna-comunale-opera-2027":
         from opera_atlas.bologna_detail_parser import parse_detail
-        from scripts.build_verified_catalog import official_local_time
         title,composer,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
                  if normalized(w["title"])==normalized(title) and normalized(w["composer"])==normalized(composer)]
