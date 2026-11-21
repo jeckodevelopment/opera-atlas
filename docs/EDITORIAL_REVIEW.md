@@ -27,6 +27,24 @@ Questo è un limite esplicito: la ricerca automatica attuale non scrive
 una trama nuova usando un modello linguistico. La pubblicazione delle
 altre opere e dei calendari verificati prosegue normalmente.
 
+## Sintesi originale da fonti enciclopediche verificate
+
+Per una nuova composizione risolta univocamente in Wikidata, la ricerca
+può consultare la sezione *Trama* della sua voce Wikipedia italiana. Il
+generatore gratuito e deterministico `scripts/work_plot_generator.py`
+produce una frase originale **solo se** individua almeno due azioni
+narrative esplicite relative a personaggi in comune. Evita di riprodurre
+un paragrafo sorgente o di dedurre personaggi, intenzioni e finali non
+documentati. La fonte rimane associata alla candidate.
+
+La copertura è intenzionalmente conservativa: i testi che non seguono
+queste costruzioni grammaticali, gli articoli senza trama e quelli con
+identità incerta non producono una sinossi. Una sinossi così preparata
+non abilita da sola la pubblicazione: sono richiesti anche fatti storici
+documentati e tutti i controlli del catalogo. Quando mancano, il testo
+viene conservato per i cicli successivi senza fermare le altre opere.
+Nessuna chiave API o servizio a pagamento è necessario.
+
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
 `.github/workflows/refresh-catalog.yml` esegue
