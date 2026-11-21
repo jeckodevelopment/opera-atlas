@@ -1185,3 +1185,14 @@ Il collector dei crediti della pagina ufficiale valida i nomi delle persone tram
 ### Roma: Una Lady Macbeth del distretto di Mzensk
 
 La produzione del Teatro Costanzi del maggio 2027 presenta in fonte ufficiale il credito `Musica di Dmitrij Šostakovič`, con caratteri Unicode oltre il Latin-1: validato dal parser condiviso nella PR #261 e ricontrollato direttamente sul runner GitHub (cinque recite 14, 16, 18, 20 e 22 maggio 2027). Il fascicolo canonico distingue il titolo teatrale dalla sua composizione, con sinossi reale, librettisti Aleksandr Prejs e Šostakovič, prima documentata nel gennaio 1934 al Maly Opera Theatre di Leningrado e fonti indipendenti Mariinsky/Boosey. Per non usare foto di allestimenti contemporanei è associata un'immagine d'archivio di Wikimedia Commons: riproduzione dell'articolo della Pravda del 28 gennaio 1936 «Caos invece di musica», chiaramente indicata come **articolo storico successivo** alla prima, **non** manifesto dell'opera. L'eventuale provenienza/licenza va conservata nelle didascalie; la pagina Commons presenta la dichiarazione PD-RU-exempt e metadati CC BY-SA 4.0. Il test di integrazione non attribuisce recite mai osservate nel catalogo: usa un campione dei dati ufficiali per verificare gate, identità e idempotenza; la pubblicazione reale resta compito del job di raccolta e promozione.
+
+### Intestazioni suddivise dal template Petruzzelli
+
+Il titolo esatto `OPERA E BALLETTO 2026/2027` può essere suddiviso
+fra elementi HTML annidati. Il selettore ricompone soltanto una breve
+finestra di testo **fuori da navigazione e link** e apre la scansione
+solo quando titolo e anno concordano con la fonte configurata.
+Titoli `h2` delle singole produzioni non chiudono la sezione;
+anno errato, link di menu e footer non autorizzano nuove candidate.
+Il checkpoint della fonte resta non verificato se non si raggiunge
+la copertura minima prevista.
