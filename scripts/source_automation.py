@@ -96,6 +96,9 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
                 "last_status": check.get("status", "not_checked"),
                 "recent_success": bool(check.get("current_scan_verified")
                                        and check.get("status") == "success"),
+                "failure_reason": (check.get("diagnostic") or check.get("reason")
+                                   if check.get("status") not in (None, "success") else None),
+                "last_attempt_at": check.get("last_attempt_at"),
             })
     for entry in daily["sources"]:
         for key in DAILY_VENUES.get(entry["adapter"], ()):
@@ -105,6 +108,9 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
                 "configured": entry.get("access_status") == "approved",
                 "last_status": check.get("outcome", "not_checked"),
                 "recent_success": check.get("outcome") == "success",
+                "failure_reason": (check.get("reason") or check.get("error")
+                                   if check.get("outcome") not in (None, "success") else None),
+                "last_attempt_at": check.get("last_attempt_at"),
             })
     rows = []
     for key, venue in profiles.items():
@@ -125,6 +131,10 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
             "status": status,
             "configured_connectors": len(approved),
             "recent_successful_connectors": len(successful),
+            "source_attention": ("none" if successful else
+                                 "not_checked" if approved and all(
+                                     s["last_status"] == "not_checked" for s in approved) else
+                                 "scan_failed" if approved else "not_configured"),
             "sources": sources,
         })
     rows.sort(key=lambda v: (v["region"], v["city"], v["venue"]))

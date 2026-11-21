@@ -44,3 +44,15 @@ Aggiungere un connettore significa registrarne la fonte e l'associazione
 esplicita alle sedi, implementare e testare parser, rispettare robots.txt,
 registrare esiti in health e verificare pubblicazione canonica. La sola
 inclusione in directory o il conteggio di un link non rende la sede operativa.
+
+## Diagnostica dei connettori non operativi
+
+Il feed espone `source_attention` per ogni sede: `none` (almeno una fonte
+verificata), `not_checked` (fonti configurate mai controllate), `scan_failed`
+(fonti configurate, ma nessuna verifica recente riuscita) oppure
+`not_configured` (nessuna fonte approvata). Ogni fonte espone inoltre
+`last_attempt_at` e `failure_reason` quando forniti dal job. Il motivo
+`official_robots_unavailable_or_invalid` segnala un blocco **fail closed**:
+non abilita automaticamente un URL alternativo né autorizza bypass di
+robots.txt. Le date di ultima acquisizione e la copertura delle recite
+restano metriche separate.
