@@ -231,9 +231,10 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         if work is None:return []
         raw=parse_national_showtimes(html,source_key=source_key,url=url,
                                      title=work["title"],composer=work["composer"])
-        venue={"fenice-opera-2026-27":"Teatro La Fenice",
-               "parma-opera-2027":"Teatro Regio di Parma",
-               "massimo-season-2026-27":"Teatro Massimo"}[source_key]
+        venue=(__import__("opera_atlas.national_detail_parser",fromlist=["fenice_primary_credits"]).fenice_primary_credits(html)[2]
+               if source_key=="fenice-opera-2026-27" else
+               {"parma-opera-2027":"Teatro Regio di Parma",
+                "massimo-season-2026-27":"Teatro Massimo"}[source_key])
     else:
         slug=urlsplit(url).path.rstrip("/").split("/")[-1].removesuffix(".html")
         known=[work for work in registry.get("works",{}).values() if work.get("slug")==slug]
@@ -286,9 +287,10 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
         rows=parse_national_showtimes(html,source_key=item["source_key"],
                                      url=item["official_url"],title=info["title"],
                                      composer=info["composer"])
-        venue={"fenice-opera-2026-27":"Teatro La Fenice",
-               "parma-opera-2027":"Teatro Regio di Parma",
-               "massimo-season-2026-27":"Teatro Massimo"}[item["source_key"]]
+        venue=(__import__("opera_atlas.national_detail_parser",fromlist=["fenice_primary_credits"]).fenice_primary_credits(html)[2]
+               if item["source_key"]=="fenice-opera-2026-27" else
+               {"parma-opera-2027":"Teatro Regio di Parma",
+                "massimo-season-2026-27":"Teatro Massimo"}[item["source_key"]])
     else:
         rows=parse_showtimes(html,url=item["official_url"],title=info["title"],
                              composer=info["composer"],adapter=adapter)
@@ -368,6 +370,14 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         title,composer,venue,recite=parse_detail(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)} for day,clock in recite]
+    if source_key=="fenice-opera-2026-27":
+        from opera_atlas.national_detail_parser import fenice_primary_credits
+        title,composer,venue=fenice_primary_credits(html)
+        days=parse_national_showtimes(html,source_key=source_key,url=url,
+                                     title=title,composer=composer)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in days]
     if source_key=="massimo-season-2026-27":
         return parse_official_massimo_work_detail(url,html)
     if source_key!="carlo-felice-season-2026-27":
@@ -572,7 +582,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"] in ("scala-season-2026-27","massimo-season-2026-27","carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
+                if item["source_key"] in ("fenice-opera-2026-27","scala-season-2026-27","massimo-season-2026-27","carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
