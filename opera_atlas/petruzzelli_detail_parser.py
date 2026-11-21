@@ -49,6 +49,16 @@ def verified_work_heading(html:str,*,title:str,composer:str)->bool:
     composer_key=normalized(composer).replace("’","'")
     if pieces[0]==title_key+" di "+composer_key:
         return True
+    # First-party explicit composer credit permits abbreviated official H1s.
+    # Never identify a production from the page's unrelated notices.
+    if pieces[0]==title_key and not re.search(r"presenta\\s+il\\s+balletto\\b",clean(html),re.I):
+        visible=clean(html)
+        before=visible.split("Orari Spettacoli",1)[0]
+        claims=re.findall(r"presenta\\s+l['’]opera\\s+(.+?)\\s+di\\s+"
+                          r"([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.\\- ]{2,90}?)\\s*(?:O&B\\s+2027|Orari\\s+Spettacoli)",before,re.I)
+        if len(claims)==1 and (normalized(claims[0][0])==title_key and
+                               normalized(claims[0][1])==composer_key):
+            return True
     # The 2026 official pages put the composer's surname in h1 and full
     # name immediately beneath the heading, before the conversation text.
     surname=composer_key.split()[-1]
@@ -102,3 +112,52 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str,season_ye
     if not found:
         raise ValueError("no complete Petruzzelli showtimes")
     return "Teatro Petruzzelli",sorted(found.items())
+
+def extract_official_petr_opera(html:str,*,url:str,season_year:int=2027):
+    """Extract only one independently credited opera, not a ballet/mixed bill.
+
+    Return source facts for independent authority resolution; never infer the
+    composer from the URL slug or a later biography.
+    """
+    from html.parser import HTMLParser
+    class H1(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.active=False
+            self.parts=[]
+            self.first=None
+        def handle_starttag(self,tag,attrs):
+            if tag=="h1" and self.first is None:self.active=True
+        def handle_data(self,data):
+            if self.active:self.parts.append(data)
+        def handle_endtag(self,tag):
+            if tag=="h1" and self.active:
+                self.first=" ".join("".join(self.parts).split())
+                self.active=False
+    heading=H1()
+    heading.feed(html)
+    title_text=(heading.first or "").split("|",1)[0].strip()
+    # Composite bills are reserved for a separate bill identity, never
+    # collapsed to one work (Arlésienne/Pagliacci).
+    if (not title_text or "/" in title_text or
+        (heading.first or "").count("|")>1):
+        raise ValueError("unsupported multi-work or uncredited official bill")
+    match=re.fullmatch(r"(.+?)\s+di\s+(.+)",title_text,re.I)
+    if match:
+        title,composer=(value.strip() for value in match.groups())
+    else:
+        title=title_text
+        visible=clean(html)
+        prefix=visible.split("Orari Spettacoli",1)[0]
+        claims=re.findall(
+            r"presenta\s+l['’]opera\s+(.+?)\s+di\s+"
+            r"([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.\- ]{2,90}?)\s*(?:O&B\s+2027|Orari\s+Spettacoli)",
+            prefix,re.I)
+        if len(claims)!=1 or normalized(claims[0][0])!=normalized(title):
+            raise ValueError("unknown opera lacks explicit official composer")
+        composer=claims[0][1].strip()
+    if not (2<=len(title)<=180 and 3<=len(composer)<=100):
+        raise ValueError("invalid credited work title/composer")
+    venue,dates=parse_petruzzelli_detail(
+        html,url=url,title=title,composer=composer,season_year=season_year)
+    return title,composer,venue,dates
