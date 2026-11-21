@@ -63,6 +63,7 @@ const CITY_CENTERS = Object.freeze({
   "verona":[45.4384,10.9916],"venezia":[45.4408,12.3155],
   "palermo":[38.1157,13.3615],"parma":[44.8015,10.3279],
   "novara":[45.445,8.622],"bergamo":[45.695,9.670],
+  "genova":[44.4056,8.9463],
   "reggio emilia":[44.698,10.631],"ravenna":[44.418,12.204]
 });
 function haversine(a,b) {
