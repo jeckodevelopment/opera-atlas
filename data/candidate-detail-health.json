@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T18:49:13+00:00",
+  "checked_at": "2026-11-21T18:55:05+00:00",
   "attempted": 27,
   "outcomes": [
     {
@@ -28,14 +28,8 @@
     },
     {
       "candidate_id": "oa-index-6cd199691f7145a4d048",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 5
     },
     {
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
@@ -94,14 +88,8 @@
     },
     {
       "candidate_id": "oa-index-a77154badf30929b95dc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-b4180540983902f703af",
@@ -163,8 +151,14 @@
     },
     {
       "candidate_id": "oa-index-184e57e1cd9f38d554d5",
-      "outcome": "facts_found",
-      "rows": 3
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-207df538679e00657fe1",
