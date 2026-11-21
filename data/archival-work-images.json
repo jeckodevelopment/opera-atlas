@@ -78,6 +78,24 @@
       "description": "Frontespizio del libretto originale di Il ritorno d'Ulisse in patria di Claudio Monteverdi (Venezia, 1641), non relativo alla produzione attuale",
       "credit": "Claudio Monteverdi e Giacomo Badoaro, libretto del 1641, Wikimedia Commons",
       "license": "Public domain"
+    },
+    "death-in-venice": {
+      "file": "Pears death in venice.jpg",
+      "description": "Peter Pears nel ruolo di Gustav von Aschenbach nell'opera Death in Venice di Benjamin Britten, 1974; immagine storica, non relativa alla produzione attuale",
+      "credit": "The Tampa Tribune, 14 dicembre 1974; fotografia non attribuita, Wikimedia Commons",
+      "license": "Pubblico dominio negli USA per assenza di avviso di copyright; condizioni negli altri Paesi da verificare"
+    },
+    "jenufa": {
+      "file": "Jenufa.jpg",
+      "description": "Manifesto originale della prima dell'opera Jenůfa di Leoš Janáček, Brno 1904; non relativo all'allestimento attuale",
+      "credit": "Manifesto della prima di Jenůfa (1904), autore sconosciuto; Wikimedia Commons",
+      "license": "Public domain, Commons PDM 1.0"
+    },
+    "nixon-in-china": {
+      "file": "Dortmund Kampstr Nixon in China IMG 20230315 1145.jpg",
+      "description": "Fotografia di un manifesto autentico dell'opera Nixon in China di John Adams affisso a Dortmund nel 2023; non relativo all'allestimento alla Scala del 2027",
+      "credit": "Karlunun, fotografia del manifesto della Oper Dortmund (2023), Wikimedia Commons",
+      "license": "CC0 1.0 per la fotografia; diritti del disegno del manifesto non verificati"
     }
   },
   "works_by_id": {
@@ -304,6 +322,30 @@
       "description": "Frontespizio del libretto originale di Il ritorno d'Ulisse in patria di Claudio Monteverdi (Venezia, 1641), non relativo alla produzione attuale",
       "credit": "Claudio Monteverdi e Giacomo Badoaro, libretto del 1641, Wikimedia Commons",
       "license": "Public domain"
+    },
+    "oa-w-000013": {
+      "work_id": "oa-w-000013",
+      "composer": "Benjamin Britten",
+      "file": "Pears death in venice.jpg",
+      "description": "Peter Pears nel ruolo di Gustav von Aschenbach nell'opera Death in Venice di Benjamin Britten, 1974; immagine storica, non relativa alla produzione attuale",
+      "credit": "The Tampa Tribune, 14 dicembre 1974; fotografia non attribuita, Wikimedia Commons",
+      "license": "Pubblico dominio negli USA per assenza di avviso di copyright; condizioni negli altri Paesi da verificare"
+    },
+    "oa-w-000020": {
+      "work_id": "oa-w-000020",
+      "composer": "Leoš Janáček",
+      "file": "Jenufa.jpg",
+      "description": "Manifesto originale della prima dell'opera Jenůfa di Leoš Janáček, Brno 1904; non relativo all'allestimento attuale",
+      "credit": "Manifesto della prima di Jenůfa (1904), autore sconosciuto; Wikimedia Commons",
+      "license": "Public domain, Commons PDM 1.0"
+    },
+    "oa-w-000034": {
+      "work_id": "oa-w-000034",
+      "composer": "John Adams",
+      "file": "Dortmund Kampstr Nixon in China IMG 20230315 1145.jpg",
+      "description": "Fotografia di un manifesto autentico dell'opera Nixon in China di John Adams affisso a Dortmund nel 2023; non relativo all'allestimento alla Scala del 2027",
+      "credit": "Karlunun, fotografia del manifesto della Oper Dortmund (2023), Wikimedia Commons",
+      "license": "CC0 1.0 per la fotografia; diritti del disegno del manifesto non verificati"
     }
   }
 }
