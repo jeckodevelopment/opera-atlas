@@ -56,6 +56,17 @@ class PublicMultiWorkTests(unittest.TestCase):
         row["event_facts"].append(copy.deepcopy(row["event_facts"][0]))
         with self.assertRaises(ValueError):
             self.build(wrong)
+    def test_catalogued_candidate_keeps_published_program(self):
+        candidates=copy.deepcopy(self.candidates)
+        target=next(c for c in candidates["candidates"]
+                    if c["id"]==next(e["candidate_id"] for e in self.evidence["evidence"]
+                                    if e.get("status")=="needs_program_review"))
+        target["status"]="already_catalogued"
+        from scripts.publish_programs import assemble_programs
+        config=json.loads((ROOT/"data/season-index-config.json").read_text())
+        feed=assemble_programs(candidates,self.evidence,self.registry,self.facts,config)
+        self.assertEqual(feed,self.build())
+
     def test_legacy_work_and_ticket_ids_unchanged(self):
         bills=self.build()["programs"]
         canonical_ids={x["id"] for x in self.registry["performances"].values()}
