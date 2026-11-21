@@ -41,7 +41,7 @@ class FerraraOfficialSourceTests(unittest.TestCase):
     def test_five_approved_index_keys_and_distinct_work_evidence(self):
         document=json.loads(CONFIG.read_text(encoding="utf-8"))
         src=validate_config(document)
-        self.assertEqual(len(src),26)
+        self.assertEqual(len(src),29)
         configured=[x for x in src if x["key"] in KEYS]
         self.assertEqual(len(configured),5)
         self.assertTrue(all(x["url"]==URL for x in configured))
