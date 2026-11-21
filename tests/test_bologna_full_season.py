@@ -22,21 +22,26 @@ class BolognaFullSeasonTests(unittest.TestCase):
         cls.history=read(HISTORY)
         cls.allowed=read(SOURCE_ALLOWLIST)["urls"]
     def test_six_approved_new_works_generate_exact_19_official_recite(self):
+        # This test must pass both before the first autonomous publication
+        # and after the catalog has grown: immutable work IDs are not reset.
+        expected={
+            "La straniera":2,"Il ritorno di Ulisse in patria":4,
+            "Vanessa":3,"I due Foscari":2,"Tristan und Isolde":5,"Accabadora":3}
+        registered={x["title"] for x in self.registry["works"].values()}
+        remaining={title:count for title,count in expected.items()
+                   if title not in registered}
         intelligence=official_identity_candidates(self.evidence,self.candidates,
                                                    {"schema_version":1,"works":[]})
         source=[x for x in intelligence["works"]
                 if x["source_key"]=="bologna-comunale-opera-2027"]
-        self.assertEqual(len(source),6)
-        self.assertEqual({x["title"] for x in source},{
-            "La straniera","Il ritorno di Ulisse in patria","Vanessa",
-            "I due Foscari","Tristan und Isolde","Accabadora"})
+        self.assertEqual({x["title"] for x in source},set(remaining))
         result=promote_new_works(self.facts,self.registry,self.evidence,
              self.candidates,intelligence,self.editorial,self.allowed,
              today=date(2026,11,21),history=self.history)
         facts,registry,urls,editorial,history,report=result
-        self.assertEqual(report["new_works"],6)
-        self.assertEqual(report["new_stagings"],6)
-        self.assertEqual(report["new_recite"],19)
+        self.assertEqual(report["new_works"],len(remaining))
+        self.assertEqual(report["new_stagings"],len(remaining))
+        self.assertEqual(report["new_recite"],sum(remaining.values()))
         bologna=[x for x in facts["productions"] if x["municipality"]=="Bologna"]
         self.assertEqual(len(bologna),9)
         self.assertEqual(sum(len(x["dates"]) for x in bologna),38)
@@ -51,7 +56,7 @@ class BolognaFullSeasonTests(unittest.TestCase):
         self.assertEqual(history["works"]["accabadora"]["premiere_year"],2026)
         self.assertEqual(history["works"]["accabadora"]["premiere_city"],"Aix-en-Provence")
         graph=assemble(facts,registry,approved_extra=set(urls))
-        self.assertEqual(len(graph["works"]),len(self.registry["works"])+6)
+        self.assertEqual(len(graph["works"]),len(self.registry["works"])+len(remaining))
         published=build_editorial(facts,registry,editorial,
                                   approved_extra=set(urls),history=history)
         self.assertEqual(len(published["works"]),len(graph["works"]))
@@ -67,8 +72,13 @@ class BolognaFullSeasonTests(unittest.TestCase):
         sample=next(x for x in evidence["evidence"]
                     if x.get("source_url","").endswith("/accabadora-2027/"))
         sample["event_facts"][0]["composer"]="Unrelated Composer"
+        import copy as copy_module
+        scan=copy_module.deepcopy(self.candidates)
+        for candidate in scan["candidates"]:
+            if candidate.get("official_url")==sample["source_url"]:
+                candidate["status"]="needs_review"
         candidates=official_identity_candidates(
-            evidence,self.candidates,{"schema_version":1,"works":[]})
+            evidence,scan,{"schema_version":1,"works":[]})
         self.assertFalse(any(x["source_url"]==sample["source_url"]
                              for x in candidates["works"]))
 
