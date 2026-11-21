@@ -81,6 +81,9 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertIn('photo_url:item.photo_url',directory)
         self.assertIn('photo_file:venue.photo_file',directory)
         self.assertIn('photo_url:venue.photo_url',directory)
+        # The online editorial feed must take precedence over stale SFTP copies.
+        self.assertIn('["https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/"+name,"./"+name]',directory)
+        self.assertIn('cache:"no-store"',detail)
         script=(SITE/"image-client.js").read_text(encoding="utf-8")
         self.assertIn("event?.photo_file",script)
         self.assertIn('const verified=event?.photo_file || knownVenueFile;',script)
