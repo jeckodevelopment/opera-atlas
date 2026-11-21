@@ -36,6 +36,53 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(result["wikidata_id"],"Q111")
         self.assertTrue(result["wikipedia_url"].startswith("https://it.wikipedia.org/"))
 
+    def test_multilingual_exact_opera_identity_uses_en_fallback(self):
+        def claim(value):
+            return [{"mainsnak":{"datavalue":{"value":{"id":value}}}}]
+        calls=[]
+        def fetch(url):
+            calls.append(url)
+            if "wbsearchentities" in url and "language=it" in url:
+                return {"search":[{"id":"Q200","label":"Il progresso di un libertino"}]}
+            if "wbsearchentities" in url and "language=en" in url:
+                return {"search":[{"id":"Q201","label":"The Rake's Progress"}]}
+            if "ids=Q201" in url:
+                return {"entities":{"Q201":{
+                    "labels":{"it":{"value":"La carriera di un libertino"},
+                              "en":{"value":"The Rake's Progress"}},
+                    "claims":{"P7937":claim("Q1344"),"P86":claim("Q301")},
+                    "sitelinks":{"itwiki":{"title":"La carriera di un libertino"}}}}}
+            if "ids=Q301" in url:
+                return {"entities":{"Q301":{"labels":{"it":{"value":"Igor Stravinskij"}}}}}
+            raise AssertionError(url)
+        found=resolve_identity("The Rake's Progress",
+                               composer_hint="Igor Stravinskij",fetch=fetch)
+        self.assertEqual(found["title"],"The Rake's Progress")
+        self.assertEqual(found["wikidata_id"],"Q201")
+        self.assertTrue(any("language=en" in url for url in calls))
+
+    def test_multilingual_alias_cannot_override_official_composer(self):
+        def claim(value):
+            return [{"mainsnak":{"datavalue":{"value":{"id":value}}}}]
+        def fetch(url):
+            if "wbsearchentities" in url and "language=it" in url:
+                return {"search":[{"id":"Q501","label":"Il flauto magico",
+                                   "match":{"text":"Die Zauberflöte"}}]}
+            if "ids=Q501" in url:
+                return {"entities":{"Q501":{
+                    "labels":{"it":{"value":"Il flauto magico"}},
+                    "aliases":{"it":[{"value":"Die Zauberflöte"}]},
+                    "claims":{"P31":claim("Q1344"),"P86":claim("Q502")},
+                    "sitelinks":{}}}}
+            if "ids=Q502" in url:
+                return {"entities":{"Q502":{"labels":{"it":{"value":"Wolfgang Amadeus Mozart"}}}}}
+            raise AssertionError(url)
+        good=resolve_identity("Die Zauberflöte",
+                              composer_hint="Wolfgang Amadeus Mozart",fetch=fetch)
+        self.assertEqual(good["title"],"Die Zauberflöte")
+        self.assertIsNone(resolve_identity("Die Zauberflöte",
+                        composer_hint="Unrelated composer",fetch=fetch))
+
     def test_sourced_cards_bind_exact_wikidata_composition(self):
         from scripts.auto_work_research import preverified_work_material,validated_editorial_attributions
         expected={"falstaff":("Q318455","Giuseppe Verdi"),
