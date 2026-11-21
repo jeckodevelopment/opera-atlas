@@ -53,7 +53,8 @@ def publish(env=None, runner=subprocess.run):
             'set net:timeout 30',
             'set cmd:fail-exit yes',
             'open -u ' + quote_lftp(username) + ',' + quote_lftp(password) + ' ' + quote_lftp('ftp://' + host + ':21'),
-            'mirror --reverse --all --overwrite --no-perms ' + quote_lftp(str(folder)) + ' ' + quote_lftp(target),
+            'mirror --reverse --overwrite --no-perms ' + quote_lftp(str(folder)) + ' ' + quote_lftp(target),
+            'put ' + quote_lftp(str(folder / '.htaccess')) + ' -o ' + quote_lftp(posixpath.join(target, '.htaccess')),
             'bye',
             '',
         ))
