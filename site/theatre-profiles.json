@@ -602,6 +602,16 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Auditorium_Manzoni_Bologna.jpg",
       "photo_credit": "Utintare, Wikimedia Commons — CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    "Venezia|Teatro Malibran": {
+      "city": "Venezia",
+      "name": "Teatro Malibran",
+      "address": "Campiello del Teatro 5873, Cannaregio",
+      "description": "Nel sestiere di Cannaregio, il Malibran è una storica sala veneziana che accoglie rappresentazioni d’opera e spettacoli della Fondazione Teatro La Fenice.",
+      "website": "https://www.teatrolafenice.it/",
+      "opening_year": 1678,
+      "history": "Nato nel Seicento come Teatro San Giovanni Grisostomo, il Malibran è legato alla storia del teatro musicale veneziano. Acquistato dal Comune nel 1992, è oggi una delle sedi della Fondazione Teatro La Fenice.",
+      "source": "https://www.veneziaunica.it/it/cosa-fare-a-venezia/teatri/teatro-malibran"
     }
   }
 }
