@@ -52,7 +52,7 @@ def new_entities(before: dict, after: dict) -> list[dict]:
                     "kind": "Nuova produzione",
                     "id": record["id"],
                     "title": work["title"],
-                    "details": f"Teatro: {venue['name']} · Città: {venue['municipality']}",
+                    "details": f"Teatro: {venue['name']} · Città: {venue['city']}",
                     "url": f"{ROOT_URL}/{venue['city_slug']}/{venue['slug']}/{route}/",
                 })
     return notices
