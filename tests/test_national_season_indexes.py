@@ -100,7 +100,7 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual(len(urls),2)
         self.assertFalse(any("brahms" in x for x in urls))
 
-    def test_all_fourteen_indexes_are_explicitly_configured(self):
+    def test_all_fifteen_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
             "scala-season-2026-27", "arena-festival-2027",
             "fenice-opera-2026-27","parma-opera-2027",
@@ -108,7 +108,8 @@ class NationalIndexTests(unittest.TestCase):
             "donizetti-opera-2026","teatro-grande-opera-2026",
             "maggio-fiorentino-calendar-2027","opera-roma-season-2026-27",
             "petruzzelli-opera-2026","petruzzelli-opera-2027",
-            "bologna-comunale-opera-2026","bologna-comunale-opera-2027"})
+            "bologna-comunale-opera-2026","bologna-comunale-opera-2027",
+            "verdi-trieste-season-2026-27"})
 
     def test_incomplete_index_is_rejected(self):
         with self.assertRaises(ValueError):

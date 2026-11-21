@@ -251,6 +251,8 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key=="verdi-trieste-season-2026-27":
+        return bool(re.fullmatch(r"/it/spettacoli/[a-z0-9-]+",path))
     if key=="carlo-felice-season-2026-27":
         return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
     if key=="parma-opera-2027":
@@ -299,6 +301,7 @@ def validate_config(config:dict)->list[dict]:
         "bologna-comunale-opera-2027":("www.tcbo.it","/stagione-futura/"),
         "petruzzelli-opera-2026":("www.fondazionepetruzzelli.it","/opera-e-balletto-2026/"),
         "petruzzelli-opera-2027":("www.fondazionepetruzzelli.it","/opera-e-balletto-2027/"),
+        "verdi-trieste-season-2026-27":("www.teatroverdi-trieste.com","/it/calendario-spettacoli/"),
     }
     seen=set()
     for item in config["sources"]:
@@ -332,6 +335,9 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key=="verdi-trieste-season-2026-27":
+            valid_season=(index.path=="/it/calendario-spettacoli/" and
+                          index.query=="a=0&t=lirica")
         elif key=="opera-roma-season-2026-27":
             valid_season=index.path=="/genre/opera/"
         elif key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
@@ -346,7 +352,7 @@ def validate_config(config:dict)->list[dict]:
         else:
             valid_season=index.path==path
         if (index.scheme!="https" or index.hostname!=host or not valid_season
-            or (index.query and key not in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027")) or index.fragment or index.port is not None
+            or (index.query and key not in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027","verdi-trieste-season-2026-27")) or index.fragment or index.port is not None
             or item["official_url"]!="https://"+host+"/"):
             raise ValueError("index URL outside exact official allowlist")
         if item["access_status"] not in {"approved","pending","blocked"}:

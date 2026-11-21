@@ -99,6 +99,13 @@
       "url": "https://www.tcbo.it/stagione-futura/?_tipo=opera",
       "access_status": "approved",
       "min_links": 7
+    },
+    {
+      "key": "verdi-trieste-season-2026-27",
+      "official_url": "https://www.teatroverdi-trieste.com/",
+      "url": "https://www.teatroverdi-trieste.com/it/calendario-spettacoli/?a=0&t=lirica",
+      "access_status": "approved",
+      "min_links": 6
     }
   ]
 }

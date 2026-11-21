@@ -22,6 +22,7 @@ SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
     "scala-season-2026-27":("Milano","Teatro alla Scala"),
+    "verdi-trieste-season-2026-27":("Trieste","Teatro Lirico Giuseppe Verdi"),
     "arena-festival-2027":("Verona","Arena di Verona"),
     "fenice-opera-2026-27":("Venezia","Teatro La Fenice"),
     "parma-opera-2027":("Parma","Teatro Regio di Parma"),
@@ -163,7 +164,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue

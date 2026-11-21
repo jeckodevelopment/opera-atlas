@@ -22,6 +22,7 @@ OUT = ROOT / "public/catalog/source-automation.json"
 # sharing a city, name, or festival organizer. Grouped sources are intentional.
 INDEX_VENUES = {
     "scala-season-2026-27": ("Milano|Teatro alla Scala",),
+    "verdi-trieste-season-2026-27": ("Trieste|Teatro Lirico Giuseppe Verdi",),
     "arena-festival-2027": ("Verona|Arena di Verona",),
     "fenice-opera-2026-27": ("Venezia|Teatro La Fenice", "Venezia|Teatro Malibran"),
     "parma-opera-2027": ("Parma|Teatro Regio di Parma",),
