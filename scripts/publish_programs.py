@@ -14,7 +14,7 @@ from scripts.auto_catalogue import VENUE_BY_SOURCE
 from scripts.build_verified_catalog import MANIFEST
 from scripts.collect_candidate_details import OUTPUT as EVIDENCE
 from scripts.discover_season_indexes import CONFIG,OUTPUT as CANDIDATES,validate_config,eligible
-from scripts.publish_catalog_v2 import REGISTRY,ROOT,payload
+from scripts.publish_catalog_v2 import REGISTRY,ROOT,slugify
 from scripts.daily_ingest import _write_atomic
 
 OUTPUT=ROOT/"public"/"catalog"/"programs.json"
@@ -47,8 +47,8 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
         # Resolve by canonical venue record, allowing legacy field names.
         if len(venue_entries)!=1:
             venue_entries=[x for x in registry["venues"].values()
-                           if x.get("slug")==__import__("scripts.publish_catalog_v2",fromlist=["slugify"]).slugify(venue)
-                           and x.get("city_slug")==__import__("scripts.publish_catalog_v2",fromlist=["slugify"]).slugify(city)]
+                           if x.get("slug")==slugify(venue)
+                           and x.get("city_slug")==slugify(city)]
         if len(venue_entries)!=1:raise ValueError("ambiguous or unknown program theatre")
         place=venue_entries[0]
         program=program_from_evidence(
@@ -72,7 +72,7 @@ def publish(*,check:bool=False)->dict:
     result=assemble_programs(read(CANDIDATES),read(EVIDENCE),
                              read(REGISTRY),read(MANIFEST),read(CONFIG))
     if check:
-        if not OUTPUT.exists() or OUTPUT.read_bytes()!=payload(result):
+        if not OUTPUT.exists() or read(OUTPUT)!=result:
             raise ValueError("public program feed differs from verified source facts")
     else:
         _write_atomic(OUTPUT,result)
