@@ -61,7 +61,7 @@ def build(source:dict, registry:dict)->dict:
         if venue.get("canonical_venue_id"):
             authority=existing.get(venue["canonical_venue_id"])
             if not authority or venue["slug"]!=authority["slug"] or venue["city_slug"]!=authority["city_slug"] or (
-                venue["id"]!=authority["id"] and not re.fullmatch(r"oa-vd-\\d{6}",venue["id"])
+                venue["id"]!=authority["id"] and not re.fullmatch(r"oa-vd-\d{6}",venue["id"])
             ):
                 raise ValueError("existing performance venue identity changed")
         elif not re.fullmatch(r"oa-vd-\d{6}",venue["id"]):
