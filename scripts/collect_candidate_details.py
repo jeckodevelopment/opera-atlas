@@ -192,12 +192,11 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                 for x in entries]
     if source_key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
         from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_detail
-        # The production heading contains 'TITLE di COMPOSER', rather than
-        # a plain canonical title. Never choose an opera from URL slug alone.
-        from opera_atlas.national_detail_parser import clean
-        text=clean(html).lower().replace("’","'")
+        # Match the official production h1, never a different work mentioned
+        # in the recurring conversation/notice text of the page.
+        from opera_atlas.petruzzelli_detail_parser import verified_work_heading
         known=[w for w in registry.get("works",{}).values()
-               if (w["title"]+" di "+w["composer"]).lower().replace("’","'") in text]
+               if verified_work_heading(html,title=w["title"],composer=w["composer"])]
         if len(known)!=1:return []
         work=known[0]
         venue,raw=parse_petruzzelli_detail(
