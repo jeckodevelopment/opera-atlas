@@ -106,7 +106,10 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
         if "Q1344" not in (claim_ids(entity,"P7937") | claim_ids(entity,"P31")):continue
         composers=claim_ids(entity,"P86")
         wiki=entity.get("sitelinks",{}).get("itwiki",{}).get("title")
-        if len(composers)!=1 or not isinstance(wiki,str) or len(wiki)>150:continue
+        if len(composers)!=1:continue
+        # Italian Wikipedia is optional: structured Wikidata attribution is
+        # sufficient for a verified, factual opera introduction.
+        if not isinstance(wiki,str) or len(wiki)>150:wiki=None
         accepted.append((qid,label,next(iter(composers)),wiki))
     if not accepted:return None
     # Resolve all composer entities, not merely the first title hit. A title
@@ -128,8 +131,9 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
             "title_candidate_count":len(accepted),
             "wikipedia_title":wiki_title,
             "authority_url":"https://www.wikidata.org/wiki/"+qid,
-            "wikipedia_url":"https://it.wikipedia.org/wiki/"+
-                            quote(wiki_title.replace(" ","_"),safe="()_-")}
+            "wikipedia_url":("https://it.wikipedia.org/wiki/"+
+                            quote(wiki_title.replace(" ","_"),safe="()_-")
+                            if wiki_title else None)}
 
 def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
     result=fetch("https://it.wikipedia.org/w/api.php?"+urlencode({
