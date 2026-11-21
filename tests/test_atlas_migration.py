@@ -74,6 +74,8 @@ class AtlasMigrationTests(unittest.TestCase):
         self.assertNotIn("scripts.deploy_atlas_simple_ftp",workflow.split("        run: timeout")[-1])
         script=(ROOT/"scripts/deploy_atlas_sftp.py").read_text(encoding="utf-8")
         self.assertIn("port=22",script)
+        self.assertIn('client.connect(cfg["host"], port=22',script)
+        self.assertNotIn('"ssh." + ssh_host',script)
         self.assertIn("sftp.put(",script)
         self.assertNotIn("sftp.remove(",script)
 
