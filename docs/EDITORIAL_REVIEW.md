@@ -226,3 +226,21 @@ canonico: non elimina i retry delle altre candidate, i problemi di
 orario o le candidate soltanto arricchite ma non pubblicate.
 Questo mantiene la diagnostica coerente con le opere e le recite effettivamente
 aggiunte nello stesso ciclo, senza manipolare i record delle fonti.
+
+## Roma: crediti ufficiali su righe separate
+
+Per le produzioni del Teatro dell'Opera di Roma, `Musica di` e il nome
+del compositore possono essere in due blocchi HTML consecutivi, anziché
+nella stessa riga. L'estrattore accetta questa variante soltanto quando
+l'etichetta `Musica di` è esatta, il blocco seguente contiene un nome
+personale verificabile e la pagina mostra stagione 2026/2027, sede
+Teatro Costanzi e recite con giorno e ora. Un direttore d'orchestra o
+un campo generico non vengono mai scambiati per il compositore.
+
+Per *Una Lady Macbeth del distretto di Mzensk* è disponibile nel registro
+di fonti specialistiche una breve sinossi narrativa originale e la storia
+della prima del 1934 a Leningrado, con riferimenti a Boosey & Hawkes e
+Mariinsky. La scheda verrà pubblicata soltanto quando anche l'evidenza
+della recita, la fonte e un'immagine con provenienza soddisferanno i
+controlli canonici; un testo editoriale già pronto non autorizza date
+ipotetiche o pubblicazione senza manifesto verificato.
