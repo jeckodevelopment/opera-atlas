@@ -166,12 +166,6 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
 
     Never infer metadata for a newly discovered work from a URL slug alone.
     """
-    if source_key=="petruzzelli-opera-2027":
-        from opera_atlas.petruzzelli_detail_parser import extract_official_petr_opera
-        title,composer,venue,recite=extract_official_petr_opera(html,url=url)
-        return [{"event_title":title,"composer":composer,"venue":venue,
-                 "date":day,"starts_at":official_local_time(day,clock)}
-                for day,clock in recite]
     if source_key=="bologna-comunale-opera-2027":
         from opera_atlas.bologna_detail_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
@@ -308,6 +302,12 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
+    if source_key=="petruzzelli-opera-2027":
+        from opera_atlas.petruzzelli_detail_parser import extract_official_petr_opera
+        title,composer,venue,recite=extract_official_petr_opera(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key=="bologna-comunale-opera-2027":
         from opera_atlas.bologna_detail_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
