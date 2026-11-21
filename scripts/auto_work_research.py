@@ -24,8 +24,8 @@ from scripts.publish_catalog_v2 import ROOT,REGISTRY,slugify,normalized
 
 OUT=ROOT/"data"/"auto-work-intelligence.json"
 HEALTH=ROOT/"data"/"auto-work-intelligence-health.json"
-MAX_RESEARCH=3  # max unknown works/model calls per day
-MAX_PREVERIFIED=16  # free Wikidata identity checks for already sourced work cards
+MAX_RESEARCH=3  # bounded authority lookups for unknown works per day
+MAX_PREVERIFIED=16  # bounded authority checks for pre-sourced works
 MAX_BYTES=300_000
 UA="OperaAtlasResearch/0.1 (+https://github.com/jeckodevelopment/opera-atlas)"
 
@@ -288,7 +288,7 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
     done={x["candidate_id"] for x in existing.get("works",[])
-          if isinstance(x.get("history"),dict)}
+          if isinstance(x.get("wikidata_id"),str) and isinstance(x.get("synopsis"),str)}
     options=[]
     for item in candidates.get("candidates",[]):
         if item.get("status")!="needs_review" or item.get("id") in done:continue
@@ -317,6 +317,18 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
     # All pre-sourced works can be checked with public authoritative APIs, without
     # consuming the paid model budget reserved for truly undocumented titles.
     return rotate(ready)[:MAX_PREVERIFIED]+rotate(other)[:MAX_RESEARCH]
+
+def identity_introduction(identity:dict)->str:
+    """Original, factual two-sentence card from verified authority fields.
+
+    Never invent a plot, setting, characters, premiere, or artistic interpretation.
+    """
+    title=identity["title"].strip()
+    composer=identity["composer"].strip()
+    if not 2<=len(title)<=180 or not 3<=len(composer)<=100:
+        raise ValueError("invalid authority identity")
+    return (f"«{title}» è un'opera di {composer}. "
+            "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
 
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
@@ -351,9 +363,6 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                              "reason":"conflicting_official_composers"})
             continue
         composer_hint=next(iter(composers.values())) if len(composers)==1 else None
-        if not api_key and not (allow_authority and material):
-            statuses.append({"candidate_id":cid,"status":"model_not_configured"})
-            continue
         try:
             identity=(resolve(official_title_hint(item),composer_hint=composer_hint)
                       if composer_hint else resolve(official_title_hint(item)))
@@ -363,16 +372,18 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             # new composition-specific history and synopsis evidence.
             if identity.get("title_candidate_count",1)>1:
                 material=None
-            if material is not None:
+            # The ordinary publishing path needs no model subscription.
+            # A preverified summary/history is safe only when we have official
+            # composer evidence matching the authority and no competing title.
+            # Otherwise use a factual identity-only introduction, not a
+            # made-up synopsis. Historical facts remain optional until sourced.
+            if material is not None and composer_hint and (
+                    slugify(composer_hint)==slugify(identity["composer"])):
                 summary=material["synopsis"]
                 history=material["history"]
             else:
-                excerpt=extract(identity)
-                if not excerpt:raise ValueError("no_sufficient_plot_source")
-                summary=generate(identity,excerpt,api_key=api_key)
-                if not summary:raise ValueError("synopsis_not_supported")
-                history=generate_history(identity,excerpt,api_key=api_key)
-                if not history:raise ValueError("history_not_supported")
+                summary=identity_introduction(identity)
+                history=None
             existing_works[cid]={
                 "candidate_id":cid,"source_key":item["source_key"],
                 "source_url":item["official_url"],
@@ -397,12 +408,11 @@ def main():
     candidates=json.loads(INDEX.read_text(encoding="utf-8"))
     previous=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {
         "schema_version":1,"works":[]}
-    api_key=os.environ.get("ATLAS_OPENAI_API_KEY","") if args.allow_network else ""
     from scripts.collect_candidate_details import OUTPUT as DETAIL_EVIDENCE
     evidence=json.loads(DETAIL_EVIDENCE.read_text(encoding="utf-8")) if DETAIL_EVIDENCE.exists() else {"evidence":[]}
     result,statuses=research(candidates,previous,{x["slug"] for x in known["works"].values()},
-                             today=date.today(),api_key=api_key,
-                             evidence=evidence,allow_authority=args.allow_network)
+                             today=date.today(),evidence=evidence,
+                             allow_authority=args.allow_network)
     _write_atomic(OUT,result)
     _write_atomic(HEALTH,{"schema_version":1,"checked_at":datetime.now(timezone.utc).isoformat(
         timespec="seconds"),"outcomes":statuses})
