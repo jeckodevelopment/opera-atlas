@@ -362,10 +362,10 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         summary=summary.strip()
         if not 45<=len(summary)<=300:continue
         historical=item.get("history")
-        if next_history is not None:
+        if next_history is not None and historical is not None:
             from scripts.publish_work_editorial import validate_history
             if not validate_history(historical):
-                result["auto_skipped"].append({"candidate_id":cid,"reason":"incomplete_historical_profile"})
+                result["auto_skipped"].append({"candidate_id":cid,"reason":"invalid_historical_profile"})
                 continue
         if not isinstance(item.get("wikidata_id"),str) or not __import__("re").fullmatch(
                 r"Q[1-9][0-9]*",item["wikidata_id"]):continue
@@ -419,6 +419,7 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         stage_id=next_id(next_registry["stagings"],"oa-s-")
         next_registry["works"][work_key]={
             "id":work_id,"slug":slug,"title":title,"composer":composer,
+            "wikidata_id":item["wikidata_id"],
             **({"route_slug":route_slug} if homonyms else {})}
         if homonyms:
             by_id=next_editorial.setdefault("synopses_by_id",{})
@@ -437,10 +438,10 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                         if not old_history:
                             raise ValueError("missing existing homonym history")
                         history_by_id[existing["id"]]=old_history
-                history_by_id[work_id]=historical
+                if historical is not None:history_by_id[work_id]=historical
         else:
             next_editorial["synopses"][slug]=summary
-            if next_history is not None:next_history["works"][slug]=historical
+            if next_history is not None and historical is not None:next_history["works"][slug]=historical
         next_registry["stagings"][staging_key]={
             "id":stage_id,"work_id":work_id,"venue_id":canonical_venue["id"],
             "slug":slug,"source_url":url,
