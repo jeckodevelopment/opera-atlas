@@ -21,7 +21,7 @@ from scripts.publish_catalog_v2 import ROOT,REGISTRY,slugify,normalized
 
 OUT=ROOT/"data"/"auto-work-intelligence.json"
 HEALTH=ROOT/"data"/"auto-work-intelligence-health.json"
-MAX_RESEARCH=3  # bounded authority lookups for unknown works per day
+MAX_RESEARCH=12  # bounded lookups for unknown works per refresh
 MAX_PREVERIFIED=16  # bounded authority checks for pre-sourced works
 MAX_BYTES=300_000
 UA="OperaAtlasResearch/0.1 (+https://github.com/jeckodevelopment/opera-atlas)"
@@ -199,8 +199,15 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
                       *,today:date,evidence:dict|None=None)->list[dict]:
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
              if x["access_status"]=="approved"}
+    # An identity-only introduction must never suppress later editorial research.
+    from scripts.publish_work_editorial import validate_history
     done={x["candidate_id"] for x in existing.get("works",[])
-          if isinstance(x.get("wikidata_id"),str) and isinstance(x.get("synopsis"),str)}
+          if isinstance(x.get("wikidata_id"),str)
+          and isinstance(x.get("synopsis"),str)
+          and 45<=len(x["synopsis"].strip())<=300
+          and not x["synopsis"].strip().endswith(
+              "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+          and validate_history(x.get("history"))}
     options=[]
     for item in candidates.get("candidates",[]):
         if item.get("status")!="needs_review" or item.get("id") in done:continue
@@ -226,8 +233,19 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
         if not items:return []
         offset=today.toordinal()%len(items)
         return items[offset:]+items[:offset]
-    # Bound API reads; public authority checks do not require model tokens.
-    return rotate(ready)[:MAX_PREVERIFIED]+rotate(other)[:MAX_RESEARCH]
+    # Priority is the earliest documented performance, regardless of source.
+    # Undated candidates retain the daily fairness rotation.
+    earliest={}
+    for row in (evidence or {}).get("evidence",[]):
+        if row.get("status")!="needs_editorial_review":continue
+        days=[fact.get("date") for fact in row.get("event_facts",[])
+              if isinstance(fact,dict) and isinstance(fact.get("date"),str)
+              and re.fullmatch(r"20\d{2}-\d{2}-\d{2}",fact["date"])]
+        if days:earliest[row.get("candidate_id")]=min(days)
+    def prioritized(items):
+        return sorted(rotate(items),key=lambda item:
+                      earliest.get(item["id"],"9999-12-31"))
+    return prioritized(ready)[:MAX_PREVERIFIED]+prioritized(other)[:MAX_RESEARCH]
 
 def identity_introduction(identity:dict)->str:
     """Original, factual two-sentence card from verified authority fields.
@@ -287,11 +305,8 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             # new composition-specific history and synopsis evidence.
             if identity.get("title_candidate_count",1)>1:
                 material=None
-            # The ordinary publishing path needs no model subscription.
-            # A preverified summary/history is safe only when we have official
-            # composer evidence matching the authority and no competing title.
-            # Otherwise use a factual identity-only introduction, not a
-            # made-up synopsis. Historical facts remain optional until sourced.
+            # No API subscription is required. An identity-only introduction
+            # cannot be treated as completed editorial enrichment.
             if (material is not None and slugify(identity["title"])==slug
                     and identity.get("title_candidate_count",1)==1
                     and (not composer_hint or
@@ -299,8 +314,9 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                 summary=material["synopsis"]
                 history=material["history"]
             else:
-                summary=identity_introduction(identity)
-                history=None
+                statuses.append({"candidate_id":cid,"status":"automatic_retry",
+                                 "reason":"verified_plot_and_history_unavailable"})
+                continue
             existing_works[cid]={
                 "candidate_id":cid,"source_key":item["source_key"],
                 "source_url":item["official_url"],
