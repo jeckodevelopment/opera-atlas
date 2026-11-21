@@ -1,8 +1,8 @@
-"""Reconcile discovered production states with the canonical catalog *after* ingestion.
+"""Finalize candidate states in the same import transaction, before publication.
 
-The discovery scan runs before auto_catalogue and cannot know about the
-productions published later in the same job. This pass closes that loop and
-updates both internal and public review feeds without deleting audit history.
+Only verified, generated canonical opera and program feeds can mark a candidate
+as already catalogued. Preserve audit history and ensure subsequent refreshes
+rebuild the same public feeds without a manual post-import reconciliation.
 """
 from __future__ import annotations
 import argparse
