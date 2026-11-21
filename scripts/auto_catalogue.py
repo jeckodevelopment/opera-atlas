@@ -124,6 +124,11 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         # Both the explicitly named work and composer must be present in the
         # evidence; an Event title alone never establishes a canonical opera.
         rows=item.get("event_facts",[])
+        if key=="bologna-comunale-opera-2027":
+            # Normalize previous source checkpoint data as well as fresh reads;
+            # do not require refetching all already verified showtimes.
+            from opera_atlas.bologna_detail_parser import normalize_event_fact
+            rows=[normalize_event_fact(row) for row in rows]
         if not rows or not all(isinstance(x,dict) and
                isinstance(x.get("composer"),str) and isinstance(x.get("event_title"),str)
                and isinstance(x.get("date"),str) and isinstance(x.get("starts_at"),str)
