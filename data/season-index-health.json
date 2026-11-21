@@ -1,54 +1,94 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T12:03:00+00:00",
+  "checked_at": "2026-11-21T13:11:18+00:00",
   "sources": [
     {
       "key": "scala-season-2026-27",
       "status": "success",
       "links": 13,
-      "new_review_candidates": 5
+      "required_links": 3,
+      "new_review_candidates": 5,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 13,
+      "current_scan_verified": true
     },
     {
       "key": "arena-festival-2027",
       "status": "success",
       "links": 5,
-      "new_review_candidates": 0
+      "required_links": 2,
+      "new_review_candidates": 0,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 5,
+      "current_scan_verified": true
     },
     {
       "key": "fenice-opera-2026-27",
       "status": "success",
       "links": 11,
-      "new_review_candidates": 3
+      "required_links": 2,
+      "new_review_candidates": 3,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 11,
+      "current_scan_verified": true
     },
     {
       "key": "parma-opera-2027",
       "status": "success",
       "links": 6,
-      "new_review_candidates": 4
+      "required_links": 3,
+      "new_review_candidates": 4,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 6,
+      "current_scan_verified": true
     },
     {
       "key": "massimo-season-2026-27",
       "status": "success",
       "links": 8,
-      "new_review_candidates": 3
+      "required_links": 6,
+      "new_review_candidates": 3,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 8,
+      "current_scan_verified": true
     },
     {
       "key": "carlo-felice-season-2026-27",
       "status": "success",
       "links": 7,
-      "new_review_candidates": 7
+      "required_links": 7,
+      "new_review_candidates": 3,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 7,
+      "current_scan_verified": true
     },
     {
       "key": "donizetti-opera-2026",
-      "status": "unavailable_or_invalid",
-      "reason": "ValueError",
-      "links": 0
+      "status": "success",
+      "links": 3,
+      "required_links": 3,
+      "new_review_candidates": 3,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 3,
+      "current_scan_verified": true
     },
     {
       "key": "teatro-grande-opera-2026",
       "status": "success",
       "links": 2,
-      "new_review_candidates": 2
+      "required_links": 2,
+      "new_review_candidates": 2,
+      "last_attempt_at": "2026-11-21T13:11:18+00:00",
+      "last_success_at": "2026-11-21T13:11:18+00:00",
+      "last_successful_links": 2,
+      "current_scan_verified": true
     }
   ]
 }

@@ -310,6 +310,44 @@
       ]
     },
     {
+      "candidate_id": "oa-index-212db41a4c6f7afcbcda",
+      "source_key": "teatro-grande-opera-2026",
+      "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
+      "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
+      "checked_at": "2026-11-21T13:11:47+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Cavalleria rusticana",
+          "composer": "Pietro Mascagni",
+          "date": "2026-12-11",
+          "venue": "Teatro Grande",
+          "starts_at": "2026-12-11T20:00:00+01:00"
+        },
+        {
+          "event_title": "Cavalleria rusticana",
+          "composer": "Pietro Mascagni",
+          "date": "2026-12-13",
+          "venue": "Teatro Grande",
+          "starts_at": "2026-12-13T15:30:00+01:00"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2026-12-11",
+          "venue": "Teatro Grande",
+          "starts_at": "2026-12-11T20:00:00+01:00"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2026-12-13",
+          "venue": "Teatro Grande",
+          "starts_at": "2026-12-13T15:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/partenope/",
@@ -351,6 +389,51 @@
           "date": "2027-09-12",
           "starts_at": "2027-09-12T17:00:00+02:00",
           "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-4579632f6d7744774e59",
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+      "content_sha256": "1dbea8e599980e0043f41b142822910cadeea486b6e9e41f9374022b4c3ab398",
+      "checked_at": "2026-11-21T13:12:04+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Evgenij Onegin",
+          "composer": "Pëtr Il'ič Čajkovskij",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T20:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Evgenij Onegin",
+          "composer": "Pëtr Il'ič Čajkovskij",
+          "date": "2027-04-17",
+          "starts_at": "2027-04-17T15:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Evgenij Onegin",
+          "composer": "Pëtr Il'ič Čajkovskij",
+          "date": "2027-04-18",
+          "starts_at": "2027-04-18T15:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Evgenij Onegin",
+          "composer": "Pëtr Il'ič Čajkovskij",
+          "date": "2027-04-20",
+          "starts_at": "2027-04-20T20:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Evgenij Onegin",
+          "composer": "Pëtr Il'ič Čajkovskij",
+          "date": "2027-04-21",
+          "starts_at": "2027-04-21T17:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
         }
       ]
     },
@@ -507,6 +590,30 @@
           "date": "2027-02-25",
           "starts_at": "2027-02-25T20:00:00+01:00",
           "venue": "Teatro Regio di Parma"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "source_key": "teatro-grande-opera-2026",
+      "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
+      "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
+      "checked_at": "2026-11-21T13:11:33+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2026-11-26",
+          "starts_at": "2026-11-26T20:00:00+01:00",
+          "venue": "Teatro Grande"
+        },
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2026-11-28",
+          "starts_at": "2026-11-28T15:30:00+01:00",
+          "venue": "Teatro Grande"
         }
       ]
     },
@@ -1000,6 +1107,37 @@
           "date": "2027-10-30",
           "starts_at": "2027-10-30T15:30:00+02:00",
           "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-dfe824fe3301174d2165",
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
+      "content_sha256": "78a5bcd6f3488d023e92afb33cf0cef0af4c7f805ddf1a24daa1ae3048cf2fde",
+      "checked_at": "2026-11-21T13:11:40+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "I Capuleti e i Montecchi",
+          "composer": "Vincenzo Bellini",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "I Capuleti e i Montecchi",
+          "composer": "Vincenzo Bellini",
+          "date": "2026-11-25",
+          "starts_at": "2026-11-25T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "I Capuleti e i Montecchi",
+          "composer": "Vincenzo Bellini",
+          "date": "2026-11-27",
+          "starts_at": "2026-11-27T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
         }
       ]
     },
