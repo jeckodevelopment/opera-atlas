@@ -51,6 +51,16 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
             venue_entries=[x for x in registry["venues"].values()
                            if x.get("slug")==slugify(venue)
                            and x.get("city_slug")==slugify(city)]
+        if len(venue_entries)!=1:
+            # A programme may be the first canonical event at a directory
+            # theatre. Reuse the independently curated Atlas venue directory;
+            # never invent a venue from the discovery source or its city.
+            from scripts.source_automation import DIRECTORY
+            directory=json.loads(DIRECTORY.read_text(encoding="utf-8"))
+            venue_entries=[x for x in directory.get("venues",[])
+                           if x.get("city")==city and x.get("name")==venue
+                           and isinstance(x.get("region"),str)
+                           and x.get("region")]
         if len(venue_entries)!=1:raise ValueError("ambiguous or unknown program theatre")
         place=venue_entries[0]
         program=program_from_evidence(
