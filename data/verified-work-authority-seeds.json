@@ -105,6 +105,23 @@
     },
     {
       "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+      "title": "Alahor in Granata",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "Nella Granada assediata, Alahor vuole vendicare il padre e ostacola l'amore della sorella Zobeida per il sovrano Muley-Hassem. Una congiura fallita conduce invece alla riconciliazione.",
+      "history": {
+        "librettist": "M. A. (autore indicato con iniziali nel programma ufficiale)",
+        "premiere_year": 1826,
+        "premiere_venue": "Teatro Carolino",
+        "premiere_city": "Palermo",
+        "sources": [
+          "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+          "https://www.donizettiopera.org/it/opere-2026/"
+        ]
+      }
+    },
+    {
+      "source_key": "donizetti-opera-2026",
       "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
       "title": "Le convenienze ed inconvenienze teatrali",
       "composer": "Gaetano Donizetti",
@@ -219,6 +236,23 @@
         "sources": [
           "https://corago.unibo.it/libretto/0000140770",
           "https://www.naxos.com/LibrettiSungText/Libretti?id=796947D9-DC2F-4CB0-99DC-BDF770B62F0A"
+        ]
+      }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "synopsis": "Un uomo e un ragazzo, separati da modi diversi di percepire e comunicare, cercano un incontro fondato sul rispetto reciproco. La loro storia interroga l'esclusione e la possibilità di comprendersi.",
+      "history": {
+        "librettist": "Franco Ripa di Meana",
+        "premiere_year": 2027,
+        "premiere_venue": "Teatro Nazionale",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://www.operaroma.it/spettacoli/code-unknown/",
+          "https://www.operaroma.it/news/il-dolce-suono-mi-colpi-la-stagione-2026-2027-del-teatro-dellopera-di-roma/"
         ]
       }
     },
@@ -394,6 +428,23 @@
     },
     {
       "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "Il contadino Nemorino spera di conquistare Adina con un falso filtro d'amore venduto dal ciarlatano Dulcamara. Tra equivoci, gelosie e l'eredità inattesa, Adina scopre di ricambiarlo.",
+      "history": {
+        "librettist": "Felice Romani, da Le Philtre di Eugène Scribe",
+        "premiere_year": 1832,
+        "premiere_venue": "Teatro della Canobbiana",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://www.raicultura.it/speciali/lelisirdamore",
+          "https://corago.unibo.it/libretto/DMBM15777"
+        ]
+      }
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
       "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
       "title": "Lohengrin",
       "composer": "Richard Wagner",
@@ -406,23 +457,6 @@
         "sources": [
           "https://www.mariinsky.ru/en/playbill/repertoire/opera/lohengrin/",
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
-        ]
-      }
-    },
-    {
-      "source_key": "opera-roma-season-2026-27",
-      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
-      "title": "Code: Unknown",
-      "composer": "Nicola Sani",
-      "synopsis": "Un uomo e un ragazzo, separati da modi diversi di percepire e comunicare, cercano un incontro fondato sul rispetto reciproco. La loro storia interroga l'esclusione e la possibilità di comprendersi.",
-      "history": {
-        "librettist": "Franco Ripa di Meana",
-        "premiere_year": 2027,
-        "premiere_venue": "Teatro Nazionale",
-        "premiere_city": "Roma",
-        "sources": [
-          "https://www.operaroma.it/spettacoli/code-unknown/",
-          "https://www.operaroma.it/news/il-dolce-suono-mi-colpi-la-stagione-2026-2027-del-teatro-dellopera-di-roma/"
         ]
       }
     }
