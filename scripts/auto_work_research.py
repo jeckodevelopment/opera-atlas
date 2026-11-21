@@ -86,7 +86,9 @@ def official_title_hint(candidate:dict,evidence:dict|None=None)->str|None:
         path=re.sub(r"-20\\d{2}$","",path)
     if path.endswith("-anteprima-under30"):return None
     # All adapters deliver the same immutable candidate/source pairing.
-    # An exact, fully structured official detail outranks the URL slug,
+    # A consistent official title+composer outranks the URL slug for
+    # authority research; venue/date/time are checked separately before
+    # a performance can ever be published.
     # which can carry dates, composer names, ballet labels or generic words.
     if evidence is not None:
         matching=[row for row in evidence.get("evidence",[])
@@ -100,11 +102,7 @@ def official_title_hint(candidate:dict,evidence:dict|None=None)->str|None:
                     isinstance(r,dict) and
                     isinstance(r.get("event_title"),str) and
                     isinstance(r.get("composer"),str) and
-                    isinstance(r.get("venue"),str) and
-                    isinstance(r.get("date"),str) and
-                    isinstance(r.get("starts_at"),str) and
-                    r["event_title"].strip() and r["composer"].strip() and
-                    r["venue"].strip() for r in rows):
+                    r["event_title"].strip() and r["composer"].strip() for r in rows):
                 identities={(normalized(r["event_title"]),
                              normalized(r["composer"])) for r in rows}
                 names={r["event_title"].strip() for r in rows}
