@@ -2510,6 +2510,75 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-05dfa4b5d5270a7f",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
+      "dates": [
+        [
+          "2027-09-16",
+          "20:00"
+        ],
+        [
+          "2027-09-19",
+          "15:30"
+        ],
+        [
+          "2027-09-22",
+          "20:00"
+        ],
+        [
+          "2027-09-25",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-3ad893acc9c9df1a",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
+      "dates": [
+        [
+          "2027-09-12",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-9c8433ba74501efc",
+      "title": "Adriana Lecouvreur",
+      "composer": "Francesco Cilea",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
+      "dates": [
+        [
+          "2027-10-10",
+          "17:00"
+        ],
+        [
+          "2027-10-14",
+          "20:00"
+        ],
+        [
+          "2027-10-17",
+          "15:30"
+        ],
+        [
+          "2027-10-19",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

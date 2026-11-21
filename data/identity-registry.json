@@ -1025,6 +1025,30 @@
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/",
       "season": "2026",
       "route_slug": "la-traviata-verdi-18-26-aprile"
+    },
+    "auto-05dfa4b5d5270a7f": {
+      "id": "oa-s-000084",
+      "work_id": "oa-w-000031",
+      "venue_id": "oa-v-000016",
+      "slug": "norma",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
+      "season": "2027"
+    },
+    "auto-3ad893acc9c9df1a": {
+      "id": "oa-s-000085",
+      "work_id": "oa-w-000018",
+      "venue_id": "oa-v-000016",
+      "slug": "macbeth",
+      "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
+      "season": "2027"
+    },
+    "auto-9c8433ba74501efc": {
+      "id": "oa-s-000086",
+      "work_id": "oa-w-000033",
+      "venue_id": "oa-v-000016",
+      "slug": "adriana-lecouvreur",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
+      "season": "2027"
     }
   },
   "performances": {
@@ -3469,6 +3493,60 @@
       "staging_id": "oa-s-000083",
       "original_date": "2026-04-26",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/"
+    },
+    "auto-05dfa4b5d5270a7f|2027-09-16": {
+      "id": "oa-r-000423",
+      "staging_id": "oa-s-000084",
+      "original_date": "2027-09-16",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027"
+    },
+    "auto-05dfa4b5d5270a7f|2027-09-19": {
+      "id": "oa-r-000424",
+      "staging_id": "oa-s-000084",
+      "original_date": "2027-09-19",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027"
+    },
+    "auto-05dfa4b5d5270a7f|2027-09-22": {
+      "id": "oa-r-000425",
+      "staging_id": "oa-s-000084",
+      "original_date": "2027-09-22",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027"
+    },
+    "auto-05dfa4b5d5270a7f|2027-09-25": {
+      "id": "oa-r-000426",
+      "staging_id": "oa-s-000084",
+      "original_date": "2027-09-25",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027"
+    },
+    "auto-3ad893acc9c9df1a|2027-09-12": {
+      "id": "oa-r-000427",
+      "staging_id": "oa-s-000085",
+      "original_date": "2027-09-12",
+      "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto"
+    },
+    "auto-9c8433ba74501efc|2027-10-10": {
+      "id": "oa-r-000428",
+      "staging_id": "oa-s-000086",
+      "original_date": "2027-10-10",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+    },
+    "auto-9c8433ba74501efc|2027-10-14": {
+      "id": "oa-r-000429",
+      "staging_id": "oa-s-000086",
+      "original_date": "2027-10-14",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+    },
+    "auto-9c8433ba74501efc|2027-10-17": {
+      "id": "oa-r-000430",
+      "staging_id": "oa-s-000086",
+      "original_date": "2027-10-17",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+    },
+    "auto-9c8433ba74501efc|2027-10-19": {
+      "id": "oa-r-000431",
+      "staging_id": "oa-s-000086",
+      "original_date": "2027-10-19",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
     }
   }
 }
