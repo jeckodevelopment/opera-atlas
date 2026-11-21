@@ -189,6 +189,42 @@ class NationalIndexTests(unittest.TestCase):
                          {"old-arena":"excluded_nonopera","old-scala":"already_catalogued"})
         self.assertTrue(all(x["first_seen"]=="old" for x in out["candidates"]))
 
+    def test_status_has_actionable_index_diagnostic_not_opaque_valueerror(self):
+        source=copy.deepcopy(self.config)
+        for item in source["sources"][1:]:item["access_status"]="blocked"
+        def incomplete(*args,**kwargs):
+            return FetchResult(kwargs["url"],"<html><h1>unrelated</h1></html>","a"*64,35)
+        _,health=scan(source,{"schema_version":1,"candidates":[]},
+                       fetcher=incomplete,network_enabled=True)
+        failure=health[0]
+        self.assertEqual(failure["status"],"unavailable_or_invalid")
+        self.assertEqual(failure["reason"],"ValueError")
+        self.assertEqual(failure["diagnostic"],"index_incomplete_or_markup_changed")
+        self.assertEqual(failure["required_links"],3)
+
+    def test_last_good_scan_survives_failure_without_false_success(self):
+        from scripts.discover_season_indexes import source_health_history
+        past={"schema_version":1,"checked_at":"2026-11-21T08:00:00+00:00",
+              "sources":[{"key":"donizetti-opera-2026","status":"success","links":3}]}
+        failures=[{"key":"donizetti-opera-2026","status":"unavailable_or_invalid",
+                   "reason":"ValueError","diagnostic":"index_incomplete_or_markup_changed",
+                   "required_links":3,"links":0}]
+        now="2026-11-21T12:30:00+00:00"
+        rows=source_health_history(failures,past,checked_at=now)
+        self.assertFalse(rows[0]["current_scan_verified"])
+        self.assertEqual(rows[0]["last_attempt_at"],now)
+        self.assertEqual(rows[0]["last_success_at"],past["checked_at"])
+        self.assertEqual(rows[0]["last_successful_links"],3)
+        recovered=source_health_history([{"key":"donizetti-opera-2026",
+                            "status":"success","links":4,"required_links":3}],
+                            {"schema_version":1,"sources":rows},checked_at=now)
+        self.assertTrue(recovered[0]["current_scan_verified"])
+        self.assertEqual(recovered[0]["last_successful_links"],4)
+        self.assertEqual(recovered[0]["last_success_at"],now)
+        unknown=source_health_history(failures,{},checked_at=now)
+        self.assertIsNone(unknown[0]["last_success_at"])
+        self.assertIsNone(unknown[0]["last_successful_links"])
+
     def test_access_and_robots_failure_preserve_last_good(self):
         source=copy.deepcopy(self.config)
         source["sources"][0]["access_status"]="blocked"
