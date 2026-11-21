@@ -61,11 +61,14 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
     if not kind or "opere" not in kind.group(1).casefold():
         raise ValueError("not an explicitly classified opera event")
     composer_match = re.search(
-        r"\bMusica di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})",
-        body)
+        r"\bMusica di\s+(.+?)\s+(?:Direttore|Regia|Costumi)\b", body)
     if not composer_match:
         raise ValueError("official composer missing")
     composer = composer_match.group(1)
+    if not re.fullmatch(
+        r"[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3}",
+        composer):
+        raise ValueError("ambiguous official composer name")
     # The range in the metadata ('Feb 14 - 21 2027') is not evidence
     # for individual daily recite. Parse only the signed programme below
     # the "Prima rappresentazione" heading and before global navigation.
@@ -91,6 +94,6 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
         raise ValueError("missing or implausible individual recital dates")
     # Each textual 'ore' in this section must correspond to one recital.
     # This deliberately fails if the theatre changes the per-turn schema.
-    if len(re.findall(r"\bore\s+[01]?\d|2[0-3]", section, re.I)) != len(found):
+    if len(re.findall(r"\bore\s+(?:[01]?\d|2[0-3])[.:][0-5]\d", section, re.I)) != len(found):
         raise ValueError("incomplete official Bellini showtime extraction")
     return title, composer, VENUE, sorted(found.items())
