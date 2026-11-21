@@ -58,7 +58,7 @@ def verified_other_season_evidence(evidence:dict)->set[tuple[str,str]]:
               and season!="2026/2027")
         petruzzelli=(key in ("petruzzelli-opera-2026","petruzzelli-opera-2027")
                      and isinstance(url,str)
-                     and re.fullmatch(r"https://www\\.fondazionepetruzzelli\\.it/eventi/[a-z0-9-]+/",url)
+                     and re.fullmatch(r"https://www\.fondazionepetruzzelli\.it/eventi/[a-z0-9-]+/",url)
                      and re.fullmatch(r"20[0-9]{2}",season or "")
                      and season!=key.rsplit("-",1)[-1])
         if (not (rome or petruzzelli)
