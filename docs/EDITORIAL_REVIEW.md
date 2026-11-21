@@ -275,3 +275,26 @@ produzione diventi pubblicabile solo durante il refresh corrente.
 La coda non viene azzerata artificialmente: le candidate senza opera,
 compositore o orari verificati restano aperte finché non c'è evidenza
 sufficiente o una classificazione ufficiale di esclusione.
+
+## Donizetti Opera 2026: prima attribuzione di un'opera nuova
+
+L'evento *Le convenienze ed inconvenienze teatrali* espone nella pagina
+ufficiale il titolo, il credito esplicito «Musica di Gaetano Donizetti»,
+la sede Teatro Donizetti e gli orari delle recite del 15, 20 e 28
+novembre 2026. Il nuovo adattatore `donizetti_credited_detail`
+acquisisce questi fatti senza dedurre il compositore da cast, URL o
+biografia; tratta gli orari individualmente e non pubblica spettacoli
+con data o sede ambigue.
+
+La scheda breve e la storia della prima versione riveduta del 1831
+(Milano, Teatro alla Canobbiana) sono legate all'esatto evento ufficiale
+nel registro delle fonti. L'opera originaria del 1827 è distinta dalla
+versione riveduta del 1831 nella documentazione storica. Come immagine
+stabile si utilizza una pagina autografa di Donizetti, digitalizzata
+dalla Bibliothèque nationale de France, resa disponibile in pubblico
+dominio su Wikimedia Commons; è descritta come *manoscritto storico*,
+non come manifesto di una produzione recente.
+
+Riferimenti: pagina ufficiale Donizetti Opera 2026,
+`https://corago.unibo.it/opera/Z000002027` e
+`https://commons.wikimedia.org/wiki/File:Le_Convenienze_teatrali_(manuscrit_autographe)_-_btv1b108620224_(052_of_254).jpg`.
