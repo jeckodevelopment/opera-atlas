@@ -318,11 +318,11 @@ class PosterPublicationTests(unittest.TestCase):
                 "schema_version":1,"works":{},"works_by_id":{}}))
             (root/"evidence.json").write_text(json.dumps({
                 "schema_version":2,"posters":{},"checks":{}}))
-            with patch.object(posters,"REGISTRY",root/"registry.json"),\\
-                 patch.object(posters,"ARCHIVE",root/"archive.json"),\\
-                 patch.object(posters,"EVIDENCE",root/"evidence.json"),\\
-                 patch.object(posters,"OUTPUT",root/"out.json"),\\
-                 patch.object(posters,"HEALTH",root/"health.json"),\\
+            with patch.object(posters,"REGISTRY",root/"registry.json"),\
+                 patch.object(posters,"ARCHIVE",root/"archive.json"),\
+                 patch.object(posters,"EVIDENCE",root/"evidence.json"),\
+                 patch.object(posters,"OUTPUT",root/"out.json"),\
+                 patch.object(posters,"HEALTH",root/"health.json"),\
                  patch.object(posters,"canonical_sources",return_value=[]),\\
                  patch.object(posters,"connect"),patch.object(posters,"migrate"):
                 with self.assertRaisesRegex(ValueError,"verified opera images missing"):
