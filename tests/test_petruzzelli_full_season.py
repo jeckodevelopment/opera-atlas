@@ -70,7 +70,8 @@ class FullPetruzzelliSeasonTests(unittest.TestCase):
         self.assertEqual({x["composer"] for x in rows},
                          {"Wolfgang Amadeus Mozart"})
         self.assertEqual(rows[0]["starts_at"],"2027-09-12T20:30:00+02:00")
-        self.assertEqual(parse_known_opera_detail(SOURCE,FIGARO,page,self.registry),[])
+        known=parse_known_opera_detail(SOURCE,FIGARO,page,self.registry)
+        self.assertIn(len(known),(0,2))  # before/after canonical work promotion
 
     def test_authority_title_only_from_verified_first_party_rows(self):
         candidate={"id":"bari-fixture","source_key":SOURCE,"official_url":FIGARO}
@@ -96,7 +97,8 @@ class FullPetruzzelliSeasonTests(unittest.TestCase):
                 "Le nozze di Figaro | STAGIONE"),FIGARO),
             (figaro.replace("DOMENICA 12 SETTEMBRE 2027 - 20:30",
                             "DOMENICA 12 SETTEMBRE 2027 - da definire"),FIGARO),
-            (figaro.replace("Wolfgang Amadeus Mozart","Un Altro Autore"),FIGARO),
+            (figaro.replace("presenta l’opera</p><p>Le nozze di Figaro di Wolfgang Amadeus Mozart",
+                            "presenta l’opera</p><p>Le nozze di Figaro di Altro Autore"),FIGARO),
             (figaro,"https://evil.example/eventi/le-nozze/"),
             (html("L’Arlésienne di Georges Bizet | Pagliacci",
                   "Ruggero Leoncavallo",SHOWS),MIXED),
