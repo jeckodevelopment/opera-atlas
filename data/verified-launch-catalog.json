@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-20",
+  "reviewed_on": "2026-11-21",
   "editorial_policy": "Only individual recite explicitly shown by official source; unknown hours remain null; no third-party copy.",
   "productions": [
     {
@@ -2057,6 +2057,146 @@
         [
           "2027-07-01",
           "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-00bc189e26be492b",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/",
+      "dates": [
+        [
+          "2027-03-19",
+          "20:00"
+        ],
+        [
+          "2027-03-20",
+          "15:00"
+        ],
+        [
+          "2027-03-21",
+          "15:00"
+        ],
+        [
+          "2027-03-23",
+          "20:00"
+        ],
+        [
+          "2027-03-24",
+          "17:00"
+        ],
+        [
+          "2027-03-25",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1e384fa01b8a144d",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
+      "dates": [
+        [
+          "2027-01-22",
+          "20:00"
+        ],
+        [
+          "2027-01-23",
+          "15:00"
+        ],
+        [
+          "2027-01-24",
+          "15:00"
+        ],
+        [
+          "2027-01-29",
+          "20:00"
+        ],
+        [
+          "2027-01-30",
+          "20:00"
+        ],
+        [
+          "2027-01-31",
+          "15:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b1c24780a29d634e",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/",
+      "dates": [
+        [
+          "2027-05-21",
+          "20:00"
+        ],
+        [
+          "2027-05-22",
+          "15:00"
+        ],
+        [
+          "2027-05-23",
+          "15:00"
+        ],
+        [
+          "2027-05-28",
+          "20:00"
+        ],
+        [
+          "2027-05-29",
+          "20:00"
+        ],
+        [
+          "2027-05-30",
+          "15:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f942d4e01d9578a9",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
+      "dates": [
+        [
+          "2027-02-19",
+          "20:00"
+        ],
+        [
+          "2027-02-20",
+          "15:00"
+        ],
+        [
+          "2027-02-21",
+          "15:00"
+        ],
+        [
+          "2027-02-26",
+          "20:00"
+        ],
+        [
+          "2027-02-27",
+          "20:00"
+        ],
+        [
+          "2027-02-28",
+          "15:00"
         ]
       ]
     }

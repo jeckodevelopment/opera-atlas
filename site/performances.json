@@ -1826,6 +1826,24 @@
       ]
     },
     {
+      "id": "curated:auto-1e384fa01b8a144d:2027-01-22",
+      "starts_at": "2027-01-22T20:00:00+01:00",
+      "local_date": "2027-01-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-01-22",
       "starts_at": "2027-01-22T20:00:00+01:00",
       "local_date": "2027-01-22",
@@ -1841,6 +1859,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/edgar"
+      ]
+    },
+    {
+      "id": "curated:auto-1e384fa01b8a144d:2027-01-23",
+      "starts_at": "2027-01-23T15:00:00+01:00",
+      "local_date": "2027-01-23",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/pagliacci/"
       ]
     },
     {
@@ -1877,6 +1913,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-1e384fa01b8a144d:2027-01-24",
+      "starts_at": "2027-01-24T15:00:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/pagliacci/"
       ]
     },
     {
@@ -1952,6 +2006,24 @@
       ]
     },
     {
+      "id": "curated:auto-1e384fa01b8a144d:2027-01-29",
+      "starts_at": "2027-01-29T20:00:00+01:00",
+      "local_date": "2027-01-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-01-30",
       "starts_at": "2027-01-30T15:00:00+01:00",
       "local_date": "2027-01-30",
@@ -1988,6 +2060,24 @@
       ]
     },
     {
+      "id": "curated:auto-1e384fa01b8a144d:2027-01-30",
+      "starts_at": "2027-01-30T20:00:00+01:00",
+      "local_date": "2027-01-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
       "id": "curated:lombardia-ballo-bergamo:2027-01-31",
       "starts_at": null,
       "local_date": "2027-01-31",
@@ -2021,6 +2111,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-1e384fa01b8a144d:2027-01-31",
+      "starts_at": "2027-01-31T15:00:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/pagliacci/"
       ]
     },
     {
@@ -2546,6 +2654,24 @@
       ]
     },
     {
+      "id": "curated:auto-f942d4e01d9578a9:2027-02-19",
+      "starts_at": "2027-02-19T20:00:00+01:00",
+      "local_date": "2027-02-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+      ]
+    },
+    {
       "id": "curated:scala-boheme-puccini-2027:2027-02-19",
       "starts_at": "2027-02-19T20:00:00+01:00",
       "local_date": "2027-02-19",
@@ -2561,6 +2687,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-f942d4e01d9578a9:2027-02-20",
+      "starts_at": "2027-02-20T15:00:00+01:00",
+      "local_date": "2027-02-20",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
       ]
     },
     {
@@ -2597,6 +2741,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-f942d4e01d9578a9:2027-02-21",
+      "starts_at": "2027-02-21T15:00:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
       ]
     },
     {
@@ -2708,6 +2870,24 @@
       ]
     },
     {
+      "id": "curated:auto-f942d4e01d9578a9:2027-02-26",
+      "starts_at": "2027-02-26T20:00:00+01:00",
+      "local_date": "2027-02-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+      ]
+    },
+    {
       "id": "curated:regio-traviata-2027:2027-02-26",
       "starts_at": "2027-02-26T20:00:00+01:00",
       "local_date": "2027-02-26",
@@ -2744,6 +2924,24 @@
       ]
     },
     {
+      "id": "curated:auto-f942d4e01d9578a9:2027-02-27",
+      "starts_at": "2027-02-27T20:00:00+01:00",
+      "local_date": "2027-02-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+      ]
+    },
+    {
       "id": "curated:regio-traviata-2027:2027-02-27",
       "starts_at": "2027-02-27T20:00:00+01:00",
       "local_date": "2027-02-27",
@@ -2777,6 +2975,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html"
+      ]
+    },
+    {
+      "id": "curated:auto-f942d4e01d9578a9:2027-02-28",
+      "starts_at": "2027-02-28T15:00:00+01:00",
+      "local_date": "2027-02-28",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
       ]
     },
     {
@@ -3194,6 +3410,42 @@
       ]
     },
     {
+      "id": "curated:auto-00bc189e26be492b:2027-03-19",
+      "starts_at": "2027-03-19T20:00:00+01:00",
+      "local_date": "2027-03-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-00bc189e26be492b:2027-03-20",
+      "starts_at": "2027-03-20T15:00:00+01:00",
+      "local_date": "2027-03-20",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
       "id": "curated:fenice-jenufa-2027:2027-03-20",
       "starts_at": "2027-03-20T15:30:00+01:00",
       "local_date": "2027-03-20",
@@ -3209,6 +3461,78 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/jenufa/"
+      ]
+    },
+    {
+      "id": "curated:auto-00bc189e26be492b:2027-03-21",
+      "starts_at": "2027-03-21T15:00:00+01:00",
+      "local_date": "2027-03-21",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-00bc189e26be492b:2027-03-23",
+      "starts_at": "2027-03-23T20:00:00+01:00",
+      "local_date": "2027-03-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-00bc189e26be492b:2027-03-24",
+      "starts_at": "2027-03-24T17:00:00+01:00",
+      "local_date": "2027-03-24",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-00bc189e26be492b:2027-03-25",
+      "starts_at": "2027-03-25T20:00:00+01:00",
+      "local_date": "2027-03-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/turandot/"
       ]
     },
     {
@@ -4040,6 +4364,42 @@
       ]
     },
     {
+      "id": "curated:auto-b1c24780a29d634e:2027-05-21",
+      "starts_at": "2027-05-21T20:00:00+02:00",
+      "local_date": "2027-05-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-b1c24780a29d634e:2027-05-22",
+      "starts_at": "2027-05-22T15:00:00+02:00",
+      "local_date": "2027-05-22",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/nabucco/"
+      ]
+    },
+    {
       "id": "curated:regio-carmen-2027:2027-05-22",
       "starts_at": "2027-05-22T19:30:00+02:00",
       "local_date": "2027-05-22",
@@ -4073,6 +4433,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+      ]
+    },
+    {
+      "id": "curated:auto-b1c24780a29d634e:2027-05-23",
+      "starts_at": "2027-05-23T15:00:00+02:00",
+      "local_date": "2027-05-23",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/nabucco/"
       ]
     },
     {
@@ -4166,6 +4544,24 @@
       ]
     },
     {
+      "id": "curated:auto-b1c24780a29d634e:2027-05-28",
+      "starts_at": "2027-05-28T20:00:00+02:00",
+      "local_date": "2027-05-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/nabucco/"
+      ]
+    },
+    {
       "id": "curated:regio-carmen-2027:2027-05-29",
       "starts_at": "2027-05-29T15:00:00+02:00",
       "local_date": "2027-05-29",
@@ -4199,6 +4595,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html"
+      ]
+    },
+    {
+      "id": "curated:auto-b1c24780a29d634e:2027-05-29",
+      "starts_at": "2027-05-29T20:00:00+02:00",
+      "local_date": "2027-05-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-b1c24780a29d634e:2027-05-30",
+      "starts_at": "2027-05-30T15:00:00+02:00",
+      "local_date": "2027-05-30",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/nabucco/"
       ]
     },
     {

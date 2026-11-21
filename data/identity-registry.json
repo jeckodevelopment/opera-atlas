@@ -334,6 +334,14 @@
       "name": "Teatro Dante Alighieri",
       "city": "Ravenna",
       "region": "Emilia-Romagna"
+    },
+    "Genova|Teatro Carlo Felice": {
+      "id": "oa-v-000015",
+      "slug": "teatro-carlo-felice",
+      "city_slug": "genova",
+      "name": "Teatro Carlo Felice",
+      "city": "Genova",
+      "region": "Liguria"
     }
   },
   "stagings": {
@@ -873,6 +881,38 @@
       "slug": "i-puritani",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
       "season": "2026-2027"
+    },
+    "auto-00bc189e26be492b": {
+      "id": "oa-s-000068",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000015",
+      "slug": "turandot",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/",
+      "season": "2027"
+    },
+    "auto-1e384fa01b8a144d": {
+      "id": "oa-s-000069",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000015",
+      "slug": "pagliacci",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
+      "season": "2027"
+    },
+    "auto-b1c24780a29d634e": {
+      "id": "oa-s-000070",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000015",
+      "slug": "nabucco",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/",
+      "season": "2027"
+    },
+    "auto-f942d4e01d9578a9": {
+      "id": "oa-s-000071",
+      "work_id": "oa-w-000002",
+      "venue_id": "oa-v-000015",
+      "slug": "italiana-in-algeri",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -2855,6 +2895,150 @@
       "staging_id": "oa-s-000067",
       "original_date": "2027-07-01",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+    },
+    "auto-00bc189e26be492b|2027-03-19": {
+      "id": "oa-r-000331",
+      "staging_id": "oa-s-000068",
+      "original_date": "2027-03-19",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/"
+    },
+    "auto-00bc189e26be492b|2027-03-20": {
+      "id": "oa-r-000332",
+      "staging_id": "oa-s-000068",
+      "original_date": "2027-03-20",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/"
+    },
+    "auto-00bc189e26be492b|2027-03-21": {
+      "id": "oa-r-000333",
+      "staging_id": "oa-s-000068",
+      "original_date": "2027-03-21",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/"
+    },
+    "auto-00bc189e26be492b|2027-03-23": {
+      "id": "oa-r-000334",
+      "staging_id": "oa-s-000068",
+      "original_date": "2027-03-23",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/"
+    },
+    "auto-00bc189e26be492b|2027-03-24": {
+      "id": "oa-r-000335",
+      "staging_id": "oa-s-000068",
+      "original_date": "2027-03-24",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/"
+    },
+    "auto-00bc189e26be492b|2027-03-25": {
+      "id": "oa-r-000336",
+      "staging_id": "oa-s-000068",
+      "original_date": "2027-03-25",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/"
+    },
+    "auto-1e384fa01b8a144d|2027-01-22": {
+      "id": "oa-r-000337",
+      "staging_id": "oa-s-000069",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/"
+    },
+    "auto-1e384fa01b8a144d|2027-01-23": {
+      "id": "oa-r-000338",
+      "staging_id": "oa-s-000069",
+      "original_date": "2027-01-23",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/"
+    },
+    "auto-1e384fa01b8a144d|2027-01-24": {
+      "id": "oa-r-000339",
+      "staging_id": "oa-s-000069",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/"
+    },
+    "auto-1e384fa01b8a144d|2027-01-29": {
+      "id": "oa-r-000340",
+      "staging_id": "oa-s-000069",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/"
+    },
+    "auto-1e384fa01b8a144d|2027-01-30": {
+      "id": "oa-r-000341",
+      "staging_id": "oa-s-000069",
+      "original_date": "2027-01-30",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/"
+    },
+    "auto-1e384fa01b8a144d|2027-01-31": {
+      "id": "oa-r-000342",
+      "staging_id": "oa-s-000069",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/"
+    },
+    "auto-b1c24780a29d634e|2027-05-21": {
+      "id": "oa-r-000343",
+      "staging_id": "oa-s-000070",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/"
+    },
+    "auto-b1c24780a29d634e|2027-05-22": {
+      "id": "oa-r-000344",
+      "staging_id": "oa-s-000070",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/"
+    },
+    "auto-b1c24780a29d634e|2027-05-23": {
+      "id": "oa-r-000345",
+      "staging_id": "oa-s-000070",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/"
+    },
+    "auto-b1c24780a29d634e|2027-05-28": {
+      "id": "oa-r-000346",
+      "staging_id": "oa-s-000070",
+      "original_date": "2027-05-28",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/"
+    },
+    "auto-b1c24780a29d634e|2027-05-29": {
+      "id": "oa-r-000347",
+      "staging_id": "oa-s-000070",
+      "original_date": "2027-05-29",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/"
+    },
+    "auto-b1c24780a29d634e|2027-05-30": {
+      "id": "oa-r-000348",
+      "staging_id": "oa-s-000070",
+      "original_date": "2027-05-30",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/"
+    },
+    "auto-f942d4e01d9578a9|2027-02-19": {
+      "id": "oa-r-000349",
+      "staging_id": "oa-s-000071",
+      "original_date": "2027-02-19",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+    },
+    "auto-f942d4e01d9578a9|2027-02-20": {
+      "id": "oa-r-000350",
+      "staging_id": "oa-s-000071",
+      "original_date": "2027-02-20",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+    },
+    "auto-f942d4e01d9578a9|2027-02-21": {
+      "id": "oa-r-000351",
+      "staging_id": "oa-s-000071",
+      "original_date": "2027-02-21",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+    },
+    "auto-f942d4e01d9578a9|2027-02-26": {
+      "id": "oa-r-000352",
+      "staging_id": "oa-s-000071",
+      "original_date": "2027-02-26",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+    },
+    "auto-f942d4e01d9578a9|2027-02-27": {
+      "id": "oa-r-000353",
+      "staging_id": "oa-s-000071",
+      "original_date": "2027-02-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
+    },
+    "auto-f942d4e01d9578a9|2027-02-28": {
+      "id": "oa-r-000354",
+      "staging_id": "oa-s-000071",
+      "original_date": "2027-02-28",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/"
     }
   }
 }
