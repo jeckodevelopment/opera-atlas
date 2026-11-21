@@ -1,9 +1,82 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T10:49:20+00:00",
-  "checked_pages": 0,
+  "checked_at": "2026-11-21T11:13:30+00:00",
+  "checked_pages": 18,
   "official_images": 2,
-  "archival_images": 7,
-  "editorial_fallbacks": 27,
-  "outcomes": []
+  "archival_images": 9,
+  "editorial_fallbacks": 25,
+  "outcomes": [
+    {
+      "slug": "i-puritani",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "anna-bolena",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "nixon-in-china",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "adriana-lecouvreur",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "nozze-istriane",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "norma",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "don-quichotte",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "partenope",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "il-pipistrello",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "al-cavallino-bianco",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "carmen",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "aida",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "rigoletto",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "la-traviata",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "carmen",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "macbeth",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "nabucco",
+      "status": "no_suitable_official_poster"
+    },
+    {
+      "slug": "tosca",
+      "status": "no_suitable_official_poster"
+    }
+  ]
 }
