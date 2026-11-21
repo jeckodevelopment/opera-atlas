@@ -247,3 +247,11 @@ Il workflow di refresh può acquisire nuove rappresentazioni verificate di un te
 Se un teatro completamente nuovo non ha ancora una scheda editoriale verificata, non si blocca la pubblicazione delle sue rappresentazioni ufficiali: continua a essere consultabile nel catalogo eventi senza creare automaticamente una storia, una foto o un indirizzo fittizi. Non è consentito unire due teatri omonimi soltanto per titolo: la riconciliazione usa anche città e slug, e blocca le associazioni conflittuali. Questo risolve l’errore nel refresh che fermava la pubblicazione dopo il passaggio da 14 a 15 sedi canoniche.
 
 Test regressione: promuovere automaticamente Carlo Felice (ID canonico aggiuntivo) senza duplicare la scheda nazionale; verificare `calendar_status=acquired`, ID pubblico/URL stabili e feed generato riproducibile; nessun blocco del refresh per nuove sedi non ancora documentate.
+
+## Test di regressione resistenti alla crescita autonoma del catalogo (21/11/2026)
+
+I test del catalogo non devono considerare fissi **14 teatri** o **330 recite**: le fonti verificate possono aggiungere nuove sedi canoniche e nuove date senza PR manuali. Gli invarianti corretti sono: identificativi già assegnati immutabili, percorso pubblico della sede stabile, città e sede collegate alla produzione verificata, nessuna data/orario inventato, conteggi coerenti con la fonte di verità attuale. In particolare, `oa-vd-000016` per il Carlo Felice resta la stessa scheda editoriale dopo l’assegnazione dell’ID canonico `oa-v-000015` per le nuove recite.
+
+La pagina di copertura delle **otto fonti primarie** non deve affermare di coprire le recite dei nuovi connettori nazionali: il relativo test confronta soltanto le recite provenienti dai domini primari autorizzati, lasciando separate le altre fonti. I test di acquisizione utilizzano date di prova non ancora presenti nel manifest, perché l’acquisizione idempotente deve ignorare le date già pubblicate. La ricerca geografica conosce anche il centro municipale indicativo di Genova e non inventa coordinate per nuove città sconosciute.
+
+Collaudo: nuova recita già verificata al Teatro Carlo Felice, seconda acquisizione idempotente, nessuna collisione o ridenominazione nel catalogo dei 52 teatri, controlli dei domini primari invariati, test Python e release automatizzata del feed senza fallimenti per conteggi rigidi.
