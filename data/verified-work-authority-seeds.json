@@ -459,6 +459,42 @@
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
         ]
       }
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/siberia/",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "synopsis": "Nella Russia zarista, Stephana si innamora del soldato Vassili, condannato ai lavori forzati. Pur di restargli accanto, affronta con lui il viaggio in Siberia e un destino tragico.",
+      "history": {
+        "librettist": "Luigi Illica",
+        "premiere_year": 1903,
+        "premiere_venue": "Teatro alla Scala",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://corago.unibo.it/libretto/DMBM16973",
+          "https://www.teatroreal.es/en/show/siberia",
+          "https://teatripiacenza.it/event/siberia/"
+        ]
+      }
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Nella Genova medievale, Simon Boccanegra diventa doge mentre rivalità politiche e segreti familiari minacciano la sua vita. Il ritrovamento della figlia Amelia riapre ferite e speranze.",
+      "history": {
+        "librettist": "Francesco Maria Piave",
+        "premiere_year": 1857,
+        "premiere_venue": "Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://corago.unibo.it/libretto/DMBM21861",
+          "https://archiviostorico.operaroma.it/opera/simon-boccanegra/",
+          "https://teatripiacenza.it/event/simon-boccanegra/"
+        ]
+      }
     }
   ]
 }
