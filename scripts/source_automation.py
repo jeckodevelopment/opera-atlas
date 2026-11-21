@@ -1,0 +1,152 @@
+"""Reconcile the venue directory against configured and recently checked official connectors.
+
+Statuses are evidence-based: an 'acquired' venue page is not proof of
+automation. A season index success is not proof of complete recite coverage.
+"""
+from __future__ import annotations
+import argparse
+import json
+from collections import Counter
+from pathlib import Path
+from urllib.parse import urlsplit
+
+ROOT = Path(__file__).resolve().parents[1]
+DIRECTORY = ROOT / "data/venue-directory.json"
+DAILY = ROOT / "data/daily-source-config.json"
+DAILY_HEALTH = ROOT / "data/catalog-source-health.json"
+INDEX = ROOT / "data/season-index-config.json"
+INDEX_HEALTH = ROOT / "data/season-index-health.json"
+OUT = ROOT / "public/catalog/source-automation.json"
+
+# Explicit links between sources and venues; never match unrelated theatres
+# sharing a city, name, or festival organizer. Grouped sources are intentional.
+INDEX_VENUES = {
+    "scala-season-2026-27": ("Milano|Teatro alla Scala",),
+    "arena-festival-2027": ("Verona|Arena di Verona",),
+    "fenice-opera-2026-27": ("Venezia|Teatro La Fenice", "Venezia|Teatro Malibran"),
+    "parma-opera-2027": ("Parma|Teatro Regio di Parma",),
+    "massimo-season-2026-27": ("Palermo|Teatro Massimo",),
+    "carlo-felice-season-2026-27": ("Genova|Teatro Carlo Felice",),
+    "donizetti-opera-2026": ("Bergamo|Teatro Donizetti",),
+    "teatro-grande-opera-2026": ("Brescia|Teatro Grande",),
+    "maggio-fiorentino-calendar-2027": ("Firenze|Teatro del Maggio Musicale Fiorentino", "Firenze|Teatro Goldoni"),
+    "opera-roma-season-2026-27": ("Roma|Teatro dell'Opera di Roma",),
+    "petruzzelli-opera-2026": ("Bari|Teatro Petruzzelli",),
+    "petruzzelli-opera-2027": ("Bari|Teatro Petruzzelli",),
+    "bologna-comunale-opera-2026": ("Bologna|Teatro Comunale di Bologna", "Bologna|Teatro Auditorium Manzoni"),
+    "bologna-comunale-opera-2027": ("Bologna|Teatro Comunale di Bologna", "Bologna|Teatro Auditorium Manzoni"),
+}
+DAILY_VENUES = {
+    "regio": ("Torino|Teatro Regio di Torino",),
+    "operalombardia": ("Como|Teatro Sociale", "Pavia|Teatro Fraschini",
+                       "Brescia|Teatro Grande", "Cremona|Teatro Ponchielli"),
+    "operalombardia_calendar": ("Como|Teatro Sociale", "Pavia|Teatro Fraschini",
+                                "Brescia|Teatro Grande", "Cremona|Teatro Ponchielli"),
+    "fraschini": ("Pavia|Teatro Fraschini",),
+    "scala": ("Milano|Teatro alla Scala",),
+    "arena": ("Verona|Arena di Verona",),
+}
+
+
+def build(directory: dict, daily: dict, daily_health: dict, index: dict,
+          index_health: dict) -> dict:
+    venues = directory["venues"]
+    profiles = {v["city"] + "|" + v["name"]: v for v in venues}
+    if len(profiles) != len(venues):
+        raise ValueError("ambiguous duplicate venue profiles")
+    for source, targets in INDEX_VENUES.items():
+        for key in targets:
+            if key not in profiles:
+                raise ValueError(f"unknown mapped venue {source}: {key}")
+    for adapter, targets in DAILY_VENUES.items():
+        for key in targets:
+            if key not in profiles:
+                raise ValueError(f"unknown mapped adapter venue {adapter}: {key}")
+    indexed = {x["key"]: x for x in index["sources"]}
+    index_checks = {x["key"]: x for x in index_health.get("sources", [])}
+    direct_checks = {x["key"]: x for x in daily_health.get("sources", [])}
+    assignments = {key: [] for key in profiles}
+    for entry in index["sources"]:
+        for key in INDEX_VENUES.get(entry["key"], ()):
+            check = index_checks.get(entry["key"], {})
+            assignments[key].append({
+                "source_key": entry["key"], "type": "season_index",
+                "configured": entry.get("access_status") == "approved",
+                "last_status": check.get("status", "not_checked"),
+                "recent_success": bool(check.get("current_scan_verified")
+                                       and check.get("status") == "success"),
+            })
+    for entry in daily["sources"]:
+        for key in DAILY_VENUES.get(entry["adapter"], ()):
+            check = direct_checks.get(entry["key"], {})
+            assignments[key].append({
+                "source_key": entry["key"], "type": "detail_or_calendar",
+                "configured": entry.get("access_status") == "approved",
+                "last_status": check.get("outcome", "not_checked"),
+                "recent_success": check.get("outcome") == "success",
+            })
+    rows = []
+    for key, venue in profiles.items():
+        sources = assignments[key]
+        successful = [s for s in sources if s["configured"] and s["recent_success"]]
+        approved = [s for s in sources if s["configured"]]
+        if successful:
+            status = "operational"
+        elif approved:
+            status = "configured_not_operational"
+        else:
+            status = "not_automated"
+        rows.append({
+            "venue_id": venue["id"],
+            "venue": venue["name"],
+            "city": venue["city"],
+            "region": venue["region"],
+            "status": status,
+            "configured_connectors": len(approved),
+            "recent_successful_connectors": len(successful),
+            "sources": sources,
+        })
+    rows.sort(key=lambda v: (v["region"], v["city"], v["venue"]))
+    counts = Counter(row["status"] for row in rows)
+    return {
+        "schema_version": 1,
+        "reviewed_on": directory.get("reviewed_on"),
+        "scope": "structured_venue_directory",
+        "definition": "Operational means at least one explicitly mapped approved source with a successful latest scan; does not imply an exhaustive season.",
+        "total_venues": len(rows),
+        "operational": counts["operational"],
+        "configured_not_operational": counts["configured_not_operational"],
+        "not_automated": counts["not_automated"],
+        "automation_remaining": counts["configured_not_operational"] + counts["not_automated"],
+        "venues": rows,
+    }
+
+
+def publish(check: bool = False) -> dict:
+    def read(path):
+        return json.loads(path.read_text(encoding="utf-8"))
+    report = build(read(DIRECTORY), read(DAILY), read(DAILY_HEALTH),
+                   read(INDEX), read(INDEX_HEALTH))
+    serialized = (json.dumps(report, ensure_ascii=False, sort_keys=True,
+                             separators=(",", ":")) + "\n").encode("utf-8")
+    if check:
+        if not OUT.exists() or OUT.read_bytes() != serialized:
+            raise ValueError("source automation feed is out of sync")
+    else:
+        OUT.parent.mkdir(parents=True, exist_ok=True)
+        OUT.write_bytes(serialized)
+    return report
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    result = publish(check=args.check)
+    print(json.dumps({k: result[k] for k in (
+        "total_venues", "operational", "configured_not_operational",
+        "not_automated", "automation_remaining")}))
+
+
+if __name__ == "__main__":
+    main()
