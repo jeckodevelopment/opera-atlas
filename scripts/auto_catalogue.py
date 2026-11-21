@@ -28,6 +28,7 @@ VENUE_BY_SOURCE={
     "massimo-season-2026-27":("Palermo","Teatro Massimo"),
     "carlo-felice-season-2026-27":("Genova","Teatro Carlo Felice"),
     "donizetti-opera-2026":("Bergamo","Teatro Donizetti"),
+    "teatro-grande-opera-2026":("Brescia","Teatro Grande"),
 }
 
 def verified_venue(source_key:str,rows:list[dict],registry:dict):
