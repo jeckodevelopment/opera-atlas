@@ -51,6 +51,15 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
     works, venues, stagings, performances = {}, {}, {}, []
     used_keys = {channel: set() for channel in CHANNELS}
     route_keys = set()
+    work_routes = {}
+    for record in registry["works"].values():
+        base_slug=slugify(record["title"])
+        public_slug=record.get("route_slug",record["slug"])
+        if record["slug"] != base_slug or not isinstance(public_slug,str) or slugify(public_slug)!=public_slug:
+            raise ValueError("invalid canonical work route")
+        if public_slug in work_routes:
+            raise ValueError("duplicate public work route: "+public_slug)
+        work_routes[public_slug]=record["id"]
     for product in facts["productions"]:
         wk = normalized(product["title"]) + "|" + normalized(product["composer"])
         vk = product["municipality"] + "|" + product["venue"]
@@ -68,7 +77,9 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
                 or staging["work_id"] != work["id"]
                 or staging["venue_id"] != venue["id"]):
             raise ValueError("identity and public route mapping require human review")
-        works[work["id"]] = dict(work)
+        work_record=dict(work)
+        work_record["route_slug"]=work.get("route_slug",work["slug"])
+        works[work["id"]] = work_record
         venues[venue["id"]] = dict(venue)
         # Existing URLs keep their exact three-segment route. Multiple
         # distinct stagings of the same work at one theatre receive a stable
