@@ -71,6 +71,11 @@ EXCLUDED_PATHS={
         "biancaneve", "il-grande-gatsby", "sylvia", "balanchine-caikovskij",
         "lo-schiaccianoci",
     }),
+    "carlo-felice-season-2026-27": frozenset({
+        "lo-schiaccianoci", "giselle", "il-lago-dei-cigni",
+        "deledda", "sergio-bernal-dance-company",
+        "the-phantom-of-the-opera",
+    }),
     "fenice-opera-2026-27": frozenset({
         "piccolo-orso-e-la-montagna-di-ghiaccio",
         "zsigmond-gerloczy",
@@ -161,6 +166,8 @@ def eligible(key:str,url:str)->bool:
                              "arena-per-tutti","programma","festival"})
     if key=="fenice-opera-2026-27":
         return path.startswith("/event/") and bool(path.removeprefix("/event/"))
+    if key=="carlo-felice-season-2026-27":
+        return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
     if key=="parma-opera-2027":
         return path.startswith("/spettacolo/") and bool(path.removeprefix("/spettacolo/"))
     if key=="massimo-season-2026-27":
@@ -196,6 +203,7 @@ def validate_config(config:dict)->list[dict]:
         "fenice-opera-2026-27":("www.teatrolafenice.it","/event-category/opera-2026-27/"),
         "parma-opera-2027":("teatroregioparma.it","/categoria-spettacoli/opera/"),
         "massimo-season-2026-27":("www.teatromassimo.it","/la-stagione-2026-27/"),
+        "carlo-felice-season-2026-27":("www.carlofelice.it","/rassegna-stagione-opera-danza-musical-2026-27/"),
     }
     seen=set()
     for item in config["sources"]:
@@ -221,6 +229,9 @@ def validate_config(config:dict)->list[dict]:
                 valid_season=bool(season and
                     (int(season[1])+1)%100==int(season[2]) and
                     2026<=int(season[1])<=2098)
+        elif key=="carlo-felice-season-2026-27":
+            season=re.fullmatch(r"/rassegna-stagione-opera-danza-musical-(20\d{2})-(\d{2})/",index.path)
+            valid_season=bool(season and (int(season[1])+1)%100==int(season[2]) and 2026<=int(season[1])<=2098)
         else:
             valid_season=index.path==path
         if (index.scheme!="https" or index.hostname!=host or not valid_season
