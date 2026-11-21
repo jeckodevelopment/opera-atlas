@@ -19,7 +19,7 @@ window.OperaAtlasCatalog = (() => {
   function urls(event) {
     const city = event.city_slug || slugify(event.municipality);
     const theatre = event.venue_slug || slugify(event.venue);
-    const work = event.work_slug || slugify(event.title);
+    const work = event.work_route_slug || event.work_slug || slugify(event.title);
     const staging = event.staging_url || ("/" + city + "/" + theatre + "/" + work + "/");
     return {
       work: PREFIX + "/opere/" + work + "/",
@@ -104,7 +104,7 @@ window.OperaAtlasCatalog = (() => {
       return {
         id:item.id, legacy_id:item.legacy_id, staging_id:staging.id,work_id:work.id,venue_id:venue.id,
         production_group_id:groups.get(staging.id)||null,
-        staging_url:staging.url, season:staging.season, work_slug:work.slug,
+        staging_url:staging.url, season:staging.season, work_slug:work.slug,work_route_slug:work.route_slug||work.slug,
         venue_slug:venue.slug, city_slug:venue.city_slug,
         local_date:item.local_date,starts_at:item.starts_at,
         time_known:item.time_known, status:item.status,
