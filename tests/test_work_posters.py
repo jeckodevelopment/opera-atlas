@@ -256,7 +256,7 @@ class PosterPublicationTests(unittest.TestCase):
             official=work.get("authority_url","")
             first_party=(
                 bool(re.fullmatch(
-                    r"https://www\\.tcbo\\.it/evento/opera/[a-z0-9-]+-20\\d{2}/",
+                    r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
                     official)) and
                 any(stage["work_id"]==work["id"] and
                     stage["source_url"]==official
