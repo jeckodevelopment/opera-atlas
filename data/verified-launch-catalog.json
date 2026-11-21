@@ -3994,6 +3994,99 @@
           "17:00"
         ]
       ]
+    },
+    {
+      "key": "auto-129b5be3f35d5762",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/",
+      "dates": [
+        [
+          "2027-05-07",
+          "20:00"
+        ],
+        [
+          "2027-05-08",
+          "18:00"
+        ],
+        [
+          "2027-05-13",
+          "20:00"
+        ],
+        [
+          "2027-05-16",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1e15e89ae5b2a2ec",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
+      "dates": [
+        [
+          "2027-03-12",
+          "20:00"
+        ],
+        [
+          "2027-03-13",
+          "18:00"
+        ],
+        [
+          "2027-03-14",
+          "16:00"
+        ],
+        [
+          "2027-03-18",
+          "20:00"
+        ],
+        [
+          "2027-03-20",
+          "16:00"
+        ],
+        [
+          "2027-03-21",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-2ab0ba26f1806086",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
+      "dates": [
+        [
+          "2027-06-11",
+          "20:00"
+        ],
+        [
+          "2027-06-12",
+          "18:00"
+        ],
+        [
+          "2027-06-13",
+          "16:00"
+        ],
+        [
+          "2027-06-18",
+          "20:00"
+        ],
+        [
+          "2027-06-20",
+          "16:00"
+        ]
+      ]
     }
   ]
 }

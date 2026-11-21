@@ -1701,6 +1701,30 @@
       "slug": "alcina",
       "source_url": "https://www.liricocagliari.it/evento/alcina/",
       "season": "2027"
+    },
+    "auto-129b5be3f35d5762": {
+      "id": "oa-s-000132",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000025",
+      "slug": "aida",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/",
+      "season": "2027"
+    },
+    "auto-1e15e89ae5b2a2ec": {
+      "id": "oa-s-000133",
+      "work_id": "oa-w-000024",
+      "venue_id": "oa-v-000025",
+      "slug": "la-boheme",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
+      "season": "2027"
+    },
+    "auto-2ab0ba26f1806086": {
+      "id": "oa-s-000134",
+      "work_id": "oa-w-000031",
+      "venue_id": "oa-v-000025",
+      "slug": "norma",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -5579,6 +5603,96 @@
       "staging_id": "oa-s-000131",
       "original_date": "2027-03-14",
       "source_url": "https://www.liricocagliari.it/evento/alcina/"
+    },
+    "auto-129b5be3f35d5762|2027-05-07": {
+      "id": "oa-r-000662",
+      "staging_id": "oa-s-000132",
+      "original_date": "2027-05-07",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/"
+    },
+    "auto-129b5be3f35d5762|2027-05-08": {
+      "id": "oa-r-000663",
+      "staging_id": "oa-s-000132",
+      "original_date": "2027-05-08",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/"
+    },
+    "auto-129b5be3f35d5762|2027-05-13": {
+      "id": "oa-r-000664",
+      "staging_id": "oa-s-000132",
+      "original_date": "2027-05-13",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/"
+    },
+    "auto-129b5be3f35d5762|2027-05-16": {
+      "id": "oa-r-000665",
+      "staging_id": "oa-s-000132",
+      "original_date": "2027-05-16",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/"
+    },
+    "auto-1e15e89ae5b2a2ec|2027-03-12": {
+      "id": "oa-r-000666",
+      "staging_id": "oa-s-000133",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
+    },
+    "auto-1e15e89ae5b2a2ec|2027-03-13": {
+      "id": "oa-r-000667",
+      "staging_id": "oa-s-000133",
+      "original_date": "2027-03-13",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
+    },
+    "auto-1e15e89ae5b2a2ec|2027-03-14": {
+      "id": "oa-r-000668",
+      "staging_id": "oa-s-000133",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
+    },
+    "auto-1e15e89ae5b2a2ec|2027-03-18": {
+      "id": "oa-r-000669",
+      "staging_id": "oa-s-000133",
+      "original_date": "2027-03-18",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
+    },
+    "auto-1e15e89ae5b2a2ec|2027-03-20": {
+      "id": "oa-r-000670",
+      "staging_id": "oa-s-000133",
+      "original_date": "2027-03-20",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
+    },
+    "auto-1e15e89ae5b2a2ec|2027-03-21": {
+      "id": "oa-r-000671",
+      "staging_id": "oa-s-000133",
+      "original_date": "2027-03-21",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
+    },
+    "auto-2ab0ba26f1806086|2027-06-11": {
+      "id": "oa-r-000672",
+      "staging_id": "oa-s-000134",
+      "original_date": "2027-06-11",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
+    },
+    "auto-2ab0ba26f1806086|2027-06-12": {
+      "id": "oa-r-000673",
+      "staging_id": "oa-s-000134",
+      "original_date": "2027-06-12",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
+    },
+    "auto-2ab0ba26f1806086|2027-06-13": {
+      "id": "oa-r-000674",
+      "staging_id": "oa-s-000134",
+      "original_date": "2027-06-13",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
+    },
+    "auto-2ab0ba26f1806086|2027-06-18": {
+      "id": "oa-r-000675",
+      "staging_id": "oa-s-000134",
+      "original_date": "2027-06-18",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
+    },
+    "auto-2ab0ba26f1806086|2027-06-20": {
+      "id": "oa-r-000676",
+      "staging_id": "oa-s-000134",
+      "original_date": "2027-06-20",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
     }
   }
 }

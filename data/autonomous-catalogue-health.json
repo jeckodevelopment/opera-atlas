@@ -4,18 +4,6 @@
   "new_recite": 0,
   "auto_skipped": [
     {
-      "candidate_id": "oa-index-129b5be3f35d5762f8bb",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-1e15e89ae5b2a2ec45f9",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-2ab0ba26f1806086b52a",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-a9e0eff95e96e71fd958",
       "reason": "unknown_work_needs_authority_data"
     }
