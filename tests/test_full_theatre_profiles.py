@@ -73,7 +73,7 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertIn("event?.photo_file",script)
         self.assertIn('const verified=event?.photo_file || knownVenueFile;',script)
         venue_code=script.split("  function venue(event){",1)[1].split("  function festival(event){",1)[0]
-        self.assertNotIn("FILES[city]",venue_code)
+        self.assertIn("VENUE_NAMES[city]?.includes(title)",venue_code)
         self.assertIn('const file=typeof verified===',venue_code)
         self.assertIn('selected.venue?.calendar_status==="acquired"',detail)
         self.assertIn("Calendario non ancora acquisito · consulta il ",detail)
