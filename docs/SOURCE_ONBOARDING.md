@@ -1136,3 +1136,7 @@ La pagina ufficiale `https://www.operaroma.it/genre/opera/` contiene il cartello
 ### Recupero parziale dell'indice ufficiale Roma
 
 Se `/genre/opera/` fallisce esclusivamente durante la lettura HTML (non per `robots.txt`), la scoperta prova una sola volta `/genre/opera/page/2/`, sul medesimo host e sempre tramite il fetch che verifica `robots.txt`. Le sole URL di dettaglio `/spettacoli/` risultanti restano candidate da verificare; la fonte è marcata `partial_pagination` e `primary_official_html_unavailable`. Il tentativo è vietato per errori robots o divieti di accesso. Nessun titolo, autore o orario viene inferito né pubblicato da questa sola raccolta di URL.
+
+### Robots.txt assente e ripristino di Roma (RFC 9309)
+
+Diagnostica verificata sul runner GitHub Actions con lo User-Agent `OperaAtlasResearch`: `https://www.operaroma.it/robots.txt` restituisce HTTP **404**. Il precedente fetch interpretava erroneamente qualunque stato diverso da 200 come una mancanza di permesso. Come previsto da RFC 9309 §2.3.1.3, un file robots effettivamente assente (404/410) non impone regole REP; il collector può quindi leggere unicamente le pagine HTTPS dello stesso host approvato, con i limiti preesistenti. Restano bloccanti risposte 401/403/429, 5xx, timeout, errori di trasporto, robots 200 malformato, reindirizzamenti e direttive Disallow. Questo sblocca il trasporto, ma la copertura completa richiede comunque evidenza ufficiale di singole recite e verifica del feed JSON dopo il refresh.
