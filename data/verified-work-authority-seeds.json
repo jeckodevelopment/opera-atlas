@@ -476,6 +476,57 @@
           "https://www.teatrolafenice.it/wp-content/uploads/2025/06/TRAMA-1.pdf"
         ]
       }
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+      "title": "Bona Sforza",
+      "composer": "Zygmunt Krauze",
+      "synopsis": "La vita di Bona Sforza attraversa le corti italiane e quella polacca: da giovane principessa a regina e poi vedova, fra ambizione politica, affetti e conflitti dinastici.",
+      "history": {
+        "librettist": "Vincenzo de Vivo",
+        "premiere_year": 2024,
+        "premiere_venue": "Opera Krakowska",
+        "premiere_city": "Cracovia",
+        "sources": [
+          "https://zygmuntkrauze.com/en/kompozytor/bona-sforza-2/",
+          "https://opera.krakow.pl/en/spectacles/bona-sforza-1"
+        ]
+      }
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
+      "title": "Il gobbo del Califfo",
+      "composer": "Franco Casavola",
+      "synopsis": "Nella Baghdad delle Mille e una notte, il gobbo buffone di corte è invitato a cena da una coppia; una serie di equivoci e incidenti dà vita a una vicenda comica.",
+      "history": {
+        "librettist": "Arturo Rossato",
+        "premiere_year": 1929,
+        "premiere_venue": "Teatro Reale dell'Opera",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/il-gobbo-del-califfo/",
+          "https://www.arengario.it/opera/il-gobbo-del-califfo-libretto-di-arturo-rossato-musica-di-franco-casavola-11565/"
+        ]
+      }
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
+      "title": "La Cecchina",
+      "composer": "Niccolò Piccinni",
+      "synopsis": "Cecchina, giovane giardiniera, ama il marchese della Conchiglia. Le gelosie e i pregiudizi sociali ostacolano il loro amore, finché la scoperta delle origini di lei cambia le sorti della vicenda.",
+      "history": {
+        "librettist": "Carlo Goldoni",
+        "premiere_year": 1760,
+        "premiere_venue": "Teatro delle Dame",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://corago.unibo.it/opera/7AN0002579",
+          "https://archiviostorico.operaroma.it/opera/la-buona-figliola-la-cecchina/"
+        ]
+      }
     }
   ]
 }
