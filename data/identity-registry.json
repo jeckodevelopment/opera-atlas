@@ -365,6 +365,14 @@
       "name": "Teatro dell'Opera di Roma",
       "city": "Roma",
       "region": "Lazio"
+    },
+    "Bari|Teatro Petruzzelli": {
+      "id": "oa-v-000018",
+      "slug": "teatro-petruzzelli",
+      "city_slug": "bari",
+      "name": "Teatro Petruzzelli",
+      "city": "Bari",
+      "region": "Puglia"
     }
   },
   "stagings": {
@@ -967,6 +975,14 @@
       "venue_id": "oa-v-000017",
       "slug": "lucia-di-lammermoor",
       "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/",
+      "season": "2027"
+    },
+    "auto-ef3fc228eb643db3": {
+      "id": "oa-s-000076",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000018",
+      "slug": "nabucco",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
       "season": "2027"
     }
   },
@@ -3214,6 +3230,48 @@
       "staging_id": "oa-s-000075",
       "original_date": "2027-02-28",
       "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+    },
+    "auto-ef3fc228eb643db3|2027-03-12": {
+      "id": "oa-r-000375",
+      "staging_id": "oa-s-000076",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+    },
+    "auto-ef3fc228eb643db3|2027-03-13": {
+      "id": "oa-r-000376",
+      "staging_id": "oa-s-000076",
+      "original_date": "2027-03-13",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+    },
+    "auto-ef3fc228eb643db3|2027-03-14": {
+      "id": "oa-r-000377",
+      "staging_id": "oa-s-000076",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+    },
+    "auto-ef3fc228eb643db3|2027-03-16": {
+      "id": "oa-r-000378",
+      "staging_id": "oa-s-000076",
+      "original_date": "2027-03-16",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+    },
+    "auto-ef3fc228eb643db3|2027-03-17": {
+      "id": "oa-r-000379",
+      "staging_id": "oa-s-000076",
+      "original_date": "2027-03-17",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+    },
+    "auto-ef3fc228eb643db3|2027-03-18": {
+      "id": "oa-r-000380",
+      "staging_id": "oa-s-000076",
+      "original_date": "2027-03-18",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+    },
+    "auto-ef3fc228eb643db3|2027-03-19": {
+      "id": "oa-r-000381",
+      "staging_id": "oa-s-000076",
+      "original_date": "2027-03-19",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
     }
   }
 }

@@ -2323,6 +2323,45 @@
           "16:30"
         ]
       ]
+    },
+    {
+      "key": "auto-ef3fc228eb643db3",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
+      "dates": [
+        [
+          "2027-03-12",
+          "20:30"
+        ],
+        [
+          "2027-03-13",
+          "18:00"
+        ],
+        [
+          "2027-03-14",
+          "18:00"
+        ],
+        [
+          "2027-03-16",
+          "20:30"
+        ],
+        [
+          "2027-03-17",
+          "20:30"
+        ],
+        [
+          "2027-03-18",
+          "20:30"
+        ],
+        [
+          "2027-03-19",
+          "18:00"
+        ]
+      ]
     }
   ]
 }
