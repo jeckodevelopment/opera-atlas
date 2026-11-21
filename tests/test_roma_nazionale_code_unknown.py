@@ -41,12 +41,12 @@ class TeatroNazionaleTests(unittest.TestCase):
                          "https://www.operaroma.it/luoghi/teatro-nazionale/")
         # An actual institutional venue photo may be verified later; do
         # not regress the test to its original no-photo checkpoint.
-        self.assertIn(theatre[0]["photo_status"],("review_pending","verified"))
-        if theatre[0]["photo_status"]=="verified":
-            self.assertTrue(theatre[0].get("photo_url","").startswith("https://"))
-            self.assertTrue(theatre[0].get("photo_source_url","").startswith("https://"))
-            self.assertTrue(theatre[0].get("photo_credit"))
-            self.assertTrue(theatre[0].get("photo_license"))
+        self.assertEqual(theatre[0]["photo_status"],"verified")
+        self.assertEqual(theatre[0]["photo_url"],
+                         "https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg")
+        self.assertTrue(theatre[0].get("photo_source_url","").startswith("https://"))
+        self.assertTrue(theatre[0].get("photo_credit"))
+        self.assertTrue(theatre[0].get("photo_license"))
 
     def test_theatrical_cenerentole_is_not_rossini(self):
         self.assertTrue(excluded_nonopera(SOURCE,
