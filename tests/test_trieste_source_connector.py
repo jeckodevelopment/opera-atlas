@@ -67,6 +67,27 @@ class TriesteSourceTests(unittest.TestCase):
         self.assertEqual(len(facts), 6)
         self.assertEqual(facts[-1]["starts_at"], "2026-11-22T15:00:00+01:00")
 
+    def test_adjacent_official_genre_is_not_composer_surname(self):
+        cases=[
+            ("La Bohème","Giacomo Puccini","Opera","la-boheme"),
+            ("Aida","Giuseppe Verdi","Opera","aida"),
+            ("Norma","Vincenzo Bellini","Tragedia","norma"),
+            ("L’elisir d’amore","Gaetano Donizetti","Melodramma",
+             "lelisir-damore-3"),
+        ]
+        for title,composer,genre,slug in cases:
+            with self.subTest(title=title):
+                html=(DETAIL.replace("<h1>Lohengrin</h1>",
+                                     "<h1>"+title+"</h1>")
+                      .replace("Musica e libretto di Richard Wagner",
+                               "Musica di "+composer+" "+genre))
+                url="https://www.teatroverdi-trieste.com/it/spettacoli/"+slug+"/"
+                observed,author,venue,dates=parse_detail(html,url=url)
+                self.assertEqual((observed,author),(title,composer))
+                self.assertEqual(len(dates),6)
+                rows=parse_source_credited_opera_detail(SOURCE_KEY,url,html)
+                self.assertEqual({x["composer"] for x in rows},{composer})
+
     def test_does_not_infer_unverified_time_or_identity(self):
         with self.assertRaises(ValueError):
             parse_detail(DETAIL.replace("Musica e libretto di Richard Wagner",
