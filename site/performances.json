@@ -3956,6 +3956,42 @@
       ]
     },
     {
+      "id": "curated:auto-f3cef88d8ea31094:2027-03-30",
+      "starts_at": "2027-03-30T20:00:00+02:00",
+      "local_date": "2027-03-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-f3cef88d8ea31094:2027-03-31",
+      "starts_at": "2027-03-31T20:00:00+02:00",
+      "local_date": "2027-03-31",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-11def56ae568ccce:2027-04-01",
       "starts_at": "2027-04-01T20:00:00+02:00",
       "local_date": "2027-04-01",
@@ -3971,6 +4007,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
+      "id": "curated:auto-f3cef88d8ea31094:2027-04-01",
+      "starts_at": "2027-04-01T20:00:00+02:00",
+      "local_date": "2027-04-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-f3cef88d8ea31094:2027-04-02",
+      "starts_at": "2027-04-02T18:00:00+02:00",
+      "local_date": "2027-04-02",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
       ]
     },
     {
@@ -3992,6 +4064,24 @@
       ]
     },
     {
+      "id": "curated:auto-f3cef88d8ea31094:2027-04-03",
+      "starts_at": "2027-04-03T18:00:00+02:00",
+      "local_date": "2027-04-03",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-11def56ae568ccce:2027-04-03",
       "starts_at": "2027-04-03T20:00:00+02:00",
       "local_date": "2027-04-03",
@@ -4007,6 +4097,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
+      "id": "curated:auto-f3cef88d8ea31094:2027-04-04",
+      "starts_at": "2027-04-04T16:00:00+02:00",
+      "local_date": "2027-04-04",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
       ]
     },
     {
@@ -4676,6 +4784,24 @@
       ]
     },
     {
+      "id": "curated:auto-dd11dbb7276e1003:2027-05-07",
+      "starts_at": "2027-05-07T20:00:00+02:00",
+      "local_date": "2027-05-07",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/carmen-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-7ec9d774a82a64ec:2027-05-08",
       "starts_at": "2027-05-08T20:00:00+02:00",
       "local_date": "2027-05-08",
@@ -4694,6 +4820,60 @@
       ]
     },
     {
+      "id": "curated:auto-dd11dbb7276e1003:2027-05-08",
+      "starts_at": "2027-05-08T20:00:00+02:00",
+      "local_date": "2027-05-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/carmen-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-dd11dbb7276e1003:2027-05-09",
+      "starts_at": "2027-05-09T16:00:00+02:00",
+      "local_date": "2027-05-09",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/carmen-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-dd11dbb7276e1003:2027-05-11",
+      "starts_at": "2027-05-11T18:00:00+02:00",
+      "local_date": "2027-05-11",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/carmen-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-7ec9d774a82a64ec:2027-05-11",
       "starts_at": "2027-05-11T20:00:00+02:00",
       "local_date": "2027-05-11",
@@ -4709,6 +4889,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html"
+      ]
+    },
+    {
+      "id": "curated:auto-dd11dbb7276e1003:2027-05-12",
+      "starts_at": "2027-05-12T20:00:00+02:00",
+      "local_date": "2027-05-12",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/carmen-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-dd11dbb7276e1003:2027-05-13",
+      "starts_at": "2027-05-13T18:00:00+02:00",
+      "local_date": "2027-05-13",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/carmen-2027/"
       ]
     },
     {
@@ -4745,6 +4961,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:auto-dd11dbb7276e1003:2027-05-14",
+      "starts_at": "2027-05-14T20:00:00+02:00",
+      "local_date": "2027-05-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Comunale di Bologna",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/carmen-2027/"
       ]
     },
     {

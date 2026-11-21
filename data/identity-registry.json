@@ -1008,6 +1008,22 @@
       "slug": "nabucco",
       "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/",
       "season": "2027"
+    },
+    "auto-dd11dbb7276e1003": {
+      "id": "oa-s-000079",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000019",
+      "slug": "carmen",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/",
+      "season": "2027"
+    },
+    "auto-f3cef88d8ea31094": {
+      "id": "oa-s-000080",
+      "work_id": "oa-w-000019",
+      "venue_id": "oa-v-000019",
+      "slug": "madama-butterfly",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -3374,6 +3390,84 @@
       "staging_id": "oa-s-000078",
       "original_date": "2027-11-09",
       "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
+    },
+    "auto-dd11dbb7276e1003|2027-05-07": {
+      "id": "oa-r-000395",
+      "staging_id": "oa-s-000079",
+      "original_date": "2027-05-07",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/"
+    },
+    "auto-dd11dbb7276e1003|2027-05-08": {
+      "id": "oa-r-000396",
+      "staging_id": "oa-s-000079",
+      "original_date": "2027-05-08",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/"
+    },
+    "auto-dd11dbb7276e1003|2027-05-09": {
+      "id": "oa-r-000397",
+      "staging_id": "oa-s-000079",
+      "original_date": "2027-05-09",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/"
+    },
+    "auto-dd11dbb7276e1003|2027-05-11": {
+      "id": "oa-r-000398",
+      "staging_id": "oa-s-000079",
+      "original_date": "2027-05-11",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/"
+    },
+    "auto-dd11dbb7276e1003|2027-05-12": {
+      "id": "oa-r-000399",
+      "staging_id": "oa-s-000079",
+      "original_date": "2027-05-12",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/"
+    },
+    "auto-dd11dbb7276e1003|2027-05-13": {
+      "id": "oa-r-000400",
+      "staging_id": "oa-s-000079",
+      "original_date": "2027-05-13",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/"
+    },
+    "auto-dd11dbb7276e1003|2027-05-14": {
+      "id": "oa-r-000401",
+      "staging_id": "oa-s-000079",
+      "original_date": "2027-05-14",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/"
+    },
+    "auto-f3cef88d8ea31094|2027-03-30": {
+      "id": "oa-r-000402",
+      "staging_id": "oa-s-000080",
+      "original_date": "2027-03-30",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+    },
+    "auto-f3cef88d8ea31094|2027-03-31": {
+      "id": "oa-r-000403",
+      "staging_id": "oa-s-000080",
+      "original_date": "2027-03-31",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+    },
+    "auto-f3cef88d8ea31094|2027-04-01": {
+      "id": "oa-r-000404",
+      "staging_id": "oa-s-000080",
+      "original_date": "2027-04-01",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+    },
+    "auto-f3cef88d8ea31094|2027-04-02": {
+      "id": "oa-r-000405",
+      "staging_id": "oa-s-000080",
+      "original_date": "2027-04-02",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+    },
+    "auto-f3cef88d8ea31094|2027-04-03": {
+      "id": "oa-r-000406",
+      "staging_id": "oa-s-000080",
+      "original_date": "2027-04-03",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
+    },
+    "auto-f3cef88d8ea31094|2027-04-04": {
+      "id": "oa-r-000407",
+      "staging_id": "oa-s-000080",
+      "original_date": "2027-04-04",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
     }
   }
 }
