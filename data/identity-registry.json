@@ -470,6 +470,13 @@
       "title": "Alcina",
       "composer": "Georg Friedrich Händel",
       "authority_url": "https://www.liricocagliari.it/evento/alcina/"
+    },
+    "l’elisir d’amore|gaetano donizetti": {
+      "id": "oa-w-000073",
+      "slug": "elisir-d-amore",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
     }
   },
   "venues": {
@@ -1724,6 +1731,14 @@
       "venue_id": "oa-v-000025",
       "slug": "norma",
       "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
+      "season": "2027"
+    },
+    "auto-a9e0eff95e96e71f": {
+      "id": "oa-s-000135",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000025",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/",
       "season": "2027"
     }
   },
@@ -5693,6 +5708,42 @@
       "staging_id": "oa-s-000134",
       "original_date": "2027-06-20",
       "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
+    },
+    "auto-a9e0eff95e96e71f|2027-02-12": {
+      "id": "oa-r-000677",
+      "staging_id": "oa-s-000135",
+      "original_date": "2027-02-12",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+    },
+    "auto-a9e0eff95e96e71f|2027-02-13": {
+      "id": "oa-r-000678",
+      "staging_id": "oa-s-000135",
+      "original_date": "2027-02-13",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+    },
+    "auto-a9e0eff95e96e71f|2027-02-14": {
+      "id": "oa-r-000679",
+      "staging_id": "oa-s-000135",
+      "original_date": "2027-02-14",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+    },
+    "auto-a9e0eff95e96e71f|2027-02-18": {
+      "id": "oa-r-000680",
+      "staging_id": "oa-s-000135",
+      "original_date": "2027-02-18",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+    },
+    "auto-a9e0eff95e96e71f|2027-02-20": {
+      "id": "oa-r-000681",
+      "staging_id": "oa-s-000135",
+      "original_date": "2027-02-20",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+    },
+    "auto-a9e0eff95e96e71f|2027-02-21": {
+      "id": "oa-r-000682",
+      "staging_id": "oa-s-000135",
+      "original_date": "2027-02-21",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
     }
   }
 }

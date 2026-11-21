@@ -694,6 +694,16 @@
         "https://www.gfhandel.org/handel/worklist/1to42.html",
         "https://www.staatsoper.de/en/productions/alcina"
       ]
+    },
+    "elisir-d-amore": {
+      "librettist": "Felice Romani, da Le Philtre di Eugène Scribe",
+      "premiere_year": 1832,
+      "premiere_venue": "Teatro della Canobbiana",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://www.raicultura.it/speciali/lelisirdamore",
+        "https://corago.unibo.it/libretto/DMBM15777"
+      ]
     }
   },
   "works_by_id": {

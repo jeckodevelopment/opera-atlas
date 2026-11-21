@@ -4087,6 +4087,41 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-a9e0eff95e96e71f",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/",
+      "dates": [
+        [
+          "2027-02-12",
+          "20:00"
+        ],
+        [
+          "2027-02-13",
+          "18:00"
+        ],
+        [
+          "2027-02-14",
+          "16:00"
+        ],
+        [
+          "2027-02-18",
+          "20:00"
+        ],
+        [
+          "2027-02-20",
+          "16:00"
+        ],
+        [
+          "2027-02-21",
+          "16:00"
+        ]
+      ]
     }
   ]
 }
