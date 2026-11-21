@@ -25,7 +25,7 @@ FILES = frozenset((
     "privacy.html", "credits.html", "app.js", "detail.js",
     "directory.js", "festival-client.js", "image-client.js",
     "catalog-client.js", "styles.css", "atlas-logo.svg",
-    "opera-stage.svg", "performances.json", "work-synopses.json",
+    "opera-stage.svg", "cover-jenufa.svg", "cover-nixon-in-china.svg", "performances.json", "work-synopses.json",
     "work-history.json", "theatre-profiles.json"
 ))
 # Keep this allowlist explicit; no dotfiles except routing .htaccess,
