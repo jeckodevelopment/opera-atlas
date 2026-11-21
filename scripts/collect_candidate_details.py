@@ -450,7 +450,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"]=="carlo-felice-season-2026-27":
+                if item["source_key"] in ("carlo-felice-season-2026-27","bologna-comunale-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
@@ -470,6 +470,9 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                    "reason":"no_verified_showtimes",
                                    "diagnostic":diagnostic,"rows":0})
                     continue
+                if item["source_key"]=="bologna-comunale-opera-2027":
+                    from opera_atlas.bologna_detail_parser import normalize_event_fact
+                    facts=[normalize_event_fact(row) for row in facts]
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
                     "source_url":item["official_url"],"content_sha256":page.sha256,
