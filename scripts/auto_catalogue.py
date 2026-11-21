@@ -1012,6 +1012,22 @@ def remove_retries_for_published_works(report:dict,candidates:dict,
     return amended
 
 
+def refine_new_work_skips(known_work_skips:list[dict],
+                          verified_new_work_skips:list[dict])->list[dict]:
+    """Report the final publication gate, not the earlier unknown-work stage.
+
+    A source-validated new opera can be ready in every respect except its
+    authentic image; don't mislead operators into researching its identity
+    again. Never suppress unrelated errors or relax any publication gate.
+    """
+    image_blocked={entry.get("candidate_id") for entry in verified_new_work_skips
+                   if entry.get("reason")=="verified_work_image_missing"}
+    older=[entry for entry in known_work_skips
+           if not (entry.get("candidate_id") in image_blocked
+                   and entry.get("reason")=="unknown_work_needs_authority_data")]
+    return older+verified_new_work_skips
+
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -1046,18 +1062,8 @@ def main():
         today=date.today(),history=historical,require_image=True)
     report=remove_retries_for_published_works(
         report,candidates,prior_to_new_work_publication,next_facts)
-    # The known-opera stage necessarily reports an unknown canonical work
-    # before the verified-new-work stage runs. Prefer the later, actionable
-    # blocker when the same candidate has a validated official identity and
-    # is waiting solely on an authentic work-specific image.
-    image_blocked={entry["candidate_id"] for entry in newworks["auto_skipped"]
-                   if entry.get("reason")=="verified_work_image_missing"}
-    if image_blocked:
-        report["auto_skipped"]=[
-            entry for entry in report["auto_skipped"]
-            if not (entry.get("candidate_id") in image_blocked
-                    and entry.get("reason")=="unknown_work_needs_authority_data")]
-    report["auto_skipped"]+=newworks["auto_skipped"]
+    report["auto_skipped"]=refine_new_work_skips(
+        report["auto_skipped"],newworks["auto_skipped"])
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]
