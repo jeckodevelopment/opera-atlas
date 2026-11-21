@@ -31,7 +31,7 @@ class ModenaSourceTests(unittest.TestCase):
         self.assertFalse(eligible(KEY,INDEX))
         # Exact host is enforced by extraction and the detail parser.
         self.assertFalse(eligible(KEY,"https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-musical-2026-2027/foo"))
-        self.assertEqual(len(sources),18)
+        self.assertEqual(len(sources),19)
 
     def test_exact_origin_discovery_without_extra_sites(self):
         html="".join(f'<a href="{INDEX.replace("https://www.comune.modena.it","")}/{x}">Opera</a>'
