@@ -27,7 +27,7 @@ class OperaHistoryTests(unittest.TestCase):
             self.assertTrue(
                 bool(re.fullmatch(r"Q[1-9][0-9]*",wikidata)) or
                 bool(re.fullmatch(
-                    r"https://www\\.tcbo\\.it/evento/opera/[a-z0-9-]+-20\\d{2}/",
+                    r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
                     official)),item["title"])
         for slug,entry in history["works"].items():
             self.assertTrue(entry["librettist"],slug)
