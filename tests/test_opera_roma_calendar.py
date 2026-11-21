@@ -156,7 +156,7 @@ class RomeOperaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_roma_credited_detail(
                 html.replace("<h3>Teatro Valle Franca Valeri</h3>",
-                             "<h3>Teatro Nazionale</h3>"),url=url)
+                             "<h3>Teatro Sconosciuto</h3>"),url=url)
 
     def test_rome_2027_cyrillic_transliterated_composer_unicode(self):
         url="https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
@@ -208,7 +208,7 @@ class RomeOperaTests(unittest.TestCase):
         bad=[
             proper.replace("Stagione 2026/2027","Stagione 2025/2026"),
             proper.replace("<p>Musica di Christoph Willibald Gluck</p>",""),
-            proper.replace("Teatro Costanzi","Teatro Nazionale"),
+            proper.replace("Teatro Costanzi","Teatro Sconosciuto"),
             proper.replace("Musica di Christoph Willibald Gluck","Musica di Unknown",
                            1),
             proper.replace("<p>Musica di Christoph Willibald Gluck</p>",
@@ -227,7 +227,7 @@ class RomeOperaTests(unittest.TestCase):
     def test_bad_composer_wrong_year_offsite_or_conflicting_day_fails(self):
         invalid=[page().replace("Gaetano Donizetti","Giuseppe Verdi"),
                  page().replace("Stagione 2026/2027","Stagione 2025/2026"),
-                 page().replace("Teatro Costanzi","Teatro Nazionale"),
+                 page().replace("Teatro Costanzi","Teatro Sconosciuto"),
                  page().replace("<p>sabato</p><p>27</p>","<p>lunedì</p><p>27</p>")]
         for html in invalid:
             with self.subTest(html=html[-110:]):
