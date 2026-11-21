@@ -674,3 +674,21 @@ pubblicabili nella prima fase rapida. Verificare dopo l'esecuzione che le
 relative produzioni e repliche risultino sia in
 `data/verified-launch-catalog.json` sia in `public/catalog/v2/`;
 la sola presenza delle URL candidate non costituisce pubblicazione.
+
+## Concorrenza: non interrompere la scansione nazionale a ogni merge
+
+Il refresh delle fonti ufficiali può dover leggere molte schede; in presenza
+di PR concorrenti `cancel-in-progress: true` lasciava il catalogo senza
+una scansione conclusa perché ogni nuovo merge annullava la precedente.
+Ora il workflow nazionale usa `cancel-in-progress: false`, tenendo al
+massimo un job in esecuzione e una nuova esecuzione in coda sul codice più
+recente. Quando il job vecchio tenta il push su una `main` modificata,
+`safe_push_catalog` non forza la pubblicazione: registra `deferred`
+e richiede automaticamente un nuovo refresh. Il canale rapido offline per
+le recite già verificate continua a funzionare con gruppo di concorrenza
+**separato**, senza dover attendere la scansione nazionale.
+
+Controllare l'esito completo del job su Genova, Bergamo e Brescia, la
+promozione delle opere nuove con prove di autore da fonti ufficiali, i
+manifesti e l'aggiornamento dei JSON. Non equiparare una pagina indice
+scoperta a una recita pubblicata.
