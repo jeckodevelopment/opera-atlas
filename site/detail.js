@@ -215,6 +215,28 @@ async function appendHistory(event) {
     }catch(error){console.warn("Opera history data unavailable",error);}
   }
 }
+// Related homonyms are discovered from canonical work IDs, never from title-only URLs.
+// The list is informational: each target resolves to its own permanent work identity.
+function appendHomonymousWorks(current, allEvents) {
+  const byId=new Map();
+  for(const candidate of allEvents){
+    if(!candidate.work_id || candidate.work_id===current.work_id)continue;
+    if(normalize(candidate.title)!==normalize(current.title))continue;
+    if(!byId.has(candidate.work_id))byId.set(candidate.work_id,candidate);
+  }
+  if(!byId.size)return;
+  const section=node("section","work-homonyms");
+  section.append(node("h2",null,"Altre opere con lo stesso titolo"));
+  const list=node("ul","official-link-list");
+  for(const candidate of [...byId.values()].sort((a,b)=>a.composer.localeCompare(b.composer,"it"))){
+    const item=node("li");
+    item.append(link(candidate.title+" — "+candidate.composer,
+      window.OperaAtlasCatalog.urls(candidate).work));
+    list.append(item);
+  }
+  section.append(list);
+  content.append(section);
+}
 function arrangeWorkOverview(event) {
   // The copy and cover belong to one editorial composition; listings stay below.
   const layout=node("div","work-overview");
@@ -391,6 +413,7 @@ async function initialize() {
       document.querySelector(".detail-related h2").textContent="Dove vedere "+first.title;
       await appendSynopsis(first);
       await appendHistory(first);
+      appendHomonymousWorks(first,events);
       content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche censite in Italia"));

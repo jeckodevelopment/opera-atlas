@@ -123,7 +123,9 @@ window.OperaAtlasImages=Object.freeze((()=>{
     const slug=event?.work_slug||normalize(title);
     // V2 is keyed by permanent work ID, not by title; e.g. Puccini and
     // Leoncavallo both have an opera called La bohème.
-    const chosen=(posterSchema===2 ? posters[event?.work_id] : posters[slug]);
+    // Legacy title-keyed artwork is not authoritative for a canonical work.
+    // Only work-ID keyed evidence may select a published poster.
+    const chosen=(posterSchema===2 && event?.work_id ? posters[event?.work_id] : null);
     if(chosen && (chosen.kind==="official_production_image" ||
                   chosen.kind==="archival_work_image") &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
@@ -144,8 +146,10 @@ window.OperaAtlasImages=Object.freeze((()=>{
       return {src:"./"+localCover,alt:"Copertina editoriale originale per "+title,
         fallbackSrc:poster(title),kind:"original_editorial_cover"};
     }
-    const file=slug==="la-boheme" && /leoncavallo/i.test(event?.composer||"")
-      ? null : WORKS[slug];
+    // An archival cover selected by title cannot be reused for another
+    // composition sharing that title. The ID-aware feed is preferred.
+    const distinctRoute=event?.work_route_slug && event.work_route_slug!==slug;
+    const file=distinctRoute ? null : WORKS[slug];
     return file?photo(file,"Documento d’archivio legato a "+title+" (non allestimento in calendario)",title):
       {src:poster(title),alt:"Copertina editoriale originale per "+title};
   }

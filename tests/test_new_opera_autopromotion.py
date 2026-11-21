@@ -90,6 +90,51 @@ class NewOperaPromotionTests(unittest.TestCase):
         self.assertEqual(next(x for x in output["works"] if x["slug"]=="fixture-opera")
                          ["history"]["librettist"],"Giovanni Example")
 
+    def test_new_homonym_has_own_work_route_editorial_and_history(self):
+        from scripts.publish_work_editorial import HISTORY
+        evidence,candidates,enrichment=self.fixture()
+        # Two existing La bohème compositions already have permanent IDs.
+        # Simulate a third independently verified composition without reusing
+        # either their public URLs, synopsis or historic facts.
+        title="La bohème"
+        composer="Fixture Composer"
+        evidence["evidence"][0]["event_facts"][0].update(
+            event_title=title,composer=composer)
+        item=enrichment["works"][0]
+        item.update(title=title,composer=composer,history={
+            "librettist":"Giovanni Example","premiere_year":1900,
+            "premiere_venue":"Teatro Nuovo","premiere_city":"Milano",
+            "sources":["https://www.wikidata.org/wiki/Q111"]})
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))
+        facts,ids,urls,editorial,out_history,report=promote_new_works(
+            self.facts,self.registry,evidence,candidates,enrichment,
+            self.editorial,[],today=date(2026,11,20),history=history)
+        self.assertEqual(report["new_works"],1)
+        old={w["id"]:w for w in self.registry["works"].values()
+             if w["slug"]=="la-boheme"}
+        self.assertEqual(len(old),2)
+        self.assertEqual({k:ids["works"][k] for k in self.registry["works"]},
+                         self.registry["works"])
+        new=next(w for w in ids["works"].values()
+                 if w["composer"]==composer)
+        self.assertEqual(new["route_slug"],"la-boheme-fixture-composer")
+        for old_id in old:
+            self.assertIn(old_id,editorial["synopses_by_id"])
+            self.assertIn(old_id,out_history["works_by_id"])
+        self.assertIn(new["id"],editorial["synopses_by_id"])
+        self.assertIn(new["id"],out_history["works_by_id"])
+        graph=assemble(facts,ids,approved_extra=set(urls))
+        self.assertEqual(len({w.get("route_slug",w["slug"])
+                              for w in graph["works"]}),len(graph["works"]))
+        cards=build_editorial(facts,ids,editorial,
+                             approved_extra=set(urls),history=out_history)
+        own=next(w for w in cards["works"] if w["work_id"]==new["id"])
+        self.assertEqual(own["composer"],composer)
+        self.assertEqual(own["history"]["premiere_year"],1900)
+        for old_id in old:
+            original=next(w for w in cards["works"] if w["work_id"]==old_id)
+            self.assertNotEqual(original["synopsis"],own["synopsis"])
+
     def test_wrong_composer_or_unproven_date_cannot_create_new_work(self):
         evidence,candidates,enrichment=self.fixture()
         variants=[]

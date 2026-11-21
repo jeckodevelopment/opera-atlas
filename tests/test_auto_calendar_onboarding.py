@@ -12,15 +12,15 @@ class CalendarAutoPromotionTests(unittest.TestCase):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
     @staticmethod
-    def health(title="Tosca",venue="Teatro Sociale",city="Como",day="2027-05-09"):
+    def health(title="Tosca",venue="Teatro Sociale",city="Como",day="2027-05-09",composer=None):
         return {"schema_version":1,"sources":[{
             "key":"opera-lombardia-calendar-2026-27",
             "outcome":"review_required",
-            "candidates":[{"title":title,"composer":None,
+            "candidates":[{"title":title,"composer":composer,
                            "venue":venue,"city":city,"date":day,"time":None}]
         }]}
     def test_known_work_and_existing_venue_are_catalogued_without_manual_action(self):
-        h=self.health()
+        h=self.health(composer="Giacomo Puccini")
         facts,ids,report=promote_calendar(self.facts,self.registry,h,today=date(2026,11,20))
         self.assertEqual(report["new_recite"],1)
         self.assertEqual(report["new_stagings"],1)
@@ -34,6 +34,16 @@ class CalendarAutoPromotionTests(unittest.TestCase):
         self.assertEqual(again["new_recite"],0)
         self.assertEqual(once,facts)
         self.assertEqual(once_ids,ids)
+
+    def test_title_only_never_infers_composer_even_if_unique_today(self):
+        facts,ids,report=promote_calendar(
+            self.facts,self.registry,self.health(),
+            today=date(2026,11,20))
+        self.assertEqual(report["new_recite"],0)
+        self.assertEqual(report["auto_skipped"][0]["reason"],
+                         "identity_requires_more_evidence")
+        self.assertEqual(facts,self.facts)
+        self.assertEqual(ids,self.registry)
 
     def test_unknown_or_ambiguous_work_is_never_falsely_identified(self):
         for title in ("Unknown Opera","La bohème"):
