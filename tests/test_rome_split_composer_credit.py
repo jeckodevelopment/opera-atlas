@@ -40,7 +40,7 @@ class RomeSplitComposerCreditTests(unittest.TestCase):
             page("<p>Musica di</p><p>Dmitrij Šostakovič</p>"
                  "<p>Musica di</p><p>Altro Compositore</p>"),
             page().replace("Stagione 2026/2027","Stagione 2025/2026"),
-            page().replace("Teatro Costanzi","Teatro Nazionale"),
+            page().replace("Teatro Costanzi","Teatro Sconosciuto"),
         ]
         for html in invalid:
             with self.subTest(html=html[:120]),self.assertRaises(ValueError):
