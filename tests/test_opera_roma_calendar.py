@@ -1,14 +1,16 @@
 """Official Rome opera detail must produce exact date/clock and canonical ID."""
 import json
+import copy
 import unittest
 from datetime import date
+from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
 
 from opera_atlas.roma_detail_parser import parse_roma_detail
 from scripts.collect_candidate_details import parse_known_opera_detail
 from scripts.auto_catalogue import promote, SOURCE_ALLOWLIST
 from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY,assemble
-from scripts.discover_season_indexes import CONFIG,validate_config,eligible,extract
+from scripts.discover_season_indexes import CONFIG,validate_config,eligible,extract,scan,source_health_history
 
 SOURCE="opera-roma-season-2026-27"
 DETAIL="https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
@@ -57,6 +59,53 @@ class RomeOperaTests(unittest.TestCase):
             '<a href="/balletti/il-lago-dei-cigni/">Balletto</a>'
             '<a href="https://untrusted.example/spettacoli/lucia-di-lammermoor-2/">offsite</a>',2)
         self.assertEqual(len(matches),2)
+
+    def test_bounded_second_official_page_adds_2027_operas(self):
+        config=copy.deepcopy(json.loads(CONFIG.read_text(encoding="utf-8")))
+        for source in config["sources"]:
+            if source["key"]!=SOURCE:
+                source["access_status"]="pending"
+        first='<a href="/spettacoli/la-rondine/">La rondine</a>' \
+              '<a href="/spettacoli/il-trovatore-3/">Il trovatore</a>'
+        second='<a href="/spettacoli/lucia-di-lammermoor-2/">Lucia</a>' \
+               '<a href="/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/">Rake</a>' \
+               '<a href="https://external.invalid/spettacoli/fake/">Bad</a>' \
+               '<a href="/balletti/il-lago/">Balletto</a>'
+        called=[]
+        def fetch(db,*,source_id,url,network_enabled):
+            called.append(url)
+            html=second if url.endswith("/page/2/") else first
+            return FetchResult(url,html,"a"*64,len(html))
+        result,status=scan(config,{"schema_version":1,"candidates":[]},
+                           fetcher=fetch,network_enabled=True)
+        actual=[x for x in result["candidates"] if x["source_key"]==SOURCE]
+        self.assertEqual(len(actual),4)
+        self.assertEqual(len(called),2)
+        source=next(x for x in status if x["key"]==SOURCE)
+        self.assertEqual(source["status"],"success")
+        self.assertEqual(source["pages_checked"],2)
+        self.assertTrue(source["pagination_complete"])
+        self.assertEqual(source["links"],4)
+
+    def test_unavailable_second_page_does_not_claim_complete_coverage(self):
+        config=copy.deepcopy(json.loads(CONFIG.read_text(encoding="utf-8")))
+        for source in config["sources"]:
+            if source["key"]!=SOURCE:
+                source["access_status"]="pending"
+        first='<a href="/spettacoli/la-rondine/">La rondine</a>' \
+              '<a href="/spettacoli/il-trovatore-3/">Il trovatore</a>'
+        def fetch(db,*,source_id,url,network_enabled):
+            if url.endswith("/page/2/"):
+                raise FetchUnavailable("secondary page failed")
+            return FetchResult(url,first,"b"*64,len(first))
+        result,status=scan(config,{"schema_version":1,"candidates":[]},
+                           fetcher=fetch,network_enabled=True)
+        self.assertEqual(len(result["candidates"]),2)
+        source=next(x for x in status if x["key"]==SOURCE)
+        self.assertEqual(source["status"],"partial_pagination")
+        self.assertFalse(source["pagination_complete"])
+        history=source_health_history(status,{},checked_at="2026-11-21T12:00:00+00:00")
+        self.assertFalse(next(x for x in history if x["key"]==SOURCE)["current_scan_verified"])
 
     def test_exact_canonical_work_and_no_preview(self):
         venue,dates=parse_roma_detail(page(),url=DETAIL,title="Lucia di Lammermoor",

@@ -368,6 +368,22 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                                  "reason":type(exc).__name__,"diagnostic":diagnostic,
                                  "required_links":item["min_links"],"links":0})
                 continue
+            page_health={}
+            if item["key"]=="opera-roma-season-2026-27":
+                # The official genre lists the current season across two
+                # pages. Read both from the exact approved host, with the
+                # ordinary per-request robots gate and a hard two-page cap.
+                # An unavailable second page makes coverage explicitly
+                # partial, without dropping the verified first-page links.
+                second=item["url"].rstrip("/")+"/page/2/"
+                try:
+                    other=fetcher(db,source_id=row["id"],url=second,network_enabled=True)
+                    extra=extract(item["key"],second,other.html,1)
+                    urls=sorted(set(urls).union(extra))
+                    page_health={"pages_checked":2,"pagination_complete":True}
+                except (AccessDenied,FetchUnavailable,ValueError):
+                    page_health={"pages_checked":1,"pagination_complete":False,
+                                 "diagnostic":"secondary_page_unavailable_or_invalid"}
             for url in urls:
                 uid="oa-index-"+hashlib.sha256((item["key"]+"|"+url).encode()).hexdigest()[:20]
                 if uid not in seen:
@@ -376,7 +392,11 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                                "first_seen":timestamp,"last_seen":timestamp}
                 elif seen[uid]["status"]=="needs_review":
                     seen[uid]["last_seen"]=timestamp
-            statuses.append({"key":item["key"],"status":"success","links":len(urls),
+            statuses.append({"key":item["key"],
+                             "status":("partial_pagination" if page_health and
+                                       not page_health["pagination_complete"] else "success"),
+                             **page_health,
+                             "links":len(urls),
                              "empty_official_opera_calendar":(
                                  item["key"]=="bologna-comunale-opera-2026" and len(urls)==0),
                              "required_links":item["min_links"],
