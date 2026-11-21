@@ -2,6 +2,114 @@
   "schema_version": 1,
   "performances": [
     {
+      "id": "curated:auto-cde049d5c057e0c0:2026-03-07",
+      "starts_at": "2026-03-07T20:30:00+01:00",
+      "local_date": "2026-03-07",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-cde049d5c057e0c0:2026-03-08",
+      "starts_at": "2026-03-08T18:00:00+01:00",
+      "local_date": "2026-03-08",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-cde049d5c057e0c0:2026-03-11",
+      "starts_at": "2026-03-11T18:00:00+01:00",
+      "local_date": "2026-03-11",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-cde049d5c057e0c0:2026-03-13",
+      "starts_at": "2026-03-13T20:30:00+01:00",
+      "local_date": "2026-03-13",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-cde049d5c057e0c0:2026-03-14",
+      "starts_at": "2026-03-14T18:00:00+01:00",
+      "local_date": "2026-03-14",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-cde049d5c057e0c0:2026-03-15",
+      "starts_at": "2026-03-15T18:00:00+01:00",
+      "local_date": "2026-03-15",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+      ]
+    },
+    {
       "id": "curated:auto-26db4f73989b1c14:2026-04-18",
       "starts_at": "2026-04-18T20:30:00+02:00",
       "local_date": "2026-04-18",
@@ -452,6 +560,60 @@
       ]
     },
     {
+      "id": "curated:auto-eedca6da108bd27e:2026-10-18",
+      "starts_at": "2026-10-18T20:30:00+02:00",
+      "local_date": "2026-10-18",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-eedca6da108bd27e:2026-10-20",
+      "starts_at": "2026-10-20T20:30:00+02:00",
+      "local_date": "2026-10-20",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-eedca6da108bd27e:2026-10-21",
+      "starts_at": "2026-10-21T20:30:00+02:00",
+      "local_date": "2026-10-21",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-10-22",
       "starts_at": "2026-10-22T20:00:00+02:00",
       "local_date": "2026-10-22",
@@ -524,6 +686,24 @@
       ]
     },
     {
+      "id": "curated:auto-eedca6da108bd27e:2026-10-23",
+      "starts_at": "2026-10-23T20:30:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-10-24",
       "starts_at": "2026-10-24T15:00:00+02:00",
       "local_date": "2026-10-24",
@@ -575,6 +755,42 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-eedca6da108bd27e:2026-10-25",
+      "starts_at": "2026-10-25T18:00:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-eedca6da108bd27e:2026-10-27",
+      "starts_at": "2026-10-27T18:00:00+01:00",
+      "local_date": "2026-10-27",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
       ]
     },
     {

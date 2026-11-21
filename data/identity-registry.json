@@ -1843,6 +1843,22 @@
       "slug": "code-unknown",
       "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
       "season": "2027"
+    },
+    "auto-cde049d5c057e0c0": {
+      "id": "oa-s-000144",
+      "work_id": "oa-w-000054",
+      "venue_id": "oa-v-000018",
+      "slug": "falstaff",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
+      "season": "2026"
+    },
+    "auto-eedca6da108bd27e": {
+      "id": "oa-s-000145",
+      "work_id": "oa-w-000062",
+      "venue_id": "oa-v-000018",
+      "slug": "il-trovatore",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -5991,6 +6007,78 @@
       "staging_id": "oa-s-000143",
       "original_date": "2027-05-26",
       "source_url": "https://www.operaroma.it/spettacoli/code-unknown/"
+    },
+    "auto-cde049d5c057e0c0|2026-03-07": {
+      "id": "oa-r-000707",
+      "staging_id": "oa-s-000144",
+      "original_date": "2026-03-07",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+    },
+    "auto-cde049d5c057e0c0|2026-03-08": {
+      "id": "oa-r-000708",
+      "staging_id": "oa-s-000144",
+      "original_date": "2026-03-08",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+    },
+    "auto-cde049d5c057e0c0|2026-03-11": {
+      "id": "oa-r-000709",
+      "staging_id": "oa-s-000144",
+      "original_date": "2026-03-11",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+    },
+    "auto-cde049d5c057e0c0|2026-03-13": {
+      "id": "oa-r-000710",
+      "staging_id": "oa-s-000144",
+      "original_date": "2026-03-13",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+    },
+    "auto-cde049d5c057e0c0|2026-03-14": {
+      "id": "oa-r-000711",
+      "staging_id": "oa-s-000144",
+      "original_date": "2026-03-14",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+    },
+    "auto-cde049d5c057e0c0|2026-03-15": {
+      "id": "oa-r-000712",
+      "staging_id": "oa-s-000144",
+      "original_date": "2026-03-15",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+    },
+    "auto-eedca6da108bd27e|2026-10-18": {
+      "id": "oa-r-000713",
+      "staging_id": "oa-s-000145",
+      "original_date": "2026-10-18",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+    },
+    "auto-eedca6da108bd27e|2026-10-20": {
+      "id": "oa-r-000714",
+      "staging_id": "oa-s-000145",
+      "original_date": "2026-10-20",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+    },
+    "auto-eedca6da108bd27e|2026-10-21": {
+      "id": "oa-r-000715",
+      "staging_id": "oa-s-000145",
+      "original_date": "2026-10-21",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+    },
+    "auto-eedca6da108bd27e|2026-10-23": {
+      "id": "oa-r-000716",
+      "staging_id": "oa-s-000145",
+      "original_date": "2026-10-23",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+    },
+    "auto-eedca6da108bd27e|2026-10-25": {
+      "id": "oa-r-000717",
+      "staging_id": "oa-s-000145",
+      "original_date": "2026-10-25",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+    },
+    "auto-eedca6da108bd27e|2026-10-27": {
+      "id": "oa-r-000718",
+      "staging_id": "oa-s-000145",
+      "original_date": "2026-10-27",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
     }
   }
 }

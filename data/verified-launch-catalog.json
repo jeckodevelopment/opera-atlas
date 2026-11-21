@@ -4306,6 +4306,76 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-cde049d5c057e0c0",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
+      "dates": [
+        [
+          "2026-03-07",
+          "20:30"
+        ],
+        [
+          "2026-03-08",
+          "18:00"
+        ],
+        [
+          "2026-03-11",
+          "18:00"
+        ],
+        [
+          "2026-03-13",
+          "20:30"
+        ],
+        [
+          "2026-03-14",
+          "18:00"
+        ],
+        [
+          "2026-03-15",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-eedca6da108bd27e",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+      "dates": [
+        [
+          "2026-10-18",
+          "20:30"
+        ],
+        [
+          "2026-10-20",
+          "20:30"
+        ],
+        [
+          "2026-10-21",
+          "20:30"
+        ],
+        [
+          "2026-10-23",
+          "20:30"
+        ],
+        [
+          "2026-10-25",
+          "18:00"
+        ],
+        [
+          "2026-10-27",
+          "18:00"
+        ]
+      ]
     }
   ]
 }
