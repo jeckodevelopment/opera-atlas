@@ -42,7 +42,8 @@
       "id": "oa-w-000007",
       "slug": "la-boheme",
       "title": "La bohème",
-      "composer": "Ruggero Leoncavallo"
+      "composer": "Ruggero Leoncavallo",
+      "route_slug": "la-boheme-leoncavallo"
     },
     "iris|pietro mascagni": {
       "id": "oa-w-000008",
@@ -144,7 +145,8 @@
       "id": "oa-w-000024",
       "slug": "la-boheme",
       "title": "La bohème",
-      "composer": "Giacomo Puccini"
+      "composer": "Giacomo Puccini",
+      "route_slug": "la-boheme-puccini"
     },
     "nabucco|giuseppe verdi": {
       "id": "oa-w-000025",
