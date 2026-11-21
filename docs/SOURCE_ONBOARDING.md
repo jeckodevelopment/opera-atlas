@@ -709,3 +709,41 @@ commit review-only e poi controllo separato di
 `data/verified-launch-catalog.json` e
 `public/catalog/v2/manifest.json`. Un checkpoint riuscito non
 significa che tutte le recite siano pubblicate.
+
+## Maggio Musicale Fiorentino — calendario mensile verificato (21/11/2026)
+
+La nona fonte d'indice ufficiale è il calendario Opera del Maggio Musicale Fiorentino
+(`https://www.maggiofiorentino.com/calendario/2027/01/opera`).
+Il nuovo connettore `scripts.collect_maggio_calendar` legge, **con autorizzazione
+robots.txt aggiornata a ogni accesso**, al massimo otto pagine mensili a
+partire dal mese corrente. Non usa IA generativa né servizi a pagamento.
+Ogni card è valida solo se contiene giorno, mese, giorno della settimana,
+ora HH:MM, sala precisa `Teatro del Maggio - Sala Grande`, titolo e compositore
+di una singola opera già canonica, adiacenti in uno dei due ordinamenti
+pubblicati dal teatro. Il collegamento deve puntare a un dettaglio
+`https://www.maggiofiorentino.com/events/<slug>`; vengono ignorati altre
+sedi, spettacoli didattici e lavori ignoti/non ancora riconciliati. I
+collegamenti a servizi terzi, URL manipolati e orari assenti non sono ammessi.
+
+Il connettore crea candidati e prove di data/orario per la promozione standard
+`auto_catalogue.promote`: **non pubblica direttamente dati non verificati**.
+In caso di successo, `Firenze|Teatro del Maggio Musicale Fiorentino`
+riceve l'ID permanente `oa-v-*` solo insieme alla prima opera effettivamente
+validata, senza alterare la scheda nazionale esistente. Le recite di una
+produzione con un URL ufficiale identico sono idempotenti fra i mesi e fra
+le scansioni: quelle nuove si aggiungono dopo controllo delle collisioni.
+La funzione permette di estendere la copertura a nuove opere già conosciute
+senza nuovi sviluppi per ciascun cartellone.
+
+La pagina ufficiale di gennaio 2027 elenca almeno quattro recite de
+*La traviata* (Verdi) il 15/01 alle 20:00, il 17/01 alle 15:30,
+il 20/01 alle 20:00 e il 22/01 alle 20:00. Queste date sono usate
+come regressione di parsing, **non considerate pubblicate** fino
+alla loro effettiva presenza nel manifest v2. Gli spettacoli di
+`Teatro Goldoni` non vengono attribuiti al Teatro del Maggio.
+
+**Collaudi:** `python -m unittest discover -s tests -v`;
+`test_maggio_calendar` verifica date/ore, composer, sito, sede, idempotenza,
+costruzione del catalogo e rifiuto dei casi incongruenti. Nel workflow,
+controllare `data/maggio-calendar-health.json`, il checkpoint delle
+evidenze, la promozione e il manifest pubblico. Nessun deploy SFTP.
