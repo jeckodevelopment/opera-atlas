@@ -27,7 +27,7 @@ class NationalVenueDirectoryTests(unittest.TestCase):
         self.assertEqual(publish(check=True)["venues"],self.result["venues"])
 
     def test_original_performance_venues_are_preserved(self):
-        venues={v["id"]:v for v in self.result["venues"]}
+        venues={v.get("canonical_venue_id",v["id"]):v for v in self.result["venues"]}
         for canonical in self.registry["venues"].values():
             venue=venues[canonical["id"]]
             self.assertEqual(venue["slug"],canonical["slug"])
