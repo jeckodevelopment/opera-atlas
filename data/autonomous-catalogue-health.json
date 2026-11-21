@@ -1,12 +1,8 @@
 {
   "schema_version": 1,
-  "new_stagings": 3,
-  "new_recite": 19,
+  "new_stagings": 0,
+  "new_recite": 0,
   "auto_skipped": [
-    {
-      "candidate_id": "oa-index-697328f32e7cfa32252b",
-      "reason": "unknown_work_needs_authority_data"
-    },
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "reason": "same_recita_already_in_official_circuit",
@@ -20,22 +16,14 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
-      "candidate_id": "oa-index-9eea54a8395ff3d6c74e",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-a77154badf30929b95dc",
       "reason": "unknown_work_needs_authority_data"
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
       "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-bc101d1d7cf587ef8441",
-      "reason": "unknown_work_needs_authority_data"
     }
   ],
-  "new_works": 3,
+  "new_works": 0,
   "enriched_recite_times": 0
 }
