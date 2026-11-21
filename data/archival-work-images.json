@@ -192,6 +192,24 @@
       "description": "Frontespizio originale del libretto veneziano del 1750 de Il mondo alla roversa di Baldassarre Galuppi, non immagine dell'allestimento in calendario",
       "credit": "Libretto originale di Carlo Goldoni per Baldassarre Galuppi, Venezia 1750, Wikimedia Commons",
       "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "andrea-chenier": {
+      "file": "Andrea Chenier Poster.jpg",
+      "description": "Locandina storica del 1896 dell'opera Andrea Chénier di Umberto Giordano; non rappresenta l'allestimento romano del 2027",
+      "credit": "Locandina del 1896, autore ignoto · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Andrea_Chenier_Poster.jpg"
+    },
+    "iphigenie-en-tauride": {
+      "file": "Iphigénie en Tauride frontespizio partitura.JPG",
+      "description": "Frontespizio originale della prima edizione della partitura di Iphigénie en Tauride di Christoph Willibald Gluck (1779), non produzione 2027",
+      "credit": "Frontespizio della prima edizione della partitura di Gluck, Parigi 1779 · Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Iphig%C3%A9nie_en_Tauride_frontespizio_partitura.JPG"
+    },
+    "il-trovatore": {
+      "file": "Il trovatore by Luigi Morgari - Original.jpg",
+      "description": "Manifesto storico ottocentesco di Il trovatore di Giuseppe Verdi, realizzato dopo la prima del 1853; non produzione 2027",
+      "credit": "Luigi Morgari, incisione storica, Bibliothèque nationale de France / Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Il_trovatore_by_Luigi_Morgari_-_Original.jpg"
     }
   },
   "works_by_id": {
