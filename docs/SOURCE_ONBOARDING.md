@@ -1263,3 +1263,28 @@ canonica. Una composizione nuova o ambigua resta in attesa della
 nuova acquisizione first-party. Nessun giorno, ora o teatro viene
 modificato. La stessa fonte e l'URL continuano a essere verificati
 prima della promozione nel catalogo.
+
+### Cagliari: separare la stagione ufficiale dal catalogo storico
+
+L'indice generale di opere del Teatro Lirico di Cagliari contiene
+spettacoli di più anni. Il calendario ufficiale PDF del 2027, già
+trascritto e verificato in `data/cagliari-season-2027.json`, censisce
+sette produzioni: *Don Carlos*, *Alcina*, *Die Zauberflöte*,
+*Maria Stuarda*, *La bohème*, *Candide* e *Falstaff*. Per la **fonte
+2027** il riconciliatore riconosce soltanto questi sette URL come
+pertinenti alla stagione; gli altri URL del catalogo generale non
+possono consumare retry come se fossero recite 2027.
+
+Le candidate fuori dal calendario 2027 (Lucrezia Borgia, Norma, Otello,
+Il cappello di paglia di Firenze, Così fan tutte, Turandot e Rigoletto)
+assumono `not_in_official_season`, **non** `already_catalogued` né
+`excluded_nonopera`: conservano identificativo, URL, date della prima
+scoperta e audit per altre stagioni. La classificazione è automatica e
+reversibile quando il programma ufficiale cambia; se una produzione
+viene realmente pubblicata, prevale sempre `already_catalogued`.
+
+*Candide* rimane `needs_review` perché l'opera figura nel calendario
+2027 ma gli orari della pagina online attualmente non coincidono con
+quelli certificati nel PDF. Non si inferiscono orari e non si pubblicano
+rappresentazioni contraddittorie. Test specifici verificano gli URL,
+l'idempotenza e il ripristino al prossimo aggiornamento del programma.

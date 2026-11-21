@@ -157,7 +157,7 @@
       "id": "oa-index-16181b2d47cf17dea1e4",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/lucrezia-borgia/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -261,7 +261,7 @@
       "id": "oa-index-24979e668286aa66e398",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/norma/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -301,7 +301,7 @@
       "id": "oa-index-2ee53a13c924e5c8aa9f",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/otello/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -381,7 +381,7 @@
       "id": "oa-index-424f0996b47508273e69",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/il-cappello-di-paglia-di-firenze/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -1013,7 +1013,7 @@
       "id": "oa-index-c92159dc5d75c3f1caf8",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/cosi-fan-tutte/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -1333,7 +1333,7 @@
       "id": "oa-index-f74f890e392b92a8bd3b",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/turandot/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
@@ -1357,7 +1357,7 @@
       "id": "oa-index-f7ff40a261425be67b36",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/rigoletto/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
