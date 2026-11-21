@@ -159,24 +159,40 @@ class ScopedSeasonAnchors(HTMLParser):
         self.in_section=False
         self.heading=None
         self.heading_text=[]
+        self.in_anchor=0
+        self.in_navigation=0
     def handle_starttag(self,tag,attrs):
         if tag in ("h1","h2"):
             self.heading=tag
             self.heading_text=[]
-        if tag=="footer":
-            self.in_section=False
-        if tag=="a" and self.in_section:
-            href=dict(attrs).get("href")
-            if isinstance(href,str):self.links.append(href)
+        if tag in ("nav","footer"):
+            self.in_navigation+=1
+            if tag=="footer":self.in_section=False
+        if tag=="a":
+            if self.in_section and not self.in_navigation:
+                href=dict(attrs).get("href")
+                if isinstance(href,str):self.links.append(href)
+            self.in_anchor+=1
     def handle_data(self,data):
         if self.heading is not None:self.heading_text.append(data)
+        if (self.key in ("petruzzelli-opera-2026","petruzzelli-opera-2027")
+                and not self.in_anchor and not self.in_navigation):
+            # The live Petruzzelli WordPress page renders the year-specific
+            # label as an ordinary element, not necessarily as h1/h2.
+            # Only an exact, non-navigation year heading opens the scope.
+            label=" ".join(data.upper().split())
+            year=self.key.rsplit("-",1)[-1]
+            if label=="OPERA E BALLETTO "+year:
+                self.in_section=True
+            elif label.startswith("OPERA E BALLETTO 20") and label!=("OPERA E BALLETTO "+year):
+                self.in_section=False
     def handle_endtag(self,tag):
+        if tag=="a":
+            self.in_anchor=max(0,self.in_anchor-1)
+        if tag in ("nav","footer"):
+            self.in_navigation=max(0,self.in_navigation-1)
         if tag==self.heading:
             label=" ".join(" ".join(self.heading_text).upper().split())
-            if self.key in ("petruzzelli-opera-2026","petruzzelli-opera-2027") and tag in ("h1","h2"):
-                expected="OPERA E BALLETTO "+self.key.rsplit("-",1)[-1]
-                if label==expected:self.in_section=True
-                elif self.in_section:self.in_section=False
             if self.key=="parma-opera-2027" and tag=="h1":
                 if label=="OPERA":self.in_section=True
                 elif self.in_section:self.in_section=False
