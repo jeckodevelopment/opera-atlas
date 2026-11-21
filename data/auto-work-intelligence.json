@@ -66,6 +66,29 @@
       "verified_at": "2026-11-20T23:23:50+00:00"
     },
     {
+      "candidate_id": "oa-index-144db2827af86d96232c",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "title": "Les contes d'Hoffmann",
+      "composer": "Jacques Offenbach",
+      "synopsis": "Il poeta Hoffmann ripercorre tre amori tormentati, tra automi, inganni e seduzioni. I suoi racconti si intrecciano a un desiderio d'amore sempre sfuggente.",
+      "history": {
+        "librettist": "Jules Barbier",
+        "premiere_year": 1881,
+        "premiere_venue": "Opéra-Comique",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q335012",
+          "https://catalogue.bnf.fr/ark:/12148/cb44000242h",
+          "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+        ]
+      },
+      "wikidata_id": "Q335012",
+      "authority_url": "https://www.wikidata.org/wiki/Q335012",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/I_racconti_di_Hoffmann",
+      "verified_at": "2026-11-21T14:02:00+00:00"
+    },
+    {
       "candidate_id": "oa-index-18853d99c59fe0755e13",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
