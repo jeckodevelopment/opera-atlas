@@ -55,8 +55,10 @@ permissions:
   contents: write
 concurrency:
   group: opera-atlas-public-feed
-  # The latest canonical commit supersedes a stale unfinished scan.
-  cancel-in-progress: true
+  # Keep a long national scan running even while new PRs land.
+  # A stale result is never force-pushed: safe_push_catalog requeues it
+  # against the newest main. The independent cached feed stays fast.
+  cancel-in-progress: false
 jobs:
   update:
     runs-on: ubuntu-24.04
