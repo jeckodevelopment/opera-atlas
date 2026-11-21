@@ -214,6 +214,11 @@ class ScopedSeasonAnchors(HTMLParser):
             if self.key=="teatro-grande-opera-2026" and tag=="h2":
                 if label=="OPERA E BALLETTO":self.in_section=True
                 elif self.in_section:self.in_section=False
+            if self.key=="reggio-valli-opera-2026-27":
+                if tag=="h1" and label.startswith("OPERA STAGIONE"):
+                    self.in_section=True
+                if tag=="h2" and label=="IN EVIDENZA":
+                    self.in_section=False
             if self.key=="piacenza-opera-2026-27" and tag=="h2":
                 # The Fondazione season mixes Opera with Concerti, Danza,
                 # Young and Eventi. Only the Opera section is approved.
@@ -297,7 +302,7 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
             if key in {"parma-opera-2027","massimo-season-2026-27",
                        "donizetti-opera-2026","teatro-grande-opera-2026",
                        "petruzzelli-opera-2026","petruzzelli-opera-2027",
-                       "piacenza-opera-2026-27"}
+                       "piacenza-opera-2026-27","reggio-valli-opera-2026-27"}
             else AnchorParser())
     parser.feed(html)
     hostname=urlsplit(index_url).hostname
