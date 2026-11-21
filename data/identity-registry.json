@@ -334,6 +334,22 @@
       "name": "Teatro Dante Alighieri",
       "city": "Ravenna",
       "region": "Emilia-Romagna"
+    },
+    "Genova|Teatro Carlo Felice": {
+      "id": "oa-v-000015",
+      "slug": "teatro-carlo-felice",
+      "city_slug": "genova",
+      "name": "Teatro Carlo Felice",
+      "city": "Genova",
+      "region": "Liguria"
+    },
+    "Bergamo|Teatro Sociale": {
+      "id": "oa-v-000016",
+      "slug": "teatro-sociale",
+      "city_slug": "bergamo",
+      "name": "Teatro Sociale",
+      "city": "Bergamo",
+      "region": "Lombardia"
     }
   },
   "stagings": {
