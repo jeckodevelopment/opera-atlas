@@ -267,6 +267,8 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key=="reggio-valli-opera-2026-27":
+        return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
     if key=="piacenza-opera-2026-27":
         return bool(re.fullmatch(r"/event/[a-z0-9-]+",path))
     if key=="giglio-lucca-opera-2026-27":
@@ -337,6 +339,7 @@ def validate_config(config:dict)->list[dict]:
         "modena-opera-2026-27":("www.comune.modena.it","/vivere-modena/eventi/2026/stagione-opera-2026-2027"),
         "giglio-lucca-opera-2026-27":("www.teatrodelgigliogiacomopuccini.it","/it/cartellone/lirica/stagione-2026-2027/"),
         "piacenza-opera-2026-27":("teatripiacenza.it","/stagioni/stagione-26-27/"),
+        "reggio-valli-opera-2026-27":("www.iteatri.re.it","/tipo/opera/"),
     }
     seen=set()
     for item in config["sources"]:
@@ -370,6 +373,8 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key=="reggio-valli-opera-2026-27":
+            valid_season=index.path=="/tipo/opera/" and not index.query
         elif key=="piacenza-opera-2026-27":
             valid_season=(index.path=="/stagioni/stagione-26-27/" and not index.query)
         elif key=="giglio-lucca-opera-2026-27":
