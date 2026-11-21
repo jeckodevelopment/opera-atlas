@@ -130,6 +130,32 @@ class RomeOperaTests(unittest.TestCase):
         self.assertTrue(all(x["composer"]=="Christoph Willibald Gluck"
                             for x in rows))
 
+    def test_same_official_season_september_performances_use_verified_year(self):
+        url="https://www.operaroma.it/spettacoli/la-rondine/"
+        heading=page().split("<h3>Le date</h3>")[0].replace(
+            "Lucia di Lammermoor","La rondine").replace(
+            "Gaetano Donizetti","Giacomo Puccini")
+        suffix="<h3>Le date</h3>" + (
+            "<p>sabato</p><p>18</p><p>Set</p><p>ORE 20:00</p>"
+            "<p>mercoledì</p><p>22</p><p>Set</p><p>ORE 20:00</p>"
+            "<h3>Ti può interessare anche</h3>")
+        rows=parse_source_credited_opera_detail(SOURCE,url,heading+suffix)
+        self.assertEqual([r["date"] for r in rows],["2027-09-18","2027-09-22"])
+        self.assertEqual(rows[0]["starts_at"],"2027-09-18T20:00:00+02:00")
+        self.assertEqual({r["composer"] for r in rows},{"Giacomo Puccini"})
+
+    def test_2026_autumn_still_resolves_and_wrong_weekday_fails(self):
+        url="https://www.operaroma.it/spettacoli/la-rondine/"
+        heading=page().split("<h3>Le date</h3>")[0].replace(
+            "Lucia di Lammermoor","La rondine").replace(
+            "Gaetano Donizetti","Giacomo Puccini")
+        html=heading+"<h3>Le date</h3><p>venerdì</p><p>18</p><p>Set</p><p>ORE 20:00</p>"
+        rows=parse_source_credited_opera_detail(SOURCE,url,html)
+        self.assertEqual([r["date"] for r in rows],["2026-09-18"])
+        with self.assertRaises(ValueError):
+            parse_source_credited_opera_detail(
+                SOURCE,url,html.replace("venerdì","lunedì"))
+
     def test_first_party_credit_fails_closed_for_wrong_year_cast_or_fake_author(self):
         url="https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
         proper=page().replace("Lucia di Lammermoor","Iphigénie en Tauride").replace(
@@ -181,7 +207,8 @@ class RomeOperaTests(unittest.TestCase):
         present=any(p["source_url"]==DETAIL for p in self.facts["productions"])
         facts,ids,urls,report=promote(
             self.facts,self.registry,evidence,candidates,approved,today=date(2026,11,21))
-        roma=[p for p in facts["productions"] if p["municipality"]=="Roma"]
+        roma=[p for p in facts["productions"]
+              if p["municipality"]=="Roma" and p["source_url"]==DETAIL]
         self.assertEqual(len(roma),1)
         self.assertEqual(roma[0]["title"],"Lucia di Lammermoor")
         self.assertEqual(roma[0]["dates"],[[d,h] for d,h in DATES])

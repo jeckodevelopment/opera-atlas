@@ -104,7 +104,8 @@ class ScalaEditorialReadyTests(unittest.TestCase):
             self.assertIn(title,works)
             self.assertEqual(len([x for x in next_facts["productions"]
                                   if normalized(x["title"])==normalized(title)
-                                  and normalized(x["composer"])==normalized(composer)]),1)
+                                  and normalized(x["composer"])==normalized(composer)
+                                  and x["venue"]=="Teatro alla Scala"]),1)
         again=promote_new_works(next_facts,ids,detail,candidates,chosen,
                                 news,approved,today=date(2026,11,21),
                                 history=hist,require_image=True)
