@@ -68,7 +68,7 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
     found={}
     for weekday,day,month,hh,mm in PERFORMANCE.findall(section):
         try:
-            actual=date(2027 if MONTHS[month.casefold()]<=6 else 2026,
+            actual=date(2027 if MONTHS[month.casefold()]<=8 else 2026,
                         MONTHS[month.casefold()],int(day))
         except ValueError as exc:
             raise ValueError("invalid Rome performance date") from exc
