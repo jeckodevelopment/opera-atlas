@@ -44,8 +44,17 @@ def wikidata_premiere(identity: dict, *, fetch=None) -> dict | None:
     qid = identity.get("wikidata_id")
     if not isinstance(qid, str) or not QID.fullmatch(qid):
         return None
-    work = fetch(wikidata_url("wbgetentities", ids=qid, props="claims"))
-    entity = work.get("entities", {}).get(qid)
+    try:
+        work = fetch(wikidata_url("wbgetentities", ids=qid, props="claims"))
+        entity = work.get("entities", {}).get(qid)
+    except ValueError as exc:
+        if str(exc) != "external knowledge response too large":
+            raise
+        claims = {}
+        for prop in ("P87", "P1191", "P4647"):
+            response = fetch(wikidata_url("wbgetclaims", entity=qid, property=prop))
+            claims[prop] = response.get("claims", {}).get(prop, [])
+        entity = {"claims": claims}
     if not isinstance(entity, dict):
         return None
     librettists = _ids(entity, "P87")
