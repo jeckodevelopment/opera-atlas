@@ -67,8 +67,9 @@ class BolognaFullSeasonTests(unittest.TestCase):
         sample=next(x for x in evidence["evidence"]
                     if x.get("source_url","").endswith("/accabadora-2027/"))
         sample["event_facts"][0]["composer"]="Unrelated Composer"
-        with self.assertRaises(ValueError):
-            official_identity_candidates(evidence,self.candidates,
-                                         {"schema_version":1,"works":[]})
+        candidates=official_identity_candidates(
+            evidence,self.candidates,{"schema_version":1,"works":[]})
+        self.assertFalse(any(x["source_url"]==sample["source_url"]
+                             for x in candidates["works"]))
 
 if __name__=="__main__":unittest.main()
