@@ -57,6 +57,20 @@ assert.match(lib.WORKS["un-ballo-in-maschera"],/Vocal score frontispiece/);
 assert.ok(lib.work({title:"Nixon in China",work_id:"oa-w-000034"}).src.includes("Dortmund_Kampstr_Nixon_in_China"));
 assert.ok(lib.work({title:"Jenůfa",work_id:"oa-w-000020"}).src.includes("Jenufa.jpg"));
 
+const restored=[
+  ["oa-w-000001","Giuseppe Verdi","Traviata.jpg"],
+  ["oa-w-000002","Gioachino Rossini","1930-Italiana-in-Algeri.jpg"],
+  ["oa-w-000006","Ruggero Leoncavallo","Pagliacci_Original_Score_Cover.jpg"],
+  ["oa-w-000010","Pëtr Il'ič Čajkovskij","Yerevan_Opera_Theatre.jpg"],
+  ["oa-w-000011","Giacomo Puccini","Poster_Turandot.jpg"],
+  ["oa-w-000025","Giuseppe Verdi","Nabucco_-_1852_cover.jpg"]
+];
+for(const [work_id,composer,file] of restored){
+  const item=lib.work({title:"opera",work_id,composer});
+  assert.equal(item.kind,"archival_work_image",work_id);
+  assert.ok(item.src.includes(file),work_id+" must not use cached staging photo");
+  assert.ok(item.sourceUrl.startsWith("https://commons.wikimedia.org/wiki/File:"),work_id);
+}
 assert.equal(new Set(images.map(x=>x.src)).size,images.length,"every opera needs a distinct image");
 for(const item of images){
   if(item.src.startsWith("https://")){
