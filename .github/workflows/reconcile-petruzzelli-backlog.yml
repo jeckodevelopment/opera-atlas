@@ -8,7 +8,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: opera-atlas-rome-backlog-recovery
+  group: opera-atlas-petruzzelli-backlog-recovery
   cancel-in-progress: false
 jobs:
   reconcile:
@@ -33,7 +33,8 @@ jobs:
           # This invokes the SAME shared robots-gated detail reader, not a
           # duplicate Petruzzelli importer. Each approved source is limited to 24
           # pages and only unresolved candidates are considered.
-          python -m scripts.collect_candidate_details --allow-network --source-key opera-petruzzelli-season-2026-27
+          python -m scripts.collect_candidate_details --allow-network --source-key petruzzelli-opera-2026
+          python -m scripts.collect_candidate_details --allow-network --source-key petruzzelli-opera-2027
           python -m scripts.reconcile_published_candidates
       - name: Checkpoint official evidence and closed historic candidates
         id: evidence
