@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "year": 2027,
+  "official_schedule_url": "https://www.liricocagliari.it/wp-content/uploads/2026/11/Pieghevole-Stagione-Opera-2027-21x15-4-ante.pdf",
+  "notes": "Official 2027 Opera brochure, pages 1–2. Public ticketed performances only: Opera NextGen school matinées excluded; verified day/hour and composer per production.",
+  "works": [
+    {
+      "slug": "don-carlos",
+      "title": "Don Carlos",
+      "composer": "Giuseppe Verdi",
+      "dates": [
+        [
+          "2027-01-22",
+          "19:00"
+        ],
+        [
+          "2027-01-24",
+          "17:00"
+        ],
+        [
+          "2027-01-26",
+          "19:00"
+        ],
+        [
+          "2027-01-28",
+          "19:00"
+        ],
+        [
+          "2027-01-30",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "slug": "alcina",
+      "title": "Alcina",
+      "composer": "Georg Friedrich Händel",
+      "dates": [
+        [
+          "2027-03-10",
+          "20:00"
+        ],
+        [
+          "2027-03-11",
+          "19:00"
+        ],
+        [
+          "2027-03-12",
+          "20:00"
+        ],
+        [
+          "2027-03-13",
+          "19:00"
+        ],
+        [
+          "2027-03-14",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "slug": "die-zauberflote",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "dates": [
+        [
+          "2027-04-09",
+          "20:00"
+        ],
+        [
+          "2027-04-10",
+          "19:00"
+        ],
+        [
+          "2027-04-11",
+          "17:00"
+        ],
+        [
+          "2027-04-13",
+          "20:00"
+        ],
+        [
+          "2027-04-14",
+          "20:00"
+        ],
+        [
+          "2027-04-15",
+          "19:00"
+        ],
+        [
+          "2027-04-16",
+          "20:00"
+        ],
+        [
+          "2027-04-17",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "slug": "maria-stuarda",
+      "title": "Maria Stuarda",
+      "composer": "Gaetano Donizetti",
+      "dates": [
+        [
+          "2027-05-19",
+          "20:00"
+        ],
+        [
+          "2027-05-20",
+          "19:00"
+        ],
+        [
+          "2027-05-21",
+          "20:00"
+        ],
+        [
+          "2027-05-22",
+          "19:00"
+        ],
+        [
+          "2027-05-23",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "slug": "la-boheme",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "dates": [
+        [
+          "2027-09-28",
+          "20:00"
+        ],
+        [
+          "2027-09-29",
+          "20:00"
+        ],
+        [
+          "2027-09-30",
+          "19:00"
+        ],
+        [
+          "2027-10-01",
+          "20:00"
+        ],
+        [
+          "2027-10-02",
+          "19:00"
+        ],
+        [
+          "2027-10-03",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "slug": "candide",
+      "title": "Candide",
+      "composer": "Leonard Bernstein",
+      "dates": [
+        [
+          "2027-10-27",
+          "20:00"
+        ],
+        [
+          "2027-10-28",
+          "19:00"
+        ],
+        [
+          "2027-10-29",
+          "20:00"
+        ],
+        [
+          "2027-11-02",
+          "17:00"
+        ],
+        [
+          "2027-11-03",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "slug": "falstaff",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "dates": [
+        [
+          "2027-12-15",
+          "20:00"
+        ],
+        [
+          "2027-12-16",
+          "19:00"
+        ],
+        [
+          "2027-12-17",
+          "20:00"
+        ],
+        [
+          "2027-12-18",
+          "19:00"
+        ],
+        [
+          "2027-12-19",
+          "17:00"
+        ]
+      ]
+    }
+  ]
+}
