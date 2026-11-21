@@ -15,7 +15,20 @@ class OperaHistoryTests(unittest.TestCase):
         works=json.loads((ROOT/"public/catalog/v2"/manifest["files"]["works"]["path"]).read_text(encoding="utf-8"))["works"]
         history=json.loads((SITE/"work-history.json").read_text(encoding="utf-8"))
         self.assertEqual(history["schema_version"],1)
-        self.assertTrue(set(item["slug"] for item in works).issubset(set(history["works"])))
+        import re
+        for item in works:
+            historical=history.get("works_by_id",{}).get(item["id"],
+                         history["works"].get(item["slug"]))
+            if historical is not None:continue
+            # A verified identity without known premiere information is
+            # permitted. Never invent a history for a newly sourced opera.
+            wikidata=item.get("wikidata_id","")
+            official=item.get("authority_url","")
+            self.assertTrue(
+                bool(re.fullmatch(r"Q[1-9][0-9]*",wikidata)) or
+                bool(re.fullmatch(
+                    r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
+                    official)),item["title"])
         for slug,entry in history["works"].items():
             self.assertTrue(entry["librettist"],slug)
             self.assertTrue(1600<=entry["premiere_year"]<=2026,slug)

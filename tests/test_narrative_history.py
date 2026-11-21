@@ -15,9 +15,30 @@ class NarrativeHistoryTests(unittest.TestCase):
         history=json.loads(HISTORY.read_text(encoding="utf-8"))
         entries=build_editorial(facts,registry,editorial,history=history)["works"]
         self.assertTrue(entries)
-        self.assertTrue(all(validate_history(e["history"]) for e in entries))
+        by_id={w["id"]:w for w in registry["works"].values()}
+        for entry in entries:
+            canonical=by_id[entry["work_id"]]
+            if entry["history"] is not None:
+                self.assertTrue(validate_history(entry["history"]),entry["work_id"])
+            else:
+                # Newly recognized operas with authoritative identity may
+                # legitimately lack historical premiere facts. Never fabricate
+                # a premiere merely to satisfy a static coverage count.
+                import re
+                wiki=canonical.get("wikidata_id","")
+                official=canonical.get("authority_url","")
+                self.assertTrue(
+                    bool(re.fullmatch(r"Q[1-9][0-9]*",wiki)) or
+                    bool(re.fullmatch(
+                        r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
+                        official)),entry["work_id"])
+        # Deliberate tampering with a legacy source history must still fail.
+        legacy=next(e for e in entries if e["history"] is not None and
+                    "wikidata_id" not in by_id[e["work_id"]] and
+                    "authority_url" not in by_id[e["work_id"]])
         missing=copy.deepcopy(history)
-        missing["works"].pop(entries[0]["slug"])
+        missing["works"].pop(legacy["slug"],None)
+        missing.get("works_by_id",{}).pop(legacy["work_id"],None)
         with self.assertRaisesRegex(ValueError,"missing complete sourced work history"):
             build_editorial(facts,registry,editorial,history=missing)
         exported=json.loads((ROOT/"public/catalog/work-editorial.json").read_text(encoding="utf-8"))

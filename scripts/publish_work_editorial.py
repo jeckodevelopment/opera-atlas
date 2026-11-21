@@ -68,7 +68,7 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
         has_first_party_authority=(
             isinstance(official_url,str) and
             bool(__import__("re").fullmatch(
-                r"https://www\\.tcbo\\.it/evento/opera/[a-z0-9-]+-20\\d{2}/",
+                r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
                 official_url)) and
             any(stage["work_id"]==work["id"] and stage["source_url"]==official_url
                 for stage in graph["stagings"]))

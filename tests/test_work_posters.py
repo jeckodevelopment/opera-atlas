@@ -249,11 +249,21 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertTrue(established.issubset({w["title"] for w in editorial}))
         for work in editorial:
             if work["title"] in established:continue
-            self.assertTrue(work.get("authority_url","").startswith(
-                "https://www.tcbo.it/evento/opera/"),work["title"])
-            self.assertTrue(any(stage["work_id"]==work["id"]
-                                and stage["source_url"]==work["authority_url"]
-                                for stage in registry_graph["stagings"]),work["title"])
+            # All new work IDs require independently verified authority,
+            # but eligible works from other theatres may have Wikidata rather
+            # than a TCBO URL. An artwork fallback is not a fake poster.
+            import re
+            official=work.get("authority_url","")
+            first_party=(
+                bool(re.fullmatch(
+                    r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
+                    official)) and
+                any(stage["work_id"]==work["id"] and
+                    stage["source_url"]==official
+                    for stage in registry_graph["stagings"]))
+            wikidata=bool(re.fullmatch(
+                r"Q[1-9][0-9]*",work.get("wikidata_id","")))
+            self.assertTrue(first_party or wikidata,work["title"])
         # Each newly catalogued opera must have an approved image plan, but
         # the number of *archival* works changes whenever new canonical IDs
         # are introduced. Never assert a fixed total from a different snapshot.
