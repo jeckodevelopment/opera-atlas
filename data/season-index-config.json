@@ -64,6 +64,13 @@
       "url": "https://www.maggiofiorentino.com/calendario/2027/01/opera",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/",
+      "url": "https://www.operaroma.it/opere/",
+      "access_status": "approved",
+      "min_links": 2
     }
   ]
 }

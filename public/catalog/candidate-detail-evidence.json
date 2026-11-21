@@ -503,6 +503,64 @@
       ]
     },
     {
+      "candidate_id": "oa-index-52ff40865866999be465",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/",
+      "checked_at": "2026-11-21T14:05:00+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Lucia di Lammermoor",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-02-21",
+          "starts_at": "2027-02-21T19:00:00+01:00"
+        },
+        {
+          "event_title": "Lucia di Lammermoor",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-02-23",
+          "starts_at": "2027-02-23T20:00:00+01:00"
+        },
+        {
+          "event_title": "Lucia di Lammermoor",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-02-24",
+          "starts_at": "2027-02-24T20:00:00+01:00"
+        },
+        {
+          "event_title": "Lucia di Lammermoor",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-02-25",
+          "starts_at": "2027-02-25T20:00:00+01:00"
+        },
+        {
+          "event_title": "Lucia di Lammermoor",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-02-26",
+          "starts_at": "2027-02-26T20:00:00+01:00"
+        },
+        {
+          "event_title": "Lucia di Lammermoor",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-02-27",
+          "starts_at": "2027-02-27T18:00:00+01:00"
+        },
+        {
+          "event_title": "Lucia di Lammermoor",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-02-28",
+          "starts_at": "2027-02-28T16:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",

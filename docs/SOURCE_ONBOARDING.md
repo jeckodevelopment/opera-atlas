@@ -820,3 +820,46 @@ le identità canoniche e il feed editoriale pubblico. Questa transazione evita
 che la scheda di una nuova opera sia pubblicata senza le relative fonti
 dell'editoriale; non modifica i controlli degli URL o gli ID permanenti.
 La suite Python contiene un controllo statico esplicito dei due workflow.
+
+## Roma — Teatro dell'Opera, Teatro Costanzi (21/11/2026)
+
+La decima fonte di indice approvata è la sezione ufficiale
+`https://www.operaroma.it/opere/`, con pagine dettaglio
+`https://www.operaroma.it/spettacoli/<slug>/`, che vengono
+lette soltanto dopo una verifica positiva del `robots.txt` corrente.
+L'estrattore `opera_atlas.roma_detail_parser` accetta **esclusivamente**
+pagine ufficiali HTTPS senza query, frammenti o redirect, con H1
+dell'opera già canonica, compositore espresso come `Musica di ...`,
+stagione dichiarata **2026/2027**, luogo effettivo **Teatro Costanzi**
+e singole date/orari `ORE HH:MM` verificati anche contro il giorno
+della settimana. La scansione si interrompe prima delle anteprime
+giovani, dei link a spettacoli correlati e di eventuali pagine
+di altre stagioni. Un annullamento, una data impossibile o
+un credito divergente blocca la promozione.
+
+Ai fini delle schede nazionali, il Teatro Costanzi è la sala
+della Fondazione **Teatro dell'Opera di Roma** già censita,
+che mantiene il suo URL pubblico; la nuova identità canonica
+`Roma|Teatro dell'Opera di Roma` è creata soltanto insieme
+alla prima recita verificata, con regione Lazio. Le singole
+recite non sono attribuite alle altre sale della fondazione,
+come Teatro Nazionale o Terme di Caracalla.
+
+La prima produzione verificata è *Lucia di Lammermoor*
+(Gaetano Donizetti) con sette recite il **21, 23, 24, 25, 26,
+27 e 28 febbraio 2027**. Gli orari sono, rispettivamente,
+19:00, 20:00, 20:00, 20:00, 20:00, 18:00 e 16:30.
+Sono letti dalla pagina ufficiale
+`https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/`,
+che specifica il compositore, la sala e le singole rappresentazioni.
+L'anteprima del 20 febbraio non viene inserita come replica
+ordinaria. Le stesse informazioni sono documentate dal programma
+ufficiale della stagione. Il primo set entra nelle evidenze
+candidate per la promozione del pubblicatore rapido: il suo
+inserimento non equivale da solo alla pubblicazione nel catalogo.
+
+**Collaudo:** suite Python con `test_opera_roma_calendar.py`,
+controllo nel workflow delle sette date con ore, dell'ID stabile,
+dell'assenza di anteprime, dell'attribuzione alla corretta sala,
+dell'idempotenza e del manifesto pubblico v2. Nessun SFTP;
+la raccolta di ulteriori opere segue il normale refresh nazionale.

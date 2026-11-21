@@ -193,6 +193,8 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/it/stagioni/20\d{2}/[a-z0-9-]+",path))
     if key=="maggio-fiorentino-calendar-2027":
         return bool(re.fullmatch(r"/events/[a-z0-9-]+",path))
+    if key=="opera-roma-season-2026-27":
+        return bool(re.fullmatch(r"/spettacoli/[a-z0-9-]+",path))
     if key=="carlo-felice-season-2026-27":
         return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
     if key=="parma-opera-2027":
@@ -235,6 +237,7 @@ def validate_config(config:dict)->list[dict]:
         "donizetti-opera-2026":("www.donizettiopera.org","/it/opere-2026/"),
         "teatro-grande-opera-2026":("teatrogrande.it","/it"),
         "maggio-fiorentino-calendar-2027":("www.maggiofiorentino.com","/calendario/2027/01/opera"),
+        "opera-roma-season-2026-27":("www.operaroma.it","/opere/"),
     }
     seen=set()
     for item in config["sources"]:
@@ -268,6 +271,8 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key=="opera-roma-season-2026-27":
+            valid_season=index.path=="/opere/"
         elif key=="carlo-felice-season-2026-27":
             season=re.fullmatch(r"/rassegna-stagione-opera-danza-musical-(20\d{2})-(\d{2})/",index.path)
             valid_season=bool(season and (int(season[1])+1)%100==int(season[2]) and 2026<=int(season[1])<=2098)
