@@ -26,7 +26,10 @@ class NewOperaPromotionTests(unittest.TestCase):
             "oa-index-dfe824fe3301174d2165":"Vincenzo Bellini",
             "oa-index-05dfa4b5d5270a7fc051":"Vincenzo Bellini",
             "oa-index-144db2827af86d96232c":"Jacques Offenbach",
-            "oa-index-9c8433ba74501efca6eb":"Francesco Cilea"}
+            "oa-index-9c8433ba74501efca6eb":"Francesco Cilea",
+            "oa-index-5ab298c2300ec275c2a3":"Wolfgang Amadeus Mozart",
+            "oa-index-6cd199691f7145a4d048":"Engelbert Humperdinck",
+            "oa-index-8a4ea2e4cf761a147ffb":"Giuseppe Verdi"}
         actual={x["candidate_id"]:x for x in complete["works"]}
         for cid,composer in targets.items():
             with self.subTest(candidate=cid):
