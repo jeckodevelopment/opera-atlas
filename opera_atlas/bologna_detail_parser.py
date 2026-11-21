@@ -91,7 +91,7 @@ def normalize_event_fact(row:dict)->dict:
     name=cleaned.get("composer")
     if isinstance(name,str):
         match=re.fullmatch(
-            r"\\s*(.{3,100}?)\\s*\\(\\d{4}(?:\\s*[-–]\\s*\\d{4})?\\)\\s*",
+            r"\s*(.{3,100}?)\s*\(\d{4}(?:\s*[-–]\s*\d{4})?\)\s*",
             name)
         if match:cleaned["composer"]=match[1].strip()
     if cleaned.get("venue") in VENUES:
