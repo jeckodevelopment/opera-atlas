@@ -19,6 +19,22 @@ class PosterPublicationTests(unittest.TestCase):
               "checks":checks or {}}
         path.write_text(json.dumps(data),encoding="utf-8")
 
+    def test_three_completed_operas_have_exact_archival_material(self):
+        matches=posters.load_archival_art({
+            "l-esule-di-roma","i-capuleti-e-i-montecchi","falstaff"})
+        self.assertEqual(set(matches),{
+            "l-esule-di-roma","i-capuleti-e-i-montecchi","falstaff"})
+        expected={"l-esule-di-roma":"Donizetti",
+                  "i-capuleti-e-i-montecchi":"Bellini",
+                  "falstaff":"Verdi"}
+        for slug,composer in expected.items():
+            with self.subTest(work=slug):
+                self.assertEqual(matches[slug]["kind"],"archival_work_image")
+                self.assertIn("commons.wikimedia.org",matches[slug]["image_url"])
+                self.assertIn(composer,matches[slug]["credit"])
+                self.assertIn("Public domain",matches[slug]["license"])
+                self.assertNotIn("allestimento in calendario",matches[slug]["credit"])
+
     def test_extracts_explicit_official_poster_with_credit(self):
         url="https://www.teatrolafenice.it/event/adriana-lecouvreur/"
         html='''<html><head>
