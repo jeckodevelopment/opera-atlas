@@ -161,7 +161,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     // Use each theatre's verified file, never a photo of another venue
     // in the same city. Unknown images retain a visibly editorial fallback.
     const verified=event?.photo_file;
-    const file=typeof verified==="string" && /^[^/\\]+\\.(jpe?g|png|webp)$/i.test(verified)
+    const file=typeof verified==="string" && /^[^/\\]+\.(jpe?g|png|webp)$/i.test(verified)
       ? verified
       : (event?.no_city_fallback ||
          (city==="verona" && !/arena di verona/i.test(title)) ? null : FILES[city]);
