@@ -24,6 +24,18 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "reason": "same_recita_already_in_official_circuit",
+      "dates": [
+        "2026-11-26",
+        "2026-11-28"
+      ]
+    },
+    {
+      "candidate_id": "oa-index-808c1bd6d5fa592d62af",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
       "reason": "unknown_work_needs_authority_data"
     },
@@ -33,6 +45,10 @@
     },
     {
       "candidate_id": "oa-index-a77154badf30929b95dc",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-b372b317894fe260b18e",
       "reason": "unknown_work_needs_authority_data"
     },
     {
