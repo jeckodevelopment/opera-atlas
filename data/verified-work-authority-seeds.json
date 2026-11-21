@@ -170,6 +170,24 @@
           "https://asac.labiennale.org/attivita/musica/272795"
         ]
       }
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+      "title": "Il mondo alla roversa o sia le donne che comandano",
+      "composer": "Baldassarre Galuppi",
+      "synopsis": "In un'isola governata dalle donne, Tullia, Cintia e Aurora tengono gli uomini in posizione subalterna. Tra amori, gelosie e rivalità, il loro potere viene messo alla prova e il mondo alla rovescia vacilla.",
+      "history": {
+        "librettist": "Carlo Goldoni",
+        "premiere_year": 1750,
+        "premiere_venue": "Teatro San Cassiano",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://corago.unibo.it/opera/0000298002",
+          "https://corago.unibo.it/libretto/DRT0028887",
+          "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+        ]
+      }
     }
   ]
 }

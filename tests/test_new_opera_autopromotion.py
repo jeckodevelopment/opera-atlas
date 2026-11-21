@@ -13,6 +13,46 @@ URL="https://www.teatroallascala.org/it/stagione/2026-2027/opera/fixture-opera.h
 CID="oa-index-test-new-fixture"
 
 class NewOperaPromotionTests(unittest.TestCase):
+    def test_maggio_galuppi_complete_source_first_work_card(self):
+        from scripts.auto_catalogue import official_identity_candidates, promote_new_works
+        from scripts.publish_work_posters import load_archival_art
+        from scripts.auto_catalogue import SOURCE_ALLOWLIST
+        from scripts.publish_work_editorial import EDITORIAL, HISTORY
+        import hashlib
+        url="https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+        source="maggio-fiorentino-calendar-2027"
+        cid="oa-index-"+hashlib.sha256((source+"|"+url).encode()).hexdigest()[:20]
+        candidate={"schema_version":1,"candidates":[{
+            "id":cid,"source_key":source,"official_url":url,"status":"needs_review"}]}
+        dates=[("2027-01-30","17:00"),("2027-01-31","15:30"),("2027-02-02","20:00")]
+        from scripts.build_verified_catalog import official_local_time
+        evidence={"schema_version":1,"evidence":[{
+            "candidate_id":cid,"source_key":source,"source_url":url,
+            "status":"needs_editorial_review",
+            "event_facts":[{"event_title":"Il mondo alla roversa o sia le donne che comandano",
+                "composer":"Baldassarre Galuppi","venue":"Teatro Goldoni",
+                "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in dates]}]}
+        doc=official_identity_candidates(evidence,candidate,{"schema_version":1,"works":[]})
+        self.assertEqual(len(doc["works"]),1)
+        self.assertEqual(doc["works"][0]["composer"],"Baldassarre Galuppi")
+        self.assertEqual(doc["works"][0]["history"]["premiere_year"],1750)
+        cover=load_archival_art({"il-mondo-alla-roversa-o-sia-le-donne-che-comandano"})
+        self.assertEqual(cover["il-mondo-alla-roversa-o-sia-le-donne-che-comandano"]["kind"],"archival_work_image")
+        work_ids=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        if any(w["title"]=="Il mondo alla roversa o sia le donne che comandano" and w["composer"]=="Baldassarre Galuppi"
+               for w in work_ids["works"].values()):
+            return # Already promoted by an independent refresh.
+        facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        orig=json.loads(EDITORIAL.read_text(encoding="utf-8"))
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))
+        allow=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
+        published=promote_new_works(facts,work_ids,evidence,candidate,doc,orig,allow,
+                                  today=date(2026,11,21),history=history,require_image=True)
+        self.assertEqual(published[-1]["new_works"],1,published[-1])
+        self.assertEqual(published[-1]["new_recite"],3,published[-1])
+        self.assertIn("Firenze|Teatro Goldoni",published[1]["venues"])
+
     def test_ready_cached_works_get_editorial_before_publication(self):
         from scripts.auto_catalogue import complete_cached_verified_work_cards
         from scripts.auto_work_research import OUT
