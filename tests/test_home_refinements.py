@@ -45,6 +45,22 @@ class AtlasHomeRefinementTests(unittest.TestCase):
         self.assertIn("for(const id of HOME_REPERTOIRE_IDS)",home)
         self.assertNotIn("[...works].sort",home)
 
+    def test_home_theatre_images_use_verified_venue_photos(self):
+        import json
+        home=(SITE/"app.js").read_text(encoding="utf-8")
+        images=(SITE/"image-client.js").read_text(encoding="utf-8")
+        registry=json.loads((SITE.parent/"data/venue-directory.json").read_text(encoding="utf-8"))
+        carlo=next(v for v in registry["venues"] if v["city"]=="Genova" and v["slug"]=="teatro-carlo-felice")
+        self.assertEqual(carlo["photo_file"],"Genova - Teatro Carlo Felice.jpg")
+        self.assertIn("const homeVenueProfiles=new Map()",home)
+        self.assertIn("const entries=await window.OperaAtlasCatalog.venues()",home)
+        self.assertIn('const path=event.city_slug+"/"+event.venue_slug',home)
+        self.assertIn("photo_file:profile?.photo_file",home)
+        self.assertIn("loadHomeVenueProfiles().catch",home)
+        self.assertIn('city==="genova" && title==="Teatro Carlo Felice"',images)
+        self.assertIn('"Genova - Teatro Carlo Felice.jpg"',images)
+        self.assertIn("const verified=event?.photo_file || knownVenueFile;",images)
+
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_distinct_archival_works_not_fictional_primary_poster(self):
         result=subprocess.run(["node",str(SITE.parent/"tests/image_client_smoke.cjs")],
