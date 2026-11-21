@@ -124,7 +124,7 @@ async function initialize(){
       const urls=window.OperaAtlasCatalog.urls(e);
       const url=section==="opere"?urls.work:urls.venue;
       if(!grouped.has(url)){
-        const profile=editorial.venues[e.municipality+"|"+e.venue];
+        const profile=editorial.venues[e.municipality+"|"+(e.municipality==="Torino" && e.venue==="Teatro Regio di Torino"?"Teatro Regio":e.venue)];
         grouped.set(url,{url,title:section==="opere"?e.title:e.venue,work_slug:section==="opere"?e.work_slug:undefined,
           work_id:section==="opere"?e.work_id:undefined,
           composer:section==="opere"?e.composer:undefined,
