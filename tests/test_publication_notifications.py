@@ -1,6 +1,7 @@
 """Publication diagnostics: only newly published work/staging identities notify."""
 import json
 import unittest
+from pathlib import Path
 from unittest.mock import patch, MagicMock
 from scripts.notify_publications import new_entities, send, parse_recipients
 from scripts.notification_email import render_email
@@ -69,6 +70,20 @@ class PublicationNotificationsTest(unittest.TestCase):
         notice["url"] = "https://example.org/phishing"
         with self.assertRaises(ValueError):
             render_email(notice)
+
+    def test_direct_merged_feed_notifications_are_enabled(self):
+        workflow = (Path(__file__).resolve().parents[1] /
+                    ".github/workflows/notify-catalog-publications.yml").read_text(encoding="utf-8")
+        self.assertIn("public/catalog/v2/manifest.json", workflow)
+        self.assertIn("fetch-depth: 0", workflow)
+        self.assertIn("github.event.before", workflow)
+        self.assertIn("secrets.ATLAS_NOTIFICATION_TO", workflow)
+        self.assertIn("--only-ids", workflow)
+
+    def test_replay_filter_only_selects_existing_published_entities(self):
+        notice = new_entities(self.before, self.after)
+        selected = {"oa-w-1", "oa-w-unpublished"}
+        self.assertEqual([n["id"] for n in notice if n["id"] in selected], ["oa-w-1"])
 
     def test_multiple_secret_recipients_are_trimmed_and_deduplicated(self):
         self.assertEqual(parse_recipients(" one@example.org, two@example.org\nONE@example.org"),

@@ -19,3 +19,18 @@ Ogni email include tipo dell'evento, titolo, ID permanente, teatro/città o comp
 `python -m unittest tests.test_publication_notifications -v`
 
 Collaudi di integrazione: configurare le tre credenziali, pubblicare in staging una nuova opera con relativa produzione, verificare due email; ripetere il refresh senza cambiamenti e verificare zero email; aggiungere una diversa produzione della stessa opera e verificare una sola email; simulare un errore Resend e verificare che il push resti valido. Verificare che entrambi i destinatari ricevano la notifica senza che gli indirizzi compaiano nel repository o nei log. Le nuove recite non devono generare email. I messaggi vengono inviati nel workflow di produzione, non nei test.
+
+## Pubblicazioni dirette tramite Pull Request
+
+Anche il workflow `.github/workflows/notify-catalog-publications.yml` intercetta le modifiche al manifesto pubblico v2 effettuate da una PR unita a `main` (o da un push manuale). Confronta la versione pubblicata prima del push (`github.event.before`) e il nuovo commit (`github.sha`), utilizzando gli stessi ID canonici e lo stesso servizio Resend. Questo risolve il caso delle opere già inserite nel feed dalla PR prima dell'esecuzione del refresh.
+
+I commit catalogo prodotti dal workflow `refresh-catalog` mediante `GITHUB_TOKEN` non attivano un secondo workflow `push` ricorsivo; le rispettive notifiche restano gestite nel workflow originario. La stessa chiave d'idempotenza basata sull'ID permanente protegge da reinvii involontari. Il job aggiuntivo non esegue scansioni né pubblica JSON.
+
+### Ripetizione controllata di una notifica saltata
+
+Il workflow aggiuntivo espone `workflow_dispatch` con `base_sha` (revisione precedente alla pubblicazione) e `entity_ids` (elenco facoltativo di ID separati da virgola). La ripetizione notifica **soltanto** entità presenti nel feed pubblico corrente e assenti nel feed della baseline. Per recuperare esattamente le due notifiche delle opere del Petruzzelli, inserire:
+
+- `base_sha`: `b0804e1c3772602b8eef550f1e1cb2121ea374a8`
+- `entity_ids`: `oa-w-000077,oa-w-000078`
+
+Il replay invia email reali a tutti i destinatari configurati: eseguirlo una sola volta dopo aver verificato il mittente Resend. Non usare `entity_ids` vuoto nel replay storico se non si intende notificare tutte le opere e produzioni nuove dall'epoca della baseline. Nessun valore dei secret è inserito nel repository o nei log.
