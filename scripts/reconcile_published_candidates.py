@@ -17,6 +17,32 @@ from scripts.publish_catalog_v2 import ROOT
 HEALTH=ROOT/"data"/"candidate-reconciliation-health.json"
 AUTO_STATES=frozenset({"needs_review","already_catalogued","excluded_nonopera"})
 
+def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
+    """Recognize complete independently verified second-source theater dates.
+
+    A source only matches an existing circuit production if every scheduled
+    performance has independently validated time evidence from that same
+    approved official venue URL. Partial or ambiguous observations stay open.
+    """
+    from scripts.build_verified_catalog import TIME_EVIDENCE_URLS,validate_time_evidence
+    validate_time_evidence(manifest,evidence)
+    matches=set()
+    times=evidence["times"]
+    for production in manifest["productions"]:
+        days=[day for day,_ in production["dates"]]
+        if not days:
+            continue
+        rows=[times.get(production["key"]+"|"+day) for day in days]
+        if any(row is None for row in rows):
+            continue
+        urls={row["url"] for row in rows}
+        if len(urls)!=1:
+            continue
+        url=next(iter(urls))
+        if url in TIME_EVIDENCE_URLS.get(production["key"],set()):
+            matches.add(url)
+    return matches
+
 def reconcile(candidates:dict,verified_urls:set[str])->tuple[dict,dict]:
     if candidates.get("schema_version")!=1 or not isinstance(candidates.get("candidates"),list):
         raise ValueError("invalid season index candidate registry")
@@ -39,7 +65,13 @@ def reconcile(candidates:dict,verified_urls:set[str])->tuple[dict,dict]:
 
 def run(*,check:bool=False):
     original=json.loads(OUTPUT.read_text(encoding="utf-8"))
-    updated,report=reconcile(original,reviewed_source_urls())
+    from scripts.build_verified_catalog import MANIFEST,TIME_EVIDENCE
+    published=reviewed_source_urls()
+    if TIME_EVIDENCE.exists():
+        manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        times=json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
+        published.update(verified_secondary_source_urls(manifest,times))
+    updated,report=reconcile(original,published)
     if check:
         if updated!=original:
             raise ValueError("discovery queue out of sync with canonical catalog")
