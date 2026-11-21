@@ -29,6 +29,21 @@ class SourceIndependentPromotion(unittest.TestCase):
         cls.history=read(HISTORY)
         cls.urls=read(SOURCE_ALLOWLIST)["urls"]
 
+    def repro_candidate_queue(self):
+        # A real refresh moves successful candidates to already_catalogued.
+        # Reopen only the same verified official URLs in a private fixture to
+        # test autonomous replay independently of the live queue status.
+        cloned=copy.deepcopy(self.candidates)
+        approved_urls={entry["source_url"] for entry in self.details["evidence"]
+                       if entry.get("source_key")==SOURCE and
+                       entry.get("event_facts") and
+                       entry["event_facts"][0].get("event_title") in EXPECTED}
+        for candidate in cloned["candidates"]:
+            if (candidate.get("source_key")==SOURCE and
+                    candidate.get("official_url") in approved_urls):
+                candidate["status"]="needs_review"
+        return cloned
+
     def test_recovered_petruzzelli_operas_promote_by_shared_rules(self):
         known={(normalized(w["title"]),normalized(w["composer"]))
                for w in self.registry["works"].values()}
@@ -41,8 +56,9 @@ class SourceIndependentPromotion(unittest.TestCase):
         self.assertEqual(set(selected),set(EXPECTED))
         self.assertTrue(all(len(selected[title]["event_facts"])==count
                             for title,count in EXPECTED.items()))
+        pending=self.repro_candidate_queue()
         intelligence=official_identity_candidates(
-            self.details,self.candidates,{"schema_version":1,"works":[]})
+            self.details,pending,{"schema_version":1,"works":[]})
         candidate_rows={x["title"]:x for x in intelligence["works"]
                         if x["source_key"]==SOURCE and x["title"] in EXPECTED}
         self.assertEqual(set(candidate_rows),set(EXPECTED))
@@ -52,7 +68,7 @@ class SourceIndependentPromotion(unittest.TestCase):
         self.assertEqual(len(archival),4)
         chosen={"schema_version":1,"works":list(candidate_rows.values())}
         output=promote_new_works(
-            self.facts,self.registry,self.details,self.candidates,
+            self.facts,self.registry,self.details,pending,
             chosen,self.editorial,self.urls,today=date(2026,11,21),
             history=self.history,require_image=True)
         facts,registry,urls,editorial,history,report=output
@@ -73,7 +89,7 @@ class SourceIndependentPromotion(unittest.TestCase):
                   and normalized(p["title"])==normalized(name)]
             self.assertEqual(len(rows),1)
             self.assertEqual(len(rows[0]["dates"]),count)
-        again=promote_new_works(facts,registry,self.details,self.candidates,
+        again=promote_new_works(facts,registry,self.details,pending,
              chosen,editorial,urls,today=date(2026,11,21),
              history=history,require_image=True)
         self.assertEqual(again[-1]["new_recite"],0)
@@ -84,7 +100,7 @@ class SourceIndependentPromotion(unittest.TestCase):
                     and r.get("event_facts", [{}])[0].get("event_title")=="Fidelio")
         source["event_facts"][0]["composer"]="Different Composer"
         result=official_identity_candidates(
-            evidence,self.candidates,{"schema_version":1,"works":[]})
+            evidence,self.repro_candidate_queue(),{"schema_version":1,"works":[]})
         self.assertFalse(any(x["candidate_id"]==source["candidate_id"]
                              for x in result["works"]))
         evidence=copy.deepcopy(self.details)
