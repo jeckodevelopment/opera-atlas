@@ -102,6 +102,30 @@
       "description": "Copertina storica del libretto di Don Giovanni di Mozart, edizione del 1920; non rappresenta la produzione attuale",
       "credit": "Libretto storico di Don Giovanni di Wolfgang Amadeus Mozart, ed. 1920, Wikimedia Commons",
       "license": "Public domain; verificare la pagina Wikimedia Commons"
+    },
+    "le-nozze-di-figaro": {
+      "file": "Locandina Nozze di Figaro.jpg",
+      "description": "Locandina storica della prima rappresentazione viennese delle Nozze di Figaro (1786), non produzione attuale",
+      "credit": "Wikimedia Commons · autore ignoto, locandina originale del 1786",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Locandina_Nozze_di_Figaro.jpg"
+    },
+    "fidelio": {
+      "file": "Fidelio.jpg",
+      "description": "Locandina storica di una rappresentazione del Fidelio di Ludwig van Beethoven a Bonn, non produzione attuale",
+      "credit": "Wikimedia Commons · documento storico teatrale di Bonn",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Fidelio.jpg"
+    },
+    "arlecchino": {
+      "file": "Turandot-Arlechino Premier Poster 600391.jpg",
+      "description": "Manifesto originale del 1917 per la prima di Arlecchino e Turandot di Ferruccio Busoni, non produzione attuale",
+      "credit": "Wikimedia Commons · manifesto storico del 1917, autore ignoto",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Turandot-Arlechino_Premier_Poster_600391.jpg"
+    },
+    "zenobia": {
+      "file": "Metastasio - Zenobia - Herissant Vol.06 - Paris 1780.png",
+      "description": "Illustrazione storica del libretto Zenobia di Pietro Metastasio (1780), testo utilizzato anche da Niccolò Piccinni; non è il manifesto della produzione attuale",
+      "credit": "Jean-Michel Moreau le Jeune · Zenobia di Pietro Metastasio (1780), Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Metastasio_-_Zenobia_-_Herissant_Vol.06_-_Paris_1780.png"
     }
   },
   "works_by_id": {
