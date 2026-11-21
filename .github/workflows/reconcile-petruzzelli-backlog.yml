@@ -1,0 +1,101 @@
+name: Reconcile remaining official Petruzzelli candidates
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/reconcile-petruzzelli-backlog.yml'
+permissions:
+  contents: write
+concurrency:
+  group: opera-atlas-petruzzelli-backlog-recovery
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout canonical main
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check existing data and tests before source access
+        run: |
+          python -m unittest discover -s tests -q
+          python -m scripts.build_verified_catalog --check
+      - name: Read all currently pending Bari official production pages
+        run: |
+          # This invokes the SAME shared robots-gated detail reader, not a
+          # duplicate Petruzzelli importer. Each approved source is limited to 24
+          # pages and only unresolved candidates are considered.
+          python -m scripts.collect_candidate_details --allow-network --source-key petruzzelli-opera-2026
+          python -m scripts.collect_candidate_details --allow-network --source-key petruzzelli-opera-2027
+          python -m scripts.reconcile_published_candidates
+      - name: Checkpoint official evidence and closed historic candidates
+        id: evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json
+          git add data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "data(petruzzelli): checkpoint verified unresolved production details [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Requeue checkpoint if repository changed concurrently
+        if: steps.evidence.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+      - name: Promote only fully verified opera and performances
+        run: |
+          # New new opera dates can only publish when the official
+          # page supplies matching image evidence or a licensed archival
+          # work image; the central promoter fails closed otherwise.
+          python -m scripts.auto_catalogue
+          python -m scripts.publish_work_posters
+          python -m scripts.publish_programs
+          python -m scripts.reconcile_published_candidates
+          python -m scripts.build_verified_catalog
+          python -m scripts.publish_catalog_v2
+          python -m scripts.publish_work_editorial
+          python -m scripts.publish_venue_directory
+          python -m scripts.sync_source_registry
+          python -m scripts.source_coverage
+          python -m scripts.recite_coverage
+          python -m scripts.source_automation
+          python -m scripts.build_verified_catalog --check
+          python -m scripts.publish_catalog_v2 --check
+          python -m scripts.publish_work_editorial --check
+          python -m scripts.publish_venue_directory --check
+          python -m scripts.publish_work_posters --check
+          python -m scripts.publish_programs --check
+          python -m unittest discover -s tests -q
+      - name: Publish verified catalog and final candidate state
+        id: catalog
+        run: |
+          git add data/verified-launch-catalog.json data/identity-registry.json data/auto-source-urls.json data/verified-time-evidence.json
+          git add site/work-synopses.json site/work-history.json site/performances.json public/catalog/v2/ public/catalog/work-editorial.json
+          git add public/catalog/coverage.json public/catalog/recite-coverage.json public/catalog/source-automation.json public/catalog/venue-directory.json
+          git add data/work-poster-evidence.json data/work-poster-health.json public/catalog/work-posters.json data/autonomous-catalogue-health.json
+          git add public/catalog/programs.json data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "data(petruzzelli): publish fully verified opera and reconcile candidates [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Requeue deferred publication if main changed
+        if: steps.catalog.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
