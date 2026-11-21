@@ -299,6 +299,49 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
              "date":day,"starts_at":official_local_time(day,hour),
              "venue":venue} for day,hour in rows]
 
+def parse_official_parma_work_detail(url:str,html:str)->list[dict]:
+    """Verify first-party Parma work credits and independently dated tickets.
+
+    A work need not exist in the canonical registry before its official source
+    can be researched; composer/title must be explicit, never URL-derived.
+    """
+    import re
+    from opera_atlas.national_detail_parser import clean,parse_national_showtimes
+    target=urlsplit(url)
+    if (target.scheme!="https" or target.hostname!="teatroregioparma.it"
+        or target.username or target.password or target.port is not None
+        or target.query or target.fragment
+        or not re.fullmatch(r"/spettacolo/[a-z0-9-]+/",target.path)):
+        raise ValueError("untrusted Parma opera detail")
+    heading=FirstHeading()
+    heading.feed(html)
+    title=heading.first
+    if not isinstance(title,str) or not 2<=len(title.strip())<=140:
+        raise ValueError("missing official Parma work heading")
+    text=clean(html)
+    # The actual work information block follows a repeated "Spettacolo"
+    # navigation label; other composers mentioned in the cast are not proof.
+    section=text.rsplit("Spettacolo",1)[-1][:2800]
+    if "Teatro Regio di Parma" not in section:
+        raise ValueError("unverified Parma performance venue")
+    credit=re.compile(
+        r"(?i)\\bmusica\\s+"
+        r"([A-ZÀ-Ž][\\w'’.-]+(?:\\s+[A-ZÀ-Ž][\\w'’.-]+){1,5})"
+        r"\\s+(?=(?:Dramma|Opera|Commedia|Libretto|Melodramma|"
+        r"Singspiel|Farsa|Oratorio|Tragedia)\\b)")
+    matches=credit.findall(section)
+    if (len(matches)!=1 or
+        len(re.findall(r"(?i)\\bmusica\\s+[A-ZÀ-Ž]",section))!=1):
+        raise ValueError("missing or contradictory official Parma composer")
+    composer=matches[0]
+    dates=parse_national_showtimes(
+        html,source_key="parma-opera-2027",url=url,
+        title=title,composer=composer)
+    return [{"event_title":title,"composer":composer,
+             "venue":"Teatro Regio di Parma","date":day,
+             "starts_at":official_local_time(day,clock)} for day,clock in dates]
+
+
 def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
     """Read explicit Palermo first-party work/composer credits before authority research.
 
@@ -380,6 +423,8 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in days]
+    if source_key=="parma-opera-2027":
+        return parse_official_parma_work_detail(url,html)
     if source_key=="massimo-season-2026-27":
         return parse_official_massimo_work_detail(url,html)
     if source_key!="carlo-felice-season-2026-27":
@@ -584,7 +629,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"] in ("fenice-opera-2026-27","scala-season-2026-27","massimo-season-2026-27","carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
+                if item["source_key"] in ("fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
