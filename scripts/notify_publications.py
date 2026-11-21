@@ -83,18 +83,15 @@ def parse_recipients(config: str) -> list[str]:
 
 
 def send(notice: dict, api_key: str, sender: str, recipients: list[str]) -> None:
-    from html import escape
+    from scripts.notification_email import render_email
     subject = f"[Opera+ Atlas] {notice['kind']}: {notice['title']}"
-    html = "<h2>" + escape(notice["kind"]) + "</h2>" + "".join(
-        f"<p><b>{escape(label)}:</b> {escape(str(value))}</p>"
-        for label, value in (
-            ("Titolo", notice["title"]),
-            ("ID", notice["id"]),
-            ("Dettagli", notice["details"]),
-        )
-    ) + f'<p><a href="{escape(notice["url"], quote=True)}">Apri la scheda su Opera+ Atlas</a></p>'
+    html, plain = render_email(notice)
     payload = json.dumps({
-        "from": sender, "to": recipients, "subject": subject, "html": html,
+        "from": sender,
+        "to": recipients,
+        "subject": subject,
+        "html": html,
+        "text": plain,
     }).encode("utf-8")
     request = urllib.request.Request(
         "https://api.resend.com/emails", payload,
