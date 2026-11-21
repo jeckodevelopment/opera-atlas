@@ -54,6 +54,159 @@
       ]
     },
     {
+      "candidate_id": "oa-index-027fde14d101fca6bf3e",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/",
+      "checked_at": "2026-11-21T14:38:00+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-09-12",
+          "starts_at": "2027-09-12T20:30:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-09-14",
+          "starts_at": "2027-09-14T20:30:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-09-15",
+          "starts_at": "2027-09-15T18:00:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-09-16",
+          "starts_at": "2027-09-16T20:30:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-09-17",
+          "starts_at": "2027-09-17T20:30:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-09-19",
+          "starts_at": "2027-09-19T18:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-05e9aa51dbd5a114e2f0",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/",
+      "checked_at": "2026-11-21T14:38:00+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-17",
+          "starts_at": "2027-12-17T20:30:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-18",
+          "starts_at": "2027-12-18T18:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-19",
+          "starts_at": "2027-12-19T18:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-21",
+          "starts_at": "2027-12-21T20:30:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-22",
+          "starts_at": "2027-12-22T20:30:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-23",
+          "starts_at": "2027-12-23T20:30:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-26",
+          "starts_at": "2027-12-26T19:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-12-27",
+          "starts_at": "2027-12-27T18:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-073615054167b041e7f7",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/",
+      "checked_at": "2026-11-21T14:38:00+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Zenobia",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-01-27",
+          "starts_at": "2027-01-27T20:30:00+01:00"
+        },
+        {
+          "event_title": "Zenobia",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-01-29",
+          "starts_at": "2027-01-29T20:30:00+01:00"
+        },
+        {
+          "event_title": "Zenobia",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-01-31",
+          "starts_at": "2027-01-31T18:00:00+01:00"
+        },
+        {
+          "event_title": "Zenobia",
+          "composer": "Niccolò Piccinni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-02-02",
+          "starts_at": "2027-02-02T18:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
@@ -786,6 +939,43 @@
       ]
     },
     {
+      "candidate_id": "oa-index-790b965de8129382aa04",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
+      "checked_at": "2026-11-21T14:38:00+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Arlecchino",
+          "composer": "Ferruccio Busoni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-05-15",
+          "starts_at": "2027-05-15T20:30:00+02:00"
+        },
+        {
+          "event_title": "Arlecchino",
+          "composer": "Ferruccio Busoni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-05-18",
+          "starts_at": "2027-05-18T20:30:00+02:00"
+        },
+        {
+          "event_title": "Arlecchino",
+          "composer": "Ferruccio Busoni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-05-21",
+          "starts_at": "2027-05-21T18:00:00+02:00"
+        },
+        {
+          "event_title": "Arlecchino",
+          "composer": "Ferruccio Busoni",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T18:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
@@ -1157,12 +1347,56 @@
       ]
     },
     {
+      "candidate_id": "oa-index-a0eba5854831ebbf26c0",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/",
+      "checked_at": "2026-11-21T14:38:00+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-11-19",
+          "starts_at": "2027-11-19T20:30:00+01:00"
+        },
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-11-21",
+          "starts_at": "2027-11-21T18:00:00+01:00"
+        },
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-11-23",
+          "starts_at": "2027-11-23T20:30:00+01:00"
+        },
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-11-24",
+          "starts_at": "2027-11-24T20:30:00+01:00"
+        },
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-11-25",
+          "starts_at": "2027-11-25T18:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-a12dbb283b4900754d28",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
       "content_sha256": "ffcb9187ab0b096aff08c8ae99bbb525c5c745900cc55225ebad91ce913ab822",
       "checked_at": "2026-11-21T14:29:00+00:00",
-      "status": "needs_editorial_review",
+      "status": "needs_program_review",
       "event_facts": [
         {
           "event_title": "Pagliacci",
@@ -1213,7 +1447,8 @@
           "starts_at": "2027-10-20T18:00:00+02:00",
           "venue": "Teatro Petruzzelli"
         }
-      ]
+      ],
+      "review_reason": "composite_bill_must_not_be_published_as_pagliacci_only"
     },
     {
       "candidate_id": "oa-index-ad08a1d14a8510a5f0bf",
