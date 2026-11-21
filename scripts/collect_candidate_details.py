@@ -430,6 +430,12 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,hour)}
                 for day,hour in dates]
+    if source_key=="donizetti-opera-2026":
+        from opera_atlas.donizetti_credited_detail import parse_credited_detail
+        title,composer,venue,recite=parse_credited_detail(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key=="scala-season-2026-27":
         from opera_atlas.scala_credited_detail import parse_scala_credited_opera
         title,composer,recite=parse_scala_credited_opera(html,url=url)

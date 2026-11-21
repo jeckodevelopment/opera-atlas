@@ -104,6 +104,23 @@
       }
     },
     {
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "Durante le prove di un'opera in un teatro di provincia, cantanti, impresario e parenti si scontrano fra capricci, rivalità e pretese, mandando in crisi l'allestimento.",
+      "history": {
+        "librettist": "Domenico Gilardoni, dalle commedie di Antonio Simone Sografi",
+        "premiere_year": 1831,
+        "premiere_venue": "Teatro alla Canobbiana",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000002027",
+          "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+        ]
+      }
+    },
+    {
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "title": "L'arca di Noè",
@@ -186,6 +203,23 @@
         "sources": [
           "https://catalogue.bnf.fr/ark:/12148/cb39764059p",
           "https://www.opera-orchestre-montpellier.fr/wp-content/uploads/2023/03/2023-OONM-DP-IphigenieTauride-def.pdf"
+        ]
+      }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Angelina, trattata come una serva dal patrigno Don Magnifico e dalle sorellastre, conquista con la sua generosità il principe Ramiro, che la sceglie oltre le apparenze e le ricchezze.",
+      "history": {
+        "librettist": "Jacopo Ferretti",
+        "premiere_year": 1817,
+        "premiere_venue": "Teatro Valle",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/la-cenerentola/",
+          "https://www.rossinioperafestival.it/soggetti/la-cenerentola-ossia-la-bont-in-trionfo/"
         ]
       }
     },
@@ -305,23 +339,6 @@
         "sources": [
           "https://www.boosey.com/pages/cr/catalogue/cat_detail?musicid=4670",
           "https://asac.labiennale.org/attivita/musica/272795"
-        ]
-      }
-    },
-    {
-      "source_key": "opera-roma-season-2026-27",
-      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
-      "title": "La Cenerentola",
-      "composer": "Gioachino Rossini",
-      "synopsis": "Angelina, trattata come una serva dal patrigno Don Magnifico e dalle sorellastre, conquista con la sua generosità il principe Ramiro, che la sceglie oltre le apparenze e le ricchezze.",
-      "history": {
-        "librettist": "Jacopo Ferretti",
-        "premiere_year": 1817,
-        "premiere_venue": "Teatro Valle",
-        "premiere_city": "Roma",
-        "sources": [
-          "https://archiviostorico.operaroma.it/opera/la-cenerentola/",
-          "https://www.rossinioperafestival.it/soggetti/la-cenerentola-ossia-la-bont-in-trionfo/"
         ]
       }
     }
