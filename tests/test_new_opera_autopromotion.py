@@ -48,14 +48,17 @@ class NewOperaPromotionTests(unittest.TestCase):
         final=next(x for x in completed["works"] if x["candidate_id"]==
                    "oa-index-9c8433ba74501efca6eb")
         self.assertNotIn("Consulta le rappresentazioni",final["synopsis"])
-        self.assertIsNone(next(x for x in doc["works"] if x["candidate_id"]==
-            "oa-index-b4180540983902f703af").get("synopsis"))
-        # A spoofed official composer must not inherit an unrelated synopsis.
+        # Construct a missing synopsis explicitly, rather than assuming
+        # the public intelligence cache has not yet been promoted.
+        before_spoof=copy.deepcopy(doc)
+        source=next(x for x in before_spoof["works"] if x["candidate_id"]==
+                    "oa-index-b4180540983902f703af")
+        source["synopsis"]=None
         forged=json.loads(json.dumps(evidence))
         match=next(x for x in forged["evidence"] if x["candidate_id"]==
                    "oa-index-b4180540983902f703af")
         match["event_facts"][0]["composer"]="Different Composer"
-        blocked=complete_cached_verified_work_cards(doc,forged)
+        blocked=complete_cached_verified_work_cards(before_spoof,forged)
         cached=next(x for x in blocked["works"] if x["candidate_id"]==
                     "oa-index-b4180540983902f703af")
         self.assertIsNone(cached.get("synopsis"))
