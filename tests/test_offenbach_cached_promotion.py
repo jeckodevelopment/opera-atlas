@@ -55,7 +55,8 @@ class OffenbachPromotionTests(unittest.TestCase):
                              approved_extra=set(urls),history=history)
         self.assertTrue(any(w["title"]=="Les contes d'Hoffmann" for w in cards["works"]))
         again=promote_cached_verified_new_works(
-            facts,registry,self.evidence,self.candidates,urls,today=date(2026,11,21))
+            facts,registry,self.evidence,self.candidates,urls,today=date(2026,11,21),
+            editorial_snapshot=editorial,history_snapshot=history)
         self.assertEqual(again[-1]["new_works"],0)
         self.assertEqual(again[-1]["new_recite"],0)
         self.assertEqual(again[0],facts)
