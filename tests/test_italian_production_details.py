@@ -38,6 +38,22 @@ class ItalianDetailTests(unittest.TestCase):
                              composer="Gaetano Donizetti")
         self.assertEqual(venue,"Teatro Sociale")
 
+    def test_official_genova_onegin_typographic_composer_apostrophe(self):
+        html=('<p>VE 16/04/2027 (Prima)Turno A | Ore 20:00 | Acquista</p>'
+              '<p>SA 17/04/2027 Turno F | Ore 15:00 | Acquista</p>'
+              '<p>Dove: Teatro Carlo Felice</p><h1>Evgenij Onegin</h1>'
+              '<p>Scene liriche in tre atti di Pëtr Il’ič Čajkovskij</p>')
+        venue,dates=parse_detail(
+            html,source_key="carlo-felice-season-2026-27",
+            url="https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+            title="Evgenij Onegin",composer="Pëtr Il'ič Čajkovskij")
+        self.assertEqual(venue,"Teatro Carlo Felice")
+        self.assertEqual(dates,[("2027-04-16","20:00"),("2027-04-17","15:00")])
+        with self.assertRaises(ValueError):
+            parse_detail(html,source_key="carlo-felice-season-2026-27",
+                         url="https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+                         title="Evgenij Onegin",composer="Giacomo Puccini")
+
     def test_ambiguous_or_unsafe_does_not_emit_schedule(self):
         valid=('<h1>Pagliacci</h1><p>Ruggero Leoncavallo</p>'
                '<p>VE 22/01/2027 Turno A | Ore 20:00</p>'
