@@ -50,7 +50,7 @@ class SeasonRolloverTests(unittest.TestCase):
         result,health=roll(self.config,today=date(2027,6,1),
                            network_enabled=True,fetcher=fetch)
         self.assertEqual(sum(x["status"]=="rolled" for x in health),3)
-        self.assertEqual(len(result["sources"]),5)
+        self.assertEqual(len(result["sources"]),6)
         validate_config(result)
         scala=next(x for x in result["sources"] if x["key"]=="scala-season-2026-27")
         self.assertIn("2027-2028",scala["url"])
