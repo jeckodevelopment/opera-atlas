@@ -233,7 +233,10 @@
       "description": "Teatro Sociale è una sede teatrale censita a Rovigo.",
       "website": "https://www.visitrovigo.it/it/scopri-la-citt%C3%A0/i-musei/teatro-sociale",
       "history": "Il Teatro Sociale di Rovigo è una sala storica all’italiana e uno dei simboli culturali del Polesine. Ospita stagioni liriche, spettacoli di prosa e concerti, in continuità con la tradizione locale.",
-      "source": "https://www.visitrovigo.it/it/scopri-la-citt%C3%A0/i-musei/teatro-sociale"
+      "source": "https://www.visitrovigo.it/it/scopri-la-citt%C3%A0/i-musei/teatro-sociale",
+      "photo_file": "Teatro Sociale, Rovigo.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Sociale%2C_Rovigo.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     "Bolzano|Teatro Comunale di Bolzano": {
       "city": "Bolzano",
@@ -254,7 +257,10 @@
       "description": "Teatro Sociale è una sede teatrale censita a Trento.",
       "website": "https://www.haydn.it/",
       "history": "Il Teatro Sociale è il più antico e prestigioso teatro di Trento. Dopo una lunga storia di spettacoli e trasformazioni, ha riaperto al pubblico nel 2000 ed è oggi gestito dal Centro Santa Chiara.",
-      "source": "https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sociale"
+      "source": "https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sociale",
+      "photo_file": "Teatro Sociale di Trento (2016).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Sociale_di_Trento_(2016).jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     "Bologna|Teatro Comunale di Bologna": {
       "city": "Bologna",
@@ -274,8 +280,8 @@
       "address": "Piazza della Costituzione 4/A",
       "description": "Teatro Comunale Nouveau è una sede teatrale censita a Bologna.",
       "website": "https://www.tcbo.it/",
-      "history": "Il Comunale Nouveau è la sede temporanea che accoglie opera e danza del Teatro Comunale di Bologna durante i lavori nella sala storica. Lo spazio è stato allestito presso BolognaFiere.",
-      "source": "https://www.tcbo.it/piante-e-settori/"
+      "history": "Allestito negli spazi di BolognaFiere, il Comunale Nouveau ha ospitato le stagioni d’opera e danza durante i lavori alla sede storica, dal febbraio 2023 fino alla conclusione della sua attività nel giugno 2026.",
+      "source": "https://www.tcbo.it/news/grazie-comunale-nouveau/"
     },
     "Piacenza|Teatro Municipale": {
       "city": "Piacenza",
@@ -368,7 +374,10 @@
       "description": "Gran Teatro Giacomo Puccini è una sede teatrale censita a Torre del Lago Puccini.",
       "website": "https://www.puccinimuseum.org/giacomo-puccini/i-luoghi/gran-teatro-allaperto-giacomo-puccini/",
       "history": "Il Gran Teatro Giacomo Puccini è lo spazio all’aperto del Festival Puccini a Torre del Lago, accanto ai luoghi amati dal compositore. La stagione estiva vi porta in scena soprattutto le opere pucciniane.",
-      "source": "https://www.puccinifestival.it/contatti/"
+      "source": "https://www.puccinifestival.it/contatti/",
+      "photo_file": "Open-air Grand Theatre Puccini, Torre del Lago, Tuscany, Italy.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Open-air_Grand_Theatre_Puccini%2C_Torre_del_Lago%2C_Tuscany%2C_Italy.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     "Ancona|Teatro delle Muse": {
       "city": "Ancona",
@@ -533,7 +542,11 @@
       "description": "Teatro Giuseppe Di Stefano è una sede teatrale censita a Trapani.",
       "website": "https://www.lugliomusicale.it/",
       "history": "Il Teatro Giuseppe Di Stefano è lo spazio lirico estivo realizzato nella Villa Margherita di Trapani. Il palcoscenico all’aperto è legato alla tradizione del Luglio Musicale Trapanese.",
-      "source": "https://www.lugliomusicale.it/it/biglietteria-ente-luglio-musicale/"
+      "source": "https://www.lugliomusicale.it/it/biglietteria-ente-luglio-musicale/",
+      "photo_file": "Trapani - Villa margherita - Luglio Musicale Trapanese - Botteghino - panoramio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Trapani_-_Villa_margherita_-_Luglio_Musicale_Trapanese_-_Botteghino_-_panoramio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_note": "L’immagine mostra il luogo del teatro stagionale a Villa Margherita, non l’allestimento attuale"
     },
     "Cagliari|Teatro Lirico di Cagliari": {
       "city": "Cagliari",
