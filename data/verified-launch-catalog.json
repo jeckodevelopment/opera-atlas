@@ -2579,6 +2579,41 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-8d2b9a6be734bb24",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Petruzzelli",
+      "municipality": "Bari",
+      "region": "Puglia",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
+      "dates": [
+        [
+          "2026-12-16",
+          "20:30"
+        ],
+        [
+          "2026-12-17",
+          "20:30"
+        ],
+        [
+          "2026-12-18",
+          "20:30"
+        ],
+        [
+          "2026-12-19",
+          "18:00"
+        ],
+        [
+          "2026-12-20",
+          "18:00"
+        ],
+        [
+          "2026-12-22",
+          "18:00"
+        ]
+      ]
     }
   ]
 }
