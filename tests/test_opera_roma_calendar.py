@@ -130,6 +130,34 @@ class RomeOperaTests(unittest.TestCase):
         self.assertTrue(all(x["composer"]=="Christoph Willibald Gluck"
                             for x in rows))
 
+    def test_cenerentola_stays_at_real_teatro_valle_and_not_costanzi(self):
+        url="https://www.operaroma.it/spettacoli/la-cenerentola-3/"
+        html=('<p>Stagione 2026/2027</p><h1>La Cenerentola</h1>'
+              '<p>Musica di Gioachino Rossini</p>'
+              '<h3>Dove</h3><h3>Teatro Valle Franca Valeri</h3>'
+              '<h3>Le date</h3><h4>Prima rappresentazione</h4>'
+              '<p>venerdì</p><p>01</p><p>Ott</p><p>ORE 20:00</p>'
+              '<p>domenica</p><p>03</p><p>Ott</p><p>ORE 17:00</p>'
+              '<p>martedì</p><p>05</p><p>Ott</p><p>ORE 20:00</p>'
+              '<p>giovedì</p><p>07</p><p>Ott</p><p>ORE 20:00</p>'
+              '<p>domenica</p><p>10</p><p>Ott</p><p>ORE 17:00</p>'
+              '<h3>Ti può interessare anche</h3>')
+        title,composer,venue,dates=parse_roma_credited_detail(html,url=url)
+        self.assertEqual((title,composer),("La Cenerentola","Gioachino Rossini"))
+        self.assertEqual(venue,"Teatro Valle Franca Valeri")
+        self.assertEqual([x[0] for x in dates],
+            ["2027-10-01","2027-10-03","2027-10-05","2027-10-07","2027-10-10"])
+        rows=parse_source_credited_opera_detail(SOURCE,url,html)
+        self.assertEqual(len(rows),5)
+        self.assertEqual({x["venue"] for x in rows},{"Teatro Valle Franca Valeri"})
+        from scripts.auto_catalogue import verified_venue
+        city,actual,_=verified_venue(SOURCE,rows,self.registry)
+        self.assertEqual((city,actual),("Roma","Teatro Valle Franca Valeri"))
+        with self.assertRaises(ValueError):
+            parse_roma_credited_detail(
+                html.replace("<h3>Teatro Valle Franca Valeri</h3>",
+                             "<h3>Teatro Nazionale</h3>"),url=url)
+
     def test_rome_2027_cyrillic_transliterated_composer_unicode(self):
         url="https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
         html=page().replace("Lucia di Lammermoor",

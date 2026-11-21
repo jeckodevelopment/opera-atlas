@@ -55,8 +55,15 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
     if not re.search(r"\bMusica\s+di\s+"+re.escape(composer)+r"\b",
                      context.replace("’","'"),re.I):
         raise ValueError("composer absent from official Rome production")
-    if "Teatro Costanzi" not in context:
+    # Read the actual auditorium declared under first-party "Dove"; never
+    # substitute the Teatro Costanzi for another approved Rome venue.
+    official_venues={"Teatro Costanzi":"Teatro dell'Opera di Roma",
+                     "Teatro Valle Franca Valeri":"Teatro Valle Franca Valeri"}
+    venues=re.findall(
+        r"\bDove\s+(Teatro Costanzi|Teatro Valle Franca Valeri)\b",context)
+    if len(venues)!=1:
         raise ValueError("actual Rome auditorium not confirmed")
+    venue=official_venues[venues[0]]
     # Stop before preview performances, recommendations and school activities.
     section=visible[pos+len("Le date"):]
     for stop in ("Anteprima giovani","Ti può interessare anche",
@@ -89,7 +96,7 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
         found[iso]=clock
     if not found:
         raise ValueError("no dated and timed Rome performances")
-    return "Teatro dell'Opera di Roma", sorted(found.items())
+    return venue, sorted(found.items())
 
 
 class OfficialCredits(HTMLParser):
