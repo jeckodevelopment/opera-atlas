@@ -76,6 +76,7 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertIn('node("section","theatre-history")',detail)
         self.assertIn('link("Come arrivare"',detail)
         self.assertIn("www.google.com/maps/search/?api=1&query=",detail)
+        self.assertIn('direction.setAttribute("aria-label","Apri Google Maps',detail)
         self.assertIn('encodeURIComponent(profile.address+", "+event.municipality+", Italia")',detail)
         self.assertIn('direction.target="_blank";direction.rel="noopener noreferrer"',detail)
         self.assertNotIn("openstreetmap.org",detail)
