@@ -102,7 +102,7 @@ class AutoWorkResearchTests(unittest.TestCase):
                                api_key="test")
         self.assertEqual(captured,["Second Composer"])
         self.assertEqual(status[0]["status"],"automatic_retry")
-        self.assertEqual(status[0]["reason"],"verified_plot_and_history_unavailable")
+        self.assertEqual(status[0]["reason"],"verified_plot_unavailable")
         self.assertEqual(output["works"],[])
 
     def test_verified_opera_without_italian_wikipedia_is_recognized(self):
@@ -268,7 +268,7 @@ class AutoWorkResearchTests(unittest.TestCase):
                                extract=forbidden,generate=forbidden,
                                generate_history=forbidden,api_key="")
         self.assertEqual(status[0]["status"],"automatic_retry")
-        self.assertEqual(status[0]["reason"],"verified_plot_and_history_unavailable")
+        self.assertEqual(status[0]["reason"],"verified_plot_unavailable")
         self.assertEqual(result["works"],[])
 
     def test_original_synopsis_is_saved_only_if_grounded(self):
@@ -332,7 +332,7 @@ class AutoWorkResearchTests(unittest.TestCase):
         result,status=research({"candidates":[CANDIDATE]},previous,set(),
                                today=date(2026,11,21),resolve=lookup,prepared={})
         self.assertEqual(checked,["anna bolena"])
-        self.assertEqual(status[0]["reason"],"verified_plot_and_history_unavailable")
+        self.assertEqual(status[0]["reason"],"verified_plot_unavailable")
         self.assertEqual(result,previous)
 
     def test_earliest_verified_recita_gets_research_priority(self):
