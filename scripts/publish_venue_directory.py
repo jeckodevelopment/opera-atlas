@@ -5,6 +5,7 @@ The mutable public feed can be refreshed without SFTP or any performances.
 """
 from __future__ import annotations
 import argparse
+import copy
 import json
 import re
 from pathlib import Path
@@ -19,7 +20,7 @@ SLUG=re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 def build(source:dict, registry:dict)->dict:
     if source.get("schema_version")!=1 or not isinstance(source.get("venues"),list):
         raise ValueError("invalid national venue registry")
-    venues=source["venues"]
+    venues=copy.deepcopy(source["venues"])
     if not venues:raise ValueError("venue registry must not be empty")
     ids=set()
     routes=set()
@@ -59,12 +60,31 @@ def build(source:dict, registry:dict)->dict:
         routes.add(route)
         if venue.get("canonical_venue_id"):
             authority=existing.get(venue["canonical_venue_id"])
-            if not authority or venue["id"]!=authority["id"] or venue["slug"]!=authority["slug"] or venue["city_slug"]!=authority["city_slug"]:
+            if not authority or venue["slug"]!=authority["slug"] or venue["city_slug"]!=authority["city_slug"] or (
+                venue["id"]!=authority["id"] and not re.fullmatch(r"oa-vd-\d{6}",venue["id"])
+            ):
                 raise ValueError("existing performance venue identity changed")
         elif not re.fullmatch(r"oa-vd-\d{6}",venue["id"]):
             raise ValueError("new venues require reserved directory-only IDs")
-    if not set(existing).issubset(ids):
-        raise ValueError("canonical performance venues missing from directory")
+    # An approved production can autonomously promote a directory-only
+    # venue into the canonical performance registry (e.g. Carlo Felice).
+    # Match by the *already verified* city/venue route, not by display name;
+    # keep the directory ID and public URL stable rather than duplicating it.
+    by_route={v["city_slug"]+"/"+v["slug"]:v for v in venues}
+    for authority in existing.values():
+        route=authority["city_slug"]+"/"+authority["slug"]
+        matched=by_route.get(route)
+        if matched is None:
+            # A brand new performance venue without an editorial profile
+            # must not block publication of independently verified recite.
+            # It will still be discoverable via the performance feed.
+            continue
+        if matched["id"]!=authority["id"]:
+            if matched.get("canonical_venue_id") not in (None,authority["id"]):
+                raise ValueError("conflicting canonical venue association")
+            matched["canonical_venue_id"]=authority["id"]
+        # A canonical venue is already evidenced by verified performances.
+        matched["calendar_status"]="acquired"
     orgs=source.get("related_organizations",[])
     if not isinstance(orgs,list) or any(not isinstance(o,dict) or o.get("kind") not in ("festival","circuito","organizzatore") for o in orgs):
         raise ValueError("invalid non-venue organization")

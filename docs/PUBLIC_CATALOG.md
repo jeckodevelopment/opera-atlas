@@ -239,3 +239,11 @@ Collaudi: visitare nuove schede di Asti, Genova, Trieste, Firenze, Napoli, Bari 
 - Test e generatore impongono descrizioni non generiche e stato di acquisizione esplicito, conservando ID/slug delle 50 sedi esistenti. La pubblicazione delle modifiche al frontend segue il normale deploy SFTP su main, l'aggiornamento del feed resta nel repository.
 
 Collaudi: elenco 52 teatri con ricerca per Lecce e card corrette; detail di Politeama e Apollo con storia, indirizzo e link alla mappa; avviso di acquisizione **solo nel dettaglio**; confronto tra teatro senza dati e teatro già monitorato ma senza eventi futuri; nessuna regressione sulle altre schede.
+
+## Adozione automatica delle nuove sedi nelle rappresentazioni (21/11/2026)
+
+Il workflow di refresh può acquisire nuove rappresentazioni verificate di un teatro già censito nell’anagrafica editoriale ma non ancora presente fra le sedi con recite (per esempio Teatro Carlo Felice di Genova). La sede ottiene a quel punto un nuovo ID tecnico `oa-v-*` nel catalogo degli spettacoli, mentre la sua pagina nazionale esiste già con un ID `oa-vd-*` e uno slug stabile. Il generatore nazionale riconcilia queste identità **automaticamente per percorso città/teatro verificato**: mantiene una sola scheda e l’URL invariato, associa `canonical_venue_id` nel feed e imposta `calendar_status=acquired`. La fonte editoriale `data/venue-directory.json` resta immutata, così non occorre alcun intervento manuale a posteriori.
+
+Se un teatro completamente nuovo non ha ancora una scheda editoriale verificata, non si blocca la pubblicazione delle sue rappresentazioni ufficiali: continua a essere consultabile nel catalogo eventi senza creare automaticamente una storia, una foto o un indirizzo fittizi. Non è consentito unire due teatri omonimi soltanto per titolo: la riconciliazione usa anche città e slug, e blocca le associazioni conflittuali. Questo risolve l’errore nel refresh che fermava la pubblicazione dopo il passaggio da 14 a 15 sedi canoniche.
+
+Test regressione: promuovere automaticamente Carlo Felice (ID canonico aggiuntivo) senza duplicare la scheda nazionale; verificare `calendar_status=acquired`, ID pubblico/URL stabili e feed generato riproducibile; nessun blocco del refresh per nuove sedi non ancora documentate.

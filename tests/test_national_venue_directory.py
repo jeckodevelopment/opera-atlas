@@ -34,6 +34,45 @@ class NationalVenueDirectoryTests(unittest.TestCase):
             self.assertEqual(venue["city_slug"],canonical["city_slug"])
         self.assertEqual(venues["oa-v-000001"]["name"],"Teatro Regio di Torino")
 
+    def test_auto_promoted_known_theatre_reuses_national_route(self):
+        registry=copy.deepcopy(self.registry)
+        registry["venues"]["Genova|Teatro Carlo Felice"]={
+            "id":"oa-v-000015","name":"Teatro Carlo Felice","city":"Genova",
+            "region":"Liguria","slug":"teatro-carlo-felice","city_slug":"genova"
+        }
+        before=copy.deepcopy(self.source)
+        result=build(before,registry)
+        records=[v for v in result["venues"] if v["city"]=="Genova" and v["slug"]=="teatro-carlo-felice"]
+        self.assertEqual(len(records),1)
+        venue=records[0]
+        self.assertEqual(venue["id"],"oa-vd-000016")
+        self.assertEqual(venue["canonical_venue_id"],"oa-v-000015")
+        self.assertEqual(venue["calendar_status"],"acquired")
+        self.assertEqual(venue["city_slug"]+"/"+venue["slug"],"genova/teatro-carlo-felice")
+        self.assertEqual(before,self.source,"generating a feed must not mutate the editorial source")
+
+    def test_unprofiled_new_canonical_venue_does_not_block_verified_performances(self):
+        registry=copy.deepcopy(self.registry)
+        registry["venues"]["New City|New Theatre"]={
+            "id":"oa-v-000099","name":"New Theatre","city":"New City",
+            "region":"Test","slug":"new-theatre","city_slug":"new-city"
+        }
+        result=build(self.source,registry)
+        self.assertEqual(len(result["venues"]),52)
+        self.assertFalse(any(v["city"]=="New City" for v in result["venues"]))
+
+    def test_conflicting_route_association_is_rejected(self):
+        registry=copy.deepcopy(self.registry)
+        registry["venues"]["Genova|Teatro Carlo Felice"]={
+            "id":"oa-v-000015","name":"Teatro Carlo Felice","city":"Genova",
+            "region":"Liguria","slug":"teatro-carlo-felice","city_slug":"genova"
+        }
+        source=copy.deepcopy(self.source)
+        entry=next(v for v in source["venues"] if v["slug"]=="teatro-carlo-felice")
+        entry["canonical_venue_id"]="oa-v-000014"
+        with self.assertRaisesRegex(ValueError,"existing performance venue identity changed"):
+            build(source,registry)
+
     def test_missing_festival_organizer_is_not_misrepresented_as_a_theatre(self):
         titles={v["name"] for v in self.result["venues"]}
         for name in ("OperaLombardia","Fondazione Haydn di Bolzano e Trento",
