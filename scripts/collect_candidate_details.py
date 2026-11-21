@@ -328,10 +328,10 @@ def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
     credit=section[where+len(title):where+len(title)+400]
     # Stop at an independently labelled genre: otherwise a free-standing
     # musician name could swallow directors or character names as composer.
-    pattern=(r"(?i)\\bMusiche?\\s+di\\s+"
-             r"([A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+(?:\\s+[A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+){1,4})"
-             r"\\s+(?=(?:Dramma|Commedia|Singspiel|Melodramma|Opera|Tragedia|"
-             r"Oratorio|Farsa|Direttore|Regia)\\b)")
+    pattern=(r"(?i)\bMusiche?\s+di\s+"
+             r"([A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ž][A-Za-zÀ-ÿ'’.-]+){1,4})"
+             r"\s+(?=(?:Dramma|Commedia|Singspiel|Melodramma|Opera|Tragedia|"
+             r"Oratorio|Farsa|Direttore|Regia)\b)")
     credits=re.findall(pattern,credit)
     if len(credits)!=1:
         raise ValueError("missing or ambiguous labelled Palermo composer")
