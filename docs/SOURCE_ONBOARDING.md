@@ -1002,3 +1002,5 @@ La stessa correzione riguarda sia il connettore Petruzzelli 2027
 sia l'individuazione distinta della stagione 2026: nessun link 2022
 o balletto è attribuito all'opera 2027. Prima di conteggiare le nuove
 recite, verificare la pubblicazione canonica post-merge nel JSON v2.
+
+La raccolta delle stagioni 2026 e 2027 mantiene due sorgenti distinte pur condividendo lo stesso teatro canonico. Il ritiro delle sette recite attribuite alla sola opera *Pagliacci* è verificato anche a livello di identificativi pubblici, senza riutilizzarli per nuovi allestimenti.
