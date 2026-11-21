@@ -35,6 +35,67 @@ class PrimaryHeading(HTMLParser):
             self.text=" ".join("".join(self.parts).split())
             self.active=False
 
+class OfficialVisibleHeading(HTMLParser):
+    """Fallback when official 2026 production headlines are not h1 elements.
+
+    Examine bounded text nodes from the actual production content, never
+    infer the title or composer from a URL, footer link or date index.
+    """
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.depth=0
+        self.parts=[]
+    def handle_starttag(self,tag,attrs):
+        if tag in ("nav","footer","script","style"):
+            self.depth+=1
+    def handle_endtag(self,tag):
+        if tag in ("nav","footer","script","style"):
+            self.depth=max(0,self.depth-1)
+    def handle_data(self,data):
+        value=" ".join(data.split())
+        if not self.depth and value:
+            self.parts.append(value)
+
+def visible_2026_heading(html:str)->tuple[str,str]|None:
+    """Accept only a unique opera title + surname + date and full credit.
+
+    Source Wordpress templates can render the *real* heading as div/strong,
+    rather than as h1. A nearby explicit full composer credit is still
+    mandatory; a calendar entry or navigation link alone can never pass.
+    """
+    reader=OfficialVisibleHeading()
+    reader.feed(html[:250000])
+    values=reader.parts
+    cutoff=next((i for i,v in enumerate(values) if "Orari Spettacoli" in v),len(values))
+    values=values[:cutoff]
+    month="(?:"+"|".join(MONTHS)+")"
+    pattern=re.compile(
+        r"^([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’ .-]{2,90})\s*\|\s*"
+        r"([A-Za-zÀ-ÿ'’-]{3,35})\s*\|\s*"
+        r"[0-3]?\d\s*[–-]\s*[0-3]?\d\s+"+month+r"$",re.I)
+    found=[]
+    for i,value in enumerate(values):
+        # Support an exact headline node and headlines split across a
+        # small number of adjacent formatting spans.
+        for width in (1,2,3):
+            joined=" ".join(values[i:i+width])
+            match=pattern.fullmatch(joined)
+            if not match:continue
+            title,surname=(part.strip() for part in match.groups())
+            # The page immediately credits its full composer after the
+            # headline. Allow a decorative dot or whitespace, never another
+            # programme title or a conductor from the later cast.
+            next_values=[x for x in values[i+width:i+width+3] if x!="."]
+            if not next_values:continue
+            credit=next_values[0]
+            if (re.fullmatch(
+                r"[A-ZÀ-Ü][A-Za-zÀ-ÿ'’.-]{1,40}"
+                r"(?:\s+[A-ZÀ-Ü][A-Za-zÀ-ÿ'’.-]{1,40}){1,3}",credit)
+                and normalized(credit).split()[-1]==normalized(surname)):
+                found.append((title,credit))
+    return found[0] if len(set(found))==1 else None
+
+
 def verified_work_heading(html:str,*,title:str,composer:str)->bool:
     """Require an actual production h1 and independently credited composer.
 
@@ -43,7 +104,10 @@ def verified_work_heading(html:str,*,title:str,composer:str)->bool:
     """
     heading=PrimaryHeading()
     heading.feed(html)
-    if not heading.text:return False
+    if not heading.text:
+        visible=visible_2026_heading(html)
+        return bool(visible and normalized(visible[0])==normalized(title)
+                    and normalized(visible[1])==normalized(composer))
     pieces=[normalized(x).replace("’","'").strip() for x in heading.text.split("|")]
     title_key=normalized(title).replace("’","'")
     composer_key=normalized(composer).replace("’","'")
@@ -178,6 +242,12 @@ def extract_official_petr_opera(html:str,*,url:str,season_year:int=2027):
                 self.active=False
     heading=H1()
     heading.feed(html)
+    fallback=visible_2026_heading(html) if not heading.first else None
+    if fallback is not None:
+        title,composer=fallback
+        venue,dates=parse_petruzzelli_detail(
+            html,url=url,title=title,composer=composer,season_year=season_year)
+        return title,composer,venue,dates
     parts=[part.strip() for part in (heading.first or "").split("|")]
     title_text=parts[0]
     # The official 2026 opera pages use

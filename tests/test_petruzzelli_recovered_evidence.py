@@ -49,6 +49,27 @@ class Recovery(unittest.TestCase):
         self.assertEqual(len(rows),2)
         self.assertEqual({x["composer"] for x in rows},{"Giuseppe Verdi"})
 
+    def test_2026_official_visible_headline_without_h1(self):
+        url="https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+        html=("<nav><a>AMMINISTRAZIONE TRASPARENTE</a></nav>"
+              "<div>FALSTAFF | VERDI | 7 – 15 MARZO</div>"
+              "<p>Giuseppe Verdi</p><p>direttore Vincenzo Milletarì</p>"
+              "<h2>Orari Spettacoli</h2>"
+              "<p>SABATO 7 MARZO 2026 - 20:30</p>"
+              "<p>DOMENICA 8 MARZO 2026 - 18:00</p>"
+              "<h3>Interpretato Da</h3>")
+        result=extract_official_petr_opera(html,url=url,season_year=2026)
+        self.assertEqual(result[0:3],("FALSTAFF","Giuseppe Verdi","Teatro Petruzzelli"))
+        self.assertEqual(len(result[3]),2)
+        rows=parse_source_credited_opera_detail("petruzzelli-opera-2026",url,html)
+        self.assertEqual(len(rows),2)
+        for bad in (
+            html.replace("<p>Giuseppe Verdi</p>","<p>Giuseppe Rossini</p>"),
+            html.replace("FALSTAFF | VERDI","FALSTAFF / PAGLIACCI | VERDI"),
+            html.replace("SABATO 7 MARZO 2026 - 20:30","SABATO 7 MARZO 2026 - DA DEFINIRE")):
+            with self.subTest(bad=bad[:110]),self.assertRaises(ValueError):
+                extract_official_petr_opera(bad,url=url,season_year=2026)
+
     def test_surname_heading_never_infers_composer_or_multiple_opera(self):
         url="https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
         valid=("<h1>FALSTAFF | VERDI | 7 – 15 MARZO</h1>"
