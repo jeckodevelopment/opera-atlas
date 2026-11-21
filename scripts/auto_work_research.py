@@ -172,7 +172,7 @@ def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
     pages=result.get("query",{}).get("pages",{})
     matches=[x.get("extract","") for x in pages.values() if isinstance(x,dict)]
     if len(matches)!=1:return None
-    extract=" ".join(matches[0].split())
+    extract="\n".join(line.strip() for line in matches[0].splitlines() if line.strip())
     if not 140<=len(extract)<=12000:return None
     return extract[:6000]
 
@@ -263,7 +263,8 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
              evidence:dict|None=None,
              generate=None,generate_history=None,api_key:str="",
-             allow_authority:bool=False,prepared:dict|None=None):
+             allow_authority:bool=False,prepared:dict|None=None,
+             lookup_history=None):
     existing_works={x["candidate_id"]:x.copy() for x in existing.get("works",[])}
     prepared=preverified_work_material() if prepared is None else prepared
     statuses=[]
@@ -305,46 +306,50 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
             # new composition-specific history and synopsis evidence.
             if identity.get("title_candidate_count",1)>1:
                 material=None
-            # No API subscription is required. An identity-only introduction
-            # cannot be treated as completed editorial enrichment.
-            if (material is not None and slugify(identity["title"])==slug
-                    and identity.get("title_candidate_count",1)==1
-                    and (not composer_hint or
-                         slugify(composer_hint)==slugify(identity["composer"]))):
-                summary=material["synopsis"]
-                history=material["history"]
-            else:
-                # Read the *verified* Italian Wikipedia article corresponding
-                # to the exact Wikidata composition, never a search result.
-                # Only two concrete plot relations can produce original prose.
+            from scripts.publish_work_editorial import validate_history
+            previous=existing_works.get(cid,{})
+            same_identity=(previous.get("wikidata_id")==identity["wikidata_id"]
+                           and normalized(previous.get("composer",""))==
+                               normalized(identity["composer"]))
+            material_ok=(material is not None and slugify(identity["title"])==slug
+                         and identity.get("title_candidate_count",1)==1
+                         and (not composer_hint or
+                              slugify(composer_hint)==slugify(identity["composer"])))
+            summary=(material["synopsis"] if material_ok else None)
+            history=(material["history"] if material_ok else None)
+            if same_identity:
+                cached=previous.get("synopsis")
+                if summary is None and isinstance(cached,str) and (
+                        45<=len(cached.strip())<=300 and not cached.endswith(
+                            "Consulta le rappresentazioni verificate in programma nei teatri italiani.")):
+                    summary=cached
+                if history is None and validate_history(previous.get("history")):
+                    history=previous["history"]
+            if summary is None and allow_authority and identity.get("wikipedia_title"):
                 from scripts.work_plot_generator import synopsis_from_wikipedia_plot
-                summary=None
-                if allow_authority and identity.get("wikipedia_title"):
-                    excerpt=extract(identity)
-                    summary=synopsis_from_wikipedia_plot(excerpt)
-                previous=existing_works.get(cid,{})
-                from scripts.publish_work_editorial import validate_history
-                history=previous.get("history")
-                if not validate_history(history):
-                    history=None
-                if summary is None:
-                    statuses.append({"candidate_id":cid,"status":"automatic_retry",
-                                     "reason":"verified_plot_unavailable"})
-                    continue
-                # The plot can now be cached and used as soon as complete
-                # historical evidence arrives; no identity-only placeholder.
-                if history is None:
+                # Only the exact Wikipedia sitelink of the corroborated QID.
+                summary=synopsis_from_wikipedia_plot(extract(identity))
+            if history is None and allow_authority:
+                from scripts.work_history_research import wikidata_premiere
+                reader=wikidata_premiere if lookup_history is None else lookup_history
+                history=reader(identity)
+            # A genuine plot and sourced premiere must both be present before
+            # eligibility for promotion. Cache each separately so one failing
+            # provider cannot force an unnecessary second research attempt.
+            if summary is None or not validate_history(history):
+                if summary is not None or validate_history(history):
                     existing_works[cid]={
                         **previous,"candidate_id":cid,"source_key":item["source_key"],
                         "source_url":item["official_url"],"title":identity["title"],
                         "composer":identity["composer"],"synopsis":summary,
-                        "history":None,"wikidata_id":identity["wikidata_id"],
+                        "history":history if validate_history(history) else None,
+                        "wikidata_id":identity["wikidata_id"],
                         "authority_url":identity["authority_url"],
-                        "wikipedia_url":identity["wikipedia_url"],
-                        "plot_source_url":identity["wikipedia_url"]}
-                    statuses.append({"candidate_id":cid,"status":"automatic_retry",
-                                     "reason":"verified_premiere_history_unavailable"})
-                    continue
+                        "wikipedia_url":identity.get("wikipedia_url")}
+                statuses.append({"candidate_id":cid,"status":"automatic_retry",
+                                 "reason":("verified_plot_unavailable" if summary is None
+                                           else "verified_premiere_history_unavailable")})
+                continue
             existing_works[cid]={
                 "candidate_id":cid,"source_key":item["source_key"],
                 "source_url":item["official_url"],
