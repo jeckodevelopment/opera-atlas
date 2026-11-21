@@ -50,7 +50,9 @@ function imageFor(item){
   const identity=type==="work"
     ? {title:item.title,work_slug:item.work_slug,work_id:item.work_id,composer:item.composer}
     : type==="venue"
-      ? {city:item.city,municipality:item.city,venue:item.title}
+      ? {city:item.city,municipality:item.city,venue:item.title,
+         photo_file:item.photo_file,photo_source_url:item.photo_source_url,
+         no_city_fallback:item.independentVenue===true}
       : {city:item.city,name:item.title};
   try{return images.element(images[type](identity),"directory-image");}
   catch(error){console.warn("Atlas image fallback",error);return fallback;}
