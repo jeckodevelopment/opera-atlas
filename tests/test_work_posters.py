@@ -126,16 +126,16 @@ class PosterPublicationTests(unittest.TestCase):
                 result=posters.publish(network_enabled=True,fetcher=mock,
                                        today=date(2026,11,21),max_pages=2)
                 self.assertEqual(result["works"]["oa-w-000033"]["kind"],
-                                 "official_production_image")
+                                 "archival_work_image")
                 self.assertEqual(result["works"]["oa-w-000031"]["kind"],
                                  "archival_work_image")
-                self.assertEqual(len(calls),2)
+                self.assertEqual(len(calls),0)  # stable archival art needs no theatre fetch
                 self.assertTrue(published.exists())
                 evidence=json.loads(stored.read_text())
                 self.assertIn("oa-w-000033",evidence["posters"])
                 posters.publish(network_enabled=True,fetcher=mock,
                                 today=date(2026,11,21),max_pages=2)
-                self.assertEqual(len(calls),2) # no repeat within cooldown
+                self.assertEqual(len(calls),0) # archived art is permanently preferred
 
     def test_anna_bolena_and_leoncavallo_receive_distinct_archival_images(self):
         with TemporaryDirectory() as temp:
@@ -155,9 +155,9 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertEqual(leoncavallo["kind"],"archival_work_image")
         self.assertIn("Leoncavallo",leoncavallo["image_url"])
         self.assertNotEqual(leoncavallo["image_url"],puccini.get("image_url"))
-        self.assertEqual(puccini["kind"],"official_production_image")
+        self.assertEqual(puccini["kind"],"archival_work_image")
 
-    def test_retries_old_cooldowns_when_poster_policy_changes(self):
+    def test_archival_art_skips_old_poster_retry_even_if_policy_changes(self):
         with TemporaryDirectory() as temp:
             root=Path(temp)
             source_url="https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
@@ -184,12 +184,11 @@ class PosterPublicationTests(unittest.TestCase):
                      "official_root":"https://www.teatroallascala.org/",
                      "source_url":source_url}]):
                 posters.publish(network_enabled=True,fetcher=fetch,today=date(2026,11,21),max_pages=1)
-                self.assertEqual(calls,[source_url])
+                self.assertEqual(calls,[])
                 saved=json.loads((root/"evidence.json").read_text())
-                self.assertEqual(saved["checks"][source_url]["retry_after"],"2026-11-23")
-                self.assertEqual(saved["checks"][source_url]["policy_version"],posters.POSTER_POLICY_VERSION)
+                self.assertEqual(saved["checks"][source_url]["retry_after"],"2026-11-27")
                 posters.publish(network_enabled=True,fetcher=fetch,today=date(2026,11,21),max_pages=1)
-                self.assertEqual(len(calls),1)
+                self.assertEqual(len(calls),0)
 
     def test_twitter_specific_image_can_replace_unrelated_open_graph(self):
         html='''<meta property="og:image" content="/static/upload/con/conductor.jpg">
@@ -266,6 +265,29 @@ class PosterPublicationTests(unittest.TestCase):
         for wid in ("oa-w-000041","oa-w-000044"):
             self.assertEqual(published[wid]["kind"],"official_production_image")
             self.assertTrue(published[wid]["source_url"].startswith("https://www.tcbo.it/evento/opera/"))
+
+    def test_historical_image_outweighs_saved_official_image(self):
+        # The Scala evidence stays available as a fallback, but the
+        # permanent poster of Puccini's Bohème must win the public mapping.
+        with TemporaryDirectory() as temp:
+            root=Path(temp)
+            self.seed_official_evidence(root/"evidence.json")
+            with patch.object(posters,"EVIDENCE",root/"evidence.json"),\
+                 patch.object(posters,"OUTPUT",root/"posters.json"),\
+                 patch.object(posters,"HEALTH",root/"health.json"),\
+                 patch.object(posters,"connect"),patch.object(posters,"migrate"),\
+                 patch.object(posters,"canonical_sources",return_value=[]):
+                result=posters.publish(network_enabled=False,max_pages=0)
+        for wid in ("oa-w-000001","oa-w-000002","oa-w-000006",
+                    "oa-w-000010","oa-w-000011","oa-w-000023",
+                    "oa-w-000024","oa-w-000025","oa-w-000038"):
+            with self.subTest(wid=wid):
+                self.assertEqual(result["works"][wid]["kind"],"archival_work_image")
+                self.assertIn("commons.wikimedia.org",result["works"][wid]["source_url"])
+        for wid in ("oa-w-000041","oa-w-000044"):
+            self.assertEqual(result["works"][wid]["kind"],"official_production_image")
+        self.assertNotEqual(result["works"]["oa-w-000007"]["image_url"],
+                            result["works"]["oa-w-000024"]["image_url"])
 
     def test_full_catalog_poster_coverage_and_stable_work_provenance(self):
         from scripts.publish_catalog_v2 import REGISTRY

@@ -2,7 +2,7 @@
 
 Only officially approved production pages may supply image metadata. Image
 URLs are *referenced*, never downloaded, copied or re-hosted; unverified
-images leave the editorial illustration fallback in place.
+images are not invented or substituted with editorial illustrations.
 """
 from __future__ import annotations
 import argparse
@@ -29,7 +29,7 @@ ARCHIVE=ROOT/"data"/"archival-work-images.json"
 MAX_PAGES=18
 RETRY_DAYS=2
 BLOCKED_RETRY_DAYS=7
-POSTER_POLICY_VERSION=2
+POSTER_POLICY_VERSION=3
 # Editorially generated placeholders are not a publishable opera image.
 # An image must represent the exact canonical work, with verified provenance.
 # Common image CDNs accepted only when the image URL is declared explicitly
@@ -243,7 +243,7 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
         migrate(db)
         for row in sources:
             slug,url,wid=row["slug"],row["source_url"],row["work_id"]
-            if wid in posters or checked>=max_pages:continue
+            if wid in archive or wid in posters or checked>=max_pages:continue
             previous=checks.get(url,{})
             until=previous.get("retry_after")
             if (previous.get("policy_version")==POSTER_POLICY_VERSION and
@@ -280,8 +280,11 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
              if w["id"] not in posters and w["id"] not in archive]
     if missing:
         raise ValueError("verified opera images missing for: "+", ".join(sorted(missing)))
+    # Archival-first policy: original posters, historic libretti and scores
+    # from stable rights-documented collections outrank temporary theatre
+    # production images. The latter remain only as a fallback.
     manifest={"schema_version":2,"works":{
-        w["id"]:{"work_id":w["id"],**posters.get(w["id"],archive.get(w["id"]))}
+        w["id"]:{"work_id":w["id"],**(archive.get(w["id"]) or posters.get(w["id"]))}
         for w in sorted(registry_works,key=lambda entry:entry["id"])}}
     _write_atomic(EVIDENCE,{"schema_version":2,"posters":posters,"checks":checks})
     _write_atomic(OUTPUT,manifest)

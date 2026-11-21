@@ -3,19 +3,21 @@
   "works": {
     "oa-w-000001": {
       "work_id": "oa-w-000001",
-      "image_url": "https://www.maggiofiorentino.com/uploads/TRAVIATA_per_sito_c85da7ada1.jpg",
-      "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di La traviata",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traviata.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Traviata.jpg",
+      "alt": "Manifesto storico della prima di La traviata (1853); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a La traviata di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000002": {
       "work_id": "oa-w-000002",
-      "image_url": "https://www.carlofelice.it/wp-content/uploads/2026/06/Italiana_in_Algeri_Teatro_Carlo_Felice_26_.jpg",
-      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di L’italiana in Algeri",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1930-Italiana-in-Algeri.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1930-Italiana-in-Algeri.jpg",
+      "alt": "Copertina storica del libretto di L’italiana in Algeri (1930); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a L’italiana in Algeri di Gioachino Rossini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000003": {
       "work_id": "oa-w-000003",
@@ -46,11 +48,12 @@
     },
     "oa-w-000006": {
       "work_id": "oa-w-000006",
-      "image_url": "https://www.carlofelice.it/wp-content/uploads/2026/06/Pagliacci_Teatro_Carlo_Felice_26_.jpg",
-      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Pagliacci",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pagliacci_Original_Score_Cover.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pagliacci_Original_Score_Cover.jpg",
+      "alt": "Copertina originale dello spartito di Pagliacci; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Pagliacci di Ruggero Leoncavallo, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000007": {
       "work_id": "oa-w-000007",
@@ -81,19 +84,21 @@
     },
     "oa-w-000010": {
       "work_id": "oa-w-000010",
-      "image_url": "https://www.carlofelice.it/wp-content/uploads/2026/06/Evgenij_Onegin_Teatro_Carlo_Felice_26_.jpg",
-      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Evgenij Onegin",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%22Eugene_Onegin%22_opera_poster%2C1937%2C_Yerevan_Opera_Theatre.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22Eugene_Onegin%22_opera_poster%2C1937%2C_Yerevan_Opera_Theatre.jpg",
+      "alt": "Manifesto storico di Evgenij Onegin al Teatro dell'Opera di Erevan (1937); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Beko, documento del Museo di Letteratura e Arti Charents, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "oa-w-000011": {
       "work_id": "oa-w-000011",
-      "image_url": "https://www.carlofelice.it/wp-content/uploads/2026/06/Turandot_Teatro_Carlo_Felice_26_.jpg",
-      "source_url": "https://www.carlofelice.it/spettacolo/turandot/",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Turandot",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Poster_Turandot.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Poster_Turandot.jpg",
+      "alt": "Manifesto storico dell'opera Turandot di Puccini; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Turandot di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000012": {
       "work_id": "oa-w-000012",
@@ -196,27 +201,30 @@
     },
     "oa-w-000023": {
       "work_id": "oa-w-000023",
-      "image_url": "https://www.teatroallascala.org/static/upload/don/don-giovanni-713213badg-ph-brescia-e-amisano-ridotta.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Don Giovanni",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1920-Mozart-Don_Giovanni.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1920-Mozart-Don_Giovanni.jpg",
+      "alt": "Copertina storica del libretto di Don Giovanni di Mozart, edizione del 1920; non rappresenta la produzione attuale",
+      "credit": "Libretto storico di Don Giovanni di Wolfgang Amadeus Mozart, ed. 1920, Wikimedia Commons",
+      "license": "Public domain; verificare la pagina Wikimedia Commons"
     },
     "oa-w-000024": {
       "work_id": "oa-w-000024",
-      "image_url": "https://www.teatroallascala.org/static/upload/la-/la-boheme--7-.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di La bohème",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_Boheme_poster_by_Hohenstein.PNG?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:La_Boheme_poster_by_Hohenstein.PNG",
+      "alt": "Manifesto originale del 1896 di La bohème di Giacomo Puccini, disegnato da Adolfo Hohenstein; non rappresenta la produzione attuale",
+      "credit": "Adolfo Hohenstein (1854–1928), manifesto per La bohème (1896), Wikimedia Commons",
+      "license": "Public domain"
     },
     "oa-w-000025": {
       "work_id": "oa-w-000025",
-      "image_url": "https://www.carlofelice.it/wp-content/uploads/2026/06/Nabucco_Teatro_Carlo_Felice_26_.jpg",
-      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Nabucco",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nabucco_poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nabucco_poster.jpg",
+      "alt": "Illustrazione contemporanea del manifesto storico della prima di Nabucco; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "D. Alexánder Rodríguez G., Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "oa-w-000026": {
       "work_id": "oa-w-000026",
@@ -328,11 +336,12 @@
     },
     "oa-w-000038": {
       "work_id": "oa-w-000038",
-      "image_url": "https://www.teatroallascala.org/static/upload/il-/il-barbiere-di-siviglia.jpg",
-      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
-      "credit": "Immagine della produzione dal sito ufficiale del teatro",
-      "alt": "Immagine della produzione di Il barbiere di Siviglia",
-      "kind": "official_production_image"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Barbiere_di_Siviglia_frontespizio.JPG?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Barbiere_di_Siviglia_frontespizio.JPG",
+      "alt": "Frontespizio del libretto originale de Il barbiere di Siviglia di Rossini (1816), non relativo all'allestimento 2026",
+      "credit": "Stamperia di Crispino Puccinelli, Roma, 1816; Wikimedia Commons",
+      "license": "Public domain"
     },
     "oa-w-000039": {
       "work_id": "oa-w-000039",
