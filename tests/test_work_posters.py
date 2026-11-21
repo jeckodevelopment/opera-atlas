@@ -130,10 +130,10 @@ class PosterPublicationTests(unittest.TestCase):
     def test_anna_bolena_and_leoncavallo_receive_distinct_archival_images(self):
         with TemporaryDirectory() as temp:
             root=Path(temp)
-            with patch.object(posters,"EVIDENCE",root/"empty-evidence.json"),\\
-                 patch.object(posters,"OUTPUT",root/"work-posters.json"),\\
-                 patch.object(posters,"HEALTH",root/"health.json"),\\
-                 patch.object(posters,"connect"),patch.object(posters,"migrate"),\\
+            with patch.object(posters,"EVIDENCE",root/"empty-evidence.json"),\
+                 patch.object(posters,"OUTPUT",root/"work-posters.json"),\
+                 patch.object(posters,"HEALTH",root/"health.json"),\
+                 patch.object(posters,"connect"),patch.object(posters,"migrate"),\
                  patch.object(posters,"canonical_sources",return_value=[]):
                 result=posters.publish(network_enabled=False,max_pages=0)
         anna=result["works"]["oa-w-000035"]
@@ -163,11 +163,11 @@ class PosterPublicationTests(unittest.TestCase):
             def fetch(db,*,source_id,url,network_enabled):
                 calls.append(url)
                 return FetchResult(url,"<html></html>","x"*64,13)
-            with patch.object(posters,"EVIDENCE",root/"evidence.json"),\\
-                 patch.object(posters,"OUTPUT",root/"work-posters.json"),\\
-                 patch.object(posters,"HEALTH",root/"health.json"),\\
-                 patch.object(posters,"connect",return_value=FakeDB()),\\
-                 patch.object(posters,"migrate"),\\
+            with patch.object(posters,"EVIDENCE",root/"evidence.json"),\
+                 patch.object(posters,"OUTPUT",root/"work-posters.json"),\
+                 patch.object(posters,"HEALTH",root/"health.json"),\
+                 patch.object(posters,"connect",return_value=FakeDB()),\
+                 patch.object(posters,"migrate"),\
                  patch.object(posters,"canonical_sources",return_value=[{
                      "slug":"anna-bolena","work_id":"oa-w-000035",
                      "title":"Anna Bolena","source_key":"scala",
