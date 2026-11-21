@@ -511,7 +511,16 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         slug=slugify(title)
         if work_key in next_registry["works"]:
             continue
-        if require_image and verified_candidate_image(detail,title=title,url=url) is None:
+        # Prefer historic, rights-documented Wikimedia artwork over a
+        # potentially temporary theatre thumbnail. Require exact title and
+        # composer identity; slug-keyed artwork cannot resolve homonyms.
+        from scripts.publish_work_posters import load_archival_art
+        legacy_homonyms=[w for w in next_registry["works"].values()
+                         if w["slug"]==slug]
+        archive=(load_archival_art({slug}).get(slug)
+                 if not legacy_homonyms else None)
+        if require_image and not (
+                verified_candidate_image(detail,title=title,url=url) or archive):
             result["auto_skipped"].append({
                 "candidate_id":cid,"reason":"verified_work_image_missing"})
             continue
@@ -801,24 +810,31 @@ def main():
     assemble(next_facts,next_registry,approved_extra=set(urls))
     build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls),
                    history=next_history)
-    # New canonical work IDs must already carry a verified image from
-    # the very same official page, instead of hoping a later crawl finds one.
-    # Preserve source proof through the subsequent poster refresh without
-    # an extra network request or a fabricated editorial illustration.
+    # Every new opera must already have a real, correctly attributed image.
+    # The public poster publisher independently loads archival artwork by
+    # unique canonical slug, preferring Commons over temporary venue imagery.
+    from scripts.publish_work_posters import load_archival_art
     new_ids={w["id"] for w in next_registry["works"].values()}-{
         w["id"] for w in registry["works"].values()}
+    archival=load_archival_art({w["slug"] for w in next_registry["works"].values()})
+    slug_counts={}
+    for work in next_registry["works"].values():
+        slug_counts[work["slug"]]=slug_counts.get(work["slug"],0)+1
     image_additions={}
     for work in next_registry["works"].values():
         if work["id"] not in new_ids:continue
+        slug=work["slug"]
+        if slug_counts[slug]==1 and slug in archival:
+            continue  # archival file and license are checked by poster publisher
         matched=[p for p in next_facts["productions"]
-                 if normalized(p["title"])==normalized(work["title"])
-                 and normalized(p["composer"])==normalized(work["composer"])]
+                  if normalized(p["title"])==normalized(work["title"])
+                  and normalized(p["composer"])==normalized(work["composer"])]
         proofs=[verified_candidate_image(e,title=work["title"],url=p["source_url"])
                 for p in matched for e in evidence.get("evidence",[])
                 if e.get("source_url")==p["source_url"]]
         proofs=[proof for proof in proofs if proof is not None]
         if not proofs:
-            raise ValueError("missing source image for new canonical opera "+work["id"])
+            raise ValueError("missing verified image for new canonical opera "+work["id"])
         image_additions[work["id"]]={"work_id":work["id"],**proofs[0]}
     if image_additions:
         from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
