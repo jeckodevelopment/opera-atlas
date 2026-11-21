@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T15:41:02+00:00",
-  "total": 132,
+  "checked_at": "2026-11-21T17:01:38+00:00",
+  "total": 133,
   "states": {
-    "already_catalogued": 55,
+    "already_catalogued": 56,
     "needs_review": 36,
     "excluded_nonopera": 41
   },
@@ -19,22 +19,7 @@
       "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-2ffd782e0a99b2433e13",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-3c920820abeb859e7ffa",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-7adb8eed9d624ca82bf5",
       "before": "needs_review",
       "after": "already_catalogued"
     },
@@ -49,17 +34,7 @@
       "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-ce32b1104cdb579dc299",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-cfd5a4967756ff1d51dd",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-f7e2bc909527aff17c03",
+      "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "before": "needs_review",
       "after": "already_catalogued"
     }

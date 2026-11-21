@@ -1,83 +1,38 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T15:41:02+00:00",
-  "checked_pages": 18,
-  "official_images": 3,
-  "archival_images": 32,
-  "editorial_fallbacks": 9,
+  "checked_at": "2026-11-21T17:01:37+00:00",
+  "checked_pages": 7,
+  "official_images": 11,
+  "archival_images": 33,
+  "editorial_fallbacks": 0,
   "outcomes": [
-    {
-      "slug": "accabadora",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "il-ritorno-di-ulisse-in-patria",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "i-due-foscari",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "vanessa",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "la-straniera",
-      "status": "no_suitable_official_poster"
-    },
     {
       "slug": "tristan-und-isolde",
       "status": "no_suitable_official_poster"
     },
     {
-      "slug": "il-barbiere-di-siviglia",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "il-barbiere-di-siviglia",
+      "slug": "la-traviata",
       "status": "verified_official_metadata"
     },
     {
-      "slug": "adriana-lecouvreur",
-      "status": "no_suitable_official_poster"
+      "slug": "evgenij-onegin",
+      "status": "verified_official_metadata"
     },
     {
-      "slug": "macbeth",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "norma",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "la-traviata",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "madama-butterfly",
-      "status": "no_suitable_official_poster"
-    },
-    {
-      "slug": "carmen",
-      "status": "no_suitable_official_poster"
+      "slug": "italiana-in-algeri",
+      "status": "verified_official_metadata"
     },
     {
       "slug": "nabucco",
-      "status": "no_suitable_official_poster"
+      "status": "verified_official_metadata"
     },
     {
-      "slug": "nabucco",
-      "status": "no_suitable_official_poster"
+      "slug": "pagliacci",
+      "status": "verified_official_metadata"
     },
     {
-      "slug": "lucia-di-lammermoor",
-      "status": "automatic_retry",
-      "reason": "FetchUnavailable"
-    },
-    {
-      "slug": "les-contes-d-hoffmann",
-      "status": "no_suitable_official_poster"
+      "slug": "turandot",
+      "status": "verified_official_metadata"
     }
   ]
 }
