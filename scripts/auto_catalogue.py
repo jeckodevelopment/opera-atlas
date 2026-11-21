@@ -504,6 +504,74 @@ def enrich_existing_times(facts:dict,evidence:dict,candidates:dict,previous:dict
     validate_time_evidence(facts,updated)
     return updated,count
 
+
+def enrich_double_bill_times(facts:dict,evidence:dict,candidates:dict,previous:dict):
+    """Update both canonical operas atomically from one verified shared bill.
+
+    The two independently credited works each retain their canonical
+    staging/performance IDs. A conflict in either work invalidates both.
+    """
+    from scripts.build_verified_catalog import validate_time_evidence
+    url="https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
+    allowed={
+        ("cavalleria rusticana","pietro mascagni"),
+        ("pagliacci","ruggero leoncavallo"),
+    }
+    known={c["id"]:c for c in candidates.get("candidates",[])
+           if c.get("status")=="needs_review"}
+    result=copy.deepcopy(previous)
+    total=0
+    for record in evidence.get("evidence",[]):
+        cand=known.get(record.get("candidate_id"))
+        if (not cand or cand.get("source_key")!="teatro-grande-opera-2026"
+            or cand.get("official_url")!=url
+            or record.get("source_url")!=url
+            or record.get("source_key")!="teatro-grande-opera-2026"
+            or record.get("status")!="needs_editorial_review"):
+            continue
+        rows=record.get("event_facts")
+        if not isinstance(rows,list) or len(rows)!=4:continue
+        grouped={}
+        for item in rows:
+            if not isinstance(item,dict):
+                grouped={};break
+            identity=(normalized(item.get("event_title","")),
+                      normalized(item.get("composer","")))
+            grouped.setdefault(identity,[]).append(item)
+        if set(grouped)!=allowed or any(len(v)!=2 for v in grouped.values()):
+            continue
+        # The official ticket schedule must be literally identical for both
+        # credits; otherwise we cannot identify a shared performance.
+        schedules=[{(row.get("date"),row.get("starts_at"),row.get("venue"))
+                    for row in group}
+                   for group in grouped.values()]
+        if schedules[0]!=schedules[1] or len(schedules[0])!=2:
+            continue
+        proposal=copy.deepcopy(result)
+        success=True
+        added=0
+        for group in grouped.values():
+            isolated={**record,"event_facts":group}
+            candidate_report={**evidence,"evidence":[isolated]}
+            proposal,delta=enrich_existing_times(
+                facts,candidate_report,candidates,proposal)
+            # The preexisting evidence might be complete (idempotence);
+            # otherwise both exact dates must be newly verified.
+            if delta not in (0,2):
+                success=False;break
+            added+=delta
+        if not success:continue
+        keys=[key+"|"+day for key in (
+            "lombardia-cavalleria-brescia","lombardia-pagliacci-brescia")
+            for day in ("2026-12-11","2026-12-13")]
+        if any(k not in proposal["times"] or
+               proposal["times"][k]["url"]!=url for k in keys):
+            continue
+        validate_time_evidence(facts,proposal)
+        result=proposal
+        total+=added
+    return result,total
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -538,6 +606,9 @@ def main():
     from scripts.build_verified_catalog import validate_auto_sources,TIME_EVIDENCE,validate_time_evidence
     old_times=json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
     next_times,enriched=enrich_existing_times(next_facts,evidence,candidates,old_times)
+    next_times,double_enriched=enrich_double_bill_times(
+        next_facts,evidence,candidates,next_times)
+    enriched+=double_enriched
     validate_time_evidence(next_facts,next_times)
     report["enriched_recite_times"]=enriched
     validate_auto_sources(urls)

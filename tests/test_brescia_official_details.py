@@ -46,8 +46,10 @@ class BresciaDetailsTests(unittest.TestCase):
             parse_brescia_detail(html,url=DOUBLE,title="Cavalleria rusticana",
                                  composer="Pietro Mascagni")
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
-        self.assertEqual(parse_known_opera_detail(
-            "teatro-grande-opera-2026",DOUBLE,html,registry),[])
+        # The old fixture lacks independent work credits: the new dual-work
+        # parser must fail closed rather than yielding an invented combined opera.
+        with self.assertRaisesRegex(ValueError,"independent work credit"):
+            parse_known_opera_detail("teatro-grande-opera-2026",DOUBLE,html,registry)
 
     def test_strict_markup_and_changed_schedule_fail_closed(self):
         examples=[
