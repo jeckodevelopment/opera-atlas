@@ -737,7 +737,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 # identically; never mislabel the whole ticket as one opera.
                 if item["source_key"] in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
                     from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_program_detail
-                                try:
+                    try:
                         heading,components,venue,dates=parse_petruzzelli_program_detail(
                             page.html,url=item["official_url"],
                             season_year=int(item["source_key"].rsplit("-",1)[-1]))
@@ -760,7 +760,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         continue
                 if item["source_key"]=="teatro-grande-opera-2026":
                     from opera_atlas.brescia_detail_parser import parse_brescia_double_bill, Heading
-                                try:
+                    try:
                         rows=parse_brescia_double_bill(
                             page.html,url=item["official_url"],works=registry.get("works",{}))
                     except ValueError:
