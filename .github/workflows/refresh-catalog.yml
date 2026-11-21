@@ -168,6 +168,30 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+      # Take a national checkpoint before the expensive source crawl. This
+      # recovers the existing review backlog even if a later adapter or
+      # knowledge-service step times out. Each detail fetch respects robots.
+      - name: Acquire pending official detail pages before slow discovery
+        run: python -m scripts.collect_candidate_details --allow-network
+      - name: Checkpoint national pending-candidate evidence and diagnostics
+        id: early_national_checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+            echo "No new official detail evidence in early national checkpoint."
+          else
+            git commit -m "data(sources): checkpoint national candidate detail evidence early [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Retry deferred national candidate checkpoint
+        if: steps.early_national_checkpoint.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       - name: Incrementally scan only explicitly approved official pages
         run: python -m scripts.daily_ingest --allow-network
       - name: Verify and adopt next officially published season indexes
