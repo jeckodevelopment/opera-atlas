@@ -32,7 +32,10 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str):
     head=normalized(visible[:split]).replace("’","'")
     # The authoritative credit precedes the exact ticket schedule.
     official=normalized(title+" di "+composer).replace("’","'")
-    if official not in head[:260]:
+    # The opera credit must precede staff and talk notices; a later
+    # conference mentioning the work is not sufficient attribution.
+    credits=head.split("direttore",1)[0]
+    if official not in credits:
         raise ValueError("official title and composer credit not confirmed")
     if not re.search(r"\b"+re.escape(normalized(composer))+r"\b",head):
         raise ValueError("composer absent from official Petruzzelli event")
