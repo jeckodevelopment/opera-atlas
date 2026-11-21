@@ -573,3 +573,28 @@ I test includono il caso *Il barbiere di Siviglia* (Rossini/Paisiello), la conse
 ## Carlo Felice — correzione credito compositore Evgenij Onegin
 
 Il compositore registrato come `Pëtr Il\u0027ič Čajkovskij` è presentato dalla fonte ufficiale come `Pëtr Il’ič Čajkovskij`. Il confronto del credito normalizza esclusivamente questa differenza di apostrofo, preservando nome, diacritici e cognome. Il compositore di un’altra opera rimane escluso. La modifica abilita la lettura delle date della scheda ufficiale senza alterare l’identità permanente. Verificare il refresh live e il feed dopo il merge.
+
+## Ripresa autonoma del refresh quando la pubblicazione è rinviata (21/11/2026)
+
+La pubblicazione canonica non sovrascrive più codice, regole o dati arrivati da
+un commit `main` concorrente; `safe_push_catalog` continua a bloccare i
+push obsoleti. Il nuovo workflow registra però esplicitamente l'output
+`deferred`, evitando che un rinvio venga scambiato per una pubblicazione
+riuscita. Se il push viene rinviato, GitHub Actions usa le autorizzazioni
+`contents: write` già previste per emettere un evento
+`repository_dispatch: catalog-refresh-retry`, che riavvia da `main` un
+nuovo ciclo completo di acquisizione, verifica e generazione dei JSON.
+
+Le esecuzioni appartengono a un gruppo di concorrenza con
+`cancel-in-progress: true`: la nuova versione su `main` sostituisce
+un ciclo precedente non ancora terminato. Nessun SFTP è introdotto.
+Un push non rinviato non emette alcun evento di retry, evitando refresh
+ricorsivi su ogni successo. La coppia `repository_dispatch` / retry viene
+utilizzata solo per il blocco di pubblicazione dovuto a modifiche upstream;
+errori di validazione restano errori e non vengono aggirati.
+
+**Collaudi:** suite Python; controllo `Refresh public Opera Atlas catalog`
+fino alla conferma del push, lettura dei report Genova/Bergamo/Brescia,
+verifica della presenza delle recite nel JSON pubblico e assenza di nuovi
+ID duplicati. Una scansione riuscita di un indice non certifica da sola
+una produzione pubblicata.
