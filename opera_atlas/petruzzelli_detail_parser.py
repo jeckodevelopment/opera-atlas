@@ -70,9 +70,9 @@ def visible_2026_heading(html:str)->tuple[str,str]|None:
     values=values[:cutoff]
     month="(?:"+"|".join(MONTHS)+")"
     pattern=re.compile(
-        r"^([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’ .-]{2,90})\\s*\\|\\s*"
-        r"([A-Za-zÀ-ÿ'’-]{3,35})\\s*\\|\\s*"
-        r"[0-3]?\\d\\s*[–-]\\s*[0-3]?\\d\\s+"+month+r"$",re.I)
+        r"^([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’ .-]{2,90})\s*\|\s*"
+        r"([A-Za-zÀ-ÿ'’-]{3,35})\s*\|\s*"
+        r"[0-3]?\d\s*[–-]\s*[0-3]?\d\s+"+month+r"$",re.I)
     found=[]
     for i,value in enumerate(values):
         # Support an exact headline node and headlines split across a
@@ -90,7 +90,7 @@ def visible_2026_heading(html:str)->tuple[str,str]|None:
             credit=next_values[0]
             if (re.fullmatch(
                 r"[A-ZÀ-Ü][A-Za-zÀ-ÿ'’.-]{1,40}"
-                r"(?:\\s+[A-ZÀ-Ü][A-Za-zÀ-ÿ'’.-]{1,40}){1,3}",credit)
+                r"(?:\s+[A-ZÀ-Ü][A-Za-zÀ-ÿ'’.-]{1,40}){1,3}",credit)
                 and normalized(credit).split()[-1]==normalized(surname)):
                 found.append((title,credit))
     return found[0] if len(set(found))==1 else None
