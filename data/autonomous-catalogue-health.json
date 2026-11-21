@@ -2,6 +2,23 @@
   "schema_version": 1,
   "new_stagings": 0,
   "new_recite": 0,
-  "auto_skipped": [],
+  "auto_skipped": [
+    {
+      "candidate_id": "oa-index-00bc189e26be492ba16c",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-1e384fa01b8a144db9c7",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-b1c24780a29d634e5fa4",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-f942d4e01d9578a95e87",
+      "reason": "unsupported_or_untrusted_source"
+    }
+  ],
   "new_works": 0
 }

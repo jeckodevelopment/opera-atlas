@@ -1,18 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T12:01:45+00:00",
+  "checked_at": "2026-11-21T12:03:47+00:00",
   "attempted": 24,
   "outcomes": [
     {
       "candidate_id": "oa-index-00bc189e26be492ba16c",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 6
     },
     {
       "candidate_id": "oa-index-f2e706992e9fbbf83950",
@@ -71,14 +65,8 @@
     },
     {
       "candidate_id": "oa-index-f942d4e01d9578a95e87",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 6
     },
     {
       "candidate_id": "oa-index-58413a3bbbee689b82bc",
@@ -148,21 +136,15 @@
     },
     {
       "candidate_id": "oa-index-1e384fa01b8a144db9c7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 6
     },
     {
       "candidate_id": "oa-index-4579632f6d7744774e59",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no_evidence",
+        "canonical_work:composer absent from official detail",
         "authority_work:no_evidence",
         "schema_event:no_evidence"
       ],
@@ -225,14 +207,8 @@
     },
     {
       "candidate_id": "oa-index-b1c24780a29d634e5fa4",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 6
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",

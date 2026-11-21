@@ -2,6 +2,58 @@
   "schema_version": 1,
   "evidence": [
     {
+      "candidate_id": "oa-index-00bc189e26be492ba16c",
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/",
+      "content_sha256": "5e869906f81cbfe445697e638a84ef6b5bd954396f89f0769750561a36414be3",
+      "checked_at": "2026-11-21T12:03:04+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "date": "2027-03-19",
+          "starts_at": "2027-03-19T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "date": "2027-03-20",
+          "starts_at": "2027-03-20T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "date": "2027-03-21",
+          "starts_at": "2027-03-21T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "date": "2027-03-23",
+          "starts_at": "2027-03-23T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "date": "2027-03-24",
+          "starts_at": "2027-03-24T17:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "date": "2027-03-25",
+          "starts_at": "2027-03-25T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
@@ -185,6 +237,58 @@
           "date": "2027-07-01",
           "starts_at": "2027-07-01T20:00:00+02:00",
           "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-1e384fa01b8a144db9c7",
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
+      "content_sha256": "e0e90684e61727b1e038966b384181ec53d7278288f9b455917aaa64576cd1cf",
+      "checked_at": "2026-11-21T12:03:26+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2027-01-23",
+          "starts_at": "2027-01-23T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2027-01-29",
+          "starts_at": "2027-01-29T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2027-01-30",
+          "starts_at": "2027-01-30T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "date": "2027-01-31",
+          "starts_at": "2027-01-31T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
         }
       ]
     },
@@ -723,6 +827,58 @@
       ]
     },
     {
+      "candidate_id": "oa-index-b1c24780a29d634e5fa4",
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/",
+      "content_sha256": "7f206f1bfcf021dbb3b95011a2691b8c09ffc5bc65151621b98090095da3ede0",
+      "checked_at": "2026-11-21T12:03:40+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-21",
+          "starts_at": "2027-05-21T20:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-22",
+          "starts_at": "2027-05-22T15:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T15:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-28",
+          "starts_at": "2027-05-28T20:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-29",
+          "starts_at": "2027-05-29T20:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-05-30",
+          "starts_at": "2027-05-30T15:00:00+02:00",
+          "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-b67d637b2f593f6756c7",
       "source_key": "arena-festival-2027",
       "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
@@ -844,6 +1000,58 @@
           "date": "2027-10-30",
           "starts_at": "2027-10-30T15:30:00+02:00",
           "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-f942d4e01d9578a95e87",
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
+      "content_sha256": "ebf04786ce9e23293807b75ef7124e1acc275025c708551859ddae1992f747e4",
+      "checked_at": "2026-11-21T12:03:13+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-19",
+          "starts_at": "2027-02-19T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-20",
+          "starts_at": "2027-02-20T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-21",
+          "starts_at": "2027-02-21T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-26",
+          "starts_at": "2027-02-26T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-27",
+          "starts_at": "2027-02-27T20:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
+        },
+        {
+          "event_title": "L’italiana in Algeri",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-28",
+          "starts_at": "2027-02-28T15:00:00+01:00",
+          "venue": "Teatro Carlo Felice"
         }
       ]
     }
