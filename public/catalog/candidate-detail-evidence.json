@@ -108,7 +108,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-21T19:48:45+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -368,7 +368,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-21T19:48:45+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -571,7 +571,7 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "checked_at": "2026-11-21T19:48:45+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -696,7 +696,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-21T19:48:45+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1204,6 +1204,65 @@
       ]
     },
     {
+      "candidate_id": "oa-index-697328f32e7cfa32252b",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
+      "content_sha256": "b67fb83468acf08190d92cb25d5ca6ef70deff0291086238c9f5e55629d05b7f",
+      "checked_at": "2026-11-21T20:36:29+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Andrea Chénier",
+          "composer": "Umberto Giordano",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-01-17",
+          "starts_at": "2027-01-17T19:00:00+01:00"
+        },
+        {
+          "event_title": "Andrea Chénier",
+          "composer": "Umberto Giordano",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-01-19",
+          "starts_at": "2027-01-19T20:00:00+01:00"
+        },
+        {
+          "event_title": "Andrea Chénier",
+          "composer": "Umberto Giordano",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-01-20",
+          "starts_at": "2027-01-20T20:00:00+01:00"
+        },
+        {
+          "event_title": "Andrea Chénier",
+          "composer": "Umberto Giordano",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-01-21",
+          "starts_at": "2027-01-21T20:00:00+01:00"
+        },
+        {
+          "event_title": "Andrea Chénier",
+          "composer": "Umberto Giordano",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-01-23",
+          "starts_at": "2027-01-23T18:00:00+01:00"
+        },
+        {
+          "event_title": "Andrea Chénier",
+          "composer": "Umberto Giordano",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T16:30:00+01:00"
+        },
+        {
+          "event_title": "Andrea Chénier",
+          "composer": "Umberto Giordano",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-01-26",
+          "starts_at": "2027-01-26T20:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-6cd199691f7145a4d048",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
@@ -1328,7 +1387,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T19:47:31+00:00",
+      "checked_at": "2026-11-21T20:35:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1522,7 +1581,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
       "content_sha256": "8b6e00982448a33493bd9bfb7049677cff03629f12be9a6723507fa3dcfb4260",
-      "checked_at": "2026-11-21T19:48:39+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1847,7 +1906,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-21T19:48:45+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1877,6 +1936,51 @@
           "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2027-10-19",
           "starts_at": "2027-10-19T20:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-9eea54a8395ff3d6c74e",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
+      "content_sha256": "1d24443c92e5b9c6e0a222545c5faab107299f571ca683ee98655e795cc0e17b",
+      "checked_at": "2026-11-21T20:35:19+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Iphigénie en Tauride",
+          "composer": "Christoph Willibald Gluck",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-04-18",
+          "starts_at": "2027-04-18T19:00:00+02:00"
+        },
+        {
+          "event_title": "Iphigénie en Tauride",
+          "composer": "Christoph Willibald Gluck",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-04-20",
+          "starts_at": "2027-04-20T20:00:00+02:00"
+        },
+        {
+          "event_title": "Iphigénie en Tauride",
+          "composer": "Christoph Willibald Gluck",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-04-22",
+          "starts_at": "2027-04-22T18:00:00+02:00"
+        },
+        {
+          "event_title": "Iphigénie en Tauride",
+          "composer": "Christoph Willibald Gluck",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-04-24",
+          "starts_at": "2027-04-24T16:30:00+02:00"
+        },
+        {
+          "event_title": "Iphigénie en Tauride",
+          "composer": "Christoph Willibald Gluck",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-04-27",
+          "starts_at": "2027-04-27T20:00:00+02:00"
         }
       ]
     },
@@ -1991,7 +2095,7 @@
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
       "content_sha256": "6a6892fb108c70e4610be23672d1d9601e9bdeda010fefec202fe6a46cc72044",
-      "checked_at": "2026-11-21T19:47:16+00:00",
+      "checked_at": "2026-11-21T20:35:16+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2119,7 +2223,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
       "content_sha256": "65576ade05c214527d0e4101b7ee574d495d0484a31e315691c0b7329c7959ef",
-      "checked_at": "2026-11-21T19:48:41+00:00",
+      "checked_at": "2026-11-21T20:35:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2288,7 +2392,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T19:48:45+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2318,6 +2422,65 @@
           "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2027-01-22",
           "starts_at": "2027-01-22T20:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-bc101d1d7cf587ef8441",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
+      "content_sha256": "fe153ff594f72aa0736170667611ecd4203ff33307270303d93dcdee31d88a50",
+      "checked_at": "2026-11-21T20:35:47+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-06-22",
+          "starts_at": "2027-06-22T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-06-23",
+          "starts_at": "2027-06-23T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-06-25",
+          "starts_at": "2027-06-25T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-06-26",
+          "starts_at": "2027-06-26T18:00:00+02:00"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-06-27",
+          "starts_at": "2027-06-27T16:30:00+02:00"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-06-30",
+          "starts_at": "2027-06-30T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2027-07-01",
+          "starts_at": "2027-07-01T20:00:00+02:00"
         }
       ]
     },
@@ -2491,7 +2654,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-21T19:48:45+00:00",
+      "checked_at": "2026-11-21T20:36:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
