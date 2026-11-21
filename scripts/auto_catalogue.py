@@ -846,6 +846,11 @@ def main():
         if not proofs:
             raise ValueError("missing verified image for new canonical opera "+work["id"])
         image_additions[work["id"]]={"work_id":work["id"],**proofs[0]}
+    # A verified archival Commons image can already be available for a new
+    # work through the persistent archival bank. In that case there is no
+    # newly-fetched official poster to append to the evidence cache.
+    # The next poster publication reads the bank by canonical work identity.
+    previous_images=None
     if image_additions:
         from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
         previous_images=json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8"))
@@ -861,8 +866,9 @@ def main():
         if report["new_works"]:
             _write_atomic(EDITORIAL,next_editorial)
             _write_atomic(HISTORY,next_history)
-            from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
-            _write_atomic(POSTER_EVIDENCE,previous_images)
+            if previous_images is not None:
+                from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
+                _write_atomic(POSTER_EVIDENCE,previous_images)
     if enriched:
         _write_atomic(TIME_EVIDENCE,next_times)
     _write_atomic(HEALTH,{"schema_version":1,**report})
