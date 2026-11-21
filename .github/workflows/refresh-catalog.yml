@@ -113,10 +113,10 @@ jobs:
         run: python -m scripts.rollover_season_indexes --allow-network
       - name: Discover production links from approved national season indexes
         run: python -m scripts.discover_season_indexes --allow-network
-      - name: Resolve unseen opera identities and prepare verified short introductions
-        run: python -m scripts.auto_work_research --allow-network
       - name: Collect structured facts from bounded discovered detail pages
         run: python -m scripts.collect_candidate_details --allow-network
+      - name: Resolve unseen opera identities and prepare verified short introductions
+        run: python -m scripts.auto_work_research --allow-network
       - name: Promote fully verified candidate dates without manual reconciliation
         run: python -m scripts.auto_catalogue
       - name: Enrich all newly catalogued operas with official poster images
