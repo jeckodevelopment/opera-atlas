@@ -1242,3 +1242,9 @@ esistono già almeno nome e cognome del compositore, senza ricavare
 l'identità dall'URL o dal titolo. Test di regressione coprono
 *La Bohème*, *Aida*, *Norma* e *L'elisir d'amore*; tutte le date
 e gli orari devono continuare a superare i normali controlli.
+
+
+### Roma: riconciliazione delle pagine storiche in indice (21/11/2026)
+Il catalogo dell'Opera di Roma è paginato ma comprende anche collegamenti a produzioni del 2025/2026 e 2024/2025: un collegamento trovato non equivale a una recita della stagione monitorata 2026/2027. L'estrattore ora riconosce una dichiarazione di stagione immediatamente adiacente all'H1 della **singola pagina ufficiale** anche quando il CMS la impagina in un link o la spezza fra elementi inline. Non prende etichette da menu, footer, suggerimenti o contenuti lontani dal titolo. Per pagine con stagione diversa acquisita da HTML autorizzato, il riconciliatore centrale usa `out_of_monitored_season` e `not_in_official_season`, senza cancellare l'audit né produrre recite false. Le candidate senza evidenza sufficiente rimangono in revisione; nessuna esclusione dedotta dallo slug. Questo comportamento si applica automaticamente agli aggiornamenti periodici, non richiede riconciliazione manuale successiva.
+
+Esempi verificati sulle pagine pubbliche del teatro: `falstaff/`, `tosca-11/`, `aida-6/` dichiarano 2025/2026; `operacamion-tosca/` dichiara 2024/2025. I link rimangono tracciati, ma non contano come recite 2026/2027. Il controllo finale dei contatori avviene dopo la scansione live e la pubblicazione automatica dei JSON.

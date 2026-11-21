@@ -27,6 +27,26 @@ class SourceScopedSeasons(unittest.TestCase):
             official_rome_other_season(official("2025/2026"),
                                        url="https://example.com/spettacoli/falstaff/")
 
+    def test_link_wrapped_official_season_is_not_lost(self):
+        # Real first-party templates may put the header label inside a link.
+        html=('<nav><a>Stagione 2026/2027</a></nav>'
+              '<div><a href="/stagione/">Stagione 2025/2026</a></div>'
+              '<h1>Falstaff</h1><p>Musica di Giuseppe Verdi</p>')
+        self.assertEqual(official_rome_other_season(html,url=URL),"2025/2026")
+        split=('<div><span>Stagione</span><a>2024/2025</a></div>'
+               '<h1>Falstaff</h1>')
+        self.assertEqual(official_rome_other_season(split,url=URL),"2024/2025")
+        # A season mentioned in unrelated preface text or navigation cannot
+        # retire a live opera, and a current official season stays eligible.
+        self.assertIsNone(official_rome_other_season(
+            '<p>Stagione 2025/2026</p><p>Altri eventi</p><h1>Falstaff</h1>',
+            url=URL))
+        self.assertIsNone(official_rome_other_season(
+            '<nav><a>Stagione 2025/2026</a></nav><h1>Falstaff</h1>',
+            url=URL))
+        self.assertIsNone(official_rome_other_season(
+            '<a>Stagione 2026/2027</a><h1>Falstaff</h1>',url=URL))
+
     def test_reconcile_only_source_verified_older_season(self):
         cand={"schema_version":1,"candidates":[
             {"id":"old","source_key":SOURCE,"official_url":URL,

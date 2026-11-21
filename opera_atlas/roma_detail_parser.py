@@ -141,26 +141,38 @@ def official_rome_other_season(html:str,*,url:str)->str|None:
     if not heading.title:
         return None
     class OfficialIntro(HTMLParser):
+        """Read only the production's season label immediately before its H1.
+
+        The theatre sometimes renders this label inside a link or inline
+        element, unlike its navigation. Excluding every anchor silently lost
+        legitimate season evidence. A navigation/footer label never counts.
+        """
+        BLOCKED={"nav","footer","script","style","head"}
         def __init__(self):
             super().__init__(convert_charrefs=True)
-            self.blocked=0
+            self.blocked=[]
             self.parts=[]
             self.before_h1=True
         def handle_starttag(self,tag,attrs):
             if tag=="h1":
                 self.before_h1=False
-            if tag in ("nav","footer","a"):
-                self.blocked+=1
+            if tag in self.BLOCKED:
+                self.blocked.append(tag)
         def handle_endtag(self,tag):
-            if tag in ("nav","footer","a"):
-                self.blocked=max(0,self.blocked-1)
+            if tag in self.BLOCKED and tag in self.blocked:
+                self.blocked.remove(tag)
         def handle_data(self,data):
-            if self.before_h1 and self.blocked==0:
-                self.parts.append(data)
+            value=" ".join(data.split())
+            if self.before_h1 and not self.blocked and value:
+                self.parts.append(value)
     intro=OfficialIntro()
     intro.feed(html)
-    preface=" ".join(" ".join(intro.parts).split())[-450:]
-    observed=re.findall(r"\bStagione\s+(20\d{2})\s*/\s*(20\d{2})\b",
+    # No season may be borrowed from another production, menu or footer.
+    # The official season must be the last visible textual item before H1.
+    # A split label (e.g. <span>Stagione</span><a>2025/2026</a>)
+    # is accepted only when adjacent in this introduction.
+    preface=" ".join(intro.parts[-2:])
+    observed=re.findall(r"\bStagione\s+(20\d{2})\s*/\s*(20\d{2})\s*$",
                         preface,re.I)
     if not observed:
         return None
