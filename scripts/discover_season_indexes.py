@@ -306,8 +306,20 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 page=fetcher(db,source_id=row["id"],url=item["url"],network_enabled=True)
                 urls=extract(item["key"],item["url"],page.html,item["min_links"])
             except (AccessDenied,FetchUnavailable,ValueError) as exc:
+                # Keep exceptions from upstream retrieval out of public
+                # diagnostics. Report deterministic, actionable failure
+                # categories without exposing source content or tokens.
+                if isinstance(exc,AccessDenied):
+                    diagnostic="access_denied_or_robots_disallowed"
+                elif isinstance(exc,FetchUnavailable):
+                    diagnostic="official_source_unavailable"
+                elif str(exc)=="season index incomplete or structure changed":
+                    diagnostic="index_incomplete_or_markup_changed"
+                else:
+                    diagnostic="invalid_index_or_source_config"
                 statuses.append({"key":item["key"],"status":"unavailable_or_invalid",
-                                 "reason":type(exc).__name__,"links":0})
+                                 "reason":type(exc).__name__,"diagnostic":diagnostic,
+                                 "required_links":item["min_links"],"links":0})
                 continue
             for url in urls:
                 uid="oa-index-"+hashlib.sha256((item["key"]+"|"+url).encode()).hexdigest()[:20]
@@ -318,12 +330,40 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 elif seen[uid]["status"]=="needs_review":
                     seen[uid]["last_seen"]=timestamp
             statuses.append({"key":item["key"],"status":"success","links":len(urls),
+                             "required_links":item["min_links"],
                              "new_review_candidates":sum(
                                  x["source_key"]==item["key"] and x["status"]=="needs_review"
                                  for x in seen.values())})
     finally:
         db.close()
     return {"schema_version":1,"candidates":sorted(seen.values(),key=lambda x:x["id"])},statuses
+
+def source_health_history(current:list[dict],previous:dict,*,checked_at:str):
+    """Remember the last verified index independently of today's failures.
+
+    A failed scan leaves candidate URLs intact but is NOT labelled healthy.
+    last_success_at is never manufactured for sources with no prior success.
+    """
+    prior_rows=previous.get("sources",[]) if previous.get("schema_version")==1 else []
+    prior={item["key"]:item for item in prior_rows
+           if isinstance(item,dict) and isinstance(item.get("key"),str)}
+    rows=[]
+    for row in current:
+        old=prior.get(row["key"],{})
+        previous_ok=old.get("last_success_at")
+        if previous_ok is None and old.get("status")=="success":
+            previous_ok=previous.get("checked_at")
+        last_links=old.get("last_successful_links")
+        if last_links is None and old.get("status")=="success":
+            last_links=old.get("links")
+        fresh=row.get("status")=="success"
+        rows.append({**row,
+                     "last_attempt_at":checked_at,
+                     "last_success_at":checked_at if fresh else previous_ok,
+                     "last_successful_links":row["links"] if fresh else last_links,
+                     "current_scan_verified":fresh})
+    return rows
+
 
 def main():
     parser=argparse.ArgumentParser()
@@ -332,10 +372,17 @@ def main():
     config=json.loads(CONFIG.read_text(encoding="utf-8"))
     current=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {"schema_version":1,"candidates":[]}
     result,health=scan(config,current,network_enabled=args.allow_network)
+    checked_at=datetime.now(timezone.utc).isoformat(timespec="seconds")
+    previous=json.loads(HEALTH.read_text(encoding="utf-8")) if HEALTH.exists() else {}
+    health=source_health_history(health,previous,checked_at=checked_at)
     _write_atomic(OUTPUT,result)
     _write_atomic(PUBLIC,result)
-    _write_atomic(HEALTH,{"schema_version":1,"checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),"sources":health})
-    print(json.dumps({"candidates":len(result["candidates"]),"sources":health}))
+    _write_atomic(HEALTH,{"schema_version":1,"checked_at":checked_at,"sources":health})
+    print(json.dumps({"candidates":len(result["candidates"]),
+                      "healthy_sources":sum(x["current_scan_verified"] for x in health),
+                      "unverified_sources":[{"key":x["key"],"diagnostic":x.get("diagnostic","not_approved")}
+                                            for x in health if not x["current_scan_verified"]],
+                      "sources":health}))
 
 if __name__=="__main__":
     main()
