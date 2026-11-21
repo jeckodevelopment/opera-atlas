@@ -314,9 +314,37 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                 summary=material["synopsis"]
                 history=material["history"]
             else:
-                statuses.append({"candidate_id":cid,"status":"automatic_retry",
-                                 "reason":"verified_plot_and_history_unavailable"})
-                continue
+                # Read the *verified* Italian Wikipedia article corresponding
+                # to the exact Wikidata composition, never a search result.
+                # Only two concrete plot relations can produce original prose.
+                from scripts.work_plot_generator import synopsis_from_wikipedia_plot
+                summary=None
+                if allow_authority and identity.get("wikipedia_title"):
+                    excerpt=extract(identity)
+                    summary=synopsis_from_wikipedia_plot(excerpt)
+                previous=existing_works.get(cid,{})
+                from scripts.publish_work_editorial import validate_history
+                history=previous.get("history")
+                if not validate_history(history):
+                    history=None
+                if summary is None:
+                    statuses.append({"candidate_id":cid,"status":"automatic_retry",
+                                     "reason":"verified_plot_unavailable"})
+                    continue
+                # The plot can now be cached and used as soon as complete
+                # historical evidence arrives; no identity-only placeholder.
+                if history is None:
+                    existing_works[cid]={
+                        **previous,"candidate_id":cid,"source_key":item["source_key"],
+                        "source_url":item["official_url"],"title":identity["title"],
+                        "composer":identity["composer"],"synopsis":summary,
+                        "history":None,"wikidata_id":identity["wikidata_id"],
+                        "authority_url":identity["authority_url"],
+                        "wikipedia_url":identity["wikipedia_url"],
+                        "plot_source_url":identity["wikipedia_url"]}
+                    statuses.append({"candidate_id":cid,"status":"automatic_retry",
+                                     "reason":"verified_premiere_history_unavailable"})
+                    continue
             existing_works[cid]={
                 "candidate_id":cid,"source_key":item["source_key"],
                 "source_url":item["official_url"],
