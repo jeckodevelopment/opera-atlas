@@ -29,6 +29,12 @@ VENUE_BY_SOURCE={
     "giglio-lucca-opera-2026-27":("Lucca","Teatro del Giglio Giacomo Puccini"),
     "piacenza-opera-2026-27":("Piacenza","Teatro Municipale"),
     "reggio-valli-opera-2026-27":("Reggio Emilia","Teatro Valli"),
+    "jesi-trittico-opera-2026":("Jesi","Teatro Giovan Battista Pergolesi"),
+    "jesi-don-pasquale-opera-2026":("Jesi","Teatro Giovan Battista Pergolesi"),
+    "jesi-esecuzione-opera-2026":("Jesi","Teatro Giovan Battista Pergolesi"),
+    "jesi-nabucco-opera-2026":("Jesi","Teatro Giovan Battista Pergolesi"),
+    "ancona-elisir-opera-2026":("Ancona","Teatro delle Muse"),
+    "ancona-cavalleria-program-2026":("Ancona","Teatro delle Muse"),
     "goldoni-livorno-dido-2026-27":("Livorno","Teatro Goldoni"),
     "goldoni-livorno-otello-2026-27":("Livorno","Teatro Goldoni"),
     "goldoni-livorno-elisir-2026-27":("Livorno","Teatro Goldoni"),
@@ -225,7 +231,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
