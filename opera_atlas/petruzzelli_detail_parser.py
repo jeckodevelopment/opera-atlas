@@ -51,11 +51,11 @@ def verified_work_heading(html:str,*,title:str,composer:str)->bool:
         return True
     # First-party explicit composer credit permits abbreviated official H1s.
     # Never identify a production from the page's unrelated notices.
-    if pieces[0]==title_key and not re.search(r"presenta\\s+il\\s+balletto\\b",clean(html),re.I):
+    if pieces[0]==title_key and not re.search(r"presenta\s+il\s+balletto\b",clean(html),re.I):
         visible=clean(html)
         before=visible.split("Orari Spettacoli",1)[0]
-        claims=re.findall(r"presenta\\s+l['’]opera\\s+(.+?)\\s+di\\s+"
-                          r"([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.\\- ]{2,90}?)\\s*(?:O&B\\s+2027|Orari\\s+Spettacoli)",before,re.I)
+        claims=re.findall(r"presenta\s+l['’]opera\s+(.+?)\s+di\s+"
+                          r"([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.\- ]{2,90}?)\s*(?:O&B\s+2027|Orari\s+Spettacoli)",before,re.I)
         if len(claims)==1 and (normalized(claims[0][0])==title_key and
                                normalized(claims[0][1])==composer_key):
             return True
