@@ -151,7 +151,7 @@ def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple
         if not 4<=len(value)<=100:return False
         if not all(char.isalpha() or char in " .-'’" for char in value):
             return False
-        tokens=[token for token in re.split(r"[ .-'’]+",value) if token]
+        tokens=[token for token in re.split(r"[ .'’-]+",value) if token]
         return (len(tokens)>=2 and all(any(ch.isalpha() for ch in token)
                                       for token in tokens)
                 and tokens[0].casefold() not in {
