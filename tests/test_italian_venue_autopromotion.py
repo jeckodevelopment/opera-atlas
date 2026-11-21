@@ -10,9 +10,9 @@ CASES=[
  ("carlo-felice-season-2026-27","https://www.carlofelice.it/spettacolo/pagliacci/",
   "Pagliacci","Ruggero Leoncavallo","Teatro Carlo Felice","Genova"),
  ("donizetti-opera-2026","https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
-  "L’esule di Roma","Gaetano Donizetti","Teatro Sociale","Bergamo"),
+  "L'esule di Roma","Gaetano Donizetti","Teatro Sociale","Bergamo"),
  ("donizetti-opera-2026","https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
-  "L’esule di Roma","Gaetano Donizetti","Teatro Donizetti","Bergamo"),
+  "L'esule di Roma","Gaetano Donizetti","Teatro Donizetti","Bergamo"),
 ]
 
 class VerifiedVenuePromotionTests(unittest.TestCase):
@@ -25,7 +25,7 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
         from scripts.publish_catalog_v2 import slugify
         import copy
         cls.ids_donizetti=copy.deepcopy(cls.ids)
-        title,composer="L’esule di Roma","Gaetano Donizetti"
+        title,composer="L'esule di Roma","Gaetano Donizetti"
         from scripts.publish_catalog_v2 import normalized
         key=normalized(title)+"|"+normalized(composer)
         if key not in cls.ids_donizetti["works"]:
@@ -111,7 +111,8 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
             self.facts,self.ids,evidence,candidates,[],today=date(2026,11,21))
         if result["new_recite"]:
             key_result=next(p for p in facts["productions"]
-                            if p["source_url"]==url and p["key"].startswith("auto-"))
+                            if p["source_url"]==url and p["key"].startswith("auto-")
+                            and p["title"]=="La bohème")
             self.assertEqual(key_result["composer"],"Giacomo Puccini")
         self.assertEqual([w for w in ids["works"].values()
                           if w["title"]=="La bohème"],[w for w in self.ids["works"].values()
