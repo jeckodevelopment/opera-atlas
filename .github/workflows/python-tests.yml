@@ -14,5 +14,23 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Probe Roma approved source through production collector
+        run: |
+          python - <<'PY'
+          import json
+          from scripts.discover_season_indexes import CONFIG,scan
+          config=json.loads(CONFIG.read_text(encoding="utf-8"))
+          for entry in config["sources"]:
+              if entry["key"]!="opera-roma-season-2026-27":
+                  entry["access_status"]="blocked"
+          result,health=scan(config,{"schema_version":1,"candidates":[]},
+                             network_enabled=True)
+          roma=next(x for x in health if x["key"]=="opera-roma-season-2026-27")
+          print("ROMA_COLLECTOR_STATUS="+str(roma["status"]))
+          print("ROMA_COLLECTOR_LINKS="+str(roma["links"]))
+          print("ROMA_COLLECTOR_DIAGNOSTIC="+str(roma.get("diagnostic","none")))
+          print("ROMA_COLLECTOR_PAGES="+str(roma.get("pages_checked","unknown")))
+          print("ROMA_COLLECTOR_CANDIDATES="+str(len(result["candidates"])))
+          PY
       - name: Unit tests (stdlib)
         run: python -m unittest discover -s tests -v
