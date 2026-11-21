@@ -3,33 +3,57 @@
   "works": {
     "oa-w-000001": {
       "work_id": "oa-w-000001",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per La traviata"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traviata.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Traviata.jpg",
+      "alt": "Manifesto storico della prima di La traviata (1853); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a La traviata di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000002": {
       "work_id": "oa-w-000002",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per L’italiana in Algeri"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1930-Italiana-in-Algeri.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1930-Italiana-in-Algeri.jpg",
+      "alt": "Copertina storica del libretto di L’italiana in Algeri (1930); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a L’italiana in Algeri di Gioachino Rossini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000003": {
       "work_id": "oa-w-000003",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Edgar"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Romilda_Pantaleoni_as_Tigrana_in_Puccini's_Edgar_-_Milan_1889.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Romilda_Pantaleoni_as_Tigrana_in_Puccini's_Edgar_-_Milan_1889.png",
+      "alt": "Ritratto storico di Romilda Pantaleoni nel ruolo di Tigrana in Edgar (1889); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Edgar di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000004": {
       "work_id": "oa-w-000004",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Salome"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Max_Tilke-_Poster-of-opera-salome-richard-strauss.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Max_Tilke-_Poster-of-opera-salome-richard-strauss.jpg",
+      "alt": "Manifesto storico dell'opera Salome di Richard Strauss; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Salome di Richard Strauss, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000005": {
       "work_id": "oa-w-000005",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Cavalleria rusticana"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cavalleria_rusticana_poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cavalleria_rusticana_poster.jpg",
+      "alt": "Manifesto storico di Cavalleria rusticana; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Cavalleria rusticana di Pietro Mascagni, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000006": {
       "work_id": "oa-w-000006",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Pagliacci"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pagliacci_Original_Score_Cover.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pagliacci_Original_Score_Cover.jpg",
+      "alt": "Copertina originale dello spartito di Pagliacci; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Pagliacci di Ruggero Leoncavallo, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000007": {
       "work_id": "oa-w-000007",
@@ -42,28 +66,48 @@
     },
     "oa-w-000008": {
       "work_id": "oa-w-000008",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Iris"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Iris%2C_opera_by_Pietro_Mascagni%2C_poster_by_Adolf_Hohenstein.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Iris%2C_opera_by_Pietro_Mascagni%2C_poster_by_Adolf_Hohenstein.jpg",
+      "alt": "Manifesto storico di Iris di Mascagni, disegnato da Adolf Hohenstein; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Iris di Pietro Mascagni, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000009": {
       "work_id": "oa-w-000009",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Carmen"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1875_Carmen_poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1875_Carmen_poster.jpg",
+      "alt": "Manifesto storico di Carmen (1875); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Carmen di Georges Bizet, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000010": {
       "work_id": "oa-w-000010",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Evgenij Onegin"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%22Eugene_Onegin%22_opera_poster%2C1937%2C_Yerevan_Opera_Theatre.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22Eugene_Onegin%22_opera_poster%2C1937%2C_Yerevan_Opera_Theatre.jpg",
+      "alt": "Manifesto storico di Evgenij Onegin al Teatro dell'Opera di Erevan (1937); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Beko, documento del Museo di Letteratura e Arti Charents, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "oa-w-000011": {
       "work_id": "oa-w-000011",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Turandot"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Poster_Turandot.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Poster_Turandot.jpg",
+      "alt": "Manifesto storico dell'opera Turandot di Puccini; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Turandot di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000012": {
       "work_id": "oa-w-000012",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Un ballo in maschera"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%22Un_ballo_in_maschera%22_opera_poster%2C_January%2C_1959%2C_Yerevan_Opera_Theatre.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22Un_ballo_in_maschera%22_opera_poster%2C_January%2C_1959%2C_Yerevan_Opera_Theatre.jpg",
+      "alt": "Manifesto storico di Un ballo in maschera a Erevan (1959); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Beko, Museo di Letteratura e Arti Charents, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "oa-w-000013": {
       "work_id": "oa-w-000013",
@@ -72,48 +116,84 @@
     },
     "oa-w-000014": {
       "work_id": "oa-w-000014",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Otello"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Poster_Otello_by_Giuseppe_Verdi.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Poster_Otello_by_Giuseppe_Verdi.jpg",
+      "alt": "Manifesto storico di Otello di Giuseppe Verdi; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Otello di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000015": {
       "work_id": "oa-w-000015",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Aida"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giuseppe_Verdi_-_Hippodrome_Opera_Company_-_Aida_poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Verdi_-_Hippodrome_Opera_Company_-_Aida_poster.jpg",
+      "alt": "Manifesto storico di Aida della Hippodrome Opera Company; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Aida di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000016": {
       "work_id": "oa-w-000016",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Fedora"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ida_Aalberg_i_titelrollen_i_operan_Fedora_av_Umberto_Giordano_-_1900_SLSA_1270_34_foto_29.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ida_Aalberg_i_titelrollen_i_operan_Fedora_av_Umberto_Giordano_-_1900_SLSA_1270_34_foto_29.jpg",
+      "alt": "Fotografia storica di Ida Aalberg nel ruolo di Fedora (1900); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Fedora di Umberto Giordano, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000017": {
       "work_id": "oa-w-000017",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Samson et Dalila"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Samson_et_Dalila._Op%C3%A9ra_de_C._Saint-Saens_affiche%2C_Georges_Antoine_Rochegrosse.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Samson_et_Dalila._Op%C3%A9ra_de_C._Saint-Saens_affiche%2C_Georges_Antoine_Rochegrosse.jpg",
+      "alt": "Manifesto storico di Samson et Dalila, Georges-Antoine Rochegrosse; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Samson et Dalila di Camille Saint-Saëns, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000018": {
       "work_id": "oa-w-000018",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Macbeth"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Locandina_macbeth_a_firenze%2C_1847.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Locandina_macbeth_a_firenze%2C_1847.jpg",
+      "alt": "Locandina storica della rappresentazione di Macbeth a Firenze (1847); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Macbeth di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000019": {
       "work_id": "oa-w-000019",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Madama Butterfly"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hohenstein_Madama_Butterfly.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hohenstein_Madama_Butterfly.jpg",
+      "alt": "Manifesto storico per Madama Butterfly, Adolf Hohenstein; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Madama Butterfly di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000020": {
       "work_id": "oa-w-000020",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Jenůfa"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jenufa.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jenufa.jpg",
+      "alt": "Manifesto storico della prima di Jenůfa di Janáček; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Jenůfa di Leoš Janáček, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000021": {
       "work_id": "oa-w-000021",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Lucia di Lammermoor"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mdlle._Jenny_Lind%2C_as_'Lucia_di_Lammermoor%2C'_at_Her_Majesty's_Theatre._(BM_1901%2C1022.1647).jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mdlle._Jenny_Lind%2C_as_'Lucia_di_Lammermoor%2C'_at_Her_Majesty's_Theatre._(BM_1901%2C1022.1647).jpg",
+      "alt": "Illustrazione storica di Jenny Lind nel ruolo di Lucia di Lammermoor (1848); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Lucia di Lammermoor di Gaetano Donizetti, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000022": {
       "work_id": "oa-w-000022",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Tosca"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Puccini_Tosca.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Puccini_Tosca.jpg",
+      "alt": "Manifesto storico per Tosca di Giacomo Puccini; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Tosca di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000023": {
       "work_id": "oa-w-000023",
@@ -133,13 +213,21 @@
     },
     "oa-w-000025": {
       "work_id": "oa-w-000025",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Nabucco"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nabucco_poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nabucco_poster.jpg",
+      "alt": "Illustrazione contemporanea del manifesto storico della prima di Nabucco; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "D. Alexánder Rodríguez G., Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "oa-w-000026": {
       "work_id": "oa-w-000026",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Rigoletto"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rigoletto_premiere_poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rigoletto_premiere_poster.jpg",
+      "alt": "Manifesto storico della prima di Rigoletto; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Rigoletto di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000027": {
       "work_id": "oa-w-000027",
@@ -220,8 +308,12 @@
     },
     "oa-w-000036": {
       "work_id": "oa-w-000036",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per I puritani"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1923-Puritani.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1923-Puritani.jpg",
+      "alt": "Copertina storica del libretto di I puritani, edizioni Ricordi (1927); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a I puritani di Vincenzo Bellini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     }
   }
 }

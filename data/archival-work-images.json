@@ -45,13 +45,53 @@
     }
   },
   "works_by_id": {
-    "oa-w-000035": {
-      "work_id": "oa-w-000035",
-      "composer": "Gaetano Donizetti",
-      "file": "Gaetano Donizetti - Anna Bolena - titlepage of the libretto, Milan 1830.png",
-      "description": "Frontespizio originale del libretto di Anna Bolena (Milano, 1830), non la produzione attuale",
-      "credit": "Gaetano Donizetti e Felice Romani, libretto del 1830, Wikimedia Commons",
-      "license": "Public domain"
+    "oa-w-000001": {
+      "work_id": "oa-w-000001",
+      "composer": "Giuseppe Verdi",
+      "file": "Traviata.jpg",
+      "description": "Manifesto storico della prima di La traviata (1853); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a La traviata di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000002": {
+      "work_id": "oa-w-000002",
+      "composer": "Gioachino Rossini",
+      "file": "1930-Italiana-in-Algeri.jpg",
+      "description": "Copertina storica del libretto di L’italiana in Algeri (1930); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a L’italiana in Algeri di Gioachino Rossini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000003": {
+      "work_id": "oa-w-000003",
+      "composer": "Giacomo Puccini",
+      "file": "Romilda Pantaleoni as Tigrana in Puccini's Edgar - Milan 1889.png",
+      "description": "Ritratto storico di Romilda Pantaleoni nel ruolo di Tigrana in Edgar (1889); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Edgar di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000004": {
+      "work_id": "oa-w-000004",
+      "composer": "Richard Strauss",
+      "file": "Max Tilke- Poster-of-opera-salome-richard-strauss.jpg",
+      "description": "Manifesto storico dell'opera Salome di Richard Strauss; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Salome di Richard Strauss, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000005": {
+      "work_id": "oa-w-000005",
+      "composer": "Pietro Mascagni",
+      "file": "Cavalleria rusticana poster.jpg",
+      "description": "Manifesto storico di Cavalleria rusticana; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Cavalleria rusticana di Pietro Mascagni, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000006": {
+      "work_id": "oa-w-000006",
+      "composer": "Ruggero Leoncavallo",
+      "file": "Pagliacci Original Score Cover.jpg",
+      "description": "Copertina originale dello spartito di Pagliacci; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Pagliacci di Ruggero Leoncavallo, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     },
     "oa-w-000007": {
       "work_id": "oa-w-000007",
@@ -60,6 +100,150 @@
       "description": "Manifesto storico della prima del 1897 di La bohème di Ruggero Leoncavallo, non l'opera di Puccini né l'allestimento attuale",
       "credit": "Manifesto anonimo, prima del 1897, riprodotto da Teatro La Fenice / Wikimedia Commons",
       "license": "Public domain (US); verificare le condizioni d'uso nella propria giurisdizione"
+    },
+    "oa-w-000008": {
+      "work_id": "oa-w-000008",
+      "composer": "Pietro Mascagni",
+      "file": "Iris, opera by Pietro Mascagni, poster by Adolf Hohenstein.jpg",
+      "description": "Manifesto storico di Iris di Mascagni, disegnato da Adolf Hohenstein; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Iris di Pietro Mascagni, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000009": {
+      "work_id": "oa-w-000009",
+      "composer": "Georges Bizet",
+      "file": "1875 Carmen poster.jpg",
+      "description": "Manifesto storico di Carmen (1875); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Carmen di Georges Bizet, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000010": {
+      "work_id": "oa-w-000010",
+      "composer": "Pëtr Il'ič Čajkovskij",
+      "file": "\"Eugene Onegin\" opera poster,1937, Yerevan Opera Theatre.jpg",
+      "description": "Manifesto storico di Evgenij Onegin al Teatro dell'Opera di Erevan (1937); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Beko, documento del Museo di Letteratura e Arti Charents, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "oa-w-000011": {
+      "work_id": "oa-w-000011",
+      "composer": "Giacomo Puccini",
+      "file": "Poster Turandot.jpg",
+      "description": "Manifesto storico dell'opera Turandot di Puccini; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Turandot di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000012": {
+      "work_id": "oa-w-000012",
+      "composer": "Giuseppe Verdi",
+      "file": "\"Un ballo in maschera\" opera poster, January, 1959, Yerevan Opera Theatre.jpg",
+      "description": "Manifesto storico di Un ballo in maschera a Erevan (1959); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Beko, Museo di Letteratura e Arti Charents, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "oa-w-000014": {
+      "work_id": "oa-w-000014",
+      "composer": "Giuseppe Verdi",
+      "file": "Poster Otello by Giuseppe Verdi.jpg",
+      "description": "Manifesto storico di Otello di Giuseppe Verdi; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Otello di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000015": {
+      "work_id": "oa-w-000015",
+      "composer": "Giuseppe Verdi",
+      "file": "Giuseppe Verdi - Hippodrome Opera Company - Aida poster.jpg",
+      "description": "Manifesto storico di Aida della Hippodrome Opera Company; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Aida di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000016": {
+      "work_id": "oa-w-000016",
+      "composer": "Umberto Giordano",
+      "file": "Ida Aalberg i titelrollen i operan Fedora av Umberto Giordano - 1900 SLSA 1270 34 foto 29.jpg",
+      "description": "Fotografia storica di Ida Aalberg nel ruolo di Fedora (1900); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Fedora di Umberto Giordano, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000017": {
+      "work_id": "oa-w-000017",
+      "composer": "Camille Saint-Saëns",
+      "file": "Samson et Dalila. Opéra de C. Saint-Saens affiche, Georges Antoine Rochegrosse.jpg",
+      "description": "Manifesto storico di Samson et Dalila, Georges-Antoine Rochegrosse; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Samson et Dalila di Camille Saint-Saëns, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000018": {
+      "work_id": "oa-w-000018",
+      "composer": "Giuseppe Verdi",
+      "file": "Locandina macbeth a firenze, 1847.jpg",
+      "description": "Locandina storica della rappresentazione di Macbeth a Firenze (1847); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Macbeth di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000019": {
+      "work_id": "oa-w-000019",
+      "composer": "Giacomo Puccini",
+      "file": "Hohenstein Madama Butterfly.jpg",
+      "description": "Manifesto storico per Madama Butterfly, Adolf Hohenstein; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Madama Butterfly di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000020": {
+      "work_id": "oa-w-000020",
+      "composer": "Leoš Janáček",
+      "file": "Jenufa.jpg",
+      "description": "Manifesto storico della prima di Jenůfa di Janáček; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Jenůfa di Leoš Janáček, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000021": {
+      "work_id": "oa-w-000021",
+      "composer": "Gaetano Donizetti",
+      "file": "Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg",
+      "description": "Illustrazione storica di Jenny Lind nel ruolo di Lucia di Lammermoor (1848); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Lucia di Lammermoor di Gaetano Donizetti, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000022": {
+      "work_id": "oa-w-000022",
+      "composer": "Giacomo Puccini",
+      "file": "Puccini Tosca.jpg",
+      "description": "Manifesto storico per Tosca di Giacomo Puccini; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Tosca di Giacomo Puccini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000025": {
+      "work_id": "oa-w-000025",
+      "composer": "Giuseppe Verdi",
+      "file": "Nabucco poster.jpg",
+      "description": "Illustrazione contemporanea del manifesto storico della prima di Nabucco; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "D. Alexánder Rodríguez G., Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "oa-w-000026": {
+      "work_id": "oa-w-000026",
+      "composer": "Giuseppe Verdi",
+      "file": "Rigoletto premiere poster.jpg",
+      "description": "Manifesto storico della prima di Rigoletto; non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a Rigoletto di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
+    },
+    "oa-w-000035": {
+      "work_id": "oa-w-000035",
+      "composer": "Gaetano Donizetti",
+      "file": "Gaetano Donizetti - Anna Bolena - titlepage of the libretto, Milan 1830.png",
+      "description": "Frontespizio originale del libretto di Anna Bolena (Milano, 1830), non la produzione attuale",
+      "credit": "Gaetano Donizetti e Felice Romani, libretto del 1830, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000036": {
+      "work_id": "oa-w-000036",
+      "composer": "Vincenzo Bellini",
+      "file": "1923-Puritani.jpg",
+      "description": "Copertina storica del libretto di I puritani, edizioni Ricordi (1927); non rappresenta l'allestimento attualmente in calendario",
+      "credit": "Documento storico relativo a I puritani di Vincenzo Bellini, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per le condizioni esatte"
     }
   }
 }

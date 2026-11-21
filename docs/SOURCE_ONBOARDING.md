@@ -461,3 +461,13 @@ I test coprono la migrazione, la collisione reale fra le due opere, il numero es
 - **Ricerca ufficiale:** il generatore considera sia `og:image` sia `twitter:image` e seleziona soltanto l'immagine riconducibile al titolo, anziché bloccarsi su una prima immagine estranea. Le regole contro immagini di concerti, loghi e banner rimangono.
 - **Riprova automatica:** le precedenti scadenze con policy obsoleta sono rivalutate alla prima esecuzione del nuovo generatore. I risultati senza immagine idonea si ricontrollano ogni due giorni; accessi negati o bloccati ogni sette giorni, nel limite di 18 pagine per esecuzione. Il refresh giornaliero prosegue e non richiede ulteriori deploy dell'interfaccia.
 - **Misurazione:** `data/work-poster-health.json` distingue immagini ufficiali, immagini d'archivio e copertine editoriali. Una copertina editoriale non deve essere presentata come manifesto autentico.
+
+## Ricognizione integrale delle copertine — 21/11/2026
+
+L'inventario è stato verificato su **tutte le 36 identità canoniche** con distinzione rigorosa per `work_id` e compositore. Delle 25 copertine editoriali rimaste dopo l'intervento precedente, 23 sono sostituite con documenti storici attinenti alla **specifica opera** (manifesti, copertine di libretti o foto storiche di interpreti nel ruolo). Il catalogo pubblicato comprende quindi 32 immagini archivistiche, 2 immagini di produzione ufficiali e 2 copertine editoriali originali. Le immagini storiche **non** sono rappresentazioni della stagione in corso.
+
+Le due eccezioni sono opere contemporanee: *Death in Venice* di Britten e *Nixon in China* di Adams. Non si è reperito un manifesto/documento fotografico dell'opera con prova sufficiente della riutilizzabilità; sono volutamente mantenute due copertine editoriali chiaramente etichettate, anziché associare una fotografia del film tratto da Mann o un'immagine del viaggio presidenziale del 1972 e presentarla come manifesto dell'opera. Il recupero automatico delle immagini ufficiali di produzione resta attivo sulle relative fonti.
+
+Le opere omonime *La bohème* di Puccini e Leoncavallo conservano immagini distinte per compositore. Per le fonti con licenza CC BY-SA le schede di provenienza contengono il credito nominativo e il link alla licenza. Nessuna risorsa esterna viene copiata o ripubblicata: vengono forniti URL di Wikimedia Commons e attribuzioni, con ripiego a copertina originale se la risorsa non risponde.
+
+La suite di regressione controlla tutte le 36 identità, la tipologia e la provenienza di ogni copertina, il contenuto della banca storica e la non condivisione errata delle opere omonime. Le immagini si aggiornano tramite `public/catalog/work-posters.json`, senza nuovo caricamento SFTP.
