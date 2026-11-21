@@ -18,7 +18,7 @@ async function loadEditorial(){
   async function load(name){
     const urls=name==="work-synopses.json"
       ? ["https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/public/catalog/work-editorial.json","./"+name]
-      : ["./"+name,"https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/"+name];
+      : ["https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/"+name,"./"+name];
     for(const url of urls){
       try{
         const response=await fetch(url,{cache:"no-store"});
