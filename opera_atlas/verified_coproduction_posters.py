@@ -12,7 +12,7 @@ from urllib.parse import urlsplit
 REGISTRY=Path(__file__).resolve().parents[1]/"data"/"verified-coproduction-posters.json"
 APPROVED_PROVENANCE={
     ("https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
-     "BONA SFORZA","Zygmunt Krauze"):(
+     "Bona Sforza","Zygmunt Krauze"):(
         "https://opera.krakow.pl/spektakle/bona-sforza",
         "https://opera.krakow.pl/media/gallery_image/12_d90d25d1097e683c30e5f2da8f9d71ee.jpg")
 }
