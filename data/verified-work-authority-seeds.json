@@ -102,6 +102,40 @@
           "https://www.tcbo.it/evento/opera/accabadora-2027/"
         ]
       }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
+      "title": "Leonora",
+      "composer": "Ferdinando Paër",
+      "synopsis": "Per salvare il marito Florestano, imprigionato ingiustamente, Leonora si traveste da Fedele e lavora nel carcere: il suo coraggio sfida il governatore Pizzarro.",
+      "history": {
+        "librettist": "Giovanni Schmidt",
+        "premiere_year": 1804,
+        "premiere_venue": "Kleines Kurfürstliches Theater",
+        "premiere_city": "Dresda",
+        "sources": [
+          "https://www.opernprojekt.uni-mainz.de/details/werk?id=1322",
+          "https://librettidopera.it/leonora/rid.html"
+        ]
+      }
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
+      "title": "Les Pêcheurs de perles",
+      "composer": "Georges Bizet",
+      "synopsis": "A Ceylon, l'amicizia fra i pescatori Nadir e Zurga è minacciata dal ritorno di Leïla, amata da entrambi; il loro conflitto mette alla prova promesse e lealtà.",
+      "history": {
+        "librettist": "Michel Carré e Eugène Cormon",
+        "premiere_year": 1863,
+        "premiere_venue": "Théâtre-Lyrique",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://pad.philharmoniedeparis.fr/EXPLOITATION/ermes/player.aspx?id=0999417",
+          "https://www.opera-comique.com/fr/spectacles/les-pecheurs-de-perles"
+        ]
+      }
     }
   ]
 }
