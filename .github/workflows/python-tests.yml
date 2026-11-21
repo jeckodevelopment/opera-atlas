@@ -14,5 +14,39 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Diagnose Rome Lady Macbeth first-party credit parser (temporary)
+        run: |
+          python - <<'PY'
+          import json
+          from opera_atlas.db import connect,migrate
+          from opera_atlas.controlled_fetch import fetch_official_html
+          from opera_atlas.roma_detail_parser import OfficialCredits,Heading,parse_roma_credited_detail
+          from scripts.discover_season_indexes import CONFIG,validate_config
+          url="https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+          config=validate_config(json.loads(CONFIG.read_text()))
+          source=next(c for c in config if c["key"]=="opera-roma-season-2026-27")
+          db=connect()
+          try:
+              migrate(db)
+              db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",(source["official_url"],))
+              source_id=db.execute("SELECT id FROM sources WHERE official_url=?",(source["official_url"],)).fetchone()["id"]
+              html=fetch_official_html(db,source_id=source_id,url=url,network_enabled=True).html
+              reader=OfficialCredits()
+              reader.feed(html)
+              reader.close()
+              heading=Heading()
+              heading.feed(html)
+              print("ROME_LADY_H1="+repr(heading.title))
+              for item in reader.lines[:70]:
+                  if any(part in item for part in ("Musica", "Dmitrij", "ostakovi","Ledi Makbet")):
+                      print("ROME_LADY_CREDIT_LINE="+repr(item[:160]))
+              try:
+                  title,composer,venue,dates=parse_roma_credited_detail(html,url=url)
+                  print("ROME_LADY_PARSED="+repr((title,composer,venue,len(dates))))
+              except ValueError as e:
+                  print("ROME_LADY_PARSE_FAILURE="+str(e))
+          finally:
+              db.close()
+          PY
       - name: Unit tests (stdlib)
         run: python -m unittest discover -s tests -v
