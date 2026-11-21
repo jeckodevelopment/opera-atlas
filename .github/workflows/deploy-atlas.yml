@@ -1,12 +1,6 @@
 name: Publish Opera Atlas to opera.plus/atlas
 on:
   workflow_dispatch:
-    inputs:
-      ftp_host:
-        description: 'Optional FTP server hostname (leave blank to use existing ATLAS_SFTP_HOST secret)'
-        required: false
-        type: string
-        default: ''
   push:
     branches: [main]
     paths:
@@ -16,6 +10,7 @@ on:
       - 'site/*.svg'
       - 'site/.htaccess'
       - 'scripts/deploy_atlas.py'
+      - 'scripts/deploy_atlas_simple_ftp.py'
       - '.github/workflows/deploy-atlas.yml'
 permissions:
   contents: read
@@ -46,11 +41,13 @@ jobs:
           python -m unittest discover -s tests -v
           python -m scripts.publish_catalog_v2 --check
           python -m scripts.publish_work_editorial --check
-      - name: Publish owned /atlas folder and verify HTTPS (rollback on error)
+      - name: Install standard FTP client
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: Upload Atlas static files via plain FTP (OVH)
         env:
-          ATLAS_FTP_HOST: ${{ inputs.ftp_host || secrets.ATLAS_SFTP_HOST }}
+          ATLAS_FTP_HOST: ${{ secrets.ATLAS_SFTP_HOST }}
           ATLAS_FTP_PORT: '21' # Plain FTP; legacy SFTP port 22 must not be reused
           ATLAS_FTP_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
           ATLAS_FTP_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
           ATLAS_FTP_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}
-        run: timeout --signal=TERM --kill-after=90s 11m python -u scripts/deploy_atlas.py
+        run: timeout --signal=TERM --kill-after=90s 11m python -u -m scripts.deploy_atlas_simple_ftp

@@ -44,7 +44,7 @@ class AtlasMigrationTests(unittest.TestCase):
             self.assertNotIn("/dev/opera-atlas",html)
             self.assertIn("RewriteBase /atlas/",(folder/".htaccess").read_text())
 
-    def test_settings_require_secure_ftps_credentials_and_isolated_atlas_path(self):
+    def test_settings_require_ftp_credentials_and_isolated_atlas_path(self):
         base={"ATLAS_FTP_HOST":"ftp.example.org",
               "ATLAS_FTP_USERNAME":"atlas",
               "ATLAS_FTP_PASSWORD":"test"}
@@ -77,18 +77,38 @@ class AtlasMigrationTests(unittest.TestCase):
             self.assertIn("secrets.ATLAS_SFTP_" + suffix,workflow)
             self.assertNotIn("secrets.ATLAS_FTP_" + suffix,workflow)
         self.assertIn("ATLAS_FTP_PORT: '21'",workflow)
-        self.assertIn("inputs.ftp_host || secrets.ATLAS_SFTP_HOST",workflow)
+        self.assertIn("ATLAS_FTP_HOST: ${{ secrets.ATLAS_SFTP_HOST }}",workflow)
+        self.assertIn("scripts.deploy_atlas_simple_ftp",workflow)
+        self.assertIn("apt-get install -y -qq lftp",workflow)
         self.assertNotIn("vars.ATLAS_FTPS_HOST",workflow)
         self.assertNotIn("secrets.ATLAS_SFTP_PORT",workflow)
         self.assertNotIn("ATLAS_SFTP_KNOWN_HOSTS",workflow)
 
-    def test_json_only_catalog_refresh_never_triggers_ftps(self):
+    def test_json_only_catalog_refresh_never_triggers_ftp(self):
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
         self.assertIn("'site/*.js'",workflow)
         self.assertIn("'site/*.html'",workflow)
         self.assertNotIn("'site/**'",workflow)
         self.assertNotIn("'site/*.json'",workflow)
         self.assertIn("ATLAS_DEPLOY_ENABLED",workflow)
+
+    def test_simple_ftp_client_uses_plain_passive_mode_without_deleting(self):
+        from scripts.deploy_atlas_simple_ftp import configuration, quote_lftp
+        import inspect
+        import scripts.deploy_atlas_simple_ftp as publisher
+        code=inspect.getsource(publisher.publish)
+        self.assertIn('set ftp:ssl-allow no',code)
+        self.assertIn('set ftp:passive-mode yes',code)
+        self.assertIn('mirror --reverse --all --overwrite --no-perms',code)
+        self.assertNotIn('--delete',code)
+        self.assertEqual(quote_lftp('a"b'), '"a\\"b"')
+        host,user,password,target=configuration({
+            "ATLAS_FTP_HOST":"ftp.cluster121.hosting.ovh.net",
+            "ATLAS_FTP_USERNAME":"user",
+            "ATLAS_FTP_PASSWORD":"password",
+            "ATLAS_FTP_REMOTE_DIR":"/atlas",
+        })
+        self.assertEqual((host,target),("ftp.cluster121.hosting.ovh.net","/atlas"))
 
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_actual_catalog_url_builder(self):
