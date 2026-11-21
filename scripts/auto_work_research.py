@@ -135,6 +135,13 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
         matches=exact_matches(fetch(wikidata_url(
             "wbsearchentities",search=title_hint,language="en",
             uselang="en",type="item",limit=8)))
+    if not matches and composer_hint:
+        # The high-ranked results for frequent opera titles can be novels,
+        # films or recordings. Re-query with the independently evidenced
+        # composer, but still require the exact opera label/alias and QID.
+        matches=exact_matches(fetch(wikidata_url(
+            "wbsearchentities",search=title_hint+" "+composer_hint,
+            language="it",uselang="it",type="item",limit=8)))
     if not matches:return None
     ids="|".join(sorted({x["id"] for x in matches}))
     try:
