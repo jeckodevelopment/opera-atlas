@@ -78,3 +78,22 @@ def parse_detail(html:str,*,url:str):
     if not output:
         raise ValueError("no individually clocked Bologna performances")
     return title,composer,venue,sorted(output.items())
+
+def normalize_event_fact(row:dict)->dict:
+    """Normalize only explicit official TCBO identity labels, never dates.
+
+    Earlier checkpointed JSON-LD may include composer life years and use the
+    short label 'Teatro Comunale'. Keep unknown labels unmodified so the
+    canonical publisher rejects them instead of guessing a venue.
+    """
+    if not isinstance(row,dict):return row
+    cleaned=dict(row)
+    name=cleaned.get("composer")
+    if isinstance(name,str):
+        match=re.fullmatch(
+            r"\\s*(.{3,100}?)\\s*\\(\\d{4}(?:\\s*[-–]\\s*\\d{4})?\\)\\s*",
+            name)
+        if match:cleaned["composer"]=match[1].strip()
+    if cleaned.get("venue") in VENUES:
+        cleaned["venue"]=VENUES[cleaned["venue"]]
+    return cleaned
