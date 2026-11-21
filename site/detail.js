@@ -449,7 +449,8 @@ async function initialize() {
       content.classList.add("production-detail");
     }
     else content.prepend(editorialImage("venue",first));
-    sourceLinks(selected.events.length?selected.events:[first],selected.kind,theatreProfile);
+    if(selected.events.length)sourceLinks(selected.events,selected.kind,theatreProfile);
+    else sourceLinks([first],selected.kind,theatreProfile);
     document.title=title.textContent+" — Opera+ Atlas";
     // Canonicalize old query-based links after resolution; never change identity.
     if(pathnameIsLegacy()) {
