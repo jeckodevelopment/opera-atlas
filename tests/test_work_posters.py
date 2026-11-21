@@ -323,7 +323,7 @@ class PosterPublicationTests(unittest.TestCase):
                  patch.object(posters,"EVIDENCE",root/"evidence.json"),\
                  patch.object(posters,"OUTPUT",root/"out.json"),\
                  patch.object(posters,"HEALTH",root/"health.json"),\
-                 patch.object(posters,"canonical_sources",return_value=[]),\\
+                 patch.object(posters,"canonical_sources",return_value=[]),\
                  patch.object(posters,"connect"),patch.object(posters,"migrate"):
                 with self.assertRaisesRegex(ValueError,"verified opera images missing"):
                     posters.publish(network_enabled=False,max_pages=0)
