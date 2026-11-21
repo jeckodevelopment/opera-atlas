@@ -148,6 +148,8 @@ jobs:
           gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       - name: Resolve unseen opera identities and prepare verified short introductions
         run: python -m scripts.auto_work_research --allow-network
+      - name: Search Wikimedia Commons for historical artwork of new operas
+        run: python -m scripts.discover_wikimedia_art --allow-network
       - name: Promote fully verified candidate dates without manual reconciliation
         run: python -m scripts.auto_catalogue
       - name: Enrich all newly catalogued operas with official poster images
@@ -177,6 +179,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/candidate-wikimedia-art.json data/candidate-wikimedia-art-health.json data/archival-work-images.json
           git add data/editorial-review-queue.json
           git add public/catalog/venue-directory.json data/work-poster-evidence.json data/work-poster-health.json public/catalog/work-posters.json data/candidate-reconciliation-health.json data/season-index-config.json data/season-rollover-health.json data/sources.json site/work-synopses.json data/auto-work-intelligence.json data/auto-work-intelligence-health.json site/work-history.json public/catalog/v2/ public/catalog/candidate-detail-evidence.json data/candidate-detail-evidence.json data/candidate-detail-health.json data/auto-source-urls.json data/autonomous-catalogue-health.json public/catalog/season-index-candidates.json data/season-index-candidates.json data/season-index-health.json public/catalog/work-editorial.json public/catalog/coverage.json public/catalog/discovery.json data/discovery-candidates.json data/verified-launch-catalog.json data/identity-registry.json data/verified-time-evidence.json site/performances.json
           if [ -f data/catalog-source-health.json ]; then git add data/catalog-source-health.json; fi
