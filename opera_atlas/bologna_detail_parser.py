@@ -50,7 +50,7 @@ def parse_detail(html:str,*,url:str):
     text=clean(html)
     if not re.search(r"\\bOpera\\b",text[:1500]):
         raise ValueError("Bologna page is not an opera")
-    match=re.search(r"\\bCompositore\\s+(.{3,90}?)\\s*\\(\\d{4}-\\d{4}\\)",text)
+    match=re.search(r"\\bCompositore\\s+(.{3,90}?)\\s*\\(\\d{4}(?:-\\d{4})?\\)",text)
     if not match:
         raise ValueError("official Bologna composer missing")
     composer=match[1].strip()
