@@ -501,6 +501,46 @@
         "https://brahms.ircam.fr/fr/work/accabadora",
         "https://www.tcbo.it/evento/opera/accabadora-2027/"
       ]
+    },
+    "le-nozze-di-figaro": {
+      "librettist": "Lorenzo Da Ponte",
+      "premiere_year": 1786,
+      "premiere_venue": "Burgtheater",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://corago.unibo.it/libretto/DRT0030541",
+        "https://kv.mozarteum.at/en/work/le-nozze-di-figaro-opera-buffa-commedia-per-musica-in-4-acts-11980"
+      ]
+    },
+    "zenobia": {
+      "librettist": "Pietro Metastasio",
+      "premiere_year": 1756,
+      "premiere_venue": "Teatro San Carlo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://corago.unibo.it/opera/7A00330059",
+        "https://corago.unibo.it/libretto/DRT0046409"
+      ]
+    },
+    "arlecchino": {
+      "librettist": "Ferruccio Busoni",
+      "premiere_year": 1917,
+      "premiere_venue": "Stadttheater",
+      "premiere_city": "Zurigo",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/arlecchino-o-le-finestre-arlecchino-oder-die-fenster/",
+        "https://www.naxos.com/LibrettiSungText/Libretti?id=30323A54-862C-47B7-A7C4-52A161E74796"
+      ]
+    },
+    "fidelio": {
+      "librettist": "Joseph Sonnleithner; Georg Friedrich Treitschke",
+      "premiere_year": 1805,
+      "premiere_venue": "Theater an der Wien",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://www.beethoven.de/en/work/view/ag9iZWV0aG92ZW4tdml1cjNyEQsSBHdvcmsYgICAnPmr7QgM/%22Fidelio%22%2C%20opera%20in%20two%20%26",
+        "https://www.naxos.com/LibrettiSungText/Libretti?id=78D90860-2506-41CA-9C88-41D95C5A38BB"
+      ]
     }
   },
   "works_by_id": {
@@ -524,6 +564,46 @@
         "https://puccini.it/opera/la-boheme/"
       ],
       "premiere_date": "1896-02-01"
+    },
+    "oa-w-000045": {
+      "librettist": "Lorenzo Da Ponte",
+      "premiere_year": 1786,
+      "premiere_venue": "Burgtheater",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://corago.unibo.it/libretto/DRT0030541",
+        "https://kv.mozarteum.at/en/work/le-nozze-di-figaro-opera-buffa-commedia-per-musica-in-4-acts-11980"
+      ]
+    },
+    "oa-w-000046": {
+      "librettist": "Pietro Metastasio",
+      "premiere_year": 1756,
+      "premiere_venue": "Teatro San Carlo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://corago.unibo.it/opera/7A00330059",
+        "https://corago.unibo.it/libretto/DRT0046409"
+      ]
+    },
+    "oa-w-000047": {
+      "librettist": "Ferruccio Busoni",
+      "premiere_year": 1917,
+      "premiere_venue": "Stadttheater",
+      "premiere_city": "Zurigo",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/arlecchino-o-le-finestre-arlecchino-oder-die-fenster/",
+        "https://www.naxos.com/LibrettiSungText/Libretti?id=30323A54-862C-47B7-A7C4-52A161E74796"
+      ]
+    },
+    "oa-w-000048": {
+      "librettist": "Joseph Sonnleithner; Georg Friedrich Treitschke",
+      "premiere_year": 1805,
+      "premiere_venue": "Theater an der Wien",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://www.beethoven.de/en/work/view/ag9iZWV0aG92ZW4tdml1cjNyEQsSBHdvcmsYgICAnPmr7QgM/%22Fidelio%22%2C%20opera%20in%20two%20%26",
+        "https://www.naxos.com/LibrettiSungText/Libretti?id=78D90860-2506-41CA-9C88-41D95C5A38BB"
+      ]
     }
   }
 }

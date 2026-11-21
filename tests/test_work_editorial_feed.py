@@ -17,6 +17,33 @@ class WorkEditorialTests(unittest.TestCase):
         self.assertEqual(len({x["work_id"] for x in report["works"]}),len(report["works"]))
         self.assertTrue(all(x["synopsis"] and x["composer"] for x in report["works"]))
 
+    def test_new_operas_have_specific_plot_and_verified_historical_facts(self):
+        from scripts.publish_work_editorial import validate_history
+        report=build_editorial(self.facts,self.registry,self.editorial)
+        by_id={item["work_id"]:item for item in report["works"]}
+        for wid in ("oa-w-000045","oa-w-000046","oa-w-000047","oa-w-000048"):
+            with self.subTest(work=wid):
+                item=by_id[wid]
+                self.assertTrue(validate_history(item["history"]))
+                self.assertNotIn("Consulta le rappresentazioni verificate",item["synopsis"])
+                self.assertGreater(len(item["synopsis"]),75)
+                self.assertTrue(item["history"]["sources"])
+
+    def test_identity_only_synopsis_or_missing_history_is_rejected(self):
+        from scripts.publish_work_editorial import HISTORY
+        synopsis=copy.deepcopy(self.editorial)
+        by_id=synopsis.setdefault("synopses_by_id",{})
+        by_id["oa-w-000045"]=(
+            "«Le nozze di Figaro» è un'opera di Mozart. "
+            "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+        with self.assertRaisesRegex(ValueError,"identity-only"):
+            build_editorial(self.facts,self.registry,synopsis)
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))
+        history["works_by_id"].pop("oa-w-000048",None)
+        history["works"].pop("fidelio",None)
+        with self.assertRaisesRegex(ValueError,"missing complete sourced work history"):
+            build_editorial(self.facts,self.registry,self.editorial,history=history)
+
     def test_distinct_bohème_history_and_synopses_by_permanent_identity(self):
         report=build_editorial(self.facts,self.registry,self.editorial)
         works={x["work_id"]:x for x in report["works"]}
