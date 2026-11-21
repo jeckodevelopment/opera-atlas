@@ -247,10 +247,12 @@ class PosterPublicationTests(unittest.TestCase):
         counts={kind:sum(v["kind"]==kind for v in published.values())
                 for kind in ("archival_work_image","official_production_image",
                              "original_editorial_cover")}
-        self.assertEqual(counts["official_production_image"],2)
+        # Official imagery is discovered continuously, and can replace an
+        # archival fallback without changing the work inventory. Validate
+        # the full partition, provenance and IDs, not a fixed number per kind.
+        self.assertEqual(sum(counts.values()),len(works))
         self.assertEqual(counts["original_editorial_cover"],len(editorial))
-        self.assertEqual(counts["archival_work_image"],
-                         len(works)-counts["official_production_image"]-len(editorial))
+        posters.check()
         for work in works:
             image=published[work["id"]]
             self.assertEqual(image["work_id"],work["id"])
