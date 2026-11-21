@@ -178,37 +178,36 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "content_sha256": "c41e77c7a85fc1a4dcf7b7df3671040277d460bd28f241d28d392b9090818fec",
-      "checked_at": "2026-11-21T13:57:28+00:00",
+      "checked_at": "2026-11-21T14:11:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Les contes d'Hoffmann",
+          "composer": "Jacques Offenbach",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2026-12-20",
-          "starts_at": "2026-12-20T17:00:00+01:00",
-          "venue": "Teatro del Maggio Musicale Fiorentino",
-          "composer": "Jacques Offenbach"
+          "starts_at": "2026-12-20T17:00:00+01:00"
         },
         {
           "event_title": "Les contes d'Hoffmann",
+          "composer": "Jacques Offenbach",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2026-12-27",
-          "starts_at": "2026-12-27T15:30:00+01:00",
-          "venue": "Teatro del Maggio Musicale Fiorentino",
-          "composer": "Jacques Offenbach"
+          "starts_at": "2026-12-27T15:30:00+01:00"
         },
         {
           "event_title": "Les contes d'Hoffmann",
+          "composer": "Jacques Offenbach",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2026-12-30",
-          "starts_at": "2026-12-30T20:00:00+01:00",
-          "venue": "Teatro del Maggio Musicale Fiorentino",
-          "composer": "Jacques Offenbach"
+          "starts_at": "2026-12-30T20:00:00+01:00"
         },
         {
           "event_title": "Les contes d'Hoffmann",
-          "date": "2027-01-02",
-          "starts_at": "2027-01-02T17:00:00+01:00",
+          "composer": "Jacques Offenbach",
           "venue": "Teatro del Maggio Musicale Fiorentino",
-          "composer": "Jacques Offenbach"
+          "date": "2027-01-02",
+          "starts_at": "2027-01-02T17:00:00+01:00"
         }
       ]
     },
@@ -351,8 +350,8 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "content_sha256": "a4c32578518253bec92de4aab7b5f331cfc6a10fbdac81f04bf0b8c1161b68eb",
-      "checked_at": "2026-11-21T13:57:36+00:00",
+      "content_sha256": "94c755d726eda0f81cf0aa5449fbf5bce878c74104fd381798c0c0fcf367db47",
+      "checked_at": "2026-11-21T14:10:59+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -380,7 +379,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
       "content_sha256": "df8e5a519414655fc34a3561a501a3565db62e9f7e7c8f7bc68665bdb7786f82",
-      "checked_at": "2026-11-21T13:57:33+00:00",
+      "checked_at": "2026-11-21T14:11:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -664,7 +663,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-21T13:57:41+00:00",
+      "checked_at": "2026-11-21T14:11:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1135,7 +1134,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-21T13:57:57+00:00",
+      "checked_at": "2026-11-21T14:11:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1217,8 +1216,8 @@
       "candidate_id": "oa-index-dfe824fe3301174d2165",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
-      "content_sha256": "02de052da514aed6eec1a8f82887783322d21f151c5acd9c1377140d4b086278",
-      "checked_at": "2026-11-21T13:57:48+00:00",
+      "content_sha256": "f18651b21914e054a03361d8b86f5416d90b4b1118d90147dc0e0a473d5b2835",
+      "checked_at": "2026-11-21T14:11:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
