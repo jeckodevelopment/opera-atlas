@@ -563,12 +563,21 @@ def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
     return next_facts,next_registry,{"new_stagings":created,
                                      "new_recite":accepted,"auto_skipped":skipped}
 
-def verified_candidate_image(detail:dict,*,title:str,url:str)->dict|None:
+def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=None)->dict|None:
     """Only first-party, title-matched, production-page poster metadata.
 
     Revalidate checkpoint JSON because it may have been produced by an older
     scanner; never trust an image URL merely because it exists in evidence.
     """
+    # A user-reviewed TicketOne event artwork may be bound to the exact
+    # official opera/composer/source. The URL remains externally hosted;
+    # never copy the art or misidentify another production as a poster.
+    if composer:
+        from opera_atlas.verified_ticketing_art import verified_ticketing_image
+        ticketing=verified_ticketing_image(
+            source_url=url,title=title,composer=composer)
+        if ticketing is not None:
+            return ticketing
     image=detail.get("poster_evidence")
     if not isinstance(image,dict) or image.get("kind")!="official_production_image":
         return None
@@ -721,7 +730,7 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         archive=(load_archival_art({slug}).get(slug)
                  if not legacy_homonyms else None)
         if require_image and not (
-                verified_candidate_image(detail,title=title,url=url) or archive):
+                verified_candidate_image(detail,title=title,url=url,composer=composer) or archive):
             result["auto_skipped"].append({
                 "candidate_id":cid,"reason":"verified_work_image_missing"})
             continue
@@ -1100,7 +1109,7 @@ def main():
         matched=[p for p in next_facts["productions"]
                   if normalized(p["title"])==normalized(work["title"])
                   and normalized(p["composer"])==normalized(work["composer"])]
-        proofs=[verified_candidate_image(e,title=work["title"],url=p["source_url"])
+        proofs=[verified_candidate_image(e,title=work["title"],url=p["source_url"],composer=work["composer"])
                 for p in matched for e in evidence.get("evidence",[])
                 if e.get("source_url")==p["source_url"]]
         proofs=[proof for proof in proofs if proof is not None]

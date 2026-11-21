@@ -201,8 +201,12 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
         if not isinstance(wid,str) or wid not in by_id:
             options=ids_by_slug.get(key,[])
             wid=options[0] if len(options)==1 else None
-        if (wid in by_id and
-                image_matches_work(value.get("image_url",""),by_id[wid]["title"])):
+        from opera_atlas.verified_ticketing_art import is_verified_ticketing_poster
+        if (wid in by_id and (
+                image_matches_work(value.get("image_url",""),by_id[wid]["title"])
+                and value.get("kind")=="official_production_image"
+                or is_verified_ticketing_poster(
+                    value,title=by_id[wid]["title"],composer=by_id[wid]["composer"]))):
             posters[wid]={"work_id":wid,**value}
     archive_by_slug=load_archival_art({w["slug"] for w in registry_works})
     archival_registry=json.loads(ARCHIVE.read_text(encoding="utf-8")) if ARCHIVE.exists() else {}
@@ -313,6 +317,12 @@ def check()->None:
             if (not allowed_image_url(item["image_url"],item["source_url"]) or
                 not image_matches_work(item["image_url"],titles[slug])):
                 raise ValueError("wrong or unapproved official poster for "+slug)
+        elif item["kind"]=="ticketing_event_artwork":
+            from opera_atlas.verified_ticketing_art import is_verified_ticketing_poster
+            composers={w["id"]:w["composer"] for w in works.values()}
+            if not is_verified_ticketing_poster(
+                    item,title=titles[slug],composer=composers[slug]):
+                raise ValueError("unverified ticketing artwork for "+slug)
         elif item["kind"]=="archival_work_image":
             if (not isinstance(item.get("source_url"),str) or
                     not item["source_url"].startswith("https://commons.wikimedia.org/wiki/File:") or
