@@ -118,19 +118,39 @@ def official_title_hint(candidate:dict,evidence:dict|None=None)->str|None:
 def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api)->dict|None:
     query=fetch(wikidata_url("wbsearchentities",search=title_hint,language="it",
                             uselang="it",type="item",limit=8))
-    matches=[x for x in query.get("search",[])
-             if isinstance(x.get("id"),str) and isinstance(x.get("label"),str)
-             and x["label"].strip() and
-             slugify(x["label"])==slugify(title_hint)]
+    def exact_matches(data):
+        return [x for x in data.get("search",[])
+                if isinstance(x,dict) and isinstance(x.get("id"),str)
+                and (slugify(x.get("label",""))==slugify(title_hint)
+                     or (isinstance(x.get("match"),dict) and
+                         slugify(x["match"].get("text",""))==slugify(title_hint)))]
+    matches=exact_matches(query)
+    # Wikidata's Italian search sometimes gives translated labels while the
+    # official theatre prints an English, German or French work title. Check
+    # its English index only when the Italian index has no exact match.
+    if not matches:
+        matches=exact_matches(fetch(wikidata_url(
+            "wbsearchentities",search=title_hint,language="en",
+            uselang="en",type="item",limit=8)))
     if not matches:return None
     ids="|".join(sorted({x["id"] for x in matches}))
     batch=fetch(wikidata_url("wbgetentities",ids=ids,
-                            props="claims|labels|sitelinks",languages="it|en"))
+                            props="claims|labels|aliases|sitelinks",languages="it|en"))
     accepted=[]
     for qid,entity in batch.get("entities",{}).items():
         labels=entity.get("labels",{})
-        label=labels.get("it",labels.get("en",{})).get("value","")
-        if not label or slugify(label)!=slugify(title_hint):continue
+        names=[labels.get(lang,{}).get("value","") for lang in ("it","en")]
+        names += [a.get("value","") for lang in ("it","en")
+                  for a in entity.get("aliases",{}).get(lang,[])
+                  if isinstance(a,dict)]
+        if not any(isinstance(n,str) and slugify(n)==slugify(title_hint)
+                   for n in names):
+            continue
+        # Use the official title when the authority validates it as an exact
+        # label or alias; never replace it with a translated unrelated title.
+        label=next((n for n in names
+                    if isinstance(n,str) and slugify(n)==slugify(title_hint)),None)
+        if label is None:continue
         # Wikidata currently prefers P7937 (form of creative work) for opera;
         # historic entities may still use P31. Never infer from title only.
         if "Q1344" not in (claim_ids(entity,"P7937") | claim_ids(entity,"P31")):continue
