@@ -76,17 +76,22 @@ function editorialImage(kind,event){
 }
 async function appendTheatreProfile(event,venueRecord=null){
   let stored=null;
-  try{
-    const response=await fetch("./theatre-profiles.json");
-    if(response.ok){
+  // Editorial updates live in GitHub; the SFTP snapshot is only a fallback.
+  for(const url of [
+    "https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/site/theatre-profiles.json",
+    "./theatre-profiles.json"
+  ]){
+    try{
+      const response=await fetch(url,{cache:"no-store"});
+      if(!response.ok)continue;
       const doc=await response.json();
-      if(doc.schema_version===1 && doc.venues){
-        const lookup=event.municipality+"|"+
-          (event.municipality==="Torino" && event.venue==="Teatro Regio di Torino"?"Teatro Regio":event.venue);
-        stored=doc.venues[lookup]||null;
-      }
-    }
-  }catch(error){console.warn("Theatre historical profile unavailable",error);}
+      if(doc.schema_version!==1 || !doc.venues)continue;
+      const lookup=event.municipality+"|"+
+        (event.municipality==="Torino" && event.venue==="Teatro Regio di Torino"?"Teatro Regio":event.venue);
+      stored=doc.venues[lookup]||null;
+      if(stored)break;
+    }catch(error){console.warn("Theatre historical profile unavailable",url,error);}
+  }
   // The independently catalogued national venues have a factual, sourced
   // short profile even without a legacy history or any registered performance.
   const profile=stored || (venueRecord ? {
