@@ -272,6 +272,8 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
+        return path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027"
     if key=="reggio-valli-opera-2026-27":
         return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
     if key=="piacenza-opera-2026-27":
@@ -298,6 +300,11 @@ def eligible(key:str,url:str)->bool:
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
+        from opera_atlas.ferrara_regional_parser import verified_index_candidate
+        if verified_index_candidate(html,source_key=key,url=index_url):
+            return [index_url]
+        raise ValueError("official Ferrara opera not independently verified")
     parser=(ScopedSeasonAnchors(key)
             if key in {"parma-opera-2027","massimo-season-2026-27",
                        "donizetti-opera-2026","teatro-grande-opera-2026",
@@ -344,6 +351,11 @@ def validate_config(config:dict)->list[dict]:
         "modena-opera-2026-27":("www.comune.modena.it","/vivere-modena/eventi/2026/stagione-opera-2026-2027"),
         "giglio-lucca-opera-2026-27":("www.teatrodelgigliogiacomopuccini.it","/it/cartellone/lirica/stagione-2026-2027/"),
         "piacenza-opera-2026-27":("teatripiacenza.it","/stagioni/stagione-26-27/"),
+        "ferrara-macbeth-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
+        "ferrara-barbiere-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
+        "ferrara-dido-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
+        "ferrara-clemenza-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
+        "ferrara-boccanegra-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
         "reggio-valli-opera-2026-27":("www.iteatri.re.it","/tipo/opera/"),
     }
     seen=set()
@@ -378,6 +390,8 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
+            valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
         elif key=="reggio-valli-opera-2026-27":
             valid_season=index.path=="/tipo/opera/" and not index.query
         elif key=="piacenza-opera-2026-27":
