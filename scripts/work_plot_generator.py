@@ -8,11 +8,11 @@ from __future__ import annotations
 import re
 
 NAME = r"([A-ZÀ-Ü][a-zà-ÿ]{2,24}(?:['’][A-ZÀ-Ü]?[a-zà-ÿ]+)?)"
-PLOT_HEADING = re.compile(r"==\s*(?:Trama|La trama|Argomento)\s*==", re.I)
-NEXT_HEADING = re.compile(r"==\s*[^=]+\s*==")
+PLOT_HEADING = re.compile(r"==\s*(?:Trama|La trama|Argomento)\s*==|(?:^|\n)(?:Trama|La trama|Argomento)\s*\n", re.I)
+NEXT_HEADING = re.compile(r"==\s*[^=]+\s*==|\n(?:Note|Bibliografia|Collegamenti esterni|Personaggi|Discografia|Accoglienza)\s*\n", re.I)
 LOVE = re.compile(NAME + r"\s+(?:si innamora di|ama)\s+" + NAME + r"\b")
 QUEST = re.compile(NAME + r"\s+(?:cerca di|tenta di)\s+(salvare|liberare|ritrovare|proteggere)\s+" + NAME + r"\b", re.I)
-BETRAY = re.compile(NAME + r"\s+(uccide|tradisce|inganna)\s+" + NAME + r"\b", re.I)
+BETRAY = re.compile(NAME + r"\s+(uccide|tradisce|inganna|accusa|sposa)\s+" + NAME + r"\b", re.I)
 GENERIC = re.compile(r"\b(?:opera|atto|scena|teatro|personaggi|trama|storia|prologo)\b", re.I)
 
 
@@ -57,7 +57,7 @@ def synopsis_from_wikipedia_plot(extract: str | None) -> str | None:
                     return f"{values[0]} prova amore per {values[1]}"
                 if kind == "quest":
                     return f"{values[0]} tenta di {values[1].lower()} {values[2]}"
-                verbs = {"uccide": "uccide", "tradisce": "tradisce", "inganna": "inganna"}
+                verbs = {"uccide": "uccide", "tradisce": "tradisce", "inganna": "inganna", "accusa": "accusa", "sposa": "sposa"}
                 return f"{values[0]} {verbs[values[1].lower()]} {values[2]}"
             result = "Nella vicenda, " + clause(a, left) + "; " + clause(b, right) + "."
             if 45 <= len(result) <= 220 and result.lower() not in plot.lower():
