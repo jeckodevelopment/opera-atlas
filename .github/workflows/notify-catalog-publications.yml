@@ -14,6 +14,10 @@ on:
         description: 'Prior published revision to compare (for diagnostic replay)'
         required: true
         type: string
+      entity_ids:
+        description: 'Optional comma-separated entity IDs to resend only a selected subset'
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -43,6 +47,7 @@ jobs:
           ATLAS_NOTIFICATION_TO: ${{ secrets.ATLAS_NOTIFICATION_TO }}
           PUSH_BASE: ${{ github.event.before }}
           REPLAY_BASE: ${{ inputs.base_sha }}
+          REPLAY_IDS: ${{ inputs.entity_ids }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
           if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
@@ -54,4 +59,8 @@ jobs:
             echo "::warning::Cannot compare prior published commit; no diagnostic email sent."
             exit 0
           fi
-          python -m scripts.notify_publications --base "$BASE"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ -n "$REPLAY_IDS" ]; then
+            python -m scripts.notify_publications --base "$BASE" --only-ids "$REPLAY_IDS"
+          else
+            python -m scripts.notify_publications --base "$BASE"
+          fi
