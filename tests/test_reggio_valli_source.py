@@ -82,7 +82,7 @@ class ReggioSourceTests(unittest.TestCase):
                           ("20/11/2026","20:00","da € 35,00")]),
             page(credit=""),
             page(kind="Musical"),
-            page(venue="Teatro Ariosto"),
+            page(venue="Teatro Cavallerizza"),
             page(tickets=[]),
         ]:
             with self.subTest(html=html[:60]):
