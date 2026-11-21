@@ -117,7 +117,7 @@ class AtlasMigrationTests(unittest.TestCase):
         self.assertIn("'site/*.html'",workflow)
         self.assertNotIn("'site/**'",workflow)
         self.assertNotIn("'site/*.json'",workflow)
-        self.assertIn("ATLAS_DEPLOY_ENABLED",workflow)
+        self.assertIn("if: github.ref == 'refs/heads/main'",workflow)
 
     @unittest.skipUnless(shutil.which("node"),"Node.js unavailable")
     def test_actual_catalog_url_builder(self):

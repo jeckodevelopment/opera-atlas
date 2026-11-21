@@ -20,9 +20,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    # Explicitly enable automatic deployment after setting up the new hosting.
-    # Manual workflow_dispatch is always available for the first controlled release.
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || vars.ATLAS_DEPLOY_ENABLED == 'true')
+    # Publish frontend changes to production automatically after each main merge.
+    # The job runs the entire test suite before any SFTP connection is opened.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     environment:
