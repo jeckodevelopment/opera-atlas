@@ -1,12 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-20T23:46:40+00:00",
+  "checked_at": "2026-11-21T10:29:21+00:00",
   "outcomes": [
-    {
-      "candidate_id": "oa-index-559b2402d287d446c7b2",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
     {
       "candidate_id": "oa-index-5ab298c2300ec275c2a3",
       "status": "automatic_retry",
@@ -53,8 +48,9 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-58413a3bbbee689b82bc",
-      "status": "model_not_configured"
+      "candidate_id": "oa-index-559b2402d287d446c7b2",
+      "status": "automatic_retry",
+      "reason": "ValueError"
     },
     {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
@@ -62,6 +58,10 @@
     },
     {
       "candidate_id": "oa-index-a02901b14e6eae69df5c",
+      "status": "model_not_configured"
+    },
+    {
+      "candidate_id": "oa-index-a77154badf30929b95dc",
       "status": "model_not_configured"
     }
   ]
