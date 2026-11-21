@@ -240,8 +240,8 @@ class PosterPublicationTests(unittest.TestCase):
         # Only contemporary works without a verified reusable production
         # photograph remain represented by *truthfully labelled* original art.
         self.assertEqual({w["title"] for w in editorial},
-                         {"Death in Venice","Nixon in China"})
-        self.assertEqual(sum(v["kind"]=="archival_work_image" for v in published.values()),32)
+                         {"Death in Venice","Nixon in China","Jenůfa"})
+        self.assertEqual(sum(v["kind"]=="archival_work_image" for v in published.values()),31)
         self.assertEqual(sum(v["kind"]=="official_production_image" for v in published.values()),2)
         for work in works:
             image=published[work["id"]]
@@ -256,6 +256,24 @@ class PosterPublicationTests(unittest.TestCase):
                 self.assertTrue(image["license"])
         self.assertNotEqual(published["oa-w-000007"]["image_url"],
                             published["oa-w-000024"]["image_url"])
+
+    def test_explicit_editorial_covers_are_local_and_titles_are_visible(self):
+        from scripts.deploy_atlas import FILES, SOURCE
+        posted=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
+        for work_id,filename,title in [
+            ("oa-w-000020","cover-jenufa.svg","JENŮFA"),
+            ("oa-w-000034","cover-nixon-in-china.svg","NIXON")
+        ]:
+            item=posted[work_id]
+            self.assertEqual(item["kind"],"original_editorial_cover")
+            self.assertEqual(item["cover_file"],filename)
+            self.assertIn(filename,FILES)
+            content=(SOURCE/filename).read_text(encoding="utf-8")
+            self.assertIn(title,content)
+            self.assertIn("COPERTINA EDITORIALE ORIGINALE",content)
+        ballo=posted["oa-w-000012"]
+        self.assertIn("Vocal_score_frontispiece",ballo["image_url"])
+        self.assertNotIn("Yerevan",ballo["image_url"])
 
     def test_frontend_loads_posters_without_redeploying_on_each_new_work(self):
         root=Path(__file__).resolve().parents[1]
