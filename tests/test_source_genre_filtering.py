@@ -12,6 +12,8 @@ class SourceGenreFilteringTests(unittest.TestCase):
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/nuovo-cinema-paradiso/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/lo-schiaccianoci-4/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/non-dirmi-che-hai-paura/"),
+            ("petruzzelli-opera-2026","https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/"),
+            ("petruzzelli-opera-2027","https://www.fondazionepetruzzelli.it/eventi/lo-schiaccianoci-di-petr-ilic-cajkovskij-11-14-febbraio/"),
         ]
         for key,url in examples:
             with self.subTest(url=url):
