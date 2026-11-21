@@ -468,6 +468,26 @@
       "verified_at": "2026-11-21T19:24:51+00:00"
     },
     {
+      "candidate_id": "oa-index-9fdcd7eba240da4540af",
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/siberia/",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "synopsis": null,
+      "history": {
+        "librettist": "Luigi Illica",
+        "premiere_year": 1903,
+        "premiere_venue": "teatro alla Scala",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q2292268"
+        ]
+      },
+      "wikidata_id": "Q2292268",
+      "authority_url": "https://www.wikidata.org/wiki/Q2292268",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Siberia_(opera)"
+    },
+    {
       "candidate_id": "oa-index-b4180540983902f703af",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/falstaff-2/",

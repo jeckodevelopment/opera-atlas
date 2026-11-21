@@ -1,30 +1,14 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T21:32:48+00:00",
+  "checked_at": "2026-11-21T22:54:36+00:00",
   "outcomes": [
     {
-      "candidate_id": "oa-index-1e15e89ae5b2a2ec45f9",
+      "candidate_id": "oa-index-357ebb275673ae888623",
       "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "verdi-trieste-season-2026-27",
-      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
-      "title_hint": "La Bohème"
-    },
-    {
-      "candidate_id": "oa-index-129b5be3f35d5762f8bb",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "verdi-trieste-season-2026-27",
-      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/",
-      "title_hint": "Aida"
-    },
-    {
-      "candidate_id": "oa-index-2ab0ba26f1806086b52a",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "verdi-trieste-season-2026-27",
-      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
-      "title_hint": "Norma"
+      "reason": "verified_plot_unavailable",
+      "source_key": "ferrara-dido-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "title_hint": "Dido and Aeneas"
     },
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -59,14 +43,6 @@
       "title_hint": "Il trovatore"
     },
     {
-      "candidate_id": "oa-index-dc6e8ff3bddba01de089",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000056",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/die-zauberflote/",
-      "title_hint": "Die Zauberflöte"
-    },
-    {
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "status": "existing_canonical_work",
       "work_id": "oa-w-000018",
@@ -75,90 +51,99 @@
       "title_hint": "Macbeth"
     },
     {
-      "candidate_id": "oa-index-db7983de674f2fdccdda",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000024",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/la-boheme/",
-      "title_hint": "La bohème"
-    },
-    {
-      "candidate_id": "oa-index-4e97b4b93dacf2f5c195",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000054",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/falstaff/",
-      "title_hint": "Falstaff"
-    },
-    {
-      "candidate_id": "oa-index-2ee53a13c924e5c8aa9f",
+      "candidate_id": "oa-index-1a02a18e39758285a976",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/otello/",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",
       "title_hint": "otello"
     },
     {
-      "candidate_id": "oa-index-6d3d1cab3d4ed61b17c3",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "verdi-trieste-season-2026-27",
-      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
-      "title_hint": "Lohengrin"
-    },
-    {
-      "candidate_id": "oa-index-8d766539708b0cb45f0a",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/don-carlos/",
-      "title_hint": "Don Carlos"
-    },
-    {
-      "candidate_id": "oa-index-a9e0eff95e96e71fd958",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "verdi-trieste-season-2026-27",
-      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/",
-      "title_hint": "L’elisir d’amore"
-    },
-    {
-      "candidate_id": "oa-index-a587b66c1f36bad78d65",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/alcina/",
-      "title_hint": "Alcina"
-    },
-    {
-      "candidate_id": "oa-index-20463bc8c3334dacecf8",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/",
-      "title_hint": "Una Lady Macbeth del distretto di Mzensk"
-    },
-    {
-      "candidate_id": "oa-index-84fd2f377ee783254524",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
-      "title_hint": "Maria Stuarda"
-    },
-    {
-      "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
-      "title_hint": "La Cenerentola"
-    },
-    {
-      "candidate_id": "oa-index-424f0996b47508273e69",
+      "candidate_id": "oa-index-1e27375a038df76a1ea6",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "lirico-cagliari-opera-2027",
-      "official_url": "https://www.liricocagliari.it/evento/il-cappello-di-paglia-di-firenze/",
-      "title_hint": "il cappello di paglia di firenze"
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "title_hint": "death in venice"
+    },
+    {
+      "candidate_id": "oa-index-93538b402fa3e844ca69",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
+      "title_hint": "il barbiere di siviglia"
+    },
+    {
+      "candidate_id": "oa-index-9fdcd7eba240da4540af",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/siberia/",
+      "title_hint": "Siberia"
+    },
+    {
+      "candidate_id": "oa-index-7ee44d5187617ce9e1b7",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "piacenza-opera-2026-27",
+      "official_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "title_hint": "Simon Boccanegra"
+    },
+    {
+      "candidate_id": "oa-index-1ea669503ea5640af931",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "ferrara-boccanegra-opera-2026-27",
+      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "title_hint": "Simon Boccanegra"
+    },
+    {
+      "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
+      "status": "automatic_retry",
+      "reason": "authority_not_unique",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "title_hint": "Code: Unknown"
+    },
+    {
+      "candidate_id": "oa-index-ecf1fda1dc67738cab86",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "verdi-trieste-season-2026-27",
+      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
+      "title_hint": "jeanne darc au bucher jeanne dark"
+    },
+    {
+      "candidate_id": "oa-index-eedca6da108bd27e8d30",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "petruzzelli-opera-2026",
+      "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+      "title_hint": "il trovatore verdi 18 27 ottobre"
+    },
+    {
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "petruzzelli-opera-2026",
+      "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
+      "title_hint": "la cecchina piccinni 21 28 gennaio"
+    },
+    {
+      "candidate_id": "oa-index-08102433798cc6aa1215",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
+      "title_hint": "simon boccanegra 2"
+    },
+    {
+      "candidate_id": "oa-index-19141fd504da67924d01",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "verdi-trieste-season-2026-27",
+      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
+      "title_hint": "don giovanni 2"
+    },
+    {
+      "candidate_id": "oa-index-207df538679e00657fe1",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "petruzzelli-opera-2026",
+      "official_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+      "title_hint": "bona sforza krautze 14 20 settembre"
     },
     {
       "candidate_id": "oa-index-53ec78e7155f5b9f3210",
@@ -175,39 +160,11 @@
       "title_hint": "il gobbo del califfo casavola 21 24 maggio"
     },
     {
-      "candidate_id": "oa-index-669472f18fdc8ab6bd13",
+      "candidate_id": "oa-index-6c5243260ad25ecab396",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/le-cenerentole-quattro-donne-una-storia/",
-      "title_hint": "le cenerentole quattro donne una storia"
-    },
-    {
-      "candidate_id": "oa-index-67ef6842ba33e2d6015d",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
-      "title_hint": "fabbrica offenbach"
-    },
-    {
-      "candidate_id": "oa-index-73348de657104a8b911f",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
-      "title_hint": "il barbiere di siviglia operacamion"
-    },
-    {
-      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/tosca-11/",
-      "title_hint": "tosca 11"
-    },
-    {
-      "candidate_id": "oa-index-857515ac803f6ce8e75f",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
-      "title_hint": "il barbiere di siviglia operacamion 2"
+      "source_key": "giglio-lucca-opera-2026-27",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/lanno-che-verra/",
+      "title_hint": "lanno che verra"
     },
     {
       "candidate_id": "oa-index-877637d643bbfb668688",
@@ -215,6 +172,13 @@
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/candide/",
       "title_hint": "candide"
+    },
+    {
+      "candidate_id": "oa-index-8aa427dd9ba609755fb6",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "reggio-valli-opera-2026-27",
+      "official_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/",
+      "title_hint": "la clemenza di tito 2"
     },
     {
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
@@ -229,34 +193,6 @@
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
       "title_hint": "otello gamification"
-    },
-    {
-      "candidate_id": "oa-index-a764d9a221b8659804fb",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/operacamion-tosca/",
-      "title_hint": "operacamion tosca"
-    },
-    {
-      "candidate_id": "oa-index-b71caef92f53a984ed36",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/aida-6/",
-      "title_hint": "aida 6"
-    },
-    {
-      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "donizetti-opera-2026",
-      "official_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
-      "title_hint": "Alahor in Granata"
-    },
-    {
-      "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/code-unknown/",
-      "title_hint": "code unknown"
     }
   ]
 }
