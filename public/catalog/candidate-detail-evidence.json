@@ -1302,6 +1302,64 @@
       ]
     },
     {
+      "candidate_id": "oa-index-ef3fc228eb643db30288",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
+      "status": "needs_editorial_review",
+      "checked_at": "2026-11-21T14:10:00+00:00",
+      "event_facts": [
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-03-12",
+          "starts_at": "2027-03-12T20:30:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-03-13",
+          "starts_at": "2027-03-13T18:00:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T18:00:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-03-16",
+          "starts_at": "2027-03-16T20:30:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-03-17",
+          "starts_at": "2027-03-17T20:30:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-03-18",
+          "starts_at": "2027-03-18T20:30:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Petruzzelli",
+          "date": "2027-03-19",
+          "starts_at": "2027-03-19T18:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-f942d4e01d9578a95e87",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
