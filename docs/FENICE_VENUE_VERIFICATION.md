@@ -13,3 +13,5 @@ Le rappresentazioni espressamente **riservate alle scuole** non devono comparire
 - Qualsiasi fonte con titolo, compositore o sede assente/contraddittoria deve restare sospesa, senza inventare orari.
 
 La correzione è compatibile con la pipeline centrale pre-pubblicazione; non sono previsti deploy FTP per i nuovi JSON.
+
+Nota di sicurezza: i titoli omonimi non sono risolti dal nome della sede; compositore e opera devono essere riconciliati nel registro canonico prima di creare la rappresentazione.
