@@ -13,6 +13,10 @@ on:
       # Complete editorial and archival provenance can now independently
       # unlock verified new-work publication, without a new network crawl.
       - 'data/verified-work-authority-seeds.json'
+      - 'data/verified-ticketing-art.json'
+      - 'tests/test_work_history.py'
+      - 'tests/test_work_posters.py'
+      - 'tests/test_ticketing_event_artwork.py'
       - 'data/archival-work-images.json'
       - 'data/verified-launch-catalog.json'
       - 'data/identity-registry.json'
