@@ -121,9 +121,12 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
     def exact_matches(data):
         return [x for x in data.get("search",[])
                 if isinstance(x,dict) and isinstance(x.get("id"),str)
-                and (slugify(x.get("label",""))==slugify(title_hint)
-                     or (isinstance(x.get("match"),dict) and
-                         slugify(x["match"].get("text",""))==slugify(title_hint)))]
+                and ((isinstance(x.get("label"),str) and x["label"].strip()
+                      and slugify(x["label"])==slugify(title_hint))
+                     or (isinstance(x.get("match"),dict)
+                         and isinstance(x["match"].get("text"),str)
+                         and x["match"]["text"].strip()
+                         and slugify(x["match"]["text"])==slugify(title_hint)))]
     matches=exact_matches(query)
     # Wikidata's Italian search sometimes gives translated labels while the
     # official theatre prints an English, German or French work title. Check
@@ -143,13 +146,13 @@ def resolve_identity(title_hint:str,*,composer_hint:str|None=None,fetch=read_api
         names += [a.get("value","") for lang in ("it","en")
                   for a in entity.get("aliases",{}).get(lang,[])
                   if isinstance(a,dict)]
-        if not any(isinstance(n,str) and slugify(n)==slugify(title_hint)
+        if not any(isinstance(n,str) and n.strip() and slugify(n)==slugify(title_hint)
                    for n in names):
             continue
         # Use the official title when the authority validates it as an exact
         # label or alias; never replace it with a translated unrelated title.
         label=next((n for n in names
-                    if isinstance(n,str) and slugify(n)==slugify(title_hint)),None)
+                    if isinstance(n,str) and n.strip() and slugify(n)==slugify(title_hint)),None)
         if label is None:continue
         # Wikidata currently prefers P7937 (form of creative work) for opera;
         # historic entities may still use P31. Never infer from title only.
