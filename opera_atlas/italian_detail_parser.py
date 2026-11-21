@@ -13,7 +13,7 @@ from scripts.publish_catalog_v2 import normalized
 MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,
         "giugno":6,"luglio":7,"agosto":8,"settembre":9,"ottobre":10,
         "novembre":11,"dicembre":12}
-CUES=re.compile(r"(?i)\\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie]|sospes[oaie])\\b")
+CUES=re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie]|sospes[oaie])\b")
 
 def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
     parsed=urlsplit(url)
@@ -38,27 +38,27 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
     if normalized(heading.first or "")!=normalized(title):
         raise ValueError("official detail heading mismatches work")
     if source_key=="carlo-felice-season-2026-27":
-        cutoff=re.search(r"(?i)\\bDove\\s*:",text)
+        cutoff=re.search(r"(?i)\bDove\s*:",text)
         if not cutoff:raise ValueError("missing Carlo Felice venue boundary")
         schedule=text[:cutoff.start()]
         venue_section=text[cutoff.end():cutoff.end()+90]
-        if not re.match(r"\\s*Teatro Carlo Felice\\b",venue_section,re.I):
+        if not re.match(r"\s*Teatro Carlo Felice\b",venue_section,re.I):
             raise ValueError("unknown Carlo Felice venue")
         venue="Teatro Carlo Felice"
-        rx=re.compile(r"(?i)\\b(?:LU|MA|ME|GI|VE|SA|DO)\\s+(\\d{1,2})/(\\d{1,2})/(20\\d{2})"
-                      r"\\s+.{0,45}?\\bOre\\s+([01]?\\d|2[0-3]):([0-5]\\d)\\b")
+        rx=re.compile(r"(?i)\b(?:LU|MA|ME|GI|VE|SA|DO)\s+(\d{1,2})/(\d{1,2})/(20\d{2})"
+                      r"\s+.{0,45}?\bOre\s+([01]?\d|2[0-3]):([0-5]\d)\b")
     else:
-        section=re.search(r"(?i)\\bInfo\\b",text)
-        venue_marker=re.search(r"(?i)\\bLuogo\\b",text[section.end():] if section else "")
+        section=re.search(r"(?i)\bInfo\b",text)
+        venue_marker=re.search(r"(?i)\bLuogo\b",text[section.end():] if section else "")
         if not section or not venue_marker:
             raise ValueError("missing Donizetti schedule section")
         schedule=text[section.end():section.end()+venue_marker.start()]
         venue_text=text[section.end()+venue_marker.end():]
-        venue_match=re.match(r"\\s*(Teatro Donizetti|Teatro Sociale)\\b",venue_text,re.I)
+        venue_match=re.match(r"\s*(Teatro Donizetti|Teatro Sociale)\b",venue_text,re.I)
         if not venue_match:raise ValueError("unknown Donizetti venue")
         venue=venue_match.group(1)
-        rx=re.compile(r"(?i)\\b(\\d{1,2})\\s+("+ "|".join(MONTHS) +
-                      r")\\s+(20\\d{2})\\s*\\|\\s*([01]?\\d|2[0-3]):([0-5]\\d)\\b")
+        rx=re.compile(r"(?i)\b(\d{1,2})\s+("+ "|".join(MONTHS) +
+                      r")\s+(20\d{2})\s*\|\s*([01]?\d|2[0-3]):([0-5]\d)\b")
     found={}
     for match in rx.finditer(schedule):
         if source_key=="carlo-felice-season-2026-27":
