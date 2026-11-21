@@ -79,7 +79,22 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
         or detail.get("source_url")!=source_url
         or detail.get("status") not in ("needs_program_review","needs_editorial_review")):
         raise ValueError("untrusted composite source")
-    parts=credited_components(heading)
+    # Source adapters may record separately verified component credits.
+    # This supports different official heading formats without venue-specific
+    # handling inside the central program model.
+    credited=detail.get("program_components")
+    if credited is not None:
+        if (not isinstance(credited,list) or not 2<=len(credited)<=12
+            or any(not isinstance(p,dict) or set(p)!={"title","composer"}
+                   or not all(isinstance(p[k],str) and p[k].strip()
+                              for k in ("title","composer")) for p in credited)):
+            raise ValueError("invalid credited components")
+        parts=[dict(p) for p in credited]
+        names=[(normalized(p["title"]),normalized(p["composer"])) for p in parts]
+        if len(set(names))!=len(names) or heading!=detail.get("program_heading"):
+            raise ValueError("ambiguous credited program")
+    else:
+        parts=credited_components(heading)
     works=list(registry.get("works",{}).values())
     for part in parts:
         found=[w for w in works if normalized(w.get("title",""))==normalized(part["title"])
@@ -94,7 +109,7 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
             normalized(row.get("composer",""))) not in member_identities
            for row in rows if isinstance(row,dict)):
         raise ValueError("program schedule credited to unrelated composition")
-    seen=set()
+    grouped={}
     dates=[]
     for row in rows:
         if not isinstance(row,dict) or row.get("venue")!=venue:
@@ -107,9 +122,19 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
             local=stamp.astimezone(IT)
         except (ValueError,TypeError,KeyError) as exc:
             raise ValueError("invalid program schedule") from exc
-        if day in seen:raise ValueError("one ticketed program per calendar date")
-        seen.add(day)
-        dates.append({"local_date":day.isoformat(),"starts_at":local.isoformat()})
+        group=grouped.setdefault(day.isoformat(),{})
+        identity=(normalized(row["event_title"]),normalized(row["composer"]))
+        if identity in group or (group and set(group.values())!={local.isoformat()}):
+            raise ValueError("duplicate or contradictory program ticket")
+        group[identity]=local.isoformat()
+    observed={tuple(sorted(group)) for group in grouped.values()}
+    if len(observed)!=1:raise ValueError("inconsistent program composition")
+    identities=set(next(iter(grouped.values())))
+    if identities!=member_identities and (
+            len(identities)!=1 or detail.get("program_components") is not None):
+        raise ValueError("incomplete independently credited program")
+    for day,group in sorted(grouped.items()):
+        dates.append({"local_date":day,"starts_at":next(iter(group.values()))})
     identity=hashlib.sha256((source_key+"|"+source_url).encode()).hexdigest()[:16]
     pid="oa-p-"+identity
     return {
