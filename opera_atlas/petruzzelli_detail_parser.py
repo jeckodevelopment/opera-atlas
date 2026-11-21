@@ -32,7 +32,7 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str):
     head=normalized(visible[:split]).replace("’","'")
     # The authoritative credit precedes the exact ticket schedule.
     official=normalized(title+" di "+composer).replace("’","'")
-    if official not in head:
+    if official not in head[:260]:
         raise ValueError("official title and composer credit not confirmed")
     if not re.search(r"\b"+re.escape(normalized(composer))+r"\b",head):
         raise ValueError("composer absent from official Petruzzelli event")
@@ -42,8 +42,17 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str):
         if i>=0:schedule=schedule[:i]
     if CANCELLED.search(schedule):
         raise ValueError("cancelled or postponed Petruzzelli performance")
+    # All official dates require hours. Never silently drop an incomplete card.
+    weekday_dates=re.findall(
+        r"(?i)\b(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)"
+        r"\s+[0-3]?\d\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|"
+        r"luglio|agosto|settembre|ottobre|novembre|dicembre)\s+20\d{2}\b",
+        schedule)
+    matches=SCHEDULE.findall(schedule)
+    if len(matches)!=len(weekday_dates):
+        raise ValueError("Petruzzelli schedule has dates without verified hours")
     found={}
-    for weekday,day,month,year,hh,mm in SCHEDULE.findall(schedule):
+    for weekday,day,month,year,hh,mm in matches:
         try:
             value=date(int(year),MONTHS[month.casefold()],int(day))
         except ValueError as exc:
