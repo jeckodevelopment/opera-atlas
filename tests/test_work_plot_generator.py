@@ -19,6 +19,16 @@ class PlotGeneratorTests(unittest.TestCase):
         self.assertTrue(45 <= len(synopsis) <= 220)
         self.assertNotIn(synopsis, page)
 
+    def test_plaintext_wikipedia_section_heading(self):
+        page = ("Opera e personaggi.\nTrama\n"
+                "Anna ama Enrico. Enrico accusa Anna di tradimento. "
+                "Gli altri personaggi affrontano le conseguenze.\n"
+                "Bibliografia\nEnrico uccide Giulio.")
+        result = synopsis_from_wikipedia_plot(page)
+        self.assertIn("Anna prova amore per Enrico", result)
+        self.assertIn("Enrico accusa Anna", result)
+        self.assertNotIn("Giulio", result)
+
     def test_insufficient_plot_is_not_rewritten_or_invented(self):
         self.assertIsNone(synopsis_from_wikipedia_plot(
             "Anna si innamora di Enrico. Enrico cerca di liberare Anna."))
