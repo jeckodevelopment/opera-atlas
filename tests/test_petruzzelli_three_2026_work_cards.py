@@ -40,6 +40,16 @@ class ThreeBariOperas(unittest.TestCase):
         card=verified_coproduction_poster(source_url=url,title="Bona Sforza",
                                          composer="Zygmunt Krauze")
         self.assertIsNotNone(card)
+        # Petruzzelli's official 2026 headline is all capitals while the
+        # curated world-premiere source retains title case.
+        caps=verified_coproduction_poster(source_url=url,title="BONA SFORZA",
+                                            composer="Zygmunt Krauze")
+        self.assertEqual(caps,card)
+        self.assertEqual(verified_candidate_image({},
+            title="BONA SFORZA",composer="Zygmunt Krauze",url=url),card)
+        self.assertTrue(is_verified_coproduction_poster(
+            {"work_id":"oa-w-999999",**card},title="BONA SFORZA",
+            composer="Zygmunt Krauze"))
         self.assertEqual(card["kind"],"official_coproduction_poster")
         self.assertEqual(card["provenance_url"],"https://opera.krakow.pl/spektakle/bona-sforza")
         self.assertEqual(verified_candidate_image({},title="Bona Sforza",
