@@ -972,6 +972,28 @@
       "photo_credit": "Utintare, Wikimedia Commons — CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0",
       "calendar_status": "not_acquired"
+    },
+    {
+      "id": "oa-v-000021",
+      "name": "Teatro Malibran",
+      "city": "Venezia",
+      "region": "Veneto",
+      "city_slug": "venezia",
+      "slug": "teatro-malibran",
+      "website": "https://www.teatrolafenice.it/",
+      "source_url": "https://www.teatrolafenice.it/teatro-malibran-una-storia-lunga-345-anni/",
+      "description": "Nel sestiere di Cannaregio, il Malibran conserva la storia del San Giovanni Grisostomo e ospita spettacoli della Fondazione Teatro La Fenice.",
+      "canonical_venue_id": "oa-v-000021",
+      "profile_key": "Venezia|Teatro Malibran",
+      "monitoring_status": "programma_censito",
+      "address": "Campiello del Teatro, Cannaregio 5873",
+      "history": "Inaugurato nel 1678 come Teatro di San Giovanni Grisostomo per iniziativa dei Grimani, il Malibran sorge nell'area dell'antica casa di Marco Polo. Dal 1835 porta il nome della celebre cantante Maria Malibran; acquisito dal Comune nel 1992, è oggi una delle sedi della Fondazione Teatro La Fenice.",
+      "opening_year": 1678,
+      "photo_file": "Theatre Malibran (Intérieur).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Theatre_Malibran_(Int%C3%A9rieur).jpg",
+      "photo_credit": "Van Der Meulen Christofle, Wikimedia Commons — CC0 1.0",
+      "photo_license": "CC0 1.0",
+      "calendar_status": "acquired"
     }
   ],
   "related_organizations": [

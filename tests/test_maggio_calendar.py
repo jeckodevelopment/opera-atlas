@@ -62,6 +62,39 @@ class FlorenceCalendarTests(unittest.TestCase):
         self.assertEqual({x["venue"] for x in rows},{"Teatro del Maggio Musicale Fiorentino"})
         self.assertTrue(all(x["starts_at"].endswith("+01:00") for x in rows))
 
+    def test_goldoni_unseen_composition_is_credited_from_official_calendar(self):
+        import hashlib
+        official="https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+        title="Il mondo alla roversa o sia le donne che comandano"
+        cid="oa-index-"+hashlib.sha256((SOURCE+"|"+official).encode()).hexdigest()[:20]
+        detail={"schema_version":1,"evidence":[{"candidate_id":cid,
+            "source_key":SOURCE,"source_url":official,
+            "status":"needs_editorial_review","event_facts":[{
+                "event_title":title,"venue":"Teatro Goldoni",
+                "date":"2027-01-30","starts_at":"2027-01-30T17:00:00+01:00"}]}]}
+        page=('<a href="/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano">'
+              'Opera 30 January Saturday 17:00 Teatro Goldoni '
+              'Il mondo alla roversa o sia le donne che comandano '
+              'Baldassarre Galuppi</a>')
+        found=parse_month(page,url=INDEX,registry=self.registry,
+                          today=date(2026,11,21),evidence=detail)
+        self.assertEqual(len(found),1)
+        self.assertEqual(found[0]["composer"],"Baldassarre Galuppi")
+        self.assertEqual(found[0]["venue"],"Teatro Goldoni")
+        candidates,evidence=combine({"schema_version":1,"candidates":[]},detail,
+                                    found,at="2026-11-21T18:00:00+00:00")
+        self.assertEqual(len(evidence["evidence"]),1)
+        self.assertEqual(evidence["evidence"][0]["event_facts"][0]["composer"],
+                         "Baldassarre Galuppi")
+        fake=page.replace("Baldassarre Galuppi","Direttore Esemplare")
+        self.assertEqual(parse_month(fake,url=INDEX,registry=self.registry,
+                          today=date(2026,11,21),evidence=detail),[])
+        changed=copy.deepcopy(detail)
+        changed["evidence"][0]["event_facts"][0]["starts_at"]="2027-01-30T20:00:00+01:00"
+        with self.assertRaises(ValueError):
+            combine({"schema_version":1,"candidates":[]},changed,
+                    found,at="2026-11-21T18:00:00+00:00")
+
     def test_unknown_work_other_venue_and_invalid_month_are_not_facts(self):
         self.assertEqual(parse_month(page().replace("La traviata Giuseppe Verdi",
                          "La traviata Wolfgang Amadeus Mozart"),

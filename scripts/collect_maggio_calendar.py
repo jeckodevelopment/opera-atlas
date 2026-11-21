@@ -26,6 +26,7 @@ SOURCE="maggio-fiorentino-calendar-2027"
 ORIGIN="https://www.maggiofiorentino.com/"
 VENUE_LABEL="Teatro del Maggio - Sala Grande"
 VENUE="Teatro del Maggio Musicale Fiorentino"
+VENUES={VENUE_LABEL:VENUE,"Teatro Goldoni":"Teatro Goldoni"}
 HEALTH=ROOT/"data"/"maggio-calendar-health.json"
 MONTHS={"january":1,"february":2,"march":3,"april":4,"may":5,"june":6,
         "july":7,"august":8,"september":9,"october":10,"november":11,"december":12,
@@ -36,7 +37,7 @@ DAYWORDS={"monday","tuesday","wednesday","thursday","friday","saturday","sunday"
 CARD=re.compile(
     r"^Opera\s+([0-3]?\d)\s+([A-Za-zÀ-ÿ]+)\s+([A-Za-zÀ-ÿ]+)\s+"
     r"([01]?\d|2[0-3]):([0-5]\d)\s+"
-    r"Teatro del Maggio\s*-\s*Sala Grande\s+(.+)$",re.I)
+    r"(Teatro del Maggio\s*-\s*Sala Grande|Teatro Goldoni)\s+(.+)$",re.I)
 
 class Anchors(HTMLParser):
     def __init__(self):
@@ -70,7 +71,8 @@ def months_from(today:date,*,count:int=8)->list[str]:
 def canonical_key(value:str)->str:
     return " ".join(normalized(value).replace("’","'").split())
 
-def parse_month(html:str,*,url:str,registry:dict,today:date)->list[dict]:
+def parse_month(html:str,*,url:str,registry:dict,today:date,
+                evidence:dict|None=None)->list[dict]:
     target=urlsplit(url)
     match=re.fullmatch(r"/calendario/(20\d{2})/(\d{2})/opera",target.path)
     if (target.scheme!="https" or target.hostname!="www.maggiofiorentino.com"
@@ -81,6 +83,28 @@ def parse_month(html:str,*,url:str,registry:dict,today:date)->list[dict]:
     if not 2026<=year<=2098 or not 1<=month<=12:
         raise ValueError("unsupported Florence calendar year/month")
     known=list(registry.get("works",{}).values())
+    # Official performance H1 and venue from detail identify the new title;
+    # calendar cards independently credit its composer. Never parse URL slugs.
+    credited={}
+    for entry in (evidence or {}).get("evidence",[]):
+        urlref=entry.get("source_url")
+        if (entry.get("source_key")!=SOURCE or
+            entry.get("status")!="needs_editorial_review" or
+            not isinstance(urlref,str) or not eligible(SOURCE,urlref)):
+            continue
+        entries=entry.get("event_facts",[])
+        if not isinstance(entries,list) or not entries or not all(
+            isinstance(x,dict) for x in entries):continue
+        titles={x.get("event_title") for x in entries}
+        venues={x.get("venue") for x in entries}
+        composers={x.get("composer") for x in entries if
+                   isinstance(x.get("composer"),str) and x["composer"].strip()}
+        if len(titles)!=1 or len(venues)!=1 or len(composers)>1:continue
+        title=next(iter(titles))
+        venue=next(iter(venues))
+        if (not isinstance(title,str) or not title.strip() or
+            venue not in VENUES.values()):continue
+        credited[urlref]=(title,venue,next(iter(composers)) if composers else None)
     reader=Anchors()
     reader.feed(html)
     rows={}
@@ -94,9 +118,11 @@ def parse_month(html:str,*,url:str,registry:dict,today:date)->list[dict]:
             continue
         found=CARD.fullmatch(label)
         if not found:continue
-        daytext,monthname,weekday,hh,mm,credit=found.groups()
+        daytext,monthname,weekday,hh,mm,venue_label,credit=found.groups()
         if MONTHS.get(monthname.casefold())!=month or weekday.casefold() not in DAYWORDS:
             continue
+        venue=VENUES.get(next((v for v in VENUES if v.casefold()==venue_label.casefold()),""))
+        if venue is None:continue
         try:
             day=date(year,month,int(daytext))
         except ValueError:
@@ -112,11 +138,28 @@ def parse_month(html:str,*,url:str,registry:dict,today:date)->list[dict]:
             if (credit.startswith(title+" "+composer)
                 or credit.startswith(composer+" "+title)):
                 matches.append(work)
-        if len(matches)!=1:continue
-        work=matches[0]
+        if len(matches)>1:continue
+        if len(matches)==1:
+            work=matches[0]
+            title,composer=work["title"],work["composer"]
+        else:
+            verified=credited.get(detail)
+            if not verified or verified[1]!=venue:continue
+            title,_,old_composer=verified
+            primary=canonical_key(title)
+            if not credit.startswith(primary+" "):continue
+            author=credit[len(primary)+1:]
+            # Exact capitalized full person credit after independently checked
+            # title; reject staff roles and any unstructured trailing details.
+            if (not re.fullmatch(r"[a-zà-ÿ][\w'’.-]+(?:\s+[a-zà-ÿ][\w'’.-]+){1,4}",author,re.I)
+                or author.split()[0] in {"direttore","regia","maestro","soprano",
+                                          "tenore","baritono","coro","orchestra"}):
+                continue
+            if old_composer and canonical_key(old_composer)!=author:continue
+            composer=old_composer or " ".join(token.capitalize() for token in author.split())
         key=(detail,day.isoformat())
-        row={"official_url":detail,"event_title":work["title"],
-             "composer":work["composer"],"venue":VENUE,
+        row={"official_url":detail,"event_title":title,
+             "composer":composer,"venue":venue,
              "date":day.isoformat(),
              "starts_at":official_local_time(day.isoformat(),f"{int(hh):02d}:{mm}")}
         if key in rows and rows[key]!=row:
@@ -155,7 +198,12 @@ def combine(candidates:dict,evidence:dict,observations:list[dict],*,at:str):
             fact={key:item[key] for key in ("event_title","composer","venue","date","starts_at")}
             day=item["date"]
             if day in merged and merged[day]!=fact:
-                raise ValueError("conflicting published source timing requires review")
+                former=merged[day]
+                only_missing_credit=(not former.get("composer") and
+                    all(former.get(field)==fact.get(field) for field in
+                        ("event_title","venue","date","starts_at")))
+                if not only_missing_credit:
+                    raise ValueError("conflicting published source timing requires review")
             merged[day]=fact
         facts[cid]={"candidate_id":cid,"source_key":SOURCE,"source_url":url,
                     "checked_at":at,"status":"needs_editorial_review",
@@ -185,7 +233,8 @@ def scan(*,today:date,fetcher=fetch_official_html,network_enabled:bool=False,
             try:
                 if not network_enabled:raise AccessDenied("network disabled")
                 page=fetcher(db,source_id=sid,url=url,network_enabled=True)
-                parsed=parse_month(page.html,url=url,registry=registry,today=today)
+                parsed=parse_month(page.html,url=url,registry=registry,
+                                   today=today,evidence=evidence)
                 observations.extend(parsed)
                 status.append({"url":url,"status":"verified","known_recite":len(parsed)})
             except (AccessDenied,FetchUnavailable,ValueError) as exc:

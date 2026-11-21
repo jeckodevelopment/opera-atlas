@@ -22,6 +22,18 @@ class TheatreEditorialHistoryTests(unittest.TestCase):
                 self.assertTrue(1600<=venue["opening_year"]<=2026,key)
                 self.assertIn(str(venue["opening_year"]),venue["history"],key)
 
+    def test_new_malibran_venue_is_not_conflated_with_fenice(self):
+        profile=self.profiles["Venezia|Teatro Malibran"]
+        self.assertIn("1678",profile["history"])
+        self.assertIn("Cannaregio 5873",profile["address"])
+        self.assertIn("teatrolafenice.it",profile["source"])
+        census=json.loads((ROOT/"data/venue-directory.json").read_text(encoding="utf-8"))
+        item=next(x for x in census["venues"] if x["name"]=="Teatro Malibran")
+        self.assertEqual(item["canonical_venue_id"],"oa-v-000021")
+        self.assertEqual(item["profile_key"],"Venezia|Teatro Malibran")
+        self.assertEqual(item["photo_license"],"CC0 1.0")
+        self.assertNotEqual(profile,self.profiles["Venezia|Teatro La Fenice"])
+
     def test_torino_uses_two_historically_distinct_dates(self):
         theatre=self.profiles["Torino|Teatro Regio"]["history"]
         for item in ("1740","1936","1973","Carlo Mollino"):
