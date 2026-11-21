@@ -57,6 +57,25 @@ assert.match(lib.WORKS["un-ballo-in-maschera"],/Vocal score frontispiece/);
 assert.ok(lib.work({title:"Nixon in China",work_id:"oa-w-000034"}).src.includes("Dortmund_Kampstr_Nixon_in_China"));
 assert.ok(lib.work({title:"Jenůfa",work_id:"oa-w-000020"}).src.includes("Jenufa.jpg"));
 
+const restored=[
+  ["oa-w-000001","La traviata","Traviata.jpg"],
+  ["oa-w-000002","L’italiana in Algeri","1930-Italiana-in-Algeri.jpg"],
+  ["oa-w-000006","Pagliacci","Pagliacci Original Score Cover.jpg"],
+  ["oa-w-000010","Evgenij Onegin",'"Eugene Onegin" opera poster,1937, Yerevan Opera Theatre.jpg'],
+  ["oa-w-000011","Turandot","Poster Turandot.jpg"],
+  ["oa-w-000025","Nabucco","Nabucco (libretto, 1842).jpg"],
+];
+for(const [work_id,title,filename] of restored){
+  const pinned=lib.work({work_id,title,work_slug:"incorrect-slug"});
+  assert.equal(pinned.kind,"archival_work_image",title);
+  assert.ok(pinned.src.includes(encodeURIComponent(filename.replaceAll(" ","_"))),title);
+  assert.equal(pinned.fallbackSrc,null);
+  // Stage and listing views use the same immutable work ID.
+  assert.equal(lib.work({work_id,title}).src,pinned.src);
+}
+assert.match(lib.WORKS["nabucco"],/libretto, 1842/);
+
+
 assert.equal(new Set(images.map(x=>x.src)).size,images.length,"every opera needs a distinct image");
 for(const item of images){
   if(item.src.startsWith("https://")){
