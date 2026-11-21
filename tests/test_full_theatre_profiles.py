@@ -16,9 +16,9 @@ class FullTheatreProfileTests(unittest.TestCase):
         cls.directory=json.loads(SOURCE.read_text(encoding="utf-8"))["venues"]
         cls.profiles=json.loads((SITE/"theatre-profiles.json").read_text(encoding="utf-8"))["venues"]
 
-    def test_all_fifty_two_have_real_profiles_and_map_addresses(self):
-        self.assertEqual(len(self.directory),51)
-        self.assertEqual(len(self.profiles),51)
+    def test_all_venues_have_real_profiles_and_map_addresses(self):
+        self.assertGreaterEqual(len(self.directory),52)
+        self.assertEqual(len(self.profiles),len(self.directory))
         for venue in self.directory:
             key=venue.get("profile_key",venue["city"]+"|"+venue["name"])
             self.assertIn(key,self.profiles,key)
@@ -50,7 +50,7 @@ class FullTheatreProfileTests(unittest.TestCase):
 
     def test_all_active_venues_have_individual_illustrations_and_credits(self):
         photos=[v for v in self.directory if v.get("photo_file")]
-        self.assertEqual(len(photos),50)
+        self.assertEqual(len(photos),len(self.directory)-1)
         external=[v for v in self.directory if v.get("photo_url")]
         self.assertEqual([v["name"] for v in external],["Teatro Politeama Greco"])
         self.assertEqual(external[0]["photo_license"],"CC BY 4.0")
@@ -62,7 +62,8 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertEqual([v["name"] for v in without],["Teatro Politeama Greco"])
         self.assertEqual(without[0]["photo_status"],"verified")
         self.assertFalse(any(v["slug"]=="teatro-comunale-nouveau" for v in self.directory))
-        self.assertEqual(sum(v["city"]=="Bologna" for v in self.directory),1)
+        self.assertEqual({v["name"] for v in self.directory if v["city"]=="Bologna"},
+                         {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"})
         self.assertNotEqual(next(v["photo_file"] for v in photos if v["name"]=="Arena di Verona"),
                             next(v["photo_file"] for v in photos if v["name"]=="Teatro Filarmonico"))
 
