@@ -945,3 +945,8 @@ Il test `tests/test_bologna_full_season.py` verifica 9 produzioni, 38 recite (19
 
 
 Il test completo di Bologna è **invariante rispetto allo stato del catalogo**: prima della prima acquisizione deve promuovere le sei opere mancanti, dopo la pubblicazione deve riscontrare 38 recite senza crearne altre. Non si deve bloccare la CI quando un dato passa legittimamente da `needs_review` ad `already_catalogued` durante il refresh giornaliero.
+
+
+### Concorrenza del refresh e pubblicazione sicura (21/11/2026)
+
+Un refresh avviato prima di modifiche al ramo `main` può ritrovarsi con più commit locali prodotti dal checkpoint e dalla pubblicazione finale. In questo caso il publisher non deve fallire con `catalog publication history diverged`, né sovrascrivere una versione successiva di codice o dati. `safe_push_catalog` restituisce lo stato verificabile **deferred** quando il proprio commit padre non è più antenato di `main`; il workflow invia il normale evento `catalog-refresh-retry`, che ricostruisce il catalogo sul ramo più recente. Nessun `force push`, nessuna pubblicazione di JSON obsoleti. Regressione verificata con repository Git temporaneo e due commit locali concorrenti.

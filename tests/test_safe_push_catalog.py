@@ -82,6 +82,27 @@ class SafePushTests(unittest.TestCase):
             self.assertEqual((clone/"data/catalog.json").read_text(),"{}\n")
             self.assertEqual((clone/"scripts/adapter.py").read_text(),"NEW_ADAPTER=True\n")
 
+    def test_multiple_unpublished_catalog_commits_and_new_main_defer_cleanly(self):
+        with TemporaryDirectory() as tmp:
+            pub,writer,remote=self.setup_repos(tmp)
+            # The refresh generated more than one local commit while another
+            # change reached main; HEAD^ is no longer on origin/main.
+            (pub/"docs/notes.md").write_text("Local note\n")
+            execute(pub,"add",".")
+            execute(pub,"commit","-m","local post-checkpoint note")
+            (writer/"scripts/adapter.py").write_text("NEW_ADAPTER=True\n")
+            execute(writer,"add",".")
+            execute(writer,"commit","-m","concurrent adapter")
+            execute(writer,"push","origin","main")
+            result=safe_push(pub,verify=lambda _:self.fail(
+                "must not rebase or publish stale catalog"))
+            self.assertEqual(result,"deferred")
+            clone=Path(tmp)/"proof"
+            execute(Path(tmp),"clone","-b","main",str(remote),str(clone))
+            self.assertEqual((clone/"data/catalog.json").read_text(),"{}\n")
+            self.assertEqual((clone/"scripts/adapter.py").read_text(),
+                             "NEW_ADAPTER=True\n")
+
     def test_deferred_push_emits_workflow_retry_output(self):
         with TemporaryDirectory() as tmp:
             output=Path(tmp)/"github_output"

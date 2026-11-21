@@ -48,7 +48,13 @@ def safe_push(repo:Path,*,verify=None,max_attempts:int=3)->str:
         base=git(repo,"rev-parse","HEAD^").stdout.strip()
         if git(repo,"merge-base","--is-ancestor",base,upstream,
                check=False).returncode!=0:
-            raise RuntimeError("catalog publication history diverged")
+            # A prior checkpoint or another writer can create multiple local
+            # commits while main advances. This is a stale output, *not* an
+            # irrecoverable git failure. Never replay the outdated catalog:
+            # allow the workflow's retry dispatch to build on current main.
+            print("::warning::Catalog push deferred: publication history "
+                  "diverged after concurrent changes; refresh latest main.")
+            return "deferred"
         changed=git(repo,"diff","--name-only",base,upstream).stdout.splitlines()
         if source_affecting(changed):
             print("::warning::Catalog push deferred: upstream source or canonical "
