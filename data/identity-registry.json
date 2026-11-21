@@ -1063,6 +1063,22 @@
       "slug": "il-barbiere-di-siviglia",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
       "season": "2026"
+    },
+    "auto-559b2402d287d446": {
+      "id": "oa-s-000088",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000006",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
+      "season": "2026-2027"
+    },
+    "auto-f2e706992e9fbbf8": {
+      "id": "oa-s-000089",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000008",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/",
+      "season": "2026-2027"
     }
   },
   "performances": {
@@ -3597,6 +3613,108 @@
       "staging_id": "oa-s-000087",
       "original_date": "2026-12-22",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+    },
+    "auto-559b2402d287d446|2027-10-02": {
+      "id": "oa-r-000438",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-02",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-08": {
+      "id": "oa-r-000439",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-08",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-14": {
+      "id": "oa-r-000440",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-14",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-16": {
+      "id": "oa-r-000441",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-16",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-19": {
+      "id": "oa-r-000442",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-19",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-21": {
+      "id": "oa-r-000443",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-21",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-23": {
+      "id": "oa-r-000444",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-23",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-25": {
+      "id": "oa-r-000445",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-25",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-27": {
+      "id": "oa-r-000446",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-559b2402d287d446|2027-10-29": {
+      "id": "oa-r-000447",
+      "staging_id": "oa-s-000088",
+      "original_date": "2027-10-29",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+    },
+    "auto-f2e706992e9fbbf8|2027-05-25": {
+      "id": "oa-r-000448",
+      "staging_id": "oa-s-000089",
+      "original_date": "2027-05-25",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+    },
+    "auto-f2e706992e9fbbf8|2027-05-26": {
+      "id": "oa-r-000449",
+      "staging_id": "oa-s-000089",
+      "original_date": "2027-05-26",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+    },
+    "auto-f2e706992e9fbbf8|2027-05-27": {
+      "id": "oa-r-000450",
+      "staging_id": "oa-s-000089",
+      "original_date": "2027-05-27",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+    },
+    "auto-f2e706992e9fbbf8|2027-05-28": {
+      "id": "oa-r-000451",
+      "staging_id": "oa-s-000089",
+      "original_date": "2027-05-28",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+    },
+    "auto-f2e706992e9fbbf8|2027-05-29": {
+      "id": "oa-r-000452",
+      "staging_id": "oa-s-000089",
+      "original_date": "2027-05-29",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+    },
+    "auto-f2e706992e9fbbf8|2027-05-30": {
+      "id": "oa-r-000453",
+      "staging_id": "oa-s-000089",
+      "original_date": "2027-05-30",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+    },
+    "auto-f2e706992e9fbbf8|2027-06-01": {
+      "id": "oa-r-000454",
+      "staging_id": "oa-s-000089",
+      "original_date": "2027-06-01",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
     }
   }
 }

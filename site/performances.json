@@ -5468,6 +5468,42 @@
       ]
     },
     {
+      "id": "curated:auto-f2e706992e9fbbf8:2027-05-25",
+      "starts_at": "2027-05-25T19:00:00+02:00",
+      "local_date": "2027-05-25",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+      ]
+    },
+    {
+      "id": "curated:auto-f2e706992e9fbbf8:2027-05-26",
+      "starts_at": "2027-05-26T19:00:00+02:00",
+      "local_date": "2027-05-26",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+      ]
+    },
+    {
       "id": "curated:regio-carmen-2027:2027-05-26",
       "starts_at": "2027-05-26T19:30:00+02:00",
       "local_date": "2027-05-26",
@@ -5483,6 +5519,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:auto-f2e706992e9fbbf8:2027-05-27",
+      "starts_at": "2027-05-27T19:00:00+02:00",
+      "local_date": "2027-05-27",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+      ]
+    },
+    {
+      "id": "curated:auto-f2e706992e9fbbf8:2027-05-28",
+      "starts_at": "2027-05-28T19:00:00+02:00",
+      "local_date": "2027-05-28",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
       ]
     },
     {
@@ -5540,6 +5612,24 @@
       ]
     },
     {
+      "id": "curated:auto-f2e706992e9fbbf8:2027-05-29",
+      "starts_at": "2027-05-29T19:00:00+02:00",
+      "local_date": "2027-05-29",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+      ]
+    },
+    {
       "id": "curated:auto-62da655021bdc4f6:2027-05-29",
       "starts_at": "2027-05-29T20:00:00+02:00",
       "local_date": "2027-05-29",
@@ -5591,6 +5681,42 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-f2e706992e9fbbf8:2027-05-30",
+      "starts_at": "2027-05-30T17:00:00+02:00",
+      "local_date": "2027-05-30",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
+      ]
+    },
+    {
+      "id": "curated:auto-f2e706992e9fbbf8:2027-06-01",
+      "starts_at": "2027-06-01T19:00:00+02:00",
+      "local_date": "2027-06-01",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
       ]
     },
     {
@@ -7178,6 +7304,24 @@
       ]
     },
     {
+      "id": "curated:auto-559b2402d287d446:2027-10-02",
+      "starts_at": "2027-10-02T20:00:00+02:00",
+      "local_date": "2027-10-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
       "id": "curated:auto-7f4bc91ba6697826:2027-10-03",
       "starts_at": "2027-10-03T15:30:00+02:00",
       "local_date": "2027-10-03",
@@ -7193,6 +7337,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/normatebar/"
+      ]
+    },
+    {
+      "id": "curated:auto-559b2402d287d446:2027-10-08",
+      "starts_at": "2027-10-08T20:00:00+02:00",
+      "local_date": "2027-10-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
       ]
     },
     {
@@ -7214,6 +7376,24 @@
       ]
     },
     {
+      "id": "curated:auto-559b2402d287d446:2027-10-14",
+      "starts_at": "2027-10-14T20:00:00+02:00",
+      "local_date": "2027-10-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
       "id": "curated:auto-9c8433ba74501efc:2027-10-14",
       "starts_at": "2027-10-14T20:00:00+02:00",
       "local_date": "2027-10-14",
@@ -7229,6 +7409,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-559b2402d287d446:2027-10-16",
+      "starts_at": "2027-10-16T20:00:00+02:00",
+      "local_date": "2027-10-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
       ]
     },
     {
@@ -7250,6 +7448,24 @@
       ]
     },
     {
+      "id": "curated:auto-559b2402d287d446:2027-10-19",
+      "starts_at": "2027-10-19T20:00:00+02:00",
+      "local_date": "2027-10-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
       "id": "curated:auto-9c8433ba74501efc:2027-10-19",
       "starts_at": "2027-10-19T20:00:00+02:00",
       "local_date": "2027-10-19",
@@ -7265,6 +7481,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-559b2402d287d446:2027-10-21",
+      "starts_at": "2027-10-21T20:00:00+02:00",
+      "local_date": "2027-10-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
       ]
     },
     {
@@ -7286,6 +7520,24 @@
       ]
     },
     {
+      "id": "curated:auto-559b2402d287d446:2027-10-23",
+      "starts_at": "2027-10-23T20:00:00+02:00",
+      "local_date": "2027-10-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
       "id": "curated:auto-d7a3053257b59157:2027-10-24",
       "starts_at": "2027-10-24T15:30:00+02:00",
       "local_date": "2027-10-24",
@@ -7301,6 +7553,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+      ]
+    },
+    {
+      "id": "curated:auto-559b2402d287d446:2027-10-25",
+      "starts_at": "2027-10-25T20:00:00+02:00",
+      "local_date": "2027-10-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
       ]
     },
     {
@@ -7322,6 +7592,24 @@
       ]
     },
     {
+      "id": "curated:auto-559b2402d287d446:2027-10-27",
+      "starts_at": "2027-10-27T20:00:00+02:00",
+      "local_date": "2027-10-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
       "id": "curated:auto-d7a3053257b59157:2027-10-28",
       "starts_at": "2027-10-28T19:00:00+02:00",
       "local_date": "2027-10-28",
@@ -7337,6 +7625,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+      ]
+    },
+    {
+      "id": "curated:auto-559b2402d287d446:2027-10-29",
+      "starts_at": "2027-10-29T20:00:00+02:00",
+      "local_date": "2027-10-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
       ]
     },
     {

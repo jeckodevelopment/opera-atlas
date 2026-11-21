@@ -2614,6 +2614,96 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-559b2402d287d446",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
+      "dates": [
+        [
+          "2027-10-02",
+          "20:00"
+        ],
+        [
+          "2027-10-08",
+          "20:00"
+        ],
+        [
+          "2027-10-14",
+          "20:00"
+        ],
+        [
+          "2027-10-16",
+          "20:00"
+        ],
+        [
+          "2027-10-19",
+          "20:00"
+        ],
+        [
+          "2027-10-21",
+          "20:00"
+        ],
+        [
+          "2027-10-23",
+          "20:00"
+        ],
+        [
+          "2027-10-25",
+          "20:00"
+        ],
+        [
+          "2027-10-27",
+          "20:00"
+        ],
+        [
+          "2027-10-29",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f2e706992e9fbbf8",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/",
+      "dates": [
+        [
+          "2027-05-25",
+          "19:00"
+        ],
+        [
+          "2027-05-26",
+          "19:00"
+        ],
+        [
+          "2027-05-27",
+          "19:00"
+        ],
+        [
+          "2027-05-28",
+          "19:00"
+        ],
+        [
+          "2027-05-29",
+          "19:00"
+        ],
+        [
+          "2027-05-30",
+          "17:00"
+        ],
+        [
+          "2027-06-01",
+          "19:00"
+        ]
+      ]
     }
   ]
 }
