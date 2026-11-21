@@ -66,6 +66,10 @@ for(const item of images){
     const img=lib.element(item,"event-image");
     img.handlers.error();
     assert.ok(img.src.startsWith("data:image/svg+xml"),"historical poster fallback must be unique");
+  }else if(item.src.startsWith("./cover-")){
+    const img=lib.element(item,"event-image");
+    img.handlers.error();
+    assert.ok(img.src.startsWith("data:image/svg+xml"),"local cover has reliable fallback");
   }else assert.ok(item.src.startsWith("data:image/svg+xml"));
 }
 hero.error();
