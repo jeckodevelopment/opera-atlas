@@ -67,13 +67,21 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
         raise ValueError("cancelled or postponed Rome performance")
     found={}
     for weekday,day,month,hh,mm in PERFORMANCE.findall(section):
-        try:
-            actual=date(2027 if MONTHS[month.casefold()]<=8 else 2026,
-                        MONTHS[month.casefold()],int(day))
-        except ValueError as exc:
-            raise ValueError("invalid Rome performance date") from exc
-        if actual.weekday()!=DAYS[weekday.casefold()]:
-            raise ValueError("Rome event weekday contradicts official date")
+        month_number=MONTHS[month.casefold()]
+        # A 2026/27 official season also contains productions in Sep-Dec
+        # 2027. Choose the uniquely matching calendar year from the theatre's
+        # explicit weekday; never assume autumn performances are always 2026.
+        possible=[]
+        for year in ((2026,2027) if month_number>=9 else (2027,)):
+            try:
+                candidate=date(year,month_number,int(day))
+            except ValueError:
+                continue
+            if candidate.weekday()==DAYS[weekday.casefold()]:
+                possible.append(candidate)
+        if len(possible)!=1:
+            raise ValueError("Rome event weekday or calendar year ambiguous")
+        actual=possible[0]
         iso=actual.isoformat()
         clock=f"{int(hh):02d}:{mm}"
         if iso in found and found[iso]!=clock:
