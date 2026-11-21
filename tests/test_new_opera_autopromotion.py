@@ -103,6 +103,32 @@ class NewOperaPromotionTests(unittest.TestCase):
                     "oa-index-b4180540983902f703af")
         self.assertIsNone(cached.get("synopsis"))
 
+    def test_siberia_source_bound_editorial_completes_existing_candidate(self):
+        from scripts.auto_catalogue import complete_cached_verified_work_cards
+        from scripts.auto_work_research import OUT
+        from scripts.collect_candidate_details import OUTPUT
+        from scripts.publish_work_editorial import validate_history
+        intelligence=json.loads(OUT.read_text(encoding="utf-8"))
+        evidence=json.loads(OUTPUT.read_text(encoding="utf-8"))
+        cid="oa-index-9fdcd7eba240da4540af"
+        completed=complete_cached_verified_work_cards(intelligence,evidence)
+        row=next(x for x in completed["works"] if x["candidate_id"]==cid)
+        self.assertEqual(row["wikidata_id"],"Q2292268")
+        self.assertEqual(row["composer"],"Umberto Giordano")
+        self.assertIn("Stephana",row["synopsis"])
+        self.assertTrue(validate_history(row["history"]))
+        # An exact source-bound editorial card must never be reused when
+        # official composer evidence disagrees with the canonical identity.
+        tampered=copy.deepcopy(evidence)
+        detail=next(x for x in tampered["evidence"] if x["candidate_id"]==cid)
+        detail["event_facts"][0]["composer"]="Giuseppe Verdi"
+        unresolved=copy.deepcopy(intelligence)
+        target=next(x for x in unresolved["works"] if x["candidate_id"]==cid)
+        target["synopsis"]=None
+        rejected=complete_cached_verified_work_cards(unresolved,tampered)
+        row=next(x for x in rejected["works"] if x["candidate_id"]==cid)
+        self.assertIsNone(row["synopsis"])
+
     @classmethod
     def setUpClass(cls):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
