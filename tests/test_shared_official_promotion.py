@@ -6,7 +6,7 @@ from datetime import date
 from scripts.auto_catalogue import official_identity_candidates,promote_new_works
 from scripts.publish_catalog_v2 import ROOT,REGISTRY,normalized
 from scripts.build_verified_catalog import MANIFEST
-from scripts.publish_work_editorial import EDITORIAL,HISTORY
+from scripts.publish_work_editorial import EDITORIAL,HISTORY,build_editorial
 from scripts.collect_candidate_details import OUTPUT as EVIDENCE
 from scripts.discover_season_indexes import OUTPUT as CANDIDATES
 from scripts.auto_catalogue import SOURCE_ALLOWLIST
@@ -61,6 +61,12 @@ class SourceIndependentPromotion(unittest.TestCase):
                        normalized(candidate_rows[name]["composer"])) not in known}
         self.assertEqual(report["new_works"],len(remaining))
         self.assertEqual(report["new_recite"],sum(remaining.values()))
+        published=build_editorial(facts,registry,editorial,
+                                  approved_extra=set(urls),history=history)
+        published_works={w["title"]:w for w in published["works"]}
+        for title in EXPECTED:
+            self.assertIn(title,published_works)
+            self.assertIsNone(published_works[title]["history"])
         for name,count in EXPECTED.items():
             rows=[p for p in facts["productions"] if p["municipality"]=="Bari"
                   and p["venue"]=="Teatro Petruzzelli"
