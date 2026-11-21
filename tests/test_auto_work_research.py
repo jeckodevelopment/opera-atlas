@@ -280,7 +280,7 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(calls,[])
         self.assertEqual(status[0]["status"],"enriched")
         self.assertEqual(result["works"][0]["composer"],"Gaetano Donizetti")
-        self.assertIn("history",result["works"][0])
+        self.assertIsNone(result["works"][0]["history"])
         self.assertNotIn("source_excerpt",result["works"][0])
         again,events=research(doc,result,set(),today=date(2026,11,21),
                               resolve=lambda x: (_ for _ in ()).throw(AssertionError("refetched")),
