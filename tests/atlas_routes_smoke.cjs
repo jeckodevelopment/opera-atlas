@@ -40,4 +40,11 @@ assert.equal(puccini.work,"/atlas/opere/la-boheme-puccini/");
 assert.notEqual(leoncavallo.work,puccini.work);
 assert.equal(leoncavallo.staging,"/atlas/torino/teatro-regio/la-boheme/");
 assert.equal(puccini.staging,"/atlas/milano/teatro-alla-scala/la-boheme/");
+const regio=ctx.window.OperaAtlasCatalog.urls({
+  venue:"Teatro Regio di Torino",municipality:"Torino",venue_slug:"teatro-regio",city_slug:"torino",
+  title:"La bohème",work_slug:"la-boheme",work_route_slug:"la-boheme-leoncavallo",
+  staging_url:"/torino/teatro-regio/la-boheme/"
+});
+assert.equal(regio.venue,"/atlas/torino/teatro-regio/");
+assert.equal(regio.staging,"/atlas/torino/teatro-regio/la-boheme/");
 console.log("Verified new opera.plus/atlas routes for opera, theatre, staging and production group.");
