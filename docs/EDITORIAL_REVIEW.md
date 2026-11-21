@@ -120,6 +120,28 @@ copie o composizioni omonime fuse; le date e la sede seguono gli stessi
 controlli delle altre recite. Un QID assente o contraddittorio lascia
 in attesa soltanto la candidate interessata.
 
+## Ricerca affidabile con limiti di dimensione
+
+La ricerca Wikidata resta **gratuita** e mantiene i limiti di risposta
+contro payload sproporzionati. Se un'opera molto documentata supera
+il limite della lettura aggregata, il sistema recupera le sole
+proprietà indispensabili per l'identità (`P31`, `P7937`, `P86`)
+e, per la prima rappresentazione, `P87`, `P1191`, `P4647`.
+Nessun dato è ricavato dalla risposta troncata.
+
+Se la ricerca per titolo non fornisce un riscontro esatto, il
+compositore **già documentato nella fonte ufficiale** viene usato per
+una seconda ricerca; la validazione continua a richiedere etichetta
+o alias esatto, tipologia opera e compositore concordante.
+
+La sinossi viene cercata direttamente nella sezione *Trama*,
+*Argomento* o *Soggetto* della voce Wikipedia italiana associata
+all'esatto QID. In questo modo gli articoli lunghi non bloccano
+la ricerca e le sezioni poste oltre l'introduzione restano raggiungibili.
+L'assenza di una sezione identificabile univocamente o di due
+relazioni narrative esplicite comporta un retry, mai una trama
+inventata.
+
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
 `.github/workflows/refresh-catalog.yml` esegue
