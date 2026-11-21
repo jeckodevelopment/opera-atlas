@@ -16,7 +16,7 @@ class NationalIndexTests(unittest.TestCase):
             '<a href="/it/stagione/2026-2027/opera/anna-bolena.html">Anna Bolena</a>'+\
             '<a href="/it/stagione/2026-2027/balletto/giselle.html">Giselle</a>'+\
             '<a href="https://external.example/it/stagione/2026-2027/opera/fake.html">Fake</a>'
-        links=extract("macerata-festival-2027", "scala-season-2026-27",url,html,3)
+        links=extract("scala-season-2026-27",url,html,3)
         self.assertEqual(len(links),3)
         self.assertTrue(all("/opera/" in x for x in links))
     def test_arena_and_fenice_index_filter(self):
@@ -100,9 +100,9 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual(len(urls),2)
         self.assertFalse(any("brahms" in x for x in urls))
 
-    def test_all_thirty_five_indexes_are_explicitly_configured(self):
+    def test_all_thirty_six_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
-            "scala-season-2026-27", "arena-festival-2027",
+            "macerata-festival-2027", "scala-season-2026-27", "arena-festival-2027",
             "fenice-opera-2026-27","parma-opera-2027",
             "massimo-season-2026-27","carlo-felice-season-2026-27",
             "donizetti-opera-2026","teatro-grande-opera-2026",
