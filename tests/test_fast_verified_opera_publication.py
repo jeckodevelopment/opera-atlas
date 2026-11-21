@@ -31,10 +31,12 @@ class FastCompleteOperaPublication(unittest.TestCase):
             "python -m scripts.safe_push_catalog",
         ):
             self.assertIn(token,source)
+        build_after_promotion=source.index("python -m scripts.build_verified_catalog",
+                                            source.index("python -m scripts.auto_catalogue"))
         self.assertLess(source.index("python -m scripts.auto_catalogue"),
-                        source.index("python -m scripts.build_verified_catalog"))
+                        build_after_promotion)
         self.assertLess(source.index("python -m scripts.publish_work_posters"),
-                        source.index("python -m scripts.build_verified_catalog"))
+                        build_after_promotion)
         self.assertNotIn("--allow-network",source)
         for output in ("data/work-poster-evidence.json",
                        "data/work-poster-health.json",
