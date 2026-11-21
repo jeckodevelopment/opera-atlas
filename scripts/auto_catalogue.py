@@ -371,8 +371,19 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                 r"Q[1-9][0-9]*",item["wikidata_id"]):continue
         work_key=normalized(title)+"|"+normalized(composer)
         slug=slugify(title)
-        if (work_key in next_registry["works"] or
-            any(x["slug"]==slug for x in next_registry["works"].values())):
+        if work_key in next_registry["works"]:
+            continue
+        # A shared title is a legitimate new composition. Keep existing work
+        # routes unchanged and allocate a composer-qualified route only to the
+        # new work. Never overwrite older synopsis/history by title slug.
+        homonyms=[w for w in next_registry["works"].values()
+                  if w["slug"]==slug]
+        route_slug=slug+"-"+slugify(composer) if homonyms else slug
+        existing_routes={w.get("route_slug",w["slug"])
+                         for w in next_registry["works"].values()}
+        if route_slug in existing_routes:
+            result["auto_skipped"].append({"candidate_id":cid,
+                                            "reason":"homonym_route_collision"})
             continue
         rows=detail.get("event_facts",[])
         if not isinstance(rows,list) or not rows:continue
@@ -407,12 +418,33 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         work_id=next_id(next_registry["works"],"oa-w-")
         stage_id=next_id(next_registry["stagings"],"oa-s-")
         next_registry["works"][work_key]={
-            "id":work_id,"slug":slug,"title":title,"composer":composer}
-        next_editorial["synopses"][slug]=summary
-        if next_history is not None:next_history["works"][slug]=historical
+            "id":work_id,"slug":slug,"title":title,"composer":composer,
+            **({"route_slug":route_slug} if homonyms else {})}
+        if homonyms:
+            by_id=next_editorial.setdefault("synopses_by_id",{})
+            for existing in homonyms:
+                if existing["id"] not in by_id:
+                    old_summary=next_editorial["synopses"].get(slug)
+                    if not old_summary:
+                        raise ValueError("missing existing homonym synopsis")
+                    by_id[existing["id"]]=old_summary
+            by_id[work_id]=summary
+            if next_history is not None:
+                history_by_id=next_history.setdefault("works_by_id",{})
+                for existing in homonyms:
+                    if existing["id"] not in history_by_id:
+                        old_history=next_history["works"].get(slug)
+                        if not old_history:
+                            raise ValueError("missing existing homonym history")
+                        history_by_id[existing["id"]]=old_history
+                history_by_id[work_id]=historical
+        else:
+            next_editorial["synopses"][slug]=summary
+            if next_history is not None:next_history["works"][slug]=historical
         next_registry["stagings"][staging_key]={
             "id":stage_id,"work_id":work_id,"venue_id":canonical_venue["id"],
             "slug":slug,"source_url":url,
+            **({"route_slug":route_slug} if homonyms else {}),
             "season":season_from_source(source_key,url,date_rows)}
         next_facts["productions"].append({
             "key":staging_key,"title":title,"composer":composer,"venue":venue,
