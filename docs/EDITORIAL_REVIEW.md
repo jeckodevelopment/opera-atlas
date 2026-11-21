@@ -298,3 +298,35 @@ non come manifesto di una produzione recente.
 Riferimenti: pagina ufficiale Donizetti Opera 2026,
 `https://corago.unibo.it/opera/Z000002027` e
 `https://commons.wikimedia.org/wiki/File:Le_Convenienze_teatrali_(manuscrit_autographe)_-_btv1b108620224_(052_of_254).jpg`.
+
+## Completamento editoriale Cagliari, Trieste e Roma (21 novembre 2026)
+
+Cinque opere con **26 rappresentazioni** già descritte da fonti teatrali
+accreditate risultavano in retry a causa di sinossi non estratte da
+Wikipedia: *Lohengrin* (Trieste, 6 recite), *Don Carlos*, *Alcina*,
+*Maria Stuarda* (Cagliari, 5 recite ciascuna) e *La Cenerentola*
+(Roma, 5 recite). Si usano sinossi originali molto brevi, storie della
+prima documentate e materiale d'epoca autentico: nessuna scheda
+enciclopedica estesa, nessuna fotografia promozionale sostituita a un
+manifesto storico.
+
+Le fonti editoriali specialistiche sono Mariinsky (Lohengrin), Corago
+Università di Bologna e Metropolitan Opera (Don Carlos), Händel Society
+e Bayerische Staatsoper (Alcina), Corago e Bayerische Staatsoper
+(Maria Stuarda), Archivio Storico Opera di Roma e Rossini Opera Festival
+(La Cenerentola). I riferimenti restano nei record
+`data/verified-work-authority-seeds.json`, esattamente associati
+all'URL ufficiale di ciascuno spettacolo e al suo compositore.
+
+Le immagini pubbliche appartengono al registro
+`data/archival-work-images.json`: spartito/riduzione d'epoca per
+*Lohengrin*, locandina del 1867 di *Don Carlos*, frontespizi originali
+dei libretti di *Alcina* (1735), *Maria Stuarda* (1835) e *La
+Cenerentola* (1817, già censito). Ogni descrizione distingue il
+materiale storico dalla produzione teatrale futura.
+
+Il controllo `tests/test_five_new_opera_editorials.py` verifica
+corrispondenza dei crediti, 26 date/ore già acquisite, provenienza
+Commons, validità storica e idempotenza della transazione. La
+pubblicazione deve comunque validare integralmente i medesimi fatti,
+senza eccezioni rispetto alle altre opere.
