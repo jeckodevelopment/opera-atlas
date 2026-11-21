@@ -15,7 +15,12 @@
       "description": "Nel cuore di Torino, il Regio ospita stagioni d’opera e balletto a pochi passi da Piazza Castello.",
       "canonical_venue_id": "oa-v-000001",
       "profile_key": "Torino|Teatro Regio",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Piazza Castello 215",
+      "history": "Inaugurato nel 1740 come teatro della corte sabauda, il Regio fu distrutto da un incendio nel 1936. La sala attuale, progettata da Carlo Mollino, riaprì nel 1973 con I vespri siciliani di Verdi: dietro la facciata settecentesca si scopre così una sorprendente architettura moderna.",
+      "photo_file": "Teatro Regio - foto aerea.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Regio_-_foto_aerea.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000002",
@@ -29,7 +34,12 @@
       "description": "Affacciato su Piazza Verdi, il Teatro Sociale è uno dei luoghi di riferimento dell’opera a Como e parte del circuito OperaLombardia.",
       "canonical_venue_id": "oa-v-000002",
       "profile_key": "Como|Teatro Sociale",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Piazza Verdi 1",
+      "history": "Inaugurato nel 1813, il Teatro Sociale sorse nell'area dell'antico Castello della Torre Rotonda. La sua storia attraversa due secoli di spettacolo cittadino; oggi affianca alla programmazione lirica progetti di educazione musicale rivolti a pubblici di tutte le età.",
+      "photo_file": "Teatro Sociale di Como.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Sociale_di_Como.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000003",
@@ -43,7 +53,12 @@
       "description": "Il teatro storico di Pavia accoglie spettacoli d’opera, musica e danza e partecipa alle produzioni di OperaLombardia.",
       "canonical_venue_id": "oa-v-000003",
       "profile_key": "Pavia|Teatro Fraschini",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Corso Strada Nuova 136",
+      "history": "Il teatro fu inaugurato nel 1773, dopo la costruzione affidata ad Antonio Galli Bibiena. La sala, studiata anche per la sua acustica, venne in seguito intitolata a Gaetano Fraschini, celebre tenore verdiano originario di Pavia.",
+      "photo_file": "Teatro Fraschini - Pavia.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Fraschini_-_Pavia.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000004",
@@ -57,7 +72,12 @@
       "description": "Nel centro storico di Brescia, il Teatro Grande ospita opera e musica, tra le sedi del circuito OperaLombardia.",
       "canonical_venue_id": "oa-v-000004",
       "profile_key": "Brescia|Teatro Grande",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Corso Giuseppe Zanardelli 9/A",
+      "history": "Il Teatro Grande raccoglie l'eredità dell'Accademia degli Erranti, attiva nella vita teatrale bresciana dal Seicento. La sala attuale risale al 1810; nel 1904 accolse con successo Madama Butterfly, contribuendo al rilancio dell'opera dopo la difficile prima milanese.",
+      "photo_file": "Teatro Grande (Sala).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Grande_(Sala).jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000005",
@@ -71,7 +91,12 @@
       "description": "Il Teatro Ponchielli fa parte della tradizione lirica cremonese e ospita produzioni condivise di OperaLombardia.",
       "canonical_venue_id": "oa-v-000005",
       "profile_key": "Cremona|Teatro Ponchielli",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Corso Vittorio Emanuele II 52",
+      "history": "La tradizione del teatro cremonese risale al Settecento, ma l'edificio nella forma attuale fu realizzato nel 1808 come Teatro della Concordia. La sala a ferro di cavallo, con palchi sovrapposti, custodisce una storia musicale poi legata al nome del compositore cremonese Amilcare Ponchielli.",
+      "photo_file": "Teatro Ponchielli in Cremona (1).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Ponchielli_in_Cremona_(1).jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000006",
@@ -85,7 +110,12 @@
       "description": "Nel centro di Milano, la Scala è uno dei teatri d’opera più conosciuti al mondo.",
       "canonical_venue_id": "oa-v-000006",
       "profile_key": "Milano|Teatro alla Scala",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Piazza della Scala",
+      "history": "La Scala fu inaugurata nel 1778 con Europa riconosciuta di Antonio Salieri, su progetto di Giuseppe Piermarini. Nel corso dell'Ottocento divenne uno dei centri della vita musicale europea, legando profondamente la propria storia alle opere di Giuseppe Verdi.",
+      "photo_file": "Teatro alla Scala interior Milan.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_alla_Scala_interior_Milan.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000007",
@@ -99,7 +129,12 @@
       "description": "L’anfiteatro romano di Verona accoglie il festival lirico estivo all’aperto.",
       "canonical_venue_id": "oa-v-000007",
       "profile_key": "Verona|Arena di Verona",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Piazza Bra",
+      "history": "Costruita in epoca romana, probabilmente nel I secolo d.C., l'Arena è un anfiteatro ancora oggi capace di accogliere grandi spettacoli. La sua storia operistica moderna iniziò nel 1913 con Aida di Verdi, dando origine alla tradizione estiva del festival lirico sotto le stelle.",
+      "photo_file": "Arena di Verona esterno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Arena_di_Verona_esterno.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000008",
@@ -113,7 +148,12 @@
       "description": "Nel sestiere di San Marco, La Fenice è uno dei palcoscenici storici dell’opera italiana.",
       "canonical_venue_id": "oa-v-000008",
       "profile_key": "Venezia|Teatro La Fenice",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Campo San Fantin 1965",
+      "history": "Inaugurata nel 1792, La Fenice deve il suo nome all'idea di rinascita. Due incendi, nel 1836 e nel 1996, ne hanno segnato profondamente la storia; il teatro è tornato a vivere nel 2003, conservando il suo ruolo nella tradizione lirica veneziana.",
+      "photo_file": "Teatro-la-fenice-sala.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro-la-fenice-sala.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000009",
@@ -127,7 +167,12 @@
       "description": "Nel centro di Palermo, il Teatro Massimo presenta opere, balletti e concerti.",
       "canonical_venue_id": "oa-v-000009",
       "profile_key": "Palermo|Teatro Massimo",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Piazza Giuseppe Verdi",
+      "history": "Il Teatro Massimo aprì il 16 maggio 1897 con Falstaff di Giuseppe Verdi. Nato dalla volontà di dotare Palermo di un grande teatro d'opera, è diventato uno dei monumenti più riconoscibili della città e un punto di riferimento della vita musicale siciliana.",
+      "photo_file": "Interior of Teatro Massimo (Palermo) SAM 0420.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Teatro_Massimo_(Palermo)_SAM_0420.JPG",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000010",
@@ -141,7 +186,12 @@
       "description": "Il Teatro Regio di Parma è uno dei luoghi simbolo della tradizione operistica cittadina.",
       "canonical_venue_id": "oa-v-000010",
       "profile_key": "Parma|Teatro Regio di Parma",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Strada Giuseppe Garibaldi 16/A",
+      "history": "Voluto dalla duchessa Maria Luigia d'Asburgo-Lorena e progettato da Nicola Bettoli, il teatro fu inaugurato nel 1829 con Zaira di Vincenzo Bellini. La sua sala neoclassica è uno dei luoghi simbolo del legame fra Parma e il melodramma.",
+      "photo_file": "Interior of Teatro Regio, Parma, Italy.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Teatro_Regio%2C_Parma%2C_Italy.JPG",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000011",
@@ -155,7 +205,12 @@
       "description": "Il Teatro Coccia è il principale teatro lirico di Novara e ospita opere e produzioni in tournée.",
       "canonical_venue_id": "oa-v-000011",
       "profile_key": "Novara|Teatro Coccia",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Via Fratelli Rosselli",
+      "history": "Il teatro attuale fu inaugurato il 22 dicembre 1888 con Gli ugonotti di Meyerbeer, diretti dal giovane Arturo Toscanini. L'edificio ottocentesco ampliava il precedente teatro civico, già dedicato al compositore Carlo Coccia, e divenne il fulcro della vita musicale novarese.",
+      "photo_file": "Teatro Coccia Novara.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Coccia_Novara.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000012",
@@ -169,7 +224,12 @@
       "description": "Situato nella Bergamo bassa, il Donizetti ospita opere e spettacoli nel cuore della città.",
       "canonical_venue_id": "oa-v-000012",
       "profile_key": "Bergamo|Teatro Donizetti",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Piazza Cavour 15",
+      "history": "Inaugurato nel 1791 come Teatro Riccardi, divenne uno dei principali palcoscenici di Bergamo. Nel 1897, centenario della nascita di Gaetano Donizetti, assunse il nome del compositore, a cui la città dedica ancora oggi una parte importante della propria vita musicale.",
+      "photo_file": "Teatro Donizetti Bergamo - Esterno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Donizetti_Bergamo_-_Esterno.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000013",
@@ -183,7 +243,12 @@
       "description": "Il Teatro Municipale Romolo Valli accoglie opera, musica e danza nel centro di Reggio Emilia.",
       "canonical_venue_id": "oa-v-000013",
       "profile_key": "Reggio Emilia|Teatro Valli",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Piazza Martiri del 7 Luglio 7",
+      "history": "Il Teatro Municipale fu inaugurato nel 1857, su progetto di Cesare Costa, e rappresenta uno degli esempi più riconoscibili di teatro all'italiana. Dal 1980 porta il nome dell'attore reggiano Romolo Valli e continua a ospitare opera, danza e musica.",
+      "photo_file": "Teatro Valli Reggio Emilia.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Valli_Reggio_Emilia.JPG",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-v-000014",
@@ -197,7 +262,12 @@
       "description": "Il teatro storico di Ravenna ospita opera, concerti e parte della programmazione del Ravenna Festival.",
       "canonical_venue_id": "oa-v-000014",
       "profile_key": "Ravenna|Teatro Dante Alighieri",
-      "monitoring_status": "programma_censito"
+      "monitoring_status": "programma_censito",
+      "address": "Via Angelo Mariani 2",
+      "history": "Il Teatro Alighieri fu inaugurato nel 1852 con Roberto il diavolo di Meyerbeer e Medea di Pacini. Cuore dell'attività teatrale cittadina, conserva una forte vocazione lirica e ospita anche appuntamenti del Ravenna Festival.",
+      "photo_file": "Teatro Dante Alighieri Ravenna.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Dante_Alighieri_Ravenna.jpg",
+      "photo_credit": "Wikimedia Commons — consultare la pagina del file"
     },
     {
       "id": "oa-vd-000015",
@@ -207,9 +277,14 @@
       "slug": "teatro-alfieri",
       "city_slug": "asti",
       "website": "https://www.teatroalfieriasti.it/",
-      "source_url": "https://www.teatroalfieriasti.it/",
-      "description": "Teatro Alfieri è una sede teatrale censita a Asti. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.teatroalfieriasti.it/la-storia/",
+      "description": "Teatro Alfieri è una sede teatrale censita a Asti.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via al Teatro 2",
+      "history": "Nato nell’Ottocento, il Teatro Alfieri è uno dei luoghi storici dello spettacolo astigiano. La sua sala all’italiana ha attraversato restauri e riaperture, ospitando nel tempo opera, prosa e musica.",
+      "photo_file": "Ingresso Teatro Alfieri.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ingresso_Teatro_Alfieri.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000016",
@@ -219,9 +294,14 @@
       "slug": "teatro-carlo-felice",
       "city_slug": "genova",
       "website": "https://www.carlofelice.it/",
-      "source_url": "https://www.carlofelice.it/",
-      "description": "Teatro Carlo Felice è una sede teatrale censita a Genova. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.carlofelice.it/navigare-insieme/il-teatro/",
+      "description": "Teatro Carlo Felice è una sede teatrale censita a Genova.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza De Ferrari",
+      "history": "Inaugurato nell’Ottocento, il Carlo Felice di Genova è stato ricostruito dopo le distruzioni belliche. L’edificio contemporaneo ha riaperto nel 1991, conservando il monumentale pronao neoclassico.",
+      "photo_file": "Genova - Teatro Carlo Felice.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Genova_-_Teatro_Carlo_Felice.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000017",
@@ -232,8 +312,13 @@
       "city_slug": "savona",
       "website": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
       "source_url": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
-      "description": "Teatro Gabriello Chiabrera è una sede teatrale censita a Savona. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "description": "Teatro Gabriello Chiabrera è una sede teatrale censita a Savona.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Armando Diaz 2",
+      "history": "Il Chiabrera è il teatro civico storico di Savona. Intitolato al poeta Gabriello Chiabrera, conserva una tradizione cittadina che unisce prosa, musica e rappresentazioni liriche.",
+      "photo_file": "Teatro Chiabrera Savona.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Chiabrera_Savona.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000018",
@@ -243,9 +328,14 @@
       "slug": "teatro-lirico-giuseppe-verdi",
       "city_slug": "trieste",
       "website": "https://www.teatroverdi-trieste.com/",
-      "source_url": "https://www.teatroverdi-trieste.com/",
-      "description": "Teatro Lirico Giuseppe Verdi è una sede teatrale censita a Trieste. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.teatroverdi-trieste.com/it/contatti/",
+      "description": "Teatro Lirico Giuseppe Verdi è una sede teatrale censita a Trieste.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Riva Tre Novembre 1",
+      "history": "Il Teatro Verdi, affacciato sulla piazza dell’Unità d’Italia, appartiene alla tradizione lirica triestina. Da secoli ospita spettacoli d’opera e concerti nel cuore della città.",
+      "photo_file": "TeatroVerdi.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:TeatroVerdi.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000019",
@@ -255,9 +345,14 @@
       "slug": "teatro-filarmonico",
       "city_slug": "verona",
       "website": "https://www.arena.it/teatro-filarmonico-verona/",
-      "source_url": "https://www.arena.it/teatro-filarmonico-verona/",
-      "description": "Teatro Filarmonico è una sede teatrale censita a Verona. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.visitverona.it/it/luoghi/teatro-filarmonico",
+      "description": "Teatro Filarmonico è una sede teatrale censita a Verona.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Roma 3",
+      "history": "Il Filarmonico fu inaugurato nel 1732 con La fida ninfa di Vivaldi. Dopo i danni della seconda guerra mondiale è stato ricostruito e continua ad accogliere la stagione lirica della Fondazione Arena.",
+      "photo_file": "Teatro Filarmonico Verona - 1.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Filarmonico_Verona_-_1.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000020",
@@ -267,9 +362,14 @@
       "slug": "teatro-comunale-mario-del-monaco",
       "city_slug": "treviso",
       "website": "https://artbonus.gov.it/teatri-e-umaneimo-latino-spa-%28teatro-comunale-mario-del-monaco%29.html",
-      "source_url": "https://artbonus.gov.it/teatri-e-umaneimo-latino-spa-%28teatro-comunale-mario-del-monaco%29.html",
-      "description": "Teatro Comunale Mario del Monaco è una sede teatrale censita a Treviso. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.teatrostabileveneto.it/teatro-del-monaco-treviso",
+      "description": "Teatro Comunale Mario del Monaco è una sede teatrale censita a Treviso.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Corso del Popolo 31",
+      "history": "Il Teatro Comunale di Treviso ha una lunga tradizione cittadina e oggi porta il nome del tenore Mario Del Monaco. Restaurato dopo la chiusura alla fine del Novecento, ospita opera, concerti e prosa.",
+      "photo_file": "Facciata Teatro Comunale.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Facciata_Teatro_Comunale.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000021",
@@ -280,8 +380,13 @@
       "city_slug": "padova",
       "website": "https://www.teatrostabileveneto.it/teatro-verdi-padova",
       "source_url": "https://www.teatrostabileveneto.it/teatro-verdi-padova",
-      "description": "Teatro Verdi è una sede teatrale censita a Padova. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "description": "Teatro Verdi è una sede teatrale censita a Padova.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via dei Livello 32",
+      "history": "Il Teatro Verdi di Padova è uno dei principali edifici teatrali storici del Veneto. Nel tempo ha ospitato prosa, musica e lirica, conservando il proprio ruolo nel centro cittadino.",
+      "photo_file": "Padova, Teatro Verdi.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Padova%2C_Teatro_Verdi.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000022",
@@ -292,8 +397,13 @@
       "city_slug": "rovigo",
       "website": "https://www.visitrovigo.it/it/scopri-la-citt%C3%A0/i-musei/teatro-sociale",
       "source_url": "https://www.visitrovigo.it/it/scopri-la-citt%C3%A0/i-musei/teatro-sociale",
-      "description": "Teatro Sociale è una sede teatrale censita a Rovigo. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "description": "Teatro Sociale è una sede teatrale censita a Rovigo.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Giuseppe Garibaldi 14",
+      "history": "Il Teatro Sociale di Rovigo è una sala storica all’italiana e uno dei simboli culturali del Polesine. Ospita stagioni liriche, spettacoli di prosa e concerti, in continuità con la tradizione locale.",
+      "photo_file": "Teatro Sociale, Rovigo.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Sociale%2C_Rovigo.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000023",
@@ -303,9 +413,14 @@
       "slug": "teatro-comunale-di-bolzano",
       "city_slug": "bolzano",
       "website": "https://www.haydn.it/",
-      "source_url": "https://www.haydn.it/",
-      "description": "Teatro Comunale di Bolzano è una sede teatrale censita a Bolzano. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.fondazioneteatro.bolzano.it/come-raggiungerci/",
+      "description": "Teatro Comunale di Bolzano è una sede teatrale censita a Bolzano.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Verdi 40",
+      "history": "Il Teatro Comunale di Bolzano è un moderno complesso scenico che accoglie spettacoli musicali, danza e prosa. La sua attività si intreccia con la vita culturale plurilingue della città.",
+      "photo_file": "Teatro Comunale Bolzano.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Comunale_Bolzano.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000024",
@@ -315,9 +430,14 @@
       "slug": "teatro-sociale",
       "city_slug": "trento",
       "website": "https://www.haydn.it/",
-      "source_url": "https://www.haydn.it/",
-      "description": "Teatro Sociale è una sede teatrale censita a Trento. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sociale",
+      "description": "Teatro Sociale è una sede teatrale censita a Trento.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Paolo Oss Mazzurana 19",
+      "history": "Il Teatro Sociale è il più antico e prestigioso teatro di Trento. Dopo una lunga storia di spettacoli e trasformazioni, ha riaperto al pubblico nel 2000 ed è oggi gestito dal Centro Santa Chiara.",
+      "photo_file": "Teatro Sociale di Trento (2016).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Sociale_di_Trento_(2016).jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000025",
@@ -327,9 +447,14 @@
       "slug": "teatro-comunale-di-bologna",
       "city_slug": "bologna",
       "website": "https://www.tcbo.it/",
-      "source_url": "https://www.tcbo.it/",
-      "description": "Teatro Comunale di Bologna è una sede teatrale censita a Bologna. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.tcbo.it/come-raggiungerci/",
+      "description": "Teatro Comunale di Bologna è una sede teatrale censita a Bologna.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Largo Respighi 1",
+      "history": "Il Teatro Comunale di Bologna fu progettato da Antonio Galli Bibiena ed è un riferimento storico per il melodramma, in particolare per il repertorio wagneriano. La sala storica è interessata da lavori di restauro.",
+      "photo_file": "Teatro Comunale di Bologna.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Comunale_di_Bologna.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000026",
@@ -339,9 +464,12 @@
       "slug": "teatro-comunale-nouveau",
       "city_slug": "bologna",
       "website": "https://www.tcbo.it/",
-      "source_url": "https://www.tcbo.it/",
-      "description": "Teatro Comunale Nouveau è una sede teatrale censita a Bologna. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.tcbo.it/news/grazie-comunale-nouveau/",
+      "description": "Teatro Comunale Nouveau è una sede teatrale censita a Bologna.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza della Costituzione 4/A",
+      "history": "Allestito negli spazi di BolognaFiere, il Comunale Nouveau ha ospitato le stagioni d’opera e danza durante i lavori alla sede storica, dal febbraio 2023 fino alla conclusione della sua attività nel giugno 2026.",
+      "status": "sede_storica_cessata"
     },
     {
       "id": "oa-vd-000027",
@@ -351,9 +479,14 @@
       "slug": "teatro-municipale",
       "city_slug": "piacenza",
       "website": "https://teatripiacenza.it/fondazione/spazi-luoghi/teatro-municipale/",
-      "source_url": "https://teatripiacenza.it/fondazione/spazi-luoghi/teatro-municipale/",
-      "description": "Teatro Municipale è una sede teatrale censita a Piacenza. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.comune.piacenza.it/it/vivere/sale-al-teatro-municipale",
+      "description": "Teatro Municipale è una sede teatrale censita a Piacenza.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Giuseppe Verdi 41",
+      "history": "Progettato da Lotario Tomba, il Teatro Municipale fu inaugurato nel 1804 con Zamori di Giovanni Simone Mayr. La sala storica continua la tradizione musicale e teatrale piacentina.",
+      "photo_file": "Teatro Municipale - Piacenza.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Municipale_-_Piacenza.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000028",
@@ -363,9 +496,14 @@
       "slug": "teatro-comunale-pavarotti-freni",
       "city_slug": "modena",
       "website": "https://www.teatrocomunalemodena.it/",
-      "source_url": "https://www.teatrocomunalemodena.it/",
-      "description": "Teatro Comunale Pavarotti-Freni è una sede teatrale censita a Modena. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.visitmodena.it/it/scopri-modena/arte-e-cultura/teatri/teatro-comunale-luciano-pavarotti",
+      "description": "Teatro Comunale Pavarotti-Freni è una sede teatrale censita a Modena.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via del Teatro 8",
+      "history": "La storia del Comunale di Modena affonda le radici nell’Ottocento. Dedicato a Luciano Pavarotti dal 2007, dal 2021 porta anche il nome di Mirella Freni, due grandi interpreti legati alla città.",
+      "photo_file": "Image Teatro comunale Modena.png",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Image_Teatro_comunale_Modena.png",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000029",
@@ -375,9 +513,14 @@
       "slug": "teatro-comunale-claudio-abbado",
       "city_slug": "ferrara",
       "website": "https://cartellone.emiliaromagnacultura.it/it/rassegna/opera-danza-2026-2027/",
-      "source_url": "https://cartellone.emiliaromagnacultura.it/it/rassegna/opera-danza-2026-2027/",
-      "description": "Teatro Comunale Claudio Abbado è una sede teatrale censita a Ferrara. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.inferrara.it/it/p/101/arte-e-cultura/teatro-comunale-claudio-abbado",
+      "description": "Teatro Comunale Claudio Abbado è una sede teatrale censita a Ferrara.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Corso Martiri della Libertà 5",
+      "history": "Il Teatro Comunale di Ferrara è una delle sale storiche della regione, con una tradizione che unisce opera, prosa e danza. Oggi è intitolato al direttore d’orchestra Claudio Abbado.",
+      "photo_file": "Teatro comunale di Ferrara.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_comunale_di_Ferrara.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000030",
@@ -387,9 +530,14 @@
       "slug": "teatro-del-maggio-musicale-fiorentino",
       "city_slug": "firenze",
       "website": "https://www.maggiofiorentino.com/",
-      "source_url": "https://www.maggiofiorentino.com/",
-      "description": "Teatro del Maggio Musicale Fiorentino è una sede teatrale censita a Firenze. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.maggiofiorentino.com/faq",
+      "description": "Teatro del Maggio Musicale Fiorentino è una sede teatrale censita a Firenze.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazzale Vittorio Gui 1",
+      "history": "Il Teatro del Maggio è la sede contemporanea del Maggio Musicale Fiorentino, festival lirico e sinfonico fondato nel 1933. Accoglie opere, concerti e attività musicali in un complesso moderno.",
+      "photo_file": "Fondazione Teatro del maggio musicale fiorentino, Firenze (FI).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Fondazione_Teatro_del_maggio_musicale_fiorentino%2C_Firenze_(FI).jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000031",
@@ -399,9 +547,14 @@
       "slug": "teatro-del-giglio-giacomo-puccini",
       "city_slug": "lucca",
       "website": "https://www.teatrodelgigliogiacomopuccini.it/it/",
-      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/",
-      "description": "Teatro del Giglio Giacomo Puccini è una sede teatrale censita a Lucca. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://turismo.lucca.it/le-attrazioni-di-lucca/monumenti-e-piazze/teatro-del-giglio-giacomo-puccini/",
+      "description": "Teatro del Giglio Giacomo Puccini è una sede teatrale censita a Lucca.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza del Giglio 13/15",
+      "history": "Il Teatro del Giglio è la storica sala d’opera di Lucca, città natale di Giacomo Puccini. La lunga tradizione cittadina si lega anche all’interesse del compositore per il rinnovamento dell’edificio.",
+      "photo_file": "Teatro del Giglio Lucca.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_del_Giglio_Lucca.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000032",
@@ -412,8 +565,13 @@
       "city_slug": "pisa",
       "website": "https://www.comune.pisa.it/Vivere-il-Comune/Luoghi/Teatro-Verdi",
       "source_url": "https://www.comune.pisa.it/Vivere-il-Comune/Luoghi/Teatro-Verdi",
-      "description": "Teatro Verdi è una sede teatrale censita a Pisa. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "description": "Teatro Verdi è una sede teatrale censita a Pisa.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Palestro 40",
+      "history": "Inaugurato nel 1867 come Regio Teatro Nuovo, il Verdi è il principale teatro storico di Pisa. Ha attraversato restauri e trasformazioni, conservando una programmazione di opera, prosa e musica.",
+      "photo_file": "Teatro-verdi.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro-verdi.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000033",
@@ -423,9 +581,14 @@
       "slug": "teatro-goldoni",
       "city_slug": "livorno",
       "website": "https://www.goldoniteatro.it/",
-      "source_url": "https://www.goldoniteatro.it/",
-      "description": "Teatro Goldoni è una sede teatrale censita a Livorno. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.goldoniteatro.it/contatti/",
+      "description": "Teatro Goldoni è una sede teatrale censita a Livorno.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Carlo Goldoni 83",
+      "history": "Il Goldoni è uno dei principali luoghi della tradizione teatrale livornese. La sala ottocentesca, dedicata al commediografo Carlo Goldoni, ospita spettacoli, concerti e appuntamenti lirici.",
+      "photo_file": "Teatro Goldoni, Livorno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Goldoni%2C_Livorno.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000034",
@@ -435,9 +598,14 @@
       "slug": "gran-teatro-giacomo-puccini",
       "city_slug": "torre-del-lago-puccini",
       "website": "https://www.puccinimuseum.org/giacomo-puccini/i-luoghi/gran-teatro-allaperto-giacomo-puccini/",
-      "source_url": "https://www.puccinimuseum.org/giacomo-puccini/i-luoghi/gran-teatro-allaperto-giacomo-puccini/",
-      "description": "Gran Teatro Giacomo Puccini è una sede teatrale censita a Torre del Lago Puccini. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.puccinifestival.it/contatti/",
+      "description": "Gran Teatro Giacomo Puccini è una sede teatrale censita a Torre del Lago Puccini.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via delle Torbiere",
+      "history": "Il Gran Teatro Giacomo Puccini è lo spazio all’aperto del Festival Puccini a Torre del Lago, accanto ai luoghi amati dal compositore. La stagione estiva vi porta in scena soprattutto le opere pucciniane.",
+      "photo_file": "Open-air Grand Theatre Puccini, Torre del Lago, Tuscany, Italy.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Open-air_Grand_Theatre_Puccini%2C_Torre_del_Lago%2C_Tuscany%2C_Italy.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000035",
@@ -447,9 +615,14 @@
       "slug": "teatro-delle-muse",
       "city_slug": "ancona",
       "website": "https://www.fondazionemuse.org/teatro-delle-muse/",
-      "source_url": "https://www.fondazionemuse.org/teatro-delle-muse/",
-      "description": "Teatro delle Muse è una sede teatrale censita a Ancona. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.provincia.ancona.it/Teatro-delle-Muse-Ancona",
+      "description": "Teatro delle Muse è una sede teatrale censita a Ancona.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza della Repubblica",
+      "history": "La facciata neoclassica delle Muse risale al progetto ottocentesco di Pietro Ghinelli. Dopo un lungo periodo di chiusura, il teatro è tornato a ospitare la vita musicale e scenica di Ancona.",
+      "photo_file": "Teatro delle Muse - Ancona.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_delle_Muse_-_Ancona.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000036",
@@ -459,9 +632,14 @@
       "slug": "arena-sferisterio",
       "city_slug": "macerata",
       "website": "https://www.sferisterio.it/",
-      "source_url": "https://www.sferisterio.it/",
-      "description": "Arena Sferisterio è una sede teatrale censita a Macerata. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://macerataculture.it/sferisterio/",
+      "description": "Arena Sferisterio è una sede teatrale censita a Macerata.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Mazzini 10",
+      "history": "Lo Sferisterio nacque nell’Ottocento come arena per il gioco della palla al bracciale. Dal Novecento ospita grandi allestimenti d’opera all’aperto ed è la sede simbolica del Macerata Opera Festival.",
+      "photo_file": "Macerata - Sferisterio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Macerata_-_Sferisterio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000037",
@@ -471,9 +649,14 @@
       "slug": "teatro-giovan-battista-pergolesi",
       "city_slug": "jesi",
       "website": "https://www.fondazionepergolesispontini.com/teatro-g-b-pergolesi-jesi/",
-      "source_url": "https://www.fondazionepergolesispontini.com/teatro-g-b-pergolesi-jesi/",
-      "description": "Teatro Giovan Battista Pergolesi è una sede teatrale censita a Jesi. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.comune.jesi.an.it/it/web/guest/w/teatro-giovan-battista-pergolesi",
+      "description": "Teatro Giovan Battista Pergolesi è una sede teatrale censita a Jesi.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza della Repubblica 9",
+      "history": "Il Teatro Pergolesi è la storica sala di Jesi. Intitolato a Giovanni Battista Pergolesi nell’Ottocento, custodisce una lunga tradizione di spettacoli e valorizzazione del repertorio musicale marchigiano.",
+      "photo_file": "Jesi - Teatro Pergolesi.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jesi_-_Teatro_Pergolesi.JPG",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000038",
@@ -483,9 +666,14 @@
       "slug": "teatro-gioachino-rossini",
       "city_slug": "pesaro",
       "website": "https://www.comune.pesaro.pu.it/cultura/teatri-arene-e-spazi-per-la-musica/teatri/teatro-rossini/",
-      "source_url": "https://www.comune.pesaro.pu.it/cultura/teatri-arene-e-spazi-per-la-musica/teatri/teatro-rossini/",
-      "description": "Teatro Gioachino Rossini è una sede teatrale censita a Pesaro. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.rossinioperafestival.it/luoghi/teatro-rossini/",
+      "description": "Teatro Gioachino Rossini è una sede teatrale censita a Pesaro.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Lazzarini 1",
+      "history": "Nato nel Seicento come Teatro del Sole, il teatro pesarese fu ricostruito e inaugurato nel 1818 con La gazza ladra diretta da Gioachino Rossini. È uno dei luoghi del Rossini Opera Festival.",
+      "photo_file": "Teatro Rossini, Pesaro.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Rossini%2C_Pesaro.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000039",
@@ -495,9 +683,14 @@
       "slug": "teatro-nuovo-gian-carlo-menotti",
       "city_slug": "spoleto",
       "website": "https://www.comune.spoleto.pg.it/it/vivere/730770",
-      "source_url": "https://www.comune.spoleto.pg.it/it/vivere/730770",
-      "description": "Teatro Nuovo Gian Carlo Menotti è una sede teatrale censita a Spoleto. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://comune.spoleto.pg.it/index.php/it/vivere/730770",
+      "description": "Teatro Nuovo Gian Carlo Menotti è una sede teatrale censita a Spoleto.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Vaita Sant’Andrea 20",
+      "history": "Il Teatro Nuovo venne costruito nell’Ottocento su progetto di Ireneo Aleandri e inaugurato nel 1864. La sala porta oggi il nome di Gian Carlo Menotti, fondatore del Festival dei Due Mondi.",
+      "photo_file": "Teatro Nuovo - Spoleto.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Nuovo_-_Spoleto.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000040",
@@ -507,9 +700,14 @@
       "slug": "teatro-dell-opera-di-roma",
       "city_slug": "roma",
       "website": "https://www.operaroma.it/",
-      "source_url": "https://www.operaroma.it/",
-      "description": "Teatro dell'Opera di Roma è una sede teatrale censita a Roma. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.operaroma.it/biglietteria/informazioni/informazioni-generali/come-raggiungerci/",
+      "description": "Teatro dell'Opera di Roma è una sede teatrale censita a Roma.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Beniamino Gigli 7",
+      "history": "Il Teatro dell’Opera di Roma nacque come Teatro Costanzi nell’Ottocento e continua a ospitare la stagione lirica e di balletto della capitale. La sala è legata a importanti prime del repertorio italiano.",
+      "photo_file": "Teatro dell'Opera, Roma.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_dell'Opera%2C_Roma.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000041",
@@ -519,9 +717,14 @@
       "slug": "teatro-di-san-carlo",
       "city_slug": "napoli",
       "website": "https://www.teatrosancarlo.it/",
-      "source_url": "https://www.teatrosancarlo.it/",
-      "description": "Teatro di San Carlo è una sede teatrale censita a Napoli. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://cultura.gov.it/luogo/teatro-san-carlo",
+      "description": "Teatro di San Carlo è una sede teatrale censita a Napoli.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via San Carlo 98/F",
+      "history": "Inaugurato nel 1737 per volontà di Carlo di Borbone, il San Carlo è tra i più antichi teatri d’opera ancora attivi. La sala storica e la sua tradizione lo rendono un riferimento del melodramma europeo.",
+      "photo_file": "Teatro San Carlo Napoli.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_San_Carlo_Napoli.JPG",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000042",
@@ -532,8 +735,13 @@
       "city_slug": "salerno",
       "website": "https://cultura.comune.salerno.it/luoghi/teatro-municipale-giuseppe-verdi/",
       "source_url": "https://cultura.comune.salerno.it/luoghi/teatro-municipale-giuseppe-verdi/",
-      "description": "Teatro Municipale Giuseppe Verdi è una sede teatrale censita a Salerno. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "description": "Teatro Municipale Giuseppe Verdi è una sede teatrale censita a Salerno.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Matteo Luciani 1",
+      "history": "Voluto dal sindaco Matteo Luciani, il teatro fu inaugurato nel 1872 con Rigoletto di Verdi. Intitolato al compositore nel 1902, è oggi un importante palcoscenico musicale e teatrale di Salerno.",
+      "photo_file": "Teatro Verdi Salerno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Verdi_Salerno.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000043",
@@ -543,9 +751,14 @@
       "slug": "teatro-petruzzelli",
       "city_slug": "bari",
       "website": "https://www.fondazionepetruzzelli.it/",
-      "source_url": "https://www.fondazionepetruzzelli.it/",
-      "description": "Teatro Petruzzelli è una sede teatrale censita a Bari. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.italia.it/it/puglia/bari/teatro-petruzzelli",
+      "description": "Teatro Petruzzelli è una sede teatrale censita a Bari.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Corso Cavour 12",
+      "history": "Il Teatro Petruzzelli è uno dei grandi teatri storici di Bari. Dopo l’incendio del 1991 è stato ricostruito e restituito alla città, riprendendo la propria vocazione lirica e concertistica.",
+      "photo_file": "Teatro Petruzzelli Bari.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Petruzzelli_Bari.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000044",
@@ -555,9 +768,14 @@
       "slug": "palazzo-ducale-di-martina-franca",
       "city_slug": "martina-franca",
       "website": "https://www.festivaldellavalleditria.it/programma-2026",
-      "source_url": "https://www.festivaldellavalleditria.it/programma-2026",
-      "description": "Palazzo Ducale di Martina Franca è una sede teatrale censita a Martina Franca. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Luoghi/Palazzo-del-Municipio-Palazzo-Ducale",
+      "description": "Palazzo Ducale di Martina Franca è una sede teatrale censita a Martina Franca.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Roma 28",
+      "history": "Il Palazzo Ducale sorse nel Seicento per la famiglia Caracciolo, nell’area dell’antico castello. I suoi spazi storici ospitano anche attività culturali e appuntamenti del Festival della Valle d’Itria.",
+      "photo_file": "Palazzo Ducale di Martina Franca.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Palazzo_Ducale_di_Martina_Franca.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000045",
@@ -568,8 +786,13 @@
       "city_slug": "chieti",
       "website": "https://comune.chieti.it/amministrazione/unita_organizzativa/teatro-marrucino/",
       "source_url": "https://comune.chieti.it/amministrazione/unita_organizzativa/teatro-marrucino/",
-      "description": "Teatro Marrucino è una sede teatrale censita a Chieti. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "description": "Teatro Marrucino è una sede teatrale censita a Chieti.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Cesare de Lollis 10",
+      "history": "Il Teatro Marrucino fu realizzato a Chieti nei primi decenni dell’Ottocento, trasformando l’area di un edificio religioso precedente. Da allora è una sede storica della vita teatrale e musicale abruzzese.",
+      "photo_file": "Teatro Marrucino Chieti.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Marrucino_Chieti.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000046",
@@ -579,9 +802,14 @@
       "slug": "teatro-massimo-bellini",
       "city_slug": "catania",
       "website": "https://www.teatromassimobellini.it/",
-      "source_url": "https://www.teatromassimobellini.it/",
-      "description": "Teatro Massimo Bellini è una sede teatrale censita a Catania. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://turismo.comune.catania.it/scoprire-catania/teatri/teatro-massimo-bellini/",
+      "description": "Teatro Massimo Bellini è una sede teatrale censita a Catania.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Giuseppe Perrotta 12",
+      "history": "Dedicato a Vincenzo Bellini, il Teatro Massimo Bellini fu inaugurato nel 1890 con Norma. L’edificio e la sala costituiscono uno dei principali riferimenti della tradizione lirica siciliana.",
+      "photo_file": "Teatro Massimo Bellini, Catania.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Massimo_Bellini%2C_Catania.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000047",
@@ -591,9 +819,14 @@
       "slug": "teatro-vittorio-emanuele",
       "city_slug": "messina",
       "website": "https://www.teatrovittorioemanuele.it/",
-      "source_url": "https://www.teatrovittorioemanuele.it/",
-      "description": "Teatro Vittorio Emanuele è una sede teatrale censita a Messina. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.italia.it/it/sicilia/messina/teatro-vittorio-emanuele-di-messina",
+      "description": "Teatro Vittorio Emanuele è una sede teatrale censita a Messina.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Garibaldi",
+      "history": "Voluto da Ferdinando II di Borbone, il Teatro Vittorio Emanuele di Messina venne inaugurato nel 1852. L’edificio ha attraversato la storia cittadina mantenendo una programmazione di teatro e musica.",
+      "photo_file": "Teatro Vittorio Emanuele.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Vittorio_Emanuele.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000048",
@@ -603,9 +836,15 @@
       "slug": "teatro-giuseppe-di-stefano",
       "city_slug": "trapani",
       "website": "https://www.lugliomusicale.it/",
-      "source_url": "https://www.lugliomusicale.it/",
-      "description": "Teatro Giuseppe Di Stefano è una sede teatrale censita a Trapani. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.lugliomusicale.it/it/biglietteria-ente-luglio-musicale/",
+      "description": "Teatro Giuseppe Di Stefano è una sede teatrale censita a Trapani.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Villa Margherita, Viale Regina Margherita 1",
+      "history": "Il Teatro Giuseppe Di Stefano è lo spazio lirico estivo realizzato nella Villa Margherita di Trapani. Il palcoscenico all’aperto è legato alla tradizione del Luglio Musicale Trapanese.",
+      "photo_file": "Trapani - Villa margherita - Luglio Musicale Trapanese - Botteghino - panoramio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Trapani_-_Villa_margherita_-_Luglio_Musicale_Trapanese_-_Botteghino_-_panoramio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_note": "L’immagine mostra il luogo del teatro stagionale a Villa Margherita, non l’allestimento attuale"
     },
     {
       "id": "oa-vd-000049",
@@ -615,9 +854,14 @@
       "slug": "teatro-lirico-di-cagliari",
       "city_slug": "cagliari",
       "website": "https://www.liricocagliari.it/",
-      "source_url": "https://www.liricocagliari.it/",
-      "description": "Teatro Lirico di Cagliari è una sede teatrale censita a Cagliari. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.comune.cagliari.it/portale/page/it/teatro_lirico_comunale?contentId=LGO12082",
+      "description": "Teatro Lirico di Cagliari è una sede teatrale censita a Cagliari.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Sant’Alenixedda 11",
+      "history": "Il Teatro Lirico di Cagliari è la sede dell’attività lirica, sinfonica e di balletto della città. Il complesso moderno ha rafforzato nel tempo la presenza di una stagione operistica stabile in Sardegna.",
+      "photo_file": "Lirico Cagliari.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lirico_Cagliari.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     },
     {
       "id": "oa-vd-000050",
@@ -627,9 +871,14 @@
       "slug": "teatro-comunale-di-sassari",
       "city_slug": "sassari",
       "website": "https://www.marialisadecarolis.it/",
-      "source_url": "https://www.marialisadecarolis.it/",
-      "description": "Teatro Comunale di Sassari è una sede teatrale censita a Sassari. Le rappresentazioni saranno collegate alla scheda quando saranno disponibili dati ufficiali verificati.",
-      "monitoring_status": "anagrafica_censita"
+      "source_url": "https://www.marialisadecarolis.it/contatti.aspx",
+      "description": "Teatro Comunale di Sassari è una sede teatrale censita a Sassari.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazzale Cappuccini",
+      "history": "Il Teatro Comunale di Sassari è una sede cittadina dedicata all’opera, alla musica e agli spettacoli dal vivo. Accoglie anche appuntamenti della stagione lirica promossa dall’Ente Concerti de Carolis.",
+      "photo_file": "Teatro comunale di Sassari.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_comunale_di_Sassari.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
     }
   ],
   "related_organizations": [
