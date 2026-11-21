@@ -65,7 +65,24 @@ def new_entities(before: dict, after: dict) -> list[dict]:
     return notices
 
 
-def send(notice: dict, api_key: str, sender: str, recipient: str) -> None:
+def parse_recipients(config: str) -> list[str]:
+    """Read a comma/newline-delimited secret without logging personal addresses."""
+    import re
+    recipients = []
+    seen = set()
+    for address in re.split(r"[,;\n]+", config):
+        address = address.strip()
+        if not address:
+            continue
+        if "@" not in address or any(char.isspace() for char in address):
+            raise ValueError("invalid Atlas notification recipient configuration")
+        if address.casefold() not in seen:
+            recipients.append(address)
+            seen.add(address.casefold())
+    return recipients
+
+
+def send(notice: dict, api_key: str, sender: str, recipients: list[str]) -> None:
     from html import escape
     subject = f"[Opera+ Atlas] {notice['kind']}: {notice['title']}"
     html = "<h2>" + escape(notice["kind"]) + "</h2>" + "".join(
@@ -77,7 +94,7 @@ def send(notice: dict, api_key: str, sender: str, recipient: str) -> None:
         )
     ) + f'<p><a href="{escape(notice["url"], quote=True)}">Apri la scheda su Opera+ Atlas</a></p>'
     payload = json.dumps({
-        "from": sender, "to": [recipient], "subject": subject, "html": html,
+        "from": sender, "to": recipients, "subject": subject, "html": html,
     }).encode("utf-8")
     request = urllib.request.Request(
         "https://api.resend.com/emails", payload,
@@ -117,14 +134,22 @@ def main() -> int:
         return 0
     api_key = os.environ.get("RESEND_API_KEY", "")
     sender = os.environ.get("ATLAS_NOTIFICATION_FROM", "")
-    recipient = os.environ.get("ATLAS_NOTIFICATION_TO", "")
-    if not all((api_key, sender, recipient)):
+    recipient_config = os.environ.get("ATLAS_NOTIFICATION_TO", "")
+    if not all((api_key, sender, recipient_config)):
         print("::warning::Resend notifications not configured (RESEND_API_KEY, ATLAS_NOTIFICATION_FROM, ATLAS_NOTIFICATION_TO).")
+        return 0
+    try:
+        recipients = parse_recipients(recipient_config)
+    except ValueError:
+        print("::warning::Invalid recipient secret configuration.", file=sys.stderr)
+        return 0
+    if not recipients:
+        print("::warning::No valid diagnostic recipients configured.", file=sys.stderr)
         return 0
     failed = 0
     for notice in notices:
         try:
-            send(notice, api_key, sender, recipient)
+            send(notice, api_key, sender, recipients)
             print(f"Resend accepted notification for {notice['kind']} {notice['id']}")
         except (urllib.error.URLError, TimeoutError, RuntimeError) as exc:
             failed += 1
