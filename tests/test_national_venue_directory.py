@@ -19,7 +19,7 @@ class NationalVenueDirectoryTests(unittest.TestCase):
         cls.result=build(cls.source,cls.registry)
 
     def test_complete_independent_directory_is_publishable(self):
-        self.assertGreaterEqual(len(self.result["venues"]),50)
+        self.assertGreaterEqual(len(self.result["venues"]),52)
         self.assertGreaterEqual(len(self.result["related_organizations"]),12)
         self.assertEqual(len({v["id"] for v in self.result["venues"]}),len(self.result["venues"]))
         self.assertEqual(len({v["city_slug"]+"/"+v["slug"] for v in self.result["venues"]}),len(self.result["venues"]))
