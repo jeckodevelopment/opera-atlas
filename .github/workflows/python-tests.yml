@@ -14,5 +14,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Diagnose official Rome robots HTTP status (no page crawling)
+        run: |
+          python - <<'PY'
+          from urllib.request import Request,build_opener,HTTPRedirectHandler
+          from urllib.error import HTTPError,URLError
+          class NoRedirect(HTTPRedirectHandler):
+              def redirect_request(self,*args):return None
+          url='https://www.operaroma.it/robots.txt'
+          try:
+              with build_opener(NoRedirect()).open(Request(url,headers={'User-Agent':'OperaAtlasResearch/0.1 (+https://github.com/jeckodevelopment/opera-atlas)'}),timeout=12) as response:
+                  print('ROMA_ROBOTS_HTTP_STATUS='+str(response.status))
+                  print('ROMA_ROBOTS_CONTENT_TYPE='+str(response.headers.get('Content-Type',''))[:60])
+          except HTTPError as exc:
+              print('ROMA_ROBOTS_HTTP_STATUS='+str(exc.code))
+          except (URLError,OSError,TimeoutError) as exc:
+              print('ROMA_ROBOTS_TRANSPORT_ERROR='+type(exc).__name__)
+          PY
       - name: Unit tests (stdlib)
         run: python -m unittest discover -s tests -v
