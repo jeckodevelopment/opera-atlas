@@ -3,7 +3,7 @@ import json
 import unittest
 from datetime import date
 
-from scripts.auto_catalogue import promote
+from scripts.auto_catalogue import promote, SOURCE_ALLOWLIST
 from scripts.build_verified_catalog import MANIFEST, build
 from scripts.publish_catalog_v2 import REGISTRY, assemble
 from scripts.discover_season_indexes import OUTPUT as CANDIDATES
@@ -16,21 +16,30 @@ class CarloFeliceIntegrationTests(unittest.TestCase):
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         candidates=json.loads(CANDIDATES.read_text(encoding="utf-8"))
         evidence=json.loads(EVIDENCE.read_text(encoding="utf-8"))
+        existing=[p for p in facts["productions"] if p["municipality"]=="Genova"]
         official=[
             x for x in evidence["evidence"]
             if x.get("source_key")=="carlo-felice-season-2026-27"
             and x.get("status")=="needs_editorial_review"
             and x.get("event_facts")
         ]
-        self.assertGreaterEqual(len(official),4,"Official Genova evidence fixtures disappeared")
-        out,ids,urls,report=promote(facts,registry,evidence,candidates,[],
+        # Before the first automatic refresh: require four complete official
+        # pages. Afterwards: trust the committed facts and test idempotence.
+        if not existing:
+            self.assertGreaterEqual(len(official),4,
+                                    "Official Genova evidence fixtures disappeared")
+        authorized=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
+        out,ids,urls,report=promote(facts,registry,evidence,candidates,authorized,
                                     today=date(2026,11,21))
         genova=[p for p in out["productions"] if p["municipality"]=="Genova"]
         self.assertGreaterEqual(len(genova),4,report)
         self.assertGreaterEqual(sum(len(p["dates"]) for p in genova),24,report)
         self.assertTrue(all(p["venue"]=="Teatro Carlo Felice" for p in genova))
         self.assertIn("Genova|Teatro Carlo Felice",ids["venues"])
-        self.assertGreaterEqual(report["new_recite"],24,report)
+        if not existing:
+            self.assertGreaterEqual(report["new_recite"],24,report)
+        else:
+            self.assertEqual(report["new_recite"],0,report)
         self.assertTrue(all(p["source_url"] in urls for p in genova))
         public=assemble(out,ids,approved_extra=set(urls))
         canonical=build(out,approved_extra=set(urls))
