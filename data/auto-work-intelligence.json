@@ -7,20 +7,20 @@
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "title": "Norma",
       "composer": "Vincenzo Bellini",
-      "synopsis": null,
+      "synopsis": "La sacerdotessa Norma nasconde il suo amore per il romano Pollione, mentre la giovane Adalgisa ne conquista il cuore. Lealtà e gelosia sfociano in un dramma.",
       "history": {
         "librettist": "Felice Romani",
         "premiere_year": 1831,
-        "premiere_venue": "teatro alla Scala",
+        "premiere_venue": "Teatro alla Scala",
         "premiere_city": "Milano",
         "sources": [
-          "https://www.wikidata.org/wiki/Q320353"
+          "https://virtualmuseum.nationalopera.gr/en/virtual-exhibition/works/norma-20302/"
         ]
       },
       "wikidata_id": "Q320353",
       "authority_url": "https://www.wikidata.org/wiki/Q320353",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Norma_(opera)",
-      "verified_at": "2026-11-21T17:18:46+00:00"
+      "verified_at": "2026-11-21T19:24:51+00:00"
     },
     {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
@@ -194,6 +194,27 @@
       "verified_at": "2026-11-20T23:18:59+00:00"
     },
     {
+      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "synopsis": "Il principe Tamino parte alla ricerca di Pamina con l'aiuto del buffo Papageno. Prove di coraggio e saggezza mettono alla prova l'amore e la fiducia dei protagonisti.",
+      "history": {
+        "librettist": "Emanuel Schikaneder",
+        "premiere_year": 1791,
+        "premiere_venue": "Theater auf der Wieden",
+        "premiere_city": "Vienna",
+        "sources": [
+          "https://kv.mozarteum.at/de/work/die-zauberflote-7137"
+        ]
+      },
+      "wikidata_id": "Q5064",
+      "authority_url": "https://www.wikidata.org/wiki/Q5064",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Il_flauto_magico",
+      "verified_at": "2026-11-21T19:24:50+00:00"
+    },
+    {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
@@ -213,6 +234,27 @@
       "authority_url": "https://www.wikidata.org/wiki/Q727793",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Don_Quichotte_(opera_lirica)",
       "verified_at": "2026-11-20T23:19:01+00:00"
+    },
+    {
+      "candidate_id": "oa-index-6cd199691f7145a4d048",
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
+      "title": "Hänsel und Gretel",
+      "composer": "Engelbert Humperdinck",
+      "synopsis": "Hänsel e Gretel si perdono nel bosco e incontrano una strega che attira i bambini con una casa di dolci. I fratelli devono trovare il coraggio per liberarsi.",
+      "history": {
+        "librettist": "Adelheid Wette",
+        "premiere_year": 1893,
+        "premiere_venue": "Hoftheater",
+        "premiere_city": "Weimar",
+        "sources": [
+          "https://theaterzettel-weimar.de/item/ThHStAW_performance_00050927?tx_jotheaterzettel_pi1001%5BjoOpenDetail%5D=1"
+        ]
+      },
+      "wikidata_id": "Q1099668",
+      "authority_url": "https://www.wikidata.org/wiki/Q1099668",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/H%C3%A4nsel_e_Gretel_(opera)",
+      "verified_at": "2026-11-21T19:24:48+00:00"
     },
     {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
@@ -369,12 +411,20 @@
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "title": "Adriana Lecouvreur",
       "composer": "Francesco Cilea",
-      "synopsis": "«Adriana Lecouvreur» è un'opera di Francesco Cilea. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
-      "history": null,
+      "synopsis": "L'attrice Adriana Lecouvreur si innamora di Maurizio, ma una potente rivale condivide il suo sentimento. Gelosia e inganni trasformano la passione in tragedia.",
+      "history": {
+        "librettist": "Arturo Colautti",
+        "premiere_year": 1902,
+        "premiere_venue": "Teatro Lirico",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://www.themorgan.org/music-manuscripts-and-printed-music/248689"
+        ]
+      },
       "wikidata_id": "Q375063",
       "authority_url": "https://www.wikidata.org/wiki/Q375063",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Adriana_Lecouvreur_(opera)",
-      "verified_at": "2026-11-21T17:18:48+00:00"
+      "verified_at": "2026-11-21T19:24:51+00:00"
     },
     {
       "candidate_id": "oa-index-b4180540983902f703af",
@@ -416,6 +466,27 @@
       "authority_url": "https://www.wikidata.org/wiki/Q375063",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Adriana_Lecouvreur_(opera)",
       "verified_at": "2026-11-20T23:19:05+00:00"
+    },
+    {
+      "candidate_id": "oa-index-dd5d16aec544e6737e1e",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "synopsis": "Tristano e Isotta, uniti da un amore impossibile e dal conflitto fra desiderio e fedeltà, sfidano le convenzioni della corte di re Marke.",
+      "history": {
+        "librettist": "Richard Wagner",
+        "premiere_year": 1865,
+        "premiere_venue": "Königliches Hof- und Nationaltheater",
+        "premiere_city": "Monaco di Baviera",
+        "sources": [
+          "https://site.mariinsky.ru/en/playbill/repertoire/opera/tristan_und_isolde/"
+        ]
+      },
+      "wikidata_id": "Q1324254",
+      "authority_url": "https://www.wikidata.org/wiki/Q1324254",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Tristano_e_Isotta_(opera)",
+      "verified_at": "2026-11-21T19:24:50+00:00"
     },
     {
       "candidate_id": "oa-index-dfe824fe3301174d2165",
