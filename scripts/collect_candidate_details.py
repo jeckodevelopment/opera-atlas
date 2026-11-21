@@ -166,6 +166,17 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
 
     Never infer metadata for a newly discovered work from a URL slug alone.
     """
+    if source_key.startswith("goldoni-livorno-") and source_key.endswith("-2026-27"):
+        from opera_atlas.livorno_opera_parser import parse_detail
+        title,composer,venue,recite=parse_detail(html,url=url,source_key=source_key)
+        matches=[w for w in registry.get("works",{}).values()
+                 if normalized(w["title"])==normalized(title)
+                 and normalized(w["composer"])==normalized(composer)]
+        if len(matches)!=1:return []
+        work=matches[0]
+        return [{"event_title":work["title"],"composer":work["composer"],
+                 "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key.startswith("ferrara-") and source_key.endswith("-opera-2026-27"):
         from opera_atlas.ferrara_regional_parser import production
         title,composer,venue,recite=production(html,source_key=source_key,url=url)
@@ -195,6 +206,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
             "lirico-cagliari-opera-2027","bellini-catania-opera-2026-27",
             "modena-opera-2026-27","giglio-lucca-opera-2026-27",
             "piacenza-opera-2026-27","reggio-valli-opera-2026-27",
+            *("goldoni-livorno-"+k+"-2026-27" for k in ("dido","otello","elisir")),
             *("ferrara-"+k+"-opera-2026-27" for k in ("macbeth","barbiere","dido","clemenza","boccanegra"))):
         return []
     if (source_key=="teatro-grande-opera-2026" and
@@ -465,6 +477,12 @@ def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
+    if source_key.startswith("goldoni-livorno-") and source_key.endswith("-2026-27"):
+        from opera_atlas.livorno_opera_parser import parse_detail
+        title,composer,venue,recite=parse_detail(html,url=url,source_key=source_key)
+        return [{"event_title":title,"composer":composer,
+                 "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key.startswith("ferrara-") and source_key.endswith("-opera-2026-27"):
         from opera_atlas.ferrara_regional_parser import production
         title,composer,venue,recite=production(html,source_key=source_key,url=url)
@@ -797,7 +815,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"].startswith("ferrara-") or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
+                if item["source_key"].startswith(("ferrara-","goldoni-livorno-")) or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
