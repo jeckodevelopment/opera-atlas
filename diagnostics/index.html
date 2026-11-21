@@ -22,6 +22,9 @@ button,input{font:inherit;border:1px solid #d7d0c2;border-radius:8px;background:
 <div class="toolbar"><div class="status"><span class="dot" id="light"></span><span id="message" role="status">Caricamento dati…</span></div><button type="button" id="reload">Aggiorna dati</button></div>
 <div id="updated" class="muted">—</div>
 <section class="grid" id="metrics" aria-label="Metriche"><div class="tile">Caricamento…</div></section>
+<section><h2>Automazione delle sedi</h2><p class="muted">Stato derivato dai connettori associati esplicitamente alle sedi e dall'esito dell'ultima scansione. Non equivale alla copertura integrale delle stagioni.</p>
+<div class="grid" id="automation-metrics"><div class="tile">Caricamento…</div></div>
+<div class="panel table-wrap"><table class="table"><thead><tr><th>Teatro</th><th>Città</th><th>Automazione</th><th>Connettori</th><th>Ultimo successo</th></tr></thead><tbody id="automation"><tr><td colspan="5">Caricamento…</td></tr></tbody></table></div></section>
 <section><h2>Recite pubblicate / individuate</h2><p class="muted">Per sede teatrale: recite inserite nel catalogo sul totale delle date ufficiali identificate finora. Un 100% non certifica la completezza dell'intera stagione.</p>
 <div class="panel table-wrap"><table class="table"><thead><tr><th>Teatro</th><th>Città</th><th>Pubblicate / individuate</th><th>Completamento rilevato</th><th>Da pubblicare</th></tr></thead><tbody id="recite"><tr><td colspan="5">Caricamento…</td></tr></tbody></table></div></section>
 <section><h2>Fonti principali</h2><p class="muted">Recite e produzioni verificate nel catalogo; la copertura dell'intera stagione non è certificata.</p>
@@ -35,7 +38,7 @@ button,input{font:inherit;border:1px solid #d7d0c2;border-radius:8px;background:
 </main><script>
 "use strict";
 const BASE="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/";
-const urls={coverage:"public/catalog/coverage.json",season:"data/season-index-health.json",candidate:"data/candidate-detail-health.json",recite:"public/catalog/recite-coverage.json"};
+const urls={coverage:"public/catalog/coverage.json",season:"data/season-index-health.json",candidate:"data/candidate-detail-health.json",recite:"public/catalog/recite-coverage.json",automation:"public/catalog/source-automation.json"};
 const $=id=>document.getElementById(id);
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n};
 const td=(tr,value)=>tr.append(el("td",value==null?"—":value));
@@ -48,6 +51,11 @@ let latest=null;
 function draw(data){
  const coverage=data.coverage,season=data.season,candidate=data.candidate;
  const primary=coverage.sources||[],indexes=season.sources||[],outcomes=candidate.outcomes||[],venues=data.recite.venues||[];
+ const auto=data.automation||{},arows=auto.venues||[];
+ const cardsAuto=[["Sedi nel registro",auto.total_venues||0],["Operative",auto.operational||0],["Configurate ma non operative",auto.configured_not_operational||0],["Senza automazione",auto.not_automated||0]];
+ replace($("automation-metrics"),cardsAuto.map(([label,value])=>{const card=el("div",undefined,"tile");card.append(el("strong",value),el("small",label));return card}));
+ replace($("automation"),arows.map(row=>{const tr=el("tr");td(tr,row.venue);td(tr,row.city);const cell=el("td");const statusNames={operational:"Operativa",configured_not_operational:"Configurata, da ripristinare",not_automated:"Da automatizzare"};cell.append(status(statusNames[row.status]||row.status,row.status==="operational"?true:row.status==="not_automated"?false:null));tr.append(cell);td(tr,row.configured_connectors);td(tr,row.recent_successful_connectors);return tr}));
+
  replace($("recite"),venues.map(row=>{const tr=el("tr");td(tr,row.venue);td(tr,row.city);const cell=el("td");cell.append(el("strong",row.published+" / "+row.found));tr.append(cell);const percent=el("td");const meter=el("progress");meter.max=row.found;meter.value=row.published;meter.setAttribute("aria-label","Copertura delle date individuate: "+row.percent+"%");meter.style.width="90px";meter.style.maxWidth="100%";percent.append(meter,el("span"," "+row.percent+"%"));tr.append(percent);td(tr,row.missing);return tr}));
  if(!venues.length){const tr=el("tr");const cell=el("td","Non sono disponibili dati sufficienti");cell.colSpan=5;tr.append(cell);$("recite").append(tr)}
 
@@ -68,6 +76,6 @@ function draw(data){
  $("updated").textContent="Ultima scansione indici: "+stamp(season.checked_at)+" · dettagli: "+stamp(candidate.checked_at)+" · fonti: "+stamp(coverage.last_scan_at);
  $("light").className="dot ok";$("message").textContent="Dati letti da GitHub · aggiornamento su richiesta";
 }
-async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const values=await Promise.all(Object.values(urls).map(fetchJson));latest=Object.fromEntries(Object.keys(urls).map((key,i)=>[key,values[i]]));draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("recite"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
+async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const values=await Promise.all(Object.values(urls).map(fetchJson));latest=Object.fromEntries(Object.keys(urls).map((key,i)=>[key,values[i]]));draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("recite"),[]);replace($("automation"),[]);replace($("automation-metrics"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
 $("reload").addEventListener("click",refresh);$("filter").addEventListener("input",()=>{if(latest)draw(latest)});refresh();
 </script></body></html>
