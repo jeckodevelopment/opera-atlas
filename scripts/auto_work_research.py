@@ -1,16 +1,13 @@
 """Unattended, evidence-grounded discovery of *new* operas.
 
-Wikidata resolves exact title, opera type and composer; Wikipedia provides
-an attributable article excerpt only as model context. A language model
-writes one original short Italian synopsis. No excerpt is persisted.
+Wikidata resolves exact title, opera type and composer. A verified concise
+identity introduction is produced locally, without paid services or models.
 Nothing is published without exact source identity, structured date/time
 evidence and the subsequent canonical transaction.
 """
 from __future__ import annotations
 import argparse
-import hashlib
 import json
-import os
 import re
 from datetime import date,datetime,timezone
 from pathlib import Path
@@ -145,125 +142,6 @@ def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
     if not 140<=len(extract)<=12000:return None
     return extract[:6000]
 
-def make_synopsis(identity:dict,article_text:str,*,api_key:str,model:str="gpt-6-luna")->str|None:
-    """Low-cost JSON-schema output; model may decline if the plot is absent."""
-    if not api_key:return None
-    schema={"type":"object","properties":{
-        "supported":{"type":"boolean"},"synopsis":{"type":"string"}},
-        "required":["supported","synopsis"],"additionalProperties":False}
-    payload={"model":model,"max_output_tokens":350,"reasoning":{"effort":"none"},
-             "input":[
-                 {"role":"system","content":
-                  "Scrivi SOLO in italiano una sinossi originale di una o due frasi per una scheda "
-                  "che invita a teatro. Usa esclusivamente fatti espliciti nel testo fornito, "
-                  "non copiare frasi, non aggiungere episodi o personaggi, non fare didattica. "
-                  "Se il testo non contiene abbastanza trama, supported=false e synopsis vuota."},
-                 {"role":"user","content":
-                  "Opera: "+identity["title"]+"; compositore: "+identity["composer"]+
-                  "; fonte enciclopedica: "+article_text[:6000]}],
-             "text":{"format":{"type":"json_schema","name":"opera_synopsis",
-                               "strict":True,"schema":schema}}}
-    req=Request("https://api.openai.com/v1/responses",data=json.dumps(payload).encode(),
-                headers={"Authorization":"Bearer "+api_key,
-                         "Content-Type":"application/json"},method="POST")
-    with urlopen(req,timeout=35) as response:
-        raw=response.read(80_001)
-        if len(raw)>80_000:raise ValueError("model response too large")
-    result=json.loads(raw.decode("utf-8"))
-    output=[c.get("text","") for o in result.get("output",[])
-            for c in o.get("content",[]) if c.get("type")=="output_text"]
-    if len(output)!=1:return None
-    parsed=json.loads(output[0])
-    if parsed.get("supported") is not True:return None
-    summary=parsed.get("synopsis","").strip()
-    if not 45<=len(summary)<=300 or summary.count(".")>3:return None
-    # Enforce original language, not a copied 12-word fragment.
-    words=re.findall(r"\w+",article_text.casefold(),flags=re.UNICODE)
-    actual=re.findall(r"\w+",summary.casefold(),flags=re.UNICODE)
-    fragments={" ".join(words[i:i+12]) for i in range(max(0,len(words)-11))}
-    if any(" ".join(actual[i:i+12]) in fragments
-           for i in range(max(0,len(actual)-11))):return None
-    return summary
-
-def make_history(identity:dict, article_text:str, *,api_key:str,
-                 model:str="gpt-6-luna")->dict|None:
-    """Only publish historical facts paired with verbatim evidence from the article.
-
-    A missing composition year is explicit null, never copied from the premiere.
-    A candidate lacking premiere/libretto evidence remains unpublished for a later
-    automatic retry rather than receiving a fictional biography.
-    """
-    if not api_key:return None
-    schema={"type":"object","properties":{
-        "supported":{"type":"boolean"},
-        "librettist":{"type":"string"},
-        "premiere_year":{"type":"integer"},
-        "premiere_venue":{"type":"string"},
-        "premiere_city":{"type":"string"},
-        "composition_year":{"type":["integer","null"]},
-        "libretto_evidence":{"type":"string"},
-        "premiere_evidence":{"type":"string"},
-        "composition_evidence":{"type":"string"}},
-        "required":["supported","librettist","premiere_year","premiere_venue",
-                    "premiere_city","composition_year","libretto_evidence",
-                    "premiere_evidence","composition_evidence"],
-        "additionalProperties":False}
-    data={"model":model,"max_output_tokens":750,"reasoning":{"effort":"none"},
-          "input":[{"role":"system","content":
-            "Sei un estrattore di fatti d'archivio, non uno scrittore creativo. "
-            "Usa SOLO il testo fornito. supported=true soltanto se il testo "
-            "dichiara chiaramente librettista, anno, teatro e città della PRIMA "
-            "rappresentazione mondiale. Per ogni fatto indica un estratto ESATTO "
-            "dal testo, copiato letteralmente, rispettivamente nei campi evidence. "
-            "Se assente un dato obbligatorio: supported=false. "
-            "Non dedurre mai l'anno di composizione dall'anno di debutto; "
-            "se non esplicito usa null e composition_evidence vuota."},
-                   {"role":"user","content":"Opera: "+identity["title"]+
-                    "; composer: "+identity["composer"]+
-                    "; source: "+article_text[:6000]}],
-          "text":{"format":{"type":"json_schema","name":"opera_history",
-                             "strict":True,"schema":schema}}}
-    request=Request("https://api.openai.com/v1/responses",
-                    data=json.dumps(data).encode("utf-8"),
-                    headers={"Authorization":"Bearer "+api_key,
-                             "Content-Type":"application/json"},method="POST")
-    with urlopen(request,timeout=35) as response:
-        raw=response.read(80_001)
-        if len(raw)>80_000:raise ValueError("historical extraction too large")
-    result=json.loads(raw.decode("utf-8"))
-    output=[x.get("text","") for o in result.get("output",[])
-            for x in o.get("content",[]) if x.get("type")=="output_text"]
-    if len(output)!=1:return None
-    parsed=json.loads(output[0])
-    if parsed.get("supported") is not True:return None
-    for key in ("librettist","premiere_venue","premiere_city"):
-        if not isinstance(parsed.get(key),str) or not 3<=len(parsed[key].strip())<=140:
-            return None
-    year=parsed.get("premiere_year")
-    composed=parsed.get("composition_year")
-    if type(year)!=int or not 1600<=year<=date.today().year:return None
-    if composed is not None and (type(composed)!=int or not 1500<=composed<=year):
-        return None
-    normalized_source=" ".join(article_text.casefold().split())
-    for key in ("libretto_evidence","premiere_evidence"):
-        evidence=parsed.get(key,"")
-        if not isinstance(evidence,str) or len(evidence.strip())<15 or (
-            " ".join(evidence.casefold().split()) not in normalized_source):
-            return None
-    if composed is not None:
-        evidence=parsed.get("composition_evidence","")
-        if not isinstance(evidence,str) or str(composed) not in evidence or (
-            " ".join(evidence.casefold().split()) not in normalized_source):
-            return None
-    if str(year) not in parsed["premiere_evidence"]:return None
-    # Keep evidence text private to evaluation; publish only facts and provenance.
-    return {"librettist":parsed["librettist"].strip(),
-            "premiere_year":year,"premiere_venue":parsed["premiere_venue"].strip(),
-            "premiere_city":parsed["premiere_city"].strip(),
-            **({"composition_year":composed} if composed is not None else {}),
-            "sources":[identity["authority_url"],identity["wikipedia_url"]]}
-
-
 def preverified_work_material() -> dict[str, dict]:
     """Already-sourced original synopses and histories, outside canonical works.
 
@@ -314,8 +192,7 @@ def choose_candidates(candidates:dict,existing:dict,known_slugs:set[str],
         if not items:return []
         offset=today.toordinal()%len(items)
         return items[offset:]+items[:offset]
-    # All pre-sourced works can be checked with public authoritative APIs, without
-    # consuming the paid model budget reserved for truly undocumented titles.
+    # Bound API reads; public authority checks do not require model tokens.
     return rotate(ready)[:MAX_PREVERIFIED]+rotate(other)[:MAX_RESEARCH]
 
 def identity_introduction(identity:dict)->str:
@@ -333,7 +210,7 @@ def identity_introduction(identity:dict)->str:
 def research(candidates:dict,existing:dict,known_slugs:set[str],*,
              today:date,resolve=resolve_identity,extract=wiki_excerpt,
              evidence:dict|None=None,
-             generate=make_synopsis,generate_history=make_history,api_key:str="",
+             generate=None,generate_history=None,api_key:str="",
              allow_authority:bool=False,prepared:dict|None=None):
     existing_works={x["candidate_id"]:x.copy() for x in existing.get("works",[])}
     prepared=preverified_work_material() if prepared is None else prepared
