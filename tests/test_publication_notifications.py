@@ -1,7 +1,8 @@
 """Publication diagnostics: only newly published work/staging identities notify."""
+import json
 import unittest
 from unittest.mock import patch, MagicMock
-from scripts.notify_publications import new_entities, send
+from scripts.notify_publications import new_entities, send, parse_recipients
 
 
 class PublicationNotificationsTest(unittest.TestCase):
@@ -39,10 +40,19 @@ class PublicationNotificationsTest(unittest.TestCase):
         response.status = 200
         response.__enter__.return_value = response
         with patch("scripts.notify_publications.urllib.request.urlopen", return_value=response) as call:
-            send(notice, "fake-api-key", "Atlas <atlas@example.org>", "admin@example.org")
+            send(notice, "fake-api-key", "Atlas <atlas@example.org>", ["one@example.org", "two@example.org"])
         request = call.call_args.args[0]
         self.assertEqual(request.get_header("Idempotency-key"), "atlas-published-oa-w-1")
         self.assertIn(b"Nuova opera", request.data)
+        self.assertEqual(json.loads(request.data)["to"], ["one@example.org", "two@example.org"])
+
+    def test_multiple_secret_recipients_are_trimmed_and_deduplicated(self):
+        self.assertEqual(parse_recipients(" one@example.org, two@example.org\nONE@example.org"),
+                         ["one@example.org", "two@example.org"])
+
+    def test_malformed_secret_recipients_are_rejected(self):
+        with self.assertRaises(ValueError):
+            parse_recipients("one@example.org, not-an-email")
 
 
 if __name__ == "__main__":

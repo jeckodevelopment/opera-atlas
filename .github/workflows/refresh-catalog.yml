@@ -134,8 +134,8 @@ jobs:
         if: steps.cached_publication.outputs.deferred != 'true'
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          ATLAS_NOTIFICATION_FROM: ${{ vars.ATLAS_NOTIFICATION_FROM }}
-          ATLAS_NOTIFICATION_TO: ${{ vars.ATLAS_NOTIFICATION_TO }}
+          ATLAS_NOTIFICATION_FROM: ${{ secrets.ATLAS_NOTIFICATION_FROM }}
+          ATLAS_NOTIFICATION_TO: ${{ secrets.ATLAS_NOTIFICATION_TO }}
         run: python -m scripts.notify_publications --base "${{ github.sha }}"
       - name: Retry fast publication if newer code arrived
         if: steps.cached_publication.outputs.deferred == 'true'
@@ -255,8 +255,8 @@ jobs:
         if: steps.publish_catalog.outputs.deferred != 'true'
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          ATLAS_NOTIFICATION_FROM: ${{ vars.ATLAS_NOTIFICATION_FROM }}
-          ATLAS_NOTIFICATION_TO: ${{ vars.ATLAS_NOTIFICATION_TO }}
+          ATLAS_NOTIFICATION_FROM: ${{ secrets.ATLAS_NOTIFICATION_FROM }}
+          ATLAS_NOTIFICATION_TO: ${{ secrets.ATLAS_NOTIFICATION_TO }}
         run: python -m scripts.notify_publications --base "${{ steps.publish_catalog.outputs.baseline }}"
       - name: Automatically retry the deferred catalog against latest main
         if: steps.publish_catalog.outputs.deferred == 'true'
