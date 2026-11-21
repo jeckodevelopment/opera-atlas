@@ -46,6 +46,36 @@ VENUE_BY_SOURCE={
 
 
 
+def normalize_source_seed_trieste_genre(rows:list[dict],key:str,url:str,
+                                        seed:dict|None)->list[dict]:
+    """Repair an archived official genre suffix only with exact seed identity.
+
+    Unlike canonicalize_cached_trieste_credit (existing published works),
+    this form permits a *new* seeded composition, but only after the official
+    URL has matched the source-backed and historically verified seed. It
+    rewrites no date, time or venue.
+    """
+    if (key!="verdi-trieste-season-2026-27" or not isinstance(seed,dict)
+            or seed.get("source_key")!=key or seed.get("source_url")!=url
+            or not isinstance(rows,list) or not rows
+            or not all(isinstance(r,dict) for r in rows)):
+        return rows
+    title,composer=seed.get("title"),seed.get("composer")
+    if not isinstance(title,str) or not isinstance(composer,str):
+        return rows
+    modified=[]
+    for row in rows:
+        if (normalized(row.get("event_title","")).replace("’","'")
+                !=normalized(title).replace("’","'")):
+            return rows
+        old=row.get("composer")
+        if (not isinstance(old,str)
+                or old!=composer+" Melodramma"):
+            return rows
+        modified.append({**row,"event_title":title,"composer":composer})
+    return modified
+
+
 def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict)->dict:
     """Resolve new work identities from consistent, officially credited facts.
 
@@ -94,6 +124,7 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
             or key not in VENUE_BY_SOURCE):
             continue
         rows=record.get("event_facts",[])
+        rows=normalize_source_seed_trieste_genre(rows,key,url,seeds.get((key,url)))
         if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
             from opera_atlas.bologna_detail_parser import normalize_event_fact
             rows=[normalize_event_fact(x) for x in rows]
@@ -702,6 +733,10 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                                             "reason":"homonym_route_collision"})
             continue
         rows=detail.get("event_facts",[])
+        if verified_official:
+            rows=normalize_source_seed_trieste_genre(
+                rows,source_key,url,{"source_key":source_key,"source_url":url,
+                                    "title":title,"composer":composer})
         if not isinstance(rows,list) or not rows:continue
         if verified_official:
             from opera_atlas.bologna_detail_parser import normalize_event_fact
