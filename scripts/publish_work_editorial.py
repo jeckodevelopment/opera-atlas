@@ -63,9 +63,18 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
         if not isinstance(summary, str) or not 35 <= len(summary.strip()) <= 300:
             raise ValueError("invalid short synopsis: " + work["slug"])
         historical=history_by_id.get(work["id"],history["works"].get(work["slug"]))
+        has_verified_authority=(isinstance(work.get("wikidata_id"),str)
+                                and bool(__import__("re").fullmatch(
+                                    r"Q[1-9][0-9]*",work["wikidata_id"])))
         if len(same_slug[work["slug"]])>1 and work["id"] not in history_by_id:
-            raise ValueError("ambiguous history needs work ID: "+work["id"])
-        if not validate_history(historical):
+            if not has_verified_authority:
+                raise ValueError("ambiguous history needs work ID: "+work["id"])
+            historical=None
+        if historical is None and has_verified_authority:
+            # A verifiable opera identity is enough for an Atlas listing.
+            # Missing archival facts must stay absent, never fabricated.
+            pass
+        elif not validate_history(historical):
             raise ValueError("missing complete sourced work history: "+work["slug"])
         entries.append({"work_id":work["id"], "slug":work["slug"],
                         "title":work["title"],"composer":work["composer"],

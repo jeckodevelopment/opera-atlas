@@ -4,7 +4,7 @@ import unittest
 from datetime import date
 
 from scripts.auto_work_research import (
-    claim_ids, resolve_identity, choose_candidates, research,make_synopsis,
+    claim_ids, resolve_identity, choose_candidates, research,
     official_title_hint, wiki_excerpt
 )
 
@@ -100,6 +100,24 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(captured,["Second Composer"])
         self.assertEqual(status[0]["status"],"enriched")
         self.assertEqual(output["works"][0]["composer"],"Second Composer")
+
+    def test_verified_opera_without_italian_wikipedia_is_recognized(self):
+        def claim(qid):
+            return [{"mainsnak":{"datavalue":{"value":{"id":qid}}}}]
+        def fake(url):
+            if "wbsearchentities" in url:
+                return {"search":[{"id":"Q987","label":"Opera sconosciuta"}]}
+            if "ids=Q987" in url:
+                return {"entities":{"Q987":{
+                    "labels":{"it":{"value":"Opera sconosciuta"}},
+                    "claims":{"P31":claim("Q1344"),"P86":claim("Q654")}}}}
+            if "ids=Q654" in url:
+                return {"entities":{"Q654":{"labels":{"it":{"value":"Compositore Verificato"}}}}}
+            raise AssertionError(url)
+        item=resolve_identity("Opera sconosciuta",fetch=fake)
+        self.assertEqual(item["wikidata_id"],"Q987")
+        self.assertEqual(item["composer"],"Compositore Verificato")
+        self.assertIsNone(item["wikipedia_url"])
 
     def test_missing_opera_type_rejected(self):
         def fake(url):
@@ -217,7 +235,7 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(again,result)
         self.assertEqual(events,[])
 
-    def test_canonical_identity_and_missing_key_do_not_invoke_external_api(self):
+    def test_keyless_authority_retries_only_when_identity_cannot_be_verified(self):
         doc={"schema_version":1,"candidates":[CANDIDATE]}
         calls=[]
         def resolver(title):
@@ -226,8 +244,30 @@ class AutoWorkResearchTests(unittest.TestCase):
         result,status=research(doc,{"schema_version":1,"works":[]},set(),
                                today=date(2026,11,20),resolve=resolver,api_key="")
         self.assertEqual(result["works"],[])
-        self.assertEqual(calls,[])
-        self.assertEqual(status[0]["status"],"model_not_configured")
+        self.assertEqual(calls,["anna bolena"])
+        self.assertEqual(status[0]["status"],"automatic_retry")
+
+    def test_new_work_generates_keyless_factual_introduction(self):
+        from scripts.auto_work_research import identity_introduction
+        identity={"title":"Il barbiere di Siviglia",
+                  "composer":"Giovanni Paisiello",
+                  "wikidata_id":"Q123",
+                  "authority_url":"https://www.wikidata.org/wiki/Q123",
+                  "wikipedia_url":"https://it.wikipedia.org/wiki/Il_barbiere_di_Siviglia"}
+        doc={"schema_version":1,"candidates":[CANDIDATE]}
+        def resolver(title):
+            return identity
+        def forbidden(*args,**kwargs):
+            raise AssertionError("No paid model, excerpt or historical synthesis")
+        result,status=research(doc,{"schema_version":1,"works":[]},set(),
+                               today=date(2026,11,20),resolve=resolver,
+                               extract=forbidden,generate=forbidden,
+                               generate_history=forbidden,api_key="")
+        self.assertEqual(status[0]["status"],"enriched")
+        card=result["works"][0]
+        self.assertEqual(card["synopsis"],identity_introduction(identity))
+        self.assertIsNone(card["history"])
+        self.assertIn("Giovanni Paisiello",card["synopsis"])
 
     def test_original_synopsis_is_saved_only_if_grounded(self):
         doc={"schema_version":1,"candidates":[{
@@ -255,10 +295,10 @@ class AutoWorkResearchTests(unittest.TestCase):
                 "premiere_venue":"Teatro Example","premiere_city":"Milano",
                 "sources":[obj["authority_url"],obj["wikipedia_url"]]},
             api_key="fake-key")
-        self.assertEqual(calls,["fake-key"])
+        self.assertEqual(calls,[])
         self.assertEqual(status[0]["status"],"enriched")
         self.assertEqual(result["works"][0]["composer"],"Gaetano Donizetti")
-        self.assertIn("history",result["works"][0])
+        self.assertIsNone(result["works"][0]["history"])
         self.assertNotIn("source_excerpt",result["works"][0])
         again,events=research(doc,result,set(),today=date(2026,11,21),
                               resolve=lambda x: (_ for _ in ()).throw(AssertionError("refetched")),
