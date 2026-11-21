@@ -21,7 +21,7 @@ SOURCES={
 DATE=re.compile(
     r"(?i)\b(luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|venerd[iì]|sabato|domenica)"
     r"\s+(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre),?\s*"
-    r"ore\s+([01]?\d|2[0-3])(?:[.:]([0-5]\d))?")
+    r"ore\s+([01]\d|2[0-3]|[0-9])(?:[.:]([0-5]\d))?\b")
 WEEKDAYS={"lunedì":0,"martedì":1,"mercoledì":2,"giovedì":3,"venerdì":4,"sabato":5,"domenica":6,
           "lunedi":0,"martedi":1,"mercoledi":2,"giovedi":3,"venerdi":4}
 
