@@ -2,6 +2,19 @@
   "schema_version": 1,
   "works": [
     {
+      "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "synopsis": "«Norma» è un'opera di Vincenzo Bellini. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
+      "history": null,
+      "wikidata_id": "Q320353",
+      "authority_url": "https://www.wikidata.org/wiki/Q320353",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Norma_(opera)",
+      "verified_at": "2026-11-21T17:18:46+00:00"
+    },
+    {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
@@ -207,6 +220,32 @@
       "verified_at": "2026-11-20T22:10:17+00:00"
     },
     {
+      "candidate_id": "oa-index-790b965de8129382aa04",
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
+      "title": "Arlecchino",
+      "composer": "Ferruccio Busoni",
+      "synopsis": "«Arlecchino» è un'opera di Ferruccio Busoni. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
+      "history": null,
+      "wikidata_id": "Q922043",
+      "authority_url": "https://www.wikidata.org/wiki/Q922043",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Arlecchino_(opera)",
+      "verified_at": "2026-11-21T17:18:50+00:00"
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "source_key": "teatro-grande-opera-2026",
+      "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
+      "title": "L'italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "synopsis": "«L'italiana in Algeri» è un'opera di Gioachino Rossini. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
+      "history": null,
+      "wikidata_id": "Q589932",
+      "authority_url": "https://www.wikidata.org/wiki/Q589932",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/L%27italiana_in_Algeri",
+      "verified_at": "2026-11-21T17:18:47+00:00"
+    },
+    {
       "candidate_id": "oa-index-7f4bc91ba66978263199",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/normatebar/",
@@ -247,6 +286,19 @@
       "authority_url": "https://www.wikidata.org/wiki/Q966299",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Nozze_istriane",
       "verified_at": "2026-11-20T23:19:04+00:00"
+    },
+    {
+      "candidate_id": "oa-index-9c8433ba74501efca6eb",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
+      "title": "Adriana Lecouvreur",
+      "composer": "Francesco Cilea",
+      "synopsis": "«Adriana Lecouvreur» è un'opera di Francesco Cilea. Consulta le rappresentazioni verificate in programma nei teatri italiani.",
+      "history": null,
+      "wikidata_id": "Q375063",
+      "authority_url": "https://www.wikidata.org/wiki/Q375063",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Adriana_Lecouvreur_(opera)",
+      "verified_at": "2026-11-21T17:18:48+00:00"
     },
     {
       "candidate_id": "oa-index-d7a3053257b5915753f9",

@@ -4,6 +4,14 @@
   "new_recite": 0,
   "auto_skipped": [
     {
+      "candidate_id": "oa-index-027fde14d101fca6bf3e",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-073615054167b041e7f7",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "candidate_id": "oa-index-184e57e1cd9f38d554d5",
       "reason": "unknown_work_needs_authority_data"
     },
@@ -16,12 +24,20 @@
       "reason": "multiple_work_identities"
     },
     {
+      "candidate_id": "oa-index-790b965de8129382aa04",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "reason": "same_recita_already_in_official_circuit",
       "dates": [
         "2026-11-26",
         "2026-11-28"
       ]
+    },
+    {
+      "candidate_id": "oa-index-a0eba5854831ebbf26c0",
+      "reason": "unknown_work_needs_authority_data"
     },
     {
       "candidate_id": "oa-index-dfe824fe3301174d2165",
