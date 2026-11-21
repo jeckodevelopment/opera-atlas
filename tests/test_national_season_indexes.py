@@ -76,13 +76,18 @@ class NationalIndexTests(unittest.TestCase):
         url="https://www.donizettiopera.org/it/opere-2026/"
         html='<nav><a href="/it/evento/unrelated/">Menu</a></nav><h1>Opere 2026</h1>'
         html+=''.join('<a href="/it/evento/'+slug+'/">Opera</a>' for slug in
-                      ("l-esule-di-roma","alahor-in-granata",
+                      ("l-esule-di-roma","alahor-in-granata/2026-11-14",
                        "le-convenienze-ed-inconvenienze-teatrali"))
         html+='<a href="/it/evento/the-donizetti-brunch/2026-11-29/">Brunch</a>'
         html+='<footer><a href="/it/evento/another/">Footer</a></footer>'
         urls=extract("donizetti-opera-2026",url,html,3)
         self.assertEqual(len(urls),3)
         self.assertFalse(any("brunch" in x or "another" in x for x in urls))
+        self.assertTrue(any(x.endswith("/alahor-in-granata/2026-11-14/") for x in urls))
+        self.assertFalse(eligible("donizetti-opera-2026",
+                     "https://www.donizettiopera.org/it/evento/alahor-in-granata/2025-11-14/"))
+        self.assertFalse(eligible("donizetti-opera-2026",
+                     "https://www.donizettiopera.org/it/evento/the-donizetti-brunch/2026-11-29/"))
 
     def test_teatro_grande_index_scoped_to_opera_not_concerts(self):
         url="https://teatrogrande.it/it"
