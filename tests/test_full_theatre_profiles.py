@@ -71,7 +71,10 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertIn('photo_file:venue.photo_file',directory)
         script=(SITE/"image-client.js").read_text(encoding="utf-8")
         self.assertIn("event?.photo_file",script)
-        self.assertIn("event?.no_city_fallback",script)
+        self.assertIn('const verified=event?.photo_file || knownVenueFile;',script)
+        venue_code=script.split("  function venue(event){",1)[1].split("  function festival(event){",1)[0]
+        self.assertIn("VENUE_NAMES[city]?.includes(title)",venue_code)
+        self.assertIn('const file=typeof verified===',venue_code)
         self.assertIn('selected.venue?.calendar_status==="acquired"',detail)
         self.assertIn("Calendario non ancora acquisito · consulta il ",detail)
         self.assertIn("Non risultano prossimi spettacoli in programma.",detail)
