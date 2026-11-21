@@ -24,6 +24,24 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di Il barbiere di Siviglia",
       "kind": "official_production_image"
+    },
+    "oa-w-000041": {
+      "work_id": "oa-w-000041",
+      "kind": "official_production_image",
+      "image_url": "https://www.tcbo.it/wp-content/uploads/2026/09/Bologna-27-Vanessa_2560-x-1440.webp",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
+      "alt": "Grafica ufficiale del Teatro Comunale di Bologna per Vanessa di Samuel Barber, stagione 2027",
+      "credit": "Teatro Comunale di Bologna, materiale ufficiale di stagione 2027",
+      "license": "© Teatro Comunale di Bologna; diritti riservati, visualizzazione da sito ufficiale"
+    },
+    "oa-w-000044": {
+      "work_id": "oa-w-000044",
+      "kind": "official_production_image",
+      "image_url": "https://www.tcbo.it/wp-content/uploads/2026/09/Bologna-27-Accabadora_2560-x-1440.webp",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
+      "alt": "Grafica ufficiale del Teatro Comunale di Bologna per Accabadora di Francesco Filidei, stagione 2027",
+      "credit": "Teatro Comunale di Bologna, materiale ufficiale di stagione 2027",
+      "license": "© Teatro Comunale di Bologna; diritti riservati, visualizzazione da sito ufficiale"
     }
   },
   "checks": {

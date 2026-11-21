@@ -10,6 +10,15 @@ from scripts import publish_work_posters as posters
 from opera_atlas.controlled_fetch import FetchResult
 
 class PosterPublicationTests(unittest.TestCase):
+    @staticmethod
+    def seed_official_evidence(path, *, checks=None):
+        # Unit fixtures still start from independently verified, canonical
+        # official images. An empty seed is now explicitly invalid.
+        stable=json.loads(posters.EVIDENCE.read_text(encoding="utf-8"))
+        data={"schema_version":2,"posters":stable["posters"],
+              "checks":checks or {}}
+        path.write_text(json.dumps(data),encoding="utf-8")
+
     def test_extracts_explicit_official_poster_with_credit(self):
         url="https://www.teatrolafenice.it/event/adriana-lecouvreur/"
         html='''<html><head>
@@ -98,6 +107,7 @@ class PosterPublicationTests(unittest.TestCase):
             html='''<meta property="og:image" content="/wp-content/uploads/adriana-lecouvreur-poster.jpg">
             <meta property="og:image:width" content="700">
             <meta property="og:image:height" content="1000">'''
+            self.seed_official_evidence(stored)
             calls=[]
             def mock(db,*,source_id,url,network_enabled):
                 calls.append(url)
@@ -122,7 +132,7 @@ class PosterPublicationTests(unittest.TestCase):
                 self.assertEqual(len(calls),2)
                 self.assertTrue(published.exists())
                 evidence=json.loads(stored.read_text())
-                self.assertEqual(len(evidence["posters"]),1)
+                self.assertIn("oa-w-000033",evidence["posters"])
                 posters.publish(network_enabled=True,fetcher=mock,
                                 today=date(2026,11,21),max_pages=2)
                 self.assertEqual(len(calls),2) # no repeat within cooldown
@@ -130,6 +140,7 @@ class PosterPublicationTests(unittest.TestCase):
     def test_anna_bolena_and_leoncavallo_receive_distinct_archival_images(self):
         with TemporaryDirectory() as temp:
             root=Path(temp)
+            self.seed_official_evidence(root/"empty-evidence.json")
             with patch.object(posters,"EVIDENCE",root/"empty-evidence.json"),\
                  patch.object(posters,"OUTPUT",root/"work-posters.json"),\
                  patch.object(posters,"HEALTH",root/"health.json"),\
@@ -144,15 +155,14 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertEqual(leoncavallo["kind"],"archival_work_image")
         self.assertIn("Leoncavallo",leoncavallo["image_url"])
         self.assertNotEqual(leoncavallo["image_url"],puccini.get("image_url"))
-        self.assertEqual(puccini["kind"],"original_editorial_cover")
+        self.assertEqual(puccini["kind"],"official_production_image")
 
     def test_retries_old_cooldowns_when_poster_policy_changes(self):
         with TemporaryDirectory() as temp:
             root=Path(temp)
             source_url="https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
-            (root/"evidence.json").write_text(json.dumps({
-                "schema_version":2,"posters":{},
-                "checks":{source_url:{"retry_after":"2026-11-27"}}}),encoding="utf-8")
+            self.seed_official_evidence(root/"evidence.json",
+                checks={source_url:{"retry_after":"2026-11-27"}})
             calls=[]
             class FakeDB:
                 def execute(self,*args,**kwargs):
@@ -200,6 +210,7 @@ class PosterPublicationTests(unittest.TestCase):
         # and must not silently merge the two La bohème composers.
         with TemporaryDirectory() as temp:
             root=Path(temp)
+            self.seed_official_evidence(root/"empty-evidence.json")
             with patch.object(posters,"EVIDENCE",root/"empty-evidence.json"),\
                  patch.object(posters,"OUTPUT",root/"work-posters.json"),\
                  patch.object(posters,"HEALTH",root/"health.json"),\
@@ -218,9 +229,7 @@ class PosterPublicationTests(unittest.TestCase):
         works=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
         with TemporaryDirectory() as temp:
             output=Path(temp)/"posters.json"
-            content={"schema_version":2,"works":{
-                w["id"]:{"work_id":w["id"],"kind":"original_editorial_cover",
-                         "alt":w["title"]} for w in works.values()}}
+            content=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))
             output.write_text(json.dumps(content),encoding="utf-8")
             with patch.object(posters,"OUTPUT",output):
                 posters.check()
@@ -255,9 +264,8 @@ class PosterPublicationTests(unittest.TestCase):
                 self.assertIn("Special:Redirect/file/",poster["image_url"])
                 self.assertEqual(poster["work_id"],wid)
         for wid in ("oa-w-000041","oa-w-000044"):
-            # Modern works keep distinct, truthfully labelled original covers,
-            # never the historical poster of another composition.
-            self.assertEqual(published[wid]["kind"],"original_editorial_cover")
+            self.assertEqual(published[wid]["kind"],"official_production_image")
+            self.assertTrue(published[wid]["source_url"].startswith("https://www.tcbo.it/evento/opera/"))
 
     def test_full_catalog_poster_coverage_and_stable_work_provenance(self):
         from scripts.publish_catalog_v2 import REGISTRY
@@ -269,41 +277,12 @@ class PosterPublicationTests(unittest.TestCase):
                                 json.loads(REGISTRY.read_text(encoding="utf-8")))
         published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
         self.assertEqual({w["id"] for w in works},set(published))
-        editorial=[w for w in works if published[w["id"]]["kind"]=="original_editorial_cover"]
-        # The three established illustrated works remain explicit. Future
-        # first-party verified operas can temporarily use a truthful editorial
-        # fallback if no reusable official poster is available. All other
-        # unexplained fallbacks must still fail.
-        established={"Death in Venice","Nixon in China","Jenůfa"}
-        self.assertTrue(established.issubset({w["title"] for w in editorial}))
-        for work in editorial:
-            if work["title"] in established:continue
-            # All new work IDs require independently verified authority,
-            # but eligible works from other theatres may have Wikidata rather
-            # than a TCBO URL. An artwork fallback is not a fake poster.
-            import re
-            official=work.get("authority_url","")
-            first_party=(
-                bool(re.fullmatch(
-                    r"https://www\.tcbo\.it/evento/opera/[a-z0-9-]+-20\d{2}/",
-                    official)) and
-                any(stage["work_id"]==work["id"] and
-                    stage["source_url"]==official
-                    for stage in registry_graph["stagings"]))
-            wikidata=bool(re.fullmatch(
-                r"Q[1-9][0-9]*",work.get("wikidata_id","")))
-            self.assertTrue(first_party or wikidata,work["title"])
-        # Each newly catalogued opera must have an approved image plan, but
-        # the number of *archival* works changes whenever new canonical IDs
-        # are introduced. Never assert a fixed total from a different snapshot.
-        counts={kind:sum(v["kind"]==kind for v in published.values())
-                for kind in ("archival_work_image","official_production_image",
-                             "original_editorial_cover")}
-        # Official imagery is discovered continuously, and can replace an
-        # archival fallback without changing the work inventory. Validate
-        # the full partition, provenance and IDs, not a fixed number per kind.
-        self.assertEqual(sum(counts.values()),len(works))
-        self.assertEqual(counts["original_editorial_cover"],len(editorial))
+        self.assertTrue(all(published[w["id"]]["kind"] in
+                            ("archival_work_image","official_production_image")
+                            for w in works))
+        self.assertEqual(len(published),len(works))
+        self.assertEqual(sum(v["kind"]=="original_editorial_cover"
+                             for v in published.values()),0)
         posters.check()
         for work in works:
             image=published[work["id"]]
@@ -319,23 +298,36 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertNotEqual(published["oa-w-000007"]["image_url"],
                             published["oa-w-000024"]["image_url"])
 
-    def test_explicit_editorial_covers_are_local_and_titles_are_visible(self):
-        from scripts.deploy_atlas import FILES, SOURCE
-        posted=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
-        for work_id,filename,title in [
-            ("oa-w-000020","cover-jenufa.svg","JENŮFA"),
-            ("oa-w-000034","cover-nixon-in-china.svg","NIXON")
-        ]:
-            item=posted[work_id]
-            self.assertEqual(item["kind"],"original_editorial_cover")
-            self.assertEqual(item["cover_file"],filename)
-            self.assertIn(filename,FILES)
-            content=(SOURCE/filename).read_text(encoding="utf-8")
-            self.assertIn(title,content)
-            self.assertIn("COPERTINA EDITORIALE ORIGINALE",content)
-        ballo=posted["oa-w-000012"]
-        self.assertIn("Vocal_score_frontispiece",ballo["image_url"])
-        self.assertNotIn("Yerevan",ballo["image_url"])
+    def test_historical_posters_replace_old_generated_covers(self):
+        published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
+        for wid in ("oa-w-000013","oa-w-000020","oa-w-000034"):
+            self.assertEqual(published[wid]["kind"],"archival_work_image")
+            self.assertTrue(published[wid]["source_url"].startswith(
+                "https://commons.wikimedia.org/wiki/File:"))
+        self.assertIn("Vocal_score_frontispiece",published["oa-w-000012"]["image_url"])
+
+    def test_publisher_fails_closed_without_authenticated_work_image(self):
+        from scripts.publish_catalog_v2 import REGISTRY
+        with TemporaryDirectory() as temp:
+            root=Path(temp)
+            work={"id":"oa-w-999998","slug":"new-work","title":"New work",
+                  "composer":"Unknown composer"}
+            stub={"schema_version":1,"works":{"new work|unknown composer":work}}
+            (root/"registry.json").write_text(json.dumps(stub))
+            (root/"archive.json").write_text(json.dumps({
+                "schema_version":1,"works":{},"works_by_id":{}}))
+            (root/"evidence.json").write_text(json.dumps({
+                "schema_version":2,"posters":{},"checks":{}}))
+            with patch.object(posters,"REGISTRY",root/"registry.json"),\
+                 patch.object(posters,"ARCHIVE",root/"archive.json"),\
+                 patch.object(posters,"EVIDENCE",root/"evidence.json"),\
+                 patch.object(posters,"OUTPUT",root/"out.json"),\
+                 patch.object(posters,"HEALTH",root/"health.json"),\
+                 patch.object(posters,"canonical_sources",return_value=[]),\
+                 patch.object(posters,"connect"),patch.object(posters,"migrate"):
+                with self.assertRaisesRegex(ValueError,"verified opera images missing"):
+                    posters.publish(network_enabled=False,max_pages=0)
+            self.assertFalse((root/"out.json").exists())
 
     def test_frontend_loads_posters_without_redeploying_on_each_new_work(self):
         root=Path(__file__).resolve().parents[1]
@@ -343,6 +335,8 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertIn("public/catalog/work-posters.json",image_js)
         self.assertIn("chosen.kind===\"official_production_image\"",image_js)
         self.assertIn("posters[event?.work_id]",image_js)
+        self.assertIn('kind:"unavailable"',image_js)
+        self.assertNotIn('kind:"original_editorial_cover"',image_js)
         for name in ("app.js","detail.js","directory.js"):
             text=(root/"site"/name).read_text(encoding="utf-8")
             self.assertIn("await window.OperaAtlasImages?.load?.()",text)

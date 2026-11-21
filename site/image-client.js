@@ -55,7 +55,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
     "lucia-di-lammermoor":"Mdlle. Jenny Lind, as 'Lucia di Lammermoor,' at Her Majesty's Theatre. (BM 1901,1022.1647).jpg",
     "edgar":"Romilda Pantaleoni as Tigrana in Puccini's Edgar - Milan 1889.png",
     "fedora":"Ida Aalberg i titelrollen i operan Fedora av Umberto Giordano - 1900 SLSA 1270 34 foto 29.jpg",
-    "death-in-venice":"-13.2- Thomas Mann Atlas Haack.jpg"
+    "death-in-venice":"Pears death in venice.jpg",
+    "nixon-in-china":"Dortmund Kampstr Nixon in China IMG 20230315 1145.jpg"
   };
   // Published by the catalog workflow, not by an FTPS site rebuild.
   // A static site update is needed once to enable this feed; subsequent
@@ -140,28 +141,19 @@ window.OperaAtlasImages=Object.freeze((()=>{
                   chosen.kind==="archival_work_image") &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
       return {src:chosen.image_url,
-        alt:chosen.alt||"Immagine ufficiale della produzione di "+title,
-        fallbackSrc:poster(title),
+        alt:chosen.alt||"Immagine autentica dell’opera "+title,
+        fallbackSrc:null,
         sourceUrl:chosen.source_url,credit:chosen.credit,
         license:chosen.license||"",kind:chosen.kind};
     }
-    const originalCovers={
-      "oa-w-000020":"cover-jenufa.svg",
-      "oa-w-000034":"cover-nixon-in-china.svg"
-    };
-    const localCover=originalCovers[event?.work_id] ||
-      (slug==="jenufa"?"cover-jenufa.svg":null) ||
-      (slug==="nixon-in-china"?"cover-nixon-in-china.svg":null);
-    if(localCover){
-      return {src:"./"+localCover,alt:"Copertina editoriale originale per "+title,
-        fallbackSrc:poster(title),kind:"original_editorial_cover"};
-    }
-    // An archival cover selected by title cannot be reused for another
-    // composition sharing that title. The ID-aware feed is preferred.
+    // Legacy static snapshot: use only exact, historically sourced imagery.
+    // A missing source must never be replaced with fabricated editorial art.
     const distinctRoute=event?.work_route_slug && event.work_route_slug!==slug;
     const file=distinctRoute ? null : WORKS[slug];
-    return file?photo(file,"Documento d’archivio legato a "+title+" (non allestimento in calendario)",title):
-      {src:poster(title),alt:"Copertina editoriale originale per "+title};
+    return file
+      ? {src:commons(file),alt:"Documento d’archivio legato a "+title,
+         fallbackSrc:null,kind:"archival_work_image"}
+      : {src:"",alt:"Immagine autentica non disponibile",kind:"unavailable"};
   }
   function venue(event){
     const city=commune(event?.municipality||event?.city);
@@ -209,9 +201,11 @@ window.OperaAtlasImages=Object.freeze((()=>{
     picture.referrerPolicy="no-referrer";
     picture.addEventListener("error",()=>{
       if(item.fallbackSrc && picture.src!==item.fallbackSrc)picture.src=item.fallbackSrc;
+      else {picture.hidden=true;picture.removeAttribute("src");}
     },{once:true});
     if(item.credit)picture.title=item.credit+(item.license?" · "+item.license:"");
-    picture.src=item.src;
+    if(item.src)picture.src=item.src;
+    else picture.hidden=true;
     return picture;
   }
   function bindHero(){

@@ -30,10 +30,8 @@ MAX_PAGES=18
 RETRY_DAYS=2
 BLOCKED_RETRY_DAYS=7
 POSTER_POLICY_VERSION=2
-# Explicit local covers for contemporary or editorially unsuitable archival art.
-# The frontend ships these original designs; no external rights or hotlinks.
-EDITORIAL_COVERS={"oa-w-000020":"cover-jenufa.svg",
-                  "oa-w-000034":"cover-nixon-in-china.svg"}
+# Editorially generated placeholders are not a publishable opera image.
+# An image must represent the exact canonical work, with verified provenance.
 # Common image CDNs accepted only when the image URL is declared explicitly
 # by the approved official page. No arbitrary HTML img tags or tracking URLs.
 IMAGE_CDNS=frozenset({
@@ -274,17 +272,15 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
                          "policy_version":POSTER_POLICY_VERSION}
     finally:
         db.close()
-    # Every published work has an image plan: official art if available,
-    # otherwise the original editorial cover created by image-client.js.
+    # Fail closed: neither a generated title card nor a missing source can
+    # be published as an opera cover. Keep the last valid public feed unchanged.
+    missing=[w["id"] for w in registry_works
+             if w["id"] not in posters and w["id"] not in archive]
+    if missing:
+        raise ValueError("verified opera images missing for: "+", ".join(sorted(missing)))
     manifest={"schema_version":2,"works":{
-        w["id"]:{"work_id":w["id"],**posters.get(w["id"],archive.get(
-            w["id"],{"kind":"original_editorial_cover",
-                     "alt":"Copertina editoriale originale per "+w["title"]}))}
+        w["id"]:{"work_id":w["id"],**posters.get(w["id"],archive.get(w["id"]))}
         for w in sorted(registry_works,key=lambda entry:entry["id"])}}
-    for wid,filename in EDITORIAL_COVERS.items():
-        record=manifest["works"].get(wid)
-        if record and record["kind"]=="original_editorial_cover":
-            record["cover_file"]=filename
     _write_atomic(EVIDENCE,{"schema_version":2,"posters":posters,"checks":checks})
     _write_atomic(OUTPUT,manifest)
     _write_atomic(HEALTH,{"schema_version":1,
@@ -293,8 +289,7 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
             row["kind"]=="official_production_image" for row in manifest["works"].values()),
         "archival_images":sum(
             row["kind"]=="archival_work_image" for row in manifest["works"].values()),
-        "editorial_fallbacks":sum(
-            row["kind"]=="original_editorial_cover" for row in manifest["works"].values()),
+        "editorial_fallbacks":0,
         "outcomes":outcomes})
     return manifest
 
@@ -319,11 +314,8 @@ def check()->None:
                     not item.get("image_url","").startswith(
                         "https://commons.wikimedia.org/wiki/Special:Redirect/file/")):
                 raise ValueError("invalid Wikimedia artwork provenance for "+slug)
-        elif item["kind"]=="original_editorial_cover":
-            if item.get("cover_file") and item["cover_file"]!=EDITORIAL_COVERS.get(slug):
-                raise ValueError("unapproved editorial artwork path for "+slug)
         else:
-            raise ValueError("unrecognized poster provenance for "+slug)
+            raise ValueError("opera image requires real sourced artwork: "+slug)
 
 def main():
     parser=argparse.ArgumentParser()

@@ -111,8 +111,12 @@
     },
     "oa-w-000013": {
       "work_id": "oa-w-000013",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Death in Venice"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pears_death_in_venice.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pears_death_in_venice.jpg",
+      "alt": "Peter Pears nel ruolo di Gustav von Aschenbach nell'opera Death in Venice di Benjamin Britten, 1974; immagine storica, non relativa alla produzione attuale",
+      "credit": "The Tampa Tribune, 14 dicembre 1974; fotografia non attribuita, Wikimedia Commons",
+      "license": "Pubblico dominio negli USA per assenza di avviso di copyright; condizioni negli altri Paesi da verificare"
     },
     "oa-w-000014": {
       "work_id": "oa-w-000014",
@@ -170,9 +174,12 @@
     },
     "oa-w-000020": {
       "work_id": "oa-w-000020",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Jenůfa",
-      "cover_file": "cover-jenufa.svg"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jenufa.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jenufa.jpg",
+      "alt": "Manifesto originale della prima dell'opera Jenůfa di Leoš Janáček, Brno 1904; non relativo all'allestimento attuale",
+      "credit": "Manifesto della prima di Jenůfa (1904), autore sconosciuto; Wikimedia Commons",
+      "license": "Public domain, Commons PDM 1.0"
     },
     "oa-w-000021": {
       "work_id": "oa-w-000021",
@@ -291,9 +298,12 @@
     },
     "oa-w-000034": {
       "work_id": "oa-w-000034",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Nixon in China",
-      "cover_file": "cover-nixon-in-china.svg"
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dortmund_Kampstr_Nixon_in_China_IMG_20230315_1145.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dortmund_Kampstr_Nixon_in_China_IMG_20230315_1145.jpg",
+      "alt": "Fotografia di un manifesto autentico dell'opera Nixon in China di John Adams affisso a Dortmund nel 2023; non relativo all'allestimento alla Scala del 2027",
+      "credit": "Karlunun, fotografia del manifesto della Oper Dortmund (2023), Wikimedia Commons",
+      "license": "CC0 1.0 per la fotografia; diritti del disegno del manifesto non verificati"
     },
     "oa-w-000035": {
       "work_id": "oa-w-000035",
@@ -350,8 +360,12 @@
     },
     "oa-w-000041": {
       "work_id": "oa-w-000041",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Vanessa"
+      "kind": "official_production_image",
+      "image_url": "https://www.tcbo.it/wp-content/uploads/2026/09/Bologna-27-Vanessa_2560-x-1440.webp",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
+      "alt": "Grafica ufficiale del Teatro Comunale di Bologna per Vanessa di Samuel Barber, stagione 2027",
+      "credit": "Teatro Comunale di Bologna, materiale ufficiale di stagione 2027",
+      "license": "© Teatro Comunale di Bologna; diritti riservati, visualizzazione da sito ufficiale"
     },
     "oa-w-000042": {
       "work_id": "oa-w-000042",
@@ -373,8 +387,12 @@
     },
     "oa-w-000044": {
       "work_id": "oa-w-000044",
-      "kind": "original_editorial_cover",
-      "alt": "Copertina editoriale originale per Accabadora"
+      "kind": "official_production_image",
+      "image_url": "https://www.tcbo.it/wp-content/uploads/2026/09/Bologna-27-Accabadora_2560-x-1440.webp",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
+      "alt": "Grafica ufficiale del Teatro Comunale di Bologna per Accabadora di Francesco Filidei, stagione 2027",
+      "credit": "Teatro Comunale di Bologna, materiale ufficiale di stagione 2027",
+      "license": "© Teatro Comunale di Bologna; diritti riservati, visualizzazione da sito ufficiale"
     }
   }
 }
