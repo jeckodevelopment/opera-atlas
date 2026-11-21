@@ -1,7 +1,7 @@
 """Regression: official-source Scala cards need plot, premiere, archival image before publication."""
 import json
 import unittest
-from scripts.publish_catalog_v2 import ROOT,REGISTRY,normalized
+from scripts.publish_catalog_v2 import ROOT,REGISTRY,normalized,slugify
 from scripts.publish_work_editorial import validate_history,EDITORIAL,HISTORY,build_editorial
 from scripts.publish_work_posters import load_archival_art
 from scripts.auto_catalogue import official_identity_candidates,promote_new_works,SOURCE_ALLOWLIST
@@ -19,6 +19,11 @@ SOURCES={
 }
 
 class ScalaEditorialReadyTests(unittest.TestCase):
+    def test_ligature_preserves_canonical_opera_image_identity(self):
+        self.assertEqual(slugify("Dido and Æneas"),"dido-and-aeneas")
+        self.assertEqual(slugify("Œdipe"),"oedipe")
+        self.assertIn("dido-and-aeneas",load_archival_art({"dido-and-aeneas"}))
+
     def test_four_new_canonical_works_have_verified_usable_cards(self):
         seeds=json.loads((ROOT/"data/verified-work-authority-seeds.json").read_text())
         candidates=json.loads(INDEX.read_text())
