@@ -206,6 +206,52 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual(failure["diagnostic"],"index_incomplete_or_markup_changed")
         self.assertEqual(failure["required_links"],3)
 
+    def test_rome_secondary_page_is_safe_partial_fallback(self):
+        subset=copy.deepcopy(self.config)
+        for row in subset["sources"]:
+            if row["key"]!="opera-roma-season-2026-27":
+                row["access_status"]="blocked"
+        primary=next(x["url"] for x in subset["sources"]
+                     if x["key"]=="opera-roma-season-2026-27")
+        secondary=primary.rstrip("/")+"/page/2/"
+        attempts=[]
+        def first_html_unavailable(db,*,source_id,url,network_enabled):
+            attempts.append(url)
+            if url==primary:raise FetchUnavailable("page unavailable")
+            if url==secondary:
+                body='<a href="/spettacoli/the-rakes-progress/">Opera</a>'
+                return FetchResult(url,body,"a"*64,len(body))
+            raise AssertionError("unexpected external URL")
+        data,health=scan(subset,{"schema_version":1,"candidates":[]},
+                         fetcher=first_html_unavailable,network_enabled=True)
+        roma=next(x for x in health if x["key"]=="opera-roma-season-2026-27")
+        self.assertEqual(attempts,[primary,secondary])
+        self.assertEqual(roma["status"],"partial_pagination")
+        self.assertEqual(roma["diagnostic"],"primary_official_html_unavailable")
+        self.assertFalse(roma["pagination_complete"])
+        self.assertEqual(roma["links"],1)
+        self.assertEqual(data["candidates"][0]["official_url"],
+                         "https://www.operaroma.it/spettacoli/the-rakes-progress/")
+
+    def test_rome_never_fails_over_when_robots_unavailable(self):
+        subset=copy.deepcopy(self.config)
+        for row in subset["sources"]:
+            if row["key"]!="opera-roma-season-2026-27":
+                row["access_status"]="blocked"
+        called=[]
+        def failed_robots(db,*,source_id,url,network_enabled):
+            called.append(url)
+            raise FetchUnavailable("robots.txt unavailable")
+        data,health=scan(subset,{"schema_version":1,"candidates":[]},
+                         fetcher=failed_robots,network_enabled=True)
+        primary=next(x["url"] for x in subset["sources"]
+                     if x["key"]=="opera-roma-season-2026-27")
+        self.assertEqual(called,[primary])
+        self.assertFalse(data["candidates"])
+        roma=next(x for x in health if x["key"]=="opera-roma-season-2026-27")
+        self.assertEqual(roma["diagnostic"],"official_robots_unavailable_or_invalid")
+        self.assertEqual(roma["links"],0)
+
     def test_rome_retrieval_reports_fail_closed_fetch_stage(self):
         subset=copy.deepcopy(self.config)
         for row in subset["sources"]:

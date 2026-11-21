@@ -1132,3 +1132,7 @@ Le candidate *Leonora* (Paër) e *Les Pêcheurs de perles* (Bizet) dispongono di
 ### Diagnostica acquisizione Opera di Roma
 
 La pagina ufficiale `https://www.operaroma.it/genre/opera/` contiene il cartellone, ma il collector GitHub ha registrato `FetchUnavailable`. Per capire se il problema è il recupero del `robots.txt` o l'HTML della pagina senza ignorare le regole di accesso, il monitor `season-index-health.json` ora usa categorie sicure `official_robots_unavailable_or_invalid`, `official_html_unavailable_or_invalid` o `official_source_unavailable`. Non copia l'eccezione o il contenuto remoto e non considera mai acquisito un indice non verificato. Il prossimo refresh chiarirà la fase del guasto; la classificazione non equivale alla risoluzione del problema di rete.
+
+### Recupero parziale dell'indice ufficiale Roma
+
+Se `/genre/opera/` fallisce esclusivamente durante la lettura HTML (non per `robots.txt`), la scoperta prova una sola volta `/genre/opera/page/2/`, sul medesimo host e sempre tramite il fetch che verifica `robots.txt`. Le sole URL di dettaglio `/spettacoli/` risultanti restano candidate da verificare; la fonte è marcata `partial_pagination` e `primary_official_html_unavailable`. Il tentativo è vietato per errori robots o divieti di accesso. Nessun titolo, autore o orario viene inferito né pubblicato da questa sola raccolta di URL.

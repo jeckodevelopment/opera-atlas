@@ -360,9 +360,27 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 if not network_enabled:raise AccessDenied("network disabled")
                 db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",(item["official_url"],))
                 row=db.execute("SELECT id FROM sources WHERE official_url=?",(item["official_url"],)).fetchone()
-                page=fetcher(db,source_id=row["id"],url=item["url"],network_enabled=True)
+                primary_unavailable=False
+                index_url=item["url"]
+                min_links=item["min_links"]
                 try:
-                    urls=extract(item["key"],item["url"],page.html,item["min_links"])
+                    page=fetcher(db,source_id=row["id"],url=index_url,network_enabled=True)
+                except FetchUnavailable as original:
+                    # A failed HTML response on Rome's first official index
+                    # need not lose all coverage: the *same* approved theatre
+                    # has a second page, read through the same robots gate.
+                    # Never retry or switch URLs if robots is inaccessible.
+                    if (item["key"]!="opera-roma-season-2026-27" or
+                        str(original) not in (
+                          "page unavailable","unexpected HTTP status",
+                          "not an HTML page","HTML response too large")):
+                        raise
+                    index_url=index_url.rstrip("/")+"/page/2/"
+                    page=fetcher(db,source_id=row["id"],url=index_url,network_enabled=True)
+                    min_links=1
+                    primary_unavailable=True
+                try:
+                    urls=extract(item["key"],index_url,page.html,min_links)
                 except ValueError as exc:
                     # TCBO's current-season opera filter explicitly reports
                     # zero results when its programme has no remaining operas.
@@ -408,7 +426,10 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                                  "required_links":item["min_links"],"links":0})
                 continue
             page_health={}
-            if item["key"]=="opera-roma-season-2026-27":
+            if primary_unavailable:
+                page_health={"pages_checked":1,"pagination_complete":False,
+                             "diagnostic":"primary_official_html_unavailable"}
+            elif item["key"]=="opera-roma-season-2026-27":
                 # The official genre lists the current season across two
                 # pages. Read both from the exact approved host, with the
                 # ordinary per-request robots gate and a hard two-page cap.
