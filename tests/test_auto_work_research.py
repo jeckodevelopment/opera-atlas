@@ -437,6 +437,103 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(len(batch),12)
         self.assertEqual(batch[0]["id"],"candidate-13")
 
+    def test_existing_verified_opera_does_not_need_new_opera_research(self):
+        from scripts.auto_work_research import already_canonical
+        from scripts.publish_catalog_v2 import REGISTRY
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        work=next(w for w in registry["works"].values()
+                  if w["slug"]=="la-traviata")
+        candidate={"id":"traviata-known",
+                   "source_key":"maggio-fiorentino-calendar-2027",
+                   "official_url":"https://www.maggiofiorentino.com/events/la-traviata-2027",
+                   "status":"needs_review"}
+        evidence={"evidence":[{"candidate_id":"traviata-known",
+                  "source_key":candidate["source_key"],
+                  "source_url":candidate["official_url"],
+                  "status":"needs_editorial_review",
+                  "event_facts":[{"event_title":work["title"],
+                                  "composer":work["composer"],
+                                  "date":"2027-05-04",
+                                  "starts_at":"2027-05-04T20:00:00+02:00",
+                                  "venue":"Teatro del Maggio Musicale Fiorentino"}]}]}
+        self.assertEqual(already_canonical(candidate,evidence,registry)["id"],
+                         work["id"])
+        result,status=research({"candidates":[candidate]},
+                                {"schema_version":1,"works":[]},
+                                {work["slug"]},today=date(2026,11,21),
+                                evidence=evidence,allow_authority=True,
+                                resolve=lambda *args,**kwargs: (_ for _ in ()).throw(
+                                    AssertionError("no Wikidata lookup for known work")))
+        self.assertEqual(result["works"],[])
+        self.assertEqual(status[0]["status"],"existing_canonical_work")
+        self.assertEqual(status[0]["work_id"],work["id"])
+
+    def test_uncredited_event_is_not_assumed_to_be_known_work(self):
+        from scripts.auto_work_research import already_canonical
+        from scripts.publish_catalog_v2 import REGISTRY
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        candidate={"id":"traviata-uncredited",
+                   "source_key":"maggio-fiorentino-calendar-2027",
+                   "official_url":"https://www.maggiofiorentino.com/events/la-traviata-2027",
+                   "status":"needs_review"}
+        evidence={"evidence":[{"candidate_id":"traviata-uncredited",
+                  "source_key":candidate["source_key"],
+                  "source_url":candidate["official_url"],
+                  "status":"needs_editorial_review",
+                  "event_facts":[{"event_title":"La traviata","composer":"",
+                                  "date":"2027-05-04"}]}]}
+        self.assertIsNone(already_canonical(candidate,evidence,registry))
+        evidence["evidence"][0]["event_facts"][0]["composer"]="Giuseppe Verdi"
+        evidence["evidence"][0]["source_url"]="https://untrusted.example/other"
+        self.assertIsNone(already_canonical(candidate,evidence,registry))
+
+    def test_missing_official_composer_is_not_sent_to_wikidata(self):
+        candidate={"id":"uncredited-new",
+                   "source_key":"scala-season-2026-27",
+                   "official_url":"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-work.html",
+                   "status":"needs_review"}
+        result,status=research({"candidates":[candidate]},
+                               {"schema_version":1,"works":[]},set(),
+                               today=date(2026,11,21),evidence={"evidence":[]},
+                               prepared={},allow_authority=True,
+                               resolve=lambda *args,**kwargs: (_ for _ in ()).throw(
+                                   AssertionError("uncredited page must not trigger authority lookup")))
+        self.assertEqual(result["works"],[])
+        self.assertEqual(status[0]["status"],"awaiting_official_identity_evidence")
+
+    def test_known_candidates_do_not_occupy_unseen_research_budget(self):
+        from scripts.auto_work_research import choose_candidates
+        known={"id":"fixture-known","source_key":"maggio-fiorentino-calendar-2027",
+               "official_url":"https://www.maggiofiorentino.com/events/la-traviata-2027",
+               "status":"needs_review"}
+        unseen=[{"id":f"new-{i:02d}","source_key":"scala-season-2026-27",
+                 "official_url":f"https://www.teatroallascala.org/it/stagione/2026-2027/opera/unknown-{i}.html",
+                 "status":"needs_review"} for i in range(13)]
+        evidence={"evidence":[{
+            "candidate_id":known["id"],"source_key":known["source_key"],
+            "source_url":known["official_url"],
+            "status":"needs_editorial_review",
+            "event_facts":[{"event_title":"La traviata",
+                            "composer":"Giuseppe Verdi",
+                            "venue":"Teatro del Maggio Musicale Fiorentino",
+                            "date":"2027-03-01",
+                            "starts_at":"2027-03-01T20:00:00+01:00"}]}]}
+        for item in unseen:
+            evidence["evidence"].append({
+                "candidate_id":item["id"],"source_key":item["source_key"],
+                "source_url":item["official_url"],
+                "status":"needs_editorial_review",
+                "event_facts":[{"event_title":"Unseen opera",
+                                "composer":"Composer Example",
+                                "venue":"Teatro alla Scala",
+                                "date":"2027-03-01",
+                                "starts_at":"2027-03-01T20:00:00+01:00"}]})
+        choices=choose_candidates({"candidates":[known,*unseen]},
+                                  {"works":[]},set(),today=date(2026,11,21),
+                                  evidence=evidence,strict_evidence=True)
+        self.assertEqual(len([x for x in choices if x["id"].startswith("new-")]),12)
+        self.assertIn(known["id"],{x["id"] for x in choices})
+
     def test_never_search_outside_exact_approved_url(self):
         self.assertIsNone(official_title_hint({
             "source_key":"scala-season-2026-27",
