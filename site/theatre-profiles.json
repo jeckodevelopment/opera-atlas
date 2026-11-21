@@ -632,6 +632,16 @@
       "opening_year": 1727,
       "history": "Inaugurato nel 1727 su progetto di Tommaso Morelli, il Teatro Valle ospitò nel 1817 la prima assoluta della Cenerentola di Rossini. Intitolato a Franca Valeri, ha riaperto al pubblico nel 2026 dopo un lungo restauro, tornando a essere una sede viva della scena romana.",
       "source": "https://www.turismoroma.it/it/luoghi/teatro-valle-franca-valeri-teatro-di-roma"
+    },
+    "Roma|Teatro Nazionale": {
+      "city": "Roma",
+      "name": "Teatro Nazionale",
+      "address": "Via del Viminale, angolo via Agostino Depretis",
+      "description": "Una sala nel cuore di Roma, parte della programmazione lirica e contemporanea del Teatro dell'Opera.",
+      "website": "https://www.operaroma.it/",
+      "opening_year": 1925,
+      "history": "Nato nel 1925 come Supercinema, il Teatro Nazionale fu progettato da Arnaldo Foschini e Attilio Spaccarelli e disponeva fin dall'origine di una buca d'orchestra. Alla fine degli anni Novanta il Comune di Roma lo affidò alla Fondazione Teatro dell'Opera come ulteriore spazio per gli spettacoli.",
+      "source": "https://www.operaroma.it/luoghi/teatro-nazionale/"
     }
   }
 }
