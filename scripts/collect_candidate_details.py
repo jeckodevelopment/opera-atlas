@@ -853,8 +853,18 @@ def main():
     args.add_argument("--allow-network",action="store_true")
     args.add_argument("--priority-only",action="store_true",
                       help="First-party complete-card candidates before broad crawls")
+    args.add_argument("--source-key",default=None,
+                      help="Bounded first-pass scan of one approved source")
     parsed=args.parse_args()
     candidates=json.loads(INDEX.read_text(encoding="utf-8"))
+    if parsed.source_key is not None:
+        approved={x["key"] for x in validate_config(
+            json.loads(CONFIG.read_text(encoding="utf-8")))
+            if x["access_status"]=="approved"}
+        if parsed.source_key not in approved:
+            raise ValueError("priority scan must use an approved source key")
+        candidates={**candidates,"candidates":[x for x in candidates["candidates"]
+                    if x.get("source_key")==parsed.source_key]}
     if parsed.priority_only:
         # A short, source-neutral fast pass. Preserve original registry and
         # already published evidence; only narrow the fetch selection.
