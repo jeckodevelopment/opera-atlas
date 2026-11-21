@@ -18,7 +18,7 @@ MONTH_RE = "(?:"+"|".join(sorted(MONTHS,key=len,reverse=True))+")"
 WEEKDAY = r"(?:lun(?:edì)?|mar(?:tedì)?|mer(?:coledì)?|gio(?:vedì)?|ven(?:erdì)?|sab(?:ato)?|dom(?:enica)?)"
 CLOCK = r"([01]?\d|2[0-3]):([0-5]\d)"
 CANCELLED = re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie]|sospes[oaie])\b")
-REHEARSAL = re.compile(r"(?i)\b(?:prova|prove|rehearsal|under\s?30)\b")
+REHEARSAL = re.compile(r"(?i)\b(?:prova|prove|rehearsal|under\s?30|scuole)\b")
 
 class VisibleText(HTMLParser):
     def __init__(self):
