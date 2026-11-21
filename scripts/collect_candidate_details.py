@@ -149,6 +149,13 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
             "carlo-felice-season-2026-27","donizetti-opera-2026",
             "teatro-grande-opera-2026"):
         return []
+    if (source_key=="teatro-grande-opera-2026" and
+        urlsplit(url).path=="/it/stagioni/2026/cavalleria-rusticana-pagliacci"):
+        from opera_atlas.brescia_detail_parser import parse_brescia_double_bill
+        entries=parse_brescia_double_bill(html,url=url,works=registry.get("works",{}))
+        return [{**{k:v for k,v in x.items() if k!="clock"},
+                 "starts_at":official_local_time(x["date"],x["clock"])}
+                for x in entries]
     if source_key=="teatro-grande-opera-2026":
         from opera_atlas.brescia_detail_parser import Heading,parse_brescia_detail,canonical_text
         heading=Heading()
