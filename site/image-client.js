@@ -152,7 +152,10 @@ window.OperaAtlasImages=Object.freeze((()=>{
   function venue(event){
     const city=commune(event?.municipality||event?.city);
     const title=event?.venue||event?.name||("Teatro di "+(event?.municipality||event?.city||"Italia"));
-    const file=FILES[city];
+    // A city may have several opera theatres: do not show an Arena photo
+    // as if it were a photograph of Teatro Filarmonico.
+    const file=city==="verona" && !/arena di verona/i.test(title)
+      ? null : FILES[city];
     return file?photo(file,"Veduta del "+title+" a "+(event?.municipality||event?.city),title):
       {src:poster(title,"venue"),alt:"Illustrazione editoriale del "+title};
   }
