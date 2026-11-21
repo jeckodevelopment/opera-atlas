@@ -2846,6 +2846,33 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-dd5d16aec544e673",
+      "title": "Tristan und Isolde",
+      "composer": "Richard Wagner",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
+      "dates": [
+        [
+          "2027-05-20",
+          "19:00"
+        ],
+        [
+          "2027-05-23",
+          "15:30"
+        ],
+        [
+          "2027-05-26",
+          "19:00"
+        ],
+        [
+          "2027-05-29",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

@@ -1177,6 +1177,14 @@
       "slug": "accabadora",
       "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
       "season": "2027"
+    },
+    "auto-dd5d16aec544e673": {
+      "id": "oa-s-000096",
+      "work_id": "oa-w-000039",
+      "venue_id": "oa-v-000016",
+      "slug": "tristan-und-isolde",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
+      "season": "2027"
     }
   },
   "performances": {
@@ -3927,6 +3935,30 @@
       "staging_id": "oa-s-000095",
       "original_date": "2027-11-30",
       "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
+    },
+    "auto-dd5d16aec544e673|2027-05-20": {
+      "id": "oa-r-000474",
+      "staging_id": "oa-s-000096",
+      "original_date": "2027-05-20",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde"
+    },
+    "auto-dd5d16aec544e673|2027-05-23": {
+      "id": "oa-r-000475",
+      "staging_id": "oa-s-000096",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde"
+    },
+    "auto-dd5d16aec544e673|2027-05-26": {
+      "id": "oa-r-000476",
+      "staging_id": "oa-s-000096",
+      "original_date": "2027-05-26",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde"
+    },
+    "auto-dd5d16aec544e673|2027-05-29": {
+      "id": "oa-r-000477",
+      "staging_id": "oa-s-000096",
+      "original_date": "2027-05-29",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde"
     }
   }
 }
