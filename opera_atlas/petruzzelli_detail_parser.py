@@ -44,7 +44,7 @@ def verified_work_heading(html:str,*,title:str,composer:str)->bool:
     heading=PrimaryHeading()
     heading.feed(html)
     if not heading.text:return False
-    pieces=[normalized(x).replace("’","'") for x in heading.text.split("|")]
+    pieces=[normalized(x).replace("’","'").strip() for x in heading.text.split("|")]
     title_key=normalized(title).replace("’","'")
     composer_key=normalized(composer).replace("’","'")
     if pieces[0]==title_key+" di "+composer_key:
