@@ -2,6 +2,42 @@
   "schema_version": 1,
   "programs": [
     {
+      "id": "oa-p-212db41a4c6f7afc",
+      "title": "Cavalleria rusticana / Pagliacci",
+      "components": [
+        {
+          "title": "Cavalleria rusticana",
+          "composer": "Pietro Mascagni",
+          "work_id": "oa-w-000005"
+        },
+        {
+          "title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "work_id": "oa-w-000006"
+        }
+      ],
+      "source_key": "teatro-grande-opera-2026",
+      "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
+      "venue": "Teatro Grande",
+      "municipality": "Brescia",
+      "region": "Lombardia",
+      "route_slug": "cavalleria-rusticana-pagliacci",
+      "performances": [
+        {
+          "id": "oa-pr-d5f2ee8f17518763",
+          "program_id": "oa-p-212db41a4c6f7afc",
+          "local_date": "2026-12-11",
+          "starts_at": "2026-12-11T20:00:00+01:00"
+        },
+        {
+          "id": "oa-pr-d683f9fa25dcb975",
+          "program_id": "oa-p-212db41a4c6f7afc",
+          "local_date": "2026-12-13",
+          "starts_at": "2026-12-13T15:30:00+01:00"
+        }
+      ]
+    },
+    {
       "id": "oa-p-a12dbb283b490075",
       "title": "L’ARLÉSIENNE / PAGLIACCI",
       "components": [
