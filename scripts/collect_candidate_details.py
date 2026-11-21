@@ -145,9 +145,16 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
     adapter={"scala-season-2026-27":"scala",
              "arena-festival-2027":"arena"}.get(source_key)
     if adapter is None and source_key not in (
-            "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27"):
+            "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
+            "carlo-felice-season-2026-27","donizetti-opera-2026"):
         return []
-    if adapter is None:
+    if source_key in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
+        from opera_atlas.italian_detail_parser import parse_detail
+        work=heading_work(html,registry)
+        if work is None:return []
+        venue,raw=parse_detail(html,source_key=source_key,url=url,
+                               title=work["title"],composer=work["composer"])
+    elif adapter is None:
         work=heading_work(html,registry)
         if work is None:return []
         raw=parse_national_showtimes(html,source_key=source_key,url=url,
@@ -185,9 +192,15 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
     adapter={"scala-season-2026-27":"scala",
              "arena-festival-2027":"arena"}.get(item["source_key"])
     if adapter is None and item["source_key"] not in (
-            "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27"):
+            "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
+            "carlo-felice-season-2026-27","donizetti-opera-2026"):
         return []
-    if adapter is None:
+    if item["source_key"] in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
+        from opera_atlas.italian_detail_parser import parse_detail
+        venue,rows=parse_detail(html,source_key=item["source_key"],
+                                url=item["official_url"],title=info["title"],
+                                composer=info["composer"])
+    elif adapter is None:
         heading=FirstHeading()
         heading.feed(html)
         if normalized(heading.first)!=normalized(info["title"]):
