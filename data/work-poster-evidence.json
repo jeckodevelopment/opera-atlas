@@ -106,6 +106,15 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di L'arca di Noè",
       "kind": "official_production_image"
+    },
+    "oa-w-000074": {
+      "work_id": "oa-w-000074",
+      "image_url": "https://www.ticketone.it/obj/media/IT-eventim/teaser/evo/artwork/2027/code-unknow-biglietti.jpg",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "ticketing_page_url": "https://www.ticketone.it/artist/teatro-opera-roma/code-unknown-teatro-dellopera-di-roma-4258384/",
+      "credit": "Immagine promozionale dell'evento pubblicata da TicketOne",
+      "alt": "Immagine promozionale di Code: Unknown di Nicola Sani, Teatro dell'Opera di Roma",
+      "kind": "ticketing_event_artwork"
     }
   },
   "checks": {

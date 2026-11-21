@@ -4275,6 +4275,37 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-bf778bbaf1cca4ef",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "dates": [
+        [
+          "2027-05-19",
+          "20:00"
+        ],
+        [
+          "2027-05-21",
+          "18:00"
+        ],
+        [
+          "2027-05-23",
+          "16:30"
+        ],
+        [
+          "2027-05-25",
+          "20:00"
+        ],
+        [
+          "2027-05-26",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

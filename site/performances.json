@@ -7736,6 +7736,24 @@
       ]
     },
     {
+      "id": "curated:auto-bf778bbaf1cca4ef:2027-05-19",
+      "starts_at": "2027-05-19T20:00:00+02:00",
+      "local_date": "2027-05-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/code-unknown/"
+      ]
+    },
+    {
       "id": "curated:auto-b4180540983902f7:2027-05-20",
       "starts_at": "2027-05-20T18:30:00+02:00",
       "local_date": "2027-05-20",
@@ -7823,6 +7841,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/"
+      ]
+    },
+    {
+      "id": "curated:auto-bf778bbaf1cca4ef:2027-05-21",
+      "starts_at": "2027-05-21T18:00:00+02:00",
+      "local_date": "2027-05-21",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/code-unknown/"
       ]
     },
     {
@@ -8060,6 +8096,24 @@
       ]
     },
     {
+      "id": "curated:auto-bf778bbaf1cca4ef:2027-05-23",
+      "starts_at": "2027-05-23T16:30:00+02:00",
+      "local_date": "2027-05-23",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/code-unknown/"
+      ]
+    },
+    {
       "id": "curated:auto-84fd2f377ee78325:2027-05-23",
       "starts_at": "2027-05-23T17:00:00+02:00",
       "local_date": "2027-05-23",
@@ -8168,6 +8222,24 @@
       ]
     },
     {
+      "id": "curated:auto-bf778bbaf1cca4ef:2027-05-25",
+      "starts_at": "2027-05-25T20:00:00+02:00",
+      "local_date": "2027-05-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/code-unknown/"
+      ]
+    },
+    {
       "id": "curated:auto-dd5d16aec544e673:2027-05-26",
       "starts_at": "2027-05-26T19:00:00+02:00",
       "local_date": "2027-05-26",
@@ -8219,6 +8291,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:auto-bf778bbaf1cca4ef:2027-05-26",
+      "starts_at": "2027-05-26T20:00:00+02:00",
+      "local_date": "2027-05-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/code-unknown/"
       ]
     },
     {

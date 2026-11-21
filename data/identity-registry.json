@@ -477,6 +477,13 @@
       "title": "L’elisir d’amore",
       "composer": "Gaetano Donizetti",
       "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+    },
+    "code: unknown|nicola sani": {
+      "id": "oa-w-000074",
+      "slug": "code-unknown",
+      "title": "Code: Unknown",
+      "composer": "Nicola Sani",
+      "authority_url": "https://www.operaroma.it/spettacoli/code-unknown/"
     }
   },
   "venues": {
@@ -704,6 +711,14 @@
       "name": "Teatro Massimo Bellini",
       "city": "Catania",
       "region": "Sicilia"
+    },
+    "Roma|Teatro Nazionale": {
+      "id": "oa-v-000029",
+      "slug": "teatro-nazionale",
+      "city_slug": "roma",
+      "name": "Teatro Nazionale",
+      "city": "Roma",
+      "region": "Lazio"
     }
   },
   "stagings": {
@@ -1819,6 +1834,14 @@
       "venue_id": "oa-v-000027",
       "slug": "la-clemenza-di-tito",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "season": "2027"
+    },
+    "auto-bf778bbaf1cca4ef": {
+      "id": "oa-s-000143",
+      "work_id": "oa-w-000074",
+      "venue_id": "oa-v-000029",
+      "slug": "code-unknown",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
       "season": "2027"
     }
   },
@@ -5938,6 +5961,36 @@
       "staging_id": "oa-s-000142",
       "original_date": "2027-03-14",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+    },
+    "auto-bf778bbaf1cca4ef|2027-05-19": {
+      "id": "oa-r-000702",
+      "staging_id": "oa-s-000143",
+      "original_date": "2027-05-19",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/"
+    },
+    "auto-bf778bbaf1cca4ef|2027-05-21": {
+      "id": "oa-r-000703",
+      "staging_id": "oa-s-000143",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/"
+    },
+    "auto-bf778bbaf1cca4ef|2027-05-23": {
+      "id": "oa-r-000704",
+      "staging_id": "oa-s-000143",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/"
+    },
+    "auto-bf778bbaf1cca4ef|2027-05-25": {
+      "id": "oa-r-000705",
+      "staging_id": "oa-s-000143",
+      "original_date": "2027-05-25",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/"
+    },
+    "auto-bf778bbaf1cca4ef|2027-05-26": {
+      "id": "oa-r-000706",
+      "staging_id": "oa-s-000143",
+      "original_date": "2027-05-26",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/"
     }
   }
 }

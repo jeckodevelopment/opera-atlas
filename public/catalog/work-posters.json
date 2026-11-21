@@ -655,6 +655,15 @@
       "alt": "Frontespizio del libretto originale milanese del 1832 dell'Elisir d'amore, non immagine della produzione triestina del 2027",
       "credit": "Felice Romani e Gaetano Donizetti, libretto 1832, Wikimedia Commons",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_L%27elisir_d%27amore_-_title_page_of_the_libretto_-_Milan_1832.png"
+    },
+    "oa-w-000074": {
+      "work_id": "oa-w-000074",
+      "image_url": "https://www.ticketone.it/obj/media/IT-eventim/teaser/evo/artwork/2027/code-unknow-biglietti.jpg",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "ticketing_page_url": "https://www.ticketone.it/artist/teatro-opera-roma/code-unknown-teatro-dellopera-di-roma-4258384/",
+      "credit": "Immagine promozionale dell'evento pubblicata da TicketOne",
+      "alt": "Immagine promozionale di Code: Unknown di Nicola Sani, Teatro dell'Opera di Roma",
+      "kind": "ticketing_event_artwork"
     }
   }
 }
