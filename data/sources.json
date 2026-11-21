@@ -105,32 +105,6 @@
       "monitoring_status": "index_verified",
       "automated_index": true,
       "autonomous_publication_verified": false
-    },
-    {
-      "key": "teatro-politeama-greco-lecce",
-      "name": "Teatro Politeama Greco",
-      "official_url": "https://www.politeamagreco.it/",
-      "calendar_url": "https://www.politeamagreco.it/",
-      "region": "Puglia",
-      "city": "Lecce",
-      "kind": "theatre",
-      "access_status": "pending",
-      "monitoring_status": "not_started",
-      "automated_index": false,
-      "autonomous_publication_verified": false
-    },
-    {
-      "key": "teatro-apollo-lecce",
-      "name": "Teatro Apollo",
-      "official_url": "https://www.comune.lecce.it/",
-      "calendar_url": "https://www.comune.lecce.it/news/dettaglio/2026/09/04/stagione-2026-27-dei-teatri-apollo-e-paisiello-gli-appuntamenti-in-cartellone",
-      "region": "Puglia",
-      "city": "Lecce",
-      "kind": "theatre",
-      "access_status": "pending",
-      "monitoring_status": "not_started",
-      "automated_index": false,
-      "autonomous_publication_verified": false
     }
   ]
 }
