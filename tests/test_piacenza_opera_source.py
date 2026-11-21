@@ -32,7 +32,7 @@ class PiacenzaOperaSourceTests(unittest.TestCase):
         self.assertEqual(src["min_links"],6)
         self.assertTrue(eligible(KEY,DETAIL))
         self.assertFalse(eligible(KEY,"https://teatripiacenza.it/stagioni/stagione-26-27/"))
-        self.assertEqual(len(sources),36)
+        self.assertEqual(len(sources),37)
         slugs=["siberia","l-anno-che-verra","la-cenerentola-2",
                "la-clemenza-di-tito","simon-boccanegra","aida"]
         pagehtml="<h2>Opera</h2>"+''.join(
