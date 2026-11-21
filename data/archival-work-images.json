@@ -210,6 +210,18 @@
       "description": "Manifesto storico ottocentesco di Il trovatore di Giuseppe Verdi, realizzato dopo la prima del 1853; non produzione 2027",
       "credit": "Luigi Morgari, incisione storica, Bibliothèque nationale de France / Wikimedia Commons",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Il_trovatore_by_Luigi_Morgari_-_Original.jpg"
+    },
+    "la-clemenza-di-tito": {
+      "file": "La clemenza di Tito.jpg",
+      "description": "Frontespizio originale del libretto del 1791 de La clemenza di Tito di Mozart, non fotografia della produzione di Parma del 2027",
+      "credit": "A. Zatta, libretto originale del 1791, Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:La_clemenza_di_Tito.jpg"
+    },
+    "la-rondine": {
+      "file": "La rondine.jpg",
+      "description": "Locandina storica del 1917 dell'opera La rondine di Giacomo Puccini, non fotografia della produzione romana del 2027",
+      "credit": "Locandina per la prima italiana del 1917, Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:La_rondine.jpg"
     }
   },
   "works_by_id": {
