@@ -276,6 +276,18 @@
       "description": "Frontespizio del libretto originale milanese del 1832 dell'Elisir d'amore, non immagine della produzione triestina del 2027",
       "credit": "Felice Romani e Gaetano Donizetti, libretto 1832, Wikimedia Commons",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_L%27elisir_d%27amore_-_title_page_of_the_libretto_-_Milan_1832.png"
+    },
+    "siberia": {
+      "file": "Dudovich - Siberia.jpg",
+      "description": "Manifesto originale di Siberia (1903) di Umberto Giordano, disegnato da Marcello Dudovich",
+      "credit": "Marcello Dudovich (1903), catalogo dei beni culturali; Wikimedia Commons",
+      "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/"
+    },
+    "simon-boccanegra": {
+      "file": "Giuseppe Verdi, Simon Boccanegra first edition libretto for the 1881 revision of the opera - Restoration.jpg",
+      "description": "Copertina storica del libretto della revisione del 1881 di Simon Boccanegra di Giuseppe Verdi",
+      "credit": "Edizioni Ricordi (1881), restauro Adam Cuerden; Harvard Library / Wikimedia Commons",
+      "license": "Public domain"
     }
   },
   "works_by_id": {
