@@ -939,7 +939,9 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                "rows":len(facts)})
             except (AccessDenied,FetchUnavailable,ValueError) as exc:
                 health.append({"candidate_id":item["id"],"outcome":"unavailable_or_unstructured",
-                               "reason":type(exc).__name__,"rows":0})
+                               "reason":type(exc).__name__,
+                               **({"diagnostic":str(exc)[:160]} if isinstance(exc,ValueError) else {}),
+                               "rows":0})
     finally:
         db.close()
     return {"schema_version":1,"evidence":sorted(retained.values(),key=lambda x:x["candidate_id"])},health
