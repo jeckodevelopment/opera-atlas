@@ -206,6 +206,31 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual(failure["diagnostic"],"index_incomplete_or_markup_changed")
         self.assertEqual(failure["required_links"],3)
 
+    def test_rome_retrieval_reports_fail_closed_fetch_stage(self):
+        subset=copy.deepcopy(self.config)
+        for row in subset["sources"]:
+            if row["key"]!="opera-roma-season-2026-27":
+                row["access_status"]="blocked"
+        cases=[
+            ("robots.txt unavailable","official_robots_unavailable_or_invalid"),
+            ("robots.txt malformed or no user-agent directives",
+             "official_robots_unavailable_or_invalid"),
+            ("page unavailable","official_html_unavailable_or_invalid"),
+            ("not an HTML page","official_html_unavailable_or_invalid"),
+            ("unknown transient","official_source_unavailable"),
+        ]
+        for cause,expected in cases:
+            with self.subTest(cause=cause):
+                def fail(*args,**kwargs):
+                    raise FetchUnavailable(cause)
+                data,health=scan(subset,{"schema_version":1,"candidates":[]},
+                                 fetcher=fail,network_enabled=True)
+                self.assertEqual(data["candidates"],[])
+                roma=next(x for x in health if x["key"]=="opera-roma-season-2026-27")
+                self.assertEqual(roma["diagnostic"],expected)
+                self.assertEqual(roma["links"],0)
+                self.assertNotIn(cause,repr(roma))
+
     def test_last_good_scan_survives_failure_without_false_success(self):
         from scripts.discover_season_indexes import source_health_history
         past={"schema_version":1,"checked_at":"2026-11-21T08:00:00+00:00",
