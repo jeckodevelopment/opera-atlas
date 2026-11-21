@@ -251,14 +251,29 @@ def canonical_editorial_material(identity:dict)->dict|None:
     registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
     synopses=json.loads(EDITORIAL.read_text(encoding="utf-8"))
     histories=json.loads(HISTORY.read_text(encoding="utf-8"))
-    matches=[row for row in registry["works"].values()
-             if normalized(row["title"])==normalized(identity["title"])
-             and normalized(row["composer"])==normalized(identity["composer"])]
+    attributions=validated_editorial_attributions()
+    # Titles can differ across official calendars and Wikidata languages.
+    # A cross-title match requires exact QID evidence; a title-only match
+    # remains valid only with matching composer and no competing work.
+    matches=[]
+    for row in registry["works"].values():
+        if normalized(row["composer"])!=normalized(identity["composer"]):
+            continue
+        attribution=attributions.get(row["slug"])
+        qid=row.get("wikidata_id") or (
+            attribution.get("wikidata_id") if attribution else None)
+        same_qid=(isinstance(qid,str) and qid==identity.get("wikidata_id"))
+        same_title=(normalized(row["title"])==normalized(identity["title"]))
+        if same_qid or (same_title and not qid):
+            matches.append(row)
     if len(matches)!=1:return None
     work=matches[0]
     slug,work_id=work["slug"],work["id"]
     same_slug=[w for w in registry["works"].values() if w["slug"]==slug]
-    attribution=validated_editorial_attributions().get(slug)
+    attribution=attributions.get(slug)
+    if normalized(work["title"])!=normalized(identity["title"]) and (
+            not attribution and not work.get("wikidata_id")):
+        return None
     if attribution:
         if (attribution["wikidata_id"]!=identity["wikidata_id"]
                 or normalized(attribution["composer"])!=normalized(identity["composer"])):
@@ -484,6 +499,18 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
                 json.JSONDecodeError) as exc:
             statuses.append({"candidate_id":cid,"status":"automatic_retry",
                              "reason":type(exc).__name__})
+    # Include safe, source-scoped candidate context in every health outcome.
+    # Do not expose untrusted error text or page content; these facts are
+    # already part of the verified season-index candidate registry.
+    by_id={row["id"]:row for row in candidates.get("candidates",[])
+           if isinstance(row,dict) and isinstance(row.get("id"),str)}
+    for status in statuses:
+        item=by_id.get(status["candidate_id"],{})
+        status["source_key"]=item.get("source_key")
+        status["official_url"]=item.get("official_url")
+        hint=official_title_hint(item,evidence)
+        if isinstance(hint,str):
+            status["title_hint"]=hint
     return {"schema_version":1,"works":sorted(existing_works.values(),
                                              key=lambda x:x["candidate_id"])},statuses
 
