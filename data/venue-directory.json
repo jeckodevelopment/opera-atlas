@@ -475,26 +475,10 @@
       "description": "Un punto di riferimento del melodramma bolognese, progettato nel Settecento da Antonio Galli Bibiena e profondamente legato alla tradizione operistica europea.",
       "monitoring_status": "anagrafica_censita",
       "address": "Largo Respighi 1",
-      "history": "Il Teatro Comunale di Bologna fu progettato da Antonio Galli Bibiena ed è un riferimento storico per il melodramma, in particolare per il repertorio wagneriano. La sala storica è interessata da lavori di restauro.",
+      "history": "Il Teatro Comunale di Bologna fu progettato da Antonio Galli Bibiena ed è un riferimento storico per il melodramma, in particolare per il repertorio wagneriano. Durante il restauro della sala storica, dal 2023 al giugno 2026, le stagioni si sono svolte nella sede provvisoria del Comunale Nouveau a BolognaFiere.",
       "photo_file": "Teatro Comunale di Bologna.jpg",
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Comunale_di_Bologna.jpg",
       "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
-      "calendar_status": "not_acquired"
-    },
-    {
-      "id": "oa-vd-000026",
-      "name": "Teatro Comunale Nouveau",
-      "city": "Bologna",
-      "region": "Emilia-Romagna",
-      "slug": "teatro-comunale-nouveau",
-      "city_slug": "bologna",
-      "website": "https://www.tcbo.it/",
-      "source_url": "https://www.tcbo.it/news/grazie-comunale-nouveau/",
-      "description": "Il Comunale Nouveau è stato il palcoscenico temporaneo dell’opera bolognese negli spazi di BolognaFiere, distinto dalla storica sala di piazza Verdi.",
-      "monitoring_status": "anagrafica_censita",
-      "address": "Piazza della Costituzione 4/A",
-      "history": "Allestito negli spazi di BolognaFiere, il Comunale Nouveau ha ospitato le stagioni d’opera e danza durante i lavori alla sede storica, dal febbraio 2023 fino alla conclusione della sua attività nel giugno 2026.",
-      "status": "sede_storica_cessata",
       "calendar_status": "not_acquired"
     },
     {
