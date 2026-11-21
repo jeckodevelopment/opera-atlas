@@ -78,7 +78,7 @@ class CataniaSourceTests(unittest.TestCase):
 
     def test_missing_conflicting_and_cancelled_recitals_rejected(self):
         with self.assertRaises(ValueError):
-            parse_detail(page(recite=DATES[:4]), url=DETAIL)
+            parse_detail(page(recite=DATES + [DATES[0]]), url=DETAIL)
         with self.assertRaises(ValueError):
             parse_detail(page().replace("Prima rappresentazione","Prima rappresentazione ANNULLATA"),url=DETAIL)
         with self.assertRaises(ValueError):
