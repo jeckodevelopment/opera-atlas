@@ -573,3 +573,12 @@ I test includono il caso *Il barbiere di Siviglia* (Rossini/Paisiello), la conse
 ## Carlo Felice — correzione credito compositore Evgenij Onegin
 
 Il compositore registrato come `Pëtr Il\u0027ič Čajkovskij` è presentato dalla fonte ufficiale come `Pëtr Il’ič Čajkovskij`. Il confronto del credito normalizza esclusivamente questa differenza di apostrofo, preservando nome, diacritici e cognome. Il compositore di un’altra opera rimane escluso. La modifica abilita la lettura delle date della scheda ufficiale senza alterare l’identità permanente. Verificare il refresh live e il feed dopo il merge.
+
+
+## Schede autonome senza chiavi API — 21/11/2026
+
+Il ciclo ordinario di ricerca e pubblicazione **non usa alcuna API di modelli linguistici e non richiede secret a pagamento**. La verifica dell'identità continua a interrogare Wikidata, come servizio pubblico, e a confrontare l'opera con il titolo e il compositore rilevati sulla fonte ufficiale del teatro. Per un'opera non ancora descritta editorialmente, Atlas genera automaticamente una **brevissima introduzione originale e fattuale** esclusivamente da titolo e compositore verificati; non inventa trama, personaggi o ambientazione. Questa introduzione è sufficiente a presentare gli spettacoli disponibili.
+
+Una scheda con Wikidata ID verificato può essere pubblicata anche quando mancano librettista, anno e luogo della prima: in quel caso la parte storica è assente, non segnalata come errore e non compilata con supposizioni. La pubblicazione rimane vincolata a evidenze ufficiali delle singole recite, all'unicità del compositore e agli invarianti di catalogo, anche nei casi di omonimia. Le sinossi e le storie già censite e verificate restano immutate. Il job `refresh-catalog.yml` non carica `ATLAS_OPENAI_API_KEY`.
+
+**Limite esplicito:** una breve introduzione basata su titolo e compositore non è una sinossi narrativa della trama. Per le opere nuove prive di una trama riassumibile in modo affidabile, questa scelta è intenzionale: Atlas è un catalogo di spettacoli, non un'enciclopedia.
