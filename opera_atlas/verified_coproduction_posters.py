@@ -14,7 +14,7 @@ APPROVED_PROVENANCE={
     ("https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
      "Bona Sforza","Zygmunt Krauze"):(
         "https://opera.krakow.pl/spektakle/bona-sforza",
-        "https://opera.krakow.pl/media/gallery_image/12_d90d25d1097e683c30e5f2da8f9d71ee.jpg")
+        "https://opera.krakow.pl/media/spectacle_image/bona-finalny_detail_poster.jpg")
 }
 
 def verified_coproduction_poster(*,source_url:str,title:str,composer:str)->dict|None:
@@ -22,12 +22,17 @@ def verified_coproduction_poster(*,source_url:str,title:str,composer:str)->dict|
     if doc.get("schema_version")!=1 or not isinstance(doc.get("posters"),list):
         raise ValueError("invalid verified co-production poster registry")
     matches=[x for x in doc["posters"]
-             if (x.get("source_url"),x.get("title"),x.get("composer"))
-                ==(source_url,title,composer)]
+             if (x.get("source_url")==source_url
+                 and isinstance(x.get("title"),str)
+                 and isinstance(x.get("composer"),str)
+                 and x["title"].casefold()==title.casefold()
+                 and x["composer"].casefold()==composer.casefold())]
     if len(matches)>1:raise ValueError("ambiguous co-production poster")
     if not matches:return None
     row=matches[0]
-    expected=APPROVED_PROVENANCE.get((source_url,title,composer))
+    expected=next((art for (url,work,credit),art in APPROVED_PROVENANCE.items()
+                   if url==source_url and work.casefold()==title.casefold()
+                   and credit.casefold()==composer.casefold()),None)
     if not expected or (row.get("provenance_url"),row.get("image_url"))!=expected:
         return None
     for key in ("image_url","source_url","provenance_url"):
@@ -37,7 +42,7 @@ def verified_coproduction_poster(*,source_url:str,title:str,composer:str)->dict|
             return None
     image=urlsplit(row["image_url"])
     if (image.hostname!="opera.krakow.pl"
-            or not image.path.startswith("/media/gallery_image/")
+            or not image.path.startswith("/media/spectacle_image/")
             or not image.path.endswith((".jpg",".png",".webp"))
             or row.get("kind")!="official_coproduction_poster"
             or not row.get("credit") or not row.get("alt")):
