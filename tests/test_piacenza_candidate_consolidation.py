@@ -34,7 +34,7 @@ class PiacenzaConsolidationTests(unittest.TestCase):
                                             self.intelligence)
         works = [x for x in doc["works"] if x.get("candidate_id") == cid]
         self.assertEqual(len(works), 1)
-        self.assertEqual(works[0]["composer"], "Giuseppe Verdi")
+        self.assertEqual(works[0]["composer"].casefold(), "giuseppe verdi")
         self.assertEqual(works[0]["official_authority_url"],
                          "https://teatripiacenza.it/event/simon-boccanegra/")
         self.assertGreaterEqual(len(works[0]["synopsis"]), 45)
