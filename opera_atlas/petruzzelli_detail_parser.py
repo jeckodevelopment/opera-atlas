@@ -50,7 +50,7 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str):
                 self.in_heading=False
     heading=Heading()
     heading.feed(html)
-    prefix=normalized((heading.first or "").split("|")[0]).replace("’","'")
+    prefix=normalized((heading.first or "").split("|")[0]).replace("’","'").strip()
     t=normalized(title).replace("’","'")
     c=normalized(composer).replace("’","'")
     official=t+" di "+c
