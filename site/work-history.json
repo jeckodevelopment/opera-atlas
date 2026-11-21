@@ -544,14 +544,14 @@
         "https://www.naxos.com/LibrettiSungText/Libretti?id=78D90860-2506-41CA-9C88-41D95C5A38BB"
       ]
     },
-    "l-esule-di-roma": {
+    "esule-di-roma": {
       "librettist": "Domenico Gilardoni",
       "premiere_year": 1828,
       "premiere_venue": "Teatro di San Carlo",
       "premiere_city": "Napoli",
       "sources": [
         "https://www.wikidata.org/wiki/Q471164",
-        "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+        "https://www.donizettiopera.org/it/evento/esule-di-roma/"
       ]
     },
     "i-capuleti-e-i-montecchi": {

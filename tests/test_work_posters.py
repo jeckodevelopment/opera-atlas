@@ -21,10 +21,10 @@ class PosterPublicationTests(unittest.TestCase):
 
     def test_three_completed_operas_have_exact_archival_material(self):
         matches=posters.load_archival_art({
-            "l-esule-di-roma","i-capuleti-e-i-montecchi","falstaff"})
+            "esule-di-roma","i-capuleti-e-i-montecchi","falstaff"})
         self.assertEqual(set(matches),{
-            "l-esule-di-roma","i-capuleti-e-i-montecchi","falstaff"})
-        expected={"l-esule-di-roma":"Donizetti",
+            "esule-di-roma","i-capuleti-e-i-montecchi","falstaff"})
+        expected={"esule-di-roma":"Donizetti",
                   "i-capuleti-e-i-montecchi":"Bellini",
                   "falstaff":"Verdi"}
         for slug,composer in expected.items():
