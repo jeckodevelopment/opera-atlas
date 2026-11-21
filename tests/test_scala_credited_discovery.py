@@ -33,19 +33,18 @@ class OfficialScalaCredits(unittest.TestCase):
         self.assertEqual(rows[0]["starts_at"],"2027-01-22T20:00:00+01:00")
 
     def test_not_guessing_composer_from_url_or_cast(self):
-        for html in (HTML.replace("Georges Bizet",""),
-                     HTML.replace("Georges Bizet</p>","Carlo Rossi</p>"),
-                     HTML.replace("<h1>Les Pêcheurs de perles</h1>",
-                                  "<h1>Another title</h1>")):
-            with self.subTest(html=html[-180:]),self.assertRaises(ValueError):
-                extract_scala_official_credit(html,url=URL) if (
-                    "Another title" not in html and "Carlo Rossi" not in html
-                ) else parse_scala_credited_opera(html,url=URL) if "Another title" in html else (
-                    (_ for _ in ()).throw(ValueError("known fictitious example")))
-        # The parser can extract any genuine first-party composer credit.
-        # It must not invent the name of a missing one.
         with self.assertRaises(ValueError):
-            extract_scala_official_credit(HTML.replace("<p>Georges Bizet</p>",""),url=URL)
+            extract_scala_official_credit(
+                HTML.replace("<p>Georges Bizet</p>",""),url=URL)
+        with self.assertRaises(ValueError):
+            extract_scala_official_credit(
+                HTML.replace("<h1>Les Pêcheurs de perles</h1>","<h1></h1>"),url=URL)
+        # Composer in the cast or article body is insufficient: it must appear
+        # adjacent to the official opera title before the dated summary.
+        with self.assertRaises(ValueError):
+            extract_scala_official_credit(
+                HTML.replace("<p>Georges Bizet</p>","<p>Autore ignoto</p>")
+                    .replace("</body>","<p>Georges Bizet</p></body>"),url=URL)
 
     def test_unsafe_url_and_incomplete_showtime(self):
         for url in (URL.replace("www.teatroallascala.org","example.com"),URL+"?bogus=1",
