@@ -60,7 +60,8 @@ class ScalaEditorialReadyTests(unittest.TestCase):
         intelligence=official_identity_candidates(detail,candidates,read(RESEARCH))
         chosen={"schema_version":1,"works":[w for w in intelligence["works"]
                    if w.get("source_url","").endswith((
-                     "/leonora.html","/les-pecheurs-de-perles.html"))]}
+                     "/leonora.html","/les-pecheurs-de-perles.html",
+                     "/dido-and-aeneas.html","/the-rake-s-progress.html"))]}
         self.assertEqual(len(chosen["works"]),4)
         prior={(normalized(w["title"]),normalized(w["composer"]))
                for w in registry["works"].values()}
