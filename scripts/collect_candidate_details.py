@@ -269,6 +269,18 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
              "date":day,"starts_at":official_local_time(day,hour),
              "venue":venue} for day,hour in rows]
 
+def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
+    """Carry first-party composer evidence to independent authority research."""
+    if source_key!="carlo-felice-season-2026-27":
+        return []
+    from opera_atlas.italian_detail_parser import extract_source_credited_carlo_felice
+    title,composer,venue,recite=extract_source_credited_carlo_felice(
+        html,url=url)
+    return [{"event_title":title,"composer":composer,
+             "date":day,"starts_at":official_local_time(day,hour),
+             "venue":venue} for day,hour in recite]
+
+
 def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
     if candidates.get("schema_version")!=1 or not isinstance(candidates.get("candidates"),list):
         raise ValueError("invalid discovery candidate registry")
@@ -404,6 +416,8 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         item["source_key"],item["official_url"],page.html,registry)),
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
+                    ("official_composer_credit",lambda:parse_source_credited_opera_detail(
+                        item["source_key"],item["official_url"],page.html)),
                     ("schema_event",lambda:parse_event_facts(page.html)),
                 ):
                     try:
