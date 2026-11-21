@@ -146,9 +146,22 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
              "arena-festival-2027":"arena"}.get(source_key)
     if adapter is None and source_key not in (
             "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
-            "carlo-felice-season-2026-27","donizetti-opera-2026"):
+            "carlo-felice-season-2026-27","donizetti-opera-2026",
+            "teatro-grande-opera-2026"):
         return []
-    if source_key in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
+    if source_key=="teatro-grande-opera-2026":
+        from opera_atlas.brescia_detail_parser import Heading,parse_brescia_detail,canonical_text
+        heading=Heading()
+        heading.feed(html)
+        works=[w for w in registry.get("works",{}).values()
+               if canonical_text(heading.h1 or "")==
+                  canonical_text(w["title"]+" di "+w["composer"])]
+        if len(works)!=1:return []
+        work=works[0]
+        raw=parse_brescia_detail(html,url=url,title=work["title"],
+                                 composer=work["composer"])
+        venue="Teatro Grande"
+    elif source_key in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
         from opera_atlas.italian_detail_parser import parse_detail
         work=heading_work(html,registry)
         if work is None:return []
@@ -193,9 +206,15 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
              "arena-festival-2027":"arena"}.get(item["source_key"])
     if adapter is None and item["source_key"] not in (
             "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
-            "carlo-felice-season-2026-27","donizetti-opera-2026"):
+            "carlo-felice-season-2026-27","donizetti-opera-2026",
+            "teatro-grande-opera-2026"):
         return []
-    if item["source_key"] in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
+    if item["source_key"]=="teatro-grande-opera-2026":
+        from opera_atlas.brescia_detail_parser import parse_brescia_detail
+        venue="Teatro Grande"
+        rows=parse_brescia_detail(html,url=item["official_url"],
+                                  title=info["title"],composer=info["composer"])
+    elif item["source_key"] in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
         from opera_atlas.italian_detail_parser import parse_detail
         venue,rows=parse_detail(html,source_key=item["source_key"],
                                 url=item["official_url"],title=info["title"],
