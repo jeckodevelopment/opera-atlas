@@ -20,12 +20,16 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
-      "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-d54e9b021b5167cfb735",
       "reason": "incomplete_work_or_clock"
+    },
+    {
+      "candidate_id": "oa-index-7ee44d5187617ce9e1b7",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-bf778bbaf1cca4ef8024",
+      "reason": "verified_work_image_missing"
     }
   ],
   "new_works": 0,
