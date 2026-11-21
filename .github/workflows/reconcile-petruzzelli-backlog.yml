@@ -9,6 +9,11 @@ on:
       - 'tests/test_petruzzelli_recovered_evidence.py'
       - 'scripts/repair_petruzzelli_mixed_program.py'
       - 'tests/test_petruzzelli_mixed_repair.py'
+      - 'data/verified-work-authority-seeds.json'
+      - 'data/archival-work-images.json'
+      - 'data/verified-coproduction-posters.json'
+      - 'opera_atlas/verified_coproduction_posters.py'
+      - 'tests/test_petruzzelli_three_2026_work_cards.py'
 permissions:
   contents: write
 concurrency:

@@ -587,6 +587,11 @@ def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=N
             source_url=url,title=title,composer=composer)
         if ticketing is not None:
             return ticketing
+        from opera_atlas.verified_coproduction_posters import verified_coproduction_poster
+        coproduced=verified_coproduction_poster(
+            source_url=url,title=title,composer=composer)
+        if coproduced is not None:
+            return coproduced
     image=detail.get("poster_evidence")
     if not isinstance(image,dict) or image.get("kind")!="official_production_image":
         return None
