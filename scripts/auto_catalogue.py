@@ -153,6 +153,8 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                if source_key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027") else
                {"Teatro La Fenice","Teatro Malibran"}
                if source_key=="fenice-opera-2026-27" else
+               {"Teatro dell'Opera di Roma","Teatro Valle Franca Valeri"}
+               if source_key=="opera-roma-season-2026-27" else
                {"Teatro del Maggio Musicale Fiorentino","Teatro Goldoni"}
                if source_key=="maggio-fiorentino-calendar-2027" else {default_venue})
     if venue not in permitted:return None
