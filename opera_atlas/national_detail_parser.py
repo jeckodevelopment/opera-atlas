@@ -137,7 +137,7 @@ def parse_national_showtimes(html: str, *, source_key:str,url:str,
             day=_date(m[1],m[2],m[3])
             trailing=segment[m.end():m.end()+50]
             if (day in cancelled or CANCELLED.search(trailing)
-                or re.search(r"(?i)\\bRISERVAT[OAIE]\\s+ALLE?\\s+SCUOLE\\b",trailing)):
+                or re.search(r"(?i)\bRISERVAT[OAIE]\s+ALLE?\s+SCUOLE\b",trailing)):
                 continue
             _insert(dates,day,f"{int(m[4]):02d}:{m[5]}")
     elif source_key=="parma-opera-2027":
