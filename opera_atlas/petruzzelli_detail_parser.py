@@ -2,6 +2,7 @@
 from __future__ import annotations
 import re
 from datetime import date
+from html.parser import HTMLParser
 from urllib.parse import urlsplit
 from opera_atlas.national_detail_parser import clean
 from scripts.publish_catalog_v2 import normalized
@@ -19,6 +20,45 @@ SCHEDULE=re.compile(
     r"\s*-\s*([01]?\d|2[0-3]):([0-5]\d)\b",re.I)
 CANCELLED=re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie]|sospes[oaie])\b")
 
+class PrimaryHeading(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.active=False
+        self.parts=[]
+        self.text=None
+    def handle_starttag(self,tag,attrs):
+        if tag=="h1" and self.text is None:self.active=True
+    def handle_data(self,data):
+        if self.active:self.parts.append(data)
+    def handle_endtag(self,tag):
+        if tag=="h1" and self.active:
+            self.text=" ".join("".join(self.parts).split())
+            self.active=False
+
+def verified_work_heading(html:str,*,title:str,composer:str)->bool:
+    """Require an actual production h1 and independently credited composer.
+
+    A paragraph about another opera (such as the recurring La traviata
+    conversation notice) must never establish the current production's ID.
+    """
+    heading=PrimaryHeading()
+    heading.feed(html)
+    if not heading.text:return False
+    pieces=[normalized(x).replace("’","'").strip() for x in heading.text.split("|")]
+    title_key=normalized(title).replace("’","'")
+    composer_key=normalized(composer).replace("’","'")
+    if pieces[0]==title_key+" di "+composer_key:
+        return True
+    # The 2026 official pages put the composer's surname in h1 and full
+    # name immediately beneath the heading, before the conversation text.
+    surname=composer_key.split()[-1]
+    if len(pieces)<2 or pieces[0]!=title_key or pieces[1]!=surname:
+        return False
+    visible=normalized(clean(html)).replace("’","'")
+    heading_key=normalized(heading.text).replace("’","'")
+    where=visible.find(heading_key)
+    return where>=0 and composer_key in visible[where+len(heading_key):where+len(heading_key)+180]
+
 def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str,season_year:int=2027):
     target=urlsplit(url)
     if (target.scheme!="https" or target.hostname!="www.fondazionepetruzzelli.it"
@@ -29,16 +69,8 @@ def parse_petruzzelli_detail(html:str,*,url:str,title:str,composer:str,season_ye
     visible=clean(html)
     split=visible.find("Orari Spettacoli")
     if split<0:raise ValueError("official Petruzzelli ticket schedule missing")
-    head=normalized(visible[:split]).replace("’","'")
-    # The authoritative credit precedes the exact ticket schedule.
-    official=normalized(title+" di "+composer).replace("’","'")
-    # The opera credit must precede staff and talk notices; a later
-    # conference mentioning the work is not sufficient attribution.
-    credits=head.split("direttore",1)[0]
-    if official not in credits:
-        raise ValueError("official title and composer credit not confirmed")
-    if not re.search(r"\b"+re.escape(normalized(composer))+r"\b",head):
-        raise ValueError("composer absent from official Petruzzelli event")
+    if not verified_work_heading(html,title=title,composer=composer):
+        raise ValueError("official production heading and composer do not match")
     schedule=visible[split+len("Orari Spettacoli"):]
     for stop in ("Interpretato Da","Chiudi","Privacy Overview"):
         i=schedule.find(stop)

@@ -927,3 +927,9 @@ Per il Teatro Comunale di Bologna il monitoraggio degli indici ufficiali 2026 (`
 Il calendario mensile del Maggio Fiorentino viene scandito su dodici mesi consecutivi a partire dal mese attuale: questo comprende novembre/dicembre 2026 e il programma 2027, senza sostituire il calendario annuale. Sono trattate come valide soltanto le schede con titolo, compositore, sala, data e ora esplicitamente corrispondenti a un'opera canonica. La fonte di dettaglio ufficiale rimane registrata per ogni rappresentazione.
 
 L'ampliamento delle fonti non certifica da solo la completezza del catalogo: consultare gli stati di `data/season-index-health.json`, `data/maggio-calendar-health.json` e la pubblicazione del feed canonico dopo il refresh. Il sistema mantiene le osservazioni già verificate quando un indice non è temporaneamente raggiungibile.
+
+## Protezione identità Petruzzelli 2026 (21/11/2026)
+
+Le pagine ufficiali della stagione 2026 ripetono in un avviso sulle conversazioni il titolo *La traviata* di Verdi, anche quando lo spettacolo è un'altra opera. Una precedente ricerca della coppia titolo/compositore in tutto il testo attribuiva erroneamente quelle pagine a *La traviata*. La selezione dell'identità ora è ancorata all'intestazione `h1` della produzione e al credito del compositore immediatamente sotto: un titolo citato nel testo promozionale, nella sinossi o in un avviso non costituisce una prova d'identità.
+
+Le sei osservazioni 2026 generate con il riconoscimento errato sono state tolte dal registro delle evidenze pubblicabili, conservando le relative candidate ufficiali da riesaminare nel prossimo refresh. Non si elimina alcuna rappresentazione dal catalogo canonico già verificato e non si inventano date. Le candidate dell'opera non ancora risolta restano non pubblicabili fino a identificazione autorevole, scheda editoriale e conferma degli orari.
