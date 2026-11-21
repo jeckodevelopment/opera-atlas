@@ -388,7 +388,17 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 if isinstance(exc,AccessDenied):
                     diagnostic="access_denied_or_robots_disallowed"
                 elif isinstance(exc,FetchUnavailable):
-                    diagnostic="official_source_unavailable"
+                    # Preserve operational stage without copying the remote
+                    # exception body, response or page contents into health.
+                    # Every source uses exactly the same safe taxonomy.
+                    cause=str(exc)
+                    if cause.startswith("robots.txt"):
+                        diagnostic="official_robots_unavailable_or_invalid"
+                    elif cause in ("page unavailable","unexpected HTTP status",
+                                   "not an HTML page","HTML response too large"):
+                        diagnostic="official_html_unavailable_or_invalid"
+                    else:
+                        diagnostic="official_source_unavailable"
                 elif str(exc)=="season index incomplete or structure changed":
                     diagnostic="index_incomplete_or_markup_changed"
                 else:
