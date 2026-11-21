@@ -26,7 +26,10 @@ class NewOperaPromotionTests(unittest.TestCase):
             "oa-index-dfe824fe3301174d2165":"Vincenzo Bellini",
             "oa-index-05dfa4b5d5270a7fc051":"Vincenzo Bellini",
             "oa-index-144db2827af86d96232c":"Jacques Offenbach",
-            "oa-index-9c8433ba74501efca6eb":"Francesco Cilea"}
+            "oa-index-9c8433ba74501efca6eb":"Francesco Cilea",
+            "oa-index-5ab298c2300ec275c2a3":"Wolfgang Amadeus Mozart",
+            "oa-index-6cd199691f7145a4d048":"Engelbert Humperdinck",
+            "oa-index-8a4ea2e4cf761a147ffb":"Giuseppe Verdi"}
         actual={x["candidate_id"]:x for x in complete["works"]}
         for cid,composer in targets.items():
             with self.subTest(candidate=cid):
@@ -34,20 +37,28 @@ class NewOperaPromotionTests(unittest.TestCase):
                 self.assertTrue(45<=len(actual[cid]["synopsis"])<=300)
                 self.assertIsNotNone(actual[cid]["history"])
                 self.assertNotIn("Consulta le rappresentazioni",actual[cid]["synopsis"])
-        # A verified plot replaces an earlier identity-only introduction.
-        original=next(x for x in doc["works"] if x["candidate_id"]==
-                      "oa-index-9c8433ba74501efca6eb")
-        completed=actual["oa-index-9c8433ba74501efca6eb"]
-        self.assertIn("Consulta le rappresentazioni",original["synopsis"])
-        self.assertNotIn("Consulta le rappresentazioni",completed["synopsis"])
-        self.assertIsNone(next(x for x in doc["works"] if x["candidate_id"]==
-            "oa-index-b4180540983902f703af").get("synopsis"))
-        # A spoofed official composer must not inherit an unrelated synopsis.
+        # Test placeholder replacement independently from the mutable public
+        # checkpoint, which may already have a completed synopsis.
+        unresolved=copy.deepcopy(doc)
+        old=next(x for x in unresolved["works"] if x["candidate_id"]==
+                 "oa-index-9c8433ba74501efca6eb")
+        old["synopsis"]=("«Adriana Lecouvreur» è un'opera di Francesco Cilea. "
+                         "Consulta le rappresentazioni verificate in programma nei teatri italiani.")
+        completed=complete_cached_verified_work_cards(unresolved,evidence)
+        final=next(x for x in completed["works"] if x["candidate_id"]==
+                   "oa-index-9c8433ba74501efca6eb")
+        self.assertNotIn("Consulta le rappresentazioni",final["synopsis"])
+        # Construct a missing synopsis explicitly, rather than assuming
+        # the public intelligence cache has not yet been promoted.
+        before_spoof=copy.deepcopy(doc)
+        source=next(x for x in before_spoof["works"] if x["candidate_id"]==
+                    "oa-index-b4180540983902f703af")
+        source["synopsis"]=None
         forged=json.loads(json.dumps(evidence))
         match=next(x for x in forged["evidence"] if x["candidate_id"]==
                    "oa-index-b4180540983902f703af")
         match["event_facts"][0]["composer"]="Different Composer"
-        blocked=complete_cached_verified_work_cards(doc,forged)
+        blocked=complete_cached_verified_work_cards(before_spoof,forged)
         cached=next(x for x in blocked["works"] if x["candidate_id"]==
                     "oa-index-b4180540983902f703af")
         self.assertIsNone(cached.get("synopsis"))

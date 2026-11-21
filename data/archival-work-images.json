@@ -168,6 +168,24 @@
       "description": "Incisione originale del 1735 di William Hogarth, A Rake's Progress, opera figurativa che ispirò il libretto di Stravinskij; non è il manifesto della prima del 1951",
       "credit": "William Hogarth · Rosenwald Collection, National Gallery of Art, Washington, 1735 · Wikimedia Commons",
       "license": "CC0 1.0 · https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "die-zauberflote": {
+      "file": "Zauberflöte-Theaterzettel1791.jpg",
+      "description": "Programma storico della prima del Flauto magico di Mozart, Vienna 1791; non allestimento in calendario",
+      "credit": "Programma della prima viennese del 1791 di Die Zauberflöte, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "hansel-und-gretel": {
+      "file": "Hansel and Gretel by Engelbert Humperdinck (theatre adaptation).jpg",
+      "description": "Manifesto del Federal Theatre Project (1936–1941) per Hänsel und Gretel di Humperdinck, non produzione in calendario",
+      "credit": "Federal Theatre Project, manifesto storico di Hänsel und Gretel; Library of Congress / Wikimedia Commons",
+      "license": "Public domain (US)"
+    },
+    "ernani": {
+      "file": "Verdi - Ernani + Giovanni Battista Ferrari - Ultimi giorni di Suli - Trento Teatro sociale per la fiera di s. Vigilio primavera 1857.jpg",
+      "description": "Manifesto teatrale storico di Trento, 1857, con Ernani di Giuseppe Verdi e un secondo titolo; non allestimento corrente",
+      "credit": "Manifesto del Teatro Sociale di Trento del 1857 con Ernani di Giuseppe Verdi, Wikimedia Commons",
+      "license": "Public domain"
     }
   },
   "works_by_id": {
