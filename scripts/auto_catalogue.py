@@ -172,6 +172,12 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         # for the new staging, within the existing three-segment contract.
         edition_slug=None
         if colliding and not exact:
+            overlaps={day for p in colliding for day,_ in p["dates"]} & set(dates)
+            if overlaps:
+                issues.append({"candidate_id":cid,
+                               "reason":"same_recita_already_in_official_circuit",
+                               "dates":sorted(overlaps)})
+                continue
             from urllib.parse import unquote
             edition=slugify(unquote(urlsplit(url).path.rstrip("/").split("/")[-1]
                                        .removesuffix(".html")))
@@ -419,6 +425,84 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         return next_facts,next_registry,sorted(allowed),next_editorial,next_history,result
     return next_facts,next_registry,sorted(allowed),next_editorial,result
 
+
+def enrich_existing_times(facts:dict,evidence:dict,candidates:dict,previous:dict):
+    """Match an exact second official theatre page to an existing dated recita.
+
+    Preserve the immutable performance/staging IDs and original circuit
+    source, and store only the newly verified time and provenance.
+    """
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    from scripts.build_verified_catalog import TIME_EVIDENCE_URLS, validate_time_evidence
+    updated=copy.deepcopy(previous)
+    if updated.get("schema_version")!=1 or not isinstance(updated.get("times"),dict):
+        raise ValueError("invalid existing time evidence")
+    known={x["id"]:x for x in candidates.get("candidates",[])
+           if x.get("status")=="needs_review"}
+    count=0
+    for record in evidence.get("evidence",[]):
+        cid=record.get("candidate_id")
+        cand=known.get(cid)
+        if not cand or record.get("status")!="needs_editorial_review":
+            continue
+        key=cand.get("source_key")
+        url=cand.get("official_url")
+        if key!="teatro-grande-opera-2026" or not isinstance(url,str) or not eligible(key,url):
+            continue
+        if record.get("source_url")!=url or record.get("source_key")!=key:
+            continue
+        rows=record.get("event_facts")
+        if not isinstance(rows,list) or not rows:continue
+        # Candidate must describe exactly one already known opera in exactly
+        # one location; a double bill is not a single work.
+        names={(normalized(x.get("event_title","")).replace("’","'"),
+                normalized(x.get("composer",""))) for x in rows
+               if isinstance(x,dict)}
+        if len(names)!=1:continue
+        name,composer=next(iter(names))
+        if any(x.get("venue")!="Teatro Grande" for x in rows):continue
+        matches=[p for p in facts["productions"] if p["municipality"]=="Brescia"
+                 and p["venue"]=="Teatro Grande"
+                 and normalized(p["title"]).replace("’","'")==name
+                 and normalized(p["composer"])==composer]
+        if len(matches)!=1:continue
+        product=matches[0]
+        if url not in TIME_EVIDENCE_URLS.get(product["key"],set()):continue
+        original=dict(product["dates"])
+        proposed={}
+        valid=True
+        for row in rows:
+            try:
+                day=date.fromisoformat(row["date"]).isoformat()
+                timestamp=datetime.fromisoformat(row["starts_at"])
+                if timestamp.tzinfo is None or timestamp.utcoffset() is None:raise ValueError
+                local=timestamp.astimezone(ZoneInfo("Europe/Rome"))
+                if local.date().isoformat()!=day or day not in original:raise ValueError
+                hour=local.strftime("%H:%M")
+                if original[day] is not None and original[day]!=hour:raise ValueError
+                if day in proposed:raise ValueError
+                proposed[day]=hour
+            except (ValueError,TypeError,KeyError):
+                valid=False;break
+        if not valid or not proposed:continue
+        # Never enrich only part of an already-known production from a
+        # potentially truncated page; require all its documented dates.
+        if set(proposed)!=set(original):continue
+        fresh={}
+        for day,hour in proposed.items():
+            evidence_key=product["key"]+"|"+day
+            candidate={"time":hour,"url":url}
+            prior=updated["times"].get(evidence_key)
+            if prior is not None and prior!=candidate:
+                valid=False;break
+            if prior is None:fresh[evidence_key]=candidate
+        if not valid:continue
+        updated["times"].update(fresh)
+        count+=len(fresh)
+    validate_time_evidence(facts,updated)
+    return updated,count
+
 def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -450,7 +534,11 @@ def main():
     report["new_recite"]+=newworks["new_recite"]
     # Only write after the full canonical graph validates against the expanded
     # source allowlist; rollback-like behavior by pre-validating in memory.
-    from scripts.build_verified_catalog import validate_auto_sources
+    from scripts.build_verified_catalog import validate_auto_sources,TIME_EVIDENCE,validate_time_evidence
+    old_times=json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
+    next_times,enriched=enrich_existing_times(next_facts,evidence,candidates,old_times)
+    validate_time_evidence(next_facts,next_times)
+    report["enriched_recite_times"]=enriched
     validate_auto_sources(urls)
     assemble(next_facts,next_registry,approved_extra=set(urls))
     build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls),
@@ -462,6 +550,8 @@ def main():
         if report["new_works"]:
             _write_atomic(EDITORIAL,next_editorial)
             _write_atomic(HISTORY,next_history)
+    if enriched:
+        _write_atomic(TIME_EVIDENCE,next_times)
     _write_atomic(HEALTH,{"schema_version":1,**report})
     print(json.dumps(report,ensure_ascii=False))
 if __name__=="__main__":
