@@ -851,8 +851,27 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
 def main():
     args=argparse.ArgumentParser()
     args.add_argument("--allow-network",action="store_true")
+    args.add_argument("--priority-only",action="store_true",
+                      help="First-party complete-card candidates before broad crawls")
     parsed=args.parse_args()
     candidates=json.loads(INDEX.read_text(encoding="utf-8"))
+    if parsed.priority_only:
+        # A short, source-neutral fast pass. Preserve original registry and
+        # already published evidence; only narrow the fetch selection.
+        from scripts.publish_work_editorial import validate_history
+        seed_doc=json.loads((ROOT/"data/verified-work-authority-seeds.json").read_text(
+            encoding="utf-8"))
+        if seed_doc.get("schema_version")!=1 or not isinstance(seed_doc.get("works"),list):
+            raise ValueError("invalid official source-bound seed registry")
+        verified={(w.get("source_key"),w.get("source_url"))
+                  for w in seed_doc["works"]
+                  if isinstance(w.get("title"),str) and w["title"].strip()
+                  and isinstance(w.get("composer"),str) and w["composer"].strip()
+                  and isinstance(w.get("synopsis"),str)
+                  and 45<=len(w["synopsis"].strip())<=300
+                  and validate_history(w.get("history"))}
+        candidates={**candidates,"candidates":[x for x in candidates["candidates"]
+                   if (x.get("source_key"),x.get("official_url")) in verified]}
     previous=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {
         "schema_version":1,"evidence":[]}
     import time
