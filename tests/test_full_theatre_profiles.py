@@ -17,8 +17,8 @@ class FullTheatreProfileTests(unittest.TestCase):
         cls.profiles=json.loads((SITE/"theatre-profiles.json").read_text(encoding="utf-8"))["venues"]
 
     def test_all_fifty_two_have_real_profiles_and_map_addresses(self):
-        self.assertEqual(len(self.directory),52)
-        self.assertEqual(len(self.profiles),52)
+        self.assertEqual(len(self.directory),51)
+        self.assertEqual(len(self.profiles),51)
         for venue in self.directory:
             key=venue.get("profile_key",venue["city"]+"|"+venue["name"])
             self.assertIn(key,self.profiles,key)
@@ -59,10 +59,10 @@ class FullTheatreProfileTests(unittest.TestCase):
                 "https://commons.wikimedia.org/wiki/File:"),venue["id"])
             self.assertTrue(venue.get("photo_credit"),venue["id"])
         without=[v for v in self.directory if not v.get("photo_file")]
-        self.assertEqual({v["name"] for v in without},
-                         {"Teatro Comunale Nouveau","Teatro Politeama Greco"})
-        self.assertEqual(next(v["photo_status"] for v in without if v["name"]=="Teatro Politeama Greco"),
-                         "verified")
+        self.assertEqual([v["name"] for v in without],["Teatro Politeama Greco"])
+        self.assertEqual(without[0]["photo_status"],"verified")
+        self.assertFalse(any(v["slug"]=="teatro-comunale-nouveau" for v in self.directory))
+        self.assertEqual(sum(v["city"]=="Bologna" for v in self.directory),1)
         self.assertNotEqual(next(v["photo_file"] for v in photos if v["name"]=="Arena di Verona"),
                             next(v["photo_file"] for v in photos if v["name"]=="Teatro Filarmonico"))
 
