@@ -28,7 +28,18 @@ class FullTheatreProfileTests(unittest.TestCase):
             self.assertTrue(profile["source"].startswith("https://"),key)
             self.assertEqual(profile["address"],venue["address"],key)
             self.assertEqual(profile["history"],venue["history"],key)
-        self.assertEqual(publish(check=True)["venues"],self.directory)
+        published=publish(check=True)["venues"]
+        self.assertEqual({v["id"] for v in published},
+                         {v["id"] for v in self.directory})
+        by_id={v["id"]:v for v in published}
+        for source in self.directory:
+            # A newly ingested opera may promote an already censused venue
+            # without changing any editorial address, photo or history.
+            published_venue=by_id[source["id"]]
+            for field in ("slug","city_slug","description","address","history","photo_file"):
+                self.assertEqual(published_venue.get(field),source.get(field))
+            if published_venue.get("canonical_venue_id")!=source.get("canonical_venue_id"):
+                self.assertEqual(published_venue["calendar_status"],"acquired")
 
     def test_all_active_venues_have_individual_illustrations_and_credits(self):
         photos=[v for v in self.directory if v.get("photo_file")]

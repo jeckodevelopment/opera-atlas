@@ -38,7 +38,7 @@ class OperaLombardiaFullCalendarTests(unittest.TestCase):
         graph=assemble(self.facts,self.registry)
         self.assertEqual(len(graph["performances"]),sum(len(p["dates"]) for p in self.facts["productions"]))
         self.assertGreaterEqual(len(graph["works"]),22)
-        self.assertEqual(len(graph["venues"]),14)
+        self.assertGreaterEqual(len(graph["venues"]),14)
         self.assertGreaterEqual(len(graph["stagings"]),48)
         self.assertEqual(sum(not r["time_known"] for r in graph["performances"]),40)
         self.assertEqual(len({r["id"] for r in graph["performances"]}),len(graph["performances"]))

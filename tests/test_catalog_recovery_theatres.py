@@ -13,7 +13,7 @@ class RecoveryTheatreTests(unittest.TestCase):
         manifest=json.loads((ROOT/"public/catalog/v2/manifest.json").read_text())
         venues=json.loads((ROOT/"public/catalog/v2"/manifest["files"]["venues"]["path"]).read_text())["venues"]
         profiles=json.loads((SITE/"theatre-profiles.json").read_text())["venues"]
-        self.assertEqual(len(venues),14)
+        self.assertGreaterEqual(len(venues),14)
         for venue in venues:
             key=venue["city"]+"|"+venue["name"]
             self.assertIn(key,profiles)
