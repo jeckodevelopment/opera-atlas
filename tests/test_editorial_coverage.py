@@ -27,7 +27,7 @@ class AtlasDescriptionsTests(unittest.TestCase):
         self.assertIn('node("p","directory-description",item.description)',source)
     def test_all_theatres_have_brief_profiles(self):
         venues=json.loads((SITE/"theatre-profiles.json").read_text())["venues"]
-        self.assertEqual(len(venues),14)
+        self.assertEqual(len(venues),50)
         for item in venues.values():
             self.assertGreater(len(item["description"]),40)
             self.assertLessEqual(len(item["description"]),260)
