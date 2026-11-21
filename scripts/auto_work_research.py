@@ -232,7 +232,7 @@ def wiki_excerpt(identity:dict,*,fetch=read_api)->str|None:
             if tag in ("script","style","sup"):
                 self.skip+=1
             elif tag in ("p","div","li","h2","h3","br") and not self.skip:
-                self.parts.append("\\n")
+                self.parts.append("\n")
         def handle_endtag(self,tag):
             if tag in ("script","style","sup") and self.skip:
                 self.skip-=1
