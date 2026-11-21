@@ -403,7 +403,9 @@ async function initialize() {
       document.querySelector(".detail-related h2").textContent="Spettacoli in programma";
       title.textContent=first.venue;
       subtitle.textContent=[first.municipality,first.region].filter(Boolean).join(" · ");
-      theatreProfile=await appendTheatreProfile(first,selected.venue);
+      theatreProfile=selected.venue
+        ? await appendTheatreProfile(first,selected.venue)
+        : await appendTheatreProfile(first);
       if(selected.events.length)content.append(node("p","staging-summary",
         grouping(selected.events).length+" messe in scena · "+
         selected.events.length+" repliche"));
