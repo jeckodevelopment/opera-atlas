@@ -134,6 +134,19 @@ def reviewed_source_urls()->set[str]:
 def classify(key:str,url:str,reviewed:set[str])->str:
     if excluded_nonopera(key,url):
         return "excluded_nonopera"
+    if key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
+        from opera_atlas.livorno_opera_parser import SOURCES
+        from scripts.build_verified_catalog import MANIFEST
+        from scripts.publish_catalog_v2 import normalized
+        identity=SOURCES.get(key)
+        if identity is None:return "needs_review"
+        published=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        matching=[p for p in published.get("productions",[])
+                  if p.get("source_url")==url and p.get("municipality")=="Livorno"
+                  and p.get("venue")=="Teatro Goldoni"
+                  and normalized(p.get("title",""))==normalized(identity[0])
+                  and normalized(p.get("composer",""))==normalized(identity[1])]
+        return "already_catalogued" if len(matching)==1 else "needs_review"
     if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
         # All five independently verified works share the same exact regional
         # season URL. A published Macbeth must never close the other four
@@ -288,6 +301,8 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
+        return path=="/notizie/la-stagione-lirica"
     if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
         return path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027"
     if key=="reggio-valli-opera-2026-27":
@@ -316,6 +331,10 @@ def eligible(key:str,url:str)->bool:
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
+        from opera_atlas.livorno_opera_parser import parse_detail
+        parse_detail(html,url=index_url,source_key=key)
+        return [index_url]
     if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
         from opera_atlas.ferrara_regional_parser import verified_index_candidate
         if verified_index_candidate(html,source_key=key,url=index_url):
@@ -367,6 +386,9 @@ def validate_config(config:dict)->list[dict]:
         "modena-opera-2026-27":("www.comune.modena.it","/vivere-modena/eventi/2026/stagione-opera-2026-2027"),
         "giglio-lucca-opera-2026-27":("www.teatrodelgigliogiacomopuccini.it","/it/cartellone/lirica/stagione-2026-2027/"),
         "piacenza-opera-2026-27":("teatripiacenza.it","/stagioni/stagione-26-27/"),
+        "goldoni-livorno-dido-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
+        "goldoni-livorno-otello-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
+        "goldoni-livorno-elisir-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
         "ferrara-macbeth-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
         "ferrara-barbiere-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
         "ferrara-dido-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
@@ -406,6 +428,8 @@ def validate_config(config:dict)->list[dict]:
         elif key=="maggio-fiorentino-calendar-2027":
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
+        elif key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
+            valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
         elif key=="reggio-valli-opera-2026-27":
