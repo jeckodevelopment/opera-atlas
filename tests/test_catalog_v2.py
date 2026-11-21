@@ -35,6 +35,31 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
                             for s in result["stagings"]))
         self.assertTrue(all(r["staging_id"] in stagings for r in result["performances"]))
 
+    def test_homonymous_bohème_work_routes_and_stagings_are_independent(self):
+        report=assemble(self.facts,self.registry)
+        works={w["id"]:w for w in report["works"]}
+        self.assertEqual(works["oa-w-000007"]["route_slug"],"la-boheme-leoncavallo")
+        self.assertEqual(works["oa-w-000024"]["route_slug"],"la-boheme-puccini")
+        stagings={s["id"]:s for s in report["stagings"]}
+        torino=next(s for s in stagings.values()
+                    if s["source_url"].endswith("/opera-e-balletto-2026-2027/la-boheme"))
+        milano=next(s for s in stagings.values()
+                    if s["source_url"].endswith("/opera/la-boheme.html"))
+        self.assertEqual(torino["work_id"],"oa-w-000007")
+        self.assertEqual(milano["work_id"],"oa-w-000024")
+        self.assertEqual(torino["url"],"/torino/teatro-regio/la-boheme/")
+        self.assertEqual(milano["url"],"/milano/teatro-alla-scala/la-boheme/")
+        recite=[r for r in report["performances"] if r["staging_id"] in
+                {torino["id"],milano["id"]}]
+        self.assertTrue(any(r["staging_id"]==torino["id"] for r in recite))
+        self.assertTrue(any(r["staging_id"]==milano["id"] for r in recite))
+
+    def test_homonymous_works_cannot_share_a_public_page(self):
+        registry=copy.deepcopy(self.registry)
+        registry["works"]["la bohème|giacomo puccini"]["route_slug"]="la-boheme-leoncavallo"
+        with self.assertRaisesRegex(ValueError,"duplicate public work route"):
+            assemble(self.facts,registry)
+
     def test_adding_production_requires_persisted_ids(self):
         changed=copy.deepcopy(self.facts)
         changed["productions"][0]["key"]="untracked-new-production"
