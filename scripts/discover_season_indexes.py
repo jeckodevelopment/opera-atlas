@@ -244,7 +244,7 @@ def validate_config(config:dict)->list[dict]:
         "donizetti-opera-2026":("www.donizettiopera.org","/it/opere-2026/"),
         "teatro-grande-opera-2026":("teatrogrande.it","/it"),
         "maggio-fiorentino-calendar-2027":("www.maggiofiorentino.com","/calendario/2027/01/opera"),
-        "opera-roma-season-2026-27":("www.operaroma.it","/opere/"),
+        "opera-roma-season-2026-27":("www.operaroma.it","/genre/opera/"),
         "bologna-comunale-opera-2026":("www.tcbo.it","/stagione-presente/"),
         "bologna-comunale-opera-2027":("www.tcbo.it","/stagione-futura/"),
         "petruzzelli-opera-2026":("www.fondazionepetruzzelli.it","/opera-e-balletto-2026/"),
@@ -283,7 +283,7 @@ def validate_config(config:dict)->list[dict]:
             valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
                               and index.path.startswith("/calendario/2027/"))
         elif key=="opera-roma-season-2026-27":
-            valid_season=index.path=="/opere/"
+            valid_season=index.path=="/genre/opera/"
         elif key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
             valid_season=(index.path==("/stagione-presente/" if key.endswith("-2026") else "/stagione-futura/")
                           and index.query=="_tipo=opera")
