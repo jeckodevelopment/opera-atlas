@@ -134,6 +134,22 @@ def reviewed_source_urls()->set[str]:
 def classify(key:str,url:str,reviewed:set[str])->str:
     if excluded_nonopera(key,url):
         return "excluded_nonopera"
+    if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
+        # All five independently verified works share the same exact regional
+        # season URL. A published Macbeth must never close the other four
+        # candidates merely because they share that official page.
+        from opera_atlas.ferrara_regional_parser import records,fold
+        from scripts.build_verified_catalog import MANIFEST
+        work=records().get(key)
+        if work is None:return "needs_review"
+        published=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        matching=[x for x in published.get("productions",[])
+                  if x.get("source_url")==url
+                  and fold(x.get("title",""))==fold(work["title"])
+                  and fold(x.get("composer",""))==fold(work["composer"])
+                  and x.get("municipality")=="Ferrara"
+                  and x.get("venue")=="Teatro Comunale Claudio Abbado"]
+        return "already_catalogued" if len(matching)==1 else "needs_review"
     if url in reviewed:
         return "already_catalogued"
     return "needs_review"
