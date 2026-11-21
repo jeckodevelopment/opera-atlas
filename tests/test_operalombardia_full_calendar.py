@@ -40,7 +40,9 @@ class OperaLombardiaFullCalendarTests(unittest.TestCase):
         self.assertGreaterEqual(len(graph["works"]),22)
         self.assertGreaterEqual(len(graph["venues"]),14)
         self.assertGreaterEqual(len(graph["stagings"]),48)
-        self.assertEqual(sum(not r["time_known"] for r in graph["performances"]),40)
+        # Previously unknown OperaLombardia hours may become verified from a
+        # second official theatre page without altering the circuit source.
+        self.assertLessEqual(sum(not r["time_known"] for r in graph["performances"]),40)
         self.assertEqual(len({r["id"] for r in graph["performances"]}),len(graph["performances"]))
         places={v["city"] for v in graph["venues"]}
         self.assertTrue({"Bergamo","Novara","Reggio Emilia","Ravenna"}.issubset(places))
@@ -60,8 +62,13 @@ class OperaLombardiaFullCalendarTests(unittest.TestCase):
         graph=assemble(self.facts,self.registry)
         for r in graph["performances"]:
             if r["sources"][0]==SOURCE:
-                self.assertIsNone(r["starts_at"])
-                self.assertFalse(r["time_known"])
+                if len(r["sources"])==1:
+                    self.assertIsNone(r["starts_at"])
+                    self.assertFalse(r["time_known"])
+                else:
+                    self.assertTrue(r["time_known"])
+                    self.assertIsNotNone(r["starts_at"])
+                    self.assertTrue(all(x.startswith("https://") for x in r["sources"]))
 
 if __name__=="__main__":
     unittest.main()
