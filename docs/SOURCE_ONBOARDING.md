@@ -1013,3 +1013,14 @@ L'elenco pubblico `public/catalog/work-posters.json` è indicizzato per **ID per
 Le opere contemporanee *Vanessa* (Samuel Barber) e *Accabadora* (Francesco Filidei) mantengono una **copertina editoriale originale identificata correttamente come tale**, in mancanza di immagini di produzione verificabili e riutilizzabili. È vietato attribuire immagini di altre opere, manifesti inventati o fotografia della produzione corrente non confermata. Il fallback SVG del frontend è specifico al titolo ed è renderizzato come immagine effettiva; non viene presentato come manifesto storico.
 
 La sincronizzazione deve mantenere un record di immagine per ogni ID canonico (inclusi gli editoriali), preservare autore, credito e licenza, e rigenerare i feed JSON senza necessità di SFTP. I regression test verificano i quattro nuovi abbinamenti permanenti e i due fallback legittimi.
+
+
+## Bologna: verifica stagioni 2026, 2027 e successive (21/11/2026)
+
+Il Teatro Comunale di Bologna è monitorato **in parallelo** attraverso gli indici ufficiali HTTPS stabili `/stagione-presente/?_tipo=opera` e `/stagione-futura/?_tipo=opera`, rispettivamente registrati come `bologna-comunale-opera-2026` e `bologna-comunale-opera-2027`. La stagione 2027 ha nove produzioni e 38 recite attestate. Alla verifica del 21 novembre 2026, il filtro Opera dell'indice corrente 2026 esponeva la dicitura esplicita **«Nessun evento trovato»**: in assenza di qualsiasi link di opera verificabile, la scansione deve registrare **zero opere programmate** come risposta valida anziché segnalare un difetto di markup; il testo deve comparire realmente nella pagina ufficiale e la scansione resta fail-closed se la pagina è indisponibile, ambigua, o contiene link sotto la soglia minima.
+
+Il sistema continua a rileggere entrambi gli URL sul refresh quotidiano, quindi può trovare autonomamente nuove opere aggiunte alla stagione corrente o futura. La regola di scoperta consente gli URL ufficiali `/evento/opera/<titolo>-20YY/` anche per il 2028 e gli anni successivi, senza enumerare o preapprovare ogni titolo. Le opere vengono pubblicate solo dopo estrazione di fonte ufficiale, compositore e orari, verifica dell'identità canonica e dei requisiti editoriali; un evento nuovo non è automaticamente pubblicato se la fonte presenta dati mancanti. Gli indici dinamici non richiedono un URL diverso per il 2028; le etichette storiche delle chiavi sono nomi interni e non vincoli sull'anno dei nuovi URL.
+
+## Homepage: repertorio in evidenza
+
+La selezione editoriale della homepage ora mostra **Il barbiere di Siviglia di Gioachino Rossini** (`oa-w-000038`) al posto di **Aida**, senza alterare le altre cinque opere in evidenza. L'ID permanente esclude qualsiasi scambio con opere omonime di altri compositori. La modifica richiede il deployment statico SFTP dell'applicazione; la scansione dei JSON resta indipendente dal deploy della homepage.
