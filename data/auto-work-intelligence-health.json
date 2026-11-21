@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-21T18:39:54+00:00",
+  "checked_at": "2026-11-21T18:49:44+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -13,12 +13,37 @@
       "reason": "ValueError"
     },
     {
+      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-92b69a8ac1040b0537be",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-b4180540983902f703af",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable"
+    },
+    {
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
     {
+      "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable"
+    },
+    {
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
@@ -30,30 +55,14 @@
     {
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "status": "automatic_retry",
-      "reason": "verified_plot_unavailable"
-    },
-    {
-      "candidate_id": "oa-index-ecad847d0d03d7d78caa",
-      "status": "automatic_retry",
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-5ab298c2300ec275c2a3",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-6cd199691f7145a4d048",
-      "status": "automatic_retry",
-      "reason": "ValueError"
+      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
+      "status": "enriched"
     },
     {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-92b69a8ac1040b0537be",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
@@ -68,7 +77,7 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-eaefe8edde44acf2edd9",
+      "candidate_id": "oa-index-6cd199691f7145a4d048",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
@@ -83,7 +92,27 @@
       "reason": "verified_plot_unavailable"
     },
     {
-      "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
+      "candidate_id": "oa-index-58413a3bbbee689b82bc",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-207df538679e00657fe1",
+      "status": "automatic_retry",
+      "reason": "ValueError"
+    },
+    {
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable"
+    },
+    {
+      "candidate_id": "oa-index-663c5bda82d136bbbdcc",
       "status": "automatic_retry",
       "reason": "ValueError"
     },
@@ -103,32 +132,12 @@
       "reason": "ValueError"
     },
     {
-      "candidate_id": "oa-index-b4180540983902f703af",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
       "candidate_id": "oa-index-b756ca3bab6062c03ef8",
       "status": "automatic_retry",
       "reason": "verified_plot_unavailable"
     },
     {
       "candidate_id": "oa-index-cde049d5c057e0c050b2",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-eedca6da108bd27e8d30",
-      "status": "automatic_retry",
-      "reason": "ValueError"
-    },
-    {
-      "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
       "status": "automatic_retry",
       "reason": "ValueError"
     }
