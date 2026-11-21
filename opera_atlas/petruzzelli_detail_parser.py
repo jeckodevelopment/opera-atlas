@@ -165,6 +165,8 @@ def extract_official_petr_opera(html:str,*,url:str,season_year:int=2027):
                       and re.fullmatch(r"\d{1,2}\s*[–-]\s*\d{1,2}\s+"
                                        r"(?:"+ "|".join(MONTHS)+r")",parts[2],re.I))
     if surname_credited:
+        if not title_text or "/" in title_text:
+            raise ValueError("unsupported multi-work or uncredited official bill")
         title=title_text
         composer=after.credit
         if (not isinstance(composer,str) or
