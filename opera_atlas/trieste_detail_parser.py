@@ -52,7 +52,7 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
                         body)
     if not credits:
         raise ValueError("missing official composer credit")
-    composer = credits.group(1)
+    composer = re.sub(r"\\s+(?:Ed|Maestro|Regia|Direzione|Stagione)$", "", credits.group(1))
     # The 'Altre info' section lists actual recite with weekdays, full dates,
     # and times. Cast alternations with day numbers are not performances.
     section = body.rfind("Altre info")
