@@ -13,7 +13,6 @@ URL="https://www.teatroallascala.org/it/stagione/2026-2027/opera/fixture-opera.h
 CID="oa-index-test-new-fixture"
 
 class NewOperaPromotionTests(unittest.TestCase):
-    @classmethod
     def test_ready_cached_works_get_editorial_before_publication(self):
         from scripts.auto_catalogue import complete_cached_verified_work_cards
         from scripts.auto_work_research import OUT
@@ -43,6 +42,7 @@ class NewOperaPromotionTests(unittest.TestCase):
                     "oa-index-b4180540983902f703af")
         self.assertIsNone(cached.get("synopsis"))
 
+    @classmethod
     def setUpClass(cls):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
