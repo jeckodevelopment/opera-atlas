@@ -60,6 +60,51 @@ VENUE_BY_SOURCE={
 
 
 
+def normalize_published_work_titles(facts:dict,registry:dict,seed_document:dict)->tuple[dict,dict,int]:
+    """Restore documented display casing without changing immutable work IDs.
+
+    The exact official production URL and composer must agree with an
+    independently reviewed title in the authority seed registry. Update every
+    staging of the same canonical work so a different theater cannot restore
+    the uppercase spelling on a later refresh. Raw evidence is unchanged.
+    """
+    if seed_document.get("schema_version")!=1 or not isinstance(seed_document.get("works"),list):
+        raise ValueError("invalid work authority seed registry")
+    corrections={}
+    for seed in seed_document["works"]:
+        title,composer,url=(seed.get(k) for k in ("title","composer","source_url"))
+        if not all(isinstance(x,str) and x.strip() for x in (title,composer,url)):
+            continue
+        matching=[p for p in facts.get("productions",[])
+                  if p.get("source_url")==url
+                  and normalized(p.get("title",""))==normalized(title)
+                  and normalized(p.get("composer",""))==normalized(composer)]
+        for product in matching:
+            key=normalized(product["title"])+"|"+normalized(product["composer"])
+            work=registry.get("works",{}).get(key)
+            if (work is None or normalized(work.get("title",""))!=normalized(title)
+                    or slugify(work["title"])!=slugify(title)):
+                continue
+            # No two approved labels may silently compete for one identity.
+            if key in corrections and corrections[key]!=title:
+                raise ValueError("conflicting reviewed display titles for "+key)
+            corrections[key]=title
+    updated_facts=copy.deepcopy(facts)
+    updated_registry=copy.deepcopy(registry)
+    changed=0
+    for key,title in corrections.items():
+        work=updated_registry["works"][key]
+        if work["title"]!=title:
+            work["title"]=title
+            changed+=1
+        for product in updated_facts["productions"]:
+            if (normalized(product["title"])+"|"+normalized(product["composer"])==key
+                    and product["title"]!=title):
+                product["title"]=title
+    return updated_facts,updated_registry,changed
+
+
+
 def normalize_source_seed_trieste_genre(rows:list[dict],key:str,url:str,
                                         seed:dict|None)->list[dict]:
     """Repair an archived official genre suffix only with exact seed identity.
@@ -179,6 +224,11 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
         if seed and (normalized(seed["title"])!=normalized(title)
                      or normalized(seed["composer"])!=normalized(composer)):
             raise ValueError("official source contradicts verified opera identity seed")
+        # The theater may publish SHOUTING UPPERCASE headings. Use the
+        # source-bound reviewed work title for display only, retaining the
+        # original official observations and the composer identity checks.
+        if seed:
+            title=seed["title"]
         # The remote research cache may already contain this candidate with
         # an incomplete editorial record. Reconcile its *exact official URL*
         # and credited identity before the publication transaction, instead
@@ -1055,6 +1105,10 @@ def main():
     from datetime import date
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
     registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    # Correct previously published uppercase headings in the same validated
+    # catalog transaction; never edit derived public JSON or IDs by hand.
+    seeds=json.loads((ROOT/"data/verified-work-authority-seeds.json").read_text(encoding="utf-8"))
+    facts,registry,corrected_titles=normalize_published_work_titles(facts,registry,seeds)
     evidence=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     candidates=json.loads(INDEX.read_text(encoding="utf-8")) if INDEX.exists() else {"candidates":[]}
     approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8")) if SOURCE_ALLOWLIST.exists() else {"schema_version":1,"urls":[]}
@@ -1100,6 +1154,7 @@ def main():
     enriched+=double_enriched
     validate_time_evidence(next_facts,next_times)
     report["enriched_recite_times"]=enriched
+    report["normalized_work_titles"]=corrected_titles
     validate_auto_sources(urls)
     assemble(next_facts,next_registry,approved_extra=set(urls))
     build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls),
@@ -1139,7 +1194,7 @@ def main():
         from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
         previous_images=merge_official_poster_cache(
             json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8")),image_additions)
-    if report["new_recite"]:
+    if report["new_recite"] or corrected_titles:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
         _write_atomic(SOURCE_ALLOWLIST,{"schema_version":1,"urls":urls})
