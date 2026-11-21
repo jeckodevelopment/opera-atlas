@@ -58,9 +58,10 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
     # Read the actual auditorium declared under first-party "Dove"; never
     # substitute the Teatro Costanzi for another approved Rome venue.
     official_venues={"Teatro Costanzi":"Teatro dell'Opera di Roma",
-                     "Teatro Valle Franca Valeri":"Teatro Valle Franca Valeri"}
+                     "Teatro Valle Franca Valeri":"Teatro Valle Franca Valeri",
+                     "Teatro Nazionale":"Teatro Nazionale"}
     venues=re.findall(
-        r"\bDove\s+(Teatro Costanzi|Teatro Valle Franca Valeri)\b",context)
+        r"\bDove\s+(Teatro Costanzi|Teatro Valle Franca Valeri|Teatro Nazionale)\b",context)
     if len(venues)!=1:
         raise ValueError("actual Rome auditorium not confirmed")
     venue=official_venues[venues[0]]

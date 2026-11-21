@@ -86,6 +86,12 @@ EXCLUDED_PATHS={
         # Tchaikovsky\u0027s Nutcracker is a ballet, even in an opera/ballet index.
         "lo-schiaccianoci-di-petr-ilic-cajkovskij-11-14-febbraio",
     }),
+    "opera-roma-season-2026-27": frozenset({
+        # The official production credits specify a spoken theatrical text
+        # with music by various authors, not an individually composed opera.
+        # Never conflate this title with Rossini's La Cenerentola.
+        "le-cenerentole-quattro-donne-una-storia",
+    }),
     "fenice-opera-2026-27": frozenset({
         "piccolo-orso-e-la-montagna-di-ghiaccio",
         "zsigmond-gerloczy",
