@@ -81,7 +81,7 @@ def visible_2026_heading(html:str)->tuple[str,str]|None:
             joined=" ".join(values[i:i+width])
             match=pattern.fullmatch(joined)
             if not match:continue
-            title,surname=match.groups()
+            title,surname=(part.strip() for part in match.groups())
             # The page immediately credits its full composer after the
             # headline. Allow a decorative dot or whitespace, never another
             # programme title or a conductor from the later cast.
