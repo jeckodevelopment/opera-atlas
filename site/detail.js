@@ -112,7 +112,7 @@ async function appendTheatreProfile(event,venueRecord=null){
     const place=node("div","theatre-location");
     place.append(node("h2",null,"Dove si trova"));
     place.append(node("p",null,profile.address+" · "+event.municipality));
-    const direction=link("Come arrivare", "https://www.openstreetmap.org/search?query="+encodeURIComponent(profile.address+", "+event.municipality+", Italia"));
+    const direction=link("Come arrivare", "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(profile.address+", "+event.municipality+", Italia"));
     direction.target="_blank";direction.rel="noopener noreferrer";
     place.append(direction);
     section.append(place);
