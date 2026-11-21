@@ -1051,7 +1051,11 @@
       "profile_key": "Roma|Teatro Nazionale",
       "address": "Via del Viminale, angolo via Agostino Depretis",
       "history": "Nato nel 1925 come Supercinema, progettato dagli architetti Arnaldo Foschini e Attilio Spaccarelli, fu acquistato dal Comune di Roma alla fine degli anni Novanta e affidato al Teatro dell'Opera. Oggi accoglie anche produzioni musicali e sperimentali.",
-      "photo_status": "review_pending",
+      "photo_status": "verified",
+      "photo_url": "https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg",
+      "photo_source_url": "https://www.turismoroma.it/it/luoghi/teatro-nazionale",
+      "photo_credit": "Roma Capitale — fotografia del Teatro Nazionale (fonte istituzionale)",
+      "photo_license": "Diritti non specificati dalla fonte; immagine collegata dal sito istituzionale",
       "calendar_status": "not_acquired"
     }
   ],
