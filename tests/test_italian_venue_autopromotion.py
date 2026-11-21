@@ -1,7 +1,7 @@
 """Approved source facts must resolve to the correct canonical theatre."""
 import json
 import unittest
-from datetime import date
+from datetime import date, timedelta
 from scripts.auto_catalogue import promote
 from scripts.build_verified_catalog import MANIFEST
 from scripts.publish_catalog_v2 import REGISTRY,assemble
@@ -52,16 +52,27 @@ class VerifiedVenuePromotionTests(unittest.TestCase):
             with self.subTest(venue=venue):
                 evidence,candidates=self.fixture(key,url,title,composer,venue)
                 baseline=self.ids_donizetti if key=="donizetti-opera-2026" else self.ids
+                already=[p for p in self.facts["productions"]
+                         if p["source_url"]==url and p["municipality"]==city
+                         and p["venue"]==venue and p["title"]==title]
+                occupied={day for p in already for day,_ in p["dates"]}
+                novel=date(2027,3,12)
+                while novel.isoformat() in occupied:
+                    novel+=timedelta(days=1)
+                day=novel.isoformat()
+                evidence["evidence"][0]["event_facts"][0].update({
+                    "date":day,"starts_at":day+"T20:00:00+01:00"})
                 facts,ids,urls,result=promote(
                     self.facts,baseline,evidence,candidates,[],today=date(2026,11,21))
                 self.assertEqual(result["new_recite"],1,result)
-                self.assertEqual(result["new_stagings"],1)
+                self.assertEqual(result["new_stagings"],0 if already else 1)
                 self.assertIn(url,urls)
                 staging=next(p for p in facts["productions"] if p["source_url"]==url
+                             and p["municipality"]==city and p["venue"]==venue
                              and p["key"].startswith("auto-"))
                 self.assertEqual((staging["municipality"],staging["venue"]),(city,venue))
                 published=assemble(facts,ids,approved_extra=set(urls))
-                self.assertTrue(any(x["local_date"]=="2027-03-12"
+                self.assertTrue(any(x["local_date"]==day
                                     for x in published["performances"]))
                 again,after,after_urls,res2=promote(
                     facts,ids,evidence,candidates,urls,today=date(2026,11,21))
