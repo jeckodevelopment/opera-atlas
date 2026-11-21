@@ -50,5 +50,13 @@ vm.runInContext(code,context);
   const links=ids["detail-events"].insertedAfter;
   assert.equal(links.length,1,"one historical source section");
   assert.ok(links[0].children[1].href.includes("archiviostorico.operaroma.it"));
+  // Upcoming world premieres must use future tense, including when the
+  // editorial feed only provides a year and not an exact date.
+  const future={work_id:"oa-w-000074",work_slug:"code-unknown"};
+  await vm.runInContext("appendHistory",context)(future);
+  const futureStory=content.children.filter(x=>x.className.split(" ").includes("work-history")).at(-1)
+    .children.find(x=>x.className==="work-history-story");
+  assert.match(futureStory.textContent,/^La prima assoluta è prevista nel 2027 al Teatro Nazionale di Roma/);
+  assert.doesNotMatch(futureStory.textContent,/ebbe luogo/);
   console.log("Work synopsis, five sourced fields and one footer archival link verified.");
 })().catch(error=>{console.error(error);process.exitCode=1;});
