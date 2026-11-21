@@ -2,10 +2,30 @@
 
 ## Finalità
 Il catalogo automatico continua a funzionare senza API OpenAI o altri servizi
-a pagamento. Le schede nuove con identità verificata possono inizialmente
-contenere un'introduzione fattuale; la loro pubblicazione non aspetta una
-sinossi narrativa. Una **coda editoriale deterministica** consente di
-migliorare progressivamente le schede senza fermare il calendario.
+a pagamento. Le schede delle nuove opere vengono pubblicate **soltanto dopo** che
+la sinossi specifica e i fatti storici richiesti sono verificati. La
+sola identificazione con titolo e compositore non soddisfa questa regola.
+Un'opera incompleta resta in coda senza interrompere l'acquisizione e
+la pubblicazione di tutte le altre rappresentazioni verificabili.
+Le informazioni editoriali già approvate vengono riutilizzate nello
+stesso refresh, senza servizi a pagamento.
+
+## Preparazione prima della pubblicazione
+
+Il generatore consulta le sinossi originali e i profili storici già verificati,
+corroborandoli con l'identità Wikidata e con la fonte ufficiale. Ogni
+opera non ancora completa viene rivalutata nei refresh successivi: una
+vecchia presentazione generica non viene mai considerata un successo
+editoriale definitivo. I candidati con date imminenti hanno priorità,
+indipendentemente dal teatro; il budget di ricerca per le opere sconosciute
+è di dodici candidati per ciclo, con rotazione equa per quelle senza data.
+
+Quando non esistono ancora fatti sufficienti per formulare una trama
+originale affidabile, il sistema registra
+`verified_plot_and_history_unavailable` e **non inventa una sinossi**.
+Questo è un limite esplicito: la ricerca automatica attuale non scrive
+una trama nuova usando un modello linguistico. La pubblicazione delle
+altre opere e dei calendari verificati prosegue normalmente.
 
 ## Generazione automatica
 Dopo la pubblicazione del feed editoriale il workflow
