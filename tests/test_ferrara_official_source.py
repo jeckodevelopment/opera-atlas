@@ -1,6 +1,9 @@
 """Five Ferrara operas and ten recite verified from official season sources."""
 import json
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 from datetime import date
 from opera_atlas.ferrara_regional_parser import REGISTRY,production,records,verified_index_candidate
 from scripts.discover_season_indexes import CONFIG,extract,eligible,validate_config
@@ -80,10 +83,23 @@ class FerraraOfficialSourceTests(unittest.TestCase):
                     production(markup,url=URL.replace("spettacolo.emiliaromagnacultura.it","untrusted.invalid"),source_key=key)
 
     def test_one_published_work_does_not_close_the_other_four(self):
-        # A shared official season URL is not a shared opera identity.
-        for key in KEYS:
-            self.assertEqual(classify(key,URL,set([URL])),
-                             "needs_review")
+        # Use a controlled snapshot: the live catalog may already contain
+        # some or all of these works, unlike this deliberately partial fixture.
+        macbeth = records()[KEYS[0]]
+        fixture = {"productions": [{
+            "title": macbeth["title"],
+            "composer": macbeth["composer"],
+            "municipality": "Ferrara",
+            "venue": "Teatro Comunale Claudio Abbado",
+            "source_url": URL,
+        }]}
+        with TemporaryDirectory() as directory:
+            manifest = Path(directory) / "catalog.json"
+            manifest.write_text(json.dumps(fixture), encoding="utf-8")
+            with patch("scripts.build_verified_catalog.MANIFEST", manifest):
+                self.assertEqual(classify(KEYS[0], URL, {URL}), "already_catalogued")
+                for key in KEYS[1:]:
+                    self.assertEqual(classify(key, URL, {URL}), "needs_review")
 
 if __name__=="__main__":
     unittest.main()
