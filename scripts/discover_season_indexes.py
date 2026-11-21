@@ -196,7 +196,7 @@ def eligible(key:str,url:str)->bool:
     if key=="opera-roma-season-2026-27":
         return bool(re.fullmatch(r"/spettacoli/[a-z0-9-]+",path))
     if key=="bologna-comunale-opera-2027":
-        return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\\d{2}",path))
+        return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
     if key=="carlo-felice-season-2026-27":
         return bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path))
     if key=="parma-opera-2027":
