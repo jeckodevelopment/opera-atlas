@@ -484,6 +484,20 @@
       "title": "Code: Unknown",
       "composer": "Nicola Sani",
       "authority_url": "https://www.operaroma.it/spettacoli/code-unknown/"
+    },
+    "simon boccanegra|giuseppe verdi": {
+      "id": "oa-w-000075",
+      "slug": "simon-boccanegra",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "authority_url": "https://teatripiacenza.it/event/simon-boccanegra/"
+    },
+    "siberia|umberto giordano": {
+      "id": "oa-w-000076",
+      "slug": "siberia",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "wikidata_id": "Q2292268"
     }
   },
   "venues": {
@@ -1858,6 +1872,22 @@
       "venue_id": "oa-v-000018",
       "slug": "il-trovatore",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+      "season": "2026"
+    },
+    "auto-7ee44d5187617ce9": {
+      "id": "oa-s-000146",
+      "work_id": "oa-w-000075",
+      "venue_id": "oa-v-000026",
+      "slug": "simon-boccanegra",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "season": "2027"
+    },
+    "auto-9fdcd7eba240da45": {
+      "id": "oa-s-000147",
+      "work_id": "oa-w-000076",
+      "venue_id": "oa-v-000026",
+      "slug": "siberia",
+      "source_url": "https://teatripiacenza.it/event/siberia/",
       "season": "2026"
     }
   },
@@ -6079,6 +6109,30 @@
       "staging_id": "oa-s-000145",
       "original_date": "2026-10-27",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+    },
+    "auto-7ee44d5187617ce9|2027-04-02": {
+      "id": "oa-r-000719",
+      "staging_id": "oa-s-000146",
+      "original_date": "2027-04-02",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/"
+    },
+    "auto-7ee44d5187617ce9|2027-04-04": {
+      "id": "oa-r-000720",
+      "staging_id": "oa-s-000146",
+      "original_date": "2027-04-04",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/"
+    },
+    "auto-9fdcd7eba240da45|2026-12-18": {
+      "id": "oa-r-000721",
+      "staging_id": "oa-s-000147",
+      "original_date": "2026-12-18",
+      "source_url": "https://teatripiacenza.it/event/siberia/"
+    },
+    "auto-9fdcd7eba240da45|2026-12-20": {
+      "id": "oa-r-000722",
+      "staging_id": "oa-s-000147",
+      "original_date": "2026-12-20",
+      "source_url": "https://teatripiacenza.it/event/siberia/"
     }
   }
 }

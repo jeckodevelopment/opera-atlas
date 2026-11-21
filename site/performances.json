@@ -2300,6 +2300,24 @@
       ]
     },
     {
+      "id": "curated:auto-9fdcd7eba240da45:2026-12-18",
+      "starts_at": "2026-12-18T20:00:00+01:00",
+      "local_date": "2026-12-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/siberia/"
+      ]
+    },
+    {
       "id": "curated:auto-8d2b9a6be734bb24:2026-12-18",
       "starts_at": "2026-12-18T20:30:00+01:00",
       "local_date": "2026-12-18",
@@ -2369,6 +2387,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:auto-9fdcd7eba240da45:2026-12-20",
+      "starts_at": "2026-12-20T15:30:00+01:00",
+      "local_date": "2026-12-20",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/siberia/"
       ]
     },
     {
@@ -6350,6 +6386,24 @@
       ]
     },
     {
+      "id": "curated:auto-7ee44d5187617ce9:2027-04-02",
+      "starts_at": "2027-04-02T20:00:00+02:00",
+      "local_date": "2027-04-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/simon-boccanegra/"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-02",
       "starts_at": "2027-04-02T20:00:00+02:00",
       "local_date": "2027-04-02",
@@ -6401,6 +6455,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
+      "id": "curated:auto-7ee44d5187617ce9:2027-04-04",
+      "starts_at": "2027-04-04T15:30:00+02:00",
+      "local_date": "2027-04-04",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatripiacenza.it/event/simon-boccanegra/"
       ]
     },
     {

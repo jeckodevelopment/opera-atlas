@@ -4376,6 +4376,44 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-7ee44d5187617ce9",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "dates": [
+        [
+          "2027-04-02",
+          "20:00"
+        ],
+        [
+          "2027-04-04",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-9fdcd7eba240da45",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Municipale",
+      "municipality": "Piacenza",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatripiacenza.it/event/siberia/",
+      "dates": [
+        [
+          "2026-12-18",
+          "20:00"
+        ],
+        [
+          "2026-12-20",
+          "15:30"
+        ]
+      ]
     }
   ]
 }
