@@ -16,22 +16,33 @@ class IncorrectPetruzzelliRepairTests(unittest.TestCase):
         cls.approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
 
     def test_only_known_wrong_stagings_are_quarantined_idempotently(self):
+        from scripts.repair_petruzzelli_mixed_program import independently_verified_correct_stage
+        from scripts.collect_candidate_details import OUTPUT as SOURCE_DETAILS
+        evidence=json.loads(SOURCE_DETAILS.read_text(encoding="utf-8"))
         keys={x[0] for x in WRONG}
-        bad_urls={BASE+x[1]+"/" for x in WRONG}
-        preserved=[p for p in self.facts["productions"] if p["key"] not in keys]
+        verified={p["key"] for p in self.facts["productions"]
+                  if p["key"] in keys and independently_verified_correct_stage(p,evidence)}
+        bad_urls={BASE+x[1]+"/" for x in WRONG if x[0] not in verified}
+        preserved=[p for p in self.facts["productions"]
+                   if p["key"] not in keys or p["key"] in verified]
         facts,ids,urls,removed=repair(self.facts,self.registry,self.approved)
         self.assertEqual(facts["productions"],preserved)
         expected=sum(len(p["dates"]) for p in self.facts["productions"]
-                     if p["key"] in keys)
+                     if p["key"] in keys and p["key"] not in verified)
         self.assertEqual(removed,expected)
         for key in keys:
-            self.assertNotIn(key,ids["stagings"])
-            self.assertFalse(any(row.startswith(key+"|") for row in ids["performances"]))
+            if key in verified:
+                self.assertIn(key,ids["stagings"])
+            else:
+                self.assertNotIn(key,ids["stagings"])
+                self.assertFalse(any(row.startswith(key+"|") for row in ids["performances"]))
         self.assertTrue(bad_urls.isdisjoint(urls))
         for key,stage in self.registry["stagings"].items():
-            if key not in keys:self.assertEqual(ids["stagings"][key],stage)
+            if key not in keys or key in verified:
+                self.assertEqual(ids["stagings"][key],stage)
         for key,performance in self.registry["performances"].items():
-            if not any(key.startswith(stage_key+"|") for stage_key in keys):
+            if not any(key.startswith(stage_key+"|")
+                       for stage_key in keys if stage_key not in verified):
                 self.assertEqual(ids["performances"][key],performance)
         # The true Nabucco and Traviata remain, with their exact original IDs.
         self.assertIn("auto-ef3fc228eb643db3",ids["stagings"])
