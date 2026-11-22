@@ -1429,7 +1429,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     parsers=[("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html))]
-                if item["source_key"]=="asti-alfieri-rolling-opera":
+                elif item["source_key"]=="asti-alfieri-rolling-opera":
                     # Mixed genre category: no general schema/authority fallback.
                     # Only the first-party opera, composer, venue and clock
                     # parser may create evidence (concert/prose never pass).
