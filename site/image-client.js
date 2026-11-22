@@ -166,7 +166,8 @@ window.OperaAtlasImages=Object.freeze((()=>{
       chosen?.kind==="ticketing_event_artwork" &&
       chosen?.image_url==="https://www.ticketone.it/obj/media/IT-eventim/teaser/evo/artwork/2027/code-unknow-biglietti.jpg";
     if(chosen && (chosen.kind==="official_production_image" ||
-                  chosen.kind==="archival_work_image" || approvedTicketingArt) &&
+                  chosen.kind==="archival_work_image" ||
+                  chosen.kind==="official_coproduction_poster" || approvedTicketingArt) &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
       return {src:chosen.image_url,
         alt:chosen.alt||"Immagine autentica dell’opera "+title,
