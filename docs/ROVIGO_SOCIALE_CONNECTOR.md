@@ -189,3 +189,21 @@ pubblicazione. Un divieto robots esplicito blocca il tentativo, senza aggirarlo.
 La scheda del teatro non viene sostituita da siti commerciali o da
 risultati di ricerca memorizzati: il catalogo continua a richiedere la
 prova primaria corrente.
+
+## Diagnostica dei due endpoint (senza pubblicazioni fittizie)
+
+La scansione della stagione 2026/27 restituisce la causa aggregata
+`rovigo_fallback_content_unverified` quando almeno un endpoint comunale
+risponde, ma nessuno contiene una scheda validabile. Il campo
+`fallback_checks` discrimina il risultato di `social_api` e `event_page`
+con uno dei codici privi di dati del sito:
+`fetch_unavailable`, `title_missing`, `composer_missing`,
+`venue_missing`, `dates_unbounded`, `date_invalid`,
+`weekday_conflict`, `time_conflict`, `recite_incomplete` o
+`content_unverified`. Gli URL completi, l'HTML remoto e gli errori del
+server non vengono pubblicati.
+
+In questo modo una pagina comunale che restituisce soltanto lo shell
+JavaScript non viene confusa con una recita priva di orario. Resta
+obbligatoria la prova primaria completa; un risultato indicizzato da
+motori di ricerca non autorizza l'acquisizione né la pubblicazione.
