@@ -1,0 +1,102 @@
+"""Official Luglio Musicale Trapanese opera detail reader.
+
+A mixed summer/autumn season lists opera, concerts, dance and chamber opera
+at different venues; these may never be conflated with the outdoor Teatro
+Giuseppe Di Stefano. A new future edition follows the same URL template.
+"""
+from __future__ import annotations
+
+from datetime import date
+from html.parser import HTMLParser
+import re
+from urllib.parse import urljoin,urlsplit
+
+SOURCE_KEY="trapani-luglio-musicale-2026"
+INDEX="https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/"
+HOST="www.lugliomusicale.it"
+ROOT="/it/luglio-musicale-stagioni/"
+DETAIL=re.compile(r"/it/luglio-musicale-stagioni/stagione-(20\d{2})/([a-z0-9][a-z0-9-]*)/")
+MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,"luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12}
+TIME=re.compile(r"(?<!\d)([0-3]?\d)\s+("+ "|".join(MONTHS) +r")\s+(20\d{2}),?\s+Ore\s+([01]?\d|2[0-3]):([0-5]\d)",re.I)
+VENUE=re.compile(r'Teatro\s+["“]Giuseppe\s+Di\s+Stefano["”]',re.I)
+COMPOSER=re.compile(r"\bMusica\s+di\s+([A-ZÀ-Ž][\wÀ-ÿ.\-'’ ]{4,85}?)(?=\s+Libretto\b)",re.I)
+
+class Reader(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.links=[]
+        self.parts=[]
+        self.h1=[]
+        self._heading=False
+        self.skip=0
+    def handle_starttag(self,tag,attrs):
+        if tag in ("script","style","noscript"):self.skip+=1
+        if tag=="h1" and not self.skip:self._heading=True
+        if tag=="a" and not self.skip:
+            href=dict(attrs).get("href")
+            if href:self.links.append(href)
+    def handle_endtag(self,tag):
+        if tag=="h1":self._heading=False
+        if tag in ("script","style","noscript"):self.skip=max(self.skip-1,0)
+    def handle_data(self,text):
+        if self.skip:return
+        text=" ".join(text.split())
+        if text:
+            self.parts.append(text)
+            if self._heading:self.h1.append(text)
+
+def eligible_detail(url:str)->bool:
+    u=urlsplit(url)
+    m=DETAIL.fullmatch(u.path)
+    return (u.scheme=="https" and u.hostname==HOST and bool(m)
+            and 2026<=int(m[1])<=2099 and not u.query and not u.fragment
+            and u.username is None and u.password is None and u.port is None)
+
+def extract_index(html:str,*,url:str=INDEX,min_links:int=3)->list[str]:
+    if not re.fullmatch(r"/it/luglio-musicale-stagioni/stagione-20\d{2}/",urlsplit(url).path):
+        raise ValueError("invalid first-party Trapani season URL")
+    if urlsplit(url).scheme!="https" or urlsplit(url).hostname!=HOST:
+        raise ValueError("unapproved Trapani season index")
+    reader=Reader();reader.feed(html)
+    season=urlsplit(url).path.split("/")[3]
+    candidates=sorted({candidate for href in reader.links
+                       if eligible_detail(candidate:=urljoin(url,href))
+                       and urlsplit(candidate).path.startswith(ROOT+season+"/")})
+    if len(candidates)<min_links:
+        raise ValueError("Trapani official season index incomplete")
+    return candidates
+
+def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
+    if not eligible_detail(url):raise ValueError("unapproved Trapani event")
+    reader=Reader();reader.feed(html)
+    title=" ".join(reader.h1).strip()
+    if not 2<=len(title)<=120:raise ValueError("Trapani work title unverified")
+    text=" ".join(reader.parts)
+    # The first-party event type is a standalone "Opera" label, not the
+    # word 'opera' inside a concert title, review or biographical note.
+    start=next((i for i,x in enumerate(reader.parts) if x==title),None)
+    if start is None:raise ValueError("Trapani official title missing")
+    prefix=reader.parts[max(0,start-5):start]
+    if "Opera" not in prefix and reader.parts[start+1:start+2]!=["Opera"]:
+        raise ValueError("Trapani event is not an outdoor opera")
+    primary=" ".join(reader.parts[start:start+22]).split("Personaggi e interpreti",1)[0]
+    credit=COMPOSER.search(primary)
+    if credit is None:raise ValueError("Trapani first-party composer missing")
+    composer=" ".join(credit.group(1).split())
+    if not VENUE.search(primary):raise ValueError("Trapani Di Stefano venue missing")
+    recite=[]
+    # Require each verified venue to immediately precede its own date/time.
+    pairs=re.findall(
+        r'Teatro\s+["“]Giuseppe\s+Di\s+Stefano["”]\s+'
+        r'([0-3]?\d)\s+('+ "|".join(MONTHS) +r')\s+(20\d{2}),?\s+Ore\s+'
+        r'([01]?\d|2[0-3]):([0-5]\d)',primary,re.I)
+    for d,month,y,h,m in pairs:
+        year=int(y)
+        if year!=int(DETAIL.fullmatch(urlsplit(url).path)[1]):
+            raise ValueError("Trapani event date outside official season")
+        try:day=date(year,MONTHS[month.casefold()],int(d)).isoformat()
+        except ValueError:raise ValueError("invalid official Trapani recita")
+        recite.append((day,f"{int(h):02d}:{int(m):02d}"))
+    if not recite or len(recite)>12 or len({d for d,_ in recite})!=len(recite):
+        raise ValueError("Trapani showtimes absent or ambiguous")
+    return title,composer,"Teatro Giuseppe Di Stefano",recite
