@@ -658,7 +658,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             # The immutable staging identity must therefore include the
             # verified work ID, not just the shared announcement URL.
             staging_identity=(key+"|"+url+"|"+work["id"]
-                              if key in _MULTI_WORK_SEASONS else key+"|"+url)
+                              if key in _MULTI_WORK_SEASONS or key=="savona-giocosa-rolling-opera"
+                              else key+"|"+url)
             staging_key="auto-"+hashlib.sha256(staging_identity.encode()).hexdigest()[:16]
             if staging_key in next_registry["stagings"]:
                 # The same official listing may identify performances at two
