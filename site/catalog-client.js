@@ -104,7 +104,7 @@ window.OperaAtlasCatalog = (() => {
         // has allocated a v2 venue ID. Never infer a theatre from free text.
         if(nationalDirectory===null){
           const directory=await jsonFrom(
-            base.replace(/\\/v2\\/$/,"/")+"venue-directory.json");
+            base.replace(/\/v2\/$/,"/")+"venue-directory.json");
           if(directory.schema_version!==1 || !Array.isArray(directory.venues))
             throw new Error("Invalid independent theatre directory");
           nationalDirectory=directory.venues;
@@ -112,7 +112,7 @@ window.OperaAtlasCatalog = (() => {
         const matches=nationalDirectory.filter(v=>
           v.city===program.municipality && v.name===program.venue &&
           v.region===program.region && typeof v.id==="string" &&
-          /^oa-v(?:d)?-\\d{6}$/.test(v.id) &&
+          /^oa-v(?:d)?-\d{6}$/.test(v.id) &&
           /^[a-z0-9-]+$/.test(v.city_slug||"") &&
           /^[a-z0-9-]+$/.test(v.slug||"") &&
           String(v.source_url||"").startsWith("https://"));
@@ -157,7 +157,7 @@ window.OperaAtlasCatalog = (() => {
     }
     const parts = await Promise.all(CHANNELS.map(async channel => {
       const spec = manifest.files[channel];
-      if (!spec || !new RegExp("^data/" + channel + "\\.[a-f0-9]{16}\\.json$").test(spec.path)
+      if (!spec || !new RegExp("^data/" + channel + "\.[a-f0-9]{16}\.json$").test(spec.path)
           || !/^[a-f0-9]{64}$/.test(spec.sha256) || !Number.isSafeInteger(spec.count)) {
         throw new Error("Unsafe catalog reference");
       }
