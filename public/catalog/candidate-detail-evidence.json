@@ -782,6 +782,23 @@
       ]
     },
     {
+      "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+      "content_sha256": "165ae8ddcd93c9d1839f36d7c00300cd1784a42b65ba7aee94cb0eb0abac0484",
+      "checked_at": "2026-11-22T18:14:21+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "DOVE NASCE IL MELOGRANO",
+          "composer": "ARTURO DAL BIANCO, GIUSEPPE GUERRERA, MASSIMILIANO PISCITELLO",
+          "venue": "Teatro Coccia",
+          "date": "2027-04-30",
+          "starts_at": "2027-04-30T20:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-1d35c5f06b99b17bd41f",
       "source_key": "ferrara-macbeth-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
@@ -1752,7 +1769,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
       "content_sha256": "18de3c639156cbc78a0096b0f2d7590f2e21ed1df2b3ae7ce6755553a640176d",
-      "checked_at": "2026-11-22T18:12:28+00:00",
+      "checked_at": "2026-11-22T18:14:58+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2096,7 +2113,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "24caf72218a93952abfd1b8eee8cb6e9ec837950a349ce1834bd534e6f281bb3",
-      "checked_at": "2026-11-22T18:12:32+00:00",
+      "checked_at": "2026-11-22T18:15:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3612,7 +3629,7 @@
       "source_key": "sassari-de-carolis-rolling-opera",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371",
       "content_sha256": "b7df911d8234294a17dd8b6204f1366a8810f1dfa6c9d277cbf274cedb1dd9e3",
-      "checked_at": "2026-11-22T18:12:19+00:00",
+      "checked_at": "2026-11-22T18:14:44+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4621,6 +4638,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
+      "content_sha256": "2351a654f0db0eac2fd015f6c7402a3944baa2298577d9865deeb5434c86b571",
+      "checked_at": "2026-11-22T18:15:05+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "IL NOCE DI BENEVENTO",
+          "composer": "Giuseppe Balducci",
+          "venue": "Giardini di Palazzo Natta",
+          "date": "2027-06-17",
+          "starts_at": "2027-06-17T21:00:00+02:00"
+        },
+        {
+          "event_title": "IL NOCE DI BENEVENTO",
+          "composer": "Giuseppe Balducci",
+          "venue": "Giardini di Palazzo Natta",
+          "date": "2027-06-18",
+          "starts_at": "2027-06-18T21:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-a0eba5854831ebbf26c0",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/",
@@ -4731,7 +4772,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "3291b5602dc11a44db9e0e946da9a46c7e156292d427d9121086ac923c02119f",
-      "checked_at": "2026-11-22T18:12:24+00:00",
+      "checked_at": "2026-11-22T18:14:52+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6262,8 +6303,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "1d89afd402c5b8934929e13bba05e02d32b0e48320e84601f3c4b8a5f77f12d3",
-      "checked_at": "2026-11-22T18:12:16+00:00",
+      "content_sha256": "dd73d7750752c062b79f1545c8c800621975e1bec51cb1e3e76487d53407ef2b",
+      "checked_at": "2026-11-22T18:14:40+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6800,7 +6841,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
       "content_sha256": "3df346d89ecf48c654b0c6dc287db0d93ffb4ac49e67c891b3c55ea8e85666b3",
-      "checked_at": "2026-11-22T18:12:07+00:00",
+      "checked_at": "2026-11-22T18:14:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6833,7 +6874,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
       "content_sha256": "add415a18a493216ee74ffa6631d9ce24305467453829e7dedeefaa881e5082e",
-      "checked_at": "2026-11-22T18:12:37+00:00",
+      "checked_at": "2026-11-22T18:15:09+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7625,7 +7666,7 @@
       "source_key": "sassari-de-carolis-rolling-opera",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
       "content_sha256": "a30aac04e450eb33dd6c93bdd534a3405c17ef2c8c55abe10e36cb75e0bec333",
-      "checked_at": "2026-11-22T18:12:41+00:00",
+      "checked_at": "2026-11-22T18:15:12+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {

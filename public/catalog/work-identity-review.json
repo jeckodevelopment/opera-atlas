@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T18:12:41+00:00",
+  "checked_at": "2026-11-22T18:15:12+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -108,6 +108,40 @@
     },
     {
       "candidate_ids": [
+        "oa-index-a0178dcdf3cfff6db4fb"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giuseppe Balducci",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "coccia-novara-rolling-opera",
+          "url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
+        }
+      ],
+      "title": "IL NOCE DI BENEVENTO"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-1bf92e353f6745bc2b3a"
+      ],
+      "category": "new_work_candidate",
+      "composer": "ARTURO DAL BIANCO, GIUSEPPE GUERRERA, MASSIMILIANO PISCITELLO",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "coccia-novara-rolling-opera",
+          "url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
+        }
+      ],
+      "title": "DOVE NASCE IL MELOGRANO"
+    },
+    {
+      "candidate_ids": [
         "oa-index-d262c6e18193a53ee487"
       ],
       "category": "new_work_candidate",
@@ -128,13 +162,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 187,
+    "candidates_checked": 189,
     "candidates_without_facts": 0,
-    "facts_examined": 715,
+    "facts_examined": 718,
     "facts_resolved": 704,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 11,
-    "unmatched_groups": 6
+    "unmatched_facts": 14,
+    "unmatched_groups": 8
   },
   "truncated": false
 }
