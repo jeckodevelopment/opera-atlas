@@ -768,6 +768,19 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sabbioneta_-_Teatro_all%27Antica_(Interno_-_Platea).jpg",
       "photo_credit": "Viaggiamocela — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    "Taormina|Teatro Antico di Taormina": {
+      "city": "Taormina",
+      "name": "Teatro Antico di Taormina",
+      "address": "Via Teatro Greco 1",
+      "description": "Affacciato sul golfo di Naxos, il Teatro Antico di Taormina ospita durante l'estate spettacoli di opera lirica e festival in uno dei monumenti più celebri della Sicilia.",
+      "website": "https://parchiarcheologici.regione.sicilia.it/taormina/",
+      "history": "Il Teatro Antico di Taormina nacque in età ellenistica, probabilmente nel III secolo avanti Cristo, e fu poi trasformato in epoca romana. La cavea affacciata sul mare e sulle pendici dell'Etna è oggi anche una sede di spettacoli all'aperto, fra cui produzioni operistiche proposte da diversi festival.",
+      "source": "https://parchiarcheologici.regione.sicilia.it/taormina/",
+      "photo_file": "Teatro Antico di Taormina.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Antico_di_Taormina.jpg",
+      "photo_credit": "Maria Iaria — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   }
 }
