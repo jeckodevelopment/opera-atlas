@@ -134,13 +134,35 @@ def update_observations(candidates: dict, evidence: dict, previous: dict | None,
     return state, metrics
 
 
-def github_runs(workflow: str, *, token: str, repository: str) -> list[dict]:
-    url = f"https://api.github.com/repos/{repository}/actions/workflows/{workflow}/runs?per_page=30"
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "opera-atlas-operational-diagnostics"}
+def github_runs(workflow: str, *, token: str, repository: str,
+                now: datetime | None = None) -> list[dict]:
+    """Load all recent 24-hour workflow runs, not just the first busy page.
+
+    A bounded 1000-run window avoids unbounded API calls; a complete sample is
+    required before publishing 24-hour totals to the dashboard.
+    """
+    now = now or datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=24)
+    headers = {"Accept": "application/vnd.github+json",
+               "User-Agent": "opera-atlas-operational-diagnostics"}
     if token:
         headers["Authorization"] = "Bearer " + token
-    with urlopen(Request(url, headers=headers), timeout=18) as response:
-        return json.load(response).get("workflow_runs", [])
+    collected = []
+    complete = False
+    for page in range(1, 11):
+        url = (f"https://api.github.com/repos/{repository}/actions/workflows/"
+               f"{workflow}/runs?per_page=100&page={page}")
+        with urlopen(Request(url, headers=headers), timeout=18) as response:
+            batch = json.load(response).get("workflow_runs", [])
+        collected.extend(batch)
+        if len(batch) < 100 or (
+            batch and (dt := parse(batch[-1].get("created_at"))) and dt < cutoff
+        ):
+            complete = True
+            break
+    if not complete:
+        raise ValueError("Workflow activity exceeds 1000 runs/24h: cannot report complete counts")
+    return collected
 
 
 def build(candidates: dict, evidence: dict, previous: dict | None, runs: dict[str, list[dict]],
@@ -174,7 +196,7 @@ def main():
         token = os.getenv("GH_TOKEN", "")
         repo = os.getenv("GITHUB_REPOSITORY", "jeckodevelopment/opera-atlas")
         for filename, _, _ in WORKFLOWS:
-            runs[filename] = github_runs(filename, token=token, repository=repo)
+            runs[filename] = github_runs(filename, token=token, repository=repo, now=now)
     state, report = build(read(CANDIDATES), read(EVIDENCE), prior, runs, now)
     STATE.write_bytes(payload(state))
     OUT.parent.mkdir(parents=True, exist_ok=True)
