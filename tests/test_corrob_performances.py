@@ -76,9 +76,12 @@ class CorroborationTests(unittest.TestCase):
         output,ids,urls,report=promote(
             facts,registry,e,c,approved["urls"],today=date(2026,11,22))
         self.assertEqual(report["auto_skipped"],[])
-        rovigo=[x for x in output["productions"] if x["municipality"]=="Rovigo"]
+        # Rovigo now also has La Cenerentola and Aida. The corroboration
+        # test must validate the one *Traviata* staging, not demand that the
+        # city has only one opera in the complete catalogue.
+        rovigo=[x for x in output["productions"]
+                if x["municipality"]=="Rovigo" and x["title"]=="La traviata"]
         self.assertEqual(len(rovigo),1)
-        self.assertEqual(rovigo[0]["title"],"La traviata")
         self.assertEqual(rovigo[0]["dates"],
                          [["2027-01-22","20:30"],["2027-01-24","16:00"]])
         self.assertEqual(ids["venues"]["Rovigo|Teatro Sociale"]["city"],"Rovigo")
@@ -96,7 +99,8 @@ class CorroborationTests(unittest.TestCase):
             output,ids,e,c,urls,today=date(2026,11,22))
         self.assertEqual(repeat["new_recite"],0)
         self.assertEqual(len([x for x in after["productions"]
-                              if x["municipality"]=="Rovigo"]),1)
+                              if x["municipality"]=="Rovigo"
+                              and x["title"]=="La traviata"]),1)
 
 if __name__=="__main__":
     unittest.main()
