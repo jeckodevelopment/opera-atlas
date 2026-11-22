@@ -173,6 +173,12 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
             accepting_dates = False
         if value.strip() == VENUE or (VENUE in value and len(value) < 80):
             current["venue_verified"] = True
+        if kind == "a" and value.strip().upper() == "BIGLIETTI" and href:
+            official = urljoin(url, href)
+            if eligible_detail(official):
+                if current["official_event_url"] not in (None, official):
+                    raise ValueError("ambiguous San Carlo official ticket route")
+                current["official_event_url"] = official
         if kind in ("a", "text") and accepting_dates:
             m = SHOWTIME.fullmatch(value)
             if not m:
