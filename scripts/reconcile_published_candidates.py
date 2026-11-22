@@ -38,7 +38,7 @@ def verified_pisa_recital_urls(manifest:dict, detail:dict)->set[str]:
                     "https://teatrodipisa.it/spettacolo/")):
             continue
         for day,hour in production.get("dates",[]):
-            scheduled.setdefault((day,hour),[]).append(normalized(production["title"]))
+            scheduled.setdefault((day,hour),[]).append(normalized(production["title"]).replace("’", "'"))
 
     matched=set()
     for row in detail.get("evidence",[]):
@@ -54,7 +54,7 @@ def verified_pisa_recital_urls(manifest:dict, detail:dict)->set[str]:
         if not isinstance(facts,list) or len(facts)!=1 or not isinstance(facts[0],dict):
             continue
         fact=facts[0]
-        title=normalized(unescape(str(fact.get("event_title","")))).strip()
+        title=normalized(unescape(str(fact.get("event_title","")))).replace("’", "'").strip()
         instant=fact.get("starts_at")
         day=fact.get("date")
         if (not isinstance(instant,str) or not isinstance(day,str)
