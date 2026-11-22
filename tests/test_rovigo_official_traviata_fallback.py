@@ -121,9 +121,10 @@ class RovigoTraviataFallbackTests(unittest.TestCase):
 
     def test_fallback_failure_is_distinguished_from_obsolete_slider(self):
         config=json.loads(CONFIG.read_text())
+        from opera_atlas.rovigo_traviata_official import OFFICIAL_URLS
         for problem in ("fetch","content"):
             def fetcher(db,*,source_id,url,network_enabled):
-                if url!=URL:
+                if url not in OFFICIAL_URLS:
                     return FetchResult(url,"<h1>Non valido</h1>","d"*64,21)
                 if problem=="fetch":
                     raise FetchUnavailable("page unavailable")
@@ -135,6 +136,54 @@ class RovigoTraviataFallbackTests(unittest.TestCase):
                              "rovigo_fallback_fetch_unavailable" if problem=="fetch"
                              else "rovigo_fallback_content_unverified")
             self.assertEqual(rows[0]["links"],0)
+
+    def test_exact_municipal_event_route_rescues_empty_social_api(self):
+        from opera_atlas.rovigo_traviata_official import DETAIL_URL
+        from scripts.collect_candidate_details import parse_known_opera_detail
+        config=json.loads(CONFIG.read_text())
+        for source in config["sources"]:
+            if source["key"]!=KEY:
+                source["access_status"]="blocked"
+        visited=[]
+        def fetcher(db,*,source_id,url,network_enabled):
+            visited.append(url)
+            # The obsolete index and social-sharing endpoint return HTML
+            # without extractable content. Only the exact event URL is valid.
+            body=HTML if url==DETAIL_URL else "<html><p>Attendere</p></html>"
+            return FetchResult(url,body,"a"*64,len(body))
+        candidates,status=scan(
+            config,{"schema_version":1,"candidates":[]},
+            fetcher=fetcher,network_enabled=True,source_keys={KEY})
+        self.assertEqual(status[0]["status"],"success")
+        self.assertEqual(status[0]["links"],1)
+        self.assertEqual(candidates["candidates"][0]["official_url"],DETAIL_URL)
+        self.assertEqual(visited[-1],DETAIL_URL)
+        self.assertTrue(eligible(KEY,DETAIL_URL))
+        self.assertEqual(len(parse_source_credited_opera_detail(
+            KEY,DETAIL_URL,HTML)),2)
+        registry=json.loads((ROOT/"data/identity-registry.json").read_text())
+        self.assertEqual(len(parse_known_opera_detail(
+            KEY,DETAIL_URL,HTML,registry)),2)
+        for spoofed in (DETAIL_URL+"?q=1",
+                        DETAIL_URL.replace("www.comune.rovigo.it","evil.example")):
+            self.assertFalse(eligible(KEY,spoofed))
+            with self.assertRaises(ValueError):
+                parse_official_traviata(HTML,url=spoofed)
+
+    def test_both_official_endpoints_without_content_fail_closed(self):
+        config=json.loads(CONFIG.read_text())
+        for source in config["sources"]:
+            if source["key"]!=KEY:
+                source["access_status"]="blocked"
+        def fetcher(db,*,source_id,url,network_enabled):
+            body="<html><h1>Pagina non disponibile</h1></html>"
+            return FetchResult(url,body,"b"*64,len(body))
+        candidate,health=scan(
+            config,{"schema_version":1,"candidates":[]},
+            fetcher=fetcher,network_enabled=True,source_keys={KEY})
+        self.assertEqual(candidate["candidates"],[])
+        self.assertEqual(health[0]["status"],"unavailable_or_invalid")
+        self.assertEqual(health[0]["diagnostic"],"rovigo_fallback_content_unverified")
 
     def test_fail_closed_on_wrong_artist_dates_and_origin(self):
         for broken in (

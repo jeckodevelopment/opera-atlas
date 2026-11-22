@@ -378,8 +378,8 @@ def eligible(key:str,url:str)->bool:
         from opera_atlas.rovigo_regional_program import URL
         return url==URL
     if key=="rovigo-sociale-opera-2026-27":
-        from opera_atlas.rovigo_traviata_official import URL as official_detail
-        return (url==official_detail
+        from opera_atlas.rovigo_traviata_official import OFFICIAL_URLS
+        return (url in OFFICIAL_URLS
                 or (parsed.scheme=="https" and parsed.hostname=="www.comune.rovigo.it"
                     and path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"))
     if key=="padova-verdi-opera-2026":
@@ -625,8 +625,8 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         # evidence of any dated performances inside the linked PDF.
         return [index_url]
     if key=="rovigo-sociale-opera-2026-27":
-        from opera_atlas.rovigo_traviata_official import URL as official_detail,parse_official_traviata
-        if index_url==official_detail:
+        from opera_atlas.rovigo_traviata_official import OFFICIAL_URLS,parse_official_traviata
+        if index_url in OFFICIAL_URLS:
             parse_official_traviata(html,url=index_url)
             return [index_url]
         from opera_atlas.rovigo_opera_parser import identify_season
@@ -963,22 +963,30 @@ def _probe_future_season(item:dict,db,source_id:int,fetcher,*,enabled:bool):
 
 
 def _rovigo_verified_detail_fallback(db,source_id:int,fetcher):
-    """Fetch one exact first-party event with safe, stage-specific diagnostics.
+    """Try only two exact approved municipal paths and validate each page.
 
-    The source's old season slider may be empty or unavailable. Neither
-    failure establishes a robots prohibition on another official URL.
-    Do not leak remote HTML, exception bodies or user URLs into health.
+    No search-engine HTML, secondary press dates or archived snapshots are
+    substituted for a current first-party page. Explicit robots denial wins.
     """
-    from opera_atlas.rovigo_traviata_official import URL as detail_url
-    try:
-        page=fetcher(db,source_id=source_id,url=detail_url,network_enabled=True)
-    except FetchUnavailable as exc:
-        raise ValueError("rovigo_fallback_fetch_unavailable") from exc
-    try:
-        urls=extract("rovigo-sociale-opera-2026-27",detail_url,page.html,1)
-    except ValueError as exc:
-        raise ValueError("rovigo_fallback_content_unverified") from exc
-    return page,detail_url,urls
+    from opera_atlas.rovigo_traviata_official import OFFICIAL_URLS
+    had_content=False
+    for detail_url in OFFICIAL_URLS:
+        try:
+            page=fetcher(db,source_id=source_id,url=detail_url,
+                         network_enabled=True)
+        except FetchUnavailable:
+            continue
+        except AccessDenied:
+            raise
+        had_content=True
+        try:
+            urls=extract("rovigo-sociale-opera-2026-27",
+                         detail_url,page.html,1)
+        except ValueError:
+            continue
+        return page,detail_url,urls
+    raise ValueError("rovigo_fallback_content_unverified" if had_content
+                     else "rovigo_fallback_fetch_unavailable")
 
 
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
