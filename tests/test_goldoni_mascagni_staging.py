@@ -13,6 +13,33 @@ class GoldoniMascagniStagingTests(unittest.TestCase):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
 
+    def test_existing_canonical_provenance_remains_valid_after_reprocessing(self):
+        # All first-party candidate evidence must be replay-safe, even if
+        # new unrelated publications have landed on main since the fixture.
+        from scripts.auto_catalogue import SOURCE_ALLOWLIST
+        from scripts.collect_candidate_details import OUTPUT as EVIDENCE
+        from scripts.discover_season_indexes import OUTPUT as CANDIDATES
+        all_candidates=json.loads(CANDIDATES.read_text(encoding="utf-8"))
+        all_evidence=json.loads(EVIDENCE.read_text(encoding="utf-8"))
+        authorized=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
+        doc={"schema_version":1,"candidates":[
+            {**x,"status":"needs_review"} for x in all_candidates["candidates"]
+            if x["source_key"]=="carlo-felice-season-2026-27"]}
+        details={"schema_version":1,"evidence":[
+            x for x in all_evidence["evidence"]
+            if x["source_key"]=="carlo-felice-season-2026-27"]}
+        after,ids,urls,report=promote(
+            self.facts,self.registry,details,doc,authorized,
+            today=date(2026,11,22))
+        mismatches=[]
+        for p in after["productions"]:
+            for day,hour in p["dates"]:
+                perf=ids["performances"].get(p["key"]+"|"+day)
+                if perf is None or perf["source_url"]!=p["source_url"]:
+                    mismatches.append((p["title"],p["source_url"],day,
+                                      perf and perf["source_url"]))
+        self.assertEqual(mismatches,[],report)
+
     def test_mascagni_festival_two_tickets_share_one_outdoor_staging(self):
         from scripts.publish_catalog_v2 import ROOT
         from scripts.reconcile_published_candidates import verified_livorno_recital_urls
