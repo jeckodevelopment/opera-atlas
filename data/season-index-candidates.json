@@ -62,8 +62,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-05e3307781f3a1f0668e",
@@ -181,9 +181,9 @@
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-16181b2d47cf17dea1e4",
@@ -215,7 +215,7 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-1a02a18e39758285a976",
@@ -223,7 +223,7 @@
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",
       "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-1a517d22f1477341131c",
@@ -325,9 +325,9 @@
       "id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-212db41a4c6f7afcbcda",
@@ -405,9 +405,9 @@
       "id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-35be56b50cfb2da6f65b",
@@ -430,8 +430,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-3b54fb1b4f9d0adac29f",
@@ -607,15 +607,15 @@
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
       "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-59f9f415de71b2b46733",
@@ -743,7 +743,7 @@
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/lanno-che-verra/",
       "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-6cd199691f7145a4d048",
@@ -767,7 +767,7 @@
       "official_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-725b23f651111cce4982",
@@ -775,7 +775,7 @@
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-73348de657104a8b911f",
@@ -815,7 +815,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-790b965de8129382aa04",
@@ -829,9 +829,9 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -845,17 +845,17 @@
       "id": "oa-index-7b0a1e061133c0b5970e",
       "source_key": "jesi-esecuzione-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-7d80a6e641ec59031bfa",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
       "first_seen": "2026-11-22T02:02:21+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-7ec9d774a82a64ecaa73",
@@ -927,7 +927,7 @@
       "official_url": "https://www.liricocagliari.it/evento/candide/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-885beacc517cb454d09f",
@@ -1015,7 +1015,7 @@
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
       "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-93c5f576f90532fd4b77",
@@ -1031,7 +1031,7 @@
       "official_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-954a1b185a0354522e71",
@@ -1094,16 +1094,16 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -1135,7 +1135,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/otello-gamification/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-a0eba5854831ebbf26c0",
@@ -1223,15 +1223,15 @@
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-addcc48a211cf5aea678",
       "source_key": "jesi-don-pasquale-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-af061781b5421a61f2f1",
@@ -1311,7 +1311,7 @@
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/",
       "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-b809ddd0a4d8d8cb712e",
@@ -1333,9 +1333,9 @@
       "id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:50:36.994Z",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-bc101d1d7cf587ef8441",
@@ -1407,7 +1407,7 @@
       "official_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
       "status": "needs_review",
       "first_seen": "2026-11-22T00:42:35+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-c8884398af891aeb2492",
@@ -1439,7 +1439,7 @@
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-cde049d5c057e0c050b2",
@@ -1455,7 +1455,7 @@
       "official_url": "https://teatripiacenza.it/event/lanno-che-verra/",
       "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-ce32b1104cdb579dc299",
@@ -1479,7 +1479,7 @@
       "official_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-cf244270ba1aec90c350",
@@ -1503,7 +1503,7 @@
       "official_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-d30d8809ab9bf16b07b7",
@@ -1598,8 +1598,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-de1f52ee525c73d565a6",
@@ -1677,9 +1677,9 @@
       "id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -1703,7 +1703,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -1743,7 +1743,7 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     },
     {
       "id": "oa-index-edf6ac484882834fe426",
@@ -1910,8 +1910,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
       "first_seen": "2026-11-21T21:01:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T02:44:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T02:58:21+00:00"
     },
     {
       "id": "oa-index-ffbe120c526a352bc59c",
@@ -1919,7 +1919,7 @@
       "official_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
       "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T02:52:50+00:00"
+      "last_seen": "2026-11-22T02:55:36+00:00"
     }
   ]
 }
