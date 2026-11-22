@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T22:34:23+00:00",
+  "checked_at": "2026-11-22T22:41:37+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -139,6 +139,23 @@
     },
     {
       "candidate_ids": [
+        "oa-index-89997fb8ea8cbb932bd1"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Gaetano Donizetti",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 3,
+      "sources": [
+        {
+          "source_key": "napoli-san-carlo-rolling-opera",
+          "url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
+        }
+      ],
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia"
+    },
+    {
+      "candidate_ids": [
         "oa-index-7f7fc1d9df69f1a3cd53"
       ],
       "category": "new_work_candidate",
@@ -176,13 +193,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 10,
+    "candidates_checked": 15,
     "candidates_without_facts": 0,
-    "facts_examined": 44,
-    "facts_resolved": 0,
+    "facts_examined": 58,
+    "facts_resolved": 11,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 44,
-    "unmatched_groups": 10
+    "unmatched_facts": 47,
+    "unmatched_groups": 11
   },
   "truncated": false
 }

@@ -1465,7 +1465,7 @@
       "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/",
       "content_sha256": "eb124ef995b4dcba9f490270327a74ab5ecf84d2515dacebe98df3d6658de301",
       "content_hash_scope": "cross_source_review_not_primary_html",
-      "checked_at": "2026-11-22T22:22:47+00:00",
+      "checked_at": "2026-11-22T22:41:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1528,6 +1528,10 @@
         ],
         "repertoire_edition": "2026/27",
         "showtimes_confirmed": 7,
+        "primary_official_event_url": null,
+        "primary_verified_on": null,
+        "primary_verification_method": null,
+        "overridden_secondary_showtimes": [],
         "source_independence_note": "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch"
       }
     },
@@ -1612,7 +1616,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-22T22:21:22+00:00",
+      "checked_at": "2026-11-22T22:39:17+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1900,7 +1904,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-3/",
       "content_sha256": "8c0f101fe8ca1b5593c2dc5163905b0999d1bedc8321e56b2bd01c3ffbd5555e",
-      "checked_at": "2026-11-22T22:32:47+00:00",
+      "checked_at": "2026-11-22T22:39:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2232,7 +2236,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
       "content_sha256": "c817a35abb780b0bf8bbbad7860757a817f2d81bb71f1fc3003b9cf4874ca278",
-      "checked_at": "2026-11-22T22:33:34+00:00",
+      "checked_at": "2026-11-22T22:40:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2449,7 +2453,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "24caf72218a93952abfd1b8eee8cb6e9ec837950a349ce1834bd534e6f281bb3",
-      "checked_at": "2026-11-22T22:32:28+00:00",
+      "checked_at": "2026-11-22T22:39:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2472,8 +2476,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "421d71427659f56f904536bd9d1cb21863a1464800e89f77e2ff027dce3ccb31",
-      "checked_at": "2026-11-22T22:32:25+00:00",
+      "content_sha256": "617954d9a0fe6f5050754ed958c3af9c2dec6f30e56d1018658f3c1dd55abc38",
+      "checked_at": "2026-11-22T22:39:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2938,7 +2942,7 @@
       "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
       "content_sha256": "cad67d3aa8d96804e1033cc6e98c355a23a71b0c30942f03002032e641857795",
       "content_hash_scope": "cross_source_review_not_primary_html",
-      "checked_at": "2026-11-22T22:22:47+00:00",
+      "checked_at": "2026-11-22T22:41:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3001,6 +3005,10 @@
         ],
         "repertoire_edition": "2026/27",
         "showtimes_confirmed": 7,
+        "primary_official_event_url": null,
+        "primary_verified_on": null,
+        "primary_verification_method": null,
+        "overridden_secondary_showtimes": [],
         "source_independence_note": "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch"
       }
     },
@@ -3041,7 +3049,7 @@
       "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/",
       "content_sha256": "4a0bf346db79c7b34ab297f5089bf4fa94c764c4b5349e44b84fe6720161a28a",
       "content_hash_scope": "cross_source_review_not_primary_html",
-      "checked_at": "2026-11-22T22:22:47+00:00",
+      "checked_at": "2026-11-22T22:41:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3097,6 +3105,10 @@
         ],
         "repertoire_edition": "2026/27",
         "showtimes_confirmed": 6,
+        "primary_official_event_url": null,
+        "primary_verified_on": null,
+        "primary_verification_method": null,
+        "overridden_secondary_showtimes": [],
         "source_independence_note": "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch"
       }
     },
@@ -3415,7 +3427,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
       "content_sha256": "4f6033d4fd5dc32b3deeeeffa068b52131e294e8685c40236e665d76feb84df0",
-      "checked_at": "2026-11-22T22:33:56+00:00",
+      "checked_at": "2026-11-22T22:40:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3689,7 +3701,7 @@
       "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/",
       "content_sha256": "337feb5b86a99b2e46f84dfbc0d72a05c723c5baa8e0473dce25f793071626e6",
       "content_hash_scope": "cross_source_review_not_primary_html",
-      "checked_at": "2026-11-22T22:22:47+00:00",
+      "checked_at": "2026-11-22T22:41:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3731,6 +3743,10 @@
         ],
         "repertoire_edition": "2026/27",
         "showtimes_confirmed": 4,
+        "primary_official_event_url": null,
+        "primary_verified_on": null,
+        "primary_verification_method": null,
+        "overridden_secondary_showtimes": [],
         "source_independence_note": "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch"
       }
     },
@@ -3776,7 +3792,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-22T22:33:04+00:00",
+      "checked_at": "2026-11-22T22:39:52+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3862,7 +3878,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
       "content_sha256": "7bdf611e774354896c76269a1dde71b9e52a7074316c70a6eef4dc7338a9cc94",
-      "checked_at": "2026-11-22T22:34:01+00:00",
+      "checked_at": "2026-11-22T22:40:51+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4095,8 +4111,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "a2cb962d2989a757c87490fc3189fc79d597c850667193fabfc9403c494e9897",
-      "checked_at": "2026-11-22T22:32:42+00:00",
+      "content_sha256": "9bf8bfb536c1777f2052f058f0342dde2e5609d8d00ba11280464b77fd3b9c56",
+      "checked_at": "2026-11-22T22:39:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4406,6 +4422,71 @@
         "credit": "Immagine della produzione dal sito ufficiale del teatro",
         "alt": "Immagine della produzione di Il signor Bruschino",
         "kind": "official_production_image"
+      }
+    },
+    {
+      "candidate_id": "oa-index-89997fb8ea8cbb932bd1",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+      "content_sha256": "a7384b3f125d7986b69c7242b7de08196143c5cadd8f0451a0bb3cdc42cce469",
+      "content_hash_scope": "cross_source_review_not_primary_html",
+      "checked_at": "2026-11-22T22:41:37+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro di San Carlo",
+          "date": "2027-04-17",
+          "starts_at": "2027-04-17T20:00:00+02:00"
+        },
+        {
+          "event_title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro di San Carlo",
+          "date": "2027-04-21",
+          "starts_at": "2027-04-21T18:00:00+02:00"
+        },
+        {
+          "event_title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro di San Carlo",
+          "date": "2027-04-23",
+          "starts_at": "2027-04-23T19:00:00+02:00"
+        }
+      ],
+      "corroboration": {
+        "method": "primary_official_event_schedule_precedence",
+        "official_event_page_retrieved": false,
+        "issuer_press_url": "https://www.unina.it/documents/d/guest/stagione-teatro-san-carlo-2026-2027_c-pdf",
+        "publisher_urls": [
+          "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+          "https://www.enjoylive.travel/it/napoli-sancarlo-programma"
+        ],
+        "repertoire_edition": "2026/27",
+        "showtimes_confirmed": 3,
+        "primary_official_event_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+        "primary_verified_on": "2026-11-22",
+        "primary_verification_method": "manual_editorial_read_not_live_fetch",
+        "overridden_secondary_showtimes": [
+          {
+            "date": "2027-04-21",
+            "time": "18:00",
+            "authority": "first_party_official_event",
+            "official_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+            "overridden_secondary_url": "https://www.enjoylive.travel/it/napoli-sancarlo-programma",
+            "overridden_secondary_time": "20:00"
+          },
+          {
+            "date": "2027-04-23",
+            "time": "19:00",
+            "authority": "first_party_official_event",
+            "official_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+            "overridden_secondary_url": "https://www.enjoylive.travel/it/napoli-sancarlo-programma",
+            "overridden_secondary_time": "20:00"
+          }
+        ],
+        "source_independence_note": "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch"
       }
     },
     {
@@ -5029,7 +5110,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
       "content_sha256": "1f0d8110e51589dd450556d0ce7f5673d6bfeb9d95d0ae5068511e39c87a8189",
-      "checked_at": "2026-11-22T22:34:23+00:00",
+      "checked_at": "2026-11-22T22:41:15+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5366,8 +5447,8 @@
       "candidate_id": "oa-index-a0c534fc596dea327ad4",
       "source_key": "sabbioneta-antica-rolling-opera",
       "source_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
-      "content_sha256": "588dc50ca8e69e72cce5b8e757f77fa0512ad2e8217c45b3b886283f3d9e703f",
-      "checked_at": "2026-11-22T22:32:52+00:00",
+      "content_sha256": "154afd8e15a12a0a611da7e5b2e5fd9168c63f97daca86634b81b357aea0e62a",
+      "checked_at": "2026-11-22T22:39:42+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5489,7 +5570,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "3291b5602dc11a44db9e0e946da9a46c7e156292d427d9121086ac923c02119f",
-      "checked_at": "2026-11-22T22:32:56+00:00",
+      "checked_at": "2026-11-22T22:39:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5765,7 +5846,7 @@
       "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/",
       "content_sha256": "80b8b2ebee46401853e945963b87169e52927dc8192e5ae0e51002ec70b3aeba",
       "content_hash_scope": "cross_source_review_not_primary_html",
-      "checked_at": "2026-11-22T22:22:47+00:00",
+      "checked_at": "2026-11-22T22:41:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5800,6 +5881,10 @@
         ],
         "repertoire_edition": "2026/27",
         "showtimes_confirmed": 3,
+        "primary_official_event_url": null,
+        "primary_verified_on": null,
+        "primary_verification_method": null,
+        "overridden_secondary_showtimes": [],
         "source_independence_note": "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch"
       }
     },
@@ -6035,8 +6120,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "a703497cb22932eccfd4406a6ac5647e673e72197a3d4555529c505f9f8168b6",
-      "checked_at": "2026-11-22T22:32:32+00:00",
+      "content_sha256": "ba1438db61555481ffc57931ae1e2f1575baf21c8b2ef3d03eb0d13d7fd3f93b",
+      "checked_at": "2026-11-22T22:39:26+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8438,7 +8523,7 @@
       "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
       "content_sha256": "1732fc877c06b2ec78daf0f40eab679d783e3d32b0d745e2e639d47017f05662",
       "content_hash_scope": "cross_source_review_not_primary_html",
-      "checked_at": "2026-11-22T22:22:47+00:00",
+      "checked_at": "2026-11-22T22:41:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8494,6 +8579,10 @@
         ],
         "repertoire_edition": "2026/27",
         "showtimes_confirmed": 6,
+        "primary_official_event_url": null,
+        "primary_verified_on": null,
+        "primary_verification_method": null,
+        "overridden_secondary_showtimes": [],
         "source_independence_note": "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch"
       }
     },
