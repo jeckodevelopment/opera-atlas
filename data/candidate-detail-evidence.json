@@ -1268,7 +1268,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello/",
       "content_sha256": "1c5d8a1b9310e83a8a2b223a82caf633fb20f418a5c43c051b0a42efa2605602",
-      "checked_at": "2026-11-22T22:22:46+00:00",
+      "checked_at": "2026-11-22T23:21:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1290,8 +1290,8 @@
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
-      "content_sha256": "0694ae7c3e478d11c845ecb789208abf663f0c32975baf81ca75d21475f8ad43",
-      "checked_at": "2026-11-22T22:55:22+00:00",
+      "content_sha256": "58d64359164a869e76adc443200684e51d3f94bec5179f3e16353944b20301e9",
+      "checked_at": "2026-11-22T23:21:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1616,7 +1616,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-22T22:55:06+00:00",
+      "checked_at": "2026-11-22T23:20:54+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1904,7 +1904,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-3/",
       "content_sha256": "8c0f101fe8ca1b5593c2dc5163905b0999d1bedc8321e56b2bd01c3ffbd5555e",
-      "checked_at": "2026-11-22T22:39:38+00:00",
+      "checked_at": "2026-11-22T23:21:57+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2236,7 +2236,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
       "content_sha256": "c817a35abb780b0bf8bbbad7860757a817f2d81bb71f1fc3003b9cf4874ca278",
-      "checked_at": "2026-11-22T22:40:25+00:00",
+      "checked_at": "2026-11-22T23:22:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2453,7 +2453,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "24caf72218a93952abfd1b8eee8cb6e9ec837950a349ce1834bd534e6f281bb3",
-      "checked_at": "2026-11-22T22:39:24+00:00",
+      "checked_at": "2026-11-22T23:21:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2476,8 +2476,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "104f8b33f1e692726c1f8223ffb0e0f0c7a4b496a23d04850e35b130ae84a0e7",
-      "checked_at": "2026-11-22T22:55:09+00:00",
+      "content_sha256": "d1da7c76cef03ff1bf6538eae167c96cea7f366412137b7041ae5ccd559e2e35",
+      "checked_at": "2026-11-22T23:20:57+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3427,7 +3427,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
       "content_sha256": "4f6033d4fd5dc32b3deeeeffa068b52131e294e8685c40236e665d76feb84df0",
-      "checked_at": "2026-11-22T22:40:46+00:00",
+      "checked_at": "2026-11-22T23:22:35+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3792,7 +3792,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-22T22:55:35+00:00",
+      "checked_at": "2026-11-22T23:21:26+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3878,7 +3878,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
       "content_sha256": "7bdf611e774354896c76269a1dde71b9e52a7074316c70a6eef4dc7338a9cc94",
-      "checked_at": "2026-11-22T22:40:51+00:00",
+      "checked_at": "2026-11-22T23:22:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4111,8 +4111,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "9bf8bfb536c1777f2052f058f0342dde2e5609d8d00ba11280464b77fd3b9c56",
-      "checked_at": "2026-11-22T22:39:36+00:00",
+      "content_sha256": "93e3676bb1a7d2bdee01acec99049e1f62ca55805a20850ced933aa30a5f263e",
+      "checked_at": "2026-11-22T23:22:43+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5110,7 +5110,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
       "content_sha256": "1f0d8110e51589dd450556d0ce7f5673d6bfeb9d95d0ae5068511e39c87a8189",
-      "checked_at": "2026-11-22T22:41:15+00:00",
+      "checked_at": "2026-11-22T23:23:03+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5447,8 +5447,8 @@
       "candidate_id": "oa-index-a0c534fc596dea327ad4",
       "source_key": "sabbioneta-antica-rolling-opera",
       "source_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
-      "content_sha256": "a91e7c42b8d999cd9746b1a1d385c1e6ee525b927175c371d29d999363d6ff7e",
-      "checked_at": "2026-11-22T22:55:28+00:00",
+      "content_sha256": "76f956faa8f6c2caa0955ed6aa7c7aa85cb187f21c1d37ac5e6670cfb4322033",
+      "checked_at": "2026-11-22T23:21:18+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5570,7 +5570,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "3291b5602dc11a44db9e0e946da9a46c7e156292d427d9121086ac923c02119f",
-      "checked_at": "2026-11-22T22:55:31+00:00",
+      "checked_at": "2026-11-22T23:21:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6120,8 +6120,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "14f8ac2488593c916a92abcab3eec8c378ce65fc2f39c1e3cc61964e5bbb7026",
-      "checked_at": "2026-11-22T22:55:14+00:00",
+      "content_sha256": "566a3b6d28d0c2088381b09705a9ee6d7c052fec814b8ada996417a4fc883106",
+      "checked_at": "2026-11-22T23:21:03+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
