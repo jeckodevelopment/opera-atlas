@@ -18,19 +18,30 @@ class Headings(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.in_h1=False
+        self.in_h4=False
         self.parts=[]
+        self.h4_parts=[]
         self.headings=[]
+        self.h4_headings=[]
     def handle_starttag(self,tag,attrs):
         if tag=="h1":
             self.in_h1=True
             self.parts=[]
+        elif tag=="h4":
+            self.in_h4=True
+            self.h4_parts=[]
     def handle_data(self,data):
         if self.in_h1:
             self.parts.append(data)
+        if self.in_h4:
+            self.h4_parts.append(data)
     def handle_endtag(self,tag):
         if tag=="h1" and self.in_h1:
             self.headings.append(" ".join(" ".join(self.parts).split()))
             self.in_h1=False
+        elif tag=="h4" and self.in_h4:
+            self.h4_headings.append(" ".join(" ".join(self.h4_parts).split()))
+            self.in_h4=False
 
 DATE=re.compile(
     r"(?i)\b(luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|venerd[iì]|sabato|domenica)"
@@ -48,19 +59,18 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         raise ValueError("unapproved official Modena theatre detail URL")
     headings=Headings()
     headings.feed(html)
-    if len(headings.headings)==1:
-        heading=headings.headings[0]
-    elif (not headings.headings and
-          target.path.rstrip("/")=="/spettacolo/gaia-aloisi-veleno"):
-        # This exact official opera page uses an H4 rather than the H1
-        # expected elsewhere. A composer-credited H4, not the URL slug,
-        # establishes the work and must be unique in the actual HTML.
-        verified=re.findall(
-            r"<h[1-6]\b[^>]*>\s*(Gaia Aloisi\s*[–-]\s*Veleno)\s*</h[1-6]>",
-            html,re.I)
+    if target.path.rstrip("/")=="/spettacolo/gaia-aloisi-veleno":
+        # The only credited opera identity is in the official H4, which
+        # may contain inline spans/strong tags. Collect visible heading text,
+        # never infer a composer's name from the slug. Ignore unrelated
+        # H1 headlines injected by the common website template.
+        verified=[x for x in headings.h4_headings
+                  if re.fullmatch(r"Gaia Aloisi\s*[–-]\s*Veleno",x,re.I)]
         if len(verified)!=1:
             raise ValueError("missing unique Modena production title")
         heading=verified[0]
+    elif len(headings.headings)==1:
+        heading=headings.headings[0]
     else:
         raise ValueError("missing unique Modena production title")
     match=re.fullmatch(r"(.+?)\s*[–-]\s*(.+)",heading)
