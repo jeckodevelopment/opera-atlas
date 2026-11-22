@@ -21,6 +21,9 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "lecce-provincia-politeama-2026":("Lecce","Teatro Politeama Greco"),
+    "lecce-politeama-opera-2026":("Lecce","Teatro Politeama Greco"),
+    "padova-verdi-opera-2026":("Padova","Teatro Verdi"),
     "scala-season-2026-27":("Milano","Teatro alla Scala"),
     "verdi-trieste-season-2026-27":("Trieste","Teatro Lirico Giuseppe Verdi"),
     "lirico-cagliari-opera-2027":("Cagliari","Teatro Lirico di Cagliari"),
@@ -296,7 +299,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Lecce":"Puglia","Padova":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
@@ -369,6 +372,43 @@ def canonicalize_cached_trieste_credit(rows:list[dict],registry:dict)->list[dict
     return changed
 
 
+# These two official season notices explicitly enumerate independently
+# ticketed operas. They are not composite bills: create one staging per
+# canonical work, retaining the common official document as the evidence URL.
+_MULTI_WORK_SEASONS={
+    "lecce-provincia-politeama-2026": {
+        ("Turandot","Giacomo Puccini"):2,
+        ("L’elisir d’amore","Gaetano Donizetti"):2,
+        ("Nabucco","Giuseppe Verdi"):2,
+    },
+    "padova-verdi-opera-2026": {
+        ("Pagliacci","Ruggero Leoncavallo"):2,
+        ("La traviata","Giuseppe Verdi"):3,
+    },
+}
+
+def split_verified_season(item:dict)->list[dict]:
+    """Split only complete, explicitly approved multi-work season schedules.
+
+    Incomplete evidence must never silently publish the subset that happened
+    to be parsable. All derived records retain the original source hash.
+    """
+    expected=_MULTI_WORK_SEASONS.get(item.get("source_key"))
+    if expected is None:
+        return [item]
+    rows=item.get("event_facts")
+    if not isinstance(rows,list):
+        return [item]
+    groups={}
+    for row in rows:
+        if not isinstance(row,dict):
+            return [item]
+        identity=(row.get("event_title"),row.get("composer"))
+        groups.setdefault(identity,[]).append(row)
+    if {k:len(v) for k,v in groups.items()}!=expected:
+        return [item]
+    return [{**item,"event_facts":group} for _,group in sorted(groups.items())]
+
 def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             authorized_urls:list[str], *, today:date,
             intelligence:dict|None=None)->tuple[dict,dict,list[str],dict]:
@@ -389,7 +429,10 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
     from scripts.auto_work_research import validated_editorial_attributions
     attributed=validated_editorial_attributions()
     created_stagings=created_recite=0
-    for item in sorted(evidence.get("evidence",[]),key=lambda x:x.get("candidate_id","")):
+    expanded=[row for item in evidence.get("evidence",[])
+              for row in split_verified_season(item)]
+    for item in sorted(expanded,key=lambda x:(x.get("candidate_id",""),
+                      (x.get("event_facts") or [{}])[0].get("event_title",""))):
         cid=item.get("candidate_id")
         candidate=indexes.get(cid)
         if not candidate or item.get("status")!="needs_editorial_review":
@@ -514,7 +557,12 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 issues.append({"candidate_id":cid,"reason":"conflicting_existing_time"})
                 continue
         else:
-            staging_key="auto-"+hashlib.sha256((key+"|"+url).encode()).hexdigest()[:16]
+            # One season document can announce several separate works.
+            # The immutable staging identity must therefore include the
+            # verified work ID, not just the shared announcement URL.
+            staging_identity=(key+"|"+url+"|"+work["id"]
+                              if key in _MULTI_WORK_SEASONS else key+"|"+url)
+            staging_key="auto-"+hashlib.sha256(staging_identity.encode()).hexdigest()[:16]
             if staging_key in next_registry["stagings"]:
                 # The same official listing may identify performances at two
                 # distinct approved theatres. Keep the old production ID and
