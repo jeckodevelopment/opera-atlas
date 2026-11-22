@@ -164,8 +164,8 @@ async function initialize(){
       for(const work of data.works){
         if(!work || typeof work.id!=="string" || typeof work.title!=="string"
            || !/^[a-z0-9-]+$/.test(work.route_slug||work.slug||""))continue;
-        const url="./opere/"+(work.route_slug||work.slug)+"/";
-        if(grouped.has(url) || grouped.has(new URL(url,document.baseURI).pathname))continue;
+        const url=new URL("./opere/"+(work.route_slug||work.slug)+"/",document.baseURI).pathname;
+        if(grouped.has(url))continue;
         grouped.set(url,{url,title:work.title,subtitle:work.composer||"",
           work_id:work.id,work_slug:work.slug,composer:work.composer,
           description:editorial.synopses[work.id]||""});
