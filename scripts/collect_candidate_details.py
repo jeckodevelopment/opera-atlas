@@ -446,6 +446,15 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         return [{"event_title":work["title"],"composer":work["composer"],
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in recite]
+    if source_key=="goldoni-livorno-rolling-lirica":
+        from opera_atlas.livorno_future_parser import parse_detail
+        from opera_atlas.work_identity import resolve_work as resolve_future_work
+        title,composer,venue,recite=parse_detail(html,url=url)
+        work=resolve_future_work(registry,title,composer)
+        if work is None:return []
+        return [{"event_title":work["title"],"composer":work["composer"],
+                 "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key.startswith("goldoni-livorno-") and source_key.endswith("-2026-27"):
         from opera_atlas.livorno_opera_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url,source_key=source_key)
@@ -778,6 +787,12 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         from opera_atlas.marche_2026_parser import read_program
         title,composer,venue,recite,parts=read_program(
             html,source_key=source_key,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
+    if source_key=="goldoni-livorno-rolling-lirica":
+        from opera_atlas.livorno_future_parser import parse_detail
+        title,composer,venue,recite=parse_detail(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in recite]
