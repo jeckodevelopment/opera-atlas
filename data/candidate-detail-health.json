@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T21:26:35+00:00",
+  "checked_at": "2026-11-22T21:30:29+00:00",
   "scope": "national",
   "attempted": 15,
   "outcomes": [
@@ -20,12 +20,8 @@
     },
     {
       "candidate_id": "oa-index-b4ae738f2728d4430578",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF opera not at verified official venue"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-9f61560762c466080073",
@@ -65,12 +61,8 @@
     },
     {
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF opera not at verified official venue"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
@@ -97,21 +89,13 @@
     },
     {
       "candidate_id": "oa-index-71feb2c03e06415fa1c9",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF opera not at verified official venue"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF opera not at verified official venue"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 2
     },
     {
       "candidate_id": "oa-index-8115e400ae8706fd132a",

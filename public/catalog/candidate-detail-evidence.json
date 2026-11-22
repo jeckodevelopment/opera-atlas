@@ -1287,6 +1287,51 @@
       }
     },
     {
+      "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "content_sha256": "98b2312d10e4457b3744550f7a642369c5fb912c13cecf5500b5f4de75c9b898",
+      "checked_at": "2026-11-22T21:30:11+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le Siège de Corinthe",
+          "composer": "Gioachino Rossini",
+          "venue": "Auditorium Scavolini",
+          "date": "2026-08-11",
+          "starts_at": "2026-08-11T19:00:00+02:00"
+        },
+        {
+          "event_title": "Le Siège de Corinthe",
+          "composer": "Gioachino Rossini",
+          "venue": "Auditorium Scavolini",
+          "date": "2026-08-14",
+          "starts_at": "2026-08-14T19:00:00+02:00"
+        },
+        {
+          "event_title": "Le Siège de Corinthe",
+          "composer": "Gioachino Rossini",
+          "venue": "Auditorium Scavolini",
+          "date": "2026-08-17",
+          "starts_at": "2026-08-17T19:00:00+02:00"
+        },
+        {
+          "event_title": "Le Siège de Corinthe",
+          "composer": "Gioachino Rossini",
+          "venue": "Auditorium Scavolini",
+          "date": "2026-08-21",
+          "starts_at": "2026-08-21T19:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.rossinioperafestival.it/wp-content/uploads/2026/01/1200x548_Le-siege-de-corinthe.jpg",
+        "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Le Siège de Corinthe",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-27929844eef0b828edce",
       "source_key": "lecce-provincia-politeama-2026",
       "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
@@ -1940,7 +1985,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
       "content_sha256": "813c0c54f84ba234e21dbad29f9dc865f3857b384068e764ba19ec91b08bbb47",
-      "checked_at": "2026-11-22T21:26:23+00:00",
+      "checked_at": "2026-11-22T21:30:16+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3094,6 +3139,51 @@
       ]
     },
     {
+      "candidate_id": "oa-index-71feb2c03e06415fa1c9",
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
+      "content_sha256": "62776baee3e1ce23fdf5d5f63ed04e3075adc04c1bbf75abbe2adec6b8deabd2",
+      "checked_at": "2026-11-22T21:30:21+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’occasione fa il ladro",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-12",
+          "starts_at": "2026-08-12T20:00:00+02:00"
+        },
+        {
+          "event_title": "L’occasione fa il ladro",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-15",
+          "starts_at": "2026-08-15T20:00:00+02:00"
+        },
+        {
+          "event_title": "L’occasione fa il ladro",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-18",
+          "starts_at": "2026-08-18T12:00:00+02:00"
+        },
+        {
+          "event_title": "L’occasione fa il ladro",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-20",
+          "starts_at": "2026-08-20T20:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.rossinioperafestival.it/wp-content/uploads/2026/01/1200x548_Loccasione-fa-il-ladro.jpg",
+        "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di L’occasione fa il ladro",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
@@ -3661,6 +3751,37 @@
           "venue": "Teatro La Fenice"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "content_sha256": "8b88b8de6bc22c53b9d11d6830c440a5758458114a3f0cbd005c97e1559a28b3",
+      "checked_at": "2026-11-22T21:30:24+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il viaggio a Reims",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-16",
+          "starts_at": "2026-08-16T11:00:00+02:00"
+        },
+        {
+          "event_title": "Il viaggio a Reims",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-19",
+          "starts_at": "2026-08-19T11:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.rossinioperafestival.it/wp-content/uploads/2026/01/1200x548_Il-viaggio-a-Reims.jpg",
+        "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Il viaggio a Reims",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-7ff44b89bf8d688bbee0",
@@ -5529,6 +5650,51 @@
       ]
     },
     {
+      "candidate_id": "oa-index-b4ae738f2728d4430578",
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "content_sha256": "8ee8b135119b6ce7bf577b2f013e6baf21129ea7aad81feeca70e32329b034d9",
+      "checked_at": "2026-11-22T21:29:59+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La scala di seta",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-13",
+          "starts_at": "2026-08-13T20:00:00+02:00"
+        },
+        {
+          "event_title": "La scala di seta",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-16",
+          "starts_at": "2026-08-16T20:00:00+02:00"
+        },
+        {
+          "event_title": "La scala di seta",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-19",
+          "starts_at": "2026-08-19T20:00:00+02:00"
+        },
+        {
+          "event_title": "La scala di seta",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Gioachino Rossini",
+          "date": "2026-08-22",
+          "starts_at": "2026-08-22T20:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.rossinioperafestival.it/wp-content/uploads/2026/01/1200x548_La-scala-di-seta.jpg",
+        "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di La scala di seta",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-b67d637b2f593f6756c7",
       "source_key": "arena-festival-2027",
       "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
@@ -7132,7 +7298,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "content_sha256": "e24544114b3bed1dda4d78d32910a93d737957e2affdab2c3ef86223083afe57",
-      "checked_at": "2026-11-22T21:26:04+00:00",
+      "checked_at": "2026-11-22T21:29:56+00:00",
       "status": "needs_editorial_review",
       "audience_scope": "public_family_only",
       "calendar_provenance": "reviewed_first_party_historical_ticket_schedule",
