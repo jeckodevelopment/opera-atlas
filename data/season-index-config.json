@@ -540,6 +540,13 @@
       "url": "https://www.festivaldellavalleditria.it/programma-2026",
       "access_status": "approved",
       "min_links": 2
+    },
+    {
+      "key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/",
+      "url": "https://www.rossinioperafestival.it/archivio/stagione-2026/",
+      "access_status": "approved",
+      "min_links": 3
     }
   ]
 }
