@@ -997,7 +997,7 @@
       "id": "oa-index-60bbf80391cbc2b2c853",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/american-dream/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -1741,7 +1741,7 @@
       "id": "oa-index-a1929fb66f9b33ef717b",
       "source_key": "martina-valle-itria-2026",
       "official_url": "https://www.festivaldellavalleditria.it/spettacolo/vennero-da-ogni-dove/2026-07-20",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -1829,7 +1829,7 @@
       "id": "oa-index-a9f4804afdd997da424a",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/requiem-k-626/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -2149,7 +2149,7 @@
       "id": "oa-index-cd84917faf717ff6c4ca",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/verdi-sogno-e-passione/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -2789,7 +2789,7 @@
       "id": "oa-index-fc23fb46e120f890466b",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/passantino-incontra-brioschi/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
