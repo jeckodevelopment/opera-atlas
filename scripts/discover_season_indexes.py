@@ -440,7 +440,7 @@ def eligible(key:str,url:str)->bool:
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
     if key=="puccini-torre-del-lago-2027":
         from opera_atlas.puccini_festival_parser import parse_program
-        if len(parse_program(html,url=index_url))!=17:
+        if len(parse_program(html,url=index_url))!=15:
             raise ValueError("Puccini 2027 incomplete official opera calendar")
         return [index_url]
     if key=="spoleto-tls-lirica-2026":
