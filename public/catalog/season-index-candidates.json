@@ -122,6 +122,14 @@
       "last_seen": "2026-11-21T17:17:07+00:00"
     },
     {
+      "id": "oa-index-07f58f9dbd4078cd4e9d",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/oper-a-intro-14",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-08102433798cc6aa1215",
       "source_key": "reggio-valli-opera-2026-27",
       "official_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
@@ -160,6 +168,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-20T21:15:46+00:00"
+    },
+    {
+      "id": "oa-index-0e8fc70d8165e8a2b021",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-0ed3159d77688a6ce0ee",
@@ -247,7 +263,7 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-1a02a18e39758285a976",
@@ -295,7 +311,15 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
+      "id": "oa-index-1c676e6ace80bd1129b8",
+      "source_key": "asti-alfieri-rolling-opera",
+      "official_url": "https://www.teatroalfieriasti.it/event/concerto-di-capodanno/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-1d35c5f06b99b17bd41f",
@@ -394,6 +418,14 @@
       "last_seen": "2026-11-21T18:30:55+00:00"
     },
     {
+      "id": "oa-index-222099ffb9c977837f63",
+      "source_key": "asti-alfieri-rolling-opera",
+      "official_url": "https://www.teatroalfieriasti.it/event/aida/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-24979e668286aa66e398",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/norma/",
@@ -413,7 +445,7 @@
       "id": "oa-index-2583140715d654277a2b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -466,6 +498,14 @@
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
     {
+      "id": "oa-index-2cb6adaa97769fcb1ffc",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/il-barbiere-di-siviglia-e-la-rosa-incantata",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-2ee53a13c924e5c8aa9f",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/otello/",
@@ -493,9 +533,9 @@
       "id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-35be56b50cfb2da6f65b",
@@ -613,7 +653,7 @@
       "id": "oa-index-41acaf1f090fbeedb4a7",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello-3/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -709,7 +749,7 @@
       "id": "oa-index-535b054411d3b3c9ea01",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -765,9 +805,9 @@
       "id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-59b4a6e5b8f0087fd73d",
@@ -832,6 +872,14 @@
       "status": "excluded_nonopera",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-5fea5e594da012daa488",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-62da655021bdc4f62ba7",
@@ -938,10 +986,18 @@
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
     {
+      "id": "oa-index-6f4d6e0d59d6c80cd891",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/oper-a-intro-15",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-70313ef8895b42a91a5b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -1015,7 +1071,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-790b965de8129382aa04",
@@ -1029,9 +1085,9 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -1053,9 +1109,9 @@
       "id": "oa-index-7b6b273b4dfbfb8e9909",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-7d80a6e641ec59031bfa",
@@ -1258,6 +1314,14 @@
       "last_seen": "2026-11-21T17:52:56+00:00"
     },
     {
+      "id": "oa-index-9017eac8903a1c24c574",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/oper-a-intro-17",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-92b69a8ac1040b0537be",
       "source_key": "scala-season-2026-27",
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
@@ -1287,7 +1351,7 @@
       "official_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-954a1b185a0354522e71",
@@ -1341,7 +1405,7 @@
       "id": "oa-index-9871aa4f1201e959bf0b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -1389,9 +1453,9 @@
       "id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -1431,7 +1495,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-a02901b14e6eae69df5c",
@@ -1461,9 +1525,9 @@
       "id": "oa-index-a4402559616047a0367b",
       "source_key": "savona-giocosa-rolling-opera",
       "official_url": "https://operagiocosa.it/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T17:52:01+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-a587b66c1f36bad78d65",
@@ -1610,6 +1674,14 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-b4aaa5341d6c996550c0",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-b67d637b2f593f6756c7",
       "source_key": "arena-festival-2027",
       "official_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
@@ -1672,6 +1744,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T13:50:36.994Z",
       "last_seen": "2026-11-22T15:26:06+00:00"
+    },
+    {
+      "id": "oa-index-baed829c6bf2170bf8c3",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/oper-a-intro-16",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-bc101d1d7cf587ef8441",
@@ -1765,9 +1845,9 @@
       "id": "oa-index-cab03dfcd8aeff155178",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-cc0051e23e563b2a9b20",
@@ -1789,7 +1869,7 @@
       "id": "oa-index-cd6e3c395e6b5bbc1ff4",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -1850,6 +1930,14 @@
       "last_seen": "2026-11-21T15:38:33+00:00"
     },
     {
+      "id": "oa-index-d0301a251f96e895132b",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/oper-a-backstage-under-35-2",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "official_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
@@ -1861,7 +1949,7 @@
       "id": "oa-index-d1c1b3127d4e683424be",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/aida/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -1951,7 +2039,7 @@
       "official_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
       "status": "needs_review",
       "first_seen": "2026-11-22T13:00:28+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-db7983de674f2fdccdda",
@@ -2013,7 +2101,7 @@
       "id": "oa-index-df2fab0c88c0e4ca68c2",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -2069,9 +2157,9 @@
       "id": "oa-index-e0c88bff5883ca11cf6e",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-e1bb2cc8491121303ddb",
@@ -2101,17 +2189,17 @@
       "id": "oa-index-e44f89c2a6d468342e8a",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -2135,15 +2223,15 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-e831cbf742e2f848f44b",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -2210,6 +2298,14 @@
       "last_seen": "2026-11-21T22:51:36+00:00"
     },
     {
+      "id": "oa-index-eef7611e7489d713f02a",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/dai-libri-allopera",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-ef019182f129777d75f0",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/verdi-off-los-angeles/",
@@ -2266,12 +2362,20 @@
       "last_seen": "2026-11-21T14:28:24+00:00"
     },
     {
+      "id": "oa-index-f3d0b1311d04c3e46c05",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
+    },
+    {
       "id": "oa-index-f4226333be6c3f44d995",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-f437d2811434d3e312c2",
@@ -2280,6 +2384,14 @@
       "status": "excluded_nonopera",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-f52fc662b522c140e73f",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/dai-libri-allopera-2",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T18:52:31+00:00",
+      "last_seen": "2026-11-22T18:52:31+00:00"
     },
     {
       "id": "oa-index-f536a0b8d30f1d46dc14",
