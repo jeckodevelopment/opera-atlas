@@ -1335,6 +1335,30 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                    "outcome":"verified_composite_program",
                                    "rows":len(facts),"program_recite":len(dates)})
                     continue
+                # Exact first-party season proof for the missing CMS timetable:
+                # one existing Mozart work and six independent public recite.
+                if (item["source_key"]=="verdi-trieste-season-2026-27"
+                    and item["official_url"]==
+                    "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"):
+                    from opera_atlas.trieste_don_giovanni_program import (
+                        verified_calendar,SCHEDULE_URL,CREDITS_URL)
+                    facts=verified_calendar(
+                        source_key=item["source_key"],
+                        source_url=item["official_url"])
+                    retained[item["id"]]={
+                        "candidate_id":item["id"],
+                        "source_key":item["source_key"],
+                        "source_url":item["official_url"],
+                        "content_sha256":page.sha256,
+                        "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        "status":"needs_editorial_review",
+                        "official_schedule_evidence_url":SCHEDULE_URL,
+                        "official_credits_evidence_url":CREDITS_URL,
+                        "event_facts":facts}
+                    health.append({"candidate_id":item["id"],
+                                   "outcome":"verified_first_party_season_calendar",
+                                   "rows":len(facts)})
+                    continue
                 # The theatre's own 2026/27 brochure gives the exact six
                 # Jeanne double-bill recite, even though the event detail
                 # exposes no parseable per-date clocks. Both works remain
