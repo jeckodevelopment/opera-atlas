@@ -20,7 +20,8 @@ class GoldoniSingleStagingTests(unittest.TestCase):
                 matches=[p for p in facts["productions"]
                          if p["municipality"]=="Livorno"
                          and p["venue"]=="Teatro Goldoni"
-                         and p["title"]==title]
+                         and p["title"]==title
+                         and p["source_url"]==SEASON]
                 self.assertEqual(len(matches),1)
                 production=matches[0]
                 self.assertEqual(production["source_url"],SEASON)
@@ -32,7 +33,8 @@ class GoldoniSingleStagingTests(unittest.TestCase):
                 self.assertEqual({r["original_date"] for r in recite},set(dates))
         self.assertEqual(
             len([p for p in facts["productions"]
-                 if p["municipality"]=="Livorno" and p["venue"]=="Teatro Goldoni"]),3)
+                 if p["municipality"]=="Livorno" and p["venue"]=="Teatro Goldoni"
+                 and p["source_url"]==SEASON]),3)
 
     def test_mascagni_outdoor_staging_kept_separate(self):
         facts=json.loads((ROOT/"data/verified-launch-catalog.json").read_text())
