@@ -53,7 +53,7 @@ def verified_program(*,source_key:str,source_url:str)->tuple[str,list[dict],list
     # Check all dates are real calendar days and each clock has a legal HH:MM.
     for day,clock in EXPECTED_DATES:
         date.fromisoformat(day)
-        if not re.fullmatch(r"(?:[01]\\d|2[0-3]):[0-5]\\d",clock):
+        if not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d",clock):
             raise ValueError("invalid official Trieste clock")
     from scripts.build_verified_catalog import official_local_time
     parts=[{"title":title,"composer":composer} for title,composer in COMPONENTS]
