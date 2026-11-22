@@ -904,6 +904,22 @@
       "name": "Teatro Giovan Battista Pergolesi",
       "city": "Jesi",
       "region": "Marche"
+    },
+    "Lecce|Teatro Politeama Greco": {
+      "id": "oa-v-000040",
+      "slug": "teatro-politeama-greco",
+      "city_slug": "lecce",
+      "name": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "region": "Puglia"
+    },
+    "Padova|Teatro Verdi": {
+      "id": "oa-v-000041",
+      "slug": "teatro-verdi",
+      "city_slug": "padova",
+      "name": "Teatro Verdi",
+      "city": "Padova",
+      "region": "Veneto"
     }
   },
   "stagings": {
@@ -2388,6 +2404,46 @@
       "venue_id": "oa-v-000038",
       "slug": "occasione-fa-il-ladro",
       "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+      "season": "2026"
+    },
+    "auto-1716458908b64b36": {
+      "id": "oa-s-000190",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000040",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "season": "2026"
+    },
+    "auto-3887a06511bd9ecd": {
+      "id": "oa-s-000191",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000040",
+      "slug": "nabucco",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "season": "2026"
+    },
+    "auto-d670b7caf7b5d8f6": {
+      "id": "oa-s-000192",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000040",
+      "slug": "turandot",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "season": "2026"
+    },
+    "auto-b81b9cb68003ef9e": {
+      "id": "oa-s-000193",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000041",
+      "slug": "la-traviata",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "season": "2026"
+    },
+    "auto-ddbf275f357fab54": {
+      "id": "oa-s-000194",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000041",
+      "slug": "pagliacci",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
       "season": "2026"
     }
   },
@@ -7377,6 +7433,72 @@
       "staging_id": "oa-s-000189",
       "original_date": "2026-12-06",
       "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
+    },
+    "auto-1716458908b64b36|2026-11-27": {
+      "id": "oa-r-000849",
+      "staging_id": "oa-s-000190",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+    },
+    "auto-1716458908b64b36|2026-11-29": {
+      "id": "oa-r-000850",
+      "staging_id": "oa-s-000190",
+      "original_date": "2026-11-29",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+    },
+    "auto-3887a06511bd9ecd|2026-12-11": {
+      "id": "oa-r-000851",
+      "staging_id": "oa-s-000191",
+      "original_date": "2026-12-11",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+    },
+    "auto-3887a06511bd9ecd|2026-12-13": {
+      "id": "oa-r-000852",
+      "staging_id": "oa-s-000191",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+    },
+    "auto-d670b7caf7b5d8f6|2026-11-13": {
+      "id": "oa-r-000853",
+      "staging_id": "oa-s-000192",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+    },
+    "auto-d670b7caf7b5d8f6|2026-11-15": {
+      "id": "oa-r-000854",
+      "staging_id": "oa-s-000192",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+    },
+    "auto-b81b9cb68003ef9e|2026-12-28": {
+      "id": "oa-r-000855",
+      "staging_id": "oa-s-000193",
+      "original_date": "2026-12-28",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+    },
+    "auto-b81b9cb68003ef9e|2026-12-29": {
+      "id": "oa-r-000856",
+      "staging_id": "oa-s-000193",
+      "original_date": "2026-12-29",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+    },
+    "auto-b81b9cb68003ef9e|2026-12-31": {
+      "id": "oa-r-000857",
+      "staging_id": "oa-s-000193",
+      "original_date": "2026-12-31",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+    },
+    "auto-ddbf275f357fab54|2026-11-20": {
+      "id": "oa-r-000858",
+      "staging_id": "oa-s-000194",
+      "original_date": "2026-11-20",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+    },
+    "auto-ddbf275f357fab54|2026-11-22": {
+      "id": "oa-r-000859",
+      "staging_id": "oa-s-000194",
+      "original_date": "2026-11-22",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
     }
   },
   "reserved_works": {

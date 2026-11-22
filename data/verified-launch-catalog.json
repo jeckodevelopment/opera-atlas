@@ -5361,6 +5361,105 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-1716458908b64b36",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "dates": [
+        [
+          "2026-11-27",
+          "20:45"
+        ],
+        [
+          "2026-11-29",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-3887a06511bd9ecd",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "dates": [
+        [
+          "2026-12-11",
+          "20:45"
+        ],
+        [
+          "2026-12-13",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-d670b7caf7b5d8f6",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "dates": [
+        [
+          "2026-11-13",
+          "20:45"
+        ],
+        [
+          "2026-11-15",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b81b9cb68003ef9e",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Padova",
+      "region": "Veneto",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "dates": [
+        [
+          "2026-12-28",
+          "20:45"
+        ],
+        [
+          "2026-12-29",
+          "20:45"
+        ],
+        [
+          "2026-12-31",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-ddbf275f357fab54",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Verdi",
+      "municipality": "Padova",
+      "region": "Veneto",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "dates": [
+        [
+          "2026-11-20",
+          "20:45"
+        ],
+        [
+          "2026-11-22",
+          "16:00"
+        ]
+      ]
     }
   ]
 }

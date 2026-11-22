@@ -1623,6 +1623,24 @@
       ]
     },
     {
+      "id": "curated:auto-d670b7caf7b5d8f6:2026-11-13",
+      "starts_at": "2026-11-13T20:45:00+01:00",
+      "local_date": "2026-11-13",
+      "time_known": true,
+      "time_label": "20:45",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-6d3d1cab3d4ed61b:2026-11-14",
       "starts_at": "2026-11-14T15:00:00+01:00",
       "local_date": "2026-11-14",
@@ -1840,6 +1858,24 @@
       ]
     },
     {
+      "id": "curated:auto-d670b7caf7b5d8f6:2026-11-15",
+      "starts_at": "2026-11-15T18:00:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+      ]
+    },
+    {
       "id": "curated:fenice-fedora-2026:2026-11-17",
       "starts_at": "2026-11-17T19:00:00+01:00",
       "local_date": "2026-11-17",
@@ -2036,6 +2072,24 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://www.teatrofraschini.it/programma/litaliana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:auto-ddbf275f357fab54:2026-11-20",
+      "starts_at": "2026-11-20T20:45:00+01:00",
+      "local_date": "2026-11-20",
+      "time_known": true,
+      "time_label": "20:45",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Verdi",
+      "municipality": "Padova",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
       ]
     },
     {
@@ -2274,6 +2328,24 @@
       ]
     },
     {
+      "id": "curated:auto-ddbf275f357fab54:2026-11-22",
+      "starts_at": "2026-11-22T16:00:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Verdi",
+      "municipality": "Padova",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+      ]
+    },
+    {
       "id": "curated:auto-d54e9b021b5167cf:2026-11-22",
       "starts_at": "2026-11-22T17:30:00+01:00",
       "local_date": "2026-11-22",
@@ -2509,6 +2581,24 @@
       ]
     },
     {
+      "id": "curated:auto-1716458908b64b36:2026-11-27",
+      "starts_at": "2026-11-27T20:45:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "20:45",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-brescia:2026-11-28",
       "starts_at": "2026-11-28T15:30:00+01:00",
       "local_date": "2026-11-28",
@@ -2651,6 +2741,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
+      "id": "curated:auto-1716458908b64b36:2026-11-29",
+      "starts_at": "2026-11-29T18:00:00+01:00",
+      "local_date": "2026-11-29",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
       ]
     },
     {
@@ -2999,6 +3107,24 @@
       ]
     },
     {
+      "id": "curated:auto-3887a06511bd9ecd:2026-12-11",
+      "starts_at": "2026-12-11T20:45:00+01:00",
+      "local_date": "2026-12-11",
+      "time_known": true,
+      "time_label": "20:45",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-d54e9b021b5167cf:2026-12-12",
       "starts_at": "2026-12-12T11:00:00+01:00",
       "local_date": "2026-12-12",
@@ -3107,6 +3233,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-3887a06511bd9ecd:2026-12-13",
+      "starts_at": "2026-12-13T18:00:00+01:00",
+      "local_date": "2026-12-13",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Politeama Greco",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
       ]
     },
     {
@@ -3488,6 +3632,24 @@
       ]
     },
     {
+      "id": "curated:auto-b81b9cb68003ef9e:2026-12-28",
+      "starts_at": "2026-12-28T20:45:00+01:00",
+      "local_date": "2026-12-28",
+      "time_known": true,
+      "time_label": "20:45",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Padova",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+      ]
+    },
+    {
       "id": "curated:scala-otello-2026:2026-12-29",
       "starts_at": "2026-12-29T20:00:00+01:00",
       "local_date": "2026-12-29",
@@ -3506,6 +3668,24 @@
       ]
     },
     {
+      "id": "curated:auto-b81b9cb68003ef9e:2026-12-29",
+      "starts_at": "2026-12-29T20:45:00+01:00",
+      "local_date": "2026-12-29",
+      "time_known": true,
+      "time_label": "20:45",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Padova",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+      ]
+    },
+    {
       "id": "curated:auto-144db2827af86d96:2026-12-30",
       "starts_at": "2026-12-30T20:00:00+01:00",
       "local_date": "2026-12-30",
@@ -3521,6 +3701,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+      ]
+    },
+    {
+      "id": "curated:auto-b81b9cb68003ef9e:2026-12-31",
+      "starts_at": "2026-12-31T21:00:00+01:00",
+      "local_date": "2026-12-31",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Padova",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
       ]
     },
     {
