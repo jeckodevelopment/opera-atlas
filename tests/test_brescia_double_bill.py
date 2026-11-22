@@ -63,30 +63,44 @@ class DoubleBillTests(unittest.TestCase):
             clocks=[x["starts_at"][11:16] for x in rows if x["event_title"]==title]
             self.assertEqual(clocks,["20:00","15:30"])
 
-    def test_both_existing_stagings_enriched_without_new_id(self):
-        rows,evidence,candidates=self.evidence()
-        enriched,count=enrich_double_bill_times(self.facts,evidence,candidates,self.prior)
-        expected=sum(1 for work in ("cavalleria","pagliacci")
-                     for day in ("2026-12-11","2026-12-13")
-                     if f"lombardia-{work}-brescia|{day}" not in self.prior["times"])
-        self.assertEqual(count,expected)
-        self.assertEqual(len(enriched["times"]),len(self.prior["times"])+expected)
-        for work in ("cavalleria","pagliacci"):
-            self.assertEqual(enriched["times"][f"lombardia-{work}-brescia|2026-12-11"],
-                             {"time":"20:00","url":URL})
-            self.assertEqual(enriched["times"][f"lombardia-{work}-brescia|2026-12-13"],
-                             {"time":"15:30","url":URL})
-        validate_time_evidence(self.facts,enriched)
-        republished=build(self.facts,enriched)
-        self.assertTrue(republished)
-        same,delta=enrich_double_bill_times(self.facts,evidence,candidates,enriched)
-        self.assertEqual(delta,0)
-        self.assertEqual(same,enriched)
-        facts,ids,_,report=promote(self.facts,self.registry,evidence,candidates,[],
-                                   today=date(2026,11,21))
-        self.assertEqual(report["new_recite"],0)
-        self.assertEqual(facts,self.facts)
-        self.assertEqual(ids,self.registry)
+    def test_combined_ticket_has_no_duplicate_solo_productions(self):
+        from scripts.publish_programs import publish
+        self.assertFalse(any(
+            p["venue"]=="Teatro Grande" and p["municipality"]=="Brescia"
+            and p["title"] in ("Cavalleria rusticana","Pagliacci")
+            and {day for day,_ in p["dates"]} & {"2026-12-11","2026-12-13"}
+            for p in self.facts["productions"]))
+        result=publish(check=True)
+        bills=[p for p in result["programs"] if p["source_url"]==URL]
+        self.assertEqual(len(bills),1)
+        self.assertEqual([r["local_date"] for r in bills[0]["performances"]],
+                         ["2026-12-11","2026-12-13"])
+        self.assertEqual([r["starts_at"][11:16] for r in bills[0]["performances"]],
+                         ["20:00","15:30"])
+        self.assertEqual([x["work_id"] for x in bills[0]["components"]],
+                         ["oa-w-000005","oa-w-000006"])
+        self.assertEqual(enrich_double_bill_times(
+            self.facts,{}, {},self.prior),(self.prior,0))
+
+    def test_second_official_source_cannot_duplicate_same_venue_ticket(self):
+        from scripts.publish_programs import assemble_programs
+        from scripts.publish_catalog_v2 import ROOT
+        read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
+        facts=copy.deepcopy(self.facts)
+        sample=next(p for p in facts["productions"]
+                    if p["title"]=="Pagliacci" and p["municipality"]=="Como")
+        fake={**sample,"key":"duplicate-brescia-solo-fixture",
+              "venue":"Teatro Grande","municipality":"Brescia",
+              "dates":[["2026-12-11",None]],
+              "source_url":"https://www.operalombardia.it/calendario/"}
+        facts["productions"].append(fake)
+        with self.assertRaisesRegex(ValueError,
+                                    "composite program already published as solo work"):
+            assemble_programs(read("data/season-index-candidates.json"),
+                              read("data/candidate-detail-evidence.json"),
+                              self.registry,facts,
+                              read("data/season-index-config.json"),
+                              read("data/reviewed-program-work-editorials.json"))
 
     def test_missing_composer_credit_or_mismatched_heading_fails_closed(self):
         invalid=[

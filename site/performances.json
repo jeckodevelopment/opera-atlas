@@ -3177,44 +3177,6 @@
       ]
     },
     {
-      "id": "curated:lombardia-cavalleria-brescia:2026-12-11",
-      "starts_at": "2026-12-11T20:00:00+01:00",
-      "local_date": "2026-12-11",
-      "time_known": true,
-      "time_label": "20:00",
-      "status": "announced",
-      "title": "Cavalleria rusticana",
-      "composer": "Pietro Mascagni",
-      "venue": "Teatro Grande",
-      "municipality": "Brescia",
-      "region": "Lombardia",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.operalombardia.it/calendario/",
-        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
-      ]
-    },
-    {
-      "id": "curated:lombardia-pagliacci-brescia:2026-12-11",
-      "starts_at": "2026-12-11T20:00:00+01:00",
-      "local_date": "2026-12-11",
-      "time_known": true,
-      "time_label": "20:00",
-      "status": "announced",
-      "title": "Pagliacci",
-      "composer": "Ruggero Leoncavallo",
-      "venue": "Teatro Grande",
-      "municipality": "Brescia",
-      "region": "Lombardia",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.operalombardia.it/calendario/",
-        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
-      ]
-    },
-    {
       "id": "curated:auto-67093940d2ad1423:2026-12-11",
       "starts_at": "2026-12-11T20:30:00+01:00",
       "local_date": "2026-12-11",
@@ -3303,44 +3265,6 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
-      ]
-    },
-    {
-      "id": "curated:lombardia-cavalleria-brescia:2026-12-13",
-      "starts_at": "2026-12-13T15:30:00+01:00",
-      "local_date": "2026-12-13",
-      "time_known": true,
-      "time_label": "15:30",
-      "status": "announced",
-      "title": "Cavalleria rusticana",
-      "composer": "Pietro Mascagni",
-      "venue": "Teatro Grande",
-      "municipality": "Brescia",
-      "region": "Lombardia",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.operalombardia.it/calendario/",
-        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
-      ]
-    },
-    {
-      "id": "curated:lombardia-pagliacci-brescia:2026-12-13",
-      "starts_at": "2026-12-13T15:30:00+01:00",
-      "local_date": "2026-12-13",
-      "time_known": true,
-      "time_label": "15:30",
-      "status": "announced",
-      "title": "Pagliacci",
-      "composer": "Ruggero Leoncavallo",
-      "venue": "Teatro Grande",
-      "municipality": "Brescia",
-      "region": "Lombardia",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.operalombardia.it/calendario/",
-        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
       ]
     },
     {

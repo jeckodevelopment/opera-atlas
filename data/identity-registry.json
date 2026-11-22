@@ -1256,14 +1256,6 @@
       "source_url": "https://www.operalombardia.it/calendario/",
       "season": "2026-2027"
     },
-    "lombardia-cavalleria-brescia": {
-      "id": "oa-s-000041",
-      "work_id": "oa-w-000005",
-      "venue_id": "oa-v-000004",
-      "slug": "cavalleria-rusticana",
-      "source_url": "https://www.operalombardia.it/calendario/",
-      "season": "2026-2027"
-    },
     "lombardia-cavalleria-cremona": {
       "id": "oa-s-000042",
       "work_id": "oa-w-000005",
@@ -1276,14 +1268,6 @@
       "id": "oa-s-000043",
       "work_id": "oa-w-000006",
       "venue_id": "oa-v-000002",
-      "slug": "pagliacci",
-      "source_url": "https://www.operalombardia.it/calendario/",
-      "season": "2026-2027"
-    },
-    "lombardia-pagliacci-brescia": {
-      "id": "oa-s-000044",
-      "work_id": "oa-w-000006",
-      "venue_id": "oa-v-000004",
       "slug": "pagliacci",
       "source_url": "https://www.operalombardia.it/calendario/",
       "season": "2026-2027"
@@ -3633,18 +3617,6 @@
       "original_date": "2026-12-06",
       "source_url": "https://www.operalombardia.it/calendario/"
     },
-    "lombardia-cavalleria-brescia|2026-12-11": {
-      "id": "oa-r-000193",
-      "staging_id": "oa-s-000041",
-      "original_date": "2026-12-11",
-      "source_url": "https://www.operalombardia.it/calendario/"
-    },
-    "lombardia-cavalleria-brescia|2026-12-13": {
-      "id": "oa-r-000194",
-      "staging_id": "oa-s-000041",
-      "original_date": "2026-12-13",
-      "source_url": "https://www.operalombardia.it/calendario/"
-    },
     "lombardia-cavalleria-cremona|2027-01-22": {
       "id": "oa-r-000195",
       "staging_id": "oa-s-000042",
@@ -3667,18 +3639,6 @@
       "id": "oa-r-000198",
       "staging_id": "oa-s-000043",
       "original_date": "2026-12-06",
-      "source_url": "https://www.operalombardia.it/calendario/"
-    },
-    "lombardia-pagliacci-brescia|2026-12-11": {
-      "id": "oa-r-000199",
-      "staging_id": "oa-s-000044",
-      "original_date": "2026-12-11",
-      "source_url": "https://www.operalombardia.it/calendario/"
-    },
-    "lombardia-pagliacci-brescia|2026-12-13": {
-      "id": "oa-r-000200",
-      "staging_id": "oa-s-000044",
-      "original_date": "2026-12-13",
       "source_url": "https://www.operalombardia.it/calendario/"
     },
     "lombardia-pagliacci-cremona|2027-01-22": {

@@ -103,8 +103,14 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
         for date in program["performances"]:
             if date["id"] in performances:raise ValueError("duplicated program recita")
             performances.add(date["id"])
-            if any(p["source_url"]==url and
-                   date["local_date"] in {day for day,_ in p["dates"]}
+            # One ticket at a theatre cannot also be published as separate
+            # performances of its component operas, even from a second
+            # circuit-wide source URL. Distinct dates/venues remain valid.
+            members={(normalized(part["title"]),normalized(part["composer"]))
+                     for part in program["components"]}
+            if any(p["municipality"]==city and p["venue"]==venue
+                   and (normalized(p["title"]),normalized(p["composer"])) in members
+                   and date["local_date"] in {day for day,_ in p["dates"]}
                    for p in facts["productions"]):
                 raise ValueError("composite program already published as solo work")
         items.append(program)
