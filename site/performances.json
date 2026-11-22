@@ -3938,24 +3938,6 @@
       ]
     },
     {
-      "id": "curated:lombardia-death-venice-reggio-emilia:2027-01-29",
-      "starts_at": null,
-      "local_date": "2027-01-29",
-      "time_known": false,
-      "time_label": "Orario da confermare",
-      "status": "announced",
-      "title": "Death in Venice",
-      "composer": "Benjamin Britten",
-      "venue": "Teatro Valli",
-      "municipality": "Reggio Emilia",
-      "region": "Emilia-Romagna",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.operalombardia.it/calendario/"
-      ]
-    },
-    {
       "id": "curated:auto-1e27375a038df76a:2027-01-29",
       "starts_at": "2027-01-29T20:00:00+01:00",
       "local_date": "2027-01-29",
@@ -4129,24 +4111,6 @@
       "venue": "Teatro Donizetti",
       "municipality": "Bergamo",
       "region": "Lombardia",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.operalombardia.it/calendario/"
-      ]
-    },
-    {
-      "id": "curated:lombardia-death-venice-reggio-emilia:2027-01-31",
-      "starts_at": null,
-      "local_date": "2027-01-31",
-      "time_known": false,
-      "time_label": "Orario da confermare",
-      "status": "announced",
-      "title": "Death in Venice",
-      "composer": "Benjamin Britten",
-      "venue": "Teatro Valli",
-      "municipality": "Reggio Emilia",
-      "region": "Emilia-Romagna",
       "latitude": null,
       "longitude": null,
       "sources": [
