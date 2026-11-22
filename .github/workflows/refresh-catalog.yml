@@ -101,6 +101,7 @@ jobs:
           python -m unittest discover -s tests -v
           python -m scripts.build_verified_catalog --check
           python -m scripts.publish_catalog_v2 --check
+          python -m scripts.reconcile_published_candidates --check
           python -m scripts.publish_work_editorial --check
           # A newly-reviewed observation may legitimately differ from the previous public v2 snapshot.
           # Validate the regenerated manifest only after rebuilding all referenced channels.
@@ -362,6 +363,11 @@ jobs:
         run: |
           python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
+          # Reconcile once more against the *final* canonical release, not
+          # only the pre-generation staging snapshot. Refresh both audit
+          # registries before deriving coverage and publication diagnostics.
+          python -m scripts.reconcile_published_candidates
+          python -m scripts.work_identity_review
           python -m scripts.publish_work_editorial
           python -m scripts.publish_venue_directory
           python -m scripts.sync_source_registry
