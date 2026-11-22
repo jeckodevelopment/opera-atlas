@@ -155,6 +155,7 @@ def send(notice: dict, api_key: str, sender: str, recipients: list[str]) -> None
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
+            "User-Agent": "OperaAtlas-Notifications/1.0 (GitHub Actions; jeckodevelopment/opera-atlas)",
             "Idempotency-Key": f"atlas-published-{notice['id']}",
         },
         method="POST",
