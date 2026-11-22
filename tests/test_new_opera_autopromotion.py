@@ -103,6 +103,41 @@ class NewOperaPromotionTests(unittest.TestCase):
                     "oa-index-b4180540983902f703af")
         self.assertIsNone(cached.get("synopsis"))
 
+    def test_salvatori_modena_source_proves_identity_but_not_artwork(self):
+        from scripts.auto_catalogue import official_identity_candidates,promote_new_works
+        from scripts.publish_catalog_v2 import ROOT
+        from scripts.publish_work_editorial import HISTORY
+        url=("https://www.teatrocomunalemodena.it/spettacolo/"
+             "daniele-furlati-i-salvatori-della-mezzanotte/")
+        doc=json.loads((ROOT/"data/candidate-detail-evidence.json").read_text(encoding="utf-8"))
+        record=next(x for x in doc["evidence"] if x["source_url"]==url)
+        cid=record["candidate_id"]
+        evidence={"schema_version":1,"evidence":[record]}
+        candidate={"schema_version":1,"candidates":[{
+            "id":cid,"source_key":"modena-teatro-opera-2026-27",
+            "official_url":url,"status":"needs_review"}]}
+        intelligence=official_identity_candidates(evidence,candidate,
+                                              {"schema_version":1,"works":[]})
+        work=next(x for x in intelligence["works"] if x["candidate_id"]==cid)
+        self.assertEqual((work["title"],work["composer"]),
+                         ("I salvatori della mezzanotte","Daniele Furlati"))
+        self.assertEqual(work["history"]["premiere_date"],"2023-12-17")
+        self.assertEqual(work["history"]["librettist"],"Bruno Tognolini")
+        self.assertNotIn("Consulta le rappresentazioni verificate",work["synopsis"])
+        facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        ids=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))
+        updated,_,_,_,_,report=promote_new_works(
+            facts,ids,evidence,candidate,intelligence,editorial,[],
+            today=date(2026,11,22),history=history,require_image=True)
+        # A sound source/history profile does not authorize inventing a
+        # poster: the strict historical/first-party image gate still applies.
+        self.assertEqual(report["new_works"],0)
+        self.assertIn({"candidate_id":cid,"reason":"verified_work_image_missing"},
+                      report["auto_skipped"])
+        self.assertEqual(updated,facts)
+
     def test_siberia_source_bound_editorial_completes_existing_candidate(self):
         from scripts.auto_catalogue import complete_cached_verified_work_cards
         from scripts.auto_work_research import OUT
