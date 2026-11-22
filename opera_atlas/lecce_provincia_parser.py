@@ -20,9 +20,9 @@ SCHEDULE = (
     ("Nabucco", "Giuseppe Verdi", (("2026-12-11","20:45"),("2026-12-13","18:00"))),
 )
 PATTERNS = (
-    r"La Stagione 2026 si aprirà venerdì 13 novembre \\(ore 20\\.45\\), con Turandot di Giacomo Puccini.*?replica domenica 15 \\(ore 18\\)",
-    r"secondo titolo in cartellone sarà L'elisir d'amore di Gaetano Donizetti, in scena venerdì 27 \\(ore 20\\.45\\) e domenica 29 novembre \\(ore 18\\)",
-    r"Per la terza serata, Nabucco di Giuseppe Verdi, in programma venerdì 11 \\(ore 20\\.45\\) e domenica 13 dicembre \\(ore 18\\)",
+    r"La Stagione 2026 si aprirà venerdì 13 novembre \(ore 20\.45\), con Turandot di Giacomo Puccini.*?replica domenica 15 \(ore 18\)",
+    r"secondo titolo in cartellone sarà L'elisir d'amore di Gaetano Donizetti, in scena venerdì 27 \(ore 20\.45\) e domenica 29 novembre \(ore 18\)",
+    r"Per la terza serata, Nabucco di Giuseppe Verdi, in programma venerdì 11 \(ore 20\.45\) e domenica 13 dicembre \(ore 18\)",
 )
 
 def parse_program(html: str, *, url: str):
@@ -40,7 +40,7 @@ def parse_program(html: str, *, url: str):
     if begin<0 or end<begin or end-begin>2500:
         raise ValueError("bounded Province programme missing")
     section=body[begin:end]
-    if re.search(r"(?i)\\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\\b",section):
+    if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",section):
         raise ValueError("official cancellation requires review")
     for pattern in PATTERNS:
         if len(re.findall(pattern,section,re.I|re.S))!=1:
