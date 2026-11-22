@@ -47,6 +47,19 @@ class RovigoOperaTests(unittest.TestCase):
             ("La traviata","Giuseppe Verdi","Teatro Sociale","2027-01-21","20:30"),
         ])
 
+    def test_operetta_is_not_eligible_for_lyric_catalogue(self):
+        # Even when a mixed season has an explicitly dated operetta panel,
+        # only its verified lyrical opera remains eligible.
+        html=(HEADER
+              +"<h2>Il pipistrello</h2><p>musica di Johann Strauss II</p>"
+              +"<p>18 dicembre 2026 ore 20.30</p>"
+              +"<h2>Pagliacci</h2><p>musica di Ruggero Leoncavallo</p>"
+              +"<p>13 novembre 2026 ore 20.30</p>")
+        self.assertEqual(parse_program(html,url=URL),[
+            ("Pagliacci","Ruggero Leoncavallo","Teatro Sociale",
+             "2026-11-13","20:30"),
+        ])
+
     def test_fail_closed_on_missing_primary_evidence(self):
         for broken in (
             HEADER.replace("2026/2027","2025/2026")+"<p>Pagliacci</p>",
