@@ -80,6 +80,47 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
         self.assertEqual(rows["modena-opera-2026-27"]["successor_source_key"],
                          "modena-municipal-opera-2027-28")
 
+    def test_evergreen_reusability_audit_is_exhaustive_and_not_live_proof(self):
+        result=build(self.config,self.policy,{"sources":[]},{"outcomes":[]})
+        self.assertEqual(result["evergreen_index_unverified"],24)
+        self.assertEqual(result["evergreen_dynamic_category"],11)
+        self.assertEqual(result["evergreen_fixed_production_set"],11)
+        self.assertEqual(result["evergreen_historical_notice"],2)
+        self.assertEqual(result["evergreen_dynamic_category"]+
+                         result["evergreen_fixed_production_set"]+
+                         result["evergreen_historical_notice"],
+                         result["evergreen_index_unverified"])
+        by_key={x["source_key"]:x for x in result["sources"]}
+        for key in ("lecce-apollo-pinocchio-2026",
+                    "rovigo-regione-programma-2026-27"):
+            self.assertEqual(by_key[key]["evergreen_reusability"],"historical_notice")
+        for key in ("goldoni-livorno-dido-2026-27",
+                    "sassari-de-carolis-opera-2026",
+                    "coccia-novara-opera-2027"):
+            self.assertEqual(by_key[key]["evergreen_reusability"],"fixed_production_set")
+        for key in ("arena-festival-2027","modena-teatro-opera-2026-27"):
+            self.assertEqual(by_key[key]["evergreen_reusability"],"dynamic_category")
+            self.assertFalse(by_key[key]["future_season_verified"])
+
+    def test_missing_or_duplicate_evergreen_audit_fails_closed(self):
+        from scripts.season_lifecycle_health import EVERGREEN_AUDIT
+        audit=json.loads(EVERGREEN_AUDIT.read_text(encoding="utf-8"))
+        for mode in ("missing","duplicate","unknown","wrong_strategy","wrong_scope"):
+            changed=copy.deepcopy(audit)
+            if mode=="missing":
+                changed["sources"].pop()
+            elif mode=="duplicate":
+                changed["sources"].append(copy.deepcopy(changed["sources"][0]))
+            elif mode=="unknown":
+                changed["sources"][0]["source_key"]="fictional-future-opera"
+            elif mode=="wrong_strategy":
+                changed["sources"][0]["source_key"]="scala-season-2026-27"
+            else:
+                changed["sources"][0]["scope"]="definitely_live"
+            with self.subTest(mode=mode),self.assertRaises(ValueError):
+                build(self.config,self.policy,{"sources":[]},{"outcomes":[]},
+                      evergreen_audit=changed)
+
     def test_invalid_successor_mappings_fail_closed(self):
         from scripts.season_lifecycle_health import SUCCESSORS
         good=json.loads(SUCCESSORS.read_text(encoding="utf-8"))
