@@ -427,6 +427,23 @@
       }
     },
     {
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
+      "title": "Veleno",
+      "composer": "Gaia Aloisi",
+      "synopsis": "Nella Roma del Seicento, una rete clandestina di donne prepara e distribuisce un veleno invisibile. Tra violenza, vendetta e sopravvivenza prende forma un'opera da camera ispirata a una vicenda storica.",
+      "history": {
+        "librettist": "Stefano Simone Pintor",
+        "premiere_year": 2027,
+        "premiere_venue": "Teatro Ariosto",
+        "premiere_city": "Reggio Emilia",
+        "sources": [
+          "https://teatroregioparma.it/spettacolo/veleno/",
+          "https://www.iteatri.re.it/spettacolo/veleno/"
+        ]
+      }
+    },
+    {
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
       "title": "Dido and Æneas",
