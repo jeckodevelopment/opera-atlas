@@ -22,13 +22,17 @@ class NationalIndexTests(unittest.TestCase):
         )
         for html,reason in cases:
             with self.subTest(reason=reason):
-                config={"schema_version":1,"sources":[source]}
+                config=copy.deepcopy(self.config)
+                for item in config["sources"]:
+                    if item["key"]!=source["key"]:
+                        item["access_status"]="blocked"
                 def fake(db,*,source_id,url,network_enabled):
                     return FetchResult(url,html,"a"*64,len(html))
                 _,rows=scan(config,{"schema_version":1,"candidates":[]},
                             fetcher=fake,network_enabled=True)
-                self.assertEqual(rows[0]["diagnostic"],reason)
-                self.assertNotIn("<",rows[0]["diagnostic"])
+                actual=next(x for x in rows if x["key"]==source["key"])
+                self.assertEqual(actual["diagnostic"],reason)
+                self.assertNotIn("<",actual["diagnostic"])
 
     def test_scala_only_opera_detail_links(self):
         url="https://www.teatroallascala.org/it/stagione/2026-2027/index.html"
