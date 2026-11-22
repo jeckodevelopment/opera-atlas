@@ -42,7 +42,8 @@ footer{margin-top:34px;padding-top:22px;border-top:1px solid #e1ddd4;color:#716c
 <details class="accordion"><summary>1. Scansione delle fonti</summary><div class="inside"><div id="scan-stats" class="mini-grid"></div><p class="muted">I singoli indici e parser sono consultabili nella diagnostica avanzata. Un indice riuscito non dimostra la copertura di tutta la stagione.</p><div id="scan-note" class="note"></div></div></details>
 <details class="accordion"><summary>2. Acquisizione e catalogazione</summary><div class="inside"><div id="catalog-stats" class="mini-grid"></div><p class="muted">La classificazione, le opere canoniche e le produzioni sono distinte. Le candidate in attesa di verifica non sono automaticamente errori e le esclusioni pertinenti non vanno penalizzate.</p><div id="catalog-note" class="note"></div></div></details>
 <details class="accordion"><summary>3. Pubblicazione</summary><div class="inside"><div id="publish-stats" class="mini-grid"></div><p class="muted">La copertura delle recite riguarda soltanto le date ufficiali già individuate, non una verifica completa di ogni stagione.</p><div id="publish-note" class="note"></div></div></details>
-<details class="accordion"><summary>4. Diagnostica avanzata — indici e workflow</summary><div class="inside"><p class="muted">Dati tecnici accessibili su richiesta, senza liste infinite nella pagina principale.</p>
+<details class="accordion"><summary>4. Tempi di pubblicazione e affidabilità dei workflow</summary><div class="inside"><div id="pipeline-stats" class="mini-grid"></div><p id="pipeline-note" class="note"></p><div id="pipeline-runs" class="issue-grid"></div></div></details>
+<details class="accordion"><summary>5. Diagnostica avanzata — indici e workflow</summary><div class="inside"><p class="muted">Dati tecnici accessibili su richiesta, senza liste infinite nella pagina principale.</p>
 <div class="toolbar"><input type="search" id="index-search" placeholder="Filtra indice stagionale" aria-label="Filtra indici"></div>
 <div class="table-wrap"><table><thead><tr><th>Indice</th><th>Copertura stagioni future</th><th>Esito scansione</th><th>Link</th><th>Ultima verifica</th></tr></thead><tbody id="indexes"></tbody></table></div>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/jeckodevelopment/opera-atlas/actions">Tutte le esecuzioni GitHub Actions</a></p>
@@ -51,7 +52,7 @@ footer{margin-top:34px;padding-top:22px;border-top:1px solid #e1ddd4;color:#716c
 </main><script>
 "use strict";
 const BASE="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/";
-const PATHS={auto:"public/catalog/source-automation.json",rec:"public/catalog/recite-coverage.json",candidate:"data/candidate-detail-health.json",season:"data/season-index-health.json",lifecycle:"public/catalog/season-lifecycle.json",catalogation:"public/catalog/catalogation-diagnostics.json",evidence:"public/catalog/candidate-publication-evidence.json",live:"public/catalog/live-publication-health.json"};
+const PATHS={auto:"public/catalog/source-automation.json",rec:"public/catalog/recite-coverage.json",candidate:"data/candidate-detail-health.json",season:"data/season-index-health.json",lifecycle:"public/catalog/season-lifecycle.json",catalogation:"public/catalog/catalogation-diagnostics.json",evidence:"public/catalog/candidate-publication-evidence.json",live:"public/catalog/live-publication-health.json",operations:"public/catalog/pipeline-operations-health.json"};
 const $=id=>document.getElementById(id);
 const node=(tag,value,cls)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=String(value);if(cls)e.className=cls;return e};
 const replace=(id,items)=>$(id).replaceChildren(...items);
@@ -165,6 +166,30 @@ function render(){
  $("catalog-note").textContent="Il confronto punta ai manifest versionati di opere, produzioni e recite: "+(evidenceTotals.ambiguous_source_url||0)+" URL ambigui, "+(evidenceTotals.no_direct_repository_link||0)+" privi di collegamento diretto. Nessun risultato equivale a una verifica HTTPS del sito pubblico. Le fonti condivise non sono attribuite a un singolo teatro.";
  replace("publish-stats",[mini(found,"Recite individuate"),mini(published,"Recite nel catalogo"),mini(missing,"Recite mancanti"),mini(confirmedLive+" / "+totalLive,"Schede web verificate"),mini(Number(liveTotals.missing_route||0)+Number(liveTotals.missing_content||0)+Number(liveTotals.content_mismatch||0),"Schede pubbliche non conformi"),mini(Number(liveTotals.unverified||0)+Number(liveTotals.fallback_catalog||0),"Verifiche non conclusive")]);
  $("publish-note").textContent=totalLive?"Ultimo controllo browser: "+fmt(data.live.checked_at)+". Una scheda è confermata soltanto quando il browser carica titolo e tipologia attesi, senza fallback; HTTP 200 da solo non basta. Nessuna verifica della biglietteria.":"Controllo del sito pubblico non ancora eseguito, assente o non allineato all’attuale manifest del catalogo: non considerare le schede verificate.";;
+ const ops=data.operations;
+ const timing=ops?.discovery_to_repository;
+ const healthyTime=ops?.checked_at && Date.now()-Date.parse(ops.checked_at)<4*3600000;
+ const minLabel=v=>v===null||v===undefined?"Non misurabile":(Number(v)>=60?(Number(v)/60).toFixed(1)+" h":v+" min");
+ replace("pipeline-stats",[
+   mini(healthyTime?minLabel(timing?.mean_discovery_to_first_observed_catalogue_minutes):"N/D","Scoperta → prima osservazione nel catalogo (media)"),
+   mini(healthyTime?Number(timing?.eligible_post_baseline_samples||0):"—","Campioni successivi all'attivazione"),
+   mini(healthyTime?Number(timing?.new_catalogue_links_first_observed_this_run||0):"—","Nuovi collegamenti osservati"),
+   mini(healthyTime?Number(timing?.reconciled_without_direct_link||0):"—","Riconciliate senza collegamento diretto"),
+   mini(healthyTime?Number(ops.workflow_alerts||0):"—","Workflow da verificare"),
+   mini("N/D","Già pubblicabili ancora in attesa")
+ ]);
+ $("pipeline-note").textContent=ops
+   ?"Ultima osservazione: "+fmt(ops.checked_at)+(healthyTime?"":" · dato non recente")+". I tempi sono stimati dalla prima scoperta alla prima osservazione nel repository; non sono timestamp esatti di deploy. Le candidate storiche sono escluse. Non possiamo ancora certificare le candidate già pronte ma non pubblicate."
+   :"Osservazioni operative non ancora disponibili. La dashboard non deduce una pubblicazione riuscita dal solo stato della riconciliazione.";
+ replace("pipeline-runs",(ops?.workflows||[]).map(w=>{
+   const div=node("div",undefined,"issue"),body=node("div");
+   const state=w.status==="attention"?"bad":w.status==="ok"?"ok":"unknown";
+   body.append(node("b",w.workflow),node("p",
+     "Ultimo successo: "+fmt(w.last_success_at)+" · 24 ore: "+w.failures_24h+" falliti, "+w.cancelled_24h+" annullati, "+w.cancelled_followed_by_success_24h+" seguiti da un successo"));
+   if(w.last_run_url?.startsWith("https://github.com/")){const a=node("a","Ultima esecuzione");a.href=w.last_run_url;a.target="_blank";a.rel="noopener noreferrer";body.append(a)}
+   div.append(body,chip(state,w.status==="attention"?"Da verificare":w.status==="ok"?"Regolare":w.status==="running"?"In corso":"Non disponibile"));
+   return div;
+ }));
  const lifecycle=data.lifecycle;
  const lifecycleByKey=new Map((lifecycle?.sources||[]).map(x=>[x.source_key,x]));
  const indexes=data.season.sources||[],indexq=norm($("index-search").value);
@@ -205,7 +230,7 @@ function render(){
 }
 async function refresh(){
  $("freshness").className="status unknown";$("freshness").textContent="Lettura dati da GitHub…";
- try{const pairs=await Promise.all(Object.entries(PATHS).map(async ([key,path])=>[key,await fetchJson(path).catch(e=>{if(["lifecycle","catalogation","evidence","live"].includes(key))return null;throw e})]));data=Object.fromEntries(pairs);render()}
+ try{const pairs=await Promise.all(Object.entries(PATHS).map(async ([key,path])=>[key,await fetchJson(path).catch(e=>{if(["lifecycle","catalogation","evidence","live","operations"].includes(key))return null;throw e})]));data=Object.fromEntries(pairs);render()}
  catch(e){$("freshness").className="status bad";$("freshness").textContent="Dati non disponibili · "+e.message}
 }
 $("reload").addEventListener("click",refresh);

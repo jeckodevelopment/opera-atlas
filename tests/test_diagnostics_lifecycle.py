@@ -24,7 +24,7 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         parser.feed(text)
         self.assertTrue({
             "phases", "issues", "venues", "scan-stats", "catalog-stats",
-            "publish-stats", "indexes", "lifecycle", "freshness",
+            "publish-stats", "indexes", "lifecycle", "freshness", "pipeline-stats", "pipeline-runs",
         }.issubset(parser.ids))
         self.assertIn("public/catalog/season-lifecycle.json", text)
         self.assertIn('<details class="accordion">', text)
@@ -64,9 +64,17 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
                         render.index("const liveTotals="))
         self.assertIn("const auditCurrent=", script.split("function build(){", 1)[1].split("function render(){", 1)[0])
 
+    def test_operational_metrics_are_explicitly_observational(self):
+        text = PAGE.read_text(encoding="utf-8")
+        self.assertIn("public/catalog/pipeline-operations-health.json", text)
+        self.assertIn("Tempi di pubblicazione e affidabilità dei workflow", text)
+        self.assertIn("first_observed", text)
+        self.assertIn("Già pubblicabili ancora in attesa", text)
+        self.assertIn('"operations"].includes(key)', text)
+
     def test_future_season_readiness_is_not_mislabeled_complete(self):
         text = PAGE.read_text(encoding="utf-8")
-        self.assertIn('if(["lifecycle","catalogation","evidence","live"].includes(key))return null', text)
+        self.assertIn('if(["lifecycle","catalogation","evidence","live","operations"].includes(key))return null', text)
         self.assertIn('lifecycle.future_seasons_verified', text)
         self.assertIn('lifecycle.legacy_year_bound', text)
         self.assertIn("non equivale alla copertura dell'intera stagione", text)
