@@ -6,6 +6,8 @@ on:
   schedule:
     - cron: '37 */3 * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [new-official-candidates]
   push:
     branches: [main]
     paths:
