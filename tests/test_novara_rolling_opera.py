@@ -170,6 +170,37 @@ class NovaraRollingOperaTests(unittest.TestCase):
                     parse_detail(html.replace(f"Musica di {composer}","Musica di"),
                                  url=url)
 
+    def test_first_party_h1_not_navigation_or_related_work_owns_composer(self):
+        # Breadcrumb, navigation and related event cards may contain the same
+        # work's title and a completely unrelated composer's name. The real
+        # credit belongs only to the section following the primary H1.
+        url=HOST+"/stagione-27-il-noce-di-benevento.html"
+        html=page(title="Il noce di Benevento",
+                  composer="Giuseppe Balducci",
+                  dates=(("Giovedì 17 giugno 2027","21:00"),
+                         ("Venerdì 18 giugno 2027","21:00")),
+                  breadcrumb="Home / Spettacoli / Opera / Il noce di Benevento")
+        before=("<div>Home / Spettacoli / Opera / Il noce di Benevento</div>"
+                "<p>Musica di Autore Diverso Libretto di Altro Autore</p>")
+        html=before+html
+        parsed=parse_detail(html,url=url)
+        self.assertEqual(parsed[1],"Giuseppe Balducci")
+        self.assertEqual(len(parsed[3]),2)
+        without_credit=html.replace("<p>Musica di Giuseppe Balducci</p>","")
+        with self.assertRaisesRegex(ValueError,"composer is missing"):
+            parse_detail(without_credit,url=url)
+        # A credit in an unrelated essay, far after the main H1, must not
+        # silently substitute for a missing explicit production credit.
+        buried=page(title="Il noce di Benevento",
+                    composer="Giuseppe Balducci",
+                    dates=(("Giovedì 17 giugno 2027","21:00"),),
+                    breadcrumb="Home / Spettacoli / Opera / Il noce di Benevento")
+        buried=buried.replace("<p>Musica di Giuseppe Balducci</p>",
+                              "<div>"+"Biography and festival archive "*30+
+                              "</div><p>Musica di Giuseppe Balducci</p>")
+        with self.assertRaisesRegex(ValueError,"composer is missing"):
+            parse_detail(buried,url=url)
+
     def test_unverified_genres_dates_and_composers_fail_closed(self):
         cases=[
             page(composer="Giacomo Puccini").replace("Musica di Giacomo Puccini",""),
