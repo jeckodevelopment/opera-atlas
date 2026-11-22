@@ -124,10 +124,14 @@ jobs:
       # input: issuer repertoire + independently checked external showtimes.
       # It never bypasses the canonical candidate publisher or robots gates.
       - name: Collect San Carlo secondary candidates before national backlog
-        # Monofonte: outputs remain unverified and cannot enter publication.
+        id: san_carlo_candidates
+        # Optional external source: never block the entire national catalog
+        # when an independent calendar is temporarily inaccessible.
+        continue-on-error: true
         run: python -m scripts.scan_san_carlo_secondary --allow-network --sync-candidates
       - name: Cross-check San Carlo recite against independent calendar
-        # Conflicts are review-only and never rewrite primary evidence.
+        # Do not compare an old checkpoint after a failed fresh acquisition.
+        if: steps.san_carlo_candidates.outcome == 'success'
         continue-on-error: true
         run: python -m scripts.corroborate_san_carlo_secondary --allow-network --sync-review
       - name: Acquire cross-source corroboration before national backlog
@@ -163,8 +167,9 @@ jobs:
           git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json public/catalog/work-identity-review.json
           # Preserve the cross-source gate outcome even when no recita passed.
           git add data/corroborated-performance-health.json
-          git add data/san-carlo-secondary-candidates.json data/san-carlo-secondary-health.json public/catalog/san-carlo-secondary-candidates.json
-          git add data/san-carlo-secondary-corroboration.json public/catalog/san-carlo-secondary-corroboration.json
+          for f in data/san-carlo-secondary-candidates.json data/san-carlo-secondary-health.json public/catalog/san-carlo-secondary-candidates.json data/san-carlo-secondary-corroboration.json public/catalog/san-carlo-secondary-corroboration.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           git add data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
