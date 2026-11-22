@@ -281,6 +281,10 @@
     "ravenna-cherubini-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "goldoni-livorno-rolling-lirica": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
