@@ -254,7 +254,11 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
             or not isinstance(composer,str) or not 3<=len(composer)<=100
             or verified_venue(key,rows,{"venues":{}}) is None):
             continue
+        parma_family=(
+            key=="parma-opera-2027"
+            and url=="https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/")
         dates=set()
+        unique_slots=set()
         valid=True
         for x in rows:
             try:
@@ -264,12 +268,19 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
                     raise ValueError("timezone missing")
                 if stamp.astimezone(ZoneInfo("Europe/Rome")).date()!=day:
                     raise ValueError("local date mismatch")
-                if day in dates:raise ValueError("duplicate calendar date")
+                local=stamp.astimezone(ZoneInfo("Europe/Rome"))
+                slot=(day.isoformat(),local.strftime("%H:%M"))
+                if slot in unique_slots or (day in dates and not parma_family):
+                    raise ValueError("duplicate calendar date or ticket")
+                unique_slots.add(slot)
                 dates.add(day)
             except (KeyError,TypeError,ValueError):
                 valid=False
                 break
         if not valid:continue
+        if parma_family and unique_slots!={("2026-12-05","15:00"),
+                                            ("2026-12-05","18:00")}:
+            continue
         seed=seeds.get((key,url))
         if seed and (normalized(seed["title"])!=normalized(title)
                      or normalized(seed["composer"])!=normalized(composer)):
@@ -563,6 +574,20 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             or (urlsplit(url).hostname!=urlsplit(source["official_url"]).hostname
                 and not municipal_spoleto)):
             issues.append({"candidate_id":cid,"reason":"unsupported_or_untrusted_source"})
+            continue
+        # A previously published same-day double slot is already complete.
+        # The known-work pass must not misreport it as an ambiguous single
+        # recita on a subsequent autonomous refresh.
+        if (key=="parma-opera-2027"
+            and url=="https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+            and any(p.get("source_url")==url
+                    and p.get("municipality")=="Parma"
+                    and p.get("venue")=="Teatro Regio di Parma"
+                    and p.get("title")=="Piccolo Orso e la montagna di ghiaccio"
+                    and p.get("composer")=="Giovanni Sollima"
+                    and p.get("dates")==[
+                        ["2026-12-05","15:00"],["2026-12-05","18:00"]]
+                    for p in next_facts["productions"])):
             continue
         # Both the explicitly named work and composer must be present in the
         # evidence; an Event title alone never establishes a canonical opera.
@@ -1116,7 +1141,11 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
             result["auto_skipped"].append({"candidate_id":cid,"reason":"unknown_or_conflicting_venue"})
             continue
         city,venue,canonical_venue=venue_match
+        parma_family=(
+            source_key=="parma-opera-2027"
+            and url=="https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/")
         date_rows={}
+        extra_slots=[]
         invalid=False
         for row in rows:
             if (not isinstance(row,dict) or normalized(row.get("event_title",""))!=normalized(title)
@@ -1130,10 +1159,20 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
                 local=stamp.astimezone(ZoneInfo("Europe/Rome"))
                 if local.date().isoformat()!=local_day:raise ValueError
                 hour=local.strftime("%H:%M")
-                if local_day in date_rows and date_rows[local_day]!=hour:raise ValueError
-                date_rows[local_day]=hour
+                if local_day in date_rows and date_rows[local_day]!=hour:
+                    if (not parma_family or local_day!="2026-12-05"
+                        or {date_rows[local_day],hour}!={"15:00","18:00"}
+                        or extra_slots):
+                        raise ValueError
+                    extra_slots.append((local_day,hour))
+                else:
+                    date_rows[local_day]=hour
             except (KeyError,TypeError,ValueError):invalid=True;break
         if invalid or not date_rows:continue
+        ordered_slots=sorted([*date_rows.items(),*extra_slots])
+        if parma_family and ordered_slots!=[
+                ("2026-12-05","15:00"),("2026-12-05","18:00")]:
+            continue
         # The canonical work route must remain unique; no title-based
         # overwrites and no guessing which composer an old URL identifies.
         staging_key="auto-"+hashlib.sha256((source_key+"|"+url).encode()).hexdigest()[:16]
@@ -1188,15 +1227,18 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
             "key":staging_key,"title":title,"composer":composer,"venue":venue,
             "municipality":city,"region":canonical_venue["region"],
             "source_url":url,
-            "dates":[[day,hour] for day,hour in sorted(date_rows.items())]})
-        for day in sorted(date_rows):
-            next_registry["performances"][staging_key+"|"+day]={
+            "dates":[[day,hour] for day,hour in ordered_slots]})
+        from scripts.build_verified_catalog import replica_registry_key
+        product=next_facts["productions"][-1]
+        for day,hour in ordered_slots:
+            performance_key=replica_registry_key(product,day,hour)
+            next_registry["performances"][performance_key]={
                 "id":f"oa-r-{_next_replica_id(next_registry):06d}",
                 "staging_id":stage_id,"original_date":day,"source_url":url}
         allowed.add(url)
         result["new_works"]+=1
         result["new_stagings"]+=1
-        result["new_recite"]+=len(date_rows)
+        result["new_recite"]+=len(ordered_slots)
     if result["new_recite"]:next_facts["reviewed_on"]=today.isoformat()
     if next_history is not None:
         return next_facts,next_registry,sorted(allowed),next_editorial,next_history,result

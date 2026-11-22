@@ -11,6 +11,10 @@ from urllib.parse import urlsplit
 
 REGISTRY=Path(__file__).resolve().parents[1]/"data"/"verified-original-work-art.json"
 APPROVED={
+ ("https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+  "Piccolo Orso e la montagna di ghiaccio","Giovanni Sollima"):(
+  "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+  "https://teatroregioparma.it/wp-content/uploads/2026/05/TRP-26-BANNER-ALPHA-REGIO-YOUNG-1080x1080-PICCOLO-ORSO.png"),
  ("https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
   "Le avventure di Pinocchio","Antonio Cericola"):(
   "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",

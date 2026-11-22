@@ -860,6 +860,23 @@
           "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/Pieghevole_Stagione2027.pdf"
         ]
       }
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "title": "Piccolo Orso e la montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "synopsis": "Separati dallo scioglimento dei ghiacci, Piccolo Orso e Piccola Orsa cercano di ritrovarsi in un Artico minacciato. Tra inganni e incontri inattesi, scoprono che il canto condiviso può salvare la Montagna di ghiaccio.",
+      "history": {
+        "librettist": "Giancarlo De Cataldo",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Malibran",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
+          "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+        ]
+      }
     }
   ]
 }
