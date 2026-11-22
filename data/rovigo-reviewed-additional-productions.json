@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-22",
+  "issuer_repertoire_url": "https://artbonus.gov.it/1319-comune-di-rovigo.html",
+  "secondary_season_url": "https://www.operamundus.com/comunicati-stampa/un-fiore-di-stagione-211esima-stagione-lirica-al-teatro-sociale-di-rovigo/",
+  "review_provenance": "Editorial cross-source verification; official repertoire source did not provide individual booking clocks; ClassicaLive is a single external publisher for both dated pages.",
+  "cases": [
+    {
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "official_event_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida",
+      "city": "Rovigo",
+      "venue": "Teatro Sociale",
+      "performances": [
+        {
+          "date": "2027-02-26",
+          "time": "20:30",
+          "secondary_event_url": "https://www.classicalive.it/it/eventi/2027-02-26/aida/"
+        },
+        {
+          "date": "2027-02-28",
+          "time": "16:00",
+          "secondary_event_url": "https://www.classicalive.it/it/eventi/2027-02-28/aida/"
+        }
+      ]
+    },
+    {
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "official_event_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola",
+      "city": "Rovigo",
+      "venue": "Teatro Sociale",
+      "performances": [
+        {
+          "date": "2027-04-23",
+          "time": "20:30",
+          "secondary_event_url": "https://www.classicalive.it/it/eventi/2027-04-23/cenerentola/"
+        },
+        {
+          "date": "2027-04-25",
+          "time": "16:00",
+          "secondary_event_url": "https://www.classicalive.it/it/eventi/2027-04-25/cenerentola/"
+        }
+      ]
+    }
+  ]
+}
