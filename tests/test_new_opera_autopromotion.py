@@ -138,6 +138,26 @@ class NewOperaPromotionTests(unittest.TestCase):
                       report["auto_skipped"])
         self.assertEqual(updated,facts)
 
+    def test_veleno_is_same_canonical_work_in_reggio_and_modena(self):
+        from scripts.publish_catalog_v2 import ROOT,normalized
+        from scripts.publish_work_editorial import validate_history
+        seeds=json.loads((ROOT/"data/verified-work-authority-seeds.json")
+                         .read_text(encoding="utf-8"))["works"]
+        original=next(x for x in seeds if x["source_key"]=="reggio-valli-opera-2026-27"
+                      and x["title"]=="Veleno")
+        modenese=next(x for x in seeds if x["source_key"]=="modena-teatro-opera-2026-27"
+                      and x["title"]=="Veleno")
+        self.assertNotEqual(original["source_url"],modenese["source_url"])
+        self.assertEqual(
+            (normalized(original["title"]),normalized(original["composer"])),
+            (normalized(modenese["title"]),normalized(modenese["composer"])))
+        self.assertEqual(modenese["history"]["premiere_date"],"2027-04-28")
+        self.assertEqual(original["history"]["premiere_venue"],
+                         modenese["history"]["premiere_venue"])
+        self.assertEqual(original["synopsis"],modenese["synopsis"])
+        self.assertTrue(validate_history(modenese["history"]))
+        self.assertIn(modenese["source_url"],modenese["history"]["sources"])
+
     def test_siberia_source_bound_editorial_completes_existing_candidate(self):
         from scripts.auto_catalogue import complete_cached_verified_work_cards
         from scripts.auto_work_research import OUT
