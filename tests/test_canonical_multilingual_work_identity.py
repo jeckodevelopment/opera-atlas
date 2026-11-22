@@ -45,6 +45,34 @@ class CanonicalMultilingualIdentityTests(unittest.TestCase):
             "two":{"title":"Die Zauberflöte","composer":"Wolfgang Amadeus Mozart"}
         }},"Il flauto magico","Wolfgang Amadeus Mozart"))
 
+    def test_composer_metadata_resolves_without_changing_permanent_ids(self):
+        examples = (
+            ("Carmen", "Georges Bizet (1838–1875)", "oa-w-000009"),
+            ("La Bohème", "Giacomo Puccini Opera", "oa-w-000024"),
+            ("L’elisir d’amore", "Gaetano Donizetti Melodramma", "oa-w-000073"),
+            ("Madama Butterfly", "Giacomo Puccini (1858–1924)", "oa-w-000019"),
+            ("Norma", "Vincenzo Bellini Tragedia", "oa-w-000031"),
+            ("Aida", "Giuseppe Verdi Opera", "oa-w-000015"),
+            ("Il flauto magico", "Wolfgang Amadeus Mozart Opera", "oa-w-000056"),
+        )
+        for title, credit, expected in examples:
+            with self.subTest(title=title, credit=credit):
+                match = resolve_work(self.registry, title, credit)
+                self.assertIsNotNone(match)
+                self.assertEqual(match["id"], expected)
+
+    def test_unverified_credit_suffix_or_wrong_composer_never_matches(self):
+        examples = (
+            ("La traviata", "Giuseppe Verdi Coro"),
+            ("La traviata", "Giuseppe Verdi Opera di un altro autore"),
+            ("La traviata", "Gioachino Rossini Opera"),
+            ("Il barbiere di Siviglia", "Giovanni Paisiello Opera"),
+            ("La Bohème", "Giacomo Puccini (1858-1924) Note"),
+        )
+        for title, credit in examples:
+            with self.subTest(title=title, credit=credit):
+                self.assertIsNone(resolve_work(self.registry, title, credit))
+
     def test_sassari_uses_shared_canonical_records_not_duplicate_works(self):
         for ident,expected in (("372","Die Zauberflöte"),("373","Don Carlos")):
             events=parse_known_opera_detail(
