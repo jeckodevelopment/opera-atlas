@@ -126,6 +126,7 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
                          ("Don Pasquale","Gaetano Donizetti"))
         stagings=[x for x in graph["stagings"] if x["id"]=="oa-s-000196"]
         self.assertEqual(len(stagings),1)
+        self.assertEqual(stagings[0]["url"],"/jesi/teatro-giovan-battista-pergolesi/don-pasquale/")
         self.assertEqual(stagings[0]["work_id"],"oa-w-000090")
         self.assertEqual(len([x for x in graph["stagings"]
                               if x["work_id"]=="oa-w-000090"]),1)
