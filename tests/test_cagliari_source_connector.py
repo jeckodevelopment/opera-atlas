@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import date
 from scripts.discover_season_indexes import CONFIG,eligible,extract,validate_config
 from scripts.collect_candidate_details import parse_source_credited_opera_detail
-from opera_atlas.cagliari_detail_parser import parse_detail
+from opera_atlas.cagliari_detail_parser import parse_detail,verified_brochure
 
 KEY="lirico-cagliari-opera-2027"
 INDEX="https://www.liricocagliari.it/categoria-evento/opera/"
@@ -81,12 +81,32 @@ class CagliariSourceTests(unittest.TestCase):
         self.assertEqual(sum(len(x["dates"]) for x in evidence["works"]),39)
         weekdays=["lun","mar","mer","gio","ven","sab","dom"]
         for work in evidence["works"]:
+            effective=verified_brochure(work["slug"],work["title"],work["composer"])
             rows="".join("<p>ore "+clock+" "+weekdays[date.fromisoformat(day).weekday()]+
                          " "+date.fromisoformat(day).strftime("%d/%m")+" turno</p>"
-                         for day,clock in work["dates"])
+                         for day,clock in effective["dates"])
             url="https://www.liricocagliari.it/evento/"+work["slug"]+"/"
             parsed=parse_detail(html(rows,title=work["title"],composer=work["composer"]),url=url)
-            self.assertEqual(parsed[-1],[tuple(x) for x in work["dates"]])
+            self.assertEqual(parsed[-1],[tuple(x) for x in effective["dates"]])
+
+    def test_candide_current_theatre_calendar_corrects_single_brochure_time(self):
+        from opera_atlas.cagliari_detail_parser import BROCHURE
+        doc=json.loads(BROCHURE.read_text(encoding="utf-8"))
+        original=next(x for x in doc["works"] if x["slug"]=="candide")
+        self.assertIn(["2027-11-02","17:00"],original["dates"])
+        current=verified_brochure("candide","Candide","Leonard Bernstein")
+        self.assertIn(["2027-11-02","20:00"],current["dates"])
+        self.assertNotIn(["2027-11-02","17:00"],current["dates"])
+        self.assertEqual(len(current["dates"]),5)
+        days=[("mer","27/10","20:00"),("gio","28/10","19:00"),
+              ("ven","29/10","20:00"),("mar","02/11","20:00"),
+              ("mer","03/11","20:00")]
+        rows="".join("<p>ore "+clock+" "+weekday+" "+day+" turno</p>"
+                     for weekday,day,clock in days)
+        title,composer,venue,dates=parse_detail(
+            html(rows,title="Candide",composer="Leonard Bernstein"),
+            url="https://www.liricocagliari.it/evento/candide/")
+        self.assertEqual(dates,[tuple(x) for x in current["dates"]])
 
     def test_invalid_host_and_nonopera_and_cancellation(self):
         with self.assertRaises(ValueError):
