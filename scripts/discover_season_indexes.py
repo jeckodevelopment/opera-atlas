@@ -434,6 +434,12 @@ def eligible(key:str,url:str)->bool:
         return path=="/stagione-lirica-2026"
     if key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
         return path=="/notizie/la-stagione-lirica"
+    if key=="ferrara-season-opera-2027-28":
+        return (parsed.scheme=="https" and
+                parsed.hostname=="spettacolo.emiliaromagnacultura.it" and
+                bool(re.fullmatch(
+                    r"/it/rassegna/teatro-comunale-ferrara-opera-danza-(20\d{2})-(20\d{2})",
+                    path)) and not parsed.query and not parsed.fragment)
     if key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
         return path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027"
     if key=="reggio-valli-opera-2026-27":
@@ -525,6 +531,10 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="ferrara-season-opera-2027-28":
+        from opera_atlas.ferrara_future_parser import verify_index
+        verify_index(html,url=index_url)
+        return [index_url]
     if key in ("jesi-opera-season-2027","ancona-opera-season-2027"):
         from opera_atlas.marche_future_parser import verify_index
         verify_index(html,url=index_url,source_key=key)
@@ -679,6 +689,7 @@ def validate_config(config:dict)->list[dict]:
         "goldoni-livorno-otello-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
         "goldoni-livorno-elisir-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
         "ferrara-macbeth-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
+        "ferrara-season-opera-2027-28":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2027-2028/"),
         "ferrara-barbiere-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
         "ferrara-dido-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
         "ferrara-clemenza-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
@@ -732,6 +743,13 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/stagione-lirica-2026/" and not index.query
         elif key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
+        elif key=="ferrara-season-opera-2027-28":
+            match=re.fullmatch(
+                r"/it/rassegna/teatro-comunale-ferrara-opera-danza-(20\d{2})-(20\d{2})/",
+                index.path)
+            valid_season=bool(match and 2027<=int(match[1])<2099
+                              and int(match[2])==int(match[1])+1
+                              and not index.query)
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
         elif key=="sassari-de-carolis-opera-2026":
