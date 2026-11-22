@@ -101,21 +101,26 @@ async function initialize(){
         official.href=x.official_url;official.target="_blank";official.rel="noopener noreferrer";
         official.id="festival-official";
         const stages=new Map();
-        for(const event of found.future){
+        // Keep past festival programmes accessible. Upcoming events are shown first,
+        // while historical productions retain their own canonical staging URL.
+        for(const event of [...found.future,...found.associated]){
           if(!stages.has(event.staging_id))stages.set(event.staging_id,event);
         }
         for(const event of stages.values()){
           const url=window.OperaAtlasCatalog.urls(event).staging;
-          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · dal "+dateLabel(event.local_date),city:event.municipality,imageKind:"work",work_slug:event.work_slug,work_id:event.work_id,composer:event.composer});
+          const next=found.future.filter(e=>e.staging_id===event.staging_id)
+            .sort((a,b)=>a.local_date.localeCompare(b.local_date))[0];
+          const label=next?"Prossima recita "+dateLabel(next.local_date):"Produzione dell’edizione "+(x.edition||"");
+          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · "+label,city:event.municipality,imageKind:"work",work_slug:event.work_slug,work_id:event.work_id,composer:event.composer});
         }
         const footer=node("section","official-links");footer.append(node("h2",null,"Informazioni e biglietti"),official);grid.after(footer);
-        if(!entries.length)status.textContent="Il programma sarà disponibile prossimamente.";
+        if(!entries.length)status.textContent="Nessuna produzione verificata associata a questa edizione.";
       }else{
         for(const found of festivalListings){
           const x=found.item;
           entries.push({url:"./directory.html?section=festival&id="+encodeURIComponent(x.id),
             title:x.name+(x.edition?" · "+x.edition:""),city:x.city,description:x.description||"",
-            subtitle:x.city+" · "+x.region+" · "+(found.future.length?found.future.length+" date in programma":"Scopri il festival")});
+            subtitle:x.city+" · "+x.region+" · "+(found.future.length?found.future.length+" recite future":"Scopri il festival")});
         }
       }
       render();return;
