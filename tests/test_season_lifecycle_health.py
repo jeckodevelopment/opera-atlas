@@ -65,8 +65,8 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
         result=build(self.config,self.policy,{"sources":[]},{"outcomes":[]})
         rows={x["source_key"]:x for x in result["sources"]}
         self.assertEqual(result["legacy_year_bound"],19)
-        self.assertEqual(result["legacy_covered_by_successor"],13)
-        self.assertEqual(result["legacy_still_uncovered"],6)
+        self.assertEqual(result["legacy_covered_by_successor"],19)
+        self.assertEqual(result["legacy_still_uncovered"],0)
         for key in ("ferrara-macbeth-opera-2026-27",
                     "ferrara-boccanegra-opera-2026-27",
                     "jesi-trittico-opera-2026",
@@ -76,8 +76,9 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
             self.assertTrue(rows[key]["legacy_covered_by_successor"])
             self.assertTrue(rows[key]["successor_source_key"])
             self.assertFalse(rows[key]["future_season_verified"])
-        self.assertFalse(rows["modena-opera-2026-27"]["legacy_covered_by_successor"])
-        self.assertIsNone(rows["modena-opera-2026-27"]["successor_source_key"])
+        self.assertTrue(rows["modena-opera-2026-27"]["legacy_covered_by_successor"])
+        self.assertEqual(rows["modena-opera-2026-27"]["successor_source_key"],
+                         "modena-municipal-opera-2027-28")
 
     def test_invalid_successor_mappings_fail_closed(self):
         from scripts.season_lifecycle_health import SUCCESSORS
