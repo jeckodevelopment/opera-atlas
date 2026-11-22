@@ -41,6 +41,58 @@ class AutoCatalogueTests(unittest.TestCase):
         }]}
         return evidence,candidates
 
+    def test_six_messina_recite_are_canonical_and_repeat_safe(self):
+        from scripts.publish_catalog_v2 import ROOT
+        details=json.loads((ROOT/"data/candidate-detail-evidence.json").read_text())["evidence"]
+        by_id={x["candidate_id"]:x for x in details
+               if x["source_key"]=="messina-vittorio-opera-2026-27"}
+        known=json.loads((ROOT/"data/season-index-candidates.json").read_text())["candidates"]
+        cases=[x for x in known
+               if x["source_key"]=="messina-vittorio-opera-2026-27"]
+        self.assertEqual(len(cases),3)
+        for x in cases:self.assertIn(x["id"],by_id)
+        fixture={"schema_version":1,"candidates":[{**x,"status":"needs_review"}
+                                                   for x in cases]}
+        evidence={"schema_version":1,"evidence":list(by_id.values())}
+        facts,reg,urls,report=promote(self.facts,self.registry,evidence,fixture,[],
+                                       today=date(2026,11,22))
+        observed=[p for p in facts["productions"]
+                  if p["source_url"] in {x["official_url"] for x in cases}]
+        self.assertEqual(len(observed),3,report)
+        self.assertEqual(sum(len(p["dates"]) for p in observed),6)
+        self.assertTrue(all(p["municipality"]=="Messina"
+                            and p["venue"]=="Teatro Vittorio Emanuele"
+                            and p["region"]=="Sicilia" for p in observed))
+        again,reg2,_,res=promote(facts,reg,evidence,fixture,urls,
+                                 today=date(2026,11,22))
+        self.assertEqual(res["new_recite"],0)
+        self.assertEqual(again,facts)
+        self.assertEqual(reg2,reg)
+
+    def test_macerata_elisir_typographic_apostrophe_preserves_work_id(self):
+        from scripts.publish_catalog_v2 import ROOT
+        evidence_doc=json.loads((ROOT/"data/candidate-detail-evidence.json").read_text())
+        detail=next(x for x in evidence_doc["evidence"]
+                    if x["source_key"]=="macerata-festival-2027"
+                    and x["source_url"].endswith("/elisir-damore"))
+        original=json.loads((ROOT/"data/season-index-candidates.json").read_text())
+        candidate=next(x for x in original["candidates"]
+                       if x["id"]==detail["candidate_id"])
+        staged=[p for p in self.facts["productions"]
+                if p["source_url"]==detail["source_url"]]
+        current={"schema_version":1,"candidates":[{**candidate,"status":"needs_review"}]}
+        facts,registry,urls,report=promote(self.facts,self.registry,
+                      {"schema_version":1,"evidence":[detail]},current,[],
+                      today=date(2026,11,22))
+        show=[p for p in facts["productions"]
+              if p["source_url"]==detail["source_url"]]
+        self.assertEqual(len(show),1,report)
+        self.assertEqual(show[0]["title"],"L’elisir d’amore")
+        self.assertEqual(len(show[0]["dates"]),3)
+        staging=registry["stagings"][show[0]["key"]]
+        self.assertEqual(staging["work_id"],"oa-w-000073")
+        self.assertEqual(report["new_recite"],3 if not staged else 0)
+
     def test_complete_official_multiwork_seasons_publish_distinct_stagings(self):
         from scripts.collect_candidate_details import parse_known_opera_detail
         from tests.test_lecce_provincia_source import HTML as LECCE_HTML
