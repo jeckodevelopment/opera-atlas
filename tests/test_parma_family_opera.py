@@ -44,7 +44,7 @@ class ParmaFamilyOperaTests(unittest.TestCase):
         bad=original.replace("<div>5 dic 2026</div>","<div>5 dic 2027</div>")
         with self.assertRaisesRegex(ValueError,"ambiguous official Parma season year"):
             parse_family_opera(bad,url=URL)
-        with self.assertRaisesRegex(ValueError,"missing official Parma header"):
+        with self.assertRaisesRegex(ValueError,"missing Parma header date boundary"):
             parse_family_opera(original.replace("<h2>Spettacolo</h2>",
                                                "<h2>Dettagli</h2>"),url=URL)
 
