@@ -196,6 +196,11 @@
       "source_key": "cosenza-rendano-rolling-opera",
       "scope": "dynamic_category",
       "evidence": "The official Lirica landing URL is not bound to a specific season and candidate paths use a bounded same-origin allowlist. Live access, per-production showtime evidence and next-season coverage remain unverified."
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "Festival home page lists season productions and can transition to new editions. Exact detail parsing requires local source-credited festival edition, title, composer, physical Teatro Olimpico and recital clock; not proof future seasons are published."
     }
   ]
 }
