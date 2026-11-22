@@ -582,6 +582,27 @@
       "url": "https://sabbionetaoperafestival.it/eventi/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/",
+      "url": "https://festivaltaorminarte.it/programma/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "taormina-opera-festival-rolling",
+      "official_url": "https://www.taorminaoperafestival.org/",
+      "url": "https://www.taorminaoperafestival.org/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "taormina-fondazione-rolling-opera",
+      "official_url": "https://www.fondazione-taormina.it/",
+      "url": "https://www.fondazione-taormina.it/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

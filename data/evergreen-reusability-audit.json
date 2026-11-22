@@ -206,6 +206,21 @@
       "source_key": "sabbioneta-antica-rolling-opera",
       "scope": "dynamic_category",
       "evidence": "The official /eventi/ calendar index is year-neutral and new /evento/ detail pages can be discovered without season-specific slugs. Theatre, composer, title and date must still be checked on each new edition; no claim of future season live proof."
+    },
+    {
+      "source_key": "taormina-arte-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "First-party event index is not bound to a specific season. It yields review candidates only; official work title, venue, composer and local clock must be independently verified for each event. Future coverage is unverified."
+    },
+    {
+      "source_key": "taormina-opera-festival-rolling",
+      "scope": "dynamic_category",
+      "evidence": "First-party event index is not bound to a specific season. It yields review candidates only; official work title, venue, composer and local clock must be independently verified for each event. Future coverage is unverified."
+    },
+    {
+      "source_key": "taormina-fondazione-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "First-party event index is not bound to a specific season. It yields review candidates only; official work title, venue, composer and local clock must be independently verified for each event. Future coverage is unverified."
     }
   ]
 }

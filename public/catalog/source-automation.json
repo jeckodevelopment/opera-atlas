@@ -1,13 +1,13 @@
 {
-  "automation_remaining": 5,
-  "configured_not_operational": 5,
+  "automation_remaining": 6,
+  "configured_not_operational": 6,
   "definition": "Operational means at least one explicitly mapped approved source with a successful latest scan; does not imply an exhaustive season.",
   "not_automated": 0,
   "operational": 58,
   "reviewed_on": "2026-11-21",
   "schema_version": 1,
   "scope": "structured_venue_directory",
-  "total_venues": 63,
+  "total_venues": 64,
   "venues": [
     {
       "city": "Chieti",
@@ -1656,6 +1656,45 @@
       "sources": [
         {
           "source_key": "sabbioneta-antica-rolling-opera",
+          "type": "season_index",
+          "configured": true,
+          "last_status": "not_checked",
+          "recent_success": false,
+          "failure_reason": null,
+          "last_attempt_at": null
+        }
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "region": "Sicilia",
+      "status": "configured_not_operational",
+      "configured_connectors": 3,
+      "recent_successful_connectors": 0,
+      "source_attention": "not_checked",
+      "sources": [
+        {
+          "source_key": "taormina-arte-rolling-opera",
+          "type": "season_index",
+          "configured": true,
+          "last_status": "not_checked",
+          "recent_success": false,
+          "failure_reason": null,
+          "last_attempt_at": null
+        },
+        {
+          "source_key": "taormina-opera-festival-rolling",
+          "type": "season_index",
+          "configured": true,
+          "last_status": "not_checked",
+          "recent_success": false,
+          "failure_reason": null,
+          "last_attempt_at": null
+        },
+        {
+          "source_key": "taormina-fondazione-rolling-opera",
           "type": "season_index",
           "configured": true,
           "last_status": "not_checked",

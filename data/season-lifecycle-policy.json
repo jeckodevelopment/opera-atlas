@@ -333,6 +333,18 @@
     "sabbioneta-antica-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "taormina-arte-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
+    },
+    "taormina-opera-festival-rolling": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
+    },
+    "taormina-fondazione-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }

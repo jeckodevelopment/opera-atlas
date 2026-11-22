@@ -1197,6 +1197,25 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sabbioneta_-_Teatro_all%27Antica_(Interno_-_Platea).jpg",
       "photo_credit": "Viaggiamocela — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "oa-vd-000061",
+      "name": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "region": "Sicilia",
+      "city_slug": "taormina",
+      "slug": "teatro-antico-di-taormina",
+      "website": "https://parchiarcheologici.regione.sicilia.it/taormina/",
+      "source_url": "https://parchiarcheologici.regione.sicilia.it/taormina/",
+      "description": "Affacciato sul golfo di Naxos, il Teatro Antico di Taormina ospita durante l'estate spettacoli di opera lirica e festival in uno dei monumenti più celebri della Sicilia.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Teatro Greco 1",
+      "history": "Il Teatro Antico di Taormina nacque in età ellenistica, probabilmente nel III secolo avanti Cristo, e fu poi trasformato in epoca romana. La cavea affacciata sul mare e sulle pendici dell'Etna è oggi anche una sede di spettacoli all'aperto, fra cui produzioni operistiche proposte da diversi festival.",
+      "calendar_status": "not_acquired",
+      "photo_file": "Teatro Antico di Taormina.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Antico_di_Taormina.jpg",
+      "photo_credit": "Maria Iaria — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   ],
   "related_organizations": [
@@ -1288,6 +1307,30 @@
       "name": "Sabbioneta Chamber Opera Festival",
       "kind": "festival",
       "website": "https://sabbionetaoperafestival.it/",
+      "publication_status": "non_sede"
+    },
+    {
+      "name": "Taormina Arte",
+      "kind": "festival",
+      "website": "https://festivaltaorminarte.it/",
+      "publication_status": "non_sede"
+    },
+    {
+      "name": "Taormina Opera Festival",
+      "kind": "festival",
+      "website": "https://www.taorminaoperafestival.org/",
+      "publication_status": "non_sede"
+    },
+    {
+      "name": "Fondazione Taormina",
+      "kind": "organizzatore",
+      "website": "https://www.fondazione-taormina.it/",
+      "publication_status": "non_sede"
+    },
+    {
+      "name": "Festival Lirico dei Teatri di Pietra",
+      "kind": "festival",
+      "website": "https://www.coroliricosiciliano.it/",
       "publication_status": "non_sede"
     }
   ]
