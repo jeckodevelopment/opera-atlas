@@ -642,6 +642,16 @@
       "opening_year": 1925,
       "history": "Nato nel 1925 come Supercinema, progettato dagli architetti Arnaldo Foschini e Attilio Spaccarelli, fu acquistato dal Comune di Roma alla fine degli anni Novanta e affidato al Teatro dell'Opera. Oggi accoglie anche produzioni musicali e sperimentali.",
       "source": "https://www.operaroma.it/luoghi/teatro-nazionale/"
+    },
+    "Catania|Teatro Sangiorgi": {
+      "city": "Catania",
+      "name": "Teatro Sangiorgi",
+      "address": "Via Antonino di Sangiuliano 233",
+      "description": "Nel centro di Catania, il Sangiorgi affianca il Teatro Massimo Bellini con opere da camera, concerti e produzioni musicali in una sala storica.",
+      "website": "https://www.teatromassimobellini.it/il-teatro-sangiorgi/",
+      "opening_year": 1900,
+      "history": "Inaugurato nel 1900, il Teatro Sangiorgi entrò nella disponibilità dell'Ente Teatro Massimo Bellini nel 1988. Dopo il recupero, è stato restituito alla città nel 2002 come spazio dedicato a musica da camera, operetta, prosa e sperimentazione.",
+      "source": "https://www.teatromassimobellini.it/il-teatro-sangiorgi/"
     }
   }
 }
