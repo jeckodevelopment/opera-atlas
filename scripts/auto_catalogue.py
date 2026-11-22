@@ -526,6 +526,9 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
     """Return all changes in memory; skip anomalies without publishing bad data."""
     from scripts.consolidate_goldoni_mascagni import consolidate
     facts,registry,consolidated_stagings=consolidate(facts,registry)
+    from scripts.consolidate_haydn_cronaca import consolidate as consolidate_haydn
+    facts,registry,haydn_migrated=consolidate_haydn(facts,registry)
+    consolidated_stagings+=haydn_migrated
     next_facts=copy.deepcopy(facts)
     next_registry=copy.deepcopy(registry)
     approved=set(authorized_urls)
@@ -1456,7 +1459,7 @@ def main():
         from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
         previous_images=merge_official_poster_cache(
             json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8")),image_additions)
-    if report["new_recite"] or corrected_titles:
+    if report["new_recite"] or report["consolidated_stagings"] or corrected_titles:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
         _write_atomic(SOURCE_ALLOWLIST,{"schema_version":1,"urls":urls})
