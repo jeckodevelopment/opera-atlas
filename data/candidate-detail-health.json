@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T14:27:32+00:00",
+  "checked_at": "2026-11-22T14:29:40+00:00",
   "scope": "national",
-  "attempted": 10,
+  "attempted": 6,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -33,11 +33,6 @@
       "rows": 5
     },
     {
-      "candidate_id": "oa-index-04fc7625bab27446a05d",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -50,25 +45,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-63ec766b091ded79f921",
-      "outcome": "facts_found",
-      "rows": 15
-    },
-    {
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "outcome": "official_programme_document_pending",
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-59b4a6e5b8f0087fd73d",
-      "outcome": "facts_found",
-      "rows": 3
-    },
-    {
-      "candidate_id": "oa-index-ecf1fda1dc67738cab86",
-      "outcome": "verified_first_party_double_bill",
-      "rows": 12,
-      "program_recite": 6
     },
     {
       "candidate_id": "oa-index-19141fd504da67924d01",
