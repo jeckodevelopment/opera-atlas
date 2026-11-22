@@ -568,6 +568,13 @@
       "url": "https://www.teatrorendanocosenza.it/lirica-2/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/",
+      "url": "https://www.vicenzainlirica.it/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

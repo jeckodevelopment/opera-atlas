@@ -1,13 +1,13 @@
 {
-  "automation_remaining": 3,
-  "configured_not_operational": 3,
+  "automation_remaining": 4,
+  "configured_not_operational": 4,
   "definition": "Operational means at least one explicitly mapped approved source with a successful latest scan; does not imply an exhaustive season.",
   "not_automated": 0,
   "operational": 58,
   "reviewed_on": "2026-11-21",
   "schema_version": 1,
   "scope": "structured_venue_directory",
-  "total_venues": 61,
+  "total_venues": 62,
   "venues": [
     {
       "city": "Chieti",
@@ -1614,6 +1614,27 @@
       "sources": [
         {
           "source_key": "cosenza-rendano-rolling-opera",
+          "type": "season_index",
+          "configured": true,
+          "last_status": "not_checked",
+          "recent_success": false,
+          "failure_reason": null,
+          "last_attempt_at": null
+        }
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000059",
+      "venue": "Teatro Olimpico",
+      "city": "Vicenza",
+      "region": "Veneto",
+      "status": "configured_not_operational",
+      "configured_connectors": 1,
+      "recent_successful_connectors": 0,
+      "source_attention": "not_checked",
+      "sources": [
+        {
+          "source_key": "vicenza-olimpico-rolling-opera",
           "type": "season_index",
           "configured": true,
           "last_status": "not_checked",

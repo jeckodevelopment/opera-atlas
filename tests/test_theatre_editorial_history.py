@@ -19,7 +19,7 @@ class TheatreEditorialHistoryTests(unittest.TestCase):
             self.assertTrue(venue["source"].startswith("https://"),key)
             self.assertIn(venue["city"],key)
             if "opening_year" in venue:
-                self.assertTrue(1600<=venue["opening_year"]<=2026,key)
+                self.assertTrue(1500<=venue["opening_year"]<=2026,key)
                 self.assertIn(str(venue["opening_year"]),venue["history"],key)
 
     def test_florence_goldoni_is_distinct_from_livorno_goldoni(self):

@@ -1159,6 +1159,25 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Cosenza,_teatro_alfonso_rendano.jpg",
       "photo_credit": "Sailko — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "oa-vd-000059",
+      "name": "Teatro Olimpico",
+      "city": "Vicenza",
+      "region": "Veneto",
+      "city_slug": "vicenza",
+      "slug": "teatro-olimpico",
+      "website": "https://www.teatroolimpico.vicenza.it/",
+      "source_url": "https://www.teatroolimpico.vicenza.it/",
+      "description": "Il Teatro Olimpico di Vicenza, progettato da Palladio, accoglie rappresentazioni liriche e festival in un ambiente scenico rinascimentale unico.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Stradella del Teatro Olimpico 8",
+      "history": "Progettato da Andrea Palladio nel 1580 e completato da Vincenzo Scamozzi, il Teatro Olimpico fu inaugurato nel 1585. Le celebri prospettive sceniche permanenti e la sala ispirata ai teatri antichi ne fanno uno dei monumenti più importanti della storia teatrale. Oggi ospita anche produzioni di opera lirica.",
+      "calendar_status": "not_acquired",
+      "photo_file": "Teatro olimpico vicenza.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_olimpico_vicenza.jpg",
+      "photo_credit": "Nanni68 — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   ],
   "related_organizations": [
@@ -1238,6 +1257,12 @@
       "name": "Luglio Musicale Trapanese",
       "kind": "organizzatore",
       "website": "https://www.lugliomusicale.it/",
+      "publication_status": "non_sede"
+    },
+    {
+      "name": "Vicenza in Lirica",
+      "kind": "festival",
+      "website": "https://www.vicenzainlirica.it/",
       "publication_status": "non_sede"
     }
   ]

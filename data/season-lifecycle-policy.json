@@ -325,6 +325,10 @@
     "cosenza-rendano-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "vicenza-olimpico-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }

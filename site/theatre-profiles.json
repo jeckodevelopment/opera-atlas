@@ -740,6 +740,20 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Cosenza,_teatro_alfonso_rendano.jpg",
       "photo_credit": "Sailko — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    "Vicenza|Teatro Olimpico": {
+      "city": "Vicenza",
+      "name": "Teatro Olimpico",
+      "address": "Stradella del Teatro Olimpico 8",
+      "description": "Il Teatro Olimpico di Vicenza, progettato da Palladio, accoglie rappresentazioni liriche e festival in un ambiente scenico rinascimentale unico.",
+      "website": "https://www.teatroolimpico.vicenza.it/",
+      "opening_year": 1585,
+      "history": "Progettato da Andrea Palladio nel 1580 e completato da Vincenzo Scamozzi, il Teatro Olimpico fu inaugurato nel 1585. Le celebri prospettive sceniche permanenti e la sala ispirata ai teatri antichi ne fanno uno dei monumenti più importanti della storia teatrale. Oggi ospita anche produzioni di opera lirica.",
+      "source": "https://www.teatroolimpico.vicenza.it/",
+      "photo_file": "Teatro olimpico vicenza.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_olimpico_vicenza.jpg",
+      "photo_credit": "Nanni68 — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   }
 }
