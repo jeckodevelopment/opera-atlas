@@ -18,7 +18,12 @@ ROOT="/it/luglio-musicale-stagioni/"
 DETAIL=re.compile(r"/it/luglio-musicale-stagioni/stagione-(20\d{2})/([a-z0-9][a-z0-9-]*)/")
 MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,"luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12}
 TIME=re.compile(r"(?<!\d)([0-3]?\d)\s+("+ "|".join(MONTHS) +r")\s+(20\d{2}),?\s+Ore\s+([01]?\d|2[0-3]):([0-5]\d)",re.I)
-VENUE=re.compile(r'Teatro\s+["“]Giuseppe\s+Di\s+Stefano["”]',re.I)
+VENUES={
+    "Opera":("Teatro Giuseppe Di Stefano",
+            r'Teatro\\s+["“]Giuseppe\\s+Di\\s+Stefano["”]'),
+    "Opera da camera":("Teatro M° Tonino Pardo",
+                       r'Teatro\\s+M[°º]\\s+Tonino\\s+Pardo'),
+}
 COMPOSER=re.compile(r"\bMusica\s+di\s+([A-ZÀ-Ž][\wÀ-ÿ.\-'’ ]{4,85}?)(?=\s+Libretto\b)",re.I)
 
 class Reader(HTMLParser):
@@ -81,20 +86,24 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     prefix=reader.parts[start+1:start+8]
     second_title=next((i for i,x in enumerate(prefix) if x==title),None)
     category=prefix[:second_title] if second_title is not None else prefix[:4]
-    if "Opera" not in category:
-        raise ValueError("Trapani event is not an outdoor opera")
+    genres=[genre for genre in VENUES if genre in category]
+    if len(genres)!=1:
+        raise ValueError("Trapani event is not a verified opera")
+    genre=genres[0]
+    venue,venue_pattern=VENUES[genre]
     primary=" ".join(reader.parts[start:start+22]).split("Personaggi e interpreti",1)[0]
     credit=COMPOSER.search(primary)
     if credit is None:raise ValueError("Trapani first-party composer missing")
     composer=" ".join(credit.group(1).split())
-    if not VENUE.search(primary):raise ValueError("Trapani Di Stefano venue missing")
+    if not re.search(venue_pattern,primary,re.I):
+        raise ValueError("Trapani exact opera venue missing")
     recite=[]
     # Require each verified venue to immediately precede its own date/time.
     pairs=re.findall(
-        r'Teatro\s+["“]Giuseppe\s+Di\s+Stefano["”]\s+'
-        r'([0-3]?\d)\s+('+ "|".join(MONTHS) +r')\s+(20\d{2}),?\s+Ore\s+'
-        r'([01]?\d|2[0-3]):([0-5]\d)',primary,re.I)
-    if len(pairs)!=len(VENUE.findall(primary)):
+        venue_pattern+r'\\s+'
+        r'([0-3]?\\d)\\s+('+ "|".join(MONTHS) +r')\\s+(20\\d{2}),?\\s+Ore\\s+'
+        r'([01]?\\d|2[0-3]):([0-5]\\d)',primary,re.I)
+    if len(pairs)!=len(re.findall(venue_pattern,primary,re.I)):
         raise ValueError("some Trapani official showtimes are missing or invalid")
     for d,month,y,h,m in pairs:
         year=int(y)
@@ -105,4 +114,4 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         recite.append((day,f"{int(h):02d}:{int(m):02d}"))
     if not recite or len(recite)>12 or len({d for d,_ in recite})!=len(recite):
         raise ValueError("Trapani showtimes absent or ambiguous")
-    return title,composer,"Teatro Giuseppe Di Stefano",recite
+    return title,composer,venue,recite
