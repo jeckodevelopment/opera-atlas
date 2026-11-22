@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T13:22:11+00:00",
+  "checked_at": "2026-11-22T13:27:25+00:00",
   "scope": "national",
-  "attempted": 14,
+  "attempted": 13,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -18,15 +18,8 @@
     },
     {
       "candidate_id": "oa-index-6c5243260ad25ecab396",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:official composer credit missing or ambiguous",
-        "authority_work:no_evidence",
-        "official_composer_credit:official composer credit missing or ambiguous",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-943d04f25da8e27e1190",
@@ -57,13 +50,13 @@
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-a02901b14e6eae69df5c",
+      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
-        "official_composer_credit:unverified Parma performance venue",
+        "official_composer_credit:conflicting official showtime for one day",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -83,6 +76,30 @@
     {
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "outcome": "official_programme_document_pending",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-ecf1fda1dc67738cab86",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:no verified Trieste opera showtimes",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-fdbd4ff9f97a75bd5429",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:not one unambiguous credited opera",
+        "authority_work:no_evidence",
+        "official_composer_credit:not one unambiguous credited opera",
+        "schema_event:no_evidence"
+      ],
       "rows": 0
     },
     {
@@ -110,42 +127,13 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-d7fe62f35d5196ceb467",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-ecf1fda1dc67738cab86",
+      "candidate_id": "oa-index-a02901b14e6eae69df5c",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
-        "official_composer_credit:no verified Trieste opera showtimes",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-fdbd4ff9f97a75bd5429",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:not one unambiguous credited opera",
-        "authority_work:no_evidence",
-        "official_composer_credit:not one unambiguous credited opera",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:conflicting official showtime for one day",
+        "official_composer_credit:unverified Parma performance venue",
         "schema_event:no_evidence"
       ],
       "rows": 0
