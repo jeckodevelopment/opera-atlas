@@ -107,4 +107,5 @@ jobs:
       - name: Report remaining source checkpoint contention
         if: steps.checkpoint.outputs.deferred == 'true' && steps.retry.outputs.published != 'true'
         run: |
-          echo "::warning::Two fresh scans could not publish due to concurrent source changes. No stale evidence was replayed; scheduled scan will retry."
+          echo "::error::Two fresh scans could not publish due to concurrent source changes. No stale evidence was replayed; scheduled scan will retry."
+          exit 1
