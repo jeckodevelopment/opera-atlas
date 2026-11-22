@@ -577,6 +577,24 @@
           "https://www.teatromassimobellini.it/continuano-le-opere-da-camera-al-teatro-sangiorgi-con-le-nozze-dellorso/"
         ]
       }
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "synopsis": "Lo scrittore Gustav von Aschenbach raggiunge Venezia alla ricerca di quiete e ispirazione. L'incontro con il giovane Tadzio lo trattiene in città mentre dilaga un'epidemia di colera.",
+      "history": {
+        "librettist": "Myfanwy Piper",
+        "premiere_year": 1973,
+        "premiere_venue": "Snape Maltings Concert Hall",
+        "premiere_city": "Snape, Suffolk",
+        "sources": [
+          "https://www.brittenpearsarts.org/music/death-in-venice",
+          "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+          "https://www.teatrofraschini.it/programma/death-in-venice/"
+        ]
+      }
     }
   ]
 }
