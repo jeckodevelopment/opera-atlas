@@ -111,6 +111,33 @@ class ModenaTheatreFallbackTests(unittest.TestCase):
         self.assertTrue(any(w["slug"]=="der-fliegende-hollander"
                             for w in reg["works"].values()))
 
+    def test_veleno_exact_h4_work_identity_with_two_public_clocks(self):
+        source="https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
+        html=(HTML
+              .replace("<h1>Giuseppe Verdi – Macbeth</h1>",
+                       "<h4>Gaia Aloisi – Veleno</h4>")
+              .replace("<h4>Giuseppe Verdi – Macbeth</h4>",
+                       "<p>Gaia Aloisi – Veleno</p>")
+              .replace("30 Ottobre 2026","7 Maggio 2027")
+              .replace("1 Novembre 2026","9 Maggio 2027")
+              .replace("20:00","20:00")
+              .replace("15:30","15:30"))
+        self.assertEqual(parse_detail(html,url=source),(
+            "Veleno","Gaia Aloisi","Teatro Comunale Pavarotti-Freni",
+            [("2027-05-07","20:00"),("2027-05-09","15:30")]))
+        self.assertEqual(len(parse_source_credited_opera_detail(KEY,source,html)),2)
+        for invalid in (
+            html.replace("Gaia Aloisi – Veleno","Gaia Aloisi – Altra opera"),
+            html.replace("<p>Gaia Aloisi – Veleno</p>",
+                         "<h4>Gaia Aloisi – Veleno</h4>"),
+            html.replace("7 Maggio 2027 - 20:00",
+                         "7 Maggio 2027 - orario da confermare"),
+        ):
+            with self.subTest(problem=invalid[-50:]),self.assertRaises(ValueError):
+                parse_detail(invalid,url=source)
+        with self.assertRaises(ValueError):
+            parse_detail(html,url=URL)
+
     def test_no_unverified_authority_or_dates(self):
         for broken in (
             HTML.replace("Giuseppe Verdi – Macbeth","Macbeth"),
