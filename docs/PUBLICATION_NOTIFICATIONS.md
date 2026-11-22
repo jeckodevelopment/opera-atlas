@@ -42,3 +42,9 @@ Quando Resend rifiuta una notifica, nei log GitHub Actions viene registrato lo s
 Se un HTTP 403 non appare nei log della dashboard Resend, verificare che si stia visualizzando la **stessa organizzazione/team** a cui appartiene la chiave API e controllare le **restrizioni di dominio** della chiave stessa. L'assenza di log nella dashboard non dimostra che l'API non sia stata contattata: il codice HTTP viene restituito dalla richiesta HTTPS del workflow.
 
 Un errore nella consegna non compromette la pubblicazione del catalogo. Per recuperare notifiche saltate, usare il replay con filtro `entity_ids` documentato sopra, dopo aver corretto la causa del rifiuto.
+
+### Metadati HTTP sicuri per distinguere API e livello intermedio
+
+Nel caso di HTTP 403 il log contiene ora soltanto informazioni classificate: MIME della risposta da una lista consentita (`application/json`, `text/html`, `text/plain` e pochi altri), formato del corpo (JSON/HTML/testo/altro), presenza di header identificativi dell'edge CDN senza registrarne i valori, troncamento del corpo diagnostico e, quando disponibile, il codice Resend strutturato. Non vengono mai riportati il corpo, il messaggio di errore libero né valori arbitrari degli header: potrebbero contenere indirizzi, token o dati riservati.
+
+Un 403 con `response-type=text/html` e `body-format=html` suggerisce un blocco HTTP intermediario, mentre `application/json` con `error-code` leggibile indica più probabilmente un rifiuto applicativo dell'API. La presenza di header CDN da sola non attribuisce con certezza l'errore al CDN. Queste sono indicazioni diagnostiche e non una conferma della causa.

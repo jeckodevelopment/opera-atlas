@@ -83,19 +83,60 @@ def parse_recipients(config: str) -> list[str]:
 
 
 def safe_resend_error(error: urllib.error.HTTPError) -> str:
-    """Report only bounded, non-sensitive Resend error codes.
+    """Describe an HTTP rejection without exposing response text or headers.
 
-    The response can contain addresses, request payloads or tokens, so never
-    print its free-form message or raw JSON in GitHub Actions logs.
+    No untrusted response values are emitted except a tightly validated
+    machine-readable error code. Useful for differentiating an API rejection
+    from a CDN/WAF challenge, including an HTML 403.
     """
+    headers = error.headers
+    raw_type = headers.get("Content-Type", "") if headers else ""
+    mime = raw_type.split(";", 1)[0].strip().lower()
+    allowed_types = {
+        "application/json", "application/problem+json", "text/html",
+        "text/plain", "application/octet-stream",
+    }
+    content_type = mime if mime in allowed_types else "other/unknown"
+    via_cloudflare = bool(headers and (headers.get("CF-Ray") or
+                                       headers.get("CF-Cache-Status")))
     try:
-        response = json.loads(error.read(8192).decode("utf-8"))
-    except (ValueError, UnicodeDecodeError, OSError):
-        response = {}
-    code = response.get("name") or response.get("code") if isinstance(response, dict) else None
-    if isinstance(code, str) and len(code) <= 80 and all(char.isalnum() or char in "_-" for char in code):
-        return f"Resend HTTP {error.code}, error code: {code}"
-    return f"Resend HTTP {error.code}, response code unavailable"
+        raw_body = error.read(8193)
+    except OSError:
+        raw_body = b""
+    truncated = len(raw_body) > 8192
+    sample = raw_body[:8192]
+    body_format = "empty"
+    code = None
+    if sample:
+        try:
+            response = json.loads(sample.decode("utf-8"))
+        except (ValueError, UnicodeDecodeError):
+            stripped = sample.lstrip().lower()
+            if stripped.startswith((b"<!doctype html", b"<html", b"<head", b"<body")):
+                body_format = "html"
+            elif all(byte in (9, 10, 13) or 32 <= byte < 127 for byte in sample[:256]):
+                body_format = "text"
+            else:
+                body_format = "other"
+        else:
+            body_format = "json"
+            if isinstance(response, dict):
+                code = response.get("name") or response.get("code")
+                if not code and isinstance(response.get("error"), dict):
+                    nested = response["error"]
+                    code = nested.get("name") or nested.get("code")
+    metadata = (
+        f"Resend HTTP {error.code}; response-type={content_type}; "
+        f"body-format={body_format}; edge-header-present={'yes' if via_cloudflare else 'no'}; "
+        f"body-truncated={'yes' if truncated else 'no'}"
+    )
+    if isinstance(code, str) and 0 < len(code) <= 80 and all(
+        char.isalnum() or char in "_-" for char in code
+    ):
+        metadata += f"; error-code={code}"
+    else:
+        metadata += "; error-code=unavailable"
+    return metadata
 
 
 def send(notice: dict, api_key: str, sender: str, recipients: list[str]) -> None:
