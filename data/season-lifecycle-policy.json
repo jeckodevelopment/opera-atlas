@@ -269,6 +269,10 @@
     "filarmonico-verona-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "salerno-verdi-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }

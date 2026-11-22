@@ -332,6 +332,13 @@
       "min_links": 6
     },
     {
+      "key": "salerno-verdi-rolling-opera",
+      "official_url": "https://cultura.comune.salerno.it/",
+      "url": "https://cultura.comune.salerno.it/teatro-verdi/la-stagione/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/",
       "url": "https://teatrodipisa.it/tipologia-spettacolo/opera/",

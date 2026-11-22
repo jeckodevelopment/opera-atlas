@@ -123,6 +123,11 @@
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
     },
     {
+      "source_key": "salerno-verdi-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "Municipal season landing page is evergreen; future event links are dynamically discovered. Municipal Opera tags also label ballets, so source detail synopsis and composer credit are mandatory."
+    },
+    {
       "source_key": "sassari-de-carolis-opera-2026",
       "scope": "fixed_production_set",
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
