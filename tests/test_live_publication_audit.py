@@ -31,10 +31,11 @@ class LivePublicationAuditTests(unittest.TestCase):
         performances = {"performances": [{"staging_id": "s1"}, {"staging_id": "s1"}]}
         programs = {"programs": [{"id": "oa-p-abcd", "title": "Dittico",
                                  "performances": [{"id": "r1"}]}]}
-        result = targets(man, works, {"venues": []}, stagings, performances, programs)
-        self.assertEqual(len(result), 2)
+        result = targets(man, works, {"venues": [{"id":"v1","name":"Teatro Regio","display_name":"Teatro Regio di Torino","city_slug":"torino","slug":"teatro-regio"}]}, stagings, performances, programs)
+        self.assertEqual(len(result), 3)
         self.assertEqual(result[0]["route"], "/programmi/oa-p-abcd/")
         self.assertEqual(result[1]["expected_recite"], 2)
+        self.assertEqual(result[2]["title"], "Teatro Regio di Torino")
 
     def test_rewrite_covers_program_route(self):
         from scripts.publish_catalog_v2 import ROOT
