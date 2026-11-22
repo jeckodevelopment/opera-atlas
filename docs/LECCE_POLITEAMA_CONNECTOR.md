@@ -37,3 +37,17 @@ di recite è attestata fino alla scansione live e alla riconciliazione.
   nessuna conferenza, prosa o URL di altra sede.
 - Controllare separatamente quante recite sono pubblicate
   nel catalogo canonico dopo il refresh.
+
+## Fonte istituzionale indipendente (22/11/2026)
+
+Per non bloccare la raccolta quando il sito ASP del teatro restituisce HTML
+non disponibile al runner, è stato aggiunto il connettore
+`lecce-provincia-politeama-2026` sulla [comunicazione ufficiale della Provincia di Lecce](https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/).
+La Provincia è l'ente promotore della stagione 2026 e pubblica i tre titoli,
+i compositori e tutte le sei date. La pagina viene acquisita con il normale
+robots gate e con URL HTTPS esatto, senza proxy, redirect alternativi o bypass.
+Il parser verifica unicamente il blocco della stagione e ignora conferenze,
+prove per le scuole e l'opera separata al Teatro Apollo. Il vecchio connettore
+del teatro rimane indipendente e diagnostica i propri fallimenti; la sede è
+operativa quando almeno una delle due fonti supera una scansione live.
+L'esito dell'indice non certifica da solo la pubblicazione delle recite.
