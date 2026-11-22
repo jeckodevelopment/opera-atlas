@@ -914,6 +914,18 @@
         "https://www.teatrocomunalemodena.it/wp-content/uploads/2023/12/Programma-di-sala_I-salvatori-della-mezzanotte.pdf",
         "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
       ]
+    },
+    "candide": {
+      "librettist": "Lillian Hellman (libretto originale); testi di Richard Wilbur e altri autori nelle successive versioni",
+      "premiere_year": 1956,
+      "premiere_date": "1956-12-01",
+      "premiere_venue": "Martin Beck Theatre",
+      "premiere_city": "New York",
+      "sources": [
+        "https://leonardbernstein.com/works/view/10/candide",
+        "https://memboa.operaamerica.org/Applications/schedule/details.aspx?titleID=3239",
+        "https://www.liricocagliari.it/evento/candide/"
+      ]
     }
   },
   "works_by_id": {

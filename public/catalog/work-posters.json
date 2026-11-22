@@ -868,6 +868,15 @@
       "credit": "Comune di Modena, fotografia della produzione I salvatori della mezzanotte",
       "alt": "Fotografia di scena dell’opera I salvatori della mezzanotte di Daniele Furlati",
       "kind": "official_civic_production_image"
+    },
+    "oa-w-000098": {
+      "work_id": "oa-w-000098",
+      "source_url": "https://www.liricocagliari.it/evento/candide/",
+      "provenance_url": "https://www.emersoncolonialtheatre.com/about-us/emerson-colonial-theatre-blog/candide/",
+      "image_url": "https://res.cloudinary.com/dwzhqvxaz/image/upload/q_auto/f_auto/umbraco-prod/ogsfnsf4/candide-1.jpg",
+      "credit": "Emerson Colonial Theatre, manifesto promozionale originale di Candide (1956), archivio NYPL",
+      "alt": "Manifesto storico del 1956 di Candide, operetta di Leonard Bernstein, con titoli illustrati",
+      "kind": "verified_historical_theatre_poster"
     }
   }
 }

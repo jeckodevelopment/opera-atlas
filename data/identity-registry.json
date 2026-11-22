@@ -624,6 +624,13 @@
       "title": "I salvatori della mezzanotte",
       "composer": "Daniele Furlati",
       "authority_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
+    },
+    "candide|leonard bernstein": {
+      "id": "oa-w-000098",
+      "slug": "candide",
+      "title": "Candide",
+      "composer": "Leonard Bernstein",
+      "authority_url": "https://www.liricocagliari.it/evento/candide/"
     }
   },
   "venues": {
@@ -2784,6 +2791,14 @@
       "slug": "i-salvatori-della-mezzanotte",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "season": "2026"
+    },
+    "auto-877637d643bbfb66": {
+      "id": "oa-s-000227",
+      "work_id": "oa-w-000098",
+      "venue_id": "oa-v-000023",
+      "slug": "candide",
+      "source_url": "https://www.liricocagliari.it/evento/candide/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -8252,6 +8267,36 @@
       "staging_id": "oa-s-000226",
       "original_date": "2026-12-13",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
+    },
+    "auto-877637d643bbfb66|2027-10-27": {
+      "id": "oa-r-000933",
+      "staging_id": "oa-s-000227",
+      "original_date": "2027-10-27",
+      "source_url": "https://www.liricocagliari.it/evento/candide/"
+    },
+    "auto-877637d643bbfb66|2027-10-28": {
+      "id": "oa-r-000934",
+      "staging_id": "oa-s-000227",
+      "original_date": "2027-10-28",
+      "source_url": "https://www.liricocagliari.it/evento/candide/"
+    },
+    "auto-877637d643bbfb66|2027-10-29": {
+      "id": "oa-r-000935",
+      "staging_id": "oa-s-000227",
+      "original_date": "2027-10-29",
+      "source_url": "https://www.liricocagliari.it/evento/candide/"
+    },
+    "auto-877637d643bbfb66|2027-11-02": {
+      "id": "oa-r-000936",
+      "staging_id": "oa-s-000227",
+      "original_date": "2027-11-02",
+      "source_url": "https://www.liricocagliari.it/evento/candide/"
+    },
+    "auto-877637d643bbfb66|2027-11-03": {
+      "id": "oa-r-000937",
+      "staging_id": "oa-s-000227",
+      "original_date": "2027-11-03",
+      "source_url": "https://www.liricocagliari.it/evento/candide/"
     }
   },
   "reserved_works": {

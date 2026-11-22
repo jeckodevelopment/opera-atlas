@@ -3,23 +3,6 @@
   "groups": [
     {
       "candidate_ids": [
-        "oa-index-877637d643bbfb668688"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Leonard Bernstein",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 5,
-      "sources": [
-        {
-          "source_key": "lirico-cagliari-opera-2027",
-          "url": "https://www.liricocagliari.it/evento/candide/"
-        }
-      ],
-      "title": "Candide"
-    },
-    {
-      "candidate_ids": [
         "oa-index-763df3e99fa61d152cb9"
       ],
       "category": "new_work_candidate",
@@ -60,10 +43,10 @@
     "candidates_checked": 163,
     "candidates_without_facts": 0,
     "facts_examined": 680,
-    "facts_resolved": 672,
+    "facts_resolved": 677,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 8,
-    "unmatched_groups": 3
+    "unmatched_facts": 3,
+    "unmatched_groups": 2
   },
   "truncated": false
 }

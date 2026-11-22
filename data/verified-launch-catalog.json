@@ -6066,6 +6066,37 @@
           "17:30"
         ]
       ]
+    },
+    {
+      "key": "auto-877637d643bbfb66",
+      "title": "Candide",
+      "composer": "Leonard Bernstein",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "source_url": "https://www.liricocagliari.it/evento/candide/",
+      "dates": [
+        [
+          "2027-10-27",
+          "20:00"
+        ],
+        [
+          "2027-10-28",
+          "19:00"
+        ],
+        [
+          "2027-10-29",
+          "20:00"
+        ],
+        [
+          "2027-11-02",
+          "20:00"
+        ],
+        [
+          "2027-11-03",
+          "20:00"
+        ]
+      ]
     }
   ]
 }
