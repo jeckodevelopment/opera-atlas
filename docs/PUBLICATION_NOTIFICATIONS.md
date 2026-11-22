@@ -52,3 +52,15 @@ Un 403 con `response-type=text/html` e `body-format=html` suggerisce un blocco H
 ## Compatibilità HTTP / Cloudflare
 
 Le richieste all'API Resend dichiarano esplicitamente un `User-Agent` identificativo dell'applicazione, invece di utilizzare l'header predefinito `Python-urllib/3.x`. I run 44965997047 e precedenti restituivano HTTP 403 `text/plain` con intestazioni edge; alcuni filtri Cloudflare rifiutano il client Python urllib predefinito prima che la richiesta raggiunga l'API. Questa modifica è mirata e non garantisce di per sé la consegna: verificare l'esito di un nuovo invio mirato alle opere `oa-w-000077,oa-w-000078` prima di considerare concluso il problema.
+
+## Outbox persistente e recupero automatico
+
+La consegna operativa delle notifiche è ora centralizzata in `.github/workflows/deliver-publication-notifications.yml`, che parte sui merge diretti del manifesto pubblico v2, su `repository_dispatch` inviato da entrambi i checkpoint del refresh e come controllo di recupero ogni 15 minuti. Il vecchio `notify-catalog-publications.yml` rimane solo per replay storico *manuale*: non utilizzarlo per notifiche nuove, perché non scrive il registro persistente.
+
+Lo stato risiede in `data/notification-ledger.json` sul ramo dedicato `atlas-notification-ledger` (non su `main`). Include lo SHA del catalogo pubblico di bootstrap, gli ID la cui notifica è stata accettata dall'API Resend e i contatori di tentativo. Il bootstrap è stato eseguito dopo il recupero delle due opere del Petruzzelli: le vecchie opere e produzioni non vengono inviate in massa. Per ogni controllo il worker confronta gli ID permanenti del catalogo pubblico attuale con quelli del bootstrap, esclude le notifiche già accettate e riprova solo i nuovi ID in sospeso. Una revisione di sinossi, manifesto o recite non produce email.
+
+Ogni accettazione viene salvata immediatamente con un commit nel ramo del registro; le esecuzioni concorrenti del worker sono serializzate da GitHub Actions. Il ramo del registro non scatena refresh o altri invii su `main`. Errori API o di persistenza rendono **rosso il workflow di consegna**, ma non interrompono la pubblicazione del catalogo. Il controllo pianificato riprova automaticamente, anche se non esistono nuovi commit. I secret restano invariati.
+
+**Limite tecnico:** l'API Resend può accettare un invio poco prima di una caduta del runner o di un errore nella scrittura dello stato. In quel caso la richiesta può essere ripetuta; l'header `Idempotency-Key` dell'ID permanente limita i duplicati nei termini supportati da Resend. Non promettiamo esattamente-once assoluto in caso di guasti tra accettazione e persistenza.
+
+Per controllare lo stato del sistema: workflow `Deliver pending Opera Atlas publication emails`; in caso di fallimento verificare i warning e la branch `atlas-notification-ledger`. Un `workflow_dispatch` su questa nuova Action forza una riconciliazione del registro, non un replay storico di tutte le opere.
