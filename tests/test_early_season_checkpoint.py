@@ -5,11 +5,13 @@ from pathlib import Path
 WORKFLOW=Path(__file__).resolve().parents[1]/".github/workflows/refresh-catalog.yml"
 
 class EarlySeasonIndexCheckpointTests(unittest.TestCase):
-    def test_health_is_scanned_and_checkpointed_before_candidate_details(self):
+    def test_current_season_index_checkpoint_precedes_second_detail_pass(self):
         source=WORKFLOW.read_text(encoding="utf-8")
         scan=source.index("      - name: Discover approved season indexes ahead of slow details")
         checkpoint=source.index("      - name: Checkpoint current season-index status and candidate URLs")
-        slow=source.index("      - name: Acquire pending official detail pages before slow discovery")
+        slow=source.index("      - name: Collect structured facts from bounded discovered detail pages")
+        early=source.index("      - name: Acquire pending official detail pages before slow discovery")
+        self.assertLess(early,scan)
         self.assertLess(scan,checkpoint)
         self.assertLess(checkpoint,slow)
         step=source[scan:checkpoint]
