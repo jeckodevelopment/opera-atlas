@@ -4,7 +4,7 @@ import json
 import unittest
 from datetime import date
 
-from scripts.auto_catalogue import promote
+from scripts.auto_catalogue import promote, split_verified_season
 from scripts.build_verified_catalog import MANIFEST, validate_auto_sources
 from scripts.publish_catalog_v2 import REGISTRY, assemble
 
@@ -40,6 +40,59 @@ class AutoCatalogueTests(unittest.TestCase):
                 "starts_at":hour,"venue":"Teatro alla Scala"}]
         }]}
         return evidence,candidates
+
+    def test_complete_official_multiwork_seasons_publish_distinct_stagings(self):
+        from scripts.collect_candidate_details import parse_known_opera_detail
+        from tests.test_lecce_provincia_source import HTML as LECCE_HTML
+        from tests.test_padova_opera_source import HTML as PADOVA_HTML
+        from opera_atlas.lecce_provincia_parser import URL as LECCE_URL
+        from tests.test_padova_opera_source import URL as PADOVA_URL
+        cases=(
+            ("lecce-provincia-politeama-2026",LECCE_URL,LECCE_HTML,3,6),
+            ("padova-verdi-opera-2026",PADOVA_URL,PADOVA_HTML,2,5),
+        )
+        for key,url,html,productions,recite in cases:
+            with self.subTest(source=key):
+                rows=parse_known_opera_detail(key,url,html,self.registry)
+                self.assertEqual(len(rows),recite)
+                candidate_id="test-"+key
+                candidate={"schema_version":1,"candidates":[{
+                    "id":candidate_id,"source_key":key,"official_url":url,
+                    "status":"needs_review"}]}
+                evidence={"schema_version":1,"evidence":[{
+                    "candidate_id":candidate_id,"source_key":key,"source_url":url,
+                    "status":"needs_editorial_review","event_facts":rows}]}
+                self.assertEqual(len(split_verified_season(evidence["evidence"][0])),productions)
+                facts,ids,urls,report=promote(self.facts,self.registry,evidence,
+                    candidate,[],today=date(2026,11,22))
+                self.assertEqual(report["new_stagings"],productions)
+                self.assertEqual(report["new_recite"],recite)
+                self.assertIn(url,urls)
+                again,again_ids,_,second=promote(
+                    facts,ids,evidence,candidate,urls,today=date(2026,11,22))
+                self.assertEqual(second["new_recite"],0)
+                self.assertEqual(again,facts)
+                self.assertEqual(again_ids,ids)
+
+    def test_incomplete_multiwork_season_does_not_publish_partial_data(self):
+        from tests.test_lecce_provincia_source import HTML as LECCE_HTML
+        from opera_atlas.lecce_provincia_parser import URL,parse_program
+        from scripts.build_verified_catalog import official_local_time
+        rows=[{"event_title":title,"composer":composer,"venue":venue,
+               "date":day,"starts_at":official_local_time(day,clock)}
+              for title,composer,venue,day,clock in parse_program(LECCE_HTML,url=URL)]
+        evidence={"schema_version":1,"evidence":[{
+            "candidate_id":"lecce-incomplete","source_key":"lecce-provincia-politeama-2026",
+            "source_url":URL,"status":"needs_editorial_review","event_facts":rows[:-1]}]}
+        self.assertEqual(len(split_verified_season(evidence["evidence"][0])),1)
+        candidates={"schema_version":1,"candidates":[{
+            "id":"lecce-incomplete","source_key":"lecce-provincia-politeama-2026",
+            "official_url":URL,"status":"needs_review"}]}
+        facts,ids,urls,report=promote(self.facts,self.registry,evidence,
+                                      candidates,[],today=date(2026,11,22))
+        self.assertEqual(report["new_recite"],0)
+        self.assertEqual(facts,self.facts)
+        self.assertEqual(ids,self.registry)
 
     def test_new_production_and_recita_publish_with_stable_ids(self):
         evidence,candidates=self.fixture()
