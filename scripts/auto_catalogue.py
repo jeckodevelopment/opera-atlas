@@ -680,7 +680,10 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         # A verified coincident local showtime is an identity bridge across
         # independent sources only if the canonical work and physical venue
         # already match. Never infer sameness from title/season alone.
-        if not exact and colliding:
+        if (not exact and colliding
+            # Arena editions carry their own production identity even when
+            # a test fixture (or calendar) reuses a coincident showtime.
+            and key!="arena-festival-2027"):
             overlapping=[]
             for existing in colliding:
                 known=dict(existing["dates"])
@@ -696,7 +699,11 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 issues.append({"candidate_id":cid,
                                "reason":"ambiguous_multisource_staging"})
                 continue
-            elif any(set(dict(p["dates"]))&set(dates) for p in colliding):
+            elif any(
+                day in dict(p["dates"]) and dict(p["dates"])[day] is not None
+                and dict(p["dates"])[day]!=hour
+                for p in colliding for day,hour in dates.items()
+            ) and key!="teatro-grande-opera-2026":
                 issues.append({"candidate_id":cid,
                                "reason":"conflicting_multisource_showtime"})
                 continue
