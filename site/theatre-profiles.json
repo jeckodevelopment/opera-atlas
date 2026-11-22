@@ -647,9 +647,10 @@
       "city": "Catania",
       "name": "Teatro Sangiorgi",
       "address": "Via Antonino di Sangiuliano 233",
-      "description": "Teatro storico del centro di Catania, utilizzato dal Teatro Massimo Bellini anche per produzioni d'opera da camera.",
-      "website": "https://www.teatromassimobellini.it/",
-      "history": "Il complesso storico Sangiorgi, recuperato dal Teatro Massimo Bellini, è stato restituito alla città nel novembre 2002. Oggi ospita spettacoli musicali e produzioni liriche anche di piccolo formato.",
+      "description": "Nel centro di Catania, il Sangiorgi affianca il Teatro Massimo Bellini con opere da camera, concerti e produzioni musicali in una sala storica.",
+      "website": "https://www.teatromassimobellini.it/il-teatro-sangiorgi/",
+      "opening_year": 1900,
+      "history": "Inaugurato nel 1900, il Teatro Sangiorgi entrò nella disponibilità dell'Ente Teatro Massimo Bellini nel 1988. Dopo il recupero, è stato restituito alla città nel 2002 come spazio dedicato a musica da camera, operetta, prosa e sperimentazione.",
       "source": "https://www.teatromassimobellini.it/il-teatro-sangiorgi/"
     },
     "Reggio Emilia|Teatro Ariosto": {

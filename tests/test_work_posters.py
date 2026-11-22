@@ -1,5 +1,7 @@
 """A newly published opera must have a safe cover source and resilient fallback."""
 import json
+import shutil
+import subprocess
 import unittest
 from datetime import date
 from pathlib import Path
@@ -10,6 +12,13 @@ from scripts import publish_work_posters as posters
 from opera_atlas.controlled_fetch import FetchResult
 
 class PosterPublicationTests(unittest.TestCase):
+    @unittest.skipUnless(shutil.which("node"),"Node.js not available")
+    def test_frontend_displays_verified_coproduction_poster(self):
+        script=Path(__file__).with_name("bona_sforza_poster_smoke.cjs")
+        result=subprocess.run(["node",str(script)],capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stdout+"\\n"+result.stderr)
+
+
     @staticmethod
     def seed_official_evidence(path, *, checks=None):
         # Unit fixtures still start from independently verified, canonical
@@ -316,7 +325,8 @@ class PosterPublicationTests(unittest.TestCase):
         published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
         self.assertEqual({w["id"] for w in works},set(published))
         self.assertTrue(all(published[w["id"]]["kind"] in
-                            ("archival_work_image","official_production_image","ticketing_event_artwork","official_coproduction_poster","official_original_work_artwork")
+                            ("archival_work_image","official_production_image","ticketing_event_artwork","official_coproduction_poster",
+                             "official_original_work_artwork")
                             for w in works))
         self.assertEqual(len(published),len(works))
         self.assertEqual(sum(v["kind"]=="original_editorial_cover"
