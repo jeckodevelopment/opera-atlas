@@ -39,6 +39,7 @@ INDEX_VENUES = {
     "verdi-trieste-season-2026-27": ("Trieste|Teatro Lirico Giuseppe Verdi",),
     "lirico-cagliari-opera-2027": ("Cagliari|Teatro Lirico di Cagliari",),
     "bellini-catania-opera-2026-27": ("Catania|Teatro Massimo Bellini",),
+    "modena-teatro-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
     "modena-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
     "giglio-lucca-opera-2026-27": ("Lucca|Teatro del Giglio Giacomo Puccini",),
     "piacenza-opera-2026-27": ("Piacenza|Teatro Municipale",),
