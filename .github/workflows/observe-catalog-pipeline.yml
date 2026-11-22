@@ -1,0 +1,45 @@
+name: Observe Opera Atlas catalog pipeline
+on:
+  schedule:
+    - cron: '19 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/pipeline_operations_health.py'
+      - '.github/workflows/observe-catalog-pipeline.yml'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: opera-atlas-pipeline-observability
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout latest canonical main
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Inspect workflow recovery and candidate publication timings
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m scripts.pipeline_operations_health
+      - name: Save observational state and public dashboard feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pipeline-publication-observations.json public/catalog/pipeline-operations-health.json
+          if git diff --cached --quiet; then
+            echo "No operational changes"
+          else
+            git commit -m "data(diagnostics): record pipeline health [skip ci]"
+            python -m scripts.push_pipeline_operations_health
+          fi
