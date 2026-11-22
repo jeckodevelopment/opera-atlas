@@ -1,0 +1,68 @@
+name: Verify Cosenza ticketing source (targeted)
+run-name: Cosenza partner probe · ${{ github.ref_name }}
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/probe-cosenza-inprimafila.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Test Cosenza source adapter
+        run: python -m unittest tests.test_cosenza_inprimafila_opera -v
+      - name: Probe only the partner index and three Rendano opera pages
+        run: |
+          python - <<'PY'
+          from opera_atlas.db import connect, migrate
+          from opera_atlas.controlled_fetch import fetch_official_html
+          from opera_atlas.cosenza_inprimafila_opera import (
+              INDEX, extract_index, parse_detail,
+          )
+          origin = "https://www.inprimafila.net/"
+          expected = {
+              "barbiere-di-siviglia-cosenza": 2,
+              "le-nozze-di-figaro-cosenza": 2,
+              "la-mere-coupable-cosenza": 1,
+          }
+          db = connect()
+          try:
+              migrate(db)
+              db.execute(
+                  "INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",
+                  (origin,),
+              )
+              row = db.execute(
+                  "SELECT id FROM sources WHERE official_url=?", (origin,)
+              ).fetchone()
+              def fetch(url):
+                  return fetch_official_html(
+                      db, source_id=row["id"], url=url, network_enabled=True,
+                  ).html
+              html = fetch(INDEX)
+              candidates = extract_index(html, url=INDEX, min_links=3)
+              print("Cosenza partner: eligible official event URLs:", len(candidates))
+              recitals = []
+              for slug, count in expected.items():
+                  urls = [url for url in candidates if url.rstrip("/").endswith("/"+slug)]
+                  if len(urls) != 1:
+                      raise RuntimeError(f"Missing / ambiguous Rendano opera: {slug}")
+                  parsed = parse_detail(fetch(urls[0]), url=urls[0])
+                  if len(parsed[3]) != count:
+                      raise RuntimeError(f"Incorrect recital count for {slug}")
+                  print(parsed[0], parsed[1], parsed[2], parsed[3])
+                  recitals.extend(parsed[3])
+              if len(recitals) != 5:
+                  raise RuntimeError("Expected 5 public operatic recitals")
+              print("PASS: 3 independently verified opera pages / 5 public recitals")
+          finally:
+              db.close()
+          PY
