@@ -330,6 +330,13 @@
       "url": "https://www.teatrovittorioemanuele.it/event_listing_type/opera-26-27/",
       "access_status": "approved",
       "min_links": 3
+    },
+    {
+      "key": "sassari-de-carolis-opera-2026",
+      "official_url": "https://www.marialisadecarolis.it/",
+      "url": "https://www.marialisadecarolis.it/opere-liriche.aspx",
+      "access_status": "approved",
+      "min_links": 3
     }
   ]
 }
