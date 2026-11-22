@@ -20,9 +20,9 @@ MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,"lug
 TIME=re.compile(r"(?<!\d)([0-3]?\d)\s+("+ "|".join(MONTHS) +r")\s+(20\d{2}),?\s+Ore\s+([01]?\d|2[0-3]):([0-5]\d)",re.I)
 VENUES={
     "Opera":("Teatro Giuseppe Di Stefano",
-            r'Teatro\\s+["“]Giuseppe\\s+Di\\s+Stefano["”]'),
+            r'Teatro\s+["“]Giuseppe\s+Di\s+Stefano["”]'),
     "Opera da camera":("Teatro M° Tonino Pardo",
-                       r'Teatro\\s+M[°º]\\s+Tonino\\s+Pardo'),
+                       r'Teatro\s+M[°º]\s+Tonino\s+Pardo'),
 }
 COMPOSER=re.compile(r"\bMusica\s+di\s+([A-ZÀ-Ž][\wÀ-ÿ.\-'’ ]{4,85}?)(?=\s+Libretto\b)",re.I)
 
@@ -100,9 +100,9 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     recite=[]
     # Require each verified venue to immediately precede its own date/time.
     pairs=re.findall(
-        venue_pattern+r'\\s+'
-        r'([0-3]?\\d)\\s+('+ "|".join(MONTHS) +r')\\s+(20\\d{2}),?\\s+Ore\\s+'
-        r'([01]?\\d|2[0-3]):([0-5]\\d)',primary,re.I)
+        venue_pattern+r'\s+'
+        r'([0-3]?\d)\s+('+ "|".join(MONTHS) +r')\s+(20\d{2}),?\s+Ore\s+'
+        r'([01]?\d|2[0-3]):([0-5]\d)',primary,re.I)
     if len(pairs)!=len(re.findall(venue_pattern,primary,re.I)):
         raise ValueError("some Trapani official showtimes are missing or invalid")
     for d,month,y,h,m in pairs:
