@@ -636,6 +636,11 @@ def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=N
     # official opera/composer/source. The URL remains externally hosted;
     # never copy the art or misidentify another production as a poster.
     if composer:
+        from opera_atlas.verified_original_work_art import verified_original_art
+        original=verified_original_art(
+            source_url=url,title=title,composer=composer)
+        if original is not None:
+            return original
         from opera_atlas.verified_ticketing_art import verified_ticketing_image
         ticketing=verified_ticketing_image(
             source_url=url,title=title,composer=composer)
