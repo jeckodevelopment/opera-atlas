@@ -159,6 +159,14 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di L'occasione fa il ladro",
       "kind": "official_production_image"
+    },
+    "oa-w-000094": {
+      "work_id": "oa-w-000094",
+      "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-la-vedova-allegra_thumb.png",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di La vedova allegra",
+      "kind": "official_production_image"
     }
   },
   "checks": {

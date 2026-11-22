@@ -860,6 +860,17 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q651596"
       ]
+    },
+    "la-vedova-allegra": {
+      "librettist": "Victor Léon; Leo Stein",
+      "composition_year": 1905,
+      "premiere_year": 1905,
+      "premiere_venue": "Theater an der Wien",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://archiviostorico.operaroma.it/operetta/la-vedova-allegra-die-lustige-witwe/",
+        "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
+      ]
     }
   },
   "works_by_id": {

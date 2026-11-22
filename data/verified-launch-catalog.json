@@ -5460,6 +5460,29 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-ffbe120c526a352b",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+      "dates": [
+        [
+          "2026-11-06",
+          "21:00"
+        ],
+        [
+          "2026-11-07",
+          "21:00"
+        ],
+        [
+          "2026-11-08",
+          "18:00"
+        ]
+      ]
     }
   ]
 }

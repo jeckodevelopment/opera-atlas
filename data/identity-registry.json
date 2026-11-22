@@ -589,6 +589,13 @@
       "title": "L'occasione fa il ladro",
       "composer": "Gioachino Rossini",
       "wikidata_id": "Q651596"
+    },
+    "la vedova allegra|franz lehár": {
+      "id": "oa-w-000094",
+      "slug": "la-vedova-allegra",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "authority_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
     }
   },
   "venues": {
@@ -2444,6 +2451,14 @@
       "venue_id": "oa-v-000041",
       "slug": "pagliacci",
       "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "season": "2026"
+    },
+    "auto-ffbe120c526a352b": {
+      "id": "oa-s-000195",
+      "work_id": "oa-w-000094",
+      "venue_id": "oa-v-000035",
+      "slug": "la-vedova-allegra",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
       "season": "2026"
     }
   },
@@ -7499,6 +7514,24 @@
       "staging_id": "oa-s-000194",
       "original_date": "2026-11-22",
       "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+    },
+    "auto-ffbe120c526a352b|2026-11-06": {
+      "id": "oa-r-000860",
+      "staging_id": "oa-s-000195",
+      "original_date": "2026-11-06",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
+    },
+    "auto-ffbe120c526a352b|2026-11-07": {
+      "id": "oa-r-000861",
+      "staging_id": "oa-s-000195",
+      "original_date": "2026-11-07",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
+    },
+    "auto-ffbe120c526a352b|2026-11-08": {
+      "id": "oa-r-000862",
+      "staging_id": "oa-s-000195",
+      "original_date": "2026-11-08",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
     }
   },
   "reserved_works": {
