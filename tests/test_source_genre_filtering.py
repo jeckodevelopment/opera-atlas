@@ -14,6 +14,7 @@ class SourceGenreFilteringTests(unittest.TestCase):
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/non-dirmi-che-hai-paura/"),
             ("petruzzelli-opera-2026","https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/"),
             ("petruzzelli-opera-2027","https://www.fondazionepetruzzelli.it/eventi/lo-schiaccianoci-di-petr-ilic-cajkovskij-11-14-febbraio/"),
+            ("modena-teatro-opera-2026-27","https://www.teatrocomunalemodena.it/spettacolo/lanno-che-verra/"),
         ]
         for key,url in examples:
             with self.subTest(url=url):
@@ -28,6 +29,8 @@ class SourceGenreFilteringTests(unittest.TestCase):
             ("parma-opera-2027","https://teatroregioparma.it/spettacolo/boris-godunov/"),
             ("parma-opera-2027","https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"),
             ("fenice-opera-2026-27","https://www.teatrolafenice.it/event/adriana-lecouvreur/"),
+            ("modena-teatro-opera-2026-27","https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"),
+            ("modena-teatro-opera-2026-27","https://www.teatrocomunalemodena.it/spettacolo/leos-janacek-thomas-ades-vanishings/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/falstaff-2/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/ernani-2/"),
         ]
