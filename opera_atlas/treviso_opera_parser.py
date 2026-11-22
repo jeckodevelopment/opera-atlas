@@ -44,8 +44,9 @@ def parse_program(html:str,*,url:str):
         if not re.search(pattern,section,re.I):
             raise ValueError(f"missing verified Treviso production: {title}")
         scheduled=[date(year,MONTHS[month],day) for day in days]
-        if [d.weekday() for d in scheduled]!=[2,4,6]:
-            raise ValueError("official dates do not match Wednesday/Friday/Sunday turns")
+        preview_weekday = 1 if title=="Pagliacci" else 2
+        if [d.weekday() for d in scheduled]!=[preview_weekday,4,6]:
+            raise ValueError("official dates do not match preview/Friday/Sunday turns")
         # On the main season page the mid-week date is explicitly the
         # schools-only preview. It MUST NOT be published as public recita.
         rows.extend((title,composer,VENUE,dt.isoformat(),clock)
