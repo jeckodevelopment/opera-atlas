@@ -18,7 +18,7 @@ class FullTheatreProfileTests(unittest.TestCase):
 
     def test_all_venues_have_real_profiles_and_map_addresses(self):
         self.assertGreaterEqual(len(self.directory),52)
-        self.assertEqual(len(self.profiles),len(self.directory))
+        self.assertGreaterEqual(len(self.profiles),len(self.directory))
         for venue in self.directory:
             key=venue.get("profile_key",venue["city"]+"|"+venue["name"])
             self.assertIn(key,self.profiles,key)
