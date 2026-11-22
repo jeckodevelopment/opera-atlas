@@ -226,12 +226,42 @@
         {
           "title": "Jeanne d’Arc au bûcher",
           "composer": "Arthur Honegger",
-          "work_id": null
+          "work_id": "oa-w-000099",
+          "editorial": {
+            "synopsis": "Condotta al rogo, Giovanna d’Arco rievoca le voci, gli incontri e il processo che hanno segnato la sua vita. Il racconto di Paul Claudel ne intreccia memoria, fede e condanna.",
+            "history": {
+              "librettist": "Paul Claudel",
+              "premiere_year": 1938,
+              "premiere_date": "1938-05-12",
+              "premiere_venue": "Kunstmuseum",
+              "premiere_city": "Basilea",
+              "sources": [
+                "https://catalogue.bnf.fr/ark:/12148/cb13913594m.public",
+                "https://societe.paul-claudel.net/oeuvre/jeanne-darc-au-bucher/",
+                "https://www.teatroverdi-trieste.com/it/news/presentata-la-stagione-lirica-e-di-balletto-2026-27/"
+              ]
+            }
+          }
         },
         {
           "title": "Jeanne Dark",
           "composer": "Fabio Vacchi",
-          "work_id": null
+          "work_id": "oa-w-000100",
+          "editorial": {
+            "synopsis": "Ispirata alla Pulzella d’Orléans di Voltaire, questa satira racconta una Giovanna ribelle alle autorità e ai dogmi del suo tempo. L’eroina sfugge al rogo con un finale imprevedibile.",
+            "history": {
+              "librettist": "Stefano Jacini",
+              "premiere_year": 2024,
+              "premiere_date": "2024-05-14",
+              "premiere_venue": "Sala Mehta, Teatro del Maggio Musicale Fiorentino",
+              "premiere_city": "Firenze",
+              "sources": [
+                "https://www.maggiofiorentino.com/news/comunicati/jennae-dark-prima-assoluta-14-maggio-2024/",
+                "https://www.maggiofiorentino.com/events/jeanne-dark-5",
+                "https://www.teatroverdi-trieste.com/it/news/presentata-la-stagione-lirica-e-di-balletto-2026-27/"
+              ]
+            }
+          }
         }
       ],
       "source_key": "verdi-trieste-season-2026-27",
