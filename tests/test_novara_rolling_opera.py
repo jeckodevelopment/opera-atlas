@@ -111,6 +111,36 @@ class NovaraRollingOperaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"multi-work programme"):
             parse_detail(html,url=url)
 
+    def test_multiple_official_composers_with_school_recite_and_public_show(self):
+        url=HOST+"/stagione-27-dove-nasce-il-melograno.html"
+        html=(
+            "<div>Home / Spettacoli / Opera / Dove nasce il melograno</div>"
+            "<h1>Dove nasce il melograno</h1>"
+            "<p>Musica di Arturo Dal Bianco, Giuseppe Guerrera, "
+            "Massimiliano Piscitello (Accademia AMO)</p>"
+            "<p>Libretto di Pietro Utili</p>"
+            "<h3>informazioni sull'evento</h3>"
+            "<h4>Giovedì 29 aprile 2027</h4>"
+            "<p>ore 10:00 e 12:00 recite per le scuole</p>"
+            "<h4>Venerdì 30 aprile 2027</h4><p>ore 20:00</p>"
+            "<h3>TEATRO COCCIA</h3>"
+        )
+        parsed=parse_detail(html,url=url)
+        self.assertEqual(parsed,(
+            "Dove nasce il melograno",
+            "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
+            "Teatro Coccia",[("2027-04-30","20:00")]))
+        facts=parse_source_credited_opera_detail(
+            "coccia-novara-rolling-opera",url,html)
+        self.assertEqual(len(facts),1)
+        self.assertEqual(facts[0]["date"],"2027-04-30")
+        self.assertEqual(facts[0]["composer"],parsed[1])
+        with self.assertRaises(ValueError):
+            parse_detail(html.replace("ore 20:00</p>",
+                                      "ore 20:00 e 21:00</p>"),url=url)
+        with self.assertRaises(ValueError):
+            parse_detail(html.replace("<h4>Venerdì 30 aprile 2027</h4><p>ore 20:00</p>",""),url=url)
+
     def test_unverified_genres_dates_and_composers_fail_closed(self):
         cases=[
             page(composer="Giacomo Puccini").replace("Musica di Giacomo Puccini",""),
