@@ -21,7 +21,7 @@ from scripts.build_verified_catalog import official_local_time
 from opera_atlas.scala_arena_parser import parse_showtimes
 from opera_atlas.national_detail_parser import parse_national_showtimes, VisibleText
 from scripts.publish_catalog_v2 import normalized
-from opera_atlas.work_identity import canonical_title
+from opera_atlas.work_identity import canonical_title, resolve_work
 
 OUTPUT=ROOT/"data"/"candidate-detail-evidence.json"
 PUBLIC=ROOT/"public"/"catalog"/"candidate-detail-evidence.json"
@@ -205,22 +205,18 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.lecce_provincia_parser import parse_program
         out=[]
         for title,composer,venue,day,clock in parse_program(html,url=url):
-            matches=[w for w in registry.get("works",{}).values()
-                     if normalized(w["title"])==normalized(canonical_title(title,composer))
-                     and normalized(w["composer"])==normalized(composer)]
-            if len(matches)!=1:return []
-            work=matches[0]
+            # The official source uses a straight apostrophe, while the
+            # canonical work registry uses a typographic apostrophe.
+            work=resolve_work(registry,title,composer)
+            if work is None:return []
             out.append({"event_title":work["title"],"composer":work["composer"],
                         "venue":venue,"date":day,"starts_at":official_local_time(day,clock)})
         return out
     if source_key=="lecce-politeama-opera-2026":
         from opera_atlas.lecce_politeama_parser import parse_detail
         title,composer,venue,rows=parse_detail(html,url=url)
-        matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(canonical_title(title,composer))
-                 and normalized(w["composer"])==normalized(composer)]
-        if len(matches)!=1:return []
-        work=matches[0]
+        work=resolve_work(registry,title,composer)
+        if work is None:return []
         return [{"event_title":work["title"],"composer":work["composer"],
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in rows]
