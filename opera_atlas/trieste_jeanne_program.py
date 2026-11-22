@@ -10,7 +10,6 @@ import json
 import re
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlsplit
 
 from scripts.publish_catalog_v2 import ROOT
 
@@ -56,7 +55,7 @@ def verified_program(*,source_key:str,source_url:str)->tuple[str,list[dict],list
         date.fromisoformat(day)
         if not re.fullmatch(r"(?:[01]\\d|2[0-3]):[0-5]\\d",clock):
             raise ValueError("invalid official Trieste clock")
-    from scripts.auto_catalogue import official_local_time
+    from scripts.build_verified_catalog import official_local_time
     parts=[{"title":title,"composer":composer} for title,composer in COMPONENTS]
     heading="/".join(x["title"] for x in parts)+" di "+"/".join(
         x["composer"] for x in parts)
