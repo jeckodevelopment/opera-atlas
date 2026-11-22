@@ -424,6 +424,30 @@ def next_id(entries:dict,prefix:str)->str:
              if x["id"].startswith(prefix) and x["id"][len(prefix):].isdigit()]
     return prefix+f"{max(numeric,default=0)+1:06d}"
 
+
+def canonicalize_san_carlo_rossini_credit(rows:list[dict],registry:dict)->list[dict]:
+    """Bridge one source-attested Rossini spelling to a unique canonical work.
+
+    The 2026/27 secondary San Carlo calendar credits Gioacchino Rossini
+    whereas the canonical work credits Gioachino Rossini. Do not normalize
+    arbitrary authors, works or venues, and never change showtimes.
+    """
+    if not isinstance(rows,list) or not rows:
+        return rows
+    if not all(isinstance(r,dict)
+               and r.get("event_title")=="Il barbiere di Siviglia"
+               and r.get("composer")=="Gioacchino Rossini"
+               and r.get("venue")=="Teatro di San Carlo"
+               for r in rows):
+        return rows
+    matches=[w for w in registry.get("works",{}).values()
+             if w.get("title")=="Il barbiere di Siviglia"
+             and w.get("composer")=="Gioachino Rossini"]
+    if len(matches)!=1:
+        return rows
+    return [{**r,"composer":matches[0]["composer"]} for r in rows]
+
+
 def canonicalize_cached_trieste_credit(rows:list[dict],registry:dict)->list[dict]:
     """Repair an older verified Trieste checkpoint only for known works.
 
@@ -611,6 +635,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             rows=[normalize_event_fact(row) for row in rows]
         if key=="verdi-trieste-season-2026-27":
             rows=canonicalize_cached_trieste_credit(rows,next_registry)
+        if key=="napoli-san-carlo-rolling-opera":
+            rows=canonicalize_san_carlo_rossini_credit(rows,next_registry)
         if not rows or not all(isinstance(x,dict) and
                isinstance(x.get("composer"),str) and isinstance(x.get("event_title"),str)
                and isinstance(x.get("date"),str) and isinstance(x.get("starts_at"),str)
