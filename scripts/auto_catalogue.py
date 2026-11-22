@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "haydn-rolling-opera":("Bolzano","Teatro Comunale di Bolzano"),
     "asti-alfieri-rolling-opera":("Asti","Teatro Alfieri"),
     "savona-giocosa-rolling-opera":("Savona","Teatro Chiabrera"),
     "sassari-de-carolis-rolling-opera":("Sassari","Teatro Comunale di Sassari"),
@@ -304,6 +305,12 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
         return None
     city,default_venue=VENUE_BY_SOURCE[source_key]
     named={x.get("venue") for x in rows if isinstance(x,dict)}
+    if source_key=="haydn-rolling-opera" and len(named)==1:
+        verified=next(iter(named))
+        cities={"Teatro Comunale di Bolzano":"Bolzano",
+                "Teatro Sociale":"Trento"}
+        if verified not in cities:return None
+        city=cities[verified]
     if len(named)!=1:return None
     venue=next(iter(named))
     if (source_key=="sassari-de-carolis-rolling-opera"
@@ -335,7 +342,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Torre del Lago Puccini":"Toscana","Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Rovigo":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Alghero":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Savona":"Liguria","Asti":"Piemonte","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Torre del Lago Puccini":"Toscana","Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Rovigo":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Alghero":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Savona":"Liguria","Asti":"Piemonte","Bolzano":"Trentino-Alto Adige","Trento":"Trentino-Alto Adige","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
