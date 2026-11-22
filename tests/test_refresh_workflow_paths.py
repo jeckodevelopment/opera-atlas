@@ -7,7 +7,7 @@ WORKFLOW=Path(__file__).resolve().parents[1]/".github"/"workflows"/"refresh-cata
 class RefreshWorkflowPathTests(unittest.TestCase):
     def test_every_adapter_and_parser_change_triggers_daily_workflow(self):
         text=WORKFLOW.read_text(encoding="utf-8")
-        for expected in ("- 'opera_atlas/**'","- 'scripts/**'","- 'tests/**'",
+        for expected in ("- 'opera_atlas/**'","- 'scripts/**'","- 'tests/test_auto_catalogue.py'",
                          "- 'data/season-index-config.json'"):
             with self.subTest(pattern=expected):
                 self.assertIn(expected,text)
