@@ -181,7 +181,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                 for day,clock in rows]
     if source_key=="messina-vittorio-opera-2026-27":
         from opera_atlas.messina_opera_parser import parse_detail
-        title,composer,venue,rows=parse_detail(html,url=url)
+        title,composer,venue,rows=parse_detail(html,url=url,registry=registry)
         matches=[w for w in registry.get("works",{}).values()
                  if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
