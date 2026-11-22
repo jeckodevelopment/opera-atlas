@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T16:30:01+00:00",
+  "checked_at": "2026-11-22T16:31:04+00:00",
   "scope": "national",
-  "attempted": 8,
+  "attempted": 7,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -67,12 +67,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9837cf3a1cb8aa932ab3",
-      "outcome": "verified_composite_program",
-      "rows": 4,
-      "program_recite": 2
     },
     {
       "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
