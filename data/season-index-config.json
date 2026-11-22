@@ -325,6 +325,13 @@
       "min_links": 3
     },
     {
+      "key": "macerata-festival-rolling",
+      "official_url": "https://www.sferisterio.it/",
+      "url": "https://www.sferisterio.it/macerata-opera-festival-2027",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "salerno-verdi-opera-2026",
       "official_url": "https://cultura.comune.salerno.it/",
       "url": "https://cultura.comune.salerno.it/teatro-verdi/la-stagione/",
