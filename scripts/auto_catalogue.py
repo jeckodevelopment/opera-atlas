@@ -632,6 +632,31 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                    and normalized(x["title"]).replace("’","'")==title_credit
                    and normalized(x["composer"])==composer]
         exact=[x for x in colliding if x["source_url"]==url]
+        # The Mascagni Festival publishes one first-party ticket URL *per
+        # recita*. Both pages explicitly identify the same 2026 production
+        # in Piazza Goldoni. These two exact URLs form one staging, never
+        # separate editions with misleading duplicate opera cards.
+        mascagni_pages={
+            "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
+            "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
+        }
+        if (not exact and key=="goldoni-livorno-rolling-lirica"
+            and url in mascagni_pages and city=="Livorno"
+            and venue=="Piazza Goldoni" and title_credit=="cavalleria rusticana"
+            and composer=="pietro mascagni"
+            and all(day in {"2026-08-19","2026-08-20"} for day in dates)
+            and all(hour=="21:30" for hour in dates.values())):
+            shared=[p for p in colliding
+                    if p["source_url"] in mascagni_pages
+                    and p["title"]==work["title"]
+                    and p["composer"]==work["composer"]
+                    and all(day in {"2026-08-19","2026-08-20"} and hour=="21:30"
+                            for day,hour in p["dates"])]
+            if len(shared)==1 and all(
+                day not in dict(shared[0]["dates"])
+                or dict(shared[0]["dates"])[day]==hour
+                for day,hour in dates.items()):
+                exact=shared
         # Distinct official productions of the same opera in the same
         # theatre are legitimate (e.g. two different Aida stagings at
         # Verona). Preserve the original route and assign an edition URL
@@ -723,7 +748,7 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             next_registry["performances"][pk]={
                 "id":f"oa-r-{_next_replica_id(next_registry):06d}",
                 "staging_id":next_registry["stagings"][production["key"]]["id"],
-                "original_date":day,"source_url":url}
+                "original_date":day,"source_url":production["source_url"]}
             production["dates"].append([day,hour])
             created_recite+=1
         production["dates"].sort(key=lambda x:x[0])

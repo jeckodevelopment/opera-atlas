@@ -86,18 +86,32 @@ def verified_livorno_recital_urls(manifest:dict, detail:dict)->set[str]:
     from opera_atlas.livorno_future_parser import eligible_detail
 
     official_season="https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    festival_sources={
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
+    }
     rome=ZoneInfo("Europe/Rome")
     performances={}
+    festival_performances={}
     for production in manifest.get("productions",[]):
-        if (production.get("municipality")!="Livorno"
-            or production.get("venue")!="Teatro Goldoni"
-            or production.get("source_url")!=official_season):
+        if production.get("municipality")!="Livorno":
+            continue
+        is_season=(production.get("venue")=="Teatro Goldoni"
+                   and production.get("source_url")==official_season)
+        is_festival=(production.get("venue")=="Piazza Goldoni"
+                     and production.get("source_url") in festival_sources
+                     and production.get("title")=="Cavalleria rusticana"
+                     and production.get("composer")=="Pietro Mascagni")
+        if not (is_season or is_festival):
             continue
         title=normalized(production.get("title","")).replace("’","'")
         composer=normalized(production.get("composer","")).replace("’","'")
         for day,clock in production.get("dates",[]):
             key=(title,composer,day,clock)
-            performances[key]=performances.get(key,0)+1
+            if is_season:
+                performances[key]=performances.get(key,0)+1
+            if is_festival and day in {"2026-08-19","2026-08-20"} and clock=="21:30":
+                festival_performances[key]=festival_performances.get(key,0)+1
 
     verified=set()
     for row in detail.get("evidence",[]):
@@ -114,7 +128,14 @@ def verified_livorno_recital_urls(manifest:dict, detail:dict)->set[str]:
             or not isinstance(facts[0],dict)):
             continue
         fact=facts[0]
-        if fact.get("venue")!="Teatro Goldoni":
+        venue=fact.get("venue")
+        if venue not in ("Teatro Goldoni","Piazza Goldoni"):
+            continue
+        is_festival=(venue=="Piazza Goldoni"
+                     and url in festival_sources
+                     and fact.get("event_title")=="Cavalleria rusticana"
+                     and fact.get("composer")=="Pietro Mascagni")
+        if venue=="Piazza Goldoni" and not is_festival:
             continue
         try:
             day=fact["date"]
@@ -130,7 +151,8 @@ def verified_livorno_recital_urls(manifest:dict, detail:dict)->set[str]:
         key=(normalized(str(fact.get("event_title",""))).replace("’","'"),
              normalized(str(fact.get("composer",""))).replace("’","'"),
              day,clock)
-        if performances.get(key)==1:
+        if (festival_performances.get(key)==1 if is_festival
+            else performances.get(key)==1):
             verified.add(url)
     return verified
 
