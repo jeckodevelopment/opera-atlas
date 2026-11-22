@@ -33,12 +33,18 @@ button,input,select{font:inherit;border:1px solid #d7d0c2;border-radius:8px;back
 <div class="toolbar"><input id="filter" type="search" placeholder="Filtra per teatro o sorgente" aria-label="Filtra gli indici"></div>
 <div class="panel table-wrap"><table class="table"><thead><tr><th>Indice</th><th>Stato</th><th>Link</th><th>Nuove candidate</th><th>Ultima verifica</th></tr></thead><tbody id="season"><tr><td colspan="5">Caricamento…</td></tr></tbody></table></div></section>
 <section><h2>Elaborazione delle candidate</h2><div id="candidate" class="panel">Caricamento…</div></section>
+<section aria-labelledby="identity-title"><h2 id="identity-title">Titoli delle opere da riconciliare</h2>
+<p class="muted">Segnalazioni da evidenze ufficiali: possibili alias, opere nuove e compositori da verificare. Nessuna modifica automatica al catalogo.</p>
+<div class="toolbar"><input id="identity-filter" type="search" placeholder="Filtra titolo, compositore o fonte" aria-label="Filtra identità da verificare"><select id="identity-category" aria-label="Categoria di verifica"><option value="">Tutti i casi</option><option value="new_work_candidate">Possibile nuova opera / alias</option><option value="composer_credit_to_review">Credito da verificare</option><option value="missing_composer">Compositore mancante</option></select></div>
+<p id="identity-summary" class="muted">Caricamento…</p>
+<div class="panel table-wrap"><table class="table"><thead><tr><th>Titolo rilevato</th><th>Compositore</th><th>Motivo</th><th>Recite</th><th>Fonte ufficiale</th></tr></thead><tbody id="identity-rows"><tr><td colspan="5">Caricamento…</td></tr></tbody></table></div></section>
 <section><h2>Come leggere i dati</h2><div class="notice">Una fonte con indice disponibile non è necessariamente completamente acquisita. Un link a una produzione non è una recita. L'assenza di recite può dipendere dalla programmazione, da dati mancanti o da errori di riconciliazione. Le percentuali indicate per teatro misurano soltanto le date ufficiali già individuate, non la copertura complessiva della stagione.</div></section>
 <footer class="foot">Dashboard tecnica indipendente · Dati ufficiali elaborati da Opera Atlas · <a href="https://github.com/jeckodevelopment/opera-atlas/actions" rel="noopener">Workflow GitHub</a></footer>
 </main><script>
 "use strict";
 const BASE="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/";
 const urls={coverage:"public/catalog/coverage.json",season:"data/season-index-health.json",candidate:"data/candidate-detail-health.json",recite:"public/catalog/recite-coverage.json",automation:"public/catalog/source-automation.json"};
+const identityUrl="public/catalog/work-identity-review.json";
 const $=id=>document.getElementById(id);
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n};
 const td=(tr,value)=>tr.append(el("td",value==null?"—":value));
@@ -98,9 +104,21 @@ function draw(data){
  for(const [reason,n] of Object.entries(failures).sort((a,b)=>b[1]-a[1]))content.push(el("p",reason+": "+n));
  if(!total)content.push(el("p","Nessun esito di elaborazione disponibile."));
  replace($("candidate"),content);
- $("updated").textContent="Ultima scansione indici: "+stamp(season.checked_at)+" · dettagli: "+stamp(candidate.checked_at)+" · fonti: "+stamp(coverage.last_scan_at);
+ const identity=data.identity,summary=$("identity-summary"),list=$("identity-rows");
+  if(!identity){summary.textContent="Report delle identità non ancora generato: sarà pubblicato al prossimo checkpoint.";const row=el("tr"),cell=el("td","Nessun report disponibile");cell.colSpan=5;row.append(cell);replace(list,[row]);}
+  else{
+    const totals=identity.totals||{},groups=identity.groups||[];
+    summary.textContent=(totals.unmatched_groups||0)+" identità da verificare · "+(totals.unmatched_facts||0)+" recite coinvolte · "+(totals.translated_facts_resolved||0)+" recite con alias riconosciuto · scansione: "+stamp(identity.checked_at)+(identity.truncated?" · dati parziali":"");
+    const query=$("identity-filter").value.trim().toLowerCase(),cat=$("identity-category").value;
+    const filtered=groups.filter(g=>(!cat||g.category===cat)&&(!query||[g.title,g.composer,...(g.sources||[]).map(x=>x.source_key)].join(" ").toLowerCase().includes(query)));
+    const categories={new_work_candidate:"Possibile nuova opera o alias",composer_credit_to_review:"Credito da verificare",missing_composer:"Compositore mancante"};
+    const rows=filtered.map(g=>{const tr=el("tr");td(tr,g.title);td(tr,g.composer||"—");td(tr,categories[g.category]||g.category);td(tr,g.recite_observed);const cell=el("td");for(const src of g.sources||[]){const d=el("div");if(src.url&&src.url.startsWith("https://")){const a=el("a",src.source_key||"Fonte");a.href=src.url;a.rel="noopener noreferrer";a.target="_blank";d.append(a)}else d.textContent=src.source_key||"Fonte";cell.append(d)}tr.append(cell);return tr});
+    if(!rows.length){const tr=el("tr"),cell=el("td","Nessun caso corrisponde ai filtri.");cell.colSpan=5;tr.append(cell);rows.push(tr)}
+    replace(list,rows);
+  }
+  $("updated").textContent="Ultima scansione indici: "+stamp(season.checked_at)+" · dettagli: "+stamp(candidate.checked_at)+" · fonti: "+stamp(coverage.last_scan_at);
  $("light").className="dot ok";$("message").textContent="Dati letti da GitHub · aggiornamento su richiesta";
 }
-async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const values=await Promise.all(Object.values(urls).map(fetchJson));latest=Object.fromEntries(Object.keys(urls).map((key,i)=>[key,values[i]]));draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("recite"),[]);replace($("venue-overview"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
-$("reload").addEventListener("click",refresh);$("filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-status").addEventListener("change",()=>{if(latest)draw(latest)});refresh();
+async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const values=await Promise.all(Object.values(urls).map(fetchJson));latest=Object.fromEntries(Object.keys(urls).map((key,i)=>[key,values[i]]));latest.identity=await fetchJson(identityUrl).catch(()=>null);draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("recite"),[]);replace($("venue-overview"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
+$("reload").addEventListener("click",refresh);$("filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-status").addEventListener("change",()=>{if(latest)draw(latest)});$("identity-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("identity-category").addEventListener("change",()=>{if(latest)draw(latest)});refresh();
 </script></body></html>
