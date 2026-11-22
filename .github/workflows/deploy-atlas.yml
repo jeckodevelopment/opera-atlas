@@ -53,6 +53,9 @@ jobs:
           # companion JSON. Rebuild it before client and feed tests, without
           # uploading generated catalog data through the frontend publisher.
           python -m scripts.publish_programs
+          # Reserved program-component works may have new authentic artwork
+          # before the previously committed public poster feed is rebuilt.
+          python -m scripts.publish_work_posters
       - name: Verify canonical routes and app
         run: |
           python -m unittest discover -s tests -v
@@ -61,6 +64,7 @@ jobs:
           python -m scripts.publish_work_editorial --check
           python -m scripts.publish_venue_directory --check
           python -m scripts.publish_programs --check
+          python -m scripts.publish_work_posters --check
       - name: Install SFTP transport
         run: python -m pip install 'paramiko>=3.4,<5'
       - name: Upload Atlas static files via SFTP port 22 (OVH)
