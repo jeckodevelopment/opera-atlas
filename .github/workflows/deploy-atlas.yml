@@ -9,8 +9,9 @@ on:
       - 'site/*.css'
       - 'site/*.svg'
       - 'site/.htaccess'
-      # Test-only fixes must be able to unblock a previously failed release.
-      - 'tests/**'
+      # Tests run independently in CI. Test-only changes do not alter the
+      # static frontend and must not initiate an unrelated SFTP deployment.
+      # A failed release can be retried via workflow_dispatch.
       - 'scripts/deploy_atlas.py'
       - 'scripts/deploy_atlas_simple_ftp.py'
       - 'scripts/deploy_atlas_sftp.py'
