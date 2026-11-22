@@ -31,3 +31,7 @@ della scansione live né l'effettiva pubblicazione delle recite.
 - Al primo refresh verificare la classificazione delle cinque recite,
   l'esclusione del concerto e della rappresentazione in altra sede.
 - Verificare separatamente le recite effettivamente pubblicate.
+
+La PR comprende inoltre la riconciliazione dei profili editoriali per
+le sedi Sangiorgi e Ariosto e del test sulle immagini originali ufficiali,
+necessaria dopo l'ingresso delle nuove sedi nel catalogo canonico.
