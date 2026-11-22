@@ -4,6 +4,14 @@
   "new_recite": 0,
   "auto_skipped": [
     {
+      "candidate_id": "oa-index-995d8f9ff8de58d84cfd",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-ab6612954af20d7d7cad",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
       "title": "Cavalleria rusticana",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
