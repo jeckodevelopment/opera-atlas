@@ -24,6 +24,21 @@ class RegionalProgramTests(unittest.TestCase):
         self.assertEqual(approved_programme(PAGE,url=URL),PDF)
         self.assertEqual(extract("rovigo-regione-programma-2026-27",URL,PAGE,1),[URL])
 
+    def test_future_consecutive_season_document(self):
+        future_pdf=PDF.replace("2026_27","2027_28")
+        future_page=PAGE.replace("2026","2027").replace("2027</p>","2028</p>").replace(PDF, future_pdf)
+        future_page=future_page.replace("Programma_stagione_2026_27_da_scaricare",
+                                        "Programma_stagione_2027_28_da_scaricare")
+        self.assertEqual(approved_programme(future_page,url=URL),future_pdf)
+        with self.assertRaises(ValueError):
+            approved_programme(PAGE.replace(PDF,future_pdf).replace(
+                "Programma_stagione_2026_27_da_scaricare",
+                "Programma_stagione_2027_28_da_scaricare"),url=URL)
+        with self.assertRaises(ValueError):
+            approved_programme(PAGE.replace(PDF,PDF.replace("2026_27","2026_29")).replace(
+                "Programma_stagione_2026_27_da_scaricare",
+                "Programma_stagione_2026_29_da_scaricare"),url=URL)
+
     def test_overview_date_range_never_establishes_recite(self):
         for broken in (
             PAGE.replace("Teatro Sociale di Rovigo","Teatro Comunale di Modena"),
