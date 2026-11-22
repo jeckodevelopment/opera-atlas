@@ -73,7 +73,8 @@ INDEX_VENUES = {
     "parma-opera-2027": ("Parma|Teatro Regio di Parma",),
     "massimo-season-2026-27": ("Palermo|Teatro Massimo",),
     "carlo-felice-season-2026-27": ("Genova|Teatro Carlo Felice",),
-    "donizetti-opera-2026": ("Bergamo|Teatro Donizetti",),
+    "donizetti-opera-2026": ("Bergamo|Teatro Donizetti",
+                             "Bergamo|Teatro Sociale"),
     "teatro-grande-opera-2026": ("Brescia|Teatro Grande",),
     "maggio-fiorentino-calendar-2027": ("Firenze|Teatro del Maggio Musicale Fiorentino", "Firenze|Teatro Goldoni"),
     # Official production pages already identify both distinct venues:

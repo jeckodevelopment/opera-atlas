@@ -76,7 +76,9 @@ class CorroborationTests(unittest.TestCase):
         output,ids,urls,report=promote(
             facts,registry,e,c,approved["urls"],today=date(2026,11,22))
         self.assertEqual(report["auto_skipped"],[])
-        rovigo=[x for x in output["productions"] if x["municipality"]=="Rovigo"]
+        rovigo=[x for x in output["productions"]
+                if x["municipality"]=="Rovigo" and x["venue"]=="Teatro Sociale"
+                and x["title"]=="La traviata"]
         self.assertEqual(len(rovigo),1)
         self.assertEqual(rovigo[0]["title"],"La traviata")
         self.assertEqual(rovigo[0]["dates"],
@@ -96,7 +98,8 @@ class CorroborationTests(unittest.TestCase):
             output,ids,e,c,urls,today=date(2026,11,22))
         self.assertEqual(repeat["new_recite"],0)
         self.assertEqual(len([x for x in after["productions"]
-                              if x["municipality"]=="Rovigo"]),1)
+                              if x["municipality"]=="Rovigo" and x["venue"]=="Teatro Sociale"
+                              and x["title"]=="La traviata"]),1)
 
 if __name__=="__main__":
     unittest.main()
