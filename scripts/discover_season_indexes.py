@@ -310,6 +310,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="sassari-de-carolis-rolling-opera":
+        from opera_atlas.sassari_future_parser import eligible_detail
+        return eligible_detail(url)
     if key=="goldoni-livorno-rolling-lirica":
         from opera_atlas.livorno_future_parser import eligible_detail
         return eligible_detail(url)
@@ -596,6 +599,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="sassari-de-carolis-rolling-opera":
+        from opera_atlas.sassari_future_parser import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="goldoni-livorno-rolling-lirica":
         from opera_atlas.livorno_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -720,7 +726,8 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         if parsed.scheme!="https" or parsed.hostname!=hostname or parsed.username or parsed.password or parsed.port is not None:
             continue
         if (parsed.query and key not in {"lecce-politeama-opera-2026",
-                                          "sassari-de-carolis-opera-2026"}) or parsed.fragment:
+                                          "sassari-de-carolis-opera-2026",
+                                          "sassari-de-carolis-rolling-opera"}) or parsed.fragment:
             continue
         if eligible(key,url):
             result.add(url)
@@ -733,6 +740,7 @@ def validate_config(config:dict)->list[dict]:
         raise ValueError("invalid season index configuration")
     allowed={
         "sassari-de-carolis-opera-2026":("www.marialisadecarolis.it","/opere-liriche.aspx"),
+        "sassari-de-carolis-rolling-opera":("www.marialisadecarolis.it","/opere-liriche.aspx"),
         "messina-vittorio-opera-2026-27":("www.teatrovittorioemanuele.it","/event_listing_type/opera-26-27/"),
         "lecce-apollo-pinocchio-2026":("www.provincia.le.it","/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"),
         "lecce-politeama-opera-2026":("www.politeamagreco.it","/programmazione.asp"),
@@ -862,6 +870,8 @@ def validate_config(config:dict)->list[dict]:
                               and not index.query)
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="sassari-de-carolis-rolling-opera":
+            valid_season=index.path=="/opere-liriche.aspx" and not index.query
         elif key=="sassari-de-carolis-opera-2026":
             valid_season=index.path=="/opere-liriche.aspx" and not index.query
         elif key=="messina-vittorio-opera-2026-27":
