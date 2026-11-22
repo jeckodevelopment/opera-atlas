@@ -332,7 +332,9 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                {"Teatro del Maggio Musicale Fiorentino","Teatro Goldoni"}
                if source_key=="maggio-fiorentino-calendar-2027" else
                {"Teatro Goldoni","Piazza Goldoni"}
-               if source_key=="goldoni-livorno-rolling-lirica" else {default_venue})
+               if source_key=="goldoni-livorno-rolling-lirica" else
+               {"Teatro Comunale di Bolzano","Teatro Sociale"}
+               if source_key=="haydn-rolling-opera" else {default_venue})
     if venue not in permitted:return None
     found=[(key,value) for key,value in registry["venues"].items()
            if value["city"]==city and value["name"]==venue
