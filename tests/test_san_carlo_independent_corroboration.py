@@ -24,6 +24,7 @@ def production(title, composer, dates):
     return {
         "title": title, "composer": composer,
         "venue": "Teatro di San Carlo", "city": "Napoli",
+        "official_event_url": ("https://www.teatrosancarlo.it/spettacoli/luisa-miller/" if title == "Luisa Miller" else "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"),
         "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
         "review_status": "needs_primary_corroboration",
         "performances": [{"date": day, "time": clock} for day, clock in dates],
