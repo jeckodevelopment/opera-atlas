@@ -1136,25 +1136,6 @@
       ]
     },
     {
-      "key": "lombardia-death-venice-reggio-emilia",
-      "title": "Death in Venice",
-      "composer": "Benjamin Britten",
-      "venue": "Teatro Valli",
-      "municipality": "Reggio Emilia",
-      "region": "Emilia-Romagna",
-      "source_url": "https://www.operalombardia.it/calendario/",
-      "dates": [
-        [
-          "2027-01-29",
-          null
-        ],
-        [
-          "2027-01-31",
-          null
-        ]
-      ]
-    },
-    {
       "key": "lombardia-death-venice-cremona",
       "title": "Death in Venice",
       "composer": "Benjamin Britten",
