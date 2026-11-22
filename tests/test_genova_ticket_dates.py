@@ -64,6 +64,25 @@ class CarloFeliceTicketTests(unittest.TestCase):
             url=URL,title="Le nozze di figaro",
             composer="Wolfgang Amadeus Mozart")[-1]),6)
 
+    def test_ticket_cards_with_extra_accessibility_labels(self):
+        # Each verified date owns its own clock, even when the source CMS
+        # inserts labels between the subscription turn and the time.
+        html=fixture().replace(" | Ore "," | Accessibilità e informazioni | Ore ")
+        venue,rows=parse_detail(
+            html,source_key="carlo-felice-season-2026-27",
+            url=URL,title="Le nozze di figaro",
+            composer="Wolfgang Amadeus Mozart")
+        self.assertEqual(venue,"Teatro Carlo Felice")
+        self.assertEqual(rows,[("2026-"+x[3:5]+"-"+x[:2],t) for x,t in ROWS])
+        # A date without an adjacent clock must not silently borrow the
+        # following row's time.
+        broken=html.replace("Ore 15:00","Orario da definire",1)
+        with self.assertRaisesRegex(ValueError,"incomplete"):
+            parse_detail(
+                broken,source_key="carlo-felice-season-2026-27",
+                url=URL,title="Le nozze di figaro",
+                composer="Wolfgang Amadeus Mozart")
+
     def test_missing_clock_never_assumes_a_time(self):
         with self.assertRaisesRegex(ValueError,"incomplete"):
             parse_detail(fixture(missing=True),
