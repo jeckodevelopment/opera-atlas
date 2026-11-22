@@ -63,10 +63,15 @@ class HaydnRollingOperaTests(unittest.TestCase):
                 url="https://www.haydn.it/eventi/"+slug
                 self.assertTrue(excluded_nonopera(KEY,url))
                 self.assertEqual(classify(KEY,url,set()),"excluded_nonopera")
+        self.assertTrue(excluded_nonopera(KEY,
+            "https://www.haydn.it/eventi/il-barbiere-di-siviglia-e-la-rosa-incantata"))
+        self.assertEqual(classify(KEY,
+            "https://www.haydn.it/eventi/il-barbiere-di-siviglia-e-la-rosa-incantata",set()),
+            "excluded_nonopera")
         real=("la-clemenza-di-tito","la-clemenza-di-tito-2",
               "cronaca-di-un-amore-callas-e-pasolini",
               "cronaca-di-un-amore-callas-e-pasolini-2",
-              "il-barbiere-di-siviglia-e-la-rosa-incantata")
+              "la-boheme-5")
         for slug in real:
             with self.subTest(real_opera=slug):
                 url="https://www.haydn.it/eventi/"+slug
