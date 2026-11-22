@@ -101,7 +101,7 @@ class GoldoniFutureTests(unittest.TestCase):
           detail(kind="Prosa"),detail(title="Concerto di Capodanno"),
           detail(venue="La Goldonetta"),detail(composer=""),
           detail(composer="autore non identificato"),
-          detail(clock="da definire"),detail(date="18 Aprile 2026"),
+          detail(clock="da definire"),detail(date="18 Aprile 2025"),
           detail().replace("Mediagallery","Prove di orchestra")
                   .replace("Scopri le date dello spettacolo","Calendario generico"),
           detail().replace("Musica di Giuseppe Verdi","Musiche di vari autori"),
@@ -112,6 +112,30 @@ class GoldoniFutureTests(unittest.TestCase):
                 parse_detail(page,url=D1)
         with self.assertRaises(ValueError):
             parse_detail(detail(),url="https://evil.example/spettacoli/nuova-traviata/")
+
+    def test_2026_dido_single_ticket_is_accepted_from_official_page(self):
+        url=HOST+"/spettacoli/dido-ed-enea/"
+        html=detail(title="DIDO AND AENEAS",date="06 Novembre 2026",
+                    clock="20",composer="Henry Purcell")
+        html=html.replace("Direttore Maria Rossi","Prima esecuzione mondiale")
+        self.assertEqual(parse_detail(html,url=url),(
+            "DIDO AND AENEAS","Henry Purcell","Teatro Goldoni",
+            [("2026-11-06","20:00")]))
+        facts=parse_source_credited_opera_detail(
+            "goldoni-livorno-rolling-lirica",url,html)
+        self.assertEqual(len(facts),1)
+        self.assertEqual(facts[0]["starts_at"],
+                         "2026-11-06T20:00:00+01:00")
+
+    def test_offsite_mascagni_festival_is_not_false_goldoni_venue(self):
+        url=HOST+"/spettacoli/cavalleria-rusticana/"
+        html=detail(title="CAVALLERIA RUSTICANA",
+                    date="19 Agosto 2026",clock="21.30",
+                    composer="Pietro Mascagni")
+        html=html.replace("Melodramma in tre atti.",
+                          "Mercoledì 19 e giovedì 20 agosto, ore 21.30 – Piazza Goldoni. Melodramma in tre atti.")
+        with self.assertRaisesRegex(ValueError,"offsite festival venue"):
+            parse_detail(html,url=url)
 
     def test_old_three_2026_27_sources_remain_unchanged(self):
         validate_config(self.cfg)
