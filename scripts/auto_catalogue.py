@@ -676,6 +676,32 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 or dict(shared[0]["dates"])[day]==hour
                 for day,hour in dates.items()):
                 exact=shared
+        # Haydn has two distinct event URLs for the same Trento opera and
+        # the same January 2027 production. Keep one staging and add a recita,
+        # but only for the two first-party ticket URLs with exact identity,
+        # venue, and independently verified dates/times.
+        haydn_cronaca_pages={
+            "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+            "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+        }
+        haydn_dates={"2027-01-29":"20:00","2027-01-31":"16:00"}
+        if (not exact and key=="haydn-rolling-opera"
+            and url in haydn_cronaca_pages and city=="Trento"
+            and venue=="Teatro Sociale"
+            and title_credit=="cronaca di un amore. callas e pasolini"
+            and composer=="davide tramontano"
+            and bool(dates) and all(haydn_dates.get(day)==hour
+                                    for day,hour in dates.items())):
+            shared=[p for p in colliding
+                    if p["source_url"] in haydn_cronaca_pages
+                    and normalized(p["title"])==title_credit
+                    and normalized(p["composer"])==composer
+                    and all(haydn_dates.get(day)==hour for day,hour in p["dates"])]
+            if len(shared)==1 and all(
+                    day not in dict(shared[0]["dates"])
+                    or dict(shared[0]["dates"])[day]==hour
+                    for day,hour in dates.items()):
+                exact=shared
         # Distinct official productions of the same opera in the same
         # theatre are legitimate (e.g. two different Aida stagings at
         # Verona). Preserve the original route and assign an edition URL
@@ -1330,6 +1356,11 @@ def main():
     # catalog transaction; never edit derived public JSON or IDs by hand.
     seeds=json.loads((ROOT/"data/verified-work-authority-seeds.json").read_text(encoding="utf-8"))
     facts,registry,corrected_titles=normalize_published_work_titles(facts,registry,seeds)
+    # Existing duplicate Haydn ticket stagings are migrated only in the
+    # actual publication transaction, never as a side effect of generic
+    # promote() fixture processing.
+    from scripts.consolidate_haydn_cronaca import consolidate as consolidate_haydn
+    facts,registry,haydn_migrated=consolidate_haydn(facts,registry)
     evidence=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     candidates=json.loads(INDEX.read_text(encoding="utf-8")) if INDEX.exists() else {"candidates":[]}
     approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8")) if SOURCE_ALLOWLIST.exists() else {"schema_version":1,"urls":[]}
@@ -1339,6 +1370,7 @@ def main():
     next_facts,next_registry,urls,report=promote(
         facts,registry,evidence,candidates,approved["urls"],today=date.today(),
         intelligence=intelligence)
+    report["consolidated_stagings"]+=haydn_migrated
     from scripts.daily_ingest import HEALTH as DAILY_HEALTH
     health=json.loads(DAILY_HEALTH.read_text(encoding="utf-8")) if DAILY_HEALTH.exists() else {"sources":[]}
     next_facts,next_registry,calendar=promote_calendar(
@@ -1362,6 +1394,18 @@ def main():
         report,candidates,prior_to_new_work_publication,next_facts)
     report["auto_skipped"]=refine_new_work_skips(
         report["auto_skipped"],newworks["auto_skipped"])
+    # A newly authorised opera can have independent ticket URLs for
+    # additional recite. Re-run the known-work pass against the expanded
+    # in-memory canonical registry, within this same atomic publication.
+    # The pass is replay-safe and creates no duplicate work identities.
+    next_facts,next_registry,urls,late=promote(
+        next_facts,next_registry,evidence,candidates,urls,
+        today=date.today(),intelligence=intelligence)
+    report["new_stagings"]+=late["new_stagings"]
+    report["new_recite"]+=late["new_recite"]
+    report=remove_retries_for_published_works(
+        report,candidates,prior_to_new_work_publication,next_facts)
+    report["auto_skipped"]+=late["auto_skipped"]
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]
@@ -1419,7 +1463,7 @@ def main():
         from scripts.publish_work_posters import EVIDENCE as POSTER_EVIDENCE
         previous_images=merge_official_poster_cache(
             json.loads(POSTER_EVIDENCE.read_text(encoding="utf-8")),image_additions)
-    if report["new_recite"] or corrected_titles:
+    if report["new_recite"] or report["consolidated_stagings"] or corrected_titles:
         _write_atomic(MANIFEST,next_facts)
         _write_atomic(REGISTRY,next_registry)
         _write_atomic(SOURCE_ALLOWLIST,{"schema_version":1,"urls":urls})
