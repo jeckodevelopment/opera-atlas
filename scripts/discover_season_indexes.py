@@ -53,11 +53,6 @@ EXCLUDED_PATHS={
         "omaggio-a-bowie-cohen-michael-e-prince",
         "lidia-schillaci-canta-i-grandi-cantautori-italiani",
     }),
-    "martina-valle-itria-2026": frozenset({
-        # Identified as a research symposium and a theatre/music adaptation,
-        # not a staging of an individual operatic work.
-        "approfondimenti", "in-orbita-naufragi",
-    }),
     "scala-season-2026-27": frozenset({
         "otello-anteprima-under30.html",
     }),
@@ -169,6 +164,13 @@ EXCLUDED_PATHS={
 }
 
 def excluded_nonopera(key:str,url:str)->bool:
+    # Valle d'Itria individual entries end in an ISO date, so classification
+    # must compare the full approved production URL rather than its final slug.
+    if key=="martina-valle-itria-2026" and url in {
+        "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
+        "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
+    }:
+        return True
     slug=urlsplit(url).path.rstrip("/").split("/")[-1]
     # The Haydn Opera-area index includes independent educational talks,
     # backstage events and reading events, not ticketed operas. Classify only
