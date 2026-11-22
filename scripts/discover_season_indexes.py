@@ -311,6 +311,12 @@ def eligible(key:str,url:str)->bool:
         return (parsed.scheme=="https" and parsed.hostname=="www.teatrovittorioemanuele.it"
                 and path in {"/evento/madama-butterfly", "/evento/la-traviata",
                              "/evento/al-cavallino-bianco"})
+    if key=="puccini-torre-del-lago-2027":
+        edition=re.fullmatch(r"/en/(\d{2,3})(?:st|nd|rd|th)-puccini-festival-(20\d{2})/?",parsed.path)
+        return bool(parsed.scheme=="https" and
+                    parsed.hostname=="www.puccinifestival.it" and edition
+                    and 2027<=int(edition[2])<=2099
+                    and int(edition[1])==int(edition[2])-1954)
     if key=="spoleto-tls-lirica-2026":
         return bool(re.fullmatch(r"https://www\.tls-belli\.it/stagione-lirica-20\d{2}/",url))
     if key=="chieti-marrucino-lirica-2026":
@@ -435,6 +441,11 @@ def eligible(key:str,url:str)->bool:
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="puccini-torre-del-lago-2027":
+        from opera_atlas.puccini_festival_parser import parse_program
+        if len(parse_program(html,url=index_url))!=15:
+            raise ValueError("Puccini 2027 incomplete official opera calendar")
+        return [index_url]
     if key=="spoleto-tls-lirica-2026":
         from opera_atlas.spoleto_tls_parser import parse_program
         if not parse_program(html,url=index_url):
@@ -520,6 +531,7 @@ def validate_config(config:dict)->list[dict]:
         "lecce-apollo-pinocchio-2026":("www.provincia.le.it","/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"),
         "lecce-politeama-opera-2026":("www.politeamagreco.it","/programmazione.asp"),
         "lecce-provincia-politeama-2026":("www.provincia.le.it","/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"),
+        "puccini-torre-del-lago-2027":("www.puccinifestival.it","/en/73rd-puccini-festival-2027/"),
         "spoleto-tls-lirica-2026":("www.tls-belli.it","/stagione-lirica-2026/"),
         "chieti-marrucino-lirica-2026":("comune.chieti.it","/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"),
         "rovigo-regione-programma-2026-27":("www.culturaveneto.it","/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc"),
@@ -620,6 +632,11 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/programmazione.asp" and not index.query
         elif key=="lecce-provincia-politeama-2026":
             valid_season=index.path=="/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/" and not index.query
+        elif key=="puccini-torre-del-lago-2027":
+            edition=re.fullmatch(r"/en/(\d{2,3})(?:st|nd|rd|th)-puccini-festival-(20\d{2})/",index.path)
+            valid_season=bool(edition and 2027<=int(edition[2])<=2099
+                              and int(edition[1])==int(edition[2])-1954
+                              and not index.query)
         elif key=="spoleto-tls-lirica-2026":
             valid_season=bool(re.fullmatch(r"/stagione-lirica-20\d{2}/",index.path)
                               and not index.query)

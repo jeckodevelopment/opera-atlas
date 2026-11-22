@@ -30,6 +30,7 @@ VENUE_BY_SOURCE={
     "lirico-cagliari-opera-2027":("Cagliari","Teatro Lirico di Cagliari"),
     "bellini-catania-opera-2026-27":("Catania","Teatro Massimo Bellini"),
     "modena-teatro-opera-2026-27":("Modena","Teatro Comunale Pavarotti-Freni"),
+    "puccini-torre-del-lago-2027":("Torre del Lago Puccini","Gran Teatro Giacomo Puccini"),
     "spoleto-tls-lirica-2026":("Spoleto","Teatro Nuovo Gian Carlo Menotti"),
     "chieti-marrucino-lirica-2026":("Chieti","Teatro Marrucino"),
     "modena-opera-2026-27":("Modena","Teatro Comunale Pavarotti-Freni"),
@@ -322,7 +323,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Torre del Lago Puccini":"Toscana","Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
@@ -417,6 +418,12 @@ _MULTI_WORK_SEASONS={
         ("Il cappello di paglia di Firenze","Nino Rota"):2,
     },
 
+    "puccini-torre-del-lago-2027": {
+        ("Turandot","Giacomo Puccini"):5,
+        ("Tosca","Giacomo Puccini"):4,
+        ("Madama Butterfly","Giacomo Puccini"):3,
+        ("La bohème","Giacomo Puccini"):3,
+    },
     "chieti-marrucino-lirica-2026": {
         ("Le avventure di Pinocchio","Antonio Cericola"):1,
         ("Turandot","Giacomo Puccini"):2,

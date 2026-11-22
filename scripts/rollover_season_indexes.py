@@ -24,6 +24,7 @@ ROLLOVER_KEYS={
     "maggio-fiorentino-calendar-2027",
     "piacenza-opera-2026-27",
     "spoleto-tls-lirica-2026",
+    "puccini-torre-del-lago-2027",
     "giglio-lucca-opera-2026-27",
     "carlo-felice-season-2026-27",
 }
@@ -53,6 +54,17 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
             return None
         return (f"https://{url.hostname}/it/cartellone/lirica/"
                 f"stagione-{start+1}-{start+2}/")
+    if key=="puccini-torre-del-lago-2027":
+        m=re.fullmatch(r"/en/(\d{2,3})(?:st|nd|rd|th)-puccini-festival-(20\d{2})/",url.path)
+        if not m:return None
+        edition,year=int(m[1]),int(m[2])
+        if edition!=year-1954 or year>=2099 or (
+            not allow_early and today<date(year,9,1)):
+            return None
+        nxt=edition+1
+        suffix=("th" if nxt%100 in (11,12,13) else
+                {1:"st",2:"nd",3:"rd"}.get(nxt%10,"th"))
+        return f"https://{url.hostname}/en/{nxt}{suffix}-puccini-festival-{year+1}/"
     if key=="spoleto-tls-lirica-2026":
         match=re.fullmatch(r"/stagione-lirica-(20\d{2})/",url.path)
         if not match:return None
