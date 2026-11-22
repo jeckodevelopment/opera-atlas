@@ -160,7 +160,18 @@ async function initialize(){
           work_id:section==="opere"?e.work_id:undefined,
           composer:section==="opere"?e.composer:undefined,
           subtitle:section==="opere"?e.composer||"":e.municipality+" · "+(e.region||"Italia"),city:e.municipality,
-          description:section==="opere"?editorial.synopses[e.work_id] || (e.work_slug==="la-boheme"?"":editorial.synopses[e.work_slug]||""):profile?.description||""});
+          description:section==="opere"?editorial.synopses[e.work_id] || (e.work_slug==="la-boheme"?"":editorial.synopses[e.work_slug]||""):profile?.description||"",
+          // Performance-derived venues are not necessarily in the independently
+          // reviewed national directory. Carry their sourced editorial photo.
+          ...(section==="teatri" && profile ? {
+            photo_file:profile.photo_file,
+            photo_url:profile.photo_url,
+            photo_credit:profile.photo_credit,
+            photo_license:profile.photo_license,
+            photo_source_url:profile.photo_source_url,
+            imageKind:"venue",
+            independentVenue:true
+          } : {})});
       }
     }
     // Canonical works can be published from verified program components
