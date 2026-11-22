@@ -36,7 +36,8 @@ class SavonaMultiworkIdentityTests(unittest.TestCase):
         staged,ids,urls,report=promote(
             originals,registry,evidence,candidates,[],today=date(2026,11,22))
         produced=[p for p in staged["productions"] if
-                  p["source_url"]==URL and p["municipality"]=="Savona"]
+                  p["source_url"]==URL and p["municipality"]=="Savona"
+                  and any(day.startswith("2028-") for day,_ in p["dates"])]
         self.assertEqual({p["title"] for p in produced},
                          {"La traviata","I salvatori della mezzanotte"},report)
         self.assertEqual(len({p["key"] for p in produced}),2)

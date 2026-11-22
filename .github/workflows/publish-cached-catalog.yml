@@ -37,6 +37,8 @@ on:
       - 'tests/test_lucca_opera_source.py'
       - 'tests/test_lucca_work_panel_batch.py'
       - 'tests/test_auto_catalogue.py'
+      - 'tests/test_savona_multiwork_identity.py'
+      - 'site/theatre-profiles.json'
       # A verified multi-work source may be fully promotable before the
       # national refresh; publish it immediately after the regression merge.
       - 'tests/test_savona_real_evidence_publication.py'
