@@ -709,6 +709,33 @@
       "credit": "Manifesto ufficiale di Bona Sforza, Katarzyna Zapart / Opera Krakowska",
       "alt": "Manifesto ufficiale Bona Sforza di Zygmunt Krauze: composizione con tre ritratti della regina",
       "kind": "official_coproduction_poster"
+    },
+    "oa-w-000080": {
+      "work_id": "oa-w-000080",
+      "image_url": "https://www.teatromassimobellini.it/media/2025/10/il-quinto-moschettiere.png",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "original_source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere/",
+      "credit": "Grafica originale dell'opera pubblicata dal Teatro Massimo Bellini per la prima produzione del 2026",
+      "alt": "Grafica originale Il quinto moschettiere di Matteo Musumeci, Teatro Massimo Bellini",
+      "kind": "official_original_work_artwork"
+    },
+    "oa-w-000081": {
+      "work_id": "oa-w-000081",
+      "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/05/TRP-26-BANNER-ALPHA-1080x1080-VELENO.png",
+      "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
+      "provenance_url": "https://teatroregioparma.it/spettacolo/veleno/",
+      "credit": "Grafica ufficiale Veleno, Fondazione Teatro Regio di Parma, coproduttore dell’opera",
+      "alt": "Grafica originale dell’opera Veleno di Gaia Aloisi, con una V e una mano che versa veleno",
+      "kind": "official_coproduction_poster"
+    },
+    "oa-w-000082": {
+      "work_id": "oa-w-000082",
+      "image_url": "https://www.teatromassimobellini.it/media/2026/11/PHOTO-2026-Orso.jpg",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "original_source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "credit": "Manifesto originale ufficiale di Le nozze dell’orso, Teatro Massimo Bellini / Teatro Sangiorgi, novembre 2026",
+      "alt": "Locandina ufficiale Le nozze dell’orso, musica di Joe Schittino, Teatro Sangiorgi",
+      "kind": "official_original_work_artwork"
     }
   }
 }

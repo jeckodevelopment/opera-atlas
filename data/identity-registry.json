@@ -519,6 +519,27 @@
       "title": "Bona Sforza",
       "composer": "Zygmunt Krauze",
       "authority_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+    },
+    "il quinto moschettiere|matteo musumeci": {
+      "id": "oa-w-000080",
+      "slug": "il-quinto-moschettiere",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "authority_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "veleno|gaia aloisi": {
+      "id": "oa-w-000081",
+      "slug": "veleno",
+      "title": "Veleno",
+      "composer": "Gaia Aloisi",
+      "authority_url": "https://www.iteatri.re.it/spettacolo/veleno/"
+    },
+    "le nozze dell’orso|joe schittino": {
+      "id": "oa-w-000082",
+      "slug": "le-nozze-dell-orso",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "authority_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
     }
   },
   "venues": {
@@ -754,6 +775,22 @@
       "name": "Teatro Nazionale",
       "city": "Roma",
       "region": "Lazio"
+    },
+    "Catania|Teatro Sangiorgi": {
+      "id": "oa-v-000030",
+      "slug": "teatro-sangiorgi",
+      "city_slug": "catania",
+      "name": "Teatro Sangiorgi",
+      "city": "Catania",
+      "region": "Sicilia"
+    },
+    "Reggio Emilia|Teatro Ariosto": {
+      "id": "oa-v-000031",
+      "slug": "teatro-ariosto",
+      "city_slug": "reggio-emilia",
+      "name": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "region": "Emilia-Romagna"
     }
   },
   "stagings": {
@@ -1966,6 +2003,30 @@
       "venue_id": "oa-v-000013",
       "slug": "macbeth",
       "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+      "season": "2026"
+    },
+    "auto-8bc8b40e1da92efa": {
+      "id": "oa-s-000155",
+      "work_id": "oa-w-000080",
+      "venue_id": "oa-v-000030",
+      "slug": "il-quinto-moschettiere",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "season": "2026"
+    },
+    "auto-a98083086627ce6e": {
+      "id": "oa-s-000156",
+      "work_id": "oa-w-000081",
+      "venue_id": "oa-v-000031",
+      "slug": "veleno",
+      "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
+      "season": "2027"
+    },
+    "auto-d54e9b021b5167cf": {
+      "id": "oa-s-000157",
+      "work_id": "oa-w-000082",
+      "venue_id": "oa-v-000030",
+      "slug": "le-nozze-dell-orso",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
       "season": "2026"
     }
   },
@@ -6331,6 +6392,126 @@
       "staging_id": "oa-s-000154",
       "original_date": "2026-11-22",
       "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/"
+    },
+    "auto-8bc8b40e1da92efa|2026-11-13": {
+      "id": "oa-r-000743",
+      "staging_id": "oa-s-000155",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2026-11-14": {
+      "id": "oa-r-000744",
+      "staging_id": "oa-s-000155",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2026-11-15": {
+      "id": "oa-r-000745",
+      "staging_id": "oa-s-000155",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2026-12-16": {
+      "id": "oa-r-000746",
+      "staging_id": "oa-s-000155",
+      "original_date": "2026-12-16",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2026-12-17": {
+      "id": "oa-r-000747",
+      "staging_id": "oa-s-000155",
+      "original_date": "2026-12-17",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2026-12-18": {
+      "id": "oa-r-000748",
+      "staging_id": "oa-s-000155",
+      "original_date": "2026-12-18",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2027-01-20": {
+      "id": "oa-r-000749",
+      "staging_id": "oa-s-000155",
+      "original_date": "2027-01-20",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2027-01-21": {
+      "id": "oa-r-000750",
+      "staging_id": "oa-s-000155",
+      "original_date": "2027-01-21",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-8bc8b40e1da92efa|2027-01-22": {
+      "id": "oa-r-000751",
+      "staging_id": "oa-s-000155",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+    },
+    "auto-a98083086627ce6e|2027-04-28": {
+      "id": "oa-r-000752",
+      "staging_id": "oa-s-000156",
+      "original_date": "2027-04-28",
+      "source_url": "https://www.iteatri.re.it/spettacolo/veleno/"
+    },
+    "auto-a98083086627ce6e|2027-04-30": {
+      "id": "oa-r-000753",
+      "staging_id": "oa-s-000156",
+      "original_date": "2027-04-30",
+      "source_url": "https://www.iteatri.re.it/spettacolo/veleno/"
+    },
+    "auto-d54e9b021b5167cf|2026-11-20": {
+      "id": "oa-r-000754",
+      "staging_id": "oa-s-000157",
+      "original_date": "2026-11-20",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2026-11-21": {
+      "id": "oa-r-000755",
+      "staging_id": "oa-s-000157",
+      "original_date": "2026-11-21",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2026-11-22": {
+      "id": "oa-r-000756",
+      "staging_id": "oa-s-000157",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2026-12-10": {
+      "id": "oa-r-000757",
+      "staging_id": "oa-s-000157",
+      "original_date": "2026-12-10",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2026-12-12": {
+      "id": "oa-r-000758",
+      "staging_id": "oa-s-000157",
+      "original_date": "2026-12-12",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2026-12-13": {
+      "id": "oa-r-000759",
+      "staging_id": "oa-s-000157",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2027-01-13": {
+      "id": "oa-r-000760",
+      "staging_id": "oa-s-000157",
+      "original_date": "2027-01-13",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2027-01-14": {
+      "id": "oa-r-000761",
+      "staging_id": "oa-s-000157",
+      "original_date": "2027-01-14",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-d54e9b021b5167cf|2027-01-15": {
+      "id": "oa-r-000762",
+      "staging_id": "oa-s-000157",
+      "original_date": "2027-01-15",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
     }
   }
 }

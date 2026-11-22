@@ -763,6 +763,35 @@
         "https://zygmuntkrauze.com/en/kompozytor/bona-sforza-2/",
         "https://opera.krakow.pl/en/spectacles/bona-sforza-1"
       ]
+    },
+    "il-quinto-moschettiere": {
+      "librettist": "Vincenzo De Vivo",
+      "premiere_year": 2026,
+      "premiere_venue": "Teatro Sangiorgi",
+      "premiere_city": "Catania",
+      "sources": [
+        "https://www.teatromassimobellini.it/il-quinto-moschettiere-il-teatro-massimo-bellini-torna-al-sangiorgi-con-le-opere-da-camera/",
+        "https://www.teatromassimobellini.it/media/2025/09/pieghevole_stagioni20252026.pdf"
+      ]
+    },
+    "veleno": {
+      "librettist": "Stefano Simone Pintor",
+      "premiere_year": 2027,
+      "premiere_venue": "Teatro Ariosto",
+      "premiere_city": "Reggio Emilia",
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/veleno/",
+        "https://www.iteatri.re.it/spettacolo/veleno/"
+      ]
+    },
+    "le-nozze-dell-orso": {
+      "librettist": "Alessandro Idonea",
+      "premiere_year": 2026,
+      "premiere_venue": "Teatro Sangiorgi",
+      "premiere_city": "Catania",
+      "sources": [
+        "https://www.teatromassimobellini.it/continuano-le-opere-da-camera-al-teatro-sangiorgi-con-le-nozze-dellorso/"
+      ]
     }
   },
   "works_by_id": {

@@ -1280,6 +1280,24 @@
       ]
     },
     {
+      "id": "curated:auto-8bc8b40e1da92efa:2026-11-13",
+      "starts_at": "2026-11-13T11:00:00+01:00",
+      "local_date": "2026-11-13",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
       "id": "curated:auto-6d3d1cab3d4ed61b:2026-11-13",
       "starts_at": "2026-11-13T17:00:00+01:00",
       "local_date": "2026-11-13",
@@ -1425,6 +1443,24 @@
       ]
     },
     {
+      "id": "curated:auto-8bc8b40e1da92efa:2026-11-14",
+      "starts_at": "2026-11-14T20:30:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
       "id": "curated:auto-6d3d1cab3d4ed61b:2026-11-15",
       "starts_at": "2026-11-15T15:00:00+01:00",
       "local_date": "2026-11-15",
@@ -1495,6 +1531,24 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:auto-8bc8b40e1da92efa:2026-11-15",
+      "starts_at": "2026-11-15T17:30:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
       ]
     },
     {
@@ -1585,6 +1639,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
+      "id": "curated:auto-d54e9b021b5167cf:2026-11-20",
+      "starts_at": "2026-11-20T11:00:00+01:00",
+      "local_date": "2026-11-20",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
       ]
     },
     {
@@ -1733,6 +1805,24 @@
       ]
     },
     {
+      "id": "curated:auto-d54e9b021b5167cf:2026-11-21",
+      "starts_at": "2026-11-21T20:30:00+01:00",
+      "local_date": "2026-11-21",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+      ]
+    },
+    {
       "id": "curated:auto-6d3d1cab3d4ed61b:2026-11-22",
       "starts_at": "2026-11-22T15:00:00+01:00",
       "local_date": "2026-11-22",
@@ -1839,6 +1929,24 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://www.teatrofraschini.it/programma/litaliana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:auto-d54e9b021b5167cf:2026-11-22",
+      "starts_at": "2026-11-22T17:30:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
       ]
     },
     {
@@ -2348,6 +2456,24 @@
       ]
     },
     {
+      "id": "curated:auto-d54e9b021b5167cf:2026-12-10",
+      "starts_at": "2026-12-10T11:00:00+01:00",
+      "local_date": "2026-12-10",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-cremona:2026-12-10",
       "starts_at": "2026-12-10T20:00:00+01:00",
       "local_date": "2026-12-10",
@@ -2423,6 +2549,24 @@
       ]
     },
     {
+      "id": "curated:auto-d54e9b021b5167cf:2026-12-12",
+      "starts_at": "2026-12-12T11:00:00+01:00",
+      "local_date": "2026-12-12",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-cremona:2026-12-12",
       "starts_at": "2026-12-12T16:00:00+01:00",
       "local_date": "2026-12-12",
@@ -2439,6 +2583,24 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri-0"
+      ]
+    },
+    {
+      "id": "curated:auto-d54e9b021b5167cf:2026-12-13",
+      "starts_at": "2026-12-13T11:00:00+01:00",
+      "local_date": "2026-12-13",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
       ]
     },
     {
@@ -2498,6 +2660,24 @@
       ]
     },
     {
+      "id": "curated:auto-8bc8b40e1da92efa:2026-12-16",
+      "starts_at": "2026-12-16T11:00:00+01:00",
+      "local_date": "2026-12-16",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
       "id": "curated:scala-otello-2026:2026-12-16",
       "starts_at": "2026-12-16T20:00:00+01:00",
       "local_date": "2026-12-16",
@@ -2534,6 +2714,24 @@
       ]
     },
     {
+      "id": "curated:auto-8bc8b40e1da92efa:2026-12-17",
+      "starts_at": "2026-12-17T11:00:00+01:00",
+      "local_date": "2026-12-17",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
       "id": "curated:auto-8d2b9a6be734bb24:2026-12-17",
       "starts_at": "2026-12-17T20:30:00+01:00",
       "local_date": "2026-12-17",
@@ -2549,6 +2747,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-8bc8b40e1da92efa:2026-12-18",
+      "starts_at": "2026-12-18T19:00:00+01:00",
+      "local_date": "2026-12-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
       ]
     },
     {
@@ -2876,6 +3092,42 @@
       ]
     },
     {
+      "id": "curated:auto-d54e9b021b5167cf:2027-01-13",
+      "starts_at": "2027-01-13T11:00:00+01:00",
+      "local_date": "2027-01-13",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+      ]
+    },
+    {
+      "id": "curated:auto-d54e9b021b5167cf:2027-01-14",
+      "starts_at": "2027-01-14T11:00:00+01:00",
+      "local_date": "2027-01-14",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+      ]
+    },
+    {
       "id": "curated:lombardia-ballo-como:2027-01-15",
       "starts_at": null,
       "local_date": "2027-01-15",
@@ -2891,6 +3143,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-d54e9b021b5167cf:2027-01-15",
+      "starts_at": "2027-01-15T11:00:00+01:00",
+      "local_date": "2027-01-15",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
       ]
     },
     {
@@ -3056,6 +3326,24 @@
       ]
     },
     {
+      "id": "curated:auto-8bc8b40e1da92efa:2027-01-20",
+      "starts_at": "2027-01-20T11:00:00+01:00",
+      "local_date": "2027-01-20",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
       "id": "curated:auto-697328f32e7cfa32:2027-01-20",
       "starts_at": "2027-01-20T20:00:00+01:00",
       "local_date": "2027-01-20",
@@ -3089,6 +3377,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/la-traviata-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-8bc8b40e1da92efa:2027-01-21",
+      "starts_at": "2027-01-21T11:00:00+01:00",
+      "local_date": "2027-01-21",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
       ]
     },
     {
@@ -3143,6 +3449,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-8bc8b40e1da92efa:2027-01-22",
+      "starts_at": "2027-01-22T11:00:00+01:00",
+      "local_date": "2027-01-22",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "venue": "Teatro Sangiorgi",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
       ]
     },
     {
@@ -7718,6 +8042,24 @@
       ]
     },
     {
+      "id": "curated:auto-a98083086627ce6e:2027-04-28",
+      "starts_at": "2027-04-28T20:00:00+02:00",
+      "local_date": "2027-04-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Veleno",
+      "composer": "Gaia Aloisi",
+      "venue": "Teatro Ariosto",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/veleno/"
+      ]
+    },
+    {
       "id": "curated:fenice-carmen-2027:2027-04-29",
       "starts_at": "2027-04-29T19:00:00+02:00",
       "local_date": "2027-04-29",
@@ -7787,6 +8129,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+      ]
+    },
+    {
+      "id": "curated:auto-a98083086627ce6e:2027-04-30",
+      "starts_at": "2027-04-30T20:00:00+02:00",
+      "local_date": "2027-04-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Veleno",
+      "composer": "Gaia Aloisi",
+      "venue": "Teatro Ariosto",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/veleno/"
       ]
     },
     {
