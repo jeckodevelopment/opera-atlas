@@ -6,6 +6,7 @@ performance rows can create source evidence. Never infer identity from URL.
 """
 from __future__ import annotations
 import re
+import json
 from html.parser import HTMLParser
 from urllib.parse import urlsplit
 
@@ -74,7 +75,29 @@ def parse_credited_detail(html:str,*,url:str):
         elif re.fullmatch(r"Musica\s+di",line,re.I) and i+1<len(intro):
             names.append(intro[i+1].strip())
     if len(names)!=1:
-        raise ValueError("missing or conflicting labelled Donizetti composer")
+        # The first-party Donizetti pages can break the same explicit
+        # "Musica di" credit across markup nodes; block-level extraction
+        # then has no standalone matching line. Only source-bound reviewed
+        # opera identities may use this rendered-text fallback.
+        from opera_atlas.national_detail_parser import clean
+        from scripts.publish_catalog_v2 import ROOT
+        registry=json.loads((ROOT/"data/verified-work-authority-seeds.json").read_text(encoding="utf-8"))
+        matching=[w for w in registry.get("works",[])
+                  if w.get("source_key")=="donizetti-opera-2026"
+                  and w.get("source_url")==url and normalized(w.get("title",""))==normalized(title)]
+        if len(names)>1 or len(matching)!=1:
+            raise ValueError("missing or conflicting labelled Donizetti composer")
+        proposed=matching[0]["composer"]
+        visible=clean(html)
+        # Only the selected opera's textual credit BEFORE Cast is trusted.
+        start=visible.find(title)
+        end=visible.find("Cast",start+len(title)) if start>=0 else -1
+        bounded=visible[start+len(title):end] if end>start else ""
+        token=re.findall(r"(?i)\\bMusica\\s+di\\s+(.+?)\\s+"
+                         r"(?:Prima rappresentazione|Edizione critica|Cast)\\b",bounded)
+        if (len(token)!=1 or normalized(token[0])!=normalized(proposed)):
+            raise ValueError("missing or conflicting labelled Donizetti composer")
+        names=[proposed]
     composer=names[0]
     if (not 4<=len(composer)<=100
         or not re.fullmatch(r"[A-Za-zÀ-ÿ'’.\-]+(?:\s+[A-Za-zÀ-ÿ'’.\-]+){1,4}",
