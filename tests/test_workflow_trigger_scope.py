@@ -64,6 +64,18 @@ class TriggerScopeTests(unittest.TestCase):
                      "opera_atlas/modena_opera_parser.py"):
             self.assertTrue(github_path_match(path, patterns), path)
 
+    def test_frontend_deploy_only_runs_for_site_changes(self):
+        patterns = push_paths("deploy-atlas.yml")
+        for path in ("tests/test_workflow_trigger_scope.py",
+                     "tests/test_diagnostics_lifecycle.py",
+                     "tests/test_auto_catalogue.py"):
+            with self.subTest(path=path):
+                self.assertFalse(github_path_match(path, patterns))
+        for path in ("site/index.html", "site/app.js", "site/styles.css",
+                     "site/.htaccess", "scripts/deploy_atlas_sftp.py"):
+            with self.subTest(path=path):
+                self.assertTrue(github_path_match(path, patterns))
+
     def test_source_health_still_runs_when_scanner_changes(self):
         patterns = push_paths("refresh-source-health.yml")
         for path in ("scripts/discover_season_indexes.py",
