@@ -596,6 +596,24 @@
       ]
     },
     {
+      "id": "curated:auto-cc153c7d05d996b2:2026-09-25",
+      "starts_at": "2026-09-25T20:30:00+02:00",
+      "local_date": "2026-09-25",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Comunale di Sassari",
+      "municipality": "Sassari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-como:2026-09-26",
       "starts_at": null,
       "local_date": "2026-09-26",
@@ -629,6 +647,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-cc153c7d05d996b2:2026-09-27",
+      "starts_at": "2026-09-27T16:30:00+02:00",
+      "local_date": "2026-09-27",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Die Zauberflöte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Comunale di Sassari",
+      "municipality": "Sassari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372"
       ]
     },
     {
@@ -1100,6 +1136,24 @@
       ]
     },
     {
+      "id": "curated:auto-4eb9631403bd5ba6:2026-10-23",
+      "starts_at": "2026-10-23T20:30:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Marrucino",
+      "municipality": "Chieti",
+      "region": "Abruzzo",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+      ]
+    },
+    {
       "id": "curated:auto-5b2707fe818d6b68:2026-10-23",
       "starts_at": "2026-10-23T20:30:00+02:00",
       "local_date": "2026-10-23",
@@ -1226,6 +1280,24 @@
       ]
     },
     {
+      "id": "curated:auto-4eb9631403bd5ba6:2026-10-25",
+      "starts_at": "2026-10-25T17:30:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Marrucino",
+      "municipality": "Chieti",
+      "region": "Abruzzo",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+      ]
+    },
+    {
       "id": "curated:auto-eedca6da108bd27e:2026-10-25",
       "starts_at": "2026-10-25T18:00:00+01:00",
       "local_date": "2026-10-25",
@@ -1298,6 +1370,24 @@
       ]
     },
     {
+      "id": "curated:auto-647ba8ffc5517001:2026-10-30",
+      "starts_at": "2026-10-30T20:00:00+01:00",
+      "local_date": "2026-10-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"
+      ]
+    },
+    {
       "id": "curated:lombardia-cavalleria-pavia:2026-10-30",
       "starts_at": "2026-10-30T20:00:00+01:00",
       "local_date": "2026-10-30",
@@ -1367,6 +1457,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:auto-725b23f651111cce:2026-10-30",
+      "starts_at": "2026-10-30T20:30:00+01:00",
+      "local_date": "2026-10-30",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Don Carlos",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Sassari",
+      "municipality": "Sassari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
       ]
     },
     {
@@ -1457,6 +1565,42 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-647ba8ffc5517001:2026-11-01",
+      "starts_at": "2026-11-01T15:30:00+01:00",
+      "local_date": "2026-11-01",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-725b23f651111cce:2026-11-01",
+      "starts_at": "2026-11-01T16:30:00+01:00",
+      "local_date": "2026-11-01",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Don Carlos",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Sassari",
+      "municipality": "Sassari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
       ]
     },
     {
@@ -2237,6 +2381,24 @@
       ]
     },
     {
+      "id": "curated:auto-dd9613a8222dfae9:2026-11-20",
+      "starts_at": "2026-11-20T20:30:00+01:00",
+      "local_date": "2026-11-20",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Marrucino",
+      "municipality": "Chieti",
+      "region": "Abruzzo",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+      ]
+    },
+    {
       "id": "curated:auto-ddbf275f357fab54:2026-11-20",
       "starts_at": "2026-11-20T20:45:00+01:00",
       "local_date": "2026-11-20",
@@ -2526,6 +2688,24 @@
       ]
     },
     {
+      "id": "curated:auto-dd9613a8222dfae9:2026-11-22",
+      "starts_at": "2026-11-22T17:30:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Marrucino",
+      "municipality": "Chieti",
+      "region": "Abruzzo",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+      ]
+    },
+    {
       "id": "curated:massimo-samson-dalila-2026:2026-11-22",
       "starts_at": "2026-11-22T18:00:00+01:00",
       "local_date": "2026-11-22",
@@ -2780,6 +2960,24 @@
       ]
     },
     {
+      "id": "curated:auto-354c5969c88c2a8c:2026-11-28",
+      "starts_at": "2026-11-28T20:00:00+01:00",
+      "local_date": "2026-11-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L'esecuzione",
+      "composer": "Salvatore Passantino",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"
+      ]
+    },
+    {
       "id": "curated:auto-53ec78e7155f5b9f:2026-11-28",
       "starts_at": "2026-11-28T20:00:00+01:00",
       "local_date": "2026-11-28",
@@ -2849,6 +3047,24 @@
       "longitude": null,
       "sources": [
         "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+      ]
+    },
+    {
+      "id": "curated:auto-354c5969c88c2a8c:2026-11-29",
+      "starts_at": "2026-11-29T15:30:00+01:00",
+      "local_date": "2026-11-29",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "L'esecuzione",
+      "composer": "Salvatore Passantino",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"
       ]
     },
     {
@@ -3267,6 +3483,42 @@
       ]
     },
     {
+      "id": "curated:auto-ad96ee377d30a442:2026-12-11",
+      "starts_at": "2026-12-11T20:30:00+01:00",
+      "local_date": "2026-12-11",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Sassari",
+      "municipality": "Sassari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
+      ]
+    },
+    {
+      "id": "curated:auto-e8cdf198727c9043:2026-12-11",
+      "starts_at": "2026-12-11T20:30:00+01:00",
+      "local_date": "2026-12-11",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Marrucino",
+      "municipality": "Chieti",
+      "region": "Abruzzo",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+      ]
+    },
+    {
       "id": "curated:auto-3887a06511bd9ecd:2026-12-11",
       "starts_at": "2026-12-11T20:45:00+01:00",
       "local_date": "2026-12-11",
@@ -3355,6 +3607,42 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad96ee377d30a442:2026-12-13",
+      "starts_at": "2026-12-13T16:30:00+01:00",
+      "local_date": "2026-12-13",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale di Sassari",
+      "municipality": "Sassari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
+      ]
+    },
+    {
+      "id": "curated:auto-e8cdf198727c9043:2026-12-13",
+      "starts_at": "2026-12-13T17:30:00+01:00",
+      "local_date": "2026-12-13",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Marrucino",
+      "municipality": "Chieti",
+      "region": "Abruzzo",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
       ]
     },
     {
@@ -3916,6 +4204,24 @@
       ]
     },
     {
+      "id": "curated:auto-00247ee71c58d88b:2027-01-08",
+      "starts_at": "2027-01-08T20:00:00+01:00",
+      "local_date": "2027-01-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-bergamo:2027-01-10",
       "starts_at": null,
       "local_date": "2027-01-10",
@@ -3931,6 +4237,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-00247ee71c58d88b:2027-01-10",
+      "starts_at": "2027-01-10T15:30:00+01:00",
+      "local_date": "2027-01-10",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Siberia",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/"
       ]
     },
     {
@@ -4528,6 +4852,24 @@
       ]
     },
     {
+      "id": "curated:auto-93538b402fa3e844:2027-01-22",
+      "starts_at": "2027-01-22T20:30:00+01:00",
+      "local_date": "2027-01-22",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "municipality": "Lucca",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/"
+      ]
+    },
+    {
       "id": "curated:auto-1e384fa01b8a144d:2027-01-23",
       "starts_at": "2027-01-23T15:00:00+01:00",
       "local_date": "2027-01-23",
@@ -4687,6 +5029,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/la-straniera-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-93538b402fa3e844:2027-01-24",
+      "starts_at": "2027-01-24T16:00:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "municipality": "Lucca",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/"
       ]
     },
     {
@@ -5770,6 +6130,24 @@
       ]
     },
     {
+      "id": "curated:auto-1a02a18e39758285:2027-02-12",
+      "starts_at": "2027-02-12T20:30:00+01:00",
+      "local_date": "2027-02-12",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "municipality": "Lucca",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/"
+      ]
+    },
+    {
       "id": "curated:auto-a9e0eff95e96e71f:2027-02-13",
       "starts_at": "2027-02-13T18:00:00+01:00",
       "local_date": "2027-02-13",
@@ -5857,6 +6235,24 @@
       "longitude": null,
       "sources": [
         "https://teatripiacenza.it/event/la-cenerentola-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-1a02a18e39758285:2027-02-14",
+      "starts_at": "2027-02-14T16:00:00+01:00",
+      "local_date": "2027-02-14",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "municipality": "Lucca",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/"
       ]
     },
     {
@@ -6076,6 +6472,24 @@
       ]
     },
     {
+      "id": "curated:auto-8b8963495db255b7:2027-02-19",
+      "starts_at": "2027-02-19T20:00:00+01:00",
+      "local_date": "2027-02-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/"
+      ]
+    },
+    {
       "id": "curated:auto-f942d4e01d9578a9:2027-02-19",
       "starts_at": "2027-02-19T20:00:00+01:00",
       "local_date": "2027-02-19",
@@ -6163,6 +6577,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/carmen-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-8b8963495db255b7:2027-02-20",
+      "starts_at": "2027-02-20T18:00:00+01:00",
+      "local_date": "2027-02-20",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/"
       ]
     },
     {
@@ -6271,6 +6703,24 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/rigoletto/"
+      ]
+    },
+    {
+      "id": "curated:auto-8b8963495db255b7:2027-02-21",
+      "starts_at": "2027-02-21T15:30:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/"
       ]
     },
     {
@@ -7336,6 +7786,24 @@
       ]
     },
     {
+      "id": "curated:auto-9f1a5a6caa6d32cd:2027-03-12",
+      "starts_at": "2027-03-12T20:00:00+01:00",
+      "local_date": "2027-03-12",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/"
+      ]
+    },
+    {
       "id": "curated:auto-a587b66c1f36bad7:2027-03-12",
       "starts_at": "2027-03-12T20:00:00+01:00",
       "local_date": "2027-03-12",
@@ -7513,6 +7981,24 @@
       "longitude": null,
       "sources": [
         "https://teatrodipisa.it/spettacolo/aida/"
+      ]
+    },
+    {
+      "id": "curated:auto-9f1a5a6caa6d32cd:2027-03-14",
+      "starts_at": "2027-03-14T15:30:00+01:00",
+      "local_date": "2027-03-14",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/"
       ]
     },
     {
@@ -8092,6 +8578,24 @@
       ]
     },
     {
+      "id": "curated:auto-b79b2b7737225d1a:2027-03-21",
+      "starts_at": "2027-03-21T16:00:00+01:00",
+      "local_date": "2027-03-21",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "municipality": "Lucca",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/"
+      ]
+    },
+    {
       "id": "curated:auto-e1c70abeff01f79b:2027-03-21",
       "starts_at": "2027-03-21T16:30:00+01:00",
       "local_date": "2027-03-21",
@@ -8506,6 +9010,24 @@
       ]
     },
     {
+      "id": "curated:auto-7ed5c4aa08357be9:2027-04-09",
+      "starts_at": "2027-04-09T20:00:00+02:00",
+      "local_date": "2027-04-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/"
+      ]
+    },
+    {
       "id": "curated:auto-dc6e8ff3bddba01d:2027-04-09",
       "starts_at": "2027-04-09T20:00:00+02:00",
       "local_date": "2027-04-09",
@@ -8611,6 +9133,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+      ]
+    },
+    {
+      "id": "curated:auto-7ed5c4aa08357be9:2027-04-11",
+      "starts_at": "2027-04-11T15:30:00+02:00",
+      "local_date": "2027-04-11",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/"
       ]
     },
     {

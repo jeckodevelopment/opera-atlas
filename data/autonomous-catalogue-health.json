@@ -2,7 +2,76 @@
   "schema_version": 1,
   "new_stagings": 0,
   "new_recite": 0,
-  "auto_skipped": [],
+  "auto_skipped": [
+    {
+      "candidate_id": "oa-index-04fc7625bab27446a05d",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-763df3e99fa61d152cb9",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-d262c6e18193a53ee487",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-00247ee71c58d88ba91f",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-04fc7625bab27446a05d",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-1a02a18e39758285a976",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-354c5969c88c2a8c3339",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-647ba8ffc55170010275",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-725b23f651111cce4982",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-763df3e99fa61d152cb9",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-7ed5c4aa08357be99930",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-8b8963495db255b726e5",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-93538b402fa3e844ca69",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-9f1a5a6caa6d32cd4ae3",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-ad96ee377d30a4426219",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-b79b2b7737225d1a67dc",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-cc153c7d05d996b2b68b",
+      "reason": "incomplete_work_editorial"
+    }
+  ],
   "new_works": 0,
   "enriched_recite_times": 0,
   "normalized_work_titles": 0

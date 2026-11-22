@@ -957,6 +957,38 @@
       "name": "Teatro Comunale Mario del Monaco",
       "city": "Treviso",
       "region": "Veneto"
+    },
+    "Modena|Teatro Comunale Pavarotti-Freni": {
+      "id": "oa-v-000044",
+      "slug": "teatro-comunale-pavarotti-freni",
+      "city_slug": "modena",
+      "name": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "region": "Emilia-Romagna"
+    },
+    "Lucca|Teatro del Giglio Giacomo Puccini": {
+      "id": "oa-v-000045",
+      "slug": "teatro-del-giglio-giacomo-puccini",
+      "city_slug": "lucca",
+      "name": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "region": "Toscana"
+    },
+    "Sassari|Teatro Comunale di Sassari": {
+      "id": "oa-v-000046",
+      "slug": "teatro-comunale-di-sassari",
+      "city_slug": "sassari",
+      "name": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "region": "Sardegna"
+    },
+    "Chieti|Teatro Marrucino": {
+      "id": "oa-v-000047",
+      "slug": "teatro-marrucino",
+      "city_slug": "chieti",
+      "name": "Teatro Marrucino",
+      "city": "Chieti",
+      "region": "Abruzzo"
     }
   },
   "stagings": {
@@ -2537,6 +2569,126 @@
       "venue_id": "oa-v-000043",
       "slug": "pagliacci",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "season": "2026"
+    },
+    "auto-00247ee71c58d88b": {
+      "id": "oa-s-000204",
+      "work_id": "oa-w-000076",
+      "venue_id": "oa-v-000044",
+      "slug": "siberia",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/",
+      "season": "2027"
+    },
+    "auto-1a02a18e39758285": {
+      "id": "oa-s-000205",
+      "work_id": "oa-w-000014",
+      "venue_id": "oa-v-000045",
+      "slug": "otello",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",
+      "season": "2027"
+    },
+    "auto-354c5969c88c2a8c": {
+      "id": "oa-s-000206",
+      "work_id": "oa-w-000095",
+      "venue_id": "oa-v-000044",
+      "slug": "esecuzione",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+      "season": "2026"
+    },
+    "auto-647ba8ffc5517001": {
+      "id": "oa-s-000207",
+      "work_id": "oa-w-000018",
+      "venue_id": "oa-v-000044",
+      "slug": "macbeth",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+      "season": "2026"
+    },
+    "auto-725b23f651111cce": {
+      "id": "oa-s-000208",
+      "work_id": "oa-w-000071",
+      "venue_id": "oa-v-000046",
+      "slug": "don-carlos",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
+      "season": "2026"
+    },
+    "auto-7ed5c4aa08357be9": {
+      "id": "oa-s-000209",
+      "work_id": "oa-w-000083",
+      "venue_id": "oa-v-000044",
+      "slug": "le-convenienze-ed-inconvenienze-teatrali",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/",
+      "season": "2027"
+    },
+    "auto-8b8963495db255b7": {
+      "id": "oa-s-000210",
+      "work_id": "oa-w-000068",
+      "venue_id": "oa-v-000044",
+      "slug": "la-cenerentola",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/",
+      "season": "2027"
+    },
+    "auto-93538b402fa3e844": {
+      "id": "oa-s-000211",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000045",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
+      "season": "2027"
+    },
+    "auto-9f1a5a6caa6d32cd": {
+      "id": "oa-s-000212",
+      "work_id": "oa-w-000075",
+      "venue_id": "oa-v-000044",
+      "slug": "simon-boccanegra",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/",
+      "season": "2027"
+    },
+    "auto-ad96ee377d30a442": {
+      "id": "oa-s-000213",
+      "work_id": "oa-w-000026",
+      "venue_id": "oa-v-000046",
+      "slug": "rigoletto",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
+      "season": "2026"
+    },
+    "auto-b79b2b7737225d1a": {
+      "id": "oa-s-000214",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000045",
+      "slug": "aida",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/",
+      "season": "2027"
+    },
+    "auto-cc153c7d05d996b2": {
+      "id": "oa-s-000215",
+      "work_id": "oa-w-000056",
+      "venue_id": "oa-v-000046",
+      "slug": "die-zauberflote",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
+      "season": "2026"
+    },
+    "auto-e8cdf198727c9043": {
+      "id": "oa-s-000216",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000047",
+      "slug": "la-traviata",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
+      "season": "2026"
+    },
+    "auto-dd9613a8222dfae9": {
+      "id": "oa-s-000217",
+      "work_id": "oa-w-000045",
+      "venue_id": "oa-v-000047",
+      "slug": "le-nozze-di-figaro",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
+      "season": "2026"
+    },
+    "auto-4eb9631403bd5ba6": {
+      "id": "oa-s-000218",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000047",
+      "slug": "turandot",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
       "season": "2026"
     }
   },
@@ -7688,6 +7840,186 @@
       "staging_id": "oa-s-000203",
       "original_date": "2026-12-06",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+    },
+    "auto-00247ee71c58d88b|2027-01-08": {
+      "id": "oa-r-000880",
+      "staging_id": "oa-s-000204",
+      "original_date": "2027-01-08",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/"
+    },
+    "auto-00247ee71c58d88b|2027-01-10": {
+      "id": "oa-r-000881",
+      "staging_id": "oa-s-000204",
+      "original_date": "2027-01-10",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/"
+    },
+    "auto-1a02a18e39758285|2027-02-12": {
+      "id": "oa-r-000882",
+      "staging_id": "oa-s-000205",
+      "original_date": "2027-02-12",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/"
+    },
+    "auto-1a02a18e39758285|2027-02-14": {
+      "id": "oa-r-000883",
+      "staging_id": "oa-s-000205",
+      "original_date": "2027-02-14",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/"
+    },
+    "auto-354c5969c88c2a8c|2026-11-28": {
+      "id": "oa-r-000884",
+      "staging_id": "oa-s-000206",
+      "original_date": "2026-11-28",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"
+    },
+    "auto-354c5969c88c2a8c|2026-11-29": {
+      "id": "oa-r-000885",
+      "staging_id": "oa-s-000206",
+      "original_date": "2026-11-29",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"
+    },
+    "auto-647ba8ffc5517001|2026-10-30": {
+      "id": "oa-r-000886",
+      "staging_id": "oa-s-000207",
+      "original_date": "2026-10-30",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"
+    },
+    "auto-647ba8ffc5517001|2026-11-01": {
+      "id": "oa-r-000887",
+      "staging_id": "oa-s-000207",
+      "original_date": "2026-11-01",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"
+    },
+    "auto-725b23f651111cce|2026-10-30": {
+      "id": "oa-r-000888",
+      "staging_id": "oa-s-000208",
+      "original_date": "2026-10-30",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
+    },
+    "auto-725b23f651111cce|2026-11-01": {
+      "id": "oa-r-000889",
+      "staging_id": "oa-s-000208",
+      "original_date": "2026-11-01",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
+    },
+    "auto-7ed5c4aa08357be9|2027-04-09": {
+      "id": "oa-r-000890",
+      "staging_id": "oa-s-000209",
+      "original_date": "2027-04-09",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/"
+    },
+    "auto-7ed5c4aa08357be9|2027-04-11": {
+      "id": "oa-r-000891",
+      "staging_id": "oa-s-000209",
+      "original_date": "2027-04-11",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/"
+    },
+    "auto-8b8963495db255b7|2027-02-19": {
+      "id": "oa-r-000892",
+      "staging_id": "oa-s-000210",
+      "original_date": "2027-02-19",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/"
+    },
+    "auto-8b8963495db255b7|2027-02-20": {
+      "id": "oa-r-000893",
+      "staging_id": "oa-s-000210",
+      "original_date": "2027-02-20",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/"
+    },
+    "auto-8b8963495db255b7|2027-02-21": {
+      "id": "oa-r-000894",
+      "staging_id": "oa-s-000210",
+      "original_date": "2027-02-21",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/"
+    },
+    "auto-93538b402fa3e844|2027-01-22": {
+      "id": "oa-r-000895",
+      "staging_id": "oa-s-000211",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/"
+    },
+    "auto-93538b402fa3e844|2027-01-24": {
+      "id": "oa-r-000896",
+      "staging_id": "oa-s-000211",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/"
+    },
+    "auto-9f1a5a6caa6d32cd|2027-03-12": {
+      "id": "oa-r-000897",
+      "staging_id": "oa-s-000212",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/"
+    },
+    "auto-9f1a5a6caa6d32cd|2027-03-14": {
+      "id": "oa-r-000898",
+      "staging_id": "oa-s-000212",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/"
+    },
+    "auto-ad96ee377d30a442|2026-12-11": {
+      "id": "oa-r-000899",
+      "staging_id": "oa-s-000213",
+      "original_date": "2026-12-11",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
+    },
+    "auto-ad96ee377d30a442|2026-12-13": {
+      "id": "oa-r-000900",
+      "staging_id": "oa-s-000213",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
+    },
+    "auto-b79b2b7737225d1a|2027-03-21": {
+      "id": "oa-r-000901",
+      "staging_id": "oa-s-000214",
+      "original_date": "2027-03-21",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/"
+    },
+    "auto-cc153c7d05d996b2|2026-09-25": {
+      "id": "oa-r-000902",
+      "staging_id": "oa-s-000215",
+      "original_date": "2026-09-25",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372"
+    },
+    "auto-cc153c7d05d996b2|2026-09-27": {
+      "id": "oa-r-000903",
+      "staging_id": "oa-s-000215",
+      "original_date": "2026-09-27",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372"
+    },
+    "auto-e8cdf198727c9043|2026-12-11": {
+      "id": "oa-r-000904",
+      "staging_id": "oa-s-000216",
+      "original_date": "2026-12-11",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+    },
+    "auto-e8cdf198727c9043|2026-12-13": {
+      "id": "oa-r-000905",
+      "staging_id": "oa-s-000216",
+      "original_date": "2026-12-13",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+    },
+    "auto-dd9613a8222dfae9|2026-11-20": {
+      "id": "oa-r-000906",
+      "staging_id": "oa-s-000217",
+      "original_date": "2026-11-20",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+    },
+    "auto-dd9613a8222dfae9|2026-11-22": {
+      "id": "oa-r-000907",
+      "staging_id": "oa-s-000217",
+      "original_date": "2026-11-22",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+    },
+    "auto-4eb9631403bd5ba6|2026-10-23": {
+      "id": "oa-r-000908",
+      "staging_id": "oa-s-000218",
+      "original_date": "2026-10-23",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+    },
+    "auto-4eb9631403bd5ba6|2026-10-25": {
+      "id": "oa-r-000909",
+      "staging_id": "oa-s-000218",
+      "original_date": "2026-10-25",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
     }
   },
   "reserved_works": {
