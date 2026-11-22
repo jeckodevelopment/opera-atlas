@@ -1290,8 +1290,8 @@
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
-      "content_sha256": "c70f762ce81be051c69ca5681c740c82a877c3d3428d0c6860f484a184cd1418",
-      "checked_at": "2026-11-22T22:02:51+00:00",
+      "content_sha256": "4f5536b0a772b9816ee5be3390a29030ca15a971527337bf88664f5c4a1cd2f7",
+      "checked_at": "2026-11-22T22:07:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3756,8 +3756,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "661b27e2260f93f40aa31669e13f21f79454206e8dac83feeb22b826be7e2727",
-      "checked_at": "2026-11-22T22:03:04+00:00",
+      "content_sha256": "7a7ac8605d254f79cb54cdbc56d246769300b5257912647c6d867aa51bbd5bf4",
+      "checked_at": "2026-11-22T22:07:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5653,8 +5653,8 @@
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "content_sha256": "5c05c37bc09534787d6c00b33f618df9f8ced53aede54614228b579ecd25338e",
-      "checked_at": "2026-11-22T22:03:10+00:00",
+      "content_sha256": "aa3cd7149871a9e7ffd6b9d576ad90bd0a3c20a5f098e1319f5ad2b2d7ef4442",
+      "checked_at": "2026-11-22T22:07:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
