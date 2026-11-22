@@ -50,6 +50,9 @@ VENUE_BY_SOURCE={
     "pisa-verdi-opera-2026-27":("Pisa","Teatro Verdi"),
     "salerno-verdi-opera-2026":("Salerno","Teatro Municipale Giuseppe Verdi"),
     "macerata-festival-2027":("Macerata","Arena Sferisterio"),
+    # Newly approved detail adapters with already canonical physical venues.
+    "coccia-novara-opera-2027":("Novara","Teatro Coccia"),
+    "ravenna-alighieri-cherubini-2027":("Ravenna","Teatro Dante Alighieri"),
     "fenice-opera-2026-27":("Venezia","Teatro La Fenice"),
     "parma-opera-2027":("Parma","Teatro Regio di Parma"),
     "massimo-season-2026-27":("Palermo","Teatro Massimo"),
