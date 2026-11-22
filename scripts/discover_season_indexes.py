@@ -102,6 +102,13 @@ EXCLUDED_PATHS={
         "stagione-27-il-lago-dei-cigni.html",
         "stagione-27-beethoven-200.html",
     }),
+    # The Regione Veneto page is an announcement for the full 2026/27
+    # season (24 Oct–16 May), NOT one specific ticketed opera performance.
+    # Exact-only exclusion; individual municipal Rovigo opera links remain
+    # eligible through their independent dedicated adapters.
+    "rovigo-regione-programma-2026-27": frozenset({
+        "3563a671-d9b2-46bf-a10d-776af9ab17bc",
+    }),
     "carlo-felice-season-2026-27": frozenset({
         "lo-schiaccianoci", "giselle", "il-lago-dei-cigni",
         "deledda", "sergio-bernal-dance-company",
