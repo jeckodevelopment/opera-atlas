@@ -310,6 +310,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="ravenna-cherubini-rolling-opera":
+        from opera_atlas.ravenna_future_parser import eligible_detail
+        return eligible_detail(url)
     if key=="macerata-festival-rolling":
         from opera_atlas.macerata_future_parser import eligible_detail
         return eligible_detail(url)
@@ -583,6 +586,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="ravenna-cherubini-rolling-opera":
+        from opera_atlas.ravenna_future_parser import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="macerata-festival-rolling":
         from opera_atlas.macerata_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -732,6 +738,7 @@ def validate_config(config:dict)->list[dict]:
         "padova-verdi-opera-2026":("padovacultura.padovanet.it","/it/attivita-culturali/stagione-lirica-di-padova-2026"),
         "treviso-del-monaco-opera-2026-27":("risorse.teatrostabileveneto.it","/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"),
         "ravenna-alighieri-cherubini-2027":("www.orchestracherubini.it","/eventi/tpl/list/"),
+        "ravenna-cherubini-rolling-opera":("www.orchestracherubini.it","/eventi/tpl/list/"),
         "coccia-novara-opera-2027":("www.fondazioneteatrococcia.it","/spettacoli.html"),
         "coccia-novara-rolling-opera":("www.fondazioneteatrococcia.it","/spettacoli_opera_danza_concerti.html"),
         "filarmonico-verona-opera-2027":("www.arena.it","/teatro-filarmonico-verona/spettacoli-prossima-stagione/"),
@@ -880,6 +887,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/it/attivita-culturali/stagione-lirica-di-padova-2026" and not index.query
         elif key=="treviso-del-monaco-opera-2026-27":
             valid_season=index.path=="/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27" and not index.query
+        elif key=="ravenna-cherubini-rolling-opera":
+            valid_season=index.path=="/eventi/tpl/list/" and not index.query
         elif key=="ravenna-alighieri-cherubini-2027":
             valid_season=index.path=="/eventi/tpl/list/" and not index.query
         elif key=="coccia-novara-rolling-opera":
