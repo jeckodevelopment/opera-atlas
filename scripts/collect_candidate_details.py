@@ -826,7 +826,7 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         parser={
             "pisa":pisa_detail,"verona":verona_detail,"verona_rolling":verona_rolling_detail,
             "salerno":salerno_detail,"salerno_rolling":salerno_rolling_detail,"macerata":macerata_detail,"macerata_rolling":macerata_rolling_detail,
-            "novara":novara_detail,"novara_rolling":novara_rolling_detail,"ravenna":ravenna_detail," "ravenna_rolling":ravenna_rolling_detail,
+            "novara":novara_detail,"novara_rolling":novara_rolling_detail,"ravenna":ravenna_detail,"ravenna_rolling":ravenna_rolling_detail,
         }[regional_adapters[source_key]]
         title,composer,venue,recite=parser(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
