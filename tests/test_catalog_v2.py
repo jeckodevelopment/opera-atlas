@@ -36,6 +36,19 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         self.assertFalse(any(s["work_id"] in {"oa-w-000091","oa-w-000092","oa-w-000093"}
                              for s in graph["stagings"]))
 
+    def test_jesi_don_pasquale_standalone_recite_preserve_reserved_work_id(self):
+        graph=assemble(self.facts,self.registry)
+        work=next(w for w in graph["works"] if w["id"]=="oa-w-000090")
+        self.assertEqual(work["title"],"Don Pasquale")
+        self.assertEqual(work["composer"],"Gaetano Donizetti")
+        stage=next(s for s in graph["stagings"] if s["work_id"]==work["id"])
+        self.assertEqual(stage["url"],"/jesi/teatro-giovan-battista-pergolesi/don-pasquale/")
+        self.assertEqual(stage["id"],"oa-s-000196")
+        recite=[r for r in graph["performances"] if r["staging_id"]==stage["id"]]
+        self.assertEqual([(r["local_date"],r["id"]) for r in recite],
+                         [("2026-10-30","oa-r-000863"),("2026-10-31","oa-r-000864")])
+        self.assertNotIn("don pasquale|gaetano donizetti",self.registry["reserved_works"])
+
     def test_slugs_and_relationships(self):
         result=assemble(self.facts, self.registry)
         self.assertEqual(slugify("L’italiana in Algeri"), "italiana-in-algeri")
