@@ -47,6 +47,9 @@ jobs:
           python-version: '3.12'
       - name: Verify existing catalog and parser compatibility
         run: |
+          # The first-party evidence checkpoint can add composite programs
+          # independently of the previously generated public programs feed.
+          python -m scripts.publish_programs
           python -m unittest discover -s tests -v
           python -m scripts.build_verified_catalog --check
       - name: Quarantine falsely attributed Petruzzelli stage IDs

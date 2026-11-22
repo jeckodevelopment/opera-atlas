@@ -83,6 +83,9 @@ jobs:
           python-version: '3.12'
       - name: Validate current public catalog before acquisition
         run: |
+          # Regenerate the deterministic composite-ticket companion before
+          # comparing it with newly checkpointed source-bound evidence.
+          python -m scripts.publish_programs
           python -m unittest discover -s tests -v
           python -m scripts.build_verified_catalog --check
           # A newly-reviewed observation may legitimately differ from the previous public v2 snapshot.
