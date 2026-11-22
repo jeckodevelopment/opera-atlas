@@ -62,7 +62,7 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
             # Recheck the actual first-party production body (not a URL
             # slug or generic season list) in strict chronological order.
             full=event[event.find("Teatro Regio di Parma"):]
-            full=re.sub(r"(?i)\\b(ven|sab)\\.",r"\\1",full)
+            full=re.sub(r"(?i)\b(ven|sab)\.",r"\1",full)
             full=" ".join(full.casefold().split())
             parts=("ven 4 dic","09:00","scuole",
                    "ven 4 dic","11:00","scuole",
@@ -74,7 +74,7 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
                 if found<0 or found-pos>700:
                     raise ValueError("incomplete official Parma public/school ticket schedule")
                 pos=found+len(part)
-            if re.search(r"(?i)\\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\\b",
+            if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",
                          full[:pos]):
                 raise ValueError("cancelled Parma recita needs review")
             # Static values are those already independently reviewed from
