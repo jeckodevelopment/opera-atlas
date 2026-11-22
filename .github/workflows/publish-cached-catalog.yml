@@ -7,6 +7,12 @@ on:
     branches: [main]
     paths:
       - 'scripts/**'
+      # Ignore diagnostics-only edits: no candidate facts or verified recite
+      # can be unlocked by modifying these observation helpers.
+      - '!scripts/pipeline_operations_health.py'
+      - '!scripts/push_pipeline_operations_health.py'
+      - '!scripts/audit_public_atlas.py'
+      - '!scripts/push_live_publication_audit.py'
       - 'opera_atlas/**'
       - 'data/candidate-detail-evidence.json'
       - 'data/season-index-candidates.json'
