@@ -36,9 +36,9 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
     # inference or a time guessed from the page URL.
     official_slots=("09:00","11:00","15:00","18:00")
     if (all(event.count(clock)==1 for clock in official_slots)
-        and len(re.findall(r"\\bScuole\\b",event))>=2
-        and len(re.findall(r"\\bFamiglie\\b",event))>=2
-        and not re.search(r"(?i)\\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\\b",
+        and len(re.findall(r"\bScuole\b",event))>=2
+        and len(re.findall(r"\bFamiglie\b",event))>=2
+        and not re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",
                           event[:event.find("18:00")+len("18:00")])):
         return [{"event_title":TITLE,"composer":COMPOSER,
                  "venue":"Teatro Regio di Parma","date":day,
