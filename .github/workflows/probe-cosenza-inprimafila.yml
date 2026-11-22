@@ -62,7 +62,15 @@ jobs:
               season = [u for u in candidates if u.rstrip("/").endswith("/stagione-lirica-2026-cosenza")]
               if len(season) != 1:
                   raise RuntimeError("Missing / ambiguous official mixed-season page")
-              productions = parse_season_summary(fetch(season[0]),url=season[0])
+              season_html = fetch(season[0])
+              from opera_atlas.cosenza_inprimafila_opera import Reader, DATE_ENTRY, VENUE
+              inspection = Reader()
+              inspection.feed(season_html)
+              for n,piece in enumerate(inspection.parts):
+                  if VENUE.search(piece):
+                      print("DOM venue",n,"before=",repr(inspection.parts[max(n-3,0):n]),
+                            "after=",repr(inspection.parts[n+1:n+6]))
+              productions = parse_season_summary(season_html,url=season[0])
               observed = {title: rows for title,_,_,rows in productions}
               expected_titles = {
                   "Il barbiere di Siviglia": 2,
