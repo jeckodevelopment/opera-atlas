@@ -15,7 +15,7 @@ from opera_atlas.national_detail_parser import clean, MONTHS
 
 KEY="modena-opera-2026-27"
 HOST="www.comune.modena.it"
-SEASON_PATH=re.compile(r"/vivere-modena/eventi/(20\\d{2})/stagione-opera-\\1-(20\\d{2})/[a-z0-9-]+/?")
+SEASON_PATH=re.compile(r"/vivere-modena/eventi/(20\d{2})/stagione-opera-\1-(20\d{2})/[a-z0-9-]+/?")
 VENUE="Teatro Comunale Pavarotti-Freni"
 WEEKDAYS={"lunedi":0,"martedi":1,"mercoledi":2,"giovedi":3,
           "venerdi":4,"sabato":5,"domenica":6}
