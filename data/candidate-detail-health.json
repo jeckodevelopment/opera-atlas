@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T00:09:03+00:00",
+  "checked_at": "2026-11-22T00:15:22+00:00",
   "scope": "national",
-  "attempted": 20,
+  "attempted": 16,
   "outcomes": [
     {
       "candidate_id": "oa-index-8bc8b40e1da92efab27d",
-      "outcome": "facts_found",
-      "rows": 1
+      "outcome": "verified_first_party_press_calendar",
+      "rows": 9
     },
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -22,7 +22,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -34,7 +34,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-1a02a18e39758285a976",
+      "candidate_id": "oa-index-93538b402fa3e844ca69",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -82,7 +82,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-1e27375a038df76a1ea6",
+      "candidate_id": "oa-index-a98083086627ce6e0225",
       "outcome": "facts_found",
       "rows": 2
     },
@@ -94,6 +94,18 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:no verified Trieste opera showtimes",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-19141fd504da67924d01",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:missing performance details section",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -111,67 +123,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-8aa427dd9ba609755fb6",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-a98083086627ce6e0225",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-cef30865a6bd9d93804f",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-d54e9b021b5167cfb735",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-08102433798cc6aa1215",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-19141fd504da67924d01",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing performance details section",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-93538b402fa3e844ca69",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no bounded work-specific Lucca recital panel",
-        "authority_work:no_evidence",
-        "official_composer_credit:no bounded work-specific Lucca recital panel",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing or conflicting labelled Donizetti composer",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-b79b2b7737225d1a67dc",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -184,6 +135,11 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-d54e9b021b5167cfb735",
+      "outcome": "verified_first_party_press_calendar",
+      "rows": 9
+    },
+    {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -191,6 +147,30 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:conflicting official showtime for one day",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-1a02a18e39758285a976",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no bounded work-specific Lucca recital panel",
+        "authority_work:no_evidence",
+        "official_composer_credit:no bounded work-specific Lucca recital panel",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:missing or conflicting labelled Donizetti composer",
         "schema_event:no_evidence"
       ],
       "rows": 0

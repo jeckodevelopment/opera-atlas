@@ -2515,15 +2515,74 @@
       "candidate_id": "oa-index-8bc8b40e1da92efab27d",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
-      "content_sha256": "ced3907f5a1bd46dfde857431e9210b823819f695a5e9295ec21d762cfa7dfdd",
-      "checked_at": "2026-11-22T00:08:04+00:00",
+      "content_sha256": "f4195f668d2f6dd602c11a9c67f8850e583f49a3369389878c5a89cd4c4ab452",
+      "checked_at": "2026-11-22T00:14:42+00:00",
       "status": "needs_editorial_review",
+      "press_calendar_evidence_url": "https://www.teatromassimobellini.it/il-quinto-moschettiere-il-teatro-massimo-bellini-torna-al-sangiorgi-con-le-opere-da-camera/",
+      "press_calendar_sha256": "49a2b4e0de1df3b7ccfebbcb7e440f5b4f69e2f8ee9fc3e9b7d5fc5f116acf2f",
       "event_facts": [
         {
           "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-11-13",
+          "starts_at": "2026-11-13T11:00:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-11-14",
+          "starts_at": "2026-11-14T20:30:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-11-15",
+          "starts_at": "2026-11-15T17:30:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
           "date": "2026-12-16",
-          "starts_at": null,
-          "venue": "Teatro Sangiorgi"
+          "starts_at": "2026-12-16T11:00:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-12-17",
+          "starts_at": "2026-12-17T11:00:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-12-18",
+          "starts_at": "2026-12-18T19:00:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2027-01-20",
+          "starts_at": "2027-01-20T11:00:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2027-01-21",
+          "starts_at": "2027-01-21T11:00:00+01:00"
+        },
+        {
+          "event_title": "Il quinto moschettiere",
+          "composer": "Matteo Musumeci",
+          "venue": "Teatro Sangiorgi",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T11:00:00+01:00"
         }
       ]
     },
@@ -3104,8 +3163,8 @@
       "candidate_id": "oa-index-a98083086627ce6e0225",
       "source_key": "reggio-valli-opera-2026-27",
       "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
-      "content_sha256": "1be68a03fef12a42f74713fb33ae1b20490820488fa9dea012f799de60291b8f",
-      "checked_at": "2026-11-22T00:13:03+00:00",
+      "content_sha256": "83fff5b8f584673d2063e1d67a9974627f2ca4a19346c7eb6dadc787f33f4b39",
+      "checked_at": "2026-11-22T00:15:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3806,15 +3865,74 @@
       "candidate_id": "oa-index-d54e9b021b5167cfb735",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
-      "content_sha256": "67ecbe66a0bf4fbec29e73f3978454247f1b53c98727053e9c557fdd32271e24",
-      "checked_at": "2026-11-22T00:08:48+00:00",
+      "content_sha256": "c18ffdebef921863629a31a7c448c6edbcdb870c59d888ac3f8aee51f163075a",
+      "checked_at": "2026-11-22T00:15:16+00:00",
       "status": "needs_editorial_review",
+      "press_calendar_evidence_url": "https://www.teatromassimobellini.it/continuano-le-opere-da-camera-al-teatro-sangiorgi-con-le-nozze-dellorso/",
+      "press_calendar_sha256": "296527fb1dbed7d4de62e7b7f5f429ffbaadb55d44e2d1b023dec9937fb3d460",
       "event_facts": [
         {
-          "event_title": "Le nozze dell’Orso",
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-11-20",
+          "starts_at": "2026-11-20T11:00:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-11-21",
+          "starts_at": "2026-11-21T20:30:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T17:30:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
           "date": "2026-12-10",
-          "starts_at": null,
-          "venue": "Teatro Sangiorgi"
+          "starts_at": "2026-12-10T11:00:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-12-12",
+          "starts_at": "2026-12-12T11:00:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T11:00:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2027-01-13",
+          "starts_at": "2027-01-13T11:00:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2027-01-14",
+          "starts_at": "2027-01-14T11:00:00+01:00"
+        },
+        {
+          "event_title": "Le nozze dell’orso",
+          "composer": "Joe Schittino",
+          "venue": "Teatro Sangiorgi",
+          "date": "2027-01-15",
+          "starts_at": "2027-01-15T11:00:00+01:00"
         }
       ]
     },
