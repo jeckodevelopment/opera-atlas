@@ -74,14 +74,21 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     body=clean(html)
     # The global header contains performances of *other* productions.
     # Only the production panel after MENU belongs to this work.
-    panel=re.search(r"\bMENU\s+TEATRO DEL GIGLIO\s+(.*?)\s+Segui tutte le novità\b",body,re.I)
+    # Bound the schedule by the exact official work heading and the
+    # venue/genre badges, not by the site's changeable global MENU markup.
+    # This deliberately excludes the unrelated upcoming events in the header
+    # and suggested shows in the footer.
+    panel=re.search(
+        r"\bTEATRO DEL GIGLIO\s+"+re.escape(title)+
+        r"\s+Teatro del Giglio\s+Lirica\b(.*?)\bSegui tutte le novità\b",
+        body,re.I|re.S)
     if not panel:
         raise ValueError("no bounded work-specific Lucca recital panel")
     text=panel.group(1)
-    if not text.startswith(title+" "):
+    # The same title must appear again as the unique main heading after its
+    # showtime card, before the editorial credits.
+    if not re.search(r"\b"+re.escape(title)+r"\s+(?:Dramma|Opera|Commedia|Melodramma)",text,re.I):
         raise ValueError("work-specific event heading differs from page title")
-    if not re.search(r"\bTeatro del Giglio\s+Lirica\b",text,re.I):
-        raise ValueError("event not at Teatro del Giglio or not opera")
     credits=ComposerCredits()
     credits.feed(html)
     if len(credits.credits)!=1:
