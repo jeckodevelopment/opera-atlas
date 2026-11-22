@@ -201,6 +201,10 @@ def verified_shared_page_identities(candidates:dict, detail:dict,
                    "coccia-novara-rolling-opera"}),
         frozenset({"macerata-festival-2027",
                    "macerata-festival-rolling"}),
+        frozenset({"sassari-de-carolis-opera-2026",
+                   "sassari-de-carolis-rolling-opera"}),
+        frozenset({"ravenna-alighieri-cherubini-2027",
+                   "ravenna-cherubini-rolling-opera"}),
     )
     grouped={}
     for row in rows:
