@@ -1492,6 +1492,8 @@ def main():
     parser.add_argument("--dry-run",action="store_true",
                         help="Check a source without committing candidates or health files")
     args=parser.parse_args()
+    if args.dry_run and args.source_key is None:
+        parser.error("--dry-run requires --source-key: select exactly one connector")
     config=json.loads(CONFIG.read_text(encoding="utf-8"))
     current=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {"schema_version":1,"candidates":[]}
     previous=json.loads(HEALTH.read_text(encoding="utf-8")) if HEALTH.exists() else {}
