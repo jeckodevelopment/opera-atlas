@@ -7214,6 +7214,24 @@
       ]
     },
     {
+      "id": "curated:auto-1ea669503ea5640a:2027-04-09",
+      "starts_at": "2027-04-09T20:00:00+02:00",
+      "local_date": "2027-04-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ]
+    },
+    {
       "id": "curated:auto-dc6e8ff3bddba01d:2027-04-09",
       "starts_at": "2027-04-09T20:00:00+02:00",
       "local_date": "2027-04-09",
@@ -7301,6 +7319,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-1ea669503ea5640a:2027-04-11",
+      "starts_at": "2027-04-11T16:00:00+02:00",
+      "local_date": "2027-04-11",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
       ]
     },
     {

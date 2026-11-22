@@ -2028,6 +2028,14 @@
       "slug": "le-nozze-dell-orso",
       "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
       "season": "2026"
+    },
+    "auto-1ea669503ea5640a": {
+      "id": "oa-s-000158",
+      "work_id": "oa-w-000075",
+      "venue_id": "oa-v-000027",
+      "slug": "simon-boccanegra",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -6512,6 +6520,18 @@
       "staging_id": "oa-s-000157",
       "original_date": "2027-01-15",
       "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "auto-1ea669503ea5640a|2027-04-09": {
+      "id": "oa-r-000763",
+      "staging_id": "oa-s-000158",
+      "original_date": "2027-04-09",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+    },
+    "auto-1ea669503ea5640a|2027-04-11": {
+      "id": "oa-r-000764",
+      "staging_id": "oa-s-000158",
+      "original_date": "2027-04-11",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
     }
   }
 }

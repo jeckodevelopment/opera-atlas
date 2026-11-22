@@ -4684,6 +4684,25 @@
           "11:00"
         ]
       ]
+    },
+    {
+      "key": "auto-1ea669503ea5640a",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "dates": [
+        [
+          "2027-04-09",
+          "20:00"
+        ],
+        [
+          "2027-04-11",
+          "16:00"
+        ]
+      ]
     }
   ]
 }
