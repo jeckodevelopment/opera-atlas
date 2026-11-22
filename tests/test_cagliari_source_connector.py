@@ -49,6 +49,21 @@ class CagliariSourceTests(unittest.TestCase):
         self.assertEqual(len(found),7)
         self.assertTrue(all(v.startswith("https://www.liricocagliari.it/evento/") for v in found))
 
+    def test_candide_editorial_identity_seed_is_source_bound(self):
+        from scripts.publish_catalog_v2 import ROOT
+        from scripts.publish_work_editorial import validate_history
+        import json
+        seeds=json.loads((ROOT/"data"/"verified-work-authority-seeds.json").read_text(encoding="utf-8"))
+        url="https://www.liricocagliari.it/evento/candide/"
+        matching=[row for row in seeds["works"]
+                  if row.get("source_key")==KEY and row.get("source_url")==url]
+        self.assertEqual(len(matching),1)
+        work=matching[0]
+        self.assertEqual((work["title"],work["composer"]),("Candide","Leonard Bernstein"))
+        self.assertTrue(validate_history(work["history"]))
+        self.assertGreaterEqual(len(work["synopsis"]),45)
+        self.assertLessEqual(len(work["synopsis"]),300)
+
     def test_explicit_year_and_clock_corrobated_with_brochure(self):
         source=html(sample_days(year=True))
         title,composer,venue,dates=parse_detail(source,url=DETAIL)
