@@ -23,6 +23,14 @@ on:
       - 'data/auto-source-urls.json'
       - 'data/verified-time-evidence.json'
       - 'tests/test_cached_known_publication.py'
+      # A regression test correction can unblock the publisher after a
+      # verified source has already been ingested and a stale first-run
+      # expectation prevented its public commit.
+      - 'tests/test_chieti_marrucino_source.py'
+      - 'tests/test_sassari_de_carolis_source.py'
+      - 'tests/test_lucca_opera_source.py'
+      - 'tests/test_lucca_work_panel_batch.py'
+      - 'tests/test_auto_catalogue.py'
       - '.github/workflows/publish-cached-catalog.yml'
 permissions:
   contents: write
