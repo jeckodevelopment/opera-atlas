@@ -326,6 +326,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="napoli-san-carlo-rolling-opera":
+        from opera_atlas.napoli_san_carlo import eligible_detail
+        return eligible_detail(url)
     if key=="pesaro-rof-2026":
         from opera_atlas.pesaro_rof import eligible_detail
         return eligible_detail(url)
@@ -634,6 +637,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="napoli-san-carlo-rolling-opera":
+        from opera_atlas.napoli_san_carlo import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="pesaro-rof-2026":
         from opera_atlas.pesaro_rof import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -794,6 +800,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "napoli-san-carlo-rolling-opera":("www.teatrosancarlo.it","/spettacoli/"),
         "pesaro-rof-2026":("www.rossinioperafestival.it","/archivio/stagione-2026/"),
         "martina-valle-itria-2026":("www.festivaldellavalleditria.it","/programma-2026"),
         "trapani-luglio-musicale-2026":("www.lugliomusicale.it","/it/luglio-musicale-stagioni/stagione-2026/"),
@@ -1009,6 +1016,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/events/categoria/fuori-abbonamento/" and not index.query
         elif key=="haydn-rolling-opera":
             valid_season=index.path=="/eventi/area/opera" and not index.query
+        elif key=="napoli-san-carlo-rolling-opera":
+            valid_season=index.path=="/spettacoli/" and not index.query
         elif key=="pesaro-rof-2026":
             match=re.fullmatch(r"/archivio/stagione-(20\d{2})/",index.path)
             valid_season=bool(match and 2026<=int(match[1])<=2099 and not index.query)
