@@ -65,10 +65,10 @@ class SanCarloCanonicalBridgeTests(unittest.TestCase):
         self.assertEqual({r["date"]: r["time"] for r in
                           donizetti["corroboration"]["overridden_secondary_showtimes"]},
                          {"2027-04-21": "18:00", "2027-04-23": "19:00"})
-        self.assertEqual(index["candidates"][0]["source_key"], SOURCE_KEY)
-        self.assertEqual(index["candidates"][0]["official_url"],
-                         "https://www.teatrosancarlo.it/spettacoli/luisa-miller/")
-        evidence = detail["evidence"][0]
+        self.assertTrue(all(x["source_key"] == SOURCE_KEY for x in index["candidates"]))
+        self.assertIn("https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
+                      {x["official_url"] for x in index["candidates"]})
+        evidence = next(x for x in detail["evidence"] if x["source_url"].endswith("/luisa-miller/"))
         self.assertEqual(evidence["status"], "needs_editorial_review")
         self.assertFalse(evidence["corroboration"]["official_event_page_retrieved"])
         self.assertEqual(evidence["corroboration"]["showtimes_confirmed"], 2)
@@ -96,7 +96,7 @@ class SanCarloCanonicalBridgeTests(unittest.TestCase):
                                "source_url": url, "status": "needs_editorial_review",
                                "event_facts": [{"first_party": True}]}]
         _, out, statuses = apply(c, r, index, detail, checked_at="now")
-        self.assertEqual(out["evidence"][0]["event_facts"], [{"first_party": True}])
+        self.assertEqual(next(x for x in out["evidence"] if x["candidate_id"] == cid)["event_facts"], [{"first_party": True}])
         self.assertIn("stronger_primary_preserved", {x["status"] for x in statuses})
 
     def test_unapproved_identity_or_secondary_report_fails_closed(self):
