@@ -2,9 +2,9 @@
 import json
 import unittest
 from datetime import date
-from opera_atlas.napoli_san_carlo import INDEX,extract_index,parse_detail,eligible_detail
+from opera_atlas.napoli_san_carlo import INDEX,extract_index,parse_detail,eligible_detail,SanCarloSecurityChallenge
 from opera_atlas.controlled_fetch import FetchResult
-from scripts.discover_season_indexes import CONFIG,validate_config,eligible,extract
+from scripts.discover_season_indexes import CONFIG,validate_config,eligible,extract,scan
 from scripts.collect_candidate_details import collect
 from scripts.source_automation import INDEX_VENUES
 from scripts.auto_catalogue import VENUE_BY_SOURCE,verified_venue
@@ -58,6 +58,23 @@ class NapoliSanCarloTests(unittest.TestCase):
         for html in bad:
             with self.subTest(html=html[:100]),self.assertRaises(ValueError):
                 parse_detail(html,url=WORK)
+
+    def test_security_challenge_is_reported_as_external_access_blocker(self):
+        def challenge_fetch(db,*,source_id,url,network_enabled):
+            self.assertEqual(url,INDEX)
+            return FetchResult(url,CHALLENGE,"a"*64,len(CHALLENGE))
+        config={"schema_version":1,"sources":[{
+            "key":KEY,"official_url":"https://www.teatrosancarlo.it/",
+            "url":INDEX,"access_status":"approved","min_links":1}]}
+        with self.assertRaises(SanCarloSecurityChallenge):
+            extract_index(CHALLENGE,url=INDEX)
+        _,statuses=scan(config,{"schema_version":1,"candidates":[]},
+                        network_enabled=True,fetcher=challenge_fetch,
+                        source_keys={KEY},now="2026-11-22T21:15:00+00:00")
+        self.assertEqual(len(statuses),1)
+        self.assertEqual(statuses[0]["status"],"unavailable_or_invalid")
+        self.assertEqual(statuses[0]["diagnostic"],"official_anti_bot_challenge")
+        self.assertEqual(statuses[0]["links"],0)
 
     def test_candidates_use_canonical_gate_not_generic_event_fallback(self):
         doc={"schema_version":1,"candidates":[{
