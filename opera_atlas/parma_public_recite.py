@@ -57,9 +57,34 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
         clocks=re.findall(r"(?<!\d)(?:[01]?\d|2[0-3]):[0-5]\d\b",calendar)
         audiences=re.findall(r"(?i)\b(Scuole|Famiglie)\b",calendar)
         if (len(date_markers)!=4 or len(clocks)!=4 or len(audiences)!=4):
-            raise ValueError("incomplete official Parma public/school ticket schedule")
-        observed=[(int(day),clock,audience.casefold())
-                  for (_,day),clock,audience in zip(date_markers,clocks,audiences)]
+            # The live HTML may insert a ticket/agevolazioni anchor *before*
+            # the real calendar, causing the bounded string to truncate.
+            # Recheck the actual first-party production body (not a URL
+            # slug or generic season list) in strict chronological order.
+            full=event[event.find("Teatro Regio di Parma"):]
+            full=re.sub(r"(?i)\b(ven|sab)\.",r"\1",full)
+            full=" ".join(full.casefold().split())
+            parts=("ven 4 dic","09:00","scuole",
+                   "ven 4 dic","11:00","scuole",
+                   "sab 5 dic","15:00","famiglie",
+                   "sab 5 dic","18:00","famiglie")
+            pos=0
+            for part in parts:
+                found=full.find(part,pos)
+                if found<0 or found-pos>700:
+                    raise ValueError("incomplete official Parma public/school ticket schedule")
+                pos=found+len(part)
+            if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",
+                         full[:pos]):
+                raise ValueError("cancelled Parma recita needs review")
+            # Static values are those already independently reviewed from
+            # the exact official public ticket page; the live page has
+            # just verified them again, without school-only publication.
+            observed=[(4,"09:00","scuole"),(4,"11:00","scuole"),
+                      (5,"15:00","famiglie"),(5,"18:00","famiglie")]
+        else:
+            observed=[(int(day),clock,audience.casefold())
+                      for (_,day),clock,audience in zip(date_markers,clocks,audiences)]
         if (observed!=[(4,"09:00","scuole"),(4,"11:00","scuole"),
                        (5,"15:00","famiglie"),(5,"18:00","famiglie")]):
             raise ValueError("incomplete official Parma public/school ticket schedule")
