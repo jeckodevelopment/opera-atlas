@@ -55,7 +55,7 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
         next_detail=section[found.end():found.end()+700]
         # Close at ticket info, not at the following opera's composer.
         next_detail=re.split(r"(?i)\bbiglietti da\b",next_detail,maxsplit=1)[0]
-        if not re.search(r"(?i)\b(?:musica (?:e libretto )?di|opera in tre atti di)\s+"+re.escape(composer)+r"\b",next_detail):
+        if not re.search(r"(?i)\b(?:musica (?:e libretto )?di|opera in tre atti di)\s+"+re.escape(composer)+r"(?=\s*(?:[.,;]|su\b))",next_detail):
             raise ValueError(f"missing official composer for {title}")
         for day,month,clock in showtimes:
             stamp=date(2026,MONTHS[month],day).isoformat()
