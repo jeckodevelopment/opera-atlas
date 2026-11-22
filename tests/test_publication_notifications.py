@@ -47,6 +47,7 @@ class PublicationNotificationsTest(unittest.TestCase):
             send(notice, "fake-api-key", "Atlas <atlas@example.org>", ["one@example.org", "two@example.org"])
         request = call.call_args.args[0]
         self.assertEqual(request.get_header("Idempotency-key"), "atlas-published-oa-w-1")
+        self.assertEqual(request.get_header("User-agent"), "OperaAtlas-Notifications/1.0 (GitHub Actions; jeckodevelopment/opera-atlas)")
         self.assertIn(b"Nuova opera", request.data)
         body = json.loads(request.data)
         self.assertEqual(body["to"], ["one@example.org", "two@example.org"])
