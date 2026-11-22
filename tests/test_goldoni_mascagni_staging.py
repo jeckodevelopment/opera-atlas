@@ -58,14 +58,21 @@ class GoldoniMascagniStagingTests(unittest.TestCase):
         self.assertEqual(len(candidates),2)
         self.assertEqual(len(evidences),2)
         self.assertTrue(all(x["status"]=="needs_editorial_review" for x in evidences))
+        from scripts.repair_livorno_mascagni_staging import consolidate
+        canonical,identities,migrated=consolidate(self.facts,self.registry)
+        self.assertIsInstance(migrated,bool)
         facts,registry,approved,health=promote(
-            self.facts,self.registry,{"schema_version":1,"evidence":evidences},
+            canonical,identities,{"schema_version":1,"evidence":evidences},
             {"schema_version":1,"candidates":candidates},
             list(urls),today=date(2026,11,22))
         productions=[p for p in facts["productions"]
                      if p["municipality"]=="Livorno" and p["venue"]=="Piazza Goldoni"
                      and p["title"]=="Cavalleria rusticana"]
         self.assertEqual(len(productions),1,health)
+        repaired,canonical_ids,again_migrated=consolidate(facts,registry)
+        self.assertFalse(again_migrated)
+        self.assertEqual(repaired,facts)
+        self.assertEqual(canonical_ids,registry)
         self.assertEqual(productions[0]["dates"],
                          [["2026-08-19","21:30"],["2026-08-20","21:30"]])
         self.assertEqual(verified_livorno_recital_urls(
