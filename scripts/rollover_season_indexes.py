@@ -50,7 +50,7 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
         return None
     url=urlsplit(source["url"])
     if key=="martina-valle-itria-2026":
-        match=re.fullmatch(r"/programma-(20\\d{2})",url.path)
+        match=re.fullmatch(r"/programma-(20\d{2})",url.path)
         if not match or url.hostname!="www.festivaldellavalleditria.it":return None
         year=int(match[1])
         if year<2026 or year>=2099 or (
