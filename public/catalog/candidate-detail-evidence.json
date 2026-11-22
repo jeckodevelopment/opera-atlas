@@ -1149,7 +1149,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello/",
       "content_sha256": "1c5d8a1b9310e83a8a2b223a82caf633fb20f418a5c43c051b0a42efa2605602",
-      "checked_at": "2026-11-22T16:17:50+00:00",
+      "checked_at": "2026-11-22T17:51:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1376,7 +1376,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-22T16:17:37+00:00",
+      "checked_at": "2026-11-22T17:50:55+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1584,8 +1584,8 @@
       "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-3/",
-      "content_sha256": "36a197b99ad7b80ce79c1660d8c983cb87c79c5c39cc4c58210b665a5e9835fc",
-      "checked_at": "2026-11-22T16:18:03+00:00",
+      "content_sha256": "7cd7ef267e5bcc5ff4a7edaf2a43135b3819ae0a6c4d976640083ae2ba2c7d32",
+      "checked_at": "2026-11-22T17:51:35+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1855,7 +1855,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
       "content_sha256": "c817a35abb780b0bf8bbbad7860757a817f2d81bb71f1fc3003b9cf4874ca278",
-      "checked_at": "2026-11-22T16:18:04+00:00",
+      "checked_at": "2026-11-22T17:51:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2071,8 +2071,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "ecec07b917df8aa40faaf7727f401978ab44d6f43b972e62bc932393cb8db704",
-      "checked_at": "2026-11-22T16:17:41+00:00",
+      "content_sha256": "a0a28948e124c31a8a50cf80123e99ace18e390a1448b44ea83dfdcdd38fbd36",
+      "checked_at": "2026-11-22T17:50:57+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2859,8 +2859,8 @@
       "candidate_id": "oa-index-70313ef8895b42a91a5b",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
-      "content_sha256": "460be776a3b12e94a0126506f9803e305c3ee25762919efd31e14509614e6b2e",
-      "checked_at": "2026-11-22T16:18:07+00:00",
+      "content_sha256": "f6abd1c9a5e7260df8a817973caf2c745311e493884e0d5861624655c958df8b",
+      "checked_at": "2026-11-22T17:51:43+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3072,7 +3072,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-22T16:17:58+00:00",
+      "checked_at": "2026-11-22T17:51:17+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3158,7 +3158,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
       "content_sha256": "7bdf611e774354896c76269a1dde71b9e52a7074316c70a6eef4dc7338a9cc94",
-      "checked_at": "2026-11-22T17:48:44+00:00",
+      "checked_at": "2026-11-22T17:51:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4246,7 +4246,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
       "content_sha256": "1f0d8110e51589dd450556d0ce7f5673d6bfeb9d95d0ae5068511e39c87a8189",
-      "checked_at": "2026-11-22T16:18:08+00:00",
+      "checked_at": "2026-11-22T17:51:21+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5535,7 +5535,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
       "content_sha256": "384cfff509e7189395cfdc7db5e70d7e83bdf70441483e2ee579eaed3d627aae",
-      "checked_at": "2026-11-22T17:48:49+00:00",
+      "checked_at": "2026-11-22T17:51:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5575,8 +5575,8 @@
       "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-2/",
-      "content_sha256": "68f5b536ef574345b5e37ad85e29bb4b06f26b8c4b190bf736dde3bc03325c10",
-      "checked_at": "2026-11-22T16:18:12+00:00",
+      "content_sha256": "196ac54c54aa3c6d2c0f994bcdacaffa3ddde929c267ad1aabf2066e565e9c47",
+      "checked_at": "2026-11-22T17:51:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5829,8 +5829,8 @@
       "candidate_id": "oa-index-d1c1b3127d4e683424be",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/aida/",
-      "content_sha256": "bbc4f000b7df212b19ad8cd1e3e574c0443e34137386d64283348fb1f5d56995",
-      "checked_at": "2026-11-22T16:18:16+00:00",
+      "content_sha256": "2484995770fc8e91faf07dc5cee76e00ad4bbe89f962e9ea31870308a0ca8842",
+      "checked_at": "2026-11-22T17:51:07+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6145,8 +6145,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "a03ad54f782f9bec1ecb2d212c9d429687e40bd78c7a27979a25d2f0588630e9",
-      "checked_at": "2026-11-22T17:48:30+00:00",
+      "content_sha256": "58169f1fc3d7072d46ea154c141aeb75e36543786ffa02dced0e479faa5f2d51",
+      "checked_at": "2026-11-22T17:51:11+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6467,7 +6467,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
       "content_sha256": "8c091f212d60b60c592ec04e468c9b9085c4f63520fca9fd48cae92541c9688a",
-      "checked_at": "2026-11-22T16:18:17+00:00",
+      "checked_at": "2026-11-22T17:51:19+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6607,7 +6607,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
       "content_sha256": "1b7c99c607de0dea5b0b658503a8eaa03d4df2941a6126139d607886b671d9a5",
-      "checked_at": "2026-11-22T17:48:53+00:00",
+      "checked_at": "2026-11-22T17:51:26+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6931,6 +6931,43 @@
       ]
     },
     {
+      "candidate_id": "oa-index-ee87c25e50507f1f3346",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola",
+      "content_sha256": "787a793c0559ce63a1b944caf4a14e92d60785855fa0f8abb31be2dfa1ad2f7b",
+      "content_hash_scope": "reviewed_secondary_evidence_not_official_html",
+      "reviewed_on": "2026-11-22",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Sociale",
+          "date": "2027-04-23",
+          "starts_at": "2027-04-23T20:30:00+02:00"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Sociale",
+          "date": "2027-04-25",
+          "starts_at": "2027-04-25T16:00:00+02:00"
+        }
+      ],
+      "corroboration": {
+        "method": "reviewed_issuer_repertoire_plus_external_event_cards",
+        "official_event_page_retrieved": false,
+        "issuer_url": "https://artbonus.gov.it/1319-comune-di-rovigo.html",
+        "season_cross_check_url": "https://www.operamundus.com/comunicati-stampa/un-fiore-di-stagione-211esima-stagione-lirica-al-teatro-sociale-di-rovigo/",
+        "publisher_urls": [
+          "https://www.classicalive.it/it/eventi/2027-04-23/cenerentola/",
+          "https://www.classicalive.it/it/eventi/2027-04-25/cenerentola/"
+        ],
+        "independence_note": "Editorial cross-source verification; official repertoire source did not provide individual booking clocks; ClassicaLive is a single external publisher for both dated pages.",
+        "reviewed_on": "2026-11-22"
+      }
+    },
+    {
       "candidate_id": "oa-index-eedca6da108bd27e8d30",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
@@ -7156,7 +7193,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
       "content_sha256": "8a522eb3ab545bcc0762dc7c329b3c8a1ff7c99732bcd60c84c5dc81de10a5d4",
-      "checked_at": "2026-11-22T17:48:59+00:00",
+      "checked_at": "2026-11-22T17:51:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7287,6 +7324,43 @@
         "credit": "Immagine della produzione dal sito ufficiale del teatro",
         "alt": "Immagine della produzione di Il barbiere di Siviglia",
         "kind": "official_production_image"
+      }
+    },
+    {
+      "candidate_id": "oa-index-fa8a0cd7221e0292dec7",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida",
+      "content_sha256": "b78f24b9d6bbd4f0b2a624e124c3c1f091aa176373def9a35d124141bd2e95e3",
+      "content_hash_scope": "reviewed_secondary_evidence_not_official_html",
+      "reviewed_on": "2026-11-22",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Sociale",
+          "date": "2027-02-26",
+          "starts_at": "2027-02-26T20:30:00+01:00"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Sociale",
+          "date": "2027-02-28",
+          "starts_at": "2027-02-28T16:00:00+01:00"
+        }
+      ],
+      "corroboration": {
+        "method": "reviewed_issuer_repertoire_plus_external_event_cards",
+        "official_event_page_retrieved": false,
+        "issuer_url": "https://artbonus.gov.it/1319-comune-di-rovigo.html",
+        "season_cross_check_url": "https://www.operamundus.com/comunicati-stampa/un-fiore-di-stagione-211esima-stagione-lirica-al-teatro-sociale-di-rovigo/",
+        "publisher_urls": [
+          "https://www.classicalive.it/it/eventi/2027-02-26/aida/",
+          "https://www.classicalive.it/it/eventi/2027-02-28/aida/"
+        ],
+        "independence_note": "Editorial cross-source verification; official repertoire source did not provide individual booking clocks; ClassicaLive is a single external publisher for both dated pages.",
+        "reviewed_on": "2026-11-22"
       }
     },
     {
