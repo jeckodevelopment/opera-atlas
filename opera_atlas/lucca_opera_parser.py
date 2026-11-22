@@ -38,26 +38,47 @@ class Headings(HTMLParser):
 
 
 class ComposerCredits(HTMLParser):
-    """Take only the first-party music-credit paragraph, not nearby cast text."""
-    def __init__(self):
+    """A first-party work's music credit, in a text node after its unique h1.
+
+    The HTML tag containing the credit differs between old and new Giglio
+    pages. Inspecting one complete node prevents swallowing the next cast
+    member, while the h1/footer boundary excludes site-wide promotions.
+    """
+    def __init__(self, title: str):
         super().__init__(convert_charrefs=True)
-        self.in_p=False
-        self.parts=[]
+        self.title=title
+        self.in_h1=False
+        self.heading=[]
+        self.in_work=False
         self.credits=[]
+
     def handle_starttag(self,tag,attrs):
-        if tag=="p":
-            self.in_p=True
-            self.parts=[]
+        if tag=="h1":
+            self.in_h1=True
+            self.heading=[]
+        elif tag=="footer":
+            self.in_work=False
+
     def handle_data(self,data):
-        if self.in_p:
-            self.parts.append(data)
+        if self.in_h1:
+            self.heading.append(data)
+            return
+        if not self.in_work:
+            return
+        value=" ".join(data.split())
+        if "Segui tutte le novità" in value:
+            self.in_work=False
+            return
+        match=re.fullmatch(
+            r"Musica di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})",
+            value)
+        if match:
+            self.credits.append(match.group(1))
+
     def handle_endtag(self,tag):
-        if tag=="p" and self.in_p:
-            text=" ".join(" ".join(self.parts).split())
-            match=re.fullmatch(r"(?i)Musica di\s+(.+)",text)
-            if match:
-                self.credits.append(match.group(1))
-            self.in_p=False
+        if tag=="h1" and self.in_h1:
+            self.in_h1=False
+            self.in_work=(" ".join(" ".join(self.heading).split())==self.title)
 
 
 def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
@@ -87,16 +108,11 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # showtime card, before the editorial credits.
     if not re.search(r"\b"+re.escape(title)+r"\s+(?:Dramma|Opera|Commedia|Melodramma)",text,re.I):
         raise ValueError("work-specific event heading differs from page title")
-    # The live Teatro del Giglio templates put the composer credit directly
-    # in an editorial DIV rather than consistently wrapping it in a <p>.
-    # Extract exclusively from the bounded, title- and venue-verified panel;
-    # the global navigation can mention unrelated musicians and operas.
-    credits=re.findall(
-        r"\bMusica di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})\b",
-        text)
-    if len(credits)!=1:
+    credits=ComposerCredits(title)
+    credits.feed(html)
+    if len(credits.credits)!=1:
         raise ValueError("official composer credit missing or ambiguous")
-    composer=" ".join(credits[0].split())
+    composer=" ".join(credits.credits[0].split())
     if (len(composer.split())<2 or
         not re.fullmatch(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]+){1,3}",composer)):
         raise ValueError("composer not specific enough")
