@@ -56,3 +56,14 @@ verificata), `not_checked` (fonti configurate mai controllate), `scan_failed`
 non abilita automaticamente un URL alternativo né autorizza bypass di
 robots.txt. Le date di ultima acquisizione e la copertura delle recite
 restano metriche separate.
+
+## Invarianti di test e ampliamento continuo
+
+La completezza dell'insieme degli indici stagionali è verificata da
+`tests/test_national_season_indexes.py` tramite l'insieme esplicito delle
+source-key. I test dei singoli teatri verificano invece solo URL, mapping,
+parser, date e sicurezza della fonte pertinente; non ripetono il numero
+totale nazionale, che cambia legittimamente quando si integra una nuova sede.
+Il test nazionale va aggiornato per ogni nuova source-key, preservando così
+il controllo contro cancellazioni accidentali e duplicati, senza modificare
+una dozzina di test indipendenti per ogni onboarding.

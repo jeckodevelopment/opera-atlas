@@ -70,7 +70,6 @@ class MarcheOfficialSources(unittest.TestCase):
     def test_six_explicit_first_party_source_keys(self):
         doc=json.loads(CONFIG.read_text(encoding="utf-8"))
         sources=validate_config(doc)
-        self.assertEqual(len(sources),38)
         for key in JESI_KEYS+ANCONA_KEYS:
             self.assertIn(key,{x["key"] for x in sources})
             url=JESI_URL if key.startswith("jesi") else ANCONA_URL

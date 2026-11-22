@@ -48,8 +48,6 @@ class FlorenceCalendarTests(unittest.TestCase):
         self.assertTrue(eligible(SOURCE,DETAIL))
         self.assertFalse(eligible(SOURCE,"https://www.maggiofiorentino.com/blog/not-opera"))
         config=json.loads(CONFIG.read_text(encoding="utf-8"))
-        self.assertEqual(len(validate_config(config)),38)
-
     def test_goldoni_matches_only_verifiable_florence_route(self):
         from scripts.auto_catalogue import verified_venue
         rows=[{"venue":"Teatro Goldoni","event_title":"Il mondo alla roversa",
