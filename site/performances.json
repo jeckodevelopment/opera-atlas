@@ -13276,6 +13276,24 @@
       ]
     },
     {
+      "id": "curated:auto-2ef6d8cca0288a1a:2027-06-16",
+      "starts_at": "2027-06-16T20:00:00+02:00",
+      "local_date": "2027-06-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+      ]
+    },
+    {
       "id": "curated:auto-7adb8eed9d624ca8:2027-06-16",
       "starts_at": "2027-06-16T20:00:00+02:00",
       "local_date": "2027-06-16",
@@ -13309,6 +13327,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
+      "id": "curated:auto-2ef6d8cca0288a1a:2027-06-17",
+      "starts_at": "2027-06-17T20:00:00+02:00",
+      "local_date": "2027-06-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
       ]
     },
     {
@@ -13366,6 +13402,24 @@
       ]
     },
     {
+      "id": "curated:auto-2ef6d8cca0288a1a:2027-06-18",
+      "starts_at": "2027-06-18T20:00:00+02:00",
+      "local_date": "2027-06-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+      ]
+    },
+    {
       "id": "curated:regio-evgenij-onegin-2027:2027-06-18",
       "starts_at": "2027-06-18T20:00:00+02:00",
       "local_date": "2027-06-18",
@@ -13417,6 +13471,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
+      "id": "curated:auto-2ef6d8cca0288a1a:2027-06-19",
+      "starts_at": "2027-06-19T20:00:00+02:00",
+      "local_date": "2027-06-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
       ]
     },
     {
@@ -13492,6 +13564,24 @@
       ]
     },
     {
+      "id": "curated:auto-2ef6d8cca0288a1a:2027-06-20",
+      "starts_at": "2027-06-20T19:00:00+02:00",
+      "local_date": "2027-06-20",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+      ]
+    },
+    {
       "id": "curated:auto-18853d99c59fe075:2027-06-21",
       "starts_at": "2027-06-21T20:00:00+02:00",
       "local_date": "2027-06-21",
@@ -13507,6 +13597,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
+      ]
+    },
+    {
+      "id": "curated:auto-2ef6d8cca0288a1a:2027-06-22",
+      "starts_at": "2027-06-22T19:00:00+02:00",
+      "local_date": "2027-06-22",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
       ]
     },
     {
@@ -13561,6 +13669,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/evgenij-onegin"
+      ]
+    },
+    {
+      "id": "curated:auto-2ef6d8cca0288a1a:2027-06-23",
+      "starts_at": "2027-06-23T18:00:00+02:00",
+      "local_date": "2027-06-23",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
       ]
     },
     {

@@ -6641,6 +6641,45 @@
           "17:00"
         ]
       ]
+    },
+    {
+      "key": "auto-2ef6d8cca0288a1a",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/",
+      "dates": [
+        [
+          "2027-06-16",
+          "20:00"
+        ],
+        [
+          "2027-06-17",
+          "20:00"
+        ],
+        [
+          "2027-06-18",
+          "20:00"
+        ],
+        [
+          "2027-06-19",
+          "20:00"
+        ],
+        [
+          "2027-06-20",
+          "19:00"
+        ],
+        [
+          "2027-06-22",
+          "19:00"
+        ],
+        [
+          "2027-06-23",
+          "18:00"
+        ]
+      ]
     }
   ]
 }

@@ -3138,6 +3138,14 @@
       "slug": "madama-butterfly",
       "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/",
       "season": "2027"
+    },
+    "auto-2ef6d8cca0288a1a": {
+      "id": "oa-s-000259",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000060",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -9057,6 +9065,48 @@
       "staging_id": "oa-s-000258",
       "original_date": "2027-01-24",
       "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    "auto-2ef6d8cca0288a1a|2027-06-16": {
+      "id": "oa-r-001014",
+      "staging_id": "oa-s-000259",
+      "original_date": "2027-06-16",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    "auto-2ef6d8cca0288a1a|2027-06-17": {
+      "id": "oa-r-001015",
+      "staging_id": "oa-s-000259",
+      "original_date": "2027-06-17",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    "auto-2ef6d8cca0288a1a|2027-06-18": {
+      "id": "oa-r-001016",
+      "staging_id": "oa-s-000259",
+      "original_date": "2027-06-18",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    "auto-2ef6d8cca0288a1a|2027-06-19": {
+      "id": "oa-r-001017",
+      "staging_id": "oa-s-000259",
+      "original_date": "2027-06-19",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    "auto-2ef6d8cca0288a1a|2027-06-20": {
+      "id": "oa-r-001018",
+      "staging_id": "oa-s-000259",
+      "original_date": "2027-06-20",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    "auto-2ef6d8cca0288a1a|2027-06-22": {
+      "id": "oa-r-001019",
+      "staging_id": "oa-s-000259",
+      "original_date": "2027-06-22",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    "auto-2ef6d8cca0288a1a|2027-06-23": {
+      "id": "oa-r-001020",
+      "staging_id": "oa-s-000259",
+      "original_date": "2027-06-23",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
     }
   },
   "reserved_works": {
