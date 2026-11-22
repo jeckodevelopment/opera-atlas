@@ -30,9 +30,13 @@ class SourceBoundOriginalArtTests(unittest.TestCase):
         self.assertEqual(image["kind"],"official_original_work_artwork")
 
     def test_never_substitute_another_opera_or_tampered_image(self):
+        # Le nozze dell’orso now has *its own* authentic 2026 poster.
+        # Never swap the previous production's unrelated shortened title.
         self.assertIsNone(verified_original_art(
             source_url="https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
-            title="Le nozze dell’orso",composer="Joe Schittino"))
+            title="L’orso",composer="Joe Schittino"))
+        self.assertIsNone(verified_original_art(
+            source_url=URL,title="Le nozze dell’orso",composer="Joe Schittino"))
         doc=json.loads(REGISTRY.read_text(encoding="utf-8"))
         doc["art"][0]["image_url"]="https://www.teatromassimobellini.it/media/unrelated.jpg"
         with patch.object(type(REGISTRY),"read_text",return_value=json.dumps(doc)):

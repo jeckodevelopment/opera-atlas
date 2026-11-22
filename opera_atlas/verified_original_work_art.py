@@ -14,7 +14,11 @@ APPROVED={
  ("https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
   "Il quinto moschettiere","Matteo Musumeci"):(
   "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere/",
-  "https://www.teatromassimobellini.it/media/2025/10/il-quinto-moschettiere.png")
+  "https://www.teatromassimobellini.it/media/2025/10/il-quinto-moschettiere.png"),
+ ("https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+  "Le nozze dell’orso","Joe Schittino"):(
+  "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+  "https://www.teatromassimobellini.it/media/2026/11/PHOTO-2026-Orso.jpg")
 }
 FIELDS=("image_url","source_url","original_source_url","credit","alt","kind")
 
