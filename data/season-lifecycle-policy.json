@@ -273,6 +273,10 @@
     "salerno-verdi-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "macerata-festival-rolling": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
     }
   }
 }
