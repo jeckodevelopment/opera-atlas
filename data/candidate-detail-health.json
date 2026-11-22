@@ -1,14 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T20:02:39+00:00",
+  "checked_at": "2026-11-22T20:04:01+00:00",
   "scope": "national",
-  "attempted": 8,
+  "attempted": 7,
   "outcomes": [
-    {
-      "candidate_id": "oa-index-222099ffb9c977837f63",
-      "outcome": "facts_found",
-      "rows": 1
-    },
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
       "outcome": "unavailable_or_unstructured",
@@ -22,13 +17,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-2cb6adaa97769fcb1ffc",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Haydn composer credit missing or ambiguous"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-5fea5e594da012daa488",
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
@@ -60,9 +51,13 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-5fea5e594da012daa488",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-2cb6adaa97769fcb1ffc",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
