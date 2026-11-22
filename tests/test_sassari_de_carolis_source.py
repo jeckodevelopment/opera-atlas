@@ -42,6 +42,33 @@ class SassariDeCarolisTests(unittest.TestCase):
         for ident,rows in expected.items():
             with self.subTest(ident=ident):
                 self.assertEqual(parse_detail(page(ident),url=URL(ident))[-1],rows)
+    def test_canonical_identity_is_shared_with_german_and_french_titles(self):
+        import json
+        from pathlib import Path
+        from scripts.collect_candidate_details import parse_known_opera_detail
+
+        registry=json.loads((Path(__file__).resolve().parents[1]/
+                             "data/identity-registry.json").read_text(encoding="utf-8"))
+        expected={
+            "372":("Die Zauberflöte","Wolfgang Amadeus Mozart","2026-09-25","2026-09-27"),
+            "373":("Don Carlos","Giuseppe Verdi","2026-10-30","2026-11-01"),
+            "375":("Rigoletto","Giuseppe Verdi","2026-12-11","2026-12-13"),
+        }
+        for ident,(canonical,composer,first,second) in expected.items():
+            with self.subTest(ident=ident):
+                evidence=parse_known_opera_detail(
+                    "sassari-de-carolis-opera-2026",URL(ident),page(ident),registry)
+                self.assertEqual(len(evidence),2)
+                self.assertEqual([e["event_title"] for e in evidence],[canonical]*2)
+                self.assertEqual([e["composer"] for e in evidence],[composer]*2)
+                self.assertEqual([e["date"] for e in evidence],[first,second])
+        # No additional Italian-title record; use the original work ID.
+        mozart=[w for w in registry["works"].values()
+                if w["title"]=="Die Zauberflöte" and w["composer"]=="Wolfgang Amadeus Mozart"]
+        self.assertEqual(len(mozart),1)
+        self.assertEqual(mozart[0]["id"],"oa-w-000056")
+        self.assertFalse(any(w["title"]=="Il flauto magico" for w in registry["works"].values()))
+
     def test_fails_closed_on_venue_composer_time_and_alghero(self):
         baseline=page("375")
         for invalid in (
