@@ -33,6 +33,21 @@ class SassariDeCarolisTests(unittest.TestCase):
                     "http://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
                     "https://fake.example/opera-lirica.aspx?id=375"):
             self.assertFalse(eligible("sassari-de-carolis-opera-2026",bad))
+    def test_query_candidate_selected_without_broadening_url_policy(self):
+        from datetime import date
+        from scripts.collect_candidate_details import selected_candidates
+        records={"schema_version":1,"candidates":[{
+            "id":"test-sassari-"+ident,
+            "source_key":"sassari-de-carolis-opera-2026",
+            "official_url":URL(ident),"status":"needs_review"} for ident in DATA]}
+        selected=selected_candidates(records,today=date(2026,11,22))
+        self.assertEqual({r["official_url"] for r in selected},
+                         {URL(ident) for ident in DATA})
+        records["candidates"][0]["official_url"]=URL("375")+"&utm=foo"
+        selected=selected_candidates(records,today=date(2026,11,22))
+        self.assertNotIn(URL("375")+"&utm=foo",
+                         {r["official_url"] for r in selected})
+
     def test_six_exact_2026_showtimes(self):
         expected={
             "372":[("2026-09-25","20:30"),("2026-09-27","16:30")],
