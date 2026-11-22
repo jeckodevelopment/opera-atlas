@@ -83,6 +83,11 @@ EXCLUDED_PATHS={
         # from the same official index remain reviewable.
         "la-bella-addormentata-5",
     }),
+    # Confirmed non-lyric stage production: Lucio Dalla songs are arranged
+    # into a contemporary pop-opera. Atlas indexes only lyric operas.
+    "modena-teatro-opera-2026-27": frozenset({"lanno-che-verra"}),
+    "giglio-lucca-opera-2026-27": frozenset({"lanno-che-verra"}),
+    "piacenza-opera-2026-27": frozenset({"lanno-che-verra"}),
     "donizetti-opera-2026": frozenset(),
     "teatro-grande-opera-2026": frozenset(),
     "carlo-felice-season-2026-27": frozenset({
