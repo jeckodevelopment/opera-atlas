@@ -30,6 +30,19 @@ class RegionalSourceEligibilityTests(unittest.TestCase):
     def test_six_dated_recite_two_stagings_no_invented_work(self):
         facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        # Existing real candidate promotions must not invalidate a
+        # first-publication regression. Work on an in-memory baseline
+        # without only the tested exact-source staging and its recite.
+        source_urls={item[1] for item in CASES}
+        deleted={p["key"] for p in facts["productions"]
+                 if p["source_url"] in source_urls}
+        ids={registry["stagings"][key]["id"] for key in deleted}
+        facts["productions"]=[p for p in facts["productions"]
+                              if p["key"] not in deleted]
+        registry["stagings"]={k:v for k,v in registry["stagings"].items()
+                              if k not in deleted}
+        registry["performances"]={k:v for k,v in registry["performances"].items()
+                                  if v["staging_id"] not in ids}
         evidence={"schema_version":1,"evidence":[]}
         candidates={"schema_version":1,"candidates":[]}
         for i,(key,url,title,composer,city,venue,dates) in enumerate(CASES):

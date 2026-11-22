@@ -78,9 +78,24 @@ class LivornoOperaTests(unittest.TestCase):
                             "La stagione di prosa 2026/27"),
                             url=URL,source_key=source)
 
-    def test_shared_page_does_not_mark_other_opera_published(self):
-        for key in SOURCES:
-            self.assertEqual(classify(key,URL,{URL}),"needs_review")
+    def test_shared_page_requires_matching_work_even_after_publication(self):
+        # The shared source article describes three independent operas. As
+        # source scans progress some may already be canonical: test the
+        # exact key/title/composer, not a permanently frozen review state.
+        from scripts.build_verified_catalog import MANIFEST
+        from scripts.publish_catalog_v2 import normalized
+        products=json.loads(MANIFEST.read_text(encoding="utf-8"))["productions"]
+        for key,identity in SOURCES.items():
+            title,composer=identity[:2]
+            exact=[p for p in products if p.get("source_url")==URL
+                   and p.get("municipality")=="Livorno"
+                   and p.get("venue")=="Teatro Goldoni"
+                   and normalized(p.get("title",""))==normalized(title)
+                   and normalized(p.get("composer",""))==normalized(composer)]
+            with self.subTest(key=key):
+                self.assertLessEqual(len(exact),1)
+                self.assertEqual(classify(key,URL,{URL}),
+                    "already_catalogued" if exact else "needs_review")
 
 if __name__=="__main__":
     unittest.main()
