@@ -4,7 +4,7 @@
   "venue": "Teatro Sociale",
   "season": "2026/27",
   "status": "review_only_not_for_publication",
-  "note": "Secondary reporting observations only. Validate each work, date, venue and exact production against primary official programme before promoting via the shared canonical pipeline. The paired Menotti/Bernstein production is ONE ticketed event; no automatic duplicate recite or merged canonical work.",
+  "note": "The official Comune-authored Art Bonus record corroborates repertoire identity and genre, but does not establish ordinary performance date/time evidence. Secondary reporting is review-only until exact first-party booking rows are acquired. The Menotti/Bernstein double bill is one ticketed programme.",
   "programmes": [
     {
       "title": "Pagliacci",
@@ -76,5 +76,15 @@
       "secondary_source_url": "https://www.rovigo.news/teatro-sociale-presentata-la-stagione-2026-27-oltre-60-alzate-di-sipario-a-rovigo/",
       "verified_official_performance_evidence": false
     }
+  ],
+  "official_repertoire_source_url": "https://artbonus.gov.it/1319-comune-di-rovigo.html",
+  "official_repertoire_scope": "Issuer-authored 2026/27 opera titles, composers, composite programme and operetta genre only; no public performance dates or times",
+  "official_repertoire_verified_programmes": [
+    "Pagliacci",
+    "Pimpinone",
+    "The Telephone / Trouble in Tahiti",
+    "La traviata",
+    "Aida",
+    "La Cenerentola"
   ]
 }
