@@ -92,6 +92,30 @@ class LuccaOperaTests(unittest.TestCase):
             with self.subTest(bad=bad[-100:]),self.assertRaises(ValueError):
                 parse_detail(bad,url=url)
 
+    def test_dalla_music_credit_nested_inline_strong(self):
+        url=INDEX+"lanno-che-verra/"
+        html=(page(dates="Il 12 marzo 2027 Ore 21:00")
+              .replace("Il barbiere di Siviglia","L'anno che verrà")
+              .replace("Commedia in due atti","Opera su Lucio Dalla")
+              .replace("Musica di GIOACHINO ROSSINI",
+                       "musiche di <strong>LUCIO DALLA</strong>"))
+        self.assertEqual(parse_detail(html,url=url),(
+            "L'anno che verrà","LUCIO DALLA",
+            "Teatro del Giglio Giacomo Puccini",[("2027-03-12","21:00")]))
+        # A compositor credit separated into a *different block* is not
+        # proof of authorship, even if the next performer has a person name.
+        unrelated=html.replace("musiche di <strong>LUCIO DALLA</strong>",
+                               "musiche di</p><p>ROBERTO MOLINELLI")
+        with self.assertRaises(ValueError):
+            parse_detail(unrelated,url=url)
+        header=html.replace("<p>MENU</p>",
+                            "<p>musiche di <strong>ALTRA PERSONA</strong></p><p>MENU</p>")
+        self.assertEqual(parse_detail(header,url=url)[1],"LUCIO DALLA")
+        double=html.replace("<p>Il Conte di Almaviva Paolo Nevi</p>",
+                            "<p>Musica di ALTRO AUTORE</p><p>Il Conte di Almaviva Paolo Nevi</p>")
+        with self.assertRaises(ValueError):
+            parse_detail(double,url=url)
+
     def test_mismatched_venue_genre_composer_or_partial_date_fail(self):
         for fixture in [
             page(theatre="Teatro San Girolamo"),
