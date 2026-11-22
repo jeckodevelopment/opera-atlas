@@ -62,7 +62,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
     {
@@ -181,7 +181,7 @@
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:55:01+00:00",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
@@ -325,7 +325,7 @@
       "id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:55:01+00:00",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
@@ -405,7 +405,7 @@
       "id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T22:34:11+00:00",
       "last_seen": "2026-11-22T01:59:59+00:00"
     },
@@ -430,14 +430,14 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
     {
       "id": "oa-index-3b54fb1b4f9d0adac29f",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
@@ -613,7 +613,7 @@
       "id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T01:59:59+00:00"
     },
@@ -829,7 +829,7 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T12:00:43+00:00",
       "last_seen": "2026-11-22T01:59:59+00:00"
     },
@@ -845,7 +845,7 @@
       "id": "oa-index-7b0a1e061133c0b5970e",
       "source_key": "jesi-esecuzione-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T01:59:59+00:00"
     },
@@ -854,7 +854,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
       "first_seen": "2026-11-22T02:02:21+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
     {
@@ -1094,14 +1094,14 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
     {
       "id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T14:28:24+00:00",
       "last_seen": "2026-11-22T01:59:59+00:00"
     },
@@ -1229,7 +1229,7 @@
       "id": "oa-index-addcc48a211cf5aea678",
       "source_key": "jesi-don-pasquale-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T01:59:59+00:00"
     },
@@ -1333,7 +1333,7 @@
       "id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T13:50:36.994Z",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
@@ -1598,7 +1598,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
     {
@@ -1677,7 +1677,7 @@
       "id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T15:00:58+00:00",
       "last_seen": "2026-11-22T01:59:59+00:00"
     },
@@ -1910,7 +1910,7 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
       "first_seen": "2026-11-21T21:01:12+00:00",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "last_seen": "2026-11-22T02:02:21+00:00"
     },
     {

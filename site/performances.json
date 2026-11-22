@@ -1406,6 +1406,24 @@
       ]
     },
     {
+      "id": "curated:auto-59710f07c60abb84:2026-11-06",
+      "starts_at": "2026-11-06T20:00:00+01:00",
+      "local_date": "2026-11-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ]
+    },
+    {
       "id": "curated:regio-boheme-leoncavallo-2026:2026-11-06",
       "starts_at": "2026-11-06T20:00:00+01:00",
       "local_date": "2026-11-06",
@@ -1475,6 +1493,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
+      "id": "curated:auto-59710f07c60abb84:2026-11-08",
+      "starts_at": "2026-11-08T16:00:00+01:00",
+      "local_date": "2026-11-08",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
       ]
     },
     {
@@ -2147,6 +2183,24 @@
       ]
     },
     {
+      "id": "curated:auto-7d80a6e641ec5903:2026-11-22",
+      "starts_at": "2026-11-22T15:30:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/simon-boccanegra"
+      ]
+    },
+    {
       "id": "curated:auto-b756ca3bab6062c0:2026-11-22",
       "starts_at": "2026-11-22T15:30:00+01:00",
       "local_date": "2026-11-22",
@@ -2253,6 +2307,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/samson-et-dalila/"
+      ]
+    },
+    {
+      "id": "curated:auto-7d80a6e641ec5903:2026-11-24",
+      "starts_at": "2026-11-24T20:00:00+01:00",
+      "local_date": "2026-11-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.maggiofiorentino.com/events/simon-boccanegra"
       ]
     },
     {
@@ -2672,6 +2744,24 @@
       ]
     },
     {
+      "id": "curated:auto-3b54fb1b4f9d0ada:2026-12-04",
+      "starts_at": "2026-12-04T20:30:00+01:00",
+      "local_date": "2026-12-04",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
+      ]
+    },
+    {
       "id": "curated:auto-e01412b3c8989b4b:2026-12-05",
       "starts_at": "2026-12-05T18:00:00+01:00",
       "local_date": "2026-12-05",
@@ -2741,6 +2831,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-3b54fb1b4f9d0ada:2026-12-06",
+      "starts_at": "2026-12-06T15:30:00+01:00",
+      "local_date": "2026-12-06",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
       ]
     },
     {
@@ -5738,6 +5846,24 @@
       ]
     },
     {
+      "id": "curated:auto-357ebb275673ae88:2027-02-20",
+      "starts_at": "2027-02-20T20:00:00+01:00",
+      "local_date": "2027-02-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ]
+    },
+    {
       "id": "curated:scala-don-giovanni-2027:2027-02-20",
       "starts_at": "2027-02-20T20:00:00+01:00",
       "local_date": "2027-02-20",
@@ -5825,6 +5951,24 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/rigoletto/"
+      ]
+    },
+    {
+      "id": "curated:auto-357ebb275673ae88:2027-02-21",
+      "starts_at": "2027-02-21T16:00:00+01:00",
+      "local_date": "2027-02-21",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
       ]
     },
     {

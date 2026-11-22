@@ -5285,6 +5285,82 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-357ebb275673ae88",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "municipality": "Ferrara",
+      "region": "Emilia-Romagna",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "dates": [
+        [
+          "2027-02-20",
+          "20:00"
+        ],
+        [
+          "2027-02-21",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-59710f07c60abb84",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "dates": [
+        [
+          "2026-11-06",
+          "20:00"
+        ],
+        [
+          "2026-11-08",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-7d80a6e641ec5903",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "municipality": "Firenze",
+      "region": "Toscana",
+      "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
+      "dates": [
+        [
+          "2026-11-22",
+          "15:30"
+        ],
+        [
+          "2026-11-24",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-3b54fb1b4f9d0ada",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+      "dates": [
+        [
+          "2026-12-04",
+          "20:30"
+        ],
+        [
+          "2026-12-06",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

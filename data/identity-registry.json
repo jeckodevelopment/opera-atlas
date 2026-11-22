@@ -582,6 +582,13 @@
       "title": "Il ratto dal serraglio",
       "composer": "Wolfgang Amadeus Mozart",
       "authority_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
+    },
+    "l'occasione fa il ladro|gioachino rossini": {
+      "id": "oa-w-000089",
+      "slug": "occasione-fa-il-ladro",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "wikidata_id": "Q651596"
     }
   },
   "venues": {
@@ -2349,6 +2356,38 @@
       "venue_id": "oa-v-000035",
       "slug": "il-signor-bruschino",
       "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
+      "season": "2026"
+    },
+    "auto-357ebb275673ae88": {
+      "id": "oa-s-000186",
+      "work_id": "oa-w-000052",
+      "venue_id": "oa-v-000027",
+      "slug": "dido-and-aeneas",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "season": "2027"
+    },
+    "auto-59710f07c60abb84": {
+      "id": "oa-s-000187",
+      "work_id": "oa-w-000052",
+      "venue_id": "oa-v-000032",
+      "slug": "dido-and-aeneas",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "season": "2026"
+    },
+    "auto-7d80a6e641ec5903": {
+      "id": "oa-s-000188",
+      "work_id": "oa-w-000075",
+      "venue_id": "oa-v-000016",
+      "slug": "simon-boccanegra",
+      "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
+      "season": "2026"
+    },
+    "auto-3b54fb1b4f9d0ada": {
+      "id": "oa-s-000189",
+      "work_id": "oa-w-000089",
+      "venue_id": "oa-v-000038",
+      "slug": "occasione-fa-il-ladro",
+      "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
       "season": "2026"
     }
   },
@@ -7290,6 +7329,54 @@
       "staging_id": "oa-s-000185",
       "original_date": "2026-05-10",
       "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/"
+    },
+    "auto-357ebb275673ae88|2027-02-20": {
+      "id": "oa-r-000841",
+      "staging_id": "oa-s-000186",
+      "original_date": "2027-02-20",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+    },
+    "auto-357ebb275673ae88|2027-02-21": {
+      "id": "oa-r-000842",
+      "staging_id": "oa-s-000186",
+      "original_date": "2027-02-21",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+    },
+    "auto-59710f07c60abb84|2026-11-06": {
+      "id": "oa-r-000843",
+      "staging_id": "oa-s-000187",
+      "original_date": "2026-11-06",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    },
+    "auto-59710f07c60abb84|2026-11-08": {
+      "id": "oa-r-000844",
+      "staging_id": "oa-s-000187",
+      "original_date": "2026-11-08",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    },
+    "auto-7d80a6e641ec5903|2026-11-22": {
+      "id": "oa-r-000845",
+      "staging_id": "oa-s-000188",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra"
+    },
+    "auto-7d80a6e641ec5903|2026-11-24": {
+      "id": "oa-r-000846",
+      "staging_id": "oa-s-000188",
+      "original_date": "2026-11-24",
+      "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra"
+    },
+    "auto-3b54fb1b4f9d0ada|2026-12-04": {
+      "id": "oa-r-000847",
+      "staging_id": "oa-s-000189",
+      "original_date": "2026-12-04",
+      "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
+    },
+    "auto-3b54fb1b4f9d0ada|2026-12-06": {
+      "id": "oa-r-000848",
+      "staging_id": "oa-s-000189",
+      "original_date": "2026-12-06",
+      "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
     }
   }
 }

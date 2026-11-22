@@ -851,6 +851,15 @@
         "https://archiviostorico.operaroma.it/opera/il-ratto-dal-serraglio/",
         "https://www.operaamerica.org/calendar/production/22346/the-abduction-from-the-seraglio"
       ]
+    },
+    "occasione-fa-il-ladro": {
+      "librettist": "Luigi Prividali",
+      "premiere_year": 1812,
+      "premiere_venue": "Teatro San Moisè",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q651596"
+      ]
     }
   },
   "works_by_id": {

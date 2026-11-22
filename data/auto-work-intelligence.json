@@ -173,6 +173,27 @@
       "verified_at": "2026-11-20T23:18:59+00:00"
     },
     {
+      "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Nella vicenda, promessa sposa Berenice; promessa sposa decide.",
+      "history": {
+        "librettist": "Luigi Prividali",
+        "premiere_year": 1812,
+        "premiere_venue": "Teatro San Moisè",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q651596"
+        ]
+      },
+      "wikidata_id": "Q651596",
+      "authority_url": "https://www.wikidata.org/wiki/Q651596",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/L%27occasione_fa_il_ladro",
+      "verified_at": "2026-11-22T02:02:31+00:00"
+    },
+    {
       "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/partenope/",
@@ -192,6 +213,26 @@
       "authority_url": "https://www.wikidata.org/wiki/Q954048",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Partenope_(H%C3%A4ndel)",
       "verified_at": "2026-11-20T23:18:59+00:00"
+    },
+    {
+      "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
+      "source_key": "macerata-festival-2027",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+      "title": "L'elisir d'amore",
+      "composer": "Gaetano Donizetti",
+      "synopsis": null,
+      "history": {
+        "librettist": "Felice Romani",
+        "premiere_year": 1832,
+        "premiere_venue": "Teatro Lirico",
+        "premiere_city": "Milano",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q332536"
+        ]
+      },
+      "wikidata_id": "Q332536",
+      "authority_url": "https://www.wikidata.org/wiki/Q332536",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/L%27elisir_d%27amore"
     },
     {
       "candidate_id": "oa-index-5ab298c2300ec275c2a3",
@@ -486,6 +527,26 @@
       "wikidata_id": "Q2292268",
       "authority_url": "https://www.wikidata.org/wiki/Q2292268",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Siberia_(opera)"
+    },
+    {
+      "candidate_id": "oa-index-addcc48a211cf5aea678",
+      "source_key": "jesi-don-pasquale-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "title": "Don Pasquale",
+      "composer": "Gaetano Donizetti",
+      "synopsis": null,
+      "history": {
+        "librettist": "Giovanni Domenico Ruffini; Michele Accursi",
+        "premiere_year": 1843,
+        "premiere_venue": "Théâtre de la comédie italienne",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q723941"
+        ]
+      },
+      "wikidata_id": "Q723941",
+      "authority_url": "https://www.wikidata.org/wiki/Q723941",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Don_Pasquale"
     },
     {
       "candidate_id": "oa-index-b4180540983902f703af",
