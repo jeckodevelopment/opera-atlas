@@ -315,6 +315,15 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                 out.append({"event_title":work["title"],"composer":work["composer"],
                             "venue":venue,"date":day,"starts_at":official_local_time(day,clock)})
         return out
+    if source_key=="ravenna-cherubini-rolling-opera":
+        from opera_atlas.ravenna_future_parser import parse_detail
+        from opera_atlas.work_identity import resolve_work as resolve_future_work
+        title,composer,venue,recite=parse_detail(html,url=url)
+        work=resolve_future_work(registry,title,composer)
+        if work is None:return []
+        return [{"event_title":work["title"],"composer":work["composer"],
+                 "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key=="ravenna-alighieri-cherubini-2027":
         from opera_atlas.ravenna_cherubini_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
@@ -800,6 +809,7 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         "coccia-novara-opera-2027": "novara",
         "coccia-novara-rolling-opera": "novara_rolling",
         "ravenna-alighieri-cherubini-2027": "ravenna",
+        "ravenna-cherubini-rolling-opera": "ravenna_rolling",
     }
     if source_key in regional_adapters:
         from opera_atlas.pisa_opera_parser import parse_detail as pisa_detail
@@ -812,10 +822,11 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         from opera_atlas.novara_coccia_parser import parse_detail as novara_detail
         from opera_atlas.novara_future_parser import parse_detail as novara_rolling_detail
         from opera_atlas.ravenna_cherubini_parser import parse_detail as ravenna_detail
+        from opera_atlas.ravenna_future_parser import parse_detail as ravenna_rolling_detail
         parser={
             "pisa":pisa_detail,"verona":verona_detail,"verona_rolling":verona_rolling_detail,
             "salerno":salerno_detail,"salerno_rolling":salerno_rolling_detail,"macerata":macerata_detail,"macerata_rolling":macerata_rolling_detail,
-            "novara":novara_detail,"novara_rolling":novara_rolling_detail,"ravenna":ravenna_detail,
+            "novara":novara_detail,"novara_rolling":novara_rolling_detail,"ravenna":ravenna_detail," "ravenna_rolling":ravenna_rolling_detail,
         }[regional_adapters[source_key]]
         title,composer,venue,recite=parser(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
@@ -1310,7 +1321,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"].startswith(("ferrara-","goldoni-livorno-","jesi-","ancona-")) or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027","pisa-verdi-opera-2026-27","filarmonico-verona-opera-2027","filarmonico-verona-rolling-opera","salerno-verdi-opera-2026","salerno-verdi-rolling-opera","macerata-festival-2027","macerata-festival-rolling","coccia-novara-opera-2027","coccia-novara-rolling-opera","ravenna-alighieri-cherubini-2027"):
+                if item["source_key"].startswith(("ferrara-","goldoni-livorno-","jesi-","ancona-")) or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027","pisa-verdi-opera-2026-27","filarmonico-verona-opera-2027","filarmonico-verona-rolling-opera","salerno-verdi-opera-2026","salerno-verdi-rolling-opera","macerata-festival-2027","macerata-festival-rolling","coccia-novara-opera-2027","coccia-novara-rolling-opera","ravenna-alighieri-cherubini-2027","ravenna-cherubini-rolling-opera"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
