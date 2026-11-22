@@ -1,138 +1,6 @@
 {
-  "checked_at": "2026-11-22T11:13:58+00:00",
+  "checked_at": "2026-11-22T11:19:00+00:00",
   "groups": [
-    {
-      "candidate_ids": [
-        "oa-index-dd11dbb7276e10032076"
-      ],
-      "category": "composer_credit_to_review",
-      "composer": "Georges Bizet (1838–1875)",
-      "exact_title_matches": [],
-      "possible_canonical_match": {
-        "composer": "Georges Bizet",
-        "reason": "metadata_after_composer",
-        "title": "Carmen",
-        "work_id": "oa-w-000009"
-      },
-      "recite_observed": 7,
-      "sources": [
-        {
-          "source_key": "bologna-comunale-opera-2027",
-          "url": "https://www.tcbo.it/evento/opera/carmen-2027/"
-        }
-      ],
-      "title": "Carmen"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-1e15e89ae5b2a2ec45f9"
-      ],
-      "category": "composer_credit_to_review",
-      "composer": "Giacomo Puccini Opera",
-      "exact_title_matches": [],
-      "possible_canonical_match": {
-        "composer": "Giacomo Puccini",
-        "reason": "metadata_after_composer",
-        "title": "La bohème",
-        "work_id": "oa-w-000024"
-      },
-      "recite_observed": 6,
-      "sources": [
-        {
-          "source_key": "verdi-trieste-season-2026-27",
-          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
-        }
-      ],
-      "title": "La Bohème"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-a9e0eff95e96e71fd958"
-      ],
-      "category": "composer_credit_to_review",
-      "composer": "Gaetano Donizetti Melodramma",
-      "exact_title_matches": [],
-      "possible_canonical_match": {
-        "composer": "Gaetano Donizetti",
-        "reason": "metadata_after_composer",
-        "title": "L’elisir d’amore",
-        "work_id": "oa-w-000073"
-      },
-      "recite_observed": 6,
-      "sources": [
-        {
-          "source_key": "verdi-trieste-season-2026-27",
-          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
-        }
-      ],
-      "title": "L’elisir d’amore"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-f3cef88d8ea3109475df"
-      ],
-      "category": "composer_credit_to_review",
-      "composer": "Giacomo Puccini (1858–1924)",
-      "exact_title_matches": [],
-      "possible_canonical_match": {
-        "composer": "Giacomo Puccini",
-        "reason": "metadata_after_composer",
-        "title": "Madama Butterfly",
-        "work_id": "oa-w-000019"
-      },
-      "recite_observed": 6,
-      "sources": [
-        {
-          "source_key": "bologna-comunale-opera-2027",
-          "url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
-        }
-      ],
-      "title": "Madama Butterfly"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-2ab0ba26f1806086b52a"
-      ],
-      "category": "composer_credit_to_review",
-      "composer": "Vincenzo Bellini Tragedia",
-      "exact_title_matches": [],
-      "possible_canonical_match": {
-        "composer": "Vincenzo Bellini",
-        "reason": "metadata_after_composer",
-        "title": "Norma",
-        "work_id": "oa-w-000031"
-      },
-      "recite_observed": 5,
-      "sources": [
-        {
-          "source_key": "verdi-trieste-season-2026-27",
-          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
-        }
-      ],
-      "title": "Norma"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-129b5be3f35d5762f8bb"
-      ],
-      "category": "composer_credit_to_review",
-      "composer": "Giuseppe Verdi Opera",
-      "exact_title_matches": [],
-      "possible_canonical_match": {
-        "composer": "Giuseppe Verdi",
-        "reason": "metadata_after_composer",
-        "title": "Aida",
-        "work_id": "oa-w-000015"
-      },
-      "recite_observed": 4,
-      "sources": [
-        {
-          "source_key": "verdi-trieste-season-2026-27",
-          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/"
-        }
-      ],
-      "title": "Aida"
-    },
     {
       "candidate_ids": [
         "oa-index-ffbe120c526a352bc59c"
@@ -277,10 +145,10 @@
     "candidates_checked": 147,
     "candidates_without_facts": 0,
     "facts_examined": 632,
-    "facts_resolved": 582,
+    "facts_resolved": 616,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 50,
-    "unmatched_groups": 14
+    "unmatched_facts": 16,
+    "unmatched_groups": 8
   },
   "truncated": false
 }
