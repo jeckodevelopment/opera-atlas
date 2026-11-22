@@ -56,6 +56,7 @@ jobs:
           python -m scripts.publish_catalog_v2
           python -m scripts.publish_work_editorial
           python -m scripts.publish_programs
+          python -m scripts.publish_work_posters
           python -m unittest discover -s tests -v
           python -m scripts.build_verified_catalog --check
           python -m scripts.publish_catalog_v2 --check

@@ -598,6 +598,38 @@
       "description": "Frontespizio del libretto originale de Il barbiere di Siviglia di Rossini (1816), non relativo all'allestimento 2026",
       "credit": "Stamperia di Crispino Puccinelli, Roma, 1816; Wikimedia Commons",
       "license": "Public domain"
+    },
+    "oa-w-000090": {
+      "work_id": "oa-w-000090",
+      "composer": "Gaetano Donizetti",
+      "file": "Don Pasquale in London.png",
+      "description": "Illustrazione storica della prima londinese di Don Pasquale (Illustrated London News, 1843)",
+      "credit": "Illustrazione storica del 1843, Wikimedia Commons",
+      "license": "Public domain; Wikimedia Commons"
+    },
+    "oa-w-000091": {
+      "work_id": "oa-w-000091",
+      "composer": "Giacomo Puccini",
+      "file": "Iltabarro-poster.jpg",
+      "description": "Manifesto storico di Il tabarro di Giacomo Puccini (Ricordi, 1918)",
+      "credit": "G. Ricordi & Co., 1918; Wikimedia Commons",
+      "license": "Public domain; Wikimedia Commons"
+    },
+    "oa-w-000092": {
+      "work_id": "oa-w-000092",
+      "composer": "Giacomo Puccini",
+      "file": "Disegno per copertina di libretto, disegno di Peter Hoffer per Suor Angelica (s.d.) - Archivio Storico Ricordi ICON012352.jpg",
+      "description": "Disegno storico per la copertina del libretto di Suor Angelica; Archivio Storico Ricordi",
+      "credit": "Peter Hoffer / Archivio Storico Ricordi, Wikimedia Commons",
+      "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "oa-w-000093": {
+      "work_id": "oa-w-000093",
+      "composer": "Giacomo Puccini",
+      "file": "Schicchi original cover.jpg",
+      "description": "Copertina originale di Gianni Schicchi di Giacomo Puccini (1919)",
+      "credit": "Leopoldo Metlicovitz, Wikimedia Commons",
+      "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/"
     }
   }
 }

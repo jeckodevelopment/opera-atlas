@@ -226,7 +226,8 @@ class PosterPublicationTests(unittest.TestCase):
 
     def test_homonymous_operas_get_distinct_permanent_poster_identities(self):
         from scripts.publish_catalog_v2 import REGISTRY
-        works=list(json.loads(REGISTRY.read_text(encoding="utf-8"))["works"].values())
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        works=list(registry["works"].values())+list(registry.get("reserved_works",{}).values())
         duplicates=[w for w in works if w["slug"]=="la-boheme"]
         self.assertEqual(len(duplicates),2)
         self.assertNotEqual(duplicates[0]["id"],duplicates[1]["id"])
@@ -314,10 +315,26 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertNotEqual(result["works"]["oa-w-000007"]["image_url"],
                             result["works"]["oa-w-000024"]["image_url"])
 
+    def test_each_reserved_program_work_has_its_own_archival_cover(self):
+        archive=json.loads(posters.ARCHIVE.read_text(encoding="utf-8"))["works_by_id"]
+        published=json.loads(posters.OUTPUT.read_text(encoding="utf-8"))["works"]
+        expected={"oa-w-000090":"Don Pasquale in London.png",
+                  "oa-w-000091":"Iltabarro-poster.jpg",
+                  "oa-w-000092":"Disegno per copertina di libretto, disegno di Peter Hoffer per Suor Angelica (s.d.) - Archivio Storico Ricordi ICON012352.jpg",
+                  "oa-w-000093":"Schicchi original cover.jpg"}
+        for ident,filename in expected.items():
+            with self.subTest(ident=ident):
+                self.assertEqual(archive[ident]["file"],filename)
+                item=published[ident]
+                self.assertEqual(item["kind"],"archival_work_image")
+                self.assertEqual(item["work_id"],ident)
+                self.assertIn("commons.wikimedia.org",item["source_url"])
+        self.assertEqual(len({published[i]["image_url"] for i in expected}),4)
+
     def test_full_catalog_poster_coverage_and_stable_work_provenance(self):
         from scripts.publish_catalog_v2 import REGISTRY
-        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
-        works=list(registry.values())
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        works=list(registry["works"].values())+list(registry.get("reserved_works",{}).values())
         from scripts.publish_catalog_v2 import assemble
         from scripts.build_verified_catalog import MANIFEST
         registry_graph=assemble(json.loads(MANIFEST.read_text(encoding="utf-8")),
