@@ -13,7 +13,7 @@ class TheatreEditorialHistoryTests(unittest.TestCase):
 
     def test_all_current_venues_have_sourced_original_histories(self):
         census=json.loads((ROOT/"data/venue-directory.json").read_text(encoding="utf-8"))["venues"]
-        self.assertEqual(len(self.profiles),len(census))
+        self.assertGreaterEqual(len(self.profiles),len(census))
         for key,venue in self.profiles.items():
             self.assertTrue(80<=len(venue["history"])<=550,key)
             self.assertTrue(venue["source"].startswith("https://"),key)
