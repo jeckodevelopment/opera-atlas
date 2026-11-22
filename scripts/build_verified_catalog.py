@@ -116,6 +116,16 @@ def auto_approved_pages() -> set[str]:
     if doc.get("schema_version")!=1:return set()
     return validate_auto_sources(doc["urls"])
 
+def replica_registry_key(production:dict,day:str,hour:str|None)->str:
+    """Keep historical day-only IDs; disambiguate only same-day recite."""
+    slots=[row for row in production["dates"] if row[0]==day]
+    if len(slots)>1:
+        if hour is None or len({row[1] for row in slots})!=len(slots):
+            raise ValueError("same-day recite require unique verified clocks")
+        return production["key"]+"|"+day+"|"+hour
+    return production["key"]+"|"+day
+
+
 def validate_time_evidence(manifest: dict, evidence: dict) -> dict:
     """Validate additional official showtimes, bound to known staging/date.
 
@@ -127,7 +137,7 @@ def validate_time_evidence(manifest: dict, evidence: dict) -> dict:
     valid = {}
     for product in manifest["productions"]:
         for day, hour in product["dates"]:
-            valid[product["key"] + "|" + day] = (product, hour)
+            valid[replica_registry_key(product,day,hour)] = (product, hour)
     seen = set()
     for key, entry in evidence["times"].items():
         if key in seen or key not in valid:
@@ -199,9 +209,10 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             if hour is not None and (not isinstance(hour, str)
                                     or datetime.strptime(hour, "%H:%M").strftime("%H:%M") != hour):
                 raise ValueError("invalid time")
-            evidence_entry = showtimes.get(production["key"] + "|" + local_day)
+            replica_key = replica_registry_key(production,local_day,hour)
+            evidence_entry = showtimes.get(replica_key)
             effective_hour = evidence_entry["time"] if evidence_entry else hour
-            uid = f"curated:{production['key']}:{local_day}"
+            uid = "curated:"+replica_key.replace("|",":")
             if uid in keys:
                 raise ValueError("duplicate editorial performance")
             keys.add(uid)
