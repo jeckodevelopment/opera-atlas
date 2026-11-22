@@ -810,7 +810,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "content_sha256": "165ae8ddcd93c9d1839f36d7c00300cd1784a42b65ba7aee94cb0eb0abac0484",
-      "checked_at": "2026-11-22T19:19:22+00:00",
+      "checked_at": "2026-11-22T19:30:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1424,7 +1424,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-22T17:50:55+00:00",
+      "checked_at": "2026-11-22T19:30:40+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2160,8 +2160,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "a0a28948e124c31a8a50cf80123e99ace18e390a1448b44ea83dfdcdd38fbd36",
-      "checked_at": "2026-11-22T17:50:57+00:00",
+      "content_sha256": "3c9603a5f8fea40064a0560b64c878278e83c6528c4740246291adf221c580c9",
+      "checked_at": "2026-11-22T19:30:43+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2374,8 +2374,8 @@
       "candidate_id": "oa-index-5fea5e594da012daa488",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
-      "content_sha256": "81f195a6628d4599dd3af4bb1e760cdf2b3ee95eea611a440becbafb2a963fe7",
-      "checked_at": "2026-11-22T19:19:34+00:00",
+      "content_sha256": "5ad8cd2ed71a1800a0b42ab50baacd0b17def02045f52d72219ff05fe5e7d1ab",
+      "checked_at": "2026-11-22T19:31:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3178,7 +3178,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-22T17:51:17+00:00",
+      "checked_at": "2026-11-22T19:31:07+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4597,8 +4597,8 @@
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "d2b84a03f7e8aa81336cc67bbaede8f63e25b895326595804562ecaa9a784a50",
-      "checked_at": "2026-11-22T16:07:56+00:00",
+      "content_sha256": "7034063dbd341486414c6c843e8be3f75759293cfeaf2b4b7930a18f0a5b9a5c",
+      "checked_at": "2026-11-22T19:30:55+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -4707,7 +4707,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "content_sha256": "2351a654f0db0eac2fd015f6c7402a3944baa2298577d9865deeb5434c86b571",
-      "checked_at": "2026-11-22T19:19:39+00:00",
+      "checked_at": "2026-11-22T19:31:28+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4844,7 +4844,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "3291b5602dc11a44db9e0e946da9a46c7e156292d427d9121086ac923c02119f",
-      "checked_at": "2026-11-22T18:19:10+00:00",
+      "checked_at": "2026-11-22T19:31:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5346,8 +5346,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "e4a55d372082f5f2614a9849812f2c19c24e543329e1ef23e0d814950de3a16d",
-      "checked_at": "2026-11-22T19:19:37+00:00",
+      "content_sha256": "8080cb2323f5db260f68d1c70bdd6a8b3c6a4307953987b0e5a9b0fd6966c4dd",
+      "checked_at": "2026-11-22T19:30:50+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6392,8 +6392,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "884f12e0f39cdac57660fb1bdf5380f76ac40bb52ec4e40bc5e63ba78af398e4",
-      "checked_at": "2026-11-22T19:19:30+00:00",
+      "content_sha256": "d648715c3741f2d9ea1f5f1860c725daa1e05584a02ff17460b967b9590f614a",
+      "checked_at": "2026-11-22T19:31:00+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6930,7 +6930,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
       "content_sha256": "3df346d89ecf48c654b0c6dc287db0d93ffb4ac49e67c891b3c55ea8e85666b3",
-      "checked_at": "2026-11-22T18:18:53+00:00",
+      "checked_at": "2026-11-22T19:30:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6953,8 +6953,8 @@
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "d2b84a03f7e8aa81336cc67bbaede8f63e25b895326595804562ecaa9a784a50",
-      "checked_at": "2026-11-22T16:07:56+00:00",
+      "content_sha256": "7034063dbd341486414c6c843e8be3f75759293cfeaf2b4b7930a18f0a5b9a5c",
+      "checked_at": "2026-11-22T19:30:55+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
