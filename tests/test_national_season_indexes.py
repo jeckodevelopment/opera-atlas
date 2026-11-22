@@ -9,6 +9,31 @@ class NationalIndexTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.config=json.loads(CONFIG.read_text(encoding="utf-8"))
+    def test_rovigo_parser_reports_precise_safe_diagnostics(self):
+        source=next(x for x in self.config["sources"]
+                    if x["key"]=="rovigo-sociale-opera-2026-27")
+        cases=(
+            ("<h1>Unknown venue</h1><p>Stagione 2026/27 Pagliacci</p>",
+             "rovigo_venue_missing"),
+            ("<h1>Teatro Sociale di Rovigo</h1><p>Pagliacci</p>",
+             "rovigo_season_missing"),
+            ("<h1>Teatro Sociale di Rovigo - stagione 2026/27</h1><p>Musica</p>",
+             "rovigo_opera_titles_missing"),
+        )
+        for html,reason in cases:
+            with self.subTest(reason=reason):
+                config=copy.deepcopy(self.config)
+                for item in config["sources"]:
+                    if item["key"]!=source["key"]:
+                        item["access_status"]="blocked"
+                def fake(db,*,source_id,url,network_enabled):
+                    return FetchResult(url,html,"a"*64,len(html))
+                _,rows=scan(config,{"schema_version":1,"candidates":[]},
+                            fetcher=fake,network_enabled=True)
+                actual=next(x for x in rows if x["key"]==source["key"])
+                self.assertEqual(actual["diagnostic"],reason)
+                self.assertNotIn("<",actual["diagnostic"])
+
     def test_scala_only_opera_detail_links(self):
         url="https://www.teatroallascala.org/it/stagione/2026-2027/index.html"
         html='<a href="/it/stagione/2026-2027/opera/otello.html">Otello</a>'+\
