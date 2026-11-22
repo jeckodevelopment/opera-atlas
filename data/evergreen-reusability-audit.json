@@ -143,6 +143,11 @@
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
     },
     {
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The official opera-liriche.aspx archive lists yearly event cards with numeric first-party detail IDs. These include symphonic concerts and Alghero productions; work detail must confirm title, composer, precise dates, genre, and Teatro Comunale Sassari."
+    },
+    {
       "source_key": "teatro-grande-opera-2026",
       "scope": "dynamic_category",
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
