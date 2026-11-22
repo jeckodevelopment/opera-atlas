@@ -401,7 +401,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
              "arena-festival-2027":"arena"}.get(source_key)
     if adapter is None and source_key not in (
             "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
-            "carlo-felice-season-2026-27","donizetti-opera-2026",
+            "carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027",
             "teatro-grande-opera-2026","opera-roma-season-2026-27",
             "petruzzelli-opera-2026","petruzzelli-opera-2027",
             "lirico-cagliari-opera-2027","bellini-catania-opera-2026-27",
@@ -510,7 +510,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         raw=parse_brescia_detail(html,url=url,title=work["title"],
                                  composer=work["composer"])
         venue="Teatro Grande"
-    elif source_key in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
+    elif source_key in ("carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027"):
         from opera_atlas.italian_detail_parser import parse_detail
         work=heading_work(html,registry)
         if work is None:return []
@@ -556,7 +556,7 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
              "arena-festival-2027":"arena"}.get(item["source_key"])
     if adapter is None and item["source_key"] not in (
             "fenice-opera-2026-27","parma-opera-2027","massimo-season-2026-27",
-            "carlo-felice-season-2026-27","donizetti-opera-2026",
+            "carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027",
             "teatro-grande-opera-2026"):
         return []
     if item["source_key"]=="teatro-grande-opera-2026":
@@ -564,7 +564,7 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
         venue="Teatro Grande"
         rows=parse_brescia_detail(html,url=item["official_url"],
                                   title=info["title"],composer=info["composer"])
-    elif item["source_key"] in ("carlo-felice-season-2026-27","donizetti-opera-2026"):
+    elif item["source_key"] in ("carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027"):
         from opera_atlas.italian_detail_parser import parse_detail
         venue,rows=parse_detail(html,source_key=item["source_key"],
                                 url=item["official_url"],title=info["title"],
@@ -789,7 +789,7 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,hour)}
                 for day,hour in dates]
-    if source_key=="donizetti-opera-2026":
+    if source_key in ("donizetti-opera-2026","donizetti-opera-2027","donizetti-opera-2027"):
         from opera_atlas.donizetti_credited_detail import parse_credited_detail
         title,composer,venue,recite=parse_credited_detail(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
@@ -1198,7 +1198,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"].startswith(("ferrara-","goldoni-livorno-","jesi-","ancona-")) or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027","pisa-verdi-opera-2026-27","filarmonico-verona-opera-2027","salerno-verdi-opera-2026","macerata-festival-2027","coccia-novara-opera-2027","ravenna-alighieri-cherubini-2027"):
+                if item["source_key"].startswith(("ferrara-","goldoni-livorno-","jesi-","ancona-")) or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027","pisa-verdi-opera-2026-27","filarmonico-verona-opera-2027","salerno-verdi-opera-2026","macerata-festival-2027","coccia-novara-opera-2027","ravenna-alighieri-cherubini-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))

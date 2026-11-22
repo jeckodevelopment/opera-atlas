@@ -52,6 +52,13 @@
       "min_links": 3
     },
     {
+      "key": "donizetti-opera-2027",
+      "official_url": "https://www.donizettiopera.org/",
+      "url": "https://www.donizettiopera.org/it/opere-2027/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/",
       "url": "https://teatrogrande.it/it",

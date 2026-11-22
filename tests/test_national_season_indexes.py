@@ -145,7 +145,7 @@ class NationalIndexTests(unittest.TestCase):
             "sassari-de-carolis-opera-2026", "messina-vittorio-opera-2026-27", "lecce-apollo-pinocchio-2026", "lecce-politeama-opera-2026", "lecce-provincia-politeama-2026", "puccini-torre-del-lago-2027","spoleto-tls-lirica-2026","chieti-marrucino-lirica-2026", "rovigo-regione-programma-2026-27", "rovigo-sociale-opera-2026-27", "padova-verdi-opera-2026", "treviso-del-monaco-opera-2026-27", "ravenna-alighieri-cherubini-2027", "coccia-novara-opera-2027", "filarmonico-verona-opera-2027", "pisa-verdi-opera-2026-27", "salerno-verdi-opera-2026", "macerata-festival-2027", "scala-season-2026-27", "arena-festival-2027",
             "fenice-opera-2026-27","parma-opera-2027",
             "massimo-season-2026-27","carlo-felice-season-2026-27",
-            "donizetti-opera-2026","teatro-grande-opera-2026",
+            "donizetti-opera-2026","donizetti-opera-2027","teatro-grande-opera-2026",
             "maggio-fiorentino-calendar-2027","opera-roma-season-2026-27",
             "petruzzelli-opera-2026","petruzzelli-opera-2027",
             "bologna-comunale-opera-2026","bologna-comunale-opera-2027",

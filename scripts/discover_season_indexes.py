@@ -278,8 +278,9 @@ class ScopedSeasonAnchors(HTMLParser):
             if self.key=="parma-opera-2027" and tag=="h1":
                 if label=="OPERA":self.in_section=True
                 elif self.in_section:self.in_section=False
-            if self.key=="donizetti-opera-2026" and tag=="h1":
-                if label=="OPERE 2026":self.in_section=True
+            if self.key in ("donizetti-opera-2026","donizetti-opera-2027") and tag=="h1":
+                year=self.season_year or (2027 if self.key.endswith("2027") else 2026)
+                if label=="OPERE "+str(year):self.in_section=True
                 elif self.in_section:self.in_section=False
             if self.key=="teatro-grande-opera-2026" and tag=="h2":
                 if label=="OPERA E BALLETTO":self.in_section=True
@@ -402,6 +403,17 @@ def eligible(key:str,url:str)->bool:
                 if date.fromisoformat(match[2]).year!=2026:return False
             except ValueError:return False
         return True
+    if key=="donizetti-opera-2027":
+        # Candidate links are accepted only after extraction from the
+        # exact future-year official OPERE section, never generic site crawl.
+        match=re.fullmatch(r"/it/evento/[a-z0-9-]+(?:/(20\d{2}-\d{2}-\d{2}))?",path)
+        if not match:return False
+        if match[1]:
+            from datetime import date
+            try:
+                if date.fromisoformat(match[1]).year<2027:return False
+            except ValueError:return False
+        return True
     if key=="teatro-grande-opera-2026":
         return bool(re.fullmatch(r"/it/stagioni/20\d{2}/[a-z0-9-]+",path))
     if key=="maggio-fiorentino-calendar-2027":
@@ -484,7 +496,33 @@ def _messina_future_links(index_url:str,html:str,min_links:int)->list[str]:
     return sorted(urls)
 
 
+def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
+    """Only cards under the matching future OPERE heading become candidates."""
+    index=urlsplit(index_url)
+    season=re.fullmatch(r"/it/opere-(20\d{2})/",index.path)
+    if (index.scheme!="https" or index.hostname!="www.donizettiopera.org"
+        or index.query or index.fragment or not season
+        or not 2027<=int(season[1])<=2099):
+        raise ValueError("invalid official Donizetti future index")
+    year=int(season[1])
+    parser=ScopedSeasonAnchors("donizetti-opera-2027",season_year=year)
+    parser.feed(html)
+    results=set()
+    for href in parser.links:
+        target=urljoin(index_url,href)
+        path=urlsplit(target).path.rstrip("/").split("/")
+        if len(path)>4 and re.fullmatch(r"20\d{2}-\d{2}-\d{2}",path[-1]):
+            if path[-1][:4]!=str(year):continue
+        if eligible("donizetti-opera-2027",target):
+            results.add(target)
+    if len(results)<min_links:
+        raise ValueError("season index incomplete or structure changed")
+    return sorted(results)
+
+
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="donizetti-opera-2027":
+        return _donizetti_future_links(index_url,html,min_links)
     if key=="messina-vittorio-opera-2026-27" and "/opera-26-27/" not in index_url:
         return _messina_future_links(index_url,html,min_links)
     if key=="puccini-torre-del-lago-2027":
@@ -606,6 +644,7 @@ def validate_config(config:dict)->list[dict]:
         "massimo-season-2026-27":("www.teatromassimo.it","/la-stagione-2026-27/"),
         "carlo-felice-season-2026-27":("www.carlofelice.it","/rassegna-stagione-opera-danza-musical-2026-27/"),
         "donizetti-opera-2026":("www.donizettiopera.org","/it/opere-2026/"),
+        "donizetti-opera-2027":("www.donizettiopera.org","/it/opere-2027/"),
         "teatro-grande-opera-2026":("teatrogrande.it","/it"),
         "maggio-fiorentino-calendar-2027":("www.maggiofiorentino.com","/calendario/2027/01/opera"),
         "opera-roma-season-2026-27":("www.operaroma.it","/genre/opera/"),
@@ -660,6 +699,9 @@ def validate_config(config:dict)->list[dict]:
                 valid_season=bool(season and
                     (int(season[1])+1)%100==int(season[2]) and
                     2026<=int(season[1])<=2098)
+        elif key=="donizetti-opera-2027":
+            season=re.fullmatch(r"/it/opere-(20\d{2})/",index.path)
+            valid_season=bool(season and 2027<=int(season[1])<=2099)
         elif key=="donizetti-opera-2026":
             season=re.fullmatch(r"/it/opere-(20\d{2})/",index.path)
             valid_season=bool(season and 2026<=int(season[1])<=2098)
