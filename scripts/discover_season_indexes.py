@@ -314,6 +314,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="asti-alfieri-rolling-opera":
+        from opera_atlas.asti_alfieri_parser import eligible_detail
+        return eligible_detail(url)
     if key=="savona-giocosa-rolling-opera":
         return (parsed.scheme=="https" and parsed.hostname=="operagiocosa.it"
                 and parsed.path=="/" and not parsed.query and not parsed.fragment
@@ -607,6 +610,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="asti-alfieri-rolling-opera":
+        from opera_atlas.asti_alfieri_parser import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="savona-giocosa-rolling-opera":
         from opera_atlas.savona_opera_giocosa_parser import parse_homepage
         if len(parse_homepage(html,url=index_url))<min_links:
@@ -752,6 +758,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "asti-alfieri-rolling-opera":("www.teatroalfieriasti.it","/events/categoria/fuori-abbonamento/"),
         "savona-giocosa-rolling-opera":("operagiocosa.it","/"),
         "sassari-de-carolis-opera-2026":("www.marialisadecarolis.it","/opere-liriche.aspx"),
         "sassari-de-carolis-rolling-opera":("www.marialisadecarolis.it","/opere-liriche.aspx"),
@@ -958,6 +965,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/" and not index.query
         elif key=="savona-giocosa-rolling-opera":
             valid_season=index.path=="/" and not index.query
+        elif key=="asti-alfieri-rolling-opera":
+            valid_season=index.path=="/events/categoria/fuori-abbonamento/" and not index.query
         elif key=="reggio-valli-opera-2026-27":
             valid_season=index.path=="/tipo/opera/" and not index.query
         elif key=="piacenza-opera-2026-27":
