@@ -137,8 +137,8 @@ def parse_detail(html:str,*,url:str):
     year=edition_years.pop()
     if year<2027:
         raise ValueError("Macerata event belongs to historic edition")
-    if NOT_OPERA.search(text[:700]):
-        raise ValueError("non-operatic Macerata festival event")
+    # Navigation may contain the separate Sferisterio Scuola programme;
+    # determine genre from the work title and bounded local composer credit.
     # Source composer and type in one introductory credit, never directors,
     # historical première dates, or unrelated footer production cards.
     credit=re.search(r"(?i)\bOpera lirica in .{0,160}?\bdi\s+"
