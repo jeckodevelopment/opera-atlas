@@ -53,7 +53,7 @@ def _review_credit_hint(title: str, composer: str, works: list[dict]) -> dict | 
 
 
 def evaluate(evidence: dict, registry: dict, candidates: dict | None = None,
-             programs: dict | None = None) -> dict:
+             programs: dict | None = None, reconciled_ticket_urls: set[str] | None = None) -> dict:
     if evidence.get("schema_version") != 1 or not isinstance(evidence.get("evidence"), list):
         raise ValueError("invalid candidate evidence document")
     if registry.get("schema_version") != 1 or not isinstance(registry.get("works"), dict):
@@ -62,6 +62,7 @@ def evaluate(evidence: dict, registry: dict, candidates: dict | None = None,
                   for x in (candidates or {}).get("candidates",[])}
     published_programs={(x["source_key"],x["source_url"])
                         for x in (programs or {}).get("programs",[])}
+    reconciled_ticket_urls=reconciled_ticket_urls or set()
     works = list(registry["works"].values()) + list(registry.get("reserved_works", {}).values())
     by_composer = {}
     for work in works:
@@ -79,6 +80,11 @@ def evaluate(evidence: dict, registry: dict, candidates: dict | None = None,
             continue
         if status_by_id.get(candidate.get("candidate_id")) in (
                 "excluded_nonopera","not_in_official_season"):
+            continue
+        # An independently verified, already-published ticket URL has no
+        # remaining work-identity decision. This must be checked against the
+        # canonical staging schedule, not just the title or candidate state.
+        if candidate.get("source_url") in reconciled_ticket_urls:
             continue
         # A published mixed program is one ticket, not a backlog of new
         # standalone operas (which may include a poem, ballet or concert).
@@ -157,10 +163,22 @@ def main() -> None:
     parser=argparse.ArgumentParser()
     parser.add_argument("--check",action="store_true")
     args=parser.parse_args()
-    report=evaluate(json.loads(EVIDENCE.read_text(encoding="utf-8")),
+    from scripts.reconcile_published_candidates import (
+        verified_pisa_recital_urls, verified_haydn_cronaca_urls,
+        verified_livorno_recital_urls, verified_livorno_dido_programme_urls)
+    from scripts.build_verified_catalog import MANIFEST
+    evidence=json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+    reconciled_urls=set().union(
+        verified_pisa_recital_urls(manifest,evidence),
+        verified_haydn_cronaca_urls(manifest,evidence),
+        verified_livorno_recital_urls(manifest,evidence),
+        verified_livorno_dido_programme_urls(manifest,evidence))
+    report=evaluate(evidence,
                     json.loads(REGISTRY.read_text(encoding="utf-8")),
                     json.loads(CANDIDATES.read_text(encoding="utf-8")),
-                    json.loads(PROGRAMS.read_text(encoding="utf-8")) if PROGRAMS.exists() else {"programs":[]})
+                    json.loads(PROGRAMS.read_text(encoding="utf-8")) if PROGRAMS.exists() else {"programs":[]},
+                    reconciled_ticket_urls=reconciled_urls)
     expected=json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+"\n"
     if args.check:
         if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != expected:
