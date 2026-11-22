@@ -52,6 +52,35 @@ class HaydnRollingOperaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             extract_index("<h1>Nessun evento</h1>",url=INDEX,min_links=1)
 
+    def test_non_opera_haydn_event_families_exit_review_without_hiding_operas(self):
+        from scripts.discover_season_indexes import classify,excluded_nonopera
+        nonopera=(
+            "oper-a-intro-14","oper-a-intro-15","oper-a-intro-16",
+            "oper-a-intro-17","oper-a-backstage-under-35-2",
+            "dai-libri-allopera","dai-libri-allopera-2")
+        for slug in nonopera:
+            with self.subTest(slug=slug):
+                url="https://www.haydn.it/eventi/"+slug
+                self.assertTrue(excluded_nonopera(KEY,url))
+                self.assertEqual(classify(KEY,url,set()),"excluded_nonopera")
+        real=("la-clemenza-di-tito","la-clemenza-di-tito-2",
+              "cronaca-di-un-amore-callas-e-pasolini",
+              "cronaca-di-un-amore-callas-e-pasolini-2",
+              "il-barbiere-di-siviglia-e-la-rosa-incantata")
+        for slug in real:
+            with self.subTest(real_opera=slug):
+                url="https://www.haydn.it/eventi/"+slug
+                self.assertFalse(excluded_nonopera(KEY,url))
+                self.assertEqual(classify(KEY,url,set()),"needs_review")
+        self.assertEqual(classify(
+            "asti-alfieri-rolling-opera",
+            "https://www.teatroalfieriasti.it/event/concerto-di-capodanno/",set()),
+            "excluded_nonopera")
+        self.assertEqual(classify(
+            "asti-alfieri-rolling-opera",
+            "https://www.teatroalfieriasti.it/event/aida/",set()),
+            "needs_review")
+
     def test_bolzano_and_trento_metadata_are_separate(self):
         bolzano=page()
         trento=page("La clemenza di Tito","Wolfgang Amadeus Mozart","Trento",
