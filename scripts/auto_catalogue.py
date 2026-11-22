@@ -1311,6 +1311,8 @@ def main():
     # catalog transaction; never edit derived public JSON or IDs by hand.
     seeds=json.loads((ROOT/"data/verified-work-authority-seeds.json").read_text(encoding="utf-8"))
     facts,registry,corrected_titles=normalize_published_work_titles(facts,registry,seeds)
+    from scripts.consolidate_goldoni_mascagni import consolidate
+    facts,registry,consolidated_stagings=consolidate(facts,registry)
     evidence=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     candidates=json.loads(INDEX.read_text(encoding="utf-8")) if INDEX.exists() else {"candidates":[]}
     approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8")) if SOURCE_ALLOWLIST.exists() else {"schema_version":1,"urls":[]}
@@ -1357,6 +1359,7 @@ def main():
     validate_time_evidence(next_facts,next_times)
     report["enriched_recite_times"]=enriched
     report["normalized_work_titles"]=corrected_titles
+    report["consolidated_stagings"]=consolidated_stagings
     validate_auto_sources(urls)
     assemble(next_facts,next_registry,approved_extra=set(urls))
     build_editorial(next_facts,next_registry,next_editorial,approved_extra=set(urls),
