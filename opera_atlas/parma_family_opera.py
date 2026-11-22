@@ -34,7 +34,13 @@ def parse_family_opera(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str
     heading.feed(html)
     if heading.first!=TITLE:
         raise ValueError("Parma primary work heading mismatch")
-    text=clean(html)
+    # The official ticket widget emits day, clock and audience in sibling
+    # spans/list cells. The common HTML text reader preserves whitespace
+    # for div/p/li but not span/b/small, otherwise concatenating
+    # "ven 4 dic09:00Scuole" into one unparseable token.
+    spaced=re.sub(r"(?i)</?(?:span|small|strong|b|em|ul|ol|button|label|time|h[1-6])\b[^>]*>",
+                  " ",html)
+    text=clean(spaced)
     at=text.find(TITLE)
     if at<0:raise ValueError("Parma work heading absent")
     # The site renders its heading dates as separate day/month/year nodes.
@@ -62,7 +68,10 @@ def parse_family_opera(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str
     if CANCEL.search(section[:1800]):
         raise ValueError("cancelled Parma family event requires review")
     schedule=section[section.index(VENUE)+len(VENUE):]
-    schedule=schedule.split("Informazioni",1)[0]
+    # Only the audience-tagged ticket calendar, not the following
+    # "kit dello spettatore famiglie" or footer, contributes audience tags.
+    schedule=re.split(r"(?i)\b(?:ticket|agevolazioni|kit\s+dello\s+spettatore|informazioni)\b",
+                      schedule,maxsplit=1)[0]
     matches=list(ROW.finditer(schedule))
     if not matches or len(matches)>24:
         raise ValueError("missing complete official Parma ticket schedule")

@@ -48,6 +48,33 @@ class ParmaFamilyOperaTests(unittest.TestCase):
             parse_family_opera(original.replace("<h2>Spettacolo</h2>",
                                                "<h2>Dettagli</h2>"),url=URL)
 
+    def test_official_inline_ticket_cells_and_family_kit_do_not_conflict(self):
+        html=page()
+        # Official CMS ticket components contain adjacent inline elements.
+        # Shared visible-text parsing must retain their field boundaries.
+        for day,clock,audience in (
+            ("ven 4 dic","09:00","Scuole"),
+            ("ven 4 dic","11:00","Scuole"),
+            ("sab 5 dic","15:00","Famiglie"),
+            ("sab 5 dic","18:00","Famiglie"),
+        ):
+            html=html.replace(
+                f"<div>{day}</div><div>{clock}</div><div>{audience}</div>",
+                f"<span>{day}</span><small>{clock}</small><b>{audience}</b>")
+        html=html.replace(
+            "<h2>Informazioni</h2>",
+            "<p>ticket</p><p>kit dello spettatore famiglie</p>"
+            "<h2>Informazioni</h2>")
+        self.assertEqual(parse_family_opera(html,url=URL)[-1],
+                         [("2026-12-05","15:00"),("2026-12-05","18:00")])
+        rows=parse_official_parma_work_detail(URL,html)
+        self.assertEqual(len(rows),2)
+        self.assertEqual({x["venue"] for x in rows},{"Teatro Regio di Parma"})
+        # A ticket without its audience marker must never become public.
+        missing=html.replace("<b>Famiglie</b>","<b>Pubblico</b>",1)
+        with self.assertRaisesRegex(ValueError,"ticket schedule|ticket row|unbound official Parma ticket hour"):
+            parse_family_opera(missing,url=URL)
+
     def test_unverified_facts_do_not_create_family_tickets(self):
         for html in (
             page().replace("musica Giovanni Sollima","musica Altro autore"),
