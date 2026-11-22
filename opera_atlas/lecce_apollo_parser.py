@@ -34,7 +34,8 @@ def parse_detail(html:str,*,url:str):
     if begin is None:
         raise ValueError("distinct Teatro Apollo production section missing")
     section=text[begin.end():begin.end()+2200]
-    if not re.search(r"(?i)\bLe avventure di Pinocchio\s+di\s+Antonio Cericola\b",section):
+    if not (re.search(r"(?i)\bLe avventure di Pinocchio\s+di\s+Antonio Cericola\b",section)
+            or re.search(r"(?i)\bLe avventure di Pinocchio\b.{0,260}?\bopera omonima composta da Antonio Cericola\b",section)):
         raise ValueError("Apollo title and composer not verified together")
     pattern=(r"(?i)\b(?:mercoled[iì]\s+)?30\s+dicembre\s*,?\s*"
              r"ore\s+20[.:]45\s*,?\s*presso\s+il\s+Teatro Apollo\s+di\s+Lecce\b")
