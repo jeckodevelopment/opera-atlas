@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T02:02:31+00:00",
+  "checked_at": "2026-11-22T02:15:58+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
@@ -149,13 +149,6 @@
       "source_key": "jesi-esecuzione-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
       "title_hint": "L'ESECUZIONE"
-    },
-    {
-      "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
-      "status": "enriched",
-      "source_key": "pisa-verdi-opera-2026-27",
-      "official_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
-      "title_hint": "L'occasione fa il ladro"
     },
     {
       "candidate_id": "oa-index-ecf1fda1dc67738cab86",
@@ -401,6 +394,13 @@
       "work_id": "oa-w-000039",
       "source_key": "bologna-comunale-opera-2027",
       "official_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+    },
+    {
+      "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000089",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "official_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
     },
     {
       "candidate_id": "oa-index-3b731f9ff09ab7dc5294",
