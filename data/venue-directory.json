@@ -324,7 +324,7 @@
       "name": "Teatro Gabriello Chiabrera",
       "city": "Savona",
       "region": "Liguria",
-      "slug": "teatro-gabriello-chiabrera",
+      "slug": "teatro-chiabrera",
       "city_slug": "savona",
       "website": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
       "source_url": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
@@ -335,7 +335,8 @@
       "photo_file": "Savona - Teatro Gabriello Chiabrera.jpg",
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Savona_-_Teatro_Gabriello_Chiabrera.jpg",
       "photo_credit": "Bubici — Wikimedia Commons, CC BY-SA 4.0",
-      "calendar_status": "not_acquired"
+      "calendar_status": "not_acquired",
+      "canonical_venue_id": "oa-v-000053"
     },
     {
       "id": "oa-vd-000018",
