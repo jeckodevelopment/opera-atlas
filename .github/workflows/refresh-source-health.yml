@@ -33,13 +33,21 @@ jobs:
           python-version: '3.12'
       - name: Check source configuration and diagnostics invariants
         run: |
-          python -m unittest tests.test_source_automation tests.test_national_season_indexes -v
+          python -m unittest tests.test_source_automation tests.test_national_season_indexes tests.test_source_health_dispatch -v
       - name: Scan approved official season indexes
         run: |
           python -m scripts.discover_season_indexes --allow-network
           python -m scripts.source_automation
           python -m scripts.source_automation --check
           python -c 'import json; p=json.load(open("data/season-index-health.json")); print("Source-health scan:",p.get("checked_at"),"sources:",len(p.get("sources",[])),"verified:",sum(s.get("current_scan_verified",False) for s in p.get("sources",[])))'
+      - name: Detect new official candidate URLs
+        id: new_candidates
+        run: |
+          git show HEAD:data/season-index-candidates.json > /tmp/source-candidates-before.json
+          python -m scripts.source_health_dispatch \
+            --before /tmp/source-candidates-before.json \
+            --after data/season-index-candidates.json \
+            --github-output "$GITHUB_OUTPUT"
       - name: Persist fresh health and review-only candidate links
         id: checkpoint
         run: |
@@ -53,6 +61,21 @@ jobs:
           else
             git commit -m "data(sources): refresh official source health [skip ci]"
             python -m scripts.safe_push_catalog
+          fi
+      - name: Trigger central catalog acquisition for newly discovered candidates
+        if: steps.new_candidates.outputs.new_candidates == 'true' && steps.checkpoint.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # The source-health checkpoint uses [skip ci] and GITHUB_TOKEN pushes
+          # do not trigger push workflows. Dispatch the existing catalog event,
+          # with the catalog's separate concurrency lock, only for new URLs.
+          git fetch --quiet origin main
+          git show origin/main:data/season-index-candidates.json > /tmp/source-candidates-published.json
+          if python -c 'import json,sys; from scripts.source_health_dispatch import newly_actionable; a=json.load(open(sys.argv[1])); b=json.load(open(sys.argv[2])); sys.exit(0 if newly_actionable(a,b) else 1)' /tmp/source-candidates-before.json /tmp/source-candidates-published.json; then
+            gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+          else
+            echo "New candidates not present on origin/main; catalog dispatch deferred."
           fi
       - name: Report latest-source checkpoint result
         if: steps.checkpoint.outputs.deferred == 'true'
