@@ -1064,6 +1064,24 @@
       ]
     },
     {
+      "id": "curated:auto-29dbfb9093ce70ed:2026-10-23",
+      "starts_at": "2026-10-23T20:00:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "municipality": "Treviso",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+      ]
+    },
+    {
       "id": "curated:regio-boheme-leoncavallo-2026:2026-10-23",
       "starts_at": "2026-10-23T20:00:00+02:00",
       "local_date": "2026-10-23",
@@ -1187,6 +1205,24 @@
       "longitude": null,
       "sources": [
         "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
+      ]
+    },
+    {
+      "id": "curated:auto-29dbfb9093ce70ed:2026-10-25",
+      "starts_at": "2026-10-25T16:00:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "municipality": "Treviso",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
       ]
     },
     {
@@ -2978,6 +3014,24 @@
       ]
     },
     {
+      "id": "curated:auto-f752ed6b1b3bf2c5:2026-12-04",
+      "starts_at": "2026-12-04T20:00:00+01:00",
+      "local_date": "2026-12-04",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "municipality": "Treviso",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+      ]
+    },
+    {
       "id": "curated:auto-3b54fb1b4f9d0ada:2026-12-04",
       "starts_at": "2026-12-04T20:30:00+01:00",
       "local_date": "2026-12-04",
@@ -3083,6 +3137,24 @@
       "longitude": null,
       "sources": [
         "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
+      ]
+    },
+    {
+      "id": "curated:auto-f752ed6b1b3bf2c5:2026-12-06",
+      "starts_at": "2026-12-06T16:00:00+01:00",
+      "local_date": "2026-12-06",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "municipality": "Treviso",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
       ]
     },
     {

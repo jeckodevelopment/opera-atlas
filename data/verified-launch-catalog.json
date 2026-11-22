@@ -5563,6 +5563,44 @@
           "17:30"
         ]
       ]
+    },
+    {
+      "key": "auto-29dbfb9093ce70ed",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "municipality": "Treviso",
+      "region": "Veneto",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "dates": [
+        [
+          "2026-10-23",
+          "20:00"
+        ],
+        [
+          "2026-10-25",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f752ed6b1b3bf2c5",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "municipality": "Treviso",
+      "region": "Veneto",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "dates": [
+        [
+          "2026-12-04",
+          "20:00"
+        ],
+        [
+          "2026-12-06",
+          "16:00"
+        ]
+      ]
     }
   ]
 }

@@ -949,6 +949,14 @@
       "name": "Teatro Vittorio Emanuele",
       "city": "Messina",
       "region": "Sicilia"
+    },
+    "Treviso|Teatro Comunale Mario del Monaco": {
+      "id": "oa-v-000043",
+      "slug": "teatro-comunale-mario-del-monaco",
+      "city_slug": "treviso",
+      "name": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "region": "Veneto"
     }
   },
   "stagings": {
@@ -2514,6 +2522,22 @@
       "slug": "la-traviata",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
       "season": "2027"
+    },
+    "auto-29dbfb9093ce70ed": {
+      "id": "oa-s-000202",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000043",
+      "slug": "la-traviata",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "season": "2026"
+    },
+    "auto-f752ed6b1b3bf2c5": {
+      "id": "oa-s-000203",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000043",
+      "slug": "pagliacci",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "season": "2026"
     }
   },
   "performances": {
@@ -7640,6 +7664,30 @@
       "staging_id": "oa-s-000201",
       "original_date": "2027-04-18",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/"
+    },
+    "auto-29dbfb9093ce70ed|2026-10-23": {
+      "id": "oa-r-000876",
+      "staging_id": "oa-s-000202",
+      "original_date": "2026-10-23",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+    },
+    "auto-29dbfb9093ce70ed|2026-10-25": {
+      "id": "oa-r-000877",
+      "staging_id": "oa-s-000202",
+      "original_date": "2026-10-25",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+    },
+    "auto-f752ed6b1b3bf2c5|2026-12-04": {
+      "id": "oa-r-000878",
+      "staging_id": "oa-s-000203",
+      "original_date": "2026-12-04",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+    },
+    "auto-f752ed6b1b3bf2c5|2026-12-06": {
+      "id": "oa-r-000879",
+      "staging_id": "oa-s-000203",
+      "original_date": "2026-12-06",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
     }
   },
   "reserved_works": {
