@@ -200,7 +200,17 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
         # Metadata only: preserve diagnostic distinctions without copying HTML.
         observed = {"headings": sum(k == "h2" for k, _, _ in items),
                     "showtime_texts": sum(bool(SHOWTIME.fullmatch(v)) for k, v, _ in items if k == "text"),
-                    "incomplete": (diagnostics or [])[:12]}
+                    "incomplete": (diagnostics or [])[:12],
+                    "ticket_link_shapes": [
+                        {"label": value[:40],
+                         "host": urlsplit(urljoin(url, href)).hostname,
+                         "path": urlsplit(urljoin(url, href)).path[:100]}
+                        for kind, value, href in items
+                        if kind == "a" and href and (
+                            "bigliett" in value.casefold()
+                            or "teatrosancarlo.it" in href
+                        )
+                    ][:12]}
         raise ValueError("secondary opera season not confirmed: " + json.dumps(observed, ensure_ascii=False))
     identities = [(b["title"].casefold(), b["composer"].casefold()) for b in blocks]
     if len(set(identities)) != len(identities):
