@@ -509,6 +509,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             authorized_urls:list[str], *, today:date,
             intelligence:dict|None=None)->tuple[dict,dict,list[str],dict]:
     """Return all changes in memory; skip anomalies without publishing bad data."""
+    from scripts.consolidate_goldoni_mascagni import consolidate
+    facts,registry,consolidated_stagings=consolidate(facts,registry)
     next_facts=copy.deepcopy(facts)
     next_registry=copy.deepcopy(registry)
     approved=set(authorized_urls)
@@ -758,6 +760,7 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         next_facts["reviewed_on"]=today.isoformat()
     return (next_facts,next_registry,sorted(approved),
             {"new_stagings":created_stagings,"new_recite":created_recite,
+             "consolidated_stagings":consolidated_stagings,
              "auto_skipped":issues})
 
 def promote_calendar(facts:dict,registry:dict,health:dict,*,today:date):
