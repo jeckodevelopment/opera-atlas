@@ -301,6 +301,10 @@ def eligible(key:str,url:str)->bool:
     path=parsed.path.lower().rstrip("/")
     if excluded_nonopera(key,url):
         return False
+    if key=="messina-vittorio-opera-2026-27":
+        return (parsed.scheme=="https" and parsed.hostname=="www.teatrovittorioemanuele.it"
+                and path in {"/evento/madama-butterfly", "/evento/la-traviata",
+                             "/evento/al-cavallino-bianco"})
     if key=="lecce-apollo-pinocchio-2026":
         return (parsed.scheme=="https" and parsed.hostname=="www.provincia.le.it"
                 and path=="/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini")
@@ -465,6 +469,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "messina-vittorio-opera-2026-27":("www.teatrovittorioemanuele.it","/event_listing_type/opera-26-27/"),
         "lecce-apollo-pinocchio-2026":("www.provincia.le.it","/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"),
         "lecce-politeama-opera-2026":("www.politeamagreco.it","/programmazione.asp"),
         "rovigo-sociale-opera-2026-27":("www.comune.rovigo.it","/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"),
@@ -552,6 +557,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="messina-vittorio-opera-2026-27":
+            valid_season=index.path=="/event_listing_type/opera-26-27/" and not index.query
         elif key=="lecce-apollo-pinocchio-2026":
             valid_season=index.path=="/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/" and not index.query
         elif key=="lecce-politeama-opera-2026":

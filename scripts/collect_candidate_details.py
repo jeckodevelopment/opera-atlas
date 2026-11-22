@@ -167,6 +167,17 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
 
     Never infer metadata for a newly discovered work from a URL slug alone.
     """
+    if source_key=="messina-vittorio-opera-2026-27":
+        from opera_atlas.messina_opera_parser import parse_detail
+        title,composer,venue,rows=parse_detail(html,url=url)
+        matches=[w for w in registry.get("works",{}).values()
+                 if normalized(w["title"])==normalized(title)
+                 and normalized(w["composer"])==normalized(composer)]
+        if len(matches)!=1:return []
+        work=matches[0]
+        return [{"event_title":work["title"],"composer":work["composer"],
+                 "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in rows]
     if source_key=="lecce-apollo-pinocchio-2026":
         from opera_atlas.lecce_apollo_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
