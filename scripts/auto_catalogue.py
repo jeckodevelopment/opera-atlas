@@ -468,6 +468,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         title,composer=next(iter(names))
         matches=[w for w in next_registry["works"].values()
                  if normalized(w["title"])==title and normalized(w["composer"])==composer]
+        # A verified program-only work already owns a permanent identity.
+        # Promote that exact title/composer when a genuinely independent
+        # performance has arrived, without allocating a second ID.
+        reserved_matches=[w for w in next_registry.get("reserved_works",{}).values()
+                          if normalized(w["title"])==title
+                          and normalized(w["composer"])==composer]
+        if not matches and len(reserved_matches)==1:
+            matches=reserved_matches
         if len(matches)!=1:
             intel=resolved_by_candidate.get(cid)
             # Require the same official source, the same composer and an exact
@@ -572,6 +580,19 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 if staging_key in next_registry["stagings"]:
                     issues.append({"candidate_id":cid,"reason":"identity_collision"})
                     continue
+            # Transfer a reserved work to the staging-backed channel only
+            # after all first-party date, venue and collision checks pass.
+            reserved_key=next((name for name,value in
+                next_registry.get("reserved_works",{}).items()
+                if value["id"]==work["id"]),None)
+            if reserved_key is not None:
+                if reserved_key in next_registry["works"]:
+                    raise ValueError("duplicate reserved work identity")
+                promoted={key:value for key,value in work.items()
+                          if key!="status"}
+                next_registry["works"][reserved_key]=promoted
+                del next_registry["reserved_works"][reserved_key]
+                work=promoted
             canonical_venue=ensure_venue(next_registry,city,venue,canonical_venue)
             production={"key":staging_key,"title":work["title"],
                         "composer":work["composer"],"venue":venue,
@@ -1248,8 +1269,12 @@ def main():
     # The public poster publisher independently loads archival artwork by
     # unique canonical slug, preferring Commons over temporary venue imagery.
     from scripts.publish_work_posters import load_archival_art
-    new_ids={w["id"] for w in next_registry["works"].values()}-{
-        w["id"] for w in registry["works"].values()}
+    # Reserved works already passed the same editorial/image identity gate
+    # and have public, composer-bound archival artwork. Moving their ID to
+    # the staging-backed channel is not a brand-new work/image identity.
+    old_ids={w["id"] for collection in ("works","reserved_works")
+             for w in registry.get(collection,{}).values()}
+    new_ids={w["id"] for w in next_registry["works"].values()}-old_ids
     archival=load_archival_art({w["slug"] for w in next_registry["works"].values()})
     slug_counts={}
     for work in next_registry["works"].values():
