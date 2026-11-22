@@ -1,0 +1,1163 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-22T14:19:07+00:00",
+  "definition": "Candidate statuses by uniquely assigned source key; already_catalogued reflects registry reconciliation, not proof of every work, production, performance or live deployment.",
+  "excluded_from_attribution": {
+    "already_catalogued": 47,
+    "excluded_nonopera": 6,
+    "not_in_official_season": 9
+  },
+  "venues": [
+    {
+      "venue_id": "oa-vd-000045",
+      "venue": "Teatro Marrucino",
+      "city": "Chieti",
+      "region": "Abruzzo",
+      "states": {
+        "already_catalogued": 1,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000041",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "region": "Campania",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000042",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "region": "Campania",
+      "states": {
+        "already_catalogued": 6,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 6,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "venue": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000029",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "city": "Ferrara",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 5,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 5,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000028",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 8,
+        "needs_review": 1,
+        "excluded_nonopera": 2,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 11,
+      "pending": [
+        {
+          "candidate_id": "oa-index-04fc7625bab27446a05d",
+          "source_key": "modena-teatro-opera-2026-27",
+          "official_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+          "detail_outcome": "facts_found",
+          "detail_reason": null,
+          "identity_review": true
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000010",
+      "venue": "Teatro Regio di Parma",
+      "city": "Parma",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 6,
+        "needs_review": 1,
+        "excluded_nonopera": 7,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 14,
+      "pending": [
+        {
+          "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+          "source_key": "parma-opera-2027",
+          "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+          "detail_outcome": "unavailable_or_unstructured",
+          "detail_reason": "no_verified_showtimes",
+          "identity_review": false
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000027",
+      "venue": "Teatro Municipale",
+      "city": "Piacenza",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 5,
+        "needs_review": 0,
+        "excluded_nonopera": 1,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 6,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 2,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 2,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000013",
+      "venue": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000018",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "states": {
+        "already_catalogued": 5,
+        "needs_review": 2,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 7,
+      "pending": [
+        {
+          "candidate_id": "oa-index-19141fd504da67924d01",
+          "source_key": "verdi-trieste-season-2026-27",
+          "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
+          "detail_outcome": "unavailable_or_unstructured",
+          "detail_reason": "no_verified_showtimes",
+          "identity_review": false
+        },
+        {
+          "candidate_id": "oa-index-ecf1fda1dc67738cab86",
+          "source_key": "verdi-trieste-season-2026-27",
+          "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
+          "detail_outcome": "unavailable_or_unstructured",
+          "detail_reason": "no_verified_showtimes",
+          "identity_review": false
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "region": "Lazio",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "venue": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "region": "Lazio",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000040",
+      "venue": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "region": "Lazio",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000016",
+      "venue": "Teatro Carlo Felice",
+      "city": "Genova",
+      "region": "Liguria",
+      "states": {
+        "already_catalogued": 6,
+        "needs_review": 1,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 7,
+      "pending": [
+        {
+          "candidate_id": "oa-index-76fee4db156090b664aa",
+          "source_key": "carlo-felice-season-2026-27",
+          "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
+          "detail_outcome": "unavailable_or_unstructured",
+          "detail_reason": "no_verified_showtimes",
+          "identity_review": false
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000017",
+      "venue": "Teatro Gabriello Chiabrera",
+      "city": "Savona",
+      "region": "Liguria",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000012",
+      "venue": "Teatro Donizetti",
+      "city": "Bergamo",
+      "region": "Lombardia",
+      "states": {
+        "already_catalogued": 3,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 3,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000037",
+      "venue": "Teatro Sociale",
+      "city": "Bergamo",
+      "region": "Lombardia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000004",
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "region": "Lombardia",
+      "states": {
+        "already_catalogued": 2,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 2,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "region": "Lombardia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "region": "Lombardia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "venue": "Teatro alla Scala",
+      "city": "Milano",
+      "region": "Lombardia",
+      "states": {
+        "already_catalogued": 13,
+        "needs_review": 0,
+        "excluded_nonopera": 1,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 14,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000003",
+      "venue": "Teatro Fraschini",
+      "city": "Pavia",
+      "region": "Lombardia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000035",
+      "venue": "Teatro delle Muse",
+      "city": "Ancona",
+      "region": "Marche",
+      "states": {
+        "already_catalogued": 2,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 2,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000037",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "region": "Marche",
+      "states": {
+        "already_catalogued": 4,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 4,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "region": "Marche",
+      "states": {
+        "already_catalogued": 3,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 3,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000038",
+      "venue": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "region": "Marche",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "region": "Piemonte",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "region": "Piemonte",
+      "states": {
+        "already_catalogued": 3,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 3,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "region": "Piemonte",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000043",
+      "venue": "Teatro Petruzzelli",
+      "city": "Bari",
+      "region": "Puglia",
+      "states": {
+        "already_catalogued": 14,
+        "needs_review": 0,
+        "excluded_nonopera": 2,
+        "not_in_official_season": 2
+      },
+      "unclassified": 0,
+      "total_attributed": 18,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000052",
+      "venue": "Teatro Apollo",
+      "city": "Lecce",
+      "region": "Puglia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 1,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [
+        {
+          "candidate_id": "oa-index-943d04f25da8e27e1190",
+          "source_key": "lecce-apollo-pinocchio-2026",
+          "official_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
+          "detail_outcome": "unavailable_or_unstructured",
+          "detail_reason": "no_verified_showtimes",
+          "identity_review": false
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000051",
+      "venue": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "region": "Puglia",
+      "states": {
+        "already_catalogued": 1,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000044",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "region": "Puglia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "region": "Sardegna",
+      "states": {
+        "already_catalogued": 6,
+        "needs_review": 1,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 7
+      },
+      "unclassified": 0,
+      "total_attributed": 14,
+      "pending": [
+        {
+          "candidate_id": "oa-index-877637d643bbfb668688",
+          "source_key": "lirico-cagliari-opera-2027",
+          "official_url": "https://www.liricocagliari.it/evento/candide/",
+          "detail_outcome": "facts_found",
+          "detail_reason": null,
+          "identity_review": true
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000050",
+      "venue": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "region": "Sardegna",
+      "states": {
+        "already_catalogued": 3,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 3,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "venue": "Teatro Massimo Bellini",
+      "city": "Catania",
+      "region": "Sicilia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000030",
+      "venue": "Teatro Sangiorgi",
+      "city": "Catania",
+      "region": "Sicilia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "region": "Sicilia",
+      "states": {
+        "already_catalogued": 3,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 3,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "venue": "Teatro Massimo",
+      "city": "Palermo",
+      "region": "Sicilia",
+      "states": {
+        "already_catalogued": 8,
+        "needs_review": 0,
+        "excluded_nonopera": 19,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 27,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000048",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "region": "Sicilia",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "venue": "Teatro Goldoni",
+      "city": "Firenze",
+      "region": "Toscana",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000030",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "region": "Toscana",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000033",
+      "venue": "Teatro Goldoni",
+      "city": "Livorno",
+      "region": "Toscana",
+      "states": {
+        "already_catalogued": 3,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 3,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "region": "Toscana",
+      "states": {
+        "already_catalogued": 3,
+        "needs_review": 0,
+        "excluded_nonopera": 1,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 4,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000032",
+      "venue": "Teatro Verdi",
+      "city": "Pisa",
+      "region": "Toscana",
+      "states": {
+        "already_catalogued": 5,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 5,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 1,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [
+        {
+          "candidate_id": "oa-index-63ec766b091ded79f921",
+          "source_key": "puccini-torre-del-lago-2027",
+          "official_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+          "detail_outcome": "facts_found",
+          "detail_reason": null,
+          "identity_review": false
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "venue": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "region": "Trentino-Alto Adige",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000024",
+      "venue": "Teatro Sociale",
+      "city": "Trento",
+      "region": "Trentino-Alto Adige",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000039",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "region": "Umbria",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 1,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [
+        {
+          "candidate_id": "oa-index-59b4a6e5b8f0087fd73d",
+          "source_key": "spoleto-tls-lirica-2026",
+          "official_url": "https://www.comune.spoleto.pg.it/it/news/2022369",
+          "detail_outcome": "facts_found",
+          "detail_reason": null,
+          "identity_review": false
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000021",
+      "venue": "Teatro Verdi",
+      "city": "Padova",
+      "region": "Veneto",
+      "states": {
+        "already_catalogued": 1,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "region": "Veneto",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 1,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [
+        {
+          "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
+          "source_key": "rovigo-regione-programma-2026-27",
+          "official_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
+          "detail_outcome": "official_programme_document_pending",
+          "detail_reason": null,
+          "identity_review": false
+        }
+      ],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000020",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "region": "Veneto",
+      "states": {
+        "already_catalogued": 1,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 1,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "venue": "Teatro La Fenice",
+      "city": "Venezia",
+      "region": "Veneto",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000021",
+      "venue": "Teatro Malibran",
+      "city": "Venezia",
+      "region": "Veneto",
+      "states": {
+        "already_catalogued": 0,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 0,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "region": "Veneto",
+      "states": {
+        "already_catalogued": 5,
+        "needs_review": 0,
+        "excluded_nonopera": 11,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 16,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "region": "Veneto",
+      "states": {
+        "already_catalogued": 5,
+        "needs_review": 0,
+        "excluded_nonopera": 0,
+        "not_in_official_season": 0
+      },
+      "unclassified": 0,
+      "total_attributed": 5,
+      "pending": [],
+      "scope": "unique_source_key_only",
+      "catalogue_identity_verification": "not_measured",
+      "publication_verification": "not_measured"
+    }
+  ]
+}
