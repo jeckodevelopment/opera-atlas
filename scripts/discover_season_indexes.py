@@ -1326,9 +1326,7 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                             urls=[]
                         else:
                             raise
-                    elif item["key"]=="napoli-san-carlo-rolling-opera" and str(exc).startswith("San Carlo security challenge"):
-                    diagnostic="official_anti_bot_challenge"
-                elif item["key"]=="rovigo-sociale-opera-2026-27":
+                    elif item["key"]=="rovigo-sociale-opera-2026-27":
                         # The legacy slider can lose its theatre identity.
                         # A separate exact first-party event document provides
                         # dated ticket evidence through the same robots gate.
