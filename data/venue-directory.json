@@ -1178,6 +1178,25 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_olimpico_vicenza.jpg",
       "photo_credit": "Nanni68 — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "oa-vd-000060",
+      "name": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "region": "Lombardia",
+      "city_slug": "sabbioneta",
+      "slug": "teatro-all-antica",
+      "website": "https://www.comune.sabbioneta.mn.it/",
+      "source_url": "https://sabbionetaoperafestival.it/festival/il-teatro-allantica/",
+      "description": "Nella città ideale di Sabbioneta, il Teatro all'Antica ospita opere e appuntamenti musicali in una straordinaria sala rinascimentale progettata da Vincenzo Scamozzi.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Via Teatro 9",
+      "history": "Voluto da Vespasiano Gonzaga e progettato da Vincenzo Scamozzi fra il 1588 e il 1590, il Teatro all'Antica è tra i primi edifici europei costruiti appositamente per gli spettacoli. Conserva la scenografica sala a gradinate e la decorazione rinascimentale, e ospita oggi anche produzioni d'opera del festival cittadino.",
+      "calendar_status": "not_acquired",
+      "photo_file": "Sabbioneta - Teatro all'Antica (Interno - Platea).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sabbioneta_-_Teatro_all%27Antica_(Interno_-_Platea).jpg",
+      "photo_credit": "Viaggiamocela — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   ],
   "related_organizations": [
@@ -1263,6 +1282,12 @@
       "name": "Vicenza in Lirica",
       "kind": "festival",
       "website": "https://www.vicenzainlirica.it/",
+      "publication_status": "non_sede"
+    },
+    {
+      "name": "Sabbioneta Chamber Opera Festival",
+      "kind": "festival",
+      "website": "https://sabbionetaoperafestival.it/",
       "publication_status": "non_sede"
     }
   ]

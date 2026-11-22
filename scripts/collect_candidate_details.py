@@ -824,6 +824,12 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in dates]
+    if source_key=="sabbioneta-antica-rolling-opera":
+        from opera_atlas.sabbioneta_antica_opera import parse_detail
+        title,composer,venue,dates=parse_detail(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in dates]
     if source_key=="napoli-san-carlo-rolling-opera":
         from opera_atlas.napoli_san_carlo import parse_detail
         title,composer,venue,dates=parse_detail(html,url=url)

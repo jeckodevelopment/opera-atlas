@@ -575,6 +575,13 @@
       "url": "https://www.vicenzainlirica.it/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "sabbioneta-antica-rolling-opera",
+      "official_url": "https://sabbionetaoperafestival.it/",
+      "url": "https://sabbionetaoperafestival.it/eventi/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

@@ -21,6 +21,7 @@ OUT = ROOT / "public/catalog/source-automation.json"
 # Explicit links between sources and venues; never match unrelated theatres
 # sharing a city, name, or festival organizer. Grouped sources are intentional.
 INDEX_VENUES = {
+    "sabbioneta-antica-rolling-opera": ("Sabbioneta|Teatro all\u0027Antica",),
     "vicenza-olimpico-rolling-opera": ("Vicenza|Teatro Olimpico",),
     "cosenza-rendano-rolling-opera": ("Cosenza|Teatro Alfonso Rendano",),
     "mantova-sociale-rolling-opera": ("Mantova|Teatro Sociale di Mantova",),
