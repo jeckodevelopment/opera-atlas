@@ -74,14 +74,32 @@ class PublicationNotificationsTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             render_email(notice)
 
-    def test_direct_merged_feed_notifications_are_enabled(self):
-        workflow = (Path(__file__).resolve().parents[1] /
-                    ".github/workflows/notify-catalog-publications.yml").read_text(encoding="utf-8")
+    def test_durable_worker_covers_merges_refresh_dispatch_and_scheduled_retries(self):
+        root = Path(__file__).resolve().parents[1]
+        workflow = (root / ".github/workflows/deliver-publication-notifications.yml").read_text(encoding="utf-8")
+        refresh = (root / ".github/workflows/refresh-catalog.yml").read_text(encoding="utf-8")
+        legacy = (root / ".github/workflows/notify-catalog-publications.yml").read_text(encoding="utf-8")
         self.assertIn("public/catalog/v2/manifest.json", workflow)
-        self.assertIn("fetch-depth: 0", workflow)
-        self.assertIn("github.event.before", workflow)
-        self.assertIn("secrets.ATLAS_NOTIFICATION_TO", workflow)
-        self.assertIn("--only-ids", workflow)
+        self.assertIn("atlas-notification-reconcile", workflow)
+        self.assertIn("schedule:", workflow)
+        self.assertIn("cancel-in-progress: false", workflow)
+        self.assertIn("scripts.process_notification_outbox", workflow)
+        self.assertEqual(refresh.count("event_type=atlas-notification-reconcile"), 2)
+        self.assertNotIn("python -m scripts.notify_publications", refresh)
+        self.assertNotIn("  push:", legacy)
+        self.assertIn("--only-ids", legacy)
+
+    def test_durable_outbox_retries_only_unaccepted_new_entities(self):
+        from scripts.process_notification_outbox import pending_notices
+        notices = pending_notices(self.before, self.after, {"oa-w-1"})
+        self.assertEqual([n["id"] for n in notices], ["oa-s-1"])
+        self.assertEqual(pending_notices(self.before, self.after, {"oa-w-1", "oa-s-1"}), [])
+        self.assertEqual(pending_notices(self.after, self.after, set()), [])
+
+    def test_outbox_state_uses_private_branch_not_main(self):
+        from scripts.process_notification_outbox import LEDGER_BRANCH, LEDGER_PATH
+        self.assertEqual(LEDGER_BRANCH, "atlas-notification-ledger")
+        self.assertEqual(LEDGER_PATH, "data/notification-ledger.json")
 
     def test_replay_filter_only_selects_existing_published_entities(self):
         notice = new_entities(self.before, self.after)
