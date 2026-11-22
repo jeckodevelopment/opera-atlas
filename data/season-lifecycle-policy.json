@@ -170,6 +170,10 @@
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
+    "puccini-torre-del-lago-2027": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
     "ravenna-alighieri-cherubini-2027": {
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"

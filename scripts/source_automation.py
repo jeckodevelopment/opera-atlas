@@ -44,6 +44,7 @@ INDEX_VENUES = {
     "bellini-catania-opera-2026-27": ("Catania|Teatro Massimo Bellini",
                                       "Catania|Teatro Sangiorgi"),
     "modena-teatro-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
+    "puccini-torre-del-lago-2027": ("Torre del Lago Puccini|Gran Teatro Giacomo Puccini",),
     "spoleto-tls-lirica-2026": ("Spoleto|Teatro Nuovo Gian Carlo Menotti",),
     "chieti-marrucino-lirica-2026": ("Chieti|Teatro Marrucino",),
     "modena-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
