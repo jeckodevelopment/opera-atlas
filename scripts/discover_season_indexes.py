@@ -578,8 +578,9 @@ def validate_config(config:dict)->list[dict]:
         elif key=="teatro-grande-opera-2026":
             valid_season=index.path=="/it"
         elif key=="maggio-fiorentino-calendar-2027":
-            valid_season=bool(re.fullmatch(r"/calendario/20\d{2}/01/opera",index.path)
-                              and index.path.startswith("/calendario/2027/"))
+            season=re.fullmatch(r"/calendario/(20\d{2})/01/opera",index.path)
+            valid_season=bool(season and 2027<=int(season[1])<=2099
+                              and not index.query)
         elif key.startswith("jesi-") and key.endswith("-opera-2026"):
             valid_season=index.path=="/lirica/programma-stagione-lirica-2026/" and not index.query
         elif key.startswith("ancona-") and key.endswith("-2026"):
