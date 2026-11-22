@@ -33,7 +33,7 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
     # and the adjacent audience label, never a ticket inferred from the year.
     start=event.find("Teatro Regio di Parma")
     calendar=event[start:]
-    calendar=re.split(r"(?i)\b(?:ticket|agevolazioni|kit\s+dello\s+spettatore|informazioni)\b",
+    calendar=re.split(r"(?i)\b(?:ticket|agevolazioni|kit\s+dello\s+spettatore)\b",
                       calendar,maxsplit=1)[0]
     # Exclude labels such as a paragraph about school ticket collection
     # by requiring a weekday/date, clock and audience in the same row.
