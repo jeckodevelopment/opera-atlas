@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "policy": "Future editions derive only from already verified canonical stagings belonging to an allowlisted official festival event path. No season or dates inferred.",
+  "festivals": [
+    {
+      "id": "donizetti-opera",
+      "template_id": "donizetti-opera-2026",
+      "official_url": "https://www.donizettiopera.org/",
+      "source_hosts": [
+        "www.donizettiopera.org"
+      ],
+      "source_path_prefixes": [
+        "/it/evento/"
+      ]
+    },
+    {
+      "id": "arena-opera-festival",
+      "template_id": "arena-opera-festival-2027",
+      "official_url": "https://www.arena.it/arena-opera-festival/",
+      "source_hosts": [
+        "www.arena.it"
+      ],
+      "source_path_prefixes": [
+        "/arena-opera-festival/"
+      ]
+    },
+    {
+      "id": "rossini-opera-festival",
+      "template_id": "rossini-opera-festival",
+      "official_url": "https://www.rossinioperafestival.it/",
+      "source_hosts": [
+        "www.rossinioperafestival.it",
+        "rossinioperafestival.it"
+      ],
+      "source_path_prefixes": [
+        "/"
+      ]
+    }
+  ]
+}

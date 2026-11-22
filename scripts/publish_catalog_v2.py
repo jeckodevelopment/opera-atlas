@@ -184,32 +184,76 @@ def release_parts(facts: dict, registry: dict) -> tuple[dict[str, bytes], dict]:
 
 
 def sync_festival_index(registry: dict, *, check: bool = False) -> None:
-    """Associate reviewed festival editions with canonical stagings from verified source URLs.
+    """Regenerate confirmed festival editions from canonical, venue-specific stagings.
 
-    Physical venue identities stay on each staging; a festival does not replace them.
-    Only explicitly configured first-party hosts and matching edition years are used.
+    The permanent festival is registered once. Future editions appear only after
+    verified stagings from its restricted official source enter the registry.
     """
     from urllib.parse import urlsplit
     path = PUBLIC / "festival-index.json"
+    config_path = ROOT / "data" / "festival-registry.json"
     document = json.loads(path.read_text(encoding="utf-8"))
-    for festival in document["festivals"]:
-        hosts = festival.get("source_hosts", [])
-        if not hosts:
-            continue
-        if not isinstance(hosts, list) or not all(isinstance(h, str) and h for h in hosts):
-            raise ValueError("invalid festival source host configuration")
-        edition = festival.get("edition")
-        ids = sorted({staging["id"] for staging in registry["stagings"].values()
-                      if staging.get("season") == edition
-                      and urlsplit(staging.get("source_url", "")).scheme == "https"
-                      and urlsplit(staging["source_url"]).hostname in hosts})
-        if check:
-            if sorted(festival["staging_ids"]) != ids:
-                raise ValueError("festival staging links differ from verified catalogue: " + festival["id"])
-        else:
-            festival["staging_ids"] = ids
-    if not check:
-        path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    rules = json.loads(config_path.read_text(encoding="utf-8"))
+    if rules.get("schema_version") != 1:
+        raise ValueError("unsupported permanent festival registry")
+    existing = document["festivals"]
+    by_id = {f["id"]: f for f in existing}
+    if len(by_id) != len(existing):
+        raise ValueError("duplicate festival edition id")
+    generated = [dict(f) for f in existing if not f.get("automatically_generated")]
+    generated_ids = {f["id"] for f in generated}
+    for rule in rules["festivals"]:
+        base = by_id.get(rule["template_id"])
+        if base is None:
+            raise ValueError("missing reviewed festival template: " + rule["template_id"])
+        festival_id = rule["id"]
+        hosts = rule["source_hosts"]
+        prefixes = rule["source_path_prefixes"]
+        if not hosts or not prefixes or not all(
+            isinstance(h, str) and h and h == h.lower() for h in hosts
+        ) or not all(isinstance(p, str) and p.startswith("/") for p in prefixes):
+            raise ValueError("invalid official festival source rules: " + festival_id)
+        editions = {}
+        for staging in registry["stagings"].values():
+            season = staging.get("season", "")
+            if not isinstance(season, str) or not re.fullmatch(r"20[0-9]{2}", season):
+                continue
+            url = urlsplit(staging.get("source_url", ""))
+            if url.scheme != "https" or url.hostname not in hosts or not any(
+                url.path.startswith(prefix) for prefix in prefixes
+            ):
+                continue
+            editions.setdefault(season, set()).add(staging["id"])
+        # A reviewed template with no matching stagings is retained as metadata,
+        # never promoted into an invented programme.
+        for edition, ids in sorted(editions.items()):
+            matches = [f for f in generated if f.get("festival_id", f["id"].removesuffix("-" + edition)) == festival_id
+                       and f.get("edition") == edition]
+            if len(matches) > 1:
+                raise ValueError("duplicate edition: " + festival_id + " " + edition)
+            if matches:
+                matches[0]["staging_ids"] = sorted(set(matches[0]["staging_ids"]) | ids)
+            else:
+                new_id = festival_id + "-" + edition
+                if new_id in generated_ids:
+                    raise ValueError("festival identity collision: " + new_id)
+                new = {k: v for k, v in base.items() if k not in
+                       ("source_hosts", "source_path_prefixes")}
+                new.update(id=new_id, festival_id=festival_id, edition=edition,
+                           official_url=rule["official_url"],
+                           staging_ids=sorted(ids), automatically_generated=True)
+                generated.append(new)
+                generated_ids.add(new_id)
+    generated.sort(key=lambda f: f["id"])
+    expected = dict(document)
+    expected["festivals"] = generated
+    if check:
+        if sorted(existing, key=lambda f: f["id"]) != generated:
+            raise ValueError("festival edition index differs from verified catalogue")
+    else:
+        path.write_text(json.dumps(expected, ensure_ascii=False, indent=2) + "\n",
+                        encoding="utf-8")
+
 
 def publish(*, check: bool = False) -> dict:
     facts = json.loads(MANIFEST.read_text(encoding="utf-8"))
