@@ -228,6 +228,7 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
             wid=options[0] if len(options)==1 else None
         from opera_atlas.verified_ticketing_art import is_verified_ticketing_poster
         from opera_atlas.verified_coproduction_posters import is_verified_coproduction_poster
+        from opera_atlas.verified_civic_work_images import is_verified_civic_image
         from opera_atlas.verified_original_work_art import is_verified_original_art
         if (wid in by_id and (
                 (image_matches_work(value.get("image_url",""),by_id[wid]["title"])
@@ -237,6 +238,8 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
                 or is_verified_coproduction_poster(
                     value,title=by_id[wid]["title"],composer=by_id[wid]["composer"])
                 or is_verified_original_art(
+                    value,title=by_id[wid]["title"],composer=by_id[wid]["composer"])
+                or is_verified_civic_image(
                     value,title=by_id[wid]["title"],composer=by_id[wid]["composer"]))):
             posters[wid]={"work_id":wid,**value}
     archive_by_slug=load_archival_art({w["slug"] for w in registry_works})
@@ -356,6 +359,12 @@ def check()->None:
             if not is_verified_original_art(
                     item,title=titles[slug],composer=composers[slug]):
                 raise ValueError("unverified original first-party work image for "+slug)
+        elif item["kind"]=="official_civic_production_image":
+            from opera_atlas.verified_civic_work_images import is_verified_civic_image
+            composers={w["id"]:w["composer"] for w in works.values()}
+            if not is_verified_civic_image(
+                    item,title=titles[slug],composer=composers[slug]):
+                raise ValueError("unverified exact municipal production image for "+slug)
         elif item["kind"]=="official_coproduction_poster":
             from opera_atlas.verified_coproduction_posters import is_verified_coproduction_poster
             composers={w["id"]:w["composer"] for w in works.values()}
