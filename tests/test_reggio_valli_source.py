@@ -52,6 +52,17 @@ class ReggioSourceTests(unittest.TestCase):
         self.assertEqual(facts[0]["starts_at"],"2026-11-20T20:00:00+01:00")
         self.assertEqual(len(facts),2)
 
+    def test_wordpress_ticket_columns_without_pipe_delimiters(self):
+        html=page()
+        html=html.replace(" | ", " ")
+        title,composer,venue,rows=parse_detail(html,url=DETAIL)
+        self.assertEqual(rows,[("2026-11-20","20:00"),("2026-11-22","15:30")])
+        self.assertEqual(composer,"Giuseppe Verdi")
+        # A missing buy action or price invalidates its entire row.
+        with self.assertRaises(ValueError):
+            parse_detail(html.replace("da € 35,00","prezzo non noto",1),
+                         url=DETAIL)
+
     def test_nested_wordpress_heading_still_scopes_real_ticket_table(self):
         html=page().replace("<h2>Biglietti</h2>",
                             '<h2 class="wp-block-heading"><span>Biglietti</span></h2>')

@@ -66,23 +66,29 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if begin is None or end is None:
         raise ValueError("missing bounded ticket calendar")
     text=clean(html[h2[begin].end():h2[end].start()])
-    rx=re.compile(r"\b(\d{2})/(\d{2})/(20\d{2})\s*\|\s*([01]\d|2[0-3]):([0-5]\d)\s*\|\s*([^|]+?)\s*\|",re.I)
-    found={}
-    matches=list(rx.finditer(text))
-    other=re.findall(r"\b\d{2}/\d{2}/20\d{2}\b",text)
-    if not matches or len(matches)!=len(other):
+    # WordPress' HTML can separate ticket columns with DOM elements rather
+    # than literal pipes. Keep the bounded H2 section and validate each
+    # complete calendar row independently: date, clock, price and action.
+    dates=list(re.finditer(r"\b(\d{2})/(\d{2})/(20\d{2})\b",text))
+    if not dates:
         raise ValueError("incomplete Valli ticket dates")
-    for m in matches:
-        day,month,year,hour,minute,price=m.groups()
+    found={}
+    for index,m in enumerate(dates):
+        row=text[m.end():dates[index+1].start() if index+1<len(dates) else len(text)]
+        clock=re.match(r"\s*\|?\s*([01]\d|2[0-3]):([0-5]\d)\b",row)
+        price=re.search(r"€\s*(\d+)[,.](\d{2})\b",row)
+        action=re.search(r"\bAcquista\b",row,re.I)
+        if not clock or not price or not action:
+            raise ValueError("incomplete Valli ticket dates")
+        day,month,year=m.groups()
         iso=date(int(year),int(month),int(day)).isoformat()
         if int(year) not in (2026,2027):
             raise ValueError("outside 2026/27 Valli Opera season")
-        # School/under-28 dress rehearsals are not general public recite.
-        if re.search(r"€\s*0[,\.]00",price):
+        if int(price.group(1))==0 and price.group(2)=="00":
             continue
         if iso in found:
             raise ValueError("duplicate Valli recital")
-        found[iso]=f"{hour}:{minute}"
+        found[iso]=f"{clock.group(1)}:{clock.group(2)}"
     if not found or len(found)>20:
         raise ValueError("no ordinary ticketed Valli recite")
     if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",leading):
