@@ -71,7 +71,7 @@ def _verified_composer_credit(credit: str, canonical: str) -> bool:
     if not credit.casefold().startswith(prefix.casefold()):
         return False
     suffix = credit[len(prefix):].strip()
-    return bool(re.fullmatch(r"(?:Opera|Tragedia|Melodramma|\\(\\d{4}[–-]\\d{4}\\))", suffix, re.I))
+    return bool(re.fullmatch(r"(?:Opera|Tragedia|Melodramma|\(\d{4}[–-]\d{4}\))", suffix, re.I))
 
 
 def resolve_work(registry: dict, title: str, composer: str) -> dict | None:
