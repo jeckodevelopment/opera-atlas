@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T17:34:47+00:00",
+  "checked_at": "2026-11-22T17:44:26+00:00",
   "scope": "national",
   "attempted": 17,
   "outcomes": [
@@ -56,9 +56,9 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:ambiguous official Parma season year",
+        "canonical_work:missing complete official Parma ticket schedule",
         "authority_work:no_evidence",
-        "official_composer_credit:ambiguous official Parma season year",
+        "official_composer_credit:missing complete official Parma ticket schedule",
         "schema_event:no_evidence"
       ],
       "rows": 0
