@@ -71,6 +71,70 @@ def verified_pisa_recital_urls(manifest:dict, detail:dict)->set[str]:
     return matched
 
 
+def verified_livorno_recital_urls(manifest:dict, detail:dict)->set[str]:
+    """Match the Goldoni's individual ticket URLs to an existing staging.
+
+    The rolling collector observes one independently dated page per recita,
+    while the 2026/27 opera season collector published a single staging URL.
+    Match only a unique work+composer+venue+local showtime to a production
+    verified from that exact season announcement; no title-only retirement.
+    """
+    import re
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    from scripts.publish_catalog_v2 import normalized
+    from opera_atlas.livorno_future_parser import eligible_detail
+
+    official_season="https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    rome=ZoneInfo("Europe/Rome")
+    performances={}
+    for production in manifest.get("productions",[]):
+        if (production.get("municipality")!="Livorno"
+            or production.get("venue")!="Teatro Goldoni"
+            or production.get("source_url")!=official_season):
+            continue
+        title=normalized(production.get("title","")).replace("’","'")
+        composer=normalized(production.get("composer","")).replace("’","'")
+        for day,clock in production.get("dates",[]):
+            key=(title,composer,day,clock)
+            performances[key]=performances.get(key,0)+1
+
+    verified=set()
+    for row in detail.get("evidence",[]):
+        if (not isinstance(row,dict)
+            or row.get("source_key")!="goldoni-livorno-rolling-lirica"):
+            continue
+        url=row.get("source_url")
+        facts=row.get("event_facts")
+        if (not isinstance(url,str) or not eligible_detail(url)
+            or not re.fullmatch(r"[0-9a-f]{64}",
+                                str(row.get("content_sha256","")))
+            or row.get("status")!="needs_editorial_review"
+            or not isinstance(facts,list) or len(facts)!=1
+            or not isinstance(facts[0],dict)):
+            continue
+        fact=facts[0]
+        if fact.get("venue")!="Teatro Goldoni":
+            continue
+        try:
+            day=fact["date"]
+            moment=datetime.fromisoformat(fact["starts_at"])
+            if moment.tzinfo is None or moment.utcoffset() is None:
+                continue
+            local=moment.astimezone(rome)
+            if local.date().isoformat()!=day:
+                continue
+            clock=local.strftime("%H:%M")
+        except (KeyError,TypeError,ValueError,OverflowError):
+            continue
+        key=(normalized(str(fact.get("event_title",""))).replace("’","'"),
+             normalized(str(fact.get("composer",""))).replace("’","'"),
+             day,clock)
+        if performances.get(key)==1:
+            verified.add(url)
+    return verified
+
+
 def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
     """Recognize complete independently verified second-source theater dates.
 
@@ -346,6 +410,7 @@ def run(*,check:bool=False):
     official_older=verified_other_season_evidence(detail)
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
     published.update(verified_pisa_recital_urls(manifest,detail))
+    published.update(verified_livorno_recital_urls(manifest,detail))
     cagliari_2027=verified_cagliari_2027_brochure_urls()
     programs_path=ROOT/"public"/"catalog"/"programs.json"
     programs=json.loads(programs_path.read_text(encoding="utf-8")) if programs_path.exists() else {"programs":[]}
