@@ -34,3 +34,17 @@ o bypass di blocchi del sito.
 - Se la pagina contiene soltanto il cartellone senza orari,
   mantenerla configurata senza inventare recite; espandere
   l'adapter solo con nuove evidenze ufficiali verificabili.
+
+## Rinnovo stagioni: fonte regionale
+
+L'indice permanente Cultura Veneto può esporre un nuovo PDF di programma.
+L'adapter `rovigo_regional_program` riconosce il nome
+`Programma_stagione_YYYY_YY_da_scaricare.pdf` a partire dalla stagione
+2026/27, soltanto se gli anni sono consecutivi, la pagina ufficiale
+li menziona, il link rimane HTTPS sul dominio documentale atteso e il
+nome del documento è riconoscibile anche nel testo dell'ancora.
+Un PDF futuro non produce automaticamente recite: occorre ancora estrarre
+le singole date e riconciliarle tramite la pipeline centrale. L'URL
+comunale relativo al 2026/27 rimane una fonte storica separata.
+
+Test: `python -m unittest tests.test_rovigo_regional_program -v`.
