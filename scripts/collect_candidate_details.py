@@ -1206,6 +1206,29 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                    "outcome":"official_programme_document_pending",
                                    "rows":0})
                     continue
+                if (item["source_key"]=="coccia-novara-rolling-opera"
+                    and item["official_url"]==
+                    "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html"):
+                    from opera_atlas.novara_program_parser import parse_program
+                    components,venue,dates=parse_program(
+                        page.html,url=item["official_url"])
+                    heading="/".join(x["title"] for x in components)+" di "+"/".join(
+                        x["composer"] for x in components)
+                    facts=[{"event_title":x["title"],"composer":x["composer"],
+                            "venue":venue,"date":day,
+                            "starts_at":official_local_time(day,hour)}
+                           for day,hour in dates for x in components]
+                    retained[item["id"]]={
+                        "candidate_id":item["id"],"source_key":item["source_key"],
+                        "source_url":item["official_url"],"content_sha256":page.sha256,
+                        "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        "status":"needs_program_review","program_heading":heading,
+                        "program_heading_source_url":item["official_url"],
+                        "program_components":components,"event_facts":facts}
+                    health.append({"candidate_id":item["id"],
+                                   "outcome":"verified_composite_program",
+                                   "rows":len(facts),"program_recite":len(dates)})
+                    continue
                 # The theatre's own 2026/27 brochure gives the exact six
                 # Jeanne double-bill recite, even though the event detail
                 # exposes no parseable per-date clocks. Both works remain

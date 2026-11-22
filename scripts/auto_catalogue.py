@@ -63,6 +63,7 @@ VENUE_BY_SOURCE={
     "messina-vittorio-opera-2026-27":("Messina","Teatro Vittorio Emanuele"),
     # Newly approved detail adapters with already canonical physical venues.
     "coccia-novara-opera-2027":("Novara","Teatro Coccia"),
+    "coccia-novara-rolling-opera":("Novara","Teatro Coccia"),
     "ravenna-alighieri-cherubini-2027":("Ravenna","Teatro Dante Alighieri"),
     "fenice-opera-2026-27":("Venezia","Teatro La Fenice"),
     "parma-opera-2027":("Parma","Teatro Regio di Parma"),
