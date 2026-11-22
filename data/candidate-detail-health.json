@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T15:49:41+00:00",
+  "checked_at": "2026-11-22T15:58:43+00:00",
   "scope": "national",
-  "attempted": 24,
+  "attempted": 26,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -17,13 +17,25 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-0eea7155b15ee176bf83",
+      "candidate_id": "oa-index-8a286806af9eac475fe7",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:explicit official Novara opera composer is missing",
         "authority_work:no_evidence",
         "official_composer_credit:explicit official Novara opera composer is missing",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-84e8ac0695f45f81567d",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official Filarmonico opera venue, genre or composer missing",
+        "authority_work:no_evidence",
+        "official_composer_credit:official Filarmonico opera venue, genre or composer missing",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -62,7 +74,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-2583140715d654277a2b",
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
       "outcome": "facts_found",
       "rows": 1
     },
@@ -84,67 +96,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:explicit official Novara opera composer is missing",
-        "authority_work:no_evidence",
-        "official_composer_credit:explicit official Novara opera composer is missing",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-29df705488a5f9fee812",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:official Novara opera breadcrumb missing or different genre",
-        "authority_work:no_evidence",
-        "official_composer_credit:official Novara opera breadcrumb missing or different genre",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-3677ecf144365a5d588c",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:official Novara opera breadcrumb missing or different genre",
-        "authority_work:no_evidence",
-        "official_composer_credit:official Novara opera breadcrumb missing or different genre",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-70313ef8895b42a91a5b",
       "outcome": "facts_found",
       "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-8a286806af9eac475fe7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:explicit official Novara opera composer is missing",
-        "authority_work:no_evidence",
-        "official_composer_credit:explicit official Novara opera composer is missing",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
     },
     {
       "candidate_id": "oa-index-9837cf3a1cb8aa932ab3",
@@ -193,13 +147,42 @@
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-e00258ea11ffe761bc9e",
+      "candidate_id": "oa-index-0eea7155b15ee176bf83",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:official Novara opera breadcrumb missing or different genre",
+        "canonical_work:explicit official Novara opera composer is missing",
         "authority_work:no_evidence",
-        "official_composer_credit:official Novara opera breadcrumb missing or different genre",
+        "official_composer_credit:explicit official Novara opera composer is missing",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:explicit official Novara opera composer is missing",
+        "authority_work:no_evidence",
+        "official_composer_credit:explicit official Novara opera composer is missing",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-9722a684ead4733eee96",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official Filarmonico opera venue, genre or composer missing",
+        "authority_work:no_evidence",
+        "official_composer_credit:official Filarmonico opera venue, genre or composer missing",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -211,6 +194,47 @@
     },
     {
       "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-0c0be9665ed7b114e52c",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official Filarmonico opera venue, genre or composer missing",
+        "authority_work:no_evidence",
+        "official_composer_credit:official Filarmonico opera venue, genre or composer missing",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-1a527a333817d1bcdc2c",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official Filarmonico opera venue, genre or composer missing",
+        "authority_work:no_evidence",
+        "official_composer_credit:official Filarmonico opera venue, genre or composer missing",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-1e4a557dddb9c5c01fa2",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official Filarmonico opera venue, genre or composer missing",
+        "authority_work:no_evidence",
+        "official_composer_credit:official Filarmonico opera venue, genre or composer missing",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-2583140715d654277a2b",
       "outcome": "facts_found",
       "rows": 1
     }
