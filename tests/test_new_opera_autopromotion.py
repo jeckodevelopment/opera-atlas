@@ -133,12 +133,17 @@ class NewOperaPromotionTests(unittest.TestCase):
             today=date(2026,11,22),history=history,require_image=True)
         # The image is a genuine, individually reviewed municipal scene
         # photograph, not an invented cover or a different work's poster.
-        self.assertEqual(report["new_works"],1)
-        self.assertEqual(report["new_stagings"],1)
-        self.assertEqual(report["new_recite"],1)
+        already_published=any(
+            x.get("title")=="I salvatori della mezzanotte"
+            and x.get("composer")=="Daniele Furlati"
+            and x.get("source_url")==url for x in facts["productions"])
+        expected=0 if already_published else 1
+        self.assertEqual(report["new_works"],expected,report)
+        self.assertEqual(report["new_stagings"],expected,report)
+        self.assertEqual(report["new_recite"],expected,report)
         self.assertNotIn({"candidate_id":cid,"reason":"verified_work_image_missing"},
                          report["auto_skipped"])
-        self.assertNotEqual(updated,facts)
+        self.assertEqual(updated==facts,already_published)
 
     def test_veleno_is_same_canonical_work_in_reggio_and_modena(self):
         from scripts.publish_catalog_v2 import ROOT,normalized

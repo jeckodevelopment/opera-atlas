@@ -367,7 +367,7 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertEqual({w["id"] for w in works},set(published))
         self.assertTrue(all(published[w["id"]]["kind"] in
                             ("archival_work_image","official_production_image","ticketing_event_artwork","official_coproduction_poster",
-                             "official_original_work_artwork")
+                             "official_original_work_artwork","official_civic_production_image")
                             for w in works))
         self.assertEqual(len(published),len(works))
         self.assertEqual(sum(v["kind"]=="original_editorial_cover"
