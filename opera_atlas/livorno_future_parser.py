@@ -113,6 +113,10 @@ def parse_detail(html:str,*,url:str):
         r"Nuovo\s+allestimento|Coro)\b|[.;]|$)",body)
     if credit is None:raise ValueError("Goldoni composer attribution not source-verified")
     composer=credit[1].strip(" .")
+    if composer.casefold().split()[0] in {"direttore","regia","maestro",
+            "orchestra","libretto","nuovo","coro"}:
+        raise ValueError("director or production crew is not a composer")
+
     if any(w in {"non","identificato","un","artista","ignoto","anonimo","vari","e"}
            for w in composer.casefold().split()):
         raise ValueError("ambiguous Goldoni composer attribution")
