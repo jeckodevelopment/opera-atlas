@@ -15,7 +15,7 @@ per proporre una rilettura musicale del suo celebre libro Le avventure
 di Pinocchio. In programma mercoledì 30 dicembre, ore 20.45,
 presso il Teatro Apollo di Lecce. Si tratta dell'opera omonima
 composta da Antonio Cericola, su libretto di Sandro Bernabei.</p>
-<p>Le avventure di Pinocchio di Antonio Cericola chiude il programma.</p>"""
+<p>La nuova produzione conclude la stagione.</p>"""
 
 class LecceApolloSourceTests(unittest.TestCase):
     def test_one_approved_article_not_neighboring_theatre(self):
