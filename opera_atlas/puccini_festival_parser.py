@@ -3,7 +3,8 @@
 Six productions are announced. Il trittico is one composite programme and is
 left to the programme-composition reconciler; its two recite may NOT be
 attributed independently to Il tabarro, Suor Angelica or Gianni Schicchi.
-The five unambiguous operas are safe for canonical promotion.
+Four operas with consistent official 2027 dates are eligible for promotion.
+La rondine is quarantined because official pages disagree on its second date.
 """
 from __future__ import annotations
 
