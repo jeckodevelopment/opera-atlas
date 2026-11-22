@@ -54,11 +54,54 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to source-bound official candidate evidence."
             echo "deferred=false" >> "$GITHUB_OUTPUT"
+            echo "published=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "data(sources): independently checkpoint official candidate evidence [skip ci]"
             python -m scripts.safe_push_catalog
+            if grep -q '^deferred=false "$GITHUB_OUTPUT"; then
+              echo "published=true" >> "$GITHUB_OUTPUT"
+            fi
           fi
-      - name: Report a deferred concurrent checkpoint without overwriting data
+      # A concurrent push must not strand all verified first-party evidence
+      # until the next 3-hour scheduled crawl. Restart on the newest main,
+      # repeat the robots-gated collector, and retry at most twice. Never
+      # cherry-pick or replay stale evidence over newer canonical facts.
+      - name: Reacquire on latest main after concurrent changes
         if: steps.checkpoint.outputs.deferred == 'true'
+        id: retry
         run: |
-          echo "::warning::An upstream catalog/source update raced this read. No source or canonical record was overwritten; the next scheduled evidence scan will rebuild from main."
+          echo "published=false" >> "$GITHUB_OUTPUT"
+          for attempt in 1 2; do
+            echo "Reacquiring national detail evidence on latest main (attempt $attempt/2)"
+            git fetch origin main
+            git reset --hard origin/main
+            python -m scripts.build_verified_catalog --check
+            python -m scripts.collect_candidate_details --allow-network
+            git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json
+            if git diff --cached --quiet; then
+              echo "Official evidence already matches the latest main."
+              break
+            fi
+            git commit -m "data(sources): recover verified national detail checkpoint [skip ci]"
+            push_report="$(mktemp)"
+            GITHUB_OUTPUT="$push_report" python -m scripts.safe_push_catalog
+            if grep -q '^deferred=false "$push_report"; then
+              echo "published=true" >> "$GITHUB_OUTPUT"
+              rm -f "$push_report"
+              break
+            fi
+            rm -f "$push_report"
+          done
+      # The publisher is intentionally separate: first persist verified
+      # evidence, then promote it with the same centralized work/venue/time
+      # gates. Commits marked skip-ci cannot reliably trigger push workflows.
+      - name: Publish newly persisted official evidence through cached catalog
+        if: steps.checkpoint.outputs.published == 'true' || steps.retry.outputs.published == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=cached-catalog-retry
+      - name: Report remaining source checkpoint contention
+        if: steps.checkpoint.outputs.deferred == 'true' && steps.retry.outputs.published != 'true'
+        run: |
+          echo "::warning::Two fresh scans could not publish due to concurrent source changes. No stale evidence was replayed; scheduled scan will retry."
