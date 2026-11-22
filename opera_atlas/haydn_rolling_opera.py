@@ -84,6 +84,25 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if credit is None:
         raise ValueError("Haydn composer credit missing or ambiguous")
     composer=" ".join(credit.group(1).split())
+    # Haydn prints a full composer name under the event H1 and may use
+    # an abbreviated middle name in the separate "Musica di" label.
+    # Reconcile the two *same-page* credits only when every token agrees
+    # literally or via an unambiguous initial; do not guess identities.
+    heading_position=next((i for i,value in enumerate(reader.parts)
+                           if value==title),None)
+    if heading_position is None or heading_position+1>=len(reader.parts):
+        raise ValueError("Haydn composer heading missing")
+    heading_composer=reader.parts[heading_position+1].strip()
+    full_tokens=heading_composer.split()
+    credited_tokens=composer.split()
+    if (not 2<=len(full_tokens)<=5 or len(full_tokens)!=len(credited_tokens)
+        or not all(
+            first.casefold()==second.casefold()
+            or (len(second)==2 and second.endswith(".")
+                and len(first)>2 and first[0].casefold()==second[0].casefold())
+            for first,second in zip(full_tokens,credited_tokens))):
+        raise ValueError("Haydn heading and music composer credits conflict")
+    composer=heading_composer
     if not re.fullmatch(r"[A-ZÀ-Ž][\wÀ-ÿ.'’ -]{3,85}",composer):
         raise ValueError("Haydn composer credit invalid")
     if len(re.findall(r"\bMusica\s+di\b",primary[:500],re.I))!=1:
