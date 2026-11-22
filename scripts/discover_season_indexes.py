@@ -227,9 +227,10 @@ class ScopedSeasonAnchors(HTMLParser):
     Parma mixes footer/sidebar links with the opera card list; Palermo's
     season page contains a distinct concerts section after opere e balletti.
     """
-    def __init__(self,key:str):
+    def __init__(self,key:str,season_year:int|None=None):
         super().__init__(convert_charrefs=True)
         self.key=key
+        self.season_year=season_year
         self.links=[]
         self.in_section=False
         self.heading=None
@@ -261,7 +262,7 @@ class ScopedSeasonAnchors(HTMLParser):
             # context to one short heading, never matching navigation links.
             self.season_heading_tail=(" ".join(
                 (self.season_heading_tail+" "+data.upper()).split()))[-160:]
-            year=self.key.rsplit("-",1)[-1]
+            year=str(self.season_year) if self.season_year is not None else self.key.rsplit("-",1)[-1]
             for match in re.finditer(r"(?<![A-Z0-9])OPERA E BALLETTO (20[0-9]{2})(?![0-9])",
                                      self.season_heading_tail):
                 self.in_section=(match.group(1)==year)
@@ -549,7 +550,11 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         if verified_index_candidate(html,source_key=key,url=index_url):
             return [index_url]
         raise ValueError("official Ferrara opera not independently verified")
-    parser=(ScopedSeasonAnchors(key)
+    season_year=(int(re.fullmatch(r"/opera-e-balletto-(20\\d{2})/",urlsplit(index_url).path)[1])
+                 if key in ("petruzzelli-opera-2026","petruzzelli-opera-2027")
+                 and re.fullmatch(r"/opera-e-balletto-(20\\d{2})/",urlsplit(index_url).path)
+                 else None)
+    parser=(ScopedSeasonAnchors(key,season_year=season_year)
             if key in {"parma-opera-2027","massimo-season-2026-27",
                        "donizetti-opera-2026","teatro-grande-opera-2026",
                        "petruzzelli-opera-2026","petruzzelli-opera-2027",
@@ -748,7 +753,9 @@ def validate_config(config:dict)->list[dict]:
                           and index.query=="_tipo=opera")
         elif key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
             valid_season=bool(re.fullmatch(r"/opera-e-balletto-20\d{2}/",index.path)
-                              and index.path=="/opera-e-balletto-"+key.rsplit("-",1)[-1]+"/")
+                              and (key=="petruzzelli-opera-2027" and
+                                   2027<=int(index.path.split("-")[-1].strip("/"))<=2099
+                                   or index.path=="/opera-e-balletto-"+key.rsplit("-",1)[-1]+"/"))
         elif key=="carlo-felice-season-2026-27":
             season=re.fullmatch(r"/rassegna-stagione-opera-danza-musical-(20\d{2})-(\d{2})/",index.path)
             valid_season=bool(season and (int(season[1])+1)%100==int(season[2]) and 2026<=int(season[1])<=2098)
