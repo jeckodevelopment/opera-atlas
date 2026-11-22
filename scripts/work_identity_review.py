@@ -43,7 +43,7 @@ def _review_credit_hint(title: str, composer: str, works: list[dict]) -> dict | 
             continue
         extra = composer[len(original):].strip()
         if not (re.fullmatch(r"(?:Opera|Tragedia|Melodramma)", extra, re.I)
-                or re.fullmatch(r"\\(\\d{4}[–-]\\d{4}\\)", extra)):
+                or re.fullmatch(r"\(\d{4}[–-]\d{4}\)", extra)):
             continue
         return {"work_id": work["id"], "title":work["title"],
                 "composer":original, "reason":"metadata_after_composer"}
