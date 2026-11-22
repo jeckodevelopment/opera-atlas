@@ -10,7 +10,7 @@ from html.parser import HTMLParser
 import re
 from urllib.parse import urljoin, urlsplit
 
-INDEX="https://www.haydn.it/eventi/genere/opera"
+INDEX="https://www.haydn.it/eventi/area/opera"
 SOURCE_KEY="haydn-rolling-opera"
 HOST="www.haydn.it"
 DETAIL=re.compile(r"/eventi/[a-z0-9][a-z0-9-]*/?")
