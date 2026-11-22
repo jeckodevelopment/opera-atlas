@@ -34,6 +34,27 @@ class SavonaPipelineTests(unittest.TestCase):
         policy=json.loads(open("data/season-lifecycle-policy.json",encoding="utf-8").read())
         self.assertEqual(policy["sources"][KEY]["strategy"],"evergreen_index")
 
+    def test_one_canonical_venue_in_directory_and_catalogue(self):
+        from scripts.auto_catalogue import VENUE_BY_SOURCE
+        from pathlib import Path
+        canonical="Teatro Gabriello Chiabrera"
+        self.assertEqual(VENUE_BY_SOURCE[KEY],("Savona","Teatro Chiabrera"))
+        # Immutable identity keys and existing URLs remain abbreviated.
+        identity=json.loads(Path("data/identity-registry.json").read_text(encoding="utf-8"))
+        self.assertEqual(identity["venues"]["Savona|Teatro Chiabrera"]["name"],canonical)
+        directory=json.loads(Path("data/venue-directory.json").read_text(encoding="utf-8"))
+        entries=[v for v in directory["venues"]
+                 if v["city"]=="Savona" and "Chiabrera" in v["name"]]
+        self.assertEqual(len(entries),1)
+        self.assertEqual(entries[0]["id"],"oa-vd-000017")
+        self.assertEqual(entries[0]["name"],canonical)
+        self.assertEqual(entries[0]["photo_file"],"Savona - Teatro Gabriello Chiabrera.jpg")
+        profiles=json.loads(Path("site/theatre-profiles.json").read_text(encoding="utf-8"))
+        self.assertIn("Savona|"+canonical,profiles["venues"])
+        self.assertNotIn("Savona|Teatro Chiabrera",profiles["venues"])
+        self.assertEqual(profiles["venues"]["Savona|"+canonical]["photo_file"],
+                         entries[0]["photo_file"])
+
     def test_index_and_first_party_detail_in_common_pipeline(self):
         self.assertEqual(extract(KEY,URL,HTML,1),[URL])
         facts=parse_source_credited_opera_detail(KEY,URL,HTML)

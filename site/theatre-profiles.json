@@ -174,9 +174,9 @@
       "website": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
       "history": "Il Chiabrera è il teatro civico storico di Savona. Intitolato al poeta Gabriello Chiabrera, conserva una tradizione cittadina che unisce prosa, musica e rappresentazioni liriche.",
       "source": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
-      "photo_file": "Teatro Chiabrera Savona.jpg",
-      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Chiabrera_Savona.jpg",
-      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file"
+      "photo_file": "Savona - Teatro Gabriello Chiabrera.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Savona_-_Teatro_Gabriello_Chiabrera.jpg",
+      "photo_credit": "Bubici — Wikimedia Commons, CC BY-SA 4.0"
     },
     "Trieste|Teatro Lirico Giuseppe Verdi": {
       "city": "Trieste",
@@ -681,15 +681,6 @@
       "website": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
       "history": "Nel 2026 Piazza Goldoni ha ospitato Cavalleria rusticana nell’ambito del Mascagni Festival: la Fondazione Teatro Goldoni indica due rappresentazioni pubbliche il 19 e 20 agosto, oltre a una prova generale il 17 agosto.",
       "source": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/"
-    },
-    "Savona|Teatro Chiabrera": {
-      "city": "Savona",
-      "name": "Teatro Chiabrera",
-      "address": "Piazza Armando Diaz 2, Savona",
-      "description": "Teatro comunale storico di Savona, sede di spettacoli lirici dell’Opera Giocosa e del cartellone cittadino.",
-      "website": "https://teatrochiabrera.it/",
-      "history": "Il Teatro Comunale Gabriello Chiabrera è intitolato al poeta savonese. Si trova in Piazza Armando Diaz ed è una delle sedi della stagione lirica del Teatro dell’Opera Giocosa.",
-      "source": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera"
     },
     "Alghero|Forte della Maddalena": {
       "city": "Alghero",

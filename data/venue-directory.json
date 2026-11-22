@@ -324,7 +324,7 @@
       "name": "Teatro Gabriello Chiabrera",
       "city": "Savona",
       "region": "Liguria",
-      "slug": "teatro-gabriello-chiabrera",
+      "slug": "teatro-chiabrera",
       "city_slug": "savona",
       "website": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
       "source_url": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera",
@@ -332,10 +332,11 @@
       "monitoring_status": "anagrafica_censita",
       "address": "Piazza Armando Diaz 2",
       "history": "Il Chiabrera è il teatro civico storico di Savona. Intitolato al poeta Gabriello Chiabrera, conserva una tradizione cittadina che unisce prosa, musica e rappresentazioni liriche.",
-      "photo_file": "Teatro Chiabrera Savona.jpg",
-      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Chiabrera_Savona.jpg",
-      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
-      "calendar_status": "not_acquired"
+      "photo_file": "Savona - Teatro Gabriello Chiabrera.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Savona_-_Teatro_Gabriello_Chiabrera.jpg",
+      "photo_credit": "Bubici — Wikimedia Commons, CC BY-SA 4.0",
+      "calendar_status": "not_acquired",
+      "canonical_venue_id": "oa-v-000053"
     },
     {
       "id": "oa-vd-000018",
