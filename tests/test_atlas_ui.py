@@ -80,6 +80,39 @@ class AtlasInterfaceTests(unittest.TestCase):
         from scripts.publish_catalog_v2 import sync_festival_index
         sync_festival_index(registry, check=True)
 
+    def test_festival_registry_generates_only_verified_year_editions(self):
+        from unittest.mock import patch
+        from tempfile import TemporaryDirectory
+        from scripts import publish_catalog_v2 as publisher
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        with TemporaryDirectory() as folder:
+            from pathlib import Path
+            import shutil
+            local = Path(folder)
+            shutil.copy(ROOT / "public/catalog/v2/festival-index.json", local / "festival-index.json")
+            before = json.loads((local / "festival-index.json").read_text(encoding="utf-8"))
+            with patch.object(publisher, "PUBLIC", local):
+                publisher.sync_festival_index(registry, check=True)
+                registry["stagings"]["future-festival-example"] = {
+                    "id": "oa-s-test-future", "season": "2027",
+                    "work_id": "oa-w-000051", "venue_id": "oa-v-000037",
+                    "source_url": "https://www.donizettiopera.org/it/evento/new-production/"
+                }
+                registry["stagings"]["unrelated-example"] = {
+                    "id": "oa-s-test-unrelated", "season": "2027",
+                    "source_url": "https://www.donizettiopera.org/it/notizie/not-an-opera/"
+                }
+                publisher.sync_festival_index(registry)
+                after = json.loads((local / "festival-index.json").read_text(encoding="utf-8"))
+                future = next(f for f in after["festivals"] if f["id"] == "donizetti-opera-2027")
+                self.assertEqual(future["staging_ids"], ["oa-s-test-future"])
+                self.assertEqual(future["festival_id"], "donizetti-opera")
+                self.assertEqual(next(f for f in before["festivals"] if f["id"] == "donizetti-opera-2026")["staging_ids"],
+                                 next(f for f in after["festivals"] if f["id"] == "donizetti-opera-2026")["staging_ids"])
+                publisher.sync_festival_index(registry, check=True)
+                publisher.sync_festival_index(registry)
+                self.assertEqual(json.loads((local / "festival-index.json").read_text(encoding="utf-8")), after)
+
     def test_shared_production_ids_preserve_work_and_venue_specific_stagings(self):
         manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
         path = ROOT / "public/catalog/v2" / manifest["files"]["stagings"]["path"]
