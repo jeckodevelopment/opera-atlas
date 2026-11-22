@@ -1140,6 +1140,25 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Facciata_restaurata_del_Teatro_Sociale_di_Mantova.jpg",
       "photo_credit": "Giovanni Salis — Wikimedia Commons, CC BY 3.0",
       "photo_license": "CC BY 3.0"
+    },
+    {
+      "id": "oa-vd-000058",
+      "name": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "region": "Calabria",
+      "city_slug": "cosenza",
+      "slug": "teatro-alfonso-rendano",
+      "website": "https://www.teatrorendanocosenza.it/",
+      "source_url": "https://www.teatrorendanocosenza.it/teatro-2/",
+      "description": "In piazza XV Marzo, il Rendano è il teatro di tradizione di Cosenza e ospita stagioni liriche accanto a danza, prosa e concerti.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza XV Marzo",
+      "history": "Il teatro comunale di Cosenza fu inaugurato nel 1909 e intitolato nel 1937 al pianista e compositore Alfonso Rendano. Gravemente danneggiato dai bombardamenti del 1943 e successivamente ricostruito, continua a essere un luogo centrale per la tradizione operistica calabrese.",
+      "calendar_status": "not_acquired",
+      "photo_file": "Cosenza, teatro alfonso rendano.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Cosenza,_teatro_alfonso_rendano.jpg",
+      "photo_credit": "Sailko — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   ],
   "related_organizations": [

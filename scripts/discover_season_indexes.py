@@ -377,6 +377,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="cosenza-rendano-rolling-opera":
+        from opera_atlas.cosenza_rendano_opera import eligible_detail
+        return eligible_detail(url)
     if key=="mantova-sociale-rolling-opera":
         from opera_atlas.mantova_sociale_opera import eligible_detail
         return eligible_detail(url)
@@ -691,6 +694,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="cosenza-rendano-rolling-opera":
+        from opera_atlas.cosenza_rendano_opera import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="mantova-sociale-rolling-opera":
         from opera_atlas.mantova_sociale_opera import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -857,6 +863,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "cosenza-rendano-rolling-opera":("www.teatrorendanocosenza.it","/lirica-2/"),
         "mantova-sociale-rolling-opera":("www.teatrosocialemantova.it","/it-it/ricerca.aspx"),
         "napoli-san-carlo-rolling-opera":("www.teatrosancarlo.it","/spettacoli/"),
         "pesaro-rof-2026":("www.rossinioperafestival.it","/archivio/stagione-2026/"),

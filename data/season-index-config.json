@@ -561,6 +561,13 @@
       "url": "https://www.teatrosocialemantova.it/it-it/ricerca.aspx?fti=opera+lirica",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "cosenza-rendano-rolling-opera",
+      "official_url": "https://www.teatrorendanocosenza.it/",
+      "url": "https://www.teatrorendanocosenza.it/lirica-2/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

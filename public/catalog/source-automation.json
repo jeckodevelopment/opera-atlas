@@ -1,13 +1,13 @@
 {
-  "automation_remaining": 2,
-  "configured_not_operational": 2,
+  "automation_remaining": 3,
+  "configured_not_operational": 3,
   "definition": "Operational means at least one explicitly mapped approved source with a successful latest scan; does not imply an exhaustive season.",
   "not_automated": 0,
   "operational": 58,
   "reviewed_on": "2026-11-21",
   "schema_version": 1,
   "scope": "structured_venue_directory",
-  "total_venues": 60,
+  "total_venues": 61,
   "venues": [
     {
       "city": "Chieti",
@@ -1593,6 +1593,27 @@
       "sources": [
         {
           "source_key": "mantova-sociale-rolling-opera",
+          "type": "season_index",
+          "configured": true,
+          "last_status": "not_checked",
+          "recent_success": false,
+          "failure_reason": null,
+          "last_attempt_at": null
+        }
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000058",
+      "venue": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "region": "Calabria",
+      "status": "configured_not_operational",
+      "configured_connectors": 1,
+      "recent_successful_connectors": 0,
+      "source_attention": "not_checked",
+      "sources": [
+        {
+          "source_key": "cosenza-rendano-rolling-opera",
           "type": "season_index",
           "configured": true,
           "last_status": "not_checked",

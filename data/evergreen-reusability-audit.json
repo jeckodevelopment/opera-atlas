@@ -191,6 +191,11 @@
       "source_key": "mantova-sociale-rolling-opera",
       "scope": "dynamic_category",
       "evidence": "The first-party search category is evergreen, and exact-host event detail eligibility has no fixed season or year; actual future recitals still require independent official date and composer evidence."
+    },
+    {
+      "source_key": "cosenza-rendano-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The official Lirica landing URL is not bound to a specific season and candidate paths use a bounded same-origin allowlist. Live access, per-production showtime evidence and next-season coverage remain unverified."
     }
   ]
 }
