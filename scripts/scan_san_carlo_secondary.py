@@ -10,7 +10,8 @@ import json
 import re
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
+from opera_atlas.napoli_san_carlo import eligible_detail
 
 from opera_atlas.controlled_fetch import fetch_official_html
 from opera_atlas.db import connect, migrate
@@ -125,6 +126,7 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
         missing = [field for field, ok in (
             ("composer", current["composer"]),
             ("venue", current["venue_verified"]),
+            ("official_ticket", current["official_event_url"]),
             ("recite", current["performances"]),
         ) if not ok]
         if missing:
@@ -151,6 +153,7 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
                 "composer": composer,
                 "venue": VENUE,
                 "city": CITY,
+                "official_event_url": None,
                 "venue_verified": False,
                 "performances": [],
                 "secondary_source": url,
@@ -170,6 +173,12 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
             accepting_dates = False
         if value.strip() == VENUE or (VENUE in value and len(value) < 80):
             current["venue_verified"] = True
+        if kind == "a" and value.strip().upper() == "BIGLIETTI" and href:
+            official = urljoin(url, href)
+            if eligible_detail(official):
+                if current["official_event_url"] not in (None, official):
+                    raise ValueError("ambiguous San Carlo official ticket route")
+                current["official_event_url"] = official
         if kind in ("a", "text") and accepting_dates:
             m = SHOWTIME.fullmatch(value)
             if not m:
@@ -197,7 +206,20 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
         # Metadata only: preserve diagnostic distinctions without copying HTML.
         observed = {"headings": sum(k == "h2" for k, _, _ in items),
                     "showtime_texts": sum(bool(SHOWTIME.fullmatch(v)) for k, v, _ in items if k == "text"),
-                    "incomplete": (diagnostics or [])[:12]}
+                    "incomplete": (diagnostics or [])[:12],
+                    "ticket_link_shapes": [
+                        {"label": value[:40],
+                         "host": urlsplit(urljoin(url, href)).hostname,
+                         "scheme": urlsplit(urljoin(url, href)).scheme,
+                         "query_present": bool(urlsplit(urljoin(url, href)).query),
+                         "fragment_present": bool(urlsplit(urljoin(url, href)).fragment),
+                         "path": urlsplit(urljoin(url, href)).path[:100]}
+                        for kind, value, href in items
+                        if kind == "a" and href and (
+                            "bigliett" in value.casefold()
+                            or "teatrosancarlo.it" in href
+                        )
+                    ][:12]}
         raise ValueError("secondary opera season not confirmed: " + json.dumps(observed, ensure_ascii=False))
     identities = [(b["title"].casefold(), b["composer"].casefold()) for b in blocks]
     if len(set(identities)) != len(identities):
@@ -224,6 +246,7 @@ def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
             or production.get("venue") != VENUE
             or production.get("city") != CITY
             or production.get("secondary_source") != URL
+            or not eligible_detail(production.get("official_event_url") or "")
             or not production.get("title") or not production.get("composer")
             or not production.get("performances")):
             raise ValueError("untrusted secondary candidate")
@@ -249,6 +272,7 @@ def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
             "performances": sorted(production["performances"],
                                    key=lambda row: (row["date"], row["time"])),
             "secondary_source": URL,
+            "official_event_url": production["official_event_url"],
             "corroboration_status": "pending_independent_event_verification",
         })
     records.sort(key=lambda x: (x["title"].casefold(), x["composer"].casefold()))
