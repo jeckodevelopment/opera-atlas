@@ -505,6 +505,13 @@
       "url": "https://www.marialisadecarolis.it/opere-liriche.aspx",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "savona-giocosa-rolling-opera",
+      "official_url": "https://operagiocosa.it/",
+      "url": "https://operagiocosa.it/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

@@ -158,6 +158,11 @@
       "evidence": "The official opera-liriche.aspx archive lists yearly event cards with numeric first-party detail IDs. These include symphonic concerts and Alghero productions; work detail must confirm title, composer, precise dates, genre, and Teatro Comunale Sassari."
     },
     {
+      "source_key": "savona-giocosa-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The permanent first-party Opera Giocosa homepage presents independent autumn/summer yearly sections and title/composer/venue/showtime cards. The parser accepts future heading years, but a live next-season programme is not yet verified."
+    },
+    {
       "source_key": "teatro-grande-opera-2026",
       "scope": "dynamic_category",
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."

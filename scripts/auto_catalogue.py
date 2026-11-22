@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "savona-giocosa-rolling-opera":("Savona","Teatro Chiabrera"),
     "lecce-provincia-politeama-2026":("Lecce","Teatro Politeama Greco"),
     "lecce-politeama-opera-2026":("Lecce","Teatro Politeama Greco"),
     "rovigo-sociale-opera-2026-27":("Rovigo","Teatro Sociale"),
@@ -440,6 +441,25 @@ def split_verified_season(item:dict)->list[dict]:
     Incomplete evidence must never silently publish the subset that happened
     to be parsable. All derived records retain the original source hash.
     """
+    if item.get("source_key")=="savona-giocosa-rolling-opera":
+        # Official evergreen homepage: independently ticketed, differently
+        # credited works share one source URL. Split only fully bounded,
+        # independently verified facts from the Chiabrera; unknown works
+        # still follow the usual central authority/editorial gate.
+        rows=item.get("event_facts")
+        if not isinstance(rows,list) or not rows:
+            return [item]
+        groups={}
+        for row in rows:
+            if (not isinstance(row,dict)
+                or row.get("venue")!="Teatro Chiabrera"
+                or not all(isinstance(row.get(x),str) and row[x]
+                           for x in ("event_title","composer","date","starts_at"))):
+                return [item]
+            identity=(row["event_title"],row["composer"])
+            groups.setdefault(identity,[]).append(row)
+        return [{**item,"event_facts":group}
+                for _,group in sorted(groups.items())]
     expected=_MULTI_WORK_SEASONS.get(item.get("source_key"))
     if expected is None:
         return [item]

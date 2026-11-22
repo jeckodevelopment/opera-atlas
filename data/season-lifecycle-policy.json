@@ -289,6 +289,10 @@
     "sassari-de-carolis-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "savona-giocosa-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
