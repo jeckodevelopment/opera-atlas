@@ -103,7 +103,7 @@ class NewOperaPromotionTests(unittest.TestCase):
                     "oa-index-b4180540983902f703af")
         self.assertIsNone(cached.get("synopsis"))
 
-    def test_salvatori_modena_source_proves_identity_but_not_artwork(self):
+    def test_salvatori_modena_can_promote_with_exact_municipal_image(self):
         from scripts.auto_catalogue import official_identity_candidates,promote_new_works
         from scripts.publish_catalog_v2 import ROOT
         from scripts.publish_work_editorial import HISTORY
@@ -131,12 +131,14 @@ class NewOperaPromotionTests(unittest.TestCase):
         updated,_,_,_,_,report=promote_new_works(
             facts,ids,evidence,candidate,intelligence,editorial,[],
             today=date(2026,11,22),history=history,require_image=True)
-        # A sound source/history profile does not authorize inventing a
-        # poster: the strict historical/first-party image gate still applies.
-        self.assertEqual(report["new_works"],0)
-        self.assertIn({"candidate_id":cid,"reason":"verified_work_image_missing"},
-                      report["auto_skipped"])
-        self.assertEqual(updated,facts)
+        # The image is a genuine, individually reviewed municipal scene
+        # photograph, not an invented cover or a different work's poster.
+        self.assertEqual(report["new_works"],1)
+        self.assertEqual(report["new_stagings"],1)
+        self.assertEqual(report["new_recite"],1)
+        self.assertNotIn({"candidate_id":cid,"reason":"verified_work_image_missing"},
+                         report["auto_skipped"])
+        self.assertNotEqual(updated,facts)
 
     def test_veleno_is_same_canonical_work_in_reggio_and_modena(self):
         from scripts.publish_catalog_v2 import ROOT,normalized
