@@ -38,7 +38,7 @@ class RegionalProgramTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             approved_programme(PAGE,url=URL.replace("https://","http://"))
         with self.assertRaises(ValueError):
-            approved_programme(PAGE+f'<a href="{PDF}other">Programma_stagione_2026_27_da_scaricare</a>',url=URL)
+            approved_programme(PAGE+f'<a href="{PDF.replace("a7fc383d-8358-4237-839a-b3cde3c188bb","b7fc383d-8358-4237-839a-b3cde3c188bb")}">Programma_stagione_2026_27_da_scaricare</a>',url=URL)
 
 if __name__=="__main__":
     unittest.main()
