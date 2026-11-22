@@ -33,6 +33,24 @@ class RovigoTraviataFallbackTests(unittest.TestCase):
         self.assertEqual(facts[0]["starts_at"],"2027-01-22T20:30:00+01:00")
         self.assertEqual(len(parse_source_credited_opera_detail(KEY,URL,HTML)),2)
 
+    def test_identical_duplicate_schedule_in_municipal_description_is_one_event(self):
+        # The real Comune social-sharing page repeats the header's calendar
+        # under Descrizione before the second LA TRAVIATA composer heading.
+        schedule=("giovedì 21.1.27 ore 16.00 TeatroRagazzi - "
+                  "venerdì 22.1.27 ore 20.30 - domenica 24.1.27 ore 16.00")
+        html=HTML.replace("<h2>LA TRAVIATA</h2>",
+                          "<h2>Descrizione</h2><p>"+schedule+"</p>"
+                          "<h2>LA TRAVIATA</h2>")
+        rows=parse_official_traviata(html,url=URL)
+        self.assertEqual([(r[3],r[4]) for r in rows],
+                         [("2027-01-22","20:30"),("2027-01-24","16:00")])
+        bad=html.replace("<h2>Descrizione</h2><p>"+schedule,
+                         "<h2>Descrizione</h2><p>"+
+                         schedule.replace("22.1.27 ore 20.30",
+                                          "22.1.27 ore 21.00"))
+        with self.assertRaises(ValueError):
+            parse_official_traviata(bad,url=URL)
+
     def test_legacy_invalid_index_uses_first_party_event_fallback(self):
         config=json.loads(CONFIG.read_text())
         for row in config["sources"]:
