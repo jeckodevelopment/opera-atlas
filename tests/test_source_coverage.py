@@ -41,7 +41,9 @@ class CoverageTests(unittest.TestCase):
                     "editorial_only","configured_not_verified"
                 ))
             self.assertGreater(by[key]["verified_recite"],0)
-        self.assertIn(by["rossini-opera-festival"]["monitoring"],\n                          ("not_started","editorial_only","configured_not_verified",\n                           "detail_pages_verified"))
+        self.assertIn(by["rossini-opera-festival"]["monitoring"],
+                          ("not_started","editorial_only","configured_not_verified",
+                           "detail_pages_verified"))
         self.assertGreaterEqual(by["opera-lombardia"]["scheduled_pages"],7)
         self.assertGreaterEqual(by["regio-torino"]["scheduled_pages"],9)
 
