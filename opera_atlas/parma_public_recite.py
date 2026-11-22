@@ -4,7 +4,6 @@ The venue publishes four labelled rows on two December dates. Only the
 Saturday 5 December 2026 Famiglie slots can enter the public catalog.
 """
 from __future__ import annotations
-from html.parser import HTMLParser
 import re
 from scripts.build_verified_catalog import official_local_time
 from opera_atlas.national_detail_parser import clean
