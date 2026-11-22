@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T13:57:42+00:00",
+  "checked_at": "2026-11-22T14:00:15+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -37,23 +37,6 @@
     },
     {
       "candidate_ids": [
-        "oa-index-6c5243260ad25ecab396"
-      ],
-      "category": "new_work_candidate",
-      "composer": "LUCIO DALLA",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 1,
-      "sources": [
-        {
-          "source_key": "giglio-lucca-opera-2026-27",
-          "url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/lanno-che-verra/"
-        }
-      ],
-      "title": "L'anno che verrà"
-    },
-    {
-      "candidate_ids": [
         "oa-index-d262c6e18193a53ee487"
       ],
       "category": "new_work_candidate",
@@ -74,13 +57,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 163,
+    "candidates_checked": 162,
     "candidates_without_facts": 0,
-    "facts_examined": 676,
+    "facts_examined": 675,
     "facts_resolved": 671,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 5,
-    "unmatched_groups": 4
+    "unmatched_facts": 4,
+    "unmatched_groups": 3
   },
   "truncated": false
 }

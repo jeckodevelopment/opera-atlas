@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T13:57:42+00:00",
+  "checked_at": "2026-11-22T14:00:20+00:00",
   "scope": "national",
-  "attempted": 19,
+  "attempted": 11,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -15,21 +15,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-357ebb275673ae888623",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-6c5243260ad25ecab396",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
-      "outcome": "facts_found",
-      "rows": 2
     },
     {
       "candidate_id": "oa-index-943d04f25da8e27e1190",
@@ -55,16 +40,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-fdbd4ff9f97a75bd5429",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:not one unambiguous credited opera",
-        "authority_work:no_evidence",
-        "official_composer_credit:not one unambiguous credited opera",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-04fc7625bab27446a05d",
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
@@ -74,28 +52,6 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:conflicting official showtime for one day",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-ce1e653a2de54a52cad2",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:ambiguous first-party composer",
-        "authority_work:no_evidence",
-        "official_composer_credit:ambiguous first-party composer",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -116,11 +72,6 @@
       "rows": 3
     },
     {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
       "candidate_id": "oa-index-ecf1fda1dc67738cab86",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -128,6 +79,18 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:no verified Trieste opera showtimes",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-fdbd4ff9f97a75bd5429",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:not one unambiguous credited opera",
+        "authority_work:no_evidence",
+        "official_composer_credit:not one unambiguous credited opera",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -143,23 +106,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-3612d658d6a148cbde57",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:opera title and credited composer not both explicit",
-        "authority_work:no_evidence",
-        "official_composer_credit:opera title and credited composer not both explicit",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-04fc7625bab27446a05d",
-      "outcome": "facts_found",
-      "rows": 1
     }
   ]
 }
