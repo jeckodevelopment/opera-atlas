@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T14:12:26+00:00",
+  "checked_at": "2026-11-22T14:14:42+00:00",
   "scope": "national",
   "attempted": 15,
   "outcomes": [
@@ -39,15 +39,8 @@
     },
     {
       "candidate_id": "oa-index-877637d643bbfb668688",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:detail calendar conflicts with official 2027 brochure",
-        "authority_work:no_evidence",
-        "official_composer_credit:detail calendar conflicts with official 2027 brochure",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 5
     },
     {
       "candidate_id": "oa-index-04fc7625bab27446a05d",
