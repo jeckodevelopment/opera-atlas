@@ -178,15 +178,26 @@ def parse_season_summary(html:str,*,url:str)->list[tuple[str,str,str,list[tuple[
             continue
         if not re.search(credit,segment,re.I):
             continue
-        # Delegate the actual exact showtime/venue/composer validation to the
-        # existing production-level parser, isolating the matching text.
-        snippet=("<h1>"+canonical+"</h1><p>"+raw_clock+"</p><p>"+
-                 parts[i]+"</p><p>"+segment+"</p>")
-        event_url=url.replace(
-            re.search(r"/stagione-lirica-20\d{2}-cosenza/?$",url).group(0),
-            "/"+slug+"-cosenza"
-        )
-        events.append(parse_detail(snippet,url=event_url))
+        # The date/hour tokens are independently published immediately
+        # before this verified venue block. The single-event parser expects
+        # a different Joomla layout, so parse these same explicit facts here.
+        entries=DATE_ENTRY.findall(raw_clock)
+        years={int(year) for _,_,year,_,_ in entries if year}
+        if len(years)!=1 or not entries:
+            continue
+        year=next(iter(years))
+        recitals=[]
+        for day,month,explicit,hh,mm in entries:
+            if explicit and int(explicit)!=year:
+                raise ValueError("conflicting Cosenza season years")
+            try:
+                recitals.append((date(year,MONTHS[month.casefold()],int(day)).isoformat(),
+                                 f"{int(hh):02d}:{mm}"))
+            except ValueError as exc:
+                raise ValueError("invalid official Cosenza season date") from exc
+        if len(set(recitals))!=len(recitals) or len(recitals)>12:
+            raise ValueError("duplicate or excessive Cosenza season dates")
+        events.append((canonical,composer,"Teatro Alfonso Rendano",sorted(recitals)))
     if not events or len({row[0] for row in events})!=len(events):
         raise ValueError("Cosenza season opera blocks absent or ambiguous")
     return sorted(events,key=lambda row:row[0])
