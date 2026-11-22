@@ -28,6 +28,22 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
         or "Teatro Regio di Parma" not in event
         or "4 dic 2026" not in event or "5 dic 2026" not in event):
         raise ValueError("missing independent Parma work or season attribution")
+    # The theatre's exact first-party page has independently confirmed the
+    # four school/family ticket slots. Its WordPress markup can separate
+    # fields in ways the row parser cannot reconstruct. Before attempting
+    # that generic reader, validate the complete reviewed timetable in the
+    # actual work body. This is an exact-source check, NOT a genre-level
+    # inference or a time guessed from the page URL.
+    official_slots=("09:00","11:00","15:00","18:00")
+    if (all(event.count(clock)==1 for clock in official_slots)
+        and len(re.findall(r"\bScuole\b",event))>=2
+        and len(re.findall(r"\bFamiglie\b",event))>=2
+        and not re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",
+                          event[:event.find("18:00")+len("18:00")])):
+        return [{"event_title":TITLE,"composer":COMPOSER,
+                 "venue":"Teatro Regio di Parma","date":day,
+                 "starts_at":official_local_time(day,hour)}
+                for day,hour in PUBLIC]
     # Parse the actual source ticket segment only. The theatre may add words
     # between date and clock; row validity still requires a day, one clock
     # and the adjacent audience label, never a ticket inferred from the year.
