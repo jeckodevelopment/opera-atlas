@@ -72,7 +72,7 @@ class ParmaFamilyOperaTests(unittest.TestCase):
         self.assertEqual({x["venue"] for x in rows},{"Teatro Regio di Parma"})
         # A ticket without its audience marker must never become public.
         missing=html.replace("<b>Famiglie</b>","<b>Pubblico</b>",1)
-        with self.assertRaisesRegex(ValueError,"ticket schedule|ticket row|unbound official Parma ticket hour"):
+        with self.assertRaisesRegex(ValueError,"ticket schedule|ticket row|unbound official Parma ticket hour|ticket slots incomplete"):
             parse_family_opera(missing,url=URL)
 
     def test_punctuation_and_ore_labels_in_official_ticket_widget(self):
