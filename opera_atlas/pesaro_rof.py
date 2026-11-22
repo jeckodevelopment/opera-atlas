@@ -16,6 +16,7 @@ INDEX="https://www.rossinioperafestival.it/archivio/stagione-2026/"
 INDEX_RE=re.compile(r"/archivio/stagione-(20\d{2})/")
 DETAIL_RE=re.compile(r"/archivio/stagione-(20\d{2})/(?:festival-giovane/)?([a-z0-9][a-z0-9-]*)/")
 KNOWN_2026={
+    "le-siege-de-corinthe":"Le Siège de Corinthe",
     "loccasione-fa-il-ladro":"L’occasione fa il ladro",
     "la-scala-di-seta":"La scala di seta",
     "il-viaggio-a-reims":"Il viaggio a Reims",
@@ -76,9 +77,16 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     heading=next((i for i,x in enumerate(r.parts) if x==title),None)
     if heading is None:raise ValueError("ROF first-party heading unverified")
     intro=" ".join(r.parts[heading+1:heading+12])
-    venue_pos=intro.find("Teatro Rossini")
-    if venue_pos<0 or "Auditorium Scavolini" in intro[:venue_pos]:
-        raise ValueError("ROF production is not at Teatro Rossini")
+    # ROF's 2026 opening *Le Siège de Corinthe* was staged in the
+    # Auditorium Scavolini. Other 2026 operas use Teatro Rossini.
+    expected_venue=("Auditorium Scavolini"
+                    if year==2026 and slug=="le-siege-de-corinthe"
+                    else "Teatro Rossini")
+    venue_pos=intro.find(expected_venue)
+    if venue_pos<0 or any(
+            other in intro[:venue_pos]
+            for other in ({"Teatro Rossini","Auditorium Scavolini"}-{expected_venue})):
+        raise ValueError("ROF opera not at verified official venue")
     date_blob=intro[:venue_pos]
     groups=SLOTS.findall(date_blob)
     dates=[]
@@ -104,4 +112,6 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         if credit is None or not OPERA_TITLE_RE.search(visible[:1800]):
             raise ValueError("ROF future opera/composer not directly verified")
         composer="Gioachino Rossini"
-    return title,composer,"Teatro Gioachino Rossini",dates
+    canonical_venue=("Auditorium Scavolini" if expected_venue=="Auditorium Scavolini"
+                     else "Teatro Gioachino Rossini")
+    return title,composer,canonical_venue,dates
