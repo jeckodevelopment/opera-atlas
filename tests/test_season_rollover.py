@@ -112,14 +112,14 @@ class SeasonRolloverTests(unittest.TestCase):
         items={x["key"]:x for x in self.config["sources"]}
         lucca=items["giglio-lucca-opera-2026-27"]
         future=dict(lucca,url="https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2027-2028/")
-        validate_config({"schema_version":1,"sources":[future]})
+        validate_config({"schema_version":1,"sources":[future if x["key"]==lucca["key"] else x for x in self.config["sources"]]})
         self.assertTrue(eligible(lucca["key"],
             "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2027-2028/opera-nuova"))
         self.assertFalse(eligible(lucca["key"],
             "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2028-2027/opera-nuova"))
         bad=dict(lucca,url="https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2027-2029/")
         with self.assertRaises(ValueError):
-            validate_config({"schema_version":1,"sources":[bad]})
+            validate_config({"schema_version":1,"sources":[bad if x["key"]==lucca["key"] else x for x in self.config["sources"]]})
 
     def test_bogus_season_path_not_approved(self):
         config=copy.deepcopy(self.config)
