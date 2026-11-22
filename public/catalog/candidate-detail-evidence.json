@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "c21c4b8d3b6ba50c5ef397ef3a9d1f6bb37c2a5f28522edfa85c87fc7c623ff1",
-      "checked_at": "2026-11-22T14:14:11+00:00",
+      "checked_at": "2026-11-22T14:17:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2033,8 +2033,8 @@
       "candidate_id": "oa-index-59b4a6e5b8f0087fd73d",
       "source_key": "spoleto-tls-lirica-2026",
       "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369",
-      "content_sha256": "209ce74166aa44fb9fa4231e68f92beae399193e40ba8225037d9b13a4425490",
-      "checked_at": "2026-11-22T14:14:35+00:00",
+      "content_sha256": "05d16b27cb4fe31f964554f2be2c53523f4d943b0cef1ba5b13967203d228ac9",
+      "checked_at": "2026-11-22T14:17:50+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2341,8 +2341,8 @@
       "candidate_id": "oa-index-63ec766b091ded79f921",
       "source_key": "puccini-torre-del-lago-2027",
       "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
-      "content_sha256": "88a9e1910bb48f2dd0c3d80eb460d822332389408c849aa11506172cc512e31e",
-      "checked_at": "2026-11-22T14:14:24+00:00",
+      "content_sha256": "268af315ec199a6c65cd68faba5c6959dcfc3fab7f69cce3b50ca7e6d45b27bb",
+      "checked_at": "2026-11-22T14:17:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3433,8 +3433,8 @@
       "candidate_id": "oa-index-877637d643bbfb668688",
       "source_key": "lirico-cagliari-opera-2027",
       "source_url": "https://www.liricocagliari.it/evento/candide/",
-      "content_sha256": "c7de77a4f5a88c5295a00ee3031a6be0cb5b06af3b5707ba9ce94df870d50e75",
-      "checked_at": "2026-11-22T14:14:07+00:00",
+      "content_sha256": "43b12ef230498bcb7bb5bbf487900afe69b19b05e551507fe2b716fa1d9c74be",
+      "checked_at": "2026-11-22T14:17:34+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5831,8 +5831,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "b9fecabff2f3089c0870de1b974a525eca2705f3f60222ab5b5d020f39837d85",
-      "checked_at": "2026-11-22T14:14:29+00:00",
+      "content_sha256": "4461e223f11f92b3577cccc38eec2f3225e69c258bdd738d11d4647889cd15f2",
+      "checked_at": "2026-11-22T14:17:48+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
