@@ -1116,7 +1116,7 @@ def validate_config(config:dict)->list[dict]:
         else:
             valid_season=index.path==path
         if (index.scheme!="https" or index.hostname!=host or not valid_season
-            or (index.query and key not in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027","verdi-trieste-season-2026-27","chieti-marrucino-season-2027","lecce-provincia-season-2027")) or index.fragment or index.port is not None
+            or (index.query and key not in ("mantova-sociale-rolling-opera","bologna-comunale-opera-2026","bologna-comunale-opera-2027","verdi-trieste-season-2026-27","chieti-marrucino-season-2027","lecce-provincia-season-2027")) or index.fragment or index.port is not None
             or item["official_url"]!="https://"+host+"/"):
             raise ValueError("index URL outside exact official allowlist")
         if item["access_status"] not in {"approved","pending","blocked"}:
