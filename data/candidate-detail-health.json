@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T01:49:05+00:00",
+  "checked_at": "2026-11-22T01:57:44+00:00",
   "scope": "national",
   "attempted": 19,
   "outcomes": [
@@ -87,8 +87,9 @@
     },
     {
       "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
-      "outcome": "facts_found",
-      "rows": 2
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-ffbe120c526a352bc59c",

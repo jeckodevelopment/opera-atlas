@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T01:49:05+00:00",
+  "checked_at": "2026-11-22T01:57:44+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -8,6 +8,12 @@
       "category": "composer_credit_to_review",
       "composer": "Georges Bizet (1838–1875)",
       "exact_title_matches": [],
+      "possible_canonical_match": {
+        "composer": "Georges Bizet",
+        "reason": "metadata_after_composer",
+        "title": "Carmen",
+        "work_id": "oa-w-000009"
+      },
       "recite_observed": 7,
       "sources": [
         {
@@ -24,6 +30,12 @@
       "category": "composer_credit_to_review",
       "composer": "Giacomo Puccini Opera",
       "exact_title_matches": [],
+      "possible_canonical_match": {
+        "composer": "Giacomo Puccini",
+        "reason": "metadata_after_composer",
+        "title": "La bohème",
+        "work_id": "oa-w-000024"
+      },
       "recite_observed": 6,
       "sources": [
         {
@@ -40,6 +52,12 @@
       "category": "composer_credit_to_review",
       "composer": "Gaetano Donizetti Melodramma",
       "exact_title_matches": [],
+      "possible_canonical_match": {
+        "composer": "Gaetano Donizetti",
+        "reason": "metadata_after_composer",
+        "title": "L’elisir d’amore",
+        "work_id": "oa-w-000073"
+      },
       "recite_observed": 6,
       "sources": [
         {
@@ -56,6 +74,12 @@
       "category": "composer_credit_to_review",
       "composer": "Giacomo Puccini (1858–1924)",
       "exact_title_matches": [],
+      "possible_canonical_match": {
+        "composer": "Giacomo Puccini",
+        "reason": "metadata_after_composer",
+        "title": "Madama Butterfly",
+        "work_id": "oa-w-000019"
+      },
       "recite_observed": 6,
       "sources": [
         {
@@ -72,6 +96,12 @@
       "category": "composer_credit_to_review",
       "composer": "Vincenzo Bellini Tragedia",
       "exact_title_matches": [],
+      "possible_canonical_match": {
+        "composer": "Vincenzo Bellini",
+        "reason": "metadata_after_composer",
+        "title": "Norma",
+        "work_id": "oa-w-000031"
+      },
       "recite_observed": 5,
       "sources": [
         {
@@ -88,6 +118,12 @@
       "category": "composer_credit_to_review",
       "composer": "Giuseppe Verdi Opera",
       "exact_title_matches": [],
+      "possible_canonical_match": {
+        "composer": "Giuseppe Verdi",
+        "reason": "metadata_after_composer",
+        "title": "Aida",
+        "work_id": "oa-w-000015"
+      },
       "recite_observed": 4,
       "sources": [
         {
@@ -104,6 +140,7 @@
       "category": "composer_credit_to_review",
       "composer": "Franz Lehár",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 3,
       "sources": [
         {
@@ -120,6 +157,7 @@
       "category": "new_work_candidate",
       "composer": "Pietro Mascagni",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 2,
       "sources": [
         {
@@ -136,6 +174,7 @@
       "category": "new_work_candidate",
       "composer": "Gaetano Donizetti",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 2,
       "sources": [
         {
@@ -152,6 +191,7 @@
       "category": "new_work_candidate",
       "composer": "Giacomo Puccini",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 2,
       "sources": [
         {
@@ -168,6 +208,7 @@
       "category": "new_work_candidate",
       "composer": "Giacomo Puccini",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 2,
       "sources": [
         {
@@ -184,6 +225,7 @@
       "category": "composer_credit_to_review",
       "composer": "Salvatore Passantino",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 2,
       "sources": [
         {
@@ -200,6 +242,7 @@
       "category": "new_work_candidate",
       "composer": "Gioachino Rossini",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 2,
       "sources": [
         {
@@ -216,6 +259,7 @@
       "category": "new_work_candidate",
       "composer": "Giacomo Puccini",
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 2,
       "sources": [
         {
@@ -232,6 +276,7 @@
       "category": "missing_composer",
       "composer": null,
       "exact_title_matches": [],
+      "possible_canonical_match": null,
       "recite_observed": 1,
       "sources": [
         {
