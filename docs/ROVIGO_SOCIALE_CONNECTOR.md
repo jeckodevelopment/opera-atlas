@@ -58,3 +58,20 @@ Tahiti* deve restare un unico evento di programma con componenti d'opera
 distinte e non va pubblicato duplicando il biglietto. La scansione regionale
 attualmente individua il documento PDF ma non contiene ancora le singole
 recite verificate: la copertura del teatro rimane parziale.
+
+## Riscontri di calendario in attesa della fonte primaria
+
+`data/rovigo-season-review-evidence.json` conserva, come **riscontri non
+pubblicabili**, le date comunicate da testate del settore per sei programmi:
+*Pagliacci*, *Pimpinone*, il dittico *The Telephone / Trouble in Tahiti*,
+*La traviata*, *Aida* e *La Cenerentola*. Orari non verificati sono `null`;
+la coppia Menotti/Bernstein resta un solo evento composto, non un'opera nuova.
+Il file non viene letto dal publisher e **non** attribuisce a una testata
+l'autorità del programma ufficiale.
+
+La coda va risolta acquisendo il programma del teatro da fonte primaria e
+confrontando separatamente compositore, sede, date e orari; soltanto dopo
+le singole recite potranno passare alla pipeline nazionale comune.
+Il PDF regionale attualmente individuato non è ancora stato trasformato
+in prova strutturata di rappresentazioni. Non utilizzare date stampate
+sulle pagine di indice come date delle recite.
