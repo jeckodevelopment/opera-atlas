@@ -121,7 +121,7 @@ async def scan(browser, candidate: dict, semaphore: asyncio.Semaphore) -> dict:
         finally:
             await context.close()
         state = classify(http, title, kind, detail_status or "", candidate["title"],
-                         "Produzione" if candidate["type"] == "staging" else "Programma",
+                         "Produzione" if candidate["type"] == "staging" else "Programma composto",
                          error=error)
         return {
             "id": candidate["id"], "type": candidate["type"],
