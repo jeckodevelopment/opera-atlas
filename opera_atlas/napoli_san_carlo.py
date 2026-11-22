@@ -17,6 +17,10 @@ EVENT=re.compile(r"/spettacoli/([a-z0-9][a-z0-9-]*)/")
 DATES=re.compile(r"(?<!\d)([0-3]?\d)[/-]([01]?\d)[/-](20\d{2})\s*(?:alle|ore|h\.?)[ ]*([01]?\d|2[0-3])[:.]([0-5]\d)",re.I)
 AUTHOR=re.compile(r"\b(?:Musica|Composizione)\s+di\s+([A-ZÀ-Ž][\wÀ-ÿ.'’ -]{3,75}?)(?=\s+(?:Libretto\s+di|Date\b|Teatro\s+di\s+San\s+Carlo\b))",re.I)
 
+class SanCarloSecurityChallenge(ValueError):
+    """Official site returned an anti-bot checkpoint, not an opera index."""
+
+
 class Page(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -46,7 +50,7 @@ def eligible_detail(url:str)->bool:
 def _accessible(text:str):
     if re.search(r"(?:security\s+check\s+required|your browsing looks a bit unusual|"
                  r"complete this security check|captcha|access denied)",text,re.I):
-        raise ValueError("San Carlo security challenge; defer instead of bypass")
+        raise SanCarloSecurityChallenge("San Carlo security challenge; defer instead of bypass")
 
 def extract_index(html:str,*,url:str=INDEX,min_links:int=1)->list[str]:
     if url!=INDEX:raise ValueError("unapproved San Carlo rolling index")
