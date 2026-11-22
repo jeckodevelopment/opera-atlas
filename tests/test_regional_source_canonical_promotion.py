@@ -28,6 +28,23 @@ class RegionalCanonicalPublicationTests(unittest.TestCase):
         cls.facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.directory=json.loads(DIRECTORY.read_text(encoding="utf-8"))
+        # Exercise a clean first publication even after these real official
+        # source URLs have entered the live catalog. Strip only the precise
+        # source-bound stagings/recite from IN-MEMORY fixtures; never rewrite
+        # persistent canonical JSON or regress already published identities.
+        known_urls={case[1] for case in CASES}
+        removed_keys={p["key"] for p in cls.facts["productions"]
+                      if p["source_url"] in known_urls}
+        removed_ids={cls.registry["stagings"][key]["id"]
+                     for key in removed_keys}
+        cls.facts["productions"]=[
+            p for p in cls.facts["productions"] if p["key"] not in removed_keys]
+        cls.registry["stagings"]={
+            k:v for k,v in cls.registry["stagings"].items()
+            if k not in removed_keys}
+        cls.registry["performances"]={
+            k:v for k,v in cls.registry["performances"].items()
+            if v["staging_id"] not in removed_ids}
 
     def test_official_sources_are_explicit_and_do_not_conflate_home_theaters(self):
         directory={(x["city"],x["name"]):x for x in self.directory["venues"]}
