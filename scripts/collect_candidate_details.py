@@ -1169,8 +1169,11 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     if image is None and item["source_key"]=="jesi-esecuzione-opera-2026":
                         dedicated=("https://www.fondazionepergolesispontini.com/"
                                    "eventi/lesecuzione-sotto-lo-sguardo-di-tosca-2/")
-                        if eligible(item["source_key"],dedicated) and (
-                           urlsplit(dedicated).hostname==urlsplit(item["official_url"]).hostname):
+                        if (urlsplit(dedicated).hostname==
+                            urlsplit(item["official_url"]).hostname):
+                            # The exact first-party detail URL is separately
+                            # approved *only for artwork*, not candidate
+                            # discovery or showtime acquisition.
                             secondary_key=(source_id,dedicated)
                             secondary=fetched_pages.get(secondary_key)
                             if secondary is None:
