@@ -21,6 +21,7 @@ from scripts.build_verified_catalog import official_local_time
 from opera_atlas.scala_arena_parser import parse_showtimes
 from opera_atlas.national_detail_parser import parse_national_showtimes, VisibleText
 from scripts.publish_catalog_v2 import normalized
+from opera_atlas.work_identity import canonical_title
 
 OUTPUT=ROOT/"data"/"candidate-detail-evidence.json"
 PUBLIC=ROOT/"public"/"catalog"/"candidate-detail-evidence.json"
@@ -170,17 +171,8 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
     if source_key=="sassari-de-carolis-opera-2026":
         from opera_atlas.sassari_de_carolis_parser import parse_detail
         title,composer,venue,rows=parse_detail(html,url=url)
-        # Official Italian names are aliases of the existing canonical works.
-        # Match on the independently verified composer as well as the title;
-        # never create a duplicate work or reinterpret an unrelated homonym.
-        sassari_canonical_titles={
-            ("il flauto magico","wolfgang amadeus mozart"):"Die Zauberflöte",
-            ("don carlo","giuseppe verdi"):"Don Carlos",
-        }
-        canonical=sassari_canonical_titles.get(
-            (normalized(title),normalized(composer)),title)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(canonical)
+                 if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -191,7 +183,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.messina_opera_parser import parse_detail
         title,composer,venue,rows=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title)
+                 if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -202,7 +194,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.lecce_apollo_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title)
+                 if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -213,7 +205,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.lecce_politeama_parser import parse_detail
         title,composer,venue,rows=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title)
+                 if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -225,7 +217,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         out=[]
         for title,composer,venue,day,clock in parse_program(html,url=url):
             matches=[w for w in registry.get("works",{}).values()
-                     if normalized(w["title"])==normalized(title)
+                     if normalized(w["title"])==normalized(canonical_title(title,composer))
                      and normalized(w["composer"])==normalized(composer)]
             if len(matches)==1:
                 work=matches[0]
@@ -237,7 +229,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         out=[]
         for title,composer,venue,day,clock in parse_program(html,url=url):
             matches=[w for w in registry.get("works",{}).values()
-                     if normalized(w["title"])==normalized(title)
+                     if normalized(w["title"])==normalized(canonical_title(title,composer))
                      and normalized(w["composer"])==normalized(composer)]
             if len(matches)==1:
                 work=matches[0]
@@ -250,7 +242,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         out=[]
         for title,composer,venue,day,clock in recite:
             matches=[w for w in registry.get("works",{}).values()
-                     if normalized(w["title"])==normalized(title)
+                     if normalized(w["title"])==normalized(canonical_title(title,composer))
                      and normalized(w["composer"])==normalized(composer)]
             if len(matches)==1:
                 work=matches[0]
@@ -261,7 +253,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.ravenna_cherubini_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -272,7 +264,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.novara_coccia_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -283,7 +275,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.verona_filarmonico_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -294,7 +286,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.pisa_opera_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -305,7 +297,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.salerno_opera_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -316,7 +308,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.macerata_opera_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -330,7 +322,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         title,composer,venue,recite,components=read_program(
             html,source_key=source_key,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title)
+                 if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -341,7 +333,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.livorno_opera_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url,source_key=source_key)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title)
+                 if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -352,7 +344,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.ferrara_regional_parser import production
         title,composer,venue,recite=production(html,source_key=source_key,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title)
+                 if normalized(w["title"])==normalized(canonical_title(title,composer))
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         return [{"event_title":matches[0]["title"],"composer":matches[0]["composer"],
@@ -362,7 +354,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.bologna_detail_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title) and normalized(w["composer"])==normalized(composer)]
+                 if normalized(w["title"])==normalized(canonical_title(title,composer)) and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]
         return [{"event_title":work["title"],"composer":work["composer"],"venue":venue,
@@ -405,7 +397,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.reggio_opera_parser import parse_detail as reggio_detail
         heading,credit,venue,raw=reggio_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -413,7 +405,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.piacenza_opera_parser import parse_detail as piacenza_detail
         heading,credit,venue,raw=piacenza_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -421,7 +413,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.lucca_opera_parser import parse_detail as lucca_detail
         heading,credit,venue,raw=lucca_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -429,7 +421,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.modena_opera_parser import parse_detail as modena_detail
         heading,credit,venue,raw=modena_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -437,7 +429,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.catania_detail_parser import parse_detail as bellini_detail
         heading,credit,venue,raw=bellini_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -445,7 +437,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.cagliari_detail_parser import parse_detail as cagliari_detail
         heading,credit,venue,raw=cagliari_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
@@ -453,7 +445,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         from opera_atlas.trieste_detail_parser import parse_detail as trieste_detail
         heading,credit,venue,raw=trieste_detail(html,url=url)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(heading)
+                 if normalized(w["title"])==normalized(canonical_title(heading,credit))
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
