@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T13:01:28+00:00",
+  "checked_at": "2026-11-22T13:07:28+00:00",
   "scope": "national",
   "attempted": 14,
   "outcomes": [
@@ -81,6 +81,11 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
+      "outcome": "official_programme_document_pending",
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-19141fd504da67924d01",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -103,11 +108,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-763df3e99fa61d152cb9",
-      "outcome": "facts_found",
-      "rows": 2
     },
     {
       "candidate_id": "oa-index-a02901b14e6eae69df5c",
