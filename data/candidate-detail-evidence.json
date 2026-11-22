@@ -786,7 +786,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "content_sha256": "165ae8ddcd93c9d1839f36d7c00300cd1784a42b65ba7aee94cb0eb0abac0484",
-      "checked_at": "2026-11-22T18:17:11+00:00",
+      "checked_at": "2026-11-22T18:18:50+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1769,7 +1769,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
       "content_sha256": "18de3c639156cbc78a0096b0f2d7590f2e21ed1df2b3ae7ce6755553a640176d",
-      "checked_at": "2026-11-22T18:17:29+00:00",
+      "checked_at": "2026-11-22T18:19:15+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2113,7 +2113,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "24caf72218a93952abfd1b8eee8cb6e9ec837950a349ce1834bd534e6f281bb3",
-      "checked_at": "2026-11-22T18:17:32+00:00",
+      "checked_at": "2026-11-22T18:19:18+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3629,7 +3629,7 @@
       "source_key": "sassari-de-carolis-rolling-opera",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371",
       "content_sha256": "b7df911d8234294a17dd8b6204f1366a8810f1dfa6c9d277cbf274cedb1dd9e3",
-      "checked_at": "2026-11-22T18:17:34+00:00",
+      "checked_at": "2026-11-22T18:19:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4642,7 +4642,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "content_sha256": "2351a654f0db0eac2fd015f6c7402a3944baa2298577d9865deeb5434c86b571",
-      "checked_at": "2026-11-22T18:17:36+00:00",
+      "checked_at": "2026-11-22T18:19:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4772,7 +4772,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "3291b5602dc11a44db9e0e946da9a46c7e156292d427d9121086ac923c02119f",
-      "checked_at": "2026-11-22T18:17:26+00:00",
+      "checked_at": "2026-11-22T18:19:10+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6303,8 +6303,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "12b3f7c26cdc0c7b36e269b8bc35404c4ec4c8b57648b2be6783865e2c5317b7",
-      "checked_at": "2026-11-22T18:17:20+00:00",
+      "content_sha256": "912a1856609f2191c0e6bac5e1e13fff154e0197bf84aa4c335bbd4b862ba1b5",
+      "checked_at": "2026-11-22T18:19:03+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6841,7 +6841,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
       "content_sha256": "3df346d89ecf48c654b0c6dc287db0d93ffb4ac49e67c891b3c55ea8e85666b3",
-      "checked_at": "2026-11-22T18:17:13+00:00",
+      "checked_at": "2026-11-22T18:18:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7666,7 +7666,7 @@
       "source_key": "sassari-de-carolis-rolling-opera",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
       "content_sha256": "a30aac04e450eb33dd6c93bdd534a3405c17ef2c8c55abe10e36cb75e0bec333",
-      "checked_at": "2026-11-22T18:17:23+00:00",
+      "checked_at": "2026-11-22T18:19:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
