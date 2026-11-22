@@ -200,7 +200,7 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
     by_id = {f["id"]: f for f in existing}
     if len(by_id) != len(existing):
         raise ValueError("duplicate festival edition id")
-    generated = [dict(f) for f in existing if not f.get("automatically_generated")]
+    generated = [dict(f) for f in existing]  # Preserve published historical editions.
     generated_ids = {f["id"] for f in generated}
     for rule in rules["festivals"]:
         base = by_id.get(rule["template_id"])
