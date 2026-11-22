@@ -32,6 +32,17 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn("Acquisizione e catalogazione", text)
         self.assertIn("Pubblicazione", text)
 
+    def test_legacy_successor_table_is_explicit_not_a_second_endless_list(self):
+        text=PAGE.read_text(encoding="utf-8")
+        self.assertIn("legacy_covered_by_successor",text)
+        self.assertIn("legacy_still_uncovered",text)
+        self.assertIn("successor_source_key",text)
+        self.assertIn("Storico · successore implementato",text)
+        self.assertIn("Ancora senza successore",text)
+        self.assertIn("indici ancora senza successore",text)
+        self.assertIn("<th>Copertura stagioni future</th>",text)
+        self.assertIn('<details class="accordion">',text)
+
     def test_future_season_readiness_is_not_mislabeled_complete(self):
         text = PAGE.read_text(encoding="utf-8")
         self.assertIn('if(key==="lifecycle"||key==="catalogation"||key==="evidence")return null', text)
