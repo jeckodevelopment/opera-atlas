@@ -26,6 +26,19 @@ class SourceHealthWorkflowTests(unittest.TestCase):
         self.assertIn("Fresh source health could not be persisted",workflow)
         self.assertNotIn("The next independent scheduled scan will recompute it",workflow)
 
+    def test_new_official_candidates_trigger_fast_details_without_waiting_cron(self):
+        root=Path(__file__).resolve().parents[1]
+        source=(root/".github/workflows/refresh-source-health.yml").read_text(encoding="utf-8")
+        detail=(root/".github/workflows/collect-candidate-details-fast.yml").read_text(encoding="utf-8")
+        self.assertIn("types: [new-official-candidates]",detail)
+        self.assertIn("-f event_type=new-official-candidates",source)
+        self.assertIn("newly_actionable(a,b)",source)
+        self.assertIn("git show origin/main:data/season-index-candidates.json",source)
+        self.assertIn("if: (steps.new_candidates.outputs.new_candidates",source)
+        self.assertIn("group: opera-atlas-official-detail-evidence",detail)
+        self.assertIn("python -m scripts.collect_candidate_details --allow-network",detail)
+        self.assertIn("-f event_type=cached-catalog-retry",detail)
+
     def test_one_clean_follow_up_scan_queued_after_exhausted_checkpoint(self):
         workflow=(Path(__file__).resolve().parents[1]/
                   ".github/workflows/refresh-source-health.yml").read_text(encoding="utf-8")
