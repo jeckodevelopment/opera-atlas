@@ -32,7 +32,15 @@ def parse_detail(html:str,*,url:str):
     text=clean(re.sub(r"(?i)</h[4-6]>", " </h4> ", html))
     if not re.search(r"(?i)\bMusica di\s+"+re.escape(composer)+r"\b",text):
         raise ValueError("official composer credit missing")
-    if not re.search(r"(?i)\bTeatro Verdi di Pisa\b",text):
+    # Official event detail pages often call the institution
+    # "Fondazione Teatro di Pisa" in the page footer rather than repeating
+    # "Teatro Verdi di Pisa" beside every opera date. The exact first-party
+    # HTTPS event URL, the named institution, and the source-bound composer
+    # are required together; never accept a theater from generic prose.
+    official_venue=(
+        re.search(r"(?i)\bTeatro Verdi di Pisa\b",text)
+        or re.search(r"(?i)\bFondazione Teatro di Pisa\b",text))
+    if not official_venue:
         raise ValueError("source does not identify the Pisa opera house")
     # Performance rows only, never historical premiere dates and prose.
     section=re.search(r"(?i)\bDate\s*:\s*(.*?)(?:Acquista biglietto|Allegati|Galleria fotografica)",text,re.S)
