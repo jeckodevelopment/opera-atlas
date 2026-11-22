@@ -102,13 +102,6 @@ EXCLUDED_PATHS={
         "stagione-27-il-lago-dei-cigni.html",
         "stagione-27-beethoven-200.html",
     }),
-    # The Regione Veneto page is an announcement for the full 2026/27
-    # season (24 Oct–16 May), NOT one specific ticketed opera performance.
-    # Exact-only exclusion; individual municipal Rovigo opera links remain
-    # eligible through their independent dedicated adapters.
-    "rovigo-regione-programma-2026-27": frozenset({
-        "3563a671-d9b2-46bf-a10d-776af9ab17bc",
-    }),
     "carlo-felice-season-2026-27": frozenset({
         "lo-schiaccianoci", "giselle", "il-lago-dei-cigni",
         "deledda", "sergio-bernal-dance-company",
@@ -182,6 +175,12 @@ def reviewed_source_urls()->set[str]:
     return reviewed
 
 def classify(key:str,url:str,reviewed:set[str])->str:
+    # Keep this exact regional season URL eligible as a programme/PDF
+    # discovery source, but never treat its full-season date range as a
+    # single opera ticket. Individual municipal opera candidates remain live.
+    if (key=="rovigo-regione-programma-2026-27"
+        and url=="https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc"):
+        return "excluded_nonopera"
     if key=="savona-giocosa-rolling-opera":
         # One evergreen index contains independent works and recite; an URL
         # match to one published staging never closes the entire source.
