@@ -173,7 +173,7 @@
       "id": "oa-index-0e8fc70d8165e8a2b021",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T18:52:31+00:00",
       "last_seen": "2026-11-22T18:52:31+00:00"
     },
@@ -2365,7 +2365,7 @@
       "id": "oa-index-f3d0b1311d04c3e46c05",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T18:52:31+00:00",
       "last_seen": "2026-11-22T18:52:31+00:00"
     },

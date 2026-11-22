@@ -3247,6 +3247,24 @@
       ]
     },
     {
+      "id": "curated:auto-f3d0b1311d04c3e4:2026-11-27",
+      "starts_at": "2026-11-27T20:00:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Sociale",
+      "municipality": "Trento",
+      "region": "Trentino-Alto Adige",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.haydn.it/eventi/la-clemenza-di-tito"
+      ]
+    },
+    {
       "id": "curated:auto-1716458908b64b36:2026-11-27",
       "starts_at": "2026-11-27T20:45:00+01:00",
       "local_date": "2026-11-27",
@@ -3389,6 +3407,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"
+      ]
+    },
+    {
+      "id": "curated:auto-0e8fc70d8165e8a2:2026-11-29",
+      "starts_at": "2026-11-29T16:00:00+01:00",
+      "local_date": "2026-11-29",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Sociale",
+      "municipality": "Trento",
+      "region": "Trentino-Alto Adige",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.haydn.it/eventi/la-clemenza-di-tito-2"
       ]
     },
     {

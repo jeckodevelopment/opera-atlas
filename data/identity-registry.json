@@ -1073,6 +1073,14 @@
       "name": "Teatro Apollo",
       "city": "Lecce",
       "region": "Puglia"
+    },
+    "Trento|Teatro Sociale": {
+      "id": "oa-v-000055",
+      "slug": "teatro-sociale",
+      "city_slug": "trento",
+      "name": "Teatro Sociale",
+      "city": "Trento",
+      "region": "Trentino-Alto Adige"
     }
   },
   "stagings": {
@@ -2980,6 +2988,23 @@
       "slug": "le-avventure-di-pinocchio",
       "source_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
       "season": "2026"
+    },
+    "auto-0e8fc70d8165e8a2": {
+      "id": "oa-s-000245",
+      "work_id": "oa-w-000066",
+      "venue_id": "oa-v-000055",
+      "slug": "la-clemenza-di-tito",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
+      "season": "2026"
+    },
+    "auto-f3d0b1311d04c3e4": {
+      "id": "oa-s-000246",
+      "work_id": "oa-w-000066",
+      "venue_id": "oa-v-000055",
+      "slug": "la-clemenza-di-tito",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
+      "season": "2026",
+      "route_slug": "la-clemenza-di-tito-la-clemenza-di-tito"
     }
   },
   "performances": {
@@ -8622,6 +8647,18 @@
       "staging_id": "oa-s-000244",
       "original_date": "2026-12-30",
       "source_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
+    },
+    "auto-0e8fc70d8165e8a2|2026-11-29": {
+      "id": "oa-r-000962",
+      "staging_id": "oa-s-000245",
+      "original_date": "2026-11-29",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2"
+    },
+    "auto-f3d0b1311d04c3e4|2026-11-27": {
+      "id": "oa-r-000963",
+      "staging_id": "oa-s-000246",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
     }
   },
   "reserved_works": {

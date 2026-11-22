@@ -6369,6 +6369,36 @@
           "20:45"
         ]
       ]
+    },
+    {
+      "key": "auto-0e8fc70d8165e8a2",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Sociale",
+      "municipality": "Trento",
+      "region": "Trentino-Alto Adige",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
+      "dates": [
+        [
+          "2026-11-29",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f3d0b1311d04c3e4",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Sociale",
+      "municipality": "Trento",
+      "region": "Trentino-Alto Adige",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
+      "dates": [
+        [
+          "2026-11-27",
+          "20:00"
+        ]
+      ]
     }
   ]
 }
