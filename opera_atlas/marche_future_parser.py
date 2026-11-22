@@ -32,7 +32,7 @@ DAY=r"(luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|venerd[iì]|sabato|domen
 MONTH=r"(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)"
 RECITE=re.compile(
     rf"(?i)\b{DAY}\s+(\d{{1,2}})\s+{MONTH}(?:\s+(20\d{{2}}))?"
-    r"\s*,?\s*ore\s*([01]?\d|2[0-3])(?:[.:]([0-5]\d))?"
+    r"\s*,?\s*ore\s*(2[0-3]|1\d|0?\d)(?:[.:]([0-5]\d))?(?!\d|[.:])"
 )
 
 def season_context(html:str,*,url:str,source_key:str)->tuple[str,int,str]:
