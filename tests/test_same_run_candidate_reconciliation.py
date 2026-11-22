@@ -215,6 +215,29 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
             rows,{"evidence":[]},{"productions":[production]},{"programs":[]})
         self.assertFalse(verified)
 
+    def test_dated_old_season_proof_overrides_duplicate_candidate_url(self):
+        url="https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/"
+        source_keys=("petruzzelli-opera-2026","petruzzelli-opera-2027")
+        rows={"schema_version":1,"candidates":[
+            {"id":key,"source_key":key,"official_url":url,
+             "status":"needs_review"} for key in source_keys]}
+        old={(key,url) for key in source_keys}
+        result,report=reconcile(rows,set(),other_season_urls=old,
+                                 ambiguous_urls={url})
+        self.assertEqual([row["status"] for row in result["candidates"]],
+                         ["not_in_official_season"]*2)
+        self.assertEqual(len(report["changes"]),2)
+        again,health=reconcile(result,set(),other_season_urls=old,
+                               ambiguous_urls={url})
+        self.assertEqual(again,result)
+        self.assertFalse(health["changes"])
+        # A confirmed live production is not retired as an older season
+        # simply because stale detail evidence also names the same URL.
+        published,report=reconcile(rows,{url},other_season_urls=old,
+                                  ambiguous_urls=set())
+        self.assertTrue(all(row["status"]=="already_catalogued"
+                            for row in published["candidates"]))
+
     def test_published_program_is_stable_across_refreshes(self):
         program_url="https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
         candidate={"schema_version":1,"candidates":[{
