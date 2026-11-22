@@ -24,6 +24,18 @@ class CompositeProgramCheckpointOrderTests(unittest.TestCase):
                 self.assertLess(generator,suite)
                 self.assertNotIn("git push --force",yml)
 
+    def test_frontend_sftp_deploy_regenerates_programs_but_does_not_upload_catalog(self):
+        workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
+        created=workflow.index("python -m scripts.publish_programs")
+        suite=workflow.index("python -m unittest discover -s tests -v")
+        verified=workflow.index("python -m scripts.publish_programs --check")
+        upload=workflow.index("python -u -m scripts.deploy_atlas_sftp")
+        self.assertLess(created,suite)
+        self.assertLess(suite,verified)
+        self.assertLess(verified,upload)
+        self.assertNotIn("git add public/catalog/programs.json",workflow)
+        self.assertNotIn("git push --force",workflow)
+
     def test_cached_publisher_persists_final_program_feed_and_validates_after_promotion(self):
         yml=(ROOT/FILES[1]).read_text(encoding="utf-8")
         first=yml.index("python -m scripts.publish_programs")
