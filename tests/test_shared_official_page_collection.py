@@ -49,15 +49,21 @@ class SharedOfficialProgrammeFetchTests(unittest.TestCase):
         self.assertTrue(all(x["outcome"]=="unavailable_or_unstructured"
                             for x in health))
 
-    def test_two_distinct_urls_never_share_evidence(self):
-        selected=candidates()
-        selected["candidates"]=selected["candidates"][:2]
-        selected["candidates"][1]["official_url"]=(
-          "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/altro/")
-        # Unsupported lookalike URLs are rejected by the source allowlist
-        # instead of silently borrowing the approved shared page.
-        chosen=selected_candidates(selected,today=date(2026,11,22))
-        self.assertTrue(all(x["official_url"]==URL for x in chosen))
+    def test_different_official_sources_are_not_pooled(self):
+        items=candidates()
+        items["candidates"]=items["candidates"][:1]+[{
+          "id":"ancona-elisir","source_key":"ancona-elisir-opera-2026",
+          "official_url":"https://www.fondazionemuse.org/stagione-lirica-2026/",
+          "status":"needs_review"}]
+        seen=[]
+        def fetch(db,*,source_id,url,network_enabled):
+            seen.append(url)
+            return FetchResult(url,"<h1>Incomplete</h1>","b"*64,24)
+        _,health=collect(items,{"schema_version":1,"evidence":[]},
+            network_enabled=True,fetcher=fetch,today=date(2026,11,22))
+        self.assertEqual(len(health),2)
+        self.assertCountEqual(seen,[x["official_url"] for x in items["candidates"]])
+
 
 if __name__=="__main__":
     unittest.main()
