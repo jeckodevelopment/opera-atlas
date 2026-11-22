@@ -741,8 +741,18 @@ def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=N
         return None
     from scripts.publish_work_posters import allowed_image_url,image_matches_work
     raw=image.get("image_url","")
-    if (image.get("source_url")!=url or
-            not isinstance(raw,str) or allowed_image_url(raw,url)!=raw or
+    artwork_source=image.get("source_url")
+    # Source-specific work image is independently credited by the *same*
+    # first-party issuer as the canonical season page. Never permit an
+    # arbitrary alternate site or another opera on a shared programme.
+    approved_alternate=(
+        detail.get("source_key")=="jesi-esecuzione-opera-2026"
+        and url=="https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+        and artwork_source=="https://www.fondazionepergolesispontini.com/eventi/lesecuzione-sotto-lo-sguardo-di-tosca-2/"
+        and composer=="Salvatore Passantino"
+        and normalized(title)=="l'esecuzione")
+    if ((artwork_source!=url and not approved_alternate) or
+            not isinstance(raw,str) or allowed_image_url(raw,artwork_source if approved_alternate else url)!=raw or
             not image_matches_work(raw,title) or
             not isinstance(image.get("credit"),str) or
             not image.get("credit") or
