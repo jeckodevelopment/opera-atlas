@@ -773,6 +773,24 @@
           "https://www.liricocagliari.it/evento/candide/"
         ]
       }
+    },
+    {
+      "source_key": "lecce-apollo-pinocchio-2026",
+      "source_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
+      "title": "Le avventure di Pinocchio",
+      "composer": "Antonio Cericola",
+      "synopsis": "Pinocchio, burattino desideroso di diventare un bambino vero, affronta inganni, tentazioni e incontri sorprendenti, imparando a scegliere e a prendersi cura degli altri.",
+      "history": {
+        "librettist": "Sandro Bernabei",
+        "premiere_year": 2003,
+        "premiere_venue": "Teatro Marrucino",
+        "premiere_city": "Chieti",
+        "sources": [
+          "https://www.giornaledellamusica.it/formazione/audizioni-per-il-cast-dellopera-lirica-le-avventure-di-pinocchio-al-teatro-marrucino-di-chieti",
+          "https://www.teatromarrucino.eu/evento/le-avventure-di-pinocchio/",
+          "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
+        ]
+      }
     }
   ]
 }
