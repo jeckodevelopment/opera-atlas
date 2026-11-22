@@ -353,6 +353,13 @@
       "min_links": 5
     },
     {
+      "key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/",
+      "url": "https://www.arena.it/prossime-stagioni/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "coccia-novara-opera-2027",
       "official_url": "https://www.fondazioneteatrococcia.it/",
       "url": "https://www.fondazioneteatrococcia.it/spettacoli.html",
