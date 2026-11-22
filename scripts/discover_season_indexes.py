@@ -311,6 +311,9 @@ def eligible(key:str,url:str)->bool:
         return (parsed.scheme=="https" and parsed.hostname=="www.teatrovittorioemanuele.it"
                 and path in {"/evento/madama-butterfly", "/evento/la-traviata",
                              "/evento/al-cavallino-bianco"})
+    if key=="lecce-provincia-politeama-2026":
+        from opera_atlas.lecce_provincia_parser import URL
+        return url==URL
     if key=="lecce-apollo-pinocchio-2026":
         return (parsed.scheme=="https" and parsed.hostname=="www.provincia.le.it"
                 and path=="/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini")
@@ -417,6 +420,11 @@ def eligible(key:str,url:str)->bool:
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="lecce-provincia-politeama-2026":
+        from opera_atlas.lecce_provincia_parser import parse_program
+        if len(parse_program(html,url=index_url))!=6:
+            raise ValueError("Province of Lecce six opera showtimes incomplete")
+        return [index_url]
     if key=="lecce-apollo-pinocchio-2026":
         from opera_atlas.lecce_apollo_parser import parse_detail
         parse_detail(html,url=index_url)
@@ -480,6 +488,7 @@ def validate_config(config:dict)->list[dict]:
         "messina-vittorio-opera-2026-27":("www.teatrovittorioemanuele.it","/event_listing_type/opera-26-27/"),
         "lecce-apollo-pinocchio-2026":("www.provincia.le.it","/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"),
         "lecce-politeama-opera-2026":("www.politeamagreco.it","/programmazione.asp"),
+        "lecce-provincia-politeama-2026":("www.provincia.le.it","/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"),
         "rovigo-sociale-opera-2026-27":("www.comune.rovigo.it","/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"),
         "padova-verdi-opera-2026":("padovacultura.padovanet.it","/it/attivita-culturali/stagione-lirica-di-padova-2026"),
         "treviso-del-monaco-opera-2026-27":("risorse.teatrostabileveneto.it","/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"),
@@ -573,6 +582,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/" and not index.query
         elif key=="lecce-politeama-opera-2026":
             valid_season=index.path=="/programmazione.asp" and not index.query
+        elif key=="lecce-provincia-politeama-2026":
+            valid_season=index.path=="/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/" and not index.query
         elif key=="rovigo-sociale-opera-2026-27":
             valid_season=index.path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027" and not index.query
         elif key=="padova-verdi-opera-2026":
