@@ -748,7 +748,7 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             next_registry["performances"][pk]={
                 "id":f"oa-r-{_next_replica_id(next_registry):06d}",
                 "staging_id":next_registry["stagings"][production["key"]]["id"],
-                "original_date":day,"source_url":url}
+                "original_date":day,"source_url":production["source_url"]}
             production["dates"].append([day,hour])
             created_recite+=1
         production["dates"].sort(key=lambda x:x[0])
