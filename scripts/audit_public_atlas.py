@@ -79,8 +79,8 @@ def classify(http_status: int | None, rendered_title: str | None,
         return "unverified"
     if http_status != 200:
         return "unexpected_http"
-    if not rendered_title or not rendered_kind or rendered_kind not in (
-        "Produzione", "Programma composto", "Opera del repertorio", "Teatro",
+    if not rendered_title or not rendered_kind or rendered_kind.casefold() not in (
+        "produzione", "programma composto", "opera del repertorio", "teatro",
     ):
         return "unverified"  # Generic/loading/failed shell is not real content.
     if "aggiornamenti non sono momentaneamente disponibili" in detail_status.casefold():
@@ -89,7 +89,7 @@ def classify(http_status: int | None, rendered_title: str | None,
         return "unverified"
     if "non corrisponde a una scheda pubblicata" in detail_status.casefold():
         return "missing_content"
-    if rendered_kind != expected_kind or rendered_title.casefold().strip() != expected_title.casefold().strip():
+    if rendered_kind.casefold().strip() != expected_kind.casefold().strip() or rendered_title.casefold().strip() != expected_title.casefold().strip():
         return "content_mismatch"
     return "verified_live"
 
@@ -128,7 +128,7 @@ async def scan(browser, candidate: dict, semaphore: asyncio.Semaphore) -> dict:
                     timeout=15000,
                 )
                 title = (await page.locator("#detail-title").inner_text()).strip()
-                kind = (await page.locator("#kind").inner_text()).strip()
+                kind = (await page.locator("#kind").text_content() or "").strip()
                 detail_status = (await page.locator("#detail-status").inner_text()).strip()
         except Exception as exc:
             error = type(exc).__name__
