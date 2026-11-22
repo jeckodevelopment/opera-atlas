@@ -28,7 +28,7 @@ class LivePublicationAuditTests(unittest.TestCase):
         performances = {"performances": [{"staging_id": "s1"}, {"staging_id": "s1"}]}
         programs = {"programs": [{"id": "oa-p-abcd", "title": "Dittico",
                                  "performances": [{"id": "r1"}]}]}
-        result = targets(man, works, stagings, performances, programs)
+        result = targets(man, works, {"venues": []}, stagings, performances, programs)
         self.assertEqual(len(result), 2)
         self.assertEqual(result[0]["route"], "/programmi/oa-p-abcd/")
         self.assertEqual(result[1]["expected_recite"], 2)
