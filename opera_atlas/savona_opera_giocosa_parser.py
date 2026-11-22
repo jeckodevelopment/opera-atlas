@@ -72,7 +72,7 @@ def parse_homepage(html:str,*,url:str=URL)->list[dict]:
                 continue
             # Require a bounded explicit place/name/composer statement.
             match=re.search(
-                r"Teatro Chiabrera\s+Savona\s+(.{3,140}?)\s+di\s+"
+                r"Teatro Chiabrera\s+Savona\s+(.{3,140})\s+di\s+"
                 r"([\wÀ-ÿ.'’ -]{4,90}?)(?=\s+(?:Opera|Concerto|Eventi|"
                 r"Stagione|Teatro|\d{1,2}\s+\w+\s*[-–]?\s*ore)|$)",
                 card,re.I)
