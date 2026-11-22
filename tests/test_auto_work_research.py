@@ -534,6 +534,39 @@ class AutoWorkResearchTests(unittest.TestCase):
         self.assertEqual(len([x for x in choices if x["id"].startswith("new-")]),12)
         self.assertIn(known["id"],{x["id"] for x in choices})
 
+    def test_published_candidate_health_replaces_stale_research_wait(self):
+        from scripts.auto_work_research import reconcile_published_outcomes
+        url="https://www.iteatri.re.it/spettacolo/death-in-venice/"
+        candidate={"id":"death-test","status":"already_catalogued",
+                   "source_key":"reggio-valli-opera-2026-27",
+                   "official_url":url}
+        registry={"works":{"death|britten":{"id":"oa-w-000013"}},
+                  "stagings":{"official":{"id":"oa-s-000152",
+                                         "source_url":url,
+                                         "work_id":"oa-w-000013"}}}
+        statuses=[{"candidate_id":"death-test",
+                   "status":"awaiting_official_identity_evidence"},
+                  {"candidate_id":"unrelated","status":"automatic_retry"}]
+        found=reconcile_published_outcomes({"candidates":[candidate]},statuses,registry)
+        self.assertEqual(len(found),2)
+        self.assertEqual(next(x for x in found if x["candidate_id"]=="death-test"),
+                         {"candidate_id":"death-test","status":"already_catalogued",
+                          "work_id":"oa-w-000013",
+                          "source_key":"reggio-valli-opera-2026-27",
+                          "official_url":url})
+        self.assertEqual(next(x for x in found if x["candidate_id"]=="unrelated")["status"],
+                         "automatic_retry")
+        # An index marker on its own cannot declare publication.
+        empty=reconcile_published_outcomes(
+            {"candidates":[candidate]},statuses,{"works":registry["works"],"stagings":{}})
+        self.assertEqual(empty,statuses)
+        # Never conflate two staging identities against the same source URL.
+        duplicate={"works":registry["works"],
+                   "stagings":{**registry["stagings"],
+                               "another":dict(registry["stagings"]["official"])}}
+        self.assertEqual(reconcile_published_outcomes({"candidates":[candidate]},
+                        statuses,duplicate),statuses)
+
     def test_never_search_outside_exact_approved_url(self):
         self.assertIsNone(official_title_hint({
             "source_key":"scala-season-2026-27",
