@@ -533,7 +533,7 @@
       "id": "oa-index-38d6a0376cd3960e14fe",
       "source_key": "macerata-festival-rolling",
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:08:03+00:00",
       "last_seen": "2026-11-22T16:08:03+00:00"
     },
@@ -733,7 +733,7 @@
       "id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T12:32:18+00:00"
     },
@@ -1413,7 +1413,7 @@
       "id": "oa-index-a6cead48df9475df119e",
       "source_key": "macerata-festival-rolling",
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:08:03+00:00",
       "last_seen": "2026-11-22T16:08:03+00:00"
     },
@@ -1861,7 +1861,7 @@
       "id": "oa-index-d8275c7a129bf19b2ec8",
       "source_key": "macerata-festival-rolling",
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:08:03+00:00",
       "last_seen": "2026-11-22T16:08:03+00:00"
     },
