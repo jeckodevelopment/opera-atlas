@@ -26,7 +26,7 @@ ROLLOVER_KEYS={
     "giglio-lucca-opera-2026-27",
 }
 
-def next_index(source:dict,*,today:date)->str|None:
+def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
     key=source["key"]
     if key not in ROLLOVER_KEYS or source["access_status"]!="approved":
         return None
@@ -36,7 +36,7 @@ def next_index(source:dict,*,today:date)->str|None:
         if not match:return None
         start=int(match[1])
         if (int(match[2])!=start+1
-                or today<date(start+1,6,1) or start>=2098):
+                or (not allow_early and today<date(start+1,6,1)) or start>=2098):
             return None
         return (f"https://{url.hostname}/it/cartellone/lirica/"
                 f"stagione-{start+1}-{start+2}/")
@@ -53,7 +53,7 @@ def next_index(source:dict,*,today:date)->str|None:
         match=re.fullmatch(r"/calendario/(20\d{2})/01/opera",url.path)
         if not match:return None
         year=int(match[1])
-        if today<date(year,6,1) or year>=2099:return None
+        if (not allow_early and today<date(year,6,1)) or year>=2099:return None
         return f"https://{url.hostname}/calendario/{year+1}/01/opera"
     if key=="scala-season-2026-27":
         match=re.fullmatch(r"/it/stagione/(20\d{2})-(20\d{2})/index\.html",url.path)
@@ -63,7 +63,7 @@ def next_index(source:dict,*,today:date)->str|None:
         match=re.fullmatch(r"/la-stagione-(20\d{2})-(\d{2})/",url.path)
     if not match:return None
     start=int(match[1])
-    if (today<date(start+1,6,1) or start>=2098):
+    if ((not allow_early and today<date(start+1,6,1)) or start>=2098):
         return None
     next_start=start+1
     if key=="scala-season-2026-27":
