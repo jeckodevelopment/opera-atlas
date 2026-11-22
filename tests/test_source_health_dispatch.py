@@ -14,6 +14,8 @@ class SourceHealthWorkflowTests(unittest.TestCase):
         workflow=(Path(__file__).resolve().parents[1]/
                   ".github/workflows/refresh-source-health.yml").read_text(encoding="utf-8")
         self.assertIn("if: steps.checkpoint.outputs.deferred == 'true'",workflow)
+        self.assertIn("      - 'opera_atlas/rovigo_opera_parser.py'",workflow)
+        self.assertIn("      - 'opera_atlas/modena_opera_parser.py'",workflow)
         self.assertIn("git reset --hard origin/main",workflow)
         self.assertIn("for attempt in 1 2; do",workflow)
         self.assertIn("python -m scripts.discover_season_indexes --allow-network",workflow)
