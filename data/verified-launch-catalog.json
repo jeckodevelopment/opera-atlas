@@ -6502,6 +6502,41 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-76fee4db156090b6",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
+      "dates": [
+        [
+          "2026-10-16",
+          "19:30"
+        ],
+        [
+          "2026-10-17",
+          "15:00"
+        ],
+        [
+          "2026-10-18",
+          "15:00"
+        ],
+        [
+          "2026-10-23",
+          "19:30"
+        ],
+        [
+          "2026-10-24",
+          "19:30"
+        ],
+        [
+          "2026-10-25",
+          "15:00"
+        ]
+      ]
     }
   ]
 }

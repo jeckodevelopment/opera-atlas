@@ -3082,6 +3082,14 @@
       "slug": "don-giovanni",
       "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
       "season": "2027"
+    },
+    "auto-76fee4db156090b6": {
+      "id": "oa-s-000252",
+      "work_id": "oa-w-000045",
+      "venue_id": "oa-v-000015",
+      "slug": "le-nozze-di-figaro",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -8809,6 +8817,42 @@
       "staging_id": "oa-s-000251",
       "original_date": "2027-01-24",
       "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+    },
+    "auto-76fee4db156090b6|2026-10-16": {
+      "id": "oa-r-000976",
+      "staging_id": "oa-s-000252",
+      "original_date": "2026-10-16",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+    },
+    "auto-76fee4db156090b6|2026-10-17": {
+      "id": "oa-r-000977",
+      "staging_id": "oa-s-000252",
+      "original_date": "2026-10-17",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+    },
+    "auto-76fee4db156090b6|2026-10-18": {
+      "id": "oa-r-000978",
+      "staging_id": "oa-s-000252",
+      "original_date": "2026-10-18",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+    },
+    "auto-76fee4db156090b6|2026-10-23": {
+      "id": "oa-r-000979",
+      "staging_id": "oa-s-000252",
+      "original_date": "2026-10-23",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+    },
+    "auto-76fee4db156090b6|2026-10-24": {
+      "id": "oa-r-000980",
+      "staging_id": "oa-s-000252",
+      "original_date": "2026-10-24",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+    },
+    "auto-76fee4db156090b6|2026-10-25": {
+      "id": "oa-r-000981",
+      "staging_id": "oa-s-000252",
+      "original_date": "2026-10-25",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
     }
   },
   "reserved_works": {

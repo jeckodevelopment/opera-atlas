@@ -1082,6 +1082,42 @@
       ]
     },
     {
+      "id": "curated:auto-76fee4db156090b6:2026-10-16",
+      "starts_at": "2026-10-16T19:30:00+02:00",
+      "local_date": "2026-10-16",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+      ]
+    },
+    {
+      "id": "curated:auto-76fee4db156090b6:2026-10-17",
+      "starts_at": "2026-10-17T15:00:00+02:00",
+      "local_date": "2026-10-17",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-brescia:2026-10-18",
       "starts_at": null,
       "local_date": "2026-10-18",
@@ -1097,6 +1133,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-76fee4db156090b6:2026-10-18",
+      "starts_at": "2026-10-18T15:00:00+02:00",
+      "local_date": "2026-10-18",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
       ]
     },
     {
@@ -1280,6 +1334,24 @@
       ]
     },
     {
+      "id": "curated:auto-76fee4db156090b6:2026-10-23",
+      "starts_at": "2026-10-23T19:30:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+      ]
+    },
+    {
       "id": "curated:auto-29dbfb9093ce70ed:2026-10-23",
       "starts_at": "2026-10-23T20:00:00+02:00",
       "local_date": "2026-10-23",
@@ -1442,6 +1514,24 @@
       ]
     },
     {
+      "id": "curated:auto-76fee4db156090b6:2026-10-24",
+      "starts_at": "2026-10-24T19:30:00+02:00",
+      "local_date": "2026-10-24",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-novara:2026-10-25",
       "starts_at": null,
       "local_date": "2026-10-25",
@@ -1457,6 +1547,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-76fee4db156090b6:2026-10-25",
+      "starts_at": "2026-10-25T15:00:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Carlo Felice",
+      "municipality": "Genova",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
       ]
     },
     {
