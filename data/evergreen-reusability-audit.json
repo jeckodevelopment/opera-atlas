@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "description": "Static code-level audit of evergreen URL reusability, not live verification of next-year programme availability.",
+  "sources": [
+    {
+      "source_key": "arena-festival-2027",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "bologna-comunale-opera-2026",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "coccia-novara-opera-2027",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "goldoni-livorno-dido-2026-27",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "goldoni-livorno-elisir-2026-27",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "goldoni-livorno-otello-2026-27",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "lecce-apollo-pinocchio-2026",
+      "scope": "historical_notice",
+      "evidence": "A single historic official article/document is not a reusable future-season catalogue."
+    },
+    {
+      "source_key": "lecce-politeama-opera-2026",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "macerata-festival-2027",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "pisa-verdi-opera-2026-27",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "ravenna-alighieri-cherubini-2027",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "rovigo-regione-programma-2026-27",
+      "scope": "historical_notice",
+      "evidence": "A single historic official article/document is not a reusable future-season catalogue."
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "sassari-de-carolis-opera-2026",
+      "scope": "fixed_production_set",
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+    },
+    {
+      "source_key": "teatro-grande-opera-2026",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "scope": "dynamic_category",
+      "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
+    }
+  ]
+}
