@@ -339,6 +339,13 @@
       "min_links": 5
     },
     {
+      "key": "pisa-future-calendar",
+      "official_url": "https://teatrodipisa.it/",
+      "url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "filarmonico-verona-opera-2027",
       "official_url": "https://www.arena.it/",
       "url": "https://www.arena.it/teatro-filarmonico-verona/spettacoli-prossima-stagione/",
