@@ -301,6 +301,10 @@
     "haydn-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "trapani-luglio-musicale-2026": {
+      "strategy": "fixed_year",
+      "verification": "test_verified"
     }
   }
 }
