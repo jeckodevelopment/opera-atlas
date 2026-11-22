@@ -168,7 +168,9 @@ window.OperaAtlasImages=Object.freeze((()=>{
     if(chosen && (chosen.kind==="official_production_image" ||
                   chosen.kind==="archival_work_image" ||
                   chosen.kind==="official_coproduction_poster" ||
-                  chosen.kind==="official_original_work_artwork" || approvedTicketingArt) &&
+                  chosen.kind==="official_original_work_artwork" ||
+                  chosen.kind==="official_civic_production_image" ||
+                  chosen.kind==="verified_historical_theatre_poster" || approvedTicketingArt) &&
        typeof chosen.image_url==="string" && chosen.image_url.startsWith("https://")){
       return {src:chosen.image_url,
         alt:chosen.alt||"Immagine autentica dell’opera "+title,
