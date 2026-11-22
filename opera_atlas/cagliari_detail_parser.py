@@ -38,8 +38,25 @@ def verified_brochure(slug: str, title: str, composer: str) -> dict:
     if (normalize(work["title"])!=normalize(title) or
         normalize(work["composer"])!=normalize(composer)):
         raise ValueError("official brochure work identity disagrees with detail")
-    return work
-
+    # Retain the original printed brochure times and apply only an exact,
+    # source-attributed correction from the theatre's current event page.
+    # Never silently use a mismatching event time or a generic site calendar.
+    revised={**work,"dates":[list(row) for row in work["dates"]]}
+    for override in document.get("live_schedule_overrides",[]):
+        if override.get("slug")!=slug:
+            continue
+        if (override.get("source_url")!=f"https://{HOST}/evento/{slug}/"
+            or not re.fullmatch(r"20\\d{2}-\\d{2}-\\d{2}",override.get("date",""))
+            or not re.fullmatch(r"(?:[01]\\d|2[0-3]):[0-5]\\d",override.get("brochure_time",""))
+            or not re.fullmatch(r"(?:[01]\\d|2[0-3]):[0-5]\\d",override.get("current_time",""))
+            or not re.fullmatch(r"20\\d{2}-\\d{2}-\\d{2}",override.get("verified_at",""))):
+            raise ValueError("invalid current theatre schedule correction")
+        matches=[row for row in revised["dates"]
+                 if row==[override["date"],override["brochure_time"]]]
+        if len(matches)!=1:
+            raise ValueError("schedule correction does not match original brochure")
+        matches[0][1]=override["current_time"]
+    return revised
 
 
 class PageHeadings(HTMLParser):
