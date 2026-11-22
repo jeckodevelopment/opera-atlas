@@ -806,6 +806,12 @@ def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
+    if source_key=="savona-giocosa-rolling-opera":
+        from opera_atlas.savona_opera_giocosa_parser import parse_homepage
+        return [{"event_title":row["title"],"composer":row["composer"],
+                 "venue":row["venue"],"date":row["date"],
+                 "starts_at":official_local_time(row["date"],row["time"])}
+                for row in parse_homepage(html,url=url)]
     if source_key=="sassari-de-carolis-rolling-opera":
         from opera_atlas.sassari_future_parser import parse_detail
         title,composer,venue,recite=parse_detail(html,url=url)
