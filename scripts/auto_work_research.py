@@ -676,6 +676,34 @@ def research(candidates:dict,existing:dict,known_slugs:set[str],*,
     return {"schema_version":1,"works":sorted(existing_works.values(),
                                              key=lambda x:x["candidate_id"])},statuses
 
+def reconcile_published_outcomes(candidates:dict, statuses:list[dict],
+                                 registry:dict)->list[dict]:
+    """Report committed source/staging identities instead of stale research waits.
+
+    Only a candidate already marked catalogued AND an exact official source
+    URL tied to one registered staging may be classified as published. Title
+    similarity is never evidence; this preserves independent homonyms.
+    """
+    valid_works={w["id"] for w in registry.get("works",{}).values()}
+    by_source={}
+    for staging in registry.get("stagings",{}).values():
+        if staging.get("work_id") in valid_works:
+            by_source.setdefault(staging.get("source_url"),[]).append(staging)
+    resolved={}
+    for candidate in candidates.get("candidates",[]):
+        if not isinstance(candidate,dict) or candidate.get("status")!="already_catalogued":
+            continue
+        matches=by_source.get(candidate.get("official_url"),[])
+        if len(matches)!=1:continue
+        resolved[candidate["id"]]={
+            "candidate_id":candidate["id"],"status":"already_catalogued",
+            "work_id":matches[0]["work_id"],"source_key":candidate.get("source_key"),
+            "official_url":candidate["official_url"]}
+    return ([status for status in statuses
+             if status.get("candidate_id") not in resolved]
+            +list(resolved.values()))
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--allow-network",action="store_true")
@@ -689,6 +717,7 @@ def main():
     result,statuses=research(candidates,previous,{x["slug"] for x in known["works"].values()},
                              today=date.today(),evidence=evidence,
                              allow_authority=args.allow_network)
+    statuses=reconcile_published_outcomes(candidates,statuses,known)
     _write_atomic(OUT,result)
     _write_atomic(HEALTH,{"schema_version":1,"checked_at":datetime.now(timezone.utc).isoformat(
         timespec="seconds"),"outcomes":statuses})
