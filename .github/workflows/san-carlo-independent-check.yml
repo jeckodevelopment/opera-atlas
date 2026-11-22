@@ -2,6 +2,13 @@ name: San Carlo independent showtime check
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/san-carlo-independent-check.yml'
+      - 'scripts/corroborate_san_carlo_secondary.py'
+      - 'scripts/scan_san_carlo_secondary.py'
+      - 'tests/test_san_carlo_independent_corroboration.py'
+      - 'tests/test_san_carlo_secondary_probe.py'
   push:
     branches: [main]
     paths:
