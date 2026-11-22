@@ -61,6 +61,9 @@ def parse_family_opera(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str
     labels=re.findall(r"\b(?:Scuole|Famiglie)\b",schedule,re.I)
     if len(labels)!=len(matches):
         raise ValueError("unrecognized Parma audience-specific ticket row")
+    clocks=re.findall(r"\b(?:[01]?\d|2[0-3]):[0-5]\d\b",schedule)
+    if len(clocks)!=len(matches):
+        raise ValueError("unbound official Parma ticket hour")
     rows=[]
     for m in matches:
         weekday,day,month,hour,minute,audience=m.groups()
