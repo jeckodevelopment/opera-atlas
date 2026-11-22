@@ -17,13 +17,13 @@ TRENTO="https://www.haydn.it/eventi/la-clemenza-di-tito"
 INDEX_HTML=f'<a href="/eventi/la-boheme-5">Boheme</a><a href="{TRENTO}">Clemenza</a>'
 
 def page(title="La bohème",composer="Giacomo Puccini",location="Bolzano",
-         when="16.04.2027",hour="20.00",genre="Opera"):
+         when="16.04.2027",hour="20.00",genre="Opera",credited=None):
     if location=="Bolzano":
         where="Teatro Comunale - Sala Grande Piazza Verdi 40 - Bolzano"
     else:
         where="Teatro Sociale Via Paolo Oss-Mazzurana 19 - Trento"
     return (f'<main><h1>{title}</h1><p>{composer}</p><p>{genre}</p>'
-            f'<p>Musica di {composer} Libretto di Autore</p>'
+            f'<p>Musica di {credited or composer} Libretto di Autore</p>'
             f'<p>Venerdì {when} alle {hour}</p><p>{where}</p>'
             '<h2>Programma</h2><p>Stagione d’Opera 2026/27</p>'
             '<h2>Cast</h2><p>Artist biographies mention Teatro Sociale and '
@@ -49,13 +49,13 @@ class HaydnRollingOperaTests(unittest.TestCase):
 
     def test_bolzano_and_trento_metadata_are_separate(self):
         bolzano=page()
-        trento=page("La clemenza di Tito","Wolfgang A. Mozart","Trento",
-                    "27.11.2026","20.00")
+        trento=page("La clemenza di Tito","Wolfgang Amadeus Mozart","Trento",
+                    "27.11.2026","20.00",credited="Wolfgang A. Mozart")
         self.assertEqual(parse_detail(bolzano,url=BOLZANO),
                          ("La bohème","Giacomo Puccini",
                           "Teatro Comunale di Bolzano",[("2027-04-16","20:00")]))
         self.assertEqual(parse_detail(trento,url=TRENTO),
-                         ("La clemenza di Tito","Wolfgang A. Mozart",
+                         ("La clemenza di Tito","Wolfgang Amadeus Mozart",
                           "Teatro Sociale",[("2026-11-27","20:00")]))
         rows=parse_source_credited_opera_detail(KEY,BOLZANO,bolzano)
         self.assertEqual(rows,[{
@@ -68,6 +68,20 @@ class HaydnRollingOperaTests(unittest.TestCase):
         trento_rows=parse_source_credited_opera_detail(KEY,TRENTO,trento)
         self.assertEqual(verified_venue(KEY,trento_rows,registry)[0:2],
                          ("Trento","Teatro Sociale"))
+
+    def test_official_full_heading_resolves_middle_initial_only_if_matching(self):
+        html=page("La clemenza di Tito","Wolfgang Amadeus Mozart","Trento",
+                  "27.11.2026","20.00",credited="Wolfgang A. Mozart")
+        rows=parse_source_credited_opera_detail(KEY,TRENTO,html)
+        self.assertEqual(rows[0]["composer"],"Wolfgang Amadeus Mozart")
+        with self.assertRaisesRegex(ValueError,"credits conflict"):
+            parse_detail(page("La clemenza di Tito","Wolfgang Amadeus Mozart",
+                              "Trento","27.11.2026","20.00",
+                              credited="Wolfgang B. Mozart"),url=TRENTO)
+        with self.assertRaisesRegex(ValueError,"credits conflict"):
+            parse_detail(page("La clemenza di Tito","Wolfgang Amadeus Mozart",
+                              "Trento","27.11.2026","20.00",
+                              credited="Antonio Salieri"),url=TRENTO)
 
     def test_mixed_concerts_and_wrong_places_never_become_operas(self):
         original=page()
