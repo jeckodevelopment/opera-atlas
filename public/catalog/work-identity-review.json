@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T01:57:44+00:00",
+  "checked_at": "2026-11-22T02:09:48+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -237,23 +237,6 @@
     },
     {
       "candidate_ids": [
-        "oa-index-3b54fb1b4f9d0adac29f"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Gioachino Rossini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "pisa-verdi-opera-2026-27",
-          "url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
-        }
-      ],
-      "title": "L'occasione fa il ladro"
-    },
-    {
-      "candidate_ids": [
         "oa-index-4277f285769ff880bef4"
       ],
       "category": "new_work_candidate",
@@ -291,13 +274,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 146,
+    "candidates_checked": 147,
     "candidates_without_facts": 0,
-    "facts_examined": 630,
-    "facts_resolved": 578,
-    "translated_facts_resolved": 4,
-    "unmatched_facts": 52,
-    "unmatched_groups": 15
+    "facts_examined": 632,
+    "facts_resolved": 582,
+    "translated_facts_resolved": 0,
+    "unmatched_facts": 50,
+    "unmatched_groups": 14
   },
   "truncated": false
 }
