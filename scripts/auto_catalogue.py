@@ -30,6 +30,7 @@ VENUE_BY_SOURCE={
     "lirico-cagliari-opera-2027":("Cagliari","Teatro Lirico di Cagliari"),
     "bellini-catania-opera-2026-27":("Catania","Teatro Massimo Bellini"),
     "modena-teatro-opera-2026-27":("Modena","Teatro Comunale Pavarotti-Freni"),
+    "spoleto-tls-lirica-2026":("Spoleto","Teatro Nuovo Gian Carlo Menotti"),
     "chieti-marrucino-lirica-2026":("Chieti","Teatro Marrucino"),
     "modena-opera-2026-27":("Modena","Teatro Comunale Pavarotti-Freni"),
     "giglio-lucca-opera-2026-27":("Lucca","Teatro del Giglio Giacomo Puccini"),
@@ -321,7 +322,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
