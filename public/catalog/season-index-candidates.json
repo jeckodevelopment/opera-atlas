@@ -653,7 +653,7 @@
       "id": "oa-index-4d1f34e8ade7fc6e36ea",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -757,7 +757,7 @@
       "id": "oa-index-5957ac7d6a8b0d34cb4b",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -1157,7 +1157,7 @@
       "id": "oa-index-86855eb33828e6cde6af",
       "source_key": "sassari-de-carolis-rolling-opera",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -1461,7 +1461,7 @@
       "id": "oa-index-a4402559616047a0367b",
       "source_key": "savona-giocosa-rolling-opera",
       "official_url": "https://operagiocosa.it/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T17:52:01+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -2101,7 +2101,7 @@
       "id": "oa-index-e44f89c2a6d468342e8a",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },
@@ -2397,7 +2397,7 @@
       "id": "oa-index-fecbb06d8dc649b616d2",
       "source_key": "sassari-de-carolis-rolling-opera",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
     },

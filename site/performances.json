@@ -488,6 +488,132 @@
       ]
     },
     {
+      "id": "curated:auto-8a5b2704042c6c29:2026-06-06",
+      "starts_at": "2026-06-06T18:00:00+02:00",
+      "local_date": "2026-06-06",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "L'arca di Noè",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://operagiocosa.it/"
+      ]
+    },
+    {
+      "id": "curated:auto-fecbb06d8dc649b6:2026-07-03",
+      "starts_at": "2026-07-03T22:00:00+02:00",
+      "local_date": "2026-07-03",
+      "time_known": true,
+      "time_label": "22:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Forte della Maddalena",
+      "municipality": "Alghero",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370"
+      ]
+    },
+    {
+      "id": "curated:auto-fecbb06d8dc649b6:2026-07-05",
+      "starts_at": "2026-07-05T22:00:00+02:00",
+      "local_date": "2026-07-05",
+      "time_known": true,
+      "time_label": "22:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Forte della Maddalena",
+      "municipality": "Alghero",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370"
+      ]
+    },
+    {
+      "id": "curated:auto-86855eb33828e6cd:2026-07-17",
+      "starts_at": "2026-07-17T22:00:00+02:00",
+      "local_date": "2026-07-17",
+      "time_known": true,
+      "time_label": "22:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Forte della Maddalena",
+      "municipality": "Alghero",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+      ]
+    },
+    {
+      "id": "curated:auto-86855eb33828e6cd:2026-07-19",
+      "starts_at": "2026-07-19T22:00:00+02:00",
+      "local_date": "2026-07-19",
+      "time_known": true,
+      "time_label": "22:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Forte della Maddalena",
+      "municipality": "Alghero",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+      ]
+    },
+    {
+      "id": "curated:auto-e44f89c2a6d46834:2026-08-19",
+      "starts_at": "2026-08-19T21:30:00+02:00",
+      "local_date": "2026-08-19",
+      "time_known": true,
+      "time_label": "21:30",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Piazza Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/"
+      ]
+    },
+    {
+      "id": "curated:auto-4d1f34e8ade7fc6e:2026-08-20",
+      "starts_at": "2026-08-20T21:30:00+02:00",
+      "local_date": "2026-08-20",
+      "time_known": true,
+      "time_label": "21:30",
+      "status": "announced",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Piazza Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
+      ]
+    },
+    {
       "id": "curated:auto-207df538679e0065:2026-09-14",
       "starts_at": "2026-09-14T20:30:00+02:00",
       "local_date": "2026-09-14",
@@ -1172,6 +1298,24 @@
       ]
     },
     {
+      "id": "curated:auto-4c4abd76b3f01536:2026-10-23",
+      "starts_at": "2026-10-23T20:00:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://operagiocosa.it/"
+      ]
+    },
+    {
       "id": "curated:regio-boheme-leoncavallo-2026:2026-10-23",
       "starts_at": "2026-10-23T20:00:00+02:00",
       "local_date": "2026-10-23",
@@ -1280,6 +1424,24 @@
       ]
     },
     {
+      "id": "curated:auto-4c4abd76b3f01536:2026-10-24",
+      "starts_at": "2026-10-24T18:00:00+02:00",
+      "local_date": "2026-10-24",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://operagiocosa.it/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-novara:2026-10-25",
       "starts_at": null,
       "local_date": "2026-10-25",
@@ -1295,6 +1457,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-4c4abd76b3f01536:2026-10-25",
+      "starts_at": "2026-10-25T15:30:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://operagiocosa.it/"
       ]
     },
     {
@@ -1730,6 +1910,24 @@
       ]
     },
     {
+      "id": "curated:auto-f405276a6e49ceb2:2026-11-07",
+      "starts_at": "2026-11-07T18:00:00+01:00",
+      "local_date": "2026-11-07",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "I salvatori della mezzanotte",
+      "composer": "Daniele Furlati",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://operagiocosa.it/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-11-07",
       "starts_at": "2026-11-07T20:00:00+01:00",
       "local_date": "2026-11-07",
@@ -1835,6 +2033,24 @@
       "longitude": null,
       "sources": [
         "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-5957ac7d6a8b0d34:2026-11-08",
+      "starts_at": "2026-11-08T20:00:00+01:00",
+      "local_date": "2026-11-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/"
       ]
     },
     {

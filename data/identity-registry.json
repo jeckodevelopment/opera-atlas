@@ -1034,6 +1034,30 @@
       "name": "Teatro Sociale",
       "city": "Rovigo",
       "region": "Veneto"
+    },
+    "Livorno|Piazza Goldoni": {
+      "id": "oa-v-000051",
+      "slug": "piazza-goldoni",
+      "city_slug": "livorno",
+      "name": "Piazza Goldoni",
+      "city": "Livorno",
+      "region": "Toscana"
+    },
+    "Alghero|Forte della Maddalena": {
+      "id": "oa-v-000052",
+      "slug": "forte-della-maddalena",
+      "city_slug": "alghero",
+      "name": "Forte della Maddalena",
+      "city": "Alghero",
+      "region": "Sardegna"
+    },
+    "Savona|Teatro Chiabrera": {
+      "id": "oa-v-000053",
+      "slug": "teatro-chiabrera",
+      "city_slug": "savona",
+      "name": "Teatro Chiabrera",
+      "city": "Savona",
+      "region": "Liguria"
     }
   },
   "stagings": {
@@ -2831,6 +2855,72 @@
       "slug": "aida",
       "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida",
       "season": "2027"
+    },
+    "auto-4d1f34e8ade7fc6e": {
+      "id": "oa-s-000231",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000051",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
+      "season": "2026"
+    },
+    "auto-5957ac7d6a8b0d34": {
+      "id": "oa-s-000232",
+      "work_id": "oa-w-000052",
+      "venue_id": "oa-v-000032",
+      "slug": "dido-and-aeneas",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
+      "season": "2026",
+      "route_slug": "dido-and-aeneas-dido-ed-enea-2"
+    },
+    "auto-86855eb33828e6cd": {
+      "id": "oa-s-000233",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000052",
+      "slug": "pagliacci",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371",
+      "season": "2026"
+    },
+    "auto-f405276a6e49ceb2": {
+      "id": "oa-s-000234",
+      "work_id": "oa-w-000097",
+      "venue_id": "oa-v-000053",
+      "slug": "i-salvatori-della-mezzanotte",
+      "source_url": "https://operagiocosa.it/",
+      "season": "2026"
+    },
+    "auto-4c4abd76b3f01536": {
+      "id": "oa-s-000235",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000053",
+      "slug": "la-traviata",
+      "source_url": "https://operagiocosa.it/",
+      "season": "2026"
+    },
+    "auto-8a5b2704042c6c29": {
+      "id": "oa-s-000236",
+      "work_id": "oa-w-000065",
+      "venue_id": "oa-v-000053",
+      "slug": "arca-di-noe",
+      "source_url": "https://operagiocosa.it/",
+      "season": "2026"
+    },
+    "auto-e44f89c2a6d46834": {
+      "id": "oa-s-000237",
+      "work_id": "oa-w-000005",
+      "venue_id": "oa-v-000051",
+      "slug": "cavalleria-rusticana",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
+      "season": "2026",
+      "route_slug": "cavalleria-rusticana-cavalleria-rusticana"
+    },
+    "auto-fecbb06d8dc649b6": {
+      "id": "oa-s-000238",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000052",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
+      "season": "2026"
     }
   },
   "performances": {
@@ -8365,6 +8455,78 @@
       "staging_id": "oa-s-000230",
       "original_date": "2027-02-28",
       "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida"
+    },
+    "auto-4d1f34e8ade7fc6e|2026-08-20": {
+      "id": "oa-r-000944",
+      "staging_id": "oa-s-000231",
+      "original_date": "2026-08-20",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
+    },
+    "auto-5957ac7d6a8b0d34|2026-11-08": {
+      "id": "oa-r-000945",
+      "staging_id": "oa-s-000232",
+      "original_date": "2026-11-08",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/"
+    },
+    "auto-86855eb33828e6cd|2026-07-17": {
+      "id": "oa-r-000946",
+      "staging_id": "oa-s-000233",
+      "original_date": "2026-07-17",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+    },
+    "auto-86855eb33828e6cd|2026-07-19": {
+      "id": "oa-r-000947",
+      "staging_id": "oa-s-000233",
+      "original_date": "2026-07-19",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+    },
+    "auto-f405276a6e49ceb2|2026-11-07": {
+      "id": "oa-r-000948",
+      "staging_id": "oa-s-000234",
+      "original_date": "2026-11-07",
+      "source_url": "https://operagiocosa.it/"
+    },
+    "auto-4c4abd76b3f01536|2026-10-23": {
+      "id": "oa-r-000949",
+      "staging_id": "oa-s-000235",
+      "original_date": "2026-10-23",
+      "source_url": "https://operagiocosa.it/"
+    },
+    "auto-4c4abd76b3f01536|2026-10-24": {
+      "id": "oa-r-000950",
+      "staging_id": "oa-s-000235",
+      "original_date": "2026-10-24",
+      "source_url": "https://operagiocosa.it/"
+    },
+    "auto-4c4abd76b3f01536|2026-10-25": {
+      "id": "oa-r-000951",
+      "staging_id": "oa-s-000235",
+      "original_date": "2026-10-25",
+      "source_url": "https://operagiocosa.it/"
+    },
+    "auto-8a5b2704042c6c29|2026-06-06": {
+      "id": "oa-r-000952",
+      "staging_id": "oa-s-000236",
+      "original_date": "2026-06-06",
+      "source_url": "https://operagiocosa.it/"
+    },
+    "auto-e44f89c2a6d46834|2026-08-19": {
+      "id": "oa-r-000953",
+      "staging_id": "oa-s-000237",
+      "original_date": "2026-08-19",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/"
+    },
+    "auto-fecbb06d8dc649b6|2026-07-03": {
+      "id": "oa-r-000954",
+      "staging_id": "oa-s-000238",
+      "original_date": "2026-07-03",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370"
+    },
+    "auto-fecbb06d8dc649b6|2026-07-05": {
+      "id": "oa-r-000955",
+      "staging_id": "oa-s-000238",
+      "original_date": "2026-07-05",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370"
     }
   },
   "reserved_works": {

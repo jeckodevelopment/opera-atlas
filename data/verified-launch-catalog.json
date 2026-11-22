@@ -6154,6 +6154,142 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-4d1f34e8ade7fc6e",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Piazza Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
+      "dates": [
+        [
+          "2026-08-20",
+          "21:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-5957ac7d6a8b0d34",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
+      "dates": [
+        [
+          "2026-11-08",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-86855eb33828e6cd",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Forte della Maddalena",
+      "municipality": "Alghero",
+      "region": "Sardegna",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371",
+      "dates": [
+        [
+          "2026-07-17",
+          "22:00"
+        ],
+        [
+          "2026-07-19",
+          "22:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f405276a6e49ceb2",
+      "title": "I salvatori della mezzanotte",
+      "composer": "Daniele Furlati",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "source_url": "https://operagiocosa.it/",
+      "dates": [
+        [
+          "2026-11-07",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-4c4abd76b3f01536",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "source_url": "https://operagiocosa.it/",
+      "dates": [
+        [
+          "2026-10-23",
+          "20:00"
+        ],
+        [
+          "2026-10-24",
+          "18:00"
+        ],
+        [
+          "2026-10-25",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-8a5b2704042c6c29",
+      "title": "L'arca di Noè",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Chiabrera",
+      "municipality": "Savona",
+      "region": "Liguria",
+      "source_url": "https://operagiocosa.it/",
+      "dates": [
+        [
+          "2026-06-06",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-e44f89c2a6d46834",
+      "title": "Cavalleria rusticana",
+      "composer": "Pietro Mascagni",
+      "venue": "Piazza Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
+      "dates": [
+        [
+          "2026-08-19",
+          "21:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-fecbb06d8dc649b6",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Forte della Maddalena",
+      "municipality": "Alghero",
+      "region": "Sardegna",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
+      "dates": [
+        [
+          "2026-07-03",
+          "22:00"
+        ],
+        [
+          "2026-07-05",
+          "22:00"
+        ]
+      ]
     }
   ]
 }
