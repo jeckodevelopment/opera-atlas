@@ -330,6 +330,42 @@
       "description": "Copertina storica del libretto di Der fliegende Holländer (1868), non fotografia della produzione di Modena",
       "credit": "Libretto storico di Der fliegende Holländer di Richard Wagner, Wikimedia Commons",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Libretto_Der_fliegende_Holl%C3%A4nder_1868.jpg"
+    },
+    "luisa-miller": {
+      "file": "Giuseppe Verdi - Luisa Miller - titlepage of the libretto - Naples 1849.png",
+      "description": "Frontespizio del libretto storico di Luisa Miller (1849), non il manifesto dell'allestimento 2026",
+      "credit": "Libretto storico, Napoli 1849 / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "peter-grimes": {
+      "file": "Peter-grimes-the-borough-1812.jpg",
+      "description": "Pagina storica del poema The Borough di George Crabbe, fonte letteraria di Peter Grimes; non immagine dell'allestimento",
+      "credit": "George Crabbe, The Borough (1812) / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "nina-o-sia-la-pazza-per-amore": {
+      "file": "Giovanni Paisiello - Nina - title page of the libretto - Naples 1789.png",
+      "description": "Frontespizio del libretto storico di Nina di Paisiello (1789), non l'allestimento 2027",
+      "credit": "Libretto storico, Napoli 1789 / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "otto-mesi-in-due-ore-o-sia-gli-esiliati-in-siberia": {
+      "file": "Gaetano Donizetti - Otto mesi in due ore - title page of the libretto - Naples 1827.png",
+      "description": "Frontespizio del libretto di Otto mesi in due ore del 1827, non l'allestimento del San Carlo 2027",
+      "credit": "Libretto storico, Napoli 1827 / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "la-damnation-de-faust": {
+      "file": "Berlioz LDdF.jpg",
+      "description": "Prima pagina del manoscritto originale della Damnation de Faust di Berlioz, non manifesto dello spettacolo",
+      "credit": "Hector Berlioz, manoscritto storico / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "la-chute-de-la-maison-usher": {
+      "file": "The Fall of the House of Usher, d'après Edgard Poe. L. 112. Esquisses pour chant et piano (manuscrit autographe) - btv1b550079763 (8 of 8).jpg",
+      "description": "Pagina del manoscritto incompiuto di Debussy per La chute de la maison Usher, non il nuovo completamento di Solbiati",
+      "credit": "Claude Debussy, manoscritto storico / BnF / Wikimedia Commons",
+      "license": "Public domain"
     }
   },
   "works_by_id": {

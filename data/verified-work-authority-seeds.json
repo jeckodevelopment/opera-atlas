@@ -138,6 +138,23 @@
     },
     {
       "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+      "title": "Dove nasce il melograno",
+      "composer": "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
+      "synopsis": "Una nuova opera realizzata con gli allievi dell'Accademia AMO e il coinvolgimento degli studenti dell'Istituto Omar. La creazione intreccia musica e drammaturgia in un progetto corale del Teatro Coccia.",
+      "history": {
+        "librettist": "Pietro Utili",
+        "premiere_year": 2027,
+        "premiere_venue": "Teatro Coccia",
+        "premiere_city": "Novara",
+        "sources": [
+          "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+          "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/Pieghevole_Stagione2027.pdf"
+        ]
+      }
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "title": "Il noce di Benevento",
       "composer": "Giuseppe Balducci",
@@ -269,6 +286,40 @@
         "sources": [
           "https://www.rossinioperafestival.it/soggetti/il-signor-bruschino/",
           "https://corago.unibo.it/opera/Z000013626"
+        ]
+      }
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+      "title": "Cronaca di un amore. Callas e Pasolini",
+      "composer": "Davide Tramontano",
+      "synopsis": "Il rapporto tra Maria Callas e Pier Paolo Pasolini prende forma in un racconto musicale che intreccia documenti, testimonianze e immaginazione, esplorando l'incontro umano e artistico tra due figure del Novecento.",
+      "history": {
+        "librettist": "Alberto Mattioli",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Municipale",
+        "premiere_city": "Piacenza",
+        "sources": [
+          "https://teatripiacenza.it/event/cronaca-di-un-amore/",
+          "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
+        ]
+      }
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+      "title": "Cronaca di un amore. Callas e Pasolini",
+      "composer": "Davide Tramontano",
+      "synopsis": "Il rapporto tra Maria Callas e Pier Paolo Pasolini prende forma in un racconto musicale che intreccia documenti, testimonianze e immaginazione, esplorando l'incontro umano e artistico tra due figure del Novecento.",
+      "history": {
+        "librettist": "Alberto Mattioli",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Municipale",
+        "premiere_city": "Piacenza",
+        "sources": [
+          "https://teatripiacenza.it/event/cronaca-di-un-amore/",
+          "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
         ]
       }
     },
@@ -452,6 +503,109 @@
       }
     },
     {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/",
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "synopsis": "Nella dimora degli Usher, Roderick è consumato dalla paura mentre la sorella Madeline sembra avvicinarsi alla morte. Il ritorno inatteso della giovane precipita la famiglia e la casa nella tragedia.",
+      "history": {
+        "librettist": "Claude Debussy, dal racconto di Edgar Allan Poe",
+        "premiere_year": 2027,
+        "premiere_venue": "Teatro di San Carlo (nuovo completamento di Solbiati)",
+        "premiere_city": "Napoli",
+        "sources": [
+          "https://www.unina.it/it/w/stagione-2026/2027-del-teatro-di-san-carlo?redirect=%2Fit%2Ff2-magazine%2Fmagazine",
+          "https://catalogue.bnf.fr/ark:/12148/cb139114073",
+          "https://rism.info/fr/musical_anniversaries/2018/03/22/100th-anniversary-of-claude-debussys-death.html"
+        ]
+      }
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "synopsis": "Faust, inquieto e insoddisfatto, si affida a Méphistophélès e incontra Marguerite. L'inganno del demonio conduce i due amanti verso destini opposti: la dannazione e la salvezza.",
+      "history": {
+        "librettist": "Hector Berlioz e Almire Gandonnière",
+        "premiere_year": 1846,
+        "premiere_venue": "Opéra-Comique (Salle Favart)",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://catalogue.bnf.fr/ark:/12148/cb13908492n.public",
+          "https://www.glyndebourne.com/opera-archive/explore-our-operas/explore-la-damnation-de-faust/la-damnation-de-faust-synopsis/"
+        ]
+      }
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Luisa e Rodolfo si amano, ma le ambizioni del padre di lui e le manovre del cortigiano Wurm li separano. Una lettera estorta con l'inganno conduce i due giovani a un epilogo tragico.",
+      "history": {
+        "librettist": "Salvadore Cammarano",
+        "premiere_year": 1849,
+        "premiere_venue": "Teatro di San Carlo",
+        "premiere_city": "Napoli",
+        "sources": [
+          "https://memboa.operaamerica.org/Applications/schedule/details.aspx?titleID=3385",
+          "https://academic.oup.com/book/49368/chapter-abstract/422380124"
+        ]
+      }
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/",
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "synopsis": "Credendo morto l'amato Lindoro, Nina smarrisce la ragione e continua ad attenderne il ritorno. Fra affetti familiari, malinconia e speranza, la vicenda si avvia verso il ricongiungimento.",
+      "history": {
+        "librettist": "Giuseppe Carpani e Giovanni Battista Lorenzi, da Benoît-Joseph Marsollier",
+        "premiere_year": 1789,
+        "premiere_venue": "Belvedere di San Leucio",
+        "premiere_city": "Caserta",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000005295",
+          "https://www.apemusicale.it/joomla/it/news/26-news2016/3491-savona-stagione-autunnale-dell-opera-giocosa?showall=1"
+        ]
+      }
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "Elisabetta affronta un lungo viaggio dalla Siberia verso la corte imperiale per ottenere la grazia dei genitori esiliati. Coraggio, fedeltà e sacrificio guidano il suo cammino.",
+      "history": {
+        "librettist": "Domenico Gilardoni",
+        "premiere_year": 1827,
+        "premiere_venue": "Teatro Nuovo",
+        "premiere_city": "Napoli",
+        "sources": [
+          "https://www.treccani.it/enciclopedia/gaetano-donizetti_%28Dizionario-Biografico%29/",
+          "https://www.operalibretto.com/libretto-otto-mesi-in-due-ore-donizetti/"
+        ]
+      }
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "synopsis": "In un villaggio di pescatori, Peter Grimes è sospettato dopo la morte del giovane apprendista. La diffidenza della comunità e una nuova tragedia lo spingono verso l'isolamento e la rovina.",
+      "history": {
+        "librettist": "Montagu Slater",
+        "premiere_year": 1945,
+        "premiere_venue": "Sadler's Wells Theatre",
+        "premiere_city": "Londra",
+        "sources": [
+          "https://www.brittenpearsarts.org/music/peter-grimes",
+          "https://www.rohcollections.org.uk/work.aspx?work=702"
+        ]
+      }
+    },
+    {
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
       "title": "Andrea Chénier",
@@ -584,6 +738,23 @@
         "sources": [
           "https://corago.unibo.it/opera/Z000003860",
           "https://www.operadeparis.fr/en/season-26-27/opera/la-clemenza-di-tito"
+        ]
+      }
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "title": "Piccolo Orso e la montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "synopsis": "Separati dallo scioglimento dei ghiacci, Piccolo Orso e Piccola Orsa cercano di ritrovarsi in un Artico minacciato. Tra inganni e incontri inattesi, scoprono che il canto condiviso può salvare la Montagna di ghiaccio.",
+      "history": {
+        "librettist": "Giancarlo De Cataldo",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Malibran",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
+          "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
         ]
       }
     },
@@ -807,74 +978,6 @@
         "sources": [
           "https://www.mariinsky.ru/en/playbill/repertoire/opera/lohengrin/",
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
-        ]
-      }
-    },
-    {
-      "source_key": "haydn-rolling-opera",
-      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
-      "title": "Cronaca di un amore. Callas e Pasolini",
-      "composer": "Davide Tramontano",
-      "synopsis": "Il rapporto tra Maria Callas e Pier Paolo Pasolini prende forma in un racconto musicale che intreccia documenti, testimonianze e immaginazione, esplorando l'incontro umano e artistico tra due figure del Novecento.",
-      "history": {
-        "librettist": "Alberto Mattioli",
-        "premiere_year": 2026,
-        "premiere_venue": "Teatro Municipale",
-        "premiere_city": "Piacenza",
-        "sources": [
-          "https://teatripiacenza.it/event/cronaca-di-un-amore/",
-          "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
-        ]
-      }
-    },
-    {
-      "source_key": "haydn-rolling-opera",
-      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "title": "Cronaca di un amore. Callas e Pasolini",
-      "composer": "Davide Tramontano",
-      "synopsis": "Il rapporto tra Maria Callas e Pier Paolo Pasolini prende forma in un racconto musicale che intreccia documenti, testimonianze e immaginazione, esplorando l'incontro umano e artistico tra due figure del Novecento.",
-      "history": {
-        "librettist": "Alberto Mattioli",
-        "premiere_year": 2026,
-        "premiere_venue": "Teatro Municipale",
-        "premiere_city": "Piacenza",
-        "sources": [
-          "https://teatripiacenza.it/event/cronaca-di-un-amore/",
-          "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
-        ]
-      }
-    },
-    {
-      "source_key": "coccia-novara-rolling-opera",
-      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
-      "title": "Dove nasce il melograno",
-      "composer": "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
-      "synopsis": "Una nuova opera realizzata con gli allievi dell'Accademia AMO e il coinvolgimento degli studenti dell'Istituto Omar. La creazione intreccia musica e drammaturgia in un progetto corale del Teatro Coccia.",
-      "history": {
-        "librettist": "Pietro Utili",
-        "premiere_year": 2027,
-        "premiere_venue": "Teatro Coccia",
-        "premiere_city": "Novara",
-        "sources": [
-          "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
-          "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/Pieghevole_Stagione2027.pdf"
-        ]
-      }
-    },
-    {
-      "source_key": "parma-opera-2027",
-      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
-      "title": "Piccolo Orso e la montagna di ghiaccio",
-      "composer": "Giovanni Sollima",
-      "synopsis": "Separati dallo scioglimento dei ghiacci, Piccolo Orso e Piccola Orsa cercano di ritrovarsi in un Artico minacciato. Tra inganni e incontri inattesi, scoprono che il canto condiviso può salvare la Montagna di ghiaccio.",
-      "history": {
-        "librettist": "Giancarlo De Cataldo",
-        "premiere_year": 2026,
-        "premiere_venue": "Teatro Malibran",
-        "premiere_city": "Venezia",
-        "sources": [
-          "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
-          "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
         ]
       }
     }
