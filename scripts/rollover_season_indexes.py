@@ -18,6 +18,7 @@ from scripts.publish_catalog_v2 import ROOT
 
 HEALTH=ROOT/"data"/"season-rollover-health.json"
 ROLLOVER_KEYS={
+    "trapani-luglio-musicale-2026",
     "scala-season-2026-27",
     "fenice-opera-2026-27",
     "massimo-season-2026-27",
@@ -47,6 +48,15 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
     if key not in ROLLOVER_KEYS or source["access_status"]!="approved":
         return None
     url=urlsplit(source["url"])
+    if key=="trapani-luglio-musicale-2026":
+        m=re.fullmatch(r"/it/luglio-musicale-stagioni/stagione-(20\\d{2})/",url.path)
+        if not m or url.hostname!="www.lugliomusicale.it":return None
+        year=int(m[1])
+        if year<2026 or year>=2099 or (
+            not allow_early and today<date(year,10,1)):
+            return None
+        return (f"https://www.lugliomusicale.it/it/luglio-musicale-stagioni/"
+                f"stagione-{year+1}/")
     if key=="macerata-festival-rolling":
         from opera_atlas.macerata_future_parser import edition_year,next_edition
         try:year=edition_year(source["url"])
