@@ -1109,6 +1109,32 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                    "outcome":"official_programme_document_pending",
                                    "rows":0})
                     continue
+                # The theatre's own 2026/27 brochure gives the exact six
+                # Jeanne double-bill recite, even though the event detail
+                # exposes no parseable per-date clocks. Both works remain
+                # separate canonical components of ONE ticket per date.
+                if (item["source_key"]=="verdi-trieste-season-2026-27"
+                    and item["official_url"]==
+                    "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"):
+                    from opera_atlas.trieste_jeanne_program import (
+                        verified_program,SCHEDULE_URL,CREDITS_URL)
+                    heading,components,facts=verified_program(
+                        source_key=item["source_key"],source_url=item["official_url"])
+                    retained[item["id"]]={
+                        "candidate_id":item["id"],"source_key":item["source_key"],
+                        "source_url":item["official_url"],"content_sha256":page.sha256,
+                        "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        "status":"needs_program_review",
+                        "program_heading":heading,
+                        "program_heading_source_url":item["official_url"],
+                        "program_components":components,
+                        "official_schedule_evidence_url":SCHEDULE_URL,
+                        "official_credits_evidence_url":CREDITS_URL,
+                        "event_facts":facts}
+                    health.append({"candidate_id":item["id"],
+                                   "outcome":"verified_first_party_double_bill",
+                                   "rows":len(facts),"program_recite":len(facts)//len(components)})
+                    continue
                 if item["source_key"] in (
                         "jesi-trittico-opera-2026","ancona-cavalleria-program-2026"):
                     from opera_atlas.marche_2026_parser import read_program
