@@ -702,11 +702,16 @@
     "Novara|Giardini di Palazzo Natta": {
       "city": "Novara",
       "name": "Giardini di Palazzo Natta",
-      "address": "Giardini di Palazzo Natta, Novara",
-      "description": "Spazio scenico all’aperto nel centro di Novara, utilizzato per spettacoli estivi del Teatro Coccia, tra cui produzioni operistiche.",
+      "address": "Piazza Giacomo Matteotti 1, Novara",
+      "description": "Nel cuore di Novara, il giardino storico di Palazzo Natta si trasforma in un suggestivo palcoscenico estivo, dove l’opera incontra l’eleganza di un luogo ricco di storia.",
       "website": "https://www.fondazioneteatrococcia.it/",
-      "history": "Il Teatro Coccia ha inserito i Giardini di Palazzo Natta fra i luoghi della propria programmazione, con rappresentazioni liriche all’aperto. È una sede distinta dalla sala del Teatro Coccia.",
-      "source": "https://www.fondazioneteatrococcia.it/spettacoli_opera_danza_concerti.html"
+      "history": "Palazzo Natta, oggi sede della Prefettura e della Provincia di Novara, sorge in un complesso di origini antiche: la torre dell’Orologio è documentata già nel 1268. Il giardino conserva una fontana in marmo rosa di Baveno, una scenografica esedra di gusto settecentesco decorata con piccoli ciottoli chiari e scuri e alberature di pregio. Restaurato nel 1998, accoglie oggi anche appuntamenti culturali e rappresentazioni liriche all’aperto, tra cui spettacoli della programmazione estiva del Teatro Coccia.",
+      "source": "https://fondoambiente.it/luoghi/giardino-della-prefettura",
+      "photo_file": "Novara Palazzo Natta.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Novara_Palazzo_Natta.jpg",
+      "photo_credit": "Alessandro Vecchi — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0",
+      "photo_caption": "Palazzo Natta, sede del giardino storico utilizzato per gli spettacoli all’aperto"
     }
   }
 }
