@@ -44,6 +44,37 @@ class ModenaTheatreFallbackTests(unittest.TestCase):
         self.assertEqual(len(facts),2)
         self.assertEqual([x["date"] for x in facts],["2026-10-30","2026-11-01"])
 
+    def test_historic_wagner_dutchman_exact_bilingual_identity(self):
+        from scripts.auto_catalogue import normalize_source_seed_trieste_genre
+        from scripts.publish_catalog_v2 import slugify
+        from scripts.publish_work_posters import load_archival_art
+        source=("https://www.teatrocomunalemodena.it/spettacolo/"
+                "richard-wagner-der-fliegender-hollander-lolandese-volante/")
+        html=HTML.replace("Giuseppe Verdi – Macbeth",
+                          "Richard Wagner – Der fliegende Holländer (L’olandese volante)")
+        self.assertEqual(parse_detail(html,url=source)[:3],(
+            "Der fliegende Holländer","Richard Wagner",
+            "Teatro Comunale Pavarotti-Freni"))
+        seed={"source_key":KEY,"source_url":source,
+              "title":"Der fliegende Holländer","composer":"Richard Wagner"}
+        original=[{"event_title":"Der fliegende Holländer (L’olandese volante)",
+                   "composer":"Richard Wagner","date":"2026-11-20",
+                   "venue":"Teatro Comunale Pavarotti-Freni",
+                   "starts_at":"2026-11-20T20:00:00+01:00"}]
+        normalized=normalize_source_seed_trieste_genre(original,KEY,source,seed)
+        self.assertEqual(normalized[0]["event_title"],seed["title"])
+        self.assertEqual(normalized[0]["starts_at"],original[0]["starts_at"])
+        self.assertEqual(normalize_source_seed_trieste_genre(original,KEY,
+                         source.replace("www.","another."),seed),original)
+        wrong=[{**original[0],"composer":"Pierre-Louis Dietsch"}]
+        self.assertEqual(normalize_source_seed_trieste_genre(wrong,KEY,source,seed),wrong)
+        slug=slugify(seed["title"])
+        self.assertEqual(slug,"der-fliegende-hollander")
+        art=load_archival_art({slug})[slug]
+        self.assertIn("Libretto_Der_fliegende_Holl",art["source_url"])
+        self.assertEqual(art["kind"],"archival_work_image")
+        self.assertIn("Public domain",art["license"])
+
     def test_no_unverified_authority_or_dates(self):
         for broken in (
             HTML.replace("Giuseppe Verdi – Macbeth","Macbeth"),
