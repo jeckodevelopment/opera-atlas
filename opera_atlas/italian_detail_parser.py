@@ -97,14 +97,14 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
         # A tightly bounded, date-specific fallback is allowed ONLY in the
         # verified theatre/venue section; do not borrow a clock from a
         # following date, cast paragraph or unrelated recommendation.
-        dates_rx=re.compile(r"\\b\\d{1,2}/\\d{1,2}/20\\d{2}\\b")
+        dates_rx=re.compile(r"\b\d{1,2}/\d{1,2}/20\d{2}\b")
         date_hits=list(dates_rx.finditer(schedule))
         for index,observed in enumerate(date_hits):
             boundary=(date_hits[index+1].start()
                       if index+1<len(date_hits) else len(schedule))
             block=schedule[observed.end():min(boundary,observed.end()+180)]
             clocks=re.findall(
-                r"(?i)\\bOre\\s*([01]?\\d|2[0-3]):([0-5]\\d)\\b",block)
+                r"(?i)\bOre\s*([01]?\d|2[0-3]):([0-5]\d)\b",block)
             if len(clocks)!=1 or CUES.search(block):
                 raise ValueError("incomplete official Carlo Felice date/time evidence")
             day,month,year=map(int,observed.group().split("/"))
