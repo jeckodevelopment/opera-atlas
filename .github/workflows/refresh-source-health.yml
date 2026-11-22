@@ -10,6 +10,8 @@ on:
     paths:
       - 'data/season-index-config.json'
       - 'scripts/discover_season_indexes.py'
+      # Changes to shared robots/HTTP policy must recheck all source statuses.
+      - 'opera_atlas/controlled_fetch.py'
       - 'scripts/source_automation.py'
       - '.github/workflows/refresh-source-health.yml'
 permissions:
