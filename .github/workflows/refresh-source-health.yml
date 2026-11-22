@@ -71,11 +71,12 @@ jobs:
           # do not trigger push workflows. Dispatch the existing catalog event,
           # with the catalog's separate concurrency lock, only for new URLs.
           git fetch --quiet origin main
-          python -m scripts.source_health_dispatch \
-            --before /tmp/source-candidates-before.json \
-            --after data/season-index-candidates.json \
-            --github-output /tmp/source-health-dispatch-check
-          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+          git show origin/main:data/season-index-candidates.json > /tmp/source-candidates-published.json
+          if python -c 'import json,sys; from scripts.source_health_dispatch import newly_actionable; a=json.load(open(sys.argv[1])); b=json.load(open(sys.argv[2])); sys.exit(0 if newly_actionable(a,b) else 1)' /tmp/source-candidates-before.json /tmp/source-candidates-published.json; then
+            gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+          else
+            echo "New candidates not present on origin/main; catalog dispatch deferred."
+          fi
       - name: Report latest-source checkpoint result
         if: steps.checkpoint.outputs.deferred == 'true'
         run: |
