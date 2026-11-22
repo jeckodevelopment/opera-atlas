@@ -652,7 +652,10 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                     and p["composer"]==work["composer"]
                     and all(day in {"2026-08-19","2026-08-20"} and hour=="21:30"
                             for day,hour in p["dates"])]
-            if len(shared)==1 and not (set(dict(shared[0]["dates"])) & set(dates)):
+            if len(shared)==1 and all(
+                day not in dict(shared[0]["dates"])
+                or dict(shared[0]["dates"])[day]==hour
+                for day,hour in dates.items()):
                 exact=shared
         # Distinct official productions of the same opera in the same
         # theatre are legitimate (e.g. two different Aida stagings at
