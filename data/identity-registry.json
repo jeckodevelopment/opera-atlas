@@ -8323,6 +8323,22 @@
       "slug": "gianni-schicchi",
       "status": "editorial_verified_pending_staging",
       "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "jeanne d’arc au bûcher|arthur honegger": {
+      "id": "oa-w-000099",
+      "title": "Jeanne d’Arc au bûcher",
+      "composer": "Arthur Honegger",
+      "slug": "jeanne-d-arc-au-bucher",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"
+    },
+    "jeanne dark|fabio vacchi": {
+      "id": "oa-w-000100",
+      "title": "Jeanne Dark",
+      "composer": "Fabio Vacchi",
+      "slug": "jeanne-dark",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"
     }
   }
 }
