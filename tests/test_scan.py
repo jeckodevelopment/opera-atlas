@@ -37,10 +37,10 @@ class ScanTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT count(*) FROM performances").fetchone()[0],1)
         self.assertEqual(self.db.execute("SELECT count(*) FROM source_checks WHERE outcome='success'").fetchone()[0],2)
 
-    def test_no_robots_no_import(self):
+    def test_no_robots_allows_approved_official_page(self):
         result = self.scan(FakeOpener(robots=None,html=HTML))
-        self.assertEqual(result.outcome,"robots_unavailable")
-        self.assertEqual(self.db.execute("SELECT count(*) FROM performances").fetchone()[0],0)
+        self.assertEqual(result.outcome,"success")
+        self.assertEqual(self.db.execute("SELECT count(*) FROM performances").fetchone()[0],1)
         self.assertEqual(self.db.execute("SELECT count(*) FROM source_checks").fetchone()[0],1)
 
     def test_explicit_robots_denial(self):
