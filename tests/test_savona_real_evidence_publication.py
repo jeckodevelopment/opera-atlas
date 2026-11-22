@@ -28,7 +28,8 @@ class SavonaRealEvidenceToCatalogTests(unittest.TestCase):
         self.assertEqual(len(item["event_facts"]),5)
         self.assertEqual(len(split_verified_season(item)),3)
         official={"schema_version":1,"evidence":real}
-        candidate={"schema_version":1,"candidates":[x for x in candidates["candidates"]
+        candidate={"schema_version":1,"candidates":[{**x,"status":"needs_review"}
+                   for x in candidates["candidates"]
                    if x["source_key"]==SOURCE and x["official_url"]==URL]}
         self.assertEqual(len(candidate["candidates"]),1)
         original=json.loads(MANIFEST.read_text(encoding="utf-8"))
