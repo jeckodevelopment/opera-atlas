@@ -3734,6 +3734,42 @@
       ]
     },
     {
+      "id": "curated:auto-645435245131b4d3:2026-12-02",
+      "starts_at": "2026-12-02T20:00:00+01:00",
+      "local_date": "2026-12-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+      ]
+    },
+    {
+      "id": "curated:auto-645435245131b4d3:2026-12-03",
+      "starts_at": "2026-12-03T20:00:00+01:00",
+      "local_date": "2026-12-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+      ]
+    },
+    {
       "id": "curated:auto-e01412b3c8989b4b:2026-12-03",
       "starts_at": "2026-12-03T20:00:00+01:00",
       "local_date": "2026-12-03",
@@ -3803,6 +3839,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-645435245131b4d3:2026-12-04",
+      "starts_at": "2026-12-04T20:00:00+01:00",
+      "local_date": "2026-12-04",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
       ]
     },
     {
@@ -3893,6 +3947,24 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+      ]
+    },
+    {
+      "id": "curated:auto-645435245131b4d3:2026-12-05",
+      "starts_at": "2026-12-05T20:00:00+01:00",
+      "local_date": "2026-12-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
       ]
     },
     {
@@ -4004,6 +4076,24 @@
       ]
     },
     {
+      "id": "curated:auto-645435245131b4d3:2026-12-06",
+      "starts_at": "2026-12-06T17:00:00+01:00",
+      "local_date": "2026-12-06",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+      ]
+    },
+    {
       "id": "curated:scala-otello-2026:2026-12-07",
       "starts_at": "2026-12-07T18:00:00+01:00",
       "local_date": "2026-12-07",
@@ -4022,6 +4112,24 @@
       ]
     },
     {
+      "id": "curated:auto-645435245131b4d3:2026-12-09",
+      "starts_at": "2026-12-09T19:00:00+01:00",
+      "local_date": "2026-12-09",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+      ]
+    },
+    {
       "id": "curated:auto-d54e9b021b5167cf:2026-12-10",
       "starts_at": "2026-12-10T11:00:00+01:00",
       "local_date": "2026-12-10",
@@ -4037,6 +4145,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+      ]
+    },
+    {
+      "id": "curated:auto-645435245131b4d3:2026-12-10",
+      "starts_at": "2026-12-10T18:00:00+01:00",
+      "local_date": "2026-12-10",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
       ]
     },
     {
@@ -10774,6 +10900,24 @@
       ]
     },
     {
+      "id": "curated:auto-89997fb8ea8cbb93:2027-04-17",
+      "starts_at": "2027-04-17T20:00:00+02:00",
+      "local_date": "2027-04-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
+      ]
+    },
+    {
       "id": "curated:auto-92b69a8ac1040b05:2027-04-17",
       "starts_at": "2027-04-17T20:00:00+02:00",
       "local_date": "2027-04-17",
@@ -10972,6 +11116,24 @@
       ]
     },
     {
+      "id": "curated:auto-78a2524add8c3b1e:2027-04-20",
+      "starts_at": "2027-04-20T20:00:00+02:00",
+      "local_date": "2027-04-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/nina/"
+      ]
+    },
+    {
       "id": "curated:auto-92b69a8ac1040b05:2027-04-20",
       "starts_at": "2027-04-20T20:00:00+02:00",
       "local_date": "2027-04-20",
@@ -11023,6 +11185,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+      ]
+    },
+    {
+      "id": "curated:auto-89997fb8ea8cbb93:2027-04-21",
+      "starts_at": "2027-04-21T18:00:00+02:00",
+      "local_date": "2027-04-21",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
       ]
     },
     {
@@ -11080,6 +11260,24 @@
       ]
     },
     {
+      "id": "curated:auto-78a2524add8c3b1e:2027-04-22",
+      "starts_at": "2027-04-22T20:00:00+02:00",
+      "local_date": "2027-04-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/nina/"
+      ]
+    },
+    {
       "id": "curated:auto-92b69a8ac1040b05:2027-04-22",
       "starts_at": "2027-04-22T20:00:00+02:00",
       "local_date": "2027-04-22",
@@ -11113,6 +11311,24 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+      ]
+    },
+    {
+      "id": "curated:auto-89997fb8ea8cbb93:2027-04-23",
+      "starts_at": "2027-04-23T19:00:00+02:00",
+      "local_date": "2027-04-23",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
       ]
     },
     {
@@ -11185,6 +11401,24 @@
       "longitude": null,
       "sources": [
         "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/"
+      ]
+    },
+    {
+      "id": "curated:auto-78a2524add8c3b1e:2027-04-24",
+      "starts_at": "2027-04-24T17:00:00+02:00",
+      "local_date": "2027-04-24",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/nina/"
       ]
     },
     {
@@ -11275,6 +11509,24 @@
       "longitude": null,
       "sources": [
         "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola"
+      ]
+    },
+    {
+      "id": "curated:auto-78a2524add8c3b1e:2027-04-27",
+      "starts_at": "2027-04-27T19:00:00+02:00",
+      "local_date": "2027-04-27",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/nina/"
       ]
     },
     {
@@ -12160,6 +12412,24 @@
       ]
     },
     {
+      "id": "curated:auto-648d1bcf715c9f9f:2027-05-19",
+      "starts_at": "2027-05-19T20:00:00+02:00",
+      "local_date": "2027-05-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+      ]
+    },
+    {
       "id": "curated:auto-84fd2f377ee78325:2027-05-19",
       "starts_at": "2027-05-19T20:00:00+02:00",
       "local_date": "2027-05-19",
@@ -12211,6 +12481,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/falstaff-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-648d1bcf715c9f9f:2027-05-20",
+      "starts_at": "2027-05-20T19:00:00+02:00",
+      "local_date": "2027-05-20",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
       ]
     },
     {
@@ -12337,6 +12625,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:auto-648d1bcf715c9f9f:2027-05-21",
+      "starts_at": "2027-05-21T20:00:00+02:00",
+      "local_date": "2027-05-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
       ]
     },
     {
@@ -12484,6 +12790,24 @@
       ]
     },
     {
+      "id": "curated:auto-648d1bcf715c9f9f:2027-05-22",
+      "starts_at": "2027-05-22T20:00:00+02:00",
+      "local_date": "2027-05-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+      ]
+    },
+    {
       "id": "curated:auto-7ec9d774a82a64ec:2027-05-22",
       "starts_at": "2027-05-22T20:00:00+02:00",
       "local_date": "2027-05-22",
@@ -12610,6 +12934,24 @@
       ]
     },
     {
+      "id": "curated:auto-648d1bcf715c9f9f:2027-05-23",
+      "starts_at": "2027-05-23T17:00:00+02:00",
+      "local_date": "2027-05-23",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+      ]
+    },
+    {
       "id": "curated:auto-84fd2f377ee78325:2027-05-23",
       "starts_at": "2027-05-23T17:00:00+02:00",
       "local_date": "2027-05-23",
@@ -12697,6 +13039,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/carmen"
+      ]
+    },
+    {
+      "id": "curated:auto-648d1bcf715c9f9f:2027-05-25",
+      "starts_at": "2027-05-25T18:00:00+02:00",
+      "local_date": "2027-05-25",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
       ]
     },
     {
@@ -15742,6 +16102,24 @@
       ]
     },
     {
+      "id": "curated:auto-f58d3866160127ee:2027-09-22",
+      "starts_at": "2027-09-22T20:00:00+02:00",
+      "local_date": "2027-09-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+      ]
+    },
+    {
       "id": "curated:auto-5ab298c2300ec275:2027-09-23",
       "starts_at": "2027-09-23T19:00:00+02:00",
       "local_date": "2027-09-23",
@@ -15796,6 +16174,24 @@
       ]
     },
     {
+      "id": "curated:auto-f58d3866160127ee:2027-09-23",
+      "starts_at": "2027-09-23T20:00:00+02:00",
+      "local_date": "2027-09-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+      ]
+    },
+    {
       "id": "curated:auto-80ebc1deec00ed9f:2027-09-24",
       "starts_at": "2027-09-24T18:00:00+02:00",
       "local_date": "2027-09-24",
@@ -15832,6 +16228,24 @@
       ]
     },
     {
+      "id": "curated:auto-f58d3866160127ee:2027-09-24",
+      "starts_at": "2027-09-24T20:00:00+02:00",
+      "local_date": "2027-09-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+      ]
+    },
+    {
       "id": "curated:auto-05dfa4b5d5270a7f:2027-09-25",
       "starts_at": "2027-09-25T18:00:00+02:00",
       "local_date": "2027-09-25",
@@ -15865,6 +16279,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/normatebar/"
+      ]
+    },
+    {
+      "id": "curated:auto-f58d3866160127ee:2027-09-25",
+      "starts_at": "2027-09-25T19:00:00+02:00",
+      "local_date": "2027-09-25",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
       ]
     },
     {
@@ -15922,6 +16354,24 @@
       ]
     },
     {
+      "id": "curated:auto-f58d3866160127ee:2027-09-26",
+      "starts_at": "2027-09-26T17:00:00+02:00",
+      "local_date": "2027-09-26",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+      ]
+    },
+    {
       "id": "curated:auto-eaefe8edde44acf2:2027-09-26",
       "starts_at": "2027-09-26T20:00:00+02:00",
       "local_date": "2027-09-26",
@@ -15937,6 +16387,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html"
+      ]
+    },
+    {
+      "id": "curated:auto-f58d3866160127ee:2027-09-28",
+      "starts_at": "2027-09-28T18:00:00+02:00",
+      "local_date": "2027-09-28",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
       ]
     },
     {
@@ -16750,6 +17218,24 @@
       ]
     },
     {
+      "id": "curated:auto-ad4a422c793838b9:2027-10-27",
+      "starts_at": "2027-10-27T20:00:00+02:00",
+      "local_date": "2027-10-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
+      ]
+    },
+    {
       "id": "curated:auto-877637d643bbfb66:2027-10-28",
       "starts_at": "2027-10-28T19:00:00+02:00",
       "local_date": "2027-10-28",
@@ -16801,6 +17287,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html"
+      ]
+    },
+    {
+      "id": "curated:auto-ad4a422c793838b9:2027-10-28",
+      "starts_at": "2027-10-28T20:00:00+02:00",
+      "local_date": "2027-10-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
+      ]
+    },
+    {
+      "id": "curated:auto-ad4a422c793838b9:2027-10-29",
+      "starts_at": "2027-10-29T18:00:00+02:00",
+      "local_date": "2027-10-29",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
       ]
     },
     {

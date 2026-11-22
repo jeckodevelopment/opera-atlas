@@ -968,6 +968,67 @@
         "https://teatripiacenza.it/event/cronaca-di-un-amore/",
         "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
       ]
+    },
+    "luisa-miller": {
+      "librettist": "Salvadore Cammarano",
+      "premiere_year": 1849,
+      "premiere_venue": "Teatro di San Carlo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://memboa.operaamerica.org/Applications/schedule/details.aspx?titleID=3385",
+        "https://academic.oup.com/book/49368/chapter-abstract/422380124"
+      ]
+    },
+    "peter-grimes": {
+      "librettist": "Montagu Slater",
+      "premiere_year": 1945,
+      "premiere_venue": "Sadler's Wells Theatre",
+      "premiere_city": "Londra",
+      "sources": [
+        "https://www.brittenpearsarts.org/music/peter-grimes",
+        "https://www.rohcollections.org.uk/work.aspx?work=702"
+      ]
+    },
+    "nina-o-sia-la-pazza-per-amore": {
+      "librettist": "Giuseppe Carpani e Giovanni Battista Lorenzi, da Benoît-Joseph Marsollier",
+      "premiere_year": 1789,
+      "premiere_venue": "Belvedere di San Leucio",
+      "premiere_city": "Caserta",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000005295",
+        "https://www.apemusicale.it/joomla/it/news/26-news2016/3491-savona-stagione-autunnale-dell-opera-giocosa?showall=1"
+      ]
+    },
+    "otto-mesi-in-due-ore-o-sia-gli-esiliati-in-siberia": {
+      "librettist": "Domenico Gilardoni",
+      "premiere_year": 1827,
+      "premiere_venue": "Teatro Nuovo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://www.treccani.it/enciclopedia/gaetano-donizetti_%28Dizionario-Biografico%29/",
+        "https://www.operalibretto.com/libretto-otto-mesi-in-due-ore-donizetti/"
+      ]
+    },
+    "la-chute-de-la-maison-usher": {
+      "librettist": "Claude Debussy, dal racconto di Edgar Allan Poe",
+      "premiere_year": 2027,
+      "premiere_venue": "Teatro di San Carlo (nuovo completamento di Solbiati)",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://www.unina.it/it/w/stagione-2026/2027-del-teatro-di-san-carlo?redirect=%2Fit%2Ff2-magazine%2Fmagazine",
+        "https://catalogue.bnf.fr/ark:/12148/cb139114073",
+        "https://rism.info/fr/musical_anniversaries/2018/03/22/100th-anniversary-of-claude-debussys-death.html"
+      ]
+    },
+    "la-damnation-de-faust": {
+      "librettist": "Hector Berlioz e Almire Gandonnière",
+      "premiere_year": 1846,
+      "premiere_venue": "Opéra-Comique (Salle Favart)",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://catalogue.bnf.fr/ark:/12148/cb13908492n.public",
+        "https://www.glyndebourne.com/opera-archive/explore-our-operas/explore-la-damnation-de-faust/la-damnation-de-faust-synopsis/"
+      ]
     }
   },
   "works_by_id": {

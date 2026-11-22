@@ -666,6 +666,48 @@
       "title": "Piccolo Orso e la montagna di ghiaccio",
       "composer": "Giovanni Sollima",
       "authority_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+    },
+    "luisa miller|giuseppe verdi": {
+      "id": "oa-w-000106",
+      "slug": "luisa-miller",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "authority_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "peter grimes|benjamin britten": {
+      "id": "oa-w-000107",
+      "slug": "peter-grimes",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "authority_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+    },
+    "nina o sia la pazza per amore|giovanni paisiello": {
+      "id": "oa-w-000108",
+      "slug": "nina-o-sia-la-pazza-per-amore",
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "authority_url": "https://www.teatrosancarlo.it/spettacoli/nina/"
+    },
+    "otto mesi in due ore o sia gli esiliati in siberia|gaetano donizetti": {
+      "id": "oa-w-000109",
+      "slug": "otto-mesi-in-due-ore-o-sia-gli-esiliati-in-siberia",
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "authority_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
+    },
+    "la chute de la maison usher|claude debussy / alessandro solbiati": {
+      "id": "oa-w-000110",
+      "slug": "la-chute-de-la-maison-usher",
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "authority_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
+    },
+    "la damnation de faust|hector berlioz": {
+      "id": "oa-w-000111",
+      "slug": "la-damnation-de-faust",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "authority_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
     }
   },
   "venues": {
@@ -3145,6 +3187,54 @@
       "venue_id": "oa-v-000060",
       "slug": "il-barbiere-di-siviglia",
       "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/",
+      "season": "2027"
+    },
+    "auto-645435245131b4d3": {
+      "id": "oa-s-000260",
+      "work_id": "oa-w-000106",
+      "venue_id": "oa-v-000060",
+      "slug": "luisa-miller",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
+      "season": "2026"
+    },
+    "auto-648d1bcf715c9f9f": {
+      "id": "oa-s-000261",
+      "work_id": "oa-w-000107",
+      "venue_id": "oa-v-000060",
+      "slug": "peter-grimes",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/",
+      "season": "2027"
+    },
+    "auto-78a2524add8c3b1e": {
+      "id": "oa-s-000262",
+      "work_id": "oa-w-000108",
+      "venue_id": "oa-v-000060",
+      "slug": "nina-o-sia-la-pazza-per-amore",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/",
+      "season": "2027"
+    },
+    "auto-89997fb8ea8cbb93": {
+      "id": "oa-s-000263",
+      "work_id": "oa-w-000109",
+      "venue_id": "oa-v-000060",
+      "slug": "otto-mesi-in-due-ore-o-sia-gli-esiliati-in-siberia",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+      "season": "2027"
+    },
+    "auto-ad4a422c793838b9": {
+      "id": "oa-s-000264",
+      "work_id": "oa-w-000110",
+      "venue_id": "oa-v-000060",
+      "slug": "la-chute-de-la-maison-usher",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/",
+      "season": "2027"
+    },
+    "auto-f58d3866160127ee": {
+      "id": "oa-s-000265",
+      "work_id": "oa-w-000111",
+      "venue_id": "oa-v-000060",
+      "slug": "la-damnation-de-faust",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
       "season": "2027"
     }
   },
@@ -9107,6 +9197,180 @@
       "staging_id": "oa-s-000259",
       "original_date": "2027-06-23",
       "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    "auto-645435245131b4d3|2026-12-02": {
+      "id": "oa-r-001021",
+      "staging_id": "oa-s-000260",
+      "original_date": "2026-12-02",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "auto-645435245131b4d3|2026-12-03": {
+      "id": "oa-r-001022",
+      "staging_id": "oa-s-000260",
+      "original_date": "2026-12-03",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "auto-645435245131b4d3|2026-12-04": {
+      "id": "oa-r-001023",
+      "staging_id": "oa-s-000260",
+      "original_date": "2026-12-04",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "auto-645435245131b4d3|2026-12-05": {
+      "id": "oa-r-001024",
+      "staging_id": "oa-s-000260",
+      "original_date": "2026-12-05",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "auto-645435245131b4d3|2026-12-06": {
+      "id": "oa-r-001025",
+      "staging_id": "oa-s-000260",
+      "original_date": "2026-12-06",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "auto-645435245131b4d3|2026-12-09": {
+      "id": "oa-r-001026",
+      "staging_id": "oa-s-000260",
+      "original_date": "2026-12-09",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "auto-645435245131b4d3|2026-12-10": {
+      "id": "oa-r-001027",
+      "staging_id": "oa-s-000260",
+      "original_date": "2026-12-10",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    "auto-648d1bcf715c9f9f|2027-05-19": {
+      "id": "oa-r-001028",
+      "staging_id": "oa-s-000261",
+      "original_date": "2027-05-19",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+    },
+    "auto-648d1bcf715c9f9f|2027-05-20": {
+      "id": "oa-r-001029",
+      "staging_id": "oa-s-000261",
+      "original_date": "2027-05-20",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+    },
+    "auto-648d1bcf715c9f9f|2027-05-21": {
+      "id": "oa-r-001030",
+      "staging_id": "oa-s-000261",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+    },
+    "auto-648d1bcf715c9f9f|2027-05-22": {
+      "id": "oa-r-001031",
+      "staging_id": "oa-s-000261",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+    },
+    "auto-648d1bcf715c9f9f|2027-05-23": {
+      "id": "oa-r-001032",
+      "staging_id": "oa-s-000261",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+    },
+    "auto-648d1bcf715c9f9f|2027-05-25": {
+      "id": "oa-r-001033",
+      "staging_id": "oa-s-000261",
+      "original_date": "2027-05-25",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+    },
+    "auto-78a2524add8c3b1e|2027-04-20": {
+      "id": "oa-r-001034",
+      "staging_id": "oa-s-000262",
+      "original_date": "2027-04-20",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/"
+    },
+    "auto-78a2524add8c3b1e|2027-04-22": {
+      "id": "oa-r-001035",
+      "staging_id": "oa-s-000262",
+      "original_date": "2027-04-22",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/"
+    },
+    "auto-78a2524add8c3b1e|2027-04-24": {
+      "id": "oa-r-001036",
+      "staging_id": "oa-s-000262",
+      "original_date": "2027-04-24",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/"
+    },
+    "auto-78a2524add8c3b1e|2027-04-27": {
+      "id": "oa-r-001037",
+      "staging_id": "oa-s-000262",
+      "original_date": "2027-04-27",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/"
+    },
+    "auto-89997fb8ea8cbb93|2027-04-17": {
+      "id": "oa-r-001038",
+      "staging_id": "oa-s-000263",
+      "original_date": "2027-04-17",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
+    },
+    "auto-89997fb8ea8cbb93|2027-04-21": {
+      "id": "oa-r-001039",
+      "staging_id": "oa-s-000263",
+      "original_date": "2027-04-21",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
+    },
+    "auto-89997fb8ea8cbb93|2027-04-23": {
+      "id": "oa-r-001040",
+      "staging_id": "oa-s-000263",
+      "original_date": "2027-04-23",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
+    },
+    "auto-ad4a422c793838b9|2027-10-27": {
+      "id": "oa-r-001041",
+      "staging_id": "oa-s-000264",
+      "original_date": "2027-10-27",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
+    },
+    "auto-ad4a422c793838b9|2027-10-28": {
+      "id": "oa-r-001042",
+      "staging_id": "oa-s-000264",
+      "original_date": "2027-10-28",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
+    },
+    "auto-ad4a422c793838b9|2027-10-29": {
+      "id": "oa-r-001043",
+      "staging_id": "oa-s-000264",
+      "original_date": "2027-10-29",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
+    },
+    "auto-f58d3866160127ee|2027-09-22": {
+      "id": "oa-r-001044",
+      "staging_id": "oa-s-000265",
+      "original_date": "2027-09-22",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    "auto-f58d3866160127ee|2027-09-23": {
+      "id": "oa-r-001045",
+      "staging_id": "oa-s-000265",
+      "original_date": "2027-09-23",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    "auto-f58d3866160127ee|2027-09-24": {
+      "id": "oa-r-001046",
+      "staging_id": "oa-s-000265",
+      "original_date": "2027-09-24",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    "auto-f58d3866160127ee|2027-09-25": {
+      "id": "oa-r-001047",
+      "staging_id": "oa-s-000265",
+      "original_date": "2027-09-25",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    "auto-f58d3866160127ee|2027-09-26": {
+      "id": "oa-r-001048",
+      "staging_id": "oa-s-000265",
+      "original_date": "2027-09-26",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    "auto-f58d3866160127ee|2027-09-28": {
+      "id": "oa-r-001049",
+      "staging_id": "oa-s-000265",
+      "original_date": "2027-09-28",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
     }
   },
   "reserved_works": {

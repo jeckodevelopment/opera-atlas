@@ -1301,7 +1301,7 @@
       "id": "oa-index-645435245131b4d31287",
       "source_key": "napoli-san-carlo-rolling-opera",
       "official_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T22:22:47+00:00",
       "last_seen": "2026-11-22T22:41:37+00:00"
     },
@@ -1317,7 +1317,7 @@
       "id": "oa-index-648d1bcf715c9f9ffd9d",
       "source_key": "napoli-san-carlo-rolling-opera",
       "official_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T22:22:47+00:00",
       "last_seen": "2026-11-22T22:41:37+00:00"
     },
@@ -1533,7 +1533,7 @@
       "id": "oa-index-78a2524add8c3b1ea415",
       "source_key": "napoli-san-carlo-rolling-opera",
       "official_url": "https://www.teatrosancarlo.it/spettacoli/nina/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T22:22:47+00:00",
       "last_seen": "2026-11-22T22:41:37+00:00"
     },
@@ -1741,7 +1741,7 @@
       "id": "oa-index-89997fb8ea8cbb932bd1",
       "source_key": "napoli-san-carlo-rolling-opera",
       "official_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T22:41:37+00:00",
       "last_seen": "2026-11-22T22:41:37+00:00"
     },
@@ -2309,7 +2309,7 @@
       "id": "oa-index-ad4a422c793838b9bc2a",
       "source_key": "napoli-san-carlo-rolling-opera",
       "official_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T22:22:47+00:00",
       "last_seen": "2026-11-22T22:41:37+00:00"
     },
@@ -3365,7 +3365,7 @@
       "id": "oa-index-f58d3866160127ee1932",
       "source_key": "napoli-san-carlo-rolling-opera",
       "official_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T22:22:47+00:00",
       "last_seen": "2026-11-22T22:41:37+00:00"
     },

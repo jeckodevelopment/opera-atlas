@@ -6680,6 +6680,188 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-645435245131b4d3",
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
+      "dates": [
+        [
+          "2026-12-02",
+          "20:00"
+        ],
+        [
+          "2026-12-03",
+          "20:00"
+        ],
+        [
+          "2026-12-04",
+          "20:00"
+        ],
+        [
+          "2026-12-05",
+          "20:00"
+        ],
+        [
+          "2026-12-06",
+          "17:00"
+        ],
+        [
+          "2026-12-09",
+          "19:00"
+        ],
+        [
+          "2026-12-10",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-648d1bcf715c9f9f",
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/",
+      "dates": [
+        [
+          "2027-05-19",
+          "20:00"
+        ],
+        [
+          "2027-05-20",
+          "19:00"
+        ],
+        [
+          "2027-05-21",
+          "20:00"
+        ],
+        [
+          "2027-05-22",
+          "20:00"
+        ],
+        [
+          "2027-05-23",
+          "17:00"
+        ],
+        [
+          "2027-05-25",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-78a2524add8c3b1e",
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/",
+      "dates": [
+        [
+          "2027-04-20",
+          "20:00"
+        ],
+        [
+          "2027-04-22",
+          "20:00"
+        ],
+        [
+          "2027-04-24",
+          "17:00"
+        ],
+        [
+          "2027-04-27",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-89997fb8ea8cbb93",
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+      "dates": [
+        [
+          "2027-04-17",
+          "20:00"
+        ],
+        [
+          "2027-04-21",
+          "18:00"
+        ],
+        [
+          "2027-04-23",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-ad4a422c793838b9",
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/",
+      "dates": [
+        [
+          "2027-10-27",
+          "20:00"
+        ],
+        [
+          "2027-10-28",
+          "20:00"
+        ],
+        [
+          "2027-10-29",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f58d3866160127ee",
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
+      "dates": [
+        [
+          "2027-09-22",
+          "20:00"
+        ],
+        [
+          "2027-09-23",
+          "20:00"
+        ],
+        [
+          "2027-09-24",
+          "20:00"
+        ],
+        [
+          "2027-09-25",
+          "19:00"
+        ],
+        [
+          "2027-09-26",
+          "17:00"
+        ],
+        [
+          "2027-09-28",
+          "18:00"
+        ]
+      ]
     }
   ]
 }

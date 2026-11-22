@@ -938,6 +938,60 @@
       "credit": "Illustrazione ufficiale dell'opera pubblicata dal Teatro Regio di Parma",
       "alt": "Illustrazione ufficiale di Piccolo Orso e la montagna di ghiaccio: orsetto giallo su fondo nero",
       "kind": "official_original_work_artwork"
+    },
+    "oa-w-000106": {
+      "work_id": "oa-w-000106",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giuseppe_Verdi_-_Luisa_Miller_-_titlepage_of_the_libretto_-_Naples_1849.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Verdi_-_Luisa_Miller_-_titlepage_of_the_libretto_-_Naples_1849.png",
+      "alt": "Frontespizio del libretto storico di Luisa Miller (1849), non il manifesto dell'allestimento 2026",
+      "credit": "Libretto storico, Napoli 1849 / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000107": {
+      "work_id": "oa-w-000107",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Peter-grimes-the-borough-1812.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Peter-grimes-the-borough-1812.jpg",
+      "alt": "Pagina storica del poema The Borough di George Crabbe, fonte letteraria di Peter Grimes; non immagine dell'allestimento",
+      "credit": "George Crabbe, The Borough (1812) / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000108": {
+      "work_id": "oa-w-000108",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giovanni_Paisiello_-_Nina_-_title_page_of_the_libretto_-_Naples_1789.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Paisiello_-_Nina_-_title_page_of_the_libretto_-_Naples_1789.png",
+      "alt": "Frontespizio del libretto storico di Nina di Paisiello (1789), non l'allestimento 2027",
+      "credit": "Libretto storico, Napoli 1789 / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000109": {
+      "work_id": "oa-w-000109",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gaetano_Donizetti_-_Otto_mesi_in_due_ore_-_title_page_of_the_libretto_-_Naples_1827.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_Otto_mesi_in_due_ore_-_title_page_of_the_libretto_-_Naples_1827.png",
+      "alt": "Frontespizio del libretto di Otto mesi in due ore del 1827, non l'allestimento del San Carlo 2027",
+      "credit": "Libretto storico, Napoli 1827 / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000110": {
+      "work_id": "oa-w-000110",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Fall_of_the_House_of_Usher%2C_d'apr%C3%A8s_Edgard_Poe._L._112._Esquisses_pour_chant_et_piano_(manuscrit_autographe)_-_btv1b550079763_(8_of_8).jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Fall_of_the_House_of_Usher%2C_d'apr%C3%A8s_Edgard_Poe._L._112._Esquisses_pour_chant_et_piano_(manuscrit_autographe)_-_btv1b550079763_(8_of_8).jpg",
+      "alt": "Pagina del manoscritto incompiuto di Debussy per La chute de la maison Usher, non il nuovo completamento di Solbiati",
+      "credit": "Claude Debussy, manoscritto storico / BnF / Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000111": {
+      "work_id": "oa-w-000111",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Berlioz_LDdF.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Berlioz_LDdF.jpg",
+      "alt": "Prima pagina del manoscritto originale della Damnation de Faust di Berlioz, non manifesto dello spettacolo",
+      "credit": "Hector Berlioz, manoscritto storico / Wikimedia Commons",
+      "license": "Public domain"
     }
   }
 }
