@@ -792,6 +792,42 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 source_id=db.execute("SELECT id FROM sources WHERE official_url=?",
                                      (source["official_url"],)).fetchone()["id"]
                 page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
+                if item["source_key"]=="bellini-catania-opera-2026-27":
+                    from opera_atlas.catania_press_calendar import (
+                        press_url,parse_press_calendar)
+                    release=press_url(item["official_url"])
+                    if release is not None:
+                        # The official event metadata lists a date range but
+                        # not the individual clocks. Independently fetch the
+                        # official theater press calendar through the same
+                        # robots-gated source and require exact event pairing.
+                        pause(REQUEST_GAP_SECONDS)
+                        release_page=fetcher(
+                            db,source_id=source_id,url=release,network_enabled=True)
+                        title,composer,venue,shows=parse_press_calendar(
+                            page.html,release_page.html,event_url=item["official_url"],
+                            news_url=release)
+                        facts=[{"event_title":title,"composer":composer,
+                                "venue":venue,"date":day,
+                                "starts_at":official_local_time(day,clock)}
+                               for day,clock in shows]
+                        from scripts.publish_work_posters import extract_official_poster
+                        image=extract_official_poster(
+                            page.html,item["official_url"],title)
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],"source_key":item["source_key"],
+                            "source_url":item["official_url"],
+                            "content_sha256":page.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                            "status":"needs_editorial_review",
+                            "press_calendar_evidence_url":release,
+                            "press_calendar_sha256":release_page.sha256,
+                            "event_facts":facts,
+                            **({"poster_evidence":image} if image else {})}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_first_party_press_calendar",
+                                       "rows":len(facts)})
+                        continue
                 if item["source_key"]=="opera-roma-season-2026-27":
                     from opera_atlas.roma_detail_parser import official_rome_other_season
                     other=official_rome_other_season(page.html,url=item["official_url"])

@@ -544,6 +544,39 @@
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
         ]
       }
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "synopsis": "Tre moschettieri ricevono dalla regina Anna una nuova missione. Il giovane paggio Oscar nasconde un'identità inattesa, capace di cambiare il corso dell'avventura.",
+      "history": {
+        "librettist": "Vincenzo De Vivo",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Sangiorgi",
+        "premiere_city": "Catania",
+        "sources": [
+          "https://www.teatromassimobellini.it/il-quinto-moschettiere-il-teatro-massimo-bellini-torna-al-sangiorgi-con-le-opere-da-camera/",
+          "https://www.teatromassimobellini.it/media/2025/09/pieghevole_stagioni20252026.pdf"
+        ]
+      }
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "synopsis": "Due atti unici di Čechov, Una domanda di matrimonio e L’orso, si intrecciano fra orgoglio, equivoci, gelosie e improvvisi slanci del cuore, in una commedia musicale.",
+      "history": {
+        "librettist": "Alessandro Idonea",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Sangiorgi",
+        "premiere_city": "Catania",
+        "sources": [
+          "https://www.teatromassimobellini.it/continuano-le-opere-da-camera-al-teatro-sangiorgi-con-le-nozze-dellorso/"
+        ]
+      }
     }
   ]
 }
