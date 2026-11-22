@@ -3,40 +3,6 @@
   "groups": [
     {
       "candidate_ids": [
-        "oa-index-ffbe120c526a352bc59c"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Franz Lehár",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 3,
-      "sources": [
-        {
-          "source_key": "salerno-verdi-opera-2026",
-          "url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
-        }
-      ],
-      "title": "La vedova allegra"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-dd282b89dc6ab9f24a20"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Pietro Mascagni",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "ancona-cavalleria-program-2026",
-          "url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
-        }
-      ],
-      "title": "A Giacomo Leopardi"
-    },
-    {
-      "candidate_ids": [
         "oa-index-7b0a1e061133c0b5970e"
       ],
       "category": "new_work_candidate",
@@ -51,36 +17,19 @@
         }
       ],
       "title": "L'ESECUZIONE"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-0a7e4f31ff7370ffc325"
-      ],
-      "category": "missing_composer",
-      "composer": null,
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 1,
-      "sources": [
-        {
-          "source_key": "bellini-catania-opera-2026-27",
-          "url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/"
-        }
-      ],
-      "title": "La bella addormentata"
     }
   ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 149,
+    "candidates_checked": 144,
     "candidates_without_facts": 0,
-    "facts_examined": 643,
-    "facts_resolved": 635,
+    "facts_examined": 621,
+    "facts_resolved": 619,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 8,
-    "unmatched_groups": 4
+    "unmatched_facts": 2,
+    "unmatched_groups": 1
   },
   "truncated": false
 }
