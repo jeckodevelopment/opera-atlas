@@ -239,3 +239,27 @@ Le URL consentite sono nella configurazione revisionata
 dalle fonti sono convalidate ad ogni refresh. I risultati operativi,
 anche quando non pubblicabili, sono registrati in
 `data/corroborated-performance-health.json`.
+
+## Revisione editoriale delimitata del 22 novembre 2026
+
+Per non dipendere indefinitamente dal contenuto HTML non disponibile
+dell'evento comunale, la candidate `oa-index-7ff44b89bf8d688bbee0`
+è stata registrata con due recite pubbliche corroborate e **provenienza
+dichiarata**. La data 21 gennaio 2027 è riservata all'anteprima/prova
+scolastica e non viene importata.
+
+La revisione si basa sulla scheda dell'ente beneficiario Art Bonus per
+il repertorio 2026/27, sulle due schede evento ClassicaLive per date,
+orari e teatro, e su Piazza in Festa come riscontro ulteriore. I
+riscontri non sono descritti come quattro fonti primarie indipendenti:
+ClassicaLive è un solo editore, Piazza in Festa ammette la compilazione
+automatica assistita da IA. Il `content_sha256` del record è un hash
+**della registrazione editoriale delle evidenze**, non dell'HTML della
+pagina ufficiale mai acquisita. Il campo `corroboration` distingue
+esplicitamente entrambe le situazioni.
+
+Questa decisione una tantum usa il normale status candidato
+`needs_review` e lo stato di evidenza `needs_editorial_review`,
+così che `auto_catalogue.promote` mantenga i consueti controlli
+d'identità e sede. Dopo la pubblicazione, i dati rimangono parte della
+pipeline ordinaria e non generano un secondo staging.
