@@ -550,9 +550,9 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         if verified_index_candidate(html,source_key=key,url=index_url):
             return [index_url]
         raise ValueError("official Ferrara opera not independently verified")
-    season_year=(int(re.fullmatch(r"/opera-e-balletto-(20\\d{2})/",urlsplit(index_url).path)[1])
+    season_year=(int(re.fullmatch(r"/opera-e-balletto-(20\d{2})/",urlsplit(index_url).path)[1])
                  if key in ("petruzzelli-opera-2026","petruzzelli-opera-2027")
-                 and re.fullmatch(r"/opera-e-balletto-(20\\d{2})/",urlsplit(index_url).path)
+                 and re.fullmatch(r"/opera-e-balletto-(20\d{2})/",urlsplit(index_url).path)
                  else None)
     parser=(ScopedSeasonAnchors(key,season_year=season_year)
             if key in {"parma-opera-2027","massimo-season-2026-27",
