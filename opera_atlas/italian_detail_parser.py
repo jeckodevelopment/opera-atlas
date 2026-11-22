@@ -49,8 +49,14 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
         if not re.match(r"\s*Teatro Carlo Felice\b",venue_section,re.I):
             raise ValueError("unknown Carlo Felice venue")
         venue="Teatro Carlo Felice"
-        rx=re.compile(r"(?i)\b(?:LU|MA|ME|GI|VE|SA|DO)\s+(\d{1,2})/(\d{1,2})/(20\d{2})"
-                      r"\s+.{0,45}?\bOre\s+([01]?\d|2[0-3]):([0-5]\d)\b")
+        # The first-party timetable always binds a fully dated ticket row
+        # to an explicit clock. WordPress may change/remove its localized
+        # weekday abbreviation, while keeping its dd/mm/yyyy and Turno label.
+        # Only the block *before* the verified Dove: Teatro Carlo Felice
+        # boundary is eligible; no repertoire/press dates from the body.
+        rx=re.compile(r"(?i)\b(\d{1,2})/(\d{1,2})/(20\d{2})"
+                      r"\s+(?:\([^)]{1,40}\)\s*)?(?:Turno\s+[A-Z0-9-]{1,8}\s*)?"
+                      r"\|?\s*Ore\s+([01]?\d|2[0-3]):([0-5]\d)\b")
     else:
         section=re.search(r"(?i)\bInfo\b",text)
         venue_marker=re.search(r"(?i)\bLuogo\b",text[section.end():] if section else "")
@@ -77,6 +83,12 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
             raise ValueError("same-day duplicate or conflicting recite")
         found[key]=f"{hour:02d}:{minute:02d}"
     if not found:raise ValueError("no explicit official performance dates")
+    if source_key=="carlo-felice-season-2026-27":
+        # Never silently omit a real official date if the page changes the
+        # schedule markup. Each date-only row needs a single explicit hour.
+        all_dates=re.findall(r"\b\d{1,2}/\d{1,2}/20\d{2}\b",schedule)
+        if len(all_dates)!=len(found):
+            raise ValueError("incomplete official Carlo Felice date/time evidence")
     return venue,sorted(found.items())
 
 def extract_source_credited_carlo_felice(html:str,*,url:str):
