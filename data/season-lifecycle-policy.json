@@ -329,6 +329,10 @@
     "vicenza-olimpico-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "sabbioneta-antica-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
