@@ -233,6 +233,30 @@
     "ferrara-season-opera-2027-28": {
       "strategy": "verified_rollover",
       "verification": "test_verified"
+    },
+    "chieti-marrucino-season-2027": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
+    "modena-municipal-opera-2027-28": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
+    "rovigo-sociale-season-2027-28": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
+    "treviso-del-monaco-season-2027-28": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
+    "padova-verdi-season-2027": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
+    "lecce-provincia-season-2027": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
     }
   }
 }
