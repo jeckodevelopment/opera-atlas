@@ -4,7 +4,7 @@ import json
 import unittest
 from datetime import date
 from scripts.auto_catalogue import promote
-from scripts.build_verified_catalog import MANIFEST
+from scripts.build_verified_catalog import MANIFEST,replica_registry_key
 from scripts.publish_catalog_v2 import REGISTRY
 
 class GoldoniMascagniStagingTests(unittest.TestCase):
@@ -34,7 +34,7 @@ class GoldoniMascagniStagingTests(unittest.TestCase):
         mismatches=[]
         for p in after["productions"]:
             for day,hour in p["dates"]:
-                perf=ids["performances"].get(p["key"]+"|"+day)
+                perf=ids["performances"].get(replica_registry_key(p,day,hour))
                 if perf is None or perf["source_url"]!=p["source_url"]:
                     mismatches.append((p["title"],p["source_url"],day,
                                       perf and perf["source_url"]))

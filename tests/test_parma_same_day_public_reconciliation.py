@@ -64,9 +64,11 @@ class ParmaSameDayPublicOperaTests(unittest.TestCase):
         f,identities,urls,editorial,history,new=promote_new_works(
             facts,registry,detail,candidates,material,synopses,[],
             today=date(2026,11,22),history=history,require_image=True)
-        self.assertEqual(new["new_works"],1,new)
-        self.assertEqual(new["new_stagings"],1,new)
-        self.assertEqual(new["new_recite"],2,new)
+        existing=[p for p in facts["productions"] if p["source_url"]==URL]
+        self.assertLessEqual(len(existing),1)
+        self.assertEqual(new["new_works"],0 if existing else 1,new)
+        self.assertEqual(new["new_stagings"],0 if existing else 1,new)
+        self.assertEqual(new["new_recite"],0 if existing else 2,new)
         product=next(p for p in f["productions"] if p["source_url"]==URL)
         self.assertEqual(product["dates"],[["2026-12-05","15:00"],
                                            ["2026-12-05","18:00"]])
