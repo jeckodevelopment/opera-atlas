@@ -75,6 +75,28 @@ class ParmaFamilyOperaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"ticket schedule|ticket row|unbound official Parma ticket hour"):
             parse_family_opera(missing,url=URL)
 
+    def test_punctuation_and_ore_labels_in_official_ticket_widget(self):
+        html=page()
+        html=html.replace("<div>ven 4 dic</div><div>09:00</div>",
+                          "<small>ven. 4 dic</small><span>ore 09:00</span>")
+        html=html.replace("<div>ven 4 dic</div><div>11:00</div>",
+                          "<small>ven 4 dic</small><span>11:00</span>")
+        html=html.replace("<div>sab 5 dic</div><div>15:00</div>",
+                          "<small>sab 5 dic</small><span>ore 15:00</span>")
+        html=html.replace("<div>sab 5 dic</div><div>18:00</div>",
+                          "<small>sab 5 dic</small><span>18:00</span>")
+        self.assertEqual(parse_family_opera(html,url=URL)[-1],
+                         [("2026-12-05","15:00"),("2026-12-05","18:00")])
+        # All four source tickets are required: no partial public schedule.
+        for missing in ("09:00","11:00","15:00","18:00"):
+            with self.subTest(missing=missing),self.assertRaises(ValueError):
+                parse_family_opera(html.replace(missing,"non disponibile"),url=URL)
+        # A newly added, unlabelled public time cannot be silently ignored.
+        with self.assertRaises(ValueError):
+            parse_family_opera(html.replace("<span>18:00</span>",
+                                            "<span>18:00</span><i>20:00</i>"),
+                               url=URL)
+
     def test_unverified_facts_do_not_create_family_tickets(self):
         for html in (
             page().replace("musica Giovanni Sollima","musica Altro autore"),
