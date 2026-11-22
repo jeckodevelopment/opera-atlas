@@ -9,6 +9,8 @@ class LivePublicationAuditTests(unittest.TestCase):
         self.assertEqual(classify(200, "Scheda non disponibile", "Scheda", "", "La traviata", "Produzione"), "unverified")
         self.assertEqual(classify(200, "La traviata", "Produzione", "",
                                   "La traviata", "Produzione"), "verified_live")
+        self.assertEqual(classify(200, "La traviata", "PRODUZIONE", "",
+                                  "La traviata", "Produzione"), "verified_live")
         self.assertEqual(classify(200, "Aida", "Produzione", "",
                                   "La traviata", "Produzione"), "content_mismatch")
         self.assertEqual(classify(200, "La traviata", "Produzione",
