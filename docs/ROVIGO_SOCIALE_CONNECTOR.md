@@ -108,3 +108,9 @@ continuano a essere acquisite. Le recite richiedono sempre orari
 espliciti sulla fonte municipale ufficiale.
 
 Test: `python -m unittest tests.test_rovigo_opera_source -v`.
+
+## Sede distinta: Ridotto del Teatro Sociale
+
+Le recite dell'intermezzo *Pimpinone* risultano annunciate al **Ridotto del Teatro Sociale di Rovigo** (26 e 28 novembre 2026), una sede da distinguere dalla sala principale. Il parser comunale blocca dunque l'attribuzione automatica alla sede generica `Teatro Sociale` quando il blocco dell'opera contiene il termine `Ridotto`; le altre opere continuano a essere processate. La produzione potrà essere pubblicata soltanto con una corrispondenza verificata tra l'evento ufficiale e l'identità canonica della sede Ridotto. Gli orari riportati da terze parti rimangono in revisione finché non sono acquisiti dalla fonte ufficiale.
+
+Test: `python -m unittest tests.test_rovigo_opera_source -v`.
