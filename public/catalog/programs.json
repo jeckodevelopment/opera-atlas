@@ -119,15 +119,15 @@
     },
     {
       "id": "oa-p-a12dbb283b490075",
-      "title": "L’ARLÉSIENNE / PAGLIACCI",
+      "title": "L’Arlésienne / Pagliacci",
       "components": [
         {
-          "title": "L’ARLÉSIENNE",
+          "title": "L’Arlésienne",
           "composer": "Georges Bizet",
           "work_id": null
         },
         {
-          "title": "PAGLIACCI",
+          "title": "Pagliacci",
           "composer": "Ruggero Leoncavallo",
           "work_id": "oa-w-000006"
         }
