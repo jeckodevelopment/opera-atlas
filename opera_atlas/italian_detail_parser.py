@@ -91,6 +91,27 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
         if key in found:
             raise ValueError("same-day duplicate or conflicting recite")
         found[key]=f"{hour:02d}:{minute:02d}"
+    if not found and source_key=="carlo-felice-season-2026-27":
+        # Some first-party ticket cards render additional subscription and
+        # accessibility labels between the complete date and the clock.
+        # A tightly bounded, date-specific fallback is allowed ONLY in the
+        # verified theatre/venue section; do not borrow a clock from a
+        # following date, cast paragraph or unrelated recommendation.
+        dates_rx=re.compile(r"\b\d{1,2}/\d{1,2}/20\d{2}\b")
+        date_hits=list(dates_rx.finditer(schedule))
+        for index,observed in enumerate(date_hits):
+            boundary=(date_hits[index+1].start()
+                      if index+1<len(date_hits) else len(schedule))
+            block=schedule[observed.end():min(boundary,observed.end()+180)]
+            clocks=re.findall(
+                r"(?i)\bOre\s*([01]?\d|2[0-3]):([0-5]\d)\b",block)
+            if len(clocks)!=1 or CUES.search(block):
+                raise ValueError("incomplete official Carlo Felice date/time evidence")
+            day,month,year=map(int,observed.group().split("/"))
+            key=date(year,month,day).isoformat()
+            if key in found:
+                raise ValueError("same-day duplicate or conflicting recite")
+            found[key]=f"{int(clocks[0][0]):02d}:{clocks[0][1]}"
     if not found:raise ValueError("no explicit official performance dates")
     if source_key=="carlo-felice-season-2026-27":
         # Never silently omit a real official date if the page changes the
