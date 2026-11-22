@@ -996,7 +996,10 @@ def validate_config(config:dict)->list[dict]:
         elif key=="haydn-rolling-opera":
             valid_season=index.path=="/eventi/area/opera" and not index.query
         elif key=="trapani-luglio-musicale-2026":
-            valid_season=index.path=="/it/luglio-musicale-stagioni/stagione-2026/" and not index.query
+            year=re.fullmatch(
+                r"/it/luglio-musicale-stagioni/stagione-(20\\d{2})/",index.path)
+            valid_season=bool(year and 2026<=int(year[1])<=2099
+                              and not index.query)
         elif key=="reggio-valli-opera-2026-27":
             valid_season=index.path=="/tipo/opera/" and not index.query
         elif key=="piacenza-opera-2026-27":
