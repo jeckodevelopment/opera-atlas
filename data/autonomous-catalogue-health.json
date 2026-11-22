@@ -5,10 +5,6 @@
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
-      "candidate_id": "oa-index-b4aaa5341d6c996550c0",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "title": "Cavalleria rusticana",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
@@ -29,7 +25,7 @@
       "reason": "identity_requires_more_evidence"
     }
   ],
-  "new_works": 1,
+  "new_works": 0,
   "enriched_recite_times": 0,
   "normalized_work_titles": 0
 }
