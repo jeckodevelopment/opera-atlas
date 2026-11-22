@@ -24,6 +24,21 @@ class RovigoOperaTests(unittest.TestCase):
                         URL.replace("www.comune.rovigo.it","fake.example")))
         self.assertEqual(extract("rovigo-sociale-opera-2026-27",URL,ANNOUNCEMENT,1),[URL])
 
+    def test_municipal_season_heading_variants(self):
+        for heading in (
+            "<h1>Teatro Sociale - Rovigo: Stagione Teatrale 2026/27</h1>",
+            "<h1>Teatro Sociale di Rovigo, Stagione Lirica 2026-2027</h1>",
+            "<h1>Teatro Sociale Rovigo — Stagione Opera 2026/2027</h1>",
+        ):
+            with self.subTest(heading=heading):
+                html=heading+"<p>Pagliacci di Ruggero Leoncavallo</p>"
+                self.assertTrue(identify_season(html,url=URL))
+        with self.assertRaises(ValueError):
+            identify_season(
+                "<h1>Teatro Sociale Rovigo</h1><p>Pagliacci 13 novembre 2026</p>",
+                url=URL,
+            )
+
     def test_announcement_is_not_showtime(self):
         self.assertEqual(parse_program(ANNOUNCEMENT,url=URL),[])
         self.assertEqual(parse_program(DATES,url=URL),[
