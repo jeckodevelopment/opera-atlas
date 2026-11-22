@@ -156,6 +156,65 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
         self.assertEqual(updated,again)
         self.assertFalse(health["changes"])
 
+    def test_annual_and_rolling_source_are_aliases_of_one_published_staging(self):
+        from scripts.reconcile_published_candidates import verified_shared_page_identities
+        for annual,rolling,url,title,composer in (
+            ("filarmonico-verona-opera-2027","filarmonico-verona-rolling-opera",
+             "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+             "Fidelio","Ludwig van Beethoven"),
+            ("coccia-novara-opera-2027","coccia-novara-rolling-opera",
+             "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
+             "Rigoletto","Giuseppe Verdi"),
+        ):
+            with self.subTest(source=rolling):
+                rows={"schema_version":1,"candidates":[
+                    {"id":key,"source_key":key,"official_url":url,
+                     "status":"needs_review"} for key in (annual,rolling)]}
+                production={"source_url":url,"title":title,"composer":composer,
+                            "dates":[["2027-01-29","20:00"]]}
+                ambiguous,verified=verified_shared_page_identities(
+                    rows,{"evidence":[]},{"productions":[production]},
+                    {"programs":[]})
+                self.assertIn(url,ambiguous)
+                self.assertEqual(verified,{(annual,url),(rolling,url)})
+                updated,_=reconcile(rows,{url},ambiguous_urls=ambiguous,
+                                    identity_verified=verified)
+                self.assertTrue(all(r["status"]=="already_catalogued"
+                                    for r in updated["candidates"]))
+                again,health=reconcile(updated,{url},ambiguous_urls=ambiguous,
+                                       identity_verified=verified)
+                self.assertEqual(again,updated)
+                self.assertFalse(health["changes"])
+
+    def test_source_alias_never_hides_distinct_or_conflicting_opera(self):
+        from scripts.reconcile_published_candidates import verified_shared_page_identities
+        url="https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+        annual="filarmonico-verona-opera-2027"
+        rolling="filarmonico-verona-rolling-opera"
+        rows={"schema_version":1,"candidates":[
+            {"id":key,"source_key":key,"official_url":url,"status":"needs_review"}
+            for key in (annual,rolling)]}
+        production={"source_url":url,"title":"Fidelio",
+                    "composer":"Ludwig van Beethoven",
+                    "dates":[["2027-04-11","15:30"]]}
+        detail={"evidence":[{"source_key":rolling,"source_url":url,
+                             "event_facts":[{"event_title":"Other opera",
+                                             "composer":"Other composer",
+                                             "date":"2027-04-11"}]}]}
+        ambiguous,verified=verified_shared_page_identities(
+            rows,detail,{"productions":[production]},{"programs":[]})
+        self.assertFalse(verified)
+        # A page holding multiple independently staged compositions cannot
+        # be closed just because one verified production uses the same URL.
+        ambiguous,verified=verified_shared_page_identities(
+            rows,{"evidence":[]},{"productions":[production,dict(production,
+                        title="Other opera")]},{"programs":[]})
+        self.assertFalse(verified)
+        rows["candidates"][1]["source_key"]="unrelated-opera-2027"
+        ambiguous,verified=verified_shared_page_identities(
+            rows,{"evidence":[]},{"productions":[production]},{"programs":[]})
+        self.assertFalse(verified)
+
     def test_published_program_is_stable_across_refreshes(self):
         program_url="https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
         candidate={"schema_version":1,"candidates":[{
