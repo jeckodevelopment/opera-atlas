@@ -130,13 +130,11 @@ jobs:
             git commit -m "data(catalog): publish cached verified recite [skip ci]"
             python -m scripts.safe_push_catalog
           fi
-      - name: Notify newly published cached works and productions
+      - name: Queue reliable publication notifications after cached checkpoint
         if: steps.cached_publication.outputs.deferred != 'true'
         env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          ATLAS_NOTIFICATION_FROM: ${{ secrets.ATLAS_NOTIFICATION_FROM }}
-          ATLAS_NOTIFICATION_TO: ${{ secrets.ATLAS_NOTIFICATION_TO }}
-        run: python -m scripts.notify_publications --base "${{ github.sha }}"
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=atlas-notification-reconcile
       - name: Retry fast publication if newer code arrived
         if: steps.cached_publication.outputs.deferred == 'true'
         env:
@@ -302,13 +300,11 @@ jobs:
           # Bounded, non-forced push; defer stale data if main received a
           # newer adapter or canonical update while the scan was running.
           python -m scripts.safe_push_catalog
-      - name: Notify newly published works and productions
+      - name: Queue reliable publication notifications after final checkpoint
         if: steps.publish_catalog.outputs.deferred != 'true'
         env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          ATLAS_NOTIFICATION_FROM: ${{ secrets.ATLAS_NOTIFICATION_FROM }}
-          ATLAS_NOTIFICATION_TO: ${{ secrets.ATLAS_NOTIFICATION_TO }}
-        run: python -m scripts.notify_publications --base "${{ steps.publish_catalog.outputs.baseline }}"
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=atlas-notification-reconcile
       - name: Automatically retry the deferred catalog against latest main
         if: steps.publish_catalog.outputs.deferred == 'true'
         env:
