@@ -26,6 +26,9 @@ on:
       - 'scripts/season_lifecycle_health.py'
       - 'data/season-lifecycle-policy.json'
       - 'tests/test_season_rollover.py'
+      - 'data/corroborated-performance-config.json'
+      - 'scripts/corroborate_performances.py'
+      - 'tests/test_corrob_performances.py'
       - 'scripts/collect_candidate_details.py'
       - 'scripts/auto_work_research.py'
       - 'tests/test_auto_work_research.py'
@@ -130,6 +133,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json public/catalog/work-identity-review.json
+          # Preserve the cross-source gate outcome even when no recita passed.
+          git add data/corroborated-performance-health.json
           git add data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
