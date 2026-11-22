@@ -297,7 +297,8 @@ def eligible(key:str,url:str)->bool:
     if excluded_nonopera(key,url):
         return False
     if key=="padova-verdi-opera-2026":
-        return path=="/it/attivita-culturali/stagione-lirica-di-padova-2026"
+        return (parsed.scheme=="https" and parsed.hostname=="padovacultura.padovanet.it"
+                and path=="/it/attivita-culturali/stagione-lirica-di-padova-2026")
     if key=="treviso-del-monaco-opera-2026-27":
         return path=="/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
     if key=="ravenna-alighieri-cherubini-2027":
