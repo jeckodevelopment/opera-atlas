@@ -699,6 +699,24 @@
           "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
         ]
       }
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+      "title": "Der fliegende Holländer",
+      "composer": "Richard Wagner",
+      "synopsis": "Condannato a vagare per i mari su una nave fantasma, l'Olandese può salvarsi soltanto grazie all'amore fedele di una donna. Quando incontra Senta, la promessa di redenzione si scontra con dubbi e gelosia.",
+      "history": {
+        "librettist": "Richard Wagner",
+        "premiere_year": 1843,
+        "premiere_date": "1843-01-02",
+        "premiere_venue": "Königlich Sächsisches Hoftheater",
+        "premiere_city": "Dresda",
+        "sources": [
+          "https://www.rai.it/dl/docs/1363352684701Olandese_impa_2013_seconda.pdf",
+          "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+        ]
+      }
     }
   ]
 }
