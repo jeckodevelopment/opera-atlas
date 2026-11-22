@@ -265,6 +265,10 @@
     "coccia-novara-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "filarmonico-verona-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
