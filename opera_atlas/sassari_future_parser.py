@@ -130,7 +130,12 @@ def parse_detail(html:str,*,url:str):
     if BAD.search(composer) or any(x in {"aa.vv.","vari","e","non","ignoto","anonimo"}
        for x in composer.casefold().split()):
         raise ValueError("Sassari composer credit ambiguous")
-    date_block=remainder[credit.end():credit.end()+110]
+    # Only the first work-specific H3 after the title/composer is a ticket
+    # schedule. The later prose can repeat the days without precise hours.
+    schedule=re.search(r"(?is)<h3\\b[^>]*>(.*?)</h3>",html[h.end():h.end()+550])
+    if not schedule:
+        raise ValueError("Sassari work-specific schedule heading absent")
+    date_block=clean(schedule[1])
     matches=list(DATE.finditer(date_block))
     if not 1<=len(matches)<=12:
         raise ValueError("official Sassari precise work-specific showtimes missing")
