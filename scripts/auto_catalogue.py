@@ -56,6 +56,7 @@ VENUE_BY_SOURCE={
     "pisa-verdi-opera-2026-27":("Pisa","Teatro Verdi"),
     "salerno-verdi-opera-2026":("Salerno","Teatro Municipale Giuseppe Verdi"),
     "macerata-festival-2027":("Macerata","Arena Sferisterio"),
+    "sassari-de-carolis-opera-2026":("Sassari","Teatro Comunale di Sassari"),
     "messina-vittorio-opera-2026-27":("Messina","Teatro Vittorio Emanuele"),
     # Newly approved detail adapters with already canonical physical venues.
     "coccia-novara-opera-2027":("Novara","Teatro Coccia"),
@@ -303,7 +304,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
