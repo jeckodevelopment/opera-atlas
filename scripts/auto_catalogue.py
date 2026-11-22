@@ -23,7 +23,7 @@ HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
     "haydn-rolling-opera":("Bolzano","Teatro Comunale di Bolzano"),
     "asti-alfieri-rolling-opera":("Asti","Teatro Alfieri"),
-    "savona-giocosa-rolling-opera":("Savona","Teatro Chiabrera"),
+    "savona-giocosa-rolling-opera":("Savona","Teatro Gabriello Chiabrera"),
     "sassari-de-carolis-rolling-opera":("Sassari","Teatro Comunale di Sassari"),
     "lecce-apollo-pinocchio-2026":("Lecce","Teatro Apollo"),
     "lecce-provincia-politeama-2026":("Lecce","Teatro Politeama Greco"),
