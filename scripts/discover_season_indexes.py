@@ -111,6 +111,12 @@ EXCLUDED_PATHS={
         # Official programme title is the classical ballet, not an opera.
         "le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre",
     }),
+    # The Haydn first-party page identifies a children's *interactive musical*
+    # based on Rossini, rather than a full staging of his canonical opera.
+    # Ticketed Family access does not by itself establish operatic identity.
+    "haydn-rolling-opera": frozenset({
+        "il-barbiere-di-siviglia-e-la-rosa-incantata",
+    }),
     "asti-alfieri-rolling-opera": frozenset({"concerto-di-capodanno"}),
     "petruzzelli-opera-2027": frozenset({
         # Tchaikovsky\u0027s Nutcracker is a ballet, even in an opera/ballet index.
