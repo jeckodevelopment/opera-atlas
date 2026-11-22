@@ -76,7 +76,7 @@ class SafePushTests(unittest.TestCase):
             # catalog is updated by another workflow.
             (pub/"data/season-index-health.json").write_text('{"sources":[]}')
             execute(pub,"add",".")
-            execute(pub,"commit","-m","source health")
+            execute(pub,"commit","--amend","--no-edit")
             (writer/"data/catalog.json").write_text('{"new":"recite"}\\n')
             execute(writer,"add",".")
             execute(writer,"commit","-m","canonical recite")
@@ -101,7 +101,7 @@ class SafePushTests(unittest.TestCase):
                 source=pub/"data/season-index-health.json"
                 source.write_text('{"scan":"new"}')
                 execute(pub,"add",".")
-                execute(pub,"commit","-m","source health")
+                execute(pub,"commit","--amend","--no-edit")
                 target=writer/changed
                 target.parent.mkdir(parents=True,exist_ok=True)
                 target.write_text("upstream changed")
