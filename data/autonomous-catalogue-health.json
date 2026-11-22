@@ -12,6 +12,14 @@
       "reason": "unsupported_or_untrusted_source"
     },
     {
+      "candidate_id": "oa-index-7b0a1e061133c0b5970e",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-addcc48a211cf5aea678",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "reason": "unsupported_or_untrusted_source"
     },
@@ -22,6 +30,10 @@
     {
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-7b0a1e061133c0b5970e",
+      "reason": "incomplete_work_editorial"
     }
   ],
   "new_works": 0,
