@@ -87,11 +87,16 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # showtime card, before the editorial credits.
     if not re.search(r"\b"+re.escape(title)+r"\s+(?:Dramma|Opera|Commedia|Melodramma)",text,re.I):
         raise ValueError("work-specific event heading differs from page title")
-    credits=ComposerCredits()
-    credits.feed(html)
-    if len(credits.credits)!=1:
+    # The live Teatro del Giglio templates put the composer credit directly
+    # in an editorial DIV rather than consistently wrapping it in a <p>.
+    # Extract exclusively from the bounded, title- and venue-verified panel;
+    # the global navigation can mention unrelated musicians and operas.
+    credits=re.findall(
+        r"(?i)\\bMusica di\\s+([A-ZÀ-Ý][A-ZÀ-Ý'’.-]+(?:\\s+[A-ZÀ-Ý][A-ZÀ-Ý'’.-]+){1,3})\\b",
+        text)
+    if len(credits)!=1:
         raise ValueError("official composer credit missing or ambiguous")
-    composer=" ".join(credits.credits[0].split())
+    composer=" ".join(credits[0].split())
     if (len(composer.split())<2 or
         not re.fullmatch(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]+){1,3}",composer)):
         raise ValueError("composer not specific enough")
