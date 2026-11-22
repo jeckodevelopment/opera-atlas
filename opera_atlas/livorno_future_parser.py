@@ -111,15 +111,25 @@ def parse_detail(html:str,*,url:str):
         raise ValueError("unbounded Goldoni official credits")
     body=text[start:start+stop.start()]
     if CANCEL.search(body):raise ValueError("cancelled Goldoni performance")
-    # The 2026 Mascagni Festival's Cavalleria rusticana is performed in
-    # Piazza Goldoni, although the CMS metadata calls the venue Teatro
-    # Goldoni. It cannot be imported as a Teatro Goldoni auditorium event.
-    if (when.year==2026
-        and urlsplit(url).path in
-            ("/spettacoli/cavalleria-rusticana/",
-             "/spettacoli/cavalleria-rusticana-2/")
-        and re.search(r"(?i)\bPiazza\s+Goldoni\b",body)):
-        raise ValueError("Goldoni page identifies an offsite festival venue")
+    # These two single-recita pages are an exception to the CMS's generic
+    # "Teatro Goldoni" metadata: the production explicitly says Piazza
+    # Goldoni. Require that independently labelled venue and Mascagni's
+    # own work credit on the exact approved URLs, never from a generic slug.
+    mascagni_urls=(
+        "/spettacoli/cavalleria-rusticana/",
+        "/spettacoli/cavalleria-rusticana-2/",
+    )
+    if when.year==2026 and urlsplit(url).path in mascagni_urls:
+        day=(19 if urlsplit(url).path==mascagni_urls[0] else 20)
+        if (title.casefold()!="cavalleria rusticana"
+            or when!=date(2026,8,day) or hour!="21:30"
+            or not re.search(r"(?i)\bPiazza\s+Goldoni\b",body)
+            or not re.search(
+                r"(?i)\bCAVALLERIA\s+RUSTICANA\s+di\s+Pietro\s+Mascagni\b",
+                body)):
+            raise ValueError("unverified Mascagni Festival date, composer or outdoor venue")
+        return "Cavalleria rusticana","Pietro Mascagni","Piazza Goldoni",[
+            (when.isoformat(),hour)]
     credit=re.search(
         r"(?i)\bMusica di\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'.’\-]*"
         r"(?:\s+[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'.’\-]*){1,3})"
