@@ -1354,6 +1354,8 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                         diagnostic="official_html_unavailable_or_invalid"
                     else:
                         diagnostic="official_source_unavailable"
+                elif item["key"]=="napoli-san-carlo-rolling-opera" and str(exc).startswith("San Carlo security challenge"):
+                    diagnostic="official_anti_bot_challenge"
                 elif item["key"]=="rovigo-sociale-opera-2026-27":
                     # The official municipal page changes format regularly.
                     # Publish only stable parser-stage codes, never page HTML.
