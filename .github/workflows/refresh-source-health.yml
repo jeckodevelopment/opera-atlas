@@ -141,6 +141,11 @@ jobs:
           git show origin/main:data/season-index-candidates.json > /tmp/source-candidates-published.json
           if python -c 'import json,sys; from scripts.source_health_dispatch import newly_actionable; a=json.load(open(sys.argv[1])); b=json.load(open(sys.argv[2])); sys.exit(0 if newly_actionable(a,b) else 1)' /tmp/source-candidates-before.json /tmp/source-candidates-published.json; then
             gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+            # The separate fast detail workflow must not wait for its 3-hour
+            # cron after the verified new candidate checkpoint. Its own
+            # concurrency group protects overlapping dispatches.
+            gh api -X POST "repos/${{ github.repository }}/dispatches" \
+              -f event_type=new-official-candidates
           else
             echo "New candidates not present on origin/main; catalog dispatch deferred."
           fi
