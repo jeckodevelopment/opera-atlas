@@ -88,6 +88,21 @@ class ReggioSourceTests(unittest.TestCase):
             parse_detail(html.replace("<h2>Biglietti</h2>",
                                       "<h2>Informazioni</h2>"),url=DETAIL)
 
+    def test_new_veleno_source_bound_edits_and_future_premiere(self):
+        from scripts.publish_work_editorial import validate_history
+        from pathlib import Path
+        doc=json.loads((Path(__file__).resolve().parents[1]/
+            "data"/"verified-work-authority-seeds.json").read_text(encoding="utf-8"))
+        rows=[x for x in doc["works"] if
+              x.get("source_url")=="https://www.iteatri.re.it/spettacolo/veleno/"]
+        self.assertEqual(len(rows),1)
+        self.assertEqual((rows[0]["title"],rows[0]["composer"]),
+                         ("Veleno","Gaia Aloisi"))
+        self.assertEqual(rows[0]["history"]["premiere_year"],2027)
+        self.assertEqual(rows[0]["history"]["premiere_venue"],"Teatro Ariosto")
+        self.assertTrue(validate_history(rows[0]["history"]))
+        self.assertTrue(45<=len(rows[0]["synopsis"])<=300)
+
     def test_chamber_opera_at_teatro_ariosto_is_not_excluded(self):
         url="https://www.iteatri.re.it/spettacolo/veleno/"
         html=('<h1>Veleno</h1><p>Opera da camera</p>'
