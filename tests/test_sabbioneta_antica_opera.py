@@ -19,7 +19,7 @@ def event(title="“Il barbiere di Siviglia” di G. Rossini",
           text="(riduzione dell’opera con pianoforte)"):
     return (f"<html><h2>{edition}</h2><h1>{title}</h1>"
             f"<h2>{when}</h2><p>{venue}</p><h1>{title}</h1>"
-            f"<p>{text}</p><p>Teatro all’Antica</p></html>")
+            f"<p>{text}</p></html>")
 
 def orfeo():
     return event(title="L’ORFEO di C. MONTEVERDI",
