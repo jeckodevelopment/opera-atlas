@@ -98,6 +98,7 @@ function build(){
  return items;
 }
 function render(){
+ const auditCurrent=!!(data.live&&data.evidence&&data.live.catalog_release_sha256===data.evidence.catalog_release_sha256);
  const items=build(),total=items.length,covered=items.filter(x=>x.configured_connectors>0).length;
  const found=items.reduce((v,x)=>v+x.health.found,0),published=items.reduce((v,x)=>v+x.health.published,0),missing=items.reduce((v,x)=>v+x.health.missing,0);
  const failed=items.filter(x=>x.health.scan==="bad").length,partial=items.filter(x=>x.health.scan==="warn").length;
