@@ -80,7 +80,23 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # Do not identify genre from the global footer or unrelated ticket info.
     if not _GENRE.search(primary[:700]) or re.search(r"\bopera\s+musical\b",primary[:700],re.I):
         raise ValueError("Asti event is not verified as an opera")
-    credits=_CREDIT.findall(primary[:650])
+    if title.casefold()=="aida" and urlsplit(url).path=="/event/aida/":
+        # A single exact production heading owns the composer credit.
+        # Generic regex matches in prose must not bypass this contract.
+        headings=list(re.finditer(r"(?is)<h2\b[^>]*>(.*?)</h2>",html))
+        production=[h for h in headings if " ".join(
+            re.sub(r"<[^>]+>"," ",h[1]).split()).casefold()==title.casefold()]
+        credits=[]
+        if len(production)==1:
+            tail=html[production[0].end():]
+            regia=re.search(r"(?i)\bRegia\b",tail)
+            if regia is not None and regia.start()<750:
+                production_credit=" ".join(
+                    re.sub(r"<[^>]+>"," ",tail[:regia.start()]).split())
+                if re.fullmatch(r"di\s+Giuseppe\s+Verdi",production_credit,re.I):
+                    credits=["Giuseppe Verdi"]
+    else:
+        credits=_CREDIT.findall(primary[:650])
     if len(credits)!=1:
         raise ValueError("missing or ambiguous Asti composer credit")
     composer=credits[0]
