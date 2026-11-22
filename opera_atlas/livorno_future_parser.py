@@ -97,7 +97,7 @@ def parse_detail(html:str,*,url:str):
         raise ValueError("Goldoni detail lacks its own dated ticket clock")
     number,month,year,hour,minute=details[0].groups()
     when=date(int(year),MONTHS[month.casefold()],int(number))
-    if when.year<2027:raise ValueError("historic Goldoni event belongs to original source")
+    if when.year<2026:raise ValueError("Goldoni event predates the verified monitored seasons")
     hour=f"{int(hour):02d}:{minute or '00'}"
     title=clean(heading[1]).strip()
     if not title or len(title)>170 or EXCLUDE.search(title):
@@ -111,6 +111,15 @@ def parse_detail(html:str,*,url:str):
         raise ValueError("unbounded Goldoni official credits")
     body=text[start:start+stop.start()]
     if CANCEL.search(body):raise ValueError("cancelled Goldoni performance")
+    # The 2026 Mascagni Festival's Cavalleria rusticana is performed in
+    # Piazza Goldoni, although the CMS metadata calls the venue Teatro
+    # Goldoni. It cannot be imported as a Teatro Goldoni auditorium event.
+    if (when.year==2026
+        and urlsplit(url).path in
+            ("/spettacoli/cavalleria-rusticana/",
+             "/spettacoli/cavalleria-rusticana-2/")
+        and re.search(r"(?i)\bPiazza\s+Goldoni\b",body)):
+        raise ValueError("Goldoni page identifies an offsite festival venue")
     credit=re.search(
         r"(?i)\bMusica di\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'.’\-]*"
         r"(?:\s+[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'.’\-]*){1,3})"
