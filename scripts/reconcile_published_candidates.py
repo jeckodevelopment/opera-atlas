@@ -10,7 +10,7 @@ import json
 from datetime import datetime,timezone
 from scripts.daily_ingest import _write_atomic
 from scripts.discover_season_indexes import (
-    OUTPUT, PUBLIC, classify, reviewed_source_urls,
+    OUTPUT, PUBLIC, classify, excluded_nonopera, reviewed_source_urls,
 )
 from scripts.publish_catalog_v2 import ROOT
 
@@ -186,7 +186,9 @@ def reconcile(candidates:dict,verified_urls:set[str],*,
         entry=row.copy()
         if entry.get("status") in AUTO_STATES:
             key=(entry["source_key"],entry["official_url"])
-            if (entry["official_url"] in (ambiguous_urls or set())
+            if excluded_nonopera(entry["source_key"],entry["official_url"]):
+                now="excluded_nonopera"
+            elif (entry["official_url"] in (ambiguous_urls or set())
                 and entry["official_url"] in verified_urls):
                 # A season page may list several independent compositions.
                 # A published Nabucco must not mark Don Pasquale or a new

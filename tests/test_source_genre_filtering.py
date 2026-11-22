@@ -30,7 +30,6 @@ class SourceGenreFilteringTests(unittest.TestCase):
             ("parma-opera-2027","https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"),
             ("fenice-opera-2026-27","https://www.teatrolafenice.it/event/adriana-lecouvreur/"),
             ("modena-teatro-opera-2026-27","https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"),
-            ("modena-teatro-opera-2026-27","https://www.teatrocomunalemodena.it/spettacolo/leos-janacek-thomas-ades-vanishings/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/falstaff-2/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/ernani-2/"),
         ]

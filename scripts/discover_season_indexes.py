@@ -85,7 +85,7 @@ EXCLUDED_PATHS={
     }),
     # Confirmed non-lyric stage production: Lucio Dalla songs are arranged
     # into a contemporary pop-opera. Atlas indexes only lyric operas.
-    "modena-teatro-opera-2026-27": frozenset({"lanno-che-verra"}),
+    "modena-teatro-opera-2026-27": frozenset({"lanno-che-verra", "leos-janacek-thomas-ades-vanishings"}),
     "giglio-lucca-opera-2026-27": frozenset({"lanno-che-verra"}),
     "piacenza-opera-2026-27": frozenset({"lanno-che-verra"}),
     "donizetti-opera-2026": frozenset(),
