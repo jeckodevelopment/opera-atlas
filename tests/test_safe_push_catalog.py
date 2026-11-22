@@ -74,6 +74,7 @@ class SafePushTests(unittest.TestCase):
             pub,writer,remote=self.setup_repos(tmp)
             # Simulate a source checkpoint under data/ while the canonical
             # catalog is updated by another workflow.
+            execute(pub,"restore","--source","HEAD^","data/catalog.json")
             (pub/"data/season-index-health.json").write_text('{"sources":[]}')
             execute(pub,"add",".")
             execute(pub,"commit","--amend","--no-edit")
@@ -98,6 +99,7 @@ class SafePushTests(unittest.TestCase):
         for changed in ("scripts/adapter.py","data/season-index-health.json"):
             with self.subTest(path=changed), TemporaryDirectory() as tmp:
                 pub,writer,remote=self.setup_repos(tmp)
+                execute(pub,"restore","--source","HEAD^","data/catalog.json")
                 source=pub/"data/season-index-health.json"
                 source.write_text('{"scan":"new"}')
                 execute(pub,"add",".")
