@@ -130,6 +130,7 @@ jobs:
         continue-on-error: true
         run: python -m scripts.scan_san_carlo_secondary --allow-network --sync-candidates
       - name: Cross-check San Carlo recite against independent calendar
+        id: san_carlo_comparison
         # Do not compare an old checkpoint after a failed fresh acquisition.
         if: steps.san_carlo_candidates.outcome == 'success'
         continue-on-error: true
@@ -157,6 +158,11 @@ jobs:
         run: python -m scripts.apply_reviewed_performance_evidence
       - name: Apply reviewed Aida and Cenerentola to the central candidate registry
         run: python -m scripts.apply_rovigo_additional_reviewed
+      - name: Route fully corroborated San Carlo recite into canonical review queue
+        if: steps.san_carlo_candidates.outcome == 'success' && steps.san_carlo_comparison.outcome == 'success'
+        # External-source review is optional, never block the national feed.
+        continue-on-error: true
+        run: python -m scripts.apply_san_carlo_corroborated
       - name: Build identity-review snapshot from official candidate evidence
         run: python -m scripts.work_identity_review
       - name: Checkpoint national pending-candidate evidence and diagnostics
@@ -167,6 +173,7 @@ jobs:
           git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json public/catalog/work-identity-review.json
           # Preserve the cross-source gate outcome even when no recita passed.
           git add data/corroborated-performance-health.json
+          if [ -f data/san-carlo-canonical-review-health.json ]; then git add data/san-carlo-canonical-review-health.json; fi
           for f in data/san-carlo-secondary-candidates.json data/san-carlo-secondary-health.json public/catalog/san-carlo-secondary-candidates.json data/san-carlo-secondary-corroboration.json public/catalog/san-carlo-secondary-corroboration.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
