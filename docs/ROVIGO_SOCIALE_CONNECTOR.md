@@ -239,3 +239,26 @@ Le URL consentite sono nella configurazione revisionata
 dalle fonti sono convalidate ad ogni refresh. I risultati operativi,
 anche quando non pubblicabili, sono registrati in
 `data/corroborated-performance-health.json`.
+
+## Decisione editoriale persistente del 22 novembre 2026
+
+La verifica pubblica delle due recite 2027 è conservata in
+`data/reviewed-performance-decisions.json`, un registro revisionato
+**non generato dallo scanner**. L'evento ufficiale continua a non
+restituire HTML utilizzabile, quindi la decisione non ne inventa un
+hash né dichiara una lettura primaria inesistente.
+
+La decisione incrocia il repertorio istituzionale Art Bonus curato
+dal Comune, le due schede evento ClassicaLive e il riscontro di
+Piazza in Festa (che dichiara esplicitamente l'impiego dell'IA e può
+derivare dagli stessi atti comunali). I due eventi ClassicaLive
+appartengono allo stesso editore. La decisione non li presenta come
+tre fonti primarie indipendenti e richiede due sole recite pubbliche.
+
+In esecuzione, `scripts.apply_reviewed_performance_evidence`
+applica il record ai **registri correnti** dopo i tentativi di
+acquisizione live, preservando ogni eventuale prova primaria più
+forte e senza sovrascrivere candidate già pubblicate. Il risultato
+entra nel checkpoint iniziale e soltanto `auto_catalogue.promote`
+può creare la produzione e i relativi ID canonici. La ripetizione
+dello stesso ciclo è idempotente.
