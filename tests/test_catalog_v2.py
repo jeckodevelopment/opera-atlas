@@ -132,7 +132,7 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         performances=[x for x in graph["performances"] if x["staging_id"]=="oa-s-000196"]
         self.assertEqual({x["id"] for x in performances},
                          {"oa-r-000863","oa-r-000864"})
-        self.assertEqual({x["date"] for x in performances},
+        self.assertEqual({x["local_date"] for x in performances},
                          {"2026-10-30","2026-10-31"})
         facts=[x for x in self.facts["productions"]
                if x["title"]=="Don Pasquale" and x["municipality"]=="Jesi"]
