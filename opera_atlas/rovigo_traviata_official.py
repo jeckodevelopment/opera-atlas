@@ -71,3 +71,20 @@ def parse_official_traviata(html:str,*,url:str)->list[tuple[str,str,str,str,str]
         raise ValueError("official Rovigo Traviata two public recite incomplete")
     return [(TITLE,COMPOSER,VENUE,day,clock)
             for day,clock in sorted(rows.items())]
+
+# Stable, coarse diagnostic stages. Do not echo untrusted source content
+# or exception strings into the published operational dashboard.
+_FAILURE_STAGE={
+    "official Rovigo event title missing":"title_missing",
+    "official Verdi composer credit missing":"composer_missing",
+    "Rovigo performance venue missing":"venue_missing",
+    "unbounded official Rovigo booking header":"dates_unbounded",
+    "invalid Rovigo official recita date":"date_invalid",
+    "Rovigo date/weekday mismatch":"weekday_conflict",
+    "conflicting repeated Rovigo booking time":"time_conflict",
+    "official Rovigo Traviata two public recite incomplete":"recite_incomplete",
+    "unapproved Rovigo official event URL":"unapproved_url",
+}
+
+def failure_stage(exc:ValueError)->str:
+    return _FAILURE_STAGE.get(str(exc),"content_unverified")

@@ -988,31 +988,45 @@ def _probe_future_season(item:dict,db,source_id:int,fetcher,*,enabled:bool):
                   "next_season_url":target,"next_season_links":0}
 
 
-def _rovigo_verified_detail_fallback(db,source_id:int,fetcher):
-    """Try only two exact approved municipal paths and validate each page.
+class RovigoFallbackNotVerified(ValueError):
+    """Safe per-endpoint acquisition diagnostics; no source HTML or URLs."""
 
-    No search-engine HTML, secondary press dates or archived snapshots are
-    substituted for a current first-party page. Explicit robots denial wins.
+    def __init__(self,reason:str,checks:dict[str,str]):
+        super().__init__(reason)
+        self.checks=checks
+
+
+def _rovigo_verified_detail_fallback(db,source_id:int,fetcher):
+    """Check both exact official routes; retain bounded acquisition stages.
+
+    A blank municipal HTML shell is not composer, venue or recital evidence.
+    Never substitute cached search results, third-party HTML or inferred data.
     """
     from opera_atlas.rovigo_traviata_official import OFFICIAL_URLS
-    had_content=False
-    for detail_url in OFFICIAL_URLS:
+    checks={}
+    for name,detail_url in zip(("social_api","event_page"),OFFICIAL_URLS):
         try:
             page=fetcher(db,source_id=source_id,url=detail_url,
                          network_enabled=True)
         except FetchUnavailable:
+            checks[name]="fetch_unavailable"
             continue
         except AccessDenied:
+            # Respect explicit disallows; do not probe alternate paths.
             raise
-        had_content=True
+        # The parser owns all title, composer, venue and showtime rules.
         try:
             urls=extract("rovigo-sociale-opera-2026-27",
                          detail_url,page.html,1)
-        except ValueError:
+        except ValueError as exc:
+            from opera_atlas.rovigo_traviata_official import failure_stage
+            checks[name]=failure_stage(exc)
             continue
         return page,detail_url,urls
-    raise ValueError("rovigo_fallback_content_unverified" if had_content
-                     else "rovigo_fallback_fetch_unavailable")
+    unavailable=all(status=="fetch_unavailable" for status in checks.values())
+    reason=("rovigo_fallback_fetch_unavailable" if unavailable
+            else "rovigo_fallback_content_unverified")
+    raise RovigoFallbackNotVerified(reason,checks)
 
 
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
@@ -1177,9 +1191,13 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                                    "first_seen":timestamp,"last_seen":timestamp}
                     elif seen[uid]["status"]=="needs_review":
                         seen[uid]["last_seen"]=timestamp
+                fallback_checks=(exc.checks if isinstance(
+                    exc,RovigoFallbackNotVerified) else None)
                 statuses.append({"key":item["key"],"status":"unavailable_or_invalid",
                                  "reason":type(exc).__name__,"diagnostic":diagnostic,
                                  "required_links":item["min_links"],"links":0,
+                                 **({"fallback_checks":fallback_checks}
+                                    if fallback_checks is not None else {}),
                                  **future_health})
                 continue
             page_health={}
