@@ -58,7 +58,8 @@ class NoceOfficialEditorialTests(unittest.TestCase):
             html.replace(IMAGE,"/images/spettacoli/stagione-27/generic-season.png"),
             html.replace(IMAGE,"https://other.example/IL_NOCE_DI_BENEVENTO.png"),
             html.replace("<h3>informazioni sull'evento</h3>",
-                         f"<img src='{IMAGE}'/><h3>informazioni sull'evento</h3>"),
+                         "<img src='/images/spettacoli/stagione-27/ALT_IL_NOCE_DI_BENEVENTO.png'/>"
+                         "<h3>informazioni sull'evento</h3>"),
             html.replace("<h1>IL NOCE DI BENEVENTO</h1>","<h2>Opera</h2>"),
         ):
             with self.subTest(case=invalid[-110:]):
