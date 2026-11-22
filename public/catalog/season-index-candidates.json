@@ -58,6 +58,14 @@
       "last_seen": "2026-11-22T13:39:18+00:00"
     },
     {
+      "id": "oa-index-05719103525d11cd2dd7",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-05aab24f386e6aa86884",
       "source_key": "piacenza-opera-2026-27",
       "official_url": "https://teatripiacenza.it/event/la-clemenza-di-tito/",
@@ -210,6 +218,14 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-10b64887233ccc3975c1",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/new-saxophone-orchestra/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-11def56ae568ccce9f61",
       "source_key": "scala-season-2026-27",
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
@@ -226,6 +242,14 @@
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
     {
+      "id": "oa-index-12c56600704dc3f2f161",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
@@ -240,6 +264,14 @@
       "status": "not_in_official_season",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
+    },
+    {
+      "id": "oa-index-1669ba722cb38dd63324",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/duo-resonans/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-184e57e1cd9f38d554d5",
@@ -296,6 +328,14 @@
       "status": "excluded_nonopera",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-20T21:01:08+00:00"
+    },
+    {
+      "id": "oa-index-1a64fc57bdc56c4d7c8d",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/duo-monica-leone-michele-campanella/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-1b9c2f52afd0351d539c",
@@ -426,6 +466,22 @@
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
     {
+      "id": "oa-index-22252e550a1327b5b7fd",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/concerti-di-belcanto/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
+      "id": "oa-index-240224d9236ab1e13afe",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/quartetto-vocale-faraualla/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-24979e668286aa66e398",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/norma/",
@@ -445,9 +501,25 @@
       "id": "oa-index-2583140715d654277a2b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
+    },
+    {
+      "id": "oa-index-25a49d03498e16ccbf46",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/omaggio-a-lelio-luttazzi/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
+      "id": "oa-index-268aa3f92f6c3dfaafaa",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-26db4f73989b1c14282c",
@@ -533,9 +605,9 @@
       "id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-35be56b50cfb2da6f65b",
@@ -618,6 +690,14 @@
       "last_seen": "2026-11-20T21:15:46+00:00"
     },
     {
+      "id": "oa-index-3f12fd23aa46c05bfd36",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-3fa0cb85b2727f9e1e71",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/partenope/",
@@ -653,7 +733,7 @@
       "id": "oa-index-41acaf1f090fbeedb4a7",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello-3/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
@@ -722,6 +802,14 @@
       "last_seen": "2026-11-20T21:13:13+00:00"
     },
     {
+      "id": "oa-index-4f3383615741e8be9345",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-519067130127b02887ec",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/nuovo-cinema-paradiso/",
@@ -738,6 +826,14 @@
       "last_seen": "2026-11-20T21:15:46+00:00"
     },
     {
+      "id": "oa-index-52b35f0089c3663c7ddb",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-52ff40865866999be465",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/",
@@ -749,7 +845,7 @@
       "id": "oa-index-535b054411d3b3c9ea01",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
@@ -797,17 +893,17 @@
       "id": "oa-index-5957ac7d6a8b0d34cb4b",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T17:52:01+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-59b4a6e5b8f0087fd73d",
@@ -874,6 +970,14 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-5d5add0de982424c0397",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/orchestra-nazionale-barocca-dei-conservatori/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-5fea5e594da012daa488",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
@@ -882,12 +986,36 @@
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
     {
+      "id": "oa-index-60bb4d4b8b76592e8c7f",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/concerto-di-natale/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
+      "id": "oa-index-60bbf80391cbc2b2c853",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/american-dream/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-62da655021bdc4f62ba7",
       "source_key": "scala-season-2026-27",
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:01:08+00:00",
       "last_seen": "2026-11-20T23:18:50+00:00"
+    },
+    {
+      "id": "oa-index-6323c5cfb105a389d9fe",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/festival-giovane/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-6339afba8bcc8028e395",
@@ -946,6 +1074,14 @@
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
     {
+      "id": "oa-index-695c37583a2d6ffd8ca6",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/romeo-e-giulietta/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-697328f32e7cfa32252b",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
@@ -968,6 +1104,14 @@
       "status": "excluded_nonopera",
       "first_seen": "2026-11-21T22:34:11+00:00",
       "last_seen": "2026-11-22T13:39:18+00:00"
+    },
+    {
+      "id": "oa-index-6cbee68241ae10c67713",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/lidia-schillaci-canta-i-grandi-cantautori-italiani/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-6cd199691f7145a4d048",
@@ -997,9 +1141,17 @@
       "id": "oa-index-70313ef8895b42a91a5b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
+    },
+    {
+      "id": "oa-index-71feb2c03e06415fa1c9",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-725487d437f63ba0cf3e",
@@ -1032,6 +1184,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
+    },
+    {
+      "id": "oa-index-74569c043386234ffc89",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/stabat-mater/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-7475e8c93d79a7a7d654",
@@ -1085,9 +1245,9 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -1109,9 +1269,9 @@
       "id": "oa-index-7b6b273b4dfbfb8e9909",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T18:52:31+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-7d80a6e641ec59031bfa",
@@ -1154,6 +1314,14 @@
       "last_seen": "2026-11-20T23:18:50+00:00"
     },
     {
+      "id": "oa-index-7f7fc1d9df69f1a3cd53",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-7ff44b89bf8d688bbee0",
       "source_key": "rovigo-sociale-opera-2026-27",
       "official_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027",
@@ -1176,6 +1344,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T20:59:08+00:00"
+    },
+    {
+      "id": "oa-index-8115e400ae8706fd132a",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-84e8ac0695f45f81567d",
@@ -1248,6 +1424,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-21T19:23:40+00:00"
+    },
+    {
+      "id": "oa-index-8a747732592e239daf27",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/incontri/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-8aa427dd9ba609755fb6",
@@ -1362,6 +1546,14 @@
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
     {
+      "id": "oa-index-96f4705dd645d2c5e333",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/bruno-canino/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-9722a684ead4733eee96",
       "source_key": "filarmonico-verona-rolling-opera",
       "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
@@ -1394,6 +1586,14 @@
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
     {
+      "id": "oa-index-97a48278e09ca0497348",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/food-ensemble/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-9837cf3a1cb8aa932ab3",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
@@ -1405,7 +1605,7 @@
       "id": "oa-index-9871aa4f1201e959bf0b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
@@ -1453,9 +1653,9 @@
       "id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -1464,6 +1664,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-20T21:13:13+00:00",
       "last_seen": "2026-11-20T21:13:13+00:00"
+    },
+    {
+      "id": "oa-index-9e431fc40b9509948b8d",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/omaggio-a-bowie-cohen-michael-e-prince/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-9eea54a8395ff3d6c74e",
@@ -1480,6 +1688,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-22T12:32:18+00:00",
       "last_seen": "2026-11-22T12:32:18+00:00"
+    },
+    {
+      "id": "oa-index-9f61560762c466080073",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-9fdcd7eba240da4540af",
@@ -1522,12 +1738,20 @@
       "last_seen": "2026-11-21T18:30:55+00:00"
     },
     {
+      "id": "oa-index-a1929fb66f9b33ef717b",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/vennero-da-ogni-dove/2026-07-20",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-a4402559616047a0367b",
       "source_key": "savona-giocosa-rolling-opera",
       "official_url": "https://operagiocosa.it/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T17:52:01+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-a587b66c1f36bad78d65",
@@ -1570,6 +1794,14 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-a8254243f6bdae92de8b",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/quintetto-sospeso/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-a8590c90fe0f6dea649d",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/despinosa-beethoven-settima/",
@@ -1592,6 +1824,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T21:30:14+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
+    },
+    {
+      "id": "oa-index-a9f4804afdd997da424a",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/requiem-k-626/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-ab6612954af20d7d7cad",
@@ -1642,6 +1882,14 @@
       "last_seen": "2026-11-21T12:02:51+00:00"
     },
     {
+      "id": "oa-index-b251a0c344a038227652",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/sicily-jazz-concert/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-b2a88f78e60bd3f79d16",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/otello/",
@@ -1677,9 +1925,17 @@
       "id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T18:52:31+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
+      "id": "oa-index-b4ae738f2728d4430578",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-b67d637b2f593f6756c7",
@@ -1778,6 +2034,14 @@
       "last_seen": "2026-11-21T22:34:11+00:00"
     },
     {
+      "id": "oa-index-bd13a3b21fe19bfaaf88",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/concerto-di-capodanno/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-bec860aa12e82378f67b",
       "source_key": "arena-festival-2027",
       "official_url": "https://www.arena.it/arena-opera-festival/domande-frequenti/",
@@ -1808,6 +2072,14 @@
       "status": "not_in_official_season",
       "first_seen": "2026-11-21T19:46:19+00:00",
       "last_seen": "2026-11-21T21:30:14+00:00"
+    },
+    {
+      "id": "oa-index-c2835ab3db743bc022da",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/rossinimania/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-c7a26f1f7611da36ad2a",
@@ -1845,9 +2117,9 @@
       "id": "oa-index-cab03dfcd8aeff155178",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T18:52:31+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-cc0051e23e563b2a9b20",
@@ -1869,9 +2141,17 @@
       "id": "oa-index-cd6e3c395e6b5bbc1ff4",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
+    },
+    {
+      "id": "oa-index-cd84917faf717ff6c4ca",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/verdi-sogno-e-passione/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-cde049d5c057e0c050b2",
@@ -1949,7 +2229,7 @@
       "id": "oa-index-d1c1b3127d4e683424be",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/aida/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
@@ -1984,6 +2264,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T22:34:11+00:00",
       "last_seen": "2026-11-22T00:27:03+00:00"
+    },
+    {
+      "id": "oa-index-d57d2a1cbc3f370f3da5",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-d610eb9b9a480ae8cbf1",
@@ -2032,6 +2320,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-22T16:08:03+00:00",
       "last_seen": "2026-11-22T16:08:03+00:00"
+    },
+    {
+      "id": "oa-index-d8c22fa66fa68b8a3670",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-d9a81975db60b7bc0aeb",
@@ -2090,6 +2386,14 @@
       "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
+      "id": "oa-index-dd7baa45131b35e450b1",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-de1f52ee525c73d565a6",
       "source_key": "filarmonico-verona-opera-2027",
       "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
@@ -2101,7 +2405,7 @@
       "id": "oa-index-df2fab0c88c0e4ca68c2",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
@@ -2157,9 +2461,9 @@
       "id": "oa-index-e0c88bff5883ca11cf6e",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T18:52:31+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-e1bb2cc8491121303ddb",
@@ -2189,17 +2493,17 @@
       "id": "oa-index-e44f89c2a6d468342e8a",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -2223,15 +2527,23 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-22T19:35:23+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-e831cbf742e2f848f44b",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T18:52:31+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
+      "id": "oa-index-ea69a3d503d84f40c50b",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/florez-30/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -2373,9 +2685,9 @@
       "id": "oa-index-f4226333be6c3f44d995",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
-      "last_seen": "2026-11-22T18:52:31+00:00"
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-f437d2811434d3e312c2",
@@ -2434,6 +2746,14 @@
       "last_seen": "2026-11-21T21:30:14+00:00"
     },
     {
+      "id": "oa-index-f8122a2cac3109445aaa",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
+    },
+    {
       "id": "oa-index-f92f3fc808d9fb909461",
       "source_key": "sassari-de-carolis-rolling-opera",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
@@ -2464,6 +2784,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-22T17:51:53+00:00",
       "last_seen": "2026-11-22T17:51:53+00:00"
+    },
+    {
+      "id": "oa-index-fc23fb46e120f890466b",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/passantino-incontra-brioschi/",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-fc275749d78556b44e50",
@@ -2512,6 +2840,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T17:52:01+00:00"
+    },
+    {
+      "id": "oa-index-ff9fb11ad20bd9d779b3",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "status": "needs_review",
+      "first_seen": "2026-11-22T20:57:27+00:00",
+      "last_seen": "2026-11-22T20:57:27+00:00"
     },
     {
       "id": "oa-index-ffbe120c526a352bc59c",
