@@ -13,6 +13,7 @@ from datetime import date
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit
 import re
+import unicodedata
 
 KEY = "cosenza-inprimafila-rolling-opera"
 INDEX = "https://www.inprimafila.net/index.php/eventi"
@@ -158,10 +159,12 @@ def parse_season_summary(html:str,*,url:str)->list[tuple[str,str,str,list[tuple[
         if NONOPERA.search(first_title):
             continue
         title_text=" ".join(parts[i+1:i+5])
+        normalized_title="".join(c for c in unicodedata.normalize("NFD",title_text)
+                                 if unicodedata.category(c)!="Mn")
         matching=[]
         for slug,(canonical,composer,credit,genre) in WORKS.items():
             short=slug.replace("-"," ").removeprefix("il ")
-            if re.search(r"(?<!\w)"+re.escape(short)+r"(?!\w)",title_text,re.I):
+            if re.search(r"(?<!\w)"+re.escape(short)+r"(?!\w)",normalized_title,re.I):
                 matching.append((slug,canonical,composer,credit,genre))
         if len(matching)!=1:
             continue
