@@ -32,6 +32,7 @@ ROLLOVER_KEYS={
     "donizetti-opera-2027",
     "jesi-opera-season-2027",
     "ancona-opera-season-2027",
+    "ferrara-season-opera-2027-28",
 }
 
 def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
@@ -39,6 +40,17 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
     if key not in ROLLOVER_KEYS or source["access_status"]!="approved":
         return None
     url=urlsplit(source["url"])
+    if key=="ferrara-season-opera-2027-28":
+        match=re.fullmatch(
+            r"/it/rassegna/teatro-comunale-ferrara-opera-danza-(20\d{2})-(20\d{2})/",
+            url.path)
+        if not match:return None
+        start,end=map(int,match.groups())
+        if (start<2027 or start>=2098 or end!=start+1
+                or (not allow_early and today<date(end,6,1))):
+            return None
+        return (f"https://{url.hostname}/it/rassegna/"
+                f"teatro-comunale-ferrara-opera-danza-{start+1}-{end+1}/")
     if key in ("jesi-opera-season-2027","ancona-opera-season-2027"):
         pattern=(r"/lirica/programma-stagione-lirica-(20\d{2})/"
                  if key.startswith("jesi-") else r"/stagione-lirica-(20\d{2})/")
