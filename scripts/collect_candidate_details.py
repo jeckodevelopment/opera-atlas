@@ -845,6 +845,13 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                   if RESEARCH.exists() else {"schema_version":1,"works":[]})
     sources={x["key"]:x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))}
     health=[]
+    # The same official season programme may yield several distinct opera
+    # candidates (Jesi, Ancona, Livorno). Reuse its *verified fetched bytes*
+    # within this single scan, keyed by source policy ID and exact URL;
+    # never cache failed fetches or share across different source policies.
+    fetched_pages={}
+    distinct_fetches=0
+    repeated_pages=0
     # Network pacing is injected only by the production CLI; unit tests use
     # deterministic mocked page fetchers and never wait or perform HTTP.
     pause=pause or (lambda seconds:None)
@@ -853,15 +860,24 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
         migrate(db)
         for index,item in enumerate(chosen):
             source=sources[item["source_key"]]
-            if network_enabled and index:
-                pause(REQUEST_GAP_SECONDS)
+            # Rate-limit actual network requests only; an in-memory,
+            # source-scoped cache hit does not contact the official host.
             try:
                 if not network_enabled:raise AccessDenied("network disabled")
                 db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",
                            (source["official_url"],))
                 source_id=db.execute("SELECT id FROM sources WHERE official_url=?",
                                      (source["official_url"],)).fetchone()["id"]
-                page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
+                key=(source_id,item["official_url"])
+                page=fetched_pages.get(key)
+                if page is None:
+                    if distinct_fetches:
+                        pause(REQUEST_GAP_SECONDS)
+                    page=fetcher(db,source_id=source_id,url=item["official_url"],network_enabled=True)
+                    fetched_pages[key]=page
+                    distinct_fetches+=1
+                else:
+                    repeated_pages+=1
                 if item["source_key"]=="bellini-catania-opera-2026-27":
                     from opera_atlas.catania_press_calendar import (
                         press_url,parse_press_calendar)
@@ -871,9 +887,17 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         # not the individual clocks. Independently fetch the
                         # official theater press calendar through the same
                         # robots-gated source and require exact event pairing.
-                        pause(REQUEST_GAP_SECONDS)
-                        release_page=fetcher(
-                            db,source_id=source_id,url=release,network_enabled=True)
+                        release_key=(source_id,release)
+                        release_page=fetched_pages.get(release_key)
+                        if release_page is None:
+                            if distinct_fetches:
+                                pause(REQUEST_GAP_SECONDS)
+                            release_page=fetcher(
+                                db,source_id=source_id,url=release,network_enabled=True)
+                            fetched_pages[release_key]=release_page
+                            distinct_fetches+=1
+                        else:
+                            repeated_pages+=1
                         title,composer,venue,shows=parse_press_calendar(
                             page.html,release_page.html,event_url=item["official_url"],
                             news_url=release)
