@@ -24,7 +24,7 @@ VENUES={
     "Opera da camera":("Teatro M° Tonino Pardo",
                        r'Teatro\s+M[°º]\s+Tonino\s+Pardo'),
 }
-COMPOSER=re.compile(r"\bMusica\s+di\s+([A-ZÀ-Ž][\wÀ-ÿ.\-'’ ]{4,85}?)(?=\s+Libretto\b)",re.I)
+COMPOSER=re.compile(r"\b(?:Musica|Musiche)\s+di\s+([A-ZÀ-Ž][\wÀ-ÿ.\-'’ ]{4,85}?)(?=\s+Libretto\b)",re.I)
 
 class Reader(HTMLParser):
     def __init__(self):
