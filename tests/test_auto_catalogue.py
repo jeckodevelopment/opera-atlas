@@ -104,6 +104,40 @@ class AutoCatalogueTests(unittest.TestCase):
         self.assertEqual(facts,self.facts)
         self.assertEqual(ids,self.registry)
 
+    def test_jesi_don_pasquale_promotes_reserved_work_and_two_historical_recite(self):
+        from scripts.publish_catalog_v2 import ROOT
+        from scripts.publish_work_editorial import build_editorial,EDITORIAL,HISTORY
+        read=lambda p:json.loads(p.read_text(encoding="utf-8"))
+        rows=read(ROOT/"data"/"candidate-detail-evidence.json")
+        candidates=read(ROOT/"data"/"season-index-candidates.json")
+        rows["evidence"]=[x for x in rows["evidence"]
+                          if x["source_key"]=="jesi-don-pasquale-opera-2026"]
+        candidates["candidates"]=[x for x in candidates["candidates"]
+                                  if x["source_key"]=="jesi-don-pasquale-opera-2026"]
+        self.assertEqual(candidates["candidates"][0]["status"],"needs_review")
+        facts,registry,urls,report=promote(self.facts,self.registry,rows,candidates,[],
+                                           today=date(2026,11,22))
+        self.assertEqual(report["new_stagings"],1)
+        self.assertEqual(report["new_recite"],2)
+        self.assertEqual(len(registry["works"]),len(self.registry["works"])+1)
+        self.assertEqual(registry["works"]["don pasquale|gaetano donizetti"]["id"],"oa-w-000090")
+        self.assertNotIn("don pasquale|gaetano donizetti",registry["reserved_works"])
+        product=next(p for p in facts["productions"]
+                     if p["title"]=="Don Pasquale" and p["municipality"]=="Jesi")
+        self.assertEqual(dict(product["dates"]),
+                         {"2026-10-30":"20:30","2026-10-31":"20:30"})
+        graph=assemble(facts,registry,approved_extra=set(urls))
+        self.assertIn("oa-w-000090",{x["id"] for x in graph["works"]})
+        cards=build_editorial(facts,registry,read(EDITORIAL),
+                              approved_extra=set(urls),history=read(HISTORY))
+        self.assertEqual(len([x for x in cards["works"]
+                              if x["work_id"]=="oa-w-000090"]),1)
+        again,again_ids,_,second=promote(facts,registry,rows,candidates,urls,
+                                          today=date(2026,11,22))
+        self.assertEqual(second["new_recite"],0)
+        self.assertEqual(again,facts)
+        self.assertEqual(again_ids,registry)
+
     def test_new_production_and_recita_publish_with_stable_ids(self):
         evidence,candidates=self.fixture()
         facts,ids,urls,report=promote(self.facts,self.registry,evidence,candidates,[],

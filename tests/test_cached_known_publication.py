@@ -19,7 +19,16 @@ class CachedKnownPublicationTests(unittest.TestCase):
         times=json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
         result,ids,approved,new_times,report=prepare(
             facts,registry,evidence,candidates,urls,times,today=date(2026,11,21))
-        self.assertEqual(ids["works"],registry["works"])
+        # Other officially verified backlog items (such as Don Pasquale at
+        # Jesi) can promote a pre-reserved identity in this same offline pass.
+        # No *new* identity may be allocated by the cached-known path.
+        old={v["id"] for name in ("works","reserved_works")
+             for v in registry.get(name,{}).values()}
+        new={v["id"] for name in ("works","reserved_works")
+             for v in ids.get(name,{}).values()}
+        self.assertEqual(old,new)
+        self.assertEqual({k:v for k,v in ids["works"].items()
+                          if k in registry["works"]},registry["works"])
         genova=[p for p in result["productions"] if p["municipality"]=="Genova"]
         self.assertGreaterEqual(len(genova),4,report)
         self.assertGreaterEqual(sum(len(p["dates"]) for p in genova),24,report)
