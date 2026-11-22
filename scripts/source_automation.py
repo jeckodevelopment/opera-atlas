@@ -25,6 +25,7 @@ INDEX_VENUES = {
     "messina-vittorio-opera-2026-27": ("Messina|Teatro Vittorio Emanuele",),
     "lecce-apollo-pinocchio-2026": ("Lecce|Teatro Apollo",),
     "lecce-politeama-opera-2026": ("Lecce|Teatro Politeama Greco",),
+    "lecce-provincia-politeama-2026": ("Lecce|Teatro Politeama Greco",),
     "rovigo-sociale-opera-2026-27": ("Rovigo|Teatro Sociale",),
     "padova-verdi-opera-2026": ("Padova|Teatro Verdi",),
     "treviso-del-monaco-opera-2026-27": ("Treviso|Teatro Comunale Mario del Monaco",),
