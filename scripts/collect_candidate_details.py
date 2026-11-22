@@ -380,7 +380,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
             "teatro-grande-opera-2026","opera-roma-season-2026-27",
             "petruzzelli-opera-2026","petruzzelli-opera-2027",
             "lirico-cagliari-opera-2027","bellini-catania-opera-2026-27",
-            "modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27",
+            "chieti-marrucino-lirica-2026","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27",
             "piacenza-opera-2026-27","reggio-valli-opera-2026-27",
             "jesi-don-pasquale-opera-2026","jesi-esecuzione-opera-2026",
             "jesi-nabucco-opera-2026","ancona-elisir-opera-2026",
