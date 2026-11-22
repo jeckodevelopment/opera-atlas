@@ -92,6 +92,31 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
                 self.assertRaises(ValueError,parse_detail,
                     fixture.replace("Teatro M° Tonino Pardo","Chiostro di San Domenico"),url=url)
 
+    def test_fuori_fuoco_official_musiche_di_credit(self):
+        html=page(title="Fuori Fuoco",composer="Diana Buscemi",
+                  genre="Opera da camera",venue="Teatro M° Tonino Pardo")
+        html=html.replace("Musica di Diana Buscemi","Musiche di Diana Buscemi")
+        title,composer,venue,slots=parse_detail(html,url=INDEX+"fuori-fuoco/")
+        self.assertEqual((title,composer,venue),
+                         ("Fuori Fuoco","Diana Buscemi","Teatro M° Tonino Pardo"))
+        self.assertEqual(len(slots),2)
+
+    def test_live_cms_navigation_does_not_hide_official_genre(self):
+        url=INDEX+"ghost-cafe/"
+        html=page(title="Ghost Cafè",composer="Carlo Galante",
+                  genre="Opera da camera",venue="Teatro M° Tonino Pardo")
+        # A real production header can include several accessible menu nodes
+        # before the single standalone genre badge.
+        html=html.replace("<div>Opera da camera</div>",
+                          "".join("<span>Accessibilità informazioni</span>" for _ in range(8))
+                          +"<div>Opera da camera</div>")
+        result=parse_detail(html,url=url)
+        self.assertEqual(result[1:3],("Carlo Galante","Teatro M° Tonino Pardo"))
+        for label in ("Concerto","Danza","Opera pop"):
+            with self.subTest(label=label),self.assertRaises(ValueError):
+                parse_detail(html.replace("<div>Opera da camera</div>",
+                                          "<div>"+label+"</div>"),url=url)
+
     def test_automatic_rollover_requires_verified_next_official_season(self):
         from scripts.rollover_season_indexes import next_index,ROLLOVER_KEYS
         from scripts.discover_season_indexes import validate_config
