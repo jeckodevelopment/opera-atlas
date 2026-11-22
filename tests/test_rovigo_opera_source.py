@@ -60,6 +60,43 @@ class RovigoOperaTests(unittest.TestCase):
              "2026-11-13","20:30"),
         ])
 
+    def test_operetta_heading_never_leaks_showtime_into_preceding_opera(self):
+        html=(HEADER
+              +"<h2>Pagliacci</h2><p>musica di Ruggero Leoncavallo</p>"
+              +"<h2>Il pipistrello</h2><p>musica di Johann Strauss II</p>"
+              +"<p>18 dicembre 2026 ore 20.30</p>"
+              +"<h2>La traviata</h2><p>musica di Giuseppe Verdi</p>"
+              +"<p>22 gennaio 2027 ore 20.30</p>")
+        self.assertEqual(parse_program(html,url=URL),[
+            ("La traviata","Giuseppe Verdi","Teatro Sociale","2027-01-22","20:30"),
+        ])
+        # The original German operetta heading also ends the previous block.
+        self.assertEqual(parse_program(html.replace("Il pipistrello","Die Fledermaus"),url=URL),
+                         parse_program(html,url=URL))
+
+    def test_menotti_bernstein_double_bill_is_not_two_tickets(self):
+        combined=(HEADER
+                  +"<h2>Pagliacci</h2><p>musica di Ruggero Leoncavallo</p>"
+                  +"<p>13 novembre 2026 ore 20.30</p>"
+                  +"<h2>Il telefono / Trouble in Tahiti</h2>"
+                  +"<p>musica di Gian Carlo Menotti e Leonard Bernstein</p>"
+                  +"<p>11 dicembre 2026 ore 20.30</p>")
+        self.assertEqual(parse_program(combined,url=URL),[
+            ("Pagliacci","Ruggero Leoncavallo","Teatro Sociale",
+             "2026-11-13","20:30"),
+        ])
+        split=(HEADER
+               +"<h2>Il telefono</h2><p>musica di Gian Carlo Menotti</p>"
+               +"<p>11 dicembre 2026 ore 20.30</p>"
+               +"<h2>Trouble in Tahiti</h2><p>musica di Leonard Bernstein</p>"
+               +"<p>11 dicembre 2026 ore 20.30</p>"
+               +"<h2>Pagliacci</h2><p>musica di Ruggero Leoncavallo</p>"
+               +"<p>13 novembre 2026 ore 20.30</p>")
+        self.assertEqual(parse_program(split,url=URL),[
+            ("Pagliacci","Ruggero Leoncavallo","Teatro Sociale",
+             "2026-11-13","20:30"),
+        ])
+
     def test_fail_closed_on_missing_primary_evidence(self):
         for broken in (
             HEADER.replace("2026/2027","2025/2026")+"<p>Pagliacci</p>",

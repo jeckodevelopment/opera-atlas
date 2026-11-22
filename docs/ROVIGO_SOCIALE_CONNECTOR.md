@@ -93,3 +93,18 @@ Quando saranno disponibili le recite sul sito del Teatro, il parser dovrà
 consentire di confrontare le identità senza creare una doppia produzione.
 
 Test: `python -m unittest tests.test_rovigo_artbonus_program -v`.
+
+## Isolamento dei pannelli e programmi composti
+
+Il riconoscimento del titolo `Il pipistrello` / `Die Fledermaus` come
+**delimitatore**, senza trattarlo come opera pubblicabile, impedisce
+che le date dell'operetta vengano attribuite all'opera lirica
+precedente. Per il programma `Il telefono / Trouble in Tahiti` il parser
+non pubblica due biglietti: omette le componenti di un titolo misto
+e, se i titoli sono su pannelli distinti con lo stesso giorno, omette
+entrambe le recite ambigue per affidarle al sistema nazionale dei
+programmi composti. Altre opere autentiche della stessa pagina
+continuano a essere acquisite. Le recite richiedono sempre orari
+espliciti sulla fonte municipale ufficiale.
+
+Test: `python -m unittest tests.test_rovigo_opera_source -v`.
