@@ -30,7 +30,12 @@ class Cagliari2027FiniteSeason(unittest.TestCase):
                   if x["source_key"]==KEY and
                   x["status"]=="not_in_official_season"]
         self.assertGreaterEqual(len(archived),7)
-        self.assertEqual(per_url[BASE+"candide/"]["status"],"needs_review")
+        # The same first-party brochure supports the candidate both before
+        # and after a concurrent verified publication. A known published URL
+        # must become already_catalogued, not stay stuck in the review queue.
+        candide_url=BASE+"candide/"
+        expected="already_catalogued" if candide_url in published else "needs_review"
+        self.assertEqual(per_url[candide_url]["status"],expected)
         # Other sources may be independently recatalogued by concurrent
         # publisher checkpoints: assert exact Cagliari statuses and local
         # idempotence, rather than global byte equality with an old snapshot.
