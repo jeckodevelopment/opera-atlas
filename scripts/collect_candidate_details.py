@@ -1317,6 +1317,26 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                    "outcome":"verified_first_party_season_calendar",
                                    "rows":len(facts)})
                     continue
+                if (item["source_key"]=="parma-opera-2027"
+                    and item["official_url"]==
+                    "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"):
+                    from opera_atlas.parma_public_recite import official_public_recite
+                    facts=official_public_recite(
+                        page.html,url=item["official_url"])
+                    retained[item["id"]]={
+                        "candidate_id":item["id"],
+                        "source_key":item["source_key"],
+                        "source_url":item["official_url"],
+                        "content_sha256":page.sha256,
+                        "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        "status":"needs_editorial_review",
+                        "audience_scope":"public_family_only",
+                        "excluded_educational_slots":["2026-12-04T09:00","2026-12-04T11:00"],
+                        "event_facts":facts}
+                    health.append({"candidate_id":item["id"],
+                                   "outcome":"verified_public_family_tickets",
+                                   "rows":len(facts)})
+                    continue
                 if item["source_key"]=="rovigo-regione-programma-2026-27":
                     from opera_atlas.rovigo_regional_program import approved_programme
                     pdf_url=approved_programme(page.html,url=item["official_url"])
