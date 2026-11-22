@@ -401,7 +401,14 @@ def eligible(key:str,url:str)->bool:
         from opera_atlas.rovigo_traviata_official import OFFICIAL_URLS
         return (url in OFFICIAL_URLS
                 or (parsed.scheme=="https" and parsed.hostname=="www.comune.rovigo.it"
-                    and path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"))
+                    and not parsed.query and not parsed.fragment
+                    and not parsed.username and not parsed.password
+                    and parsed.port is None
+                    and path in {
+                        "/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027",
+                        "/teatrosociale/dettaglio-teatro/eventi/aida",
+                        "/teatrosociale/dettaglio-teatro/eventi/cenerentola",
+                    }))
     if key=="padova-verdi-opera-2026":
         return (parsed.scheme=="https" and parsed.hostname=="padovacultura.padovanet.it"
                 and path=="/it/attivita-culturali/stagione-lirica-di-padova-2026")
