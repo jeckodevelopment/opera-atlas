@@ -277,6 +277,10 @@
     "macerata-festival-rolling": {
       "strategy": "verified_rollover",
       "verification": "test_verified"
+    },
+    "ravenna-cherubini-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
