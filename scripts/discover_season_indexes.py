@@ -446,7 +446,41 @@ def eligible(key:str,url:str)->bool:
         return path.startswith("/event/") and bool(path.removeprefix("/event/"))
     raise ValueError("unknown season index key")
 
+def _messina_future_links(index_url:str,html:str,min_links:int)->list[str]:
+    """Review-only links from the official opera category, not its site navigation.
+
+    Unlike the known 26/27 three-production allowlist, next year's titles are
+    unknown in advance. The category and its exact season heading must agree.
+    """
+    index=urlsplit(index_url)
+    year=re.fullmatch(r"/event_listing_type/opera-(\d{2})-(\d{2})/",index.path)
+    if (index.scheme!="https" or index.hostname!="www.teatrovittorioemanuele.it"
+            or not year or int(year[1])<27 or int(year[2])!=(int(year[1])+1)%100):
+        raise ValueError("invalid future Messina opera season URL")
+    if not re.search(r"Tipo\s+di\s+evento:\s*Opera\s+"+year[1]+r"\s*/\s*"+year[2],
+                     re.sub(r"<[^>]*>"," ",html),re.IGNORECASE):
+        raise ValueError("official Messina opera season heading not confirmed")
+    parser=AnchorParser()
+    parser.feed(html)
+    urls=set()
+    for href in parser.links:
+        url=urljoin(index_url,href)
+        candidate=urlsplit(url)
+        if (candidate.scheme=="https" and candidate.hostname==index.hostname
+                and not candidate.query and not candidate.fragment
+                and not candidate.username and not candidate.password
+                and candidate.port is None and
+                re.fullmatch(r"/evento/[a-z0-9-]+/",candidate.path)
+                and not excluded_nonopera("messina-vittorio-opera-2026-27",url)):
+            urls.add(url)
+    if len(urls)<min_links:
+        raise ValueError("season index incomplete or structure changed")
+    return sorted(urls)
+
+
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="messina-vittorio-opera-2026-27" and "/opera-26-27/" not in index_url:
+        return _messina_future_links(index_url,html,min_links)
     if key=="puccini-torre-del-lago-2027":
         from opera_atlas.puccini_festival_parser import parse_program
         if len(parse_program(html,url=index_url))!=15:
@@ -636,7 +670,10 @@ def validate_config(config:dict)->list[dict]:
         elif key=="sassari-de-carolis-opera-2026":
             valid_season=index.path=="/opere-liriche.aspx" and not index.query
         elif key=="messina-vittorio-opera-2026-27":
-            valid_season=index.path=="/event_listing_type/opera-26-27/" and not index.query
+            season=re.fullmatch(r"/event_listing_type/opera-(\d{2})-(\d{2})/",index.path)
+            valid_season=bool(season and 26<=int(season[1])<=98
+                              and int(season[2])==(int(season[1])+1)%100
+                              and not index.query)
         elif key=="lecce-apollo-pinocchio-2026":
             valid_season=index.path=="/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/" and not index.query
         elif key=="lecce-politeama-opera-2026":

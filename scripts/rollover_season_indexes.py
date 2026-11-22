@@ -27,6 +27,7 @@ ROLLOVER_KEYS={
     "puccini-torre-del-lago-2027",
     "giglio-lucca-opera-2026-27",
     "carlo-felice-season-2026-27",
+    "messina-vittorio-opera-2026-27",
 }
 
 def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
@@ -34,6 +35,15 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
     if key not in ROLLOVER_KEYS or source["access_status"]!="approved":
         return None
     url=urlsplit(source["url"])
+    if key=="messina-vittorio-opera-2026-27":
+        match=re.fullmatch(r"/event_listing_type/opera-(\d{2})-(\d{2})/",url.path)
+        if not match:return None
+        start=2000+int(match[1])
+        if (start<2026 or int(match[2])!=(start+1)%100 or start>=2098
+                or (not allow_early and today<date(start+1,6,1))):
+            return None
+        return (f"https://{url.hostname}/event_listing_type/"
+                f"opera-{(start+1)%100:02d}-{(start+2)%100:02d}/")
     if key=="carlo-felice-season-2026-27":
         match=re.fullmatch(
             r"/rassegna-stagione-opera-danza-musical-(20\d{2})-(\d{2})/",
