@@ -49,6 +49,10 @@ EXCLUDED_PATHS={
         "sicily-jazz-concert",
         # The official 2026 genre index labels these as dance and concerts.
         "romeo-e-giulietta", "food-ensemble", "quintetto-sospeso",
+        # First-party 2026 season lists these as chamber/choral concerts,
+        # not operatic productions.
+        "american-dream", "requiem-k-626", "verdi-sogno-e-passione",
+        "passantino-incontra-brioschi",
         "bruno-canino",
         "omaggio-a-bowie-cohen-michael-e-prince",
         "lidia-schillaci-canta-i-grandi-cantautori-italiani",
@@ -167,6 +171,7 @@ def excluded_nonopera(key:str,url:str)->bool:
     # Valle d'Itria individual entries end in an ISO date, so classification
     # must compare the full approved production URL rather than its final slug.
     if key=="martina-valle-itria-2026" and url in {
+        "https://www.festivaldellavalleditria.it/spettacolo/vennero-da-ogni-dove/2026-07-20",
         "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
         "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
     }:
