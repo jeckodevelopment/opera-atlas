@@ -12,22 +12,6 @@
       "reason": "unsupported_or_untrusted_source"
     },
     {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "reason": "same_recita_already_in_official_circuit",
-      "dates": [
-        "2026-11-26",
-        "2026-11-28"
-      ]
-    },
-    {
-      "candidate_id": "oa-index-7b0a1e061133c0b5970e",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-addcc48a211cf5aea678",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "reason": "unsupported_or_untrusted_source"
     },
@@ -40,20 +24,12 @@
       "reason": "unsupported_or_untrusted_source"
     },
     {
+      "candidate_id": "oa-index-d7e02d354864fa2b6dc2",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
       "candidate_id": "oa-index-ffbe120c526a352bc59c",
       "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-357ebb275673ae888623",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-7b0a1e061133c0b5970e",
-      "reason": "incomplete_work_editorial"
     },
     {
       "candidate_id": "oa-index-ffbe120c526a352bc59c",
