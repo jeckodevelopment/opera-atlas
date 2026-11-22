@@ -8,6 +8,8 @@ on:
       - 'scripts/corroborate_san_carlo_secondary.py'
       - 'scripts/scan_san_carlo_secondary.py'
       - 'tests/test_san_carlo_independent_corroboration.py'
+      - 'scripts/apply_san_carlo_corroborated.py'
+      - 'tests/test_san_carlo_canonical_bridge.py'
       - 'tests/test_san_carlo_secondary_probe.py'
   push:
     branches: [main]
@@ -39,14 +41,33 @@ jobs:
       - name: Compare independent live calendar with candidate dates
         run: |
           set -o pipefail
-          python -m scripts.corroborate_san_carlo_secondary --allow-network --dry-run | tee "$RUNNER_TEMP/san-carlo-corroboration.json"
+          python -m scripts.corroborate_san_carlo_secondary --allow-network --sync-review | tee "$RUNNER_TEMP/san-carlo-corroboration.json"
+      - name: Verify real canonical queue in memory (no publication)
+        run: |
+          python - <<'PY'
+          import json
+          from scripts.apply_san_carlo_corroborated import apply, CHECKPOINT, CORROBORATION
+          from scripts.discover_season_indexes import OUTPUT
+          from scripts.collect_candidate_details import OUTPUT as DETAILS
+          candidate = json.loads(CHECKPOINT.read_text())
+          review = json.loads(CORROBORATION.read_text())
+          registry = json.loads(OUTPUT.read_text())
+          details = json.loads(DETAILS.read_text())
+          _, _, outcomes = apply(candidate, review, registry, details,
+                                 checked_at="2026-11-22T22:00:00Z")
+          ready = [x for x in outcomes if x["status"]=="canonical_candidate_evidence_ready"]
+          conflicts = [x for x in outcomes if x["status"]=="recite_conflict_or_incomplete"]
+          print("San Carlo canonical bridge:", len(ready), "productions ready;", len(conflicts), "held")
+          if not ready or not conflicts:
+              raise SystemExit("San Carlo canonical gate has not separated matches and conflicts")
+          PY
       - name: Describe review-only result
         run: |
           python - <<'PY'
           import json,os
           from pathlib import Path
           result=json.loads((Path(os.environ['RUNNER_TEMP'])/'san-carlo-corroboration.json').read_text())
-          if not result['dry_run'] or result['canonical_publication_authorized']:
+          if result['dry_run'] or result['canonical_publication_authorized']:
               raise SystemExit('unsafe San Carlo secondary evidence')
           lines=[
               '## San Carlo — two-source recita cross-check',
