@@ -126,18 +126,34 @@ def load_archival_art(known_slugs:set[str])->dict:
         }
     return result
 
-def extract_official_poster(html:str,official_url:str,work_title:str)->dict|None:
+def extract_official_poster(html:str,official_url:str,work_title:str,*,
+                            verified_event_page:bool=False)->dict|None:
     parser=ImageMeta()
     parser.feed(html[:250000])
     data=parser.values
     # A production page may expose an unrelated OpenGraph thumbnail while
     # Twitter metadata contains the correct production photo.
     candidates=[data.get("og:image:secure_url"),data.get("og:image"),data.get("twitter:image")]
+    alt=(data.get("og:image:alt") or data.get("twitter:image:alt") or "").strip()
+    # On a single, explicitly approved first-party *work event* page we can
+    # also trust work-specific image ALT text if a generated asset filename
+    # lacks the title. This does not apply to season listings, whose generic
+    # social images are frequently unrelated to a particular opera.
+    def title_tokens(value):
+        base=unicodedata.normalize("NFKD",value).casefold()
+        base="".join(x for x in base if not unicodedata.combining(x))
+        return [x for x in re.split(r"[^a-z0-9]+",base)
+                if x not in {"","l","il","la","lo","le","un","una","di","del","della"}]
+    title_words=title_tokens(work_title)
+    alt_words=title_tokens(alt)
+    verified_alt=(verified_event_page and len(title_words)>=1
+                  and all(x in alt_words for x in title_words)
+                  and not any(x in alt.casefold()
+                              for x in ("logo","favicon","placeholder","stagione 2026")))
     url=next((candidate for raw in candidates if
               (candidate:=allowed_image_url(raw,official_url)) and
-              image_matches_work(candidate,work_title)),None)
+              (image_matches_work(candidate,work_title) or verified_alt)),None)
     if not url:return None
-    alt=(data.get("og:image:alt") or data.get("twitter:image:alt") or "").strip()
     if any(word in alt.casefold() for word in ("logo","favicon","placeholder")):
         return None
     try:
