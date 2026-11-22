@@ -365,7 +365,7 @@ function todayInItaly(){
   const get=key=>parts.find(x=>x.type===key).value;
   return get("year")+"-"+get("month")+"-"+get("day");
 }
-function resolve(events,venues=[]) {
+function resolve(events,venues=[],works=[]) {
   const pathname=decodeURI(window.location.pathname);
   const path=pathname.startsWith(root) ? pathname.slice(root.length) : "";
   const pieces=path.split("/").filter(Boolean);
@@ -374,10 +374,13 @@ function resolve(events,venues=[]) {
       return {kind:"group",events:events.filter(e=>e.production_group_id===pieces[1])};
     if(pieces.length===2 && pieces[0]==="programmi")
       return {kind:"program",events:events.filter(e=>e.program_id===pieces[1])};
-    if(pieces.length===2 && pieces[0]==="opere")
-      return {kind:"work",events:events.filter(e=>
+    if(pieces.length===2 && pieces[0]==="opere") {
+      const work=works.find(w=>(w.route_slug||w.slug)===pieces[1])||null;
+      return {kind:"work",work,events:events.filter(e=>
+        (work && e.work_id===work.id) ||
         window.OperaAtlasCatalog.urls(e).work===root+pieces.join("/")+"/" ||
         (e.program_components||[]).some(c=>c.work_route_slug===pieces[1]))};
+    }
     if(pieces.length===2){
       const url=root+pieces.join("/")+"/";
       const venue=venues.find(v=>v.city_slug===pieces[0] && v.slug===pieces[1])||null;
@@ -414,12 +417,16 @@ async function initialize() {
     if(data.warning)status.textContent="Alcuni aggiornamenti non sono momentaneamente disponibili.";
     const events=data.performances.filter(validEvent);
     const venues=await window.OperaAtlasCatalog.venues();
-    const selected=resolve(events,venues);
-    if(!selected.kind || (!selected.events.length && !(selected.kind==="venue" && selected.venue))) {
+    const selected=resolve(events,venues,data.works||[]);
+    if(!selected.kind || (!selected.events.length && !(selected.kind==="venue" && selected.venue) && !(selected.kind==="work" && selected.work))) {
       missing("Questo indirizzo non corrisponde a una scheda pubblicata.");
       return;
     }
-    const first=selected.events[0] || (selected.kind==="venue" && selected.venue ? {
+    const first=selected.kind==="work" && selected.work ? {
+      title:selected.work.title,composer:selected.work.composer,
+      work_id:selected.work.id,work_slug:selected.work.slug,
+      work_route_slug:selected.work.route_slug||selected.work.slug
+    } : selected.events[0] || (selected.kind==="venue" && selected.venue ? {
       venue:selected.venue.name,
       municipality:selected.venue.city,
       region:selected.venue.region,
