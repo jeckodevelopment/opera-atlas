@@ -53,9 +53,9 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
         # them. Read the three ordered columns independently from the same
         # bounded, first-party ticket section; NEVER borrow other event
         # dates or guess which audience owns an hour.
-        date_markers=re.findall(r"(?i)\\b(ven|sab)\\.?\\s*([45])\\s+dic\\b",calendar)
-        clocks=re.findall(r"(?<!\\d)(?:[01]?\\d|2[0-3]):[0-5]\\d\\b",calendar)
-        audiences=re.findall(r"(?i)\\b(Scuole|Famiglie)\\b",calendar)
+        date_markers=re.findall(r"(?i)\b(ven|sab)\.?\s*([45])\s+dic\b",calendar)
+        clocks=re.findall(r"(?<!\d)(?:[01]?\d|2[0-3]):[0-5]\d\b",calendar)
+        audiences=re.findall(r"(?i)\b(Scuole|Famiglie)\b",calendar)
         if (len(date_markers)!=4 or len(clocks)!=4 or len(audiences)!=4):
             raise ValueError("incomplete official Parma public/school ticket schedule")
         observed=[(int(day),clock,audience.casefold())
