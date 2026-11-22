@@ -360,6 +360,13 @@
       "min_links": 3
     },
     {
+      "key": "coccia-novara-rolling-opera",
+      "official_url": "https://www.fondazioneteatrococcia.it/",
+      "url": "https://www.fondazioneteatrococcia.it/spettacoli_opera_danza_concerti.html",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "ravenna-alighieri-cherubini-2027",
       "official_url": "https://www.orchestracherubini.it/",
       "url": "https://www.orchestracherubini.it/eventi/tpl/list/",
