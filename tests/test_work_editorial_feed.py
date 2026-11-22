@@ -13,9 +13,18 @@ class WorkEditorialTests(unittest.TestCase):
 
     def test_all_existing_works_are_publishable(self):
         report=build_editorial(self.facts,self.registry,self.editorial)
-        self.assertEqual(len(report["works"]),len(self.registry["works"]))
+        self.assertEqual(len(report["works"]),len(self.registry["works"])+len(self.registry["reserved_works"]))
         self.assertEqual(len({x["work_id"] for x in report["works"]}),len(report["works"]))
         self.assertTrue(all(x["synopsis"] and x["composer"] for x in report["works"]))
+
+    def test_reserved_program_works_receive_full_cards_without_fictitious_stagings(self):
+        from scripts.publish_work_editorial import validate_history
+        report=build_editorial(self.facts,self.registry,self.editorial)
+        found={w["work_id"]:w for w in report["works"]}
+        for ident in range(90,94):
+            card=found[f"oa-w-{ident:06d}"]
+            self.assertTrue(validate_history(card["history"]))
+            self.assertGreaterEqual(len(card["synopsis"]),35)
 
     def test_new_operas_have_specific_plot_and_verified_historical_facts(self):
         from scripts.publish_work_editorial import validate_history
