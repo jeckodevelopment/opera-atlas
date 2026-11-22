@@ -80,6 +80,42 @@ class IdentityReviewTests(unittest.TestCase):
         self.assertEqual(result["totals"]["unmatched_groups"],1)
         self.assertEqual(result["groups"][0]["title"],"L'esecuzione")
 
+    def test_reconciled_ticket_is_not_reported_as_missing_composer(self):
+        # Only independently proven source URLs may leave this diagnostic.
+        evidence={"schema_version":1,"evidence":[
+            candidate("pisa-1","Aida",""),
+            candidate("pisa-2","Aida",""),
+            candidate("unknown","Nuova opera",""),
+        ]}
+        evidence["evidence"][0]["source_url"]="https://teatrodipisa.it/calendario/aida/"
+        evidence["evidence"][1]["source_url"]="https://teatrodipisa.it/calendario/other/"
+        report=evaluate(evidence,REG,reconciled_ticket_urls={
+            "https://teatrodipisa.it/calendario/aida/"})
+        self.assertEqual(report["totals"]["candidates_checked"],2)
+        self.assertEqual(report["totals"]["unmatched_facts"],2)
+        self.assertEqual(report["groups"][0]["candidate_ids"],["pisa-2"])
+        self.assertEqual(report["groups"][1]["candidate_ids"],["unknown"])
+
+    def test_current_pisa_ticket_urls_match_verified_published_schedule(self):
+        import json
+        from scripts.build_verified_catalog import MANIFEST
+        from scripts.collect_candidate_details import OUTPUT as DETAILS
+        from scripts.reconcile_published_candidates import verified_pisa_recital_urls
+        published=json.loads(MANIFEST.read_text())
+        evidence=json.loads(DETAILS.read_text())
+        urls=verified_pisa_recital_urls(published,evidence)
+        expected={
+            "https://teatrodipisa.it/calendario/otello/",
+            "https://teatrodipisa.it/calendario/otello-3/",
+            "https://teatrodipisa.it/calendario/otello-2/",
+            "https://teatrodipisa.it/calendario/aida/",
+            "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+            "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
+            "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
+            "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
+        }
+        self.assertEqual(urls & expected,expected)
+
     def test_never_auto_assign_by_title_or_different_composer(self):
         r=evaluate({"schema_version":1,"evidence":[
             candidate("x","Il barbiere di Siviglia","Giovanni Paisiello"),
