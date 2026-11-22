@@ -114,12 +114,32 @@ class AutoCatalogueTests(unittest.TestCase):
                           if x["source_key"]=="jesi-don-pasquale-opera-2026"]
         candidates["candidates"]=[x for x in candidates["candidates"]
                                   if x["source_key"]=="jesi-don-pasquale-opera-2026"]
-        self.assertEqual(candidates["candidates"][0]["status"],"needs_review")
-        facts,registry,urls,report=promote(self.facts,self.registry,rows,candidates,[],
+        # Reconstruct the pre-promotion snapshot when GitHub has already
+        # catalogued this production; the transactional regression must remain
+        # testable after the real data catches up.
+        base_facts=copy.deepcopy(self.facts)
+        base_registry=copy.deepcopy(self.registry)
+        key="don pasquale|gaetano donizetti"
+        if key in base_registry["works"]:
+            reserved=base_registry["works"].pop(key)
+            base_registry.setdefault("reserved_works",{})[key]={
+                **reserved,"status":"editorial_verified_pending_staging"}
+            stages=[k for k,v in base_registry["stagings"].items()
+                    if v["work_id"]=="oa-w-000090"]
+            removed={base_registry["stagings"].pop(k)["id"] for k in stages}
+            base_registry["performances"]={
+                k:v for k,v in base_registry["performances"].items()
+                if v["staging_id"] not in removed}
+            base_facts["productions"]=[
+                p for p in base_facts["productions"]
+                if not (p["title"]=="Don Pasquale"
+                        and p["municipality"]=="Jesi")]
+        candidates["candidates"][0]["status"]="needs_review"
+        facts,registry,urls,report=promote(base_facts,base_registry,rows,candidates,[],
                                            today=date(2026,11,22))
         self.assertEqual(report["new_stagings"],1)
         self.assertEqual(report["new_recite"],2)
-        self.assertEqual(len(registry["works"]),len(self.registry["works"])+1)
+        self.assertEqual(len(registry["works"]),len(base_registry["works"])+1)
         self.assertEqual(registry["works"]["don pasquale|gaetano donizetti"]["id"],"oa-w-000090")
         self.assertNotIn("don pasquale|gaetano donizetti",registry["reserved_works"])
         product=next(p for p in facts["productions"]
