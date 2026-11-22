@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-22T11:19:00+00:00",
+  "checked_at": "2026-11-22T11:21:24+00:00",
   "groups": [
     {
       "candidate_ids": [
         "oa-index-ffbe120c526a352bc59c"
       ],
-      "category": "composer_credit_to_review",
+      "category": "new_work_candidate",
       "composer": "Franz Lehár",
       "exact_title_matches": [],
       "possible_canonical_match": null,
@@ -90,7 +90,7 @@
       "candidate_ids": [
         "oa-index-7b0a1e061133c0b5970e"
       ],
-      "category": "composer_credit_to_review",
+      "category": "new_work_candidate",
       "composer": "Salvatore Passantino",
       "exact_title_matches": [],
       "possible_canonical_match": null,
