@@ -108,6 +108,11 @@
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
     },
     {
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "Cherubini event table exposes independent title, genre and venue cells. Only Opera rows at Teatro Alighieri Ravenna are eligible; first-party detail verifies composer and complete showtimes."
+    },
+    {
       "source_key": "reggio-valli-opera-2026-27",
       "scope": "dynamic_category",
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
