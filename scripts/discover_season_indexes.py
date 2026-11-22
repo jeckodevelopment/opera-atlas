@@ -706,7 +706,8 @@ def reconcile_season_absences(seen:dict,source_key:str,verified_urls:list[str])-
 
 
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
-         network_enabled:bool=False,now:str|None=None):
+         network_enabled:bool=False,now:str|None=None,
+         check_next_season:bool=False):
     entries=validate_config(config)
     if existing.get("schema_version")!=1 or not isinstance(existing.get("candidates"),list):
         raise ValueError("invalid index candidate registry")
@@ -823,6 +824,33 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 except (AccessDenied,FetchUnavailable,ValueError):
                     page_health={"pages_checked":1,"pagination_complete":False,
                                  "diagnostic":"secondary_page_unavailable_or_invalid"}
+            # A future official season is an additional monitored index,
+            # never a replacement for the current season. Its failure must
+            # not invalidate the current index or remove existing candidates.
+            next_season_health={}
+            if check_next_season:
+                from datetime import date
+                from scripts.rollover_season_indexes import next_index
+                future_url=next_index(item,today=date.today(),allow_early=True)
+                if future_url and future_url!=item["url"]:
+                    try:
+                        next_page=fetcher(db,source_id=row["id"],
+                                          url=future_url,network_enabled=True)
+                        next_urls=extract(item["key"],future_url,
+                                          next_page.html,item["min_links"])
+                        if item["key"]=="scala-season-2026-27":
+                            prefix=urlsplit(future_url).path.replace("/index.html","/opera/")
+                            if not all(urlsplit(link).path.startswith(prefix)
+                                       for link in next_urls):
+                                raise ValueError("mixed Scala season results")
+                        urls=sorted(set(urls).union(next_urls))
+                        next_season_health={"next_season_status":"verified",
+                                            "next_season_url":future_url,
+                                            "next_season_links":len(next_urls)}
+                    except (AccessDenied,FetchUnavailable,ValueError):
+                        next_season_health={"next_season_status":"unavailable_or_invalid",
+                                            "next_season_url":future_url,
+                                            "next_season_links":0}
             reconcile_season_absences(seen,item["key"],urls)
             for url in urls:
                 uid="oa-index-"+hashlib.sha256((item["key"]+"|"+url).encode()).hexdigest()[:20]
@@ -836,6 +864,7 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                              "status":("partial_pagination" if page_health and
                                        not page_health["pagination_complete"] else "success"),
                              **page_health,
+                             **next_season_health,
                              "links":len(urls),
                              "empty_official_opera_calendar":(
                                  item["key"]=="bologna-comunale-opera-2026" and len(urls)==0),
@@ -880,7 +909,8 @@ def main():
     args=parser.parse_args()
     config=json.loads(CONFIG.read_text(encoding="utf-8"))
     current=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {"schema_version":1,"candidates":[]}
-    result,health=scan(config,current,network_enabled=args.allow_network)
+    result,health=scan(config,current,network_enabled=args.allow_network,
+                       check_next_season=args.allow_network)
     checked_at=datetime.now(timezone.utc).isoformat(timespec="seconds")
     previous=json.loads(HEALTH.read_text(encoding="utf-8")) if HEALTH.exists() else {}
     health=source_health_history(health,previous,checked_at=checked_at)
