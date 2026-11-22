@@ -2,6 +2,8 @@ name: Refresh Opera Atlas source health
 run-name: Source health · ${{ github.event_name }} · ${{ github.ref_name }}
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [source-health-checkpoint-retry]
   schedule:
     # Independently refresh diagnostics without waiting for the slower catalog.
     - cron: '11 */3 * * *'
@@ -110,6 +112,18 @@ jobs:
             fi
             echo "::warning::Concurrent main update during source-health retry $attempt."
           done
+      # A failed save must not drop a scan silently or require a human rerun.
+      # Dispatch at most one additional fresh run after contention; the retry
+      # starts from latest main, never from the discarded local commit.
+      - name: Queue one clean source-health scan after checkpoint contention
+        if: steps.retry.outcome == 'success' && steps.retry.outputs.published != 'true' && github.event_name != 'repository_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "::warning::Source checkpoint still deferred; dispatching one clean follow-up scan."
+          gh api -X POST "repos/${{ github.repository }}/dispatches" \\
+            -f event_type=source-health-checkpoint-retry
+
       - name: Fail if fresh source health could not be persisted
         if: steps.retry.outcome == 'success' && steps.retry.outputs.published != 'true'
         run: |
