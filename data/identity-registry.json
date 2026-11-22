@@ -3074,15 +3074,6 @@
       "slug": "cronaca-di-un-amore-callas-e-pasolini",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
       "season": "2027"
-    },
-    "auto-b4aaa5341d6c9965": {
-      "id": "oa-s-000251",
-      "work_id": "oa-w-000104",
-      "venue_id": "oa-v-000055",
-      "slug": "cronaca-di-un-amore-callas-e-pasolini",
-      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "season": "2027",
-      "route_slug": "cronaca-di-un-amore-callas-e-pasolini-2"
     }
   },
   "performances": {
@@ -8768,11 +8759,12 @@
       "original_date": "2027-01-29",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
     },
-    "auto-b4aaa5341d6c9965|2027-01-31": {
+    "auto-5fea5e594da012da|2027-01-31": {
       "id": "oa-r-000969",
-      "staging_id": "oa-s-000251",
+      "staging_id": "oa-s-000250",
       "original_date": "2027-01-31",
-      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2"
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+      "original_ticket_source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2"
     }
   },
   "reserved_works": {
