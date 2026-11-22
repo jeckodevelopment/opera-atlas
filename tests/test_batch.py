@@ -47,11 +47,12 @@ class BatchTests(unittest.TestCase):
         self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM performances").fetchone()[0],1)
         self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM source_checks").fetchone()[0],2)
 
-    def test_robots_unavailable_is_recorded(self):
-        r=run_batch(self.conn,[self.entry],network_enabled=True,opener=FakeOpener(robots=None))
-        self.assertEqual((r.succeeded,r.failed),(0,1))
+    def test_robots_unavailable_does_not_block_approved_page(self):
+        r=run_batch(self.conn,[self.entry],network_enabled=True,
+                    opener=FakeOpener(robots=None,html=PAGE))
+        self.assertEqual((r.succeeded,r.failed),(1,0))
         self.assertEqual(self.conn.execute("SELECT outcome FROM source_checks").fetchone()[0],
-                         "robots_unavailable")
+                         "success")
 
     def test_rejected_source_blocks_entire_batch_before_http(self):
         self.conn.execute("UPDATE sources SET access_status='pending'")
