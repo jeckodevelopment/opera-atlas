@@ -103,7 +103,7 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
             for first,second in zip(full_tokens,credited_tokens))):
         raise ValueError("Haydn heading and music composer credits conflict")
     composer=heading_composer
-    if not re.fullmatch(r"[A-ZÀ-Ž][\\wÀ-ÿ.'’ -]{3,85}",composer):
+    if not re.fullmatch(r"[A-ZÀ-Ž][\wÀ-ÿ.'’ -]{3,85}",composer):
         raise ValueError("Haydn composer credit invalid")
     if len(re.findall(r"\bMusica\s+di\b",primary[:500],re.I))!=1:
         raise ValueError("conflicting Haydn composer credits")
