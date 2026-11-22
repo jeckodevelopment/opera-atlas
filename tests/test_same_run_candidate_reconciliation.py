@@ -219,6 +219,58 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
             candidates,details,{"productions":[production]},{"programs":[]})
         self.assertFalse(verified)
 
+    def test_sassari_and_ravenna_rolling_aliases_match_only_one_staging(self):
+        from scripts.reconcile_published_candidates import verified_shared_page_identities
+        cases=(
+            ("sassari-de-carolis-opera-2026","sassari-de-carolis-rolling-opera",
+             "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
+             "Die Zauberflöte","Wolfgang Amadeus Mozart","2026-09-25"),
+            ("sassari-de-carolis-opera-2026","sassari-de-carolis-rolling-opera",
+             "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
+             "Don Carlos","Giuseppe Verdi","2026-10-30"),
+            ("sassari-de-carolis-opera-2026","sassari-de-carolis-rolling-opera",
+             "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
+             "Rigoletto","Giuseppe Verdi","2026-12-11"),
+            ("ravenna-alighieri-cherubini-2027","ravenna-cherubini-rolling-opera",
+             "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+             "Pagliacci","Ruggero Leoncavallo","2027-01-15"),
+            ("ravenna-alighieri-cherubini-2027","ravenna-cherubini-rolling-opera",
+             "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
+             "La Cenerentola","Gioachino Rossini","2027-04-02"),
+        )
+        for annual,rolling,url,title,composer,day in cases:
+            with self.subTest(url=url):
+                candidates={"schema_version":1,"candidates":[
+                    {"id":key,"source_key":key,"official_url":url,
+                     "status":"needs_review"} for key in (annual,rolling)]}
+                production={"source_url":url,"title":title,"composer":composer,
+                            "dates":[[day,"20:00"]]}
+                ambiguous,verified=verified_shared_page_identities(
+                    candidates,{"evidence":[]},{"productions":[production]},
+                    {"programs":[]})
+                self.assertIn(url,ambiguous)
+                self.assertEqual(verified,{(annual,url),(rolling,url)})
+                updated,report=reconcile(candidates,{url},
+                    ambiguous_urls=ambiguous,identity_verified=verified)
+                self.assertEqual(report["states"],{"already_catalogued":2})
+                again,health=reconcile(updated,{url},
+                    ambiguous_urls=ambiguous,identity_verified=verified)
+                self.assertEqual(again,updated)
+                self.assertFalse(health["changes"])
+                # Official evidence that contradicts the catalog must block
+                # automatic retirement of both source observations.
+                bad={"evidence":[{"source_key":rolling,"source_url":url,
+                     "event_facts":[{"event_title":title,"composer":"Wrong composer",
+                                     "date":day}]}]}
+                _,verified=verified_shared_page_identities(
+                    candidates,bad,{"productions":[production]},{"programs":[]})
+                self.assertFalse(verified)
+                _,verified=verified_shared_page_identities(
+                    candidates,{"evidence":[]},
+                    {"productions":[production,dict(production,title="Other opera")]},
+                    {"programs":[]})
+                self.assertFalse(verified)
+
     def test_source_alias_never_hides_distinct_or_conflicting_opera(self):
         from scripts.reconcile_published_candidates import verified_shared_page_identities
         url="https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
