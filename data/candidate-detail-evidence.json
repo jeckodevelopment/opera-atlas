@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "c21c4b8d3b6ba50c5ef397ef3a9d1f6bb37c2a5f28522edfa85c87fc7c623ff1",
-      "checked_at": "2026-11-22T14:07:37+00:00",
+      "checked_at": "2026-11-22T14:12:05+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1353,7 +1353,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-22T13:57:01+00:00",
+      "checked_at": "2026-11-22T14:11:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2009,8 +2009,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "e06e2eb821a2a456a7619b7e2697879331a780b6efcb2ab19ff462a34e80e0bd",
-      "checked_at": "2026-11-22T13:57:06+00:00",
+      "content_sha256": "d3813511cb2e006b82b4f75d279999c7e7130e9dbef88ed0c477ef494ac28fab",
+      "checked_at": "2026-11-22T14:11:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2033,8 +2033,8 @@
       "candidate_id": "oa-index-59b4a6e5b8f0087fd73d",
       "source_key": "spoleto-tls-lirica-2026",
       "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369",
-      "content_sha256": "9621b4e8dc81cba5767c7f6daa04045d8bcc7e60a62a754540442ea4782e678d",
-      "checked_at": "2026-11-22T14:07:51+00:00",
+      "content_sha256": "73f09f0d3384dbd24474cff38fe7abc930a107b6f2d820ff815e34c96886b864",
+      "checked_at": "2026-11-22T14:12:21+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2341,8 +2341,8 @@
       "candidate_id": "oa-index-63ec766b091ded79f921",
       "source_key": "puccini-torre-del-lago-2027",
       "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
-      "content_sha256": "01c1ddf53e0e8d9c89b3eb336db923c3e845809f38acbe398e81d443ba72819d",
-      "checked_at": "2026-11-22T14:07:46+00:00",
+      "content_sha256": "71f421b978d0b14d3c0dbaf9a8954e6f8b3b65cd14a1a6305cb32665991f095d",
+      "checked_at": "2026-11-22T14:12:17+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2994,7 +2994,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-22T13:57:35+00:00",
+      "checked_at": "2026-11-22T14:12:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4171,8 +4171,8 @@
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "dcfebffc62f7145f837acefdf1cc1cd557f7bd1c906b6010485c86cf3f0abae7",
-      "checked_at": "2026-11-22T13:59:12+00:00",
+      "content_sha256": "f1b48eb282d7cb84e1b5da887ffbea437e5ef56c2fa154f2890f1b39305ae384",
+      "checked_at": "2026-11-22T14:12:09+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -5786,8 +5786,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "e8b66ad9fd1dccd74bc42dbf412973ad6da8d1173c9b9f777fc400d450b842b1",
-      "checked_at": "2026-11-22T14:07:49+00:00",
+      "content_sha256": "8c08bc35414389d742cc0447a962bfdef6d60910cf162da6f124f2b35ab42929",
+      "checked_at": "2026-11-22T14:12:20+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6290,8 +6290,8 @@
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "492cb0480f52ccee1ff169d9be83ee20297e61509ef104d8b50f92f9561665ce",
-      "checked_at": "2026-11-22T13:59:10+00:00",
+      "content_sha256": "f1b48eb282d7cb84e1b5da887ffbea437e5ef56c2fa154f2890f1b39305ae384",
+      "checked_at": "2026-11-22T14:12:09+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
