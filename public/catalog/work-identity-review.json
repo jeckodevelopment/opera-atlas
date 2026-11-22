@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T18:45:16+00:00",
+  "checked_at": "2026-11-22T19:12:39+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -22,6 +22,28 @@
         }
       ],
       "title": "Aida"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-5fea5e594da012daa488",
+        "oa-index-b4aaa5341d6c996550c0"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Davide Tramontano",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "haydn-rolling-opera",
+          "url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
+        },
+        {
+          "source_key": "haydn-rolling-opera",
+          "url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2"
+        }
+      ],
+      "title": "Cronaca di un amore. Callas e Pasolini"
     },
     {
       "candidate_ids": [
@@ -145,13 +167,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 190,
+    "candidates_checked": 194,
     "candidates_without_facts": 0,
-    "facts_examined": 719,
-    "facts_resolved": 706,
+    "facts_examined": 723,
+    "facts_resolved": 708,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 13,
-    "unmatched_groups": 7
+    "unmatched_facts": 15,
+    "unmatched_groups": 8
   },
   "truncated": false
 }

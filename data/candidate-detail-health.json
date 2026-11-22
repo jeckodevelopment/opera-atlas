@@ -1,9 +1,18 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T18:45:16+00:00",
+  "checked_at": "2026-11-22T19:12:39+00:00",
   "scope": "national",
-  "attempted": 7,
+  "attempted": 20,
   "outcomes": [
+    {
+      "candidate_id": "oa-index-222099ffb9c977837f63",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:missing or ambiguous Asti composer credit"
+      ],
+      "rows": 0
+    },
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
       "outcome": "unavailable_or_unstructured",
@@ -22,9 +31,13 @@
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-943d04f25da8e27e1190",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-2cb6adaa97769fcb1ffc",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
@@ -56,9 +69,101 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-1c676e6ace80bd1129b8",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Asti event is not verified as an opera"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-5fea5e594da012daa488",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-6f4d6e0d59d6c80cd891",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9017eac8903a1c24c574",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
       "outcome": "facts_found",
       "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-b4aaa5341d6c996550c0",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-baed829c6bf2170bf8c3",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-d0301a251f96e895132b",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-eef7611e7489d713f02a",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-f52fc662b522c140e73f",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-07f58f9dbd4078cd4e9d",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Haydn composer credit missing or ambiguous"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-0e8fc70d8165e8a2b021",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
+      "outcome": "facts_found",
+      "rows": 1
     }
   ]
 }
