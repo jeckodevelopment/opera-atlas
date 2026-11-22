@@ -15,8 +15,7 @@ class NationalIndexTests(unittest.TestCase):
         old={"schema_version":1,"sources":[
             {"key":key,"last_attempt_at":"2026-11-22T12:00:00+00:00"}
             for key in keys if key not in {
-                "mantova-sociale-rolling-opera",
-            "napoli-san-carlo-rolling-opera","pesaro-rof-2026",
+                "napoli-san-carlo-rolling-opera","pesaro-rof-2026",
                 "martina-valle-itria-2026","trapani-luglio-musicale-2026"
             }]}
         self.assertEqual(unscanned_source_keys(config,old),{
@@ -162,6 +161,7 @@ class NationalIndexTests(unittest.TestCase):
 
     def test_all_forty_eight_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
+            "mantova-sociale-rolling-opera",
             "napoli-san-carlo-rolling-opera",
             "pesaro-rof-2026",
             "martina-valle-itria-2026",
