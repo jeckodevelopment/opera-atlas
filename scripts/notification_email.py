@@ -97,7 +97,7 @@ def render_email(notice: dict) -> tuple[str, str]:
     plain = (
         f"OPERA+ ATLAS — Notifica diagnostica di pubblicazione\n\n"
         f"{kind}\n{title}\n\nID: {identifier}\nDettagli: {details}\n\n"
-        f"Apri la scheda: {url}\n\n"
+        f"{recite_plain}\nApri la scheda: {url}\n\n"
         "Messaggio automatico a fini diagnostici. Nessuna azione richiesta.\n"
     )
     return html, plain
