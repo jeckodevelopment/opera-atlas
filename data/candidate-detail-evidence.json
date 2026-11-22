@@ -1290,8 +1290,8 @@
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
-      "content_sha256": "5d846d4af7e7f4012c6f95008a815c46916d19225d91e4369e62434a02b1bc70",
-      "checked_at": "2026-11-22T21:32:06+00:00",
+      "content_sha256": "9631a13a5238f164a554b5ae0da0dad584cc8920ac58198f272f371c78ff3b7f",
+      "checked_at": "2026-11-22T21:37:58+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1985,7 +1985,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
       "content_sha256": "813c0c54f84ba234e21dbad29f9dc865f3857b384068e764ba19ec91b08bbb47",
-      "checked_at": "2026-11-22T21:32:12+00:00",
+      "checked_at": "2026-11-22T21:38:03+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3142,8 +3142,8 @@
       "candidate_id": "oa-index-71feb2c03e06415fa1c9",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
-      "content_sha256": "7c39d9b965cb2cd96a8add79d0d682a94f6508bf5c1184159c7fec68ceebd3ee",
-      "checked_at": "2026-11-22T21:32:18+00:00",
+      "content_sha256": "9e8430fd3ded33dd782cc259d406edbff3cffc9138d39ff64af396cdb3d45d4b",
+      "checked_at": "2026-11-22T21:38:08+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3756,8 +3756,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "38cbcb0df8c1e00c2d20ad34c1f10742a1573bf6c1e71579da098105489512d8",
-      "checked_at": "2026-11-22T21:32:21+00:00",
+      "content_sha256": "cc7e7e63094f87ddfc0276b969fbc8d4d42433ed0356e69071d17421d99bbe82",
+      "checked_at": "2026-11-22T21:38:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5653,8 +5653,8 @@
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "content_sha256": "a5ee4025a3653a9ff7df5de99a4d0fcf5f1b473aca3135cfc9cc9a85b6fe20a2",
-      "checked_at": "2026-11-22T21:31:50+00:00",
+      "content_sha256": "d340c9ba5c48b85063ec2185c42c15cbe1b2360ac9fb2ef783be4a74d1422a19",
+      "checked_at": "2026-11-22T21:37:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7298,7 +7298,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "content_sha256": "e24544114b3bed1dda4d78d32910a93d737957e2affdab2c3ef86223083afe57",
-      "checked_at": "2026-11-22T21:31:47+00:00",
+      "checked_at": "2026-11-22T21:37:43+00:00",
       "status": "needs_editorial_review",
       "audience_scope": "public_family_only",
       "calendar_provenance": "reviewed_first_party_historical_ticket_schedule",
