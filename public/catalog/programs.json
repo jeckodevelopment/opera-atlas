@@ -118,6 +118,55 @@
       ]
     },
     {
+      "id": "oa-p-9837cf3a1cb8aa93",
+      "title": "L'amor mio / Il tabarro",
+      "components": [
+        {
+          "title": "L'amor mio",
+          "composer": "Cristian Carrara",
+          "work_id": null
+        },
+        {
+          "title": "Il tabarro",
+          "composer": "Giacomo Puccini",
+          "work_id": "oa-w-000091",
+          "editorial": {
+            "synopsis": "Sulla Senna, il barcaiolo Michele sospetta che la moglie Giorgetta ami il giovane Luigi. Gelosia e desiderio di fuga conducono a un finale tragico.",
+            "history": {
+              "librettist": "Giuseppe Adami",
+              "premiere_year": 1918,
+              "premiere_venue": "Metropolitan Opera House",
+              "premiere_city": "New York",
+              "sources": [
+                "https://archiviostorico.operaroma.it/opera/tabarro/",
+                "https://www.puccinimuseum.org/giacomo-puccini/le-opere/il-tabarro/"
+              ]
+            }
+          }
+        }
+      ],
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "route_slug": "amor-mio-il-tabarro",
+      "performances": [
+        {
+          "id": "oa-pr-a870749b582f2ef2",
+          "program_id": "oa-p-9837cf3a1cb8aa93",
+          "local_date": "2027-11-26",
+          "starts_at": "2027-11-26T20:00:00+01:00"
+        },
+        {
+          "id": "oa-pr-9abebb4cace3d920",
+          "program_id": "oa-p-9837cf3a1cb8aa93",
+          "local_date": "2027-11-28",
+          "starts_at": "2027-11-28T16:00:00+01:00"
+        }
+      ]
+    },
+    {
       "id": "oa-p-a12dbb283b490075",
       "title": "L’Arlésienne / Pagliacci",
       "components": [
