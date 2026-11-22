@@ -5363,8 +5363,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "6d2246527449e9bc854fec5a8e560a3134f37c458510486a523a5bc9e32de855",
-      "checked_at": "2026-11-22T20:04:01+00:00",
+      "content_sha256": "9e9b141564cd7e6815ef10a0358198e256527caa91aebf485f0179149c458292",
+      "checked_at": "2026-11-22T20:08:10+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6409,8 +6409,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "5bc6f9ff432ded19cf4190f5a415853188cee5dcf742bf85c071785fb635ca32",
-      "checked_at": "2026-11-22T20:03:55+00:00",
+      "content_sha256": "0694afcc4c7eb3fe45370195ad12ed422fbf6eef71bdae632211c021f3f6376c",
+      "checked_at": "2026-11-22T20:08:07+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
