@@ -88,6 +88,7 @@ window.OperaAtlasCatalog = (() => {
     const ids=new Set(existing.map(x=>x.id));
     const byRoute=new Set(existing.map(x=>x.staging_url+"|"+x.local_date));
     const seenPrograms=new Set(),out=[];
+    let nationalDirectory=null;
     for(const program of doc.programs){
       if(!program || !/^oa-p-[a-f0-9]{16}$/.test(program.id)
           || seenPrograms.has(program.id)
@@ -95,9 +96,29 @@ window.OperaAtlasCatalog = (() => {
           || !Array.isArray(program.performances) || program.performances.length<1)
         throw new Error("Invalid composite program identity");
       seenPrograms.add(program.id);
-      const venue=[...byVenue.values()].find(v=>v.city===program.municipality &&
+      let venue=[...byVenue.values()].find(v=>v.city===program.municipality &&
         (v.name===program.venue || v.display_name===program.venue));
-      if(!venue)throw new Error("Unknown program theatre");
+      if(!venue){
+        // A reviewed composite ticket can be the first opera at a verified
+        // directory-only theatre (Jesi/Ancona), before a canonical solo work
+        // has allocated a v2 venue ID. Never infer a theatre from free text.
+        if(nationalDirectory===null){
+          const directory=await jsonFrom(
+            base.replace(/\\/v2\\/$/,"/")+"venue-directory.json");
+          if(directory.schema_version!==1 || !Array.isArray(directory.venues))
+            throw new Error("Invalid independent theatre directory");
+          nationalDirectory=directory.venues;
+        }
+        const matches=nationalDirectory.filter(v=>
+          v.city===program.municipality && v.name===program.venue &&
+          v.region===program.region && typeof v.id==="string" &&
+          /^oa-v(?:d)?-\\d{6}$/.test(v.id) &&
+          /^[a-z0-9-]+$/.test(v.city_slug||"") &&
+          /^[a-z0-9-]+$/.test(v.slug||"") &&
+          String(v.source_url||"").startsWith("https://"));
+        if(matches.length!==1)throw new Error("Unknown program theatre");
+        venue=matches[0];
+      }
       const components=program.components.map(component=>{
         if(typeof component.title!=="string"||typeof component.composer!=="string")
           throw new Error("Invalid independently credited program component");
