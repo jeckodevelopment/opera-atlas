@@ -232,7 +232,7 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
             if len(matches) > 1:
                 raise ValueError("duplicate edition: " + festival_id + " " + edition)
             if matches:
-                matches[0]["staging_ids"] = sorted(ids)
+                matches[0]["staging_ids"] = sorted(set(matches[0]["staging_ids"]) | ids)
             else:
                 new_id = festival_id + "-" + edition
                 if new_id in generated_ids:
