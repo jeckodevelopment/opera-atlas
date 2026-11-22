@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/san-carlo-secondary-dry-run.yml'
+      - 'scripts/scan_san_carlo_secondary.py'
+      - 'tests/test_san_carlo_secondary_probe.py'
 
 permissions:
   contents: read
