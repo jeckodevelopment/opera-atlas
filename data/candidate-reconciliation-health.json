@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T01:41:51+00:00",
+  "checked_at": "2026-11-22T01:43:16+00:00",
   "total": 239,
   "states": {
     "already_catalogued": 149,
@@ -8,56 +8,5 @@
     "not_in_official_season": 18,
     "needs_review": 27
   },
-  "changes": [
-    {
-      "candidate_id": "oa-index-406c2dd60b3eb7c5fee8",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-4277f285769ff880bef4",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-5b2707fe818d6b686a4c",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-67093940d2ad1423b345",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-7b0a1e061133c0b5970e",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-954a1b185a0354522e71",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-97659efd986a97449096",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-addcc48a211cf5aea678",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-b2a88f78e60bd3f79d16",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    },
-    {
-      "candidate_id": "oa-index-df584882c5e7e377064c",
-      "before": "needs_review",
-      "after": "already_catalogued"
-    }
-  ]
+  "changes": []
 }
