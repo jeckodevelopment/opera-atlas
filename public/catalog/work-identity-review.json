@@ -1,27 +1,6 @@
 {
-  "checked_at": "2026-11-22T01:39:23+00:00",
+  "checked_at": "2026-11-22T01:49:05+00:00",
   "groups": [
-    {
-      "candidate_ids": [
-        "oa-index-885beacc517cb454d09f",
-        "oa-index-c7a26f1f7611da36ad2a"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Gioachino Rossini",
-      "exact_title_matches": [],
-      "recite_observed": 6,
-      "sources": [
-        {
-          "source_key": "salerno-verdi-opera-2026",
-          "url": null
-        },
-        {
-          "source_key": "filarmonico-verona-opera-2027",
-          "url": null
-        }
-      ],
-      "title": "Il signor Bruschino"
-    },
     {
       "candidate_ids": [
         "oa-index-dd11dbb7276e10032076"
@@ -33,7 +12,7 @@
       "sources": [
         {
           "source_key": "bologna-comunale-opera-2027",
-          "url": null
+          "url": "https://www.tcbo.it/evento/opera/carmen-2027/"
         }
       ],
       "title": "Carmen"
@@ -49,7 +28,7 @@
       "sources": [
         {
           "source_key": "verdi-trieste-season-2026-27",
-          "url": null
+          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/"
         }
       ],
       "title": "La Bohème"
@@ -65,7 +44,7 @@
       "sources": [
         {
           "source_key": "verdi-trieste-season-2026-27",
-          "url": null
+          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
         }
       ],
       "title": "L’elisir d’amore"
@@ -81,7 +60,7 @@
       "sources": [
         {
           "source_key": "bologna-comunale-opera-2027",
-          "url": null
+          "url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
         }
       ],
       "title": "Madama Butterfly"
@@ -97,7 +76,7 @@
       "sources": [
         {
           "source_key": "verdi-trieste-season-2026-27",
-          "url": null
+          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
         }
       ],
       "title": "Norma"
@@ -113,58 +92,10 @@
       "sources": [
         {
           "source_key": "verdi-trieste-season-2026-27",
-          "url": null
+          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/"
         }
       ],
       "title": "Aida"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-cf244270ba1aec90c350"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Giuseppe Verdi",
-      "exact_title_matches": [],
-      "recite_observed": 4,
-      "sources": [
-        {
-          "source_key": "filarmonico-verona-opera-2027",
-          "url": null
-        }
-      ],
-      "title": "Alzira"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-991f446bf3f27044b019"
-      ],
-      "category": "composer_credit_to_review",
-      "composer": "Alberto Franchetti",
-      "exact_title_matches": [],
-      "recite_observed": 4,
-      "sources": [
-        {
-          "source_key": "filarmonico-verona-opera-2027",
-          "url": null
-        }
-      ],
-      "title": "Cristoforo Colombo"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-de1f52ee525c73d565a6"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Wolfgang Amadeus Mozart",
-      "exact_title_matches": [],
-      "recite_observed": 4,
-      "sources": [
-        {
-          "source_key": "filarmonico-verona-opera-2027",
-          "url": null
-        }
-      ],
-      "title": "Il ratto dal serraglio"
     },
     {
       "candidate_ids": [
@@ -177,7 +108,7 @@
       "sources": [
         {
           "source_key": "salerno-verdi-opera-2026",
-          "url": null
+          "url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
         }
       ],
       "title": "La vedova allegra"
@@ -193,7 +124,7 @@
       "sources": [
         {
           "source_key": "ancona-cavalleria-program-2026",
-          "url": null
+          "url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
         }
       ],
       "title": "A Giacomo Leopardi"
@@ -209,7 +140,7 @@
       "sources": [
         {
           "source_key": "jesi-don-pasquale-opera-2026",
-          "url": null
+          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
         }
       ],
       "title": "DON PASQUALE"
@@ -225,7 +156,7 @@
       "sources": [
         {
           "source_key": "jesi-trittico-opera-2026",
-          "url": null
+          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
         }
       ],
       "title": "Gianni Schicchi"
@@ -241,7 +172,7 @@
       "sources": [
         {
           "source_key": "jesi-trittico-opera-2026",
-          "url": null
+          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
         }
       ],
       "title": "Il tabarro"
@@ -257,7 +188,7 @@
       "sources": [
         {
           "source_key": "jesi-esecuzione-opera-2026",
-          "url": null
+          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
         }
       ],
       "title": "L'ESECUZIONE"
@@ -273,7 +204,7 @@
       "sources": [
         {
           "source_key": "pisa-verdi-opera-2026-27",
-          "url": null
+          "url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
         }
       ],
       "title": "L'occasione fa il ladro"
@@ -289,7 +220,7 @@
       "sources": [
         {
           "source_key": "jesi-trittico-opera-2026",
-          "url": null
+          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
         }
       ],
       "title": "Suor Angelica"
@@ -305,7 +236,7 @@
       "sources": [
         {
           "source_key": "bellini-catania-opera-2026-27",
-          "url": null
+          "url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/"
         }
       ],
       "title": "La bella addormentata"
@@ -318,10 +249,10 @@
     "candidates_checked": 146,
     "candidates_without_facts": 0,
     "facts_examined": 630,
-    "facts_resolved": 560,
+    "facts_resolved": 578,
     "translated_facts_resolved": 4,
-    "unmatched_facts": 70,
-    "unmatched_groups": 19
+    "unmatched_facts": 52,
+    "unmatched_groups": 15
   },
   "truncated": false
 }
