@@ -74,6 +74,43 @@ class NovaraRollingOperaTests(unittest.TestCase):
         self.assertEqual(parse_known_opera_detail("coccia-novara-rolling-opera",
                          NEW,page(),{"works":{}}),[])
 
+    def test_first_party_natta_gardens_opera_keeps_its_real_venue(self):
+        # The 2027 Il noce di Benevento is at Giardini di Palazzo Natta,
+        # not the Teatro Coccia auditorium. Production credits list a
+        # transcription after the original composer's first-party credit.
+        url=HOST+"/stagione-27-il-noce-di-benevento.html"
+        html=(
+            "<div>Home / Spettacoli / Opera / Il noce di Benevento</div>"
+            "<h1>Il noce di Benevento</h1>"
+            "<p>Musica di Giuseppe Balducci</p>"
+            "<p>Trascrizione per piccolo ensemble di Massimiliano Piscitello</p>"
+            "<p>Cast Allievi Accademia Amo</p>"
+            "<h3>informazioni sull'evento</h3>"
+            "<h4>Giovedì 17 giugno 2027</h4><p>ore 21:00 opera fuori abbonamento</p>"
+            "<h4>Venerdì 18 giugno 2027</h4><p>ore 21:00 opera fuori abbonamento</p>"
+            "<h3>GIARDINI DI PALAZZO NATTA</h3>"
+        )
+        expected=("Il noce di Benevento","Giuseppe Balducci",
+                  "Giardini di Palazzo Natta",
+                  [("2027-06-17","21:00"),("2027-06-18","21:00")])
+        self.assertEqual(parse_detail(html,url=url),expected)
+        evidence=parse_source_credited_opera_detail(
+            "coccia-novara-rolling-opera",url,html)
+        self.assertEqual(len(evidence),2)
+        self.assertEqual({x["venue"] for x in evidence},
+                         {"Giardini di Palazzo Natta"})
+        with self.assertRaises(ValueError):
+            parse_detail(html.replace("GIARDINI DI PALAZZO NATTA",
+                                      "SEDE NON VERIFICATA"),url=url)
+
+    def test_2027_official_double_bill_never_becomes_one_work(self):
+        url=HOST+"/stagione-27-l-amor-mio.html"
+        html=page(title="L’amor mio / Il tabarro",
+                  composer="Cristian Carrara / Giacomo Puccini",
+                  breadcrumb="Home / Spettacoli / Opera / L’amor mio / Il tabarro")
+        with self.assertRaisesRegex(ValueError,"multi-work programme"):
+            parse_detail(html,url=url)
+
     def test_unverified_genres_dates_and_composers_fail_closed(self):
         cases=[
             page(composer="Giacomo Puccini").replace("Musica di Giacomo Puccini",""),
