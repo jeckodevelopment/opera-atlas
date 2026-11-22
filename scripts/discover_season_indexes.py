@@ -396,6 +396,11 @@ def eligible(key:str,url:str)->bool:
     raise ValueError("unknown season index key")
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="padova-verdi-opera-2026":
+        from opera_atlas.padova_opera_parser import parse_program
+        if len(parse_program(html,url=index_url))!=5:
+            raise ValueError("Padova five opera showtimes incomplete")
+        return [index_url]
     if key=="treviso-del-monaco-opera-2026-27":
         from opera_atlas.treviso_opera_parser import parse_program
         if len(parse_program(html,url=index_url))!=6:
