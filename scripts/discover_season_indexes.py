@@ -716,6 +716,29 @@ def reconcile_season_absences(seen:dict,source_key:str,verified_urls:list[str])-
             record["status"]="not_in_official_season"
 
 
+def _probe_future_season(item:dict,db,source_id:int,fetcher,*,enabled:bool):
+    """Check the next season independently of current-season availability."""
+    if not enabled:
+        return [],{}
+    from datetime import date
+    from scripts.rollover_season_indexes import next_index
+    target=next_index(item,today=date.today(),allow_early=True)
+    if not target or target==item["url"]:
+        return [],{}
+    try:
+        page=fetcher(db,source_id=source_id,url=target,network_enabled=True)
+        links=extract(item["key"],target,page.html,item["min_links"])
+        if item["key"]=="scala-season-2026-27":
+            prefix=urlsplit(target).path.replace("/index.html","/opera/")
+            if not all(urlsplit(link).path.startswith(prefix) for link in links):
+                raise ValueError("mixed Scala season results")
+        return links,{"next_season_status":"verified",
+                      "next_season_url":target,"next_season_links":len(links)}
+    except (AccessDenied,FetchUnavailable,ValueError):
+        return [],{"next_season_status":"unavailable_or_invalid",
+                  "next_season_url":target,"next_season_links":0}
+
+
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
          network_enabled:bool=False,now:str|None=None,
          check_next_season:bool=False):
@@ -735,6 +758,7 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
     try:
         migrate(db)
         for item in entries:
+            future_urls,future_health=[],{}
             if item["access_status"]!="approved":
                 statuses.append({"key":item["key"],"status":item["access_status"],"links":0})
                 continue
@@ -742,6 +766,9 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 if not network_enabled:raise AccessDenied("network disabled")
                 db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",(item["official_url"],))
                 row=db.execute("SELECT id FROM sources WHERE official_url=?",(item["official_url"],)).fetchone()
+                future_urls,future_health=_probe_future_season(
+                    item,db,row["id"],fetcher,
+                    enabled=check_next_season and network_enabled)
                 primary_unavailable=False
                 index_url=item["url"]
                 min_links=item["min_links"]
@@ -812,9 +839,22 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                     diagnostic="index_incomplete_or_markup_changed"
                 else:
                     diagnostic="invalid_index_or_source_config"
+                # A failed old index does not prevent publishing already
+                # verified future-season links to the review-only registry.
+                for future in future_urls:
+                    uid="oa-index-"+hashlib.sha256(
+                        (item["key"]+"|"+future).encode()).hexdigest()[:20]
+                    if uid not in seen:
+                        seen[uid]={"id":uid,"source_key":item["key"],
+                                   "official_url":future,
+                                   "status":classify(item["key"],future,reviewed),
+                                   "first_seen":timestamp,"last_seen":timestamp}
+                    elif seen[uid]["status"]=="needs_review":
+                        seen[uid]["last_seen"]=timestamp
                 statuses.append({"key":item["key"],"status":"unavailable_or_invalid",
                                  "reason":type(exc).__name__,"diagnostic":diagnostic,
-                                 "required_links":item["min_links"],"links":0})
+                                 "required_links":item["min_links"],"links":0,
+                                 **future_health})
                 continue
             page_health={}
             if primary_unavailable:
@@ -835,33 +875,9 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 except (AccessDenied,FetchUnavailable,ValueError):
                     page_health={"pages_checked":1,"pagination_complete":False,
                                  "diagnostic":"secondary_page_unavailable_or_invalid"}
-            # A future official season is an additional monitored index,
-            # never a replacement for the current season. Its failure must
-            # not invalidate the current index or remove existing candidates.
-            next_season_health={}
-            if check_next_season:
-                from datetime import date
-                from scripts.rollover_season_indexes import next_index
-                future_url=next_index(item,today=date.today(),allow_early=True)
-                if future_url and future_url!=item["url"]:
-                    try:
-                        next_page=fetcher(db,source_id=row["id"],
-                                          url=future_url,network_enabled=True)
-                        next_urls=extract(item["key"],future_url,
-                                          next_page.html,item["min_links"])
-                        if item["key"]=="scala-season-2026-27":
-                            prefix=urlsplit(future_url).path.replace("/index.html","/opera/")
-                            if not all(urlsplit(link).path.startswith(prefix)
-                                       for link in next_urls):
-                                raise ValueError("mixed Scala season results")
-                        urls=sorted(set(urls).union(next_urls))
-                        next_season_health={"next_season_status":"verified",
-                                            "next_season_url":future_url,
-                                            "next_season_links":len(next_urls)}
-                    except (AccessDenied,FetchUnavailable,ValueError):
-                        next_season_health={"next_season_status":"unavailable_or_invalid",
-                                            "next_season_url":future_url,
-                                            "next_season_links":0}
+            # Merge only links that passed the independent future probe.
+            urls=sorted(set(urls).union(future_urls))
+            next_season_health=future_health
             reconcile_season_absences(seen,item["key"],urls)
             for url in urls:
                 uid="oa-index-"+hashlib.sha256((item["key"]+"|"+url).encode()).hexdigest()[:20]

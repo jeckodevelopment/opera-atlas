@@ -71,5 +71,38 @@ class ParallelSeasonDiscoveryTests(unittest.TestCase):
         self.assertEqual(scala["next_season_status"],"unavailable_or_invalid")
         self.assertEqual(len(result["candidates"]),3)
 
+    def test_current_season_unavailable_still_acquires_future_candidates(self):
+        config=self.config_for_scala()
+        calls=[]
+        def fetch(db,*,source_id,url,network_enabled):
+            calls.append(url)
+            if "/2026-2027/" in url:
+                raise FetchUnavailable("page unavailable")
+            html=self.html(2027)
+            return FetchResult(url,html,"a"*64,len(html))
+        result,rows=scan(config,{"schema_version":1,"candidates":[]},
+                         fetcher=fetch,network_enabled=True,
+                         check_next_season=True)
+        scala=next(x for x in rows if x["key"]=="scala-season-2026-27")
+        self.assertEqual(scala["status"],"unavailable_or_invalid")
+        self.assertEqual(scala["next_season_status"],"verified")
+        self.assertEqual(scala["next_season_links"],3)
+        self.assertEqual(scala["links"],0)
+        self.assertEqual(len(calls),2)
+        self.assertEqual(len(result["candidates"]),3)
+        self.assertTrue(all("/2027-2028/" in x["official_url"]
+                            for x in result["candidates"]))
+
+    def test_both_unavailable_keeps_review_registry_unchanged(self):
+        config=self.config_for_scala()
+        def fetch(db,*,source_id,url,network_enabled):
+            raise FetchUnavailable("page unavailable")
+        previous={"schema_version":1,"candidates":[]}
+        result,rows=scan(config,previous,fetcher=fetch,
+                         network_enabled=True,check_next_season=True)
+        self.assertEqual(result,previous)
+        scala=next(x for x in rows if x["key"]=="scala-season-2026-27")
+        self.assertEqual(scala["next_season_status"],"unavailable_or_invalid")
+
 if __name__=="__main__":
     unittest.main()
