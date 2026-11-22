@@ -141,6 +141,35 @@ class NovaraRollingOperaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_detail(html.replace("<h4>Venerdì 30 aprile 2027</h4><p>ore 20:00</p>",""),url=url)
 
+    def test_adjacent_unseparated_html_credit_labels_keep_authority(self):
+        # The official CMS can wrap credit lines in inline spans, which
+        # VisibleText joins without inserting spaces between adjacent spans.
+        for url,title,composer,extra in (
+            (HOST+"/stagione-27-il-noce-di-benevento.html",
+             "Il noce di Benevento","Giuseppe Balducci",
+             "Trascrizione per piccolo ensemble di Massimiliano Piscitello"),
+            (HOST+"/stagione-27-dove-nasce-il-melograno.html",
+             "Dove nasce il melograno",
+             "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
+             "Libretto di Pietro Utili"),
+        ):
+            with self.subTest(title=title):
+                html=(
+                    f"<div>Home / Spettacoli / Opera / {title}</div>"
+                    f"<h1>{title}</h1>"
+                    f"<span>Musica di {composer}</span><span>{extra}</span>"
+                    "<h3>informazioni sull'evento</h3>"
+                    "<h4>Giovedì 17 giugno 2027</h4><p>ore 21:00</p>"
+                    "<h3>GIARDINI DI PALAZZO NATTA</h3>"
+                )
+                heading,credit,venue,rows=parse_detail(html,url=url)
+                self.assertEqual(credit,composer)
+                self.assertEqual(len(rows),1)
+                self.assertEqual(venue,"Giardini di Palazzo Natta")
+                with self.assertRaises(ValueError):
+                    parse_detail(html.replace(f"Musica di {composer}","Musica di"),
+                                 url=url)
+
     def test_unverified_genres_dates_and_composers_fail_closed(self):
         cases=[
             page(composer="Giacomo Puccini").replace("Musica di Giacomo Puccini",""),
