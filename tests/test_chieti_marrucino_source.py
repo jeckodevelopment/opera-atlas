@@ -51,8 +51,25 @@ class ChietiSourceTests(unittest.TestCase):
         evidence={"schema_version":1,"evidence":[item]}
         published,ids,urls,report=promote(facts,registry,evidence,candidates,[],
                                           today=date(2026,11,22))
-        self.assertEqual(report["new_stagings"],3,report)
-        self.assertEqual(report["new_recite"],6)
+        # The cached publisher regenerates the catalog before running the
+        # same regression suite. Both first-time promotion and already
+        # promoted Chieti recite must pass; re-adding them is a duplicate.
+        known=("Turandot","Le nozze di Figaro","La traviata")
+        previous=[x for x in facts["productions"]
+                  if x["municipality"]=="Chieti"
+                  and x["venue"]=="Teatro Marrucino"
+                  and x["source_url"]==URL and x["title"] in known]
+        expected_new=3-len(previous)
+        self.assertEqual(report["new_stagings"],expected_new,report)
+        self.assertEqual(report["new_recite"],6-sum(len(x["dates"]) for x in previous),
+                         report)
+        for title in known:
+            selected=[x for x in published["productions"]
+                      if x["municipality"]=="Chieti" and
+                      x["venue"]=="Teatro Marrucino" and
+                      x["source_url"]==URL and x["title"]==title]
+            self.assertEqual(len(selected),1,(title,report))
+            self.assertEqual(len(selected[0]["dates"]),2,(title,report))
         self.assertTrue(any(x["reason"]=="unknown_work_needs_authority_data"
                             for x in report["auto_skipped"]))
         self.assertEqual(len(ids["works"]),len(registry["works"]))
