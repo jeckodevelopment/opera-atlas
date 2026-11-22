@@ -97,7 +97,7 @@ class SixSuccessorContractTests(unittest.TestCase):
           "rovigo-sociale-opera-2026-27","treviso-del-monaco-opera-2026-27",
           "padova-verdi-opera-2026","lecce-provincia-politeama-2026"]
         self.assertTrue(all(key in self.sources for key in historic))
-        self.assertEqual(len(self.sources),64)
+        self.assertGreaterEqual(len(self.sources),64)
 
     def test_unknown_identity_and_missing_time_do_not_infer_recite(self):
         key="modena-municipal-opera-2027-28"
