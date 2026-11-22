@@ -1103,6 +1103,14 @@
       "name": "Giardini di Palazzo Natta",
       "city": "Novara",
       "region": "Piemonte"
+    },
+    "Asti|Teatro Alfieri": {
+      "id": "oa-v-000057",
+      "slug": "teatro-alfieri",
+      "city_slug": "asti",
+      "name": "Teatro Alfieri",
+      "city": "Asti",
+      "region": "Piemonte"
     }
   },
   "stagings": {
@@ -3042,6 +3050,14 @@
       "venue_id": "oa-v-000011",
       "slug": "dove-nasce-il-melograno",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+      "season": "2027"
+    },
+    "auto-222099ffb9c97783": {
+      "id": "oa-s-000249",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000057",
+      "slug": "aida",
+      "source_url": "https://www.teatroalfieriasti.it/event/aida/",
       "season": "2027"
     }
   },
@@ -8715,6 +8731,12 @@
       "staging_id": "oa-s-000248",
       "original_date": "2027-04-30",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
+    },
+    "auto-222099ffb9c97783|2027-02-06": {
+      "id": "oa-r-000967",
+      "staging_id": "oa-s-000249",
+      "original_date": "2027-02-06",
+      "source_url": "https://www.teatroalfieriasti.it/event/aida/"
     }
   },
   "reserved_works": {

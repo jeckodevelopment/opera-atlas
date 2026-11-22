@@ -6433,6 +6433,21 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-222099ffb9c97783",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Alfieri",
+      "municipality": "Asti",
+      "region": "Piemonte",
+      "source_url": "https://www.teatroalfieriasti.it/event/aida/",
+      "dates": [
+        [
+          "2027-02-06",
+          "21:00"
+        ]
+      ]
     }
   ]
 }
