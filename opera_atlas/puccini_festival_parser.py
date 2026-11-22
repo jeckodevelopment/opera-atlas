@@ -78,10 +78,7 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
         date_area=panel[previous_end:begin].strip()
         # Programme cards contain a trailing "Explore the opera and cast"
         # from the preceding card, not part of the next calendar.
-        date_area=re.sub(r"(?i)Explore the opera and cast","",date_area).strip()
-        if i==0 and date_area:
-            # Nothing may appear before the first dated card.
-            pass
+        date_area=re.split(r"(?i)Explore the opera and cast",date_area)[-1].strip()
         days=_parse_days(date_area,year=2027)
         if len(days)!=expected:
             raise ValueError("incomplete Puccini official opera dates: "+title)
