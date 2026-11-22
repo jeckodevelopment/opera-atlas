@@ -38,6 +38,44 @@ class PublicationNotificationsTest(unittest.TestCase):
         self.assertEqual(len(notices), 1)
         self.assertEqual(notices[0]["kind"], "Nuova produzione")
 
+    def test_production_email_contains_sorted_upcoming_recite_and_known_times(self):
+        self.after["performances"] = {
+            "r2": {"id": "r2", "staging_id": "oa-s-1", "local_date": "2099-12-15",
+                   "starts_at": "2099-12-15T20:30:00+01:00", "time_known": True, "status": "announced"},
+            "r1": {"id": "r1", "staging_id": "oa-s-1", "local_date": "2099-12-12",
+                   "starts_at": "2099-12-12T18:00:00+01:00", "time_known": False, "status": "announced"},
+            "other": {"id": "other", "staging_id": "unrelated", "local_date": "2099-12-11",
+                      "time_known": False, "status": "announced"},
+            "past": {"id": "past", "staging_id": "oa-s-1", "local_date": "2020-01-03",
+                     "time_known": False, "status": "announced"},
+            "cancelled": {"id": "cancelled", "staging_id": "oa-s-1", "local_date": "2099-12-13",
+                          "time_known": False, "status": "cancelled"},
+        }
+        notice = new_entities(self.before, self.after)[1]
+        html, plain = render_email(notice)
+        self.assertIn("12 dicembre 2099", plain)
+        self.assertIn("15 dicembre 2099 · ore 20:30", plain)
+        self.assertLess(plain.index("12 dicembre"), plain.index("15 dicembre"))
+        self.assertNotIn("18:00", plain)
+        self.assertNotIn("11 dicembre", plain)
+        self.assertNotIn("13 dicembre", plain)
+        self.assertNotIn("2020", html)
+        self.assertIn("Recite", html)
+        self.assertIn("15 dicembre 2099", html)
+
+    def test_production_without_public_recite_shows_explicit_absence(self):
+        notice = new_entities(self.before, self.after)[1]
+        html, plain = render_email(notice)
+        self.assertIn("Recite previste:", plain)
+        self.assertIn("Date non ancora disponibili", plain)
+        self.assertIn("Date non ancora disponibili", html)
+
+    def test_new_work_mail_does_not_show_performance_dates(self):
+        notice = new_entities(self.before, self.after)[0]
+        html, plain = render_email(notice)
+        self.assertNotIn("Recite previste:", plain)
+        self.assertNotIn("Date non ancora disponibili", html)
+
     def test_resend_request_has_idempotency_key(self):
         notice = new_entities(self.before, self.after)[0]
         response = MagicMock()

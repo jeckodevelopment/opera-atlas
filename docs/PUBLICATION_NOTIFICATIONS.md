@@ -64,3 +64,7 @@ Ogni accettazione viene salvata immediatamente con un commit nel ramo del regist
 **Limite tecnico:** l'API Resend può accettare un invio poco prima di una caduta del runner o di un errore nella scrittura dello stato. In quel caso la richiesta può essere ripetuta; l'header `Idempotency-Key` dell'ID permanente limita i duplicati nei termini supportati da Resend. Non promettiamo esattamente-once assoluto in caso di guasti tra accettazione e persistenza.
 
 Per controllare lo stato del sistema: workflow `Deliver pending Opera Atlas publication emails`; in caso di fallimento verificare i warning e la branch `atlas-notification-ledger`. Un `workflow_dispatch` su questa nuova Action forza una riconciliazione del registro, non un replay storico di tutte le opere.
+
+## Recite nelle email di nuova produzione
+
+Le email per una **nuova produzione** includono un elenco delle recite future già presenti nel canale pubblico v2 `performances`, collegate tramite `staging_id`. Sono mostrate in ordine cronologico con data italiana e, soltanto se `time_known=true`, ora locale ricavata da `starts_at`. Le recite annullate e le date trascorse non figurano nell'elenco. Se non risultano future recite pubblicate, il modello riporta «Date non ancora disponibili». I messaggi per **nuova opera** rimangono invariati. Non vengono inviate notifiche aggiuntive per aggiornamenti di programmazione di produzioni esistenti.
