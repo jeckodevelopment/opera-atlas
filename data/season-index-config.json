@@ -526,6 +526,13 @@
       "url": "https://www.haydn.it/eventi/area/opera",
       "access_status": "approved",
       "min_links": 2
+    },
+    {
+      "key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/",
+      "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/",
+      "access_status": "approved",
+      "min_links": 3
     }
   ]
 }
