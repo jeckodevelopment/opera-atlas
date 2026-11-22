@@ -59,10 +59,10 @@
     },
     {
       "candidate_id": "oa-index-1e27375a038df76a1ea6",
-      "status": "awaiting_official_identity_evidence",
+      "status": "already_catalogued",
       "source_key": "reggio-valli-opera-2026-27",
       "official_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
-      "title_hint": "death in venice"
+      "work_id": "oa-w-000013"
     },
     {
       "candidate_id": "oa-index-93538b402fa3e844ca69",
