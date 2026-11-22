@@ -44,6 +44,32 @@ class ModenaTheatreFallbackTests(unittest.TestCase):
         self.assertEqual(len(facts),2)
         self.assertEqual([x["date"] for x in facts],["2026-10-30","2026-11-01"])
 
+    def test_evergreen_theatre_page_accepts_explicit_future_season(self):
+        future=(HTML.replace("venerdì 30 Ottobre 2026","venerdì 19 Novembre 2027")
+                    .replace("domenica 1 Novembre 2026","domenica 9 Gennaio 2028"))
+        self.assertEqual(parse_detail(future,url=URL)[3],[
+            ("2027-11-19","20:00"),("2028-01-09","15:30")])
+        self.assertEqual([x["date"] for x in
+                          parse_source_credited_opera_detail(KEY,URL,future)],
+                         ["2027-11-19","2028-01-09"])
+        with self.assertRaises(ValueError):
+            parse_detail(future.replace("domenica 9 Gennaio 2028",
+                                        "domenica 9 Gennaio 2029"),url=URL)
+
+    def test_yearless_future_showtimes_require_own_page_season_label(self):
+        future=(HTML.replace("venerdì 30 Ottobre 2026","venerdì 19 Novembre")
+                    .replace("domenica 1 Novembre 2026","domenica 9 Gennaio"))
+        labelled=future.replace(
+            "<h1>Giuseppe Verdi – Macbeth</h1>",
+            "<h1>Giuseppe Verdi – Macbeth</h1>"
+            "<p>Stagione Opera 2027/2028</p>")
+        self.assertEqual(parse_detail(labelled,url=URL)[3],[
+            ("2027-11-19","20:00"),("2028-01-09","15:30")])
+        with self.assertRaises(ValueError):
+            parse_detail(future,url=URL)
+        with self.assertRaises(ValueError):
+            parse_detail(labelled.replace("2027/2028","2027/2029"),url=URL)
+
     def test_historic_wagner_dutchman_exact_bilingual_identity(self):
         from scripts.auto_catalogue import normalize_source_seed_trieste_genre
         from scripts.publish_catalog_v2 import slugify
