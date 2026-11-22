@@ -55,6 +55,15 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if match is None:
         raise ValueError("opera title and credited composer not both explicit")
     composer,title=match.groups()
+    # This exact first-party bilingual heading identifies ONE Richard Wagner
+    # composition; its Italian translation is not a second opera. Keep the
+    # original German canonical title (and a stable historical poster key)
+    # while preserving every first-party date and clock unchanged.
+    if (target.path.rstrip("/")==
+        "/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante"
+        and composer=="Richard Wagner"
+        and title=="Der fliegende Holländer (L’olandese volante)"):
+        title="Der fliegende Holländer"
     # Compound composer credits and unsupported music programmes need their
     # own verified work identity, never an arbitrary inferred single composer.
     if (len(composer)>90 or len(title)>150 or "/" in composer
