@@ -142,6 +142,7 @@ class NationalIndexTests(unittest.TestCase):
 
     def test_all_forty_eight_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
+            "trapani-luglio-musicale-2026",
             "haydn-rolling-opera",
             "asti-alfieri-rolling-opera",
             "savona-giocosa-rolling-opera",
