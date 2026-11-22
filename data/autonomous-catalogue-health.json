@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "new_stagings": 6,
-  "new_recite": 29,
+  "new_stagings": 0,
+  "new_recite": 0,
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
@@ -69,7 +69,7 @@
       "reason": "unknown_work_needs_authority_data"
     }
   ],
-  "new_works": 6,
+  "new_works": 0,
   "enriched_recite_times": 0,
   "normalized_work_titles": 0
 }
