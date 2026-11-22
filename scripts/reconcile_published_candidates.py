@@ -199,6 +199,8 @@ def verified_shared_page_identities(candidates:dict, detail:dict,
                    "filarmonico-verona-rolling-opera"}),
         frozenset({"coccia-novara-opera-2027",
                    "coccia-novara-rolling-opera"}),
+        frozenset({"macerata-festival-2027",
+                   "macerata-festival-rolling"}),
     )
     grouped={}
     for row in rows:
@@ -214,6 +216,11 @@ def verified_shared_page_identities(candidates:dict, detail:dict,
         # is not sufficient to retire a discovery candidate.
         if not production.get("dates"):
             continue
+        # Official pages can use a typographic apostrophe whereas event
+        # evidence uses the ASCII equivalent. This is a spelling variant,
+        # not a different work identity.
+        def same_name(left,right):
+            return normalized(left or "").replace("’","'")==normalized(right or "").replace("’","'")
         valid=True
         for item in discovered:
             observed=by_source.get((item["source_key"],url))
@@ -221,10 +228,10 @@ def verified_shared_page_identities(candidates:dict, detail:dict,
                 continue
             for fact in observed["event_facts"]:
                 if (not isinstance(fact,dict)
-                    or normalized(fact.get("event_title","")) !=
-                       normalized(production.get("title",""))
-                    or normalized(fact.get("composer","")) !=
-                       normalized(production.get("composer",""))
+                    or not same_name(fact.get("event_title"),
+                                     production.get("title"))
+                    or not same_name(fact.get("composer"),
+                                     production.get("composer"))
                     or fact.get("date") not in
                        {d[0] for d in production["dates"]}):
                     valid=False
