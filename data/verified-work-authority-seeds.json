@@ -754,6 +754,25 @@
           "https://www.iteatri.re.it/2026/06/lanno-che-verra-opera-musical-su-lucio-dalla/"
         ]
       }
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+      "title": "Veleno",
+      "composer": "Gaia Aloisi",
+      "synopsis": "Nella Roma del Seicento, una rete clandestina di donne prepara e distribuisce un veleno invisibile. Tra violenza, vendetta e sopravvivenza prende forma un'opera da camera ispirata a una vicenda storica.",
+      "history": {
+        "librettist": "Stefano Simone Pintor",
+        "premiere_year": 2027,
+        "premiere_venue": "Teatro Ariosto",
+        "premiere_city": "Reggio Emilia",
+        "sources": [
+          "https://teatroregioparma.it/spettacolo/veleno/",
+          "https://www.iteatri.re.it/spettacolo/veleno/",
+          "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
+        ],
+        "premiere_date": "2027-04-28"
+      }
     }
   ]
 }
