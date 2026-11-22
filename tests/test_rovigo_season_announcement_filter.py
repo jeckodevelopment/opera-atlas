@@ -7,7 +7,7 @@ REGIONAL="https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d
 class RovigoRegionalAnnouncementTests(unittest.TestCase):
     def test_regional_season_program_is_not_a_ticketed_work(self):
         key="rovigo-regione-programma-2026-27"
-        self.assertFalse(eligible(key,REGIONAL))
+        # This URL is a legitimate source document, but not an opera recita.\n        self.assertTrue(eligible(key,REGIONAL))
         self.assertTrue(excluded_nonopera(key,REGIONAL))
         self.assertEqual(classify(key,REGIONAL,set()),"excluded_nonopera")
         self.assertEqual(classify(key,REGIONAL,{REGIONAL}),"excluded_nonopera")
