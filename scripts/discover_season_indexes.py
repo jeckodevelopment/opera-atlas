@@ -1177,16 +1177,27 @@ def _rovigo_verified_detail_fallback(db,source_id:int,fetcher):
     raise RovigoFallbackNotVerified(reason,checks)
 
 
+def unscanned_source_keys(config:dict,previous:dict)->set[str]:
+    """Prefer newly configured indexes, without mistaking an old scan for success."""
+    rows=validate_config(config)
+    checked={row["key"] for row in previous.get("sources",[])
+             if isinstance(row,dict) and row.get("last_attempt_at")}
+    return {row["key"] for row in rows
+            if row["access_status"]=="approved" and row["key"] not in checked}
+
+
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
          network_enabled:bool=False,now:str|None=None,
          check_next_season:bool=False,
-         source_keys:set[str]|None=None):
+         source_keys:set[str]|None=None,priority_keys:set[str]|None=None):
     entries=validate_config(config)
     if source_keys is not None:
         approved={row["key"] for row in entries if row["access_status"]=="approved"}
         if not source_keys or not source_keys<=approved:
             raise ValueError("source-specific scan requires approved index keys")
         entries=[row for row in entries if row["key"] in source_keys]
+    if priority_keys:
+        entries.sort(key=lambda row:0 if row["key"] in priority_keys else 1)
     if existing.get("schema_version")!=1 or not isinstance(existing.get("candidates"),list):
         raise ValueError("invalid index candidate registry")
     seen={x["id"]:x.copy() for x in existing["candidates"]}
@@ -1435,12 +1446,14 @@ def main():
     args=parser.parse_args()
     config=json.loads(CONFIG.read_text(encoding="utf-8"))
     current=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {"schema_version":1,"candidates":[]}
+    previous=json.loads(HEALTH.read_text(encoding="utf-8")) if HEALTH.exists() else {}
+    priorities=unscanned_source_keys(config,previous) if args.source_key is None else set()
     result,health=scan(
         config,current,network_enabled=args.allow_network,
         check_next_season=args.allow_network,
-        source_keys={args.source_key} if args.source_key is not None else None)
+        source_keys={args.source_key} if args.source_key is not None else None,
+        priority_keys=priorities)
     checked_at=datetime.now(timezone.utc).isoformat(timespec="seconds")
-    previous=json.loads(HEALTH.read_text(encoding="utf-8")) if HEALTH.exists() else {}
     health=source_health_history(health,previous,checked_at=checked_at)
     if args.source_key is not None:
         # A priority source cannot erase health for theatres not rescanned.
