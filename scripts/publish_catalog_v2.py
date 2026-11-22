@@ -45,9 +45,28 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
     all_ids = []
     for channel in ("works", "venues", "stagings", "performances"):
         all_ids += [item["id"] for item in registry[channel].values()]
+    reserved = registry.get("reserved_works", {})
+    if not isinstance(reserved, dict):
+        raise ValueError("invalid reserved work identity registry")
+    all_ids += [item["id"] for item in reserved.values()]
     if len(all_ids) != len(set(all_ids)):
         raise ValueError("catalog IDs must be unique across entities")
 
+    from scripts.publish_work_editorial import validate_history
+    reviewed_path = ROOT / "data" / "reviewed-program-work-editorials.json"
+    reviewed = json.loads(reviewed_path.read_text(encoding="utf-8"))
+    source_profiles = {(normalized(x["title"]), normalized(x["composer"])): x
+                       for x in reviewed["works"]}
+    for key, record in reserved.items():
+        identity = (normalized(record["title"]), normalized(record["composer"]))
+        profile = source_profiles.get(identity)
+        if (key != "|".join(identity) or not profile
+            or record.get("status") != "editorial_verified_pending_staging"
+            or not validate_history(profile.get("history"))
+            or not isinstance(profile.get("synopsis"), str)
+            or len(profile["synopsis"].strip()) < 35
+            or record["slug"] != slugify(record["title"])):
+            raise ValueError("unverified or malformed reserved canonical work")
     works, venues, stagings, performances = {}, {}, {}, []
     used_keys = {channel: set() for channel in CHANNELS}
     route_keys = set()

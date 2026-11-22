@@ -872,13 +872,25 @@ def promote_new_works(facts:dict,registry:dict,evidence:dict,candidates:dict,
         staging_key="auto-"+hashlib.sha256((source_key+"|"+url).encode()).hexdigest()[:16]
         if staging_key in next_registry["stagings"]:continue
         canonical_venue=ensure_venue(next_registry,city,venue,canonical_venue)
-        work_id=next_id(next_registry["works"],"oa-w-")
+        # Reserved program-only identities hold immutable IDs even before
+        # their first standalone staging; never allocate a colliding ID.
+        occupied={**next_registry["works"],
+                  **{"reserved:"+key:value for key,value in
+                     next_registry.get("reserved_works",{}).items()}}
+        reserved=next_registry.get("reserved_works",{}).get(work_key)
+        if reserved and (reserved.get("slug")!=slug
+                         or reserved.get("title")!=title
+                         or reserved.get("composer")!=composer):
+            raise ValueError("reserved canonical work identity mismatch")
+        work_id=reserved["id"] if reserved else next_id(occupied,"oa-w-")
         stage_id=next_id(next_registry["stagings"],"oa-s-")
         next_registry["works"][work_key]={
             "id":work_id,"slug":slug,"title":title,"composer":composer,
             **({"wikidata_id":qid} if verified_wikidata else
                {"authority_url":url}),
             **({"route_slug":route_slug} if homonyms else {})}
+        if reserved:
+            del next_registry["reserved_works"][work_key]
         if homonyms:
             by_id=next_editorial.setdefault("synopses_by_id",{})
             for existing in homonyms:
