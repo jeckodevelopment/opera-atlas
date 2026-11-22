@@ -2342,6 +2342,14 @@
       "slug": "il-ratto-dal-serraglio",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
       "season": "2027"
+    },
+    "auto-885beacc517cb454": {
+      "id": "oa-s-000185",
+      "work_id": "oa-w-000086",
+      "venue_id": "oa-v-000035",
+      "slug": "il-signor-bruschino",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -7270,6 +7278,18 @@
       "staging_id": "oa-s-000184",
       "original_date": "2027-01-24",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
+    },
+    "auto-885beacc517cb454|2026-05-08": {
+      "id": "oa-r-000839",
+      "staging_id": "oa-s-000185",
+      "original_date": "2026-05-08",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/"
+    },
+    "auto-885beacc517cb454|2026-05-10": {
+      "id": "oa-r-000840",
+      "staging_id": "oa-s-000185",
+      "original_date": "2026-05-10",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/"
     }
   }
 }

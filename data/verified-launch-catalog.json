@@ -5266,6 +5266,25 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-885beacc517cb454",
+      "title": "Il signor Bruschino",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
+      "dates": [
+        [
+          "2026-05-08",
+          "21:00"
+        ],
+        [
+          "2026-05-10",
+          "18:00"
+        ]
+      ]
     }
   ]
 }
