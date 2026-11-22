@@ -122,6 +122,10 @@ def parse(html: str, *, url: str = URL) -> list[dict]:
             if current is not None:
                 finish()
             composer = _composer(recent)
+            if not composer:
+                current = None
+                accepting_dates = False
+                continue
             current = {
                 "title": value,
                 "composer": composer,
@@ -156,6 +160,8 @@ def parse(html: str, *, url: str = URL) -> list[dict]:
             if record in current["performances"]:
                 raise ValueError("duplicate secondary recita")
             current["performances"].append(record)
+        recent.append((kind, value, href))
+        recent = recent[-12:]
     if current is not None:
         finish()
     if not blocks or len(blocks) > 35:
