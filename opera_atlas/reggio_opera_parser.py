@@ -54,15 +54,18 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if (not re.fullmatch(r"[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3}",composer)):
         raise ValueError("official composer not unambiguous")
     # Only ticket rows carry full years. Month/day headings are insufficient.
-    # Global navigation contains a 'Biglietti' link too; never scan it.
-    # Bound to the actual production heading and its local ticket rows.
-    section=re.search(
-        r"<h[2-4][^>]*>\s*Biglietti\s*</h[2-4]>(.*?)"
-        r"<h[2-4][^>]*>\s*Riduzioni\s*</h[2-4]>",
-        html,re.I|re.S)
-    if not section:
+    # Official WordPress H2 headings can wrap their title in spans or links.
+    # Select the matching heading's DOM range, not the navigation's first
+    # occurrence of the word Biglietti.
+    h2=list(re.finditer(r"<h2\b[^>]*>.*?</h2>",html,re.I|re.S))
+    begin=next((i for i,m in enumerate(h2)
+                if clean(m.group()).strip().casefold()=="biglietti"),None)
+    end=next((i for i,m in enumerate(h2)
+              if begin is not None and i>begin
+              and clean(m.group()).strip().casefold()=="riduzioni"),None)
+    if begin is None or end is None:
         raise ValueError("missing bounded ticket calendar")
-    text=clean(section.group(1))
+    text=clean(html[h2[begin].end():h2[end].start()])
     rx=re.compile(r"\b(\d{2})/(\d{2})/(20\d{2})\s*\|\s*([01]\d|2[0-3]):([0-5]\d)\s*\|\s*([^|]+?)\s*\|",re.I)
     found={}
     matches=list(rx.finditer(text))

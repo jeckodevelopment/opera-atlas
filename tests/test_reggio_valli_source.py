@@ -52,6 +52,17 @@ class ReggioSourceTests(unittest.TestCase):
         self.assertEqual(facts[0]["starts_at"],"2026-11-20T20:00:00+01:00")
         self.assertEqual(len(facts),2)
 
+    def test_nested_wordpress_heading_still_scopes_real_ticket_table(self):
+        html=page().replace("<h2>Biglietti</h2>",
+                            '<h2 class="wp-block-heading"><span>Biglietti</span></h2>')
+        html=html.replace("<h2>Riduzioni</h2>",
+                          '<h2 class="wp-block-heading"><span>Riduzioni</span></h2>')
+        title,credit,venue,rows=parse_detail(html,url=DETAIL)
+        self.assertEqual((title,credit,venue),
+                         ("Macbeth","Giuseppe Verdi","Teatro Valli"))
+        self.assertEqual(rows,[("2026-11-20","20:00"),
+                               ("2026-11-22","15:30")])
+
     def test_menu_biglietti_link_does_not_contaminate_official_ticket_rows(self):
         html=page()
         html=html.replace(
