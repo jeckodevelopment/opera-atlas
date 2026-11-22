@@ -132,7 +132,7 @@ def parse_detail(html:str,*,url:str):
         raise ValueError("Sassari composer credit ambiguous")
     # Only the first work-specific H3 after the title/composer is a ticket
     # schedule. The later prose can repeat the days without precise hours.
-    schedule=re.search(r"(?is)<h3\\b[^>]*>(.*?)</h3>",html[h.end():h.end()+550])
+    schedule=re.search(r"(?is)<h3\b[^>]*>(.*?)</h3>",html[h.end():h.end()+550])
     if not schedule:
         raise ValueError("Sassari work-specific schedule heading absent")
     date_block=clean(schedule[1])
