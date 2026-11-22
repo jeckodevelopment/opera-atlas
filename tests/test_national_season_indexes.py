@@ -100,9 +100,9 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual(len(urls),2)
         self.assertFalse(any("brahms" in x for x in urls))
 
-    def test_all_thirty_eight_indexes_are_explicitly_configured(self):
+    def test_all_thirty_nine_indexes_are_explicitly_configured(self):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
-            "pisa-verdi-opera-2026-27", "salerno-verdi-opera-2026", "macerata-festival-2027", "scala-season-2026-27", "arena-festival-2027",
+            "filarmonico-verona-opera-2027", "pisa-verdi-opera-2026-27", "salerno-verdi-opera-2026", "macerata-festival-2027", "scala-season-2026-27", "arena-festival-2027",
             "fenice-opera-2026-27","parma-opera-2027",
             "massimo-season-2026-27","carlo-felice-season-2026-27",
             "donizetti-opera-2026","teatro-grande-opera-2026",

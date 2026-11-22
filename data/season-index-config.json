@@ -267,6 +267,13 @@
       "url": "https://teatrodipisa.it/tipologia-spettacolo/opera/",
       "access_status": "approved",
       "min_links": 5
+    },
+    {
+      "key": "filarmonico-verona-opera-2027",
+      "official_url": "https://www.arena.it/",
+      "url": "https://www.arena.it/teatro-filarmonico-verona/spettacoli-prossima-stagione/",
+      "access_status": "approved",
+      "min_links": 5
     }
   ]
 }
