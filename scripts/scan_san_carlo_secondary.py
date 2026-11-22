@@ -50,7 +50,7 @@ class CalendarReader(HTMLParser):
             self.skip += 1
         if self.skip:
             return
-        if tag in ("h2", "h3", "a") and self.capture is None:
+        if tag in ("h2", "h3", "h4", "a") and self.capture is None:
             self.capture = tag
             self.buffer = []
             self.href = dict(attrs).get("href") if tag == "a" else None
@@ -153,11 +153,13 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
             recent.append((kind, value, href))
             recent = recent[-12:]
             continue
-        if kind == "h3":
-            accepting_dates = value.casefold() == "recite"
-        if value == VENUE:
+        if value.strip().casefold() == "recite":
+            accepting_dates = True
+        elif re.search(r"^(direzione e compagnie|personaggi e interpreti)$", value, re.I):
+            accepting_dates = False
+        if value.strip() == VENUE or (VENUE in value and len(value) < 80):
             current["venue_verified"] = True
-        if kind == "a" and accepting_dates:
+        if kind in ("a", "text") and accepting_dates:
             m = SHOWTIME.fullmatch(value)
             if not m:
                 continue

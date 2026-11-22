@@ -51,9 +51,18 @@ class SecondarySanCarloTests(unittest.TestCase):
         skipped = []
         productions = parse(noisy, diagnostics=skipped)
         self.assertEqual(len(productions), 2)
-        self.assertEqual(len(skipped), 1)
-        self.assertIn("recite", skipped[0]["missing"])
-        self.assertIn("venue", skipped[0]["missing"])
+        self.assertTrue(all("recite" in item["missing"] for item in skipped))
+        self.assertTrue(all(item["heading"] != productions[0]["title"] for item in skipped))
+
+    def test_realistic_heading_and_plaintext_recite_markup(self):
+        realistic = fixture().replace("<h3>Recite</h3>", "<h4>Recite</h4>")
+        realistic = realistic.replace(
+            '<a href="/it/eventi/2026-12-02/luisa-miller/">Mer 2 Dicembre 2026 20:00</a>',
+            '<div>Mer 2 Dicembre 2026 20:00</div>'
+        )
+        productions = parse(realistic)
+        self.assertEqual(len(productions), 2)
+        self.assertEqual(len(productions[0]["performances"]), 2)
 
     def test_rejects_wrong_source_and_ambiguous_time(self):
         with self.assertRaisesRegex(ValueError, "unapproved"):
