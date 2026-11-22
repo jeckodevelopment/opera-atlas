@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T17:32:37+00:00",
+  "checked_at": "2026-11-22T17:34:47+00:00",
   "scope": "national",
-  "attempted": 22,
+  "attempted": 17,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -64,17 +64,12 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-995d8f9ff8de58d84cfd",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "outcome": "official_programme_document_pending",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-f92f3fc808d9fb909461",
+      "candidate_id": "oa-index-86855eb33828e6cde6af",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -93,6 +88,78 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:missing performance details section",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "authority_work:no_evidence",
+        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "authority_work:no_evidence",
+        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "authority_work:no_evidence",
+        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:explicit official Novara opera composer is missing",
+        "authority_work:no_evidence",
+        "official_composer_credit:explicit official Novara opera composer is missing",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-cab03dfcd8aeff155178",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "authority_work:no_evidence",
+        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "authority_work:no_evidence",
+        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -129,119 +196,6 @@
         "canonical_work:Sassari composer not immediately credited",
         "authority_work:no_evidence",
         "official_composer_credit:Sassari composer not immediately credited",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-4e7a6ea5275e9fa4ad03",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Sassari composer not immediately credited",
-        "authority_work:no_evidence",
-        "official_composer_credit:Sassari composer not immediately credited",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-743dd5f2381d26feece2",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Sassari composer not immediately credited",
-        "authority_work:no_evidence",
-        "official_composer_credit:Sassari composer not immediately credited",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-86855eb33828e6cde6af",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Sassari composer not immediately credited",
-        "authority_work:no_evidence",
-        "official_composer_credit:Sassari composer not immediately credited",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:explicit official Novara opera composer is missing",
-        "authority_work:no_evidence",
-        "official_composer_credit:explicit official Novara opera composer is missing",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-ab6612954af20d7d7cad",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-cab03dfcd8aeff155178",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
         "schema_event:no_evidence"
       ],
       "rows": 0
