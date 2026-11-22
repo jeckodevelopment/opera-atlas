@@ -38,7 +38,7 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn('lifecycle.future_seasons_verified', text)
         self.assertIn('lifecycle.legacy_year_bound', text)
         self.assertIn("non equivale alla copertura dell'intera stagione", text)
-        self.assertIn("non certifica l'intera stagione", text)
+        self.assertIn("non una verifica completa di ogni stagione", text)
         self.assertIn("non disponibili", text)
 
 
