@@ -18,7 +18,7 @@ _DATE=re.compile(r"(?<!\d)([0-3]?\d)/([01]?\d)/(20\d{2})\s*@\s*([01]?\d|2[0-3]):
 _GENRE=re.compile(r"\b(?:opera(?!\s+musical)|melodramma|dramma\s+lirico)\b",re.I)
 _CREDIT=re.compile(
     r"\b(?:musica\s+di|di)\s+"
-    r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’\-]+(?:\s+[A-ZÀ-Ž][A-Za-zÀ-ÿ.'’\-]+){1,4})"
+    r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’\-]+(?:\s+[A-ZÀ-Ž][A-Za-zÀ-ÿ.'’\-]+){1,4}?)"
     r"\s+(?=Regia\b|Produzione\b|Direzione\b|Cast\b|"
     r"Fuori\s+abbonamento\b|Opera\b|Melodramma\b)",re.I)
 
