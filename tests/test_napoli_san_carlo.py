@@ -63,9 +63,7 @@ class NapoliSanCarloTests(unittest.TestCase):
         def challenge_fetch(db,*,source_id,url,network_enabled):
             self.assertEqual(url,INDEX)
             return FetchResult(url,CHALLENGE,"a"*64,len(CHALLENGE))
-        config={"schema_version":1,"sources":[{
-            "key":KEY,"official_url":"https://www.teatrosancarlo.it/",
-            "url":INDEX,"access_status":"approved","min_links":1}]}
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
         with self.assertRaises(SanCarloSecurityChallenge):
             extract_index(CHALLENGE,url=INDEX)
         _,statuses=scan(config,{"schema_version":1,"candidates":[]},
