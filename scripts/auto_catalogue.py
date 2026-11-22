@@ -526,9 +526,6 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
     """Return all changes in memory; skip anomalies without publishing bad data."""
     from scripts.consolidate_goldoni_mascagni import consolidate
     facts,registry,consolidated_stagings=consolidate(facts,registry)
-    from scripts.consolidate_haydn_cronaca import consolidate as consolidate_haydn
-    facts,registry,haydn_migrated=consolidate_haydn(facts,registry)
-    consolidated_stagings+=haydn_migrated
     next_facts=copy.deepcopy(facts)
     next_registry=copy.deepcopy(registry)
     approved=set(authorized_urls)
@@ -1358,6 +1355,11 @@ def main():
     # catalog transaction; never edit derived public JSON or IDs by hand.
     seeds=json.loads((ROOT/"data/verified-work-authority-seeds.json").read_text(encoding="utf-8"))
     facts,registry,corrected_titles=normalize_published_work_titles(facts,registry,seeds)
+    # Existing duplicate Haydn ticket stagings are migrated only in the
+    # actual publication transaction, never as a side effect of generic
+    # promote() fixture processing.
+    from scripts.consolidate_haydn_cronaca import consolidate as consolidate_haydn
+    facts,registry,haydn_migrated=consolidate_haydn(facts,registry)
     evidence=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     candidates=json.loads(INDEX.read_text(encoding="utf-8")) if INDEX.exists() else {"candidates":[]}
     approved=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8")) if SOURCE_ALLOWLIST.exists() else {"schema_version":1,"urls":[]}
@@ -1367,6 +1369,7 @@ def main():
     next_facts,next_registry,urls,report=promote(
         facts,registry,evidence,candidates,approved["urls"],today=date.today(),
         intelligence=intelligence)
+    report["consolidated_stagings"]+=haydn_migrated
     from scripts.daily_ingest import HEALTH as DAILY_HEALTH
     health=json.loads(DAILY_HEALTH.read_text(encoding="utf-8")) if DAILY_HEALTH.exists() else {"sources":[]}
     next_facts,next_registry,calendar=promote_calendar(
