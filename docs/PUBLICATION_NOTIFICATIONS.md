@@ -34,3 +34,11 @@ Il workflow aggiuntivo espone `workflow_dispatch` con `base_sha` (revisione prec
 - `entity_ids`: `oa-w-000077,oa-w-000078`
 
 Il replay invia email reali a tutti i destinatari configurati: eseguirlo una sola volta dopo aver verificato il mittente Resend. Non usare `entity_ids` vuoto nel replay storico se non si intende notificare tutte le opere e produzioni nuove dall'epoca della baseline. Nessun valore dei secret è inserito nel repository o nei log.
+
+## Diagnosi degli HTTP 403 di Resend
+
+Quando Resend rifiuta una notifica, nei log GitHub Actions viene registrato lo stato HTTP e, se disponibile, soltanto il campo strutturato `name`/`code` della risposta API (ammessi caratteri alfanumerici, `_` e `-`). Il messaggio completo e il body JSON non sono mai stampati, per non divulgare indirizzi o token. I campi `ATLAS_NOTIFICATION_FROM` e `RESEND_API_KEY` restano secret GitHub.
+
+Se un HTTP 403 non appare nei log della dashboard Resend, verificare che si stia visualizzando la **stessa organizzazione/team** a cui appartiene la chiave API e controllare le **restrizioni di dominio** della chiave stessa. L'assenza di log nella dashboard non dimostra che l'API non sia stata contattata: il codice HTTP viene restituito dalla richiesta HTTPS del workflow.
+
+Un errore nella consegna non compromette la pubblicazione del catalogo. Per recuperare notifiche saltate, usare il replay con filtro `entity_ids` documentato sopra, dopo aver corretto la causa del rifiuto.
