@@ -1,14 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T20:32:18+00:00",
+  "checked_at": "2026-11-22T20:35:35+00:00",
   "scope": "national",
-  "attempted": 2,
+  "attempted": 1,
   "outcomes": [
-    {
-      "candidate_id": "oa-index-76fee4db156090b664aa",
-      "outcome": "verified_first_party_season_calendar",
-      "rows": 6
-    },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
       "outcome": "unavailable_or_unstructured",
