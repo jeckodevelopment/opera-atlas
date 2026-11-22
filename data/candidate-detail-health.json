@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T14:04:36+00:00",
+  "checked_at": "2026-11-22T14:05:53+00:00",
   "scope": "national",
-  "attempted": 11,
+  "attempted": 10,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -79,18 +79,6 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:no verified Trieste opera showtimes",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-fdbd4ff9f97a75bd5429",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:not one unambiguous credited opera",
-        "authority_work:no_evidence",
-        "official_composer_credit:not one unambiguous credited opera",
         "schema_event:no_evidence"
       ],
       "rows": 0
