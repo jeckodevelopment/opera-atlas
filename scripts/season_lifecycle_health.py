@@ -15,14 +15,33 @@ POLICY=ROOT/"data/season-lifecycle-policy.json"
 HEALTH=ROOT/"data/season-index-health.json"
 ROLLOVER_HEALTH=ROOT/"data/season-rollover-health.json"
 OUT=ROOT/"public/catalog/season-lifecycle.json"
+SUCCESSORS=ROOT/"data/season-successor-coverage.json"
 
 STRATEGIES={"verified_rollover","evergreen_index","legacy_year_bound"}
 
-def build(config:dict,policy:dict,health:dict,rollover_health:dict)->dict:
+def build(config:dict,policy:dict,health:dict,rollover_health:dict,
+          successor_coverage:dict|None=None)->dict:
     sources=config["sources"]
     plans=policy["sources"]
     if set(plans)!={x["key"] for x in sources}:
         raise ValueError("season lifecycle policy is incomplete")
+    if successor_coverage is None:
+        successor_coverage=json.loads(SUCCESSORS.read_text(encoding="utf-8"))
+    if successor_coverage.get("schema_version")!=1 or not isinstance(
+            successor_coverage.get("mappings"),list):
+        raise ValueError("invalid successor coverage contract")
+    successor_for={}
+    for pair in successor_coverage["mappings"]:
+        if not isinstance(pair,dict) or set(pair)!={"legacy_source_key","successor_source_key"}:
+            raise ValueError("invalid explicit successor mapping")
+        legacy,successor=pair["legacy_source_key"],pair["successor_source_key"]
+        if (not isinstance(legacy,str) or not isinstance(successor,str)
+                or legacy in successor_for or legacy==successor
+                or legacy not in plans or successor not in plans
+                or plans[legacy]["strategy"]!="legacy_year_bound"
+                or plans[successor]["strategy"]!="verified_rollover"):
+            raise ValueError("invalid, duplicate or unimplemented historical successor")
+        successor_for[legacy]=successor
     checks={x["key"]:x for x in health.get("sources",[])
             if isinstance(x,dict) and isinstance(x.get("key"),str)}
     rollovers={x["key"]:x for x in rollover_health.get("outcomes",[])
@@ -42,6 +61,8 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict)->dict:
             "source_key":key,
             "index_url":item["url"],
             "strategy":strategy,
+            "successor_source_key":successor_for.get(key),
+            "legacy_covered_by_successor":key in successor_for,
             "rollover_implemented":strategy=="verified_rollover",
             "future_season_verified":next_status=="verified",
             "next_season_status":next_status,
@@ -62,6 +83,8 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict)->dict:
         "verified_rollover":counts["verified_rollover"],
         "evergreen_index_unverified":counts["evergreen_index"],
         "legacy_year_bound":counts["legacy_year_bound"],
+        "legacy_covered_by_successor":len(successor_for),
+        "legacy_still_uncovered":counts["legacy_year_bound"]-len(successor_for),
         "future_seasons_verified":sum(x["future_season_verified"] for x in rows),
         "sources":rows,
     }
@@ -69,7 +92,7 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict)->dict:
 def publish(*,check:bool=False)->dict:
     def read(path):
         return json.loads(path.read_text(encoding="utf-8"))
-    result=build(read(CONFIG),read(POLICY),read(HEALTH),read(ROLLOVER_HEALTH))
+    result=build(read(CONFIG),read(POLICY),read(HEALTH),read(ROLLOVER_HEALTH),read(SUCCESSORS))
     encoded=(json.dumps(result,ensure_ascii=False,sort_keys=True,
                         separators=(",",":"))+"\n").encode("utf-8")
     if check:
@@ -87,7 +110,7 @@ def main():
     result=publish(check=args.check)
     print(json.dumps({k:result[k] for k in (
         "total_indexes","verified_rollover","evergreen_index_unverified",
-        "legacy_year_bound","future_seasons_verified")}))
+        "legacy_year_bound","legacy_covered_by_successor","legacy_still_uncovered","future_seasons_verified")}))
 
 if __name__=="__main__":
     main()
