@@ -28,6 +28,35 @@ class LecceApolloSourceTests(unittest.TestCase):
         self.assertEqual(parse_detail(TEXT,url=URL),
             ("Le avventure di Pinocchio","Antonio Cericola","Teatro Apollo",
              [("2026-12-30","20:45")]))
+    def test_unknown_contemporary_opera_retains_issuer_evidence_for_authority(self):
+        from scripts.collect_candidate_details import (
+            parse_known_opera_detail,parse_source_credited_opera_detail)
+        from scripts.auto_catalogue import verified_venue
+        facts=parse_source_credited_opera_detail(
+            "lecce-apollo-pinocchio-2026",URL,TEXT)
+        self.assertEqual(len(facts),1)
+        self.assertEqual(facts[0]["event_title"],"Le avventure di Pinocchio")
+        self.assertEqual(facts[0]["composer"],"Antonio Cericola")
+        self.assertEqual(facts[0]["venue"],"Teatro Apollo")
+        self.assertEqual(facts[0]["date"],"2026-12-30")
+        self.assertEqual(facts[0]["starts_at"],"2026-12-30T20:45:00+01:00")
+        self.assertEqual(verified_venue(
+            "lecce-apollo-pinocchio-2026",facts,{"venues":{}})[:2],
+            ("Lecce","Teatro Apollo"))
+        self.assertEqual(parse_known_opera_detail(
+            "lecce-apollo-pinocchio-2026",URL,TEXT,{"works":{}}),[])
+        # Without a complete editorial identity, first-party evidence is
+        # acquired but does not invent a new canonical work or premiere.
+        for wrong in (
+            TEXT.replace("Antonio Cericola","Altro compositore"),
+            TEXT.replace("Teatro Apollo di Lecce","Teatro Politeama Greco di Lecce"),
+            TEXT.replace("mercoledì 30 dicembre, ore 20.45",
+                         "mercoledì 30 dicembre, ora da definire"),
+        ):
+            with self.assertRaises(ValueError):
+                parse_source_credited_opera_detail(
+                    "lecce-apollo-pinocchio-2026",URL,wrong)
+
     def test_fail_closed_without_full_showtime_or_attribution(self):
         for bad in (
             TEXT.replace("Antonio Cericola","Giacomo Puccini"),
