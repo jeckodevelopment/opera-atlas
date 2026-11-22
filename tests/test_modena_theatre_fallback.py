@@ -75,6 +75,42 @@ class ModenaTheatreFallbackTests(unittest.TestCase):
         self.assertEqual(art["kind"],"archival_work_image")
         self.assertIn("Public domain",art["license"])
 
+    def test_wagner_work_and_two_modena_recite_pass_full_publication_gate(self):
+        from datetime import date
+        from scripts.auto_catalogue import official_identity_candidates,promote_new_works
+        from scripts.publish_catalog_v2 import ROOT,REGISTRY
+        from scripts.build_verified_catalog import MANIFEST
+        from scripts.publish_work_editorial import EDITORIAL,HISTORY
+        read=lambda path:json.loads(path.read_text(encoding="utf-8"))
+        source=("https://www.teatrocomunalemodena.it/spettacolo/"
+                "richard-wagner-der-fliegender-hollander-lolandese-volante/")
+        detail=next(x for x in read(ROOT/"data/candidate-detail-evidence.json")["evidence"]
+                    if x["source_url"]==source)
+        candidate={"id":detail["candidate_id"],"source_key":KEY,
+                   "official_url":source,"status":"needs_review"}
+        rows={"schema_version":1,"evidence":[detail]}
+        indexes={"schema_version":1,"candidates":[candidate]}
+        ident=official_identity_candidates(rows,indexes,{"schema_version":1,"works":[]})
+        verified=[x for x in ident["works"] if x["source_url"]==source]
+        self.assertEqual(len(verified),1)
+        self.assertEqual((verified[0]["title"],verified[0]["composer"]),
+                         ("Der fliegende Holländer","Richard Wagner"))
+        originals=read(MANIFEST)
+        ids=read(REGISTRY)
+        if any(x["title"]=="Der fliegende Holländer" and
+               x["composer"]=="Richard Wagner" for x in ids["works"].values()):
+            self.skipTest("canonical work already published by current refresh")
+        after,reg,urls,editorial,history,report=promote_new_works(
+            originals,ids,rows,indexes,ident,read(EDITORIAL),[],
+            today=date(2026,11,22),history=read(HISTORY),require_image=True)
+        self.assertEqual(report["new_works"],1,report)
+        self.assertEqual(report["new_recite"],2,report)
+        entry=next(p for p in after["productions"] if p["source_url"]==source)
+        self.assertEqual(len(entry["dates"]),2)
+        self.assertEqual(entry["title"],"Der fliegende Holländer")
+        self.assertTrue(any(w["slug"]=="der-fliegende-hollander"
+                            for w in reg["works"].values()))
+
     def test_no_unverified_authority_or_dates(self):
         for broken in (
             HTML.replace("Giuseppe Verdi – Macbeth","Macbeth"),
