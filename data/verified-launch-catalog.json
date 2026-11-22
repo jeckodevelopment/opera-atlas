@@ -5905,6 +5905,25 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-d7fe62f35d5196ce",
+      "title": "Veleno",
+      "composer": "Gaia Aloisi",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+      "dates": [
+        [
+          "2027-05-07",
+          "20:00"
+        ],
+        [
+          "2027-05-09",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

@@ -2705,6 +2705,14 @@
       "slug": "der-fliegende-hollander",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
       "season": "2026"
+    },
+    "auto-d7fe62f35d5196ce": {
+      "id": "oa-s-000220",
+      "work_id": "oa-w-000081",
+      "venue_id": "oa-v-000044",
+      "slug": "veleno",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -8047,6 +8055,18 @@
       "staging_id": "oa-s-000219",
       "original_date": "2026-11-22",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+    },
+    "auto-d7fe62f35d5196ce|2027-05-07": {
+      "id": "oa-r-000912",
+      "staging_id": "oa-s-000220",
+      "original_date": "2027-05-07",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
+    },
+    "auto-d7fe62f35d5196ce|2027-05-09": {
+      "id": "oa-r-000913",
+      "staging_id": "oa-s-000220",
+      "original_date": "2027-05-09",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
     }
   },
   "reserved_works": {
