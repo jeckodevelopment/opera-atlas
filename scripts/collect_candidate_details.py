@@ -1055,6 +1055,24 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         health.append({"candidate_id":item["id"],
                                        "outcome":"verified_other_season","rows":0})
                         continue
+                if item["source_key"]=="rovigo-regione-programma-2026-27":
+                    from opera_atlas.rovigo_regional_program import approved_programme
+                    pdf_url=approved_programme(page.html,url=item["official_url"])
+                    # An overview's date range (October to May) is NOT a
+                    # dated opera recital. Preserve the document pointer for
+                    # the separate PDF ingestion stage; skip generic JSON-LD.
+                    retained[item["id"]]={
+                        "candidate_id":item["id"],"source_key":item["source_key"],
+                        "source_url":item["official_url"],
+                        "content_sha256":page.sha256,
+                        "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        "status":"official_programme_document_pending",
+                        "programme_document_url":pdf_url,
+                        "event_facts":[]}
+                    health.append({"candidate_id":item["id"],
+                                   "outcome":"official_programme_document_pending",
+                                   "rows":0})
+                    continue
                 if item["source_key"] in (
                         "jesi-trittico-opera-2026","ancona-cavalleria-program-2026"):
                     from opera_atlas.marche_2026_parser import read_program
