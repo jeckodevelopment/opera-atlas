@@ -64,6 +64,38 @@ class GoldoniFutureTests(unittest.TestCase):
         self.assertEqual(parse_known_opera_detail("goldoni-livorno-rolling-lirica",
                                                    D1,detail(),{"works":{}}),[])
 
+    def test_long_navigation_does_not_hide_verified_ticket_metadata(self):
+        long_nav="<nav>"+"<span>Navigation and archives </span>"*80+"</nav>"
+        html=long_nav+detail(date="31 Gennaio 2027",clock="16",
+                             title="Otello",composer="Giuseppe Verdi")
+        self.assertEqual(parse_detail(html,url=HOST+"/spettacoli/otello-3/"),
+                         ("Otello","Giuseppe Verdi","Teatro Goldoni",
+                          [("2027-01-31","16:00")]))
+        # A date shown only in the description is not a ticket for this URL.
+        missing=html.replace("Teatro Goldoni - 31 Gennaio 2027",
+                             "Teatro Goldoni - Data da definire")
+        with self.assertRaisesRegex(ValueError,"own dated ticket clock"):
+            parse_detail(missing,url=HOST+"/spettacoli/otello-3/")
+        # A second metadata event before the heading is ambiguous.
+        ambiguous=html.replace('<span>Lirica</span><h1>',
+             '<span>Lirica</span><div>Teatro Goldoni - 29 Gennaio 2027</div>'
+             '<p>Orario/i: 20</p><span>Lirica</span><h1>')
+        with self.assertRaisesRegex(ValueError,"own dated ticket clock"):
+            parse_detail(ambiguous,url=HOST+"/spettacoli/otello-3/")
+
+    def test_official_composer_stops_at_primary_cast_or_premiere_label(self):
+        for delimiter,composer,title in (
+            ("Personaggi e interpreti","Giuseppe Verdi","Otello"),
+            ("Prima esecuzione mondiale","Henry Purcell","Dido and Aeneas"),
+            ("Direttore Fabrizio Maria Carminati","Gaetano Donizetti",
+             "L’elisir d’amore"),
+        ):
+            with self.subTest(title=title):
+                html=detail(date="29 Gennaio 2027",clock="20",title=title,
+                            composer=composer)
+                html=html.replace("Direttore Maria Rossi",delimiter)
+                self.assertEqual(parse_detail(html,url=D1)[1],composer)
+
     def test_non_opera_uncredited_missing_clock_and_historic_page_fail_closed(self):
         cases=[
           detail(kind="Prosa"),detail(title="Concerto di Capodanno"),
