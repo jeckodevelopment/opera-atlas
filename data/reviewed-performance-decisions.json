@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "case_id": "rovigo-traviata-2027",
+      "reviewed_on": "2026-11-22",
+      "decision": "approved_for_canonical_reconciliation",
+      "source_policy": "issuer_repertoire_plus_secondary_performance_cross_checks",
+      "official_event_page_retrieved": false,
+      "issuer_claim": "Comune di Rovigo confirms Verdi's Traviata in Teatro Sociale's 2026/27 opera programme, but publishes no showtimes in the issuer record.",
+      "external_claim": "ClassicaLive publishes two separate dated event cards with exact venue and clock, both crediting the Comune event page.",
+      "cross_check_claim": "Piazza in Festa corroborates both public clocks and distinguishes the 21 January rehearsal; page declares AI-assisted municipal-act compilation.",
+      "independence_note": "The two ClassicaLive event cards share one publisher and Piazza in Festa may derive from the same municipal programme. Secondary corroboration is not multiple independent primary sources.",
+      "public_recite": [
+        {
+          "date": "2027-01-22",
+          "time": "20:30"
+        },
+        {
+          "date": "2027-01-24",
+          "time": "16:00"
+        }
+      ],
+      "excluded_school_date": "2027-01-21"
+    }
+  ]
+}
