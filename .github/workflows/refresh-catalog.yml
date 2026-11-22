@@ -138,6 +138,7 @@ jobs:
           # A cached new opera may be published before the slow discovery
           # phase. Close its candidate in the SAME early checkpoint.
           python -m scripts.reconcile_published_candidates
+          python -m scripts.work_identity_review
           python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
           python -m scripts.publish_work_editorial
@@ -318,7 +319,9 @@ jobs:
           python -m scripts.publish_work_posters --allow-network
           python -m scripts.publish_programs
       - name: Finalize all candidate outcomes before atomic public catalog publication
-        run: python -m scripts.reconcile_published_candidates
+        run: |
+          python -m scripts.reconcile_published_candidates
+          python -m scripts.work_identity_review
       - name: Persist unrecognized productions in review-only discovery feed
         run: python -m scripts.discovery_queue
       - name: Regenerate and verify editorial snapshot and canonical feed

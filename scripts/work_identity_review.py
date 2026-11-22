@@ -14,6 +14,8 @@ from opera_atlas.work_identity import resolve_work, canonical_title
 from scripts.publish_catalog_v2 import ROOT
 
 EVIDENCE = ROOT / "data" / "candidate-detail-evidence.json"
+CANDIDATES = ROOT / "data" / "season-index-candidates.json"
+PROGRAMS = ROOT / "public" / "catalog" / "programs.json"
 REGISTRY = ROOT / "data" / "identity-registry.json"
 OUTPUT = ROOT / "public" / "catalog" / "work-identity-review.json"
 MAX_GROUPS = 500
@@ -50,11 +52,16 @@ def _review_credit_hint(title: str, composer: str, works: list[dict]) -> dict | 
     return None
 
 
-def evaluate(evidence: dict, registry: dict) -> dict:
+def evaluate(evidence: dict, registry: dict, candidates: dict | None = None,
+             programs: dict | None = None) -> dict:
     if evidence.get("schema_version") != 1 or not isinstance(evidence.get("evidence"), list):
         raise ValueError("invalid candidate evidence document")
     if registry.get("schema_version") != 1 or not isinstance(registry.get("works"), dict):
         raise ValueError("invalid canonical work registry")
+    status_by_id={x["id"]:x.get("status")
+                  for x in (candidates or {}).get("candidates",[])}
+    published_programs={(x["source_key"],x["source_url"])
+                        for x in (programs or {}).get("programs",[])}
     works = list(registry["works"].values()) + list(registry.get("reserved_works", {}).values())
     by_composer = {}
     for work in works:
@@ -69,6 +76,15 @@ def evaluate(evidence: dict, registry: dict) -> dict:
         if not isinstance(candidate, dict):
             raise ValueError("invalid evidence entry")
         if candidate.get("status") not in ("needs_editorial_review", "needs_program_review"):
+            continue
+        if status_by_id.get(candidate.get("candidate_id")) in (
+                "excluded_nonopera","not_in_official_season"):
+            continue
+        # A published mixed program is one ticket, not a backlog of new
+        # standalone operas (which may include a poem, ballet or concert).
+        if (candidate.get("status")=="needs_program_review"
+            and (candidate.get("source_key"),candidate.get("source_url"))
+                    in published_programs):
             continue
         candidate_count += 1
         facts = candidate.get("event_facts") or []
@@ -142,7 +158,9 @@ def main() -> None:
     parser.add_argument("--check",action="store_true")
     args=parser.parse_args()
     report=evaluate(json.loads(EVIDENCE.read_text(encoding="utf-8")),
-                    json.loads(REGISTRY.read_text(encoding="utf-8")))
+                    json.loads(REGISTRY.read_text(encoding="utf-8")),
+                    json.loads(CANDIDATES.read_text(encoding="utf-8")),
+                    json.loads(PROGRAMS.read_text(encoding="utf-8")) if PROGRAMS.exists() else {"programs":[]})
     expected=json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+"\n"
     if args.check:
         if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != expected:
