@@ -54,7 +54,8 @@ def extract_index(html:str,*,url:str=INDEX,min_links:int=1)->list[str]:
     if url!=INDEX:raise ValueError("unapproved Haydn opera index")
     reader=Reader()
     reader.feed(html)
-    # The first-party Opera area includes intros, backstage events and opera.\n    # Each event detail must be
+    # The first-party Opera area includes intros, backstage events and opera.
+    # Each event detail must be
     # independently verified. No URL slugs are used as work evidence.
     urls=sorted({candidate for href in reader.links
                  if eligible_detail(candidate:=urljoin(INDEX,href))})
