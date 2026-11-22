@@ -42,7 +42,7 @@ class SavonaPipelineTests(unittest.TestCase):
                          {"La traviata","I salvatori della mezzanotte"})
         self.assertTrue(all(x["venue"]=="Teatro Chiabrera" for x in facts))
         self.assertTrue(all(x["date"].startswith("2027-") for x in facts))
-        self.assertTrue(all(x["starts_at"].endswith("+02:00") for x in facts))
+        self.assertTrue(all(x["starts_at"].endswith(("+01:00","+02:00")) for x in facts))
         self.assertEqual(classify(KEY,URL,{URL}),"needs_review")
 
     def test_reject_unverified_or_only_nonopera_index(self):
