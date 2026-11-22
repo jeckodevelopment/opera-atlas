@@ -151,3 +151,22 @@ accetta soltanto chiavi approvate; non modifica le candidate né gli stati
 diagnostici delle altre fonti. I nuovi dati vengono registrati nel checkpoint
 iniziale e resi disponibili alla prima transazione di pubblicazione dello
 stesso workflow, senza richiedere una seconda esecuzione nazionale.
+
+## Diagnostica effettiva del fallback (novembre 2026)
+
+La scansione successiva alla PR #518 ha mostrato ancora
+`rovigo_venue_missing` nonostante il tentativo di consultare la
+scheda-evento. Il codice precedente, quando il fallback falliva,
+rilanciava erroneamente l'eccezione del vecchio slider: non era possibile
+capire se il nuovo endpoint non fosse disponibile oppure se il contenuto
+non superasse la verifica delle recite.
+
+Il fallback ufficiale usa ora due codici diagnostici privi di dati remoti:
+`rovigo_fallback_fetch_unavailable` (pagina non acquisita)
+e `rovigo_fallback_content_unverified` (pagina acquisita ma non
+verificabile dal parser). Si prova lo stesso endpoint anche in caso di
+`FetchUnavailable` dello slider. Un blocco robots esplicito resta
+inviolabile; non vengono inferite date da pagine non verificate.
+I dati delle altre fonti e l'eventuale ultimo successo rimangono
+preservati. Questa correzione è **diagnostica e di resilienza**:
+non equivale all'avvenuta pubblicazione di nuove recite.
