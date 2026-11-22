@@ -26,6 +26,34 @@ EXCLUDED_HAYDN_ANCILLARY=re.compile(
     r"dai-libri-allopera(?:-[0-9]+)?)$"
 )
 EXCLUDED_PATHS={
+    # Exact published 2026 ROF concert, outreach and recital pages.
+    # Keep productions such as Il viaggio a Reims, La scala di seta,
+    # L'occasione fa il ladro and Le siège de Corinthe eligible.
+    "pesaro-rof-2026": frozenset({
+        "concerti-di-belcanto", "festival-giovane", "stabat-mater",
+        "incontri", "rossinimania",
+    }),
+    # The festival mixes opera with chamber concerts, pop and jazz.
+    # Exclusions require individually recognisable original programme slugs;
+    # no global keyword or "family" exclusion is permitted.
+    "trapani-luglio-musicale-2026": frozenset({
+        "new-saxophone-orchestra",
+        "duo-resonans",
+        "duo-monica-leone-michele-campanella",
+        "quartetto-vocale-faraualla",
+        "omaggio-a-lelio-luttazzi",
+        "orchestra-nazionale-barocca-dei-conservatori",
+        "concerto-di-natale",
+        "american-dream",
+        "concerto-di-capodanno",
+        "sicily-jazz-concert",
+        "bruno-canino",
+        "requiem-k-626",
+        "omaggio-a-bowie-cohen-michael-e-prince",
+        "lidia-schillaci-canta-i-grandi-cantautori-italiani",
+        "verdi-sogno-e-passione",
+        "orchestra-nazionale-barocca-dei-conservatori",
+    }),
     "scala-season-2026-27": frozenset({
         "otello-anteprima-under30.html",
     }),
