@@ -201,6 +201,11 @@
       "source_key": "vicenza-olimpico-rolling-opera",
       "scope": "dynamic_category",
       "evidence": "Festival home page lists season productions and can transition to new editions. Exact detail parsing requires local source-credited festival edition, title, composer, physical Teatro Olimpico and recital clock; not proof future seasons are published."
+    },
+    {
+      "source_key": "sabbioneta-antica-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The official /eventi/ calendar index is year-neutral and new /evento/ detail pages can be discovered without season-specific slugs. Theatre, composer, title and date must still be checked on each new edition; no claim of future season live proof."
     }
   ]
 }
