@@ -288,6 +288,13 @@
       "url": "https://www.orchestracherubini.it/eventi/tpl/list/",
       "access_status": "approved",
       "min_links": 2
+    },
+    {
+      "key": "treviso-del-monaco-opera-2026-27",
+      "official_url": "https://risorse.teatrostabileveneto.it/",
+      "url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }
