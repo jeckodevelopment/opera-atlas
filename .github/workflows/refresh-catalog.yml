@@ -30,6 +30,8 @@ on:
       - 'scripts/corroborate_performances.py'
       - 'tests/test_corrob_performances.py'
       - 'data/reviewed-performance-decisions.json'
+      - 'data/rovigo-reviewed-additional-productions.json'
+      - 'scripts/apply_rovigo_additional_reviewed.py'
       - 'scripts/apply_reviewed_performance_evidence.py'
       - 'scripts/collect_candidate_details.py'
       - 'scripts/auto_work_research.py'
@@ -134,6 +136,8 @@ jobs:
       # the central canonical reconciler still owns all publication.
       - name: Apply reviewed cross-source facts to latest candidate registry
         run: python -m scripts.apply_reviewed_performance_evidence
+      - name: Apply reviewed Aida and Cenerentola to the central candidate registry
+        run: python -m scripts.apply_rovigo_additional_reviewed
       - name: Build identity-review snapshot from official candidate evidence
         run: python -m scripts.work_identity_review
       - name: Checkpoint national pending-candidate evidence and diagnostics

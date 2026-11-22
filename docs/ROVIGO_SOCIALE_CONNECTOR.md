@@ -262,3 +262,30 @@ forte e senza sovrascrivere candidate già pubblicate. Il risultato
 entra nel checkpoint iniziale e soltanto `auto_catalogue.promote`
 può creare la produzione e i relativi ID canonici. La ripetizione
 dello stesso ciclo è idempotente.
+
+## Aida e La Cenerentola: altre quattro recite pubbliche
+
+Per le due opere già presenti nel registro canonico, la decisione
+editoriale circoscritta è in
+`data/rovigo-reviewed-additional-productions.json`: *Aida* (26
+febbraio 2027 ore 20:30, 28 febbraio ore 16:00) e *La Cenerentola*
+(23 aprile ore 20:30, 25 aprile ore 16:00). L'identità del
+repertorio 2026/27 è attribuita al Comune tramite Art Bonus; i
+quattro orari sono dichiarati come riscontri di ClassicaLive, con
+riscontro ulteriore del cartellone su Opera Mundus. Sono fonti
+editoriali secondarie e non quattro fonti primarie indipendenti.
+
+`scripts.apply_rovigo_additional_reviewed` registra la candidate
+nelle ultime copie dei registri generate dallo scanner, senza
+sostituire eventuali osservazioni ufficiali complete e senza
+scrivere direttamente nel catalogo. L'importazione canonica resta
+interamente affidata a `auto_catalogue.promote`, con controlli
+su compositore, sede, identità e duplicati. Gli URL ammessi degli
+eventi comunali sono esclusivamente quelli esatti per *Aida* e
+*La Cenerentola*. Non si attribuisce al Comune un HTML che non è
+stato acquisito.
+
+Restano da lavorare distintamente *Pimpinone* al **Ridotto** (sede
+non intercambiabile con la sala principale) e il dittico
+*The Telephone / Trouble in Tahiti*: l'11 e il 12 dicembre
+sono sessioni scolastiche, la sola recita pubblica è il 13 dicembre.
