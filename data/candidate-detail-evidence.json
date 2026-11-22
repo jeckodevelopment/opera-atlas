@@ -189,7 +189,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -582,7 +582,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1170,7 +1170,7 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1718,7 +1718,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3901,7 +3901,7 @@
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4111,8 +4111,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "93e3676bb1a7d2bdee01acec99049e1f62ca55805a20850ced933aa30a5f263e",
-      "checked_at": "2026-11-22T23:22:43+00:00",
+      "content_sha256": "96072039545968f44689ff9207dfd54b12550479e7bc457d12a88fd9cf90aa6b",
+      "checked_at": "2026-11-22T23:34:27+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5270,7 +5270,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5447,8 +5447,8 @@
       "candidate_id": "oa-index-a0c534fc596dea327ad4",
       "source_key": "sabbioneta-antica-rolling-opera",
       "source_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
-      "content_sha256": "76f956faa8f6c2caa0955ed6aa7c7aa85cb187f21c1d37ac5e6670cfb4322033",
-      "checked_at": "2026-11-22T23:21:18+00:00",
+      "content_sha256": "165cd8fe20f76bd97358531eecfbd74dbbdc5b64c7b2db5062475abdbb9344a0",
+      "checked_at": "2026-11-22T23:34:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6137,8 +6137,8 @@
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "content_sha256": "c1265880b63b55eb2a2555637995b222e33c946a83539c7d62b8671272b75ebd",
-      "checked_at": "2026-11-22T22:22:04+00:00",
+      "content_sha256": "d7b08debfc83402dac10a02712c444096c3140f22672691934fa67116b7be17a",
+      "checked_at": "2026-11-22T23:36:10+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6326,7 +6326,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7529,7 +7529,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8803,7 +8803,7 @@
       "candidate_id": "oa-index-feadef19a246de079ccb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
-      "checked_at": "2026-11-22T15:26:06+00:00",
+      "checked_at": "2026-11-22T23:36:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {

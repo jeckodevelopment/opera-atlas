@@ -1,9 +1,24 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T15:22:18+00:00",
+  "checked_at": "2026-11-22T23:29:34+00:00",
   "outcomes": [
     {
       "key": "spoleto-tls-lirica-2026",
+      "status": "kept_last_known_good",
+      "reason": "FetchUnavailable"
+    },
+    {
+      "key": "trapani-luglio-musicale-2026",
+      "status": "kept_last_known_good",
+      "reason": "FetchUnavailable"
+    },
+    {
+      "key": "martina-valle-itria-2026",
+      "status": "kept_last_known_good",
+      "reason": "FetchUnavailable"
+    },
+    {
+      "key": "pesaro-rof-2026",
       "status": "kept_last_known_good",
       "reason": "FetchUnavailable"
     }
