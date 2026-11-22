@@ -277,6 +277,10 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
         # original official observations and the composer identity checks.
         if seed:
             title=seed["title"]
+            # Official credits may be all caps. The exact source-bound seed
+            # already passed normalized identity checks above, so use its
+            # curated casing without changing the credited composers.
+            composer=seed["composer"]
         # The remote research cache may already contain this candidate with
         # an incomplete editorial record. Reconcile its *exact official URL*
         # and credited identity before the publication transaction, instead

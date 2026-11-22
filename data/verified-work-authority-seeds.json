@@ -843,6 +843,23 @@
           "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
         ]
       }
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+      "title": "Dove nasce il melograno",
+      "composer": "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
+      "synopsis": "Una nuova opera realizzata con gli allievi dell'Accademia AMO e il coinvolgimento degli studenti dell'Istituto Omar. La creazione intreccia musica e drammaturgia in un progetto corale del Teatro Coccia.",
+      "history": {
+        "librettist": "Pietro Utili",
+        "premiere_year": 2027,
+        "premiere_venue": "Teatro Coccia",
+        "premiere_city": "Novara",
+        "sources": [
+          "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+          "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/Pieghevole_Stagione2027.pdf"
+        ]
+      }
     }
   ]
 }
