@@ -67,3 +67,20 @@ totale nazionale, che cambia legittimamente quando si integra una nuova sede.
 Il test nazionale va aggiornato per ogni nuova source-key, preservando così
 il controllo contro cancellazioni accidentali e duplicati, senza modificare
 una dozzina di test indipendenti per ogni onboarding.
+
+## Checkpoint anticipato per gli indici stagionali
+
+Il refresh del catalogo deve effettuare una prima scansione delle fonti
+stagionali **prima** della coda nazionale dei dettagli. Il job salva subito
+`data/season-index-health.json`, le candidate URL e
+`public/catalog/source-automation.json`: il feed diagnostico quindi non
+rimane bloccato sul precedente successo se i passi di arricchimento
+successivi risultano lenti. Le URL di discovery non pubblicano recite.
+
+Il checkpoint usa il push non forzato di `scripts.safe_push_catalog`; se
+`main` avanza durante l'acquisizione, viene richiesto automaticamente un
+nuovo refresh anziché sovrascrivere dati più recenti. La seconda scansione
+stagionale **dopo** il rollover rimane necessaria per le nuove edizioni
+ufficialmente adottate. L'indicatore `operational` richiede una scansione
+completata con successo; non certifica copertura delle recite né
+pubblicazione sul sito.
