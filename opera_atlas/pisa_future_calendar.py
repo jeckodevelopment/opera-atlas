@@ -19,9 +19,9 @@ HOST="teatrodipisa.it"
 INDEX=f"https://{HOST}/calendario/categoria/opera/elenco/"
 VENUE="Teatro Verdi"
 URL_PATTERN=re.compile(r"/calendario/([a-z0-9-]+)/")
-DATE=re.compile(r"(?i)(\d{1,2})\s+"
+DATE=re.compile(r"(\d{1,2})\s+"
     r"(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)"
-    r"\s+(20\d{2})")
+    r"\s+(20\d{2})",re.I)
 TIME=re.compile(r"(?<!\d)(2[0-3]|1\d|0?\d):([0-5]\d)(?!\d)")
 SCHOOL=re.compile(r"(?i)\b(?:scuol[ae]|generale\s+riservata|prova\s+didattica)\b")
 CANCEL=re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b")
@@ -126,8 +126,8 @@ def parse_calendar_detail(html:str,*,url:str,registry:dict):
     block=re.search(
         r"(?is)\bDettagli\b(.*?)\bCategoria\s+Evento\s*:\s*opera\b",text)
     if not block:raise ValueError("bounded Pisa event details missing")
-    date_match=re.search(r"(?i)\bData\s*:\s*"+DATE.pattern,block[1])
-    hour_match=re.search(r"(?i)\bOra\s*:\s*"+TIME.pattern,block[1])
+    date_match=re.search(r"\bData\s*:\s*"+DATE.pattern,block[1],re.I)
+    hour_match=re.search(r"\bOra\s*:\s*"+TIME.pattern,block[1],re.I)
     if not date_match or not hour_match:
         raise ValueError("incomplete official Pisa date and time")
     day,month,year=date_match.groups()
