@@ -5,6 +5,33 @@ Email-client-compatible table layout with inline styling and a plain-text fallba
 from __future__ import annotations
 
 from html import escape
+from datetime import date, datetime
+
+MONTHS_IT = ("gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre")
+
+
+def performance_labels(notice: dict) -> list[str]:
+    """Only future published dates; never infer an unknown performance time."""
+    if notice.get("kind") != "Nuova produzione":
+        return []
+    labels = []
+    for performance in notice.get("performances", []):
+        try:
+            day = date.fromisoformat(performance["local_date"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if day < date.today() or performance.get("status") == "cancelled":
+            continue
+        label = f"{day.day} {MONTHS_IT[day.month - 1]} {day.year}"
+        if performance.get("time_known") and performance.get("starts_at"):
+            try:
+                time = datetime.fromisoformat(performance["starts_at"]).strftime("%H:%M")
+                label += f" · ore {time}"
+            except (TypeError, ValueError):
+                pass
+        labels.append((day, label))
+    labels.sort(key=lambda item: (item[0], item[1]))
+    return [label for _, label in labels]
 
 
 def render_email(notice: dict) -> tuple[str, str]:
@@ -17,6 +44,14 @@ def render_email(notice: dict) -> tuple[str, str]:
     if not url.startswith("https://opera.plus/atlas/"):
         raise ValueError("notification URL must point to canonical Atlas")
     e = lambda value: escape(value, quote=True)
+    labels = performance_labels(notice)
+    recite_html = ""
+    recite_plain = ""
+    if kind == "Nuova produzione":
+        recite_plain = "\\nRecite previste:\\n" + ("\\n".join(f"- {label}" for label in labels) if labels else "Date non ancora disponibili") + "\\n"
+        items = "".join(f'<li style="padding:3px 0;">{e(label)}</li>' for label in labels)
+        contents = f'<ul style="margin:8px 0;padding-left:20px;">{items}</ul>' if labels else "Date non ancora disponibili"
+        recite_html = f'<tr><td style="padding:8px 0 16px;font-size:12px;color:#727272;vertical-align:top;">Recite</td><td style="padding:8px 0 16px;font-size:14px;line-height:1.6;color:#242424;">{contents}</td></tr>'
     html = f"""<!doctype html>
 <html lang="it">
 <head>
@@ -45,6 +80,7 @@ def render_email(notice: dict) -> tuple[str, str]:
                 <td style="padding:18px 0 8px;font-size:14px;color:#242424;overflow-wrap:anywhere;">{e(identifier)}</td></tr>
             <tr><td style="padding:8px 0 16px;font-size:12px;color:#727272;vertical-align:top;">Dettagli</td>
                 <td style="padding:8px 0 16px;font-size:14px;line-height:1.6;color:#242424;">{e(details)}</td></tr>
+            {recite_html}
           </table>
         </td></tr>
         <tr><td align="center" style="padding:12px 32px 36px;">
