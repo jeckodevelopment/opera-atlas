@@ -40,14 +40,10 @@ def new_entities(before: dict, after: dict) -> list[dict]:
     venues = after["venues"]
     performances_by_staging = {}
     for performance in after.get("performances", {}).values():
-        if performance.get("status") == "cancelled":
-            continue
         day = performance.get("local_date", "")
         try:
-            scheduled = date.fromisoformat(day)
+            date.fromisoformat(day)
         except (TypeError, ValueError):
-            continue
-        if scheduled < date.today():
             continue
         performances_by_staging.setdefault(performance.get("staging_id"), []).append(performance)
     for scheduled in performances_by_staging.values():
@@ -56,7 +52,7 @@ def new_entities(before: dict, after: dict) -> list[dict]:
             performance.get("starts_at") or "",
             performance.get("id") or "",
         ))
-    for channel in ("works", "stagings"):
+    for channel in ("works", "venues", "stagings"):
         previous_ids = {record["id"] for record in before[channel].values()}
         for record in after[channel].values():
             if record["id"] in previous_ids:
@@ -69,6 +65,14 @@ def new_entities(before: dict, after: dict) -> list[dict]:
                     "title": record["title"],
                     "details": f"Compositore: {record.get('composer', 'Non indicato')}",
                     "url": f"{ROOT_URL}/opere/{slug}/",
+                })
+            elif channel == "venues":
+                notices.append({
+                    "kind": "Nuovo teatro",
+                    "id": record["id"],
+                    "title": record["name"],
+                    "details": f"Città: {record['city']} · Regione: {record.get('region', 'Non indicata')}",
+                    "url": f"{ROOT_URL}/{record['city_slug']}/{record['slug']}/",
                 })
             else:
                 work = works[record["work_id"]]
