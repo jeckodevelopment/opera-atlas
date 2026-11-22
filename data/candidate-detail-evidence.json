@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "94a78ef75a315549cfa29985c1ec0c60e7aa470ef90fb75bd9a71416d2043a09",
-      "checked_at": "2026-11-22T13:10:47+00:00",
+      "checked_at": "2026-11-22T13:18:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5599,8 +5599,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "e72961a9873cd9177210d38e9d3a01a35bd075cd38ced4c22b358b2d6f7a55b1",
-      "checked_at": "2026-11-22T13:10:56+00:00",
+      "content_sha256": "353ab654d3a51fb0b050648dbfaac84a83f54a3c6dbdac9007f640647267ded3",
+      "checked_at": "2026-11-22T13:18:31+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []

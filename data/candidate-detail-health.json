@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T13:11:08+00:00",
+  "checked_at": "2026-11-22T13:18:42+00:00",
   "scope": "national",
   "attempted": 14,
   "outcomes": [
@@ -57,13 +57,13 @@
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "candidate_id": "oa-index-a02901b14e6eae69df5c",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
-        "official_composer_credit:conflicting official showtime for one day",
+        "official_composer_credit:unverified Parma performance venue",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -110,18 +110,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-a02901b14e6eae69df5c",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:unverified Parma performance venue",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-d7fe62f35d5196ceb467",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -153,6 +141,18 @@
         "canonical_work:not one unambiguous credited opera",
         "authority_work:no_evidence",
         "official_composer_credit:not one unambiguous credited opera",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "official_composer_credit:conflicting official showtime for one day",
         "schema_event:no_evidence"
       ],
       "rows": 0
