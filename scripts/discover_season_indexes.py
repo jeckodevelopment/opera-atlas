@@ -302,6 +302,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="coccia-novara-rolling-opera":
+        from opera_atlas.novara_future_parser import eligible_detail
+        return eligible_detail(url)
     if key=="pisa-future-calendar":
         from opera_atlas.pisa_future_calendar import eligible_detail
         return eligible_detail(url)
@@ -563,6 +566,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="coccia-novara-rolling-opera":
+        from opera_atlas.novara_future_parser import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="pisa-future-calendar":
         from opera_atlas.pisa_future_calendar import extract_calendar
         return extract_calendar(html,url=index_url,min_links=min_links)
@@ -701,6 +707,7 @@ def validate_config(config:dict)->list[dict]:
         "treviso-del-monaco-opera-2026-27":("risorse.teatrostabileveneto.it","/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"),
         "ravenna-alighieri-cherubini-2027":("www.orchestracherubini.it","/eventi/tpl/list/"),
         "coccia-novara-opera-2027":("www.fondazioneteatrococcia.it","/spettacoli.html"),
+        "coccia-novara-rolling-opera":("www.fondazioneteatrococcia.it","/spettacoli_opera_danza_concerti.html"),
         "filarmonico-verona-opera-2027":("www.arena.it","/teatro-filarmonico-verona/spettacoli-prossima-stagione/"),
         "pisa-verdi-opera-2026-27":("teatrodipisa.it","/tipologia-spettacolo/opera/"),
         "pisa-future-calendar":("teatrodipisa.it","/calendario/categoria/opera/elenco/"),
@@ -846,6 +853,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27" and not index.query
         elif key=="ravenna-alighieri-cherubini-2027":
             valid_season=index.path=="/eventi/tpl/list/" and not index.query
+        elif key=="coccia-novara-rolling-opera":
+            valid_season=index.path=="/spettacoli_opera_danza_concerti.html" and not index.query
         elif key=="coccia-novara-opera-2027":
             valid_season=index.path=="/spettacoli.html" and not index.query
         elif key=="filarmonico-verona-opera-2027":
