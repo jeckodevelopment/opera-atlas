@@ -140,6 +140,29 @@ class ModenaTheatreFallbackTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_detail(html,url=URL)
 
+    def test_nested_official_veleno_h4_and_sitewide_h1(self):
+        source="https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
+        html=(HTML
+              .replace("<h1>Giuseppe Verdi – Macbeth</h1>",
+                       '<h4 class="entry-title"><span>Gaia Aloisi</span> – <strong>Veleno</strong></h4>')
+              .replace("<h4>Giuseppe Verdi – Macbeth</h4>",
+                       "<p>Gaia Aloisi – Veleno</p>")
+              .replace("30 Ottobre 2026","7 Maggio 2027")
+              .replace("1 Novembre 2026","9 Maggio 2027"))
+        self.assertEqual(parse_detail(html,url=source),(
+            "Veleno","Gaia Aloisi","Teatro Comunale Pavarotti-Freni",
+            [("2027-05-07","20:00"),("2027-05-09","15:30")]))
+        self.assertEqual(len(parse_source_credited_opera_detail(KEY,source,html)),2)
+        # A site-wide H1 must not obscure the exact work-specific H4.
+        self.assertEqual(parse_detail("<h1>Teatro Comunale</h1>"+html,url=source)[0],"Veleno")
+        for tampered in (
+            html.replace("<strong>Veleno</strong>","<strong>Opera diversa</strong>"),
+            html+"<h4>Gaia Aloisi – Veleno</h4>",
+            html.replace("Gaia Aloisi</span>","Compositore ignoto</span>"),
+        ):
+            with self.subTest(page=tampered[-100:]),self.assertRaises(ValueError):
+                parse_detail(tampered,url=source)
+
     def test_no_unverified_authority_or_dates(self):
         for broken in (
             HTML.replace("Giuseppe Verdi – Macbeth","Macbeth"),
