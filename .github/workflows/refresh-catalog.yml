@@ -126,6 +126,10 @@ jobs:
       - name: Collect San Carlo secondary candidates before national backlog
         # Monofonte: outputs remain unverified and cannot enter publication.
         run: python -m scripts.scan_san_carlo_secondary --allow-network --sync-candidates
+      - name: Cross-check San Carlo recite against independent calendar
+        # Conflicts are review-only and never rewrite primary evidence.
+        continue-on-error: true
+        run: python -m scripts.corroborate_san_carlo_secondary --allow-network --sync-review
       - name: Acquire cross-source corroboration before national backlog
         run: python -m scripts.corroborate_performances
       # An exact, first-party Rovigo detail URL is available even when the
@@ -160,6 +164,7 @@ jobs:
           # Preserve the cross-source gate outcome even when no recita passed.
           git add data/corroborated-performance-health.json
           git add data/san-carlo-secondary-candidates.json data/san-carlo-secondary-health.json public/catalog/san-carlo-secondary-candidates.json
+          git add data/san-carlo-secondary-corroboration.json public/catalog/san-carlo-secondary-corroboration.json
           git add data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"

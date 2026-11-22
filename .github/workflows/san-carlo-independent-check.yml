@@ -1,0 +1,60 @@
+name: San Carlo independent showtime check
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/san-carlo-independent-check.yml'
+      - 'scripts/corroborate_san_carlo_secondary.py'
+      - 'tests/test_san_carlo_independent_corroboration.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: san-carlo-independent-check
+  cancel-in-progress: true
+
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test independent showtime comparator
+        run: python -m unittest discover -s tests -p 'test_san_carlo_independent_corroboration.py' -v
+      - name: Acquire San Carlo candidates only
+        run: python -m scripts.scan_san_carlo_secondary --allow-network --sync-candidates
+      - name: Compare independent live calendar with candidate dates
+        run: python -m scripts.corroborate_san_carlo_secondary --allow-network --dry-run | tee "$RUNNER_TEMP/san-carlo-corroboration.json"
+      - name: Describe review-only result
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          result=json.loads((Path(os.environ['RUNNER_TEMP'])/'san-carlo-corroboration.json').read_text())
+          if not result['dry_run'] or result['canonical_publication_authorized']:
+              raise SystemExit('unsafe San Carlo secondary evidence')
+          lines=[
+              '## San Carlo — two-source recita cross-check',
+              '',
+              f"- Matching date/time observations: {result['matching_recite_count']}",
+              f"- Conflicting date/time observations: {result['conflicting_recite_count']}",
+              f"- Unmatched candidate observations: {result['unmatched_recite_count']}",
+              '- Published records: 0',
+              '- Official confirmation and canonical reconciliation: pending',
+              '',
+              '### Conflicts',
+          ]
+          for item in result['conflicts']:
+              lines.append('- '+item['title'])
+              for row in item['conflicts']:
+                  lines.append(f"  - {row['date']}: ClassicaLive {row['candidate']}, EnjoyLive {row['independent']}")
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as f:
+              f.write('\n'.join(lines)+'\n')
+          print('\n'.join(lines))
+          PY
