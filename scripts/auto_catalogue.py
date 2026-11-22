@@ -676,6 +676,37 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                    and normalized(x["title"]).replace("’","'")==title_credit
                    and normalized(x["composer"])==composer]
         exact=[x for x in colliding if x["source_url"]==url]
+        # An official URL identifies evidence, not the physical staging.
+        # A verified coincident local showtime is an identity bridge across
+        # independent sources only if the canonical work and physical venue
+        # already match. Never infer sameness from title/season alone.
+        if (not exact and colliding
+            # Arena editions carry their own production identity even when
+            # a test fixture (or calendar) reuses a coincident showtime.
+            and key!="arena-festival-2027"):
+            overlapping=[]
+            for existing in colliding:
+                known=dict(existing["dates"])
+                shared=set(known)&set(dates)
+                if (shared and all(known[day] is not None
+                                   and known[day]==dates[day] for day in shared)
+                    and all(known[day]==dates[day]
+                            for day in shared)):
+                    overlapping.append(existing)
+            if len(overlapping)==1:
+                exact=overlapping
+            elif len(overlapping)>1:
+                issues.append({"candidate_id":cid,
+                               "reason":"ambiguous_multisource_staging"})
+                continue
+            elif any(
+                day in dict(p["dates"]) and dict(p["dates"])[day] is not None
+                and dict(p["dates"])[day]!=hour
+                for p in colliding for day,hour in dates.items()
+            ) and key!="teatro-grande-opera-2026":
+                issues.append({"candidate_id":cid,
+                               "reason":"conflicting_multisource_showtime"})
+                continue
         # The Goldoni publishes a single official season production and
         # separate ticket pages for individual recite. Reuse the canonical
         # season staging only when a ticket's complete work/venue/composer
@@ -790,6 +821,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                    for day,hour in dates.items()):
                 issues.append({"candidate_id":cid,"reason":"conflicting_existing_time"})
                 continue
+            # Preserve every independently verified URL without replacing
+            # canonical provenance or allocating a second permanent staging.
+            if url!=production["source_url"]:
+                staging=next_registry["stagings"][production["key"]]
+                sources=set(staging.get("supporting_source_urls",[]))
+                sources.add(production["source_url"])
+                sources.add(url)
+                staging["supporting_source_urls"]=sorted(sources)
         else:
             # One season document can announce several separate works.
             # The immutable staging identity must therefore include the
@@ -842,7 +881,9 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             next_registry["performances"][pk]={
                 "id":f"oa-r-{_next_replica_id(next_registry):06d}",
                 "staging_id":next_registry["stagings"][production["key"]]["id"],
-                "original_date":day,"source_url":production["source_url"]}
+                "original_date":day,"source_url":production["source_url"],
+                **({"original_ticket_source_url":url}
+                   if url!=production["source_url"] else {})}
             production["dates"].append([day,hour])
             created_recite+=1
         production["dates"].sort(key=lambda x:x[0])
