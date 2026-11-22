@@ -76,7 +76,8 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     start=primary.casefold().find(title.casefold())
     if start<0:raise ValueError("Haydn event heading absent")
     primary=primary[start+len(title):]
-    if not re.search(r"(?<!\w)Opera(?!\w)",primary[:200]):
+    category=primary.split("Musica di",1)[0]
+    if not re.search(r"(?<!\w)Opera(?!\w)",category[:200]):
         raise ValueError("Haydn opera genre missing")
     credit=re.search(r"\bMusica\s+di\s+(.{3,95}?)\s+Libretto\s+di\b",
                      primary[:500],re.I)
