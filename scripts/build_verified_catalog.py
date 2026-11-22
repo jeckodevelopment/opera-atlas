@@ -86,8 +86,11 @@ def validate_auto_sources(urls: list[str]) -> set[str]:
         # A general query ban incorrectly rejected them *after* their
         # source adapter had already verified exact title, clocks and venue.
         permitted_query=(
-            parsed.query and any(x["key"] in ("sassari-de-carolis-opera-2026",
-                                                   "sassari-de-carolis-rolling-opera")
+            parsed.query and any((x["key"]=="sassari-de-carolis-opera-2026"
+                                  or (x["key"]=="sassari-de-carolis-rolling-opera"
+                                      and url in {
+                                          "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
+                                          "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"}))
                                  and parsed.hostname==urlsplit(x["official_url"]).hostname
                                  and eligible(x["key"],url) for x in sources))
         # The municipality is an exact, verified fallback for the Spoleto
