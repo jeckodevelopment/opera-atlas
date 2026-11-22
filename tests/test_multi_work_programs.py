@@ -6,7 +6,7 @@ from pathlib import Path
 
 from opera_atlas.programs import credited_components,program_from_evidence
 from scripts.publish_catalog_v2 import ROOT
-from scripts.publish_programs import load_reviewed_work_editorials
+from scripts.publish_programs import load_reviewed_work_editorials, assemble_programs
 
 class MultiWorkProgramTests(unittest.TestCase):
     @classmethod
@@ -92,6 +92,25 @@ class MultiWorkProgramTests(unittest.TestCase):
         broken["works"][0]["history"]["sources"]=[]
         with self.assertRaises(ValueError):
             load_reviewed_work_editorials(broken)
+
+    def test_jesi_trittico_is_one_program_with_two_tickets_and_three_editorials(self):
+        read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
+        catalog=assemble_programs(
+            read("data/season-index-candidates.json"),
+            read("data/candidate-detail-evidence.json"),
+            self.registry,
+            read("data/verified-launch-catalog.json"),
+            read("data/season-index-config.json"),
+            read("data/reviewed-program-work-editorials.json"))
+        matches=[p for p in catalog["programs"]
+                 if p["source_key"]=="jesi-trittico-opera-2026"]
+        self.assertEqual(len(matches),1)
+        program=matches[0]
+        self.assertEqual(len(program["performances"]),2)
+        self.assertEqual(len(program["components"]),3)
+        self.assertEqual({p["title"] for p in program["components"]},
+                         {"Il tabarro","Suor Angelica","Gianni Schicchi"})
+        self.assertTrue(all("editorial" in p for p in program["components"]))
 
     def test_reject_incomplete_or_ambiguous_credits(self):
         for heading in ("Pagliacci di Ruggero Leoncavallo",
