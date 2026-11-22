@@ -31,9 +31,11 @@ SOURCE_HEALTH_OUTPUTS=(
     "data/season-index-candidates.json",
     "public/catalog/season-index-candidates.json",
     "public/catalog/source-automation.json",
+    "public/catalog/season-lifecycle.json",
 )
 SOURCE_HEALTH_INPUT_PREFIXES=(
     "data/season-index-config.json",
+    "data/season-lifecycle-policy.json",
     "data/daily-source-config.json",
     "data/venue-directory.json",
     "scripts/",

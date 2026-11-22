@@ -16,6 +16,8 @@ on:
       - 'opera_atlas/rovigo_opera_parser.py'
       - 'opera_atlas/modena_opera_parser.py'
       - 'scripts/source_automation.py'
+      - 'scripts/season_lifecycle_health.py'
+      - 'data/season-lifecycle-policy.json'
       - '.github/workflows/refresh-source-health.yml'
 permissions:
   contents: write
@@ -38,12 +40,14 @@ jobs:
           python-version: '3.12'
       - name: Check source configuration and diagnostics invariants
         run: |
-          python -m unittest tests.test_source_automation tests.test_national_season_indexes tests.test_source_health_dispatch -v
+          python -m unittest tests.test_source_automation tests.test_national_season_indexes tests.test_source_health_dispatch tests.test_season_lifecycle_health -v
       - name: Scan approved official season indexes
         run: |
           python -m scripts.discover_season_indexes --allow-network
           python -m scripts.source_automation
           python -m scripts.source_automation --check
+          python -m scripts.season_lifecycle_health
+          python -m scripts.season_lifecycle_health --check
           python -c 'import json; p=json.load(open("data/season-index-health.json")); print("Source-health scan:",p.get("checked_at"),"sources:",len(p.get("sources",[])),"verified:",sum(s.get("current_scan_verified",False) for s in p.get("sources",[])))'
       - name: Detect new official candidate URLs
         id: new_candidates
@@ -60,7 +64,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/season-index-health.json
           git add data/season-index-candidates.json public/catalog/season-index-candidates.json
-          git add public/catalog/source-automation.json
+          git add public/catalog/source-automation.json public/catalog/season-lifecycle.json
           if git diff --cached --quiet; then
             echo "No changes to source health or candidate links."
           else
@@ -80,6 +84,8 @@ jobs:
             python -m scripts.discover_season_indexes --allow-network
             python -m scripts.source_automation
             python -m scripts.source_automation --check
+            python -m scripts.season_lifecycle_health
+            python -m scripts.season_lifecycle_health --check
             : > /tmp/source-health-retry-candidates
             : > /tmp/source-health-retry-push
             python -m scripts.source_health_dispatch \
@@ -88,7 +94,7 @@ jobs:
               --github-output /tmp/source-health-retry-candidates
             git add data/season-index-health.json
             git add data/season-index-candidates.json public/catalog/season-index-candidates.json
-            git add public/catalog/source-automation.json
+            git add public/catalog/source-automation.json public/catalog/season-lifecycle.json
             if git diff --cached --quiet; then
               echo "published=true" >> "$GITHUB_OUTPUT"
               break
