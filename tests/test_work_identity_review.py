@@ -45,6 +45,21 @@ class IdentityReviewTests(unittest.TestCase):
         self.assertIsNone(rows["Giuseppe Verdi Coro|La traviata"]["possible_canonical_match"])
         self.assertIsNone(rows["Giuseppe Verdi Opera|Opera sconosciuta"]["possible_canonical_match"])
         self.assertEqual(report["totals"]["unmatched_facts"],2)
+        self.assertTrue(all(e["category"] == "new_work_candidate" for e in rows.values()))
+
+    def test_new_composer_not_misclassified_as_contaminated_credit(self):
+        evidence={"schema_version":1,"evidence":[
+            candidate("new1","La vedova allegra","Franz Lehár"),
+            candidate("new2","L'esecuzione","Salvatore Passantino"),
+            candidate("new3","Don Pasquale","Gaetano Donizetti"),
+            candidate("same","La traviata","Giuseppe Verdi Orchestra"),
+        ]}
+        report=evaluate(evidence,REG)
+        self.assertEqual(report["totals"]["unmatched_groups"],4)
+        self.assertTrue(all(g["category"] == "new_work_candidate"
+                            for g in report["groups"]))
+        self.assertTrue(all(g["possible_canonical_match"] is None
+                            for g in report["groups"]))
 
     def test_never_auto_assign_by_title_or_different_composer(self):
         r=evaluate({"schema_version":1,"evidence":[
