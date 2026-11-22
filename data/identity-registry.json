@@ -596,6 +596,13 @@
       "title": "La vedova allegra",
       "composer": "Franz Lehár",
       "authority_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
+    },
+    "don pasquale|gaetano donizetti": {
+      "id": "oa-w-000090",
+      "title": "Don Pasquale",
+      "composer": "Gaetano Donizetti",
+      "slug": "don-pasquale",
+      "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
     }
   },
   "venues": {
@@ -2459,6 +2466,14 @@
       "venue_id": "oa-v-000035",
       "slug": "la-vedova-allegra",
       "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+      "season": "2026"
+    },
+    "auto-addcc48a211cf5ae": {
+      "id": "oa-s-000196",
+      "work_id": "oa-w-000090",
+      "venue_id": "oa-v-000039",
+      "slug": "don-pasquale",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
       "season": "2026"
     }
   },
@@ -7532,17 +7547,21 @@
       "staging_id": "oa-s-000195",
       "original_date": "2026-11-08",
       "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
+    },
+    "auto-addcc48a211cf5ae|2026-10-30": {
+      "id": "oa-r-000863",
+      "staging_id": "oa-s-000196",
+      "original_date": "2026-10-30",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "auto-addcc48a211cf5ae|2026-10-31": {
+      "id": "oa-r-000864",
+      "staging_id": "oa-s-000196",
+      "original_date": "2026-10-31",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
     }
   },
   "reserved_works": {
-    "don pasquale|gaetano donizetti": {
-      "id": "oa-w-000090",
-      "title": "Don Pasquale",
-      "composer": "Gaetano Donizetti",
-      "slug": "don-pasquale",
-      "status": "editorial_verified_pending_staging",
-      "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
-    },
     "il tabarro|giacomo puccini": {
       "id": "oa-w-000091",
       "title": "Il tabarro",

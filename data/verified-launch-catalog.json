@@ -5483,6 +5483,25 @@
           "18:00"
         ]
       ]
+    },
+    {
+      "key": "auto-addcc48a211cf5ae",
+      "title": "Don Pasquale",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "municipality": "Jesi",
+      "region": "Marche",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "dates": [
+        [
+          "2026-10-30",
+          "20:30"
+        ],
+        [
+          "2026-10-31",
+          "20:30"
+        ]
+      ]
     }
   ]
 }
