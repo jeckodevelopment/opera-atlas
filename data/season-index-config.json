@@ -547,6 +547,13 @@
       "url": "https://www.rossinioperafestival.it/archivio/stagione-2026/",
       "access_status": "approved",
       "min_links": 3
+    },
+    {
+      "key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/",
+      "url": "https://www.teatrosancarlo.it/spettacoli/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

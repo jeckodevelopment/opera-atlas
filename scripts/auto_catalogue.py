@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "napoli-san-carlo-rolling-opera":("Napoli","Teatro di San Carlo"),
     "pesaro-rof-2026":("Pesaro","Teatro Gioachino Rossini"),
     "martina-valle-itria-2026":("Martina Franca","Palazzo Ducale di Martina Franca"),
     "trapani-luglio-musicale-2026":("Trapani","Teatro Giuseppe Di Stefano"),
@@ -360,7 +361,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Torre del Lago Puccini":"Toscana","Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Martina Franca":"Puglia","Pesaro":"Marche","Padova":"Veneto","Rovigo":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Alghero":"Sardegna","Novara":"Piemonte","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Savona":"Liguria","Asti":"Piemonte","Bolzano":"Trentino-Alto Adige","Trento":"Trentino-Alto Adige","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Torre del Lago Puccini":"Toscana","Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Martina Franca":"Puglia","Pesaro":"Marche","Padova":"Veneto","Rovigo":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Alghero":"Sardegna","Novara":"Piemonte","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Savona":"Liguria","Napoli":"Campania","Asti":"Piemonte","Bolzano":"Trentino-Alto Adige","Trento":"Trentino-Alto Adige","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
