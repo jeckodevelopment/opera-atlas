@@ -871,6 +871,16 @@
         "https://archiviostorico.operaroma.it/operetta/la-vedova-allegra-die-lustige-witwe/",
         "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
       ]
+    },
+    "don-pasquale": {
+      "librettist": "Giovanni Ruffini; Gaetano Donizetti",
+      "premiere_year": 1843,
+      "premiere_venue": "Théâtre-Italien",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/don-pasquale/",
+        "https://www.rohcollections.org.uk/Work.aspx?work=467"
+      ]
     }
   },
   "works_by_id": {
