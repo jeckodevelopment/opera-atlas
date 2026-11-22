@@ -533,6 +533,13 @@
       "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/",
       "access_status": "approved",
       "min_links": 3
+    },
+    {
+      "key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/",
+      "url": "https://www.festivaldellavalleditria.it/programma-2026",
+      "access_status": "approved",
+      "min_links": 2
     }
   ]
 }
