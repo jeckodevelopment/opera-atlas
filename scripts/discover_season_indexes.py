@@ -763,6 +763,15 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                         diagnostic="official_html_unavailable_or_invalid"
                     else:
                         diagnostic="official_source_unavailable"
+                elif item["key"]=="rovigo-sociale-opera-2026-27":
+                    # The official municipal page changes format regularly.
+                    # Publish only stable parser-stage codes, never page HTML.
+                    diagnostic={
+                        "unapproved Rovigo municipal season URL":"rovigo_url_validation_failed",
+                        "Rovigo Teatro Sociale not identified":"rovigo_venue_missing",
+                        "official Rovigo season 2026/27 not established":"rovigo_season_missing",
+                        "no recognised season opera titles":"rovigo_opera_titles_missing",
+                    }.get(str(exc),"rovigo_index_structure_changed")
                 elif str(exc)=="season index incomplete or structure changed":
                     diagnostic="index_incomplete_or_markup_changed"
                 else:
