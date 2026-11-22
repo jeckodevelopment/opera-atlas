@@ -113,6 +113,33 @@ class AtlasInterfaceTests(unittest.TestCase):
                 publisher.sync_festival_index(registry)
                 self.assertEqual(json.loads((local / "festival-index.json").read_text(encoding="utf-8")), after)
 
+    def test_festival_historical_edition_survives_source_rollover(self):
+        from unittest.mock import patch
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+        from scripts import publish_catalog_v2 as publisher
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        with TemporaryDirectory() as folder:
+            public = Path(folder)
+            source = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))
+            archive = next(x for x in source["festivals"] if x["id"] == "donizetti-opera-2026")
+            historical = dict(archive, id="donizetti-opera-2025", edition="2025",
+                              staging_ids=["oa-s-000104"], automatically_generated=True)
+            source["festivals"].append(historical)
+            (public / "festival-index.json").write_text(json.dumps(source), encoding="utf-8")
+            with patch.object(publisher, "PUBLIC", public):
+                publisher.sync_festival_index(registry)
+                after = json.loads((public / "festival-index.json").read_text(encoding="utf-8"))
+                restored = next(x for x in after["festivals"] if x["id"] == "donizetti-opera-2025")
+                self.assertEqual(restored["staging_ids"], ["oa-s-000104"])
+                publisher.sync_festival_index(registry, check=True)
+
+    def test_festival_directory_displays_historical_productions(self):
+        source = (SITE / "directory.js").read_text(encoding="utf-8")
+        self.assertIn("[...found.future,...found.associated]", source)
+        self.assertIn("Produzione dell’edizione", source)
+        self.assertIn("recite future", source)
+
     def test_shared_production_ids_preserve_work_and_venue_specific_stagings(self):
         manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
         path = ROOT / "public/catalog/v2" / manifest["files"]["stagings"]["path"]
