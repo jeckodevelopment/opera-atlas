@@ -6,6 +6,24 @@ from scripts.collect_candidate_details import OUTPUT as EVIDENCE
 from scripts.publish_catalog_v2 import REGISTRY
 
 class NovaraNattaVenueTests(unittest.TestCase):
+    def test_gardens_have_curated_history_and_real_image(self):
+        from pathlib import Path
+        source=Path(__file__).resolve().parents[1]/"site"/"theatre-profiles.json"
+        profile=json.loads(source.read_text(encoding="utf-8"))["venues"]["Novara|Giardini di Palazzo Natta"]
+        self.assertIn("marmo rosa di Baveno",profile["history"])
+        self.assertIn("esedra",profile["history"])
+        self.assertIn("1998",profile["history"])
+        self.assertIn("Teatro Coccia",profile["history"])
+        self.assertNotIn("sede distinta",profile["history"])
+        self.assertEqual(profile["photo_file"],"Novara Palazzo Natta.jpg")
+        self.assertIn("Alessandro Vecchi",profile["photo_credit"])
+        self.assertEqual(profile["photo_license"],"CC BY-SA 4.0")
+        self.assertIn("commons.wikimedia.org/wiki/File:",profile["photo_source_url"])
+        self.assertIn("sede del giardino",profile["photo_caption"])
+        directory=(source.parent/"directory.js").read_text(encoding="utf-8")
+        self.assertIn("photo_file:profile.photo_file",directory)
+        self.assertIn('imageKind:"venue"',directory)
+
     def test_official_venue_evidence_allocates_own_piemontese_location(self):
         doc=json.loads(EVIDENCE.read_text(encoding="utf-8"))
         row=next(x for x in doc["evidence"]
