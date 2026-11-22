@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T19:18:36+00:00",
+  "checked_at": "2026-11-22T19:49:57+00:00",
   "total": 315,
   "states": {
     "already_catalogued": 226,
@@ -10,44 +10,79 @@
   },
   "changes": [
     {
-      "candidate_id": "oa-index-07f58f9dbd4078cd4e9d",
+      "candidate_id": "oa-index-2583140715d654277a2b",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-1c676e6ace80bd1129b8",
+      "candidate_id": "oa-index-357ebb275673ae888623",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-6f4d6e0d59d6c80cd891",
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-9017eac8903a1c24c574",
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-baed829c6bf2170bf8c3",
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-d0301a251f96e895132b",
+      "candidate_id": "oa-index-70313ef8895b42a91a5b",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-eef7611e7489d713f02a",
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
     },
     {
-      "candidate_id": "oa-index-f52fc662b522c140e73f",
+      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
       "before": "needs_review",
-      "after": "excluded_nonopera"
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
+      "before": "needs_review",
+      "after": "not_in_official_season"
+    },
+    {
+      "candidate_id": "oa-index-a4402559616047a0367b",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
+      "before": "needs_review",
+      "after": "not_in_official_season"
     }
   ]
 }
