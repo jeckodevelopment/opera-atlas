@@ -1,29 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T21:08:44+00:00",
+  "checked_at": "2026-11-22T21:26:35+00:00",
   "scope": "national",
-  "attempted": 60,
+  "attempted": 15,
   "outcomes": [
-    {
-      "candidate_id": "oa-index-357ebb275673ae888623",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-cab03dfcd8aeff155178",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-b4aaa5341d6c996550c0",
-      "outcome": "facts_found",
-      "rows": 1
-    },
     {
       "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
       "outcome": "unavailable_or_unstructured",
@@ -39,64 +19,29 @@
       "rows": 2
     },
     {
-      "candidate_id": "oa-index-ea69a3d503d84f40c50b",
+      "candidate_id": "oa-index-b4ae738f2728d4430578",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
+        "official_composer_credit:ROF opera not at verified official venue"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "outcome": "verified_other_season",
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-a4402559616047a0367b",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-cd84917faf717ff6c4ca",
+      "candidate_id": "oa-index-9f61560762c466080073",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
+        "official_composer_credit:Trapani event is not a verified opera"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "facts_found",
-      "rows": 1
     },
     {
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
+        "official_composer_credit:Trapani event is not a verified opera"
       ],
       "rows": 0
     },
@@ -105,31 +50,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-e831cbf742e2f848f44b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-f4226333be6c3f44d995",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-fc23fb46e120f890466b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
+        "official_composer_credit:Trapani event is not a verified opera"
       ],
       "rows": 0
     },
@@ -143,83 +64,11 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-05719103525d11cd2dd7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Valle d'Itria page is not categorised as opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-10b64887233ccc3975c1",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-12c56600704dc3f2f161",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Valle d'Itria page is not categorised as opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-1669ba722cb38dd63324",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-1a64fc57bdc56c4d7c8d",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-22252e550a1327b5b7fd",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-240224d9236ab1e13afe",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-25a49d03498e16ccbf46",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
+        "official_composer_credit:ROF opera not at verified official venue"
       ],
       "rows": 0
     },
@@ -228,14 +77,9 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
+        "official_composer_credit:Trapani event is not a verified opera"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "outcome": "facts_found",
-      "rows": 1
     },
     {
       "candidate_id": "oa-index-4f3383615741e8be9345",
@@ -247,108 +91,25 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
+        "official_composer_credit:Trapani event is not a verified opera"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-5d5add0de982424c0397",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-60bb4d4b8b76592e8c7f",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-60bbf80391cbc2b2c853",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-6323c5cfb105a389d9fe",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-695c37583a2d6ffd8ca6",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-6cbee68241ae10c67713",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-70313ef8895b42a91a5b",
-      "outcome": "facts_found",
-      "rows": 1
     },
     {
       "candidate_id": "oa-index-71feb2c03e06415fa1c9",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
+        "official_composer_credit:ROF opera not at verified official venue"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-74569c043386234ffc89",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
-      "outcome": "facts_found",
-      "rows": 1
     },
     {
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
+        "official_composer_credit:ROF opera not at verified official venue"
       ],
       "rows": 0
     },
@@ -357,102 +118,16 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
+        "official_composer_credit:Trapani event is not a verified opera"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-8a747732592e239daf27",
+      "candidate_id": "oa-index-f8122a2cac3109445aaa",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-96f4705dd645d2c5e333",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-97a48278e09ca0497348",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-9e431fc40b9509948b8d",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a1929fb66f9b33ef717b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Valle d'Itria page is not categorised as opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a8254243f6bdae92de8b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-a9f4804afdd997da424a",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-b251a0c344a038227652",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-b4ae738f2728d4430578",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:ROF production is not at Teatro Rossini"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-bd13a3b21fe19bfaaf88",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani event is not an outdoor opera"
+        "official_composer_credit:Trapani event is not a verified opera"
       ],
       "rows": 0
     }

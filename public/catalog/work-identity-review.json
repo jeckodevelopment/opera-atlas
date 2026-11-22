@@ -1,111 +1,6 @@
 {
-  "checked_at": "2026-11-22T21:08:27+00:00",
+  "checked_at": "2026-11-22T21:26:23+00:00",
   "groups": [
-    {
-      "candidate_ids": [
-        "oa-index-cd6e3c395e6b5bbc1ff4",
-        "oa-index-d1c1b3127d4e683424be"
-      ],
-      "category": "missing_composer",
-      "composer": null,
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/otello-2/"
-        },
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/aida/"
-        }
-      ],
-      "title": "Aida"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-535b054411d3b3c9ea01",
-        "oa-index-9871aa4f1201e959bf0b"
-      ],
-      "category": "missing_composer",
-      "composer": null,
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/"
-        },
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
-        }
-      ],
-      "title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-70313ef8895b42a91a5b",
-        "oa-index-df2fab0c88c0e4ca68c2"
-      ],
-      "category": "missing_composer",
-      "composer": null,
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/"
-        },
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/"
-        }
-      ],
-      "title": "La clemenza di Tito"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-2583140715d654277a2b",
-        "oa-index-41acaf1f090fbeedb4a7"
-      ],
-      "category": "missing_composer",
-      "composer": null,
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/otello/"
-        },
-        {
-          "source_key": "pisa-future-calendar",
-          "url": "https://teatrodipisa.it/calendario/otello-3/"
-        }
-      ],
-      "title": "Otello"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-763df3e99fa61d152cb9"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Richard Wagner",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "modena-teatro-opera-2026-27",
-          "url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
-        }
-      ],
-      "title": "Der fliegende Holländer (L’olandese volante)"
-    },
     {
       "candidate_ids": [
         "oa-index-e6f08bbcef00e05cc2ee"
@@ -128,13 +23,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 199,
+    "candidates_checked": 2,
     "candidates_without_facts": 0,
-    "facts_examined": 743,
-    "facts_resolved": 731,
+    "facts_examined": 6,
+    "facts_resolved": 4,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 12,
-    "unmatched_groups": 6
+    "unmatched_facts": 2,
+    "unmatched_groups": 1
   },
   "truncated": false
 }

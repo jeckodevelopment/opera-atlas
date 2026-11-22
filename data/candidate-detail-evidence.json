@@ -1940,7 +1940,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
       "content_sha256": "813c0c54f84ba234e21dbad29f9dc865f3857b384068e764ba19ec91b08bbb47",
-      "checked_at": "2026-11-22T21:07:41+00:00",
+      "checked_at": "2026-11-22T21:26:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7132,7 +7132,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "content_sha256": "e24544114b3bed1dda4d78d32910a93d737957e2affdab2c3ef86223083afe57",
-      "checked_at": "2026-11-22T21:06:32+00:00",
+      "checked_at": "2026-11-22T21:26:04+00:00",
       "status": "needs_editorial_review",
       "audience_scope": "public_family_only",
       "calendar_provenance": "reviewed_first_party_historical_ticket_schedule",
