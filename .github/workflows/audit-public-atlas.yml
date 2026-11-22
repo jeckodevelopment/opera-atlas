@@ -43,23 +43,5 @@ jobs:
             echo "No new audit snapshot."
           else
             git commit -m "data(diagnostics): check public Atlas pages [skip ci]"
-            python - <<'PY'
-            from pathlib import Path
-            from scripts.safe_push_catalog import safe_push
-            watched_prefixes = ("site/", "public/catalog/v2/")
-            watched_files = {
-                "public/catalog/programs.json",
-                "public/catalog/venue-directory.json",
-                "public/catalog/production-groups.json",
-                "public/catalog/live-publication-health.json",
-                "scripts/audit_public_atlas.py",
-                ".github/workflows/audit-public-atlas.yml",
-            }
-            def conflicting(paths):
-                return any(p in watched_files or p.startswith(watched_prefixes) for p in paths)
-            result = safe_push(Path.cwd(), conflict_checker=conflicting)
-            print("Live audit push result:", result)
-            if result != "published":
-                raise SystemExit("Live audit snapshot deferred: a relevant release changed")
-            PY
+            python -m scripts.push_live_publication_audit
           fi
