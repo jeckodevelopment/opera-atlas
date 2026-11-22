@@ -79,7 +79,7 @@ def resolve_work(registry: dict, title: str, composer: str) -> dict | None:
     _key(title)
     _key(composer)
     matches = [
-        record for record in registry.get("works", {}).values()
+        record for record in list(registry.get("works", {}).values()) + list(registry.get("reserved_works", {}).values())
         if _verified_composer_credit(composer, record["composer"])
         and _key(record["title"]) == _key(canonical_title(title, record["composer"]))
     ]
