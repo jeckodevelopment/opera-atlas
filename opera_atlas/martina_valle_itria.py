@@ -101,6 +101,8 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
             raise ValueError("unverified first-party composer")
         title=heading
     pairs=DATES.findall(pre)
+    if len(pairs)!=len(re.findall(r"Palazzo\\s+Ducale,\\s*Martina\\s+Franca",pre,re.I)):
+        raise ValueError("incomplete official festival showtime evidence")
     if not pairs or len(pairs)>12:
         raise ValueError("no official Palazzo Ducale performances")
     recital=[]
