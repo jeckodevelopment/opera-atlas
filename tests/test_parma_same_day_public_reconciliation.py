@@ -28,6 +28,20 @@ class ParmaSameDayPublicOperaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             official_public_recite(page().replace("18:00","19:00"),url=URL)
 
+    def test_fragmented_source_ticket_columns_are_still_audited(self):
+        html=page()
+        # Simulate real WordPress columns with long assistive labels between
+        # a dated ticket card and its adjacent clock.
+        html=html.replace("<div>09:00</div>",
+                          "<span>Dettagli accessibilità e biglietteria " +
+                          ("informazioni " * 18) + "</span><div>09:00</div>")
+        rows=official_public_recite(html,url=URL)
+        self.assertEqual([(x["date"],x["starts_at"][11:16]) for x in rows],
+                         list(PUBLIC))
+        with self.assertRaises(ValueError):
+            official_public_recite(
+                html.replace("<div>18:00</div>","<div>17:30</div>"),url=URL)
+
     def test_two_recite_have_distinct_ids_and_one_canonical_staging(self):
         facts=json.loads(MANIFEST.read_text())
         registry=json.loads(REGISTRY.read_text())
