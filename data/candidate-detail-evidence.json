@@ -1148,8 +1148,8 @@
       "candidate_id": "oa-index-2583140715d654277a2b",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello/",
-      "content_sha256": "efac0333fd56bd0283012c8179171c141791ee84c982674cfde01dcd78dfdbd8",
-      "checked_at": "2026-11-22T15:44:29+00:00",
+      "content_sha256": "70ee12efff32888234539561531d289d91fa420638a7f8e5259a7c5b6d70a292",
+      "checked_at": "2026-11-22T15:49:12+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1584,8 +1584,8 @@
       "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-3/",
-      "content_sha256": "eb90d46c2cf2a94cb526dde87106002baf18c69faf045ec2d36383f98623a9b4",
-      "checked_at": "2026-11-22T15:44:13+00:00",
+      "content_sha256": "639ef7412d37cf8333493e02a2b46ad72455257c538fde29fb0a34e3e1f5d392",
+      "checked_at": "2026-11-22T15:49:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1855,7 +1855,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
       "content_sha256": "c817a35abb780b0bf8bbbad7860757a817f2d81bb71f1fc3003b9cf4874ca278",
-      "checked_at": "2026-11-22T15:44:14+00:00",
+      "checked_at": "2026-11-22T15:49:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2859,8 +2859,8 @@
       "candidate_id": "oa-index-70313ef8895b42a91a5b",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
-      "content_sha256": "26cdebff97d686e114adb240dfa23c9a16c4ece9623725ec581762b6aedff7dc",
-      "checked_at": "2026-11-22T15:44:16+00:00",
+      "content_sha256": "fc852b9a61d06d17f8eb4642c065b260583d9e1149f5aa96dea0ddd0a07e2129",
+      "checked_at": "2026-11-22T15:49:27+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4137,7 +4137,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
       "content_sha256": "1f0d8110e51589dd450556d0ce7f5673d6bfeb9d95d0ae5068511e39c87a8189",
-      "checked_at": "2026-11-22T15:44:22+00:00",
+      "checked_at": "2026-11-22T15:49:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4310,8 +4310,8 @@
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "c666ebc2f98af7e51f3a18b3451f6371f0106c06504c5fd38a04d2e15a6070d0",
-      "checked_at": "2026-11-22T15:25:47+00:00",
+      "content_sha256": "1ad59b6f9b63d7113669981d50102539476ed5bfed1d3d94fb56ea5902fc549f",
+      "checked_at": "2026-11-22T15:49:09+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -5402,7 +5402,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-2/",
       "content_sha256": "68f5b536ef574345b5e37ad85e29bb4b06f26b8c4b190bf736dde3bc03325c10",
-      "checked_at": "2026-11-22T15:44:00+00:00",
+      "checked_at": "2026-11-22T15:49:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5656,7 +5656,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/aida/",
       "content_sha256": "bbc4f000b7df212b19ad8cd1e3e574c0443e34137386d64283348fb1f5d56995",
-      "checked_at": "2026-11-22T15:43:54+00:00",
+      "checked_at": "2026-11-22T15:49:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5971,8 +5971,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "95586634e9109bf90bca91b9be6235b59934454e59677dd0fbad31b18592527e",
-      "checked_at": "2026-11-22T15:43:57+00:00",
+      "content_sha256": "72db15fe6e4649de9af284fc55ae11181287fe2f34545a9356ad399ac5a75b7c",
+      "checked_at": "2026-11-22T15:49:15+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6293,7 +6293,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
       "content_sha256": "8c091f212d60b60c592ec04e468c9b9085c4f63520fca9fd48cae92541c9688a",
-      "checked_at": "2026-11-22T15:43:59+00:00",
+      "checked_at": "2026-11-22T15:49:41+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6491,8 +6491,8 @@
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "c666ebc2f98af7e51f3a18b3451f6371f0106c06504c5fd38a04d2e15a6070d0",
-      "checked_at": "2026-11-22T15:25:47+00:00",
+      "content_sha256": "1ad59b6f9b63d7113669981d50102539476ed5bfed1d3d94fb56ea5902fc549f",
+      "checked_at": "2026-11-22T15:49:09+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },

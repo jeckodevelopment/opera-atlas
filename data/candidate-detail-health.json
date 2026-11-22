@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T15:44:29+00:00",
+  "checked_at": "2026-11-22T15:49:41+00:00",
   "scope": "national",
-  "attempted": 22,
+  "attempted": 24,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -17,13 +17,13 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-e00258ea11ffe761bc9e",
+      "candidate_id": "oa-index-0eea7155b15ee176bf83",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:official Novara opera breadcrumb missing or different genre",
+        "canonical_work:explicit official Novara opera composer is missing",
         "authority_work:no_evidence",
-        "official_composer_credit:official Novara opera breadcrumb missing or different genre",
+        "official_composer_credit:explicit official Novara opera composer is missing",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -52,7 +52,17 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
+      "outcome": "verified_other_season",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
+      "outcome": "verified_other_season",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-2583140715d654277a2b",
       "outcome": "facts_found",
       "rows": 1
     },
@@ -69,28 +79,6 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:missing performance details section",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-0eea7155b15ee176bf83",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:explicit official Novara opera composer is missing",
-        "authority_work:no_evidence",
-        "official_composer_credit:explicit official Novara opera composer is missing",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -200,7 +188,29 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-2583140715d654277a2b",
+      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-e00258ea11ffe761bc9e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official Novara opera breadcrumb missing or different genre",
+        "authority_work:no_evidence",
+        "official_composer_credit:official Novara opera breadcrumb missing or different genre",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
       "outcome": "facts_found",
       "rows": 1
     }
