@@ -58,7 +58,12 @@ def parse_official_traviata(html:str,*,url:str)->list[tuple[str,str,str,str,str]
         if re.match(r"(?i)\s*TeatroRagazzi\b",following):
             continue
         if day.isoformat() in rows:
-            raise ValueError("duplicated Rovigo public booking date")
+            # The Comune's social-sharing page repeats the same public
+            # schedule in the heading and in its description. Identical
+            # date/time observations are one recital, not a contradiction.
+            if rows[day.isoformat()]!=clock:
+                raise ValueError("conflicting repeated Rovigo booking time")
+            continue
         rows[day.isoformat()]=clock
     if rows!=EXPECTED_DATES:
         raise ValueError("official Rovigo Traviata two public recite incomplete")
