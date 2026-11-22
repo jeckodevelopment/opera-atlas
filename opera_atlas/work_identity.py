@@ -34,7 +34,6 @@ ALIASES = {
     ("ifigenia in tauride", "christoph willibald gluck"): "Iphigénie en Tauride",
     ("didone ed enea", "henry purcell"): "Dido and Æneas",
     ("dido and aeneas", "henry purcell"): "Dido and Æneas",
-    ("dido and æneas", "henry purcell"): "Dido and Æneas",
     ("die fledermaus", "johann strauss"): "Il pipistrello",
     ("the bat", "johann strauss"): "Il pipistrello",
     ("morte a venezia", "benjamin britten"): "Death in Venice",
