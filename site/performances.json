@@ -7228,6 +7228,24 @@
       ]
     },
     {
+      "id": "curated:auto-fa8a0cd7221e0292:2027-02-26",
+      "starts_at": "2027-02-26T20:30:00+01:00",
+      "local_date": "2027-02-26",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida"
+      ]
+    },
+    {
       "id": "curated:auto-725487d437f63ba0:2027-02-26",
       "starts_at": "2027-02-26T21:00:00+01:00",
       "local_date": "2027-02-26",
@@ -7387,6 +7405,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-fa8a0cd7221e0292:2027-02-28",
+      "starts_at": "2027-02-28T16:00:00+01:00",
+      "local_date": "2027-02-28",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida"
       ]
     },
     {
@@ -10018,6 +10054,24 @@
       ]
     },
     {
+      "id": "curated:auto-ee87c25e50507f1f:2027-04-23",
+      "starts_at": "2027-04-23T20:30:00+02:00",
+      "local_date": "2027-04-23",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola"
+      ]
+    },
+    {
       "id": "curated:auto-9eea54a8395ff3d6:2027-04-24",
       "starts_at": "2027-04-24T16:30:00+02:00",
       "local_date": "2027-04-24",
@@ -10105,6 +10159,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+      ]
+    },
+    {
+      "id": "curated:auto-ee87c25e50507f1f:2027-04-25",
+      "starts_at": "2027-04-25T16:00:00+02:00",
+      "local_date": "2027-04-25",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola"
       ]
     },
     {

@@ -4,11 +4,51 @@
   "new_recite": 0,
   "auto_skipped": [
     {
+      "candidate_id": "oa-index-2583140715d654277a2b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-70313ef8895b42a91a5b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "reason": "same_recita_already_in_official_circuit",
+      "dates": [
+        "2026-11-26",
+        "2026-11-28"
+      ]
+    },
+    {
       "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
       "reason": "unsupported_or_untrusted_source"
     },
     {
+      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
       "candidate_id": "oa-index-cab03dfcd8aeff155178",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
       "reason": "unsupported_or_untrusted_source"
     },
     {
@@ -38,6 +78,22 @@
       "title": "Pagliacci",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
+    },
+    {
+      "candidate_id": "oa-index-357ebb275673ae888623",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-ee87c25e50507f1f3346",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-fa8a0cd7221e0292dec7",
+      "reason": "incomplete_work_editorial"
     }
   ],
   "new_works": 0,

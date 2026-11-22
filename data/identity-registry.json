@@ -2815,6 +2815,22 @@
       "slug": "la-traviata",
       "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027",
       "season": "2027"
+    },
+    "auto-ee87c25e50507f1f": {
+      "id": "oa-s-000229",
+      "work_id": "oa-w-000068",
+      "venue_id": "oa-v-000050",
+      "slug": "la-cenerentola",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola",
+      "season": "2027"
+    },
+    "auto-fa8a0cd7221e0292": {
+      "id": "oa-s-000230",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000050",
+      "slug": "aida",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida",
+      "season": "2027"
     }
   },
   "performances": {
@@ -8325,6 +8341,30 @@
       "staging_id": "oa-s-000228",
       "original_date": "2027-01-24",
       "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027"
+    },
+    "auto-ee87c25e50507f1f|2027-04-23": {
+      "id": "oa-r-000940",
+      "staging_id": "oa-s-000229",
+      "original_date": "2027-04-23",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola"
+    },
+    "auto-ee87c25e50507f1f|2027-04-25": {
+      "id": "oa-r-000941",
+      "staging_id": "oa-s-000229",
+      "original_date": "2027-04-25",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola"
+    },
+    "auto-fa8a0cd7221e0292|2027-02-26": {
+      "id": "oa-r-000942",
+      "staging_id": "oa-s-000230",
+      "original_date": "2027-02-26",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida"
+    },
+    "auto-fa8a0cd7221e0292|2027-02-28": {
+      "id": "oa-r-000943",
+      "staging_id": "oa-s-000230",
+      "original_date": "2027-02-28",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida"
     }
   },
   "reserved_works": {

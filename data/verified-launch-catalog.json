@@ -6116,6 +6116,44 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-ee87c25e50507f1f",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola",
+      "dates": [
+        [
+          "2027-04-23",
+          "20:30"
+        ],
+        [
+          "2027-04-25",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-fa8a0cd7221e0292",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida",
+      "dates": [
+        [
+          "2027-02-26",
+          "20:30"
+        ],
+        [
+          "2027-02-28",
+          "16:00"
+        ]
+      ]
     }
   ]
 }
