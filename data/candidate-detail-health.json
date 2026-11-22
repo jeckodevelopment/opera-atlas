@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T17:44:26+00:00",
+  "checked_at": "2026-11-22T17:49:03+00:00",
   "scope": "national",
   "attempted": 17,
   "outcomes": [
@@ -33,9 +33,9 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "canonical_work:historic Goldoni event belongs to original source",
         "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "official_composer_credit:historic Goldoni event belongs to original source",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -97,9 +97,9 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "canonical_work:historic Goldoni event belongs to original source",
         "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "official_composer_credit:historic Goldoni event belongs to original source",
         "schema_event:no_evidence"
       ],
       "rows": 0
@@ -109,24 +109,17 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "canonical_work:historic Goldoni event belongs to original source",
         "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "official_composer_credit:historic Goldoni event belongs to original source",
         "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
       "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
@@ -142,51 +135,30 @@
     },
     {
       "candidate_id": "oa-index-cab03dfcd8aeff155178",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-e831cbf742e2f848f44b",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
+        "canonical_work:historic Goldoni event belongs to original source",
         "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
+        "official_composer_credit:historic Goldoni event belongs to original source",
         "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
       "candidate_id": "oa-index-f4226333be6c3f44d995",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Goldoni detail lacks its own dated ticket clock",
-        "authority_work:no_evidence",
-        "official_composer_credit:Goldoni detail lacks its own dated ticket clock",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-fecbb06d8dc649b616d2",

@@ -3154,6 +3154,30 @@
       }
     },
     {
+      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
+      "content_sha256": "7bdf611e774354896c76269a1dde71b9e52a7074316c70a6eef4dc7338a9cc94",
+      "checked_at": "2026-11-22T17:48:44+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Goldoni",
+          "date": "2027-01-31",
+          "starts_at": "2027-01-31T16:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.goldoniteatro.it/wp-content/uploads/2026/05/Otello-bozzetto-scaled.jpg",
+        "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Otello",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
@@ -5507,6 +5531,23 @@
       ]
     },
     {
+      "candidate_id": "oa-index-cab03dfcd8aeff155178",
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
+      "content_sha256": "384cfff509e7189395cfdc7db5e70d7e83bdf70441483e2ee579eaed3d627aae",
+      "checked_at": "2026-11-22T17:48:49+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Goldoni",
+          "date": "2027-04-18",
+          "starts_at": "2027-04-18T16:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-cc153c7d05d996b2b68b",
       "source_key": "sassari-de-carolis-opera-2026",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
@@ -6104,8 +6145,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "1c93abd90a4a1e398f36630ada74ba8422d82e5846559c1a4ffcd0ca063ec086",
-      "checked_at": "2026-11-22T17:43:52+00:00",
+      "content_sha256": "a03ad54f782f9bec1ecb2d212c9d429687e40bd78c7a27979a25d2f0588630e9",
+      "checked_at": "2026-11-22T17:48:30+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6558,6 +6599,23 @@
           "venue": "Teatro Goldoni",
           "date": "2027-01-31",
           "starts_at": "2027-01-31T16:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
+      "content_sha256": "1b7c99c607de0dea5b0b658503a8eaa03d4df2941a6126139d607886b671d9a5",
+      "checked_at": "2026-11-22T17:48:53+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Goldoni",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T20:00:00+02:00"
         }
       ]
     },
@@ -7092,6 +7150,30 @@
           "composer": "Giacomo Puccini (1858–1924)"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-f4226333be6c3f44d995",
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
+      "content_sha256": "8a522eb3ab545bcc0762dc7c329b3c8a1ff7c99732bcd60c84c5dc81de10a5d4",
+      "checked_at": "2026-11-22T17:48:59+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Goldoni",
+          "date": "2027-01-29",
+          "starts_at": "2027-01-29T20:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.goldoniteatro.it/wp-content/uploads/2026/05/Otello-bozzetto-scaled.jpg",
+        "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Otello",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-f7e2bc909527aff17c03",
