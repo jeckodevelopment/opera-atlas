@@ -4,39 +4,19 @@
   "new_recite": 0,
   "auto_skipped": [
     {
-      "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-725487d437f63ba0cf3e",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "reason": "same_recita_already_in_official_circuit",
-      "dates": [
-        "2026-11-26",
-        "2026-11-28"
-      ]
-    },
-    {
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "reason": "unsupported_or_untrusted_source"
     },
     {
-      "candidate_id": "oa-index-cf2044dac191fa690c37",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-d0635be1ed1020408065",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-357ebb275673ae888623",
+      "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "reason": "incomplete_work_editorial"
     },
     {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "candidate_id": "oa-index-cf2044dac191fa690c37",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-d0635be1ed1020408065",
       "reason": "incomplete_work_editorial"
     }
   ],

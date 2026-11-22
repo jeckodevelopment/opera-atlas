@@ -645,7 +645,7 @@
       "id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T12:32:18+00:00"
     },
@@ -813,7 +813,7 @@
       "id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "official_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T01:26:53+00:00",
       "last_seen": "2026-11-22T12:32:18+00:00"
     },
@@ -1557,7 +1557,7 @@
       "id": "oa-index-cf2044dac191fa690c37",
       "source_key": "messina-vittorio-opera-2026-27",
       "official_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T01:26:53+00:00",
       "last_seen": "2026-11-22T12:32:18+00:00"
     },
@@ -1581,7 +1581,7 @@
       "id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "official_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T01:26:53+00:00",
       "last_seen": "2026-11-22T12:32:18+00:00"
     },

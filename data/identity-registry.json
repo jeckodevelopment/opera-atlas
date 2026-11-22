@@ -941,6 +941,14 @@
       "name": "Teatro Verdi",
       "city": "Padova",
       "region": "Veneto"
+    },
+    "Messina|Teatro Vittorio Emanuele": {
+      "id": "oa-v-000042",
+      "slug": "teatro-vittorio-emanuele",
+      "city_slug": "messina",
+      "name": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "region": "Sicilia"
     }
   },
   "stagings": {
@@ -2474,6 +2482,38 @@
       "slug": "esecuzione",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
       "season": "2026"
+    },
+    "auto-5955fe5c45bf5a15": {
+      "id": "oa-s-000198",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000034",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+      "season": "2027"
+    },
+    "auto-725487d437f63ba0": {
+      "id": "oa-s-000199",
+      "work_id": "oa-w-000019",
+      "venue_id": "oa-v-000042",
+      "slug": "madama-butterfly",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
+      "season": "2027"
+    },
+    "auto-cf2044dac191fa69": {
+      "id": "oa-s-000200",
+      "work_id": "oa-w-000027",
+      "venue_id": "oa-v-000042",
+      "slug": "al-cavallino-bianco",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
+      "season": "2027"
+    },
+    "auto-d0635be1ed102040": {
+      "id": "oa-s-000201",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000042",
+      "slug": "la-traviata",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -7546,6 +7586,60 @@
       "staging_id": "oa-s-000197",
       "original_date": "2026-11-15",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "auto-5955fe5c45bf5a15|2027-07-24": {
+      "id": "oa-r-000867",
+      "staging_id": "oa-s-000198",
+      "original_date": "2027-07-24",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
+    },
+    "auto-5955fe5c45bf5a15|2027-07-30": {
+      "id": "oa-r-000868",
+      "staging_id": "oa-s-000198",
+      "original_date": "2027-07-30",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
+    },
+    "auto-5955fe5c45bf5a15|2027-08-08": {
+      "id": "oa-r-000869",
+      "staging_id": "oa-s-000198",
+      "original_date": "2027-08-08",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
+    },
+    "auto-725487d437f63ba0|2027-02-26": {
+      "id": "oa-r-000870",
+      "staging_id": "oa-s-000199",
+      "original_date": "2027-02-26",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/"
+    },
+    "auto-725487d437f63ba0|2027-02-28": {
+      "id": "oa-r-000871",
+      "staging_id": "oa-s-000199",
+      "original_date": "2027-02-28",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/"
+    },
+    "auto-cf2044dac191fa69|2027-05-07": {
+      "id": "oa-r-000872",
+      "staging_id": "oa-s-000200",
+      "original_date": "2027-05-07",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/"
+    },
+    "auto-cf2044dac191fa69|2027-05-08": {
+      "id": "oa-r-000873",
+      "staging_id": "oa-s-000200",
+      "original_date": "2027-05-08",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/"
+    },
+    "auto-d0635be1ed102040|2027-04-16": {
+      "id": "oa-r-000874",
+      "staging_id": "oa-s-000201",
+      "original_date": "2027-04-16",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/"
+    },
+    "auto-d0635be1ed102040|2027-04-18": {
+      "id": "oa-r-000875",
+      "staging_id": "oa-s-000201",
+      "original_date": "2027-04-18",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/"
     }
   },
   "reserved_works": {
