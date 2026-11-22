@@ -610,6 +610,13 @@
       "title": "L'esecuzione",
       "composer": "Salvatore Passantino",
       "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "der fliegende holländer|richard wagner": {
+      "id": "oa-w-000096",
+      "slug": "der-fliegende-hollander",
+      "title": "Der fliegende Holländer",
+      "composer": "Richard Wagner",
+      "authority_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
     }
   },
   "venues": {
@@ -2689,6 +2696,14 @@
       "venue_id": "oa-v-000047",
       "slug": "turandot",
       "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
+      "season": "2026"
+    },
+    "auto-763df3e99fa61d15": {
+      "id": "oa-s-000219",
+      "work_id": "oa-w-000096",
+      "venue_id": "oa-v-000044",
+      "slug": "der-fliegende-hollander",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
       "season": "2026"
     }
   },
@@ -8020,6 +8035,18 @@
       "staging_id": "oa-s-000218",
       "original_date": "2026-10-25",
       "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+    },
+    "auto-763df3e99fa61d15|2026-11-20": {
+      "id": "oa-r-000910",
+      "staging_id": "oa-s-000219",
+      "original_date": "2026-11-20",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+    },
+    "auto-763df3e99fa61d15|2026-11-22": {
+      "id": "oa-r-000911",
+      "staging_id": "oa-s-000219",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
     }
   },
   "reserved_works": {

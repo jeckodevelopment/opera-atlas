@@ -892,6 +892,17 @@
         "https://www.fondazionepergolesispontini.com/lirica-jesi-il-14-e-15-novembre-lesecuzione-sotto-lo-sguardo-di-tosca-prima-assoluta-al-teatro-pergolesi-di-jesi-musica-di-salvatore-passantino-libretto-di-marco-malva/",
         "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
       ]
+    },
+    "der-fliegende-hollander": {
+      "librettist": "Richard Wagner",
+      "premiere_year": 1843,
+      "premiere_date": "1843-01-02",
+      "premiere_venue": "Königlich Sächsisches Hoftheater",
+      "premiere_city": "Dresda",
+      "sources": [
+        "https://www.rai.it/dl/docs/1363352684701Olandese_impa_2013_seconda.pdf",
+        "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+      ]
     }
   },
   "works_by_id": {

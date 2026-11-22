@@ -2344,6 +2344,24 @@
       ]
     },
     {
+      "id": "curated:auto-763df3e99fa61d15:2026-11-20",
+      "starts_at": "2026-11-20T20:00:00+01:00",
+      "local_date": "2026-11-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Der fliegende Holländer",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+      ]
+    },
+    {
       "id": "curated:auto-cef30865a6bd9d93:2026-11-20",
       "starts_at": "2026-11-20T20:00:00+01:00",
       "local_date": "2026-11-20",
@@ -2558,6 +2576,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:auto-763df3e99fa61d15:2026-11-22",
+      "starts_at": "2026-11-22T15:30:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Der fliegende Holländer",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
       ]
     },
     {

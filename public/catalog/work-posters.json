@@ -850,6 +850,15 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di L'ESECUZIONE",
       "kind": "official_production_image"
+    },
+    "oa-w-000096": {
+      "work_id": "oa-w-000096",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Libretto_Der_fliegende_Holl%C3%A4nder_1868.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Libretto_Der_fliegende_Holl%C3%A4nder_1868.jpg",
+      "alt": "Copertina storica del libretto di Der fliegende Holländer (1868), non fotografia della produzione di Modena",
+      "credit": "Libretto storico di Der fliegende Holländer di Richard Wagner, Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Libretto_Der_fliegende_Holl%C3%A4nder_1868.jpg"
     }
   }
 }

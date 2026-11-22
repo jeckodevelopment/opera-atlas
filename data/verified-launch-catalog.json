@@ -5886,6 +5886,25 @@
           "17:30"
         ]
       ]
+    },
+    {
+      "key": "auto-763df3e99fa61d15",
+      "title": "Der fliegende Holländer",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+      "dates": [
+        [
+          "2026-11-20",
+          "20:00"
+        ],
+        [
+          "2026-11-22",
+          "15:30"
+        ]
+      ]
     }
   ]
 }
