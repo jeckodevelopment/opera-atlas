@@ -642,6 +642,26 @@
       "opening_year": 1925,
       "history": "Nato nel 1925 come Supercinema, progettato dagli architetti Arnaldo Foschini e Attilio Spaccarelli, fu acquistato dal Comune di Roma alla fine degli anni Novanta e affidato al Teatro dell'Opera. Oggi accoglie anche produzioni musicali e sperimentali.",
       "source": "https://www.operaroma.it/luoghi/teatro-nazionale/"
+    },
+    "Catania|Teatro Sangiorgi": {
+      "city": "Catania",
+      "name": "Teatro Sangiorgi",
+      "address": "Via Antonino di Sangiuliano 233",
+      "description": "Teatro storico del centro di Catania, utilizzato dal Teatro Massimo Bellini anche per produzioni d'opera da camera.",
+      "website": "https://www.teatromassimobellini.it/",
+      "opening_year": 2002,
+      "history": "Il complesso storico Sangiorgi, recuperato dal Teatro Massimo Bellini, è stato restituito alla città nel novembre 2002. Oggi ospita spettacoli musicali e produzioni liriche anche di piccolo formato.",
+      "source": "https://www.teatromassimobellini.it/il-teatro-sangiorgi/"
+    },
+    "Reggio Emilia|Teatro Ariosto": {
+      "city": "Reggio Emilia",
+      "name": "Teatro Ariosto",
+      "address": "Viale Antonio Allegri 1",
+      "description": "Teatro ottocentesco nel centro di Reggio Emilia, parte del sistema della Fondazione I Teatri.",
+      "website": "https://www.iteatri.re.it/",
+      "opening_year": 1878,
+      "history": "Inaugurato nel 1878 con il nome di Teatro di Cittadella, il teatro fu poi dedicato a Ludovico Ariosto. Accoglie stagioni di prosa, musica e progetti culturali del sistema cittadino dei teatri.",
+      "source": "https://www.comune.reggioemilia.it/vivere-reggio-emilia/luoghi/luoghi-della-cultura/teatro-ariosto"
     }
   }
 }
