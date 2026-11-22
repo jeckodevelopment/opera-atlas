@@ -49,6 +49,10 @@ jobs:
           python -m scripts.publish_catalog_v2
           python -m scripts.publish_work_editorial
           python -m scripts.publish_venue_directory
+          # A separately acquired multi-work ticket may precede the public
+          # companion JSON. Rebuild it before client and feed tests, without
+          # uploading generated catalog data through the frontend publisher.
+          python -m scripts.publish_programs
       - name: Verify canonical routes and app
         run: |
           python -m unittest discover -s tests -v
@@ -56,6 +60,7 @@ jobs:
           python -m scripts.publish_catalog_v2 --check
           python -m scripts.publish_work_editorial --check
           python -m scripts.publish_venue_directory --check
+          python -m scripts.publish_programs --check
       - name: Install SFTP transport
         run: python -m pip install 'paramiko>=3.4,<5'
       - name: Upload Atlas static files via SFTP port 22 (OVH)
