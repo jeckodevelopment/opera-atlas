@@ -803,6 +803,11 @@ def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=N
             source_url=url,title=title,composer=composer)
         if coproduced is not None:
             return coproduced
+        from opera_atlas.verified_municipal_work_art import verified_municipal_art
+        municipal=verified_municipal_art(
+            source_url=url,title=title,composer=composer)
+        if municipal is not None:
+            return municipal
     image=detail.get("poster_evidence")
     if not isinstance(image,dict) or image.get("kind")!="official_production_image":
         return None
