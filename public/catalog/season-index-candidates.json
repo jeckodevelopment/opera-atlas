@@ -501,7 +501,7 @@
       "id": "oa-index-2cb6adaa97769fcb1ffc",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/il-barbiere-di-siviglia-e-la-rosa-incantata",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T18:52:31+00:00",
       "last_seen": "2026-11-22T19:35:23+00:00"
     },
