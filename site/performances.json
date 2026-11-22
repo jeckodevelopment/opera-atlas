@@ -5716,6 +5716,24 @@
       ]
     },
     {
+      "id": "curated:auto-5fea5e594da012da:2027-01-29",
+      "starts_at": "2027-01-29T20:00:00+01:00",
+      "local_date": "2027-01-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Cronaca di un amore. Callas e Pasolini",
+      "composer": "Davide Tramontano",
+      "venue": "Teatro Sociale",
+      "municipality": "Trento",
+      "region": "Trentino-Alto Adige",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
+      ]
+    },
+    {
       "id": "curated:auto-997a698e76cca751:2027-01-29",
       "starts_at": "2027-01-29T20:00:00+01:00",
       "local_date": "2027-01-29",

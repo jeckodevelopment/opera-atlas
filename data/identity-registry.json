@@ -652,6 +652,13 @@
       "title": "Dove nasce il melograno",
       "composer": "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
       "authority_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
+    },
+    "cronaca di un amore. callas e pasolini|davide tramontano": {
+      "id": "oa-w-000104",
+      "slug": "cronaca-di-un-amore-callas-e-pasolini",
+      "title": "Cronaca di un amore. Callas e Pasolini",
+      "composer": "Davide Tramontano",
+      "authority_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
     }
   },
   "venues": {
@@ -3058,6 +3065,14 @@
       "venue_id": "oa-v-000057",
       "slug": "aida",
       "source_url": "https://www.teatroalfieriasti.it/event/aida/",
+      "season": "2027"
+    },
+    "auto-5fea5e594da012da": {
+      "id": "oa-s-000250",
+      "work_id": "oa-w-000104",
+      "venue_id": "oa-v-000055",
+      "slug": "cronaca-di-un-amore-callas-e-pasolini",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
       "season": "2027"
     }
   },
@@ -8737,6 +8752,12 @@
       "staging_id": "oa-s-000249",
       "original_date": "2027-02-06",
       "source_url": "https://www.teatroalfieriasti.it/event/aida/"
+    },
+    "auto-5fea5e594da012da|2027-01-29": {
+      "id": "oa-r-000968",
+      "staging_id": "oa-s-000250",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
     }
   },
   "reserved_works": {

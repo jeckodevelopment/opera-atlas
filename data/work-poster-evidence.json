@@ -227,6 +227,15 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di DOVE NASCE IL MELOGRANO",
       "kind": "official_production_image"
+    },
+    "oa-w-000104": {
+      "work_id": "oa-w-000104",
+      "image_url": "https://teatripiacenza.it/wp-content/uploads/2025/05/Callas-e-Pasolini.jpg",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+      "provenance_url": "https://teatripiacenza.it/event/cronaca-di-un-amore/",
+      "credit": "Immagine dell'opera sul sito della Fondazione Teatri di Piacenza, coproduttrice",
+      "alt": "Illustrazione ufficiale di Cronaca di un amore. Callas e Pasolini",
+      "kind": "official_coproduction_poster"
     }
   },
   "checks": {
