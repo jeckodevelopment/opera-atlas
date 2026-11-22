@@ -277,6 +277,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-08102433798cc6aa1215",
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
+      "content_sha256": "d212e1b5d8aa8e8a1c4b65f1b6cb39c40d6ea0d0f522829b578dcc2abf586938",
+      "checked_at": "2026-11-22T00:08:52+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "GIUSEPPE VERDI",
+          "date": "2027-03-19",
+          "starts_at": "2027-03-19T20:00:00+01:00",
+          "venue": "Teatro Valli"
+        },
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "GIUSEPPE VERDI",
+          "date": "2027-03-21",
+          "starts_at": "2027-03-21T15:30:00+01:00",
+          "venue": "Teatro Valli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-0a7e4f31ff7370ffc325",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
@@ -698,6 +722,30 @@
         "alt": "Immagine della produzione di La Bohème",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-1e27375a038df76a1ea6",
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "content_sha256": "4796542f012362c2b93b44278b147d483a599726bfa2c476afec2e082090f72c",
+      "checked_at": "2026-11-22T00:08:30+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Death in Venice",
+          "composer": "Benjamin Britten",
+          "date": "2027-01-29",
+          "starts_at": "2027-01-29T20:00:00+01:00",
+          "venue": "Teatro Valli"
+        },
+        {
+          "event_title": "Death in Venice",
+          "composer": "Benjamin Britten",
+          "date": "2027-01-31",
+          "starts_at": "2027-01-31T15:30:00+01:00",
+          "venue": "Teatro Valli"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-1e384fa01b8a144db9c7",
@@ -2440,11 +2488,35 @@
       ]
     },
     {
+      "candidate_id": "oa-index-8aa427dd9ba609755fb6",
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/",
+      "content_sha256": "22556a89a54984435b5b1f5d55f3cb8a8f7acd44864d10cc5bf35bb8281bcec3",
+      "checked_at": "2026-11-22T00:08:37+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-01",
+          "starts_at": "2027-04-01T20:00:00+02:00",
+          "venue": "Teatro Valli"
+        },
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2027-04-03",
+          "starts_at": "2027-04-03T18:00:00+02:00",
+          "venue": "Teatro Valli"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-8bc8b40e1da92efab27d",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
-      "content_sha256": "17740ba3d001d1e74ab9f3137624b6711787fcea61f1354fdd25710f248ee6b5",
-      "checked_at": "2026-11-21T22:53:45+00:00",
+      "content_sha256": "ced3907f5a1bd46dfde857431e9210b823819f695a5e9295ec21d762cfa7dfdd",
+      "checked_at": "2026-11-22T00:08:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3027,6 +3099,30 @@
         "alt": "Immagine della produzione di L'arca di Noè",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-a98083086627ce6e0225",
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
+      "content_sha256": "916679080c58e66e8d2396da5863337db2a6042ac5e8fc2a38209c2320ddb717",
+      "checked_at": "2026-11-22T00:08:41+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Veleno",
+          "composer": "Gaia Aloisi",
+          "venue": "Teatro Ariosto",
+          "date": "2027-04-28",
+          "starts_at": "2027-04-28T20:00:00+02:00"
+        },
+        {
+          "event_title": "Veleno",
+          "composer": "Gaia Aloisi",
+          "venue": "Teatro Ariosto",
+          "date": "2027-04-30",
+          "starts_at": "2027-04-30T20:00:00+02:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-a9e0eff95e96e71fd958",
@@ -3638,6 +3734,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-cef30865a6bd9d93804f",
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+      "content_sha256": "f827929cac0a96d1f678e2a95e1b5978b37265fc7befef77dea24a4c55b6e256",
+      "checked_at": "2026-11-22T00:08:44+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-20",
+          "starts_at": "2026-11-20T20:00:00+01:00",
+          "venue": "Teatro Valli"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T15:30:00+01:00",
+          "venue": "Teatro Valli"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.iteatri.re.it/wp-content/uploads/Macbeth-teatro-verdi-di-pisa-La-Prima-31.10.2025-photo-by-Kiwi-214.jpg",
+        "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Macbeth",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-cfd5a4967756ff1d51dd",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
@@ -3679,8 +3806,8 @@
       "candidate_id": "oa-index-d54e9b021b5167cfb735",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
-      "content_sha256": "c1b69ce1099022976505f37ef8bbaa6f4294da00e47a78f9f918e43b8433e9cf",
-      "checked_at": "2026-11-21T22:54:04+00:00",
+      "content_sha256": "67ecbe66a0bf4fbec29e73f3978454247f1b53c98727053e9c557fdd32271e24",
+      "checked_at": "2026-11-22T00:08:48+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
