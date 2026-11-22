@@ -512,6 +512,13 @@
       "url": "https://operagiocosa.it/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "asti-alfieri-rolling-opera",
+      "official_url": "https://www.teatroalfieriasti.it/",
+      "url": "https://www.teatroalfieriasti.it/events/categoria/fuori-abbonamento/",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

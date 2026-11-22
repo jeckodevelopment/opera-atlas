@@ -293,6 +293,10 @@
     "savona-giocosa-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "asti-alfieri-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }

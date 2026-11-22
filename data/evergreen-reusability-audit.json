@@ -8,6 +8,11 @@
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
     },
     {
+      "source_key": "asti-alfieri-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The first-party Alfieri events category is date-independent, with per-event pages for current and subsequent years. It is not genre-specific: all candidate details must independently verify operatic genre, primary composer, physical venue and local clock; future-season live availability remains unverified."
+    },
+    {
       "source_key": "bellini-catania-opera-2026-27",
       "scope": "dynamic_category",
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
