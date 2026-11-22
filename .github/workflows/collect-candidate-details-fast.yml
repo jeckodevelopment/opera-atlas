@@ -58,7 +58,7 @@ jobs:
           else
             git commit -m "data(sources): independently checkpoint official candidate evidence [skip ci]"
             python -m scripts.safe_push_catalog
-            if grep -q '^deferred=false"$GITHUB_OUTPUT"; then
+            if grep -q "deferred=false" "$GITHUB_OUTPUT"; then
               echo "published=true" >> "$GITHUB_OUTPUT"
             fi
           fi
@@ -85,7 +85,7 @@ jobs:
             git commit -m "data(sources): recover verified national detail checkpoint [skip ci]"
             push_report="$(mktemp)"
             GITHUB_OUTPUT="$push_report" python -m scripts.safe_push_catalog
-            if grep -q '^deferred=false "$push_report"; then
+            if grep -q "deferred=false" "$push_report"; then
               echo "published=true" >> "$GITHUB_OUTPUT"
               rm -f "$push_report"
               break
@@ -132,7 +132,7 @@ jobs:
             git commit -m "data(sources): recover verified national detail checkpoint [skip ci]"
             push_report="$(mktemp)"
             GITHUB_OUTPUT="$push_report" python -m scripts.safe_push_catalog
-            if grep -q '^deferred=false"$push_report"; then
+            if grep -q "deferred=false" "$push_report"; then
               echo "published=true" >> "$GITHUB_OUTPUT"
               rm -f "$push_report"
               break
