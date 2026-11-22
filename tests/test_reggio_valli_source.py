@@ -52,6 +52,20 @@ class ReggioSourceTests(unittest.TestCase):
         self.assertEqual(facts[0]["starts_at"],"2026-11-20T20:00:00+01:00")
         self.assertEqual(len(facts),2)
 
+    def test_menu_biglietti_link_does_not_contaminate_official_ticket_rows(self):
+        html=page()
+        html=html.replace(
+            "<html><h1>Macbeth</h1>",
+            "<html><nav>Festival Aperto Biglietti Promo e Carnet</nav>"
+            "<h1>Macbeth</h1>")
+        title,composer,venue,days=parse_detail(html,url=DETAIL)
+        self.assertEqual(len(days),2)
+        self.assertEqual(days[0],("2026-11-20","20:00"))
+        # A misleading navigation menu cannot establish official recite.
+        with self.assertRaises(ValueError):
+            parse_detail(html.replace("<h2>Biglietti</h2>",
+                                      "<h2>Informazioni</h2>"),url=DETAIL)
+
     def test_chamber_opera_at_teatro_ariosto_is_not_excluded(self):
         url="https://www.iteatri.re.it/spettacolo/veleno/"
         html=('<h1>Veleno</h1><p>Opera da camera</p>'
