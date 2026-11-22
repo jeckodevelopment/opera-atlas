@@ -310,6 +310,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="macerata-festival-rolling":
+        from opera_atlas.macerata_future_parser import eligible_detail
+        return eligible_detail(url)
     if key=="salerno-verdi-rolling-opera":
         from opera_atlas.salerno_future_parser import eligible_detail
         return eligible_detail(url)
@@ -580,6 +583,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="macerata-festival-rolling":
+        from opera_atlas.macerata_future_parser import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="salerno-verdi-rolling-opera":
         from opera_atlas.salerno_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -735,6 +741,7 @@ def validate_config(config:dict)->list[dict]:
         "salerno-verdi-opera-2026":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
         "salerno-verdi-rolling-opera":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
         "macerata-festival-2027":("www.sferisterio.it","/"),
+        "macerata-festival-rolling":("www.sferisterio.it","/macerata-opera-festival-2027"),
         "scala-season-2026-27":("www.teatroallascala.org","/it/stagione/2026-2027/index.html"),
         "arena-festival-2027":("www.arena.it","/arena-opera-festival/spettacoli/"),
         "fenice-opera-2026-27":("www.teatrolafenice.it","/event-category/opera-2026-27/"),
@@ -891,6 +898,13 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/teatro-verdi/la-stagione/" and not index.query
         elif key=="salerno-verdi-opera-2026":
             valid_season=index.path=="/teatro-verdi/la-stagione/" and not index.query
+        elif key=="macerata-festival-rolling":
+            from opera_atlas.macerata_future_parser import edition_year
+            try:
+                edition_year(item["url"])
+                valid_season=True
+            except ValueError:
+                valid_season=False
         elif key=="macerata-festival-2027":
             valid_season=index.path=="/" and not index.query
         elif key=="reggio-valli-opera-2026-27":

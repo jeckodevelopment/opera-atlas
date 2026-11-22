@@ -39,6 +39,7 @@ ROLLOVER_KEYS={
     "treviso-del-monaco-season-2027-28",
     "padova-verdi-season-2027",
     "lecce-provincia-season-2027",
+    "macerata-festival-rolling",
 }
 
 def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
@@ -46,6 +47,13 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
     if key not in ROLLOVER_KEYS or source["access_status"]!="approved":
         return None
     url=urlsplit(source["url"])
+    if key=="macerata-festival-rolling":
+        from opera_atlas.macerata_future_parser import edition_year,next_edition
+        try:year=edition_year(source["url"])
+        except ValueError:return None
+        if not allow_early and today<date(year,9,1):
+            return None
+        return next_edition(source["url"])
     if key in {
             "chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
             "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
