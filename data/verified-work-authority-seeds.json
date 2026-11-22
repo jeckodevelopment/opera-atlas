@@ -663,6 +663,24 @@
           "https://associazionealbertofranchetti.com/opere/opere-liriche/cristoforo-colombo/strutturaetrama/"
         ]
       }
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "synopsis": "A Parigi, la ricca vedova Hanna Glawari attira pretendenti e attenzioni diplomatiche: il barone Zeta vorrebbe farla sposare al conte Danilo per trattenere la sua fortuna nel Pontevedro, ma l'amore fra i due si scontra con orgoglio ed equivoci.",
+      "history": {
+        "librettist": "Victor Léon; Leo Stein",
+        "composition_year": 1905,
+        "premiere_year": 1905,
+        "premiere_venue": "Theater an der Wien",
+        "premiere_city": "Vienna",
+        "sources": [
+          "https://archiviostorico.operaroma.it/operetta/la-vedova-allegra-die-lustige-witwe/",
+          "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
+        ]
+      }
     }
   ]
 }
