@@ -201,6 +201,17 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         return [{"event_title":work["title"],"composer":work["composer"],
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in recite]
+    if source_key=="spoleto-tls-lirica-2026":
+        from opera_atlas.spoleto_tls_parser import parse_program
+        rows=parse_program(html,url=url)
+        out=[]
+        for title,composer,venue,day,clock in rows:
+            work=resolve_work(registry,title,composer)
+            if work is None:return []
+            out.append({"event_title":work["title"],"composer":work["composer"],
+                        "venue":venue,"date":day,
+                        "starts_at":official_local_time(day,clock)})
+        return out
     if source_key=="chieti-marrucino-lirica-2026":
         from opera_atlas.chieti_marrucino_parser import parse_program
         return [{"event_title":title,"composer":composer,"venue":venue,
@@ -380,7 +391,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
             "teatro-grande-opera-2026","opera-roma-season-2026-27",
             "petruzzelli-opera-2026","petruzzelli-opera-2027",
             "lirico-cagliari-opera-2027","bellini-catania-opera-2026-27",
-            "chieti-marrucino-lirica-2026","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27",
+            "spoleto-tls-lirica-2026","chieti-marrucino-lirica-2026","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27",
             "piacenza-opera-2026-27","reggio-valli-opera-2026-27",
             "jesi-don-pasquale-opera-2026","jesi-esecuzione-opera-2026",
             "jesi-nabucco-opera-2026","ancona-elisir-opera-2026",

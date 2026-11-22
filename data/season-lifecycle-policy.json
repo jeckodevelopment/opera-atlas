@@ -2,52 +2,20 @@
   "schema_version": 1,
   "description": "Lifecycle contract. Each new season-index source must explicitly declare a durable discovery strategy and verified rollover coverage.",
   "sources": {
-    "scala-season-2026-27": {
-      "strategy": "verified_rollover",
+    "ancona-cavalleria-program-2026": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "ancona-elisir-opera-2026": {
+      "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
     "arena-festival-2027": {
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "fenice-opera-2026-27": {
-      "strategy": "verified_rollover",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "parma-opera-2027": {
+    "bellini-catania-opera-2026-27": {
       "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "massimo-season-2026-27": {
-      "strategy": "verified_rollover",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "carlo-felice-season-2026-27": {
-      "strategy": "verified_rollover",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "donizetti-opera-2026": {
-      "strategy": "legacy_year_bound",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "teatro-grande-opera-2026": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "maggio-fiorentino-calendar-2027": {
-      "strategy": "verified_rollover",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "opera-roma-season-2026-27": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "petruzzelli-opera-2026": {
-      "strategy": "legacy_year_bound",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "petruzzelli-opera-2027": {
-      "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
     "bologna-comunale-opera-2026": {
@@ -58,55 +26,27 @@
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "verdi-trieste-season-2026-27": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "lirico-cagliari-opera-2027": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "bellini-catania-opera-2026-27": {
-      "strategy": "evergreen_index",
+    "carlo-felice-season-2026-27": {
+      "strategy": "verified_rollover",
       "verification": "legacy_baseline_2026_11_22"
     },
     "chieti-marrucino-lirica-2026": {
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "modena-teatro-opera-2026-27": {
+    "coccia-novara-opera-2027": {
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "modena-opera-2026-27": {
+    "donizetti-opera-2026": {
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "giglio-lucca-opera-2026-27": {
+    "fenice-opera-2026-27": {
       "strategy": "verified_rollover",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "piacenza-opera-2026-27": {
-      "strategy": "verified_rollover",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "reggio-valli-opera-2026-27": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "ferrara-macbeth-opera-2026-27": {
-      "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
     "ferrara-barbiere-opera-2026-27": {
-      "strategy": "legacy_year_bound",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "ferrara-dido-opera-2026-27": {
-      "strategy": "legacy_year_bound",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "ferrara-clemenza-opera-2026-27": {
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
@@ -114,11 +54,27 @@
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "goldoni-livorno-dido-2026-27": {
+    "ferrara-clemenza-opera-2026-27": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "ferrara-dido-opera-2026-27": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "ferrara-macbeth-opera-2026-27": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "filarmonico-verona-opera-2027": {
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "goldoni-livorno-otello-2026-27": {
+    "giglio-lucca-opera-2026-27": {
+      "strategy": "verified_rollover",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "goldoni-livorno-dido-2026-27": {
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
@@ -126,8 +82,8 @@
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "jesi-trittico-opera-2026": {
-      "strategy": "legacy_year_bound",
+    "goldoni-livorno-otello-2026-27": {
+      "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     },
     "jesi-don-pasquale-opera-2026": {
@@ -142,52 +98,12 @@
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "ancona-elisir-opera-2026": {
+    "jesi-trittico-opera-2026": {
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "ancona-cavalleria-program-2026": {
-      "strategy": "legacy_year_bound",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "macerata-festival-2027": {
+    "lecce-apollo-pinocchio-2026": {
       "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "salerno-verdi-opera-2026": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "pisa-verdi-opera-2026-27": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "filarmonico-verona-opera-2027": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "coccia-novara-opera-2027": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "ravenna-alighieri-cherubini-2027": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "treviso-del-monaco-opera-2026-27": {
-      "strategy": "legacy_year_bound",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "padova-verdi-opera-2026": {
-      "strategy": "legacy_year_bound",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "rovigo-regione-programma-2026-27": {
-      "strategy": "evergreen_index",
-      "verification": "legacy_baseline_2026_11_22"
-    },
-    "rovigo-sociale-opera-2026-27": {
-      "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
     "lecce-politeama-opera-2026": {
@@ -198,15 +114,103 @@
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
-    "lecce-apollo-pinocchio-2026": {
+    "lirico-cagliari-opera-2027": {
       "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "macerata-festival-2027": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "maggio-fiorentino-calendar-2027": {
+      "strategy": "verified_rollover",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "massimo-season-2026-27": {
+      "strategy": "verified_rollover",
       "verification": "legacy_baseline_2026_11_22"
     },
     "messina-vittorio-opera-2026-27": {
       "strategy": "legacy_year_bound",
       "verification": "legacy_baseline_2026_11_22"
     },
+    "modena-opera-2026-27": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "modena-teatro-opera-2026-27": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "opera-roma-season-2026-27": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "padova-verdi-opera-2026": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "parma-opera-2027": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "petruzzelli-opera-2026": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "petruzzelli-opera-2027": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "piacenza-opera-2026-27": {
+      "strategy": "verified_rollover",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "pisa-verdi-opera-2026-27": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "ravenna-alighieri-cherubini-2027": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "reggio-valli-opera-2026-27": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "rovigo-regione-programma-2026-27": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "rovigo-sociale-opera-2026-27": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "salerno-verdi-opera-2026": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
     "sassari-de-carolis-opera-2026": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "scala-season-2026-27": {
+      "strategy": "verified_rollover",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "spoleto-tls-lirica-2026": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
+    "teatro-grande-opera-2026": {
+      "strategy": "evergreen_index",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "treviso-del-monaco-opera-2026-27": {
+      "strategy": "legacy_year_bound",
+      "verification": "legacy_baseline_2026_11_22"
+    },
+    "verdi-trieste-season-2026-27": {
       "strategy": "evergreen_index",
       "verification": "legacy_baseline_2026_11_22"
     }
