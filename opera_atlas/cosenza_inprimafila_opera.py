@@ -130,3 +130,58 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         except ValueError as ex:raise ValueError("invalid Cosenza ticket date") from ex
     if len(set(recite))!=len(recite):raise ValueError("duplicate Cosenza date in event")
     return canonical,composer,"Teatro Alfonso Rendano",sorted(recite)
+
+
+def parse_season_summary(html:str,*,url:str)->list[tuple[str,str,str,list[tuple[str,str]]]]:
+    """Independently check multiple operas on a mixed opera/ballet season page."""
+    if not eligible_detail(url) or not re.search(
+        r"/stagione-lirica-20\d{2}-cosenza/?$",urlsplit(url).path,re.I
+    ):
+        raise ValueError("unapproved Cosenza multi-event season page")
+    reader=Reader()
+    reader.feed(html)
+    if not reader.title or not re.search(
+        r"\bstagione\s+lirica\b",reader.title[0],re.I
+    ):
+        raise ValueError("not an independently identified Cosenza opera season")
+    parts=reader.parts
+    events=[]
+    # The official season page places each date/time immediately before its
+    # venue and production heading. Do not borrow credits from the next block.
+    for i,part in enumerate(parts):
+        if not VENUE.search(part) or i==0:
+            continue
+        raw_clock=parts[i-1]
+        if not DATE_ENTRY.search(raw_clock):
+            continue
+        first_title=parts[i+1] if i+1<len(parts) else ""
+        if NONOPERA.search(first_title):
+            continue
+        title_text=" ".join(parts[i+1:i+5])
+        matching=[]
+        for slug,(canonical,composer,credit,genre) in WORKS.items():
+            short=slug.replace("-"," ").removeprefix("il ")
+            if re.search(r"(?<!\w)"+re.escape(short)+r"(?!\w)",title_text,re.I):
+                matching.append((slug,canonical,composer,credit,genre))
+        if len(matching)!=1:
+            continue
+        slug,canonical,composer,credit,genre=matching[0]
+        next_boundary=next((n for n in range(i+1,len(parts))
+                            if VENUE.search(parts[n])),len(parts))
+        segment=" ".join(parts[i+1:min(next_boundary,i+28)])
+        if not re.search(genre,segment,re.I):
+            continue
+        if not re.search(credit,segment,re.I):
+            continue
+        # Delegate the actual exact showtime/venue/composer validation to the
+        # existing production-level parser, isolating the matching text.
+        snippet=("<h1>"+canonical+"</h1><p>"+raw_clock+"</p><p>"+
+                 parts[i]+"</p><p>"+segment+"</p>")
+        event_url=url.replace(
+            re.search(r"/stagione-lirica-20\d{2}-cosenza/?$",url).group(0),
+            "/"+slug+"-cosenza"
+        )
+        events.append(parse_detail(snippet,url=event_url))
+    if not events or len({row[0] for row in events})!=len(events):
+        raise ValueError("Cosenza season opera blocks absent or ambiguous")
+    return sorted(events,key=lambda row:row[0])
