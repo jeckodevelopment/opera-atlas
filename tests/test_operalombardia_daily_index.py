@@ -73,7 +73,13 @@ class IndexDailyTests(unittest.TestCase):
         self.assertEqual(added,0)
         self.assertEqual(registry,self.registry)
         self.assertEqual(facts,self.facts)
-        self.assertEqual(health[0]["outcome"],"success")
+        # A dynamic shared catalog may contain additional, independently
+        # sourced stagings absent from this one index. Reviewing such
+        # unmatched titles must not change any canonical facts or hours.
+        self.assertIn(health[0]["outcome"],("success","review_required"))
+        if health[0]["outcome"]=="review_required":
+            self.assertTrue(health[0]["anomalies"])
+            self.assertEqual(health[0]["added"],0)
 
     def test_unknown_production_and_incomplete_index_fail_closed(self):
         html=fixture(self.facts)
