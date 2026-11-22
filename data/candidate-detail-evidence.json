@@ -1227,6 +1227,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+      "content_sha256": "47641d59843a6e056e32fce42acd06d6be7dee223f96941b56e85663f6f4285f",
+      "checked_at": "2026-11-22T01:36:19+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'occasione fa il ladro",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Verdi",
+          "date": "2026-12-04",
+          "starts_at": "2026-12-04T20:30:00+01:00"
+        },
+        {
+          "event_title": "L'occasione fa il ladro",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Verdi",
+          "date": "2026-12-06",
+          "starts_at": "2026-12-06T15:30:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatrodipisa.it/wp-content/uploads/2026/07/l_occasione-fa-il-ladro-post.png",
+        "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di L'occasione fa il ladro",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-3c920820abeb859e7ffa",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
@@ -1296,6 +1327,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-406c2dd60b3eb7c5fee8",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/",
+      "content_sha256": "dfa6f7024e84b0dda1465cf7428195f0bcd62c08772e399ef57eba63291fd354",
+      "checked_at": "2026-11-22T01:36:11+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Verdi",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T20:30:00+02:00"
+        },
+        {
+          "event_title": "La clemenza di Tito",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Verdi",
+          "date": "2027-04-18",
+          "starts_at": "2027-04-18T15:30:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatrodipisa.it/wp-content/uploads/2026/07/La-clemenza-di-Tito-post.png",
+        "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di La clemenza di Tito",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-4186e1c367aee6cd2028",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
@@ -1330,6 +1392,74 @@
           "venue": "Arena Sferisterio",
           "date": "2027-08-06",
           "starts_at": "2027-08-06T21:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-4277f285769ff880bef4",
+      "source_key": "jesi-trittico-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
+      "checked_at": "2026-11-22T01:35:52+00:00",
+      "status": "needs_program_review",
+      "program_heading": "Il tabarro/Suor Angelica/Gianni Schicchi di Giacomo Puccini/Giacomo Puccini/Giacomo Puccini",
+      "program_heading_source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "program_components": [
+        {
+          "title": "Il tabarro",
+          "composer": "Giacomo Puccini"
+        },
+        {
+          "title": "Suor Angelica",
+          "composer": "Giacomo Puccini"
+        },
+        {
+          "title": "Gianni Schicchi",
+          "composer": "Giacomo Puccini"
+        }
+      ],
+      "event_facts": [
+        {
+          "event_title": "Il tabarro",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-09",
+          "starts_at": "2026-10-09T20:30:00+02:00"
+        },
+        {
+          "event_title": "Suor Angelica",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-09",
+          "starts_at": "2026-10-09T20:30:00+02:00"
+        },
+        {
+          "event_title": "Gianni Schicchi",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-09",
+          "starts_at": "2026-10-09T20:30:00+02:00"
+        },
+        {
+          "event_title": "Il tabarro",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-11",
+          "starts_at": "2026-10-11T16:00:00+02:00"
+        },
+        {
+          "event_title": "Suor Angelica",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-11",
+          "starts_at": "2026-10-11T16:00:00+02:00"
+        },
+        {
+          "event_title": "Gianni Schicchi",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-11",
+          "starts_at": "2026-10-11T16:00:00+02:00"
         }
       ]
     },
@@ -1686,8 +1816,8 @@
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "content_sha256": "05e42f6fa87f44077ee2572917cfd15d747ce5658f09d2962687421eb0f3cb8f",
-      "checked_at": "2026-11-22T01:26:12+00:00",
+      "content_sha256": "b4a1d99c9e2a470148e0922e5792f939beaedb6fd5b57fe199570769738c374b",
+      "checked_at": "2026-11-22T01:36:03+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1873,6 +2003,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-5b2707fe818d6b686a4c",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
+      "content_sha256": "e6e1f41f3e5fa63f3a63b3bc0ccf081d99192b0ad34e4731537f1dd084fa87d1",
+      "checked_at": "2026-11-22T01:36:32+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Verdi",
+          "date": "2026-10-23",
+          "starts_at": "2026-10-23T20:30:00+02:00"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Verdi",
+          "date": "2026-10-25",
+          "starts_at": "2026-10-25T15:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",
       "source_key": "scala-season-2026-27",
       "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
@@ -2025,6 +2179,30 @@
           "venue": "Teatro Petruzzelli",
           "date": "2026-05-24",
           "starts_at": "2026-05-24T18:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-67093940d2ad1423b345",
+      "source_key": "jesi-nabucco-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
+      "checked_at": "2026-11-22T01:35:52+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-12-11",
+          "starts_at": "2026-12-11T20:30:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T16:00:00+01:00"
         }
       ]
     },
@@ -2260,6 +2438,30 @@
       }
     },
     {
+      "candidate_id": "oa-index-725487d437f63ba0cf3e",
+      "source_key": "messina-vittorio-opera-2026-27",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
+      "content_sha256": "387eb667f213b68e325137d0fd77ebcd4c66aebc32d74ec7e6296cb597324322",
+      "checked_at": "2026-11-22T01:36:06+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Madama Butterfly",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Vittorio Emanuele",
+          "date": "2027-02-26",
+          "starts_at": "2027-02-26T21:00:00+01:00"
+        },
+        {
+          "event_title": "Madama Butterfly",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Vittorio Emanuele",
+          "date": "2027-02-28",
+          "starts_at": "2027-02-28T17:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-73348de657104a8b911f",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
@@ -2435,6 +2637,30 @@
           "venue": "Teatro Comunale di Bologna",
           "date": "2027-06-16",
           "starts_at": "2027-06-16T20:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-7b0a1e061133c0b5970e",
+      "source_key": "jesi-esecuzione-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
+      "checked_at": "2026-11-22T01:35:52+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'ESECUZIONE",
+          "composer": "Salvatore Passantino",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-11-14",
+          "starts_at": "2026-11-14T20:30:00+01:00"
+        },
+        {
+          "event_title": "L'ESECUZIONE",
+          "composer": "Salvatore Passantino",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-11-15",
+          "starts_at": "2026-11-15T16:00:00+01:00"
         }
       ]
     },
@@ -2750,7 +2976,7 @@
       "source_key": "salerno-verdi-opera-2026",
       "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
       "content_sha256": "e03dfd48be9e1fb4c4b8fd1d56d8a8c59aa184fffeabb2bfee656daa044f7c99",
-      "checked_at": "2026-11-22T01:25:47+00:00",
+      "checked_at": "2026-11-22T01:36:16+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3157,6 +3383,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-954a1b185a0354522e71",
+      "source_key": "ravenna-alighieri-cherubini-2027",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
+      "content_sha256": "e575252c0245ecdef1ef4d5f9b432a24493cf560e45d2fa5fde27fed669df019",
+      "checked_at": "2026-11-22T01:36:13+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-04-02",
+          "starts_at": "2027-04-02T20:00:00+02:00"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-04-04",
+          "starts_at": "2027-04-04T15:30:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-97514cec9448be1a563d",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/",
@@ -3202,11 +3452,42 @@
       ]
     },
     {
+      "candidate_id": "oa-index-97659efd986a97449096",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/aida/",
+      "content_sha256": "36e040402c728022a0a20e459b29b5c928c5b78e95ef514daec93e3c08887bb8",
+      "checked_at": "2026-11-22T01:36:35+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Verdi",
+          "date": "2027-03-12",
+          "starts_at": "2027-03-12T20:30:00+01:00"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Verdi",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T15:30:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatrodipisa.it/wp-content/uploads/2026/07/Aida-post-1024x1024.png",
+        "source_url": "https://teatrodipisa.it/spettacolo/aida/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Aida",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-991f446bf3f27044b019",
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
       "content_sha256": "ec7fe39895834a907b4d0c709d34df9083fe9173ebd176b814675fa2ef5bfa1c",
-      "checked_at": "2026-11-22T01:24:46+00:00",
+      "checked_at": "2026-11-22T01:35:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3750,6 +4031,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-addcc48a211cf5aea678",
+      "source_key": "jesi-don-pasquale-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
+      "checked_at": "2026-11-22T01:35:52+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "DON PASQUALE",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-30",
+          "starts_at": "2026-10-30T20:30:00+01:00"
+        },
+        {
+          "event_title": "DON PASQUALE",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Giovan Battista Pergolesi",
+          "date": "2026-10-31",
+          "starts_at": "2026-10-31T20:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-b1c24780a29d634e5fa4",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/nabucco/",
@@ -3800,6 +4105,37 @@
           "venue": "Teatro Carlo Felice"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-b2a88f78e60bd3f79d16",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/otello/",
+      "content_sha256": "dfffad2db457b3dc9148810bbb1ddfc8914430d7d06a64f8e8f0faa2323947a6",
+      "checked_at": "2026-11-22T01:36:37+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Verdi",
+          "date": "2027-02-05",
+          "starts_at": "2027-02-05T20:30:00+01:00"
+        },
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Verdi",
+          "date": "2027-02-07",
+          "starts_at": "2027-02-07T15:30:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatrodipisa.it/wp-content/uploads/2026/07/Otello-Post-1-1024x1024.png",
+        "source_url": "https://teatrodipisa.it/spettacolo/otello/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Otello",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
@@ -4214,7 +4550,7 @@
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
       "content_sha256": "2ffa6252c235d295dbf9c01d65731cdfb3b9d1fcce6dcadcfc054d3f082fb404",
-      "checked_at": "2026-11-22T01:25:52+00:00",
+      "checked_at": "2026-11-22T01:36:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4251,8 +4587,8 @@
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "source_key": "treviso-del-monaco-opera-2026-27",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
-      "content_sha256": "50356943c1d2e258641ffee9388f03165e7d225bd0bd4313a9cf6068b9102db1",
-      "checked_at": "2026-11-22T01:25:49+00:00",
+      "content_sha256": "33518ced386597b67e6eb2c3a22fd05351dc5c88591c0241f7f062fded022013",
+      "checked_at": "2026-11-22T01:36:17+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4393,11 +4729,35 @@
       }
     },
     {
+      "candidate_id": "oa-index-cf2044dac191fa690c37",
+      "source_key": "messina-vittorio-opera-2026-27",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
+      "content_sha256": "f4f2638b460d806ac94d81ebd89ca9cc6e6fbda6570443a1f98de286ecd7b799",
+      "checked_at": "2026-11-22T01:36:42+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Al cavallino bianco",
+          "composer": "Ralph Benatzky",
+          "venue": "Teatro Vittorio Emanuele",
+          "date": "2027-05-07",
+          "starts_at": "2027-05-07T21:00:00+02:00"
+        },
+        {
+          "event_title": "Al cavallino bianco",
+          "composer": "Ralph Benatzky",
+          "venue": "Teatro Vittorio Emanuele",
+          "date": "2027-05-08",
+          "starts_at": "2027-05-08T21:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-cf244270ba1aec90c350",
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
       "content_sha256": "fdfc1f90e8c1d6c3cfe9024b7de3b406c989640d8772191c7cdda26b95c06797",
-      "checked_at": "2026-11-22T01:25:54+00:00",
+      "checked_at": "2026-11-22T01:36:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4465,6 +4825,30 @@
           "venue": "Teatro Comunale di Bologna",
           "date": "2027-03-07",
           "starts_at": "2027-03-07T16:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-d0635be1ed1020408065",
+      "source_key": "messina-vittorio-opera-2026-27",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
+      "content_sha256": "556a57c25ff7dc01b6b1417ac30bad7e54c9897c198e785647aad2bbe00e84af",
+      "checked_at": "2026-11-22T01:36:44+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Vittorio Emanuele",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T21:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Vittorio Emanuele",
+          "date": "2027-04-18",
+          "starts_at": "2027-04-18T17:30:00+02:00"
         }
       ]
     },
@@ -4911,7 +5295,7 @@
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
       "content_sha256": "1b9a30798349d1344c16af6e8ae3e9f34c5e55404293d6e54dae6e7bea1d339d",
-      "checked_at": "2026-11-22T01:25:55+00:00",
+      "checked_at": "2026-11-22T01:36:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4941,6 +5325,30 @@
           "venue": "Teatro Filarmonico",
           "date": "2027-01-24",
           "starts_at": "2027-01-24T15:30:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-df584882c5e7e377064c",
+      "source_key": "ravenna-alighieri-cherubini-2027",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+      "content_sha256": "b48efebb107ad8c1b058e93d4995205443ef36580eacf68ac43cc9d9eaed091c",
+      "checked_at": "2026-11-22T01:36:27+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-01-15",
+          "starts_at": "2027-01-15T20:00:00+01:00"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-01-17",
+          "starts_at": "2027-01-17T15:30:00+01:00"
         }
       ]
     },
@@ -5686,7 +6094,7 @@
       "source_key": "salerno-verdi-opera-2026",
       "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
       "content_sha256": "2d58675c6072580ab721faf05f0a1f0c23807ec33ef1472da611a3e66cc6b2d4",
-      "checked_at": "2026-11-22T01:26:05+00:00",
+      "checked_at": "2026-11-22T01:36:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
