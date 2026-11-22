@@ -31,6 +31,33 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
         self.assertEqual(twice,results)
         self.assertEqual(second["changes"],[])
 
+    def test_treviso_one_candidate_shared_season_requires_all_observed_works(self):
+        from scripts.reconcile_published_candidates import verified_shared_page_identities
+        source="treviso-del-monaco-opera-2026-27"
+        url="https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+        candidates={"schema_version":1,"candidates":[{
+            "id":"treviso","source_key":source,"official_url":url,
+            "status":"already_catalogued"}]}
+        details={"evidence":[{
+            "candidate_id":"treviso","source_key":source,"source_url":url,
+            "event_facts":[
+                {"event_title":"La traviata","composer":"Giuseppe Verdi","date":"2026-10-23"},
+                {"event_title":"Pagliacci","composer":"Ruggero Leoncavallo","date":"2026-12-04"}]}]}
+        facts={"productions":[{"title":"La traviata","composer":"Giuseppe Verdi",
+            "source_url":url,"dates":[["2026-10-23","20:00"]]}]}
+        ambiguous,verified=verified_shared_page_identities(
+            candidates,details,facts,{"programs":[]})
+        self.assertIn(url,ambiguous)
+        self.assertNotIn((source,url),verified)
+        result,_=reconcile(candidates,{url},ambiguous_urls=ambiguous,
+                            identity_verified=verified)
+        self.assertEqual(result["candidates"][0]["status"],"needs_review")
+        facts["productions"].append({"title":"Pagliacci","composer":"Ruggero Leoncavallo",
+            "source_url":url,"dates":[["2026-12-04","20:00"]]})
+        _,verified=verified_shared_page_identities(
+            candidates,details,facts,{"programs":[]})
+        self.assertIn((source,url),verified)
+
     def test_shared_official_season_page_never_retires_other_works(self):
         from scripts.reconcile_published_candidates import verified_shared_page_identities
         url="https://theatre.example/season-2026/"

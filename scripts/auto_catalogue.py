@@ -24,6 +24,7 @@ VENUE_BY_SOURCE={
     "lecce-provincia-politeama-2026":("Lecce","Teatro Politeama Greco"),
     "lecce-politeama-opera-2026":("Lecce","Teatro Politeama Greco"),
     "padova-verdi-opera-2026":("Padova","Teatro Verdi"),
+    "treviso-del-monaco-opera-2026-27":("Treviso","Teatro Comunale Mario del Monaco"),
     "scala-season-2026-27":("Milano","Teatro alla Scala"),
     "verdi-trieste-season-2026-27":("Trieste","Teatro Lirico Giuseppe Verdi"),
     "lirico-cagliari-opera-2027":("Cagliari","Teatro Lirico di Cagliari"),
@@ -302,7 +303,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
@@ -388,6 +389,15 @@ _MULTI_WORK_SEASONS={
         ("Pagliacci","Ruggero Leoncavallo"):2,
         ("La traviata","Giuseppe Verdi"):3,
     },
+    # The official Treviso 2026/27 season is one page for separately ticketed
+    # operas. Each verified two-date work is independently publishable; later
+    # missing works from the same page must reopen the candidate for review.
+    "treviso-del-monaco-opera-2026-27": {
+        ("La traviata","Giuseppe Verdi"):2,
+        ("Pagliacci","Ruggero Leoncavallo"):2,
+        ("Il cappello di paglia di Firenze","Nino Rota"):2,
+    },
+
     "chieti-marrucino-lirica-2026": {
         ("Le avventure di Pinocchio","Antonio Cericola"):1,
         ("Turandot","Giacomo Puccini"):2,
@@ -414,6 +424,16 @@ def split_verified_season(item:dict)->list[dict]:
             return [item]
         identity=(row.get("event_title"),row.get("composer"))
         groups.setdefault(identity,[]).append(row)
+    if item.get("source_key")=="treviso-del-monaco-opera-2026-27":
+        # Three independently ticketed productions share this listing.
+        # Only complete, title/composer-verified two-date groups may pass,
+        # and no unknown credit is silently discarded.
+        if (not groups or any(identity not in expected or
+                              len(group)!=expected[identity]
+                              for identity,group in groups.items())):
+            return [item]
+        return [{**item,"event_facts":group}
+                for _,group in sorted(groups.items())]
     if {k:len(v) for k,v in groups.items()}!=expected:
         return [item]
     return [{**item,"event_facts":group} for _,group in sorted(groups.items())]
