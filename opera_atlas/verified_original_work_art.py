@@ -11,6 +11,10 @@ from urllib.parse import urlsplit
 
 REGISTRY=Path(__file__).resolve().parents[1]/"data"/"verified-original-work-art.json"
 APPROVED={
+ ("https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
+  "Le avventure di Pinocchio","Antonio Cericola"):(
+  "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
+  "https://www.provincia.le.it/wp-content/uploads/2026/11/Locandina-PInocchio-240x300.png"),
  ("https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
   "Il quinto moschettiere","Matteo Musumeci"):(
   "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere/",
