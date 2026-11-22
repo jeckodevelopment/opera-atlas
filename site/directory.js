@@ -158,6 +158,19 @@ async function initialize(){
           description:section==="opere"?editorial.synopses[e.work_id] || (e.work_slug==="la-boheme"?"":editorial.synopses[e.work_slug]||""):profile?.description||""});
       }
     }
+    // Canonical works can be published from verified program components
+    // without inventing a solo staging or a future performance.
+    if(section==="opere" && Array.isArray(data.works)){
+      for(const work of data.works){
+        if(!work || typeof work.id!=="string" || typeof work.title!=="string"
+           || !/^[a-z0-9-]+$/.test(work.route_slug||work.slug||""))continue;
+        const url="./opere/"+(work.route_slug||work.slug)+"/";
+        if(grouped.has(url) || grouped.has(new URL(url,document.baseURI).pathname))continue;
+        grouped.set(url,{url,title:work.title,subtitle:work.composer||"",
+          work_id:work.id,work_slug:work.slug,composer:work.composer,
+          description:editorial.synopses[work.id]||""});
+      }
+    }
     entries.push(...[...grouped.values()].sort((a,b)=>a.title.localeCompare(b.title,"it")));
     if(data.warning)status.textContent=data.warning;
     render();
