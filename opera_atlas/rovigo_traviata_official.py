@@ -11,6 +11,8 @@ from urllib.parse import urlsplit
 from opera_atlas.national_detail_parser import clean
 
 URL="https://www.comune.rovigo.it/myportal/C_H620/api/content/share/social/6aa10ea4c4e2c4008be2a957"
+DETAIL_URL="https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027"
+OFFICIAL_URLS=(URL,DETAIL_URL)
 TITLE="La traviata"
 COMPOSER="Giuseppe Verdi"
 VENUE="Teatro Sociale"
@@ -26,7 +28,7 @@ DOW={"lunedì":0,"lunedi":0,"martedì":1,"martedi":1,
 
 def parse_official_traviata(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
     parsed=urlsplit(url)
-    if (url!=URL or parsed.scheme!="https" or
+    if (url not in OFFICIAL_URLS or parsed.scheme!="https" or
             parsed.hostname!="www.comune.rovigo.it" or parsed.username or
             parsed.password or parsed.port is not None or parsed.query or parsed.fragment):
         raise ValueError("unapproved Rovigo official event URL")
