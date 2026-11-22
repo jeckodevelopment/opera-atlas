@@ -130,23 +130,6 @@
     },
     {
       "candidate_ids": [
-        "oa-index-a0178dcdf3cfff6db4fb"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Giuseppe Balducci",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "coccia-novara-rolling-opera",
-          "url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
-        }
-      ],
-      "title": "IL NOCE DI BENEVENTO"
-    },
-    {
-      "candidate_ids": [
         "oa-index-1bf92e353f6745bc2b3a"
       ],
       "category": "new_work_candidate",
@@ -170,10 +153,10 @@
     "candidates_checked": 194,
     "candidates_without_facts": 0,
     "facts_examined": 723,
-    "facts_resolved": 708,
+    "facts_resolved": 710,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 15,
-    "unmatched_groups": 8
+    "unmatched_facts": 13,
+    "unmatched_groups": 7
   },
   "truncated": false
 }

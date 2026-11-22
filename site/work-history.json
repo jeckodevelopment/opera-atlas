@@ -937,6 +937,17 @@
         "https://www.teatromarrucino.eu/evento/le-avventure-di-pinocchio/",
         "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
       ]
+    },
+    "il-noce-di-benevento": {
+      "librettist": "Anonimo",
+      "premiere_year": 1837,
+      "premiere_venue": "Teatrino privato della famiglia Capece Minutolo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://www.fondazionepergolesispontini.com/domenica-2-settembre-ore-21-al-teatro-pergolesi-di-jesi-lopera-il-noce-di-benevento-1837-di-giuseppe-balducci-in-prima-esecuzione-italiana-in-epoca-moderna/",
+        "https://www.giornaledellamusica.it/recensioni/jesi-alla-riscoperta-di-giuseppe-balducci",
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
+      ]
     }
   },
   "works_by_id": {

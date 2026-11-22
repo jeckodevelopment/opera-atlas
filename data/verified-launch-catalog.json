@@ -6399,6 +6399,25 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-a0178dcdf3cfff6d",
+      "title": "Il noce di Benevento",
+      "composer": "Giuseppe Balducci",
+      "venue": "Giardini di Palazzo Natta",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
+      "dates": [
+        [
+          "2027-06-17",
+          "21:00"
+        ],
+        [
+          "2027-06-18",
+          "21:00"
+        ]
+      ]
     }
   ]
 }
