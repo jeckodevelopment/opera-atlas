@@ -313,6 +313,10 @@
     "pesaro-rof-2026": {
       "strategy": "verified_rollover",
       "verification": "test_verified"
+    },
+    "napoli-san-carlo-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
