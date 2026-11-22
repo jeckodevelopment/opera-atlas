@@ -229,6 +229,10 @@
     "ancona-opera-season-2027": {
       "strategy": "verified_rollover",
       "verification": "test_verified"
+    },
+    "ferrara-season-opera-2027-28": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
     }
   }
 }
