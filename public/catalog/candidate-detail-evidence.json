@@ -1868,8 +1868,8 @@
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "content_sha256": "7c2573f473815c64d884a5a391fb6b803b627dd422c7039526905c8f337dadda",
-      "checked_at": "2026-11-22T12:11:08+00:00",
+      "content_sha256": "28c28228c5a2a532aa6f9453967cfacdfe824b4acf1d02bf021f6f83335f766d",
+      "checked_at": "2026-11-22T12:20:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2493,8 +2493,8 @@
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
-      "content_sha256": "73e4a3453474cda3800b8e6fc0173fe6a06b113be25da166878ad70f89e04157",
-      "checked_at": "2026-11-22T12:11:37+00:00",
+      "content_sha256": "5dd290cb86989e19bbdbb1709ff8ee77c3d0a8fc5cd1f9a4d45ce7c521132ed1",
+      "checked_at": "2026-11-22T12:20:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2696,8 +2696,8 @@
       "candidate_id": "oa-index-7b0a1e061133c0b5970e",
       "source_key": "jesi-esecuzione-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "content_sha256": "d923aea1aa383fe930257f024cf10300e8dd856bdb1686a72fc346ec4578a396",
-      "checked_at": "2026-11-22T12:10:56+00:00",
+      "content_sha256": "023b06aa71a5aae6bc9bf8f00e68b28c35b5b4b9fddbbc822701a2dd94439ed2",
+      "checked_at": "2026-11-22T12:20:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2714,7 +2714,14 @@
           "date": "2026-11-15",
           "starts_at": "2026-11-15T16:00:00+01:00"
         }
-      ]
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.fondazionepergolesispontini.com/wp-content/uploads/2026/06/Lesecuzione_1024x768.jpg",
+        "source_url": "https://www.fondazionepergolesispontini.com/eventi/lesecuzione-sotto-lo-sguardo-di-tosca-2/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di L'ESECUZIONE",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
@@ -4662,8 +4669,8 @@
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "source_key": "treviso-del-monaco-opera-2026-27",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
-      "content_sha256": "7816c319577c96d2d91a8acea08b9b8532552f84b8f05ce45a5a5c27584cf87f",
-      "checked_at": "2026-11-22T12:11:18+00:00",
+      "content_sha256": "ea6078265cc2c633ab06f7d717213b8d42bbcece58f8b74c1c889378a3452d92",
+      "checked_at": "2026-11-22T12:20:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4807,8 +4814,8 @@
       "candidate_id": "oa-index-cf2044dac191fa690c37",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
-      "content_sha256": "9d9ca174fd80d0a5bb1e9b41ab62e4c88a2c23ca9b8d304f0b2a34d4a0d7a18f",
-      "checked_at": "2026-11-22T12:11:11+00:00",
+      "content_sha256": "0fe638028dfd9c9e69cbdfa0db7335fd5ccec07a730ec97243a4cd9ca9cd0c38",
+      "checked_at": "2026-11-22T12:21:01+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4907,8 +4914,8 @@
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
-      "content_sha256": "b198ba4d0078ada04c3ac6e6804ba977f0f5f2ffb7c5bc06c81f8a531466145f",
-      "checked_at": "2026-11-22T12:11:29+00:00",
+      "content_sha256": "a35131d6cddbd3ebb051ea381f7e80a09c726a9a7aaf4607d5209530260d1a39",
+      "checked_at": "2026-11-22T12:21:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
