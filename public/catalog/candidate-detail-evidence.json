@@ -1066,6 +1066,58 @@
       ]
     },
     {
+      "candidate_id": "oa-index-27929844eef0b828edce",
+      "source_key": "lecce-provincia-politeama-2026",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "content_sha256": "107dd5f8fe94cc51573980f1881b220f1fcc38a016168d3ed5ed40bbb9fe4fea",
+      "checked_at": "2026-11-22T11:39:25+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Politeama Greco",
+          "date": "2026-11-13",
+          "starts_at": "2026-11-13T20:45:00+01:00"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Politeama Greco",
+          "date": "2026-11-15",
+          "starts_at": "2026-11-15T18:00:00+01:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Politeama Greco",
+          "date": "2026-11-27",
+          "starts_at": "2026-11-27T20:45:00+01:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Politeama Greco",
+          "date": "2026-11-29",
+          "starts_at": "2026-11-29T18:00:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Politeama Greco",
+          "date": "2026-12-11",
+          "starts_at": "2026-12-11T20:45:00+01:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Politeama Greco",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T18:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-29e61184f06223faaa86",
       "source_key": "ferrara-barbiere-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
@@ -1816,8 +1868,8 @@
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "content_sha256": "be7e8fc3801db1c9b71d68dfd7a0fa042f35a6f87436d015bfe66d7e0ae27f82",
-      "checked_at": "2026-11-22T11:34:58+00:00",
+      "content_sha256": "b0c7e9cfe5e784e47f39927157934f2c5df3a8bb281852aae9691a87341a2432",
+      "checked_at": "2026-11-22T11:39:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2441,8 +2493,8 @@
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
-      "content_sha256": "7dc87c79f6ea50c9d14ad0b11b5b99fab7389b47261d18dddda61a9b79cc5671",
-      "checked_at": "2026-11-22T11:35:01+00:00",
+      "content_sha256": "227d2f51b357df195ae8a897afc059757a7824787abfad455b112d80cb12f013",
+      "checked_at": "2026-11-22T11:39:35+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4610,8 +4662,8 @@
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "source_key": "treviso-del-monaco-opera-2026-27",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
-      "content_sha256": "99563c9eb5e05e4b0bb37caeec4f1c56de26a4044fd73b76e1cf1f25732346fd",
-      "checked_at": "2026-11-22T11:35:11+00:00",
+      "content_sha256": "3a8b56b19416e61cec8cb7b4dd7765e4c004f1d05ef44e6a16805d716e7e6bd2",
+      "checked_at": "2026-11-22T11:39:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4755,8 +4807,8 @@
       "candidate_id": "oa-index-cf2044dac191fa690c37",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
-      "content_sha256": "6dada7acd2083735a58c7274cfe685747ab1d84217b8e154ad772e395c8371c6",
-      "checked_at": "2026-11-22T11:35:19+00:00",
+      "content_sha256": "2a83820e457a4d2939d19b7ed7a78881dbc8c1c1e4c904c6af6783049dba7b33",
+      "checked_at": "2026-11-22T11:39:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4855,8 +4907,8 @@
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
-      "content_sha256": "1223ae953ca972814964ef899084e0a4407ee2463db608db1b4e51bf3b3fcc48",
-      "checked_at": "2026-11-22T11:35:21+00:00",
+      "content_sha256": "45fab076997cfb64643a6fd3ef087840a5a23e48b4f367086e9049981b8e5b68",
+      "checked_at": "2026-11-22T11:39:55+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5044,8 +5096,8 @@
       "candidate_id": "oa-index-d7e02d354864fa2b6dc2",
       "source_key": "padova-verdi-opera-2026",
       "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
-      "content_sha256": "f72971813b50d8bee38acbcc101981ea5a2e1ee90e9d069e3ddbc75f0382368c",
-      "checked_at": "2026-11-22T11:35:03+00:00",
+      "content_sha256": "84bbf90a3022ff8070b1a0763a9bbf872d27dadda5d325e4ef43ffa2de682785",
+      "checked_at": "2026-11-22T11:39:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6162,7 +6214,7 @@
       "source_key": "salerno-verdi-opera-2026",
       "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
       "content_sha256": "58492e62537640e06bf6aa75ab1b4b5e65f867a32c1aa94ba21ef9a3c9cef580",
-      "checked_at": "2026-11-22T11:35:09+00:00",
+      "checked_at": "2026-11-22T11:39:43+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
