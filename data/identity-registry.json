@@ -2924,15 +2924,6 @@
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
       "season": "2026"
     },
-    "auto-5957ac7d6a8b0d34": {
-      "id": "oa-s-000232",
-      "work_id": "oa-w-000052",
-      "venue_id": "oa-v-000032",
-      "slug": "dido-and-aeneas",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
-      "season": "2026",
-      "route_slug": "dido-and-aeneas-dido-ed-enea-2"
-    },
     "auto-86855eb33828e6cd": {
       "id": "oa-s-000233",
       "work_id": "oa-w-000006",
@@ -2972,51 +2963,6 @@
       "slug": "elisir-d-amore",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
       "season": "2026"
-    },
-    "auto-7b6b273b4dfbfb8e": {
-      "id": "oa-s-000239",
-      "work_id": "oa-w-000014",
-      "venue_id": "oa-v-000032",
-      "slug": "otello",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
-      "season": "2027",
-      "route_slug": "otello-3"
-    },
-    "auto-cab03dfcd8aeff15": {
-      "id": "oa-s-000240",
-      "work_id": "oa-w-000073",
-      "venue_id": "oa-v-000032",
-      "slug": "elisir-d-amore",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
-      "season": "2027",
-      "route_slug": "elisir-d-amore-lelisir-damore-2"
-    },
-    "auto-e0c88bff5883ca11": {
-      "id": "oa-s-000241",
-      "work_id": "oa-w-000073",
-      "venue_id": "oa-v-000032",
-      "slug": "elisir-d-amore",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
-      "season": "2027",
-      "route_slug": "elisir-d-amore-lelisir-damore-3"
-    },
-    "auto-e831cbf742e2f848": {
-      "id": "oa-s-000242",
-      "work_id": "oa-w-000052",
-      "venue_id": "oa-v-000032",
-      "slug": "dido-and-aeneas",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
-      "season": "2026",
-      "route_slug": "dido-and-aeneas-dido-ed-enea"
-    },
-    "auto-f4226333be6c3f44": {
-      "id": "oa-s-000243",
-      "work_id": "oa-w-000014",
-      "venue_id": "oa-v-000032",
-      "slug": "otello",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
-      "season": "2027",
-      "route_slug": "otello-4"
     },
     "auto-943d04f25da8e27e": {
       "id": "oa-s-000244",
@@ -8631,12 +8577,6 @@
       "original_date": "2026-08-20",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
     },
-    "auto-5957ac7d6a8b0d34|2026-11-08": {
-      "id": "oa-r-000945",
-      "staging_id": "oa-s-000232",
-      "original_date": "2026-11-08",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/"
-    },
     "auto-86855eb33828e6cd|2026-07-17": {
       "id": "oa-r-000946",
       "staging_id": "oa-s-000233",
@@ -8696,36 +8636,6 @@
       "staging_id": "oa-s-000231",
       "original_date": "2026-08-19",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
-    },
-    "auto-7b6b273b4dfbfb8e|2027-01-31": {
-      "id": "oa-r-000956",
-      "staging_id": "oa-s-000239",
-      "original_date": "2027-01-31",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/"
-    },
-    "auto-cab03dfcd8aeff15|2027-04-18": {
-      "id": "oa-r-000957",
-      "staging_id": "oa-s-000240",
-      "original_date": "2027-04-18",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/"
-    },
-    "auto-e0c88bff5883ca11|2027-04-16": {
-      "id": "oa-r-000958",
-      "staging_id": "oa-s-000241",
-      "original_date": "2027-04-16",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/"
-    },
-    "auto-e831cbf742e2f848|2026-11-06": {
-      "id": "oa-r-000959",
-      "staging_id": "oa-s-000242",
-      "original_date": "2026-11-06",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/"
-    },
-    "auto-f4226333be6c3f44|2027-01-29": {
-      "id": "oa-r-000960",
-      "staging_id": "oa-s-000243",
-      "original_date": "2027-01-29",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/"
     },
     "auto-943d04f25da8e27e|2026-12-30": {
       "id": "oa-r-000961",
