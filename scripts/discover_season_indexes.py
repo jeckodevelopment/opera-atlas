@@ -1131,6 +1131,19 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                         "rovigo_fallback_fetch_unavailable":"rovigo_fallback_fetch_unavailable",
                         "rovigo_fallback_content_unverified":"rovigo_fallback_content_unverified",
                     }.get(str(exc),"rovigo_index_structure_changed")
+                elif item["key"] in {
+                        "chieti-marrucino-season-2027",
+                        "modena-municipal-opera-2027-28",
+                        "rovigo-sociale-season-2027-28",
+                        "treviso-del-monaco-season-2027-28",
+                        "padova-verdi-season-2027",
+                        "lecce-provincia-season-2027"}:
+                    # The URL and approved origin were already validated
+                    # before fetching. Failure to confirm an h1, genre and
+                    # first-party opera content on a *future* page means
+                    # "not verified yet", not a bad source configuration.
+                    # Leave it unpublished and retain the diagnostic.
+                    diagnostic="future_official_programme_unverified"
                 elif str(exc)=="season index incomplete or structure changed":
                     diagnostic="index_incomplete_or_markup_changed"
                 else:
