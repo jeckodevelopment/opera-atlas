@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T20:25:19+00:00",
+  "checked_at": "2026-11-22T20:26:18+00:00",
   "scope": "national",
   "attempted": 4,
   "outcomes": [
@@ -9,9 +9,9 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no explicit official performance dates",
-        "authority_work:no explicit official performance dates",
-        "official_composer_credit:no explicit official performance dates",
+        "canonical_work:incomplete official Carlo Felice date/time evidence",
+        "authority_work:incomplete official Carlo Felice date/time evidence",
+        "official_composer_credit:incomplete official Carlo Felice date/time evidence",
         "schema_event:no_evidence"
       ],
       "rows": 0
