@@ -121,7 +121,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "::warning::Source checkpoint still deferred; dispatching one clean follow-up scan."
-          gh api -X POST "repos/${{ github.repository }}/dispatches" \\
+          gh api -X POST "repos/${{ github.repository }}/dispatches" \
             -f event_type=source-health-checkpoint-retry
 
       - name: Fail if fresh source health could not be persisted
