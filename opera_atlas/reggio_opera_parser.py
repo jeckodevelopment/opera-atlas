@@ -60,7 +60,7 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # rendered heading text, not the raw HTML between <h2> tags.
     # Still strictly bound to the local Biglietti -> Riduzioni section:
     # dates from recommendations, biography, or global menus are excluded.
-    headings=list(re.finditer(r"<h([2-4])\\b[^>]*>.*?</h\\1\\s*>",html,re.I|re.S))
+    headings=list(re.finditer(r"<h([2-4])\b[^>]*>.*?</h\1\s*>",html,re.I|re.S))
     labels=[clean(m.group(0)).strip().casefold() for m in headings]
     opening=[i for i,label in enumerate(labels) if label=="biglietti"]
     closing=[i for i,label in enumerate(labels) if label=="riduzioni"]
