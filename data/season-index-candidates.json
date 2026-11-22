@@ -61,7 +61,7 @@
       "id": "oa-index-05719103525d11cd2dd7",
       "source_key": "martina-valle-itria-2026",
       "official_url": "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -245,7 +245,7 @@
       "id": "oa-index-12c56600704dc3f2f161",
       "source_key": "martina-valle-itria-2026",
       "official_url": "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -1077,7 +1077,7 @@
       "id": "oa-index-695c37583a2d6ffd8ca6",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/romeo-e-giulietta/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -1589,7 +1589,7 @@
       "id": "oa-index-97a48278e09ca0497348",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/food-ensemble/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -1797,7 +1797,7 @@
       "id": "oa-index-a8254243f6bdae92de8b",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/quintetto-sospeso/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
@@ -2541,7 +2541,7 @@
       "id": "oa-index-ea69a3d503d84f40c50b",
       "source_key": "pesaro-rof-2026",
       "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/florez-30/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T20:57:27+00:00",
       "last_seen": "2026-11-22T21:06:36+00:00"
     },
