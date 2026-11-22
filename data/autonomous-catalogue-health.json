@@ -13,10 +13,6 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
-      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "reason": "unknown_work_needs_authority_data"
     },
@@ -39,10 +35,6 @@
       "title": "Pagliacci",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
-    },
-    {
-      "candidate_id": "oa-index-0e8fc70d8165e8a2b021",
-      "reason": "incomplete_work_editorial"
     },
     {
       "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
@@ -54,14 +46,10 @@
     },
     {
       "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
-      "reason": "incomplete_work_editorial"
+      "reason": "verified_work_image_missing"
     },
     {
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
       "reason": "incomplete_work_editorial"
     }
   ],
