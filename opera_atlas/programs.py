@@ -109,6 +109,15 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
                and normalized(w.get("composer",""))==normalized(part["composer"])]
         if len(found)>1:raise ValueError("ambiguous canonical component")
         part["work_id"]=found[0]["id"] if found else None
+        if found:
+            # Canonical composition names supply display casing; source
+            # evidence still supplies the independently verified identity.
+            part["title"]=found[0]["title"]
+        elif (normalized(part["title"]),normalized(part["composer"]))==(
+                normalized("L’Arlésienne"),normalized("Georges Bizet")):
+            # Source-verified component of the Petruzzelli mixed bill:
+            # Bizet's incidental music is not a stand-alone opera identity.
+            part["title"]="L’Arlésienne"
     rows=detail.get("event_facts")
     if not isinstance(rows,list) or not rows:raise ValueError("missing program showtimes")
     member_identities={(normalized(part["title"]),normalized(part["composer"]))
