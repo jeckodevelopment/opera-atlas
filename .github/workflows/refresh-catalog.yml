@@ -15,7 +15,15 @@ on:
       # not merely pass the separate Python test workflow.
       - 'opera_atlas/**'
       - 'scripts/**'
-      - 'tests/**'
+      # Observability and browser-audit helpers do not change the canonical
+      # source facts or the catalog. They must not start a long acquisition.
+      - '!scripts/pipeline_operations_health.py'
+      - '!scripts/push_pipeline_operations_health.py'
+      - '!scripts/audit_public_atlas.py'
+      - '!scripts/push_live_publication_audit.py'
+      # Tests still run on every PR in python-tests.yml; running a full
+      # network crawl for arbitrary test edits creates dozens of redundant
+      # queued jobs. Explicitly retained tests below are acquisition-critical.
       - 'data/identity-registry.json'
       - 'data/venue-directory.json'
       - 'data/verified-launch-catalog.json'
