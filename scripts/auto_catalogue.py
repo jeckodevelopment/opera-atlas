@@ -44,6 +44,12 @@ VENUE_BY_SOURCE={
     "ferrara-clemenza-opera-2026-27":("Ferrara","Teatro Comunale Claudio Abbado"),
     "ferrara-boccanegra-opera-2026-27":("Ferrara","Teatro Comunale Claudio Abbado"),
     "arena-festival-2027":("Verona","Arena di Verona"),
+    # Independent physical venues already listed in the reviewed national
+    # directory; they are not Arena di Verona or another city's Teatro Verdi.
+    "filarmonico-verona-opera-2027":("Verona","Teatro Filarmonico"),
+    "pisa-verdi-opera-2026-27":("Pisa","Teatro Verdi"),
+    "salerno-verdi-opera-2026":("Salerno","Teatro Municipale Giuseppe Verdi"),
+    "macerata-festival-2027":("Macerata","Arena Sferisterio"),
     "fenice-opera-2026-27":("Venezia","Teatro La Fenice"),
     "parma-opera-2027":("Parma","Teatro Regio di Parma"),
     "massimo-season-2026-27":("Palermo","Teatro Massimo"),
@@ -285,7 +291,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
