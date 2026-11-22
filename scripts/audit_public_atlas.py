@@ -79,8 +79,10 @@ def classify(http_status: int | None, rendered_title: str | None,
         return "unverified"
     if http_status != 200:
         return "unexpected_http"
-    if not rendered_title or not rendered_kind:
-        return "unverified"  # Page may still be loading.
+    if not rendered_title or not rendered_kind or rendered_kind not in (
+        "Produzione", "Programma composto", "Opera del repertorio", "Teatro",
+    ):
+        return "unverified"  # Generic/loading/failed shell is not real content.
     if "aggiornamenti non sono momentaneamente disponibili" in detail_status.casefold():
         return "fallback_catalog"
     if "non è stato possibile aprire" in detail_status.casefold():
@@ -141,7 +143,8 @@ async def scan(browser, candidate: dict, semaphore: asyncio.Semaphore) -> dict:
             "venue_id": candidate["venue_id"], "title": candidate["title"],
             "route": candidate["route"], "status": state, "http_status": http,
             "expected_recite": candidate["expected_recite"],
-            "rendered_title": title, "error_type": error,
+            "rendered_title": title, "rendered_kind": kind,
+            "detail_message": (detail_status or "")[:150], "error_type": error,
         }
 
 
@@ -178,7 +181,8 @@ def main() -> None:
     report = asyncio.run(execute(opts.limit))
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_bytes(payload(report))
-    print(json.dumps({"checked": report["total_checked"], "totals": report["totals"]}))
+    print(json.dumps({"checked": report["total_checked"], "totals": report["totals"],
+                      "sample": report["results"][:4]}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
