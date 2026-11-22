@@ -953,6 +953,25 @@ def _probe_future_season(item:dict,db,source_id:int,fetcher,*,enabled:bool):
                   "next_season_url":target,"next_season_links":0}
 
 
+def _rovigo_verified_detail_fallback(db,source_id:int,fetcher):
+    """Fetch one exact first-party event with safe, stage-specific diagnostics.
+
+    The source's old season slider may be empty or unavailable. Neither
+    failure establishes a robots prohibition on another official URL.
+    Do not leak remote HTML, exception bodies or user URLs into health.
+    """
+    from opera_atlas.rovigo_traviata_official import URL as detail_url
+    try:
+        page=fetcher(db,source_id=source_id,url=detail_url,network_enabled=True)
+    except FetchUnavailable as exc:
+        raise ValueError("rovigo_fallback_fetch_unavailable") from exc
+    try:
+        urls=extract("rovigo-sociale-opera-2026-27",detail_url,page.html,1)
+    except ValueError as exc:
+        raise ValueError("rovigo_fallback_content_unverified") from exc
+    return page,detail_url,urls
+
+
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
          network_enabled:bool=False,now:str|None=None,
          check_next_season:bool=False,
@@ -996,7 +1015,12 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 try:
                     page=fetcher(db,source_id=row["id"],url=index_url,network_enabled=True)
                 except FetchUnavailable as original:
-                    if item["key"]=="spoleto-tls-lirica-2026" and (
+                    if item["key"]=="rovigo-sociale-opera-2026-27":
+                        page,index_url,preverified_urls=_rovigo_verified_detail_fallback(
+                            db,row["id"],fetcher)
+                        min_links=1
+                        municipal_fallback=True
+                    elif item["key"]=="spoleto-tls-lirica-2026" and (
                         item["url"]=="https://www.tls-belli.it/stagione-lirica-2026/"):
                         # The primary theatre calendar may reject the CI runner.
                         # The Comune is an independent OFFICIAL source, with a
@@ -1023,7 +1047,9 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                         min_links=1
                         primary_unavailable=True
                 try:
-                    urls=extract(item["key"],index_url,page.html,min_links)
+                    urls=(preverified_urls if municipal_fallback and
+                          item["key"]=="rovigo-sociale-opera-2026-27"
+                          else extract(item["key"],index_url,page.html,min_links))
                 except ValueError as exc:
                     # TCBO's current-season opera filter explicitly reports
                     # zero results when its programme has no remaining operas.
@@ -1044,17 +1070,9 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                         # The legacy slider can lose its theatre identity.
                         # A separate exact first-party event document provides
                         # dated ticket evidence through the same robots gate.
-                        from opera_atlas.rovigo_traviata_official import URL as official_detail
-                        try:
-                            alternate=fetcher(db,source_id=row["id"],
-                                              url=official_detail,network_enabled=True)
-                            alt_urls=extract(item["key"],official_detail,alternate.html,1)
-                        except (AccessDenied,FetchUnavailable,ValueError):
-                            raise exc
-                        page=alternate
-                        index_url=official_detail
+                        page,index_url,urls=_rovigo_verified_detail_fallback(
+                            db,row["id"],fetcher)
                         min_links=1
-                        urls=alt_urls
                         municipal_fallback=True
                     else:
                         raise
@@ -1084,6 +1102,8 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                         "Rovigo Teatro Sociale not identified":"rovigo_venue_missing",
                         "official Rovigo season 2026/27 not established":"rovigo_season_missing",
                         "no recognised season opera titles":"rovigo_opera_titles_missing",
+                        "rovigo_fallback_fetch_unavailable":"rovigo_fallback_fetch_unavailable",
+                        "rovigo_fallback_content_unverified":"rovigo_fallback_content_unverified",
                     }.get(str(exc),"rovigo_index_structure_changed")
                 elif str(exc)=="season index incomplete or structure changed":
                     diagnostic="index_incomplete_or_markup_changed"

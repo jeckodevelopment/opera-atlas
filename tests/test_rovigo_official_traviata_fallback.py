@@ -3,7 +3,7 @@ import copy
 import json
 import unittest
 
-from opera_atlas.controlled_fetch import FetchResult
+from opera_atlas.controlled_fetch import FetchResult, FetchUnavailable
 from opera_atlas.rovigo_traviata_official import URL,parse_official_traviata
 from scripts.discover_season_indexes import CONFIG,scan,eligible,extract
 from scripts.collect_candidate_details import (
@@ -101,6 +101,40 @@ class RovigoTraviataFallbackTests(unittest.TestCase):
             with self.subTest(invalid=invalid),self.assertRaises(ValueError):
                 scan(config,previous,fetcher=fetcher,network_enabled=True,
                      source_keys=invalid)
+
+    def test_unavailable_season_html_still_checks_exact_official_detail(self):
+        config=json.loads(CONFIG.read_text())
+        seen=[]
+        def fetcher(db,*,source_id,url,network_enabled):
+            seen.append(url)
+            if url!=URL:
+                raise FetchUnavailable("page unavailable")
+            return FetchResult(url,HTML,"c"*64,len(HTML))
+        docs,rows=scan(config,{"schema_version":1,"candidates":[]},
+                       fetcher=fetcher,network_enabled=True,
+                       source_keys={KEY})
+        self.assertEqual(seen[-1],URL)
+        self.assertEqual(len(seen),2)
+        self.assertEqual(rows[0]["status"],"success")
+        self.assertEqual(rows[0]["fallback_official_source"],"comune.rovigo.it")
+        self.assertEqual(docs["candidates"][0]["official_url"],URL)
+
+    def test_fallback_failure_is_distinguished_from_obsolete_slider(self):
+        config=json.loads(CONFIG.read_text())
+        for problem in ("fetch","content"):
+            def fetcher(db,*,source_id,url,network_enabled):
+                if url!=URL:
+                    return FetchResult(url,"<h1>Non valido</h1>","d"*64,21)
+                if problem=="fetch":
+                    raise FetchUnavailable("page unavailable")
+                return FetchResult(url,"<h1>LA TRAVIATA</h1>","e"*64,19)
+            _,rows=scan(config,{"schema_version":1,"candidates":[]},
+                        fetcher=fetcher,network_enabled=True,
+                        source_keys={KEY})
+            self.assertEqual(rows[0]["diagnostic"],
+                             "rovigo_fallback_fetch_unavailable" if problem=="fetch"
+                             else "rovigo_fallback_content_unverified")
+            self.assertEqual(rows[0]["links"],0)
 
     def test_fail_closed_on_wrong_artist_dates_and_origin(self):
         for broken in (

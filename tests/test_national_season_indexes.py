@@ -31,7 +31,7 @@ class NationalIndexTests(unittest.TestCase):
                 _,rows=scan(config,{"schema_version":1,"candidates":[]},
                             fetcher=fake,network_enabled=True)
                 actual=next(x for x in rows if x["key"]==source["key"])
-                self.assertEqual(actual["diagnostic"],reason)
+                self.assertEqual(actual["diagnostic"],"rovigo_fallback_content_unverified")
                 self.assertNotIn("<",actual["diagnostic"])
 
     def test_scala_only_opera_detail_links(self):
