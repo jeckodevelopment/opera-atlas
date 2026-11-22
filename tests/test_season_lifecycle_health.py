@@ -82,8 +82,8 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
 
     def test_evergreen_reusability_audit_is_exhaustive_and_not_live_proof(self):
         result=build(self.config,self.policy,{"sources":[]},{"outcomes":[]})
-        self.assertEqual(result["evergreen_index_unverified"],27)
-        self.assertEqual(result["evergreen_dynamic_category"],14)
+        self.assertEqual(result["evergreen_index_unverified"],28)
+        self.assertEqual(result["evergreen_dynamic_category"],15)
         self.assertEqual(result["evergreen_fixed_production_set"],11)
         self.assertEqual(result["evergreen_historical_notice"],2)
         self.assertEqual(result["evergreen_dynamic_category"]+
