@@ -74,7 +74,7 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
 
     def test_future_season_readiness_is_not_mislabeled_complete(self):
         text = PAGE.read_text(encoding="utf-8")
-        self.assertIn('if(["lifecycle","catalogation","evidence","live"].includes(key))return null', text)
+        self.assertIn('if(["lifecycle","catalogation","evidence","live","operations"].includes(key))return null', text)
         self.assertIn('lifecycle.future_seasons_verified', text)
         self.assertIn('lifecycle.legacy_year_bound', text)
         self.assertIn("non equivale alla copertura dell'intera stagione", text)
