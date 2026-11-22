@@ -62,11 +62,27 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
     text=identify_season(html,url=url)
     # One section starts at its explicit work heading and ends at the next
     # recognized work heading. Ambiguous mixed programmes are review-only.
-    marks=sorted((m.start(),m.end(),title,composer)
-                 for title,composer in WORKS.items()
-                 for m in re.finditer(r"(?i)\b"+re.escape(title)+r"\b",text))
+    marks=sorted(
+        [(m.start(),m.end(),title,composer)
+         for title,composer in WORKS.items()
+         for m in re.finditer(r"(?i)\\b"+re.escape(title)+r"\\b",text)]
+        +[(m.start(),m.end(),None,None)
+          for heading in ("Il pipistrello","Die Fledermaus","The Telephone")
+          for m in re.finditer(r"(?i)\\b"+re.escape(heading)+r"\\b",text)]
+    )
+    # Combined Menotti/Bernstein billing is one ticketed programme.
+    composite=re.compile(
+        r"(?i)\\b(?:Il telefono|The Telephone)\\s*"
+        r"(?:/|\\+|&|e|[–-])\\s*Trouble in Tahiti\\b"
+    )
+    paired_spans=[m.span() for m in composite.finditer(text)]
     rows=[]
     for i,(start,end,title,composer) in enumerate(marks):
+        if title is None:
+            continue
+        if title in ("Il telefono","Trouble in Tahiti") and any(
+                left<=start<right for left,right in paired_spans):
+            continue
         bound=marks[i+1][0] if i+1<len(marks) else len(text)
         section=text[end:bound]
         # Do not accept composer in unrelated cast/footers; require an
@@ -92,6 +108,15 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
                 continue
             rows.append((title,composer,VENUE,stamp.isoformat(),
                          f"{int(hour):02d}:{minute}"))
+    # Separate headings on the same calendar day can also represent a
+    # single double-bill ticket. Withhold those ambiguous component rows.
+    telephone_days={r[3] for r in rows if r[0]=="Il telefono"}
+    tahiti_days={r[3] for r in rows if r[0]=="Trouble in Tahiti"}
+    paired_days=telephone_days&tahiti_days
+    if paired_days:
+        rows=[r for r in rows if not (
+            r[0] in ("Il telefono","Trouble in Tahiti")
+            and r[3] in paired_days)]
     if len(rows)!=len({(r[0],r[3],r[4]) for r in rows}):
         raise ValueError("duplicate ambiguous opera recite on official source")
     return sorted(rows,key=lambda r:(r[3],r[4],r[0]))
