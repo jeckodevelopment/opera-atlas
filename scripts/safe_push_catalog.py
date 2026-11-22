@@ -1,7 +1,9 @@
 """Safely publish a validated catalog commit despite concurrent main updates.
 
 Never force-push or replay stale catalog changes over newer source/code.
-A harmless docs-only concurrent commit may be rebased after validation.
+A concurrent commit touching no inputs/outputs may be rebased after validation.
+Canonical publication remains strict; source-health checkpoints can rebase
+across disjoint canonical data commits without replaying stale source outputs.
 A substantive concurrent update is deferred to its own/new scheduled refresh.
 """
 from __future__ import annotations
@@ -19,6 +21,31 @@ SENSITIVE_PREFIXES=(
 def source_affecting(paths:list[str])->bool:
     return any(path.startswith(SENSITIVE_PREFIXES) for path in paths)
 
+# A source-health checkpoint contains ONLY the below diagnostic artifacts.
+# Canonical productions and unrelated venue metadata can advance on main
+# without invalidating the already-verified official HTTP observations.
+# Changes to the scanner, source configuration, adapters, or diagnostic
+# outputs are NOT safe to replay and require a fresh scan.
+SOURCE_HEALTH_OUTPUTS=(
+    "data/season-index-health.json",
+    "data/season-index-candidates.json",
+    "public/catalog/season-index-candidates.json",
+    "public/catalog/source-automation.json",
+)
+SOURCE_HEALTH_INPUT_PREFIXES=(
+    "data/season-index-config.json",
+    "data/daily-source-config.json",
+    "data/venue-directory.json",
+    "scripts/",
+    "opera_atlas/",
+    ".github/workflows/refresh-source-health.yml",
+)
+
+def source_health_conflicting(paths:list[str])->bool:
+    return any(path in SOURCE_HEALTH_OUTPUTS or
+               path.startswith(SOURCE_HEALTH_INPUT_PREFIXES)
+               for path in paths)
+
 def git(repo:Path,*args:str,check:bool=True)->subprocess.CompletedProcess:
     call=subprocess.run(["git",*args],cwd=repo,encoding="utf-8",
                         text=True,capture_output=True,check=False)
@@ -26,7 +53,8 @@ def git(repo:Path,*args:str,check:bool=True)->subprocess.CompletedProcess:
         raise RuntimeError(f"git {args[0]} failed: {call.stderr.strip()}")
     return call
 
-def safe_push(repo:Path,*,verify=None,max_attempts:int=3)->str:
+def safe_push(repo:Path,*,verify=None,max_attempts:int=3,
+              conflict_checker=source_affecting)->str:
     """Return 'published' or 'deferred'; raise on nonrecoverable errors.
 
     A deferred push is *not* a publication claim. The newer main push and
@@ -56,7 +84,7 @@ def safe_push(repo:Path,*,verify=None,max_attempts:int=3)->str:
                   "diverged after concurrent changes; refresh latest main.")
             return "deferred"
         changed=git(repo,"diff","--name-only",base,upstream).stdout.splitlines()
-        if source_affecting(changed):
+        if conflict_checker(changed):
             print("::warning::Catalog push deferred: upstream source or canonical "
                   "data changed; a newer or scheduled refresh will rebuild.")
             return "deferred"
@@ -79,7 +107,12 @@ def validate_after_rebase(repo:Path):
             raise RuntimeError("rebased catalog failed canonical validation")
 
 def main():
-    result=safe_push(Path.cwd(),verify=validate_after_rebase)
+    source_health = sys.argv[1:] == ["--source-health"]
+    if sys.argv[1:] and not source_health:
+        raise SystemExit("usage: python -m scripts.safe_push_catalog [--source-health]")
+    result=safe_push(Path.cwd(),verify=validate_after_rebase,
+                     conflict_checker=(source_health_conflicting
+                                       if source_health else source_affecting))
     print(f"Catalog push result: {result}")
     output=os.environ.get("GITHUB_OUTPUT")
     if output:
