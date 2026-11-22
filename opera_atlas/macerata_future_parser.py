@@ -147,7 +147,7 @@ def parse_detail(html:str,*,url:str):
         text[:1750])
     if not credit:
         raise ValueError("first-party composer credit of Macerata opera missing")
-    composer=re.sub(r"(?i)\\s+su$","",credit[1]).strip(" .")
+    composer=re.sub(r"(?i)\s+su$","",credit[1]).strip(" .")
     if any(x in composer.casefold().split() for x in
            ("non","ignoto","sconosciuto","anonimo","vari","diversi","e","un")):
         raise ValueError("ambiguous Macerata composer credit")
