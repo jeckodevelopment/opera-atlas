@@ -4,6 +4,7 @@ The registry stays the single authority for permanent work IDs. Never
 fuzzy-match a title or infer composer from a translated title alone.
 """
 from __future__ import annotations
+import re
 import unicodedata
 
 def _key(text: str) -> str:
@@ -57,10 +58,29 @@ def canonical_title(title: str, composer: str) -> str:
     mapped = ALIASES.get((title_key, composer_key))
     return mapped if mapped is not None else title
 
+def _verified_composer_credit(credit: str, canonical: str) -> bool:
+    """Accept only exact credits or narrowly defined trailing catalogue metadata.
+
+    Do not remove arbitrary words: those may identify another composer or
+    represent an incorrectly parsed source. The canonical composer is taken
+    from the registry, never inferred from the performance title.
+    """
+    if _key(credit) == _key(canonical):
+        return True
+    prefix = canonical + " "
+    if not credit.casefold().startswith(prefix.casefold()):
+        return False
+    suffix = credit[len(prefix):].strip()
+    return bool(re.fullmatch(r"(?:Opera|Tragedia|Melodramma|\\(\\d{4}[–-]\\d{4}\\))", suffix, re.I))
+
+
 def resolve_work(registry: dict, title: str, composer: str) -> dict | None:
-    """Require exactly one work with matching composer and canonical title."""
-    target = canonical_title(title, composer)
-    matches = [record for record in registry.get("works", {}).values()
-               if _key(record["title"]) == _key(target)
-               and _key(record["composer"]) == _key(composer)]
+    """Require one canonical title + verified composer, including safe credit metadata."""
+    _key(title)
+    _key(composer)
+    matches = [
+        record for record in registry.get("works", {}).values()
+        if _verified_composer_credit(composer, record["composer"])
+        and _key(record["title"]) == _key(canonical_title(title, record["composer"]))
+    ]
     return matches[0] if len(matches) == 1 else None
