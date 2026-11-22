@@ -221,6 +221,14 @@
     "donizetti-opera-2027": {
       "strategy": "verified_rollover",
       "verification": "test_verified"
+    },
+    "jesi-opera-season-2027": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
+    },
+    "ancona-opera-season-2027": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
     }
   }
 }

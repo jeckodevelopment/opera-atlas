@@ -269,6 +269,13 @@
       "min_links": 1
     },
     {
+      "key": "jesi-opera-season-2027",
+      "official_url": "https://www.fondazionepergolesispontini.com/",
+      "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2027/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "ancona-elisir-opera-2026",
       "official_url": "https://www.fondazionemuse.org/",
       "url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
@@ -279,6 +286,13 @@
       "key": "ancona-cavalleria-program-2026",
       "official_url": "https://www.fondazionemuse.org/",
       "url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "ancona-opera-season-2027",
+      "official_url": "https://www.fondazionemuse.org/",
+      "url": "https://www.fondazionemuse.org/stagione-lirica-2027/",
       "access_status": "approved",
       "min_links": 1
     },

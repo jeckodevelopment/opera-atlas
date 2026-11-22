@@ -30,6 +30,8 @@ ROLLOVER_KEYS={
     "messina-vittorio-opera-2026-27",
     "petruzzelli-opera-2027",
     "donizetti-opera-2027",
+    "jesi-opera-season-2027",
+    "ancona-opera-season-2027",
 }
 
 def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
@@ -37,6 +39,18 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
     if key not in ROLLOVER_KEYS or source["access_status"]!="approved":
         return None
     url=urlsplit(source["url"])
+    if key in ("jesi-opera-season-2027","ancona-opera-season-2027"):
+        pattern=(r"/lirica/programma-stagione-lirica-(20\d{2})/"
+                 if key.startswith("jesi-") else r"/stagione-lirica-(20\d{2})/")
+        match=re.fullmatch(pattern,url.path)
+        if not match:return None
+        year=int(match[1])
+        if (year<2027 or year>=2099
+                or (not allow_early and today<date(year,9,1))):
+            return None
+        path=(f"/lirica/programma-stagione-lirica-{year+1}/"
+              if key.startswith("jesi-") else f"/stagione-lirica-{year+1}/")
+        return f"https://{url.hostname}{path}"
     if key=="donizetti-opera-2027":
         match=re.fullmatch(r"/it/opere-(20\d{2})/",url.path)
         if not match:return None
