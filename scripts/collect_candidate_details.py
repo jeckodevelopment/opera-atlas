@@ -516,6 +516,18 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         return [{**{k:v for k,v in x.items() if k!="clock"},
                  "starts_at":official_local_time(x["date"],x["clock"])}
                 for x in entries]
+    if (source_key=="parma-opera-2027" and url==
+            "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"):
+        from opera_atlas.parma_family_opera import parse_family_opera
+        title,composer,venue,rows=parse_family_opera(html,url=url)
+        matches=[w for w in registry.get("works",{}).values()
+                 if normalized(w["title"])==normalized(title)
+                 and normalized(w["composer"])==normalized(composer)]
+        if len(matches)!=1:return []
+        work=matches[0]
+        return [{"event_title":work["title"],"composer":work["composer"],
+                 "date":day,"starts_at":official_local_time(day,clock),
+                 "venue":venue} for day,clock in rows]
     if source_key in ("petruzzelli-opera-2026","petruzzelli-opera-2027"):
         from opera_atlas.petruzzelli_detail_parser import parse_petruzzelli_detail
         # Match the official production h1, never a different work mentioned
@@ -656,7 +668,13 @@ def parse_authoritative_new_work_detail(item:dict,html:str,
             "carlo-felice-season-2026-27","donizetti-opera-2026","donizetti-opera-2027",
             "teatro-grande-opera-2026"):
         return []
-    if item["source_key"]=="teatro-grande-opera-2026":
+    if (item["source_key"]=="parma-opera-2027" and item["official_url"]==
+            "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"):
+        from opera_atlas.parma_family_opera import parse_family_opera
+        title,composer,venue,rows=parse_family_opera(html,url=item["official_url"])
+        if normalized(title)!=normalized(info["title"]) or normalized(composer)!=normalized(info["composer"]):
+            raise ValueError("Parma family work mismatches independent authority")
+    elif item["source_key"]=="teatro-grande-opera-2026":
         from opera_atlas.brescia_detail_parser import parse_brescia_detail
         venue="Teatro Grande"
         rows=parse_brescia_detail(html,url=item["official_url"],
@@ -694,6 +712,12 @@ def parse_official_parma_work_detail(url:str,html:str)->list[dict]:
     """
     import re
     from opera_atlas.national_detail_parser import clean,parse_national_showtimes
+    from opera_atlas.parma_family_opera import URL as FAMILY_URL,parse_family_opera
+    if url==FAMILY_URL:
+        title,composer,venue,rows=parse_family_opera(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in rows]
     target=urlsplit(url)
     if (target.scheme!="https" or target.hostname!="teatroregioparma.it"
         or target.username or target.password or target.port is not None
