@@ -1,5 +1,11 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T04:27:09+00:00",
-  "outcomes": []
+  "checked_at": "2026-11-22T15:22:18+00:00",
+  "outcomes": [
+    {
+      "key": "spoleto-tls-lirica-2026",
+      "status": "kept_last_known_good",
+      "reason": "FetchUnavailable"
+    }
+  ]
 }

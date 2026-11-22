@@ -78,8 +78,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/norma-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-05e3307781f3a1f0668e",
@@ -165,7 +165,7 @@
       "id": "oa-index-0eea7155b15ee176bf83",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:17:58+00:00",
       "last_seen": "2026-11-22T15:17:58+00:00"
     },
@@ -205,9 +205,9 @@
       "id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-16181b2d47cf17dea1e4",
@@ -239,7 +239,7 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-1a02a18e39758285a976",
@@ -279,7 +279,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-1d35c5f06b99b17bd41f",
@@ -357,9 +357,9 @@
       "id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:55:01+00:00",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-212db41a4c6f7afcbcda",
@@ -415,7 +415,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-beethoven-200.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-29e61184f06223faaa86",
@@ -461,9 +461,9 @@
       "id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-35be56b50cfb2da6f65b",
@@ -495,15 +495,15 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-la-bella-addormentata.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-3b54fb1b4f9d0adac29f",
@@ -685,9 +685,9 @@
       "id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-59b4a6e5b8f0087fd73d",
@@ -919,7 +919,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-790b965de8129382aa04",
@@ -933,9 +933,9 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -958,8 +958,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
       "first_seen": "2026-11-22T02:02:21+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-7ec9d774a82a64ecaa73",
@@ -1053,7 +1053,7 @@
       "id": "oa-index-8a286806af9eac475fe7",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:17:58+00:00",
       "last_seen": "2026-11-22T15:17:58+00:00"
     },
@@ -1159,7 +1159,7 @@
       "official_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-954a1b185a0354522e71",
@@ -1199,7 +1199,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-991f446bf3f27044b019",
@@ -1230,16 +1230,16 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
       "first_seen": "2026-11-21T15:28:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -1279,7 +1279,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-a02901b14e6eae69df5c",
@@ -1469,7 +1469,7 @@
       "id": "oa-index-b7c5c52e3403bb38bcfa",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:17:58+00:00",
       "last_seen": "2026-11-22T15:17:58+00:00"
     },
@@ -1493,9 +1493,9 @@
       "id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T13:50:36.994Z",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-bc101d1d7cf587ef8441",
@@ -1743,7 +1743,7 @@
       "official_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
       "status": "needs_review",
       "first_seen": "2026-11-22T13:00:28+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-db7983de674f2fdccdda",
@@ -1790,8 +1790,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
       "first_seen": "2026-11-21T16:41:56+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-de1f52ee525c73d565a6",
@@ -1831,7 +1831,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-lago-dei-cigni.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-e01412b3c8989b4b826b",
@@ -1877,9 +1877,9 @@
       "id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "not_in_official_season",
+      "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -1903,7 +1903,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-22T15:17:58+00:00"
+      "last_seen": "2026-11-22T15:22:18+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
@@ -2118,8 +2118,8 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
       "first_seen": "2026-11-21T21:01:12+00:00",
-      "status": "already_catalogued",
-      "last_seen": "2026-11-22T04:29:21+00:00"
+      "status": "needs_review",
+      "last_seen": "2026-11-22T15:26:06+00:00"
     },
     {
       "id": "oa-index-ffbe120c526a352bc59c",

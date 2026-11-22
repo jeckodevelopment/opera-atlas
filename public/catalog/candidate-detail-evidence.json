@@ -189,7 +189,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -558,7 +558,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1068,7 +1068,7 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1353,7 +1353,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-22T15:17:37+00:00",
+      "checked_at": "2026-11-22T15:25:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1376,7 +1376,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2009,8 +2009,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "3c9603a5f8fea40064a0560b64c878278e83c6528c4740246291adf221c580c9",
-      "checked_at": "2026-11-22T15:17:40+00:00",
+      "content_sha256": "d3813511cb2e006b82b4f75d279999c7e7130e9dbef88ed0c477ef494ac28fab",
+      "checked_at": "2026-11-22T15:25:40+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2994,7 +2994,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-22T15:17:51+00:00",
+      "checked_at": "2026-11-22T15:25:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3079,7 +3079,7 @@
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4179,7 +4179,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4216,8 +4216,8 @@
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "f00f7edae2d88375808ec758d425518ba89831f17434ed73fb66bae4740bf86d",
-      "checked_at": "2026-11-22T14:14:17+00:00",
+      "content_sha256": "c666ebc2f98af7e51f3a18b3451f6371f0106c06504c5fd38a04d2e15a6070d0",
+      "checked_at": "2026-11-22T15:25:47+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -5009,7 +5009,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5831,8 +5831,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "4cc2c995fae4cf6e7ab057fdbcd55ffe30f3f6e3f5c1396f1b7e811ab1448a62",
-      "checked_at": "2026-11-22T15:17:49+00:00",
+      "content_sha256": "8a1bf43e196724013b0695ce7528627b98797afd6a84f97a0dc6fbe9ffaf5e6a",
+      "checked_at": "2026-11-22T15:25:54+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6077,7 +6077,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6335,8 +6335,8 @@
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "f00f7edae2d88375808ec758d425518ba89831f17434ed73fb66bae4740bf86d",
-      "checked_at": "2026-11-22T14:14:17+00:00",
+      "content_sha256": "c666ebc2f98af7e51f3a18b3451f6371f0106c06504c5fd38a04d2e15a6070d0",
+      "checked_at": "2026-11-22T15:25:47+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -6984,7 +6984,7 @@
       "candidate_id": "oa-index-feadef19a246de079ccb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
-      "checked_at": "2026-11-22T04:29:21+00:00",
+      "checked_at": "2026-11-22T15:26:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
