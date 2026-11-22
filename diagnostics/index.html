@@ -32,6 +32,12 @@ button,input,select{font:inherit;border:1px solid #d7d0c2;border-radius:8px;back
 <section><h2>Indici stagionali</h2><p class="muted">Link identificati nei calendari ufficiali: non equivalgono al numero di recite.</p>
 <div class="toolbar"><input id="filter" type="search" placeholder="Filtra per teatro o sorgente" aria-label="Filtra gli indici"></div>
 <div class="panel table-wrap"><table class="table"><thead><tr><th>Indice</th><th>Stato</th><th>Link</th><th>Nuove candidate</th><th>Ultima verifica</th></tr></thead><tbody id="season"><tr><td colspan="5">Caricamento…</td></tr></tbody></table></div></section>
+<section aria-labelledby="lifecycle-title"><h2 id="lifecycle-title">Stagioni successive · copertura dei connettori</h2>
+<p class="muted">Capacità tecnica e verifica effettiva della prossima stagione sono distinte. Un indice senza anno nell'URL non garantisce che il prossimo cartellone sia disponibile; i link non equivalgono a recite pubblicate.</p>
+<section class="grid" id="season-lifecycle-metrics" aria-label="Metriche stagioni successive"><div class="tile">Dati stagionali non ancora disponibili</div></section>
+<div class="toolbar"><input id="lifecycle-filter" type="search" placeholder="Cerca indice o teatro" aria-label="Cerca indice pluriennale"><select id="lifecycle-strategy" aria-label="Filtra capacità pluriennale"><option value="">Tutte le strategie</option><option value="legacy_year_bound">Da migrare</option><option value="evergreen_index">Indice senza anno, da verificare</option><option value="verified_rollover">Rollover implementato</option></select></div>
+<div class="panel table-wrap"><table class="table"><thead><tr><th>Indice</th><th>Strategia</th><th>Scansione corrente</th><th>Prossima stagione</th><th>Link futuri</th><th>Ultima verifica</th></tr></thead><tbody id="lifecycle-rows"><tr><td colspan="6">Dati non ancora disponibili</td></tr></tbody></table></div>
+<p class="muted" id="lifecycle-updated">Ultimo aggiornamento delle fonti stagionali: —</p></section>
 <section><h2>Elaborazione delle candidate</h2><div id="candidate" class="panel">Caricamento…</div></section>
 <section aria-labelledby="identity-title"><h2 id="identity-title">Titoli delle opere da riconciliare</h2>
 <p class="muted">Segnalazioni da evidenze ufficiali: possibili alias, opere nuove e compositori da verificare. Nessuna modifica automatica al catalogo.</p>
@@ -43,7 +49,7 @@ button,input,select{font:inherit;border:1px solid #d7d0c2;border-radius:8px;back
 </main><script>
 "use strict";
 const BASE="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/";
-const urls={coverage:"public/catalog/coverage.json",season:"data/season-index-health.json",candidate:"data/candidate-detail-health.json",recite:"public/catalog/recite-coverage.json",automation:"public/catalog/source-automation.json"};
+const urls={coverage:"public/catalog/coverage.json",season:"data/season-index-health.json",candidate:"data/candidate-detail-health.json",recite:"public/catalog/recite-coverage.json",automation:"public/catalog/source-automation.json",lifecycle:"public/catalog/season-lifecycle.json"};
 const identityUrl="public/catalog/work-identity-review.json";
 const $=id=>document.getElementById(id);
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n};
@@ -95,6 +101,22 @@ function draw(data){
  replace($("primary"),primary.map(row=>{const tr=el("tr");td(tr,row.name);let cell=el("td");cell.append(status(label[row.monitoring]||row.monitoring,row.monitoring==="calendar_index_verified"||row.monitoring==="detail_pages_verified"?true:null));tr.append(cell);
  td(tr,row.verified_stagings);td(tr,row.verified_recite);td(tr,row.verified_detail_pages);
  const results=Object.values(row.last_scan_outcomes||{});td(tr,results.length?results.filter(v=>v==="success").length+" / "+results.length:"—");return tr}));
+ const lifecycle=data.lifecycle;
+ if(lifecycle&&Array.isArray(lifecycle.sources)){
+   const counts=[["Rollover implementato",lifecycle.verified_rollover??0],["Indici senza anno da verificare",lifecycle.evergreen_index_unverified??0],["Da migrare",lifecycle.legacy_year_bound??0],["Prossima stagione verificata",lifecycle.future_seasons_verified??0]];
+   replace($("season-lifecycle-metrics"),counts.map(([title,value])=>{const card=el("div",undefined,"tile");card.append(el("strong",value),el("small",title));return card}));
+   const strategyFilter=$("lifecycle-strategy").value,queryLifecycle=$("lifecycle-filter").value.trim().toLowerCase();
+   const strategyLabels={verified_rollover:"Rollover implementato",evergreen_index:"Indice senza anno",legacy_year_bound:"Da migrare"};
+   const nextLabels={verified:"Verificata",unavailable_or_invalid:"Non disponibile / non valida",not_checked:"Non verificata"};
+   const items=lifecycle.sources.filter(x=>(!strategyFilter||x.strategy===strategyFilter)&&(!queryLifecycle||String(x.source_key||"").toLowerCase().includes(queryLifecycle))).sort((a,b)=>{const rank={legacy_year_bound:0,evergreen_index:1,verified_rollover:2};return (rank[a.strategy]??3)-(rank[b.strategy]??3)||String(a.source_key).localeCompare(String(b.source_key),"it")});
+   replace($("lifecycle-rows"),items.map(x=>{const tr=el("tr");const source=el("td");source.append(el("strong",x.source_key||"—"));if(x.index_url){const a=el("a","Apri indice ufficiale");a.href=x.index_url;a.rel="noopener noreferrer";a.target="_blank";source.append(el("div")).lastChild.append(a)}tr.append(source);const strategyCell=el("td");strategyCell.append(status(strategyLabels[x.strategy]||"Non classificato",x.strategy==="verified_rollover"?true:x.strategy==="legacy_year_bound"?false:null));tr.append(strategyCell);td(tr,label[x.current_scan_status]||x.current_scan_status||"Non verificata");const next=el("td");next.append(status(nextLabels[x.next_season_status]||"Non verificata",x.next_season_status==="verified"?true:null));if(x.next_season_url){const link=el("a","Indice successivo");link.href=x.next_season_url;link.target="_blank";link.rel="noopener noreferrer";next.append(el("div")).lastChild.append(link)}tr.append(next);td(tr,x.next_season_status==="verified"?(x.next_season_links??0):"—");td(tr,stamp(x.last_attempt_at));return tr}));
+   if(!items.length){const tr=el("tr"),cell=el("td","Nessun indice corrisponde ai filtri.");cell.colSpan=6;tr.append(cell);$("lifecycle-rows").append(tr)}
+   $("lifecycle-updated").textContent="Ultimo aggiornamento delle fonti stagionali: "+stamp(lifecycle.checked_at);
+ }else{
+   replace($("season-lifecycle-metrics"),[el("div","Feed stagionale non ancora pubblicato: verrà generato dal workflow delle fonti.","tile")]);
+   const tr=el("tr"),cell=el("td","Feed delle stagioni non ancora disponibile.");cell.colSpan=6;tr.append(cell);replace($("lifecycle-rows"),[tr]);
+   $("lifecycle-updated").textContent="Stato stagioni successive non disponibile.";
+ }
  const query=$("filter").value.trim().toLowerCase();
  replace($("season"),indexes.filter(row=>row.key.toLowerCase().includes(query)).map(row=>{const tr=el("tr");td(tr,row.key);const cell=el("td");cell.append(status(label[row.status]||row.status,row.status==="success"));tr.append(cell);td(tr,row.links);td(tr,row.new_review_candidates);td(tr,stamp(row.last_attempt_at));return tr}));
  if(!$("season").children.length){const tr=el("tr");const cell=el("td","Nessun indice corrispondente");cell.colSpan=5;tr.append(cell);$("season").append(tr)}
@@ -119,6 +141,6 @@ function draw(data){
   $("updated").textContent="Ultima scansione indici: "+stamp(season.checked_at)+" · dettagli: "+stamp(candidate.checked_at)+" · fonti: "+stamp(coverage.last_scan_at);
  $("light").className="dot ok";$("message").textContent="Dati letti da GitHub · aggiornamento su richiesta";
 }
-async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const values=await Promise.all(Object.values(urls).map(fetchJson));latest=Object.fromEntries(Object.keys(urls).map((key,i)=>[key,values[i]]));latest.identity=await fetchJson(identityUrl).catch(()=>null);draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("recite"),[]);replace($("venue-overview"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
-$("reload").addEventListener("click",refresh);$("filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-status").addEventListener("change",()=>{if(latest)draw(latest)});$("identity-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("identity-category").addEventListener("change",()=>{if(latest)draw(latest)});refresh();
+async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const mainUrls=Object.entries(urls).filter(([key])=>key!=="lifecycle");const values=await Promise.all(mainUrls.map(([,path])=>fetchJson(path)));latest=Object.fromEntries(mainUrls.map(([key],i)=>[key,values[i]]));latest.lifecycle=await fetchJson(urls.lifecycle).catch(()=>null);latest.identity=await fetchJson(identityUrl).catch(()=>null);draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("recite"),[]);replace($("venue-overview"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
+$("reload").addEventListener("click",refresh);$("filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-status").addEventListener("change",()=>{if(latest)draw(latest)});$("identity-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("identity-category").addEventListener("change",()=>{if(latest)draw(latest)});$("lifecycle-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("lifecycle-strategy").addEventListener("change",()=>{if(latest)draw(latest)});refresh();
 </script></body></html>
