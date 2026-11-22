@@ -126,6 +126,25 @@ def load_archival_art(known_slugs:set[str])->dict:
         }
     return result
 
+def exact_first_party_body_work_image(html:str,official_url:str,work_title:str)->str|None:
+    """One work-named image in the actual event header, never menus or footer."""
+    h=re.search(r"(?is)<h1\b[^>]*>.*?</h1>",html)
+    if not h:return None
+    end=re.search(r"(?is)<h[2-6]\b[^>]*>\s*informazioni\s+sull.evento",
+                  html[h.end():])
+    if not end:return None
+    fragment=html[h.end():h.end()+end.start()]
+    images=re.findall(r"""(?is)<img\b[^>]*\bsrc\s*=\s*['"]([^'"]+)['"]""",
+                      fragment)
+    matches=set()
+    for raw in images:
+        candidate=allowed_image_url(raw,official_url)
+        if (candidate and urlsplit(candidate).hostname==urlsplit(official_url).hostname
+            and image_matches_work(candidate,work_title)):
+            matches.add(candidate)
+    return next(iter(matches)) if len(matches)==1 else None
+
+
 def extract_official_poster(html:str,official_url:str,work_title:str,*,
                             verified_event_page:bool=False)->dict|None:
     parser=ImageMeta()
@@ -153,6 +172,8 @@ def extract_official_poster(html:str,official_url:str,work_title:str,*,
     url=next((candidate for raw in candidates if
               (candidate:=allowed_image_url(raw,official_url)) and
               (image_matches_work(candidate,work_title) or verified_alt)),None)
+    if not url:
+        url=exact_first_party_body_work_image(html,official_url,work_title)
     if not url:return None
     if any(word in alt.casefold() for word in ("logo","favicon","placeholder")):
         return None
