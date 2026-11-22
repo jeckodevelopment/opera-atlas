@@ -656,12 +656,12 @@
     "Reggio Emilia|Teatro Ariosto": {
       "city": "Reggio Emilia",
       "name": "Teatro Ariosto",
-      "address": "Viale Antonio Allegri 1",
-      "description": "Teatro ottocentesco nel centro di Reggio Emilia, parte del sistema della Fondazione I Teatri.",
-      "website": "https://www.iteatri.re.it/",
+      "address": "Corso Cairoli 1",
+      "description": "Nel centro di Reggio Emilia, il Teatro Ariosto affianca il Valli con prosa, danza e teatro musicale, in un edificio storico restaurato.",
+      "website": "https://www.iteatri.re.it/scoprire-il-teatro-ariosto/",
       "opening_year": 1878,
-      "history": "Inaugurato nel 1878 con il nome di Teatro di Cittadella, il teatro fu poi dedicato a Ludovico Ariosto. Accoglie stagioni di prosa, musica e progetti culturali del sistema cittadino dei teatri.",
-      "source": "https://www.comune.reggioemilia.it/vivere-reggio-emilia/luoghi/luoghi-della-cultura/teatro-ariosto"
+      "history": "Il Politeama Ariosto fu inaugurato l’11 maggio 1878 con l’operetta Giroflè-Giroflà di Charles Lecocq, dopo la ricostruzione nell’area del precedente Teatro di Cittadella. Nel 1927 venne dotato del golfo mistico e decorato da Anselmo Govi; un nuovo restauro nel 1981 lo riportò a piena attività. Accoglie oggi prosa, danza e anche produzioni musicali.",
+      "source": "https://www.iteatri.re.it/scoprire-il-teatro-ariosto/"
     }
   }
 }
