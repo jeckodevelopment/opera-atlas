@@ -56,13 +56,21 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # Only ticket rows carry full years. Month/day headings are insufficient.
     # Global navigation contains a 'Biglietti' link too; never scan it.
     # Bound to the actual production heading and its local ticket rows.
-    section=re.search(
-        r"<h[2-4][^>]*>\s*Biglietti\s*</h[2-4]>(.*?)"
-        r"<h[2-4][^>]*>\s*Riduzioni\s*</h[2-4]>",
-        html,re.I|re.S)
+    # Page headings may contain formatting spans, so compare the actual
+    # rendered heading text, not the raw HTML between <h2> tags.
+    # Still strictly bound to the local Biglietti -> Riduzioni section:
+    # dates from recommendations, biography, or global menus are excluded.
+    headings=list(re.finditer(r"<h([2-4])\\b[^>]*>.*?</h\\1\\s*>",html,re.I|re.S))
+    labels=[clean(m.group(0)).strip().casefold() for m in headings]
+    opening=[i for i,label in enumerate(labels) if label=="biglietti"]
+    closing=[i for i,label in enumerate(labels) if label=="riduzioni"]
+    section=None
+    if len(opening)==1 and len(closing)==1 and opening[0]<closing[0]:
+        start,stop=headings[opening[0]].end(),headings[closing[0]].start()
+        section=html[start:stop]
     if not section:
         raise ValueError("missing bounded ticket calendar")
-    text=clean(section.group(1))
+    text=clean(section)
     rx=re.compile(r"\b(\d{2})/(\d{2})/(20\d{2})\s*\|\s*([01]\d|2[0-3]):([0-5]\d)\s*\|\s*([^|]+?)\s*\|",re.I)
     found={}
     matches=list(rx.finditer(text))
