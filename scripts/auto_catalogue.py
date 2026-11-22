@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "cosenza-inprimafila-rolling-opera":("Cosenza","Teatro Alfonso Rendano"),
     "taormina-arte-rolling-opera": ("Taormina","Teatro Antico di Taormina"),
     "taormina-opera-festival-rolling": ("Taormina","Teatro Antico di Taormina"),
     "taormina-fondazione-rolling-opera": ("Taormina","Teatro Antico di Taormina"),
