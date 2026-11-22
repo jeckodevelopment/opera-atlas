@@ -1134,8 +1134,12 @@
       "description": "Teatro storico di Mantova con programmazione di opera lirica, musica, prosa e spettacoli dal vivo.",
       "monitoring_status": "anagrafica_censita",
       "address": "Piazza Felice Cavallotti 14",
-      "history": "Il Teatro Sociale di Mantova è una sala storica cittadina che ospita anche rappresentazioni liriche. La programmazione comprende inoltre prosa, concerti e altre forme di spettacolo.",
-      "calendar_status": "not_acquired"
+      "history": "Realizzato tra il 1818 e il 1822 su iniziativa di una società di cittadini, il Teatro Sociale di Mantova conserva la facciata neoclassica con pronao a colonne. Ospita una programmazione di opera lirica, musica, prosa e altri spettacoli dal vivo.",
+      "calendar_status": "not_acquired",
+      "photo_file": "Facciata restaurata del Teatro Sociale di Mantova.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Facciata_restaurata_del_Teatro_Sociale_di_Mantova.jpg",
+      "photo_credit": "Giovanni Salis — Wikimedia Commons, CC BY 3.0",
+      "photo_license": "CC BY 3.0"
     }
   ],
   "related_organizations": [
