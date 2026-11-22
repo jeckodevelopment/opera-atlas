@@ -226,7 +226,8 @@ class PosterPublicationTests(unittest.TestCase):
 
     def test_homonymous_operas_get_distinct_permanent_poster_identities(self):
         from scripts.publish_catalog_v2 import REGISTRY
-        works=list(json.loads(REGISTRY.read_text(encoding="utf-8"))["works"].values())
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        works=list(registry["works"].values())+list(registry.get("reserved_works",{}).values())
         duplicates=[w for w in works if w["slug"]=="la-boheme"]
         self.assertEqual(len(duplicates),2)
         self.assertNotEqual(duplicates[0]["id"],duplicates[1]["id"])
