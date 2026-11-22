@@ -424,6 +424,10 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/eventi/[a-z0-9-]+",path))
     if key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027"):
         return bool(re.fullmatch(r"/evento/opera/[a-z0-9-]+-20\d{2}",path))
+    if key in ("jesi-opera-season-2027","ancona-opera-season-2027"):
+        from opera_atlas.marche_future_parser import SOURCES
+        host,venue,pattern,tag=SOURCES[key]
+        return parsed.scheme=="https" and parsed.hostname==host and bool(re.fullmatch(pattern,parsed.path))
     if key.startswith("jesi-") and key.endswith("-opera-2026"):
         return path=="/lirica/programma-stagione-lirica-2026"
     if key.startswith("ancona-") and key.endswith("-2026"):
@@ -521,6 +525,10 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key in ("jesi-opera-season-2027","ancona-opera-season-2027"):
+        from opera_atlas.marche_future_parser import verify_index
+        verify_index(html,url=index_url,source_key=key)
+        return [index_url]
     if key=="donizetti-opera-2027":
         return _donizetti_future_links(index_url,html,min_links)
     if key=="messina-vittorio-opera-2026-27" and "/opera-26-27/" not in index_url:
@@ -660,6 +668,8 @@ def validate_config(config:dict)->list[dict]:
         "giglio-lucca-opera-2026-27":("www.teatrodelgigliogiacomopuccini.it","/it/cartellone/lirica/stagione-2026-2027/"),
         "piacenza-opera-2026-27":("teatripiacenza.it","/stagioni/stagione-26-27/"),
         "jesi-trittico-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
+        "jesi-opera-season-2027":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2027/"),
+        "ancona-opera-season-2027":("www.fondazionemuse.org","/stagione-lirica-2027/"),
         "jesi-don-pasquale-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
         "jesi-esecuzione-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
         "jesi-nabucco-opera-2026":("www.fondazionepergolesispontini.com","/lirica/programma-stagione-lirica-2026/"),
@@ -699,6 +709,11 @@ def validate_config(config:dict)->list[dict]:
                 valid_season=bool(season and
                     (int(season[1])+1)%100==int(season[2]) and
                     2026<=int(season[1])<=2098)
+        elif key in ("jesi-opera-season-2027","ancona-opera-season-2027"):
+            pattern=(r"/lirica/programma-stagione-lirica-(20\d{2})/"
+                     if key.startswith("jesi-") else r"/stagione-lirica-(20\d{2})/")
+            season=re.fullmatch(pattern,index.path)
+            valid_season=bool(season and 2027<=int(season[1])<=2099)
         elif key=="donizetti-opera-2027":
             season=re.fullmatch(r"/it/opere-(20\d{2})/",index.path)
             valid_season=bool(season and 2027<=int(season[1])<=2099)
