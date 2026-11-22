@@ -197,7 +197,7 @@ function render(){
    ?"Prossime stagioni: "+(lifecycle.future_seasons_verified??"—")+" verificate · "
    +(lifecycle.legacy_still_uncovered??"—")+" indici ancora senza successore · "
    +(lifecycle.legacy_covered_by_successor??"—")+" indici storici già coperti da un successore implementato · "
-   +(lifecycle.legacy_year_bound??"—")+" indici legacy totali · "+(lifecycle.evergreen_dynamic_category??"—")+" categorie senza anno estensibili · "+(lifecycle.evergreen_fixed_covered??"—")+" vecchi indici a titoli fissi già coperti · "+(lifecycle.evergreen_fixed_uncovered??"—")+" ancora da migrare · "+(lifecycle.evergreen_historical_notice??"—")+" documenti storici · verifica "+fmt(lifecycle.checked_at)
+   +(lifecycle.legacy_year_bound??"—")+" indici legacy totali · "+(lifecycle.evergreen_dynamic_category??"—")+" categorie senza anno estensibili · "+(lifecycle.evergreen_fixed_production_set??"—")+" vecchi indici a titoli fissi totali · "+(lifecycle.evergreen_fixed_covered??"—")+" già coperti · "+(lifecycle.evergreen_fixed_uncovered??"—")+" ancora da migrare · "+(lifecycle.evergreen_historical_notice??"—")+" documenti storici · verifica "+fmt(lifecycle.checked_at)
    :"Dati sulla copertura delle stagioni successive non disponibili.";
  const attempts=items.flatMap(x=>x.sources||[]).map(x=>dateMs(x.last_attempt_at)).filter(x=>x!==null),latest=attempts.length?Math.max(...attempts):null;
  const badge=$("freshness");badge.className="status "+(latest===null?"unknown":Date.now()-latest>48*3600000?"bad":"ok");
