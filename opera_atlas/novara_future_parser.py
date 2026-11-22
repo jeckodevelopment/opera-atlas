@@ -117,8 +117,18 @@ def parse_detail(html:str,*,url:str):
     # silently reduce L'amor mio / Il tabarro to one canonical opera.
     if "/" in title:
         raise ValueError("Novara multi-work programme requires component reconciliation")
-    beginning=text.find(title)
-    credit_section=text[beginning:beginning+950]
+    # A page may contain a long navigation menu or duplicate work titles in
+    # breadcrumbs. Read credits from the actual H1 to the event-information
+    # section, never from the first occurrence of the title in site chrome.
+    # The HTML slice is source-local; a composer in related links/footer is
+    # not accepted as first-party attribution.
+    after_heading=html[heading.end():]
+    section_end=re.search(r"(?i)informazioni\s+sull.evento",after_heading)
+    if not section_end:
+        raise ValueError("official Novara event information section missing")
+    credit_section=clean(after_heading[:section_end.start()])
+    if not 0<len(credit_section)<=10000:
+        raise ValueError("Novara first-party production credit section malformed")
     # Read the complete first-party composer line, stopping at a new
     # production credit instead of silently keeping only the first author.
     credit=re.search(
@@ -126,7 +136,7 @@ def parse_detail(html:str,*,url:str):
         r"(?=Libretto\b|Trascrizione\b|Drammaturgia\b|Cast\b|"
         r"Prima\s+rappresentazione\b|Direttore\b|Regia\b|"
         r"Scene\b|Produzione\b)",credit_section)
-    if not credit:
+    if not credit or credit.start()>600:
         raise ValueError("explicit official Novara opera composer is missing")
     composer=re.sub(r"\s*\([^)]*Accademia\s+AMO[^)]*\)\s*$","",
                     credit.group(1),flags=re.I).strip(" .")
