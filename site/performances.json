@@ -5212,6 +5212,24 @@
       ]
     },
     {
+      "id": "curated:auto-f3ceb991bb50eebf:2027-01-17",
+      "starts_at": "2027-01-17T17:00:00+01:00",
+      "local_date": "2027-01-17",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+      ]
+    },
+    {
       "id": "curated:auto-697328f32e7cfa32:2027-01-17",
       "starts_at": "2027-01-17T19:00:00+01:00",
       "local_date": "2027-01-17",
@@ -5245,6 +5263,24 @@
       "longitude": null,
       "sources": [
         "https://www.operaroma.it/spettacoli/andrea-chenier-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-f3ceb991bb50eebf:2027-01-19",
+      "starts_at": "2027-01-19T20:00:00+01:00",
+      "local_date": "2027-01-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
       ]
     },
     {
@@ -5320,6 +5356,24 @@
       ]
     },
     {
+      "id": "curated:auto-f3ceb991bb50eebf:2027-01-20",
+      "starts_at": "2027-01-20T20:00:00+01:00",
+      "local_date": "2027-01-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+      ]
+    },
+    {
       "id": "curated:auto-8bc8b40e1da92efa:2027-01-21",
       "starts_at": "2027-01-21T11:00:00+01:00",
       "local_date": "2027-01-21",
@@ -5335,6 +5389,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-f3ceb991bb50eebf:2027-01-21",
+      "starts_at": "2027-01-21T19:00:00+01:00",
+      "local_date": "2027-01-21",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
       ]
     },
     {
@@ -5425,6 +5497,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-f3ceb991bb50eebf:2027-01-22",
+      "starts_at": "2027-01-22T18:00:00+01:00",
+      "local_date": "2027-01-22",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
       ]
     },
     {
@@ -5662,6 +5752,24 @@
       ]
     },
     {
+      "id": "curated:auto-f3ceb991bb50eebf:2027-01-23",
+      "starts_at": "2027-01-23T20:00:00+01:00",
+      "local_date": "2027-01-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+      ]
+    },
+    {
       "id": "curated:lombardia-cavalleria-cremona:2027-01-24",
       "starts_at": null,
       "local_date": "2027-01-24",
@@ -5875,6 +5983,24 @@
       "longitude": null,
       "sources": [
         "https://www.liricocagliari.it/evento/don-carlos/"
+      ]
+    },
+    {
+      "id": "curated:auto-f3ceb991bb50eebf:2027-01-24",
+      "starts_at": "2027-01-24T17:00:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
       ]
     },
     {
@@ -6886,6 +7012,24 @@
       ]
     },
     {
+      "id": "curated:auto-38153086f06a94fc:2027-02-10",
+      "starts_at": "2027-02-10T20:00:00+01:00",
+      "local_date": "2027-02-10",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+      ]
+    },
+    {
       "id": "curated:massimo-macbeth-2027:2027-02-11",
       "starts_at": "2027-02-11T19:00:00+01:00",
       "local_date": "2027-02-11",
@@ -6901,6 +7045,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/macbeth/"
+      ]
+    },
+    {
+      "id": "curated:auto-38153086f06a94fc:2027-02-11",
+      "starts_at": "2027-02-11T20:00:00+01:00",
+      "local_date": "2027-02-11",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
       ]
     },
     {
@@ -6937,6 +7099,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-38153086f06a94fc:2027-02-12",
+      "starts_at": "2027-02-12T18:00:00+01:00",
+      "local_date": "2027-02-12",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
       ]
     },
     {
@@ -7009,6 +7189,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
+      ]
+    },
+    {
+      "id": "curated:auto-38153086f06a94fc:2027-02-13",
+      "starts_at": "2027-02-13T19:00:00+01:00",
+      "local_date": "2027-02-13",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
       ]
     },
     {
@@ -7120,6 +7318,24 @@
       ]
     },
     {
+      "id": "curated:auto-38153086f06a94fc:2027-02-14",
+      "starts_at": "2027-02-14T17:00:00+01:00",
+      "local_date": "2027-02-14",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+      ]
+    },
+    {
       "id": "curated:auto-6ad3d8aa3ac55b14:2027-02-14",
       "starts_at": "2027-02-14T20:30:00+01:00",
       "local_date": "2027-02-14",
@@ -7156,6 +7372,24 @@
       ]
     },
     {
+      "id": "curated:auto-38153086f06a94fc:2027-02-16",
+      "starts_at": "2027-02-16T20:00:00+01:00",
+      "local_date": "2027-02-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+      ]
+    },
+    {
       "id": "curated:scala-boheme-puccini-2027:2027-02-16",
       "starts_at": "2027-02-16T20:00:00+01:00",
       "local_date": "2027-02-16",
@@ -7171,6 +7405,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html"
+      ]
+    },
+    {
+      "id": "curated:auto-38153086f06a94fc:2027-02-17",
+      "starts_at": "2027-02-17T20:00:00+01:00",
+      "local_date": "2027-02-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
       ]
     },
     {
@@ -7225,6 +7477,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/carmen-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-38153086f06a94fc:2027-02-18",
+      "starts_at": "2027-02-18T18:00:00+01:00",
+      "local_date": "2027-02-18",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/aida-27/"
       ]
     },
     {
@@ -8578,6 +8848,24 @@
       ]
     },
     {
+      "id": "curated:auto-d19dcb9c4ac67cb7:2027-03-10",
+      "starts_at": "2027-03-10T20:00:00+01:00",
+      "local_date": "2027-03-10",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+      ]
+    },
+    {
       "id": "curated:massimo-lucia-lammermoor-2027:2027-03-11",
       "starts_at": "2027-03-11T18:30:00+01:00",
       "local_date": "2027-03-11",
@@ -8611,6 +8899,24 @@
       "longitude": null,
       "sources": [
         "https://www.liricocagliari.it/evento/alcina/"
+      ]
+    },
+    {
+      "id": "curated:auto-d19dcb9c4ac67cb7:2027-03-11",
+      "starts_at": "2027-03-11T20:00:00+01:00",
+      "local_date": "2027-03-11",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
       ]
     },
     {
@@ -8722,6 +9028,24 @@
       ]
     },
     {
+      "id": "curated:auto-d19dcb9c4ac67cb7:2027-03-12",
+      "starts_at": "2027-03-12T20:00:00+01:00",
+      "local_date": "2027-03-12",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+      ]
+    },
+    {
       "id": "curated:auto-97659efd986a9744:2027-03-12",
       "starts_at": "2027-03-12T20:30:00+01:00",
       "local_date": "2027-03-12",
@@ -8809,6 +9133,24 @@
       "longitude": null,
       "sources": [
         "https://www.liricocagliari.it/evento/alcina/"
+      ]
+    },
+    {
+      "id": "curated:auto-d19dcb9c4ac67cb7:2027-03-13",
+      "starts_at": "2027-03-13T19:00:00+01:00",
+      "local_date": "2027-03-13",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
       ]
     },
     {
@@ -8992,6 +9334,24 @@
       ]
     },
     {
+      "id": "curated:auto-d19dcb9c4ac67cb7:2027-03-14",
+      "starts_at": "2027-03-14T17:00:00+01:00",
+      "local_date": "2027-03-14",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+      ]
+    },
+    {
       "id": "curated:auto-ef3fc228eb643db3:2027-03-14",
       "starts_at": "2027-03-14T18:00:00+01:00",
       "local_date": "2027-03-14",
@@ -9007,6 +9367,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-d19dcb9c4ac67cb7:2027-03-16",
+      "starts_at": "2027-03-16T19:00:00+01:00",
+      "local_date": "2027-03-16",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
       ]
     },
     {
@@ -9061,6 +9439,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-d19dcb9c4ac67cb7:2027-03-17",
+      "starts_at": "2027-03-17T18:00:00+01:00",
+      "local_date": "2027-03-17",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "municipality": "Napoli",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
       ]
     },
     {

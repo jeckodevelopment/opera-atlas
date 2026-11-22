@@ -1141,6 +1141,14 @@
       "name": "Teatro Gioachino Rossini",
       "city": "Pesaro",
       "region": "Marche"
+    },
+    "Napoli|Teatro di San Carlo": {
+      "id": "oa-v-000060",
+      "slug": "teatro-di-san-carlo",
+      "city_slug": "napoli",
+      "name": "Teatro di San Carlo",
+      "city": "Napoli",
+      "region": "Campania"
     }
   },
   "stagings": {
@@ -2369,7 +2377,12 @@
       "venue_id": "oa-v-000032",
       "slug": "elisir-d-amore",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "season": "2027"
+      "season": "2027",
+      "supporting_source_urls": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+        "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
+        "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/"
+      ]
     },
     "auto-1b9c2f52afd0351d": {
       "id": "oa-s-000160",
@@ -2441,7 +2454,12 @@
       "venue_id": "oa-v-000032",
       "slug": "otello",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "season": "2027"
+      "season": "2027",
+      "supporting_source_urls": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+        "https://www.goldoniteatro.it/spettacoli/otello-3/",
+        "https://www.goldoniteatro.it/spettacoli/otello-4/"
+      ]
     },
     "auto-edf6ac484882834f": {
       "id": "oa-s-000169",
@@ -2593,7 +2611,12 @@
       "venue_id": "oa-v-000032",
       "slug": "dido-and-aeneas",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "season": "2026"
+      "season": "2026",
+      "supporting_source_urls": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+        "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
+        "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/"
+      ]
     },
     "auto-7d80a6e641ec5903": {
       "id": "oa-s-000188",
@@ -2945,7 +2968,11 @@
       "venue_id": "oa-v-000051",
       "slug": "cavalleria-rusticana",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
-      "season": "2026"
+      "season": "2026",
+      "supporting_source_urls": [
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/"
+      ]
     },
     "auto-86855eb33828e6cd": {
       "id": "oa-s-000233",
@@ -3042,7 +3069,11 @@
       "venue_id": "oa-v-000055",
       "slug": "cronaca-di-un-amore-callas-e-pasolini",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
-      "season": "2027"
+      "season": "2027",
+      "supporting_source_urls": [
+        "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+        "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2"
+      ]
     },
     "auto-19141fd504da6792": {
       "id": "oa-s-000251",
@@ -3083,6 +3114,30 @@
       "slug": "piccolo-orso-e-la-montagna-di-ghiaccio",
       "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "season": "2026"
+    },
+    "auto-38153086f06a94fc": {
+      "id": "oa-s-000256",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000060",
+      "slug": "aida",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/",
+      "season": "2027"
+    },
+    "auto-d19dcb9c4ac67cb7": {
+      "id": "oa-s-000257",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000060",
+      "slug": "pagliacci",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/",
+      "season": "2027"
+    },
+    "auto-f3ceb991bb50eebf": {
+      "id": "oa-s-000258",
+      "work_id": "oa-w-000019",
+      "venue_id": "oa-v-000060",
+      "slug": "madama-butterfly",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -8870,6 +8925,138 @@
       "staging_id": "oa-s-000255",
       "original_date": "2026-12-05",
       "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+    },
+    "auto-38153086f06a94fc|2027-02-10": {
+      "id": "oa-r-000992",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-10",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-38153086f06a94fc|2027-02-11": {
+      "id": "oa-r-000993",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-11",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-38153086f06a94fc|2027-02-12": {
+      "id": "oa-r-000994",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-12",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-38153086f06a94fc|2027-02-13": {
+      "id": "oa-r-000995",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-13",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-38153086f06a94fc|2027-02-14": {
+      "id": "oa-r-000996",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-14",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-38153086f06a94fc|2027-02-16": {
+      "id": "oa-r-000997",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-16",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-38153086f06a94fc|2027-02-17": {
+      "id": "oa-r-000998",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-17",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-38153086f06a94fc|2027-02-18": {
+      "id": "oa-r-000999",
+      "staging_id": "oa-s-000256",
+      "original_date": "2027-02-18",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    "auto-d19dcb9c4ac67cb7|2027-03-10": {
+      "id": "oa-r-001000",
+      "staging_id": "oa-s-000257",
+      "original_date": "2027-03-10",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    "auto-d19dcb9c4ac67cb7|2027-03-11": {
+      "id": "oa-r-001001",
+      "staging_id": "oa-s-000257",
+      "original_date": "2027-03-11",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    "auto-d19dcb9c4ac67cb7|2027-03-12": {
+      "id": "oa-r-001002",
+      "staging_id": "oa-s-000257",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    "auto-d19dcb9c4ac67cb7|2027-03-13": {
+      "id": "oa-r-001003",
+      "staging_id": "oa-s-000257",
+      "original_date": "2027-03-13",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    "auto-d19dcb9c4ac67cb7|2027-03-14": {
+      "id": "oa-r-001004",
+      "staging_id": "oa-s-000257",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    "auto-d19dcb9c4ac67cb7|2027-03-16": {
+      "id": "oa-r-001005",
+      "staging_id": "oa-s-000257",
+      "original_date": "2027-03-16",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    "auto-d19dcb9c4ac67cb7|2027-03-17": {
+      "id": "oa-r-001006",
+      "staging_id": "oa-s-000257",
+      "original_date": "2027-03-17",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    "auto-f3ceb991bb50eebf|2027-01-17": {
+      "id": "oa-r-001007",
+      "staging_id": "oa-s-000258",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    "auto-f3ceb991bb50eebf|2027-01-19": {
+      "id": "oa-r-001008",
+      "staging_id": "oa-s-000258",
+      "original_date": "2027-01-19",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    "auto-f3ceb991bb50eebf|2027-01-20": {
+      "id": "oa-r-001009",
+      "staging_id": "oa-s-000258",
+      "original_date": "2027-01-20",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    "auto-f3ceb991bb50eebf|2027-01-21": {
+      "id": "oa-r-001010",
+      "staging_id": "oa-s-000258",
+      "original_date": "2027-01-21",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    "auto-f3ceb991bb50eebf|2027-01-22": {
+      "id": "oa-r-001011",
+      "staging_id": "oa-s-000258",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    "auto-f3ceb991bb50eebf|2027-01-23": {
+      "id": "oa-r-001012",
+      "staging_id": "oa-s-000258",
+      "original_date": "2027-01-23",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    "auto-f3ceb991bb50eebf|2027-01-24": {
+      "id": "oa-r-001013",
+      "staging_id": "oa-s-000258",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
     }
   },
   "reserved_works": {
