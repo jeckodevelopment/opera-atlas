@@ -53,9 +53,11 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
         raise ValueError("invalid evergreen source audit")
     scopes={"dynamic_category","fixed_production_set","historical_notice"}
     audited={}
+    fixed_successors={}
     for record in evergreen_audit["sources"]:
         if (not isinstance(record,dict) or
-                set(record)!={"source_key","scope","evidence"} or
+                set(record) not in ({"source_key","scope","evidence"},
+                                    {"source_key","scope","evidence","successor_source_key"}) or
                 record["source_key"] in audited or
                 record["source_key"] not in evergreen_keys or
                 record["scope"] not in scopes or
@@ -63,8 +65,20 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
                 not record["evidence"].strip()):
             raise ValueError("invalid or duplicate evergreen audit record")
         audited[record["source_key"]]=record["scope"]
+        if "successor_source_key" in record:
+            if (record["scope"]!="fixed_production_set" or
+                    not isinstance(record["successor_source_key"],str) or
+                    not record["successor_source_key"].strip()):
+                raise ValueError("only fixed legacy sources may have successors")
+            fixed_successors[record["source_key"]]=record["successor_source_key"]
     if set(audited)!=evergreen_keys:
         raise ValueError("every evergreen source requires explicit reusability audit")
+    for legacy,successor in fixed_successors.items():
+        if (legacy==successor or successor not in plans or
+                plans[successor]["strategy"] not in
+                {"evergreen_index","verified_rollover"} or
+                (successor in audited and audited[successor]!="dynamic_category")):
+            raise ValueError("fixed source successor must be a dynamic or rollover source")
     checks={x["key"]:x for x in health.get("sources",[])
             if isinstance(x,dict) and isinstance(x.get("key"),str)}
     rollovers={x["key"]:x for x in rollover_health.get("outcomes",[])
@@ -85,6 +99,7 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
             "index_url":item["url"],
             "strategy":strategy,
             "evergreen_reusability":audited.get(key),
+            "fixed_source_successor_key":fixed_successors.get(key),
             "successor_source_key":successor_for.get(key),
             "legacy_covered_by_successor":key in successor_for,
             "rollover_implemented":strategy=="verified_rollover",
@@ -103,12 +118,14 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
         "schema_version":1,
         "checked_at":health.get("checked_at"),
         "scope":"configured_season_indexes",
-        "definition":"Rollover implemented is a code capability, not evidence of next-season availability or exhaustive recite coverage. Evergreen index URLs are classified by code-level reusability; dynamic categories are not live future-season proof.",
+        "definition":"Rollover implemented is a code capability, not evidence of next-season availability or exhaustive recite coverage. Evergreen source classification separately reports fixed-title historical sources with an implemented dynamic successor versus those still requiring migration. Neither is live future-season proof.",
         "total_indexes":len(rows),
         "verified_rollover":counts["verified_rollover"],
         "evergreen_index_unverified":counts["evergreen_index"],
         "evergreen_dynamic_category":reusability["dynamic_category"],
         "evergreen_fixed_production_set":reusability["fixed_production_set"],
+        "evergreen_fixed_covered":len(fixed_successors),
+        "evergreen_fixed_uncovered":reusability["fixed_production_set"]-len(fixed_successors),
         "evergreen_historical_notice":reusability["historical_notice"],
         "legacy_year_bound":counts["legacy_year_bound"],
         "legacy_covered_by_successor":len(successor_for),
@@ -139,6 +156,7 @@ def main():
     print(json.dumps({k:result[k] for k in (
         "total_indexes","verified_rollover","evergreen_index_unverified",
         "evergreen_dynamic_category","evergreen_fixed_production_set","evergreen_historical_notice",
+        "evergreen_fixed_covered","evergreen_fixed_uncovered",
         "legacy_year_bound","legacy_covered_by_successor","legacy_still_uncovered","future_seasons_verified")}))
 
 if __name__=="__main__":
