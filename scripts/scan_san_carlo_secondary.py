@@ -204,6 +204,9 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
                     "ticket_link_shapes": [
                         {"label": value[:40],
                          "host": urlsplit(urljoin(url, href)).hostname,
+                         "scheme": urlsplit(urljoin(url, href)).scheme,
+                         "query_present": bool(urlsplit(urljoin(url, href)).query),
+                         "fragment_present": bool(urlsplit(urljoin(url, href)).fragment),
                          "path": urlsplit(urljoin(url, href)).path[:100]}
                         for kind, value, href in items
                         if kind == "a" and href and (
