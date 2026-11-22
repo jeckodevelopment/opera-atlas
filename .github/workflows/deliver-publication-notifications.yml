@@ -1,0 +1,43 @@
+name: Deliver pending Opera Atlas publication emails
+
+# GitHub-token catalog pushes do not trigger push workflows. The publisher
+# dispatches this worker; the schedule catches missed or rejected deliveries.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/catalog/v2/manifest.json'
+  repository_dispatch:
+    types: [atlas-notification-reconcile]
+  schedule:
+    - cron: '11,26,41,56 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: opera-atlas-notification-outbox
+  cancel-in-progress: false
+
+jobs:
+  deliver:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main and full publication history
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Deliver new public works and productions, retrying pending
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ATLAS_NOTIFICATION_FROM: ${{ secrets.ATLAS_NOTIFICATION_FROM }}
+          ATLAS_NOTIFICATION_TO: ${{ secrets.ATLAS_NOTIFICATION_TO }}
+        run: python -m scripts.process_notification_outbox
