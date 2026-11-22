@@ -209,7 +209,7 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
         else:
             festival["staging_ids"] = ids
     if not check:
-        path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+        path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 def publish(*, check: bool = False) -> dict:
     facts = json.loads(MANIFEST.read_text(encoding="utf-8"))
