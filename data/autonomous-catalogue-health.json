@@ -4,38 +4,6 @@
   "new_recite": 0,
   "auto_skipped": [
     {
-      "candidate_id": "oa-index-2583140715d654277a2b",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-70313ef8895b42a91a5b",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
       "title": "Cavalleria rusticana",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
