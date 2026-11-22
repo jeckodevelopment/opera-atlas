@@ -43,5 +43,5 @@ jobs:
             echo "No new audit snapshot."
           else
             git commit -m "data(diagnostics): check public Atlas pages [skip ci]"
-            python -m scripts.safe_push_catalog
+            python -m scripts.push_live_publication_audit
           fi
