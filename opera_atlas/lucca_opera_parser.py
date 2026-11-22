@@ -38,26 +38,37 @@ class Headings(HTMLParser):
 
 
 class ComposerCredits(HTMLParser):
-    """A first-party work's music credit, in a text node after its unique h1.
+    """Only official post-H1 work text can establish a music credit.
 
-    The HTML tag containing the credit differs between old and new Giglio
-    pages. Inspecting one complete node prevents swallowing the next cast
-    member, while the h1/footer boundary excludes site-wide promotions.
+    The theatre sometimes renders "musiche di <strong>LUCIO DALLA</strong>".
+    Permit that explicit *inline* split, but never combine the credit label
+    with a performer in a subsequent block or a shared site heading.
     """
-    def __init__(self, title: str):
+    MUSIC=re.compile(
+        r"(?:Musica|musiche) di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})\Z")
+    AUTHOR=re.compile(
+        r"[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3}\Z")
+    INLINE={"strong","b","span","em","i","small"}
+
+    def __init__(self,title:str):
         super().__init__(convert_charrefs=True)
         self.title=title
         self.in_h1=False
         self.heading=[]
         self.in_work=False
         self.credits=[]
+        self.pending=False
 
     def handle_starttag(self,tag,attrs):
         if tag=="h1":
             self.in_h1=True
             self.heading=[]
+            self.pending=False
         elif tag=="footer":
             self.in_work=False
+            self.pending=False
+        elif self.pending and tag not in self.INLINE:
+            self.pending=False
 
     def handle_data(self,data):
         if self.in_h1:
@@ -68,17 +79,27 @@ class ComposerCredits(HTMLParser):
         value=" ".join(data.split())
         if "Segui tutte le novità" in value:
             self.in_work=False
+            self.pending=False
             return
-        match=re.fullmatch(
-            r"(?:Musica|musiche) di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})",
-            value)
+        if not value:
+            return
+        match=self.MUSIC.fullmatch(value)
         if match:
             self.credits.append(match.group(1))
+            self.pending=False
+        elif value in ("Musica di","musiche di"):
+            self.pending=True
+        elif self.pending:
+            if self.AUTHOR.fullmatch(value):
+                self.credits.append(value)
+            self.pending=False
 
     def handle_endtag(self,tag):
         if tag=="h1" and self.in_h1:
             self.in_h1=False
             self.in_work=(" ".join(" ".join(self.heading).split())==self.title)
+        elif tag not in self.INLINE:
+            self.pending=False
 
 
 def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
