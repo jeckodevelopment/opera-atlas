@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T20:38:30+00:00",
+  "checked_at": "2026-11-22T20:51:49+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -105,19 +105,36 @@
         }
       ],
       "title": "Der fliegende Holländer (L’olandese volante)"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-e6f08bbcef00e05cc2ee"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giovanni Sollima",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "parma-opera-2027",
+          "url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+        }
+      ],
+      "title": "Piccolo Orso e la montagna di ghiaccio"
     }
   ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 197,
+    "candidates_checked": 198,
     "candidates_without_facts": 0,
-    "facts_examined": 736,
+    "facts_examined": 738,
     "facts_resolved": 726,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 10,
-    "unmatched_groups": 5
+    "unmatched_facts": 12,
+    "unmatched_groups": 6
   },
   "truncated": false
 }

@@ -2215,7 +2215,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "24caf72218a93952abfd1b8eee8cb6e9ec837950a349ce1834bd534e6f281bb3",
-      "checked_at": "2026-11-22T18:19:18+00:00",
+      "checked_at": "2026-11-22T20:51:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7081,6 +7081,36 @@
       "checked_at": "2026-11-22T19:47:44+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
+    },
+    {
+      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "content_sha256": "e24544114b3bed1dda4d78d32910a93d737957e2affdab2c3ef86223083afe57",
+      "checked_at": "2026-11-22T20:51:49+00:00",
+      "status": "needs_editorial_review",
+      "audience_scope": "public_family_only",
+      "calendar_provenance": "reviewed_first_party_historical_ticket_schedule",
+      "excluded_educational_slots": [
+        "2026-12-04T09:00",
+        "2026-12-04T11:00"
+      ],
+      "event_facts": [
+        {
+          "event_title": "Piccolo Orso e la montagna di ghiaccio",
+          "composer": "Giovanni Sollima",
+          "venue": "Teatro Regio di Parma",
+          "date": "2026-12-05",
+          "starts_at": "2026-12-05T15:00:00+01:00"
+        },
+        {
+          "event_title": "Piccolo Orso e la montagna di ghiaccio",
+          "composer": "Giovanni Sollima",
+          "venue": "Teatro Regio di Parma",
+          "date": "2026-12-05",
+          "starts_at": "2026-12-05T18:00:00+01:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-e831cbf742e2f848f44b",

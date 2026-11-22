@@ -1,15 +1,18 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T20:46:46+00:00",
+  "checked_at": "2026-11-22T20:51:49+00:00",
   "scope": "national",
-  "attempted": 1,
+  "attempted": 2,
   "outcomes": [
     {
+      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "ValueError",
-      "diagnostic": "incomplete official Parma public/school ticket schedule",
-      "rows": 0
+      "outcome": "verified_first_party_historical_public_calendar",
+      "rows": 2
     }
   ]
 }
