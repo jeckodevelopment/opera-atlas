@@ -13,7 +13,7 @@ class EarlyVerifiedPublicationTests(unittest.TestCase):
         discovery=yml.index("- name: Discover production links from approved national season indexes")
         remote_research=yml.index("- name: Resolve unseen opera identities and prepare verified short introductions")
         self.assertLess(fast,checkpoint)
-        self.assertLess(checkpoint,crawl)
+        self.assertLess(crawl,fast)
         self.assertLess(crawl,discovery)
         self.assertLess(discovery,remote_research)
         stage=yml[fast:checkpoint]
@@ -36,7 +36,7 @@ class EarlyVerifiedPublicationTests(unittest.TestCase):
     def test_checkpoint_is_derived_atomic_and_safe(self):
         yml=WORKFLOW.read_text(encoding="utf-8")
         start=yml.index("- name: Safely checkpoint fully validated early canonical work publication")
-        stop=yml.index("- name: Acquire pending official detail pages before slow discovery")
+        stop=yml.index("- name: Incrementally scan only explicitly approved official pages")
         stage=yml[start:stop]
         self.assertIn("python -m scripts.safe_push_catalog",stage)
         self.assertNotIn("git push --force",stage)
