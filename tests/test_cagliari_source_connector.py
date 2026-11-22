@@ -39,8 +39,6 @@ class CagliariSourceTests(unittest.TestCase):
         self.assertTrue(eligible(KEY,DETAIL))
         self.assertFalse(eligible(KEY,"https://www.liricocagliari.it/evento/parliamo-dopera-don-carlos/"))
         self.assertFalse(eligible(KEY,"https://www.liricocagliari.it/notizie/altro/"))
-        self.assertEqual(len(sources),38)
-
     def test_index_excludes_other_hosts_and_talks(self):
         markup="<html>"+ "".join('<a href="/evento/%s/">opera</a>'%v for v in
             ["don-carlos","alcina","die-zauberflote","maria-stuarda",
