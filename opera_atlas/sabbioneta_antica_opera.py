@@ -102,7 +102,7 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     first=local[:1650]
     credits=CREDIT.findall(first)
     composers={name for token in credits for key,name in AUTHORS.items()
-               if key in token.casefold()}
+               if re.search(r"\b"+re.escape(key)+r"\b",token,re.I)}
     if len(composers)!=1:
         raise ValueError("Sabbioneta composer missing or ambiguous")
     recite=[]
