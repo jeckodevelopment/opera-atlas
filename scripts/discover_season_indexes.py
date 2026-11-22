@@ -302,6 +302,33 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key in {"chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
+          "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
+          "padova-verdi-season-2027","lecce-provincia-season-2027"}:
+        from opera_atlas.six_future_seasons import index_year, SOURCES
+        host,kind,_,_=SOURCES[key]
+        if kind=="search":
+            # The search index itself is explicitly approved, and the
+            # discovered official article is checked again on detail fetch.
+            try:
+                index_year(key,url)
+                return True
+            except ValueError:
+                parsed=urlsplit(url)
+                if parsed.scheme!="https" or parsed.hostname!=host or parsed.query or parsed.fragment:
+                    return False
+                if key.startswith("chieti-"):
+                    return bool(re.fullmatch(r"/novita/[a-z0-9-]+/",parsed.path)
+                                and re.search(r"stagione-lirica-20\d{2}",parsed.path)
+                                and "marrucino" in parsed.path)
+                return bool(re.fullmatch(r"/[a-z0-9-]+/",parsed.path)
+                            and re.search(r"stagione-lirica",parsed.path)
+                            and re.search(r"20\d{2}",parsed.path))
+        try:
+            index_year(key,url)
+            return True
+        except ValueError:
+            return False
     if key=="sassari-de-carolis-opera-2026":
         return (parsed.scheme=="https" and parsed.hostname=="www.marialisadecarolis.it"
                 and parsed.path=="/opera-lirica.aspx"
@@ -531,6 +558,11 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key in {"chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
+          "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
+          "padova-verdi-season-2027","lecce-provincia-season-2027"}:
+        from opera_atlas.six_future_seasons import extract_index
+        return extract_index(key,index_url,html,min_links)
     if key=="ferrara-season-opera-2027-28":
         from opera_atlas.ferrara_future_parser import verify_index
         verify_index(html,url=index_url)
@@ -645,6 +677,12 @@ def validate_config(config:dict)->list[dict]:
         "puccini-torre-del-lago-2027":("www.puccinifestival.it","/en/73rd-puccini-festival-2027/"),
         "spoleto-tls-lirica-2026":("www.tls-belli.it","/stagione-lirica-2026/"),
         "chieti-marrucino-lirica-2026":("comune.chieti.it","/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"),
+        "chieti-marrucino-season-2027":("comune.chieti.it","/"),
+        "modena-municipal-opera-2027-28":("www.comune.modena.it","/vivere-modena/eventi/2027/stagione-opera-2027-2028"),
+        "rovigo-sociale-season-2027-28":("www.comune.rovigo.it","/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2027-2028"),
+        "treviso-del-monaco-season-2027-28":("risorse.teatrostabileveneto.it","/treviso-teatro-del-monaco-stagione-lirica-concertistica-27-28"),
+        "padova-verdi-season-2027":("padovacultura.padovanet.it","/it/attivita-culturali/stagione-lirica-di-padova-2027"),
+        "lecce-provincia-season-2027":("www.provincia.le.it","/"),
         "rovigo-regione-programma-2026-27":("www.culturaveneto.it","/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc"),
         "rovigo-sociale-opera-2026-27":("www.comune.rovigo.it","/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"),
         "padova-verdi-opera-2026":("padovacultura.padovanet.it","/it/attivita-culturali/stagione-lirica-di-padova-2026"),
@@ -773,6 +811,15 @@ def validate_config(config:dict)->list[dict]:
         elif key=="spoleto-tls-lirica-2026":
             valid_season=bool(re.fullmatch(r"/stagione-lirica-20\d{2}/",index.path)
                               and not index.query)
+        elif key in {"chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
+          "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
+          "padova-verdi-season-2027","lecce-provincia-season-2027"}:
+            from opera_atlas.six_future_seasons import index_year
+            try:
+                index_year(key,item["url"])
+                valid_season=True
+            except ValueError:
+                valid_season=False
         elif key=="chieti-marrucino-lirica-2026":
             valid_season=index.path=="/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/" and not index.query
         elif key=="rovigo-regione-programma-2026-27":
@@ -837,7 +884,7 @@ def validate_config(config:dict)->list[dict]:
         else:
             valid_season=index.path==path
         if (index.scheme!="https" or index.hostname!=host or not valid_season
-            or (index.query and key not in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027","verdi-trieste-season-2026-27")) or index.fragment or index.port is not None
+            or (index.query and key not in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027","verdi-trieste-season-2026-27","chieti-marrucino-season-2027","lecce-provincia-season-2027")) or index.fragment or index.port is not None
             or item["official_url"]!="https://"+host+"/"):
             raise ValueError("index URL outside exact official allowlist")
         if item["access_status"] not in {"approved","pending","blocked"}:
