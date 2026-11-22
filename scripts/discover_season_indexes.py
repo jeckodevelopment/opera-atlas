@@ -157,6 +157,10 @@ def reviewed_source_urls()->set[str]:
     return reviewed
 
 def classify(key:str,url:str,reviewed:set[str])->str:
+    if key=="savona-giocosa-rolling-opera":
+        # One evergreen index contains independent works and recite; an URL
+        # match to one published staging never closes the entire source.
+        return "needs_review"
     if excluded_nonopera(key,url):
         return "excluded_nonopera"
     if key in {
@@ -310,6 +314,10 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="savona-giocosa-rolling-opera":
+        return (parsed.scheme=="https" and parsed.hostname=="operagiocosa.it"
+                and parsed.path=="/" and not parsed.query and not parsed.fragment
+                and not parsed.username and not parsed.password and parsed.port is None)
     if key=="sassari-de-carolis-rolling-opera":
         from opera_atlas.sassari_future_parser import eligible_detail
         return eligible_detail(url)
@@ -599,6 +607,11 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="savona-giocosa-rolling-opera":
+        from opera_atlas.savona_opera_giocosa_parser import parse_homepage
+        if len(parse_homepage(html,url=index_url))<min_links:
+            raise ValueError("season index incomplete or structure changed")
+        return [index_url]
     if key=="sassari-de-carolis-rolling-opera":
         from opera_atlas.sassari_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -739,6 +752,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "savona-giocosa-rolling-opera":("operagiocosa.it","/"),
         "sassari-de-carolis-opera-2026":("www.marialisadecarolis.it","/opere-liriche.aspx"),
         "sassari-de-carolis-rolling-opera":("www.marialisadecarolis.it","/opere-liriche.aspx"),
         "messina-vittorio-opera-2026-27":("www.teatrovittorioemanuele.it","/event_listing_type/opera-26-27/"),
@@ -941,6 +955,8 @@ def validate_config(config:dict)->list[dict]:
             except ValueError:
                 valid_season=False
         elif key=="macerata-festival-2027":
+            valid_season=index.path=="/" and not index.query
+        elif key=="savona-giocosa-rolling-opera":
             valid_season=index.path=="/" and not index.query
         elif key=="reggio-valli-opera-2026-27":
             valid_season=index.path=="/tipo/opera/" and not index.query
