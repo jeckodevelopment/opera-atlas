@@ -1353,7 +1353,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-22T14:56:44+00:00",
+      "checked_at": "2026-11-22T15:07:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2009,8 +2009,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "4e0cab7b49f7403553de8a772a65225a1d7066695e5cc4ddd29a7f19d97ef059",
-      "checked_at": "2026-11-22T14:56:47+00:00",
+      "content_sha256": "70173350607266a6e8a8663dce456809c94f7bc1e7151184977d81f5423d8111",
+      "checked_at": "2026-11-22T15:07:35+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2994,7 +2994,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-22T14:56:59+00:00",
+      "checked_at": "2026-11-22T15:07:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5831,8 +5831,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "1ee4dd0d0c6caa8de4407494f5d8e01bcb41c7d29f829c780e8f5fa4dcd66943",
-      "checked_at": "2026-11-22T15:02:12+00:00",
+      "content_sha256": "77c967af9bcb85d744fa3aacd8de36c26fbc6cf1c6cdb31fd3b70fa3a0abd84b",
+      "checked_at": "2026-11-22T15:07:44+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []

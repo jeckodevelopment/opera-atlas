@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T14:56:36+00:00",
+  "checked_at": "2026-11-22T15:07:25+00:00",
   "sources": [
     {
       "key": "ancona-cavalleria-program-2026",
@@ -590,7 +590,7 @@
       "diagnostic": "rovigo_venue_missing",
       "required_links": 1,
       "links": 0,
-      "last_attempt_at": "2026-11-22T14:56:36+00:00",
+      "last_attempt_at": "2026-11-22T15:07:25+00:00",
       "last_success_at": null,
       "last_successful_links": null,
       "current_scan_verified": false
