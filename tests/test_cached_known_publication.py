@@ -17,6 +17,12 @@ class CachedKnownPublicationTests(unittest.TestCase):
         evidence=json.loads(DETAILS.read_text(encoding="utf-8"))
         urls=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
         times=json.loads(TIME_EVIDENCE.read_text(encoding="utf-8"))
+        # Identify the exact offending source when approved index URL rules
+        # evolve independently of a previously verified cached feed.
+        from scripts.build_verified_catalog import validate_auto_sources
+        for source_url in urls:
+            with self.subTest(source_url=source_url):
+                validate_auto_sources([source_url])
         result,ids,approved,new_times,report=prepare(
             facts,registry,evidence,candidates,urls,times,today=date(2026,11,21))
         # Other officially verified backlog items (such as Don Pasquale at
