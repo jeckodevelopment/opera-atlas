@@ -282,6 +282,12 @@ def reconcile(candidates:dict,verified_urls:set[str],*,
             key=(entry["source_key"],entry["official_url"])
             if excluded_nonopera(entry["source_key"],entry["official_url"]):
                 now="excluded_nonopera"
+            elif (key in (other_season_urls or set())
+                  and entry["official_url"] not in verified_urls):
+                # Exact official dated proof that this source event belongs to
+                # a different season takes priority over duplicate discovery
+                # records of the same URL (e.g. two Petruzzelli indexes).
+                now="not_in_official_season"
             elif entry["official_url"] in (ambiguous_urls or set()):
                 # A season page may list several independent compositions.
                 # A published Nabucco must not mark Don Pasquale or a new
