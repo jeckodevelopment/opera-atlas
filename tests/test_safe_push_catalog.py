@@ -68,6 +68,66 @@ class SafePushTests(unittest.TestCase):
             self.assertEqual((clone/"docs/notes.md").read_text(),
                              "New documentation\n")
 
+    def test_source_health_rebase_across_disjoint_canonical_catalog_update(self):
+        from scripts.safe_push_catalog import source_health_conflicting
+        with TemporaryDirectory() as tmp:
+            pub,writer,remote=self.setup_repos(tmp)
+            # Simulate a source checkpoint under data/ while the canonical
+            # catalog is updated by another workflow.
+            execute(pub,"restore","--source","HEAD^","data/catalog.json")
+            (pub/"data/season-index-health.json").write_text('{"sources":[]}')
+            execute(pub,"add",".")
+            execute(pub,"commit","--amend","--no-edit")
+            (writer/"data/catalog.json").write_text('{"new":"recite"}\\n')
+            execute(writer,"add",".")
+            execute(writer,"commit","-m","canonical recite")
+            execute(writer,"push","origin","main")
+            checked=[]
+            result=safe_push(pub,verify=lambda _:checked.append(True),
+                             conflict_checker=source_health_conflicting)
+            self.assertEqual(result,"published")
+            self.assertEqual(checked,[True])
+            clone=Path(tmp)/"proof"
+            execute(Path(tmp),"clone","-b","main",str(remote),str(clone))
+            self.assertEqual((clone/"data/catalog.json").read_text(),
+                             '{"new":"recite"}\\n')
+            self.assertEqual((clone/"data/season-index-health.json").read_text(),
+                             '{"sources":[]}')
+
+    def test_source_health_rejects_concurrent_scanner_or_same_checkpoint(self):
+        from scripts.safe_push_catalog import source_health_conflicting
+        for changed in ("scripts/adapter.py","data/season-index-health.json"):
+            with self.subTest(path=changed), TemporaryDirectory() as tmp:
+                pub,writer,remote=self.setup_repos(tmp)
+                execute(pub,"restore","--source","HEAD^","data/catalog.json")
+                source=pub/"data/season-index-health.json"
+                source.write_text('{"scan":"new"}')
+                execute(pub,"add",".")
+                execute(pub,"commit","--amend","--no-edit")
+                target=writer/changed
+                target.parent.mkdir(parents=True,exist_ok=True)
+                target.write_text("upstream changed")
+                execute(writer,"add",".")
+                execute(writer,"commit","-m","concurrent source update")
+                execute(writer,"push","origin","main")
+                self.assertEqual(safe_push(pub,verify=lambda _:self.fail("unsafe"),
+                                           conflict_checker=source_health_conflicting),
+                                 "deferred")
+
+    def test_source_health_conflict_classifier_is_scoped(self):
+        from scripts.safe_push_catalog import source_health_conflicting
+        self.assertFalse(source_health_conflicting([
+            "data/verified-launch-catalog.json",
+            "data/identity-registry.json",
+            "site/performances.json",
+        ]))
+        for unsafe in ("data/season-index-candidates.json",
+                       "data/season-index-config.json",
+                       "public/catalog/source-automation.json",
+                       "scripts/source_automation.py",
+                       "opera_atlas/controlled_fetch.py"):
+            self.assertTrue(source_health_conflicting([unsafe]),unsafe)
+
     def test_new_parser_in_upstream_defers_stale_catalog_commit(self):
         with TemporaryDirectory() as tmp:
             pub,writer,remote=self.setup_repos(tmp)

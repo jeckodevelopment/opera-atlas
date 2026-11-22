@@ -5483,6 +5483,86 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-5955fe5c45bf5a15",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+      "dates": [
+        [
+          "2027-07-24",
+          "21:00"
+        ],
+        [
+          "2027-07-30",
+          "21:00"
+        ],
+        [
+          "2027-08-08",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-725487d437f63ba0",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
+      "dates": [
+        [
+          "2027-02-26",
+          "21:00"
+        ],
+        [
+          "2027-02-28",
+          "17:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-cf2044dac191fa69",
+      "title": "Al cavallino bianco",
+      "composer": "Ralph Benatzky",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
+      "dates": [
+        [
+          "2027-05-07",
+          "21:00"
+        ],
+        [
+          "2027-05-08",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-d0635be1ed102040",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
+      "dates": [
+        [
+          "2027-04-16",
+          "21:00"
+        ],
+        [
+          "2027-04-18",
+          "17:30"
+        ]
+      ]
     }
   ]
 }

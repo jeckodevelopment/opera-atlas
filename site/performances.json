@@ -6562,6 +6562,24 @@
       ]
     },
     {
+      "id": "curated:auto-725487d437f63ba0:2027-02-26",
+      "starts_at": "2027-02-26T21:00:00+01:00",
+      "local_date": "2027-02-26",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/"
+      ]
+    },
+    {
       "id": "curated:auto-6cd199691f7145a4:2027-02-27",
       "starts_at": "2027-02-27T15:30:00+01:00",
       "local_date": "2027-02-27",
@@ -6721,6 +6739,24 @@
       "longitude": null,
       "sources": [
         "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-725487d437f63ba0:2027-02-28",
+      "starts_at": "2027-02-28T17:30:00+01:00",
+      "local_date": "2027-02-28",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/"
       ]
     },
     {
@@ -8776,6 +8812,24 @@
       ]
     },
     {
+      "id": "curated:auto-d0635be1ed102040:2027-04-16",
+      "starts_at": "2027-04-16T21:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrovittorioemanuele.it/evento/la-traviata/"
+      ]
+    },
+    {
       "id": "curated:auto-4579632f6d774477:2027-04-17",
       "starts_at": "2027-04-17T15:00:00+02:00",
       "local_date": "2027-04-17",
@@ -8935,6 +8989,24 @@
       "longitude": null,
       "sources": [
         "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ]
+    },
+    {
+      "id": "curated:auto-d0635be1ed102040:2027-04-18",
+      "starts_at": "2027-04-18T17:30:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrovittorioemanuele.it/evento/la-traviata/"
       ]
     },
     {
@@ -9604,6 +9676,24 @@
       ]
     },
     {
+      "id": "curated:auto-cf2044dac191fa69:2027-05-07",
+      "starts_at": "2027-05-07T21:00:00+02:00",
+      "local_date": "2027-05-07",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Al cavallino bianco",
+      "composer": "Ralph Benatzky",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/"
+      ]
+    },
+    {
       "id": "curated:auto-129b5be3f35d5762:2027-05-08",
       "starts_at": "2027-05-08T18:00:00+02:00",
       "local_date": "2027-05-08",
@@ -9655,6 +9745,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/carmen-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-cf2044dac191fa69:2027-05-08",
+      "starts_at": "2027-05-08T21:00:00+02:00",
+      "local_date": "2027-05-08",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Al cavallino bianco",
+      "composer": "Ralph Benatzky",
+      "venue": "Teatro Vittorio Emanuele",
+      "municipality": "Messina",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/"
       ]
     },
     {
@@ -12070,6 +12178,24 @@
       ]
     },
     {
+      "id": "curated:auto-5955fe5c45bf5a15:2027-07-24",
+      "starts_at": "2027-07-24T21:00:00+02:00",
+      "local_date": "2027-07-24",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
+      ]
+    },
+    {
       "id": "curated:auto-8e417ad6e506eaf0:2027-07-24",
       "starts_at": "2027-07-24T21:15:00+02:00",
       "local_date": "2027-07-24",
@@ -12121,6 +12247,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-5955fe5c45bf5a15:2027-07-30",
+      "starts_at": "2027-07-30T21:00:00+02:00",
+      "local_date": "2027-07-30",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
       ]
     },
     {
@@ -12301,6 +12445,24 @@
       "longitude": null,
       "sources": [
         "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:auto-5955fe5c45bf5a15:2027-08-08",
+      "starts_at": "2027-08-08T21:00:00+02:00",
+      "local_date": "2027-08-08",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
       ]
     },
     {

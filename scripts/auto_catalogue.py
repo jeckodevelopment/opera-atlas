@@ -56,6 +56,7 @@ VENUE_BY_SOURCE={
     "pisa-verdi-opera-2026-27":("Pisa","Teatro Verdi"),
     "salerno-verdi-opera-2026":("Salerno","Teatro Municipale Giuseppe Verdi"),
     "macerata-festival-2027":("Macerata","Arena Sferisterio"),
+    "messina-vittorio-opera-2026-27":("Messina","Teatro Vittorio Emanuele"),
     # Newly approved detail adapters with already canonical physical venues.
     "coccia-novara-opera-2027":("Novara","Teatro Coccia"),
     "ravenna-alighieri-cherubini-2027":("Ravenna","Teatro Dante Alighieri"),
@@ -302,7 +303,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
@@ -396,6 +397,7 @@ _MULTI_WORK_SEASONS={
         ("Pagliacci","Ruggero Leoncavallo"):2,
         ("Il cappello di paglia di Firenze","Nino Rota"):2,
     },
+
     "chieti-marrucino-lirica-2026": {
         ("Le avventure di Pinocchio","Antonio Cericola"):1,
         ("Turandot","Giacomo Puccini"):2,
@@ -493,8 +495,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             issues.append({"candidate_id":cid,"reason":"multiple_work_identities"})
             continue
         title,composer=next(iter(names))
+        # Normalize only typographical apostrophe variation, not
+        # different titles, spellings, translations or composers.
+        # Macerata's first-party heading uses L'elisir d'amore whereas
+        # the canonical work title uses Italian right apostrophes.
+        title_credit=title.replace("’","'")
         matches=[w for w in next_registry["works"].values()
-                 if normalized(w["title"])==title and normalized(w["composer"])==composer]
+                 if normalized(w["title"]).replace("’","'")==title_credit
+                 and normalized(w["composer"])==composer]
         # A verified program-only work already owns a permanent identity.
         # Promote that exact title/composer when a genuinely independent
         # performance has arrived, without allocating a second ID.
@@ -550,7 +558,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         # opera at one theatre must not silently share an ambiguous route.
         colliding=[x for x in next_facts["productions"]
                    if x["municipality"]==city and x["venue"]==venue
-                   and normalized(x["title"])==title and normalized(x["composer"])==composer]
+                   and normalized(x["title"]).replace("’","'")==title_credit
+                   and normalized(x["composer"])==composer]
         exact=[x for x in colliding if x["source_url"]==url]
         # Distinct official productions of the same opera in the same
         # theatre are legitimate (e.g. two different Aida stagings at
