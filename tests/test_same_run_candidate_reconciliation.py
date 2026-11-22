@@ -31,6 +31,38 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
         self.assertEqual(twice,results)
         self.assertEqual(second["changes"],[])
 
+    def test_shared_official_season_page_never_retires_other_works(self):
+        from scripts.reconcile_published_candidates import verified_shared_page_identities
+        url="https://theatre.example/season-2026/"
+        keys=("jesi-nabucco-opera-2026","jesi-trittico-opera-2026",
+              "jesi-don-pasquale-opera-2026","jesi-esecuzione-opera-2026")
+        names=(("Nabucco","Giuseppe Verdi"),("Il tabarro","Giacomo Puccini"),
+               ("Don Pasquale","Gaetano Donizetti"),("L'esecuzione","Salvatore Passantino"))
+        records={"schema_version":1,"candidates":[
+            {"id":str(i),"source_key":key,"official_url":url,
+             "status":"already_catalogued"} for i,key in enumerate(keys)]}
+        detail={"evidence":[
+            {"candidate_id":str(i),"source_key":key,"source_url":url,
+             "event_facts":[{"event_title":name,"composer":composer,"date":"2026-11-14"}]}
+            for i,(key,(name,composer)) in enumerate(zip(keys,names))]}
+        manifest={"productions":[
+            {"title":"Nabucco","composer":"Giuseppe Verdi",
+             "source_url":url,"dates":[["2026-11-14","20:30"]]}]}
+        programs={"programs":[{
+            "source_key":"jesi-trittico-opera-2026","source_url":url,
+            "components":[{"title":"Il tabarro","composer":"Giacomo Puccini"}],
+            "performances":[{"local_date":"2026-11-14"}]}]}
+        ambiguous,verified=verified_shared_page_identities(
+            records,detail,manifest,programs)
+        self.assertEqual(ambiguous,{url})
+        self.assertEqual(verified,{(keys[0],url),(keys[1],url)})
+        reconciled,report=reconcile(records,{url},ambiguous_urls=ambiguous,
+                                     identity_verified=verified)
+        self.assertEqual([x["status"] for x in reconciled["candidates"]],
+                         ["already_catalogued","already_catalogued",
+                          "needs_review","needs_review"])
+        self.assertEqual(len(report["changes"]),2)
+
     def test_published_program_is_stable_across_refreshes(self):
         program_url="https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
         candidate={"schema_version":1,"candidates":[{
