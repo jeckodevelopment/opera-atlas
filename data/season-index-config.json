@@ -302,6 +302,13 @@
       "url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "rovigo-sociale-opera-2026-27",
+      "official_url": "https://www.comune.rovigo.it/",
+      "url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }
