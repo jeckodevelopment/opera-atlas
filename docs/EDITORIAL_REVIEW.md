@@ -355,3 +355,9 @@ all'enciclopedia. Nessuna data può essere pubblicata sulla base di un
 manifesto o di una sinossi: il sistema richiede sempre evidenza oraria
 della rappresentazione specifica. I test `test_donizetti_alahor_and_elisir.py`
 verificano sorgente, identità, immagini e promozione idempotente.
+
+## Riconciliazione dei crediti del compositore (22/11/2026)
+
+Il risolutore condiviso `opera_atlas.work_identity.resolve_work` riconosce, oltre al credito esatto, soltanto quattro tipologie strettamente delimitate di metadati che possono seguire un compositore **già presente nel registro canonico**: `Opera`, `Tragedia`, `Melodramma` e anni di nascita/morte tra parentesi (`AAAA–AAAA` oppure `AAAA-AAAA`). Non vengono modificati il nome del compositore in ingresso, il titolo originale o gli ID delle opere; la risoluzione avviene contro un'unica corrispondenza verificata nel registro.
+
+I crediti arbitrari, i compositori diversi e i titoli omonimi non sono mai risolti automaticamente. Gli alias multilingua rimangono vincolati al compositore canonico. Le candidate prive di sufficiente evidenza restano in revisione, senza creazione di duplicati e senza promozione forzata. I test coprono i sei casi di metadati emersi nella diagnostica (Carmen, La bohème, L’elisir d’amore, Madama Butterfly, Norma e Aida) e le regressioni sui casi ambigui.
