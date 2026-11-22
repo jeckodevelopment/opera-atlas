@@ -64,8 +64,50 @@ jobs:
             git commit -m "data(sources): refresh official source health [skip ci]"
             python -m scripts.safe_push_catalog
           fi
+      - name: Rescan on latest main if checkpoint was deferred
+        id: retry
+        if: steps.checkpoint.outputs.deferred == 'true'
+        run: |
+          echo "published=false" >> "$GITHUB_OUTPUT"
+          echo "new_candidates=false" >> "$GITHUB_OUTPUT"
+          for attempt in 1 2; do
+            git fetch --quiet origin main
+            git reset --hard origin/main
+            git show HEAD:data/season-index-candidates.json > /tmp/source-candidates-retry-before.json
+            python -m scripts.discover_season_indexes --allow-network
+            python -m scripts.source_automation
+            python -m scripts.source_automation --check
+            : > /tmp/source-health-retry-candidates
+            : > /tmp/source-health-retry-push
+            python -m scripts.source_health_dispatch \
+              --before /tmp/source-candidates-retry-before.json \
+              --after data/season-index-candidates.json \
+              --github-output /tmp/source-health-retry-candidates
+            git add data/season-index-health.json
+            git add data/season-index-candidates.json public/catalog/season-index-candidates.json
+            git add public/catalog/source-automation.json
+            if git diff --cached --quiet; then
+              echo "published=true" >> "$GITHUB_OUTPUT"
+              break
+            fi
+            git commit -m "data(sources): retry source health on latest main [skip ci]"
+            GITHUB_OUTPUT=/tmp/source-health-retry-push python -m scripts.safe_push_catalog
+            if grep -q '^deferred=false$' /tmp/source-health-retry-push; then
+              echo "published=true" >> "$GITHUB_OUTPUT"
+              if grep -q '^new_candidates=true$' /tmp/source-health-retry-candidates; then
+                echo "new_candidates=true" >> "$GITHUB_OUTPUT"
+              fi
+              break
+            fi
+            echo "::warning::Concurrent main update during source-health retry $attempt."
+          done
+      - name: Fail if fresh source health could not be persisted
+        if: steps.retry.outcome == 'success' && steps.retry.outputs.published != 'true'
+        run: |
+          echo "::error::Fresh source health could not be persisted after bounded retries."
+          exit 1
       - name: Trigger central catalog acquisition for newly discovered candidates
-        if: steps.new_candidates.outputs.new_candidates == 'true' && steps.checkpoint.outcome == 'success'
+        if: (steps.new_candidates.outputs.new_candidates == 'true' && steps.checkpoint.outputs.deferred != 'true') || (steps.retry.outputs.published == 'true' && steps.retry.outputs.new_candidates == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -79,7 +121,3 @@ jobs:
           else
             echo "New candidates not present on origin/main; catalog dispatch deferred."
           fi
-      - name: Report latest-source checkpoint result
-        if: steps.checkpoint.outputs.deferred == 'true'
-        run: |
-          echo "::warning::Source-health checkpoint deferred because main changed. The next independent scheduled scan will recompute it from current main."

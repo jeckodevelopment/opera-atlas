@@ -1,5 +1,6 @@
 """Source health only dispatches catalog on newly actionable candidates."""
 import unittest
+from pathlib import Path
 from scripts.source_health_dispatch import newly_actionable
 
 def feed(*rows):
@@ -7,6 +8,21 @@ def feed(*rows):
 
 def row(key, url, status="needs_review", **extra):
     return {"source_key": key, "official_url": url, "status": status, **extra}
+
+class SourceHealthWorkflowTests(unittest.TestCase):
+    def test_deferred_checkpoint_is_reacquired_from_latest_main(self):
+        workflow=(Path(__file__).resolve().parents[1]/
+                  ".github/workflows/refresh-source-health.yml").read_text(encoding="utf-8")
+        self.assertIn("if: steps.checkpoint.outputs.deferred == 'true'",workflow)
+        self.assertIn("git reset --hard origin/main",workflow)
+        self.assertIn("for attempt in 1 2; do",workflow)
+        self.assertIn("python -m scripts.discover_season_indexes --allow-network",workflow)
+        self.assertIn("python -m scripts.source_automation --check",workflow)
+        self.assertIn("python -m scripts.safe_push_catalog",workflow)
+        self.assertIn("steps.retry.outputs.published == 'true'",workflow)
+        self.assertIn("steps.retry.outputs.new_candidates == 'true'",workflow)
+        self.assertIn("Fresh source health could not be persisted",workflow)
+        self.assertNotIn("The next independent scheduled scan will recompute it",workflow)
 
 class DispatchTests(unittest.TestCase):
     def test_new_candidate_wakes_catalog(self):
