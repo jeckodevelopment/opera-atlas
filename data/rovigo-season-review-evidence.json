@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "city": "Rovigo",
+  "venue": "Teatro Sociale",
+  "season": "2026/27",
+  "status": "review_only_not_for_publication",
+  "note": "Secondary reporting observations only. Validate each work, date, venue and exact production against primary official programme before promoting via the shared canonical pipeline. The paired Menotti/Bernstein production is ONE ticketed event; no automatic duplicate recite or merged canonical work.",
+  "programmes": [
+    {
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "performance_dates": [
+        "2026-11-13",
+        "2026-11-15"
+      ],
+      "performance_times": [
+        "20:30",
+        "16:00"
+      ],
+      "secondary_source_url": "https://www.connessiallopera.it/news/2026/rovigo-pagliacci-apre-la-stagione-lirica-con-sartori-lungu-e-petti-regia-di-lavia/",
+      "verified_official_performance_evidence": false
+    },
+    {
+      "title": "Pimpinone",
+      "composer": "Tomaso Albinoni",
+      "performance_dates": [
+        "2026-11-26",
+        "2026-11-28"
+      ],
+      "performance_times": null,
+      "secondary_source_url": "https://www.rovigo.news/teatro-sociale-presentata-la-stagione-2026-27-oltre-60-alzate-di-sipario-a-rovigo/",
+      "verified_official_performance_evidence": false
+    },
+    {
+      "title": "The Telephone / Trouble in Tahiti",
+      "composer": null,
+      "performance_dates": [
+        "2026-12-11",
+        "2026-12-12",
+        "2026-12-13"
+      ],
+      "performance_times": null,
+      "secondary_source_url": "https://www.apemusicale.it/joomla/it/news/85-news2026/17709-rovigo-la-stagione-2026-27-del-teatro-sociale",
+      "verified_official_performance_evidence": false
+    },
+    {
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "performance_dates": [
+        "2027-01-22",
+        "2027-01-24"
+      ],
+      "performance_times": null,
+      "secondary_source_url": "https://www.rovigo.news/teatro-sociale-presentata-la-stagione-2026-27-oltre-60-alzate-di-sipario-a-rovigo/",
+      "verified_official_performance_evidence": false
+    },
+    {
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "performance_dates": [
+        "2027-02-26",
+        "2027-02-28"
+      ],
+      "performance_times": null,
+      "secondary_source_url": "https://www.rovigo.news/teatro-sociale-presentata-la-stagione-2026-27-oltre-60-alzate-di-sipario-a-rovigo/",
+      "verified_official_performance_evidence": false
+    },
+    {
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "performance_dates": [
+        "2027-04-23",
+        "2027-04-25"
+      ],
+      "performance_times": null,
+      "secondary_source_url": "https://www.rovigo.news/teatro-sociale-presentata-la-stagione-2026-27-oltre-60-alzate-di-sipario-a-rovigo/",
+      "verified_official_performance_evidence": false
+    }
+  ]
+}
