@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T16:21:58+00:00",
+  "checked_at": "2026-11-22T16:23:11+00:00",
   "scope": "national",
   "attempted": 8,
   "outcomes": [
@@ -73,9 +73,9 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:explicit official Novara opera composer is missing",
+        "canonical_work:Novara multi-work programme requires component reconciliation",
         "authority_work:no_evidence",
-        "official_composer_credit:explicit official Novara opera composer is missing",
+        "official_composer_credit:Novara multi-work programme requires component reconciliation",
         "schema_event:no_evidence"
       ],
       "rows": 0
