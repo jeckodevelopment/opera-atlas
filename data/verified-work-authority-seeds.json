@@ -809,6 +809,40 @@
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
         ]
       }
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+      "title": "Cronaca di un amore. Callas e Pasolini",
+      "composer": "Davide Tramontano",
+      "synopsis": "Il rapporto tra Maria Callas e Pier Paolo Pasolini prende forma in un racconto musicale che intreccia documenti, testimonianze e immaginazione, esplorando l'incontro umano e artistico tra due figure del Novecento.",
+      "history": {
+        "librettist": "Alberto Mattioli",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Municipale",
+        "premiere_city": "Piacenza",
+        "sources": [
+          "https://teatripiacenza.it/event/cronaca-di-un-amore/",
+          "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
+        ]
+      }
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+      "title": "Cronaca di un amore. Callas e Pasolini",
+      "composer": "Davide Tramontano",
+      "synopsis": "Il rapporto tra Maria Callas e Pier Paolo Pasolini prende forma in un racconto musicale che intreccia documenti, testimonianze e immaginazione, esplorando l'incontro umano e artistico tra due figure del Novecento.",
+      "history": {
+        "librettist": "Alberto Mattioli",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Municipale",
+        "premiere_city": "Piacenza",
+        "sources": [
+          "https://teatripiacenza.it/event/cronaca-di-un-amore/",
+          "https://www.haydn.it/en/events/cronaca-di-un-amore-callas-e-pasolini-2"
+        ]
+      }
     }
   ]
 }
