@@ -305,6 +305,10 @@
     "trapani-luglio-musicale-2026": {
       "strategy": "verified_rollover",
       "verification": "test_verified"
+    },
+    "martina-valle-itria-2026": {
+      "strategy": "verified_rollover",
+      "verification": "test_verified"
     }
   }
 }
