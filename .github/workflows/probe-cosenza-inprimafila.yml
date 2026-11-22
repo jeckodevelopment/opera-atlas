@@ -19,17 +19,16 @@ jobs:
           python-version: '3.12'
       - name: Test Cosenza source adapter
         run: python -m unittest tests.test_cosenza_inprimafila_opera -v
-      - name: Probe only the partner index and three Rendano opera pages
+      - name: Probe partner index, season programme, and surviving event pages
         run: |
           python - <<'PY'
           from opera_atlas.db import connect, migrate
           from opera_atlas.controlled_fetch import fetch_official_html
           from opera_atlas.cosenza_inprimafila_opera import (
-              INDEX, extract_index, parse_detail,
+              INDEX, extract_index, parse_detail, parse_season_summary,
           )
           origin = "https://www.inprimafila.net/"
           expected = {
-              "barbiere-di-siviglia-cosenza": 2,
               "le-nozze-di-figaro-cosenza": 2,
               "la-mere-coupable-cosenza": 1,
           }
@@ -60,9 +59,26 @@ jobs:
                       raise RuntimeError(f"Incorrect recital count for {slug}")
                   print(parsed[0], parsed[1], parsed[2], parsed[3])
                   recitals.extend(parsed[3])
-              if len(recitals) != 5:
-                  raise RuntimeError("Expected 5 public operatic recitals")
-              print("PASS: 3 independently verified opera pages / 5 public recitals")
+              season = [u for u in candidates if u.rstrip("/").endswith("/stagione-lirica-2026-cosenza")]
+              if len(season) != 1:
+                  raise RuntimeError("Missing / ambiguous official mixed-season page")
+              productions = parse_season_summary(fetch(season[0]),url=season[0])
+              observed = {title: rows for title,_,_,rows in productions}
+              expected_titles = {
+                  "Il barbiere di Siviglia": 2,
+                  "Le nozze di Figaro": 2,
+                  "La mère coupable": 1,
+              }
+              if {k:len(v) for k,v in observed.items()} != expected_titles:
+                  raise RuntimeError("Official season summary has unexpected opera recitals")
+              # Compare overlapping individual and season pages to identify
+              # source discrepancies, not duplicate canonical productions.
+              for title,_,_,rows in productions:
+                  if title == "Le nozze di Figaro" and rows != parse_detail(
+                          fetch(next(u for u in candidates if u.endswith("/le-nozze-di-figaro-cosenza"))),
+                          url=next(u for u in candidates if u.endswith("/le-nozze-di-figaro-cosenza")))[3]:
+                      raise RuntimeError("Nozze recital mismatch across source pages")
+              print("PASS: mixed season lists 3 operas / 5 recitals, excluding ballet")
           finally:
               db.close()
           PY
