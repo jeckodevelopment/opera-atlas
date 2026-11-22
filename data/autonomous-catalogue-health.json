@@ -5,11 +5,7 @@
   "auto_skipped": [
     {
       "candidate_id": "oa-index-04fc7625bab27446a05d",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-04fc7625bab27446a05d",
-      "reason": "incomplete_work_editorial"
+      "reason": "verified_work_image_missing"
     }
   ],
   "new_works": 0,
