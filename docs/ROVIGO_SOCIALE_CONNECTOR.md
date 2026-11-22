@@ -75,3 +75,21 @@ le singole recite potranno passare alla pipeline nazionale comune.
 Il PDF regionale attualmente individuato non è ancora stato trasformato
 in prova strutturata di rappresentazioni. Non utilizzare date stampate
 sulle pagine di indice come date delle recite.
+
+## Seconda prova primaria: cartellone del Comune su Art Bonus
+
+La scheda istituzionale https://artbonus.gov.it/1319-comune-di-rovigo.html,
+con descrizione inserita dall'ente beneficiario, documenta la stagione
+2026/27, i compositori abbreviati, l'identità del dittico Menotti/Bernstein
+e la qualificazione espressa di *Die Fledermaus* come operetta.
+
+`opera_atlas/rovigo_artbonus_program.py` riconosce solo il blocco
+2026/27 e richiede la lista completa e la qualificazione dei generi. Il
+parser restituisce deliberatamente `event_facts: []`: la fonte certifica
+il repertorio, **non** le date e gli orari di biglietteria. Rimane perciò
+un riscontro per la revisione editoriale, non un'alternativa fittizia
+all'acquisizione del programma ufficiale o delle singole pagine-evento.
+Quando saranno disponibili le recite sul sito del Teatro, il parser dovrà
+consentire di confrontare le identità senza creare una doppia produzione.
+
+Test: `python -m unittest tests.test_rovigo_artbonus_program -v`.
