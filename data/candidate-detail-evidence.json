@@ -1868,8 +1868,8 @@
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "content_sha256": "df8ac62678120723faf8350b1800b19a72d43f299710db5deb790a14f934223b",
-      "checked_at": "2026-11-22T11:43:14+00:00",
+      "content_sha256": "80f9ed589e3e9d3fe7461d43bc86399245c1276ef3d50376707dba5de7f8ae3f",
+      "checked_at": "2026-11-22T11:54:35+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2493,8 +2493,8 @@
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
-      "content_sha256": "9d9ce0015a3ddc5ec26fcb30598801471c9d516b071e45a4d1e38db5b7eb3f9f",
-      "checked_at": "2026-11-22T11:43:17+00:00",
+      "content_sha256": "48a500a9724a6a542fff78a4d81c4fca5def3daa35a790cb7492303b0ba7305d",
+      "checked_at": "2026-11-22T11:55:01+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2696,8 +2696,8 @@
       "candidate_id": "oa-index-7b0a1e061133c0b5970e",
       "source_key": "jesi-esecuzione-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "content_sha256": "0c3fccb60b12399c660e914dfb4c846af53b8dfeae3cd060a4d3935a5516ff0a",
-      "checked_at": "2026-11-22T04:28:42+00:00",
+      "content_sha256": "1fd3bc513ba56d96f8a0fa9db7d3ae300d6dcd2d2018614ececd2e2c902365b8",
+      "checked_at": "2026-11-22T11:54:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4109,8 +4109,8 @@
       "candidate_id": "oa-index-addcc48a211cf5aea678",
       "source_key": "jesi-don-pasquale-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "content_sha256": "0c3fccb60b12399c660e914dfb4c846af53b8dfeae3cd060a4d3935a5516ff0a",
-      "checked_at": "2026-11-22T04:28:42+00:00",
+      "content_sha256": "1fd3bc513ba56d96f8a0fa9db7d3ae300d6dcd2d2018614ececd2e2c902365b8",
+      "checked_at": "2026-11-22T11:54:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4662,8 +4662,8 @@
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "source_key": "treviso-del-monaco-opera-2026-27",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
-      "content_sha256": "43119367121ca13ae31e4489ea7c00d2606e719470b1f595bc1bf9f795c546e8",
-      "checked_at": "2026-11-22T11:43:30+00:00",
+      "content_sha256": "9614bcfc3071aafc23f43472ce5df0552ea0046717a4a57d8d0dcfcad5333742",
+      "checked_at": "2026-11-22T11:54:44+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4807,8 +4807,8 @@
       "candidate_id": "oa-index-cf2044dac191fa690c37",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
-      "content_sha256": "ea072ac5a15dbbb5019ca803d143dfda2ccb5810ada4e8d4d4bc457f00902138",
-      "checked_at": "2026-11-22T11:43:41+00:00",
+      "content_sha256": "9efbbf8362a061dd48337384952f862c38c78d5d52a61d6a7d0508ec25401325",
+      "checked_at": "2026-11-22T11:54:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4907,8 +4907,8 @@
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
-      "content_sha256": "ddcad8d9b5f5ed92bf63336ca14a3ad68bf7965f36a176a9d5e67c3b720710fc",
-      "checked_at": "2026-11-22T11:43:44+00:00",
+      "content_sha256": "9097fcb1bb77bf793a3976705f115289a186e511777372dfd25172d5821fcbac",
+      "checked_at": "2026-11-22T11:54:54+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
