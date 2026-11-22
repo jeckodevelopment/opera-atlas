@@ -806,6 +806,12 @@ def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
+    if source_key=="asti-alfieri-rolling-opera":
+        from opera_atlas.asti_alfieri_parser import parse_detail
+        title,composer,venue,recite=parse_detail(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in recite]
     if source_key=="savona-giocosa-rolling-opera":
         from opera_atlas.savona_opera_giocosa_parser import parse_homepage
         return [{"event_title":row["title"],"composer":row["composer"],
@@ -1410,7 +1416,15 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))
-                parsers.append(("schema_event",lambda:parse_event_facts(page.html)))
+                if item["source_key"]=="asti-alfieri-rolling-opera":
+                    # Mixed genre category: no general schema/authority fallback.
+                    # Only the first-party opera, composer, venue and clock
+                    # parser may create evidence (concert/prose never pass).
+                    parsers=[("official_composer_credit",
+                        lambda:parse_source_credited_opera_detail(
+                            item["source_key"],item["official_url"],page.html))]
+                else:
+                    parsers.append(("schema_event",lambda:parse_event_facts(page.html)))
                 for name,parse in parsers:
                     try:
                         facts=parse()
