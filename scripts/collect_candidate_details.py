@@ -837,7 +837,12 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
                  "date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in dates]
     if source_key=="cosenza-inprimafila-rolling-opera":
-        from opera_atlas.cosenza_inprimafila_opera import parse_detail
+        from opera_atlas.cosenza_inprimafila_opera import parse_detail,parse_season_summary
+        if "/stagione-lirica-" in url:
+            productions=parse_season_summary(html,url=url)
+            return [{"event_title":title,"composer":composer,"venue":venue,
+                     "date":day,"starts_at":official_local_time(day,clock)}
+                    for title,composer,venue,dates in productions for day,clock in dates]
         title,composer,venue,dates=parse_detail(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,clock)}
