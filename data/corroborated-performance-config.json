@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "rovigo-traviata-2027",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "official_event_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027",
+      "issuer_repertoire_url": "https://artbonus.gov.it/1319-comune-di-rovigo.html",
+      "publisher_events": [
+        {
+          "date": "2027-01-22",
+          "time": "20:30",
+          "url": "https://www.classicalive.it/it/eventi/2027-01-22/la-traviata/"
+        },
+        {
+          "date": "2027-01-24",
+          "time": "16:00",
+          "url": "https://www.classicalive.it/it/eventi/2027-01-24/la-traviata/"
+        }
+      ],
+      "independent_event_url": "https://veneto.piazzainfesta.it/rovigo/la-traviata-118403",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "season": "2026/27",
+      "school_date": "2027-01-21"
+    }
+  ]
+}
