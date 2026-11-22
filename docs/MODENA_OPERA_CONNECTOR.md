@@ -59,3 +59,26 @@ I nuovi titoli continueranno a passare dal classificatore e dal publisher
 centrali, senza attribuire compositori o immagini in automatico.
 
 Test: `python -m unittest tests.test_modena_theatre_fallback -v`.
+
+## Immagine verificata e orari discordanti — I salvatori della mezzanotte
+
+La pagina ufficiale del **Teatro Comunale** associa la produzione di Daniele
+Furlati alla rappresentazione del **13 dicembre 2026 alle 17:30**.
+La scheda ufficiale del **Comune di Modena** identifica la stessa opera
+e contiene una fotografia della sua messinscena, ma indica **15:30**
+come orario. L'orario comunale non è importato né usato come conferma
+dell'orario del Teatro, responsabile della biglietteria.
+
+Per sbloccare l'opera contemporanea che non dispone di manifesto storico
+Wikimedia già verificato, `verified_municipal_work_art` vincola
+**esattamente** il riferimento fotografico alla coppia titolo/compositore
+e all'URL della produzione del Teatro; la provenienza e il credito
+restano visibili. L'immagine è linkata, non copiata né spacciata per
+manifesto storico. Il publisher mantiene la precedenza per manifesti
+originali e copertine storiche quando disponibili. Nessun altro teatro
+o opera acquisisce per analogia questa eccezione.
+
+Prove: https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/
+e https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-opera-2026-2027/i-salvatori-della-mezzanotte
+
+Test: `python -m unittest tests.test_modena_salvatori_official_art -v`.
