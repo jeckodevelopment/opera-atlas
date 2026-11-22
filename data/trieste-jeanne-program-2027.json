@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "source_key": "verdi-trieste-season-2026-27",
+  "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
+  "official_schedule_url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/11/Programma_STAGIONE_LIRICA_2026_27_WEB.pdf",
+  "official_credits_url": "https://www.teatroverdi-trieste.com/it/news/presentata-la-stagione-lirica-e-di-balletto-2026-27/",
+  "venue": "Teatro Lirico Giuseppe Verdi",
+  "components": [
+    {
+      "title": "Jeanne d’Arc au bûcher",
+      "composer": "Arthur Honegger"
+    },
+    {
+      "title": "Jeanne Dark",
+      "composer": "Fabio Vacchi"
+    }
+  ],
+  "dates": [
+    [
+      "2027-04-09",
+      "20:00"
+    ],
+    [
+      "2027-04-10",
+      "18:00"
+    ],
+    [
+      "2027-04-11",
+      "16:00"
+    ],
+    [
+      "2027-04-16",
+      "20:00"
+    ],
+    [
+      "2027-04-17",
+      "16:00"
+    ],
+    [
+      "2027-04-18",
+      "16:00"
+    ]
+  ]
+}
