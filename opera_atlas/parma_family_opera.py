@@ -17,10 +17,16 @@ VENUE="Teatro Regio di Parma"
 MONTHS={"gen":1,"feb":2,"mar":3,"apr":4,"mag":5,"giu":6,
         "lug":7,"ago":8,"set":9,"ott":10,"nov":11,"dic":12}
 WEEKDAYS={"lun":0,"mar":1,"mer":2,"gio":3,"ven":4,"sab":5,"dom":6}
+# The production's CMS may insert inline labels, punctuation and 'ore'
+# between date, time and audience. These are *adjacent ticket fields*;
+# the calendar block is scoped before the first external ticket link.
+SEP=r"(?:[\s,.;:–-]{0,16})"
 ROW=re.compile(
-    r"(?i)\b(lun|mar|mer|gio|ven|sab|dom)\s+([0-3]?\d)\s+"
-    r"(gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic)\s+"
-    r"([01]?\d|2[0-3]):([0-5]\d)\s+(Scuole|Famiglie)\b")
+    r"(?i)\b(lun|mar|mer|gio|ven|sab|dom)"+SEP+
+    r"([0-3]?\d)"+SEP+
+    r"(gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic)"+SEP+
+    r"(?:ore"+SEP+r")?([01]?\d|2[0-3]):([0-5]\d)"+SEP+
+    r"(Scuole|Famiglie)\b")
 CANCEL=re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b")
 
 def parse_family_opera(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
@@ -75,6 +81,18 @@ def parse_family_opera(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str
     matches=list(ROW.finditer(schedule))
     if not matches or len(matches)>24:
         raise ValueError("missing complete official Parma ticket schedule")
+    # This source-specific December 2026 opera advertises four labelled
+    # ticket slots. A partial card is not a verified complete programme.
+    allowed={
+        (4,"dic","09:00","scuole"),
+        (4,"dic","11:00","scuole"),
+        (5,"dic","15:00","famiglie"),
+        (5,"dic","18:00","famiglie"),
+    }
+    observed={(int(m[2]),m[3].lower(),f"{int(m[4]):02d}:{m[5]}",m[6].lower())
+              for m in matches}
+    if year!=2026 or observed!=allowed or len(matches)!=len(allowed):
+        raise ValueError("Parma official school and family ticket slots incomplete")
     # Every labelled audience row inside the scoped box must be accounted
     # for; introductory references to school ticket collection do not count.
     labels=re.findall(r"\b(?:Scuole|Famiglie)\b",schedule,re.I)
