@@ -1,4 +1,4 @@
-"""Source-labelled editorial proof must enter central canonical transaction only."""
+"""Cross-source reviewed proof uses central canonical promotion, never direct feed edits."""
 import json
 import unittest
 from datetime import date
