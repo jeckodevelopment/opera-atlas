@@ -6,6 +6,16 @@ from pathlib import Path
 PROFILES=Path(__file__).resolve().parents[1]/"site"/"theatre-profiles.json"
 
 class OutdoorVenueProfileTests(unittest.TestCase):
+    def test_directory_inherits_photos_from_editorial_profiles(self):
+        # Both venues are performance-derived, not national directory entries.
+        directory=(PROFILES.parent/"directory.js").read_text(encoding="utf-8")
+        self.assertIn('const profile=editorial.venues[e.municipality+',directory)
+        self.assertIn('photo_file:profile.photo_file',directory)
+        self.assertIn('photo_source_url:profile.photo_source_url',directory)
+        self.assertIn('photo_credit:profile.photo_credit',directory)
+        self.assertIn('imageKind:"venue"',directory)
+        self.assertIn('independentVenue:true',directory)
+
     def test_forte_and_piazza_have_editorial_photographs(self):
         venues=json.loads(PROFILES.read_text(encoding="utf-8"))["venues"]
         expected={
