@@ -90,7 +90,7 @@ def _composer(items):
     return None
 
 
-def parse(html: str, *, url: str = URL) -> list[dict]:
+def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list[dict]:
     target = urlsplit(url)
     if target.scheme != "https" or target.hostname != "www.classicalive.it" or (
         not SEASON.fullmatch(target.path)
@@ -113,8 +113,18 @@ def parse(html: str, *, url: str = URL) -> list[dict]:
     def finish():
         if current is None:
             return
-        if not current["composer"] or not current["venue_verified"] or not current["performances"]:
-            raise ValueError("secondary production lacks composer, venue or exact recite")
+        missing = [field for field, ok in (
+            ("composer", current["composer"]),
+            ("venue", current["venue_verified"]),
+            ("recite", current["performances"]),
+        ) if not ok]
+        if missing:
+            if diagnostics is not None:
+                diagnostics.append({"heading": current["title"], "missing": missing})
+            # A page can contain unrelated headings, closed seasons and
+            # incomplete blocks. Never invent missing facts, and report them
+            # separately from verified candidate records.
+            return
         blocks.append(current)
 
     for kind, value, href in items:
@@ -191,7 +201,8 @@ def main():
         response = fetch_official_html(db, source_id=row["id"], url=URL, network_enabled=True)
     finally:
         db.close()
-    productions = parse(response.html)
+    skipped = []
+    productions = parse(response.html, diagnostics=skipped)
     print(json.dumps({
         "source": URL,
         "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -200,6 +211,8 @@ def main():
         "status": "candidates_only",
         "productions": productions,
         "production_count": len(productions),
+        "incomplete_sections": skipped,
+        "incomplete_section_count": len(skipped),
         "performance_count": sum(len(x["performances"]) for x in productions),
         "published": False,
     }, ensure_ascii=False))
