@@ -32,7 +32,7 @@ def parse_detail(html:str,*,url:str,registry:dict|None=None):
         ):
         raise ValueError("unapproved Messina opera event URL")
     text=clean(html)
-    categories=re.findall(r"(?i)\\bOpera\\s+(\\d{2})\\s*/\\s*(\\d{2})\\b",text)
+    categories=re.findall(r"(?i)\bOpera\s+(\d{2})\s*/\s*(\d{2})\b",text)
     if len(categories)!=1:
         raise ValueError("unique official Messina opera category required")
     season_start,season_end=map(int,categories[0])
