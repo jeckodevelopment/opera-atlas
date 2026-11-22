@@ -44,7 +44,7 @@ footer{margin-top:34px;padding-top:22px;border-top:1px solid #e1ddd4;color:#716c
 <details class="accordion"><summary>3. Pubblicazione</summary><div class="inside"><div id="publish-stats" class="mini-grid"></div><p class="muted">La copertura delle recite riguarda soltanto le date ufficiali già individuate, non una verifica completa di ogni stagione.</p><div id="publish-note" class="note"></div></div></details>
 <details class="accordion"><summary>4. Diagnostica avanzata — indici e workflow</summary><div class="inside"><p class="muted">Dati tecnici accessibili su richiesta, senza liste infinite nella pagina principale.</p>
 <div class="toolbar"><input type="search" id="index-search" placeholder="Filtra indice stagionale" aria-label="Filtra indici"></div>
-<div class="table-wrap"><table><thead><tr><th>Indice</th><th>Esito</th><th>Link</th><th>Ultima verifica</th></tr></thead><tbody id="indexes"></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>Indice</th><th>Copertura stagioni future</th><th>Esito scansione</th><th>Link</th><th>Ultima verifica</th></tr></thead><tbody id="indexes"></tbody></table></div>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/jeckodevelopment/opera-atlas/actions">Tutte le esecuzioni GitHub Actions</a></p>
 <p id="lifecycle" class="muted"></p></div></details>
 <footer>Dati letti direttamente dal repository GitHub di Opera+ Atlas · Dashboard indipendente dal sito pubblico · Nessun aggiornamento SFTP richiesto per i dati.</footer>
@@ -154,11 +154,30 @@ function render(){
  $("catalog-note").textContent="Il confronto punta ai manifest versionati di opere, produzioni e recite: "+(evidenceTotals.ambiguous_source_url||0)+" URL ambigui, "+(evidenceTotals.no_direct_repository_link||0)+" privi di collegamento diretto. Nessun risultato equivale a una verifica HTTPS del sito pubblico. Le fonti condivise non sono attribuite a un singolo teatro.";
  replace("publish-stats",[mini(found,"Recite individuate"),mini(published,"Recite pubblicate"),mini(missing,"Recite mancanti"),mini(found?Math.round(100*published/found)+"%":"N/D","Copertura osservata")]);
  $("publish-note").textContent="La pubblicazione sul catalogo pubblico non è ancora verificata con un controllo end-to-end separato. Le quantità derivano dal feed di copertura del repository.";
- const indexes=data.season.sources||[],indexq=norm($("index-search").value);
- const indexRows=indexes.filter(x=>!indexq||norm(x.key).includes(indexq)).map(x=>{const tr=node("tr");cell(tr,x.key);const state=x.status==="success"?"ok":"bad";const t=cell(tr,"");t.append(chip(state,x.status||"Non verificato"));cell(tr,x.links??"—");cell(tr,fmt(x.last_attempt_at));return tr});
- if(!indexRows.length){const tr=node("tr");cell(tr,"Nessun indice corrisponde al filtro.").colSpan=4;indexRows.push(tr)}replace("indexes",indexRows);
  const lifecycle=data.lifecycle;
- $("lifecycle").textContent=lifecycle?"Prossime stagioni: "+(lifecycle.future_seasons_verified??"—")+" verificate · "+(lifecycle.legacy_year_bound??"—")+" indici da migrare · verifica "+fmt(lifecycle.checked_at):"Dati sulla copertura delle stagioni successive non disponibili.";
+ const lifecycleByKey=new Map((lifecycle?.sources||[]).map(x=>[x.source_key,x]));
+ const indexes=data.season.sources||[],indexq=norm($("index-search").value);
+ const indexRows=indexes.filter(x=>!indexq||norm(x.key).includes(indexq)).map(x=>{
+  const tr=node("tr");cell(tr,x.key);
+  const history=lifecycleByKey.get(x.key),coverage=cell(tr,"");
+  if(!history)coverage.append(chip("unknown","Non censito"));
+  else if(history.legacy_covered_by_successor){
+   coverage.append(chip("ok","Storico · successore implementato"));
+   coverage.append(node("div","Successore: "+history.successor_source_key,"muted"));
+  }else if(history.strategy==="legacy_year_bound")coverage.append(chip("warn","Ancora senza successore"));
+  else if(history.strategy==="verified_rollover")coverage.append(chip("ok","Rollover implementato"));
+  else coverage.append(chip("unknown","URL senza anno · da verificare"));
+  const state=x.status==="success"?"ok":"bad";const t=cell(tr,"");
+  t.append(chip(state,x.status||"Non verificato"));cell(tr,x.links??"—");cell(tr,fmt(x.last_attempt_at));
+  return tr;
+ });
+ if(!indexRows.length){const tr=node("tr");cell(tr,"Nessun indice corrisponde al filtro.").colSpan=5;indexRows.push(tr)}replace("indexes",indexRows);
+ $("lifecycle").textContent=lifecycle
+   ?"Prossime stagioni: "+(lifecycle.future_seasons_verified??"—")+" verificate · "
+   +(lifecycle.legacy_still_uncovered??"—")+" indici ancora senza successore · "
+   +(lifecycle.legacy_covered_by_successor??"—")+" indici storici già coperti da un successore implementato · "
+   +(lifecycle.legacy_year_bound??"—")+" indici legacy totali · verifica "+fmt(lifecycle.checked_at)
+   :"Dati sulla copertura delle stagioni successive non disponibili.";
  const attempts=items.flatMap(x=>x.sources||[]).map(x=>dateMs(x.last_attempt_at)).filter(x=>x!==null),latest=attempts.length?Math.max(...attempts):null;
  const badge=$("freshness");badge.className="status "+(latest===null?"unknown":Date.now()-latest>48*3600000?"bad":"ok");
  badge.textContent="Ultima scansione registrata: "+fmt(latest===null?null:new Date(latest).toISOString())+(latest!==null&&Date.now()-latest>48*3600000?" · Dati potenzialmente obsoleti":"");
