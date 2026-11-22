@@ -6,7 +6,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/",
       "content_sha256": "d6a768e2e9c1051fe22187c2fd9224acb66717a536763b35fc7679d9859d7897",
-      "checked_at": "2026-11-22T12:43:20+00:00",
+      "checked_at": "2026-11-22T12:48:55+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "9c7d487d9739a4f48ca1c2418d12fcd610bb12e9b4c6950a09edbfa8e235645c",
-      "checked_at": "2026-11-22T12:43:23+00:00",
+      "checked_at": "2026-11-22T12:48:58+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -687,6 +687,37 @@
           "venue": "Teatro alla Scala"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-1a02a18e39758285a976",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",
+      "content_sha256": "5aa82a53dbf547dfdc8d15de9a822b44913e38cef546543c3d1be36da14bcbfc",
+      "checked_at": "2026-11-22T12:49:15+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-02-12",
+          "starts_at": "2027-02-12T20:30:00+01:00",
+          "venue": "Teatro del Giglio Giacomo Puccini"
+        },
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-02-14",
+          "starts_at": "2027-02-14T16:00:00+01:00",
+          "venue": "Teatro del Giglio Giacomo Puccini"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrodelgigliogiacomopuccini.it/fileadmin/_processed_/1/6/csm_otello_web_13c731913b.jpg",
+        "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Otello",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-1a517d22f1477341131c",
@@ -1291,7 +1322,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
       "content_sha256": "bc810084b57f626d8cec7d8252f53d72ac33b2fbb47fe22c34fd1e8538c7c83f",
-      "checked_at": "2026-11-22T12:43:27+00:00",
+      "checked_at": "2026-11-22T12:49:01+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2280,7 +2311,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
       "content_sha256": "2383de1b7fc49d28dac42ebf3b9fbc1cf5c798173e9257f22b4906eaf47d3e37",
-      "checked_at": "2026-11-22T12:43:33+00:00",
+      "checked_at": "2026-11-22T12:49:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2628,7 +2659,7 @@
       "source_key": "sassari-de-carolis-opera-2026",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
       "content_sha256": "38b92e9a9107be75aae3c4ad0b84d43ed236458d496035ad02d2069b0142ed22",
-      "checked_at": "2026-11-22T12:42:54+00:00",
+      "checked_at": "2026-11-22T12:48:29+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2739,7 +2770,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
       "content_sha256": "a05497c0e252e149fc03673ee35d6dff73e23b61238fb99220d8204f22ec7d5f",
-      "checked_at": "2026-11-22T12:42:46+00:00",
+      "checked_at": "2026-11-22T12:48:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2975,7 +3006,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/",
       "content_sha256": "65fa58b8b8c0f60b11aebbd1735ad13ec9c8198afc9d77f18ae29d3a072e9992",
-      "checked_at": "2026-11-22T12:43:01+00:00",
+      "checked_at": "2026-11-22T12:48:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3354,7 +3385,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/",
       "content_sha256": "aa4927270e30dda217caa0d5ca158f17f349915e066f79b29afc4998fefe0879",
-      "checked_at": "2026-11-22T12:43:03+00:00",
+      "checked_at": "2026-11-22T12:48:40+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3685,6 +3716,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-93538b402fa3e844ca69",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
+      "content_sha256": "ecacfc68135abe8f3115cc498efef51f53bb89f393ae77397aa0d4b455aa025c",
+      "checked_at": "2026-11-22T12:48:09+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T20:30:00+01:00",
+          "venue": "Teatro del Giglio Giacomo Puccini"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T16:00:00+01:00",
+          "venue": "Teatro del Giglio Giacomo Puccini"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrodelgigliogiacomopuccini.it/fileadmin/_processed_/f/5/csm_barbiere_siviglia_web_fc8d7280b7.jpg",
+        "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Il barbiere di Siviglia",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-954a1b185a0354522e71",
       "source_key": "ravenna-alighieri-cherubini-2027",
       "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
@@ -4001,7 +4063,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/",
       "content_sha256": "ab7677035a7c5e1c54303bdf2ba2e821eada1f313b6fb6d6b126dcb57ebb4d6d",
-      "checked_at": "2026-11-22T12:43:06+00:00",
+      "checked_at": "2026-11-22T12:48:42+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4368,7 +4430,7 @@
       "source_key": "sassari-de-carolis-opera-2026",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
       "content_sha256": "89343b86bf99a100427ff6d617ed755c28ca56be91e6883de11f5037417f9944",
-      "checked_at": "2026-11-22T12:43:09+00:00",
+      "checked_at": "2026-11-22T12:48:45+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4712,6 +4774,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-b79b2b7737225d1a67dc",
+      "source_key": "giglio-lucca-opera-2026-27",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/",
+      "content_sha256": "04890d467538edbf93ee6777c59e2c67a74df35eca28fa04744e49778154396e",
+      "checked_at": "2026-11-22T12:49:09+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-21",
+          "starts_at": "2027-03-21T16:00:00+01:00",
+          "venue": "Teatro del Giglio Giacomo Puccini"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrodelgigliogiacomopuccini.it/fileadmin/_processed_/0/d/csm_aida_web_bf2c333978.jpg",
+        "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Aida",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
@@ -4990,7 +5076,7 @@
       "source_key": "sassari-de-carolis-opera-2026",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
       "content_sha256": "ae34a31832486076e420b2e7420bf5d89249ba62626faa0c8b632cb4b2e3142f",
-      "checked_at": "2026-11-22T12:43:12+00:00",
+      "checked_at": "2026-11-22T12:48:48+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5245,7 +5331,7 @@
       "source_key": "chieti-marrucino-lirica-2026",
       "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
       "content_sha256": "15b2b71c0d4a1692284184e91781cc2ce21ba1b53a935d4606989816799f8e4c",
-      "checked_at": "2026-11-22T12:42:31+00:00",
+      "checked_at": "2026-11-22T12:48:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
