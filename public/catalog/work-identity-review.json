@@ -159,10 +159,10 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 16,
+    "candidates_checked": 9,
     "candidates_without_facts": 0,
-    "facts_examined": 76,
-    "facts_resolved": 33,
+    "facts_examined": 43,
+    "facts_resolved": 0,
     "translated_facts_resolved": 0,
     "unmatched_facts": 43,
     "unmatched_groups": 9
