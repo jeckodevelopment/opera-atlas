@@ -61,6 +61,31 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
         self.assertEqual(verified_venue(KEY,facts,registry)[:2],
                          ("Trapani","Teatro Giuseppe Di Stefano"))
 
+    def test_automatic_rollover_requires_verified_next_official_season(self):
+        from scripts.rollover_season_indexes import next_index,ROLLOVER_KEYS
+        from scripts.discover_season_indexes import validate_config
+        from scripts.season_lifecycle_health import build
+        import copy
+        config=json.loads(CONFIG.read_text())
+        policy=json.loads(open("data/season-lifecycle-policy.json",encoding="utf-8").read())
+        source=next(x for x in config["sources"] if x["key"]==KEY)
+        self.assertEqual(policy["sources"][KEY]["strategy"],"verified_rollover")
+        self.assertIn(KEY,ROLLOVER_KEYS)
+        self.assertIsNone(next_index(source,today=date(2026,9,30)))
+        next_url=next_index(source,today=date(2026,11,22))
+        self.assertEqual(next_url,INDEX.replace("2026","2027"))
+        advanced=copy.deepcopy(config)
+        next(x for x in advanced["sources"] if x["key"]==KEY)["url"]=next_url
+        validate_config(advanced)
+        self.assertEqual(next_index(
+            next(x for x in advanced["sources"] if x["key"]==KEY),
+            today=date(2027,10,1)),
+            INDEX.replace("2026","2028"))
+        health=build(config,policy,{"sources":[]},{"outcomes":[]})
+        result=next(x for x in health["sources"] if x["source_key"]==KEY)
+        self.assertTrue(result["rollover_implemented"])
+        self.assertFalse(result["future_season_verified"])
+
     def test_same_theatre_concert_or_other_venue_is_excluded(self):
         for html in (
             page(title="Omaggio a Luttazzi",genre="Concerto"),
