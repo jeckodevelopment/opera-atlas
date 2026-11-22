@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T17:51:53+00:00",
+  "checked_at": "2026-11-22T18:12:41+00:00",
   "scope": "national",
-  "attempted": 28,
+  "attempted": 14,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -17,7 +17,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
+      "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -29,17 +29,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-357ebb275673ae888623",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-cab03dfcd8aeff155178",
+      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
       "outcome": "facts_found",
       "rows": 1
     },
@@ -67,31 +57,19 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "outcome": "official_programme_document_pending",
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-fecbb06d8dc649b616d2",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Sassari composer not immediately credited",
-        "authority_work:no_evidence",
-        "official_composer_credit:Sassari composer not immediately credited",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "candidate_id": "oa-index-86855eb33828e6cde6af",
       "outcome": "facts_found",
       "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-a4402559616047a0367b",
+      "outcome": "facts_found",
+      "rows": 5
     },
     {
       "candidate_id": "oa-index-19141fd504da67924d01",
@@ -106,44 +84,17 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
+      "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
+      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-e831cbf742e2f848f44b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:historic Goldoni event belongs to original source",
-        "authority_work:no_evidence",
-        "official_composer_credit:historic Goldoni event belongs to original source",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-f4226333be6c3f44d995",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
+      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -155,77 +106,14 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "candidate_id": "oa-index-e831cbf742e2f848f44b",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:historic Goldoni event belongs to original source",
-        "authority_work:no_evidence",
-        "official_composer_credit:historic Goldoni event belongs to original source",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "candidate_id": "oa-index-fecbb06d8dc649b616d2",
       "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:historic Goldoni event belongs to original source",
-        "authority_work:no_evidence",
-        "official_composer_credit:historic Goldoni event belongs to original source",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-70313ef8895b42a91a5b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-86855eb33828e6cde6af",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:Sassari composer not immediately credited",
-        "authority_work:no_evidence",
-        "official_composer_credit:Sassari composer not immediately credited",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:historic Goldoni event belongs to original source",
-        "authority_work:no_evidence",
-        "official_composer_credit:historic Goldoni event belongs to original source",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-2583140715d654277a2b",
-      "outcome": "facts_found",
-      "rows": 1
+      "rows": 2
     }
   ]
 }
