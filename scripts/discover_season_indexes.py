@@ -310,6 +310,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="goldoni-livorno-rolling-lirica":
+        from opera_atlas.livorno_future_parser import eligible_detail
+        return eligible_detail(url)
     if key=="ravenna-cherubini-rolling-opera":
         from opera_atlas.ravenna_future_parser import eligible_detail
         return eligible_detail(url)
@@ -586,6 +589,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="goldoni-livorno-rolling-lirica":
+        from opera_atlas.livorno_future_parser import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="ravenna-cherubini-rolling-opera":
         from opera_atlas.ravenna_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -780,6 +786,7 @@ def validate_config(config:dict)->list[dict]:
         "ancona-elisir-opera-2026":("www.fondazionemuse.org","/stagione-lirica-2026/"),
         "ancona-cavalleria-program-2026":("www.fondazionemuse.org","/stagione-lirica-2026/"),
         "goldoni-livorno-dido-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
+        "goldoni-livorno-rolling-lirica":("www.goldoniteatro.it","/tipo-spettacolo/lirica/"),
         "goldoni-livorno-otello-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
         "goldoni-livorno-elisir-2026-27":("www.goldoniteatro.it","/notizie/la-stagione-lirica/"),
         "ferrara-macbeth-opera-2026-27":("spettacolo.emiliaromagnacultura.it","/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"),
@@ -835,6 +842,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/lirica/programma-stagione-lirica-2026/" and not index.query
         elif key.startswith("ancona-") and key.endswith("-2026"):
             valid_season=index.path=="/stagione-lirica-2026/" and not index.query
+        elif key=="goldoni-livorno-rolling-lirica":
+            valid_season=index.path=="/tipo-spettacolo/lirica/" and not index.query
         elif key.startswith("goldoni-livorno-") and key.endswith("-2026-27"):
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key=="ferrara-season-opera-2027-28":

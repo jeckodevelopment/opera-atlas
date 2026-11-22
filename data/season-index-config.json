@@ -248,6 +248,13 @@
       "min_links": 1
     },
     {
+      "key": "goldoni-livorno-rolling-lirica",
+      "official_url": "https://www.goldoniteatro.it/",
+      "url": "https://www.goldoniteatro.it/tipo-spettacolo/lirica/",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "goldoni-livorno-otello-2026-27",
       "official_url": "https://www.goldoniteatro.it/",
       "url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
