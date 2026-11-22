@@ -157,6 +157,66 @@ def verified_livorno_recital_urls(manifest:dict, detail:dict)->set[str]:
     return verified
 
 
+def verified_haydn_cronaca_urls(manifest:dict,detail:dict)->set[str]:
+    """Both ticket pages can reference one verified Trento production.
+
+    Do not close a candidate from title alone. Require original first-party
+    observation with checksum, exact opera/composer/venue and matched Italian
+    date/time in exactly one canonical staging.
+    """
+    import re
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    from scripts.publish_catalog_v2 import normalized
+    from opera_atlas.haydn_rolling_opera import eligible_detail
+
+    pages={
+        "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+        "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+    }
+    target="cronaca di un amore. callas e pasolini"
+    allowed={"2027-01-29":"20:00","2027-01-31":"16:00"}
+    productions=[p for p in manifest.get("productions",[])
+                 if p.get("source_url") in pages
+                 and p.get("municipality")=="Trento"
+                 and p.get("venue")=="Teatro Sociale"
+                 and normalized(p.get("title",""))==target
+                 and normalized(p.get("composer",""))=="davide tramontano"
+                 and all(allowed.get(d)==h for d,h in p.get("dates",[]))]
+    if len(productions)!=1:return set()
+    performance_dates=dict(productions[0]["dates"])
+    matches=set()
+    for row in detail.get("evidence",[]):
+        if not isinstance(row,dict) or row.get("source_key")!="haydn-rolling-opera":
+            continue
+        url=row.get("source_url")
+        facts=row.get("event_facts")
+        if (url not in pages or not eligible_detail(url)
+            or row.get("status")!="needs_editorial_review"
+            or not re.fullmatch(r"[0-9a-f]{64}",str(row.get("content_sha256","")))
+            or not isinstance(facts,list) or len(facts)!=1
+            or not isinstance(facts[0],dict)):
+            continue
+        fact=facts[0]
+        if (normalized(str(fact.get("event_title","")))!=target
+            or normalized(str(fact.get("composer","")))!="davide tramontano"
+            or fact.get("venue")!="Teatro Sociale"):
+            continue
+        try:
+            day=fact["date"]
+            instant=datetime.fromisoformat(fact["starts_at"])
+            if instant.tzinfo is None or instant.utcoffset() is None:
+                continue
+            local=instant.astimezone(ZoneInfo("Europe/Rome"))
+            if local.date().isoformat()!=day:continue
+            clock=local.strftime("%H:%M")
+        except (KeyError,TypeError,ValueError,OverflowError):
+            continue
+        if performance_dates.get(day)==clock and allowed.get(day)==clock:
+            matches.add(url)
+    return matches
+
+
 def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
     """Recognize complete independently verified second-source theater dates.
 
@@ -433,6 +493,7 @@ def run(*,check:bool=False):
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
     published.update(verified_pisa_recital_urls(manifest,detail))
     published.update(verified_livorno_recital_urls(manifest,detail))
+    published.update(verified_haydn_cronaca_urls(manifest,detail))
     cagliari_2027=verified_cagliari_2027_brochure_urls()
     programs_path=ROOT/"public"/"catalog"/"programs.json"
     programs=json.loads(programs_path.read_text(encoding="utf-8")) if programs_path.exists() else {"programs":[]}
