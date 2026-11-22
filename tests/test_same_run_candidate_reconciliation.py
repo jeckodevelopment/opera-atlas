@@ -111,6 +111,51 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
         self.assertEqual(again,result)
         self.assertFalse(second["changes"])
 
+    def test_pisa_calendar_recite_aliases_reconcile_only_exact_verified_showtimes(self):
+        from scripts.reconcile_published_candidates import verified_pisa_recital_urls
+        manifest={"productions":[
+            {"title":"Otello","composer":"Giuseppe Verdi",
+             "municipality":"Pisa","venue":"Teatro Verdi",
+             "source_url":"https://teatrodipisa.it/spettacolo/otello/",
+             "dates":[["2027-02-05","20:30"],["2027-02-07","15:30"]]},
+            {"title":"L'occasione fa il ladro","composer":"Gioachino Rossini",
+             "municipality":"Pisa","venue":"Teatro Verdi",
+             "source_url":"https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+             "dates":[["2026-12-04","20:30"]]}]}
+        digest="a"*64
+        def row(name,title,day,time="20:30",sha=digest,source="pisa-future-calendar"):
+            return {"source_key":source,
+                    "source_url":"https://teatrodipisa.it/calendario/"+name+"/",
+                    "content_sha256":sha,
+                    "event_facts":[{"event_title":title,"date":day,
+                                    "starts_at":day+"T"+time+":00+01:00"}]}
+        evidence={"evidence":[
+            row("otello","Otello","2027-02-05"),
+            row("otello-3","Otello","2027-02-07","15:30"),
+            row("occasione","L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+                "2026-12-04"),
+            row("wrong-time","Otello","2027-02-05","21:00"),
+            row("wrong-title","Aida","2027-02-05"),
+            row("missing-hash","Otello","2027-02-05",sha=""),
+            row("wrong-source","Otello","2027-02-05",source="other"),
+        ]}
+        result=verified_pisa_recital_urls(manifest,evidence)
+        self.assertEqual(result,{
+            "https://teatrodipisa.it/calendario/otello/",
+            "https://teatrodipisa.it/calendario/otello-3/",
+            "https://teatrodipisa.it/calendario/occasione/",
+        })
+        rows={"schema_version":1,"candidates":[
+            {"id":str(i),"source_key":"pisa-future-calendar",
+             "official_url":item["source_url"],"status":"needs_review"}
+            for i,item in enumerate(evidence["evidence"])]}
+        updated,_=reconcile(rows,result)
+        self.assertEqual([r["status"] for r in updated["candidates"]],
+                         ["already_catalogued"]*3+["needs_review"]*4)
+        again,health=reconcile(updated,result)
+        self.assertEqual(updated,again)
+        self.assertFalse(health["changes"])
+
     def test_published_program_is_stable_across_refreshes(self):
         program_url="https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
         candidate={"schema_version":1,"candidates":[{
