@@ -321,6 +321,10 @@
     "mantova-sociale-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "cosenza-rendano-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
