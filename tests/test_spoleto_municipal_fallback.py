@@ -64,6 +64,15 @@ class SpoletoMunicipalFallbackTests(unittest.TestCase):
         self.assertEqual([(x["source_key"],x["official_url"])
                           for x in candidates["candidates"]],[(KEY,URL)])
 
+    def test_exact_municipal_notice_is_validated_for_catalog_publication(self):
+        from scripts.build_verified_catalog import validate_auto_sources
+        self.assertEqual(validate_auto_sources([URL]),{URL})
+        for invalid in (URL+"?q=1",
+                        URL.replace("/it/news/2022369","/it/news/another"),
+                        URL.replace("www.comune.spoleto.pg.it","untrusted.invalid")):
+            with self.subTest(url=invalid),self.assertRaises(ValueError):
+                validate_auto_sources([invalid])
+
     def test_municipal_candidate_not_discarded_by_primary_host_filter(self):
         candidate={"id":"oa-index-spoleto-municipal-test",
                    "source_key":KEY,"official_url":URL,"status":"needs_review"}
