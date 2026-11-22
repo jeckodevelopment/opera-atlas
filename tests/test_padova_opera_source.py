@@ -32,6 +32,12 @@ class PadovaOperaTests(unittest.TestCase):
             ("La traviata","Giuseppe Verdi","Teatro Verdi","2026-12-29","20:45"),
             ("La traviata","Giuseppe Verdi","Teatro Verdi","2026-12-31","21:00"),
         ])
+    def test_official_composer_followed_by_verb(self):
+        # The official Comune di Padova text continues with "vedrà la regia"
+        # without punctuation after the composer name.
+        official=HTML.replace("Ruggero Leoncavallo.", "Ruggero Leoncavallo vedrà la regia di Gabriele Lavia.")
+        self.assertEqual(len(parse_program(official,url=URL)),5)
+
     def test_missing_attribution_or_date_fails_closed(self):
         for bad in (HTML.replace("Ruggero Leoncavallo","Giacomo Puccini"),
                     HTML.replace("Giuseppe Verdi","Giuseppe Verdi jr"),
