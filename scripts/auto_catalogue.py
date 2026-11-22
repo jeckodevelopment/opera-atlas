@@ -676,6 +676,30 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                    and normalized(x["title"]).replace("’","'")==title_credit
                    and normalized(x["composer"])==composer]
         exact=[x for x in colliding if x["source_url"]==url]
+        # The Goldoni publishes a single official season production and
+        # separate ticket pages for individual recite. Reuse the canonical
+        # season staging only when a ticket's complete work/venue/composer
+        # identity and local showtime agree with that production. A conflicting
+        # ticket clock must never create a second public staging.
+        goldoni_season="https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+        if (not exact and key=="goldoni-livorno-rolling-lirica"
+            and city=="Livorno" and venue=="Teatro Goldoni"
+            and url.startswith("https://www.goldoniteatro.it/spettacoli/")):
+            season_matches=[p for p in colliding
+                            if p["source_url"]==goldoni_season
+                            and normalized(p["title"]).replace("’","'")==title_credit
+                            and normalized(p["composer"])==composer]
+            if len(season_matches)==1:
+                known=dict(season_matches[0]["dates"])
+                overlapping=set(dates)&set(known)
+                if overlapping and any(known[day]!=dates[day]
+                                       for day in overlapping):
+                    issues.append({"candidate_id":cid,
+                                   "reason":"conflicting_existing_time",
+                                   "dates":sorted(overlapping)})
+                    continue
+                if set(dates).issubset(known):
+                    exact=season_matches
         # The Mascagni Festival publishes one first-party ticket URL *per
         # recita*. Both pages explicitly identify the same 2026 production
         # in Piazza Goldoni. These two exact URLs form one staging, never
