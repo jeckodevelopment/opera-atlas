@@ -122,18 +122,18 @@ def parse_detail(html:str,*,url:str):
     # Read the complete first-party composer line, stopping at a new
     # production credit instead of silently keeping only the first author.
     credit=re.search(
-        r"(?is)\\bMusica\\s+di\\s+(.*?)\\s+"
-        r"(?=Libretto\\b|Trascrizione\\b|Drammaturgia\\b|Cast\\b|"
-        r"Prima\\s+rappresentazione\\b|Direttore\\b|Regia\\b|"
-        r"Scene\\b|Produzione\\b)",credit_section)
+        r"(?is)\bMusica\s+di\s+(.*?)\s+"
+        r"(?=Libretto\b|Trascrizione\b|Drammaturgia\b|Cast\b|"
+        r"Prima\s+rappresentazione\b|Direttore\b|Regia\b|"
+        r"Scene\b|Produzione\b)",credit_section)
     if not credit:
         raise ValueError("explicit official Novara opera composer is missing")
-    composer=re.sub(r"\\s*\\([^)]*Accademia\\s+AMO[^)]*\\)\\s*$","",
+    composer=re.sub(r"\s*\([^)]*Accademia\s+AMO[^)]*\)\s*$","",
                     credit.group(1),flags=re.I).strip(" .")
     authors=[name.strip() for name in composer.split(",")]
     if (not 1<=len(authors)<=4
             or any(not re.fullmatch(
-                r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'\\u2019-]{2,70}",name)
+                r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'\u2019-]{2,70}",name)
                 or len(name.split())<2 for name in authors)):
         raise ValueError("invalid or ambiguous first-party composer credit")
     composer=", ".join(authors)
@@ -160,17 +160,17 @@ def parse_detail(html:str,*,url:str):
         # A date may list morning school-only recite alongside later public
         # performances on other dates. Never publish school-only entries.
         following=block[match.end():matches[i+1].start() if i+1<len(matches) else len(block)]
-        if re.search(r"(?i)\\brecite?\\s+per\\s+le\\s+scuole\\b",following):
+        if re.search(r"(?i)\brecite?\s+per\s+le\s+scuole\b",following):
             school_dates+=1
             continue
-        if re.search(r"(?i)\\b(?:ore\\s+)?\\d{1,2}:[0-5]\\d\\b",following):
+        if re.search(r"(?i)\b(?:ore\s+)?\d{1,2}:[0-5]\d\b",following):
             raise ValueError("multiple or ambiguous public Novara showtimes")
         rows.append((observed.isoformat(),f"{int(hour):02d}:{minute}"))
     declared_dates=re.findall(
-        r"(?i)\\b(?:luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|"
-        r"venerd[iì]|sabato|domenica)\\s+\\d{1,2}\\s+"
+        r"(?i)\b(?:luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|"
+        r"venerd[iì]|sabato|domenica)\s+\d{1,2}\s+"
         r"(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|"
-        r"settembre|ottobre|novembre|dicembre)\\s+20\\d{2}",block)
+        r"settembre|ottobre|novembre|dicembre)\s+20\d{2}",block)
     if (not rows or len(rows)>24 or len(rows)+school_dates!=len(declared_dates)
         or len(rows)!=len(set(rows))):
         raise ValueError("incomplete, duplicate or ambiguous Novara recite")
