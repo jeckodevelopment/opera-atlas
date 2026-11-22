@@ -90,6 +90,27 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
                           "needs_review","needs_review"])
         self.assertEqual(len(report["changes"]),2)
 
+    def test_shared_page_identity_survives_lagging_url_index(self):
+        # A verified matching solo/program identity must not be reset simply
+        # because the generic URL publication index lags this checkpoint.
+        url="https://theatre.example/season"
+        source="example-opera-2027"
+        candidates={"schema_version":1,"candidates":[
+            {"id":"verified","source_key":source,"official_url":url,
+             "status":"needs_review"},
+            {"id":"unverified","source_key":"another-opera-2027",
+             "official_url":url,"status":"already_catalogued"}]}
+        identity={(source,url)}
+        result,report=reconcile(candidates,set(),ambiguous_urls={url},
+                                 identity_verified=identity)
+        self.assertEqual([row["status"] for row in result["candidates"]],
+                         ["already_catalogued","needs_review"])
+        self.assertEqual(len(report["changes"]),2)
+        again,second=reconcile(result,set(),ambiguous_urls={url},
+                               identity_verified=identity)
+        self.assertEqual(again,result)
+        self.assertFalse(second["changes"])
+
     def test_published_program_is_stable_across_refreshes(self):
         program_url="https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/"
         candidate={"schema_version":1,"candidates":[{
