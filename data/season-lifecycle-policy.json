@@ -297,6 +297,10 @@
     "asti-alfieri-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "haydn-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
