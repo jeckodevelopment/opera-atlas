@@ -14,6 +14,12 @@ from urllib.parse import urlsplit
 
 from opera_atlas.controlled_fetch import fetch_official_html
 from opera_atlas.db import connect, migrate
+from scripts.publish_catalog_v2 import ROOT
+from scripts.daily_ingest import _write_atomic
+
+CANDIDATES = ROOT / 'data/san-carlo-secondary-candidates.json'
+PUBLIC_CANDIDATES = ROOT / 'public/catalog/san-carlo-secondary-candidates.json'
+HEALTH = ROOT / 'data/san-carlo-secondary-health.json'
 
 URL = "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/"
 VENUE = "Teatro di San Carlo"
@@ -202,13 +208,78 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
     return blocks
 
 
+def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
+                               incomplete: list[dict]) -> tuple[dict, dict]:
+    """Cross-source review input, never a first-party canonical observation.
+
+    The routine deliberately does not write the official candidate/evidence
+    registries: these rows cannot pass the publishing gate until corroborated.
+    """
+    if not productions:
+        raise ValueError("refuse empty secondary candidate checkpoint")
+    records = []
+    identities = set()
+    for production in productions:
+        if (production.get("review_status") != "needs_primary_corroboration"
+            or production.get("venue") != VENUE
+            or production.get("city") != CITY
+            or production.get("secondary_source") != URL
+            or not production.get("title") or not production.get("composer")
+            or not production.get("performances")):
+            raise ValueError("untrusted secondary candidate")
+        identity = (production["title"].casefold(), production["composer"].casefold())
+        if identity in identities:
+            raise ValueError("duplicate secondary candidate identity")
+        identities.add(identity)
+        clocks = set()
+        for recita in production["performances"]:
+            if not isinstance(recita, dict) or set(recita) != {"date", "time"}:
+                raise ValueError("untrusted secondary clock")
+            day = date.fromisoformat(recita["date"])
+            clock = recita["time"]
+            if (not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", clock)
+                or day.isoformat() != recita["date"]
+                or (recita["date"], clock) in clocks):
+                raise ValueError("invalid or duplicate secondary clock")
+            clocks.add((recita["date"], clock))
+        records.append({
+            "title": production["title"],
+            "composer": production["composer"],
+            "venue": VENUE, "city": CITY,
+            "performances": sorted(production["performances"],
+                                   key=lambda row: (row["date"], row["time"])),
+            "secondary_source": URL,
+            "corroboration_status": "pending_independent_event_verification",
+        })
+    records.sort(key=lambda x: (x["title"].casefold(), x["composer"].casefold()))
+    checkpoint = {
+        "schema_version": 1,
+        "source_key": "napoli-san-carlo-rolling-opera",
+        "source_role": "secondary_unverified",
+        "source_url": URL,
+        "productions": records,
+    }
+    health = {
+        "schema_version": 1, "checked_at": checked_at,
+        "source_key": "napoli-san-carlo-rolling-opera",
+        "outcome": "acquired_pending_primary_corroboration",
+        "production_count": len(records),
+        "performance_count": sum(len(p["performances"]) for p in records),
+        "incomplete_sections": incomplete,
+        "published": False,
+    }
+    return checkpoint, health
+
+
 def main():
     parser = argparse.ArgumentParser(description="San Carlo secondary single-source dry-run")
     parser.add_argument("--allow-network", action="store_true")
-    parser.add_argument("--dry-run", action="store_true", required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--dry-run", action="store_true")
+    mode.add_argument("--sync-candidates", action="store_true")
     args = parser.parse_args()
-    if not args.allow_network or not args.dry_run:
-        parser.error("the secondary probe requires --allow-network --dry-run")
+    if not args.allow_network:
+        parser.error("explicit --allow-network is required")
     db = connect()
     try:
         migrate(db)
@@ -220,10 +291,17 @@ def main():
         db.close()
     skipped = []
     productions = parse(response.html, diagnostics=skipped)
+    checked_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    checkpoint, health = build_secondary_checkpoint(productions, checked_at=checked_at, incomplete=skipped)
+    if args.sync_candidates:
+        _write_atomic(CANDIDATES, checkpoint)
+        _write_atomic(PUBLIC_CANDIDATES, checkpoint)
+        _write_atomic(HEALTH, health)
     print(json.dumps({
         "source": URL,
-        "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "dry_run": True,
+        "checked_at": checked_at,
+        "dry_run": args.dry_run,
+        "sync_candidates": args.sync_candidates,
         "source_role": "secondary_unverified",
         "status": "candidates_only",
         "productions": productions,

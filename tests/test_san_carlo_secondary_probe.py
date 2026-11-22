@@ -1,7 +1,7 @@
 """Isolated secondary San Carlo calendar: focused parsing without publication."""
 import unittest
 
-from scripts.scan_san_carlo_secondary import URL, parse
+from scripts.scan_san_carlo_secondary import URL, parse, build_secondary_checkpoint
 
 
 def fixture():
@@ -74,6 +74,34 @@ class SecondarySanCarloTests(unittest.TestCase):
         self.assertEqual(records[0]["title"], "Luisa Miller")
         self.assertEqual(records[0]["composer"], "Giuseppe Verdi")
         self.assertEqual(len(records[0]["performances"]), 2)
+
+    def test_checkpoint_is_unverified_and_deterministic(self):
+        rows = parse(fixture())
+        doc, health = build_secondary_checkpoint(
+            rows, checked_at="2026-11-22T21:54:44Z",
+            incomplete=[{"heading": "Iscriviti alla newsletter", "missing": ["recite"]}]
+        )
+        self.assertEqual(doc["source_role"], "secondary_unverified")
+        self.assertEqual(len(doc["productions"]), 2)
+        self.assertTrue(all(
+            x["corroboration_status"] == "pending_independent_event_verification"
+            for x in doc["productions"]))
+        self.assertFalse(health["published"])
+        self.assertEqual(health["performance_count"], 3)
+        self.assertNotIn("event_facts", str(doc))
+        # Refreshing the same page does not change the canonical input.
+        self.assertEqual(doc, build_secondary_checkpoint(
+            rows, checked_at="2026-11-23T21:54:44Z", incomplete=[])[0])
+
+    def test_checkpoint_refuses_untrusted_or_ambiguous_clocks(self):
+        rows = parse(fixture())
+        rows[0]["performances"].append({"date": "2026-12-02", "time": "20:00"})
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            build_secondary_checkpoint(rows, checked_at="now", incomplete=[])
+        rows = parse(fixture())
+        rows[0]["review_status"] = "approved"
+        with self.assertRaisesRegex(ValueError, "untrusted"):
+            build_secondary_checkpoint(rows, checked_at="now", incomplete=[])
 
     def test_rejects_wrong_source_and_ambiguous_time(self):
         with self.assertRaisesRegex(ValueError, "unapproved"):
