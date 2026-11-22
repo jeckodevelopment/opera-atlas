@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "source_key": "napoli-san-carlo-rolling-opera",
+  "source_role": "secondary_unverified",
+  "source_url": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+  "productions": [
+    {
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-02-10",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-11",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-12",
+          "time": "18:00"
+        },
+        {
+          "date": "2027-02-13",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-02-14",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-02-16",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-17",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-18",
+          "time": "18:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioacchino Rossini",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-06-16",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-17",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-18",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-19",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-20",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-06-22",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-06-23",
+          "time": "18:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-10-27",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-10-28",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-10-29",
+          "time": "18:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-09-22",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-09-23",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-09-24",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-09-25",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-09-26",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-09-28",
+          "time": "18:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2026-12-02",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-03",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-04",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-05",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-06",
+          "time": "17:00"
+        },
+        {
+          "date": "2026-12-09",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-12-10",
+          "time": "18:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-01-17",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-01-19",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-01-20",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-01-21",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-01-22",
+          "time": "18:00"
+        },
+        {
+          "date": "2027-01-23",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-01-24",
+          "time": "17:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-04-20",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-04-22",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-04-24",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-04-27",
+          "time": "19:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/nina/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-04-17",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-04-21",
+          "time": "18:00"
+        },
+        {
+          "date": "2027-04-23",
+          "time": "19:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-03-10",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-03-11",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-03-12",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-03-13",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-03-14",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-03-16",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-03-17",
+          "time": "18:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/",
+      "corroboration_status": "pending_independent_event_verification"
+    },
+    {
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "performances": [
+        {
+          "date": "2027-05-19",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-05-20",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-05-21",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-05-22",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-05-23",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-05-25",
+          "time": "18:00"
+        }
+      ],
+      "secondary_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/",
+      "corroboration_status": "pending_independent_event_verification"
+    }
+  ]
+}

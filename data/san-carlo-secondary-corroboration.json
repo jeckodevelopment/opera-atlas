@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "source_key": "napoli-san-carlo-rolling-opera",
+  "first_source": "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+  "second_source": "https://www.enjoylive.travel/it/napoli-sancarlo-programma",
+  "source_independence": "two_secondary_publishers_not_primary_official_evidence",
+  "canonical_publication_authorized": false,
+  "productions": [
+    {
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "candidate_count": 8,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-02-10",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-11",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-12",
+          "time": "18:00"
+        },
+        {
+          "date": "2027-02-13",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-02-14",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-02-16",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-17",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-02-18",
+          "time": "18:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioacchino Rossini",
+      "candidate_count": 7,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-06-16",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-17",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-18",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-19",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-06-20",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-06-22",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-06-23",
+          "time": "18:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "La chute de la maison Usher",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "candidate_count": 3,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-10-27",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-10-28",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-10-29",
+          "time": "18:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "La damnation de Faust",
+      "composer": "Hector Berlioz",
+      "candidate_count": 6,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-09-22",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-09-23",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-09-24",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-09-25",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-09-26",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-09-28",
+          "time": "18:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "Luisa Miller",
+      "composer": "Giuseppe Verdi",
+      "candidate_count": 7,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2026-12-02",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-03",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-04",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-05",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-12-06",
+          "time": "17:00"
+        },
+        {
+          "date": "2026-12-09",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-12-10",
+          "time": "18:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "candidate_count": 7,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-01-17",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-01-19",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-01-20",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-01-21",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-01-22",
+          "time": "18:00"
+        },
+        {
+          "date": "2027-01-23",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-01-24",
+          "time": "17:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "Nina o sia La pazza per amore",
+      "composer": "Giovanni Paisiello",
+      "candidate_count": 4,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-04-20",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-04-22",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-04-24",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-04-27",
+          "time": "19:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "candidate_count": 3,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-04-17",
+          "time": "20:00"
+        }
+      ],
+      "conflicting_clocks": [
+        {
+          "date": "2027-04-21",
+          "candidate": "18:00",
+          "independent": "20:00"
+        },
+        {
+          "date": "2027-04-23",
+          "candidate": "19:00",
+          "independent": "20:00"
+        }
+      ],
+      "unmatched_clocks": [],
+      "status": "needs_date_review"
+    },
+    {
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "candidate_count": 7,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-03-10",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-03-11",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-03-12",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-03-13",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-03-14",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-03-16",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-03-17",
+          "time": "18:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    },
+    {
+      "title": "Peter Grimes",
+      "composer": "Benjamin Britten",
+      "candidate_count": 6,
+      "confirmed_matching_clocks": [
+        {
+          "date": "2027-05-19",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-05-20",
+          "time": "19:00"
+        },
+        {
+          "date": "2027-05-21",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-05-22",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-05-23",
+          "time": "17:00"
+        },
+        {
+          "date": "2027-05-25",
+          "time": "18:00"
+        }
+      ],
+      "conflicting_clocks": [],
+      "unmatched_clocks": [],
+      "status": "all_clocks_match_second_source"
+    }
+  ],
+  "production_count": 10,
+  "matching_recite_count": 56,
+  "conflicting_recite_count": 2,
+  "unmatched_recite_count": 0
+}

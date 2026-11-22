@@ -1,6 +1,74 @@
 {
-  "checked_at": "2026-11-22T22:07:37+00:00",
+  "checked_at": "2026-11-22T22:22:47+00:00",
   "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-2ef6d8cca0288a1af32c"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Gioacchino Rossini",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 7,
+      "sources": [
+        {
+          "source_key": "napoli-san-carlo-rolling-opera",
+          "url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+        }
+      ],
+      "title": "Il barbiere di Siviglia"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-645435245131b4d31287"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giuseppe Verdi",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 7,
+      "sources": [
+        {
+          "source_key": "napoli-san-carlo-rolling-opera",
+          "url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+        }
+      ],
+      "title": "Luisa Miller"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-f58d3866160127ee1932"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Hector Berlioz",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 6,
+      "sources": [
+        {
+          "source_key": "napoli-san-carlo-rolling-opera",
+          "url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+        }
+      ],
+      "title": "La damnation de Faust"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-648d1bcf715c9f9ffd9d"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Benjamin Britten",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 6,
+      "sources": [
+        {
+          "source_key": "napoli-san-carlo-rolling-opera",
+          "url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
+        }
+      ],
+      "title": "Peter Grimes"
+    },
     {
       "candidate_ids": [
         "oa-index-b4ae738f2728d4430578"
@@ -37,6 +105,40 @@
     },
     {
       "candidate_ids": [
+        "oa-index-78a2524add8c3b1ea415"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giovanni Paisiello",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 4,
+      "sources": [
+        {
+          "source_key": "napoli-san-carlo-rolling-opera",
+          "url": "https://www.teatrosancarlo.it/spettacoli/nina/"
+        }
+      ],
+      "title": "Nina o sia La pazza per amore"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-ad4a422c793838b9bc2a"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Claude Debussy / Alessandro Solbiati",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 3,
+      "sources": [
+        {
+          "source_key": "napoli-san-carlo-rolling-opera",
+          "url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
+        }
+      ],
+      "title": "La chute de la maison Usher"
+    },
+    {
+      "candidate_ids": [
         "oa-index-7f7fc1d9df69f1a3cd53"
       ],
       "category": "new_work_candidate",
@@ -57,13 +159,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 3,
+    "candidates_checked": 16,
     "candidates_without_facts": 0,
-    "facts_examined": 10,
-    "facts_resolved": 0,
+    "facts_examined": 76,
+    "facts_resolved": 33,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 10,
-    "unmatched_groups": 3
+    "unmatched_facts": 43,
+    "unmatched_groups": 9
   },
   "truncated": false
 }

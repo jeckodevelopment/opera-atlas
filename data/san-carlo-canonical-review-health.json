@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-22T22:22:47+00:00",
+  "productions": [
+    {
+      "title": "Aida",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 8
+    },
+    {
+      "title": "Il barbiere di Siviglia",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 7
+    },
+    {
+      "title": "La chute de la maison Usher",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 3
+    },
+    {
+      "title": "La damnation de Faust",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 6
+    },
+    {
+      "title": "Luisa Miller",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 7
+    },
+    {
+      "title": "Madama Butterfly",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 7
+    },
+    {
+      "title": "Nina o sia La pazza per amore",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 4
+    },
+    {
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "status": "recite_conflict_or_incomplete",
+      "matching": 1,
+      "expected": 3
+    },
+    {
+      "title": "Pagliacci",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 7
+    },
+    {
+      "title": "Peter Grimes",
+      "status": "canonical_candidate_evidence_ready",
+      "recite": 6
+    }
+  ]
+}
