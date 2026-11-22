@@ -99,6 +99,14 @@ class ROFTests(unittest.TestCase):
             parse_detail(page(title="La scala di seta",
                               venue="Auditorium Scavolini"),url=SCALA)
 
+    def test_venue_still_found_after_official_accessibility_navigation(self):
+        html=page("La scala di seta")
+        html=html.replace("<p>13, 16, 19, 22 agosto, ore 20.00</p>",
+                          "<p>13, 16, 19, 22 agosto, ore 20.00</p>"
+                          +''.join("<span>Link di navigazione</span>" for _ in range(14)))
+        self.assertEqual(parse_detail(html,url=SCALA)[2],
+                         "Teatro Gioachino Rossini")
+
     def test_no_scavolini_concert_missing_authority_or_wrong_year(self):
         bad=[
             (page(venue="Auditorium Scavolini"),SIEGE),
