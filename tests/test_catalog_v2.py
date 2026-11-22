@@ -114,5 +114,18 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         self.assertEqual(manifest1["files"]["performances"]["count"],sum(len(p["dates"]) for p in self.facts["productions"]))
 
 
+    def test_reggio_death_in_venice_has_unique_official_showtimes(self):
+        from scripts.build_verified_catalog import MANIFEST
+        import json
+        facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        rows=[p for p in facts["productions"]
+              if p["title"]=="Death in Venice" and p["venue"]=="Teatro Valli"
+              and p["municipality"]=="Reggio Emilia"]
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]["source_url"],
+                         "https://www.iteatri.re.it/spettacolo/death-in-venice/")
+        self.assertEqual(dict(rows[0]["dates"]),
+                         {"2027-01-29":"20:00","2027-01-31":"15:30"})
+
 if __name__=="__main__":
     unittest.main()
