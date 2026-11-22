@@ -20,8 +20,8 @@ class SourceAutomationTests(unittest.TestCase):
         rows={(x["city"],x["venue"]):x for x in report["venues"]}
         self.assertEqual(rows["Torino","Teatro Regio di Torino"]["status"],"operational")
         self.assertEqual(rows["Roma","Teatro dell'Opera di Roma"]["status"],"operational")
-        self.assertEqual(rows["Napoli","Teatro di San Carlo"]["status"],"not_automated")
-        self.assertEqual(rows["Napoli","Teatro di San Carlo"]["source_attention"],"not_configured")
+        self.assertEqual(rows["Napoli","Teatro di San Carlo"]["status"],"configured_not_operational")
+        self.assertEqual(rows["Napoli","Teatro di San Carlo"]["source_attention"],"not_checked")
         self.assertEqual(rows["Roma","Teatro dell\'Opera di Roma"]["source_attention"],"none")
         self.assertEqual(report["total_venues"],len(directory["venues"]))
         self.assertEqual(report["automation_remaining"],
