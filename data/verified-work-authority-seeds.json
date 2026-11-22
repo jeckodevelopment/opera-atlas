@@ -595,6 +595,74 @@
           "https://www.teatrofraschini.it/programma/death-in-venice/"
         ]
       }
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "title": "Alzira",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Nel Perù coloniale, Alzira ama il guerriero Zamoro, ma il governatore spagnolo Gusmano cerca di imporle il proprio matrimonio, fra conflitti di potere e lealtà.",
+      "history": {
+        "librettist": "Salvadore Cammarano",
+        "premiere_year": 1845,
+        "premiere_venue": "Teatro San Carlo",
+        "premiere_city": "Napoli",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000023114",
+          "https://archiviostorico.operaroma.it/opera/alzira/"
+        ]
+      }
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+      "title": "Il ratto dal serraglio",
+      "composer": "Wolfgang Amadeus Mozart",
+      "synopsis": "Belmonte cerca di liberare l'amata Costanza e i suoi compagni dalla prigionia nel serraglio del pascià Selim, affrontando ostacoli e inganni.",
+      "history": {
+        "librettist": "Johann Gottlieb Stephanie",
+        "premiere_year": 1782,
+        "premiere_venue": "Burgtheater",
+        "premiere_city": "Vienna",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/il-ratto-dal-serraglio/",
+          "https://www.operaamerica.org/calendar/production/22346/the-abduction-from-the-seraglio"
+        ]
+      }
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "title": "Il signor Bruschino",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Per sposare Sofia, Florville si spaccia per il figlio del signor Bruschino, provocando una serie di equivoci fra il tutore della ragazza e il vero padre.",
+      "history": {
+        "librettist": "Giuseppe Foppa",
+        "premiere_year": 1813,
+        "premiere_venue": "Teatro San Moisè",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.rossinioperafestival.it/soggetti/il-signor-bruschino/",
+          "https://corago.unibo.it/opera/Z000013626"
+        ]
+      }
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "title": "Cristoforo Colombo",
+      "composer": "Alberto Franchetti",
+      "synopsis": "La vicenda del navigatore Cristoforo Colombo ripercorre l'impresa del viaggio verso le Americhe, tra opposizioni, ambizioni e le conseguenze della scoperta.",
+      "history": {
+        "librettist": "Luigi Illica",
+        "premiere_year": 1892,
+        "premiere_venue": "Teatro Carlo Felice",
+        "premiere_city": "Genova",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000053328",
+          "https://associazionealbertofranchetti.com/opere/opere-liriche/cristoforo-colombo/strutturaetrama/"
+        ]
+      }
     }
   ]
 }
