@@ -113,20 +113,28 @@ def parse_detail(html:str,*,url:str):
     if (not title or NOT_OPERA.search(title) or
         not re.search(r"(?i)\bSpettacoli\s*(?:/|\s)\s*Opera\s*(?:/|\s)\s*"+re.escape(title)+r"\b",text)):
         raise ValueError("official Novara opera breadcrumb missing or different genre")
+    # A combined ticket must be handled as a multi-work programme; never
+    # silently reduce L'amor mio / Il tabarro to one canonical opera.
+    if "/" in title:
+        raise ValueError("Novara multi-work programme requires component reconciliation")
     beginning=text.find(title)
     credit_section=text[beginning:beginning+950]
     credit=re.search(r"(?i)\bMusica\s+di\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'\u2019-]{2,75})",credit_section)
     if not credit:
         raise ValueError("explicit official Novara opera composer is missing")
     # Composer credit cannot be extended into libretto, history or cast.
-    composer=re.split(r"\s+(?:Libretto|Prima\s+rappresentazione|Direttore|Regia)\b",
+    composer=re.split(r"\s+(?:Libretto|Trascrizione|Drammaturgia|Cast|Prima\s+rappresentazione|Direttore|Regia)\b",
                       credit.group(1),maxsplit=1,flags=re.I)[0].strip(" .")
     if not composer or len(composer.split())<2:
         raise ValueError("invalid first-party composer credit")
-    booking=re.search(r"(?is)\binformazioni\s+sull.evento\b(.*?)\bTEATRO\s+COCCIA\b",text)
+    booking=re.search(
+        r"(?is)\binformazioni\s+sull.evento\b(.*?)"
+        r"\b(TEATRO\s+COCCIA|GIARDINI\s+DI\s+PALAZZO\s+NATTA)\b",text)
     if not booking:
         raise ValueError("official Novara showtime section or venue missing")
     block=booking[1]
+    venue=(VENUE if re.fullmatch(r"(?i)TEATRO\s+COCCIA",booking[2])
+           else "Giardini di Palazzo Natta")
     if CANCELLED.search(block):
         raise ValueError("Novara cancelled or postponed recite requires review")
     rows=[]
@@ -146,4 +154,4 @@ def parse_detail(html:str,*,url:str):
     if (not rows or len(rows)>24 or len(rows)!=len(declared_dates)
         or len(rows)!=len(set(rows))):
         raise ValueError("incomplete, duplicate or ambiguous Novara recite")
-    return title,composer,VENUE,sorted(rows)
+    return title,composer,venue,sorted(rows)
