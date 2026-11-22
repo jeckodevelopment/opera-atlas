@@ -29,6 +29,8 @@ on:
       - 'data/corroborated-performance-config.json'
       - 'scripts/corroborate_performances.py'
       - 'tests/test_corrob_performances.py'
+      - 'data/reviewed-performance-decisions.json'
+      - 'scripts/apply_reviewed_performance_evidence.py'
       - 'scripts/collect_candidate_details.py'
       - 'scripts/auto_work_research.py'
       - 'tests/test_auto_work_research.py'
@@ -126,6 +128,12 @@ jobs:
       # knowledge-service step times out. Each detail fetch respects robots.
       - name: Acquire pending official detail pages before slow discovery
         run: python -m scripts.collect_candidate_details --allow-network
+      # This editor-approved, source-labelled record is kept in stable
+      # configuration, not merged into high-churn generated JSON by a PR.
+      # Apply it only after attempting stronger live first-party evidence;
+      # the central canonical reconciler still owns all publication.
+      - name: Apply reviewed cross-source facts to latest candidate registry
+        run: python -m scripts.apply_reviewed_performance_evidence
       - name: Build identity-review snapshot from official candidate evidence
         run: python -m scripts.work_identity_review
       - name: Checkpoint national pending-candidate evidence and diagnostics
