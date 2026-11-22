@@ -21,6 +21,17 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         self.assertEqual(len(ids), len(set(ids)))
         self.assertTrue(all(item["id"].startswith("oa-") for items in result.values() for item in items))
 
+    def test_four_reviewed_program_components_publish_without_duplicate_tickets(self):
+        graph=assemble(self.facts,self.registry)
+        found={w["id"]:w for w in graph["works"]}
+        for ident in range(90,94):
+            wid=f"oa-w-{ident:06d}"
+            self.assertEqual(found[wid]["catalog_status"],"program_component")
+        self.assertEqual(len(graph["works"]),len(self.registry["works"])+4)
+        self.assertEqual(len(graph["performances"]),sum(len(p["dates"]) for p in self.facts["productions"]))
+        self.assertFalse(any(s["work_id"] in {f"oa-w-{i:06d}" for i in range(90,94)}
+                             for s in graph["stagings"]))
+
     def test_slugs_and_relationships(self):
         result=assemble(self.facts, self.registry)
         self.assertEqual(slugify("L’italiana in Algeri"), "italiana-in-algeri")
