@@ -36,6 +36,17 @@ class CompositeProgramCheckpointOrderTests(unittest.TestCase):
         self.assertIn("workflow_dispatch:",
                       (ROOT/FILES[2]).read_text(encoding="utf-8"))
 
+    def test_cached_and_national_preflight_refresh_identity_snapshot(self):
+        for workflow in FILES[1:]:
+            with self.subTest(workflow=workflow):
+                source=(ROOT/workflow).read_text(encoding="utf-8")
+                preflight=source.split("python -m unittest discover -s tests -v",1)[0]
+                self.assertIn("python -m scripts.work_identity_review",preflight)
+                self.assertLess(preflight.index("python -m scripts.publish_catalog_v2"),
+                                preflight.index("python -m scripts.work_identity_review"))
+        cached=(ROOT/FILES[1]).read_text(encoding="utf-8")
+        self.assertIn("public/catalog/work-identity-review.json",cached)
+
     def test_frontend_sftp_deploy_regenerates_programs_but_does_not_upload_catalog(self):
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
         created=workflow.index("python -m scripts.publish_programs")
