@@ -42,6 +42,7 @@ jobs:
               f"- Candidate productions: {d['production_count']}",
               f"- Candidate recite: {d['performance_count']}",
               "- Status: candidates only, primary corroboration required",
+              f"- Incomplete sections: {d['incomplete_section_count']}",
               "- Other theatres scanned: 0",
               "- Published records: 0",
               "",
@@ -50,6 +51,10 @@ jobs:
           ]
           for item in entries:
               lines.append(f"| {item['title'].replace('|','/')} | {len(item['performances'])} |")
+          if d["incomplete_sections"]:
+              lines.extend(["", "### Sections needing review"])
+              for item in d["incomplete_sections"][:20]:
+                  lines.append(f"- {item['heading'][:100]}: missing {', '.join(item['missing'])}")
           message = "\n".join(lines) + "\n"
           print(message)
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:

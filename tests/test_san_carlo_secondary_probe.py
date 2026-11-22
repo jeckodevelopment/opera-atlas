@@ -43,6 +43,18 @@ class SecondarySanCarloTests(unittest.TestCase):
             "<img src='/unimportant.jpg'><p>Teatro di San Carlo</p><h3>Recite</h3>")
         self.assertEqual(parse(noisy), parse(fixture()))
 
+    def test_incomplete_nonproduction_heading_is_reported_not_fatal(self):
+        noisy = fixture().replace(
+            '<h2>Altre edizioni Teatro di San Carlo</h2>',
+            '<p>Vincenzo Bellini</p><h2>Altre edizioni Teatro di San Carlo</h2>'
+        )
+        skipped = []
+        productions = parse(noisy, diagnostics=skipped)
+        self.assertEqual(len(productions), 2)
+        self.assertEqual(len(skipped), 1)
+        self.assertIn("recite", skipped[0]["missing"])
+        self.assertIn("venue", skipped[0]["missing"])
+
     def test_rejects_wrong_source_and_ambiguous_time(self):
         with self.assertRaisesRegex(ValueError, "unapproved"):
             parse(fixture(), url="https://not-classicalive.example/season")
