@@ -62,7 +62,10 @@ class PinocchioEditorialPromotionTests(unittest.TestCase):
         self.assertEqual(published[0]["dates"],[["2026-12-30","20:45"]])
         existing=any(p.get("source_url")==URL for p in facts["productions"])
         self.assertEqual(report["new_recite"],0 if existing else 1,report)
-        self.assertIn(URL,urls)
+        # Once the official production is already present, the cached
+        # publisher does not repeat a URL authorization; its prior
+        # provenance is instead carried in the immutable production.
+        self.assertTrue(existing or URL in urls,report)
         again,again_ids,_,_,_,repeat=promote_new_works(
             result,ids,evidence,candidate,intelligence,editorial,urls,
             today=date(2026,11,22),history=history,require_image=True)
