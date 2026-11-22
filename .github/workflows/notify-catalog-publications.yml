@@ -3,11 +3,10 @@ name: Notify directly published Opera Atlas catalog entities
 # Catalog commits written by refresh-catalog use GITHUB_TOKEN, which does not
 # trigger recursive push workflows. This workflow covers direct PR merges or
 # manually pushed canonical feed updates, without duplicating refresh alerts.
+# Kept for carefully targeted operator replay of historical notifications only.
+# New publications flow exclusively through deliver-publication-notifications.yml
+# and its durable ledger to prevent double sends.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'public/catalog/v2/manifest.json'
   workflow_dispatch:
     inputs:
       base_sha:
