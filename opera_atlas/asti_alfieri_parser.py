@@ -102,9 +102,13 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     composer=credits[0]
     venue=re.search(r"\bLuogo\s+Teatro Alfieri\b.{0,180}?\bAsti\b",visible,re.I)
     if not venue:raise ValueError("Asti venue not verified")
-    date_match=_DATE.search(primary[:120])
-    if not date_match:
-        raise ValueError("missing Asti official event date and time")
+    # The event header can contain accessible navigation before its clock.
+    # Inspect only the nearby primary event header, not later ticket dates,
+    # and fail closed if multiple distinct performances appear there.
+    dates=list(_DATE.finditer(primary[:350]))
+    if len(dates)!=1:
+        raise ValueError("missing or ambiguous Asti official event date and time")
+    date_match=dates[0]
     day,month,year,hour,minute=map(int,date_match.groups())
     try:when=date(year,month,day).isoformat()
     except ValueError:raise ValueError("invalid Asti official date")
