@@ -11,6 +11,10 @@
       "successor_source_key": "ancona-opera-season-2027"
     },
     {
+      "legacy_source_key": "chieti-marrucino-lirica-2026",
+      "successor_source_key": "chieti-marrucino-season-2027"
+    },
+    {
       "legacy_source_key": "donizetti-opera-2026",
       "successor_source_key": "donizetti-opera-2027"
     },
@@ -51,8 +55,28 @@
       "successor_source_key": "jesi-opera-season-2027"
     },
     {
+      "legacy_source_key": "lecce-provincia-politeama-2026",
+      "successor_source_key": "lecce-provincia-season-2027"
+    },
+    {
+      "legacy_source_key": "modena-opera-2026-27",
+      "successor_source_key": "modena-municipal-opera-2027-28"
+    },
+    {
+      "legacy_source_key": "padova-verdi-opera-2026",
+      "successor_source_key": "padova-verdi-season-2027"
+    },
+    {
       "legacy_source_key": "petruzzelli-opera-2026",
       "successor_source_key": "petruzzelli-opera-2027"
+    },
+    {
+      "legacy_source_key": "rovigo-sociale-opera-2026-27",
+      "successor_source_key": "rovigo-sociale-season-2027-28"
+    },
+    {
+      "legacy_source_key": "treviso-del-monaco-opera-2026-27",
+      "successor_source_key": "treviso-del-monaco-season-2027-28"
     }
   ]
 }

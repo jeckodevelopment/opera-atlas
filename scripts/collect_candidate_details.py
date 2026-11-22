@@ -168,6 +168,15 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
 
     Never infer metadata for a newly discovered work from a URL slug alone.
     """
+    if source_key in {
+            "chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
+            "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
+            "padova-verdi-season-2027","lecce-provincia-season-2027"}:
+        from opera_atlas.six_future_seasons import known_recite
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for title,composer,venue,day,clock in known_recite(
+                    source_key,url,html,registry)]
     if source_key=="ferrara-season-opera-2027-28":
         from opera_atlas.ferrara_future_parser import parse_known_recite
         return [{"event_title":title,"composer":composer,"venue":venue,

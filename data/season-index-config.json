@@ -150,11 +150,25 @@
       "min_links": 1
     },
     {
+      "key": "chieti-marrucino-season-2027",
+      "official_url": "https://comune.chieti.it/",
+      "url": "https://comune.chieti.it/?s=stagione+lirica+2027+marrucino",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "modena-teatro-opera-2026-27",
       "official_url": "https://www.teatrocomunalemodena.it/",
       "url": "https://www.teatrocomunalemodena.it/opera/",
       "access_status": "approved",
       "min_links": 11
+    },
+    {
+      "key": "modena-municipal-opera-2027-28",
+      "official_url": "https://www.comune.modena.it/",
+      "url": "https://www.comune.modena.it/vivere-modena/eventi/2027/stagione-opera-2027-2028",
+      "access_status": "approved",
+      "min_links": 1
     },
     {
       "key": "modena-opera-2026-27",
@@ -353,6 +367,13 @@
       "min_links": 1
     },
     {
+      "key": "treviso-del-monaco-season-2027-28",
+      "official_url": "https://risorse.teatrostabileveneto.it/",
+      "url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-27-28",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "padova-verdi-opera-2026",
       "official_url": "https://padovacultura.padovanet.it/",
       "url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
@@ -360,9 +381,23 @@
       "min_links": 1
     },
     {
+      "key": "padova-verdi-season-2027",
+      "official_url": "https://padovacultura.padovanet.it/",
+      "url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2027",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
       "key": "rovigo-regione-programma-2026-27",
       "official_url": "https://www.culturaveneto.it/",
       "url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
+      "access_status": "approved",
+      "min_links": 1
+    },
+    {
+      "key": "rovigo-sociale-season-2027-28",
+      "official_url": "https://www.comune.rovigo.it/",
+      "url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2027-2028",
       "access_status": "approved",
       "min_links": 1
     },
@@ -379,6 +414,13 @@
       "url": "https://www.politeamagreco.it/programmazione.asp",
       "access_status": "approved",
       "min_links": 3
+    },
+    {
+      "key": "lecce-provincia-season-2027",
+      "official_url": "https://www.provincia.le.it/",
+      "url": "https://www.provincia.le.it/?s=52+stagione+lirica+2027",
+      "access_status": "approved",
+      "min_links": 1
     },
     {
       "key": "lecce-provincia-politeama-2026",

@@ -33,6 +33,12 @@ ROLLOVER_KEYS={
     "jesi-opera-season-2027",
     "ancona-opera-season-2027",
     "ferrara-season-opera-2027-28",
+    "chieti-marrucino-season-2027",
+    "modena-municipal-opera-2027-28",
+    "rovigo-sociale-season-2027-28",
+    "treviso-del-monaco-season-2027-28",
+    "padova-verdi-season-2027",
+    "lecce-provincia-season-2027",
 }
 
 def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
@@ -40,6 +46,12 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
     if key not in ROLLOVER_KEYS or source["access_status"]!="approved":
         return None
     url=urlsplit(source["url"])
+    if key in {
+            "chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
+            "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
+            "padova-verdi-season-2027","lecce-provincia-season-2027"}:
+        from opera_atlas.six_future_seasons import next_url
+        return next_url(key,source["url"],today=today,allow_early=allow_early)
     if key=="ferrara-season-opera-2027-28":
         match=re.fullmatch(
             r"/it/rassegna/teatro-comunale-ferrara-opera-danza-(20\d{2})-(20\d{2})/",
