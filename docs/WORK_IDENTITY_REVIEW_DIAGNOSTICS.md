@@ -42,3 +42,15 @@ resta funzionante e la nuova sezione espone uno stato di attesa.
   un compositore mal estratto **non sia corretto automaticamente**.
 - Controllare che il JSON e i link ufficiali si aggiornino al
   checkpoint successivo, senza confondere recite rilevate e pubblicate.
+
+## Suggerimenti di credito (solo revisione)
+
+Quando la fonte riporta il compositore con una parola di genere aggiunta
+(ad esempio `Giuseppe Verdi Opera`) o con date biografiche
+(`Georges Bizet (1838–1875)`), la diagnostica puo' proporre la
+corrispondente opera canonica **solo se titolo, autore e suffisso
+verificabile corrispondono a un unico record esistente**. Tale
+indicazione non modifica la candidate, l'alias, il compositore
+estratto o le recite pubblicate: il controllo del parser ufficiale
+rimane necessario. Suffissi generici come `Coro` o titoli differenti
+non producono suggerimenti.

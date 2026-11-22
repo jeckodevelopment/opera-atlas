@@ -6,7 +6,7 @@ creating aliases, or promoting performances. Safe on every workflow refresh.
 from __future__ import annotations
 import argparse
 import json
-from collections import Counter
+import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -28,6 +28,27 @@ def _safe_url(value: object) -> str | None:
     if u.scheme != "https" or not u.hostname or u.username or u.password:
         return None
     return value
+
+def _review_credit_hint(title: str, composer: str, works: list[dict]) -> dict | None:
+    """Suggest a verified canonical record for obvious appended metadata.
+
+    This is only diagnostic: never alter incoming composer/title or silently
+    promote a performance based on a stripped suffix.
+    """
+    for work in works:
+        if canonical_title(title, work["composer"]).casefold() != work["title"].casefold():
+            continue
+        original = work["composer"]
+        if not composer.casefold().startswith(original.casefold() + " "):
+            continue
+        extra = composer[len(original):].strip()
+        if not (re.fullmatch(r"(?:Opera|Tragedia|Melodramma)", extra, re.I)
+                or re.fullmatch(r"\(\d{4}[–-]\d{4}\)", extra)):
+            continue
+        return {"work_id": work["id"], "title":work["title"],
+                "composer":original, "reason":"metadata_after_composer"}
+    return None
+
 
 def evaluate(evidence: dict, registry: dict) -> dict:
     if evidence.get("schema_version") != 1 or not isinstance(evidence.get("evidence"), list):
@@ -79,11 +100,13 @@ def evaluate(evidence: dict, registry: dict) -> dict:
                 for w in candidates
                 if w["title"].casefold() == title.casefold()
             ]
+            hint = _review_credit_hint(title, composer, works) if composer else None
             key = (title.casefold(),composer.casefold(),category)
             if key not in groups:
                 groups[key] = {"title":title,"composer":composer or None,"category":category,
                                "recite_observed":0,"sources":[],"candidate_ids":[],
-                               "exact_title_matches":suggestion}
+                               "exact_title_matches":suggestion,
+                               "possible_canonical_match":hint}
             entry = groups[key]
             entry["recite_observed"] += 1
             source = {"source_key":_clean(candidate.get("source_key")),
