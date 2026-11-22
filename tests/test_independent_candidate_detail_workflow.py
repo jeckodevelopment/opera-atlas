@@ -38,6 +38,14 @@ class IndependentEvidenceWorkflowTests(unittest.TestCase):
         ):
             self.assertNotIn(prohibited,fast)
 
+    def test_workflow_has_one_retry_one_dispatch_and_no_stray_shell_fragments(self):
+        fast=FAST.read_text(encoding="utf-8")
+        self.assertEqual(fast.count("- name: Reacquire on latest main after concurrent changes"),1)
+        self.assertEqual(fast.count("- name: Publish newly persisted official evidence through cached catalog"),1)
+        self.assertEqual(fast.count("- name: Report remaining source checkpoint contention"),1)
+        self.assertNotIn("\n \"$GITHUB_OUTPUT\"; then",fast)
+        self.assertNotIn("\n \"$push_report\"; then",fast)
+
     def test_source_changed_triggers_are_not_created_by_writing_evidence(self):
         fast=FAST.read_text(encoding="utf-8")
         self.assertIn("      - 'data/season-index-candidates.json'",fast)
