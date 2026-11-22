@@ -3208,6 +3208,59 @@
       ]
     },
     {
+      "candidate_id": "oa-index-76fee4db156090b664aa",
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
+      "content_sha256": "df0ce78c97d5e4fb247d20259f70e495e996f1a68a30a20548831dd17524fe2a",
+      "checked_at": "2026-11-22T20:32:16+00:00",
+      "status": "needs_editorial_review",
+      "official_schedule_evidence_url": "https://www.carlofelice.it/wp-content/uploads/2026/07/Stagione_26-27_Teatro_Carlo_Felice_v07.pdf",
+      "event_facts": [
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Carlo Felice",
+          "date": "2026-10-16",
+          "starts_at": "2026-10-16T19:30:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Carlo Felice",
+          "date": "2026-10-17",
+          "starts_at": "2026-10-17T15:00:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Carlo Felice",
+          "date": "2026-10-18",
+          "starts_at": "2026-10-18T15:00:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Carlo Felice",
+          "date": "2026-10-23",
+          "starts_at": "2026-10-23T19:30:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Carlo Felice",
+          "date": "2026-10-24",
+          "starts_at": "2026-10-24T19:30:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Carlo Felice",
+          "date": "2026-10-25",
+          "starts_at": "2026-10-25T15:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-790b965de8129382aa04",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
