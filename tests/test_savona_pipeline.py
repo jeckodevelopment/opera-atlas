@@ -38,7 +38,10 @@ class SavonaPipelineTests(unittest.TestCase):
         from scripts.auto_catalogue import VENUE_BY_SOURCE
         from pathlib import Path
         canonical="Teatro Gabriello Chiabrera"
-        self.assertEqual(VENUE_BY_SOURCE[KEY],("Savona",canonical))
+        self.assertEqual(VENUE_BY_SOURCE[KEY],("Savona","Teatro Chiabrera"))
+        # Immutable identity keys and existing URLs remain abbreviated.
+        identity=json.loads(Path("data/identity-registry.json").read_text(encoding="utf-8"))
+        self.assertEqual(identity["venues"]["Savona|Teatro Chiabrera"]["name"],canonical)
         directory=json.loads(Path("data/venue-directory.json").read_text(encoding="utf-8"))
         entries=[v for v in directory["venues"]
                  if v["city"]=="Savona" and "Chiabrera" in v["name"]]
