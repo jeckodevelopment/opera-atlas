@@ -51,7 +51,7 @@ footer{margin-top:34px;padding-top:22px;border-top:1px solid #e1ddd4;color:#716c
 </main><script>
 "use strict";
 const BASE="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/";
-const PATHS={auto:"public/catalog/source-automation.json",rec:"public/catalog/recite-coverage.json",candidate:"data/candidate-detail-health.json",season:"data/season-index-health.json",lifecycle:"public/catalog/season-lifecycle.json",catalogation:"public/catalog/catalogation-diagnostics.json",evidence:"public/catalog/candidate-publication-evidence.json"};
+const PATHS={auto:"public/catalog/source-automation.json",rec:"public/catalog/recite-coverage.json",candidate:"data/candidate-detail-health.json",season:"data/season-index-health.json",lifecycle:"public/catalog/season-lifecycle.json",catalogation:"public/catalog/catalogation-diagnostics.json",evidence:"public/catalog/candidate-publication-evidence.json",live:"public/catalog/live-publication-health.json"};
 const $=id=>document.getElementById(id);
 const node=(tag,value,cls)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=String(value);if(cls)e.className=cls;return e};
 const replace=(id,items)=>$(id).replaceChildren(...items);
@@ -69,6 +69,8 @@ async function fetchJson(p){const r=await fetch(BASE+p+"?t="+Date.now(),{cache:"
 function build(){
  const a=data.auto.venues||[],r=data.rec.venues||[];
  const catalogByVenue=new Map((data.catalogation?.venues||[]).map(x=>[x.venue_id,x]));
+ const auditCurrent=!!(data.live&&data.evidence&&data.live.catalog_release_sha256===data.evidence.catalog_release_sha256);
+ const liveByVenue=new Map();if(auditCurrent){for(const result of data.live.results||[]){if(!result.venue_id)continue;const list=liveByVenue.get(result.venue_id)||[];list.push(result);liveByVenue.set(result.venue_id,list)}}
  const evidenceByVenue=new Map();for(const row of data.evidence?.candidates||[]){if(!row.venue_id)continue;const list=evidenceByVenue.get(row.venue_id)||[];list.push(row);evidenceByVenue.set(row.venue_id,list)}
  const byName=new Map(r.map(x=>[x.city+"|"+norm(x.venue),x]));
  const byNameWithoutCity=new Map(r.map(x=>[norm(x.venue),x]));
@@ -78,6 +80,7 @@ function build(){
  for(const x of items){
  x.cat=catalogByVenue.get(x.venue_id)||null;
  x.evidence=evidenceByVenue.get(x.venue_id)||[];
+ x.live=liveByVenue.get(x.venue_id)||[];
  const sources=x.sources||[],configured=Number(x.configured_connectors||0),successful=Number(x.recent_successful_connectors||0);
  const times=sources.map(y=>dateMs(y.last_attempt_at)).filter(y=>y!==null);const last=times.length?Math.max(...times):null;
  let scan=configured===0?"unknown":successful===0?"bad":successful<configured?"warn":"ok";
@@ -86,7 +89,9 @@ function build(){
  // Only candidate states are verified: no claim about work / production completeness.
  const pending=Number(x.cat?.states?.needs_review||0);
  const catalog=!x.cat?"unknown":pending>=5?"bad":pending>0?"warn":x.cat.total_attributed>0?"ok":"unknown";
- const publish=x.rec?(missing>=5?"bad":missing>0?"warn":found>0?"ok":"unknown"):"unknown";
+ const badLive=x.live.filter(y=>["missing_route","missing_content","content_mismatch"].includes(y.status)).length;
+ const uncertainLive=x.live.filter(y=>y.status!=="verified_live"&&!["missing_route","missing_content","content_mismatch"].includes(y.status)).length;
+ const publish=badLive||missing>=5?"bad":missing>0||uncertainLive?"warn":x.live.length?"ok":"unknown";
  const scope=configured===0?"bad":"ok";
  x.health={scan,catalog,publish,scope,overall:maxState([scan,publish,scope]),last,published,found,missing};
  }
@@ -99,11 +104,13 @@ function render(){
  const backlog=(data.candidate.outcomes||[]).filter(x=>x.outcome!=="facts_found").length;
  const pendingByVenue=items.reduce((n,x)=>n+Number(x.cat?.states?.needs_review||0),0);
  const alreadyCatalogued=items.reduce((n,x)=>n+Number(x.cat?.states?.already_catalogued||0),0);
+ const liveTotals=auditCurrent?data.live.totals||{}:{};
+ const confirmedLive=Number(liveTotals.verified_live||0),totalLive=auditCurrent?Number(data.live.total_checked||0):0;
  const evidenceTotals=data.evidence?.totals||{};const linked=(evidenceTotals.linked_solo_in_repository||0)+(evidenceTotals.linked_program_in_repository||0);
  const cards=[
  ["01 · Scansione",covered+" / "+total+" teatri con connettore",failed+" critici · "+partial+" da verificare",failed?"bad":partial?"warn":"ok"],
  ["02 · Catalogazione",alreadyCatalogued+" candidate riconciliate",linked+" collegamenti verificati nel repository · "+pendingByVenue+" da esaminare · "+(data.catalogation?.excluded_from_attribution?Object.values(data.catalogation.excluded_from_attribution).reduce((a,b)=>a+Number(b),0):0)+" non attribuibili",pendingByVenue>=5?"bad":pendingByVenue?"warn":data.catalogation?"ok":"unknown"],
- ["03 · Pubblicazione",published+" / "+found+" recite osservate",missing+" recite mancanti",missing>=5?"bad":missing?"warn":"ok"]
+ ["03 · Pubblicazione",published+" / "+found+" recite osservate",missing+" recite mancanti · "+confirmedLive+" / "+totalLive+" schede web verificate",items.some(x=>x.health.publish==="bad")?"bad":items.some(x=>x.health.publish==="warn")?"warn":totalLive?"ok":"unknown"]
  ];
  replace("phases",cards.map(([title,main,foot,state])=>{const c=node("article",undefined,"phase");c.append(node("h2",title),node("strong",main),node("p",foot,"small"),chip(state));return c}));
  const priorities=[];
@@ -113,6 +120,8 @@ function render(){
  if(h.scan==="bad")priorities.push({state:"bad",name:x.venue+" · "+x.city,reason:"Nessun connettore riuscito",phase:"Scansione"});
  else if(h.scan==="warn")priorities.push({state:"warn",name:x.venue+" · "+x.city,reason:"Scansione parziale o non recente",phase:"Scansione"});
  if(Number(x.cat?.states?.needs_review||0)>0)priorities.push({state:h.catalog,name:x.venue+" · "+x.city,reason:x.cat.states.needs_review+" candidate da classificare",phase:"Catalogazione"});
+ const badSite=x.live.filter(y=>["missing_route","missing_content","content_mismatch"].includes(y.status));
+ if(badSite.length)priorities.push({state:"bad",name:x.venue+" · "+x.city,reason:badSite.length+" schede pubbliche non conformi",phase:"Pubblicazione",missing:badSite.length});
  if(h.missing>0)priorities.push({state:h.publish,name:x.venue+" · "+x.city,reason:h.missing+" recite osservate non pubblicate",phase:"Pubblicazione",missing:h.missing});
  }
  priorities.sort((a,b)=>sev[b.state]-sev[a.state]||(b.missing||0)-(a.missing||0)||a.name.localeCompare(b.name,"it"));
@@ -142,7 +151,8 @@ function render(){
  const uncertainCandidates=x.evidence.filter(y=>y.candidate_status==="already_catalogued"&&!["linked_solo_in_repository","linked_program_in_repository"].includes(y.evidence_status));
  content.append(node("p","Collegamenti diretti nel repository: "+linkedCandidates.length+" · Già catalogate senza collegamento diretto dimostrato: "+uncertainCandidates.length,"muted"));
  for(const row of linkedCandidates.slice(0,15)){for(const link of row.catalog_evidence||[]){const p=node("p","Candidata "+row.candidate_id+" · "+(link.work_id||link.program_id)+" · "+link.performance_count+" recite","muted");if(link.staging_route){const a=node("a","Scheda produzione");a.href="https://opera.plus/atlas"+link.staging_route;a.rel="noopener noreferrer";a.target="_blank";p.append(" · ",a)}content.append(p)}}
- content.append(node("p","La presenza nei feed versionati non dimostra che il catalogo pubblico sia raggiungibile: il controllo HTTPS end-to-end resta separato.","muted"));
+ if(x.live.length){const passed=x.live.filter(y=>y.status==="verified_live").length;content.append(node("p","Verifica browser del sito pubblico: "+passed+" / "+x.live.length+" schede corrispondenti ai dati; controlli: "+(data.live.checked_at||"—"),"muted"));for(const row of x.live.filter(y=>y.status!=="verified_live").slice(0,10)){const p=node("p",row.status+" · "+row.route,"muted");content.append(p)}}else content.append(node("p","Verifica web per questa sede non disponibile o non aggiornata.","muted"));
+ content.append(node("p","La verifica riguarda la presenza della scheda nel browser, non la disponibilità dei biglietti né l’intera stagione.","muted"));
  btn.addEventListener("click",()=>{detail.hidden=!detail.hidden;btn.setAttribute("aria-expanded",String(!detail.hidden));btn.textContent=x.venue+(detail.hidden?" ▸":" ▾")});
  rows.push(tr,detail);
  }
@@ -152,8 +162,8 @@ function render(){
  const outcomes=data.candidate.outcomes||[],facts=outcomes.filter(x=>x.outcome==="facts_found").length;
  replace("catalog-stats",[mini(alreadyCatalogued,"Candidate già riconciliate"),mini(linked,"Collegamenti certi al repository"),mini(pendingByVenue,"Da esaminare, attribuite"),mini(outcomes.length,"Dettagli controllati nell’ultimo ciclo"),mini(backlog,"Dettagli senza fatti confermati")]);
  $("catalog-note").textContent="Il confronto punta ai manifest versionati di opere, produzioni e recite: "+(evidenceTotals.ambiguous_source_url||0)+" URL ambigui, "+(evidenceTotals.no_direct_repository_link||0)+" privi di collegamento diretto. Nessun risultato equivale a una verifica HTTPS del sito pubblico. Le fonti condivise non sono attribuite a un singolo teatro.";
- replace("publish-stats",[mini(found,"Recite individuate"),mini(published,"Recite pubblicate"),mini(missing,"Recite mancanti"),mini(found?Math.round(100*published/found)+"%":"N/D","Copertura osservata")]);
- $("publish-note").textContent="La pubblicazione sul catalogo pubblico non è ancora verificata con un controllo end-to-end separato. Le quantità derivano dal feed di copertura del repository.";
+ replace("publish-stats",[mini(found,"Recite individuate"),mini(published,"Recite nel catalogo"),mini(missing,"Recite mancanti"),mini(confirmedLive+" / "+totalLive,"Schede web verificate"),mini(Number(liveTotals.missing_route||0)+Number(liveTotals.missing_content||0)+Number(liveTotals.content_mismatch||0),"Schede pubbliche non conformi"),mini(Number(liveTotals.unverified||0)+Number(liveTotals.fallback_catalog||0),"Verifiche non conclusive")]);
+ $("publish-note").textContent=totalLive?"Ultimo controllo browser: "+fmt(data.live.checked_at)+". Una scheda è confermata soltanto quando il browser carica titolo e tipologia attesi, senza fallback; HTTP 200 da solo non basta. Nessuna verifica della biglietteria.":"Controllo del sito pubblico non ancora eseguito, assente o non allineato all’attuale manifest del catalogo: non considerare le schede verificate.";;
  const lifecycle=data.lifecycle;
  const lifecycleByKey=new Map((lifecycle?.sources||[]).map(x=>[x.source_key,x]));
  const indexes=data.season.sources||[],indexq=norm($("index-search").value);
@@ -184,7 +194,7 @@ function render(){
 }
 async function refresh(){
  $("freshness").className="status unknown";$("freshness").textContent="Lettura dati da GitHub…";
- try{const pairs=await Promise.all(Object.entries(PATHS).map(async ([key,path])=>[key,await fetchJson(path).catch(e=>{if(key==="lifecycle"||key==="catalogation"||key==="evidence")return null;throw e})]));data=Object.fromEntries(pairs);render()}
+ try{const pairs=await Promise.all(Object.entries(PATHS).map(async ([key,path])=>[key,await fetchJson(path).catch(e=>{if(["lifecycle","catalogation","evidence","live"].includes(key))return null;throw e})]));data=Object.fromEntries(pairs);render()}
  catch(e){$("freshness").className="status bad";$("freshness").textContent="Dati non disponibili · "+e.message}
 }
 $("reload").addEventListener("click",refresh);
