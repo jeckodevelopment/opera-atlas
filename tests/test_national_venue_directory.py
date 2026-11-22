@@ -23,7 +23,7 @@ class NationalVenueDirectoryTests(unittest.TestCase):
         self.assertGreaterEqual(len(self.result["related_organizations"]),12)
         self.assertEqual(len({v["id"] for v in self.result["venues"]}),len(self.result["venues"]))
         self.assertEqual(len({v["city_slug"]+"/"+v["slug"] for v in self.result["venues"]}),len(self.result["venues"]))
-        self.assertEqual(len({v["region"] for v in self.result["venues"]}),16)
+        self.assertEqual(len({v["region"] for v in self.result["venues"]}),17)
         self.assertEqual(publish(check=True)["venues"],self.result["venues"])
 
     def test_original_performance_venues_are_preserved(self):
