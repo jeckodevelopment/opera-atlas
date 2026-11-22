@@ -13,20 +13,20 @@ button,input,select{font:inherit;border:1px solid #d7d0c2;border-radius:8px;back
 .table-wrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;font-size:14px}.table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#77716a;font-weight:600}.table th,.table td{border-bottom:1px solid #e8e5de;padding:13px 10px;vertical-align:top}
 .pill{display:inline-block;border:1px solid #e1dccf;border-radius:30px;padding:4px 8px;background:#f7f5ef;font-size:12px;white-space:nowrap}
 .pill.ok{color:#236f54;background:#eff8f3;border-color:#d0e8db}.pill.warn{color:#966225;background:#fff6e6;border-color:#f0debd}.pill.bad{color:#a34135;background:#fff1ee;border-color:#f0cdc8}
-.venue-summary{cursor:pointer;display:inline-flex;gap:8px;align-items:center;text-align:left;background:none;border:none;padding:0;font-weight:650;color:#72551e}.venue-summary:hover{text-decoration:underline}.venue-detail{background:#fbfaf7}.venue-detail[hidden]{display:none}.venue-detail ul{margin:8px 0;padding-left:20px}.venue-detail li{margin:5px 0}.venue-detail .muted{font-size:12px}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.attention{color:#a34135;font-weight:650}@media(max-width:690px){.table-wrap{overflow:auto}.table{min-width:690px}}.foot{margin-top:34px;border-top:1px solid #e2ded3;padding-top:22px;font-size:13px;color:#77716a}.notice{border-left:3px solid #b18a44;padding:13px 16px;background:#f0ede5;font-size:14px}
+.overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}.overview .tile{border-top:3px solid #a68036}.overview .tile.ok{border-top-color:#368269}.overview .tile.warn{border-top-color:#b18a44}.overview .tile.bad{border-top-color:#b25040}.overview .tile strong{font-size:24px}.priority-list{display:grid;gap:9px}.priority-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #e6e2d9;border-radius:9px;background:#fff}.priority-item>div{min-width:0}.priority-item b{display:block}.priority-item small{display:block;color:#77716a;margin-top:4px}.priority-item button{padding:5px 9px;font-size:12px;white-space:nowrap}.quality-note{font-size:12px;color:#77716a}.status-detail{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}.danger-text{color:#a34135}.grouphead{display:flex;align-items:center;justify-content:space-between;gap:12px}.grouphead h2{margin-bottom:12px}@media(max-width:690px){.overview{grid-template-columns:1fr}.priority-item{align-items:flex-start}}.venue-summary{cursor:pointer;display:inline-flex;gap:8px;align-items:center;text-align:left;background:none;border:none;padding:0;font-weight:650;color:#72551e}.venue-summary:hover{text-decoration:underline}.venue-detail{background:#fbfaf7}.venue-detail[hidden]{display:none}.venue-detail ul{margin:8px 0;padding-left:20px}.venue-detail li{margin:5px 0}.venue-detail .muted{font-size:12px}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.attention{color:#a34135;font-weight:650}@media(max-width:690px){.table-wrap{overflow:auto}.table{min-width:690px}}.foot{margin-top:34px;border-top:1px solid #e2ded3;padding-top:22px;font-size:13px;color:#77716a}.notice{border-left:3px solid #b18a44;padding:13px 16px;background:#f0ede5;font-size:14px}
 @media(max-width:690px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding:18px 14px 54px}.table{font-size:12px}.table th,.table td{padding:10px 7px}}
 </style></head><body><main class="wrap">
 <header><div><div class="brand">Opera<span>+</span> Atlas</div><div class="subtitle">Monitor delle fonti · Diagnostica tecnica</div></div><a href="https://opera.plus/atlas/" rel="noopener">Vai al catalogo pubblico</a></header>
-<h1>Stato delle acquisizioni</h1>
+<h1>Centro di controllo delle fonti</h1>
 <p class="muted">Dati in lettura diretta dal repository <a href="https://github.com/jeckodevelopment/opera-atlas" rel="noopener">opera-atlas</a>. Questa pagina non pubblica spettacoli e non dipende da successivi deploy SFTP.</p>
 <div class="toolbar"><div class="status"><span class="dot" id="light"></span><span id="message" role="status">Caricamento dati…</span></div><button type="button" id="reload">Aggiorna dati</button></div>
-<div id="updated" class="muted">—</div>
+<div id="updated" class="muted">—</div><section class="overview" id="health-overview" aria-label="Stati delle fonti"><div class="tile">Analisi delle fonti in corso…</div></section><section aria-labelledby="priorities-title"><div class="grouphead"><h2 id="priorities-title">Interventi prioritari</h2><span id="priority-count" class="pill">—</span></div><div id="priorities" class="priority-list" aria-live="polite"><p>Caricamento…</p></div></section>
 <section class="grid" id="metrics" aria-label="Metriche"><div class="tile">Caricamento…</div></section>
 <section aria-labelledby="venues-title"><h2 id="venues-title">Scansioni per teatro</h2>
 <p class="muted">Recite rilevate e pubblicate per sede, stato dei connettori e ultima scansione effettivamente registrata. Espandi una sede per consultare gli esiti individuali. La copertura riguarda soltanto le date finora individuate.</p>
-<div class="toolbar"><input id="venue-filter" type="search" placeholder="Cerca teatro, città o regione" aria-label="Cerca una sede"><select id="venue-status" aria-label="Filtra per stato"><option value="">Tutti gli stati</option><option value="missing">Recite da pubblicare</option><option value="configured_not_operational">Connettori da verificare</option><option value="not_automated">Non automatizzati</option></select></div>
-<div class="panel table-wrap"><table class="table"><thead><tr><th>Teatro</th><th>Rilevate</th><th>Pubblicate</th><th>Da pubblicare</th><th>Ultima scansione</th><th>Connettori</th></tr></thead><tbody id="venue-overview"><tr><td colspan="6">Caricamento…</td></tr></tbody></table></div>
-<p class="muted">La data della scansione viene dai singoli connettori; quando manca non viene sostituita con l'aggiornamento del feed. Le sedi prive di osservazioni ufficiali indipendenti possono risultare al 100% senza una verifica completa del calendario.</p></section>
+<div class="toolbar"><input id="venue-filter" type="search" placeholder="Cerca teatro, città o regione" aria-label="Cerca una sede"><select id="venue-status" aria-label="Filtra per stato"><option value="">Tutti gli stati</option><option value="critical">Critici</option><option value="warning">Attenzione</option><option value="ok">Regolari</option><option value="unknown">Non valutabili</option><option value="missing">Recite da pubblicare</option><option value="configured_not_operational">Connettori da verificare</option><option value="not_automated">Non automatizzati</option></select></div>
+<div class="panel table-wrap"><table class="table"><thead><tr><th>Teatro e diagnosi</th><th>Rilevate</th><th>Pubblicate</th><th>Da pubblicare</th><th>Ultima scansione</th><th>Connettori</th></tr></thead><tbody id="venue-overview"><tr><td colspan="6">Caricamento…</td></tr></tbody></table></div>
+<p class="muted" id="coverage-explanation">Gli indicatori editoriali misurano le recite ufficiali individuate, non l’intero programma stagionale. Una fonte senza osservazioni indipendenti non può certificare copertura completa.</p><p class="muted">La data della scansione viene dai singoli connettori; quando manca non viene sostituita con l'aggiornamento del feed. Le sedi prive di osservazioni ufficiali indipendenti possono risultare al 100% senza una verifica completa del calendario.</p></section>
 <section><h2>Fonti principali</h2><p class="muted">Recite e produzioni verificate nel catalogo; la copertura dell'intera stagione non è certificata.</p>
 <div class="panel table-wrap"><table class="table"><thead><tr><th>Fonte</th><th>Monitoraggio</th><th>Produzioni</th><th>Recite</th><th>Pagine verificate</th><th>Esito scansioni</th></tr></thead><tbody id="primary"><tr><td colspan="6">Caricamento…</td></tr></tbody></table></div></section>
 <section><h2>Indici stagionali</h2><p class="muted">Link identificati nei calendari ufficiali: non equivalgono al numero di recite.</p>
@@ -60,6 +60,28 @@ function replace(node,children){node.replaceChildren(...children)}
 function stamp(value){if(!value)return "—";const d=new Date(value);return Number.isNaN(d.getTime())?String(value):d.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Rome"})}
 async function fetchJson(path){const response=await fetch(BASE+path+"?t="+Date.now(),{cache:"no-store"});if(!response.ok)throw Error("HTTP "+response.status+" per "+path);return response.json()}
 let latest=null;
+function diagnose(a){
+ const rec=a.rec,sources=a.sources||[],total=Number(a.configured_connectors||0),healthy=Number(a.recent_successful_connectors||0);
+ const times=sources.map(x=>Date.parse(x.last_attempt_at)).filter(Number.isFinite),last=times.length?Math.max(...times):null;
+ let technical="ok",editorial="unknown",coverage="unknown",reasons=[];
+ if(total===0){technical="unknown";coverage="critical";reasons.push("Nessun connettore configurato")}
+ else if(healthy===0){technical="critical";reasons.push("Nessuna scansione riuscita")}
+ else if(healthy<total){technical="warning";reasons.push((total-healthy)+" connettori non riusciti")}
+ if(last!==null&&Date.now()-last>48*3600000){technical=technical==="critical"?"critical":"warning";reasons.push("Ultima scansione oltre 48 ore")}
+ if(rec){
+   if(rec.missing>0){editorial=rec.missing>=5?"critical":"warning";reasons.push(rec.missing+" recite rilevate non pubblicate")}
+   else editorial=rec.found>0?"ok":"unknown";
+   if(rec.found>0&&rec.independent_observations===0){coverage=coverage==="critical"?"critical":"unknown";reasons.push("Copertura del calendario non verificata")}
+ }
+ if(coverage!=="critical"&&total>0&&healthy>0&&rec&&rec.independent_observations>0)coverage="ok";
+ const values=[technical,editorial,coverage],rank={critical:3,warning:2,unknown:1,ok:0};
+ const overall=values.reduce((worst,x)=>rank[x]>rank[worst]?x:worst,"ok");
+ const priority=overall==="critical"?(rec?.missing>=5?"P0":"P1"):overall==="warning"?"P2":"—";
+ return {technical,editorial,coverage,overall,priority,reasons,last};
+}
+const conditionText={critical:"Critico",warning:"Attenzione",unknown:"Non valutabile",ok:"Regolare"};
+function conditionChip(value,labelText){return status((labelText?labelText+": ":"")+conditionText[value],value==="ok"?true:value==="critical"?false:null)}
+
 function draw(data){
  const coverage=data.coverage,season=data.season,candidate=data.candidate;
  const primary=coverage.sources||[],indexes=season.sources||[],outcomes=candidate.outcomes||[],venues=data.recite.venues||[];
@@ -73,8 +95,22 @@ function draw(data){
  const assigned=new Set(combined.filter(a=>a.rec).map(a=>normalize(a.rec.venue)));
  for(const rec of venues){if(!assigned.has(normalize(rec.venue)))combined.push({venue:rec.venue,city:rec.city,region:rec.region,status:"not_automated",sources:[],configured_connectors:0,recent_successful_connectors:0,rec})}
  const q=$("venue-filter").value.trim().toLowerCase(),filter=$("venue-status").value;
- const filtered=combined.filter(a=>(!q||normalize([a.venue,a.city,a.region].join(" ")).includes(normalize(q)))&&(!filter||(filter==="missing"?a.rec?.missing>0:a.status===filter)));
- filtered.sort((a,b)=>(b.rec?.missing||0)-(a.rec?.missing||0)||String(a.venue).localeCompare(String(b.venue),"it"));
+ combined.forEach(a=>a.diagnosis=diagnose(a));
+ const filtered=combined.filter(a=>(!q||normalize([a.venue,a.city,a.region].join(" ")).includes(normalize(q)))&&(!filter||(filter==="missing"?a.rec?.missing>0:["critical","warning","ok","unknown"].includes(filter)?a.diagnosis.overall===filter:a.status===filter)));
+ const severity={critical:3,warning:2,unknown:1,ok:0};
+ filtered.sort((a,b)=>severity[b.diagnosis.overall]-severity[a.diagnosis.overall]||(b.rec?.missing||0)-(a.rec?.missing||0)||String(a.venue).localeCompare(String(b.venue),"it"));
+ const totals={critical:0,warning:0,unknown:0,ok:0};combined.forEach(a=>totals[a.diagnosis.overall]++);
+ const observed=combined.reduce((sum,a)=>sum+Number(a.rec?.found||0),0),published=combined.reduce((sum,a)=>sum+Number(a.rec?.published||0),0);
+ const snapshotTimes=combined.map(a=>a.diagnosis.last).filter(Number.isFinite);
+ const freshest=snapshotTimes.length?Math.max(...snapshotTimes):null;
+ const overallCards=[["Critiche",totals.critical,"bad"],["Da verificare",totals.warning,"warn"],["Regolari",totals.ok,"ok"],["Non valutabili",totals.unknown,""],["Recite pubblicate",published+" / "+observed,""],["Teatri con connettore",combined.filter(a=>a.configured_connectors>0).length+" / "+combined.length,""]];
+ replace($("health-overview"),overallCards.map(([title,value,cls])=>{const node=el("div",undefined,"tile "+cls);node.append(el("strong",value),el("small",title));return node}));
+ const issues=combined.filter(a=>a.diagnosis.overall==="critical"||a.diagnosis.overall==="warning").sort((a,b)=>severity[b.diagnosis.overall]-severity[a.diagnosis.overall]||(b.rec?.missing||0)-(a.rec?.missing||0));
+ $("priority-count").textContent=issues.length+" fonti con anomalie";
+ replace($("priorities"),issues.length?issues.slice(0,8).map(a=>{const row=el("div",undefined,"priority-item"),body=el("div");body.append(el("b",a.venue+" · "+a.city),el("small",(a.diagnosis.reasons.join(" · ")||"Richiede verifica")+" · "+a.diagnosis.priority));row.append(body,conditionChip(a.diagnosis.overall));return row}):[el("p","Nessuna criticità nota nelle fonti verificate.")]);
+ $("coverage-explanation").textContent="Copertura editoriale osservata: "+published+" / "+observed+" recite ("+(observed?Math.round(100*published/observed):"n.d.")+"%). Sono conteggiati solo i calendari rilevati; non rappresentano una certificazione di copertura stagionale.";
+ if(freshest&&Date.now()-freshest>48*3600000){$("message").textContent="Attenzione: diagnostica potenzialmente obsoleta (ultima scansione "+stamp(new Date(freshest).toISOString())+")";$("light").className="dot bad"}
+
  const rows=[];
  const stateNames={operational:"Operativa",configured_not_operational:"Da verificare",not_automated:"Non automatizzata"};
  for(const a of filtered){
@@ -82,13 +118,14 @@ function draw(data){
    const tr=el("tr"),name=el("td"),toggle=el("button",a.venue+" ▸","venue-summary");toggle.type="button";toggle.setAttribute("aria-expanded","false");
    const detail=el("tr",undefined,"venue-detail");detail.hidden=true;const full=el("td");full.colSpan=6;
    const intro=el("p",a.city+(a.region?" · "+a.region:"")+" · "+(stateNames[a.status]||a.status));full.append(intro);
+   full.append(el("p","Stato: "+conditionText[a.diagnosis.overall]+" · Priorità: "+a.diagnosis.priority+" · "+(a.diagnosis.reasons.join("; ")||"Nessuna anomalia nota"),"muted"));
    full.append(el("p","Rilevate: "+(rec?.found??"—")+" · Pubblicate: "+(rec?.published??"—")+" · Mancanti: "+(rec?.missing??"—")+" · Osservazioni indipendenti: "+(rec?.independent_observations??"—"),"muted"));
    if(sources.length){const title=el("strong","Dettaglio connettori");full.append(title);const list=el("ul");
      for(const source of sources){const li=el("li");li.append(el("strong",source.source_key||"Sorgente"));li.append(el("span"," · "+(source.last_status||"non verificato")+" · scansione: "+stamp(source.last_attempt_at)));if(source.failure_reason)li.append(el("span"," · "+source.failure_reason,"attention"));list.append(li)}full.append(list)
    }else full.append(el("p","Nessun connettore associato alla sede.","muted"));
    if(!last)full.append(el("p","Nessun timestamp di scansione disponibile per questa sede: l'esito storico del connettore non è una prova di scansione recente.","muted"));
    detail.append(full);toggle.addEventListener("click",()=>{detail.hidden=!detail.hidden;toggle.setAttribute("aria-expanded",String(!detail.hidden));toggle.textContent=a.venue+(detail.hidden?" ▸":" ▾")});
-   name.append(toggle,el("div",a.city,"muted"));tr.append(name);
+   name.append(toggle,el("div",a.city+" · "+a.region,"muted"));const chips=el("div",undefined,"status-detail");chips.append(conditionChip(a.diagnosis.technical,"Tecnica"),conditionChip(a.diagnosis.editorial,"Editoriale"),conditionChip(a.diagnosis.coverage,"Copertura"));name.append(chips);tr.append(name);
    td(tr,rec?.found??"—");td(tr,rec?.published??"—");
    const missing=el("td",rec?.missing??"—",rec?.missing>0?"attention num":"num");tr.append(missing);
    td(tr,stamp(last));const connector=el("td");connector.append(status((a.recent_successful_connectors||0)+" / "+(a.configured_connectors||0),a.status==="operational"?true:a.status==="not_automated"?false:null));tr.append(connector);
@@ -139,8 +176,8 @@ function draw(data){
     replace(list,rows);
   }
   $("updated").textContent="Ultima scansione indici: "+stamp(season.checked_at)+" · dettagli: "+stamp(candidate.checked_at)+" · fonti: "+stamp(coverage.last_scan_at);
- $("light").className="dot ok";$("message").textContent="Dati letti da GitHub · aggiornamento su richiesta";
+ if(!($("light").className.includes("bad")&&$("message").textContent.startsWith("Attenzione:"))){$("light").className="dot ok";$("message").textContent="Dati letti da GitHub · aggiornamento su richiesta"}
 }
-async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const mainUrls=Object.entries(urls).filter(([key])=>key!=="lifecycle");const values=await Promise.all(mainUrls.map(([,path])=>fetchJson(path)));latest=Object.fromEntries(mainUrls.map(([key],i)=>[key,values[i]]));latest.lifecycle=await fetchJson(urls.lifecycle).catch(()=>null);latest.identity=await fetchJson(identityUrl).catch(()=>null);draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("recite"),[]);replace($("venue-overview"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
+async function refresh(){ $("message").textContent="Lettura da GitHub…";$("light").className="dot";try{const mainUrls=Object.entries(urls).filter(([key])=>key!=="lifecycle");const values=await Promise.all(mainUrls.map(([,path])=>fetchJson(path)));latest=Object.fromEntries(mainUrls.map(([key],i)=>[key,values[i]]));latest.lifecycle=await fetchJson(urls.lifecycle).catch(()=>null);latest.identity=await fetchJson(identityUrl).catch(()=>null);draw(latest)}catch(err){$("light").className="dot bad";$("message").textContent="Impossibile aggiornare: "+err.message;if(!latest){replace($("metrics"),[el("div","Dati non disponibili: riprovare.","tile")]);replace($("primary"),[]);replace($("season"),[]);replace($("venue-overview"),[]);$("candidate").textContent="Nessun dato disponibile."}}}
 $("reload").addEventListener("click",refresh);$("filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("venue-status").addEventListener("change",()=>{if(latest)draw(latest)});$("identity-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("identity-category").addEventListener("change",()=>{if(latest)draw(latest)});$("lifecycle-filter").addEventListener("input",()=>{if(latest)draw(latest)});$("lifecycle-strategy").addEventListener("change",()=>{if(latest)draw(latest)});refresh();
 </script></body></html>
