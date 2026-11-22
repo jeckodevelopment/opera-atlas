@@ -94,7 +94,7 @@ def validate_auto_sources(urls: list[str]) -> set[str]:
             or parsed.port is not None or not any(
                 parsed.hostname==urlsplit(x["official_url"]).hostname
                 and eligible(x["key"],url) for x in sources)):
-            raise ValueError("automatic source outside an approved official production section")
+            raise ValueError(f"automatic source outside an approved official production section: {url}")
         allowed.add(url)
     return allowed
 
