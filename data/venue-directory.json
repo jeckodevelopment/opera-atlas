@@ -1099,6 +1099,27 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Reggio_nell%27Emilia_-_Teatro_Ariosto_-_2023-09-16_15-23-40_001.jpeg",
       "photo_credit": "EnveR / Wikimedia Commons — CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "oa-v-000037",
+      "name": "Teatro Sociale",
+      "city": "Bergamo",
+      "region": "Lombardia",
+      "city_slug": "bergamo",
+      "slug": "teatro-sociale",
+      "website": "https://www.teatrodonizetti.it/it/il-teatro-sociale-bergamo/",
+      "source_url": "https://www.teatrodonizetti.it/it/le-origini-del-teatro-sociale-di-bergamo/",
+      "description": "In Città Alta, il Teatro Sociale ospita opera e musica in una storica sala all’italiana, parte della rete della Fondazione Teatro Donizetti.",
+      "canonical_venue_id": "oa-v-000037",
+      "profile_key": "Bergamo|Teatro Sociale",
+      "monitoring_status": "programma_censito",
+      "address": "Via Bartolomeo Colleoni 4",
+      "history": "Inaugurato il 26 dicembre 1808 come Teatro della Società, il Teatro Sociale fu progettato da Leopoldo Pollack per la nobiltà bergamasca. Sorge nel cuore di Città Alta, in via Colleoni, e conobbe un lungo periodo di abbandono nel Novecento. Acquisito dal Comune nel 1974, tornò ad accogliere spettacoli dopo il restauro, culminato nella riapertura del 2009.",
+      "calendar_status": "acquired",
+      "photo_file": "5Interior of Teatro Sociale (Bergamo).jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:5Interior_of_Teatro_Sociale_(Bergamo).jpg",
+      "photo_credit": "Nazasca / Wikimedia Commons — CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   ],
   "related_organizations": [
