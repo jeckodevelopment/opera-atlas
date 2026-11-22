@@ -11,7 +11,7 @@ MONTHS_IT = ("gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "lugl
 
 
 def performance_labels(notice: dict) -> list[str]:
-    """Only future published dates; never infer an unknown performance time."""
+    """All published dates for diagnosis, past or future, never inventing times."""
     if notice.get("kind") != "Nuova produzione":
         return []
     labels = []
@@ -19,8 +19,6 @@ def performance_labels(notice: dict) -> list[str]:
         try:
             day = date.fromisoformat(performance["local_date"])
         except (KeyError, TypeError, ValueError):
-            continue
-        if day < date.today() or performance.get("status") == "cancelled":
             continue
         label = f"{day.day} {MONTHS_IT[day.month - 1]} {day.year}"
         if performance.get("time_known") and performance.get("starts_at"):
@@ -48,10 +46,10 @@ def render_email(notice: dict) -> tuple[str, str]:
     recite_html = ""
     recite_plain = ""
     if kind == "Nuova produzione":
-        recite_plain = "\nRecite previste:\n" + ("\n".join(f"- {label}" for label in labels) if labels else "Date non ancora disponibili") + "\n"
+        recite_plain = "\nRecite censite:\n" + ("\n".join(f"- {label}" for label in labels) if labels else "Nessuna recita censita") + "\n"
         items = "".join(f'<li style="padding:3px 0;">{e(label)}</li>' for label in labels)
-        contents = f'<ul style="margin:8px 0;padding-left:20px;">{items}</ul>' if labels else "Date non ancora disponibili"
-        recite_html = f'<tr><td style="padding:8px 0 16px;font-size:12px;color:#727272;vertical-align:top;">Recite</td><td style="padding:8px 0 16px;font-size:14px;line-height:1.6;color:#242424;">{contents}</td></tr>'
+        contents = f'<ul style="margin:8px 0;padding-left:20px;">{items}</ul>' if labels else "Nessuna recita censita"
+        recite_html = f'<tr><td style="padding:8px 0 16px;font-size:12px;color:#727272;vertical-align:top;">Recite censite</td><td style="padding:8px 0 16px;font-size:14px;line-height:1.6;color:#242424;">{contents}</td></tr>'
     html = f"""<!doctype html>
 <html lang="it">
 <head>

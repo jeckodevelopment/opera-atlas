@@ -68,3 +68,9 @@ Per controllare lo stato del sistema: workflow `Deliver pending Opera Atlas publ
 ## Recite nelle email di nuova produzione
 
 Le email per una **nuova produzione** includono un elenco delle recite future già presenti nel canale pubblico v2 `performances`, collegate tramite `staging_id`. Sono mostrate in ordine cronologico con data italiana e, soltanto se `time_known=true`, ora locale ricavata da `starts_at`. Le recite annullate e le date trascorse non figurano nell'elenco. Se non risultano future recite pubblicate, il modello riporta «Date non ancora disponibili». I messaggi per **nuova opera** rimangono invariati. Non vengono inviate notifiche aggiuntive per aggiornamenti di programmazione di produzioni esistenti.
+
+## Notifiche diagnostiche per opere storiche, produzioni e nuovi teatri
+
+Le notifiche sono finalizzate alla diagnostica del censimento, quindi vengono inviate alla **prima pubblicazione di qualunque nuova opera, produzione o sede teatrale**, anche quando tutte le recite acquisite sono già trascorse. Il filtro temporale non limita più l'invio né la lista delle recite: le email di nuova produzione riportano tutte le date di rappresentazione censite nel feed pubblico (passate e future), con ora soltanto quando documentata. Un eventuale stato annullato resta nell'evidenza storica del catalogo, senza creare nuove notifiche da solo. Se nessuna recita è presente, il testo è «Nessuna recita censita».
+
+La notifica **Nuovo teatro** contiene nome, città, regione quando disponibile e collegamento alla scheda della sede. È alimentata dagli ID permanenti del canale pubblico `venues`, perciò non si attiva a ogni nuova produzione in un teatro già noto. La stessa coda persistente gestisce tutte e tre le tipologie con deduplicazione e recupero automatico ogni 15 minuti. Il ramo di baseline e il registro degli ID già accettati non vengono azzerati: nessun reinvio retroattivo in massa delle schede pubblicate prima dell'attivazione.
