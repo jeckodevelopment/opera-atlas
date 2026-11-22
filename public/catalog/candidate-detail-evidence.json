@@ -4171,8 +4171,8 @@
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "ad58db56a967b28dbe8837a2770ecf88368faa3feac28c6471b80ffa7797580e",
-      "checked_at": "2026-11-22T13:57:19+00:00",
+      "content_sha256": "dcfebffc62f7145f837acefdf1cc1cd557f7bd1c906b6010485c86cf3f0abae7",
+      "checked_at": "2026-11-22T13:59:12+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -6290,8 +6290,8 @@
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "ad58db56a967b28dbe8837a2770ecf88368faa3feac28c6471b80ffa7797580e",
-      "checked_at": "2026-11-22T13:57:19+00:00",
+      "content_sha256": "492cb0480f52ccee1ff169d9be83ee20297e61509ef104d8b50f92f9561665ce",
+      "checked_at": "2026-11-22T13:59:10+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
