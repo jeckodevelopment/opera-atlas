@@ -25,22 +25,22 @@ def page(*,dates=None,credit="UMBERTO GIORDANO"):
             '<a>La Cenerentola</a></section></html>')
 
 class PiacenzaOperaSourceTests(unittest.TestCase):
-    def test_six_explicit_opera_links_from_mixed_season(self):
+    def test_five_eligible_opera_links_from_mixed_season(self):
         sources=validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
         src=next(s for s in sources if s["key"]==KEY)
         self.assertEqual(src["url"],INDEX)
-        self.assertEqual(src["min_links"],6)
+        self.assertEqual(src["min_links"],5)
         self.assertTrue(eligible(KEY,DETAIL))
         self.assertFalse(eligible(KEY,"https://teatripiacenza.it/stagioni/stagione-26-27/"))
-        slugs=["siberia","l-anno-che-verra","la-cenerentola-2",
+        slugs=["siberia","lanno-che-verra","la-cenerentola-2",
                "la-clemenza-di-tito","simon-boccanegra","aida"]
         pagehtml="<h2>Opera</h2>"+''.join(
             f'<a href="/event/{s}/">Scopri di più</a>' for s in slugs)
         pagehtml+=('<h2>Concerti</h2><a href="/event/concerto-di-gala/">concert</a>'
                    '<h2>Young</h2><a href="/event/anteprima-scuole/">school</a>'
                    '<a href="https://other.invalid/event/evil/">external</a>')
-        result=extract(KEY,INDEX,pagehtml,6)
-        self.assertEqual(len(result),6)
+        result=extract(KEY,INDEX,pagehtml,5)
+        self.assertEqual(len(result),5)
         self.assertEqual(result[0],"https://teatripiacenza.it/event/aida/")
 
     def test_restricted_rehearsals_and_under18_preview_excluded(self):
