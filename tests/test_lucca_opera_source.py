@@ -47,6 +47,21 @@ class LuccaOperaTests(unittest.TestCase):
         self.assertEqual(len(facts),2)
         self.assertEqual(facts[0]["starts_at"],"2027-01-22T20:30:00+01:00")
 
+    def test_inline_composer_credits_inside_work_panel_are_accepted(self):
+        # Live page templates render the credit in an unwrapped text node.
+        html=page().replace("<p>Musica di GIOACHINO ROSSINI</p>",
+                            "<div>Musica di GIOACHINO ROSSINI</div>")
+        self.assertEqual(parse_detail(html,url=DETAIL)[1],"GIOACHINO ROSSINI")
+        # Header/global navigation credits cannot override the current work.
+        html=html.replace("<p>MENU</p>",
+             "<p>Musica di GIACOMO PUCCINI</p><p>MENU</p>")
+        self.assertEqual(parse_detail(html,url=DETAIL)[1],"GIOACHINO ROSSINI")
+        # A second official composer within the scoped work is ambiguous.
+        html=html.replace("<div>Musica di GIOACHINO ROSSINI</div>",
+                          "<div>Musica di GIOACHINO ROSSINI Musica di GIUSEPPE VERDI</div>")
+        with self.assertRaises(ValueError):
+            parse_detail(html,url=DETAIL)
+
     def test_mismatched_venue_genre_composer_or_partial_date_fail(self):
         for fixture in [
             page(theatre="Teatro San Girolamo"),
