@@ -217,6 +217,56 @@ def verified_haydn_cronaca_urls(manifest:dict,detail:dict)->set[str]:
     return matches
 
 
+def verified_livorno_dido_programme_urls(manifest:dict,detail:dict)->set[str]:
+    """Match a second official Dido ticket URL to the one published staging.
+
+    The exact Goldoni detail has the wrong CMS header time for 8 November;
+    its explicitly credited programme gives 6 Nov 20:00 and 8 Nov 16:00.
+    Never retire a candidate until the source-bound facts agree on both
+    dates and clocks with one existing canonical Purcell production.
+    """
+    import re
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    url="https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/"
+    expected={"2026-11-06":"20:00","2026-11-08":"16:00"}
+    matches=[p for p in manifest.get("productions",[])
+             if p.get("source_url")=="https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+             and p.get("municipality")=="Livorno"
+             and p.get("venue")=="Teatro Goldoni"
+             and p.get("title")=="Dido and Æneas"
+             and p.get("composer")=="Henry Purcell"
+             and dict(p.get("dates",[]))==expected]
+    if len(matches)!=1:return set()
+    for observation in detail.get("evidence",[]):
+        if not isinstance(observation,dict):continue
+        facts=observation.get("event_facts")
+        if (observation.get("source_key")!="goldoni-livorno-rolling-lirica"
+            or observation.get("source_url")!=url
+            or observation.get("status")!="needs_editorial_review"
+            or not re.fullmatch(r"[0-9a-f]{64}",str(observation.get("content_sha256","")))
+            or not isinstance(facts,list) or len(facts)!=2):
+            continue
+        observed={}
+        for fact in facts:
+            if (not isinstance(fact,dict)
+                or fact.get("event_title")!="Dido and Æneas"
+                or fact.get("composer")!="Henry Purcell"
+                or fact.get("venue")!="Teatro Goldoni"):
+                break
+            try:
+                moment=datetime.fromisoformat(fact["starts_at"])
+                if moment.utcoffset() is None:break
+                local=moment.astimezone(ZoneInfo("Europe/Rome"))
+                day=fact["date"]
+                if local.date().isoformat()!=day or day in observed:break
+                observed[day]=local.strftime("%H:%M")
+            except (KeyError,TypeError,ValueError):break
+        if observed==expected:
+            return {url}
+    return set()
+
+
 def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
     """Recognize complete independently verified second-source theater dates.
 
@@ -493,6 +543,7 @@ def run(*,check:bool=False):
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
     published.update(verified_pisa_recital_urls(manifest,detail))
     published.update(verified_livorno_recital_urls(manifest,detail))
+    published.update(verified_livorno_dido_programme_urls(manifest,detail))
     published.update(verified_haydn_cronaca_urls(manifest,detail))
     cagliari_2027=verified_cagliari_2027_brochure_urls()
     programs_path=ROOT/"public"/"catalog"/"programs.json"
