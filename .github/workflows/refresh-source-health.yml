@@ -17,6 +17,10 @@ on:
       # Source-specific adapters must also retrigger their health scans.
       - 'opera_atlas/rovigo_opera_parser.py'
       - 'opera_atlas/modena_opera_parser.py'
+      - 'opera_atlas/napoli_san_carlo.py'
+      - 'opera_atlas/pesaro_rof.py'
+      - 'opera_atlas/martina_valle_itria.py'
+      - 'opera_atlas/trapani_luglio_opera.py'
       - 'scripts/source_automation.py'
       - 'scripts/season_lifecycle_health.py'
       - 'data/season-lifecycle-policy.json'
