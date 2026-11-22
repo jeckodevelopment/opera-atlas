@@ -1624,6 +1624,24 @@
       ]
     },
     {
+      "id": "curated:auto-cef30865a6bd9d93:2026-11-20",
+      "starts_at": "2026-11-20T20:00:00+01:00",
+      "local_date": "2026-11-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/macbeth-2/"
+      ]
+    },
+    {
       "id": "curated:lombardia-italiana-pavia:2026-11-20",
       "starts_at": "2026-11-20T20:00:00+01:00",
       "local_date": "2026-11-20",
@@ -1766,6 +1784,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:auto-cef30865a6bd9d93:2026-11-22",
+      "starts_at": "2026-11-22T15:30:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/macbeth-2/"
       ]
     },
     {
@@ -3596,6 +3632,24 @@
       ]
     },
     {
+      "id": "curated:auto-1e27375a038df76a:2027-01-29",
+      "starts_at": "2027-01-29T20:00:00+01:00",
+      "local_date": "2027-01-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/death-in-venice/"
+      ]
+    },
+    {
       "id": "curated:auto-1e384fa01b8a144d:2027-01-29",
       "starts_at": "2027-01-29T20:00:00+01:00",
       "local_date": "2027-01-29",
@@ -3791,6 +3845,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:auto-1e27375a038df76a:2027-01-31",
+      "starts_at": "2027-01-31T15:30:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/death-in-venice/"
       ]
     },
     {
@@ -6242,6 +6314,24 @@
       ]
     },
     {
+      "id": "curated:auto-08102433798cc6aa:2027-03-19",
+      "starts_at": "2027-03-19T20:00:00+01:00",
+      "local_date": "2027-03-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/"
+      ]
+    },
+    {
       "id": "curated:auto-b372b317894fe260:2027-03-19",
       "starts_at": "2027-03-19T20:00:00+01:00",
       "local_date": "2027-03-19",
@@ -6383,6 +6473,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/turandot/"
+      ]
+    },
+    {
+      "id": "curated:auto-08102433798cc6aa:2027-03-21",
+      "starts_at": "2027-03-21T15:30:00+01:00",
+      "local_date": "2027-03-21",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/"
       ]
     },
     {
@@ -6566,6 +6674,24 @@
       ]
     },
     {
+      "id": "curated:auto-8aa427dd9ba60975:2027-04-01",
+      "starts_at": "2027-04-01T20:00:00+02:00",
+      "local_date": "2027-04-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/"
+      ]
+    },
+    {
       "id": "curated:auto-f3cef88d8ea31094:2027-04-01",
       "starts_at": "2027-04-01T20:00:00+02:00",
       "local_date": "2027-04-01",
@@ -6635,6 +6761,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/salome"
+      ]
+    },
+    {
+      "id": "curated:auto-8aa427dd9ba60975:2027-04-03",
+      "starts_at": "2027-04-03T18:00:00+02:00",
+      "local_date": "2027-04-03",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/"
       ]
     },
     {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-21",
+  "reviewed_on": "2026-11-22",
   "editorial_policy": "Only individual recite explicitly shown by official source; unknown hours remain null; no third-party copy.",
   "productions": [
     {
@@ -4493,6 +4493,82 @@
         [
           "2026-09-20",
           "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-08102433798cc6aa",
+      "title": "Simon Boccanegra",
+      "composer": "GIUSEPPE VERDI",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
+      "dates": [
+        [
+          "2027-03-19",
+          "20:00"
+        ],
+        [
+          "2027-03-21",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1e27375a038df76a",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "dates": [
+        [
+          "2027-01-29",
+          "20:00"
+        ],
+        [
+          "2027-01-31",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-8aa427dd9ba60975",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/",
+      "dates": [
+        [
+          "2027-04-01",
+          "20:00"
+        ],
+        [
+          "2027-04-03",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-cef30865a6bd9d93",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Valli",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+      "dates": [
+        [
+          "2026-11-20",
+          "20:00"
+        ],
+        [
+          "2026-11-22",
+          "15:30"
         ]
       ]
     }

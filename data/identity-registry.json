@@ -1934,6 +1934,39 @@
       "slug": "bona-sforza",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
       "season": "2026"
+    },
+    "auto-08102433798cc6aa": {
+      "id": "oa-s-000151",
+      "work_id": "oa-w-000075",
+      "venue_id": "oa-v-000013",
+      "slug": "simon-boccanegra",
+      "source_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
+      "season": "2027"
+    },
+    "auto-1e27375a038df76a": {
+      "id": "oa-s-000152",
+      "work_id": "oa-w-000013",
+      "venue_id": "oa-v-000013",
+      "slug": "death-in-venice",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "season": "2027",
+      "route_slug": "death-in-venice-death-in-venice"
+    },
+    "auto-8aa427dd9ba60975": {
+      "id": "oa-s-000153",
+      "work_id": "oa-w-000066",
+      "venue_id": "oa-v-000013",
+      "slug": "la-clemenza-di-tito",
+      "source_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/",
+      "season": "2027"
+    },
+    "auto-cef30865a6bd9d93": {
+      "id": "oa-s-000154",
+      "work_id": "oa-w-000018",
+      "venue_id": "oa-v-000013",
+      "slug": "macbeth",
+      "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -6250,6 +6283,54 @@
       "staging_id": "oa-s-000150",
       "original_date": "2026-09-20",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+    },
+    "auto-08102433798cc6aa|2027-03-19": {
+      "id": "oa-r-000735",
+      "staging_id": "oa-s-000151",
+      "original_date": "2027-03-19",
+      "source_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/"
+    },
+    "auto-08102433798cc6aa|2027-03-21": {
+      "id": "oa-r-000736",
+      "staging_id": "oa-s-000151",
+      "original_date": "2027-03-21",
+      "source_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/"
+    },
+    "auto-1e27375a038df76a|2027-01-29": {
+      "id": "oa-r-000737",
+      "staging_id": "oa-s-000152",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/"
+    },
+    "auto-1e27375a038df76a|2027-01-31": {
+      "id": "oa-r-000738",
+      "staging_id": "oa-s-000152",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/"
+    },
+    "auto-8aa427dd9ba60975|2027-04-01": {
+      "id": "oa-r-000739",
+      "staging_id": "oa-s-000153",
+      "original_date": "2027-04-01",
+      "source_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/"
+    },
+    "auto-8aa427dd9ba60975|2027-04-03": {
+      "id": "oa-r-000740",
+      "staging_id": "oa-s-000153",
+      "original_date": "2027-04-03",
+      "source_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/"
+    },
+    "auto-cef30865a6bd9d93|2026-11-20": {
+      "id": "oa-r-000741",
+      "staging_id": "oa-s-000154",
+      "original_date": "2026-11-20",
+      "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/"
+    },
+    "auto-cef30865a6bd9d93|2026-11-22": {
+      "id": "oa-r-000742",
+      "staging_id": "oa-s-000154",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/"
     }
   }
 }
