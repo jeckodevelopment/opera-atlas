@@ -118,14 +118,15 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
         staging_record["url"] = "/" + route + "/"
         stagings[staging["id"]] = staging_record
         for day, time in product["dates"]:
-            rk = sk + "|" + day
+            from scripts.build_verified_catalog import replica_registry_key
+            rk = replica_registry_key(product,day,time)
             if rk not in registry["performances"]:
                 raise ValueError("new recita requires a permanent registry identity: " + rk)
             used_keys["performances"].add(rk)
             item = dict(registry["performances"][rk])
             if item["staging_id"] != staging["id"] or item["source_url"] != product["source_url"]:
                 raise ValueError("recita identity or provenance changed unexpectedly")
-            legacy_event = by_legacy[f"curated:{sk}:{day}"]
+            legacy_event = by_legacy["curated:"+rk.replace("|",":")]
             item.update({
                 "legacy_id": legacy_event["id"],
                 "local_date": day,
