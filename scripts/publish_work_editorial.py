@@ -44,7 +44,8 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
     if history is None:history=json.loads(HISTORY.read_text(encoding="utf-8"))
     if history.get("schema_version")!=1 or not isinstance(history.get("works"),dict):
         raise ValueError("invalid historical work registry")
-    expected = {w["slug"] for w in works}
+    reserved_ids={x["id"] for x in registry.get("reserved_works",{}).values()}
+    expected = {w["slug"] for w in works if w["id"] not in reserved_ids}
     provided = set(editorial["synopses"])
     if not expected.issubset(provided):
         raise ValueError("missing verified work synopsis: " +
@@ -58,6 +59,8 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
         raise ValueError("work-specific editorial data must be dictionaries")
     entries = []
     for work in works:
+        if work["id"] in reserved_ids:
+            continue
         summary = synopses_by_id.get(work["id"], editorial["synopses"][work["slug"]])
         if len(same_slug[work["slug"]])>1 and work["id"] not in synopses_by_id:
             raise ValueError("ambiguous synopsis needs work ID: "+work["id"])
@@ -102,6 +105,23 @@ def build_editorial(facts: dict, registry: dict, editorial: dict, *,
                         "title":work["title"],"composer":work["composer"],
                         "route_slug":work.get("route_slug",work["slug"]),
                         "synopsis":summary.strip(),"history":historical})
+    # Program-only works receive complete cards from the reviewed profile
+    # registry; their absence from solo productions must not hide the opera.
+    reviewed=json.loads((ROOT/"data"/"reviewed-program-work-editorials.json").read_text(encoding="utf-8"))
+    profiles={(x["title"].casefold(),x["composer"].casefold()):x for x in reviewed["works"]}
+    for work in works:
+        if work["id"] not in reserved_ids:
+            continue
+        profile=profiles.get((work["title"].casefold(),work["composer"].casefold()))
+        if not profile or not validate_history(profile.get("history")):
+            raise ValueError("missing complete sourced work history: "+work["slug"])
+        summary=profile.get("synopsis")
+        if not isinstance(summary,str) or not 35<=len(summary.strip())<=300:
+            raise ValueError("invalid short synopsis: "+work["slug"])
+        entries.append({"work_id":work["id"],"slug":work["slug"],
+                        "title":work["title"],"composer":work["composer"],
+                        "route_slug":work.get("route_slug",work["slug"]),
+                        "synopsis":summary.strip(),"history":profile["history"]})
     return {"schema_version":1,"language":"it",
             "works":sorted(entries,key=lambda v:v["work_id"])}
 
