@@ -10,6 +10,38 @@ from scripts.collect_candidate_details import OUTPUT as DETAILS
 from scripts.auto_catalogue import SOURCE_ALLOWLIST
 
 class CachedKnownPublicationTests(unittest.TestCase):
+    def test_all_11_source_verified_lucca_and_sassari_recite_publish_offline(self):
+        from scripts.auto_catalogue import promote
+        facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        candidates=json.loads(INDEX.read_text(encoding="utf-8"))
+        evidence=json.loads(DETAILS.read_text(encoding="utf-8"))
+        selected={"giglio-lucca-opera-2026-27","sassari-de-carolis-opera-2026"}
+        wanted=lambda x:x["source_key"] in selected and (
+            x["source_key"]=="sassari-de-carolis-opera-2026" or
+            not x["official_url"].endswith("/lanno-che-verra/"))
+        chosen=[{**x,"status":"needs_review"} for x in candidates["candidates"]
+                if wanted(x)]
+        details=[x for x in evidence["evidence"] if wanted({
+            "source_key":x["source_key"],"official_url":x["source_url"]})]
+        self.assertEqual(len(chosen),6)
+        self.assertEqual(len(details),6)
+        result,ids,urls,report=promote(
+            facts,registry,{"schema_version":1,"evidence":details},
+            {"schema_version":1,"candidates":chosen},[],today=date(2026,11,22))
+        sources={x["official_url"] for x in chosen}
+        staged=[p for p in result["productions"] if p["source_url"] in sources]
+        self.assertEqual(len(staged),6,report)
+        self.assertEqual(sum(len(p["dates"]) for p in staged),11,report)
+        self.assertEqual({p["municipality"] for p in staged},{"Lucca","Sassari"})
+        self.assertIn("https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",urls)
+        again,again_ids,_,second=promote(result,ids,
+            {"schema_version":1,"evidence":details},
+            {"schema_version":1,"candidates":chosen},urls,today=date(2026,11,22))
+        self.assertEqual(second["new_recite"],0)
+        self.assertEqual(again,result)
+        self.assertEqual(again_ids,ids)
+
     def test_four_genova_productions_publish_offline_without_new_work_id(self):
         facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
