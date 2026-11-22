@@ -575,6 +575,20 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 and not municipal_spoleto)):
             issues.append({"candidate_id":cid,"reason":"unsupported_or_untrusted_source"})
             continue
+        # A previously published same-day double slot is already complete.
+        # The known-work pass must not misreport it as an ambiguous single
+        # recita on a subsequent autonomous refresh.
+        if (key=="parma-opera-2027"
+            and url=="https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+            and any(p.get("source_url")==url
+                    and p.get("municipality")=="Parma"
+                    and p.get("venue")=="Teatro Regio di Parma"
+                    and p.get("title")=="Piccolo Orso e la montagna di ghiaccio"
+                    and p.get("composer")=="Giovanni Sollima"
+                    and p.get("dates")==[
+                        ["2026-12-05","15:00"],["2026-12-05","18:00"]]
+                    for p in next_facts["productions"])):
+            continue
         # Both the explicitly named work and composer must be present in the
         # evidence; an Event title alone never establishes a canonical opera.
         rows=item.get("event_facts",[])
