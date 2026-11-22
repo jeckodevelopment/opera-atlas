@@ -18,7 +18,7 @@ class NarrativeHistoryTests(unittest.TestCase):
         history=json.loads(HISTORY.read_text(encoding="utf-8"))
         entries=build_editorial(facts,registry,editorial,history=history)["works"]
         self.assertTrue(entries)
-        by_id={w["id"]:w for w in registry["works"].values()}
+        by_id={w["id"]:w for w in list(registry["works"].values())+list(registry["reserved_works"].values())}
         for entry in entries:
             canonical=by_id[entry["work_id"]]
             if entry["history"] is not None:

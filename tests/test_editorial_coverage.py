@@ -10,11 +10,12 @@ class AtlasDescriptionsTests(unittest.TestCase):
     def test_all_canonical_works_have_synopsis(self):
         manifest=json.loads((ROOT/"public/catalog/v2/manifest.json").read_text())
         works=json.loads((ROOT/"public/catalog/v2"/manifest["files"]["works"]["path"]).read_text())["works"]
-        synopses=json.loads((SITE/"work-synopses.json").read_text())["synopses"]
+        editorial=json.loads((ROOT/"public/catalog/work-editorial.json").read_text())
+        by_id={w["work_id"]:w["synopsis"] for w in editorial["works"]}
         self.assertTrue(works)
         for work in works:
-            self.assertIn(work["slug"],synopses,work["title"])
-            self.assertTrue(35<=len(synopses[work["slug"]])<=300)
+            self.assertIn(work["id"],by_id,work["title"])
+            self.assertTrue(35<=len(by_id[work["id"]])<=300)
     def test_festivals_have_editorial_description_not_internal_audit(self):
         festivals=json.loads((ROOT/"public/catalog/v2/festival-index.json").read_text())["festivals"]
         self.assertTrue(festivals)

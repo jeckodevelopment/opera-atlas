@@ -58,7 +58,7 @@ class BolognaFullSeasonTests(unittest.TestCase):
         self.assertEqual(history["works"]["accabadora"]["premiere_year"],2026)
         self.assertEqual(history["works"]["accabadora"]["premiere_city"],"Aix-en-Provence")
         graph=assemble(facts,registry,approved_extra=set(urls))
-        self.assertEqual(len(graph["works"]),len(self.registry["works"])+len(remaining))
+        self.assertEqual(len(graph["works"]),len(self.registry["works"])+len(self.registry["reserved_works"])+len(remaining))
         published=build_editorial(facts,registry,editorial,
                                   approved_extra=set(urls),history=history)
         self.assertEqual(len(published["works"]),len(graph["works"]))
