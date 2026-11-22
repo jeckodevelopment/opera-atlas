@@ -71,6 +71,14 @@ EXCLUDED_PATHS={
         "biancaneve", "il-grande-gatsby", "sylvia", "balanchine-caikovskij",
         "lo-schiaccianoci",
     }),
+    "bellini-catania-opera-2026-27": frozenset({
+        # Official Bellini season press release identifies La bella
+        # addormentata (1–6 December 2026, Metropolitan) as a ballet in
+        # three acts by Tchaikovsky. An Opera e Balletto calendar alone
+        # cannot establish operatic genre. The two Sangiorgi chamber operas
+        # from the same official index remain reviewable.
+        "la-bella-addormentata-5",
+    }),
     "donizetti-opera-2026": frozenset(),
     "teatro-grande-opera-2026": frozenset(),
     "carlo-felice-season-2026-27": frozenset({
