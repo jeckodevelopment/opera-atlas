@@ -419,7 +419,6 @@ _MULTI_WORK_SEASONS={
     },
 
     "puccini-torre-del-lago-2027": {
-        ("La rondine","Giacomo Puccini"):2,
         ("Turandot","Giacomo Puccini"):5,
         ("Tosca","Giacomo Puccini"):4,
         ("Madama Butterfly","Giacomo Puccini"):3,
