@@ -30,7 +30,16 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
         from scripts.discover_season_indexes import eligible
         if not eligible("donizetti-opera-2026",url):
             raise ValueError("untrusted Donizetti detail path")
-    text=clean(html)
+    # The Carlo Felice ticket widget uses inline elements for the date,
+    # subscription turn and clock. The common visible-text helper does not
+    # separate every inline tag: "16/10/2026Turno A|Ore 19:30" must never
+    # be silently treated as an event without a verified showtime.
+    if source_key=="carlo-felice-season-2026-27":
+        visible_html=re.sub(r"(?i)</?(?:span|small|strong|b|em|time|label|button)\b[^>]*>",
+                            " ",html)
+    else:
+        visible_html=html
+    text=clean(visible_html)
     # The source may use a typographic apostrophe where the canonical composer
     # uses a straight one. Normalize only this glyph, never the actual credit.
     if not text or normalized(composer).replace("’","\u0027") not in normalized(text).replace("’","\u0027"):
@@ -56,7 +65,7 @@ def parse_detail(html:str,*,source_key:str,url:str,title:str,composer:str):
         # boundary is eligible; no repertoire/press dates from the body.
         rx=re.compile(r"(?i)\b(\d{1,2})/(\d{1,2})/(20\d{2})"
                       r"\s+(?:\([^)]{1,40}\)\s*)?(?:Turno\s+[A-Z0-9-]{1,8}\s*)?"
-                      r"\|?\s*Ore\s+([01]?\d|2[0-3]):([0-5]\d)\b")
+                      r"\|?\s*Ore\s*([01]?\d|2[0-3]):([0-5]\d)\b")
     else:
         section=re.search(r"(?i)\bInfo\b",text)
         venue_marker=re.search(r"(?i)\bLuogo\b",text[section.end():] if section else "")
