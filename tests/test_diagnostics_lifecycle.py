@@ -52,6 +52,15 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn("Documento storico · non pluriennale",text)
         self.assertIn("futuro da verificare",text)
 
+    def test_live_audit_freshness_exists_in_render_scope(self):
+        text = PAGE.read_text(encoding="utf-8")
+        script = text.split("<script>", 1)[1].split("</script>", 1)[0]
+        render = script.split("function render(){", 1)[1].split("function refresh()", 1)[0]
+        self.assertIn("const auditCurrent=", render)
+        self.assertLess(render.index("const auditCurrent="),
+                        render.index("const liveTotals="))
+        self.assertIn("const auditCurrent=", script.split("function build(){", 1)[1].split("function render(){", 1)[0])
+
     def test_future_season_readiness_is_not_mislabeled_complete(self):
         text = PAGE.read_text(encoding="utf-8")
         self.assertIn('if(["lifecycle","catalogation","evidence","live"].includes(key))return null', text)
