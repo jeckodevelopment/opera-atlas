@@ -281,6 +281,13 @@
       "url": "https://www.fondazioneteatrococcia.it/spettacoli.html",
       "access_status": "approved",
       "min_links": 3
+    },
+    {
+      "key": "ravenna-alighieri-cherubini-2027",
+      "official_url": "https://www.orchestracherubini.it/",
+      "url": "https://www.orchestracherubini.it/eventi/tpl/list/",
+      "access_status": "approved",
+      "min_links": 2
     }
   ]
 }

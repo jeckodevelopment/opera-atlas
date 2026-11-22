@@ -296,6 +296,8 @@ def eligible(key:str,url:str)->bool:
     path=parsed.path.lower().rstrip("/")
     if excluded_nonopera(key,url):
         return False
+    if key=="ravenna-alighieri-cherubini-2027":
+        return path in {"/eventi/pagliacci-2", "/eventi/la-cenerentola-4"}
     if key=="coccia-novara-opera-2027":
         return path in {"/stagione-27-rigoletto.html",
                         "/stagione-27-il-barbiere-di-siviglia.html",
@@ -428,6 +430,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "ravenna-alighieri-cherubini-2027":("www.orchestracherubini.it","/eventi/tpl/list/"),
         "coccia-novara-opera-2027":("www.fondazioneteatrococcia.it","/spettacoli.html"),
         "filarmonico-verona-opera-2027":("www.arena.it","/teatro-filarmonico-verona/spettacoli-prossima-stagione/"),
         "pisa-verdi-opera-2026-27":("teatrodipisa.it","/tipologia-spettacolo/opera/"),
@@ -509,6 +512,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="ravenna-alighieri-cherubini-2027":
+            valid_season=index.path=="/eventi/tpl/list/" and not index.query
         elif key=="coccia-novara-opera-2027":
             valid_season=index.path=="/spettacoli.html" and not index.query
         elif key=="filarmonico-verona-opera-2027":
