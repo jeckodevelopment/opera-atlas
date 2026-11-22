@@ -19,6 +19,12 @@ class PosterPublicationTests(unittest.TestCase):
         self.assertEqual(result.returncode,0,result.stdout+"\\n"+result.stderr)
 
 
+    @unittest.skipUnless(shutil.which("node"),"Node.js not available")
+    def test_frontend_displays_verified_civic_and_historical_posters(self):
+        script=Path(__file__).with_name("verified_civic_historical_poster_smoke.cjs")
+        result=subprocess.run(["node",str(script)],capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stdout+"\\n"+result.stderr)
+
     @staticmethod
     def seed_official_evidence(path, *, checks=None):
         # Unit fixtures still start from independently verified, canonical
