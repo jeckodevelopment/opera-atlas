@@ -45,6 +45,18 @@ class SavonaPipelineTests(unittest.TestCase):
         self.assertTrue(all(x["starts_at"].endswith(("+01:00","+02:00")) for x in facts))
         self.assertEqual(classify(KEY,URL,{URL}),"needs_review")
 
+    def test_multiwork_homepage_splits_without_venue_confusion(self):
+        from scripts.auto_catalogue import split_verified_season
+        rows=parse_source_credited_opera_detail(KEY,URL,HTML)
+        item={"source_key":KEY,"source_url":URL,"event_facts":rows,
+              "status":"needs_editorial_review"}
+        groups=split_verified_season(item)
+        self.assertEqual([len(x["event_facts"]) for x in groups],[1,2])
+        self.assertEqual({x["event_facts"][0]["event_title"] for x in groups},
+                         {"La traviata","I salvatori della mezzanotte"})
+        altered={**item,"event_facts":[*rows,{**rows[0],"venue":"Fortezza del Priàmar"}]}
+        self.assertEqual(split_verified_season(altered),[altered])
+
     def test_reject_unverified_or_only_nonopera_index(self):
         with self.assertRaisesRegex(ValueError,"incomplete"):
             extract(KEY,URL,"<h2>Stagione lirica autunnale 2027</h2>"
