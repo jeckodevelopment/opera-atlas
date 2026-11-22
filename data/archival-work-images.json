@@ -300,6 +300,30 @@
       "description": "Frontespizio originale del libretto del 1760 di La Cecchina, ossia La buona figliuola, non allestimento teatrale in programma",
       "credit": "Libretto originale di Carlo Goldoni per Niccolò Piccinni, Roma 1760; Wikimedia Commons",
       "license": "Public domain"
+    },
+    "alzira": {
+      "file": "Giuseppe Verdi - Alzira - titlepage of the libretto - Naples 1845.png",
+      "description": "Frontespizio del libretto di Alzira di Giuseppe Verdi (Napoli, 1845), non della produzione in programma",
+      "credit": "Libretto storico di Alzira (1845), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "il-ratto-dal-serraglio": {
+      "file": "Mozart Die Entführung aus dem Serail Uraufführung 1782.jpg",
+      "description": "Locandina storica della prima del Ratto dal serraglio di Mozart (Vienna, 1782)",
+      "credit": "Locandina del Burgtheater di Vienna (1782), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "il-signor-bruschino": {
+      "file": "Gioachino Rossini - Il signor Bruschino - titlepage of the libretto - Venice 1813.png",
+      "description": "Frontespizio originale del libretto di Il signor Bruschino di Rossini (Venezia, 1813)",
+      "credit": "Rossini e Giuseppe Foppa, libretto del 1813, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "cristoforo-colombo": {
+      "file": "Colombo (baritono), figurino di Adolf Hohenstein per Cristoforo Colombo (1918) - Archivio Storico Ricordi ICON002357.jpg",
+      "description": "Figurino storico di Adolf Hohenstein per Cristoforo Colombo di Franchetti (1918), non allestimento attuale",
+      "credit": "Adolf Hohenstein / Archivio Storico Ricordi, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
     }
   },
   "works_by_id": {
