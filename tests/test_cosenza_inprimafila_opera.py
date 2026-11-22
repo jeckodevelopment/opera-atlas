@@ -112,6 +112,36 @@ class CosenzaTicketFallback(unittest.TestCase):
         self.assertEqual({f["composer"] for f in facts},
                          {"Gioachino Rossini","Wolfgang Amadeus Mozart","Darius Milhaud"})
 
+    def test_season_dates_split_into_separate_joomla_text_nodes(self):
+        from opera_atlas.cosenza_inprimafila_opera import parse_season_summary
+        summary="https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
+        html=(
+            "<h1>STAGIONE LIRICA e BALLETTI 2026 - Cosenza</h1>"
+            "<p>Sabato 31 Ottobre 2026</p><p>Ore 21.00</p>"
+            "<p>Teatro A.Rendano - Cosenza</p><p>BARBIERE DI SIVIGLIA BALLET</p>"
+            "<p>Compagnia Artemis Danza</p>"
+            "<p>Venerdi 13 Novembre</p><p>Ore 20.30</p>"
+            "<p>- Domenica 15 Novembre 2026</p><p>Ore 17.00</p>"
+            "<p>Teatro A.Rendano - Cosenza</p><p>BARBIERE DI SIVIGLIA</p>"
+            "<p>Almaviva, o sia l'inutile precauzione</p>"
+            "<p>di GIOACHINO ROSSINI</p><p>opera buffa in 2 atti su libretto</p>"
+            "<p>Venerdi 11 Dicembre</p><p>Ore 20.30</p>"
+            "<p>- Domenica 13 Dicembre 2026</p><p>Ore 17.00</p>"
+            "<p>Teatro A.Rendano - Cosenza</p><p>LE NOZZE DI FIGARO</p>"
+            "<p>Ossia la folle giornata di WOLFGANG</p><p>AMADEUS MOZART</p>"
+            "<p>opera buffa in 4 atti su libretto di Lorenzo Da Ponte</p>"
+            "<p>Sabato 19 Dicembre 2026</p><p>Ore 20.30</p>"
+            "<p>Teatro A.Rendano - Cosenza</p>"
+            "<p>LA MÈRE COUPABLE di DARIUS MILHAUD</p>"
+            "<p>atto unico su libretto di Madeleine Milhaud</p>"
+        )
+        result=parse_season_summary(html,url=summary)
+        self.assertEqual({x[0]:len(x[3]) for x in result},{
+            "Il barbiere di Siviglia":2,
+            "Le nozze di Figaro":2,
+            "La mère coupable":1,
+        })
+
     def test_mixed_prose_and_missing_details_fail_closed(self):
         for url,html in (
             (BARBIERE,fixture("BARBIERE DI SIVIGLIA BALLET",
