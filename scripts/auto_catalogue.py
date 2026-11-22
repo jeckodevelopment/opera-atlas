@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "trapani-luglio-musicale-2026":("Trapani","Teatro Giuseppe Di Stefano"),
     "haydn-rolling-opera":("Bolzano","Teatro Comunale di Bolzano"),
     "asti-alfieri-rolling-opera":("Asti","Teatro Alfieri"),
     "savona-giocosa-rolling-opera":("Savona","Teatro Chiabrera"),

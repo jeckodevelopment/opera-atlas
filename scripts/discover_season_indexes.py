@@ -326,6 +326,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="trapani-luglio-musicale-2026":
+        from opera_atlas.trapani_luglio_opera import eligible_detail
+        return eligible_detail(url)
     if key=="haydn-rolling-opera":
         from opera_atlas.haydn_rolling_opera import eligible_detail
         return eligible_detail(url)
@@ -625,6 +628,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="trapani-luglio-musicale-2026":
+        from opera_atlas.trapani_luglio_opera import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="haydn-rolling-opera":
         from opera_atlas.haydn_rolling_opera import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -776,6 +782,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "trapani-luglio-musicale-2026":("www.lugliomusicale.it","/it/luglio-musicale-stagioni/stagione-2026/"),
         "haydn-rolling-opera":("www.haydn.it","/eventi/area/opera"),
         "asti-alfieri-rolling-opera":("www.teatroalfieriasti.it","/events/categoria/fuori-abbonamento/"),
         "savona-giocosa-rolling-opera":("operagiocosa.it","/"),
@@ -988,6 +995,11 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/events/categoria/fuori-abbonamento/" and not index.query
         elif key=="haydn-rolling-opera":
             valid_season=index.path=="/eventi/area/opera" and not index.query
+        elif key=="trapani-luglio-musicale-2026":
+            year=re.fullmatch(
+                r"/it/luglio-musicale-stagioni/stagione-(20\d{2})/",index.path)
+            valid_season=bool(year and 2026<=int(year[1])<=2099
+                              and not index.query)
         elif key=="reggio-valli-opera-2026-27":
             valid_season=index.path=="/tipo/opera/" and not index.query
         elif key=="piacenza-opera-2026-27":
