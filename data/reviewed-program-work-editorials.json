@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-22",
+  "note": "Verifiable editorial profiles for previously missing canonical program components; these are not assigned permanent work IDs until a catalog transaction is approved.",
+  "works": [
+    {
+      "title": "Don Pasquale",
+      "composer": "Gaetano Donizetti",
+      "synopsis": "Don Pasquale, deciso a diseredare il nipote Ernesto, viene ingannato da una finta sposa che gli farà comprendere il valore dell'amore tra Ernesto e Norina.",
+      "history": {
+        "librettist": "Giovanni Ruffini; Gaetano Donizetti",
+        "premiere_year": 1843,
+        "premiere_venue": "Théâtre-Italien",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/don-pasquale/",
+          "https://www.rohcollections.org.uk/Work.aspx?work=467"
+        ]
+      }
+    },
+    {
+      "title": "Il tabarro",
+      "composer": "Giacomo Puccini",
+      "synopsis": "Sulla Senna, il barcaiolo Michele sospetta che la moglie Giorgetta ami il giovane Luigi. Gelosia e desiderio di fuga conducono a un finale tragico.",
+      "history": {
+        "librettist": "Giuseppe Adami",
+        "premiere_year": 1918,
+        "premiere_venue": "Metropolitan Opera House",
+        "premiere_city": "New York",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/tabarro/",
+          "https://www.puccinimuseum.org/giacomo-puccini/le-opere/il-tabarro/"
+        ]
+      }
+    },
+    {
+      "title": "Suor Angelica",
+      "composer": "Giacomo Puccini",
+      "synopsis": "Rinchiusa in convento, suor Angelica attende notizie del figlio da cui è stata separata. La visita di una zia riapre una ferita impossibile da dimenticare.",
+      "history": {
+        "librettist": "Giovacchino Forzano",
+        "premiere_year": 1918,
+        "premiere_venue": "Metropolitan Opera House",
+        "premiere_city": "New York",
+        "sources": [
+          "https://www.metopera.org/discover/archives/puccini-at-the-met-a-centenary-celebration/il-trittico/",
+          "https://www.themorgan.org/music-manuscripts-and-printed-music/113944"
+        ]
+      }
+    },
+    {
+      "title": "Gianni Schicchi",
+      "composer": "Giacomo Puccini",
+      "synopsis": "A Firenze, una famiglia cerca di impadronirsi dell'eredità di Buoso Donati. Il furbo Gianni Schicchi viene chiamato a riscrivere il testamento, con risultati inattesi.",
+      "history": {
+        "librettist": "Giovacchino Forzano",
+        "premiere_year": 1918,
+        "premiere_venue": "Metropolitan Opera House",
+        "premiere_city": "New York",
+        "sources": [
+          "https://www.metopera.org/discover/archives/puccini-at-the-met-a-centenary-celebration/il-trittico/",
+          "https://www.themorgan.org/music-manuscripts-and-printed-music/113944"
+        ]
+      }
+    }
+  ]
+}

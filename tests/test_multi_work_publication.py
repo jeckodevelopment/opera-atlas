@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from scripts.publish_catalog_v2 import ROOT
 from scripts.publish_programs import (
-    assemble_programs,publish,OUTPUT
+    assemble_programs,publish,OUTPUT,REVIEWED_WORKS
 )
 from scripts.collect_candidate_details import OUTPUT as EVIDENCE
 from scripts.discover_season_indexes import CONFIG,OUTPUT as CANDIDATES
@@ -23,9 +23,10 @@ class PublicMultiWorkTests(unittest.TestCase):
         cls.registry=read(REGISTRY)
         cls.facts=read(MANIFEST)
         cls.config=read(CONFIG)
+        cls.reviewed=read(REVIEWED_WORKS)
     def build(self,evidence=None):
         return assemble_programs(self.candidates,evidence or self.evidence,
-                                 self.registry,self.facts,self.config)
+                                 self.registry,self.facts,self.config,self.reviewed)
     def test_published_feed_matches_deterministic_verified_catalog(self):
         result=self.build()
         bill=next(x for x in result["programs"]
@@ -64,7 +65,7 @@ class PublicMultiWorkTests(unittest.TestCase):
         target["status"]="already_catalogued"
         from scripts.publish_programs import assemble_programs
         config=json.loads((ROOT/"data/season-index-config.json").read_text())
-        feed=assemble_programs(candidates,self.evidence,self.registry,self.facts,config)
+        feed=assemble_programs(candidates,self.evidence,self.registry,self.facts,config,self.reviewed)
         self.assertEqual(feed,self.build())
 
     def test_legacy_work_and_ticket_ids_unchanged(self):
