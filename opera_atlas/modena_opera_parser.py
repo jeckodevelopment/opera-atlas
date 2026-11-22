@@ -15,7 +15,7 @@ from opera_atlas.national_detail_parser import clean, MONTHS
 
 KEY="modena-opera-2026-27"
 HOST="www.comune.modena.it"
-ROOT="/vivere-modena/eventi/2026/stagione-opera-2026-2027/"
+SEASON_PATH=re.compile(r"/vivere-modena/eventi/(20\d{2})/stagione-opera-\1-(20\d{2})/[a-z0-9-]+/?")
 VENUE="Teatro Comunale Pavarotti-Freni"
 WEEKDAYS={"lunedi":0,"martedi":1,"mercoledi":2,"giovedi":3,
           "venerdi":4,"sabato":5,"domenica":6}
@@ -68,8 +68,12 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     loc=urlsplit(url)
     if (loc.scheme!="https" or loc.hostname!=HOST or loc.query or loc.fragment
         or loc.username or loc.password or loc.port is not None
-        or not re.fullmatch(re.escape(ROOT)+r"[a-z0-9-]+/?",loc.path)):
+        or not SEASON_PATH.fullmatch(loc.path)):
         raise ValueError("invalid official Modena season event URL")
+    season_match=SEASON_PATH.fullmatch(loc.path)
+    season_start_year=int(season_match.group(1))
+    if int(season_match.group(2))!=season_start_year+1:
+        raise ValueError("inconsistent official Modena season years")
     head=TitleParser()
     head.feed(html)
     if len(head.titles)!=1:
@@ -98,7 +102,7 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         r"(?:\s+(20\d{2}))?\s+ore\s+([01]?\d|2[0-3])(?:[.:]([0-5]\d))?\b")
     found={}
     for dow,day,month,year,hour,minute in rx.findall(text):
-        iso=exact_day(dow,day,month,year or None)
+        iso=exact_day(dow,day,month,year or None,season_start_year=season_start_year)
         time=f"{int(hour):02d}:{minute or '00'}"
         if iso in found:
             raise ValueError("duplicate or conflicting municipal recital")
