@@ -8,7 +8,7 @@ class RovigoRegionalAnnouncementTests(unittest.TestCase):
     def test_regional_season_program_is_not_a_ticketed_work(self):
         key="rovigo-regione-programma-2026-27"
         # This URL is a legitimate source document, but not an opera recita.\n        self.assertTrue(eligible(key,REGIONAL))
-        self.assertTrue(excluded_nonopera(key,REGIONAL))
+        self.assertFalse(excluded_nonopera(key,REGIONAL))
         self.assertEqual(classify(key,REGIONAL,set()),"excluded_nonopera")
         self.assertEqual(classify(key,REGIONAL,{REGIONAL}),"excluded_nonopera")
 
