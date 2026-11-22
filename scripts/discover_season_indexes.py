@@ -377,6 +377,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="cosenza-inprimafila-rolling-opera":
+        from opera_atlas.cosenza_inprimafila_opera import eligible_detail
+        return eligible_detail(url)
     if key in ['taormina-arte-rolling-opera','taormina-opera-festival-rolling','taormina-fondazione-rolling-opera']:
         from opera_atlas.taormina_multi_source import eligible_detail
         return eligible_detail(key,url)
@@ -703,6 +706,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="cosenza-inprimafila-rolling-opera":
+        from opera_atlas.cosenza_inprimafila_opera import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key in ['taormina-arte-rolling-opera','taormina-opera-festival-rolling','taormina-fondazione-rolling-opera']:
         from opera_atlas.taormina_multi_source import extract_index
         return extract_index(key,html,url=index_url,min_links=min_links)
@@ -881,6 +887,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "cosenza-inprimafila-rolling-opera":("www.inprimafila.net","/index.php/eventi"),
         "taormina-arte-rolling-opera":("festivaltaorminarte.it","/programma/"),
         "taormina-opera-festival-rolling":("www.taorminaoperafestival.org","/"),
         "taormina-fondazione-rolling-opera":("www.fondazione-taormina.it","/"),

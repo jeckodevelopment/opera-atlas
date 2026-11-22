@@ -221,6 +221,11 @@
       "source_key": "taormina-fondazione-rolling-opera",
       "scope": "dynamic_category",
       "evidence": "First-party event index is not bound to a specific season. It yields review candidates only; official work title, venue, composer and local clock must be independently verified for each event. Future coverage is unverified."
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The official ticket partner's /index.php/eventi listing is year-neutral; per-event detail URL and exact showtime are validated independently before reconciliation. Future-season coverage remains unverified until a successful live scan."
     }
   ]
 }

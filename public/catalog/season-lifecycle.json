@@ -1,12 +1,12 @@
 {
   "checked_at": "2026-11-22T21:10:54+00:00",
   "definition": "Rollover implemented is a code capability, not evidence of next-season availability or exhaustive recite coverage. Evergreen source classification separately reports fixed-title historical sources with an implemented dynamic successor versus those still requiring migration. Neither is live future-season proof.",
-  "evergreen_dynamic_category": 29,
+  "evergreen_dynamic_category": 30,
   "evergreen_fixed_covered": 10,
   "evergreen_fixed_production_set": 11,
   "evergreen_fixed_uncovered": 1,
   "evergreen_historical_notice": 2,
-  "evergreen_index_unverified": 42,
+  "evergreen_index_unverified": 43,
   "future_seasons_verified": 0,
   "legacy_covered_by_successor": 19,
   "legacy_still_uncovered": 0,
@@ -1561,8 +1561,26 @@
       "next_season_url": null,
       "next_season_links": 0,
       "future_season_verified": false
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "index_url": "https://www.inprimafila.net/index.php/eventi",
+      "strategy": "evergreen_index",
+      "evergreen_reusability": "dynamic_category",
+      "fixed_source_successor_key": null,
+      "successor_source_key": null,
+      "legacy_covered_by_successor": false,
+      "current_scan_status": "not_checked",
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "rollover_implemented": false,
+      "last_rollover_status": "not_checked",
+      "next_season_status": "not_checked",
+      "next_season_url": null,
+      "next_season_links": 0,
+      "future_season_verified": false
     }
   ],
-  "total_indexes": 86,
+  "total_indexes": 87,
   "verified_rollover": 25
 }

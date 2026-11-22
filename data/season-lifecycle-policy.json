@@ -345,6 +345,10 @@
     "taormina-fondazione-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "cosenza-inprimafila-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }

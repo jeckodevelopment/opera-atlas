@@ -168,6 +168,7 @@ class NationalIndexTests(unittest.TestCase):
             "taormina-arte-rolling-opera",
             "taormina-opera-festival-rolling",
             "taormina-fondazione-rolling-opera",
+            "cosenza-inprimafila-rolling-opera",
             "napoli-san-carlo-rolling-opera",
             "pesaro-rof-2026",
             "martina-valle-itria-2026",
