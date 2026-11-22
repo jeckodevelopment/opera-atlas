@@ -46,6 +46,7 @@ VENUE_BY_SOURCE={
     "jesi-nabucco-opera-2026":("Jesi","Teatro Giovan Battista Pergolesi"),
     "ancona-elisir-opera-2026":("Ancona","Teatro delle Muse"),
     "ancona-cavalleria-program-2026":("Ancona","Teatro delle Muse"),
+    "goldoni-livorno-rolling-lirica":("Livorno","Teatro Goldoni"),
     "goldoni-livorno-dido-2026-27":("Livorno","Teatro Goldoni"),
     "goldoni-livorno-otello-2026-27":("Livorno","Teatro Goldoni"),
     "goldoni-livorno-elisir-2026-27":("Livorno","Teatro Goldoni"),
@@ -317,7 +318,9 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                {"Teatro dell'Opera di Roma","Teatro Valle Franca Valeri","Teatro Nazionale"}
                if source_key=="opera-roma-season-2026-27" else
                {"Teatro del Maggio Musicale Fiorentino","Teatro Goldoni"}
-               if source_key=="maggio-fiorentino-calendar-2027" else {default_venue})
+               if source_key=="maggio-fiorentino-calendar-2027" else
+               {"Teatro Goldoni","Piazza Goldoni"}
+               if source_key=="goldoni-livorno-rolling-lirica" else {default_venue})
     if venue not in permitted:return None
     found=[(key,value) for key,value in registry["venues"].items()
            if value["city"]==city and value["name"]==venue

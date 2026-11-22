@@ -127,15 +127,41 @@ class GoldoniFutureTests(unittest.TestCase):
         self.assertEqual(facts[0]["starts_at"],
                          "2026-11-06T20:00:00+01:00")
 
-    def test_offsite_mascagni_festival_is_not_false_goldoni_venue(self):
-        url=HOST+"/spettacoli/cavalleria-rusticana/"
-        html=detail(title="CAVALLERIA RUSTICANA",
-                    date="19 Agosto 2026",clock="21.30",
-                    composer="Pietro Mascagni")
-        html=html.replace("Melodramma in tre atti.",
-                          "Mercoledì 19 e giovedì 20 agosto, ore 21.30 – Piazza Goldoni. Melodramma in tre atti.")
-        with self.assertRaisesRegex(ValueError,"offsite festival venue"):
-            parse_detail(html,url=url)
+    def test_mascagni_festival_is_published_at_piazza_not_theatre(self):
+        from scripts.auto_catalogue import VENUE_BY_SOURCE,verified_venue
+        from scripts.collect_candidate_details import parse_known_opera_detail
+        works={"works":{"cavalleria":{"title":"Cavalleria rusticana",
+                     "composer":"Pietro Mascagni"}}}
+        for slug,day in (("cavalleria-rusticana","19"),
+                         ("cavalleria-rusticana-2","20")):
+            with self.subTest(day=day):
+                url=HOST+"/spettacoli/"+slug+"/"
+                html=detail(title="CAVALLERIA RUSTICANA",
+                            date=day+" Agosto 2026",clock="21.30",
+                            composer="Pietro Mascagni")
+                html=html.replace("Melodramma in tre atti.",
+                    "Mercoledì 19 e giovedì 20 agosto, ore 21.30 – Piazza Goldoni. "
+                    "CAVALLERIA RUSTICANA di Pietro Mascagni. ")
+                title,composer,venue,dates=parse_detail(html,url=url)
+                self.assertEqual((title,composer,venue),
+                    ("Cavalleria rusticana","Pietro Mascagni","Piazza Goldoni"))
+                self.assertEqual(dates,[("2026-08-"+day,"21:30")])
+                facts=parse_known_opera_detail(
+                    "goldoni-livorno-rolling-lirica",url,html,works)
+                self.assertEqual(len(facts),1)
+                self.assertEqual(facts[0]["venue"],"Piazza Goldoni")
+                self.assertEqual(verified_venue(
+                    "goldoni-livorno-rolling-lirica",facts,{"venues":{}})[:2],
+                    ("Livorno","Piazza Goldoni"))
+                for bad in (
+                    html.replace("Piazza Goldoni","Piazza Altrove"),
+                    html.replace("di Pietro Mascagni","di Altro Compositore"),
+                    html.replace("Orario/i: 21.30","Orario/i: 22.30"),
+                ):
+                    with self.assertRaises(ValueError):
+                        parse_detail(bad,url=url)
+        self.assertEqual(VENUE_BY_SOURCE["goldoni-livorno-rolling-lirica"],
+                         ("Livorno","Teatro Goldoni"))
 
     def test_old_three_2026_27_sources_remain_unchanged(self):
         validate_config(self.cfg)
