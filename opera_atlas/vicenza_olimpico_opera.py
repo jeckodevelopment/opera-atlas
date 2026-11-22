@@ -36,7 +36,7 @@ SHOWTIME = re.compile(
     r"(?:[|,\-– ]+\s*)?(?:ore)\s*([01]?\d|2[0-3])[.:]([0-5]\d)\b")
 COMPOSERS = [
     (re.compile(r"\b(?:musica\s+di|di)\s+(?:G\.\s*|Gioachino\s+)ROSSINI\b",re.I),"Gioachino Rossini"),
-    (re.compile(r"\b(?:musica\s+di|di)\s+(?:B\.\s*|Baldass[ar]e\s+)GALUPPI\b",re.I),"Baldassare Galuppi"),
+    (re.compile(r"\b(?:musica\s+di|di)\s+(?:B\.\s*|Baldass(?:are|arre)\s+)GALUPPI\b",re.I),"Baldassare Galuppi"),
     (re.compile(r"\b(?:musica\s+di|di)\s+(?:W\.?\s*A\.?\s*|Wolfgang\s+Amadeus\s+)MOZART\b",re.I),"Wolfgang Amadeus Mozart"),
     (re.compile(r"\b(?:musica\s+di|di)\s+(?:C\.\s*|Claudio\s+)MONTEVERDI\b",re.I),"Claudio Monteverdi"),
     (re.compile(r"\b(?:musica\s+di|di)\s+(?:G\.\s*|Giuseppe\s+)VERDI\b",re.I),"Giuseppe Verdi"),
