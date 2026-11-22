@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "martina-valle-itria-2026":("Martina Franca","Palazzo Ducale di Martina Franca"),
     "trapani-luglio-musicale-2026":("Trapani","Teatro Giuseppe Di Stefano"),
     "haydn-rolling-opera":("Bolzano","Teatro Comunale di Bolzano"),
     "asti-alfieri-rolling-opera":("Asti","Teatro Alfieri"),
