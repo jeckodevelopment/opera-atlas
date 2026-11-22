@@ -71,7 +71,7 @@ def parse_press_calendar(event_html:str,press_html:str,*,event_url:str,
     section=text[begin+len("Calendario"):boundary]
     performances={}
     matches=list(CLOCK_PATTERN.finditer(section))
-    if not matches or len(matches)!=6:
+    if len(matches)!=(6 if first.day==13 else 5):
         raise ValueError("official Bellini press date groups incomplete")
     for match in matches:
         days_text,month,hh,mm=match.groups()
