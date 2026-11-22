@@ -28,6 +28,11 @@
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
     },
     {
+      "source_key": "coccia-novara-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "Official mixed Opera/Danza/Concerti listing; new event slugs discovered dynamically and validated as opera individually before producing showtime facts."
+    },
+    {
       "source_key": "filarmonico-verona-opera-2027",
       "scope": "fixed_production_set",
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
