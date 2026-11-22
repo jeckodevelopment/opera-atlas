@@ -30,7 +30,7 @@ def next_index(source:dict,*,today:date)->str|None:
         return None
     url=urlsplit(source["url"])
     if key=="maggio-fiorentino-calendar-2027":
-        match=re.fullmatch(r"/calendario/(20\\d{2})/01/opera",url.path)
+        match=re.fullmatch(r"/calendario/(20\d{2})/01/opera",url.path)
         if not match:return None
         year=int(match[1])
         if today<date(year,6,1) or year>=2099:return None
