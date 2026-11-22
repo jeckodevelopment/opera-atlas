@@ -26,7 +26,9 @@ class RegionalProgramTests(unittest.TestCase):
 
     def test_future_consecutive_season_document(self):
         future_pdf=PDF.replace("2026_27","2027_28")
-        future_page=PAGE.replace("2026","2027").replace("2027</p>","2028</p>").replace(PDF, future_pdf)
+        future_page=(PAGE.replace("24/10/2026","24/10/2027")
+                     .replace("16/05/2027","16/05/2028")
+                     .replace(PDF,future_pdf))
         future_page=future_page.replace("Programma_stagione_2026_27_da_scaricare",
                                         "Programma_stagione_2027_28_da_scaricare")
         self.assertEqual(approved_programme(future_page,url=URL),future_pdf)
