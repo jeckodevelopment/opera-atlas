@@ -58,7 +58,7 @@ class IndependentEvidenceWorkflowTests(unittest.TestCase):
                         stage.index("python -m scripts.collect_candidate_details --allow-network"))
         self.assertIn("python -m scripts.build_verified_catalog --check",stage)
         self.assertIn("python -m scripts.safe_push_catalog",stage)
-        self.assertIn("grep -q '^deferred=false$'",stage)
+        self.assertIn('grep -q "deferred=false"',stage)
         self.assertNotIn("git push --force",stage)
         self.assertNotIn("git rebase",stage)
 
