@@ -34,8 +34,12 @@ class ParmaLiveCheckpointPublicationTests(unittest.TestCase):
             today=date(2026,11,22),
             history=json.loads(HISTORY.read_text()),require_image=True)
         result,registry,_,_,_,health=out
-        self.assertEqual(health["new_works"],1,health)
-        self.assertEqual(health["new_recite"],2,health)
+        # In-flight refreshes may already have published this exact staging.
+        # Replay must be idempotent without losing either public performance.
+        existing=[p for p in facts["productions"] if p["source_url"]==URL]
+        self.assertLessEqual(len(existing),1)
+        self.assertEqual(health["new_works"],0 if existing else 1,health)
+        self.assertEqual(health["new_recite"],0 if existing else 2,health)
         p=[x for x in result["productions"] if x["source_url"]==URL]
         self.assertEqual(len(p),1)
         self.assertEqual(p[0]["dates"],[
