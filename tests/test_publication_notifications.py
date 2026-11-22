@@ -65,7 +65,7 @@ class PublicationNotificationsTest(unittest.TestCase):
         self.assertIn("15 dicembre 2099", html)
 
     def test_production_without_public_recite_shows_explicit_absence(self):
-        notice = new_entities(self.before, self.after)[1]
+        notice = new_entities(self.before, self.after)[2]
         html, plain = render_email(notice)
         self.assertIn("Recite censite:", plain)
         self.assertIn("Nessuna recita censita", plain)
