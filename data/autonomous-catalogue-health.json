@@ -53,6 +53,10 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
+      "candidate_id": "oa-index-89997fb8ea8cbb932bd1",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "candidate_id": "oa-index-9871aa4f1201e959bf0b",
       "reason": "unsupported_or_untrusted_source"
     },
@@ -145,6 +149,10 @@
       "reason": "incomplete_work_editorial"
     },
     {
+      "candidate_id": "oa-index-89997fb8ea8cbb932bd1",
+      "reason": "incomplete_work_editorial"
+    },
+    {
       "candidate_id": "oa-index-ad4a422c793838b9bc2a",
       "reason": "incomplete_work_editorial"
     },
@@ -222,6 +230,10 @@
     },
     {
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-89997fb8ea8cbb932bd1",
       "reason": "unknown_work_needs_authority_data"
     },
     {
