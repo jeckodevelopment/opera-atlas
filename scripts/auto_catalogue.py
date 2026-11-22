@@ -538,7 +538,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         # opera at one theatre must not silently share an ambiguous route.
         colliding=[x for x in next_facts["productions"]
                    if x["municipality"]==city and x["venue"]==venue
-                   and normalized(x["title"])==title and normalized(x["composer"])==composer]
+                   and normalized(x["title"]).replace("’","'")==title_credit
+                   and normalized(x["composer"])==composer]
         exact=[x for x in colliding if x["source_url"]==url]
         # Distinct official productions of the same opera in the same
         # theatre are legitimate (e.g. two different Aida stagings at
