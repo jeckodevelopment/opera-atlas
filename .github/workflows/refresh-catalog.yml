@@ -193,6 +193,51 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+      # A previously acquired and independently verified candidate must not
+      # wait behind another complete national crawl or an external identity
+      # service. This is the same canonical auto-catalogue transaction as the
+      # later pass, with all downstream feeds validated before safe push.
+      - name: Promote already verified cached works before external acquisition
+        run: |
+          python -m scripts.auto_catalogue
+          python -m scripts.publish_work_posters
+          python -m scripts.publish_programs
+          python -m scripts.reconcile_published_candidates
+          python -m scripts.discovery_queue
+          python -m scripts.build_verified_catalog
+          python -m scripts.publish_catalog_v2
+          python -m scripts.publish_work_editorial
+          python -m scripts.publish_venue_directory
+          python -m scripts.sync_source_registry
+          python -m scripts.source_coverage
+          python -m scripts.recite_coverage
+          python -m scripts.source_automation
+          python -m scripts.sync_source_registry --check
+          python -m scripts.source_coverage --check
+          python -m scripts.recite_coverage --check
+          python -m scripts.source_automation --check
+          python -m scripts.build_verified_catalog --check
+          python -m scripts.publish_catalog_v2 --check
+          python -m scripts.publish_work_editorial --check
+          python -m scripts.publish_venue_directory --check
+          python -m scripts.publish_work_posters --check
+          python -m scripts.publish_programs --check
+      - name: Safely checkpoint fully validated early canonical work publication
+        id: early_verified_publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/verified-launch-catalog.json data/identity-registry.json data/auto-source-urls.json data/verified-time-evidence.json data/autonomous-catalogue-health.json
+          git add data/auto-work-intelligence.json data/auto-work-intelligence-health.json data/candidate-reconciliation-health.json data/season-index-candidates.json public/catalog/season-index-candidates.json
+          git add site/work-synopses.json site/work-history.json site/performances.json public/catalog/v2/ public/catalog/work-editorial.json public/catalog/work-posters.json data/work-poster-evidence.json data/work-poster-health.json
+          git add public/catalog/programs.json public/catalog/discovery.json data/discovery-candidates.json public/catalog/venue-directory.json
+          git add data/sources.json public/catalog/coverage.json public/catalog/recite-coverage.json public/catalog/source-automation.json
+          if git diff --cached --quiet; then
+            echo "No newly verified works to publish before acquisition."
+          else
+            git commit -m "data(catalog): publish verified works before external crawl [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
       # Take a national checkpoint before the expensive source crawl. This
       # recovers the existing review backlog even if a later adapter or
       # knowledge-service step times out. Each detail fetch respects robots.
