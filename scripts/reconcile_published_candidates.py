@@ -124,6 +124,11 @@ def verified_shared_page_identities(candidates:dict, detail:dict,
     rows=candidates.get("candidates",[])
     url_counts=Counter(x.get("official_url") for x in rows)
     ambiguous={url for url,n in url_counts.items() if n>1}
+    # A single source URL can document *several* independently ticketed
+    # operas even if discovery has only one candidate for that page.
+    # Never mark the page resolved merely because one of its works is live.
+    ambiguous.update(x.get("official_url") for x in rows
+                     if x.get("source_key")=="treviso-del-monaco-opera-2026-27")
     published=set()
     by_source={(x.get("source_key"),x.get("source_url")):x
                for x in detail.get("evidence",[]) if isinstance(x,dict)}
