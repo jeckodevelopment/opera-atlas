@@ -43,8 +43,11 @@ def load_reviewed_work_editorials(document:dict)->dict:
 
 
 def assemble_programs(candidates:dict,evidence:dict,registry:dict,
-                      facts:dict,config:list[dict],\n                      reviewed:dict|None=None)->dict:
-    from scripts.publish_catalog_v2 import normalized\n    reviewed_by_identity=load_reviewed_work_editorials(reviewed) if reviewed is not None else {}\n    approved={s["key"]:s for s in validate_config(config)
+                      facts:dict,config:list[dict],
+                      reviewed:dict|None=None)->dict:
+    from scripts.publish_catalog_v2 import normalized
+    reviewed_by_identity=load_reviewed_work_editorials(reviewed) if reviewed is not None else {}
+    approved={s["key"]:s for s in validate_config(config)
               if s["access_status"]=="approved"}
     # Published programs must remain present and be regenerated/validated at
     # every refresh; finalization marks them catalogued, not permanently hidden.
@@ -90,7 +93,12 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
             heading=item["program_heading"],source_key=key,source_url=url,
             candidate=candidate,detail=item,registry=registry,
             venue=venue,city=city,region=place["region"])
-        for part in program["components"]:\n            profile=reviewed_by_identity.get((normalized(part["title"]),\n                                               normalized(part["composer"])))\n            if profile is not None:\n                part["editorial"]=profile\n        if program["id"] in program_ids:raise ValueError("duplicate program identity")
+        for part in program["components"]:
+            profile=reviewed_by_identity.get((normalized(part["title"]),
+                                               normalized(part["composer"])))
+            if profile is not None:
+                part["editorial"]=profile
+        if program["id"] in program_ids:raise ValueError("duplicate program identity")
         program_ids.add(program["id"])
         for date in program["performances"]:
             if date["id"] in performances:raise ValueError("duplicated program recita")
@@ -105,7 +113,8 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
 def publish(*,check:bool=False)->dict:
     read=lambda path:json.loads(path.read_text(encoding="utf-8"))
     result=assemble_programs(read(CANDIDATES),read(EVIDENCE),
-                             read(REGISTRY),read(MANIFEST),read(CONFIG),\n                             read(REVIEWED_WORKS))
+                             read(REGISTRY),read(MANIFEST),read(CONFIG),
+                             read(REVIEWED_WORKS))
     if check:
         if not OUTPUT.exists() or read(OUTPUT)!=result:
             raise ValueError("public program feed differs from verified source facts")
