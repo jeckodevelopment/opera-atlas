@@ -42,6 +42,10 @@ EXCLUDED_PATHS={
         "regio-in-tour-aspettando-mondi-lontani",
         "natale-insieme-2026",
         "verdi-off-los-angeles",
+        # Official RegioInsieme describes this as a transmedia,
+        # site-specific reinterpretation using selected Otello numbers,
+        # not a ticket for Verdi's complete canonical opera.
+        "otello-gamification",
 
         "prima-che-si-alzi-il-sipario", "prove-under30", "prove-aperte",
         "lanno-che-verra", "veleno", "regio198", "la-principessa-sissi",
