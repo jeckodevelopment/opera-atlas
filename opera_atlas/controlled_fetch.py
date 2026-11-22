@@ -93,7 +93,7 @@ def fetch_official_html(
             parser = RobotFileParser()
             parser.parse(rules)
             if not parser.can_fetch(USER_AGENT, url):
-                raise AccessDenied("robots.txt explicitly denies access")
+                raise AccessDenied("robots.txt denies access")
     try:
         with client.open(Request(url, headers={
             "User-Agent": USER_AGENT, "Accept": "text/html"
