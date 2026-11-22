@@ -207,3 +207,35 @@ In questo modo una pagina comunale che restituisce soltanto lo shell
 JavaScript non viene confusa con una recita priva di orario. Resta
 obbligatoria la prova primaria completa; un risultato indicizzato da
 motori di ricerca non autorizza l'acquisizione né la pubblicazione.
+
+## Riconciliazione con evidenze incrociate: politica controllata
+
+Quando l'endpoint comunale restituisce un HTML vuoto, non viene usato
+alcun contenuto indicizzato come falsa prova diretta. Il nuovo
+`scripts.corroborate_performances` richiede invece **tutte** le seguenti
+pagine recuperate nello stesso ciclo con la normale policy robots:
+
+- la scheda istituzionale Art Bonus, compilata dal Comune, con
+  attribuzione *Traviata* di Verdi nella stagione 2026/27;
+- due schede distinte ClassicaLive, ciascuna con titolo, autore, Teatro
+  Sociale di Rovigo, data e ora, e rimando alla scheda-evento comunale;
+- la scheda Piazza in Festa, editata automaticamente da atti comunali,
+  che conferma entrambi gli orari pubblici e distingue la prova
+  scolastica del 21 gennaio.
+
+**ClassicaLive e Piazza in Festa non sono fonti primarie**, possono
+avere un'origine documentale comune e non costituiscono due verifiche
+istituzionali indipendenti. Sono registrate come riscontri esterni,
+senza affermare di aver letto l'evento HTML del Comune. Un disaccordo,
+una pagina non leggibile, un cambio di sede o un'indicazione incompleta
+bloccano l'emissione dei fatti. L'operazione produce soltanto la
+candidate e l'evidenza con campo `corroboration`; la stessa
+`auto_catalogue.promote` crea eventualmente produzione e recite,
+controlla il registro canonico e i duplicati. Nessuna scrittura diretta
+nel feed pubblico elude la transazione centralizzata.
+
+Le URL consentite sono nella configurazione revisionata
+`data/corroborated-performance-config.json`; le osservazioni ricevute
+dalle fonti sono convalidate ad ogni refresh. I risultati operativi,
+anche quando non pubblicabili, sono registrati in
+`data/corroborated-performance-health.json`.
