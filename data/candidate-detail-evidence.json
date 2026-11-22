@@ -1816,8 +1816,8 @@
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "content_sha256": "90d21e09f2770dccb1838380d13acaa5da2945a179df37b1ea25528fcc7ed3d1",
-      "checked_at": "2026-11-22T11:21:00+00:00",
+      "content_sha256": "be7e8fc3801db1c9b71d68dfd7a0fa042f35a6f87436d015bfe66d7e0ae27f82",
+      "checked_at": "2026-11-22T11:34:58+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2441,8 +2441,8 @@
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
-      "content_sha256": "d20d69abec1ccc5e411aaba751336d6562f915d4f9217b8b208ad0d55c232ebd",
-      "checked_at": "2026-11-22T11:21:03+00:00",
+      "content_sha256": "7dc87c79f6ea50c9d14ad0b11b5b99fab7389b47261d18dddda61a9b79cc5671",
+      "checked_at": "2026-11-22T11:35:01+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4610,8 +4610,8 @@
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "source_key": "treviso-del-monaco-opera-2026-27",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
-      "content_sha256": "9bd7900d355e452f5b9cb5cc2349627683330e8cec963eba71c2491e920ffa4c",
-      "checked_at": "2026-11-22T11:21:11+00:00",
+      "content_sha256": "99563c9eb5e05e4b0bb37caeec4f1c56de26a4044fd73b76e1cf1f25732346fd",
+      "checked_at": "2026-11-22T11:35:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4755,8 +4755,8 @@
       "candidate_id": "oa-index-cf2044dac191fa690c37",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
-      "content_sha256": "ab3f9f30b79ee541002f86213c1e6d183a988e9138c62b125e39f53bbf4c3e67",
-      "checked_at": "2026-11-22T11:21:22+00:00",
+      "content_sha256": "6dada7acd2083735a58c7274cfe685747ab1d84217b8e154ad772e395c8371c6",
+      "checked_at": "2026-11-22T11:35:19+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4855,8 +4855,8 @@
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
-      "content_sha256": "6fb9acd2f9a79b420665623ae58e21a45b8e562f2a8404b74fdf8441509dadcf",
-      "checked_at": "2026-11-22T11:21:24+00:00",
+      "content_sha256": "1223ae953ca972814964ef899084e0a4407ee2463db608db1b4e51bf3b3fcc48",
+      "checked_at": "2026-11-22T11:35:21+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5037,6 +5037,51 @@
           "date": "2027-10-30",
           "starts_at": "2027-10-30T15:30:00+02:00",
           "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-d7e02d354864fa2b6dc2",
+      "source_key": "padova-verdi-opera-2026",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "content_sha256": "f72971813b50d8bee38acbcc101981ea5a2e1ee90e9d069e3ddbc75f0382368c",
+      "checked_at": "2026-11-22T11:35:03+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Verdi",
+          "date": "2026-11-20",
+          "starts_at": "2026-11-20T20:45:00+01:00"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Verdi",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T16:00:00+01:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Verdi",
+          "date": "2026-12-28",
+          "starts_at": "2026-12-28T20:45:00+01:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Verdi",
+          "date": "2026-12-29",
+          "starts_at": "2026-12-29T20:45:00+01:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Verdi",
+          "date": "2026-12-31",
+          "starts_at": "2026-12-31T21:00:00+01:00"
         }
       ]
     },
@@ -6117,7 +6162,7 @@
       "source_key": "salerno-verdi-opera-2026",
       "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
       "content_sha256": "58492e62537640e06bf6aa75ab1b4b5e65f867a32c1aa94ba21ef9a3c9cef580",
-      "checked_at": "2026-11-22T11:21:10+00:00",
+      "checked_at": "2026-11-22T11:35:09+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {

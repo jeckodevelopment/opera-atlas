@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T11:21:24+00:00",
+  "checked_at": "2026-11-22T11:35:21+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -37,57 +37,6 @@
     },
     {
       "candidate_ids": [
-        "oa-index-addcc48a211cf5aea678"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Gaetano Donizetti",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "jesi-don-pasquale-opera-2026",
-          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
-        }
-      ],
-      "title": "DON PASQUALE"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-4277f285769ff880bef4"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Giacomo Puccini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "jesi-trittico-opera-2026",
-          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
-        }
-      ],
-      "title": "Gianni Schicchi"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-4277f285769ff880bef4"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Giacomo Puccini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "jesi-trittico-opera-2026",
-          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
-        }
-      ],
-      "title": "Il tabarro"
-    },
-    {
-      "candidate_ids": [
         "oa-index-7b0a1e061133c0b5970e"
       ],
       "category": "new_work_candidate",
@@ -102,23 +51,6 @@
         }
       ],
       "title": "L'ESECUZIONE"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-4277f285769ff880bef4"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Giacomo Puccini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "jesi-trittico-opera-2026",
-          "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
-        }
-      ],
-      "title": "Suor Angelica"
     },
     {
       "candidate_ids": [
@@ -142,13 +74,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 147,
+    "candidates_checked": 148,
     "candidates_without_facts": 0,
-    "facts_examined": 632,
-    "facts_resolved": 616,
+    "facts_examined": 637,
+    "facts_resolved": 629,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 16,
-    "unmatched_groups": 8
+    "unmatched_facts": 8,
+    "unmatched_groups": 4
   },
   "truncated": false
 }

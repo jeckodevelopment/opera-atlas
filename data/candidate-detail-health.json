@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T11:21:26+00:00",
+  "checked_at": "2026-11-22T11:35:25+00:00",
   "scope": "national",
-  "attempted": 18,
+  "attempted": 20,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -17,7 +17,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-1a02a18e39758285a976",
+      "candidate_id": "oa-index-6c5243260ad25ecab396",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -30,6 +30,17 @@
     },
     {
       "candidate_id": "oa-index-943d04f25da8e27e1190",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-27929844eef0b828edce",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -60,6 +71,11 @@
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "outcome": "facts_found",
       "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-d7e02d354864fa2b6dc2",
+      "outcome": "facts_found",
+      "rows": 5
     },
     {
       "candidate_id": "oa-index-a02901b14e6eae69df5c",
@@ -120,18 +136,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-6c5243260ad25ecab396",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:official composer credit missing or ambiguous",
-        "authority_work:no_evidence",
-        "official_composer_credit:official composer credit missing or ambiguous",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-93538b402fa3e844ca69",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -173,6 +177,18 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "official_composer_credit:conflicting official showtime for one day",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-1a02a18e39758285a976",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:official composer credit missing or ambiguous",
+        "authority_work:no_evidence",
+        "official_composer_credit:official composer credit missing or ambiguous",
         "schema_event:no_evidence"
       ],
       "rows": 0
