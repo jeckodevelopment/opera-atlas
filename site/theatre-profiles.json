@@ -698,6 +698,15 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Alghero,_forte-bastione_della_maddalena_04.JPG",
       "photo_credit": "Sailko — Wikimedia Commons, CC BY 3.0",
       "photo_license": "CC BY 3.0"
+    },
+    "Novara|Giardini di Palazzo Natta": {
+      "city": "Novara",
+      "name": "Giardini di Palazzo Natta",
+      "address": "Giardini di Palazzo Natta, Novara",
+      "description": "Spazio scenico all’aperto nel centro di Novara, utilizzato per spettacoli estivi del Teatro Coccia, tra cui produzioni operistiche.",
+      "website": "https://www.fondazioneteatrococcia.it/",
+      "history": "Il Teatro Coccia ha inserito i Giardini di Palazzo Natta fra i luoghi della propria programmazione, con rappresentazioni liriche all’aperto. È una sede distinta dalla sala del Teatro Coccia.",
+      "source": "https://www.fondazioneteatrococcia.it/spettacoli_opera_danza_concerti.html"
     }
   }
 }
