@@ -39,10 +39,9 @@ class RovigoModenaCoverageTests(unittest.TestCase):
                     if "Trouble in Tahiti" in x["title"])
         self.assertEqual(len(paired["performance_dates"]),3)
         self.assertIsNone(paired["composer"])
-        # Never insert unverified secondary dates as first-party catalog facts.
-        catalog=json.loads(CATALOG.read_text(encoding="utf-8"))
-        self.assertFalse(any(x["municipality"]=="Rovigo"
-                             for x in catalog["productions"]))
+        # The review fixture is deliberately not a production source.
+        # Future primary-source publication at Rovigo remains permitted.
+        self.assertFalse(any("source_url" in x for x in doc["programmes"]))
 
     def test_modena_new_opera_identity_is_prepared_not_falsely_published(self):
         seeds=json.loads(SEEDS.read_text(encoding="utf-8"))["works"]
