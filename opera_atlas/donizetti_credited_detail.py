@@ -93,8 +93,8 @@ def parse_credited_detail(html:str,*,url:str):
         start=visible.find(title)
         end=visible.find("Cast",start+len(title)) if start>=0 else -1
         bounded=visible[start+len(title):end] if end>start else ""
-        token=re.findall(r"(?i)\\bMusica\\s+di\\s+(.+?)\\s+"
-                         r"(?:Prima rappresentazione|Edizione critica|Cast)\\b",bounded)
+        token=re.findall(r"(?i)\bMusica\s+di\s+(.+?)\s+"
+                         r"(?:Prima rappresentazione|Edizione critica|Cast)\b",bounded)
         if (len(token)!=1 or normalized(token[0])!=normalized(proposed)):
             raise ValueError("missing or conflicting labelled Donizetti composer")
         names=[proposed]
