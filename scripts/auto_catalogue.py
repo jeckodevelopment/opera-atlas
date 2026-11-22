@@ -21,6 +21,9 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "taormina-arte-rolling-opera": ("Taormina","Teatro Antico di Taormina"),
+    "taormina-opera-festival-rolling": ("Taormina","Teatro Antico di Taormina"),
+    "taormina-fondazione-rolling-opera": ("Taormina","Teatro Antico di Taormina"),
     "sabbioneta-antica-rolling-opera":("Sabbioneta","Teatro all\u0027Antica"),
     "vicenza-olimpico-rolling-opera":("Vicenza","Teatro Olimpico"),
     "cosenza-rendano-rolling-opera":("Cosenza","Teatro Alfonso Rendano"),
