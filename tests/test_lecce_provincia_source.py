@@ -1,5 +1,8 @@
 """Province of Lecce first-party fallback: six exact opera performances."""
 import unittest
+import json
+from scripts.publish_catalog_v2 import REGISTRY
+from scripts.collect_candidate_details import parse_known_opera_detail
 from opera_atlas.lecce_provincia_parser import URL,parse_program
 from scripts.discover_season_indexes import extract,eligible
 
@@ -25,6 +28,14 @@ class LecceProvinciaTests(unittest.TestCase):
         self.assertEqual(rows[0][-2:],("2026-11-13","20:45"))
         self.assertEqual(rows[-1][-2:],("2026-12-13","18:00"))
         self.assertEqual(extract("lecce-provincia-politeama-2026",URL,HTML,1),[URL])
+    def test_canonical_registry_resolves_all_six_recite(self):
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        facts=parse_known_opera_detail("lecce-provincia-politeama-2026",URL,HTML,registry)
+        self.assertEqual(len(facts),6)
+        self.assertEqual([x["event_title"] for x in facts],
+                         ["Turandot"]*2+["L’elisir d’amore"]*2+["Nabucco"]*2)
+        self.assertEqual(len({(x["event_title"],x["date"]) for x in facts}),6)
+
     def test_fail_closed_on_changed_title_date_venue_and_cancellation(self):
         for broken in (
             HTML.replace("Gaetano Donizetti","Gioachino Rossini"),
