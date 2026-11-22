@@ -48,7 +48,21 @@ def official_public_recite(html:str,*,url:str)->list[dict]:
     expected={(4,"09:00","scuole"),(4,"11:00","scuole"),
               (5,"15:00","famiglie"),(5,"18:00","famiglie")}
     if set(observed)!=expected or len(observed)!=4:
-        raise ValueError("incomplete official Parma public/school ticket schedule")
+        # The live CMS renders the weekday, clock and audience as sibling
+        # elements, sometimes with punctuation or assistive labels between
+        # them. Read the three ordered columns independently from the same
+        # bounded, first-party ticket section; NEVER borrow other event
+        # dates or guess which audience owns an hour.
+        date_markers=re.findall(r"(?i)\\b(ven|sab)\\.?\\s*([45])\\s+dic\\b",calendar)
+        clocks=re.findall(r"(?<!\\d)(?:[01]?\\d|2[0-3]):[0-5]\\d\\b",calendar)
+        audiences=re.findall(r"(?i)\\b(Scuole|Famiglie)\\b",calendar)
+        if (len(date_markers)!=4 or len(clocks)!=4 or len(audiences)!=4):
+            raise ValueError("incomplete official Parma public/school ticket schedule")
+        observed=[(int(day),clock,audience.casefold())
+                  for (_,day),clock,audience in zip(date_markers,clocks,audiences)]
+        if (observed!=[(4,"09:00","scuole"),(4,"11:00","scuole"),
+                       (5,"15:00","famiglie"),(5,"18:00","famiglie")]):
+            raise ValueError("incomplete official Parma public/school ticket schedule")
     if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",calendar):
         raise ValueError("cancelled Parma recita needs review")
     return [{"event_title":TITLE,"composer":COMPOSER,
