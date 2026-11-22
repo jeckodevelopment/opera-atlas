@@ -57,7 +57,8 @@ class IndexDailyTests(unittest.TestCase):
     def test_multiple_opera_and_cities_from_one_calendar(self):
         html=fixture(self.facts)
         result=parse_calendar(html)
-        self.assertGreaterEqual(len(result),50)
+        # The Brescia combined ticket is not represented twice as solo works.
+        self.assertGreaterEqual(len(result),48)
         self.assertTrue(all(hour is None for _,_,_,_,hour in result))
         self.assertIn(("Turandot","Teatro Coccia","Novara","2026-10-23",None),result)
         self.assertIn(("Death in Venice","Teatro Dante Alighieri","Ravenna","2027-02-14",None),result)
