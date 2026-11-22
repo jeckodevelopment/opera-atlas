@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "c21c4b8d3b6ba50c5ef397ef3a9d1f6bb37c2a5f28522edfa85c87fc7c623ff1",
-      "checked_at": "2026-11-22T14:25:57+00:00",
+      "checked_at": "2026-11-22T14:27:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2033,8 +2033,8 @@
       "candidate_id": "oa-index-59b4a6e5b8f0087fd73d",
       "source_key": "spoleto-tls-lirica-2026",
       "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369",
-      "content_sha256": "55d00b8f482c9b591f3cb6d33c243a6f3fb4c6fdfd58eff41ed90458adf0ecd5",
-      "checked_at": "2026-11-22T14:26:12+00:00",
+      "content_sha256": "8cba70dda194de8b8bf1f2e8695619474ca7efbb89063a63fb6ae0ff4f27ad4e",
+      "checked_at": "2026-11-22T14:27:29+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2341,8 +2341,8 @@
       "candidate_id": "oa-index-63ec766b091ded79f921",
       "source_key": "puccini-torre-del-lago-2027",
       "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
-      "content_sha256": "537447b9cf9484e72d9c549dd1c1ce0534b4dc6560baf1053f8d49b857d4c656",
-      "checked_at": "2026-11-22T14:26:07+00:00",
+      "content_sha256": "cb9a1504d060e8416481e53fe3af922ce3b6afa612f21ec4b81e4a0f5a10c5fc",
+      "checked_at": "2026-11-22T14:27:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3433,8 +3433,8 @@
       "candidate_id": "oa-index-877637d643bbfb668688",
       "source_key": "lirico-cagliari-opera-2027",
       "source_url": "https://www.liricocagliari.it/evento/candide/",
-      "content_sha256": "1dc4d9279dc108c325075eeeac3e81ef23ed2d4f90416afe8e716abd454baf9a",
-      "checked_at": "2026-11-22T14:25:54+00:00",
+      "content_sha256": "3cb1b90078202f18ef646b6b700a9b22181ad2382a612d9417f7b4c7aad8bd38",
+      "checked_at": "2026-11-22T14:27:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5831,8 +5831,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "67d914b3dfe97e3f26c4a5c02bab5149ea870e17351a3c653af92d4e4539faa2",
-      "checked_at": "2026-11-22T14:26:11+00:00",
+      "content_sha256": "524a9733f7c8831050b104c130768c3463093f99abb572cc982f45164880959c",
+      "checked_at": "2026-11-22T14:27:27+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
@@ -6442,7 +6442,7 @@
       "source_key": "verdi-trieste-season-2026-27",
       "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
       "content_sha256": "ee3deda716cd2b364b5dbbc617ed74ebcfab04db5e532232b2d04517d1209f17",
-      "checked_at": "2026-11-22T14:26:14+00:00",
+      "checked_at": "2026-11-22T14:27:30+00:00",
       "status": "needs_program_review",
       "program_heading": "Jeanne d’Arc au bûcher/Jeanne Dark di Arthur Honegger/Fabio Vacchi",
       "program_heading_source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
