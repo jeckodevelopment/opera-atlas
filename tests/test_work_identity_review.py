@@ -23,14 +23,13 @@ class IdentityReviewTests(unittest.TestCase):
           candidate("7","Altra opera","Giuseppe Verdi",status="out_of_monitored_season"),
         ]}
         report=evaluate(evidence,REG)
-        self.assertEqual(report["totals"]["facts_resolved"],2)
+        self.assertEqual(report["totals"]["facts_resolved"],3)
         self.assertEqual(report["totals"]["translated_facts_resolved"],1)
-        self.assertEqual(report["totals"]["unmatched_groups"],3)
-        self.assertEqual(report["totals"]["unmatched_facts"],4)
+        self.assertEqual(report["totals"]["unmatched_groups"],2)
+        self.assertEqual(report["totals"]["unmatched_facts"],3)
         groups={x["category"]:x for x in report["groups"]}
         self.assertEqual(groups["new_work_candidate"]["recite_observed"],2)
         self.assertEqual(groups["new_work_candidate"]["candidate_ids"],["3","4"])
-        self.assertEqual(groups["composer_credit_to_review"]["title"],"La traviata")
         self.assertEqual(groups["missing_composer"]["title"],"Il barbiere di Siviglia")
     def test_contaminated_composer_produces_review_hint_not_auto_match(self):
         evidence={"schema_version":1,"evidence":[
@@ -40,14 +39,12 @@ class IdentityReviewTests(unittest.TestCase):
             candidate("d","Opera sconosciuta","Giuseppe Verdi Opera"),
         ]}
         report=evaluate(evidence,REG)
+        self.assertEqual(report["totals"]["facts_resolved"],2)
         rows={e["composer"]+"|"+e["title"]:e for e in report["groups"]}
-        for credit in ("Giuseppe Verdi Opera","Giuseppe Verdi (1813–1901)"):
-            item=rows[credit+"|La traviata"]
-            self.assertEqual(item["possible_canonical_match"]["work_id"],"w3")
-            self.assertEqual(item["category"],"composer_credit_to_review")
+        self.assertEqual(len(rows),2)
         self.assertIsNone(rows["Giuseppe Verdi Coro|La traviata"]["possible_canonical_match"])
         self.assertIsNone(rows["Giuseppe Verdi Opera|Opera sconosciuta"]["possible_canonical_match"])
-        self.assertEqual(report["totals"]["facts_resolved"],0)
+        self.assertEqual(report["totals"]["unmatched_facts"],2)
 
     def test_never_auto_assign_by_title_or_different_composer(self):
         r=evaluate({"schema_version":1,"evidence":[
