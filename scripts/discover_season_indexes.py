@@ -764,7 +764,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
-        "haydn-rolling-opera":("www.haydn.it","/eventi/genere/opera"),
+        "haydn-rolling-opera":("www.haydn.it","/eventi/area/opera"),
         "asti-alfieri-rolling-opera":("www.teatroalfieriasti.it","/events/categoria/fuori-abbonamento/"),
         "savona-giocosa-rolling-opera":("operagiocosa.it","/"),
         "sassari-de-carolis-opera-2026":("www.marialisadecarolis.it","/opere-liriche.aspx"),
@@ -975,7 +975,7 @@ def validate_config(config:dict)->list[dict]:
         elif key=="asti-alfieri-rolling-opera":
             valid_season=index.path=="/events/categoria/fuori-abbonamento/" and not index.query
         elif key=="haydn-rolling-opera":
-            valid_season=index.path=="/eventi/genere/opera" and not index.query
+            valid_season=index.path=="/eventi/area/opera" and not index.query
         elif key=="reggio-valli-opera-2026-27":
             valid_season=index.path=="/tipo/opera/" and not index.query
         elif key=="piacenza-opera-2026-27":

@@ -14,7 +14,11 @@ from scripts.publish_catalog_v2 import REGISTRY
 KEY="haydn-rolling-opera"
 BOLZANO="https://www.haydn.it/eventi/la-boheme-5"
 TRENTO="https://www.haydn.it/eventi/la-clemenza-di-tito"
-INDEX_HTML=f'<a href="/eventi/la-boheme-5">Boheme</a><a href="{TRENTO}">Clemenza</a>'
+CRONACA="https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
+INDEX_HTML=(f'<a href="/eventi/la-boheme-5">Boheme</a>'
+            f'<a href="{TRENTO}">Clemenza</a>'
+            f'<a href="{CRONACA}">Cronaca di un amore</a>'
+            '<a href="/eventi/opera-intro">Incontro (non opera)</a>')
 
 def page(title="La bohème",composer="Giacomo Puccini",location="Bolzano",
          when="16.04.2027",hour="20.00",genre="Opera",credited=None):
@@ -38,7 +42,8 @@ class HaydnRollingOperaTests(unittest.TestCase):
                          {"Bolzano|Teatro Comunale di Bolzano","Trento|Teatro Sociale"})
         self.assertEqual(VENUE_BY_SOURCE[KEY],("Bolzano","Teatro Comunale di Bolzano"))
         self.assertEqual(extract(KEY,INDEX,INDEX_HTML,2),
-                         sorted((BOLZANO,TRENTO)))
+                         sorted((BOLZANO,TRENTO,CRONACA,
+                                 "https://www.haydn.it/eventi/opera-intro")))
         self.assertTrue(eligible(KEY,BOLZANO))
         for bad in ("https://elsewhere.example/eventi/la-boheme-5",
                     "http://www.haydn.it/eventi/la-boheme-5",
@@ -82,6 +87,14 @@ class HaydnRollingOperaTests(unittest.TestCase):
             parse_detail(page("La clemenza di Tito","Wolfgang Amadeus Mozart",
                               "Trento","27.11.2026","20.00",
                               credited="Antonio Salieri"),url=TRENTO)
+
+    def test_opera_area_includes_nonopera_candidates_but_never_publishes_them(self):
+        self.assertIn("https://www.haydn.it/eventi/opera-intro",
+                      extract(KEY,INDEX,INDEX_HTML,2))
+        with self.assertRaisesRegex(ValueError,"genre missing"):
+            parse_detail(page(title="Oper.a Intro",composer="Giacomo Puccini",
+                              genre="Incontro"),
+                         url="https://www.haydn.it/eventi/opera-intro")
 
     def test_mixed_concerts_and_wrong_places_never_become_operas(self):
         original=page()
