@@ -83,10 +83,17 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if start is None:raise ValueError("Trapani official title missing")
     # The source prints breadcrumbs immediately after H1, then a single
     # event type before repeating the title in the event content.
-    prefix=reader.parts[start+1:start+8]
-    second_title=next((i for i,x in enumerate(prefix) if x==title),None)
-    category=prefix[:second_title] if second_title is not None else prefix[:4]
-    genres=[genre for genre in VENUES if genre in category]
+    # The live CMS may insert image captions, breadcrumbs and accessibility
+    # text between H1 and the genre badge. Keep a bounded event header and
+    # accept only the source's exact standalone category badge before the
+    # repeated work title; never classify by words inside its synopsis.
+    prefix=reader.parts[start+1:start+32]
+    genre_positions=[(i,genre) for i,item in enumerate(prefix)
+                     for genre in VENUES if item.strip()==genre]
+    second_title=next((i for i,x in enumerate(prefix)
+                       if x==title and i>0),None)
+    bound=second_title if second_title is not None else len(prefix)
+    genres=[genre for i,genre in genre_positions if i<bound]
     if len(genres)!=1:
         raise ValueError("Trapani event is not a verified opera")
     genre=genres[0]
