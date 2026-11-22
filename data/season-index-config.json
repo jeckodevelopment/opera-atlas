@@ -253,6 +253,13 @@
       "url": "https://www.sferisterio.it/",
       "access_status": "approved",
       "min_links": 3
+    },
+    {
+      "key": "salerno-verdi-opera-2026",
+      "official_url": "https://cultura.comune.salerno.it/",
+      "url": "https://cultura.comune.salerno.it/teatro-verdi/la-stagione/",
+      "access_status": "approved",
+      "min_links": 6
     }
   ]
 }
