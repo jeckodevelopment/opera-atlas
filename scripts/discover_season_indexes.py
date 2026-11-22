@@ -405,7 +405,10 @@ def eligible(key:str,url:str)->bool:
     if key=="piacenza-opera-2026-27":
         return bool(re.fullmatch(r"/event/[a-z0-9-]+",path))
     if key=="giglio-lucca-opera-2026-27":
-        return bool(re.fullmatch(r"/it/cartellone/lirica/stagione-2026-2027/[a-z0-9-]+",path))
+        match=re.fullmatch(
+            r"/it/cartellone/lirica/stagione-(20\d{2})-(20\d{2})/[a-z0-9-]+",path)
+        return bool(match and 2026<=int(match[1])<=2098
+                    and int(match[2])==int(match[1])+1)
     if key=="modena-teatro-opera-2026-27":
         return (parsed.scheme=="https"
                 and parsed.hostname=="www.teatrocomunalemodena.it"
@@ -640,7 +643,11 @@ def validate_config(config:dict)->list[dict]:
                               and int(season[2])==(int(season[1])+1)%100
                               and not index.query)
         elif key=="giglio-lucca-opera-2026-27":
-            valid_season=(index.path=="/it/cartellone/lirica/stagione-2026-2027/" and not index.query)
+            season=re.fullmatch(
+                r"/it/cartellone/lirica/stagione-(20\d{2})-(20\d{2})/",index.path)
+            valid_season=bool(season and 2026<=int(season[1])<=2098
+                              and int(season[2])==int(season[1])+1
+                              and not index.query)
         elif key=="modena-teatro-opera-2026-27":
             valid_season=index.path=="/opera/" and not index.query
         elif key=="modena-opera-2026-27":
