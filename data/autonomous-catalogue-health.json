@@ -12,6 +12,14 @@
       "reason": "unsupported_or_untrusted_source"
     },
     {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "reason": "same_recita_already_in_official_circuit",
+      "dates": [
+        "2026-11-26",
+        "2026-11-28"
+      ]
+    },
+    {
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "reason": "unsupported_or_untrusted_source"
     },
@@ -22,6 +30,14 @@
     {
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-357ebb275673ae888623",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "reason": "incomplete_work_editorial"
     }
   ],
   "new_works": 0,
