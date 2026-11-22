@@ -170,3 +170,22 @@ inviolabile; non vengono inferite date da pagine non verificate.
 I dati delle altre fonti e l'eventuale ultimo successo rimangono
 preservati. Questa correzione è **diagnostica e di resilienza**:
 non equivale all'avvenuta pubblicazione di nuove recite.
+
+## Due endpoint ufficiali per la stessa scheda di Traviata
+
+La pagina comunale di condivisione social può restituire un documento HTML
+privo del contenuto richiesto, pur essendo indicizzata in precedenza.
+In tal caso la diagnostica segnala `rovigo_fallback_content_unverified`.
+
+La scansione prova ora anche il percorso **esatto** della scheda evento
+istituzionale `/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027`.
+L'allowlist contiene soltanto questi due URL ufficiali e nessun percorso
+simile è accettato. Entrambi attraversano la policy robots ordinaria.
+Ogni risposta deve superare lo stesso parser che convalida titolo,
+compositore, teatro, le due recite e l'esclusione della sessione scolastica.
+Un HTML vuoto, un 404, un URL inatteso o dati incompleti non genera alcuna
+pubblicazione. Un divieto robots esplicito blocca il tentativo, senza aggirarlo.
+
+La scheda del teatro non viene sostituita da siti commerciali o da
+risultati di ricerca memorizzati: il catalogo continua a richiedere la
+prova primaria corrente.
