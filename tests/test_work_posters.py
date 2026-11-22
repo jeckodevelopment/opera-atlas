@@ -44,6 +44,30 @@ class PosterPublicationTests(unittest.TestCase):
                 self.assertIn("Public domain",matches[slug]["license"])
                 self.assertNotIn("allestimento in calendario",matches[slug]["credit"])
 
+    def test_exact_first_party_event_alt_approves_opaque_image_filename_only_on_detail(self):
+        base="https://www.fondazionepergolesispontini.com/eventi/lesecuzione-sotto-lo-sguardo-di-tosca-2/"
+        image="https://www.fondazionepergolesispontini.com/wp-content/uploads/2026/11/asset-37923.jpg"
+        html=('''<meta property="og:image" content="'''+image+'''">
+                 <meta property="og:image:alt"
+                 content="L'esecuzione di Salvatore Passantino, grafica dello spettacolo">''')
+        self.assertIsNone(posters.extract_official_poster(html,base,"L'esecuzione"))
+        result=posters.extract_official_poster(
+            html,base,"L'esecuzione",verified_event_page=True)
+        self.assertIsNotNone(result)
+        self.assertEqual(result["image_url"],image)
+        self.assertEqual(result["kind"],"official_production_image")
+        for wrong in ("Nabucco","Don Pasquale","Tosca"):
+            with self.subTest(title=wrong):
+                self.assertIsNone(posters.extract_official_poster(
+                    html,base,wrong,verified_event_page=True))
+        bad=html.replace("L'esecuzione di Salvatore Passantino",
+                         "Logo della Stagione 2026")
+        self.assertIsNone(posters.extract_official_poster(
+            bad,base,"L'esecuzione",verified_event_page=True))
+        self.assertIsNone(posters.extract_official_poster(
+            html.replace(image,"https://untrusted.example/opera.jpg"),
+            base,"L'esecuzione",verified_event_page=True))
+
     def test_extracts_explicit_official_poster_with_credit(self):
         url="https://www.teatrolafenice.it/event/adriana-lecouvreur/"
         html='''<html><head>

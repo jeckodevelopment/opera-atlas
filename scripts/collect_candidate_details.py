@@ -1206,7 +1206,8 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                 repeated_pages+=1
                             if secondary is not None and isinstance(title,str):
                                 image=extract_official_poster(
-                                    secondary.html,dedicated,title)
+                                    secondary.html,dedicated,title,
+                                    verified_event_page=True)
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
                     "source_url":item["official_url"],"content_sha256":page.sha256,
