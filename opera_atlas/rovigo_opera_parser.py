@@ -42,7 +42,7 @@ def identify_season(html:str,*,url:str)->str:
             or u.username or u.password):
         raise ValueError("unapproved Rovigo municipal season URL")
     text=clean(re.sub(r"(?i)</h[1-6]>", " </h3> ",html))
-    if not re.search(r"(?i)\b(?:Teatro Sociale(?: di Rovigo)?|Teatro Sociale Rovigo)\b",text):
+    if not re.search(r"(?i)\bTeatro Sociale\s+(?:di\s+)?Rovigo\b",text):
         raise ValueError("Rovigo Teatro Sociale not identified")
     if not re.search(r"(?:2026\s*[/–-]\s*2027|stagione\s+2026\s*[/–-]\s*27)",text,re.I):
         raise ValueError("official Rovigo season 2026/27 not established")
@@ -70,6 +70,10 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
         # Date evidence must sit beside the title's primary booking panel,
         # not inside a general listing or a historic premiere paragraph.
         panel=section[credit.end():credit.end()+550]
+        # A later concert or other genre heading must not leak its times
+        # into the preceding opera, even on a one-page season programme.
+        panel=re.split(r"(?i)\b(?:concerto(?: di Capodanno)?|\bconcertistica\b|\bprosa\b|\bballetto\b|\bdanza\b)\b",
+                       panel,maxsplit=1)[0]
         if re.search(r"(?i)\b(?:prima rappresentazione|storia dell.opera)\b",panel):
             continue
         if CANCEL.search(panel):
