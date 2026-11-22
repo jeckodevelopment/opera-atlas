@@ -1046,6 +1046,24 @@
       ]
     },
     {
+      "id": "curated:auto-5b2707fe818d6b68:2026-10-23",
+      "starts_at": "2026-10-23T20:30:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
+      ]
+    },
+    {
       "id": "curated:auto-eedca6da108bd27e:2026-10-23",
       "starts_at": "2026-10-23T20:30:00+02:00",
       "local_date": "2026-10-23",
@@ -1115,6 +1133,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-5b2707fe818d6b68:2026-10-25",
+      "starts_at": "2026-10-25T15:30:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
       ]
     },
     {
@@ -2801,6 +2837,24 @@
       ]
     },
     {
+      "id": "curated:auto-67093940d2ad1423:2026-12-11",
+      "starts_at": "2026-12-11T20:30:00+01:00",
+      "local_date": "2026-12-11",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "municipality": "Jesi",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-d54e9b021b5167cf:2026-12-12",
       "starts_at": "2026-12-12T11:00:00+01:00",
       "local_date": "2026-12-12",
@@ -2891,6 +2945,24 @@
       "sources": [
         "https://www.operalombardia.it/calendario/",
         "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci"
+      ]
+    },
+    {
+      "id": "curated:auto-67093940d2ad1423:2026-12-13",
+      "starts_at": "2026-12-13T16:00:00+01:00",
+      "local_date": "2026-12-13",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "municipality": "Jesi",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
       ]
     },
     {
@@ -3506,6 +3578,24 @@
       ]
     },
     {
+      "id": "curated:auto-df584882c5e7e377:2027-01-15",
+      "starts_at": "2027-01-15T20:00:00+01:00",
+      "local_date": "2027-01-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.orchestracherubini.it/eventi/pagliacci-2/"
+      ]
+    },
+    {
       "id": "curated:lombardia-death-venice-pavia:2027-01-15",
       "starts_at": "2027-01-15T20:00:00+01:00",
       "local_date": "2027-01-15",
@@ -3557,6 +3647,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/la-traviata-2027"
+      ]
+    },
+    {
+      "id": "curated:auto-df584882c5e7e377:2027-01-17",
+      "starts_at": "2027-01-17T15:30:00+01:00",
+      "local_date": "2027-01-17",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.orchestracherubini.it/eventi/pagliacci-2/"
       ]
     },
     {
@@ -4820,6 +4928,24 @@
       ]
     },
     {
+      "id": "curated:auto-b2a88f78e60bd3f7:2027-02-05",
+      "starts_at": "2027-02-05T20:30:00+01:00",
+      "local_date": "2027-02-05",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/otello/"
+      ]
+    },
+    {
       "id": "curated:regio-edgar-2027:2027-02-06",
       "starts_at": "2027-02-06T15:00:00+01:00",
       "local_date": "2027-02-06",
@@ -4889,6 +5015,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-b2a88f78e60bd3f7:2027-02-07",
+      "starts_at": "2027-02-07T15:30:00+01:00",
+      "local_date": "2027-02-07",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/otello/"
       ]
     },
     {
@@ -6620,6 +6764,24 @@
       ]
     },
     {
+      "id": "curated:auto-97659efd986a9744:2027-03-12",
+      "starts_at": "2027-03-12T20:30:00+01:00",
+      "local_date": "2027-03-12",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/aida/"
+      ]
+    },
+    {
       "id": "curated:auto-ef3fc228eb643db3:2027-03-12",
       "starts_at": "2027-03-12T20:30:00+01:00",
       "local_date": "2027-03-12",
@@ -6725,6 +6887,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-97659efd986a9744:2027-03-14",
+      "starts_at": "2027-03-14T15:30:00+01:00",
+      "local_date": "2027-03-14",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/aida/"
       ]
     },
     {
@@ -7448,6 +7628,24 @@
       ]
     },
     {
+      "id": "curated:auto-954a1b185a035452:2027-04-02",
+      "starts_at": "2027-04-02T20:00:00+02:00",
+      "local_date": "2027-04-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.orchestracherubini.it/eventi/la-cenerentola-4/"
+      ]
+    },
+    {
       "id": "curated:regio-salome-2027:2027-04-02",
       "starts_at": "2027-04-02T20:00:00+02:00",
       "local_date": "2027-04-02",
@@ -7535,6 +7733,24 @@
       "longitude": null,
       "sources": [
         "https://teatripiacenza.it/event/simon-boccanegra/"
+      ]
+    },
+    {
+      "id": "curated:auto-954a1b185a035452:2027-04-04",
+      "starts_at": "2027-04-04T15:30:00+02:00",
+      "local_date": "2027-04-04",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.orchestracherubini.it/eventi/la-cenerentola-4/"
       ]
     },
     {
@@ -7970,6 +8186,24 @@
       ]
     },
     {
+      "id": "curated:auto-406c2dd60b3eb7c5:2027-04-16",
+      "starts_at": "2027-04-16T20:30:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/"
+      ]
+    },
+    {
       "id": "curated:auto-4579632f6d774477:2027-04-17",
       "starts_at": "2027-04-17T15:00:00+02:00",
       "local_date": "2027-04-17",
@@ -8075,6 +8309,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+      ]
+    },
+    {
+      "id": "curated:auto-406c2dd60b3eb7c5:2027-04-18",
+      "starts_at": "2027-04-18T15:30:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/"
       ]
     },
     {

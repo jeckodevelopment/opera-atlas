@@ -5025,6 +5025,139 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-406c2dd60b3eb7c5",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/",
+      "dates": [
+        [
+          "2027-04-16",
+          "20:30"
+        ],
+        [
+          "2027-04-18",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-5b2707fe818d6b68",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
+      "dates": [
+        [
+          "2026-10-23",
+          "20:30"
+        ],
+        [
+          "2026-10-25",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-67093940d2ad1423",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "municipality": "Jesi",
+      "region": "Marche",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "dates": [
+        [
+          "2026-12-11",
+          "20:30"
+        ],
+        [
+          "2026-12-13",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-954a1b185a035452",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
+      "dates": [
+        [
+          "2027-04-02",
+          "20:00"
+        ],
+        [
+          "2027-04-04",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-97659efd986a9744",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/spettacolo/aida/",
+      "dates": [
+        [
+          "2027-03-12",
+          "20:30"
+        ],
+        [
+          "2027-03-14",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b2a88f78e60bd3f7",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/spettacolo/otello/",
+      "dates": [
+        [
+          "2027-02-05",
+          "20:30"
+        ],
+        [
+          "2027-02-07",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-df584882c5e7e377",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+      "dates": [
+        [
+          "2027-01-15",
+          "20:00"
+        ],
+        [
+          "2027-01-17",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

@@ -853,6 +853,22 @@
       "name": "Teatro Sociale",
       "city": "Bergamo",
       "region": "Lombardia"
+    },
+    "Pisa|Teatro Verdi": {
+      "id": "oa-v-000038",
+      "slug": "teatro-verdi",
+      "city_slug": "pisa",
+      "name": "Teatro Verdi",
+      "city": "Pisa",
+      "region": "Toscana"
+    },
+    "Jesi|Teatro Giovan Battista Pergolesi": {
+      "id": "oa-v-000039",
+      "slug": "teatro-giovan-battista-pergolesi",
+      "city_slug": "jesi",
+      "name": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "region": "Marche"
     }
   },
   "stagings": {
@@ -2210,6 +2226,62 @@
       "slug": "alahor-in-granata",
       "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
       "season": "2026"
+    },
+    "auto-406c2dd60b3eb7c5": {
+      "id": "oa-s-000174",
+      "work_id": "oa-w-000066",
+      "venue_id": "oa-v-000038",
+      "slug": "la-clemenza-di-tito",
+      "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/",
+      "season": "2027"
+    },
+    "auto-5b2707fe818d6b68": {
+      "id": "oa-s-000175",
+      "work_id": "oa-w-000052",
+      "venue_id": "oa-v-000038",
+      "slug": "dido-and-aeneas",
+      "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
+      "season": "2026"
+    },
+    "auto-67093940d2ad1423": {
+      "id": "oa-s-000176",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000039",
+      "slug": "nabucco",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "season": "2026"
+    },
+    "auto-954a1b185a035452": {
+      "id": "oa-s-000177",
+      "work_id": "oa-w-000068",
+      "venue_id": "oa-v-000014",
+      "slug": "la-cenerentola",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
+      "season": "2027"
+    },
+    "auto-97659efd986a9744": {
+      "id": "oa-s-000178",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000038",
+      "slug": "aida",
+      "source_url": "https://teatrodipisa.it/spettacolo/aida/",
+      "season": "2027"
+    },
+    "auto-b2a88f78e60bd3f7": {
+      "id": "oa-s-000179",
+      "work_id": "oa-w-000014",
+      "venue_id": "oa-v-000038",
+      "slug": "otello",
+      "source_url": "https://teatrodipisa.it/spettacolo/otello/",
+      "season": "2027"
+    },
+    "auto-df584882c5e7e377": {
+      "id": "oa-s-000180",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000014",
+      "slug": "pagliacci",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -6958,6 +7030,90 @@
       "staging_id": "oa-s-000173",
       "original_date": "2026-11-27",
       "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
+    },
+    "auto-406c2dd60b3eb7c5|2027-04-16": {
+      "id": "oa-r-000809",
+      "staging_id": "oa-s-000174",
+      "original_date": "2027-04-16",
+      "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/"
+    },
+    "auto-406c2dd60b3eb7c5|2027-04-18": {
+      "id": "oa-r-000810",
+      "staging_id": "oa-s-000174",
+      "original_date": "2027-04-18",
+      "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/"
+    },
+    "auto-5b2707fe818d6b68|2026-10-23": {
+      "id": "oa-r-000811",
+      "staging_id": "oa-s-000175",
+      "original_date": "2026-10-23",
+      "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
+    },
+    "auto-5b2707fe818d6b68|2026-10-25": {
+      "id": "oa-r-000812",
+      "staging_id": "oa-s-000175",
+      "original_date": "2026-10-25",
+      "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
+    },
+    "auto-67093940d2ad1423|2026-12-11": {
+      "id": "oa-r-000813",
+      "staging_id": "oa-s-000176",
+      "original_date": "2026-12-11",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "auto-67093940d2ad1423|2026-12-13": {
+      "id": "oa-r-000814",
+      "staging_id": "oa-s-000176",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "auto-954a1b185a035452|2027-04-02": {
+      "id": "oa-r-000815",
+      "staging_id": "oa-s-000177",
+      "original_date": "2027-04-02",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/"
+    },
+    "auto-954a1b185a035452|2027-04-04": {
+      "id": "oa-r-000816",
+      "staging_id": "oa-s-000177",
+      "original_date": "2027-04-04",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/"
+    },
+    "auto-97659efd986a9744|2027-03-12": {
+      "id": "oa-r-000817",
+      "staging_id": "oa-s-000178",
+      "original_date": "2027-03-12",
+      "source_url": "https://teatrodipisa.it/spettacolo/aida/"
+    },
+    "auto-97659efd986a9744|2027-03-14": {
+      "id": "oa-r-000818",
+      "staging_id": "oa-s-000178",
+      "original_date": "2027-03-14",
+      "source_url": "https://teatrodipisa.it/spettacolo/aida/"
+    },
+    "auto-b2a88f78e60bd3f7|2027-02-05": {
+      "id": "oa-r-000819",
+      "staging_id": "oa-s-000179",
+      "original_date": "2027-02-05",
+      "source_url": "https://teatrodipisa.it/spettacolo/otello/"
+    },
+    "auto-b2a88f78e60bd3f7|2027-02-07": {
+      "id": "oa-r-000820",
+      "staging_id": "oa-s-000179",
+      "original_date": "2027-02-07",
+      "source_url": "https://teatrodipisa.it/spettacolo/otello/"
+    },
+    "auto-df584882c5e7e377|2027-01-15": {
+      "id": "oa-r-000821",
+      "staging_id": "oa-s-000180",
+      "original_date": "2027-01-15",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/"
+    },
+    "auto-df584882c5e7e377|2027-01-17": {
+      "id": "oa-r-000822",
+      "staging_id": "oa-s-000180",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/"
     }
   }
 }

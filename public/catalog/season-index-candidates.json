@@ -477,7 +477,7 @@
       "id": "oa-index-406c2dd60b3eb7c5fee8",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
@@ -509,7 +509,7 @@
       "id": "oa-index-4277f285769ff880bef4",
       "source_key": "jesi-trittico-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T01:26:53+00:00"
     },
@@ -661,7 +661,7 @@
       "id": "oa-index-5b2707fe818d6b686a4c",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
@@ -709,7 +709,7 @@
       "id": "oa-index-67093940d2ad1423b345",
       "source_key": "jesi-nabucco-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T01:26:53+00:00"
     },
@@ -845,7 +845,7 @@
       "id": "oa-index-7b0a1e061133c0b5970e",
       "source_key": "jesi-esecuzione-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T01:26:53+00:00"
     },
@@ -1029,7 +1029,7 @@
       "id": "oa-index-954a1b185a0354522e71",
       "source_key": "ravenna-alighieri-cherubini-2027",
       "official_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:42:35+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
@@ -1053,7 +1053,7 @@
       "id": "oa-index-97659efd986a97449096",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/aida/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
@@ -1221,7 +1221,7 @@
       "id": "oa-index-addcc48a211cf5aea678",
       "source_key": "jesi-don-pasquale-opera-2026",
       "official_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T01:26:53+00:00"
     },
@@ -1245,7 +1245,7 @@
       "id": "oa-index-b2a88f78e60bd3f79d16",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/otello/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
     },
@@ -1605,7 +1605,7 @@
       "id": "oa-index-df584882c5e7e377064c",
       "source_key": "ravenna-alighieri-cherubini-2027",
       "official_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:42:35+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
     },

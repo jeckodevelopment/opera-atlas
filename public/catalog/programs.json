@@ -38,6 +38,47 @@
       ]
     },
     {
+      "id": "oa-p-4277f285769ff880",
+      "title": "Il tabarro / Suor Angelica / Gianni Schicchi",
+      "components": [
+        {
+          "title": "Il tabarro",
+          "composer": "Giacomo Puccini",
+          "work_id": null
+        },
+        {
+          "title": "Suor Angelica",
+          "composer": "Giacomo Puccini",
+          "work_id": null
+        },
+        {
+          "title": "Gianni Schicchi",
+          "composer": "Giacomo Puccini",
+          "work_id": null
+        }
+      ],
+      "source_key": "jesi-trittico-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "municipality": "Jesi",
+      "region": "Marche",
+      "route_slug": "il-tabarro-suor-angelica-gianni-schicchi",
+      "performances": [
+        {
+          "id": "oa-pr-fd54d8b1d36b62f8",
+          "program_id": "oa-p-4277f285769ff880",
+          "local_date": "2026-10-09",
+          "starts_at": "2026-10-09T20:30:00+02:00"
+        },
+        {
+          "id": "oa-pr-ab266fdd8d5822ac",
+          "program_id": "oa-p-4277f285769ff880",
+          "local_date": "2026-10-11",
+          "starts_at": "2026-10-11T16:00:00+02:00"
+        }
+      ]
+    },
+    {
       "id": "oa-p-a12dbb283b490075",
       "title": "L’ARLÉSIENNE / PAGLIACCI",
       "components": [
