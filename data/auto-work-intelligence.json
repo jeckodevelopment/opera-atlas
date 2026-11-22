@@ -405,6 +405,26 @@
       "verified_at": "2026-11-20T23:19:02+00:00"
     },
     {
+      "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "title": "Il viaggio a Reims",
+      "composer": "Gioachino Rossini",
+      "synopsis": null,
+      "history": {
+        "librettist": "Luigi Balocchi",
+        "premiere_year": 1825,
+        "premiere_venue": "Théâtre de la comédie italienne",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q470983"
+        ]
+      },
+      "wikidata_id": "Q470983",
+      "authority_url": "https://www.wikidata.org/wiki/Q470983",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Il_viaggio_a_Reims"
+    },
+    {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",

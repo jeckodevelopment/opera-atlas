@@ -1,15 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T15:26:14+00:00",
+  "checked_at": "2026-11-22T23:36:44+00:00",
   "outcomes": [
-    {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000052",
-      "source_key": "goldoni-livorno-dido-2026-27",
-      "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "title_hint": "Dido and Æneas"
-    },
     {
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
       "status": "existing_canonical_work",
@@ -17,14 +9,6 @@
       "source_key": "maggio-fiorentino-calendar-2027",
       "official_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
       "title_hint": "Simon Boccanegra"
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000002",
-      "source_key": "teatro-grande-opera-2026",
-      "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "title_hint": "L’italiana in Algeri"
     },
     {
       "candidate_id": "oa-index-b932c89149fad91c3518",
@@ -43,14 +27,6 @@
       "title_hint": "Il mondo alla roversa o sia le donne che comandano"
     },
     {
-      "candidate_id": "oa-index-357ebb275673ae888623",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000052",
-      "source_key": "ferrara-dido-opera-2026-27",
-      "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "title_hint": "Dido and Æneas"
-    },
-    {
       "candidate_id": "oa-index-feadef19a246de079ccb",
       "status": "existing_canonical_work",
       "work_id": "oa-w-000062",
@@ -67,81 +43,140 @@
       "title_hint": "Macbeth"
     },
     {
-      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "candidate_id": "oa-index-f8122a2cac3109445aaa",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "parma-opera-2027",
-      "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
-      "title_hint": "piccolo orso e la montagna di ghiaccio"
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
+      "title_hint": "nabucco"
     },
     {
-      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "petruzzelli-opera-2027",
-      "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "title_hint": "la notte di san nicola 25 28 29 maggio"
+      "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "title_hint": "Le Siège de Corinthe"
     },
     {
-      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "coccia-novara-rolling-opera",
-      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
-      "title_hint": "stagione 27 il noce di benevento"
+      "candidate_id": "oa-index-b4ae738f2728d4430578",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "title_hint": "La scala di seta"
     },
     {
-      "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "rovigo-regione-programma-2026-27",
-      "official_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "title_hint": "3563a671 d9b2 46bf a10d 776af9ab17bc"
+      "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "title_hint": "Il viaggio a Reims"
     },
     {
-      "candidate_id": "oa-index-e00258ea11ffe761bc9e",
+      "candidate_id": "oa-index-e1e59d662e27c6b8340a",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "coccia-novara-rolling-opera",
-      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-lago-dei-cigni.html",
-      "title_hint": "stagione 27 il lago dei cigni"
+      "source_key": "taormina-opera-festival-rolling",
+      "official_url": "https://www.taorminaoperafestival.org/complessi-artistici/",
+      "title_hint": "complessi artistici"
     },
     {
-      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
+      "candidate_id": "oa-index-e67d0ca2da9deecd17a7",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "petruzzelli-opera-2026",
-      "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "title_hint": "la notte di san nicola 25 28 29 maggio"
+      "source_key": "taormina-opera-festival-rolling",
+      "official_url": "https://www.taorminaoperafestival.org/amministrazione-trasparente/",
+      "title_hint": "amministrazione trasparente"
     },
     {
-      "candidate_id": "oa-index-19141fd504da67924d01",
+      "candidate_id": "oa-index-e89b9abe4c2c6b6c247d",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "verdi-trieste-season-2026-27",
-      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
-      "title_hint": "don giovanni 2"
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/oltre-l-indifferenza-cosenza",
+      "title_hint": "oltre l indifferenza cosenza"
     },
     {
-      "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
+      "candidate_id": "oa-index-e9edfcff33941447ad9e",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "coccia-novara-rolling-opera",
-      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
-      "title_hint": "stagione 27 dove nasce il melograno"
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/olimpichetto-il-ritorno-di-un-ambasciatore/",
+      "title_hint": "olimpichetto il ritorno di un ambasciatore"
     },
     {
-      "candidate_id": "oa-index-29df705488a5f9fee812",
+      "candidate_id": "oa-index-fb6d4970ba4fd0a3888e",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "coccia-novara-rolling-opera",
-      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-beethoven-200.html",
-      "title_hint": "stagione 27 beethoven 200"
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/eventi/",
+      "title_hint": "eventi"
     },
     {
-      "candidate_id": "oa-index-3677ecf144365a5d588c",
+      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "coccia-novara-rolling-opera",
-      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-la-bella-addormentata.html",
-      "title_hint": "stagione 27 la bella addormentata"
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "title_hint": "2026 07 14"
     },
     {
-      "candidate_id": "oa-index-9837cf3a1cb8aa932ab3",
+      "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
       "status": "awaiting_official_identity_evidence",
-      "source_key": "coccia-novara-rolling-opera",
-      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
-      "title_hint": "stagione 27 l amor mio"
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
+      "title_hint": "la mere coupable cosenza"
+    },
+    {
+      "candidate_id": "oa-index-1d76a04d55e92092cc2a",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/sponsor/",
+      "title_hint": "sponsor"
+    },
+    {
+      "candidate_id": "oa-index-274f34ea2fb4f9a17a7e",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/lisistrata-cosenza",
+      "title_hint": "lisistrata cosenza"
+    },
+    {
+      "candidate_id": "oa-index-3226fc8a2ea345c6248d",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/credits/",
+      "title_hint": "credits"
+    },
+    {
+      "candidate_id": "oa-index-34af45b22fceed456f7a",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-opera-festival-rolling",
+      "official_url": "https://www.taorminaoperafestival.org/consiglio-di-amministrazione/",
+      "title_hint": "consiglio di amministrazione"
+    },
+    {
+      "candidate_id": "oa-index-36b53e4041c64c8a911e",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-opera-festival-rolling",
+      "official_url": "https://www.taorminaoperafestival.org/atti/",
+      "title_hint": "atti"
+    },
+    {
+      "candidate_id": "oa-index-3849d460e19f28b1f521",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-opera-festival-rolling",
+      "official_url": "https://www.taorminaoperafestival.org/sostieni/",
+      "title_hint": "sostieni"
+    },
+    {
+      "candidate_id": "oa-index-3a6cc7558e09a14fd125",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-opera-festival-rolling",
+      "official_url": "https://www.taorminaoperafestival.org/soci/",
+      "title_hint": "soci"
+    },
+    {
+      "candidate_id": "oa-index-3d94833841692871c0a4",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/",
+      "title_hint": "le nozze di figaro mozart"
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
@@ -207,11 +242,25 @@
       "official_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/"
     },
     {
+      "candidate_id": "oa-index-0c0be9665ed7b114e52c",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000085",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/"
+    },
+    {
       "candidate_id": "oa-index-0da766cb52d550c48c16",
       "status": "already_catalogued",
       "work_id": "oa-w-000027",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/"
+    },
+    {
+      "candidate_id": "oa-index-0e8fc70d8165e8a2b021",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000066",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2"
     },
     {
       "candidate_id": "oa-index-0ed3159d77688a6ce0ee",
@@ -270,6 +319,13 @@
       "official_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html"
     },
     {
+      "candidate_id": "oa-index-19141fd504da67924d01",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000023",
+      "source_key": "verdi-trieste-season-2026-27",
+      "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+    },
+    {
       "candidate_id": "oa-index-1a02a18e39758285a976",
       "status": "already_catalogued",
       "work_id": "oa-w-000014",
@@ -284,11 +340,25 @@
       "official_url": "https://teatripiacenza.it/event/la-cenerentola-2/"
     },
     {
+      "candidate_id": "oa-index-1a527a333817d1bcdc2c",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000087",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/"
+    },
+    {
       "candidate_id": "oa-index-1b9c2f52afd0351d539c",
       "status": "already_catalogued",
       "work_id": "oa-w-000048",
       "source_key": "filarmonico-verona-opera-2027",
       "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+    },
+    {
+      "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000103",
+      "source_key": "coccia-novara-rolling-opera",
+      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
     },
     {
       "candidate_id": "oa-index-1e15e89ae5b2a2ec45f9",
@@ -312,6 +382,13 @@
       "official_url": "https://www.carlofelice.it/spettacolo/pagliacci/"
     },
     {
+      "candidate_id": "oa-index-1e4a557dddb9c5c01fa2",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000086",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+    },
+    {
       "candidate_id": "oa-index-1fdf598fde99e1e32112",
       "status": "already_catalogued",
       "work_id": "oa-w-000028",
@@ -331,6 +408,13 @@
       "work_id": "oa-w-000079",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+    },
+    {
+      "candidate_id": "oa-index-222099ffb9c977837f63",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000015",
+      "source_key": "asti-alfieri-rolling-opera",
+      "official_url": "https://www.teatroalfieriasti.it/event/aida/"
     },
     {
       "candidate_id": "oa-index-24cebce7bb9240992447",
@@ -354,6 +438,13 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
     },
     {
+      "candidate_id": "oa-index-2ef6d8cca0288a1af32c",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000038",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
+    },
+    {
       "candidate_id": "oa-index-2ffd782e0a99b2433e13",
       "status": "already_catalogued",
       "work_id": "oa-w-000039",
@@ -366,6 +457,20 @@
       "work_id": "oa-w-000095",
       "source_key": "modena-teatro-opera-2026-27",
       "official_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"
+    },
+    {
+      "candidate_id": "oa-index-38153086f06a94fc3f99",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000015",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/"
+    },
+    {
+      "candidate_id": "oa-index-38d6a0376cd3960e14fe",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000022",
+      "source_key": "macerata-festival-rolling",
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/tosca"
     },
     {
       "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
@@ -424,6 +529,20 @@
       "official_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
     },
     {
+      "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000005",
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "official_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
+    },
+    {
+      "candidate_id": "oa-index-4e7a6ea5275e9fa4ad03",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000056",
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372"
+    },
+    {
       "candidate_id": "oa-index-4e97b4b93dacf2f5c195",
       "status": "already_catalogued",
       "work_id": "oa-w-000054",
@@ -436,6 +555,13 @@
       "work_id": "oa-w-000022",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/tosca-2/"
+    },
+    {
+      "candidate_id": "oa-index-4f3383615741e8be9345",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000009",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
     },
     {
       "candidate_id": "oa-index-52ff40865866999be465",
@@ -508,6 +634,13 @@
       "official_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
     },
     {
+      "candidate_id": "oa-index-5fea5e594da012daa488",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000104",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
+    },
+    {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",
       "status": "already_catalogued",
       "work_id": "oa-w-000030",
@@ -522,11 +655,25 @@
       "official_url": "https://www.teatromassimo.it/event/carmen-3/"
     },
     {
+      "candidate_id": "oa-index-645435245131b4d31287",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000106",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/"
+    },
+    {
       "candidate_id": "oa-index-647ba8ffc55170010275",
       "status": "already_catalogued",
       "work_id": "oa-w-000018",
       "source_key": "modena-teatro-opera-2026-27",
       "official_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"
+    },
+    {
+      "candidate_id": "oa-index-648d1bcf715c9f9ffd9d",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000107",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/"
     },
     {
       "candidate_id": "oa-index-663c5bda82d136bbbdcc",
@@ -564,6 +711,13 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
     },
     {
+      "candidate_id": "oa-index-71feb2c03e06415fa1c9",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000089",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+    },
+    {
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "status": "already_catalogued",
       "work_id": "oa-w-000019",
@@ -576,6 +730,13 @@
       "work_id": "oa-w-000071",
       "source_key": "sassari-de-carolis-opera-2026",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
+    },
+    {
+      "candidate_id": "oa-index-743dd5f2381d26feece2",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000026",
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
     },
     {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
@@ -597,6 +758,20 @@
       "work_id": "oa-w-000096",
       "source_key": "modena-teatro-opera-2026-27",
       "official_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+    },
+    {
+      "candidate_id": "oa-index-76fee4db156090b664aa",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000045",
+      "source_key": "carlo-felice-season-2026-27",
+      "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+    },
+    {
+      "candidate_id": "oa-index-78a2524add8c3b1ea415",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000108",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/nina/"
     },
     {
       "candidate_id": "oa-index-790b965de8129382aa04",
@@ -641,6 +816,13 @@
       "official_url": "https://www.teatrolafenice.it/event/normatebar/"
     },
     {
+      "candidate_id": "oa-index-7ff44b89bf8d688bbee0",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000001",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "official_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027"
+    },
+    {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "status": "already_catalogued",
       "work_id": "oa-w-000063",
@@ -653,6 +835,13 @@
       "work_id": "oa-w-000064",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    {
+      "candidate_id": "oa-index-84e8ac0695f45f81567d",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000048",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
     },
     {
       "candidate_id": "oa-index-84fd2f377ee783254524",
@@ -669,6 +858,13 @@
       "official_url": "https://www.teatrolafenice.it/event/fedora/"
     },
     {
+      "candidate_id": "oa-index-86855eb33828e6cde6af",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000006",
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+    },
+    {
       "candidate_id": "oa-index-877637d643bbfb668688",
       "status": "already_catalogued",
       "work_id": "oa-w-000098",
@@ -681,6 +877,13 @@
       "work_id": "oa-w-000086",
       "source_key": "salerno-verdi-opera-2026",
       "official_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/"
+    },
+    {
+      "candidate_id": "oa-index-89997fb8ea8cbb932bd1",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000109",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/"
     },
     {
       "candidate_id": "oa-index-8a286806af9eac475fe7",
@@ -760,11 +963,25 @@
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/"
     },
     {
+      "candidate_id": "oa-index-943d04f25da8e27e1190",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000101",
+      "source_key": "lecce-apollo-pinocchio-2026",
+      "official_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
+    },
+    {
       "candidate_id": "oa-index-954a1b185a0354522e71",
       "status": "already_catalogued",
       "work_id": "oa-w-000068",
       "source_key": "ravenna-alighieri-cherubini-2027",
       "official_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/"
+    },
+    {
+      "candidate_id": "oa-index-9722a684ead4733eee96",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000088",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
     },
     {
       "candidate_id": "oa-index-97514cec9448be1a563d",
@@ -786,6 +1003,13 @@
       "work_id": "oa-w-000085",
       "source_key": "filarmonico-verona-opera-2027",
       "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/"
+    },
+    {
+      "candidate_id": "oa-index-995d8f9ff8de58d84cfd",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000006",
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "official_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/"
     },
     {
       "candidate_id": "oa-index-997a698e76cca7510492",
@@ -830,6 +1054,13 @@
       "official_url": "https://teatripiacenza.it/event/siberia/"
     },
     {
+      "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000102",
+      "source_key": "coccia-novara-rolling-opera",
+      "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
+    },
+    {
       "candidate_id": "oa-index-a0eba5854831ebbf26c0",
       "status": "already_catalogued",
       "work_id": "oa-w-000048",
@@ -842,6 +1073,13 @@
       "work_id": "oa-w-000072",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/alcina/"
+    },
+    {
+      "candidate_id": "oa-index-a6cead48df9475df119e",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000001",
+      "source_key": "macerata-festival-rolling",
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
     },
     {
       "candidate_id": "oa-index-a77154badf30929b95dc",
@@ -865,11 +1103,25 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/"
     },
     {
+      "candidate_id": "oa-index-ab6612954af20d7d7cad",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000068",
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "official_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/"
+    },
+    {
       "candidate_id": "oa-index-ad08a1d14a8510a5f0bf",
       "status": "already_catalogued",
       "work_id": "oa-w-000025",
       "source_key": "bologna-comunale-opera-2027",
       "official_url": "https://www.tcbo.it/evento/opera/nabucco-2027/"
+    },
+    {
+      "candidate_id": "oa-index-ad4a422c793838b9bc2a",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000110",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/"
     },
     {
       "candidate_id": "oa-index-ad96ee377d30a4426219",
@@ -1040,6 +1292,13 @@
       "official_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/"
     },
     {
+      "candidate_id": "oa-index-d19dcb9c4ac67cb7006f",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000006",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    {
       "candidate_id": "oa-index-d54e9b021b5167cfb735",
       "status": "already_catalogued",
       "work_id": "oa-w-000082",
@@ -1073,6 +1332,13 @@
       "work_id": "oa-w-000081",
       "source_key": "modena-teatro-opera-2026-27",
       "official_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
+    },
+    {
+      "candidate_id": "oa-index-d8275c7a129bf19b2ec8",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000073",
+      "source_key": "macerata-festival-rolling",
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
     },
     {
       "candidate_id": "oa-index-db7983de674f2fdccdda",
@@ -1152,6 +1418,13 @@
       "official_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
     },
     {
+      "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000105",
+      "source_key": "parma-opera-2027",
+      "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+    },
+    {
       "candidate_id": "oa-index-eaefe8edde44acf2edd9",
       "status": "already_catalogued",
       "work_id": "oa-w-000049",
@@ -1171,6 +1444,13 @@
       "work_id": "oa-w-000038",
       "source_key": "coccia-novara-opera-2027",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
+    },
+    {
+      "candidate_id": "oa-index-ee87c25e50507f1f3346",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000068",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "official_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola"
     },
     {
       "candidate_id": "oa-index-eedca6da108bd27e8d30",
@@ -1194,6 +1474,13 @@
       "official_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/"
     },
     {
+      "candidate_id": "oa-index-f3ceb991bb50eebfea09",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000019",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/"
+    },
+    {
       "candidate_id": "oa-index-f3cef88d8ea3109475df",
       "status": "already_catalogued",
       "work_id": "oa-w-000019",
@@ -1201,11 +1488,32 @@
       "official_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
     },
     {
+      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000066",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
+    },
+    {
+      "candidate_id": "oa-index-f58d3866160127ee1932",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000111",
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "official_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    {
       "candidate_id": "oa-index-f7e2bc909527aff17c03",
       "status": "already_catalogued",
       "work_id": "oa-w-000044",
       "source_key": "bologna-comunale-opera-2027",
       "official_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
+    },
+    {
+      "candidate_id": "oa-index-f92f3fc808d9fb909461",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000071",
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
     },
     {
       "candidate_id": "oa-index-f942d4e01d9578a95e87",
@@ -1222,6 +1530,13 @@
       "official_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/"
     },
     {
+      "candidate_id": "oa-index-fa8a0cd7221e0292dec7",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000015",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "official_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida"
+    },
+    {
       "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
       "status": "already_catalogued",
       "work_id": "oa-w-000078",
@@ -1234,6 +1549,13 @@
       "work_id": "oa-w-000073",
       "source_key": "ancona-elisir-opera-2026",
       "official_url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
+    },
+    {
+      "candidate_id": "oa-index-fecbb06d8dc649b616d2",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000073",
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370"
     },
     {
       "candidate_id": "oa-index-ffbe120c526a352bc59c",
