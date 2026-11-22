@@ -48,9 +48,21 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         raise ValueError("unapproved official Modena theatre detail URL")
     headings=Headings()
     headings.feed(html)
-    if len(headings.headings)!=1:
+    if len(headings.headings)==1:
+        heading=headings.headings[0]
+    elif (not headings.headings and
+          target.path.rstrip("/")=="/spettacolo/gaia-aloisi-veleno"):
+        # This exact official opera page uses an H4 rather than the H1
+        # expected elsewhere. A composer-credited H4, not the URL slug,
+        # establishes the work and must be unique in the actual HTML.
+        verified=re.findall(
+            r"<h[1-6]\\b[^>]*>\\s*(Gaia Aloisi\\s*[–-]\\s*Veleno)\\s*</h[1-6]>",
+            html,re.I)
+        if len(verified)!=1:
+            raise ValueError("missing unique Modena production title")
+        heading=verified[0]
+    else:
         raise ValueError("missing unique Modena production title")
-    heading=headings.headings[0]
     match=re.fullmatch(r"(.+?)\s*[–-]\s*(.+)",heading)
     if match is None:
         raise ValueError("opera title and credited composer not both explicit")
