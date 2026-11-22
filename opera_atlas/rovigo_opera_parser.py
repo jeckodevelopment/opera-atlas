@@ -65,15 +65,15 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
     marks=sorted(
         [(m.start(),m.end(),title,composer)
          for title,composer in WORKS.items()
-         for m in re.finditer(r"(?i)\\b"+re.escape(title)+r"\\b",text)]
+         for m in re.finditer(r"(?i)\b"+re.escape(title)+r"\b",text)]
         +[(m.start(),m.end(),None,None)
           for heading in ("Il pipistrello","Die Fledermaus","The Telephone")
-          for m in re.finditer(r"(?i)\\b"+re.escape(heading)+r"\\b",text)]
+          for m in re.finditer(r"(?i)\b"+re.escape(heading)+r"\b",text)]
     )
     # Combined Menotti/Bernstein billing is one ticketed programme.
     composite=re.compile(
-        r"(?i)\\b(?:Il telefono|The Telephone)\\s*"
-        r"(?:/|\\+|&|e|[–-])\\s*Trouble in Tahiti\\b"
+        r"(?i)\b(?:Il telefono|The Telephone)\s*"
+        r"(?:/|\+|&|e|[–-])\s*Trouble in Tahiti\b"
     )
     paired_spans=[m.span() for m in composite.finditer(text)]
     rows=[]
