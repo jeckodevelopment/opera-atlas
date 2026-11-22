@@ -296,6 +296,12 @@ def eligible(key:str,url:str)->bool:
     path=parsed.path.lower().rstrip("/")
     if excluded_nonopera(key,url):
         return False
+    if key=="filarmonico-verona-opera-2027":
+        return path in {"/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio",
+                        "/teatro-filarmonico-verona/2027/alzira",
+                        "/teatro-filarmonico-verona/2027/fidelio",
+                        "/teatro-filarmonico-verona/2027/il-signor-bruschino",
+                        "/teatro-filarmonico-verona/2027/cristoforo-colombo"}
     if key=="pisa-verdi-opera-2026-27":
         return path in {"/spettacolo/dido-and-aeneas",
                         "/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia",
@@ -418,6 +424,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "filarmonico-verona-opera-2027":("www.arena.it","/teatro-filarmonico-verona/spettacoli-prossima-stagione/"),
         "pisa-verdi-opera-2026-27":("teatrodipisa.it","/tipologia-spettacolo/opera/"),
         "salerno-verdi-opera-2026":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
         "macerata-festival-2027":("www.sferisterio.it","/"),
@@ -497,6 +504,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="filarmonico-verona-opera-2027":
+            valid_season=index.path=="/teatro-filarmonico-verona/spettacoli-prossima-stagione/" and not index.query
         elif key=="pisa-verdi-opera-2026-27":
             valid_season=index.path=="/tipologia-spettacolo/opera/" and not index.query
         elif key=="salerno-verdi-opera-2026":
