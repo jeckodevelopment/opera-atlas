@@ -21,6 +21,13 @@ class IndependentEvidenceWorkflowTests(unittest.TestCase):
         self.assertIn("python -m unittest tests.test_candidate_detail_evidence",fast)
         self.assertIn("python -m scripts.build_verified_catalog --check",fast)
 
+    def test_shared_fetch_policy_changes_retrigger_source_health(self):
+        source=(ROOT/".github/workflows/refresh-source-health.yml").read_text(encoding="utf-8")
+        self.assertIn("      - 'opera_atlas/controlled_fetch.py'",source)
+        self.assertIn("      - 'data/season-index-config.json'",source)
+        self.assertIn("python -m scripts.discover_season_indexes --allow-network",source)
+        self.assertIn("python -m scripts.source_automation --check",source)
+
     def test_only_review_evidence_can_be_pushed(self):
         fast=FAST.read_text(encoding="utf-8")
         self.assertIn("python -m scripts.safe_push_catalog",fast)
