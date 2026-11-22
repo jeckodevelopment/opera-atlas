@@ -83,6 +83,11 @@
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
     },
     {
+      "source_key": "pisa-future-calendar",
+      "scope": "dynamic_category",
+      "evidence": "Official opera-specific event calendar; dynamic event detail URLs. Source date/time and opera identity require separate detail validation."
+    },
+    {
       "source_key": "pisa-verdi-opera-2026-27",
       "scope": "fixed_production_set",
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."

@@ -302,6 +302,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="pisa-future-calendar":
+        from opera_atlas.pisa_future_calendar import eligible_detail
+        return eligible_detail(url)
     if key in {"chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
           "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
           "padova-verdi-season-2027","lecce-provincia-season-2027"}:
@@ -560,6 +563,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="pisa-future-calendar":
+        from opera_atlas.pisa_future_calendar import extract_calendar
+        return extract_calendar(html,url=index_url,min_links=min_links)
     if key in {"chieti-marrucino-season-2027","modena-municipal-opera-2027-28",
           "rovigo-sociale-season-2027-28","treviso-del-monaco-season-2027-28",
           "padova-verdi-season-2027","lecce-provincia-season-2027"}:
@@ -697,6 +703,7 @@ def validate_config(config:dict)->list[dict]:
         "coccia-novara-opera-2027":("www.fondazioneteatrococcia.it","/spettacoli.html"),
         "filarmonico-verona-opera-2027":("www.arena.it","/teatro-filarmonico-verona/spettacoli-prossima-stagione/"),
         "pisa-verdi-opera-2026-27":("teatrodipisa.it","/tipologia-spettacolo/opera/"),
+        "pisa-future-calendar":("teatrodipisa.it","/calendario/categoria/opera/elenco/"),
         "salerno-verdi-opera-2026":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
         "macerata-festival-2027":("www.sferisterio.it","/"),
         "scala-season-2026-27":("www.teatroallascala.org","/it/stagione/2026-2027/index.html"),
@@ -843,6 +850,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/spettacoli.html" and not index.query
         elif key=="filarmonico-verona-opera-2027":
             valid_season=index.path=="/teatro-filarmonico-verona/spettacoli-prossima-stagione/" and not index.query
+        elif key=="pisa-future-calendar":
+            valid_season=index.path=="/calendario/categoria/opera/elenco/" and not index.query
         elif key=="pisa-verdi-opera-2026-27":
             valid_season=index.path=="/tipologia-spettacolo/opera/" and not index.query
         elif key=="salerno-verdi-opera-2026":

@@ -257,6 +257,10 @@
     "lecce-provincia-season-2027": {
       "strategy": "verified_rollover",
       "verification": "test_verified"
+    },
+    "pisa-future-calendar": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }

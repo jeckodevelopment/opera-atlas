@@ -348,6 +348,12 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         return [{"event_title":work["title"],"composer":work["composer"],
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in recite]
+    if source_key=="pisa-future-calendar":
+        from opera_atlas.pisa_future_calendar import parse_calendar_detail
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for title,composer,venue,day,clock in parse_calendar_detail(
+                    html,url=url,registry=registry)]
     if source_key=="pisa-verdi-opera-2026-27":
         from opera_atlas.pisa_opera_parser import parse_detail
         heading,credit,venue,recite=parse_detail(html,url=url)
