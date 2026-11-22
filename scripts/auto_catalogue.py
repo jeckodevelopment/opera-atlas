@@ -55,6 +55,7 @@ VENUE_BY_SOURCE={
     "pisa-verdi-opera-2026-27":("Pisa","Teatro Verdi"),
     "salerno-verdi-opera-2026":("Salerno","Teatro Municipale Giuseppe Verdi"),
     "macerata-festival-2027":("Macerata","Arena Sferisterio"),
+    "messina-vittorio-opera-2026-27":("Messina","Teatro Vittorio Emanuele"),
     # Newly approved detail adapters with already canonical physical venues.
     "coccia-novara-opera-2027":("Novara","Teatro Coccia"),
     "ravenna-alighieri-cherubini-2027":("Ravenna","Teatro Dante Alighieri"),
@@ -474,8 +475,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
             issues.append({"candidate_id":cid,"reason":"multiple_work_identities"})
             continue
         title,composer=next(iter(names))
+        # Normalize only typographical apostrophe variation, not
+        # different titles, spellings, translations or composers.
+        # Macerata's first-party heading uses L'elisir d'amore whereas
+        # the canonical work title uses Italian right apostrophes.
+        title_credit=title.replace("’","'")
         matches=[w for w in next_registry["works"].values()
-                 if normalized(w["title"])==title and normalized(w["composer"])==composer]
+                 if normalized(w["title"]).replace("’","'")==title_credit
+                 and normalized(w["composer"])==composer]
         # A verified program-only work already owns a permanent identity.
         # Promote that exact title/composer when a genuinely independent
         # performance has arrived, without allocating a second ID.
