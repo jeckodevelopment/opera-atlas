@@ -57,6 +57,21 @@ class NationalIndexTests(unittest.TestCase):
                   '<a href="/event/fedora/">Fedora</a>'
                   '<a href="/news/other/">News</a>',2)
         self.assertEqual(len(f),2)
+    def test_parma_site_specific_otello_is_not_verdis_canonical_opera(self):
+        source="parma-opera-2027"
+        special="https://teatroregioparma.it/spettacolo/otello-gamification/"
+        self.assertFalse(eligible(source,special))
+        self.assertEqual(classify(source,special,set()),"excluded_nonopera")
+        self.assertEqual(classify(source,special,{special}),"excluded_nonopera")
+        # Sollima's commissioned family opera must NOT be classified as
+        # non-opera; two slots on each day are an acquisition problem.
+        sollima=("https://teatroregioparma.it/spettacolo/"
+                 "piccolo-orso-e-la-montagna-di-ghiaccio/")
+        self.assertTrue(eligible(source,sollima))
+        self.assertEqual(classify(source,sollima,set()),"needs_review")
+        self.assertTrue(eligible(source,
+                        "https://teatroregioparma.it/spettacolo/otello/"))
+
     def test_parma_and_palermo_official_links_without_nonopera(self):
         parma="https://teatroregioparma.it/categoria-spettacoli/opera/"
         p=extract("parma-opera-2027",parma,
