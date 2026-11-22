@@ -188,11 +188,12 @@ def reconcile(candidates:dict,verified_urls:set[str],*,
             key=(entry["source_key"],entry["official_url"])
             if excluded_nonopera(entry["source_key"],entry["official_url"]):
                 now="excluded_nonopera"
-            elif (entry["official_url"] in (ambiguous_urls or set())
-                and entry["official_url"] in verified_urls):
+            elif entry["official_url"] in (ambiguous_urls or set()):
                 # A season page may list several independent compositions.
                 # A published Nabucco must not mark Don Pasquale or a new
                 # commission at the same URL as already catalogued.
+                # Identity-level proof is sufficient even if a separately
+                # generated URL index has not yet caught up in this refresh.
                 now=("already_catalogued" if key in (identity_verified or set())
                      else "needs_review")
             elif entry["official_url"] in verified_urls:
