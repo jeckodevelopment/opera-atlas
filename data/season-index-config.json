@@ -295,6 +295,13 @@
       "url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "padova-verdi-opera-2026",
+      "official_url": "https://padovacultura.padovanet.it/",
+      "url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }
