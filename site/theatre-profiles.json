@@ -662,6 +662,16 @@
       "opening_year": 1878,
       "history": "Il Politeama Ariosto fu inaugurato l’11 maggio 1878 con l’operetta Giroflè-Giroflà di Charles Lecocq, dopo la ricostruzione nell’area del precedente Teatro di Cittadella. Nel 1927 venne dotato del golfo mistico e decorato da Anselmo Govi; un nuovo restauro nel 1981 lo riportò a piena attività. Accoglie oggi prosa, danza e anche produzioni musicali.",
       "source": "https://www.iteatri.re.it/scoprire-il-teatro-ariosto/"
+    },
+    "Bergamo|Teatro Sociale": {
+      "city": "Bergamo",
+      "name": "Teatro Sociale",
+      "address": "Via Bartolomeo Colleoni 4",
+      "description": "In Città Alta, il Teatro Sociale ospita opera e musica in una storica sala all’italiana, parte della rete della Fondazione Teatro Donizetti.",
+      "website": "https://www.teatrodonizetti.it/it/il-teatro-sociale-bergamo/",
+      "opening_year": 1808,
+      "history": "Inaugurato il 26 dicembre 1808 come Teatro della Società, il Teatro Sociale fu progettato da Leopoldo Pollack per la nobiltà bergamasca. Sorge nel cuore di Città Alta, in via Colleoni, e conobbe un lungo periodo di abbandono nel Novecento. Acquisito dal Comune nel 1974, tornò ad accogliere spettacoli dopo il restauro, culminato nella riapertura del 2009.",
+      "source": "https://www.teatrodonizetti.it/it/le-origini-del-teatro-sociale-di-bergamo/"
     }
   }
 }
