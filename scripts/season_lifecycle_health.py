@@ -75,6 +75,7 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
         raise ValueError("every evergreen source requires explicit reusability audit")
     for legacy,successor in fixed_successors.items():
         if (legacy==successor or successor not in plans or
+                legacy.split("-",1)[0]!=successor.split("-",1)[0] or
                 plans[successor]["strategy"] not in
                 {"evergreen_index","verified_rollover"} or
                 (successor in audited and audited[successor]!="dynamic_category")):
