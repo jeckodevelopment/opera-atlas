@@ -786,7 +786,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "content_sha256": "165ae8ddcd93c9d1839f36d7c00300cd1784a42b65ba7aee94cb0eb0abac0484",
-      "checked_at": "2026-11-22T18:27:17+00:00",
+      "checked_at": "2026-11-22T18:34:15+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4184,8 +4184,8 @@
       "candidate_id": "oa-index-943d04f25da8e27e1190",
       "source_key": "lecce-apollo-pinocchio-2026",
       "source_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
-      "content_sha256": "8c16a8bdb7e9d492c8ba4e99a49f5807d1dea87cff61c8f33b8db96983dae228",
-      "checked_at": "2026-11-22T18:27:20+00:00",
+      "content_sha256": "051253ad0fd5880be905de3a73acd87d21eb421b17f797ff27934c28c214263a",
+      "checked_at": "2026-11-22T18:34:21+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4659,7 +4659,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "content_sha256": "2351a654f0db0eac2fd015f6c7402a3944baa2298577d9865deeb5434c86b571",
-      "checked_at": "2026-11-22T18:27:30+00:00",
+      "checked_at": "2026-11-22T18:34:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6320,8 +6320,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "29c642cb4766e55b28d5ef77e16a21b620536d83d1cb2683e6b85995e1faada1",
-      "checked_at": "2026-11-22T18:27:26+00:00",
+      "content_sha256": "8bd5af79a64a35a18467b938473c6b0165e56e8fcd5a3c23534d443b1c1f6bae",
+      "checked_at": "2026-11-22T18:34:27+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
