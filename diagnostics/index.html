@@ -54,8 +54,10 @@ function draw(data){
  const auto=data.automation||{},arows=auto.venues||[];
 
  const normalize=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+ const nameKey=(venue,city)=>normalize(venue).split(" ").filter(x=>!["di","del","della","dei","degli","the"].includes(x)&&x!==normalize(city)).join(" ");
  const byVenue=new Map(venues.map(v=>[normalize(v.venue),v]));
- const combined=arows.map(a=>({...a,rec:byVenue.get(normalize(a.venue))||null}));
+ const byCanonical=new Map(venues.map(v=>[v.city+"|"+nameKey(v.venue,v.city),v]));
+ const combined=arows.map(a=>({...a,rec:byVenue.get(normalize(a.venue))||byCanonical.get(a.city+"|"+nameKey(a.venue,a.city))||null}));
  const assigned=new Set(combined.filter(a=>a.rec).map(a=>normalize(a.rec.venue)));
  for(const rec of venues){if(!assigned.has(normalize(rec.venue)))combined.push({venue:rec.venue,city:rec.city,region:rec.region,status:"not_automated",sources:[],configured_connectors:0,recent_successful_connectors:0,rec})}
  const q=$("venue-filter").value.trim().toLowerCase(),filter=$("venue-status").value;
