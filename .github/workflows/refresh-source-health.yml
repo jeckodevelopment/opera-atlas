@@ -1,0 +1,59 @@
+name: Refresh Opera Atlas source health
+run-name: Source health · ${{ github.event_name }} · ${{ github.ref_name }}
+on:
+  workflow_dispatch:
+  schedule:
+    # Independently refresh diagnostics without waiting for the slower catalog.
+    - cron: '11 */3 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'data/season-index-config.json'
+      - 'scripts/discover_season_indexes.py'
+      - 'scripts/source_automation.py'
+      - '.github/workflows/refresh-source-health.yml'
+permissions:
+  contents: write
+concurrency:
+  # Do not share the slow catalog's opera-atlas-public-feed lock.
+  group: opera-atlas-source-health
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Checkout latest approved source configuration
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check source configuration and diagnostics invariants
+        run: |
+          python -m unittest tests.test_source_automation tests.test_national_season_indexes -v
+      - name: Scan approved official season indexes
+        run: |
+          python -m scripts.discover_season_indexes --allow-network
+          python -m scripts.source_automation
+          python -m scripts.source_automation --check
+      - name: Persist fresh health and review-only candidate links
+        id: checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/season-index-health.json
+          git add data/season-index-candidates.json public/catalog/season-index-candidates.json
+          git add public/catalog/source-automation.json
+          if git diff --cached --quiet; then
+            echo "No changes to source health or candidate links."
+          else
+            git commit -m "data(sources): refresh official source health [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Report latest-source checkpoint result
+        if: steps.checkpoint.outputs.deferred == 'true'
+        run: |
+          echo "::warning::Source-health checkpoint deferred because main changed. The next independent scheduled scan will recompute it from current main."
