@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "savona-giocosa-rolling-opera":("Savona","Teatro Chiabrera"),
     "lecce-provincia-politeama-2026":("Lecce","Teatro Politeama Greco"),
     "lecce-politeama-opera-2026":("Lecce","Teatro Politeama Greco"),
     "rovigo-sociale-opera-2026-27":("Rovigo","Teatro Sociale"),
