@@ -14,7 +14,11 @@ APPROVED_PROVENANCE={
     ("https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
      "Bona Sforza","Zygmunt Krauze"):(
         "https://opera.krakow.pl/spektakle/bona-sforza",
-        "https://opera.krakow.pl/media/spectacle_image/bona-finalny_detail_poster.jpg")
+        "https://opera.krakow.pl/media/spectacle_image/bona-finalny_detail_poster.jpg"),
+    ("https://www.iteatri.re.it/spettacolo/veleno/",
+     "Veleno","Gaia Aloisi"):(
+        "https://teatroregioparma.it/spettacolo/veleno/",
+        "https://teatroregioparma.it/wp-content/uploads/2026/05/TRP-26-BANNER-ALPHA-1080x1080-VELENO.png")
 }
 
 def verified_coproduction_poster(*,source_url:str,title:str,composer:str)->dict|None:
@@ -41,8 +45,18 @@ def verified_coproduction_poster(*,source_url:str,title:str,composer:str)->dict|
             or url.username or url.password or url.query or url.fragment):
             return None
     image=urlsplit(row["image_url"])
-    if (image.hostname!="opera.krakow.pl"
-            or not image.path.startswith("/media/spectacle_image/")
+    # Each approved co-producer has a separate immutable origin and
+    # exact original image, never a generic host-wide image allowlist.
+    source_origin=urlsplit(row["provenance_url"]).hostname
+    allowed_path=(
+        source_origin=="opera.krakow.pl"
+        and image.hostname=="opera.krakow.pl"
+        and image.path.startswith("/media/spectacle_image/")
+        or source_origin=="teatroregioparma.it"
+        and image.hostname=="teatroregioparma.it"
+        and image.path.startswith("/wp-content/uploads/2026/05/")
+    )
+    if (not allowed_path
             or not image.path.endswith((".jpg",".png",".webp"))
             or row.get("kind")!="official_coproduction_poster"
             or not row.get("credit") or not row.get("alt")):
