@@ -70,12 +70,12 @@ VENUE_BY_SOURCE={
 
 
 def normalize_published_work_titles(facts:dict,registry:dict,seed_document:dict)->tuple[dict,dict,int]:
-    """Restore documented display casing without changing immutable work IDs.
+    """Normalize verified opera title AND composer display, preserving identity.
 
-    The exact official production URL and composer must agree with an
-    independently reviewed title in the authority seed registry. Update every
-    staging of the same canonical work so a different theater cannot restore
-    the uppercase spelling on a later refresh. Raw evidence is unchanged.
+    Corrections require an exact official source URL, and the identical
+    title/composer pair after Unicode casefolding. Every staging using that
+    canonical work inherits the reviewed spelling. Never guess title case
+    from the first production or rewrite immutable registry keys and IDs.
     """
     if seed_document.get("schema_version")!=1 or not isinstance(seed_document.get("works"),list):
         raise ValueError("invalid work authority seed registry")
@@ -92,24 +92,26 @@ def normalize_published_work_titles(facts:dict,registry:dict,seed_document:dict)
             key=normalized(product["title"])+"|"+normalized(product["composer"])
             work=registry.get("works",{}).get(key)
             if (work is None or normalized(work.get("title",""))!=normalized(title)
+                    or normalized(work.get("composer",""))!=normalized(composer)
                     or slugify(work["title"])!=slugify(title)):
                 continue
-            # No two approved labels may silently compete for one identity.
-            if key in corrections and corrections[key]!=title:
-                raise ValueError("conflicting reviewed display titles for "+key)
-            corrections[key]=title
+            proposed=(title,composer)
+            if key in corrections and corrections[key]!=proposed:
+                raise ValueError("conflicting reviewed display credits for "+key)
+            corrections[key]=proposed
     updated_facts=copy.deepcopy(facts)
     updated_registry=copy.deepcopy(registry)
     changed=0
-    for key,title in corrections.items():
+    for key,(title,composer) in corrections.items():
         work=updated_registry["works"][key]
-        if work["title"]!=title:
+        if work["title"]!=title or work["composer"]!=composer:
             work["title"]=title
+            work["composer"]=composer
             changed+=1
         for product in updated_facts["productions"]:
-            if (normalized(product["title"])+"|"+normalized(product["composer"])==key
-                    and product["title"]!=title):
+            if normalized(product["title"])+"|"+normalized(product["composer"])==key:
                 product["title"]=title
+                product["composer"]=composer
     return updated_facts,updated_registry,changed
 
 
