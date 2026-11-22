@@ -118,5 +118,6 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
                  r"Gioachino\s+Rossini|Claudio\s+Monteverdi)\s*$",
                  "",raw,flags=re.I).strip("“”\" ")
     if not 2<=len(title)<=150:raise ValueError("Sabbioneta title invalid")
+    if title.isupper():title=title.title()
     title=title[0].upper()+title[1:] if title else title
     return title,next(iter(composers)),"Teatro all'Antica",recite
