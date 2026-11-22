@@ -61,6 +61,25 @@ class IdentityReviewTests(unittest.TestCase):
         self.assertTrue(all(g["possible_canonical_match"] is None
                             for g in report["groups"]))
 
+    def test_diagnostics_exclude_ballets_and_published_mixed_programs(self):
+        evidence={"schema_version":1,"evidence":[
+            candidate("ballet","La bella addormentata",""),
+            candidate("program","A Giacomo Leopardi","Pietro Mascagni",
+                      status="needs_program_review"),
+            candidate("new","L'esecuzione","Salvatore Passantino"),
+        ]}
+        evidence["evidence"][1]["source_key"]="ancona-cavalleria-program-2026"
+        evidence["evidence"][1]["source_url"]="https://example.org/program"
+        states={"schema_version":1,"candidates":[
+            {"id":"ballet","status":"excluded_nonopera"},
+            {"id":"program","status":"already_catalogued"},
+            {"id":"new","status":"needs_review"}]}
+        programs={"programs":[{"source_key":"ancona-cavalleria-program-2026",
+                                "source_url":"https://example.org/program"}]}
+        result=evaluate(evidence,REG,states,programs)
+        self.assertEqual(result["totals"]["unmatched_groups"],1)
+        self.assertEqual(result["groups"][0]["title"],"L'esecuzione")
+
     def test_never_auto_assign_by_title_or_different_composer(self):
         r=evaluate({"schema_version":1,"evidence":[
             candidate("x","Il barbiere di Siviglia","Giovanni Paisiello"),
