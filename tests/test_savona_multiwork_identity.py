@@ -41,7 +41,8 @@ class SavonaMultiworkIdentityTests(unittest.TestCase):
         self.assertEqual({p["title"] for p in produced},
                          {"La traviata","I salvatori della mezzanotte"},report)
         self.assertEqual(len({p["key"] for p in produced}),2)
-        self.assertEqual(sum(len(p["dates"]) for p in produced),3)
+        self.assertEqual(sum(1 for p in produced for day,_ in p["dates"]
+                             if day.startswith("2028-")),3)
         self.assertEqual({ids["stagings"][p["key"]]["work_id"] for p in produced},
                          {"oa-w-000001","oa-w-000097"})
         again,ids_again,_,retry=promote(

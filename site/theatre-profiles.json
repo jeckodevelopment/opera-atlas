@@ -681,6 +681,24 @@
       "website": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
       "history": "Nel 2026 Piazza Goldoni ha ospitato Cavalleria rusticana nell’ambito del Mascagni Festival: la Fondazione Teatro Goldoni indica due rappresentazioni pubbliche il 19 e 20 agosto, oltre a una prova generale il 17 agosto.",
       "source": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/"
+    },
+    "Savona|Teatro Chiabrera": {
+      "city": "Savona",
+      "name": "Teatro Chiabrera",
+      "address": "Piazza Armando Diaz 2, Savona",
+      "description": "Teatro comunale storico di Savona, sede di spettacoli lirici dell’Opera Giocosa e del cartellone cittadino.",
+      "website": "https://teatrochiabrera.it/",
+      "history": "Il Teatro Comunale Gabriello Chiabrera è intitolato al poeta savonese. Si trova in Piazza Armando Diaz ed è una delle sedi della stagione lirica del Teatro dell’Opera Giocosa.",
+      "source": "https://www.comune.savona.it/it/vivere/teatro-gabriello-chiabrera"
+    },
+    "Alghero|Forte della Maddalena": {
+      "city": "Alghero",
+      "name": "Forte della Maddalena",
+      "address": "Forte della Maddalena, Alghero",
+      "description": "Spazio storico all’aperto di Alghero utilizzato per rappresentazioni liriche nell’ambito dell’Alghero Festival.",
+      "website": "https://www.marialisadecarolis.it/",
+      "history": "Nel 2026 il Forte della Maddalena ha ospitato le rappresentazioni di L’elisir d’amore e Pagliacci organizzate dall’Ente Concerti de Carolis per l’Alghero Festival.",
+      "source": "https://www.marialisadecarolis.it/notizia.aspx?id=1182"
     }
   }
 }
