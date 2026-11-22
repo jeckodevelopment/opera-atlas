@@ -6,7 +6,7 @@ RewriteBase /atlas/
 RewriteRule ^bologna/teatro-comunale-nouveau/?$ /atlas/bologna/teatro-comunale-di-bologna/ [R=301,L,NE]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(opere/[a-z0-9-]+|produzioni/oa-g-[a-z0-9-]+|[a-z0-9-]+/[a-z0-9-]+(/[a-z0-9-]+)?)/?$ detail.html [L]
+RewriteRule ^(opere/[a-z0-9-]+|programmi/oa-p-[a-z0-9-]+|produzioni/oa-g-[a-z0-9-]+|[a-z0-9-]+/[a-z0-9-]+(/[a-z0-9-]+)?)/?$ detail.html [L]
 
 # Privacy by default: do not disclose browsing paths to image/data hosts.
 <IfModule mod_headers.c>
