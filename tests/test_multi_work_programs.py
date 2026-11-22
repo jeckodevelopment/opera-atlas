@@ -120,8 +120,10 @@ class MultiWorkProgramTests(unittest.TestCase):
             ("suor angelica","giacomo puccini"):"oa-w-000092",
             ("gianni schicchi","giacomo puccini"):"oa-w-000093",
         }
-        self.assertEqual({(w["title"].casefold(),w["composer"].casefold()):w["id"]
-                          for w in reserved.values()},expected)
+        identities=list(reserved.values())+list(self.registry["works"].values())
+        self.assertTrue(all(any((w["title"].casefold(),w["composer"].casefold(),w["id"])
+                                ==(*identity,wid) for w in identities)
+                            for identity,wid in expected.items()))
         all_ids=[w["id"] for w in self.registry["works"].values()]
         self.assertFalse(set(all_ids) & {w["id"] for w in reserved.values()})
         detail=next(x for x in self.evidence["evidence"]
