@@ -176,6 +176,12 @@ function render(){
    coverage.append(node("div","Successore: "+history.successor_source_key,"muted"));
   }else if(history.strategy==="legacy_year_bound")coverage.append(chip("warn","Ancora senza successore"));
   else if(history.strategy==="verified_rollover")coverage.append(chip("ok","Rollover implementato"));
+  else if(history.evergreen_reusability==="dynamic_category")
+   coverage.append(chip("unknown","Categoria estensibile · futuro da verificare"));
+  else if(history.evergreen_reusability==="fixed_production_set")
+   coverage.append(chip("warn","Titoli fissati · non pluriennale"));
+  else if(history.evergreen_reusability==="historical_notice")
+   coverage.append(chip("warn","Documento storico · non pluriennale"));
   else coverage.append(chip("unknown","URL senza anno · da verificare"));
   const state=x.status==="success"?"ok":"bad";const t=cell(tr,"");
   t.append(chip(state,x.status||"Non verificato"));cell(tr,x.links??"—");cell(tr,fmt(x.last_attempt_at));
@@ -186,7 +192,7 @@ function render(){
    ?"Prossime stagioni: "+(lifecycle.future_seasons_verified??"—")+" verificate · "
    +(lifecycle.legacy_still_uncovered??"—")+" indici ancora senza successore · "
    +(lifecycle.legacy_covered_by_successor??"—")+" indici storici già coperti da un successore implementato · "
-   +(lifecycle.legacy_year_bound??"—")+" indici legacy totali · verifica "+fmt(lifecycle.checked_at)
+   +(lifecycle.legacy_year_bound??"—")+" indici legacy totali · "+(lifecycle.evergreen_dynamic_category??"—")+" categorie senza anno estensibili · "+(lifecycle.evergreen_fixed_production_set??"—")+" fonti a titoli fissati · "+(lifecycle.evergreen_historical_notice??"—")+" documenti storici · verifica "+fmt(lifecycle.checked_at)
    :"Dati sulla copertura delle stagioni successive non disponibili.";
  const attempts=items.flatMap(x=>x.sources||[]).map(x=>dateMs(x.last_attempt_at)).filter(x=>x!==null),latest=attempts.length?Math.max(...attempts):null;
  const badge=$("freshness");badge.className="status "+(latest===null?"unknown":Date.now()-latest>48*3600000?"bad":"ok");
