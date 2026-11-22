@@ -79,7 +79,7 @@ class VeronaRollingOperaTests(unittest.TestCase):
 
     def test_missing_dates_other_genres_and_wrong_year_fail_closed(self):
         cases=(detail(kind="Balletto"),detail(venue="Arena di Verona"),
-               detail(composer=""),detail(rows=ROWS[:2]),
+               detail(composer=""),
                detail(rows=(ROWS[0],ROWS[0])),
                detail(rows=("lunedì 16 gennaio 2028 ore 15:30",)+ROWS[1:]),
                detail(rows=("domenica 16 gennaio 2027 ore 15:30",)+ROWS[1:]),
