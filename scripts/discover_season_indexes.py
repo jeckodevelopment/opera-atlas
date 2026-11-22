@@ -345,8 +345,10 @@ def eligible(key:str,url:str)->bool:
         from opera_atlas.rovigo_regional_program import URL
         return url==URL
     if key=="rovigo-sociale-opera-2026-27":
-        return (parsed.scheme=="https" and parsed.hostname=="www.comune.rovigo.it"
-                and path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027")
+        from opera_atlas.rovigo_traviata_official import URL as official_detail
+        return (url==official_detail
+                or (parsed.scheme=="https" and parsed.hostname=="www.comune.rovigo.it"
+                    and path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"))
     if key=="padova-verdi-opera-2026":
         return (parsed.scheme=="https" and parsed.hostname=="padovacultura.padovanet.it"
                 and path=="/it/attivita-culturali/stagione-lirica-di-padova-2026")
@@ -579,6 +581,10 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         # evidence of any dated performances inside the linked PDF.
         return [index_url]
     if key=="rovigo-sociale-opera-2026-27":
+        from opera_atlas.rovigo_traviata_official import URL as official_detail,parse_official_traviata
+        if index_url==official_detail:
+            parse_official_traviata(html,url=index_url)
+            return [index_url]
         from opera_atlas.rovigo_opera_parser import identify_season
         identify_season(html,url=index_url)
         return [index_url]
@@ -972,6 +978,22 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                             urls=[]
                         else:
                             raise
+                    elif item["key"]=="rovigo-sociale-opera-2026-27":
+                        # The legacy slider can lose its theatre identity.
+                        # A separate exact first-party event document provides
+                        # dated ticket evidence through the same robots gate.
+                        from opera_atlas.rovigo_traviata_official import URL as official_detail
+                        try:
+                            alternate=fetcher(db,source_id=row["id"],
+                                              url=official_detail,network_enabled=True)
+                            alt_urls=extract(item["key"],official_detail,alternate.html,1)
+                        except (AccessDenied,FetchUnavailable,ValueError):
+                            raise exc
+                        page=alternate
+                        index_url=official_detail
+                        min_links=1
+                        urls=alt_urls
+                        municipal_fallback=True
                     else:
                         raise
             except (AccessDenied,FetchUnavailable,ValueError) as exc:
@@ -1025,7 +1047,9 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
             page_health={}
             if municipal_fallback:
                 page_health={"pages_checked":1,"pagination_complete":True,
-                             "fallback_official_source":"comune.spoleto.pg.it"}
+                             "fallback_official_source":(
+                                 "comune.rovigo.it" if item["key"]=="rovigo-sociale-opera-2026-27"
+                                 else "comune.spoleto.pg.it")}
             elif primary_unavailable:
                 page_health={"pages_checked":1,"pagination_complete":False,
                              "diagnostic":"primary_official_html_unavailable"}

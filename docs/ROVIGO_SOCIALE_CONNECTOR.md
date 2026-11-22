@@ -114,3 +114,24 @@ Test: `python -m unittest tests.test_rovigo_opera_source -v`.
 Le recite dell'intermezzo *Pimpinone* risultano annunciate al **Ridotto del Teatro Sociale di Rovigo** (26 e 28 novembre 2026), una sede da distinguere dalla sala principale. Il parser comunale blocca dunque l'attribuzione automatica alla sede generica `Teatro Sociale` quando il blocco dell'opera contiene il termine `Ridotto`; le altre opere continuano a essere processate. La produzione potrà essere pubblicata soltanto con una corrispondenza verificata tra l'evento ufficiale e l'identità canonica della sede Ridotto. Gli orari riportati da terze parti rimangono in revisione finché non sono acquisiti dalla fonte ufficiale.
 
 Test: `python -m unittest tests.test_rovigo_opera_source -v`.
+
+## Fonte ufficiale per recite: La traviata (2027)
+
+Il Comune pubblica una pagina-evento puntuale nel proprio endpoint
+istituzionale `/myportal/C_H620/api/content/share/social/6aa10ea4c4e2c4008be2a957`.
+Il parser `rovigo_traviata_official.py` conferma titolo e compositore,
+sede, giorno della settimana, data e orario esatti. La scheda distingue
+la rappresentazione **TeatroRagazzi** di giovedì 21 gennaio 2027 dalle
+recite ordinarie **venerdì 22 gennaio 2027 alle 20:30** e
+**domenica 24 gennaio 2027 alle 16:00**. Solo queste due recite
+vengono inoltrate alla riconciliazione canonica ordinaria.
+
+Se lo slider storico della stagione non identifica più correttamente
+il Teatro Sociale, la scansione prova **una sola** URL-evento fissa del
+Comune, attraverso lo stesso controllo robots e l'origin già approvato.
+Il fallback non autorizza URL arbitrarie, non legge dati di biglietterie
+terze e non certifica il resto del cartellone. La prima scansione con
+fallback riuscito dovrà risultare nella diagnostica con
+`fallback_official_source=comune.rovigo.it`.
+
+Test: `python -m unittest tests.test_rovigo_official_traviata_fallback -v`.
