@@ -84,3 +84,24 @@ stagionale **dopo** il rollover rimane necessaria per le nuove edizioni
 ufficialmente adottate. L'indicatore `operational` richiede una scansione
 completata con successo; non certifica copertura delle recite né
 pubblicazione sul sito.
+
+## Refresh autonomo delle fonti ufficiali
+
+Il workflow `.github/workflows/refresh-source-health.yml` esegue il
+controllo degli indici stagionali in modo **indipendente** dal refresh
+nazionale più lento: su richiesta manuale, ogni tre ore e quando vengono
+modificati i connettori o la relativa configurazione. Usa un gruppo di
+concorrenza proprio, così l'analisi di candidate e arricchimenti editoriali
+non può impedire di osservare il tentativo di verifica delle fonti.
+
+Controlla tutte le source-key configurate con i medesimi controlli
+robots.txt e le allowlist del catalogatore. Pubblica esclusivamente
+`data/season-index-health.json`, le URL di candidate in revisione e
+`public/catalog/source-automation.json`, senza promuovere opere o recite.
+I dati vengono condivisi su GitHub mediante `safe_push_catalog`, mai con
+FTP, force push o sovrascritture di dati più recenti.
+
+Se un altro job modifica `main`, il checkpoint viene differito senza
+sovrascrivere i cambiamenti; la prossima scansione autonoma lo ricalcola.
+`operational` richiede una scansione recente conclusa con successo,
+non equivale a copertura esaustiva o pubblicazione di recite.
