@@ -948,6 +948,16 @@
         "https://www.giornaledellamusica.it/recensioni/jesi-alla-riscoperta-di-giuseppe-balducci",
         "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
       ]
+    },
+    "dove-nasce-il-melograno": {
+      "librettist": "Pietro Utili",
+      "premiere_year": 2027,
+      "premiere_venue": "Teatro Coccia",
+      "premiere_city": "Novara",
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+        "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/Pieghevole_Stagione2027.pdf"
+      ]
     }
   },
   "works_by_id": {

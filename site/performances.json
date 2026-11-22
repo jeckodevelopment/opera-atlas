@@ -10720,6 +10720,24 @@
       ]
     },
     {
+      "id": "curated:auto-1bf92e353f6745bc:2027-04-30",
+      "starts_at": "2027-04-30T20:00:00+02:00",
+      "local_date": "2027-04-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dove nasce il melograno",
+      "composer": "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
+      ]
+    },
+    {
       "id": "curated:auto-92b69a8ac1040b05:2027-04-30",
       "starts_at": "2027-04-30T20:00:00+02:00",
       "local_date": "2027-04-30",

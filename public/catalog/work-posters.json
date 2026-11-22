@@ -912,6 +912,14 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di IL NOCE DI BENEVENTO",
       "kind": "official_production_image"
+    },
+    "oa-w-000103": {
+      "work_id": "oa-w-000103",
+      "image_url": "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/1920x950_DOVE_NASCE_IL_MELOGRANO.png",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di DOVE NASCE IL MELOGRANO",
+      "kind": "official_production_image"
     }
   }
 }

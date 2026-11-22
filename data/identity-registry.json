@@ -645,6 +645,13 @@
       "title": "Il noce di Benevento",
       "composer": "Giuseppe Balducci",
       "authority_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
+    },
+    "dove nasce il melograno|arturo dal bianco, giuseppe guerrera, massimiliano piscitello": {
+      "id": "oa-w-000103",
+      "slug": "dove-nasce-il-melograno",
+      "title": "Dove nasce il melograno",
+      "composer": "Arturo Dal Bianco, Giuseppe Guerrera, Massimiliano Piscitello",
+      "authority_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
     }
   },
   "venues": {
@@ -3027,6 +3034,14 @@
       "venue_id": "oa-v-000056",
       "slug": "il-noce-di-benevento",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
+      "season": "2027"
+    },
+    "auto-1bf92e353f6745bc": {
+      "id": "oa-s-000248",
+      "work_id": "oa-w-000103",
+      "venue_id": "oa-v-000011",
+      "slug": "dove-nasce-il-melograno",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "season": "2027"
     }
   },
@@ -8694,6 +8709,12 @@
       "staging_id": "oa-s-000247",
       "original_date": "2027-06-18",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
+    },
+    "auto-1bf92e353f6745bc|2027-04-30": {
+      "id": "oa-r-000966",
+      "staging_id": "oa-s-000248",
+      "original_date": "2027-04-30",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
     }
   },
   "reserved_works": {
