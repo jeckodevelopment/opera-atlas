@@ -57,6 +57,9 @@ class SeasonRolloverTests(unittest.TestCase):
 
     def test_complete_future_indexes_roll_forward_without_manual_edit(self):
         samples={
+            "martina-valle-itria-2026":
+                ''.join(f'<a href="/spettacolo/opera-futura-{n}/2027-07-15">'
+                        f'Opera</a>' for n in range(2)),
             "trapani-luglio-musicale-2026":
                 ''.join(f'<a href="/it/luglio-musicale-stagioni/'
                         f'stagione-2027/opera-futura-{n}/">Opera</a>'
@@ -103,7 +106,7 @@ class SeasonRolloverTests(unittest.TestCase):
             return FetchResult(url,html,"a"*64,len(html))
         result,health=roll(self.config,today=date(2027,6,1),
                            network_enabled=True,fetcher=fetch)
-        self.assertEqual(sum(x["status"]=="rolled" for x in health),10)
+        self.assertEqual(sum(x["status"]=="rolled" for x in health),11)
         self.assertEqual(len(result["sources"]),len(self.config["sources"]))
         validate_config(result)
         scala=next(x for x in result["sources"] if x["key"]=="scala-season-2026-27")
@@ -117,7 +120,7 @@ class SeasonRolloverTests(unittest.TestCase):
         result,status=roll(self.config,today=date(2027,6,1),
                            network_enabled=True,fetcher=deny)
         self.assertEqual(result,self.config)
-        self.assertEqual(len(status),10)
+        self.assertEqual(len(status),11)
         self.assertTrue(all(x["status"]=="kept_last_known_good" for x in status))
         def incomplete(db,*,source_id,url,network_enabled):
             html='<a href="/event/just-one/">One</a>'
