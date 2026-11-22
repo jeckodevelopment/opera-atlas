@@ -1,0 +1,327 @@
+{
+  "checked_at": "2026-11-22T01:39:23+00:00",
+  "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-885beacc517cb454d09f",
+        "oa-index-c7a26f1f7611da36ad2a"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Gioachino Rossini",
+      "exact_title_matches": [],
+      "recite_observed": 6,
+      "sources": [
+        {
+          "source_key": "salerno-verdi-opera-2026",
+          "url": null
+        },
+        {
+          "source_key": "filarmonico-verona-opera-2027",
+          "url": null
+        }
+      ],
+      "title": "Il signor Bruschino"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-dd11dbb7276e10032076"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Georges Bizet (1838–1875)",
+      "exact_title_matches": [],
+      "recite_observed": 7,
+      "sources": [
+        {
+          "source_key": "bologna-comunale-opera-2027",
+          "url": null
+        }
+      ],
+      "title": "Carmen"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-1e15e89ae5b2a2ec45f9"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Giacomo Puccini Opera",
+      "exact_title_matches": [],
+      "recite_observed": 6,
+      "sources": [
+        {
+          "source_key": "verdi-trieste-season-2026-27",
+          "url": null
+        }
+      ],
+      "title": "La Bohème"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-a9e0eff95e96e71fd958"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Gaetano Donizetti Melodramma",
+      "exact_title_matches": [],
+      "recite_observed": 6,
+      "sources": [
+        {
+          "source_key": "verdi-trieste-season-2026-27",
+          "url": null
+        }
+      ],
+      "title": "L’elisir d’amore"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-f3cef88d8ea3109475df"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Giacomo Puccini (1858–1924)",
+      "exact_title_matches": [],
+      "recite_observed": 6,
+      "sources": [
+        {
+          "source_key": "bologna-comunale-opera-2027",
+          "url": null
+        }
+      ],
+      "title": "Madama Butterfly"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-2ab0ba26f1806086b52a"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Vincenzo Bellini Tragedia",
+      "exact_title_matches": [],
+      "recite_observed": 5,
+      "sources": [
+        {
+          "source_key": "verdi-trieste-season-2026-27",
+          "url": null
+        }
+      ],
+      "title": "Norma"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-129b5be3f35d5762f8bb"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Giuseppe Verdi Opera",
+      "exact_title_matches": [],
+      "recite_observed": 4,
+      "sources": [
+        {
+          "source_key": "verdi-trieste-season-2026-27",
+          "url": null
+        }
+      ],
+      "title": "Aida"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-cf244270ba1aec90c350"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giuseppe Verdi",
+      "exact_title_matches": [],
+      "recite_observed": 4,
+      "sources": [
+        {
+          "source_key": "filarmonico-verona-opera-2027",
+          "url": null
+        }
+      ],
+      "title": "Alzira"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-991f446bf3f27044b019"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Alberto Franchetti",
+      "exact_title_matches": [],
+      "recite_observed": 4,
+      "sources": [
+        {
+          "source_key": "filarmonico-verona-opera-2027",
+          "url": null
+        }
+      ],
+      "title": "Cristoforo Colombo"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-de1f52ee525c73d565a6"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Wolfgang Amadeus Mozart",
+      "exact_title_matches": [],
+      "recite_observed": 4,
+      "sources": [
+        {
+          "source_key": "filarmonico-verona-opera-2027",
+          "url": null
+        }
+      ],
+      "title": "Il ratto dal serraglio"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-ffbe120c526a352bc59c"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Franz Lehár",
+      "exact_title_matches": [],
+      "recite_observed": 3,
+      "sources": [
+        {
+          "source_key": "salerno-verdi-opera-2026",
+          "url": null
+        }
+      ],
+      "title": "La vedova allegra"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-dd282b89dc6ab9f24a20"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Pietro Mascagni",
+      "exact_title_matches": [],
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "ancona-cavalleria-program-2026",
+          "url": null
+        }
+      ],
+      "title": "A Giacomo Leopardi"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-addcc48a211cf5aea678"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Gaetano Donizetti",
+      "exact_title_matches": [],
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "jesi-don-pasquale-opera-2026",
+          "url": null
+        }
+      ],
+      "title": "DON PASQUALE"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-4277f285769ff880bef4"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giacomo Puccini",
+      "exact_title_matches": [],
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "jesi-trittico-opera-2026",
+          "url": null
+        }
+      ],
+      "title": "Gianni Schicchi"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-4277f285769ff880bef4"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giacomo Puccini",
+      "exact_title_matches": [],
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "jesi-trittico-opera-2026",
+          "url": null
+        }
+      ],
+      "title": "Il tabarro"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-7b0a1e061133c0b5970e"
+      ],
+      "category": "composer_credit_to_review",
+      "composer": "Salvatore Passantino",
+      "exact_title_matches": [],
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "jesi-esecuzione-opera-2026",
+          "url": null
+        }
+      ],
+      "title": "L'ESECUZIONE"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-3b54fb1b4f9d0adac29f"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Gioachino Rossini",
+      "exact_title_matches": [],
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "pisa-verdi-opera-2026-27",
+          "url": null
+        }
+      ],
+      "title": "L'occasione fa il ladro"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-4277f285769ff880bef4"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Giacomo Puccini",
+      "exact_title_matches": [],
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "jesi-trittico-opera-2026",
+          "url": null
+        }
+      ],
+      "title": "Suor Angelica"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-0a7e4f31ff7370ffc325"
+      ],
+      "category": "missing_composer",
+      "composer": null,
+      "exact_title_matches": [],
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "bellini-catania-opera-2026-27",
+          "url": null
+        }
+      ],
+      "title": "La bella addormentata"
+    }
+  ],
+  "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
+  "schema_version": 1,
+  "source": "candidate-detail-evidence",
+  "totals": {
+    "candidates_checked": 146,
+    "candidates_without_facts": 0,
+    "facts_examined": 630,
+    "facts_resolved": 560,
+    "translated_facts_resolved": 4,
+    "unmatched_facts": 70,
+    "unmatched_groups": 19
+  },
+  "truncated": false
+}
