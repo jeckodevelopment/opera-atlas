@@ -23,7 +23,7 @@
       "verification": "legacy_baseline_2026_11_22"
     },
     "carlo-felice-season-2026-27": {
-      "strategy": "legacy_year_bound",
+      "strategy": "verified_rollover",
       "verification": "legacy_baseline_2026_11_22"
     },
     "donizetti-opera-2026": {
