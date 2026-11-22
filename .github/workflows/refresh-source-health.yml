@@ -20,6 +20,7 @@ on:
       - 'opera_atlas/napoli_san_carlo.py'
       - 'opera_atlas/mantova_sociale_opera.py'
       - 'opera_atlas/cosenza_rendano_opera.py'
+      - 'opera_atlas/vicenza_olimpico_opera.py'
       - 'opera_atlas/pesaro_rof.py'
       - 'opera_atlas/martina_valle_itria.py'
       - 'opera_atlas/trapani_luglio_opera.py'
