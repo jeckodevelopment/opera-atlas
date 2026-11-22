@@ -428,7 +428,6 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
     elif source_key=="modena-teatro-opera-2026-27":
         from opera_atlas.modena_teatro_parser import parse_detail as modena_detail
         heading,credit,venue,raw=modena_detail(html,url=url)
-        from opera_atlas.work_identity import resolve_work
         work=resolve_work(registry,heading,credit)
         if work is None:return []
     elif source_key=="modena-opera-2026-27":
