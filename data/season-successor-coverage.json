@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "description": "Explicit historical index successor coverage. Implementation only, not live evidence of future-season availability or full performance publication. Historical index remains active and unchanged.",
+  "mappings": [
+    {
+      "legacy_source_key": "ancona-cavalleria-program-2026",
+      "successor_source_key": "ancona-opera-season-2027"
+    },
+    {
+      "legacy_source_key": "ancona-elisir-opera-2026",
+      "successor_source_key": "ancona-opera-season-2027"
+    },
+    {
+      "legacy_source_key": "donizetti-opera-2026",
+      "successor_source_key": "donizetti-opera-2027"
+    },
+    {
+      "legacy_source_key": "ferrara-barbiere-opera-2026-27",
+      "successor_source_key": "ferrara-season-opera-2027-28"
+    },
+    {
+      "legacy_source_key": "ferrara-boccanegra-opera-2026-27",
+      "successor_source_key": "ferrara-season-opera-2027-28"
+    },
+    {
+      "legacy_source_key": "ferrara-clemenza-opera-2026-27",
+      "successor_source_key": "ferrara-season-opera-2027-28"
+    },
+    {
+      "legacy_source_key": "ferrara-dido-opera-2026-27",
+      "successor_source_key": "ferrara-season-opera-2027-28"
+    },
+    {
+      "legacy_source_key": "ferrara-macbeth-opera-2026-27",
+      "successor_source_key": "ferrara-season-opera-2027-28"
+    },
+    {
+      "legacy_source_key": "jesi-don-pasquale-opera-2026",
+      "successor_source_key": "jesi-opera-season-2027"
+    },
+    {
+      "legacy_source_key": "jesi-esecuzione-opera-2026",
+      "successor_source_key": "jesi-opera-season-2027"
+    },
+    {
+      "legacy_source_key": "jesi-nabucco-opera-2026",
+      "successor_source_key": "jesi-opera-season-2027"
+    },
+    {
+      "legacy_source_key": "jesi-trittico-opera-2026",
+      "successor_source_key": "jesi-opera-season-2027"
+    },
+    {
+      "legacy_source_key": "petruzzelli-opera-2026",
+      "successor_source_key": "petruzzelli-opera-2027"
+    }
+  ]
+}

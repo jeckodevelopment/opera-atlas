@@ -56,9 +56,48 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
         self.assertEqual(report["total_indexes"],len(self.config["sources"]))
         self.assertEqual({row["source_key"] for row in report["sources"]},
                          {item["key"] for item in self.config["sources"]})
+        self.assertEqual(report["legacy_still_uncovered"]+report["legacy_covered_by_successor"],report["legacy_year_bound"])
         self.assertEqual(report["verified_rollover"]+
                          report["evergreen_index_unverified"]+
                          report["legacy_year_bound"],report["total_indexes"])
+
+    def test_legacy_successors_are_explicit_and_do_not_fake_live_coverage(self):
+        result=build(self.config,self.policy,{"sources":[]},{"outcomes":[]})
+        rows={x["source_key"]:x for x in result["sources"]}
+        self.assertEqual(result["legacy_year_bound"],19)
+        self.assertEqual(result["legacy_covered_by_successor"],13)
+        self.assertEqual(result["legacy_still_uncovered"],6)
+        for key in ("ferrara-macbeth-opera-2026-27",
+                    "ferrara-boccanegra-opera-2026-27",
+                    "jesi-trittico-opera-2026",
+                    "ancona-elisir-opera-2026",
+                    "donizetti-opera-2026",
+                    "petruzzelli-opera-2026"):
+            self.assertTrue(rows[key]["legacy_covered_by_successor"])
+            self.assertTrue(rows[key]["successor_source_key"])
+            self.assertFalse(rows[key]["future_season_verified"])
+        self.assertFalse(rows["modena-opera-2026-27"]["legacy_covered_by_successor"])
+        self.assertIsNone(rows["modena-opera-2026-27"]["successor_source_key"])
+
+    def test_invalid_successor_mappings_fail_closed(self):
+        from scripts.season_lifecycle_health import SUCCESSORS
+        good=json.loads(SUCCESSORS.read_text(encoding="utf-8"))
+        for modification in ("duplicate","missing","nonrolling","nonlegacy"):
+            altered=copy.deepcopy(good)
+            item=altered["mappings"][0].copy()
+            if modification=="duplicate":
+                altered["mappings"].append(item)
+            elif modification=="missing":
+                altered["mappings"].append({"legacy_source_key":"missing-key",
+                                             "successor_source_key":item["successor_source_key"]})
+            elif modification=="nonrolling":
+                altered["mappings"].append({"legacy_source_key":"modena-opera-2026-27",
+                                             "successor_source_key":"modena-opera-2026-27"})
+            else:
+                altered["mappings"].append({"legacy_source_key":"scala-season-2026-27",
+                                             "successor_source_key":item["successor_source_key"]})
+            with self.subTest(modification=modification),self.assertRaises(ValueError):
+                build(self.config,self.policy,{"sources":[]},{"outcomes":[]},altered)
 
     def test_policy_incompleteness_fails_closed(self):
         policy=copy.deepcopy(self.policy)
