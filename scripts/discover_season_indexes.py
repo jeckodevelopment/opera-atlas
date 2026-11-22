@@ -291,6 +291,11 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="lecce-politeama-opera-2026":
+        return (parsed.scheme=="https" and parsed.hostname=="www.politeamagreco.it"
+                and parsed.path=="/scheda.asp" and parsed.query in {"id=1147","id=1148","id=1149"}
+                and not parsed.fragment and not parsed.username and not parsed.password
+                and parsed.port is None)
     if parsed.query or parsed.fragment or parsed.username or parsed.password or parsed.port is not None:
         return False
     path=parsed.path.lower().rstrip("/")
@@ -441,7 +446,7 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         parsed=urlsplit(url)
         if parsed.scheme!="https" or parsed.hostname!=hostname or parsed.username or parsed.password or parsed.port is not None:
             continue
-        if parsed.query or parsed.fragment:
+        if (parsed.query and key!="lecce-politeama-opera-2026") or parsed.fragment:
             continue
         if eligible(key,url):
             result.add(url)
@@ -453,6 +458,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "lecce-politeama-opera-2026":("www.politeamagreco.it","/programmazione.asp"),
         "rovigo-sociale-opera-2026-27":("www.comune.rovigo.it","/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"),
         "padova-verdi-opera-2026":("padovacultura.padovanet.it","/it/attivita-culturali/stagione-lirica-di-padova-2026"),
         "treviso-del-monaco-opera-2026-27":("risorse.teatrostabileveneto.it","/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"),
@@ -538,6 +544,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="lecce-politeama-opera-2026":
+            valid_season=index.path=="/programmazione.asp" and not index.query
         elif key=="rovigo-sociale-opera-2026-27":
             valid_season=index.path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027" and not index.query
         elif key=="padova-verdi-opera-2026":
