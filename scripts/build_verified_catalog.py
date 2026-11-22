@@ -82,7 +82,15 @@ def validate_auto_sources(urls: list[str]) -> set[str]:
         if not isinstance(url,str) or not url.startswith("https://"):
             raise ValueError("invalid automatic official URL")
         parsed=urlsplit(url)
-        if (parsed.query or parsed.fragment or parsed.username or parsed.password
+        # Sassari's three approved opera pages use stable ?id=NNN URLs.
+        # A general query ban incorrectly rejected them *after* their
+        # source adapter had already verified exact title, clocks and venue.
+        permitted_query=(
+            parsed.query and any(x["key"]=="sassari-de-carolis-opera-2026"
+                                 and parsed.hostname==urlsplit(x["official_url"]).hostname
+                                 and eligible(x["key"],url) for x in sources))
+        if ((parsed.query and not permitted_query)
+            or parsed.fragment or parsed.username or parsed.password
             or parsed.port is not None or not any(
                 parsed.hostname==urlsplit(x["official_url"]).hostname
                 and eligible(x["key"],url) for x in sources)):
