@@ -31,7 +31,8 @@ def parse_detail(html:str,*,url:str):
     if not match or match.group(1) not in WORKS:
         raise ValueError("unapproved Filarmonico 2027 opera")
     title,composer=WORKS[match.group(1)]
-    text=clean(html)
+    # H4 date headings are not separated by the generic visible-text parser.
+    text=clean(re.sub(r"(?i)</h[4-6]>", " </h4> ", html))
     # The explicit Musica credit is part of the unique work detail.
     # Avoid composer guesses from page headings or related-opera footers.
     evidence=re.search(
@@ -48,7 +49,9 @@ def parse_detail(html:str,*,url:str):
     if not begin:
         raise ValueError("official specific-show schedule not found")
     tail=after[begin.end():]
-    end=re.search(r"(?i)\bCast\b",tail)
+    # "Mostra il cast" occurs on every ticket. Only the distinct Cast
+    # section, immediately followed by production credits, ends the panel.
+    end=re.search(r"(?i)\bCast\s+Regia\b",tail)
     if not end:
         raise ValueError("unbounded official specific-show schedule")
     block=tail[:end.start()]
