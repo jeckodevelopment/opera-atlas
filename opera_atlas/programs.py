@@ -102,7 +102,8 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
             raise ValueError("official program heading contradicts component credits")
     else:
         parts=credited_components(heading)
-    works=list(registry.get("works",{}).values())
+    works=(list(registry.get("works",{}).values())+
+           list(registry.get("reserved_works",{}).values()))
     for part in parts:
         found=[w for w in works if normalized(w.get("title",""))==normalized(part["title"])
                and normalized(w.get("composer",""))==normalized(part["composer"])]
