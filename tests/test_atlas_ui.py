@@ -69,6 +69,17 @@ class AtlasInterfaceTests(unittest.TestCase):
             self.assertTrue(festival["official_url"].startswith("https://"))
             self.assertTrue(set(festival["staging_ids"]).issubset(ids))
 
+    def test_donizetti_festival_links_canonical_stagings_and_both_venues(self):
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        festivals = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))["festivals"]
+        festival = next(f for f in festivals if f["id"] == "donizetti-opera-2026")
+        linked = [s for s in registry["stagings"].values() if s["id"] in festival["staging_ids"]]
+        self.assertEqual(len(linked), 3)
+        self.assertEqual(set(festival["staging_ids"]), {"oa-s-000104", "oa-s-000172", "oa-s-000173"})
+        self.assertEqual({s["venue_id"] for s in linked}, {"oa-v-000012", "oa-v-000037"})
+        from scripts.publish_catalog_v2 import sync_festival_index
+        sync_festival_index(registry, check=True)
+
     def test_shared_production_ids_preserve_work_and_venue_specific_stagings(self):
         manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
         path = ROOT / "public/catalog/v2" / manifest["files"]["stagings"]["path"]
