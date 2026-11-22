@@ -603,6 +603,13 @@
       "url": "https://www.fondazione-taormina.it/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/",
+      "url": "https://www.inprimafila.net/index.php/eventi",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }
