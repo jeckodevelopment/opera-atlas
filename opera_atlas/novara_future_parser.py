@@ -122,7 +122,7 @@ def parse_detail(html:str,*,url:str):
     # Read the complete first-party composer line, stopping at a new
     # production credit instead of silently keeping only the first author.
     credit=re.search(
-        r"(?is)\bMusica\s+di\s+(.*?)\s+"
+        r"(?is)\bMusica\s+di\s+(.*?)"
         r"(?=Libretto\b|Trascrizione\b|Drammaturgia\b|Cast\b|"
         r"Prima\s+rappresentazione\b|Direttore\b|Regia\b|"
         r"Scene\b|Produzione\b)",credit_section)
