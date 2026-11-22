@@ -717,6 +717,24 @@
           "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
         ]
       }
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+      "title": "I salvatori della mezzanotte",
+      "composer": "Daniele Furlati",
+      "synopsis": "In un presepe che prende vita, un pericolo minaccia il Bambino appena nato. Figure e creature del racconto natalizio si mettono in cammino per proteggerlo, fra fiaba, mistero e solidarietà.",
+      "history": {
+        "librettist": "Bruno Tognolini",
+        "premiere_year": 2023,
+        "premiere_date": "2023-12-17",
+        "premiere_venue": "Teatro Comunale Pavarotti-Freni",
+        "premiere_city": "Modena",
+        "sources": [
+          "https://www.teatrocomunalemodena.it/wp-content/uploads/2023/12/Programma-di-sala_I-salvatori-della-mezzanotte.pdf",
+          "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
+        ]
+      }
     }
   ]
 }
