@@ -43,6 +43,15 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn("<th>Copertura stagioni future</th>",text)
         self.assertIn('<details class="accordion">',text)
 
+    def test_evergreen_scope_is_not_confused_with_future_verified(self):
+        text=PAGE.read_text(encoding="utf-8")
+        self.assertIn("evergreen_dynamic_category",text)
+        self.assertIn("evergreen_fixed_production_set",text)
+        self.assertIn("evergreen_historical_notice",text)
+        self.assertIn("Titoli fissati · non pluriennale",text)
+        self.assertIn("Documento storico · non pluriennale",text)
+        self.assertIn("futuro da verificare",text)
+
     def test_future_season_readiness_is_not_mislabeled_complete(self):
         text = PAGE.read_text(encoding="utf-8")
         self.assertIn('if(["lifecycle","catalogation","evidence","live"].includes(key))return null', text)
