@@ -16,11 +16,13 @@ HEALTH=ROOT/"data/season-index-health.json"
 ROLLOVER_HEALTH=ROOT/"data/season-rollover-health.json"
 OUT=ROOT/"public/catalog/season-lifecycle.json"
 SUCCESSORS=ROOT/"data/season-successor-coverage.json"
+EVERGREEN_AUDIT=ROOT/"data/evergreen-reusability-audit.json"
 
 STRATEGIES={"verified_rollover","evergreen_index","legacy_year_bound"}
 
 def build(config:dict,policy:dict,health:dict,rollover_health:dict,
-          successor_coverage:dict|None=None)->dict:
+          successor_coverage:dict|None=None,
+          evergreen_audit:dict|None=None)->dict:
     sources=config["sources"]
     plans=policy["sources"]
     if set(plans)!={x["key"] for x in sources}:
@@ -42,6 +44,27 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
                 or plans[successor]["strategy"]!="verified_rollover"):
             raise ValueError("invalid, duplicate or unimplemented historical successor")
         successor_for[legacy]=successor
+    if evergreen_audit is None:
+        evergreen_audit=json.loads(EVERGREEN_AUDIT.read_text(encoding="utf-8"))
+    evergreen_keys={key for key,plan in plans.items()
+                    if plan["strategy"]=="evergreen_index"}
+    if evergreen_audit.get("schema_version")!=1 or not isinstance(
+            evergreen_audit.get("sources"),list):
+        raise ValueError("invalid evergreen source audit")
+    scopes={"dynamic_category","fixed_production_set","historical_notice"}
+    audited={}
+    for record in evergreen_audit["sources"]:
+        if (not isinstance(record,dict) or
+                set(record)!={"source_key","scope","evidence"} or
+                record["source_key"] in audited or
+                record["source_key"] not in evergreen_keys or
+                record["scope"] not in scopes or
+                not isinstance(record["evidence"],str) or
+                not record["evidence"].strip()):
+            raise ValueError("invalid or duplicate evergreen audit record")
+        audited[record["source_key"]]=record["scope"]
+    if set(audited)!=evergreen_keys:
+        raise ValueError("every evergreen source requires explicit reusability audit")
     checks={x["key"]:x for x in health.get("sources",[])
             if isinstance(x,dict) and isinstance(x.get("key"),str)}
     rollovers={x["key"]:x for x in rollover_health.get("outcomes",[])
@@ -61,6 +84,7 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
             "source_key":key,
             "index_url":item["url"],
             "strategy":strategy,
+            "evergreen_reusability":audited.get(key),
             "successor_source_key":successor_for.get(key),
             "legacy_covered_by_successor":key in successor_for,
             "rollover_implemented":strategy=="verified_rollover",
@@ -74,14 +98,18 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
             "last_rollover_status":rollover.get("status","not_checked"),
         })
     counts=Counter(x["strategy"] for x in rows)
+    reusability=Counter(x["evergreen_reusability"] for x in rows)
     return {
         "schema_version":1,
         "checked_at":health.get("checked_at"),
         "scope":"configured_season_indexes",
-        "definition":"Rollover implemented is a code capability, not evidence of next-season availability or exhaustive recite coverage. Evergreen sources still require future-season verification.",
+        "definition":"Rollover implemented is a code capability, not evidence of next-season availability or exhaustive recite coverage. Evergreen index URLs are classified by code-level reusability; dynamic categories are not live future-season proof.",
         "total_indexes":len(rows),
         "verified_rollover":counts["verified_rollover"],
         "evergreen_index_unverified":counts["evergreen_index"],
+        "evergreen_dynamic_category":reusability["dynamic_category"],
+        "evergreen_fixed_production_set":reusability["fixed_production_set"],
+        "evergreen_historical_notice":reusability["historical_notice"],
         "legacy_year_bound":counts["legacy_year_bound"],
         "legacy_covered_by_successor":len(successor_for),
         "legacy_still_uncovered":counts["legacy_year_bound"]-len(successor_for),
@@ -92,7 +120,7 @@ def build(config:dict,policy:dict,health:dict,rollover_health:dict,
 def publish(*,check:bool=False)->dict:
     def read(path):
         return json.loads(path.read_text(encoding="utf-8"))
-    result=build(read(CONFIG),read(POLICY),read(HEALTH),read(ROLLOVER_HEALTH),read(SUCCESSORS))
+    result=build(read(CONFIG),read(POLICY),read(HEALTH),read(ROLLOVER_HEALTH),read(SUCCESSORS),read(EVERGREEN_AUDIT))
     encoded=(json.dumps(result,ensure_ascii=False,sort_keys=True,
                         separators=(",",":"))+"\n").encode("utf-8")
     if check:
@@ -110,6 +138,7 @@ def main():
     result=publish(check=args.check)
     print(json.dumps({k:result[k] for k in (
         "total_indexes","verified_rollover","evergreen_index_unverified",
+        "evergreen_dynamic_category","evergreen_fixed_production_set","evergreen_historical_notice",
         "legacy_year_bound","legacy_covered_by_successor","legacy_still_uncovered","future_seasons_verified")}))
 
 if __name__=="__main__":
