@@ -33,7 +33,9 @@ class MultiWorkProgramTests(unittest.TestCase):
 
     def test_one_program_with_two_independent_works_and_seven_recite(self):
         bill=self.build()
-        self.assertEqual(bill["title"],"L’ARLÉSIENNE / PAGLIACCI")
+        self.assertEqual(bill["title"],"L’Arlésienne / Pagliacci")
+        self.assertEqual([x["title"] for x in bill["components"]],
+                         ["L’Arlésienne","Pagliacci"])
         self.assertEqual(len(bill["components"]),2)
         self.assertEqual(bill["components"][0]["composer"],"Georges Bizet")
         self.assertIsNone(bill["components"][0]["work_id"])
