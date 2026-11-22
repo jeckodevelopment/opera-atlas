@@ -1193,25 +1193,6 @@
       ]
     },
     {
-      "key": "lombardia-cavalleria-brescia",
-      "title": "Cavalleria rusticana",
-      "composer": "Pietro Mascagni",
-      "venue": "Teatro Grande",
-      "municipality": "Brescia",
-      "region": "Lombardia",
-      "source_url": "https://www.operalombardia.it/calendario/",
-      "dates": [
-        [
-          "2026-12-11",
-          null
-        ],
-        [
-          "2026-12-13",
-          null
-        ]
-      ]
-    },
-    {
       "key": "lombardia-cavalleria-cremona",
       "title": "Cavalleria rusticana",
       "composer": "Pietro Mascagni",
@@ -1245,25 +1226,6 @@
         ],
         [
           "2026-12-06",
-          null
-        ]
-      ]
-    },
-    {
-      "key": "lombardia-pagliacci-brescia",
-      "title": "Pagliacci",
-      "composer": "Ruggero Leoncavallo",
-      "venue": "Teatro Grande",
-      "municipality": "Brescia",
-      "region": "Lombardia",
-      "source_url": "https://www.operalombardia.it/calendario/",
-      "dates": [
-        [
-          "2026-12-11",
-          null
-        ],
-        [
-          "2026-12-13",
           null
         ]
       ]
