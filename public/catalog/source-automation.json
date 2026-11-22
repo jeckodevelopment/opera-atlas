@@ -1608,12 +1608,21 @@
       "city": "Cosenza",
       "region": "Calabria",
       "status": "configured_not_operational",
-      "configured_connectors": 1,
+      "configured_connectors": 2,
       "recent_successful_connectors": 0,
       "source_attention": "not_checked",
       "sources": [
         {
           "source_key": "cosenza-rendano-rolling-opera",
+          "type": "season_index",
+          "configured": true,
+          "last_status": "not_checked",
+          "recent_success": false,
+          "failure_reason": null,
+          "last_attempt_at": null
+        },
+        {
+          "source_key": "cosenza-inprimafila-rolling-opera",
           "type": "season_index",
           "configured": true,
           "last_status": "not_checked",
