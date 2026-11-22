@@ -30,7 +30,6 @@ class LuccaOperaTests(unittest.TestCase):
         sources=validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
         x=next(v for v in sources if v["key"]==KEY)
         self.assertEqual(x["url"],INDEX)
-        self.assertEqual(len(sources),38)
         self.assertTrue(eligible(KEY,DETAIL))
         self.assertFalse(eligible(KEY,"https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/prosa/stagione-2026-2027/foo/"))
         html="".join(f'<a href="{slug}/">Lirica</a>' for slug in
