@@ -265,9 +265,14 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in rows]
     if source_key=="rovigo-sociale-opera-2026-27":
-        from opera_atlas.rovigo_opera_parser import parse_program
+        from opera_atlas.rovigo_traviata_official import URL as detail_url,parse_official_traviata
+        if url==detail_url:
+            raw=parse_official_traviata(html,url=url)
+        else:
+            from opera_atlas.rovigo_opera_parser import parse_program
+            raw=parse_program(html,url=url)
         out=[]
-        for title,composer,venue,day,clock in parse_program(html,url=url):
+        for title,composer,venue,day,clock in raw:
             matches=[w for w in registry.get("works",{}).values()
                      if normalized(w["title"])==normalized(canonical_title(title,composer))
                      and normalized(w["composer"])==normalized(composer)]
@@ -699,6 +704,14 @@ def parse_official_massimo_work_detail(url:str,html:str)->list[dict]:
 
 def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[dict]:
     """Carry first-party composer evidence to independent authority research."""
+    if source_key=="rovigo-sociale-opera-2026-27":
+        from opera_atlas.rovigo_traviata_official import URL as detail_url,parse_official_traviata
+        if url==detail_url:
+            return [{"event_title":title,"composer":composer,
+                     "venue":venue,"date":day,
+                     "starts_at":official_local_time(day,clock)}
+                    for title,composer,venue,day,clock
+                    in parse_official_traviata(html,url=url)]
     if source_key in (
         "jesi-don-pasquale-opera-2026","jesi-esecuzione-opera-2026",
         "jesi-nabucco-opera-2026","ancona-elisir-opera-2026"):
