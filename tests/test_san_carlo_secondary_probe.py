@@ -12,11 +12,13 @@ def fixture():
     <h3>Recite</h3>
     <a href="/it/eventi/2026-12-02/luisa-miller/">Mer 2 Dicembre 2026 20:00</a>
     <a href="/it/eventi/2026-12-03/luisa-miller/">Gio 3 Dicembre 2026 20:00</a>
+    <a href="https://www.teatrosancarlo.it/spettacoli/luisa-miller/">BIGLIETTI</a>
     <h3>Personaggi e interpreti</h3>
     <a href="/cast">2 Dic, 3 Dic</a><p>Maria Rossi</p>
     <p>Giacomo Puccini</p><h2>Madama Butterfly</h2>
     <p>Teatro di San Carlo</p><h3>Recite</h3>
     <a href="/it/eventi/2027-01-17/madama-butterfly/">Dom 17 Gennaio 2027 17:00</a>
+    <a href="https://www.teatrosancarlo.it/spettacoli/madama-butterfly/">BIGLIETTI</a>
     <h2>Altre edizioni Teatro di San Carlo</h2></html>
     """
 
@@ -27,6 +29,7 @@ class SecondarySanCarloTests(unittest.TestCase):
         self.assertEqual(len(productions), 2)
         self.assertEqual(productions[0]["title"], "Luisa Miller")
         self.assertEqual(productions[0]["composer"], "Giuseppe Verdi")
+        self.assertEqual(productions[0]["official_event_url"], "https://www.teatrosancarlo.it/spettacoli/luisa-miller/")
         self.assertEqual(productions[1]["composer"], "Giacomo Puccini")
         self.assertEqual(productions[0]["performances"], [
             {"date": "2026-12-02", "time": "20:00"},
@@ -102,6 +105,17 @@ class SecondarySanCarloTests(unittest.TestCase):
         rows[0]["review_status"] = "approved"
         with self.assertRaisesRegex(ValueError, "untrusted"):
             build_secondary_checkpoint(rows, checked_at="now", incomplete=[])
+
+    def test_official_ticket_reference_is_mandatory_for_a_candidate(self):
+        html = fixture().replace(
+            '<a href="https://www.teatrosancarlo.it/spettacoli/luisa-miller/">BIGLIETTI</a>',
+            '<a href="https://evil.example/spettacoli/luisa-miller/">BIGLIETTI</a>'
+        )
+        skipped = []
+        result = parse(html, diagnostics=skipped)
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]["title"], "Madama Butterfly")
+        self.assertTrue(any("official_ticket" in row["missing"] for row in skipped))
 
     def test_rejects_wrong_source_and_ambiguous_time(self):
         with self.assertRaisesRegex(ValueError, "unapproved"):
