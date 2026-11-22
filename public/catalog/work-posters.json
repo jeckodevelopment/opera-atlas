@@ -799,6 +799,42 @@
       "alt": "Immagine della produzione di L'occasione fa il ladro",
       "kind": "official_production_image"
     },
+    "oa-w-000090": {
+      "work_id": "oa-w-000090",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Don_Pasquale_in_London.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Don_Pasquale_in_London.png",
+      "alt": "Illustrazione storica della prima londinese di Don Pasquale (Illustrated London News, 1843)",
+      "credit": "Illustrazione storica del 1843, Wikimedia Commons",
+      "license": "Public domain; Wikimedia Commons"
+    },
+    "oa-w-000091": {
+      "work_id": "oa-w-000091",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Iltabarro-poster.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Iltabarro-poster.jpg",
+      "alt": "Manifesto storico di Il tabarro di Giacomo Puccini (Ricordi, 1918)",
+      "credit": "G. Ricordi & Co., 1918; Wikimedia Commons",
+      "license": "Public domain; Wikimedia Commons"
+    },
+    "oa-w-000092": {
+      "work_id": "oa-w-000092",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Disegno_per_copertina_di_libretto%2C_disegno_di_Peter_Hoffer_per_Suor_Angelica_(s.d.)_-_Archivio_Storico_Ricordi_ICON012352.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Disegno_per_copertina_di_libretto%2C_disegno_di_Peter_Hoffer_per_Suor_Angelica_(s.d.)_-_Archivio_Storico_Ricordi_ICON012352.jpg",
+      "alt": "Disegno storico per la copertina del libretto di Suor Angelica; Archivio Storico Ricordi",
+      "credit": "Peter Hoffer / Archivio Storico Ricordi, Wikimedia Commons",
+      "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "oa-w-000093": {
+      "work_id": "oa-w-000093",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Schicchi_original_cover.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Schicchi_original_cover.jpg",
+      "alt": "Copertina originale di Gianni Schicchi di Giacomo Puccini (1919)",
+      "credit": "Leopoldo Metlicovitz, Wikimedia Commons",
+      "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/"
+    },
     "oa-w-000094": {
       "work_id": "oa-w-000094",
       "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-la-vedova-allegra_thumb.png",
