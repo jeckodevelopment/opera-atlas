@@ -4272,6 +4272,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-995d8f9ff8de58d84cfd",
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+      "content_sha256": "4d37558a0baea9e8dfa1ee378880645a43462166eddc7b7f1ffca6f085f81cb8",
+      "checked_at": "2026-11-22T17:31:58+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-01-15",
+          "starts_at": "2027-01-15T20:00:00+01:00"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-01-17",
+          "starts_at": "2027-01-17T15:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-997a698e76cca7510492",
       "source_key": "coccia-novara-opera-2027",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
@@ -4757,6 +4781,30 @@
           "venue": "Teatro Lirico Giuseppe Verdi",
           "date": "2027-02-21",
           "starts_at": "2027-02-21T16:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-ab6612954af20d7d7cad",
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
+      "content_sha256": "a337c57ed5bb47fea1e824be64045a478a93220425f82f026f127872a1f753ae",
+      "checked_at": "2026-11-22T17:32:32+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-04-02",
+          "starts_at": "2027-04-02T20:00:00+02:00"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Dante Alighieri",
+          "date": "2027-04-04",
+          "starts_at": "2027-04-04T15:30:00+02:00"
         }
       ]
     },
@@ -6056,8 +6104,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "1d1911fb9f54fac1d96d8243749c3e153634ea205a73a039ef4202cc8f755eb2",
-      "checked_at": "2026-11-22T16:42:03+00:00",
+      "content_sha256": "8fbd8bd13af353a720906b0c8aaf886328ab67b506d3060e9bd5bf6fe944645c",
+      "checked_at": "2026-11-22T17:32:01+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
