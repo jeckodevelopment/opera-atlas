@@ -179,23 +179,41 @@ def extract_index(key:str,url:str,html:str,min_links:int)->list[str]:
     return [url]
 
 def known_recite(key:str,url:str,html:str,registry:dict):
-    """No automatic new-opera creation; exact title/composer/date/hour only."""
-    start,end=index_year(key,url)
+    """Conservatively extract source-credited showtimes from a future opera.
+
+    Search discovery yields first-party announcement URLs; their year and
+    theatre must be corroborated by the fetched official article itself.
+    """
     host,kind,city,theatre=SOURCES[key]
     if kind!="search":
+        start,end=index_year(key,url)
         extract_index(key,url,html,1)
     else:
-        # A discovered official article must be validated separately.
         parsed=urlsplit(url)
-        if (parsed.hostname!=host or parsed.scheme!="https"
-            or parsed.query or parsed.fragment or parsed.port is not None):
-            raise ValueError("untrusted future municipal notice")
+        if (parsed.scheme!="https" or parsed.hostname!=host
+            or parsed.query or parsed.fragment or parsed.port is not None
+            or parsed.username or parsed.password):
+            raise ValueError("untrusted future municipal announcement")
+        path=parsed.path
+        if key.startswith("chieti-"):
+            if not re.fullmatch(r"/novita/[a-z0-9-]+/",path):
+                raise ValueError("untrusted Chieti announcement")
+        elif not re.fullmatch(r"/[a-z0-9-]+/",path):
+            raise ValueError("untrusted Lecce announcement")
+        years=set(int(x) for x in re.findall(r"(?<!\d)20\d{2}(?!\d)",path))
+        if len(years)!=1:raise ValueError("future announcement year is ambiguous")
+        start=end=years.pop()
+        if not 2027<=start<=2099:raise ValueError("not a future edition")
         text_check=clean(html)
-        if not re.search(rf"(?i)stagione\s+lirica\s+{start}\b",text_check):
-            raise ValueError("article does not confirm future season")
+        if (not re.search(rf"(?i)stagione\s+lirica.*\b{start}\b",text_check[:2500])
+            or city.casefold() not in text_check.casefold()
+            or theatre.casefold() not in text_check.casefold()):
+            raise ValueError("announcement does not confirm official future season")
+        if key.startswith("lecce-") and not re.search(
+                rf"(?<!\d){start-1975}(?:\s*\^)?\s+stagione",text_check,re.I):
+            raise ValueError("Lecce edition and year not confirmed")
     text=clean(html)
     if CANCEL.search(text):return []
-    if NONOPERA.search(text[:200]):return []
     results=[]
     works=registry.get("works",{}) if isinstance(registry,dict) else {}
     for row in works.values():
