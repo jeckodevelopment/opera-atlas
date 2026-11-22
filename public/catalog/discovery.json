@@ -1,4 +1,49 @@
 {
   "schema_version": 1,
-  "candidates": []
+  "candidates": [
+    {
+      "id": "oa-c-35f378dbe9f6b721",
+      "status": "needs_review",
+      "source_key": "opera-lombardia-calendar-2026-27",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "title": "Pagliacci",
+      "composer": null,
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "dates": [
+        {
+          "date": "2026-12-11",
+          "time": null
+        },
+        {
+          "date": "2026-12-13",
+          "time": null
+        }
+      ],
+      "first_seen": "2026-11-22T15:22:17+00:00",
+      "last_seen": "2026-11-22T15:22:17+00:00"
+    },
+    {
+      "id": "oa-c-868dcd5a8c36e9ba",
+      "status": "needs_review",
+      "source_key": "opera-lombardia-calendar-2026-27",
+      "source_url": "https://www.operalombardia.it/calendario/",
+      "title": "Cavalleria rusticana",
+      "composer": null,
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "dates": [
+        {
+          "date": "2026-12-11",
+          "time": null
+        },
+        {
+          "date": "2026-12-13",
+          "time": null
+        }
+      ],
+      "first_seen": "2026-11-22T15:22:17+00:00",
+      "last_seen": "2026-11-22T15:22:17+00:00"
+    }
+  ]
 }

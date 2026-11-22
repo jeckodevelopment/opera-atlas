@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T04:27:09+00:00",
+  "checked_at": "2026-11-22T15:22:17+00:00",
   "sources": [
     {
       "key": "regio-traviata-2027",
@@ -124,11 +124,69 @@
     },
     {
       "key": "opera-lombardia-calendar-2026-27",
-      "outcome": "success",
+      "outcome": "review_required",
       "added": 0,
       "observed": 54,
-      "anomalies": [],
-      "candidates": []
+      "anomalies": [
+        {
+          "kind": "unknown_or_ambiguous_staging",
+          "title": "Cavalleria rusticana",
+          "venue": "Teatro Grande",
+          "city": "Brescia"
+        },
+        {
+          "kind": "unknown_or_ambiguous_staging",
+          "title": "Pagliacci",
+          "venue": "Teatro Grande",
+          "city": "Brescia"
+        },
+        {
+          "kind": "unknown_or_ambiguous_staging",
+          "title": "Cavalleria rusticana",
+          "venue": "Teatro Grande",
+          "city": "Brescia"
+        },
+        {
+          "kind": "unknown_or_ambiguous_staging",
+          "title": "Pagliacci",
+          "venue": "Teatro Grande",
+          "city": "Brescia"
+        }
+      ],
+      "candidates": [
+        {
+          "title": "Cavalleria rusticana",
+          "composer": null,
+          "venue": "Teatro Grande",
+          "city": "Brescia",
+          "date": "2026-12-11",
+          "time": null
+        },
+        {
+          "title": "Pagliacci",
+          "composer": null,
+          "venue": "Teatro Grande",
+          "city": "Brescia",
+          "date": "2026-12-11",
+          "time": null
+        },
+        {
+          "title": "Cavalleria rusticana",
+          "composer": null,
+          "venue": "Teatro Grande",
+          "city": "Brescia",
+          "date": "2026-12-13",
+          "time": null
+        },
+        {
+          "title": "Pagliacci",
+          "composer": null,
+          "venue": "Teatro Grande",
+          "city": "Brescia",
+          "date": "2026-12-13",
+          "time": null
+        }
+      ]
     },
     {
       "key": "scala-don-giovanni-2027",
