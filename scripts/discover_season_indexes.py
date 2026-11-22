@@ -175,6 +175,12 @@ def reviewed_source_urls()->set[str]:
     return reviewed
 
 def classify(key:str,url:str,reviewed:set[str])->str:
+    # Keep this exact regional season URL eligible as a programme/PDF
+    # discovery source, but never treat its full-season date range as a
+    # single opera ticket. Individual municipal opera candidates remain live.
+    if (key=="rovigo-regione-programma-2026-27"
+        and url=="https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc"):
+        return "excluded_nonopera"
     if key=="savona-giocosa-rolling-opera":
         # One evergreen index contains independent works and recite; an URL
         # match to one published staging never closes the entire source.
