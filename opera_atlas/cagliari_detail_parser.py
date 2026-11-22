@@ -46,10 +46,10 @@ def verified_brochure(slug: str, title: str, composer: str) -> dict:
         if override.get("slug")!=slug:
             continue
         if (override.get("source_url")!=f"https://{HOST}/evento/{slug}/"
-            or not re.fullmatch(r"20\\d{2}-\\d{2}-\\d{2}",override.get("date",""))
-            or not re.fullmatch(r"(?:[01]\\d|2[0-3]):[0-5]\\d",override.get("brochure_time",""))
-            or not re.fullmatch(r"(?:[01]\\d|2[0-3]):[0-5]\\d",override.get("current_time",""))
-            or not re.fullmatch(r"20\\d{2}-\\d{2}-\\d{2}",override.get("verified_at",""))):
+            or not re.fullmatch(r"20\d{2}-\d{2}-\d{2}",override.get("date",""))
+            or not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d",override.get("brochure_time",""))
+            or not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d",override.get("current_time",""))
+            or not re.fullmatch(r"20\d{2}-\d{2}-\d{2}",override.get("verified_at",""))):
             raise ValueError("invalid current theatre schedule correction")
         matches=[row for row in revised["dates"]
                  if row==[override["date"],override["brochure_time"]]]
