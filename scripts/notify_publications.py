@@ -5,6 +5,7 @@ Called after a successful catalog push. Never runs during scans or CI.
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import json
 import os
 import subprocess
@@ -25,7 +26,7 @@ def published_at(ref: str) -> dict:
     """Read the actual public feed at a Git revision, not the draft registry."""
     manifest = json.loads(git("show", f"{ref}:public/catalog/v2/manifest.json"))
     channels = {}
-    for channel in ("works", "venues", "stagings"):
+    for channel in ("works", "venues", "stagings", "performances"):
         path = "public/catalog/v2/" + manifest["files"][channel]["path"]
         contents = json.loads(git("show", f"{ref}:{path}"))
         channels[channel] = {record["id"]: record for record in contents[channel]}
@@ -37,6 +38,24 @@ def new_entities(before: dict, after: dict) -> list[dict]:
     notices = []
     works = after["works"]
     venues = after["venues"]
+    performances_by_staging = {}
+    for performance in after.get("performances", {}).values():
+        if performance.get("status") == "cancelled":
+            continue
+        day = performance.get("local_date", "")
+        try:
+            scheduled = date.fromisoformat(day)
+        except (TypeError, ValueError):
+            continue
+        if scheduled < date.today():
+            continue
+        performances_by_staging.setdefault(performance.get("staging_id"), []).append(performance)
+    for scheduled in performances_by_staging.values():
+        scheduled.sort(key=lambda performance: (
+            performance["local_date"],
+            performance.get("starts_at") or "",
+            performance.get("id") or "",
+        ))
     for channel in ("works", "stagings"):
         previous_ids = {record["id"] for record in before[channel].values()}
         for record in after[channel].values():
@@ -60,6 +79,7 @@ def new_entities(before: dict, after: dict) -> list[dict]:
                     "id": record["id"],
                     "title": work["title"],
                     "details": f"Teatro: {venue['name']} · Città: {venue['city']}",
+                    "performances": performances_by_staging.get(record["id"], []),
                     "url": f"{ROOT_URL}/{venue['city_slug']}/{venue['slug']}/{route}/",
                 })
     return notices
