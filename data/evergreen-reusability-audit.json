@@ -104,6 +104,11 @@
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
     },
     {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The official /spettacoli/ index is an evergreen mixed-genre events listing. It currently may challenge automated visitors; a challenge is a failed scan, not an empty season. Every specific performance must identify an opera, the composer, the real Teatro di San Carlo, and fully dated local showtimes. Future seasons are unverified until successfully scanned."
+    },
+    {
       "source_key": "opera-roma-season-2026-27",
       "scope": "dynamic_category",
       "evidence": "Future title URLs are not hardcoded in the index eligibility rule; complete future-season performance verification is still pending."
