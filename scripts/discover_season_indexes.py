@@ -288,6 +288,11 @@ def eligible(key:str,url:str)->bool:
     path=parsed.path.lower().rstrip("/")
     if excluded_nonopera(key,url):
         return False
+    if key=="pisa-verdi-opera-2026-27":
+        return path in {"/spettacolo/dido-and-aeneas",
+                        "/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia",
+                        "/spettacolo/otello", "/spettacolo/aida",
+                        "/spettacolo/la-clemenza-di-tito"}
     if key=="salerno-verdi-opera-2026":
         return path in {"/eventi/trovatore-2026", "/eventi/il-signor-bruschino-2026",
                         "/eventi/il-barbiere-di-siviglia-2026", "/eventi/macbeth-2026",
@@ -405,6 +410,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "pisa-verdi-opera-2026-27":("teatrodipisa.it","/tipologia-spettacolo/opera/"),
         "salerno-verdi-opera-2026":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
         "macerata-festival-2027":("www.sferisterio.it","/"),
         "scala-season-2026-27":("www.teatroallascala.org","/it/stagione/2026-2027/index.html"),
@@ -483,6 +489,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="pisa-verdi-opera-2026-27":
+            valid_season=index.path=="/tipologia-spettacolo/opera/" and not index.query
         elif key=="salerno-verdi-opera-2026":
             valid_season=index.path=="/teatro-verdi/la-stagione/" and not index.query
         elif key=="macerata-festival-2027":
