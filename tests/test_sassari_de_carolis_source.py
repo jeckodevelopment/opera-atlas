@@ -48,6 +48,15 @@ class SassariDeCarolisTests(unittest.TestCase):
         self.assertNotIn(URL("375")+"&utm=foo",
                          {r["official_url"] for r in selected})
 
+    def test_verified_query_urls_pass_all_canonical_source_gates(self):
+        from scripts.build_verified_catalog import validate_auto_sources
+        urls=[URL(i) for i in ("372","373","375")]
+        self.assertEqual(validate_auto_sources(urls),set(urls))
+        for bad in (URL("374"),URL("372")+"&utm_source=foo",
+                    "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373#other"):
+            with self.subTest(url=bad),self.assertRaises(ValueError):
+                validate_auto_sources([bad])
+
     def test_six_exact_2026_showtimes(self):
         expected={
             "372":[("2026-09-25","20:30"),("2026-09-27","16:30")],
