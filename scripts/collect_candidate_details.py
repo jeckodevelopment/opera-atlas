@@ -201,6 +201,11 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         return [{"event_title":work["title"],"composer":work["composer"],
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in recite]
+    if source_key=="chieti-marrucino-lirica-2026":
+        from opera_atlas.chieti_marrucino_parser import parse_program
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,clock)}
+                for title,composer,venue,day,clock in parse_program(html,url=url)]
     if source_key=="lecce-provincia-politeama-2026":
         from opera_atlas.lecce_provincia_parser import parse_program
         out=[]
