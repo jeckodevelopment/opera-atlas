@@ -259,6 +259,10 @@ jobs:
       - name: Discover approved season indexes ahead of slow details
         run: |
           python -m scripts.discover_season_indexes --allow-network
+          # Index discovery can append candidates or reset provisional
+          # states. Reconcile the same registry before any health snapshot
+          # is shown in the diagnostics UI.
+          python -m scripts.reconcile_published_candidates
           python -m scripts.source_automation
           python -m scripts.catalogation_diagnostics
           python -m scripts.candidate_publication_evidence
@@ -272,7 +276,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/season-index-health.json data/season-index-candidates.json public/catalog/season-index-candidates.json public/catalog/source-automation.json public/catalog/catalogation-diagnostics.json public/catalog/candidate-publication-evidence.json public/catalog/season-lifecycle.json
+          git add data/season-index-health.json data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json public/catalog/source-automation.json public/catalog/catalogation-diagnostics.json public/catalog/candidate-publication-evidence.json public/catalog/season-lifecycle.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
             echo "No new season-index diagnostic or candidates."
@@ -340,7 +344,9 @@ jobs:
       - name: Verify and adopt next officially published season indexes
         run: python -m scripts.rollover_season_indexes --allow-network
       - name: Discover production links from approved national season indexes
-        run: python -m scripts.discover_season_indexes --allow-network
+        run: |
+          python -m scripts.discover_season_indexes --allow-network
+          python -m scripts.reconcile_published_candidates
       - name: Refresh lifecycle diagnostics after index rollover
         run: python -m scripts.season_lifecycle_health
       - name: Collect structured facts from bounded discovered detail pages
@@ -355,7 +361,7 @@ jobs:
           # These are REVIEW-ONLY inputs; do not publish unverified recite here.
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/season-index-config.json data/season-rollover-health.json data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json public/catalog/season-lifecycle.json
+          git add data/season-index-config.json data/season-rollover-health.json data/season-index-candidates.json data/season-index-health.json data/candidate-reconciliation-health.json public/catalog/season-index-candidates.json public/catalog/season-lifecycle.json
           git add data/candidate-detail-evidence.json data/candidate-detail-health.json data/maggio-calendar-health.json public/catalog/candidate-detail-evidence.json data/maggio-calendar-health.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
