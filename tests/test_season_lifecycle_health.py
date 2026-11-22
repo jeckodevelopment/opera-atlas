@@ -48,6 +48,18 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
         self.assertFalse(by_key["giglio-lucca-opera-2026-27"]["future_season_verified"])
         self.assertEqual(result["future_seasons_verified"],1)
 
+    def test_bootstrap_feed_exists_for_dashboard_before_first_scheduled_scan(self):
+        from scripts.season_lifecycle_health import OUT
+        self.assertTrue(OUT.exists(), "Dashboard lifecycle feed must be shipped on main")
+        report=json.loads(OUT.read_text(encoding="utf-8"))
+        self.assertEqual(report["schema_version"],1)
+        self.assertEqual(report["total_indexes"],len(self.config["sources"]))
+        self.assertEqual({row["source_key"] for row in report["sources"]},
+                         {item["key"] for item in self.config["sources"]})
+        self.assertEqual(report["verified_rollover"]+
+                         report["evergreen_index_unverified"]+
+                         report["legacy_year_bound"],report["total_indexes"])
+
     def test_policy_incompleteness_fails_closed(self):
         policy=copy.deepcopy(self.policy)
         policy["sources"].pop("scala-season-2026-27")
