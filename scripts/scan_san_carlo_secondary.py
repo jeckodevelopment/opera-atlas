@@ -237,7 +237,7 @@ def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
                 raise ValueError("untrusted secondary clock")
             day = date.fromisoformat(recita["date"])
             clock = recita["time"]
-            if (not re.fullmatch(r"(?:[01]\\d|2[0-3]):[0-5]\\d", clock)
+            if (not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", clock)
                 or day.isoformat() != recita["date"]
                 or (recita["date"], clock) in clocks):
                 raise ValueError("invalid or duplicate secondary clock")
