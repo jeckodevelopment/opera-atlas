@@ -70,9 +70,14 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # A calendar covering ballet/concerts/education is not itself genre proof.
     if not re.search(r"\bOpera\b", " ".join(page.parts[start+1:start+8]),re.I):
         raise ValueError("San Carlo event genre not certified as opera")
-    credit=AUTHOR.search(primary)
-    if not credit:raise ValueError("San Carlo composer not credited")
-    composer=" ".join(credit[1].split())
+    # Never capture the following Libretto line as a composer if
+    # the source prints an empty "Musica di" field.
+    credits=[part[len("Musica di "):].strip() for part in page.parts
+             if part.startswith("Musica di ")]
+    if (len(credits)!=1 or not re.fullmatch(
+            r"[A-ZÀ-Ž][A-Za-zÀ-ÿ.'’ -]{3,75}",credits[0])):
+        raise ValueError("San Carlo composer not credited")
+    composer=credits[0]
     if not re.search(r"\bTeatro\s+di\s+San\s+Carlo\b",primary,re.I):
         raise ValueError("San Carlo venue not explicitly confirmed")
     entries=DATES.findall(primary)
