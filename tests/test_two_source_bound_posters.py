@@ -38,6 +38,21 @@ class OriginalOperaArtworkBatchTests(unittest.TestCase):
         self.assertIsNone(verified_coproduction_poster(
             source_url=REGGIO,title="Veleno",composer="Franco Casavola"))
 
+    def test_jeanne_dark_2024_original_poster_is_not_trieste_staging_art(self):
+        source=("https://www.teatroverdi-trieste.com/it/spettacoli/"
+                "jeanne-darc-au-bucher-jeanne-dark/")
+        proof=verified_original_art(source_url=source,
+            title="Jeanne Dark",composer="Fabio Vacchi")
+        self.assertIsNotNone(proof)
+        self.assertEqual(proof["original_source_url"],
+                         "https://www.maggiofiorentino.com/events/jeanne-dark-5")
+        self.assertTrue(proof["image_url"].endswith(
+            "JEANNE_DARK_70x100_INTERNO_ok_5b07c76e9f.jpg"))
+        self.assertTrue(is_verified_original_art(
+            proof,title="Jeanne Dark",composer="Fabio Vacchi"))
+        self.assertIsNone(verified_original_art(source_url=source,
+            title="Jeanne d’Arc au bûcher",composer="Arthur Honegger"))
+
     def test_existing_bona_coproduction_remains_verified(self):
         source="https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
         actual=verified_coproduction_poster(
