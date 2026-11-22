@@ -15,6 +15,16 @@ APPROVED_PROVENANCE={
      "Bona Sforza","Zygmunt Krauze"):(
         "https://opera.krakow.pl/spektakle/bona-sforza",
         "https://opera.krakow.pl/media/spectacle_image/bona-finalny_detail_poster.jpg"),
+    # Identical opera co-produced by the first-party Piacenza premiere issuer.
+    # Both Haydn ticket pages belong to the same physical Trento staging.
+    ("https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+     "Cronaca di un amore. Callas e Pasolini","Davide Tramontano"):(
+        "https://teatripiacenza.it/event/cronaca-di-un-amore/",
+        "https://teatripiacenza.it/wp-content/uploads/2025/05/Callas-e-Pasolini.jpg"),
+    ("https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+     "Cronaca di un amore. Callas e Pasolini","Davide Tramontano"):(
+        "https://teatripiacenza.it/event/cronaca-di-un-amore/",
+        "https://teatripiacenza.it/wp-content/uploads/2025/05/Callas-e-Pasolini.jpg"),
     ("https://www.iteatri.re.it/spettacolo/veleno/",
      "Veleno","Gaia Aloisi"):(
         "https://teatroregioparma.it/spettacolo/veleno/",
@@ -52,6 +62,9 @@ def verified_coproduction_poster(*,source_url:str,title:str,composer:str)->dict|
         source_origin=="opera.krakow.pl"
         and image.hostname=="opera.krakow.pl"
         and image.path.startswith("/media/spectacle_image/")
+        or source_origin=="teatripiacenza.it"
+        and image.hostname=="teatripiacenza.it"
+        and image.path=="/wp-content/uploads/2025/05/Callas-e-Pasolini.jpg"
         or source_origin=="teatroregioparma.it"
         and image.hostname=="teatroregioparma.it"
         and image.path.startswith("/wp-content/uploads/2026/05/")
