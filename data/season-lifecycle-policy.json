@@ -303,7 +303,7 @@
       "verification": "test_verified"
     },
     "trapani-luglio-musicale-2026": {
-      "strategy": "fixed_year",
+      "strategy": "legacy_year_bound",
       "verification": "test_verified"
     }
   }
