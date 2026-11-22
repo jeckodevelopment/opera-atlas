@@ -186,6 +186,39 @@ class SameRunCandidateReconciliationTests(unittest.TestCase):
                 self.assertEqual(again,updated)
                 self.assertFalse(health["changes"])
 
+    def test_macerata_annual_rolling_verified_same_staging(self):
+        from scripts.reconcile_published_candidates import verified_shared_page_identities
+        annual="macerata-festival-2027"
+        rolling="macerata-festival-rolling"
+        url="https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
+        candidates={"schema_version":1,"candidates":[
+            {"id":key,"source_key":key,"official_url":url,
+             "status":"needs_review"} for key in (annual,rolling)]}
+        production={"source_url":url,"title":"L’elisir d’amore",
+                    "composer":"Gaetano Donizetti",
+                    "dates":[["2027-07-24","21:00"],["2027-07-30","21:00"]]}
+        details={"evidence":[{"source_key":annual,"source_url":url,
+                              "event_facts":[
+                                  {"event_title":"L'elisir d'amore",
+                                   "composer":"Gaetano Donizetti","date":"2027-07-24"},
+                                  {"event_title":"L'elisir d'amore",
+                                   "composer":"Gaetano Donizetti","date":"2027-07-30"}]}]}
+        ambiguous,verified=verified_shared_page_identities(
+            candidates,details,{"productions":[production]},{"programs":[]})
+        self.assertEqual(verified,{(annual,url),(rolling,url)})
+        updated,report=reconcile(candidates,{url},ambiguous_urls=ambiguous,
+                                 identity_verified=verified)
+        self.assertEqual(report["states"],{"already_catalogued":2})
+        again,health=reconcile(updated,{url},ambiguous_urls=ambiguous,
+                               identity_verified=verified)
+        self.assertEqual(again,updated)
+        self.assertFalse(health["changes"])
+        # A conflicting composer must reopen both collectors for review.
+        details["evidence"][0]["event_facts"][0]["composer"]="Other composer"
+        _,verified=verified_shared_page_identities(
+            candidates,details,{"productions":[production]},{"programs":[]})
+        self.assertFalse(verified)
+
     def test_source_alias_never_hides_distinct_or_conflicting_opera(self):
         from scripts.reconcile_published_candidates import verified_shared_page_identities
         url="https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
