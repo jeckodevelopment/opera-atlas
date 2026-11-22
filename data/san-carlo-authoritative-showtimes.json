@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "title": "Otto mesi in due ore o sia Gli esiliati in Siberia",
+      "composer": "Gaetano Donizetti",
+      "official_event_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+      "verified_on": "2026-11-22",
+      "verification_method": "manual_read_of_primary_official_event_schedule",
+      "primary_schedule": [
+        {
+          "date": "2027-04-17",
+          "time": "20:00"
+        },
+        {
+          "date": "2027-04-21",
+          "time": "18:00"
+        },
+        {
+          "date": "2027-04-23",
+          "time": "19:00"
+        }
+      ],
+      "secondary_conflict_url": "https://www.enjoylive.travel/it/napoli-sancarlo-programma",
+      "corroborating_urls": [
+        "https://www.classicalive.it/it/rassegne/teatro-di-san-carlo/stagione-dopera-2026-2027/",
+        "https://www.teatro.it/spettacoli/napoli/san-carlo/2026-2027/teatro-di-san-carlo-otto-mesi-in-due-ore",
+        "https://operabook.org/it/performance/71911_otto-mesi-in-due-ore-o-gli-esiliati-in-siberia-fondazione-teatro-di-san-carlo",
+        "https://bachtrack.com/22/291/view/451939"
+      ],
+      "notes": "La scheda ufficiale riporta mercoledì 21 aprile 2027 ore 18:00 e venerdì 23 aprile ore 19:00; EnjoyLive riporta 20:00 per entrambi e viene scartato per queste due date. L'osservazione ufficiale è una verifica manuale documentata, non un successo di fetch del runner."
+    }
+  ]
+}

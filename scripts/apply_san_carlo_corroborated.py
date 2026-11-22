@@ -11,6 +11,8 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from datetime import date
+import re
 
 from opera_atlas.napoli_san_carlo import eligible_detail
 from scripts.build_verified_catalog import official_local_time
@@ -28,6 +30,7 @@ OFFICIAL_PRESS_RELEASE = (
 CHECKPOINT = ROOT / "data/san-carlo-secondary-candidates.json"
 CORROBORATION = ROOT / "data/san-carlo-secondary-corroboration.json"
 HEALTH = ROOT / "data/san-carlo-canonical-review-health.json"
+AUTHORITATIVE_TIMES = ROOT / "data/san-carlo-authoritative-showtimes.json"
 
 # The original 2026/27 San Carlo press release confirms repertoire
 # and the respective composers; this is an explicit edition-specific
@@ -47,8 +50,51 @@ APPROVED_REPERTOIRE = {
 REPERTOIRE = {key_of(k): key_of(v) for k, v in APPROVED_REPERTOIRE.items()}
 
 
+
+def verified_primary_decisions(document: dict) -> dict:
+    """Accept only narrow, first-party schedule decisions, with a source URL."""
+    if (document.get("schema_version") != 1
+        or not isinstance(document.get("decisions"), list)):
+        raise ValueError("invalid authoritative schedule decisions")
+    by_route = {}
+    for item in document["decisions"]:
+        route = item.get("official_event_url")
+        title = key_of(item.get("title", ""))
+        if (item.get("source_key") != SOURCE_KEY
+            or not isinstance(route, str) or not eligible_detail(route)
+            or item.get("verification_method") !=
+               "manual_read_of_primary_official_event_schedule"
+            or not isinstance(item.get("verified_on"), str)
+            or not isinstance(item.get("primary_schedule"), list)
+            or not item["primary_schedule"]
+            or item.get("secondary_conflict_url") != SECOND
+            or not isinstance(item.get("corroborating_urls"), list)
+            or not item["corroborating_urls"]
+            or title not in REPERTOIRE
+            or key_of(item.get("composer", "")) != REPERTOIRE[title]
+            or route in by_route):
+            raise ValueError("untrusted official schedule decision")
+        date.fromisoformat(item["verified_on"])
+        clocks = {}
+        for row in item["primary_schedule"]:
+            if (not isinstance(row, dict)
+                or set(row) != {"date", "time"}
+                or not isinstance(row["date"], str)
+                or not isinstance(row["time"], str)
+                or not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", row["time"])):
+                raise ValueError("malformed official showtime")
+            day = date.fromisoformat(row["date"]).isoformat()
+            if day in clocks or row["date"] != day:
+                raise ValueError("duplicate official calendar day")
+            clocks[day] = row["time"]
+        by_route[route] = {"decision": item, "schedule": clocks}
+    return by_route
+
+
+
 def apply(checkpoint: dict, comparison: dict, candidates: dict,
-          details: dict, *, checked_at: str):
+          details: dict, *, checked_at: str,
+          primary_decisions: dict | None = None):
     if (checkpoint.get("schema_version") != 1
         or checkpoint.get("source_key") != SOURCE_KEY
         or checkpoint.get("source_role") != "secondary_unverified"
@@ -68,6 +114,9 @@ def apply(checkpoint: dict, comparison: dict, candidates: dict,
     if (candidates.get("schema_version") != 1
         or details.get("schema_version") != 1):
         raise ValueError("invalid canonical registries")
+    if primary_decisions is None:
+        primary_decisions = json.loads(AUTHORITATIVE_TIMES.read_text(encoding="utf-8"))
+    primary_by_route = verified_primary_decisions(primary_decisions)
     canonical = {r["id"]: dict(r) for r in candidates["candidates"]}
     evidence = {r["candidate_id"]: dict(r) for r in details["evidence"]}
     reviewed = {key_of(x["title"]): x for x in comparison["productions"]}
@@ -111,10 +160,39 @@ def apply(checkpoint: dict, comparison: dict, candidates: dict,
             raise ValueError("independent source claims unobserved recite")
         if len(confirmed) + len(conflicting) + len(missing) != len(dates):
             raise ValueError("inconsistent cross-source comparison totals")
+        primary = primary_by_route.get(route)
+        resolved = []
+        if primary is not None:
+            decision = primary["decision"]
+            if (key_of(decision["title"]) != identity
+                or key_of(decision["composer"]) != key_of(composer)):
+                raise ValueError("official editorial identity mismatch")
+            if primary["schedule"] != dict(expected):
+                outcomes.append({"title": title, "status": "official_schedule_differs_from_candidate"})
+                continue
+            if missing:
+                outcomes.append({"title": title, "status": "secondary_dates_unmatched"})
+                continue
+            raw_conflicts = {}
+            for conflict in conflicting:
+                day, clock = conflict["date"], conflict["candidate"]
+                if (day in raw_conflicts or (day, clock) not in expected
+                    or conflict.get("independent") in (None, clock)):
+                    raise ValueError("untrusted secondary time conflict")
+                raw_conflicts[day] = clock
+            resolved = [{"date": day, "time": clock,
+                         "authority": "first_party_official_event",
+                         "official_url": route,
+                         "overridden_secondary_url": SECOND,
+                         "overridden_secondary_time": next(
+                             c["independent"] for c in conflicting if c["date"] == day)}
+                        for day, clock in sorted(raw_conflicts.items())]
+            confirmed = confirmed | {(row["date"], row["time"]) for row in resolved}
         if (not expected or expected != confirmed
-            or conflicting or missing
+            or (conflicting and not resolved) or missing
             or result.get("candidate_count") != len(dates)
-            or result.get("status") != "all_clocks_match_second_source"):
+            or (result.get("status") != "all_clocks_match_second_source"
+                and not resolved)):
             outcomes.append({"title": title, "status": "recite_conflict_or_incomplete",
                              "matching": len(matching), "expected": len(dates)})
             continue
@@ -158,18 +236,24 @@ def apply(checkpoint: dict, comparison: dict, candidates: dict,
             "checked_at": checked_at, "status": "needs_editorial_review",
             "event_facts": claims,
             "corroboration": {
-                "method": "issuer_press_repertoire_plus_two_secondary_clocks",
+                "method": ("primary_official_event_schedule_precedence" if resolved else
+                           "issuer_press_repertoire_plus_two_secondary_clocks"),
                 "official_event_page_retrieved": False,
                 "issuer_press_url": OFFICIAL_PRESS_RELEASE,
                 "publisher_urls": [FIRST, SECOND],
                 "repertoire_edition": "2026/27",
                 "showtimes_confirmed": len(claims),
+                "primary_official_event_url": route if resolved else None,
+                "primary_verified_on": primary["decision"]["verified_on"] if resolved else None,
+                "primary_verification_method": (
+                    "manual_editorial_read_not_live_fetch" if resolved else None),
+                "overridden_secondary_showtimes": resolved,
                 "source_independence_note":
                     "Two different secondary publishers may share original schedule inputs; no direct primary event page fetch",
             }
         }
         outcomes.append({"title": title, "status": "canonical_candidate_evidence_ready",
-                         "recite": len(claims)})
+                         "recite": len(claims), "official_overrides": len(resolved)})
     return (
         {"schema_version": 1,
          "candidates": sorted(canonical.values(), key=lambda r: r["id"])},

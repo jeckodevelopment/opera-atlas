@@ -52,16 +52,23 @@ class SanCarloCanonicalBridgeTests(unittest.TestCase):
         index, detail = empty()
         index, detail, results = apply(
             c, r, index, detail, checked_at="2026-11-22T22:10:00Z")
-        self.assertEqual(len(index["candidates"]), 1)
-        self.assertEqual(len(detail["evidence"]), 1)
-        self.assertEqual(len(detail["evidence"][0]["event_facts"]), 2)
+        self.assertEqual(len(index["candidates"]), 2)
+        self.assertEqual(len(detail["evidence"]), 2)
         self.assertEqual({x["status"] for x in results},
-                         {"canonical_candidate_evidence_ready",
-                          "recite_conflict_or_incomplete"})
-        self.assertEqual(index["candidates"][0]["source_key"], SOURCE_KEY)
-        self.assertEqual(index["candidates"][0]["official_url"],
-                         "https://www.teatrosancarlo.it/spettacoli/luisa-miller/")
-        evidence = detail["evidence"][0]
+                         {"canonical_candidate_evidence_ready"})
+        self.assertEqual(sum(len(x["event_facts"]) for x in detail["evidence"]), 5)
+        donizetti = next(x for x in detail["evidence"] if
+                         x["source_url"].endswith("/otto-mesi-in-due-ore/"))
+        self.assertEqual(len(donizetti["corroboration"]["overridden_secondary_showtimes"]), 2)
+        self.assertEqual(donizetti["corroboration"]["method"],
+                         "primary_official_event_schedule_precedence")
+        self.assertEqual({r["date"]: r["time"] for r in
+                          donizetti["corroboration"]["overridden_secondary_showtimes"]},
+                         {"2027-04-21": "18:00", "2027-04-23": "19:00"})
+        self.assertTrue(all(x["source_key"] == SOURCE_KEY for x in index["candidates"]))
+        self.assertIn("https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
+                      {x["official_url"] for x in index["candidates"]})
+        evidence = next(x for x in detail["evidence"] if x["source_url"].endswith("/luisa-miller/"))
         self.assertEqual(evidence["status"], "needs_editorial_review")
         self.assertFalse(evidence["corroboration"]["official_event_page_retrieved"])
         self.assertEqual(evidence["corroboration"]["showtimes_confirmed"], 2)
@@ -76,7 +83,7 @@ class SanCarloCanonicalBridgeTests(unittest.TestCase):
                                        checked_at="2026-11-23T22:10:00Z")
         self.assertEqual([x["id"] for x in index["candidates"]],
                          [x["id"] for x in again["candidates"]])
-        self.assertEqual(len(details_again["evidence"]), 1)
+        self.assertEqual(len(details_again["evidence"]), 2)
 
     def test_existing_first_party_evidence_wins(self):
         c, r = sources()
@@ -89,7 +96,7 @@ class SanCarloCanonicalBridgeTests(unittest.TestCase):
                                "source_url": url, "status": "needs_editorial_review",
                                "event_facts": [{"first_party": True}]}]
         _, out, statuses = apply(c, r, index, detail, checked_at="now")
-        self.assertEqual(out["evidence"][0]["event_facts"], [{"first_party": True}])
+        self.assertEqual(next(x for x in out["evidence"] if x["candidate_id"] == cid)["event_facts"], [{"first_party": True}])
         self.assertIn("stronger_primary_preserved", {x["status"] for x in statuses})
 
     def test_unapproved_identity_or_secondary_report_fails_closed(self):
@@ -103,6 +110,37 @@ class SanCarloCanonicalBridgeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "untrusted second publisher"):
             apply(c, r, index, detail, checked_at="now")
 
+    def test_no_priority_decision_still_holds_conflicting_production(self):
+        c, r = sources()
+        index, detail = empty()
+        index, detail, results = apply(
+            c, r, index, detail, checked_at="now",
+            primary_decisions={"schema_version": 1, "decisions": []})
+        self.assertEqual(len(index["candidates"]), 1)
+        self.assertEqual(len(detail["evidence"]), 1)
+        self.assertTrue(any(x["status"] == "recite_conflict_or_incomplete"
+                            for x in results))
+
+    def test_official_time_is_strictly_scoped_to_original_schedule(self):
+        from scripts.apply_san_carlo_corroborated import AUTHORITATIVE_TIMES
+        import json
+        original = json.loads(AUTHORITATIVE_TIMES.read_text())
+        c, r = sources()
+        index, detail = empty()
+        # A later source update conflicting with the official schedule
+        # must not be waved through with a stale historical decision.
+        c["productions"][1]["performances"][1]["time"] = "20:00"
+        index, detail, results = apply(
+            c, r, index, detail, checked_at="now",
+            primary_decisions=original)
+        self.assertEqual(len(index["candidates"]), 1)
+        self.assertIn("official_schedule_differs_from_candidate",
+                      {x["status"] for x in results})
+        bad = json.loads(AUTHORITATIVE_TIMES.read_text())
+        bad["decisions"][0]["official_event_url"] = "https://untrusted.example/"
+        with self.assertRaisesRegex(ValueError, "untrusted official"):
+            apply(*sources(), *empty(), checked_at="now", primary_decisions=bad)
+
     def test_no_partial_production_publication(self):
         c, r = sources()
         r["productions"][0]["unmatched_clocks"] = [
@@ -112,8 +150,8 @@ class SanCarloCanonicalBridgeTests(unittest.TestCase):
         r["productions"][0]["status"] = "incomplete_second_source"
         index, detail = empty()
         index, detail, outcomes = apply(c, r, index, detail, checked_at="now")
-        self.assertEqual(len(index["candidates"]), 0)
-        self.assertTrue(all(x["status"] == "recite_conflict_or_incomplete"
+        self.assertEqual(len(index["candidates"]), 1)
+        self.assertTrue(any(x["status"] == "recite_conflict_or_incomplete"
                             for x in outcomes))
 
 

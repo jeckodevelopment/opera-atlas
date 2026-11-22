@@ -10,6 +10,7 @@ on:
       - 'tests/test_san_carlo_independent_corroboration.py'
       - 'scripts/apply_san_carlo_corroborated.py'
       - 'tests/test_san_carlo_canonical_bridge.py'
+      - 'data/san-carlo-authoritative-showtimes.json'
       - 'tests/test_san_carlo_secondary_probe.py'
   push:
     branches: [main]
@@ -56,10 +57,14 @@ jobs:
           _, _, outcomes = apply(candidate, review, registry, details,
                                  checked_at="2026-11-22T22:00:00Z")
           ready = [x for x in outcomes if x["status"]=="canonical_candidate_evidence_ready"]
-          conflicts = [x for x in outcomes if x["status"]=="recite_conflict_or_incomplete"]
-          print("San Carlo canonical bridge:", len(ready), "productions ready;", len(conflicts), "held")
-          if not ready or not conflicts:
-              raise SystemExit("San Carlo canonical gate has not separated matches and conflicts")
+          blocked = [x for x in outcomes if x["status"] not in
+                     ("canonical_candidate_evidence_ready", "already_processed",
+                      "stronger_primary_preserved")]
+          overridden = sum(x.get("official_overrides", 0) for x in ready)
+          print("San Carlo canonical bridge:", len(ready), "productions ready;",
+                len(blocked), "held;", overridden, "secondary clocks overridden by official")
+          if blocked or (not ready and not outcomes) or overridden != 2:
+              raise SystemExit("San Carlo official authority has not resolved two source discrepancies")
           PY
       - name: Describe review-only result
         run: |
@@ -76,7 +81,8 @@ jobs:
               f"- Conflicting date/time observations: {result['conflicting_recite_count']}",
               f"- Unmatched candidate observations: {result['unmatched_recite_count']}",
               '- Published records: 0',
-              '- Official confirmation and canonical reconciliation: pending',
+              '- Official primary-page schedule takes precedence for the two conflicting clocks',
+              '- Canonical review gate runs separately; published records: 0',
               '',
               '### Conflicts',
           ]
