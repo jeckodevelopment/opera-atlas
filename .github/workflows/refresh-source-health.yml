@@ -65,7 +65,7 @@ jobs:
             echo "No changes to source health or candidate links."
           else
             git commit -m "data(sources): refresh official source health [skip ci]"
-            python -m scripts.safe_push_catalog
+            python -m scripts.safe_push_catalog --source-health
           fi
       - name: Rescan on latest main if checkpoint was deferred
         id: retry
@@ -94,7 +94,7 @@ jobs:
               break
             fi
             git commit -m "data(sources): retry source health on latest main [skip ci]"
-            GITHUB_OUTPUT=/tmp/source-health-retry-push python -m scripts.safe_push_catalog
+            GITHUB_OUTPUT=/tmp/source-health-retry-push python -m scripts.safe_push_catalog --source-health
             if grep -q '^deferred=false$' /tmp/source-health-retry-push; then
               echo "published=true" >> "$GITHUB_OUTPUT"
               if grep -q '^new_candidates=true$' /tmp/source-health-retry-candidates; then
