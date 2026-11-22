@@ -1,0 +1,47 @@
+name: Verify public Opera Atlas pages in browser
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '42 8 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_public_atlas.py'
+      - '.github/workflows/audit-public-atlas.yml'
+permissions:
+  contents: write
+concurrency:
+  group: opera-atlas-public-browser-audit
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout current canonical catalog
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Audit all canonical production and program routes
+        run: python -m scripts.audit_public_atlas
+      - name: Publish audit snapshot even when sites are unavailable
+        id: publication
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/catalog/live-publication-health.json
+          if git diff --cached --quiet; then
+            echo "No new audit snapshot."
+          else
+            git commit -m "data(diagnostics): check public Atlas pages [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
