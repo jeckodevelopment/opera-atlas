@@ -2,6 +2,7 @@
   "schema_version": 1,
   "new_stagings": 0,
   "new_recite": 0,
+  "consolidated_stagings": 0,
   "auto_skipped": [
     {
       "candidate_id": "oa-index-1bf92e353f6745bc2b3a",
