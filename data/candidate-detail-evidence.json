@@ -3364,6 +3364,45 @@
       ]
     },
     {
+      "candidate_id": "oa-index-7ff44b89bf8d688bbee0",
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027",
+      "content_sha256": "ed60577798fe16480407137b5c7a1d008a5d092bdcc3045ef5c949e6425ae012",
+      "content_hash_scope": "editorial_cross_source_provenance_v1",
+      "reviewed_on": "2026-11-22",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Sociale",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T20:30:00+01:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Sociale",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T16:00:00+01:00"
+        }
+      ],
+      "corroboration": {
+        "method": "editorial_review_of_current_public_pages",
+        "official_event_page_retrieved": false,
+        "issuer_url": "https://artbonus.gov.it/1319-comune-di-rovigo.html",
+        "publisher_urls": [
+          "https://www.classicalive.it/it/eventi/2027-01-22/la-traviata/",
+          "https://www.classicalive.it/it/eventi/2027-01-24/la-traviata/"
+        ],
+        "cross_check_url": "https://veneto.piazzainfesta.it/rovigo/la-traviata-118403",
+        "excluded_school_date": "2027-01-21",
+        "observed_publication_type": "external_secondary_sources",
+        "independence_note": "Two ClassicaLive pages share one publisher; Piazza in Festa declares automated AI-assisted compilation from municipal acts. Not independent primary confirmations.",
+        "hash_scope": "editorial_source_urls_and_reviewed_dates_not_official_page_html"
+      }
+    },
+    {
       "candidate_id": "oa-index-808c1bd6d5fa592d62af",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
