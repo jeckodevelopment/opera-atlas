@@ -495,9 +495,14 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         key=candidate["source_key"]
         source=config.get(key)
         url=candidate["official_url"]
+        municipal_spoleto=False
+        if key=="spoleto-tls-lirica-2026":
+            from opera_atlas.spoleto_municipal_parser import URL as municipal
+            municipal_spoleto=(url==municipal)
         if (source is None or key not in VENUE_BY_SOURCE or item.get("source_url")!=url
             or item.get("source_key")!=key or not eligible(key,url)
-            or urlsplit(url).hostname!=urlsplit(source["official_url"]).hostname):
+            or (urlsplit(url).hostname!=urlsplit(source["official_url"]).hostname
+                and not municipal_spoleto)):
             issues.append({"candidate_id":cid,"reason":"unsupported_or_untrusted_source"})
             continue
         # Both the explicitly named work and composer must be present in the
