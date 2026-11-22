@@ -6,6 +6,7 @@ from pathlib import Path
 
 from opera_atlas.programs import credited_components,program_from_evidence
 from scripts.publish_catalog_v2 import ROOT
+from scripts.publish_programs import load_reviewed_work_editorials
 
 class MultiWorkProgramTests(unittest.TestCase):
     @classmethod
@@ -69,6 +70,28 @@ class MultiWorkProgramTests(unittest.TestCase):
         bad=copy.deepcopy(detail)
         bad["event_facts"][-1]["starts_at"]="2026-12-13T16:00:00+01:00"
         with self.assertRaises(ValueError):build(bad)
+
+    def test_four_reviewed_editorials_are_complete_and_unambiguous(self):
+        file=ROOT/"data"/"reviewed-program-work-editorials.json"
+        entries=json.loads(file.read_text(encoding="utf-8"))
+        reviewed=load_reviewed_work_editorials(entries)
+        expected={
+            ("don pasquale","gaetano donizetti"),
+            ("il tabarro","giacomo puccini"),
+            ("suor angelica","giacomo puccini"),
+            ("gianni schicchi","giacomo puccini"),
+        }
+        self.assertEqual(set(reviewed),expected)
+        for profile in reviewed.values():
+            self.assertTrue(profile["synopsis"])
+            self.assertGreaterEqual(len(profile["history"]["sources"]),2)
+        with self.assertRaises(ValueError):
+            load_reviewed_work_editorials({
+                "schema_version":1,"works":entries["works"]*2})
+        broken=copy.deepcopy(entries)
+        broken["works"][0]["history"]["sources"]=[]
+        with self.assertRaises(ValueError):
+            load_reviewed_work_editorials(broken)
 
     def test_reject_incomplete_or_ambiguous_credits(self):
         for heading in ("Pagliacci di Ruggero Leoncavallo",
