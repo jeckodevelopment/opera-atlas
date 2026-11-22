@@ -58,6 +58,11 @@
       "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
     },
     {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "scope": "dynamic_category",
+      "evidence": "Official /tipo-spettacolo/lirica/ archive lists independent event pages per performance; verify category, venue, heading, composer and page-specific date/clock for every event."
+    },
+    {
       "source_key": "lecce-apollo-pinocchio-2026",
       "scope": "historical_notice",
       "evidence": "A single historic official article/document is not a reusable future-season catalogue."
