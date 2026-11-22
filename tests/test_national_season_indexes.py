@@ -3,12 +3,31 @@ import copy
 import json
 import unittest
 from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
-from scripts.discover_season_indexes import CONFIG,extract,scan,classify,eligible,reviewed_source_urls
+from scripts.discover_season_indexes import CONFIG,extract,scan,classify,eligible,reviewed_source_urls,unscanned_source_keys
 
 class NationalIndexTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.config=json.loads(CONFIG.read_text(encoding="utf-8"))
+    def test_newly_configured_sources_get_priority_without_false_health(self):
+        config=self.config
+        keys={row["key"] for row in config["sources"] if row["access_status"]=="approved"}
+        old={"schema_version":1,"sources":[
+            {"key":key,"last_attempt_at":"2026-11-22T12:00:00+00:00"}
+            for key in keys if key not in {
+                "napoli-san-carlo-rolling-opera","pesaro-rof-2026",
+                "martina-valle-itria-2026","trapani-luglio-musicale-2026"
+            }]}
+        self.assertEqual(unscanned_source_keys(config,old),{
+            "napoli-san-carlo-rolling-opera","pesaro-rof-2026",
+            "martina-valle-itria-2026","trapani-luglio-musicale-2026"})
+        old["sources"].append({"key":"napoli-san-carlo-rolling-opera",
+                               "last_attempt_at":"2026-11-22T13:00:00+00:00",
+                               "status":"unavailable_or_invalid"})
+        self.assertNotIn("napoli-san-carlo-rolling-opera",
+                         unscanned_source_keys(config,old))
+        self.assertEqual(unscanned_source_keys(config,{"sources":[]}),keys)
+
     def test_rovigo_parser_reports_precise_safe_diagnostics(self):
         source=next(x for x in self.config["sources"]
                     if x["key"]=="rovigo-sociale-opera-2026-27")
