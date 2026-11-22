@@ -29,6 +29,25 @@ class ParmaFamilyOperaTests(unittest.TestCase):
         self.assertEqual(len(evidence),2)
         self.assertEqual({x["date"] for x in evidence},{"2026-12-05"})
         self.assertEqual({x["composer"] for x in evidence},{"Giovanni Sollima"})
+    def test_header_calendar_bounds_season_year_and_ignores_body_dates(self):
+        # The official CMS date ribbon is two lines before 'Spettacolo'.
+        # An unrelated school notice in the body must never decide the
+        # event year or make a two-day ribbon appear ambiguous.
+        original=page()
+        html=original.replace(
+            "ritiro dei biglietti per le scuole venerdì 27 novembre 2026",
+            "ritiro dei biglietti per le scuole venerdì 27 novembre 2025")
+        self.assertEqual(parse_family_opera(html,url=URL)[-1],
+                         [("2026-12-05","15:00"),("2026-12-05","18:00")])
+        # Contradictory years in the actual first-party date ribbon must
+        # stop all publication instead of selecting the convenient one.
+        bad=original.replace("<div>5 dic 2026</div>","<div>5 dic 2027</div>")
+        with self.assertRaisesRegex(ValueError,"ambiguous official Parma season year"):
+            parse_family_opera(bad,url=URL)
+        with self.assertRaisesRegex(ValueError,"missing Parma header date boundary"):
+            parse_family_opera(original.replace("<h2>Spettacolo</h2>",
+                                               "<h2>Dettagli</h2>"),url=URL)
+
     def test_unverified_facts_do_not_create_family_tickets(self):
         for html in (
             page().replace("musica Giovanni Sollima","musica Altro autore"),

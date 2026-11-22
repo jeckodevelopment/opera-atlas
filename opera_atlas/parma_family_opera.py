@@ -37,11 +37,21 @@ def parse_family_opera(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str
     text=clean(html)
     at=text.find(TITLE)
     if at<0:raise ValueError("Parma work heading absent")
-    intro=text[at:at+220]
-    years=set(re.findall(r"\b(?:[0-3]?\d)\s+(?:"
-        + "|".join(MONTHS)+r")\s+(20\d{2})\b",intro,re.I))
-    if len(years)!=1:raise ValueError("ambiguous official Parma season year")
-    year=int(next(iter(years)))
+    # The site renders its heading dates as separate day/month/year nodes.
+    # Take only the dates before the first 'Spettacolo' content heading:
+    # later school ticket notices may mention a different year entirely.
+    intro_end=re.search(r"(?i)\bSpettacolo\b",text[at+len(TITLE):])
+    if not intro_end:
+        raise ValueError("missing Parma header date boundary")
+    intro=text[at+len(TITLE):at+len(TITLE)+intro_end.start()]
+    header_dates=re.findall(r"\b([0-3]?\d)\s+("
+        + "|".join(MONTHS)+r")\s+(20\d{2})\b",intro,re.I)
+    if not 1<=len(header_dates)<=12:
+        raise ValueError("missing official Parma header calendar")
+    years={int(year) for _,_,year in header_dates}
+    if len(years)!=1:
+        raise ValueError("ambiguous official Parma season year")
+    year=next(iter(years))
     # The author and librettist are credited as separate labels in the
     # official 'Spettacolo' section. Never confuse the librettist with author.
     if not re.search(r"(?i)\bmusica\s+Giovanni Sollima\s+libretto\b",text):
