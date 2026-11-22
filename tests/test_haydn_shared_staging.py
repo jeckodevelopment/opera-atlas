@@ -31,6 +31,9 @@ class HaydnSharedStagingTests(unittest.TestCase):
         for row in evidence:
             self.assertEqual(row["status"],"needs_editorial_review")
             self.assertEqual(len(row["event_facts"]),1)
+        from scripts.consolidate_haydn_cronaca import consolidate
+        facts,registry,migrated=consolidate(facts,registry)
+        self.assertIn(migrated,(0,1))
         resulting,identity,approved,report=promote(
             facts,registry,{"schema_version":1,"evidence":evidence},
             {"schema_version":1,"candidates":selected},[],
