@@ -336,10 +336,16 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                if source_key=="goldoni-livorno-rolling-lirica" else
                {"Teatro Comunale di Bolzano","Teatro Sociale"}
                if source_key=="haydn-rolling-opera" else {default_venue})
+    if source_key=="savona-giocosa-rolling-opera":
+        # The official Opera Giocosa programme uses the short theatre name.
+        # Preserve raw evidence while resolving one canonical physical venue.
+        permitted={"Teatro Chiabrera","Teatro Gabriello Chiabrera"}
     if venue not in permitted:return None
+    canonical_name=(default_venue if source_key=="savona-giocosa-rolling-opera"
+                    else venue)
     found=[(key,value) for key,value in registry["venues"].items()
-           if value["city"]==city and value["name"]==venue
-           and key==city+"|"+venue]
+           if value["city"]==city and value["name"]==canonical_name
+           and key==city+"|"+canonical_name]
     return (city,venue,found[0][1] if found else None) if len(found)<=1 else None
 
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
