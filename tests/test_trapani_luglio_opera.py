@@ -61,6 +61,37 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
         self.assertEqual(verified_venue(KEY,facts,registry)[:2],
                          ("Trapani","Teatro Giuseppe Di Stefano"))
 
+    def test_public_chamber_opera_uses_real_tonino_pardo_venue(self):
+        cases=(
+            ("Ghost Cafè","Carlo Galante","ghost-cafe","17 ottobre 2026, Ore 19:00"),
+            ("Magic Words Circus","Orazio Sciortino","magic-words-circus",
+             "26 settembre 2026, Ore 19:00"),
+            ("Fuori Fuoco","Diana Buscemi","fuori-fuoco",
+             "28 novembre 2026, Ore 19:00"),
+        )
+        for title,composer,slug,clock in cases:
+            with self.subTest(slug=slug):
+                url=INDEX+slug+"/"
+                fixture=(f'<h1>{title}</h1><p>Homepage Eventi Stagione 2026</p>'
+                         f'<div>Opera da camera</div><p>{title}</p>'
+                         f'<p>Musica di {composer}</p><p>Libretto di Testo Artistico</p>'
+                         f'<div>Teatro M° Tonino Pardo</div><div>{clock}</div>'
+                         '<h2>Personaggi e interpreti</h2>')
+                parsed=parse_detail(fixture,url=url)
+                self.assertEqual(parsed[1:3],(composer,"Teatro M° Tonino Pardo"))
+                self.assertEqual(len(parsed[3]),1)
+                facts=[{"event_title":title,"composer":composer,
+                        "venue":"Teatro M° Tonino Pardo",
+                        "date":parsed[3][0][0],
+                        "starts_at":parsed[3][0][0]+"T19:00:00+01:00"}]
+                self.assertEqual(verified_venue(KEY,facts,
+                     json.loads(REGISTRY.read_text()))[:2],
+                     ("Trapani","Teatro M° Tonino Pardo"))
+                self.assertRaises(ValueError,parse_detail,
+                    fixture.replace("Opera da camera","Concerto"),url=url)
+                self.assertRaises(ValueError,parse_detail,
+                    fixture.replace("Teatro M° Tonino Pardo","Chiostro di San Domenico"),url=url)
+
     def test_automatic_rollover_requires_verified_next_official_season(self):
         from scripts.rollover_season_indexes import next_index,ROLLOVER_KEYS
         from scripts.discover_season_indexes import validate_config

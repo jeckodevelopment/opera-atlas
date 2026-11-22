@@ -360,6 +360,8 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                if source_key=="haydn-rolling-opera" else {default_venue})
     if source_key=="pesaro-rof-2026":
         permitted={"Teatro Gioachino Rossini","Auditorium Scavolini"}
+    if source_key=="trapani-luglio-musicale-2026":
+        permitted={"Teatro Giuseppe Di Stefano","Teatro M° Tonino Pardo"}
     if source_key=="savona-giocosa-rolling-opera":
         # The official Opera Giocosa programme uses the short theatre name.
         # Preserve raw evidence while resolving one canonical physical venue.
