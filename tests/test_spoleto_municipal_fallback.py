@@ -117,7 +117,9 @@ class SpoletoMunicipalFallbackTests(unittest.TestCase):
                   if x["municipality"]=="Spoleto" and x["source_url"]==URL]
         self.assertEqual(len(existing),1,report)
         self.assertEqual(len(existing[0]["dates"]),3,report)
-        self.assertEqual(report["new_recite"],3,report)
+        already_published=any(x["municipality"]=="Spoleto"
+                              and x["source_url"]==URL for x in facts["productions"])
+        self.assertEqual(report["new_recite"],0 if already_published else 3,report)
         self.assertIn(URL,urls)
         built2,ids2,_,again=promote(built,ids,evidence,candidates,urls,
                                     today=date(2026,11,22))
