@@ -5,14 +5,14 @@
   "auto_skipped": [
     {
       "candidate_id": "oa-index-8bc8b40e1da92efab27d",
-      "reason": "incomplete_work_or_clock"
-    },
-    {
-      "candidate_id": "oa-index-d54e9b021b5167cfb735",
-      "reason": "incomplete_work_or_clock"
+      "reason": "verified_work_image_missing"
     },
     {
       "candidate_id": "oa-index-a98083086627ce6e0225",
+      "reason": "verified_work_image_missing"
+    },
+    {
+      "candidate_id": "oa-index-d54e9b021b5167cfb735",
       "reason": "verified_work_image_missing"
     }
   ],
