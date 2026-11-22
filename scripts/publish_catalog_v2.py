@@ -71,7 +71,7 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
     used_keys = {channel: set() for channel in CHANNELS}
     route_keys = set()
     work_routes = {}
-    for record in registry["works"].values():
+    for record in list(registry["works"].values()) + list(reserved.values()):
         base_slug=slugify(record["title"])
         public_slug=record.get("route_slug",record["slug"])
         if record["slug"] != base_slug or not isinstance(public_slug,str) or slugify(public_slug)!=public_slug:
@@ -135,7 +135,16 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
                 "status": legacy_event["status"],
             })
             performances.append(item)
-    if set(works) != {p["id"] for p in registry["works"].values()}:
+    # Publish historically verified work identities without manufacturing a
+    # staging or a separate ticket for each component of a multi-work program.
+    for record in reserved.values():
+        item={k:v for k,v in record.items() if k!="status"}
+        item["route_slug"]=record.get("route_slug",record["slug"])
+        item["catalog_status"]="program_component"
+        works[item["id"]]=item
+    expected_work_ids={p["id"] for p in registry["works"].values()}
+    expected_work_ids.update(p["id"] for p in reserved.values())
+    if set(works) != expected_work_ids:
         raise ValueError("unexpected missing work ID")
     for channel in CHANNELS:
         if set(registry[channel]) != used_keys[channel]:
