@@ -21,6 +21,7 @@ OUT = ROOT / "public/catalog/source-automation.json"
 # Explicit links between sources and venues; never match unrelated theatres
 # sharing a city, name, or festival organizer. Grouped sources are intentional.
 INDEX_VENUES = {
+    "pesaro-rof-2026": ("Pesaro|Teatro Gioachino Rossini",),
     "martina-valle-itria-2026": ("Martina Franca|Palazzo Ducale di Martina Franca",),
     "trapani-luglio-musicale-2026": ("Trapani|Teatro Giuseppe Di Stefano",),
     "haydn-rolling-opera": ("Bolzano|Teatro Comunale di Bolzano", "Trento|Teatro Sociale"),
