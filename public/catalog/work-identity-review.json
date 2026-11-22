@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T20:26:17+00:00",
+  "checked_at": "2026-11-22T20:28:19+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -111,10 +111,10 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 195,
+    "candidates_checked": 196,
     "candidates_without_facts": 0,
-    "facts_examined": 724,
-    "facts_resolved": 714,
+    "facts_examined": 730,
+    "facts_resolved": 720,
     "translated_facts_resolved": 0,
     "unmatched_facts": 10,
     "unmatched_groups": 5

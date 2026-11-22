@@ -713,6 +713,60 @@
       ]
     },
     {
+      "candidate_id": "oa-index-19141fd504da67924d01",
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
+      "content_sha256": "88945ed0ec9b7552a160de560271b43d6ea17739481890ebdb6deac204eb934a",
+      "checked_at": "2026-11-22T20:28:19+00:00",
+      "status": "needs_editorial_review",
+      "official_schedule_evidence_url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/11/Programma_STAGIONE_LIRICA_2026_27_WEB.pdf",
+      "official_credits_evidence_url": "https://www.teatroverdi-trieste.com/it/news/presentata-la-stagione-lirica-e-di-balletto-2026-27/",
+      "event_facts": [
+        {
+          "event_title": "Don Giovanni",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-01-15",
+          "starts_at": "2027-01-15T20:00:00+01:00"
+        },
+        {
+          "event_title": "Don Giovanni",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-01-16",
+          "starts_at": "2027-01-16T18:00:00+01:00"
+        },
+        {
+          "event_title": "Don Giovanni",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-01-17",
+          "starts_at": "2027-01-17T16:00:00+01:00"
+        },
+        {
+          "event_title": "Don Giovanni",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-01-21",
+          "starts_at": "2027-01-21T20:00:00+01:00"
+        },
+        {
+          "event_title": "Don Giovanni",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-01-23",
+          "starts_at": "2027-01-23T16:00:00+01:00"
+        },
+        {
+          "event_title": "Don Giovanni",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Lirico Giuseppe Verdi",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T16:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-1a02a18e39758285a976",
       "source_key": "giglio-lucca-opera-2026-27",
       "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",

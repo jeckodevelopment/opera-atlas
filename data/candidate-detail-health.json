@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T20:26:18+00:00",
+  "checked_at": "2026-11-22T20:28:19+00:00",
   "scope": "national",
-  "attempted": 4,
+  "attempted": 3,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -29,21 +29,9 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
-      "outcome": "official_programme_document_pending",
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-19141fd504da67924d01",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing performance details section",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "verified_first_party_season_calendar",
+      "rows": 6
     }
   ]
 }
