@@ -18,7 +18,11 @@ APPROVED={
  ("https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
   "Le nozze dell’orso","Joe Schittino"):(
   "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
-  "https://www.teatromassimobellini.it/media/2026/11/PHOTO-2026-Orso.jpg")
+  "https://www.teatromassimobellini.it/media/2026/11/PHOTO-2026-Orso.jpg"),
+ ("https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
+  "Jeanne Dark","Fabio Vacchi"):(
+  "https://www.maggiofiorentino.com/events/jeanne-dark-5",
+  "https://www.maggiofiorentino.com/uploads/JEANNE_DARK_70x100_INTERNO_ok_5b07c76e9f.jpg")
 }
 FIELDS=("image_url","source_url","original_source_url","credit","alt","kind")
 
@@ -38,9 +42,13 @@ def verified_original_art(*,source_url:str,title:str,composer:str)->dict|None:
                    and credit.casefold()==composer.casefold()),None)
     if not expected or (row.get("original_source_url"),row.get("image_url"))!=expected:
         return None
-    for field in ("source_url","original_source_url","image_url"):
+    allowed_origins={
+        "source_url":urlsplit(source_url).hostname,
+        "original_source_url":urlsplit(expected[0]).hostname,
+        "image_url":urlsplit(expected[1]).hostname}
+    for field,hostname in allowed_origins.items():
         uri=urlsplit(row[field])
-        if (uri.scheme!="https" or uri.hostname!="www.teatromassimobellini.it"
+        if (uri.scheme!="https" or uri.hostname!=hostname
             or uri.port is not None or uri.query or uri.fragment or uri.username
             or uri.password):
             return None

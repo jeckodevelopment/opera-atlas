@@ -73,7 +73,7 @@ class MultiWorkProgramTests(unittest.TestCase):
         bad["event_facts"][-1]["starts_at"]="2026-12-13T16:00:00+01:00"
         with self.assertRaises(ValueError):build(bad)
 
-    def test_four_reviewed_editorials_are_complete_and_unambiguous(self):
+    def test_six_reviewed_editorials_are_complete_and_unambiguous(self):
         file=ROOT/"data"/"reviewed-program-work-editorials.json"
         entries=json.loads(file.read_text(encoding="utf-8"))
         reviewed=load_reviewed_work_editorials(entries)
@@ -82,6 +82,8 @@ class MultiWorkProgramTests(unittest.TestCase):
             ("il tabarro","giacomo puccini"),
             ("suor angelica","giacomo puccini"),
             ("gianni schicchi","giacomo puccini"),
+            ("jeanne d’arc au bûcher","arthur honegger"),
+            ("jeanne dark","fabio vacchi"),
         }
         self.assertEqual(set(reviewed),expected)
         for profile in reviewed.values():
@@ -94,6 +96,29 @@ class MultiWorkProgramTests(unittest.TestCase):
         broken["works"][0]["history"]["sources"]=[]
         with self.assertRaises(ValueError):
             load_reviewed_work_editorials(broken)
+
+    def test_jeanne_components_have_distinct_canonical_ids_and_one_ticket_per_date(self):
+        from scripts.publish_catalog_v2 import normalized
+        read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
+        reserved=self.registry["reserved_works"]
+        self.assertEqual(reserved["jeanne d’arc au bûcher|arthur honegger"]["id"],
+                         "oa-w-000099")
+        self.assertEqual(reserved["jeanne dark|fabio vacchi"]["id"],
+                         "oa-w-000100")
+        result=assemble_programs(
+            read("data/season-index-candidates.json"),
+            read("data/candidate-detail-evidence.json"),
+            self.registry,read("data/verified-launch-catalog.json"),
+            read("data/season-index-config.json"),
+            read("data/reviewed-program-work-editorials.json"))
+        jeanne=[p for p in result["programs"]
+                if p["source_key"]=="verdi-trieste-season-2026-27"
+                and "Jeanne Dark" in p["title"]]
+        self.assertEqual(len(jeanne),1)
+        self.assertEqual(len(jeanne[0]["performances"]),6)
+        self.assertEqual({c["work_id"] for c in jeanne[0]["components"]},
+                         {"oa-w-000099","oa-w-000100"})
+        self.assertTrue(all("editorial" in c for c in jeanne[0]["components"]))
 
     def test_jesi_trittico_is_one_program_with_two_tickets_and_three_editorials(self):
         read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
