@@ -89,7 +89,7 @@ class Events(HTMLParser):
                 self.current["parts"].append("\n")
 
 
-def parse_independent(html: str) -> dict[str, dict]:
+def parse_independent(html: str, *, allowed_titles: set[str] | None = None) -> dict[str, dict]:
     page = Events()
     page.feed(html)
     meta = " ".join(page.meta_parts)
@@ -99,7 +99,7 @@ def parse_independent(html: str) -> dict[str, dict]:
     found = {}
     for block in page.blocks:
         title = key_of(block["title"])
-        if not title:
+        if not title or (allowed_titles is not None and title not in allowed_titles):
             continue
         text = " ".join(block["parts"]).replace(" \n ", "\n").replace("\n ", "\n")
         # This event block can include an h5 month/year heading. Choose
@@ -218,7 +218,8 @@ def main():
         response = fetch_official_html(db, source_id=sid, url=SOURCE, network_enabled=True)
     finally:
         db.close()
-    result = compare(doc, parse_independent(response.html))
+    allowed = {key_of(x["title"]) for x in doc["productions"]}
+    result = compare(doc, parse_independent(response.html, allowed_titles=allowed))
     if args.sync_review:
         _write_atomic(REPORT, result)
         _write_atomic(PUBLIC, result)

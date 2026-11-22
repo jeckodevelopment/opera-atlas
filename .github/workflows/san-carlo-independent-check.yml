@@ -2,6 +2,13 @@ name: San Carlo independent showtime check
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/san-carlo-independent-check.yml'
+      - 'scripts/corroborate_san_carlo_secondary.py'
+      - 'scripts/scan_san_carlo_secondary.py'
+      - 'tests/test_san_carlo_independent_corroboration.py'
+      - 'tests/test_san_carlo_secondary_probe.py'
   push:
     branches: [main]
     paths:
@@ -30,7 +37,9 @@ jobs:
       - name: Acquire San Carlo candidates only
         run: python -m scripts.scan_san_carlo_secondary --allow-network --sync-candidates
       - name: Compare independent live calendar with candidate dates
-        run: python -m scripts.corroborate_san_carlo_secondary --allow-network --dry-run | tee "$RUNNER_TEMP/san-carlo-corroboration.json"
+        run: |
+          set -o pipefail
+          python -m scripts.corroborate_san_carlo_secondary --allow-network --dry-run | tee "$RUNNER_TEMP/san-carlo-corroboration.json"
       - name: Describe review-only result
         run: |
           python - <<'PY'

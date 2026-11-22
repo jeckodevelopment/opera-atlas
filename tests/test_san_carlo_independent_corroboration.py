@@ -57,6 +57,18 @@ class SanCarloIndependentReviewTests(unittest.TestCase):
                          {"2027-04-21", "2027-04-23"})
         self.assertEqual(conflicts["status"], "needs_date_review")
 
+    def test_mixed_ballet_with_two_same_day_performances_is_outside_scope(self):
+        html = independent_fixture().replace(
+            '<h4>GALA ANNA RAZZI</h4>',
+            '<h4>LA DAME AUX CAMÉLIAS</h4>'
+        ).replace(
+            '<p>Giugno: 03 (8h00 pm - Turno A)</p>',
+            '<p>Giugno: 03 (5h00 pm - Turno A), 03 (9h00 pm - F.A.)</p>'
+        )
+        target = {"luisa miller", "otto mesi in due ore o sia gli esiliati in siberia"}
+        observed = parse_independent(html, allowed_titles=target)
+        self.assertEqual(set(observed), target)
+
     def test_no_secondary_calendar_is_not_success(self):
         with self.assertRaisesRegex(ValueError, "venue and season"):
             parse_independent("<h4>LUISA MILLER</h4><p>Dicembre: 02 (8h00 pm)</p>")
