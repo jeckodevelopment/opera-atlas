@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T00:06:03+00:00",
+  "checked_at": "2026-11-22T00:06:46+00:00",
   "total": 198,
   "states": {
     "already_catalogued": 115,
@@ -8,11 +8,5 @@
     "not_in_official_season": 18,
     "needs_review": 20
   },
-  "changes": [
-    {
-      "candidate_id": "oa-index-0a7e4f31ff7370ffc325",
-      "before": "needs_review",
-      "after": "excluded_nonopera"
-    }
-  ]
+  "changes": []
 }

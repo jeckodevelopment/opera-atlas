@@ -4,10 +4,6 @@
   "new_recite": 0,
   "auto_skipped": [
     {
-      "candidate_id": "oa-index-0a7e4f31ff7370ffc325",
-      "reason": "unsupported_or_untrusted_source"
-    },
-    {
       "candidate_id": "oa-index-8bc8b40e1da92efab27d",
       "reason": "incomplete_work_or_clock"
     },
