@@ -41,6 +41,53 @@ class AutoCatalogueTests(unittest.TestCase):
         }]}
         return evidence,candidates
 
+    def test_treviso_independently_ticketed_works_publish_without_duplicate_ids(self):
+        from scripts.publish_catalog_v2 import ROOT
+        details=json.loads((ROOT/"data/candidate-detail-evidence.json").read_text())
+        evidence=next(x for x in details["evidence"]
+                      if x["source_key"]=="treviso-del-monaco-opera-2026-27")
+        observations=split_verified_season(evidence)
+        self.assertEqual(len(observations),2)
+        self.assertEqual(sorted(len(x["event_facts"]) for x in observations),[2,2])
+        original=json.loads((ROOT/"data/season-index-candidates.json").read_text())
+        candidate=next(x for x in original["candidates"]
+                       if x["id"]==evidence["candidate_id"])
+        fixture={"schema_version":1,"candidates":[{**candidate,"status":"needs_review"}]}
+        facts,registry,urls,report=promote(self.facts,self.registry,
+            {"schema_version":1,"evidence":[evidence]},fixture,[],
+            today=date(2026,11,22))
+        observed=[p for p in facts["productions"]
+                  if p["source_url"]==evidence["source_url"]
+                  and p["municipality"]=="Treviso"]
+        self.assertEqual({p["title"] for p in observed},
+                         {"La traviata","Pagliacci"},report)
+        self.assertEqual(sum(len(p["dates"]) for p in observed),4)
+        self.assertEqual(len({p["key"] for p in observed}),2)
+        for p in observed:
+            self.assertEqual(p["venue"],"Teatro Comunale Mario del Monaco")
+            self.assertEqual(p["region"],"Veneto")
+        once,ids,_,repeated=promote(facts,registry,
+            {"schema_version":1,"evidence":[evidence]},fixture,urls,
+            today=date(2026,11,22))
+        self.assertEqual(repeated["new_recite"],0)
+        self.assertEqual(once,facts)
+        self.assertEqual(ids,registry)
+
+    def test_treviso_incomplete_single_opera_is_not_partially_published(self):
+        from scripts.publish_catalog_v2 import ROOT
+        doc=json.loads((ROOT/"data/candidate-detail-evidence.json").read_text())
+        detail=next(x for x in doc["evidence"]
+                    if x["source_key"]=="treviso-del-monaco-opera-2026-27")
+        mutilated=copy.deepcopy(detail)
+        mutilated["event_facts"]=detail["event_facts"][:-1]
+        self.assertEqual(split_verified_season(mutilated),[mutilated])
+        unknown=copy.deepcopy(detail)
+        unknown["event_facts"].append({
+            "event_title":"Inventata","composer":"Sconosciuto",
+            "date":"2027-02-01","starts_at":"2027-02-01T20:00:00+01:00",
+            "venue":"Teatro Comunale Mario del Monaco"})
+        self.assertEqual(split_verified_season(unknown),[unknown])
+
     def test_complete_official_multiwork_seasons_publish_distinct_stagings(self):
         from scripts.collect_candidate_details import parse_known_opera_detail
         from tests.test_lecce_provincia_source import HTML as LECCE_HTML
