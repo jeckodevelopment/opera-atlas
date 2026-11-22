@@ -899,8 +899,14 @@ def _probe_future_season(item:dict,db,source_id:int,fetcher,*,enabled:bool):
 
 def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
          network_enabled:bool=False,now:str|None=None,
-         check_next_season:bool=False):
+         check_next_season:bool=False,
+         source_keys:set[str]|None=None):
     entries=validate_config(config)
+    if source_keys is not None:
+        approved={row["key"] for row in entries if row["access_status"]=="approved"}
+        if not source_keys or not source_keys<=approved:
+            raise ValueError("source-specific scan requires approved index keys")
+        entries=[row for row in entries if row["key"] in source_keys]
     if existing.get("schema_version")!=1 or not isinstance(existing.get("candidates"),list):
         raise ValueError("invalid index candidate registry")
     seen={x["id"]:x.copy() for x in existing["candidates"]}
@@ -1126,14 +1132,25 @@ def source_health_history(current:list[dict],previous:dict,*,checked_at:str):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--allow-network",action="store_true")
+    parser.add_argument("--source-key",default=None,
+                        help="Scan one approved index before the full crawl")
     args=parser.parse_args()
     config=json.loads(CONFIG.read_text(encoding="utf-8"))
     current=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {"schema_version":1,"candidates":[]}
-    result,health=scan(config,current,network_enabled=args.allow_network,
-                       check_next_season=args.allow_network)
+    result,health=scan(
+        config,current,network_enabled=args.allow_network,
+        check_next_season=args.allow_network,
+        source_keys={args.source_key} if args.source_key is not None else None)
     checked_at=datetime.now(timezone.utc).isoformat(timespec="seconds")
     previous=json.loads(HEALTH.read_text(encoding="utf-8")) if HEALTH.exists() else {}
     health=source_health_history(health,previous,checked_at=checked_at)
+    if args.source_key is not None:
+        # A priority source cannot erase health for theatres not rescanned.
+        old=previous.get("sources",[]) if previous.get("schema_version")==1 else []
+        by_key={row["key"]:row for row in old
+                if isinstance(row,dict) and isinstance(row.get("key"),str)}
+        by_key.update({row["key"]:row for row in health})
+        health=[by_key[key] for key in sorted(by_key)]
     _write_atomic(OUTPUT,result)
     _write_atomic(PUBLIC,result)
     _write_atomic(HEALTH,{"schema_version":1,"checked_at":checked_at,"sources":health})

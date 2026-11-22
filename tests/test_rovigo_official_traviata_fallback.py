@@ -54,6 +54,36 @@ class RovigoTraviataFallbackTests(unittest.TestCase):
         self.assertEqual(len(candidates["candidates"]),1)
         self.assertEqual(candidates["candidates"][0]["official_url"],URL)
 
+    def test_bounded_priority_scan_keeps_other_candidates_and_avoids_national_fetch(self):
+        config=json.loads(CONFIG.read_text())
+        visited=[]
+        def fetcher(db,*,source_id,url,network_enabled):
+            visited.append(url)
+            body=(HTML if url==URL else
+                  "<h1>Lo slider della stagione non è disponibile</h1>")
+            return FetchResult(url,body,"b"*64,len(body))
+        previous={"schema_version":1,"candidates":[{
+            "id":"oa-index-other","source_key":"modena-teatro-opera-2026-27",
+            "official_url":"https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+            "status":"already_catalogued",
+            "first_seen":"2026-11-22T10:00:00+00:00",
+            "last_seen":"2026-11-22T10:00:00+00:00",
+        }]}
+        candidates,status=scan(config,previous,fetcher=fetcher,
+                               network_enabled=True,source_keys={KEY})
+        self.assertEqual(len(status),1)
+        self.assertEqual(status[0]["key"],KEY)
+        self.assertEqual(status[0]["status"],"success")
+        self.assertEqual(len(visited),2)
+        self.assertEqual(visited[1],URL)
+        self.assertEqual(len(candidates["candidates"]),2)
+        self.assertTrue(any(c["id"]=="oa-index-other"
+                            for c in candidates["candidates"]))
+        for invalid in ({"not-approved"},set()):
+            with self.subTest(invalid=invalid),self.assertRaises(ValueError):
+                scan(config,previous,fetcher=fetcher,network_enabled=True,
+                     source_keys=invalid)
+
     def test_fail_closed_on_wrong_artist_dates_and_origin(self):
         for broken in (
             HTML.replace("Giuseppe Verdi","Giacomo Puccini"),

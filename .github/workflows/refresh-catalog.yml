@@ -104,6 +104,14 @@ jobs:
           python -m scripts.publish_work_editorial --check
           # A newly-reviewed observation may legitimately differ from the previous public v2 snapshot.
           # Validate the regenerated manifest only after rebuilding all referenced channels.
+      # An exact, first-party Rovigo detail URL is available even when the
+      # obsolete 2026/27 season slider fails. Discover it before the national
+      # queue so source discovery, detail evidence and canonical publication
+      # can complete in the same early checkpoint. All requests use robots.
+      - name: Acquire first-party Rovigo Traviata before national backlog
+        run: |
+          python -m scripts.discover_season_indexes --allow-network --source-key rovigo-sociale-opera-2026-27
+          python -m scripts.collect_candidate_details --allow-network --source-key rovigo-sociale-opera-2026-27
       # Take a national checkpoint before the expensive source crawl. This
       # recovers the existing review backlog even if a later adapter or
       # knowledge-service step times out. Each detail fetch respects robots.
@@ -117,6 +125,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json public/catalog/work-identity-review.json
+          git add data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
             echo "No new official detail evidence in early national checkpoint."
