@@ -23,9 +23,10 @@ class PublicationNotificationsTest(unittest.TestCase):
 
     def test_new_work_and_production(self):
         notices = new_entities(self.before, self.after)
-        self.assertEqual([n["kind"] for n in notices], ["Nuova opera", "Nuova produzione"])
+        self.assertEqual([n["kind"] for n in notices], ["Nuova opera", "Nuovo teatro", "Nuova produzione"])
         self.assertEqual(notices[0]["url"], "https://opera.plus/atlas/opere/la-traviata/")
-        self.assertEqual(notices[1]["url"], "https://opera.plus/atlas/torino/teatro-regio/la-traviata/")
+        self.assertEqual(notices[1]["url"], "https://opera.plus/atlas/torino/teatro-regio/")
+        self.assertEqual(notices[2]["url"], "https://opera.plus/atlas/torino/teatro-regio/la-traviata/")
 
     def test_no_repeat_for_updated_existing_entity(self):
         before = {key: dict(value) for key, value in self.after.items()}
@@ -51,30 +52,60 @@ class PublicationNotificationsTest(unittest.TestCase):
             "cancelled": {"id": "cancelled", "staging_id": "oa-s-1", "local_date": "2099-12-13",
                           "time_known": False, "status": "cancelled"},
         }
-        notice = new_entities(self.before, self.after)[1]
+        notice = new_entities(self.before, self.after)[2]
         html, plain = render_email(notice)
         self.assertIn("12 dicembre 2099", plain)
         self.assertIn("15 dicembre 2099 · ore 20:30", plain)
         self.assertLess(plain.index("12 dicembre"), plain.index("15 dicembre"))
         self.assertNotIn("18:00", plain)
         self.assertNotIn("11 dicembre", plain)
-        self.assertNotIn("13 dicembre", plain)
-        self.assertNotIn("2020", html)
-        self.assertIn("Recite", html)
+        self.assertIn("13 dicembre 2099", plain)
+        self.assertIn("3 gennaio 2020", html)
+        self.assertIn("Recite censite", html)
         self.assertIn("15 dicembre 2099", html)
 
     def test_production_without_public_recite_shows_explicit_absence(self):
         notice = new_entities(self.before, self.after)[1]
         html, plain = render_email(notice)
-        self.assertIn("Recite previste:", plain)
-        self.assertIn("Date non ancora disponibili", plain)
-        self.assertIn("Date non ancora disponibili", html)
+        self.assertIn("Recite censite:", plain)
+        self.assertIn("Nessuna recita censita", plain)
+        self.assertIn("Nessuna recita censita", html)
 
     def test_new_work_mail_does_not_show_performance_dates(self):
         notice = new_entities(self.before, self.after)[0]
         html, plain = render_email(notice)
-        self.assertNotIn("Recite previste:", plain)
-        self.assertNotIn("Date non ancora disponibili", html)
+        self.assertNotIn("Recite censite:", plain)
+        self.assertNotIn("Nessuna recita censita", html)
+
+    def test_new_venue_email_contains_location_and_canonical_link(self):
+        notice = new_entities(self.before, self.after)[1]
+        html, plain = render_email(notice)
+        self.assertEqual(notice["kind"], "Nuovo teatro")
+        self.assertIn("Teatro Regio", plain)
+        self.assertIn("Città: Torino", plain)
+        self.assertIn("https://opera.plus/atlas/torino/teatro-regio/", html)
+        self.assertNotIn("Recite censite", plain)
+
+    def test_existing_venue_does_not_trigger_when_new_staging_published(self):
+        before = {key: dict(value) for key, value in self.after.items()}
+        before["stagings"] = {}
+        notices = new_entities(before, self.after)
+        self.assertEqual([n["kind"] for n in notices], ["Nuova produzione"])
+
+    def test_historical_only_staging_shows_all_known_dates(self):
+        self.after["performances"] = {
+            "past1": {"id": "past1", "staging_id": "oa-s-1",
+                      "local_date": "2026-10-18", "starts_at": "2026-10-18T18:00:00+02:00",
+                      "time_known": True, "status": "announced"},
+            "past2": {"id": "past2", "staging_id": "oa-s-1",
+                      "local_date": "2026-10-20", "starts_at": "2026-10-20T21:00:00+02:00",
+                      "time_known": True, "status": "announced"},
+        }
+        notice = new_entities(self.before, self.after)[2]
+        html, plain = render_email(notice)
+        self.assertIn("18 ottobre 2026 · ore 18:00", plain)
+        self.assertIn("20 ottobre 2026 · ore 21:00", html)
+        self.assertNotIn("Nessuna recita censita", plain)
 
     def test_resend_request_has_idempotency_key(self):
         notice = new_entities(self.before, self.after)[0]
@@ -130,8 +161,8 @@ class PublicationNotificationsTest(unittest.TestCase):
     def test_durable_outbox_retries_only_unaccepted_new_entities(self):
         from scripts.process_notification_outbox import pending_notices
         notices = pending_notices(self.before, self.after, {"oa-w-1"})
-        self.assertEqual([n["id"] for n in notices], ["oa-s-1"])
-        self.assertEqual(pending_notices(self.before, self.after, {"oa-w-1", "oa-s-1"}), [])
+        self.assertEqual([n["id"] for n in notices], ["oa-v-1", "oa-s-1"])
+        self.assertEqual(pending_notices(self.before, self.after, {"oa-w-1", "oa-v-1", "oa-s-1"}), [])
         self.assertEqual(pending_notices(self.after, self.after, set()), [])
 
     def test_outbox_state_uses_private_branch_not_main(self):
