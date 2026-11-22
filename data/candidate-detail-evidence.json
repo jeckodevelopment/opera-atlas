@@ -1231,7 +1231,7 @@
       "source_key": "pisa-verdi-opera-2026-27",
       "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
       "content_sha256": "47641d59843a6e056e32fce42acd06d6be7dee223f96941b56e85663f6f4285f",
-      "checked_at": "2026-11-22T01:36:19+00:00",
+      "checked_at": "2026-11-22T01:38:56+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1331,7 +1331,7 @@
       "source_key": "pisa-verdi-opera-2026-27",
       "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/",
       "content_sha256": "dfa6f7024e84b0dda1465cf7428195f0bcd62c08772e399ef57eba63291fd354",
-      "checked_at": "2026-11-22T01:36:11+00:00",
+      "checked_at": "2026-11-22T01:38:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1399,8 +1399,8 @@
       "candidate_id": "oa-index-4277f285769ff880bef4",
       "source_key": "jesi-trittico-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
-      "checked_at": "2026-11-22T01:35:52+00:00",
+      "content_sha256": "2a1b0fc621d6512ae8e874fbbfaf64d8e248dd3e1d9a9a82a58d8142a83b91aa",
+      "checked_at": "2026-11-22T01:38:25+00:00",
       "status": "needs_program_review",
       "program_heading": "Il tabarro/Suor Angelica/Gianni Schicchi di Giacomo Puccini/Giacomo Puccini/Giacomo Puccini",
       "program_heading_source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
@@ -1816,8 +1816,8 @@
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "content_sha256": "b4a1d99c9e2a470148e0922e5792f939beaedb6fd5b57fe199570769738c374b",
-      "checked_at": "2026-11-22T01:36:03+00:00",
+      "content_sha256": "daf007d5c199dccea0f697bf46bd3553e89603d2b32f9c48a5224faf2fb06b13",
+      "checked_at": "2026-11-22T01:38:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2007,7 +2007,7 @@
       "source_key": "pisa-verdi-opera-2026-27",
       "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
       "content_sha256": "e6e1f41f3e5fa63f3a63b3bc0ccf081d99192b0ad34e4731537f1dd084fa87d1",
-      "checked_at": "2026-11-22T01:36:32+00:00",
+      "checked_at": "2026-11-22T01:39:11+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2186,8 +2186,8 @@
       "candidate_id": "oa-index-67093940d2ad1423b345",
       "source_key": "jesi-nabucco-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
-      "checked_at": "2026-11-22T01:35:52+00:00",
+      "content_sha256": "2a1b0fc621d6512ae8e874fbbfaf64d8e248dd3e1d9a9a82a58d8142a83b91aa",
+      "checked_at": "2026-11-22T01:38:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2441,8 +2441,8 @@
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
-      "content_sha256": "387eb667f213b68e325137d0fd77ebcd4c66aebc32d74ec7e6296cb597324322",
-      "checked_at": "2026-11-22T01:36:06+00:00",
+      "content_sha256": "154698c601cb95442fb588eeb87d932d93e2e9e4c354e35231e1b7858d8013ff",
+      "checked_at": "2026-11-22T01:38:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2644,8 +2644,8 @@
       "candidate_id": "oa-index-7b0a1e061133c0b5970e",
       "source_key": "jesi-esecuzione-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
-      "checked_at": "2026-11-22T01:35:52+00:00",
+      "content_sha256": "2a1b0fc621d6512ae8e874fbbfaf64d8e248dd3e1d9a9a82a58d8142a83b91aa",
+      "checked_at": "2026-11-22T01:38:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2976,7 +2976,7 @@
       "source_key": "salerno-verdi-opera-2026",
       "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
       "content_sha256": "e03dfd48be9e1fb4c4b8fd1d56d8a8c59aa184fffeabb2bfee656daa044f7c99",
-      "checked_at": "2026-11-22T01:36:16+00:00",
+      "checked_at": "2026-11-22T01:38:52+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3387,7 +3387,7 @@
       "source_key": "ravenna-alighieri-cherubini-2027",
       "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
       "content_sha256": "e575252c0245ecdef1ef4d5f9b432a24493cf560e45d2fa5fde27fed669df019",
-      "checked_at": "2026-11-22T01:36:13+00:00",
+      "checked_at": "2026-11-22T01:38:49+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3456,7 +3456,7 @@
       "source_key": "pisa-verdi-opera-2026-27",
       "source_url": "https://teatrodipisa.it/spettacolo/aida/",
       "content_sha256": "36e040402c728022a0a20e459b29b5c928c5b78e95ef514daec93e3c08887bb8",
-      "checked_at": "2026-11-22T01:36:35+00:00",
+      "checked_at": "2026-11-22T01:39:15+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3487,7 +3487,7 @@
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
       "content_sha256": "ec7fe39895834a907b4d0c709d34df9083fe9173ebd176b814675fa2ef5bfa1c",
-      "checked_at": "2026-11-22T01:35:47+00:00",
+      "checked_at": "2026-11-22T01:38:19+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4034,8 +4034,8 @@
       "candidate_id": "oa-index-addcc48a211cf5aea678",
       "source_key": "jesi-don-pasquale-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "content_sha256": "b8582fb62ca47d3bcb86433b6a34235207160f800d57239388e63a1e5aebcb6c",
-      "checked_at": "2026-11-22T01:35:52+00:00",
+      "content_sha256": "2a1b0fc621d6512ae8e874fbbfaf64d8e248dd3e1d9a9a82a58d8142a83b91aa",
+      "checked_at": "2026-11-22T01:38:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4111,7 +4111,7 @@
       "source_key": "pisa-verdi-opera-2026-27",
       "source_url": "https://teatrodipisa.it/spettacolo/otello/",
       "content_sha256": "dfffad2db457b3dc9148810bbb1ddfc8914430d7d06a64f8e8f0faa2323947a6",
-      "checked_at": "2026-11-22T01:36:37+00:00",
+      "checked_at": "2026-11-22T01:39:16+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4550,7 +4550,7 @@
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
       "content_sha256": "2ffa6252c235d295dbf9c01d65731cdfb3b9d1fcce6dcadcfc054d3f082fb404",
-      "checked_at": "2026-11-22T01:36:23+00:00",
+      "checked_at": "2026-11-22T01:39:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4587,8 +4587,8 @@
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "source_key": "treviso-del-monaco-opera-2026-27",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
-      "content_sha256": "33518ced386597b67e6eb2c3a22fd05351dc5c88591c0241f7f062fded022013",
-      "checked_at": "2026-11-22T01:36:17+00:00",
+      "content_sha256": "eb41a38e36407866eaa1ed4872c637ecb95251b79b6bffa17a63d1f3101b41c6",
+      "checked_at": "2026-11-22T01:38:54+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4732,8 +4732,8 @@
       "candidate_id": "oa-index-cf2044dac191fa690c37",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
-      "content_sha256": "f4f2638b460d806ac94d81ebd89ca9cc6e6fbda6570443a1f98de286ecd7b799",
-      "checked_at": "2026-11-22T01:36:42+00:00",
+      "content_sha256": "003d1e8b0f7227985c78f5be64e807141b2f9cc411eceaa7c130088d9ee8f62a",
+      "checked_at": "2026-11-22T01:39:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4757,7 +4757,7 @@
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
       "content_sha256": "fdfc1f90e8c1d6c3cfe9024b7de3b406c989640d8772191c7cdda26b95c06797",
-      "checked_at": "2026-11-22T01:36:24+00:00",
+      "checked_at": "2026-11-22T01:39:01+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4832,8 +4832,8 @@
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
-      "content_sha256": "556a57c25ff7dc01b6b1417ac30bad7e54c9897c198e785647aad2bbe00e84af",
-      "checked_at": "2026-11-22T01:36:44+00:00",
+      "content_sha256": "646c39e94c1f0c9f56cc785dd4b2695e7493970dbd4e1569410d3b8ccf650b9a",
+      "checked_at": "2026-11-22T01:39:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5295,7 +5295,7 @@
       "source_key": "filarmonico-verona-opera-2027",
       "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
       "content_sha256": "1b9a30798349d1344c16af6e8ae3e9f34c5e55404293d6e54dae6e7bea1d339d",
-      "checked_at": "2026-11-22T01:36:25+00:00",
+      "checked_at": "2026-11-22T01:39:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5333,7 +5333,7 @@
       "source_key": "ravenna-alighieri-cherubini-2027",
       "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
       "content_sha256": "b48efebb107ad8c1b058e93d4995205443ef36580eacf68ac43cc9d9eaed091c",
-      "checked_at": "2026-11-22T01:36:27+00:00",
+      "checked_at": "2026-11-22T01:39:05+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6094,7 +6094,7 @@
       "source_key": "salerno-verdi-opera-2026",
       "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
       "content_sha256": "2d58675c6072580ab721faf05f0a1f0c23807ec33ef1472da611a3e66cc6b2d4",
-      "checked_at": "2026-11-22T01:36:31+00:00",
+      "checked_at": "2026-11-22T01:39:09+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
