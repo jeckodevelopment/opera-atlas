@@ -111,19 +111,19 @@ def parse_future_detail(html:str,*,url:str,season_start:int,
     recognized=[]
     for composer in {w["composer"] for w in registry["works"].values()
                      if isinstance(w,dict) and isinstance(w.get("composer"),str)}:
-        if (re.search(r"(?i)\\bdi\\s+"+re.escape(composer)+r"\\b",head)
+        if (re.search(r"(?i)\bdi\s+"+re.escape(composer)+r"\b",head)
                 and resolve_work(registry,title,composer) is not None):
             recognized.append(composer)
     if len(recognized)!=1:
         raise ValueError("unique title and explicit composer credit required")
     composer=recognized[0]
-    block=re.search(r"(?i)\\bOrario spettacoli e turni abbonati\\b(.*?)\\bDate spettacolo\\b",
+    block=re.search(r"(?i)\bOrario spettacoli e turni abbonati\b(.*?)\bDate spettacolo\b",
                     text,re.S)
     if not block:
         raise ValueError("unbounded showtime section")
-    if not re.search(r"(?i)\\bSala Grande\\s*-\\s*Teatro Vittorio Emanuele\\b",text):
+    if not re.search(r"(?i)\bSala Grande\s*-\s*Teatro Vittorio Emanuele\b",text):
         raise ValueError("official Messina venue missing")
-    if re.search(r"(?i)\\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\\b",block[1]):
+    if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",block[1]):
         raise ValueError("cancelled recite requires manual verification")
     rows=[]
     for day,month,year,hour,minute in SHOW.findall(block[1]):
@@ -132,8 +132,8 @@ def parse_future_detail(html:str,*,url:str,season_start:int,
             raise ValueError("recite date outside official opera season")
         rows.append((when.isoformat(),f"{int(hour):02d}:{minute}"))
     # No inferred dates, and no incomplete dated/time rows or duplicates.
-    dated=re.findall(r"(?i)\\bData\\s*-\\s*\\d{2}-\\d{2}-20\\d{2}",block[1])
-    times=re.findall(r"(?i)\\bOrario\\s*-\\s*(?:[01]?\\d|2[0-3]):[0-5]\\d",block[1])
+    dated=re.findall(r"(?i)\bData\s*-\s*\d{2}-\d{2}-20\d{2}",block[1])
+    times=re.findall(r"(?i)\bOrario\s*-\s*(?:[01]?\d|2[0-3]):[0-5]\d",block[1])
     if (not rows or len(rows)>24 or len(dated)!=len(rows)
             or len(times)!=len(rows) or len(set(rows))!=len(rows)):
         raise ValueError("future Messina showtimes incomplete or duplicate")
