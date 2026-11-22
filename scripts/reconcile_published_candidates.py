@@ -111,9 +111,68 @@ def verified_cagliari_2027_brochure_urls()->set[str]:
     return urls
 
 
+def verified_shared_page_identities(candidates:dict, detail:dict,
+                                    manifest:dict, programs:dict)->tuple[set[str],set[tuple[str,str]]]:
+    """Resolve candidates sharing one official season URL by identity, not URL.
+
+    A production is verified only if each dated official observation belongs
+    to an actually published solo staging. Programs require the identical
+    source_key as well as all credited components and recite dates.
+    """
+    from scripts.publish_catalog_v2 import normalized
+    from collections import Counter
+    rows=candidates.get("candidates",[])
+    url_counts=Counter(x.get("official_url") for x in rows)
+    ambiguous={url for url,n in url_counts.items() if n>1}
+    published=set()
+    by_source={(x.get("source_key"),x.get("source_url")):x
+               for x in detail.get("evidence",[]) if isinstance(x,dict)}
+    by_url={}
+    for product in manifest.get("productions",[]):
+        by_url.setdefault(product.get("source_url"),[]).append(product)
+    by_program={(p.get("source_key"),p.get("source_url")):p
+                for p in programs.get("programs",[]) if isinstance(p,dict)}
+    for row in rows:
+        key,url=row.get("source_key"),row.get("official_url")
+        if url not in ambiguous:
+            continue
+        observed=by_source.get((key,url))
+        if not observed:
+            continue
+        facts=observed.get("event_facts") or []
+        if not isinstance(facts,list) or not facts:
+            continue
+        solo=by_url.get(url,[])
+        def match_solo(fact):
+            title=normalized(fact.get("event_title",""))
+            composer=normalized(fact.get("composer",""))
+            date=fact.get("date")
+            return any(normalized(p.get("title",""))==title
+                       and normalized(p.get("composer",""))==composer
+                       and date in {x[0] for x in p.get("dates",[])}
+                       for p in solo)
+        if all(isinstance(fact,dict) and match_solo(fact) for fact in facts):
+            published.add((key,url))
+            continue
+        program=by_program.get((key,url))
+        if not program:
+            continue
+        components={(normalized(p["title"]),normalized(p["composer"]))
+                    for p in program.get("components",[])}
+        dates={r.get("local_date") for r in program.get("performances",[])}
+        if all(isinstance(fact,dict)
+               and (normalized(fact.get("event_title","")),
+                    normalized(fact.get("composer",""))) in components
+               and fact.get("date") in dates for fact in facts):
+            published.add((key,url))
+    return ambiguous,published
+
+
 def reconcile(candidates:dict,verified_urls:set[str],*,
               other_season_urls:set[tuple[str,str]]|None=None,
-              cagliari_season_urls:set[str]|None=None)->tuple[dict,dict]:
+              cagliari_season_urls:set[str]|None=None,
+              ambiguous_urls:set[str]|None=None,
+              identity_verified:set[tuple[str,str]]|None=None)->tuple[dict,dict]:
     if candidates.get("schema_version")!=1 or not isinstance(candidates.get("candidates"),list):
         raise ValueError("invalid season index candidate registry")
     updated={"schema_version":1,"candidates":[]}
@@ -122,7 +181,14 @@ def reconcile(candidates:dict,verified_urls:set[str],*,
         entry=row.copy()
         if entry.get("status") in AUTO_STATES:
             key=(entry["source_key"],entry["official_url"])
-            if entry["official_url"] in verified_urls:
+            if (entry["official_url"] in (ambiguous_urls or set())
+                and entry["official_url"] in verified_urls):
+                # A season page may list several independent compositions.
+                # A published Nabucco must not mark Don Pasquale or a new
+                # commission at the same URL as already catalogued.
+                now=("already_catalogued" if key in (identity_verified or set())
+                     else "needs_review")
+            elif entry["official_url"] in verified_urls:
                 now="already_catalogued"
             elif (entry["source_key"]=="lirico-cagliari-opera-2027"
                   and cagliari_season_urls is not None):
@@ -160,9 +226,16 @@ def run(*,check:bool=False):
     detail=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     official_older=verified_other_season_evidence(detail)
     cagliari_2027=verified_cagliari_2027_brochure_urls()
+    manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+    programs_path=ROOT/"public"/"catalog"/"programs.json"
+    programs=json.loads(programs_path.read_text(encoding="utf-8")) if programs_path.exists() else {"programs":[]}
+    ambiguous,identity_verified=verified_shared_page_identities(
+        original,detail,manifest,programs)
     updated,report=reconcile(original,published,
                              other_season_urls=official_older,
-                             cagliari_season_urls=cagliari_2027)
+                             cagliari_season_urls=cagliari_2027,
+                             ambiguous_urls=ambiguous,
+                             identity_verified=identity_verified)
     if check:
         if updated!=original:
             raise ValueError("discovery queue out of sync with canonical catalog")
