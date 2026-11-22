@@ -1489,6 +1489,8 @@ def main():
     parser.add_argument("--allow-network",action="store_true")
     parser.add_argument("--source-key",default=None,
                         help="Scan one approved index before the full crawl")
+    parser.add_argument("--dry-run",action="store_true",
+                        help="Check a source without committing candidates or health files")
     args=parser.parse_args()
     config=json.loads(CONFIG.read_text(encoding="utf-8"))
     current=json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {"schema_version":1,"candidates":[]}
@@ -1508,10 +1510,12 @@ def main():
                 if isinstance(row,dict) and isinstance(row.get("key"),str)}
         by_key.update({row["key"]:row for row in health})
         health=[by_key[key] for key in sorted(by_key)]
-    _write_atomic(OUTPUT,result)
-    _write_atomic(PUBLIC,result)
-    _write_atomic(HEALTH,{"schema_version":1,"checked_at":checked_at,"sources":health})
-    print(json.dumps({"candidates":len(result["candidates"]),
+    if not args.dry_run:
+        _write_atomic(OUTPUT,result)
+        _write_atomic(PUBLIC,result)
+        _write_atomic(HEALTH,{"schema_version":1,"checked_at":checked_at,"sources":health})
+    print(json.dumps({"dry_run":args.dry_run,
+                      "candidates":len(result["candidates"]),
                       "healthy_sources":sum(x["current_scan_verified"] for x in health),
                       "unverified_sources":[{"key":x["key"],"diagnostic":x.get("diagnostic","not_approved")}
                                             for x in health if not x["current_scan_verified"]],
