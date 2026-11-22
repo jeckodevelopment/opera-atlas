@@ -89,11 +89,10 @@ def evaluate(evidence: dict, registry: dict) -> dict:
                 if canonical_title(title, composer) != title:
                     alias_count += 1
                 continue
-            category = ("missing_composer" if not composer else
-                        "new_work_candidate" if composer.casefold() in by_composer else
-                        "composer_credit_to_review")
-            # A previously reviewed canonical title with a different credit
-            # is NOT auto-corrected: it may be an homonym or bad source parser.
+            # A metadata-contaminated composer is a credit review only if
+            # we can point to a specific canonical record. Otherwise the work
+            # is genuinely unmatched and may need a new canonical record.
+            # Same title with a different composer is never an auto-match.
             candidates = by_composer.get(composer.casefold(), [])
             suggestion = [
                 {"work_id":w["id"],"title":w["title"]}
@@ -101,6 +100,9 @@ def evaluate(evidence: dict, registry: dict) -> dict:
                 if w["title"].casefold() == title.casefold()
             ]
             hint = _review_credit_hint(title, composer, works) if composer else None
+            category = ("missing_composer" if not composer else
+                        "composer_credit_to_review" if hint else
+                        "new_work_candidate")
             key = (title.casefold(),composer.casefold(),category)
             if key not in groups:
                 groups[key] = {"title":title,"composer":composer or None,"category":category,
