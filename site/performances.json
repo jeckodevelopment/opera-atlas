@@ -4726,6 +4726,24 @@
       ]
     },
     {
+      "id": "curated:auto-19141fd504da6792:2027-01-15",
+      "starts_at": "2027-01-15T20:00:00+01:00",
+      "local_date": "2027-01-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+      ]
+    },
+    {
       "id": "curated:auto-29e61184f06223fa:2027-01-15",
       "starts_at": "2027-01-15T20:00:00+01:00",
       "local_date": "2027-01-15",
@@ -4795,6 +4813,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrofraschini.it/programma/death-in-venice/"
+      ]
+    },
+    {
+      "id": "curated:auto-19141fd504da6792:2027-01-16",
+      "starts_at": "2027-01-16T18:00:00+01:00",
+      "local_date": "2027-01-16",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
       ]
     },
     {
@@ -4885,6 +4921,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrofraschini.it/programma/death-in-venice/"
+      ]
+    },
+    {
+      "id": "curated:auto-19141fd504da6792:2027-01-17",
+      "starts_at": "2027-01-17T16:00:00+01:00",
+      "local_date": "2027-01-17",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
       ]
     },
     {
@@ -5029,6 +5083,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-19141fd504da6792:2027-01-21",
+      "starts_at": "2027-01-21T20:00:00+01:00",
+      "local_date": "2027-01-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
       ]
     },
     {
@@ -5302,6 +5374,24 @@
       ]
     },
     {
+      "id": "curated:auto-19141fd504da6792:2027-01-23",
+      "starts_at": "2027-01-23T16:00:00+01:00",
+      "local_date": "2027-01-23",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+      ]
+    },
+    {
       "id": "curated:auto-697328f32e7cfa32:2027-01-23",
       "starts_at": "2027-01-23T18:00:00+01:00",
       "local_date": "2027-01-23",
@@ -5425,6 +5515,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
+      ]
+    },
+    {
+      "id": "curated:auto-19141fd504da6792:2027-01-24",
+      "starts_at": "2027-01-24T16:00:00+01:00",
+      "local_date": "2027-01-24",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
       ]
     },
     {

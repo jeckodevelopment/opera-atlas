@@ -3074,6 +3074,14 @@
       "slug": "cronaca-di-un-amore-callas-e-pasolini",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
       "season": "2027"
+    },
+    "auto-19141fd504da6792": {
+      "id": "oa-s-000251",
+      "work_id": "oa-w-000023",
+      "venue_id": "oa-v-000025",
+      "slug": "don-giovanni",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -8765,6 +8773,42 @@
       "original_date": "2027-01-31",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
       "original_ticket_source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2"
+    },
+    "auto-19141fd504da6792|2027-01-15": {
+      "id": "oa-r-000970",
+      "staging_id": "oa-s-000251",
+      "original_date": "2027-01-15",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+    },
+    "auto-19141fd504da6792|2027-01-16": {
+      "id": "oa-r-000971",
+      "staging_id": "oa-s-000251",
+      "original_date": "2027-01-16",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+    },
+    "auto-19141fd504da6792|2027-01-17": {
+      "id": "oa-r-000972",
+      "staging_id": "oa-s-000251",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+    },
+    "auto-19141fd504da6792|2027-01-21": {
+      "id": "oa-r-000973",
+      "staging_id": "oa-s-000251",
+      "original_date": "2027-01-21",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+    },
+    "auto-19141fd504da6792|2027-01-23": {
+      "id": "oa-r-000974",
+      "staging_id": "oa-s-000251",
+      "original_date": "2027-01-23",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
+    },
+    "auto-19141fd504da6792|2027-01-24": {
+      "id": "oa-r-000975",
+      "staging_id": "oa-s-000251",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/"
     }
   },
   "reserved_works": {
