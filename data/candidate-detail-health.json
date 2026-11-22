@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T14:35:11+00:00",
+  "checked_at": "2026-11-22T14:42:32+00:00",
   "scope": "national",
-  "attempted": 6,
+  "attempted": 5,
   "outcomes": [
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -26,11 +26,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-877637d643bbfb668688",
-      "outcome": "facts_found",
-      "rows": 5
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
