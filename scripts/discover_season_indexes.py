@@ -88,6 +88,11 @@ EXCLUDED_PATHS={
     "modena-teatro-opera-2026-27": frozenset({"lanno-che-verra"}),
     "giglio-lucca-opera-2026-27": frozenset({"lanno-che-verra"}),
     "piacenza-opera-2026-27": frozenset({"lanno-che-verra"}),
+    "modena-teatro-opera-2026-27": frozenset({
+        # The Comune di Modena explicitly calls this a pop opera based on
+        # Lucio Dalla songs, outside Atlas's lyric-opera-only scope.
+        "lanno-che-verra",
+    }),
     "donizetti-opera-2026": frozenset(),
     "teatro-grande-opera-2026": frozenset(),
     "carlo-felice-season-2026-27": frozenset({
