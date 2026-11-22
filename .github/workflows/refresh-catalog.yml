@@ -104,6 +104,11 @@ jobs:
           python -m scripts.publish_work_editorial --check
           # A newly-reviewed observation may legitimately differ from the previous public v2 snapshot.
           # Validate the regenerated manifest only after rebuilding all referenced channels.
+      # Corroborated cross-source evidence is a source-neutral candidate
+      # input: issuer repertoire + independently checked external showtimes.
+      # It never bypasses the canonical candidate publisher or robots gates.
+      - name: Acquire cross-source corroboration before national backlog
+        run: python -m scripts.corroborate_performances
       # An exact, first-party Rovigo detail URL is available even when the
       # obsolete 2026/27 season slider fails. Discover it before the national
       # queue so source discovery, detail evidence and canonical publication
