@@ -18,6 +18,59 @@ HEALTH=ROOT/"data"/"candidate-reconciliation-health.json"
 AUTO_STATES=frozenset({"needs_review","already_catalogued","excluded_nonopera",
                        "not_in_official_season"})
 
+def verified_pisa_recital_urls(manifest:dict, detail:dict)->set[str]:
+    """Recognize calendar event URLs already represented by a Pisa staging.
+
+    Pisa publishes one official URL per recita alongside a different staging
+    URL. Match a first-party captured observation to exactly one reviewed
+    Pisa performance by canonical title, date, and local clock time.
+    """
+    import re
+    from html import unescape
+    from scripts.publish_catalog_v2 import normalized
+    from opera_atlas.pisa_future_calendar import eligible_detail
+
+    scheduled={}
+    for production in manifest.get("productions",[]):
+        if (production.get("municipality")!="Pisa"
+                or production.get("venue")!="Teatro Verdi"
+                or not str(production.get("source_url","")).startswith(
+                    "https://teatrodipisa.it/spettacolo/")):
+            continue
+        for day,hour in production.get("dates",[]):
+            scheduled.setdefault((day,hour),[]).append(normalized(production["title"]))
+
+    matched=set()
+    for row in detail.get("evidence",[]):
+        if not isinstance(row,dict) or row.get("source_key")!="pisa-future-calendar":
+            continue
+        url=row.get("source_url")
+        digest=row.get("content_sha256")
+        if (not isinstance(url,str) or not eligible_detail(url)
+                or not isinstance(digest,str)
+                or not re.fullmatch(r"[0-9a-f]{64}",digest)):
+            continue
+        facts=row.get("event_facts")
+        if not isinstance(facts,list) or len(facts)!=1 or not isinstance(facts[0],dict):
+            continue
+        fact=facts[0]
+        title=normalized(unescape(str(fact.get("event_title","")))).strip()
+        instant=fact.get("starts_at")
+        day=fact.get("date")
+        if (not isinstance(instant,str) or not isinstance(day,str)
+                or not instant.startswith(day+"T") or len(instant)<16):
+            continue
+        clock=instant[11:16]
+        possible=scheduled.get((day,clock),[])
+        if len(possible)!=1:
+            continue
+        canonical=possible[0]
+        # A bounded "ossia" subtitle is legitimate; arbitrary prefixes aren't.
+        if title==canonical or title.startswith(canonical+" ossia "):
+            matched.add(url)
+    return matched
+
+
 def verified_secondary_source_urls(manifest:dict, evidence:dict)->set[str]:
     """Recognize complete independently verified second-source theater dates.
 
@@ -233,8 +286,9 @@ def run(*,check:bool=False):
     from scripts.collect_candidate_details import OUTPUT as DETAILS
     detail=json.loads(DETAILS.read_text(encoding="utf-8")) if DETAILS.exists() else {"evidence":[]}
     official_older=verified_other_season_evidence(detail)
-    cagliari_2027=verified_cagliari_2027_brochure_urls()
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+    published.update(verified_pisa_recital_urls(manifest,detail))
+    cagliari_2027=verified_cagliari_2027_brochure_urls()
     programs_path=ROOT/"public"/"catalog"/"programs.json"
     programs=json.loads(programs_path.read_text(encoding="utf-8")) if programs_path.exists() else {"programs":[]}
     ambiguous,identity_verified=verified_shared_page_identities(
