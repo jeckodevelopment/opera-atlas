@@ -21,6 +21,10 @@ from scripts.publish_catalog_v2 import ROOT
 # Explicitly reviewed non-operatic/utility links encountered in the first
 # successful live scan. Future unknown URLs remain candidates for review.
 # A URL is never considered an opera merely because it shares a URL prefix.
+EXCLUDED_HAYDN_ANCILLARY=re.compile(
+    r"(?i)^(?:oper-a-intro(?:-[0-9]+)?|oper-a-backstage-under-35(?:-[0-9]+)?|"
+    r"dai-libri-allopera(?:-[0-9]+)?)$"
+)
 EXCLUDED_PATHS={
     "scala-season-2026-27": frozenset({
         "otello-anteprima-under30.html",
@@ -107,6 +111,7 @@ EXCLUDED_PATHS={
         # Official programme title is the classical ballet, not an opera.
         "le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre",
     }),
+    "asti-alfieri-rolling-opera": frozenset({"concerto-di-capodanno"}),
     "petruzzelli-opera-2027": frozenset({
         # Tchaikovsky\u0027s Nutcracker is a ballet, even in an opera/ballet index.
         "lo-schiaccianoci-di-petr-ilic-cajkovskij-11-14-febbraio",
@@ -126,7 +131,14 @@ EXCLUDED_PATHS={
 }
 
 def excluded_nonopera(key:str,url:str)->bool:
-    return urlsplit(url).path.rstrip("/").split("/")[-1] in EXCLUDED_PATHS.get(key,frozenset())
+    slug=urlsplit(url).path.rstrip("/").split("/")[-1]
+    # The Haydn Opera-area index includes independent educational talks,
+    # backstage events and reading events, not ticketed operas. Classify only
+    # those exact evergreen title families as ancillary; never use a broad
+    # keyword such as "opera", which would hide genuine new commissions.
+    if key=="haydn-rolling-opera" and EXCLUDED_HAYDN_ANCILLARY.fullmatch(slug):
+        return True
+    return slug in EXCLUDED_PATHS.get(key,frozenset())
 
 def reviewed_source_urls()->set[str]:
     """URLs already published as a canonical opera OR a verified program.
