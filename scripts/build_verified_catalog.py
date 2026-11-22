@@ -89,11 +89,19 @@ def validate_auto_sources(urls: list[str]) -> set[str]:
             parsed.query and any(x["key"]=="sassari-de-carolis-opera-2026"
                                  and parsed.hostname==urlsplit(x["official_url"]).hostname
                                  and eligible(x["key"],url) for x in sources))
+        # The municipality is an exact, verified fallback for the Spoleto
+        # TLS source, not a broad exception for municipal hostnames.
+        from opera_atlas.spoleto_municipal_parser import URL as spoleto_notice
+        exact_municipal_fallback=(
+            url==spoleto_notice and any(
+                x["key"]=="spoleto-tls-lirica-2026"
+                and eligible(x["key"],url) for x in sources))
         if ((parsed.query and not permitted_query)
             or parsed.fragment or parsed.username or parsed.password
-            or parsed.port is not None or not any(
-                parsed.hostname==urlsplit(x["official_url"]).hostname
-                and eligible(x["key"],url) for x in sources)):
+            or parsed.port is not None or not (
+                exact_municipal_fallback or any(
+                    parsed.hostname==urlsplit(x["official_url"]).hostname
+                    and eligible(x["key"],url) for x in sources))):
             raise ValueError(f"automatic source outside an approved official production section: {url}")
         allowed.add(url)
     return allowed
