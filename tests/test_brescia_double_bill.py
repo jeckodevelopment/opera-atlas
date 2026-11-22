@@ -82,6 +82,26 @@ class DoubleBillTests(unittest.TestCase):
         self.assertEqual(enrich_double_bill_times(
             self.facts,{}, {},self.prior),(self.prior,0))
 
+    def test_second_official_source_cannot_duplicate_same_venue_ticket(self):
+        from scripts.publish_programs import assemble_programs
+        from scripts.publish_catalog_v2 import ROOT
+        read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
+        facts=copy.deepcopy(self.facts)
+        sample=next(p for p in facts["productions"]
+                    if p["title"]=="Pagliacci" and p["municipality"]=="Como")
+        fake={**sample,"key":"duplicate-brescia-solo-fixture",
+              "venue":"Teatro Grande","municipality":"Brescia",
+              "dates":[["2026-12-11",None]],
+              "source_url":"https://www.operalombardia.it/calendario/"}
+        facts["productions"].append(fake)
+        with self.assertRaisesRegex(ValueError,
+                                    "composite program already published as solo work"):
+            assemble_programs(read("data/season-index-candidates.json"),
+                              read("data/candidate-detail-evidence.json"),
+                              self.registry,facts,
+                              read("data/season-index-config.json"),
+                              read("data/reviewed-program-work-editorials.json"))
+
     def test_missing_composer_credit_or_mismatched_heading_fails_closed(self):
         invalid=[
             fixture().replace("Parole e musica di Ruggero Leoncavallo",
