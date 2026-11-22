@@ -1,90 +1,15 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T20:38:30+00:00",
+  "checked_at": "2026-11-22T20:41:08+00:00",
   "scope": "national",
-  "attempted": 15,
+  "attempted": 1,
   "outcomes": [
-    {
-      "candidate_id": "oa-index-357ebb275673ae888623",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-b4aaa5341d6c996550c0",
-      "outcome": "facts_found",
-      "rows": 1
-    },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
       "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:missing complete official Parma ticket schedule",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing complete official Parma ticket schedule",
-        "schema_event:no_evidence"
-      ],
+      "reason": "ValueError",
+      "diagnostic": "incomplete official Parma public/school ticket schedule",
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-a4402559616047a0367b",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-70313ef8895b42a91a5b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-2583140715d654277a2b",
-      "outcome": "facts_found",
-      "rows": 1
     }
   ]
 }
