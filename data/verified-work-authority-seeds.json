@@ -735,6 +735,25 @@
           "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
         ]
       }
+    },
+    {
+      "source_key": "giglio-lucca-opera-2026-27",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/lanno-che-verra/",
+      "title": "L'anno che verrà",
+      "composer": "Lucio Dalla",
+      "synopsis": "In un albergo affacciato sul mare, durante la notte di Capodanno, viaggiatori sconosciuti intrecciano desideri, paure e speranze. Le canzoni di Lucio Dalla accompagnano una storia teatrale originale fra musica, danza e incontri inattesi.",
+      "history": {
+        "librettist": "Emanuele Aldrovandi",
+        "premiere_year": 2026,
+        "premiere_date": "2026-12-11",
+        "premiere_venue": "Teatro Comunale Claudio Abbado",
+        "premiere_city": "Ferrara",
+        "sources": [
+          "https://www.fondazioneluciodalla.it/2026/06/18/tournee-nazionale-di-lanno-che-verra/",
+          "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/lanno-che-verra/",
+          "https://www.iteatri.re.it/2026/06/lanno-che-verra-opera-musical-su-lucio-dalla/"
+        ]
+      }
     }
   ]
 }

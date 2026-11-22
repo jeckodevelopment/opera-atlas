@@ -70,7 +70,7 @@ class ComposerCredits(HTMLParser):
             self.in_work=False
             return
         match=re.fullmatch(
-            r"Musica di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})",
+            r"(?:Musica|musiche) di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})",
             value)
         if match:
             self.credits.append(match.group(1))

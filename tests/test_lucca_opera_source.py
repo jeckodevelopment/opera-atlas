@@ -62,6 +62,36 @@ class LuccaOperaTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_detail(html,url=DETAIL)
 
+    def test_dalla_opera_musical_plural_music_credit_from_exact_work_panel(self):
+        url=INDEX+"lanno-che-verra/"
+        # The theatre calls it an opera-musical and explicitly credits
+        # "musiche di LUCIO DALLA"; these are pre-existing songs,
+        # not evidence that Dalla wrote a new work in 2026.
+        html=page(dates="Il 12 marzo 2027 Ore 21:00")
+        html=html.replace("Il barbiere di Siviglia","L'anno che verrà")
+        html=html.replace("<h2>Commedia in due atti</h2>",
+                          "<h2>Opera su Lucio Dalla</h2>")
+        html=html.replace("Musica di GIOACHINO ROSSINI",
+                          "musiche di LUCIO DALLA")
+        self.assertEqual(parse_detail(html,url=url),(
+            "L'anno che verrà","LUCIO DALLA",
+            "Teatro del Giglio Giacomo Puccini",
+            [("2027-03-12","21:00")]))
+        facts=parse_source_credited_opera_detail(KEY,url,html)
+        self.assertEqual(len(facts),1)
+        self.assertEqual(facts[0]["composer"],"LUCIO DALLA")
+        self.assertEqual(facts[0]["date"],"2027-03-12")
+        # Generic title-based guesses, a music credit in the shared header
+        # and two conflicting internal authors are still rejected.
+        for bad in (
+            html.replace("musiche di LUCIO DALLA","arrangiamenti di ROBERTO MOLINELLI"),
+            html.replace("<p>musiche di LUCIO DALLA</p>",
+                         "<p>musiche di LUCIO DALLA</p><p>Musica di ALTRO AUTORE</p>"),
+            html.replace("Il 12 marzo 2027 Ore 21:00","Il 12 marzo 2027"),
+        ):
+            with self.subTest(bad=bad[-100:]),self.assertRaises(ValueError):
+                parse_detail(bad,url=url)
+
     def test_mismatched_venue_genre_composer_or_partial_date_fail(self):
         for fixture in [
             page(theatre="Teatro San Girolamo"),
