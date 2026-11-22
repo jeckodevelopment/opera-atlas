@@ -135,3 +135,19 @@ fallback riuscito dovrà risultare nella diagnostica con
 `fallback_official_source=comune.rovigo.it`.
 
 Test: `python -m unittest tests.test_rovigo_official_traviata_fallback -v`.
+
+## Refresh prioritario della fonte ufficiale
+
+Il workflow `refresh-catalog.yml` acquisisce ora il documento-evento
+ufficiale della *Traviata* di Rovigo **prima** della lenta coda di scansione
+nazionale, tramite `discover_season_indexes --source-key
+rovigo-sociale-opera-2026-27`, seguito da `collect_candidate_details
+--source-key rovigo-sociale-opera-2026-27`. Non è una scorciatoia del
+publisher: la stessa riconciliazione centralizzata controlla titolo,
+compositore, sede, data, orario, identità canonica e duplicati.
+
+Il comando `--source-key` convalida l'intera configurazione delle fonti e
+accetta soltanto chiavi approvate; non modifica le candidate né gli stati
+diagnostici delle altre fonti. I nuovi dati vengono registrati nel checkpoint
+iniziale e resi disponibili alla prima transazione di pubblicazione dello
+stesso workflow, senza richiedere una seconda esecuzione nazionale.
