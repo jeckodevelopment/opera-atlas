@@ -34,6 +34,15 @@ class SeasonRolloverTests(unittest.TestCase):
                          "https://www.maggiofiorentino.com/calendario/2029/01/opera")
         self.assertIsNone(next_index(items["maggio-fiorentino-calendar-2027"],
                                      today=date(2027,5,31)))
+        self.assertEqual(next_index(items["piacenza-opera-2026-27"],
+                                    today=date(2027,6,1)),
+                         "https://teatripiacenza.it/stagioni/stagione-27-28/")
+        self.assertEqual(next_index(dict(items["piacenza-opera-2026-27"],
+                                         url="https://teatripiacenza.it/stagioni/stagione-27-28/"),
+                                    today=date(2028,6,1)),
+                         "https://teatripiacenza.it/stagioni/stagione-28-29/")
+        self.assertIsNone(next_index(items["piacenza-opera-2026-27"],
+                                     today=date(2027,5,31)))
         self.assertIsNone(next_index(items["arena-festival-2027"],
                                      today=date(2027,6,1)))
 
@@ -47,6 +56,10 @@ class SeasonRolloverTests(unittest.TestCase):
                 '<a href="/event/another-future-opera/">Opera</a>',
             "maggio-fiorentino-calendar-2027":
                 '<a href="/events/future-opera">Opera</a>',
+            "piacenza-opera-2026-27":
+                '<h2>OPERA</h2>' + ''.join(
+                    f'<a href="/event/opera-{n}">Opera</a>' for n in range(6))
+                + '<h2>CONCERTI</h2><a href="/event/concerto">Concerto</a>',
             "massimo-season-2026-27":
                 '<h2>CALENDARIO OPERE E BALLETTI 2027-28</h2>'
                 +''.join(f'<a href="/event/opera-future-{n}/">Opera</a>'
@@ -60,7 +73,7 @@ class SeasonRolloverTests(unittest.TestCase):
             return FetchResult(url,html,"a"*64,len(html))
         result,health=roll(self.config,today=date(2027,6,1),
                            network_enabled=True,fetcher=fetch)
-        self.assertEqual(sum(x["status"]=="rolled" for x in health),4)
+        self.assertEqual(sum(x["status"]=="rolled" for x in health),5)
         self.assertEqual(len(result["sources"]),len(self.config["sources"]))
         validate_config(result)
         scala=next(x for x in result["sources"] if x["key"]=="scala-season-2026-27")
@@ -74,7 +87,7 @@ class SeasonRolloverTests(unittest.TestCase):
         result,status=roll(self.config,today=date(2027,6,1),
                            network_enabled=True,fetcher=deny)
         self.assertEqual(result,self.config)
-        self.assertEqual(len(status),4)
+        self.assertEqual(len(status),5)
         self.assertTrue(all(x["status"]=="kept_last_known_good" for x in status))
         def incomplete(db,*,source_id,url,network_enabled):
             html='<a href="/event/just-one/">One</a>'
