@@ -2215,15 +2215,22 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "24caf72218a93952abfd1b8eee8cb6e9ec837950a349ce1834bd534e6f281bb3",
-      "checked_at": "2026-11-22T20:51:46+00:00",
+      "checked_at": "2026-11-22T20:54:14+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Dido and Æneas",
           "composer": "Henry Purcell",
           "venue": "Teatro Goldoni",
+          "date": "2026-11-06",
+          "starts_at": "2026-11-06T20:00:00+01:00"
+        },
+        {
+          "event_title": "Dido and Æneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Goldoni",
           "date": "2026-11-08",
-          "starts_at": "2026-11-08T20:00:00+01:00"
+          "starts_at": "2026-11-08T16:00:00+01:00"
         }
       ]
     },
@@ -7087,7 +7094,7 @@
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "content_sha256": "e24544114b3bed1dda4d78d32910a93d737957e2affdab2c3ef86223083afe57",
-      "checked_at": "2026-11-22T20:51:49+00:00",
+      "checked_at": "2026-11-22T20:54:17+00:00",
       "status": "needs_editorial_review",
       "audience_scope": "public_family_only",
       "calendar_provenance": "reviewed_first_party_historical_ticket_schedule",
