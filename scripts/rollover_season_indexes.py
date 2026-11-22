@@ -49,7 +49,7 @@ def next_index(source:dict,*,today:date,allow_early:bool=False)->str|None:
         return None
     url=urlsplit(source["url"])
     if key=="trapani-luglio-musicale-2026":
-        m=re.fullmatch(r"/it/luglio-musicale-stagioni/stagione-(20\\d{2})/",url.path)
+        m=re.fullmatch(r"/it/luglio-musicale-stagioni/stagione-(20\d{2})/",url.path)
         if not m or url.hostname!="www.lugliomusicale.it":return None
         year=int(m[1])
         if year<2026 or year>=2099 or (
