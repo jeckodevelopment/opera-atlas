@@ -61,12 +61,6 @@ TIME_EVIDENCE_URLS = {
     "lombardia-italiana-brescia": {
         "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
     },
-    "lombardia-cavalleria-brescia": {
-        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
-    },
-    "lombardia-pagliacci-brescia": {
-        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
-    },
     "lombardia-italiana-cremona": {
         "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri",
         "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-litaliana-algeri-0",
