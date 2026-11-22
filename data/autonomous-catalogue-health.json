@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "new_stagings": 1,
-  "new_recite": 7,
+  "new_stagings": 0,
+  "new_recite": 0,
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
@@ -66,10 +66,6 @@
     },
     {
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-2ef6d8cca0288a1af32c",
       "reason": "incomplete_work_editorial"
     },
     {

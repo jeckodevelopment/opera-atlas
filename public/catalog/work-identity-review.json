@@ -3,23 +3,6 @@
   "groups": [
     {
       "candidate_ids": [
-        "oa-index-2ef6d8cca0288a1af32c"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Gioacchino Rossini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 7,
-      "sources": [
-        {
-          "source_key": "napoli-san-carlo-rolling-opera",
-          "url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/"
-        }
-      ],
-      "title": "Il barbiere di Siviglia"
-    },
-    {
-      "candidate_ids": [
         "oa-index-645435245131b4d31287"
       ],
       "category": "new_work_candidate",
@@ -193,13 +176,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 11,
+    "candidates_checked": 10,
     "candidates_without_facts": 0,
-    "facts_examined": 47,
+    "facts_examined": 40,
     "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 47,
-    "unmatched_groups": 11
+    "unmatched_facts": 40,
+    "unmatched_groups": 10
   },
   "truncated": false
 }
