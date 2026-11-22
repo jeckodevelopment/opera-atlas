@@ -77,6 +77,28 @@ class ROFTests(unittest.TestCase):
                           json.loads(REGISTRY.read_text()))[:2],
                          ("Pesaro","Teatro Gioachino Rossini"))
 
+    def test_scavolini_is_real_rof_opera_venue_for_2026_siege(self):
+        official=page(title="Le Siège de Corinthe",
+                      venue="Auditorium Scavolini",
+                      slots="11, 14, 17, 21 agosto, ore 19.00",
+                      kind="Tragédie lyrique")
+        title,composer,venue,dates=parse_detail(official,url=SIEGE)
+        self.assertEqual((title,composer,venue),
+                         ("Le Siège de Corinthe","Gioachino Rossini",
+                          "Auditorium Scavolini"))
+        self.assertEqual(dates,[
+            ("2026-08-11","19:00"),("2026-08-14","19:00"),
+            ("2026-08-17","19:00"),("2026-08-21","19:00")])
+        facts=[{"venue":venue,"event_title":title,"composer":composer,
+                "date":day,"starts_at":day+"T19:00:00+02:00"} for day,_ in dates]
+        self.assertEqual(verified_venue(KEY,facts,
+                         json.loads(REGISTRY.read_text()))[:2],
+                         ("Pesaro","Auditorium Scavolini"))
+        # An unrelated production cannot borrow the Scavolini location.
+        with self.assertRaises(ValueError):
+            parse_detail(page(title="La scala di seta",
+                              venue="Auditorium Scavolini"),url=SCALA)
+
     def test_no_scavolini_concert_missing_authority_or_wrong_year(self):
         bad=[
             (page(venue="Auditorium Scavolini"),SIEGE),
