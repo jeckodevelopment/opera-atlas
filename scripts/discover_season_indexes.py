@@ -400,6 +400,10 @@ def eligible(key:str,url:str)->bool:
         return bool(re.fullmatch(r"/event/[a-z0-9-]+",path))
     if key=="giglio-lucca-opera-2026-27":
         return bool(re.fullmatch(r"/it/cartellone/lirica/stagione-2026-2027/[a-z0-9-]+",path))
+    if key=="modena-teatro-opera-2026-27":
+        return (parsed.scheme=="https"
+                and parsed.hostname=="www.teatrocomunalemodena.it"
+                and bool(re.fullmatch(r"/spettacolo/[a-z0-9-]+",path)))
     if key=="modena-opera-2026-27":
         return bool(re.fullmatch(
             r"/vivere-modena/eventi/2026/stagione-opera-2026-2027/[a-z0-9-]+",path))
@@ -515,6 +519,7 @@ def validate_config(config:dict)->list[dict]:
         "verdi-trieste-season-2026-27":("www.teatroverdi-trieste.com","/it/calendario-spettacoli/"),
         "lirico-cagliari-opera-2027":("www.liricocagliari.it","/categoria-evento/opera/"),
         "bellini-catania-opera-2026-27":("www.teatromassimobellini.it","/opere-e-balletto/"),
+        "modena-teatro-opera-2026-27":("www.teatrocomunalemodena.it","/opera/"),
         "modena-opera-2026-27":("www.comune.modena.it","/vivere-modena/eventi/2026/stagione-opera-2026-2027"),
         "giglio-lucca-opera-2026-27":("www.teatrodelgigliogiacomopuccini.it","/it/cartellone/lirica/stagione-2026-2027/"),
         "piacenza-opera-2026-27":("teatripiacenza.it","/stagioni/stagione-26-27/"),
@@ -608,6 +613,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=(index.path=="/stagioni/stagione-26-27/" and not index.query)
         elif key=="giglio-lucca-opera-2026-27":
             valid_season=(index.path=="/it/cartellone/lirica/stagione-2026-2027/" and not index.query)
+        elif key=="modena-teatro-opera-2026-27":
+            valid_season=index.path=="/opera/" and not index.query
         elif key=="modena-opera-2026-27":
             valid_season=(index.path=="/vivere-modena/eventi/2026/stagione-opera-2026-2027"
                           and not index.query)

@@ -375,7 +375,7 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
             "teatro-grande-opera-2026","opera-roma-season-2026-27",
             "petruzzelli-opera-2026","petruzzelli-opera-2027",
             "lirico-cagliari-opera-2027","bellini-catania-opera-2026-27",
-            "modena-opera-2026-27","giglio-lucca-opera-2026-27",
+            "modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27",
             "piacenza-opera-2026-27","reggio-valli-opera-2026-27",
             "jesi-don-pasquale-opera-2026","jesi-esecuzione-opera-2026",
             "jesi-nabucco-opera-2026","ancona-elisir-opera-2026",
@@ -425,6 +425,11 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                  and normalized(w["composer"])==normalized(credit)]
         if len(matches)!=1:return []
         work=matches[0]
+    elif source_key=="modena-teatro-opera-2026-27":
+        from opera_atlas.modena_teatro_parser import parse_detail as modena_detail
+        heading,credit,venue,raw=modena_detail(html,url=url)
+        work=resolve_work(registry,heading,credit)
+        if work is None:return []
     elif source_key=="modena-opera-2026-27":
         from opera_atlas.modena_opera_parser import parse_detail as modena_detail
         heading,credit,venue,raw=modena_detail(html,url=url)
@@ -715,6 +720,12 @@ def parse_source_credited_opera_detail(source_key:str,url:str,html:str)->list[di
     if source_key=="giglio-lucca-opera-2026-27":
         from opera_atlas.lucca_opera_parser import parse_detail as lucca_detail
         title,composer,venue,recite=lucca_detail(html,url=url)
+        return [{"event_title":title,"composer":composer,"venue":venue,
+                 "date":day,"starts_at":official_local_time(day,hour)}
+                for day,hour in recite]
+    if source_key=="modena-teatro-opera-2026-27":
+        from opera_atlas.modena_teatro_parser import parse_detail as modena_detail
+        title,composer,venue,recite=modena_detail(html,url=url)
         return [{"event_title":title,"composer":composer,"venue":venue,
                  "date":day,"starts_at":official_local_time(day,hour)}
                 for day,hour in recite]
@@ -1127,7 +1138,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     ("authority_work",lambda:parse_authoritative_new_work_detail(
                         item,page.html,intelligence)),
                 ]
-                if item["source_key"].startswith(("ferrara-","goldoni-livorno-","jesi-","ancona-")) or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027","pisa-verdi-opera-2026-27","filarmonico-verona-opera-2027","salerno-verdi-opera-2026","macerata-festival-2027","coccia-novara-opera-2027","ravenna-alighieri-cherubini-2027"):
+                if item["source_key"].startswith(("ferrara-","goldoni-livorno-","jesi-","ancona-")) or item["source_key"] in ("opera-roma-season-2026-27","verdi-trieste-season-2026-27","lirico-cagliari-opera-2027","bellini-catania-opera-2026-27","modena-opera-2026-27","modena-teatro-opera-2026-27","giglio-lucca-opera-2026-27","piacenza-opera-2026-27","reggio-valli-opera-2026-27","fenice-opera-2026-27","scala-season-2026-27","parma-opera-2027","massimo-season-2026-27","carlo-felice-season-2026-27","donizetti-opera-2026","bologna-comunale-opera-2026","bologna-comunale-opera-2027","petruzzelli-opera-2026","petruzzelli-opera-2027","pisa-verdi-opera-2026-27","filarmonico-verona-opera-2027","salerno-verdi-opera-2026","macerata-festival-2027","coccia-novara-opera-2027","ravenna-alighieri-cherubini-2027"):
                     parsers.append(("official_composer_credit",
                         lambda:parse_source_credited_opera_detail(
                             item["source_key"],item["official_url"],page.html)))

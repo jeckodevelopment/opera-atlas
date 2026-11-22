@@ -55,7 +55,7 @@ class SourceAutomationTests(unittest.TestCase):
         rows={(x["city"],x["venue"]):x for x in report["venues"]}
         modena=rows["Modena","Teatro Comunale Pavarotti-Freni"]
         self.assertEqual(modena["source_attention"],"scan_failed")
-        self.assertEqual(modena["sources"][0]["failure_reason"],
+        self.assertEqual(next(s for s in modena["sources"] if s["source_key"]=="modena-opera-2026-27")["failure_reason"],
                          "official_robots_unavailable_or_invalid")
         self.assertEqual(rows["Livorno","Teatro Goldoni"]["source_attention"],"not_checked")
         self.assertIsNone(rows["Livorno","Teatro Goldoni"]["sources"][0]["failure_reason"])
