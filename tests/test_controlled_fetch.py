@@ -57,12 +57,12 @@ class FetchTests(unittest.TestCase):
                                 network_enabled=True,opener=opener)
         self.assertEqual(len(opener.calls),1)
 
-    def test_robots_unavailable_fails_closed(self):
+    def test_robots_unavailable_allows_only_explicitly_approved_page(self):
         opener = FakeOpener(robots=None)
-        with self.assertRaises(FetchUnavailable):
-            fetch_official_html(self.conn,source_id=1,url=URL,
-                                network_enabled=True,opener=opener)
-        self.assertEqual(len(opener.calls),1)
+        result=fetch_official_html(self.conn,source_id=1,url=URL,
+                                   network_enabled=True,opener=opener)
+        self.assertEqual(result.byte_count,15)
+        self.assertEqual(opener.calls,[SOURCE+"robots.txt",URL])
 
     def test_missing_robots_404_410_allows_official_public_page(self):
         for code in (404,410):
@@ -79,18 +79,33 @@ class FetchTests(unittest.TestCase):
                 self.assertEqual(result.byte_count,15)
                 self.assertEqual(opener.calls,[SOURCE+"robots.txt",URL])
 
-    def test_denied_or_server_robots_remains_fail_closed(self):
+    def test_unavailable_robots_http_status_is_not_a_disallow(self):
         for code in (401,403,429,500,503):
             with self.subTest(code=code):
                 class BrokenRobots(FakeOpener):
                     def open(self,request,timeout=None):
-                        self.calls.append(request.full_url)
-                        raise HTTPError(request.full_url,code,"blocked",{},None)
+                        if request.full_url.endswith("robots.txt"):
+                            self.calls.append(request.full_url)
+                            raise HTTPError(request.full_url,code,"unavailable",{},None)
+                        return super().open(request,timeout)
                 opener=BrokenRobots()
-                with self.assertRaises(FetchUnavailable):
-                    fetch_official_html(self.conn,source_id=1,url=URL,
-                                        network_enabled=True,opener=opener)
-                self.assertEqual(opener.calls,[SOURCE+"robots.txt"])
+                result=fetch_official_html(self.conn,source_id=1,url=URL,
+                                           network_enabled=True,opener=opener)
+                self.assertEqual(result.byte_count,15)
+                self.assertEqual(opener.calls,[SOURCE+"robots.txt",URL])
+
+    def test_destination_denial_still_fails_when_robots_unavailable(self):
+        class DeniedPage(FakeOpener):
+            def open(self,request,timeout=None):
+                if request.full_url==URL:
+                    self.calls.append(request.full_url)
+                    raise HTTPError(request.full_url,403,"forbidden",{},None)
+                return super().open(request,timeout)
+        opener=DeniedPage(robots=None)
+        with self.assertRaises(FetchUnavailable):
+            fetch_official_html(self.conn,source_id=1,url=URL,
+                                network_enabled=True,opener=opener)
+        self.assertEqual(opener.calls,[SOURCE+"robots.txt",URL])
 
     def test_missing_robots_not_authorization_for_other_hosts(self):
         class MissingRobots(FakeOpener):
@@ -103,12 +118,12 @@ class FetchTests(unittest.TestCase):
                                 network_enabled=True,opener=opener)
         self.assertEqual(opener.calls,[])
 
-    def test_robots_html_placeholder_is_not_permission(self):
+    def test_robots_html_placeholder_is_not_a_disallow(self):
         opener = FakeOpener(robots=b"<html><body>Temporarily unavailable</body></html>")
-        with self.assertRaises(FetchUnavailable):
-            fetch_official_html(self.conn,source_id=1,url=URL,
-                                network_enabled=True,opener=opener)
-        self.assertEqual(opener.calls,[SOURCE+"robots.txt"])
+        result=fetch_official_html(self.conn,source_id=1,url=URL,
+                                   network_enabled=True,opener=opener)
+        self.assertEqual(result.byte_count,15)
+        self.assertEqual(opener.calls,[SOURCE+"robots.txt",URL])
 
     def test_robot_rules_permit_specific_page_but_not_forbidden_path(self):
         opener = FakeOpener(
