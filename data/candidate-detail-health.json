@@ -1,13 +1,18 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T00:15:22+00:00",
+  "checked_at": "2026-11-22T01:26:44+00:00",
   "scope": "national",
-  "attempted": 16,
+  "attempted": 47,
   "outcomes": [
     {
-      "candidate_id": "oa-index-8bc8b40e1da92efab27d",
-      "outcome": "verified_first_party_press_calendar",
-      "rows": 9
+      "candidate_id": "oa-index-dd282b89dc6ab9f24a20",
+      "outcome": "verified_composite_program",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-fcf75c0534a0639007c7",
+      "outcome": "facts_found",
+      "rows": 2
     },
     {
       "candidate_id": "oa-index-76fee4db156090b664aa",
@@ -22,27 +27,69 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-997a698e76cca7510492",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
       "candidate_id": "oa-index-b756ca3bab6062c03ef8",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing or conflicting labelled Donizetti composer",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-991f446bf3f27044b019",
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-93538b402fa3e844ca69",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no bounded work-specific Lucca recital panel",
+        "canonical_work:official composer credit missing or ambiguous",
         "authority_work:no_evidence",
-        "official_composer_credit:no bounded work-specific Lucca recital panel",
+        "official_composer_credit:official composer credit missing or ambiguous",
         "schema_event:no_evidence"
       ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "outcome": "facts_found",
+      "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-068e8c81310d6d5237ea",
+      "outcome": "facts_found",
+      "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-e093badade1f5650638e",
+      "outcome": "facts_found",
+      "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-addcc48a211cf5aea678",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-7b0a1e061133c0b5970e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-67093940d2ad1423b345",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-4277f285769ff880bef4",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
       "rows": 0
     },
     {
@@ -56,6 +103,11 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-8cc98b8fce566b8b3f4f",
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-a02901b14e6eae69df5c",
@@ -82,9 +134,26 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-a98083086627ce6e0225",
+      "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-954a1b185a0354522e71",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-885beacc517cb454d09f",
       "outcome": "facts_found",
       "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-c7f7f8520caabdfc289f",
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-ecf1fda1dc67738cab86",
@@ -99,6 +168,42 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-c7a26f1f7611da36ad2a",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-cf244270ba1aec90c350",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-de1f52ee525c73d565a6",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-df584882c5e7e377064c",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-edf6ac484882834fe426",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-f9bb7479607348f07887",
+      "outcome": "facts_found",
+      "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-ffbe120c526a352bc59c",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
       "candidate_id": "oa-index-19141fd504da67924d01",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -111,15 +216,52 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-488fd79f628da89db68f",
+      "outcome": "facts_found",
+      "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-59f9f415de71b2b46733",
+      "outcome": "facts_found",
+      "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-5a4e3f1f4e61fba4f115",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
       "candidate_id": "oa-index-6c5243260ad25ecab396",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no bounded work-specific Lucca recital panel",
+        "canonical_work:official composer credit missing or ambiguous",
         "authority_work:no_evidence",
-        "official_composer_credit:no bounded work-specific Lucca recital panel",
+        "official_composer_credit:official composer credit missing or ambiguous",
         "schema_event:no_evidence"
       ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-750ac19106901beddc2c",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-97659efd986a97449096",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-b2a88f78e60bd3f79d16",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
       "rows": 0
     },
     {
@@ -127,17 +269,12 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no bounded work-specific Lucca recital panel",
+        "canonical_work:official composer credit missing or ambiguous",
         "authority_work:no_evidence",
-        "official_composer_credit:no bounded work-specific Lucca recital panel",
+        "official_composer_credit:official composer credit missing or ambiguous",
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-d54e9b021b5167cfb735",
-      "outcome": "verified_first_party_press_calendar",
-      "rows": 9
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
@@ -156,23 +293,38 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no bounded work-specific Lucca recital panel",
+        "canonical_work:official composer credit missing or ambiguous",
         "authority_work:no_evidence",
-        "official_composer_credit:no bounded work-specific Lucca recital panel",
+        "official_composer_credit:official composer credit missing or ambiguous",
         "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "candidate_id": "oa-index-1b9c2f52afd0351d539c",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-406c2dd60b3eb7c5fee8",
       "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing or conflicting labelled Donizetti composer",
-        "schema_event:no_evidence"
-      ],
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-4186e1c367aee6cd2028",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "outcome": "facts_found",
+      "rows": 3
+    },
+    {
+      "candidate_id": "oa-index-5b2707fe818d6b686a4c",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
       "rows": 0
     }
   ]

@@ -240,6 +240,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-068e8c81310d6d5237ea",
+      "source_key": "goldoni-livorno-elisir-2026-27",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "content_sha256": "ce3632f0e27547a63c88546d886117653151a5bc0ad18ec1661c9bf39d01a6bf",
+      "checked_at": "2026-11-22T01:24:53+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Goldoni",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T20:00:00+02:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Goldoni",
+          "date": "2027-04-18",
+          "starts_at": "2027-04-18T16:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-073615054167b041e7f7",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/",
@@ -637,6 +661,44 @@
           "date": "2027-02-14",
           "starts_at": "2027-02-14T15:30:00+01:00",
           "venue": "Teatro Municipale"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-1b9c2f52afd0351d539c",
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+      "content_sha256": "135774080c00e20d19a77cdf1a0d2c13a766c29ffb09e3840cb3a764680bd534",
+      "checked_at": "2026-11-22T01:26:36+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-04-11",
+          "starts_at": "2027-04-11T15:30:00+02:00"
+        },
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-04-14",
+          "starts_at": "2027-04-14T19:00:00+02:00"
+        },
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T20:00:00+02:00"
+        },
+        {
+          "event_title": "Fidelio",
+          "composer": "Ludwig van Beethoven",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-04-18",
+          "starts_at": "2027-04-18T15:30:00+02:00"
         }
       ]
     },
@@ -1234,6 +1296,44 @@
       ]
     },
     {
+      "candidate_id": "oa-index-4186e1c367aee6cd2028",
+      "source_key": "macerata-festival-2027",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
+      "content_sha256": "ec7b411b6e4be99afd2ace9e9c0b58e728295eeba53a5a81f0baa613ef4319e5",
+      "checked_at": "2026-11-22T01:26:40+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "venue": "Arena Sferisterio",
+          "date": "2027-07-16",
+          "starts_at": "2027-07-16T21:00:00+02:00"
+        },
+        {
+          "event_title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "venue": "Arena Sferisterio",
+          "date": "2027-07-25",
+          "starts_at": "2027-07-25T21:00:00+02:00"
+        },
+        {
+          "event_title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "venue": "Arena Sferisterio",
+          "date": "2027-07-31",
+          "starts_at": "2027-07-31T21:00:00+02:00"
+        },
+        {
+          "event_title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "venue": "Arena Sferisterio",
+          "date": "2027-08-06",
+          "starts_at": "2027-08-06T21:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-4579632f6d7744774e59",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
@@ -1277,6 +1377,37 @@
           "venue": "Teatro Carlo Felice"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-488fd79f628da89db68f",
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/",
+      "content_sha256": "46fd9d8a5c34429b0af8ead19cd3ba5c5c5de7b0d754561a942b2a7a3c912cb4",
+      "checked_at": "2026-11-22T01:26:09+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-04-16",
+          "starts_at": "2026-04-16T21:00:00+02:00"
+        },
+        {
+          "event_title": "Il trovatore",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-04-19",
+          "starts_at": "2026-04-19T18:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-il-trovatore_thumb.png",
+        "source_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Il trovatore",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-4e97b4b93dacf2f5c195",
@@ -1378,6 +1509,37 @@
           "venue": "Teatro dell'Opera di Roma",
           "date": "2027-02-28",
           "starts_at": "2027-02-28T16:30:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
+      "content_sha256": "d8c88deb30f98e39e6c46a00cc5e74d2074ba2ed0e973e52c99399345099baf2",
+      "checked_at": "2026-11-22T01:26:43+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le convenienze ed inconvenienze teatrali",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Donizetti",
+          "date": "2026-11-15",
+          "starts_at": "2026-11-15T15:30:00+01:00"
+        },
+        {
+          "event_title": "Le convenienze ed inconvenienze teatrali",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Donizetti",
+          "date": "2026-11-20",
+          "starts_at": "2026-11-20T20:00:00+01:00"
+        },
+        {
+          "event_title": "Le convenienze ed inconvenienze teatrali",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Donizetti",
+          "date": "2026-11-28",
+          "starts_at": "2026-11-28T20:00:00+01:00"
         }
       ]
     },
@@ -1519,6 +1681,130 @@
           "venue": "Teatro alla Scala"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
+      "source_key": "macerata-festival-2027",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+      "content_sha256": "05e42f6fa87f44077ee2572917cfd15d747ce5658f09d2962687421eb0f3cb8f",
+      "checked_at": "2026-11-22T01:26:12+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'elisir d'amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Arena Sferisterio",
+          "date": "2027-07-24",
+          "starts_at": "2027-07-24T21:00:00+02:00"
+        },
+        {
+          "event_title": "L'elisir d'amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Arena Sferisterio",
+          "date": "2027-07-30",
+          "starts_at": "2027-07-30T21:00:00+02:00"
+        },
+        {
+          "event_title": "L'elisir d'amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Arena Sferisterio",
+          "date": "2027-08-08",
+          "starts_at": "2027-08-08T21:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "source_key": "goldoni-livorno-dido-2026-27",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "content_sha256": "ce3632f0e27547a63c88546d886117653151a5bc0ad18ec1661c9bf39d01a6bf",
+      "checked_at": "2026-11-22T01:24:53+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "DIDO AND AENEAS",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Goldoni",
+          "date": "2026-11-06",
+          "starts_at": "2026-11-06T20:00:00+01:00"
+        },
+        {
+          "event_title": "DIDO AND AENEAS",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Goldoni",
+          "date": "2026-11-08",
+          "starts_at": "2026-11-08T16:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-59f9f415de71b2b46733",
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/macbeth-2026/",
+      "content_sha256": "858a2bc71c4f9cbc2c7ec30acc7feb95cc6e783832897b6632636e61b39285d7",
+      "checked_at": "2026-11-22T01:26:15+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-10-18",
+          "starts_at": "2026-10-18T18:00:00+02:00"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-10-20",
+          "starts_at": "2026-10-20T21:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-macbeth_thumb.png",
+        "source_url": "https://cultura.comune.salerno.it/eventi/macbeth-2026/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Macbeth",
+        "kind": "official_production_image"
+      }
+    },
+    {
+      "candidate_id": "oa-index-5a4e3f1f4e61fba4f115",
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/",
+      "content_sha256": "4e54efec464baafc5301812875cfc8cd32b4748c267d5413e05de472bb9fa4c6",
+      "checked_at": "2026-11-22T01:26:18+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-12-21",
+          "starts_at": "2026-12-21T21:00:00+01:00"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-12-23",
+          "starts_at": "2026-12-23T21:00:00+01:00"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-12-26",
+          "starts_at": "2026-12-26T18:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-turandot_thumb.png",
+        "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Turandot",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-5ab298c2300ec275c2a3",
@@ -2030,6 +2316,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-750ac19106901beddc2c",
+      "source_key": "coccia-novara-opera-2027",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
+      "content_sha256": "e9256e98b53778109e70f6f5f0ea4c1a3ea3a339b8bf1295a33bb728a7ad72ac",
+      "checked_at": "2026-11-22T01:26:23+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Coccia",
+          "date": "2027-10-08",
+          "starts_at": "2027-10-08T20:00:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Coccia",
+          "date": "2027-10-09",
+          "starts_at": "2027-10-09T20:00:00+02:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Coccia",
+          "date": "2027-10-10",
+          "starts_at": "2027-10-10T16:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-790b965de8129382aa04",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
@@ -2429,6 +2746,37 @@
       "official_season": "2025/2026"
     },
     {
+      "candidate_id": "oa-index-885beacc517cb454d09f",
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
+      "content_sha256": "e03dfd48be9e1fb4c4b8fd1d56d8a8c59aa184fffeabb2bfee656daa044f7c99",
+      "checked_at": "2026-11-22T01:25:47+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il signor Bruschino",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-05-08",
+          "starts_at": "2026-05-08T21:00:00+02:00"
+        },
+        {
+          "event_title": "Il signor Bruschino",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-05-10",
+          "starts_at": "2026-05-10T18:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-signor-bruschino_thumb.png",
+        "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Il signor Bruschino",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-8a4ea2e4cf761a147ffb",
       "source_key": "massimo-season-2026-27",
       "source_url": "https://www.teatromassimo.it/event/ernani-2/",
@@ -2583,6 +2931,44 @@
           "venue": "Teatro Sangiorgi",
           "date": "2027-01-22",
           "starts_at": "2027-01-22T11:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-8cc98b8fce566b8b3f4f",
+      "source_key": "macerata-festival-2027",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
+      "content_sha256": "cdc445b51b42a0dae9f6bdbfecea9f9f6c793f987d9b14f9c9c0c87ef86b1f13",
+      "checked_at": "2026-11-22T01:25:36+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Arena Sferisterio",
+          "date": "2027-07-17",
+          "starts_at": "2027-07-17T21:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Arena Sferisterio",
+          "date": "2027-07-23",
+          "starts_at": "2027-07-23T21:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Arena Sferisterio",
+          "date": "2027-08-01",
+          "starts_at": "2027-08-01T21:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Arena Sferisterio",
+          "date": "2027-08-07",
+          "starts_at": "2027-08-07T21:00:00+02:00"
         }
       ]
     },
@@ -2812,6 +3198,82 @@
           "date": "2027-06-27",
           "starts_at": "2027-06-27T17:00:00+02:00",
           "venue": "Teatro La Fenice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-991f446bf3f27044b019",
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "content_sha256": "ec7fe39895834a907b4d0c709d34df9083fe9173ebd176b814675fa2ef5bfa1c",
+      "checked_at": "2026-11-22T01:24:46+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Cristoforo Colombo",
+          "composer": "Alberto Franchetti",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-11-21",
+          "starts_at": "2027-11-21T15:30:00+01:00"
+        },
+        {
+          "event_title": "Cristoforo Colombo",
+          "composer": "Alberto Franchetti",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-11-24",
+          "starts_at": "2027-11-24T19:00:00+01:00"
+        },
+        {
+          "event_title": "Cristoforo Colombo",
+          "composer": "Alberto Franchetti",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-11-26",
+          "starts_at": "2027-11-26T20:00:00+01:00"
+        },
+        {
+          "event_title": "Cristoforo Colombo",
+          "composer": "Alberto Franchetti",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-11-28",
+          "starts_at": "2027-11-28T15:30:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-997a698e76cca7510492",
+      "source_key": "coccia-novara-opera-2027",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
+      "content_sha256": "9edac84f6b3556c90b017ceca5eaa5d9171515cd50a82f2296918a0c4a12403e",
+      "checked_at": "2026-11-22T01:24:42+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Coccia",
+          "date": "2027-01-29",
+          "starts_at": "2027-01-29T20:00:00+01:00"
+        },
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Coccia",
+          "date": "2027-01-30",
+          "starts_at": "2027-01-30T20:00:00+01:00"
+        },
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Coccia",
+          "date": "2027-01-31",
+          "starts_at": "2027-01-31T16:00:00+01:00"
+        },
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Coccia",
+          "date": "2027-02-02",
+          "starts_at": "2027-02-02T20:00:00+01:00"
         }
       ]
     },
@@ -3519,6 +3981,37 @@
       "official_season": "2025/2026"
     },
     {
+      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+      "content_sha256": "1ed263f311373f091147961ae5e057c92c10a8d49ffa3f1b18e0728fba59f459",
+      "checked_at": "2026-11-22T01:24:45+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Alahor in Granata",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Sociale",
+          "date": "2026-11-14",
+          "starts_at": "2026-11-14T20:00:00+01:00"
+        },
+        {
+          "event_title": "Alahor in Granata",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Sociale",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T15:30:00+01:00"
+        },
+        {
+          "event_title": "Alahor in Granata",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Sociale",
+          "date": "2026-11-27",
+          "starts_at": "2026-11-27T20:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
@@ -3717,6 +4210,82 @@
       "official_season": "2025/2026"
     },
     {
+      "candidate_id": "oa-index-c7a26f1f7611da36ad2a",
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "content_sha256": "2ffa6252c235d295dbf9c01d65731cdfb3b9d1fcce6dcadcfc054d3f082fb404",
+      "checked_at": "2026-11-22T01:25:52+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il signor Bruschino",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-10-24",
+          "starts_at": "2027-10-24T15:30:00+02:00"
+        },
+        {
+          "event_title": "Il signor Bruschino",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-10-27",
+          "starts_at": "2027-10-27T19:00:00+02:00"
+        },
+        {
+          "event_title": "Il signor Bruschino",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-10-29",
+          "starts_at": "2027-10-29T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il signor Bruschino",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-10-31",
+          "starts_at": "2027-10-31T15:30:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-c7f7f8520caabdfc289f",
+      "source_key": "treviso-del-monaco-opera-2026-27",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "content_sha256": "50356943c1d2e258641ffee9388f03165e7d225bd0bd4313a9cf6068b9102db1",
+      "checked_at": "2026-11-22T01:25:49+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale Mario del Monaco",
+          "date": "2026-10-23",
+          "starts_at": "2026-10-23T20:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale Mario del Monaco",
+          "date": "2026-10-25",
+          "starts_at": "2026-10-25T16:00:00+01:00"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Comunale Mario del Monaco",
+          "date": "2026-12-04",
+          "starts_at": "2026-12-04T20:00:00+01:00"
+        },
+        {
+          "event_title": "Pagliacci",
+          "composer": "Ruggero Leoncavallo",
+          "venue": "Teatro Comunale Mario del Monaco",
+          "date": "2026-12-06",
+          "starts_at": "2026-12-06T16:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-cde049d5c057e0c050b2",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
@@ -3822,6 +4391,44 @@
         "alt": "Immagine della produzione di Macbeth",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-cf244270ba1aec90c350",
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "content_sha256": "fdfc1f90e8c1d6c3cfe9024b7de3b406c989640d8772191c7cdda26b95c06797",
+      "checked_at": "2026-11-22T01:25:54+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Alzira",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T15:30:00+01:00"
+        },
+        {
+          "event_title": "Alzira",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-03-17",
+          "starts_at": "2027-03-17T19:00:00+01:00"
+        },
+        {
+          "event_title": "Alzira",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-03-19",
+          "starts_at": "2027-03-19T20:00:00+01:00"
+        },
+        {
+          "event_title": "Alzira",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-03-21",
+          "starts_at": "2027-03-21T15:30:00+01:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-cfd5a4967756ff1d51dd",
@@ -4213,6 +4820,56 @@
       ]
     },
     {
+      "candidate_id": "oa-index-dd282b89dc6ab9f24a20",
+      "source_key": "ancona-cavalleria-program-2026",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "content_sha256": "42cfd759261d232fb58e9a2c1c679f03a3a7b7d307575e40beeb1c1ada34e801",
+      "checked_at": "2026-11-22T01:24:36+00:00",
+      "status": "needs_program_review",
+      "program_heading": "A Giacomo Leopardi/Cavalleria rusticana di Pietro Mascagni/Pietro Mascagni",
+      "program_heading_source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "program_components": [
+        {
+          "title": "A Giacomo Leopardi",
+          "composer": "Pietro Mascagni"
+        },
+        {
+          "title": "Cavalleria rusticana",
+          "composer": "Pietro Mascagni"
+        }
+      ],
+      "event_facts": [
+        {
+          "event_title": "A Giacomo Leopardi",
+          "composer": "Pietro Mascagni",
+          "venue": "Teatro delle Muse",
+          "date": "2026-12-04",
+          "starts_at": "2026-12-04T20:30:00+01:00"
+        },
+        {
+          "event_title": "Cavalleria rusticana",
+          "composer": "Pietro Mascagni",
+          "venue": "Teatro delle Muse",
+          "date": "2026-12-04",
+          "starts_at": "2026-12-04T20:30:00+01:00"
+        },
+        {
+          "event_title": "A Giacomo Leopardi",
+          "composer": "Pietro Mascagni",
+          "venue": "Teatro delle Muse",
+          "date": "2026-12-06",
+          "starts_at": "2026-12-06T16:30:00+01:00"
+        },
+        {
+          "event_title": "Cavalleria rusticana",
+          "composer": "Pietro Mascagni",
+          "venue": "Teatro delle Muse",
+          "date": "2026-12-06",
+          "starts_at": "2026-12-06T16:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
@@ -4246,6 +4903,44 @@
           "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2027-05-29",
           "starts_at": "2027-05-29T15:30:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-de1f52ee525c73d565a6",
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+      "content_sha256": "1b9a30798349d1344c16af6e8ae3e9f34c5e55404293d6e54dae6e7bea1d339d",
+      "checked_at": "2026-11-22T01:25:55+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il ratto dal serraglio",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-01-17",
+          "starts_at": "2027-01-17T15:30:00+01:00"
+        },
+        {
+          "event_title": "Il ratto dal serraglio",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-01-20",
+          "starts_at": "2027-01-20T19:00:00+01:00"
+        },
+        {
+          "event_title": "Il ratto dal serraglio",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-01-22",
+          "starts_at": "2027-01-22T20:00:00+01:00"
+        },
+        {
+          "event_title": "Il ratto dal serraglio",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Filarmonico",
+          "date": "2027-01-24",
+          "starts_at": "2027-01-24T15:30:00+01:00"
         }
       ]
     },
@@ -4322,6 +5017,30 @@
           "date": "2026-12-05",
           "starts_at": "2026-12-05T18:00:00+01:00",
           "venue": "Teatro dell'Opera di Roma"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-e093badade1f5650638e",
+      "source_key": "goldoni-livorno-otello-2026-27",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "content_sha256": "ce3632f0e27547a63c88546d886117653151a5bc0ad18ec1661c9bf39d01a6bf",
+      "checked_at": "2026-11-22T01:24:53+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Goldoni",
+          "date": "2027-01-29",
+          "starts_at": "2027-01-29T20:00:00+01:00"
+        },
+        {
+          "event_title": "Otello",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Goldoni",
+          "date": "2027-01-31",
+          "starts_at": "2027-01-31T16:00:00+01:00"
         }
       ]
     },
@@ -4487,6 +5206,44 @@
           "date": "2027-02-07",
           "starts_at": "2027-02-07T20:00:00+01:00",
           "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-edf6ac484882834fe426",
+      "source_key": "coccia-novara-opera-2027",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
+      "content_sha256": "7487d343631f47e95bc42c9531188a4ac116ce7edf63a3057dfc5042c9469b2a",
+      "checked_at": "2026-11-22T01:25:59+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Coccia",
+          "date": "2027-05-21",
+          "starts_at": "2027-05-21T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Coccia",
+          "date": "2027-05-22",
+          "starts_at": "2027-05-22T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Coccia",
+          "date": "2027-05-23",
+          "starts_at": "2027-05-23T16:00:00+02:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Coccia",
+          "date": "2027-05-25",
+          "starts_at": "2027-05-25T20:00:00+02:00"
         }
       ]
     },
@@ -4795,6 +5552,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-f9bb7479607348f07887",
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/",
+      "content_sha256": "0a0cfc8f6b9260b4197a4290ab9ce820c343e6722cd4d692ab08fa64f09a2fd1",
+      "checked_at": "2026-11-22T01:26:02+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-05-29",
+          "starts_at": "2026-05-29T21:00:00+02:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-05-31",
+          "starts_at": "2026-05-31T18:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-barbiere-di-siviglia_thumb.png",
+        "source_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Il barbiere di Siviglia",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-fcae59bb4ff1c5166bcc",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
@@ -4829,6 +5617,30 @@
           "venue": "Teatro Petruzzelli",
           "date": "2026-01-28",
           "starts_at": "2026-01-28T18:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-fcf75c0534a0639007c7",
+      "source_key": "ancona-elisir-opera-2026",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "content_sha256": "42cfd759261d232fb58e9a2c1c679f03a3a7b7d307575e40beeb1c1ada34e801",
+      "checked_at": "2026-11-22T01:24:36+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro delle Muse",
+          "date": "2026-10-02",
+          "starts_at": "2026-10-02T20:30:00+02:00"
+        },
+        {
+          "event_title": "L’elisir d’amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro delle Muse",
+          "date": "2026-10-04",
+          "starts_at": "2026-10-04T16:30:00+02:00"
         }
       ]
     },
@@ -4868,6 +5680,44 @@
           "starts_at": "2027-03-02T20:00:00+01:00"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-ffbe120c526a352bc59c",
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+      "content_sha256": "2d58675c6072580ab721faf05f0a1f0c23807ec33ef1472da611a3e66cc6b2d4",
+      "checked_at": "2026-11-22T01:26:05+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La vedova allegra",
+          "composer": "Franz Lehár",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-11-06",
+          "starts_at": "2026-11-06T21:00:00+01:00"
+        },
+        {
+          "event_title": "La vedova allegra",
+          "composer": "Franz Lehár",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-11-07",
+          "starts_at": "2026-11-07T21:00:00+01:00"
+        },
+        {
+          "event_title": "La vedova allegra",
+          "composer": "Franz Lehár",
+          "venue": "Teatro Municipale Giuseppe Verdi",
+          "date": "2026-11-08",
+          "starts_at": "2026-11-08T18:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://cultura.comune.salerno.it/wp-content/uploads/2026/03/teatro-verdi-salerno-la-vedova-allegra_thumb.png",
+        "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di La vedova allegra",
+        "kind": "official_production_image"
+      }
     }
   ]
 }
