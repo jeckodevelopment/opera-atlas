@@ -6,6 +6,7 @@ from scripts.audit_public_atlas import classify, targets
 class LivePublicationAuditTests(unittest.TestCase):
     def test_static_shell_is_not_verified(self):
         self.assertEqual(classify(200, None, None, "", "La traviata", "Produzione"), "unverified")
+        self.assertEqual(classify(200, "Scheda non disponibile", "Scheda", "", "La traviata", "Produzione"), "unverified")
         self.assertEqual(classify(200, "La traviata", "Produzione", "",
                                   "La traviata", "Produzione"), "verified_live")
         self.assertEqual(classify(200, "Aida", "Produzione", "",
