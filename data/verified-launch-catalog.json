@@ -6165,6 +6165,10 @@
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
       "dates": [
         [
+          "2026-08-19",
+          "21:30"
+        ],
+        [
           "2026-08-20",
           "21:30"
         ]
@@ -6254,21 +6258,6 @@
         [
           "2026-06-06",
           "18:00"
-        ]
-      ]
-    },
-    {
-      "key": "auto-e44f89c2a6d46834",
-      "title": "Cavalleria rusticana",
-      "composer": "Pietro Mascagni",
-      "venue": "Piazza Goldoni",
-      "municipality": "Livorno",
-      "region": "Toscana",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
-      "dates": [
-        [
-          "2026-08-19",
-          "21:30"
         ]
       ]
     },

@@ -2905,15 +2905,6 @@
       "source_url": "https://operagiocosa.it/",
       "season": "2026"
     },
-    "auto-e44f89c2a6d46834": {
-      "id": "oa-s-000237",
-      "work_id": "oa-w-000005",
-      "venue_id": "oa-v-000051",
-      "slug": "cavalleria-rusticana",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
-      "season": "2026",
-      "route_slug": "cavalleria-rusticana-cavalleria-rusticana"
-    },
     "auto-fecbb06d8dc649b6": {
       "id": "oa-s-000238",
       "work_id": "oa-w-000073",
@@ -8510,12 +8501,6 @@
       "original_date": "2026-06-06",
       "source_url": "https://operagiocosa.it/"
     },
-    "auto-e44f89c2a6d46834|2026-08-19": {
-      "id": "oa-r-000953",
-      "staging_id": "oa-s-000237",
-      "original_date": "2026-08-19",
-      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/"
-    },
     "auto-fecbb06d8dc649b6|2026-07-03": {
       "id": "oa-r-000954",
       "staging_id": "oa-s-000238",
@@ -8527,6 +8512,12 @@
       "staging_id": "oa-s-000238",
       "original_date": "2026-07-05",
       "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370"
+    },
+    "auto-4d1f34e8ade7fc6e|2026-08-19": {
+      "id": "oa-r-000953",
+      "staging_id": "oa-s-000231",
+      "original_date": "2026-08-19",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
     }
   },
   "reserved_works": {

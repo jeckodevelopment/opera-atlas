@@ -8,6 +8,10 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
+      "candidate_id": "oa-index-943d04f25da8e27e1190",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "candidate_id": "oa-index-a0178dcdf3cfff6db4fb",
       "reason": "unknown_work_needs_authority_data"
     },
@@ -36,23 +40,7 @@
       "reason": "incomplete_work_editorial"
     },
     {
-      "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-86855eb33828e6cde6af",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-fecbb06d8dc649b616d2",
+      "candidate_id": "oa-index-943d04f25da8e27e1190",
       "reason": "incomplete_work_editorial"
     }
   ],
