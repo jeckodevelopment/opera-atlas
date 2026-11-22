@@ -31,6 +31,7 @@ EXCLUDED_PATHS={
     # L'occasione fa il ladro and Le siège de Corinthe eligible.
     "pesaro-rof-2026": frozenset({
         "concerti-di-belcanto", "festival-giovane", "stabat-mater",
+        "florez-30",
         "incontri", "rossinimania",
     }),
     # The festival mixes opera with chamber concerts, pop and jazz.
@@ -46,9 +47,16 @@ EXCLUDED_PATHS={
         "concerto-di-natale",
         "concerto-di-capodanno",
         "sicily-jazz-concert",
+        # The official 2026 genre index labels these as dance and concerts.
+        "romeo-e-giulietta", "food-ensemble", "quintetto-sospeso",
         "bruno-canino",
         "omaggio-a-bowie-cohen-michael-e-prince",
         "lidia-schillaci-canta-i-grandi-cantautori-italiani",
+    }),
+    "martina-valle-itria-2026": frozenset({
+        # Identified as a research symposium and a theatre/music adaptation,
+        # not a staging of an individual operatic work.
+        "approfondimenti", "in-orbita-naufragi",
     }),
     "scala-season-2026-27": frozenset({
         "otello-anteprima-under30.html",
