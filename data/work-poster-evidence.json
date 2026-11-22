@@ -167,6 +167,14 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di La vedova allegra",
       "kind": "official_production_image"
+    },
+    "oa-w-000095": {
+      "work_id": "oa-w-000095",
+      "image_url": "https://www.fondazionepergolesispontini.com/wp-content/uploads/2026/06/Lesecuzione_1024x768.jpg",
+      "source_url": "https://www.fondazionepergolesispontini.com/eventi/lesecuzione-sotto-lo-sguardo-di-tosca-2/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di L'ESECUZIONE",
+      "kind": "official_production_image"
     }
   },
   "checks": {

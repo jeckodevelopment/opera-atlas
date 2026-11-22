@@ -603,6 +603,13 @@
       "composer": "Gaetano Donizetti",
       "slug": "don-pasquale",
       "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "l'esecuzione|salvatore passantino": {
+      "id": "oa-w-000095",
+      "slug": "esecuzione",
+      "title": "L'esecuzione",
+      "composer": "Salvatore Passantino",
+      "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
     }
   },
   "venues": {
@@ -2473,6 +2480,14 @@
       "work_id": "oa-w-000090",
       "venue_id": "oa-v-000039",
       "slug": "don-pasquale",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "season": "2026"
+    },
+    "auto-7b0a1e061133c0b5": {
+      "id": "oa-s-000197",
+      "work_id": "oa-w-000095",
+      "venue_id": "oa-v-000039",
+      "slug": "esecuzione",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
       "season": "2026"
     }
@@ -7558,6 +7573,18 @@
       "id": "oa-r-000864",
       "staging_id": "oa-s-000196",
       "original_date": "2026-10-31",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "auto-7b0a1e061133c0b5|2026-11-14": {
+      "id": "oa-r-000865",
+      "staging_id": "oa-s-000197",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "auto-7b0a1e061133c0b5|2026-11-15": {
+      "id": "oa-r-000866",
+      "staging_id": "oa-s-000197",
+      "original_date": "2026-11-15",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
     }
   },

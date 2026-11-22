@@ -881,6 +881,17 @@
         "https://archiviostorico.operaroma.it/opera/don-pasquale/",
         "https://www.rohcollections.org.uk/Work.aspx?work=467"
       ]
+    },
+    "esecuzione": {
+      "librettist": "Marco Malvaldi",
+      "premiere_year": 2026,
+      "premiere_date": "2026-11-14",
+      "premiere_venue": "Teatro Giovan Battista Pergolesi",
+      "premiere_city": "Jesi",
+      "sources": [
+        "https://www.fondazionepergolesispontini.com/lirica-jesi-il-14-e-15-novembre-lesecuzione-sotto-lo-sguardo-di-tosca-prima-assoluta-al-teatro-pergolesi-di-jesi-musica-di-salvatore-passantino-libretto-di-marco-malva/",
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
     }
   },
   "works_by_id": {

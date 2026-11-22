@@ -1821,6 +1821,24 @@
       ]
     },
     {
+      "id": "curated:auto-7b0a1e061133c0b5:2026-11-14",
+      "starts_at": "2026-11-14T20:30:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "L'esecuzione",
+      "composer": "Salvatore Passantino",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "municipality": "Jesi",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-8bc8b40e1da92efa:2026-11-14",
       "starts_at": "2026-11-14T20:30:00+01:00",
       "local_date": "2026-11-14",
@@ -1927,6 +1945,24 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/"
+      ]
+    },
+    {
+      "id": "curated:auto-7b0a1e061133c0b5:2026-11-15",
+      "starts_at": "2026-11-15T16:00:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "L'esecuzione",
+      "composer": "Salvatore Passantino",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "municipality": "Jesi",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
       ]
     },
     {
