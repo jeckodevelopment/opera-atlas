@@ -136,7 +136,7 @@ def parse_detail(html:str,*,url:str):
         r"(?=Libretto\b|Trascrizione\b|Drammaturgia\b|Cast\b|"
         r"Prima\s+rappresentazione\b|Direttore\b|Regia\b|"
         r"Scene\b|Produzione\b)",credit_section)
-    if not credit:
+    if not credit or credit.start()>600:
         raise ValueError("explicit official Novara opera composer is missing")
     composer=re.sub(r"\s*\([^)]*Accademia\s+AMO[^)]*\)\s*$","",
                     credit.group(1),flags=re.I).strip(" .")
