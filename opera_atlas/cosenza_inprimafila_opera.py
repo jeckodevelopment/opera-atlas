@@ -152,7 +152,9 @@ def parse_season_summary(html:str,*,url:str)->list[tuple[str,str,str,list[tuple[
     for i,part in enumerate(parts):
         if not VENUE.search(part) or i==0:
             continue
-        raw_clock=parts[i-1]
+        # In the real Joomla page the date and "Ore HH.MM" are separate
+        # text nodes; mixed productions may have two dates in four nodes.
+        raw_clock=" ".join(parts[max(0,i-5):i])
         if not DATE_ENTRY.search(raw_clock):
             continue
         first_title=parts[i+1] if i+1<len(parts) else ""
