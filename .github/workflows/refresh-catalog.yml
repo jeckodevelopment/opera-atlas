@@ -168,6 +168,33 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+      # Refresh the complete approved season-index inventory before the slower
+      # national candidate-detail backlog, which may exhaust the run budget.
+      # Candidate URLs remain review-only, never direct public recite.
+      - name: Discover approved season indexes ahead of slow details
+        run: |
+          python -m scripts.discover_season_indexes --allow-network
+          python -m scripts.source_automation
+          python -m scripts.source_automation --check
+      - name: Checkpoint current season-index status and candidate URLs
+        id: early_season_checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/season-index-health.json data/season-index-candidates.json public/catalog/season-index-candidates.json public/catalog/source-automation.json
+          if git diff --cached --quiet; then
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+            echo "No new season-index diagnostic or candidates."
+          else
+            git commit -m "data(sources): checkpoint season index health early [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Retry stale early season-index checkpoint
+        if: steps.early_season_checkpoint.outputs.deferred == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       # Take a national checkpoint before the expensive source crawl. This
       # recovers the existing review backlog even if a later adapter or
       # knowledge-service step times out. Each detail fetch respects robots.
