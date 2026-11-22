@@ -926,6 +926,17 @@
         "https://memboa.operaamerica.org/Applications/schedule/details.aspx?titleID=3239",
         "https://www.liricocagliari.it/evento/candide/"
       ]
+    },
+    "le-avventure-di-pinocchio": {
+      "librettist": "Sandro Bernabei",
+      "premiere_year": 2003,
+      "premiere_venue": "Teatro Marrucino",
+      "premiere_city": "Chieti",
+      "sources": [
+        "https://www.giornaledellamusica.it/formazione/audizioni-per-il-cast-dellopera-lirica-le-avventure-di-pinocchio-al-teatro-marrucino-di-chieti",
+        "https://www.teatromarrucino.eu/evento/le-avventure-di-pinocchio/",
+        "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
+      ]
     }
   },
   "works_by_id": {

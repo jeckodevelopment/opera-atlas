@@ -69,28 +69,6 @@
     },
     {
       "candidate_ids": [
-        "oa-index-943d04f25da8e27e1190",
-        "oa-index-d262c6e18193a53ee487"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Antonio Cericola",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "lecce-apollo-pinocchio-2026",
-          "url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
-        },
-        {
-          "source_key": "chieti-marrucino-lirica-2026",
-          "url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
-        }
-      ],
-      "title": "Le avventure di Pinocchio"
-    },
-    {
-      "candidate_ids": [
         "oa-index-2583140715d654277a2b",
         "oa-index-41acaf1f090fbeedb4a7"
       ],
@@ -170,10 +148,10 @@
     "candidates_checked": 190,
     "candidates_without_facts": 0,
     "facts_examined": 719,
-    "facts_resolved": 704,
+    "facts_resolved": 706,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 15,
-    "unmatched_groups": 8
+    "unmatched_facts": 13,
+    "unmatched_groups": 7
   },
   "truncated": false
 }

@@ -1874,6 +1874,24 @@
       ]
     },
     {
+      "id": "curated:auto-e831cbf742e2f848:2026-11-06",
+      "starts_at": "2026-11-06T20:00:00+01:00",
+      "local_date": "2026-11-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/"
+      ]
+    },
+    {
       "id": "curated:regio-boheme-leoncavallo-2026:2026-11-06",
       "starts_at": "2026-11-06T20:00:00+01:00",
       "local_date": "2026-11-06",
@@ -4438,6 +4456,24 @@
       ]
     },
     {
+      "id": "curated:auto-943d04f25da8e27e:2026-12-30",
+      "starts_at": "2026-12-30T20:45:00+01:00",
+      "local_date": "2026-12-30",
+      "time_known": true,
+      "time_label": "20:45",
+      "status": "announced",
+      "title": "Le avventure di Pinocchio",
+      "composer": "Antonio Cericola",
+      "venue": "Teatro Apollo",
+      "municipality": "Lecce",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
+      ]
+    },
+    {
       "id": "curated:auto-b81b9cb68003ef9e:2026-12-31",
       "starts_at": "2026-12-31T21:00:00+01:00",
       "local_date": "2026-12-31",
@@ -5680,6 +5716,24 @@
       ]
     },
     {
+      "id": "curated:auto-f4226333be6c3f44:2027-01-29",
+      "starts_at": "2027-01-29T20:00:00+01:00",
+      "local_date": "2027-01-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/otello-4/"
+      ]
+    },
+    {
       "id": "curated:auto-073615054167b041:2027-01-29",
       "starts_at": "2027-01-29T20:30:00+01:00",
       "local_date": "2027-01-29",
@@ -5911,6 +5965,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
+      ]
+    },
+    {
+      "id": "curated:auto-7b6b273b4dfbfb8e:2027-01-31",
+      "starts_at": "2027-01-31T16:00:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/otello-3/"
       ]
     },
     {
@@ -9784,6 +9856,24 @@
       ]
     },
     {
+      "id": "curated:auto-e0c88bff5883ca11:2027-04-16",
+      "starts_at": "2027-04-16T20:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/"
+      ]
+    },
+    {
       "id": "curated:parma-madama-butterfly-2027:2027-04-16",
       "starts_at": "2027-04-16T20:00:00+02:00",
       "local_date": "2027-04-16",
@@ -9997,6 +10087,24 @@
       "longitude": null,
       "sources": [
         "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ]
+    },
+    {
+      "id": "curated:auto-cab03dfcd8aeff15:2027-04-18",
+      "starts_at": "2027-04-18T16:00:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/"
       ]
     },
     {
