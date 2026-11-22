@@ -112,6 +112,32 @@ class MultiWorkProgramTests(unittest.TestCase):
                          {"Il tabarro","Suor Angelica","Gianni Schicchi"})
         self.assertTrue(all("editorial" in p for p in program["components"]))
 
+    def test_four_canonical_reserved_ids_and_jesi_component_references(self):
+        reserved=self.registry.get("reserved_works",{})
+        expected={
+            ("don pasquale","gaetano donizetti"):"oa-w-000090",
+            ("il tabarro","giacomo puccini"):"oa-w-000091",
+            ("suor angelica","giacomo puccini"):"oa-w-000092",
+            ("gianni schicchi","giacomo puccini"):"oa-w-000093",
+        }
+        self.assertEqual({(w["title"].casefold(),w["composer"].casefold()):w["id"]
+                          for w in reserved.values()},expected)
+        all_ids=[w["id"] for w in self.registry["works"].values()]
+        self.assertFalse(set(all_ids) & {w["id"] for w in reserved.values()})
+        detail=next(x for x in self.evidence["evidence"]
+                    if x.get("source_key")=="jesi-trittico-opera-2026")
+        candidate=next(x for x in self.candidates["candidates"]
+                       if x["id"]==detail["candidate_id"])
+        p=program_from_evidence(
+            heading=detail["program_heading"],source_key=detail["source_key"],
+            source_url=detail["source_url"],candidate=candidate,detail=detail,
+            registry=self.registry,venue="Teatro Giovan Battista Pergolesi",
+            city="Jesi",region="Marche")
+        self.assertEqual({x["work_id"] for x in p["components"]},
+                         {"oa-w-000091","oa-w-000092","oa-w-000093"})
+        self.assertEqual(len(p["performances"]),2)
+        self.assertEqual(len({x["id"] for x in p["performances"]}),2)
+
     def test_reject_incomplete_or_ambiguous_credits(self):
         for heading in ("Pagliacci di Ruggero Leoncavallo",
                         "Pagliacci di Ruggero Leoncavallo | Pagliacci di Ruggero Leoncavallo",
