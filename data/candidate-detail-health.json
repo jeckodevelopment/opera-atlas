@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T13:18:42+00:00",
+  "checked_at": "2026-11-22T13:22:11+00:00",
   "scope": "national",
   "attempted": 14,
   "outcomes": [
@@ -111,15 +111,8 @@
     },
     {
       "candidate_id": "oa-index-d7fe62f35d5196ceb467",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:missing unique Modena production title",
-        "authority_work:no_evidence",
-        "official_composer_credit:missing unique Modena production title",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 2
     },
     {
       "candidate_id": "oa-index-ecf1fda1dc67738cab86",

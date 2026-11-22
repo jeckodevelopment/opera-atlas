@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "94a78ef75a315549cfa29985c1ec0c60e7aa470ef90fb75bd9a71416d2043a09",
-      "checked_at": "2026-11-22T13:18:22+00:00",
+      "checked_at": "2026-11-22T13:21:50+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5596,11 +5596,35 @@
       ]
     },
     {
+      "candidate_id": "oa-index-d7fe62f35d5196ceb467",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+      "content_sha256": "4298ee385b921fea13c5e672a9d14a7bf068762ccde7eae302f75fc7466498e0",
+      "checked_at": "2026-11-22T13:22:05+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Veleno",
+          "composer": "Gaia Aloisi",
+          "date": "2027-05-07",
+          "starts_at": "2027-05-07T20:00:00+02:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "Veleno",
+          "composer": "Gaia Aloisi",
+          "date": "2027-05-09",
+          "starts_at": "2027-05-09T15:30:00+02:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "353ab654d3a51fb0b050648dbfaac84a83f54a3c6dbdac9007f640647267ded3",
-      "checked_at": "2026-11-22T13:18:31+00:00",
+      "content_sha256": "5114653b7a857e4323e3b54938e2674dfd6e5a9e3874d5306d8351f1b76ed4cd",
+      "checked_at": "2026-11-22T13:21:59+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
