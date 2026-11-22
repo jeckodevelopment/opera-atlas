@@ -212,8 +212,12 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                         "starts_at":official_local_time(day,clock)})
         return out
     if source_key=="spoleto-tls-lirica-2026":
-        from opera_atlas.spoleto_tls_parser import parse_program
-        rows=parse_program(html,url=url)
+        from opera_atlas.spoleto_municipal_parser import URL as municipal,parse_program as parse_municipal
+        if url==municipal:
+            rows=parse_municipal(html,url=url)
+        else:
+            from opera_atlas.spoleto_tls_parser import parse_program
+            rows=parse_program(html,url=url)
         out=[]
         for title,composer,venue,day,clock in rows:
             work=resolve_work(registry,title,composer)
@@ -984,10 +988,15 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
             # source-scoped cache hit does not contact the official host.
             try:
                 if not network_enabled:raise AccessDenied("network disabled")
+                source_origin=source["official_url"]
+                if item["source_key"]=="spoleto-tls-lirica-2026":
+                    from opera_atlas.spoleto_municipal_parser import URL,ORIGIN
+                    if item["official_url"]==URL:
+                        source_origin=ORIGIN
                 db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",
-                           (source["official_url"],))
+                           (source_origin,))
                 source_id=db.execute("SELECT id FROM sources WHERE official_url=?",
-                                     (source["official_url"],)).fetchone()["id"]
+                                     (source_origin,)).fetchone()["id"]
                 key=(source_id,item["official_url"])
                 page=fetched_pages.get(key)
                 if page is None:
