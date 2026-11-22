@@ -19,17 +19,6 @@
       "festival_id": "arena-opera-festival"
     },
     {
-      "id": "rossini-opera-festival",
-      "name": "Rossini Opera Festival",
-      "edition": null,
-      "city": "Pesaro",
-      "region": "Marche",
-      "official_url": "https://www.rossinioperafestival.it/",
-      "staging_ids": [],
-      "description": "A Pesaro, città natale di Gioachino Rossini, il festival celebra ogni estate il compositore con nuove produzioni, grandi interpreti e appuntamenti musicali.",
-      "festival_id": "rossini-opera-festival"
-    },
-    {
       "id": "donizetti-opera-2026",
       "name": "Donizetti Opera Festival",
       "edition": "2026",
@@ -46,6 +35,17 @@
       ],
       "description": "A Bergamo, il festival dedicato a Gaetano Donizetti porta in scena opere del compositore nei teatri della città, fra riscoperte e nuove interpretazioni.",
       "festival_id": "donizetti-opera"
+    },
+    {
+      "id": "rossini-opera-festival",
+      "name": "Rossini Opera Festival",
+      "edition": null,
+      "city": "Pesaro",
+      "region": "Marche",
+      "official_url": "https://www.rossinioperafestival.it/",
+      "staging_ids": [],
+      "description": "A Pesaro, città natale di Gioachino Rossini, il festival celebra ogni estate il compositore con nuove produzioni, grandi interpreti e appuntamenti musicali.",
+      "festival_id": "rossini-opera-festival"
     }
   ]
 }

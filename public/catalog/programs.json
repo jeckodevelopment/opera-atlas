@@ -218,6 +218,66 @@
           "starts_at": "2026-12-06T16:30:00+01:00"
         }
       ]
+    },
+    {
+      "id": "oa-p-ecf1fda1dc67738c",
+      "title": "Jeanne d’Arc au bûcher / Jeanne Dark",
+      "components": [
+        {
+          "title": "Jeanne d’Arc au bûcher",
+          "composer": "Arthur Honegger",
+          "work_id": null
+        },
+        {
+          "title": "Jeanne Dark",
+          "composer": "Fabio Vacchi",
+          "work_id": null
+        }
+      ],
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "municipality": "Trieste",
+      "region": "Friuli-Venezia Giulia",
+      "route_slug": "jeanne-d-arc-au-bucher-jeanne-dark",
+      "performances": [
+        {
+          "id": "oa-pr-ceadfa6a4faccade",
+          "program_id": "oa-p-ecf1fda1dc67738c",
+          "local_date": "2027-04-09",
+          "starts_at": "2027-04-09T20:00:00+02:00"
+        },
+        {
+          "id": "oa-pr-1227d92b77727ccf",
+          "program_id": "oa-p-ecf1fda1dc67738c",
+          "local_date": "2027-04-10",
+          "starts_at": "2027-04-10T18:00:00+02:00"
+        },
+        {
+          "id": "oa-pr-eecabc54b3121632",
+          "program_id": "oa-p-ecf1fda1dc67738c",
+          "local_date": "2027-04-11",
+          "starts_at": "2027-04-11T16:00:00+02:00"
+        },
+        {
+          "id": "oa-pr-a0aaf3d07c1ab70b",
+          "program_id": "oa-p-ecf1fda1dc67738c",
+          "local_date": "2027-04-16",
+          "starts_at": "2027-04-16T20:00:00+02:00"
+        },
+        {
+          "id": "oa-pr-7d2a1d7fd2c654ad",
+          "program_id": "oa-p-ecf1fda1dc67738c",
+          "local_date": "2027-04-17",
+          "starts_at": "2027-04-17T16:00:00+02:00"
+        },
+        {
+          "id": "oa-pr-f5f4083ddfd8fba3",
+          "program_id": "oa-p-ecf1fda1dc67738c",
+          "local_date": "2027-04-18",
+          "starts_at": "2027-04-18T16:00:00+02:00"
+        }
+      ]
     }
   ]
 }

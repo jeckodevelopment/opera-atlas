@@ -3,40 +3,6 @@
   "groups": [
     {
       "candidate_ids": [
-        "oa-index-ecf1fda1dc67738cab86"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Fabio Vacchi",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 6,
-      "sources": [
-        {
-          "source_key": "verdi-trieste-season-2026-27",
-          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"
-        }
-      ],
-      "title": "Jeanne Dark"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-ecf1fda1dc67738cab86"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Arthur Honegger",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 6,
-      "sources": [
-        {
-          "source_key": "verdi-trieste-season-2026-27",
-          "url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"
-        }
-      ],
-      "title": "Jeanne d’Arc au bûcher"
-    },
-    {
-      "candidate_ids": [
         "oa-index-877637d643bbfb668688"
       ],
       "category": "new_work_candidate",
@@ -71,23 +37,6 @@
     },
     {
       "candidate_ids": [
-        "oa-index-04fc7625bab27446a05d"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Daniele Furlati",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 1,
-      "sources": [
-        {
-          "source_key": "modena-teatro-opera-2026-27",
-          "url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
-        }
-      ],
-      "title": "I salvatori della mezzanotte"
-    },
-    {
-      "candidate_ids": [
         "oa-index-d262c6e18193a53ee487"
       ],
       "category": "new_work_candidate",
@@ -108,13 +57,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 164,
+    "candidates_checked": 163,
     "candidates_without_facts": 0,
-    "facts_examined": 692,
-    "facts_resolved": 671,
+    "facts_examined": 680,
+    "facts_resolved": 672,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 21,
-    "unmatched_groups": 6
+    "unmatched_facts": 8,
+    "unmatched_groups": 3
   },
   "truncated": false
 }

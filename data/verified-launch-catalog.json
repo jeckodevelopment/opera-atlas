@@ -5924,6 +5924,148 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-59b4a6e5b8f0087f",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "municipality": "Spoleto",
+      "region": "Umbria",
+      "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369",
+      "dates": [
+        [
+          "2026-09-18",
+          "20:30"
+        ],
+        [
+          "2026-09-19",
+          "18:00"
+        ],
+        [
+          "2026-09-20",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-30c5e2cb4844fd92",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "dates": [
+        [
+          "2027-08-07",
+          "21:15"
+        ],
+        [
+          "2027-08-14",
+          "21:15"
+        ],
+        [
+          "2027-08-27",
+          "21:15"
+        ]
+      ]
+    },
+    {
+      "key": "auto-08b271f81f5b01b6",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "dates": [
+        [
+          "2027-07-30",
+          "21:15"
+        ],
+        [
+          "2027-08-08",
+          "21:15"
+        ],
+        [
+          "2027-08-20",
+          "21:15"
+        ]
+      ]
+    },
+    {
+      "key": "auto-fcc53c645be69f4d",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "dates": [
+        [
+          "2027-07-16",
+          "21:15"
+        ],
+        [
+          "2027-07-24",
+          "21:15"
+        ],
+        [
+          "2027-08-06",
+          "21:15"
+        ],
+        [
+          "2027-08-21",
+          "21:15"
+        ]
+      ]
+    },
+    {
+      "key": "auto-6306e619f37ab4c7",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "dates": [
+        [
+          "2027-07-10",
+          "21:15"
+        ],
+        [
+          "2027-07-23",
+          "21:15"
+        ],
+        [
+          "2027-07-31",
+          "21:15"
+        ],
+        [
+          "2027-08-13",
+          "21:15"
+        ],
+        [
+          "2027-08-28",
+          "21:15"
+        ]
+      ]
+    },
+    {
+      "key": "auto-04fc7625bab27446",
+      "title": "I salvatori della mezzanotte",
+      "composer": "Daniele Furlati",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+      "dates": [
+        [
+          "2026-12-13",
+          "17:30"
+        ]
+      ]
     }
   ]
 }

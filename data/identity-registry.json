@@ -617,6 +617,13 @@
       "title": "Der fliegende Holländer",
       "composer": "Richard Wagner",
       "authority_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+    },
+    "i salvatori della mezzanotte|daniele furlati": {
+      "id": "oa-w-000097",
+      "slug": "i-salvatori-della-mezzanotte",
+      "title": "I salvatori della mezzanotte",
+      "composer": "Daniele Furlati",
+      "authority_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
     }
   },
   "venues": {
@@ -996,6 +1003,22 @@
       "name": "Teatro Marrucino",
       "city": "Chieti",
       "region": "Abruzzo"
+    },
+    "Spoleto|Teatro Nuovo Gian Carlo Menotti": {
+      "id": "oa-v-000048",
+      "slug": "teatro-nuovo-gian-carlo-menotti",
+      "city_slug": "spoleto",
+      "name": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "region": "Umbria"
+    },
+    "Torre del Lago Puccini|Gran Teatro Giacomo Puccini": {
+      "id": "oa-v-000049",
+      "slug": "gran-teatro-giacomo-puccini",
+      "city_slug": "torre-del-lago-puccini",
+      "name": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "region": "Toscana"
     }
   },
   "stagings": {
@@ -2713,6 +2736,54 @@
       "slug": "veleno",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
       "season": "2027"
+    },
+    "auto-59b4a6e5b8f0087f": {
+      "id": "oa-s-000221",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000048",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369",
+      "season": "2026"
+    },
+    "auto-30c5e2cb4844fd92": {
+      "id": "oa-s-000222",
+      "work_id": "oa-w-000024",
+      "venue_id": "oa-v-000049",
+      "slug": "la-boheme",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "season": "2027"
+    },
+    "auto-08b271f81f5b01b6": {
+      "id": "oa-s-000223",
+      "work_id": "oa-w-000019",
+      "venue_id": "oa-v-000049",
+      "slug": "madama-butterfly",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "season": "2027"
+    },
+    "auto-fcc53c645be69f4d": {
+      "id": "oa-s-000224",
+      "work_id": "oa-w-000022",
+      "venue_id": "oa-v-000049",
+      "slug": "tosca",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "season": "2027"
+    },
+    "auto-6306e619f37ab4c7": {
+      "id": "oa-s-000225",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000049",
+      "slug": "turandot",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "season": "2027"
+    },
+    "auto-04fc7625bab27446": {
+      "id": "oa-s-000226",
+      "work_id": "oa-w-000097",
+      "venue_id": "oa-v-000044",
+      "slug": "i-salvatori-della-mezzanotte",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -8067,6 +8138,120 @@
       "staging_id": "oa-s-000220",
       "original_date": "2027-05-09",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
+    },
+    "auto-59b4a6e5b8f0087f|2026-09-18": {
+      "id": "oa-r-000914",
+      "staging_id": "oa-s-000221",
+      "original_date": "2026-09-18",
+      "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369"
+    },
+    "auto-59b4a6e5b8f0087f|2026-09-19": {
+      "id": "oa-r-000915",
+      "staging_id": "oa-s-000221",
+      "original_date": "2026-09-19",
+      "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369"
+    },
+    "auto-59b4a6e5b8f0087f|2026-09-20": {
+      "id": "oa-r-000916",
+      "staging_id": "oa-s-000221",
+      "original_date": "2026-09-20",
+      "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369"
+    },
+    "auto-30c5e2cb4844fd92|2027-08-07": {
+      "id": "oa-r-000917",
+      "staging_id": "oa-s-000222",
+      "original_date": "2027-08-07",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-30c5e2cb4844fd92|2027-08-14": {
+      "id": "oa-r-000918",
+      "staging_id": "oa-s-000222",
+      "original_date": "2027-08-14",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-30c5e2cb4844fd92|2027-08-27": {
+      "id": "oa-r-000919",
+      "staging_id": "oa-s-000222",
+      "original_date": "2027-08-27",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-08b271f81f5b01b6|2027-07-30": {
+      "id": "oa-r-000920",
+      "staging_id": "oa-s-000223",
+      "original_date": "2027-07-30",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-08b271f81f5b01b6|2027-08-08": {
+      "id": "oa-r-000921",
+      "staging_id": "oa-s-000223",
+      "original_date": "2027-08-08",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-08b271f81f5b01b6|2027-08-20": {
+      "id": "oa-r-000922",
+      "staging_id": "oa-s-000223",
+      "original_date": "2027-08-20",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-fcc53c645be69f4d|2027-07-16": {
+      "id": "oa-r-000923",
+      "staging_id": "oa-s-000224",
+      "original_date": "2027-07-16",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-fcc53c645be69f4d|2027-07-24": {
+      "id": "oa-r-000924",
+      "staging_id": "oa-s-000224",
+      "original_date": "2027-07-24",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-fcc53c645be69f4d|2027-08-06": {
+      "id": "oa-r-000925",
+      "staging_id": "oa-s-000224",
+      "original_date": "2027-08-06",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-fcc53c645be69f4d|2027-08-21": {
+      "id": "oa-r-000926",
+      "staging_id": "oa-s-000224",
+      "original_date": "2027-08-21",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-6306e619f37ab4c7|2027-07-10": {
+      "id": "oa-r-000927",
+      "staging_id": "oa-s-000225",
+      "original_date": "2027-07-10",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-6306e619f37ab4c7|2027-07-23": {
+      "id": "oa-r-000928",
+      "staging_id": "oa-s-000225",
+      "original_date": "2027-07-23",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-6306e619f37ab4c7|2027-07-31": {
+      "id": "oa-r-000929",
+      "staging_id": "oa-s-000225",
+      "original_date": "2027-07-31",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-6306e619f37ab4c7|2027-08-13": {
+      "id": "oa-r-000930",
+      "staging_id": "oa-s-000225",
+      "original_date": "2027-08-13",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-6306e619f37ab4c7|2027-08-28": {
+      "id": "oa-r-000931",
+      "staging_id": "oa-s-000225",
+      "original_date": "2027-08-28",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+    },
+    "auto-04fc7625bab27446|2026-12-13": {
+      "id": "oa-r-000932",
+      "staging_id": "oa-s-000226",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
     }
   },
   "reserved_works": {

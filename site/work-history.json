@@ -903,6 +903,17 @@
         "https://www.rai.it/dl/docs/1363352684701Olandese_impa_2013_seconda.pdf",
         "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
       ]
+    },
+    "i-salvatori-della-mezzanotte": {
+      "librettist": "Bruno Tognolini",
+      "premiere_year": 2023,
+      "premiere_date": "2023-12-17",
+      "premiere_venue": "Teatro Comunale Pavarotti-Freni",
+      "premiere_city": "Modena",
+      "sources": [
+        "https://www.teatrocomunalemodena.it/wp-content/uploads/2023/12/Programma-di-sala_I-salvatori-della-mezzanotte.pdf",
+        "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
+      ]
     }
   },
   "works_by_id": {

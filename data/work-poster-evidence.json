@@ -175,6 +175,15 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di L'ESECUZIONE",
       "kind": "official_production_image"
+    },
+    "oa-w-000097": {
+      "work_id": "oa-w-000097",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+      "provenance_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-opera-2026-2027/i-salvatori-della-mezzanotte",
+      "image_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-opera-2026-2027/i-salvatori-della-mezzanotte/@@images/image-890-b23142f8fa819a2626774dd548fd87e1.jpeg",
+      "credit": "Comune di Modena, fotografia della produzione I salvatori della mezzanotte",
+      "alt": "Fotografia di scena dell’opera I salvatori della mezzanotte di Daniele Furlati",
+      "kind": "official_civic_production_image"
     }
   },
   "checks": {
