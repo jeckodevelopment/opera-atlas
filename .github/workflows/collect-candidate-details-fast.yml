@@ -1,0 +1,64 @@
+name: Acquire first-party opera candidate details
+run-name: National opera evidence · ${{ github.event_name }} · ${{ github.ref_name }}
+on:
+  # Runs independently of the expensive 75-minute public catalog refresh.
+  # Source facts are review-only and never publish a performance directly.
+  schedule:
+    - cron: '37 */3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect-candidate-details-fast.yml'
+      - 'opera_atlas/**'
+      - 'scripts/collect_candidate_details.py'
+      - 'scripts/discover_season_indexes.py'
+      - 'data/season-index-config.json'
+      - 'data/season-index-candidates.json'
+      - 'data/identity-registry.json'
+      - 'tests/test_candidate_detail_evidence.py'
+      - 'tests/test_regional_credited_unknown_work_evidence.py'
+permissions:
+  contents: write
+concurrency:
+  # Avoid spawning multiple runs of the same approved-source crawl. The
+  # complete catalog refresh is a separate group; both use safe_push_catalog
+  # so source/canonical conflicts are deferred rather than force-pushed.
+  group: opera-atlas-official-detail-evidence
+  cancel-in-progress: false
+jobs:
+  evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Verify collection remains review-only and catalog is valid
+        run: |
+          python -m unittest tests.test_candidate_detail_evidence tests.test_regional_credited_unknown_work_evidence -v
+          python -m scripts.build_verified_catalog --check
+      - name: Fetch source-bound national detail evidence using robots policy
+        run: python -m scripts.collect_candidate_details --allow-network
+      - name: Safely checkpoint first-party evidence and diagnostics only
+        id: checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/candidate-detail-evidence.json data/candidate-detail-health.json public/catalog/candidate-detail-evidence.json
+          if git diff --cached --quiet; then
+            echo "No changes to source-bound official candidate evidence."
+            echo "deferred=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "data(sources): independently checkpoint official candidate evidence [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Report a deferred concurrent checkpoint without overwriting data
+        if: steps.checkpoint.outputs.deferred == 'true'
+        run: |
+          echo "::warning::An upstream catalog/source update raced this read. No source or canonical record was overwritten; the next scheduled evidence scan will rebuild from main."
