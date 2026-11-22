@@ -228,6 +228,7 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
             wid=options[0] if len(options)==1 else None
         from opera_atlas.verified_ticketing_art import is_verified_ticketing_poster
         from opera_atlas.verified_coproduction_posters import is_verified_coproduction_poster
+        from opera_atlas.verified_municipal_work_art import is_verified_municipal_art
         from opera_atlas.verified_original_work_art import is_verified_original_art
         if (wid in by_id and (
                 (image_matches_work(value.get("image_url",""),by_id[wid]["title"])
@@ -235,6 +236,8 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
                 or is_verified_ticketing_poster(
                     value,title=by_id[wid]["title"],composer=by_id[wid]["composer"])
                 or is_verified_coproduction_poster(
+                    value,title=by_id[wid]["title"],composer=by_id[wid]["composer"])
+                or is_verified_municipal_art(
                     value,title=by_id[wid]["title"],composer=by_id[wid]["composer"])
                 or is_verified_original_art(
                     value,title=by_id[wid]["title"],composer=by_id[wid]["composer"]))):
@@ -362,6 +365,12 @@ def check()->None:
             if not is_verified_coproduction_poster(
                     item,title=titles[slug],composer=composers[slug]):
                 raise ValueError("unverified co-producer artwork for "+slug)
+        elif item["kind"]=="official_municipal_production_image":
+            from opera_atlas.verified_municipal_work_art import is_verified_municipal_art
+            composers={w["id"]:w["composer"] for w in works.values()}
+            if not is_verified_municipal_art(
+                    item,title=titles[slug],composer=composers[slug]):
+                raise ValueError("unverified municipal production image for "+slug)
         elif item["kind"]=="ticketing_event_artwork":
             from opera_atlas.verified_ticketing_art import is_verified_ticketing_poster
             composers={w["id"]:w["composer"] for w in works.values()}
