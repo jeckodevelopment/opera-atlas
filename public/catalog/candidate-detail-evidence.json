@@ -2,6 +2,37 @@
   "schema_version": 1,
   "evidence": [
     {
+      "candidate_id": "oa-index-00247ee71c58d88ba91f",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/",
+      "content_sha256": "d6a768e2e9c1051fe22187c2fd9224acb66717a536763b35fc7679d9859d7897",
+      "checked_at": "2026-11-22T12:43:20+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Siberia",
+          "composer": "Umberto Giordano",
+          "date": "2027-01-08",
+          "starts_at": "2027-01-08T20:00:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "Siberia",
+          "composer": "Umberto Giordano",
+          "date": "2027-01-10",
+          "starts_at": "2027-01-10T15:30:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrocomunalemodena.it/wp-content/uploads/2026/07/Siberia-Andrei-Balakirev-Winter-landscape-9061482@2x.jpg",
+        "source_url": "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Siberia",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-00bc189e26be492ba16c",
       "source_key": "carlo-felice-season-2026-27",
       "source_url": "https://www.carlofelice.it/spettacolo/turandot/",
@@ -112,6 +143,23 @@
       "checked_at": "2026-11-21T22:29:13+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2025/2026"
+    },
+    {
+      "candidate_id": "oa-index-04fc7625bab27446a05d",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+      "content_sha256": "9c7d487d9739a4f48ca1c2418d12fcd610bb12e9b4c6950a09edbfa8e235645c",
+      "checked_at": "2026-11-22T12:43:23+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "I salvatori della mezzanotte",
+          "composer": "Daniele Furlati",
+          "venue": "Teatro Comunale Pavarotti-Freni",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T17:30:00+01:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-05aab24f386e6aa86884",
@@ -1239,6 +1287,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-354c5969c88c2a8c3339",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+      "content_sha256": "bc810084b57f626d8cec7d8252f53d72ac33b2fbb47fe22c34fd1e8538c7c83f",
+      "checked_at": "2026-11-22T12:43:27+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'esecuzione",
+          "composer": "Salvatore Passantino",
+          "date": "2026-11-28",
+          "starts_at": "2026-11-28T20:00:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "L'esecuzione",
+          "composer": "Salvatore Passantino",
+          "date": "2026-11-29",
+          "starts_at": "2026-11-29T15:30:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrocomunalemodena.it/wp-content/uploads/2026/07/Lesecuzione_scene-e-costumi_Pagina_01.jpg",
+        "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di L'esecuzione",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
@@ -2197,6 +2276,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-647ba8ffc55170010275",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+      "content_sha256": "2383de1b7fc49d28dac42ebf3b9fbc1cf5c798173e9257f22b4906eaf47d3e37",
+      "checked_at": "2026-11-22T12:43:33+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-30",
+          "starts_at": "2026-10-30T20:00:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "Macbeth",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-01",
+          "starts_at": "2026-11-01T15:30:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrocomunalemodena.it/wp-content/uploads/2026/07/Macbeth-teatro-verdi-di-pisa-prove-generali-29.10.2025-64.jpg",
+        "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Macbeth",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-663c5bda82d136bbbdcc",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
@@ -2514,6 +2624,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-725b23f651111cce4982",
+      "source_key": "sassari-de-carolis-opera-2026",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
+      "content_sha256": "38b92e9a9107be75aae3c4ad0b84d43ed236458d496035ad02d2069b0142ed22",
+      "checked_at": "2026-11-22T12:42:54+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Don Carlos",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale di Sassari",
+          "date": "2026-10-30",
+          "starts_at": "2026-10-30T20:30:00+01:00"
+        },
+        {
+          "event_title": "Don Carlos",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale di Sassari",
+          "date": "2026-11-01",
+          "starts_at": "2026-11-01T16:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-73348de657104a8b911f",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
@@ -2597,6 +2731,30 @@
           "venue": "Teatro Coccia",
           "date": "2027-10-10",
           "starts_at": "2027-10-10T16:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-763df3e99fa61d152cb9",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+      "content_sha256": "a05497c0e252e149fc03673ee35d6dff73e23b61238fb99220d8204f22ec7d5f",
+      "checked_at": "2026-11-22T12:42:46+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Der fliegende Holländer (L’olandese volante)",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Comunale Pavarotti-Freni",
+          "date": "2026-11-20",
+          "starts_at": "2026-11-20T20:00:00+01:00"
+        },
+        {
+          "event_title": "Der fliegende Holländer (L’olandese volante)",
+          "composer": "Richard Wagner",
+          "venue": "Teatro Comunale Pavarotti-Freni",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T15:30:00+01:00"
         }
       ]
     },
@@ -2809,6 +2967,30 @@
           "date": "2027-05-22",
           "starts_at": "2027-05-22T20:00:00+02:00",
           "venue": "Teatro alla Scala"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-7ed5c4aa08357be99930",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/",
+      "content_sha256": "65fa58b8b8c0f60b11aebbd1735ad13ec9c8198afc9d77f18ae29d3a072e9992",
+      "checked_at": "2026-11-22T12:43:01+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le convenienze ed inconvenienze teatrali",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-09",
+          "starts_at": "2027-04-09T20:00:00+02:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "Le convenienze ed inconvenienze teatrali",
+          "composer": "Gaetano Donizetti",
+          "date": "2027-04-11",
+          "starts_at": "2027-04-11T15:30:00+02:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ]
     },
@@ -3166,6 +3348,44 @@
           "venue": "Teatro Valli"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-8b8963495db255b726e5",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/",
+      "content_sha256": "aa4927270e30dda217caa0d5ca158f17f349915e066f79b29afc4998fefe0879",
+      "checked_at": "2026-11-22T12:43:03+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-19",
+          "starts_at": "2027-02-19T20:00:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-20",
+          "starts_at": "2027-02-20T18:00:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "La Cenerentola",
+          "composer": "Gioachino Rossini",
+          "date": "2027-02-21",
+          "starts_at": "2027-02-21T15:30:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrocomunalemodena.it/wp-content/uploads/2026/07/Cenerentola_generale_2283_ph©RolandoPaoloGuerzoni.jpg",
+        "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di La Cenerentola",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-8bc8b40e1da92efab27d",
@@ -3777,6 +3997,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-9f1a5a6caa6d32cd4ae3",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/",
+      "content_sha256": "ab7677035a7c5e1c54303bdf2ba2e821eada1f313b6fb6d6b126dcb57ebb4d6d",
+      "checked_at": "2026-11-22T12:43:06+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-12",
+          "starts_at": "2027-03-12T20:00:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        },
+        {
+          "event_title": "Simon Boccanegra",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T15:30:00+01:00",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.teatrocomunalemodena.it/wp-content/uploads/2026/07/Simon-Boccanegra-bozzetto-di-scena-2.jpg",
+        "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Simon Boccanegra",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-9fdcd7eba240da4540af",
       "source_key": "piacenza-opera-2026-27",
       "source_url": "https://teatripiacenza.it/event/siberia/",
@@ -4111,6 +4362,37 @@
           "starts_at": "2027-11-09T20:00:00+01:00"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-ad96ee377d30a4426219",
+      "source_key": "sassari-de-carolis-opera-2026",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
+      "content_sha256": "89343b86bf99a100427ff6d617ed755c28ca56be91e6883de11f5037417f9944",
+      "checked_at": "2026-11-22T12:43:09+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale di Sassari",
+          "date": "2026-12-11",
+          "starts_at": "2026-12-11T20:30:00+01:00"
+        },
+        {
+          "event_title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Comunale di Sassari",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T16:30:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.marialisadecarolis.it//public/photogallery/copertine/rigoletto-medium.jpg",
+        "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Rigoletto",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-addcc48a211cf5aea678",
@@ -4704,6 +4986,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-cc153c7d05d996b2b68b",
+      "source_key": "sassari-de-carolis-opera-2026",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
+      "content_sha256": "ae34a31832486076e420b2e7420bf5d89249ba62626faa0c8b632cb4b2e3142f",
+      "checked_at": "2026-11-22T12:43:12+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Comunale di Sassari",
+          "date": "2026-09-25",
+          "starts_at": "2026-09-25T20:30:00+02:00"
+        },
+        {
+          "event_title": "Die Zauberflöte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Comunale di Sassari",
+          "date": "2026-09-27",
+          "starts_at": "2026-09-27T16:30:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-cde049d5c057e0c050b2",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
@@ -4931,6 +5237,65 @@
           "venue": "Teatro Vittorio Emanuele",
           "date": "2027-04-18",
           "starts_at": "2027-04-18T17:30:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-d262c6e18193a53ee487",
+      "source_key": "chieti-marrucino-lirica-2026",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
+      "content_sha256": "15b2b71c0d4a1692284184e91781cc2ce21ba1b53a935d4606989816799f8e4c",
+      "checked_at": "2026-11-22T12:42:31+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le avventure di Pinocchio",
+          "composer": "Antonio Cericola",
+          "venue": "Teatro Marrucino",
+          "date": "2026-09-26",
+          "starts_at": "2026-09-26T21:00:00+02:00"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Marrucino",
+          "date": "2026-10-23",
+          "starts_at": "2026-10-23T20:30:00+02:00"
+        },
+        {
+          "event_title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro Marrucino",
+          "date": "2026-10-25",
+          "starts_at": "2026-10-25T17:30:00+01:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Marrucino",
+          "date": "2026-11-20",
+          "starts_at": "2026-11-20T20:30:00+01:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Marrucino",
+          "date": "2026-11-22",
+          "starts_at": "2026-11-22T17:30:00+01:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Marrucino",
+          "date": "2026-12-11",
+          "starts_at": "2026-12-11T20:30:00+01:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Marrucino",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T17:30:00+01:00"
         }
       ]
     },
