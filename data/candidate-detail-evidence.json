@@ -3433,8 +3433,8 @@
       "candidate_id": "oa-index-877637d643bbfb668688",
       "source_key": "lirico-cagliari-opera-2027",
       "source_url": "https://www.liricocagliari.it/evento/candide/",
-      "content_sha256": "4f7e7a03c84e0aa59d7a7df63b39eba92e3315db17d2ef41f15f21f5c59473d5",
-      "checked_at": "2026-11-22T14:29:35+00:00",
+      "content_sha256": "f7c7b03f9b5a766a1db7503f17e33d0e508c2911c966cac3ff099bc2ad7d4162",
+      "checked_at": "2026-11-22T14:34:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5831,8 +5831,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "beca95c7e271e053d87a23168e3ce0c8ce99bace0507b2cfce0a8a8a3876f6b0",
-      "checked_at": "2026-11-22T14:29:39+00:00",
+      "content_sha256": "37f731574999b98ae88eac04df15543bec39d4ac4cf53b236510994b57d1e087",
+      "checked_at": "2026-11-22T14:34:09+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
