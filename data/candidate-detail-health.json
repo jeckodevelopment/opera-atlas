@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T21:04:06+00:00",
+  "checked_at": "2026-11-22T21:08:44+00:00",
   "scope": "national",
   "attempted": 60,
   "outcomes": [
@@ -29,7 +29,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Valle d'Itria official title missing"
+        "official_composer_credit:Valle d'Itria performance is not at Palazzo Ducale"
       ],
       "rows": 0
     },
@@ -59,15 +59,13 @@
     },
     {
       "candidate_id": "oa-index-d1c1b3127d4e683424be",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-a4402559616047a0367b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 5
     },
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -85,15 +83,13 @@
     },
     {
       "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
@@ -142,7 +138,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Valle d'Itria official title missing"
+        "official_composer_credit:unverified composite festival programme"
       ],
       "rows": 0
     },
@@ -151,7 +147,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Valle d'Itria official title missing"
+        "official_composer_credit:Valle d'Itria page is not categorised as opera"
       ],
       "rows": 0
     },
@@ -169,7 +165,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Valle d'Itria official title missing"
+        "official_composer_credit:Valle d'Itria page is not categorised as opera"
       ],
       "rows": 0
     },
@@ -238,18 +234,13 @@
     },
     {
       "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-4f3383615741e8be9345",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Valle d'Itria official title missing"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-52b35f0089c3663c7ddb",
@@ -262,9 +253,8 @@
     },
     {
       "candidate_id": "oa-index-535b054411d3b3c9ea01",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
@@ -327,9 +317,8 @@
     },
     {
       "candidate_id": "oa-index-70313ef8895b42a91a5b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-71feb2c03e06415fa1c9",
@@ -401,9 +390,8 @@
     },
     {
       "candidate_id": "oa-index-9871aa4f1201e959bf0b",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-9e431fc40b9509948b8d",
@@ -419,7 +407,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Valle d'Itria official title missing"
+        "official_composer_credit:Valle d'Itria page is not categorised as opera"
       ],
       "rows": 0
     },
