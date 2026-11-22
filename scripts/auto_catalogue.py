@@ -478,7 +478,10 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         # for the new staging, within the existing three-segment contract.
         edition_slug=None
         if colliding and not exact:
-            overlaps={day for p in colliding for day,_ in p["dates"]} & set(dates)
+            overlaps=({day for p in colliding for day,hour in p["dates"] if hour is None} & set(dates)
+                      if key=="teatro-grande-opera-2026" or any(
+                          hour is None for p in colliding for _,hour in p["dates"])
+                      else set())
             # Never publish the same canonical work at one venue on the same
             # day twice merely because a different official source lists it.
             # Separate editions are allowed only on non-overlapping dates.
