@@ -99,6 +99,36 @@ class SixSuccessorContractTests(unittest.TestCase):
         self.assertTrue(all(key in self.sources for key in historic))
         self.assertGreaterEqual(len(self.sources),64)
 
+    def test_future_rovigo_empty_page_is_not_a_configuration_error(self):
+        from opera_atlas.controlled_fetch import FetchResult
+        from scripts.discover_season_indexes import scan
+        key="rovigo-sociale-season-2027-28"
+        url=self.sources[key]["url"]
+        requested=[]
+        def empty_page(db,*,source_id,url,network_enabled):
+            requested.append(url)
+            return FetchResult(url,"<html><h1>Comune di Rovigo</h1></html>",
+                               "f"*64,42)
+        candidates,status=scan(
+            self.config,{"schema_version":1,"candidates":[]},
+            fetcher=empty_page,network_enabled=True,source_keys={key})
+        self.assertEqual(requested,[url])
+        self.assertEqual(candidates["candidates"],[])
+        self.assertEqual(status[0]["status"],"unavailable_or_invalid")
+        self.assertEqual(status[0]["diagnostic"],
+                         "future_official_programme_unverified")
+        # The same configured URL is valid; official programme verification
+        # becomes successful only once actual opera and season appear.
+        def valid_page(db,*,source_id,url,network_enabled):
+            html=programme("2027/2028","Rovigo","Teatro Sociale")
+            return FetchResult(url,html,"a"*64,len(html))
+        candidates,healthy=scan(
+            self.config,{"schema_version":1,"candidates":[]},
+            fetcher=valid_page,network_enabled=True,source_keys={key})
+        self.assertEqual(healthy[0]["status"],"success")
+        self.assertEqual(healthy[0]["links"],1)
+        self.assertEqual(len(candidates["candidates"]),1)
+
     def test_unknown_identity_and_missing_time_do_not_infer_recite(self):
         key="modena-municipal-opera-2027-28"
         url=self.sources[key]["url"]
