@@ -320,6 +320,9 @@ def eligible(key:str,url:str)->bool:
     if key=="lecce-apollo-pinocchio-2026":
         return (parsed.scheme=="https" and parsed.hostname=="www.provincia.le.it"
                 and path=="/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini")
+    if key=="rovigo-regione-programma-2026-27":
+        from opera_atlas.rovigo_regional_program import URL
+        return url==URL
     if key=="rovigo-sociale-opera-2026-27":
         return (parsed.scheme=="https" and parsed.hostname=="www.comune.rovigo.it"
                 and path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027")
@@ -441,6 +444,12 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         from opera_atlas.lecce_apollo_parser import parse_detail
         parse_detail(html,url=index_url)
         return [index_url]
+    if key=="rovigo-regione-programma-2026-27":
+        from opera_atlas.rovigo_regional_program import approved_programme
+        approved_programme(html,url=index_url)
+        # The regional article is a verified *programme pointer*, not
+        # evidence of any dated performances inside the linked PDF.
+        return [index_url]
     if key=="rovigo-sociale-opera-2026-27":
         from opera_atlas.rovigo_opera_parser import identify_season
         identify_season(html,url=index_url)
@@ -502,6 +511,7 @@ def validate_config(config:dict)->list[dict]:
         "lecce-politeama-opera-2026":("www.politeamagreco.it","/programmazione.asp"),
         "lecce-provincia-politeama-2026":("www.provincia.le.it","/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"),
         "chieti-marrucino-lirica-2026":("comune.chieti.it","/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"),
+        "rovigo-regione-programma-2026-27":("www.culturaveneto.it","/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc"),
         "rovigo-sociale-opera-2026-27":("www.comune.rovigo.it","/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"),
         "padova-verdi-opera-2026":("padovacultura.padovanet.it","/it/attivita-culturali/stagione-lirica-di-padova-2026"),
         "treviso-del-monaco-opera-2026-27":("risorse.teatrostabileveneto.it","/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"),
@@ -600,6 +610,9 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/" and not index.query
         elif key=="chieti-marrucino-lirica-2026":
             valid_season=index.path=="/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/" and not index.query
+        elif key=="rovigo-regione-programma-2026-27":
+            valid_season=(index.path=="/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc"
+                          and not index.query)
         elif key=="rovigo-sociale-opera-2026-27":
             valid_season=index.path=="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027" and not index.query
         elif key=="padova-verdi-opera-2026":
