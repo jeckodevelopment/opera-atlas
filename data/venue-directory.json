@@ -1057,6 +1057,40 @@
       "photo_credit": "Roma Capitale — fotografia del Teatro Nazionale (fonte istituzionale)",
       "photo_license": "Diritti non specificati dalla fonte; immagine collegata dal sito istituzionale",
       "calendar_status": "not_acquired"
+    },
+    {
+      "id": "oa-v-000030",
+      "name": "Teatro Sangiorgi",
+      "city": "Catania",
+      "region": "Sicilia",
+      "city_slug": "catania",
+      "slug": "teatro-sangiorgi",
+      "website": "https://www.teatromassimobellini.it/il-teatro-sangiorgi/",
+      "source_url": "https://www.teatromassimobellini.it/il-teatro-sangiorgi/",
+      "description": "Nel centro di Catania, il Sangiorgi affianca il Teatro Massimo Bellini con opere da camera, concerti e produzioni musicali in una sala storica.",
+      "canonical_venue_id": "oa-v-000030",
+      "profile_key": "Catania|Teatro Sangiorgi",
+      "monitoring_status": "programma_censito",
+      "address": "Via Antonino di Sangiuliano 233",
+      "history": "Inaugurato nel 1900, il Teatro Sangiorgi entrò nella disponibilità dell'Ente Teatro Massimo Bellini nel 1988. Dopo il recupero, è stato restituito alla città nel 2002 come spazio dedicato a musica da camera, operetta, prosa e sperimentazione.",
+      "calendar_status": "acquired"
+    },
+    {
+      "id": "oa-v-000031",
+      "name": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "city_slug": "reggio-emilia",
+      "slug": "teatro-ariosto",
+      "website": "https://www.iteatri.re.it/scoprire-il-teatro-ariosto/",
+      "source_url": "https://www.iteatri.re.it/scoprire-il-teatro-ariosto/",
+      "description": "Nel centro di Reggio Emilia, il Teatro Ariosto affianca il Valli con prosa, danza e teatro musicale, in un edificio storico restaurato.",
+      "canonical_venue_id": "oa-v-000031",
+      "profile_key": "Reggio Emilia|Teatro Ariosto",
+      "monitoring_status": "programma_censito",
+      "address": "Corso Cairoli 1",
+      "history": "Il Politeama Ariosto fu inaugurato l’11 maggio 1878 con l’operetta Giroflè-Giroflà di Charles Lecocq, dopo la ricostruzione nell’area del precedente Teatro di Cittadella. Nel 1927 venne dotato del golfo mistico e decorato da Anselmo Govi; un nuovo restauro nel 1981 lo riportò a piena attività. Accoglie oggi prosa, danza e anche produzioni musicali.",
+      "calendar_status": "acquired"
     }
   ],
   "related_organizations": [
