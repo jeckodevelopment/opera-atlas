@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "d049c45933b0df3877373bb09ec70ff1b96527d5c5b47bf21ac360a882ccaa13",
-      "checked_at": "2026-11-22T14:00:00+00:00",
+      "checked_at": "2026-11-22T14:02:51+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2033,8 +2033,8 @@
       "candidate_id": "oa-index-59b4a6e5b8f0087fd73d",
       "source_key": "spoleto-tls-lirica-2026",
       "source_url": "https://www.comune.spoleto.pg.it/it/news/2022369",
-      "content_sha256": "4cfbbc8138d03118d0685b4412adf8aa07f39f6e280e8a346be5c888fe7e67e2",
-      "checked_at": "2026-11-22T14:00:15+00:00",
+      "content_sha256": "b5bbda45452aa021793fdba327c8ef9104486488a8e9aadba52733336d6fe5bd",
+      "checked_at": "2026-11-22T14:03:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2341,8 +2341,8 @@
       "candidate_id": "oa-index-63ec766b091ded79f921",
       "source_key": "puccini-torre-del-lago-2027",
       "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
-      "content_sha256": "2d084147c50866d8c17a36b904f8b4db3693ae3b2161e16e7a70837c878960d0",
-      "checked_at": "2026-11-22T14:00:09+00:00",
+      "content_sha256": "916b6d37ac1267fc1a9f334f27ec571e6570ef39850340cf03e84de6b0cbe505",
+      "checked_at": "2026-11-22T14:03:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5786,8 +5786,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "f12317a5f3ded20f7eedb06f8b3fd638fd4d6fa710b3a088e5ea81f3094f4fe0",
-      "checked_at": "2026-11-22T14:00:13+00:00",
+      "content_sha256": "a878e49f425cd7960286f64addafa46189b9bb603f952a482cbdb196978925b2",
+      "checked_at": "2026-11-22T14:03:04+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
