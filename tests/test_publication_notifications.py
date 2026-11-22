@@ -115,7 +115,33 @@ class PublicationNotificationsTest(unittest.TestCase):
             "https://api.resend.com/emails", 403, "Forbidden", {},
             io.BytesIO(b"some raw private content")
         )
-        self.assertEqual(safe_resend_error(error), "Resend HTTP 403, response code unavailable")
+        self.assertIn("body-format=text", safe_resend_error(error))
+
+    def test_html_403_classified_without_leaking_response_content(self):
+        error = urllib.error.HTTPError(
+            "https://api.resend.com/emails", 403, "Forbidden",
+            {"Content-Type": "text/html; charset=utf-8", "CF-Ray": "trace-private@example.org"},
+            io.BytesIO(b"<html>Bearer re_SECRET private@example.org</html>")
+        )
+        diagnosis = safe_resend_error(error)
+        self.assertIn("response-type=text/html", diagnosis)
+        self.assertIn("body-format=html", diagnosis)
+        self.assertIn("edge-header-present=yes", diagnosis)
+        self.assertNotIn("private@example.org", diagnosis)
+        self.assertNotIn("re_SECRET", diagnosis)
+        self.assertNotIn("trace-", diagnosis)
+
+    def test_nested_api_error_code_and_unknown_content_type(self):
+        error = urllib.error.HTTPError(
+            "https://api.resend.com/emails", 403, "Forbidden",
+            {"Content-Type": "text/custom-private@example.org"},
+            io.BytesIO(b'{"error":{"code":"restricted_api_key","message":"private@example.org"}}')
+        )
+        diagnosis = safe_resend_error(error)
+        self.assertIn("response-type=other/unknown", diagnosis)
+        self.assertIn("body-format=json", diagnosis)
+        self.assertIn("error-code=restricted_api_key", diagnosis)
+        self.assertNotIn("private@example.org", diagnosis)
 
     def test_multiple_secret_recipients_are_trimmed_and_deduplicated(self):
         self.assertEqual(parse_recipients(" one@example.org, two@example.org\nONE@example.org"),
