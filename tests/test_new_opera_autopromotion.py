@@ -233,7 +233,7 @@ class NewOperaPromotionTests(unittest.TestCase):
             "sources":["https://www.wikidata.org/wiki/Q111"]}
         card=build_editorial(facts,ids,editorial,approved_extra=set(urls),
                              history=history)
-        self.assertEqual(len(card["works"]),len(ids["works"]))
+        self.assertEqual(len(card["works"]),len(ids["works"])+len(ids["reserved_works"]))
         self.assertTrue(any(x["slug"]=="fixture-opera" for x in card["works"]))
         second=promote_new_works(facts,ids,evidence,candidates,enrichment,editorial,urls,
                                  today=date(2026,11,20))
