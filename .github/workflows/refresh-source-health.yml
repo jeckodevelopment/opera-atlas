@@ -12,6 +12,9 @@ on:
       - 'scripts/discover_season_indexes.py'
       # Changes to shared robots/HTTP policy must recheck all source statuses.
       - 'opera_atlas/controlled_fetch.py'
+      # Source-specific adapters must also retrigger their health scans.
+      - 'opera_atlas/rovigo_opera_parser.py'
+      - 'opera_atlas/modena_opera_parser.py'
       - 'scripts/source_automation.py'
       - '.github/workflows/refresh-source-health.yml'
 permissions:
