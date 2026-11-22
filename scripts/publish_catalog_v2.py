@@ -182,10 +182,40 @@ def release_parts(facts: dict, registry: dict) -> tuple[dict[str, bytes], dict]:
     return blobs, manifest
 
 
+
+def sync_festival_index(registry: dict, *, check: bool = False) -> None:
+    """Associate reviewed festival editions with canonical stagings from verified source URLs.
+
+    Physical venue identities stay on each staging; a festival does not replace them.
+    Only explicitly configured first-party hosts and matching edition years are used.
+    """
+    from urllib.parse import urlsplit
+    path = PUBLIC / "festival-index.json"
+    document = json.loads(path.read_text(encoding="utf-8"))
+    for festival in document["festivals"]:
+        hosts = festival.get("source_hosts", [])
+        if not hosts:
+            continue
+        if not isinstance(hosts, list) or not all(isinstance(h, str) and h for h in hosts):
+            raise ValueError("invalid festival source host configuration")
+        edition = festival.get("edition")
+        ids = sorted({staging["id"] for staging in registry["stagings"].values()
+                      if staging.get("season") == edition
+                      and urlsplit(staging.get("source_url", "")).scheme == "https"
+                      and urlsplit(staging["source_url"]).hostname in hosts})
+        if check:
+            if sorted(festival["staging_ids"]) != ids:
+                raise ValueError("festival staging links differ from verified catalogue: " + festival["id"])
+        else:
+            festival["staging_ids"] = ids
+    if not check:
+        path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
 def publish(*, check: bool = False) -> dict:
     facts = json.loads(MANIFEST.read_text(encoding="utf-8"))
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     blobs, manifest = release_parts(facts, registry)
+    sync_festival_index(registry, check=check)
     if check:
         for name, expected in blobs.items():
             if not (PUBLIC / name).is_file() or (PUBLIC / name).read_bytes() != expected:
