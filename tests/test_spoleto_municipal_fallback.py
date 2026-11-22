@@ -7,7 +7,7 @@ from datetime import date
 from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
 from opera_atlas.spoleto_municipal_parser import URL,ORIGIN,parse_program
 from scripts.discover_season_indexes import CONFIG,eligible,extract,scan
-from scripts.collect_candidate_details import parse_known_opera_detail
+from scripts.collect_candidate_details import parse_known_opera_detail,selected_candidates
 from scripts.auto_catalogue import promote
 from scripts.publish_catalog_v2 import REGISTRY
 from scripts.build_verified_catalog import MANIFEST
@@ -63,6 +63,19 @@ class SpoletoMunicipalFallbackTests(unittest.TestCase):
         self.assertEqual(requests,[THEATRE,URL])
         self.assertEqual([(x["source_key"],x["official_url"])
                           for x in candidates["candidates"]],[(KEY,URL)])
+
+    def test_municipal_candidate_not_discarded_by_primary_host_filter(self):
+        candidate={"id":"oa-index-spoleto-municipal-test",
+                   "source_key":KEY,"official_url":URL,"status":"needs_review"}
+        chosen=selected_candidates({"schema_version":1,"candidates":[candidate]},
+                                   today=date(2026,11,22))
+        self.assertEqual([(x["source_key"],x["official_url"]) for x in chosen],
+                         [(KEY,URL)])
+        candidate["official_url"]=URL.replace(
+            "www.comune.spoleto.pg.it","untrusted.invalid")
+        self.assertEqual(selected_candidates(
+            {"schema_version":1,"candidates":[candidate]},
+            today=date(2026,11,22)),[])
 
     def test_rejects_tour_school_venue_and_modified_dates(self):
         for broken in (
