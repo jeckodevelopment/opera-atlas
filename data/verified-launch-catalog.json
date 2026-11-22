@@ -6447,6 +6447,79 @@
           "15:00"
         ]
       ]
+    },
+    {
+      "key": "auto-4f3383615741e8be",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
+      "dates": [
+        [
+          "2026-07-25",
+          "21:00"
+        ],
+        [
+          "2026-07-28",
+          "21:00"
+        ],
+        [
+          "2026-07-31",
+          "21:00"
+        ],
+        [
+          "2026-08-02",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-71feb2c03e06415f",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
+      "dates": [
+        [
+          "2026-08-12",
+          "20:00"
+        ],
+        [
+          "2026-08-15",
+          "20:00"
+        ],
+        [
+          "2026-08-18",
+          "12:00"
+        ],
+        [
+          "2026-08-20",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-e6f08bbcef00e05c",
+      "title": "Piccolo Orso e la montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "dates": [
+        [
+          "2026-12-05",
+          "15:00"
+        ],
+        [
+          "2026-12-05",
+          "18:00"
+        ]
+      ]
     }
   ]
 }

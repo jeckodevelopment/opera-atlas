@@ -929,6 +929,15 @@
       "credit": "Immagine dell'opera sul sito della Fondazione Teatri di Piacenza, coproduttrice",
       "alt": "Illustrazione ufficiale di Cronaca di un amore. Callas e Pasolini",
       "kind": "official_coproduction_poster"
+    },
+    "oa-w-000105": {
+      "work_id": "oa-w-000105",
+      "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/05/TRP-26-BANNER-ALPHA-REGIO-YOUNG-1080x1080-PICCOLO-ORSO.png",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "original_source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "credit": "Illustrazione ufficiale dell'opera pubblicata dal Teatro Regio di Parma",
+      "alt": "Illustrazione ufficiale di Piccolo Orso e la montagna di ghiaccio: orsetto giallo su fondo nero",
+      "kind": "official_original_work_artwork"
     }
   }
 }

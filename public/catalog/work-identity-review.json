@@ -51,36 +51,19 @@
         }
       ],
       "title": "Il viaggio a Reims"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-e6f08bbcef00e05cc2ee"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Giovanni Sollima",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "parma-opera-2027",
-          "url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
-        }
-      ],
-      "title": "Piccolo Orso e la montagna di ghiaccio"
     }
   ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 6,
+    "candidates_checked": 3,
     "candidates_without_facts": 0,
-    "facts_examined": 20,
-    "facts_resolved": 8,
+    "facts_examined": 10,
+    "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 12,
-    "unmatched_groups": 4
+    "unmatched_facts": 10,
+    "unmatched_groups": 3
   },
   "truncated": false
 }

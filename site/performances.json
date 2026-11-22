@@ -578,6 +578,132 @@
       ]
     },
     {
+      "id": "curated:auto-4f3383615741e8be:2026-07-25",
+      "starts_at": "2026-07-25T21:00:00+02:00",
+      "local_date": "2026-07-25",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:auto-4f3383615741e8be:2026-07-28",
+      "starts_at": "2026-07-28T21:00:00+02:00",
+      "local_date": "2026-07-28",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:auto-4f3383615741e8be:2026-07-31",
+      "starts_at": "2026-07-31T21:00:00+02:00",
+      "local_date": "2026-07-31",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:auto-4f3383615741e8be:2026-08-02",
+      "starts_at": "2026-08-02T21:00:00+02:00",
+      "local_date": "2026-08-02",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:auto-71feb2c03e06415f:2026-08-12",
+      "starts_at": "2026-08-12T20:00:00+02:00",
+      "local_date": "2026-08-12",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+      ]
+    },
+    {
+      "id": "curated:auto-71feb2c03e06415f:2026-08-15",
+      "starts_at": "2026-08-15T20:00:00+02:00",
+      "local_date": "2026-08-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+      ]
+    },
+    {
+      "id": "curated:auto-71feb2c03e06415f:2026-08-18",
+      "starts_at": "2026-08-18T12:00:00+02:00",
+      "local_date": "2026-08-18",
+      "time_known": true,
+      "time_label": "12:00",
+      "status": "announced",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+      ]
+    },
+    {
       "id": "curated:auto-4d1f34e8ade7fc6e:2026-08-19",
       "starts_at": "2026-08-19T21:30:00+02:00",
       "local_date": "2026-08-19",
@@ -593,6 +719,24 @@
       "longitude": null,
       "sources": [
         "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-71feb2c03e06415f:2026-08-20",
+      "starts_at": "2026-08-20T20:00:00+02:00",
+      "local_date": "2026-08-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L'occasione fa il ladro",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
       ]
     },
     {
@@ -3698,6 +3842,24 @@
       ]
     },
     {
+      "id": "curated:auto-e6f08bbcef00e05c:2026-12-05:15:00",
+      "starts_at": "2026-12-05T15:00:00+01:00",
+      "local_date": "2026-12-05",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Piccolo Orso e la montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+      ]
+    },
+    {
       "id": "curated:auto-e01412b3c8989b4b:2026-12-05",
       "starts_at": "2026-12-05T18:00:00+01:00",
       "local_date": "2026-12-05",
@@ -3713,6 +3875,24 @@
       "longitude": null,
       "sources": [
         "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
+      ]
+    },
+    {
+      "id": "curated:auto-e6f08bbcef00e05c:2026-12-05:18:00",
+      "starts_at": "2026-12-05T18:00:00+01:00",
+      "local_date": "2026-12-05",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Piccolo Orso e la montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
       ]
     },
     {

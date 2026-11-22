@@ -659,6 +659,13 @@
       "title": "Cronaca di un amore. Callas e Pasolini",
       "composer": "Davide Tramontano",
       "authority_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
+    },
+    "piccolo orso e la montagna di ghiaccio|giovanni sollima": {
+      "id": "oa-w-000105",
+      "slug": "piccolo-orso-e-la-montagna-di-ghiaccio",
+      "title": "Piccolo Orso e la montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "authority_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
     }
   },
   "venues": {
@@ -1118,6 +1125,22 @@
       "name": "Teatro Alfieri",
       "city": "Asti",
       "region": "Piemonte"
+    },
+    "Martina Franca|Palazzo Ducale di Martina Franca": {
+      "id": "oa-v-000058",
+      "slug": "palazzo-ducale-di-martina-franca",
+      "city_slug": "martina-franca",
+      "name": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "region": "Puglia"
+    },
+    "Pesaro|Teatro Gioachino Rossini": {
+      "id": "oa-v-000059",
+      "slug": "teatro-gioachino-rossini",
+      "city_slug": "pesaro",
+      "name": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "region": "Marche"
     }
   },
   "stagings": {
@@ -3035,6 +3058,30 @@
       "venue_id": "oa-v-000015",
       "slug": "le-nozze-di-figaro",
       "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
+      "season": "2026"
+    },
+    "auto-4f3383615741e8be": {
+      "id": "oa-s-000253",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000058",
+      "slug": "carmen",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
+      "season": "2026"
+    },
+    "auto-71feb2c03e06415f": {
+      "id": "oa-s-000254",
+      "work_id": "oa-w-000089",
+      "venue_id": "oa-v-000059",
+      "slug": "occasione-fa-il-ladro",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
+      "season": "2026"
+    },
+    "auto-e6f08bbcef00e05c": {
+      "id": "oa-s-000255",
+      "work_id": "oa-w-000105",
+      "venue_id": "oa-v-000010",
+      "slug": "piccolo-orso-e-la-montagna-di-ghiaccio",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "season": "2026"
     }
   },
@@ -8763,6 +8810,66 @@
       "staging_id": "oa-s-000252",
       "original_date": "2026-10-25",
       "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+    },
+    "auto-4f3383615741e8be|2026-07-25": {
+      "id": "oa-r-000982",
+      "staging_id": "oa-s-000253",
+      "original_date": "2026-07-25",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+    },
+    "auto-4f3383615741e8be|2026-07-28": {
+      "id": "oa-r-000983",
+      "staging_id": "oa-s-000253",
+      "original_date": "2026-07-28",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+    },
+    "auto-4f3383615741e8be|2026-07-31": {
+      "id": "oa-r-000984",
+      "staging_id": "oa-s-000253",
+      "original_date": "2026-07-31",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+    },
+    "auto-4f3383615741e8be|2026-08-02": {
+      "id": "oa-r-000985",
+      "staging_id": "oa-s-000253",
+      "original_date": "2026-08-02",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+    },
+    "auto-71feb2c03e06415f|2026-08-12": {
+      "id": "oa-r-000986",
+      "staging_id": "oa-s-000254",
+      "original_date": "2026-08-12",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+    },
+    "auto-71feb2c03e06415f|2026-08-15": {
+      "id": "oa-r-000987",
+      "staging_id": "oa-s-000254",
+      "original_date": "2026-08-15",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+    },
+    "auto-71feb2c03e06415f|2026-08-18": {
+      "id": "oa-r-000988",
+      "staging_id": "oa-s-000254",
+      "original_date": "2026-08-18",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+    },
+    "auto-71feb2c03e06415f|2026-08-20": {
+      "id": "oa-r-000989",
+      "staging_id": "oa-s-000254",
+      "original_date": "2026-08-20",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+    },
+    "auto-e6f08bbcef00e05c|2026-12-05|15:00": {
+      "id": "oa-r-000990",
+      "staging_id": "oa-s-000255",
+      "original_date": "2026-12-05",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
+    },
+    "auto-e6f08bbcef00e05c|2026-12-05|18:00": {
+      "id": "oa-r-000991",
+      "staging_id": "oa-s-000255",
+      "original_date": "2026-12-05",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/"
     }
   },
   "reserved_works": {
