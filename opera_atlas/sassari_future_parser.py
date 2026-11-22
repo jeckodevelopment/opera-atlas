@@ -93,7 +93,58 @@ def extract_index(html:str,*,url:str,min_links:int)->list[str]:
         raise ValueError("no eligible recent Sassari event cards")
     return sorted(links)
 
+ALGHERO_WORKS={
+    "370":("L'elisir d'amore","Gaetano Donizetti",("2026-07-03","2026-07-05")),
+    "371":("Pagliacci","Ruggero Leoncavallo",("2026-07-17","2026-07-19")),
+}
+ALGHERO_VENUE="Forte della Maddalena"
+
+def parse_alghero_festival(html:str,*,url:str):
+    """Two verified 2026 festival productions outside the city of Sassari.
+
+    The organiser is based in Sassari, but these performances took place in
+    Alghero. Match exact source IDs, visible title, linked composer, the
+    first-party dates/clock and physical venue before passing to catalogue.
+    """
+    if not eligible_detail(url):
+        raise ValueError("unapproved De Carolis festival URL")
+    production=ALGHERO_WORKS.get(parse_qs(urlsplit(url).query)["id"][0])
+    if production is None:
+        raise ValueError("not an approved Alghero festival production")
+    title,composer,expected=production
+    flat=clean(html).replace("´","'").replace("’","'")
+    if not re.search(r"(?i)\bOpere\s+e\s+concerti\s+2026\b",flat[:650]):
+        raise ValueError("Alghero first-party 2026 season not confirmed")
+    h=re.search(r"(?is)<h2\b[^>]*>(.*?)</h2>",html)
+    if not h or clean(h[1]).replace("´","'").replace("’","'").casefold()!=title.casefold():
+        raise ValueError("Alghero opera heading mismatches approved work")
+    next_h3=re.search(r"(?is)<h3\b[^>]*>(.*?)</h3>",html[h.end():h.end()+900])
+    if not next_h3:
+        raise ValueError("Alghero first-party schedule missing")
+    pre_schedule=clean(html[h.end():h.end()+next_h3.start()]).strip()
+    if pre_schedule!=composer:
+        raise ValueError("Alghero composer credit not directly under heading")
+    dates=DATE.findall(clean(next_h3[1]))
+    if len(dates)!=2:
+        raise ValueError("Alghero official performance times incomplete")
+    rows=[]
+    for day,month,hour,minute in dates:
+        when=date(2026,MONTHS[month.casefold()],int(day)).isoformat()
+        rows.append((when,f"{int(hour):02d}:{minute}"))
+    if (tuple(day for day,_ in rows)!=expected
+        or any(clock!="22:00" for _,clock in rows)):
+        raise ValueError("Alghero performance date or clock contradiction")
+    body=flat[flat.find(title):]
+    if not re.search(r"(?i)\bAlghero\s+Festival\s*,?\s*Forte\s+della\s+Maddalena\b",
+                     body[:650]):
+        raise ValueError("Alghero festival physical venue missing")
+    if CANCEL.search(body[:900]):
+        raise ValueError("cancelled Alghero Festival performance")
+    return title,composer,ALGHERO_VENUE,rows
+
 def parse_detail(html:str,*,url:str):
+    if eligible_detail(url) and parse_qs(urlsplit(url).query)["id"][0] in ALGHERO_WORKS:
+        return parse_alghero_festival(html,url=url)
     if not eligible_detail(url):
         raise ValueError("unapproved Sassari event detail")
     # Keep title/composer/year/date evidence entirely inside the work's
