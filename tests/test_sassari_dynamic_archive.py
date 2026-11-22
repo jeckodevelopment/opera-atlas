@@ -96,6 +96,52 @@ class SassariDynamicTests(unittest.TestCase):
             with self.subTest(case=case[:100]),self.assertRaises(ValueError):
                 parse_detail(case,url=TRAVIATA)
 
+    def test_two_alghero_festival_operas_use_real_city_and_venue(self):
+        from scripts.auto_catalogue import verified_venue
+        from scripts.collect_candidate_details import parse_known_opera_detail
+        from scripts.build_verified_catalog import official_local_time
+        examples=[
+            ("370","L'elisir d'amore","Gaetano Donizetti",
+             "3 LUGLIO 22:00 / 5 LUGLIO 22:00",
+             ["2026-07-03","2026-07-05"]),
+            ("371","Pagliacci","Ruggero Leoncavallo",
+             "17 LUGLIO 22:00 / 19 LUGLIO 22:00",
+             ["2026-07-17","2026-07-19"]),
+        ]
+        for id,title,composer,times,days in examples:
+            with self.subTest(id=id):
+                url=HOST+"/opera-lirica.aspx?id="+id
+                html=(f"<p>Stagione lirica / Opere e concerti 2026</p>"
+                      f"<h2>{title}</h2><a href='/compositore'>{composer}</a>"
+                      f"<h3>{times}</h3>"
+                      "<p>Alghero Festival, Forte della Maddalena.</p>"
+                      "<p>Melodramma in due atti</p>"
+                      "<h2>Notizie / News e rassegna stampa</h2>")
+                parsed=parse_detail(html,url=url)
+                self.assertEqual(parsed,(title,composer,"Forte della Maddalena",
+                    [(day,"22:00") for day in days]))
+                registry={"works":{title:{"title":title,"composer":composer}}}
+                facts=parse_known_opera_detail(
+                    "sassari-de-carolis-rolling-opera",url,html,registry)
+                self.assertEqual(len(facts),2)
+                self.assertEqual([x["date"] for x in facts],days)
+                self.assertEqual(verified_venue(
+                    "sassari-de-carolis-rolling-opera",facts,{"venues":{}})[:2],
+                    ("Alghero","Forte della Maddalena"))
+                for bad in (
+                    html.replace("Forte della Maddalena","Teatro Comunale"),
+                    html.replace(composer,"Wrong Composer"),
+                    html.replace("22:00","21:00"),
+                    html.replace("2026","2027",1),
+                ):
+                    with self.subTest(change=bad[-65:]),self.assertRaises(ValueError):
+                        parse_detail(bad,url=url)
+        # Other Sassari productions still require the municipal theatre;
+        # a generic unknown 2027 Alghero event is not automatically accepted.
+        with self.assertRaises(ValueError):
+            parse_detail(page(venue="Forte della Maddalena di Alghero"),
+                         url=ALGHERO)
+
     def test_hist_2026_allowlist_remains_isolated(self):
         validate_config(self.cfg)
         sources={x["key"]:x for x in self.cfg["sources"]}
