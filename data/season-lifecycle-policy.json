@@ -261,6 +261,10 @@
     "pisa-future-calendar": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "coccia-novara-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }
