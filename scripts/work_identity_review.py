@@ -79,7 +79,7 @@ def evaluate(evidence: dict, registry: dict, candidates: dict | None = None,
         if candidate.get("status") not in ("needs_editorial_review", "needs_program_review"):
             continue
         if status_by_id.get(candidate.get("candidate_id")) in (
-                "excluded_nonopera","not_in_official_season"):
+                "already_catalogued","excluded_nonopera","not_in_official_season"):
             continue
         # An independently verified, already-published ticket URL has no
         # remaining work-identity decision. This must be checked against the
