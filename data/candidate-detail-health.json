@@ -1,13 +1,25 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T22:22:46+00:00",
+  "checked_at": "2026-11-22T22:34:44+00:00",
   "scope": "national",
-  "attempted": 32,
+  "attempted": 60,
   "outcomes": [
     {
+      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-357ebb275673ae888623",
-      "outcome": "facts_found",
-      "rows": 2
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
@@ -25,6 +37,17 @@
       "rows": 1
     },
     {
+      "candidate_id": "oa-index-3c4ba842a2ff5a0249fb",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -34,12 +57,36 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-645435245131b4d31287",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:San Carlo security challenge; defer instead of bypass"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "outcome": "facts_found",
       "rows": 2
     },
     {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
+      "outcome": "verified_other_season",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9c8f948971aebfd24d5e",
+      "outcome": "verified_other_season",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-a0c534fc596dea327ad4",
       "outcome": "facts_found",
       "rows": 1
     },
@@ -47,6 +94,17 @@
       "candidate_id": "oa-index-a4402559616047a0367b",
       "outcome": "facts_found",
       "rows": 5
+    },
+    {
+      "candidate_id": "oa-index-3849d460e19f28b1f521",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
@@ -63,90 +121,37 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-70313ef8895b42a91a5b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-8115e400ae8706fd132a",
+      "candidate_id": "oa-index-3d94833841692871c0a4",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-b4ae738f2728d4430578",
-      "outcome": "facts_found",
-      "rows": 4
-    },
-    {
-      "candidate_id": "oa-index-cab03dfcd8aeff155178",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
+      "candidate_id": "oa-index-3a6cc7558e09a14fd125",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-dd7baa45131b35e450b1",
+      "candidate_id": "oa-index-3ecfe7d7bdd94b368b17",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-e831cbf742e2f848f44b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-f4226333be6c3f44d995",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:unverified composite festival programme"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
-      "outcome": "facts_found",
-      "rows": 4
     },
     {
       "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
@@ -158,9 +163,59 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-47cec5ba524c35eb01c8",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-4812bc1604f9f8d068ca",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-4894aac582de2e291033",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-4fc92246202015074f8d",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-500e9884a92f80dc40b2",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-52b35f0089c3663c7ddb",
@@ -172,22 +227,139 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
+      "candidate_id": "oa-index-54ee074513baa3989f58",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-5636ca42038673233896",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-58cad21d966e6a635e47",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-5f9d704846675f0ba15f",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-62a197e1c73fd8752cb5",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-62cdedd35b9415dab0d9",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-648d1bcf715c9f9ffd9d",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:San Carlo security challenge; defer instead of bypass"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-6da8d6c5834230d71bbb",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-70313ef8895b42a91a5b",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
+      "candidate_id": "oa-index-78a2524add8c3b1ea415",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:San Carlo security challenge; defer instead of bypass"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-f8122a2cac3109445aaa",
+      "candidate_id": "oa-index-7c5094030a6e57d37a84",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-8115e400ae8706fd132a",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -196,9 +368,194 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-2583140715d654277a2b",
+      "candidate_id": "oa-index-86746cfadaad21a68f9a",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-889b4b987a6fec3b2a47",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-8c7c9bba764ef990b57f",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9084085d6e7b91f426f3",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-90a9028a295696a522e1",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-96bd27dcacd944c3132b",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-971707af7a4042a80dc5",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-97810ee023c87e4afd01",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
       "outcome": "facts_found",
       "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-9cc762326bf4b9f73be2",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9d453e276657183086f8",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9def1982acf118006315",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-9f64979fd885ec3362de",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a260d38d870e52e7f9b4",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a2e0dc321ef77a3c4702",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a825bbef331ecdd019f7",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a862dd7961be74d64f55",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-ad4a422c793838b9bc2a",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:San Carlo security challenge; defer instead of bypass"
+      ],
+      "rows": 0
     }
   ]
 }

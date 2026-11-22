@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T22:22:47+00:00",
+  "checked_at": "2026-11-22T22:34:23+00:00",
   "groups": [
     {
       "candidate_ids": [
@@ -153,19 +153,36 @@
         }
       ],
       "title": "Il viaggio a Reims"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-a0c534fc596dea327ad4"
+      ],
+      "category": "missing_composer",
+      "composer": null,
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "sabbioneta-antica-rolling-opera",
+          "url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/"
+        }
+      ],
+      "title": "Gran Concerto di Natale"
     }
   ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 9,
+    "candidates_checked": 14,
     "candidates_without_facts": 0,
-    "facts_examined": 43,
-    "facts_resolved": 0,
+    "facts_examined": 55,
+    "facts_resolved": 11,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 43,
-    "unmatched_groups": 9
+    "unmatched_facts": 44,
+    "unmatched_groups": 10
   },
   "truncated": false
 }
