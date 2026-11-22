@@ -1868,8 +1868,8 @@
       "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
-      "content_sha256": "28c28228c5a2a532aa6f9453967cfacdfe824b4acf1d02bf021f6f83335f766d",
-      "checked_at": "2026-11-22T12:20:36+00:00",
+      "content_sha256": "ad54f0ca38972e2876ecc76c229248fec227be00b07464c3f1bbc9bee419e0c8",
+      "checked_at": "2026-11-22T12:28:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2493,8 +2493,8 @@
       "candidate_id": "oa-index-725487d437f63ba0cf3e",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
-      "content_sha256": "5dd290cb86989e19bbdbb1709ff8ee77c3d0a8fc5cd1f9a4d45ce7c521132ed1",
-      "checked_at": "2026-11-22T12:20:39+00:00",
+      "content_sha256": "ca957fbc049155f1e4ff1159e1c66e42cfd9d78464448f224438648459368d53",
+      "checked_at": "2026-11-22T12:28:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4669,8 +4669,8 @@
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "source_key": "treviso-del-monaco-opera-2026-27",
       "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
-      "content_sha256": "ea6078265cc2c633ab06f7d717213b8d42bbcece58f8b74c1c889378a3452d92",
-      "checked_at": "2026-11-22T12:20:45+00:00",
+      "content_sha256": "d3a9ee7e2aa6e58f60e05dcfa35e02e6bf2a3b46ceba6e5e0e01432b950514f7",
+      "checked_at": "2026-11-22T12:28:30+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4814,8 +4814,8 @@
       "candidate_id": "oa-index-cf2044dac191fa690c37",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
-      "content_sha256": "0fe638028dfd9c9e69cbdfa0db7335fd5ccec07a730ec97243a4cd9ca9cd0c38",
-      "checked_at": "2026-11-22T12:21:01+00:00",
+      "content_sha256": "2af5e8455af0b9c6851981c6052e6ba436d0c5cff1f306ee00ad671afa499a95",
+      "checked_at": "2026-11-22T12:28:40+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4914,8 +4914,8 @@
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "source_key": "messina-vittorio-opera-2026-27",
       "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
-      "content_sha256": "a35131d6cddbd3ebb051ea381f7e80a09c726a9a7aaf4607d5209530260d1a39",
-      "checked_at": "2026-11-22T12:21:04+00:00",
+      "content_sha256": "eeedb1742197f068e082bee82e276e1586e79e82d1d849230b76a040e0031744",
+      "checked_at": "2026-11-22T12:28:42+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
