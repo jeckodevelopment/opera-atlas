@@ -17,7 +17,7 @@ INDEX="https://www.festivaldellavalleditria.it/programma-2026"
 EVENT=re.compile(r"/spettacolo/([a-z0-9][a-z0-9-]*)/(20\d{2})-(\d{2})-(\d{2})/?")
 MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,"luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12}
 DATES=re.compile(r"([0-3]?\d)\s+("+ "|".join(MONTHS) +r")\s+(20\d{2})\s*\.\s*H\s*([01]?\d|2[0-3]):([0-5]\d)\s+Palazzo\s+Ducale,\s*Martina\s+Franca",re.I)
-PALACE="Palazzo Ducale"
+PALACE="Palazzo Ducale di Martina Franca"
 
 class Page(HTMLParser):
     def __init__(self):
