@@ -149,7 +149,7 @@
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
       "content_sha256": "94a78ef75a315549cfa29985c1ec0c60e7aa470ef90fb75bd9a71416d2043a09",
-      "checked_at": "2026-11-22T13:33:24+00:00",
+      "checked_at": "2026-11-22T13:36:13+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2531,7 +2531,7 @@
       "source_key": "giglio-lucca-opera-2026-27",
       "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/lanno-che-verra/",
       "content_sha256": "9778c505d9e21adf1090612736b3c86e34ac8c02a2cfd7044171f355422a159d",
-      "checked_at": "2026-11-22T13:33:15+00:00",
+      "checked_at": "2026-11-22T13:36:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5640,8 +5640,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "094c10e9614b47ac73d7ecee96ef7dcd55c1112b4dcb17c36e41e8ba54584cff",
-      "checked_at": "2026-11-22T13:33:32+00:00",
+      "content_sha256": "13b799e4e984ff5510fad867b516aab17ef7e23f91fc169137a68bc39ad79ec7",
+      "checked_at": "2026-11-22T13:36:22+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
