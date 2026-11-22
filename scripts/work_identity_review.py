@@ -55,7 +55,7 @@ def evaluate(evidence: dict, registry: dict) -> dict:
         raise ValueError("invalid candidate evidence document")
     if registry.get("schema_version") != 1 or not isinstance(registry.get("works"), dict):
         raise ValueError("invalid canonical work registry")
-    works = list(registry["works"].values())
+    works = list(registry["works"].values()) + list(registry.get("reserved_works", {}).values())
     by_composer = {}
     for work in works:
         by_composer.setdefault(_clean(work.get("composer")).casefold(), []).append(work)
