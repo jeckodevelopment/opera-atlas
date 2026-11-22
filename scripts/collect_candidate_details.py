@@ -826,7 +826,8 @@ def selected_candidates(candidates:dict,*,today:date|None=None)->list[dict]:
         url=urlsplit(x.get("official_url",""))
         parent=urlsplit(source["official_url"])
         if (url.scheme!="https" or url.hostname!=parent.hostname or not eligible(key,x["official_url"]) or url.port is not None
-            or url.query or url.fragment or url.username or url.password):continue
+            or (url.query and key!="sassari-de-carolis-opera-2026")
+            or url.fragment or url.username or url.password):continue
         possible.append(x)
     possible.sort(key=lambda x:x["id"])
     if not possible:return []
