@@ -39,3 +39,23 @@ creare una nuova opera canonica con un credito misto.
 La fonte primaria del teatro /opera/ ha dato 11 link verificati nella scansione
 del 22/11/2026; la fonte comunale secondaria è risultata indisponibile.
 Gli stati di acquisizione non equivalgono a recite pubblicate.
+
+## Rinnovo automatico: indice del teatro
+
+La fonte primaria del teatro `https://www.teatrocomunalemodena.it/opera/`
+è un indice permanente. Il parser delle singole pagine-evento supporta
+anche le stagioni successive al 2026/27: una data con **anno esplicito**
+determina il perimetro ottobre–luglio della stagione osservata e deve
+rispettare il giorno della settimana indicato. Date prive d'anno sono
+ammissibili per una nuova stagione soltanto se la **stessa scheda ufficiale**
+riporta un'etichetta di stagione consecutiva (`2027/2028`, ecc.). Se più
+stagioni sono incompatibili, l'acquisizione fallisce senza pubblicare
+recite parziali. In assenza di nuove prove rimane il perimetro 2026/27,
+non l'anno corrente di esecuzione del workflow.
+
+Il connettore municipale secondario, che utilizza URL specifici della
+stagione 2026/27, **non** viene esteso implicitamente alla stagione nuova.
+I nuovi titoli continueranno a passare dal classificatore e dal publisher
+centrali, senza attribuire compositori o immagini in automatico.
+
+Test: `python -m unittest tests.test_modena_theatre_fallback -v`.
