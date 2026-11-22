@@ -146,6 +146,14 @@
       "last_seen": "2026-11-20T21:01:08+00:00"
     },
     {
+      "id": "oa-index-0c0be9665ed7b114e52c",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "status": "already_catalogued",
+      "first_seen": "2026-11-22T15:48:36+00:00",
+      "last_seen": "2026-11-22T15:48:36+00:00"
+    },
+    {
       "id": "oa-index-0da766cb52d550c48c16",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
@@ -165,7 +173,7 @@
       "id": "oa-index-0eea7155b15ee176bf83",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:17:58+00:00",
       "last_seen": "2026-11-22T15:17:58+00:00"
     },
@@ -239,7 +247,7 @@
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
       "status": "needs_review",
       "first_seen": "2026-11-21T21:30:14+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-1a02a18e39758285a976",
@@ -256,6 +264,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T22:34:11+00:00",
       "last_seen": "2026-11-21T22:34:11+00:00"
+    },
+    {
+      "id": "oa-index-1a527a333817d1bcdc2c",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "status": "already_catalogued",
+      "first_seen": "2026-11-22T15:48:36+00:00",
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-1a59967acac40b5e8b1c",
@@ -279,7 +295,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-1d35c5f06b99b17bd41f",
@@ -312,6 +328,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-21T11:54:39+00:00",
       "last_seen": "2026-11-21T12:02:51+00:00"
+    },
+    {
+      "id": "oa-index-1e4a557dddb9c5c01fa2",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "status": "already_catalogued",
+      "first_seen": "2026-11-22T15:48:36+00:00",
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-1ea669503ea5640af931",
@@ -423,7 +447,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-beethoven-200.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-29e61184f06223faaa86",
@@ -469,9 +493,9 @@
       "id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T22:34:11+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-35be56b50cfb2da6f65b",
@@ -503,7 +527,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-la-bella-addormentata.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-3ad893acc9c9df1ad97f",
@@ -709,9 +733,9 @@
       "id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T00:27:03+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-59b4a6e5b8f0087fd73d",
@@ -951,7 +975,7 @@
       "official_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
       "status": "needs_review",
       "first_seen": "2026-11-21T11:54:39+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-790b965de8129382aa04",
@@ -965,9 +989,9 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-21T12:00:43+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-7adb8eed9d624ca82bf5",
@@ -1042,6 +1066,14 @@
       "last_seen": "2026-11-21T20:59:08+00:00"
     },
     {
+      "id": "oa-index-84e8ac0695f45f81567d",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+      "status": "already_catalogued",
+      "first_seen": "2026-11-22T15:48:36+00:00",
+      "last_seen": "2026-11-22T15:48:36+00:00"
+    },
+    {
       "id": "oa-index-84fd2f377ee783254524",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
@@ -1085,7 +1117,7 @@
       "id": "oa-index-8a286806af9eac475fe7",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:17:58+00:00",
       "last_seen": "2026-11-22T15:17:58+00:00"
     },
@@ -1191,7 +1223,7 @@
       "official_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
       "status": "needs_review",
       "first_seen": "2026-11-22T01:26:53+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-954a1b185a0354522e71",
@@ -1200,6 +1232,14 @@
       "status": "already_catalogued",
       "first_seen": "2026-11-22T00:42:35+00:00",
       "last_seen": "2026-11-22T00:42:35+00:00"
+    },
+    {
+      "id": "oa-index-9722a684ead4733eee96",
+      "source_key": "filarmonico-verona-rolling-opera",
+      "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+      "status": "already_catalogued",
+      "first_seen": "2026-11-22T15:48:36+00:00",
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-97514cec9448be1a563d",
@@ -1231,7 +1271,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-9871aa4f1201e959bf0b",
@@ -1279,7 +1319,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T14:28:24+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-9de5ffaf88b8577175b7",
@@ -1319,7 +1359,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-a02901b14e6eae69df5c",
@@ -1509,7 +1549,7 @@
       "id": "oa-index-b7c5c52e3403bb38bcfa",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:17:58+00:00",
       "last_seen": "2026-11-22T15:17:58+00:00"
     },
@@ -1799,7 +1839,7 @@
       "official_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
       "status": "needs_review",
       "first_seen": "2026-11-22T13:00:28+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-db7983de674f2fdccdda",
@@ -1895,7 +1935,7 @@
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-lago-dei-cigni.html",
       "status": "needs_review",
       "first_seen": "2026-11-22T15:17:58+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-e01412b3c8989b4b826b",
@@ -1943,7 +1983,7 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
       "status": "needs_review",
       "first_seen": "2026-11-21T15:00:58+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-e559c661c59ed30ea597",
@@ -1967,7 +2007,7 @@
       "official_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
       "status": "needs_review",
       "first_seen": "2026-11-20T21:13:13+00:00",
-      "last_seen": "2026-11-22T15:27:52+00:00"
+      "last_seen": "2026-11-22T15:48:36+00:00"
     },
     {
       "id": "oa-index-eaefe8edde44acf2edd9",
