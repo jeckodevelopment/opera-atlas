@@ -25,6 +25,7 @@ VENUE_BY_SOURCE={
     "asti-alfieri-rolling-opera":("Asti","Teatro Alfieri"),
     "savona-giocosa-rolling-opera":("Savona","Teatro Chiabrera"),
     "sassari-de-carolis-rolling-opera":("Sassari","Teatro Comunale di Sassari"),
+    "lecce-apollo-pinocchio-2026":("Lecce","Teatro Apollo"),
     "lecce-provincia-politeama-2026":("Lecce","Teatro Politeama Greco"),
     "lecce-politeama-opera-2026":("Lecce","Teatro Politeama Greco"),
     "rovigo-sociale-opera-2026-27":("Rovigo","Teatro Sociale"),
