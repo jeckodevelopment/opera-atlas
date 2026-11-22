@@ -27,6 +27,42 @@ class SourceAutomationTests(unittest.TestCase):
         self.assertEqual(report["automation_remaining"],
                          report["not_automated"]+report["configured_not_operational"])
 
+    def test_secondary_venues_have_exact_first_party_published_productions(self):
+        from scripts.source_automation import DIRECTORY, DAILY, INDEX, ROOT
+        import json
+        from urllib.parse import urlsplit
+        directory=json.loads(DIRECTORY.read_text())
+        daily=json.loads(DAILY.read_text())
+        index=json.loads(INDEX.read_text())
+        published=json.loads((ROOT/"data/verified-launch-catalog.json").read_text())
+        expected={
+            ("Reggio Emilia","Teatro Ariosto"):"www.iteatri.re.it",
+            ("Roma","Teatro Nazionale"):"www.operaroma.it",
+            ("Roma","Teatro Valle Franca Valeri"):"www.operaroma.it",
+            ("Catania","Teatro Sangiorgi"):"www.teatromassimobellini.it",
+        }
+        for (city,venue),host in expected.items():
+            matches=[x for x in published["productions"]
+                     if x["municipality"]==city and x["venue"]==venue
+                     and urlsplit(x["source_url"]).hostname==host and x["dates"]]
+            self.assertTrue(matches,(city,venue))
+        healthy={"sources":[
+            {"key":"reggio-valli-opera-2026-27",
+             "status":"success","current_scan_verified":True},
+            {"key":"opera-roma-season-2026-27",
+             "status":"success","current_scan_verified":True},
+            {"key":"bellini-catania-opera-2026-27",
+             "status":"success","current_scan_verified":True},
+        ]}
+        report=build(directory,daily,{"sources":[]},index,healthy)
+        by_venue={(x["city"],x["venue"]):x for x in report["venues"]}
+        for key in expected:
+            self.assertEqual(by_venue[key]["status"],"operational")
+        unhealthy=build(directory,daily,{"sources":[]},index,{"sources":[]})
+        by_venue={(x["city"],x["venue"]):x for x in unhealthy["venues"]}
+        for key in expected:
+            self.assertNotEqual(by_venue[key]["status"],"operational")
+
     def test_index_link_does_not_equal_success(self):
         from scripts.source_automation import DIRECTORY, DAILY, INDEX
         import json

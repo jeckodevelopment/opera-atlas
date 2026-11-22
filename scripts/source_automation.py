@@ -38,13 +38,18 @@ INDEX_VENUES = {
     "scala-season-2026-27": ("Milano|Teatro alla Scala",),
     "verdi-trieste-season-2026-27": ("Trieste|Teatro Lirico Giuseppe Verdi",),
     "lirico-cagliari-opera-2027": ("Cagliari|Teatro Lirico di Cagliari",),
-    "bellini-catania-opera-2026-27": ("Catania|Teatro Massimo Bellini",),
+    # Both Sangiorgi productions already have official Bellini event URLs
+    # and individual recite in the immutable published catalog.
+    "bellini-catania-opera-2026-27": ("Catania|Teatro Massimo Bellini",
+                                      "Catania|Teatro Sangiorgi"),
     "modena-teatro-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
     "chieti-marrucino-lirica-2026": ("Chieti|Teatro Marrucino",),
     "modena-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
     "giglio-lucca-opera-2026-27": ("Lucca|Teatro del Giglio Giacomo Puccini",),
     "piacenza-opera-2026-27": ("Piacenza|Teatro Municipale",),
-    "reggio-valli-opera-2026-27": ("Reggio Emilia|Teatro Valli",),
+    # Veleno is officially published at Teatro Ariosto by I Teatri.
+    "reggio-valli-opera-2026-27": ("Reggio Emilia|Teatro Valli",
+                                   "Reggio Emilia|Teatro Ariosto"),
     "jesi-trittico-opera-2026": ("Jesi|Teatro Giovan Battista Pergolesi",),
     "jesi-don-pasquale-opera-2026": ("Jesi|Teatro Giovan Battista Pergolesi",),
     "jesi-esecuzione-opera-2026": ("Jesi|Teatro Giovan Battista Pergolesi",),
@@ -67,7 +72,11 @@ INDEX_VENUES = {
     "donizetti-opera-2026": ("Bergamo|Teatro Donizetti",),
     "teatro-grande-opera-2026": ("Brescia|Teatro Grande",),
     "maggio-fiorentino-calendar-2027": ("Firenze|Teatro del Maggio Musicale Fiorentino", "Firenze|Teatro Goldoni"),
-    "opera-roma-season-2026-27": ("Roma|Teatro dell'Opera di Roma",),
+    # Official production pages already identify both distinct venues:
+    # Code: Unknown at Teatro Nazionale; La Cenerentola at Teatro Valle.
+    "opera-roma-season-2026-27": ("Roma|Teatro dell'Opera di Roma",
+                                   "Roma|Teatro Nazionale",
+                                   "Roma|Teatro Valle Franca Valeri"),
     "petruzzelli-opera-2026": ("Bari|Teatro Petruzzelli",),
     "petruzzelli-opera-2027": ("Bari|Teatro Petruzzelli",),
     "bologna-comunale-opera-2026": ("Bologna|Teatro Comunale di Bologna", "Bologna|Teatro Auditorium Manzoni"),
