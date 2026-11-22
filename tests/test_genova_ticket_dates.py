@@ -28,6 +28,42 @@ class CarloFeliceTicketTests(unittest.TestCase):
         self.assertEqual(venue,"Teatro Carlo Felice")
         self.assertEqual(rows,[("2026-"+x[3:5]+"-"+x[:2],t) for x,t in ROWS])
 
+    def test_real_cms_inline_ticket_fields_preserve_six_recite(self):
+        from opera_atlas.italian_detail_parser import extract_source_credited_carlo_felice
+        tickets="".join(
+            f"<div><span>{'VE' if i%3==0 else 'SA'} {day}</span>"
+            f"<small>{'(Prima)' if i==0 else ''}</small>"
+            f"<b>Turno {'A' if i==0 else 'FA'}</b>"
+            f"<span>|</span><strong>Ore {clock}</strong>"
+            "<span>| Biglietti non più disponibili</span></div>"
+            for i,(day,clock) in enumerate(ROWS))
+        html=(tickets+"<div>Dove:</div><div>Teatro Carlo Felice</div>"
+              "<h1>Le nozze di figaro</h1>"
+              "<p>Musica di</p><p>Wolfgang Amadeus Mozart</p>"
+              "<p>Direttore</p><p>Jordi Bernàcer</p>")
+        venue,rows=parse_detail(html,
+            source_key="carlo-felice-season-2026-27",
+            url=URL,title="Le nozze di figaro",
+            composer="Wolfgang Amadeus Mozart")
+        self.assertEqual(venue,"Teatro Carlo Felice")
+        self.assertEqual(rows,[("2026-"+x[3:5]+"-"+x[:2],t)
+                               for x,t in ROWS])
+        self.assertEqual(len(extract_source_credited_carlo_felice(
+            html,url=URL)[-1]),6)
+        missing=html.replace("<strong>Ore 15:00</strong>",
+                             "<strong>Orario da definire</strong>",1)
+        with self.assertRaisesRegex(ValueError,"incomplete"):
+            parse_detail(missing,
+                source_key="carlo-felice-season-2026-27",
+                url=URL,title="Le nozze di figaro",
+                composer="Wolfgang Amadeus Mozart")
+        # A date in the programme description is not a seventh showtime.
+        html+=("<p>Altra produzione 22/11/2026 Ore 16:00</p>")
+        self.assertEqual(len(parse_detail(html,
+            source_key="carlo-felice-season-2026-27",
+            url=URL,title="Le nozze di figaro",
+            composer="Wolfgang Amadeus Mozart")[-1]),6)
+
     def test_missing_clock_never_assumes_a_time(self):
         with self.assertRaisesRegex(ValueError,"incomplete"):
             parse_detail(fixture(missing=True),
