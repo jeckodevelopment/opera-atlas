@@ -76,7 +76,11 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     visible=" ".join(r.parts)
     heading=next((i for i,x in enumerate(r.parts) if x==title),None)
     if heading is None:raise ValueError("ROF first-party heading unverified")
-    intro=" ".join(r.parts[heading+1:heading+12])
+    # Production pages include navigation, ticket widgets and accessibility
+    # labels before their venue. Bound the first-party event header by the
+    # repeated main title / cast, not an arbitrary eleven DOM text nodes.
+    header=r.parts[heading+1:heading+48]
+    intro=" ".join(header).split("Edizione critica",1)[0]
     # ROF's 2026 opening *Le Siège de Corinthe* was staged in the
     # Auditorium Scavolini. Other 2026 operas use Teatro Rossini.
     expected_venue=("Auditorium Scavolini"
