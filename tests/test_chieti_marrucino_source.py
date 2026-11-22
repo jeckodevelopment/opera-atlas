@@ -51,7 +51,7 @@ class ChietiSourceTests(unittest.TestCase):
         evidence={"schema_version":1,"evidence":[item]}
         published,ids,urls,report=promote(facts,registry,evidence,candidates,[],
                                           today=date(2026,11,22))
-        self.assertEqual(report["new_stagings"],3)
+        self.assertEqual(report["new_stagings"],3,report)
         self.assertEqual(report["new_recite"],6)
         self.assertTrue(any(x["reason"]=="unknown_work_needs_authority_data"
                             for x in report["auto_skipped"]))
