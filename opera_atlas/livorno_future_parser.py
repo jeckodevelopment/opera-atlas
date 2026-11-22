@@ -78,22 +78,27 @@ def extract_index(html:str,*,url:str,min_links:int)->list[str]:
 def parse_detail(html:str,*,url:str):
     if not eligible_detail(url):raise ValueError("unapproved Goldoni opera detail")
     text=clean(html)
-    # The event date and time are the page's leading metadata, not the
-    # two-or-more showtimes listed in the descriptive prose.
-    header=text[:600]
-    day=DATE.search(header)
-    clock=CLOCK.search(header)
-    if day is None or clock is None:
+    # The ticket's own date and clock appear in the metadata preceding the
+    # *primary* heading. A long menu can exceed 600 visible characters;
+    # conversely, production prose and related-event cards after the heading
+    # can never be used as evidence for this single-recita URL.
+    heading=re.search(r"(?is)<h1\b[^>]*>(.*?)</h1>",html)
+    if heading is None:
+        raise ValueError("Goldoni opera work heading missing")
+    header=clean(html[:heading.start()])[-2500:]
+    details=list(re.finditer(
+        r"(?i)Teatro\s+Goldoni\s*[-–]\s*"
+        r"(\d{1,2})\s+"
+        r"(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|"
+        r"settembre|ottobre|novembre|dicembre)\s+(20\d{2})"
+        r"\s+Orario/i\s*:\s*(2[0-3]|1\d|0?\d)"
+        r"(?:[.:]([0-5]\d))?\s+Lirica\b",header))
+    if len(details)!=1:
         raise ValueError("Goldoni detail lacks its own dated ticket clock")
-    number,month,year=day.groups()
+    number,month,year,hour,minute=details[0].groups()
     when=date(int(year),MONTHS[month.casefold()],int(number))
     if when.year<2027:raise ValueError("historic Goldoni event belongs to original source")
-    hour,minute=clock.groups()
     hour=f"{int(hour):02d}:{minute or '00'}"
-    if not re.search(r"(?i)\bLirica\b",header):
-        raise ValueError("Goldoni event not in Lirica category")
-    heading=re.search(r"(?is)<h1\b[^>]*>(.*?)</h1>",html)
-    if heading is None:raise ValueError("Goldoni opera work heading missing")
     title=clean(heading[1]).strip()
     if not title or len(title)>170 or EXCLUDE.search(title):
         raise ValueError("non-operatic Goldoni event")
@@ -110,7 +115,7 @@ def parse_detail(html:str,*,url:str):
         r"(?i)\bMusica di\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'.’\-]*"
         r"(?:\s+[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'.’\-]*){1,3})"
         r"(?=\s+(?:Direttore|Regia|Maestro|Orchestra|Libretto|"
-        r"Nuovo\s+allestimento|Coro)\b|[.;]|$)",body)
+        r"Nuovo\s+allestimento|Coro|Personaggi|Prima\s+(?:esecuzione|rappresentazione))\b|[.;]|$)",body)
     if credit is None:raise ValueError("Goldoni composer attribution not source-verified")
     composer=credit[1].strip(" .")
     if composer.casefold().split()[0] in {"direttore","regia","maestro",
