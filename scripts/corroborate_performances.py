@@ -84,7 +84,11 @@ def verify_pages(case:dict,pages:dict[str,str])->list[dict]:
     urls.extend(row["url"] for row in case["publisher_events"])
     if set(pages)!=set(urls) or len(set(urls))!=4:
         raise ValueError("four distinct live source pages required")
-    text={url:clean(pages[url]) for url in urls}
+    # The shared HTML reader only spaces h1-h3; h4-h6 otherwise glue
+    # adjacent words such as "ore 20:30Rovigo" on publisher pages.
+    # Normalize heading boundaries before the regular visible-text parser.
+    text={url:clean(re.sub(r"(?i)</?h[1-6]\b[^>]*>"," ",pages[url]))
+          for url in urls}
     issuer=text[case["issuer_repertoire_url"]]
     # Constrain the claim to the 2026/27 season paragraph: this page also
     # contains an archived 2021 Traviata and must not leak its performances.
