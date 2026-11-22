@@ -56,7 +56,7 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         # expected elsewhere. A composer-credited H4, not the URL slug,
         # establishes the work and must be unique in the actual HTML.
         verified=re.findall(
-            r"<h[1-6]\\b[^>]*>\\s*(Gaia Aloisi\\s*[–-]\\s*Veleno)\\s*</h[1-6]>",
+            r"<h[1-6]\b[^>]*>\s*(Gaia Aloisi\s*[–-]\s*Veleno)\s*</h[1-6]>",
             html,re.I)
         if len(verified)!=1:
             raise ValueError("missing unique Modena production title")
