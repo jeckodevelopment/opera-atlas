@@ -133,6 +133,23 @@ def normalize_source_seed_trieste_genre(rows:list[dict],key:str,url:str,
     URL has matched the source-backed and historically verified seed. It
     rewrites no date, time or venue.
     """
+    # A previously checkpointed bilingual Modena title is the same Wagner
+    # composition. Normalize only this exact first-party URL, verified
+    # composer and historically reviewed canonical seed; never create
+    # a separate work for the translated title.
+    if (key=="modena-teatro-opera-2026-27"
+        and url=="https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
+        and isinstance(seed,dict) and seed.get("source_key")==key
+        and seed.get("source_url")==url
+        and seed.get("title")=="Der fliegende Holländer"
+        and seed.get("composer")=="Richard Wagner"
+        and isinstance(rows,list) and rows
+        and all(isinstance(r,dict)
+                and r.get("event_title") in (
+                    "Der fliegende Holländer (L’olandese volante)",
+                    "Der fliegende Holländer")
+                and r.get("composer")=="Richard Wagner" for r in rows)):
+        return [{**r,"event_title":"Der fliegende Holländer"} for r in rows]
     if (key!="verdi-trieste-season-2026-27" or not isinstance(seed,dict)
             or seed.get("source_key")!=key or seed.get("source_url")!=url
             or not isinstance(rows,list) or not rows
