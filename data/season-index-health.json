@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T15:07:25+00:00",
+  "checked_at": "2026-11-22T15:17:31+00:00",
   "sources": [
     {
       "key": "ancona-cavalleria-program-2026",
@@ -587,10 +587,10 @@
       "key": "rovigo-sociale-opera-2026-27",
       "status": "unavailable_or_invalid",
       "reason": "ValueError",
-      "diagnostic": "rovigo_venue_missing",
+      "diagnostic": "rovigo_fallback_content_unverified",
       "required_links": 1,
       "links": 0,
-      "last_attempt_at": "2026-11-22T15:07:25+00:00",
+      "last_attempt_at": "2026-11-22T15:17:31+00:00",
       "last_success_at": null,
       "last_successful_links": null,
       "current_scan_verified": false
