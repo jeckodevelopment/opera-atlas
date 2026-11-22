@@ -5158,6 +5158,114 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-991f446bf3f27044",
+      "title": "Cristoforo Colombo",
+      "composer": "Alberto Franchetti",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "dates": [
+        [
+          "2027-11-21",
+          "15:30"
+        ],
+        [
+          "2027-11-24",
+          "19:00"
+        ],
+        [
+          "2027-11-26",
+          "20:00"
+        ],
+        [
+          "2027-11-28",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-c7a26f1f7611da36",
+      "title": "Il signor Bruschino",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "dates": [
+        [
+          "2027-10-24",
+          "15:30"
+        ],
+        [
+          "2027-10-27",
+          "19:00"
+        ],
+        [
+          "2027-10-29",
+          "20:00"
+        ],
+        [
+          "2027-10-31",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-cf244270ba1aec90",
+      "title": "Alzira",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "dates": [
+        [
+          "2027-03-14",
+          "15:30"
+        ],
+        [
+          "2027-03-17",
+          "19:00"
+        ],
+        [
+          "2027-03-19",
+          "20:00"
+        ],
+        [
+          "2027-03-21",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-de1f52ee525c73d5",
+      "title": "Il ratto dal serraglio",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+      "dates": [
+        [
+          "2027-01-17",
+          "15:30"
+        ],
+        [
+          "2027-01-20",
+          "19:00"
+        ],
+        [
+          "2027-01-22",
+          "20:00"
+        ],
+        [
+          "2027-01-24",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

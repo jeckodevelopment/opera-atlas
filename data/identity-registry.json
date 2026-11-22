@@ -554,6 +554,34 @@
       "title": "Alahor in Granata",
       "composer": "Gaetano Donizetti",
       "authority_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
+    },
+    "cristoforo colombo|alberto franchetti": {
+      "id": "oa-w-000085",
+      "slug": "cristoforo-colombo",
+      "title": "Cristoforo Colombo",
+      "composer": "Alberto Franchetti",
+      "authority_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/"
+    },
+    "il signor bruschino|gioachino rossini": {
+      "id": "oa-w-000086",
+      "slug": "il-signor-bruschino",
+      "title": "Il signor Bruschino",
+      "composer": "Gioachino Rossini",
+      "authority_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+    },
+    "alzira|giuseppe verdi": {
+      "id": "oa-w-000087",
+      "slug": "alzira",
+      "title": "Alzira",
+      "composer": "Giuseppe Verdi",
+      "authority_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/"
+    },
+    "il ratto dal serraglio|wolfgang amadeus mozart": {
+      "id": "oa-w-000088",
+      "slug": "il-ratto-dal-serraglio",
+      "title": "Il ratto dal serraglio",
+      "composer": "Wolfgang Amadeus Mozart",
+      "authority_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
     }
   },
   "venues": {
@@ -2281,6 +2309,38 @@
       "venue_id": "oa-v-000014",
       "slug": "pagliacci",
       "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+      "season": "2027"
+    },
+    "auto-991f446bf3f27044": {
+      "id": "oa-s-000181",
+      "work_id": "oa-w-000085",
+      "venue_id": "oa-v-000033",
+      "slug": "cristoforo-colombo",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "season": "2027"
+    },
+    "auto-c7a26f1f7611da36": {
+      "id": "oa-s-000182",
+      "work_id": "oa-w-000086",
+      "venue_id": "oa-v-000033",
+      "slug": "il-signor-bruschino",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "season": "2027"
+    },
+    "auto-cf244270ba1aec90": {
+      "id": "oa-s-000183",
+      "work_id": "oa-w-000087",
+      "venue_id": "oa-v-000033",
+      "slug": "alzira",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "season": "2027"
+    },
+    "auto-de1f52ee525c73d5": {
+      "id": "oa-s-000184",
+      "work_id": "oa-w-000088",
+      "venue_id": "oa-v-000033",
+      "slug": "il-ratto-dal-serraglio",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
       "season": "2027"
     }
   },
@@ -7114,6 +7174,102 @@
       "staging_id": "oa-s-000180",
       "original_date": "2027-01-17",
       "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/"
+    },
+    "auto-991f446bf3f27044|2027-11-21": {
+      "id": "oa-r-000823",
+      "staging_id": "oa-s-000181",
+      "original_date": "2027-11-21",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/"
+    },
+    "auto-991f446bf3f27044|2027-11-24": {
+      "id": "oa-r-000824",
+      "staging_id": "oa-s-000181",
+      "original_date": "2027-11-24",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/"
+    },
+    "auto-991f446bf3f27044|2027-11-26": {
+      "id": "oa-r-000825",
+      "staging_id": "oa-s-000181",
+      "original_date": "2027-11-26",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/"
+    },
+    "auto-991f446bf3f27044|2027-11-28": {
+      "id": "oa-r-000826",
+      "staging_id": "oa-s-000181",
+      "original_date": "2027-11-28",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/"
+    },
+    "auto-c7a26f1f7611da36|2027-10-24": {
+      "id": "oa-r-000827",
+      "staging_id": "oa-s-000182",
+      "original_date": "2027-10-24",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+    },
+    "auto-c7a26f1f7611da36|2027-10-27": {
+      "id": "oa-r-000828",
+      "staging_id": "oa-s-000182",
+      "original_date": "2027-10-27",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+    },
+    "auto-c7a26f1f7611da36|2027-10-29": {
+      "id": "oa-r-000829",
+      "staging_id": "oa-s-000182",
+      "original_date": "2027-10-29",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+    },
+    "auto-c7a26f1f7611da36|2027-10-31": {
+      "id": "oa-r-000830",
+      "staging_id": "oa-s-000182",
+      "original_date": "2027-10-31",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+    },
+    "auto-cf244270ba1aec90|2027-03-14": {
+      "id": "oa-r-000831",
+      "staging_id": "oa-s-000183",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/"
+    },
+    "auto-cf244270ba1aec90|2027-03-17": {
+      "id": "oa-r-000832",
+      "staging_id": "oa-s-000183",
+      "original_date": "2027-03-17",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/"
+    },
+    "auto-cf244270ba1aec90|2027-03-19": {
+      "id": "oa-r-000833",
+      "staging_id": "oa-s-000183",
+      "original_date": "2027-03-19",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/"
+    },
+    "auto-cf244270ba1aec90|2027-03-21": {
+      "id": "oa-r-000834",
+      "staging_id": "oa-s-000183",
+      "original_date": "2027-03-21",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/"
+    },
+    "auto-de1f52ee525c73d5|2027-01-17": {
+      "id": "oa-r-000835",
+      "staging_id": "oa-s-000184",
+      "original_date": "2027-01-17",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
+    },
+    "auto-de1f52ee525c73d5|2027-01-20": {
+      "id": "oa-r-000836",
+      "staging_id": "oa-s-000184",
+      "original_date": "2027-01-20",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
+    },
+    "auto-de1f52ee525c73d5|2027-01-22": {
+      "id": "oa-r-000837",
+      "staging_id": "oa-s-000184",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
+    },
+    "auto-de1f52ee525c73d5|2027-01-24": {
+      "id": "oa-r-000838",
+      "staging_id": "oa-s-000184",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/"
     }
   }
 }

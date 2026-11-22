@@ -754,6 +754,42 @@
       "alt": "Frontespizio storico del libretto di Alahor in Granata, Napoli 1826; non fotografia dello spettacolo bergamasco 2026",
       "credit": "Libretto di Alahor in Granata, Biblioteca del Congresso, tramite Wikimedia Commons",
       "license": "Public domain · https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_Alahor_in_Granata_-_libretto_-_title_page.png"
+    },
+    "oa-w-000085": {
+      "work_id": "oa-w-000085",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Colombo_(baritono)%2C_figurino_di_Adolf_Hohenstein_per_Cristoforo_Colombo_(1918)_-_Archivio_Storico_Ricordi_ICON002357.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Colombo_(baritono)%2C_figurino_di_Adolf_Hohenstein_per_Cristoforo_Colombo_(1918)_-_Archivio_Storico_Ricordi_ICON002357.jpg",
+      "alt": "Figurino storico di Adolf Hohenstein per Cristoforo Colombo di Franchetti (1918), non allestimento attuale",
+      "credit": "Adolf Hohenstein / Archivio Storico Ricordi, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "oa-w-000086": {
+      "work_id": "oa-w-000086",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gioachino_Rossini_-_Il_signor_Bruschino_-_titlepage_of_the_libretto_-_Venice_1813.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gioachino_Rossini_-_Il_signor_Bruschino_-_titlepage_of_the_libretto_-_Venice_1813.png",
+      "alt": "Frontespizio originale del libretto di Il signor Bruschino di Rossini (Venezia, 1813)",
+      "credit": "Rossini e Giuseppe Foppa, libretto del 1813, Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000087": {
+      "work_id": "oa-w-000087",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giuseppe_Verdi_-_Alzira_-_titlepage_of_the_libretto_-_Naples_1845.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Verdi_-_Alzira_-_titlepage_of_the_libretto_-_Naples_1845.png",
+      "alt": "Frontespizio del libretto di Alzira di Giuseppe Verdi (Napoli, 1845), non della produzione in programma",
+      "credit": "Libretto storico di Alzira (1845), Wikimedia Commons",
+      "license": "Public domain"
+    },
+    "oa-w-000088": {
+      "work_id": "oa-w-000088",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mozart_Die_Entf%C3%BChrung_aus_dem_Serail_Urauff%C3%BChrung_1782.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mozart_Die_Entf%C3%BChrung_aus_dem_Serail_Urauff%C3%BChrung_1782.jpg",
+      "alt": "Locandina storica della prima del Ratto dal serraglio di Mozart (Vienna, 1782)",
+      "credit": "Locandina del Burgtheater di Vienna (1782), Wikimedia Commons",
+      "license": "Public domain"
     }
   }
 }

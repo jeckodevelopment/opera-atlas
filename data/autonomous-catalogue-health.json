@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "new_stagings": 0,
-  "new_recite": 0,
+  "new_stagings": 4,
+  "new_recite": 16,
   "auto_skipped": [
     {
       "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
@@ -20,14 +20,6 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
-      "candidate_id": "oa-index-991f446bf3f27044b019",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-c7a26f1f7611da36ad2a",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-c7f7f8520caabdfc289f",
       "reason": "unsupported_or_untrusted_source"
     },
@@ -36,16 +28,8 @@
       "reason": "unsupported_or_untrusted_source"
     },
     {
-      "candidate_id": "oa-index-cf244270ba1aec90c350",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-d0635be1ed1020408065",
       "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-de1f52ee525c73d565a6",
-      "reason": "unknown_work_needs_authority_data"
     },
     {
       "candidate_id": "oa-index-ffbe120c526a352bc59c",
@@ -64,27 +48,11 @@
       "reason": "incomplete_work_editorial"
     },
     {
-      "candidate_id": "oa-index-991f446bf3f27044b019",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-c7a26f1f7611da36ad2a",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-cf244270ba1aec90c350",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-de1f52ee525c73d565a6",
-      "reason": "incomplete_work_editorial"
-    },
-    {
       "candidate_id": "oa-index-ffbe120c526a352bc59c",
       "reason": "incomplete_work_editorial"
     }
   ],
-  "new_works": 0,
+  "new_works": 4,
   "enriched_recite_times": 0,
   "normalized_work_titles": 0
 }

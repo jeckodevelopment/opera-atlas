@@ -811,6 +811,46 @@
         "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
         "https://www.donizettiopera.org/it/opere-2026/"
       ]
+    },
+    "cristoforo-colombo": {
+      "librettist": "Luigi Illica",
+      "premiere_year": 1892,
+      "premiere_venue": "Teatro Carlo Felice",
+      "premiere_city": "Genova",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000053328",
+        "https://associazionealbertofranchetti.com/opere/opere-liriche/cristoforo-colombo/strutturaetrama/"
+      ]
+    },
+    "il-signor-bruschino": {
+      "librettist": "Giuseppe Foppa",
+      "premiere_year": 1813,
+      "premiere_venue": "Teatro San Moisè",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.rossinioperafestival.it/soggetti/il-signor-bruschino/",
+        "https://corago.unibo.it/opera/Z000013626"
+      ]
+    },
+    "alzira": {
+      "librettist": "Salvadore Cammarano",
+      "premiere_year": 1845,
+      "premiere_venue": "Teatro San Carlo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000023114",
+        "https://archiviostorico.operaroma.it/opera/alzira/"
+      ]
+    },
+    "il-ratto-dal-serraglio": {
+      "librettist": "Johann Gottlieb Stephanie",
+      "premiere_year": 1782,
+      "premiere_venue": "Burgtheater",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/il-ratto-dal-serraglio/",
+        "https://www.operaamerica.org/calendar/production/22346/the-abduction-from-the-seraglio"
+      ]
     }
   },
   "works_by_id": {
