@@ -1,0 +1,57 @@
+name: San Carlo secondary single-source dry-run
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/san-carlo-secondary-dry-run.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: san-carlo-secondary-dry-run
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run only San Carlo secondary parser tests
+        run: python -m unittest discover -s tests -p 'test_san_carlo_secondary_probe.py' -v
+      - name: Fetch the secondary calendar and validate candidates without publishing
+        run: |
+          python -m scripts.scan_san_carlo_secondary --allow-network --dry-run > "$RUNNER_TEMP/san-carlo-secondary.json"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          d = json.loads((Path(os.environ["RUNNER_TEMP"]) / "san-carlo-secondary.json").read_text())
+          if not d["dry_run"] or d["published"] or d["source_role"] != "secondary_unverified":
+              raise SystemExit("unsafe secondary scan output")
+          entries = d["productions"]
+          lines = [
+              "## San Carlo secondary calendar — isolated dry-run",
+              "",
+              f"- Candidate productions: {d['production_count']}",
+              f"- Candidate recite: {d['performance_count']}",
+              "- Status: candidates only, primary corroboration required",
+              "- Other theatres scanned: 0",
+              "- Published records: 0",
+              "",
+              "| Opera | Candidate recite |",
+              "|---|---:|",
+          ]
+          for item in entries:
+              lines.append(f"| {item['title'].replace('|','/')} | {len(item['performances'])} |")
+          message = "\n".join(lines) + "\n"
+          print(message)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:
+              out.write(message)
+          PY
