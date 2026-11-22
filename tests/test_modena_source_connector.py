@@ -55,6 +55,16 @@ class ModenaSourceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             exact_day("martedì","8","gennaio",None)
 
+    def test_future_municipal_season_is_not_pinned_to_2026(self):
+        future_url="https://www.comune.modena.it/vivere-modena/eventi/2027/stagione-opera-2027-2028/siberia-di-umberto-giordano"
+        future_html=fixture(times="sabato 8 gennaio ore 20.00; lunedì 10 gennaio ore 15.30")
+        title,composer,venue,recite=parse_detail(future_html,url=future_url)
+        self.assertEqual(recite,[("2028-01-08","20:00"),("2028-01-10","15:30")])
+        with self.assertRaises(ValueError):
+            parse_detail(future_html,url=future_url.replace("2027-2028","2027-2029"))
+        with self.assertRaises(ValueError):
+            parse_detail(fixture(),url=future_url)
+
     def test_mismatched_venue_unknown_author_and_bad_times_fail(self):
         with self.assertRaises(ValueError):
             parse_detail(fixture(venue="Teatro Michelangelo"),url=DETAIL)
