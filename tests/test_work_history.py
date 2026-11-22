@@ -18,7 +18,7 @@ class OperaHistoryTests(unittest.TestCase):
         history=json.loads((SITE/"work-history.json").read_text(encoding="utf-8"))
         self.assertEqual(history["schema_version"],1)
         registry=json.loads((ROOT/"data/identity-registry.json").read_text(encoding="utf-8"))
-        canonical_by_id={w["id"]:w for w in registry["works"].values()}
+        canonical_by_id={w["id"]:w for w in list(registry["works"].values())+list(registry["reserved_works"].values())}
         approved=[x for x in validate_config(json.loads(CONFIG.read_text(encoding="utf-8")))
                   if x["access_status"]=="approved"]
         import re
@@ -26,6 +26,15 @@ class OperaHistoryTests(unittest.TestCase):
             historical=history.get("works_by_id",{}).get(item["id"],
                          history["works"].get(item["slug"]))
             if historical is not None:continue
+            if item["id"] in {w["id"] for w in registry["reserved_works"].values()}:
+                # Verified program-only works have their authoritative
+                # source-backed history in the published editorial feed.
+                doc=json.loads((ROOT/"public/catalog/work-editorial.json").read_text(encoding="utf-8"))
+                profile=next((w for w in doc["works"] if w["work_id"]==item["id"]),None)
+                from scripts.publish_work_editorial import validate_history
+                self.assertIsNotNone(profile)
+                self.assertTrue(validate_history(profile["history"]))
+                continue
             # A verified identity without known premiere information is
             # permitted. Never invent a history for a newly sourced opera.
             canonical=canonical_by_id[item["id"]]
