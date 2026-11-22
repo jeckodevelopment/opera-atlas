@@ -24,7 +24,7 @@ PROGRAMS = ROOT / "public/catalog/programs.json"
 OUTPUT = ROOT / "public/catalog/live-publication-health.json"
 
 
-def targets(manifest: dict, works: dict, stagings: dict, performances: dict,
+def targets(manifest: dict, works: dict, venues: dict, stagings: dict, performances: dict,
             programs: dict) -> list[dict]:
     """Check every published solo staging and composite program, once each."""
     by_work = {item["id"]: item for item in works["works"]}
@@ -48,6 +48,18 @@ def targets(manifest: dict, works: dict, stagings: dict, performances: dict,
             "route": "/programmi/" + program["id"] + "/",
             "expected_recite": len(program["performances"]),
         })
+    for work in works["works"]:
+        slug = work.get("route_slug") or work.get("slug")
+        if slug:
+            output.append({"id": work["id"], "type": "work", "work_id": work["id"],
+                           "title": work["title"], "venue_id": None,
+                           "route": "/opere/" + slug + "/", "expected_recite": None})
+    for venue in venues["venues"]:
+        if venue.get("city_slug") and venue.get("slug"):
+            output.append({"id": venue["id"], "type": "venue", "work_id": None,
+                           "title": venue["name"], "venue_id": venue["id"],
+                           "route": "/" + venue["city_slug"] + "/" + venue["slug"] + "/",
+                           "expected_recite": None})
     output.sort(key=lambda x: (x["type"], x["id"]))
     if len({x["route"] for x in output}) != len(output):
         raise ValueError("duplicate public routes in audit targets")
@@ -85,8 +97,8 @@ def read_targets() -> tuple[list[dict], str]:
         return json.loads(path.read_text(encoding="utf-8"))
     manifest = load(CATALOG / "manifest.json")
     docs = {key: load(CATALOG / manifest["files"][key]["path"])
-            for key in ("works", "stagings", "performances")}
-    return targets(manifest, docs["works"], docs["stagings"],
+            for key in ("works", "venues", "stagings", "performances")}
+    return targets(manifest, docs["works"], docs["venues"], docs["stagings"],
                    docs["performances"], load(PROGRAMS)), manifest["files"]["stagings"]["sha256"]
 
 
@@ -103,7 +115,7 @@ async def scan(browser, candidate: dict, semaphore: asyncio.Semaphore) -> dict:
         title = kind = detail_status = None
         error = None
         try:
-            response = await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+            response = await page.goto(url, wait_until="domcontentloaded", timeout=15000)
             http = response.status if response else None
             if http == 200:
                 await page.wait_for_function(
@@ -111,7 +123,7 @@ async def scan(browser, candidate: dict, semaphore: asyncio.Semaphore) -> dict:
                       const t=document.querySelector('#detail-title');
                       return t && t.textContent.trim() !== 'Caricamento…'
                     }""",
-                    timeout=30000,
+                    timeout=15000,
                 )
                 title = (await page.locator("#detail-title").inner_text()).strip()
                 kind = (await page.locator("#kind").inner_text()).strip()
@@ -120,9 +132,10 @@ async def scan(browser, candidate: dict, semaphore: asyncio.Semaphore) -> dict:
             error = type(exc).__name__
         finally:
             await context.close()
+        expected_kinds = {"staging": "Produzione", "program": "Programma composto",
+                          "work": "Opera del repertorio", "venue": "Teatro"}
         state = classify(http, title, kind, detail_status or "", candidate["title"],
-                         "Produzione" if candidate["type"] == "staging" else "Programma composto",
-                         error=error)
+                         expected_kinds[candidate["type"]], error=error)
         return {
             "id": candidate["id"], "type": candidate["type"],
             "venue_id": candidate["venue_id"], "title": candidate["title"],
@@ -137,7 +150,7 @@ async def execute(limit: int = 0) -> dict:
     items, catalog_sha = read_targets()
     if limit:
         items = items[:limit]
-    with_limit = asyncio.Semaphore(4)
+    with_limit = asyncio.Semaphore(8)
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
         try:
@@ -150,8 +163,8 @@ async def execute(limit: int = 0) -> dict:
         "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "catalog_release_sha256": catalog_sha,
         "site": BASE,
-        "scope": "browser_rendered_production_routes_current_catalog",
-        "definition": "Browser-rendered presence of every catalogued production/program; does not certify all seasons or ticket availability. HTTP/network failures are non-conclusive unless a route or content absence is independently observed.",
+        "scope": "browser_rendered_catalog_routes_current_release",
+        "definition": "Browser-rendered presence of catalogued works, venues, stagings and programs; does not certify all seasons or ticket availability. HTTP/network failures are non-conclusive unless a route or content absence is independently observed.",
         "total_checked": len(results),
         "totals": dict(sorted(counts.items())),
         "results": results,
