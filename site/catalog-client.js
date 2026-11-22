@@ -207,7 +207,7 @@ window.OperaAtlasCatalog = (() => {
       };
     });
     const programs=await programPerformances(base,byWork,byVenue,performances);
-    return {schema_version:1,performances:[...performances,...programs],
+    return {schema_version:1,works,performances:[...performances,...programs],
       source:"github",reviewed_on:manifest.reviewed_on,warning:groupWarning};
   }
 
