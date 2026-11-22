@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "vicenza-olimpico-rolling-opera":("Vicenza","Teatro Olimpico"),
     "cosenza-rendano-rolling-opera":("Cosenza","Teatro Alfonso Rendano"),
     "mantova-sociale-rolling-opera":("Mantova","Teatro Sociale di Mantova"),
     "napoli-san-carlo-rolling-opera":("Napoli","Teatro di San Carlo"),
