@@ -86,6 +86,11 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
         self.assertEqual(result["evergreen_dynamic_category"],18)
         self.assertEqual(result["evergreen_fixed_production_set"],11)
         self.assertEqual(result["evergreen_historical_notice"],2)
+        self.assertEqual(result["evergreen_fixed_covered"],10)
+        self.assertEqual(result["evergreen_fixed_uncovered"],1)
+        self.assertEqual(result["evergreen_fixed_covered"]+
+                         result["evergreen_fixed_uncovered"],
+                         result["evergreen_fixed_production_set"])
         self.assertEqual(result["evergreen_dynamic_category"]+
                          result["evergreen_fixed_production_set"]+
                          result["evergreen_historical_notice"],
@@ -120,6 +125,44 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
             with self.subTest(mode=mode),self.assertRaises(ValueError):
                 build(self.config,self.policy,{"sources":[]},{"outcomes":[]},
                       evergreen_audit=changed)
+
+    def test_fixed_title_successors_leave_only_lecce_uncovered(self):
+        from scripts.season_lifecycle_health import EVERGREEN_AUDIT
+        audit=json.loads(EVERGREEN_AUDIT.read_text(encoding="utf-8"))
+        result=build(self.config,self.policy,{"sources":[]},{"outcomes":[]},
+                     evergreen_audit=audit)
+        indexed={x["source_key"]:x for x in result["sources"]}
+        missing=[x["source_key"] for x in result["sources"]
+                 if x["evergreen_reusability"]=="fixed_production_set"
+                 and not x["fixed_source_successor_key"]]
+        self.assertEqual(missing,["lecce-politeama-opera-2026"])
+        self.assertEqual(indexed["goldoni-livorno-dido-2026-27"]["fixed_source_successor_key"],
+                         "goldoni-livorno-rolling-lirica")
+        self.assertEqual(indexed["sassari-de-carolis-opera-2026"]["fixed_source_successor_key"],
+                         "sassari-de-carolis-rolling-opera")
+        self.assertFalse(indexed["sassari-de-carolis-opera-2026"]["future_season_verified"])
+
+    def test_invalid_fixed_title_successor_requires_real_dynamic_parser(self):
+        from scripts.season_lifecycle_health import EVERGREEN_AUDIT
+        audit=json.loads(EVERGREEN_AUDIT.read_text(encoding="utf-8"))
+        key="sassari-de-carolis-opera-2026"
+        for invalid in ("missing-key","scala-season-2026-27",
+                        "goldoni-livorno-dido-2026-27",key):
+            changed=copy.deepcopy(audit)
+            item=next(x for x in changed["sources"] if x["source_key"]==key)
+            item["successor_source_key"]=invalid
+            with self.subTest(target=invalid),self.assertRaises(ValueError):
+                build(self.config,self.policy,{"sources":[]},{"outcomes":[]},
+                      evergreen_audit=changed)
+        changed=copy.deepcopy(audit)
+        item=next(x for x in changed["sources"] if x["source_key"]==key)
+        item.pop("successor_source_key")
+        other=next(x for x in changed["sources"]
+                   if x["source_key"]=="arena-festival-2027")
+        other["successor_source_key"]="sassari-de-carolis-rolling-opera"
+        with self.assertRaises(ValueError):
+            build(self.config,self.policy,{"sources":[]},{"outcomes":[]},
+                  evergreen_audit=changed)
 
     def test_invalid_successor_mappings_fail_closed(self):
         from scripts.season_lifecycle_health import SUCCESSORS

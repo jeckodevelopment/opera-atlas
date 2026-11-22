@@ -25,7 +25,8 @@
     {
       "source_key": "coccia-novara-opera-2027",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "coccia-novara-rolling-opera"
     },
     {
       "source_key": "coccia-novara-rolling-opera",
@@ -35,7 +36,8 @@
     {
       "source_key": "filarmonico-verona-opera-2027",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "filarmonico-verona-rolling-opera"
     },
     {
       "source_key": "filarmonico-verona-rolling-opera",
@@ -45,17 +47,20 @@
     {
       "source_key": "goldoni-livorno-dido-2026-27",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "goldoni-livorno-rolling-lirica"
     },
     {
       "source_key": "goldoni-livorno-elisir-2026-27",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "goldoni-livorno-rolling-lirica"
     },
     {
       "source_key": "goldoni-livorno-otello-2026-27",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "goldoni-livorno-rolling-lirica"
     },
     {
       "source_key": "goldoni-livorno-rolling-lirica",
@@ -80,7 +85,8 @@
     {
       "source_key": "macerata-festival-2027",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "macerata-festival-rolling"
     },
     {
       "source_key": "modena-teatro-opera-2026-27",
@@ -105,12 +111,14 @@
     {
       "source_key": "pisa-verdi-opera-2026-27",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "pisa-future-calendar"
     },
     {
       "source_key": "ravenna-alighieri-cherubini-2027",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "ravenna-cherubini-rolling-opera"
     },
     {
       "source_key": "ravenna-cherubini-rolling-opera",
@@ -130,7 +138,8 @@
     {
       "source_key": "salerno-verdi-opera-2026",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "salerno-verdi-rolling-opera"
     },
     {
       "source_key": "salerno-verdi-rolling-opera",
@@ -140,7 +149,8 @@
     {
       "source_key": "sassari-de-carolis-opera-2026",
       "scope": "fixed_production_set",
-      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered."
+      "evidence": "The active detail eligibility or historical per-production parser restricts which works can be discovered.",
+      "successor_source_key": "sassari-de-carolis-rolling-opera"
     },
     {
       "source_key": "sassari-de-carolis-rolling-opera",

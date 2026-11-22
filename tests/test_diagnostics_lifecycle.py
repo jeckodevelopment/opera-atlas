@@ -48,7 +48,10 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn("evergreen_dynamic_category",text)
         self.assertIn("evergreen_fixed_production_set",text)
         self.assertIn("evergreen_historical_notice",text)
-        self.assertIn("Titoli fissati · non pluriennale",text)
+        self.assertIn("Titoli fissati · da migrare",text)
+        self.assertIn("Titoli storici · successore implementato",text)
+        self.assertIn("evergreen_fixed_covered",text)
+        self.assertIn("evergreen_fixed_uncovered",text)
         self.assertIn("Documento storico · non pluriennale",text)
         self.assertIn("futuro da verificare",text)
 
