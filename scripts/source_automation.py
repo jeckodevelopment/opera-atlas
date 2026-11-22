@@ -40,6 +40,7 @@ INDEX_VENUES = {
     "lirico-cagliari-opera-2027": ("Cagliari|Teatro Lirico di Cagliari",),
     "bellini-catania-opera-2026-27": ("Catania|Teatro Massimo Bellini",),
     "modena-teatro-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
+    "chieti-marrucino-lirica-2026": ("Chieti|Teatro Marrucino",),
     "modena-opera-2026-27": ("Modena|Teatro Comunale Pavarotti-Freni",),
     "giglio-lucca-opera-2026-27": ("Lucca|Teatro del Giglio Giacomo Puccini",),
     "piacenza-opera-2026-27": ("Piacenza|Teatro Municipale",),

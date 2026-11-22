@@ -29,6 +29,7 @@ VENUE_BY_SOURCE={
     "lirico-cagliari-opera-2027":("Cagliari","Teatro Lirico di Cagliari"),
     "bellini-catania-opera-2026-27":("Catania","Teatro Massimo Bellini"),
     "modena-teatro-opera-2026-27":("Modena","Teatro Comunale Pavarotti-Freni"),
+    "chieti-marrucino-lirica-2026":("Chieti","Teatro Marrucino"),
     "modena-opera-2026-27":("Modena","Teatro Comunale Pavarotti-Freni"),
     "giglio-lucca-opera-2026-27":("Lucca","Teatro del Giglio Giacomo Puccini"),
     "piacenza-opera-2026-27":("Piacenza","Teatro Municipale"),
@@ -300,7 +301,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Lecce":"Puglia","Padova":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
+    region={"Chieti":"Abruzzo","Lecce":"Puglia","Padova":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Cagliari":"Sardegna","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto"}.get(city)
     if region is None:
         raise ValueError("cannot provision venue without verified region")
     key=city+"|"+venue
@@ -385,6 +386,12 @@ _MULTI_WORK_SEASONS={
     "padova-verdi-opera-2026": {
         ("Pagliacci","Ruggero Leoncavallo"):2,
         ("La traviata","Giuseppe Verdi"):3,
+    },
+    "chieti-marrucino-lirica-2026": {
+        ("Le avventure di Pinocchio","Antonio Cericola"):1,
+        ("Turandot","Giacomo Puccini"):2,
+        ("Le nozze di Figaro","Wolfgang Amadeus Mozart"):2,
+        ("La traviata","Giuseppe Verdi"):2,
     },
 }
 
