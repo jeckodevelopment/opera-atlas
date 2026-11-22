@@ -27,7 +27,9 @@ def parse_detail(html:str,*,url:str):
     if not match or match.group(1) not in WORKS:
         raise ValueError("unknown official Pisa season opera")
     title,composer,year=WORKS[match.group(1)]
-    text=clean(html)
+    # Date rows use h4; the shared VisibleText preserves their content but
+    # does not separate adjacent h4 tags. Insert an explicit boundary.
+    text=clean(re.sub(r"(?i)</h[4-6]>", " </h4> ", html))
     if not re.search(r"(?i)\bMusica di\s+"+re.escape(composer)+r"\b",text):
         raise ValueError("official composer credit missing")
     if not re.search(r"(?i)\bTeatro Verdi di Pisa\b",text):
