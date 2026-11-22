@@ -1073,7 +1073,11 @@
       "monitoring_status": "programma_censito",
       "address": "Via Antonino di Sangiuliano 233",
       "history": "Inaugurato nel 1900, il Teatro Sangiorgi entrò nella disponibilità dell'Ente Teatro Massimo Bellini nel 1988. Dopo il recupero, è stato restituito alla città nel 2002 come spazio dedicato a musica da camera, operetta, prosa e sperimentazione.",
-      "calendar_status": "acquired"
+      "calendar_status": "acquired",
+      "photo_file": "Fasada teatru sangiorgi.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Fasada_teatru_sangiorgi.jpg",
+      "photo_credit": "Panek / Wikimedia Commons — CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     },
     {
       "id": "oa-v-000031",
@@ -1090,7 +1094,11 @@
       "monitoring_status": "programma_censito",
       "address": "Corso Cairoli 1",
       "history": "Il Politeama Ariosto fu inaugurato l’11 maggio 1878 con l’operetta Giroflè-Giroflà di Charles Lecocq, dopo la ricostruzione nell’area del precedente Teatro di Cittadella. Nel 1927 venne dotato del golfo mistico e decorato da Anselmo Govi; un nuovo restauro nel 1981 lo riportò a piena attività. Accoglie oggi prosa, danza e anche produzioni musicali.",
-      "calendar_status": "acquired"
+      "calendar_status": "acquired",
+      "photo_file": "Reggio nell'Emilia - Teatro Ariosto - 2023-09-16 15-23-40 001.jpeg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Reggio_nell%27Emilia_-_Teatro_Ariosto_-_2023-09-16_15-23-40_001.jpeg",
+      "photo_credit": "EnveR / Wikimedia Commons — CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0"
     }
   ],
   "related_organizations": [
