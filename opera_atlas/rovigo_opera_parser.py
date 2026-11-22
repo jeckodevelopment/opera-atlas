@@ -16,6 +16,7 @@ HOST="www.comune.rovigo.it"
 PATH="/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027"
 VENUE="Teatro Sociale"
 # Never infer a composite programme or composer from an homonymous title.
+# Operettas such as Il pipistrello are outside the lyric-opera catalogue.
 WORKS={
     "Pagliacci":"Ruggero Leoncavallo",
     "Pimpinone":"Tomaso Albinoni",
@@ -24,7 +25,6 @@ WORKS={
     "La Cenerentola":"Gioachino Rossini",
     "Il telefono":"Gian Carlo Menotti",
     "Trouble in Tahiti":"Leonard Bernstein",
-    "Il pipistrello":"Johann Strauss II",
 }
 DATE=re.compile(
     r"(?i)\b(\d{1,2})\s+"

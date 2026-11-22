@@ -20,3 +20,22 @@ python -m scripts.source_automation --check
 ```
 
 Dopo il merge, la scansione effettiva è visibile in `data/season-index-health.json` e le candidate in `data/season-index-candidates.json`. Il feed diagnostico mantiene Modena in `configured_not_operational` fino alla prima scansione riuscita. Il successo dell'indice non è equivalente a tutte le recite pubblicate.
+
+## Perimetro lirico del catalogo (revisione 22/11/2026)
+
+Delle undici proposte del cartellone teatrale, **L'anno che verrà** è
+esplicitamente descritta dal Comune come *opera pop* costruita sulle canzoni
+di Lucio Dalla: la sorgente resta tracciabile, ma il candidato è classificato
+`excluded_nonopera` e non deve entrare nel catalogo lirico.
+
+**I salvatori della mezzanotte** è descritta come opera commissionata a
+Daniele Furlati: resta in revisione editoriale per la creazione della sua
+identità canonica e della scheda, senza pubblicazione prematura. **Vanishings
+– Disparition(s)** fonde musiche di Leoš Janáček e Thomas Adès: prima di
+pubblicare occorre accertare se si tratti di un programma composito di opere
+liriche autonome; non si deve assegnare arbitrariamente un unico autore o
+creare una nuova opera canonica con un credito misto.
+
+La fonte primaria del teatro /opera/ ha dato 11 link verificati nella scansione
+del 22/11/2026; la fonte comunale secondaria è risultata indisponibile.
+Gli stati di acquisizione non equivalgono a recite pubblicate.

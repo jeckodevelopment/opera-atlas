@@ -48,3 +48,13 @@ le singole date e riconciliarle tramite la pipeline centrale. L'URL
 comunale relativo al 2026/27 rimane una fonte storica separata.
 
 Test: `python -m unittest tests.test_rovigo_regional_program -v`.
+
+## Perimetro editoriale lirico
+
+`Il pipistrello` (*Die Fledermaus*) di Johann Strauss II è un'**operetta**:
+resta fuori dal parser di opere liriche, anche se un cartellone municipale
+misto la presenta con data e orario. Il dittico *The Telephone / Trouble in
+Tahiti* deve restare un unico evento di programma con componenti d'opera
+distinte e non va pubblicato duplicando il biglietto. La scansione regionale
+attualmente individua il documento PDF ma non contiene ancora le singole
+recite verificate: la copertura del teatro rimane parziale.
