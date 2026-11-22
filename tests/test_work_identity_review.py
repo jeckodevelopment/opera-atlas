@@ -80,6 +80,21 @@ class IdentityReviewTests(unittest.TestCase):
         self.assertEqual(result["totals"]["unmatched_groups"],1)
         self.assertEqual(result["groups"][0]["title"],"L'esecuzione")
 
+    def test_already_catalogued_alternative_title_does_not_reopen_identity(self):
+        # Der fliegende Holländer may have a longer official heading than
+        # the canonical work, but its exact verified source is published.
+        item=candidate("modena","Der fliegende Holländer (L’olandese volante)",
+                       "Richard Wagner")
+        states={"schema_version":1,"candidates":[
+            {"id":"modena","status":"already_catalogued"}]}
+        report=evaluate({"schema_version":1,"evidence":[item]},REG,states)
+        self.assertEqual(report["totals"]["unmatched_groups"],0)
+        self.assertEqual(report["totals"]["candidates_checked"],0)
+        # Pending work of the same title still needs review.
+        states["candidates"][0]["status"]="needs_review"
+        report=evaluate({"schema_version":1,"evidence":[item]},REG,states)
+        self.assertEqual(report["totals"]["unmatched_groups"],1)
+
     def test_reconciled_ticket_is_not_reported_as_missing_composer(self):
         # Only independently proven source URLs may leave this diagnostic.
         evidence={"schema_version":1,"evidence":[
