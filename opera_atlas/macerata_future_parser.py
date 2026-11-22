@@ -147,13 +147,14 @@ def parse_detail(html:str,*,url:str):
         text[:1750])
     if not credit:
         raise ValueError("first-party composer credit of Macerata opera missing")
-    composer=credit[1].strip(" .")
+    composer=re.sub(r"(?i)\\s+su$","",credit[1]).strip(" .")
     if any(x in composer.casefold().split() for x in
            ("non","ignoto","sconosciuto","anonimo","vari","diversi","e","un")):
         raise ValueError("ambiguous Macerata composer credit")
     section=text[credit.end():]
-    boundary=re.search(r"(?i)\bCast\b|\bGli appuntamenti in cartellone\b",section)
-    if not boundary:
+    boundary=re.search(r"(?i)\bCast\b",section)
+    linked_programme=re.search(r"(?i)\bGli appuntamenti in cartellone\b",section)
+    if not boundary or not linked_programme or boundary.start()>=linked_programme.start():
         raise ValueError("unbounded Macerata work-specific booking dates")
     booking=section[:boundary.start()]
     if CANCELLED.search(booking):
