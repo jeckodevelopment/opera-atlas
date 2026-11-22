@@ -1,9 +1,11 @@
 """Publication diagnostics: only newly published work/staging identities notify."""
 import json
+import io
+import urllib.error
 import unittest
 from pathlib import Path
 from unittest.mock import patch, MagicMock
-from scripts.notify_publications import new_entities, send, parse_recipients
+from scripts.notify_publications import new_entities, send, parse_recipients, safe_resend_error
 from scripts.notification_email import render_email
 
 
@@ -84,6 +86,36 @@ class PublicationNotificationsTest(unittest.TestCase):
         notice = new_entities(self.before, self.after)
         selected = {"oa-w-1", "oa-w-unpublished"}
         self.assertEqual([n["id"] for n in notice if n["id"] in selected], ["oa-w-1"])
+
+    def test_resend_403_reports_structured_code_but_never_message_or_email(self):
+        body = json.dumps({
+            "name": "validation_error",
+            "message": "Cannot send from private@example.org with bearer re_SECRET",
+        }).encode("utf-8")
+        error = urllib.error.HTTPError(
+            "https://api.resend.com/emails", 403, "Forbidden", {}, io.BytesIO(body)
+        )
+        diagnosis = safe_resend_error(error)
+        self.assertIn("403", diagnosis)
+        self.assertIn("validation_error", diagnosis)
+        self.assertNotIn("private@example.org", diagnosis)
+        self.assertNotIn("re_SECRET", diagnosis)
+
+    def test_resend_error_ignores_untrusted_or_malformed_code(self):
+        error = urllib.error.HTTPError(
+            "https://api.resend.com/emails", 403, "Forbidden", {},
+            io.BytesIO(b'{"name":"sensitive@example.org"}')
+        )
+        diagnosis = safe_resend_error(error)
+        self.assertIn("403", diagnosis)
+        self.assertNotIn("sensitive@example.org", diagnosis)
+
+    def test_resend_error_handles_non_json_body(self):
+        error = urllib.error.HTTPError(
+            "https://api.resend.com/emails", 403, "Forbidden", {},
+            io.BytesIO(b"some raw private content")
+        )
+        self.assertEqual(safe_resend_error(error), "Resend HTTP 403, response code unavailable")
 
     def test_multiple_secret_recipients_are_trimmed_and_deduplicated(self):
         self.assertEqual(parse_recipients(" one@example.org, two@example.org\nONE@example.org"),

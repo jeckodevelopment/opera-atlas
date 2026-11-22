@@ -82,6 +82,22 @@ def parse_recipients(config: str) -> list[str]:
     return recipients
 
 
+def safe_resend_error(error: urllib.error.HTTPError) -> str:
+    """Report only bounded, non-sensitive Resend error codes.
+
+    The response can contain addresses, request payloads or tokens, so never
+    print its free-form message or raw JSON in GitHub Actions logs.
+    """
+    try:
+        response = json.loads(error.read(8192).decode("utf-8"))
+    except (ValueError, UnicodeDecodeError, OSError):
+        response = {}
+    code = response.get("name") or response.get("code") if isinstance(response, dict) else None
+    if isinstance(code, str) and len(code) <= 80 and all(char.isalnum() or char in "_-" for char in code):
+        return f"Resend HTTP {error.code}, error code: {code}"
+    return f"Resend HTTP {error.code}, response code unavailable"
+
+
 def send(notice: dict, api_key: str, sender: str, recipients: list[str]) -> None:
     from scripts.notification_email import render_email
     subject = f"[Opera+ Atlas] {notice['kind']}: {notice['title']}"
@@ -152,9 +168,12 @@ def main() -> int:
         try:
             send(notice, api_key, sender, recipients)
             print(f"Resend accepted notification for {notice['kind']} {notice['id']}")
+        except urllib.error.HTTPError as exc:
+            failed += 1
+            print(f"::warning::Notification for {notice['id']} failed: {safe_resend_error(exc)}", file=sys.stderr)
         except (urllib.error.URLError, TimeoutError, RuntimeError) as exc:
             failed += 1
-            print(f"::warning::Notification for {notice['id']} failed: {exc}", file=sys.stderr)
+            print(f"::warning::Notification for {notice['id']} failed: {type(exc).__name__}", file=sys.stderr)
     if failed:
         print(f"::warning::{failed} publication notifications failed; catalog remains published.")
     return 0
