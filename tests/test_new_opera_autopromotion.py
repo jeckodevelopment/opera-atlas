@@ -161,6 +161,33 @@ class NewOperaPromotionTests(unittest.TestCase):
         }]}
         return evidence,candidates,enrichment
 
+    def test_exact_jesi_alternate_official_art_requires_provenance(self):
+        from scripts.auto_catalogue import verified_candidate_image
+        index=("https://www.fondazionepergolesispontini.com/"
+               "lirica/programma-stagione-lirica-2026/")
+        dedicated=("https://www.fondazionepergolesispontini.com/"
+                   "eventi/lesecuzione-sotto-lo-sguardo-di-tosca-2/")
+        image={"kind":"official_production_image",
+               "source_url":dedicated,
+               "image_url":"https://www.fondazionepergolesispontini.com/wp-content/uploads/2026/11/lesecuzione-bollo.jpg",
+               "credit":"Fondazione Pergolesi Spontini",
+               "alt":"L'esecuzione, locandina"}
+        record={"source_key":"jesi-esecuzione-opera-2026",
+                "source_url":index,"poster_evidence":image}
+        result=verified_candidate_image(
+            record,title="L'esecuzione",composer="Salvatore Passantino",url=index)
+        self.assertIsNotNone(result)
+        self.assertEqual(result["source_url"],dedicated)
+        for invalid in [
+            {**record,"source_key":"jesi-don-pasquale-opera-2026"},
+            {**record,"poster_evidence":{**image,"source_url":"https://untrusted.example/poster"}},
+            {**record,"poster_evidence":{**image,"image_url":"https://www.fondazionepergolesispontini.com/images/tosca.jpg"}},
+        ]:
+            self.assertIsNone(verified_candidate_image(
+                invalid,title="L'esecuzione",composer="Salvatore Passantino",url=index))
+        self.assertIsNone(verified_candidate_image(
+            record,title="L'esecuzione",composer="Giacomo Puccini",url=index))
+
     def test_new_work_is_deferred_until_authentic_poster_is_verified(self):
         evidence,candidates,enrichment=self.fixture()
         skipped=promote_new_works(
