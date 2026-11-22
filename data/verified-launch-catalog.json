@@ -6097,6 +6097,25 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-7ff44b89bf8d688b",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027",
+      "dates": [
+        [
+          "2027-01-22",
+          "20:30"
+        ],
+        [
+          "2027-01-24",
+          "16:00"
+        ]
+      ]
     }
   ]
 }

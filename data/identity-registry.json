@@ -1026,6 +1026,14 @@
       "name": "Gran Teatro Giacomo Puccini",
       "city": "Torre del Lago Puccini",
       "region": "Toscana"
+    },
+    "Rovigo|Teatro Sociale": {
+      "id": "oa-v-000050",
+      "slug": "teatro-sociale",
+      "city_slug": "rovigo",
+      "name": "Teatro Sociale",
+      "city": "Rovigo",
+      "region": "Veneto"
     }
   },
   "stagings": {
@@ -2798,6 +2806,14 @@
       "venue_id": "oa-v-000023",
       "slug": "candide",
       "source_url": "https://www.liricocagliari.it/evento/candide/",
+      "season": "2027"
+    },
+    "auto-7ff44b89bf8d688b": {
+      "id": "oa-s-000228",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000050",
+      "slug": "la-traviata",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027",
       "season": "2027"
     }
   },
@@ -8297,6 +8313,18 @@
       "staging_id": "oa-s-000227",
       "original_date": "2027-11-03",
       "source_url": "https://www.liricocagliari.it/evento/candide/"
+    },
+    "auto-7ff44b89bf8d688b|2027-01-22": {
+      "id": "oa-r-000938",
+      "staging_id": "oa-s-000228",
+      "original_date": "2027-01-22",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027"
+    },
+    "auto-7ff44b89bf8d688b|2027-01-24": {
+      "id": "oa-r-000939",
+      "staging_id": "oa-s-000228",
+      "original_date": "2027-01-24",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027"
     }
   },
   "reserved_works": {
