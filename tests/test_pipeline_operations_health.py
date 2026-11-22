@@ -71,6 +71,26 @@ class PipelineOperationsHealthTests(unittest.TestCase):
         ], NOW, 24)
         self.assertEqual(report2["status"], "attention")
 
+    def test_workflow_history_fetches_second_page_when_24h_has_over_100_runs(self):
+        from unittest.mock import patch
+        from scripts.pipeline_operations_health import github_runs
+        import io
+        import json
+        from urllib.parse import parse_qs, urlsplit
+        calls = []
+        def fake_open(request, timeout):
+            page = int(parse_qs(urlsplit(request.full_url).query)["page"][0])
+            calls.append(page)
+            stamp = (NOW - timedelta(minutes=10)).isoformat()
+            entries = [{"created_at":stamp, "status":"completed",
+                        "conclusion":"success"} for _ in range(100 if page == 1 else 5)]
+            return io.BytesIO(json.dumps({"workflow_runs": entries}).encode())
+        with patch("scripts.pipeline_operations_health.urlopen", side_effect=fake_open):
+            rows = github_runs("refresh-catalog.yml", token="test-token",
+                               repository="jeckodevelopment/opera-atlas", now=NOW)
+        self.assertEqual(len(rows), 105)
+        self.assertEqual(calls, [1, 2])
+
     def test_conflicting_snapshot_inputs_are_not_rebased(self):
         self.assertTrue(conflicting(["data/season-index-candidates.json"]))
         self.assertTrue(conflicting(["public/catalog/candidate-publication-evidence.json"]))
