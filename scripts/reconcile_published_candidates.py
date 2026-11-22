@@ -190,6 +190,47 @@ def verified_shared_page_identities(candidates:dict, detail:dict,
         by_url.setdefault(product.get("source_url"),[]).append(product)
     by_program={(p.get("source_key"),p.get("source_url")):p
                 for p in programs.get("programs",[]) if isinstance(p,dict)}
+    # Two approved collectors may discover the identical individual event:
+    # the year-specific source and its year-independent successor. This is
+    # provenance duplication, NOT a season page containing multiple operas.
+    # Only exact known source-key pairs with one published production qualify.
+    source_aliases=(
+        frozenset({"filarmonico-verona-opera-2027",
+                   "filarmonico-verona-rolling-opera"}),
+        frozenset({"coccia-novara-opera-2027",
+                   "coccia-novara-rolling-opera"}),
+    )
+    grouped={}
+    for row in rows:
+        grouped.setdefault(row.get("official_url"),[]).append(row)
+    for url,discovered in grouped.items():
+        if (url not in ambiguous or len(discovered)!=2
+                or frozenset(x.get("source_key") for x in discovered)
+                   not in source_aliases
+                or len(by_url.get(url,[]))!=1):
+            continue
+        production=by_url[url][0]
+        # The staging must be real and dated; a mere identity-registry entry
+        # is not sufficient to retire a discovery candidate.
+        if not production.get("dates"):
+            continue
+        valid=True
+        for item in discovered:
+            observed=by_source.get((item["source_key"],url))
+            if not observed or not observed.get("event_facts"):
+                continue
+            for fact in observed["event_facts"]:
+                if (not isinstance(fact,dict)
+                    or normalized(fact.get("event_title","")) !=
+                       normalized(production.get("title",""))
+                    or normalized(fact.get("composer","")) !=
+                       normalized(production.get("composer",""))
+                    or fact.get("date") not in
+                       {d[0] for d in production["dates"]}):
+                    valid=False
+                    break
+        if valid:
+            published.update((item["source_key"],url) for item in discovered)
     for row in rows:
         key,url=row.get("source_key"),row.get("official_url")
         if url not in ambiguous:
