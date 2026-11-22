@@ -118,6 +118,28 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"ambiguous public staging URL"):
             assemble(changed,reg)
 
+    def test_jesi_don_pasquale_retains_one_canonical_work_and_two_recitals(self):
+        graph=assemble(self.facts,self.registry)
+        matching=[w for w in graph["works"] if w["id"]=="oa-w-000090"]
+        self.assertEqual(len(matching),1)
+        self.assertEqual((matching[0]["title"],matching[0]["composer"]),
+                         ("Don Pasquale","Gaetano Donizetti"))
+        stagings=[x for x in graph["stagings"] if x["id"]=="oa-s-000196"]
+        self.assertEqual(len(stagings),1)
+        self.assertEqual(stagings[0]["work_id"],"oa-w-000090")
+        self.assertEqual(len([x for x in graph["stagings"]
+                              if x["work_id"]=="oa-w-000090"]),1)
+        performances=[x for x in graph["performances"] if x["staging_id"]=="oa-s-000196"]
+        self.assertEqual({x["id"] for x in performances},
+                         {"oa-r-000863","oa-r-000864"})
+        self.assertEqual({x["date"] for x in performances},
+                         {"2026-10-30","2026-10-31"})
+        facts=[x for x in self.facts["productions"]
+               if x["title"]=="Don Pasquale" and x["municipality"]=="Jesi"]
+        self.assertEqual(len(facts),1)
+        self.assertEqual(facts[0]["dates"],
+                         [["2026-10-30","20:30"],["2026-10-31","20:30"]])
+
     def test_deterministic_content_addressed_manifest(self):
         files1,manifest1=release_parts(self.facts,self.registry)
         files2,manifest2=release_parts(self.facts,self.registry)
