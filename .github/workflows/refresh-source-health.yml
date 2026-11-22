@@ -39,6 +39,7 @@ jobs:
           python -m scripts.discover_season_indexes --allow-network
           python -m scripts.source_automation
           python -m scripts.source_automation --check
+          python -c 'import json; p=json.load(open("data/season-index-health.json")); print("Source-health scan:",p.get("checked_at"),"sources:",len(p.get("sources",[])),"verified:",sum(s.get("current_scan_verified",False) for s in p.get("sources",[])))'
       - name: Persist fresh health and review-only candidate links
         id: checkpoint
         run: |
