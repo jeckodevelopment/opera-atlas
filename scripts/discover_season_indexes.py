@@ -302,6 +302,9 @@ class ScopedSeasonAnchors(HTMLParser):
 
 def eligible(key:str,url:str)->bool:
     parsed=urlsplit(url)
+    if key=="filarmonico-verona-rolling-opera":
+        from opera_atlas.verona_rolling_opera import eligible_detail
+        return eligible_detail(url)
     if key=="coccia-novara-rolling-opera":
         from opera_atlas.novara_future_parser import eligible_detail
         return eligible_detail(url)
@@ -566,6 +569,9 @@ def _donizetti_future_links(index_url:str,html:str,min_links:int)->list[str]:
 
 
 def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
+    if key=="filarmonico-verona-rolling-opera":
+        from opera_atlas.verona_rolling_opera import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="coccia-novara-rolling-opera":
         from opera_atlas.novara_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -709,6 +715,7 @@ def validate_config(config:dict)->list[dict]:
         "coccia-novara-opera-2027":("www.fondazioneteatrococcia.it","/spettacoli.html"),
         "coccia-novara-rolling-opera":("www.fondazioneteatrococcia.it","/spettacoli_opera_danza_concerti.html"),
         "filarmonico-verona-opera-2027":("www.arena.it","/teatro-filarmonico-verona/spettacoli-prossima-stagione/"),
+        "filarmonico-verona-rolling-opera":("www.arena.it","/prossime-stagioni/"),
         "pisa-verdi-opera-2026-27":("teatrodipisa.it","/tipologia-spettacolo/opera/"),
         "pisa-future-calendar":("teatrodipisa.it","/calendario/categoria/opera/elenco/"),
         "salerno-verdi-opera-2026":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
@@ -857,6 +864,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/spettacoli_opera_danza_concerti.html" and not index.query
         elif key=="coccia-novara-opera-2027":
             valid_season=index.path=="/spettacoli.html" and not index.query
+        elif key=="filarmonico-verona-rolling-opera":
+            valid_season=index.path=="/prossime-stagioni/" and not index.query
         elif key=="filarmonico-verona-opera-2027":
             valid_season=index.path=="/teatro-filarmonico-verona/spettacoli-prossima-stagione/" and not index.query
         elif key=="pisa-future-calendar":
