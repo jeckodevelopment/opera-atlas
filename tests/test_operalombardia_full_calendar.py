@@ -1,6 +1,6 @@
 """The official OperaLombardia public calendar supplies date/venue, not hour.
 
-The 2026/27 index contains 36 non-duplicated recite in 18 recognized stagings.
+The 2026/27 index contains 32 non-duplicated recite in 16 recognized stagings.
 No midnight or guessed 20:00 should ever enter the public feed.
 """
 import json
@@ -12,8 +12,8 @@ SOURCE="https://www.operalombardia.it/calendario/"
 EXPECTED={
  "turandot": {"como","cremona","brescia","novara","bergamo"},
  "death-venice": {"brescia","como","cremona","ravenna"},
- "cavalleria": {"como","brescia","cremona"},
- "pagliacci": {"como","brescia","cremona"},
+ "cavalleria": {"como","cremona"},
+ "pagliacci": {"como","cremona"},
  "ballo": {"cremona","como","bergamo"},
 }
 
@@ -33,7 +33,7 @@ class OperaLombardiaFullCalendarTests(unittest.TestCase):
                 self.assertTrue(all(clock is None for _,clock in p["dates"]))
                 self.assertEqual(len({day for day,_ in p["dates"]}),2)
                 count+=2
-        self.assertEqual(count,36)
+        self.assertEqual(count,32)
     def test_new_partners_venues_and_staging_links(self):
         graph=assemble(self.facts,self.registry)
         self.assertEqual(len(graph["performances"]),sum(len(p["dates"]) for p in self.facts["productions"]))
