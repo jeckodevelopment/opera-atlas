@@ -24,6 +24,18 @@ class CompositeProgramCheckpointOrderTests(unittest.TestCase):
                 self.assertLess(generator,suite)
                 self.assertNotIn("git push --force",yml)
 
+    def test_catalog_publishers_regenerate_v2_and_editorial_before_preflight(self):
+        for name in FILES:
+            with self.subTest(workflow=name):
+                yml=(ROOT/name).read_text(encoding="utf-8")
+                preflight=yml.split("python -m unittest discover -s tests -v",1)[0]
+                self.assertIn("python -m scripts.publish_catalog_v2",preflight)
+                self.assertIn("python -m scripts.publish_work_editorial",preflight)
+                self.assertLess(preflight.index("python -m scripts.publish_catalog_v2"),
+                                preflight.index("python -m scripts.publish_work_editorial"))
+        self.assertIn("workflow_dispatch:",
+                      (ROOT/FILES[2]).read_text(encoding="utf-8"))
+
     def test_frontend_sftp_deploy_regenerates_programs_but_does_not_upload_catalog(self):
         workflow=(ROOT/".github/workflows/deploy-atlas.yml").read_text(encoding="utf-8")
         created=workflow.index("python -m scripts.publish_programs")
