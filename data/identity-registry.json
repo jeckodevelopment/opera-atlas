@@ -7378,5 +7378,39 @@
       "original_date": "2026-12-06",
       "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/"
     }
+  },
+  "reserved_works": {
+    "don pasquale|gaetano donizetti": {
+      "id": "oa-w-000090",
+      "title": "Don Pasquale",
+      "composer": "Gaetano Donizetti",
+      "slug": "don-pasquale",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "il tabarro|giacomo puccini": {
+      "id": "oa-w-000091",
+      "title": "Il tabarro",
+      "composer": "Giacomo Puccini",
+      "slug": "il-tabarro",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "suor angelica|giacomo puccini": {
+      "id": "oa-w-000092",
+      "title": "Suor Angelica",
+      "composer": "Giacomo Puccini",
+      "slug": "suor-angelica",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    },
+    "gianni schicchi|giacomo puccini": {
+      "id": "oa-w-000093",
+      "title": "Gianni Schicchi",
+      "composer": "Giacomo Puccini",
+      "slug": "gianni-schicchi",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+    }
   }
 }
