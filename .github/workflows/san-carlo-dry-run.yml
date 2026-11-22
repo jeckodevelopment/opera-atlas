@@ -1,0 +1,58 @@
+name: San Carlo isolated connector dry-run
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/san-carlo-dry-run.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: san-carlo-dry-run
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - name: Checkout source connector
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Validate the one connector locally
+        run: python -m unittest discover -s tests -p 'test_napoli_san_carlo.py' -v
+      - name: One-source live dry-run (no catalog changes)
+        run: |
+          python -m scripts.discover_season_indexes \
+            --allow-network \
+            --source-key napoli-san-carlo-rolling-opera \
+            --dry-run > "$RUNNER_TEMP/san-carlo-dry-run.json"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          result=json.loads((Path(os.environ["RUNNER_TEMP"])/"san-carlo-dry-run.json").read_text())
+          sources=[s for s in result["sources"] if s["key"]=="napoli-san-carlo-rolling-opera"]
+          if len(sources)!=1 or not result["dry_run"]:
+              raise SystemExit("San Carlo focused dry-run did not report exactly one source")
+          s=sources[0]
+          lines=[
+              "## San Carlo — first-scan result",
+              "",
+              f"- Status: `{s['status']}`",
+              f"- Diagnostic: `{s.get('diagnostic','none')}`",
+              f"- Official links found: {s.get('links',0)}",
+              "- Scope: `napoli-san-carlo-rolling-opera` only",
+              "- Catalog publication: disabled",
+          ]
+          message="\n".join(lines)+"\n"
+          print(message)
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a",encoding="utf-8") as out:
+              out.write(message)
+          PY
