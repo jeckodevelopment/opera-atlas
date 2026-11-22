@@ -296,6 +296,8 @@ def eligible(key:str,url:str)->bool:
     path=parsed.path.lower().rstrip("/")
     if excluded_nonopera(key,url):
         return False
+    if key=="padova-verdi-opera-2026":
+        return path=="/it/attivita-culturali/stagione-lirica-di-padova-2026"
     if key=="treviso-del-monaco-opera-2026-27":
         return path=="/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
     if key=="ravenna-alighieri-cherubini-2027":
@@ -437,6 +439,7 @@ def validate_config(config:dict)->list[dict]:
     if config.get("schema_version")!=1 or not isinstance(config.get("sources"),list):
         raise ValueError("invalid season index configuration")
     allowed={
+        "padova-verdi-opera-2026":("padovacultura.padovanet.it","/it/attivita-culturali/stagione-lirica-di-padova-2026"),
         "treviso-del-monaco-opera-2026-27":("risorse.teatrostabileveneto.it","/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"),
         "ravenna-alighieri-cherubini-2027":("www.orchestracherubini.it","/eventi/tpl/list/"),
         "coccia-novara-opera-2027":("www.fondazioneteatrococcia.it","/spettacoli.html"),
@@ -520,6 +523,8 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/notizie/la-stagione-lirica/" and not index.query
         elif key.startswith("ferrara-") and key.endswith("-opera-2026-27"):
             valid_season=index.path=="/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/" and not index.query
+        elif key=="padova-verdi-opera-2026":
+            valid_season=index.path=="/it/attivita-culturali/stagione-lirica-di-padova-2026" and not index.query
         elif key=="treviso-del-monaco-opera-2026-27":
             valid_season=index.path=="/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27" and not index.query
         elif key=="ravenna-alighieri-cherubini-2027":
