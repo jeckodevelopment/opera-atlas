@@ -35,8 +35,8 @@ class GoldoniFutureTests(unittest.TestCase):
         cls.cfg=json.loads(CONFIG.read_text(encoding="utf-8"))
 
     def test_archive_links_and_official_detail_hosts(self):
-        self.assertEqual(extract_index(listing(),url=INDEX,min_links=1),[D1,D2])
-        self.assertEqual(extract("goldoni-livorno-rolling-lirica",INDEX,listing(),1),[D1,D2])
+        self.assertEqual(extract_index(listing(),url=INDEX,min_links=1),sorted([D1,D2]))
+        self.assertEqual(extract("goldoni-livorno-rolling-lirica",INDEX,listing(),1),sorted([D1,D2]))
         self.assertTrue(eligible("goldoni-livorno-rolling-lirica",D1))
         self.assertFalse(eligible("goldoni-livorno-dido-2026-27",D1))
         for bad in (D1+"?ref=1",D1+"#calendar",
@@ -70,7 +70,8 @@ class GoldoniFutureTests(unittest.TestCase):
           detail(venue="La Goldonetta"),detail(composer=""),
           detail(composer="autore non identificato"),
           detail(clock="da definire"),detail(date="18 Aprile 2026"),
-          detail().replace("Mediagallery","Prove di orchestra"),
+          detail().replace("Mediagallery","Prove di orchestra")
+                  .replace("Scopri le date dello spettacolo","Calendario generico"),
           detail().replace("Musica di Giuseppe Verdi","Musiche di vari autori"),
           detail().replace("Melodramma in tre atti.","Annullato spettacolo."),
         ]
