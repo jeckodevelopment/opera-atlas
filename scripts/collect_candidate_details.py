@@ -350,7 +350,6 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
                 for day,clock in recite]
     if source_key=="coccia-novara-rolling-opera":
         from opera_atlas.novara_future_parser import parse_detail
-        from opera_atlas.work_identity import resolve_work
         title,composer,venue,recite=parse_detail(html,url=url)
         canonical=resolve_work(registry,title,composer)
         if canonical is None:
