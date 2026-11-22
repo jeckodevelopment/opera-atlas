@@ -186,7 +186,9 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
         raise ValueError("invalid poster evidence")
     checks=current.get("checks",{}).copy()
     sources=canonical_sources()
-    registry_works=list(json.loads(REGISTRY.read_text(encoding="utf-8"))["works"].values())
+    registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    registry_works=(list(registry["works"].values())+
+                    list(registry.get("reserved_works",{}).values()))
     by_id={w["id"]:w for w in registry_works}
     ids_by_slug={}
     for w in registry_works:
@@ -311,7 +313,9 @@ def publish(*,network_enabled:bool=False,fetcher=fetch_official_html,
 def check()->None:
     from scripts.publish_catalog_v2 import REGISTRY
     current=json.loads(OUTPUT.read_text(encoding="utf-8"))
-    works=json.loads(REGISTRY.read_text(encoding="utf-8"))["works"]
+    registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    works={**registry["works"],
+           **{"reserved:"+key:value for key,value in registry.get("reserved_works",{}).items()}}
     if current.get("schema_version")!=2 or set(current.get("works",{}))!={
         w["id"] for w in works.values()}:
         raise ValueError("poster feed does not match each canonical work ID")
