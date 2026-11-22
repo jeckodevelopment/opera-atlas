@@ -23,28 +23,28 @@ COMPONENTS=(
 def parse_program(html:str,*,url:str)->tuple[list[dict],str,list[tuple[str,str]]]:
     if url!=URL or not eligible_detail(url):
         raise ValueError("unapproved Novara mixed-program source")
-    title=re.search(r"(?is)<h1\\b[^>]*>(.*?)</h1>",html)
+    title=re.search(r"(?is)<h1\b[^>]*>(.*?)</h1>",html)
     if not title:
         raise ValueError("missing official Novara composite heading")
     actual=unescape(clean(title[1])).replace("’","'").casefold()
     if actual.replace(" ","")!="l'amormio/iltabarro":
         raise ValueError("unexpected Novara programme title")
     text=unescape(clean(re.sub(r"(?i)</h[2-6]>"," </h3> ",html)))
-    if not re.search(r"(?i)Spettacoli\\s*/\\s*Opera\\s*/\\s*L['’]AMOR MIO\\s*/\\s*IL TABARRO",text):
+    if not re.search(r"(?i)Spettacoli\s*/\s*Opera\s*/\s*L['’]AMOR MIO\s*/\s*IL TABARRO",text):
         raise ValueError("official opera-category breadcrumb absent")
     before,separator,after=text.partition("informazioni sull'evento")
     if not separator:
         raise ValueError("official showtime section missing")
     # Require both independently named scores and their exact composers.
     # The premiere date of Il tabarro is never a performance date.
-    if not re.search(r"(?is)\\bL['’]AMOR MIO\\b.*?\\bMusica di Cristian Carrara\\b"
-                     r".*?\\bIL TABARRO\\b.*?\\bMusica di Giacomo Puccini\\b",before):
+    if not re.search(r"(?is)\bL['’]AMOR MIO\b.*?\bMusica di Cristian Carrara\b"
+                     r".*?\bIL TABARRO\b.*?\bMusica di Giacomo Puccini\b",before):
         raise ValueError("independent composer credits missing")
-    m=re.search(r"(?is)(.*?)\\bTEATRO\\s+COCCIA\\b",after)
+    m=re.search(r"(?is)(.*?)\bTEATRO\s+COCCIA\b",after)
     if not m:
         raise ValueError("official Novara venue missing")
     block=m[1]
-    if re.search(r"(?i)\\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\\b",block):
+    if re.search(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b",block):
         raise ValueError("cancelled programme requires review")
     matches=list(DATE.finditer(block))
     dates=[]
@@ -57,15 +57,15 @@ def parse_program(html:str,*,url:str)->tuple[list[dict],str,list[tuple[str,str]]
             raise ValueError("mixed programme weekday inconsistent")
         dates.append((actual_day.isoformat(),f"{int(hour):02d}:{minute}"))
     declared=re.findall(
-        r"(?i)\\b(?:luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|"
-        r"venerd[iì]|sabato|domenica)\\s+\\d{1,2}\\s+"
+        r"(?i)\b(?:luned[iì]|marted[iì]|mercoled[iì]|gioved[iì]|"
+        r"venerd[iì]|sabato|domenica)\s+\d{1,2}\s+"
         r"(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|"
-        r"settembre|ottobre|novembre|dicembre)\\s+20\\d{2}",block)
+        r"settembre|ottobre|novembre|dicembre)\s+20\d{2}",block)
     if not dates or len(dates)>24 or len(dates)!=len(declared) or len(set(dates))!=len(dates):
         raise ValueError("incomplete or duplicate Novara programme schedule")
     for i,item in enumerate(matches):
         following=block[item.end():matches[i+1].start() if i+1<len(matches) else len(block)]
-        if re.search(r"(?i)\\b(?:ore\\s+)?\\d{1,2}:[0-5]\\d\\b",following):
+        if re.search(r"(?i)\b(?:ore\s+)?\d{1,2}:[0-5]\d\b",following):
             raise ValueError("ambiguous additional Novara programme time")
     return ([{"title":title,"composer":composer} for title,composer in COMPONENTS],
             "Teatro Coccia",sorted(dates))
