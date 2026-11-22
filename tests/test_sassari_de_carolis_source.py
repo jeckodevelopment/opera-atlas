@@ -57,6 +57,39 @@ class SassariDeCarolisTests(unittest.TestCase):
             with self.subTest(url=bad),self.assertRaises(ValueError):
                 validate_auto_sources([bad])
 
+    def test_six_sassari_evidence_recite_publish_idempotently(self):
+        import json
+        from datetime import date
+        from scripts.publish_catalog_v2 import ROOT
+        from scripts.auto_catalogue import promote
+        read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
+        facts=read("data/verified-launch-catalog.json")
+        registry=read("data/identity-registry.json")
+        candidates=read("data/season-index-candidates.json")
+        detail=read("data/candidate-detail-evidence.json")
+        rows=[x for x in candidates["candidates"]
+              if x["source_key"]=="sassari-de-carolis-opera-2026"]
+        evidence=[x for x in detail["evidence"]
+                  if x["source_key"]=="sassari-de-carolis-opera-2026"]
+        self.assertEqual(len(rows),len(evidence))
+        self.assertEqual(len(rows),3)
+        candidate={"schema_version":1,"candidates":[{**x,"status":"needs_review"} for x in rows]}
+        doc={"schema_version":1,"evidence":evidence}
+        produced,ids,urls,report=promote(facts,registry,doc,candidate,[],today=date(2026,11,22))
+        sassari=[x for x in produced["productions"]
+                 if x["municipality"]=="Sassari" and
+                 x["source_url"] in {v["official_url"] for v in rows}]
+        self.assertEqual(len(sassari),3,report)
+        self.assertEqual(sum(len(p["dates"]) for p in sassari),6)
+        self.assertEqual({x["region"] for x in sassari},{"Sardegna"})
+        self.assertTrue(all(x["venue"]=="Teatro Comunale di Sassari" for x in sassari))
+        self.assertEqual({x["title"] for x in sassari},
+                         {"Die Zauberflöte","Don Carlos","Rigoletto"})
+        repeated,again,_,res=promote(produced,ids,doc,candidate,urls,today=date(2026,11,22))
+        self.assertEqual(res["new_recite"],0)
+        self.assertEqual(repeated,produced)
+        self.assertEqual(again,ids)
+
     def test_six_exact_2026_showtimes(self):
         expected={
             "372":[("2026-09-25","20:30"),("2026-09-27","16:30")],
