@@ -123,9 +123,20 @@ window.OperaAtlasCatalog = (() => {
         if(typeof component.title!=="string"||typeof component.composer!=="string")
           throw new Error("Invalid independently credited program component");
         const work=component.work_id ? byWork.get(component.work_id) : null;
-        if(component.work_id && (!work || slugify(work.title)!==slugify(component.title) ||
-           work.composer.normalize("NFKC").toLocaleLowerCase("it")!==
-           component.composer.normalize("NFKC").toLocaleLowerCase("it")))
+        // A reviewed program component may have a permanent reserved ID
+        // before a solo staging makes it eligible for the v2 works channel.
+        // Never render that ID as a public work route until v2 confirms it.
+        const pending=component.work_id && !work && /^oa-w-\d{6}$/.test(component.work_id)
+          && component.editorial && typeof component.editorial.synopsis==="string"
+          && component.editorial.synopsis.trim().length>=35
+          && component.editorial.history
+          && Array.isArray(component.editorial.history.sources)
+          && component.editorial.history.sources.length>0
+          && component.editorial.history.sources.every(s=>typeof s==="string"&&s.startsWith("https://"));
+        if(component.work_id && !pending &&
+           (!work || slugify(work.title)!==slugify(component.title) ||
+             work.composer.normalize("NFKC").toLocaleLowerCase("it")!==
+             component.composer.normalize("NFKC").toLocaleLowerCase("it")))
           throw new Error("Composite work identity mismatch");
         return {...component,work_route_slug:work?.route_slug||work?.slug||null};
       });
