@@ -131,7 +131,9 @@ class ModenaTheatreFallbackTests(unittest.TestCase):
             html.replace("<p>Gaia Aloisi – Veleno</p>",
                          "<h4>Gaia Aloisi – Veleno</h4>"),
             html.replace("7 Maggio 2027 - 20:00",
-                         "7 Maggio 2027 - orario da confermare"),
+                         "7 Maggio 2027 - orario da confermare")
+                .replace("9 Maggio 2027 - 15:30",
+                         "9 Maggio 2027 - orario da confermare"),
         ):
             with self.subTest(problem=invalid[-50:]),self.assertRaises(ValueError):
                 parse_detail(invalid,url=source)
