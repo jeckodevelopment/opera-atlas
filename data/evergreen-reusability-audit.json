@@ -73,6 +73,11 @@
       "evidence": "Official /tipo-spettacolo/lirica/ archive lists independent event pages per performance; verify category, venue, heading, composer and page-specific date/clock for every event."
     },
     {
+      "source_key": "haydn-rolling-opera",
+      "scope": "dynamic_category",
+      "evidence": "The first-party evergreen /eventi/genere/opera index lists opera events in Bolzano and Trento without an annual path. Each separately dated event page must confirm opera, one composer, precise time, and one physical venue. URL reusability is not proof of a future season already announced."
+    },
+    {
       "source_key": "lecce-apollo-pinocchio-2026",
       "scope": "historical_notice",
       "evidence": "A single historic official article/document is not a reusable future-season catalogue."
