@@ -3,6 +3,39 @@
   "note": "Editorially verified primary-source identities for a bounded first-party TCBO launch. Not a general inference by title alone; the detail evidence must still match composer, source URL, showtimes, and venue exactly.",
   "works": [
     {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "title": "Il quinto moschettiere",
+      "composer": "Matteo Musumeci",
+      "synopsis": "Tre moschettieri ricevono dalla regina Anna una nuova missione. Il giovane paggio Oscar nasconde un'identità inattesa, capace di cambiare il corso dell'avventura.",
+      "history": {
+        "librettist": "Vincenzo De Vivo",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Sangiorgi",
+        "premiere_city": "Catania",
+        "sources": [
+          "https://www.teatromassimobellini.it/il-quinto-moschettiere-il-teatro-massimo-bellini-torna-al-sangiorgi-con-le-opere-da-camera/",
+          "https://www.teatromassimobellini.it/media/2025/09/pieghevole_stagioni20252026.pdf"
+        ]
+      }
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "title": "Le nozze dell’orso",
+      "composer": "Joe Schittino",
+      "synopsis": "Due atti unici di Čechov, Una domanda di matrimonio e L’orso, si intrecciano fra orgoglio, equivoci, gelosie e improvvisi slanci del cuore, in una commedia musicale.",
+      "history": {
+        "librettist": "Alessandro Idonea",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Sangiorgi",
+        "premiere_city": "Catania",
+        "sources": [
+          "https://www.teatromassimobellini.it/continuano-le-opere-da-camera-al-teatro-sangiorgi-con-le-nozze-dellorso/"
+        ]
+      }
+    },
+    {
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
       "title": "Accabadora",
@@ -104,6 +137,24 @@
       }
     },
     {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
+      "title": "Il noce di Benevento",
+      "composer": "Giuseppe Balducci",
+      "synopsis": "Attorno al leggendario noce di Benevento si intrecciano travestimenti da streghe, gelosie, equivoci e inganni amorosi. Nell'opera buffa di Balducci, le beffe e i malintesi si sciolgono infine nel perdono.",
+      "history": {
+        "librettist": "Anonimo",
+        "premiere_year": 1837,
+        "premiere_venue": "Teatrino privato della famiglia Capece Minutolo",
+        "premiere_city": "Napoli",
+        "sources": [
+          "https://www.fondazionepergolesispontini.com/domenica-2-settembre-ore-21-al-teatro-pergolesi-di-jesi-lopera-il-noce-di-benevento-1837-di-giuseppe-balducci-in-prima-esecuzione-italiana-in-epoca-moderna/",
+          "https://www.giornaledellamusica.it/recensioni/jesi-alla-riscoperta-di-giuseppe-balducci",
+          "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"
+        ]
+      }
+    },
+    {
       "source_key": "donizetti-opera-2026",
       "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
       "title": "Alahor in Granata",
@@ -154,6 +205,110 @@
       }
     },
     {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "title": "Alzira",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Nel Perù coloniale, Alzira ama il guerriero Zamoro, ma il governatore spagnolo Gusmano cerca di imporle il proprio matrimonio, fra conflitti di potere e lealtà.",
+      "history": {
+        "librettist": "Salvadore Cammarano",
+        "premiere_year": 1845,
+        "premiere_venue": "Teatro San Carlo",
+        "premiere_city": "Napoli",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000023114",
+          "https://archiviostorico.operaroma.it/opera/alzira/"
+        ]
+      }
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "title": "Cristoforo Colombo",
+      "composer": "Alberto Franchetti",
+      "synopsis": "La vicenda del navigatore Cristoforo Colombo ripercorre l'impresa del viaggio verso le Americhe, tra opposizioni, ambizioni e le conseguenze della scoperta.",
+      "history": {
+        "librettist": "Luigi Illica",
+        "premiere_year": 1892,
+        "premiere_venue": "Teatro Carlo Felice",
+        "premiere_city": "Genova",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000053328",
+          "https://associazionealbertofranchetti.com/opere/opere-liriche/cristoforo-colombo/strutturaetrama/"
+        ]
+      }
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+      "title": "Il ratto dal serraglio",
+      "composer": "Wolfgang Amadeus Mozart",
+      "synopsis": "Belmonte cerca di liberare l'amata Costanza e i suoi compagni dalla prigionia nel serraglio del pascià Selim, affrontando ostacoli e inganni.",
+      "history": {
+        "librettist": "Johann Gottlieb Stephanie",
+        "premiere_year": 1782,
+        "premiere_venue": "Burgtheater",
+        "premiere_city": "Vienna",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/il-ratto-dal-serraglio/",
+          "https://www.operaamerica.org/calendar/production/22346/the-abduction-from-the-seraglio"
+        ]
+      }
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "title": "Il signor Bruschino",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Per sposare Sofia, Florville si spaccia per il figlio del signor Bruschino, provocando una serie di equivoci fra il tutore della ragazza e il vero padre.",
+      "history": {
+        "librettist": "Giuseppe Foppa",
+        "premiere_year": 1813,
+        "premiere_venue": "Teatro San Moisè",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.rossinioperafestival.it/soggetti/il-signor-bruschino/",
+          "https://corago.unibo.it/opera/Z000013626"
+        ]
+      }
+    },
+    {
+      "source_key": "jesi-esecuzione-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "title": "L'esecuzione",
+      "composer": "Salvatore Passantino",
+      "synopsis": "Durante una prova della Tosca di Puccini, il tenore che interpreta Cavaradossi viene ucciso davvero. Il sovrintendente indaga sul palcoscenico, interrogando la cantante e i figuranti del plotone per scoprire chi abbia sparato.",
+      "history": {
+        "librettist": "Marco Malvaldi",
+        "premiere_year": 2026,
+        "premiere_date": "2026-11-14",
+        "premiere_venue": "Teatro Giovan Battista Pergolesi",
+        "premiere_city": "Jesi",
+        "sources": [
+          "https://www.fondazionepergolesispontini.com/lirica-jesi-il-14-e-15-novembre-lesecuzione-sotto-lo-sguardo-di-tosca-prima-assoluta-al-teatro-pergolesi-di-jesi-musica-di-salvatore-passantino-libretto-di-marco-malva/",
+          "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+        ]
+      }
+    },
+    {
+      "source_key": "lecce-apollo-pinocchio-2026",
+      "source_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
+      "title": "Le avventure di Pinocchio",
+      "composer": "Antonio Cericola",
+      "synopsis": "Pinocchio, burattino desideroso di diventare un bambino vero, affronta inganni, tentazioni e incontri sorprendenti, imparando a scegliere e a prendersi cura degli altri.",
+      "history": {
+        "librettist": "Sandro Bernabei",
+        "premiere_year": 2003,
+        "premiere_venue": "Teatro Marrucino",
+        "premiere_city": "Chieti",
+        "sources": [
+          "https://www.giornaledellamusica.it/formazione/audizioni-per-il-cast-dellopera-lirica-le-avventure-di-pinocchio-al-teatro-marrucino-di-chieti",
+          "https://www.teatromarrucino.eu/evento/le-avventure-di-pinocchio/",
+          "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
+        ]
+      }
+    },
+    {
       "source_key": "lirico-cagliari-opera-2027",
       "source_url": "https://www.liricocagliari.it/evento/alcina/",
       "title": "Alcina",
@@ -167,6 +322,25 @@
         "sources": [
           "https://www.gfhandel.org/handel/worklist/1to42.html",
           "https://www.staatsoper.de/en/productions/alcina"
+        ]
+      }
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/candide/",
+      "title": "Candide",
+      "composer": "Leonard Bernstein",
+      "synopsis": "Convinto di vivere nel migliore dei mondi possibili, il giovane Candide attraversa guerre, persecuzioni e avventure improbabili alla ricerca di Cunegonda. Un viaggio satirico che mette alla prova il suo ottimismo.",
+      "history": {
+        "librettist": "Lillian Hellman (libretto originale); testi di Richard Wilbur e altri autori nelle successive versioni",
+        "premiere_year": 1956,
+        "premiere_date": "1956-12-01",
+        "premiere_venue": "Martin Beck Theatre",
+        "premiere_city": "New York",
+        "sources": [
+          "https://leonardbernstein.com/works/view/10/candide",
+          "https://memboa.operaamerica.org/Applications/schedule/details.aspx?titleID=3239",
+          "https://www.liricocagliari.it/evento/candide/"
         ]
       }
     },
@@ -219,6 +393,61 @@
           "https://corago.unibo.it/opera/0000298002",
           "https://corago.unibo.it/libretto/DRT0028887",
           "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+        ]
+      }
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+      "title": "I salvatori della mezzanotte",
+      "composer": "Daniele Furlati",
+      "synopsis": "In un presepe che prende vita, un pericolo minaccia il Bambino appena nato. Figure e creature del racconto natalizio si mettono in cammino per proteggerlo, fra fiaba, mistero e solidarietà.",
+      "history": {
+        "librettist": "Bruno Tognolini",
+        "premiere_year": 2023,
+        "premiere_date": "2023-12-17",
+        "premiere_venue": "Teatro Comunale Pavarotti-Freni",
+        "premiere_city": "Modena",
+        "sources": [
+          "https://www.teatrocomunalemodena.it/wp-content/uploads/2023/12/Programma-di-sala_I-salvatori-della-mezzanotte.pdf",
+          "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
+        ]
+      }
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+      "title": "Veleno",
+      "composer": "Gaia Aloisi",
+      "synopsis": "Nella Roma del Seicento, una rete clandestina di donne prepara e distribuisce un veleno invisibile. Tra violenza, vendetta e sopravvivenza prende forma un'opera da camera ispirata a una vicenda storica.",
+      "history": {
+        "librettist": "Stefano Simone Pintor",
+        "premiere_year": 2027,
+        "premiere_venue": "Teatro Ariosto",
+        "premiere_city": "Reggio Emilia",
+        "sources": [
+          "https://teatroregioparma.it/spettacolo/veleno/",
+          "https://www.iteatri.re.it/spettacolo/veleno/",
+          "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
+        ],
+        "premiere_date": "2027-04-28"
+      }
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+      "title": "Der fliegende Holländer",
+      "composer": "Richard Wagner",
+      "synopsis": "Condannato a vagare per i mari su una nave fantasma, l'Olandese può salvarsi soltanto grazie all'amore fedele di una donna. Quando incontra Senta, la promessa di redenzione si scontra con dubbi e gelosia.",
+      "history": {
+        "librettist": "Richard Wagner",
+        "premiere_year": 1843,
+        "premiere_date": "1843-01-02",
+        "premiere_venue": "Königlich Sächsisches Hoftheater",
+        "premiere_city": "Dresda",
+        "sources": [
+          "https://www.rai.it/dl/docs/1363352684701Olandese_impa_2013_seconda.pdf",
+          "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
         ]
       }
     },
@@ -428,6 +657,24 @@
     },
     {
       "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "title": "Death in Venice",
+      "composer": "Benjamin Britten",
+      "synopsis": "Lo scrittore Gustav von Aschenbach raggiunge Venezia alla ricerca di quiete e ispirazione. L'incontro con il giovane Tadzio lo trattiene in città mentre dilaga un'epidemia di colera.",
+      "history": {
+        "librettist": "Myfanwy Piper",
+        "premiere_year": 1973,
+        "premiere_venue": "Snape Maltings Concert Hall",
+        "premiere_city": "Snape, Suffolk",
+        "sources": [
+          "https://www.brittenpearsarts.org/music/death-in-venice",
+          "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+          "https://www.teatrofraschini.it/programma/death-in-venice/"
+        ]
+      }
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
       "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
       "title": "Veleno",
       "composer": "Gaia Aloisi",
@@ -440,6 +687,24 @@
         "sources": [
           "https://teatroregioparma.it/spettacolo/veleno/",
           "https://www.iteatri.re.it/spettacolo/veleno/"
+        ]
+      }
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "synopsis": "A Parigi, la ricca vedova Hanna Glawari attira pretendenti e attenzioni diplomatiche: il barone Zeta vorrebbe farla sposare al conte Danilo per trattenere la sua fortuna nel Pontevedro, ma l'amore fra i due si scontra con orgoglio ed equivoci.",
+      "history": {
+        "librettist": "Victor Léon; Leo Stein",
+        "composition_year": 1905,
+        "premiere_year": 1905,
+        "premiere_venue": "Theater an der Wien",
+        "premiere_city": "Vienna",
+        "sources": [
+          "https://archiviostorico.operaroma.it/operetta/la-vedova-allegra-die-lustige-witwe/",
+          "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
         ]
       }
     },
@@ -542,253 +807,6 @@
         "sources": [
           "https://www.mariinsky.ru/en/playbill/repertoire/opera/lohengrin/",
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
-        ]
-      }
-    },
-    {
-      "source_key": "bellini-catania-opera-2026-27",
-      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
-      "title": "Il quinto moschettiere",
-      "composer": "Matteo Musumeci",
-      "synopsis": "Tre moschettieri ricevono dalla regina Anna una nuova missione. Il giovane paggio Oscar nasconde un'identità inattesa, capace di cambiare il corso dell'avventura.",
-      "history": {
-        "librettist": "Vincenzo De Vivo",
-        "premiere_year": 2026,
-        "premiere_venue": "Teatro Sangiorgi",
-        "premiere_city": "Catania",
-        "sources": [
-          "https://www.teatromassimobellini.it/il-quinto-moschettiere-il-teatro-massimo-bellini-torna-al-sangiorgi-con-le-opere-da-camera/",
-          "https://www.teatromassimobellini.it/media/2025/09/pieghevole_stagioni20252026.pdf"
-        ]
-      }
-    },
-    {
-      "source_key": "bellini-catania-opera-2026-27",
-      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
-      "title": "Le nozze dell’orso",
-      "composer": "Joe Schittino",
-      "synopsis": "Due atti unici di Čechov, Una domanda di matrimonio e L’orso, si intrecciano fra orgoglio, equivoci, gelosie e improvvisi slanci del cuore, in una commedia musicale.",
-      "history": {
-        "librettist": "Alessandro Idonea",
-        "premiere_year": 2026,
-        "premiere_venue": "Teatro Sangiorgi",
-        "premiere_city": "Catania",
-        "sources": [
-          "https://www.teatromassimobellini.it/continuano-le-opere-da-camera-al-teatro-sangiorgi-con-le-nozze-dellorso/"
-        ]
-      }
-    },
-    {
-      "source_key": "reggio-valli-opera-2026-27",
-      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
-      "title": "Death in Venice",
-      "composer": "Benjamin Britten",
-      "synopsis": "Lo scrittore Gustav von Aschenbach raggiunge Venezia alla ricerca di quiete e ispirazione. L'incontro con il giovane Tadzio lo trattiene in città mentre dilaga un'epidemia di colera.",
-      "history": {
-        "librettist": "Myfanwy Piper",
-        "premiere_year": 1973,
-        "premiere_venue": "Snape Maltings Concert Hall",
-        "premiere_city": "Snape, Suffolk",
-        "sources": [
-          "https://www.brittenpearsarts.org/music/death-in-venice",
-          "https://www.iteatri.re.it/spettacolo/death-in-venice/",
-          "https://www.teatrofraschini.it/programma/death-in-venice/"
-        ]
-      }
-    },
-    {
-      "source_key": "filarmonico-verona-opera-2027",
-      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
-      "title": "Alzira",
-      "composer": "Giuseppe Verdi",
-      "synopsis": "Nel Perù coloniale, Alzira ama il guerriero Zamoro, ma il governatore spagnolo Gusmano cerca di imporle il proprio matrimonio, fra conflitti di potere e lealtà.",
-      "history": {
-        "librettist": "Salvadore Cammarano",
-        "premiere_year": 1845,
-        "premiere_venue": "Teatro San Carlo",
-        "premiere_city": "Napoli",
-        "sources": [
-          "https://corago.unibo.it/opera/Z000023114",
-          "https://archiviostorico.operaroma.it/opera/alzira/"
-        ]
-      }
-    },
-    {
-      "source_key": "filarmonico-verona-opera-2027",
-      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
-      "title": "Il ratto dal serraglio",
-      "composer": "Wolfgang Amadeus Mozart",
-      "synopsis": "Belmonte cerca di liberare l'amata Costanza e i suoi compagni dalla prigionia nel serraglio del pascià Selim, affrontando ostacoli e inganni.",
-      "history": {
-        "librettist": "Johann Gottlieb Stephanie",
-        "premiere_year": 1782,
-        "premiere_venue": "Burgtheater",
-        "premiere_city": "Vienna",
-        "sources": [
-          "https://archiviostorico.operaroma.it/opera/il-ratto-dal-serraglio/",
-          "https://www.operaamerica.org/calendar/production/22346/the-abduction-from-the-seraglio"
-        ]
-      }
-    },
-    {
-      "source_key": "filarmonico-verona-opera-2027",
-      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
-      "title": "Il signor Bruschino",
-      "composer": "Gioachino Rossini",
-      "synopsis": "Per sposare Sofia, Florville si spaccia per il figlio del signor Bruschino, provocando una serie di equivoci fra il tutore della ragazza e il vero padre.",
-      "history": {
-        "librettist": "Giuseppe Foppa",
-        "premiere_year": 1813,
-        "premiere_venue": "Teatro San Moisè",
-        "premiere_city": "Venezia",
-        "sources": [
-          "https://www.rossinioperafestival.it/soggetti/il-signor-bruschino/",
-          "https://corago.unibo.it/opera/Z000013626"
-        ]
-      }
-    },
-    {
-      "source_key": "filarmonico-verona-opera-2027",
-      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
-      "title": "Cristoforo Colombo",
-      "composer": "Alberto Franchetti",
-      "synopsis": "La vicenda del navigatore Cristoforo Colombo ripercorre l'impresa del viaggio verso le Americhe, tra opposizioni, ambizioni e le conseguenze della scoperta.",
-      "history": {
-        "librettist": "Luigi Illica",
-        "premiere_year": 1892,
-        "premiere_venue": "Teatro Carlo Felice",
-        "premiere_city": "Genova",
-        "sources": [
-          "https://corago.unibo.it/opera/Z000053328",
-          "https://associazionealbertofranchetti.com/opere/opere-liriche/cristoforo-colombo/strutturaetrama/"
-        ]
-      }
-    },
-    {
-      "source_key": "salerno-verdi-opera-2026",
-      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
-      "title": "La vedova allegra",
-      "composer": "Franz Lehár",
-      "synopsis": "A Parigi, la ricca vedova Hanna Glawari attira pretendenti e attenzioni diplomatiche: il barone Zeta vorrebbe farla sposare al conte Danilo per trattenere la sua fortuna nel Pontevedro, ma l'amore fra i due si scontra con orgoglio ed equivoci.",
-      "history": {
-        "librettist": "Victor Léon; Leo Stein",
-        "composition_year": 1905,
-        "premiere_year": 1905,
-        "premiere_venue": "Theater an der Wien",
-        "premiere_city": "Vienna",
-        "sources": [
-          "https://archiviostorico.operaroma.it/operetta/la-vedova-allegra-die-lustige-witwe/",
-          "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
-        ]
-      }
-    },
-    {
-      "source_key": "jesi-esecuzione-opera-2026",
-      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
-      "title": "L'esecuzione",
-      "composer": "Salvatore Passantino",
-      "synopsis": "Durante una prova della Tosca di Puccini, il tenore che interpreta Cavaradossi viene ucciso davvero. Il sovrintendente indaga sul palcoscenico, interrogando la cantante e i figuranti del plotone per scoprire chi abbia sparato.",
-      "history": {
-        "librettist": "Marco Malvaldi",
-        "premiere_year": 2026,
-        "premiere_date": "2026-11-14",
-        "premiere_venue": "Teatro Giovan Battista Pergolesi",
-        "premiere_city": "Jesi",
-        "sources": [
-          "https://www.fondazionepergolesispontini.com/lirica-jesi-il-14-e-15-novembre-lesecuzione-sotto-lo-sguardo-di-tosca-prima-assoluta-al-teatro-pergolesi-di-jesi-musica-di-salvatore-passantino-libretto-di-marco-malva/",
-          "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
-        ]
-      }
-    },
-    {
-      "source_key": "modena-teatro-opera-2026-27",
-      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
-      "title": "Der fliegende Holländer",
-      "composer": "Richard Wagner",
-      "synopsis": "Condannato a vagare per i mari su una nave fantasma, l'Olandese può salvarsi soltanto grazie all'amore fedele di una donna. Quando incontra Senta, la promessa di redenzione si scontra con dubbi e gelosia.",
-      "history": {
-        "librettist": "Richard Wagner",
-        "premiere_year": 1843,
-        "premiere_date": "1843-01-02",
-        "premiere_venue": "Königlich Sächsisches Hoftheater",
-        "premiere_city": "Dresda",
-        "sources": [
-          "https://www.rai.it/dl/docs/1363352684701Olandese_impa_2013_seconda.pdf",
-          "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"
-        ]
-      }
-    },
-    {
-      "source_key": "modena-teatro-opera-2026-27",
-      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
-      "title": "I salvatori della mezzanotte",
-      "composer": "Daniele Furlati",
-      "synopsis": "In un presepe che prende vita, un pericolo minaccia il Bambino appena nato. Figure e creature del racconto natalizio si mettono in cammino per proteggerlo, fra fiaba, mistero e solidarietà.",
-      "history": {
-        "librettist": "Bruno Tognolini",
-        "premiere_year": 2023,
-        "premiere_date": "2023-12-17",
-        "premiere_venue": "Teatro Comunale Pavarotti-Freni",
-        "premiere_city": "Modena",
-        "sources": [
-          "https://www.teatrocomunalemodena.it/wp-content/uploads/2023/12/Programma-di-sala_I-salvatori-della-mezzanotte.pdf",
-          "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"
-        ]
-      }
-    },
-    {
-      "source_key": "modena-teatro-opera-2026-27",
-      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
-      "title": "Veleno",
-      "composer": "Gaia Aloisi",
-      "synopsis": "Nella Roma del Seicento, una rete clandestina di donne prepara e distribuisce un veleno invisibile. Tra violenza, vendetta e sopravvivenza prende forma un'opera da camera ispirata a una vicenda storica.",
-      "history": {
-        "librettist": "Stefano Simone Pintor",
-        "premiere_year": 2027,
-        "premiere_venue": "Teatro Ariosto",
-        "premiere_city": "Reggio Emilia",
-        "sources": [
-          "https://teatroregioparma.it/spettacolo/veleno/",
-          "https://www.iteatri.re.it/spettacolo/veleno/",
-          "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/"
-        ],
-        "premiere_date": "2027-04-28"
-      }
-    },
-    {
-      "source_key": "lirico-cagliari-opera-2027",
-      "source_url": "https://www.liricocagliari.it/evento/candide/",
-      "title": "Candide",
-      "composer": "Leonard Bernstein",
-      "synopsis": "Convinto di vivere nel migliore dei mondi possibili, il giovane Candide attraversa guerre, persecuzioni e avventure improbabili alla ricerca di Cunegonda. Un viaggio satirico che mette alla prova il suo ottimismo.",
-      "history": {
-        "librettist": "Lillian Hellman (libretto originale); testi di Richard Wilbur e altri autori nelle successive versioni",
-        "premiere_year": 1956,
-        "premiere_date": "1956-12-01",
-        "premiere_venue": "Martin Beck Theatre",
-        "premiere_city": "New York",
-        "sources": [
-          "https://leonardbernstein.com/works/view/10/candide",
-          "https://memboa.operaamerica.org/Applications/schedule/details.aspx?titleID=3239",
-          "https://www.liricocagliari.it/evento/candide/"
-        ]
-      }
-    },
-    {
-      "source_key": "lecce-apollo-pinocchio-2026",
-      "source_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
-      "title": "Le avventure di Pinocchio",
-      "composer": "Antonio Cericola",
-      "synopsis": "Pinocchio, burattino desideroso di diventare un bambino vero, affronta inganni, tentazioni e incontri sorprendenti, imparando a scegliere e a prendersi cura degli altri.",
-      "history": {
-        "librettist": "Sandro Bernabei",
-        "premiere_year": 2003,
-        "premiere_venue": "Teatro Marrucino",
-        "premiere_city": "Chieti",
-        "sources": [
-          "https://www.giornaledellamusica.it/formazione/audizioni-per-il-cast-dellopera-lirica-le-avventure-di-pinocchio-al-teatro-marrucino-di-chieti",
-          "https://www.teatromarrucino.eu/evento/le-avventure-di-pinocchio/",
-          "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
         ]
       }
     }
