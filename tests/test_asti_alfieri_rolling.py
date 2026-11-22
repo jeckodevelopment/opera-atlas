@@ -50,6 +50,31 @@ class AstiAlfieriRollingTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"not verified as an opera"):
             parse_detail(detail(kind="concert"),url=CONCERT)
 
+    def test_aida_composer_in_separate_official_production_header(self):
+        # The live Asti page has separate H1, event clock, H2 work heading,
+        # composer line and direction credit. It must not require the
+        # composer to be in a single paragraph with the director.
+        html=('<main><h1>Aida</h1><p>06/02/2027 @ 21:00</p>'
+              '<h2>Aida</h2><p>di Giuseppe Verdi</p>'
+              '<p>Regia Renato Bonajuto</p><p>Produzione Lirica Tamagno</p>'
+              '<p>Fuori abbonamento</p><p>Opera ambientata in Egitto</p>'
+              '<h2>Dettagli</h2><p>Data: 06/02/2027</p>'
+              '<h2>Luogo</h2><p>Teatro Alfieri Via al teatro, 2 Asti (AT)</p>'
+              '</main>')
+        self.assertEqual(parse_detail(html,url=AIDA),
+                         ("Aida","Giuseppe Verdi","Teatro Alfieri",
+                          [("2027-02-06","21:00")]))
+        # Multiple conflicting production headings or a different source
+        # credit cannot establish the identity.
+        for broken in (
+            html.replace('<p>di Giuseppe Verdi</p>','<p>di Altro Autore</p>'),
+            html.replace('<h2>Aida</h2>','<h2>Aida</h2><h2>Aida</h2>'),
+            html.replace('<p>Regia Renato Bonajuto</p>','<p>Direttore</p>'),
+            html.replace('<p>Opera ambientata','<p>Prosa ambientata'),
+        ):
+            with self.subTest(broken=broken[:130]),self.assertRaises(ValueError):
+                parse_detail(broken,url=AIDA)
+
     def test_future_year_is_from_official_event_not_current_year(self):
         title,composer,venue,dates=parse_detail(detail(2029),url=AIDA)
         self.assertEqual((title,composer,venue),("Aida","Giuseppe Verdi","Teatro Alfieri"))
