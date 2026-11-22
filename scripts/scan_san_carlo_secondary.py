@@ -35,25 +35,27 @@ RANGE = re.compile(r"^\d{1,2}\s+\w+\s*[–-]\s*\d{1,2}\s+\w+\s+20\d{2}$")
 
 
 class CalendarReader(HTMLParser):
-    """Emit only meaningful headings and links; ignore decorative HTML."""
+    """Read nested heading/link structures without swallowing inner elements.
+
+    The prior parser captured an outer anchor and hid nested h2/h3 nodes.
+    Direct visible text is emitted independently of semantic tag closures.
+    """
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.items = []
-        self.stack = []
+        self.frames = []
         self.skip = 0
-        self.capture = None
-        self.buffer = []
-        self.href = None
 
     def handle_starttag(self, tag, attrs):
         if tag in ("script", "style", "noscript", "svg"):
             self.skip += 1
         if self.skip:
             return
-        if tag in ("h2", "h3", "h4", "a") and self.capture is None:
-            self.capture = tag
-            self.buffer = []
-            self.href = dict(attrs).get("href") if tag == "a" else None
+        if tag in ("h2", "h3", "h4", "a"):
+            self.frames.append({
+                "tag": tag, "parts": [],
+                "href": dict(attrs).get("href") if tag == "a" else None,
+            })
 
     def handle_data(self, data):
         if self.skip:
@@ -61,20 +63,21 @@ class CalendarReader(HTMLParser):
         value = " ".join(data.split())
         if not value:
             return
-        if self.capture is not None:
-            self.buffer.append(value)
-        else:
-            self.items.append(("text", value, None))
+        self.items.append(("text", value, None))
+        for frame in self.frames:
+            frame["parts"].append(value)
 
     def handle_endtag(self, tag):
         if tag in ("script", "style", "noscript", "svg"):
             self.skip = max(0, self.skip - 1)
             return
-        if self.capture == tag:
-            value = " ".join(self.buffer).strip()
-            if value:
-                self.items.append((tag, value, self.href))
-            self.capture, self.buffer, self.href = None, [], None
+        for i in range(len(self.frames) - 1, -1, -1):
+            if self.frames[i]["tag"] == tag:
+                frame = self.frames.pop(i)
+                value = " ".join(frame["parts"]).strip()
+                if value:
+                    self.items.append((tag, value, frame["href"]))
+                break
 
 
 def _composer(items):
@@ -127,11 +130,12 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
             return
         blocks.append(current)
 
+    latest_date_text = None
     for kind, value, href in items:
         if kind == "h2":
             if current is not None:
                 finish()
-            composer = _composer(recent)
+            composer = _composer([part for part in recent if part[1] != value])
             if not composer:
                 current = None
                 accepting_dates = False
@@ -147,6 +151,7 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
                 "review_status": "needs_primary_corroboration",
             }
             accepting_dates = False
+            latest_date_text = None
             recent = []
             continue
         if current is None:
@@ -170,14 +175,24 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
             clock = f"{int(hour):02d}:{minute}"
             record = {"date": d.isoformat(), "time": clock}
             if record in current["performances"]:
+                # Nested anchors emit their visible text before the enclosing
+                # anchor closes. Suppress only the same anchor echo, never a
+                # second independently listed performance.
+                if kind == "a" and latest_date_text == record:
+                    continue
                 raise ValueError("duplicate secondary recita")
             current["performances"].append(record)
+            latest_date_text = record if kind == "text" else None
         recent.append((kind, value, href))
         recent = recent[-12:]
     if current is not None:
         finish()
     if not blocks or len(blocks) > 35:
-        raise ValueError("secondary opera season not confirmed")
+        # Metadata only: preserve diagnostic distinctions without copying HTML.
+        observed = {"headings": sum(k == "h2" for k, _, _ in items),
+                    "showtime_texts": sum(bool(SHOWTIME.fullmatch(v)) for k, v, _ in items if k == "text"),
+                    "incomplete": (diagnostics or [])[:12]}
+        raise ValueError("secondary opera season not confirmed: " + json.dumps(observed, ensure_ascii=False))
     identities = [(b["title"].casefold(), b["composer"].casefold()) for b in blocks]
     if len(set(identities)) != len(identities):
         raise ValueError("duplicate secondary production")
