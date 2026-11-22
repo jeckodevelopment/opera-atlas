@@ -111,7 +111,7 @@ def parse_detail(html:str,*,url:str):
         raise ValueError("official Novara work title missing")
     title=clean(heading[1])
     if (not title or NOT_OPERA.search(title) or
-        not re.search(r"(?i)\bSpettacoli\s*/\s*Opera\s*/\s*"+re.escape(title)+r"\b",text)):
+        not re.search(r"(?i)\bSpettacoli\s*(?:/|\s)\s*Opera\s*(?:/|\s)\s*"+re.escape(title)+r"\b",text)):
         raise ValueError("official Novara opera breadcrumb missing or different genre")
     beginning=text.find(title)
     credit_section=text[beginning:beginning+950]
