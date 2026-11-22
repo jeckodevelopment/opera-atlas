@@ -144,4 +144,17 @@ def parse_detail(html:str,*,url:str):
     if any(w in {"non","identificato","un","artista","ignoto","anonimo","vari","e"}
            for w in composer.casefold().split()):
         raise ValueError("ambiguous Goldoni composer attribution")
+    if url=="https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/":
+        # This exact official page contains a known discrepancy: its CMS
+        # header says 8 November at 20:00, but the primary description and
+        # programme explicitly specify 6 November at 20:00 and 8 November
+        # at 16:00. Prefer the individually credited production schedule.
+        if (title.casefold()!="dido and aeneas"
+            or composer.casefold()!="henry purcell"
+            or when!=date(2026,11,8) or hour!="20:00"
+            or not re.search(r"(?i)\bVenerd[iì]\s+6\s+novembre\s*,?\s*ore\s+20\b",body)
+            or not re.search(r"(?i)\bDomenica\s+8\s+novembre\s*,?\s*ore\s+16\b",body)):
+            raise ValueError("Goldoni Dido official programme and conflicting header need review")
+        return "Dido and Æneas","Henry Purcell","Teatro Goldoni",[
+            ("2026-11-06","20:00"),("2026-11-08","16:00")]
     return title,composer,"Teatro Goldoni",[(when.isoformat(),hour)]
