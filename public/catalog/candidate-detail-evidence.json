@@ -810,7 +810,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
       "content_sha256": "165ae8ddcd93c9d1839f36d7c00300cd1784a42b65ba7aee94cb0eb0abac0484",
-      "checked_at": "2026-11-22T19:12:06+00:00",
+      "checked_at": "2026-11-22T19:19:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -820,7 +820,14 @@
           "date": "2027-04-30",
           "starts_at": "2027-04-30T20:00:00+02:00"
         }
-      ]
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/1920x950_DOVE_NASCE_IL_MELOGRANO.png",
+        "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di DOVE NASCE IL MELOGRANO",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-1d35c5f06b99b17bd41f",
@@ -2367,8 +2374,8 @@
       "candidate_id": "oa-index-5fea5e594da012daa488",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
-      "content_sha256": "05377cb0c53de4acfdccb52e24d1e749795bf213d0befc613c7308636a613510",
-      "checked_at": "2026-11-22T19:12:18+00:00",
+      "content_sha256": "81f195a6628d4599dd3af4bb1e760cdf2b3ee95eea611a440becbafb2a963fe7",
+      "checked_at": "2026-11-22T19:19:34+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4700,7 +4707,7 @@
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
       "content_sha256": "2351a654f0db0eac2fd015f6c7402a3944baa2298577d9865deeb5434c86b571",
-      "checked_at": "2026-11-22T19:12:23+00:00",
+      "checked_at": "2026-11-22T19:19:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4717,7 +4724,14 @@
           "date": "2027-06-18",
           "starts_at": "2027-06-18T21:00:00+02:00"
         }
-      ]
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/1920x950_IL_NOCE_DI_BENEVENTO.png",
+        "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di IL NOCE DI BENEVENTO",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-a0eba5854831ebbf26c0",
@@ -5332,8 +5346,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "0c3addafac50f723946e60daccd02e714db5665c5c66b6ba1b5ce349af5cdc75",
-      "checked_at": "2026-11-22T19:12:25+00:00",
+      "content_sha256": "e4a55d372082f5f2614a9849812f2c19c24e543329e1ef23e0d814950de3a16d",
+      "checked_at": "2026-11-22T19:19:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6378,8 +6392,8 @@
       "candidate_id": "oa-index-d9a81975db60b7bc0aeb",
       "source_key": "rovigo-regione-programma-2026-27",
       "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
-      "content_sha256": "877d33317691df3b4db3d5f81e59840c93519c2b3485d2d289f3ce062b11d986",
-      "checked_at": "2026-11-22T19:12:12+00:00",
+      "content_sha256": "884f12e0f39cdac57660fb1bdf5380f76ac40bb52ec4e40bc5e63ba78af398e4",
+      "checked_at": "2026-11-22T19:19:30+00:00",
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
