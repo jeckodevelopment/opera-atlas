@@ -317,6 +317,10 @@
     "napoli-san-carlo-rolling-opera": {
       "strategy": "evergreen_index",
       "verification": "test_verified"
+    },
+    "mantova-sociale-rolling-opera": {
+      "strategy": "evergreen_index",
+      "verification": "test_verified"
     }
   }
 }

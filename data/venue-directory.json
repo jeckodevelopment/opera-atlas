@@ -1121,6 +1121,25 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:5Interior_of_Teatro_Sociale_(Bergamo).jpg",
       "photo_credit": "Nazasca / Wikimedia Commons — CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "oa-vd-000057",
+      "name": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "region": "Lombardia",
+      "city_slug": "mantova",
+      "slug": "teatro-sociale-di-mantova",
+      "website": "https://www.teatrosocialemantova.it/",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/storia.aspx",
+      "description": "Teatro storico di Mantova con programmazione di opera lirica, musica, prosa e spettacoli dal vivo.",
+      "monitoring_status": "anagrafica_censita",
+      "address": "Piazza Felice Cavallotti 14",
+      "history": "Realizzato tra il 1818 e il 1822 su iniziativa di una società di cittadini, il Teatro Sociale di Mantova conserva la facciata neoclassica con pronao a colonne. Ospita una programmazione di opera lirica, musica, prosa e altri spettacoli dal vivo.",
+      "calendar_status": "not_acquired",
+      "photo_file": "Facciata restaurata del Teatro Sociale di Mantova.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Facciata_restaurata_del_Teatro_Sociale_di_Mantova.jpg",
+      "photo_credit": "Giovanni Salis — Wikimedia Commons, CC BY 3.0",
+      "photo_license": "CC BY 3.0"
     }
   ],
   "related_organizations": [

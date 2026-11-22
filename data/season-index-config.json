@@ -554,6 +554,13 @@
       "url": "https://www.teatrosancarlo.it/spettacoli/",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "mantova-sociale-rolling-opera",
+      "official_url": "https://www.teatrosocialemantova.it/",
+      "url": "https://www.teatrosocialemantova.it/it-it/ricerca.aspx?fti=opera+lirica",
+      "access_status": "approved",
+      "min_links": 1
     }
   ]
 }

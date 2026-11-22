@@ -21,6 +21,7 @@ ROOT=MANIFEST.parents[1]
 SOURCE_ALLOWLIST=ROOT/"data"/"auto-source-urls.json"
 HEALTH=ROOT/"data"/"autonomous-catalogue-health.json"
 VENUE_BY_SOURCE={
+    "mantova-sociale-rolling-opera":("Mantova","Teatro Sociale di Mantova"),
     "napoli-san-carlo-rolling-opera":("Napoli","Teatro di San Carlo"),
     "pesaro-rof-2026":("Pesaro","Teatro Gioachino Rossini"),
     "martina-valle-itria-2026":("Martina Franca","Palazzo Ducale di Martina Franca"),
