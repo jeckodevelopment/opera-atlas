@@ -76,8 +76,12 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # word 'opera' inside a concert title, review or biographical note.
     start=next((i for i,x in enumerate(reader.parts) if x==title),None)
     if start is None:raise ValueError("Trapani official title missing")
-    prefix=reader.parts[max(0,start-5):start]
-    if "Opera" not in prefix and reader.parts[start+1:start+2]!=["Opera"]:
+    # The source prints breadcrumbs immediately after H1, then a single
+    # event type before repeating the title in the event content.
+    prefix=reader.parts[start+1:start+8]
+    second_title=next((i for i,x in enumerate(prefix) if x==title),None)
+    category=prefix[:second_title] if second_title is not None else prefix[:4]
+    if "Opera" not in category:
         raise ValueError("Trapani event is not an outdoor opera")
     primary=" ".join(reader.parts[start:start+22]).split("Personaggi e interpreti",1)[0]
     credit=COMPOSER.search(primary)
@@ -90,6 +94,8 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         r'Teatro\s+["“]Giuseppe\s+Di\s+Stefano["”]\s+'
         r'([0-3]?\d)\s+('+ "|".join(MONTHS) +r')\s+(20\d{2}),?\s+Ore\s+'
         r'([01]?\d|2[0-3]):([0-5]\d)',primary,re.I)
+    if len(pairs)!=len(VENUE.findall(primary)):
+        raise ValueError("some Trapani official showtimes are missing or invalid")
     for d,month,y,h,m in pairs:
         year=int(y)
         if year!=int(DETAIL.fullmatch(urlsplit(url).path)[1]):
