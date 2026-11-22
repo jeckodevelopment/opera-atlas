@@ -64,6 +64,17 @@ class SecondarySanCarloTests(unittest.TestCase):
         self.assertEqual(len(productions), 2)
         self.assertEqual(len(productions[0]["performances"]), 2)
 
+    def test_nested_heading_inside_outer_anchor(self):
+        html = fixture().replace(
+            '<p>Giuseppe Verdi</p><h2>Luisa Miller</h2>',
+            '<a href="/produzione/luisa-miller"><p>Giuseppe Verdi</p>'
+            '<h2><span>Luisa Miller</span></h2></a>',
+        )
+        records = parse(html)
+        self.assertEqual(records[0]["title"], "Luisa Miller")
+        self.assertEqual(records[0]["composer"], "Giuseppe Verdi")
+        self.assertEqual(len(records[0]["performances"]), 2)
+
     def test_rejects_wrong_source_and_ambiguous_time(self):
         with self.assertRaisesRegex(ValueError, "unapproved"):
             parse(fixture(), url="https://not-classicalive.example/season")
