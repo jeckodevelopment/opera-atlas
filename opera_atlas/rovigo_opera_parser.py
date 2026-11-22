@@ -42,9 +42,16 @@ def identify_season(html:str,*,url:str)->str:
             or u.username or u.password):
         raise ValueError("unapproved Rovigo municipal season URL")
     text=clean(re.sub(r"(?i)</h[1-6]>", " </h3> ",html))
-    if not re.search(r"(?i)\bTeatro Sociale\s+(?:di\s+)?Rovigo\b",text):
+    # Municipal season headings may separate the venue and city with "di",
+    # a dash or punctuation; city and venue must still be explicit.
+    if not re.search(r"(?i)\bTeatro Sociale\b.{0,45}\bRovigo\b",text):
         raise ValueError("Rovigo Teatro Sociale not identified")
-    if not re.search(r"(?:2026\s*[/–-]\s*2027|stagione\s+2026\s*[/–-]\s*27)",text,re.I):
+    # Season 2026/27 and 2026/2027 appear in official programmes.
+    # An unrelated date is never enough: require a season label nearby.
+    if not re.search(
+        r"(?i)\bstagione\s+(?:(?:teatrale|lirica|opera)\s+)?"
+        r"2026\s*[/–-]\s*(?:2027|27)\b",text
+    ):
         raise ValueError("official Rovigo season 2026/27 not established")
     if not any(re.search(r"(?i)\b"+re.escape(title)+r"\b",text)
                for title in WORKS):
