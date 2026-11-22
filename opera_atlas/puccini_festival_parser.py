@@ -48,14 +48,19 @@ def _parse_days(text:str,*,year:int)->list[str]:
 
 def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
     target=urlsplit(url)
+    match=re.fullmatch(
+        r"/en/(\d{2,3})(st|nd|rd|th)-puccini-festival-(20\d{2})/?",target.path)
     if (target.scheme!="https" or target.hostname!="www.puccinifestival.it"
-        or target.path.rstrip("/")!="/en/73rd-puccini-festival-2027"
-        or target.query or target.fragment or target.username or target.password
-        or target.port is not None):
-        raise ValueError("unapproved Puccini official 2027 programme")
+        or match is None or target.query or target.fragment
+        or target.username or target.password or target.port is not None):
+        raise ValueError("unapproved Puccini official programme")
+    edition=int(match[1])
+    year=int(match[3])
+    if not 2027<=year<=2099 or edition!=year-1954:
+        raise ValueError("inconsistent Puccini festival edition/year")
     body=clean(html)
-    if not (re.search(r"(?i)\b73rd Puccini Festival\b",body)
-        and re.search(r"(?i)\b2027 programme\b",body)
+    if not (re.search(r"(?i)\b"+str(edition)+re.escape(match[2])+r" Puccini Festival\b",body)
+        and re.search(r"(?i)\b"+str(year)+r" programme\b",body)
         and re.search(r"(?i)\bGiacomo Puccini Open-Air Theatre\b",body)
         and re.search(r"(?i)\bAll performances start at 9\.15 pm\b",body)):
         raise ValueError("Puccini programme/year/venue/clock unverified")
@@ -79,7 +84,7 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
         # Programme cards contain a trailing "Explore the opera and cast"
         # from the preceding card, not part of the next calendar.
         date_area=re.split(r"(?i)Explore the opera and cast",date_area)[-1].strip()
-        days=_parse_days(date_area,year=2027)
+        days=_parse_days(date_area,year=year)
         if len(days)!=expected:
             raise ValueError("incomplete Puccini official opera dates: "+title)
         if title=="La rondine":
