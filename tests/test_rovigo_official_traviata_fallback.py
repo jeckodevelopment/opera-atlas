@@ -121,9 +121,10 @@ class RovigoTraviataFallbackTests(unittest.TestCase):
 
     def test_fallback_failure_is_distinguished_from_obsolete_slider(self):
         config=json.loads(CONFIG.read_text())
+        from opera_atlas.rovigo_traviata_official import OFFICIAL_URLS
         for problem in ("fetch","content"):
             def fetcher(db,*,source_id,url,network_enabled):
-                if url!=URL:
+                if url not in OFFICIAL_URLS:
                     return FetchResult(url,"<h1>Non valido</h1>","d"*64,21)
                 if problem=="fetch":
                     raise FetchUnavailable("page unavailable")
