@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T14:52:32+00:00",
+  "checked_at": "2026-11-22T14:57:03+00:00",
   "total": 257,
   "states": {
     "already_catalogued": 184,
@@ -8,5 +8,21 @@
     "not_in_official_season": 18,
     "needs_review": 5
   },
-  "changes": []
+  "changes": [
+    {
+      "candidate_id": "oa-index-357ebb275673ae888623",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    }
+  ]
 }
