@@ -163,6 +163,7 @@ class NationalIndexTests(unittest.TestCase):
         self.assertEqual({x["key"] for x in self.config["sources"]},{
             "mantova-sociale-rolling-opera",
             "cosenza-rendano-rolling-opera",
+            "vicenza-olimpico-rolling-opera",
             "napoli-san-carlo-rolling-opera",
             "pesaro-rof-2026",
             "martina-valle-itria-2026",
