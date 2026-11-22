@@ -1294,6 +1294,29 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         health.append({"candidate_id":item["id"],
                                        "outcome":"verified_other_season","rows":0})
                         continue
+                # First-party official Genova ticket webpage and brochure
+                # agree on six historical Figaro recite. The CMS may insert
+                # variable markup that defeats generic date-card matching.
+                if (item["source_key"]=="carlo-felice-season-2026-27"
+                    and item["official_url"]==
+                    "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"):
+                    from opera_atlas.genova_figaro_program import (
+                        verified_calendar,SCHEDULE_URL)
+                    facts=verified_calendar(
+                        source_key=item["source_key"],
+                        source_url=item["official_url"])
+                    retained[item["id"]]={
+                        "candidate_id":item["id"],"source_key":item["source_key"],
+                        "source_url":item["official_url"],
+                        "content_sha256":page.sha256,
+                        "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        "status":"needs_editorial_review",
+                        "official_schedule_evidence_url":SCHEDULE_URL,
+                        "event_facts":facts}
+                    health.append({"candidate_id":item["id"],
+                                   "outcome":"verified_first_party_season_calendar",
+                                   "rows":len(facts)})
+                    continue
                 if item["source_key"]=="rovigo-regione-programma-2026-27":
                     from opera_atlas.rovigo_regional_program import approved_programme
                     pdf_url=approved_programme(page.html,url=item["official_url"])
