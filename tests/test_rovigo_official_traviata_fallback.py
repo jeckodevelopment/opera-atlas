@@ -170,6 +170,49 @@ class RovigoTraviataFallbackTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 parse_official_traviata(HTML,url=spoofed)
 
+    def test_live_html_shell_is_diagnosed_separately_per_official_endpoint(self):
+        from opera_atlas.rovigo_traviata_official import URL,DETAIL_URL
+        config=json.loads(CONFIG.read_text())
+        for source in config["sources"]:
+            if source["key"]!=KEY:
+                source["access_status"]="blocked"
+        visited=[]
+        def fetcher(db,*,source_id,url,network_enabled):
+            visited.append(url)
+            # Social API replies with a blank application shell while the
+            # alternate event page has a title but no actual composer.
+            page=("<html><div id='app'></div></html>" if url==URL else
+                  "<html><h1>LA TRAVIATA</h1></html>")
+            return FetchResult(url,page,"a"*64,len(page))
+        candidates,health=scan(config,{"schema_version":1,"candidates":[]},
+                               fetcher=fetcher,network_enabled=True,
+                               source_keys={KEY})
+        self.assertEqual(candidates["candidates"],[])
+        self.assertEqual(visited[-2:],[URL,DETAIL_URL])
+        self.assertEqual(health[0]["diagnostic"],
+                         "rovigo_fallback_content_unverified")
+        self.assertEqual(health[0]["fallback_checks"],{
+            "social_api":"title_missing",
+            "event_page":"composer_missing",
+        })
+        self.assertNotIn("html",str(health[0]))
+        self.assertNotIn("https",str(health[0]["fallback_checks"]))
+
+    def test_mixed_endpoint_transport_and_parser_failures_are_distinct(self):
+        from opera_atlas.rovigo_traviata_official import URL,DETAIL_URL
+        config=json.loads(CONFIG.read_text())
+        def fetcher(db,*,source_id,url,network_enabled):
+            if url==URL:raise FetchUnavailable("page unavailable")
+            return FetchResult(url,"<h1>Pagina evento non disponibile</h1>",
+                               "c"*64,50)
+        _,health=scan(config,{"schema_version":1,"candidates":[]},
+                      fetcher=fetcher,network_enabled=True,
+                      source_keys={KEY})
+        self.assertEqual(health[0]["fallback_checks"],{
+            "social_api":"fetch_unavailable",
+            "event_page":"title_missing",
+        })
+
     def test_both_official_endpoints_without_content_fail_closed(self):
         config=json.loads(CONFIG.read_text())
         for source in config["sources"]:
