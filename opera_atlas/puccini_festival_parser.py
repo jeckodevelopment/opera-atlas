@@ -82,6 +82,10 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
         days=_parse_days(date_area,year=2027)
         if len(days)!=expected:
             raise ValueError("incomplete Puccini official opera dates: "+title)
+        if title=="La rondine":
+            # Festival index and homepage disagree on the second recita
+            # (22 August vs 17 July); do not auto-publish this work.
+            continue
         if title=="Il Trittico":
             # These are two composite-bill performances, never three
             # separately ticketed performances on each date.
@@ -91,6 +95,6 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
                 raise ValueError("Puccini composite programme identity changed")
             continue
         result.extend((title,COMPOSER,VENUE,day,"21:15") for day in days)
-    if len(result)!=17:
+    if len(result)!=15:
         raise ValueError("partial first-party Puccini festival calendar")
     return result
