@@ -104,9 +104,32 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
                      bounded,maxsplit=1)[0]
     if re.search(r"(?i)\b(?:annullat[oaie]|cancellat[oaie]|rinviat[oaie])\b",bounded):
         raise ValueError("cancelled Modena performance requires reconciliation")
+    observations=DATE.findall(bounded)
+    # The Teatro's /opera/ index is evergreen. When a new page has
+    # explicitly dated ticket rows, establish its opera season from those
+    # rows, never from the current wall clock or the old 2026/27 index.
+    explicit_seasons={
+        int(year) if month.casefold() in ("ottobre","novembre","dicembre")
+        else int(year)-1
+        for _,_,month,year,_,_ in observations if year
+    }
+    # Yearless future rows are accepted only if this SAME production detail
+    # names the future season; unrelated navigation/footer years do not count.
+    labels={
+        int(m.group(1))
+        for m in re.finditer(
+            r"(?i)\bstagione\s+(?:opera\s+)?(20\d{2})\s*[/–-]\s*(20\d{2})\b",
+            bounded)
+        if int(m.group(2))==int(m.group(1))+1
+    }
+    if len(explicit_seasons)>1 or len(labels)>1 or (
+            explicit_seasons and labels and explicit_seasons!=labels):
+        raise ValueError("conflicting official Modena opera seasons")
+    season=next(iter(explicit_seasons or labels),2026)
     found={}
-    for weekday,day,month,year,hour,minute in DATE.findall(bounded):
-        date_iso=exact_day(weekday,day,month,year or None)
+    for weekday,day,month,year,hour,minute in observations:
+        date_iso=exact_day(weekday,day,month,year or None,
+                           season_start_year=season)
         clock=f"{int(hour):02d}:{minute}"
         if date_iso in found and found[date_iso]!=clock:
             raise ValueError("conflicting showtime for same Modena recita")

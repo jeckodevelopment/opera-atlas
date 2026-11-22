@@ -45,15 +45,18 @@ def unaccent(s:str)->str:
                    if not unicodedata.combining(x))
 
 
-def exact_day(weekday:str,day:str,month:str,year:str|None)->str:
+def exact_day(weekday:str,day:str,month:str,year:str|None,*,
+              season_start_year:int=2026)->str:
     if unaccent(month) not in MONTHS or unaccent(weekday) not in WEEKDAYS:
         raise ValueError("unsupported Modena date wording")
-    years=[int(year)] if year else [2026,2027]
+    if not 2026<=season_start_year<=2098:
+        raise ValueError("unsupported Modena opera season")
+    years=[int(year)] if year else [season_start_year,season_start_year+1]
     valid=[]
     for y in years:
         try: d=date(y,MONTHS[unaccent(month)],int(day))
         except ValueError:continue
-        if (date(2026,10,1)<=d<=date(2027,7,31)
+        if (date(season_start_year,10,1)<=d<=date(season_start_year+1,7,31)
             and d.weekday()==WEEKDAYS[unaccent(weekday)]):
             valid.append(d.isoformat())
     if len(valid)!=1:
