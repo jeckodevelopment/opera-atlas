@@ -170,8 +170,17 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
     if source_key=="sassari-de-carolis-opera-2026":
         from opera_atlas.sassari_de_carolis_parser import parse_detail
         title,composer,venue,rows=parse_detail(html,url=url)
+        # Official Italian names are aliases of the existing canonical works.
+        # Match on the independently verified composer as well as the title;
+        # never create a duplicate work or reinterpret an unrelated homonym.
+        sassari_canonical_titles={
+            ("il flauto magico","wolfgang amadeus mozart"):"Die Zauberflöte",
+            ("don carlo","giuseppe verdi"):"Don Carlos",
+        }
+        canonical=sassari_canonical_titles.get(
+            (normalized(title),normalized(composer)),title)
         matches=[w for w in registry.get("works",{}).values()
-                 if normalized(w["title"])==normalized(title)
+                 if normalized(w["title"])==normalized(canonical)
                  and normalized(w["composer"])==normalized(composer)]
         if len(matches)!=1:return []
         work=matches[0]

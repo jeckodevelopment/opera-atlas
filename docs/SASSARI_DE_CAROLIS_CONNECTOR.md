@@ -34,3 +34,19 @@ le singole recite.
 - python -m scripts.source_automation --check
 - Verificare tre URL ufficiali, sei orari, venue Sassari e
   l'assenza di Alghero e concerti nel catalogo di Sassari.
+
+## Identità canonica dei titoli tradotti
+
+Nella fonte ufficiale di Sassari, `Il flauto magico` di Mozart è
+**Die Zauberflöte**, già censita come `oa-w-000056`. Analogamente,
+`Don Carlo` di Verdi è riconciliato con l'identità canonica
+`Don Carlos`, non creato come seconda opera. Il controllo sul
+compositore resta obbligatorio; queste equivalenze sono circoscritte
+alle schede già verificate della fonte, non applicate a qualunque
+opera omonima. Il titolo della scheda canonica resta invariato.
+
+La precedenza dei nomi originali non impedisce la visualizzazione
+di titoli locali nelle informazioni della singola produzione, ma
+l'associazione alla scheda dell'opera deve utilizzare il record
+canonico già esistente. Le recite continuano ad essere candidate
+finché la pipeline nazionale non le pubblica effettivamente.
