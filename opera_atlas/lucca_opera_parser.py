@@ -92,7 +92,7 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # Extract exclusively from the bounded, title- and venue-verified panel;
     # the global navigation can mention unrelated musicians and operas.
     credits=re.findall(
-        r"\bMusica di\s+([A-ZÀ-Ý][A-ZÀ-Ý'’.-]+(?:\s+[A-ZÀ-Ý][A-ZÀ-Ý'’.-]+){1,3})\b",
+        r"\bMusica di\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3})\b",
         text)
     if len(credits)!=1:
         raise ValueError("official composer credit missing or ambiguous")
