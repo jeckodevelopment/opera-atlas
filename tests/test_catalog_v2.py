@@ -26,11 +26,14 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         found={w["id"]:w for w in graph["works"]}
         for ident in range(90,94):
             wid=f"oa-w-{ident:06d}"
-            self.assertEqual(found[wid]["catalog_status"],"program_component")
-        self.assertEqual(len(graph["works"]),len(self.registry["works"])+4)
+            if wid in {w["id"] for w in self.registry["reserved_works"].values()}:
+                self.assertEqual(found[wid]["catalog_status"],"program_component")
+            else:
+                self.assertTrue(any(s["work_id"]==wid for s in graph["stagings"]))
+        self.assertEqual(len(graph["works"]),len(self.registry["works"])+len(self.registry["reserved_works"]))
         self.assertEqual(len(graph["performances"]),sum(len(p["dates"]) for p in self.facts["productions"]))
-        self.assertFalse(any(s["work_id"] in {f"oa-w-{i:06d}" for i in range(90,94)}
-                             for s in graph["stagings"]))
+        reserved_ids={w["id"] for w in self.registry["reserved_works"].values()}
+        self.assertFalse(any(s["work_id"] in reserved_ids for s in graph["stagings"]))
 
     def test_slugs_and_relationships(self):
         result=assemble(self.facts, self.registry)

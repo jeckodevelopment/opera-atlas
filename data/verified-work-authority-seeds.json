@@ -681,6 +681,24 @@
           "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/"
         ]
       }
+    },
+    {
+      "source_key": "jesi-esecuzione-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "title": "L'esecuzione",
+      "composer": "Salvatore Passantino",
+      "synopsis": "Durante una prova della Tosca di Puccini, il tenore che interpreta Cavaradossi viene ucciso davvero. Il sovrintendente indaga sul palcoscenico, interrogando la cantante e i figuranti del plotone per scoprire chi abbia sparato.",
+      "history": {
+        "librettist": "Marco Malvaldi",
+        "premiere_year": 2026,
+        "premiere_date": "2026-11-14",
+        "premiere_venue": "Teatro Giovan Battista Pergolesi",
+        "premiere_city": "Jesi",
+        "sources": [
+          "https://www.fondazionepergolesispontini.com/lirica-jesi-il-14-e-15-novembre-lesecuzione-sotto-lo-sguardo-di-tosca-prima-assoluta-al-teatro-pergolesi-di-jesi-musica-di-salvatore-passantino-libretto-di-marco-malva/",
+          "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+        ]
+      }
     }
   ]
 }

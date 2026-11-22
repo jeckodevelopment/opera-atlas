@@ -1162,6 +1162,35 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     title=facts[0].get("event_title","")
                     if isinstance(title,str) and title.strip():
                         image=extract_official_poster(page.html,item["official_url"],title)
+                    # Jesi publishes several independent operas on one
+                    # season page; its exact same-origin event page may be
+                    # the only source of authenticated work-specific artwork.
+                    # Never reuse a thumbnail from Nabucco/Don Pasquale.
+                    if image is None and item["source_key"]=="jesi-esecuzione-opera-2026":
+                        dedicated=("https://www.fondazionepergolesispontini.com/"
+                                   "eventi/lesecuzione-sotto-lo-sguardo-di-tosca-2/")
+                        if (urlsplit(dedicated).hostname==
+                            urlsplit(item["official_url"]).hostname):
+                            # The exact first-party detail URL is separately
+                            # approved *only for artwork*, not candidate
+                            # discovery or showtime acquisition.
+                            secondary_key=(source_id,dedicated)
+                            secondary=fetched_pages.get(secondary_key)
+                            if secondary is None:
+                                if distinct_fetches:pause(REQUEST_GAP_SECONDS)
+                                try:
+                                    secondary=fetcher(db,source_id=source_id,
+                                        url=dedicated,network_enabled=True)
+                                except (AccessDenied,FetchUnavailable):
+                                    secondary=None
+                                if secondary is not None:
+                                    fetched_pages[secondary_key]=secondary
+                                    distinct_fetches+=1
+                            else:
+                                repeated_pages+=1
+                            if secondary is not None and isinstance(title,str):
+                                image=extract_official_poster(
+                                    secondary.html,dedicated,title)
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
                     "source_url":item["official_url"],"content_sha256":page.sha256,

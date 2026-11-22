@@ -90,6 +90,13 @@ def image_matches_work(image_url:str,work_title:str)->bool:
         return [x for x in re.split(r"[^a-z0-9]+",value.lower()) if x]
     title=[x for x in tokens(work_title) if x not in {"il","la","le","lo","l","di","de","and","in"}]
     filename=tokens(stem)
+    # An opera beginning with an elided Italian article may appear in
+    # first-party filenames as "lesecuzione" rather than "l-esecuzione".
+    # Only split that exact article if it yields a required title token;
+    # never substitute another composition or accept generic season art.
+    if re.match(r"(?i)^l['’]",work_title):
+        filename += [x[1:] for x in filename
+                     if x.startswith("l") and x[1:] in title]
     if not title:return False
     return all(x in filename for x in title)
 
