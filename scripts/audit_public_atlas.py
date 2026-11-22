@@ -57,7 +57,7 @@ def targets(manifest: dict, works: dict, venues: dict, stagings: dict, performan
     for venue in venues["venues"]:
         if venue.get("city_slug") and venue.get("slug"):
             output.append({"id": venue["id"], "type": "venue", "work_id": None,
-                           "title": venue["name"], "venue_id": venue["id"],
+                           "title": venue.get("display_name") or venue["name"], "venue_id": venue["id"],
                            "route": "/" + venue["city_slug"] + "/" + venue["slug"] + "/",
                            "expected_recite": None})
     output.sort(key=lambda x: (x["type"], x["id"]))
