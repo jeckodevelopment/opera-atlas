@@ -75,6 +75,20 @@ class AstiAlfieriRollingTests(unittest.TestCase):
             with self.subTest(broken=broken[:130]),self.assertRaises(ValueError):
                 parse_detail(broken,url=AIDA)
 
+    def test_event_clock_after_accessible_header_navigation(self):
+        source=detail()
+        shifted=source.replace(
+            '<h1>Aida</h1><p>06/02/2027 @ 21:00</p>',
+            '<h1>Aida</h1><nav>' + ('Selezione spettacoli ' * 8)
+            + '</nav><p>06/02/2027 @ 21:00</p>')
+        self.assertEqual(parse_detail(shifted,url=AIDA)[-1],
+                         [("2027-02-06","21:00")])
+        conflicting=shifted.replace(
+            '<p>06/02/2027 @ 21:00</p>',
+            '<p>06/02/2027 @ 21:00</p><p>07/02/2027 @ 19:00</p>')
+        with self.assertRaisesRegex(ValueError,"ambiguous"):
+            parse_detail(conflicting,url=AIDA)
+
     def test_future_year_is_from_official_event_not_current_year(self):
         title,composer,venue,dates=parse_detail(detail(2029),url=AIDA)
         self.assertEqual((title,composer,venue),("Aida","Giuseppe Verdi","Teatro Alfieri"))
