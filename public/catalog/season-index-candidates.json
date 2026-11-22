@@ -413,7 +413,7 @@
       "id": "oa-index-2583140715d654277a2b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -493,7 +493,7 @@
       "id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "official_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T22:34:11+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -613,7 +613,7 @@
       "id": "oa-index-41acaf1f090fbeedb4a7",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello-3/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -661,7 +661,7 @@
       "id": "oa-index-4e7a6ea5275e9fa4ad03",
       "source_key": "sassari-de-carolis-rolling-opera",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -709,7 +709,7 @@
       "id": "oa-index-535b054411d3b3c9ea01",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -765,7 +765,7 @@
       "id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "official_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T00:27:03+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -941,7 +941,7 @@
       "id": "oa-index-70313ef8895b42a91a5b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -973,7 +973,7 @@
       "id": "oa-index-743dd5f2381d26feece2",
       "source_key": "sassari-de-carolis-rolling-opera",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -1029,7 +1029,7 @@
       "id": "oa-index-795566dacc905fc5e7f2",
       "source_key": "teatro-grande-opera-2026",
       "official_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-21T12:00:43+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -1341,7 +1341,7 @@
       "id": "oa-index-9871aa4f1201e959bf0b",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -1357,7 +1357,7 @@
       "id": "oa-index-995d8f9ff8de58d84cfd",
       "source_key": "ravenna-cherubini-rolling-opera",
       "official_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -1389,7 +1389,7 @@
       "id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T14:28:24+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -1525,7 +1525,7 @@
       "id": "oa-index-ab6612954af20d7d7cad",
       "source_key": "ravenna-cherubini-rolling-opera",
       "official_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -1781,7 +1781,7 @@
       "id": "oa-index-cd6e3c395e6b5bbc1ff4",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/otello-2/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -1853,7 +1853,7 @@
       "id": "oa-index-d1c1b3127d4e683424be",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/aida/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -2005,7 +2005,7 @@
       "id": "oa-index-df2fab0c88c0e4ca68c2",
       "source_key": "pisa-future-calendar",
       "official_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-22T15:27:52+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -2101,7 +2101,7 @@
       "id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-21T15:00:58+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
@@ -2309,7 +2309,7 @@
       "id": "oa-index-f92f3fc808d9fb909461",
       "source_key": "sassari-de-carolis-rolling-opera",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
-      "status": "already_catalogued",
+      "status": "needs_review",
       "first_seen": "2026-11-22T16:46:13+00:00",
       "last_seen": "2026-11-22T16:46:13+00:00"
     },
