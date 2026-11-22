@@ -106,9 +106,10 @@ def validate_after_rebase(repo:Path):
         if completed.returncode:
             raise RuntimeError("rebased catalog failed canonical validation")
 
-def main():
-    source_health = sys.argv[1:] == ["--source-health"]
-    if sys.argv[1:] and not source_health:
+def main(argv:list[str]|None=None):
+    args = [] if argv is None else argv
+    source_health = args == ["--source-health"]
+    if args and not source_health:
         raise SystemExit("usage: python -m scripts.safe_push_catalog [--source-health]")
     result=safe_push(Path.cwd(),verify=validate_after_rebase,
                      conflict_checker=(source_health_conflicting
@@ -119,4 +120,4 @@ def main():
         with open(output,"a",encoding="utf-8") as stream:
             stream.write(f"deferred={str(result == 'deferred').lower()}\n")
 if __name__=="__main__":
-    main()
+    main(sys.argv[1:])
