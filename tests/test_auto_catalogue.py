@@ -63,11 +63,21 @@ class AutoCatalogueTests(unittest.TestCase):
                     "candidate_id":candidate_id,"source_key":key,"source_url":url,
                     "status":"needs_editorial_review","event_facts":rows}]}
                 self.assertEqual(len(split_verified_season(evidence["evidence"][0])),productions)
+                existing=[p for p in self.facts["productions"]
+                          if p["source_url"]==url]
+                # After a successful previous refresh the same source is
+                # replay-safe, rather than creating the same events again.
+                self.assertIn(len(existing),(0,productions))
+                prior_recite=sum(len(p["dates"]) for p in existing)
+                self.assertIn(prior_recite,(0,recite))
                 facts,ids,urls,report=promote(self.facts,self.registry,evidence,
                     candidate,[],today=date(2026,11,22))
-                self.assertEqual(report["new_stagings"],productions)
-                self.assertEqual(report["new_recite"],recite)
-                self.assertIn(url,urls)
+                self.assertEqual(report["new_stagings"],productions-len(existing))
+                self.assertEqual(report["new_recite"],recite-prior_recite)
+                staged=[p for p in facts["productions"] if p["source_url"]==url]
+                self.assertEqual(len(staged),productions)
+                self.assertEqual(sum(len(p["dates"]) for p in staged),recite)
+                if not existing:self.assertIn(url,urls)
                 again,again_ids,_,second=promote(
                     facts,ids,evidence,candidate,urls,today=date(2026,11,22))
                 self.assertEqual(second["new_recite"],0)
