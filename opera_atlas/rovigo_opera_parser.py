@@ -93,6 +93,12 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
         # Date evidence must sit beside the title's primary booking panel,
         # not inside a general listing or a historic premiere paragraph.
         panel=section[credit.end():credit.end()+550]
+        # A work-specific Ridotto announcement is not a performance in
+        # the main Teatro Sociale auditorium. Preserve venue identity:
+        # keep this production in review until the Ridotto has a separately
+        # verified canonical venue mapping. Never silently relabel it.
+        if re.search(r"(?i)\bRidotto\b",section[:550]):
+            continue
         # A later concert or other genre heading must not leak its times
         # into the preceding opera, even on a one-page season programme.
         panel=re.split(r"(?i)\b(?:concerto(?: di Capodanno)?|\bconcertistica\b|\bprosa\b|\bballetto\b|\bdanza\b)\b",

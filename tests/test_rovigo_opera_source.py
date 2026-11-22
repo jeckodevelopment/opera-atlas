@@ -97,6 +97,27 @@ class RovigoOperaTests(unittest.TestCase):
              "2026-11-13","20:30"),
         ])
 
+    def test_ridotto_is_not_mislabelled_as_main_auditorium(self):
+        # On the real season the Albinoni intermezzo is at the Ridotto,
+        # not the theatre's main auditorium. A shared index must not
+        # silently publish that as Teatro Sociale.
+        html=(HEADER
+              +"<h2>Pimpinone</h2><p>musica di Tomaso Albinoni</p>"
+              +"<p>Ridotto del Teatro Sociale di Rovigo</p>"
+              +"<p>26 novembre 2026 ore 20.30</p>"
+              +"<p>28 novembre 2026 ore 18.00</p>"
+              +"<h2>Pagliacci</h2><p>musica di Ruggero Leoncavallo</p>"
+              +"<p>13 novembre 2026 ore 20.30</p>")
+        self.assertEqual(parse_program(html,url=URL),[
+            ("Pagliacci","Ruggero Leoncavallo","Teatro Sociale",
+             "2026-11-13","20:30"),
+        ])
+        # When a hypothetical official panel explicitly establishes the
+        # main venue instead, the original extraction remains functional.
+        main=html.replace("Ridotto del Teatro Sociale di Rovigo",
+                          "Teatro Sociale di Rovigo")
+        self.assertEqual(len(parse_program(main,url=URL)),3)
+
     def test_fail_closed_on_missing_primary_evidence(self):
         for broken in (
             HEADER.replace("2026/2027","2025/2026")+"<p>Pagliacci</p>",
