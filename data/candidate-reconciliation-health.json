@@ -1,12 +1,88 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T16:08:51+00:00",
-  "total": 279,
+  "checked_at": "2026-11-22T16:14:16+00:00",
+  "total": 282,
   "states": {
-    "already_catalogued": 192,
+    "already_catalogued": 199,
     "excluded_nonopera": 53,
     "not_in_official_season": 16,
-    "needs_review": 18
+    "needs_review": 14
   },
-  "changes": []
+  "changes": [
+    {
+      "candidate_id": "oa-index-2583140715d654277a2b",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-357ebb275673ae888623",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-38d6a0376cd3960e14fe",
+      "before": "already_catalogued",
+      "after": "needs_review"
+    },
+    {
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-5955fe5c45bf5a1530a5",
+      "before": "already_catalogued",
+      "after": "needs_review"
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-70313ef8895b42a91a5b",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-a6cead48df9475df119e",
+      "before": "already_catalogued",
+      "after": "needs_review"
+    },
+    {
+      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-d8275c7a129bf19b2ec8",
+      "before": "already_catalogued",
+      "after": "needs_review"
+    },
+    {
+      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    }
+  ]
 }
