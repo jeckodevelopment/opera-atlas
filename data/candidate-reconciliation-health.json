@@ -1,12 +1,98 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T01:23:40+00:00",
+  "checked_at": "2026-11-22T01:26:46+00:00",
   "total": 232,
   "states": {
-    "already_catalogued": 122,
+    "already_catalogued": 139,
     "excluded_nonopera": 45,
     "not_in_official_season": 18,
-    "needs_review": 47
+    "needs_review": 30
   },
-  "changes": []
+  "changes": [
+    {
+      "candidate_id": "oa-index-068e8c81310d6d5237ea",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-1b9c2f52afd0351d539c",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-4186e1c367aee6cd2028",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-488fd79f628da89db68f",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-53ec78e7155f5b9f3210",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-59f9f415de71b2b46733",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-5a4e3f1f4e61fba4f115",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-750ac19106901beddc2c",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-8cc98b8fce566b8b3f4f",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-997a698e76cca7510492",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-b756ca3bab6062c03ef8",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-dd282b89dc6ab9f24a20",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-e093badade1f5650638e",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-edf6ac484882834fe426",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-f9bb7479607348f07887",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    },
+    {
+      "candidate_id": "oa-index-fcf75c0534a0639007c7",
+      "before": "needs_review",
+      "after": "already_catalogued"
+    }
+  ]
 }

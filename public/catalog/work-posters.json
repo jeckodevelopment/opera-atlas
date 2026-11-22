@@ -736,6 +736,24 @@
       "credit": "Manifesto originale ufficiale di Le nozze dell’orso, Teatro Massimo Bellini / Teatro Sangiorgi, novembre 2026",
       "alt": "Locandina ufficiale Le nozze dell’orso, musica di Joe Schittino, Teatro Sangiorgi",
       "kind": "official_original_work_artwork"
+    },
+    "oa-w-000083": {
+      "work_id": "oa-w-000083",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Le_Convenienze_teatrali_(manuscrit_autographe)_-_btv1b108620224_(052_of_254).jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Le_Convenienze_teatrali_(manuscrit_autographe)_-_btv1b108620224_(052_of_254).jpg",
+      "alt": "Pagina della partitura autografa ottocentesca delle Convenienze teatrali di Donizetti, antecedente alla versione riveduta del 1831; non immagine dell'allestimento di Bergamo del 2026",
+      "credit": "Gaetano Donizetti, manoscritto autografo (1827–1837), Bibliothèque nationale de France / Gallica via Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000084": {
+      "work_id": "oa-w-000084",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gaetano_Donizetti_-_Alahor_in_Granata_-_libretto_-_title_page.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_Alahor_in_Granata_-_libretto_-_title_page.png",
+      "alt": "Frontespizio storico del libretto di Alahor in Granata, Napoli 1826; non fotografia dello spettacolo bergamasco 2026",
+      "credit": "Libretto di Alahor in Granata, Biblioteca del Congresso, tramite Wikimedia Commons",
+      "license": "Public domain · https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_Alahor_in_Granata_-_libretto_-_title_page.png"
     }
   }
 }

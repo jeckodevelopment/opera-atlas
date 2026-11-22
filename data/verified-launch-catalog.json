@@ -4684,6 +4684,347 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "key": "auto-068e8c81310d6d52",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "dates": [
+        [
+          "2027-04-16",
+          "20:00"
+        ],
+        [
+          "2027-04-18",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1b9c2f52afd0351d",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+      "dates": [
+        [
+          "2027-04-11",
+          "15:30"
+        ],
+        [
+          "2027-04-14",
+          "19:00"
+        ],
+        [
+          "2027-04-16",
+          "20:00"
+        ],
+        [
+          "2027-04-18",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-4186e1c367aee6cd",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
+      "dates": [
+        [
+          "2027-07-16",
+          "21:00"
+        ],
+        [
+          "2027-07-25",
+          "21:00"
+        ],
+        [
+          "2027-07-31",
+          "21:00"
+        ],
+        [
+          "2027-08-06",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-488fd79f628da89d",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "source_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/",
+      "dates": [
+        [
+          "2026-04-16",
+          "21:00"
+        ],
+        [
+          "2026-04-19",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-59f9f415de71b2b4",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "source_url": "https://cultura.comune.salerno.it/eventi/macbeth-2026/",
+      "dates": [
+        [
+          "2026-10-18",
+          "18:00"
+        ],
+        [
+          "2026-10-20",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-5a4e3f1f4e61fba4",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/",
+      "dates": [
+        [
+          "2026-12-21",
+          "21:00"
+        ],
+        [
+          "2026-12-23",
+          "21:00"
+        ],
+        [
+          "2026-12-26",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-750ac19106901bed",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
+      "dates": [
+        [
+          "2027-10-08",
+          "20:00"
+        ],
+        [
+          "2027-10-09",
+          "20:00"
+        ],
+        [
+          "2027-10-10",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-8cc98b8fce566b8b",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
+      "dates": [
+        [
+          "2027-07-17",
+          "21:00"
+        ],
+        [
+          "2027-07-23",
+          "21:00"
+        ],
+        [
+          "2027-08-01",
+          "21:00"
+        ],
+        [
+          "2027-08-07",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-997a698e76cca751",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
+      "dates": [
+        [
+          "2027-01-29",
+          "20:00"
+        ],
+        [
+          "2027-01-30",
+          "20:00"
+        ],
+        [
+          "2027-01-31",
+          "16:00"
+        ],
+        [
+          "2027-02-02",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-e093badade1f5650",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "dates": [
+        [
+          "2027-01-29",
+          "20:00"
+        ],
+        [
+          "2027-01-31",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-edf6ac484882834f",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
+      "dates": [
+        [
+          "2027-05-21",
+          "20:00"
+        ],
+        [
+          "2027-05-22",
+          "20:00"
+        ],
+        [
+          "2027-05-23",
+          "16:00"
+        ],
+        [
+          "2027-05-25",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f9bb7479607348f0",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/",
+      "dates": [
+        [
+          "2026-05-29",
+          "21:00"
+        ],
+        [
+          "2026-05-31",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-fcf75c0534a06390",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro delle Muse",
+      "municipality": "Ancona",
+      "region": "Marche",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "dates": [
+        [
+          "2026-10-02",
+          "20:30"
+        ],
+        [
+          "2026-10-04",
+          "16:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-53ec78e7155f5b9f",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
+      "dates": [
+        [
+          "2026-11-15",
+          "15:30"
+        ],
+        [
+          "2026-11-20",
+          "20:00"
+        ],
+        [
+          "2026-11-28",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b756ca3bab6062c0",
+      "title": "Alahor in Granata",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Sociale",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+      "dates": [
+        [
+          "2026-11-14",
+          "20:00"
+        ],
+        [
+          "2026-11-22",
+          "15:30"
+        ],
+        [
+          "2026-11-27",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

@@ -102,6 +102,42 @@
           "starts_at": "2027-10-20T18:00:00+02:00"
         }
       ]
+    },
+    {
+      "id": "oa-p-dd282b89dc6ab9f2",
+      "title": "A Giacomo Leopardi / Cavalleria rusticana",
+      "components": [
+        {
+          "title": "A Giacomo Leopardi",
+          "composer": "Pietro Mascagni",
+          "work_id": null
+        },
+        {
+          "title": "Cavalleria rusticana",
+          "composer": "Pietro Mascagni",
+          "work_id": "oa-w-000005"
+        }
+      ],
+      "source_key": "ancona-cavalleria-program-2026",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "venue": "Teatro delle Muse",
+      "municipality": "Ancona",
+      "region": "Marche",
+      "route_slug": "a-giacomo-leopardi-cavalleria-rusticana",
+      "performances": [
+        {
+          "id": "oa-pr-39e9083fe39527f7",
+          "program_id": "oa-p-dd282b89dc6ab9f2",
+          "local_date": "2026-12-04",
+          "starts_at": "2026-12-04T20:30:00+01:00"
+        },
+        {
+          "id": "oa-pr-6b6e84c465629b3a",
+          "program_id": "oa-p-dd282b89dc6ab9f2",
+          "local_date": "2026-12-06",
+          "starts_at": "2026-12-06T16:30:00+01:00"
+        }
+      ]
     }
   ]
 }

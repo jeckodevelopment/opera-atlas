@@ -182,6 +182,24 @@
       ]
     },
     {
+      "id": "curated:auto-488fd79f628da89d:2026-04-16",
+      "starts_at": "2026-04-16T21:00:00+02:00",
+      "local_date": "2026-04-16",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-26db4f73989b1c14:2026-04-18",
       "starts_at": "2026-04-18T20:30:00+02:00",
       "local_date": "2026-04-18",
@@ -215,6 +233,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/"
+      ]
+    },
+    {
+      "id": "curated:auto-488fd79f628da89d:2026-04-19",
+      "starts_at": "2026-04-19T18:00:00+02:00",
+      "local_date": "2026-04-19",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
       ]
     },
     {
@@ -380,6 +416,42 @@
       ]
     },
     {
+      "id": "curated:auto-f9bb7479607348f0:2026-05-29",
+      "starts_at": "2026-05-29T21:00:00+02:00",
+      "local_date": "2026-05-29",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-f9bb7479607348f0:2026-05-31",
+      "starts_at": "2026-05-31T18:00:00+02:00",
+      "local_date": "2026-05-31",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-207df538679e0065:2026-09-14",
       "starts_at": "2026-09-14T20:30:00+02:00",
       "local_date": "2026-09-14",
@@ -542,6 +614,24 @@
       ]
     },
     {
+      "id": "curated:auto-fcf75c0534a06390:2026-10-02",
+      "starts_at": "2026-10-02T20:30:00+02:00",
+      "local_date": "2026-10-02",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro delle Muse",
+      "municipality": "Ancona",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionemuse.org/stagione-lirica-2026/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-cremona:2026-10-04",
       "starts_at": null,
       "local_date": "2026-10-04",
@@ -557,6 +647,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:auto-fcf75c0534a06390:2026-10-04",
+      "starts_at": "2026-10-04T16:30:00+02:00",
+      "local_date": "2026-10-04",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro delle Muse",
+      "municipality": "Ancona",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazionemuse.org/stagione-lirica-2026/"
       ]
     },
     {
@@ -776,6 +884,24 @@
       ]
     },
     {
+      "id": "curated:auto-59f9f415de71b2b4:2026-10-18",
+      "starts_at": "2026-10-18T18:00:00+02:00",
+      "local_date": "2026-10-18",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/macbeth-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-eedca6da108bd27e:2026-10-18",
       "starts_at": "2026-10-18T20:30:00+02:00",
       "local_date": "2026-10-18",
@@ -809,6 +935,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-59f9f415de71b2b4:2026-10-20",
+      "starts_at": "2026-10-20T21:00:00+02:00",
+      "local_date": "2026-10-20",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/macbeth-2026/"
       ]
     },
     {
@@ -1407,6 +1551,24 @@
       ]
     },
     {
+      "id": "curated:auto-b756ca3bab6062c0:2026-11-14",
+      "starts_at": "2026-11-14T20:00:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Alahor in Granata",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Sociale",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-11-14",
       "starts_at": "2026-11-14T20:00:00+01:00",
       "local_date": "2026-11-14",
@@ -1494,6 +1656,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/iris"
+      ]
+    },
+    {
+      "id": "curated:auto-53ec78e7155f5b9f:2026-11-15",
+      "starts_at": "2026-11-15T15:30:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
       ]
     },
     {
@@ -1696,6 +1876,24 @@
       ]
     },
     {
+      "id": "curated:auto-53ec78e7155f5b9f:2026-11-20",
+      "starts_at": "2026-11-20T20:00:00+01:00",
+      "local_date": "2026-11-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+      ]
+    },
+    {
       "id": "curated:auto-cef30865a6bd9d93:2026-11-20",
       "starts_at": "2026-11-20T20:00:00+01:00",
       "local_date": "2026-11-20",
@@ -1874,6 +2072,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-boheme"
+      ]
+    },
+    {
+      "id": "curated:auto-b756ca3bab6062c0:2026-11-22",
+      "starts_at": "2026-11-22T15:30:00+01:00",
+      "local_date": "2026-11-22",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Alahor in Granata",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Sociale",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
       ]
     },
     {
@@ -2113,6 +2329,24 @@
       ]
     },
     {
+      "id": "curated:auto-b756ca3bab6062c0:2026-11-27",
+      "starts_at": "2026-11-27T20:00:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Alahor in Granata",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Sociale",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
+      ]
+    },
+    {
       "id": "curated:auto-dfe824fe3301174d:2026-11-27",
       "starts_at": "2026-11-27T20:00:00+01:00",
       "local_date": "2026-11-27",
@@ -2147,6 +2381,24 @@
       "sources": [
         "https://www.operalombardia.it/l-italiana-in-algeri/",
         "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri"
+      ]
+    },
+    {
+      "id": "curated:auto-53ec78e7155f5b9f:2026-11-28",
+      "starts_at": "2026-11-28T20:00:00+01:00",
+      "local_date": "2026-11-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Donizetti",
+      "municipality": "Bergamo",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
       ]
     },
     {
@@ -2912,6 +3164,24 @@
       ]
     },
     {
+      "id": "curated:auto-5a4e3f1f4e61fba4:2026-12-21",
+      "starts_at": "2026-12-21T21:00:00+01:00",
+      "local_date": "2026-12-21",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/turandot-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-8d2b9a6be734bb24:2026-12-22",
       "starts_at": "2026-12-22T18:00:00+01:00",
       "local_date": "2026-12-22",
@@ -2945,6 +3215,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html"
+      ]
+    },
+    {
+      "id": "curated:auto-5a4e3f1f4e61fba4:2026-12-23",
+      "starts_at": "2026-12-23T21:00:00+01:00",
+      "local_date": "2026-12-23",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/turandot-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-5a4e3f1f4e61fba4:2026-12-26",
+      "starts_at": "2026-12-26T18:00:00+01:00",
+      "local_date": "2026-12-26",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "municipality": "Salerno",
+      "region": "Campania",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://cultura.comune.salerno.it/eventi/turandot-2026/"
       ]
     },
     {
@@ -3974,6 +4280,42 @@
       ]
     },
     {
+      "id": "curated:auto-997a698e76cca751:2027-01-29",
+      "starts_at": "2027-01-29T20:00:00+01:00",
+      "local_date": "2027-01-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+      ]
+    },
+    {
+      "id": "curated:auto-e093badade1f5650:2027-01-29",
+      "starts_at": "2027-01-29T20:00:00+01:00",
+      "local_date": "2027-01-29",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ]
+    },
+    {
       "id": "curated:auto-073615054167b041:2027-01-29",
       "starts_at": "2027-01-29T20:30:00+01:00",
       "local_date": "2027-01-29",
@@ -4079,6 +4421,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:auto-997a698e76cca751:2027-01-30",
+      "starts_at": "2027-01-30T20:00:00+01:00",
+      "local_date": "2027-01-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
       ]
     },
     {
@@ -4190,6 +4550,42 @@
       ]
     },
     {
+      "id": "curated:auto-997a698e76cca751:2027-01-31",
+      "starts_at": "2027-01-31T16:00:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+      ]
+    },
+    {
+      "id": "curated:auto-e093badade1f5650:2027-01-31",
+      "starts_at": "2027-01-31T16:00:00+01:00",
+      "local_date": "2027-01-31",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Otello",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ]
+    },
+    {
       "id": "curated:auto-073615054167b041:2027-01-31",
       "starts_at": "2027-01-31T18:00:00+01:00",
       "local_date": "2027-01-31",
@@ -4277,6 +4673,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+      ]
+    },
+    {
+      "id": "curated:auto-997a698e76cca751:2027-02-02",
+      "starts_at": "2027-02-02T20:00:00+01:00",
+      "local_date": "2027-02-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
       ]
     },
     {
@@ -7286,6 +7700,24 @@
       ]
     },
     {
+      "id": "curated:auto-1b9c2f52afd0351d:2027-04-11",
+      "starts_at": "2027-04-11T15:30:00+02:00",
+      "local_date": "2027-04-11",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+      ]
+    },
+    {
       "id": "curated:auto-1ea669503ea5640a:2027-04-11",
       "starts_at": "2027-04-11T16:00:00+02:00",
       "local_date": "2027-04-11",
@@ -7358,6 +7790,24 @@
       ]
     },
     {
+      "id": "curated:auto-1b9c2f52afd0351d:2027-04-14",
+      "starts_at": "2027-04-14T19:00:00+02:00",
+      "local_date": "2027-04-14",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+      ]
+    },
+    {
       "id": "curated:auto-dc6e8ff3bddba01d:2027-04-14",
       "starts_at": "2027-04-14T20:00:00+02:00",
       "local_date": "2027-04-14",
@@ -7412,6 +7862,24 @@
       ]
     },
     {
+      "id": "curated:auto-068e8c81310d6d52:2027-04-16",
+      "starts_at": "2027-04-16T20:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ]
+    },
+    {
       "id": "curated:auto-11def56ae568ccce:2027-04-16",
       "starts_at": "2027-04-16T20:00:00+02:00",
       "local_date": "2027-04-16",
@@ -7427,6 +7895,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html"
+      ]
+    },
+    {
+      "id": "curated:auto-1b9c2f52afd0351d:2027-04-16",
+      "starts_at": "2027-04-16T20:00:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
       ]
     },
     {
@@ -7574,6 +8060,24 @@
       ]
     },
     {
+      "id": "curated:auto-1b9c2f52afd0351d:2027-04-18",
+      "starts_at": "2027-04-18T15:30:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Fidelio",
+      "composer": "Ludwig van Beethoven",
+      "venue": "Teatro Filarmonico",
+      "municipality": "Verona",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+      ]
+    },
+    {
       "id": "curated:parma-madama-butterfly-2027:2027-04-18",
       "starts_at": "2027-04-18T15:30:00+02:00",
       "local_date": "2027-04-18",
@@ -7589,6 +8093,24 @@
       "longitude": null,
       "sources": [
         "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+      ]
+    },
+    {
+      "id": "curated:auto-068e8c81310d6d52:2027-04-18",
+      "starts_at": "2027-04-18T16:00:00+02:00",
+      "local_date": "2027-04-18",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Goldoni",
+      "municipality": "Livorno",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
       ]
     },
     {
@@ -8942,6 +9464,24 @@
       ]
     },
     {
+      "id": "curated:auto-edf6ac484882834f:2027-05-21",
+      "starts_at": "2027-05-21T20:00:00+02:00",
+      "local_date": "2027-05-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
       "id": "curated:auto-b1c24780a29d634e:2027-05-22",
       "starts_at": "2027-05-22T15:00:00+02:00",
       "local_date": "2027-05-22",
@@ -9050,6 +9590,24 @@
       ]
     },
     {
+      "id": "curated:auto-edf6ac484882834f:2027-05-22",
+      "starts_at": "2027-05-22T20:00:00+02:00",
+      "local_date": "2027-05-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
       "id": "curated:auto-b1c24780a29d634e:2027-05-23",
       "starts_at": "2027-05-23T15:00:00+02:00",
       "local_date": "2027-05-23",
@@ -9101,6 +9659,24 @@
       "longitude": null,
       "sources": [
         "https://www.maggiofiorentino.com/events/tristan-und-isolde"
+      ]
+    },
+    {
+      "id": "curated:auto-edf6ac484882834f:2027-05-23",
+      "starts_at": "2027-05-23T16:00:00+02:00",
+      "local_date": "2027-05-23",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
       ]
     },
     {
@@ -9245,6 +9821,24 @@
       "longitude": null,
       "sources": [
         "https://www.operaroma.it/spettacoli/code-unknown/"
+      ]
+    },
+    {
+      "id": "curated:auto-edf6ac484882834f:2027-05-25",
+      "starts_at": "2027-05-25T20:00:00+02:00",
+      "local_date": "2027-05-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
       ]
     },
     {
@@ -10508,6 +11102,24 @@
       ]
     },
     {
+      "id": "curated:auto-4186e1c367aee6cd:2027-07-16",
+      "starts_at": "2027-07-16T21:00:00+02:00",
+      "local_date": "2027-07-16",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/tosca"
+      ]
+    },
+    {
       "id": "curated:auto-b67d637b2f593f67:2027-07-16",
       "starts_at": "2027-07-16T21:15:00+02:00",
       "local_date": "2027-07-16",
@@ -10523,6 +11135,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/la-traviata/"
+      ]
+    },
+    {
+      "id": "curated:auto-8cc98b8fce566b8b:2027-07-17",
+      "starts_at": "2027-07-17T21:00:00+02:00",
+      "local_date": "2027-07-17",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
       ]
     },
     {
@@ -10580,6 +11210,24 @@
       ]
     },
     {
+      "id": "curated:auto-8cc98b8fce566b8b:2027-07-23",
+      "starts_at": "2027-07-23T21:00:00+02:00",
+      "local_date": "2027-07-23",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
+      ]
+    },
+    {
       "id": "curated:arena-aida-de-bosio-2027:2027-07-23",
       "starts_at": "2027-07-23T21:15:00+02:00",
       "local_date": "2027-07-23",
@@ -10613,6 +11261,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/carmen/"
+      ]
+    },
+    {
+      "id": "curated:auto-4186e1c367aee6cd:2027-07-25",
+      "starts_at": "2027-07-25T21:00:00+02:00",
+      "local_date": "2027-07-25",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/tosca"
       ]
     },
     {
@@ -10652,6 +11318,24 @@
       ]
     },
     {
+      "id": "curated:auto-4186e1c367aee6cd:2027-07-31",
+      "starts_at": "2027-07-31T21:00:00+02:00",
+      "local_date": "2027-07-31",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/tosca"
+      ]
+    },
+    {
       "id": "curated:auto-b67d637b2f593f67:2027-07-31",
       "starts_at": "2027-07-31T21:15:00+02:00",
       "local_date": "2027-07-31",
@@ -10688,6 +11372,24 @@
       ]
     },
     {
+      "id": "curated:auto-8cc98b8fce566b8b:2027-08-01",
+      "starts_at": "2027-08-01T21:00:00+02:00",
+      "local_date": "2027-08-01",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
+      ]
+    },
+    {
       "id": "curated:arena-nabucco-2027:2027-08-05",
       "starts_at": "2027-08-05T21:00:00+02:00",
       "local_date": "2027-08-05",
@@ -10703,6 +11405,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-4186e1c367aee6cd:2027-08-06",
+      "starts_at": "2027-08-06T21:00:00+02:00",
+      "local_date": "2027-08-06",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/tosca"
       ]
     },
     {
@@ -10739,6 +11459,24 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/"
+      ]
+    },
+    {
+      "id": "curated:auto-8cc98b8fce566b8b:2027-08-07",
+      "starts_at": "2027-08-07T21:00:00+02:00",
+      "local_date": "2027-08-07",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
       ]
     },
     {
@@ -12146,6 +12884,24 @@
       ]
     },
     {
+      "id": "curated:auto-750ac19106901bed:2027-10-08",
+      "starts_at": "2027-10-08T20:00:00+02:00",
+      "local_date": "2027-10-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html"
+      ]
+    },
+    {
       "id": "curated:auto-2ffd782e0a99b243:2027-10-09",
       "starts_at": "2027-10-09T18:00:00+02:00",
       "local_date": "2027-10-09",
@@ -12164,6 +12920,24 @@
       ]
     },
     {
+      "id": "curated:auto-750ac19106901bed:2027-10-09",
+      "starts_at": "2027-10-09T20:00:00+02:00",
+      "local_date": "2027-10-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html"
+      ]
+    },
+    {
       "id": "curated:auto-2ffd782e0a99b243:2027-10-10",
       "starts_at": "2027-10-10T16:00:00+02:00",
       "local_date": "2027-10-10",
@@ -12179,6 +12953,24 @@
       "longitude": null,
       "sources": [
         "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/"
+      ]
+    },
+    {
+      "id": "curated:auto-750ac19106901bed:2027-10-10",
+      "starts_at": "2027-10-10T16:00:00+02:00",
+      "local_date": "2027-10-10",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html"
       ]
     },
     {

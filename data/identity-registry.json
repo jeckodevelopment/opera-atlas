@@ -540,6 +540,20 @@
       "title": "Le nozze dell’orso",
       "composer": "Joe Schittino",
       "authority_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+    },
+    "le convenienze ed inconvenienze teatrali|gaetano donizetti": {
+      "id": "oa-w-000083",
+      "slug": "le-convenienze-ed-inconvenienze-teatrali",
+      "title": "Le convenienze ed inconvenienze teatrali",
+      "composer": "Gaetano Donizetti",
+      "authority_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+    },
+    "alahor in granata|gaetano donizetti": {
+      "id": "oa-w-000084",
+      "slug": "alahor-in-granata",
+      "title": "Alahor in Granata",
+      "composer": "Gaetano Donizetti",
+      "authority_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
     }
   },
   "venues": {
@@ -791,6 +805,54 @@
       "name": "Teatro Ariosto",
       "city": "Reggio Emilia",
       "region": "Emilia-Romagna"
+    },
+    "Livorno|Teatro Goldoni": {
+      "id": "oa-v-000032",
+      "slug": "teatro-goldoni",
+      "city_slug": "livorno",
+      "name": "Teatro Goldoni",
+      "city": "Livorno",
+      "region": "Toscana"
+    },
+    "Verona|Teatro Filarmonico": {
+      "id": "oa-v-000033",
+      "slug": "teatro-filarmonico",
+      "city_slug": "verona",
+      "name": "Teatro Filarmonico",
+      "city": "Verona",
+      "region": "Veneto"
+    },
+    "Macerata|Arena Sferisterio": {
+      "id": "oa-v-000034",
+      "slug": "arena-sferisterio",
+      "city_slug": "macerata",
+      "name": "Arena Sferisterio",
+      "city": "Macerata",
+      "region": "Marche"
+    },
+    "Salerno|Teatro Municipale Giuseppe Verdi": {
+      "id": "oa-v-000035",
+      "slug": "teatro-municipale-giuseppe-verdi",
+      "city_slug": "salerno",
+      "name": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "region": "Campania"
+    },
+    "Ancona|Teatro delle Muse": {
+      "id": "oa-v-000036",
+      "slug": "teatro-delle-muse",
+      "city_slug": "ancona",
+      "name": "Teatro delle Muse",
+      "city": "Ancona",
+      "region": "Marche"
+    },
+    "Bergamo|Teatro Sociale": {
+      "id": "oa-v-000037",
+      "slug": "teatro-sociale",
+      "city_slug": "bergamo",
+      "name": "Teatro Sociale",
+      "city": "Bergamo",
+      "region": "Lombardia"
     }
   },
   "stagings": {
@@ -2028,6 +2090,126 @@
       "slug": "simon-boccanegra",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "season": "2027"
+    },
+    "auto-068e8c81310d6d52": {
+      "id": "oa-s-000159",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000032",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "season": "2027"
+    },
+    "auto-1b9c2f52afd0351d": {
+      "id": "oa-s-000160",
+      "work_id": "oa-w-000048",
+      "venue_id": "oa-v-000033",
+      "slug": "fidelio",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+      "season": "2027"
+    },
+    "auto-4186e1c367aee6cd": {
+      "id": "oa-s-000161",
+      "work_id": "oa-w-000022",
+      "venue_id": "oa-v-000034",
+      "slug": "tosca",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
+      "season": "2027"
+    },
+    "auto-488fd79f628da89d": {
+      "id": "oa-s-000162",
+      "work_id": "oa-w-000062",
+      "venue_id": "oa-v-000035",
+      "slug": "il-trovatore",
+      "source_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/",
+      "season": "2026"
+    },
+    "auto-59f9f415de71b2b4": {
+      "id": "oa-s-000163",
+      "work_id": "oa-w-000018",
+      "venue_id": "oa-v-000035",
+      "slug": "macbeth",
+      "source_url": "https://cultura.comune.salerno.it/eventi/macbeth-2026/",
+      "season": "2026"
+    },
+    "auto-5a4e3f1f4e61fba4": {
+      "id": "oa-s-000164",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000035",
+      "slug": "turandot",
+      "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/",
+      "season": "2026"
+    },
+    "auto-750ac19106901bed": {
+      "id": "oa-s-000165",
+      "work_id": "oa-w-000045",
+      "venue_id": "oa-v-000011",
+      "slug": "le-nozze-di-figaro",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
+      "season": "2027"
+    },
+    "auto-8cc98b8fce566b8b": {
+      "id": "oa-s-000166",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000034",
+      "slug": "la-traviata",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
+      "season": "2027"
+    },
+    "auto-997a698e76cca751": {
+      "id": "oa-s-000167",
+      "work_id": "oa-w-000026",
+      "venue_id": "oa-v-000011",
+      "slug": "rigoletto",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
+      "season": "2027"
+    },
+    "auto-e093badade1f5650": {
+      "id": "oa-s-000168",
+      "work_id": "oa-w-000014",
+      "venue_id": "oa-v-000032",
+      "slug": "otello",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "season": "2027"
+    },
+    "auto-edf6ac484882834f": {
+      "id": "oa-s-000169",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000011",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
+      "season": "2027"
+    },
+    "auto-f9bb7479607348f0": {
+      "id": "oa-s-000170",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000035",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/",
+      "season": "2026"
+    },
+    "auto-fcf75c0534a06390": {
+      "id": "oa-s-000171",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000036",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "season": "2026"
+    },
+    "auto-53ec78e7155f5b9f": {
+      "id": "oa-s-000172",
+      "work_id": "oa-w-000083",
+      "venue_id": "oa-v-000012",
+      "slug": "le-convenienze-ed-inconvenienze-teatrali",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
+      "season": "2026"
+    },
+    "auto-b756ca3bab6062c0": {
+      "id": "oa-s-000173",
+      "work_id": "oa-w-000084",
+      "venue_id": "oa-v-000037",
+      "slug": "alahor-in-granata",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -6512,6 +6694,270 @@
       "staging_id": "oa-s-000158",
       "original_date": "2027-04-11",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+    },
+    "auto-068e8c81310d6d52|2027-04-16": {
+      "id": "oa-r-000765",
+      "staging_id": "oa-s-000159",
+      "original_date": "2027-04-16",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    },
+    "auto-068e8c81310d6d52|2027-04-18": {
+      "id": "oa-r-000766",
+      "staging_id": "oa-s-000159",
+      "original_date": "2027-04-18",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    },
+    "auto-1b9c2f52afd0351d|2027-04-11": {
+      "id": "oa-r-000767",
+      "staging_id": "oa-s-000160",
+      "original_date": "2027-04-11",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+    },
+    "auto-1b9c2f52afd0351d|2027-04-14": {
+      "id": "oa-r-000768",
+      "staging_id": "oa-s-000160",
+      "original_date": "2027-04-14",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+    },
+    "auto-1b9c2f52afd0351d|2027-04-16": {
+      "id": "oa-r-000769",
+      "staging_id": "oa-s-000160",
+      "original_date": "2027-04-16",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+    },
+    "auto-1b9c2f52afd0351d|2027-04-18": {
+      "id": "oa-r-000770",
+      "staging_id": "oa-s-000160",
+      "original_date": "2027-04-18",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/"
+    },
+    "auto-4186e1c367aee6cd|2027-07-16": {
+      "id": "oa-r-000771",
+      "staging_id": "oa-s-000161",
+      "original_date": "2027-07-16",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca"
+    },
+    "auto-4186e1c367aee6cd|2027-07-25": {
+      "id": "oa-r-000772",
+      "staging_id": "oa-s-000161",
+      "original_date": "2027-07-25",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca"
+    },
+    "auto-4186e1c367aee6cd|2027-07-31": {
+      "id": "oa-r-000773",
+      "staging_id": "oa-s-000161",
+      "original_date": "2027-07-31",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca"
+    },
+    "auto-4186e1c367aee6cd|2027-08-06": {
+      "id": "oa-r-000774",
+      "staging_id": "oa-s-000161",
+      "original_date": "2027-08-06",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca"
+    },
+    "auto-488fd79f628da89d|2026-04-16": {
+      "id": "oa-r-000775",
+      "staging_id": "oa-s-000162",
+      "original_date": "2026-04-16",
+      "source_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
+    },
+    "auto-488fd79f628da89d|2026-04-19": {
+      "id": "oa-r-000776",
+      "staging_id": "oa-s-000162",
+      "original_date": "2026-04-19",
+      "source_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
+    },
+    "auto-59f9f415de71b2b4|2026-10-18": {
+      "id": "oa-r-000777",
+      "staging_id": "oa-s-000163",
+      "original_date": "2026-10-18",
+      "source_url": "https://cultura.comune.salerno.it/eventi/macbeth-2026/"
+    },
+    "auto-59f9f415de71b2b4|2026-10-20": {
+      "id": "oa-r-000778",
+      "staging_id": "oa-s-000163",
+      "original_date": "2026-10-20",
+      "source_url": "https://cultura.comune.salerno.it/eventi/macbeth-2026/"
+    },
+    "auto-5a4e3f1f4e61fba4|2026-12-21": {
+      "id": "oa-r-000779",
+      "staging_id": "oa-s-000164",
+      "original_date": "2026-12-21",
+      "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/"
+    },
+    "auto-5a4e3f1f4e61fba4|2026-12-23": {
+      "id": "oa-r-000780",
+      "staging_id": "oa-s-000164",
+      "original_date": "2026-12-23",
+      "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/"
+    },
+    "auto-5a4e3f1f4e61fba4|2026-12-26": {
+      "id": "oa-r-000781",
+      "staging_id": "oa-s-000164",
+      "original_date": "2026-12-26",
+      "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/"
+    },
+    "auto-750ac19106901bed|2027-10-08": {
+      "id": "oa-r-000782",
+      "staging_id": "oa-s-000165",
+      "original_date": "2027-10-08",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html"
+    },
+    "auto-750ac19106901bed|2027-10-09": {
+      "id": "oa-r-000783",
+      "staging_id": "oa-s-000165",
+      "original_date": "2027-10-09",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html"
+    },
+    "auto-750ac19106901bed|2027-10-10": {
+      "id": "oa-r-000784",
+      "staging_id": "oa-s-000165",
+      "original_date": "2027-10-10",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html"
+    },
+    "auto-8cc98b8fce566b8b|2027-07-17": {
+      "id": "oa-r-000785",
+      "staging_id": "oa-s-000166",
+      "original_date": "2027-07-17",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
+    },
+    "auto-8cc98b8fce566b8b|2027-07-23": {
+      "id": "oa-r-000786",
+      "staging_id": "oa-s-000166",
+      "original_date": "2027-07-23",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
+    },
+    "auto-8cc98b8fce566b8b|2027-08-01": {
+      "id": "oa-r-000787",
+      "staging_id": "oa-s-000166",
+      "original_date": "2027-08-01",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
+    },
+    "auto-8cc98b8fce566b8b|2027-08-07": {
+      "id": "oa-r-000788",
+      "staging_id": "oa-s-000166",
+      "original_date": "2027-08-07",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata"
+    },
+    "auto-997a698e76cca751|2027-01-29": {
+      "id": "oa-r-000789",
+      "staging_id": "oa-s-000167",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+    },
+    "auto-997a698e76cca751|2027-01-30": {
+      "id": "oa-r-000790",
+      "staging_id": "oa-s-000167",
+      "original_date": "2027-01-30",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+    },
+    "auto-997a698e76cca751|2027-01-31": {
+      "id": "oa-r-000791",
+      "staging_id": "oa-s-000167",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+    },
+    "auto-997a698e76cca751|2027-02-02": {
+      "id": "oa-r-000792",
+      "staging_id": "oa-s-000167",
+      "original_date": "2027-02-02",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+    },
+    "auto-e093badade1f5650|2027-01-29": {
+      "id": "oa-r-000793",
+      "staging_id": "oa-s-000168",
+      "original_date": "2027-01-29",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    },
+    "auto-e093badade1f5650|2027-01-31": {
+      "id": "oa-r-000794",
+      "staging_id": "oa-s-000168",
+      "original_date": "2027-01-31",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+    },
+    "auto-edf6ac484882834f|2027-05-21": {
+      "id": "oa-r-000795",
+      "staging_id": "oa-s-000169",
+      "original_date": "2027-05-21",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
+    },
+    "auto-edf6ac484882834f|2027-05-22": {
+      "id": "oa-r-000796",
+      "staging_id": "oa-s-000169",
+      "original_date": "2027-05-22",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
+    },
+    "auto-edf6ac484882834f|2027-05-23": {
+      "id": "oa-r-000797",
+      "staging_id": "oa-s-000169",
+      "original_date": "2027-05-23",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
+    },
+    "auto-edf6ac484882834f|2027-05-25": {
+      "id": "oa-r-000798",
+      "staging_id": "oa-s-000169",
+      "original_date": "2027-05-25",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html"
+    },
+    "auto-f9bb7479607348f0|2026-05-29": {
+      "id": "oa-r-000799",
+      "staging_id": "oa-s-000170",
+      "original_date": "2026-05-29",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/"
+    },
+    "auto-f9bb7479607348f0|2026-05-31": {
+      "id": "oa-r-000800",
+      "staging_id": "oa-s-000170",
+      "original_date": "2026-05-31",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/"
+    },
+    "auto-fcf75c0534a06390|2026-10-02": {
+      "id": "oa-r-000801",
+      "staging_id": "oa-s-000171",
+      "original_date": "2026-10-02",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
+    },
+    "auto-fcf75c0534a06390|2026-10-04": {
+      "id": "oa-r-000802",
+      "staging_id": "oa-s-000171",
+      "original_date": "2026-10-04",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
+    },
+    "auto-53ec78e7155f5b9f|2026-11-15": {
+      "id": "oa-r-000803",
+      "staging_id": "oa-s-000172",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+    },
+    "auto-53ec78e7155f5b9f|2026-11-20": {
+      "id": "oa-r-000804",
+      "staging_id": "oa-s-000172",
+      "original_date": "2026-11-20",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+    },
+    "auto-53ec78e7155f5b9f|2026-11-28": {
+      "id": "oa-r-000805",
+      "staging_id": "oa-s-000172",
+      "original_date": "2026-11-28",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+    },
+    "auto-b756ca3bab6062c0|2026-11-14": {
+      "id": "oa-r-000806",
+      "staging_id": "oa-s-000173",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
+    },
+    "auto-b756ca3bab6062c0|2026-11-22": {
+      "id": "oa-r-000807",
+      "staging_id": "oa-s-000173",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
+    },
+    "auto-b756ca3bab6062c0|2026-11-27": {
+      "id": "oa-r-000808",
+      "staging_id": "oa-s-000173",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/"
     }
   }
 }

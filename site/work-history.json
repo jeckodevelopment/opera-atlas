@@ -792,6 +792,25 @@
       "sources": [
         "https://www.teatromassimobellini.it/continuano-le-opere-da-camera-al-teatro-sangiorgi-con-le-nozze-dellorso/"
       ]
+    },
+    "le-convenienze-ed-inconvenienze-teatrali": {
+      "librettist": "Domenico Gilardoni, dalle commedie di Antonio Simone Sografi",
+      "premiere_year": 1831,
+      "premiere_venue": "Teatro del Fondo",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+      ]
+    },
+    "alahor-in-granata": {
+      "librettist": "M. A. (autore indicato con iniziali nel programma ufficiale)",
+      "premiere_year": 1826,
+      "premiere_venue": "Teatro Carolino",
+      "premiere_city": "Palermo",
+      "sources": [
+        "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+        "https://www.donizettiopera.org/it/opere-2026/"
+      ]
     }
   },
   "works_by_id": {
