@@ -65,7 +65,7 @@ class CataniaPressCalendarTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"venue"):
             parse_press_calendar(event.replace("Teatro Sangiorgi","Teatro Metropolitan"),
                                  press,event_url=url,news_url=press_url(url))
-        with self.assertRaisesRegex(ValueError,"calendar"):
+        with self.assertRaisesRegex(ValueError,"date groups incomplete"):
             parse_press_calendar(event,press.replace("18 dicembre ore 19","18 dicembre"),
                                  event_url=url,news_url=press_url(url))
 
