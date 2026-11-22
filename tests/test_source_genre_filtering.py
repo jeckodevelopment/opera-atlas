@@ -15,6 +15,9 @@ class SourceGenreFilteringTests(unittest.TestCase):
             ("petruzzelli-opera-2026","https://www.fondazionepetruzzelli.it/eventi/le-lac-des-cygnes-il-lago-dei-cigni-12-15-novembre/"),
             ("petruzzelli-opera-2027","https://www.fondazionepetruzzelli.it/eventi/lo-schiaccianoci-di-petr-ilic-cajkovskij-11-14-febbraio/"),
             ("modena-teatro-opera-2026-27","https://www.teatrocomunalemodena.it/spettacolo/lanno-che-verra/"),
+            ("coccia-novara-rolling-opera","https://www.fondazioneteatrococcia.it/stagione-27-la-bella-addormentata.html"),
+            ("coccia-novara-rolling-opera","https://www.fondazioneteatrococcia.it/stagione-27-il-lago-dei-cigni.html"),
+            ("coccia-novara-rolling-opera","https://www.fondazioneteatrococcia.it/stagione-27-beethoven-200.html"),
         ]
         for key,url in examples:
             with self.subTest(url=url):
@@ -32,6 +35,9 @@ class SourceGenreFilteringTests(unittest.TestCase):
             ("modena-teatro-opera-2026-27","https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/falstaff-2/"),
             ("massimo-season-2026-27","https://www.teatromassimo.it/event/ernani-2/"),
+            ("coccia-novara-rolling-opera","https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html"),
+            ("coccia-novara-rolling-opera","https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html"),
+            ("coccia-novara-rolling-opera","https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"),
         ]
         for key,url in titles:
             with self.subTest(url=url):

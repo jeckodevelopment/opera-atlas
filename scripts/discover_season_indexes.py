@@ -90,6 +90,14 @@ EXCLUDED_PATHS={
     "piacenza-opera-2026-27": frozenset({"lanno-che-verra"}),
     "donizetti-opera-2026": frozenset(),
     "teatro-grande-opera-2026": frozenset(),
+    "coccia-novara-rolling-opera": frozenset({
+        # Exact 2027 Coccia production pages. The official breadcrumb
+        # identifies the first two as Danza, and Beethoven 200 as Concerto.
+        # Never exclude other works from this mixed-genre theatre index.
+        "stagione-27-la-bella-addormentata.html",
+        "stagione-27-il-lago-dei-cigni.html",
+        "stagione-27-beethoven-200.html",
+    }),
     "carlo-felice-season-2026-27": frozenset({
         "lo-schiaccianoci", "giselle", "il-lago-dei-cigni",
         "deledda", "sergio-bernal-dance-company",
