@@ -67,3 +67,14 @@ https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola
 La recita del 17 gennaio, esplicitamente qualificata come *Anteprima Giovani*, non viene inserita nel campione pubblico ordinario. L'archivio richiede `venue_id`, nome e città coerenti, HTTPS della fonte ufficiale, titolo, compositore, data e ora precise, e classificazione di pubblico generale. Errori di identità o fatti fuori periodo bloccano il report.
 
 Il report mensile `atlas-recite-2026.json` espone `historical_official_candidates`, senza aggiungere alcuna recita al catalogo; lo stato rimane **lacuna candidata** e non costituisce automaticamente un requisito di pubblicazione. La certificazione dell'anno resta zero: la verifica di un singolo allestimento non dimostra il calendario completo di una sede.
+
+### Ulteriori pagine Regio 2025/26 verificate
+
+Sono state aggiunte tre altre produzioni con calendario ufficiale esplicito, sempre escludendo le rispettive *Anteprima Giovani*: Macbeth (6 recite ordinarie tra febbraio e marzo), Dialoghi delle carmelitane (6 tra marzo e aprile) e I puritani (6 a maggio).
+
+Fonti ufficiali:
+- https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth
+- https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane
+- https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani
+
+**Totale archivio iniziale: quattro produzioni e 25 recite ordinarie con data/ora ufficiali.** Non equivale alla certificazione della stagione 2025/26, né all'esaurimento delle recite del teatro nel 2026.
