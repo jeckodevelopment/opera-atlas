@@ -124,6 +124,7 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         header=" ".join(prefix[credit_index:]).split("Personaggi e interpreti",1)[0]
         credit=re.search(
             r"(?i)\b(?:Musica|Musiche)\s+di\s+"
+            r"(?!(?:Libretto|Teatro|Personaggi)\b)"
             r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’ -]{4,85}?)"
             r"(?=\s+(?:Libretto|Teatro)\b)",header)
         if credit is None or unique:
