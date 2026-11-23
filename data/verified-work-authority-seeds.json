@@ -1031,6 +1031,23 @@
           "https://corago.unibo.it/opera/Z000013602"
         ]
       }
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
+      "title": "La mère coupable",
+      "composer": "Darius Milhaud",
+      "synopsis": "Nella famiglia Almaviva, i segreti del passato diventano un'arma nelle mani dell'intrigante Bégearss, che manipola il conte e la contessa per impadronirsi dei loro beni. Figaro e Susanna cercano di smascherarlo e ricomporre i legami familiari.",
+      "history": {
+        "librettist": "Madeleine Milhaud, da Pierre-Augustin Caron de Beaumarchais",
+        "premiere_year": 1966,
+        "premiere_venue": "Grand Théâtre de Genève",
+        "premiere_city": "Ginevra",
+        "sources": [
+          "https://archives.gtg.ch/en/history-of-the-grand-theatre/",
+          "https://ressources.ircam.fr/en/work/la-mere-coupable"
+        ]
+      }
     }
   ]
 }
