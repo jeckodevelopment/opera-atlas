@@ -1,86 +1,75 @@
-"""Checks for the compact, process-first Atlas diagnostics lifecycle view."""
+"""Contract tests for the editorial-first Atlas governance dashboard."""
 import unittest
 from pathlib import Path
 from html.parser import HTMLParser
 
 PAGE = Path(__file__).resolve().parents[1] / "diagnostics/index.html"
 
-
-class Ids(HTMLParser):
+class Markup(HTMLParser):
     def __init__(self):
         super().__init__()
         self.ids = set()
+        self.tabs = []
+        self.buttons = []
 
     def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        if "id" in attrs:
-            self.ids.add(attrs["id"])
-
+        props = dict(attrs)
+        if "id" in props:
+            self.ids.add(props["id"])
+        if props.get("data-tab"):
+            self.tabs.append(props["data-tab"])
+        if props.get("data-goto"):
+            self.buttons.append(props["data-goto"])
 
 class DiagnosticsLifecycleTests(unittest.TestCase):
-    def test_dashboard_groups_process_and_advanced_details(self):
-        text = PAGE.read_text(encoding="utf-8")
-        parser = Ids()
-        parser.feed(text)
-        self.assertTrue({
-            "phases", "issues", "venues", "scan-stats", "catalog-stats",
-            "publish-stats", "indexes", "lifecycle", "freshness", "pipeline-stats", "pipeline-runs",
-        }.issubset(parser.ids))
-        self.assertIn("public/catalog/season-lifecycle.json", text)
-        self.assertIn('<details class="accordion">', text)
-        self.assertIn("Scansione delle fonti", text)
-        self.assertIn("Acquisizione e catalogazione", text)
-        self.assertIn("Pubblicazione", text)
+    @classmethod
+    def setUpClass(cls):
+        cls.source = PAGE.read_text(encoding="utf-8")
+        cls.dom = Markup()
+        cls.dom.feed(cls.source)
 
-    def test_legacy_successor_table_is_explicit_not_a_second_endless_list(self):
-        text=PAGE.read_text(encoding="utf-8")
-        self.assertIn("legacy_covered_by_successor",text)
-        self.assertIn("legacy_still_uncovered",text)
-        self.assertIn("successor_source_key",text)
-        self.assertIn("Storico · successore implementato",text)
-        self.assertIn("Ancora senza successore",text)
-        self.assertIn("indici ancora senza successore",text)
-        self.assertIn("<th>Copertura stagioni future</th>",text)
-        self.assertIn('<details class="accordion">',text)
+    def test_five_focus_areas_are_navigable(self):
+        expected = {"overview", "venues", "catalog", "activity", "tech"}
+        self.assertEqual(set(self.dom.tabs), expected)
+        self.assertTrue({"view-" + x for x in expected}.issubset(self.dom.ids))
+        self.assertTrue(set(self.dom.buttons).issubset(expected))
+        self.assertIn('aria-selected="true"', self.source)
+        self.assertIn("function tab(name)", self.source)
 
-    def test_evergreen_scope_is_not_confused_with_future_verified(self):
-        text=PAGE.read_text(encoding="utf-8")
-        self.assertIn("evergreen_dynamic_category",text)
-        self.assertIn("evergreen_fixed_production_set",text)
-        self.assertIn("evergreen_historical_notice",text)
-        self.assertIn("Titoli fissati · da migrare",text)
-        self.assertIn("Titoli storici · successore implementato",text)
-        self.assertIn("evergreen_fixed_covered",text)
-        self.assertIn("evergreen_fixed_uncovered",text)
-        self.assertIn("Documento storico · non pluriennale",text)
-        self.assertIn("futuro da verificare",text)
+    def test_sources_are_canonical_and_separately_validated(self):
+        for feed in (
+            "source-automation.json", "recite-coverage.json",
+            "catalogation-diagnostics.json", "candidate-publication-evidence.json",
+            "live-publication-health.json", "pipeline-operations-health.json",
+        ):
+            self.assertIn(feed, self.source)
+        self.assertIn("Promise.allSettled", self.source)
+        self.assertIn("Dati non disponibili", self.source)
+        self.assertIn("catalog_release_sha256", self.source)
 
-    def test_live_audit_freshness_exists_in_render_scope(self):
-        text = PAGE.read_text(encoding="utf-8")
-        script = text.split("<script>", 1)[1].split("</script>", 1)[0]
-        render = script.split("function render(){", 1)[1].split("function refresh()", 1)[0]
-        self.assertIn("const auditCurrent=", render)
-        self.assertLess(render.index("const auditCurrent="),
-                        render.index("const liveTotals="))
-        self.assertIn("const auditCurrent=", script.split("function build(){", 1)[1].split("function render(){", 1)[0])
+    def test_editorial_and_technical_states_are_not_conflated(self):
+        for label in (
+            "Candidate in revisione", "Recite individuate non ancora pubblicate",
+            "Workflow che richiedono attenzione", "Copertura assoluta della stagione",
+            "non certifica la completezza", "Escluse non pertinenti",
+        ):
+            self.assertIn(label, self.source)
+        self.assertIn('type:"editorial"', self.source)
+        self.assertIn('type:"technical"', self.source)
+        self.assertIn('type:"publication"', self.source)
 
-    def test_operational_metrics_are_explicitly_observational(self):
-        text = PAGE.read_text(encoding="utf-8")
-        self.assertIn("public/catalog/pipeline-operations-health.json", text)
-        self.assertIn("Tempi di pubblicazione e affidabilità dei workflow", text)
-        self.assertIn("first_observed", text)
-        self.assertIn("Già pubblicabili ancora in attesa", text)
-        self.assertIn('"operations"].includes(key)', text)
+    def test_venue_details_and_filters_exist(self):
+        for item in ("venue-search", "venue-filter", "venue-rows", "catalog-venues", "activity-list", "workflow-rows"):
+            self.assertIn(item, self.dom.ids)
+        self.assertIn('aria-expanded', self.source)
+        self.assertIn("last_attempt_at", self.source)
+        self.assertIn("failure_reason", self.source)
 
-    def test_future_season_readiness_is_not_mislabeled_complete(self):
-        text = PAGE.read_text(encoding="utf-8")
-        self.assertIn('if(["lifecycle","catalogation","evidence","live","operations"].includes(key))return null', text)
-        self.assertIn('lifecycle.future_seasons_verified', text)
-        self.assertIn('lifecycle.legacy_year_bound', text)
-        self.assertIn("non equivale alla copertura dell'intera stagione", text)
-        self.assertIn("non una verifica completa di ogni stagione", text)
-        self.assertIn("non disponibili", text)
-
+    def test_no_false_global_completion_percentage(self):
+        self.assertIn("non garantisce", self.source)
+        self.assertIn("Non misurato", self.source)
+        self.assertIn("Non equivale", self.source)
+        self.assertNotIn("100% copertura nazionale", self.source)
 
 if __name__ == "__main__":
     unittest.main()
