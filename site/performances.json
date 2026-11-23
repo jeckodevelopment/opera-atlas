@@ -17380,6 +17380,24 @@
       ]
     },
     {
+      "id": "curated:auto-8f52b42b10becc85:2027-10-01",
+      "starts_at": "2027-10-01T20:00:00+02:00",
+      "local_date": "2027-10-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aroldo",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/aroldo/"
+      ]
+    },
+    {
       "id": "curated:auto-d69ff42443cfe2ea:2027-10-01",
       "starts_at": "2027-10-01T20:00:00+02:00",
       "local_date": "2027-10-01",
@@ -17467,6 +17485,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
+      "id": "curated:auto-dab7aab357550a28:2027-10-02",
+      "starts_at": "2027-10-02T20:00:00+02:00",
+      "local_date": "2027-10-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/la-traviata/"
       ]
     },
     {
@@ -17560,6 +17596,24 @@
       ]
     },
     {
+      "id": "curated:auto-5f6cb3b3600f1ce5:2027-10-07",
+      "starts_at": "2027-10-07T20:00:00+02:00",
+      "local_date": "2027-10-07",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Stiffelio",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/stiffelio/"
+      ]
+    },
+    {
       "id": "curated:auto-d69ff42443cfe2ea:2027-10-07",
       "starts_at": "2027-10-07T20:00:00+02:00",
       "local_date": "2027-10-07",
@@ -17614,6 +17668,24 @@
       ]
     },
     {
+      "id": "curated:auto-dab7aab357550a28:2027-10-08",
+      "starts_at": "2027-10-08T20:00:00+02:00",
+      "local_date": "2027-10-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/la-traviata/"
+      ]
+    },
+    {
       "id": "curated:auto-2ffd782e0a99b243:2027-10-09",
       "starts_at": "2027-10-09T18:00:00+02:00",
       "local_date": "2027-10-09",
@@ -17647,6 +17719,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html"
+      ]
+    },
+    {
+      "id": "curated:auto-8f52b42b10becc85:2027-10-09",
+      "starts_at": "2027-10-09T20:00:00+02:00",
+      "local_date": "2027-10-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aroldo",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/aroldo/"
       ]
     },
     {
@@ -17794,6 +17884,24 @@
       ]
     },
     {
+      "id": "curated:auto-dab7aab357550a28:2027-10-14",
+      "starts_at": "2027-10-14T20:00:00+02:00",
+      "local_date": "2027-10-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/la-traviata/"
+      ]
+    },
+    {
       "id": "curated:auto-559b2402d287d446:2027-10-16",
       "starts_at": "2027-10-16T20:00:00+02:00",
       "local_date": "2027-10-16",
@@ -17809,6 +17917,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html"
+      ]
+    },
+    {
+      "id": "curated:auto-8f52b42b10becc85:2027-10-16",
+      "starts_at": "2027-10-16T20:00:00+02:00",
+      "local_date": "2027-10-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aroldo",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/aroldo/"
+      ]
+    },
+    {
+      "id": "curated:auto-5f6cb3b3600f1ce5:2027-10-17",
+      "starts_at": "2027-10-17T15:30:00+02:00",
+      "local_date": "2027-10-17",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Stiffelio",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/stiffelio/"
       ]
     },
     {
@@ -17884,6 +18028,24 @@
       ]
     },
     {
+      "id": "curated:auto-5f6cb3b3600f1ce5:2027-10-21",
+      "starts_at": "2027-10-21T20:00:00+02:00",
+      "local_date": "2027-10-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Stiffelio",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/stiffelio/"
+      ]
+    },
+    {
       "id": "curated:auto-d7a3053257b59157:2027-10-22",
       "starts_at": "2027-10-22T19:00:00+02:00",
       "local_date": "2027-10-22",
@@ -17899,6 +18061,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+      ]
+    },
+    {
+      "id": "curated:auto-5f6cb3b3600f1ce5:2027-10-23",
+      "starts_at": "2027-10-23T17:00:00+02:00",
+      "local_date": "2027-10-23",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Stiffelio",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/stiffelio/"
       ]
     },
     {
@@ -17953,6 +18133,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/adriana-lecouvreur/"
+      ]
+    },
+    {
+      "id": "curated:auto-dab7aab357550a28:2027-10-24",
+      "starts_at": "2027-10-24T15:30:00+02:00",
+      "local_date": "2027-10-24",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/la-traviata/"
       ]
     },
     {

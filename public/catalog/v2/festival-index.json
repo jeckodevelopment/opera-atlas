@@ -103,6 +103,26 @@
       "photo_alt": "Interno del Teatro Regio di Parma, sede principale del Festival Verdi"
     },
     {
+      "id": "festival-verdi-2027",
+      "name": "Festival Verdi",
+      "edition": "2027",
+      "city": "Parma e Busseto",
+      "region": "Emilia-Romagna",
+      "official_url": "https://teatroregioparma.it/categoria-spettacoli/edizione-27-festival-verdi/",
+      "staging_ids": [
+        "oa-s-000286",
+        "oa-s-000287",
+        "oa-s-000288"
+      ],
+      "description": "Il Festival Verdi riunisce a Parma e Busseto produzioni liriche dedicate a Giuseppe Verdi, tra teatro e territorio.",
+      "festival_id": "festival-verdi",
+      "photo_file": "Interior of Teatro Regio, Parma, Italy.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Teatro_Regio%2C_Parma%2C_Italy.JPG",
+      "photo_credit": "Viva-Verdi — CC BY-SA 3.0 — Wikimedia Commons",
+      "photo_alt": "Interno del Teatro Regio di Parma, sede principale del Festival Verdi",
+      "automatically_generated": true
+    },
+    {
       "id": "luglio-musicale-trapanese-2026",
       "name": "Luglio Musicale Trapanese",
       "edition": "2026",

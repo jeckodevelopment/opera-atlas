@@ -785,6 +785,20 @@
       "title": "L'Orfeo",
       "composer": "Claudio Monteverdi",
       "authority_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
+    },
+    "stiffelio|giuseppe verdi": {
+      "id": "oa-w-000122",
+      "title": "Stiffelio",
+      "composer": "Giuseppe Verdi",
+      "slug": "stiffelio",
+      "authority_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
+    },
+    "aroldo|giuseppe verdi": {
+      "id": "oa-w-000121",
+      "title": "Aroldo",
+      "composer": "Giuseppe Verdi",
+      "slug": "aroldo",
+      "authority_url": "https://teatroregioparma.it/spettacolo/aroldo/"
     }
   },
   "venues": {
@@ -3541,6 +3555,39 @@
       "slug": "orfeo",
       "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
       "season": "2026"
+    },
+    "auto-5f6cb3b3600f1ce5": {
+      "id": "oa-s-000286",
+      "work_id": "oa-w-000122",
+      "venue_id": "oa-v-000066",
+      "slug": "stiffelio",
+      "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/",
+      "season": "2027",
+      "festival_memberships": {
+        "festival-verdi": "2027"
+      }
+    },
+    "auto-8f52b42b10becc85": {
+      "id": "oa-s-000287",
+      "work_id": "oa-w-000121",
+      "venue_id": "oa-v-000010",
+      "slug": "aroldo",
+      "source_url": "https://teatroregioparma.it/spettacolo/aroldo/",
+      "season": "2027",
+      "festival_memberships": {
+        "festival-verdi": "2027"
+      }
+    },
+    "auto-dab7aab357550a28": {
+      "id": "oa-s-000288",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000010",
+      "slug": "la-traviata",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/",
+      "season": "2027",
+      "festival_memberships": {
+        "festival-verdi": "2027"
+      }
     }
   },
   "performances": {
@@ -9958,6 +10005,72 @@
       "staging_id": "oa-s-000285",
       "original_date": "2026-09-20",
       "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
+    },
+    "auto-5f6cb3b3600f1ce5|2027-10-07": {
+      "id": "oa-r-001097",
+      "staging_id": "oa-s-000286",
+      "original_date": "2027-10-07",
+      "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
+    },
+    "auto-5f6cb3b3600f1ce5|2027-10-17": {
+      "id": "oa-r-001098",
+      "staging_id": "oa-s-000286",
+      "original_date": "2027-10-17",
+      "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
+    },
+    "auto-5f6cb3b3600f1ce5|2027-10-21": {
+      "id": "oa-r-001099",
+      "staging_id": "oa-s-000286",
+      "original_date": "2027-10-21",
+      "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
+    },
+    "auto-5f6cb3b3600f1ce5|2027-10-23": {
+      "id": "oa-r-001100",
+      "staging_id": "oa-s-000286",
+      "original_date": "2027-10-23",
+      "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
+    },
+    "auto-8f52b42b10becc85|2027-10-01": {
+      "id": "oa-r-001101",
+      "staging_id": "oa-s-000287",
+      "original_date": "2027-10-01",
+      "source_url": "https://teatroregioparma.it/spettacolo/aroldo/"
+    },
+    "auto-8f52b42b10becc85|2027-10-09": {
+      "id": "oa-r-001102",
+      "staging_id": "oa-s-000287",
+      "original_date": "2027-10-09",
+      "source_url": "https://teatroregioparma.it/spettacolo/aroldo/"
+    },
+    "auto-8f52b42b10becc85|2027-10-16": {
+      "id": "oa-r-001103",
+      "staging_id": "oa-s-000287",
+      "original_date": "2027-10-16",
+      "source_url": "https://teatroregioparma.it/spettacolo/aroldo/"
+    },
+    "auto-dab7aab357550a28|2027-10-02": {
+      "id": "oa-r-001104",
+      "staging_id": "oa-s-000288",
+      "original_date": "2027-10-02",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/"
+    },
+    "auto-dab7aab357550a28|2027-10-08": {
+      "id": "oa-r-001105",
+      "staging_id": "oa-s-000288",
+      "original_date": "2027-10-08",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/"
+    },
+    "auto-dab7aab357550a28|2027-10-14": {
+      "id": "oa-r-001106",
+      "staging_id": "oa-s-000288",
+      "original_date": "2027-10-14",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/"
+    },
+    "auto-dab7aab357550a28|2027-10-24": {
+      "id": "oa-r-001107",
+      "staging_id": "oa-s-000288",
+      "original_date": "2027-10-24",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/"
     }
   },
   "reserved_works": {
@@ -10000,22 +10113,6 @@
       "slug": "jeanne-dark",
       "status": "editorial_verified_pending_staging",
       "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"
-    },
-    "aroldo|giuseppe verdi": {
-      "id": "oa-w-000121",
-      "title": "Aroldo",
-      "composer": "Giuseppe Verdi",
-      "slug": "aroldo",
-      "status": "editorial_verified_pending_staging",
-      "authority_url": "https://teatroregioparma.it/spettacolo/aroldo/"
-    },
-    "stiffelio|giuseppe verdi": {
-      "id": "oa-w-000122",
-      "title": "Stiffelio",
-      "composer": "Giuseppe Verdi",
-      "slug": "stiffelio",
-      "status": "editorial_verified_pending_staging",
-      "authority_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
     }
   }
 }

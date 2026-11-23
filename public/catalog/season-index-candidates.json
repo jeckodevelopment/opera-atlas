@@ -1229,7 +1229,7 @@
       "id": "oa-index-5f6cb3b3600f1ce5cb67",
       "source_key": "festival-verdi-rolling",
       "official_url": "https://teatroregioparma.it/spettacolo/stiffelio/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-23T19:59:49+00:00",
       "last_seen": "2026-11-23T19:59:49+00:00"
     },
@@ -1861,7 +1861,7 @@
       "id": "oa-index-8f52b42b10becc854da6",
       "source_key": "festival-verdi-rolling",
       "official_url": "https://teatroregioparma.it/spettacolo/aroldo/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-23T19:59:49+00:00",
       "last_seen": "2026-11-23T19:59:49+00:00"
     },
@@ -2933,7 +2933,7 @@
       "id": "oa-index-dab7aab357550a28d398",
       "source_key": "festival-verdi-rolling",
       "official_url": "https://teatroregioparma.it/spettacolo/la-traviata/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-23T19:59:49+00:00",
       "last_seen": "2026-11-23T19:59:49+00:00"
     },
