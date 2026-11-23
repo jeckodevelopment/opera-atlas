@@ -227,6 +227,17 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
             # Only already-reconciled provenance is authoritative here.
             source_urls = [staging.get("source_url", "")]
             source_urls.extend(staging.get("supporting_source_urls", []))
+            # Multi-source provenance can come from a theatre or a festival.
+            # A source URL alone is not evidence of Festival Verdi membership,
+            # because the Regio's ordinary opera season shares /spettacolo/.
+            # The ingestion pipeline records the verified edition explicitly.
+            verified_membership=(
+                festival_id=="festival-verdi"
+                and staging.get("festival_memberships",{}).get(festival_id)==season
+            )
+            if verified_membership:
+                editions.setdefault(season, set()).add(staging["id"])
+                continue
             if not any(
                 (url.scheme == "https" and url.hostname in hosts
                  and any(url.path.startswith(prefix) for prefix in prefixes)
@@ -252,7 +263,10 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
                 new = {k: v for k, v in base.items() if k not in
                        ("source_hosts", "source_path_prefixes")}
                 new.update(id=new_id, festival_id=festival_id, edition=edition,
-                           official_url=rule["official_url"],
+                           official_url=(f"https://teatroregioparma.it/categoria-spettacoli/edizione-{int(edition)%100:02d}-festival-verdi/"
+                                         if festival_id=="festival-verdi" else rule["official_url"]),
+                           description=("Il Festival Verdi riunisce a Parma e Busseto produzioni liriche dedicate a Giuseppe Verdi, tra teatro e territorio."
+                                        if festival_id=="festival-verdi" else new.get("description","")),
                            staging_ids=sorted(ids), automatically_generated=True)
                 generated.append(new)
                 generated_ids.add(new_id)

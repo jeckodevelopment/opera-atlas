@@ -9916,6 +9916,22 @@
       "slug": "jeanne-dark",
       "status": "editorial_verified_pending_staging",
       "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"
+    },
+    "aroldo|giuseppe verdi": {
+      "id": "oa-w-000121",
+      "title": "Aroldo",
+      "composer": "Giuseppe Verdi",
+      "slug": "aroldo",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://teatroregioparma.it/spettacolo/aroldo/"
+    },
+    "stiffelio|giuseppe verdi": {
+      "id": "oa-w-000122",
+      "title": "Stiffelio",
+      "composer": "Giuseppe Verdi",
+      "slug": "stiffelio",
+      "status": "editorial_verified_pending_staging",
+      "authority_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
     }
   }
 }

@@ -94,7 +94,8 @@
         "https://teatroregioparma.it/spettacolo/alzira/",
         "https://teatroregioparma.it/spettacolo/nabucodonosor/",
         "https://teatroregioparma.it/spettacolo/aida/"
-      ]
+      ],
+      "rolling_source_key": "festival-verdi-rolling"
     }
   ]
 }

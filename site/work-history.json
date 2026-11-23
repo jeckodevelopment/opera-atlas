@@ -1119,6 +1119,29 @@
         "https://archiviostorico.operaroma.it/opera/la-favola-di-orfeo/",
         "https://www.festivaldellavalleditria.it/programma-2026"
       ]
+    },
+    "aroldo": {
+      "librettist": "Francesco Maria Piave",
+      "premiere_year": 1857,
+      "premiere_date": "1857-08-16",
+      "premiere_venue": "Teatro Nuovo",
+      "premiere_city": "Rimini",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000044491",
+        "https://www.comune.rimini.it/novita/notizie/teatro-galli-verso-la-conclusione-le-prime-prove-della-nuova-produzione-dellaroldo-0",
+        "https://teatroregioparma.it/spettacolo/aroldo/"
+      ]
+    },
+    "stiffelio": {
+      "librettist": "Francesco Maria Piave",
+      "premiere_year": 1850,
+      "premiere_date": "1850-11-16",
+      "premiere_venue": "Teatro Grande",
+      "premiere_city": "Trieste",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000045023",
+        "https://teatroregioparma.it/spettacolo/stiffelio/"
+      ]
     }
   },
   "works_by_id": {
