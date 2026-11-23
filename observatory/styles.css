@@ -125,3 +125,10 @@ html,body{margin:0;padding:0;background:#101c2b}
 .circulation-panel .feature-note{font-size:11px;color:#80717a;margin:12px 0 0}
 @media(max-width:850px){.feature-grid{grid-template-columns:1fr}.feature-grid>.panel{padding:20px}}
 @media(max-width:450px){.feature-grid h2{font-size:24px}.premiere-summary strong{font-size:49px}.circulation-table th:not(:first-child),.circulation-table td:not(:first-child){width:60px}}
+
+/* Two understated document actions in the existing header; accessible disabled state. */
+.top-inner .header-export.pdf-export{margin-left:10px;color:#efdbe2;border-bottom-color:#a47a89}
+.top-inner .header-export.pdf-export:hover{color:white;border-bottom-color:#d8a1b4}
+.top-inner .header-export:disabled{opacity:.45;cursor:not-allowed;border-bottom-color:transparent}
+.top-inner .header-export[aria-busy="true"]{opacity:.65;cursor:progress}
+@media(max-width:650px){.top-inner{gap:6px}.top-inner .header-export.pdf-export{margin-left:2px}.top-inner .header-export{font-size:10px;white-space:nowrap}.top-inner .header-export span{display:none}}
