@@ -172,8 +172,15 @@ class SourceAutomationTests(unittest.TestCase):
                         "modena-teatro-opera-2026-27")]}
         report=scan_attention(index,checks,candidates=candidates)
         by_key={x["source_key"]:x for x in report["sources"]}
-        for key in ("cosenza-rendano-rolling-opera",
-                    "taormina-fondazione-rolling-opera",
+        # Cosenza's first-party Le nozze di Figaro has now entered the
+        # canonical catalog. A healthy alternative there is also catalogued,
+        # while Taormina/Rovigo still have no such evidence.
+        cosenza=by_key["cosenza-rendano-rolling-opera"]
+        self.assertTrue(cosenza["has_healthy_alternative"])
+        self.assertTrue(cosenza["has_catalogued_alternative"])
+        self.assertEqual(cosenza["other_successful_catalogued_sources"],
+                         ["cosenza-inprimafila-rolling-opera"])
+        for key in ("taormina-fondazione-rolling-opera",
                     "rovigo-sociale-opera-2026-27"):
             x=by_key[key]
             self.assertTrue(x["has_healthy_alternative"],key)
