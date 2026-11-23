@@ -27,6 +27,35 @@ class SourceAutomationTests(unittest.TestCase):
         self.assertEqual(report["automation_remaining"],
                          report["not_automated"]+report["configured_not_operational"])
 
+    def test_trapani_shared_festival_source_covers_both_verified_physical_venues(self):
+        from scripts.source_automation import DIRECTORY, DAILY, INDEX, INDEX_VENUES, build
+        import json
+        key = "trapani-luglio-musicale-2026"
+        mapped = set(INDEX_VENUES[key])
+        self.assertEqual(mapped, {
+            "Trapani|Teatro Giuseppe Di Stefano",
+            "Trapani|Teatro M° Tonino Pardo",
+        })
+        directory = json.loads(DIRECTORY.read_text(encoding="utf-8"))
+        daily = json.loads(DAILY.read_text(encoding="utf-8"))
+        index = json.loads(INDEX.read_text(encoding="utf-8"))
+        report = build(directory, daily, {"sources":[]}, index,
+                       {"sources":[{"key":key, "status":"success",
+                                    "current_scan_verified":True}]})
+        venues = {(v["city"],v["venue"]):v for v in report["venues"]}
+        for venue in ("Teatro Giuseppe Di Stefano", "Teatro M° Tonino Pardo"):
+            entry = venues["Trapani",venue]
+            self.assertEqual(entry["status"],"operational")
+            self.assertTrue(any(s["source_key"] == key and s["recent_success"]
+                                for s in entry["sources"]))
+        self.assertNotEqual(venues["Trapani","Teatro Giuseppe Di Stefano"]["venue_id"],
+                            venues["Trapani","Teatro M° Tonino Pardo"]["venue_id"])
+        unverified = build(directory, daily, {"sources":[]}, index, {"sources":[]})
+        missing = {(v["city"],v["venue"]):v for v in unverified["venues"]}
+        for venue in ("Teatro Giuseppe Di Stefano", "Teatro M° Tonino Pardo"):
+            self.assertEqual(missing["Trapani",venue]["status"],
+                             "configured_not_operational")
+
     def test_secondary_festival_venues_are_explicitly_mapped(self):
         from scripts.source_automation import (
             DIRECTORY, DAILY, INDEX, INDEX_VENUES, build

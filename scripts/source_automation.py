@@ -40,7 +40,10 @@ INDEX_VENUES = {
                         "Pesaro|Auditorium Scavolini"),
     "martina-valle-itria-2026": ("Martina Franca|Palazzo Ducale di Martina Franca",
                               "Martina Franca|Chiostro del Carmine"),
-    "trapani-luglio-musicale-2026": ("Trapani|Teatro Giuseppe Di Stefano",),
+    # Both physical venues are explicitly identified by the official programme parser.
+    # Do not infer additional venues solely from the shared festival organizer.
+    "trapani-luglio-musicale-2026": ("Trapani|Teatro Giuseppe Di Stefano",
+                                     "Trapani|Teatro M° Tonino Pardo"),
     "haydn-rolling-opera": ("Bolzano|Teatro Comunale di Bolzano", "Trento|Teatro Sociale"),
     "asti-alfieri-rolling-opera": ("Asti|Teatro Alfieri",),
     "savona-giocosa-rolling-opera": ("Savona|Teatro Gabriello Chiabrera",),
