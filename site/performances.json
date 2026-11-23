@@ -4888,6 +4888,24 @@
       ]
     },
     {
+      "id": "curated:auto-09ac4a16bd5a9c6c:2026-12-19",
+      "starts_at": "2026-12-19T20:30:00+01:00",
+      "local_date": "2026-12-19",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "La mère coupable",
+      "composer": "Darius Milhaud",
+      "venue": "Teatro Alfonso Rendano",
+      "municipality": "Cosenza",
+      "region": "Calabria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza"
+      ]
+    },
+    {
       "id": "curated:auto-9fdcd7eba240da45:2026-12-20",
       "starts_at": "2026-12-20T15:30:00+01:00",
       "local_date": "2026-12-20",

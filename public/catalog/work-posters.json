@@ -1016,6 +1016,15 @@
       "credit": "Immagine della produzione dal sito ufficiale del teatro",
       "alt": "Immagine della produzione di La scala di seta",
       "kind": "official_production_image"
+    },
+    "oa-w-000115": {
+      "work_id": "oa-w-000115",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Disegno_per_copertina_di_libretto%2C_disegno_di_Peter_Hoffer_per_La_m%C3%A8re_coupable_(s.d.)_-_Archivio_Storico_Ricordi_ICON012293.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Disegno_per_copertina_di_libretto%2C_disegno_di_Peter_Hoffer_per_La_m%C3%A8re_coupable_(s.d.)_-_Archivio_Storico_Ricordi_ICON012293.jpg",
+      "alt": "Disegno storico per la copertina del libretto di La mère coupable di Darius Milhaud; non una fotografia dell'allestimento a Cosenza",
+      "credit": "Archivio Storico Ricordi / Peter Hoffer, Wikimedia Commons",
+      "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
     }
   }
 }

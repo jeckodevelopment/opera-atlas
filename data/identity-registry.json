@@ -729,6 +729,13 @@
       "title": "La scala di seta",
       "composer": "Gioachino Rossini",
       "authority_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+    },
+    "la mère coupable|darius milhaud": {
+      "id": "oa-w-000115",
+      "slug": "la-mere-coupable",
+      "title": "La mère coupable",
+      "composer": "Darius Milhaud",
+      "authority_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza"
     }
   },
   "venues": {
@@ -3316,6 +3323,14 @@
       "venue_id": "oa-v-000061",
       "slug": "il-barbiere-di-siviglia",
       "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza",
+      "season": "2026"
+    },
+    "auto-09ac4a16bd5a9c6c": {
+      "id": "oa-s-000271",
+      "work_id": "oa-w-000115",
+      "venue_id": "oa-v-000061",
+      "slug": "la-mere-coupable",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
       "season": "2026"
     }
   },
@@ -9536,6 +9551,12 @@
       "staging_id": "oa-s-000270",
       "original_date": "2026-11-15",
       "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
+    },
+    "auto-09ac4a16bd5a9c6c|2026-12-19": {
+      "id": "oa-r-001064",
+      "staging_id": "oa-s-000271",
+      "original_date": "2026-12-19",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza"
     }
   },
   "reserved_works": {

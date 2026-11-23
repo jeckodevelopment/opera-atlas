@@ -1061,15 +1061,13 @@
       ]
     },
     "la-mere-coupable": {
-      "librettist": "Madeleine Milhaud",
+      "librettist": "Madeleine Milhaud, da Pierre-Augustin Caron de Beaumarchais",
       "premiere_year": 1966,
       "premiere_venue": "Grand Théâtre de Genève",
       "premiere_city": "Ginevra",
-      "composition_year": 1965,
       "sources": [
-        "https://www.wikidata.org/wiki/Q3210943",
-        "https://ressources.ircam.fr/fr/work/la-mere-coupable",
-        "https://opac.braidense.it/bid/SBL0427332"
+        "https://archives.gtg.ch/en/history-of-the-grand-theatre/",
+        "https://ressources.ircam.fr/en/work/la-mere-coupable"
       ]
     }
   },
