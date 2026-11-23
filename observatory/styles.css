@@ -98,3 +98,30 @@ html,body{margin:0;padding:0;background:#101c2b}
   .top-inner .header-export{font-size:11px;padding:5px 1px}
   .top-inner .header-export span{font-size:14px;margin-right:2px}
 }
+
+/* Curated feature spread: two strong stories, with a restrained editorial hierarchy. */
+.feature-grid{display:grid;grid-template-columns:minmax(275px,.92fr) minmax(0,1.48fr);gap:16px;margin:0 0 17px}
+.feature-grid>.panel{padding:23px 25px;min-width:0}
+.feature-grid h2{font:normal 27px/1.2 Georgia,serif;color:#202434;margin:5px 0 14px}
+.feature-eyebrow{font-size:10px;font-weight:750;letter-spacing:.15em;color:#8a3454}
+.premiere-panel{background:linear-gradient(135deg,#fcf9f7 0%,#fbf3f5 100%);border-color:#e6d6db}
+.premiere-summary{display:flex;align-items:center;gap:16px;padding:4px 0 7px}
+.premiere-summary strong{font:normal 60px/1 Georgia,serif;color:#8b1c45;font-variant-numeric:tabular-nums}
+.premiere-summary span{font-weight:650;font-size:13px;line-height:1.4;max-width:220px}
+.premiere-panel .premiere-note{font-size:12px;line-height:1.5;color:#695a62;margin:4px 0 12px}
+.premiere-items{border-top:1px solid #e6d7dc}
+.premiere-entry{padding:10px 0;border-bottom:1px solid #ebdfe3;display:grid;gap:3px}
+.premiere-entry strong{font-size:13px;color:#252433}
+.premiere-entry span{font-size:11px;line-height:1.4;color:#69636b}
+.circulation-panel>p{font-size:12px;line-height:1.55;margin:0 0 15px}
+.circulation-scroller{max-width:100%;overflow-x:auto}
+.circulation-table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.circulation-table th{color:#655b67;font-size:11px;text-transform:uppercase;letter-spacing:.045em;font-weight:700;text-align:left;padding:9px 7px;border-bottom:1px solid #dcd5d8}
+.circulation-table td{padding:11px 7px;border-bottom:1px solid #eee8eb}
+.circulation-table th:not(:first-child),.circulation-table td:not(:first-child){text-align:center;width:75px}
+.circulation-table td strong,.circulation-table td small{display:block}
+.circulation-table td strong{font-size:13px;color:#262735}
+.circulation-table td small{font-size:11px;color:#786d76;margin-top:3px}
+.circulation-panel .feature-note{font-size:11px;color:#80717a;margin:12px 0 0}
+@media(max-width:850px){.feature-grid{grid-template-columns:1fr}.feature-grid>.panel{padding:20px}}
+@media(max-width:450px){.feature-grid h2{font-size:24px}.premiere-summary strong{font-size:49px}.circulation-table th:not(:first-child),.circulation-table td:not(:first-child){width:60px}}
