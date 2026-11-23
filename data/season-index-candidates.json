@@ -205,7 +205,7 @@
       "id": "oa-index-0c1929095ca16102dfeb",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/annullato-gala-lirico.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2045,7 +2045,7 @@
       "id": "oa-index-9cc762326bf4b9f73be2",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/vetrine-vestono-lirica/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2141,7 +2141,7 @@
       "id": "oa-index-a0c534fc596dea327ad4",
       "source_key": "sabbioneta-antica-rolling-opera",
       "official_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2845,7 +2845,7 @@
       "id": "oa-index-d7e99f5acabb11c329c9",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/lirica-nel-foyer-aperitivo-in-musica.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3157,7 +3157,7 @@
       "id": "oa-index-e9edfcff33941447ad9e",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/olimpichetto-il-ritorno-di-un-ambasciatore/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3277,7 +3277,7 @@
       "id": "oa-index-f27da49c89fa1ff39b18",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/opera-domani-aida-amore-e-coraggio.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
