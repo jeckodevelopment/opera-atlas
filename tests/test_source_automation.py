@@ -27,6 +27,65 @@ class SourceAutomationTests(unittest.TestCase):
         self.assertEqual(report["automation_remaining"],
                          report["not_automated"]+report["configured_not_operational"])
 
+    def test_san_carlo_secondary_publication_counts_as_operational(self):
+        from scripts.source_automation import (
+            DIRECTORY, DAILY, INDEX, SAN_CARLO_SECONDARY,
+            SAN_CARLO_CANONICAL, SAN_CARLO_CANDIDATES, SAN_CARLO_PUBLIC,
+            san_carlo_verified_fallback
+        )
+        import json
+        def read(path):
+            return json.loads(path.read_text(encoding="utf-8"))
+        secondary, canonical = read(SAN_CARLO_SECONDARY), read(SAN_CARLO_CANONICAL)
+        candidates, public = read(SAN_CARLO_CANDIDATES), read(SAN_CARLO_PUBLIC)
+        fallback = san_carlo_verified_fallback(secondary, canonical, candidates, public)
+        self.assertIsNotNone(fallback)
+        self.assertEqual(fallback["published_performances"], 58)
+        report = build(read(DIRECTORY), read(DAILY), {"sources":[]},
+                       read(INDEX), {"sources":[{"key":"napoli-san-carlo-rolling-opera",
+                       "status":"unavailable_or_invalid",
+                       "diagnostic":"official_anti_bot_challenge",
+                       "current_scan_verified":False}]},
+                       san_carlo_fallback=fallback)
+        napoli = next(v for v in report["venues"]
+                      if v["city"]=="Napoli" and v["venue"]=="Teatro di San Carlo")
+        self.assertEqual(napoli["status"], "operational")
+        self.assertEqual(napoli["recent_successful_connectors"], 1)
+        self.assertEqual(napoli["configured_connectors"], 2)
+        official = next(x for x in napoli["sources"]
+                        if x["source_key"]=="napoli-san-carlo-rolling-opera")
+        self.assertEqual(official["failure_reason"], "official_anti_bot_challenge")
+        self.assertFalse(official["recent_success"])
+        self.assertFalse(fallback["direct_official_scan_verified"])
+
+    def test_san_carlo_secondary_requires_real_canonical_publication(self):
+        from scripts.source_automation import (
+            SAN_CARLO_SECONDARY, SAN_CARLO_CANONICAL,
+            SAN_CARLO_CANDIDATES, SAN_CARLO_PUBLIC,
+            san_carlo_verified_fallback
+        )
+        import json
+        def read(path):
+            return json.loads(path.read_text(encoding="utf-8"))
+        secondary, canonical = read(SAN_CARLO_SECONDARY), read(SAN_CARLO_CANONICAL)
+        candidates, public = read(SAN_CARLO_CANDIDATES), read(SAN_CARLO_PUBLIC)
+        self.assertIsNotNone(san_carlo_verified_fallback(
+            secondary,canonical,candidates,public))
+        corrupted = {**public, "performances": [
+            p for p in public["performances"]
+            if not (p.get("venue")=="Teatro di San Carlo" and
+                    p.get("title")=="Peter Grimes")]}
+        self.assertIsNone(san_carlo_verified_fallback(
+            secondary,canonical,candidates,corrupted))
+        bad = {**secondary,"performance_count":57}
+        self.assertIsNone(san_carlo_verified_fallback(
+            bad,canonical,candidates,public))
+        bad = {**canonical,"productions":[
+            {**x, "status":"canonical_candidate_evidence_ready"}
+            if x["title"]=="Luisa Miller" else x for x in canonical["productions"]]}
+        self.assertIsNone(san_carlo_verified_fallback(
+            secondary,bad,candidates,public))
+
     def test_secondary_venues_have_exact_first_party_published_productions(self):
         from scripts.source_automation import DIRECTORY, DAILY, INDEX, ROOT
         import json
