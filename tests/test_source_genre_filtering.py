@@ -70,6 +70,30 @@ class SourceGenreFilteringTests(unittest.TestCase):
                 self.assertFalse(excluded_nonopera(key,url))
                 self.assertEqual(classify(key,url,set()),"needs_review")
 
+    def test_residual_nonopera_pages_are_exactly_scoped(self):
+        excluded=[
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/annullato-gala-lirico.aspx"),
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/lirica-nel-foyer-aperitivo-in-musica.aspx"),
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/opera-domani-aida-amore-e-coraggio.aspx"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/vetrine-vestono-lirica/"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/olimpichetto-il-ritorno-di-un-ambasciatore/"),
+            ("sabbioneta-antica-rolling-opera","https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/"),
+        ]
+        for key,url in excluded:
+            with self.subTest(url=url):
+                self.assertTrue(excluded_nonopera(key,url))
+                self.assertEqual(classify(key,url,set()),"excluded_nonopera")
+        still_eligible=[
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/madama-butterfly.aspx"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"),
+            ("sabbioneta-antica-rolling-opera","https://sabbionetaoperafestival.it/evento/nuova-opera/"),
+            ("trapani-luglio-musicale-2026","https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/"),
+        ]
+        for key,url in still_eligible:
+            with self.subTest(url=url):
+                self.assertFalse(excluded_nonopera(key,url))
+                self.assertEqual(classify(key,url,set()),"needs_review")
+
     def test_verified_canonical_source_is_never_lost_for_opera(self):
         key="massimo-season-2026-27"
         url="https://www.teatromassimo.it/event/carmen-3/"
