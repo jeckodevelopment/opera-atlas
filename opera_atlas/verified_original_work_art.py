@@ -31,6 +31,22 @@ APPROVED={
   "Jeanne Dark","Fabio Vacchi"):(
   "https://www.maggiofiorentino.com/events/jeanne-dark-5",
   "https://www.maggiofiorentino.com/uploads/JEANNE_DARK_70x100_INTERNO_ok_5b07c76e9f.jpg")
+ ("https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+  "Ghost Cafè","Carlo Galante"):(
+  "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+  "https://www.lugliomusicale.it/public/828w/260617-lug-manifesti-generale-17.jpg"),
+ ("https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+  "Fuori Fuoco","Diana Buscemi"):(
+  "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+  "https://www.lugliomusicale.it/public/360w/260617-lug-manifesti-generale-19.jpg"),
+ ("https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+  "Magic Words Circus","Orazio Sciortino"):(
+  "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+  "https://www.lugliomusicale.it/public/360w/260617-lug-manifesti-generale-16.jpg"),
+ ("https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+  "Il schiavo di sua moglie","Francesco Provenzale"):(
+  "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+  "https://www.festivaldellavalleditria.it/wp-content/uploads/2024/02/16.jpg"),
 }
 FIELDS=("image_url","source_url","original_source_url","credit","alt","kind")
 
