@@ -6,7 +6,9 @@
   let performances=[];
   function italianToday(){
     // Calendar date in Italy, independent of visitor timezone.
-    return new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+    const get=t=>parts.find(x=>x.type===t).value;
+    return get("year")+"-"+get("month")+"-"+get("day");
   }
   function dateFromISO(value){return new Date(value+"T12:00:00Z");}
   function dayShift(value,days){const d=dateFromISO(value);d.setUTCDate(d.getUTCDate()+days);return d.toISOString().slice(0,10);}
