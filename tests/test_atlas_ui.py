@@ -80,6 +80,18 @@ class AtlasInterfaceTests(unittest.TestCase):
         from scripts.publish_catalog_v2 import sync_festival_index
         sync_festival_index(registry, check=True)
 
+    def test_festival_index_contains_only_populated_editions(self):
+        festivals = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))["festivals"]
+        identities = set()
+        for festival in festivals:
+            self.assertRegex(festival["edition"], r"^20[0-9]{2}$")
+            self.assertTrue(festival["staging_ids"], festival["id"])
+            identity = (festival["festival_id"], festival["edition"])
+            self.assertNotIn(identity, identities)
+            identities.add(identity)
+        self.assertNotIn("rossini-opera-festival", {f["id"] for f in festivals})
+        self.assertIn("rossini-opera-festival-2026", {f["id"] for f in festivals})
+
     def test_festival_registry_generates_only_verified_year_editions(self):
         from unittest.mock import patch
         from tempfile import TemporaryDirectory
