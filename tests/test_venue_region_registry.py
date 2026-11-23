@@ -22,7 +22,7 @@ class VenueRegionRegistryTests(unittest.TestCase):
             "Trapani":"Sicilia","Milano":"Lombardia",
             "Ravenna":"Emilia-Romagna","Parma":"Emilia-Romagna",
             "Palermo":"Sicilia","Brescia":"Lombardia",
-            "Genova":"Liguria",
+            "Genova":"Liguria","Taormina":"Sicilia",
         }
         for city,region in expected.items():
             with self.subTest(city=city):
