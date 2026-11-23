@@ -781,6 +781,16 @@
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Antico_di_Taormina.jpg",
       "photo_credit": "Maria Iaria — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0"
+    },
+    "Pesaro|Auditorium Scavolini": {
+      "city": "Pesaro",
+      "name": "Auditorium Scavolini",
+      "address": "Viale dei Partigiani 42, 61121 Pesaro (PU)",
+      "description": "A pochi passi dal mare, l’Auditorium Scavolini ospita spettacoli e produzioni del Rossini Opera Festival in uno spazio polivalente riaperto nel 2024.",
+      "website": "https://www.rossinioperafestival.it/luoghi/auditorium-scavolini/",
+      "opening_year": 2024,
+      "history": "Nato nel 1956 come palazzetto dello sport di Pesaro, l'edificio di viale dei Partigiani è stato per decenni un luogo della vita sportiva e culturale cittadina. Dopo una profonda riqualificazione, ha riaperto il 29 febbraio 2024 come Auditorium Scavolini, diventando una delle sedi del Rossini Opera Festival e uno spazio per la musica e lo spettacolo.",
+      "source": "https://www.comune.pesaro.pu.it/cultura/teatri-arene-e-spazi-per-la-musica/teatri/auditorium-scavolini/"
     }
   }
 }
