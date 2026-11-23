@@ -1265,6 +1265,67 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     distinct_fetches+=1
                 else:
                     repeated_pages+=1
+                if item["source_key"]=="vicenza-olimpico-rolling-opera":
+                    from opera_atlas.vicenza_olimpico_opera import (
+                        TICKETING,parse_detail)
+                    try:
+                        # Prefer independently verified article edition.
+                        # Offsite/genre failures must not fetch an unrelated
+                        # ticket office or be reattributed to Teatro Olimpico.
+                        parse_detail(page.html,url=item["official_url"])
+                    except ValueError as initial:
+                        if str(initial)!="Vicenza official festival year missing or conflicting":
+                            pass  # Generic strict parser records its own reason below.
+                        else:
+                            # When WordPress omits edition metadata, corroborate
+                            # every showtime against the same operator's official
+                            # dated ticket-office listing through robots-gated fetch.
+                            ticket_key=(source_id,TICKETING)
+                            ticket=fetched_pages.get(ticket_key)
+                            try:
+                                if ticket is None:
+                                    if distinct_fetches:pause(REQUEST_GAP_SECONDS)
+                                    ticket=fetcher(db,source_id=source_id,
+                                        url=TICKETING,network_enabled=True)
+                                    fetched_pages[ticket_key]=ticket
+                                    distinct_fetches+=1
+                                else:
+                                    repeated_pages+=1
+                                title,composer,venue,shows=parse_detail(
+                                    page.html,url=item["official_url"],
+                                    ticketing_html=ticket.html)
+                            except (ValueError,AccessDenied,FetchUnavailable) as exc:
+                                health.append({
+                                    "candidate_id":item["id"],
+                                    "outcome":"unavailable_or_unstructured",
+                                    "reason":"no_verified_showtimes",
+                                    "diagnostic":["official_ticket_calendar:"+str(exc)[:120]],
+                                    "rows":0})
+                                continue
+                            facts=[{"event_title":title,"composer":composer,
+                                    "venue":venue,"date":day,
+                                    "starts_at":official_local_time(day,clock)}
+                                   for day,clock in shows]
+                            from scripts.publish_work_posters import extract_official_poster
+                            image=extract_official_poster(
+                                page.html,item["official_url"],title,
+                                verified_event_page=True)
+                            retained[item["id"]]={
+                                "candidate_id":item["id"],
+                                "source_key":item["source_key"],
+                                "source_url":item["official_url"],
+                                "content_sha256":page.sha256,
+                                "official_schedule_evidence_url":TICKETING,
+                                "official_schedule_sha256":ticket.sha256,
+                                "checked_at":datetime.now(timezone.utc).isoformat(
+                                    timespec="seconds"),
+                                "status":"needs_editorial_review",
+                                "event_facts":facts,
+                                **({"poster_evidence":image} if image else {})}
+                            health.append({"candidate_id":item["id"],
+                                           "outcome":"verified_first_party_ticket_calendar",
+                                           "rows":len(facts)})
+                            continue
                 if item["source_key"]=="bellini-catania-opera-2026-27":
                     from opera_atlas.catania_press_calendar import (
                         press_url,parse_press_calendar)
