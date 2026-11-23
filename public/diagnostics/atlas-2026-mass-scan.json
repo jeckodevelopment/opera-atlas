@@ -1,0 +1,3355 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "checked_at": "2026-11-23T22:39:28+00:00",
+  "scope": "official source discovery only; not season coverage certification",
+  "read_only": true,
+  "catalog_updated": false,
+  "source_indexes_configured": 88,
+  "source_indexes_scanned": 64,
+  "detail_pages_scanned": 309,
+  "observations_needing_review": 18,
+  "overflow": [
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "deferred_due_to_per_source_limit": 15
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "deferred_due_to_per_source_limit": 4
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "deferred_due_to_per_source_limit": 11
+    }
+  ],
+  "index_results": [
+    {
+      "source_key": "ancona-cavalleria-program-2026",
+      "index_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionemuse.org/stagione-lirica-2026/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ancona-elisir-opera-2026",
+      "index_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionemuse.org/stagione-lirica-2026/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ancona-opera-season-2027",
+      "index_url": "https://www.fondazionemuse.org/stagione-lirica-2027/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "arena-festival-2027",
+      "index_url": "https://www.arena.it/arena-opera-festival/spettacoli/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+        "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
+        "https://www.arena.it/arena-opera-festival/carmen/",
+        "https://www.arena.it/arena-opera-festival/la-traviata/",
+        "https://www.arena.it/arena-opera-festival/nabucco/"
+      ],
+      "candidate_count": 5
+    },
+    {
+      "source_key": "asti-alfieri-rolling-opera",
+      "index_url": "https://www.teatroalfieriasti.it/events/categoria/fuori-abbonamento/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatroalfieriasti.it/event/aida/",
+        "https://www.teatroalfieriasti.it/event/concerto-di-capodanno/"
+      ],
+      "candidate_count": 2
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "index_url": "https://www.teatromassimobellini.it/opere-e-balletto/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatromassimobellini.it/eventi/carmen-2026/",
+        "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+        "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "bologna-comunale-opera-2026",
+      "index_url": "https://www.tcbo.it/stagione-presente/?_tipo=opera",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "index_url": "https://www.tcbo.it/stagione-futura/?_tipo=opera",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.tcbo.it/evento/opera/accabadora-2027/",
+        "https://www.tcbo.it/evento/opera/carmen-2027/",
+        "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
+        "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
+        "https://www.tcbo.it/evento/opera/la-straniera-2027/",
+        "https://www.tcbo.it/evento/opera/madama-butterfly-2027/",
+        "https://www.tcbo.it/evento/opera/nabucco-2027/",
+        "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
+        "https://www.tcbo.it/evento/opera/vanessa-2027/"
+      ],
+      "candidate_count": 9
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "index_url": "https://www.carlofelice.it/rassegna-stagione-opera-danza-musical-2026-27/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+        "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
+        "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
+        "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
+        "https://www.carlofelice.it/spettacolo/nabucco/",
+        "https://www.carlofelice.it/spettacolo/pagliacci/",
+        "https://www.carlofelice.it/spettacolo/turandot/"
+      ],
+      "candidate_count": 7
+    },
+    {
+      "source_key": "chieti-marrucino-lirica-2026",
+      "index_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "chieti-marrucino-season-2027",
+      "index_url": "https://comune.chieti.it/?s=stagione+lirica+2027+marrucino",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "coccia-novara-opera-2027",
+      "index_url": "https://www.fondazioneteatrococcia.it/spettacoli.html",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "index_url": "https://www.fondazioneteatrococcia.it/spettacoli_opera_danza_concerti.html",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazioneteatrococcia.it/stagione-27-beethoven-200.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-lago-dei-cigni.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-la-bella-addormentata.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
+        "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html"
+      ],
+      "candidate_count": 9
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "index_url": "https://www.inprimafila.net/index.php/eventi",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.inprimafila.net/index.php/eventi/il-medico-dei-pazzi-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/l-anima-e-il-tempo-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/lisistrata-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/odissea-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/oltre-l-indifferenza-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/picchi-e-pero-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
+      ],
+      "candidate_count": 9
+    },
+    {
+      "source_key": "cosenza-rendano-rolling-opera",
+      "index_url": "https://www.teatrorendanocosenza.it/lirica-2/",
+      "status": "unverified",
+      "reason": "AccessDenied",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "donizetti-opera-2026",
+      "index_url": "https://www.donizettiopera.org/it/opere-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+        "https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+        "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "donizetti-opera-2027",
+      "index_url": "https://www.donizettiopera.org/it/opere-2027/",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "index_url": "https://www.teatrolafenice.it/event-category/opera-2026-27/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
+        "https://www.teatrolafenice.it/event/carmenaxelrod/",
+        "https://www.teatrolafenice.it/event/fedora/",
+        "https://www.teatrolafenice.it/event/hansel-und-gretel/",
+        "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/",
+        "https://www.teatrolafenice.it/event/jenufa/",
+        "https://www.teatrolafenice.it/event/larca-di-noe/",
+        "https://www.teatrolafenice.it/event/madamabutterflycallegari/",
+        "https://www.teatrolafenice.it/event/normatebar/",
+        "https://www.teatrolafenice.it/event/nozze-istriane/",
+        "https://www.teatrolafenice.it/event/partenope/"
+      ],
+      "candidate_count": 11
+    },
+    {
+      "source_key": "ferrara-barbiere-opera-2026-27",
+      "index_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ferrara-boccanegra-opera-2026-27",
+      "index_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ferrara-clemenza-opera-2026-27",
+      "index_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ferrara-dido-opera-2026-27",
+      "index_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ferrara-macbeth-opera-2026-27",
+      "index_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ferrara-season-opera-2027-28",
+      "index_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2027-2028/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "festival-verdi-rolling",
+      "index_url": "https://teatroregioparma.it/categoria-spettacoli/edizione-27-festival-verdi/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://teatroregioparma.it/spettacolo/aroldo/",
+        "https://teatroregioparma.it/spettacolo/la-traviata/",
+        "https://teatroregioparma.it/spettacolo/stiffelio/"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "index_url": "https://www.arena.it/teatro-filarmonico-verona/spettacoli-prossima-stagione/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+      ],
+      "candidate_count": 5
+    },
+    {
+      "source_key": "filarmonico-verona-rolling-opera",
+      "index_url": "https://www.arena.it/prossime-stagioni/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+        "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+      ],
+      "candidate_count": 5
+    },
+    {
+      "source_key": "giglio-lucca-opera-2026-27",
+      "index_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/",
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
+        "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "goldoni-livorno-dido-2026-27",
+      "index_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "goldoni-livorno-elisir-2026-27",
+      "index_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "goldoni-livorno-otello-2026-27",
+      "index_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.goldoniteatro.it/notizie/la-stagione-lirica/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "index_url": "https://www.goldoniteatro.it/tipo-spettacolo/lirica/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
+        "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
+        "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
+        "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
+        "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
+        "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
+        "https://www.goldoniteatro.it/spettacoli/otello-3/",
+        "https://www.goldoniteatro.it/spettacoli/otello-4/"
+      ],
+      "candidate_count": 8
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "index_url": "https://www.haydn.it/eventi/area/opera",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+        "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+        "https://www.haydn.it/eventi/dai-libri-allopera",
+        "https://www.haydn.it/eventi/dai-libri-allopera-2",
+        "https://www.haydn.it/eventi/il-barbiere-di-siviglia-e-la-rosa-incantata",
+        "https://www.haydn.it/eventi/la-clemenza-di-tito",
+        "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
+        "https://www.haydn.it/eventi/oper-a-backstage-under-35-2",
+        "https://www.haydn.it/eventi/oper-a-intro-14",
+        "https://www.haydn.it/eventi/oper-a-intro-15",
+        "https://www.haydn.it/eventi/oper-a-intro-16",
+        "https://www.haydn.it/eventi/oper-a-intro-17"
+      ],
+      "candidate_count": 12
+    },
+    {
+      "source_key": "jesi-don-pasquale-opera-2026",
+      "index_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "jesi-esecuzione-opera-2026",
+      "index_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "jesi-nabucco-opera-2026",
+      "index_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "jesi-opera-season-2027",
+      "index_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2027/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "jesi-trittico-opera-2026",
+      "index_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "lecce-apollo-pinocchio-2026",
+      "index_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "lecce-politeama-opera-2026",
+      "index_url": "https://www.politeamagreco.it/programmazione.asp",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "lecce-provincia-politeama-2026",
+      "index_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "lecce-provincia-season-2027",
+      "index_url": "https://www.provincia.le.it/?s=52+stagione+lirica+2027",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "index_url": "https://www.liricocagliari.it/categoria-evento/opera/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.liricocagliari.it/evento/alcina/",
+        "https://www.liricocagliari.it/evento/candide/",
+        "https://www.liricocagliari.it/evento/cosi-fan-tutte/",
+        "https://www.liricocagliari.it/evento/die-zauberflote/",
+        "https://www.liricocagliari.it/evento/don-carlos/",
+        "https://www.liricocagliari.it/evento/falstaff/",
+        "https://www.liricocagliari.it/evento/il-cappello-di-paglia-di-firenze/",
+        "https://www.liricocagliari.it/evento/la-boheme/",
+        "https://www.liricocagliari.it/evento/lucrezia-borgia/",
+        "https://www.liricocagliari.it/evento/maria-stuarda/",
+        "https://www.liricocagliari.it/evento/norma/",
+        "https://www.liricocagliari.it/evento/otello/",
+        "https://www.liricocagliari.it/evento/rigoletto/",
+        "https://www.liricocagliari.it/evento/turandot/"
+      ],
+      "candidate_count": 14
+    },
+    {
+      "source_key": "macerata-festival-2027",
+      "index_url": "https://www.sferisterio.it/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+        "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
+        "https://www.sferisterio.it/macerata-opera-festival/tosca"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "macerata-festival-rolling",
+      "index_url": "https://www.sferisterio.it/macerata-opera-festival-2027",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+        "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
+        "https://www.sferisterio.it/macerata-opera-festival/tosca"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "index_url": "https://www.maggiofiorentino.com/calendario/2027/01/opera",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+        "https://www.maggiofiorentino.com/events/la-traviata-2027",
+        "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "index_url": "https://www.teatrosocialemantova.it/it-it/ricerca.aspx?fti=opera+lirica",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatrosocialemantova.it/it-it/affitta-il-ridotto.aspx",
+        "https://www.teatrosocialemantova.it/it-it/affitta-il-teatro.aspx",
+        "https://www.teatrosocialemantova.it/it-it/annullato-gala-lirico.aspx",
+        "https://www.teatrosocialemantova.it/it-it/archivio-eventi-del-ridotto-1.aspx",
+        "https://www.teatrosocialemantova.it/it-it/biglietteria.aspx",
+        "https://www.teatrosocialemantova.it/it-it/cavalleria-rusticana-la-serva-padrona.aspx",
+        "https://www.teatrosocialemantova.it/it-it/contatti.aspx",
+        "https://www.teatrosocialemantova.it/it-it/dove-parcheggiare.aspx",
+        "https://www.teatrosocialemantova.it/it-it/dove-siamo.aspx",
+        "https://www.teatrosocialemantova.it/it-it/erogazioni-ministeriali.aspx",
+        "https://www.teatrosocialemantova.it/it-it/eventi-1.aspx",
+        "https://www.teatrosocialemantova.it/it-it/facebook.aspx",
+        "https://www.teatrosocialemantova.it/it-it/il-ridotto-del-teatro.aspx",
+        "https://www.teatrosocialemantova.it/it-it/instagram.aspx",
+        "https://www.teatrosocialemantova.it/it-it/la-traviata-giuseppe-verdi.aspx",
+        "https://www.teatrosocialemantova.it/it-it/la-traviata-v1.aspx",
+        "https://www.teatrosocialemantova.it/it-it/la-traviata-v2.aspx",
+        "https://www.teatrosocialemantova.it/it-it/la-traviata.aspx",
+        "https://www.teatrosocialemantova.it/it-it/le-sale.aspx",
+        "https://www.teatrosocialemantova.it/it-it/lirica-nel-foyer-aperitivo-in-musica.aspx",
+        "https://www.teatrosocialemantova.it/it-it/madama-butterfly.aspx",
+        "https://www.teatrosocialemantova.it/it-it/opera-domani-aida-amore-e-coraggio.aspx",
+        "https://www.teatrosocialemantova.it/it-it/privacy-policy.aspx",
+        "https://www.teatrosocialemantova.it/it-it/sitemap.aspx",
+        "https://www.teatrosocialemantova.it/it-it/sostieni-il-teatro.aspx",
+        "https://www.teatrosocialemantova.it/it-it/storia.aspx",
+        "https://www.teatrosocialemantova.it/it-it/tag-directory-1.aspx",
+        "https://www.teatrosocialemantova.it/it-it/top-ricerche.aspx",
+        "https://www.teatrosocialemantova.it/it-it/tosca.aspx",
+        "https://www.teatrosocialemantova.it/it-it/youtube.aspx"
+      ],
+      "candidate_count": 30
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "index_url": "https://www.festivaldellavalleditria.it/programma-2026",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
+        "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
+        "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+        "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
+        "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+        "https://www.festivaldellavalleditria.it/spettacolo/vennero-da-ogni-dove/2026-07-20"
+      ],
+      "candidate_count": 6
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "index_url": "https://www.teatromassimo.it/la-stagione-2026-27/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatromassimo.it/event/carmen-3/",
+        "https://www.teatromassimo.it/event/die-zauberflote/",
+        "https://www.teatromassimo.it/event/ernani-2/",
+        "https://www.teatromassimo.it/event/falstaff-2/",
+        "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/",
+        "https://www.teatromassimo.it/event/macbeth/",
+        "https://www.teatromassimo.it/event/samson-et-dalila/",
+        "https://www.teatromassimo.it/event/tosca-2/"
+      ],
+      "candidate_count": 8
+    },
+    {
+      "source_key": "messina-vittorio-opera-2026-27",
+      "index_url": "https://www.teatrovittorioemanuele.it/event_listing_type/opera-26-27/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
+        "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
+        "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "modena-municipal-opera-2027-28",
+      "index_url": "https://www.comune.modena.it/vivere-modena/eventi/2027/stagione-opera-2027-2028",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "modena-opera-2026-27",
+      "index_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-opera-2026-2027",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "index_url": "https://www.teatrocomunalemodena.it/opera/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/",
+        "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+        "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/",
+        "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+        "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/",
+        "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+        "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+        "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/"
+      ],
+      "candidate_count": 9
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "index_url": "https://www.teatrosancarlo.it/spettacoli/",
+      "status": "unverified",
+      "reason": "SanCarloSecurityChallenge",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "index_url": "https://www.operaroma.it/genre/opera/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
+        "https://www.operaroma.it/spettacoli/code-unknown/",
+        "https://www.operaroma.it/spettacoli/i-due-foscari/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-trovatore-3/",
+        "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
+        "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+        "https://www.operaroma.it/spettacoli/la-rondine/",
+        "https://www.operaroma.it/spettacoli/una-lady-macbeth-del-distretto-di-mzensk/"
+      ],
+      "candidate_count": 9
+    },
+    {
+      "source_key": "padova-verdi-opera-2026",
+      "index_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "padova-verdi-season-2027",
+      "index_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2027",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "index_url": "https://teatroregioparma.it/categoria-spettacoli/opera/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://teatroregioparma.it/spettacolo/boris-godunov/",
+        "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
+        "https://teatroregioparma.it/spettacolo/madama-butterfly/",
+        "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+        "https://teatroregioparma.it/spettacolo/rigoletto/"
+      ],
+      "candidate_count": 5
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "index_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/concerti-di-belcanto/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/festival-giovane/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/florez-30/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/incontri/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/rossinimania/",
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/stabat-mater/"
+      ],
+      "candidate_count": 10
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "index_url": "https://www.fondazionepetruzzelli.it/opera-e-balletto-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+        "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
+        "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
+        "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
+        "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+        "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
+        "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
+        "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/"
+      ],
+      "candidate_count": 8
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "index_url": "https://www.fondazionepetruzzelli.it/opera-e-balletto-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
+        "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/",
+        "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/",
+        "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
+        "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
+        "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/",
+        "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
+        "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
+      ],
+      "candidate_count": 8
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "index_url": "https://teatripiacenza.it/stagioni/stagione-26-27/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://teatripiacenza.it/event/aida/",
+        "https://teatripiacenza.it/event/la-cenerentola-2/",
+        "https://teatripiacenza.it/event/la-clemenza-di-tito/",
+        "https://teatripiacenza.it/event/siberia/",
+        "https://teatripiacenza.it/event/simon-boccanegra/"
+      ],
+      "candidate_count": 5
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "index_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "pisa-verdi-opera-2026-27",
+      "index_url": "https://teatrodipisa.it/tipologia-spettacolo/opera/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "puccini-torre-del-lago-2027",
+      "index_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "ravenna-alighieri-cherubini-2027",
+      "index_url": "https://www.orchestracherubini.it/eventi/tpl/list/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "index_url": "https://www.orchestracherubini.it/eventi/tpl/list/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "index_url": "https://www.iteatri.re.it/tipo/opera/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+        "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/",
+        "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+        "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
+        "https://www.iteatri.re.it/spettacolo/veleno/"
+      ],
+      "candidate_count": 5
+    },
+    {
+      "source_key": "rovigo-regione-programma-2026-27",
+      "index_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "index_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "rovigo-sociale-season-2027-28",
+      "index_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2027-2028",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "sabbioneta-antica-rolling-opera",
+      "index_url": "https://sabbionetaoperafestival.it/eventi/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "index_url": "https://cultura.comune.salerno.it/teatro-verdi/la-stagione/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/",
+        "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
+        "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+        "https://cultura.comune.salerno.it/eventi/macbeth-2026/",
+        "https://cultura.comune.salerno.it/eventi/trovatore-2026/",
+        "https://cultura.comune.salerno.it/eventi/turandot-2026/"
+      ],
+      "candidate_count": 6
+    },
+    {
+      "source_key": "salerno-verdi-rolling-opera",
+      "index_url": "https://cultura.comune.salerno.it/teatro-verdi/la-stagione/",
+      "status": "unverified",
+      "reason": "FutureSalernoSeasonNotYetVerified",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "sassari-de-carolis-opera-2026",
+      "index_url": "https://www.marialisadecarolis.it/opere-liriche.aspx",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
+      ],
+      "candidate_count": 3
+    },
+    {
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "index_url": "https://www.marialisadecarolis.it/opere-liriche.aspx",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371",
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
+        "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
+      ],
+      "candidate_count": 5
+    },
+    {
+      "source_key": "savona-giocosa-rolling-opera",
+      "index_url": "https://operagiocosa.it/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://operagiocosa.it/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "index_url": "https://www.teatroallascala.org/it/stagione/2026-2027/index.html",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+        "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html"
+      ],
+      "candidate_count": 13
+    },
+    {
+      "source_key": "spoleto-tls-lirica-2026",
+      "index_url": "https://www.tls-belli.it/stagione-lirica-2026/",
+      "status": "unverified",
+      "reason": "AccessDenied",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "taormina-arte-rolling-opera",
+      "index_url": "https://festivaltaorminarte.it/programma/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "taormina-fondazione-rolling-opera",
+      "index_url": "https://www.fondazione-taormina.it/",
+      "status": "unverified",
+      "reason": "ValueError",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "taormina-opera-festival-rolling",
+      "index_url": "https://www.taorminaoperafestival.org/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.taorminaoperafestival.org/la-grande-lirica-torna-al-teatro-antico-di-taormina-con-la-traviata-secondo-castiglione/"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "teatro-grande-opera-2026",
+      "index_url": "https://teatrogrande.it/it",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
+        "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri"
+      ],
+      "candidate_count": 2
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "index_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/american-dream/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/bruno-canino/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/concerto-di-capodanno/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/concerto-di-natale/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/duo-monica-leone-michele-campanella/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/duo-resonans/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/food-ensemble/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/lidia-schillaci-canta-i-grandi-cantautori-italiani/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/new-saxophone-orchestra/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/omaggio-a-bowie-cohen-michael-e-prince/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/omaggio-a-lelio-luttazzi/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/orchestra-nazionale-barocca-dei-conservatori/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/passantino-incontra-brioschi/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/quartetto-vocale-faraualla/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/quintetto-sospeso/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/requiem-k-626/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/romeo-e-giulietta/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/sicily-jazz-concert/",
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/verdi-sogno-e-passione/"
+      ],
+      "candidate_count": 26
+    },
+    {
+      "source_key": "treviso-del-monaco-opera-2026-27",
+      "index_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+      ],
+      "candidate_count": 1
+    },
+    {
+      "source_key": "treviso-del-monaco-season-2027-28",
+      "index_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-27-28",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "candidate_urls": [],
+      "candidate_count": 0
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "index_url": "https://www.teatroverdi-trieste.com/it/calendario-spettacoli/?a=0&t=lirica",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.teatroverdi-trieste.com/it/spettacoli/aida/",
+        "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
+        "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
+        "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
+        "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/",
+        "https://www.teatroverdi-trieste.com/it/spettacoli/norma/"
+      ],
+      "candidate_count": 6
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "index_url": "https://www.vicenzainlirica.it/",
+      "status": "scanned",
+      "candidate_urls": [
+        "https://www.vicenzainlirica.it/contacts/",
+        "https://www.vicenzainlirica.it/credits/",
+        "https://www.vicenzainlirica.it/eventi/",
+        "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
+        "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+        "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/",
+        "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
+        "https://www.vicenzainlirica.it/olimpichetto-il-ritorno-di-un-ambasciatore/",
+        "https://www.vicenzainlirica.it/privacy-policy/",
+        "https://www.vicenzainlirica.it/sostieni/",
+        "https://www.vicenzainlirica.it/sponsor/",
+        "https://www.vicenzainlirica.it/supporters/",
+        "https://www.vicenzainlirica.it/vetrine-vestono-lirica/",
+        "https://www.vicenzainlirica.it/vil/"
+      ],
+      "candidate_count": 14
+    }
+  ],
+  "detail_results": [
+    {
+      "source_key": "ancona-cavalleria-program-2026",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "ancona-elisir-opera-2026",
+      "source_url": "https://www.fondazionemuse.org/stagione-lirica-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/carmen/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/la-traviata/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "arena-festival-2027",
+      "source_url": "https://www.arena.it/arena-opera-festival/nabucco/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "asti-alfieri-rolling-opera",
+      "source_url": "https://www.teatroalfieriasti.it/event/aida/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "asti-alfieri-rolling-opera",
+      "source_url": "https://www.teatroalfieriasti.it/event/concerto-di-capodanno/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/carmen-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-12-16",
+          "starts_at": null,
+          "event_title": "Il quinto moschettiere",
+          "composer": null,
+          "venue": "Teatro Sangiorgi",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-12-10",
+          "starts_at": null,
+          "event_title": "Le nozze dell’Orso",
+          "composer": null,
+          "venue": "Teatro Sangiorgi",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/accabadora-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/carmen-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/i-due-foscari-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/il-ritorno-di-ulisse-in-patria-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/nabucco-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/tristan-und-isolde-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "bologna-comunale-opera-2027",
+      "source_url": "https://www.tcbo.it/evento/opera/vanessa-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/litaliana-in-algeri/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/nabucco/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/pagliacci/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "carlo-felice-season-2026-27",
+      "source_url": "https://www.carlofelice.it/spettacolo/turandot/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "chieti-marrucino-lirica-2026",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-opera-2027",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-opera-2027",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-opera-2027",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-beethoven-200.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-barbiere-di-siviglia.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-lago-dei-cigni.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-il-noce-di-benevento.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-la-bella-addormentata.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-le-nozze-di-figaro.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-rigoletto.html",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/il-medico-dei-pazzi-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/l-anima-e-il-tempo-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/lisistrata-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/odissea-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/oltre-l-indifferenza-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/picchi-e-pero-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/alahor-in-granata/2026-11-14/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/l-esule-di-roma/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "donizetti-opera-2026",
+      "source_url": "https://www.donizettiopera.org/it/evento/le-convenienze-ed-inconvenienze-teatrali/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/adriana-lecouvreur/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/carmenaxelrod/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/fedora/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/hansel-und-gretel/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/ilbarbieredisivigliapercacciolo/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/jenufa/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/larca-di-noe/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/normatebar/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/nozze-istriane/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-opera-2026-27",
+      "source_url": "https://www.teatrolafenice.it/event/partenope/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "ferrara-barbiere-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "ferrara-boccanegra-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "ferrara-clemenza-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "ferrara-dido-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "ferrara-macbeth-opera-2026-27",
+      "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "festival-verdi-rolling",
+      "source_url": "https://teatroregioparma.it/spettacolo/aroldo/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "festival-verdi-rolling",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "festival-verdi-rolling",
+      "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-opera-2027",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-rolling-opera",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/alzira/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-rolling-opera",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/cristoforo-colombo/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-rolling-opera",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/fidelio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-rolling-opera",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-ratto-dal-serraglio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "filarmonico-verona-rolling-opera",
+      "source_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "giglio-lucca-opera-2026-27",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/aida/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "giglio-lucca-opera-2026-27",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/il-barbiere-di-siviglia/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "giglio-lucca-opera-2026-27",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2026-2027/otello/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-dido-2026-27",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-elisir-2026-27",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-otello-2026-27",
+      "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "goldoni-livorno-rolling-lirica",
+      "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/dai-libri-allopera",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/dai-libri-allopera-2",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/il-barbiere-di-siviglia-e-la-rosa-incantata",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-11-27",
+          "starts_at": null,
+          "event_title": "La clemenza di Tito",
+          "composer": null,
+          "venue": "Teatro Sociale",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-11-29",
+          "starts_at": null,
+          "event_title": "La clemenza di Tito",
+          "composer": null,
+          "venue": "Teatro Sociale",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-backstage-under-35-2",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-11-25",
+          "starts_at": null,
+          "event_title": "Oper.a Backstage &#8211; Under 35",
+          "composer": null,
+          "venue": "Teatro Sociale",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-intro-14",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-11-27",
+          "starts_at": null,
+          "event_title": "Oper.a Intro",
+          "composer": null,
+          "venue": "Teatro Sociale",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-intro-15",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-11-29",
+          "starts_at": null,
+          "event_title": "Oper.a Intro",
+          "composer": null,
+          "venue": "Teatro Sociale",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-intro-16",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-intro-17",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "jesi-don-pasquale-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "jesi-esecuzione-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "jesi-nabucco-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "jesi-trittico-opera-2026",
+      "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lecce-apollo-pinocchio-2026",
+      "source_url": "https://www.provincia.le.it/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lecce-provincia-politeama-2026",
+      "source_url": "https://www.provincia.le.it/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/alcina/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/candide/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/cosi-fan-tutte/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/die-zauberflote/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/don-carlos/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/falstaff/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/il-cappello-di-paglia-di-firenze/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/la-boheme/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/lucrezia-borgia/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/norma/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/otello/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/rigoletto/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "lirico-cagliari-opera-2027",
+      "source_url": "https://www.liricocagliari.it/evento/turandot/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "macerata-festival-2027",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "macerata-festival-2027",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "macerata-festival-2027",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "macerata-festival-rolling",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "macerata-festival-rolling",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/la-traviata",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "macerata-festival-rolling",
+      "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-12-20",
+          "starts_at": "2026-12-20T17:00:00+01:00",
+          "event_title": "Les contes d'Hoffmann",
+          "composer": null,
+          "venue": "Teatro del Maggio - Sala Grande",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-12-27",
+          "starts_at": "2026-12-27T15:30:00+01:00",
+          "event_title": "Les contes d'Hoffmann",
+          "composer": null,
+          "venue": "Teatro del Maggio - Sala Grande",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-12-30",
+          "starts_at": "2026-12-30T20:00:00+01:00",
+          "event_title": "Les contes d'Hoffmann",
+          "composer": null,
+          "venue": "Teatro del Maggio - Sala Grande",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-11-24",
+          "starts_at": "2026-11-24T20:00:00+01:00",
+          "event_title": "Simon Boccanegra",
+          "composer": null,
+          "venue": "Teatro del Maggio - Sala Grande",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/affitta-il-ridotto.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/affitta-il-teatro.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/annullato-gala-lirico.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/archivio-eventi-del-ridotto-1.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/biglietteria.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/cavalleria-rusticana-la-serva-padrona.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/contatti.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/dove-parcheggiare.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/dove-siamo.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/erogazioni-ministeriali.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/eventi-1.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/facebook.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/il-ridotto-del-teatro.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/instagram.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "mantova-sociale-rolling-opera",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-giuseppe-verdi.aspx",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-07-18",
+          "starts_at": "2026-07-18T10:00:00+02:00",
+          "event_title": "Riscoprire l’antico nel Novecento. Mito e Mediterraneo in Stravinskij e Casella",
+          "composer": null,
+          "venue": "Auditorium della Fondazione Paolo Grassi, Martina Franca",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-07-25",
+          "starts_at": "2026-07-25T21:00:00+02:00",
+          "event_title": "Carmen",
+          "composer": null,
+          "venue": "Palazzo Ducale, Martina Franca",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-07-24",
+          "starts_at": "2026-07-24T21:00:00+02:00",
+          "event_title": "Il schiavo di sua moglie",
+          "composer": null,
+          "venue": "Chiostro del Carmine, Martina Franca",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-07-10",
+          "starts_at": "2026-07-10T21:00:00+02:00",
+          "event_title": "In Orbita &#8211; Naufragi",
+          "composer": null,
+          "venue": "Martina Franca",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-07-14",
+          "starts_at": "2026-07-14T21:00:00+02:00",
+          "event_title": "Pulcinella / La favola di Orfeo (dittico)",
+          "composer": null,
+          "venue": "Palazzo Ducale, Martina Franca",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/vennero-da-ogni-dove/2026-07-20",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-07-20",
+          "starts_at": "2026-07-20T21:00:00+02:00",
+          "event_title": "Vennero da ogni dove. Narrar cantando umanità in cammino",
+          "composer": null,
+          "venue": "Chiostro di San Domenico, Martina Franca",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/carmen-3/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/die-zauberflote/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/ernani-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/falstaff-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/lucia-di-lammermoor-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/macbeth/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/samson-et-dalila/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "massimo-season-2026-27",
+      "source_url": "https://www.teatromassimo.it/event/tosca-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "messina-vittorio-opera-2026-27",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/al-cavallino-bianco/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "messina-vittorio-opera-2026-27",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/la-traviata/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "messina-vittorio-opera-2026-27",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/madama-butterfly/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaetano-donizetti-le-convenienze-ed-inconvenienze-teatrali/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gaia-aloisi-veleno/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/gioachino-rossini-la-cenerentola/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/umberto-giordano-siberia/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/aida-27/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/barbiere-di-siviglia/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-chute-de-la-maison-usher/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/luisa-miller/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/madama-butterfly-27/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/nina/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/otto-mesi-in-due-ore/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "napoli-san-carlo-rolling-opera",
+      "source_url": "https://www.teatrosancarlo.it/spettacoli/peter-grimes/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/aida-6/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/andrea-chenier-3/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/code-unknown/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/falstaff/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/hans-werner-henze-100/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/i-due-foscari/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trovatore-3/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/iphigenie-en-tauride/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-rondine/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/lucia-di-lammermoor-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "padova-verdi-opera-2026",
+      "source_url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2026",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/al-cavallino-bianco/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/boris-godunov/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-clemenza-di-tito/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "parma-opera-2027",
+      "source_url": "https://teatroregioparma.it/spettacolo/rigoletto/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/concerti-di-belcanto/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/festival-giovane/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/florez-30/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/incontri/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/rossinimania/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/stabat-mater/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-barbiere-di-siviglia-rossini-16-22-dicembre/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2026",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/arlecchino-di-ferruccio-busoni-15-18-21-23-maggio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-boheme-17-27-dicembre/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/larlesienne-di-georges-bizet-pagliacci-di-ruggero-leoncavallo-13-20-ottobre/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "petruzzelli-opera-2027",
+      "source_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/aida/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/la-cenerentola-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/la-clemenza-di-tito/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/siberia/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "piacenza-opera-2026-27",
+      "source_url": "https://teatripiacenza.it/event/simon-boccanegra/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/aida/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/otello-2/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/otello-3/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/otello/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/aida/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/otello/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "puccini-torre-del-lago-2027",
+      "source_url": "https://www.puccinifestival.it/en/73rd-puccini-festival-2027/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "ravenna-alighieri-cherubini-2027",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "ravenna-alighieri-cherubini-2027",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "source_url": "https://www.orchestracherubini.it/eventi/la-cenerentola-4/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "ravenna-cherubini-rolling-opera",
+      "source_url": "https://www.orchestracherubini.it/eventi/pagliacci-2/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/death-in-venice/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/la-clemenza-di-tito-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/macbeth-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/simon-boccanegra-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "reggio-valli-opera-2026-27",
+      "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "rovigo-regione-programma-2026-27",
+      "source_url": "https://www.culturaveneto.it/spettacoli/musica/3563a671-d9b2-46bf-a10d-776af9ab17bc",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/aida",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/cenerentola",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "rovigo-sociale-opera-2026-27",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/la-traviata-2027",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sabbioneta-antica-rolling-opera",
+      "source_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
+      "status": "evidence_found",
+      "facts": [
+        {
+          "date": "2026-12-12",
+          "starts_at": "2026-12-12T20:30:00+00:00",
+          "event_title": "Gran Concerto di Natale",
+          "composer": null,
+          "venue": "Chiesa di San Girolamo Dottore",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ]
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-barbiere-di-siviglia-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/la-vedova-allegra-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/macbeth-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "salerno-verdi-opera-2026",
+      "source_url": "https://cultura.comune.salerno.it/eventi/turandot-2026/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-opera-2026",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-opera-2026",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-opera-2026",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "sassari-de-carolis-rolling-opera",
+      "source_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "savona-giocosa-rolling-opera",
+      "source_url": "https://operagiocosa.it/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/anna-bolena.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/dido-and-aeneas.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-quichotte.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/i-puritani.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/il-barbiere-di-siviglia.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/leonora.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/les-pecheurs-de-perles.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/macbeth.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/nixon-in-china.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/otello.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "scala-season-2026-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2026-2027/opera/the-rake-s-progress.html",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "taormina-opera-festival-rolling",
+      "source_url": "https://www.taorminaoperafestival.org/la-grande-lirica-torna-al-teatro-antico-di-taormina-con-la-traviata-secondo-castiglione/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "teatro-grande-opera-2026",
+      "source_url": "https://teatrogrande.it/it/stagioni/2026/cavalleria-rusticana-pagliacci",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "teatro-grande-opera-2026",
+      "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/american-dream/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/bruno-canino/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/concerto-di-capodanno/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/concerto-di-natale/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/duo-monica-leone-michele-campanella/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/duo-resonans/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/food-ensemble/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/lidia-schillaci-canta-i-grandi-cantautori-italiani/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "treviso-del-monaco-opera-2026-27",
+      "source_url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/don-giovanni-2/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/la-boheme/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lelisir-damore-3/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "verdi-trieste-season-2026-27",
+      "source_url": "https://www.teatroverdi-trieste.com/it/spettacoli/norma/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/contacts/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/credits/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/eventi/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/olimpichetto-il-ritorno-di-un-ambasciatore/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/privacy-policy/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/sostieni/",
+      "status": "unverified",
+      "reason": "FetchUnavailable",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/sponsor/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/supporters/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/vetrine-vestono-lirica/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/vil/",
+      "status": "no_structured_2026_evidence",
+      "facts": []
+    }
+  ],
+  "warning": "Candidate facts need opera, audience, venue and calendar-completeness review. Missing structured facts do not mean no recite."
+}
