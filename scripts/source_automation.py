@@ -175,6 +175,73 @@ def san_carlo_verified_fallback(secondary: dict, canonical: dict,
 
 
 
+def classify_index_scan(check: dict) -> str:
+    """Distinguish technical failures from future programmes not yet verified."""
+    if check.get("status") == "success" and check.get("current_scan_verified") is True:
+        return "verified_success"
+    if check.get("status") not in ("unavailable_or_invalid", "success"):
+        return "not_checked"
+    diagnostic = check.get("diagnostic")
+    if diagnostic == "future_official_programme_unverified":
+        return "future_programme_not_verified"
+    if diagnostic in ("official_anti_bot_challenge", "access_denied_or_robots_disallowed"):
+        return "access_blocked"
+    if diagnostic in ("official_html_unavailable_or_invalid",
+                      "official_robots_unavailable_or_invalid"):
+        return "fetch_unavailable"
+    if diagnostic == "rovigo_fallback_content_unverified":
+        return "source_content_not_verified"
+    return "parser_or_source_validation_failed"
+
+
+def scan_attention(index: dict, index_health: dict) -> dict:
+    """Explain scan failures without disguising fallback coverage as a success.
+
+    A missing future programme is not proof the season has been cancelled
+    or published; alternate healthy feeds do not repair broken source URLs.
+    """
+    rows = {x["key"]: x for x in index_health.get("sources", [])}
+    if len(rows) != len(index_health.get("sources", [])):
+        raise ValueError("duplicate indexed scan health key")
+    seen = set()
+    items = []
+    for source in index["sources"]:
+        key = source["key"]
+        if key in seen:
+            raise ValueError("duplicate configured index key")
+        seen.add(key)
+        record = rows.get(key, {})
+        category = classify_index_scan(record)
+        venues = set(INDEX_VENUES.get(key, ()))
+        alternatives = sorted(
+            other["key"] for other in index["sources"]
+            if other["key"] != key and
+            set(INDEX_VENUES.get(other["key"], ())) & venues and
+            classify_index_scan(rows.get(other["key"], {})) == "verified_success"
+        ) if venues else []
+        items.append({
+            "source_key": key,
+            "scan_classification": category,
+            "status": record.get("status", "not_checked"),
+            "diagnostic": record.get("diagnostic"),
+            "reason": record.get("reason"),
+            "last_attempt_at": record.get("last_attempt_at"),
+            "last_success_at": record.get("last_success_at"),
+            "other_successful_official_sources": alternatives,
+            "has_healthy_alternative": bool(alternatives),
+            "requires_technical_attention": category in (
+                "access_blocked", "fetch_unavailable", "parser_or_source_validation_failed",
+                "source_content_not_verified"),
+        })
+    counts = Counter(r["scan_classification"] for r in items)
+    return {
+        "total": len(items), "classifications": dict(sorted(counts.items())),
+        "technical_attention": sum(r["requires_technical_attention"] for r in items),
+        "future_programmes_not_verified": counts["future_programme_not_verified"],
+        "sources": items,
+    }
+
+
 def build(directory: dict, daily: dict, daily_health: dict, index: dict,
           index_health: dict, *, san_carlo_fallback: dict | None = None) -> dict:
     venues = directory["venues"]
@@ -257,6 +324,7 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
         "configured_not_operational": counts["configured_not_operational"],
         "not_automated": counts["not_automated"],
         "automation_remaining": counts["configured_not_operational"] + counts["not_automated"],
+        "index_scan_attention": scan_attention(index, index_health),
         "venues": rows,
     }
 
