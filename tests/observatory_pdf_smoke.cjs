@@ -37,7 +37,7 @@ function validatePdf(params){
  assert.ok(bytes.length>15000);
  return source;
 }
-const accentedRows=[{...rows[0],work:"Città e libertà",composer:"André Chénier",venue:"Teatro dell'Università",city:"Forlì",region:"Emilia-Romagna"}];
+const accentedRows=[{...rows[0],work:"Città e libertà",composer:"André Chénier",venue:"Teatro dell'Università",city:"Forlì",region:"Emilia-Romagna"},...rows.slice(1)];
 const accentedPdf=validatePdf({...input,rows:accentedRows,allRows:accentedRows,region:"Emilia-Romagna"});
 // WinAnsi strings in PDF content streams must retain the literal accented
 // bytes instead of replacing them with unaccented approximations.
