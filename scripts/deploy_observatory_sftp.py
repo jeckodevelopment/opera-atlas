@@ -6,7 +6,7 @@ import stat
 from pathlib import Path
 from scripts.deploy_atlas_sftp import configuration, make_client, target_path
 
-FILES = ("index.html", "styles.css", "app.js")
+FILES = ("index.html", "styles.css", "app.js", "opera-plus-logo.svg")
 SOURCE = Path(__file__).resolve().parents[1] / "observatory"
 
 def publish():
