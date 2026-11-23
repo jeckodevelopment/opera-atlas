@@ -11,3 +11,12 @@
 @media(max-width:850px){.today-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:550px){.today-cards{grid-template-columns:1fr}.today-image{height:225px}.today-toolbar{padding:13px}.today-filters label{flex:1 1 125px}.today-toolbar select{max-width:100%}}
 .mobile-nav{grid-template-columns:repeat(5,minmax(0,1fr))}
+/* Keep the existing Atlas ivory, black and gold identity. */
+.today-intro.hero{max-width:none;position:relative;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;gap:25px;align-items:center;min-height:270px;padding:25px 0 32px}
+.today-intro h1{font-size:clamp(38px,5vw,60px)}
+.today-hero-image{width:100%;height:245px;object-fit:cover;border-radius:14px}
+.today-future-date{font-size:12px;color:var(--muted);text-transform:capitalize}
+.today-suggestions{margin:36px 0 0;padding-top:25px;border-top:1px solid var(--line)}
+.today-suggestions h2{font:500 25px Georgia,serif;margin:0 0 6px}
+.today-suggestions>p{color:var(--muted);font-size:13px;margin:0 0 18px}
+@media(max-width:650px){.today-intro.hero{grid-template-columns:1fr;padding-top:20px;gap:14px}.today-hero-image{height:170px}.today-intro h1{font-size:39px}}
