@@ -22,6 +22,17 @@ class ObservatoryStaticTests(unittest.TestCase):
         self.assertIn("html,body{margin:0;padding:0;background:#101c2b}", css)
         self.assertNotIn(r"\\n/* Marchio", css)
 
+    def test_independent_year_and_season_filters(self):
+        html = (ROOT / "observatory/index.html").read_text(encoding="utf-8")
+        js = (ROOT / "observatory/app.js").read_text(encoding="utf-8")
+        self.assertIn('id="year" aria-label="Anno solare"', html)
+        self.assertIn('id="season" aria-label="Stagione teatrale"', html)
+        self.assertIn('year:p.local_date.slice(0,4)', js)
+        self.assertIn('year==="all"||r.year===year', js)
+        self.assertIn('season==="all"||r.season===season', js)
+        self.assertIn('["id","date","year","season"', js)
+        self.assertIn('timeZone:"Europe/Rome"', js)
+
     def test_logo_and_isolated_deployment(self):
         logo = (ROOT / "observatory/opera-plus-logo.svg").read_text(encoding="utf-8")
         self.assertIn('viewBox="0 0 250 117"', logo)
