@@ -190,12 +190,6 @@ jobs:
             git commit -m "data(sources): checkpoint national candidate detail evidence early [skip ci]"
             python -m scripts.safe_push_catalog
           fi
-      - name: Retry deferred national candidate checkpoint
-        if: steps.early_national_checkpoint.outputs.deferred == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       - name: Early publish previously verified known-opera recite
         run: |
           # No network access and no new work identities here: only already
@@ -249,14 +243,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=atlas-notification-reconcile
-      - name: Retry fast publication if newer code arrived
-        if: steps.cached_publication.outputs.deferred == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
-      # A bounded first-party source checkpoint must not wait behind the
-      # expensive full-national ingestion. It never emits unverifiable recite.
       - name: Reconcile pending Roma official detail pages ahead of slow crawl
         run: |
           python -m scripts.collect_candidate_details --allow-network --source-key opera-roma-season-2026-27
@@ -275,15 +261,6 @@ jobs:
             git commit -m "data(roma): reconcile official source candidates before full refresh [skip ci]"
             python -m scripts.safe_push_catalog
           fi
-      - name: Retry deferred Roma checkpoint automatically
-        if: steps.roma_checkpoint.outputs.deferred == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
-      # Refresh the complete approved season-index inventory before the slower
-      # national candidate-detail backlog, which may exhaust the run budget.
-      # Candidate URLs remain review-only, never direct public recite.
       - name: Discover approved season indexes ahead of slow details
         run: |
           python -m scripts.discover_season_indexes --allow-network
@@ -312,16 +289,6 @@ jobs:
             git commit -m "data(sources): checkpoint season index health early [skip ci]"
             python -m scripts.safe_push_catalog
           fi
-      - name: Retry stale early season-index checkpoint
-        if: steps.early_season_checkpoint.outputs.deferred == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
-      # A previously acquired and independently verified candidate must not
-      # wait behind another complete national crawl or an external identity
-      # service. This is the same canonical auto-catalogue transaction as the
-      # later pass, with all downstream feeds validated before safe push.
       - name: Promote already verified cached works before external acquisition
         run: |
           python -m scripts.auto_catalogue
@@ -399,12 +366,6 @@ jobs:
             git commit -m "data(sources): checkpoint verified official source evidence [skip ci]"
             python -m scripts.safe_push_catalog
           fi
-      - name: Requeue source discovery checkpoint if main advanced
-        if: steps.source_checkpoint.outputs.deferred == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
       - name: Resolve unseen opera identities and prepare verified short introductions
         run: python -m scripts.auto_work_research --allow-network
       - name: Promote fully verified candidate dates without manual reconciliation
@@ -471,8 +432,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=atlas-notification-reconcile
-      - name: Automatically retry the deferred catalog against latest main
-        if: steps.publish_catalog.outputs.deferred == 'true'
+      # Defer any source checkpoint to ONE retry at the end of this run.
+      # Earlier versions dispatched a new full crawl from every failed push,
+      # often 5-6 times per run, continuously replacing queued executions.
+      # A repository_dispatch is itself the bounded retry; do not recurse.
+      - name: Retry deferred catalog once against latest main
+        if: ${{ github.event_name != 'repository_dispatch' && (steps.early_national_checkpoint.outputs.deferred == 'true' || steps.cached_publication.outputs.deferred == 'true' || steps.roma_checkpoint.outputs.deferred == 'true' || steps.early_season_checkpoint.outputs.deferred == 'true' || steps.source_checkpoint.outputs.deferred == 'true' || steps.publish_catalog.outputs.deferred == 'true') }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

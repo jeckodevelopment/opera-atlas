@@ -16,7 +16,7 @@ class AtomicCandidateDiagnosticCheckpointTests(unittest.TestCase):
         self.assertLess(
             block.index("python -m scripts.reconcile_published_candidates"),
             block.index("python -m scripts.source_automation"))
-        checkpoint_block=text[checkpoint:text.index("- name: Retry stale early season-index checkpoint",checkpoint)]
+        checkpoint_block=text[checkpoint:text.index("- name: Promote already verified cached works before external acquisition",checkpoint)]
         self.assertIn("data/candidate-reconciliation-health.json",checkpoint_block)
         self.assertIn("data/season-index-candidates.json",checkpoint_block)
 
@@ -29,7 +29,7 @@ class AtomicCandidateDiagnosticCheckpointTests(unittest.TestCase):
             block.index("python -m scripts.discover_season_indexes --allow-network"),
             block.index("python -m scripts.reconcile_published_candidates"))
         checkpoint=text.index("- name: Persist source discovery and verified detail evidence early")
-        end=text.index("- name: Requeue source discovery checkpoint if main advanced",checkpoint)
+        end=text.index("- name: Resolve unseen opera identities and prepare verified short introductions",checkpoint)
         block=text[checkpoint:end]
         self.assertIn("data/candidate-reconciliation-health.json",block)
         self.assertIn("data/season-index-candidates.json",block)
