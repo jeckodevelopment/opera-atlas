@@ -93,6 +93,19 @@ class MultiWorkProgramTests(unittest.TestCase):
                           ("Infinito nero","Salvatore Sciarrino")})
         self.assertEqual(program["performances"][0]["local_date"],"2026-10-31")
         self.assertTrue(all(p["work_id"] is None for p in program["components"]))
+        read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
+        public=assemble_programs(
+            read("data/season-index-candidates.json"),
+            read("data/candidate-detail-evidence.json"),
+            self.registry,read("data/verified-launch-catalog.json"),
+            read("data/season-index-config.json"),
+            read("data/reviewed-program-work-editorials.json"))
+        matches=[p for p in public["programs"]
+                 if p["source_url"]==detail["source_url"]]
+        self.assertEqual(len(matches),1)
+        self.assertEqual(matches[0]["venue"],"Teatro M° Tonino Pardo")
+        self.assertEqual(matches[0]["region"],"Sicilia")
+        self.assertEqual(len(matches[0]["performances"]),1)
         for variant in (
             detail["program_heading"].replace("Salvatore Sciarrino","Francesco Filidei"),
             detail["program_heading"].replace("Infinito nero","Ghost Cafè"),
