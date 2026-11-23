@@ -5,6 +5,24 @@ const config={opere:["Le opere","Scopri le storie che prendono vita nei teatri i
 document.getElementById("directory-title").textContent=config[section][0];
 document.getElementById("directory-desc").textContent=config[section][1];
 document.title=config[section][0]+" — Opera+ Atlas";
+
+function directorySEO(name,description,canonical) {
+  document.title=name+" — Opera+ Atlas";
+  const fields=[["name","description",description],["property","og:title",document.title],
+    ["property","og:description",description],["property","og:url",canonical],
+    ["name","twitter:title",document.title],["name","twitter:description",description]];
+  for(const [kind,key,value] of fields){
+    let tag=document.head.querySelector('meta['+kind+'="'+key+'"]');
+    if(!tag){tag=document.createElement("meta");tag.setAttribute(kind,key);document.head.append(tag);}
+    tag.content=value;
+  }
+  let link=document.head.querySelector('link[rel="canonical"]');
+  if(!link){link=document.createElement("link");link.rel="canonical";document.head.append(link);}
+  link.href=canonical;
+}
+directorySEO(config[section][0],config[section][1],
+  new URL("./directory.html?section="+section,document.baseURI).href);
+
 document.querySelectorAll(".primary-nav a, .mobile-nav a").forEach(link=>{
   if(link.getAttribute("href")==="./directory.html?section="+section)link.setAttribute("aria-current","page");
 });
@@ -96,6 +114,9 @@ async function initialize(){
         const found=festivalListings.find(x=>x.item.id===focus);
         if(!found){status.textContent="Festival non disponibile.";return;}
         const x=found.item;
+        directorySEO(x.name+(x.edition?" · "+x.edition:""),
+          x.description||("Festival "+x.name+" a "+x.city),
+          new URL("./directory.html?section=festival&id="+encodeURIComponent(x.id),document.baseURI).href);
         document.getElementById("directory-title").textContent=x.name+(x.edition?" · "+x.edition:"");
         document.getElementById("directory-desc").textContent=x.description||x.city+" · "+x.region;
         search.hidden=true;
