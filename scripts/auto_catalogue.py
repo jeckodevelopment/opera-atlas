@@ -1076,6 +1076,25 @@ def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=N
     from scripts.publish_work_posters import allowed_image_url,image_matches_work
     raw=image.get("image_url","")
     artwork_source=image.get("source_url")
+    # The original first-party ALT may identify an opera even when the
+    # uploaded media filename is opaque. Require exact title words rather
+    # than trusting the scanner's generated display ALT. This is accepted
+    # only on the same exact official URL, never on shared season artwork.
+    from scripts.publish_work_posters import image_matches_work
+    import re, unicodedata
+    def words(value):
+        plain=unicodedata.normalize("NFKD",value).casefold()
+        plain="".join(c for c in plain if not unicodedata.combining(c))
+        return [w for w in re.split(r"[^a-z0-9]+",plain)
+                if w and w not in {"l","il","la","lo","le","un","una",
+                                  "di","del","della"}]
+    original_alt=image.get("source_image_alt")
+    alt_matched=(isinstance(original_alt,str)
+                 and len(words(title))>=1
+                 and all(w in words(original_alt) for w in words(title))
+                 and not any(w in original_alt.casefold()
+                             for w in ("logo","favicon","placeholder",
+                                       "stagione 2026")))
     # Source-specific work image is independently credited by the *same*
     # first-party issuer as the canonical season page. Never permit an
     # arbitrary alternate site or another opera on a shared programme.
@@ -1087,13 +1106,13 @@ def verified_candidate_image(detail:dict,*,title:str,url:str,composer:str|None=N
         and normalized(title)=="l'esecuzione")
     if ((artwork_source!=url and not approved_alternate) or
             not isinstance(raw,str) or allowed_image_url(raw,artwork_source if approved_alternate else url)!=raw or
-            not image_matches_work(raw,title) or
+            not (image_matches_work(raw,title) or alt_matched) or
             not isinstance(image.get("credit"),str) or
             not image.get("credit") or
             not isinstance(image.get("alt"),str) or not image.get("alt")):
         return None
     return {key:image[key] for key in
-            ("image_url","source_url","credit","alt","kind")
+            ("image_url","source_url","credit","alt","kind","source_image_alt")
             if key in image} | ({"license":image["license"]}
                             if isinstance(image.get("license"),str) else {})
 
