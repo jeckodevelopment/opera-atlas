@@ -1806,8 +1806,8 @@
       "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
-      "content_sha256": "2a0c53983f08f17e65db82273576e72d1e65509fbe4f57c5691be4d1add63005",
-      "checked_at": "2026-11-23T14:11:22+00:00",
+      "content_sha256": "12430410a5145266f09ce9ace4a3441576f73f8d11f76c14a028ed86d5991495",
+      "checked_at": "2026-11-23T14:23:25+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2280,8 +2280,8 @@
       "candidate_id": "oa-index-52b35f0089c3663c7ddb",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
-      "content_sha256": "3e87dcf4a2606195601037eb8a2effa27ce9de3198c5c93df4f78d8751d879ad",
-      "checked_at": "2026-11-23T14:11:29+00:00",
+      "content_sha256": "8ec06130119ca5e24f86157e728d9bc2ec9a87d0cb11fdffe08a2acaedfccd26",
+      "checked_at": "2026-11-23T14:23:30+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7293,7 +7293,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
       "content_sha256": "5f0204fe8f77b1ee0348cce74aa25462b97486bbf32e73dc9fe2fd3b7bb0396f",
-      "checked_at": "2026-11-23T14:11:46+00:00",
+      "checked_at": "2026-11-23T14:23:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7482,8 +7482,8 @@
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
-      "content_sha256": "f96da14d8977aad99210c59e2681599f0e5fd2443700645c1772e7255f5b20b4",
-      "checked_at": "2026-11-23T14:11:49+00:00",
+      "content_sha256": "f6e1ea9773451f8511253d67984db84a2af264a443c3f90a4aedc6c1ab1ee283",
+      "checked_at": "2026-11-23T14:23:52+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -9141,7 +9141,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
       "content_sha256": "99eeed2634ca15304220ea140d915d4a060c30fc75ebc79e8b54977ad49c6fd1",
-      "checked_at": "2026-11-23T14:11:17+00:00",
+      "checked_at": "2026-11-23T14:23:57+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
