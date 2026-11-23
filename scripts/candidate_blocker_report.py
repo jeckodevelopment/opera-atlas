@@ -87,10 +87,10 @@ def main() -> None:
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
         with open(summary, "a", encoding="utf-8") as out:
-            out.write(f"### Catalog candidate review: {report['candidate_count']} pending\\n\\n")
-            out.write("| Reason | Candidates |\\n|---|---:|\\n")
+            out.write(f"### Catalog candidate review: {report['candidate_count']} pending\n\n")
+            out.write("| Reason | Candidates |\n|---|---:|\n")
             for reason, count in report["reason_counts"].items():
-                out.write(f"| {reason} | {count} |\\n")
+                out.write(f"| {reason} | {count} |\n")
 
 
 if __name__ == "__main__":
