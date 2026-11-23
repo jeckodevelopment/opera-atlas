@@ -27,7 +27,9 @@
        .replace(/\u2026/g,"...").replace(/\u00a0/g," ").replace(/[\u2022\u25cf]/g,"-");
     return Array.from(t).map(ch=>{
       const cp=ch.codePointAt(0);
-      if(cp>=32&&cp<=255&&cp!==127)return ch;
+      // WinAnsi (Windows-1252) Type 1 fonts preserve Latin-1 Italian vowels.
+      // Code points U+0080..U+009F are controls, not ordinary glyphs.
+      if(cp>=32&&cp<=255&&(cp<127||cp>=160))return ch;
       if(ch==="\n")return " ";
       const decomp=ch.normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
       const c=decomp.codePointAt(0);
@@ -232,7 +234,7 @@
       else p.text("Opera+",L,100,35,"display",WHITE);
       p.text("OSSERVATORIO",L,173,12,"bold",GOLD);
       p.text("L'opera in Italia",L,227,40,"display",WHITE);
-      p.paragraph("Rapporto sull'attivita operistica rilevata da Opera+ Atlas.",
+      p.paragraph("Rapporto sull'attività operistica rilevata da Opera+ Atlas.",
         L,289,375,15,23,[218,215,214],3,"serif");
       p.rect(L,371,CW,1,GOLD);
       p.text("PERIMETRO DELL'ANALISI",L,397,9,"bold",GOLD);
@@ -256,16 +258,16 @@
       p.numbers([["Recite rilevate",s.counts.recite],["Teatri e sedi con recite",s.counts.venues],
         ["Opere canoniche",s.counts.works],["Allestimenti",s.counts.stagings]],L,195,236);
       p.text("LETTURA DEL CAMPIONE",L,437,10,"bold",BURGUNDY);
-      p.paragraph("Ogni recita e contata una sola volta. Titoli identici ma opere differenti mantengono identita canoniche separate. Le sedi sono contate solo quando presentano recite nel periodo selezionato.",
+      p.paragraph("Ogni recita è contata una sola volta. Titoli identici ma opere differenti mantengono identità canoniche separate. Le sedi sono contate solo quando presentano recite nel periodo selezionato.",
         L,463,CW,11,19,INK,6);
       p.rect(L,584,CW,102,PALE);
       p.text("Un dato da interpretare, non una classifica nazionale",L+20,606,15,"display",BURGUNDY);
-      p.paragraph("L'Osservatorio misura cio che e stato verificato e pubblicato da Atlas. Connettori, stagioni e repertorio possono avere coperture diverse: non stimiamo cio che non e censito.",
+      p.paragraph("L'Osservatorio misura ciò che è stato verificato e pubblicato da Atlas. Connettori, stagioni e repertorio possono avere coperture diverse: non stimiamo ciò che non è censito.",
         L+20,638,CW-40,10,15,INK,4);
     });
     // 03 - calendar months
     page(doc,"La programmazione mensile",3,p=>{
-      p.section("02 / TEMPO","L'attivita mese per mese",
+      p.section("02 / TEMPO","L'attività mese per mese",
         s.year==="all"?"Somma delle recite per mese su tutte le annualita selezionate.":"Calendario civile "+s.year+", con gli altri filtri applicati.");
       const top=235,graph=310,max=Math.max(1,...s.months),gap=8,bw=(CW-11*gap)/12;
       p.line(L,top+graph,W-R,top+graph,BORDER,1);
@@ -276,7 +278,7 @@
         p.text(MONTHS[i],x,top+graph+10,8,"bold",INK);
       });
       p.rect(L,638,CW,76,IVORY);
-      p.paragraph("Un valore zero significa nessuna recita rilevata nel catalogo per quel mese e per i filtri scelti, non assenza di attivita sul territorio.",
+      p.paragraph("Un valore zero significa nessuna recita rilevata nel catalogo per quel mese e per i filtri scelti, non assenza di attività sul territorio.",
         L+18,658,CW-36,10,16,MUTED,4);
     });
     // 04 - weekdays
@@ -300,7 +302,7 @@
     });
     // 06 - cities and theatres
     page(doc,"Citta e teatri",6,p=>{
-      p.section("05 / GEOGRAFIA","Le sedi dell'attivita operistica",
+      p.section("05 / GEOGRAFIA","Le sedi dell'attività operistica",
         "Graduatorie basate esclusivamente sulle rappresentazioni pubblicate in Atlas.");
       p.text("CITTA CON PIU RECITE RILEVATE",L,206,13,"bold",BURGUNDY);
       p.bars(s.cities,L,242,CW,{limit:7,step:37,labelWidth:171});
@@ -310,7 +312,7 @@
     // 07 - repertoire
     page(doc,"Il repertorio",7,p=>{
       p.section("06 / REPERTORIO","Opere e compositori",
-        "Il numero di rappresentazioni non e sinonimo di varieta del repertorio.");
+        "Il numero di rappresentazioni non è sinonimo di varietà del repertorio.");
       p.text("OPERE CON PIU RECITE",L,207,13,"bold",BURGUNDY);
       p.bars(s.works,L,245,CW,{limit:9,step:33,labelWidth:178});
       p.text("COMPOSITORI CON PIU RECITE",L,577,13,"bold",BURGUNDY);
@@ -319,7 +321,7 @@
     // 08 - circulation
     page(doc,"La circolazione delle opere",8,p=>{
       p.section("07 / CIRCOLAZIONE","La diffusione del repertorio",
-        "Numero di sedi, citta e regioni differenti in cui ogni opera e presente nel campione.");
+        "Numero di sedi, città e regioni differenti in cui ogni opera e presente nel campione.");
       const y=209;
       p.rect(L,y,CW,33,NAVY);
       p.text("OPERA",L+11,y+10,9,"bold",WHITE);
@@ -345,7 +347,7 @@
       if(s.premieres===null){
         const noYear=s.year==="all";
         p.text(noYear?"Seleziona un singolo anno solare":"Dati editoriali non disponibili",L,221,22,"display",BURGUNDY);
-        p.paragraph(noYear?"Il report non aggrega prime assolute di secoli diversi quando il filtro Anno solare e impostato su Tutti gli anni. Seleziona un anno nell'Osservatorio e rigenera il PDF.":"Non e stato possibile verificare il feed editoriale delle prime assolute. Nessun numero e stato stimato o inventato.",
+        p.paragraph(noYear?"Il report non aggrega prime assolute di secoli diversi quando il filtro Anno solare è impostato su Tutti gli anni. Seleziona un anno nell'Osservatorio e rigenera il PDF.":"Non è stato possibile verificare il feed editoriale delle prime assolute. Nessun numero è stato stimato o inventato.",
           L,271,CW,11,18,MUTED,7);
       }else{
         p.text(num(s.premieres.length),L,202,50,"display",BURGUNDY);
@@ -360,14 +362,14 @@
           p.text(when,W-R-93,y+3,10,"bold",BURGUNDY);
           p.line(L,y+37,W-R,y+37,BORDER,.6);
         });
-        p.paragraph("La data esatta puo mancare; una prima annunciata nell'anno non e automaticamente gia avvenuta. Stagione e territorio restringono le opere censite in Atlas, non la localita storica della prima.",
+        p.paragraph("La data esatta può mancare; una prima annunciata nell'anno non è automaticamente già avvenuta. Stagione e territorio restringono le opere censite in Atlas, non la località storica della prima.",
           L,734,CW,9,14,MUTED,3);
       }
     });
     // 10 - stagings and rarities
     page(doc,"Allestimenti e rarita",10,p=>{
       p.section("09 / APPROFONDIMENTI","Allestimenti e titoli meno frequenti",
-        "La stessa opera puo avere allestimenti distinti e numeri di repliche differenti.");
+        "La stessa opera può avere allestimenti distinti e numeri di repliche differenti.");
       p.text("ALLESTIMENTI CON PIU RECITE",L,210,12,"bold",BURGUNDY);
       p.bars(s.staging,L,243,CW,{limit:8,step:36,labelWidth:206});
       p.text("OPERE CON 1-3 RECITE NEL CAMPIONE",L,582,12,"bold",BURGUNDY);
@@ -386,9 +388,9 @@
       const blocks=[
         ["Fonte dei dati","Catalogo pubblico Opera+ Atlas. I quattro canali canonici contengono opere, sedi, allestimenti e recite verificate. Le prime assolute derivano dal distinto feed editoriale pubblico."],
         ["Identita e conteggi","Una recita viene contata una sola volta; le fonti multiple di un medesimo evento non costituiscono recite aggiuntive. Le opere sono distinte per ID canonico, non soltanto per titolo."],
-        ["Anno solare e stagione","L'anno solare delle recite e ricavato dalle date verificate, la stagione e quella riportata per l'allestimento. I due filtri sono indipendenti e combinabili."],
-        ["Prime assolute","L'anno di prima assoluta e un dato storico dell'opera. Una nuova produzione di un titolo preesistente non viene contata come nuova opera. Le date future e quelle non specificate non sono trattate come eventi gia avvenuti."],
-        ["Copertura","I dati non rappresentano necessariamente tutte le attivita operistiche italiane. Non si formulano stime di pubblico, incassi o percentuali di copertura nazionale; un valore zero significa soltanto zero recite rilevate nel campione."],
+        ["Anno solare e stagione","L'anno solare delle recite è ricavato dalle date verificate, la stagione è quella riportata per l'allestimento. I due filtri sono indipendenti e combinabili."],
+        ["Prime assolute","L'anno di prima assoluta è un dato storico dell'opera. Una nuova produzione di un titolo preesistente non viene contata come nuova opera. Le date future e quelle non specificate non sono trattate come eventi già avvenuti."],
+        ["Copertura","I dati non rappresentano necessariamente tutte le attività operistiche italiane. Non si formulano stime di pubblico, incassi o percentuali di copertura nazionale; un valore zero significa soltanto zero recite rilevate nel campione."],
         ["Aggiornamento e riproducibilita","Versione catalogo: "+s.reviewedOn+". Filtro anno: "+s.year+"; stagione: "+s.season+"; territorio: "+s.region+". Le classifiche sono ricalcolate a partire da questa selezione."],
       ];
       let y=209;
