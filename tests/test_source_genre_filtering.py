@@ -94,6 +94,32 @@ class SourceGenreFilteringTests(unittest.TestCase):
                 self.assertFalse(excluded_nonopera(key,url))
                 self.assertEqual(classify(key,url,set()),"needs_review")
 
+    def test_cosenza_verified_nonopera_tickets_are_excluded_by_exact_slug(self):
+        source="cosenza-inprimafila-rolling-opera"
+        host="https://www.inprimafila.net/index.php/eventi/"
+        excluded=(
+            "lisistrata-cosenza", "picchi-e-pero-cosenza",
+            "l-anima-e-il-tempo-cosenza", "il-medico-dei-pazzi-cosenza",
+            "oltre-l-indifferenza-cosenza",
+        )
+        for slug in excluded:
+            with self.subTest(slug=slug):
+                self.assertTrue(excluded_nonopera(source,host+slug))
+                self.assertEqual(classify(source,host+slug,set()),
+                                 "excluded_nonopera")
+        for slug in ("la-mere-coupable-cosenza",
+                     "le-nozze-di-figaro-cosenza",
+                     "futura-opera-2030-cosenza"):
+            with self.subTest(slug=slug):
+                self.assertFalse(excluded_nonopera(source,host+slug))
+                self.assertEqual(classify(source,host+slug,set()),
+                                 "needs_review")
+        # A slug excluded on the mixed Cosenza ticketing source must never
+        # exclude a coincidentally named event at another opera venue.
+        self.assertFalse(excluded_nonopera(
+            "vicenza-olimpico-rolling-opera",
+            "https://www.vicenzainlirica.it/lisistrata-cosenza/"))
+
     def test_verified_canonical_source_is_never_lost_for_opera(self):
         key="massimo-season-2026-27"
         url="https://www.teatromassimo.it/event/carmen-3/"
