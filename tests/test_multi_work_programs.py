@@ -117,7 +117,7 @@ class MultiWorkProgramTests(unittest.TestCase):
                 bad["program_heading"]=variant
                 construct(bad)
 
-    def test_six_reviewed_editorials_are_complete_and_unambiguous(self):
+    def test_reviewed_editorials_are_complete_and_unambiguous(self):
         file=ROOT/"data"/"reviewed-program-work-editorials.json"
         entries=json.loads(file.read_text(encoding="utf-8"))
         reviewed=load_reviewed_work_editorials(entries)
@@ -128,6 +128,8 @@ class MultiWorkProgramTests(unittest.TestCase):
             ("gianni schicchi","giacomo puccini"),
             ("jeanne d’arc au bûcher","arthur honegger"),
             ("jeanne dark","fabio vacchi"),
+            ("aroldo","giuseppe verdi"),
+            ("stiffelio","giuseppe verdi"),
         }
         self.assertEqual(set(reviewed),expected)
         for profile in reviewed.values():
