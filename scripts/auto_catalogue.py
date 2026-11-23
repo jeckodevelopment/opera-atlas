@@ -343,6 +343,14 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
         return None
     city,default_venue=VENUE_BY_SOURCE[source_key]
     named={x.get("venue") for x in rows if isinstance(x,dict)}
+    if source_key=="festival-verdi-rolling" and len(named)==1:
+        # The official Festival Verdi programme uses two physical theatres.
+        # Never silently place Busseto recite at Parma.
+        verified=next(iter(named))
+        cities={"Teatro Regio di Parma":"Parma",
+                "Teatro Giuseppe Verdi":"Busseto"}
+        if verified not in cities:return None
+        city=cities[verified]
     if source_key=="haydn-rolling-opera" and len(named)==1:
         verified=next(iter(named))
         cities={"Teatro Comunale di Bolzano":"Bolzano",
@@ -375,6 +383,8 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                if source_key=="coccia-novara-rolling-opera" else
                {"Teatro Comunale di Bolzano","Teatro Sociale"}
                if source_key=="haydn-rolling-opera" else {default_venue})
+    if source_key=="festival-verdi-rolling":
+        permitted={"Teatro Regio di Parma","Teatro Giuseppe Verdi"}
     if source_key=="pesaro-rof-2026":
         permitted={"Teatro Gioachino Rossini","Auditorium Scavolini"}
     if source_key=="martina-valle-itria-2026":
@@ -881,6 +891,17 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
         if len(exact)>1:
             issues.append({"candidate_id":cid,"reason":"ambiguous_existing_staging"})
             continue
+        # Festival membership is granted only after a verified festival
+        # index discovered this exact work URL, and independently verified
+        # venue, composer and performance dates. A generic Regio season
+        # source has no authority to grant festival membership.
+        festival_edition=None
+        if key=="festival-verdi-rolling":
+            from opera_atlas.festival_verdi_future import edition_year
+            festival_edition=str(edition_year(source["url"]))
+            if any(not day.startswith(festival_edition) for day in dates):
+                issues.append({"candidate_id":cid,"reason":"festival_edition_year_mismatch"})
+                continue
         if exact:
             production=exact[0]
             if any(day in dict(production["dates"]) and dict(production["dates"])[day]!=hour
@@ -938,6 +959,15 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 **({"route_slug":edition_slug} if edition_slug else {})}
             next_facts["productions"].append(production)
             created_stagings+=1
+        if festival_edition is not None:
+            stage=next_registry["stagings"][production["key"]]
+            memberships=dict(stage.get("festival_memberships",{}))
+            old=memberships.get("festival-verdi")
+            if old is not None and old!=festival_edition:
+                issues.append({"candidate_id":cid,"reason":"conflicting_festival_edition"})
+                continue
+            memberships["festival-verdi"]=festival_edition
+            stage["festival_memberships"]=memberships
         for day,hour in sorted(dates.items()):
             if day in dict(production["dates"]):continue
             pk=production["key"]+"|"+day
