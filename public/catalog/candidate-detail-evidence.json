@@ -376,8 +376,8 @@
       "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
-      "content_sha256": "8a46b3c91ad6cb512c4013707b1243efb580b818524e8b7e97c035adedeeddb1",
-      "checked_at": "2026-11-23T07:56:59+00:00",
+      "content_sha256": "97606757d229df70821e8e2bfe54f0e426745e01190f8a1019521cb11d4b5f3e",
+      "checked_at": "2026-11-23T08:00:16+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1307,8 +1307,8 @@
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
-      "content_sha256": "a18aeca034dd0a3f8f4367643c4c12e217ab1ee32884012973272d3ce64dd6f5",
-      "checked_at": "2026-11-23T07:57:02+00:00",
+      "content_sha256": "21fa81280022dcd1bce057e671ecc616962c752f0d8c53e2cd78d80035a6774b",
+      "checked_at": "2026-11-23T08:00:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1882,8 +1882,8 @@
       "candidate_id": "oa-index-409dbd10b36d1a4be74f",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza",
-      "content_sha256": "cc2dbae7b48d603b9c84a849d2425215c7a91db6b8199766b2f4d429961cc926",
-      "checked_at": "2026-11-23T07:56:51+00:00",
+      "content_sha256": "5e29c613128cfd22b8b2b03c13cab7806d103bda1eaf42e08f13488292e0be47",
+      "checked_at": "2026-11-23T08:00:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2101,8 +2101,8 @@
       "candidate_id": "oa-index-47cec5ba524c35eb01c8",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
-      "content_sha256": "9f3724a458df0813685a41dd3ee859e19bc8d33d2cc53fe827a948952dde7c88",
-      "checked_at": "2026-11-23T07:55:41+00:00",
+      "content_sha256": "0515cc45ef89561e7717d23fb0fdb5b3745334fa204dbb36acdcba320f83b7ba",
+      "checked_at": "2026-11-23T07:58:59+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4197,8 +4197,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "f033e97b3b2338b053d0b0cfa6c11ba1ea8b7e7887749268a21ec1d280b5bc80",
-      "checked_at": "2026-11-23T07:55:50+00:00",
+      "content_sha256": "c04d4624ee3daa0ff988f138f7f5a579aa30d25837feaa7b2eeb790eeddd7097",
+      "checked_at": "2026-11-23T07:59:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6223,8 +6223,8 @@
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "content_sha256": "807f58234cf11a30cd89d462a134dc9bc50bbc21f88e6447b4048bd232a2eabd",
-      "checked_at": "2026-11-23T07:56:54+00:00",
+      "content_sha256": "b0e1075021df49da9b552e3f7e4212d1a0e277c494f52223ebe89f364b38199f",
+      "checked_at": "2026-11-23T08:00:12+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
