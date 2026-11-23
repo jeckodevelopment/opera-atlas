@@ -212,6 +212,48 @@ class AtlasInterfaceTests(unittest.TestCase):
                 self.assertNotIn("macerata-opera-festival-2028",
                                  {entry["id"] for entry in updated["festivals"]})
 
+    def test_verdi_festival_has_three_canonical_works_and_two_venues(self):
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        festivals = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))["festivals"]
+        festival = next(f for f in festivals if f["id"] == "festival-verdi-2026")
+        matches = [s for s in registry["stagings"].values() if s["id"] in festival["staging_ids"]]
+        self.assertEqual(len(matches), 3)
+        self.assertEqual({s["work_id"] for s in matches},
+                         {"oa-w-000087", "oa-w-000025", "oa-w-000015"})
+        self.assertEqual({s["venue_id"] for s in matches},
+                         {"oa-v-000010", "oa-v-000066"})
+        self.assertEqual(sum(1 for s in registry["performances"].values()
+                             if s["staging_id"] in festival["staging_ids"]), 11)
+        # The source title Nabucodonosor never allocates a new canonical work.
+        self.assertFalse(any(w["title"].casefold() == "nabucodonosor"
+                             for w in registry["works"].values()))
+        from scripts.publish_catalog_v2 import sync_festival_index
+        sync_festival_index(registry, check=True)
+
+    def test_verdi_festival_does_not_include_unrelated_parma_season(self):
+        from unittest.mock import patch
+        from tempfile import TemporaryDirectory
+        from scripts import publish_catalog_v2 as publisher
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        rule = next(f for f in json.loads((ROOT / "data/festival-registry.json").read_text())["festivals"]
+                    if f["id"] == "festival-verdi")
+        self.assertEqual(len(rule["official_event_urls"]), 3)
+        with TemporaryDirectory() as folder:
+            from pathlib import Path
+            local = Path(folder)
+            original = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text())
+            (local / "festival-index.json").write_text(json.dumps(original), encoding="utf-8")
+            stage = dict(next(s for s in registry["stagings"].values() if s["source_url"]
+                              == "https://teatroregioparma.it/spettacolo/madama-butterfly/"))
+            stage.update(id="oa-s-test-unrelated-parma", season="2026",
+                         supporting_source_urls=["https://teatroregioparma.it/spettacolo/madama-butterfly/"])
+            registry["stagings"]["test-parma-unrelated"] = stage
+            with patch.object(publisher, "PUBLIC", local):
+                publisher.sync_festival_index(registry)
+                after = json.loads((local / "festival-index.json").read_text())
+                festival = next(f for f in after["festivals"] if f["id"] == "festival-verdi-2026")
+                self.assertNotIn(stage["id"], festival["staging_ids"])
+
     def test_festival_historical_edition_survives_source_rollover(self):
         from unittest.mock import patch
         from tempfile import TemporaryDirectory
