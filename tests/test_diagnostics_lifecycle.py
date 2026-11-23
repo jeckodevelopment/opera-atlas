@@ -84,6 +84,20 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn('Recite rilevate con sede non identificata', self.source)
         self.assertIn('non teatri da integrare', self.source)
 
+    def test_three_layers_are_independent_and_auditable(self):
+        for label in (
+            "Tre livelli di verifica", "1 · Fonti operative",
+            "2 · Catalogazione", "3 · Pubblicazione sul sito",
+            "function auditSummary()", "catalog_release_sha256",
+            "Snapshot precedente o non confrontabile",
+            "Non sono opere distinte né verifiche online",
+            "il campione non certifica la completezza",
+        ):
+            self.assertIn(label, self.source)
+        self.assertIn("Number.isInteger(total)", self.source)
+        self.assertIn("Number.isInteger(verified)", self.source)
+        self.assertIn("audit.same", self.source)
+
     def test_no_false_global_completion_percentage(self):
         self.assertIn("non garantisce", self.source)
         self.assertIn("Non misurato", self.source)
