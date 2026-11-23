@@ -53,6 +53,7 @@ class SourceGenreFilteringTests(unittest.TestCase):
             ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/biglietteria.aspx"),
             ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/sponsor/"),
             ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/privacy-policy/"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/"),
         ]
         for key,url in exclusions:
             with self.subTest(url=url):
@@ -62,7 +63,6 @@ class SourceGenreFilteringTests(unittest.TestCase):
         eligible=[
             ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/tosca.aspx"),
             ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/cavalleria-rusticana-la-serva-padrona.aspx"),
-            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/"),
             ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/lorfeo-monteverdi/"),
         ]
         for key,url in eligible:
