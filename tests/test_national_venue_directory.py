@@ -26,6 +26,29 @@ class NationalVenueDirectoryTests(unittest.TestCase):
         self.assertEqual(len({v["region"] for v in self.result["venues"]}),17)
         self.assertEqual(publish(check=True)["venues"],self.result["venues"])
 
+    def test_villa_pisani_bonetti_has_sourced_exterior_and_canonical_route(self):
+        venue=next(v for v in self.result["venues"]
+                   if v["name"]=="Villa Pisani Bonetti")
+        self.assertEqual(venue["id"],"oa-v-000068")
+        self.assertEqual(venue["canonical_venue_id"],"oa-v-000068")
+        self.assertEqual(venue["city_slug"]+"/"+venue["slug"],
+                         "lonigo/villa-pisani-bonetti")
+        self.assertEqual(venue["photo_file"],
+                         "Villa Pisani Bagnolo front retouched.jpg")
+        self.assertEqual(venue["photo_license"],"CC BY-SA 3.0")
+        self.assertIn("Hans A. Rosbach",venue["photo_credit"])
+        self.assertIn("Marcok",venue["photo_credit"])
+        self.assertEqual(venue["photo_source_url"],
+                         "https://commons.wikimedia.org/wiki/File:Villa_Pisani_Bagnolo_front_retouched.jpg")
+        self.assertEqual(venue["calendar_status"],"acquired")
+        profiles=json.loads((ROOT/"site/theatre-profiles.json").read_text(encoding="utf-8"))
+        profile=profiles["venues"]["Lonigo|Villa Pisani Bonetti"]
+        self.assertEqual(profile["photo_file"],venue["photo_file"])
+        self.assertEqual(profile["history"],venue["history"])
+        self.assertEqual(profile["address"],venue["address"])
+        self.assertTrue(any(s["venue_id"]==venue["id"]
+                            for s in self.registry["stagings"].values()))
+
     def test_original_performance_venues_are_preserved(self):
         venues={v["id"]:v for v in self.result["venues"]}
         by_canonical={v.get("canonical_venue_id",v["id"]):v for v in self.result["venues"]}
