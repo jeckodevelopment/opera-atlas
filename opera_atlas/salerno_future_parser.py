@@ -123,7 +123,7 @@ def extract_index(html: str, *, url: str, min_links: int) -> list[str]:
         # edition. Distinguish this from malformed HTML, unapproved URLs and
         # a genuine source parser failure, without inferring a 2027 program.
         year_match = re.search(
-            r"(?i)\\bTeatro Verdi\\s*[\\u2013-]\\s*Stagione Lirica e di Balletto\\s+(20\\d{2})\\b",
+            r"(?i)\bTeatro Verdi\s*[\u2013-]\s*Stagione Lirica e di Balletto\s+(20\d{2})\b",
             text)
         if year_match and int(year_match[1]) < 2027 and not out:
             raise FutureSalernoSeasonNotYetVerified(
