@@ -41,6 +41,21 @@ class TaorminaMultiSourceTests(unittest.TestCase):
             self.assertEqual(extract_index(key,html,url=index),[url])
             self.assertEqual(extract(key,index,html,1),[url])
 
+    def test_real_navigation_links_do_not_enter_opera_review(self):
+        from opera_atlas.taormina_multi_source import FESTIVAL_NONPRODUCTION_SLUGS
+        key="taormina-opera-festival-rolling"
+        base="https://www.taorminaoperafestival.org/"
+        self.assertGreaterEqual(len(FESTIVAL_NONPRODUCTION_SLUGS),15)
+        for slug in FESTIVAL_NONPRODUCTION_SLUGS:
+            self.assertFalse(eligible_detail(key,base+slug+"/"),slug)
+        official=base+"la-grande-lirica-torna-al-teatro-antico-di-taormina-con-la-traviata-secondo-castiglione/"
+        self.assertTrue(eligible_detail(key,official))
+        html='<nav>'+''.join(
+            '<a href="/'+slug+'/">Voce menu</a>'
+            for slug in FESTIVAL_NONPRODUCTION_SLUGS
+        )+'</nav><a href="'+official+'">La traviata</a>'
+        self.assertEqual(extract_index(key,html,url=base),[official])
+
     def test_nabucco_with_explicit_details_can_enter_canonical_pipeline(self):
         title,composer,venue,rows=parse_detail(
             "taormina-fondazione-rolling-opera",event(),url=NABUCCO)
