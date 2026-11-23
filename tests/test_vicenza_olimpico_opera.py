@@ -121,6 +121,46 @@ class VicenzaOlimpicoOfficialSource(unittest.TestCase):
             with self.subTest(url=url), self.assertRaisesRegex(ValueError, "elsewhere"):
                 parse_detail(html, url=url)
 
+    def test_2026_official_ticket_office_corroborates_missing_article_year(self):
+        # Official ticket-office records carry years and clock times; they
+        # must exactly agree with the first-party production's own details.
+        tickets = (
+            "<html><h1>Biglietteria</h1>"
+            "<p>10/09/2026 Il barbiere di Siviglia – Rossini "
+            "(anteprima-prova generale), ore 20,30</p>"
+            "<p>12 e 13/09/2026 Il barbiere di Siviglia – Rossini "
+            "(prima e seconda recita), ore 20,30/19,00</p>"
+            "<p>14/09/2026 Il filosofo di campagna – Galuppi, ore 20,30</p>"
+            "<p>20/09/2026 L'Orfeo – Monteverdi, ore 17,00</p></html>")
+        barbiere = opera_page(edition="")
+        with self.assertRaisesRegex(ValueError, "year"):
+            parse_detail(barbiere, url=BARBIERE)
+        self.assertEqual(parse_detail(
+            barbiere, url=BARBIERE, ticketing_html=tickets)[3], [
+                ("2026-09-10", "20:30"),
+                ("2026-09-12", "20:30"),
+                ("2026-09-13", "19:00")])
+        filosofo = opera_page(
+            title="Il filosofo di campagna – Galuppi",
+            composer="di Baldassare GALUPPI",
+            genre="Prima rappresentazione: Venezia, Teatro di San Samuele",
+            when="Lunedì 14 settembre | ore 20.30",
+            edition="")
+        self.assertEqual(parse_detail(
+            filosofo,url=FILOSOFO,ticketing_html=tickets)[3],
+            [("2026-09-14", "20:30")])
+
+    def test_ticket_office_must_agree_and_offsite_still_excluded(self):
+        tickets=("<p>10/09/2026 Il barbiere di Siviglia – Rossini, ore 20,30</p>"
+                 "<p>12 e 13/09/2026 Il barbiere di Siviglia – Rossini, "
+                 "ore 20,30/19,00</p>")
+        with self.assertRaisesRegex(ValueError,"disagree"):
+            parse_detail(opera_page(edition="",when="Domenica 13 settembre | ore 20.30"),
+                         url=BARBIERE,ticketing_html=tickets)
+        with self.assertRaisesRegex(ValueError, "elsewhere"):
+            parse_detail(opera_page(edition="",venue="Villa Pisani Bonetti di Bagnolo"),
+                         url=BARBIERE,ticketing_html=tickets)
+
     def test_2027_edition_without_hardcoded_calendar_year(self):
         html=opera_page(edition="Vicenza in Lirica 2027",
                         when="Sabato 11 settembre | ore 20.30")
