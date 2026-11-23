@@ -1,0 +1,83 @@
+name: Audit 2026 — reconcile mass scan observations
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/audit_2026_mass_reconciliation.py'
+      - 'tests/test_audit_2026_mass_reconciliation.py'
+      - '.github/workflows/audit-2026-mass-reconciliation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_2026_mass_reconciliation.py'
+      - '.github/workflows/audit-2026-mass-reconciliation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-atlas-2026-reconcile-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_audit_2026_mass_reconciliation -v
+      - name: Generate diagnostic reconciliation from saved mass scan
+        run: |
+          python -m scripts.audit_2026_mass_reconciliation
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('public/diagnostics/atlas-2026-mass-reconciliation.json').read_text())
+          assert x['read_only'] is True and x['catalog_updated'] is False
+          assert x['year']==2026
+          print('Observation states:',x['observation_counts'])
+          print('Index failure groups:',x['index_failure_counts'])
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: opera-atlas-2026-mass-reconciliation
+          path: public/diagnostics/atlas-2026-mass-reconciliation.json
+          retention-days: 30
+
+  publish:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093a # v4
+        with:
+          name: opera-atlas-2026-mass-reconciliation
+          path: public/diagnostics
+      - name: Commit only the isolated reconciliation report
+        run: |
+          set -e
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp public/diagnostics/atlas-2026-mass-reconciliation.json /tmp/atlas-2026-mass-reconciliation.json
+          for attempt in 1 2 3 4 5 6 7 8; do
+            git fetch --no-tags origin main
+            git checkout -B audit-reconciliation-publish FETCH_HEAD
+            mkdir -p public/diagnostics
+            cp /tmp/atlas-2026-mass-reconciliation.json public/diagnostics/atlas-2026-mass-reconciliation.json
+            git add -- public/diagnostics/atlas-2026-mass-reconciliation.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'data(audit): reconcile 2026 mass scan diagnostics [skip ci]'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
