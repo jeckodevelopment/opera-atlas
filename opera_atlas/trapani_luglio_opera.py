@@ -92,7 +92,9 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # before the genre badge. Bind genre to the bounded event header,
     # before the independent official composer credit, not the title.
     credit_index=next((i for i,item in enumerate(prefix)
-                       if re.search(r"\b(?:Musica|Musiche)\s+di\b",item,re.I)),None)
+                       if re.search(r"\b(?:Musica|Musiche)\s+di\b",
+                                    " ".join(prefix[i:i+3]),re.I)
+                       and re.search(r"\b(?:Musica|Musiche)\b",item,re.I)),None)
     if credit_index is None:
         raise ValueError("Trapani first-party composer missing")
     genre_positions=[(i,genre) for i,item in enumerate(prefix[:credit_index])
