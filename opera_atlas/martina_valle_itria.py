@@ -27,10 +27,13 @@ class Page(HTMLParser):
         self.parts=[]
         self.titles=[]
         self._h1=False
+        self._seen_h1=False
         self._skip=0
     def handle_starttag(self,tag,attrs):
         if tag in ("script","style","noscript"):self._skip+=1
-        if tag=="h1" and not self._skip:self._h1=True
+        if tag=="h1" and not self._skip and not self._seen_h1:
+            self._h1=True
+            self._seen_h1=True
         if tag=="a" and not self._skip:
             url=dict(attrs).get("href")
             if url:self.links.append(url)

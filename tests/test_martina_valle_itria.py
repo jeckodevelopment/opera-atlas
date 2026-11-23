@@ -86,6 +86,24 @@ class MartinaFestivalTests(unittest.TestCase):
                            ("2026-07-29","21:00")]))
         self.assertNotIn("Pulcinella",parse_detail(doublebill(),url=DUET)[0])
 
+    def test_cast_section_h1_does_not_append_to_event_title(self):
+        # The official page inserts a second H1 for each performer group,
+        # including both Pulcinella and La favola di Orfeo.
+        html=doublebill().replace(
+            "<h4>Dettagli</h4>",
+            "<h1>Pulcinella</h1><h1>La favola di Orfeo</h1>"
+            "<h4>Dettagli</h4>")
+        html=html.replace(
+            "29 Luglio 2026 . H 21:00 Palazzo Ducale, Martina Franca",
+            "29 Luglio 2026 . H 21:00 Palazzo Ducale, Martina Franca"
+            " 1 Agosto 2026 . H 21:00 Palazzo Ducale, Martina Franca")
+        title,composer,venue,recite=parse_detail(html,url=DUET)
+        self.assertEqual((title,composer,venue),
+                         ("La favola di Orfeo","Alfredo Casella",
+                          "Palazzo Ducale di Martina Franca"))
+        self.assertEqual(len(recite),4)
+        self.assertEqual(recite[-1],("2026-08-01","21:00"))
+
     def test_mixed_orfeo_source_heading_markup_preserves_opera_only(self):
         # The official festival can collapse the slash spacing when H1
         # children are rendered into a single text string.
