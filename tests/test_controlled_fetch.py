@@ -107,6 +107,45 @@ class FetchTests(unittest.TestCase):
                                 network_enabled=True,opener=opener)
         self.assertEqual(opener.calls,[SOURCE+"robots.txt",URL])
 
+    def test_transient_destination_failure_retries_once(self):
+        class TransientPage(FakeOpener):
+            def __init__(self, code=None):
+                super().__init__()
+                self.code=code
+                self.attempts=0
+            def open(self,request,timeout=None):
+                if request.full_url==URL:
+                    self.calls.append(request.full_url)
+                    self.attempts+=1
+                    if self.attempts==1:
+                        if self.code:
+                            raise HTTPError(URL,self.code,"temporary",{},None)
+                        raise URLError("temporary connection error")
+                    return Response(self.html)
+                return super().open(request,timeout)
+        for code in (None,500,503):
+            with self.subTest(code=code):
+                opener=TransientPage(code)
+                self.assertEqual(fetch_official_html(
+                    self.conn,source_id=1,url=URL,
+                    network_enabled=True,opener=opener).byte_count,15)
+                self.assertEqual(opener.attempts,2)
+
+    def test_destination_denial_is_not_retried(self):
+        for code in (401,403,429):
+            with self.subTest(code=code):
+                class Denied(FakeOpener):
+                    def open(self,request,timeout=None):
+                        self.calls.append(request.full_url)
+                        if request.full_url==URL:
+                            raise HTTPError(URL,code,"denied",{},None)
+                        return Response(self.robots)
+                opener=Denied()
+                with self.assertRaises(FetchUnavailable):
+                    fetch_official_html(self.conn,source_id=1,url=URL,
+                                        network_enabled=True,opener=opener)
+                self.assertEqual(opener.calls.count(URL),1)
+
     def test_missing_robots_not_authorization_for_other_hosts(self):
         class MissingRobots(FakeOpener):
             def open(self,request,timeout=None):
