@@ -7,6 +7,7 @@ on:
     - cron: '43 6 * * 1'
   pull_request:
     paths:
+      - 'data/historical-2026-official-evidence.json'
       - 'scripts/audit_recite_2026.py'
       - 'scripts/audit_2026_sources.py'
       - 'tests/test_audit_recite_2026.py'
