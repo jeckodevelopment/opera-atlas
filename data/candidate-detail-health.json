@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T13:24:53+00:00",
+  "checked_at": "2026-11-23T13:29:53+00:00",
   "scope": "national",
-  "attempted": 26,
+  "attempted": 23,
   "outcomes": [
     {
       "candidate_id": "oa-index-b35be5b62db03774ea61",
@@ -14,7 +14,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-6da8d6c5834230d71bbb",
+      "candidate_id": "oa-index-90a9028a295696a522e1",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -41,33 +41,12 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-9f61560762c466080073",
+      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "outcome": "facts_found",
-      "rows": 2
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-a825bbef331ecdd019f7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-f8122a2cac3109445aaa",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-8115e400ae8706fd132a",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-90a9028a295696a522e1",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -109,11 +88,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
-      "outcome": "facts_found",
-      "rows": 1
     },
     {
       "candidate_id": "oa-index-d9a6ab3ba2217f8a24de",
@@ -221,6 +195,17 @@
     },
     {
       "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-6da8d6c5834230d71bbb",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [

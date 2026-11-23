@@ -1806,8 +1806,8 @@
       "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
-      "content_sha256": "435c6d2e759844e44b9413075c07e2183531723f722ff438953261f7442b4e49",
-      "checked_at": "2026-11-23T13:24:40+00:00",
+      "content_sha256": "a320da469f21bbb0301471756ab2221660b909fe5d449a4f43837945bb802253",
+      "checked_at": "2026-11-23T13:29:42+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2280,8 +2280,8 @@
       "candidate_id": "oa-index-52b35f0089c3663c7ddb",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
-      "content_sha256": "2c61845c1370cb569eba2313d2a6b107e5d0b826241aabe5aa902cc4d72007ba",
-      "checked_at": "2026-11-23T13:24:47+00:00",
+      "content_sha256": "e0e2504c552aa3797f38e9387820d438f64c12081ee207308c548027c0853826",
+      "checked_at": "2026-11-23T13:29:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7293,7 +7293,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
       "content_sha256": "5f0204fe8f77b1ee0348cce74aa25462b97486bbf32e73dc9fe2fd3b7bb0396f",
-      "checked_at": "2026-11-23T13:23:59+00:00",
+      "checked_at": "2026-11-23T13:29:15+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7482,8 +7482,8 @@
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
-      "content_sha256": "e455889c4bd7e58b96b566515f2e754a933afbe090b5aa3aa1251d620db2fcd6",
-      "checked_at": "2026-11-23T13:24:22+00:00",
+      "content_sha256": "f303429bba9f04e46a5b4726c914bb2348e8930f9e65f63a3fa3934349403fa5",
+      "checked_at": "2026-11-23T13:29:19+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7782,8 +7782,8 @@
       "candidate_id": "oa-index-dd7baa45131b35e450b1",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
-      "content_sha256": "2707f0e7e199fe5186ef5899025cb45a5c8d12b66c026b6ca12d009941321bf6",
-      "checked_at": "2026-11-23T13:24:26+00:00",
+      "content_sha256": "5fed0e93fe33e031fe927e42dfcbacf06e0c57bb6baa4d91e3b5ef1825660ce2",
+      "checked_at": "2026-11-23T13:29:31+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
