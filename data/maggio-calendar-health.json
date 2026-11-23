@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T23:36:33+00:00",
+  "checked_at": "2026-11-23T09:11:30+00:00",
   "sources": [
     {
       "url": "https://www.maggiofiorentino.com/calendario/2026/11/opera",
       "status": "verified",
-      "known_recite": 2
+      "known_recite": 1
     },
     {
       "url": "https://www.maggiofiorentino.com/calendario/2026/12/opera",
@@ -63,5 +63,5 @@
       "known_recite": 4
     }
   ],
-  "observed_recite": 30
+  "observed_recite": 29
 }
