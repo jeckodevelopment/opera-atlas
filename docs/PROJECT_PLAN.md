@@ -29,7 +29,7 @@ Sono esclusi dalla prima release: account personali, vendita diretta di bigliett
 - [ ] Verificare identità immutabili e deduplicazione cross-source: stessa recita pubblicizzata da teatro, festival e circuito = singola recita con più evidenze; composizioni omonime restano distinte; titoli tradotti ricondotti alla stessa opera quando dimostrato.
 - [ ] Validare programmi composti e co-produzioni, sedi fisiche separate dagli organizzatori, cambi data, annullamenti e casi ambigui.
 - [ ] Consolidare tassonomia dei generi, policy editoriale, regole sui dati incompleti e test di regressione.
-- [ ] Chiudere le issue storiche #2 e #3 **solo** se soddisfano i criteri, con prove e documentazione.
+- [x] Issue storiche #2 e #3 chiuse dopo audit e test di regressione; collaudi manuali restano separati.\n- [ ] Completare #1: confrontare le 70 sedi e i relativi canali con le fonti ufficiali, date/policy e casi controversi; vedere [audit F1 delle fonti del 23/11](F1_SOURCE_REGISTRY_AUDIT_2026-11-23.md).
 
 **Criterio di uscita:** modello e identificazione canonica stabili, import ripetibili senza duplicati né fusioni improprie; test positivi su casi reali multi-fonte, omonimi, stagioni e programmi composti. Eventuali collaudi manuali pendenti identificati separatamente.
 
