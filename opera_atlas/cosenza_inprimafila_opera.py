@@ -26,7 +26,9 @@ DETAIL_PATH = re.compile(
     r"/index\.php/eventi/([a-z0-9]+(?:-[a-z0-9]+)*)-cosenza/?",
     re.I,
 )
-# Explicit non-production/event-category pages encountered in the live listing.\nINPRIMAFILA_NONPRODUCTION_SLUGS=frozenset({\n    "stagione-l-altro-teatro",
+# Explicit non-production/event-category pages encountered in the live listing.
+INPRIMAFILA_NONPRODUCTION_SLUGS=frozenset({
+    "stagione-l-altro-teatro",
     "capodanno-2027-tributo-vasco-synphony-cosenza",
     "casa-delle-culture",
 })
