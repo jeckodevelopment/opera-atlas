@@ -45,6 +45,7 @@ on:
       - '.github/workflows/publish-cached-catalog.yml'
 permissions:
   contents: write
+# Replay reviewed candidate statuses after Vicenza reconciliation; no network scan.
 # Independent from the slow national refresh: a new source PR cannot cancel
 # a short run that is already publishing verified cached opera recite.
 concurrency:
