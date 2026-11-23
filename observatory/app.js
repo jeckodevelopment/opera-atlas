@@ -39,15 +39,19 @@ function mapRows(cat){
    const s=staging.get(p.staging_id);if(!s)continue;
    const w=work.get(s.work_id),v=venue.get(s.venue_id);
    if(!w||!v||!/^\d{4}-\d{2}-\d{2}$/.test(p.local_date||""))continue;
-   out.push({id:p.id,date:p.local_date,season:s.season||"Non indicata",region:v.region||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,stagingId:s.id});
+   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:v.region||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,stagingId:s.id});
  }
  return out;
 }
 function populate(){
- const seasons=[...new Set(rows.map(x=>x.season))].sort().reverse(), regions=[...new Set(rows.map(x=>x.region))].sort((a,b)=>a.localeCompare(b,"it"));
- for(const [id,values] of [["season",seasons],["region",regions]]){
+ const years=[...new Set(rows.map(x=>x.year))].sort().reverse(), seasons=[...new Set(rows.map(x=>x.season))].sort().reverse(), regions=[...new Set(rows.map(x=>x.region))].sort((a,b)=>a.localeCompare(b,"it"));
+ for(const [id,values] of [["year",years],["season",seasons],["region",regions]]){
   for(const v of values){let o=document.createElement("option");o.value=v;o.textContent=v;$(id).append(o)}
  }
+ // Default to the current calendar year in Italy, rather than guessing a season.
+ const todayParts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Rome",year:"numeric"}).formatToParts(new Date());
+ const currentYear=todayParts.find(x=>x.type==="year")?.value;
+ if(years.includes(currentYear))$("year").value=currentYear;
 }
 function frequencies(values){const m=new Map();for(const value of values)m.set(value,(m.get(value)||0)+1);return [...m].sort((a,b)=>b[1]-a[1]||String(a[0]).localeCompare(String(b[0]),"it"))}
 function bars(id,items,limit=10){
@@ -64,8 +68,8 @@ function bars(id,items,limit=10){
 }
 function list(id,items){const el=$(id);el.replaceChildren();for(const [name,n] of items.slice(0,5)){const li=document.createElement("li");const title=document.createElement("span");title.textContent=name;const number=document.createElement("span");number.textContent=fmt.format(n)+" recite";li.append(title,number);el.append(li)}if(!items.length)el.textContent="Nessun dato";}
 function render(){
- const season=$("season").value, region=$("region").value;
- const selected=rows.filter(r=>(season==="all"||r.season===season)&&(region==="all"||r.region===region));
+ const year=$("year").value, season=$("season").value, region=$("region").value;
+ const selected=rows.filter(r=>(year==="all"||r.year===year)&&(season==="all"||r.season===season)&&(region==="all"||r.region===region));
  const countUnique=f=>count(selected.map(f));
  for(const [id,n] of [["k-perfs",selected.length],["k-venues",countUnique(x=>x.venueId)],["k-works",countUnique(x=>x.workId)],["k-stagings",countUnique(x=>x.stagingId)]])text($(id),fmt.format(n));
  const works=frequencies(selected.map(r=>r.work));
@@ -84,7 +88,7 @@ function render(){
  }
  const an=$("analysis");an.replaceChildren();const p=document.createElement("p");p.textContent="Compositori distinti nel campione: "+fmt.format(countUnique(x=>x.composer))+". La distribuzione per secolo sarà disponibile quando Atlas pubblicherà date di composizione affidabili.";an.append(p);
  $("download").onclick=()=>{
-  const columns=["id","date","season","region","work","composer","venueId","stagingId"];
+  const columns=["id","date","year","season","region","work","composer","venueId","stagingId"];
   const csv=[columns.join(";"),...selected.map(r=>columns.map(k=>'"'+String(r[k]??"").replace(/"/g,'""')+'"').join(";"))].join("\r\n");
   const blob=new Blob(["\ufeff",csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);
   const a=document.createElement("a");a.href=url;a.download="osservatorio-opera-plus.csv";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
@@ -93,7 +97,7 @@ function render(){
 async function main(){
  try{
   try{catalogue=await load(ROOT)}catch(err){catalogue=await load(FALLBACK)}
-  rows=mapRows(catalogue);populate();$("season").addEventListener("change",render);$("region").addEventListener("change",render);
+  rows=mapRows(catalogue);populate();$("year").addEventListener("change",render);$("season").addEventListener("change",render);$("region").addEventListener("change",render);
   render();$("content").hidden=false;
   text($("status"),"");text($("updated"),"Versione dati: "+(catalogue.manifest.reviewed_on||"data non indicata")+". Recite annullate e rinviate escluse.");
  }catch(error){text($("status"),"Dati temporaneamente non disponibili. Nessuna statistica mostrata: "+error.message)}
