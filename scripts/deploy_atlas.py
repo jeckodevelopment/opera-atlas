@@ -21,9 +21,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "site"
 PUBLIC_URL = "https://opera.plus/atlas/"
 FILES = frozenset((
-    ".htaccess", "index.html", "detail.html", "directory.html",
+    ".htaccess", "index.html", "detail.html", "directory.html", "in-scena.html",
     "privacy.html", "credits.html", "app.js", "detail.js",
-    "directory.js", "festival-client.js", "image-client.js",
+    "directory.js", "in-scena.js", "in-scena.css", "festival-client.js", "image-client.js",
     "catalog-client.js", "styles.css", "atlas-logo.svg",
     "opera-stage.svg", "cover-jenufa.svg", "cover-nixon-in-china.svg", "performances.json", "work-synopses.json",
     "work-history.json", "theatre-profiles.json"
@@ -31,7 +31,7 @@ FILES = frozenset((
 # Keep this allowlist explicit; no dotfiles except routing .htaccess,
 # no credentials, test fixtures, scripts or automatic catalog data.
 FINGERPRINT = frozenset(("styles.css", "app.js", "detail.js", "directory.js",
-                         "catalog-client.js", "festival-client.js", "image-client.js"))
+                         "catalog-client.js", "festival-client.js", "image-client.js", "in-scena.js", "in-scena.css"))
 CANONICAL = ("opere/la-traviata/", "torino/teatro-regio/",
              "torino/teatro-regio/la-traviata/",
              "produzioni/oa-g-lombardia-italiana-2026/")
@@ -54,7 +54,7 @@ def build(destination: Path) -> None:
     snapshot = json.loads((destination / "performances.json").read_text(encoding="utf-8"))
     if snapshot.get("schema_version") != 1 or not isinstance(snapshot.get("performances"), list):
         raise ValueError("Invalid static snapshot")
-    for filename in ("index.html", "detail.html", "directory.html", "privacy.html", "credits.html"):
+    for filename in ("index.html", "detail.html", "directory.html", "in-scena.html", "privacy.html", "credits.html"):
         html = (destination / filename).read_text(encoding="utf-8")
         if '<base href="/atlas/">' not in html:
             raise ValueError("Incorrect public base in " + filename)
@@ -154,6 +154,10 @@ def verify_live(folder: Path) -> None:
                 with urlopen(req,timeout=20) as response:
                     if response.status!=200 or sha(response.read(3_000_001))!=expected:
                         raise RuntimeError("Atlas deep-route rewrite failure: "+route)
+            req=Request(PUBLIC_URL+"in-scena/?release="+nonce,headers={"Cache-Control":"no-cache","User-Agent":"OperaAtlasPublisher/1.0"})
+            with urlopen(req,timeout=20) as response:
+                if response.status!=200 or sha(response.read(3_000_001))!=sha((folder/"in-scena.html").read_bytes()):
+                    raise RuntimeError("Atlas In scena deep-route failure")
             return
         except Exception:
             if attempt==2:raise
