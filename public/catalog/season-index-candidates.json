@@ -805,7 +805,7 @@
       "id": "oa-index-3b3b5b3ad369a6f177db",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/odissea-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-23T19:59:49+00:00",
       "last_seen": "2026-11-23T19:59:49+00:00"
     },
