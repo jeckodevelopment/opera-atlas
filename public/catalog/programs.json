@@ -269,6 +269,36 @@
       ]
     },
     {
+      "id": "oa-p-dd7baa45131b35e4",
+      "title": "L'opera (forse) / Infinito nero",
+      "components": [
+        {
+          "title": "L'opera (forse)",
+          "composer": "Francesco Filidei",
+          "work_id": null
+        },
+        {
+          "title": "Infinito nero",
+          "composer": "Salvatore Sciarrino",
+          "work_id": null
+        }
+      ],
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+      "venue": "Teatro M° Tonino Pardo",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "route_slug": "opera-forse-infinito-nero",
+      "performances": [
+        {
+          "id": "oa-pr-fef2e79f899f30d7",
+          "program_id": "oa-p-dd7baa45131b35e4",
+          "local_date": "2026-10-31",
+          "starts_at": "2026-10-31T19:00:00+01:00"
+        }
+      ]
+    },
+    {
       "id": "oa-p-ecf1fda1dc67738c",
       "title": "Jeanne d’Arc au bûcher / Jeanne Dark",
       "components": [

@@ -71,40 +71,6 @@
     },
     {
       "candidate_ids": [
-        "oa-index-dd7baa45131b35e450b1"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Salvatore Sciarrino",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 1,
-      "sources": [
-        {
-          "source_key": "trapani-luglio-musicale-2026",
-          "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/"
-        }
-      ],
-      "title": "Infinito nero"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-dd7baa45131b35e450b1"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Francesco Filidei",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 1,
-      "sources": [
-        {
-          "source_key": "trapani-luglio-musicale-2026",
-          "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/"
-        }
-      ],
-      "title": "L'opera (forse)"
-    },
-    {
-      "candidate_ids": [
         "oa-index-d8c22fa66fa68b8a3670"
       ],
       "category": "new_work_candidate",
@@ -125,13 +91,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 6,
+    "candidates_checked": 5,
     "candidates_without_facts": 0,
-    "facts_examined": 12,
+    "facts_examined": 10,
     "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 12,
-    "unmatched_groups": 7
+    "unmatched_facts": 10,
+    "unmatched_groups": 5
   },
   "truncated": false
 }
