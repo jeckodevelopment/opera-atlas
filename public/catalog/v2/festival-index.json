@@ -37,6 +37,65 @@
       "festival_id": "donizetti-opera"
     },
     {
+      "id": "festival-puccini-2027",
+      "name": "Festival Puccini",
+      "edition": "2027",
+      "city": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "official_url": "https://www.puccinifestival.it/",
+      "staging_ids": [
+        "oa-s-000222",
+        "oa-s-000223",
+        "oa-s-000224",
+        "oa-s-000225"
+      ],
+      "description": "A Torre del Lago, luogo profondamente legato a Giacomo Puccini, il festival propone le sue opere sul palcoscenico del Gran Teatro a lui dedicato.",
+      "festival_id": "festival-puccini"
+    },
+    {
+      "id": "festival-valle-ditria-2026",
+      "name": "Festival della Valle d’Itria",
+      "edition": "2026",
+      "city": "Martina Franca",
+      "region": "Puglia",
+      "official_url": "https://www.festivaldellavalleditria.it/",
+      "staging_ids": [
+        "oa-s-000253"
+      ],
+      "description": "Il festival di Martina Franca valorizza il teatro musicale e il repertorio lirico, con particolare attenzione alle riscoperte, ai titoli rari e alla ricerca interpretativa.",
+      "festival_id": "festival-valle-ditria"
+    },
+    {
+      "id": "luglio-musicale-trapanese-2026",
+      "name": "Luglio Musicale Trapanese",
+      "edition": "2026",
+      "city": "Trapani",
+      "region": "Sicilia",
+      "official_url": "https://www.lugliomusicale.it/",
+      "staging_ids": [
+        "oa-s-000272",
+        "oa-s-000273",
+        "oa-s-000274"
+      ],
+      "description": "A Trapani, il Luglio Musicale Trapanese propone spettacoli lirici e iniziative musicali, anche negli spazi del Teatro Giuseppe Di Stefano.",
+      "festival_id": "luglio-musicale-trapanese"
+    },
+    {
+      "id": "macerata-opera-festival-2027",
+      "name": "Macerata Opera Festival",
+      "edition": "2027",
+      "city": "Macerata",
+      "region": "Marche",
+      "official_url": "https://www.sferisterio.it/",
+      "staging_ids": [
+        "oa-s-000161",
+        "oa-s-000166",
+        "oa-s-000198"
+      ],
+      "description": "Nello Sferisterio di Macerata, il festival presenta ogni estate grandi opere liriche in un teatro all’aperto dalla caratteristica architettura monumentale.",
+      "festival_id": "macerata-opera-festival"
+    },
+    {
       "id": "rossini-opera-festival-2026",
       "name": "Rossini Opera Festival",
       "edition": "2026",

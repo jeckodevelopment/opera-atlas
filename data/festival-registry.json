@@ -35,6 +35,50 @@
       "source_path_prefixes": [
         "/"
       ]
+    },
+    {
+      "id": "macerata-opera-festival",
+      "template_id": "macerata-opera-festival-2027",
+      "official_url": "https://www.sferisterio.it/",
+      "source_hosts": [
+        "www.sferisterio.it"
+      ],
+      "source_path_prefixes": [
+        "/macerata-opera-festival/"
+      ]
+    },
+    {
+      "id": "festival-puccini",
+      "template_id": "festival-puccini-2027",
+      "official_url": "https://www.puccinifestival.it/",
+      "source_hosts": [
+        "www.puccinifestival.it"
+      ],
+      "source_path_prefixes": [
+        "/en/73rd-puccini-festival-2027/"
+      ]
+    },
+    {
+      "id": "festival-valle-ditria",
+      "template_id": "festival-valle-ditria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/",
+      "source_hosts": [
+        "www.festivaldellavalleditria.it"
+      ],
+      "source_path_prefixes": [
+        "/spettacolo/"
+      ]
+    },
+    {
+      "id": "luglio-musicale-trapanese",
+      "template_id": "luglio-musicale-trapanese-2026",
+      "official_url": "https://www.lugliomusicale.it/",
+      "source_hosts": [
+        "www.lugliomusicale.it"
+      ],
+      "source_path_prefixes": [
+        "/it/luglio-musicale-stagioni/stagione-2026/"
+      ]
     }
   ]
 }
