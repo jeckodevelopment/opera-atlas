@@ -1,14 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T19:47:02+00:00",
+  "checked_at": "2026-11-23T19:51:28+00:00",
   "scope": "national",
-  "attempted": 2,
+  "attempted": 1,
   "outcomes": [
-    {
-      "candidate_id": "oa-index-a825bbef331ecdd019f7",
-      "outcome": "verified_first_party_press",
-      "rows": 1
-    },
     {
       "candidate_id": "oa-index-3d94833841692871c0a4",
       "outcome": "unavailable_or_unstructured",
