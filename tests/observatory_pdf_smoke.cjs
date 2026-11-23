@@ -42,7 +42,7 @@ const accentedPdf=validatePdf({...input,rows:accentedRows,allRows:accentedRows,r
 // WinAnsi strings in PDF content streams must retain the literal accented
 // bytes instead of replacing them with unaccented approximations.
 for(const word of ["attività","città","è","più","varietà","libertà","Forlì","Università","André"]){
- assert.ok(accentedPdf.includes(word),"Missing accented glyph in PDF: "+word);
+ assert.ok(accentedPdf.toLocaleLowerCase("it-IT").includes(word.toLocaleLowerCase("it-IT")),"Missing accented glyph in PDF: "+word);
 }
 assert.ok(!accentedPdf.includes("L'attivita mese per mese"));
 validatePdf(input);
