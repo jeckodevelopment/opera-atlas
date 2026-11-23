@@ -98,6 +98,15 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn("Number.isInteger(verified)", self.source)
         self.assertIn("audit.same", self.source)
 
+    def test_live_audit_uses_canonical_manifest_not_editorial_linkage_feed(self):
+        self.assertIn('manifest:"public/catalog/v2/manifest.json"', self.source)
+        self.assertIn('const currentSha=data.manifest?.files?.stagings?.sha256;',self.source)
+        self.assertIn('audit.catalog_release_sha256===currentSha',self.source)
+        self.assertIn('catalog.catalog_release_sha256===currentSha',self.source)
+        self.assertIn("Evidenze editoriali da aggiornare", self.source)
+        self.assertIn("total>0",self.source)
+        self.assertNotIn('audit.catalog_release_sha256===catalog.catalog_release_sha256',self.source)
+
     def test_no_false_global_completion_percentage(self):
         self.assertIn("non garantisce", self.source)
         self.assertIn("Non misurato", self.source)
