@@ -79,6 +79,22 @@
       "source_path_prefixes": [
         "/it/luglio-musicale-stagioni/stagione-2026/"
       ]
+    },
+    {
+      "id": "festival-verdi",
+      "template_id": "festival-verdi-2026",
+      "official_url": "https://teatroregioparma.it/categoria-spettacoli/edizione-26-festival-verdi/",
+      "source_hosts": [
+        "teatroregioparma.it"
+      ],
+      "source_path_prefixes": [
+        "/spettacolo/"
+      ],
+      "official_event_urls": [
+        "https://teatroregioparma.it/spettacolo/alzira/",
+        "https://teatroregioparma.it/spettacolo/nabucodonosor/",
+        "https://teatroregioparma.it/spettacolo/aida/"
+      ]
     }
   ]
 }
