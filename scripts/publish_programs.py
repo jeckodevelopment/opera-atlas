@@ -69,6 +69,16 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
             or urlsplit(url).hostname!=urlsplit(source["official_url"]).hostname):
             raise ValueError("unverified source or heading for composite program")
         city,venue=VENUE_BY_SOURCE[key]
+        # Trapani's approved opera/chamber-opera parser distinguishes the
+        # outdoor Di Stefano theatre from the indoor Tonino Pardo. Never
+        # silently attribute a verified chamber programme to the default.
+        if key=="trapani-luglio-musicale-2026":
+            from scripts.auto_catalogue import verified_venue
+            physically_verified=verified_venue(
+                key,item.get("event_facts",[]),registry)
+            if physically_verified is None or physically_verified[0]!="Trapani":
+                raise ValueError("unverified Trapani programme venue")
+            city,venue=physically_verified[:2]
         # The venue is independently canonical and must not be invented.
         venue_entries=[x for x in registry["venues"].values()
                        if x.get("name")==venue and x.get("city")==city]
@@ -87,8 +97,22 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
                            if x.get("city")==city and x.get("name")==venue
                            and isinstance(x.get("region"),str)
                            and x.get("region")]
-        if len(venue_entries)!=1:raise ValueError("ambiguous or unknown program theatre")
-        place=venue_entries[0]
+        if len(venue_entries)!=1:
+            # Exact first-party chamber venue may precede its editorial
+            # theatre-directory profile. Its physical identity was checked
+            # by the strict, genre-specific source adapter above; use only
+            # the already reviewed city's region, never infer a location
+            # from the URL or an unrelated theatre.
+            if not (key=="trapani-luglio-musicale-2026"
+                    and venue=="Teatro M° Tonino Pardo"):
+                raise ValueError("ambiguous or unknown program theatre")
+            regions={x["region"] for x in directory.get("venues",[])
+                     if x.get("city")==city and x.get("region")}
+            if len(regions)!=1:
+                raise ValueError("unverified programme region")
+            place={"region":next(iter(regions))}
+        else:
+            place=venue_entries[0]
         program=program_from_evidence(
             heading=item["program_heading"],source_key=key,source_url=url,
             candidate=candidate,detail=item,registry=registry,
