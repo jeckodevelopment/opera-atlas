@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T09:50:23+00:00",
+  "checked_at": "2026-11-23T10:41:14+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
@@ -497,6 +497,13 @@
       "work_id": "oa-w-000066",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/la-clemenza-di-tito/"
+    },
+    {
+      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000038",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
     },
     {
       "candidate_id": "oa-index-4186e1c367aee6cd2028",
