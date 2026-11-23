@@ -1290,8 +1290,8 @@
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
-      "content_sha256": "58d64359164a869e76adc443200684e51d3f94bec5179f3e16353944b20301e9",
-      "checked_at": "2026-11-22T23:21:11+00:00",
+      "content_sha256": "78c057ee7c8cc8ffe462b64355513759229581d68fff0a1a59fea1677bbe4aa9",
+      "checked_at": "2026-11-23T07:44:21+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4111,8 +4111,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "b6852e5abdaa01d971acb2054e058c1e0e0742dcc1bfdb9411c7b0ce2c6e883b",
-      "checked_at": "2026-11-23T07:23:46+00:00",
+      "content_sha256": "80329b861b08893d976a41d2b348d9a1e13f602f6d360907be91128a1276605d",
+      "checked_at": "2026-11-23T07:43:19+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5447,8 +5447,8 @@
       "candidate_id": "oa-index-a0c534fc596dea327ad4",
       "source_key": "sabbioneta-antica-rolling-opera",
       "source_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
-      "content_sha256": "500e3a1995fdf8c07f5c603f54ed166c2f5f3a414cdab46eb58a73cc42a197c5",
-      "checked_at": "2026-11-23T07:23:51+00:00",
+      "content_sha256": "ef583c0ffbd9f3290e6bdfb1319e61c79dddd126108f0139c12df1877a05aa19",
+      "checked_at": "2026-11-23T07:43:21+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6137,8 +6137,8 @@
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "content_sha256": "36b9c28387e64d8361fbef72a9003fda73a84ea4a9bd2e8061642fbedb1e5d97",
-      "checked_at": "2026-11-23T07:25:37+00:00",
+      "content_sha256": "756debe2185eea5ff5e28eb69b471b8dade5cd667a13dd196e756e50297b3a75",
+      "checked_at": "2026-11-23T07:44:17+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
