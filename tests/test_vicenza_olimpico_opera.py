@@ -53,6 +53,25 @@ class VicenzaOlimpicoOfficialSource(unittest.TestCase):
         self.assertEqual(len(facts),3)
         self.assertEqual(facts[0]["starts_at"],"2026-09-10T20:30:00+02:00")
 
+    def test_official_wordpress_category_supplies_year_outside_event_header(self):
+        # The live site puts the festival year in the WordPress category
+        # above the main event heading; a strict category is authoritative.
+        html=opera_page(edition="").replace(
+            "<html>",'<html><a href="https://www.vicenzainlirica.it/category/vicenza-in-lirica-2026/">Vicenza in Lirica 2026</a>')
+        title,composer,venue,rows=parse_detail(html,url=BARBIERE)
+        self.assertEqual((title,composer,venue),
+                         ("Il barbiere di Siviglia","Gioachino Rossini",
+                          "Teatro Olimpico"))
+        self.assertEqual(len(rows),3)
+        with self.assertRaisesRegex(ValueError,"conflicting"):
+            parse_detail(opera_page().replace(
+                "<html>",'<html><a href="/category/vicenza-in-lirica-2027/">Vicenza in Lirica 2027</a>'),
+                url=BARBIERE)
+        with self.assertRaisesRegex(ValueError,"year"):
+            parse_detail(opera_page(edition="").replace(
+                "<html>",'<html><a href="/category/press2026/">Vicenza in Lirica 2026</a>'),
+                url=BARBIERE)
+
     def test_2027_edition_without_hardcoded_calendar_year(self):
         html=opera_page(edition="Vicenza in Lirica 2027",
                         when="Sabato 11 settembre | ore 20.30")
