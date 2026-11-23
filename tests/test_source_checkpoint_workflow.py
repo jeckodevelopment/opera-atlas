@@ -22,9 +22,10 @@ class SourceCheckpointWorkflowTests(unittest.TestCase):
             self.assertIn(file,checkpoint_block)
         self.assertIn("python -m scripts.safe_push_catalog",checkpoint_block)
         self.assertNotIn("catalog-refresh-retry",checkpoint_block)
-        retry=workflow.split("      - name: Retry deferred catalog once",1)[1]
-        self.assertIn("steps.source_checkpoint.outputs.deferred == 'true'",retry)
-        self.assertIn("catalog-refresh-retry",retry)
+        self.assertIn("steps.source_checkpoint.outputs.deferred == 'true'",workflow)
+        recovery=workflow.split("  recover_from_checkpoint:",1)[1]
+        self.assertIn("needs.update.outputs.recovery_required == 'true'",recovery)
+        self.assertNotIn("--allow-network",recovery)
         self.assertNotIn("data/verified-launch-catalog.json",checkpoint_block)
         self.assertNotIn("data/identity-registry.json",checkpoint_block)
         self.assertIn("[skip ci]",checkpoint_block)

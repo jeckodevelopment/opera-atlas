@@ -93,6 +93,24 @@ class TriggerScopeTests(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertTrue(github_path_match(path, patterns))
 
+
+    def test_catalog_recovery_uses_committed_checkpoints_without_recrawl(self):
+        workflow = (ROOT / "refresh-catalog.yml").read_text(encoding="utf-8")
+        self.assertIn("recover_from_checkpoint:", workflow)
+        acquisition, recovery = workflow.split("\n  recover_from_checkpoint:", 1)
+        # A deferred write must not dispatch another 75-minute acquisition.
+        self.assertNotIn("event_type=catalog-refresh-retry", acquisition)
+        self.assertIn("needs.update.outputs.recovery_required == 'true'", recovery)
+        self.assertIn("needs.update.result == 'failure'", recovery)
+        self.assertIn("ref: main", recovery)
+        self.assertNotIn("--allow-network", recovery)
+        self.assertNotIn("scripts.daily_ingest", recovery)
+        self.assertIn("python -m unittest discover -s tests -v", recovery)
+        self.assertIn("python -m scripts.safe_push_catalog", recovery)
+        self.assertLess(
+            recovery.index("python -m unittest discover -s tests -v"),
+            recovery.index("git commit -m"))
+
     def test_source_health_still_runs_when_scanner_changes(self):
         patterns = push_paths("refresh-source-health.yml")
         for path in ("scripts/discover_season_indexes.py",

@@ -89,6 +89,8 @@ jobs:
   update:
     runs-on: ubuntu-24.04
     timeout-minutes: 75
+    outputs:
+      recovery_required: ${{ steps.early_national_checkpoint.outputs.deferred == 'true' || steps.cached_publication.outputs.deferred == 'true' || steps.roma_checkpoint.outputs.deferred == 'true' || steps.early_season_checkpoint.outputs.deferred == 'true' || steps.source_checkpoint.outputs.deferred == 'true' || steps.publish_catalog.outputs.deferred == 'true' }}
     steps:
       - name: Checkout canonical data
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
@@ -432,13 +434,71 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=atlas-notification-reconcile
-      # Defer any source checkpoint to ONE retry at the end of this run.
-      # Earlier versions dispatched a new full crawl from every failed push,
-      # often 5-6 times per run, continuously replacing queued executions.
-      # A repository_dispatch is itself the bounded retry; do not recurse.
-      - name: Retry deferred catalog once against latest main
-        if: ${{ github.event_name != 'repository_dispatch' && (steps.early_national_checkpoint.outputs.deferred == 'true' || steps.cached_publication.outputs.deferred == 'true' || steps.roma_checkpoint.outputs.deferred == 'true' || steps.early_season_checkpoint.outputs.deferred == 'true' || steps.source_checkpoint.outputs.deferred == 'true' || steps.publish_catalog.outputs.deferred == 'true') }}
+      # Deferred writes are recovered from latest committed data by the
+      # checkpoint recovery job below; never queue another full network scan.
+
+  # If a late publication/validation step fails, use source checkpoints that
+  # were already committed by the acquisition job. This job never crawls.
+  recover_from_checkpoint:
+    needs: update
+    if: ${{ always() && (needs.update.result == 'failure' || needs.update.outputs.recovery_required == 'true') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout latest committed source checkpoints
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Rebuild and validate canonical feed without network access
+        run: |
+          python -m scripts.reconcile_published_candidates
+          python -m scripts.work_identity_review
+          python -m scripts.auto_catalogue
+          python -m scripts.publish_work_posters
+          python -m scripts.publish_programs
+          python -m scripts.build_verified_catalog
+          python -m scripts.publish_catalog_v2
+          python -m scripts.reconcile_published_candidates
+          python -m scripts.work_identity_review
+          python -m scripts.publish_work_editorial
+          python -m scripts.publish_venue_directory
+          python -m scripts.sync_source_registry
+          python -m scripts.source_coverage
+          python -m scripts.recite_coverage
+          python -m scripts.source_automation
+          python -m scripts.catalogation_diagnostics
+          python -m scripts.candidate_publication_evidence
+          python -m scripts.discovery_queue
+          python -m scripts.editorial_review_queue
+          python -m scripts.venue_editorial_review_queue
+          python -m scripts.build_verified_catalog --check
+          python -m scripts.publish_catalog_v2 --check
+          python -m scripts.publish_work_editorial --check
+          python -m scripts.publish_venue_directory --check
+          python -m scripts.publish_work_posters --check
+          python -m scripts.publish_programs --check
+          python -m unittest discover -s tests -v
+      - name: Commit only verified checkpoint-derived catalog changes
+        id: recovered_publication
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Only existing tracked outputs are staged, never unverified source
+          # observations from the failed run or arbitrary scratch artifacts.
+          git add -u data/ site/ public/catalog/
+          if git diff --cached --quiet; then
+            echo "No verified catalog changes to recover."
+          else
+            git commit -m "data(catalog): recover verified feed from committed checkpoint [skip ci]"
+            python -m scripts.safe_push_catalog
+          fi
+      - name: Notify publication reconciliation after successful recovery
+        if: steps.recovered_publication.outputs.deferred != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=catalog-refresh-retry
+        run: gh api -X POST "repos/${{ github.repository }}/dispatches" -f event_type=atlas-notification-reconcile
