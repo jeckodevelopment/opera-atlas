@@ -1,5 +1,6 @@
 name: Refresh public Opera Atlas catalog
 # Keep network-acquisition runs distinguishable from the Python-only CI.
+# Manual end-to-end validation trigger for checkpoint recovery (#738), 2026-11-23.
 run-name: Catalog acquisition · ${{ github.event_name }} · ${{ github.ref_name }}
 on:
   schedule:
