@@ -9,14 +9,6 @@
       "reason": "unknown_work_needs_authority_data"
     },
     {
-      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "reason": "unknown_work_needs_authority_data"
     },
@@ -50,11 +42,11 @@
     },
     {
       "candidate_id": "oa-index-52b35f0089c3663c7ddb",
-      "reason": "incomplete_work_editorial"
+      "reason": "verified_work_image_missing"
     },
     {
       "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
-      "reason": "incomplete_work_editorial"
+      "reason": "verified_work_image_missing"
     },
     {
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
