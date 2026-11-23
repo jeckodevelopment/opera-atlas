@@ -56,3 +56,6 @@
 @media(max-width:900px){.today-search-row{grid-template-columns:repeat(3,minmax(0,1fr))}.today-search{grid-column:1/-1}.today-toolbar{padding:20px}}
 @media(max-width:650px){.today-date-strip{flex-wrap:wrap}.today-quick-days{order:2;flex-basis:100%;gap:5px}.today-arrow{order:1}.today-date-picker{order:1;margin-left:auto}.today-toolbar .today-day{min-height:60px;padding:4px 2px}.today-day strong{font-size:12px}.today-day-weekday{font-size:10px}.today-search-row{grid-template-columns:repeat(2,minmax(0,1fr))}.today-search{grid-column:1/-1}.today-toolbar-heading{align-items:flex-start}.today-toolbar-heading h2{font-size:22px}.today-card .eyebrow{font-size:13px}}
 @media(max-width:380px){.today-search-row{grid-template-columns:1fr}.today-filter{width:100%}.today-day strong{font-size:11px}.today-toolbar .today-arrow{min-width:32px}}
+
+/* More prominent introductory eyebrow, scoped to In scena only. */
+.today-intro .eyebrow{font-size:clamp(14px,1.55vw,18px);font-weight:800;letter-spacing:.11em;line-height:1.4;margin-bottom:12px}
