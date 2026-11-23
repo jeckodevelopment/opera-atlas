@@ -122,6 +122,58 @@ class SourceAutomationTests(unittest.TestCase):
         for key in expected:
             self.assertNotEqual(by_venue[key]["status"],"operational")
 
+    def test_scan_attention_separates_unverified_future_from_technical_failure(self):
+        from scripts.source_automation import INDEX, scan_attention, classify_index_scan
+        import json
+        index=json.loads(INDEX.read_text())
+        health={"sources":[
+            {"key":"chieti-marrucino-season-2027",
+             "status":"unavailable_or_invalid",
+             "diagnostic":"future_official_programme_unverified"},
+            {"key":"modena-opera-2026-27",
+             "status":"unavailable_or_invalid",
+             "diagnostic":"official_html_unavailable_or_invalid"},
+            {"key":"modena-teatro-opera-2026-27",
+             "status":"success","current_scan_verified":True},
+            {"key":"napoli-san-carlo-rolling-opera",
+             "status":"unavailable_or_invalid",
+             "diagnostic":"official_anti_bot_challenge"},
+            {"key":"salerno-verdi-rolling-opera",
+             "status":"unavailable_or_invalid",
+             "diagnostic":"invalid_index_or_source_config"}]}
+        report=scan_attention(index,health)
+        by_key={x["source_key"]:x for x in report["sources"]}
+        self.assertEqual(by_key["chieti-marrucino-season-2027"]["scan_classification"],
+                         "future_programme_not_verified")
+        self.assertFalse(by_key["chieti-marrucino-season-2027"]["requires_technical_attention"])
+        modena=by_key["modena-opera-2026-27"]
+        self.assertEqual(modena["scan_classification"],"fetch_unavailable")
+        self.assertTrue(modena["requires_technical_attention"])
+        self.assertIn("modena-teatro-opera-2026-27",modena["other_successful_official_sources"])
+        self.assertEqual(by_key["napoli-san-carlo-rolling-opera"]["scan_classification"],
+                         "access_blocked")
+        self.assertEqual(by_key["salerno-verdi-rolling-opera"]["scan_classification"],
+                         "parser_or_source_validation_failed")
+        self.assertEqual(classify_index_scan({"status":"success",
+                          "current_scan_verified":False}),
+                         "parser_or_source_validation_failed")
+        self.assertEqual(report["total"],len(index["sources"]))
+
+    def test_scan_attention_does_not_mark_future_404_as_unpublished_season(self):
+        from scripts.source_automation import INDEX, scan_attention
+        import json
+        index=json.loads(INDEX.read_text())
+        health={"sources":[{"key":"modena-municipal-opera-2027-28",
+                            "status":"unavailable_or_invalid",
+                            "diagnostic":"official_html_unavailable_or_invalid"}]}
+        result=scan_attention(index,health)
+        future=next(x for x in result["sources"]
+                    if x["source_key"]=="modena-municipal-opera-2027-28")
+        self.assertEqual(future["scan_classification"],"fetch_unavailable")
+        self.assertTrue(future["requires_technical_attention"])
+        self.assertFalse(future["has_healthy_alternative"])
+        self.assertNotIn("not_published",str(future))
+
     def test_index_link_does_not_equal_success(self):
         from scripts.source_automation import DIRECTORY, DAILY, INDEX
         import json
