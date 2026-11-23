@@ -76,6 +76,7 @@ VENUE_BY_SOURCE={
     "filarmonico-verona-opera-2027":("Verona","Teatro Filarmonico"),
     "pisa-verdi-opera-2026-27":("Pisa","Teatro Verdi"),
     "salerno-verdi-opera-2026":("Salerno","Teatro Municipale Giuseppe Verdi"),
+    "festival-verdi-rolling":("Parma","Teatro Regio di Parma"),
     "macerata-festival-2027":("Macerata","Arena Sferisterio"),
     "sassari-de-carolis-opera-2026":("Sassari","Teatro Comunale di Sassari"),
     "messina-vittorio-opera-2026-27":("Messina","Teatro Vittorio Emanuele"),
