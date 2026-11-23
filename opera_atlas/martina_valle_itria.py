@@ -1,4 +1,4 @@
-"""First-party Festival della Valle d'Itria opera at Palazzo Ducale.
+"""First-party Festival della Valle d'Itria operas at exact official venues.
 
 The same programme includes concerts, ballets, and operas in other venues.
 All candidate pages must be independently verified by genre, credited work,
@@ -16,8 +16,9 @@ HOST="www.festivaldellavalleditria.it"
 INDEX="https://www.festivaldellavalleditria.it/programma-2026"
 EVENT=re.compile(r"/spettacolo/([a-z0-9][a-z0-9-]*)/(20\d{2})-(\d{2})-(\d{2})/?")
 MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,"luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12}
-DATES=re.compile(r"([0-3]?\d)\s+("+ "|".join(MONTHS) +r")\s+(20\d{2})\s*\.\s*H\s*([01]?\d|2[0-3]):([0-5]\d)\s+Palazzo\s+Ducale,\s*Martina\s+Franca",re.I)
-PALACE="Palazzo Ducale di Martina Franca"
+DATES=re.compile(r"([0-3]?\d)\s+("+ "|".join(MONTHS) +r")\s+(20\d{2})\s*\.\s*H\s*([01]?\d|2[0-3]):([0-5]\d)\s+(Palazzo\s+Ducale|Chiostro\s+del\s+Carmine),\s*Martina\s+Franca",re.I)
+VENUES={"palazzo ducale":"Palazzo Ducale di Martina Franca",
+        "chiostro del carmine":"Chiostro del Carmine"}
 
 class Page(HTMLParser):
     def __init__(self):
@@ -78,8 +79,10 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     details=text.split(" Dettagli ",1)[-1].split(" Contatti ",1)[0]
     if not re.search(r"\bCategoria:\s*Opera\b",details,re.I):
         raise ValueError("Valle d'Itria page is not categorised as opera")
-    if not re.search(r"\bDove:\s*Palazzo\s+Ducale,\s*Martina\s+Franca\b",details,re.I):
-        raise ValueError("Valle d'Itria performance is not at Palazzo Ducale")
+    venue_match=re.search(r"\bDove:\s*(Palazzo\s+Ducale|Chiostro\s+del\s+Carmine),\s*Martina\s+Franca\b",details,re.I)
+    if not venue_match:
+        raise ValueError("Valle d'Itria exact performance venue not verified")
+    venue=VENUES[" ".join(venue_match.group(1).lower().split())]
     # A special officially documented ballet/opera double bill is not
     # two operas: Pulcinella is a ballet with song, Orfeo the opera.
     if heading.casefold()=="pulcinella / la favola di orfeo (dittico)":
@@ -101,17 +104,19 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
             raise ValueError("unverified first-party composer")
         title=heading
     pairs=DATES.findall(pre)
-    if len(pairs)!=len(re.findall(r"Palazzo\s+Ducale,\s*Martina\s+Franca",pre,re.I)):
+    if len(pairs)!=len(re.findall(r"(?:Palazzo\s+Ducale|Chiostro\s+del\s+Carmine),\s*Martina\s+Franca",pre,re.I)):
         raise ValueError("incomplete official festival showtime evidence")
     if not pairs or len(pairs)>12:
         raise ValueError("no official Palazzo Ducale performances")
     recital=[]
     year=int(EVENT.fullmatch(urlsplit(url).path)[2])
-    for d,m,y,h,minute in pairs:
+    for d,m,y,h,minute,performance_venue in pairs:
+        if VENUES[" ".join(performance_venue.lower().split())]!=venue:
+            raise ValueError("mixed physical festival venues on one event")
         if int(y)!=year:raise ValueError("festival date outside event season")
         try:day=date(year,MONTHS[m.casefold()],int(d)).isoformat()
         except ValueError:raise ValueError("invalid official festival date")
         recital.append((day,f"{int(h):02d}:{int(minute):02d}"))
     if len(set(x[0] for x in recital))!=len(recital):
         raise ValueError("duplicate festival showtime")
-    return title,composer,PALACE,recital
+    return title,composer,venue,recital

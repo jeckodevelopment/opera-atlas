@@ -367,6 +367,8 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                if source_key=="haydn-rolling-opera" else {default_venue})
     if source_key=="pesaro-rof-2026":
         permitted={"Teatro Gioachino Rossini","Auditorium Scavolini"}
+    if source_key=="martina-valle-itria-2026":
+        permitted={"Palazzo Ducale di Martina Franca","Chiostro del Carmine"}
     if source_key=="trapani-luglio-musicale-2026":
         permitted={"Teatro Giuseppe Di Stefano","Teatro M° Tonino Pardo"}
     if source_key=="mantova-sociale-rolling-opera":

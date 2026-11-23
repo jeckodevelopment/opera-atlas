@@ -41,7 +41,8 @@ class MartinaFestivalTests(unittest.TestCase):
         source=next(x for x in validate_config(config) if x["key"]==KEY)
         self.assertEqual(source["url"],INDEX)
         self.assertEqual(INDEX_VENUES[KEY],
-                         ("Martina Franca|Palazzo Ducale di Martina Franca",))
+                         ("Martina Franca|Palazzo Ducale di Martina Franca",
+                          "Martina Franca|Chiostro del Carmine"))
         self.assertEqual(VENUE_BY_SOURCE[KEY],
                          ("Martina Franca","Palazzo Ducale di Martina Franca"))
         self.assertIn(KEY,ROLLOVER_KEYS)
@@ -85,10 +86,29 @@ class MartinaFestivalTests(unittest.TestCase):
                            ("2026-07-29","21:00")]))
         self.assertNotIn("Pulcinella",parse_detail(doublebill(),url=DUET)[0])
 
+    def test_schiavo_verified_chiostro_is_not_attributed_to_palace(self):
+        html=page(title="Il schiavo di sua moglie",
+                  composer="Francesco Provenzale",
+                  venue="Chiostro del Carmine")
+        parsed=parse_detail(html,url=IL_SCHIAVO)
+        self.assertEqual(parsed[:3],(
+            "Il schiavo di sua moglie","Francesco Provenzale",
+            "Chiostro del Carmine"))
+        registry=json.loads(REGISTRY.read_text())
+        facts=[{"venue":parsed[2],"date":day,
+                "starts_at":day+"T21:00:00+02:00"}
+               for day,_ in parsed[3]]
+        self.assertEqual(verified_venue(KEY,facts,registry)[:2],
+                         ("Martina Franca","Chiostro del Carmine"))
+        mismatch=html.replace("Dove: Chiostro del Carmine",
+                              "Dove: Palazzo Ducale")
+        with self.assertRaisesRegex(ValueError,"mixed physical"):
+            parse_detail(mismatch,url=IL_SCHIAVO)
+
     def test_concert_other_venue_and_partial_dates_are_excluded(self):
         for html in (
             page(category="Concerto"),
-            page(venue="Chiostro del Carmine"),
+            page(venue="Teatro Comunale non verificato"),
             page(composer=""),
             page().replace("25 Luglio 2026 . H 21:00","25 Luglio 2027 . H 21:00"),
             page().replace("25 Luglio 2026 . H 21:00","32 Luglio 2026 . H 21:00"),
