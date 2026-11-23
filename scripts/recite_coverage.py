@@ -18,6 +18,7 @@ from scripts.publish_catalog_v2 import ROOT, payload
 
 EVIDENCE = ROOT / "data/candidate-detail-evidence.json"
 OUT = ROOT / "public/catalog/recite-coverage.json"
+PROGRAMS = ROOT / "public/catalog/programs.json"
 
 # Explicit aliases only: never confuse Teatro Regio Torino with Regio Parma.
 ALIASES = {
@@ -40,7 +41,7 @@ def normalized_url(value: str) -> str:
     return (parsed.hostname or "").lower().removeprefix("www.") + parsed.path.rstrip("/").lower()
 
 
-def detect(published: dict, observations: dict) -> dict:
+def detect(published: dict, observations: dict, programs: dict | None = None) -> dict:
     # Only confirmed official dates with an identified physical venue qualify.
     # Index candidate count is NOT a performance count.
     state = defaultdict(lambda: {"published": set(), "observed": set(),
@@ -54,6 +55,29 @@ def detect(published: dict, observations: dict) -> dict:
         for day, hour in p["dates"]:
             token = (day, hour or "")
             s["published"].add(token)
+    # Composite programmes are one ticketed performance, not one per work.
+    # Include already-published programme dates in the coverage numerator.
+    for program in (programs or {}).get("programs", []):
+        venue = program.get("venue")
+        if not venue:
+            continue
+        s = state[canonical(venue)]
+        if not s["name"]:
+            s["name"] = venue
+            s["city"] = program.get("municipality", "")
+            s["region"] = program.get("region", "")
+        for performance in program.get("performances", []):
+            day = performance.get("local_date")
+            stamp = performance.get("starts_at")
+            if not isinstance(day, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
+                continue
+            hour = stamp[11:16] if isinstance(stamp, str) and stamp.startswith(day + "T") else ""
+            dated = {(d, h) for d, h in s["published"] if d == day}
+            if (day, hour) in dated:
+                continue
+            if len(dated) == 1 and ((day, "") in dated or not hour):
+                s["published"].difference_update(dated)
+            s["published"].add((day, hour))
     # The same official performance can be found more than once or in a
     # multi-work programme: key by venue/date/time, not work title.
     for page in observations.get("evidence", []):
@@ -123,7 +147,8 @@ def detect(published: dict, observations: dict) -> dict:
 def publish(check: bool = False) -> dict:
     published = json.loads(MANIFEST.read_text(encoding="utf-8"))
     observations = json.loads(EVIDENCE.read_text(encoding="utf-8"))
-    report = detect(published, observations)
+    programs = json.loads(PROGRAMS.read_text(encoding="utf-8"))
+    report = detect(published, observations, programs)
     expected = payload(report)
     if check:
         if not OUT.exists() or OUT.read_bytes() != expected:
