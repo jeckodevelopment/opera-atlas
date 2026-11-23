@@ -46,7 +46,7 @@
 <script>
 "use strict";
 const BASE="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/";
-const FEEDS={auto:"public/catalog/source-automation.json",rec:"public/catalog/recite-coverage.json",cat:"public/catalog/catalogation-diagnostics.json",evidence:"public/catalog/candidate-publication-evidence.json",live:"public/catalog/live-publication-health.json",ops:"public/catalog/pipeline-operations-health.json"};
+const FEEDS={auto:"public/catalog/source-automation.json",rec:"public/catalog/recite-coverage.json",cat:"public/catalog/catalogation-diagnostics.json",evidence:"public/catalog/candidate-publication-evidence.json",live:"public/catalog/live-publication-health.json",ops:"public/catalog/pipeline-operations-health.json",manifest:"public/catalog/v2/manifest.json"};
 const $=id=>document.getElementById(id);
 const el=(tag,text,cls)=>{const x=document.createElement(tag);if(text!==undefined)x.textContent=String(text);if(cls)x.className=cls;return x};
 const clear=id=>$(id).replaceChildren();
@@ -110,8 +110,9 @@ function buildActivities(){
  const missing=venues.filter(x=>num(x.rec?.missing)>0);
  if(missing.length)activities.push({type:"publication",priority:2,title:"Recite individuate non ancora pubblicate",detail:nf(missing.reduce((s,x)=>s+num(x.rec.missing),0))+" recite in "+missing.length+" teatri; il dato non misura l'intera stagione",target:"venues"});
  if(num(data.ops.workflow_alerts)>0)activities.push({type:"technical",priority:2,title:"Workflow che richiedono attenzione",detail:num(data.ops.workflow_alerts)+" processi segnalati dal monitoraggio operativo",target:"tech"});
- const old=!auditSummary().same;
- if(old)activities.push({type:"publication",priority:2,title:"Verifica online non allineata al catalogo",detail:"Il controllo online si riferisce a una versione differente del catalogo: non è una prova di errore di pubblicazione.",target:"tech"});
+ const auditStatus=auditSummary();
+ if(!auditStatus.same)activities.push({type:"publication",priority:2,title:"Verifica online non allineata al catalogo",detail:"Il controllo online si riferisce a una versione differente dal manifest canonico: non prova la pubblicazione della release attuale.",target:"tech"});
+ if(!auditStatus.editorialCurrent)activities.push({type:"editorial",priority:2,title:"Evidenze editoriali da aggiornare",detail:"Il feed dei collegamenti alle candidate è riferito a una release precedente, indipendentemente dal risultato del browser audit.",target:"catalog"});
  const source=data.auto.index_scan_attention?.classifications||{};
  const blocked=num(source.access_blocked)+num(source.fetch_unavailable)+num(source.parser_or_source_validation_failed);
  if(blocked)activities.push({type:"technical",priority:2,title:"Indici stagionali con verifica non riuscita",detail:nf(blocked)+" sorgenti con accesso, recupero o validazione da approfondire; non implica che tutte le rispettive sedi siano inattive",target:"tech"});
@@ -119,14 +120,18 @@ function buildActivities(){
 }
 function auditSummary(){
  const audit=data.live||{},catalog=data.evidence||{},total=audit.total_checked;
- const same=typeof audit.catalog_release_sha256==="string"&&
-            typeof catalog.catalog_release_sha256==="string"&&
-            audit.catalog_release_sha256===catalog.catalog_release_sha256;
+ const currentSha=data.manifest?.files?.stagings?.sha256;
+ const same=typeof currentSha==="string"&&currentSha.length===64&&
+            audit.catalog_release_sha256===currentSha;
+ // The editorial linkage feed has a separate lifecycle. Its delay must not
+ // invalidate a real browser audit of the current canonical manifest.
+ const editorialCurrent=typeof currentSha==="string"&&
+            catalog.catalog_release_sha256===currentSha;
  const verified=audit.totals?.verified_live;
- // Matching digest proves same catalog release, not exhaustive site coverage.
- const valid=Number.isInteger(total)&&total>=0&&
+ // Matching digest proves release identity, not exhaustive site coverage.
+ const valid=Number.isInteger(total)&&total>0&&
              Number.isInteger(verified)&&verified>=0&&verified<=total;
- return {same,valid,total,verified,date:audit.checked_at};
+ return {same,editorialCurrent,valid,total,verified,date:audit.checked_at};
 }
 function statuses(){
  clear("process-status");
