@@ -59,6 +59,24 @@ def audit(directory: dict, indexes: dict, daily: dict, health: dict,
     )
     health_missing = sorted(index_set - set(health_keys))
     health_stale = sorted(set(health_keys) - index_set)
+    health_by_key = {row["key"]: row for row in checks}
+    unmapped_index_evidence = []
+    for source in sorted(configured, key=lambda row: row["key"]):
+        if source["key"] not in index_missing_mapping:
+            continue
+        check = health_by_key.get(source["key"], {})
+        unmapped_index_evidence.append({
+            "source_key": source["key"],
+            "official_url": source.get("official_url"),
+            "calendar_url": source.get("url"),
+            "access_status": source.get("access_status"),
+            "scan_status": check.get("status", "not_checked"),
+            "diagnostic": check.get("diagnostic"),
+            "verified_success": (check.get("status") == "success"
+                                 and check.get("current_scan_verified") is True),
+            "last_attempt_at": check.get("last_attempt_at"),
+            "mapping_action": "requires_verified_physical_venue_evidence",
+        })
     return {
         "scope": "read_only_source_to_venue_mapping",
         "venues": len(venues),
@@ -71,6 +89,7 @@ def audit(directory: dict, indexes: dict, daily: dict, health: dict,
         "duplicate_detail_keys": duplicates(detail_keys),
         "duplicate_health_keys": duplicates(health_keys),
         "index_missing_explicit_mapping": index_missing_mapping,
+        "unmapped_index_evidence": unmapped_index_evidence,
         "index_stale_mapping": index_stale_mapping,
         "index_unknown_venue_targets": index_unknown_venues,
         "daily_unmapped_adapters": daily_unknown_adapters,
