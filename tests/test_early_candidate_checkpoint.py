@@ -28,10 +28,12 @@ class EarlyCandidateCheckpointTests(unittest.TestCase):
         self.assertNotIn("site/performances.json",early)
         self.assertLess(workflow.index("- name: Validate current public catalog before acquisition"),start)
         self.assertLess(end,workflow.index("- name: Incrementally scan only explicitly approved official pages"))
-        # No early retry dispatch: exactly one late retry after all checkpoints.
+        # Deferred source checkpoints recover from main without re-crawling.
         self.assertNotIn("catalog-refresh-retry",early)
-        final=workflow.split("- name: Retry deferred catalog once",1)[1]
-        self.assertIn("steps.early_national_checkpoint.outputs.deferred == 'true'",final)
+        self.assertIn("steps.early_national_checkpoint.outputs.deferred == 'true'",workflow)
+        recovery=workflow.split("  recover_from_checkpoint:",1)[1]
+        self.assertIn("needs.update.outputs.recovery_required == 'true'",recovery)
+        self.assertNotIn("--allow-network",recovery)
 
 if __name__=="__main__":
     unittest.main()
