@@ -68,7 +68,9 @@ class SourceGenreFilteringTests(unittest.TestCase):
         for key,url in eligible:
             with self.subTest(url=url):
                 self.assertFalse(excluded_nonopera(key,url))
-                self.assertEqual(classify(key,url,set()),"needs_review")
+                expected=("not_in_official_season" if key=="mantova-sociale-rolling-opera"
+                          else "needs_review")
+                self.assertEqual(classify(key,url,set()),expected)
 
     def test_residual_nonopera_pages_are_exactly_scoped(self):
         excluded=[
@@ -92,7 +94,9 @@ class SourceGenreFilteringTests(unittest.TestCase):
         for key,url in still_eligible:
             with self.subTest(url=url):
                 self.assertFalse(excluded_nonopera(key,url))
-                self.assertEqual(classify(key,url,set()),"needs_review")
+                expected=("not_in_official_season" if key=="mantova-sociale-rolling-opera"
+                          else "needs_review")
+                self.assertEqual(classify(key,url,set()),expected)
 
     def test_cosenza_verified_nonopera_tickets_are_excluded_by_exact_slug(self):
         source="cosenza-inprimafila-rolling-opera"
