@@ -86,6 +86,24 @@ class MartinaFestivalTests(unittest.TestCase):
                            ("2026-07-29","21:00")]))
         self.assertNotIn("Pulcinella",parse_detail(doublebill(),url=DUET)[0])
 
+    def test_mixed_orfeo_source_heading_markup_preserves_opera_only(self):
+        # The official festival can collapse the slash spacing when H1
+        # children are rendered into a single text string.
+        html=doublebill().replace(
+            "Pulcinella / La favola di Orfeo (dittico)",
+            "Pulcinella/La favola di Orfeo (dittico)")
+        title,composer,venue,recitals=parse_detail(html,url=DUET)
+        self.assertEqual((title,composer,venue),
+                         ("La favola di Orfeo","Alfredo Casella",
+                          "Palazzo Ducale di Martina Franca"))
+        self.assertEqual(len(recitals),3)
+        for heading in ("Pulcinella / Altra opera (dittico)",
+                        "Pulcinella / La favola di Orfeo (concerto)"):
+            with self.subTest(heading=heading),self.assertRaises(ValueError):
+                parse_detail(html.replace(
+                    "Pulcinella/La favola di Orfeo (dittico)",heading),
+                    url=DUET)
+
     def test_schiavo_verified_chiostro_is_not_attributed_to_palace(self):
         html=page(title="Il schiavo di sua moglie",
                   composer="Francesco Provenzale",

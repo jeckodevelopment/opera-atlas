@@ -85,7 +85,14 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     venue=VENUES[" ".join(venue_match.group(1).lower().split())]
     # A special officially documented ballet/opera double bill is not
     # two operas: Pulcinella is a ballet with song, Orfeo the opera.
-    if heading.casefold()=="pulcinella / la favola di orfeo (dittico)":
+    # The first-party CMS may collapse spaces around the slash or insert
+    # extra whitespace from H1 emphasis tags. Match only this exact
+    # documented pairing; a different mixed programme remains unverified.
+    normalized_heading=re.sub(r"\s+", " ", heading).strip()
+    is_casella_bill=bool(re.fullmatch(
+        r"pulcinella\s*/\s*la favola di orfeo\s*\(dittico\)",
+        normalized_heading, re.I))
+    if is_casella_bill:
         if (not re.search(r"Musiche di Igor Stravinskij e Alfredo Casella",pre)
             or not re.search(r"Pulcinella,\s*balletto\b",pre,re.I)
             or not re.search(r"La favola di Orfeo:\s*opera da camera\b",pre,re.I)):
