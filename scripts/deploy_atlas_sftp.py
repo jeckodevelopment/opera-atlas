@@ -12,7 +12,7 @@ import tempfile
 from pathlib import Path
 
 
-from scripts.deploy_atlas import FILES, PUBLIC_URL, build
+from scripts.deploy_atlas import FILES, PUBLIC_URL, build, verify_live
 
 
 def configuration(env=None):
@@ -118,6 +118,8 @@ def publish(env=None, connector=make_client):
                 for name in sorted(FILES):
                     sftp.put(str(folder / name), posixpath.join(destination, name), confirm=True)
                 print("Uploaded " + str(len(FILES)) + " Atlas files via SFTP/22 to " + PUBLIC_URL)
+                verify_live(folder)
+                print("Verified published Atlas files and deep routes over HTTPS")
         finally:
             client.close()
 
