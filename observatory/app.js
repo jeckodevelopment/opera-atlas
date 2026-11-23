@@ -264,6 +264,26 @@ async function main(){
   try{editorials=await loadEditorial(ROOT)}catch(_err){try{editorials=await loadEditorial(FALLBACK)}catch(_fallback){editorials=null}}
   populate();$("year").addEventListener("change",render);$("season").addEventListener("change",render);$("region").addEventListener("change",render);
   render();$("content").hidden=false;
+  const pdfButton=$("report-pdf");
+  if(window.OperaPlusPdfReport)pdfButton.disabled=false;
+  pdfButton.addEventListener("click",async()=>{
+   if(!window.OperaPlusPdfReport || !catalogue || pdfButton.disabled)return;
+   const year=$("year").value,season=$("season").value,region=$("region").value;
+   const selected=rows.filter(r=>(year==="all"||r.year===year)&&(season==="all"||r.season===season)&&(region==="all"||r.region===region));
+   pdfButton.disabled=true;pdfButton.setAttribute("aria-busy","true");
+   try{
+    const blob=await window.OperaPlusPdfReport.create({
+      rows:selected,allRows:rows,editorials,year,season,region,reviewedOn:catalogue.manifest.reviewed_on
+    });
+    if(!blob || blob.type!=="application/pdf" || blob.size<1000)throw Error("Il report PDF generato non è valido.");
+    const url=URL.createObjectURL(blob),a=document.createElement("a");
+    a.href=url;a.download="opera-plus-osservatorio-"+(year==="all"?"tutti-gli-anni":year)+".pdf";
+    document.body.append(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),60000);
+   }catch(error){
+    text($("status"),"Impossibile generare il rapporto PDF: "+error.message);
+   }finally{pdfButton.disabled=false;pdfButton.removeAttribute("aria-busy")}
+  });
   text($("status"),"");text($("updated"),"Versione dati: "+(catalogue.manifest.reviewed_on||"data non indicata")+". Recite annullate e rinviate escluse.");
  }catch(error){text($("status"),"Dati temporaneamente non disponibili. Nessuna statistica mostrata: "+error.message)}
 }
