@@ -193,7 +193,8 @@ def normalize_source_seed_trieste_genre(rows:list[dict],key:str,url:str,
     return modified
 
 
-def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict)->dict:
+def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict,*,
+                                 quarantine:list[dict]|None=None)->dict:
     """Resolve new work identities from consistent, officially credited facts.
 
     Applies identical acceptance rules to every approved source. Adapter-specific
@@ -292,7 +293,15 @@ def official_identity_candidates(evidence:dict,candidates:dict,intelligence:dict
         seed=seeds.get((key,url))
         if seed and (normalized(seed["title"])!=normalized(title)
                      or normalized(seed["composer"])!=normalized(composer)):
-            raise ValueError("official source contradicts verified opera identity seed")
+            # Strict callers (including security tests) must still fail closed.
+            # The unattended batch may instead quarantine this exact record;
+            # it cannot contribute any identity, work, staging or recita.
+            if quarantine is None:
+                raise ValueError("official source contradicts verified opera identity seed")
+            quarantine.append({"candidate_id":record["candidate_id"],
+                               "source_key":key,
+                               "reason":"official_identity_contradicts_reviewed_seed"})
+            continue
         # The theater may publish SHOUTING UPPERCASE headings. Use the
         # source-bound reviewed work title for display only, retaining the
         # original official observations and the composer identity checks.
@@ -1561,7 +1570,9 @@ def main():
     report["new_recite"]+=calendar["new_recite"]
     report["auto_skipped"]+=calendar["auto_skipped"]
     from scripts.publish_work_editorial import EDITORIAL, build_editorial
-    intelligence=official_identity_candidates(evidence,candidates,intelligence)
+    identity_quarantine=[]
+    intelligence=official_identity_candidates(
+        evidence,candidates,intelligence,quarantine=identity_quarantine)
     # Previously identified works should not wait for a second remote lookup
     # when their source-attributed synopsis, history and archival art exist.
     intelligence=complete_cached_verified_work_cards(intelligence,evidence)
@@ -1588,6 +1599,9 @@ def main():
     report=remove_retries_for_published_works(
         report,candidates,prior_to_new_work_publication,next_facts)
     report["auto_skipped"]+=late["auto_skipped"]
+    # Keep rejected identities actionable in the existing health diagnostics.
+    # An unrelated verified opera can still publish in the same transaction.
+    report["auto_skipped"]+=identity_quarantine
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]
