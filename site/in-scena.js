@@ -49,6 +49,7 @@
     a.href=window.OperaAtlasCatalog.urls(p).production;heading.append(a);body.append(heading);
     if(p.composer)body.append(node("p","today-composer",p.composer));
     body.append(node("p","today-venue",p.venue));
+    if(p.local_date!==dateInput.value)body.append(node("p","today-future-date",labelDate(p.local_date)));
     body.append(node("p","today-hour",p.time_known && typeof p.starts_at==="string" ? "Ore "+p.starts_at.slice(11,16) : "Orario da confermare"));
     const detail=node("a","detail-link","Dettagli e rappresentazioni");detail.href=window.OperaAtlasCatalog.urls(p).production;body.append(detail);
     article.append(body);return article;
@@ -62,6 +63,13 @@
     cards.replaceChildren(...found.map(card));
     count.textContent=found.length+" "+(found.length===1?"rappresentazione":"rappresentazioni")+" in programma";
     empty.hidden=found.length>0;
+    const suggestions=el("today-suggestions"),future=el("today-future-cards");
+    const next=found.length===0 && !region.value && !city.value && !time.value
+      ? performances.filter(p=>p.local_date>dateInput.value && p.status!=="cancelled" && p.status!=="canceled")
+        .sort((a,b)=>a.local_date.localeCompare(b.local_date)||(a.starts_at||"").localeCompare(b.starts_at||"")).slice(0,3)
+      : [];
+    suggestions.hidden=next.length===0;
+    future.replaceChildren(...next.map(card));
     const params=new URLSearchParams(window.location.search);params.set("data",dateInput.value);
     history.replaceState(null,"",window.location.pathname+"?"+params.toString());
   }
