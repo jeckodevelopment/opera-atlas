@@ -1,7 +1,7 @@
 """Regression tests for future Salerno source and mislabelled municipal ballets."""
 import json
 import unittest
-from opera_atlas.salerno_future_parser import INDEX,extract_index,eligible_detail,parse_detail
+from opera_atlas.salerno_future_parser import INDEX,extract_index,eligible_detail,parse_detail,FutureSalernoSeasonNotYetVerified
 from scripts.discover_season_indexes import eligible,extract,CONFIG,validate_config
 from scripts.collect_candidate_details import parse_known_opera_detail,parse_source_credited_opera_detail
 
@@ -53,6 +53,26 @@ class SalernoFutureTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             extract_index(index_html().replace("Stagione Lirica e di Balletto 2027",
                                                "Stagione di Prosa 2027"),url=INDEX,min_links=1)
+
+    def test_real_2026_only_listing_means_future_year_unverified(self):
+        # The live municipal page still explicitly announces 2026.
+        # Future monitoring must not invent 2027 productions or fail as
+        # malformed when the known-current edition is internally coherent.
+        official_2026 = (
+            '<h3>Teatro Verdi – Stagione Lirica e di Balletto 2026</h3>'
+            '<a href="/eventi/turandot-2026/">Opera Stagione Lirica '
+            'Teatro Verdi Turandot | 2026</a>'
+            '<a href="/eventi/il-barbiere-di-siviglia-2026/">'
+            'Opera Stagione Lirica Teatro Verdi Il barbiere di Siviglia | 2026</a>')
+        with self.assertRaises(FutureSalernoSeasonNotYetVerified):
+            extract_index(official_2026,url=INDEX,min_links=1)
+        with self.assertRaisesRegex(ValueError,
+                                   "official Teatro Verdi opera season identity missing"):
+            extract_index(official_2026.replace(
+                "Stagione Lirica e di Balletto 2026","Stagione di Prosa 2026"),
+                url=INDEX,min_links=1)
+        self.assertEqual(extract_index(index_html(),url=INDEX,min_links=1),
+                         [BALLET,OPERA])
 
     def test_credited_future_opera_dates_are_canonical_and_year_consistent(self):
         self.assertEqual(parse_detail(detail(),url=OPERA),
