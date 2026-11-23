@@ -80,8 +80,12 @@ Sono esclusi dalla prima release: account personali, vendita diretta di bigliett
 - Il progetto è già nazionale, non più un esperimento Regio/OperaLombardia. Nel tracker #679 (diagnostica di riferimento) risultavano **64/64 teatri operativi**, e **69/87 scansioni-indice riuscite**; il dato riguarda quel checkpoint e **non** conferma l'inventario complessivo dei circa 70 teatri né cartelloni completi. Ricalcolare dai feed prima di ogni dichiarazione di progresso.
 - `data/candidate-reconciliation-health.json`, 2026-11-23 15:46 UTC: **440** candidati, **256** già catalogati, **17** `needs_review`, **149** esclusi non-opera, **18** fuori stagione. La diagnostica dei dettagli nazionale successiva riporta **17 tentati / 17 esiti**. Questi sono candidati, non 440 opere o recite.
 - `public/catalog/recite-coverage.json` misura le **recite ufficiali finora individuate** vs pubblicate, **non** la percentuale di stagione completa.
-- Issue aperte dopo la bonifica amministrativa di #320: **13** (al momento del riallineamento); nessuna PR aperta nella precedente verifica. #320 chiusa come duplicata della #685, non come requisito implementativo risolto.
+- Il backlog è dinamico: dopo la bonifica di #320 e #53 e l'apertura di #730, la successiva verifica ha contato **14** issue aperte. I numeri storici non sono KPI permanenti. #320 e #53 sono chiuse come duplicati amministrativi, non come requisiti implementativi completati.
 - Documenti da leggere insieme: `docs/DATA_MODEL.md`, `docs/SOURCE_REGISTRY.md`, `docs/ATLAS_UI_APPROVED.md`; feed `data/season-index-health.json`, `data/candidate-reconciliation-health.json`, `data/candidate-detail-health.json`, `public/catalog/source-automation.json` e `public/catalog/recite-coverage.json`.
+
+## Registro dei requisiti e issue aperte
+
+Il censimento datato delle issue, i casi di chiusura amministrativa, le evidenze richieste e la sequenza di audit sono nel [registro dei requisiti 1.0.0](REQUIREMENTS_STATUS.md). Il tracker festival [#730](https://github.com/jeckodevelopment/opera-atlas/issues/730) integra **F2** per acquisizione/relazioni canoniche e **F3** per directory/edizioni; non sostituisce le issue nazionali #178/#685.
 
 ## Backlog di riallineamento e precedenze
 
