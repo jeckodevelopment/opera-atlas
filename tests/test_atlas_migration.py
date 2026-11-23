@@ -50,7 +50,8 @@ class AtlasMigrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as path:
             folder=Path(path)
             build(folder)
-            self.assertEqual({p.name for p in folder.iterdir()},set(FILES))
+            self.assertEqual({p.name for p in folder.iterdir() if p.is_file()},set(FILES))
+            self.assertTrue((folder/'opere/la-traviata/index.html').is_file())
             html=(folder/"index.html").read_text(encoding="utf-8")
             self.assertIn("styles.css?v=",html)
             self.assertIn("app.js?v=",html)

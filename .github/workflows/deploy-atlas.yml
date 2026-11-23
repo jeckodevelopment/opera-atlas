@@ -1,5 +1,8 @@
 name: Publish Opera Atlas to opera.plus/atlas
 on:
+  schedule:
+    # Refresh SEO HTML from the latest published catalog without re-crawling sources.
+    - cron: '11 13 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -12,6 +15,8 @@ on:
       # Tests run independently in CI. Test-only changes do not alter the
       # static frontend and must not initiate an unrelated SFTP deployment.
       # A failed release can be retried via workflow_dispatch.
+      - 'scripts/prerender_atlas.py'
+      - 'scripts/atlas_seo.py'
       - 'scripts/deploy_atlas.py'
       - 'scripts/deploy_atlas_simple_ftp.py'
       - 'scripts/deploy_atlas_sftp.py'
@@ -27,7 +32,7 @@ jobs:
     # The job runs the entire test suite before any SFTP connection is opened.
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 35
     environment:
       name: opera-plus-atlas
       url: https://opera.plus/atlas/
@@ -77,4 +82,4 @@ jobs:
           ATLAS_SFTP_PRIVATE_KEY: ${{ secrets.ATLAS_SFTP_PRIVATE_KEY }}
           ATLAS_SFTP_KEY_PASSPHRASE: ${{ secrets.ATLAS_SFTP_KEY_PASSPHRASE }}
           ATLAS_SFTP_KNOWN_HOSTS: ${{ secrets.ATLAS_SFTP_KNOWN_HOSTS }}
-        run: timeout --signal=TERM --kill-after=90s 11m python -u -m scripts.deploy_atlas_sftp
+        run: timeout --signal=TERM --kill-after=90s 30m python -u -m scripts.deploy_atlas_sftp

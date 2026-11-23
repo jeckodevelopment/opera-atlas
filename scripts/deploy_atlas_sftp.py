@@ -5,6 +5,7 @@ Uses the existing ATLAS_SFTP_* secrets. No server-wide changes or deletes.
 from __future__ import annotations
 
 import io
+import json
 import os
 import posixpath
 import stat
@@ -102,8 +103,17 @@ def publish(env=None, connector=make_client):
     with tempfile.TemporaryDirectory(prefix="atlas-sftp-") as tmp:
         folder = Path(tmp)
         build(folder)
-        if {p.name for p in folder.iterdir()} != set(FILES):
-            raise ValueError("Unexpected release files")
+        expected=set(FILES)
+        actual={p.name for p in folder.iterdir() if p.is_file()}
+        if actual!=expected:
+            raise ValueError("Unexpected root release files: "+str(sorted(actual.symmetric_difference(expected))))
+        manifest=json.loads((folder/"seo-routes.json").read_text(encoding="utf-8"))
+        generated=manifest.get("files",[])
+        if not isinstance(generated,list) or len(generated)!=len(set(generated)) or not generated:
+            raise ValueError("Invalid generated SEO route manifest")
+        for relative in generated:
+            if not isinstance(relative,str) or not relative.endswith("/index.html") or not (folder/relative).is_file():
+                raise ValueError("Invalid generated SEO file")
         client = connector(cfg)
         try:
             with client.open_sftp() as sftp:
@@ -117,7 +127,27 @@ def publish(env=None, connector=make_client):
                         raise ValueError("SFTP target exists but is not a directory")
                 for name in sorted(FILES):
                     sftp.put(str(folder / name), posixpath.join(destination, name), confirm=True)
-                print("Uploaded " + str(len(FILES)) + " Atlas files via SFTP/22 to " + PUBLIC_URL)
+                # All paths were checked against the canonical manifest at build.
+                # Create only subdirectories owned by canonical Atlas routes.
+                made={destination}
+                for relative in generated:
+                    subdir=posixpath.dirname(posixpath.join(destination,relative))
+                    missing=[]
+                    candidate=subdir
+                    while candidate not in made and candidate!=destination:
+                        missing.append(candidate)
+                        candidate=posixpath.dirname(candidate)
+                    for directory in reversed(missing):
+                        try:
+                            info=sftp.stat(directory)
+                        except OSError:
+                            sftp.mkdir(directory)
+                        else:
+                            if not stat.S_ISDIR(info.st_mode):
+                                raise ValueError("Canonical route is not a directory: "+directory)
+                        made.add(directory)
+                    sftp.put(str(folder/relative),posixpath.join(destination,relative),confirm=True)
+                print("Uploaded "+str(len(FILES))+" root files and "+str(len(generated))+" canonical HTML pages")
                 verify_live(folder)
                 print("Verified published Atlas files and deep routes over HTTPS")
         finally:
