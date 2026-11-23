@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-22",
+  "reviewed_on": "2026-11-23",
   "note": "Verifiable editorial profiles for previously missing canonical program components; these are not assigned permanent work IDs until a catalog transaction is approved.",
   "works": [
     {
@@ -94,6 +94,39 @@
           "https://www.maggiofiorentino.com/news/comunicati/jennae-dark-prima-assoluta-14-maggio-2024/",
           "https://www.maggiofiorentino.com/events/jeanne-dark-5",
           "https://www.teatroverdi-trieste.com/it/news/presentata-la-stagione-lirica-e-di-balletto-2026-27/"
+        ]
+      }
+    },
+    {
+      "title": "Aroldo",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Tornato dalle crociate, Aroldo scopre il tradimento della moglie Mina. Diviso fra vendetta e misericordia, attraversa un conflitto familiare che culmina nella possibilità del perdono.",
+      "history": {
+        "librettist": "Francesco Maria Piave",
+        "premiere_year": 1857,
+        "premiere_date": "1857-08-16",
+        "premiere_venue": "Teatro Nuovo",
+        "premiere_city": "Rimini",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000044491",
+          "https://www.comune.rimini.it/novita/notizie/teatro-galli-verso-la-conclusione-le-prime-prove-della-nuova-produzione-dellaroldo-0",
+          "https://teatroregioparma.it/spettacolo/aroldo/"
+        ]
+      }
+    },
+    {
+      "title": "Stiffelio",
+      "composer": "Giuseppe Verdi",
+      "synopsis": "Un pastore protestante scopre che la moglie Lina gli è stata infedele. Fra il dolore del tradimento e la pressione della famiglia, la vicenda conduce alla scelta di perdonare.",
+      "history": {
+        "librettist": "Francesco Maria Piave",
+        "premiere_year": 1850,
+        "premiere_date": "1850-11-16",
+        "premiere_venue": "Teatro Grande",
+        "premiere_city": "Trieste",
+        "sources": [
+          "https://corago.unibo.it/opera/Z000045023",
+          "https://teatroregioparma.it/spettacolo/stiffelio/"
         ]
       }
     }
