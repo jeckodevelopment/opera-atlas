@@ -64,6 +64,7 @@ INDEX_VENUES = {
     "pisa-verdi-opera-2026-27": ("Pisa|Teatro Verdi",),
     "pisa-future-calendar": ("Pisa|Teatro Verdi",),
     "salerno-verdi-opera-2026": ("Salerno|Teatro Municipale Giuseppe Verdi",),
+    "festival-verdi-rolling": ("Parma|Teatro Regio di Parma", "Busseto|Teatro Giuseppe Verdi"),
     "macerata-festival-2027": ("Macerata|Arena Sferisterio",),
     "scala-season-2026-27": ("Milano|Teatro alla Scala",),
     "verdi-trieste-season-2026-27": ("Trieste|Teatro Lirico Giuseppe Verdi",),

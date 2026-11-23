@@ -610,6 +610,13 @@
       "url": "https://www.inprimafila.net/index.php/eventi",
       "access_status": "approved",
       "min_links": 1
+    },
+    {
+      "key": "festival-verdi-rolling",
+      "official_url": "https://teatroregioparma.it/",
+      "url": "https://teatroregioparma.it/categoria-spettacoli/edizione-27-festival-verdi/",
+      "access_status": "approved",
+      "min_links": 3
     }
   ]
 }

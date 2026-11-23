@@ -509,6 +509,9 @@ def eligible(key:str,url:str)->bool:
     if key=="ravenna-cherubini-rolling-opera":
         from opera_atlas.ravenna_future_parser import eligible_detail
         return eligible_detail(url)
+    if key=="festival-verdi-rolling":
+        from opera_atlas.festival_verdi_future import eligible_detail
+        return eligible_detail(url)
     if key=="macerata-festival-rolling":
         from opera_atlas.macerata_future_parser import eligible_detail
         return eligible_detail(url)
@@ -839,6 +842,9 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
     if key=="ravenna-cherubini-rolling-opera":
         from opera_atlas.ravenna_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
+    if key=="festival-verdi-rolling":
+        from opera_atlas.festival_verdi_future import extract_index
+        return extract_index(html,url=index_url,min_links=min_links)
     if key=="macerata-festival-rolling":
         from opera_atlas.macerata_future_parser import extract_index
         return extract_index(html,url=index_url,min_links=min_links)
@@ -1015,6 +1021,7 @@ def validate_config(config:dict)->list[dict]:
         "salerno-verdi-opera-2026":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
         "salerno-verdi-rolling-opera":("cultura.comune.salerno.it","/teatro-verdi/la-stagione/"),
         "macerata-festival-2027":("www.sferisterio.it","/"),
+        "festival-verdi-rolling":("teatroregioparma.it","/categoria-spettacoli/edizione-27-festival-verdi/"),
         "macerata-festival-rolling":("www.sferisterio.it","/macerata-opera-festival-2027"),
         "scala-season-2026-27":("www.teatroallascala.org","/it/stagione/2026-2027/index.html"),
         "arena-festival-2027":("www.arena.it","/arena-opera-festival/spettacoli/"),
@@ -1182,6 +1189,13 @@ def validate_config(config:dict)->list[dict]:
             valid_season=index.path=="/teatro-verdi/la-stagione/" and not index.query
         elif key=="salerno-verdi-opera-2026":
             valid_season=index.path=="/teatro-verdi/la-stagione/" and not index.query
+        elif key=="festival-verdi-rolling":
+            from opera_atlas.festival_verdi_future import edition_year
+            try:
+                edition_year(item["url"])
+                valid_season=True
+            except ValueError:
+                valid_season=False
         elif key=="macerata-festival-rolling":
             from opera_atlas.macerata_future_parser import edition_year
             try:
