@@ -28,9 +28,9 @@ DETAIL_PATH = re.compile(
 )
 # Explicit non-production/event-category pages encountered in the live listing.
 INPRIMAFILA_NONPRODUCTION_SLUGS=frozenset({
-    "stagione-l-altro-teatro",
+    "stagione-l-altro-teatro-cosenza",
     "capodanno-2027-tributo-vasco-synphony-cosenza",
-    "casa-delle-culture",
+    "casa-delle-culture-cosenza",
 })
 NONOPERA = re.compile(
     r"\b(?:ballet|balletto|danza|musical|concerto|gala|galà|"
