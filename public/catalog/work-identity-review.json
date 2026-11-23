@@ -1,6 +1,28 @@
 {
-  "checked_at": "2026-11-23T07:53:28+00:00",
+  "checked_at": "2026-11-23T07:57:02+00:00",
   "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-09ac4a16bd5a9c6c6c36",
+        "oa-index-409dbd10b36d1a4be74f"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Darius Milhaud",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 2,
+      "sources": [
+        {
+          "source_key": "cosenza-inprimafila-rolling-opera",
+          "url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza"
+        },
+        {
+          "source_key": "cosenza-inprimafila-rolling-opera",
+          "url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
+        }
+      ],
+      "title": "La mère coupable"
+    },
     {
       "candidate_ids": [
         "oa-index-b4ae738f2728d4430578"
@@ -51,35 +73,18 @@
         }
       ],
       "title": "Il viaggio a Reims"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-a0c534fc596dea327ad4"
-      ],
-      "category": "missing_composer",
-      "composer": null,
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 1,
-      "sources": [
-        {
-          "source_key": "sabbioneta-antica-rolling-opera",
-          "url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/"
-        }
-      ],
-      "title": "Gran Concerto di Natale"
     }
   ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 4,
+    "candidates_checked": 6,
     "candidates_without_facts": 0,
-    "facts_examined": 11,
-    "facts_resolved": 0,
+    "facts_examined": 18,
+    "facts_resolved": 6,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 11,
+    "unmatched_facts": 12,
     "unmatched_groups": 4
   },
   "truncated": false

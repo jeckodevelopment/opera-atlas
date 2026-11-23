@@ -373,6 +373,23 @@
       ]
     },
     {
+      "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
+      "content_sha256": "8a46b3c91ad6cb512c4013707b1243efb580b818524e8b7e97c035adedeeddb1",
+      "checked_at": "2026-11-23T07:56:59+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La mère coupable",
+          "composer": "Darius Milhaud",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-12-19",
+          "starts_at": "2026-12-19T20:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-0a7e4f31ff7370ffc325",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
@@ -1290,8 +1307,8 @@
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
-      "content_sha256": "b7f4a76762f326121623fa819b31f5860b794762f001a68a10e536f5004f7b73",
-      "checked_at": "2026-11-23T07:53:28+00:00",
+      "content_sha256": "a18aeca034dd0a3f8f4367643c4c12e217ab1ee32884012973272d3ce64dd6f5",
+      "checked_at": "2026-11-23T07:57:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1862,6 +1879,51 @@
       }
     },
     {
+      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza",
+      "content_sha256": "cc2dbae7b48d603b9c84a849d2425215c7a91db6b8199766b2f4d429961cc926",
+      "checked_at": "2026-11-23T07:56:51+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-11-13",
+          "starts_at": "2026-11-13T20:30:00+01:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-11-15",
+          "starts_at": "2026-11-15T17:00:00+01:00"
+        },
+        {
+          "event_title": "La mère coupable",
+          "composer": "Darius Milhaud",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-12-19",
+          "starts_at": "2026-12-19T20:30:00+01:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-12-11",
+          "starts_at": "2026-12-11T20:30:00+01:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T17:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-4186e1c367aee6cd2028",
       "source_key": "macerata-festival-2027",
       "source_url": "https://www.sferisterio.it/macerata-opera-festival/tosca",
@@ -2032,6 +2094,30 @@
           "date": "2027-04-21",
           "starts_at": "2027-04-21T17:00:00+02:00",
           "venue": "Teatro Carlo Felice"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-47cec5ba524c35eb01c8",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
+      "content_sha256": "9f3724a458df0813685a41dd3ee859e19bc8d33d2cc53fe827a948952dde7c88",
+      "checked_at": "2026-11-23T07:55:41+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-12-11",
+          "starts_at": "2026-12-11T20:30:00+01:00"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "venue": "Teatro Alfonso Rendano",
+          "date": "2026-12-13",
+          "starts_at": "2026-12-13T17:00:00+01:00"
         }
       ]
     },
@@ -4111,8 +4197,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "d78403afd468c9cf05ff952e708b4db5615a2c1f09578d5d27d4d199be72d607",
-      "checked_at": "2026-11-23T07:51:57+00:00",
+      "content_sha256": "f033e97b3b2338b053d0b0cfa6c11ba1ea8b7e7887749268a21ec1d280b5bc80",
+      "checked_at": "2026-11-23T07:55:50+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6137,8 +6223,8 @@
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "content_sha256": "7ffb992de194efaf2389eba2e2f3c6a77b268a1495b5a15e66db182401e95007",
-      "checked_at": "2026-11-23T07:53:22+00:00",
+      "content_sha256": "807f58234cf11a30cd89d462a134dc9bc50bbc21f88e6447b4048bd232a2eabd",
+      "checked_at": "2026-11-23T07:56:54+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {

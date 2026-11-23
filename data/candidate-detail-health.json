@@ -1,19 +1,13 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T07:53:28+00:00",
+  "checked_at": "2026-11-23T07:57:02+00:00",
   "scope": "national",
-  "attempted": 38,
+  "attempted": 32,
   "outcomes": [
     {
-      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
+      "candidate_id": "oa-index-47cec5ba524c35eb01c8",
+      "outcome": "facts_found",
+      "rows": 2
     },
     {
       "candidate_id": "oa-index-4812bc1604f9f8d068ca",
@@ -39,11 +33,6 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "outcome": "facts_found",
       "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-a0c534fc596dea327ad4",
-      "outcome": "facts_found",
-      "rows": 1
     },
     {
       "candidate_id": "oa-index-adfecb3c9b4ba8c833cd",
@@ -77,24 +66,11 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-47cec5ba524c35eb01c8",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-4894aac582de2e291033",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
+        "official_composer_credit:Cosenza event is not a verified opera"
       ],
       "rows": 0
     },
@@ -112,9 +88,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
+        "official_composer_credit:Cosenza event is not a verified opera"
       ],
       "rows": 0
     },
@@ -151,17 +125,6 @@
     },
     {
       "candidate_id": "oa-index-97810ee023c87e4afd01",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9cc762326bf4b9f73be2",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -209,20 +172,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-d7e99f5acabb11c329c9",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
+        "official_composer_credit:Cosenza event is not a verified opera"
       ],
       "rows": 0
     },
@@ -260,31 +210,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e9edfcff33941447ad9e",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-f27da49c89fa1ff39b18",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
+        "official_composer_credit:Cosenza event is not a verified opera"
       ],
       "rows": 0
     },
@@ -309,35 +235,11 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-0c1929095ca16102dfeb",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
       "candidate_id": "oa-index-274f34ea2fb4f9a17a7e",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
+        "official_composer_credit:Cosenza event is not a verified opera"
       ],
       "rows": 0
     },
@@ -362,6 +264,11 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
+      "outcome": "facts_found",
+      "rows": 5
+    },
+    {
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "outcome": "facts_found",
       "rows": 4
@@ -374,6 +281,11 @@
         "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
