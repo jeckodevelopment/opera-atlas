@@ -117,6 +117,27 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
                 parse_detail(html.replace("<div>Opera da camera</div>",
                                           "<div>"+label+"</div>"),url=url)
 
+    def test_breadcrumb_repeated_title_does_not_hide_verified_genre(self):
+        # The live CMS can repeat the title in navigation before its badge.
+        html=page(title="Magic Words Circus",composer="Orazio Sciortino",
+                  genre="Opera da camera",venue="Teatro M° Tonino Pardo")
+        html=html.replace("<div>Opera da camera</div>",
+                          "<span>Magic Words Circus</span>"
+                          "<span>Breadcrumb</span><div>Opera da camera</div>")
+        url=INDEX+"magic-words-circus/"
+        result=parse_detail(html,url=url)
+        self.assertEqual(result[0:3],("Magic Words Circus",
+                          "Orazio Sciortino","Teatro M° Tonino Pardo"))
+        self.assertRaises(ValueError,parse_detail,
+                          html.replace("Opera da camera","Concerto"),url=url)
+        self.assertRaises(ValueError,parse_detail,
+                          html.replace("Opera da camera</div>",
+                                       "Opera da camera</div><div>Opera</div>"),
+                          url=url)
+        self.assertRaises(ValueError,parse_detail,
+                          html.replace("<div>Opera da camera</div>",""),
+                          url=url)
+
     def test_automatic_rollover_requires_verified_next_official_season(self):
         from scripts.rollover_season_indexes import next_index,ROLLOVER_KEYS
         from scripts.discover_season_indexes import validate_config
