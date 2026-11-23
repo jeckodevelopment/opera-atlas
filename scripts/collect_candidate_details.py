@@ -1282,6 +1282,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                             # dated ticket-office listing through robots-gated fetch.
                             ticket_key=(source_id,TICKETING)
                             ticket=fetched_pages.get(ticket_key)
+                            reviewed=False
                             try:
                                 if ticket is None:
                                     if distinct_fetches:pause(REQUEST_GAP_SECONDS)
@@ -1294,18 +1295,33 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                 title,composer,venue,shows=parse_detail(
                                     page.html,url=item["official_url"],
                                     ticketing_html=ticket.html)
-                            except (ValueError,AccessDenied,FetchUnavailable) as exc:
-                                health.append({
-                                    "candidate_id":item["id"],
-                                    "outcome":"unavailable_or_unstructured",
-                                    "reason":"no_verified_showtimes",
-                                    "diagnostic":["official_ticket_calendar:"+str(exc)[:120]],
-                                    "rows":0})
-                                continue
-                            facts=[{"event_title":title,"composer":composer,
-                                    "venue":venue,"date":day,
-                                    "starts_at":official_local_time(day,clock)}
-                                   for day,clock in shows]
+                                facts=[{"event_title":title,"composer":composer,
+                                        "venue":venue,"date":day,
+                                        "starts_at":official_local_time(day,clock)}
+                                       for day,clock in shows]
+                            except (ValueError,AccessDenied,FetchUnavailable) as live_error:
+                                # A frozen, explicitly reviewed 2026 official
+                                # ticket snapshot is available for two *exact*
+                                # archived operas, not future generalizations.
+                                # It still checks every fact against the live
+                                # first-party detail, without inventing a venue.
+                                from opera_atlas.vicenza_reviewed_2026 import verified_calendar
+                                try:
+                                    facts=verified_calendar(
+                                        page.html,source_key=item["source_key"],
+                                        source_url=item["official_url"])
+                                    reviewed=True
+                                except ValueError as reviewed_error:
+                                    health.append({
+                                        "candidate_id":item["id"],
+                                        "outcome":"unavailable_or_unstructured",
+                                        "reason":"no_verified_showtimes",
+                                        "diagnostic":[
+                                            "official_ticket_calendar:"+str(live_error)[:100],
+                                            "reviewed_calendar:"+str(reviewed_error)[:100]],
+                                        "rows":0})
+                                    continue
+                                title=facts[0]["event_title"]
                             from scripts.publish_work_posters import extract_official_poster
                             image=extract_official_poster(
                                 page.html,item["official_url"],title,
@@ -1316,14 +1332,20 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                 "source_url":item["official_url"],
                                 "content_sha256":page.sha256,
                                 "official_schedule_evidence_url":TICKETING,
-                                "official_schedule_sha256":ticket.sha256,
+                                **({"official_schedule_sha256":ticket.sha256}
+                                   if not reviewed else {}),
+                                **({"calendar_provenance":
+                                        "reviewed_first_party_2026_ticket_office"}
+                                   if reviewed else {}),
                                 "checked_at":datetime.now(timezone.utc).isoformat(
                                     timespec="seconds"),
                                 "status":"needs_editorial_review",
                                 "event_facts":facts,
                                 **({"poster_evidence":image} if image else {})}
                             health.append({"candidate_id":item["id"],
-                                           "outcome":"verified_first_party_ticket_calendar",
+                                           "outcome":("reviewed_first_party_2026_ticket_office"
+                                                      if reviewed else
+                                                      "verified_first_party_ticket_calendar"),
                                            "rows":len(facts)})
                             continue
                 if item["source_key"]=="bellini-catania-opera-2026-27":
