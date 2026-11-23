@@ -3295,6 +3295,23 @@
       ]
     },
     {
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+      "content_sha256": "59642a0afdda90e0257d6b2fe2586cf1abd5b12793193e8e338529dae4653c9f",
+      "checked_at": "2026-11-23T19:30:25+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il filosofo di campagna",
+          "composer": "Baldassare Galuppi",
+          "venue": "Teatro Olimpico",
+          "date": "2026-09-14",
+          "starts_at": "2026-09-14T20:30:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-67ef6842ba33e2d6015d",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
@@ -6108,6 +6125,37 @@
           "venue": "Teatro Giovan Battista Pergolesi",
           "date": "2026-10-31",
           "starts_at": "2026-10-31T20:30:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
+      "content_sha256": "6ac845b322a354d127453b6031920c5a1c172e768ab37507c907baa9b42f4e3f",
+      "checked_at": "2026-11-23T19:30:19+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Olimpico",
+          "date": "2026-09-10",
+          "starts_at": "2026-09-10T20:30:00+02:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Olimpico",
+          "date": "2026-09-12",
+          "starts_at": "2026-09-12T20:30:00+02:00"
+        },
+        {
+          "event_title": "Il barbiere di Siviglia",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Olimpico",
+          "date": "2026-09-13",
+          "starts_at": "2026-09-13T19:00:00+02:00"
         }
       ]
     },

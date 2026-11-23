@@ -1,18 +1,13 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T19:28:01+00:00",
+  "checked_at": "2026-11-23T19:30:27+00:00",
   "scope": "national",
   "attempted": 4,
   "outcomes": [
     {
       "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_ticket_calendar:Vicenza official festival year missing or conflicting [article=2017,2018,2019,2020,2021,2022,2023,20",
-        "reviewed_calendar:Vicenza official festival year missing or conflicting [article=2017,2018,2019,2020,2021,2022,2023,20"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 3
     },
     {
       "candidate_id": "oa-index-3d94833841692871c0a4",
@@ -25,13 +20,8 @@
     },
     {
       "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_ticket_calendar:Vicenza official festival year missing or conflicting [article=2017,2018,2019,2020,2021,2022,2023,20",
-        "reviewed_calendar:Vicenza official festival year missing or conflicting [article=2017,2018,2019,2020,2021,2022,2023,20"
-      ],
-      "rows": 0
+      "outcome": "facts_found",
+      "rows": 1
     },
     {
       "candidate_id": "oa-index-a825bbef331ecdd019f7",
