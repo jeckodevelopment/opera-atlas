@@ -185,6 +185,15 @@ class VicenzaOlimpicoOfficialSource(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"year"):
             parse_detail(contradictory,url=BARBIERE,ticketing_html=tickets)
 
+    def test_conflicting_year_diagnostics_show_evidence_provenance(self):
+        html=opera_page(edition="Vicenza in Lirica 2027").replace(
+            "<html>",'<html><a href="/category/vil/vicenza-in-lirica-2026/">'
+                     'Vicenza in Lirica 2026</a>')
+        with self.assertRaisesRegex(ValueError,"article=2027") as error:
+            parse_detail(html,url=BARBIERE)
+        self.assertIn("links=2026",str(error.exception))
+        self.assertIn("tickets=-",str(error.exception))
+
     def test_2027_edition_without_hardcoded_calendar_year(self):
         html=opera_page(edition="Vicenza in Lirica 2027",
                         when="Sabato 11 settembre | ore 20.30")

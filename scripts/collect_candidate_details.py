@@ -1274,7 +1274,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         # ticket office or be reattributed to Teatro Olimpico.
                         parse_detail(page.html,url=item["official_url"])
                     except ValueError as initial:
-                        if str(initial)!="Vicenza official festival year missing or conflicting":
+                        if not str(initial).startswith("Vicenza official festival year missing or conflicting"):
                             pass  # Generic strict parser records its own reason below.
                         else:
                             # When WordPress omits edition metadata, corroborate

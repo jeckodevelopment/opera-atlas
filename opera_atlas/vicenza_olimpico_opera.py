@@ -181,6 +181,14 @@ def parse_detail(html:str,*,url:str,
     # edition may be supplied by exact first-party ticket-office dates, and
     # each such date must also be stated on the matching production page.
     ticket_years={int(day[:4]) for day,_ in corroborated}
+    def edition_error():
+        # Source-bound years only; do not expose page body or credentials.
+        article=",".join(sorted(set(header_years))) or "-"
+        categories=",".join(sorted(set(category_years))) or "-"
+        office=",".join(str(x) for x in sorted(ticket_years)) or "-"
+        return ValueError(
+            "Vicenza official festival year missing or conflicting "
+            f"[article={article}; links={categories}; tickets={office}]")
     if len(years)>1:
         # WordPress can link to several unrelated editions in navigation.
         # Such links are not authoritative for *this* production. Resolve
@@ -190,11 +198,11 @@ def parse_detail(html:str,*,url:str,
         if (len(ticket_years)!=1 or
             (header_years and set(header_years)!={str(next(iter(ticket_years)))})
             or str(next(iter(ticket_years))) not in years):
-            raise ValueError("Vicenza official festival year missing or conflicting")
+            raise edition_error()
         year=next(iter(ticket_years))
     elif not years:
         if len(ticket_years)!=1:
-            raise ValueError("Vicenza official festival year missing or conflicting")
+            raise edition_error()
         year=next(iter(ticket_years))
     else:
         year=int(next(iter(years)))
