@@ -28,10 +28,10 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 6,
+    "candidates_checked": 2,
     "candidates_without_facts": 0,
-    "facts_examined": 17,
-    "facts_resolved": 15,
+    "facts_examined": 6,
+    "facts_resolved": 4,
     "translated_facts_resolved": 0,
     "unmatched_facts": 2,
     "unmatched_groups": 1
