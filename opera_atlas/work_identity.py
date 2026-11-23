@@ -15,6 +15,7 @@ def _key(text: str) -> str:
 # Only historically verified equivalences with composer disambiguation.
 # New languages/aliases may be added after editorial review of the work.
 ALIASES = {
+    ("nabucodonosor", "giuseppe verdi"): "Nabucco",
     ("don carlo", "giuseppe verdi"): "Don Carlos",
     ("die zauberflote", "wolfgang amadeus mozart"): "Die Zauberflöte",
     ("il flauto magico", "wolfgang amadeus mozart"): "Die Zauberflöte",
