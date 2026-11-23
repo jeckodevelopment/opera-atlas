@@ -76,16 +76,30 @@ class FestivalVerdiRollingTests(unittest.TestCase):
                                          [{"venue":"Teatro Regio di Parma"},
                                           {"venue":"Teatro Giuseppe Verdi"}], registry))
 
-    def test_future_verdi_works_are_authority_reserved_not_manual_recite(self):
+    def test_future_verdi_works_reuse_authority_ids_before_and_after_promotion(self):
         from opera_atlas.work_identity import resolve_work
         registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
-        for title in ("Aroldo", "Stiffelio"):
+        for title, expected_id in (("Aroldo", "oa-w-000121"),
+                                   ("Stiffelio", "oa-w-000122")):
             work = resolve_work(registry, title, "Giuseppe Verdi")
             self.assertIsNotNone(work)
+            self.assertEqual(work["id"], expected_id)
             self.assertIn("teatroregioparma.it/spettacolo/", work["authority_url"])
-            self.assertIn(work, registry["reserved_works"].values())
-        self.assertFalse(any(s["work_id"] in {
-            "oa-w-000121", "oa-w-000122"} for s in registry["stagings"].values()))
+            reserved = work in registry["reserved_works"].values()
+            promoted = work in registry["works"].values()
+            self.assertNotEqual(reserved, promoted)
+            published_stagings = [s for s in registry["stagings"].values()
+                                  if s["work_id"] == expected_id]
+            if reserved:
+                # Before the first verified live promotion, no artificial
+                # production or recita may be created for a reserved work.
+                self.assertFalse(published_stagings)
+            else:
+                self.assertTrue(published_stagings)
+                self.assertTrue(all(s["season"] == "2027" for s in published_stagings))
+                staging_ids = {s["id"] for s in published_stagings}
+                self.assertTrue(any(p["staging_id"] in staging_ids
+                                    for p in registry["performances"].values()))
 
     def test_edition_membership_is_explicit_not_theatre_url(self):
         from tempfile import TemporaryDirectory
@@ -96,12 +110,19 @@ class FestivalVerdiRollingTests(unittest.TestCase):
         with TemporaryDirectory() as folder:
             directory = Path(folder)
             original = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))
+            # Construct an isolated pre-publication fixture: the live
+            # catalogue can legitimately ALREADY contain the 2027 edition.
+            # We are testing that a generic theatre source cannot create one,
+            # not whether the real pipeline has finished its work yet.
+            original["festivals"] = [f for f in original["festivals"]
+                                     if f["id"] != "festival-verdi-2027"]
             (directory / "festival-index.json").write_text(json.dumps(original), encoding="utf-8")
             known = next(iter(registry["stagings"].values()))
             theatre_only = {**known, "id":"oa-s-verdi-theatre-only",
                             "season":"2027",
                             "source_url":"https://teatroregioparma.it/spettacolo/aroldo/"}
-            registry["stagings"]["theatre-only-verdi"] = theatre_only
+            theatre_only.pop("festival_memberships", None)
+            registry = {"stagings": {"theatre-only-verdi": theatre_only}}
             with patch.object(publisher, "PUBLIC", directory):
                 publisher.sync_festival_index(registry)
                 no_mark = json.loads((directory / "festival-index.json").read_text(encoding="utf-8"))
