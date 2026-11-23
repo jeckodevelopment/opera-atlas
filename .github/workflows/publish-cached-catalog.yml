@@ -100,6 +100,7 @@ jobs:
           # Candidate status must close in the same atomic cached
           # publication as the newly verified canonical opera and recite.
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.work_identity_review
       - name: Rebuild and validate public data without a new network crawl
         run: |
@@ -124,7 +125,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/verified-launch-catalog.json data/identity-registry.json data/auto-source-urls.json data/verified-time-evidence.json site/work-synopses.json site/work-history.json site/performances.json public/catalog/v2/ public/catalog/work-editorial.json public/catalog/coverage.json public/catalog/recite-coverage.json public/catalog/source-automation.json public/catalog/venue-directory.json
           git add data/work-poster-evidence.json data/work-poster-health.json data/autonomous-catalogue-health.json public/catalog/work-posters.json public/catalog/programs.json
-          git add data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json public/catalog/work-identity-review.json
+          git add data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json public/catalog/work-identity-review.json data/auto-work-intelligence-health.json
           if git diff --cached --quiet; then
             echo "deferred=false" >> "$GITHUB_OUTPUT"
             echo "The cached public catalog is already current."
