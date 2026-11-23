@@ -79,7 +79,7 @@ function buildVenues(){
  venues=(data.auto.venues||[]).map(x=>({...x,rec:rec.get(joinKey(x))||null,cat:cat.get(x.venue_id)||null}));
  const seen=new Set(venues.map(joinKey));
  for(const x of data.rec.venues||[])if(!seen.has(joinKey(x))){venues.push({...x,venue_id:null,status:"not_automated",sources:[],configured_connectors:0,recent_successful_connectors:0,rec:x,cat:null});seen.add(joinKey(x))}
- venues.sort((a,b)=>a.city.localeCompare(b.city,"it")||a.venue.localeCompare(b.venue,"it"));
+ venues.sort((a,b)=>String(a.city??"").localeCompare(String(b.city??""),"it")||String(a.venue??"").localeCompare(String(b.venue??""),"it"));
 }
 function buildActivities(){
  activities=[];
