@@ -6988,6 +6988,63 @@
           "20:30"
         ]
       ]
+    },
+    {
+      "key": "auto-8115e400ae8706fd",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
+      "dates": [
+        [
+          "2026-07-30",
+          "21:00"
+        ],
+        [
+          "2026-08-01",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-9f61560762c46608",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
+      "dates": [
+        [
+          "2026-07-21",
+          "21:00"
+        ],
+        [
+          "2026-07-23",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-f8122a2cac310944",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
+      "dates": [
+        [
+          "2026-07-12",
+          "21:00"
+        ],
+        [
+          "2026-07-14",
+          "21:00"
+        ]
+      ]
     }
   ]
 }

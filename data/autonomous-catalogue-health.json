@@ -5,6 +5,26 @@
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
+      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-dd7baa45131b35e450b1",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
       "title": "Cavalleria rusticana",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
@@ -23,6 +43,58 @@
       "title": "Pagliacci",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
+    },
+    {
+      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-8115e400ae8706fd132a",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-9f61560762c466080073",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-dd7baa45131b35e450b1",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-f8122a2cac3109445aaa",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
+      "reason": "unknown_work_needs_authority_data"
+    },
+    {
+      "candidate_id": "oa-index-dd7baa45131b35e450b1",
+      "reason": "unknown_work_needs_authority_data"
     }
   ],
   "new_works": 0,

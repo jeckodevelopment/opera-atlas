@@ -1235,6 +1235,14 @@
       "name": "Auditorium Scavolini",
       "city": "Pesaro",
       "region": "Marche"
+    },
+    "Trapani|Teatro Giuseppe Di Stefano": {
+      "id": "oa-v-000063",
+      "slug": "teatro-giuseppe-di-stefano",
+      "city_slug": "trapani",
+      "name": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "region": "Sicilia"
     }
   },
   "stagings": {
@@ -3331,6 +3339,30 @@
       "venue_id": "oa-v-000061",
       "slug": "la-mere-coupable",
       "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
+      "season": "2026"
+    },
+    "auto-8115e400ae8706fd": {
+      "id": "oa-s-000272",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000063",
+      "slug": "elisir-d-amore",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
+      "season": "2026"
+    },
+    "auto-9f61560762c46608": {
+      "id": "oa-s-000273",
+      "work_id": "oa-w-000055",
+      "venue_id": "oa-v-000063",
+      "slug": "i-capuleti-e-i-montecchi",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
+      "season": "2026"
+    },
+    "auto-f8122a2cac310944": {
+      "id": "oa-s-000274",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000063",
+      "slug": "nabucco",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
       "season": "2026"
     }
   },
@@ -9557,6 +9589,42 @@
       "staging_id": "oa-s-000271",
       "original_date": "2026-12-19",
       "source_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza"
+    },
+    "auto-8115e400ae8706fd|2026-07-30": {
+      "id": "oa-r-001065",
+      "staging_id": "oa-s-000272",
+      "original_date": "2026-07-30",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/"
+    },
+    "auto-8115e400ae8706fd|2026-08-01": {
+      "id": "oa-r-001066",
+      "staging_id": "oa-s-000272",
+      "original_date": "2026-08-01",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/"
+    },
+    "auto-9f61560762c46608|2026-07-21": {
+      "id": "oa-r-001067",
+      "staging_id": "oa-s-000273",
+      "original_date": "2026-07-21",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
+    },
+    "auto-9f61560762c46608|2026-07-23": {
+      "id": "oa-r-001068",
+      "staging_id": "oa-s-000273",
+      "original_date": "2026-07-23",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
+    },
+    "auto-f8122a2cac310944|2026-07-12": {
+      "id": "oa-r-001069",
+      "staging_id": "oa-s-000274",
+      "original_date": "2026-07-12",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/"
+    },
+    "auto-f8122a2cac310944|2026-07-14": {
+      "id": "oa-r-001070",
+      "staging_id": "oa-s-000274",
+      "original_date": "2026-07-14",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/"
     }
   },
   "reserved_works": {

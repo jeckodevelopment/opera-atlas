@@ -542,6 +542,42 @@
       ]
     },
     {
+      "id": "curated:auto-f8122a2cac310944:2026-07-12",
+      "starts_at": "2026-07-12T21:00:00+02:00",
+      "local_date": "2026-07-12",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/"
+      ]
+    },
+    {
+      "id": "curated:auto-f8122a2cac310944:2026-07-14",
+      "starts_at": "2026-07-14T21:00:00+02:00",
+      "local_date": "2026-07-14",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/"
+      ]
+    },
+    {
       "id": "curated:auto-86855eb33828e6cd:2026-07-17",
       "starts_at": "2026-07-17T22:00:00+02:00",
       "local_date": "2026-07-17",
@@ -575,6 +611,42 @@
       "longitude": null,
       "sources": [
         "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+      ]
+    },
+    {
+      "id": "curated:auto-9f61560762c46608:2026-07-21",
+      "starts_at": "2026-07-21T21:00:00+02:00",
+      "local_date": "2026-07-21",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
+      ]
+    },
+    {
+      "id": "curated:auto-9f61560762c46608:2026-07-23",
+      "starts_at": "2026-07-23T21:00:00+02:00",
+      "local_date": "2026-07-23",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "I Capuleti e i Montecchi",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
       ]
     },
     {
@@ -614,6 +686,24 @@
       ]
     },
     {
+      "id": "curated:auto-8115e400ae8706fd:2026-07-30",
+      "starts_at": "2026-07-30T21:00:00+02:00",
+      "local_date": "2026-07-30",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/"
+      ]
+    },
+    {
       "id": "curated:auto-4f3383615741e8be:2026-07-31",
       "starts_at": "2026-07-31T21:00:00+02:00",
       "local_date": "2026-07-31",
@@ -629,6 +719,24 @@
       "longitude": null,
       "sources": [
         "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:auto-8115e400ae8706fd:2026-08-01",
+      "starts_at": "2026-08-01T21:00:00+02:00",
+      "local_date": "2026-08-01",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/"
       ]
     },
     {
