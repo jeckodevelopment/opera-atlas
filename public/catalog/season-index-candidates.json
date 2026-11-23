@@ -21,7 +21,7 @@
       "id": "oa-index-00de68b9ceab25d0d4b3",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/tosca.aspx",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
@@ -949,7 +949,7 @@
       "id": "oa-index-4812bc1604f9f8d068ca",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/cavalleria-rusticana-la-serva-padrona.aspx",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
@@ -1421,7 +1421,7 @@
       "id": "oa-index-6da8d6c5834230d71bbb",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/madama-butterfly.aspx",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
@@ -1861,7 +1861,7 @@
       "id": "oa-index-90a9028a295696a522e1",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata.aspx",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
@@ -1965,7 +1965,7 @@
       "id": "oa-index-97810ee023c87e4afd01",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-giuseppe-verdi.aspx",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
@@ -2333,7 +2333,7 @@
       "id": "oa-index-adfecb3c9b4ba8c833cd",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/la-grande-lirica-torna-al-teatro-antico-di-taormina-con-la-traviata-secondo-castiglione/",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
@@ -2365,7 +2365,7 @@
       "id": "oa-index-b016256a0edd6720e078",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v2.aspx",
-      "status": "needs_review",
+      "status": "not_in_official_season",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
