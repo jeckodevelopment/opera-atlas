@@ -17,6 +17,12 @@ class DiscoveryDoubleBillTests(unittest.TestCase):
             (ROOT/"data"/"discovery-candidates.json").read_text(encoding="utf-8"))
         self.candidates=[copy.deepcopy(x) for x in self.queue["candidates"]
                          if x["city"]=="Brescia"]
+        # The publishing pipeline reconciles the persisted queue before
+        # running these tests. Exercise a fresh, unresolved observation
+        # independently of whether the same candidates were just closed.
+        for candidate in self.candidates:
+            candidate["status"]="needs_review"
+            candidate.pop("program_id",None)
 
     def test_complete_brescia_components_resolve_to_one_published_bill(self):
         self.assertEqual(len(self.candidates),2)
