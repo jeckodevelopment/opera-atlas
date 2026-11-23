@@ -14,7 +14,7 @@ from scripts.auto_work_research import (
 )
 
 
-def reconcile(health:dict,candidates:dict,registry:dict)->dict:
+def reconcile(health:dict,candidates:dict,registry:dict,programs:dict|None=None)->dict:
     if (health.get("schema_version")!=1
             or not isinstance(health.get("outcomes"),list)
             or candidates.get("schema_version")!=1
@@ -33,6 +33,29 @@ def reconcile(health:dict,candidates:dict,registry:dict)->dict:
             and states.get(item.get("candidate_id"))=="already_catalogued")
         else item for item in next_outcomes
     ]
+    # Composite programs do not have a single canonical work_id or staging.
+    # Link them only through one exact, verified public program source,
+    # retaining the program identity instead of inventing a work match.
+    programme_rows=(programs or {}).get("programs",[])
+    if not isinstance(programme_rows,list):
+        raise ValueError("invalid published program feed")
+    by_candidate={x["id"]:x for x in candidates["candidates"]}
+    resolved=[]
+    for item in next_outcomes:
+        candidate=by_candidate.get(item.get("candidate_id"),{})
+        if (item.get("status")=="catalogued_source_link_unverified"
+                and candidate.get("status")=="already_catalogued"):
+            matches=[p for p in programme_rows
+                     if p.get("source_url")==candidate.get("official_url")
+                     and p.get("source_key")==candidate.get("source_key")
+                     and isinstance(p.get("id"),str)
+                     and len(p.get("components",[]))>=2
+                     and bool(p.get("performances"))]
+            if len(matches)==1:
+                item={**item,"status":"already_catalogued_program",
+                      "program_id":matches[0]["id"]}
+        resolved.append(item)
+    next_outcomes=resolved
     # Preserve a stable timestamp when the report is already synchronized.
     if next_outcomes==previous:
         return health
@@ -48,7 +71,9 @@ def main():
     health=json.loads(HEALTH.read_text(encoding="utf-8"))
     candidates=json.loads(INDEX.read_text(encoding="utf-8"))
     registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
-    updated=reconcile(health,candidates,registry)
+    program_path=Path(__file__).resolve().parents[1]/"public"/"catalog"/"programs.json"
+    programs=json.loads(program_path.read_text(encoding="utf-8"))
+    updated=reconcile(health,candidates,registry,programs)
     if args.check:
         if updated!=health:raise ValueError("identity research diagnostics stale")
     elif updated!=health:
