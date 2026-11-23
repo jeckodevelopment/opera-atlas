@@ -287,6 +287,10 @@ ARCHIVAL_OFFICIAL_EVENTS = {
     ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/la-traviata.aspx"): 2022,
     ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/la-traviata-giuseppe-verdi.aspx"): 2014,
     ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/la-traviata-v2.aspx"): 2022,
+    # The v1 Mantova page has no performance header; its ticket instructions explicitly
+    # require collecting booked boxes on 30 November 2016. This is evidence of
+    # a legacy sale, NOT evidence of a 2016 performance date.
+    ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/la-traviata-v1.aspx"): 2016,
     ("taormina-opera-festival-rolling", "https://www.taorminaoperafestival.org/la-grande-lirica-torna-al-teatro-antico-di-taormina-con-la-traviata-secondo-castiglione/"): 2025,
 }
 

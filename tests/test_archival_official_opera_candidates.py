@@ -7,7 +7,7 @@ from scripts.reconcile_published_candidates import reconcile
 
 class HistoricOperaCandidates(unittest.TestCase):
     def test_seven_exact_historic_urls_are_not_current_and_not_nonopera(self):
-        self.assertEqual(len(ARCHIVAL_OFFICIAL_EVENTS), 7)
+        self.assertEqual(len(ARCHIVAL_OFFICIAL_EVENTS), 8)
         for (source,url),year in ARCHIVAL_OFFICIAL_EVENTS.items():
             with self.subTest(url=url):
                 self.assertLess(year,2026)
