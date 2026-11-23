@@ -123,7 +123,7 @@ function renderInsights(selected){
  bars("diversity-chart",diverse,20);
  ranked("regional-works",groupedCounts(selected,r=>[JSON.stringify([r.region,r.workId]),r.work+" · "+r.region]));
  ranked("regional-composers",groupedCounts(selected,r=>r.composer==="Non indicato"?[null,null]:[JSON.stringify([r.region,r.composer]),r.composer+" · "+r.region]));
- ranked("staging-ranking",groupedCounts(selected,r=>[r.stagingId,r.work+" · "+r.venue]));
+ ranked("staging-ranking",groupedCounts(selected,r=>[r.stagingId,r.work+" · "+r.venue+" · "+r.season]));
 }
 
 function render(){
