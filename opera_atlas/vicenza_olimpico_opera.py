@@ -180,15 +180,25 @@ def parse_detail(html:str,*,url:str,
     # Do not override conflicting edition metadata. Only a genuinely missing
     # edition may be supplied by exact first-party ticket-office dates, and
     # each such date must also be stated on the matching production page.
+    ticket_years={int(day[:4]) for day,_ in corroborated}
     if len(years)>1:
-        raise ValueError("Vicenza official festival year missing or conflicting")
-    if not years:
-        if not corroborated or len({day[:4] for day,_ in corroborated})!=1:
+        # WordPress can link to several unrelated editions in navigation.
+        # Such links are not authoritative for *this* production. Resolve
+        # them only when an independently source-bound ticket listing proves
+        # the exact same title, composer, venue and every local showtime.
+        # Never override an explicit contradictory year in the article text.
+        if (len(ticket_years)!=1 or
+            (header_years and set(header_years)!={str(next(iter(ticket_years)))})
+            or str(next(iter(ticket_years))) not in years):
             raise ValueError("Vicenza official festival year missing or conflicting")
-        year=int(corroborated[0][0][:4])
+        year=next(iter(ticket_years))
+    elif not years:
+        if len(ticket_years)!=1:
+            raise ValueError("Vicenza official festival year missing or conflicting")
+        year=next(iter(ticket_years))
     else:
         year=int(next(iter(years)))
-        if corroborated and any(int(day[:4])!=year for day,_ in corroborated):
+        if ticket_years and ticket_years!={year}:
             raise ValueError("Vicenza official schedule year conflicts with article")
     if not 2020<=year<=2099:
         raise ValueError("Vicenza festival edition year invalid")
