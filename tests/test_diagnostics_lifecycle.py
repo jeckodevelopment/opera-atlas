@@ -79,6 +79,11 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn('v.status==="not_in_inventory"?"Da censire":"Senza connettore"', self.source)
         self.assertIn("Sedi pubblicate assenti dall’inventario tecnico", self.source)
 
+    def test_unknown_city_observations_are_not_fake_venues(self):
+        self.assertIn('if(!x.city||!x.venue)continue;', self.source)
+        self.assertIn('Recite rilevate con sede non identificata', self.source)
+        self.assertIn('non teatri da integrare', self.source)
+
     def test_no_false_global_completion_percentage(self):
         self.assertIn("non garantisce", self.source)
         self.assertIn("Non misurato", self.source)
