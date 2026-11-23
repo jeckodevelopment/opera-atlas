@@ -21,8 +21,12 @@ class EarlySeasonIndexCheckpointTests(unittest.TestCase):
         self.assertIn("git add data/season-index-health.json",stage)
         self.assertIn("public/catalog/source-automation.json",stage)
         self.assertIn("python -m scripts.safe_push_catalog",stage)
-        self.assertIn("steps.early_season_checkpoint.outputs.deferred == 'true'",stage)
-        self.assertIn("catalog-refresh-retry",stage)
+        # Deferred checkpoints are aggregated into one final retry, not
+        # separately re-queued while an expensive crawler is still active.
+        self.assertNotIn("catalog-refresh-retry",stage)
+        final=source.split("      - name: Retry deferred catalog once",1)[1]
+        self.assertIn("steps.early_season_checkpoint.outputs.deferred == 'true'",final)
+        self.assertIn("catalog-refresh-retry",final)
 
     def test_later_discovery_stays_for_newly_adopted_season_rollovers(self):
         source=WORKFLOW.read_text(encoding="utf-8")
