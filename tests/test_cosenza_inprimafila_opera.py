@@ -112,10 +112,10 @@ class CosenzaTicketFallback(unittest.TestCase):
         self.assertEqual(facts[0]["composer"],"Darius Milhaud")
         self.assertEqual(facts[0]["starts_at"],"2026-12-19T20:30:00+01:00")
         # The mixed source must never promote an unrelated play/ballet.
-        with self.assertRaises(AssertionError):
-            self.assertEqual(parse_source_credited_opera_detail(
+        with self.assertRaises(ValueError):
+            parse_source_credited_opera_detail(
                 KEY,MERE,milhaud().replace("Teatro A.Rendano - Cosenza",
-                                          "Altro teatro")),facts)
+                                          "Altro teatro"))
 
     def test_future_edition_does_not_depend_on_2026(self):
         html=mozart(when="Venerdi 11 Dicembre Ore 20.30 - Domenica 13 Dicembre 2027 Ore 17.00")
