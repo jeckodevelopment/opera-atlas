@@ -127,6 +127,7 @@ jobs:
           # strict consistency check, then publish both derived queues in
           # the existing atomic catalog checkpoint later in this workflow.
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.reconcile_published_candidates --check
           python -m scripts.publish_work_editorial --check
           # A newly-reviewed observation may legitimately differ from the previous public v2 snapshot.
@@ -210,6 +211,7 @@ jobs:
           # A cached new opera may be published before the slow discovery
           # phase. Close its candidate in the SAME early checkpoint.
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.work_identity_review
           python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
@@ -253,6 +255,7 @@ jobs:
         run: |
           python -m scripts.collect_candidate_details --allow-network --source-key opera-roma-season-2026-27
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
       - name: Checkpoint first-party Roma candidate classifications
         id: roma_checkpoint
         run: |
@@ -274,6 +277,7 @@ jobs:
           # states. Reconcile the same registry before any health snapshot
           # is shown in the diagnostics UI.
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.source_automation
           python -m scripts.catalogation_diagnostics
           python -m scripts.candidate_publication_evidence
@@ -301,6 +305,7 @@ jobs:
           python -m scripts.publish_work_posters
           python -m scripts.publish_programs
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.discovery_queue
           python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
@@ -349,6 +354,7 @@ jobs:
         run: |
           python -m scripts.discover_season_indexes --allow-network
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
       - name: Refresh lifecycle diagnostics after index rollover
         run: python -m scripts.season_lifecycle_health
       - name: Collect structured facts from bounded discovered detail pages
@@ -383,6 +389,7 @@ jobs:
       - name: Finalize all candidate outcomes before atomic public catalog publication
         run: |
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.work_identity_review
       - name: Persist unrecognized productions in review-only discovery feed
         run: python -m scripts.discovery_queue
@@ -394,6 +401,7 @@ jobs:
           # only the pre-generation staging snapshot. Refresh both audit
           # registries before deriving coverage and publication diagnostics.
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.work_identity_review
           python -m scripts.publish_work_editorial
           python -m scripts.publish_venue_directory
@@ -466,6 +474,7 @@ jobs:
       - name: Rebuild and validate canonical feed without network access
         run: |
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.work_identity_review
           python -m scripts.auto_catalogue
           python -m scripts.publish_work_posters
@@ -473,6 +482,7 @@ jobs:
           python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
           python -m scripts.reconcile_published_candidates
+          python -m scripts.reconcile_work_intelligence_health
           python -m scripts.work_identity_review
           python -m scripts.publish_work_editorial
           python -m scripts.publish_venue_directory
