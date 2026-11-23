@@ -85,6 +85,9 @@ function buildVenues(){
  venues=(data.auto.venues||[]).map(x=>({...x,rec:rec.get(canonicalVenueKey(x))||null,cat:cat.get(x.venue_id)||null}));
  const seen=new Set(venues.map(canonicalVenueKey));
  for(const x of data.rec.venues||[]){
+  // A venue name without a verified city is unresolved candidate evidence,
+  // not a distinct national physical venue.
+  if(!x.city||!x.venue)continue;
   const key=canonicalVenueKey(x);
   if(seen.has(key))continue;
   // A published venue absent from source automation is *not* proof
@@ -100,6 +103,8 @@ function buildActivities(){
  if(backlog.length)activities.push({type:"editorial",priority:2,title:"Candidate da riconciliare",detail:nf(backlog.reduce((s,x)=>s+num(x.cat.states.needs_review),0))+" osservazioni in "+backlog.length+" teatri",target:"catalog"});
  const problem=venues.filter(x=>x.status==="configured_not_operational");
  if(problem.length)activities.push({type:"technical",priority:3,title:"Connettori configurati da verificare",detail:problem.length+" teatri senza una verifica operativa recente",target:"venues"});
+ const unidentified=(data.rec.venues||[]).filter(x=>!x.city||!x.venue);
+ if(unidentified.length)activities.push({type:"editorial",priority:2,title:"Recite rilevate con sede non identificata",detail:unidentified.length+" osservazioni non attribuite a una sede e città canoniche; restano candidate da verificare, non teatri da integrare.",target:"catalog"});
  const unregistered=venues.filter(x=>x.status==="not_in_inventory");
  if(unregistered.length)activities.push({type:"technical",priority:2,title:"Sedi pubblicate assenti dall’inventario tecnico",detail:unregistered.length+" sedi con recite pubblicate non hanno una corrispondente scheda nell’inventario dei connettori: non è possibile determinarne lo stato di automazione.",target:"venues"});
  const missing=venues.filter(x=>num(x.rec?.missing)>0);
