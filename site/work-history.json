@@ -1142,6 +1142,17 @@
         "https://corago.unibo.it/opera/Z000045023",
         "https://teatroregioparma.it/spettacolo/stiffelio/"
       ]
+    },
+    "il-filosofo-di-campagna": {
+      "librettist": "Carlo Goldoni",
+      "premiere_year": 1754,
+      "premiere_venue": "Teatro San Samuele",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://corago.unibo.it/libretto/DRT0018679",
+        "https://corago.unibo.it/opera/Z000002443",
+        "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
+      ]
     }
   },
   "works_by_id": {

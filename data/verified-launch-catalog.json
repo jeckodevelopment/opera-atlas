@@ -7240,6 +7240,21 @@
           "19:00"
         ]
       ]
+    },
+    {
+      "key": "auto-67c97eeb35f0b65c",
+      "title": "Il filosofo di campagna",
+      "composer": "Baldassare Galuppi",
+      "venue": "Teatro Olimpico",
+      "municipality": "Vicenza",
+      "region": "Veneto",
+      "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+      "dates": [
+        [
+          "2026-09-14",
+          "20:30"
+        ]
+      ]
     }
   ]
 }

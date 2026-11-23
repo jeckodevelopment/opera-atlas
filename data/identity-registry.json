@@ -771,6 +771,13 @@
       "title": "La favola di Orfeo",
       "composer": "Alfredo Casella",
       "authority_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+    },
+    "il filosofo di campagna|baldassare galuppi": {
+      "id": "oa-w-000123",
+      "slug": "il-filosofo-di-campagna",
+      "title": "Il filosofo di campagna",
+      "composer": "Baldassare Galuppi",
+      "authority_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
     }
   },
   "venues": {
@@ -3502,6 +3509,14 @@
       "venue_id": "oa-v-000067",
       "slug": "il-barbiere-di-siviglia",
       "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
+      "season": "2026"
+    },
+    "auto-67c97eeb35f0b65c": {
+      "id": "oa-s-000284",
+      "work_id": "oa-w-000123",
+      "venue_id": "oa-v-000067",
+      "slug": "il-filosofo-di-campagna",
+      "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
       "season": "2026"
     }
   },
@@ -9908,6 +9923,12 @@
       "staging_id": "oa-s-000283",
       "original_date": "2026-09-13",
       "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+    },
+    "auto-67c97eeb35f0b65c|2026-09-14": {
+      "id": "oa-r-001095",
+      "staging_id": "oa-s-000284",
+      "original_date": "2026-09-14",
+      "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
     }
   },
   "reserved_works": {
