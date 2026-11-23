@@ -68,7 +68,7 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
     def test_no_false_global_completion_percentage(self):
         self.assertIn("non garantisce", self.source)
         self.assertIn("Non misurato", self.source)
-        self.assertIn("non equivale", self.source)
+        self.assertIn("Non equivale", self.source)
         self.assertNotIn("100% copertura nazionale", self.source)
 
 if __name__ == "__main__":
