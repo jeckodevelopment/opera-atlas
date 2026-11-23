@@ -3,7 +3,7 @@
   "candidates": [
     {
       "id": "oa-c-35f378dbe9f6b721",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "source_key": "opera-lombardia-calendar-2026-27",
       "source_url": "https://www.operalombardia.it/calendario/",
       "title": "Pagliacci",
@@ -21,11 +21,12 @@
         }
       ],
       "first_seen": "2026-11-22T15:22:17+00:00",
-      "last_seen": "2026-11-23T10:34:46+00:00"
+      "last_seen": "2026-11-23T10:34:46+00:00",
+      "program_id": "oa-p-212db41a4c6f7afc"
     },
     {
       "id": "oa-c-868dcd5a8c36e9ba",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "source_key": "opera-lombardia-calendar-2026-27",
       "source_url": "https://www.operalombardia.it/calendario/",
       "title": "Cavalleria rusticana",
@@ -43,7 +44,8 @@
         }
       ],
       "first_seen": "2026-11-22T15:22:17+00:00",
-      "last_seen": "2026-11-23T10:34:46+00:00"
+      "last_seen": "2026-11-23T10:34:46+00:00",
+      "program_id": "oa-p-212db41a4c6f7afc"
     }
   ]
 }
