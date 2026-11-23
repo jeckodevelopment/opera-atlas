@@ -25,6 +25,13 @@ Tutti i pannelli usano la stessa intersezione Anno solare / Stagione / Territori
 ## Intestazione e immagini
 Il banner usa il dettaglio **effettivo del teatro nel mockup originale approvato** per Opera+ Osservatorio, ritagliato dall'immagine generata per il progetto, non una fotografia di un teatro identificato. L'asset locale `observatory/mockup-theatre-banner.svg` incorpora l'estratto compresso; non necessita di collegamenti esterni né attribuzioni fotografiche improprie. La testata mantiene proporzioni, sfumatura blu notte e scena dorata a destra. Il comando «Esporta CSV» rimane discreto nell'header.
 
+## Opere in circolazione e prime assolute
+- «La circolazione delle opere» conta, per ogni `works.id` con recite nel campione temporale, i distinti `venues.id`, le coppie città-regione e le regioni. La stessa recita o il medesimo titolo replicato non aumenta artificialmente il numero di sedi. Le opere omonime rimangono separate per ID.
+- Il box «Prime assolute» usa **esclusivamente** `public/catalog/work-editorial.json`, già prodotto dall'editoria verificata di Atlas: per ogni `work_id` e `history.premiere_year` validi con fonti presenti, mostra l'anno storico di debutto. Non tenta di inferire una prima assoluta dalla prima recita registrata in Atlas, né confonde un nuovo allestimento con una nuova composizione.
+- **Anno solare** seleziona l'anno della prima assoluta. Il box usa **stagione** e **territorio** come filtro di presenza dell'opera nel catalogo, anche se le recite italiane di quell'opera si svolgono in anni differenti; non dichiara che la prima sia avvenuta in quel territorio.
+- Poiché molte schede hanno solo l'anno e non la data precisa, il box distingue date documentate già trascorse, date future e date non specificate. **L'anno di prima registrato non costituisce da solo prova che un evento futuro sia già avvenuto.** Se il feed editoriale non è disponibile, il box non mostra numeri fittizi. Se non è selezionato un singolo anno civile, propone di selezionarne uno per il conteggio.
+- Il box è inserito accanto alla tabella sulla circolazione per preservare una composizione grafica equilibrata; nessun nuovo dato di affluenza o copertura nazionale.
+
 ## Collaudi separati
 - Controllare caricamento dati con manifest valido e indisponibilità della sorgente: nessuna statistica fittizia.
 - Filtrare per stagione e regione; verificare i quattro indicatori, barre e classifiche.
