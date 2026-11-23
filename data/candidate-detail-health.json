@@ -1,22 +1,17 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T18:38:22+00:00",
+  "checked_at": "2026-11-23T18:42:38+00:00",
   "scope": "national",
-  "attempted": 13,
+  "attempted": 12,
   "outcomes": [
     {
-      "candidate_id": "oa-index-b016256a0edd6720e078",
+      "candidate_id": "oa-index-d9a6ab3ba2217f8a24de",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Mantova official venue missing"
+        "official_composer_credit:Mantova event not independently verified as opera"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "outcome": "facts_found",
-      "rows": 4
     },
     {
       "candidate_id": "oa-index-adfecb3c9b4ba8c833cd",
@@ -28,20 +23,11 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
+      "candidate_id": "oa-index-3d94833841692871c0a4",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "official_composer_credit:Vicenza official festival year missing or conflicting"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-d9a6ab3ba2217f8a24de",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Mantova event not independently verified as opera"
       ],
       "rows": 0
     },
@@ -51,15 +37,6 @@
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "official_composer_credit:Mantova event not independently verified as opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-3d94833841692871c0a4",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Vicenza official festival year missing or conflicting"
       ],
       "rows": 0
     },
@@ -114,6 +91,24 @@
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "official_composer_credit:Vicenza official festival year missing or conflicting"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Vicenza official festival year missing or conflicting"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-b016256a0edd6720e078",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Mantova official venue missing"
       ],
       "rows": 0
     }
