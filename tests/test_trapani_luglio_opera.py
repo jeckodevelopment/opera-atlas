@@ -92,6 +92,24 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
                 self.assertRaises(ValueError,parse_detail,
                     fixture.replace("Teatro M° Tonino Pardo","Chiostro di San Domenico"),url=url)
 
+    def test_standalone_source_composer_does_not_require_libretto_label(self):
+        html=page().replace("<p>Libretto di Temistocle Solera</p>",
+                            "<p>Testo originale, senza libretto indicato</p>")
+        parsed=parse_detail(html,url=NABUCCO)
+        self.assertEqual(parsed[1],"Giuseppe Verdi")
+        self.assertEqual(len(parsed[3]),2)
+        # Repeated conflicting original credits must never guess authorship.
+        ambiguous=html.replace(
+            "<p>Musica di Giuseppe Verdi</p>",
+            "<p>Musica di Giuseppe Verdi</p>"
+            "<p>Musica di Giacomo Puccini</p>")
+        with self.assertRaisesRegex(ValueError,"composer"):
+            parse_detail(ambiguous,url=NABUCCO)
+        with self.assertRaisesRegex(ValueError,"composer"):
+            parse_detail(html.replace(
+                "<p>Musica di Giuseppe Verdi</p>",
+                "<p>Arrangiamento di Giuseppe Verdi</p>"),url=NABUCCO)
+
     def test_fuori_fuoco_official_musiche_di_credit(self):
         html=page(title="Fuori Fuoco",composer="Diana Buscemi",
                   genre="Opera da camera",venue="Teatro M° Tonino Pardo")
