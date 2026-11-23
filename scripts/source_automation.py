@@ -22,6 +22,7 @@ SAN_CARLO_SECONDARY = ROOT / "data/san-carlo-secondary-health.json"
 SAN_CARLO_CANONICAL = ROOT / "data/san-carlo-canonical-review-health.json"
 SAN_CARLO_CANDIDATES = ROOT / "data/season-index-candidates.json"
 SAN_CARLO_PUBLIC = ROOT / "site/performances.json"
+CANDIDATE_REGISTRY = ROOT / "data/season-index-candidates.json"
 
 # Explicit links between sources and venues; never match unrelated theatres
 # sharing a city, name, or festival organizer. Grouped sources are intentional.
@@ -194,7 +195,7 @@ def classify_index_scan(check: dict) -> str:
     return "parser_or_source_validation_failed"
 
 
-def scan_attention(index: dict, index_health: dict) -> dict:
+def scan_attention(index: dict, index_health: dict, *, candidates: dict | None = None) -> dict:
     """Explain scan failures without disguising fallback coverage as a success.
 
     A missing future programme is not proof the season has been cancelled
@@ -203,6 +204,21 @@ def scan_attention(index: dict, index_health: dict) -> dict:
     rows = {x["key"]: x for x in index_health.get("sources", [])}
     if len(rows) != len(index_health.get("sources", [])):
         raise ValueError("duplicate indexed scan health key")
+    # A successful crawl reports links, not a confirmed count of operas.
+    # Candidate states are independent and can remain in review even when
+    # the index scan itself succeeded.
+    candidate_counts = {}
+    if candidates is not None:
+        if candidates.get("schema_version") != 1 or not isinstance(candidates.get("candidates"), list):
+            raise ValueError("invalid source candidate registry")
+        for entry in candidates["candidates"]:
+            if not isinstance(entry, dict) or not isinstance(entry.get("source_key"), str):
+                raise ValueError("invalid candidate entry")
+            state = entry.get("status")
+            if state not in ("needs_review", "already_catalogued",
+                             "excluded_nonopera", "not_in_official_season"):
+                raise ValueError("unknown candidate status")
+            candidate_counts.setdefault(entry["source_key"], Counter())[state] += 1
     seen = set()
     items = []
     for source in index["sources"]:
@@ -229,6 +245,13 @@ def scan_attention(index: dict, index_health: dict) -> dict:
             "last_success_at": record.get("last_success_at"),
             "other_successful_official_sources": alternatives,
             "has_healthy_alternative": bool(alternatives),
+            "candidate_yield": (
+                {"total": sum(candidate_counts.get(key, {}).values()),
+                 "already_catalogued": candidate_counts.get(key, {}).get("already_catalogued", 0),
+                 "needs_review": candidate_counts.get(key, {}).get("needs_review", 0),
+                 "excluded_nonopera": candidate_counts.get(key, {}).get("excluded_nonopera", 0),
+                 "not_in_official_season": candidate_counts.get(key, {}).get("not_in_official_season", 0)}
+                if candidates is not None else None),
             "requires_technical_attention": category in (
                 "access_blocked", "fetch_unavailable", "parser_or_source_validation_failed",
                 "source_content_not_verified"),
@@ -243,7 +266,8 @@ def scan_attention(index: dict, index_health: dict) -> dict:
 
 
 def build(directory: dict, daily: dict, daily_health: dict, index: dict,
-          index_health: dict, *, san_carlo_fallback: dict | None = None) -> dict:
+          index_health: dict, *, san_carlo_fallback: dict | None = None,
+          candidates: dict | None = None) -> dict:
     venues = directory["venues"]
     profiles = {v["city"] + "|" + v["name"]: v for v in venues}
     if len(profiles) != len(venues):
@@ -324,7 +348,7 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
         "configured_not_operational": counts["configured_not_operational"],
         "not_automated": counts["not_automated"],
         "automation_remaining": counts["configured_not_operational"] + counts["not_automated"],
-        "index_scan_attention": scan_attention(index, index_health),
+        "index_scan_attention": scan_attention(index, index_health, candidates=candidates),
         "venues": rows,
     }
 
@@ -340,7 +364,8 @@ def publish(check: bool = False) -> dict:
             read(SAN_CARLO_CANDIDATES), read(SAN_CARLO_PUBLIC))
     report = build(read(DIRECTORY), read(DAILY), read(DAILY_HEALTH),
                    read(INDEX), read(INDEX_HEALTH),
-                   san_carlo_fallback=fallback)
+                   san_carlo_fallback=fallback,
+                   candidates=read(CANDIDATE_REGISTRY) if CANDIDATE_REGISTRY.exists() else None)
     serialized = (json.dumps(report, ensure_ascii=False, sort_keys=True,
                              separators=(",", ":")) + "\n").encode("utf-8")
     if check:
