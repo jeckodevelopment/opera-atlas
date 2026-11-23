@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "language": "it",
-  "reviewed_on": "2026-11-20",
+  "reviewed_on": "2026-11-23",
   "note": "Campi storici documentati con fonti. L'anno di composizione è riportato esclusivamente dove indipendentemente confermato; non è inferito dall'anno della prima.",
   "works": {
     "la-traviata": {
@@ -1068,6 +1068,26 @@
       "sources": [
         "https://archives.gtg.ch/en/history-of-the-grand-theatre/",
         "https://ressources.ircam.fr/en/work/la-mere-coupable"
+      ]
+    },
+    "ghost-cafe": {
+      "librettist": "Gabriela Fantato",
+      "premiere_year": 2000,
+      "premiere_venue": "Teatro Donizetti",
+      "premiere_city": "Bergamo",
+      "sources": [
+        "https://www.carlogalante.it/opera/ghost-cafe/",
+        "https://www.lugliomusicale.it/it/teatro-news/al-tonino-pardo-apre-il-ghost-cafe-tre-fantasmi-e-una-cantante-in-cerca-del-suo-destino/"
+      ]
+    },
+    "il-schiavo-di-sua-moglie": {
+      "librettist": "Francesco Antonio Paolella",
+      "premiere_year": 1672,
+      "premiere_venue": "Palazzo Reale",
+      "premiere_city": "Napoli",
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+        "https://www.ansa.it/amp/puglia/notizie/2026/07/22/al-festival-della-valle-ditria-linedita-carmen-di-bizet-del-1874_039e2f1f-b2cb-405b-a6b6-94e37c9659fe.html"
       ]
     }
   },
