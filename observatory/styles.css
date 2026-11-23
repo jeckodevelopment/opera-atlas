@@ -62,3 +62,47 @@ html,body{margin:0;padding:0;background:#101c2b}
 .insight-grid .rank-list .rank-empty:before{display:none}
 @media(max-width:780px){.insight-grid{grid-template-columns:1fr}.insight-heading h2{font-size:24px}.insight-grid .panel>p{min-height:0}}
 @media(max-width:400px){.insight-grid .rank-list li{gap:6px;font-size:12px}.insight-grid .rank-list li>span:last-child{font-size:11px}}
+
+/* The original mockup's theatrical hero: public-domain San Carlo auditorium.
+   Navy gradient preserves text legibility while revealing gilded boxes at right. */
+.hero{
+  position:relative;
+  min-height:142px;
+  background-color:#101c2b;
+  background-image:
+    linear-gradient(90deg,#101c2b 0%,#101c2b 36%,rgba(16,28,43,.94) 52%,rgba(16,28,43,.50) 73%,rgba(16,28,43,.12) 100%),
+    url("https://upload.wikimedia.org/wikipedia/commons/a/a2/InternoSanCarlo.JPG");
+  background-position:center,right 42%;
+  background-size:cover,cover;
+  background-repeat:no-repeat;
+  isolation:isolate;
+}
+.hero-inner{position:relative;padding:22px 40px 30px}
+.hero h1,.hero p{position:relative;z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.12)}
+.hero-credit{position:absolute;right:15px;bottom:8px;color:#fff;background:rgba(13,21,33,.68);font-size:10px;padding:3px 7px;border-radius:3px;text-decoration:none}
+.hero-credit:hover{text-decoration:underline}
+.top-inner .header-export{
+  margin-left:auto;
+  padding:7px 3px;
+  color:#ddd5d8;
+  background:none;
+  border:0;
+  border-bottom:1px solid transparent;
+  border-radius:0;
+  font-size:12px;
+  font-weight:550;
+  white-space:nowrap;
+  letter-spacing:.01em;
+  transition:color .15s,border-color .15s;
+}
+.top-inner .header-export span{margin-right:5px;font-size:16px;font-weight:400;vertical-align:-1px}
+.top-inner .header-export:hover{color:#fff;background:none;border-color:#bd8b9f}
+@media(max-width:650px){
+  .hero{min-height:138px;background-image:
+    linear-gradient(90deg,#101c2b 0%,rgba(16,28,43,.96) 42%,rgba(16,28,43,.70) 100%),
+    url("https://upload.wikimedia.org/wikipedia/commons/a/a2/InternoSanCarlo.JPG");background-position:center,right center}
+  .hero-inner{padding:20px 20px 33px}
+  .hero-credit{right:8px;bottom:6px;font-size:9px;max-width:65%;text-align:right}
+  .top-inner .header-export{font-size:11px;padding:5px 1px}
+  .top-inner .header-export span{font-size:14px;margin-right:2px}
+}
