@@ -1,0 +1,27 @@
+name: Festival Verdi · live connector smoke test
+on:
+  pull_request:
+    paths:
+      - 'opera_atlas/festival_verdi_future.py'
+      - 'scripts/verify_festival_verdi_live.py'
+      - '.github/workflows/festival-verdi-live.yml'
+      - 'data/identity-registry.json'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/verify_festival_verdi_live.py'
+      - '.github/workflows/festival-verdi-live.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify real Festival Verdi 2027 official programme and individual recite
+        run: python -m scripts.verify_festival_verdi_live
