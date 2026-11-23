@@ -187,11 +187,16 @@ def extract_official_poster(html:str,official_url:str,work_title:str,*,
     if (width>0 and height>0 and width>height*1.35 and
             urlsplit(url).hostname!=urlsplit(official_url).hostname):
         return None
+    # Preserve the *original* first-party alternative text as verification
+    # evidence. A generated image filename may not contain the opera title.
+    # Never synthesize this field from the requested title.
+    alt_verified=(verified_alt and not image_matches_work(url,work_title))
     return {
         "image_url":url,"source_url":official_url,
         "credit":"Immagine della produzione dal sito ufficiale del teatro",
         "alt":"Immagine della produzione di "+work_title,
         "kind":"official_production_image",
+        **({"source_image_alt":alt} if alt_verified else {}),
     }
 
 def canonical_sources()->list[dict]:
