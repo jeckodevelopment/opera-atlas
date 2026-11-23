@@ -69,6 +69,31 @@ class SourceRegistryAuditTests(unittest.TestCase):
         self.assertEqual(report["index_unknown_venue_targets"],
                          [("fake", "Unknown City|Unknown Theatre")])
 
+    def test_unmapped_index_evidence_keeps_failure_distinct_from_success(self):
+        indexes = {"sources": [
+            {"key": "future", "official_url": "https://example.org/",
+             "url": "https://example.org/2028", "access_status": "approved"},
+            {"key": "existing", "official_url": "https://example.org/",
+             "url": "https://example.org/2027", "access_status": "approved"},
+        ]}
+        health = {"sources": [
+            {"key": "future", "status": "unavailable_or_invalid",
+             "diagnostic": "future_official_programme_unverified"},
+            {"key": "existing", "status": "success",
+             "current_scan_verified": True},
+        ]}
+        result = audit(self.directory, indexes, {"sources": []}, health,
+                       index_venues={}, daily_venues={})
+        evidence = {row["source_key"]: row
+                    for row in result["unmapped_index_evidence"]}
+        self.assertEqual(len(evidence), 2)
+        self.assertFalse(evidence["future"]["verified_success"])
+        self.assertEqual(evidence["future"]["diagnostic"],
+                         "future_official_programme_unverified")
+        self.assertTrue(evidence["existing"]["verified_success"])
+        self.assertEqual(evidence["existing"]["mapping_action"],
+                         "requires_verified_physical_venue_evidence")
+
     def test_duplicate_source_identity_is_detected(self):
         config = {"sources": [{"key": "duplicated",
                                "url": "https://example.org/",
