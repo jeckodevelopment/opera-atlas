@@ -1424,6 +1424,24 @@
       ]
     },
     {
+      "id": "curated:festival-verdi-2026-alzira:2026-10-01",
+      "starts_at": "2026-10-01T20:00:00+02:00",
+      "local_date": "2026-10-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Alzira",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/alzira/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-cremona:2026-10-02",
       "starts_at": null,
       "local_date": "2026-10-02",
@@ -1442,6 +1460,24 @@
       ]
     },
     {
+      "id": "curated:festival-verdi-2026-aida:2026-10-02",
+      "starts_at": "2026-10-02T20:00:00+02:00",
+      "local_date": "2026-10-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/aida/"
+      ]
+    },
+    {
       "id": "curated:auto-fcf75c0534a06390:2026-10-02",
       "starts_at": "2026-10-02T20:30:00+02:00",
       "local_date": "2026-10-02",
@@ -1457,6 +1493,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionemuse.org/stagione-lirica-2026/"
+      ]
+    },
+    {
+      "id": "curated:festival-verdi-2026-nabucco:2026-10-03",
+      "starts_at": "2026-10-03T20:00:00+02:00",
+      "local_date": "2026-10-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/nabucodonosor/"
       ]
     },
     {
@@ -1496,6 +1550,24 @@
       ]
     },
     {
+      "id": "curated:festival-verdi-2026-alzira:2026-10-08",
+      "starts_at": "2026-10-08T20:00:00+02:00",
+      "local_date": "2026-10-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Alzira",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/alzira/"
+      ]
+    },
+    {
       "id": "curated:lombardia-death-venice-como:2026-10-09",
       "starts_at": null,
       "local_date": "2026-10-09",
@@ -1511,6 +1583,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:festival-verdi-2026-aida:2026-10-09",
+      "starts_at": "2026-10-09T20:00:00+02:00",
+      "local_date": "2026-10-09",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/aida/"
       ]
     },
     {
@@ -1565,6 +1655,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrofraschini.it/programma/turandot/"
+      ]
+    },
+    {
+      "id": "curated:festival-verdi-2026-nabucco:2026-10-11",
+      "starts_at": "2026-10-11T16:00:00+02:00",
+      "local_date": "2026-10-11",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/nabucodonosor/"
       ]
     },
     {
@@ -1676,6 +1784,24 @@
       ]
     },
     {
+      "id": "curated:festival-verdi-2026-aida:2026-10-16",
+      "starts_at": "2026-10-16T20:00:00+02:00",
+      "local_date": "2026-10-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/aida/"
+      ]
+    },
+    {
       "id": "curated:auto-76fee4db156090b6:2026-10-17",
       "starts_at": "2026-10-17T15:00:00+02:00",
       "local_date": "2026-10-17",
@@ -1691,6 +1817,24 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/le-nozze-di-figaro/"
+      ]
+    },
+    {
+      "id": "curated:festival-verdi-2026-alzira:2026-10-17",
+      "starts_at": "2026-10-17T18:00:00+02:00",
+      "local_date": "2026-10-17",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Alzira",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/alzira/"
       ]
     },
     {
@@ -1799,6 +1943,24 @@
       "longitude": null,
       "sources": [
         "https://cultura.comune.salerno.it/eventi/macbeth-2026/"
+      ]
+    },
+    {
+      "id": "curated:festival-verdi-2026-nabucco:2026-10-18",
+      "starts_at": "2026-10-18T20:00:00+02:00",
+      "local_date": "2026-10-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/nabucodonosor/"
       ]
     },
     {
@@ -2126,6 +2288,24 @@
       ]
     },
     {
+      "id": "curated:festival-verdi-2026-nabucco:2026-10-24",
+      "starts_at": "2026-10-24T20:00:00+02:00",
+      "local_date": "2026-10-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Parma",
+      "municipality": "Parma",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/nabucodonosor/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-novara:2026-10-25",
       "starts_at": null,
       "local_date": "2026-10-25",
@@ -2195,6 +2375,24 @@
       "longitude": null,
       "sources": [
         "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
+      ]
+    },
+    {
+      "id": "curated:festival-verdi-2026-aida:2026-10-25",
+      "starts_at": "2026-10-25T15:30:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Giuseppe Verdi",
+      "municipality": "Busseto",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatroregioparma.it/spettacolo/aida/"
       ]
     },
     {

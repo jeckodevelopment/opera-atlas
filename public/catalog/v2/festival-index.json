@@ -84,6 +84,25 @@
       "photo_alt": "Palazzo Ducale di Martina Franca, sede del Festival della Valle d’Itria"
     },
     {
+      "id": "festival-verdi-2026",
+      "name": "Festival Verdi",
+      "edition": "2026",
+      "city": "Parma e Busseto",
+      "region": "Emilia-Romagna",
+      "official_url": "https://teatroregioparma.it/categoria-spettacoli/edizione-26-festival-verdi/",
+      "staging_ids": [
+        "oa-s-000280",
+        "oa-s-000281",
+        "oa-s-000282"
+      ],
+      "description": "Il Festival Verdi 2026, intitolato Mondi lontani, ha portato Alzira e Nabucco al Teatro Regio di Parma e Aida al Teatro Giuseppe Verdi di Busseto, valorizzando tre prospettive del teatro musicale verdiano.",
+      "festival_id": "festival-verdi",
+      "photo_file": "Interior of Teatro Regio, Parma, Italy.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Teatro_Regio%2C_Parma%2C_Italy.JPG",
+      "photo_credit": "Viva-Verdi — CC BY-SA 3.0 — Wikimedia Commons",
+      "photo_alt": "Interno del Teatro Regio di Parma, sede principale del Festival Verdi"
+    },
+    {
       "id": "luglio-musicale-trapanese-2026",
       "name": "Luglio Musicale Trapanese",
       "edition": "2026",

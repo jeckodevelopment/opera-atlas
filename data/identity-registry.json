@@ -1294,6 +1294,14 @@
       "name": "Chiostro del Carmine",
       "city": "Martina Franca",
       "region": "Puglia"
+    },
+    "Busseto|Teatro Giuseppe Verdi": {
+      "id": "oa-v-000066",
+      "slug": "teatro-giuseppe-verdi",
+      "city_slug": "busseto",
+      "name": "Teatro Giuseppe Verdi",
+      "city": "Busseto",
+      "region": "Emilia-Romagna"
     }
   },
   "stagings": {
@@ -3454,6 +3462,30 @@
       "venue_id": "oa-v-000058",
       "slug": "la-favola-di-orfeo",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "season": "2026"
+    },
+    "festival-verdi-2026-alzira": {
+      "id": "oa-s-000280",
+      "work_id": "oa-w-000087",
+      "venue_id": "oa-v-000010",
+      "slug": "alzira",
+      "source_url": "https://teatroregioparma.it/spettacolo/alzira/",
+      "season": "2026"
+    },
+    "festival-verdi-2026-nabucco": {
+      "id": "oa-s-000281",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000010",
+      "slug": "nabucco",
+      "source_url": "https://teatroregioparma.it/spettacolo/nabucodonosor/",
+      "season": "2026"
+    },
+    "festival-verdi-2026-aida": {
+      "id": "oa-s-000282",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000066",
+      "slug": "aida",
+      "source_url": "https://teatroregioparma.it/spettacolo/aida/",
       "season": "2026"
     }
   },
@@ -9776,6 +9808,72 @@
       "staging_id": "oa-s-000279",
       "original_date": "2026-08-01",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+    },
+    "festival-verdi-2026-alzira|2026-10-01": {
+      "id": "oa-r-001081",
+      "staging_id": "oa-s-000280",
+      "original_date": "2026-10-01",
+      "source_url": "https://teatroregioparma.it/spettacolo/alzira/"
+    },
+    "festival-verdi-2026-alzira|2026-10-08": {
+      "id": "oa-r-001082",
+      "staging_id": "oa-s-000280",
+      "original_date": "2026-10-08",
+      "source_url": "https://teatroregioparma.it/spettacolo/alzira/"
+    },
+    "festival-verdi-2026-alzira|2026-10-17": {
+      "id": "oa-r-001083",
+      "staging_id": "oa-s-000280",
+      "original_date": "2026-10-17",
+      "source_url": "https://teatroregioparma.it/spettacolo/alzira/"
+    },
+    "festival-verdi-2026-nabucco|2026-10-03": {
+      "id": "oa-r-001084",
+      "staging_id": "oa-s-000281",
+      "original_date": "2026-10-03",
+      "source_url": "https://teatroregioparma.it/spettacolo/nabucodonosor/"
+    },
+    "festival-verdi-2026-nabucco|2026-10-11": {
+      "id": "oa-r-001085",
+      "staging_id": "oa-s-000281",
+      "original_date": "2026-10-11",
+      "source_url": "https://teatroregioparma.it/spettacolo/nabucodonosor/"
+    },
+    "festival-verdi-2026-nabucco|2026-10-18": {
+      "id": "oa-r-001086",
+      "staging_id": "oa-s-000281",
+      "original_date": "2026-10-18",
+      "source_url": "https://teatroregioparma.it/spettacolo/nabucodonosor/"
+    },
+    "festival-verdi-2026-nabucco|2026-10-24": {
+      "id": "oa-r-001087",
+      "staging_id": "oa-s-000281",
+      "original_date": "2026-10-24",
+      "source_url": "https://teatroregioparma.it/spettacolo/nabucodonosor/"
+    },
+    "festival-verdi-2026-aida|2026-10-02": {
+      "id": "oa-r-001088",
+      "staging_id": "oa-s-000282",
+      "original_date": "2026-10-02",
+      "source_url": "https://teatroregioparma.it/spettacolo/aida/"
+    },
+    "festival-verdi-2026-aida|2026-10-09": {
+      "id": "oa-r-001089",
+      "staging_id": "oa-s-000282",
+      "original_date": "2026-10-09",
+      "source_url": "https://teatroregioparma.it/spettacolo/aida/"
+    },
+    "festival-verdi-2026-aida|2026-10-16": {
+      "id": "oa-r-001090",
+      "staging_id": "oa-s-000282",
+      "original_date": "2026-10-16",
+      "source_url": "https://teatroregioparma.it/spettacolo/aida/"
+    },
+    "festival-verdi-2026-aida|2026-10-25": {
+      "id": "oa-r-001091",
+      "staging_id": "oa-s-000282",
+      "original_date": "2026-10-25",
+      "source_url": "https://teatroregioparma.it/spettacolo/aida/"
     }
   },
   "reserved_works": {
