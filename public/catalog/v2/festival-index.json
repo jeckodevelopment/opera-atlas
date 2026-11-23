@@ -16,7 +16,11 @@
         "oa-s-000056"
       ],
       "description": "L’opera incontra il fascino dell’Arena di Verona: grandi titoli del repertorio lirico sotto le stelle, nel suggestivo anfiteatro romano.",
-      "festival_id": "arena-opera-festival"
+      "festival_id": "arena-opera-festival",
+      "photo_file": "Arena di Verona esterno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Arena_di_Verona_esterno.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Arena di Verona, sede del Arena Opera Festival"
     },
     {
       "id": "donizetti-opera-2026",
@@ -34,7 +38,11 @@
         "oa-s-000173"
       ],
       "description": "A Bergamo, il festival dedicato a Gaetano Donizetti porta in scena opere del compositore nei teatri della città, fra riscoperte e nuove interpretazioni.",
-      "festival_id": "donizetti-opera"
+      "festival_id": "donizetti-opera",
+      "photo_file": "Teatro Donizetti Bergamo - Esterno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Donizetti_Bergamo_-_Esterno.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Teatro Donizetti, sede del Donizetti Opera Festival"
     },
     {
       "id": "festival-puccini-2027",
@@ -50,7 +58,11 @@
         "oa-s-000225"
       ],
       "description": "A Torre del Lago, luogo profondamente legato a Giacomo Puccini, il festival propone le sue opere sul palcoscenico del Gran Teatro a lui dedicato.",
-      "festival_id": "festival-puccini"
+      "festival_id": "festival-puccini",
+      "photo_file": "Open-air Grand Theatre Puccini, Torre del Lago, Tuscany, Italy.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Open-air_Grand_Theatre_Puccini%2C_Torre_del_Lago%2C_Tuscany%2C_Italy.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Gran Teatro Giacomo Puccini, sede del Festival Puccini"
     },
     {
       "id": "festival-valle-ditria-2026",
@@ -63,7 +75,11 @@
         "oa-s-000253"
       ],
       "description": "Il festival di Martina Franca valorizza il teatro musicale e il repertorio lirico, con particolare attenzione alle riscoperte, ai titoli rari e alla ricerca interpretativa.",
-      "festival_id": "festival-valle-ditria"
+      "festival_id": "festival-valle-ditria",
+      "photo_file": "Palazzo Ducale di Martina Franca.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Palazzo_Ducale_di_Martina_Franca.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Palazzo Ducale di Martina Franca, sede del Festival della Valle d’Itria"
     },
     {
       "id": "luglio-musicale-trapanese-2026",
@@ -78,7 +94,11 @@
         "oa-s-000274"
       ],
       "description": "A Trapani, il Luglio Musicale Trapanese propone spettacoli lirici e iniziative musicali, anche negli spazi del Teatro Giuseppe Di Stefano.",
-      "festival_id": "luglio-musicale-trapanese"
+      "festival_id": "luglio-musicale-trapanese",
+      "photo_file": "Trapani - Villa margherita - Luglio Musicale Trapanese - Botteghino - panoramio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Trapani_-_Villa_margherita_-_Luglio_Musicale_Trapanese_-_Botteghino_-_panoramio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Teatro Giuseppe Di Stefano e Villa Margherita, sede del Luglio Musicale Trapanese"
     },
     {
       "id": "macerata-opera-festival-2027",
@@ -93,7 +113,11 @@
         "oa-s-000198"
       ],
       "description": "Nello Sferisterio di Macerata, il festival presenta ogni estate grandi opere liriche in un teatro all’aperto dalla caratteristica architettura monumentale.",
-      "festival_id": "macerata-opera-festival"
+      "festival_id": "macerata-opera-festival",
+      "photo_file": "Macerata - Sferisterio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Macerata_-_Sferisterio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Arena Sferisterio, sede del Macerata Opera Festival"
     },
     {
       "id": "rossini-opera-festival-2026",
@@ -110,7 +134,11 @@
       ],
       "description": "A Pesaro, città natale di Gioachino Rossini, il festival celebra ogni estate il compositore con nuove produzioni, grandi interpreti e appuntamenti musicali.",
       "festival_id": "rossini-opera-festival",
-      "automatically_generated": true
+      "automatically_generated": true,
+      "photo_file": "Teatro Rossini, Pesaro.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Rossini%2C_Pesaro.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Teatro Gioachino Rossini, sede del Rossini Opera Festival"
     }
   ]
 }
