@@ -69,6 +69,31 @@ class SourceRegistryAuditTests(unittest.TestCase):
         self.assertEqual(report["index_unknown_venue_targets"],
                          [("fake", "Unknown City|Unknown Theatre")])
 
+    def test_two_verified_rolling_sources_preserve_physical_venue_identity(self):
+        from scripts.source_automation import INDEX_VENUES, build
+        expected = {
+            "macerata-festival-rolling": "Macerata|Arena Sferisterio",
+            "filarmonico-verona-rolling-opera": "Verona|Teatro Filarmonico",
+        }
+        configured = {row["key"] for row in self.index["sources"]}
+        for source, target in expected.items():
+            self.assertIn(source, configured)
+            self.assertEqual(INDEX_VENUES[source], (target,))
+
+        # Only the exact mapped venue may become operational from these scans.
+        checks = {"sources": [
+            {"key": key, "status": "success", "current_scan_verified": True}
+            for key in expected
+        ]}
+        report = build(self.directory, self.daily, {"sources": []},
+                       self.index, checks)
+        rows = {row["city"] + "|" + row["venue"]: row
+                for row in report["venues"]}
+        for source, venue in expected.items():
+            self.assertEqual(rows[venue]["status"], "operational")
+            self.assertIn(source, [item["source_key"] for item in rows[venue]["sources"]])
+        self.assertNotEqual(rows["Verona|Arena di Verona"]["status"], "operational")
+
     def test_unmapped_index_evidence_keeps_failure_distinct_from_success(self):
         indexes = {"sources": [
             {"key": "future", "official_url": "https://example.org/",
