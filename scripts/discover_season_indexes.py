@@ -276,7 +276,23 @@ def reviewed_source_urls()->set[str]:
             reviewed.add(item["source_url"])
     return reviewed
 
+# Individually reviewed first-party event URLs for editions before the
+# monitored 2026/27 window. These are genuine opera, never non-opera.
+# Keep this list source/URL scoped: a newer production with the same title
+# (including La traviata-v3) must remain eligible for publication.
+ARCHIVAL_OFFICIAL_EVENTS = {
+    ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/tosca.aspx"): 2018,
+    ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/cavalleria-rusticana-la-serva-padrona.aspx"): 2017,
+    ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/madama-butterfly.aspx"): 2017,
+    ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/la-traviata.aspx"): 2022,
+    ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/la-traviata-giuseppe-verdi.aspx"): 2014,
+    ("mantova-sociale-rolling-opera", "https://www.teatrosocialemantova.it/it-it/la-traviata-v2.aspx"): 2022,
+    ("taormina-opera-festival-rolling", "https://www.taorminaoperafestival.org/la-grande-lirica-torna-al-teatro-antico-di-taormina-con-la-traviata-secondo-castiglione/"): 2025,
+}
+
 def classify(key:str,url:str,reviewed:set[str])->str:
+    if (key,url) in ARCHIVAL_OFFICIAL_EVENTS:
+        return "not_in_official_season"
     # Keep this exact regional season URL eligible as a programme/PDF
     # discovery source, but never treat its full-season date range as a
     # single opera ticket. Individual municipal opera candidates remain live.
