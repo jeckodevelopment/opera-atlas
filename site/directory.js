@@ -66,14 +66,7 @@ function render(){
   const filtered=entries.filter(x=>normalize([x.title,x.subtitle,x.description].join(" ")).includes(q));
   for(const item of filtered){
     const card=node("article","directory-card");
-    if(section==="festival" && item.photo_source_url){
-      const figure=node("figure","festival-image-credit");
-      figure.append(imageFor(item));
-      const caption=node("figcaption");
-      const source=node("a",null,"Foto della sede · Wikimedia Commons");
-      source.href=item.photo_source_url;source.target="_blank";source.rel="noopener noreferrer";
-      caption.append(source);figure.append(caption);card.append(figure);
-    }else card.append(imageFor(item));
+    card.append(imageFor(item));
     const heading=node("h2"),link=node("a",null,item.title);link.href=item.url;heading.append(link);
     card.append(heading,node("p",null,item.subtitle));
     if(item.description)card.append(node("p","directory-description",item.description));
@@ -106,6 +99,20 @@ async function initialize(){
         document.getElementById("directory-title").textContent=x.name+(x.edition?" · "+x.edition:"");
         document.getElementById("directory-desc").textContent=x.description||x.city+" · "+x.region;
         search.hidden=true;
+        if(x.photo_file && x.photo_source_url){
+          const cover=node("figure","festival-cover-figure theatre-cover-figure");
+          const photo=imageFor({title:x.name,city:x.city,imageKind:"festival",
+            photo_file:x.photo_file,photo_source_url:x.photo_source_url,
+            photo_credit:x.photo_credit,photo_alt:x.photo_alt});
+          photo.className="detail-image";
+          cover.append(photo);
+          const caption=node("figcaption");
+          const attribution=node("a",null,x.photo_credit||"Fotografia della sede · Wikimedia Commons");
+          attribution.href=x.photo_source_url;
+          attribution.target="_blank";attribution.rel="noopener noreferrer";
+          caption.append(attribution);cover.append(caption);
+          grid.before(cover);
+        }
         const official=node("a","detail-link","Visita il sito del festival");
         official.href=x.official_url;official.target="_blank";official.rel="noopener noreferrer";
         official.id="festival-official";

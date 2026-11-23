@@ -116,7 +116,10 @@ class AtlasInterfaceTests(unittest.TestCase):
             self.assertTrue(festival["photo_source_url"].startswith("https://commons.wikimedia.org/wiki/File:"))
         directory = (SITE / "directory.js").read_text(encoding="utf-8")
         self.assertIn("photo_source_url:x.photo_source_url", directory)
-        self.assertIn('figure.append(caption)', directory)
+        self.assertIn('card.append(imageFor(item))', directory)
+        self.assertNotIn('festival-image-credit', directory)
+        self.assertIn('grid.before(cover)', directory)
+        self.assertIn('cover.append(caption)', directory)
         image_client = (SITE / "image-client.js").read_text(encoding="utf-8")
         self.assertIn("verified_festival_venue", image_client)
 
