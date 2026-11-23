@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T07:44:21+00:00",
+  "checked_at": "2026-11-23T07:53:28+00:00",
   "scope": "national",
   "attempted": 38,
   "outcomes": [
@@ -61,7 +61,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
     },
@@ -103,7 +103,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
     },
@@ -134,7 +134,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
     },
@@ -231,7 +231,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
     },
@@ -251,7 +251,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
     },
@@ -269,7 +269,12 @@
     {
       "candidate_id": "oa-index-e9edfcff33941447ad9e",
       "outcome": "unavailable_or_unstructured",
-      "reason": "FetchUnavailable",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
       "rows": 0
     },
     {
@@ -352,7 +357,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
     },
@@ -366,7 +371,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Trapani event is not a verified opera"
+        "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
     },
