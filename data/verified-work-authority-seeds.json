@@ -1151,6 +1151,24 @@
           "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
         ]
       }
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
+      "title": "L'Orfeo",
+      "composer": "Claudio Monteverdi",
+      "synopsis": "Orfeo, distrutto dalla morte di Euridice, scende negli Inferi per riportarla alla vita. La forza del canto commuove le divinità sotterranee, che gli concedono di guidarla verso la luce a condizione di non voltarsi a guardarla. Il dubbio prende il sopravvento e la perde di nuovo.",
+      "history": {
+        "librettist": "Alessandro Striggio",
+        "premiere_year": 1607,
+        "premiere_venue": "Palazzo Ducale",
+        "premiere_city": "Mantova",
+        "sources": [
+          "https://corago.unibo.it/libretto/DRT0017741",
+          "https://www.lacasadellamusica.it/it-IT/teca-d1.aspx",
+          "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
+        ]
+      }
     }
   ]
 }
