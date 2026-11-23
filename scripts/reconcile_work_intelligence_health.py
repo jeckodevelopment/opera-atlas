@@ -22,6 +22,17 @@ def reconcile(health:dict,candidates:dict,registry:dict)->dict:
         raise ValueError("invalid identity or candidate diagnostics")
     previous=health["outcomes"]
     next_outcomes=reconcile_published_outcomes(candidates,previous,registry)
+    # A catalogued candidate can reference a shared programme, an older
+    # first-party URL, or multiple matching stagings. Do not present it as
+    # an *unresearched opera*, but equally do not invent one work_id when
+    # the immutable stage linkage is not uniquely proven.
+    states={x["id"]:x["status"] for x in candidates["candidates"]}
+    next_outcomes=[
+        {**item,"status":"catalogued_source_link_unverified"}
+        if (item.get("status")=="awaiting_official_identity_evidence"
+            and states.get(item.get("candidate_id"))=="already_catalogued")
+        else item for item in next_outcomes
+    ]
     # Preserve a stable timestamp when the report is already synchronized.
     if next_outcomes==previous:
         return health
