@@ -92,6 +92,9 @@ EXCLUDED_PATHS={
         "l-anima-e-il-tempo-cosenza",
         "il-medico-dei-pazzi-cosenza",
         "oltre-l-indifferenza-cosenza",
+        # Teatro dell'Acquario's 29 Nov 2026 Odyssey is spoken theatre
+        # at Cinema Teatro Italia/Tieri, not an opera at Teatro Rendano.
+        "odissea-cosenza",
     }),
     # Exact published 2026 ROF concert, outreach and recital pages.
     # Keep productions such as Il viaggio a Reims, La scala di seta,
