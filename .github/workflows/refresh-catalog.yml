@@ -48,6 +48,9 @@ on:
       - 'tests/test_new_opera_autopromotion.py'
       - 'scripts/auto_catalogue.py'
       - 'tests/test_auto_catalogue.py'
+      # Changes to the festival's state-independent promotion gates must be
+      # verified by a real refresh, not just the isolated Python CI.
+      - 'tests/test_festival_verdi_rolling.py'
       - 'data/auto-source-urls.json'
       - 'tests/test_candidate_detail_evidence.py'
       - 'tests/test_national_season_indexes.py'
