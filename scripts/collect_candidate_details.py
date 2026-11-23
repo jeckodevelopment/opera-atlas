@@ -10,6 +10,7 @@ import json
 from datetime import date,datetime,timezone
 from html.parser import HTMLParser
 from urllib.parse import urlsplit
+from urllib.parse import urlsplit as parse_approved_url
 from pathlib import Path
 
 from opera_atlas.controlled_fetch import AccessDenied,FetchUnavailable,fetch_official_html
@@ -1703,7 +1704,7 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                     same_url=[c for c in candidates.get("candidates",[])
                               if c.get("official_url")==item["official_url"]
                               and c.get("source_key")==item["source_key"]]
-                    path=urlsplit(item["official_url"]).path.rstrip("/").lower()
+                    path=parse_approved_url(item["official_url"]).path.rstrip("/").lower()
                     dedicated=(len(same_url)==1
                                and bool(path)
                                and not any(token in path.split("/")[-1]
