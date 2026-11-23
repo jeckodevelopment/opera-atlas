@@ -1,0 +1,93 @@
+name: 2026 historic mass scan — diagnostics only
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_2026_mass_scan.py'
+  pull_request:
+    paths:
+      - 'scripts/audit_2026_mass_scan.py'
+      - 'tests/test_audit_2026_mass_scan.py'
+      - '.github/workflows/audit-2026-mass-scan.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-atlas-historical-2026-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check isolated mass scanner
+        run: python -m unittest tests.test_audit_2026_mass_scan -v
+
+  scan:
+    needs: tests
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Mass scan approved official index and detail pages
+        run: |
+          python -m scripts.audit_2026_mass_scan --allow-network --workers 5 --max-detail-pages 750 --output public/diagnostics/atlas-2026-mass-scan.json
+      - name: Validate diagnostic has no publication status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('public/diagnostics/atlas-2026-mass-scan.json').read_text())
+          assert report['read_only'] is True
+          assert report['catalog_updated'] is False
+          assert report['source_indexes_configured'] > 0
+          assert all(fact['review_status'] == 'needs_independent_validation'
+                     for detail in report['detail_results']
+                     for fact in detail['facts'])
+          print('Index successes:',report['source_indexes_scanned'])
+          print('Detail successes:',report['detail_pages_scanned'])
+          print('Facts to review:',report['observations_needing_review'])
+          PY
+      - name: Upload diagnostic JSON only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: opera-atlas-2026-mass-scan
+          path: public/diagnostics/atlas-2026-mass-scan.json
+          retention-days: 30
+
+  publish-diagnostics:
+    needs: scan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093a # v4
+        with:
+          name: opera-atlas-2026-mass-scan
+          path: public/diagnostics
+      - name: Commit only the mass-scan diagnostic
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- public/diagnostics/atlas-2026-mass-scan.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'data(audit): 2026 mass historical diagnostic [skip ci]'
+          git push origin HEAD:main
