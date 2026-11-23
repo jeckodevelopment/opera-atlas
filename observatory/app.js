@@ -177,7 +177,9 @@ async function loadEditorial(base){
  return entries;
 }
 function localToday(){
- return new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+ const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+ const part=t=>parts.find(p=>p.type===t)?.value||"";
+ return part("year")+"-"+part("month")+"-"+part("day");
 }
 function premieres(selected,year){
  const root=$("premiere-items");root.replaceChildren();
@@ -193,7 +195,7 @@ function premieres(selected,year){
  text($("premiere-total"),fmt.format(applicable.length));
  text($("premiere-summary-label"),year==="all"?"Opere censite con anno di prima assoluta verificato":"Opere censite con prima assoluta attribuita al "+year);
  const today=localToday();
- const exact=applicable.filter(e=>typeof e.history.premiere_date==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(e.history.premiere_date));
+ const exact=applicable.filter(e=>typeof e.history.premiere_date==="string"&&/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(e.history.premiere_date));
  const past=exact.filter(e=>e.history.premiere_date<=today);
  const upcoming=exact.filter(e=>e.history.premiere_date>today);
  const yearOnly=applicable.length-exact.length;
@@ -210,7 +212,7 @@ function premieres(selected,year){
   const h=e.history,entry=document.createElement("div");entry.className="premiere-entry";
   const name=document.createElement("strong");name.textContent=e.work.title;
   const detail=document.createElement("span");
-  const date=typeof h.premiere_date==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(h.premiere_date)
+  const date=typeof h.premiere_date==="string"&&/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(h.premiere_date)
     ?h.premiere_date:h.premiere_year;
   const place=[h.premiere_city,h.premiere_venue].filter(Boolean).join(" · ");
   detail.textContent=e.work.composer+" · "+date+(place?" · "+place:"");
