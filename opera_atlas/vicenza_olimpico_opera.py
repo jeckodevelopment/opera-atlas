@@ -117,12 +117,12 @@ def corroborated_ticket_rows(html: str, *, title: str,
     # The office uses "12 e 13/09/2026 ... ore 20,30/19,00" for two
     # consecutive recitals, as well as ordinary "14/09/2026" listings.
     pattern = re.compile(
-        r"(?<!\\d)([0-3]?\\d)(?:\\s+e\\s+([0-3]?\\d))?/"
-        r"(0[1-9]|1[0-2])/(20\\d{2})\\s+"
-        + re.escape(title) + r"\\s*[–—-]\\s*" + re.escape(surname)
-        + r"\\b.{0,140}?\\bore\\s+"
-        r"((?:[01]?\\d|2[0-3])[,.:][0-5]\\d"
-        r"(?:\\s*/\\s*(?:[01]?\\d|2[0-3])[,.:][0-5]\\d)?)",
+        r"(?<!\d)([0-3]?\d)(?:\s+e\s+([0-3]?\d))?/"
+        r"(0[1-9]|1[0-2])/(20\d{2})\s+"
+        + re.escape(title) + r"\s*[–—-]\s*" + re.escape(surname)
+        + r"\b.{0,140}?\bore\s+"
+        r"((?:[01]?\d|2[0-3])[,.:][0-5]\d"
+        r"(?:\s*/\s*(?:[01]?\d|2[0-3])[,.:][0-5]\d)?)",
         re.I)
     rows = []
     for found in pattern.finditer(text):
@@ -167,13 +167,13 @@ def parse_detail(html:str,*,url:str,
     years=set(header_years+category_years)
     if not GENRE.search(header):
         raise ValueError("Vicenza opera genre unverified")
-    if not re.search(r"\\bTeatro\\s+Olimpico\\s+(?:di\\s+)?Vicenza\\b",header,re.I):
+    if not re.search(r"\bTeatro\s+Olimpico\s+(?:di\s+)?Vicenza\b",header,re.I):
         raise ValueError("Vicenza opera staged elsewhere")
     # Exactly one first-party composer in the production credits.
     credits=[name for pattern,name in COMPOSERS if pattern.search(header)]
     if len(credits)!=1:
         raise ValueError("Vicenza composer missing or ambiguous")
-    work_title=re.split(r"\\s+[–-]\\s+",title,1)[0].strip()
+    work_title=re.split(r"\s+[–-]\s+",title,1)[0].strip()
     corroborated=(corroborated_ticket_rows(ticketing_html,title=work_title,
                                           composer=credits[0])
                  if ticketing_html is not None else [])
