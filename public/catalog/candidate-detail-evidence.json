@@ -1633,7 +1633,7 @@
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
       "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-23T12:29:28+00:00",
+      "checked_at": "2026-11-23T12:35:33+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2539,7 +2539,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "171aeed5a73e75d1742be59afb12a35dd7a6e67dc9b82b50e771694a3a2f3a9d",
-      "checked_at": "2026-11-23T12:30:32+00:00",
+      "checked_at": "2026-11-23T12:36:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2562,8 +2562,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "25a4814410486703b87fc51afb219e17541e45f553667a1839dfa3f55d10a9f3",
-      "checked_at": "2026-11-23T12:29:31+00:00",
+      "content_sha256": "6242b184d4e2dab054875240fb1e1d320aa7066cd2f46e283a67f1e22974ebcc",
+      "checked_at": "2026-11-23T12:35:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3878,7 +3878,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-23T12:29:51+00:00",
+      "checked_at": "2026-11-23T12:35:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3964,7 +3964,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
       "content_sha256": "19585eb182da90c9545d361e38011c87de38ddc207beaffe1e00869098e50311",
-      "checked_at": "2026-11-23T12:30:41+00:00",
+      "checked_at": "2026-11-23T12:36:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5656,7 +5656,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "3291b5602dc11a44db9e0e946da9a46c7e156292d427d9121086ac923c02119f",
-      "checked_at": "2026-11-23T12:29:47+00:00",
+      "checked_at": "2026-11-23T12:35:49+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6206,8 +6206,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "456f7f1a48a27f6ed28fee019c00302b072bac62899f0aa70878cf517b61ef83",
-      "checked_at": "2026-11-23T12:29:36+00:00",
+      "content_sha256": "4d4ae89c23f2b51bea5d442cd75735bb83a64c41bb399d0a84016575c21f5196",
+      "checked_at": "2026-11-23T12:35:41+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6687,7 +6687,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
       "content_sha256": "b0117cc1c4fd156a251f7e45780256b42cdd708cb66e28e9eea60e668160bc36",
-      "checked_at": "2026-11-23T12:29:33+00:00",
+      "checked_at": "2026-11-23T12:36:48+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7831,7 +7831,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
       "content_sha256": "b062a56a8e52ec554ce200c8418cfcb4b8be382983a974bffe3be3ab77434679",
-      "checked_at": "2026-11-23T12:30:06+00:00",
+      "checked_at": "2026-11-23T12:35:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7907,7 +7907,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
       "content_sha256": "58f1103599ddfe0c0b6944658f57889d16761e8b01b98b973bf5e1d2fc817e52",
-      "checked_at": "2026-11-23T12:30:51+00:00",
+      "checked_at": "2026-11-23T12:36:52+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7970,7 +7970,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
       "content_sha256": "8a17b636a070450936fd1b9458db727c63e70de260db038aa543be42cd6ef24e",
-      "checked_at": "2026-11-23T12:30:09+00:00",
+      "checked_at": "2026-11-23T12:36:03+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8584,7 +8584,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
       "content_sha256": "e7519c59bb3fdf66df24c90487f60440581a4ecc9f095707a80319f6645676d7",
-      "checked_at": "2026-11-23T12:30:13+00:00",
+      "checked_at": "2026-11-23T12:36:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
