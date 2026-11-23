@@ -75,7 +75,8 @@ async function read(path){
 }
 // Explicit, audited aliases only: never infer identical venues from a shared city.
 const VENUE_ALIASES={
- "torino|teatro regio":"torino|teatro regio di torino"
+ "torino|teatro regio":"torino|teatro regio di torino",
+ "savona|teatro chiabrera":"savona|teatro gabriello chiabrera"
 };
 const canonicalVenueKey=x=>VENUE_ALIASES[joinKey(x)]||joinKey(x);
 function buildVenues(){
