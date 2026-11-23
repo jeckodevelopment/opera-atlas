@@ -690,12 +690,13 @@ def reconcile_published_outcomes(candidates:dict, statuses:list[dict],
         if staging.get("work_id") in valid_works:
             by_source.setdefault(staging.get("source_url"),[]).append(staging)
     resolved={}
+    observed_ids={item.get("candidate_id") for item in statuses}
     for candidate in candidates.get("candidates",[]):
         if not isinstance(candidate,dict):
             continue
         state=candidate.get("status")
         cid=candidate.get("id")
-        if state in ("excluded_nonopera","not_in_official_season"):
+        if state in ("excluded_nonopera","not_in_official_season") and cid in observed_ids:
             # The canonical candidate registry has already made an explicit
             # editorial decision. Never continue claiming that an excluded
             # concert or an archival-only event awaits opera authority.
