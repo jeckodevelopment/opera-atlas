@@ -1806,8 +1806,8 @@
       "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
-      "content_sha256": "c8f8faf2a4a66946679e7ffae5397996ff16d229350f1a0ff0db16465cd1591b",
-      "checked_at": "2026-11-23T14:03:17+00:00",
+      "content_sha256": "2a0c53983f08f17e65db82273576e72d1e65509fbe4f57c5691be4d1add63005",
+      "checked_at": "2026-11-23T14:11:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2280,8 +2280,8 @@
       "candidate_id": "oa-index-52b35f0089c3663c7ddb",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
-      "content_sha256": "e770c5c8ce077c8ed73a2b3e481d3a42d6f13b7cb39b644f6c3869e04bb0e23c",
-      "checked_at": "2026-11-23T14:03:25+00:00",
+      "content_sha256": "3e87dcf4a2606195601037eb8a2effa27ce9de3198c5c93df4f78d8751d879ad",
+      "checked_at": "2026-11-23T14:11:29+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7293,7 +7293,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
       "content_sha256": "5f0204fe8f77b1ee0348cce74aa25462b97486bbf32e73dc9fe2fd3b7bb0396f",
-      "checked_at": "2026-11-23T14:03:46+00:00",
+      "checked_at": "2026-11-23T14:11:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7482,8 +7482,8 @@
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
-      "content_sha256": "5e32bbd02c5853c699a14b63564f01c44ff3c7a95357069bda139ec3bbd19fe4",
-      "checked_at": "2026-11-23T14:03:49+00:00",
+      "content_sha256": "f96da14d8977aad99210c59e2681599f0e5fd2443700645c1772e7255f5b20b4",
+      "checked_at": "2026-11-23T14:11:49+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7782,13 +7782,32 @@
       "candidate_id": "oa-index-dd7baa45131b35e450b1",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
-      "content_sha256": "0dc6e2e68e88beea6f3fd3515d46b3358c47e855a7cb4f4ac2a705db4ca87352",
-      "checked_at": "2026-11-23T14:03:54+00:00",
-      "status": "needs_editorial_review",
+      "content_sha256": "054a1879a1f9eb585c5a7c6edd403ec7e0c8c2dd4537114f0ca82939042c672d",
+      "checked_at": "2026-11-23T14:11:53+00:00",
+      "status": "needs_program_review",
+      "program_heading": "L'opera (forse) di Francesco Filidei / Infinito nero di Salvatore Sciarrino",
+      "program_heading_source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+      "program_components": [
+        {
+          "title": "L'opera (forse)",
+          "composer": "Francesco Filidei"
+        },
+        {
+          "title": "Infinito nero",
+          "composer": "Salvatore Sciarrino"
+        }
+      ],
       "event_facts": [
         {
-          "event_title": "L'opera (forse) di Francesco Filidei / Infinito nero di Salvatore Sciarrino",
+          "event_title": "L'opera (forse)",
           "composer": "Francesco Filidei",
+          "venue": "Teatro M° Tonino Pardo",
+          "date": "2026-10-31",
+          "starts_at": "2026-10-31T19:00:00+01:00"
+        },
+        {
+          "event_title": "Infinito nero",
+          "composer": "Salvatore Sciarrino",
           "venue": "Teatro M° Tonino Pardo",
           "date": "2026-10-31",
           "starts_at": "2026-10-31T19:00:00+01:00"
@@ -9114,6 +9133,44 @@
           "venue": "Forte della Maddalena",
           "date": "2026-07-05",
           "starts_at": "2026-07-05T22:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "content_sha256": "99eeed2634ca15304220ea140d915d4a060c30fc75ebc79e8b54977ad49c6fd1",
+      "checked_at": "2026-11-23T14:11:17+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La favola di Orfeo",
+          "composer": "Alfredo Casella",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "date": "2026-07-14",
+          "starts_at": "2026-07-14T21:00:00+02:00"
+        },
+        {
+          "event_title": "La favola di Orfeo",
+          "composer": "Alfredo Casella",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "date": "2026-07-26",
+          "starts_at": "2026-07-26T21:00:00+02:00"
+        },
+        {
+          "event_title": "La favola di Orfeo",
+          "composer": "Alfredo Casella",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "date": "2026-07-29",
+          "starts_at": "2026-07-29T21:00:00+02:00"
+        },
+        {
+          "event_title": "La favola di Orfeo",
+          "composer": "Alfredo Casella",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "date": "2026-08-01",
+          "starts_at": "2026-08-01T21:00:00+02:00"
         }
       ]
     },

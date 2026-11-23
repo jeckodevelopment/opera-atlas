@@ -1,6 +1,23 @@
 {
-  "checked_at": "2026-11-23T14:03:54+00:00",
+  "checked_at": "2026-11-23T14:11:53+00:00",
   "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-ff9fb11ad20bd9d779b3"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Alfredo Casella",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 4,
+      "sources": [
+        {
+          "source_key": "martina-valle-itria-2026",
+          "url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+        }
+      ],
+      "title": "La favola di Orfeo"
+    },
     {
       "candidate_ids": [
         "oa-index-d57d2a1cbc3f370f3da5"
@@ -57,6 +74,23 @@
         "oa-index-dd7baa45131b35e450b1"
       ],
       "category": "new_work_candidate",
+      "composer": "Salvatore Sciarrino",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "trapani-luglio-musicale-2026",
+          "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/"
+        }
+      ],
+      "title": "Infinito nero"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-dd7baa45131b35e450b1"
+      ],
+      "category": "new_work_candidate",
       "composer": "Francesco Filidei",
       "exact_title_matches": [],
       "possible_canonical_match": null,
@@ -67,7 +101,7 @@
           "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/"
         }
       ],
-      "title": "L'opera (forse) di Francesco Filidei / Infinito nero di Salvatore Sciarrino"
+      "title": "L'opera (forse)"
     },
     {
       "candidate_ids": [
@@ -91,13 +125,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 5,
+    "candidates_checked": 6,
     "candidates_without_facts": 0,
-    "facts_examined": 7,
+    "facts_examined": 12,
     "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 7,
-    "unmatched_groups": 5
+    "unmatched_facts": 12,
+    "unmatched_groups": 7
   },
   "truncated": false
 }
