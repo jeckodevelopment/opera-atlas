@@ -159,10 +159,10 @@ def verify_live(folder: Path) -> None:
                     expected_page=folder/route/"index.html"
                     if not expected_page.is_file() or response.status!=200 or sha(response.read(3_000_001))!=sha(expected_page.read_bytes()):
                         raise RuntimeError("Atlas static SEO page failure: "+route)
-            req=Request(PUBLIC_URL+"in-scena/?release="+nonce,headers={"Cache-Control":"no-cache","User-Agent":"OperaAtlasPublisher/1.0"})
+            req=Request(PUBLIC_URL+"in-scena?release="+nonce,headers={"Cache-Control":"no-cache","User-Agent":"OperaAtlasPublisher/1.0"})
             with urlopen(req,timeout=20) as response:
                 if response.status!=200 or sha(response.read(3_000_001))!=sha((folder/"in-scena.html").read_bytes()):
-                    raise RuntimeError("Atlas In scena deep-route failure")
+                    raise RuntimeError("Atlas In scena canonical slashless route failure")
             return
         except Exception:
             if attempt==2:raise

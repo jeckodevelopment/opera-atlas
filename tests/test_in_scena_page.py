@@ -17,7 +17,7 @@ class InScenaPageTests(unittest.TestCase):
         self.assertIn("RewriteRule ^in-scena/$ /atlas/in-scena", routes)
         self.assertIn("RewriteRule ^in-scena$ in-scena.html", routes)
         deployment = (ROOT / "scripts" / "deploy_atlas.py").read_text(encoding="utf-8")
-        self.assertIn('in-scena/?release=', deployment)
+        self.assertIn('in-scena?release=', deployment)
 
     def test_search_and_dates_are_connected(self):
         page = (ROOT / "site" / "in-scena.html").read_text(encoding="utf-8")
