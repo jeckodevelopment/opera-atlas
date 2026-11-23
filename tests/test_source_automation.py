@@ -280,7 +280,21 @@ class SourceAutomationTests(unittest.TestCase):
         self.assertTrue(modena["has_catalogued_alternative"])
         self.assertEqual(modena["other_successful_catalogued_sources"],
                          ["modena-teatro-opera-2026-27"])
-        self.assertGreater(report["sources_with_unresolved_candidates"],0)
+        # The live candidate queue may legitimately reach zero. Exercise
+        # unresolved-status counting with a controlled candidate snapshot;
+        # do not fail simply because automatic reconciliation succeeded.
+        checked_source=index["sources"][0]["key"]
+        original_count=by_key[checked_source]["candidate_yield"]["needs_review"]
+        fixture=json.loads(json.dumps(candidates))
+        fixture["candidates"].append({
+            "source_key":checked_source,"status":"needs_review",
+            "id":"fixture-awaiting-official-review"})
+        with_pending=scan_attention(index,checks,candidates=fixture)
+        fixture_source=next(row for row in with_pending["sources"]
+                            if row["source_key"]==checked_source)
+        self.assertEqual(fixture_source["candidate_yield"]["needs_review"],
+                         original_count+1)
+        self.assertGreater(with_pending["sources_with_unresolved_candidates"],0)
 
     def test_scan_yield_distinguishes_successful_crawl_from_publication(self):
         from scripts.source_automation import INDEX, scan_attention, CANDIDATE_REGISTRY
