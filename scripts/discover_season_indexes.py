@@ -81,6 +81,13 @@ EXCLUDED_PATHS={
         "stagione-l-altro-teatro-cosenza",
         "capodanno-2027-tributo-vasco-synphony-cosenza",
         "casa-delle-culture-cosenza",
+        # Reviewed source-specific non-opera tickets: spoken theatre,
+        # symphonic concert and a musical charity event, not staged opera.
+        "lisistrata-cosenza",
+        "picchi-e-pero-cosenza",
+        "l-anima-e-il-tempo-cosenza",
+        "il-medico-dei-pazzi-cosenza",
+        "oltre-l-indifferenza-cosenza",
     }),
     # Exact published 2026 ROF concert, outreach and recital pages.
     # Keep productions such as Il viaggio a Reims, La scala di seta,
