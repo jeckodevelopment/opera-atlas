@@ -35,6 +35,36 @@ class Recite2026AuditTest(unittest.TestCase):
         self.assertEqual("not_verified_complete", result["venues"][1]["year_status"])
         self.assertFalse(april["official_full_calendar_checked"])
 
+    def test_verified_historical_recita_is_a_diagnostic_gap_only(self):
+        historic = {"records": [{
+            "venue_id": "v1", "venue": "Teatro Esempio", "city": "Torino",
+            "title": "La Cenerentola", "composer": "Gioachino Rossini",
+            "source_url": "https://example.org/official/show",
+            "source_type": "official_event_detail", "audience": "general_public",
+            "dates": [{"date": "2026-01-20", "time": "20:00"}]
+        }]}
+        original = str(self.catalog)
+        report = build(self.directory, self.catalog, self.evidence,
+                       {"programs": []}, historic)
+        january = report["venues"][0]["months"][0]
+        self.assertEqual(1, january["observed_not_published"])
+        self.assertEqual("La Cenerentola",
+                         january["historical_official_candidates"][0]["title"])
+        self.assertEqual(0, report["complete_seasons_certified"])
+        self.assertEqual(original, str(self.catalog))
+
+    def test_wrong_venue_rejected(self):
+        bad = {"records": [{
+            "venue_id": "v1", "venue": "Teatro Esempio", "city": "Napoli",
+            "title": "Opera", "composer": "Compositore",
+            "source_url": "https://example.org/show",
+            "source_type": "official_event_detail", "audience": "general_public",
+            "dates": [{"date": "2026-01-20", "time": "20:00"}]
+        }]}
+        with self.assertRaises(ValueError):
+            build(self.directory, self.catalog, self.evidence,
+                  {"programs": []}, bad)
+
     def test_exclusion_does_not_become_missing(self):
         self.evidence["evidence"][0]["status"] = "excluded_nonopera"
         result = build(self.directory, self.catalog, self.evidence, {"programs": []})
