@@ -59,6 +59,30 @@ class IdentityHealthReconciliationTests(unittest.TestCase):
         self.assertEqual(observed["status"],"catalogued_source_link_unverified")
         self.assertNotIn("work_id",observed)
 
+    def test_composite_program_uses_exact_source_identity_not_fake_work(self):
+        url="https://opera.example.org/program/two-works"
+        health={"schema_version":1,"outcomes":[
+            {"candidate_id":"mixed","status":"awaiting_official_identity_evidence"}]}
+        candidates={"schema_version":1,"candidates":[{
+            "id":"mixed","status":"already_catalogued",
+            "source_key":"festival","official_url":url}]}
+        programs={"schema_version":1,"programs":[{
+            "id":"oa-p-verified","source_key":"festival","source_url":url,
+            "components":[{"title":"Work A"},{"title":"Work B"}],
+            "performances":[{"local_date":"2026-10-31"}]}]}
+        reconciled=reconcile(health,candidates,self.reg,programs)
+        record=reconciled["outcomes"][0]
+        self.assertEqual(record["status"],"already_catalogued_program")
+        self.assertEqual(record["program_id"],"oa-p-verified")
+        self.assertNotIn("work_id",record)
+        self.assertEqual(reconcile(reconciled,candidates,self.reg,programs),
+                         reconciled)
+        tampered={"schema_version":1,"programs":[
+            {**programs["programs"][0],"source_key":"not-festival"}]}
+        self.assertEqual(reconcile(health,candidates,self.reg,tampered)
+                         ["outcomes"][0]["status"],
+                         "catalogued_source_link_unverified")
+
     def test_idempotent_health_snapshot(self):
         input_data={"schema_version":1,"checked_at":"2026-11-23T13:18:25+00:00",
                     "outcomes":[{"candidate_id":"excluded",
