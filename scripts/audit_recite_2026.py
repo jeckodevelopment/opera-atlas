@@ -18,6 +18,7 @@ DIRECTORY = ROOT / "data/venue-directory.json"
 CATALOG = ROOT / "data/verified-launch-catalog.json"
 EVIDENCE = ROOT / "data/candidate-detail-evidence.json"
 PROGRAMS = ROOT / "public/catalog/programs.json"
+HISTORICAL = ROOT / "data/historical-2026-official-evidence.json"
 
 
 def norm(value):
@@ -36,7 +37,7 @@ def token(day, hour=None):
     return (day, hour or "")
 
 
-def build(directory, catalog, evidence, programs):
+def build(directory, catalog, evidence, programs, historical=None):
     venues = directory["venues"]
     lookup = defaultdict(list)
     for v in venues:
@@ -49,6 +50,7 @@ def build(directory, catalog, evidence, programs):
     published = defaultdict(set)
     observed = defaultdict(set)
     unassigned = []
+    historic_by_id = defaultdict(dict)
 
     def resolve(name, city):
         candidates = set(lookup.get((norm(city), norm(name)), []))
@@ -112,6 +114,39 @@ def build(directory, catalog, evidence, programs):
                 unassigned.append({"kind": "official_observation",
                                    "venue": name, "city": city, "date": day})
 
+    # Explicitly reviewed official historic detail pages; never promote recite.
+    for record in (historical or {}).get("records", []):
+        vid = record.get("venue_id")
+        if vid not in by_id:
+            raise ValueError(f"Unknown historical venue_id: {vid}")
+        venue = by_id[vid]
+        if (norm(venue.get("city")) != norm(record.get("city"))
+                or norm(record.get("venue")) not in {
+                    norm(venue.get("name")),
+                    norm((venue.get("profile_key") or "").split("|")[-1])}):
+            raise ValueError(f"Historical venue identity mismatch: {vid}")
+        from urllib.parse import urlsplit
+        address = urlsplit(record.get("source_url", ""))
+        if (address.scheme != "https" or not address.hostname
+                or record.get("source_type") != "official_event_detail"
+                or record.get("audience") != "general_public"
+                or not record.get("title") or not record.get("composer")):
+            raise ValueError(f"Insufficient historical official evidence: {vid}")
+        for item in record.get("dates", []):
+            day, hour = item.get("date"), item.get("time")
+            if not isinstance(hour, str) or not re.fullmatch(r"(?:[01][0-9]|2[0-3]):[0-5][0-9]", hour):
+                raise ValueError(f"Historic observation missing exact time: {vid}")
+            t = token(day, hour)
+            if t is None:
+                raise ValueError(f"Historic observation outside 2026: {vid}")
+            observed[vid].add(t)
+            historic_by_id[vid][t] = {
+                "date": day, "time": hour,
+                "title": record["title"], "composer": record["composer"],
+                "source_url": record["source_url"],
+                "status": "official_detail_observed_not_yet_reconciled",
+            }
+
     result = []
     for venue in venues:
         vid = venue["id"]
@@ -130,11 +165,14 @@ def build(directory, catalog, evidence, programs):
                     options = [t for t in remaining if t[0] == day]
                     if len(options) == 1:
                         remaining.remove(options[0])
+            archival = [historic_by_id[vid][t] for t in sorted(remaining)
+                        if t in historic_by_id[vid]]
             months.append({
                 "month": f"2026-{m:02d}",
                 "published_known": len(pub),
                 "independently_observed": len(obs),
                 "observed_not_published": len(remaining),
+                "historical_official_candidates": archival,
                 "status": "known_gap" if remaining else "not_verified_complete",
                 "official_full_calendar_checked": False,
             })
@@ -160,7 +198,8 @@ def main():
     args = parser.parse_args()
     def read(path):
         return json.loads(path.read_text(encoding="utf-8"))
-    result = build(read(DIRECTORY), read(CATALOG), read(EVIDENCE), read(PROGRAMS))
+    result = build(read(DIRECTORY), read(CATALOG), read(EVIDENCE), read(PROGRAMS),
+                   read(HISTORICAL) if HISTORICAL.exists() else None)
     body = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     if args.output:
         args.output.write_text(body, encoding="utf-8")
