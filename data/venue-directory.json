@@ -1362,6 +1362,29 @@
       "photo_credit": "Lorenzo Gaudenzi — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0",
       "photo_status": "verified"
+    },
+    {
+      "id": "oa-v-000068",
+      "name": "Villa Pisani Bonetti",
+      "city": "Lonigo",
+      "region": "Veneto",
+      "city_slug": "lonigo",
+      "slug": "villa-pisani-bonetti",
+      "website": "https://www.comune.lonigo.vi.it/vivere-il-comune/luoghi/villa-pisani-bonetti/",
+      "source_url": "https://www.comune.lonigo.vi.it/vivere-il-comune/luoghi/villa-pisani-bonetti/",
+      "description": "Villa palladiana di Bagnolo di Lonigo, luogo storico e sede di appuntamenti musicali, tra cui L'Orfeo per Vicenza in Lirica 2026.",
+      "address": "Via Risaie 1, Bagnolo di Lonigo, 36045 Lonigo (VI)",
+      "history": "Progettata da Andrea Palladio a partire dal 1541 e costruita tra il 1544 e il 1545 per la famiglia Pisani, la villa di Bagnolo di Lonigo è una delle prime importanti architetture palladiane. Il fronte monumentale, con tre arcate rustiche e frontone, rielabora modelli dell'architettura romana. Palladio la illustrò nei Quattro Libri dell'Architettura (1570). La villa ospita anche eventi culturali e musicali.",
+      "monitoring_status": "programma_censito",
+      "calendar_status": "acquired",
+      "canonical_venue_id": "oa-v-000068",
+      "profile_key": "Lonigo|Villa Pisani Bonetti",
+      "photo_file": "Villa Pisani Bagnolo front retouched.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Villa_Pisani_Bagnolo_front_retouched.jpg",
+      "photo_credit": "Hans A. Rosbach, ritocco di Marcok — Wikimedia Commons",
+      "photo_license": "CC BY-SA 3.0",
+      "photo_status": "verified",
+      "photo_caption": "Facciata di Villa Pisani Bonetti a Bagnolo di Lonigo, progettata da Andrea Palladio"
     }
   ],
   "related_organizations": [
