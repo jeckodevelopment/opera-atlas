@@ -26,7 +26,7 @@ FILES = frozenset((
     "directory.js", "in-scena.js", "in-scena.css", "festival-client.js", "image-client.js",
     "catalog-client.js", "styles.css", "atlas-logo.svg",
     "opera-stage.svg", "cover-jenufa.svg", "cover-nixon-in-china.svg", "performances.json", "work-synopses.json",
-    "work-history.json", "theatre-profiles.json", "og-atlas.png", "sitemap.xml"
+    "work-history.json", "theatre-profiles.json", "og-atlas.png", "sitemap.xml", "seo-routes.json"
 ))
 # Keep this allowlist explicit; no dotfiles except routing .htaccess,
 # no credentials, test fixtures, scripts or automatic catalog data.
@@ -43,7 +43,7 @@ def sha(data: bytes) -> str:
 
 def build(destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
-    generated = {"og-atlas.png", "sitemap.xml"}
+    generated = {"og-atlas.png", "sitemap.xml", "seo-routes.json"}
     for filename in sorted(FILES - generated):
         src = SOURCE / filename
         if not src.is_file() or src.is_symlink():
@@ -67,6 +67,8 @@ def build(destination: Path) -> None:
                 html = re.sub(pattern, lambda match:
                     match.group(1) + asset + "?v=" + sha((destination / asset).read_bytes())[:12] + match.group(2), html)
         (destination / filename).write_text(html, encoding="utf-8")
+    from scripts.prerender_atlas import generate as generate_entity_pages
+    generate_entity_pages(destination, ROOT / "public" / "catalog" / "v2")
     if "RewriteBase /atlas/" not in (destination / ".htaccess").read_text(encoding="utf-8"):
         raise ValueError("Incorrect rewrite base")
     for filename in ("catalog-client.js", "detail.js"):
@@ -150,13 +152,13 @@ def verify_live(folder: Path) -> None:
                 with urlopen(req,timeout=20) as response:
                     if response.status!=200 or sha(response.read(3_000_001))!=sha((folder/file).read_bytes()):
                         raise RuntimeError("Atlas public asset mismatch: "+file)
-            expected=sha((folder/"detail.html").read_bytes())
             for route in CANONICAL:
                 req=Request(PUBLIC_URL+route+"?release="+nonce,
                             headers={"Cache-Control":"no-cache","User-Agent":"OperaAtlasPublisher/1.0"})
                 with urlopen(req,timeout=20) as response:
-                    if response.status!=200 or sha(response.read(3_000_001))!=expected:
-                        raise RuntimeError("Atlas deep-route rewrite failure: "+route)
+                    expected_page=folder/route/"index.html"
+                    if not expected_page.is_file() or response.status!=200 or sha(response.read(3_000_001))!=sha(expected_page.read_bytes()):
+                        raise RuntimeError("Atlas static SEO page failure: "+route)
             req=Request(PUBLIC_URL+"in-scena/?release="+nonce,headers={"Cache-Control":"no-cache","User-Agent":"OperaAtlasPublisher/1.0"})
             with urlopen(req,timeout=20) as response:
                 if response.status!=200 or sha(response.read(3_000_001))!=sha((folder/"in-scena.html").read_bytes()):
