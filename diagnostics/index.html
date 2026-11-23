@@ -11,7 +11,7 @@
 <button class="tab" aria-selected="true" data-tab="overview">Panoramica</button><button class="tab" aria-selected="false" data-tab="venues">Teatri e fonti</button><button class="tab" aria-selected="false" data-tab="catalog">Catalogo</button><button class="tab" aria-selected="false" data-tab="activity">Attività e anomalie</button><button class="tab" aria-selected="false" data-tab="tech">Diagnostica tecnica</button>
 </nav>
 <section class="view" id="view-overview" aria-label="Panoramica">
-<div class="section"><div class="section-head"><h2>Stato dei processi</h2><span class="muted">Quattro verifiche indipendenti</span></div><div class="status-grid" id="process-status"></div></div>
+<div class="section"><div class="section-head"><h2>Tre livelli di verifica</h2><span class="muted">Fonti · Catalogazione · Pubblicazione online</span></div><p class="muted">Una scansione riuscita non dimostra che tutte le opere siano censite; una scheda nel repository non dimostra che sia già disponibile sul sito.</p><div class="grid cards3" id="process-status"></div></div>
 <div class="section"><div class="section-head"><h2>Il catalogo in numeri</h2><span class="muted">Dati verificabili nei feed disponibili</span></div><div class="grid" id="overview-metrics"></div></div>
 <div class="section"><h2>Copertura dei teatri</h2><div class="panel" id="coverage-overview"></div></div>
 <div class="section"><div class="section-head"><h2>Richiede attenzione</h2><button class="btn" data-goto="activity">Apri tutte le attività</button></div><div class="stack" id="overview-attention"></div></div>
@@ -110,27 +110,61 @@ function buildActivities(){
  const missing=venues.filter(x=>num(x.rec?.missing)>0);
  if(missing.length)activities.push({type:"publication",priority:2,title:"Recite individuate non ancora pubblicate",detail:nf(missing.reduce((s,x)=>s+num(x.rec.missing),0))+" recite in "+missing.length+" teatri; il dato non misura l'intera stagione",target:"venues"});
  if(num(data.ops.workflow_alerts)>0)activities.push({type:"technical",priority:2,title:"Workflow che richiedono attenzione",detail:num(data.ops.workflow_alerts)+" processi segnalati dal monitoraggio operativo",target:"tech"});
- const old=data.live.catalog_release_sha256!==data.evidence.catalog_release_sha256;
+ const old=!auditSummary().same;
  if(old)activities.push({type:"publication",priority:2,title:"Verifica online non allineata al catalogo",detail:"Il controllo online si riferisce a una versione differente del catalogo: non è una prova di errore di pubblicazione.",target:"tech"});
  const source=data.auto.index_scan_attention?.classifications||{};
  const blocked=num(source.access_blocked)+num(source.fetch_unavailable)+num(source.parser_or_source_validation_failed);
  if(blocked)activities.push({type:"technical",priority:2,title:"Indici stagionali con verifica non riuscita",detail:nf(blocked)+" sorgenti con accesso, recupero o validazione da approfondire; non implica che tutte le rispettive sedi siano inattive",target:"tech"});
  activities.sort((a,b)=>b.priority-a.priority);
 }
+function auditSummary(){
+ const audit=data.live||{},catalog=data.evidence||{},total=audit.total_checked;
+ const same=typeof audit.catalog_release_sha256==="string"&&
+            typeof catalog.catalog_release_sha256==="string"&&
+            audit.catalog_release_sha256===catalog.catalog_release_sha256;
+ const verified=audit.totals?.verified_live;
+ // Matching digest proves same catalog release, not exhaustive site coverage.
+ const valid=Number.isInteger(total)&&total>=0&&
+             Number.isInteger(verified)&&verified>=0&&verified<=total;
+ return {same,valid,total,verified,date:audit.checked_at};
+}
 function statuses(){
  clear("process-status");
- const checks=[
- ["Fonti",data.auto.configured_not_operational===0?"Regolari tra le configurate":"Da verificare",num(data.auto.configured_not_operational)?"warn":"good"],
- ["Catalogazione",venues.some(x=>num(x.cat?.states?.needs_review)>0)?"Revisioni aperte":"Nessuna revisione attribuita",venues.some(x=>num(x.cat?.states?.needs_review)>0)?"warn":"good"],
- ["Pubblicazione",venues.some(x=>num(x.rec?.missing)>0)?"Recite in attesa":"Nessuna lacuna osservata",venues.some(x=>num(x.rec?.missing)>0)?"warn":"good"],
- ["Verifica online",data.live.catalog_release_sha256===data.evidence.catalog_release_sha256?"Versione coerente":"Verifica da aggiornare",data.live.catalog_release_sha256===data.evidence.catalog_release_sha256?"good":"warn"]];
- for(const [name,status,severity] of checks){const c=el("div",undefined,"card");c.append(el("h3",name),pill(status,severity));$("process-status").append(c)}
+ const operating=num(data.auto.operational),censused=num(data.auto.total_venues);
+ const review=venues.reduce((s,v)=>s+num(v.cat?.states?.needs_review),0)+num(data.cat.excluded_from_attribution?.needs_review);
+ const classified=venues.reduce((s,v)=>s+num(v.cat?.states?.already_catalogued),0)+num(data.cat.excluded_from_attribution?.already_catalogued);
+ const linked=num(data.evidence.totals?.linked_solo_in_repository)+num(data.evidence.totals?.linked_program_in_repository);
+ const audit=auditSummary();
+ const cards=[
+  {name:"1 · Fonti operative",metric:censused?nf(operating)+" / "+nf(censused):"Non misurato",
+   status:operating===censused&&censused>0?"Operative nelle sedi censite":"Richiedono attenzione",
+   severity:operating===censused&&censused>0?"good":"warn",
+   description:"Connettori con scansioni verificate. Non misura la completezza dei cartelloni.",
+   evidence:"Inventario tecnico · "+(data.auto.reviewed_on||"data non disponibile"),target:"venues"},
+  {name:"2 · Catalogazione",metric:nf(classified)+" osservazioni",
+   status:review?"Da verificare: "+nf(review):"Nessuna revisione aperta nei dati attribuiti",
+   severity:review?"warn":"good",
+   description:nf(linked)+" osservazioni collegate a contenuti nel repository. Non sono conteggi di opere distinte.",
+   evidence:"Diagnostica editoriale · "+fmt(data.cat.checked_at),target:"catalog"},
+  {name:"3 · Pubblicazione sul sito",metric:audit.valid?nf(audit.verified)+" / "+nf(audit.total):"Non verificabile",
+   status:audit.same&&audit.valid&&audit.verified===audit.total?"Snapshot verificato":audit.same?"Verifica parziale":"Snapshot precedente o non confrontabile",
+   severity:audit.same&&audit.valid&&audit.verified===audit.total?"good":"warn",
+   description:audit.same?"Schede controllate per la release corrispondente; il campione non certifica la completezza.":"Il controllo online riguarda una release differente: non è prova dello stato della release corrente.",
+   evidence:"Audit online · "+fmt(audit.date),target:"tech"}
+ ];
+ for(const item of cards){
+  const x=el("div",undefined,"card");
+  x.append(el("h3",item.name),el("div",item.metric,"metric"),pill(item.status,item.severity),
+   el("p",item.description,"muted"),el("p",item.evidence,"small muted"));
+  const b=el("button","Apri dettagli","linkbutton");b.addEventListener("click",()=>tab(item.target));x.append(b);
+  $("process-status").append(x);
+ }
 }
 function overview(){
  statuses();clear("overview-metrics");
  const found=venues.reduce((s,x)=>s+num(x.rec?.found),0),published=venues.reduce((s,x)=>s+num(x.rec?.published),0);
  const pending=venues.reduce((s,x)=>s+num(x.cat?.states?.needs_review),0);
- const counts=[[num(data.auto.total_venues),"Teatri censiti","Directory strutturata"],[num(data.auto.operational),"Teatri con automazione operativa","Non equivale a stagione completa"],[published,"Recite pubblicate","Nelle sedi del feed di copertura"],[found,"Recite individuate","Non equivale a cartellone completo"],[pending,"Candidate da verificare","Attribuite alle rispettive sedi"],[num(data.evidence.totals?.linked_solo_in_repository)+num(data.evidence.totals?.linked_program_in_repository),"Candidate collegate al catalogo","Collegamenti nel repository; non verifica online"],[num(data.auto.not_automated),"Sedi censite senza connettore","Secondo la directory corrente"],[num(data.ops.workflow_alerts),"Workflow con segnalazioni","Non necessariamente guasti bloccanti"]];
+ const counts=[[num(data.auto.total_venues),"Teatri censiti","Directory strutturata"],[num(data.auto.operational),"Teatri con automazione operativa","Non equivale a stagione completa"],[published,"Recite pubblicate","Nelle sedi del feed di copertura"],[found,"Recite individuate","Non equivale a cartellone completo"],[pending,"Candidate da verificare","Attribuite alle rispettive sedi"],[num(data.evidence.totals?.linked_solo_in_repository)+num(data.evidence.totals?.linked_program_in_repository),"Osservazioni collegate nel repository","Non sono opere distinte né verifiche online"],[num(data.auto.not_automated),"Sedi censite senza connettore","Secondo la directory corrente"],[num(data.ops.workflow_alerts),"Workflow con segnalazioni","Non necessariamente guasti bloccanti"]];
  for(const x of counts)$("overview-metrics").append(metric(...x));
  const coverage=$("coverage-overview");coverage.replaceChildren();const total=num(data.auto.total_venues),active=num(data.auto.operational);coverage.append(el("strong",nf(active)+" di "+nf(total)+" teatri con automazione operativa"));const bar=el("div",undefined,"bar"),fill=el("span");fill.style.width=total?(active/total*100)+"%":"0";bar.append(fill);coverage.append(bar,el("p","Una fonte operativa non garantisce che siano già state rilevate tutte le produzioni previste.","muted"));
  clear("overview-attention");if(!activities.length)$("overview-attention").append(el("div","Nessuna segnalazione nei feed disponibili; non significa che il censimento nazionale sia completo.","panel"));
@@ -161,7 +195,7 @@ function renderCatalog(){
 function renderActivity(){clear("activity-list");const filter=$("issue-filter").value;const list=activities.filter(x=>filter==="all"||x.type===filter);if(!list.length)$("activity-list").append(el("div","Nessuna attività di questo tipo nei feed disponibili.","panel"));for(const a of list){const x=el("div",undefined,"panel");x.append(pill(a.priority===3?"Criticità":"Da esaminare",a.priority===3?"bad":"warn"),el("h3",a.title),el("p",a.detail,"muted"));const b=el("button","Vai al dettaglio","btn");b.addEventListener("click",()=>tab(a.target));x.append(b);$("activity-list").append(x)}}
 function renderTech(){
  clear("workflow-rows");for(const w of data.ops.workflows||[]){const tr=el("tr");cell(tr,w.workflow);cell(tr,w.last_conclusion||"Non disponibile");cell(tr,fmt(w.last_success_at));cell(tr,nf(num(w.failures_24h)));cell(tr,nf(num(w.cancelled_24h)));const td=el("td");if(w.last_run_url)td.append(link(w.last_run_url,"Apri esecuzione"));tr.append(td);$("workflow-rows").append(tr)}
- const audit=$("live-audit");audit.replaceChildren();const current=data.live.catalog_release_sha256===data.evidence.catalog_release_sha256;audit.append(pill(current?"Versione del catalogo allineata":"Snapshot non allineato",current?"good":"warn"),el("p","Controllo del "+fmt(data.live.checked_at)+". "+nf(num(data.live.total_checked))+" schede controllate; "+nf(num(data.live.totals?.verified_live))+" verificate online. La riuscita di questi controlli non certifica la completezza della stagione.","muted"));
+ const audit=$("live-audit");audit.replaceChildren();const snap=auditSummary();audit.append(pill(snap.same?"Release del controllo corrispondente":"Audit riferito a release diversa",snap.same?"good":"warn"),el("p","Controllo del "+fmt(snap.date)+". "+(snap.valid?nf(snap.total)+" schede controllate; "+nf(snap.verified)+" verificate online.":"Riepilogo delle verifiche non valido.")+" "+(snap.same?"Il campione si riferisce alla release confrontata.":"Non usare questi risultati come prova di pubblicazione della release corrente.")+" Il controllo non certifica la completezza della stagione.","muted"));
  const classes=data.auto.index_scan_attention?.classifications||{};const box=$("source-classifications");box.replaceChildren();for(const [k,v] of Object.entries(classes))box.append(line(k.replaceAll("_"," "),nf(num(v))));
  const feeds=$("feed-details");feeds.replaceChildren();for(const [k,p] of Object.entries(FEEDS))feeds.append(line(k,p+" · disponibile"));
 }
