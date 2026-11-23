@@ -45,6 +45,31 @@ class SourceGenreFilteringTests(unittest.TestCase):
                 self.assertEqual(classify(key,url,set()),"needs_review")
         self.assertGreaterEqual(sum(len(v) for v in EXCLUDED_PATHS.values()),50)
 
+    def test_utility_navigation_is_not_an_opera_candidate(self):
+        # These exact pages were accidentally imported from mixed site menus.
+        exclusions=[
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/contatti.aspx"),
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/privacy-policy.aspx"),
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/biglietteria.aspx"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/sponsor/"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/privacy-policy/"),
+        ]
+        for key,url in exclusions:
+            with self.subTest(url=url):
+                self.assertTrue(excluded_nonopera(key,url))
+                self.assertEqual(classify(key,url,set()),"excluded_nonopera")
+        # Performance pages and new season URLs must remain reviewable.
+        eligible=[
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/tosca.aspx"),
+            ("mantova-sociale-rolling-opera","https://www.teatrosocialemantova.it/it-it/cavalleria-rusticana-la-serva-padrona.aspx"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/"),
+            ("vicenza-olimpico-rolling-opera","https://www.vicenzainlirica.it/lorfeo-monteverdi/"),
+        ]
+        for key,url in eligible:
+            with self.subTest(url=url):
+                self.assertFalse(excluded_nonopera(key,url))
+                self.assertEqual(classify(key,url,set()),"needs_review")
+
     def test_verified_canonical_source_is_never_lost_for_opera(self):
         key="massimo-season-2026-27"
         url="https://www.teatromassimo.it/event/carmen-3/"
