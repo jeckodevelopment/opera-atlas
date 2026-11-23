@@ -210,6 +210,12 @@ window.OperaAtlasImages=Object.freeze((()=>{
         fallbackSrc:poster(title),sourceUrl:event.photo_source_url,
         credit:event.photo_credit,license:event.photo_license||""};
     }
+    if(city==="trapani" && title==="Teatro M° Tonino Pardo" &&
+       external==="https://www.tp24.it/immagini_articoli/05-05-2023/1683241767-0-trapani-riaperto-il-teatro-pardo-a-che-punto-sono-i-lavori-al-tito-marrone.jpg" && event?.photo_credit && event?.photo_source_url){
+      return {src:external,alt:"Platea e palcoscenico del Teatro M° Tonino Pardo a Trapani",
+        fallbackSrc:null,sourceUrl:event.photo_source_url,
+        credit:event.photo_credit,license:event.photo_license||""};
+    }
     if(typeof external==="string" && /^https:\/\/salentosagreeventi\.it\/media\/places\/[a-zA-Z0-9/_-]+\.webp$/.test(external)
        && event?.photo_source_url && event?.photo_credit){
       return {src:external,alt:"Fotografia del "+title+" a "+(event?.municipality||event?.city),

@@ -38,7 +38,12 @@ def build(source:dict, registry:dict)->dict:
             raise ValueError("missing theatre address: "+venue["id"])
         if not isinstance(venue.get("history"),str) or len(venue["history"].strip())<80:
             raise ValueError("missing theatre history: "+venue["id"])
-        if venue.get("photo_url") and venue["id"]=="oa-vd-000056":
+        if venue.get("photo_url") and venue["id"]=="oa-vd-000070":
+            if not (venue["photo_url"]=="https://www.tp24.it/immagini_articoli/05-05-2023/1683241767-0-trapani-riaperto-il-teatro-pardo-a-che-punto-sono-i-lavori-al-tito-marrone.jpg" and
+                    venue.get("photo_source_url")=="https://www.tp24.it/2023/05/05/cittadinanza/trapani-riaperto-il-teatro-pardo-a-che-punto-sono-i-lavori-al-tito-marrone/189930" and
+                    venue.get("photo_credit") and venue.get("photo_license")=="Tutti i diritti riservati"):
+                raise ValueError("unverified Pardo theatre photograph")
+        elif venue.get("photo_url") and venue["id"]=="oa-vd-000056":
             # Official Rome Capitale image: reference its original URL, without
             # suggesting a Creative Commons license or copying the file.
             if not (venue["photo_url"]=="https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg" and

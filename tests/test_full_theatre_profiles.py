@@ -55,10 +55,10 @@ class FullTheatreProfileTests(unittest.TestCase):
         pending=[v for v in self.directory if v.get("photo_status")=="review_pending"]
         # Newly verified Tonino Pardo has no independently licensed photo yet.
         # Never substitute an image from a different physical theatre.
-        self.assertEqual({v["name"] for v in pending},{"Teatro M° Tonino Pardo"})
+        self.assertEqual(pending,[])
         self.assertEqual(len(photos),len(self.directory)-3)
         external=[v for v in self.directory if v.get("photo_url")]
-        self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale"})
+        self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo"})
         self.assertEqual(next(v for v in external if v["name"]=="Teatro Politeama Greco")["photo_license"],"CC BY 4.0")
         municipal=next(v for v in external if v["name"]=="Teatro Nazionale")
         self.assertEqual(municipal["photo_url"],"https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg")
@@ -72,7 +72,7 @@ class FullTheatreProfileTests(unittest.TestCase):
                          {"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo"})
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Politeama Greco")["photo_status"],"verified")
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Nazionale")["photo_status"],"verified")
-        self.assertEqual(next(v for v in without if v["name"]=="Teatro M° Tonino Pardo")["photo_status"],"review_pending")
+        self.assertEqual(next(v for v in without if v["name"]=="Teatro M° Tonino Pardo")["photo_status"],"verified")
         self.assertFalse(any(v["slug"]=="teatro-comunale-nouveau" for v in self.directory))
         self.assertEqual({v["name"] for v in self.directory if v["city"]=="Bologna"},
                          {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"})
