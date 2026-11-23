@@ -32,9 +32,13 @@ def build(registry:dict,facts:dict,profiles:dict)->dict:
         sources.setdefault(key,set()).add(url)
     queue=[]
     for key,venue in registry["venues"].items():
-        if key!=venue.get("city","")+"|"+venue.get("name",""):
+        displayed=venue.get("city","")+"|"+venue.get("name","")
+        # Historical source keys can use a short theatre name, while the
+        # canonical display uses its full official name (e.g. Savona).
+        # Accept this only when the full official display profile exists.
+        if key!=displayed and displayed not in profiles["venues"]:
             raise ValueError("inconsistent canonical venue identity")
-        if key in profiles["venues"]:
+        if key in profiles["venues"] or displayed in profiles["venues"]:
             continue
         if key not in sources:
             raise ValueError("unprofiled venue without verified staging evidence: "+key)
