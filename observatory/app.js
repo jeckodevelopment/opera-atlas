@@ -52,7 +52,7 @@ function populate(){
 function frequencies(values){const m=new Map();for(const value of values)m.set(value,(m.get(value)||0)+1);return [...m].sort((a,b)=>b[1]-a[1]||String(a[0]).localeCompare(String(b[0]),"it"))}
 function bars(id,items,limit=10){
  const root=$(id);root.replaceChildren();if(!items.length){root.textContent="Nessun dato nel periodo selezionato";return}
- const max=items[0][1]||1;
+ const max=Math.max(1,...items.map(x=>x[1]));
  for(const [name,n] of items.slice(0,limit)){
   const line=document.createElement("div");line.className="barrow";
   const label=document.createElement("span");label.textContent=name;label.title=name;
