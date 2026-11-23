@@ -32,6 +32,13 @@ Il banner usa il dettaglio **effettivo del teatro nel mockup originale approvato
 - Poiché molte schede hanno solo l'anno e non la data precisa, il box distingue date documentate già trascorse, date future e date non specificate. **L'anno di prima registrato non costituisce da solo prova che un evento futuro sia già avvenuto.** Se il feed editoriale non è disponibile, il box non mostra numeri fittizi. Se non è selezionato un singolo anno civile, propone di selezionarne uno per il conteggio.
 - Il box è inserito accanto alla tabella sulla circolazione per preservare una composizione grafica equilibrata; nessun nuovo dato di affluenza o copertura nazionale.
 
+## Rapporto PDF istituzionale
+Il frontend genera interamente nel browser un rapporto **A4 multipagina** (11 pagine, carta vettoriale), scaricabile dal comando discreto «Report PDF» nell'intestazione, adiacente all'esportazione CSV. Non utilizza servizi remoti PDF, server, credenziali, librerie di terzi o dati inventati.
+
+Il documento presenta copertina Opera+, perimetro dei filtri Anno/Stagione/Territorio, quattro KPI, recite per mese e giorno, geografia regionale, città e sedi, repertorio per opera e compositore, circolazione canonica, prime assolute con anno storico verificato, allestimenti, titoli meno rappresentati, metodologia e data di versione dei dati. I grafici sono disegnati come vettori nel PDF e le cifre derivano dal medesimo insieme di recite filtrate già usato dalla dashboard. Le prime assolute usano il feed editoriale separato e non confondono anno storico di debutto con anno delle repliche. Il comando resta disabilitato finché il catalogo non è caricato correttamente. Se il feed editoriale è assente, il PDF non inventa alcun numero per le prime assolute.
+
+I PDF, una volta generati, non si aggiornano automaticamente quando cambia Atlas: la data di versione e i filtri sono riportati per garantire citabilità.
+
 ## Collaudi separati
 - Controllare caricamento dati con manifest valido e indisponibilità della sorgente: nessuna statistica fittizia.
 - Filtrare per stagione e regione; verificare i quattro indicatori, barre e classifiche.
