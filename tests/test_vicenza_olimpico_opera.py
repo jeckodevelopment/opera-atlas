@@ -161,6 +161,30 @@ class VicenzaOlimpicoOfficialSource(unittest.TestCase):
             parse_detail(opera_page(edition="",venue="Villa Pisani Bonetti di Bagnolo"),
                          url=BARBIERE,ticketing_html=tickets)
 
+    def test_official_showtimes_resolve_unrelated_category_year_links(self):
+        tickets=("<p>10/09/2026 Il barbiere di Siviglia – Rossini "
+                 "(anteprima-prova generale), ore 20,30</p>"
+                 "<p>12 e 13/09/2026 Il barbiere di Siviglia – Rossini "
+                 "(prima e seconda recita), ore 20,30/19,00</p>")
+        # A WordPress menu linking to the 2027 festival is not evidence
+        # that this 2026 opera has a 2027 performance.
+        html=opera_page().replace(
+            "<html>",'<html><a href="/category/vil/vicenza-in-lirica-2027/">'
+                     'Other edition</a>')
+        with self.assertRaisesRegex(ValueError,"year"):
+            parse_detail(html,url=BARBIERE)
+        self.assertEqual(parse_detail(
+            html,url=BARBIERE,ticketing_html=tickets)[3],
+            [("2026-09-10","20:30"),("2026-09-12","20:30"),
+             ("2026-09-13","19:00")])
+        # Unlike a related link, an explicitly contradictory year in the
+        # article must not be overruled by the ticket-office archive.
+        contradictory=opera_page(edition="Vicenza in Lirica 2027").replace(
+            "<html>",'<html><a href="/category/vil/vicenza-in-lirica-2026/">'
+                     'Vicenza in Lirica 2026</a>')
+        with self.assertRaisesRegex(ValueError,"year"):
+            parse_detail(contradictory,url=BARBIERE,ticketing_html=tickets)
+
     def test_2027_edition_without_hardcoded_calendar_year(self):
         html=opera_page(edition="Vicenza in Lirica 2027",
                         when="Sabato 11 settembre | ore 20.30")
