@@ -1,4 +1,8 @@
-# Inventario iniziale delle fonti — 20 novembre 2026
+# Registro delle fonti — inventario storico e riferimenti nazionali
+
+> **Aggiornamento di governance — 23 novembre 2026.** Le liste e i checkpoint del 20 novembre riportati sotto sono **documentazione storica della fase pilota**, non lo stato nazionale corrente. Il censimento operativo è in `data/venue-directory.json` (70 sedi), gli indici configurati in `data/season-index-config.json` (87), i dettagli di acquisizione in `data/daily-source-config.json` (19) e gli esiti in `public/catalog/source-automation.json` e `data/season-index-health.json`. L'[audit F1 del registro nazionale](F1_SOURCE_REGISTRY_AUDIT_2026-11-23.md) registra il confronto, le eccezioni e le verifiche non ancora effettuate. Non equiparare `operational` a copertura completa di stagione e non usare `data/sources.json` (otto fonti pilota) come inventario di tutte le fonti.
+
+## Inventario iniziale delle fonti — 20 novembre 2026
 
 **Origine:** elenco fornito dal promotore del progetto. Il censimento non equivale a conferma di attività operistica corrente. Nessuna pagina non verificata è implicitamente autorizzata allo scraping.
 
