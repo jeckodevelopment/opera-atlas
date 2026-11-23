@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "note": "Reviewed official historic event-detail evidence. No direct catalog promotion. Youth-only preview of 2026-01-17 is deliberately excluded.",
+  "records": [
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "source_type": "official_event_detail",
+      "audience": "general_public",
+      "dates": [
+        {
+          "date": "2026-01-20",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-01-21",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-01-22",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-01-23",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-01-24",
+          "time": "15:00"
+        },
+        {
+          "date": "2026-01-25",
+          "time": "15:00"
+        },
+        {
+          "date": "2026-01-27",
+          "time": "15:00"
+        }
+      ],
+      "verification_note": "Official performance-detail page lists each date and local time; excludes 17 January Anteprima Giovani."
+    }
+  ]
+}
