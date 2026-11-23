@@ -820,6 +820,13 @@
       "photo_license": "Tutti i diritti riservati",
       "photo_caption": "Veduta della platea e del palcoscenico del Teatro M° Tonino Pardo, Trapani",
       "photo_review_note": "Fotografia identificativa TP24 del 5 maggio 2023: diritti di riutilizzo non concessi/verificati. Richiedere autorizzazione prima dell'incorporamento."
+    },
+    "Busseto|Teatro Giuseppe Verdi": {
+      "city": "Busseto",
+      "name": "Teatro Giuseppe Verdi",
+      "description": "Il Teatro Giuseppe Verdi di Busseto ospita opere e iniziative dedicate al compositore, tra cui Aida al Festival Verdi 2026.",
+      "website": "https://teatroregioparma.it/",
+      "source": "https://teatroregioparma.it/spettacolo/aida/"
     }
   }
 }
