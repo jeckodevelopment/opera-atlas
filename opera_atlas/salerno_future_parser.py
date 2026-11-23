@@ -39,6 +39,11 @@ NONOPERA = re.compile(
 CANCEL = re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b")
 
 
+class FutureSalernoSeasonNotYetVerified(ValueError):
+    """Exact official season year is earlier than all eligible rolling dates."""
+
+
+
 def eligible_detail(url: str) -> bool:
     p = urlsplit(url)
     m = EVENT.fullmatch(p.path)
@@ -114,6 +119,15 @@ def extract_index(html: str, *, url: str, min_links: int) -> list[str]:
         if re.search(rf"(?<!\d){year}(?!\d)", label):
             out.add(target)
     if len(out) < min_links:
+        # The official page can legitimately still advertise the preceding
+        # edition. Distinguish this from malformed HTML, unapproved URLs and
+        # a genuine source parser failure, without inferring a 2027 program.
+        year_match = re.search(
+            r"(?i)\\bTeatro Verdi\\s*[\\u2013-]\\s*Stagione Lirica e di Balletto\\s+(20\\d{2})\\b",
+            text)
+        if year_match and int(year_match[1]) < 2027 and not out:
+            raise FutureSalernoSeasonNotYetVerified(
+                "future_salerno_season_not_yet_verified")
         raise ValueError("no future Salerno opera-season production candidates")
     return sorted(out)
 
