@@ -194,6 +194,25 @@ class VicenzaOlimpicoOfficialSource(unittest.TestCase):
         self.assertIn("links=2026",str(error.exception))
         self.assertIn("tickets=-",str(error.exception))
 
+    def test_navigation_archive_years_are_not_production_metadata(self):
+        from opera_atlas.vicenza_reviewed_2026 import verified_calendar
+        archive="".join(
+            f"<p>Vicenza in Lirica {year}</p>"
+            for year in range(2017,2026))
+        original=opera_page(edition="")
+        html=original.replace(
+            "<h1>Il barbiere di Siviglia – Rossini</h1>",
+            "<h1>Il barbiere di Siviglia – Rossini</h1>"+archive)
+        # Archive menus alone never authorize a recital date.
+        with self.assertRaisesRegex(ValueError,"year"):
+            parse_detail(html,url=BARBIERE)
+        # Live detail + independently reviewed operator ticket office agree.
+        facts=verified_calendar(
+            html,source_key=KEY,source_url=BARBIERE)
+        self.assertEqual(len(facts),3)
+        self.assertEqual([x["date"] for x in facts],
+                         ["2026-09-10","2026-09-12","2026-09-13"])
+
     def test_2027_edition_without_hardcoded_calendar_year(self):
         html=opera_page(edition="Vicenza in Lirica 2027",
                         when="Sabato 11 settembre | ore 20.30")
