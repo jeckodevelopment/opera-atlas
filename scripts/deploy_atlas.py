@@ -26,7 +26,7 @@ FILES = frozenset((
     "directory.js", "in-scena.js", "in-scena.css", "festival-client.js", "image-client.js",
     "catalog-client.js", "styles.css", "atlas-logo.svg",
     "opera-stage.svg", "cover-jenufa.svg", "cover-nixon-in-china.svg", "performances.json", "work-synopses.json",
-    "work-history.json", "theatre-profiles.json"
+    "work-history.json", "theatre-profiles.json", "og-atlas.png", "sitemap.xml"
 ))
 # Keep this allowlist explicit; no dotfiles except routing .htaccess,
 # no credentials, test fixtures, scripts or automatic catalog data.
@@ -43,7 +43,8 @@ def sha(data: bytes) -> str:
 
 def build(destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
-    for filename in sorted(FILES):
+    generated = {"og-atlas.png", "sitemap.xml"}
+    for filename in sorted(FILES - generated):
         src = SOURCE / filename
         if not src.is_file() or src.is_symlink():
             raise ValueError("Missing or unsafe Atlas source: " + filename)
@@ -51,6 +52,8 @@ def build(destination: Path) -> None:
         if len(data) > 3_000_000:
             raise ValueError("Oversized frontend file: " + filename)
         (destination / filename).write_bytes(data)
+    from scripts.atlas_seo import build as build_seo
+    build_seo(destination, ROOT / "public" / "catalog" / "v2")
     snapshot = json.loads((destination / "performances.json").read_text(encoding="utf-8"))
     if snapshot.get("schema_version") != 1 or not isinstance(snapshot.get("performances"), list):
         raise ValueError("Invalid static snapshot")

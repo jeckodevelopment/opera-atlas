@@ -127,6 +127,59 @@ function link(text, url, css="detail-link") {
   a.href=url;
   return a;
 }
+
+// Search metadata for canonical entities is generated from validated catalog data.
+// A generic OG preview remains in detail.html for bots that cannot execute JS.
+function setDetailSEO(selected,first) {
+  const text = String(title.textContent||"").trim();
+  const description = selected.kind==="work"
+    ? text+" di "+(first.composer||"autore non indicato")+": scopri produzioni e recite nei teatri italiani su Opera+ Atlas."
+    : selected.kind==="venue"
+      ? text+" a "+first.municipality+": repertorio e rappresentazioni operistiche su Opera+ Atlas."
+      : text+" al "+first.venue+" di "+first.municipality+": programma e date delle recite su Opera+ Atlas.";
+  const urls=window.OperaAtlasCatalog.urls(first);
+  const pathname=selected.kind==="work"?urls.work:selected.kind==="venue"?urls.venue:
+    selected.kind==="group"?urls.production:urls.staging;
+  const canonical=new URL(pathname,location.origin).href;
+  function meta(key,value,property=false){
+    let element=document.head.querySelector('meta['+(property?'property':'name')+'="'+key+'"]');
+    if(!element){element=document.createElement("meta");element.setAttribute(property?"property":"name",key);document.head.append(element);}
+    element.content=value;
+  }
+  meta("description",description);
+  meta("og:title",document.title,true);
+  meta("og:description",description,true);
+  meta("og:url",canonical,true);
+  meta("twitter:title",document.title);
+  meta("twitter:description",description);
+  let link=document.head.querySelector('link[rel="canonical"]');
+  if(!link){link=document.createElement("link");link.rel="canonical";document.head.append(link);}
+  link.href=canonical;
+  // Only semantic facts actually present in the catalog; no invented venue
+  // street addresses, tickets, prices, times or performer credits.
+  let structured;
+  if(selected.kind==="work"){
+    structured={"@context":"https://schema.org","@type":"MusicComposition","name":first.title,
+      "composer":first.composer?{"@type":"Person","name":first.composer}:undefined,"url":canonical};
+  }else if(selected.kind==="venue"){
+    structured={"@context":"https://schema.org","@type":"PerformingArtsTheater","name":first.venue,
+      "address":{"@type":"PostalAddress","addressLocality":first.municipality,"addressCountry":"IT"},
+      "url":canonical};
+  }else{
+    const recite=selected.events.filter(e=>e.starts_at && e.time_known &&
+      e.status!=="cancelled" && e.status!=="canceled").slice(0,60);
+    structured={"@context":"https://schema.org","@graph":recite.map(e=>({
+      "@type":"Event","name":e.title,"startDate":e.starts_at,
+      "location":{"@type":"Place","name":e.venue,
+        "address":{"@type":"PostalAddress","addressLocality":e.municipality,"addressCountry":"IT"}},
+      "url":canonical
+    }))};
+  }
+  let block=document.getElementById("atlas-structured-data");
+  if(!block){block=document.createElement("script");block.id="atlas-structured-data";block.type="application/ld+json";document.head.append(block);}
+  block.textContent=JSON.stringify(structured);
+}
+
 function missing(message) {
   title.textContent="Scheda non disponibile";
   subtitle.textContent="";
@@ -570,6 +623,7 @@ async function initialize() {
     if(selected.events.length)sourceLinks(selected.events,selected.kind,theatreProfile);
     else sourceLinks([first],selected.kind,theatreProfile);
     document.title=title.textContent+" — Opera+ Atlas";
+    setDetailSEO(selected,first);
     // Canonicalize old query-based links after resolution; never change identity.
     if(pathnameIsLegacy()) {
       const canonical=selected.kind==="work"
