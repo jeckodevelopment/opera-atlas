@@ -1298,6 +1298,21 @@
       "photo_credit": "Alessandro Vecchi — Wikimedia Commons, CC BY-SA 4.0",
       "photo_license": "CC BY-SA 4.0",
       "photo_caption": "Palazzo Natta, sede del giardino storico utilizzato per gli spettacoli all’aperto"
+    },
+    {
+      "id": "oa-vd-000069",
+      "name": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "region": "Puglia",
+      "slug": "chiostro-del-carmine",
+      "city_slug": "martina-franca",
+      "website": "https://www.festivaldellavalleditria.it/programma-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "description": "Il Chiostro del Carmine ospita a Martina Franca rappresentazioni del Festival della Valle d’Itria, fra cui l’opera barocca Il schiavo di sua moglie di Francesco Provenzale, presentata nel luglio 2026.",
+      "monitoring_status": "programma_censito",
+      "address": "Chiostro del Carmine, Martina Franca",
+      "history": "Spazio storico utilizzato come sede di spettacolo dal Festival della Valle d’Itria. Nel 2026 ha accolto le rappresentazioni dell’opera Il schiavo di sua moglie, con recite il 24, 27 e 30 luglio.",
+      "calendar_status": "acquired"
     }
   ],
   "related_organizations": [
