@@ -53,7 +53,9 @@ function imageFor(item){
       ? {city:item.city,municipality:item.city,venue:item.title,
          photo_file:item.photo_file,photo_url:item.photo_url,photo_credit:item.photo_credit,photo_license:item.photo_license,photo_source_url:item.photo_source_url,
          no_city_fallback:item.independentVenue===true}
-      : {city:item.city,name:item.title};
+      : {city:item.city,name:item.title,
+         photo_file:item.photo_file,photo_source_url:item.photo_source_url,
+         photo_credit:item.photo_credit,photo_alt:item.photo_alt};
   try{return images.element(images[type](identity),"directory-image");}
   catch(error){console.warn("Atlas image fallback",error);return fallback;}
 }
@@ -64,7 +66,14 @@ function render(){
   const filtered=entries.filter(x=>normalize([x.title,x.subtitle,x.description].join(" ")).includes(q));
   for(const item of filtered){
     const card=node("article","directory-card");
-    card.append(imageFor(item));
+    if(section==="festival" && item.photo_source_url){
+      const figure=node("figure","festival-image-credit");
+      figure.append(imageFor(item));
+      const caption=node("figcaption");
+      const source=node("a",null,"Foto della sede · Wikimedia Commons");
+      source.href=item.photo_source_url;source.target="_blank";source.rel="noopener noreferrer";
+      caption.append(source);figure.append(caption);card.append(figure);
+    }else card.append(imageFor(item));
     const heading=node("h2"),link=node("a",null,item.title);link.href=item.url;heading.append(link);
     card.append(heading,node("p",null,item.subtitle));
     if(item.description)card.append(node("p","directory-description",item.description));
@@ -120,6 +129,8 @@ async function initialize(){
           const x=found.item;
           entries.push({url:"./directory.html?section=festival&id="+encodeURIComponent(x.id),
             title:x.name+(x.edition?" · "+x.edition:""),city:x.city,description:x.description||"",
+            photo_file:x.photo_file,photo_source_url:x.photo_source_url,
+            photo_credit:x.photo_credit,photo_alt:x.photo_alt,
             subtitle:x.city+" · "+x.region+" · "+(found.future.length?found.future.length+" recite future":"Scopri il festival")});
         }
       }

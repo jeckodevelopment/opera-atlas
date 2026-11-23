@@ -107,6 +107,19 @@ class AtlasInterfaceTests(unittest.TestCase):
         registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
         sync_festival_index(registry, check=True)
 
+    def test_festival_photos_are_venue_specific_and_attributed(self):
+        festivals = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))["festivals"]
+        for festival in festivals:
+            self.assertTrue(festival["photo_file"], festival["id"])
+            self.assertTrue(festival["photo_alt"], festival["id"])
+            self.assertTrue(festival["photo_credit"], festival["id"])
+            self.assertTrue(festival["photo_source_url"].startswith("https://commons.wikimedia.org/wiki/File:"))
+        directory = (SITE / "directory.js").read_text(encoding="utf-8")
+        self.assertIn("photo_source_url:x.photo_source_url", directory)
+        self.assertIn('figure.append(caption)', directory)
+        image_client = (SITE / "image-client.js").read_text(encoding="utf-8")
+        self.assertIn("verified_festival_venue", image_client)
+
     def test_festival_registry_generates_only_verified_year_editions(self):
         from unittest.mock import patch
         from tempfile import TemporaryDirectory

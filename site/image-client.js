@@ -227,11 +227,17 @@ window.OperaAtlasImages=Object.freeze((()=>{
     return result;
   }
   function festival(event){
-    const title=event?.name||"Festival";
-    const city=commune(event?.city);
-    const file=FILES[city];
-    return file?photo(file,"Veduta del teatro o luogo del festival a "+event.city,title):
-      {src:poster(title,"festival"),alt:"Illustrazione originale del festival "+title};
+    // Festival photos are identity-specific, not chosen by city: a single
+    // municipality may host several unrelated venues or festivals.
+    if(typeof event?.photo_file==="string" && event.photo_file &&
+       typeof event?.photo_source_url==="string" &&
+       event.photo_source_url.startsWith("https://commons.wikimedia.org/wiki/File:")){
+      return {src:commons(event.photo_file),
+        alt:event.photo_alt||"Sede del festival "+(event.name||""),
+        fallbackSrc:null,sourceUrl:event.photo_source_url,
+        credit:event.photo_credit||"Wikimedia Commons",kind:"verified_festival_venue"};
+    }
+    return {src:"",alt:"Fotografia verificata non disponibile",kind:"unavailable"};
   }
   function element(item,cls="card-image"){
     const picture=document.createElement("img");
