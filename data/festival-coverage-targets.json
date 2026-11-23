@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "policy": "Editorial targets only. No staging is assigned to a festival without an explicit edition-specific source or authoritative cross-reference; venue identity alone never proves festival membership.",
+  "targets": [
+    {
+      "id": "festival-verdi",
+      "name": "Festival Verdi",
+      "edition": "2026",
+      "city": "Parma e Busseto",
+      "official_program_url": "https://teatroregioparma.it/categoria-spettacoli/edizione-26-festival-verdi/",
+      "note": "Festival Verdi 2026: Alzira, Nabucodonosor e Aida; ordinary Teatro Regio season entries must not be automatically attributed."
+    },
+    {
+      "id": "festival-pergolesi-spontini",
+      "name": "Festival Pergolesi Spontini",
+      "edition": "2026",
+      "city": "Jesi e territorio",
+      "official_program_url": "https://www.fondazionepergolesispontini.com/festival-pergolesi-spontini/programma-festival-pergolesi-spontini-2026/",
+      "note": "Do not confuse with the separate 2026 Jesi opera season /lirica/programma-stagione-lirica-2026/."
+    },
+    {
+      "id": "monteverdi-festival",
+      "name": "Monteverdi Festival",
+      "edition": "2026",
+      "city": "Cremona",
+      "official_program_url": "https://www.comune.cremona.it/vivere-comune/eventi/monteverdi-festival",
+      "note": "Official civic introduction; individual operatic productions require verified specific detail pages."
+    },
+    {
+      "id": "ravenna-festival",
+      "name": "Ravenna Festival / Trilogia d’Autunno",
+      "edition": "2026",
+      "city": "Ravenna",
+      "official_program_url": "https://www.turismo.ra.it/eventi/musica/trilogia-autunno",
+      "note": "2026 Trilogia includes La clemenza di Tito; do not attach unrelated 2027 Cherubini opera season."
+    },
+    {
+      "id": "bellini-international-context",
+      "name": "Bellini International Context",
+      "edition": "2026",
+      "city": "Catania e Sicilia",
+      "official_program_url": "https://www.belliniinternationalcontext.it/",
+      "note": "Includes I puritani; ordinary Bellini theatre programme not automatically part of this festival."
+    }
+  ]
+}
