@@ -1266,6 +1266,56 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 else:
                     repeated_pages+=1
                 if item["source_key"]=="vicenza-olimpico-rolling-opera":
+                    from opera_atlas.vicenza_orfeo_2026 import (
+                        URL as ORFEO_URL, PRESS_URL as ORFEO_PRESS,
+                        verified_calendar as verified_orfeo)
+                    if item["official_url"]==ORFEO_URL:
+                        # Second official page establishes opera genre and the
+                        # actual location outside Teatro Olimpico. It is not
+                        # a generic Event fallback or a synthetic 2026 date.
+                        press_key=(source_id,ORFEO_PRESS)
+                        press=fetched_pages.get(press_key)
+                        if press is None:
+                            if distinct_fetches:pause(REQUEST_GAP_SECONDS)
+                            press=fetcher(db,source_id=source_id,
+                                url=ORFEO_PRESS,network_enabled=True)
+                            fetched_pages[press_key]=press
+                            distinct_fetches+=1
+                        else:
+                            repeated_pages+=1
+                        try:
+                            facts=verified_orfeo(
+                                page.html,press.html,source_key=item["source_key"],
+                                source_url=item["official_url"])
+                        except ValueError as exc:
+                            health.append({
+                                "candidate_id":item["id"],
+                                "outcome":"unavailable_or_unstructured",
+                                "reason":"no_verified_showtimes",
+                                "diagnostic":["official_orfeo_press:"+str(exc)[:120]],
+                                "rows":0})
+                            continue
+                        from scripts.publish_work_posters import extract_official_poster
+                        image=extract_official_poster(
+                            page.html,item["official_url"],"L'Orfeo",
+                            verified_event_page=True)
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],
+                            "source_key":item["source_key"],
+                            "source_url":item["official_url"],
+                            "content_sha256":page.sha256,
+                            "official_schedule_evidence_url":ORFEO_PRESS,
+                            "official_schedule_sha256":press.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(
+                                timespec="seconds"),
+                            "status":"needs_editorial_review",
+                            "event_facts":facts,
+                            **({"poster_evidence":image} if image else {})}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_first_party_press",
+                                       "rows":len(facts)})
+                        continue
+                if item["source_key"]=="vicenza-olimpico-rolling-opera":
                     from opera_atlas.vicenza_olimpico_opera import (
                         TICKETING,parse_detail)
                     try:

@@ -359,6 +359,12 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
         city=cities[verified]
     if len(named)!=1:return None
     venue=next(iter(named))
+    if (source_key=="vicenza-olimpico-rolling-opera"
+        and venue=="Villa Pisani Bonetti"):
+        # The same 2026 festival has an official offsite staging in Bagnolo,
+        # a hamlet of Lonigo. Never attribute it to the Teatro Olimpico.
+        city="Lonigo"
+        default_venue="Villa Pisani Bonetti"
     if (source_key=="sassari-de-carolis-rolling-opera"
         and venue=="Forte della Maddalena"):
         city="Alghero"
@@ -383,6 +389,8 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                if source_key=="coccia-novara-rolling-opera" else
                {"Teatro Comunale di Bolzano","Teatro Sociale"}
                if source_key=="haydn-rolling-opera" else {default_venue})
+    if source_key=="vicenza-olimpico-rolling-opera":
+        permitted={"Teatro Olimpico","Villa Pisani Bonetti"}
     if source_key=="festival-verdi-rolling":
         permitted={"Teatro Regio di Parma","Teatro Giuseppe Verdi"}
     if source_key=="pesaro-rof-2026":
@@ -413,7 +421,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
 def ensure_venue(registry:dict,city:str,venue:str,existing:dict|None):
     """Allocate an immutable venue ID only together with a verified staging."""
     if existing is not None:return existing
-    region={"Torre del Lago Puccini":"Toscana","Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Martina Franca":"Puglia","Pesaro":"Marche","Padova":"Veneto","Rovigo":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Alghero":"Sardegna","Novara":"Piemonte","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Savona":"Liguria","Napoli":"Campania","Asti":"Piemonte","Bolzano":"Trentino-Alto Adige","Trento":"Trentino-Alto Adige","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto","Cosenza":"Calabria","Sabbioneta":"Lombardia","Vicenza":"Veneto","Mantova":"Lombardia","Trapani":"Sicilia","Milano":"Lombardia","Ravenna":"Emilia-Romagna","Parma":"Emilia-Romagna","Palermo":"Sicilia","Brescia":"Lombardia","Taormina":"Sicilia"}.get(city)
+    region={"Torre del Lago Puccini":"Toscana","Spoleto":"Umbria","Chieti":"Abruzzo","Lecce":"Puglia","Martina Franca":"Puglia","Pesaro":"Marche","Lonigo":"Veneto","Padova":"Veneto","Rovigo":"Veneto","Treviso":"Veneto","Jesi":"Marche","Ancona":"Marche","Livorno":"Toscana","Ferrara":"Emilia-Romagna","Reggio Emilia":"Emilia-Romagna","Pisa":"Toscana","Verona":"Veneto","Salerno":"Campania","Macerata":"Marche","Piacenza":"Emilia-Romagna","Lucca":"Toscana","Modena":"Emilia-Romagna","Catania":"Sicilia","Messina":"Sicilia","Cagliari":"Sardegna","Sassari":"Sardegna","Alghero":"Sardegna","Novara":"Piemonte","Trieste":"Friuli-Venezia Giulia","Genova":"Liguria","Savona":"Liguria","Napoli":"Campania","Asti":"Piemonte","Bolzano":"Trentino-Alto Adige","Trento":"Trentino-Alto Adige","Bergamo":"Lombardia","Firenze":"Toscana","Roma":"Lazio","Bari":"Puglia","Bologna":"Emilia-Romagna","Venezia":"Veneto","Cosenza":"Calabria","Sabbioneta":"Lombardia","Vicenza":"Veneto","Mantova":"Lombardia","Trapani":"Sicilia","Milano":"Lombardia","Ravenna":"Emilia-Romagna","Parma":"Emilia-Romagna","Palermo":"Sicilia","Brescia":"Lombardia","Taormina":"Sicilia"}.get(city)
     if region is None:
         raise ValueError(f"cannot provision venue without verified region: {city!r}")
     key=city+"|"+venue

@@ -96,6 +96,17 @@
         "https://teatroregioparma.it/spettacolo/aida/"
       ],
       "rolling_source_key": "festival-verdi-rolling"
+    },
+    {
+      "id": "vicenza-in-lirica",
+      "template_id": "vicenza-in-lirica-2026",
+      "official_url": "https://www.vicenzainlirica.it/",
+      "source_hosts": [
+        "www.vicenzainlirica.it"
+      ],
+      "source_path_prefixes": [
+        "/"
+      ]
     }
   ]
 }
