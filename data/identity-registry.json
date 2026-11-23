@@ -778,6 +778,13 @@
       "title": "Il filosofo di campagna",
       "composer": "Baldassare Galuppi",
       "authority_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
+    },
+    "l'orfeo|claudio monteverdi": {
+      "id": "oa-w-000124",
+      "slug": "orfeo",
+      "title": "L'Orfeo",
+      "composer": "Claudio Monteverdi",
+      "authority_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
     }
   },
   "venues": {
@@ -1316,6 +1323,14 @@
       "city_slug": "vicenza",
       "name": "Teatro Olimpico",
       "city": "Vicenza",
+      "region": "Veneto"
+    },
+    "Lonigo|Villa Pisani Bonetti": {
+      "id": "oa-v-000068",
+      "slug": "villa-pisani-bonetti",
+      "city_slug": "lonigo",
+      "name": "Villa Pisani Bonetti",
+      "city": "Lonigo",
       "region": "Veneto"
     }
   },
@@ -3517,6 +3532,14 @@
       "venue_id": "oa-v-000067",
       "slug": "il-filosofo-di-campagna",
       "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+      "season": "2026"
+    },
+    "auto-a825bbef331ecdd0": {
+      "id": "oa-s-000285",
+      "work_id": "oa-w-000124",
+      "venue_id": "oa-v-000068",
+      "slug": "orfeo",
+      "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
       "season": "2026"
     }
   },
@@ -9929,6 +9952,12 @@
       "staging_id": "oa-s-000284",
       "original_date": "2026-09-14",
       "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
+    },
+    "auto-a825bbef331ecdd0|2026-09-20": {
+      "id": "oa-r-001096",
+      "staging_id": "oa-s-000285",
+      "original_date": "2026-09-20",
+      "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
     }
   },
   "reserved_works": {

@@ -1153,6 +1153,17 @@
         "https://corago.unibo.it/opera/Z000002443",
         "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
       ]
+    },
+    "orfeo": {
+      "librettist": "Alessandro Striggio",
+      "premiere_year": 1607,
+      "premiere_venue": "Palazzo Ducale",
+      "premiere_city": "Mantova",
+      "sources": [
+        "https://corago.unibo.it/libretto/DRT0017741",
+        "https://www.lacasadellamusica.it/it-IT/teca-d1.aspx",
+        "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
+      ]
     }
   },
   "works_by_id": {

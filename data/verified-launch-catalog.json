@@ -7255,6 +7255,21 @@
           "20:30"
         ]
       ]
+    },
+    {
+      "key": "auto-a825bbef331ecdd0",
+      "title": "L'Orfeo",
+      "composer": "Claudio Monteverdi",
+      "venue": "Villa Pisani Bonetti",
+      "municipality": "Lonigo",
+      "region": "Veneto",
+      "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
+      "dates": [
+        [
+          "2026-09-20",
+          "17:00"
+        ]
+      ]
     }
   ]
 }
