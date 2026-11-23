@@ -201,7 +201,9 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
     by_id = {f["id"]: f for f in existing}
     if len(by_id) != len(existing):
         raise ValueError("duplicate festival edition id")
-    generated = [dict(f) for f in existing]  # Preserve published historical editions.
+    # Only editions backed by verified productions belong in the public index.
+    # Legacy empty permanent templates must not be republished.
+    generated = [dict(f) for f in existing if f.get("edition") and f.get("staging_ids")]
     generated_ids = {f["id"] for f in generated}
     for rule in rules["festivals"]:
         base = by_id.get(rule["template_id"])
@@ -225,8 +227,7 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
             ):
                 continue
             editions.setdefault(season, set()).add(staging["id"])
-        # A reviewed template with no matching stagings is retained as metadata,
-        # never promoted into an invented programme.
+        # Without matching verified stagings, never create a visible empty edition.
         for edition, ids in sorted(editions.items()):
             matches = [f for f in generated if f.get("festival_id", f["id"].removesuffix("-" + edition)) == festival_id
                        and f.get("edition") == edition]
