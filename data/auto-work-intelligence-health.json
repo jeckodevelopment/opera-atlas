@@ -1,155 +1,10 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T13:18:25+00:00",
+  "checked_at": "2026-11-23T20:11:49+00:00",
   "outcomes": [
     {
-      "candidate_id": "oa-index-7d80a6e641ec59031bfa",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000075",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
-      "title_hint": "Simon Boccanegra"
-    },
-    {
-      "candidate_id": "oa-index-b932c89149fad91c3518",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000001",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "title_hint": "La traviata"
-    },
-    {
-      "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000059",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "title_hint": "Il mondo alla roversa o sia le donne che comandano"
-    },
-    {
-      "candidate_id": "oa-index-feadef19a246de079ccb",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000062",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
-      "title_hint": "Il trovatore"
-    },
-    {
-      "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000018",
-      "source_key": "maggio-fiorentino-calendar-2027",
-      "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "title_hint": "Macbeth"
-    },
-    {
-      "candidate_id": "oa-index-9f61560762c466080073",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
-      "title_hint": "i capuleti e i montecchi"
-    },
-    {
-      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "martina-valle-itria-2026",
-      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
-      "title_hint": "2026 07 14"
-    },
-    {
-      "candidate_id": "oa-index-274f34ea2fb4f9a17a7e",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/lisistrata-cosenza",
-      "title_hint": "lisistrata cosenza"
-    },
-    {
-      "candidate_id": "oa-index-3d94833841692871c0a4",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/",
-      "title_hint": "le nozze di figaro mozart"
-    },
-    {
-      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
-      "title_hint": "fuori fuoco"
-    },
-    {
-      "candidate_id": "oa-index-4894aac582de2e291033",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/picchi-e-pero-cosenza",
-      "title_hint": "picchi e pero cosenza"
-    },
-    {
-      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
-      "title_hint": "ghost cafe"
-    },
-    {
-      "candidate_id": "oa-index-62cdedd35b9415dab0d9",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/l-anima-e-il-tempo-cosenza",
-      "title_hint": "l anima e il tempo cosenza"
-    },
-    {
-      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
-      "title_hint": "il filosofo di campagna galuppi"
-    },
-    {
-      "candidate_id": "oa-index-8115e400ae8706fd132a",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
-      "title_hint": "l elisir d amore"
-    },
-    {
-      "candidate_id": "oa-index-a825bbef331ecdd019f7",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
-      "title_hint": "lorfeo monteverdi"
-    },
-    {
-      "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
-      "title_hint": "il barbiere di siviglia rossini"
-    },
-    {
-      "candidate_id": "oa-index-b35be5b62db03774ea61",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/il-medico-dei-pazzi-cosenza",
-      "title_hint": "il medico dei pazzi cosenza"
-    },
-    {
-      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "martina-valle-itria-2026",
-      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
-      "title_hint": "2026 07 24"
-    },
-    {
-      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
-      "title_hint": "magic words circus"
-    },
-    {
       "candidate_id": "oa-index-dd7baa45131b35e450b1",
-      "status": "awaiting_official_identity_evidence",
+      "status": "catalogued_source_link_unverified",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
       "title_hint": "l opera forse di francesco filidei infinito nero di salvatore sciarrino"
@@ -195,6 +50,13 @@
       "work_id": "oa-w-000066",
       "source_key": "piacenza-opera-2026-27",
       "official_url": "https://teatripiacenza.it/event/la-clemenza-di-tito/"
+    },
+    {
+      "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000031",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/norma-2027"
     },
     {
       "candidate_id": "oa-index-05e9aa51dbd5a114e2f0",
@@ -286,6 +148,13 @@
       "work_id": "oa-w-000015",
       "source_key": "verdi-trieste-season-2026-27",
       "official_url": "https://www.teatroverdi-trieste.com/it/spettacoli/aida/"
+    },
+    {
+      "candidate_id": "oa-index-144db2827af86d96232c",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000037",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
     },
     {
       "candidate_id": "oa-index-184e57e1cd9f38d554d5",
@@ -393,6 +262,13 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
     },
     {
+      "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000059",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano"
+    },
+    {
       "candidate_id": "oa-index-222099ffb9c977837f63",
       "status": "already_catalogued",
       "work_id": "oa-w-000015",
@@ -419,6 +295,12 @@
       "work_id": "oa-w-000001",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/"
+    },
+    {
+      "candidate_id": "oa-index-274f34ea2fb4f9a17a7e",
+      "status": "excluded_nonopera",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/lisistrata-cosenza"
     },
     {
       "candidate_id": "oa-index-2ab0ba26f1806086b52a",
@@ -463,6 +345,13 @@
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/tosca"
     },
     {
+      "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000018",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto"
+    },
+    {
       "candidate_id": "oa-index-3b54fb1b4f9d0adac29f",
       "status": "already_catalogued",
       "work_id": "oa-w-000089",
@@ -482,6 +371,19 @@
       "work_id": "oa-w-000040",
       "source_key": "bologna-comunale-opera-2027",
       "official_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/"
+    },
+    {
+      "candidate_id": "oa-index-3d94833841692871c0a4",
+      "status": "excluded_nonopera",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/"
+    },
+    {
+      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000116",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/"
     },
     {
       "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
@@ -533,6 +435,12 @@
       "official_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
     },
     {
+      "candidate_id": "oa-index-4894aac582de2e291033",
+      "status": "excluded_nonopera",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/picchi-e-pero-cosenza"
+    },
+    {
       "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
       "status": "already_catalogued",
       "work_id": "oa-w-000005",
@@ -566,6 +474,13 @@
       "work_id": "oa-w-000009",
       "source_key": "martina-valle-itria-2026",
       "official_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+    },
+    {
+      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000117",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/"
     },
     {
       "candidate_id": "oa-index-52ff40865866999be465",
@@ -638,11 +553,24 @@
       "official_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
     },
     {
+      "candidate_id": "oa-index-5f6cb3b3600f1ce5cb67",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000122",
+      "source_key": "festival-verdi-rolling",
+      "official_url": "https://teatroregioparma.it/spettacolo/stiffelio/"
+    },
+    {
       "candidate_id": "oa-index-5fea5e594da012daa488",
       "status": "already_catalogued",
       "work_id": "oa-w-000104",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
+    },
+    {
+      "candidate_id": "oa-index-62cdedd35b9415dab0d9",
+      "status": "excluded_nonopera",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/l-anima-e-il-tempo-cosenza"
     },
     {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",
@@ -685,6 +613,13 @@
       "work_id": "oa-w-000077",
       "source_key": "petruzzelli-opera-2026",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+    },
+    {
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000123",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
     },
     {
       "candidate_id": "oa-index-697328f32e7cfa32252b",
@@ -792,6 +727,13 @@
       "official_url": "https://www.tcbo.it/evento/opera/vanessa-2027/"
     },
     {
+      "candidate_id": "oa-index-7d80a6e641ec59031bfa",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000075",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/simon-boccanegra"
+    },
+    {
       "candidate_id": "oa-index-7ec9d774a82a64ecaa73",
       "status": "already_catalogued",
       "work_id": "oa-w-000018",
@@ -846,6 +788,13 @@
       "work_id": "oa-w-000064",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/la-rondine/"
+    },
+    {
+      "candidate_id": "oa-index-8115e400ae8706fd132a",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000073",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/"
     },
     {
       "candidate_id": "oa-index-84e8ac0695f45f81567d",
@@ -960,6 +909,13 @@
       "official_url": "https://www.arena.it/arena-opera-festival/carmen/"
     },
     {
+      "candidate_id": "oa-index-8f52b42b10becc854da6",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000121",
+      "source_key": "festival-verdi-rolling",
+      "official_url": "https://teatroregioparma.it/spettacolo/aroldo/"
+    },
+    {
       "candidate_id": "oa-index-92b69a8ac1040b0537be",
       "status": "already_catalogued",
       "work_id": "oa-w-000053",
@@ -1037,6 +993,13 @@
       "official_url": "https://www.arena.it/arena-opera-festival/aida-ed-stefano-poda/"
     },
     {
+      "candidate_id": "oa-index-9c8433ba74501efca6eb",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000033",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027"
+    },
+    {
       "candidate_id": "oa-index-9de5ffaf88b8577175b7",
       "status": "already_catalogued",
       "work_id": "oa-w-000018",
@@ -1056,6 +1019,13 @@
       "work_id": "oa-w-000075",
       "source_key": "modena-teatro-opera-2026-27",
       "official_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-simon-boccanegra/"
+    },
+    {
+      "candidate_id": "oa-index-9f61560762c466080073",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000055",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
     },
     {
       "candidate_id": "oa-index-9fdcd7eba240da4540af",
@@ -1100,6 +1070,13 @@
       "official_url": "https://www.teatrolafenice.it/event/larca-di-noe/"
     },
     {
+      "candidate_id": "oa-index-a825bbef331ecdd019f7",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000124",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
+    },
+    {
       "candidate_id": "oa-index-a98083086627ce6e0225",
       "status": "already_catalogued",
       "work_id": "oa-w-000081",
@@ -1142,6 +1119,13 @@
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
     },
     {
+      "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000038",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+    },
+    {
       "candidate_id": "oa-index-b1c24780a29d634e5fa4",
       "status": "already_catalogued",
       "work_id": "oa-w-000025",
@@ -1154,6 +1138,12 @@
       "work_id": "oa-w-000014",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/otello/"
+    },
+    {
+      "candidate_id": "oa-index-b35be5b62db03774ea61",
+      "status": "excluded_nonopera",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/il-medico-dei-pazzi-cosenza"
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
@@ -1210,6 +1200,13 @@
       "work_id": "oa-w-000025",
       "source_key": "arena-festival-2027",
       "official_url": "https://www.arena.it/arena-opera-festival/nabucco/"
+    },
+    {
+      "candidate_id": "oa-index-b932c89149fad91c3518",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000001",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/la-traviata-2027"
     },
     {
       "candidate_id": "oa-index-bc101d1d7cf587ef8441",
@@ -1324,6 +1321,13 @@
       "official_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/"
     },
     {
+      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000118",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+    },
+    {
       "candidate_id": "oa-index-d610eb9b9a480ae8cbf1",
       "status": "already_catalogued",
       "work_id": "oa-w-000023",
@@ -1359,6 +1363,20 @@
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/elisir-damore"
     },
     {
+      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000119",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/"
+    },
+    {
+      "candidate_id": "oa-index-dab7aab357550a28d398",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000001",
+      "source_key": "festival-verdi-rolling",
+      "official_url": "https://teatroregioparma.it/spettacolo/la-traviata/"
+    },
+    {
       "candidate_id": "oa-index-db7983de674f2fdccdda",
       "status": "already_catalogued",
       "work_id": "oa-w-000024",
@@ -1385,6 +1403,13 @@
       "work_id": "oa-w-000073",
       "source_key": "ancona-cavalleria-program-2026",
       "official_url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
+    },
+    {
+      "candidate_id": "oa-index-dd5d16aec544e6737e1e",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000039",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde"
     },
     {
       "candidate_id": "oa-index-de1f52ee525c73d565a6",
@@ -1527,6 +1552,13 @@
       "official_url": "https://www.tcbo.it/evento/opera/accabadora-2027/"
     },
     {
+      "candidate_id": "oa-index-f8122a2cac3109445aaa",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000025",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/"
+    },
+    {
       "candidate_id": "oa-index-f92f3fc808d9fb909461",
       "status": "already_catalogued",
       "work_id": "oa-w-000071",
@@ -1569,11 +1601,25 @@
       "official_url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
     },
     {
+      "candidate_id": "oa-index-feadef19a246de079ccb",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000062",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "official_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027"
+    },
+    {
       "candidate_id": "oa-index-fecbb06d8dc649b616d2",
       "status": "already_catalogued",
       "work_id": "oa-w-000073",
       "source_key": "sassari-de-carolis-rolling-opera",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=370"
+    },
+    {
+      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000120",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
     },
     {
       "candidate_id": "oa-index-ffbe120c526a352bc59c",
