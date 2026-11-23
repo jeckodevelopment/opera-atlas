@@ -91,7 +91,7 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
             "function auditSummary()", "catalog_release_sha256",
             "Snapshot precedente o non confrontabile",
             "Non sono opere distinte né verifiche online",
-            "Il campione non certifica la completezza",
+            "il campione non certifica la completezza",
         ):
             self.assertIn(label, self.source)
         self.assertIn("Number.isInteger(total)", self.source)
