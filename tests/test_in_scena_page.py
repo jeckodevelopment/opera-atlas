@@ -25,7 +25,7 @@ class InScenaPageTests(unittest.TestCase):
         for widget in ("today-query", "today-quick-days", "today-region", "today-city", "today-time", "day-input"):
             self.assertIn('id="' + widget + '"', page)
             self.assertIn('"' + widget + '"', script)
-        self.assertIn('images?.load?.()', script)
+        self.assertIn('OperaAtlasImages?.load?.()', script)
         self.assertIn('artwork?.sourceUrl', script)
         self.assertIn('p.work_id', script)
 
