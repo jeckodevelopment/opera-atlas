@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-22",
+  "reviewed_on": "2026-11-23",
   "editorial_policy": "Only individual recite explicitly shown by official source; unknown hours remain null; no third-party copy.",
   "productions": [
     {
@@ -6860,6 +6860,98 @@
         [
           "2027-09-28",
           "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-47cec5ba524c35eb",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Alfonso Rendano",
+      "municipality": "Cosenza",
+      "region": "Calabria",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
+      "dates": [
+        [
+          "2026-12-11",
+          "20:30"
+        ],
+        [
+          "2026-12-13",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-268aa3f92f6c3dfa",
+      "title": "Le Siège de Corinthe",
+      "composer": "Gioachino Rossini",
+      "venue": "Auditorium Scavolini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "dates": [
+        [
+          "2026-08-11",
+          "19:00"
+        ],
+        [
+          "2026-08-14",
+          "19:00"
+        ],
+        [
+          "2026-08-17",
+          "19:00"
+        ],
+        [
+          "2026-08-21",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-7f7fc1d9df69f1a3",
+      "title": "Il viaggio a Reims",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "dates": [
+        [
+          "2026-08-16",
+          "11:00"
+        ],
+        [
+          "2026-08-19",
+          "11:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b4ae738f2728d443",
+      "title": "La scala di seta",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "dates": [
+        [
+          "2026-08-13",
+          "20:00"
+        ],
+        [
+          "2026-08-16",
+          "20:00"
+        ],
+        [
+          "2026-08-19",
+          "20:00"
+        ],
+        [
+          "2026-08-22",
+          "20:00"
         ]
       ]
     }

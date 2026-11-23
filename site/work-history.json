@@ -1029,6 +1029,36 @@
         "https://catalogue.bnf.fr/ark:/12148/cb13908492n.public",
         "https://www.glyndebourne.com/opera-archive/explore-our-operas/explore-la-damnation-de-faust/la-damnation-de-faust-synopsis/"
       ]
+    },
+    "le-siege-de-corinthe": {
+      "librettist": "Luigi Balocchi e Alexandre Soumet",
+      "premiere_year": 1826,
+      "premiere_venue": "Théâtre de l’Académie Royale de Musique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://www.rossinioperafestival.it/soggetti/le-siege-de-corinthe-tragedie-lyrique/",
+        "https://corago.unibo.it/opera/Z000013618"
+      ]
+    },
+    "il-viaggio-a-reims": {
+      "librettist": "Luigi Balocchi",
+      "premiere_year": 1825,
+      "premiere_venue": "Théâtre Italien",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://www.rossinioperafestival.it/soggetti/il-viaggio-a-reims-2/",
+        "https://archiviostorico.operaroma.it/opera/il-viaggio-reims/"
+      ]
+    },
+    "la-scala-di-seta": {
+      "librettist": "Giuseppe Maria Foppa",
+      "premiere_year": 1812,
+      "premiere_venue": "Teatro San Moisè",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.rossinioperafestival.it/soggetti/la-scala-di-seta-3/",
+        "https://corago.unibo.it/opera/Z000013602"
+      ]
     }
   },
   "works_by_id": {

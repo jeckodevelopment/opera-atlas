@@ -992,6 +992,30 @@
       "alt": "Prima pagina del manoscritto originale della Damnation de Faust di Berlioz, non manifesto dello spettacolo",
       "credit": "Hector Berlioz, manoscritto storico / Wikimedia Commons",
       "license": "Public domain"
+    },
+    "oa-w-000112": {
+      "work_id": "oa-w-000112",
+      "image_url": "https://www.rossinioperafestival.it/wp-content/uploads/2026/01/1200x548_Le-siege-de-corinthe.jpg",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Le Siège de Corinthe",
+      "kind": "official_production_image"
+    },
+    "oa-w-000113": {
+      "work_id": "oa-w-000113",
+      "image_url": "https://www.rossinioperafestival.it/wp-content/uploads/2026/01/1200x548_Il-viaggio-a-Reims.jpg",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di Il viaggio a Reims",
+      "kind": "official_production_image"
+    },
+    "oa-w-000114": {
+      "work_id": "oa-w-000114",
+      "image_url": "https://www.rossinioperafestival.it/wp-content/uploads/2026/01/1200x548_La-scala-di-seta.jpg",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "credit": "Immagine della produzione dal sito ufficiale del teatro",
+      "alt": "Immagine della produzione di La scala di seta",
+      "kind": "official_production_image"
     }
   }
 }

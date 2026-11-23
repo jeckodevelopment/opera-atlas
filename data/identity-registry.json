@@ -708,6 +708,27 @@
       "title": "La damnation de Faust",
       "composer": "Hector Berlioz",
       "authority_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    "le siège de corinthe|gioachino rossini": {
+      "id": "oa-w-000112",
+      "slug": "le-siege-de-corinthe",
+      "title": "Le Siège de Corinthe",
+      "composer": "Gioachino Rossini",
+      "authority_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+    },
+    "il viaggio a reims|gioachino rossini": {
+      "id": "oa-w-000113",
+      "slug": "il-viaggio-a-reims",
+      "title": "Il viaggio a Reims",
+      "composer": "Gioachino Rossini",
+      "wikidata_id": "Q470983"
+    },
+    "la scala di seta|gioachino rossini": {
+      "id": "oa-w-000114",
+      "slug": "la-scala-di-seta",
+      "title": "La scala di seta",
+      "composer": "Gioachino Rossini",
+      "authority_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
     }
   },
   "venues": {
@@ -1191,6 +1212,22 @@
       "name": "Teatro di San Carlo",
       "city": "Napoli",
       "region": "Campania"
+    },
+    "Cosenza|Teatro Alfonso Rendano": {
+      "id": "oa-v-000061",
+      "slug": "teatro-alfonso-rendano",
+      "city_slug": "cosenza",
+      "name": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "region": "Calabria"
+    },
+    "Pesaro|Auditorium Scavolini": {
+      "id": "oa-v-000062",
+      "slug": "auditorium-scavolini",
+      "city_slug": "pesaro",
+      "name": "Auditorium Scavolini",
+      "city": "Pesaro",
+      "region": "Marche"
     }
   },
   "stagings": {
@@ -3236,6 +3273,38 @@
       "slug": "la-damnation-de-faust",
       "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/",
       "season": "2027"
+    },
+    "auto-47cec5ba524c35eb": {
+      "id": "oa-s-000266",
+      "work_id": "oa-w-000045",
+      "venue_id": "oa-v-000061",
+      "slug": "le-nozze-di-figaro",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
+      "season": "2026"
+    },
+    "auto-268aa3f92f6c3dfa": {
+      "id": "oa-s-000267",
+      "work_id": "oa-w-000112",
+      "venue_id": "oa-v-000062",
+      "slug": "le-siege-de-corinthe",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "season": "2026"
+    },
+    "auto-7f7fc1d9df69f1a3": {
+      "id": "oa-s-000268",
+      "work_id": "oa-w-000113",
+      "venue_id": "oa-v-000059",
+      "slug": "il-viaggio-a-reims",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "season": "2026"
+    },
+    "auto-b4ae738f2728d443": {
+      "id": "oa-s-000269",
+      "work_id": "oa-w-000114",
+      "venue_id": "oa-v-000059",
+      "slug": "la-scala-di-seta",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -9371,6 +9440,78 @@
       "staging_id": "oa-s-000265",
       "original_date": "2027-09-28",
       "source_url": "https://www.teatrosancarlo.it/spettacoli/la-damnation-de-faust/"
+    },
+    "auto-47cec5ba524c35eb|2026-12-11": {
+      "id": "oa-r-001050",
+      "staging_id": "oa-s-000266",
+      "original_date": "2026-12-11",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza"
+    },
+    "auto-47cec5ba524c35eb|2026-12-13": {
+      "id": "oa-r-001051",
+      "staging_id": "oa-s-000266",
+      "original_date": "2026-12-13",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza"
+    },
+    "auto-268aa3f92f6c3dfa|2026-08-11": {
+      "id": "oa-r-001052",
+      "staging_id": "oa-s-000267",
+      "original_date": "2026-08-11",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+    },
+    "auto-268aa3f92f6c3dfa|2026-08-14": {
+      "id": "oa-r-001053",
+      "staging_id": "oa-s-000267",
+      "original_date": "2026-08-14",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+    },
+    "auto-268aa3f92f6c3dfa|2026-08-17": {
+      "id": "oa-r-001054",
+      "staging_id": "oa-s-000267",
+      "original_date": "2026-08-17",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+    },
+    "auto-268aa3f92f6c3dfa|2026-08-21": {
+      "id": "oa-r-001055",
+      "staging_id": "oa-s-000267",
+      "original_date": "2026-08-21",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+    },
+    "auto-7f7fc1d9df69f1a3|2026-08-16": {
+      "id": "oa-r-001056",
+      "staging_id": "oa-s-000268",
+      "original_date": "2026-08-16",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/"
+    },
+    "auto-7f7fc1d9df69f1a3|2026-08-19": {
+      "id": "oa-r-001057",
+      "staging_id": "oa-s-000268",
+      "original_date": "2026-08-19",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/"
+    },
+    "auto-b4ae738f2728d443|2026-08-13": {
+      "id": "oa-r-001058",
+      "staging_id": "oa-s-000269",
+      "original_date": "2026-08-13",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+    },
+    "auto-b4ae738f2728d443|2026-08-16": {
+      "id": "oa-r-001059",
+      "staging_id": "oa-s-000269",
+      "original_date": "2026-08-16",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+    },
+    "auto-b4ae738f2728d443|2026-08-19": {
+      "id": "oa-r-001060",
+      "staging_id": "oa-s-000269",
+      "original_date": "2026-08-19",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+    },
+    "auto-b4ae738f2728d443|2026-08-22": {
+      "id": "oa-r-001061",
+      "staging_id": "oa-s-000269",
+      "original_date": "2026-08-22",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
     }
   },
   "reserved_works": {

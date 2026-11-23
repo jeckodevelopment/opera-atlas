@@ -55,7 +55,10 @@
       "region": "Marche",
       "official_url": "https://www.rossinioperafestival.it/",
       "staging_ids": [
-        "oa-s-000254"
+        "oa-s-000254",
+        "oa-s-000267",
+        "oa-s-000268",
+        "oa-s-000269"
       ],
       "description": "A Pesaro, città natale di Gioachino Rossini, il festival celebra ogni estate il compositore con nuove produzioni, grandi interpreti e appuntamenti musicali.",
       "festival_id": "rossini-opera-festival",

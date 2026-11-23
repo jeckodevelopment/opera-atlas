@@ -650,6 +650,24 @@
       ]
     },
     {
+      "id": "curated:auto-268aa3f92f6c3dfa:2026-08-11",
+      "starts_at": "2026-08-11T19:00:00+02:00",
+      "local_date": "2026-08-11",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le Siège de Corinthe",
+      "composer": "Gioachino Rossini",
+      "venue": "Auditorium Scavolini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+      ]
+    },
+    {
       "id": "curated:auto-71feb2c03e06415f:2026-08-12",
       "starts_at": "2026-08-12T20:00:00+02:00",
       "local_date": "2026-08-12",
@@ -665,6 +683,42 @@
       "longitude": null,
       "sources": [
         "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4ae738f2728d443:2026-08-13",
+      "starts_at": "2026-08-13T20:00:00+02:00",
+      "local_date": "2026-08-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La scala di seta",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+      ]
+    },
+    {
+      "id": "curated:auto-268aa3f92f6c3dfa:2026-08-14",
+      "starts_at": "2026-08-14T19:00:00+02:00",
+      "local_date": "2026-08-14",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le Siège de Corinthe",
+      "composer": "Gioachino Rossini",
+      "venue": "Auditorium Scavolini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
       ]
     },
     {
@@ -686,6 +740,60 @@
       ]
     },
     {
+      "id": "curated:auto-7f7fc1d9df69f1a3:2026-08-16",
+      "starts_at": "2026-08-16T11:00:00+02:00",
+      "local_date": "2026-08-16",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il viaggio a Reims",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4ae738f2728d443:2026-08-16",
+      "starts_at": "2026-08-16T20:00:00+02:00",
+      "local_date": "2026-08-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La scala di seta",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+      ]
+    },
+    {
+      "id": "curated:auto-268aa3f92f6c3dfa:2026-08-17",
+      "starts_at": "2026-08-17T19:00:00+02:00",
+      "local_date": "2026-08-17",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le Siège de Corinthe",
+      "composer": "Gioachino Rossini",
+      "venue": "Auditorium Scavolini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+      ]
+    },
+    {
       "id": "curated:auto-71feb2c03e06415f:2026-08-18",
       "starts_at": "2026-08-18T12:00:00+02:00",
       "local_date": "2026-08-18",
@@ -701,6 +809,42 @@
       "longitude": null,
       "sources": [
         "https://www.rossinioperafestival.it/archivio/stagione-2026/loccasione-fa-il-ladro/"
+      ]
+    },
+    {
+      "id": "curated:auto-7f7fc1d9df69f1a3:2026-08-19",
+      "starts_at": "2026-08-19T11:00:00+02:00",
+      "local_date": "2026-08-19",
+      "time_known": true,
+      "time_label": "11:00",
+      "status": "announced",
+      "title": "Il viaggio a Reims",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4ae738f2728d443:2026-08-19",
+      "starts_at": "2026-08-19T20:00:00+02:00",
+      "local_date": "2026-08-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La scala di seta",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
       ]
     },
     {
@@ -755,6 +899,42 @@
       "longitude": null,
       "sources": [
         "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-268aa3f92f6c3dfa:2026-08-21",
+      "starts_at": "2026-08-21T19:00:00+02:00",
+      "local_date": "2026-08-21",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le Siège de Corinthe",
+      "composer": "Gioachino Rossini",
+      "venue": "Auditorium Scavolini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+      ]
+    },
+    {
+      "id": "curated:auto-b4ae738f2728d443:2026-08-22",
+      "starts_at": "2026-08-22T20:00:00+02:00",
+      "local_date": "2026-08-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La scala di seta",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Gioachino Rossini",
+      "municipality": "Pesaro",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
       ]
     },
     {
@@ -4203,6 +4383,24 @@
       ]
     },
     {
+      "id": "curated:auto-47cec5ba524c35eb:2026-12-11",
+      "starts_at": "2026-12-11T20:30:00+01:00",
+      "local_date": "2026-12-11",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Alfonso Rendano",
+      "municipality": "Cosenza",
+      "region": "Calabria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza"
+      ]
+    },
+    {
       "id": "curated:auto-67093940d2ad1423:2026-12-11",
       "starts_at": "2026-12-11T20:30:00+01:00",
       "local_date": "2026-12-11",
@@ -4363,6 +4561,24 @@
       "longitude": null,
       "sources": [
         "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
+      ]
+    },
+    {
+      "id": "curated:auto-47cec5ba524c35eb:2026-12-13",
+      "starts_at": "2026-12-13T17:00:00+01:00",
+      "local_date": "2026-12-13",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Alfonso Rendano",
+      "municipality": "Cosenza",
+      "region": "Calabria",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza"
       ]
     },
     {
