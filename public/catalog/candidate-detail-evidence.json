@@ -1632,8 +1632,8 @@
       "candidate_id": "oa-index-357ebb275673ae888623",
       "source_key": "ferrara-dido-opera-2026-27",
       "source_url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2026-2027/",
-      "content_sha256": "ab39eb230470bd86b663aac73f26341f0291d92b03f4193ad5ccac8318a09857",
-      "checked_at": "2026-11-23T13:04:08+00:00",
+      "content_sha256": "d5be0353f47b955f9b90f07bd530b42dff551f857b7254e5a739538489d3b748",
+      "checked_at": "2026-11-23T13:55:29+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1806,8 +1806,8 @@
       "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
-      "content_sha256": "09f718ee364cba7bcbb612d22236a94c6f484958b8ef37f5891424c4fd55266d",
-      "checked_at": "2026-11-23T13:48:58+00:00",
+      "content_sha256": "e259d54def9ea18d0691ca0e8e6726984d5b71212c1c7acaf6b8cd12f84b0877",
+      "checked_at": "2026-11-23T13:56:15+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2280,8 +2280,8 @@
       "candidate_id": "oa-index-52b35f0089c3663c7ddb",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
-      "content_sha256": "542db028c59ade775eda58b941fd998951a0f1c1ba65e7cae79bfb83072be322",
-      "checked_at": "2026-11-23T13:49:04+00:00",
+      "content_sha256": "7bc491fc18f07201e5302c47d2a5bd9ca97157cbee60f80a98116f0186f47793",
+      "checked_at": "2026-11-23T13:56:20+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2573,7 +2573,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
       "content_sha256": "171aeed5a73e75d1742be59afb12a35dd7a6e67dc9b82b50e771694a3a2f3a9d",
-      "checked_at": "2026-11-23T13:05:10+00:00",
+      "checked_at": "2026-11-23T13:56:23+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2596,8 +2596,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "2f8692c35069cc9fe0679c871cf614373a7d485d746b6a69df953f35e8fc4d44",
-      "checked_at": "2026-11-23T13:04:11+00:00",
+      "content_sha256": "5b391b45cade8381c9862696fe37692d388a614400eba18a71ec60e1bd86c2b6",
+      "checked_at": "2026-11-23T13:55:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3912,7 +3912,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "825f6db7689c27b0ea6f478de846e72d23d4476dc7216ba023007a9cf18937c2",
-      "checked_at": "2026-11-23T13:04:31+00:00",
+      "checked_at": "2026-11-23T13:55:51+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3998,7 +3998,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
       "content_sha256": "19585eb182da90c9545d361e38011c87de38ddc207beaffe1e00869098e50311",
-      "checked_at": "2026-11-23T13:05:22+00:00",
+      "checked_at": "2026-11-23T13:56:30+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5451,8 +5451,8 @@
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "4f1f5ed97142eb24198ff3cdd48462a8acb6d75f8ae187874609c976d37bea19",
-      "checked_at": "2026-11-23T12:56:55+00:00",
+      "content_sha256": "033851ed3833fbf012e50668f85de5c16f741aace695debc2a7019ae55685346",
+      "checked_at": "2026-11-23T13:55:43+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -5738,7 +5738,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "3291b5602dc11a44db9e0e946da9a46c7e156292d427d9121086ac923c02119f",
-      "checked_at": "2026-11-23T13:04:26+00:00",
+      "checked_at": "2026-11-23T13:55:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6288,8 +6288,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "6909466bcd728993b948409aee50b63a102617ba2fc8120fa412a8ec1f5e43cc",
-      "checked_at": "2026-11-23T13:04:17+00:00",
+      "content_sha256": "64d2a45699a1b3fcac977ded9852bc59f5f37ece75da23c9e28dc905dcbaa775",
+      "checked_at": "2026-11-23T13:55:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6769,7 +6769,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
       "content_sha256": "b0117cc1c4fd156a251f7e45780256b42cdd708cb66e28e9eea60e668160bc36",
-      "checked_at": "2026-11-23T13:05:45+00:00",
+      "checked_at": "2026-11-23T13:55:35+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7293,7 +7293,7 @@
       "source_key": "martina-valle-itria-2026",
       "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
       "content_sha256": "5f0204fe8f77b1ee0348cce74aa25462b97486bbf32e73dc9fe2fd3b7bb0396f",
-      "checked_at": "2026-11-23T13:49:21+00:00",
+      "checked_at": "2026-11-23T13:55:41+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7482,8 +7482,8 @@
       "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
-      "content_sha256": "62a18ab9fd85a762de63572ab759931c69818ac36b0f747eb4c1674338316be4",
-      "checked_at": "2026-11-23T13:49:23+00:00",
+      "content_sha256": "3ce55f757d88d6cad4d7fdb1886dd707e15a017fb07494fd8870478b43059040",
+      "checked_at": "2026-11-23T13:55:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7782,8 +7782,8 @@
       "candidate_id": "oa-index-dd7baa45131b35e450b1",
       "source_key": "trapani-luglio-musicale-2026",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
-      "content_sha256": "beebf349c6a08b01652ed284c42ebe142b204575dc1f6c32873e7f88cb0c1136",
-      "checked_at": "2026-11-23T13:49:27+00:00",
+      "content_sha256": "b0bfb561bd86c20cfba85c96a6ab5f155455aee49e6a17a27f7abc98b03a861c",
+      "checked_at": "2026-11-23T13:56:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7978,7 +7978,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
       "content_sha256": "b062a56a8e52ec554ce200c8418cfcb4b8be382983a974bffe3be3ab77434679",
-      "checked_at": "2026-11-23T13:04:14+00:00",
+      "checked_at": "2026-11-23T13:56:03+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8054,7 +8054,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
       "content_sha256": "58f1103599ddfe0c0b6944658f57889d16761e8b01b98b973bf5e1d2fc817e52",
-      "checked_at": "2026-11-23T13:05:50+00:00",
+      "checked_at": "2026-11-23T13:56:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8077,8 +8077,8 @@
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "4f1f5ed97142eb24198ff3cdd48462a8acb6d75f8ae187874609c976d37bea19",
-      "checked_at": "2026-11-23T12:56:55+00:00",
+      "content_sha256": "033851ed3833fbf012e50668f85de5c16f741aace695debc2a7019ae55685346",
+      "checked_at": "2026-11-23T13:55:43+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -8117,7 +8117,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
       "content_sha256": "8a17b636a070450936fd1b9458db727c63e70de260db038aa543be42cd6ef24e",
-      "checked_at": "2026-11-23T13:04:44+00:00",
+      "checked_at": "2026-11-23T13:56:05+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8731,7 +8731,7 @@
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
       "content_sha256": "e7519c59bb3fdf66df24c90487f60440581a4ecc9f095707a80319f6645676d7",
-      "checked_at": "2026-11-23T13:04:47+00:00",
+      "checked_at": "2026-11-23T13:56:08+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
