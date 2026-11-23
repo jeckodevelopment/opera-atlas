@@ -36,20 +36,31 @@ non blocchi `/atlas/`, e registrare la sitemap in Google Search Console
 e Bing Webmaster Tools. Non modificare automaticamente il `robots.txt`
 del sito madre: la gestione di tale file appartiene alla root di Opera+.
 
-## Limite attuale dei deep link
+## Pagine canoniche HTML leggibili senza JavaScript
 
-Il frontend è statico e tutte le schede di dettaglio condividono la risposta
-HTML iniziale di `detail.html`. Google può elaborare i metadati inseriti dal
-JavaScript, ma molti social crawler non lo eseguono. Le **anteprime social
-individuali** di opera/teatro/produzione sono per ora quelle generiche di
-Opera+ Atlas, non foto o testi personalizzati per ogni entità. Anche le
-varianti della directory condividono una risposta iniziale comune.
+La pubblicazione SFTP genera ora documenti statici distinti per ciascuna
+opera, teatro, allestimento, coproduzione e programma composto risolto dal
+catalogo canonico: `/<entità>/.../index.html`. Apache serve tali pagine
+all'URL canonico già esistente, senza modificare gli identificativi né il
+client dinamico. Ogni HTML contiene titolo, descrizione, canonical, metatag
+Open Graph/Twitter, immagine collegata al `work_id` o alla sede verificata,
+un titolo di pagina e un breve riepilogo leggibili anche senza JavaScript.
+Quando i dati dinamici sono disponibili, l'interfaccia rimuove il
+riepilogo statico e renderizza la scheda aggiornata.
 
-Per avere anteprime social specifiche e indicizzazione robusta anche sui
-crawler senza JS serve una successiva evoluzione di pubblicazione:
-**HTML statici precalcolati per le route canoniche**, mantenuti sincronizzati
-al catalogo senza richiedere scraping o nuove banche dati. La funzionalità
-non va dichiarata completata finché questo limite persiste.
+La generazione avviene **soltanto dai dati già pubblicati**. Le nuove
+entità diventano indicizzabili al successivo deploy SEO, programmato
+ogni giorno alle 13:11 UTC. Il refresh del catalogo resta indipendente
+e non viene attivato per la sola SEO. In caso di fetch fallito nel browser,
+il riepilogo iniziale resta consultabile.
+
+**Limiti residui:** le pagine basate esclusivamente su parametri query,
+soprattutto gli approfondimenti festival, hanno metatag differenziati
+solo dopo l'esecuzione di JavaScript. Le immagini di singola produzione
+possono usare un documento storico associato all'opera, chiaramente
+distinto da una foto dello specifico allestimento. La cache dei crawler
+non è controllabile e le date cambiate dopo il deploy verranno
+aggiornate al successivo ciclo.
 
 ## Collaudi
 
