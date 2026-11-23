@@ -148,9 +148,12 @@ async function initialize(){
       const knownVenues=new Set(data.performances.map(e=>window.OperaAtlasCatalog.urls(e).venue));
       const national=await window.OperaAtlasCatalog.venues();
       for(const venue of national){
-        const url=window.OperaAtlasCatalog.urls({
-          city_slug:venue.city_slug,venue_slug:venue.slug,municipality:venue.city,venue:venue.name
-        }).venue;
+        // Reuse the canonical production route for an already-known venue.
+        const published=data.performances.find(e=>e.municipality===venue.city && e.venue===venue.name);
+        const url=published ? window.OperaAtlasCatalog.urls(published).venue :
+          window.OperaAtlasCatalog.urls({
+            city_slug:venue.city_slug,venue_slug:venue.slug,municipality:venue.city,venue:venue.name
+          }).venue;
         grouped.set(url,{
           url,title:venue.name,city:venue.city,
           subtitle:venue.city+" · "+venue.region,
