@@ -104,7 +104,9 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
         raise ValueError("Trapani event is not a verified opera")
     genre=genres[0]
     venue,venue_pattern=VENUES[genre]
-    primary=" ".join(reader.parts[start:start+22]).split("Personaggi e interpreti",1)[0]
+    # The live CMS can insert descriptive nodes before the official venue.
+    # Limit evidence to the event header, not the artist cast or synopsis.
+    primary=" ".join(reader.parts[start:start+65]).split("Personaggi e interpreti",1)[0]
     # The live CMS sometimes separates the explicitly credited composer
     # from the libretto (or omits "di" after "Libretto"). Read the source's
     # standalone "Musica di NAME" node rather than depending on a subsequent
