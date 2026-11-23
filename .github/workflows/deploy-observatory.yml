@@ -29,6 +29,8 @@ jobs:
       - name: Syntax and publication boundary checks
         run: |
           node --check observatory/app.js
+          node --check observatory/report-pdf.js
+          node tests/observatory_pdf_smoke.cjs
           python -m py_compile scripts/deploy_observatory_sftp.py
           python -m unittest discover -s tests -v
       - name: Install SFTP transport
