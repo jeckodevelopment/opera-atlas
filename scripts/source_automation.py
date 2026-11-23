@@ -63,11 +63,16 @@ INDEX_VENUES = {
     "coccia-novara-opera-2027": ("Novara|Teatro Coccia",),
     "coccia-novara-rolling-opera": ("Novara|Teatro Coccia",
                                     "Novara|Giardini di Palazzo Natta"),
+    # Fondazione Arena explicitly separates the Teatro Filarmonico season from Arena amphitheatre events.
+    "filarmonico-verona-rolling-opera": ("Verona|Teatro Filarmonico",),
     "filarmonico-verona-opera-2027": ("Verona|Teatro Filarmonico",),
     "pisa-verdi-opera-2026-27": ("Pisa|Teatro Verdi",),
     "pisa-future-calendar": ("Pisa|Teatro Verdi",),
     "salerno-verdi-opera-2026": ("Salerno|Teatro Municipale Giuseppe Verdi",),
     "festival-verdi-rolling": ("Parma|Teatro Regio di Parma", "Busseto|Teatro Giuseppe Verdi"),
+    # The 2027 MOF season is explicitly hosted at the Arena Sferisterio on the official festival site.
+    # This is a diagnostic source association, not a claim of season completeness.
+    "macerata-festival-rolling": ("Macerata|Arena Sferisterio",),
     "macerata-festival-2027": ("Macerata|Arena Sferisterio",),
     "scala-season-2026-27": ("Milano|Teatro alla Scala",),
     "verdi-trieste-season-2026-27": ("Trieste|Teatro Lirico Giuseppe Verdi",),
