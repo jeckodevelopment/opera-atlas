@@ -22,70 +22,19 @@
         }
       ],
       "title": "La mère coupable"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-b4ae738f2728d4430578"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Gioachino Rossini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 4,
-      "sources": [
-        {
-          "source_key": "pesaro-rof-2026",
-          "url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
-        }
-      ],
-      "title": "La scala di seta"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-268aa3f92f6c3dfaafaa"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Gioachino Rossini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 4,
-      "sources": [
-        {
-          "source_key": "pesaro-rof-2026",
-          "url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
-        }
-      ],
-      "title": "Le Siège de Corinthe"
-    },
-    {
-      "candidate_ids": [
-        "oa-index-7f7fc1d9df69f1a3cd53"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Gioachino Rossini",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 2,
-      "sources": [
-        {
-          "source_key": "pesaro-rof-2026",
-          "url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/"
-        }
-      ],
-      "title": "Il viaggio a Reims"
     }
   ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 10,
+    "candidates_checked": 2,
     "candidates_without_facts": 0,
-    "facts_examined": 29,
-    "facts_resolved": 17,
+    "facts_examined": 6,
+    "facts_resolved": 4,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 12,
-    "unmatched_groups": 4
+    "unmatched_facts": 2,
+    "unmatched_groups": 1
   },
   "truncated": false
 }
