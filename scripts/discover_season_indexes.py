@@ -1368,7 +1368,12 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                             urls=[]
                         else:
                             raise
-                    elif item["key"]=="rovigo-sociale-opera-2026-27":
+                    elif (item["key"]=="salerno-verdi-rolling-opera" and
+                      str(exc)=="future_salerno_season_not_yet_verified"):
+                    # The official index currently lists 2026; nothing from
+                    # 2027 is confirmed, but the approved endpoint is valid.
+                    diagnostic="future_official_programme_unverified"
+                elif item["key"]=="rovigo-sociale-opera-2026-27":
                         # The legacy slider can lose its theatre identity.
                         # A separate exact first-party event document provides
                         # dated ticket evidence through the same robots gate.
