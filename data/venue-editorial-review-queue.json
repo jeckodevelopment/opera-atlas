@@ -1,1 +1,1 @@
-{"count":0,"purpose":"nonblocking_verified_venue_editorial","schema_version":1,"venues":[]}
+{"count":1,"purpose":"nonblocking_verified_venue_editorial","schema_version":1,"venues":[{"city":"Lonigo","missing":["editorial_profile","verified_address","venue_history","licensed_photo"],"name":"Villa Pisani Bonetti","route_slug":"lonigo/villa-pisani-bonetti","source_urls":["https://www.vicenzainlirica.it/lorfeo-monteverdi/"],"status":"editorial_review_pending","venue_id":"oa-v-000068"}]}
