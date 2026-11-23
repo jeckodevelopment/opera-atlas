@@ -17,7 +17,12 @@ class MereCoupableResearchTests(unittest.TestCase):
         self.assertIn("Bégearss",card["synopsis"])
         self.assertTrue(validate_history(card["history"]))
         self.assertEqual(card["history"]["premiere_year"],1966)
-        self.assertEqual(card["history"]["librettist"],"Madeleine Milhaud")
+        # The source may also credit Beaumarchais as the author of the
+        # underlying play; this must not erase Madeleine Milhaud's libretto.
+        self.assertIn(card["history"]["librettist"], (
+            "Madeleine Milhaud",
+            "Madeleine Milhaud, da Pierre-Augustin Caron de Beaumarchais",
+        ))
         art=load_archival_art({slug})[slug]
         self.assertEqual(art["kind"],"archival_work_image")
         self.assertIn("Ricordi",art["credit"])
