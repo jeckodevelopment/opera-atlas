@@ -110,6 +110,28 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
                 "<p>Musica di Giuseppe Verdi</p>",
                 "<p>Arrangiamento di Giuseppe Verdi</p>"),url=NABUCCO)
 
+    def test_split_cms_composer_credit_stays_first_party(self):
+        # Real CMS typography may wrap words of the official composer credit
+        # in separate elements; no composer may be inferred from the title.
+        for fragments in (
+            "<strong>Musica di</strong><span>Vincenzo Bellini</span>",
+            "<strong>Musica</strong><span>di Vincenzo Bellini</span>",
+        ):
+            with self.subTest(fragments=fragments):
+                html=page(title="I Capuleti e i Montecchi",
+                          composer="Vincenzo Bellini")
+                html=html.replace("<p>Musica di Vincenzo Bellini</p>",
+                                  "<p>"+fragments+"</p>")
+                parsed=parse_detail(html,url=CAPULETI)
+                self.assertEqual(parsed[1],"Vincenzo Bellini")
+                self.assertEqual(len(parsed[3]),2)
+        # A composer appearing only in cast/marketing material is not
+        # independently attributable to the work.
+        html=page().replace("<p>Musica di Giuseppe Verdi</p>",
+                            "<p>Musica non attribuita</p>")
+        with self.assertRaisesRegex(ValueError,"composer"):
+            parse_detail(html,url=NABUCCO)
+
     def test_fuori_fuoco_official_musiche_di_credit(self):
         html=page(title="Fuori Fuoco",composer="Diana Buscemi",
                   genre="Opera da camera",venue="Teatro M° Tonino Pardo")

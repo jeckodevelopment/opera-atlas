@@ -92,7 +92,9 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # before the genre badge. Bind genre to the bounded event header,
     # before the independent official composer credit, not the title.
     credit_index=next((i for i,item in enumerate(prefix)
-                       if re.search(r"\b(?:Musica|Musiche)\s+di\b",item,re.I)),None)
+                       if re.search(r"\b(?:Musica|Musiche)\s+di\b",
+                                    " ".join(prefix[i:i+3]),re.I)
+                       and re.search(r"\b(?:Musica|Musiche)\b",item,re.I)),None)
     if credit_index is None:
         raise ValueError("Trapani first-party composer missing")
     genre_positions=[(i,genre) for i,item in enumerate(prefix[:credit_index])
@@ -116,8 +118,15 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
             credits.append(" ".join(match.group(1).split()))
     unique={x.casefold():x for x in credits}
     if len(unique)!=1:
-        # Retain support for older official markup with combined credit nodes.
-        credit=COMPOSER.search(primary)
+        # A credited composer may be split across neighbouring CMS nodes.
+        # Bind the name to the exact music-credit label and its subsequent
+        # libretto/venue boundary, never to an unrelated artist in the cast.
+        header=" ".join(prefix[credit_index:]).split("Personaggi e interpreti",1)[0]
+        credit=re.search(
+            r"(?i)\b(?:Musica|Musiche)\s+di\s+"
+            r"(?!(?:Libretto|Teatro|Personaggi)\b)"
+            r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’ -]{4,85}?)"
+            r"(?=\s+(?:Libretto|Teatro)\b)",header)
         if credit is None or unique:
             raise ValueError("Trapani first-party composer missing")
         composer=" ".join(credit.group(1).split())
