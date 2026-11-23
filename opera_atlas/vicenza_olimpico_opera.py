@@ -49,6 +49,7 @@ class Page(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.links=[];self.parts=[];self.h1=[]
+        self.category_years=[]
         self._heading=False;self._skip=0
     def handle_starttag(self,tag,attrs):
         if tag in ("script","style","noscript"):
@@ -56,7 +57,15 @@ class Page(HTMLParser):
         if tag=="h1" and not self._skip:self._heading=True
         if tag=="a" and not self._skip:
             target=dict(attrs).get("href")
-            if target:self.links.append(target)
+            if target:
+                self.links.append(target)
+                # WordPress stores the year in the event's category link
+                # outside the main heading. Only the festival category slug
+                # is accepted; artist biographies cannot supply a year.
+                matched=re.search(
+                    r"/category/vicenza-in-lirica-(20\d{2})/?(?:[?#].*)?$",
+                    target,re.I)
+                if matched:self.category_years.append(matched.group(1))
     def handle_endtag(self,tag):
         if tag=="h1":self._heading=False
         if tag in ("script","style","noscript"):
@@ -99,9 +108,14 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # The festival website contains biographies listing other venues and
     # titles. Use only the primary production header and credits.
     header=primary[:1900]
-    edition=YEAR.findall(header[:550])
-    if len(set(edition))!=1 or not edition:
-        raise ValueError("Vicenza official festival year missing")
+    header_years=YEAR.findall(header[:550])
+    category_years=page.category_years
+    # Prefer edition in the original event header; otherwise its exact
+    # WordPress category. When both exist they must agree.
+    years=set(header_years+category_years)
+    if len(years)!=1:
+        raise ValueError("Vicenza official festival year missing or conflicting")
+    edition=list(years)
     year=int(edition[0])
     if not 2020<=year<=2099:
         raise ValueError("Vicenza festival edition year invalid")
