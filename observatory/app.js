@@ -4,7 +4,7 @@ const ROOT="https://raw.githubusercontent.com/jeckodevelopment/opera-atlas/main/
 const FALLBACK="https://cdn.jsdelivr.net/gh/jeckodevelopment/opera-atlas@main/public/catalog/v2/";
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat("it-IT");
-let catalogue, rows=[];
+let catalogue, rows=[], editorials=null;
 const count=arr=>new Set(arr).size;
 const key=(obj,id)=>obj.get(id);
 const text=(node,value)=>{node.textContent=String(value)};
@@ -39,7 +39,7 @@ function mapRows(cat){
    const s=staging.get(p.staging_id);if(!s)continue;
    const w=work.get(s.work_id),v=venue.get(s.venue_id);
    if(!w||!v||!/^\d{4}-\d{2}-\d{2}$/.test(p.local_date||""))continue;
-   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:v.region||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,venue:v.display_name||v.name||"Sede non indicata",stagingId:s.id});
+   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:v.region||"Non indicata",city:v.city||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,venue:v.display_name||v.name||"Sede non indicata",stagingId:s.id});
  }
  return out;
 }
@@ -126,6 +126,98 @@ function renderInsights(selected){
  ranked("staging-ranking",groupedCounts(selected,r=>[r.stagingId,r.work+" · "+r.venue+" · "+r.season]));
 }
 
+
+function circulation(selected){
+ const groups=new Map();
+ for(const r of selected){
+  if(!groups.has(r.workId))groups.set(r.workId,{
+   work:r.work,composer:r.composer,venues:new Set(),cities:new Set(),regions:new Set()
+  });
+  const g=groups.get(r.workId);
+  g.venues.add(r.venueId);
+  if(r.city!=="Non indicata")g.cities.add(JSON.stringify([r.region,r.city]));
+  if(r.region!=="Non indicata")g.regions.add(r.region);
+ }
+ const ordered=[...groups.values()].sort((a,b)=>
+  b.venues.size-a.venues.size||b.cities.size-a.cities.size||
+  b.regions.size-a.regions.size||a.work.localeCompare(b.work,"it"));
+ const root=$("circulation-rows");root.replaceChildren();
+ if(!ordered.length){
+  const tr=document.createElement("tr"),td=document.createElement("td");
+  td.colSpan=4;td.textContent="Nessuna opera nel campione selezionato.";
+  tr.append(td);root.append(tr);return;
+ }
+ for(const item of ordered.slice(0,8)){
+  const tr=document.createElement("tr");
+  const name=document.createElement("td"),title=document.createElement("strong");
+  title.textContent=item.work;const composer=document.createElement("small");
+  composer.textContent=item.composer;
+  name.append(title,composer);tr.append(name);
+  for(const value of [item.venues.size,item.cities.size,item.regions.size]){
+   const cell=document.createElement("td");
+   cell.textContent=fmt.format(value);tr.append(cell);
+  }
+  root.append(tr);
+ }
+}
+async function loadEditorial(base){
+ const response=await fetch(base.replace("/v2/","/")+"work-editorial.json",{cache:"no-store"});
+ if(!response.ok)throw Error("Schede editoriali non disponibili: "+response.status);
+ const result=await response.json();
+ if(result.schema_version!==1||!Array.isArray(result.works))throw Error("Formato schede editoriali non valido");
+ const validIds=new Set(catalogue.works.map(w=>w.id));
+ const entries=new Map();
+ for(const w of result.works){
+  if(!validIds.has(w.work_id)||entries.has(w.work_id))continue;
+  const h=w.history;
+  if(!h||!Number.isInteger(h.premiere_year)||h.premiere_year<1600||h.premiere_year>2100)continue;
+  if(!Array.isArray(h.sources)||h.sources.length===0)continue;
+  entries.set(w.work_id,{work:w,history:h});
+ }
+ return entries;
+}
+function localToday(){
+ return new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Rome",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+}
+function premieres(selected,year){
+ const root=$("premiere-items");root.replaceChildren();
+ if(!editorials){
+  text($("premiere-total"),"—");
+  text($("premiere-summary-label"),"Schede editoriali temporaneamente non disponibili");
+  text($("premiere-context"),"Nessun numero viene mostrato senza le fonti verificate.");
+  return;
+ }
+ const workIds=new Set(selected.map(r=>r.workId));
+ const applicable=[...editorials.entries()].filter(([id,e])=>workIds.has(id)&&(year==="all"||String(e.history.premiere_year)===year))
+ .map(([,e])=>e).sort((a,b)=>b.history.premiere_year-a.history.premiere_year||a.work.title.localeCompare(b.work.title,"it"));
+ text($("premiere-total"),fmt.format(applicable.length));
+ text($("premiere-summary-label"),year==="all"?"Opere censite con anno di prima assoluta verificato":"Opere censite con prima assoluta attribuita al "+year);
+ const today=localToday();
+ const exact=applicable.filter(e=>typeof e.history.premiere_date==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(e.history.premiere_date));
+ const past=exact.filter(e=>e.history.premiere_date<=today);
+ const upcoming=exact.filter(e=>e.history.premiere_date>today);
+ const yearOnly=applicable.length-exact.length;
+ const details=[];
+ if(past.length)details.push(past.length+" con data già trascorsa");
+ if(upcoming.length)details.push(upcoming.length+" con data futura");
+ if(yearOnly)details.push(yearOnly+" con solo anno verificato");
+ text($("premiere-context"),(details.join(" · ")||"Nessuna prima assoluta registrata nel campione.")+
+  ". Il conteggio non equivale a prime già avvenute quando manca la data esatta.");
+ if(!applicable.length){
+  const p=document.createElement("p");p.textContent="Nessuna opera con prima assoluta documentata nei filtri scelti.";root.append(p);return;
+ }
+ for(const e of applicable.slice(0,6)){
+  const h=e.history,entry=document.createElement("div");entry.className="premiere-entry";
+  const name=document.createElement("strong");name.textContent=e.work.title;
+  const detail=document.createElement("span");
+  const date=typeof h.premiere_date==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(h.premiere_date)
+    ?h.premiere_date:h.premiere_year;
+  const place=[h.premiere_city,h.premiere_venue].filter(Boolean).join(" · ");
+  detail.textContent=e.work.composer+" · "+date+(place?" · "+place:"");
+  entry.append(name,detail);root.append(entry);
+ }
+}
+
 function render(){
  const year=$("year").value, season=$("season").value, region=$("region").value;
  const selected=rows.filter(r=>(year==="all"||r.year===year)&&(season==="all"||r.season===season)&&(region==="all"||r.region===region));
@@ -133,6 +225,8 @@ function render(){
  for(const [id,n] of [["k-perfs",selected.length],["k-venues",countUnique(x=>x.venueId)],["k-works",countUnique(x=>x.workId)],["k-stagings",countUnique(x=>x.stagingId)]])text($(id),fmt.format(n));
  drawMonths(selected,year);
  renderInsights(selected);
+ circulation(selected);
+ premieres(selected,year);
  const works=frequencies(selected.map(r=>r.work));
  bars("regions",frequencies(selected.map(r=>r.region)),20);
  bars("seasons",frequencies(selected.map(r=>r.season)).sort((a,b)=>a[0].localeCompare(b[0])),20);
@@ -158,7 +252,9 @@ function render(){
 async function main(){
  try{
   try{catalogue=await load(ROOT)}catch(err){catalogue=await load(FALLBACK)}
-  rows=mapRows(catalogue);populate();$("year").addEventListener("change",render);$("season").addEventListener("change",render);$("region").addEventListener("change",render);
+  rows=mapRows(catalogue);
+  try{editorials=await loadEditorial(ROOT)}catch(_err){try{editorials=await loadEditorial(FALLBACK)}catch(_fallback){editorials=null}}
+  populate();$("year").addEventListener("change",render);$("season").addEventListener("change",render);$("region").addEventListener("change",render);
   render();$("content").hidden=false;
   text($("status"),"");text($("updated"),"Versione dati: "+(catalogue.manifest.reviewed_on||"data non indicata")+". Recite annullate e rinviate escluse.");
  }catch(error){text($("status"),"Dati temporaneamente non disponibili. Nessuna statistica mostrata: "+error.message)}
