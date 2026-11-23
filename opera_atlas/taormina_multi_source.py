@@ -31,7 +31,9 @@ WORKS={"nabucco":("Nabucco","Giuseppe Verdi"),
        "norma":("Norma","Vincenzo Bellini")}
 EXCLUDE=re.compile(r"\b(?:gala|galà|concerto|recital|aria|arie|omaggio|"
                    r"sinfonico|musical|balletto|danza|talk|film|jazz|pop)\b",re.I)
-# Explicitly observed informational pages, not performance detail links.\nFESTIVAL_NONPRODUCTION_SLUGS=frozenset({\n    "consiglio-di-amministrazione",
+# Explicitly observed informational pages, not performance detail links.
+FESTIVAL_NONPRODUCTION_SLUGS=frozenset({
+    "consiglio-di-amministrazione",
     "atti",
     "sostieni",
     "soci",
