@@ -795,11 +795,16 @@
     "Martina Franca|Chiostro del Carmine": {
       "city": "Martina Franca",
       "name": "Chiostro del Carmine",
-      "address": "Chiostro del Carmine, Martina Franca",
+      "address": "Via Giovanni Battista Pergolesi, 74015 Martina Franca",
       "description": "Il Chiostro del Carmine è una delle sedi degli spettacoli lirici del Festival della Valle d’Itria. Nel luglio 2026 ha ospitato Il schiavo di sua moglie di Francesco Provenzale.",
       "website": "https://www.festivaldellavalleditria.it/programma-2026",
-      "history": "Nel programma 2026 del Festival della Valle d’Itria, il Chiostro del Carmine ha ospitato tre rappresentazioni dell’opera barocca Il schiavo di sua moglie, il 24, 27 e 30 luglio.",
-      "source": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+      "history": "Il Chiostro del Carmine è uno spazio del complesso conventuale cui si accede dalla chiesa di Maria Santissima del Monte Carmelo. Il Festival della Valle d’Itria lo utilizza per rappresentazioni liriche: nel 2026 vi ha presentato Il schiavo di sua moglie di Francesco Provenzale, con recite il 24, 27 e 30 luglio.",
+      "source": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Luoghi/Chiostro-del-Carmine",
+      "photo_file": "Church of the Carmine - Martina Franca.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Church_of_the_Carmine_-_Martina_Franca.jpg",
+      "photo_credit": "Vito Manzari / MrPanyGoff — Wikimedia Commons, CC BY 2.0",
+      "photo_license": "CC BY 2.0",
+      "photo_caption": "Esterno della chiesa del Carmine, accesso al complesso del Chiostro del Carmine"
     }
   }
 }
