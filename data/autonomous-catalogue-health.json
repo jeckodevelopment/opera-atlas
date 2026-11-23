@@ -1,16 +1,12 @@
 {
   "schema_version": 1,
-  "new_stagings": 0,
-  "new_recite": 0,
+  "new_stagings": 4,
+  "new_recite": 6,
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
       "candidate_id": "oa-index-2583140715d654277a2b",
       "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
-      "reason": "unknown_work_needs_authority_data"
     },
     {
       "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
@@ -45,16 +41,8 @@
       "reason": "unsupported_or_untrusted_source"
     },
     {
-      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
       "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "reason": "unknown_work_needs_authority_data"
     },
     {
       "title": "Cavalleria rusticana",
@@ -81,14 +69,6 @@
       "reason": "incomplete_work_editorial"
     },
     {
-      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
-      "reason": "verified_work_image_missing"
-    },
-    {
       "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
       "reason": "incomplete_work_editorial"
     },
@@ -102,14 +82,6 @@
     },
     {
       "candidate_id": "oa-index-cab03dfcd8aeff155178",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
-      "reason": "verified_work_image_missing"
-    },
-    {
-      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
       "reason": "incomplete_work_editorial"
     },
     {
@@ -130,23 +102,15 @@
     },
     {
       "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "reason": "incomplete_work_editorial"
+      "reason": "verified_work_image_missing"
     },
     {
       "candidate_id": "oa-index-2583140715d654277a2b",
       "reason": "unsupported_or_untrusted_source"
     },
     {
-      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
       "reason": "unsupported_or_untrusted_source"
-    },
-    {
-      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
-      "reason": "unknown_work_needs_authority_data"
     },
     {
       "candidate_id": "oa-index-535b054411d3b3c9ea01",
@@ -177,14 +141,6 @@
       "reason": "unsupported_or_untrusted_source"
     },
     {
-      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
       "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
       "reason": "unsupported_or_untrusted_source"
     },
@@ -193,7 +149,7 @@
       "reason": "unknown_work_needs_authority_data"
     }
   ],
-  "new_works": 0,
+  "new_works": 4,
   "enriched_recite_times": 0,
   "normalized_work_titles": 0
 }

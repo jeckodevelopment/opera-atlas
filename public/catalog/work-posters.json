@@ -1025,6 +1025,42 @@
       "alt": "Disegno storico per la copertina del libretto di La mère coupable di Darius Milhaud; non una fotografia dell'allestimento a Cosenza",
       "credit": "Archivio Storico Ricordi / Peter Hoffer, Wikimedia Commons",
       "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "oa-w-000116": {
+      "work_id": "oa-w-000116",
+      "image_url": "https://www.lugliomusicale.it/public/360w/260617-lug-manifesti-generale-19.jpg",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "original_source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "credit": "Manifesto ufficiale del Luglio Musicale Trapanese per Fuori Fuoco, 2026",
+      "alt": "Locandina Fuori Fuoco di Diana Buscemi",
+      "kind": "official_original_work_artwork"
+    },
+    "oa-w-000117": {
+      "work_id": "oa-w-000117",
+      "image_url": "https://www.lugliomusicale.it/public/828w/260617-lug-manifesti-generale-17.jpg",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "original_source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "credit": "Manifesto ufficiale del Luglio Musicale Trapanese per Ghost Cafè, 2026",
+      "alt": "Locandina Ghost Cafè di Carlo Galante",
+      "kind": "official_original_work_artwork"
+    },
+    "oa-w-000118": {
+      "work_id": "oa-w-000118",
+      "image_url": "https://www.festivaldellavalleditria.it/wp-content/uploads/2024/02/16.jpg",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "original_source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "credit": "Immagine indicata per Il schiavo di sua moglie, Festival della Valle d'Itria",
+      "alt": "Locandina Il schiavo di sua moglie di Francesco Provenzale",
+      "kind": "official_original_work_artwork"
+    },
+    "oa-w-000119": {
+      "work_id": "oa-w-000119",
+      "image_url": "https://www.lugliomusicale.it/public/360w/260617-lug-manifesti-generale-16.jpg",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "original_source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "credit": "Manifesto ufficiale del Luglio Musicale Trapanese per Magic Words Circus, 2026",
+      "alt": "Locandina Magic Words Circus di Orazio Sciortino",
+      "kind": "official_original_work_artwork"
     }
   }
 }

@@ -72,7 +72,8 @@
       "region": "Puglia",
       "official_url": "https://www.festivaldellavalleditria.it/",
       "staging_ids": [
-        "oa-s-000253"
+        "oa-s-000253",
+        "oa-s-000277"
       ],
       "description": "Il festival di Martina Franca valorizza il teatro musicale e il repertorio lirico, con particolare attenzione alle riscoperte, ai titoli rari e alla ricerca interpretativa.",
       "festival_id": "festival-valle-ditria",
@@ -91,7 +92,10 @@
       "staging_ids": [
         "oa-s-000272",
         "oa-s-000273",
-        "oa-s-000274"
+        "oa-s-000274",
+        "oa-s-000275",
+        "oa-s-000276",
+        "oa-s-000278"
       ],
       "description": "A Trapani, il Luglio Musicale Trapanese propone spettacoli lirici e iniziative musicali, anche negli spazi del Teatro Giuseppe Di Stefano.",
       "festival_id": "luglio-musicale-trapanese",

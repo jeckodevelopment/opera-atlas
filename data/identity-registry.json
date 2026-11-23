@@ -736,6 +736,34 @@
       "title": "La mère coupable",
       "composer": "Darius Milhaud",
       "authority_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza"
+    },
+    "fuori fuoco|diana buscemi": {
+      "id": "oa-w-000116",
+      "slug": "fuori-fuoco",
+      "title": "Fuori Fuoco",
+      "composer": "Diana Buscemi",
+      "authority_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/"
+    },
+    "ghost cafè|carlo galante": {
+      "id": "oa-w-000117",
+      "slug": "ghost-cafe",
+      "title": "Ghost Cafè",
+      "composer": "Carlo Galante",
+      "authority_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/"
+    },
+    "il schiavo di sua moglie|francesco provenzale": {
+      "id": "oa-w-000118",
+      "slug": "il-schiavo-di-sua-moglie",
+      "title": "Il schiavo di sua moglie",
+      "composer": "Francesco Provenzale",
+      "authority_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+    },
+    "magic words circus|orazio sciortino": {
+      "id": "oa-w-000119",
+      "slug": "magic-words-circus",
+      "title": "Magic Words Circus",
+      "composer": "Orazio Sciortino",
+      "authority_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/"
     }
   },
   "venues": {
@@ -1243,6 +1271,22 @@
       "name": "Teatro Giuseppe Di Stefano",
       "city": "Trapani",
       "region": "Sicilia"
+    },
+    "Trapani|Teatro M° Tonino Pardo": {
+      "id": "oa-v-000064",
+      "slug": "teatro-m-tonino-pardo",
+      "city_slug": "trapani",
+      "name": "Teatro M° Tonino Pardo",
+      "city": "Trapani",
+      "region": "Sicilia"
+    },
+    "Martina Franca|Chiostro del Carmine": {
+      "id": "oa-v-000065",
+      "slug": "chiostro-del-carmine",
+      "city_slug": "martina-franca",
+      "name": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "region": "Puglia"
     }
   },
   "stagings": {
@@ -3363,6 +3407,38 @@
       "venue_id": "oa-v-000063",
       "slug": "nabucco",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
+      "season": "2026"
+    },
+    "auto-3f12fd23aa46c05b": {
+      "id": "oa-s-000275",
+      "work_id": "oa-w-000116",
+      "venue_id": "oa-v-000064",
+      "slug": "fuori-fuoco",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "season": "2026"
+    },
+    "auto-52b35f0089c3663c": {
+      "id": "oa-s-000276",
+      "work_id": "oa-w-000117",
+      "venue_id": "oa-v-000064",
+      "slug": "ghost-cafe",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "season": "2026"
+    },
+    "auto-d57d2a1cbc3f370f": {
+      "id": "oa-s-000277",
+      "work_id": "oa-w-000118",
+      "venue_id": "oa-v-000065",
+      "slug": "il-schiavo-di-sua-moglie",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "season": "2026"
+    },
+    "auto-d8c22fa66fa68b8a": {
+      "id": "oa-s-000278",
+      "work_id": "oa-w-000119",
+      "venue_id": "oa-v-000064",
+      "slug": "magic-words-circus",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
       "season": "2026"
     }
   },
@@ -9625,6 +9701,42 @@
       "staging_id": "oa-s-000274",
       "original_date": "2026-07-14",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/"
+    },
+    "auto-3f12fd23aa46c05b|2026-11-28": {
+      "id": "oa-r-001071",
+      "staging_id": "oa-s-000275",
+      "original_date": "2026-11-28",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/"
+    },
+    "auto-52b35f0089c3663c|2026-10-17": {
+      "id": "oa-r-001072",
+      "staging_id": "oa-s-000276",
+      "original_date": "2026-10-17",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/"
+    },
+    "auto-d57d2a1cbc3f370f|2026-07-24": {
+      "id": "oa-r-001073",
+      "staging_id": "oa-s-000277",
+      "original_date": "2026-07-24",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+    },
+    "auto-d57d2a1cbc3f370f|2026-07-27": {
+      "id": "oa-r-001074",
+      "staging_id": "oa-s-000277",
+      "original_date": "2026-07-27",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+    },
+    "auto-d57d2a1cbc3f370f|2026-07-30": {
+      "id": "oa-r-001075",
+      "staging_id": "oa-s-000277",
+      "original_date": "2026-07-30",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+    },
+    "auto-d8c22fa66fa68b8a|2026-09-26": {
+      "id": "oa-r-001076",
+      "staging_id": "oa-s-000278",
+      "original_date": "2026-09-26",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/"
     }
   },
   "reserved_works": {

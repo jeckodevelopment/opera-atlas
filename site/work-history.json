@@ -1089,6 +1089,26 @@
         "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
         "https://www.ansa.it/amp/puglia/notizie/2026/07/22/al-festival-della-valle-ditria-linedita-carmen-di-bizet-del-1874_039e2f1f-b2cb-405b-a6b6-94e37c9659fe.html"
       ]
+    },
+    "fuori-fuoco": {
+      "librettist": "Mariza D'Anna",
+      "premiere_year": 2026,
+      "premiere_venue": "Teatro M° Tonino Pardo",
+      "premiere_city": "Trapani",
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+        "https://trapanioggi.it/fuori-fuoco-presentata-lopera-da-camera-di-diana-buscemi-e-mariza-danna/"
+      ]
+    },
+    "magic-words-circus": {
+      "librettist": "Guido Barbieri",
+      "premiere_year": 2026,
+      "premiere_venue": "Teatro M° Tonino Pardo",
+      "premiere_city": "Trapani",
+      "sources": [
+        "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+        "https://www.lugliomusicale.it/it/teatro-news/al-luglio-musicale-trapanese-le-parole-salgono-in-pista-debutta-in-prima-assoluta-magic-words-circus/"
+      ]
     }
   },
   "works_by_id": {

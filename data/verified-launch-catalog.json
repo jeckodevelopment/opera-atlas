@@ -7045,6 +7045,74 @@
           "21:00"
         ]
       ]
+    },
+    {
+      "key": "auto-3f12fd23aa46c05b",
+      "title": "Fuori Fuoco",
+      "composer": "Diana Buscemi",
+      "venue": "Teatro M° Tonino Pardo",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "dates": [
+        [
+          "2026-11-28",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-52b35f0089c3663c",
+      "title": "Ghost Cafè",
+      "composer": "Carlo Galante",
+      "venue": "Teatro M° Tonino Pardo",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "dates": [
+        [
+          "2026-10-17",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-d57d2a1cbc3f370f",
+      "title": "Il schiavo di sua moglie",
+      "composer": "Francesco Provenzale",
+      "venue": "Chiostro del Carmine",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "dates": [
+        [
+          "2026-07-24",
+          "21:00"
+        ],
+        [
+          "2026-07-27",
+          "21:00"
+        ],
+        [
+          "2026-07-30",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-d8c22fa66fa68b8a",
+      "title": "Magic Words Circus",
+      "composer": "Orazio Sciortino",
+      "venue": "Teatro M° Tonino Pardo",
+      "municipality": "Trapani",
+      "region": "Sicilia",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "dates": [
+        [
+          "2026-09-26",
+          "19:00"
+        ]
+      ]
     }
   ]
 }
