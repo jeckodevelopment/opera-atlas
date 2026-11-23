@@ -17,6 +17,7 @@ class CanonicalMultilingualIdentityTests(unittest.TestCase):
     def test_four_language_pairs_and_permanent_ids(self):
         cases=[
             ("Don Carlo","Giuseppe Verdi","Don Carlos","oa-w-000071"),
+            ("Nabucodonosor","Giuseppe Verdi","Nabucco","oa-w-000025"),
             ("Il flauto magico","Wolfgang Amadeus Mozart","Die Zauberflöte","oa-w-000056"),
             ("Tristano e Isotta","Richard Wagner","Tristan und Isolde","oa-w-000039"),
             ("Sansone e Dalila","Camille Saint-Saëns","Samson et Dalila","oa-w-000017"),
@@ -34,6 +35,7 @@ class CanonicalMultilingualIdentityTests(unittest.TestCase):
         for title,composer in [
             ("Il flauto magico","Giuseppe Verdi"),
             ("Don Carlo","Gioachino Rossini"),
+            ("Nabucodonosor","Gioachino Rossini"),
             ("Tristano e Isotta","Camille Saint-Saëns"),
             ("Sansone e Dalila","Richard Wagner"),
             ("Samson et Dalida","Camille Saint-Saëns"),
