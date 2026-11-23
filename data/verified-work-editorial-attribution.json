@@ -44,6 +44,12 @@
       "synopsis_source": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
     },
     {
+      "slug": "la-mere-coupable",
+      "composer": "Darius Milhaud",
+      "wikidata_id": "Q3210943",
+      "synopsis_source": "https://www.wikidata.org/wiki/Q3210943"
+    },
+    {
       "slug": "les-contes-d-hoffmann",
       "composer": "Jacques Offenbach",
       "wikidata_id": "Q335012",
