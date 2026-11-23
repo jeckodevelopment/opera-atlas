@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T19:12:45+00:00",
+  "checked_at": "2026-11-23T19:19:04+00:00",
   "scope": "national",
   "attempted": 4,
   "outcomes": [
@@ -9,7 +9,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Vicenza official festival year missing or conflicting"
+        "official_ticket_calendar:Vicenza official festival year missing or conflicting"
       ],
       "rows": 0
     },
@@ -18,7 +18,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Vicenza official festival year missing or conflicting"
+        "official_composer_credit:Vicenza opera genre unverified"
       ],
       "rows": 0
     },
@@ -27,7 +27,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Vicenza official festival year missing or conflicting"
+        "official_ticket_calendar:Vicenza official festival year missing or conflicting"
       ],
       "rows": 0
     },
@@ -36,7 +36,7 @@
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Vicenza official festival year missing or conflicting"
+        "official_composer_credit:Vicenza opera genre unverified"
       ],
       "rows": 0
     }
