@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-22T23:36:44+00:00",
+  "checked_at": "2026-11-23T09:50:23+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
@@ -43,70 +43,19 @@
       "title_hint": "Macbeth"
     },
     {
-      "candidate_id": "oa-index-f8122a2cac3109445aaa",
+      "candidate_id": "oa-index-9f61560762c466080073",
       "status": "awaiting_official_identity_evidence",
       "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
-      "title_hint": "nabucco"
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
+      "title_hint": "i capuleti e i montecchi"
     },
     {
-      "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
+      "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
       "status": "automatic_retry",
       "reason": "verified_plot_unavailable",
-      "source_key": "pesaro-rof-2026",
-      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
-      "title_hint": "Le Siège de Corinthe"
-    },
-    {
-      "candidate_id": "oa-index-b4ae738f2728d4430578",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "pesaro-rof-2026",
-      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "title_hint": "La scala di seta"
-    },
-    {
-      "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "pesaro-rof-2026",
-      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "title_hint": "Il viaggio a Reims"
-    },
-    {
-      "candidate_id": "oa-index-e1e59d662e27c6b8340a",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-opera-festival-rolling",
-      "official_url": "https://www.taorminaoperafestival.org/complessi-artistici/",
-      "title_hint": "complessi artistici"
-    },
-    {
-      "candidate_id": "oa-index-e67d0ca2da9deecd17a7",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-opera-festival-rolling",
-      "official_url": "https://www.taorminaoperafestival.org/amministrazione-trasparente/",
-      "title_hint": "amministrazione trasparente"
-    },
-    {
-      "candidate_id": "oa-index-e89b9abe4c2c6b6c247d",
-      "status": "awaiting_official_identity_evidence",
       "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/oltre-l-indifferenza-cosenza",
-      "title_hint": "oltre l indifferenza cosenza"
-    },
-    {
-      "candidate_id": "oa-index-e9edfcff33941447ad9e",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/olimpichetto-il-ritorno-di-un-ambasciatore/",
-      "title_hint": "olimpichetto il ritorno di un ambasciatore"
-    },
-    {
-      "candidate_id": "oa-index-fb6d4970ba4fd0a3888e",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/eventi/",
-      "title_hint": "eventi"
+      "official_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
+      "title_hint": "La mère coupable"
     },
     {
       "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
@@ -116,20 +65,6 @@
       "title_hint": "2026 07 14"
     },
     {
-      "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza",
-      "title_hint": "la mere coupable cosenza"
-    },
-    {
-      "candidate_id": "oa-index-1d76a04d55e92092cc2a",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/sponsor/",
-      "title_hint": "sponsor"
-    },
-    {
       "candidate_id": "oa-index-274f34ea2fb4f9a17a7e",
       "status": "awaiting_official_identity_evidence",
       "source_key": "cosenza-inprimafila-rolling-opera",
@@ -137,46 +72,95 @@
       "title_hint": "lisistrata cosenza"
     },
     {
-      "candidate_id": "oa-index-3226fc8a2ea345c6248d",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/credits/",
-      "title_hint": "credits"
-    },
-    {
-      "candidate_id": "oa-index-34af45b22fceed456f7a",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-opera-festival-rolling",
-      "official_url": "https://www.taorminaoperafestival.org/consiglio-di-amministrazione/",
-      "title_hint": "consiglio di amministrazione"
-    },
-    {
-      "candidate_id": "oa-index-36b53e4041c64c8a911e",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-opera-festival-rolling",
-      "official_url": "https://www.taorminaoperafestival.org/atti/",
-      "title_hint": "atti"
-    },
-    {
-      "candidate_id": "oa-index-3849d460e19f28b1f521",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-opera-festival-rolling",
-      "official_url": "https://www.taorminaoperafestival.org/sostieni/",
-      "title_hint": "sostieni"
-    },
-    {
-      "candidate_id": "oa-index-3a6cc7558e09a14fd125",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-opera-festival-rolling",
-      "official_url": "https://www.taorminaoperafestival.org/soci/",
-      "title_hint": "soci"
-    },
-    {
       "candidate_id": "oa-index-3d94833841692871c0a4",
       "status": "awaiting_official_identity_evidence",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/",
       "title_hint": "le nozze di figaro mozart"
+    },
+    {
+      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "title_hint": "fuori fuoco"
+    },
+    {
+      "candidate_id": "oa-index-4894aac582de2e291033",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/picchi-e-pero-cosenza",
+      "title_hint": "picchi e pero cosenza"
+    },
+    {
+      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "title_hint": "ghost cafe"
+    },
+    {
+      "candidate_id": "oa-index-62cdedd35b9415dab0d9",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/l-anima-e-il-tempo-cosenza",
+      "title_hint": "l anima e il tempo cosenza"
+    },
+    {
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+      "title_hint": "il filosofo di campagna galuppi"
+    },
+    {
+      "candidate_id": "oa-index-8115e400ae8706fd132a",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
+      "title_hint": "l elisir d amore"
+    },
+    {
+      "candidate_id": "oa-index-a825bbef331ecdd019f7",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
+      "title_hint": "lorfeo monteverdi"
+    },
+    {
+      "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "official_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
+      "title_hint": "il barbiere di siviglia rossini"
+    },
+    {
+      "candidate_id": "oa-index-b35be5b62db03774ea61",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/il-medico-dei-pazzi-cosenza",
+      "title_hint": "il medico dei pazzi cosenza"
+    },
+    {
+      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "martina-valle-itria-2026",
+      "official_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "title_hint": "2026 07 24"
+    },
+    {
+      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "title_hint": "magic words circus"
+    },
+    {
+      "candidate_id": "oa-index-dd7baa45131b35e450b1",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+      "title_hint": "l opera forse di francesco filidei infinito nero di salvatore sciarrino"
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
@@ -424,6 +408,13 @@
       "official_url": "https://www.teatrolafenice.it/event/madamabutterflycallegari/"
     },
     {
+      "candidate_id": "oa-index-268aa3f92f6c3dfaafaa",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000112",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/"
+    },
+    {
       "candidate_id": "oa-index-26db4f73989b1c14282c",
       "status": "already_catalogued",
       "work_id": "oa-w-000001",
@@ -520,6 +511,13 @@
       "work_id": "oa-w-000010",
       "source_key": "carlo-felice-season-2026-27",
       "official_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
+    },
+    {
+      "candidate_id": "oa-index-47cec5ba524c35eb01c8",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000045",
+      "source_key": "cosenza-inprimafila-rolling-opera",
+      "official_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza"
     },
     {
       "candidate_id": "oa-index-488fd79f628da89db68f",
@@ -814,6 +812,13 @@
       "work_id": "oa-w-000031",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/normatebar/"
+    },
+    {
+      "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000113",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/"
     },
     {
       "candidate_id": "oa-index-7ff44b89bf8d688bbee0",
@@ -1157,6 +1162,13 @@
       "work_id": "oa-w-000054",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/falstaff-2/"
+    },
+    {
+      "candidate_id": "oa-index-b4ae738f2728d4430578",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000114",
+      "source_key": "pesaro-rof-2026",
+      "official_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
     },
     {
       "candidate_id": "oa-index-b67d637b2f593f6756c7",
