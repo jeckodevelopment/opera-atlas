@@ -1347,13 +1347,21 @@
       "region": "Emilia-Romagna",
       "city_slug": "busseto",
       "slug": "teatro-giuseppe-verdi",
-      "website": "https://teatroregioparma.it/",
-      "source_url": "https://teatroregioparma.it/spettacolo/aida/",
-      "description": "Il teatro di Busseto ospita spettacoli d'opera e appuntamenti del Festival Verdi, fra cui Aida nell'edizione 2026.",
+      "website": "https://comune.busseto.pr.it/luoghi/2692046/teatro-giuseppe-verdi",
+      "source_url": "https://comune.busseto.pr.it/luoghi/2692046/teatro-giuseppe-verdi",
+      "description": "Nel cuore di Busseto, il Teatro Giuseppe Verdi ospita opere e appuntamenti del Festival Verdi, compresa Aida nell'edizione 2026.",
       "canonical_venue_id": "oa-v-000066",
       "profile_key": "Busseto|Teatro Giuseppe Verdi",
       "monitoring_status": "programma_censito",
-      "calendar_status": "acquired"
+      "calendar_status": "acquired",
+      "address": "Piazza Giuseppe Verdi 10, 43011 Busseto (PR)",
+      "history": "Il Teatro Giuseppe Verdi di Busseto è ricavato all'interno della Rocca Pallavicino, nel centro storico cittadino. Progettato dall'architetto Pier Luigi Montecchini, fu inaugurato nel 1868 e conserva una sala decorata con stucchi e affreschi. Il teatro ospita produzioni liriche e appuntamenti del Festival Verdi.",
+      "opening_year": 1868,
+      "photo_file": "Teatro Verdi Busseto.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Verdi_Busseto.jpg",
+      "photo_credit": "Lorenzo Gaudenzi — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_license": "CC BY-SA 4.0",
+      "photo_status": "verified"
     }
   ],
   "related_organizations": [
