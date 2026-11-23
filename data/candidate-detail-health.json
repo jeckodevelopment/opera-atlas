@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T09:50:12+00:00",
+  "checked_at": "2026-11-23T10:11:44+00:00",
   "scope": "national",
-  "attempted": 28,
+  "attempted": 27,
   "outcomes": [
     {
-      "candidate_id": "oa-index-b35be5b62db03774ea61",
+      "candidate_id": "oa-index-62cdedd35b9415dab0d9",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -14,7 +14,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-b016256a0edd6720e078",
+      "candidate_id": "oa-index-6da8d6c5834230d71bbb",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -54,7 +54,7 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-a825bbef331ecdd019f7",
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
@@ -74,6 +74,48 @@
       "rows": 0
     },
     {
+      "candidate_id": "oa-index-8115e400ae8706fd132a",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Trapani first-party composer missing"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-90a9028a295696a522e1",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-97810ee023c87e4afd01",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-a825bbef331ecdd019f7",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -81,6 +123,26 @@
         "canonical_work:no_evidence",
         "authority_work:no_evidence",
         "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-b016256a0edd6720e078",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "canonical_work:no_evidence",
+        "authority_work:no_evidence",
+        "schema_event:no_evidence"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-b35be5b62db03774ea61",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Cosenza event is not a verified opera"
       ],
       "rows": 0
     },
@@ -172,11 +234,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
       "candidate_id": "oa-index-4812bc1604f9f8d068ca",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -202,68 +259,6 @@
       "reason": "no_verified_showtimes",
       "diagnostic": [
         "official_composer_credit:Trapani first-party composer missing"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-62cdedd35b9415dab0d9",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Cosenza event is not a verified opera"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-6da8d6c5834230d71bbb",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-8115e400ae8706fd132a",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Trapani first-party composer missing"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-90a9028a295696a522e1",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-97810ee023c87e4afd01",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "canonical_work:no_evidence",
-        "authority_work:no_evidence",
-        "schema_event:no_evidence"
       ],
       "rows": 0
     },
