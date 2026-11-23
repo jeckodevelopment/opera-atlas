@@ -605,7 +605,7 @@
       "id": "oa-index-274f34ea2fb4f9a17a7e",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/lisistrata-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:12:09+00:00"
     },
@@ -965,7 +965,7 @@
       "id": "oa-index-4894aac582de2e291033",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/picchi-e-pero-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:12:09+00:00"
     },
@@ -1261,7 +1261,7 @@
       "id": "oa-index-62cdedd35b9415dab0d9",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/l-anima-e-il-tempo-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:12:09+00:00"
     },
@@ -2397,7 +2397,7 @@
       "id": "oa-index-b35be5b62db03774ea61",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/il-medico-dei-pazzi-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:12:09+00:00"
     },
@@ -3149,7 +3149,7 @@
       "id": "oa-index-e89b9abe4c2c6b6c247d",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/oltre-l-indifferenza-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:12:09+00:00"
     },
