@@ -71,6 +71,67 @@ def extract_index(html:str,*,url:str=INDEX,min_links:int=3)->list[str]:
         raise ValueError("Trapani official season index incomplete")
     return candidates
 
+# Only this exact first-party, dual-composer evening is a composite:
+# both works share one ticket, venue and start time. Unknown composite
+# marketing headings must NOT be split by a slash or inferred from a URL.
+FILIDEI_SCIARRINO_SLUG=(
+    "l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino"
+)
+FILIDEI_SCIARRINO_COMPONENTS=(
+    ("L'opera (forse)","Francesco Filidei"),
+    ("Infinito nero","Salvatore Sciarrino"),
+)
+
+def parse_filidei_sciarrino_program(
+        html:str,*,url:str)->tuple[str,list[dict],str,list[tuple[str,str]]]:
+    if not eligible_detail(url) or DETAIL.fullmatch(urlsplit(url).path)[2]!=FILIDEI_SCIARRINO_SLUG:
+        raise ValueError("unapproved Trapani composite programme")
+    reader=Reader();reader.feed(html)
+    heading=" ".join(reader.h1).strip()
+    if not re.fullmatch(
+        r"L['’]opera\s*\(forse\)\s+di\s+Francesco\s+Filidei\s*/\s*"
+        r"Infinito\s+nero\s+di\s+Salvatore\s+Sciarrino",
+        heading,re.I):
+        raise ValueError("unverified Trapani composite programme heading")
+    start=next((i for i,x in enumerate(reader.parts) if x==heading),None)
+    if start is None:
+        raise ValueError("Trapani composite event heading missing")
+    header_parts=reader.parts[start:start+85]
+    prefix=header_parts[:45]
+    # A standalone official genre badge, not the word "opera" in the title.
+    if sum(x.strip()=="Opera da camera" for x in prefix)!=1:
+        raise ValueError("Trapani composite opera genre missing")
+    primary=" ".join(header_parts).split("Personaggi e interpreti",1)[0]
+    # Both works, composers and librettists must be explicitly associated
+    # in the exact first-party production credits and in their source order.
+    if not re.search(
+        r"L['’]Opera\s*\(forse\)\s+Musica\s+di\s+Francesco\s+Filidei\s+"
+        r"Libretto\s+di\s+Pierre\s+Senges\s+Infinito\s+nero\s+"
+        r"Musica\s+di\s+Salvatore\s+Sciarrino\s+"
+        r"Libretto\s+di\s+Salvatore\s+Sciarrino\b",
+        primary,re.I):
+        raise ValueError("Trapani composite work attributions incomplete")
+    venue,pattern=VENUES["Opera da camera"]
+    if len(re.findall(pattern,primary,re.I))!=1:
+        raise ValueError("Trapani composite physical venue ambiguous")
+    pairs=re.findall(
+        pattern+r"\s+([0-3]?\d)\s+("+"|".join(MONTHS)+
+        r")\s+(20\d{2}),?\s+Ore\s+([01]?\d|2[0-3]):([0-5]\d)",
+        primary,re.I)
+    if len(pairs)!=1:
+        raise ValueError("Trapani composite recita must have an exact public clock")
+    d,month,y,h,minute=pairs[0]
+    if int(y)!=int(DETAIL.fullmatch(urlsplit(url).path)[1]):
+        raise ValueError("Trapani composite recita outside official season")
+    try:
+        day=date(int(y),MONTHS[month.casefold()],int(d)).isoformat()
+    except ValueError as exc:
+        raise ValueError("invalid Trapani composite recita date") from exc
+    return (heading,
+            [{"title":title,"composer":composer}
+             for title,composer in FILIDEI_SCIARRINO_COMPONENTS],
+            venue,[(day,f"{int(h):02d}:{minute}")])
+
 def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if not eligible_detail(url):raise ValueError("unapproved Trapani event")
     reader=Reader();reader.feed(html)
