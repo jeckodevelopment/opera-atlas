@@ -110,8 +110,8 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     credits=[]
     for part in reader.parts[start+1:start+40]:
         match=re.fullmatch(
-            r"(?:Musica|Musiche)\\s+di\\s+"
-            r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’\\- ]{4,85})",part.strip(),re.I)
+            r"(?:Musica|Musiche)\s+di\s+"
+            r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’ -]{4,85})",part.strip(),re.I)
         if match:
             credits.append(" ".join(match.group(1).split()))
     unique={x.casefold():x for x in credits}
