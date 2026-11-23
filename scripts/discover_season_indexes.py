@@ -26,7 +26,24 @@ EXCLUDED_HAYDN_ANCILLARY=re.compile(
     r"dai-libri-allopera(?:-[0-9]+)?)$"
 )
 EXCLUDED_PATHS={
-    # Exact published 2026 ROF concert, outreach and recital pages.
+    # Explicit observed navigation from Taormina Opera Festival and InPrimaFila;\n    # classify old cached records as excluded rather than keeping them in review.\n    "taormina-opera-festival-rolling": frozenset({\n        "consiglio-di-amministrazione",
+        "atti",
+        "sostieni",
+        "soci",
+        "statuto",
+        "gallery",
+        "cookie-policy",
+        "chi-siamo",
+        "bandi-e-gare",
+        "press",
+        "contattaci",
+        "luoghi",
+        "media",
+        "complessi-artistici",
+        "amministrazione-trasparente",
+        "enrico-castiglione-conquista-new-york-con-la-sua-carmen-standing-ovation-tra-i-grattacieli-di-manhattan",\n    }),\n    "cosenza-inprimafila-rolling-opera": frozenset({\n        "stagione-l-altro-teatro",
+        "capodanno-2027-tributo-vasco-synphony-cosenza",
+        "casa-delle-culture",\n    }),\n    # Exact published 2026 ROF concert, outreach and recital pages.
     # Keep productions such as Il viaggio a Reims, La scala di seta,
     # L'occasione fa il ladro and Le siège de Corinthe eligible.
     "pesaro-rof-2026": frozenset({
