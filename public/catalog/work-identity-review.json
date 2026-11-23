@@ -1,17 +1,35 @@
 {
-  "checked_at": "2026-11-23T19:30:25+00:00",
-  "groups": [],
+  "checked_at": "2026-11-23T19:46:59+00:00",
+  "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-a825bbef331ecdd019f7"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Claudio Monteverdi",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "vicenza-olimpico-rolling-opera",
+          "url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
+        }
+      ],
+      "title": "L'Orfeo"
+    }
+  ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 0,
+    "candidates_checked": 1,
     "candidates_without_facts": 0,
-    "facts_examined": 0,
+    "facts_examined": 1,
     "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 0,
-    "unmatched_groups": 0
+    "unmatched_facts": 1,
+    "unmatched_groups": 1
   },
   "truncated": false
 }

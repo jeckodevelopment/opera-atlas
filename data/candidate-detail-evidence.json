@@ -5874,6 +5874,25 @@
       }
     },
     {
+      "candidate_id": "oa-index-a825bbef331ecdd019f7",
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/lorfeo-monteverdi/",
+      "content_sha256": "ca264fe17d85a5f4bdc67da2f39bf80057e0a54c681f32a0af1be6b0a182bb28",
+      "official_schedule_evidence_url": "https://www.vicenzainlirica.it/lorfeo-di-monteverdi-chiude-la-xiv-edizione-di-vicenza-in-lirica-domenica-a-villa-pisani-bonetti-lultimo-appuntamento-del-festival/",
+      "official_schedule_sha256": "c9525d5d4220377f90e9bac2a1e603eed81ba1a8c15a48fe88dacd4422f660d0",
+      "checked_at": "2026-11-23T19:46:59+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'Orfeo",
+          "composer": "Claudio Monteverdi",
+          "venue": "Villa Pisani Bonetti",
+          "date": "2026-09-20",
+          "starts_at": "2026-09-20T17:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-a98083086627ce6e0225",
       "source_key": "reggio-valli-opera-2026-27",
       "source_url": "https://www.iteatri.re.it/spettacolo/veleno/",
