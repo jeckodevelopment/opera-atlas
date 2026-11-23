@@ -5,8 +5,48 @@
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
+      "candidate_id": "oa-index-2583140715d654277a2b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
       "candidate_id": "oa-index-409dbd10b36d1a4be74f",
       "reason": "multiple_work_identities"
+    },
+    {
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-70313ef8895b42a91a5b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "reason": "same_recita_already_in_official_circuit",
+      "dates": [
+        "2026-11-26",
+        "2026-11-28"
+      ]
+    },
+    {
+      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
+      "reason": "unsupported_or_untrusted_source"
     },
     {
       "title": "Cavalleria rusticana",
@@ -33,12 +73,88 @@
       "reason": "verified_work_image_missing"
     },
     {
+      "candidate_id": "oa-index-357ebb275673ae888623",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-59710f07c60abb84e3ea",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-cab03dfcd8aeff155178",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-e831cbf742e2f848f44b",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-f4226333be6c3f44d995",
+      "reason": "incomplete_work_editorial"
+    },
+    {
       "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
       "reason": "unknown_work_needs_authority_data"
     },
     {
+      "candidate_id": "oa-index-2583140715d654277a2b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
       "candidate_id": "oa-index-409dbd10b36d1a4be74f",
       "reason": "multiple_work_identities"
+    },
+    {
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-70313ef8895b42a91a5b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-795566dacc905fc5e7f2",
+      "reason": "same_recita_already_in_official_circuit",
+      "dates": [
+        "2026-11-26",
+        "2026-11-28"
+      ]
+    },
+    {
+      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "reason": "unsupported_or_untrusted_source"
+    },
+    {
+      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
+      "reason": "unsupported_or_untrusted_source"
     }
   ],
   "new_works": 0,
