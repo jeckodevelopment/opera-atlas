@@ -1302,6 +1302,14 @@
       "name": "Teatro Giuseppe Verdi",
       "city": "Busseto",
       "region": "Emilia-Romagna"
+    },
+    "Vicenza|Teatro Olimpico": {
+      "id": "oa-v-000067",
+      "slug": "teatro-olimpico",
+      "city_slug": "vicenza",
+      "name": "Teatro Olimpico",
+      "city": "Vicenza",
+      "region": "Veneto"
     }
   },
   "stagings": {
@@ -3486,6 +3494,14 @@
       "venue_id": "oa-v-000066",
       "slug": "aida",
       "source_url": "https://teatroregioparma.it/spettacolo/aida/",
+      "season": "2026"
+    },
+    "auto-aed31bfdfcf807ee": {
+      "id": "oa-s-000283",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000067",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
       "season": "2026"
     }
   },
@@ -9874,6 +9890,24 @@
       "staging_id": "oa-s-000282",
       "original_date": "2026-10-25",
       "source_url": "https://teatroregioparma.it/spettacolo/aida/"
+    },
+    "auto-aed31bfdfcf807ee|2026-09-10": {
+      "id": "oa-r-001092",
+      "staging_id": "oa-s-000283",
+      "original_date": "2026-09-10",
+      "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+    },
+    "auto-aed31bfdfcf807ee|2026-09-12": {
+      "id": "oa-r-001093",
+      "staging_id": "oa-s-000283",
+      "original_date": "2026-09-12",
+      "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+    },
+    "auto-aed31bfdfcf807ee|2026-09-13": {
+      "id": "oa-r-001094",
+      "staging_id": "oa-s-000283",
+      "original_date": "2026-09-13",
+      "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
     }
   },
   "reserved_works": {

@@ -1172,6 +1172,60 @@
       ]
     },
     {
+      "id": "curated:auto-aed31bfdfcf807ee:2026-09-10",
+      "starts_at": "2026-09-10T20:30:00+02:00",
+      "local_date": "2026-09-10",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Olimpico",
+      "municipality": "Vicenza",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+      ]
+    },
+    {
+      "id": "curated:auto-aed31bfdfcf807ee:2026-09-12",
+      "starts_at": "2026-09-12T20:30:00+02:00",
+      "local_date": "2026-09-12",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Olimpico",
+      "municipality": "Vicenza",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+      ]
+    },
+    {
+      "id": "curated:auto-aed31bfdfcf807ee:2026-09-13",
+      "starts_at": "2026-09-13T19:00:00+02:00",
+      "local_date": "2026-09-13",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Olimpico",
+      "municipality": "Vicenza",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+      ]
+    },
+    {
       "id": "curated:auto-207df538679e0065:2026-09-14",
       "starts_at": "2026-09-14T20:30:00+02:00",
       "local_date": "2026-09-14",

@@ -5,14 +5,8 @@
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
-      "title": "Cavalleria rusticana",
-      "city": "Brescia",
-      "reason": "identity_requires_more_evidence"
-    },
-    {
-      "title": "Pagliacci",
-      "city": "Brescia",
-      "reason": "identity_requires_more_evidence"
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "reason": "unknown_work_needs_authority_data"
     },
     {
       "title": "Cavalleria rusticana",
@@ -23,6 +17,28 @@
       "title": "Pagliacci",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
+    },
+    {
+      "title": "Cavalleria rusticana",
+      "city": "Brescia",
+      "reason": "identity_requires_more_evidence"
+    },
+    {
+      "title": "Pagliacci",
+      "city": "Brescia",
+      "reason": "identity_requires_more_evidence"
+    },
+    {
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
+      "reason": "incomplete_work_editorial"
+    },
+    {
+      "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
+      "reason": "unknown_work_needs_authority_data"
     }
   ],
   "new_works": 0,

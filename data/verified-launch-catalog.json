@@ -7217,6 +7217,29 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "auto-aed31bfdfcf807ee",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Olimpico",
+      "municipality": "Vicenza",
+      "region": "Veneto",
+      "source_url": "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/",
+      "dates": [
+        [
+          "2026-09-10",
+          "20:30"
+        ],
+        [
+          "2026-09-12",
+          "20:30"
+        ],
+        [
+          "2026-09-13",
+          "19:00"
+        ]
+      ]
     }
   ]
 }
