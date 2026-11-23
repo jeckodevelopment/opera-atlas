@@ -92,6 +92,21 @@ class AtlasInterfaceTests(unittest.TestCase):
         self.assertNotIn("rossini-opera-festival", {f["id"] for f in festivals})
         self.assertIn("rossini-opera-festival-2026", {f["id"] for f in festivals})
 
+    def test_new_festival_editions_link_verified_canonical_stagings(self):
+        index = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))
+        by_id = {entry["id"]: entry for entry in index["festivals"]}
+        expected = {
+            "macerata-opera-festival-2027": 3,
+            "festival-puccini-2027": 4,
+            "festival-valle-ditria-2026": 1,
+            "luglio-musicale-trapanese-2026": 3,
+        }
+        for festival_id, count in expected.items():
+            self.assertEqual(len(by_id[festival_id]["staging_ids"]), count)
+        from scripts.publish_catalog_v2 import sync_festival_index
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        sync_festival_index(registry, check=True)
+
     def test_festival_registry_generates_only_verified_year_editions(self):
         from unittest.mock import patch
         from tempfile import TemporaryDirectory
