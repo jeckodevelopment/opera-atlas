@@ -47,9 +47,9 @@ EXCLUDED_PATHS={
         "enrico-castiglione-conquista-new-york-con-la-sua-carmen-standing-ovation-tra-i-grattacieli-di-manhattan",
     }),
     "cosenza-inprimafila-rolling-opera": frozenset({
-        "stagione-l-altro-teatro",
+        "stagione-l-altro-teatro-cosenza",
         "capodanno-2027-tributo-vasco-synphony-cosenza",
-        "casa-delle-culture",
+        "casa-delle-culture-cosenza",
     }),
     # Exact published 2026 ROF concert, outreach and recital pages.
     # Keep productions such as Il viaggio a Reims, La scala di seta,

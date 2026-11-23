@@ -58,6 +58,8 @@ class CosenzaTicketFallback(unittest.TestCase):
 
     def test_exact_nonproduction_ticketing_links_are_not_candidates(self):
         from opera_atlas.cosenza_inprimafila_opera import INPRIMAFILA_NONPRODUCTION_SLUGS
+        self.assertIn("stagione-l-altro-teatro-cosenza", INPRIMAFILA_NONPRODUCTION_SLUGS)
+        self.assertIn("casa-delle-culture-cosenza", INPRIMAFILA_NONPRODUCTION_SLUGS)
         links=''.join('<a href="/index.php/eventi/'+slug+'">Altro</a>'
                        for slug in INPRIMAFILA_NONPRODUCTION_SLUGS)
         for slug in INPRIMAFILA_NONPRODUCTION_SLUGS:
