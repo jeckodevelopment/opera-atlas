@@ -69,6 +69,10 @@ EXCLUDED_PATHS={
         "privacy-policy", "vil", "eventi",
         # First-party pages cover a shop-window music initiative and a
         # museum exhibition/inauguration, not a staged lyric opera.
+        # Official event page describes this exact 2026 outing as a
+        # "riduzione in forma di concerto" at Castello di Romeo, not a
+        # staged opera at Teatro Olimpico; future full stagings are unaffected.
+        "le-nozze-di-figaro-mozart",
         "vetrine-vestono-lirica",
         "olimpichetto-il-ritorno-di-un-ambasciatore",
     }),
