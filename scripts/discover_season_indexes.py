@@ -57,11 +57,25 @@ EXCLUDED_PATHS={
         "affitta-il-ridotto.aspx", "tag-directory-1.aspx",
         "biglietteria.aspx", "sitemap.aspx", "dove-parcheggiare.aspx",
         "top-ricerche.aspx",
+        # A cancelled gala, a 2023 foyer recital and a 2014 school-only
+        # outreach event are not publicly ticketed opera productions.
+        "annullato-gala-lirico.aspx",
+        "lirica-nel-foyer-aperitivo-in-musica.aspx",
+        "opera-domani-aida-amore-e-coraggio.aspx",
     }),
     # Vicenza festival: administrative and navigation pages, not performances.
     "vicenza-olimpico-rolling-opera": frozenset({
         "sponsor", "credits", "sostieni", "contacts", "supporters",
         "privacy-policy", "vil", "eventi",
+        # First-party pages cover a shop-window music initiative and a
+        # museum exhibition/inauguration, not a staged lyric opera.
+        "vetrine-vestono-lirica",
+        "olimpichetto-il-ritorno-di-un-ambasciatore",
+    }),
+    # Sabbioneta festival is mixed programme: a Christmas concert is
+    # not an opera even though the festival is called chamber OPERA.
+    "sabbioneta-antica-rolling-opera": frozenset({
+        "gran-concerto-di-natale",
     }),
     "cosenza-inprimafila-rolling-opera": frozenset({
         "stagione-l-altro-teatro-cosenza",
