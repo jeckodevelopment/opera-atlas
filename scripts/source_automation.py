@@ -235,6 +235,12 @@ def scan_attention(index: dict, index_health: dict, *, candidates: dict | None =
             set(INDEX_VENUES.get(other["key"], ())) & venues and
             classify_index_scan(rows.get(other["key"], {})) == "verified_success"
         ) if venues else []
+        # A healthy index for the same venue does not prove that any opera
+        # has passed canonical reconciliation. Track it separately.
+        catalogued_alternatives = [
+            other_key for other_key in alternatives
+            if candidate_counts.get(other_key, {}).get("already_catalogued", 0) > 0
+        ] if candidates is not None else []
         items.append({
             "source_key": key,
             "scan_classification": category,
@@ -245,6 +251,10 @@ def scan_attention(index: dict, index_health: dict, *, candidates: dict | None =
             "last_success_at": record.get("last_success_at"),
             "other_successful_official_sources": alternatives,
             "has_healthy_alternative": bool(alternatives),
+            "other_successful_catalogued_sources": catalogued_alternatives,
+            "has_catalogued_alternative": bool(catalogued_alternatives),
+            # This is candidate-registry evidence, not a deployed-site proof.
+            "catalogued_alternative_evidence": "candidate_registry_only",
             "candidate_yield": (
                 {"total": sum(candidate_counts.get(key, {}).values()),
                  "already_catalogued": candidate_counts.get(key, {}).get("already_catalogued", 0),
@@ -261,6 +271,8 @@ def scan_attention(index: dict, index_health: dict, *, candidates: dict | None =
         "total": len(items), "classifications": dict(sorted(counts.items())),
         "technical_attention": sum(r["requires_technical_attention"] for r in items),
         "future_programmes_not_verified": counts["future_programme_not_verified"],
+        "sources_with_unresolved_candidates": sum(
+            (r["candidate_yield"] or {}).get("needs_review", 0) > 0 for r in items),
         "sources": items,
     }
 
