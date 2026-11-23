@@ -422,6 +422,13 @@ def parse_known_opera_detail(source_key:str,url:str,html:str,registry:dict)->lis
         return [{"event_title":work["title"],"composer":work["composer"],
                  "venue":venue,"date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in recite]
+    if source_key=="festival-verdi-rolling":
+        from opera_atlas.festival_verdi_future import parse_detail, edition_year
+        from scripts.discover_season_indexes import CONFIG
+        import json
+        config=json.loads(CONFIG.read_text(encoding="utf-8"))
+        edition=next(s["url"] for s in config["sources"] if s["key"]==source_key)
+        return parse_detail(html,url=url,year=edition_year(edition),registry=registry)
     if source_key=="macerata-festival-rolling":
         from opera_atlas.macerata_future_parser import parse_detail
         from opera_atlas.work_identity import resolve_work as resolve_future_work
