@@ -63,7 +63,7 @@ class Page(HTMLParser):
                 # outside the main heading. Only the festival category slug
                 # is accepted; artist biographies cannot supply a year.
                 matched=re.search(
-                    r"/category/vicenza-in-lirica-(20\d{2})/?(?:[?#].*)?$",
+                    r"/category/(?:vil/)?vicenza-in-lirica-(20\d{2})/?(?:[?#].*)?$",
                     target,re.I)
                 if matched:self.category_years.append(matched.group(1))
     def handle_endtag(self,tag):
