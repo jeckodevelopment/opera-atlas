@@ -64,7 +64,15 @@ let data={},venues=[],activities=[];
 function tab(name){document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",String(x.dataset.tab===name)));document.querySelectorAll(".view").forEach(x=>x.hidden=x.id!=="view-"+name);history.replaceState(null,"","#"+name)}
 document.querySelectorAll(".tab").forEach(x=>x.addEventListener("click",()=>tab(x.dataset.tab)));document.querySelectorAll("[data-goto]").forEach(x=>x.addEventListener("click",()=>tab(x.dataset.goto)));
 const initial=location.hash.slice(1);if(["overview","venues","catalog","activity","tech"].includes(initial))tab(initial);
-async function read(path){const r=await fetch(BASE+path+"?v="+Date.now(),{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);return r.json()}
+async function read(path){
+ const controller=new AbortController();
+ const timeout=setTimeout(()=>controller.abort(),12000);
+ try{
+  const r=await fetch(BASE+path+"?v="+Date.now(),{cache:"no-store",signal:controller.signal});
+  if(!r.ok)throw Error("HTTP "+r.status);
+  return await r.json();
+ }finally{clearTimeout(timeout)}
+}
 function buildVenues(){
  const rec=new Map((data.rec.venues||[]).map(x=>[joinKey(x),x]));
  const cat=new Map((data.cat.venues||[]).map(x=>[x.venue_id,x]));
@@ -137,11 +145,43 @@ function renderTech(){
  const classes=data.auto.index_scan_attention?.classifications||{};const box=$("source-classifications");box.replaceChildren();for(const [k,v] of Object.entries(classes))box.append(line(k.replaceAll("_"," "),nf(num(v))));
  const feeds=$("feed-details");feeds.replaceChildren();for(const [k,p] of Object.entries(FEEDS))feeds.append(line(k,p+" · disponibile"));
 }
+let loading=false;
 async function load(){
- $("freshness").textContent="Aggiornamento in corso…";const results=await Promise.allSettled(Object.entries(FEEDS).map(async ([k,path])=>[k,await read(path)]));
- const failed=results.filter(x=>x.status!=="fulfilled");if(failed.length){$("freshness").textContent="Dati non disponibili: "+failed.length+" feed non caricati";$("freshness").className="pill bad";return}
- data=Object.fromEntries(results.map(x=>x.value));buildVenues();buildActivities();overview();renderVenues();renderCatalog();renderActivity();renderTech();
- $("freshness").textContent="Feed caricati · "+Object.keys(FEEDS).length+" fonti dati";$("freshness").className="pill good";$("source-time").textContent="Ultimo controllo diagnostico: "+fmt(data.cat.checked_at);
+ if(loading)return;
+ loading=true;
+ $("reload").disabled=true;
+ $("freshness").textContent="Caricamento dei feed · 0 / "+Object.keys(FEEDS).length;
+ $("freshness").className="pill neutral";
+ try{
+  let completed=0;
+  const results=await Promise.allSettled(Object.entries(FEEDS).map(async ([key,path])=>{
+   try{return [key,await read(path)]}
+   finally{
+    completed++;
+    $("freshness").textContent="Caricamento dei feed · "+completed+" / "+Object.keys(FEEDS).length;
+   }
+  }));
+  const missing=results.map((result,i)=>result.status==="rejected"?Object.keys(FEEDS)[i]:null).filter(Boolean);
+  if(missing.length){
+   $("freshness").textContent="Caricamento incompleto: "+missing.join(", ")+". Riprovare con Aggiorna dati.";
+   $("freshness").className="pill bad";
+   $("source-time").textContent="Impossibile garantire dati completi: non vengono mostrati valori parziali.";
+   return;
+  }
+  const next=Object.fromEntries(results.map(x=>x.value));
+  for(const key of Object.keys(FEEDS))if(!next[key]||typeof next[key]!=="object")throw Error("Feed non valido: "+key);
+  data=next;
+  buildVenues();buildActivities();overview();renderVenues();renderCatalog();renderActivity();renderTech();
+  $("freshness").textContent="Dati caricati · "+Object.keys(FEEDS).length+" feed";
+  $("freshness").className="pill good";
+  $("source-time").textContent="Ultimo controllo diagnostico: "+fmt(data.cat.checked_at);
+ }catch(error){
+  $("freshness").textContent="Errore nel caricamento: "+error.message;
+  $("freshness").className="pill bad";
+ }finally{
+  loading=false;
+  $("reload").disabled=false;
+ }
 }
 $("reload").addEventListener("click",load);$("venue-search").addEventListener("input",()=>{if(data.auto)renderVenues()});$("venue-filter").addEventListener("change",()=>{if(data.auto)renderVenues()});$("issue-filter").addEventListener("change",()=>{if(data.auto)renderActivity()});load().catch(e=>{$("freshness").textContent="Errore nel caricamento: "+e.message;$("freshness").className="pill bad"});
 </script></body></html>
