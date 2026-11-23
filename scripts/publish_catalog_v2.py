@@ -229,7 +229,9 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
             source_urls.extend(staging.get("supporting_source_urls", []))
             if not any(
                 (url.scheme == "https" and url.hostname in hosts
-                 and any(url.path.startswith(prefix) for prefix in prefixes))
+                 and any(url.path.startswith(prefix) for prefix in prefixes)
+                 and (not rule.get("official_event_urls")
+                      or raw in rule["official_event_urls"]))
                 for raw in source_urls if isinstance(raw, str)
                 for url in [urlsplit(raw)]
             ):
