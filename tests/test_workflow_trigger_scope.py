@@ -51,6 +51,23 @@ class TriggerScopeTests(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertTrue(github_path_match(path, patterns))
 
+    def test_catalog_refresh_reconciles_pending_queue_before_strict_check(self):
+        # Approved source exclusions can change while the committed candidate
+        # registry is still a cached snapshot from an earlier refresh.
+        # Regeneration must precede the consistency assertion, otherwise
+        # refresh aborts before it can acquire and publish the new catalog.
+        workflow=(ROOT / "refresh-catalog.yml").read_text(encoding="utf-8")
+        header=workflow.split(
+            "      - name: Validate current public catalog before acquisition",1)[1]
+        validation=header.split("      - name: Collect San Carlo secondary candidates",1)[0]
+        regenerate="python -m scripts.reconcile_published_candidates\n"
+        verify="python -m scripts.reconcile_published_candidates --check"
+        self.assertIn(regenerate,validation)
+        self.assertIn(verify,validation)
+        self.assertLess(validation.index(regenerate),validation.index(verify))
+        self.assertLess(validation.index(verify),
+                        validation.index("python -m scripts.publish_work_editorial --check"))
+
     def test_cached_publication_ignores_observability_but_keeps_facts(self):
         patterns = push_paths("publish-cached-catalog.yml")
         for path in ("scripts/pipeline_operations_health.py",
