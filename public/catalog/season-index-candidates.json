@@ -37,7 +37,7 @@
       "id": "oa-index-01f3cb7fc742025ef657",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/sostieni-il-teatro.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -173,7 +173,7 @@
       "id": "oa-index-0a7a0188b3dfc87bdc16",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/contatti.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -253,7 +253,7 @@
       "id": "oa-index-109edae2bf521e9be9d9",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/storia.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -285,7 +285,7 @@
       "id": "oa-index-12331785031cba8e278a",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/affitta-il-teatro.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -429,7 +429,7 @@
       "id": "oa-index-1d76a04d55e92092cc2a",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/sponsor/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -493,7 +493,7 @@
       "id": "oa-index-1ff65671c5a1982280bf",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/eventi-1.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -685,7 +685,7 @@
       "id": "oa-index-3226fc8a2ea345c6248d",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/credits/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -733,7 +733,7 @@
       "id": "oa-index-36395ae5bebaf6af6356",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/instagram.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -821,7 +821,7 @@
       "id": "oa-index-3c4ba842a2ff5a0249fb",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/archivio-eventi-del-ridotto-1.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1013,7 +1013,7 @@
       "id": "oa-index-4fc92246202015074f8d",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/sostieni/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1077,7 +1077,7 @@
       "id": "oa-index-54ee074513baa3989f58",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/il-ridotto-del-teatro.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1101,7 +1101,7 @@
       "id": "oa-index-5636ca42038673233896",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/facebook.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1117,7 +1117,7 @@
       "id": "oa-index-58cad21d966e6a635e47",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/le-sale.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1221,7 +1221,7 @@
       "id": "oa-index-5f9d704846675f0ba15f",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/contacts/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1253,7 +1253,7 @@
       "id": "oa-index-62a197e1c73fd8752cb5",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/erogazioni-ministeriali.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1581,7 +1581,7 @@
       "id": "oa-index-7c5094030a6e57d37a84",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/youtube.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1693,7 +1693,7 @@
       "id": "oa-index-86746cfadaad21a68f9a",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/supporters/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1853,7 +1853,7 @@
       "id": "oa-index-9084085d6e7b91f426f3",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/dove-siamo.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1925,7 +1925,7 @@
       "id": "oa-index-971707af7a4042a80dc5",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/privacy-policy.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2053,7 +2053,7 @@
       "id": "oa-index-9d453e276657183086f8",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/affitta-il-ridotto.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2173,7 +2173,7 @@
       "id": "oa-index-a260d38d870e52e7f9b4",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/privacy-policy/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2261,7 +2261,7 @@
       "id": "oa-index-a862dd7961be74d64f55",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/tag-directory-1.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2517,7 +2517,7 @@
       "id": "oa-index-bb972435361004542388",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/biglietteria.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2901,7 +2901,7 @@
       "id": "oa-index-d9a832eeb8bb6391995d",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/sitemap.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2917,7 +2917,7 @@
       "id": "oa-index-dc11115a2b659da97b33",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/vil/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3133,7 +3133,7 @@
       "id": "oa-index-e810faeaa43a48b190c4",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/dove-parcheggiare.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3285,7 +3285,7 @@
       "id": "oa-index-f2967730d1933deb0e00",
       "source_key": "mantova-sociale-rolling-opera",
       "official_url": "https://www.teatrosocialemantova.it/it-it/top-ricerche.aspx",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3445,7 +3445,7 @@
       "id": "oa-index-fb6d4970ba4fd0a3888e",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/eventi/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },

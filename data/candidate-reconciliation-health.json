@@ -1,12 +1,153 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T07:35:57+00:00",
+  "checked_at": "2026-11-23T07:38:43+00:00",
   "total": 440,
   "states": {
     "already_catalogued": 246,
-    "needs_review": 66,
-    "excluded_nonopera": 110,
+    "needs_review": 38,
+    "excluded_nonopera": 138,
     "not_in_official_season": 18
   },
-  "changes": []
+  "changes": [
+    {
+      "candidate_id": "oa-index-01f3cb7fc742025ef657",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-0a7a0188b3dfc87bdc16",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-109edae2bf521e9be9d9",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-12331785031cba8e278a",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-1d76a04d55e92092cc2a",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-1ff65671c5a1982280bf",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-3226fc8a2ea345c6248d",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-36395ae5bebaf6af6356",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-3c4ba842a2ff5a0249fb",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-4fc92246202015074f8d",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-54ee074513baa3989f58",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-5636ca42038673233896",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-58cad21d966e6a635e47",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-5f9d704846675f0ba15f",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-62a197e1c73fd8752cb5",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-7c5094030a6e57d37a84",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-86746cfadaad21a68f9a",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-9084085d6e7b91f426f3",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-971707af7a4042a80dc5",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-9d453e276657183086f8",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-a260d38d870e52e7f9b4",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-a862dd7961be74d64f55",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-bb972435361004542388",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-d9a832eeb8bb6391995d",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-dc11115a2b659da97b33",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-e810faeaa43a48b190c4",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-f2967730d1933deb0e00",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    },
+    {
+      "candidate_id": "oa-index-fb6d4970ba4fd0a3888e",
+      "before": "needs_review",
+      "after": "excluded_nonopera"
+    }
+  ]
 }
