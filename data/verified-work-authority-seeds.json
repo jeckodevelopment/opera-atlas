@@ -1082,6 +1082,57 @@
           "https://www.ansa.it/amp/puglia/notizie/2026/07/22/al-festival-della-valle-ditria-linedita-carmen-di-bizet-del-1874_039e2f1f-b2cb-405b-a6b6-94e37c9659fe.html"
         ]
       }
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "title": "Fuori Fuoco",
+      "composer": "Diana Buscemi",
+      "synopsis": "Anna, giornalista in una provincia siciliana, affronta inquietudini e memorie familiari che si intrecciano con la storia della mafia. Attraverso il confronto con il passato cerca di ricomporre la propria identità.",
+      "history": {
+        "librettist": "Mariza D'Anna",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro M° Tonino Pardo",
+        "premiere_city": "Trapani",
+        "sources": [
+          "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+          "https://trapanioggi.it/fuori-fuoco-presentata-lopera-da-camera-di-diana-buscemi-e-mariza-danna/"
+        ]
+      }
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "title": "Magic Words Circus",
+      "composer": "Orazio Sciortino",
+      "synopsis": "Sotto il tendone di un circo insolito, parole, figure retoriche e segni della lingua si esibiscono al posto degli acrobati. Le loro performance trasformano il rapporto tra esseri umani e linguaggio, rivendicando libertà e immaginazione.",
+      "history": {
+        "librettist": "Guido Barbieri",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro M° Tonino Pardo",
+        "premiere_city": "Trapani",
+        "sources": [
+          "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+          "https://www.lugliomusicale.it/it/teatro-news/al-luglio-musicale-trapanese-le-parole-salgono-in-pista-debutta-in-prima-assoluta-magic-words-circus/"
+        ]
+      }
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "title": "La favola di Orfeo",
+      "composer": "Alfredo Casella",
+      "synopsis": "Orfeo tenta di salvare Euridice dalla morte grazie al potere del proprio canto. La rilettura musicale di Casella, tratta dalla favola di Poliziano, mette in scena il confronto tra amore, perdita e limite umano.",
+      "history": {
+        "librettist": "Agnolo Poliziano, testo ridotto da Corrado Pavolini",
+        "premiere_year": 1932,
+        "premiere_venue": "Teatro Goldoni",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://archiviostorico.operaroma.it/opera/la-favola-di-orfeo/",
+          "https://www.festivaldellavalleditria.it/programma-2026"
+        ]
+      }
     }
   ]
 }
