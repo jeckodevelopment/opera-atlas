@@ -27,6 +27,43 @@ class SourceAutomationTests(unittest.TestCase):
         self.assertEqual(report["automation_remaining"],
                          report["not_automated"]+report["configured_not_operational"])
 
+    def test_secondary_festival_venues_are_explicitly_mapped(self):
+        from scripts.source_automation import (
+            DIRECTORY, DAILY, INDEX, INDEX_VENUES, build
+        )
+        import json
+        targets = {
+            "sassari-de-carolis-rolling-opera": "Alghero|Forte della Maddalena",
+            "goldoni-livorno-rolling-lirica": "Livorno|Piazza Goldoni",
+            "coccia-novara-rolling-opera": "Novara|Giardini di Palazzo Natta",
+            "pesaro-rof-2026": "Pesaro|Auditorium Scavolini",
+            "savona-giocosa-rolling-opera": "Savona|Teatro Gabriello Chiabrera",
+        }
+        directory = json.loads(DIRECTORY.read_text(encoding="utf-8"))
+        configured = {x["key"] for x in json.loads(INDEX.read_text(encoding="utf-8"))["sources"]}
+        by_name = {v["city"]+"|"+v["name"]:v for v in directory["venues"]}
+        for key, venue in targets.items():
+            self.assertIn(key, configured)
+            self.assertIn(venue, INDEX_VENUES[key])
+            self.assertIn(venue, by_name)
+        checks = {"sources":[{"key":key,"status":"success",
+                    "current_scan_verified":True} for key in targets]}
+        report = build(directory,
+                       json.loads(DAILY.read_text(encoding="utf-8")),
+                       {"sources":[]},
+                       json.loads(INDEX.read_text(encoding="utf-8")), checks)
+        by_venue = {v["city"]+"|"+v["venue"]:v for v in report["venues"]}
+        for source_key, venue in targets.items():
+            row = by_venue[venue]
+            self.assertEqual(row["status"], "operational", (source_key,venue))
+            self.assertTrue(any(s["source_key"] == source_key
+                                for s in row["sources"]))
+        # Separate physical venues must not be merged by common organizer.
+        self.assertNotEqual(by_venue["Livorno|Piazza Goldoni"]["venue_id"],
+                            by_venue["Livorno|Teatro Goldoni"]["venue_id"])
+        self.assertNotEqual(by_venue["Pesaro|Auditorium Scavolini"]["venue_id"],
+                            by_venue["Pesaro|Teatro Gioachino Rossini"]["venue_id"])
+
     def test_san_carlo_secondary_publication_counts_as_operational(self):
         from scripts.source_automation import (
             DIRECTORY, DAILY, INDEX, SAN_CARLO_SECONDARY,
