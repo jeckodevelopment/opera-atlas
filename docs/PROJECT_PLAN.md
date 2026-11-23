@@ -1,201 +1,114 @@
-# Opera Atlas — piano di sviluppo 1.0.0
+# Opera+ Atlas — piano di sviluppo 1.0.0
 
-## Obiettivo
-Realizzare un catalogo nazionale delle rappresentazioni operistiche in Italia, con mappe, ricerca e osservatorio statistico, alimentato da fonti ufficiali. Opera Atlas è un progetto autonomo collegato culturalmente a Opera+.
+> **Piano operativo riallineato il 23 novembre 2026.** Questo documento sostituisce le precedenti fotografie incrementali della fase pilota. Il dettaglio storico resta nella cronologia Git e nelle PR; le diagnosi correnti sono nei feed machine-readable, non nei numeri statici di questa pagina.
+>
+> **Stato release:** 1.0.0 in sviluppo, non dichiarata completa. Le percentuali non sono assegnate senza matrice verificata dei requisiti.
 
-## Fasi e criteri di completamento
+## Missione e confini
 
-### F1 — Fondamenta
-- [ ] Inventario completo delle sedi e degli organizzatori/festival con URL ufficiali verificati, stato e data di verifica. **Otto fonti ufficiali in JSON strutturato con accesso pending; inventario nazionale e policy di accesso ancora da completare.**
-- [ ] Modello dati completamente validato: work, production, performance, venue, organizer, festival, season, source, observation. **Schema SQLite baseline implementato; validazioni/casi limite e deduplicazione cross-source deterministica implementata; API di risoluzione manuale disponibile; rimangono mapping canonici verificati, UI e integrazione con fonti reali.**
-- [ ] Tassonomia editoriale: opera lirica distinta da balletto, concerto e prosa; eccezioni esplicite. **Tipi codificati e validati via API; policy editoriale sui casi limite da completare.**
-- [ ] Normalizzazione titoli, alias e compositori; gestione verificata delle sedi temporanee. **Normalizzazione Unicode/whitespace/case e alias curati disponibili; mapping da fonti reali ancora da validare.**
-- [ ] Tests schema, validazione dati e registrazione della provenienza. **Suite iniziale e test di riconciliazione disponibili; ulteriori integrazioni necessarie.**
+Opera+ Atlas è il **catalogo nazionale delle rappresentazioni operistiche in Italia**, con ricerca, luoghi, festival e osservatorio statistico; si alimenta da programmi ufficiali, conserva la provenienza e non inventa date, orari, immagini o attribuzioni. Il prodotto serve gli utenti su **https://opera.plus/atlas/**. Il **centro di governo e diagnostica**, su `jeckodevelopment.com/dev/atlas`, è un'interfaccia amministrativa distinta: non sostituisce l'osservatorio pubblico.
 
-### F2 — Acquisizione automatica
-- [ ] Connettori per fonti HTML strutturate, JSON-LD/API e PDF quando autorizzati. **Adapter Teatro Regio e staging offline di date OperaLombardia disponibili; ROF 403 in verifica, nessun fetch ROF. Fetch manuale Teatro Regio con robots fail-closed e audit v4; altri formati/fonti ancora aperti.**
-- [ ] Parsing e normalizzazione di date, orari, produzione, venue e collegamenti. **Timestamp espliciti e identità canoniche già gestiti nel primo adapter; le recite con data/teatro/città ma senza orario sono ora esportabili con etichetta esplicita. Verifica su HTML live necessaria.**
-- [ ] Import incrementale con idempotenza, riconciliazione e deduplicazione tra festival e teatri. **Pipeline transazionale SQLite e import opt-in multi-pagina (massimo 20, mapping curati e savepoint per pagina) disponibili; deduplicazione reale multi-fonte ancora da provare.**
-- [ ] Gestione modifiche/rinvii/annullamenti, senza cancellazioni silenziose. **API di cambio stato con prova ufficiale e cronologia v5 implementata; rilevamento conservativo di date rimosse/aggiunte e di ID ufficiali stabili implementato (v6); risoluzione dei casi ambigui e collaudo live ancora aperti.**
-- [ ] Monitoraggio scansioni, errori, obsolescenza, copertura e casi da verificare.
-- [ ] Pianificazione GitHub Actions con rispetto di robots.txt, condizioni di utilizzo, rate limit e caching.
+Sono esclusi dalla prima release: account personali, vendita diretta di biglietti, social, streaming, raccolta di coordinate personali, motore proprietario di percorsi stradali e riutilizzo non autorizzato di fotografie o testi. Sono ammessi i generi lirici concordati, inclusi operetta e oratorio drammatico quando classificati correttamente; spettacoli pop, crossover, concerti, prosa, balletti e produzioni didattiche/non aperte al pubblico generale non diventano automaticamente opere pubblicabili. Un programma composto ha una sola recita/biglietto con collegamenti alle opere eseguite.
 
-### F3 — Portale pubblico
-- [ ] Catalogo eventi con filtri (date, opera, compositore, città, regione, teatro, festival). **Prima UI statica con ricerca opera/compositore/teatro, filtri città/regione/date/orario e paginazione implementata; filtro festival e funzioni avanzate da sviluppare.**
-- [ ] Pagine opera, produzione, recita e luogo; URL ufficiale della biglietteria quando disponibile. **Primi dettagli opera, recita e teatro implementati via JSON e link navigabili; produzione, biglietteria e pagine SEO canoniche ancora da sviluppare.**
-- [ ] Mappa Leaflet/OSM con gruppi di marcatori, filtri e route esterne.
-- [ ] Geolocalizzazione solo su consenso, senza archiviazione delle coordinate personali.
-- [ ] UI responsive, accessibilità, chiarezza dati incompleti e data ultimo aggiornamento. **Prima versione responsive con stile coerente con Opera+ Funding, etichette, focus e visualizzazione esplicita di orario mancante; verifiche browser/accessibilità e metadati aggiornamento ancora da completare.**
+## Principi del riallineamento
 
-### F4 — Osservatorio e rilascio
-- [ ] KPI coerenti (opere distinte, produzioni, recite, teatri attivi, regioni, classifiche).
-- [ ] Definizione e trasparenza delle metriche, inclusi denominatori e filtri temporali.
-- [ ] Esportazione aggregati, controlli di qualità e verifica copertura fonti.
-- [ ] CI, release SemVer, documentazione, pubblicazione e collaudi finali. **CI unit test introdotta in F1; non equivale al completamento F4.**
+1. **Non siamo più nella fase di un singolo teatro pilota.** Il progetto copre circa 70 teatri con connettori realizzati o censiti; il numero operativo e la completezza effettiva vanno **misurati** nei feed aggiornati. Le issue #4 e #5 sono requisiti storici di accettazione dei primi adapter, non la roadmap corrente della piattaforma.
+2. **Connettore operativo ≠ cartellone completo.** Un fetch riuscito, un fallback o la presenza del teatro nel catalogo non dimostrano che tutte le recite ufficiali siano presenti. Separare copertura tecnica, contenuti ed effettiva pubblicazione.
+3. **Acquisizione, riconciliazione e pubblicazione devono essere autonome e idempotenti.** Non ricorrere a riconciliazione manuale per i casi ordinari e non inventare la soluzione per quelli privi di prove.
+4. **Non aprire una nuova fase senza chiudere i suoi requisiti fondamentali.** Un'anomalia editoriale non bloccante va nel backlog di qualità, non deve far dimenticare F3 e F4.
+5. **Unica fonte di verità sul progresso:** requisiti e criteri di accettazione tracciati a issue, PR, test e collaudi. Le fotografie nei testi sono datate; i feed aggiornati hanno priorità per lo stato operativo.
+6. **Separare implementazione da collaudo manuale**: il proprietario del prodotto svolge i collaudi funzionali separatamente. Una PR implementativa può essere unita con test automatici verdi e istruzioni di collaudo; la chiusura definitiva del criterio conserva evidenza di verifica e distingue l'eventuale collaudo ancora pendente.
 
-## Definizione di completamento (DoD)
-Ogni issue funzionale chiusa deve avere implementazione verificata, test automatici ove applicabile, istruzioni di collaudo manuale e aggiornamento della documentazione nella stessa PR. Non si considera implementato ciò che è solo previsto o abbozzato.
+## Fasi della 1.0.0, nell'ordine di completamento
 
-## Convenzioni PR
-Ogni PR include: scopo e issue collegate; comportamenti da testare; risultati test; rischi; modifiche alla documentazione; impatto SemVer. A merge effettuato, aggiornare avanzamento per requisiti completati (mai una percentuale arbitraria). Le milestone F1–F4 sono organizzative, mentre 1.0.0 è il traguardo di prodotto.
+### F1 — Fondamenta, identità e integrità
 
-## Esclusioni iniziali
-Account personali, social, vendita biglietti, copie non autorizzate di testi/foto e calcolo di percorsi stradali su infrastrutture proprie.
+**Scopo:** consolidare l'architettura già costruita, non ripetere la fase pilota.
 
-## Stato attuale
-Schema, validatori del repertorio e test dell'issue #2 in corso; riconciliazione deterministica e API di revisione dell'issue #3 implementate, ma non sono presenti connettori reali o UI di revisione; otto fonti con URL ufficiale in JSON e da autorizzare prima di qualunque acquisizione; inventario nazionale incompleto e adapter Teatro Regio, fetch opt-in, audit scansioni v4 e stati recite v5 implementati; batch multi-produzione e confronti incrementali delle recite disponibili; staging date-only OperaLombardia v7 disponibile e recite con dati essenziali esportabili nel catalogo pubblico; ROF da verificare per blocco HTTP 403; nessun job di acquisizione programmata; primo frontend pubblico e dettagli opera/recita/teatro già pubblicati. Integrazione editoriale iniziale di 19 recite verificate su 2 pagine ufficiali (11 con ora, 8 senza), senza ancora copertura nazionale né sincronizzazione live. Non attribuire percentuali di completamento ai requisiti non ancora chiusi.
+- [ ] Convalidare modello dati completo: opere canoniche, alias, compositori, produzioni/allestimenti, recite, venue, organizzatori, festival/edizioni, stagioni, fonti e osservazioni; vincoli, migrazioni, fixture e provenienza.
+- [ ] Verificare identità immutabili e deduplicazione cross-source: stessa recita pubblicizzata da teatro, festival e circuito = singola recita con più evidenze; composizioni omonime restano distinte; titoli tradotti ricondotti alla stessa opera quando dimostrato.
+- [ ] Validare programmi composti e co-produzioni, sedi fisiche separate dagli organizzatori, cambi data, annullamenti e casi ambigui.
+- [ ] Consolidare tassonomia dei generi, policy editoriale, regole sui dati incompleti e test di regressione.
+- [ ] Chiudere le issue storiche #2 e #3 **solo** se soddisfano i criteri, con prove e documentazione.
 
-## Esecuzione controllata e audit (migrazione v4)
-Il 20/11/2026 il percorso ufficiale `/opera-e-balletto-2026-2027/la-traviata` mostrava 11 righe distinte di recite (dal 26 febbraio al 10 marzo 2027), tra cui recite pomeridiane alle 15:00. Questa verifica è stata fatta consultando la pagina pubblica, **non** eseguendo il crawler della repository. Il parser rimane da confrontare con la sorgente HTML effettivamente scaricabile, che può avere struttura diversa da quella visibile nelle pagine renderizzate.
+**Criterio di uscita:** modello e identificazione canonica stabili, import ripetibili senza duplicati né fusioni improprie; test positivi su casi reali multi-fonte, omonimi, stagioni e programmi composti. Eventuali collaudi manuali pendenti identificati separatamente.
 
-`robots.txt` non è risultato accessibile dal sistema di verifica; il comportamento necessario è **fail closed** fino a verifica da ambiente operativo. Nessuna approvazione di crawling discende dalla presenza di un URL pubblico.
+### F2 — Piattaforma nazionale di acquisizione e pubblicazione
 
-```sh
-# Esegue una singola verifica controllata (solo se fonte già approvata nel DB)
-python -m opera_atlas.scan_cli --db atlas.sqlite3 --url https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata --source-id 1 --venue-id 1 --production-id 1 --title "La traviata" --composer "Giuseppe Verdi" --allow-network
-# Il comando senza --apply esegue rollback delle modifiche e non conserva il log.
-# Con --apply salva recite e metadati di verifica nel database (mai HTML integrale).
-```
+**Scopo:** rendere affidabile e misurabile la rete già realizzata di circa 70 teatri, non aggiungere uno alla volta i primi adapter.
 
-La verifica rispetta: URL HTTPS e hostname esatto, redirects rifiutati, richiesta robots.txt precedente alla pagina, User-Agent identificabile, response HTML, limite 2 MB, timeout 12 secondi. Nessun retry e nessuna scansione ricorsiva. Lo storico `source_checks` registra esito, impronta SHA-256, dimensione e numero di recite, senza copiare il testo dell'ente. Le scansioni negate registrano solo il motivo tecnico se `--apply` è usato.
+- [ ] Censire nel registro tutti i teatri/organizzatori/festival, tutti i loro canali di acquisizione, stato sorgente, fallback, ultima verifica, stagioni correnti e future, e associare ciascuna fonte alla venue corretta.
+- [ ] Per ogni teatro distinguere: **connettore configurato**, **scansione riuscita**, **fonte ufficiale/fallback**, **programma trovato**, **produzioni canonizzate**, **recite pubblicate**, **copertura provata**, **lacune e cause**.
+- [ ] Verificare tutti i connettori esistenti su esecuzioni reali della pipeline, con gestione conservativa dei blocchi, robots espliciti, limiti di accesso, timestamp, retry, last-known-good, guasti e fallback documentati.
+- [ ] Supportare simultaneamente la stagione in corso e quella successiva, con rollover pluriennale senza perdere le ultime recite del vecchio periodo e senza dichiarare complete future stagioni indisponibili.
+- [ ] Acquisire dettagli (opera/compositore, produzione, data, sede, ora ove nota), arricchire le prove incrociate, riconciliare e pubblicare nello **stesso refresh** i casi sicuri; motivare e conservare solo le eccezioni non risolvibili automaticamente.
+- [ ] Gestire variazioni, rinvii, annullamenti, aggiornamenti immagine e provenienza senza cancellazioni silenziose; testare idempotenza e riconciliazione inter-fonte.
+- [ ] Misurare copertura per sede/stagione confrontando tutte le date ufficiali reperibili con le date pubblicate; indicare esplicitamente gli indici non verificabili e le stagioni non ancora pubblicate.
+- [ ] Completare audit automatico della pubblicazione **live** separato dalla scansione GitHub e dalla dashboard di governo.
+- [ ] Trattare #53 (otto fonti iniziali) e #4/#5 (pilota) come sottoinsiemi storici, #178 come riferimento nazionale su stagioni/copertura, #679 per anomalie sorgenti e #685 per riconciliazioni residue. Nessun duplicato di tracker.
 
-**Limiti:** la soluzione non gestisce rate limiting globale tra esecuzioni, ETag/304, parser per altri teatri, errori di import con log persistente o gestione completa degli spostamenti di programma. Prima di abilitare schedulazioni serviranno policy di accesso verificate, monitoraggio delle frequenze e collaudi live. Le fixture di test sono sintesi redatte autonomamente, non copie della pagina.
+**Criterio di uscita:** matrice nazionale completa con stato reale di ogni connettore, pipeline autonoma e idempotente, KPI di copertura supportati da prove ufficiali; backlog residuo di fonti o evidenze non disponibili esplicito, non occultato. Non serve dimostrare accessibilità di future stagioni non pubblicate, ma il sistema deve saperle scoprire quando compaiono.
 
-## Blocco implementativo — feed canonico v2 (2026-11-20)
-- [x] Registro di ID opachi immutabili: 2 opere, 5 teatri, 5 messe in scena, 19 repliche. Lo slug è separato dall'identità.
-- [x] Feed statici distinti e versionati per entità, con hash SHA-256 e puntatore pubblico scritto per ultimo.
-- [x] Frontend collegato al feed GitHub, con fallback esplicito allo snapshot SFTP in caso di problemi di rete.
-- [x] Job quotidiano di validazione e pubblicazione canonica su GitHub Actions nella repository del prodotto, senza servizio server o SFTP.
-- [ ] Import quotidiano dalle pagine ufficiali: fonti e policy live ancora da approvare; niente scraping implicito.
-- [ ] Routing SEO leggibile su hosting e pagine delle messe in scena raggruppate: registri e URL canonici già modellati, frontend e server rewrite da integrare.
-- [ ] Risoluzione automatica sicura dei cambi identità in presenza di date modificabili e fonte non stabile: revisione umana ancora necessaria.
+### F3 — Portale pubblico e qualità dell'esperienza
 
-## F3 — URL canonici e calendario di produzione
-- [x] Frontend: doppia vista per recita e per messa in scena; una messa in scena raggruppa le repliche.
-- [x] Scheda opera: tutte le messe in scena nazionali presenti nel feed v2, per teatro e date.
-- [x] Scheda teatro: elenco delle messe in scena e loro repliche.
-- [x] Scheda messa in scena: replica/date/orario e fonte condivisi.
-- [x] URL canonici descrittivi e rewrite Apache, con base href che preserva gli asset nei percorsi profondi; controllo live sul server da completare dopo deploy.
-- [x] Compatibilità dei vecchi link parametrizzati quando gli ID legacy sono riconosciuti.
-- [ ] Collisioni fra stagioni/produzioni successive: il generatore v2 rifiuta conflitti; assegnazione di slug qualificati e alias da automatizzare.
-- [ ] Verifica accessibilità nel browser e collaudo SEO dei percorsi dopo deploy.
+**Scopo:** completare l'esperienza approvata, senza confonderla con la diagnostica amministrativa.
 
-## F2 — acquisizione schedulata fail-closed
-- [x] Job quotidiano in `opera-atlas` con fetch condizionato a `access_status=approved` ed evidenza di review del permesso.
-- [x] Stato persistente nel Git: osservazioni normalizzate e ID canonici, senza servizio SQLite gestito.
-- [x] Aggiunta idempotente di nuove date sicure e blocco dei possibili rinvii, cambi orario, venue ignote e fonti non raggiungibili.
-- [x] Registro compatto degli esiti delle scansioni approvate e data dell'ultima verifica editoriale nel frontend.
-- [ ] Approvazione effettiva delle fonti: entrambe le pagine iniziali ancora `pending`, robots non verificabile; nessun fetch live autorizzato al momento.
-- [ ] Connettori per nuove produzioni e teatri oltre alle due pagine iniziali, calibrazione su HTML reale autorizzato.
+- [ ] Verificare homepage e menu Spettacoli/Opere/Teatri/Festival, ricerca nazionale e locale, filtri data/compositore/teatro/area, ordinamenti e assenza risultati.
+- [ ] Validare schede opera, allestimento/produzione, recita, teatro e festival, inclusi legami produzione–festival–venue, tournée, programmi composti e link a fonte/biglietteria ufficiale.
+- [ ] Validare viste elenco e calendario; completare mappa cartografica Leaflet/OSM con coordinate delle **sedi** verificate, raggruppamenti, filtri, attribuzioni, link esterni indicazioni, consenso opt-in e fallback senza geolocalizzazione. La mappa schematica delle città non soddisfa di per sé la #8.
+- [ ] Rivedere immagini, crediti/diritti, schede prive di immagine, descrizioni rivolte al pubblico, accessibilità WCAG applicabile, mobile/tastiera, SEO/deep link e dati incompleti.
+- [ ] Conservare un'unica pagina canonica per entità omonime/alias verificati e disambiguazione di opere con lo stesso titolo.
+- [ ] Chiudere #7 e #8 quando i criteri specifici sono verificati, non solo perché esiste una pagina pubblica.
 
-### F2 — evidenza oraria da più fonti (20/11/2026)
-- [x] Entità replica immutabile anche quando una fonte teatro/comune precisa un'ora assente nella fonte circuito.
-- [x] Evidenze orarie per sei repliche da tre siti ufficiali; tutte con pagina fonte conservata e controlli per teatro, giorno, formato e contraddizioni.
-- [x] Feed v1 e v2 sincronizzati con orari arricchiti (19 recite, 17 con ora, 2 senza) e metadati di provenienza.
-- [x] Workflow di aggiornamento in grado di rigenerare il v2 quando l'input approvato cambia senza fallire prima della build.
-- [ ] Verifica e autorizzazione formale della scansione ricorrente; fonti nuove e connettori live ancora `pending`.
+**Criterio di uscita:** percorsi principali e tutti i casi limite collaudabili con dati reali; audit accessibilità/SEO e correttezza editoriale; nessuna funzionalità originaria F3 data per completata solo per equivalenza approssimativa.
 
-### F2 — source readiness e correzioni di affidabilità
-- [x] Verifica delle pagine di dettaglio ufficiali Regio/OperaLombardia; robots.txt non verificabile: entrambe le fonti rimangono `pending` (nessuna falsa autorizzazione).
-- [x] Riconciliazione della singola pagina tutta-o-niente: una qualsiasi anomalia blocca ogni nuova recita proposta dalla pagina, senza cancellare il catalogo valido.
-- [x] Ora locale `Europe/Rome`, corretta in estate e inverno, con esclusione di ore inesistenti o ambigue.
-- [x] Test per mutazioni parziali, duplicati conflittuali, passaggi ora legale e fonti ancora non autorizzate.
-- [ ] Concludere la verifica dei permessi robots/termini e collaudare HTML live autorizzato **prima** di attivare i crawler.
+### F4 — Osservatorio pubblico, governance del rilascio e 1.0.0
 
-### F2 — autorizzazione condizionata a scansioni robots-gated
-- [x] Consenso dell'operatore registrato per provare la lettura delle due pagine ufficiali, sempre con controllo robots.txt runtime prima di ogni fetch.
-- [x] Rifiuto di robots assente, malformato/HTML, negato o rediretto; test di non-accesso alle pagine vietate.
-- [ ] Verificare il primo risultato di GitHub Actions da rete del runner: non dichiarare acquisizione funzionante se robots è negato o non leggibile.
-- [ ] Validare sul sito l'HTML reale e la resa del parser, espandendo poi il catalogo di opere/sedi.
+**Scopo:** completare il prodotto che il piano originario prevedeva, non soltanto il catalogo.
 
-### F2 — estensione del calendario Regio 2026/27
-- [x] Due nuove opere / messe in scena: *Edgar* (Puccini, 7 recite) e *Salome* (Strauss, 6 recite) al Teatro Regio Torino, con giorno/ora verificati su pagina ufficiale.
-- [x] 13 nuovi ID permanenti replica e 2 nuovi ID opera/messa in scena; nessun cambiamento agli ID dei record precedenti.
-- [x] Nuove pagine di produzione incluse nell'allowlist editoriale e nel monitoraggio condizionato giornaliero di `opera-atlas`, con controllo robots runtime.
-- [x] Test su integrità referenziale, date/orari, URL canonici e conteggi: 32 recite, 4 opere, 5 teatri, 7 messe in scena.
-- [ ] Ampliare a nuove città e fonti oltre Regio/OperaLombardia; verificare altre opere del Regio con eventuali caratteristiche del parser differenti.
+- [ ] KPI distinti di opere canoniche, produzioni/allestimenti, recite, teatri attivi e distribuzione regionale per periodo/stagione, senza usare come denominatore i soli record acquisiti.
+- [ ] Classifiche, opere rare, distribuzione geografica/temporale, filtri e aggregati esportabili; metodologia, periodo e limiti di completezza pubblici.
+- [ ] Dashboard **statistica pubblica** distinta dal centro di governo interno; verifica dei conteggi contro fixture note e casi di doppia fonte/annullamenti.
+- [ ] CI e test unitari/integrati end-to-end; prova di recupero da errore di fonte, rollback, pubblicazione statica e deep link HTTPS; verifica delle policy di immagini/robots/licenze.
+- [ ] Documentazione d'installazione, runbook, dizionario KPI, changelog SemVer, note di rilascio e pacchetto di evidenze per la 1.0.0.
+- [ ] Chiusura #9 e #10 al soddisfacimento dei rispettivi criteri.
 
-### F2 — chiusura cartellone principale Regio 2026/27 (20/11/2026)
-- [x] Nove opere rappresentate nella sala principale: 73 recite puntuali verificate nelle pagine ufficiali, 49 appena aggiunte.
-- [x] Distinzione titolo/compositore (*La bohème* di Leoncavallo) e due opere del dittico Cavalleria/Pagliacci che condividono giorno/ora senza fondere gli ID opera.
-- [x] Balletti, concerti e oratorio *Juditha triumphans* esclusi coerentemente dal genere opera.
-- [x] Orari locali verificati in ottobre e dopo passaggio ora legale; acquisizione quotidiana condizionata a robots valida.
-- [ ] Eventi educativi, eventi in sede Piccolo Regio Puccini e possibili programmi fuori dalla sala principale: perimetro distinto, da censire dopo verifica del genere.
-- [ ] Completare le altre quattro produzioni OperaLombardia 2026/27 e quindi gli altri sei enti del registro fonti.
+**Criterio di uscita:** osservatorio pubblico utilizzabile e metodologicamente corretto; rilascio riproducibile, tracciato e collaudabile.
 
-### F2 — OperaLombardia, programmi verificati Teatro Fraschini Pavia
-- [x] Verifica delle altre quattro produzioni della stagione 2026/27 presso il partner Teatro Fraschini Pavia: Turandot (2 recite), Cavalleria rusticana/Pagliacci (2 date, 2 opere), Un ballo in maschera (2 recite), Death in Venice (2 recite).
-- [x] Dieci nuove repliche, cinque nuove messe in scena, tre nuove opere canoniche e zero nuove sedi fittizie; gli ID restano immutabili.
-- [x] Adapter Fraschini che accetta soltanto intestazione opera con compositore e coppia di date/orari espliciti, previa verifica robots.txt; controllo idempotenza e provenienza.
-- [ ] Completare la copertura di tutte le sedi della rete OperaLombardia per i quattro spettacoli (Como, Brescia, Cremona e altri partner effettivamente documentati) con date/ore esatte o null quando assenti.
-- [ ] Completare altri sei enti del registro fonti.
+## Baseline verificata al 23/11/2026 (non una percentuale di completamento)
 
-### F2 — prime produzioni dalle altre sei fonti (20/11/2026)
-- [x] Prima tranche editoriale verificata su Scala (Otello, 9 recite), Arena di Verona (Aida de Bosio, 9), La Fenice (Fedora, 7 attive), Teatro Massimo Palermo (Samson et Dalila 6, Macbeth 5) e Teatro Regio Parma (Madama Butterfly, 4): 40 nuove recite.
-- [x] Cinque nuove sedi canonicalizzate, 6 opere nuove, 6 messe in scena e 40 ID replica senza alterare i 91 precedenti.
-- [x] Annullamento Fedora del 13/11/26 escluso e prove Butterfly 12/14 aprile escluse dalle recite ordinarie.
-- [x] Rapporto di copertura per tutte le otto fonti richieste con separazione esplicita censimento/completezza/automazione.
-- [ ] Teatro Regio Parma, Scala, Arena, Fenice e Massimo: estendere alle altre produzioni, completare adapters e permessi robots.
-- [ ] Rossini Opera Festival: recuperare dati puntuali tramite pagine ufficiali accessibili; calendario originario con blocco 403, non aggirarlo.
-- [ ] Completare OperaLombardia per tutti i teatri coinvolti e deduplicare le tournée.
+- Il progetto è già nazionale, non più un esperimento Regio/OperaLombardia. Nel tracker #679 (diagnostica di riferimento) risultavano **64/64 teatri operativi**, e **69/87 scansioni-indice riuscite**; il dato riguarda quel checkpoint e **non** conferma l'inventario complessivo dei circa 70 teatri né cartelloni completi. Ricalcolare dai feed prima di ogni dichiarazione di progresso.
+- `data/candidate-reconciliation-health.json`, 2026-11-23 15:46 UTC: **440** candidati, **256** già catalogati, **17** `needs_review`, **149** esclusi non-opera, **18** fuori stagione. La diagnostica dei dettagli nazionale successiva riporta **17 tentati / 17 esiti**. Questi sono candidati, non 440 opere o recite.
+- `public/catalog/recite-coverage.json` misura le **recite ufficiali finora individuate** vs pubblicate, **non** la percentuale di stagione completa.
+- Issue aperte dopo la bonifica amministrativa di #320: **13** (al momento del riallineamento); nessuna PR aperta nella precedente verifica. #320 chiusa come duplicata della #685, non come requisito implementativo risolto.
+- Documenti da leggere insieme: `docs/DATA_MODEL.md`, `docs/SOURCE_REGISTRY.md`, `docs/ATLAS_UI_APPROVED.md`; feed `data/season-index-health.json`, `data/candidate-reconciliation-health.json`, `data/candidate-detail-health.json`, `public/catalog/source-automation.json` e `public/catalog/recite-coverage.json`.
 
+## Backlog di riallineamento e precedenze
 
-### F2 — estensione verificata 2026/27 (Venezia, Palermo)
-- [x] Registrate cinque nuove messe in scena da pagine ufficiali individuali con 39 date/ore, ID canonici e relazioni teatrali preservate.
-- [x] Riutilizzati gli ID delle opere Carmen e Madama Butterfly già esistenti; nuove identità solo per nuove opere o messe in scena.
-- [x] Test su numeri, date/orari, fonti, DST e assenza di duplicati; JSON locale di compatibilità aggiornato insieme agli input.
-- [ ] Connettori automatici Fenice e Massimo, ancora da sviluppare e collaudare con robots.txt runtime; **non** equiparare una fonte editoriale verificata a un feed automatico.
-- [ ] Completamento per stagione delle prime fonti Regio Torino e OperaLombardia (indice generale e nuove produzioni non ancora monitorate).
-- [ ] Completamento altre fonti in `data/sources.json`: Scala, Arena, Fenice, Parma, Massimo e Rossini Opera Festival.
+| Ordine | Gruppo | Issue di riferimento | Uscita richiesta |
+| --- | --- | --- | --- |
+| 0 | Bonifica backlog e baseline | #1–#10, #53, #178, #679, #685 | Issue senza duplicazioni, tracciate per fase; chiudere quelle provate risolte |
+| 1 | F1 modello e identità | #1, #2, #3 | Test e invarianti consolidati |
+| 2 | F2 piattaforma nazionale | #4, #5, #6, #53, #178, #679, #685 | Matrice copertura, pipeline affidabile, casi residui motivati |
+| 3 | F3 UX pubblica | #7, #8 | Portale completo rispetto alla UX approvata |
+| 4 | F4 osservatorio e rilascio | #9, #10 | KPI pubblici, CI, qualità e 1.0.0 |
 
+I numeri delle issue pilota restano come tracciabilità storica e **non stabiliscono l'ordine dei lavori**. La priorità non è incrementare indefinitamente il numero di connettori; nuovi teatri/nuove stagioni entrano nel normale ciclo di gestione della copertura.
 
-### F2 — completamento primo inventario OperaLombardia 2026/27
-- [x] 38 nuove date documentate dalla pagina di calendario 2026/27, con 19 nuove messe in scena ed estensione a quattro nuove città.
-- [x] Nessuna ora indovinata: 38 nuove date con `time_known: false`, conservazione degli orari dimostrati da fonti partner per le recite già esistenti.
-- [x] ID canonici persistenti, 14 teatri / 48 messe in scena / 208 repliche, collegamento alla pagina ufficiale.
-- [ ] Parsing automatico dell'indice completo per accorgersi di nuove produzioni e cambi; il monitoraggio corrente controlla solo le pagine di produzione approvate.
-- [ ] Verifica incrociata di tutti gli orari tramite le singole biglietterie; non indovinare.
+## Matrice requisiti e misurazione
 
-### F2 — indice OperaLombardia monitorato
-- [x] Parser per calendario ufficiale multi-produzione 2026/27, titolo/teatro/data verificati.
-- [x] Un controllo robots-gated quotidiano dell'indice, senza 19 fetch duplicati.
-- [x] Riconciliazione alle messe in scena canoniche e protezione di orari verificati indipendentemente.
-- [x] Test con fixture sintetiche per parsing, titoli sconosciuti, pagina incompleta e import idempotente.
-- [ ] Verificare primo esito live sul runner GitHub e risolvere eventuale differenza tra markup effettivo e fixture, senza aggirare robots.
+Ogni requisito deve avere: `ID`, fase, descrizione/criteri di accettazione, priorità, issue/PR, test automatici, stato implementativo, stato collaudo manuale, evidenze e data dell'ultima verifica.
 
-### F2 — monitoraggio trasparente dell'intero perimetro iniziale
-- [x] Stato di copertura deterministico e JSON pubblico per le 8 fonti ufficiali concordate, con conteggi e ultimo esito dell'acquisizione.
-- [x] Distinzione fra calendario stagionale controllato, dettaglio già monitorato, seed editoriale non automatizzato e fonte priva di eventi.
-- [x] Report generato nel workflow `opera-atlas`, nessun nuovo backend né deploy SFTP.
-- [ ] Avviare la verifica e parser per Rossini Opera Festival; abilitare i calendari/stagioni completi di Scala, Fenice, Arena, Parma, Massimo.
-- [ ] Certificare la completezza di ciascuna stagione solo confrontando tutti i titoli/date della fonte ufficiale, non tramite semplice somma dei record presenti.
+Stati ammessi: `not_started`, `in_progress`, `implemented`, `verified`, `manual_qa_pending`, `closed`, `blocked`. `implemented` non è sinonimo di `closed`; `manual_qa_pending` non cancella l'evidenza di implementazione. Percentuali globali e per fase derivano solo dal totale dei criteri valutati e dalla matrice pubblicata; non inferirle da commit, PR, numero di connettori, conteggi di recite o 100% relativi a un sottoinsieme.
 
-### F2 — espansione Scala e Arena da fonti ufficiali (20/11/2026)
-- [x] Aggiunte 24 singole date/ore documentate: Don Giovanni 10, La bohème (Puccini) 8, Nabucco 6.
-- [x] Regolate le identità permanenti senza confondere La bohème di Puccini con quella di Leoncavallo già pubblicata a Torino.
-- [x] Escluso il 27/08/2027 come Nabucco: sostituito ufficialmente da Carmen.
-- [x] Introdotti parser conservativi e controlli di dominio per Scala/Arena, con suite di test dedicata.
-- [ ] Confermare su HTML reale robots-gated la robustezza dei nuovi parser e attivare l'acquisizione quotidiana solo con esito verificato.
-- [ ] Completare le altre produzioni delle stagioni di Scala, Arena, Fenice, Parma, Massimo, e il ROF, con verifica delle singole recite e delle eventuali cancellazioni.
-- [ ] Completare OperaLombardia e Torino anche per le programmazioni non incluse nell'indice di stagione corrente: evitare dichiarazioni premature di completezza.
+## Definition of Done e disciplina PR
 
-### F2 — collaudo live di Scala e Arena prima della raccolta quotidiana
-- [x] Workflow separato `source-probe.yml` per verificare robots.txt e corrispondenza esatta date/ore del catalogo con i siti Scala/Arena.
-- [x] Nessun write al catalogo o promozione automatica delle fonti in caso di errore.
-- [ ] Seguire l'esecuzione live dopo merge, risolvere eventuali cambi HTML/parser e attivare le fonti solo a esito documentato.
+1. Ogni PR specifica fase, issue, cambi funzionali, comportamenti da testare, risultati test, rischi, aggiornamenti documentali, impatto SemVer e regressioni.
+2. CI verde, test pertinenti, verifica di integrità e prove replicabili. Per cambi di acquisizione, verificare anche feed e risultato di un refresh; per frontend, verificare sito pubblico separatamente dai dati.
+3. PR seguite sino al merge. I collaudi manuali richiesti dal proprietario del prodotto rimangono separati e dichiarati pendenti finché svolti.
+4. Chiudere l'issue solo se i suoi criteri sono soddisfatti; in caso di duplicato usare `duplicate` e trasferire i requisiti aperti. Non inventare percentuali né attestazioni di test.
+5. Per ogni aggiornamento della roadmap, usare baseline datata e riferimenti ai feed, senza accumulare diari cronologici permanenti nel piano.
 
-### F2 — esiti primo probe live e attivazione selettiva
-- [x] Arena Nabucco: confronto live completo 6/6 e controllo robots effettuati su GitHub Actions run 44809106408.
-- [x] Nabucco promosso a monitoraggio giornaliero con verifica robots a ogni esecuzione.
-- [x] Scala: rimosso l'assunto fragile su intestazione/sponsor che impediva la lettura live.
-- [ ] Ripetere probe Scala Don Giovanni/La bohème su HTML ufficiale; promuovere solo le fonti che restituiscono 100% delle recite previste, senza dati inventati.
+## Documentazione storica
 
-### F2 — verifica e attivazione delle tre pagine Scala/Arena
-- [x] Live probe `44809794379`: match completo di Don Giovanni 10/10, La bohème Puccini 8/8 e Nabucco 6/6, senza differenze e con robots permissivo a runtime.
-- [x] Entrambe le pagine Scala promosse a monitoraggio giornaliero, Arena già attiva; stesso perimetro URL e controllo robots a ogni richiesta.
-- [x] Allowlist cap 48 pagine e durata massima 25 minuti, evitando l'impossibilità di registrare altre produzioni.
-- [ ] Coprire le restanti programmazioni di tutti gli otto enti e ridurre progressivamente il numero di fetch mediante indici ufficiali validati.
-
-### F2 — chiusura regressione di coverage post-promozione
-- [x] Stati di copertura dei connettori aggiornati nei test: Scala/Arena possono essere `detail_pages_verified` quando confermate dalle scansioni, non le altre fonti ancora editoriali.
-- [x] Trigger della pipeline aggiornato per modifiche ai test/report di copertura, evitando stato di pubblicazione non verificato dopo migrazioni dei connettori.
+Le precedenti sequenze di attività dedicate ai singoli connettori, con snapshot del 20/11 e checklist incrementali, rimangono consultabili nella cronologia di `docs/PROJECT_PLAN.md` e nelle PR/issue corrispondenti. Non costituiscono più la definizione aggiornata della roadmap 1.0.0.
