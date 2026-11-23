@@ -221,9 +221,17 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
             season = staging.get("season", "")
             if not isinstance(season, str) or not re.fullmatch(r"20[0-9]{2}", season):
                 continue
-            url = urlsplit(staging.get("source_url", ""))
-            if url.scheme != "https" or url.hostname not in hosts or not any(
-                url.path.startswith(prefix) for prefix in prefixes
+            # A staging may have been first announced by its venue and then
+            # independently corroborated by the festival. These are sources
+            # of ONE canonical production, not separate festival stagings.
+            # Only already-reconciled provenance is authoritative here.
+            source_urls = [staging.get("source_url", "")]
+            source_urls.extend(staging.get("supporting_source_urls", []))
+            if not any(
+                (url.scheme == "https" and url.hostname in hosts
+                 and any(url.path.startswith(prefix) for prefix in prefixes))
+                for raw in source_urls if isinstance(raw, str)
+                for url in [urlsplit(raw)]
             ):
                 continue
             editions.setdefault(season, set()).add(staging["id"])

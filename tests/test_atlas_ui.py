@@ -156,6 +156,62 @@ class AtlasInterfaceTests(unittest.TestCase):
                 publisher.sync_festival_index(registry)
                 self.assertEqual(json.loads((local / "festival-index.json").read_text(encoding="utf-8")), after)
 
+    def test_festival_links_theatre_staging_from_verified_secondary_source(self):
+        from unittest.mock import patch
+        from tempfile import TemporaryDirectory
+        from scripts import publish_catalog_v2 as publisher
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        primary = registry["stagings"]["auto-4186e1c367aee6cd"]
+        self.assertEqual(primary["season"], "2027")
+        with TemporaryDirectory() as folder:
+            # Existing canonical theatre staging, with an exact verified
+            # festival source linked by cross-source reconciliation.
+            from pathlib import Path
+            local = Path(folder)
+            original = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))
+            (local / "festival-index.json").write_text(json.dumps(original), encoding="utf-8")
+            new_stage = dict(primary)
+            new_stage.update(id="oa-s-test-festival-2027", season="2027",
+                             source_url="https://example.org/theatre/traviata",
+                             supporting_source_urls=[
+                                 "https://www.sferisterio.it/macerata-opera-festival/traviata",
+                                 "https://example.org/other-programme"])
+            registry["stagings"]["multisource-festival-test"] = new_stage
+            # Same title/venue/time is reconciled before it reaches this
+            # stage: publication must reuse the staging ID and its venue.
+            with patch.object(publisher, "PUBLIC", local):
+                publisher.sync_festival_index(registry)
+                updated = json.loads((local / "festival-index.json").read_text(encoding="utf-8"))
+                entry = next(x for x in updated["festivals"]
+                             if x["id"] == "macerata-opera-festival-2027")
+                self.assertIn(new_stage["id"], entry["staging_ids"])
+                self.assertEqual(registry["stagings"]["multisource-festival-test"]["venue_id"],
+                                 primary["venue_id"])
+                publisher.sync_festival_index(registry, check=True)
+                publisher.sync_festival_index(registry)
+                self.assertEqual(json.loads((local / "festival-index.json").read_text(encoding="utf-8")), updated)
+
+    def test_unrelated_theatre_source_does_not_create_festival_link(self):
+        from unittest.mock import patch
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+        from scripts import publish_catalog_v2 as publisher
+        registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
+        stage = dict(registry["stagings"]["auto-4186e1c367aee6cd"])
+        stage.update(id="oa-s-unrelated-2028", season="2028",
+                     source_url="https://example.org/theatre/traviata",
+                     supporting_source_urls=["https://www.sferisterio.it/other-programme/traviata"])
+        registry["stagings"]["not-a-festival"] = stage
+        with TemporaryDirectory() as folder:
+            local = Path(folder)
+            original = json.loads((ROOT / "public/catalog/v2/festival-index.json").read_text(encoding="utf-8"))
+            (local / "festival-index.json").write_text(json.dumps(original), encoding="utf-8")
+            with patch.object(publisher, "PUBLIC", local):
+                publisher.sync_festival_index(registry)
+                updated = json.loads((local / "festival-index.json").read_text(encoding="utf-8"))
+                self.assertNotIn("macerata-opera-festival-2028",
+                                 {entry["id"] for entry in updated["festivals"]})
+
     def test_festival_historical_edition_survives_source_rollover(self):
         from unittest.mock import patch
         from tempfile import TemporaryDirectory
