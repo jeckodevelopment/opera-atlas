@@ -134,6 +134,33 @@ def sitemap(path: Path, catalog: Path) -> None:
             isinstance(route,str) and re.fullmatch(r"/[a-z0-9/-]+/",route)
             and ".." not in route and "//" not in route):
             urls.add(BASE+route.lstrip("/"))
+    valid_stagings={s["id"] for s in stagings}
+    # Add the shared production and multi-work program routes used by Atlas.
+    groups_file=catalog/"production-groups.json"
+    if groups_file.is_file():
+        groups=json.loads(groups_file.read_text(encoding="utf-8"))
+        for group in groups.get("groups",[]):
+            gid=group.get("id","")
+            if (re.fullmatch(r"oa-g-[a-z0-9-]+",gid)
+                and group.get("work_id") in valid_works
+                and any(s in valid_stagings for s in group.get("staging_ids",[]))):
+                urls.add(BASE+"produzioni/"+gid+"/")
+    programs_file=catalog.parent/"programs.json"
+    if programs_file.is_file():
+        programs=json.loads(programs_file.read_text(encoding="utf-8"))
+        for program in programs.get("programs",[]):
+            pid=program.get("id","")
+            if (re.fullmatch(r"oa-p-[0-9a-f]{16}",pid)
+                and program.get("performances")):
+                urls.add(BASE+"programmi/"+pid+"/")
+    festivals_file=catalog/"festival-index.json"
+    if festivals_file.is_file():
+        festivals=json.loads(festivals_file.read_text(encoding="utf-8"))
+        for festival in festivals.get("festivals",[]):
+            fid=festival.get("id","")
+            if (re.fullmatch(r"[a-z0-9-]+",fid)
+                and any(s in valid_stagings for s in festival.get("staging_ids",[]))):
+                urls.add(BASE+"directory.html?section=festival&id="+fid)
     lines=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for url in sorted(urls):
         lines.append("  <url><loc>"+escape(url,{"\"":"&quot;"})+"</loc></url>")
