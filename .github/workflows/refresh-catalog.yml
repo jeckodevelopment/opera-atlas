@@ -116,6 +116,11 @@ jobs:
           python -m unittest discover -s tests -v
           python -m scripts.build_verified_catalog --check
           python -m scripts.publish_catalog_v2 --check
+          # Changes to approved source and genre rules legitimately alter
+          # cached candidate classifications. Reconcile locally before the
+          # strict consistency check, then publish both derived queues in
+          # the existing atomic catalog checkpoint later in this workflow.
+          python -m scripts.reconcile_published_candidates
           python -m scripts.reconcile_published_candidates --check
           python -m scripts.publish_work_editorial --check
           # A newly-reviewed observation may legitimately differ from the previous public v2 snapshot.
