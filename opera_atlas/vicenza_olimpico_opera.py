@@ -99,7 +99,50 @@ def extract_index(html:str,*,url:str=INDEX,min_links:int=1)->list[str]:
         raise ValueError("Vicenza official production candidates unavailable")
     return candidates
 
-def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
+TICKETING = "https://www.vicenzainlirica.it/biglietteria/"
+
+
+def corroborated_ticket_rows(html: str, *, title: str,
+                            composer: str) -> list[tuple[str, str]]:
+    """Read only named, dated official ticket-office lines, never biographies.
+
+    The same ticket page lists concerts and events at other locations.
+    A performance is eligible only if its *own* first-party detail has
+    independently established opera genre and the Teatro Olimpico venue.
+    """
+    page = Page()
+    page.feed(html)
+    text = " ".join(page.parts)
+    surname = composer.split()[-1]
+    # The office uses "12 e 13/09/2026 ... ore 20,30/19,00" for two
+    # consecutive recitals, as well as ordinary "14/09/2026" listings.
+    pattern = re.compile(
+        r"(?<!\d)([0-3]?\d)(?:\s+e\s+([0-3]?\d))?/"
+        r"(0[1-9]|1[0-2])/(20\d{2})\s+"
+        + re.escape(title) + r"\s*[–—-]\s*" + re.escape(surname)
+        + r"\b.{0,140}?\bore\s+"
+        r"((?:[01]?\d|2[0-3])[,.:][0-5]\d"
+        r"(?:\s*/\s*(?:[01]?\d|2[0-3])[,.:][0-5]\d)?)",
+        re.I)
+    rows = []
+    for found in pattern.finditer(text):
+        first, second, month, year, clocks = found.groups()
+        days = [first] + ([second] if second else [])
+        times = [clock.strip().replace(",", ":").replace(".", ":")
+                 for clock in clocks.split("/")]
+        if len(times) != len(days):
+            raise ValueError("Vicenza ticket-office slots ambiguous")
+        for day, clock in zip(days, times):
+            try:
+                rows.append((date(int(year), int(month), int(day)).isoformat(),
+                             clock))
+            except ValueError as exc:
+                raise ValueError("Vicenza ticket-office date invalid") from exc
+    return sorted(set(rows))
+
+
+def parse_detail(html:str,*,url:str,
+                 ticketing_html:str|None=None)->tuple[str,str,str,list[tuple[str,str]]]:
     if not eligible_detail(url):raise ValueError("unapproved Vicenza production URL")
     page=Page();page.feed(html)
     title=" ".join(page.h1).strip()
@@ -122,12 +165,6 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # Prefer edition in the original event header; otherwise its exact
     # WordPress category. When both exist they must agree.
     years=set(header_years+category_years)
-    if len(years)!=1:
-        raise ValueError("Vicenza official festival year missing or conflicting")
-    edition=list(years)
-    year=int(edition[0])
-    if not 2020<=year<=2099:
-        raise ValueError("Vicenza festival edition year invalid")
     if not GENRE.search(header):
         raise ValueError("Vicenza opera genre unverified")
     if not re.search(r"\bTeatro\s+Olimpico\s+(?:di\s+)?Vicenza\b",header,re.I):
@@ -136,6 +173,25 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     credits=[name for pattern,name in COMPOSERS if pattern.search(header)]
     if len(credits)!=1:
         raise ValueError("Vicenza composer missing or ambiguous")
+    work_title=re.split(r"\s+[–-]\s+",title,1)[0].strip()
+    corroborated=(corroborated_ticket_rows(ticketing_html,title=work_title,
+                                          composer=credits[0])
+                 if ticketing_html is not None else [])
+    # Do not override conflicting edition metadata. Only a genuinely missing
+    # edition may be supplied by exact first-party ticket-office dates, and
+    # each such date must also be stated on the matching production page.
+    if len(years)>1:
+        raise ValueError("Vicenza official festival year missing or conflicting")
+    if not years:
+        if not corroborated or len({day[:4] for day,_ in corroborated})!=1:
+            raise ValueError("Vicenza official festival year missing or conflicting")
+        year=int(corroborated[0][0][:4])
+    else:
+        year=int(next(iter(years)))
+        if corroborated and any(int(day[:4])!=year for day,_ in corroborated):
+            raise ValueError("Vicenza official schedule year conflicts with article")
+    if not 2020<=year<=2099:
+        raise ValueError("Vicenza festival edition year invalid")
     recite=[]
     for day,month,hour,minute in SHOWTIME.findall(header):
         try:recite.append((date(year,MONTHS[month.casefold()],int(day)).isoformat(),
@@ -144,6 +200,9 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     recite=sorted(set(recite))
     if not recite or len(recite)>25:
         raise ValueError("Vicenza missing verified exact recitals")
+    if ticketing_html is not None:
+        if not corroborated or recite!=corroborated:
+            raise ValueError("Vicenza article and ticket-office recitals disagree")
     # A concert can credit an opera composer; genre + venue + time are also
     # required independently, and no concert is promoted by its title alone.
     return re.split(r"\s+[–-]\s+",title,1)[0].strip(),credits[0],"Teatro Olimpico",recite
