@@ -33,6 +33,18 @@ class ObservatoryStaticTests(unittest.TestCase):
         self.assertIn('["id","date","year","season"', js)
         self.assertIn('timeZone:"Europe/Rome"', js)
 
+    def test_monthly_activity_and_compact_toolbar(self):
+        html = (ROOT / "observatory/index.html").read_text(encoding="utf-8")
+        js = (ROOT / "observatory/app.js").read_text(encoding="utf-8")
+        css = (ROOT / "observatory/styles.css").read_text(encoding="utf-8")
+        self.assertEqual(html.count('id="download"'), 1)
+        self.assertIn('class="header-export"', html)
+        self.assertIn('Stagione <select id="season"', html)
+        self.assertIn('id="months"', html)
+        self.assertIn('Array(12).fill(0)', js)
+        self.assertIn('drawMonths(selected,year)', js)
+        self.assertIn('.toolbar{gap:12px;', css)
+
     def test_logo_and_isolated_deployment(self):
         logo = (ROOT / "observatory/opera-plus-logo.svg").read_text(encoding="utf-8")
         self.assertIn('viewBox="0 0 250 117"', logo)

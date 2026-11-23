@@ -21,3 +21,24 @@ html,body{margin:0;padding:0;background:#101c2b}
 
 /* Independent temporal dimensions remain legible alongside territory. */
 .filters{gap:11px}.filters label{white-space:nowrap}.filters select{min-width:142px;max-width:180px}@media(max-width:850px){.toolbar{align-items:stretch}.filters{width:100%}.filters label{flex:1;min-width:150px}.filters select{width:100%;max-width:none}}@media(max-width:650px){.filters{gap:8px}.filters label{min-width:125px}.filters select{min-width:0}}
+
+/* Compact single-line desktop exploration bar; mobile may stack accessibly. */
+.top-inner .header-export{margin-left:auto;flex:none;background:transparent;color:#f8e9ef;border:1px solid #a97c8e;border-radius:7px;padding:8px 13px;font-size:12px;font-weight:700}
+.top-inner .header-export:hover{background:#772345;border-color:#c29aaa}
+.toolbar{gap:12px;padding:10px clamp(14px,2.2vw,34px);flex-wrap:nowrap}
+.tabs{gap:1px;flex:none}
+.tabs a{padding:9px clamp(7px,.8vw,12px);font-size:12px;white-space:nowrap}
+.filters{gap:9px;flex:none;margin-left:auto}
+.filters label{font-size:12px;gap:5px;white-space:nowrap}
+.filters select{min-width:0;width:clamp(95px,9vw,145px);max-width:145px;padding:8px 6px;font-size:12px}
+.months-panel{margin-bottom:16px;padding:22px 24px}
+.panel-head h2{margin:0 0 6px}
+.panel-head p{margin:0 0 16px;font-size:12px}
+.months-chart{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:end;gap:clamp(5px,1.1vw,17px);height:190px}
+.month-column{height:100%;min-width:0;display:flex;align-items:center;flex-direction:column}
+.month-value{font-size:12px;color:#6b364c;min-height:21px;font-variant-numeric:tabular-nums}
+.month-track{flex:1;position:relative;width:100%;max-width:82px;min-height:1px;border-bottom:1px solid #dbd4d6}
+.month-bar{position:absolute;bottom:0;left:15%;width:70%;min-height:0;background:linear-gradient(180deg,#c77c97,#8c1743);border-radius:5px 5px 0 0}
+.month-label{font-weight:650;font-size:12px;padding-top:9px}
+@media(max-width:1120px){.toolbar{flex-wrap:wrap}.tabs{flex:1}.filters{margin-left:0;width:100%;justify-content:flex-start}.filters label{flex:1}.filters select{width:auto;min-width:120px}}
+@media(max-width:650px){.top-inner .header-export{margin-left:0;padding:6px 7px;font-size:10px}.top nav a{font-size:11px;padding:8px 5px}.toolbar{gap:8px}.tabs{overflow-x:auto;max-width:100%;flex-wrap:nowrap}.tabs a{padding:9px 8px}.filters{flex-wrap:wrap}.filters label{min-width:130px}.filters select{width:100%;min-width:0}.months-panel{padding:15px 10px}.months-chart{gap:2px;height:165px}.month-value,.month-label{font-size:10px}.month-bar{left:10%;width:80%}}

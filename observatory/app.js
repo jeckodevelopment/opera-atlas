@@ -67,11 +67,30 @@ function bars(id,items,limit=10){
  }
 }
 function list(id,items){const el=$(id);el.replaceChildren();for(const [name,n] of items.slice(0,5)){const li=document.createElement("li");const title=document.createElement("span");title.textContent=name;const number=document.createElement("span");number.textContent=fmt.format(n)+" recite";li.append(title,number);el.append(li)}if(!items.length)el.textContent="Nessun dato";}
+const MONTHS=["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"];
+function drawMonths(selected,year){
+ const counts=Array(12).fill(0);
+ for(const row of selected)counts[Number(row.date.slice(5,7))-1]++;
+ const max=Math.max(1,...counts),root=$("months");root.replaceChildren();
+ for(let month=0;month<12;month++){
+  const entry=document.createElement("div");entry.className="month-column";
+  const number=document.createElement("span");number.className="month-value";number.textContent=fmt.format(counts[month]);
+  const track=document.createElement("div");track.className="month-track";
+  const bar=document.createElement("div");bar.className="month-bar";bar.style.height=(100*counts[month]/max)+"%";track.append(bar);
+  const label=document.createElement("span");label.className="month-label";label.textContent=MONTHS[month];
+  entry.append(number,track,label);root.append(entry);
+ }
+ root.setAttribute("aria-label",MONTHS.map((m,i)=>m+": "+counts[i]+" recite").join("; "));
+ const caption=year==="all"?"Tutti gli anni presenti nel catalogo (sommati per mese)":"Anno solare "+year;
+ text($("months-caption"),caption+" · Solo recite rilevate: zero non equivale ad assenza di attività.");
+}
+
 function render(){
  const year=$("year").value, season=$("season").value, region=$("region").value;
  const selected=rows.filter(r=>(year==="all"||r.year===year)&&(season==="all"||r.season===season)&&(region==="all"||r.region===region));
  const countUnique=f=>count(selected.map(f));
  for(const [id,n] of [["k-perfs",selected.length],["k-venues",countUnique(x=>x.venueId)],["k-works",countUnique(x=>x.workId)],["k-stagings",countUnique(x=>x.stagingId)]])text($(id),fmt.format(n));
+ drawMonths(selected,year);
  const works=frequencies(selected.map(r=>r.work));
  bars("regions",frequencies(selected.map(r=>r.region)),20);
  bars("seasons",frequencies(selected.map(r=>r.season)).sort((a,b)=>a[0].localeCompare(b[0])),20);
