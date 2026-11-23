@@ -18,7 +18,8 @@ class FestivalCoverageAuditTests(unittest.TestCase):
         report = audit(self.registry, self.published, self.targets)
         self.assertGreaterEqual(report["published_festivals"], 7)
         self.assertEqual({x["id"] for x in report["missing_festival_targets"]},
-                         {x["id"] for x in self.targets["targets"]})
+                         {x["id"] for x in self.targets["targets"]} - {"festival-verdi"})
+        self.assertGreaterEqual(report["published_festivals"], 8)
         self.assertTrue(all(x["status"] == "edition_requires_verified_staging_linkage"
                             for x in report["missing_festival_targets"]))
 
