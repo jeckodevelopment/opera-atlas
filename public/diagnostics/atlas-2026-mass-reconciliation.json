@@ -1,0 +1,420 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "source_scan_checked_at": "2026-11-23T22:39:28+00:00",
+  "read_only": true,
+  "catalog_updated": false,
+  "observation_counts": {
+    "already_catalogued_source_and_date": 11,
+    "excluded_by_existing_official_source_policy": 7
+  },
+  "index_failure_counts": {
+    "access_denied": 3,
+    "source_unavailable": 12,
+    "parser_or_structure": 8,
+    "other": 1
+  },
+  "index_failures": {
+    "access_denied": [
+      {
+        "source_key": "cosenza-rendano-rolling-opera",
+        "reason": "AccessDenied",
+        "url": "https://www.teatrorendanocosenza.it/lirica-2/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "napoli-san-carlo-rolling-opera",
+        "reason": "SanCarloSecurityChallenge",
+        "url": "https://www.teatrosancarlo.it/spettacoli/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "spoleto-tls-lirica-2026",
+        "reason": "AccessDenied",
+        "url": "https://www.tls-belli.it/stagione-lirica-2026/",
+        "status": "unverified"
+      }
+    ],
+    "source_unavailable": [
+      {
+        "source_key": "ancona-opera-season-2027",
+        "reason": "FetchUnavailable",
+        "url": "https://www.fondazionemuse.org/stagione-lirica-2027/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "ferrara-season-opera-2027-28",
+        "reason": "FetchUnavailable",
+        "url": "https://spettacolo.emiliaromagnacultura.it/it/rassegna/teatro-comunale-ferrara-opera-danza-2027-2028/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "jesi-opera-season-2027",
+        "reason": "FetchUnavailable",
+        "url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2027/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "lecce-politeama-opera-2026",
+        "reason": "FetchUnavailable",
+        "url": "https://www.politeamagreco.it/programmazione.asp",
+        "status": "unverified"
+      },
+      {
+        "source_key": "modena-municipal-opera-2027-28",
+        "reason": "FetchUnavailable",
+        "url": "https://www.comune.modena.it/vivere-modena/eventi/2027/stagione-opera-2027-2028",
+        "status": "unverified"
+      },
+      {
+        "source_key": "modena-opera-2026-27",
+        "reason": "FetchUnavailable",
+        "url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-opera-2026-2027",
+        "status": "unverified"
+      },
+      {
+        "source_key": "pisa-future-calendar",
+        "reason": "FetchUnavailable",
+        "url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "pisa-verdi-opera-2026-27",
+        "reason": "FetchUnavailable",
+        "url": "https://teatrodipisa.it/tipologia-spettacolo/opera/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "ravenna-alighieri-cherubini-2027",
+        "reason": "FetchUnavailable",
+        "url": "https://www.orchestracherubini.it/eventi/tpl/list/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "ravenna-cherubini-rolling-opera",
+        "reason": "FetchUnavailable",
+        "url": "https://www.orchestracherubini.it/eventi/tpl/list/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "taormina-arte-rolling-opera",
+        "reason": "FetchUnavailable",
+        "url": "https://festivaltaorminarte.it/programma/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "treviso-del-monaco-season-2027-28",
+        "reason": "FetchUnavailable",
+        "url": "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-27-28",
+        "status": "unverified"
+      }
+    ],
+    "parser_or_structure": [
+      {
+        "source_key": "bologna-comunale-opera-2026",
+        "reason": "ValueError",
+        "url": "https://www.tcbo.it/stagione-presente/?_tipo=opera",
+        "status": "unverified"
+      },
+      {
+        "source_key": "chieti-marrucino-season-2027",
+        "reason": "ValueError",
+        "url": "https://comune.chieti.it/?s=stagione+lirica+2027+marrucino",
+        "status": "unverified"
+      },
+      {
+        "source_key": "donizetti-opera-2027",
+        "reason": "ValueError",
+        "url": "https://www.donizettiopera.org/it/opere-2027/",
+        "status": "unverified"
+      },
+      {
+        "source_key": "lecce-provincia-season-2027",
+        "reason": "ValueError",
+        "url": "https://www.provincia.le.it/?s=52+stagione+lirica+2027",
+        "status": "unverified"
+      },
+      {
+        "source_key": "padova-verdi-season-2027",
+        "reason": "ValueError",
+        "url": "https://padovacultura.padovanet.it/it/attivita-culturali/stagione-lirica-di-padova-2027",
+        "status": "unverified"
+      },
+      {
+        "source_key": "rovigo-sociale-opera-2026-27",
+        "reason": "ValueError",
+        "url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2026-2027",
+        "status": "unverified"
+      },
+      {
+        "source_key": "rovigo-sociale-season-2027-28",
+        "reason": "ValueError",
+        "url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/teatrosociale-info/stagione-slider-2027-2028",
+        "status": "unverified"
+      },
+      {
+        "source_key": "taormina-fondazione-rolling-opera",
+        "reason": "ValueError",
+        "url": "https://www.fondazione-taormina.it/",
+        "status": "unverified"
+      }
+    ],
+    "other": [
+      {
+        "source_key": "salerno-verdi-rolling-opera",
+        "reason": "FutureSalernoSeasonNotYetVerified",
+        "url": "https://cultura.comune.salerno.it/teatro-verdi/la-stagione/",
+        "status": "unverified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+      "event_title": "Il quinto moschettiere",
+      "date": "2026-12-16",
+      "starts_at": null,
+      "reported_venue": "Teatro Sangiorgi",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Il quinto moschettiere",
+          "venue": "Teatro Sangiorgi",
+          "city": "Catania"
+        }
+      ]
+    },
+    {
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+      "event_title": "Le nozze dell’Orso",
+      "date": "2026-12-10",
+      "starts_at": null,
+      "reported_venue": "Teatro Sangiorgi",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Le nozze dell’orso",
+          "venue": "Teatro Sangiorgi",
+          "city": "Catania"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
+      "event_title": "La clemenza di Tito",
+      "date": "2026-11-27",
+      "starts_at": null,
+      "reported_venue": "Teatro Sociale",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "La clemenza di Tito",
+          "venue": "Teatro Sociale",
+          "city": "Trento"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
+      "event_title": "La clemenza di Tito",
+      "date": "2026-11-29",
+      "starts_at": null,
+      "reported_venue": "Teatro Sociale",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "La clemenza di Tito",
+          "venue": "Teatro Sociale",
+          "city": "Trento"
+        }
+      ]
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-backstage-under-35-2",
+      "event_title": "Oper.a Backstage &#8211; Under 35",
+      "date": "2026-11-25",
+      "starts_at": null,
+      "reported_venue": "Teatro Sociale",
+      "status": "excluded_by_existing_official_source_policy",
+      "catalogued_matches": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-intro-14",
+      "event_title": "Oper.a Intro",
+      "date": "2026-11-27",
+      "starts_at": null,
+      "reported_venue": "Teatro Sociale",
+      "status": "excluded_by_existing_official_source_policy",
+      "catalogued_matches": []
+    },
+    {
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/oper-a-intro-15",
+      "event_title": "Oper.a Intro",
+      "date": "2026-11-29",
+      "starts_at": null,
+      "reported_venue": "Teatro Sociale",
+      "status": "excluded_by_existing_official_source_policy",
+      "catalogued_matches": []
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "event_title": "Les contes d'Hoffmann",
+      "date": "2026-12-20",
+      "starts_at": "2026-12-20T17:00:00+01:00",
+      "reported_venue": "Teatro del Maggio - Sala Grande",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Les contes d'Hoffmann",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "city": "Firenze"
+        }
+      ]
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "event_title": "Les contes d'Hoffmann",
+      "date": "2026-12-27",
+      "starts_at": "2026-12-27T15:30:00+01:00",
+      "reported_venue": "Teatro del Maggio - Sala Grande",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Les contes d'Hoffmann",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "city": "Firenze"
+        }
+      ]
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "event_title": "Les contes d'Hoffmann",
+      "date": "2026-12-30",
+      "starts_at": "2026-12-30T20:00:00+01:00",
+      "reported_venue": "Teatro del Maggio - Sala Grande",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Les contes d'Hoffmann",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "city": "Firenze"
+        }
+      ]
+    },
+    {
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_url": "https://www.maggiofiorentino.com/events/simon-boccanegra",
+      "event_title": "Simon Boccanegra",
+      "date": "2026-11-24",
+      "starts_at": "2026-11-24T20:00:00+01:00",
+      "reported_venue": "Teatro del Maggio - Sala Grande",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Simon Boccanegra",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "city": "Firenze"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
+      "event_title": "Riscoprire l’antico nel Novecento. Mito e Mediterraneo in Stravinskij e Casella",
+      "date": "2026-07-18",
+      "starts_at": "2026-07-18T10:00:00+02:00",
+      "reported_venue": "Auditorium della Fondazione Paolo Grassi, Martina Franca",
+      "status": "excluded_by_existing_official_source_policy",
+      "catalogued_matches": []
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25",
+      "event_title": "Carmen",
+      "date": "2026-07-25",
+      "starts_at": "2026-07-25T21:00:00+02:00",
+      "reported_venue": "Palazzo Ducale, Martina Franca",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Carmen",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "city": "Martina Franca"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "event_title": "Il schiavo di sua moglie",
+      "date": "2026-07-24",
+      "starts_at": "2026-07-24T21:00:00+02:00",
+      "reported_venue": "Chiostro del Carmine, Martina Franca",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "Il schiavo di sua moglie",
+          "venue": "Chiostro del Carmine",
+          "city": "Martina Franca"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
+      "event_title": "In Orbita &#8211; Naufragi",
+      "date": "2026-07-10",
+      "starts_at": "2026-07-10T21:00:00+02:00",
+      "reported_venue": "Martina Franca",
+      "status": "excluded_by_existing_official_source_policy",
+      "catalogued_matches": []
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "event_title": "Pulcinella / La favola di Orfeo (dittico)",
+      "date": "2026-07-14",
+      "starts_at": "2026-07-14T21:00:00+02:00",
+      "reported_venue": "Palazzo Ducale, Martina Franca",
+      "status": "already_catalogued_source_and_date",
+      "catalogued_matches": [
+        {
+          "title": "La favola di Orfeo",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "city": "Martina Franca"
+        }
+      ]
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/vennero-da-ogni-dove/2026-07-20",
+      "event_title": "Vennero da ogni dove. Narrar cantando umanità in cammino",
+      "date": "2026-07-20",
+      "starts_at": "2026-07-20T21:00:00+02:00",
+      "reported_venue": "Chiostro di San Domenico, Martina Franca",
+      "status": "excluded_by_existing_official_source_policy",
+      "catalogued_matches": []
+    },
+    {
+      "source_key": "sabbioneta-antica-rolling-opera",
+      "source_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
+      "event_title": "Gran Concerto di Natale",
+      "date": "2026-12-12",
+      "starts_at": "2026-12-12T20:30:00+00:00",
+      "reported_venue": "Chiesa di San Girolamo Dottore",
+      "status": "excluded_by_existing_official_source_policy",
+      "catalogued_matches": []
+    }
+  ],
+  "warning": "Unmatched is NOT missing: source, venue, work, public audience and showtime require further verification. Source URL exact match does not certify full season coverage."
+}
