@@ -12,6 +12,22 @@
 <div class="content" id="content" hidden>
 <section id="panoramica" class="kpis" aria-label="Indicatori principali"><article><span class="symbol">♧</span><div><strong id="k-perfs">—</strong><p>Rappresentazioni rilevate</p></div></article><article><span class="symbol">♜</span><div><strong id="k-venues">—</strong><p>Teatri e sedi con recite</p></div></article><article><span class="symbol">▱</span><div><strong id="k-works">—</strong><p>Opere in repertorio</p></div></article><article><span class="symbol">♬</span><div><strong id="k-stagings">—</strong><p>Allestimenti rilevati</p></div></article></section>
 <section class="panel months-panel" id="mesi"><div class="panel-head"><div><h2>Distribuzione delle recite per mese</h2><p id="months-caption">Recite rilevate nel periodo e nel territorio selezionati</p></div></div><div id="months" class="months-chart" role="img" aria-label="Distribuzione mensile delle rappresentazioni rilevate"></div></section>
+<section class="feature-grid" aria-label="Approfondimenti del repertorio">
+<article class="panel premiere-panel" id="prime-assolute">
+<div class="feature-eyebrow">NUOVE OPERE</div>
+<h2>Prime assolute</h2>
+<div class="premiere-summary"><strong id="premiere-total">—</strong><span id="premiere-summary-label">Opere con prima assoluta nell'anno selezionato</span></div>
+<p id="premiere-context" class="premiere-note">Dati storici verificati nelle schede di Opera+ Atlas.</p>
+<div id="premiere-items" class="premiere-items" aria-live="polite"></div>
+</article>
+<article class="panel circulation-panel" id="circolazione">
+<div class="feature-eyebrow">REPERTORIO NEI TEATRI</div>
+<h2>La circolazione delle opere</h2>
+<p>In quanti teatri, città e regioni viene rappresentata ciascuna opera nel campione selezionato.</p>
+<div class="circulation-scroller"><table class="circulation-table"><thead><tr><th scope="col">Opera</th><th scope="col">Teatri</th><th scope="col">Città</th><th scope="col">Regioni</th></tr></thead><tbody id="circulation-rows"></tbody></table></div>
+<p class="feature-note">Una stessa opera conta una sola volta per sede, città o regione, anche in presenza di più recite.</p>
+</article>
+</section>
 <div class="main-grid"><section class="panel" id="territorio"><h2>Attività operistica per regione</h2><div id="regions" class="barlist"></div></section><section class="panel"><h2>Rappresentazioni per stagione</h2><div id="seasons" class="barlist"></div></section><section class="panel highlights"><h2>In evidenza</h2><div id="highlights"></div></section></div>
 <div class="bottom-grid"><section class="panel" id="repertorio"><h2>Opere più rappresentate</h2><ol id="works"></ol></section><section class="panel"><h2>Compositori più rappresentati</h2><div id="composers" class="barlist"></div></section><section class="panel" id="analisi"><h2>Distribuzione del repertorio</h2><p>Le opere vengono classificate per compositore quando presente nei dati. Non attribuiamo secoli di composizione senza date verificabili.</p><div id="analysis"></div></section></div>
 <section class="insight-section" aria-labelledby="insights-title"><div class="insight-heading"><h2 id="insights-title">Il repertorio e i territori</h2><p>Approfondimenti calcolati sulle recite rilevate, nel periodo selezionato.</p></div>
