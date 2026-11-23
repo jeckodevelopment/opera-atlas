@@ -65,7 +65,7 @@ def render(template: str, *, route: str, title: str, description: str,
     text = template
     text = re.sub(r"<title>[^<]*</title>", "<title>" + escape(title + " | Opera+ Atlas") + "</title>", text, count=1)
     text = re.sub(r'<meta name="description"[^>]*>', '', text)
-    text = re.sub(r'<meta property="og:(?:title|description|url|image|image:alt|type)"[^>]*>', '', text)
+    text = re.sub(r'<meta property="og:(?:title|description|url|image|image:alt|image:width|image:height|image:type|type)"[^>]*>', '', text)
     text = re.sub(r'<meta name="twitter:(?:title|description|image)"[^>]*>', '', text)
     text = re.sub(r'<link rel="canonical"[^>]*>', '', text)
     tags = "\n".join([
