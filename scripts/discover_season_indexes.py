@@ -59,7 +59,7 @@ EXCLUDED_PATHS={
         "top-ricerche.aspx",
     }),
     # Vicenza festival: administrative and navigation pages, not performances.
-    "vicenza-inlirica-rolling-opera": frozenset({
+    "vicenza-olimpico-rolling-opera": frozenset({
         "sponsor", "credits", "sostieni", "contacts", "supporters",
         "privacy-policy", "vil", "eventi",
     }),
