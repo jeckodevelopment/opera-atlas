@@ -26,6 +26,31 @@ EXCLUDED_HAYDN_ANCILLARY=re.compile(
     r"dai-libri-allopera(?:-[0-9]+)?)$"
 )
 EXCLUDED_PATHS={
+    # Explicit observed navigation from Taormina Opera Festival and InPrimaFila;
+    # classify old cached records as excluded rather than keeping them in review.
+    "taormina-opera-festival-rolling": frozenset({
+        "consiglio-di-amministrazione",
+        "atti",
+        "sostieni",
+        "soci",
+        "statuto",
+        "gallery",
+        "cookie-policy",
+        "chi-siamo",
+        "bandi-e-gare",
+        "press",
+        "contattaci",
+        "luoghi",
+        "media",
+        "complessi-artistici",
+        "amministrazione-trasparente",
+        "enrico-castiglione-conquista-new-york-con-la-sua-carmen-standing-ovation-tra-i-grattacieli-di-manhattan",
+    }),
+    "cosenza-inprimafila-rolling-opera": frozenset({
+        "stagione-l-altro-teatro",
+        "capodanno-2027-tributo-vasco-synphony-cosenza",
+        "casa-delle-culture",
+    }),
     # Exact published 2026 ROF concert, outreach and recital pages.
     # Keep productions such as Il viaggio a Reims, La scala di seta,
     # L'occasione fa il ladro and Le siège de Corinthe eligible.

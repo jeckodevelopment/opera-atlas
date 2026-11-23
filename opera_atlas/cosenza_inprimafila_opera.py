@@ -26,6 +26,12 @@ DETAIL_PATH = re.compile(
     r"/index\.php/eventi/([a-z0-9]+(?:-[a-z0-9]+)*)-cosenza/?",
     re.I,
 )
+# Explicit non-production/event-category pages encountered in the live listing.
+INPRIMAFILA_NONPRODUCTION_SLUGS=frozenset({
+    "stagione-l-altro-teatro",
+    "capodanno-2027-tributo-vasco-synphony-cosenza",
+    "casa-delle-culture",
+})
 NONOPERA = re.compile(
     r"\b(?:ballet|balletto|danza|musical|concerto|gala|galà|"
     r"educational|scuole|per\s+le\s+scuole)\b",re.I,
@@ -72,6 +78,7 @@ def eligible_detail(url:str)->bool:
     u=urlsplit(url)
     return (u.scheme=="https" and u.hostname==HOST and
             bool(DETAIL_PATH.fullmatch(u.path)) and
+            u.path.rstrip("/").split("/")[-1] not in INPRIMAFILA_NONPRODUCTION_SLUGS and
             not u.query and not u.fragment and not u.username and
             not u.password and u.port is None)
 

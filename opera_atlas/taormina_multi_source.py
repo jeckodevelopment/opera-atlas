@@ -31,6 +31,25 @@ WORKS={"nabucco":("Nabucco","Giuseppe Verdi"),
        "norma":("Norma","Vincenzo Bellini")}
 EXCLUDE=re.compile(r"\b(?:gala|galà|concerto|recital|aria|arie|omaggio|"
                    r"sinfonico|musical|balletto|danza|talk|film|jazz|pop)\b",re.I)
+# Explicitly observed informational pages, not performance detail links.
+FESTIVAL_NONPRODUCTION_SLUGS=frozenset({
+    "consiglio-di-amministrazione",
+    "atti",
+    "sostieni",
+    "soci",
+    "statuto",
+    "gallery",
+    "cookie-policy",
+    "chi-siamo",
+    "bandi-e-gare",
+    "press",
+    "contattaci",
+    "luoghi",
+    "media",
+    "complessi-artistici",
+    "amministrazione-trasparente",
+    "enrico-castiglione-conquista-new-york-con-la-sua-carmen-standing-ovation-tra-i-grattacieli-di-manhattan",
+})
 VENUE=re.compile(r"\bTeatro\s+Antico\s+(?:di\s+)?Taormina\b",re.I)
 DATE=re.compile(r"\b([0-3]?\d)[/.-]([01]?\d)[/.-](20\d{2})\s*"
                 r"(?:ore|alle|h\.?)\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b",re.I)
@@ -65,8 +84,11 @@ def eligible_detail(key:str,url:str)->bool:
     if key=="taormina-arte-rolling-opera":
         return bool(re.fullmatch(r"/evento/[a-z0-9][a-z0-9-]*/",u.path)) and not u.query
     if key=="taormina-opera-festival-rolling":
-        return bool(re.fullmatch(r"/[a-z0-9][a-z0-9-]*/",u.path)) and not u.query and not re.search(
-            r"calendario|festival|stampa|news|direttore|box-office|privacy|contatti",u.path)
+        return (bool(re.fullmatch(r"/[a-z0-9][a-z0-9-]*/",u.path))
+                and not u.query
+                and u.path.strip("/") not in FESTIVAL_NONPRODUCTION_SLUGS
+                and not re.search(
+                    r"calendario|festival|stampa|news|direttore|box-office|privacy|contatti",u.path))
     return bool(re.fullmatch(r"/eventi/[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}",u.path)) and not u.query
 
 def extract_index(key:str,html:str,*,url:str,min_links:int=1)->list[str]:

@@ -56,6 +56,21 @@ class CosenzaTicketFallback(unittest.TestCase):
                "https://www.inprimafila.net/index.php/eventi/schiaccianoci-cosenza"]))
         self.assertEqual(extract(KEY,INDEX,html,1),extract_index(html))
 
+    def test_exact_nonproduction_ticketing_links_are_not_candidates(self):
+        from opera_atlas.cosenza_inprimafila_opera import INPRIMAFILA_NONPRODUCTION_SLUGS
+        links=''.join('<a href="/index.php/eventi/'+slug+'">Altro</a>'
+                       for slug in INPRIMAFILA_NONPRODUCTION_SLUGS)
+        for slug in INPRIMAFILA_NONPRODUCTION_SLUGS:
+            self.assertFalse(eligible_detail(
+                "https://www.inprimafila.net/index.php/eventi/"+slug))
+        self.assertEqual(extract_index(links+
+            '<a href="/index.php/eventi/le-nozze-di-figaro-cosenza">Opera</a>'),
+            [NOZZE])
+        # Future operas beyond the current allowlist remain discoverable;
+        # individual details are still required before publication.
+        new="https://www.inprimafila.net/index.php/eventi/futura-opera-2030-cosenza"
+        self.assertTrue(eligible_detail(new))
+
     def test_2026_public_operas_are_five_recitals_not_school_previews(self):
         rows=[]
         for url,html,title,composer,recitals in (
