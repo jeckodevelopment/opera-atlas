@@ -475,6 +475,10 @@ async function initialize() {
       missing("Questo indirizzo non corrisponde a una scheda pubblicata.");
       return;
     }
+    // The HTML response already contains a crawler-readable editorial snapshot.
+    // Once live client data is validated, remove it before rendering the full
+    // interactive detail, so visitors do not see duplicate summaries.
+    document.getElementById("atlas-prerender")?.remove();
     const first=selected.kind==="work" && selected.work ? {
       title:selected.work.title,composer:selected.work.composer,
       work_id:selected.work.id,work_slug:selected.work.slug,
