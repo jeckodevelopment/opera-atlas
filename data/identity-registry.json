@@ -3280,7 +3280,11 @@
       "venue_id": "oa-v-000061",
       "slug": "le-nozze-di-figaro",
       "source_url": "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
-      "season": "2026"
+      "season": "2026",
+      "supporting_source_urls": [
+        "https://www.inprimafila.net/index.php/eventi/le-nozze-di-figaro-cosenza",
+        "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
+      ]
     },
     "auto-268aa3f92f6c3dfa": {
       "id": "oa-s-000267",
@@ -3304,6 +3308,14 @@
       "venue_id": "oa-v-000059",
       "slug": "la-scala-di-seta",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "season": "2026"
+    },
+    "auto-04d4790ee500bc73": {
+      "id": "oa-s-000270",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000061",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza",
       "season": "2026"
     }
   },
@@ -9512,6 +9524,18 @@
       "staging_id": "oa-s-000269",
       "original_date": "2026-08-22",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+    },
+    "auto-04d4790ee500bc73|2026-11-13": {
+      "id": "oa-r-001062",
+      "staging_id": "oa-s-000270",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
+    },
+    "auto-04d4790ee500bc73|2026-11-15": {
+      "id": "oa-r-001063",
+      "staging_id": "oa-s-000270",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
     }
   },
   "reserved_works": {

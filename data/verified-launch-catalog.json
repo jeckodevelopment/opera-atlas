@@ -6954,6 +6954,25 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-04d4790ee500bc73",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Alfonso Rendano",
+      "municipality": "Cosenza",
+      "region": "Calabria",
+      "source_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza",
+      "dates": [
+        [
+          "2026-11-13",
+          "20:30"
+        ],
+        [
+          "2026-11-15",
+          "17:00"
+        ]
+      ]
     }
   ]
 }
