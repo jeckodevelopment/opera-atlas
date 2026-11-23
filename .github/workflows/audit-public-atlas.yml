@@ -1,3 +1,4 @@
+# Vicenza reconciliation browser audit: validate newly published Galuppi and Monteverdi routes.
 name: Verify public Opera Atlas pages in browser
 on:
   workflow_dispatch:
