@@ -412,6 +412,11 @@ jobs:
           python -m scripts.publish_work_posters --check
           python -m scripts.publish_programs --check
           python -m unittest discover -s tests -v
+      # Read-only diagnostics also run when an earlier acquisition or final
+      # validation step fails; no candidate is promoted by this report.
+      - name: Explain unresolved candidate blockers even after failure
+        if: ${{ always() }}
+        run: python -m scripts.candidate_blocker_report
       - name: Publish only changed validated data (no SFTP)
         id: publish_catalog
         run: |
@@ -483,6 +488,9 @@ jobs:
           python -m scripts.publish_work_posters --check
           python -m scripts.publish_programs --check
           python -m unittest discover -s tests -v
+      - name: Explain checkpoint candidate blockers even after failure
+        if: ${{ always() }}
+        run: python -m scripts.candidate_blocker_report
       - name: Commit only verified checkpoint-derived catalog changes
         id: recovered_publication
         run: |
