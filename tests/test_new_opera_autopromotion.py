@@ -53,6 +53,54 @@ class NewOperaPromotionTests(unittest.TestCase):
         self.assertEqual(published[-1]["new_recite"],3,published[-1])
         self.assertIn("Firenze|Teatro Goldoni",published[1]["venues"])
 
+    def test_vicenza_galuppi_first_party_editorial_and_archival_art(self):
+        from scripts.auto_catalogue import official_identity_candidates, promote_new_works
+        from scripts.publish_work_posters import load_archival_art
+        from scripts.auto_catalogue import SOURCE_ALLOWLIST
+        from scripts.publish_work_editorial import EDITORIAL, HISTORY
+        from scripts.build_verified_catalog import official_local_time
+        url="https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
+        source="vicenza-olimpico-rolling-opera"
+        cid="oa-index-67c97eeb35f0b65c6b53"
+        candidates={"schema_version":1,"candidates":[{
+            "id":cid,"source_key":source,"official_url":url,"status":"needs_review"}]}
+        evidence={"schema_version":1,"evidence":[{
+            "candidate_id":cid,"source_key":source,"source_url":url,
+            "status":"needs_editorial_review",
+            "event_facts":[{"event_title":"Il filosofo di campagna",
+                            "composer":"Baldassare Galuppi",
+                            "venue":"Teatro Olimpico",
+                            "date":"2026-09-14",
+                            "starts_at":official_local_time("2026-09-14","20:30")}]}]}
+        identity=official_identity_candidates(
+            evidence,candidates,{"schema_version":1,"works":[]})
+        self.assertEqual(len(identity["works"]),1)
+        work=identity["works"][0]
+        self.assertEqual(work["title"],"Il filosofo di campagna")
+        self.assertEqual(work["history"]["premiere_year"],1754)
+        self.assertIn("Goldoni",work["history"]["librettist"])
+        self.assertTrue(45<=len(work["synopsis"])<=300)
+        art=load_archival_art({"il-filosofo-di-campagna"})
+        self.assertIn("il-filosofo-di-campagna",art)
+        self.assertIn("1754",art["il-filosofo-di-campagna"]["alt"])
+        self.assertIn("commons.wikimedia.org",art["il-filosofo-di-campagna"]["source_url"])
+        registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+        # Live publication changes asynchronously; this test is replay safe.
+        if any(w["title"]=="Il filosofo di campagna"
+               and w["composer"]=="Baldassare Galuppi"
+               for w in registry["works"].values()):
+            return
+        facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        editorial=json.loads(EDITORIAL.read_text(encoding="utf-8"))
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))
+        allow=json.loads(SOURCE_ALLOWLIST.read_text(encoding="utf-8"))["urls"]
+        result=promote_new_works(
+            facts,registry,evidence,candidates,identity,editorial,allow,
+            today=date(2026,11,23),history=history,require_image=True)
+        self.assertEqual(result[-1]["new_works"],1,result[-1])
+        self.assertEqual(result[-1]["new_recite"],1,result[-1])
+        self.assertIn("Vicenza|Teatro Olimpico",result[1]["venues"])
+
     def test_ready_cached_works_get_editorial_before_publication(self):
         from scripts.auto_catalogue import complete_cached_verified_work_cards
         from scripts.auto_work_research import OUT

@@ -1133,6 +1133,24 @@
           "https://www.festivaldellavalleditria.it/programma-2026"
         ]
       }
+    },
+    {
+      "source_key": "vicenza-olimpico-rolling-opera",
+      "source_url": "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+      "title": "Il filosofo di campagna",
+      "composer": "Baldassare Galuppi",
+      "synopsis": "Eugenia ama il giovane Rinaldo, ma suo padre Don Tritemio vuole darla in sposa al ricco Nardo, il filosofo di campagna. Con l'aiuto dell'astuta Lesbina, la ragazza tenta di sottrarsi alle nozze imposte: equivoci, travestimenti e interessi matrimoniali guidano la vicenda fino alla soluzione.",
+      "history": {
+        "librettist": "Carlo Goldoni",
+        "premiere_year": 1754,
+        "premiere_venue": "Teatro San Samuele",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://corago.unibo.it/libretto/DRT0018679",
+          "https://corago.unibo.it/opera/Z000002443",
+          "https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/"
+        ]
+      }
     }
   ]
 }
