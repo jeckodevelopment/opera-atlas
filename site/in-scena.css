@@ -1,0 +1,13 @@
+.today-intro{padding-bottom:26px}.today-date{font:500 clamp(19px,2.5vw,27px) Georgia,serif;color:#8b691f;text-transform:capitalize;margin:0 0 12px}
+.today-toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;align-items:end}
+.today-dates,.today-filters{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.today-toolbar label{font-size:12px;font-weight:650;display:flex;flex-direction:column;gap:5px}
+.today-toolbar input,.today-toolbar select,.today-toolbar button{min-height:43px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.today-toolbar button:hover{border-color:var(--gold)}.today-results{padding:18px 0 55px}.today-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.today-card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);min-width:0}
+.today-image{height:210px;background:linear-gradient(135deg,#ddd5c3,#aa9876)}.today-photo{height:100%;width:100%;object-fit:cover;display:block}
+.today-card-body{padding:21px}.today-card h3{font:500 26px/1.2 Georgia,serif;margin:0 0 9px}.today-card h3 a{color:var(--ink);text-decoration:none}.today-card h3 a:hover{text-decoration:underline}
+.today-card p{margin:0 0 9px}.today-card .eyebrow{margin-bottom:12px}.today-composer{color:var(--muted);font-size:12px}.today-venue{font-size:13px;font-weight:700}.today-hour{font-size:14px;color:#8b691f;font-weight:800}
+#today-empty p{margin:0 0 14px}#today-message:not(:empty){padding:12px 0;color:#765a24;font-size:12px}
+@media(max-width:850px){.today-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.today-cards{grid-template-columns:1fr}.today-image{height:225px}.today-toolbar{padding:13px}.today-filters label{flex:1 1 125px}.today-toolbar select{max-width:100%}}
+.mobile-nav{grid-template-columns:repeat(5,minmax(0,1fr))}
