@@ -10,7 +10,7 @@ CASES = (
     ("oa-index-d57d2a1cbc3f370f3da5", "Il schiavo di sua moglie", "Francesco Provenzale", True),
     ("oa-index-3f12fd23aa46c05bfd36", "Fuori Fuoco", "Diana Buscemi", True),
     ("oa-index-d8c22fa66fa68b8a3670", "Magic Words Circus", "Orazio Sciortino", True),
-    ("oa-index-ff9fb11ad20bd9d779b3", "La favola di Orfeo", "Alfredo Casella", False),
+    ("oa-index-ff9fb11ad20bd9d779b3", "La favola di Orfeo", "Alfredo Casella", True),
 )
 
 class FiveReviewedOperas(unittest.TestCase):
