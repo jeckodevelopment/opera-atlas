@@ -980,6 +980,57 @@
           "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
         ]
       }
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/le-siege-de-corinthe/",
+      "title": "Le Siège de Corinthe",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Durante l'assedio di Corinto, Pamyra è divisa tra l'amore per il condottiero turco Maometto e la fedeltà al padre Cléomène e alla patria. Il conflitto culmina nella resistenza disperata dei Greci.",
+      "history": {
+        "librettist": "Luigi Balocchi e Alexandre Soumet",
+        "premiere_year": 1826,
+        "premiere_venue": "Théâtre de l’Académie Royale de Musique",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.rossinioperafestival.it/soggetti/le-siege-de-corinthe-tragedie-lyrique/",
+          "https://corago.unibo.it/opera/Z000013618"
+        ]
+      }
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
+      "title": "Il viaggio a Reims",
+      "composer": "Gioachino Rossini",
+      "synopsis": "In un albergo termale, ospiti di diverse nazionalità si preparano a partire per Reims e assistere all'incoronazione di Carlo X. Imprevisti e difficoltà di trasporto trasformano l'attesa in un vivace incontro di caratteri.",
+      "history": {
+        "librettist": "Luigi Balocchi",
+        "premiere_year": 1825,
+        "premiere_venue": "Théâtre Italien",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.rossinioperafestival.it/soggetti/il-viaggio-a-reims-2/",
+          "https://archiviostorico.operaroma.it/opera/il-viaggio-reims/"
+        ]
+      }
+    },
+    {
+      "source_key": "pesaro-rof-2026",
+      "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
+      "title": "La scala di seta",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Giulia riceve di nascosto il marito Dorvil, che raggiunge la sua stanza mediante una scala di seta. Il tutore Dormont vuole però destinarla a un altro sposo: equivoci, gelosie e rivelazioni complicano il segreto matrimonio.",
+      "history": {
+        "librettist": "Giuseppe Maria Foppa",
+        "premiere_year": 1812,
+        "premiere_venue": "Teatro San Moisè",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.rossinioperafestival.it/soggetti/la-scala-di-seta-3/",
+          "https://corago.unibo.it/opera/Z000013602"
+        ]
+      }
     }
   ]
 }
