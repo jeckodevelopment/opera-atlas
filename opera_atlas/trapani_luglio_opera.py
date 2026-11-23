@@ -87,14 +87,18 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # text between H1 and the genre badge. Keep a bounded event header and
     # accept only the source's exact standalone category badge before the
     # repeated work title; never classify by words inside its synopsis.
-    prefix=reader.parts[start+1:start+32]
-    genre_positions=[(i,genre) for i,item in enumerate(prefix)
+    prefix=reader.parts[start+1:start+40]
+    # Live CMS breadcrumbs or image captions may repeat the H1 title
+    # before the genre badge. Bind genre to the bounded event header,
+    # before the independent official composer credit, not the title.
+    credit_index=next((i for i,item in enumerate(prefix)
+                       if re.search(r"\b(?:Musica|Musiche)\s+di\b",item,re.I)),None)
+    if credit_index is None:
+        raise ValueError("Trapani first-party composer missing")
+    genre_positions=[(i,genre) for i,item in enumerate(prefix[:credit_index])
                      for genre in VENUES if item.strip()==genre]
-    second_title=next((i for i,x in enumerate(prefix)
-                       if x==title and i>0),None)
-    bound=second_title if second_title is not None else len(prefix)
-    genres=[genre for i,genre in genre_positions if i<bound]
-    if len(genres)!=1:
+    genres=[genre for _,genre in genre_positions]
+    if len(genres)!=1 or credit_index-genre_positions[0][0]>12:
         raise ValueError("Trapani event is not a verified opera")
     genre=genres[0]
     venue,venue_pattern=VENUES[genre]
