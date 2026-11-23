@@ -1,6 +1,11 @@
 name: Verify public Opera Atlas pages in browser
 on:
   workflow_dispatch:
+  # GitHub Actions pushes using GITHUB_TOKEN do not trigger ordinary push
+  # workflows. React to the completed catalog workflow itself instead.
+  workflow_run:
+    workflows: ['Refresh public Opera Atlas catalog']
+    types: [completed]
   schedule:
     - cron: '42 8 * * *'
   push:
@@ -15,6 +20,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   verify:
+    # Never audit a failed or cancelled catalog refresh as a successful release.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     steps:

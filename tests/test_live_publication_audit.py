@@ -4,6 +4,17 @@ from scripts.audit_public_atlas import classify, targets
 
 
 class LivePublicationAuditTests(unittest.TestCase):
+    def test_live_audit_runs_after_successful_catalog_refresh(self):
+        from scripts.publish_catalog_v2 import ROOT
+        workflow=(ROOT/".github/workflows/audit-public-atlas.yml").read_text(encoding="utf-8")
+        self.assertIn("workflow_run:",workflow)
+        self.assertIn("workflows: ['Refresh public Opera Atlas catalog']",workflow)
+        self.assertIn("types: [completed]",workflow)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'",workflow)
+        self.assertIn("cancel-in-progress: false",workflow)
+        self.assertIn("git add public/catalog/live-publication-health.json",workflow)
+        self.assertIn("python -m scripts.push_live_publication_audit",workflow)
+
     def test_static_shell_is_not_verified(self):
         self.assertEqual(classify(200, None, None, "", "La traviata", "Produzione"), "unverified")
         self.assertEqual(classify(200, "Scheda non disponibile", "Scheda", "", "La traviata", "Produzione"), "unverified")
