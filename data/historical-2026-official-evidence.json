@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "note": "Reviewed official historic event-detail evidence. No direct catalog promotion. Youth-only preview of 2026-01-17 is deliberately excluded.",
+  "note": "Reviewed exact official 2025/26 event detail pages; restricted Anteprima Giovani performances excluded. Never promote directly to catalog.",
   "records": [
     {
       "venue_id": "oa-v-000001",
@@ -43,6 +43,117 @@
         }
       ],
       "verification_note": "Official performance-detail page lists each date and local time; excludes 17 January Anteprima Giovani."
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "source_type": "official_event_detail",
+      "audience": "general_public",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "dates": [
+        {
+          "date": "2026-02-24",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-02-26",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-03-01",
+          "time": "15:00"
+        },
+        {
+          "date": "2026-03-03",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-03-05",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-03-07",
+          "time": "15:00"
+        }
+      ],
+      "verification_note": "Excluded 20 February 2026 Anteprima Giovani."
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "source_type": "official_event_detail",
+      "audience": "general_public",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "dates": [
+        {
+          "date": "2026-03-31",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-04-02",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-04-04",
+          "time": "15:00"
+        },
+        {
+          "date": "2026-04-08",
+          "time": "20:00"
+        },
+        {
+          "date": "2026-04-10",
+          "time": "15:00"
+        },
+        {
+          "date": "2026-04-12",
+          "time": "15:00"
+        }
+      ],
+      "verification_note": "Excluded 27 March 2026 Anteprima Giovani."
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "source_type": "official_event_detail",
+      "audience": "general_public",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "dates": [
+        {
+          "date": "2026-05-06",
+          "time": "19:30"
+        },
+        {
+          "date": "2026-05-08",
+          "time": "19:30"
+        },
+        {
+          "date": "2026-05-10",
+          "time": "15:00"
+        },
+        {
+          "date": "2026-05-13",
+          "time": "19:30"
+        },
+        {
+          "date": "2026-05-15",
+          "time": "15:00"
+        },
+        {
+          "date": "2026-05-17",
+          "time": "15:00"
+        }
+      ],
+      "verification_note": "Excluded 30 April 2026 Anteprima Giovani."
     }
   ]
 }
