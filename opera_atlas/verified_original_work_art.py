@@ -30,7 +30,7 @@ APPROVED={
  ("https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/",
   "Jeanne Dark","Fabio Vacchi"):(
   "https://www.maggiofiorentino.com/events/jeanne-dark-5",
-  "https://www.maggiofiorentino.com/uploads/JEANNE_DARK_70x100_INTERNO_ok_5b07c76e9f.jpg")
+  "https://www.maggiofiorentino.com/uploads/JEANNE_DARK_70x100_INTERNO_ok_5b07c76e9f.jpg"),
  ("https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
   "Ghost Cafè","Carlo Galante"):(
   "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
