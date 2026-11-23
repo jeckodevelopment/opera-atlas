@@ -46,7 +46,11 @@ APPROVED={
  ("https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
   "Il schiavo di sua moglie","Francesco Provenzale"):(
   "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
-  "https://www.festivaldellavalleditria.it/wp-content/uploads/2024/02/16.jpg"),
+  "https://www.festivaldellavalleditria.it/wp-content/uploads/2024/02/16.jpg"), 
+ ("https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+  "La favola di Orfeo","Alfredo Casella"):(
+  "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+  "https://www.festivaldellavalleditria.it/wp-content/uploads/2026/03/15.png"),
 }
 FIELDS=("image_url","source_url","original_source_url","credit","alt","kind")
 
