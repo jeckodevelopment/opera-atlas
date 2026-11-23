@@ -36,7 +36,7 @@ class AtlasSEOTests(unittest.TestCase):
             out = Path(name)
             build_seo(out, CATALOG)
             data = (out / "og-atlas.png").read_bytes()
-            self.assertTrue(data.startswith(b"\\x89PNG\\r\\n\\x1a\\n"))
+            self.assertTrue(data.startswith(bytes.fromhex("89504e470d0a1a0a")))
             self.assertEqual(struct.unpack(">II", data[16:24]), (1200, 630))
             root = ET.parse(out / "sitemap.xml").getroot()
             urls = [item.text for item in root.iter()
