@@ -28,7 +28,8 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
         j=json.loads(CONFIG.read_text())
         source=next(x for x in validate_config(j) if x["key"]==KEY)
         self.assertEqual(source["url"],INDEX)
-        self.assertEqual(INDEX_VENUES[KEY],("Trapani|Teatro Giuseppe Di Stefano",))
+        self.assertEqual(INDEX_VENUES[KEY], ("Trapani|Teatro Giuseppe Di Stefano",
+                                             "Trapani|Teatro M° Tonino Pardo"))
         self.assertEqual(VENUE_BY_SOURCE[KEY],("Trapani","Teatro Giuseppe Di Stefano"))
         html="".join(f'<a href="{u}">{i}</a>' for i,u in enumerate(
             [NABUCCO,CAPULETI,ELISIR,CONCERTO]))
