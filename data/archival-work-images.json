@@ -378,6 +378,12 @@
       "description": "Frontespizio originale del libretto veneziano del 1754 de Il filosofo di campagna di Baldassare Galuppi e Carlo Goldoni; immagine d'archivio, non manifesto dell'allestimento 2026",
       "credit": "Libretto storico, Venezia 1754 / Wikimedia Commons",
       "license": "Public domain"
+    },
+    "orfeo": {
+      "file": "Frontispiece of L'Orfeo.jpg",
+      "description": "Frontespizio veneziano dell'edizione musicale del 1609 di L'Orfeo di Claudio Monteverdi; documento storico, non manifesto del festival 2026",
+      "credit": "Frontespizio storico di L'Orfeo, Venezia 1609 / Wikimedia Commons",
+      "license": "Public domain"
     }
   },
   "works_by_id": {
