@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   const el=id=>document.getElementById(id);
-  const dateInput=el("day-input"),region=el("today-region"),city=el("today-city"),time=el("today-time");
+  const dateInput=el("day-input"),region=el("today-region"),city=el("today-city"),time=el("today-time"),query=el("today-query");
   const cards=el("today-cards"),empty=el("today-empty"),count=el("today-count"),message=el("today-message");
   let performances=[];
   function italianToday(){
@@ -26,6 +26,8 @@
       if(p.local_date!==dateInput.value || p.status==="cancelled" || p.status==="canceled")return false;
       if(region.value && p.region!==region.value)return false;
       if(city.value && p.municipality!==city.value)return false;
+      const term=query.value.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("it").trim();
+      if(term && ![p.title,p.composer,p.venue,p.municipality,p.region].some(v=>String(v||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("it").includes(term)))return false;
       if(!time.value)return true;
       if(time.value==="unknown")return !p.time_known;
       if(!p.time_known || typeof p.starts_at!=="string")return false;
@@ -40,7 +42,14 @@
     const imageHost=node("div","today-image");
     try{
       const images=window.OperaAtlasImages;
-      if(!p.program_id && images?.element && images?.work) imageHost.append(images.element(images.work(p),"today-photo"));
+      if(!p.program_id && p.work_id && images?.element && images?.work){
+        const artwork=images.work(p);
+        // Canonical identity + explicit source: title-only legacy matches are
+        // not reliable when different composers share a title.
+        if(artwork?.src && artwork?.sourceUrl && artwork.kind!=="unavailable")
+          imageHost.append(images.element(artwork,"today-photo"));
+        else imageHost.append(node("span","today-no-image","Opera+ Atlas"));
+      } else imageHost.append(node("span","today-no-image","Opera+ Atlas"));
     }catch(e){console.warn("Immagine non disponibile",e);}
     article.append(imageHost);
     const body=node("div","today-card-body");
@@ -56,6 +65,7 @@
   }
   function render(){
     el("selected-day").textContent=labelDate(dateInput.value);
+    renderQuickDays();
     const scoped=performances.filter(p=>p.local_date===dateInput.value && p.status!=="cancelled" && p.status!=="canceled");
     options(region,scoped.map(p=>p.region),"Tutte le regioni");
     options(city,scoped.filter(p=>!region.value||p.region===region.value).map(p=>p.municipality),"Tutte le città");
@@ -64,7 +74,7 @@
     count.textContent=found.length+" "+(found.length===1?"rappresentazione":"rappresentazioni")+" in programma";
     empty.hidden=found.length>0;
     const suggestions=el("today-suggestions"),future=el("today-future-cards");
-    const next=found.length===0 && !region.value && !city.value && !time.value
+    const next=found.length===0 && !region.value && !city.value && !time.value && !query.value
       ? performances.filter(p=>p.local_date>dateInput.value && p.status!=="cancelled" && p.status!=="canceled")
         .sort((a,b)=>a.local_date.localeCompare(b.local_date)||(a.starts_at||"").localeCompare(b.starts_at||"")).slice(0,3)
       : [];
@@ -73,13 +83,29 @@
     const params=new URLSearchParams(window.location.search);params.set("data",dateInput.value);
     history.replaceState(null,"",window.location.pathname+"?"+params.toString());
   }
+  function renderQuickDays(){
+    const strip=el("today-quick-days");
+    strip.replaceChildren();
+    const current=italianToday();
+    for(let offset=-2;offset<=2;offset++){
+      const day=dayShift(dateInput.value,offset);
+      const button=node("button","today-day"+(offset===0?" selected":""),null);
+      button.type="button";
+      button.setAttribute("aria-pressed",offset===0?"true":"false");
+      const weekday=new Intl.DateTimeFormat("it-IT",{weekday:"short",timeZone:"UTC"}).format(dateFromISO(day));
+      const date=new Intl.DateTimeFormat("it-IT",{day:"numeric",month:"short",timeZone:"UTC"}).format(dateFromISO(day));
+      button.append(node("span","today-day-weekday",day===current?"Oggi":weekday),node("strong",null,date));
+      button.addEventListener("click",()=>changeDate(day));
+      strip.append(button);
+    }
+  }
   function changeDate(value){dateInput.value=value;region.value="";city.value="";time.value="";render();}
   el("day-prev").addEventListener("click",()=>changeDate(dayShift(dateInput.value,-1)));
   el("day-next").addEventListener("click",()=>changeDate(dayShift(dateInput.value,1)));
   el("day-today").addEventListener("click",()=>changeDate(italianToday()));
   dateInput.addEventListener("change",()=>{if(/^\d{4}-\d{2}-\d{2}$/.test(dateInput.value))changeDate(dateInput.value);});
   region.addEventListener("change",()=>{city.value="";render();});
-  city.addEventListener("change",render);time.addEventListener("change",render);
+  city.addEventListener("change",render);time.addEventListener("change",render);query.addEventListener("input",render);
   el("today-upcoming").addEventListener("click",()=>{
     const next=performances.filter(p=>p.local_date>dateInput.value && p.status!=="cancelled" && p.status!=="canceled").map(p=>p.local_date).sort()[0];
     if(next)changeDate(next);else window.location.href="./#spettacoli";
@@ -87,7 +113,7 @@
   const requested=new URLSearchParams(location.search).get("data");
   dateInput.value=requested && /^\d{4}-\d{2}-\d{2}$/.test(requested) && !Number.isNaN(dateFromISO(requested).getTime())?requested:italianToday();
   el("selected-day").textContent=labelDate(dateInput.value);
-  window.OperaAtlasCatalog.load().then(data=>{
+  Promise.all([window.OperaAtlasCatalog.load(),window.OperaAtlasImages?.load?.()||Promise.resolve()]).then(([data])=>{
     performances=(data.performances||[]).filter(p=>p&&typeof p.id==="string"&&typeof p.title==="string"&&
       typeof p.municipality==="string"&&typeof p.venue==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(p.local_date||""));
     if(data.warning)message.textContent=data.warning;
