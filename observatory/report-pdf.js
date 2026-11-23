@@ -66,12 +66,17 @@
     }
     object(s){this.objects.push(s);return this.objects.length-1}
     addPage(ops,extra=""){
+      if(this.logoId)extra+=" /XObject << /Logo "+this.logoId+" 0 R >>";
       const content=ops.join("\n");
       const dataId=this.object("<< /Length "+content.length+" >>\nstream\n"+content+"\nendstream");
       const ref=this.object("<< /Type /Page /Parent "+this.pagesId+" 0 R /MediaBox [0 0 "+W+" "+H+"] "+
         "/Resources << /Font << /F1 "+this.fonts.sans+" 0 R /F2 "+this.fonts.bold+" 0 R /F3 "+this.fonts.serif+" 0 R /F4 "+this.fonts.display+" 0 R >> "+extra+" >> "+
         "/Contents "+dataId+" 0 R >>");
       this.pages.push(ref);
+    }
+    addJpeg(binary,width,height){
+      this.logoId=this.object("<< /Type /XObject /Subtype /Image /Width "+width+" /Height "+height+
+        " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length "+binary.length+" >>\nstream\n"+binary+"\nendstream");
     }
     binary(){
       this.objects[this.pagesId]="<< /Type /Pages /Count "+this.pages.length+" /Kids ["+
@@ -211,6 +216,7 @@
   }
   function pdfBytes(input){
     const s=summarize(input),doc=new PdfDocument();
+    if(input.logo&&typeof input.logo.binary==="string")doc.addJpeg(input.logo.binary,input.logo.width,input.logo.height);
     const selection=[
       "Anno solare: "+(s.year==="all"?"tutti":s.year),
       "Stagione: "+(s.season==="all"?"tutte":s.season),
@@ -222,7 +228,8 @@
       p.rect(W-146,0,146,H,[26,31,45]);
       for(let i=0;i<5;i++)p.line(W-160+i*24,0,W-290+i*24,H,[43,43,55],2);
       p.rect(L,73,92,2,GOLD);
-      p.text("Opera+",L,100,35,"display",WHITE);
+      if(doc.logoId){p.ops.push("q 156 0 0 73 "+L+" "+(H-102-73)+" cm /Logo Do Q")}
+      else p.text("Opera+",L,100,35,"display",WHITE);
       p.text("OSSERVATORIO",L,173,12,"bold",GOLD);
       p.text("L'opera in Italia",L,227,40,"display",WHITE);
       p.paragraph("Rapporto sull'attivita operistica rilevata da Opera+ Atlas.",
@@ -336,8 +343,9 @@
       p.section("08 / NUOVE OPERE","Le prime assolute",
         "Nuove composizioni riconosciute tramite le schede editoriali con anno storico di debutto verificato.");
       if(s.premieres===null){
-        p.text("Seleziona un singolo anno solare",L,221,22,"display",BURGUNDY);
-        p.paragraph("Il report non aggrega prime assolute di secoli diversi quando il filtro Anno solare e impostato su Tutti gli anni. Seleziona un anno nell'Osservatorio e rigenera il PDF.",
+        const noYear=s.year==="all";
+        p.text(noYear?"Seleziona un singolo anno solare":"Dati editoriali non disponibili",L,221,22,"display",BURGUNDY);
+        p.paragraph(noYear?"Il report non aggrega prime assolute di secoli diversi quando il filtro Anno solare e impostato su Tutti gli anni. Seleziona un anno nell'Osservatorio e rigenera il PDF.":"Non e stato possibile verificare il feed editoriale delle prime assolute. Nessun numero e stato stimato o inventato.",
           L,271,CW,11,18,MUTED,7);
       }else{
         p.text(num(s.premieres.length),L,202,50,"display",BURGUNDY);
@@ -353,7 +361,7 @@
           p.line(L,y+37,W-R,y+37,BORDER,.6);
         });
         p.paragraph("La data esatta puo mancare; una prima annunciata nell'anno non e automaticamente gia avvenuta. Stagione e territorio restringono le opere censite in Atlas, non la localita storica della prima.",
-          L,744,CW,9,14,MUTED,4);
+          L,734,CW,9,14,MUTED,3);
       }
     });
     // 10 - stagings and rarities
@@ -393,8 +401,29 @@
     });
     return doc.binary();
   }
+  async function logoImage(){
+    if(typeof document==="undefined"||typeof Image==="undefined")return null;
+    return new Promise(resolve=>{
+      const img=new Image();
+      img.onload=()=>{
+        try{
+          const canvas=document.createElement("canvas");
+          canvas.width=500;canvas.height=235;
+          const context=canvas.getContext("2d");
+          if(!context)throw Error("Canvas non disponibile");
+          context.fillStyle="#101c2b";context.fillRect(0,0,500,235);
+          context.drawImage(img,0,0,500,235);
+          const data=canvas.toDataURL("image/jpeg",0.91).split(",")[1];
+          resolve({binary:atob(data),width:500,height:235});
+        }catch(_error){resolve(null)}
+      };
+      img.onerror=()=>resolve(null);
+      img.src="./opera-plus-logo.svg";
+    });
+  }
   async function create(input){
-    const bytes=pdfBytes(input);
+    const logo=await logoImage();
+    const bytes=pdfBytes({...input,logo});
     return new Blob([bytes],{type:"application/pdf"});
   }
   return {create,pdfBytes,summarize};
