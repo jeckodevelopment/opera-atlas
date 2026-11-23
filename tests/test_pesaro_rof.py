@@ -31,7 +31,8 @@ class ROFTests(unittest.TestCase):
         source=next(x for x in validate_config(config) if x["key"]==KEY)
         self.assertEqual(source["url"],INDEX)
         self.assertIn(KEY,ROLLOVER_KEYS)
-        self.assertEqual(INDEX_VENUES[KEY],("Pesaro|Teatro Gioachino Rossini",))
+        self.assertEqual(INDEX_VENUES[KEY],("Pesaro|Teatro Gioachino Rossini",
+                                            "Pesaro|Auditorium Scavolini"))
         self.assertEqual(VENUE_BY_SOURCE[KEY],("Pesaro","Teatro Gioachino Rossini"))
         self.assertIsNone(next_index(source,today=date(2026,8,31)))
         self.assertEqual(next_index(source,today=date(2026,9,1)),INDEX.replace("2026","2027"))
