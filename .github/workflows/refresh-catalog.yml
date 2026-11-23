@@ -92,6 +92,7 @@ on:
       # These exclusions deliberately follow the broad scripts/** inclusion.
       - '!scripts/audit_recite_2026.py'
       - '!scripts/audit_2026_sources.py'
+      - '!scripts/audit_2026_mass_scan.py'
       - '!.github/workflows/refresh-catalog.yml'
 permissions:
   contents: write
