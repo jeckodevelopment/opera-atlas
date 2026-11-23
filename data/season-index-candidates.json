@@ -1733,7 +1733,7 @@
       "id": "oa-index-889b4b987a6fec3b2a47",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/stagione-l-altro-teatro-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2525,7 +2525,7 @@
       "id": "oa-index-bbe3dc504f257da05654",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/casa-delle-culture-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
