@@ -35,6 +35,39 @@ class StrictVenueCandidateCollectionTests(unittest.TestCase):
         self.assertEqual(fact["venue"],"Teatro Olimpico")
         self.assertEqual(fact["starts_at"],"2026-09-10T20:30:00+02:00")
 
+    def test_reviewed_2026_ticket_schedule_recovers_official_archival_operas(self):
+        # The official ticket office may be blocked by an anti-bot layer.
+        # The approved historic listing is replayed only after validating
+        # the actual first-party production page, including all local clocks.
+        samples=(
+            (VICENZA,
+             '<h1>Il barbiere di Siviglia – Rossini</h1>'
+             '<p>Giovedì 10 settembre | ore 20.30</p>'
+             '<p>Sabato 12 settembre | ore 20.30</p>'
+             '<p>Domenica 13 settembre | ore 19.00</p>'
+             '<p>Teatro Olimpico di Vicenza</p>'
+             '<p>opera buffa in 2 atti</p><p>musica di G. ROSSINI</p>',
+             3),
+            ("https://www.vicenzainlirica.it/il-filosofo-di-campagna-galuppi/",
+             '<h1>Il filosofo di campagna – Galuppi</h1>'
+             '<p>Lunedì 14 settembre | ore 20.30</p>'
+             '<p>Teatro Olimpico di Vicenza</p>'
+             '<p>Prima rappresentazione Venezia, Teatro di San Samuele</p>'
+             '<p>di Baldassare GALUPPI</p>',
+             1),
+        )
+        for url,html,count in samples:
+            with self.subTest(url=url):
+                evidence,health=self.collect_one(
+                    "vicenza-olimpico-rolling-opera",url,html)
+                self.assertEqual(health[0]["outcome"],
+                                 "reviewed_first_party_2026_ticket_office",health)
+                rec=evidence["evidence"][0]
+                self.assertEqual(len(rec["event_facts"]),count)
+                self.assertEqual(rec["calendar_provenance"],
+                                 "reviewed_first_party_2026_ticket_office")
+                self.assertNotIn("official_schedule_sha256",rec)
+
     def test_vicenza_touring_venue_does_not_fall_back_to_generic_event(self):
         html=('<h1>Il barbiere di Siviglia – Rossini</h1>'
               '<p>Vicenza in Lirica 2026</p>'
