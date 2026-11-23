@@ -37,6 +37,14 @@ function validatePdf(params){
  assert.ok(bytes.length>15000);
  return source;
 }
+const accentedRows=[{...rows[0],work:"Città e libertà",composer:"André Chénier",venue:"Teatro dell'Università",city:"Forlì",region:"Emilia-Romagna"}];
+const accentedPdf=validatePdf({...input,rows:accentedRows,allRows:accentedRows,region:"Emilia-Romagna"});
+// WinAnsi strings in PDF content streams must retain the literal accented
+// bytes instead of replacing them with unaccented approximations.
+for(const word of ["attività","città","è","più","varietà","libertà","Forlì","Università","André"]){
+ assert.ok(accentedPdf.includes(word),"Missing accented glyph in PDF: "+word);
+}
+assert.ok(!accentedPdf.includes("L'attivita mese per mese"));
 validatePdf(input);
 const missing=validatePdf({...input,editorials:null});
 assert.match(missing,/Dati editoriali non disponibili/);
