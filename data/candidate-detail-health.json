@@ -1,17 +1,32 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T19:51:28+00:00",
+  "checked_at": "2026-11-23T20:07:05+00:00",
   "scope": "national",
-  "attempted": 1,
+  "attempted": 4,
   "outcomes": [
     {
-      "candidate_id": "oa-index-3d94833841692871c0a4",
+      "candidate_id": "oa-index-3b3b5b3ad369a6f177db",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Vicenza opera genre unverified"
+        "official_composer_credit:Cosenza event is not a verified opera"
       ],
       "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-dab7aab357550a28d398",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-5f6cb3b3600f1ce5cb67",
+      "outcome": "facts_found",
+      "rows": 4
+    },
+    {
+      "candidate_id": "oa-index-8f52b42b10becc854da6",
+      "outcome": "facts_found",
+      "rows": 3
     }
   ]
 }

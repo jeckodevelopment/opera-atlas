@@ -2807,6 +2807,51 @@
       ]
     },
     {
+      "candidate_id": "oa-index-5f6cb3b3600f1ce5cb67",
+      "source_key": "festival-verdi-rolling",
+      "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/",
+      "content_sha256": "e2ae5c2048ce529a9d2976d80d6d401a00ce0b30732c1a61f31048716bef68ae",
+      "checked_at": "2026-11-23T20:07:03+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Stiffelio",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giuseppe Verdi",
+          "date": "2027-10-07",
+          "starts_at": "2027-10-07T20:00:00+02:00"
+        },
+        {
+          "event_title": "Stiffelio",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giuseppe Verdi",
+          "date": "2027-10-17",
+          "starts_at": "2027-10-17T15:30:00+02:00"
+        },
+        {
+          "event_title": "Stiffelio",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giuseppe Verdi",
+          "date": "2027-10-21",
+          "starts_at": "2027-10-21T20:00:00+02:00"
+        },
+        {
+          "event_title": "Stiffelio",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giuseppe Verdi",
+          "date": "2027-10-23",
+          "starts_at": "2027-10-23T17:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/10/TRP-27-BANNER-FESTIVAL-VERDI-27-1920x1080-STIFFELIO.png",
+        "source_url": "https://teatroregioparma.it/spettacolo/stiffelio/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Stiffelio",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-5fea5e594da012daa488",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini",
@@ -5015,6 +5060,44 @@
           "venue": "Arena di Verona"
         }
       ]
+    },
+    {
+      "candidate_id": "oa-index-8f52b42b10becc854da6",
+      "source_key": "festival-verdi-rolling",
+      "source_url": "https://teatroregioparma.it/spettacolo/aroldo/",
+      "content_sha256": "01cb0d1617a4b4d672c8198aab203e761939dc5d4a95d0fa86f0265b183d878c",
+      "checked_at": "2026-11-23T20:07:05+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aroldo",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-10-01",
+          "starts_at": "2027-10-01T20:00:00+02:00"
+        },
+        {
+          "event_title": "Aroldo",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-10-09",
+          "starts_at": "2027-10-09T20:00:00+02:00"
+        },
+        {
+          "event_title": "Aroldo",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-10-16",
+          "starts_at": "2027-10-16T20:00:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/10/TRP-27-BANNER-FESTIVAL-VERDI-27-1920x1080-AROLDO.png",
+        "source_url": "https://teatroregioparma.it/spettacolo/aroldo/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Aroldo",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-92b69a8ac1040b0537be",
@@ -7571,6 +7654,51 @@
       "status": "official_programme_document_pending",
       "programme_document_url": "https://resc.deskline.net/documents/1/TRN/a7fc383d-8358-4237-839a-b3cde3c188bb/Programma_stagione_2026_27_da_scaricare.pdf",
       "event_facts": []
+    },
+    {
+      "candidate_id": "oa-index-dab7aab357550a28d398",
+      "source_key": "festival-verdi-rolling",
+      "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/",
+      "content_sha256": "4c80623ed4cedc6779ee6d478e64cb4757d37c471c239732ed79bb7de0769bd2",
+      "checked_at": "2026-11-23T20:07:01+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-10-02",
+          "starts_at": "2027-10-02T20:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-10-08",
+          "starts_at": "2027-10-08T20:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-10-14",
+          "starts_at": "2027-10-14T20:00:00+02:00"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Regio di Parma",
+          "date": "2027-10-24",
+          "starts_at": "2027-10-24T15:30:00+02:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://teatroregioparma.it/wp-content/uploads/2026/10/TRP-27-BANNER-FESTIVAL-VERDI-27-1920x1080-TRAVIATA.png",
+        "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di La traviata",
+        "kind": "official_production_image"
+      }
     },
     {
       "candidate_id": "oa-index-db7983de674f2fdccdda",
