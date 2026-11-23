@@ -1,5 +1,6 @@
 """Mass archive scanner must stay bounded, source-scoped and review-only."""
 import unittest
+from unittest.mock import patch
 from scripts.audit_2026_mass_scan import valid_official_url, clean_facts, detail_queue, index_batch
 
 
@@ -35,7 +36,8 @@ class MassScanTests(unittest.TestCase):
         def blocked(_source, _url):
             from opera_atlas.controlled_fetch import AccessDenied
             raise AccessDenied("robots denied")
-        results = index_batch(config, fetch_page=blocked, workers=1)
+        with patch('scripts.audit_2026_mass_scan.validate_config', return_value=config['sources']):
+            results = index_batch(config, fetch_page=blocked, workers=1)
         self.assertEqual("unverified", results[0]["status"])
         self.assertEqual([], results[0]["candidate_urls"])
 
@@ -51,7 +53,8 @@ class MassScanTests(unittest.TestCase):
         cached = {"candidates": [{
             "source_key": "scala-season-2026-27", "status": "already_catalogued",
             "official_url": "https://evil.example/test"}]}
-        queue, overflow = detail_queue(config, rows, cached, max_pages=10)
+        with patch('scripts.audit_2026_mass_scan.validate_config', return_value=config['sources']):
+            queue, overflow = detail_queue(config, rows, cached, max_pages=10)
         self.assertEqual([], queue)
         self.assertEqual([], overflow)
 
