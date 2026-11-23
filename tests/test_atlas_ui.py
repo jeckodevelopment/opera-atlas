@@ -161,8 +161,8 @@ class AtlasInterfaceTests(unittest.TestCase):
         from tempfile import TemporaryDirectory
         from scripts import publish_catalog_v2 as publisher
         registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
-        primary = registry["stagings"]["regio-traviata-2027"]
-        self.assertEqual(primary["season"], "2026-2027")
+        primary = registry["stagings"]["auto-4186e1c367aee6cd"]
+        self.assertEqual(primary["season"], "2027")
         with TemporaryDirectory() as folder:
             # Existing canonical theatre staging, with an exact verified
             # festival source linked by cross-source reconciliation.
@@ -197,7 +197,7 @@ class AtlasInterfaceTests(unittest.TestCase):
         from pathlib import Path
         from scripts import publish_catalog_v2 as publisher
         registry = json.loads((ROOT / "data/identity-registry.json").read_text(encoding="utf-8"))
-        stage = dict(registry["stagings"]["regio-traviata-2027"])
+        stage = dict(registry["stagings"]["auto-4186e1c367aee6cd"])
         stage.update(id="oa-s-unrelated-2028", season="2028",
                      source_url="https://example.org/theatre/traviata",
                      supporting_source_urls=["https://www.sferisterio.it/other-programme/traviata"])
