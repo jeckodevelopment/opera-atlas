@@ -73,6 +73,7 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
 
     def test_venue_inventory_distinguishes_missing_registry_from_absent_connector(self):
         self.assertIn('"torino|teatro regio":"torino|teatro regio di torino"', self.source)
+        self.assertIn('"savona|teatro chiabrera":"savona|teatro gabriello chiabrera"', self.source)
         self.assertIn("canonicalVenueKey", self.source)
         self.assertIn('status:"not_in_inventory"', self.source)
         self.assertIn('v.status==="not_in_inventory"?"Da censire":"Senza connettore"', self.source)
