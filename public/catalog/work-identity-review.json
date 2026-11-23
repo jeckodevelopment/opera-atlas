@@ -3,22 +3,17 @@
   "groups": [
     {
       "candidate_ids": [
-        "oa-index-09ac4a16bd5a9c6c6c36",
-        "oa-index-409dbd10b36d1a4be74f"
+        "oa-index-09ac4a16bd5a9c6c6c36"
       ],
       "category": "new_work_candidate",
       "composer": "Darius Milhaud",
       "exact_title_matches": [],
       "possible_canonical_match": null,
-      "recite_observed": 2,
+      "recite_observed": 1,
       "sources": [
         {
           "source_key": "cosenza-inprimafila-rolling-opera",
           "url": "https://www.inprimafila.net/index.php/eventi/la-mere-coupable-cosenza"
-        },
-        {
-          "source_key": "cosenza-inprimafila-rolling-opera",
-          "url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
         }
       ],
       "title": "La mère coupable"
@@ -28,12 +23,12 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 2,
+    "candidates_checked": 1,
     "candidates_without_facts": 0,
-    "facts_examined": 6,
-    "facts_resolved": 4,
+    "facts_examined": 1,
+    "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 2,
+    "unmatched_facts": 1,
     "unmatched_groups": 1
   },
   "truncated": false

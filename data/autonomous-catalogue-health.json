@@ -1,13 +1,9 @@
 {
   "schema_version": 1,
-  "new_stagings": 1,
-  "new_recite": 2,
+  "new_stagings": 0,
+  "new_recite": 0,
   "consolidated_stagings": 0,
   "auto_skipped": [
-    {
-      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
-      "reason": "unknown_work_needs_authority_data"
-    },
     {
       "title": "Cavalleria rusticana",
       "city": "Brescia",
@@ -34,10 +30,6 @@
     },
     {
       "candidate_id": "oa-index-09ac4a16bd5a9c6c6c36",
-      "reason": "unknown_work_needs_authority_data"
-    },
-    {
-      "candidate_id": "oa-index-409dbd10b36d1a4be74f",
       "reason": "unknown_work_needs_authority_data"
     }
   ],
