@@ -4,7 +4,8 @@ RewriteEngine On
 RewriteBase /atlas/
 # Retired temporary venue: canonical Bologna theatre page (permanent redirect).
 RewriteRule ^bologna/teatro-comunale-nouveau/?$ /atlas/bologna/teatro-comunale-di-bologna/ [R=301,L,NE]
-RewriteRule ^in-scena/?$ in-scena.html [L]
+RewriteRule ^in-scena/$ /atlas/in-scena [R=302,L,NE]
+RewriteRule ^in-scena$ in-scena.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(opere/[a-z0-9-]+|programmi/oa-p-[a-z0-9-]+|produzioni/oa-g-[a-z0-9-]+|[a-z0-9-]+/[a-z0-9-]+(/[a-z0-9-]+)?)/?$ detail.html [L]
