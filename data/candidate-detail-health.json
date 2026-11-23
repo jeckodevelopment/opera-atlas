@@ -1,52 +1,22 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T18:32:20+00:00",
+  "checked_at": "2026-11-23T18:36:05+00:00",
   "scope": "national",
-  "attempted": 37,
+  "attempted": 13,
   "outcomes": [
     {
-      "candidate_id": "oa-index-357ebb275673ae888623",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-59710f07c60abb84e3ea",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-cab03dfcd8aeff155178",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-b4aaa5341d6c996550c0",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-97810ee023c87e4afd01",
+      "candidate_id": "oa-index-b016256a0edd6720e078",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
       "diagnostic": [
-        "official_composer_credit:Mantova event not independently verified as opera"
+        "official_composer_credit:Mantova official venue missing"
       ],
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
+      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
       "outcome": "facts_found",
-      "rows": 3
-    },
-    {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-a4402559616047a0367b",
-      "outcome": "facts_found",
-      "rows": 5
+      "rows": 4
     },
     {
       "candidate_id": "oa-index-adfecb3c9b4ba8c833cd",
@@ -58,30 +28,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-795566dacc905fc5e7f2",
-      "outcome": "facts_found",
-      "rows": 2
-    },
-    {
-      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-a825bbef331ecdd019f7",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Vicenza official festival year missing or conflicting"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-9871aa4f1201e959bf0b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-aed31bfdfcf807eecb1a",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -91,20 +37,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-b016256a0edd6720e078",
-      "outcome": "unavailable_or_unstructured",
-      "reason": "no_verified_showtimes",
-      "diagnostic": [
-        "official_composer_credit:Mantova official venue missing"
-      ],
-      "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-d9a6ab3ba2217f8a24de",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -112,21 +44,6 @@
         "official_composer_credit:Mantova event not independently verified as opera"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-e831cbf742e2f848f44b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-f4226333be6c3f44d995",
-      "outcome": "facts_found",
-      "rows": 1
     },
     {
       "candidate_id": "oa-index-00de68b9ceab25d0d4b3",
@@ -147,11 +64,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-4812bc1604f9f8d068ca",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -159,16 +71,6 @@
         "official_composer_credit:Mantova event not independently verified as opera"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
-      "outcome": "facts_found",
-      "rows": 2
     },
     {
       "candidate_id": "oa-index-67c97eeb35f0b65c6b53",
@@ -189,16 +91,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-70313ef8895b42a91a5b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-90a9028a295696a522e1",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -208,34 +100,22 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-97810ee023c87e4afd01",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Mantova event not independently verified as opera"
+      ],
+      "rows": 0
     },
     {
-      "candidate_id": "oa-index-e44f89c2a6d468342e8a",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "outcome": "facts_found",
-      "rows": 4
-    },
-    {
-      "candidate_id": "oa-index-2583140715d654277a2b",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-a825bbef331ecdd019f7",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Vicenza official festival year missing or conflicting"
+      ],
+      "rows": 0
     }
   ]
 }
