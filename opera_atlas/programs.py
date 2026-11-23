@@ -98,7 +98,17 @@ def program_from_evidence(*,heading:str,source_key:str,source_url:str,
         # accepted solely because the adapter supplied component identities.
         expected="/".join(p["title"] for p in parts)+" di "+"/".join(
             p["composer"] for p in parts)
-        if normalized(heading)!=normalized(expected):
+        # Official programmes use either grouped credits
+        #   A / B di Composer A / Composer B
+        # or independently attributed components
+        #   A di Composer A / B di Composer B.
+        # Both require an EXACT match to every adapter-verified title
+        # and composer, in the same order. Never split a slash on its own.
+        separately_credited=" / ".join(
+            p["title"]+" di "+p["composer"] for p in parts)
+        if normalized(heading) not in {
+            normalized(expected),normalized(separately_credited)
+        }:
             raise ValueError("official program heading contradicts component credits")
     else:
         parts=credited_components(heading)

@@ -73,6 +73,50 @@ class MultiWorkProgramTests(unittest.TestCase):
         bad["event_facts"][-1]["starts_at"]="2026-12-13T16:00:00+01:00"
         with self.assertRaises(ValueError):build(bad)
 
+    def test_trapani_independently_credited_duo_is_one_ticket(self):
+        detail=next(x for x in self.evidence["evidence"]
+                    if x.get("candidate_id")=="oa-index-dd7baa45131b35e450b1")
+        candidate=next(x for x in self.candidates["candidates"]
+                       if x["id"]==detail["candidate_id"])
+        self.assertEqual(detail["status"],"needs_program_review")
+        def construct(row):
+            return program_from_evidence(
+                heading=row["program_heading"],source_key=row["source_key"],
+                source_url=row["source_url"],candidate=candidate,
+                detail=row,registry=self.registry,
+                venue="Teatro M° Tonino Pardo",city="Trapani",region="Sicilia")
+        program=construct(detail)
+        self.assertEqual(len(program["performances"]),1)
+        self.assertEqual(len(program["components"]),2)
+        self.assertEqual({(p["title"],p["composer"]) for p in program["components"]},
+                         {("L'opera (forse)","Francesco Filidei"),
+                          ("Infinito nero","Salvatore Sciarrino")})
+        self.assertEqual(program["performances"][0]["local_date"],"2026-10-31")
+        self.assertTrue(all(p["work_id"] is None for p in program["components"]))
+        read=lambda name:json.loads((ROOT/name).read_text(encoding="utf-8"))
+        public=assemble_programs(
+            read("data/season-index-candidates.json"),
+            read("data/candidate-detail-evidence.json"),
+            self.registry,read("data/verified-launch-catalog.json"),
+            read("data/season-index-config.json"),
+            read("data/reviewed-program-work-editorials.json"))
+        matches=[p for p in public["programs"]
+                 if p["source_url"]==detail["source_url"]]
+        self.assertEqual(len(matches),1)
+        self.assertEqual(matches[0]["venue"],"Teatro M° Tonino Pardo")
+        self.assertEqual(matches[0]["region"],"Sicilia")
+        self.assertEqual(len(matches[0]["performances"]),1)
+        for variant in (
+            detail["program_heading"].replace("Salvatore Sciarrino","Francesco Filidei"),
+            detail["program_heading"].replace("Infinito nero","Ghost Cafè"),
+            detail["program_heading"].replace(" / "," e "),
+        ):
+            with self.subTest(variant=variant),self.assertRaisesRegex(
+                    ValueError,"contradicts"):
+                bad=copy.deepcopy(detail)
+                bad["program_heading"]=variant
+                construct(bad)
+
     def test_six_reviewed_editorials_are_complete_and_unambiguous(self):
         file=ROOT/"data"/"reviewed-program-work-editorials.json"
         entries=json.loads(file.read_text(encoding="utf-8"))
