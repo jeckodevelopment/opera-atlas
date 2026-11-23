@@ -21,8 +21,10 @@ class SourceCheckpointWorkflowTests(unittest.TestCase):
                      "data/candidate-detail-health.json"):
             self.assertIn(file,checkpoint_block)
         self.assertIn("python -m scripts.safe_push_catalog",checkpoint_block)
-        self.assertIn("steps.source_checkpoint.outputs.deferred == 'true'",checkpoint_block)
-        self.assertIn("catalog-refresh-retry",checkpoint_block)
+        self.assertNotIn("catalog-refresh-retry",checkpoint_block)
+        retry=workflow.split("      - name: Retry deferred catalog once",1)[1]
+        self.assertIn("steps.source_checkpoint.outputs.deferred == 'true'",retry)
+        self.assertIn("catalog-refresh-retry",retry)
         self.assertNotIn("data/verified-launch-catalog.json",checkpoint_block)
         self.assertNotIn("data/identity-registry.json",checkpoint_block)
         self.assertIn("[skip ci]",checkpoint_block)
