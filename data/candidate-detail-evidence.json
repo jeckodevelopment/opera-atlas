@@ -1803,6 +1803,23 @@
       ]
     },
     {
+      "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/",
+      "content_sha256": "435c6d2e759844e44b9413075c07e2183531723f722ff438953261f7442b4e49",
+      "checked_at": "2026-11-23T13:24:40+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Fuori Fuoco",
+          "composer": "Diana Buscemi",
+          "venue": "Teatro M° Tonino Pardo",
+          "date": "2026-11-28",
+          "starts_at": "2026-11-28T19:00:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-3fa0cb85b2727f9e1e71",
       "source_key": "fenice-opera-2026-27",
       "source_url": "https://www.teatrolafenice.it/event/partenope/",
@@ -2256,6 +2273,23 @@
           "venue": "Palazzo Ducale di Martina Franca",
           "date": "2026-08-02",
           "starts_at": "2026-08-02T21:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-52b35f0089c3663c7ddb",
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "content_sha256": "2c61845c1370cb569eba2313d2a6b107e5d0b826241aabe5aa902cc4d72007ba",
+      "checked_at": "2026-11-23T13:24:47+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Ghost Cafè",
+          "composer": "Carlo Galante",
+          "venue": "Teatro M° Tonino Pardo",
+          "date": "2026-10-17",
+          "starts_at": "2026-10-17T19:00:00+02:00"
         }
       ]
     },
@@ -4350,6 +4384,30 @@
       ]
     },
     {
+      "candidate_id": "oa-index-8115e400ae8706fd132a",
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/",
+      "content_sha256": "bab1f704df141cf3685d1fd003c542a36e841a2295e00f6820918de8b6fcb531",
+      "checked_at": "2026-11-23T13:24:11+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'elisir d'amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Giuseppe Di Stefano",
+          "date": "2026-07-30",
+          "starts_at": "2026-07-30T21:00:00+02:00"
+        },
+        {
+          "event_title": "L'elisir d'amore",
+          "composer": "Gaetano Donizetti",
+          "venue": "Teatro Giuseppe Di Stefano",
+          "date": "2026-08-01",
+          "starts_at": "2026-08-01T21:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-84fd2f377ee783254524",
       "source_key": "lirico-cagliari-opera-2027",
       "source_url": "https://www.liricocagliari.it/evento/maria-stuarda/",
@@ -5473,6 +5531,30 @@
         "alt": "Immagine della produzione di Simon Boccanegra",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-9f61560762c466080073",
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/",
+      "content_sha256": "ffdf882d7305588a221b34553d71957710c8af732bf1d4efb6d93e12cbda7947",
+      "checked_at": "2026-11-23T13:24:03+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "I Capuleti e i Montecchi",
+          "composer": "Vincenzo Bellini",
+          "venue": "Teatro Giuseppe Di Stefano",
+          "date": "2026-07-21",
+          "starts_at": "2026-07-21T21:00:00+02:00"
+        },
+        {
+          "event_title": "I Capuleti e i Montecchi",
+          "composer": "Vincenzo Bellini",
+          "venue": "Teatro Giuseppe Di Stefano",
+          "date": "2026-07-23",
+          "starts_at": "2026-07-23T21:00:00+02:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-9fdcd7eba240da4540af",
@@ -7207,6 +7289,37 @@
       ]
     },
     {
+      "candidate_id": "oa-index-d57d2a1cbc3f370f3da5",
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "content_sha256": "5f0204fe8f77b1ee0348cce74aa25462b97486bbf32e73dc9fe2fd3b7bb0396f",
+      "checked_at": "2026-11-23T13:23:59+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il schiavo di sua moglie",
+          "composer": "Francesco Provenzale",
+          "venue": "Chiostro del Carmine",
+          "date": "2026-07-24",
+          "starts_at": "2026-07-24T21:00:00+02:00"
+        },
+        {
+          "event_title": "Il schiavo di sua moglie",
+          "composer": "Francesco Provenzale",
+          "venue": "Chiostro del Carmine",
+          "date": "2026-07-27",
+          "starts_at": "2026-07-27T21:00:00+02:00"
+        },
+        {
+          "event_title": "Il schiavo di sua moglie",
+          "composer": "Francesco Provenzale",
+          "venue": "Chiostro del Carmine",
+          "date": "2026-07-30",
+          "starts_at": "2026-07-30T21:00:00+02:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/la-cenerentola-3/",
@@ -7362,6 +7475,23 @@
           "date": "2027-05-09",
           "starts_at": "2027-05-09T15:30:00+02:00",
           "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-d8c22fa66fa68b8a3670",
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "content_sha256": "e455889c4bd7e58b96b566515f2e754a933afbe090b5aa3aa1251d620db2fcd6",
+      "checked_at": "2026-11-23T13:24:22+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Magic Words Circus",
+          "composer": "Orazio Sciortino",
+          "venue": "Teatro M° Tonino Pardo",
+          "date": "2026-09-26",
+          "starts_at": "2026-09-26T19:00:00+02:00"
         }
       ]
     },
@@ -7645,6 +7775,23 @@
           "venue": "Teatro del Maggio Musicale Fiorentino",
           "date": "2027-05-29",
           "starts_at": "2027-05-29T15:30:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-dd7baa45131b35e450b1",
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+      "content_sha256": "2707f0e7e199fe5186ef5899025cb45a5c8d12b66c026b6ca12d009941321bf6",
+      "checked_at": "2026-11-23T13:24:26+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "L'opera (forse) di Francesco Filidei / Infinito nero di Salvatore Sciarrino",
+          "composer": "Francesco Filidei",
+          "venue": "Teatro M° Tonino Pardo",
+          "date": "2026-10-31",
+          "starts_at": "2026-10-31T19:00:00+01:00"
         }
       ]
     },
@@ -8700,6 +8847,30 @@
           "venue": "Teatro Comunale di Bologna",
           "date": "2027-11-30",
           "starts_at": "2027-11-30T20:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-f8122a2cac3109445aaa",
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/nabucco/",
+      "content_sha256": "5dce59936d9faa0f6b78ce31cce88279f2163b455fa0e11501cc959018a10350",
+      "checked_at": "2026-11-23T13:24:09+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giuseppe Di Stefano",
+          "date": "2026-07-12",
+          "starts_at": "2026-07-12T21:00:00+02:00"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Giuseppe Di Stefano",
+          "date": "2026-07-14",
+          "starts_at": "2026-07-14T21:00:00+02:00"
         }
       ]
     },

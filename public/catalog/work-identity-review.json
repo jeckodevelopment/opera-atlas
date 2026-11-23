@@ -1,17 +1,103 @@
 {
-  "checked_at": "2026-11-23T13:18:16+00:00",
-  "groups": [],
+  "checked_at": "2026-11-23T13:24:47+00:00",
+  "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-d57d2a1cbc3f370f3da5"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Francesco Provenzale",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 3,
+      "sources": [
+        {
+          "source_key": "martina-valle-itria-2026",
+          "url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+        }
+      ],
+      "title": "Il schiavo di sua moglie"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-3f12fd23aa46c05bfd36"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Diana Buscemi",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "trapani-luglio-musicale-2026",
+          "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/fuori-fuoco/"
+        }
+      ],
+      "title": "Fuori Fuoco"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-52b35f0089c3663c7ddb"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Carlo Galante",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "trapani-luglio-musicale-2026",
+          "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/"
+        }
+      ],
+      "title": "Ghost Cafè"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-dd7baa45131b35e450b1"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Francesco Filidei",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "trapani-luglio-musicale-2026",
+          "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/"
+        }
+      ],
+      "title": "L'opera (forse) di Francesco Filidei / Infinito nero di Salvatore Sciarrino"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-d8c22fa66fa68b8a3670"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Orazio Sciortino",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "trapani-luglio-musicale-2026",
+          "url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/"
+        }
+      ],
+      "title": "Magic Words Circus"
+    }
+  ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 0,
+    "candidates_checked": 8,
     "candidates_without_facts": 0,
-    "facts_examined": 0,
-    "facts_resolved": 0,
+    "facts_examined": 13,
+    "facts_resolved": 6,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 0,
-    "unmatched_groups": 0
+    "unmatched_facts": 7,
+    "unmatched_groups": 5
   },
   "truncated": false
 }
