@@ -33,6 +33,16 @@ class VenueEditorialQueueTests(unittest.TestCase):
             "address":"Some address","history":"Verified research"}
         self.assertEqual(build(self.registry,self.facts,self.profiles)["count"],0)
 
+    def test_official_long_name_profile_resolves_legacy_source_alias(self):
+        self.registry["venues"]={"Savona|Teatro Chiabrera":{
+            "id":"oa-v-000053","city":"Savona","name":"Teatro Gabriello Chiabrera",
+            "city_slug":"savona","slug":"teatro-chiabrera","region":"Liguria"}}
+        self.facts["productions"][0].update({
+            "municipality":"Savona","venue":"Teatro Chiabrera"})
+        self.profiles["venues"]["Savona|Teatro Gabriello Chiabrera"]={
+            "address":"Piazza Armando Diaz 2","history":"Official profile"}
+        self.assertEqual(build(self.registry,self.facts,self.profiles)["count"],0)
+
     def test_unverified_venue_and_conflicting_identity_fail_closed(self):
         self.facts["productions"][0]["dates"]=[]
         with self.assertRaisesRegex(ValueError,"without verified staging"):
