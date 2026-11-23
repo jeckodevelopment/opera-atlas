@@ -63,6 +63,18 @@ class ObservatoryStaticTests(unittest.TestCase):
         self.assertIn(".insight-grid{display:grid;", css)
         self.assertNotIn("Prime e ultime date", html)
 
+    def test_hero_photo_and_discreet_csv_action(self):
+        html = (ROOT / "observatory/index.html").read_text(encoding="utf-8")
+        css = (ROOT / "observatory/styles.css").read_text(encoding="utf-8")
+        self.assertEqual(html.count('id="download"'), 1)
+        self.assertIn('Esporta CSV</button>', html)
+        self.assertIn('class="hero-credit"', html)
+        self.assertIn('Foto: Pasquale Matrisciano', html)
+        self.assertIn("InternoSanCarlo.JPG", css)
+        self.assertIn("linear-gradient(90deg,#101c2b", css)
+        self.assertIn(".top-inner .header-export{", css)
+        self.assertIn("border-bottom:1px solid transparent", css)
+
     def test_logo_and_isolated_deployment(self):
         logo = (ROOT / "observatory/opera-plus-logo.svg").read_text(encoding="utf-8")
         self.assertIn('viewBox="0 0 250 117"', logo)

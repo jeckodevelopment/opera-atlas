@@ -22,6 +22,9 @@ Sei pannelli aggiuntivi sono calcolati esclusivamente sulle recite filtrate pres
 
 Tutti i pannelli usano la stessa intersezione Anno solare / Stagione / Territorio dei KPI e del CSV. Non si inseriscono date di inizio/fine rilevate come ulteriori KPI. I limiti di copertura e gli eventi non ancora acquisiti valgono anche per queste classifiche.
 
+## Intestazione e immagini
+Il banner dell'Osservatorio richiama il mockup approvato: fotografia delle balconate del Teatro di San Carlo di Napoli, autore Pasquale Matrisciano (Pask00), Wikimedia Commons, opera rilasciata nel pubblico dominio. Fonte: https://commons.wikimedia.org/wiki/File:InternoSanCarlo.JPG . Il credito rimane visibile nel banner. Il CSS usa l'immagine remota con fallback blu notte e sovrapposizione gradiente per preservare leggibilità e prestazioni della testata. L'esportazione del campione filtrato rimane nell'header, rappresentata da un comando testuale discreto «Esporta CSV», senza effetto di pulsante primario.
+
 ## Collaudi separati
 - Controllare caricamento dati con manifest valido e indisponibilità della sorgente: nessuna statistica fittizia.
 - Filtrare per stagione e regione; verificare i quattro indicatori, barre e classifiche.
