@@ -1,0 +1,66 @@
+name: Recover completed 2026 mass scan diagnostic (one-time)
+
+# Recover the already successful acquisition artifact from run 45278789299.
+# This avoids repeating 18 minutes of network requests after a git push race.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/recover-2026-mass-scan.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: opera-atlas-2026-diagnostic-publication
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Retrieve the successfully completed source scan
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093a # v4
+        with:
+          name: opera-atlas-2026-mass-scan
+          repository: jeckodevelopment/opera-atlas
+          run-id: 45278789299
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: public/diagnostics
+      - name: Verify the recovered report is isolated
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('public/diagnostics/atlas-2026-mass-scan.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          assert data.get('read_only') is True
+          assert data.get('catalog_updated') is False
+          assert data.get('year') == 2026
+          print('2026 mass scan:', data['source_indexes_scanned'], 'indexes,',
+                data['detail_pages_scanned'], 'detail pages,',
+                data['observations_needing_review'], 'facts to review')
+          PY
+      - name: Publish only the recovered diagnostic onto latest main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp public/diagnostics/atlas-2026-mass-scan.json /tmp/atlas-2026-mass-scan.json
+          for attempt in 1 2 3 4 5 6 7 8; do
+            git fetch --no-tags origin main
+            git checkout -B recovery-diagnostics FETCH_HEAD
+            mkdir -p public/diagnostics
+            cp /tmp/atlas-2026-mass-scan.json public/diagnostics/atlas-2026-mass-scan.json
+            git add -- public/diagnostics/atlas-2026-mass-scan.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'data(audit): recover completed 2026 mass scan [skip ci]'
+            if git push origin HEAD:main; then
+              echo 'Recovery diagnostic committed'
+              exit 0
+            fi
+            sleep 3
+          done
+          exit 1
