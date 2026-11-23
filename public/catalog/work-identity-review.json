@@ -1,14 +1,14 @@
 {
-  "checked_at": "2026-11-23T12:58:27+00:00",
+  "checked_at": "2026-11-23T13:05:55+00:00",
   "groups": [],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 0,
+    "candidates_checked": 4,
     "candidates_without_facts": 0,
-    "facts_examined": 0,
-    "facts_resolved": 0,
+    "facts_examined": 11,
+    "facts_resolved": 11,
     "translated_facts_resolved": 0,
     "unmatched_facts": 0,
     "unmatched_groups": 0
