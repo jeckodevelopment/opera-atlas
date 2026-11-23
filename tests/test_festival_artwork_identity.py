@@ -19,7 +19,10 @@ class FestivalArtworkTests(unittest.TestCase):
         self.assertIn('"verona":"Arena di Verona esterno.jpg"',source)
         self.assertIn('WORKS[slug]',source)
         self.assertIn('posters[event?.work_id]',source)
-        self.assertIn('const file=FILES[city]',source)
+        self.assertIn('event?.photo_file',source)
+        self.assertIn('event.photo_source_url.startsWith("https://commons.wikimedia.org/wiki/File:")',source)
+        self.assertIn('kind:"verified_festival_venue"',source)
+        self.assertNotIn('const file=FILES[city]',source)
     def test_catalogue_uses_stable_work_slug(self):
         manifest=json.loads((ROOT/"public/catalog/v2/manifest.json").read_text(encoding="utf-8"))
         works=json.loads((ROOT/"public/catalog/v2"/manifest["files"]["works"]["path"]).read_text(encoding="utf-8"))["works"]
