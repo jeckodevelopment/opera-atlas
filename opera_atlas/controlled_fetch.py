@@ -94,20 +94,31 @@ def fetch_official_html(
             parser.parse(rules)
             if not parser.can_fetch(USER_AGENT, url):
                 raise AccessDenied("robots.txt denies access")
-    try:
-        with client.open(Request(url, headers={
-            "User-Agent": USER_AGENT, "Accept": "text/html"
-        }), timeout=TIMEOUT) as response:
-            if response.status != 200:
-                raise FetchUnavailable("unexpected HTTP status")
-            content_type = response.headers.get("Content-Type", "").lower()
-            if "text/html" not in content_type:
-                raise FetchUnavailable("not an HTML page")
-            body = response.read(MAX_BYTES + 1)
-            if len(body) > MAX_BYTES:
-                raise FetchUnavailable("HTML response too large")
-    except (HTTPError, URLError, OSError, TimeoutError) as exc:
-        raise FetchUnavailable("page unavailable") from exc
+    # A transient connection failure or server-side 5xx may be retried once.
+    # Do not retry 401/403/429, redirects, robots denial, invalid content or
+    # any other policy/validation failure. Each attempt remains time-bounded.
+    for attempt in range(2):
+        try:
+            with client.open(Request(url, headers={
+                "User-Agent": USER_AGENT, "Accept": "text/html"
+            }), timeout=TIMEOUT) as response:
+                if response.status != 200:
+                    raise FetchUnavailable("unexpected HTTP status")
+                content_type = response.headers.get("Content-Type", "").lower()
+                if "text/html" not in content_type:
+                    raise FetchUnavailable("not an HTML page")
+                body = response.read(MAX_BYTES + 1)
+                if len(body) > MAX_BYTES:
+                    raise FetchUnavailable("HTML response too large")
+            break
+        except HTTPError as exc:
+            if attempt == 0 and 500 <= exc.code <= 599:
+                continue
+            raise FetchUnavailable("page unavailable") from exc
+        except (URLError, OSError, TimeoutError) as exc:
+            if attempt == 0:
+                continue
+            raise FetchUnavailable("page unavailable") from exc
     return FetchResult(url, body.decode("utf-8", errors="replace"),
                        hashlib.sha256(body).hexdigest(), len(body))
 

@@ -64,6 +64,30 @@ class SourceAutomationTests(unittest.TestCase):
         self.assertNotEqual(by_venue["Pesaro|Auditorium Scavolini"]["venue_id"],
                             by_venue["Pesaro|Teatro Gioachino Rossini"]["venue_id"])
 
+    def test_ravenna_pisa_rolling_sources_have_real_venue_mapping(self):
+        from scripts.source_automation import INDEX_VENUES, DIRECTORY, DAILY, INDEX, build
+        import json
+        expected = {
+            "ravenna-cherubini-rolling-opera":"Ravenna|Teatro Dante Alighieri",
+            "pisa-future-calendar":"Pisa|Teatro Verdi",
+        }
+        configured=json.loads(INDEX.read_text(encoding="utf-8"))
+        directory=json.loads(DIRECTORY.read_text(encoding="utf-8"))
+        daily=json.loads(DAILY.read_text(encoding="utf-8"))
+        for source, venue in expected.items():
+            self.assertIn(venue, INDEX_VENUES[source])
+        scans={"sources":[{"key":key,"status":"success",
+                            "current_scan_verified":True} for key in expected]}
+        report=build(directory,daily,{"sources":[]},configured,scans)
+        rows={x["city"]+"|"+x["venue"]:x for x in report["venues"]}
+        for key,venue in expected.items():
+            self.assertEqual(rows[venue]["status"],"operational")
+            self.assertIn(key,[s["source_key"] for s in rows[venue]["sources"]])
+        failed=build(directory,daily,{"sources":[]},configured,{"sources":[]})
+        rows={x["city"]+"|"+x["venue"]:x for x in failed["venues"]}
+        for venue in expected.values():
+            self.assertNotEqual(rows[venue]["status"],"operational")
+
     def test_san_carlo_secondary_publication_counts_as_operational(self):
         from scripts.source_automation import (
             DIRECTORY, DAILY, INDEX, SAN_CARLO_SECONDARY,
