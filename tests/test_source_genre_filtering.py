@@ -104,7 +104,7 @@ class SourceGenreFilteringTests(unittest.TestCase):
         excluded=(
             "lisistrata-cosenza", "picchi-e-pero-cosenza",
             "l-anima-e-il-tempo-cosenza", "il-medico-dei-pazzi-cosenza",
-            "oltre-l-indifferenza-cosenza",
+            "oltre-l-indifferenza-cosenza", "odissea-cosenza",
         )
         for slug in excluded:
             with self.subTest(slug=slug):
