@@ -189,6 +189,12 @@ function premieres(selected,year){
   text($("premiere-context"),"Nessun numero viene mostrato senza le fonti verificate.");
   return;
  }
+ if(year==="all"){
+  text($("premiere-total"),"—");
+  text($("premiere-summary-label"),"Seleziona un anno solare");
+  text($("premiere-context"),"Il conteggio riguarda l’anno storico della prima assoluta delle opere censite, non quello di una replica.");
+  return;
+ }
  const workIds=new Set(selected.map(r=>r.workId));
  const applicable=[...editorials.entries()].filter(([id,e])=>workIds.has(id)&&(year==="all"||String(e.history.premiere_year)===year))
  .map(([,e])=>e).sort((a,b)=>b.history.premiere_year-a.history.premiere_year||a.work.title.localeCompare(b.work.title,"it"));
@@ -204,7 +210,7 @@ function premieres(selected,year){
  if(upcoming.length)details.push(upcoming.length+" con data futura");
  if(yearOnly)details.push(yearOnly+" con solo anno verificato");
  text($("premiere-context"),(details.join(" · ")||"Nessuna prima assoluta registrata nel campione.")+
-  ". Il conteggio non equivale a prime già avvenute quando manca la data esatta.");
+  ". Stagione e territorio selezionano le opere presenti in Atlas, non il luogo né la data della loro prima. Il conteggio non equivale a prime già avvenute quando manca la data esatta.");
  if(!applicable.length){
   const p=document.createElement("p");p.textContent="Nessuna opera con prima assoluta documentata nei filtri scelti.";root.append(p);return;
  }
@@ -228,7 +234,7 @@ function render(){
  drawMonths(selected,year);
  renderInsights(selected);
  circulation(selected);
- premieres(selected,year);
+ premieres(rows.filter(r=>(season==="all"||r.season===season)&&(region==="all"||r.region===region)),year);
  const works=frequencies(selected.map(r=>r.work));
  bars("regions",frequencies(selected.map(r=>r.region)),20);
  bars("seasons",frequencies(selected.map(r=>r.season)).sort((a,b)=>a[0].localeCompare(b[0])),20);
