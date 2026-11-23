@@ -68,10 +68,10 @@ class ObservatoryStaticTests(unittest.TestCase):
         css = (ROOT / "observatory/styles.css").read_text(encoding="utf-8")
         self.assertEqual(html.count('id="download"'), 1)
         self.assertIn('Esporta CSV</button>', html)
-        self.assertIn('class="hero-credit"', html)
-        self.assertIn('Foto: Pasquale Matrisciano', html)
-        self.assertIn("InternoSanCarlo.JPG", css)
-        self.assertIn("linear-gradient(90deg,#101c2b", css)
+        self.assertNotIn('hero-credit', html)
+        self.assertNotIn('Pasquale Matrisciano', html)
+        self.assertIn("mockup-theatre-banner.svg", css)
+        self.assertNotIn("InternoSanCarlo.JPG", css)
         self.assertIn(".top-inner .header-export{", css)
         self.assertIn("border-bottom:1px solid transparent", css)
 
@@ -81,6 +81,7 @@ class ObservatoryStaticTests(unittest.TestCase):
         self.assertIn('data:image/png;base64,', logo)
         deploy = (ROOT / "scripts/deploy_observatory_sftp.py").read_text(encoding="utf-8")
         self.assertIn('"opera-plus-logo.svg"', deploy)
+        self.assertIn('"mockup-theatre-banner.svg"', deploy)
         self.assertIn('posixpath.join(posixpath.dirname(atlas), "osservatorio")', deploy)
 
 if __name__ == "__main__":
