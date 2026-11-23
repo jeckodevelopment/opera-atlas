@@ -103,9 +103,26 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     genre=genres[0]
     venue,venue_pattern=VENUES[genre]
     primary=" ".join(reader.parts[start:start+22]).split("Personaggi e interpreti",1)[0]
-    credit=COMPOSER.search(primary)
-    if credit is None:raise ValueError("Trapani first-party composer missing")
-    composer=" ".join(credit.group(1).split())
+    # The live CMS sometimes separates the explicitly credited composer
+    # from the libretto (or omits "di" after "Libretto"). Read the source's
+    # standalone "Musica di NAME" node rather than depending on a subsequent
+    # libretto label. Reject ambiguous or unbounded prose instead of guessing.
+    credits=[]
+    for part in reader.parts[start+1:start+40]:
+        match=re.fullmatch(
+            r"(?:Musica|Musiche)\s+di\s+"
+            r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’ -]{4,85})",part.strip(),re.I)
+        if match:
+            credits.append(" ".join(match.group(1).split()))
+    unique={x.casefold():x for x in credits}
+    if len(unique)!=1:
+        # Retain support for older official markup with combined credit nodes.
+        credit=COMPOSER.search(primary)
+        if credit is None or unique:
+            raise ValueError("Trapani first-party composer missing")
+        composer=" ".join(credit.group(1).split())
+    else:
+        composer=next(iter(unique.values()))
     if not re.search(venue_pattern,primary,re.I):
         raise ValueError("Trapani exact opera venue missing")
     recite=[]

@@ -369,13 +369,20 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
         permitted={"Teatro Gioachino Rossini","Auditorium Scavolini"}
     if source_key=="trapani-luglio-musicale-2026":
         permitted={"Teatro Giuseppe Di Stefano","Teatro M° Tonino Pardo"}
+    if source_key=="mantova-sociale-rolling-opera":
+        # The city theatre is canonically named "Teatro Sociale di Mantova".
+        # Its official event detail uses the short "Teatro Sociale" label:
+        # resolve this source-specific alias before allocating an ID.
+        permitted={"Teatro Sociale","Teatro Sociale di Mantova"}
     if source_key=="savona-giocosa-rolling-opera":
         # The official Opera Giocosa programme uses the short theatre name.
         # Preserve raw evidence while resolving one canonical physical venue.
         permitted={"Teatro Chiabrera","Teatro Gabriello Chiabrera"}
     if venue not in permitted:return None
     canonical_name=("Teatro Gabriello Chiabrera"
-                    if source_key=="savona-giocosa-rolling-opera" else venue)
+                    if source_key=="savona-giocosa-rolling-opera" else
+                    "Teatro Sociale di Mantova"
+                    if source_key=="mantova-sociale-rolling-opera" else venue)
     found=[(key,value) for key,value in registry["venues"].items()
            if value["city"]==city and value["name"]==canonical_name
            and key==city+"|"+(default_venue if source_key=="savona-giocosa-rolling-opera" else canonical_name)]
@@ -493,6 +500,15 @@ _MULTI_WORK_SEASONS={
     "padova-verdi-opera-2026": {
         ("Pagliacci","Ruggero Leoncavallo"):2,
         ("La traviata","Giuseppe Verdi"):3,
+    },
+    # Cosenza's official ticketing season presents three distinct operas:
+    # each has its own verified composer, venue and individual recital clock.
+    # Split only the complete expected set: never publish a partial extract
+    # from a mixed season page.
+    "cosenza-inprimafila-rolling-opera": {
+        ("Il barbiere di Siviglia","Gioachino Rossini"):2,
+        ("La mère coupable","Darius Milhaud"):1,
+        ("Le nozze di Figaro","Wolfgang Amadeus Mozart"):2,
     },
     # The official Treviso 2026/27 season is one page for separately ticketed
     # operas. Each verified two-date work is independently publishable; later
