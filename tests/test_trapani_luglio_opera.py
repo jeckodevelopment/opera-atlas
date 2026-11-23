@@ -132,6 +132,21 @@ class TrapaniOfficialOperaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"composer"):
             parse_detail(html,url=NABUCCO)
 
+    def test_live_cms_descriptive_nodes_do_not_hide_venue_and_recitals(self):
+        # The primary source can have a long introduction between the
+        # composer credit and the actual ticketed venue/dates.
+        html=page()
+        html=html.replace(
+            '<div>Teatro "Giuseppe Di Stefano"</div>',
+            ''.join('<p>Descrizione dell\'allestimento</p>' for _ in range(9))
+            +'<div>Teatro "Giuseppe Di Stefano"</div>',1)
+        parsed=parse_detail(html,url=NABUCCO)
+        self.assertEqual(parsed[2],"Teatro Giuseppe Di Stefano")
+        self.assertEqual(len(parsed[3]),2)
+        with self.assertRaisesRegex(ValueError,"venue"):
+            parse_detail(html.replace('Teatro "Giuseppe Di Stefano"',
+                                      'Teatro immaginario'),url=NABUCCO)
+
     def test_fuori_fuoco_official_musiche_di_credit(self):
         html=page(title="Fuori Fuoco",composer="Diana Buscemi",
                   genre="Opera da camera",venue="Teatro M° Tonino Pardo")
