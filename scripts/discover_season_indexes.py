@@ -46,6 +46,23 @@ EXCLUDED_PATHS={
         "amministrazione-trasparente",
         "enrico-castiglione-conquista-new-york-con-la-sua-carmen-standing-ovation-tra-i-grattacieli-di-manhattan",
     }),
+    # Exact non-event navigation pages observed in Mantova. Never exclude
+    # titled opera or gala pages from this source based on generic terms.
+    "mantova-sociale-rolling-opera": frozenset({
+        "sostieni-il-teatro.aspx", "contatti.aspx", "storia.aspx",
+        "affitta-il-teatro.aspx", "eventi-1.aspx", "instagram.aspx",
+        "archivio-eventi-del-ridotto-1.aspx", "il-ridotto-del-teatro.aspx",
+        "facebook.aspx", "le-sale.aspx", "erogazioni-ministeriali.aspx",
+        "youtube.aspx", "dove-siamo.aspx", "privacy-policy.aspx",
+        "affitta-il-ridotto.aspx", "tag-directory-1.aspx",
+        "biglietteria.aspx", "sitemap.aspx", "dove-parcheggiare.aspx",
+        "top-ricerche.aspx",
+    }),
+    # Vicenza festival: administrative and navigation pages, not performances.
+    "vicenza-inlirica-rolling-opera": frozenset({
+        "sponsor", "credits", "sostieni", "contacts", "supporters",
+        "privacy-policy", "vil", "eventi",
+    }),
     "cosenza-inprimafila-rolling-opera": frozenset({
         "stagione-l-altro-teatro-cosenza",
         "capodanno-2027-tributo-vasco-synphony-cosenza",
