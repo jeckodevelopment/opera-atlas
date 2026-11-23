@@ -20,3 +20,39 @@
 .today-suggestions h2{font:500 25px Georgia,serif;margin:0 0 6px}
 .today-suggestions>p{color:var(--muted);font-size:13px;margin:0 0 18px}
 @media(max-width:650px){.today-intro.hero{grid-template-columns:1fr;padding-top:20px;gap:14px}.today-hero-image{height:170px}.today-intro h1{font-size:39px}}
+
+/* In scena: compact editorial search, following the approved mockup. */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.today-toolbar{display:block;border-radius:16px;padding:25px 28px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.035);margin-bottom:14px}
+.today-toolbar-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:19px}
+.today-toolbar-heading h2{font:500 clamp(22px,2.7vw,30px)/1.2 Georgia,serif;margin:0}
+.today-toolbar-heading .eyebrow{margin-bottom:6px}
+.today-toolbar .today-reset{border:0;color:#926b22;font-size:13px;font-weight:700;background:transparent;white-space:nowrap}
+.today-date-strip{display:flex;align-items:stretch;gap:9px;padding-bottom:21px;border-bottom:1px solid var(--line)}
+.today-quick-days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;flex:1}
+.today-toolbar .today-day{min-width:0;min-height:71px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);border-radius:10px;background:#faf9f6;color:#2a2927;transition:background .15s,border-color .15s}
+.today-toolbar .today-day:hover{border-color:var(--gold)}
+.today-toolbar .today-day.selected{color:#fff;background:#272522;border-color:#272522}
+.today-day-weekday{font-size:11px;text-transform:capitalize;color:inherit;opacity:.82}
+.today-day strong{font-size:15px;line-height:1.2;white-space:nowrap}
+.today-toolbar .today-arrow{border:0;border-radius:9px;background:#f5f2ec;min-width:38px;font-size:26px;padding:0 8px}
+.today-date-picker{min-width:133px;justify-content:center}
+.today-date-picker span,.today-filter span{color:#5e5c58;font-size:11px;font-weight:750}
+.today-date-picker input{max-width:147px}
+.today-search-row{display:grid;grid-template-columns:minmax(250px,2fr) repeat(3,minmax(120px,1fr));gap:12px;align-items:end;padding-top:20px}
+.today-search-row label{min-width:0}
+.today-search{position:relative;display:block!important}
+.today-toolbar .today-search input{height:48px;width:100%;border:1px solid #d9d5cd;border-radius:9px;padding:0 12px 0 40px;font-size:14px;background:#fbfaf8}
+.today-search-icon{position:absolute;left:14px;top:5px;font-size:29px;color:#a47b2c;line-height:35px}
+.today-filter{display:flex;flex-direction:column;gap:5px}
+.today-toolbar .today-filter select{width:100%;height:48px;border:1px solid #d9d5cd;border-radius:9px;background:#fbfaf8;font-size:13px}
+.today-card .eyebrow{font-size:14px;letter-spacing:.085em;color:#8e6b25;font-weight:850;line-height:1.4}
+.today-image{height:245px;background:linear-gradient(150deg,#2d3030,#76654e);position:relative;overflow:hidden}
+.today-photo{object-fit:cover;object-position:center center}
+.today-no-image{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#f4ecdd;font:500 23px Georgia,serif;letter-spacing:.025em}
+.today-card-body{padding:22px 23px 25px}
+.today-card h3{font-size:28px;line-height:1.22}
+.today-hour{margin-top:14px!important}
+@media(max-width:900px){.today-search-row{grid-template-columns:repeat(3,minmax(0,1fr))}.today-search{grid-column:1/-1}.today-toolbar{padding:20px}}
+@media(max-width:650px){.today-date-strip{flex-wrap:wrap}.today-quick-days{order:2;flex-basis:100%;gap:5px}.today-arrow{order:1}.today-date-picker{order:1;margin-left:auto}.today-toolbar .today-day{min-height:60px;padding:4px 2px}.today-day strong{font-size:12px}.today-day-weekday{font-size:10px}.today-search-row{grid-template-columns:repeat(2,minmax(0,1fr))}.today-search{grid-column:1/-1}.today-toolbar-heading{align-items:flex-start}.today-toolbar-heading h2{font-size:22px}.today-card .eyebrow{font-size:13px}}
+@media(max-width:380px){.today-search-row{grid-template-columns:1fr}.today-filter{width:100%}.today-day strong{font-size:11px}.today-toolbar .today-arrow{min-width:32px}}
