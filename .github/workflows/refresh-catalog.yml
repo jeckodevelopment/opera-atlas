@@ -82,6 +82,12 @@ on:
       - 'scripts/source_coverage.py'
       - 'data/sources.json'
       - '.github/workflows/refresh-catalog.yml'
+      # Keep the retrospective read-only diagnostic pipeline out of the
+      # national source crawl, even when its own trigger filter changes.
+      # These exclusions deliberately follow the broad scripts/** inclusion.
+      - '!scripts/audit_recite_2026.py'
+      - '!scripts/audit_2026_sources.py'
+      - '!.github/workflows/refresh-catalog.yml'
 permissions:
   contents: write
 concurrency:
