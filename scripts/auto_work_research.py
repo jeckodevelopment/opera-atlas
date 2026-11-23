@@ -691,18 +691,30 @@ def reconcile_published_outcomes(candidates:dict, statuses:list[dict],
             by_source.setdefault(staging.get("source_url"),[]).append(staging)
     resolved={}
     for candidate in candidates.get("candidates",[]):
-        if not isinstance(candidate,dict) or candidate.get("status")!="already_catalogued":
+        if not isinstance(candidate,dict):
+            continue
+        state=candidate.get("status")
+        cid=candidate.get("id")
+        if state in ("excluded_nonopera","not_in_official_season"):
+            # The canonical candidate registry has already made an explicit
+            # editorial decision. Never continue claiming that an excluded
+            # concert or an archival-only event awaits opera authority.
+            resolved[cid]={
+                "candidate_id":cid,"status":state,
+                "source_key":candidate.get("source_key"),
+                "official_url":candidate.get("official_url")}
+            continue
+        if state!="already_catalogued":
             continue
         matches=by_source.get(candidate.get("official_url"),[])
         if len(matches)!=1:continue
-        resolved[candidate["id"]]={
-            "candidate_id":candidate["id"],"status":"already_catalogued",
+        resolved[cid]={
+            "candidate_id":cid,"status":"already_catalogued",
             "work_id":matches[0]["work_id"],"source_key":candidate.get("source_key"),
             "official_url":candidate["official_url"]}
     return ([status for status in statuses
              if status.get("candidate_id") not in resolved]
             +list(resolved.values()))
-
 
 def main():
     parser=argparse.ArgumentParser()
