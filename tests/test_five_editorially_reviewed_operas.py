@@ -18,6 +18,17 @@ class FiveReviewedOperas(unittest.TestCase):
         read = lambda path: json.loads((ROOT / path).read_text(encoding="utf-8"))
         candidates = read("data/season-index-candidates.json")
         evidence = read("data/candidate-detail-evidence.json")
+        # The live registry is mutable: a previously reviewed candidate may
+        # already be published when a refresh reaches its final test phase.
+        # Exercise the identity gate using only the reviewed source records,
+        # with a controlled pending state independent of publication timing.
+        reviewed_ids = {cid for cid, *_ in CASES}
+        candidates = {"schema_version": 1, "candidates": [
+            {**row, "status": "needs_review"}
+            for row in candidates["candidates"] if row["id"] in reviewed_ids]}
+        evidence = {"schema_version": 1, "evidence": [
+            {**row, "status": "needs_editorial_review"}
+            for row in evidence["evidence"] if row["candidate_id"] in reviewed_ids]}
         seeded = official_identity_candidates(evidence, candidates,
                                               {"schema_version":1, "works":[]})
         by_id = {w["candidate_id"]: w for w in seeded["works"]}
