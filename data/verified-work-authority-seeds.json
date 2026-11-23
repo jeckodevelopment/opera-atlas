@@ -1048,6 +1048,40 @@
           "https://ressources.ircam.fr/en/work/la-mere-coupable"
         ]
       }
+    },
+    {
+      "source_key": "trapani-luglio-musicale-2026",
+      "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/ghost-cafe/",
+      "title": "Ghost Cafè",
+      "composer": "Carlo Galante",
+      "synopsis": "Flora, giovane cantante delusa da continui rifiuti, incontra il barista Sal. Un misterioso jukebox evoca tre fantasmi che rappresentano amore, arte e successo. Davanti a queste visioni, la ragazza ripensa al proprio destino.",
+      "history": {
+        "librettist": "Gabriela Fantato",
+        "premiere_year": 2000,
+        "premiere_venue": "Teatro Donizetti",
+        "premiere_city": "Bergamo",
+        "sources": [
+          "https://www.carlogalante.it/opera/ghost-cafe/",
+          "https://www.lugliomusicale.it/it/teatro-news/al-tonino-pardo-apre-il-ghost-cafe-tre-fantasmi-e-una-cantante-in-cerca-del-suo-destino/"
+        ]
+      }
+    },
+    {
+      "source_key": "martina-valle-itria-2026",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "title": "Il schiavo di sua moglie",
+      "composer": "Francesco Provenzale",
+      "synopsis": "Fra amazzoni, eroi e innamorati, Menalippa crede morto il marito Leucippo. L’uomo ricompare sotto identità diverse, finché si nasconde nei panni di uno schiavo. Menalippa e gli altri personaggi attraversano travestimenti, rivalità ed equivoci.",
+      "history": {
+        "librettist": "Francesco Antonio Paolella",
+        "premiere_year": 1672,
+        "premiere_venue": "Palazzo Reale",
+        "premiere_city": "Napoli",
+        "sources": [
+          "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+          "https://www.ansa.it/amp/puglia/notizie/2026/07/22/al-festival-della-valle-ditria-linedita-carmen-di-bizet-del-1874_039e2f1f-b2cb-405b-a6b6-94e37c9659fe.html"
+        ]
+      }
     }
   ]
 }
