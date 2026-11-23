@@ -21,6 +21,15 @@ class FirstPartyReviewedOperas(unittest.TestCase):
         candidates=read(CANDIDATES)
         evidence=read(EVIDENCE)
         seeds=read(SEEDS)["works"]
+        ids={cid for cid,*_ in CASES}
+        # Publication may have changed live candidate statuses by this point.
+        # Verify source-bound promotion against a stable pending fixture.
+        candidates={"schema_version":1,"candidates":[
+            {**row,"status":"needs_review"} for row in candidates["candidates"]
+            if row["id"] in ids]}
+        evidence={"schema_version":1,"evidence":[
+            {**row,"status":"needs_editorial_review"} for row in evidence["evidence"]
+            if row["candidate_id"] in ids]}
         generated=official_identity_candidates(
             evidence,candidates,{"schema_version":1,"works":[]})
         byid={w["candidate_id"]:w for w in generated["works"]}
@@ -47,7 +56,12 @@ class FirstPartyReviewedOperas(unittest.TestCase):
         evidence=deepcopy(read(EVIDENCE))
         row=next(r for r in evidence["evidence"]
                  if r["candidate_id"]==CASES[0][0])
+        row["status"]="needs_editorial_review"
+        candidates=read(CANDIDATES)
+        candidates={"schema_version":1,"candidates":[
+            {**r,"status":"needs_review"} for r in candidates["candidates"]
+            if r["id"]==CASES[0][0]]}
         row["event_facts"][0]["composer"]="Other Composer"
         with self.assertRaisesRegex(ValueError,"contradicts"):
-            official_identity_candidates(evidence,read(CANDIDATES),
+            official_identity_candidates(evidence,candidates,
                                          {"schema_version":1,"works":[]})
