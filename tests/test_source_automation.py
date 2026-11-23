@@ -159,6 +159,52 @@ class SourceAutomationTests(unittest.TestCase):
                          "parser_or_source_validation_failed")
         self.assertEqual(report["total"],len(index["sources"]))
 
+    def test_scan_yield_distinguishes_successful_crawl_from_publication(self):
+        from scripts.source_automation import INDEX, scan_attention, CANDIDATE_REGISTRY
+        import json
+        index=json.loads(INDEX.read_text())
+        candidates=json.loads(CANDIDATE_REGISTRY.read_text())
+        report=scan_attention(index,{"sources":[
+            {"key":"cosenza-inprimafila-rolling-opera",
+             "status":"success","current_scan_verified":True},
+            {"key":"taormina-opera-festival-rolling",
+             "status":"success","current_scan_verified":True},
+        ]},candidates=candidates)
+        by_key={r["source_key"]:r for r in report["sources"]}
+        for key in ("cosenza-inprimafila-rolling-opera",
+                    "taormina-opera-festival-rolling"):
+            row=by_key[key]
+            self.assertEqual(row["scan_classification"],"verified_success")
+            yield_=row["candidate_yield"]
+            self.assertEqual(yield_["total"],sum(yield_[k] for k in (
+                "already_catalogued","needs_review","excluded_nonopera",
+                "not_in_official_season")))
+            self.assertGreater(yield_["needs_review"],0)
+        san=by_key["napoli-san-carlo-rolling-opera"]["candidate_yield"]
+        self.assertEqual(san["already_catalogued"],10)
+        self.assertEqual(san["needs_review"],0)
+        self.assertEqual(san["total"],10)
+
+    def test_candidate_yield_rejects_unknown_and_duplicate_status(self):
+        from scripts.source_automation import INDEX, scan_attention
+        import json
+        index=json.loads(INDEX.read_text())
+        good={"schema_version":1,"candidates":[
+            {"source_key":"modena-opera-2026-27","status":"needs_review"},
+            {"source_key":"modena-opera-2026-27","status":"already_catalogued"},
+        ]}
+        row=next(x for x in scan_attention(index,{"sources":[]},
+                        candidates=good)["sources"]
+                 if x["source_key"]=="modena-opera-2026-27")
+        self.assertEqual(row["candidate_yield"]["total"],2)
+        for bad in (
+            {"schema_version":1,"candidates":[{"source_key":"x","status":"published"}]},
+            {"schema_version":2,"candidates":[]},
+            {"schema_version":1,"candidates":[None]},
+        ):
+            with self.assertRaises(ValueError):
+                scan_attention(index,{"sources":[]},candidates=bad)
+
     def test_scan_attention_does_not_mark_future_404_as_unpublished_season(self):
         from scripts.source_automation import INDEX, scan_attention
         import json
