@@ -91,6 +91,36 @@ class VicenzaOlimpicoOfficialSource(unittest.TestCase):
                 '<html><a href="/category/vil/press-2026/">Vicenza in Lirica 2026</a>'),
                 url=BARBIERE)
 
+    def test_related_older_or_future_edition_does_not_override_article_year(self):
+        # WordPress may show other edition links after a long artist biography.
+        # These are not category metadata of the production being inspected.
+        unrelated = ("<p>Unrelated artist biography.</p>" * 125
+                     + '<a href="/category/vil/vicenza-in-lirica-2027/">'
+                       'Edition 2027</a>')
+        source = opera_page(edition="").replace(
+            "<html>",
+            '<html><a href="/category/vil/vicenza-in-lirica-2026/">'
+            'Vicenza in Lirica 2026</a>')
+        source = source.replace("</html>", unrelated + "</html>")
+        self.assertEqual(parse_detail(source, url=BARBIERE)[3], [
+            ("2026-09-10", "20:30"),
+            ("2026-09-12", "20:30"),
+            ("2026-09-13", "19:00")])
+
+    def test_other_festival_venues_remain_excluded_from_olimpico(self):
+        concert = opera_page(title="Le nozze di Figaro – Mozart",
+                             venue="Castello di Romeo di Montecchio Maggiore",
+                             genre="opera in 4 atti", composer="di W. A. MOZART",
+                             when="Venerdì 21 agosto | ore 21.00")
+        orfeo = opera_page(title="L'Orfeo – Monteverdi",
+                           venue="Villa Pisani Bonetti di Bagnolo di Lonigo",
+                           composer="di C. MONTEVERDI",
+                           when="Domenica 20 settembre | ore 17.00")
+        for html, url in ((concert, "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/"),
+                          (orfeo, "https://www.vicenzainlirica.it/lorfeo-monteverdi/")):
+            with self.subTest(url=url), self.assertRaisesRegex(ValueError, "elsewhere"):
+                parse_detail(html, url=url)
+
     def test_2027_edition_without_hardcoded_calendar_year(self):
         html=opera_page(edition="Vicenza in Lirica 2027",
                         when="Sabato 11 settembre | ore 20.30")
