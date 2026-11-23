@@ -50,11 +50,14 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.links=[];self.parts=[];self.h1=[]
         self.category_years=[]
-        self._heading=False;self._skip=0
+        self._heading=False;self._heading_offset=None;self._skip=0
     def handle_starttag(self,tag,attrs):
         if tag in ("script","style","noscript"):
             self._skip+=1
-        if tag=="h1" and not self._skip:self._heading=True
+        if tag=="h1" and not self._skip:
+            self._heading=True
+            if self._heading_offset is None:
+                self._heading_offset=len(self.parts)
         if tag=="a" and not self._skip:
             target=dict(attrs).get("href")
             if target:
@@ -65,7 +68,7 @@ class Page(HTMLParser):
                 matched=re.search(
                     r"/category/(?:vil/)?vicenza-in-lirica-(20\d{2})/?(?:[?#].*)?$",
                     target,re.I)
-                if matched:self.category_years.append(matched.group(1))
+                if matched:self.category_years.append((matched.group(1),len(self.parts)))
     def handle_endtag(self,tag):
         if tag=="h1":self._heading=False
         if tag in ("script","style","noscript"):
@@ -109,7 +112,13 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     # titles. Use only the primary production header and credits.
     header=primary[:1900]
     header_years=YEAR.findall(header[:550])
-    category_years=page.category_years
+    # WordPress often includes related articles from OTHER festival editions
+    # in the footer. Only category links adjacent to this article's heading
+    # can establish its year; a second edition elsewhere on the page must
+    # neither override nor contradict the source's production metadata.
+    heading_start=page._heading_offset if page._heading_offset is not None else begin
+    category_years=[year for year,offset in page.category_years
+                    if max(0,heading_start-30)<=offset<=begin+90]
     # Prefer edition in the original event header; otherwise its exact
     # WordPress category. When both exist they must agree.
     years=set(header_years+category_years)
