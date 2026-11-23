@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -17,6 +18,10 @@ DAILY_HEALTH = ROOT / "data/catalog-source-health.json"
 INDEX = ROOT / "data/season-index-config.json"
 INDEX_HEALTH = ROOT / "data/season-index-health.json"
 OUT = ROOT / "public/catalog/source-automation.json"
+SAN_CARLO_SECONDARY = ROOT / "data/san-carlo-secondary-health.json"
+SAN_CARLO_CANONICAL = ROOT / "data/san-carlo-canonical-review-health.json"
+SAN_CARLO_CANDIDATES = ROOT / "data/season-index-candidates.json"
+SAN_CARLO_PUBLIC = ROOT / "site/performances.json"
 
 # Explicit links between sources and venues; never match unrelated theatres
 # sharing a city, name, or festival organizer. Grouped sources are intentional.
@@ -113,8 +118,65 @@ DAILY_VENUES = {
 }
 
 
+def san_carlo_verified_fallback(secondary: dict, canonical: dict,
+                                candidates: dict, public: dict) -> dict | None:
+    """Credit the already-published two-source pipeline, never a blocked official fetch.
+
+    Require consistent checkpoint evidence AND actual canonical publication.
+    An unverified secondary page, or a successful isolated probe without
+    published recite, is insufficient to mark a venue operational.
+    """
+    if (secondary.get("schema_version") != 1
+        or secondary.get("source_key") != "napoli-san-carlo-rolling-opera"
+        or secondary.get("outcome") != "acquired_pending_primary_corroboration"
+        or secondary.get("production_count") != 10
+        or secondary.get("performance_count") != 58
+        or canonical.get("schema_version") != 1
+        or not isinstance(canonical.get("productions"), list)
+        or not isinstance(candidates.get("candidates"), list)
+        or not isinstance(public.get("performances"), list)):
+        return None
+    checked_at = secondary.get("checked_at")
+    completed_at = canonical.get("checked_at")
+    try:
+        acquisition = datetime.fromisoformat(checked_at.replace("Z", "+00:00"))
+        completed = datetime.fromisoformat(completed_at.replace("Z", "+00:00"))
+        if (acquisition.tzinfo is None or completed.tzinfo is None
+            or completed < acquisition):
+            return None
+    except (AttributeError, ValueError, TypeError):
+        return None
+    processed = canonical["productions"]
+    if (len(processed) != 10
+        or len({p.get("title") for p in processed}) != 10
+        or not all(p.get("status") == "already_processed" for p in processed)):
+        return None
+    local = [c for c in candidates["candidates"]
+             if c.get("source_key") == "napoli-san-carlo-rolling-opera"]
+    if (len(local) != 10
+        or not all(c.get("status") == "already_catalogued" for c in local)
+        or len({c.get("official_url") for c in local}) != 10):
+        return None
+    recite = [p for p in public["performances"]
+              if p.get("venue") == "Teatro di San Carlo"
+              and p.get("municipality") == "Napoli"]
+    if (len(recite) != 58
+        or len({(p.get("title"), p.get("local_date")) for p in recite}) != 58
+        or len({p.get("title") for p in recite}) != 10
+        or not all(p.get("time_known") is True for p in recite)):
+        return None
+    return {"source_key": "napoli-san-carlo-secondary-corroborated",
+            "type": "secondary_cross_source_canonical",
+            "configured": True, "last_status": "published_verified",
+            "recent_success": True, "failure_reason": None,
+            "last_attempt_at": completed_at,
+            "published_productions": 10, "published_performances": 58,
+            "direct_official_scan_verified": False}
+
+
+
 def build(directory: dict, daily: dict, daily_health: dict, index: dict,
-          index_health: dict) -> dict:
+          index_health: dict, *, san_carlo_fallback: dict | None = None) -> dict:
     venues = directory["venues"]
     profiles = {v["city"] + "|" + v["name"]: v for v in venues}
     if len(profiles) != len(venues):
@@ -156,6 +218,8 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
                                    if check.get("outcome") not in (None, "success") else None),
                 "last_attempt_at": check.get("last_attempt_at"),
             })
+    if san_carlo_fallback:
+        assignments["Napoli|Teatro di San Carlo"].append(san_carlo_fallback)
     rows = []
     for key, venue in profiles.items():
         sources = assignments[key]
@@ -187,7 +251,7 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
         "schema_version": 1,
         "reviewed_on": directory.get("reviewed_on"),
         "scope": "structured_venue_directory",
-        "definition": "Operational means at least one explicitly mapped approved source with a successful latest scan; does not imply an exhaustive season.",
+        "definition": "Operational means a successful approved scan, or a source-specific corroborated acquisition whose exact performances are already published and verified; this does not mean a blocked official site became accessible or an exhaustive future season.",
         "total_venues": len(rows),
         "operational": counts["operational"],
         "configured_not_operational": counts["configured_not_operational"],
@@ -200,8 +264,15 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
 def publish(check: bool = False) -> dict:
     def read(path):
         return json.loads(path.read_text(encoding="utf-8"))
+    fallback = None
+    if all(p.exists() for p in (SAN_CARLO_SECONDARY, SAN_CARLO_CANONICAL,
+                                SAN_CARLO_CANDIDATES, SAN_CARLO_PUBLIC)):
+        fallback = san_carlo_verified_fallback(
+            read(SAN_CARLO_SECONDARY), read(SAN_CARLO_CANONICAL),
+            read(SAN_CARLO_CANDIDATES), read(SAN_CARLO_PUBLIC))
     report = build(read(DIRECTORY), read(DAILY), read(DAILY_HEALTH),
-                   read(INDEX), read(INDEX_HEALTH))
+                   read(INDEX), read(INDEX_HEALTH),
+                   san_carlo_fallback=fallback)
     serialized = (json.dumps(report, ensure_ascii=False, sort_keys=True,
                              separators=(",", ":")) + "\n").encode("utf-8")
     if check:
