@@ -45,3 +45,16 @@ python -m unittest tests.test_audit_2026_sources -v
 Lo strumento consulta soltanto `venue-directory.json`, `season-index-config.json` e `season-index-health.json` e produce candidati di fonte per sede con corrispondenza **esatta** del dominio ufficiale. Un successo di scansione non certifica il calendario 2026; corrispondenze condivise fra sedi non sono attribuzioni approvate. I domini non corrispondenti restano da esaminare e le fonti storiche non vengono inventate.
 
 Lo scopo è preparare la verifica delle fonti ufficiali senza alterare il processo di acquisizione in produzione. I due report sono indipendenti e non sono ancora collegati alla dashboard pubblicata.
+
+## Pipeline diagnostica indipendente
+
+La workflow `.github/workflows/audit-recite-2026.yml` esegue i test e genera due file distinti:
+
+- `public/diagnostics/atlas-recite-2026.json` (matrice sedi × mesi).
+- `public/diagnostics/atlas-2026-sources.json` (fonti-indice candidate da verificare).
+
+Ogni PR che modifica i file pertinenti esegue la sola generazione e carica un artefatto Actions, **senza modificare il repository**. Dopo il merge in `main`, l'esecuzione manuale o il job del lunedì pubblicano esclusivamente questi due JSON con una commit separata. Il job non effettua chiamate di rete a siti teatrali né pubblica recite; in caso di push non fast-forward interrompe senza forzare o fare rebase. Non sono garantiti i dati live finché la workflow non sarà stata eseguita con successo.
+
+**Attenzione all'integrazione:** l'attuale workflow generale `refresh-catalog.yml` intercetta anche modifiche a `scripts/**`. Valutare separatamente il suo trigger prima di un merge, per evitare un refresh nazionale non necessario; non alterare la pipeline in questa PR. I JSON diagnostici non devono essere caricati dal frontend pubblico né trattati come un nuovo manifesto editoriale.
+
+L'integrazione visiva nella dashboard di controllo va verificata dopo che i due feed risultano pubblicati. La sola presenza dei report non conferma alcuna copertura storica.
