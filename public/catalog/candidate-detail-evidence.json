@@ -4111,8 +4111,8 @@
       "candidate_id": "oa-index-7f7fc1d9df69f1a3cd53",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/il-viaggio-a-reims/",
-      "content_sha256": "04c871d3aa26ec1f58abbef0ab15d332bb7256a578d8f9d3abb7cce808833fcc",
-      "checked_at": "2026-11-23T01:57:32+00:00",
+      "content_sha256": "b6852e5abdaa01d971acb2054e058c1e0e0742dcc1bfdb9411c7b0ce2c6e883b",
+      "checked_at": "2026-11-23T07:23:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5447,8 +5447,8 @@
       "candidate_id": "oa-index-a0c534fc596dea327ad4",
       "source_key": "sabbioneta-antica-rolling-opera",
       "source_url": "https://sabbionetaoperafestival.it/evento/gran-concerto-di-natale/",
-      "content_sha256": "60f76715a531345c2bce6eac6929e61bbc49762b21b3ab4730fa2d3eab8187bd",
-      "checked_at": "2026-11-23T01:57:36+00:00",
+      "content_sha256": "500e3a1995fdf8c07f5c603f54ed166c2f5f3a414cdab46eb58a73cc42a197c5",
+      "checked_at": "2026-11-23T07:23:51+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6137,8 +6137,8 @@
       "candidate_id": "oa-index-b4ae738f2728d4430578",
       "source_key": "pesaro-rof-2026",
       "source_url": "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/",
-      "content_sha256": "0e8bf7d0dfd50e0d104ad6f5e62e98ed0e54690254dcf798231e851d1eca42c9",
-      "checked_at": "2026-11-23T01:59:18+00:00",
+      "content_sha256": "36b9c28387e64d8361fbef72a9003fda73a84ea4a9bd2e8061642fbedb1e5d97",
+      "checked_at": "2026-11-23T07:25:37+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
