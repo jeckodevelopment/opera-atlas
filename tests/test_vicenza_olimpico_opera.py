@@ -72,6 +72,25 @@ class VicenzaOlimpicoOfficialSource(unittest.TestCase):
                 "<html>",'<html><a href="/category/press2026/">Vicenza in Lirica 2026</a>'),
                 url=BARBIERE)
 
+    def test_real_wordpress_nested_festival_category_supplies_year(self):
+        # The live WordPress category URL is /category/vil/vicenza-in-lirica-2026/
+        # rather than the older flat path supported by the parser.
+        html=opera_page(edition="").replace(
+            "<html>",
+            '<html><a href="https://www.vicenzainlirica.it/category/vil/vicenza-in-lirica-2026/">Vicenza in Lirica 2026</a>')
+        self.assertEqual(parse_detail(html,url=BARBIERE)[3][0],
+                         ("2026-09-10","20:30"))
+        with self.assertRaisesRegex(ValueError,"conflicting"):
+            parse_detail(opera_page().replace(
+                "<html>",
+                '<html><a href="/category/vil/vicenza-in-lirica-2027/">Vicenza in Lirica 2027</a>'),
+                url=BARBIERE)
+        with self.assertRaisesRegex(ValueError,"year"):
+            parse_detail(opera_page(edition="").replace(
+                "<html>",
+                '<html><a href="/category/vil/press-2026/">Vicenza in Lirica 2026</a>'),
+                url=BARBIERE)
+
     def test_2027_edition_without_hardcoded_calendar_year(self):
         html=opera_page(edition="Vicenza in Lirica 2027",
                         when="Sabato 11 settembre | ore 20.30")
