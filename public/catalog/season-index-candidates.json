@@ -845,7 +845,7 @@
       "id": "oa-index-3d94833841692871c0a4",
       "source_key": "vicenza-olimpico-rolling-opera",
       "official_url": "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T13:50:17+00:00"
     },
