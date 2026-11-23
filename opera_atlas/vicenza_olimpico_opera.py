@@ -155,6 +155,14 @@ def parse_detail(html:str,*,url:str,
     # titles. Use only the primary production header and credits.
     header=primary[:1900]
     header_years=YEAR.findall(header[:550])
+    # The festival homepage menu can be injected after the article heading,
+    # with a chronological archive (2017, 2018, ...). A run of several
+    # different festival years cannot be *this production's* edition.
+    # Discard this navigation-derived signal, never its first-party showtimes.
+    # The strict category check or exact ticket-office corroboration still
+    # has to independently supply one consistent edition.
+    if len(set(header_years))>=4:
+        header_years=[]
     # WordPress often includes related articles from OTHER festival editions
     # in the footer. Only category links adjacent to this article's heading
     # can establish its year; a second edition elsewhere on the page must
