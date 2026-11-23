@@ -39,7 +39,7 @@ function mapRows(cat){
    const s=staging.get(p.staging_id);if(!s)continue;
    const w=work.get(s.work_id),v=venue.get(s.venue_id);
    if(!w||!v||!/^\d{4}-\d{2}-\d{2}$/.test(p.local_date||""))continue;
-   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:v.region||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,stagingId:s.id});
+   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:v.region||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,venue:v.display_name||v.name||"Sede non indicata",stagingId:s.id});
  }
  return out;
 }
@@ -85,12 +85,54 @@ function drawMonths(selected,year){
  text($("months-caption"),caption+" · Solo recite rilevate: zero non equivale ad assenza di attività.");
 }
 
+const WEEKDAYS=["Lun","Mar","Mer","Gio","Ven","Sab","Dom"];
+function groupedCounts(records,keyFn){
+ const groups=new Map();
+ for(const row of records){const [key,label]=keyFn(row);if(!key)continue;
+  const prev=groups.get(key);if(prev)prev.count++;else groups.set(key,{name:label,count:1});
+ }
+ return [...groups.values()].sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name,"it")).map(item=>[item.name,item.count]);
+}
+function ranked(id,records,limit=10){
+ const root=$(id);root.replaceChildren();
+ for(const [name,n] of records.slice(0,limit)){
+  const item=document.createElement("li"),label=document.createElement("span"),count=document.createElement("span");
+  label.textContent=name;count.textContent=fmt.format(n)+" recite";
+  item.append(label,count);root.append(item);
+ }
+ if(records.length===0){const empty=document.createElement("li");empty.className="rank-empty";empty.textContent="Nessun dato nel campione selezionato.";root.append(empty)}
+}
+function renderInsights(selected){
+ const weekdays=Array(7).fill(0);
+ for(const r of selected){
+  const [y,m,d]=r.date.split("-").map(Number);
+  const index=(new Date(Date.UTC(y,m-1,d)).getUTCDay()+6)%7;
+  weekdays[index]++;
+ }
+ const weekCounts=WEEKDAYS.map((name,index)=>[name,weekdays[index]]);
+ // bars normalizes against the maximum even when the input is chronological.
+ bars("weekday-chart",weekCounts,7);
+ ranked("venue-ranking",groupedCounts(selected,r=>[r.venueId,r.venue]));
+ const diversity=new Map();
+ for(const row of selected){
+  if(!diversity.has(row.region))diversity.set(row.region,new Set());
+  diversity.get(row.region).add(row.workId);
+ }
+ const diverse=[...diversity].map(([region,ids])=>[region,ids.size])
+  .sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"it"));
+ bars("diversity-chart",diverse,20);
+ ranked("regional-works",groupedCounts(selected,r=>[JSON.stringify([r.region,r.workId]),r.work+" · "+r.region]));
+ ranked("regional-composers",groupedCounts(selected,r=>r.composer==="Non indicato"?[null,null]:[JSON.stringify([r.region,r.composer]),r.composer+" · "+r.region]));
+ ranked("staging-ranking",groupedCounts(selected,r=>[r.stagingId,r.work+" · "+r.venue+" · "+r.season]));
+}
+
 function render(){
  const year=$("year").value, season=$("season").value, region=$("region").value;
  const selected=rows.filter(r=>(year==="all"||r.year===year)&&(season==="all"||r.season===season)&&(region==="all"||r.region===region));
  const countUnique=f=>count(selected.map(f));
  for(const [id,n] of [["k-perfs",selected.length],["k-venues",countUnique(x=>x.venueId)],["k-works",countUnique(x=>x.workId)],["k-stagings",countUnique(x=>x.stagingId)]])text($(id),fmt.format(n));
  drawMonths(selected,year);
+ renderInsights(selected);
  const works=frequencies(selected.map(r=>r.work));
  bars("regions",frequencies(selected.map(r=>r.region)),20);
  bars("seasons",frequencies(selected.map(r=>r.season)).sort((a,b)=>a[0].localeCompare(b[0])),20);

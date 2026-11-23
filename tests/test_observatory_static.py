@@ -45,6 +45,24 @@ class ObservatoryStaticTests(unittest.TestCase):
         self.assertIn('drawMonths(selected,year)', js)
         self.assertIn('.toolbar{gap:12px;', css)
 
+    def test_insights_use_canonical_ids_and_active_filters(self):
+        html = (ROOT / "observatory/index.html").read_text(encoding="utf-8")
+        js = (ROOT / "observatory/app.js").read_text(encoding="utf-8")
+        css = (ROOT / "observatory/styles.css").read_text(encoding="utf-8")
+        for identifier in ("weekday-chart", "venue-ranking", "diversity-chart",
+                           "regional-works", "regional-composers", "staging-ranking"):
+            self.assertIn('id="' + identifier + '"', html)
+            self.assertIn('"' + identifier + '"', js)
+        self.assertIn("renderInsights(selected)", js)
+        self.assertIn("new Date(Date.UTC(y,m-1,d)).getUTCDay()", js)
+        self.assertIn("r.venueId,r.venue", js)
+        self.assertIn("r.stagingId,r.work", js)
+        self.assertIn("diversity.get(row.region).add(row.workId)", js)
+        self.assertIn("JSON.stringify([r.region,r.workId])", js)
+        self.assertIn("JSON.stringify([r.region,r.composer])", js)
+        self.assertIn(".insight-grid{display:grid;", css)
+        self.assertNotIn("Prime e ultime date", html)
+
     def test_logo_and_isolated_deployment(self):
         logo = (ROOT / "observatory/opera-plus-logo.svg").read_text(encoding="utf-8")
         self.assertIn('viewBox="0 0 250 117"', logo)

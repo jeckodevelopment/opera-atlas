@@ -11,6 +11,17 @@ Non si pubblicano stime di spettatori, percentuali nazionali né distribuzioni p
 - I filtri Anno solare, Stagione e Territorio rimangono nella stessa barra su desktop; a larghezza ridotta vanno a capo per evitare sovrapposizioni. Il pulsante di esportazione CSV è in alto a destra nell'header e usa esattamente gli stessi filtri attivi.
 - Analisi future possibili con i dati v2: giorno della settimana, sedi più attive, varietà del repertorio regionale, recite per allestimento. Non si costruiscono KPI di capienza, pubblico, incassi o copertura nazionale senza fonti adeguate.
 
+## Analisi dettagliate (stessi tre filtri globali)
+Sei pannelli aggiuntivi sono calcolati esclusivamente sulle recite filtrate presenti nel catalogo canonico:
+- Giorno della settimana: dalla `performances.local_date` in calendario civile, lunedì–domenica, senza conversioni timezone.
+- Sedi più attive: numero di recite per `venues.id` (non ricavi o pubblico). La dicitura in pagina precisa che sono **recite rilevate**.
+- Diversità regionale del repertorio: cardinalità dei `works.id` distinti per `venues.region`, non numero di repliche.
+- Opere per regione: quantità di recite per coppia `(works.id, venues.region)`; titoli identici ma opere canoniche diverse rimangono distinti.
+- Compositori per regione: quantità di recite per coppia `(composer, venues.region)`; autori non indicati esclusi dalla graduatoria.
+- Recite per allestimento: quantità di recite per `stagings.id`; più fonti sulla stessa recita non aumentano il conteggio.
+
+Tutti i pannelli usano la stessa intersezione Anno solare / Stagione / Territorio dei KPI e del CSV. Non si inseriscono date di inizio/fine rilevate come ulteriori KPI. I limiti di copertura e gli eventi non ancora acquisiti valgono anche per queste classifiche.
+
 ## Collaudi separati
 - Controllare caricamento dati con manifest valido e indisponibilità della sorgente: nessuna statistica fittizia.
 - Filtrare per stagione e regione; verificare i quattro indicatori, barre e classifiche.
