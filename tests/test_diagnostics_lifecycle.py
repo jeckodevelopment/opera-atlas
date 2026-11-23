@@ -44,7 +44,7 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         ):
             self.assertIn(feed, self.source)
         self.assertIn("Promise.allSettled", self.source)
-        self.assertIn("Dati non disponibili", self.source)
+        self.assertIn("Caricamento incompleto", self.source)
         self.assertIn("catalog_release_sha256", self.source)
 
     def test_editorial_and_technical_states_are_not_conflated(self):
