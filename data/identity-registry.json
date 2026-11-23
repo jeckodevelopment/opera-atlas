@@ -764,6 +764,13 @@
       "title": "Magic Words Circus",
       "composer": "Orazio Sciortino",
       "authority_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/"
+    },
+    "la favola di orfeo|alfredo casella": {
+      "id": "oa-w-000120",
+      "slug": "la-favola-di-orfeo",
+      "title": "La favola di Orfeo",
+      "composer": "Alfredo Casella",
+      "authority_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
     }
   },
   "venues": {
@@ -3439,6 +3446,14 @@
       "venue_id": "oa-v-000064",
       "slug": "magic-words-circus",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
+      "season": "2026"
+    },
+    "auto-ff9fb11ad20bd9d7": {
+      "id": "oa-s-000279",
+      "work_id": "oa-w-000120",
+      "venue_id": "oa-v-000058",
+      "slug": "la-favola-di-orfeo",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
       "season": "2026"
     }
   },
@@ -9737,6 +9752,30 @@
       "staging_id": "oa-s-000278",
       "original_date": "2026-09-26",
       "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/"
+    },
+    "auto-ff9fb11ad20bd9d7|2026-07-14": {
+      "id": "oa-r-001077",
+      "staging_id": "oa-s-000279",
+      "original_date": "2026-07-14",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+    },
+    "auto-ff9fb11ad20bd9d7|2026-07-26": {
+      "id": "oa-r-001078",
+      "staging_id": "oa-s-000279",
+      "original_date": "2026-07-26",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+    },
+    "auto-ff9fb11ad20bd9d7|2026-07-29": {
+      "id": "oa-r-001079",
+      "staging_id": "oa-s-000279",
+      "original_date": "2026-07-29",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+    },
+    "auto-ff9fb11ad20bd9d7|2026-08-01": {
+      "id": "oa-r-001080",
+      "staging_id": "oa-s-000279",
+      "original_date": "2026-08-01",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
     }
   },
   "reserved_works": {

@@ -7113,6 +7113,33 @@
           "19:00"
         ]
       ]
+    },
+    {
+      "key": "auto-ff9fb11ad20bd9d7",
+      "title": "La favola di Orfeo",
+      "composer": "Alfredo Casella",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "dates": [
+        [
+          "2026-07-14",
+          "21:00"
+        ],
+        [
+          "2026-07-26",
+          "21:00"
+        ],
+        [
+          "2026-07-29",
+          "21:00"
+        ],
+        [
+          "2026-08-01",
+          "21:00"
+        ]
+      ]
     }
   ]
 }

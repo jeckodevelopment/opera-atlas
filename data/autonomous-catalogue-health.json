@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "new_stagings": 0,
-  "new_recite": 0,
+  "new_stagings": 1,
+  "new_recite": 4,
   "consolidated_stagings": 0,
   "auto_skipped": [
     {
@@ -23,17 +23,9 @@
       "title": "Pagliacci",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
-    },
-    {
-      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "reason": "verified_work_image_missing"
-    },
-    {
-      "candidate_id": "oa-index-ff9fb11ad20bd9d779b3",
-      "reason": "unknown_work_needs_authority_data"
     }
   ],
-  "new_works": 0,
+  "new_works": 1,
   "enriched_recite_times": 0,
   "normalized_work_titles": 0
 }

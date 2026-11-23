@@ -1,35 +1,17 @@
 {
   "checked_at": "2026-11-23T18:37:54+00:00",
-  "groups": [
-    {
-      "candidate_ids": [
-        "oa-index-ff9fb11ad20bd9d779b3"
-      ],
-      "category": "new_work_candidate",
-      "composer": "Alfredo Casella",
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 4,
-      "sources": [
-        {
-          "source_key": "martina-valle-itria-2026",
-          "url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
-        }
-      ],
-      "title": "La favola di Orfeo"
-    }
-  ],
+  "groups": [],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 1,
+    "candidates_checked": 0,
     "candidates_without_facts": 0,
-    "facts_examined": 4,
+    "facts_examined": 0,
     "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 4,
-    "unmatched_groups": 1
+    "unmatched_facts": 0,
+    "unmatched_groups": 0
   },
   "truncated": false
 }

@@ -578,6 +578,24 @@
       ]
     },
     {
+      "id": "curated:auto-ff9fb11ad20bd9d7:2026-07-14",
+      "starts_at": "2026-07-14T21:00:00+02:00",
+      "local_date": "2026-07-14",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La favola di Orfeo",
+      "composer": "Alfredo Casella",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+      ]
+    },
+    {
       "id": "curated:auto-86855eb33828e6cd:2026-07-17",
       "starts_at": "2026-07-17T22:00:00+02:00",
       "local_date": "2026-07-17",
@@ -686,6 +704,24 @@
       ]
     },
     {
+      "id": "curated:auto-ff9fb11ad20bd9d7:2026-07-26",
+      "starts_at": "2026-07-26T21:00:00+02:00",
+      "local_date": "2026-07-26",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La favola di Orfeo",
+      "composer": "Alfredo Casella",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+      ]
+    },
+    {
       "id": "curated:auto-d57d2a1cbc3f370f:2026-07-27",
       "starts_at": "2026-07-27T21:00:00+02:00",
       "local_date": "2026-07-27",
@@ -719,6 +755,24 @@
       "longitude": null,
       "sources": [
         "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:auto-ff9fb11ad20bd9d7:2026-07-29",
+      "starts_at": "2026-07-29T21:00:00+02:00",
+      "local_date": "2026-07-29",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La favola di Orfeo",
+      "composer": "Alfredo Casella",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
       ]
     },
     {
@@ -791,6 +845,24 @@
       "longitude": null,
       "sources": [
         "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-elisir-d-amore/"
+      ]
+    },
+    {
+      "id": "curated:auto-ff9fb11ad20bd9d7:2026-08-01",
+      "starts_at": "2026-08-01T21:00:00+02:00",
+      "local_date": "2026-08-01",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "La favola di Orfeo",
+      "composer": "Alfredo Casella",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "municipality": "Martina Franca",
+      "region": "Puglia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
       ]
     },
     {

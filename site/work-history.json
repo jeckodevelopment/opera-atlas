@@ -1109,6 +1109,16 @@
         "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/magic-words-circus/",
         "https://www.lugliomusicale.it/it/teatro-news/al-luglio-musicale-trapanese-le-parole-salgono-in-pista-debutta-in-prima-assoluta-magic-words-circus/"
       ]
+    },
+    "la-favola-di-orfeo": {
+      "librettist": "Agnolo Poliziano, testo ridotto da Corrado Pavolini",
+      "premiere_year": 1932,
+      "premiere_venue": "Teatro Goldoni",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/la-favola-di-orfeo/",
+        "https://www.festivaldellavalleditria.it/programma-2026"
+      ]
     }
   },
   "works_by_id": {
