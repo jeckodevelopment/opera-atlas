@@ -65,6 +65,12 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn("last_attempt_at", self.source)
         self.assertIn("failure_reason", self.source)
 
+    def test_null_city_and_venue_labels_are_safe_for_sorting(self):
+        # Directory and recite records may legitimately omit these labels.
+        self.assertIn('String(a.city??"").localeCompare(String(b.city??""),"it")', self.source)
+        self.assertIn('String(a.venue??"").localeCompare(String(b.venue??""),"it")', self.source)
+        self.assertNotIn('a.city.localeCompare(b.city', self.source)
+
     def test_no_false_global_completion_percentage(self):
         self.assertIn("non garantisce", self.source)
         self.assertIn("Non misurato", self.source)
