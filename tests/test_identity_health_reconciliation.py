@@ -49,6 +49,16 @@ class IdentityHealthReconciliationTests(unittest.TestCase):
         self.assertEqual(reconcile_published_outcomes(
             {"candidates":[candidate]},prior,self.reg),prior)
 
+    def test_catalogued_without_exact_stage_gets_separate_diagnostic(self):
+        health={"schema_version":1,"outcomes":[{
+            "candidate_id":"known","status":"awaiting_official_identity_evidence"}]}
+        candidates={"schema_version":1,"candidates":[{
+            "id":"known","source_key":"one","official_url":"https://opera.example.org/old",
+            "status":"already_catalogued"}]}
+        observed=reconcile(health,candidates,self.reg)["outcomes"][0]
+        self.assertEqual(observed["status"],"catalogued_source_link_unverified")
+        self.assertNotIn("work_id",observed)
+
     def test_idempotent_health_snapshot(self):
         input_data={"schema_version":1,"checked_at":"2026-11-23T13:18:25+00:00",
                     "outcomes":[{"candidate_id":"excluded",
@@ -72,6 +82,8 @@ class IdentityHealthReconciliationTests(unittest.TestCase):
                 self.assertEqual(status["status"],by_id[status["candidate_id"]])
             if status["status"]=="awaiting_official_identity_evidence":
                 self.assertEqual(by_id.get(status["candidate_id"]),"needs_review")
+            if status["status"]=="catalogued_source_link_unverified":
+                self.assertEqual(by_id.get(status["candidate_id"]),"already_catalogued")
 
 
 if __name__=="__main__":
