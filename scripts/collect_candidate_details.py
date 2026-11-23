@@ -1696,8 +1696,25 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                 if len(identities)==1:
                     from scripts.publish_work_posters import extract_official_poster
                     title=facts[0].get("event_title","")
+                    # Only a dedicated, unique official work detail may use
+                    # its first-party image ALT when media names are opaque.
+                    # Shared calendars/programs cannot claim a poster for
+                    # one of several compositions.
+                    same_url=[c for c in candidates.get("candidates",[])
+                              if c.get("official_url")==item["official_url"]
+                              and c.get("source_key")==item["source_key"]]
+                    path=urlsplit(item["official_url"]).path.rstrip("/").lower()
+                    dedicated=(len(same_url)==1
+                               and bool(path)
+                               and not any(token in path.split("/")[-1]
+                                           for token in ("stagione-","programma-",
+                                                         "calendario-","season-"))
+                               and all(isinstance(x.get("composer"),str)
+                                       and x["composer"].strip() for x in facts))
                     if isinstance(title,str) and title.strip():
-                        image=extract_official_poster(page.html,item["official_url"],title)
+                        image=extract_official_poster(
+                            page.html,item["official_url"],title,
+                            verified_event_page=dedicated)
                     # Jesi publishes several independent operas on one
                     # season page; its exact same-origin event page may be
                     # the only source of authenticated work-specific artwork.
