@@ -554,13 +554,16 @@ async function initialize() {
         no_city_fallback:!!selected.venue
       };
       const figure=node("figure","theatre-cover-figure");
-      figure.append(editorialImage("venue",venueImageEvent));
-      const photoSource=venueImageEvent.photo_source_url;
+      const venuePicture=editorialImage("venue",venueImageEvent);
+      figure.append(venuePicture);
+      const photoSource=venueImageEvent.photo_url && venuePicture?.src===venueImageEvent.photo_url
+        ? venueImageEvent.photo_source_url : null;
       if(photoSource && safeSource(photoSource)){
         const caption=node("figcaption","work-image-credit");
         const attribution=link(venueImageEvent.photo_credit || "Fotografia del teatro · autore e licenza",photoSource,"");
         attribution.target="_blank";attribution.rel="noopener noreferrer";
         caption.append(attribution);figure.append(caption);
+        venuePicture.addEventListener("error",()=>{caption.remove();},{once:true});
       }
       content.prepend(figure);
     }
