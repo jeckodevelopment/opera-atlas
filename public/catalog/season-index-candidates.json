@@ -693,7 +693,7 @@
       "id": "oa-index-34af45b22fceed456f7a",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/consiglio-di-amministrazione/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -757,7 +757,7 @@
       "id": "oa-index-36b53e4041c64c8a911e",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/atti/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -773,7 +773,7 @@
       "id": "oa-index-3849d460e19f28b1f521",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/sostieni/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -789,7 +789,7 @@
       "id": "oa-index-3a6cc7558e09a14fd125",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/soci/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -853,7 +853,7 @@
       "id": "oa-index-3ecfe7d7bdd94b368b17",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/statuto/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1021,7 +1021,7 @@
       "id": "oa-index-500e9884a92f80dc40b2",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/gallery/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1797,7 +1797,7 @@
       "id": "oa-index-8c7c9bba764ef990b57f",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/cookie-policy/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -1909,7 +1909,7 @@
       "id": "oa-index-96bd27dcacd944c3132b",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/chi-siamo/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2069,7 +2069,7 @@
       "id": "oa-index-9def1982acf118006315",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/bandi-e-gare/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2109,7 +2109,7 @@
       "id": "oa-index-9f64979fd885ec3362de",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/press/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2181,7 +2181,7 @@
       "id": "oa-index-a2e0dc321ef77a3c4702",
       "source_key": "cosenza-inprimafila-rolling-opera",
       "official_url": "https://www.inprimafila.net/index.php/eventi/capodanno-2027-tributo-vasco-synphony-cosenza",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2357,7 +2357,7 @@
       "id": "oa-index-af0e3987833a7ea8c756",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/contattaci/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2589,7 +2589,7 @@
       "id": "oa-index-bfec20dc1b5b41bc4c7b",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/luoghi/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -2869,7 +2869,7 @@
       "id": "oa-index-d8a79834466679cb0d45",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/media/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3029,7 +3029,7 @@
       "id": "oa-index-e08b824d1acd0deb4579",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/enrico-castiglione-conquista-new-york-con-la-sua-carmen-standing-ovation-tra-i-grattacieli-di-manhattan/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3069,7 +3069,7 @@
       "id": "oa-index-e1e59d662e27c6b8340a",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/complessi-artistici/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
@@ -3117,7 +3117,7 @@
       "id": "oa-index-e67d0ca2da9deecd17a7",
       "source_key": "taormina-opera-festival-rolling",
       "official_url": "https://www.taorminaoperafestival.org/amministrazione-trasparente/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-22T22:26:09+00:00",
       "last_seen": "2026-11-23T01:37:09+00:00"
     },
