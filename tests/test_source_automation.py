@@ -159,6 +159,32 @@ class SourceAutomationTests(unittest.TestCase):
                          "parser_or_source_validation_failed")
         self.assertEqual(report["total"],len(index["sources"]))
 
+    def test_unpublished_venue_alternative_is_not_catalogued(self):
+        from scripts.source_automation import INDEX, CANDIDATE_REGISTRY, scan_attention
+        import json
+        index=json.loads(INDEX.read_text())
+        candidates=json.loads(CANDIDATE_REGISTRY.read_text())
+        checks={"sources":[
+            {"key":key,"status":"success","current_scan_verified":True}
+            for key in ("cosenza-inprimafila-rolling-opera",
+                        "taormina-opera-festival-rolling",
+                        "rovigo-regione-programma-2026-27",
+                        "modena-teatro-opera-2026-27")]}
+        report=scan_attention(index,checks,candidates=candidates)
+        by_key={x["source_key"]:x for x in report["sources"]}
+        for key in ("cosenza-rendano-rolling-opera",
+                    "taormina-fondazione-rolling-opera",
+                    "rovigo-sociale-opera-2026-27"):
+            x=by_key[key]
+            self.assertTrue(x["has_healthy_alternative"],key)
+            self.assertFalse(x["has_catalogued_alternative"],key)
+            self.assertEqual(x["other_successful_catalogued_sources"],[])
+        modena=by_key["modena-opera-2026-27"]
+        self.assertTrue(modena["has_catalogued_alternative"])
+        self.assertEqual(modena["other_successful_catalogued_sources"],
+                         ["modena-teatro-opera-2026-27"])
+        self.assertGreater(report["sources_with_unresolved_candidates"],0)
+
     def test_scan_yield_distinguishes_successful_crawl_from_publication(self):
         from scripts.source_automation import INDEX, scan_attention, CANDIDATE_REGISTRY
         import json
