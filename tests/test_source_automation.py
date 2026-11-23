@@ -273,7 +273,9 @@ class SourceAutomationTests(unittest.TestCase):
             self.assertEqual(yield_["total"],sum(yield_[k] for k in (
                 "already_catalogued","needs_review","excluded_nonopera",
                 "not_in_official_season")))
-            self.assertGreater(yield_["needs_review"],0)
+            # A fully reconciled source may have no pending candidates.
+            self.assertGreater(yield_["total"],0)
+            self.assertGreaterEqual(yield_["needs_review"],0)
         san=by_key["napoli-san-carlo-rolling-opera"]["candidate_yield"]
         self.assertEqual(san["already_catalogued"],10)
         self.assertEqual(san["needs_review"],0)
