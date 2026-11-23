@@ -92,6 +92,31 @@ class CosenzaTicketFallback(unittest.TestCase):
         self.assertEqual(len(rows),5)
         self.assertTrue(all("10:00" not in str(r) for r in rows))
 
+    def test_collect_routes_cosenza_through_strict_official_parser(self):
+        from datetime import date
+        from opera_atlas.controlled_fetch import FetchResult
+        from scripts.collect_candidate_details import collect
+        rows={"schema_version":1,"candidates":[{
+            "id":"test-cosenza-mere","source_key":KEY,"official_url":MERE,
+            "status":"needs_review"}]}
+        def source_fetch(db,*,source_id,url,network_enabled):
+            self.assertEqual(url,MERE)
+            return FetchResult(url,milhaud(),"a"*64,100)
+        evidence,health=collect(rows,{"schema_version":1,"evidence":[]},
+                                network_enabled=True,fetcher=source_fetch,
+                                today=date(2026,11,23))
+        self.assertEqual(health[0]["outcome"],"facts_found",health)
+        facts=evidence["evidence"][0]["event_facts"]
+        self.assertEqual(len(facts),1)
+        self.assertEqual(facts[0]["event_title"],"La mère coupable")
+        self.assertEqual(facts[0]["composer"],"Darius Milhaud")
+        self.assertEqual(facts[0]["starts_at"],"2026-12-19T20:30:00+01:00")
+        # The mixed source must never promote an unrelated play/ballet.
+        with self.assertRaises(AssertionError):
+            self.assertEqual(parse_source_credited_opera_detail(
+                KEY,MERE,milhaud().replace("Teatro A.Rendano - Cosenza",
+                                          "Altro teatro")),facts)
+
     def test_future_edition_does_not_depend_on_2026(self):
         html=mozart(when="Venerdi 11 Dicembre Ore 20.30 - Domenica 13 Dicembre 2027 Ore 17.00")
         self.assertEqual([day for day,_ in parse_detail(html,url=NOZZE)[3]],
