@@ -296,7 +296,7 @@
         "Distribuzione delle recite e delle opere distinte nelle regioni presenti nel campione.");
       p.text("RECITE PER REGIONE",L,196,11,"bold",BURGUNDY);
       p.bars(s.regions,L,226,CW,{limit:10,step:32,labelWidth:143});
-      p.text("VARIETA DEL REPERTORIO",L,606,11,"bold",BURGUNDY);
+      p.text("VARIETÀ DEL REPERTORIO",L,606,11,"bold",BURGUNDY);
       p.paragraph("Opere canoniche differenti, indipendentemente dal numero di repliche.",L,628,CW,10,15,MUTED,2);
       p.bars(s.varied.slice(0,3),L,666,CW,{limit:3,step:30,labelWidth:143,barColor:GOLD});
     });
@@ -304,18 +304,18 @@
     page(doc,"Citta e teatri",6,p=>{
       p.section("05 / GEOGRAFIA","Le sedi dell'attività operistica",
         "Graduatorie basate esclusivamente sulle rappresentazioni pubblicate in Atlas.");
-      p.text("CITTA CON PIU RECITE RILEVATE",L,206,13,"bold",BURGUNDY);
+      p.text("CITTÀ CON PIÙ RECITE RILEVATE",L,206,13,"bold",BURGUNDY);
       p.bars(s.cities,L,242,CW,{limit:7,step:37,labelWidth:171});
-      p.text("TEATRI E SEDI CON PIU RECITE",L,553,13,"bold",BURGUNDY);
+      p.text("TEATRI E SEDI CON PIÙ RECITE",L,553,13,"bold",BURGUNDY);
       p.bars(s.venues,L,591,CW,{limit:5,step:32,labelWidth:177,barColor:GOLD});
     });
     // 07 - repertoire
     page(doc,"Il repertorio",7,p=>{
       p.section("06 / REPERTORIO","Opere e compositori",
         "Il numero di rappresentazioni non è sinonimo di varietà del repertorio.");
-      p.text("OPERE CON PIU RECITE",L,207,13,"bold",BURGUNDY);
+      p.text("OPERE CON PIÙ RECITE",L,207,13,"bold",BURGUNDY);
       p.bars(s.works,L,245,CW,{limit:9,step:33,labelWidth:178});
-      p.text("COMPOSITORI CON PIU RECITE",L,577,13,"bold",BURGUNDY);
+      p.text("COMPOSITORI CON PIÙ RECITE",L,577,13,"bold",BURGUNDY);
       p.bars(s.composers,L,614,CW,{limit:5,step:32,labelWidth:178,barColor:GOLD});
     });
     // 08 - circulation
@@ -326,7 +326,7 @@
       p.rect(L,y,CW,33,NAVY);
       p.text("OPERA",L+11,y+10,9,"bold",WHITE);
       p.text("SEDI",W-R-142,y+10,9,"bold",WHITE);
-      p.text("CITTA",W-R-98,y+10,9,"bold",WHITE);
+      p.text("CITTÀ",W-R-98,y+10,9,"bold",WHITE);
       p.text("REG.",W-R-44,y+10,9,"bold",WHITE);
       s.circulation.slice(0,12).forEach((w,i)=>{
         const yy=y+34+i*38;
@@ -337,7 +337,7 @@
         p.text(String(w.cities.size),W-R-85,yy+12,10,"bold",INK);
         p.text(String(w.regions.size),W-R-32,yy+12,10,"bold",INK);
       });
-      p.paragraph("Ogni opera e identificata dal suo ID canonico: repliche e fonti diverse nella stessa sede non aumentano la diffusione geografica.",
+      p.paragraph("Ogni opera è identificata dal suo ID canonico: repliche e fonti diverse nella stessa sede non aumentano la diffusione geografica.",
         L,721,CW,9,14,MUTED,4);
     });
     // 09 - premieres
@@ -370,7 +370,7 @@
     page(doc,"Allestimenti e rarita",10,p=>{
       p.section("09 / APPROFONDIMENTI","Allestimenti e titoli meno frequenti",
         "La stessa opera può avere allestimenti distinti e numeri di repliche differenti.");
-      p.text("ALLESTIMENTI CON PIU RECITE",L,210,12,"bold",BURGUNDY);
+      p.text("ALLESTIMENTI CON PIÙ RECITE",L,210,12,"bold",BURGUNDY);
       p.bars(s.staging,L,243,CW,{limit:8,step:36,labelWidth:206});
       p.text("OPERE CON 1-3 RECITE NEL CAMPIONE",L,582,12,"bold",BURGUNDY);
       const oneThree=s.rare.slice(0,6);
