@@ -21,6 +21,11 @@ class TwoVerifiedEditorialProfiles(unittest.TestCase):
                 self.assertEqual(profile["history"]["premiere_year"],year)
                 self.assertEqual(profile["history"]["premiere_city"],city)
                 self.assertTrue(45<=len(profile["synopsis"])<=300)
+                self.assertGreaterEqual(len(profile["history"]["sources"]),2)
+                # These are original composition-specific plots, not a copied
+                # generic teaser or an identity-only sentence.
+                self.assertIn("Flora" if slug=="ghost-cafe" else "Menalippa",
+                              profile["synopsis"])
                 # The source's named composer stays mandatory for automatic
                 # research. No fabricated Wikidata QID is introduced.
                 attribution=validated_editorial_attributions().get(slug)
