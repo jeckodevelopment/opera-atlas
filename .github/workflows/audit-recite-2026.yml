@@ -1,0 +1,90 @@
+name: Audit 2026 recite — diagnostics only
+
+# Dedicated pipeline: never starts the public catalog crawl or publishing.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 6 * * 1'
+  pull_request:
+    paths:
+      - 'scripts/audit_recite_2026.py'
+      - 'scripts/audit_2026_sources.py'
+      - 'tests/test_audit_recite_2026.py'
+      - 'tests/test_audit_2026_sources.py'
+      - '.github/workflows/audit-recite-2026.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-atlas-2026-diagnostics-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Verify isolated audit logic
+        run: python -m unittest tests.test_audit_recite_2026 tests.test_audit_2026_sources -v
+      - name: Build separate JSON diagnostics
+        run: |
+          mkdir -p public/diagnostics
+          python -m scripts.audit_recite_2026 --output public/diagnostics/atlas-recite-2026.json
+          python -m scripts.audit_2026_sources --output public/diagnostics/atlas-2026-sources.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a = json.loads(Path('public/diagnostics/atlas-recite-2026.json').read_text())
+          b = json.loads(Path('public/diagnostics/atlas-2026-sources.json').read_text())
+          assert len(a['venues']) == len(b['venues'])
+          assert all(len(v['months']) == 12 for v in a['venues'])
+          assert a['complete_seasons_certified'] == 0
+          assert all(v['year_status'] in ('known_gap', 'not_verified_complete') for v in a['venues'])
+          print('venues:', len(a['venues']), 'source indexes:', b['configured_source_indexes'])
+          PY
+      - name: Upload standalone diagnostic artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: opera-atlas-recite-audit-2026
+          path: |
+            public/diagnostics/atlas-recite-2026.json
+            public/diagnostics/atlas-2026-sources.json
+          retention-days: 30
+
+  publish-diagnostics:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    needs: audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Download verified JSON artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093a # v4
+        with:
+          name: opera-atlas-recite-audit-2026
+          path: public/diagnostics
+      - name: Commit ONLY isolated diagnostic outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- public/diagnostics/atlas-recite-2026.json public/diagnostics/atlas-2026-sources.json
+          if git diff --cached --quiet; then
+            echo 'No diagnostic changes'
+            exit 0
+          fi
+          git commit -m 'data(audit): refresh isolated 2026 diagnostic snapshots [skip ci]'
+          # A concurrent public catalog update causes this fast-forward to
+          # fail closed: never force push or rebase over a source checkpoint.
+          git push origin HEAD:main
