@@ -20,7 +20,7 @@
 <section class="view" id="view-venues" hidden aria-label="Teatri e fonti">
 <h2>Teatri e fonti</h2><p class="muted">Uno stato del connettore non certifica la completezza del cartellone. Le recite sono confrontate solo con quelle già individuate.</p>
 <div class="grid cards3" id="venue-stats"></div>
-<div class="toolbar"><label class="sr-only" for="venue-search">Cerca teatro</label><input type="search" id="venue-search" placeholder="Cerca teatro, città o regione"><label class="sr-only" for="venue-filter">Filtra connettore</label><select id="venue-filter"><option value="all">Tutti i teatri</option><option value="operational">Connettore operativo</option><option value="configured_not_operational">Connettore da verificare</option><option value="not_automated">Non integrati</option><option value="missing">Recite individuate da pubblicare</option></select></div>
+<div class="toolbar"><label class="sr-only" for="venue-search">Cerca teatro</label><input type="search" id="venue-search" placeholder="Cerca teatro, città o regione"><label class="sr-only" for="venue-filter">Filtra connettore</label><select id="venue-filter"><option value="all">Tutti i teatri</option><option value="operational">Connettore operativo</option><option value="configured_not_operational">Connettore da verificare</option><option value="not_automated">Censiti senza connettore</option><option value="not_in_inventory">Da censire nell’inventario</option><option value="missing">Recite individuate da pubblicare</option></select></div>
 <div class="panel table-scroll"><table><thead><tr><th>Teatro</th><th>Connettore</th><th>Ultimo tentativo</th><th>Recite pubblicate / individuate</th><th>Candidate in revisione</th></tr></thead><tbody id="venue-rows"></tbody></table></div>
 </section>
 <section class="view" id="view-catalog" hidden aria-label="Catalogo">
@@ -73,12 +73,24 @@ async function read(path){
   return await r.json();
  }finally{clearTimeout(timeout)}
 }
+// Explicit, audited aliases only: never infer identical venues from a shared city.
+const VENUE_ALIASES={
+ "torino|teatro regio":"torino|teatro regio di torino"
+};
+const canonicalVenueKey=x=>VENUE_ALIASES[joinKey(x)]||joinKey(x);
 function buildVenues(){
- const rec=new Map((data.rec.venues||[]).map(x=>[joinKey(x),x]));
+ const rec=new Map((data.rec.venues||[]).map(x=>[canonicalVenueKey(x),x]));
  const cat=new Map((data.cat.venues||[]).map(x=>[x.venue_id,x]));
- venues=(data.auto.venues||[]).map(x=>({...x,rec:rec.get(joinKey(x))||null,cat:cat.get(x.venue_id)||null}));
- const seen=new Set(venues.map(joinKey));
- for(const x of data.rec.venues||[])if(!seen.has(joinKey(x))){venues.push({...x,venue_id:null,status:"not_automated",sources:[],configured_connectors:0,recent_successful_connectors:0,rec:x,cat:null});seen.add(joinKey(x))}
+ venues=(data.auto.venues||[]).map(x=>({...x,rec:rec.get(canonicalVenueKey(x))||null,cat:cat.get(x.venue_id)||null}));
+ const seen=new Set(venues.map(canonicalVenueKey));
+ for(const x of data.rec.venues||[]){
+  const key=canonicalVenueKey(x);
+  if(seen.has(key))continue;
+  // A published venue absent from source automation is *not* proof
+  // that no source exists: it may be missing from the technical registry.
+  venues.push({...x,venue_id:null,status:"not_in_inventory",sources:[],configured_connectors:null,recent_successful_connectors:null,rec:x,cat:null});
+  seen.add(key);
+ }
  venues.sort((a,b)=>String(a.city??"").localeCompare(String(b.city??""),"it")||String(a.venue??"").localeCompare(String(b.venue??""),"it"));
 }
 function buildActivities(){
@@ -87,6 +99,8 @@ function buildActivities(){
  if(backlog.length)activities.push({type:"editorial",priority:2,title:"Candidate da riconciliare",detail:nf(backlog.reduce((s,x)=>s+num(x.cat.states.needs_review),0))+" osservazioni in "+backlog.length+" teatri",target:"catalog"});
  const problem=venues.filter(x=>x.status==="configured_not_operational");
  if(problem.length)activities.push({type:"technical",priority:3,title:"Connettori configurati da verificare",detail:problem.length+" teatri senza una verifica operativa recente",target:"venues"});
+ const unregistered=venues.filter(x=>x.status==="not_in_inventory");
+ if(unregistered.length)activities.push({type:"technical",priority:2,title:"Sedi pubblicate assenti dall’inventario tecnico",detail:unregistered.length+" sedi con recite pubblicate non hanno una corrispondente scheda nell’inventario dei connettori: non è possibile determinarne lo stato di automazione.",target:"venues"});
  const missing=venues.filter(x=>num(x.rec?.missing)>0);
  if(missing.length)activities.push({type:"publication",priority:2,title:"Recite individuate non ancora pubblicate",detail:nf(missing.reduce((s,x)=>s+num(x.rec.missing),0))+" recite in "+missing.length+" teatri; il dato non misura l'intera stagione",target:"venues"});
  if(num(data.ops.workflow_alerts)>0)activities.push({type:"technical",priority:2,title:"Workflow che richiedono attenzione",detail:num(data.ops.workflow_alerts)+" processi segnalati dal monitoraggio operativo",target:"tech"});
@@ -110,7 +124,7 @@ function overview(){
  statuses();clear("overview-metrics");
  const found=venues.reduce((s,x)=>s+num(x.rec?.found),0),published=venues.reduce((s,x)=>s+num(x.rec?.published),0);
  const pending=venues.reduce((s,x)=>s+num(x.cat?.states?.needs_review),0);
- const counts=[[num(data.auto.total_venues),"Teatri censiti","Directory strutturata"],[num(data.auto.operational),"Teatri con automazione operativa","Non equivale a stagione completa"],[published,"Recite pubblicate","Nelle sedi del feed di copertura"],[found,"Recite individuate","Non equivale a cartellone completo"],[pending,"Candidate da verificare","Attribuite alle rispettive sedi"],[num(data.evidence.totals?.linked_solo_in_repository)+num(data.evidence.totals?.linked_program_in_repository),"Candidate collegate al catalogo","Collegamenti nel repository; non verifica online"],[num(data.auto.not_automated),"Teatri non automatizzati","Secondo la directory corrente"],[num(data.ops.workflow_alerts),"Workflow con segnalazioni","Non necessariamente guasti bloccanti"]];
+ const counts=[[num(data.auto.total_venues),"Teatri censiti","Directory strutturata"],[num(data.auto.operational),"Teatri con automazione operativa","Non equivale a stagione completa"],[published,"Recite pubblicate","Nelle sedi del feed di copertura"],[found,"Recite individuate","Non equivale a cartellone completo"],[pending,"Candidate da verificare","Attribuite alle rispettive sedi"],[num(data.evidence.totals?.linked_solo_in_repository)+num(data.evidence.totals?.linked_program_in_repository),"Candidate collegate al catalogo","Collegamenti nel repository; non verifica online"],[num(data.auto.not_automated),"Sedi censite senza connettore","Secondo la directory corrente"],[num(data.ops.workflow_alerts),"Workflow con segnalazioni","Non necessariamente guasti bloccanti"]];
  for(const x of counts)$("overview-metrics").append(metric(...x));
  const coverage=$("coverage-overview");coverage.replaceChildren();const total=num(data.auto.total_venues),active=num(data.auto.operational);coverage.append(el("strong",nf(active)+" di "+nf(total)+" teatri con automazione operativa"));const bar=el("div",undefined,"bar"),fill=el("span");fill.style.width=total?(active/total*100)+"%":"0";bar.append(fill);coverage.append(bar,el("p","Una fonte operativa non garantisce che siano già state rilevate tutte le produzioni previste.","muted"));
  clear("overview-attention");if(!activities.length)$("overview-attention").append(el("div","Nessuna segnalazione nei feed disponibili; non significa che il censimento nazionale sia completo.","panel"));
@@ -121,11 +135,11 @@ function renderVenues(){
  clear("venue-stats");[ [num(data.auto.operational),"Operativi"],[num(data.auto.configured_not_operational),"Da verificare"],[num(data.auto.not_automated),"Non automatizzati"] ].forEach(x=>$("venue-stats").append(metric(x[0],x[1])));
  const search=norm($("venue-search").value),filter=$("venue-filter").value;clear("venue-rows");let shown=0;
  for(const v of venues){if(search&&!norm(v.city+" "+v.venue+" "+v.region).includes(search))continue;if(filter==="missing"?! (num(v.rec?.missing)>0):filter!=="all"&&v.status!==filter)continue;
- shown++;const tr=el("tr"),name=el("td");const b=el("button",v.venue,"linkbutton");b.setAttribute("aria-expanded","false");name.append(b,el("div",v.city+" · "+(v.region||""),"muted"));tr.append(name);const status=el("td");status.append(pill(v.status==="operational"?"Operativo":v.status==="configured_not_operational"?"Da verificare":"Non integrato",v.status==="operational"?"good":v.status==="configured_not_operational"?"warn":"neutral"));tr.append(status);
+ shown++;const tr=el("tr"),name=el("td");const b=el("button",v.venue,"linkbutton");b.setAttribute("aria-expanded","false");name.append(b,el("div",v.city+" · "+(v.region||""),"muted"));tr.append(name);const status=el("td");status.append(pill(v.status==="operational"?"Operativo":v.status==="configured_not_operational"?"Da verificare":v.status==="not_in_inventory"?"Da censire":"Senza connettore",v.status==="operational"?"good":v.status==="configured_not_operational"?"warn":"neutral"));tr.append(status);
  const attempts=(v.sources||[]).map(s=>s.last_attempt_at).filter(Boolean).sort();cell(tr,fmt(attempts[attempts.length-1]));cell(tr,v.rec?nf(v.rec.published)+" / "+nf(v.rec.found):"Non misurato");cell(tr,v.cat?nf(num(v.cat.states?.needs_review)):"Non attribuite");
  $("venue-rows").append(tr);
  const details=el("tr",undefined,"details-row");details.hidden=true;const td=el("td");td.colSpan=5;
- td.append(el("strong","Dettaglio delle fonti"));if(!(v.sources||[]).length)td.append(el("p","Nessun connettore associato esplicitamente.","muted"));
+ td.append(el("strong","Dettaglio delle fonti"));if(!(v.sources||[]).length)td.append(el("p",v.status==="not_in_inventory"?"Sede presente nel catalogo delle recite ma assente dall’inventario tecnico: automazione non verificabile.":"Sede censita nell’inventario tecnico, ma senza connettore associato.","muted"));
  for(const s of v.sources||[]){const p=el("p");p.append(el("strong",s.source_key+" · "),el("span",(s.last_status||"Non verificato")+" · ultimo tentativo "+fmt(s.last_attempt_at)+(s.failure_reason?" · "+s.failure_reason:"")));td.append(p)}
  td.append(el("p","Recite mancanti tra quelle individuate: "+(v.rec?nf(num(v.rec.missing)):"non misurate")+". Copertura assoluta della stagione: non verificata.","muted"));if(v.cat?.pending?.length){td.append(el("strong","Candidate in revisione"));for(const p of v.cat.pending.slice(0,15)){const div=el("p");div.append(link(p.official_url||"#",p.candidate_id+" · "+(p.detail_reason||p.detail_outcome||"Da approfondire")));td.append(div)}}details.append(td);$("venue-rows").append(details);
  b.addEventListener("click",()=>{details.hidden=!details.hidden;b.setAttribute("aria-expanded",String(!details.hidden))});

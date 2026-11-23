@@ -71,6 +71,13 @@ class DiagnosticsLifecycleTests(unittest.TestCase):
         self.assertIn('String(a.venue??"").localeCompare(String(b.venue??""),"it")', self.source)
         self.assertNotIn('a.city.localeCompare(b.city', self.source)
 
+    def test_venue_inventory_distinguishes_missing_registry_from_absent_connector(self):
+        self.assertIn('"torino|teatro regio":"torino|teatro regio di torino"', self.source)
+        self.assertIn("canonicalVenueKey", self.source)
+        self.assertIn('status:"not_in_inventory"', self.source)
+        self.assertIn('v.status==="not_in_inventory"?"Da censire":"Senza connettore"', self.source)
+        self.assertIn("Sedi pubblicate assenti dall’inventario tecnico", self.source)
+
     def test_no_false_global_completion_percentage(self):
         self.assertIn("non garantisce", self.source)
         self.assertIn("Non misurato", self.source)
