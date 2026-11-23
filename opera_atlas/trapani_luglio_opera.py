@@ -116,8 +116,14 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
             credits.append(" ".join(match.group(1).split()))
     unique={x.casefold():x for x in credits}
     if len(unique)!=1:
-        # Retain support for older official markup with combined credit nodes.
-        credit=COMPOSER.search(primary)
+        # A credited composer may be split across neighbouring CMS nodes.
+        # Bind the name to the exact music-credit label and its subsequent
+        # libretto/venue boundary, never to an unrelated artist in the cast.
+        header=" ".join(prefix[credit_index:]).split("Personaggi e interpreti",1)[0]
+        credit=re.search(
+            r"(?i)\\b(?:Musica|Musiche)\\s+di\\s+"
+            r"([A-ZÀ-Ž][A-Za-zÀ-ÿ.'’ -]{4,85}?)"
+            r"(?=\\s+(?:Libretto|Teatro)\\b)",header)
         if credit is None or unique:
             raise ValueError("Trapani first-party composer missing")
         composer=" ".join(credit.group(1).split())
