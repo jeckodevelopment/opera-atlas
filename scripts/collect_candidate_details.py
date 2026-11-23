@@ -1520,6 +1520,50 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                         health.append({"candidate_id":item["id"],
                                        "outcome":"verified_composite_program","rows":len(facts)})
                         continue
+                if item["source_key"]=="trapani-luglio-musicale-2026":
+                    from opera_atlas.trapani_luglio_opera import (
+                        FILIDEI_SCIARRINO_SLUG, DETAIL,
+                        parse_filidei_sciarrino_program)
+                    from urllib.parse import urlsplit
+                    matched=DETAIL.fullmatch(urlsplit(item["official_url"]).path)
+                    if matched and matched[2]==FILIDEI_SCIARRINO_SLUG:
+                        # One official public ticket for two separate operas.
+                        # Never let the generic single-composer adapter create
+                        # a fictitious hybrid work named after the full bill.
+                        try:
+                            heading,components,venue,dates=(
+                                parse_filidei_sciarrino_program(
+                                    page.html,url=item["official_url"]))
+                        except ValueError as exc:
+                            health.append({
+                                "candidate_id":item["id"],
+                                "outcome":"unavailable_or_unstructured",
+                                "reason":"unverified_composite_program",
+                                "diagnostic":["official_program:"+str(exc)[:100]],
+                                "rows":0})
+                            continue
+                        facts=[{
+                            "event_title":component["title"],
+                            "composer":component["composer"],
+                            "venue":venue,"date":day,
+                            "starts_at":official_local_time(day,hour),
+                        } for day,hour in dates for component in components]
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],
+                            "source_key":item["source_key"],
+                            "source_url":item["official_url"],
+                            "content_sha256":page.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                            "status":"needs_program_review",
+                            "program_heading":heading,
+                            "program_heading_source_url":item["official_url"],
+                            "program_components":components,
+                            "event_facts":facts}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_composite_program",
+                                       "rows":len(facts),
+                                       "program_recite":len(dates)})
+                        continue
                 if item["source_key"]=="teatro-grande-opera-2026":
                     from opera_atlas.brescia_detail_parser import parse_brescia_double_bill, Heading
                     try:
