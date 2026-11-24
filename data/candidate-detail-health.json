@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T20:55:55+00:00",
+  "checked_at": "2026-11-24T02:16:14+00:00",
   "scope": "national",
   "attempted": 22,
   "outcomes": [
@@ -50,11 +50,6 @@
       "rows": 2
     },
     {
-      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
       "candidate_id": "oa-index-e831cbf742e2f848f44b",
       "outcome": "facts_found",
       "rows": 1
@@ -101,6 +96,11 @@
     },
     {
       "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
+      "outcome": "facts_found",
+      "rows": 1
+    },
+    {
+      "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
       "outcome": "facts_found",
       "rows": 1
     },
