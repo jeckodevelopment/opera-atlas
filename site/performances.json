@@ -4358,6 +4358,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-modena-belcanto-la-costanza-trionfante:2026-09-25",
+      "starts_at": "2026-09-25T20:30:00+02:00",
+      "local_date": "2026-09-25",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "La costanza trionfante",
+      "composer": "Antonio Vivaldi",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "municipality": "Modena",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-como:2026-09-26",
       "starts_at": null,
       "local_date": "2026-09-26",
