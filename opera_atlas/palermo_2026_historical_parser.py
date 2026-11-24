@@ -32,10 +32,10 @@ def parse_palermo_historical_showtimes(html: str, url: str):
     # year + Sala Grande assertion rather than relying on one heading's
     # exact position in the flattened HTML.
     contexts=[]
-    for marker in re.finditer(r"\\b2026\\s*\\|\\s*Sala Grande\\b",text,re.I):
+    for marker in re.finditer(r"\b2026\s*\|\s*Sala Grande\b",text,re.I):
         context=text[marker.start():marker.end()+550]
         if (re.search(re.escape(title),context,re.I)
-                and re.search(r"Musiche\\s+di\\s+"+re.escape(composer),context,re.I)):
+                and re.search(r"Musiche\s+di\s+"+re.escape(composer),context,re.I)):
             contexts.append(marker)
     if len(contexts)!=1:
         raise ValueError("official Palermo work composer venue/year section missing or ambiguous")
