@@ -2870,6 +2870,19 @@
     {
       "aliases": [],
       "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-w-000140",
+      "image": null,
+      "subtitle": "Giacomo Puccini",
+      "title": "La fanciulla del West",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/la-fanciulla-del-west/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
         "oa-c-000041"
       ],
       "fallback_image": null,
@@ -7588,6 +7601,160 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000337",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Arena Sferisterio",
+      "title": "Nabucco",
+      "type": "production",
+      "url": "https://opera.plus/atlas/macerata/arena-sferisterio/nabucco/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000036"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000338",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Arena Sferisterio",
+      "title": "Il barbiere di Siviglia",
+      "type": "production",
+      "url": "https://opera.plus/atlas/macerata/arena-sferisterio/il-barbiere-di-siviglia/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000339",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Arena Sferisterio",
+      "title": "Il trovatore",
+      "type": "production",
+      "url": "https://opera.plus/atlas/macerata/arena-sferisterio/il-trovatore/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000340",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Gran Teatro Giacomo Puccini",
+      "title": "Turandot",
+      "type": "production",
+      "url": "https://opera.plus/atlas/torre-del-lago-puccini/gran-teatro-giacomo-puccini/turandot-2026/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000341",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Gran Teatro Giacomo Puccini",
+      "title": "Tosca",
+      "type": "production",
+      "url": "https://opera.plus/atlas/torre-del-lago-puccini/gran-teatro-giacomo-puccini/tosca-2026/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000342",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Gran Teatro Giacomo Puccini",
+      "title": "Madama Butterfly",
+      "type": "production",
+      "url": "https://opera.plus/atlas/torre-del-lago-puccini/gran-teatro-giacomo-puccini/madama-butterfly-2026/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000343",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Gran Teatro Giacomo Puccini",
+      "title": "La bohème",
+      "type": "production",
+      "url": "https://opera.plus/atlas/torre-del-lago-puccini/gran-teatro-giacomo-puccini/la-boheme-2026/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000344",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Dante Alighieri",
+      "title": "Macbeth",
+      "type": "production",
+      "url": "https://opera.plus/atlas/ravenna/teatro-dante-alighieri/macbeth/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000036"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000345",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Dante Alighieri",
+      "title": "L’italiana in Algeri",
+      "type": "production",
+      "url": "https://opera.plus/atlas/ravenna/teatro-dante-alighieri/italiana-in-algeri/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000034"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000346",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Dante Alighieri",
+      "title": "Carmen",
+      "type": "production",
+      "url": "https://opera.plus/atlas/ravenna/teatro-dante-alighieri/carmen/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000347",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Gran Teatro Giacomo Puccini",
+      "title": "La fanciulla del West",
+      "type": "production",
+      "url": "https://opera.plus/atlas/torre-del-lago-puccini/gran-teatro-giacomo-puccini/la-fanciulla-del-west/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -8391,5 +8558,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "0636b87bd4e98494d0970bb7a626b23154bad9d4"
+  "source_revision": "78e730ba61d29640ce4daa8e88a116c8bcb85b5e"
 }
