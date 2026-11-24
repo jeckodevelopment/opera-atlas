@@ -13,17 +13,17 @@ class HistoricalH1PublicationTests(unittest.TestCase):
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.approved=approved_historical_h1()
 
-    def test_exact_57_dated_showtimes_and_stable_ids(self):
-        self.assertEqual(8,len(self.approved))
+    def test_exact_76_dated_showtimes_and_stable_ids(self):
+        self.assertEqual(11,len(self.approved))
         records=[p for p in self.manifest["productions"] if p["source_url"] in self.approved]
-        self.assertEqual(8,len(records))
-        self.assertEqual(57,sum(len(p["dates"]) for p in records))
-        self.assertEqual(57,sum(len(a["dates"]) for a in self.approved.values()))
+        self.assertEqual(11,len(records))
+        self.assertEqual(76,sum(len(p["dates"]) for p in records))
+        self.assertEqual(76,sum(len(a["dates"]) for a in self.approved.values()))
         canonical=assemble(self.manifest,self.registry)
         published=[p for p in canonical["performances"]
                    if p["source_url"] in self.approved]
-        self.assertEqual(57,len(published))
-        self.assertEqual(57,len({p["id"] for p in published}))
+        self.assertEqual(76,len(published))
+        self.assertEqual(76,len({p["id"] for p in published}))
         self.assertTrue(all(p["time_known"] and p["starts_at"]
                             for p in published))
 
@@ -39,6 +39,16 @@ class HistoricalH1PublicationTests(unittest.TestCase):
         p["dates"][0][1]="22:30"
         with self.assertRaises(ValueError):
             build(manifest)
+
+    def test_regio_2025_26_is_source_verified_and_youth_previews_excluded(self):
+        urls=[x for x in self.approved.values() if x["city"]=="Torino"]
+        self.assertEqual(3,len(urls))
+        self.assertEqual(19,sum(len(x["dates"]) for x in urls))
+        self.assertTrue(all(x["source_venue"]=="Teatro Regio di Torino" for x in urls))
+        # No historic opera source may be approved through a wildcard URL.
+        self.assertTrue(all(x["source_url"].startswith(
+            "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/")
+            for x in urls))
 
     def test_nabucodonosor_is_explicit_alias_only(self):
         rows=[x for x in self.approved.values()

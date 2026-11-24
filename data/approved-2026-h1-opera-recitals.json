@@ -310,6 +310,115 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "official_source_title": "La Cenerentola",
+      "canonical_title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "city": "Torino",
+      "venue": "Teatro Regio",
+      "source_venue": "Teatro Regio di Torino",
+      "dates": [
+        [
+          "2026-01-20",
+          "20:00"
+        ],
+        [
+          "2026-01-21",
+          "20:00"
+        ],
+        [
+          "2026-01-22",
+          "20:00"
+        ],
+        [
+          "2026-01-23",
+          "20:00"
+        ],
+        [
+          "2026-01-24",
+          "15:00"
+        ],
+        [
+          "2026-01-25",
+          "15:00"
+        ],
+        [
+          "2026-01-27",
+          "15:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "official_source_title": "Macbeth",
+      "canonical_title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "city": "Torino",
+      "venue": "Teatro Regio",
+      "source_venue": "Teatro Regio di Torino",
+      "dates": [
+        [
+          "2026-02-24",
+          "19:00"
+        ],
+        [
+          "2026-02-26",
+          "20:00"
+        ],
+        [
+          "2026-03-01",
+          "15:00"
+        ],
+        [
+          "2026-03-03",
+          "20:00"
+        ],
+        [
+          "2026-03-05",
+          "20:00"
+        ],
+        [
+          "2026-03-07",
+          "15:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "official_source_title": "I puritani",
+      "canonical_title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "city": "Torino",
+      "venue": "Teatro Regio",
+      "source_venue": "Teatro Regio di Torino",
+      "dates": [
+        [
+          "2026-05-06",
+          "19:30"
+        ],
+        [
+          "2026-05-08",
+          "19:30"
+        ],
+        [
+          "2026-05-10",
+          "15:00"
+        ],
+        [
+          "2026-05-13",
+          "19:30"
+        ],
+        [
+          "2026-05-15",
+          "15:00"
+        ],
+        [
+          "2026-05-17",
+          "15:00"
+        ]
+      ]
     }
   ]
 }

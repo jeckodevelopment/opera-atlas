@@ -101,9 +101,14 @@ def approved_historical_h1() -> dict[str, dict]:
                   and re.fullmatch(r"/event/stagione-25-26-[a-z0-9-]+/", parsed.path)
                   and record.get("city") == "Venezia"
                   and record.get("venue") in {"Teatro La Fenice", "Teatro Malibran"})
+        regio = (parsed.hostname == "www.teatroregio.torino.it"
+                 and re.fullmatch(r"/opera-e-balletto-2025-2026/[a-z0-9-]+", parsed.path)
+                 and record.get("city") == "Torino"
+                 and record.get("venue") == "Teatro Regio"
+                 and record.get("source_venue") == "Teatro Regio di Torino")
         if (parsed.scheme != "https" or parsed.query or parsed.fragment
                 or parsed.port is not None or parsed.username or parsed.password
-                or not (scala or fenice) or url in result):
+                or not (scala or fenice or regio) or url in result):
             raise ValueError("unapproved historical opera source")
         title, original, composer = (record.get(k) for k in
                                      ("canonical_title", "official_source_title", "composer"))
@@ -128,6 +133,25 @@ def approved_historical_h1() -> dict[str, dict]:
                     or (day,hour) in seen):
                 raise ValueError("unreviewed historical recita or time")
             seen.add((day,hour))
+        if regio:
+            # Independent official archive evidence is the ONLY authorization
+            # for these exact Torino dates. No newly discovered or preview
+            # performances can enter the canonical catalog by URL pattern.
+            historical = json.loads((ROOT / "data" /
+                "historical-2026-official-evidence.json").read_text(encoding="utf-8"))
+            evidence = [x for x in historical.get("records", [])
+                        if x.get("source_url") == url
+                        and x.get("venue_id") == "oa-v-000001"
+                        and x.get("venue") == record["source_venue"]
+                        and x.get("city") == "Torino"
+                        and x.get("title") == title
+                        and x.get("composer") == composer
+                        and x.get("audience") == "general_public"
+                        and x.get("source_type") == "official_event_detail"]
+            if (len(evidence) != 1 or
+                sorted([[x["date"],x["time"]] for x in evidence[0]["dates"]])
+                    != sorted(dates)):
+                raise ValueError("Torino date/time differs from reviewed official evidence")
         result[url]=record
     return result
 
