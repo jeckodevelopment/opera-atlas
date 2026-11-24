@@ -866,13 +866,13 @@ def catalog_occurrences(catalog):
 # Record the discrepancy as source-clock normalization, never create a
 # duplicate or change the canonical showtime.
 OFFICIAL_MODENA_CLOCKS = {
-    ("Macbeth","2026-10-30"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"},
-    ("Macbeth","2026-11-01"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"},
-    ("Der fliegende Holländer","2026-11-20"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"},
-    ("Der fliegende Holländer","2026-11-22"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"},
-    ("L'esecuzione","2026-11-28"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"},
-    ("L'esecuzione","2026-11-29"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"},
-    ("I salvatori della mezzanotte","2026-12-13"): {"clock":"17:30","observed":"18:30","url":"https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"},
+    ("macbeth","2026-10-30"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"},
+    ("macbeth","2026-11-01"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"},
+    ("der fliegende hollander","2026-11-20"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"},
+    ("der fliegende hollander","2026-11-22"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"},
+    ("l esecuzione","2026-11-28"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"},
+    ("l esecuzione","2026-11-29"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"},
+    ("i salvatori della mezzanotte","2026-12-13"): {"clock":"17:30","observed":"18:30","url":"https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"},
 }
 
 
