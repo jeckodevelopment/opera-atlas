@@ -90,7 +90,7 @@ def verified_image(record):
     fields = ("url", "alt", "source_url", "author", "license", "license_url", "credit")
     if not all(isinstance(record.get(k), str) and record[k].strip() for k in fields):
         return None
-    if record["license"] not in {"Public Domain", "CC0-1.0", "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-3.0", "CC-BY-SA-3.0"}:
+    if record["license"] not in {"Public Domain", "CC0-1.0", "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-3.0", "CC-BY-SA-3.0", "CC-BY-2.0", "CC-BY-SA-2.0", "CC-BY-2.5", "CC-BY-SA-2.5"}:
         return None
     if not all(safe_https(record[k]) for k in ("url", "source_url", "license_url")):
         return None

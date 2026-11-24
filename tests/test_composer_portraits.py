@@ -14,7 +14,7 @@ def person(name="Composer", occupation="Q36834"):
         "P31":[claim({"id":"Q5"})], "P106":[claim({"id":occupation})],
         "P18":[claim("Portrait.jpg")]}}
 
-def mock_call(entities=None, changes=None):
+def mock_call(entities=None, changes=None, categories=(), image_changes=None):
     entities = entities or {"Q123":person()}
     def call(endpoint, **params):
         if endpoint in WIKIPEDIA:
@@ -27,10 +27,11 @@ def mock_call(entities=None, changes=None):
         meta = {"LicenseShortName":"CC BY 4.0","LicenseUrl":"https://creativecommons.org/licenses/by/4.0/",
                 "Artist":"<a>Author</a>","Copyrighted":"True"}
         meta.update(changes or {})
-        return {"query":{"pages":{"1":{"imageinfo":[{"mime":"image/jpeg",
-            "url":"https://upload.wikimedia.org/portrait.jpg",
-            "descriptionurl":"https://commons.wikimedia.org/wiki/File:Portrait.jpg",
-            "extmetadata":{k:{"value":v} for k,v in meta.items()}}]}}}}
+        image = {"mime":"image/jpeg", "url":"https://upload.wikimedia.org/portrait.jpg",
+                 "descriptionurl":"https://commons.wikimedia.org/wiki/File:Portrait.jpg",
+                 "extmetadata":{k:{"value":v} for k,v in meta.items()}}
+        image.update(image_changes or {})
+        return {"query":{"pages":{"1":{"imageinfo":[image], "categories":[{"title":x} for x in categories]}}}}
     return call
 
 class PortraitTests(unittest.TestCase):
@@ -69,6 +70,46 @@ class PortraitTests(unittest.TestCase):
         for change in ({"Copyrighted":"True"}, {"LicenseUrl":""}, {"Restrictions":"Restricted"}):
             record, reason = portrait(self.composer, mock_call(changes=dict(changes, **change)))
             self.assertIsNone(record)
+
+    def test_combined_public_domain_evidence_without_license_url(self):
+        changes = {"LicenseShortName":"Public domain","LicenseUrl":"",
+                   "Copyrighted":"False","License":"pd"}
+        record, reason = portrait(self.composer, mock_call(changes=changes,
+                                  categories=["Category:PD-old-100-expired"]))
+        self.assertIsNone(reason)
+        self.assertEqual(record["license"], "Public Domain")
+        self.assertEqual(record["rights_evidence"], "commons_combined_public_domain_category")
+        self.assertEqual(record["license_url"], record["source_url"])
+        for categories in ([], ["Category:PD US expired"],
+                           ["Category:PD-old-100-expired", "Category:Copyright violations"]):
+            self.assertIsNone(portrait(self.composer, mock_call(changes=changes, categories=categories))[0])
+        for change in ({"Copyrighted":"True"}, {"License":"unknown"}, {"Restrictions":"Restricted"},
+                       {"LicenseUrl":"https://evil.example/"}):
+            self.assertIsNone(portrait(self.composer, mock_call(changes=dict(changes, **change),
+                                      categories=["Category:PD-old-100-expired"]))[0])
+
+    def test_cc_deed_and_older_free_license(self):
+        record, reason = portrait(self.composer, mock_call(changes={
+            "LicenseShortName":"CC BY-SA 2.5",
+            "LicenseUrl":"http://creativecommons.org/licenses/by-sa/2.5/deed.it"}))
+        self.assertIsNone(reason)
+        self.assertEqual(record["license"], "CC-BY-SA-2.5")
+        self.assertEqual(record["license_url"], "https://creativecommons.org/licenses/by-sa/2.5/")
+        for url in ("https://creativecommons.org.evil.example/licenses/by-sa/2.5/",
+                    "https://creativecommons.org/licenses/by-nc/2.5/"):
+            self.assertIsNone(portrait(self.composer, mock_call(changes={
+                "LicenseShortName":"CC BY-SA 2.5","LicenseUrl":url}))[0])
+
+    def test_commons_urls_and_raster_thumbnails(self):
+        changes = {"mime":"image/tiff","url":"https://upload.wikimedia.org/original.tiff",
+                   "thumburl":"https://upload.wikimedia.org/Foto d’autore.jpg?utm_source=commons",
+                   "descriptionurl":"https://commons.wikimedia.org/wiki/File:Foto d’autore.tiff"}
+        record, reason = portrait(self.composer, mock_call(image_changes=changes))
+        self.assertIsNone(reason)
+        self.assertIn("%20", record["url"])
+        self.assertNotIn("utm_source", record["url"])
+        self.assertIsNone(portrait(self.composer, mock_call(image_changes=dict(changes, thumburl=None)))[0])
+        self.assertIsNone(portrait(self.composer, mock_call(image_changes=dict(changes, thumburl="https://evil.example/file.jpg")))[0])
 
     def test_transient_http_retry(self):
         failure = HTTPError(WD, 503, "temporary", {}, None)

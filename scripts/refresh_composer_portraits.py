@@ -8,7 +8,7 @@ import time
 from datetime import datetime, timezone, date
 from html import unescape
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit, urlunsplit, quote
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
@@ -25,8 +25,29 @@ LICENSES = {
     "CC BY 3.0": ("CC-BY-3.0", "https://creativecommons.org/licenses/by/3.0/"),
     "CC BY-SA 3.0": ("CC-BY-SA-3.0", "https://creativecommons.org/licenses/by-sa/3.0/"),
     "CC0": ("CC0-1.0", "https://creativecommons.org/publicdomain/zero/1.0/"),
+    "CC BY 2.0": ("CC-BY-2.0", "https://creativecommons.org/licenses/by/2.0/"),
+    "CC BY-SA 2.0": ("CC-BY-SA-2.0", "https://creativecommons.org/licenses/by-sa/2.0/"),
+    "CC BY 2.5": ("CC-BY-2.5", "https://creativecommons.org/licenses/by/2.5/"),
+    "CC BY-SA 2.5": ("CC-BY-SA-2.5", "https://creativecommons.org/licenses/by-sa/2.5/"),
 }
-# Require an explicit Commons public-domain mark and a non-copyrighted file.
+# These Commons categories explicitly cover both source-country and US terms.
+# Do not infer public-domain status from a composer's death date or generic PD tags.
+PD_CATEGORIES = {
+    "Category:PD-old-100-expired",
+    "Category:PD-Art (PD-old-100-expired)",
+    "Category:PD-old-70-expired",
+    "Category:PD-Art (PD-old-70-expired)",
+}
+# These maintenance categories preclude automatic acceptance.
+REVIEW_CATEGORIES = {
+    "Category:Copyright violations",
+    "Category:Files with no license",
+    "Category:Files with no source",
+    "Category:Files with no machine-readable license",
+    "Category:Files with no machine-readable author",
+    "Category:Deletion requests",
+}
+# A Public Domain Mark is an assertion, not a copyright license.
 PUBLIC_DOMAIN_URL = "https://creativecommons.org/publicdomain/mark/1.0/"
 TRANSIENT_CODES = {429, 500, 502, 503, 504}
 class WikimediaError(RuntimeError):
@@ -183,7 +204,7 @@ def portrait(composer, call=api):
         return None, reason
     return portrait_for_identity(composer, match, call)
 
-def portrait_for_identity(composer, match, call):
+def portrait_for_identity(composer, match, call, audits=None):
     qid, entity = match
     images = list(dict.fromkeys(v for v in values(entity, "P18") if isinstance(v, str)))
     if not images:
@@ -195,48 +216,110 @@ def portrait_for_identity(composer, match, call):
         return None, "multiple_images"
     reasons = []
     for filename in ordered:
-        record, reason = commons_portrait(composer, qid, filename, call)
+        audit = {}
+        record, reason = commons_portrait(composer, qid, filename, call, audit)
+        if audits is not None:
+            audits.append(dict(audit, reason=reason or 'verified'))
         if record:
             return record, None
         reasons.append(reason)
     return None, reasons[0]
 
-def commons_portrait(composer, qid, filename, call):
-    response = call(COMMONS, action="query", titles="File:" + filename, redirects=1, prop="imageinfo",
+def canonical_cc_url(value):
+    # Accept only the canonical Creative Commons domain and license/deed paths.
+    if not value:
+        return ""
+    try:
+        u = urlsplit(value)
+        if u.scheme not in ("https", "http") or u.netloc != "creativecommons.org" or u.query or u.fragment:
+            return None
+        path = re.sub(r"/deed(?:\.[a-zA-Z-]+)?/?$", "/", u.path)
+        return "https://creativecommons.org" + path.rstrip("/") + "/"
+    except ValueError:
+        return None
+
+def commons_url(value, expected_host):
+    if not isinstance(value, str):
+        return None
+    try:
+        u = urlsplit(value)
+        if u.scheme != "https" or u.netloc != expected_host or u.fragment:
+            return None
+        # Preserve existing percent escapes, encode literal Unicode and spaces.
+        # Drop only known analytics parameters; preserve all other query data.
+        path = quote(u.path, safe="/%:@!$&'()*+,;=-._~")
+        query = "&".join(p for p in u.query.split("&")
+                         if not p.split("=")[0].startswith("utm_"))
+        return urlunsplit((u.scheme, u.netloc, path, query, ""))
+    except ValueError:
+        return None
+
+def commons_portrait(composer, qid, filename, call, audit=None):
+    response = call(COMMONS, action="query", titles="File:" + filename, redirects=1,
+                    prop="imageinfo|categories", cllimit="max",
+                    clcategories="|".join(sorted(PD_CATEGORIES | REVIEW_CATEGORIES)),
                     iiprop="url|mime|extmetadata", iiurlwidth=720)
     pages = response.get("query", {}).get("pages")
     if not isinstance(pages, dict):
         raise WikimediaError("invalid_commons_response")
     if len(pages) != 1:
         return None, "file_unconfirmed"
-    info = next(iter(pages.values())).get("imageinfo", [])
-    if len(info) != 1 or info[0].get("mime") not in ("image/jpeg", "image/png", "image/webp"):
-        return None, "unsupported_image"
+    page = next(iter(pages.values()))
+    info = page.get("imageinfo", [])
+    if len(info) != 1:
+        return None, "file_unconfirmed"
     image = info[0]
     meta = image.get("extmetadata", {})
     def field(k):
         return plain(meta.get(k, {}).get("value", ""))
-    license = LICENSES.get(field("LicenseShortName"))
-    if field("LicenseShortName").casefold() in {"public domain", "public domain mark"}:
+    categories = {x.get("title") for x in page.get("categories", [])}
+    source = commons_url(image.get("descriptionurl"), "commons.wikimedia.org")
+    url = commons_url(image.get("thumburl") or image.get("url"), "upload.wikimedia.org")
+    if audit is not None:
+        # Keep decision inputs for editorial follow-up; never store raw HTML.
+        audit.update({"commons_file": filename, "source_url": source,
+                      "license_short_name": field("LicenseShortName")[:160],
+                      "license_code": field("License")[:100],
+                      "license_url_reported": field("LicenseUrl")[:300],
+                      "copyrighted": field("Copyrighted")[:30],
+                      "restrictions": field("Restrictions")[:200],
+                      "author": field("Artist")[:300],
+                      "rights_categories": sorted(categories & (PD_CATEGORIES | REVIEW_CATEGORIES))})
+    if image.get("mime") not in ("image/jpeg", "image/png", "image/webp"):
+        # Only consume a raster thumbnail generated by Commons, never an SVG/TIFF original.
+        thumb = image.get("thumburl")
+        if not thumb or not url or not urlsplit(url).path.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+            return None, "unsupported_image"
+    if field("Restrictions") or categories & REVIEW_CATEGORIES or field("Copyrighted").casefold() not in ("true", "false"):
+        return None, "rights_review"
+    short = field("LicenseShortName")
+    supplied = field("LicenseUrl")
+    canonical = canonical_cc_url(supplied)
+    license = LICENSES.get(short)
+    evidence = "commons_license_metadata"
+    if short.casefold() in {"public domain", "public domain mark", "pdm"}:
         if field("Copyrighted").casefold() != "false":
             return None, "rights_review"
-        license = ("Public Domain", PUBLIC_DOMAIN_URL)
-    supplied_url = field("LicenseUrl")
-    # Some Commons records still use the canonical Creative Commons HTTP URL.
-    if supplied_url.startswith("http://creativecommons.org/"):
-        supplied_url = "https://" + supplied_url[len("http://"):]
-    if not license or supplied_url.rstrip("/") != license[1].rstrip("/"):
+        if canonical == PUBLIC_DOMAIN_URL:
+            license = ("Public Domain", PUBLIC_DOMAIN_URL)
+            evidence = "commons_public_domain_mark"
+        elif not supplied and field("License").casefold() == "pd" and categories & PD_CATEGORIES and source:
+            # Commons documents that PD files may not have a LicenseUrl.
+            # Require a specific combined rights category, not just a generic PD label.
+            license = ("Public Domain", source)
+            evidence = "commons_combined_public_domain_category"
+        else:
+            return None, "license_review"
+    elif not license or canonical != license[1]:
         return None, "license_review"
-    if field("Restrictions") or field("Copyrighted").lower() not in ("true", "false"):
-        return None, "rights_review"
     author = field("Artist")
-    if not author or author.lower() in ("unknown", "unknown author", "anonymous", "sconosciuto"):
+    if not author or author.casefold() in ("unknown", "unknown author", "anonymous", "sconosciuto"):
         return None, "author_review"
-    record = dict(verified=True, url=image.get("thumburl") or image.get("url"),
-                  alt="Ritratto di " + composer["name"], source_url=image.get("descriptionurl"),
-                  author=author, license=license[0], license_url=license[1],
+    record = dict(verified=True, url=url, alt="Ritratto di " + composer["name"],
+                  source_url=source, author=author, license=license[0], license_url=license[1],
                   credit=author + " — Wikimedia Commons — " + license[0],
-                  wikidata_id=qid, commons_file=filename, reviewed_on=date.today().isoformat())
+                  wikidata_id=qid, commons_file=filename, reviewed_on=date.today().isoformat(),
+                  rights_evidence=evidence, rights_categories=sorted(categories & PD_CATEGORIES))
     return (record, None) if verified_image(record) else (None, "metadata_review")
 
 def refresh(root, call=api, max_seconds=900):
@@ -286,6 +369,7 @@ def refresh(root, call=api, max_seconds=900):
             break
         attempted += 1
         history[key] = datetime.now(timezone.utc).isoformat()
+        audits = []
         try:
             candidate = dict(composer)
             if key in identities and not candidate.get("wikidata_id"):
@@ -293,7 +377,7 @@ def refresh(root, call=api, max_seconds=900):
             match, reason = find_person(candidate, call)
             if match:
                 identities[key] = {"name": composer["name"], "wikidata_id": match[0]}
-                record, reason = portrait_for_identity(composer, match, call)
+                record, reason = portrait_for_identity(composer, match, call, audits)
             else:
                 identities.pop(key, None)
                 record = None
@@ -312,7 +396,7 @@ def refresh(root, call=api, max_seconds=900):
             portraits[key] = record
             report.pop(key, None)
         else:
-            report[key] = {"name": composer["name"], "reason": reason}
+            report[key] = {"name": composer["name"], "reason": reason, "candidates": audits}
         checkpoint()
     checkpoint()
     print("Verified:", sum(bool(verified_image(portraits.get(c["id"]))) for c in composers),

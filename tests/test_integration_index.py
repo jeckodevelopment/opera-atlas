@@ -101,7 +101,7 @@ class IntegrationIndexTests(unittest.TestCase):
 
     def test_verified_portrait_and_unsafe_url(self):
         portrait = {"verified":True,"url":"https://upload.wikimedia.org/example.jpg","alt":"Portrait","source_url":"https://commons.wikimedia.org/wiki/File:Example.jpg","author":"Example author","license":"CC-BY-4.0","license_url":"https://creativecommons.org/licenses/by/4.0/","credit":"Example credit"}
-        for change, expected in [({}, True), ({"verified":False}, False), ({"url":"https://evil.example/image.jpg"}, False), ({"license":"Unknown"}, False), ({"author":""}, False), ({"url":"https://upload.wikimedia.org@evil.example/image.jpg"}, False)]:
+        for change, expected in [({}, True), ({"license":"CC-BY-SA-2.5","license_url":"https://creativecommons.org/licenses/by-sa/2.5/"}, True), ({"license":"Public Domain","license_url":"https://commons.wikimedia.org/wiki/File:Example.jpg"}, True), ({"verified":False}, False), ({"url":"https://evil.example/image.jpg"}, False), ({"license":"Unknown"}, False), ({"author":""}, False), ({"url":"https://upload.wikimedia.org@evil.example/image.jpg"}, False)]:
             self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"c1":dict(portrait, **change)}})
             entities = build(self.root, REV)["entities"]
             for kind in ("composer","opera"):
