@@ -847,6 +847,12 @@
       "slug": "dialoghi-delle-carmelitane",
       "title": "Dialoghi delle carmelitane",
       "composer": "Francis Poulenc"
+    },
+    "venere e adone|salvatore sciarrino": {
+      "id": "oa-w-000133",
+      "slug": "venere-e-adone",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino"
     }
   },
   "venues": {
@@ -3797,6 +3803,14 @@
       "venue_id": "oa-v-000001",
       "slug": "dialoghi-delle-carmelitane",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "season": "2025-2026"
+    },
+    "historical-2026-venezia-fenice-venere-e-adone": {
+      "id": "oa-s-000309",
+      "work_id": "oa-w-000133",
+      "venue_id": "oa-v-000008",
+      "slug": "venere-e-adone",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
       "season": "2025-2026"
     }
   },
@@ -10947,6 +10961,36 @@
       "staging_id": "oa-s-000308",
       "original_date": "2026-04-12",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+    },
+    "historical-2026-venezia-fenice-venere-e-adone|2026-06-26": {
+      "id": "oa-r-001219",
+      "staging_id": "oa-s-000309",
+      "original_date": "2026-06-26",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+    },
+    "historical-2026-venezia-fenice-venere-e-adone|2026-06-27": {
+      "id": "oa-r-001220",
+      "staging_id": "oa-s-000309",
+      "original_date": "2026-06-27",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+    },
+    "historical-2026-venezia-fenice-venere-e-adone|2026-06-28": {
+      "id": "oa-r-001221",
+      "staging_id": "oa-s-000309",
+      "original_date": "2026-06-28",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+    },
+    "historical-2026-venezia-fenice-venere-e-adone|2026-06-30": {
+      "id": "oa-r-001222",
+      "staging_id": "oa-s-000309",
+      "original_date": "2026-06-30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+    },
+    "historical-2026-venezia-fenice-venere-e-adone|2026-07-01": {
+      "id": "oa-r-001223",
+      "staging_id": "oa-s-000309",
+      "original_date": "2026-07-01",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
     }
   },
   "reserved_works": {
