@@ -1,7 +1,7 @@
 name: Publish Atlas integration index
 on:
   workflow_run:
-    workflows: ["Refresh public Opera Atlas catalog"]
+    workflows: ["Refresh public Opera Atlas catalog", "Refresh composer portraits"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
