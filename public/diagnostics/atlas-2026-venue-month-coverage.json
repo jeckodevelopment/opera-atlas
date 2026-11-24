@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T22:36:31+00:00",
+  "generated_at": "2026-11-24T22:44:37+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,49 +10,15 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 748,
-    "published_dates_not_exhaustively_verified": 116
+    "coverage_not_established": 736,
+    "published_dates_not_exhaustively_verified": 128
   },
-  "zero_published_venue_count": 23,
+  "zero_published_venue_count": 17,
   "zero_published_by_calendar_status": {
-    "acquired": 8,
-    "not_acquired": 15
+    "acquired": 5,
+    "not_acquired": 12
   },
   "venue_audit_priorities": [
-    {
-      "venue_id": "oa-v-000002",
-      "venue": "Teatro Sociale",
-      "city": "Como",
-      "region": "Lombardia",
-      "calendar_status": "acquired",
-      "monitoring_status": "programma_censito",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 4,
-      "official_unpublished_opera_lead_count": 4,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-v-000005",
-      "venue": "Teatro Ponchielli",
-      "city": "Cremona",
-      "region": "Lombardia",
-      "calendar_status": "acquired",
-      "monitoring_status": "programma_censito",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 2,
-      "official_unpublished_opera_lead_count": 2,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
     {
       "venue_id": "oa-vd-000054",
       "venue": "Teatro Goldoni",
@@ -139,23 +105,6 @@
       "missing_recite_certified": false
     },
     {
-      "venue_id": "oa-v-000007",
-      "venue": "Arena di Verona",
-      "city": "Verona",
-      "region": "Veneto",
-      "calendar_status": "acquired",
-      "monitoring_status": "programma_censito",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 3,
-      "official_unpublished_opera_lead_count": 3,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
-    {
       "venue_id": "oa-vd-000015",
       "venue": "Teatro Alfieri",
       "city": "Asti",
@@ -227,23 +176,6 @@
       "missing_recite_certified": false
     },
     {
-      "venue_id": "oa-vd-000031",
-      "venue": "Teatro del Giglio Giacomo Puccini",
-      "city": "Lucca",
-      "region": "Toscana",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 4,
-      "official_unpublished_opera_lead_count": 4,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
-    {
       "venue_id": "oa-vd-000036",
       "venue": "Arena Sferisterio",
       "city": "Macerata",
@@ -271,23 +203,6 @@
       "published_months": 0,
       "official_verified_opera_lead_count": 1,
       "official_unpublished_opera_lead_count": 1,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000047",
-      "venue": "Teatro Vittorio Emanuele",
-      "city": "Messina",
-      "region": "Sicilia",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 2,
-      "official_unpublished_opera_lead_count": 2,
       "official_opera_lead_review_required": true,
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
@@ -397,25 +312,6 @@
       "missing_recite_certified": false
     },
     {
-      "venue_id": "oa-vd-000019",
-      "venue": "Teatro Filarmonico",
-      "city": "Verona",
-      "region": "Veneto",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 4,
-      "official_unpublished_opera_lead_count": 4,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 1,
-      "official_historical_sources": [
-        "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/"
-      ],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
-    {
       "venue_id": "oa-v-000052",
       "venue": "Forte della Maddalena",
       "city": "Alghero",
@@ -473,8 +369,8 @@
       "region": "Lombardia",
       "calendar_status": "acquired",
       "monitoring_status": "programma_censito",
-      "published_2026_showtimes": 2,
-      "published_months": 1,
+      "published_2026_showtimes": 4,
+      "published_months": 2,
       "official_verified_opera_lead_count": 0,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
@@ -510,6 +406,40 @@
       "published_2026_showtimes": 12,
       "published_months": 2,
       "official_verified_opera_lead_count": 0,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "region": "Lombardia",
+      "calendar_status": "acquired",
+      "monitoring_status": "programma_censito",
+      "published_2026_showtimes": 6,
+      "published_months": 3,
+      "official_verified_opera_lead_count": 4,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "region": "Lombardia",
+      "calendar_status": "acquired",
+      "monitoring_status": "programma_censito",
+      "published_2026_showtimes": 4,
+      "published_months": 2,
+      "official_verified_opera_lead_count": 2,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
       "historical_source_seed_count": 0,
@@ -630,8 +560,8 @@
       "region": "Lombardia",
       "calendar_status": "acquired",
       "monitoring_status": "programma_censito",
-      "published_2026_showtimes": 6,
-      "published_months": 2,
+      "published_2026_showtimes": 8,
+      "published_months": 3,
       "official_verified_opera_lead_count": 0,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
@@ -739,6 +669,23 @@
       "published_2026_showtimes": 10,
       "published_months": 2,
       "official_verified_opera_lead_count": 0,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "region": "Veneto",
+      "calendar_status": "acquired",
+      "monitoring_status": "programma_censito",
+      "published_2026_showtimes": 3,
+      "published_months": 1,
+      "official_verified_opera_lead_count": 3,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
       "historical_source_seed_count": 0,
@@ -970,6 +917,23 @@
       "missing_recite_certified": false
     },
     {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "region": "Toscana",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 4,
+      "published_months": 2,
+      "official_verified_opera_lead_count": 4,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
       "venue_id": "oa-vd-000044",
       "venue": "Palazzo Ducale di Martina Franca",
       "city": "Martina Franca",
@@ -979,6 +943,23 @@
       "published_2026_showtimes": 8,
       "published_months": 2,
       "official_verified_opera_lead_count": 0,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "region": "Sicilia",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 2,
+      "published_months": 1,
+      "official_verified_opera_lead_count": 2,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
       "historical_source_seed_count": 0,
@@ -1242,6 +1223,25 @@
       "missing_recite_certified": false
     },
     {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "region": "Veneto",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 4,
+      "published_months": 1,
+      "official_verified_opera_lead_count": 4,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 1,
+      "official_historical_sources": [
+        "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/"
+      ],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
       "venue_id": "oa-vd-000059",
       "venue": "Teatro Olimpico",
       "city": "Vicenza",
@@ -1261,11 +1261,11 @@
   ],
   "official_2026_opera_lead_venue_count": 13,
   "official_2026_opera_lead_count": 93,
-  "official_unpublished_opera_lead_count": 73,
+  "official_unpublished_opera_lead_count": 54,
   "official_lead_reconciliation_counts": {
     "clock_review": 33,
-    "exact_match": 20,
-    "publication_candidate": 40
+    "exact_match": 39,
+    "publication_candidate": 21
   },
   "official_lead_reconciliation": [
     {
@@ -1274,11 +1274,11 @@
       "title": "Don Quichotte",
       "composer": "Jules Massenet",
       "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000002",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-18",
@@ -1286,11 +1286,11 @@
       "title": "Don Quichotte",
       "composer": "Jules Massenet",
       "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000002",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-09-24",
@@ -1298,11 +1298,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000002",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-09-26",
@@ -1310,11 +1310,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000002",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-25",
@@ -1322,11 +1322,11 @@
       "title": "Aida",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000007",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-26",
@@ -1334,11 +1334,11 @@
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000007",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-27",
@@ -1346,11 +1346,11 @@
       "title": "La traviata",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000007",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-17",
@@ -1490,11 +1490,11 @@
       "title": "Don Giovanni",
       "composer": "Wolfgang Amadeus Mozart",
       "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000019",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-21",
@@ -1502,11 +1502,11 @@
       "title": "Don Giovanni",
       "composer": "Wolfgang Amadeus Mozart",
       "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000019",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-23",
@@ -1514,11 +1514,11 @@
       "title": "Don Giovanni",
       "composer": "Wolfgang Amadeus Mozart",
       "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000019",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-25",
@@ -1526,11 +1526,11 @@
       "title": "Don Giovanni",
       "composer": "Wolfgang Amadeus Mozart",
       "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000019",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-17",
@@ -1730,11 +1730,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000047",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-02-15",
@@ -1742,11 +1742,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000047",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-28",
@@ -2174,11 +2174,11 @@
       "title": "Un ballo in maschera",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000005",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-29",
@@ -2186,11 +2186,11 @@
       "title": "Un ballo in maschera",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000005",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-21",
@@ -2246,11 +2246,11 @@
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000031",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-05",
@@ -2258,11 +2258,11 @@
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000031",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-04-25",
@@ -2270,11 +2270,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000031",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-04-26",
@@ -2282,11 +2282,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000031",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-12-20",
@@ -2385,8 +2385,8 @@
       "reconciliation_status": "publication_candidate"
     }
   ],
-  "official_lead_venues_with_zero_published": 12,
-  "published_2026_showtimes": 472,
+  "official_lead_venues_with_zero_published": 6,
+  "published_2026_showtimes": 499,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -2708,42 +2708,17 @@
       "city": "Como",
       "region": "Lombardia",
       "month": "2026-01",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-01-16",
-          "time": "20:00",
-          "title": "Don Quichotte",
-          "composer": "Jules Massenet",
-          "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000002",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-01-18",
-          "time": "15:30",
-          "title": "Don Quichotte",
-          "composer": "Jules Massenet",
-          "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000002",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000002",
@@ -2877,42 +2852,17 @@
       "city": "Como",
       "region": "Lombardia",
       "month": "2026-09",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-09-24",
-          "time": "20:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000002",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-09-26",
-          "time": "20:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000002",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000002",
@@ -2938,7 +2888,7 @@
       "city": "Como",
       "region": "Lombardia",
       "month": "2026-11",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -2948,7 +2898,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000002",
@@ -3154,7 +3104,7 @@
       "city": "Pavia",
       "region": "Lombardia",
       "month": "2026-11",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -3164,7 +3114,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000003",
@@ -3370,7 +3320,7 @@
       "city": "Brescia",
       "region": "Lombardia",
       "month": "2026-11",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -3380,7 +3330,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000004",
@@ -3586,50 +3536,7 @@
       "city": "Cremona",
       "region": "Lombardia",
       "month": "2026-11",
-      "published_showtimes": 0,
-      "source_observed_opera_showtimes": 0,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 0,
-      "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-11-27",
-          "time": "20:00",
-          "title": "Un ballo in maschera",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000005",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-29",
-          "time": "16:00",
-          "title": "Un ballo in maschera",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000005",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
-      "historical_sources_checked": [],
-      "source_exhaustiveness_verified": false,
-      "complete_month_verified": false,
-      "status": "coverage_not_established"
-    },
-    {
-      "venue_id": "oa-v-000005",
-      "venue": "Teatro Ponchielli",
-      "city": "Cremona",
-      "region": "Lombardia",
-      "month": "2026-12",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -3639,7 +3546,25 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "region": "Lombardia",
+      "month": "2026-12",
+      "published_showtimes": 2,
+      "source_observed_opera_showtimes": 0,
+      "observed_already_published": 0,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
+      "historical_sources_checked": [],
+      "source_exhaustiveness_verified": false,
+      "complete_month_verified": false,
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000006",
@@ -4019,54 +3944,17 @@
       "city": "Verona",
       "region": "Veneto",
       "month": "2026-06",
-      "published_showtimes": 0,
+      "published_showtimes": 3,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-06-25",
-          "time": "21:15",
-          "title": "Aida",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000007",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-06-26",
-          "time": "21:15",
-          "title": "Nabucco",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000007",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-06-27",
-          "time": "21:15",
-          "title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000007",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 3,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000007",
@@ -6829,62 +6717,13 @@
       "city": "Verona",
       "region": "Veneto",
       "month": "2026-01",
-      "published_showtimes": 0,
+      "published_showtimes": 4,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-01-18",
-          "time": "15:30",
-          "title": "Don Giovanni",
-          "composer": "Wolfgang Amadeus Mozart",
-          "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000019",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-01-21",
-          "time": "19:00",
-          "title": "Don Giovanni",
-          "composer": "Wolfgang Amadeus Mozart",
-          "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000019",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-01-23",
-          "time": "20:00",
-          "title": "Don Giovanni",
-          "composer": "Wolfgang Amadeus Mozart",
-          "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000019",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-01-25",
-          "time": "15:30",
-          "title": "Don Giovanni",
-          "composer": "Wolfgang Amadeus Mozart",
-          "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000019",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 4,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [
         {
           "source_key": "filarmonico-verona-2026",
@@ -6899,7 +6738,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000019",
@@ -9446,42 +9285,17 @@
       "city": "Lucca",
       "region": "Toscana",
       "month": "2026-01",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-01-04",
-          "time": "18:00",
-          "title": "Nabucco",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000031",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-01-05",
-          "time": "16:00",
-          "title": "Nabucco",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000031",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000031",
@@ -9525,42 +9339,17 @@
       "city": "Lucca",
       "region": "Toscana",
       "month": "2026-04",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-04-25",
-          "time": "18:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000031",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-04-26",
-          "time": "16:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000031",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000031",
@@ -13365,42 +13154,17 @@
       "city": "Messina",
       "region": "Sicilia",
       "month": "2026-02",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-02-13",
-          "time": "21:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000047",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-02-15",
-          "time": "17:30",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000047",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000047",
