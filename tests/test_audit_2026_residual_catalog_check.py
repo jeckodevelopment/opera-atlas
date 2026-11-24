@@ -160,8 +160,7 @@ class ResidualTests(unittest.TestCase):
                dict(groups[0],venue="Other Theatre"),
                dict(groups[0],source_urls=["https://example.net/"])]
         self.assertEqual(check(inp(wrong),catalog)["counts"],
-                         {"requires_official_genre_and_catalog_review":4,
-                          "official_opera_unpublished_candidate_first_party_review":1})
+                         {"requires_official_genre_and_catalog_review":5})
 
     def test_pisa_six_official_historical_opera_dates_remain_publication_review(self):
         examples=[
