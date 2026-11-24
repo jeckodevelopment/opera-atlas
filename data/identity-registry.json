@@ -859,6 +859,13 @@
       "slug": "semiramide",
       "title": "Semiramide",
       "composer": "Gioachino Rossini"
+    },
+    "the turn of the screw|benjamin britten": {
+      "id": "oa-w-000135",
+      "slug": "the-turn-of-the-screw",
+      "title": "The Turn of the Screw",
+      "composer": "Benjamin Britten",
+      "authority_url": "https://www.brittenpearsarts.org/music/the-turn-of-the-screw"
     }
   },
   "venues": {
@@ -3865,6 +3872,30 @@
       "venue_id": "oa-v-000028",
       "slug": "andrea-chenier",
       "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-pisa-verdi-carmen": {
+      "id": "oa-s-000316",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000038",
+      "slug": "carmen",
+      "source_url": "https://teatrodipisa.it/spettacolo/carmen/",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-pisa-verdi-turn-of-the-screw": {
+      "id": "oa-s-000317",
+      "work_id": "oa-w-000135",
+      "venue_id": "oa-v-000038",
+      "slug": "the-turn-of-the-screw",
+      "source_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-pisa-verdi-elisir-d-amore": {
+      "id": "oa-s-000318",
+      "work_id": "oa-w-000073",
+      "venue_id": "oa-v-000038",
+      "slug": "elisir-d-amore",
+      "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/",
       "season": "2025-2026"
     }
   },
@@ -11285,6 +11316,42 @@
       "staging_id": "oa-s-000315",
       "original_date": "2026-04-18",
       "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+    },
+    "historical-2026h1-pisa-verdi-carmen|2026-01-23": {
+      "id": "oa-r-001264",
+      "staging_id": "oa-s-000316",
+      "original_date": "2026-01-23",
+      "source_url": "https://teatrodipisa.it/spettacolo/carmen/"
+    },
+    "historical-2026h1-pisa-verdi-carmen|2026-01-25": {
+      "id": "oa-r-001265",
+      "staging_id": "oa-s-000316",
+      "original_date": "2026-01-25",
+      "source_url": "https://teatrodipisa.it/spettacolo/carmen/"
+    },
+    "historical-2026h1-pisa-verdi-turn-of-the-screw|2026-02-27": {
+      "id": "oa-r-001266",
+      "staging_id": "oa-s-000317",
+      "original_date": "2026-02-27",
+      "source_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/"
+    },
+    "historical-2026h1-pisa-verdi-turn-of-the-screw|2026-03-01": {
+      "id": "oa-r-001267",
+      "staging_id": "oa-s-000317",
+      "original_date": "2026-03-01",
+      "source_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/"
+    },
+    "historical-2026h1-pisa-verdi-elisir-d-amore|2026-03-27": {
+      "id": "oa-r-001268",
+      "staging_id": "oa-s-000318",
+      "original_date": "2026-03-27",
+      "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/"
+    },
+    "historical-2026h1-pisa-verdi-elisir-d-amore|2026-03-29": {
+      "id": "oa-r-001269",
+      "staging_id": "oa-s-000318",
+      "original_date": "2026-03-29",
+      "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/"
     }
   },
   "reserved_works": {
