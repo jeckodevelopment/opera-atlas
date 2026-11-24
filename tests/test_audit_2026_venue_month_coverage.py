@@ -43,6 +43,23 @@ class VenueMonthMatrixTests(unittest.TestCase):
             self.assertGreater(x["observed_already_published"],0)
             self.assertEqual(0,x["observed_not_in_publication"])
 
+    def test_malibran_calendar_not_wrongly_attributed_to_la_fenice(self):
+        r=self.report
+        malibran=[x for x in r["rows"] if x["venue"]=="Teatro Malibran"
+                  and x["city"]=="Venezia"]
+        self.assertEqual(12,len(malibran))
+        self.assertEqual(10,sum(x["source_observed_opera_showtimes"] for x in malibran))
+        fenice=[x for x in r["rows"] if x["venue"]=="Teatro La Fenice"
+                and x["city"]=="Venezia"]
+        self.assertEqual(30,sum(x["source_observed_opera_showtimes"] for x in fenice))
+
+    def test_regio_historical_published_dates_reconcile_except_new_work(self):
+        r=self.report
+        regio=[x for x in r["rows"] if x["venue"]=="Teatro Regio di Torino"]
+        self.assertEqual(25,sum(x["source_observed_opera_showtimes"] for x in regio))
+        self.assertEqual(19,sum(x["observed_already_published"] for x in regio))
+        self.assertEqual(6,sum(x["observed_not_in_publication"] for x in regio))
+
     def test_family_and_nonopera_candidates_never_inflate_opera_denominator(self):
         r=self.report
         self.assertEqual(3,len(r["h1_scope_review"]))
