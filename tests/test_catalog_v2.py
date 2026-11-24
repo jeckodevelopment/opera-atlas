@@ -129,7 +129,7 @@ class CanonicalCatalogV2Tests(unittest.TestCase):
         self.assertEqual(stagings[0]["url"],"/jesi/teatro-giovan-battista-pergolesi/don-pasquale/")
         self.assertEqual(stagings[0]["work_id"],"oa-w-000090")
         self.assertEqual(len([x for x in graph["stagings"]
-                              if x["work_id"]=="oa-w-000090"]),1)
+                              if x["work_id"]=="oa-w-000090"]),2)
         performances=[x for x in graph["performances"] if x["staging_id"]=="oa-s-000196"]
         self.assertEqual({x["id"] for x in performances},
                          {"oa-r-000863","oa-r-000864"})

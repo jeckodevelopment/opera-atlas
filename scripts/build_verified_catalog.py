@@ -618,6 +618,54 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     }
+    reconciled_2026.update({
+        "historical-2026-novara-don-pasquale": {
+            "title": "Don Pasquale",
+            "composer": "Gaetano Donizetti",
+            "venue": "Teatro Coccia",
+            "municipality": "Novara",
+            "region": "Piemonte",
+            "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
+            "dates": [
+                [
+                    "2026-11-21",
+                    "20:30"
+                ],
+                [
+                    "2026-11-22",
+                    "16:00"
+                ]
+            ]
+        },
+        "historical-2026-mantova-la-traviata": {
+            "title": "La traviata",
+            "composer": "Giuseppe Verdi",
+            "venue": "Teatro Sociale di Mantova",
+            "municipality": "Mantova",
+            "region": "Lombardia",
+            "source_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx",
+            "dates": [
+                [
+                    "2026-12-20",
+                    "17:30"
+                ]
+            ]
+        },
+        "historical-2026-asti-la-boheme": {
+            "title": "La bohème",
+            "composer": "Giacomo Puccini",
+            "venue": "Teatro Alfieri",
+            "municipality": "Asti",
+            "region": "Piemonte",
+            "source_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
+            "dates": [
+                [
+                    "2026-02-14",
+                    "21:00"
+                ]
+            ]
+        }
+    })
     reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
     permitted.update(reconciled_urls)
     events = []
