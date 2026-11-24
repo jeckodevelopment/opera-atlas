@@ -853,6 +853,12 @@
       "slug": "venere-e-adone",
       "title": "Venere e Adone",
       "composer": "Salvatore Sciarrino"
+    },
+    "semiramide|gioachino rossini": {
+      "id": "oa-w-000134",
+      "slug": "semiramide",
+      "title": "Semiramide",
+      "composer": "Gioachino Rossini"
     }
   },
   "venues": {
@@ -3811,6 +3817,30 @@
       "venue_id": "oa-v-000008",
       "slug": "venere-e-adone",
       "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+      "season": "2025-2026"
+    },
+    "historical-2026-palermo-massimo-dido-and-aeneas": {
+      "id": "oa-s-000310",
+      "work_id": "oa-w-000052",
+      "venue_id": "oa-v-000009",
+      "slug": "dido-and-aeneas",
+      "source_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+      "season": "2025-2026"
+    },
+    "historical-2026-palermo-massimo-semiramide": {
+      "id": "oa-s-000311",
+      "work_id": "oa-w-000134",
+      "venue_id": "oa-v-000009",
+      "slug": "semiramide",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/",
+      "season": "2025-2026"
+    },
+    "historical-2026-palermo-massimo-aida": {
+      "id": "oa-s-000312",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000009",
+      "slug": "aida",
+      "source_url": "https://www.teatromassimo.it/event/aida/",
       "season": "2025-2026"
     }
   },
@@ -10991,6 +11021,120 @@
       "staging_id": "oa-s-000309",
       "original_date": "2026-07-01",
       "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+    },
+    "historical-2026-palermo-massimo-dido-and-aeneas|2026-02-20": {
+      "id": "oa-r-001224",
+      "staging_id": "oa-s-000310",
+      "original_date": "2026-02-20",
+      "source_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/"
+    },
+    "historical-2026-palermo-massimo-dido-and-aeneas|2026-02-21": {
+      "id": "oa-r-001225",
+      "staging_id": "oa-s-000310",
+      "original_date": "2026-02-21",
+      "source_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/"
+    },
+    "historical-2026-palermo-massimo-dido-and-aeneas|2026-02-22": {
+      "id": "oa-r-001226",
+      "staging_id": "oa-s-000310",
+      "original_date": "2026-02-22",
+      "source_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/"
+    },
+    "historical-2026-palermo-massimo-dido-and-aeneas|2026-02-24": {
+      "id": "oa-r-001227",
+      "staging_id": "oa-s-000310",
+      "original_date": "2026-02-24",
+      "source_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/"
+    },
+    "historical-2026-palermo-massimo-semiramide|2026-03-11": {
+      "id": "oa-r-001228",
+      "staging_id": "oa-s-000311",
+      "original_date": "2026-03-11",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/"
+    },
+    "historical-2026-palermo-massimo-semiramide|2026-03-12": {
+      "id": "oa-r-001229",
+      "staging_id": "oa-s-000311",
+      "original_date": "2026-03-12",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/"
+    },
+    "historical-2026-palermo-massimo-semiramide|2026-03-13": {
+      "id": "oa-r-001230",
+      "staging_id": "oa-s-000311",
+      "original_date": "2026-03-13",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/"
+    },
+    "historical-2026-palermo-massimo-semiramide|2026-03-14": {
+      "id": "oa-r-001231",
+      "staging_id": "oa-s-000311",
+      "original_date": "2026-03-14",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/"
+    },
+    "historical-2026-palermo-massimo-semiramide|2026-03-15": {
+      "id": "oa-r-001232",
+      "staging_id": "oa-s-000311",
+      "original_date": "2026-03-15",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/"
+    },
+    "historical-2026-palermo-massimo-semiramide|2026-03-17": {
+      "id": "oa-r-001233",
+      "staging_id": "oa-s-000311",
+      "original_date": "2026-03-17",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/"
+    },
+    "historical-2026-palermo-massimo-semiramide|2026-03-18": {
+      "id": "oa-r-001234",
+      "staging_id": "oa-s-000311",
+      "original_date": "2026-03-18",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-22": {
+      "id": "oa-r-001235",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-22",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-23": {
+      "id": "oa-r-001236",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-23",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-24": {
+      "id": "oa-r-001237",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-24",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-27": {
+      "id": "oa-r-001238",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-27",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-28": {
+      "id": "oa-r-001239",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-28",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-29": {
+      "id": "oa-r-001240",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-29",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-30": {
+      "id": "oa-r-001241",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-30",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-palermo-massimo-aida|2026-05-31": {
+      "id": "oa-r-001242",
+      "staging_id": "oa-s-000312",
+      "original_date": "2026-05-31",
+      "source_url": "https://www.teatromassimo.it/event/aida/"
     }
   },
   "reserved_works": {
