@@ -2,7 +2,7 @@
 import unittest
 from unittest.mock import patch
 
-from scripts.audit_2026_jan_jun_official import detail_links, scan, validate_seeds
+from scripts.audit_2026_jan_jun_official import detail_links, scan, validate_seeds, credited_official_opera_facts
 
 
 class HistoricalJanJunTests(unittest.TestCase):
@@ -38,6 +38,21 @@ class HistoricalJanJunTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 validate_seeds({"schema_version":1,"year":2026,"seeds":[wrong]},
                                {},directory,historical)
+
+    def test_scala_official_2025_26_credit_and_exact_2026_showtime(self):
+        html=('<p>Opera</p><h1>Macbeth</h1><p>Giuseppe Verdi</p>'
+              '<p>Dal 12 marzo 2026</p><div>12 marzo 2026 Ore 20:00</div>')
+        facts=credited_official_opera_facts(
+            html,"https://www.teatroallascala.org/it/stagione/2025-2026/opera/macbeth.html")
+        self.assertEqual(1,len(facts))
+        self.assertEqual("2026-03-12",facts[0]["date"])
+        self.assertEqual("20:00",facts[0]["starts_at"][11:16])
+        self.assertEqual("Giuseppe Verdi",facts[0]["composer"])
+
+    def test_unapproved_scala_year_never_parsed(self):
+        html='<h1>Macbeth</h1>'
+        self.assertEqual([],credited_official_opera_facts(
+            html,"https://www.teatroallascala.org/it/stagione/2024-2025/opera/macbeth.html"))
 
     def test_no_network_error_never_certifies_complete(self):
         source={"key":"fenice-2025-26","venue_id":"v1","city":"Venezia",
