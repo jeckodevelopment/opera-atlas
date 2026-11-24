@@ -57,7 +57,7 @@ class VenueMonthMatrixTests(unittest.TestCase):
         r=self.report
         self.assertEqual(93,r["official_2026_opera_lead_count"])
         self.assertEqual(13,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(2,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,r["official_unpublished_opera_lead_count"])
         self.assertEqual(0,r["official_lead_venues_with_zero_published"])
         self.assertEqual(11,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
@@ -72,10 +72,10 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(0,sources["Arena di Verona"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Arena Sferisterio"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Filarmonico"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(2,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(91,r["official_lead_reconciliation_counts"]["exact_match"])
+        self.assertEqual(93,r["official_lead_reconciliation_counts"]["exact_match"])
         self.assertEqual(0,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Coccia"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro del Giglio Giacomo Puccini"]["official_unpublished_opera_lead_count"])
