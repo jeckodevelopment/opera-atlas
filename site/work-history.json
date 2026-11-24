@@ -1278,6 +1278,36 @@
         "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
         "https://www.comune.modena.it/vivere-modena/eventi/2026/modena-belcanto-festival/la-costanza-trionfante"
       ]
+    },
+    "lucrezia-borgia": {
+      "librettist": "Felice Romani, dal dramma di Victor Hugo",
+      "premiere_year": 1833,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://corago.unibo.it/libretto/DMBM15829",
+        "https://commons.wikimedia.org/wiki/File:Gaetano_Donizetti_-_Lucrezia_Borgia_-_titlepage_of_the_libretto,_Milan_1833.png"
+      ]
+    },
+    "cosi-fan-tutte": {
+      "librettist": "Lorenzo Da Ponte",
+      "premiere_year": 1790,
+      "premiere_venue": "Burgtheater",
+      "premiere_city": "Vienna",
+      "sources": [
+        "https://dme.mozarteum.at/libretti-edition/source_quali.php?idwnma=6757",
+        "https://www.teatrolafenice.it/wp-content/uploads/2019/03/COS%C3%8C-FAN-TUTTE.pdf"
+      ]
+    },
+    "il-cappello-di-paglia-di-firenze": {
+      "librettist": "Nino Rota ed Ernesta Rinaldi Rota, dalla commedia di Eugène Labiche e Marc-Michel",
+      "premiere_year": 1955,
+      "premiere_venue": "Teatro Massimo",
+      "premiere_city": "Palermo",
+      "sources": [
+        "https://www.ninorota.com/il-cappello-di-paglia-di-firenze/",
+        "https://corago.unibo.it/opera/Z000039311"
+      ]
     }
   },
   "works_by_id": {
