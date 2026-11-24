@@ -211,7 +211,8 @@ class ResidualTests(unittest.TestCase):
             "gala_concert","baroque_concert","sacred_concert","tribute_concert",
             "opera_gala_concert","choral_concert","contemporary_chamber_concert",
             "symphonic_concert","recital","pre_opera_public_talk","musical_reading",
-            "children_musical","prose_theatre","opera_introduction_talk"}
+            "children_musical","prose_theatre","opera_introduction_talk",
+            "school_only_rehearsal"}
         # The new source-scoped genre evidence is not a wildcard that
         # automatically reclassifies another year, venue, title or host.
         chosen=[e for e in OFFICIAL_GENRE_EVIDENCE
