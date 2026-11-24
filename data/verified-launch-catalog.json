@@ -8042,6 +8042,115 @@
           "15:30"
         ]
       ]
+    },
+    {
+      "key": "historical-2026-palermo-massimo-dido-and-aeneas",
+      "title": "Dido and Æneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+      "dates": [
+        [
+          "2026-02-20",
+          "20:00"
+        ],
+        [
+          "2026-02-21",
+          "18:30"
+        ],
+        [
+          "2026-02-22",
+          "17:30"
+        ],
+        [
+          "2026-02-24",
+          "18:30"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026-palermo-massimo-semiramide",
+      "title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/semiramide/",
+      "dates": [
+        [
+          "2026-03-11",
+          "20:00"
+        ],
+        [
+          "2026-03-12",
+          "18:30"
+        ],
+        [
+          "2026-03-13",
+          "18:30"
+        ],
+        [
+          "2026-03-14",
+          "20:00"
+        ],
+        [
+          "2026-03-15",
+          "17:30"
+        ],
+        [
+          "2026-03-17",
+          "18:30"
+        ],
+        [
+          "2026-03-18",
+          "18:30"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026-palermo-massimo-aida",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "municipality": "Palermo",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimo.it/event/aida/",
+      "dates": [
+        [
+          "2026-05-22",
+          "20:00"
+        ],
+        [
+          "2026-05-23",
+          "18:30"
+        ],
+        [
+          "2026-05-24",
+          "17:30"
+        ],
+        [
+          "2026-05-27",
+          "18:30"
+        ],
+        [
+          "2026-05-28",
+          "20:00"
+        ],
+        [
+          "2026-05-29",
+          "18:30"
+        ],
+        [
+          "2026-05-30",
+          "20:00"
+        ],
+        [
+          "2026-05-31",
+          "18:30"
+        ]
+      ]
     }
   ]
 }

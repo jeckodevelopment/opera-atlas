@@ -146,6 +146,11 @@ def credited_official_opera_facts(html, url):
         composer=m.group(1).strip()
         venue="Teatro alla Scala"
         dates=parse_showtimes(html,url=url,title=title,composer=composer,adapter="scala")
+    elif (parsed.hostname=="www.teatromassimo.it" and
+          path in {"/event/dido-and-aeneas-2/","/event/semiramide/",
+                   "/event/aida/"}):
+        from opera_atlas.palermo_2026_historical_parser import parse_palermo_historical_showtimes
+        title,composer,venue,dates=parse_palermo_historical_showtimes(html,url)
     elif parsed.hostname=="www.tcbo.it" and path.startswith("/evento/opera/"):
         from opera_atlas.bologna_detail_parser import parse_detail
         title,composer,venue,dates=parse_detail(html,url=url)

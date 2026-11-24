@@ -49,6 +49,9 @@ APPROVED_PAGES = {
     "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
     "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/",
     "https://www.teatrofraschini.it/programma/death-in-venice/",
+    "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+    "https://www.teatromassimo.it/event/semiramide/",
+    "https://www.teatromassimo.it/event/aida/",
     "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
 }
 
@@ -326,6 +329,113 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                         ["2026-07-01", "19:00"],
                     ])):
                 raise ValueError("Venere e Adone must match five official Fenice showtimes")
+        # Exact verified 2026 Teatro Massimo Palermo general-public showtimes.
+        # Aida's 26 May Turno Scuola is intentionally excluded.
+        palermo_2026 = {
+                "https://www.teatromassimo.it/event/dido-and-aeneas-2/": {
+                        "title": "Dido and Æneas",
+                        "composer": "Henry Purcell",
+                        "dates": [
+                                [
+                                        "2026-02-20",
+                                        "20:00"
+                                ],
+                                [
+                                        "2026-02-21",
+                                        "18:30"
+                                ],
+                                [
+                                        "2026-02-22",
+                                        "17:30"
+                                ],
+                                [
+                                        "2026-02-24",
+                                        "18:30"
+                                ]
+                        ]
+                },
+                "https://www.teatromassimo.it/event/semiramide/": {
+                        "title": "Semiramide",
+                        "composer": "Gioachino Rossini",
+                        "dates": [
+                                [
+                                        "2026-03-11",
+                                        "20:00"
+                                ],
+                                [
+                                        "2026-03-12",
+                                        "18:30"
+                                ],
+                                [
+                                        "2026-03-13",
+                                        "18:30"
+                                ],
+                                [
+                                        "2026-03-14",
+                                        "20:00"
+                                ],
+                                [
+                                        "2026-03-15",
+                                        "17:30"
+                                ],
+                                [
+                                        "2026-03-17",
+                                        "18:30"
+                                ],
+                                [
+                                        "2026-03-18",
+                                        "18:30"
+                                ]
+                        ]
+                },
+                "https://www.teatromassimo.it/event/aida/": {
+                        "title": "Aida",
+                        "composer": "Giuseppe Verdi",
+                        "dates": [
+                                [
+                                        "2026-05-22",
+                                        "20:00"
+                                ],
+                                [
+                                        "2026-05-23",
+                                        "18:30"
+                                ],
+                                [
+                                        "2026-05-24",
+                                        "17:30"
+                                ],
+                                [
+                                        "2026-05-27",
+                                        "18:30"
+                                ],
+                                [
+                                        "2026-05-28",
+                                        "20:00"
+                                ],
+                                [
+                                        "2026-05-29",
+                                        "18:30"
+                                ],
+                                [
+                                        "2026-05-30",
+                                        "20:00"
+                                ],
+                                [
+                                        "2026-05-31",
+                                        "18:30"
+                                ]
+                        ]
+                }
+        }
+        if url in palermo_2026:
+            approved=palermo_2026[url]
+            if (production.get("title")!=approved["title"]
+                    or production.get("composer")!=approved["composer"]
+                    or production.get("municipality")!="Palermo"
+                    or production.get("venue")!="Teatro Massimo"
+                    or production.get("region")!="Sicilia"
+                    or sorted(production.get("dates",[]))!=sorted(approved["dates"])):
+                raise ValueError("unverified 2026 Teatro Massimo Palermo production")
         if url in historical_approved:
             reviewed = historical_approved[url]
             if (production.get("title") != reviewed["canonical_title"]
