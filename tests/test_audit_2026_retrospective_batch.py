@@ -85,6 +85,51 @@ class RetroBatchTests(unittest.TestCase):
                                          "https://www.teatrocomunalemodena.it/spettacoli/")
         self.assertNotIn("source_original_starts_at",unknown[0])
 
+    def test_truncated_http_response_is_unverified_in_all_three_scan_phases(self):
+        from http.client import IncompleteRead
+        from scripts.audit_2026_retrospective_batch import first_pass, second_pass, details_batch
+        source={"key":"example-opera","official_url":"https://official.example/",
+                "url":"https://official.example/2026/",
+                "access_status":"approved","min_links":1}
+        def broken(_source,_url):
+            raise IncompleteRead(b"partial",100)
+        with patch("scripts.audit_2026_retrospective_batch.validate_config",
+                   return_value=[source]):
+            seeds=first_pass({"sources":[source]},fetch_page=broken,workers=1)
+        self.assertEqual("unverified",seeds[0]["status"])
+        self.assertEqual("IncompleteRead",seeds[0]["failure"])
+        self.assertEqual([],seeds[0]["links"])
+        archives=second_pass([(source,"https://official.example/2026/",0,source["key"])],
+                             fetch_page=broken,workers=1)
+        self.assertEqual("unverified",archives[0]["status"])
+        self.assertEqual("IncompleteRead",archives[0]["failure"])
+        self.assertEqual([],archives[0]["event_facts"])
+        details=details_batch([(source,"https://official.example/2026/macbeth",
+                                "https://official.example/2026/")],
+                              fetch_page=broken,workers=1)
+        self.assertEqual("unverified",details[0]["status"])
+        self.assertEqual("IncompleteRead",details[0]["failure"])
+        self.assertEqual([],details[0]["facts"])
+
+    def test_truncated_detail_does_not_abort_following_good_page(self):
+        from http.client import IncompleteRead
+        from scripts.audit_2026_retrospective_batch import details_batch
+        source={"key":"example-opera","official_url":"https://official.example/"}
+        def mixed(_source,url):
+            if url.endswith("/broken"):
+                raise IncompleteRead(b"partial")
+            return ('<script type="application/ld+json">'
+                    '{"@type":"MusicEvent","name":"Macbeth",'
+                    '"startDate":"2026-09-25T20:30:00+02:00"}'
+                    '</script>')
+        result=details_batch([
+            (source,"https://official.example/broken","https://official.example/2026"),
+            (source,"https://official.example/good","https://official.example/2026"),
+        ],fetch_page=mixed,workers=2)
+        self.assertEqual(["unverified","scanned"],[x["status"] for x in result])
+        self.assertEqual(1,len(result[1]["facts"]))
+        self.assertEqual("Macbeth",result[1]["facts"][0]["event_title"])
+
     def test_unverified_source_not_claimed_complete(self):
         source = {"key":"one", "official_url":"https://official.example/",
                   "url":"https://official.example/archivio/", "access_status":"approved",
