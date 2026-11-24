@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "provenance": "First-party official performance audit (24 November 2026). Read-only leads covering six physical venues; no full-season certification, no automatic publication. Macerata and Torre del Lago clocks unverified and null. School presentations, concerts, gala, ballet, film excluded.",
+  "provenance": "First-party official performance audit (24 November 2026). Read-only leads covering eleven physical venues; no full-season certification or automatic publication. Unverified clocks remain null. School presentations, concerts, gala, ballet, film excluded.",
   "records": [
     {
       "venue_id": "oa-v-000002",
@@ -574,6 +574,56 @@
         ]
       ],
       "notes": "Double-bill: Scannavini world premiere + Rossini one-act; one physical recital per program date, not two."
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "dates": [
+        [
+          "2026-01-04",
+          "18:00"
+        ],
+        [
+          "2026-01-05",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "dates": [
+        [
+          "2026-04-25",
+          "18:00"
+        ],
+        [
+          "2026-04-26",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx?event=6A34D412-FDCE-46E7-A02C-2FEA0FFDD4EE",
+      "dates": [
+        [
+          "2026-12-20",
+          "17:30"
+        ]
+      ]
     }
   ]
 }
