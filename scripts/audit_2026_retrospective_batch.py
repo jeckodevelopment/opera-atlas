@@ -149,7 +149,10 @@ def queue_historical_indexes(seeds, *, limit=MAX_INDEX_PAGES):
                 continue
             url = candidate["url"]
             host = urlsplit(url).hostname
-            rank = 0 if candidate["category"] == "historical_year" else 1
+            # First prioritize the missing Jan-Jun 2026 season, ahead of
+            # 2026/27 pages that the ordinary live scanner already knows.
+            rank = (0 if re.search(r"2025[^0-9]{0,5}(?:2026|26)", url)
+                    else 1 if candidate["category"] == "historical_year" else 2)
             old = priorities.get(url)
             if old is None or rank < old[0]:
                 priorities[url] = (rank, row["source_key"],
