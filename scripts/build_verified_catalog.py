@@ -49,6 +49,7 @@ APPROVED_PAGES = {
     "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
     "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/",
     "https://www.teatrofraschini.it/programma/death-in-venice/",
+    "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
 }
 
 
@@ -310,6 +311,21 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
         url = production["source_url"]
         if url not in permitted:
             raise ValueError("non-reviewed source page")
+        # Manually reviewed first Italian staging of Sciarrino's 2023 opera.
+        # A single approved first-party URL MUST NOT license other dates, works
+        # or venues; the fifth performance is 1 July, after the H1 boundary.
+        if url == "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/":
+            if (production.get("title") != "Venere e Adone"
+                    or production.get("composer") != "Salvatore Sciarrino"
+                    or production.get("venue") != "Teatro La Fenice"
+                    or production.get("municipality") != "Venezia"
+                    or production.get("region") != "Veneto"
+                    or sorted(production.get("dates", [])) != sorted([
+                        ["2026-06-26", "19:00"], ["2026-06-27", "17:00"],
+                        ["2026-06-28", "17:00"], ["2026-06-30", "19:00"],
+                        ["2026-07-01", "19:00"],
+                    ])):
+                raise ValueError("Venere e Adone must match five official Fenice showtimes")
         if url in historical_approved:
             reviewed = historical_approved[url]
             if (production.get("title") != reviewed["canonical_title"]
