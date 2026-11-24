@@ -336,10 +336,121 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
     # the expanded canonical catalog, not the original static launch seed.
     historical_approved = approved_historical_h1()
     permitted = APPROVED_PAGES | auto_approved_pages() | set(historical_approved) | (approved_extra or set())
+    cagliari_archive = "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    cagliari_approved = {
+        "historical-2026-cagliari-norma": {
+            "title": "Norma",
+            "composer": "Vincenzo Bellini",
+            "dates": [
+                [
+                    "2026-03-18",
+                    "20:00"
+                ],
+                [
+                    "2026-03-19",
+                    "19:00"
+                ],
+                [
+                    "2026-03-20",
+                    "20:00"
+                ],
+                [
+                    "2026-03-21",
+                    "19:00"
+                ],
+                [
+                    "2026-03-22",
+                    "17:00"
+                ]
+            ]
+        },
+        "historical-2026-cagliari-turandot": {
+            "title": "Turandot",
+            "composer": "Giacomo Puccini",
+            "dates": [
+                [
+                    "2026-06-24",
+                    "20:00"
+                ],
+                [
+                    "2026-06-25",
+                    "19:00"
+                ],
+                [
+                    "2026-06-26",
+                    "20:00"
+                ],
+                [
+                    "2026-06-27",
+                    "19:00"
+                ],
+                [
+                    "2026-06-28",
+                    "17:00"
+                ],
+                [
+                    "2026-06-30",
+                    "20:00"
+                ],
+                [
+                    "2026-07-01",
+                    "20:00"
+                ],
+                [
+                    "2026-07-02",
+                    "20:00"
+                ]
+            ]
+        },
+        "historical-2026-cagliari-rigoletto": {
+            "title": "Rigoletto",
+            "composer": "Giuseppe Verdi",
+            "dates": [
+                [
+                    "2026-11-11",
+                    "20:00"
+                ],
+                [
+                    "2026-11-12",
+                    "19:00"
+                ],
+                [
+                    "2026-11-13",
+                    "20:00"
+                ],
+                [
+                    "2026-11-14",
+                    "19:00"
+                ],
+                [
+                    "2026-11-15",
+                    "17:00"
+                ],
+                [
+                    "2026-11-19",
+                    "20:00"
+                ],
+                [
+                    "2026-11-21",
+                    "19:00"
+                ]
+            ]
+        }
+    }
+    permitted.add(cagliari_archive)
     events = []
     keys = set()
     for production in manifest["productions"]:
         url = production["source_url"]
+        if url == cagliari_archive:
+            reviewed = cagliari_approved.get(production.get("key"))
+            if (reviewed is None or production.get("title") != reviewed["title"]
+                    or production.get("composer") != reviewed["composer"]
+                    or production.get("municipality") != "Cagliari"
+                    or production.get("venue") != "Teatro Lirico di Cagliari"
+                    or production.get("region") != "Sardegna"
+                    or sorted(production.get("dates", [])) != sorted(reviewed["dates"])):
+                raise ValueError("unreviewed Cagliari archive production")
         if url not in permitted:
             raise ValueError("non-reviewed source page")
         # Modena Belcanto 2026: an opera, not a symphonic concert. The
