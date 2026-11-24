@@ -57,7 +57,7 @@ class VenueMonthMatrixTests(unittest.TestCase):
         r=self.report
         self.assertEqual(93,r["official_2026_opera_lead_count"])
         self.assertEqual(13,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(50,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(35,r["official_unpublished_opera_lead_count"])
         self.assertEqual(3,r["official_lead_venues_with_zero_published"])
         self.assertEqual(14,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
@@ -74,8 +74,8 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(0,sources["Teatro Filarmonico"]["official_unpublished_opera_lead_count"])
         self.assertEqual(16,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(15,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(43,r["official_lead_reconciliation_counts"]["exact_match"])
+        self.assertEqual(0,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(58,r["official_lead_reconciliation_counts"]["exact_match"])
         self.assertEqual(0,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
         self.assertEqual(2,sources["Teatro Coccia"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro del Giglio Giacomo Puccini"]["official_unpublished_opera_lead_count"])
@@ -231,11 +231,11 @@ class CagliariReconciliationTests(unittest.TestCase):
         registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         url="https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
         rows=[p for p in manifest["productions"] if p["source_url"]==url]
-        self.assertEqual({"Norma","Turandot","Rigoletto"},{p["title"] for p in rows})
-        self.assertEqual(20,sum(len(p["dates"]) for p in rows))
+        self.assertEqual({"Norma","Turandot","Rigoletto","Lucrezia Borgia","Così fan tutte","Il cappello di paglia di Firenze"},{p["title"] for p in rows})
+        self.assertEqual(35,sum(len(p["dates"]) for p in rows))
         published=[p for p in assemble(manifest,registry)["performances"] if p["source_url"]==url]
-        self.assertEqual(20,len(published))
-        self.assertEqual(20,len({p["id"] for p in published}))
+        self.assertEqual(35,len(published))
+        self.assertEqual(35,len({p["id"] for p in published}))
         for field,value in (("composer","Other"),("venue","Other"),("dates",[["2026-03-20","11:00"]])):
             changed=copy.deepcopy(manifest)
             next(p for p in changed["productions"] if p["source_url"]==url)[field]=value
