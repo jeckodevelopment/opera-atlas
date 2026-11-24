@@ -204,6 +204,8 @@ def scan(doc,config,directory,*,historical=None,fetch_page=fetch,workers=MAX_WOR
             except (ValueError,RuntimeError,TypeError) as exc:
                 credited=[]
                 parser_status="credited_opera_parser_unverified:" + type(exc).__name__
+                # Safe diagnostic: constrained parser reason, no page body.
+                parser_error_reason=str(exc)[:180]
             # Prefer source-credited dates to general-purpose Event JSON-LD.
             # Preserve both when present, deduplicating identical timestamps
             # by source, title and date in the downstream reconciliation.
@@ -214,7 +216,8 @@ def scan(doc,config,directory,*,historical=None,fetch_page=fetch,workers=MAX_WOR
                             not in fingerprints]
             item.update(status="scanned",facts=facts,
                         credited_parser_status=parser_status,
-                        credited_fact_count=len(credited))
+                        credited_fact_count=len(credited),
+                        credited_parser_error=locals().get("parser_error_reason"))
         except (ValueError,OSError,RuntimeError) as exc:
             item.update(status="unverified",failure=type(exc).__name__,facts=[])
         return item
