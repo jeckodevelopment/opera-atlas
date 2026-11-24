@@ -182,6 +182,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026h1-pisa-verdi-carmen:2026-01-23",
+      "starts_at": "2026-01-23T20:30:00+01:00",
+      "local_date": "2026-01-23",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/carmen/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-24",
       "starts_at": "2026-01-24T15:00:00+01:00",
       "local_date": "2026-01-24",
@@ -233,6 +251,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-pisa-verdi-carmen:2026-01-25",
+      "starts_at": "2026-01-25T15:30:00+01:00",
+      "local_date": "2026-01-25",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/carmen/"
       ]
     },
     {
@@ -758,6 +794,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026h1-pisa-verdi-turn-of-the-screw:2026-02-27",
+      "starts_at": "2026-02-27T20:30:00+01:00",
+      "local_date": "2026-02-27",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "The Turn of the Screw",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-macbeth:2026-03-01",
       "starts_at": "2026-03-01T15:00:00+01:00",
       "local_date": "2026-03-01",
@@ -773,6 +827,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-pisa-verdi-turn-of-the-screw:2026-03-01",
+      "starts_at": "2026-03-01T15:30:00+01:00",
+      "local_date": "2026-03-01",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "The Turn of the Screw",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/"
       ]
     },
     {
@@ -1403,6 +1475,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-pisa-verdi-elisir-d-amore:2026-03-27",
+      "starts_at": "2026-03-27T20:30:00+01:00",
+      "local_date": "2026-03-27",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/lelisir-damore/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-pisa-verdi-elisir-d-amore:2026-03-29",
+      "starts_at": "2026-03-29T15:30:00+02:00",
+      "local_date": "2026-03-29",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://teatrodipisa.it/spettacolo/lelisir-damore/"
       ]
     },
     {
