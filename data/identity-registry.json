@@ -3842,6 +3842,30 @@
       "slug": "aida",
       "source_url": "https://www.teatromassimo.it/event/aida/",
       "season": "2025-2026"
+    },
+    "historical-2026-catania-bellini-aida": {
+      "id": "oa-s-000313",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000028",
+      "slug": "aida",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/",
+      "season": "2025-2026"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra": {
+      "id": "oa-s-000314",
+      "work_id": "oa-w-000094",
+      "venue_id": "oa-v-000028",
+      "slug": "la-vedova-allegra",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/",
+      "season": "2025-2026"
+    },
+    "historical-2026-catania-bellini-andrea-chenier": {
+      "id": "oa-s-000315",
+      "work_id": "oa-w-000060",
+      "venue_id": "oa-v-000028",
+      "slug": "andrea-chenier",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/",
+      "season": "2025-2026"
     }
   },
   "performances": {
@@ -11135,6 +11159,132 @@
       "staging_id": "oa-s-000312",
       "original_date": "2026-05-31",
       "source_url": "https://www.teatromassimo.it/event/aida/"
+    },
+    "historical-2026-catania-bellini-aida|2026-01-20": {
+      "id": "oa-r-001243",
+      "staging_id": "oa-s-000313",
+      "original_date": "2026-01-20",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/"
+    },
+    "historical-2026-catania-bellini-aida|2026-01-21": {
+      "id": "oa-r-001244",
+      "staging_id": "oa-s-000313",
+      "original_date": "2026-01-21",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/"
+    },
+    "historical-2026-catania-bellini-aida|2026-01-22": {
+      "id": "oa-r-001245",
+      "staging_id": "oa-s-000313",
+      "original_date": "2026-01-22",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/"
+    },
+    "historical-2026-catania-bellini-aida|2026-01-24": {
+      "id": "oa-r-001246",
+      "staging_id": "oa-s-000313",
+      "original_date": "2026-01-24",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/"
+    },
+    "historical-2026-catania-bellini-aida|2026-01-25": {
+      "id": "oa-r-001247",
+      "staging_id": "oa-s-000313",
+      "original_date": "2026-01-25",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/"
+    },
+    "historical-2026-catania-bellini-aida|2026-01-27": {
+      "id": "oa-r-001248",
+      "staging_id": "oa-s-000313",
+      "original_date": "2026-01-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/"
+    },
+    "historical-2026-catania-bellini-aida|2026-01-28": {
+      "id": "oa-r-001249",
+      "staging_id": "oa-s-000313",
+      "original_date": "2026-01-28",
+      "source_url": "https://www.teatromassimobellini.it/eventi/aida-2026/"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra|2026-03-06": {
+      "id": "oa-r-001250",
+      "staging_id": "oa-s-000314",
+      "original_date": "2026-03-06",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra|2026-03-07": {
+      "id": "oa-r-001251",
+      "staging_id": "oa-s-000314",
+      "original_date": "2026-03-07",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra|2026-03-08": {
+      "id": "oa-r-001252",
+      "staging_id": "oa-s-000314",
+      "original_date": "2026-03-08",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra|2026-03-10": {
+      "id": "oa-r-001253",
+      "staging_id": "oa-s-000314",
+      "original_date": "2026-03-10",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra|2026-03-11": {
+      "id": "oa-r-001254",
+      "staging_id": "oa-s-000314",
+      "original_date": "2026-03-11",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra|2026-03-12": {
+      "id": "oa-r-001255",
+      "staging_id": "oa-s-000314",
+      "original_date": "2026-03-12",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+    },
+    "historical-2026-catania-bellini-la-vedova-allegra|2026-03-13": {
+      "id": "oa-r-001256",
+      "staging_id": "oa-s-000314",
+      "original_date": "2026-03-13",
+      "source_url": "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+    },
+    "historical-2026-catania-bellini-andrea-chenier|2026-04-10": {
+      "id": "oa-r-001257",
+      "staging_id": "oa-s-000315",
+      "original_date": "2026-04-10",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+    },
+    "historical-2026-catania-bellini-andrea-chenier|2026-04-11": {
+      "id": "oa-r-001258",
+      "staging_id": "oa-s-000315",
+      "original_date": "2026-04-11",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+    },
+    "historical-2026-catania-bellini-andrea-chenier|2026-04-12": {
+      "id": "oa-r-001259",
+      "staging_id": "oa-s-000315",
+      "original_date": "2026-04-12",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+    },
+    "historical-2026-catania-bellini-andrea-chenier|2026-04-14": {
+      "id": "oa-r-001260",
+      "staging_id": "oa-s-000315",
+      "original_date": "2026-04-14",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+    },
+    "historical-2026-catania-bellini-andrea-chenier|2026-04-15": {
+      "id": "oa-r-001261",
+      "staging_id": "oa-s-000315",
+      "original_date": "2026-04-15",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+    },
+    "historical-2026-catania-bellini-andrea-chenier|2026-04-16": {
+      "id": "oa-r-001262",
+      "staging_id": "oa-s-000315",
+      "original_date": "2026-04-16",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+    },
+    "historical-2026-catania-bellini-andrea-chenier|2026-04-18": {
+      "id": "oa-r-001263",
+      "staging_id": "oa-s-000315",
+      "original_date": "2026-04-18",
+      "source_url": "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
     }
   },
   "reserved_works": {
