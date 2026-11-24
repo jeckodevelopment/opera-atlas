@@ -96,6 +96,7 @@ on:
       - '!scripts/audit_2026_mass_reconciliation.py'
       - '!scripts/audit_2026_retrospective_batch.py'
       - '!scripts/audit_2026_retrospective_reconciliation.py'
+      - '!scripts/audit_2026_jan_jun_official.py'
       - '!.github/workflows/refresh-catalog.yml'
 permissions:
   contents: write
