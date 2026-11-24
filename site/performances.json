@@ -542,6 +542,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-lucrezia-borgia:2026-01-28",
+      "starts_at": "2026-01-28T20:00:00+01:00",
+      "local_date": "2026-01-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026-catania-bellini-aida:2026-01-28",
       "starts_at": "2026-01-28T20:30:00+01:00",
       "local_date": "2026-01-28",
@@ -557,6 +575,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/aida-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-lucrezia-borgia:2026-01-29",
+      "starts_at": "2026-01-29T19:00:00+01:00",
+      "local_date": "2026-01-29",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -578,6 +614,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-lucrezia-borgia:2026-01-30",
+      "starts_at": "2026-01-30T20:00:00+01:00",
+      "local_date": "2026-01-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-lucrezia-borgia:2026-01-31",
+      "starts_at": "2026-01-31T19:00:00+01:00",
+      "local_date": "2026-01-31",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra:2026-02-01",
       "starts_at": "2026-02-01T15:30:00+01:00",
       "local_date": "2026-02-01",
@@ -593,6 +665,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-lucrezia-borgia:2026-02-01",
+      "starts_at": "2026-02-01T17:00:00+01:00",
+      "local_date": "2026-02-01",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -2198,6 +2288,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-cosi-fan-tutte:2026-04-17",
+      "starts_at": "2026-04-17T20:00:00+02:00",
+      "local_date": "2026-04-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-18",
       "starts_at": "2026-04-18T17:30:00+02:00",
       "local_date": "2026-04-18",
@@ -2213,6 +2321,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-cosi-fan-tutte:2026-04-18",
+      "starts_at": "2026-04-18T19:00:00+02:00",
+      "local_date": "2026-04-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -2270,6 +2396,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-cosi-fan-tutte:2026-04-19",
+      "starts_at": "2026-04-19T17:00:00+02:00",
+      "local_date": "2026-04-19",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:auto-26db4f73989b1c14:2026-04-19",
       "starts_at": "2026-04-19T18:00:00+02:00",
       "local_date": "2026-04-19",
@@ -2303,6 +2447,24 @@
       "longitude": null,
       "sources": [
         "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-cosi-fan-tutte:2026-04-21",
+      "starts_at": "2026-04-21T20:00:00+02:00",
+      "local_date": "2026-04-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -2357,6 +2519,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-cosi-fan-tutte:2026-04-22",
+      "starts_at": "2026-04-22T20:00:00+02:00",
+      "local_date": "2026-04-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -4826,6 +5006,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-il-cappello-di-paglia-di-firenze:2026-09-23",
+      "starts_at": "2026-09-23T20:00:00+02:00",
+      "local_date": "2026-09-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-il-cappello-di-paglia-di-firenze:2026-09-24",
+      "starts_at": "2026-09-24T19:00:00+02:00",
+      "local_date": "2026-09-24",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-como:2026-09-24",
       "starts_at": "2026-09-24T20:00:00+02:00",
       "local_date": "2026-09-24",
@@ -4860,6 +5076,24 @@
       "longitude": null,
       "sources": [
         "https://www.operalombardia.it/calendario/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-il-cappello-di-paglia-di-firenze:2026-09-25",
+      "starts_at": "2026-09-25T20:00:00+02:00",
+      "local_date": "2026-09-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -4917,6 +5151,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-il-cappello-di-paglia-di-firenze:2026-09-26",
+      "starts_at": "2026-09-26T19:00:00+02:00",
+      "local_date": "2026-09-26",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:lombardia-turandot-como:2026-09-26",
       "starts_at": "2026-09-26T20:00:00+02:00",
       "local_date": "2026-09-26",
@@ -4969,6 +5221,24 @@
       "longitude": null,
       "sources": [
         "https://www.marialisadecarolis.it/opera-lirica.aspx?id=372"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-il-cappello-di-paglia-di-firenze:2026-09-27",
+      "starts_at": "2026-09-27T17:00:00+02:00",
+      "local_date": "2026-09-27",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
