@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "provenance": "First-party official performance audit (24 November 2026). Read-only leads covering twelve physical venues; no full-season certification or automatic publication. Unverified clocks remain null. School presentations, concerts, gala, ballet, film excluded.",
+  "provenance": "First-party official performance audit (24 November 2026). Read-only leads covering thirteen physical venues; no full-season certification or automatic publication. Unverified clocks remain null. School presentations, concerts, gala, ballet, film excluded.",
   "records": [
     {
       "venue_id": "oa-v-000002",
@@ -676,6 +676,20 @@
         [
           "2026-04-26",
           null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
+      "dates": [
+        [
+          "2026-02-14",
+          "21:00"
         ]
       ]
     }

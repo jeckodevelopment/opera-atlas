@@ -55,14 +55,14 @@ class VenueMonthMatrixTests(unittest.TestCase):
 
     def test_primary_source_leads_are_never_auto_published(self):
         r=self.report
-        self.assertEqual(92,r["official_2026_opera_lead_count"])
-        self.assertEqual(12,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(92,r["official_unpublished_opera_lead_count"])
-        self.assertEqual(12,r["official_lead_venues_with_zero_published"])
+        self.assertEqual(93,r["official_2026_opera_lead_count"])
+        self.assertEqual(13,r["official_2026_opera_lead_venue_count"])
+        self.assertEqual(93,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(13,r["official_lead_venues_with_zero_published"])
         self.assertEqual(24,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
-        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri"},
+        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri","Teatro Alfieri"},
                          set(sources))
         for entry in sources.values():
             self.assertEqual("zero_published_with_official_opera_leads",
@@ -83,6 +83,7 @@ class VenueMonthMatrixTests(unittest.TestCase):
         ravenna=[p for p in self.leads["records"] if p["city"]=="Ravenna"]
         self.assertEqual(3,len(ravenna))
         self.assertTrue(all(clock is None for p in ravenna for day,clock in p["dates"]))
+        self.assertEqual(1,sources["Teatro Alfieri"]["official_unpublished_opera_lead_count"])
         forbidden_school={("2026-01-30","11:00"),("2026-03-20","11:00"),
                           ("2026-04-21","11:00"),("2026-11-17","11:00"),
                           ("2026-11-18","11:00")}

@@ -83,6 +83,7 @@ def validated_venue_leads(document, venues):
         "oa-vd-000031": ("Lucca", "Teatro del Giglio Giacomo Puccini", "www.teatrodelgigliogiacomopuccini.it"),
         "oa-vd-000057": ("Mantova", "Teatro Sociale di Mantova", "www.teatrosocialemantova.it"),
         "oa-v-000014": ("Ravenna", "Teatro Dante Alighieri", "artbonus.gov.it"),
+        "oa-vd-000015": ("Asti", "Teatro Alfieri", "www.comune.asti.it"),
     }
     result=defaultdict(list)
     seen=set()
