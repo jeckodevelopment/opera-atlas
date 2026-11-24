@@ -218,6 +218,10 @@ async function renderPortraitCoverage(){
   box.replaceChildren(el("div",percent===null?"Non applicabile":percent+"%","metric"),el("p",nf(covered)+" ritratti verificati su "+nf(total)+" compositori censiti; "+nf(total-covered)+" senza ritratto.","muted"));
   if(review.status==="fulfilled"&&review.value.schema_version===1){
    const r=review.value, counts={};
+   const statuses={blocked:["Acquisizione bloccata dalle fonti","bad"],partial:["Acquisizione parziale","warn"],completed:["Scansione completata","good"]};
+   const state=statuses[r.status]||["Esito non disponibile","neutral"];
+   box.append(pill(state[0],state[1]));
+   box.append(el("p","Identità memorizzate: "+nf(Object.keys(r.identities||{}).length)+" · Errori API: "+nf(num(r.api_errors)),"muted"));
    for(const item of Object.values(r.unresolved||{}))counts[item.reason]=(counts[item.reason]||0)+1;
    box.append(el("p","Ultima acquisizione: "+fmt(r.updated_at)+" · "+nf(num(r.attempted))+" tentativi.","muted"));
    for(const [reason,count] of Object.entries(counts).sort())box.append(line(reason.replaceAll("_"," "),nf(count)));

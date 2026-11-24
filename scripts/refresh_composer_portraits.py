@@ -16,6 +16,9 @@ from scripts.publish_integration_index import normalized_name, verified_image
 
 WD = "https://www.wikidata.org/w/api.php"
 COMMONS = "https://commons.wikimedia.org/w/api.php"
+WIKIPEDIA = ("https://it.wikipedia.org/w/api.php", "https://en.wikipedia.org/w/api.php")
+ENTITY_DATA = "https://www.wikidata.org/wiki/Special:EntityData/"
+QID = re.compile(r"Q[1-9][0-9]*")
 LICENSES = {
     "CC BY 4.0": ("CC-BY-4.0", "https://creativecommons.org/licenses/by/4.0/"),
     "CC BY-SA 4.0": ("CC-BY-SA-4.0", "https://creativecommons.org/licenses/by-sa/4.0/"),
@@ -45,25 +48,38 @@ def atomic_json(path, doc):
         tmp.unlink(missing_ok=True)
 
 def api(endpoint, **params):
-    if endpoint not in (WD, COMMONS):
+    if endpoint == ENTITY_DATA:
+        qid = params.get("qid", "")
+        if not QID.fullmatch(qid):
+            raise ValueError("Invalid entity identifier")
+        url = endpoint + qid + ".json"
+    elif endpoint in (WD, COMMONS, *WIKIPEDIA):
+        url = endpoint + "?" + urlencode(dict(params, format="json", maxlag=5))
+    else:
         raise ValueError("Unsupported API endpoint")
-    request = Request(endpoint + "?" + urlencode(dict(params, format="json", maxlag=5)),
+    request = Request(url,
                       headers={"User-Agent":"OperaAtlasPortraits/1.0 (https://github.com/jeckodevelopment/opera-atlas)"})
+    last_code = "unavailable"
     for attempt in range(3):
         time.sleep(0.3 if attempt == 0 else 2 ** attempt)
         try:
             with urlopen(request, timeout=20) as response:
-                data = json.loads(response.read(4_000_001))
+                raw = response.read(16_000_001 if endpoint == ENTITY_DATA else 4_000_001)
+                data = json.loads(raw)
+            if not isinstance(data, dict):
+                raise WikimediaError("invalid_response")
             if "error" not in data:
                 return data
-            if data["error"].get("code") not in {"maxlag", "ratelimited", "readonly", "cirrussearch-too-busy-error"}:
-                raise WikimediaError("Wikimedia API rejected request")
+            last_code = data["error"].get("code", "unknown")
+            if last_code not in {"maxlag", "ratelimited", "readonly", "cirrussearch-too-busy-error"}:
+                raise WikimediaError("api_rejected")
         except HTTPError as exc:
             if exc.code not in TRANSIENT_CODES:
-                raise WikimediaError("Wikimedia HTTP request rejected") from exc
+                raise WikimediaError("http_" + str(exc.code)) from exc
+            last_code = "http_" + str(exc.code)
         except (URLError, TimeoutError, json.JSONDecodeError):
-            pass
-    raise WikimediaError("Wikimedia temporarily unavailable")
+            last_code = "transport_error"
+    raise WikimediaError(last_code)
 
 def values(entity, prop):
     return [c.get("mainsnak", {}).get("datavalue", {}).get("value")
@@ -76,23 +92,80 @@ def item_ids(entity, prop):
 def plain(value):
     return " ".join(unescape(re.sub(r"<[^>]*>", " ", value or "")).split())
 
+def wikipedia_ids(composer, call):
+    """Resolve exact article titles and redirects, not full-text search."""
+    ids = set()
+    errors = []
+    titles = "|".join(dict.fromkeys([composer["name"], *composer.get("aliases", [])]))
+    for endpoint in WIKIPEDIA:
+        try:
+            data = call(endpoint, action="query", titles=titles, redirects=1,
+                        prop="pageprops", ppprop="wikibase_item|disambiguation")
+            pages = data.get("query", {}).get("pages")
+            if not isinstance(pages, dict):
+                raise WikimediaError("invalid_wikipedia_response")
+            for page in pages.values():
+                props = page.get("pageprops", {})
+                qid = props.get("wikibase_item", "")
+                if "disambiguation" not in props and QID.fullmatch(qid):
+                    ids.add(qid)
+        except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError) as exc:
+            errors.append(exc)
+    if errors:
+        raise WikimediaError("wikipedia_lookup_unavailable")
+    return ids
+
+def entity_records(ids, call):
+    try:
+        data = call(WD, action="wbgetentities", ids="|".join(sorted(ids)),
+                    props="labels|aliases|claims", languages="it|en")
+        if not isinstance(data.get("entities"), dict):
+            raise WikimediaError("invalid_wikidata_response")
+        return data["entities"]
+    except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+        # EntityData reads an existing QID without using Wikidata search.
+        entities = {}
+        for qid in sorted(ids):
+            data = call(ENTITY_DATA, qid=qid)
+            if not isinstance(data.get("entities"), dict):
+                raise WikimediaError("invalid_entity_data_response")
+            entities.update(data["entities"])
+        return entities
+
 def find_person(composer, call=api):
     names = {normalized_name(n) for n in [composer["name"], *composer.get("aliases", [])]}
     ids = set()
     pinned = composer.get("wikidata_id")
     if pinned:
-        if not re.fullmatch(r"Q[1-9][0-9]*", pinned):
+        if not QID.fullmatch(pinned):
             raise ValueError("Invalid pinned Wikidata ID")
         ids.add(pinned)
     else:
-        for lang in ("it", "en"):
-            result = call(WD, action="wbsearchentities", search=composer["name"], language=lang, type="item", limit=20)
-            ids.update(x["id"] for x in result.get("search", []) if re.fullmatch(r"Q[1-9][0-9]*", x["id"]))
+        # Exact page titles resolve through MediaWiki's page index, avoiding
+        # the CirrusSearch service that has repeatedly failed in production.
+        lookup_error = False
+        try:
+            ids = wikipedia_ids(composer, call)
+        except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+            lookup_error = True
+        if not ids:
+            try:
+                for lang in ("it", "en"):
+                    result = call(WD, action="wbsearchentities", search=composer["name"], language=lang, type="item", limit=20)
+                    if not isinstance(result.get("search"), list):
+                        raise WikimediaError("invalid_search_response")
+                    ids.update(x["id"] for x in result["search"] if QID.fullmatch(x["id"]))
+            except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError) as exc:
+                raise WikimediaError("identity_search_unavailable") from exc
+            if lookup_error and not ids:
+                raise WikimediaError("identity_lookup_incomplete")
     if not ids:
         return None, "not_found"
-    entities = call(WD, action="wbgetentities", ids="|".join(sorted(ids)), props="labels|aliases|claims", languages="it|en")["entities"]
+    entities = entity_records(ids, call)
     matches = []
     for qid, entity in entities.items():
+        if qid not in ids or not QID.fullmatch(qid):
+            continue
         labels = [x["value"] for x in entity.get("labels", {}).values()]
         aliases = [x["value"] for group in entity.get("aliases", {}).values() for x in group]
         if not names.intersection(normalized_name(n) for n in labels + aliases):
@@ -108,12 +181,32 @@ def portrait(composer, call=api):
     match, reason = find_person(composer, call)
     if not match:
         return None, reason
+    return portrait_for_identity(composer, match, call)
+
+def portrait_for_identity(composer, match, call):
     qid, entity = match
     images = list(dict.fromkeys(v for v in values(entity, "P18") if isinstance(v, str)))
-    if len(images) != 1:
-        return None, "no_image" if not images else "multiple_images"
-    pages = call(COMMONS, action="query", titles="File:" + images[0], prop="imageinfo",
-                 iiprop="url|mime|extmetadata", iiurlwidth=720)["query"]["pages"]
+    if not images:
+        return None, "no_image"
+    preferred = [claim.get("mainsnak", {}).get("datavalue", {}).get("value")
+                 for claim in entity.get("claims", {}).get("P18", []) if claim.get("rank") == "preferred"]
+    ordered = list(dict.fromkeys([v for v in preferred if v in images] + images))
+    if len(ordered) > 8:
+        return None, "multiple_images"
+    reasons = []
+    for filename in ordered:
+        record, reason = commons_portrait(composer, qid, filename, call)
+        if record:
+            return record, None
+        reasons.append(reason)
+    return None, reasons[0]
+
+def commons_portrait(composer, qid, filename, call):
+    response = call(COMMONS, action="query", titles="File:" + filename, redirects=1, prop="imageinfo",
+                    iiprop="url|mime|extmetadata", iiurlwidth=720)
+    pages = response.get("query", {}).get("pages")
+    if not isinstance(pages, dict):
+        raise WikimediaError("invalid_commons_response")
     if len(pages) != 1:
         return None, "file_unconfirmed"
     info = next(iter(pages.values())).get("imageinfo", [])
@@ -128,7 +221,11 @@ def portrait(composer, call=api):
         if field("Copyrighted").casefold() != "false":
             return None, "rights_review"
         license = ("Public Domain", PUBLIC_DOMAIN_URL)
-    if not license or field("LicenseUrl").rstrip("/") != license[1].rstrip("/"):
+    supplied_url = field("LicenseUrl")
+    # Some Commons records still use the canonical Creative Commons HTTP URL.
+    if supplied_url.startswith("http://creativecommons.org/"):
+        supplied_url = "https://" + supplied_url[len("http://"):]
+    if not license or supplied_url.rstrip("/") != license[1].rstrip("/"):
         return None, "license_review"
     if field("Restrictions") or field("Copyrighted").lower() not in ("true", "false"):
         return None, "rights_review"
@@ -139,7 +236,7 @@ def portrait(composer, call=api):
                   alt="Ritratto di " + composer["name"], source_url=image.get("descriptionurl"),
                   author=author, license=license[0], license_url=license[1],
                   credit=author + " — Wikimedia Commons — " + license[0],
-                  wikidata_id=qid, commons_file=images[0], reviewed_on=date.today().isoformat())
+                  wikidata_id=qid, commons_file=filename, reviewed_on=date.today().isoformat())
     return (record, None) if verified_image(record) else (None, "metadata_review")
 
 def refresh(root, call=api, max_seconds=900):
@@ -152,9 +249,22 @@ def refresh(root, call=api, max_seconds=900):
     report_path = root / "data/composer-portrait-review.json"
     report = {c["id"]: {"name": c["name"], "reason": "not_attempted"}
               for c in composers if not verified_image(portraits.get(c["id"]))}
+    previous = json.loads(report_path.read_text()) if report_path.is_file() else {}
+    identities = previous.get("identities", {})
+    identities = {c["id"]: identities[c["id"]] for c in composers
+                  if c["id"] in identities and identities[c["id"]].get("name") == c["name"]
+                  and QID.fullmatch(identities[c["id"]].get("wikidata_id", ""))}
+    prior = previous.get("unresolved", {})
+    history = previous.get("last_attempted", {})
+    if not history:
+        history = {key: previous.get("updated_at", "") for key, value in prior.items()
+                   if value.get("reason") != "not_attempted"}
+    history = {c["id"]: history[c["id"]] for c in composers if c["id"] in history}
+    composers = sorted(composers, key=lambda c: (history.get(c["id"], ""), c["id"]))
     started = time.monotonic()
     consecutive_errors = 0
     attempted = 0
+    api_errors = 0
 
     def checkpoint():
         total = len(composers)
@@ -162,8 +272,11 @@ def refresh(root, call=api, max_seconds=900):
         atomic_json(path, doc)
         atomic_json(report_path, {"schema_version": 1, "total": total,
                     "verified": verified, "attempted": attempted,
+                    "api_errors": api_errors,
+                    "status": ("blocked" if attempted and api_errors == attempted else
+                               "partial" if api_errors or any(v["reason"] == "not_attempted" for v in report.values()) else "completed"),
                     "updated_at": datetime.now(timezone.utc).isoformat(),
-                    "unresolved": report})
+                    "identities": identities, "last_attempted": history, "unresolved": report})
 
     for composer in composers:
         key = composer["id"]
@@ -172,12 +285,29 @@ def refresh(root, call=api, max_seconds=900):
         if time.monotonic() - started >= max_seconds or consecutive_errors >= 3:
             break
         attempted += 1
+        history[key] = datetime.now(timezone.utc).isoformat()
         try:
-            record, reason = portrait(composer, call)
+            candidate = dict(composer)
+            if key in identities and not candidate.get("wikidata_id"):
+                candidate["wikidata_id"] = identities[key]["wikidata_id"]
+            match, reason = find_person(candidate, call)
+            if match:
+                identities[key] = {"name": composer["name"], "wikidata_id": match[0]}
+                record, reason = portrait_for_identity(composer, match, call)
+            else:
+                identities.pop(key, None)
+                record = None
             consecutive_errors = 0
-        except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+        except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError) as exc:
             record, reason = None, "api_error"
+            api_errors += 1
             consecutive_errors += 1
+            # Only known, sanitized diagnostics are published.
+            detail = str(exc) if isinstance(exc, WikimediaError) else "transport_error"
+            report[key] = {"name": composer["name"], "reason": reason,
+                           "detail": detail if re.fullmatch(r"[a-z0-9_-]{1,80}", detail) else "upstream_error"}
+            checkpoint()
+            continue
         if record:
             portraits[key] = record
             report.pop(key, None)
