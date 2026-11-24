@@ -226,7 +226,8 @@ class ResidualTests(unittest.TestCase):
         result=check(inp(rows),{"productions":[]})
         self.assertEqual(len(rows),sum(result["counts"].values()))
         self.assertEqual(1,result["counts"]["official_cancelled_event_first_party"])
-        self.assertEqual(2,result["counts"]["official_opera_special_format_editorial_review"])
+        self.assertEqual(1,result["counts"]["official_opera_special_format_editorial_review"])
+        self.assertEqual(1,result["counts"]["official_out_of_scope_educational_opera"])
         self.assertTrue(all(not x["automatic_publication"] and
                             not x["automatic_exclusion"] and x["official_nonopera_evidence"]
                             for x in result["observations"]))
