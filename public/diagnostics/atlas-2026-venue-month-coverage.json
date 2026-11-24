@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T22:19:53+00:00",
+  "generated_at": "2026-11-24T22:26:34+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -1262,6 +1262,1128 @@
   "official_2026_opera_lead_venue_count": 13,
   "official_2026_opera_lead_count": 93,
   "official_unpublished_opera_lead_count": 93,
+  "official_lead_reconciliation_counts": {
+    "clock_review": 33,
+    "publication_candidate": 60
+  },
+  "official_lead_reconciliation": [
+    {
+      "date": "2026-01-16",
+      "time": "20:00",
+      "title": "Don Quichotte",
+      "composer": "Jules Massenet",
+      "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000002",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-18",
+      "time": "15:30",
+      "title": "Don Quichotte",
+      "composer": "Jules Massenet",
+      "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000002",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "20:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000002",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "20:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000002",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-25",
+      "time": "21:15",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000007",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-26",
+      "time": "21:15",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000007",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-27",
+      "time": "21:15",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000007",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-07-17",
+      "time": null,
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-26",
+      "time": null,
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-01",
+      "time": null,
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-09",
+      "time": null,
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-18",
+      "time": null,
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-24",
+      "time": null,
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-02",
+      "time": null,
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-08",
+      "time": null,
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-19",
+      "time": null,
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-25",
+      "time": null,
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-31",
+      "time": null,
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000036",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-01-18",
+      "time": "15:30",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000019",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-21",
+      "time": "19:00",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000019",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-23",
+      "time": "20:00",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000019",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-25",
+      "time": "15:30",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000019",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-07-17",
+      "time": null,
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-24",
+      "time": null,
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-01",
+      "time": null,
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-09",
+      "time": null,
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-18",
+      "time": null,
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-31",
+      "time": null,
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-08",
+      "time": null,
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-21",
+      "time": null,
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-29",
+      "time": null,
+      "title": "La fanciulla del West",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-09-05",
+      "time": null,
+      "title": "La fanciulla del West",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-07",
+      "time": null,
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-22",
+      "time": null,
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-09-04",
+      "time": null,
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-07-25",
+      "time": null,
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-06",
+      "time": null,
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-08-28",
+      "time": null,
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000034",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-02-13",
+      "time": "21:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000047",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-02-15",
+      "time": "17:30",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000047",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-28",
+      "time": "20:00",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-29",
+      "time": "19:00",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-30",
+      "time": "20:00",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-31",
+      "time": "19:00",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-02-01",
+      "time": "17:00",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-03-18",
+      "time": "20:00",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-03-19",
+      "time": "19:00",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-03-20",
+      "time": "20:00",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-03-21",
+      "time": "19:00",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-03-22",
+      "time": "17:00",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-04-17",
+      "time": "20:00",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-04-18",
+      "time": "19:00",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-04-19",
+      "time": "17:00",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-04-21",
+      "time": "20:00",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-04-22",
+      "time": "20:00",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-24",
+      "time": "20:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-25",
+      "time": "19:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-26",
+      "time": "20:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-27",
+      "time": "19:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-28",
+      "time": "17:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-06-30",
+      "time": "20:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-07-01",
+      "time": "20:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-07-02",
+      "time": "20:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "20:00",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "19:00",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "20:00",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "19:00",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-09-27",
+      "time": "17:00",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-11",
+      "time": "20:00",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-12",
+      "time": "19:00",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-13",
+      "time": "20:00",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-14",
+      "time": "19:00",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-15",
+      "time": "17:00",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-19",
+      "time": "20:00",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-21",
+      "time": "19:00",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000049",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-27",
+      "time": "20:00",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000005",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-29",
+      "time": "16:00",
+      "title": "Un ballo in maschera",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000005",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-21",
+      "time": "20:30",
+      "title": "Don Pasquale",
+      "composer": "Gaetano Donizetti",
+      "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000011",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-11-22",
+      "time": "16:00",
+      "title": "Don Pasquale",
+      "composer": "Gaetano Donizetti",
+      "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000011",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-12-11",
+      "time": "20:30",
+      "title": "L’azzardo per un figlio / Il signor Bruschino",
+      "composer": "Claudio Scannavini / Gioachino Rossini",
+      "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000011",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-12-13",
+      "time": "16:00",
+      "title": "L’azzardo per un figlio / Il signor Bruschino",
+      "composer": "Claudio Scannavini / Gioachino Rossini",
+      "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000011",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-04",
+      "time": "18:00",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000031",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-05",
+      "time": "16:00",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000031",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-04-25",
+      "time": "18:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000031",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-04-26",
+      "time": "16:00",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000031",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-12-20",
+      "time": "17:30",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000057",
+      "reconciliation_status": "publication_candidate"
+    },
+    {
+      "date": "2026-01-30",
+      "time": null,
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000014",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-02-01",
+      "time": null,
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000014",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-03-13",
+      "time": null,
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000014",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-03-15",
+      "time": null,
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000014",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-04-24",
+      "time": null,
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000014",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-04-26",
+      "time": null,
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-v-000014",
+      "reconciliation_status": "clock_review"
+    },
+    {
+      "date": "2026-02-14",
+      "time": "21:00",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
+      "publication_review_required": true,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000015",
+      "reconciliation_status": "publication_candidate"
+    }
+  ],
   "official_lead_venues_with_zero_published": 13,
   "published_2026_showtimes": 452,
   "observed_2026_opera_showtimes": 134,
@@ -1599,7 +2721,9 @@
           "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000002",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-18",
@@ -1609,7 +2733,9 @@
           "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000002",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -1764,7 +2890,9 @@
           "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000002",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-09-26",
@@ -1774,7 +2902,9 @@
           "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000002",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -2469,7 +3599,9 @@
           "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000005",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-29",
@@ -2479,7 +3611,9 @@
           "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000005",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -2898,7 +4032,9 @@
           "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000007",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-06-26",
@@ -2908,7 +4044,9 @@
           "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000007",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-06-27",
@@ -2918,7 +4056,9 @@
           "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000007",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 3,
@@ -4015,7 +5155,9 @@
           "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000011",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-22",
@@ -4025,7 +5167,9 @@
           "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000011",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -4054,7 +5198,9 @@
           "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000011",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-12-13",
@@ -4064,7 +5210,9 @@
           "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000011",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -4525,7 +5673,9 @@
           "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000014",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 1,
@@ -4554,7 +5704,9 @@
           "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000014",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 1,
@@ -4583,7 +5735,9 @@
           "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000014",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-03-15",
@@ -4593,7 +5747,9 @@
           "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000014",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -4622,7 +5778,9 @@
           "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000014",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-04-26",
@@ -4632,7 +5790,9 @@
           "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-v-000014",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -4823,7 +5983,9 @@
           "official_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000015",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 1,
@@ -5680,7 +6842,9 @@
           "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000019",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-21",
@@ -5690,7 +6854,9 @@
           "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000019",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-23",
@@ -5700,7 +6866,9 @@
           "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000019",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-25",
@@ -5710,7 +6878,9 @@
           "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000019",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 4,
@@ -8289,7 +9459,9 @@
           "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000031",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-05",
@@ -8299,7 +9471,9 @@
           "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000031",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -8364,7 +9538,9 @@
           "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000031",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-04-26",
@@ -8374,7 +9550,9 @@
           "official_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000031",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -9087,7 +10265,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-24",
@@ -9097,7 +10277,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-18",
@@ -9107,7 +10289,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-31",
@@ -9117,7 +10301,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-25",
@@ -9127,7 +10313,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 5,
@@ -9156,7 +10344,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-09",
@@ -9166,7 +10356,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-08",
@@ -9176,7 +10368,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-21",
@@ -9186,7 +10380,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-29",
@@ -9196,7 +10392,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-07",
@@ -9206,7 +10404,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-22",
@@ -9216,7 +10416,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-06",
@@ -9226,7 +10428,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-28",
@@ -9236,7 +10440,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 9,
@@ -9265,7 +10471,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-09-04",
@@ -9275,7 +10483,9 @@
           "official_url": "https://www.puccinifestival.it/edizione-2026/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000034",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -9682,7 +10892,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-26",
@@ -9692,7 +10904,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-18",
@@ -9702,7 +10916,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-24",
@@ -9712,7 +10928,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-19",
@@ -9722,7 +10940,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-25",
@@ -9732,7 +10952,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-07-31",
@@ -9742,7 +10964,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 7,
@@ -9771,7 +10995,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-09",
@@ -9781,7 +11007,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-02",
@@ -9791,7 +11019,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         },
         {
           "date": "2026-08-08",
@@ -9801,7 +11031,9 @@
           "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000036",
+          "reconciliation_status": "clock_review"
         }
       ],
       "official_unpublished_opera_lead_count": 4,
@@ -12146,7 +13378,9 @@
           "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000047",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-02-15",
@@ -12156,7 +13390,9 @@
           "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000047",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -12581,7 +13817,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-29",
@@ -12591,7 +13829,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-30",
@@ -12601,7 +13841,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-01-31",
@@ -12611,7 +13853,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 4,
@@ -12640,7 +13884,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 1,
@@ -12669,7 +13915,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-03-19",
@@ -12679,7 +13927,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-03-20",
@@ -12689,7 +13939,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-03-21",
@@ -12699,7 +13951,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-03-22",
@@ -12709,7 +13963,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 5,
@@ -12738,7 +13994,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-04-18",
@@ -12748,7 +14006,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-04-19",
@@ -12758,7 +14018,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-04-21",
@@ -12768,7 +14030,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-04-22",
@@ -12778,7 +14042,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 5,
@@ -12825,7 +14091,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-06-25",
@@ -12835,7 +14103,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-06-26",
@@ -12845,7 +14115,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-06-27",
@@ -12855,7 +14127,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-06-28",
@@ -12865,7 +14139,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-06-30",
@@ -12875,7 +14151,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 6,
@@ -12904,7 +14182,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-07-02",
@@ -12914,7 +14194,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 2,
@@ -12961,7 +14243,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-09-24",
@@ -12971,7 +14255,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-09-25",
@@ -12981,7 +14267,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-09-26",
@@ -12991,7 +14279,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-09-27",
@@ -13001,7 +14291,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 5,
@@ -13048,7 +14340,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-12",
@@ -13058,7 +14352,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-13",
@@ -13068,7 +14364,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-14",
@@ -13078,7 +14376,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-15",
@@ -13088,7 +14388,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-19",
@@ -13098,7 +14400,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         },
         {
           "date": "2026-11-21",
@@ -13108,7 +14412,9 @@
           "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000049",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 7,
@@ -15729,7 +17035,9 @@
           "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx",
           "publication_review_required": true,
           "official_source_verified": true,
-          "complete_month_verified": false
+          "complete_month_verified": false,
+          "venue_id": "oa-vd-000057",
+          "reconciliation_status": "publication_candidate"
         }
       ],
       "official_unpublished_opera_lead_count": 1,
