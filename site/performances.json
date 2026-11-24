@@ -1406,6 +1406,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-norma:2026-03-18",
+      "starts_at": "2026-03-18T20:00:00+01:00",
+      "local_date": "2026-03-18",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-norma:2026-03-19",
+      "starts_at": "2026-03-19T19:00:00+01:00",
+      "local_date": "2026-03-19",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa:2026-03-20",
       "starts_at": "2026-03-20T19:00:00+01:00",
       "local_date": "2026-03-20",
@@ -1424,6 +1460,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-norma:2026-03-20",
+      "starts_at": "2026-03-20T20:00:00+01:00",
+      "local_date": "2026-03-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-norma:2026-03-21",
+      "starts_at": "2026-03-21T19:00:00+01:00",
+      "local_date": "2026-03-21",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa:2026-03-22",
       "starts_at": "2026-03-22T15:30:00+01:00",
       "local_date": "2026-03-22",
@@ -1439,6 +1511,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-norma:2026-03-22",
+      "starts_at": "2026-03-22T17:00:00+01:00",
+      "local_date": "2026-03-22",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Norma",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -3260,6 +3350,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-turandot:2026-06-24",
+      "starts_at": "2026-06-24T20:00:00+02:00",
+      "local_date": "2026-06-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-turandot:2026-06-25",
+      "starts_at": "2026-06-25T19:00:00+02:00",
+      "local_date": "2026-06-25",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-carmen:2026-06-25",
       "starts_at": "2026-06-25T20:00:00+02:00",
       "local_date": "2026-06-25",
@@ -3293,6 +3419,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-turandot:2026-06-26",
+      "starts_at": "2026-06-26T20:00:00+02:00",
+      "local_date": "2026-06-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -3332,6 +3476,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-turandot:2026-06-27",
+      "starts_at": "2026-06-27T19:00:00+02:00",
+      "local_date": "2026-06-27",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-carmen:2026-06-27",
       "starts_at": "2026-06-27T20:00:00+02:00",
       "local_date": "2026-06-27",
@@ -3347,6 +3509,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-turandot:2026-06-28",
+      "starts_at": "2026-06-28T17:00:00+02:00",
+      "local_date": "2026-06-28",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -3386,6 +3566,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-turandot:2026-06-30",
+      "starts_at": "2026-06-30T20:00:00+02:00",
+      "local_date": "2026-06-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-lucia-di-lammermoor:2026-06-30",
       "starts_at": "2026-06-30T20:00:00+02:00",
       "local_date": "2026-06-30",
@@ -3419,6 +3617,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-turandot:2026-07-01",
+      "starts_at": "2026-07-01T20:00:00+02:00",
+      "local_date": "2026-07-01",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-turandot:2026-07-02",
+      "starts_at": "2026-07-02T20:00:00+02:00",
+      "local_date": "2026-07-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -5978,6 +6212,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-rigoletto:2026-11-11",
+      "starts_at": "2026-11-11T20:00:00+01:00",
+      "local_date": "2026-11-11",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-rigoletto:2026-11-12",
+      "starts_at": "2026-11-12T19:00:00+01:00",
+      "local_date": "2026-11-12",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:auto-8bc8b40e1da92efa:2026-11-13",
       "starts_at": "2026-11-13T11:00:00+01:00",
       "local_date": "2026-11-13",
@@ -6029,6 +6299,24 @@
       "longitude": null,
       "sources": [
         "https://www.donizettiopera.org/it/evento/l-esule-di-roma/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-rigoletto:2026-11-13",
+      "starts_at": "2026-11-13T20:00:00+01:00",
+      "local_date": "2026-11-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -6138,6 +6426,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-rigoletto:2026-11-14",
+      "starts_at": "2026-11-14T19:00:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -6358,6 +6664,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-cagliari-rigoletto:2026-11-15",
+      "starts_at": "2026-11-15T17:00:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
       "id": "curated:auto-8bc8b40e1da92efa:2026-11-15",
       "starts_at": "2026-11-15T17:30:00+01:00",
       "local_date": "2026-11-15",
@@ -6481,6 +6805,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/fedora/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-rigoletto:2026-11-19",
+      "starts_at": "2026-11-19T20:00:00+01:00",
+      "local_date": "2026-11-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
@@ -6662,6 +7004,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroverdi-trieste.com/it/spettacoli/lohengrin/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-cagliari-rigoletto:2026-11-21",
+      "starts_at": "2026-11-21T19:00:00+01:00",
+      "local_date": "2026-11-21",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Rigoletto",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Lirico di Cagliari",
+      "municipality": "Cagliari",
+      "region": "Sardegna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
       ]
     },
     {
