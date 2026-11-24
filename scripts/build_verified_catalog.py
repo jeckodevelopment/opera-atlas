@@ -63,6 +63,8 @@ APPROVED_PAGES = {
 # Exact evidence URLs are reviewed manually against the specific showtime.
 # These are facts from the theatre/municipality, NOT crawler permissions.
 TIME_EVIDENCE_URLS = {
+    "lombardia-turandot-como": {"https://teatrosocialecomo.it/spettacoli/turandot-2/"},
+    "lombardia-ballo-cremona": {"https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera"},
     "lombardia-italiana-como": {
         "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/",
     },
@@ -589,11 +591,11 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             "dates": [
                 [
                     "2026-09-24",
-                    "20:00"
+                    None
                 ],
                 [
                     "2026-09-26",
-                    "20:00"
+                    None
                 ]
             ]
         },
@@ -607,11 +609,11 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             "dates": [
                 [
                     "2026-11-27",
-                    "20:00"
+                    None
                 ],
                 [
                     "2026-11-29",
-                    "16:00"
+                    None
                 ]
             ]
         }
@@ -820,8 +822,7 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                 raise ValueError("duplicate editorial performance")
             keys.add(uid)
             # The curated Regio dates are all outside Italy's DST period.
-            if (hour is not None and reviewed_2026 is None
-                    and url not in permitted - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}):
+            if (hour is not None and url not in permitted - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}):
                 raise ValueError("no verified time for this source")
             if hour is None and url not in {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
                 raise ValueError("expected exact Regio performance hour")
