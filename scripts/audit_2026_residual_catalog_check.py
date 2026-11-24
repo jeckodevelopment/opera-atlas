@@ -30,7 +30,7 @@ TITLE_PREFIXES = (
 )
 # Explicit official same-host source for three performances; no heuristic
 # decisions should be applied to unrelated future titles or dates.
-OFFICIAL_NONOPERA = {
+SOURCE_CITY = {"modena-teatro-opera-2026-27":"modena",\n               "piacenza-opera-2026-27":"piacenza",\n               "bellini-catania-opera-2026-27":"catania",\n               "bologna-comunale-opera-2027":"bologna",\n               "maggio-fiorentino-calendar-2027":"firenze"}\n\nOFFICIAL_NONOPERA = {
     ("https://www.tcbo.it/evento/speciale/opera-guccini-2026/", "Opera Guccini"):
     {"days":["2026-10-29","2026-10-30","2026-10-31"],
      "reason":"The Teatro Comunale di Bologna describes the event as a concert-show of Guccini songs, not a staged opera.",
@@ -75,7 +75,7 @@ def check(triage, catalog):
         venue=norm(g.get("venue"))
         same_day=[p for p in rows if p["date"]==g["date"]
                   and canonical_title(p["title"])==title
-                  and venue and norm(p.get("venue"))==venue]
+                  and venue and norm(p.get("venue"))==venue\n                  and (g["source_key"] not in SOURCE_CITY or\n                       norm(p.get("city"))==SOURCE_CITY[g["source_key"]])]
         # Published records can be on a separately corroborated detail URL,
         # while the audit source is a generic theatre index.
         # Same day, work, venue is strong evidence against an automatic
