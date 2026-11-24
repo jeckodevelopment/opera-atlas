@@ -16,6 +16,28 @@ class VerifiedCivicImageTests(unittest.TestCase):
         self.assertEqual(
             verified_candidate_image({},title=TITLE,composer=COMPOSER,url=SOURCE),proof)
 
+    def test_pisa_poster_photo_is_source_scoped_with_explicit_press_caption(self):
+        from opera_atlas.verified_civic_work_images import (
+            PISA_SOURCE,PISA_IMAGE,PISA_PROVENANCE,PISA_TITLE,PISA_COMPOSER)
+        proof=verified_civic_image(source_url=PISA_SOURCE,
+                                   title=PISA_TITLE,composer=PISA_COMPOSER)
+        self.assertIsNotNone(proof)
+        self.assertEqual(PISA_IMAGE,proof["image_url"])
+        self.assertEqual(PISA_PROVENANCE,proof["provenance_url"])
+        self.assertIn("conferenza stampa",proof["credit"])
+        self.assertTrue(is_verified_civic_image(proof,title=PISA_TITLE,composer=PISA_COMPOSER))
+        for corrupt in (
+            {"image_url":"https://different.example/random.jpg"},
+            {"provenance_url":"https://www.comune.pisa.it/other"},
+            {"source_url":"https://teatrodipisa.it/spettacolo/carmen/"},
+        ):
+            self.assertFalse(is_verified_civic_image({**proof,**corrupt},
+                title=PISA_TITLE,composer=PISA_COMPOSER))
+        self.assertIsNone(verified_civic_image(source_url=PISA_SOURCE,
+                                    title=PISA_TITLE,composer="Another Britten"))
+        self.assertIsNone(verified_civic_image(source_url=PISA_SOURCE,
+                                    title="Death in Venice",composer=PISA_COMPOSER))
+
     def test_no_authorization_by_title_only_or_other_venue(self):
         self.assertIsNone(verified_civic_image(
             source_url=SOURCE,title=TITLE,composer="Another Composer"))
