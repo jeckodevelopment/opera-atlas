@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T17:05:32+00:00",
+  "generated_at": "2026-11-24T19:45:48+00:00",
   "input_checked_at": [
-    "2026-11-24T09:30:29+00:00",
-    "2026-11-24T09:35:36+00:00",
-    "2026-11-24T10:14:03+00:00",
-    "2026-11-24T10:34:45+00:00"
+    "2026-11-24T19:00:08+00:00",
+    "2026-11-24T18:54:22+00:00",
+    "2026-11-24T19:25:12+00:00",
+    "2026-11-24T19:44:20+00:00"
   ],
   "scan_offsets": [
     0,
@@ -17,19 +17,28 @@
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
-  "raw_observation_count": 427,
-  "unique_observation_count": 158,
-  "duplicate_observations_collapsed": 269,
+  "raw_observation_count": 529,
+  "unique_observation_count": 234,
+  "duplicate_observations_collapsed": 295,
   "observation_counts": {
     "already_published_exact_source_day_work": 6,
     "excluded_by_approved_policy": 3,
-    "official_opera_candidate_needs_publication_review_time_conflict": 1,
+    "official_opera_candidate_needs_publication_review": 1,
     "opera_component_published_ballet_companion": 1,
     "possible_match_needs_venue_source_review": 8,
-    "screened_nonopera_exact_source": 54,
-    "unmatched_requires_official_review": 85
+    "screened_nonopera_exact_source": 37,
+    "unmatched_requires_official_review": 178
   },
   "monthly_counts": {
+    "2026-01": {
+      "unmatched_requires_official_review": 2
+    },
+    "2026-02": {
+      "unmatched_requires_official_review": 1
+    },
+    "2026-03": {
+      "unmatched_requires_official_review": 3
+    },
     "2026-07": {
       "already_published_exact_source_day_work": 2,
       "excluded_by_approved_policy": 2,
@@ -38,50 +47,103 @@
       "unmatched_requires_official_review": 2
     },
     "2026-09": {
-      "official_opera_candidate_needs_publication_review_time_conflict": 1,
-      "screened_nonopera_exact_source": 6,
-      "unmatched_requires_official_review": 8
+      "official_opera_candidate_needs_publication_review": 1,
+      "unmatched_requires_official_review": 15
     },
     "2026-10": {
-      "screened_nonopera_exact_source": 12,
-      "unmatched_requires_official_review": 19
+      "screened_nonopera_exact_source": 2,
+      "unmatched_requires_official_review": 46
     },
     "2026-11": {
       "already_published_exact_source_day_work": 1,
       "possible_match_needs_venue_source_review": 2,
-      "screened_nonopera_exact_source": 9,
-      "unmatched_requires_official_review": 24
+      "screened_nonopera_exact_source": 8,
+      "unmatched_requires_official_review": 34
     },
     "2026-12": {
       "already_published_exact_source_day_work": 3,
       "excluded_by_approved_policy": 1,
       "possible_match_needs_venue_source_review": 6,
       "screened_nonopera_exact_source": 23,
-      "unmatched_requires_official_review": 32
+      "unmatched_requires_official_review": 75
     }
   },
   "fetch_attempts": {
     "seeds": {
       "attempts": 500,
-      "succeeded": 396,
-      "failed": 104,
+      "succeeded": 403,
+      "failed": 97,
       "note": "Page attempts; not deduplicated distinct URLs"
     },
     "archives": {
-      "attempts": 835,
-      "succeeded": 774,
-      "failed": 61,
+      "attempts": 807,
+      "succeeded": 745,
+      "failed": 62,
       "note": "Page attempts; not deduplicated distinct URLs"
     },
     "details": {
-      "attempts": 2181,
-      "succeeded": 1895,
-      "failed": 286,
+      "attempts": 2193,
+      "succeeded": 1912,
+      "failed": 281,
       "note": "Page attempts; not deduplicated distinct URLs"
     }
   },
-  "review_queue_count": 94,
+  "review_queue_count": 187,
   "review_queue": [
+    {
+      "date": "2026-01-23",
+      "time": "20:30",
+      "event_title": "Carmen",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-01-25",
+      "time": "15:30",
+      "event_title": "Carmen",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-02-27",
+      "time": "20:30",
+      "event_title": "The turn of the screw (il giro di vite)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-03-01",
+      "time": "15:30",
+      "event_title": "The turn of the screw (il giro di vite)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-03-27",
+      "time": "20:30",
+      "event_title": "L’elisir d’amore",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-03-29",
+      "time": "15:30",
+      "event_title": "L’elisir d’amore",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
     {
       "date": "2026-07-24",
       "time": "21:00",
@@ -111,7 +173,16 @@
     },
     {
       "date": "2026-09-16",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Il cambiamento era incessante",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-09-16",
+      "time": "20:30",
       "event_title": "Il cambiamento era incessante",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -120,16 +191,16 @@
     },
     {
       "date": "2026-09-25",
-      "time": "22:30",
+      "time": "20:30",
       "event_title": "La costanza trionfante",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
       "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
-      "status": "official_opera_candidate_needs_publication_review_time_conflict"
+      "status": "official_opera_candidate_needs_publication_review"
     },
     {
       "date": "2026-09-25",
-      "time": "22:30",
+      "time": "20:30",
       "event_title": "La costanza trionfante",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -138,7 +209,16 @@
     },
     {
       "date": "2026-09-26",
-      "time": "19:00",
+      "time": "17:00",
+      "event_title": "Kammermusik n. 1",
+      "venue": "Galleria Estense, Sala dei Veneti",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "17:00",
       "event_title": "Kammermusik n. 1",
       "venue": "Galleria Estense, Sala dei Veneti",
       "source_key": "modena-teatro-opera-2026-27",
@@ -147,7 +227,16 @@
     },
     {
       "date": "2026-09-26",
-      "time": "23:30",
+      "time": "21:30",
+      "event_title": "Voci inaudite",
+      "venue": "Chiesa di San Carlo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "21:30",
       "event_title": "Voci inaudite",
       "venue": "Chiesa di San Carlo",
       "source_key": "modena-teatro-opera-2026-27",
@@ -156,7 +245,16 @@
     },
     {
       "date": "2026-09-27",
-      "time": "19:30",
+      "time": "17:30",
+      "event_title": "Kattivissimi and friends… all&#8217;Opera",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-09-27",
+      "time": "17:30",
       "event_title": "Kattivissimi and friends… all&#8217;Opera",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -165,7 +263,16 @@
     },
     {
       "date": "2026-09-27",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Letteralmente Verdi",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-09-27",
+      "time": "20:30",
       "event_title": "Letteralmente Verdi",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -174,7 +281,25 @@
     },
     {
       "date": "2026-09-30",
-      "time": "23:00",
+      "time": "18:00",
+      "event_title": "Librinteatro | La musica in parole",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "21:00",
+      "event_title": "Ma l&#8217;amor mio non muore!",
+      "venue": "Sala Truffaut",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "21:00",
       "event_title": "Ma l&#8217;amor mio non muore!",
       "venue": "Sala Truffaut",
       "source_key": "modena-teatro-opera-2026-27",
@@ -182,8 +307,26 @@
       "status": "unmatched_requires_official_review"
     },
     {
+      "date": "2026-10-01",
+      "time": "21:00",
+      "event_title": "Italia Mundial | Goal Festival",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
       "date": "2026-10-02",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Viva Verdi",
+      "venue": "Teatro del Popolo, Concordia sulla Secchia (MO)",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "20:30",
       "event_title": "Viva Verdi",
       "venue": "Teatro del Popolo, Concordia sulla Secchia (MO)",
       "source_key": "modena-teatro-opera-2026-27",
@@ -192,7 +335,16 @@
     },
     {
       "date": "2026-10-03",
-      "time": "19:00",
+      "time": "17:00",
+      "event_title": "Kammermusik n. 2",
+      "venue": "Palazzo Ducale di Sassuolo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-03",
+      "time": "17:00",
       "event_title": "Kammermusik n. 2",
       "venue": "Palazzo Ducale di Sassuolo",
       "source_key": "modena-teatro-opera-2026-27",
@@ -201,7 +353,16 @@
     },
     {
       "date": "2026-10-04",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Concerto di Gala",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-04",
+      "time": "20:30",
       "event_title": "Concerto di Gala",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -210,7 +371,16 @@
     },
     {
       "date": "2026-10-09",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "A casa Bononcini",
+      "venue": "Chiesa di San Carlo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-09",
+      "time": "20:30",
       "event_title": "A casa Bononcini",
       "venue": "Chiesa di San Carlo",
       "source_key": "modena-teatro-opera-2026-27",
@@ -219,7 +389,16 @@
     },
     {
       "date": "2026-10-10",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Messa da Requiem",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-10",
+      "time": "20:30",
       "event_title": "Messa da Requiem",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -237,7 +416,16 @@
     },
     {
       "date": "2026-10-11",
-      "time": "19:00",
+      "time": "17:00",
+      "event_title": "Dalla Boemia al Ducato di Modena",
+      "venue": "Temple Theater /Teatro A. Rompianesi, Sassuolo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-11",
+      "time": "17:00",
       "event_title": "Dalla Boemia al Ducato di Modena",
       "venue": "Temple Theater /Teatro A. Rompianesi, Sassuolo",
       "source_key": "modena-teatro-opera-2026-27",
@@ -246,7 +434,16 @@
     },
     {
       "date": "2026-10-12",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Mamma: tributo a Luciano Pavarotti e Henry Mancini",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-12",
+      "time": "20:30",
       "event_title": "Mamma: tributo a Luciano Pavarotti e Henry Mancini",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -255,7 +452,16 @@
     },
     {
       "date": "2026-10-13",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Filarmonie Future",
+      "venue": "Teatro Comunale di Carpi",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-13",
+      "time": "20:30",
       "event_title": "Filarmonie Future",
       "venue": "Teatro Comunale di Carpi",
       "source_key": "modena-teatro-opera-2026-27",
@@ -263,8 +469,35 @@
       "status": "unmatched_requires_official_review"
     },
     {
+      "date": "2026-10-13",
+      "time": "15:00",
+      "event_title": "VerdiFormazione, corsi di recitazione e scrittura creativa",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-14",
+      "time": "18:00",
+      "event_title": "Librinteatro | La musica in parole",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
       "date": "2026-10-17",
-      "time": "20:00",
+      "time": "18:00",
+      "event_title": "La preghiera nell’opera lirica",
+      "venue": "Chiesa di Sant'Agostino",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-17",
+      "time": "18:00",
       "event_title": "La preghiera nell’opera lirica",
       "venue": "Chiesa di Sant'Agostino",
       "source_key": "modena-teatro-opera-2026-27",
@@ -273,7 +506,16 @@
     },
     {
       "date": "2026-10-17",
-      "time": "22:30",
+      "time": "20:30",
+      "event_title": "Le maschere allo specchio",
+      "venue": "Ridotto del Teatro",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-17",
+      "time": "20:30",
       "event_title": "Le maschere allo specchio",
       "venue": "Ridotto del Teatro",
       "source_key": "modena-teatro-opera-2026-27",
@@ -287,6 +529,114 @@
       "venue": null,
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-18",
+      "time": "21:00",
+      "event_title": "Akademie fur Alte Musik Berlin",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-21",
+      "time": "16:00",
+      "event_title": "Dido and Aeneas (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-21",
+      "time": "16:00",
+      "event_title": "Dido and Aeneas (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-22",
+      "time": "18:00",
+      "event_title": "Dido and Aeneas | Guida all&#8217;ascolto con Enrico Girardi",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-23",
+      "time": "20:30",
+      "event_title": "Dido and Aeneas",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-23",
+      "time": "20:30",
+      "event_title": "Dido and Aeneas",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-25",
+      "time": "15:30",
+      "event_title": "Dido and Aeneas",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-25",
+      "time": "15:30",
+      "event_title": "Dido and Aeneas",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-28",
+      "time": "18:00",
+      "event_title": "Librinteatro | La musica in parole",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-28",
+      "time": "18:00",
+      "event_title": "Librinteatro | La musica in parole",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-29",
+      "time": "21:15",
+      "event_title": "Concerto d&#8217;Autunno",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-29",
+      "time": "21:15",
+      "event_title": "Concerto d&#8217;Autunno",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
       "status": "unmatched_requires_official_review"
     },
     {
@@ -332,6 +682,24 @@
       "venue": "Teatro Duse",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/speciale/opera-guccini-2026/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-31",
+      "time": "21:00",
+      "event_title": "C&#8217;era una volta un re",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-10-31",
+      "time": "21:00",
+      "event_title": "C&#8217;era una volta un re",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/",
       "status": "unmatched_requires_official_review"
     },
     {
@@ -380,6 +748,15 @@
       "status": "unmatched_requires_official_review"
     },
     {
+      "date": "2026-11-04",
+      "time": "21:15",
+      "event_title": "Pisa Jazz | Miles Davis 100",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
       "date": "2026-11-06",
       "time": "21:30",
       "event_title": "Compagnia Anželika Cholina Dance Theatre  &#8211; Anna Karenina",
@@ -395,6 +772,15 @@
       "venue": "Teatro Metropolitan.",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-07",
+      "time": "18:00",
+      "event_title": "Pimpa. Il musical a pois",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
       "status": "unmatched_requires_official_review"
     },
     {
@@ -425,8 +811,26 @@
       "status": "unmatched_requires_official_review"
     },
     {
-      "date": "2026-11-12",
+      "date": "2026-11-11",
       "time": "21:30",
+      "event_title": "Stand-Up Comedy Show",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-12",
+      "time": "20:30",
+      "event_title": "Caterina Barbieri e Fontanamix ensemble",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-12",
+      "time": "20:30",
       "event_title": "Caterina Barbieri e Fontanamix ensemble",
       "venue": "Teatro Comunale Pavarotti-Freni",
       "source_key": "modena-teatro-opera-2026-27",
@@ -441,6 +845,42 @@
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/calendario/",
       "status": "possible_match_needs_venue_source_review"
+    },
+    {
+      "date": "2026-11-14",
+      "time": "21:00",
+      "event_title": "Prima del temporale",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-15",
+      "time": "17:00",
+      "event_title": "Prima del temporale",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-17",
+      "time": "21:00",
+      "event_title": "Enrico Pieranunzi",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-19",
+      "time": "19:30",
+      "event_title": "Nuove Rotte. La libert&#224; di scegliere",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
     },
     {
       "date": "2026-11-20",
@@ -471,6 +911,15 @@
     },
     {
       "date": "2026-11-21",
+      "time": "21:00",
+      "event_title": "Gaber. Mi fa male il mondo",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-21",
       "time": "11:00",
       "event_title": "Pierino e il lupo",
       "venue": null,
@@ -485,6 +934,15 @@
       "venue": "Museo Internazionale e Biblioteca della Musica",
       "source_key": "bologna-comunale-opera-2027",
       "source_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-iii-appuntamento-2026/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-11-22",
+      "time": "17:00",
+      "event_title": "Gaber. Mi fa male il mondo",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
       "status": "unmatched_requires_official_review"
     },
     {
@@ -624,6 +1082,123 @@
     },
     {
       "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ar/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/dido-and-aeneas-generale-riservata-alle-scuole/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/de/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/en/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/es/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-12/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ja/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/pt/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ru/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "16:00",
+      "event_title": "L&#8217;occasione fa il ladro (Generale riservata alle Scuole)",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/zh/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-02",
       "time": null,
       "event_title": "La bella addormentata",
       "venue": "Teatro Metropolitan.",
@@ -647,6 +1222,123 @@
       "venue": "Teatro Metropolitan.",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ar/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/de/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/en/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/es/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-12/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ja/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/pt/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ru/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/zh/calendario/categoria/opera/elenco/",
       "status": "unmatched_requires_official_review"
     },
     {
@@ -678,11 +1370,146 @@
     },
     {
       "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ar/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/de/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/en/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/es/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-12/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ja/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/pt/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/ru/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "15:30",
+      "event_title": "L&#8217;occasione fa il ladro ossia il Cambio della valigia",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/zh/calendario/categoria/opera/elenco/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-06",
       "time": null,
       "event_title": "La bella addormentata",
       "venue": "Teatro Metropolitan.",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-09",
+      "time": "21:00",
+      "event_title": "Andrea Lucchesini",
+      "venue": null,
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-09",
+      "time": "21:00",
+      "event_title": "Andrea Lucchesini",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-12/",
       "status": "unmatched_requires_official_review"
     },
     {
@@ -911,6 +1738,24 @@
       "status": "unmatched_requires_official_review"
     },
     {
+      "date": "2026-12-22",
+      "time": "21:00",
+      "event_title": "Concerto di Natale | Diego Ceretta dirige l&#8217;ORT",
+      "venue": null,
+      "source_key": "pisa-verdi-opera-2026-27",
+      "source_url": "https://teatrodipisa.it/calendario/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
+      "date": "2026-12-22",
+      "time": "21:00",
+      "event_title": "Concerto di Natale | Diego Ceretta dirige l&#8217;ORT",
+      "venue": null,
+      "source_key": "pisa-future-calendar",
+      "source_url": "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-12/",
+      "status": "unmatched_requires_official_review"
+    },
+    {
       "date": "2026-12-31",
       "time": "18:00",
       "event_title": "Concerto di San Silvestro 2026",
@@ -956,13 +1801,18 @@
       "screened_nonopera_exact_source": 4
     },
     "modena-teatro-opera-2026-27": {
-      "official_opera_candidate_needs_publication_review_time_conflict": 1,
-      "screened_nonopera_exact_source": 17,
-      "unmatched_requires_official_review": 40
+      "official_opera_candidate_needs_publication_review": 1,
+      "unmatched_requires_official_review": 57
     },
     "piacenza-opera-2026-27": {
       "possible_match_needs_venue_source_review": 2,
       "unmatched_requires_official_review": 6
+    },
+    "pisa-future-calendar": {
+      "unmatched_requires_official_review": 71
+    },
+    "pisa-verdi-opera-2026-27": {
+      "unmatched_requires_official_review": 5
     }
   },
   "warning": "Unmatched facts are not verified missing recite. Generic Event JSON-LD cannot certify genre, audience, venue or season completeness. No catalog publication."
