@@ -122,6 +122,26 @@ def validated_venue_leads(document, venues):
     return result
 
 
+def reconcile_lead(lead, vid, candidates):
+    """Conservative identity-aware comparison; never infer an unknown clock."""
+    title, composer = canonical(lead['title']), canonical(lead['composer'])
+    same_day = [c for c in candidates if c['date'] == lead['date']]
+    same_work = [c for c in same_day if title and composer and
+                 canonical(c['title']) == title and canonical(c['composer']) == composer]
+    local = [c for c in same_work if c['venue_id'] == vid]
+    exact = [c for c in local if lead['time'] is not None and c['time'] == lead['time']]
+    if exact:
+        return 'exact_match'
+    if local:
+        return 'clock_review'
+    if same_work:
+        return 'venue_review'
+    if any(c['venue_id'] == vid and (canonical(c['title']) == title or
+           lead['time'] is None or c['time'] == lead['time']) for c in same_day):
+        return 'identity_review'
+    return 'publication_candidate' if lead['time'] is not None else 'clock_review'
+
+
 def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
                  seeds, seed_scan, venue_leads=None):
     venue_rows = venues.get("venues", [])
@@ -154,6 +174,7 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
     published = defaultdict(lambda: defaultdict(set))
     published_sources = defaultdict(set)
     unresolved_published = []
+    reconciliation_candidates = []
     for production in manifest.get("productions", []):
         staging = registry["stagings"].get(production.get("key"))
         vid = (registry_to_directory.get(staging["venue_id"])
@@ -171,6 +192,8 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
             if slot:
                 published[vid][slot[0][:7]].add(slot)
                 published_sources[(vid, slot)].add(url_identity(production["source_url"]))
+                reconciliation_candidates.append(dict(venue_id=vid,date=slot[0],time=slot[1],
+                    title=production.get("title"),composer=production.get("composer")))
     # Programmes: no double counting with standard productions.
     unlinked_programs = []
     for p in programs.get("programs", []):
@@ -190,6 +213,14 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
             if slot:
                 published[vid][day[:7]].add(slot)
                 published_sources[(vid, slot)].add(url_identity(p.get("source_url")))
+                for component in p.get("components", []):
+                    reconciliation_candidates.append(dict(venue_id=vid,date=slot[0],time=slot[1],
+                        title=component.get("title"),composer=component.get("composer")))
+                components=p.get("components", [])
+                if components:
+                    reconciliation_candidates.append(dict(venue_id=vid,date=slot[0],time=slot[1],
+                        title=" / ".join(str(c.get("title") or "") for c in components),
+                        composer=" / ".join(str(c.get("composer") or "") for c in components)))
     historic = defaultdict(lambda: defaultdict(set))
     for record in historical.get("records", []):
         vid = record.get("venue_id")
@@ -265,14 +296,17 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
     # useful evidence but never becomes a fabricated time-specific recita.
     lead_counts=Counter()
     unpublished_leads=defaultdict(list)
+    reconciliation=[]
+    reconciliation_counts=Counter()
     for vid, entries in verified_leads.items():
         for lead in entries:
-            if lead["time"] is not None:
-                known=(lead["date"],lead["time"]) in published[vid][lead["date"][:7]]
-            else:
-                known=any(d==lead["date"] for d,h in published[vid][lead["date"][:7]])
-            if not known:
-                unpublished_leads[vid].append(lead)
+            state=reconcile_lead(lead,vid,reconciliation_candidates)
+            row=dict(lead,venue_id=vid,reconciliation_status=state,
+                     publication_review_required=state!="exact_match")
+            reconciliation.append(row)
+            reconciliation_counts[state]+=1
+            if state!="exact_match":
+                unpublished_leads[vid].append(row)
                 lead_counts[vid]+=1
     rows = []
     counts = Counter()
@@ -360,6 +394,8 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
             bool(verified_leads[v["id"]]) for v in venue_rows),
         "official_2026_opera_lead_count":sum(map(len,verified_leads.values())),
         "official_unpublished_opera_lead_count":sum(lead_counts.values()),
+        "official_lead_reconciliation_counts":dict(sorted(reconciliation_counts.items())),
+        "official_lead_reconciliation":reconciliation,
         "official_lead_venues_with_zero_published":sum(
             bool(verified_leads[v["id"]]) and
             not any(r["published_showtimes"] for r in rows if r["venue_id"]==v["id"])
