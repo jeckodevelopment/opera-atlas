@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T13:15:23+00:00",
+  "generated_at": "2026-11-24T13:33:05+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,10 +10,10 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 762,
-    "published_dates_not_exhaustively_verified": 102
+    "coverage_not_established": 759,
+    "published_dates_not_exhaustively_verified": 105
   },
-  "published_2026_showtimes": 405,
+  "published_2026_showtimes": 424,
   "observed_2026_opera_showtimes": 115,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -1541,7 +1541,7 @@
           "official_url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
           "fetch_status": "scanned",
           "failure": null,
-          "detail_links_discovered": 17,
+          "detail_links_discovered": 15,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1568,7 +1568,7 @@
           "official_url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
           "fetch_status": "scanned",
           "failure": null,
-          "detail_links_discovered": 17,
+          "detail_links_discovered": 15,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1595,7 +1595,7 @@
           "official_url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
           "fetch_status": "scanned",
           "failure": null,
-          "detail_links_discovered": 17,
+          "detail_links_discovered": 15,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1622,7 +1622,7 @@
           "official_url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
           "fetch_status": "scanned",
           "failure": null,
-          "detail_links_discovered": 17,
+          "detail_links_discovered": 15,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1649,7 +1649,7 @@
           "official_url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
           "fetch_status": "scanned",
           "failure": null,
-          "detail_links_discovered": 17,
+          "detail_links_discovered": 15,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1676,7 +1676,7 @@
           "official_url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
           "fetch_status": "scanned",
           "failure": null,
-          "detail_links_discovered": 17,
+          "detail_links_discovered": 15,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1796,10 +1796,10 @@
         {
           "source_key": "massimo-2025-26",
           "season": "2025/26",
-          "official_url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
-          "fetch_status": "unverified",
-          "failure": "FetchUnavailable",
-          "detail_links_discovered": 0,
+          "official_url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 24,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1814,7 +1814,7 @@
       "city": "Palermo",
       "region": "Sicilia",
       "month": "2026-02",
-      "published_showtimes": 0,
+      "published_showtimes": 4,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -1823,17 +1823,17 @@
         {
           "source_key": "massimo-2025-26",
           "season": "2025/26",
-          "official_url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
-          "fetch_status": "unverified",
-          "failure": "FetchUnavailable",
-          "detail_links_discovered": 0,
+          "official_url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 24,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000009",
@@ -1841,7 +1841,7 @@
       "city": "Palermo",
       "region": "Sicilia",
       "month": "2026-03",
-      "published_showtimes": 0,
+      "published_showtimes": 7,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -1850,17 +1850,17 @@
         {
           "source_key": "massimo-2025-26",
           "season": "2025/26",
-          "official_url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
-          "fetch_status": "unverified",
-          "failure": "FetchUnavailable",
-          "detail_links_discovered": 0,
+          "official_url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 24,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000009",
@@ -1877,10 +1877,10 @@
         {
           "source_key": "massimo-2025-26",
           "season": "2025/26",
-          "official_url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
-          "fetch_status": "unverified",
-          "failure": "FetchUnavailable",
-          "detail_links_discovered": 0,
+          "official_url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 24,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -1895,7 +1895,7 @@
       "city": "Palermo",
       "region": "Sicilia",
       "month": "2026-05",
-      "published_showtimes": 0,
+      "published_showtimes": 8,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -1904,17 +1904,17 @@
         {
           "source_key": "massimo-2025-26",
           "season": "2025/26",
-          "official_url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
-          "fetch_status": "unverified",
-          "failure": "FetchUnavailable",
-          "detail_links_discovered": 0,
+          "official_url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 24,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000009",
@@ -1931,10 +1931,10 @@
         {
           "source_key": "massimo-2025-26",
           "season": "2025/26",
-          "official_url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
-          "fetch_status": "unverified",
-          "failure": "FetchUnavailable",
-          "detail_links_discovered": 0,
+          "official_url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 24,
           "scope": "historical_2025_26",
           "source_exhaustiveness_verified": false
         }
@@ -3778,7 +3778,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "filarmonico-verona-2026",
+          "season": "2026",
+          "official_url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "2026_calendar",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -3794,7 +3805,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "filarmonico-verona-2026",
+          "season": "2026",
+          "official_url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "2026_calendar",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -3810,7 +3832,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "filarmonico-verona-2026",
+          "season": "2026",
+          "official_url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "2026_calendar",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -3826,7 +3859,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "filarmonico-verona-2026",
+          "season": "2026",
+          "official_url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "2026_calendar",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -3842,7 +3886,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "filarmonico-verona-2026",
+          "season": "2026",
+          "official_url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "2026_calendar",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -3858,7 +3913,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "filarmonico-verona-2026",
+          "season": "2026",
+          "official_url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "2026_calendar",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -8896,7 +8962,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "bellini-catania-2025-26",
+          "season": "2025/26",
+          "official_url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "historical_2025_26",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -8912,7 +8989,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "bellini-catania-2025-26",
+          "season": "2025/26",
+          "official_url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "historical_2025_26",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -8928,7 +9016,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "bellini-catania-2025-26",
+          "season": "2025/26",
+          "official_url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "historical_2025_26",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -8944,7 +9043,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "bellini-catania-2025-26",
+          "season": "2025/26",
+          "official_url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "historical_2025_26",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -8960,7 +9070,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "bellini-catania-2025-26",
+          "season": "2025/26",
+          "official_url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "historical_2025_26",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
@@ -8976,7 +9097,18 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "historical_sources_checked": [],
+      "historical_sources_checked": [
+        {
+          "source_key": "bellini-catania-2025-26",
+          "season": "2025/26",
+          "official_url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+          "fetch_status": "scanned",
+          "failure": null,
+          "detail_links_discovered": 0,
+          "scope": "historical_2025_26",
+          "source_exhaustiveness_verified": false
+        }
+      ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
       "status": "coverage_not_established"
