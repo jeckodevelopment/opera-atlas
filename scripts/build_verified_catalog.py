@@ -439,6 +439,86 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     }
+    cagliari_approved.update({
+        "historical-2026-cagliari-lucrezia-borgia": {
+            "title": "Lucrezia Borgia",
+            "composer": "Gaetano Donizetti",
+            "dates": [
+                [
+                    "2026-01-28",
+                    "20:00"
+                ],
+                [
+                    "2026-01-29",
+                    "19:00"
+                ],
+                [
+                    "2026-01-30",
+                    "20:00"
+                ],
+                [
+                    "2026-01-31",
+                    "19:00"
+                ],
+                [
+                    "2026-02-01",
+                    "17:00"
+                ]
+            ]
+        },
+        "historical-2026-cagliari-cosi-fan-tutte": {
+            "title": "Così fan tutte",
+            "composer": "Wolfgang Amadeus Mozart",
+            "dates": [
+                [
+                    "2026-04-17",
+                    "20:00"
+                ],
+                [
+                    "2026-04-18",
+                    "19:00"
+                ],
+                [
+                    "2026-04-19",
+                    "17:00"
+                ],
+                [
+                    "2026-04-21",
+                    "20:00"
+                ],
+                [
+                    "2026-04-22",
+                    "20:00"
+                ]
+            ]
+        },
+        "historical-2026-cagliari-il-cappello-di-paglia-di-firenze": {
+            "title": "Il cappello di paglia di Firenze",
+            "composer": "Nino Rota",
+            "dates": [
+                [
+                    "2026-09-23",
+                    "20:00"
+                ],
+                [
+                    "2026-09-24",
+                    "19:00"
+                ],
+                [
+                    "2026-09-25",
+                    "20:00"
+                ],
+                [
+                    "2026-09-26",
+                    "19:00"
+                ],
+                [
+                    "2026-09-27",
+                    "17:00"
+                ]
+            ]
+        }
+    })
     permitted.add(cagliari_archive)
     reconciled_2026 = {
         "historical-2026-como-teatro-sociale-don-quichotte": {
