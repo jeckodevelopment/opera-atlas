@@ -26,6 +26,34 @@ class RetroBatchTests(unittest.TestCase):
         self.assertEqual("https://official.example/2025-2026", queue[0][1])
         self.assertEqual(0, overflow)
 
+    def test_archive_pagination_does_not_repeat_first_batch(self):
+        seeds = [{"source_key":"s","seed_url":"https://official.example/",
+                  "official_url":"https://official.example/","links":[
+                    {"url":f"https://official.example/2026/{n}","category":"historical_year"}
+                    for n in range(7)]}]
+        first, _ = queue_historical_indexes(seeds,limit=3,offset=0)
+        second, remaining = queue_historical_indexes(seeds,limit=3,offset=3)
+        self.assertEqual(3,len(first))
+        self.assertEqual(3,len(second))
+        self.assertFalse({x[1] for x in first} & {x[1] for x in second})
+        self.assertEqual(1,remaining)
+
+    def test_host_pagination_skips_first_detail_slice(self):
+        source={"key":"s","official_url":"https://official.example/","access_status":"approved"}
+        archives=[{"source_key":"s","archive_url":"https://official.example/2026",
+                   "status":"scanned","links":[
+                       {"url":f"https://official.example/2026/{n}","category":"historical_year"}
+                       for n in range(30)]}]
+        with patch('scripts.audit_2026_retrospective_batch.approved_hosts',
+                   return_value={"official.example":[source]}), patch(
+                   'scripts.audit_2026_retrospective_batch.excluded_nonopera',
+                   return_value=False):
+            first,_=queue_details([],archives,{},host_offset=0)
+            second,_=queue_details([],archives,{},host_offset=25)
+        self.assertEqual(25,len(first))
+        self.assertEqual(5,len(second))
+        self.assertFalse({x[1] for x in first} & {x[1] for x in second})
+
     def test_unverified_source_not_claimed_complete(self):
         source = {"key":"one", "official_url":"https://official.example/",
                   "url":"https://official.example/archivio/", "access_status":"approved",
