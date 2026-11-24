@@ -542,6 +542,16 @@
       "decision": "exclude_nonopera",
       "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
       "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "event_title": "Pulcinella / La favola di Orfeo (dittico)",
+      "date": "2026-07-14",
+      "time": "21:00",
+      "venue": "Palazzo Ducale, Martina Franca",
+      "decision": "opera_component_published_ballet_companion",
+      "reason": "Official festival confirms Pulcinella is a ballet with singing while La favola di Orfeo is the canonical one-act opera already in the catalog. Not two missing operas.",
+      "provenance": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
     }
   ]
 }
