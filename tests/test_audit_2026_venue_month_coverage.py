@@ -57,30 +57,30 @@ class VenueMonthMatrixTests(unittest.TestCase):
         r=self.report
         self.assertEqual(93,r["official_2026_opera_lead_count"])
         self.assertEqual(13,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(33,r["official_unpublished_opera_lead_count"])
-        self.assertEqual(3,r["official_lead_venues_with_zero_published"])
-        self.assertEqual(14,r["zero_published_venue_count"])
+        self.assertEqual(2,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,r["official_lead_venues_with_zero_published"])
+        self.assertEqual(11,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
         self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri","Teatro Alfieri"},
                          set(sources))
         for entry in sources.values():
-            self.assertEqual("published_not_exhaustively_verified" if entry["venue"] in {"Teatro Lirico di Cagliari","Teatro Sociale","Arena di Verona","Teatro Filarmonico","Teatro Vittorio Emanuele","Teatro Ponchielli","Teatro del Giglio Giacomo Puccini","Teatro Coccia","Teatro Sociale di Mantova","Teatro Alfieri"} else "zero_published_with_official_opera_leads",
+            self.assertEqual("published_not_exhaustively_verified" if entry["venue"] in {"Teatro Lirico di Cagliari","Teatro Sociale","Arena di Verona","Teatro Filarmonico","Teatro Vittorio Emanuele","Teatro Ponchielli","Teatro del Giglio Giacomo Puccini","Teatro Coccia","Teatro Sociale di Mantova","Teatro Alfieri","Arena Sferisterio","Gran Teatro Giacomo Puccini","Teatro Dante Alighieri"} else "zero_published_with_official_opera_leads",
                              entry["audit_priority"])
             self.assertFalse(entry["missing_recite_certified"])
         self.assertEqual(0,sources["Teatro Sociale"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Arena di Verona"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(11,sources["Arena Sferisterio"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Arena Sferisterio"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Filarmonico"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(16,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(2,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(60,r["official_lead_reconciliation_counts"]["exact_match"])
+        self.assertEqual(91,r["official_lead_reconciliation_counts"]["exact_match"])
         self.assertEqual(0,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Coccia"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro del Giglio Giacomo Puccini"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Sociale di Mantova"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(6,sources["Teatro Dante Alighieri"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Teatro Dante Alighieri"]["official_unpublished_opera_lead_count"])
         ravenna=[p for p in self.leads["records"] if p["city"]=="Ravenna"]
         self.assertEqual(3,len(ravenna))
         self.assertTrue(all(clock is None for p in ravenna for day,clock in p["dates"]))
