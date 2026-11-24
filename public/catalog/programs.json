@@ -387,6 +387,55 @@
           "starts_at": "2027-04-18T16:00:00+02:00"
         }
       ]
+    },
+    {
+      "id": "oa-p-f017f07675f24fa5",
+      "title": "L’azzardo per un figlio / Il signor Bruschino",
+      "components": [
+        {
+          "title": "L’azzardo per un figlio",
+          "composer": "Claudio Scannavini",
+          "work_id": null,
+          "editorial": {
+            "synopsis": "Prima delle vicende del Signor Bruschino, padre e figlio raggiungono la locanda di Filiberto. In attesa del contratto nuziale, incontri inattesi spingono il giovane a esplorare la propria libertà e il padre a ripensare le sue aspettative.",
+            "history": {
+              "librettist": "Alberto Jona",
+              "premiere_year": 2026,
+              "premiere_venue": "Teatro Coccia",
+              "premiere_city": "Novara",
+              "premiere_status": "announced",
+              "sources": [
+                "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Il signor Bruschino",
+          "composer": "Gioachino Rossini",
+          "work_id": "oa-w-000086"
+        }
+      ],
+      "source_key": "coccia-novara-rolling-opera",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
+      "venue": "Teatro Coccia",
+      "municipality": "Novara",
+      "region": "Piemonte",
+      "route_slug": "azzardo-per-un-figlio-il-signor-bruschino",
+      "performances": [
+        {
+          "id": "oa-pr-5a70b95f02d40838",
+          "program_id": "oa-p-f017f07675f24fa5",
+          "local_date": "2026-12-11",
+          "starts_at": "2026-12-11T20:30:00+01:00"
+        },
+        {
+          "id": "oa-pr-dd3d9344ad0d842c",
+          "program_id": "oa-p-f017f07675f24fa5",
+          "local_date": "2026-12-13",
+          "starts_at": "2026-12-13T16:00:00+01:00"
+        }
+      ]
     }
   ]
 }
