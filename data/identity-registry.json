@@ -891,6 +891,12 @@
       "slug": "il-cappello-di-paglia-di-firenze",
       "title": "Il cappello di paglia di Firenze",
       "composer": "Nino Rota"
+    },
+    "la fanciulla del west|giacomo puccini": {
+      "id": "oa-w-000140",
+      "slug": "la-fanciulla-del-west",
+      "title": "La fanciulla del West",
+      "composer": "Giacomo Puccini"
     }
   },
   "venues": {
@@ -4168,6 +4174,14 @@
       "venue_id": "oa-v-000014",
       "slug": "carmen",
       "source_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+      "season": "2026"
+    },
+    "historical-2026-torre-del-lago-puccini-la-fanciulla-del-west": {
+      "id": "oa-s-000347",
+      "work_id": "oa-w-000140",
+      "venue_id": "oa-v-000049",
+      "slug": "la-fanciulla-del-west",
+      "source_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
       "season": "2026"
     }
   },
@@ -12140,6 +12154,18 @@
       "staging_id": "oa-s-000346",
       "original_date": "2026-04-26",
       "source_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/"
+    },
+    "historical-2026-torre-del-lago-puccini-la-fanciulla-del-west|2026-08-29": {
+      "id": "oa-r-001356",
+      "staging_id": "oa-s-000347",
+      "original_date": "2026-08-29",
+      "source_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+    },
+    "historical-2026-torre-del-lago-puccini-la-fanciulla-del-west|2026-09-05": {
+      "id": "oa-r-001357",
+      "staging_id": "oa-s-000347",
+      "original_date": "2026-09-05",
+      "source_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
     }
   },
   "reserved_works": {
