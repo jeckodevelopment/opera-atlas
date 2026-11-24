@@ -85,6 +85,10 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cp public/diagnostics/atlas-2026-venue-month-coverage.json /tmp/atlas-2026-venue-month-coverage.json
+          # The downloaded artifact dirties the checkout. Restore only this
+          # generated diagnostic before switching to the newest main; the
+          # verified artifact is safely preserved under /tmp.
+          git restore --worktree -- public/diagnostics/atlas-2026-venue-month-coverage.json
           for attempt in 1 2 3 4 5 6 7 8; do
             git fetch --no-tags origin main
             git checkout -B publish-2026-venue-month FETCH_HEAD
