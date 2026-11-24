@@ -69,8 +69,8 @@ class RetroBatchTests(unittest.TestCase):
                          [x["starts_at"][11:16] for x in result])
         self.assertEqual(["+02:00","+02:00","+01:00"],
                          [x["starts_at"][-6:] for x in result])
-        self.assertTrue(all(x["source_original_starts_at"].endswith(":30:00+02:00")
-                            for x in result[:2]))
+        self.assertEqual(["2026-09-25T22:30:00+02:00", "2026-10-03T19:00:00+02:00"],
+                         [x["source_original_starts_at"] for x in result[:2]])
         self.assertTrue(all(x["official_clock_evidence_url"] for x in result))
         copy=[{"date":"2026-09-25","event_title":"La costanza trionfante",
                "starts_at":"2026-09-25T22:30:00+02:00"}]
