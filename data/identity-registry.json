@@ -841,6 +841,12 @@
       "slug": "ottone-in-villa",
       "title": "Ottone in villa",
       "composer": "Antonio Vivaldi"
+    },
+    "dialoghi delle carmelitane|francis poulenc": {
+      "id": "oa-w-000132",
+      "slug": "dialoghi-delle-carmelitane",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc"
     }
   },
   "venues": {
@@ -3783,6 +3789,14 @@
       "venue_id": "oa-v-000021",
       "slug": "ottone-in-villa",
       "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-torino-dialoghi-delle-carmelitane": {
+      "id": "oa-s-000308",
+      "work_id": "oa-w-000132",
+      "venue_id": "oa-v-000001",
+      "slug": "dialoghi-delle-carmelitane",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
       "season": "2025-2026"
     }
   },
@@ -10897,6 +10911,42 @@
       "staging_id": "oa-s-000307",
       "original_date": "2026-03-29",
       "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
+    },
+    "historical-2026h1-torino-dialoghi-delle-carmelitane|2026-03-31": {
+      "id": "oa-r-001213",
+      "staging_id": "oa-s-000308",
+      "original_date": "2026-03-31",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+    },
+    "historical-2026h1-torino-dialoghi-delle-carmelitane|2026-04-02": {
+      "id": "oa-r-001214",
+      "staging_id": "oa-s-000308",
+      "original_date": "2026-04-02",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+    },
+    "historical-2026h1-torino-dialoghi-delle-carmelitane|2026-04-04": {
+      "id": "oa-r-001215",
+      "staging_id": "oa-s-000308",
+      "original_date": "2026-04-04",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+    },
+    "historical-2026h1-torino-dialoghi-delle-carmelitane|2026-04-08": {
+      "id": "oa-r-001216",
+      "staging_id": "oa-s-000308",
+      "original_date": "2026-04-08",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+    },
+    "historical-2026h1-torino-dialoghi-delle-carmelitane|2026-04-10": {
+      "id": "oa-r-001217",
+      "staging_id": "oa-s-000308",
+      "original_date": "2026-04-10",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+    },
+    "historical-2026h1-torino-dialoghi-delle-carmelitane|2026-04-12": {
+      "id": "oa-r-001218",
+      "staging_id": "oa-s-000308",
+      "original_date": "2026-04-12",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
     }
   },
   "reserved_works": {
