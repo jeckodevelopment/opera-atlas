@@ -187,6 +187,265 @@ OFFICIAL_GENRE_EVIDENCE = (
         "official_genre_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
         "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
     },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Il cambiamento era incessante",
+        "days": ["2026-09-16"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/il-cambiamento-era-incessante/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/il-cambiamento-era-incessante/",
+        "reason": "Official detail describes a concert of selected Handel arias, not a full opera.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "La costanza trionfante",
+        "days": ["2026-09-25"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "opera_semiscenic_reconstruction", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
+        "reason": "Vivaldi RV 706-A: only surviving music performed semi-staged with spoken narration of lost sections; requires editorial scope review.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Kammermusik n. 1",
+        "days": ["2026-09-26"], "venue": "Galleria Estense, Sala dei Veneti",
+        "genre": "chamber_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-1-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-1-2/",
+        "reason": "Festival detail explicitly calls this a masterclass concert.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Voci inaudite",
+        "days": ["2026-09-26"], "venue": "Chiesa di San Carlo",
+        "genre": "contemporary_vocal_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/voci-inaudite/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/voci-inaudite/",
+        "reason": "First-party page describes two-part vocal concert, not an opera staging.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Kattivissimi and friends… all’Opera",
+        "days": ["2026-09-27"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "educational_opera_encounter", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/kattivissimi-and-friends-allopera/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/kattivissimi-and-friends-allopera/",
+        "reason": "Official detail describes a children and families illustrated introduction to opera characters.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Letteralmente Verdi",
+        "days": ["2026-09-27"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "narrated_music_event", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/letteralmente-verdi/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/letteralmente-verdi/",
+        "reason": "First-party detail describes musical narration about Verdi and Il trovatore rather than staged Il trovatore.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Ma l’amor mio non muore!",
+        "days": ["2026-09-30"], "venue": "Sala Truffaut",
+        "genre": "silent_film_live_score", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/ma-lamor-mio-non-muore/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/ma-lamor-mio-non-muore/",
+        "reason": "Official festival detail: screening of restored 1913 silent film with newly composed live music.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Viva Verdi",
+        "days": ["2026-10-02"], "venue": "Teatro del Popolo, Concordia sulla Secchia (MO)",
+        "genre": "dance", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/viva-verdi/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/viva-verdi/",
+        "reason": "Balletto di Milano performs choreography to Verdi ballet music, not staged opera.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Kammermusik n. 2",
+        "days": ["2026-10-03"], "venue": "Palazzo Ducale di Sassuolo",
+        "genre": "chamber_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-2-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-2-2/",
+        "reason": "Official festival programme describes a masterclass chamber concert.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Concerto di Gala",
+        "days": ["2026-10-04"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "gala_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/concerto-di-gala-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/concerto-di-gala-2/",
+        "reason": "First-party description: gala concert featuring Anna Pirozzi celebrating Verdi.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "A casa Bononcini",
+        "days": ["2026-10-09"], "venue": "Chiesa di San Carlo",
+        "genre": "baroque_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/a-casa-bononcini/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/a-casa-bononcini/",
+        "reason": "Official page explicitly describes a baroque music concert.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Messa da Requiem",
+        "days": ["2026-10-10"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "sacred_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/messa-da-requiem/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/messa-da-requiem/",
+        "reason": "Verdi Messa da Requiem is a concert performance of sacred work, not a theatrical opera staging.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Dalla Boemia al Ducato di Modena",
+        "days": ["2026-10-11"], "venue": "Temple Theater /Teatro A. Rompianesi, Sassuolo",
+        "genre": "chamber_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/dalla-boemia-al-ducato-di-modena-3/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/dalla-boemia-al-ducato-di-modena-3/",
+        "reason": "Official programme for flautist and pianist, not opera staging.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Mamma: tributo a Luciano Pavarotti e Henry Mancini",
+        "days": ["2026-10-12"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "tribute_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/spettacolo-a-cura-della-fondazione-luciano-pavarotti/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/spettacolo-a-cura-della-fondazione-luciano-pavarotti/",
+        "reason": "Pavarotti and Mancini tribute musical programme, not a staged opera.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Filarmonie Future",
+        "days": ["2026-10-13"], "venue": "Teatro Comunale di Carpi",
+        "genre": "opera_gala_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/filarmonie-future-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/filarmonie-future-2/",
+        "reason": "Official event describes an orchestral concert of excerpts from Mozart, Rossini, Verdi and Puccini.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "La preghiera nell’opera lirica",
+        "days": ["2026-10-17"], "venue": "Chiesa di Sant'Agostino",
+        "genre": "choral_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/la-preghiera-nellopera-lirica/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/la-preghiera-nellopera-lirica/",
+        "reason": "Official detail describes a choral concert of operatic prayer excerpts.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Le maschere allo specchio",
+        "days": ["2026-10-17"], "venue": "Ridotto del Teatro",
+        "genre": "contemporary_chamber_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/le-maschere-allo-specchio/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/le-maschere-allo-specchio/",
+        "reason": "Official programme presents selected contemporary chamber and vocal pieces, not a complete opera.",
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27", "title": "Caterina Barbieri e Fontanamix ensemble",
+        "days": ["2026-11-12"], "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "cancelled_concert", "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/caterina-barbieri-e-fontanamix-ensemble/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/caterina-barbieri-e-fontanamix-ensemble/",
+        "reason": "Official venue explicitly states that this concert was cancelled and tickets are refunded.",
+    },
+    {
+        "source_key": "bellini-catania-opera-2026-27", "title": "¡QUÉ VIVA ESPAÑA",
+        "days": ["2026-10-29"], "venue": "Teatro Metropolitan.",
+        "genre": "symphonic_concert", "official_detail_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "reason": "Official event labeled Concerti and Concerto Sinfonico.",
+    },
+    {
+        "source_key": "bellini-catania-opera-2026-27", "title": "¡QUÉ VIVA ESPAÑA",
+        "days": ["2026-10-31"], "venue": "Teatro Metropolitan.",
+        "genre": "symphonic_concert", "official_detail_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "reason": "Second dated performance of the same officially categorized symphonic concert.",
+    },
+    {
+        "source_key": "bellini-catania-opera-2026-27", "title": "Il Natale del Redentore",
+        "days": ["2026-11-03"], "venue": "Cattedrale Maria SS Annunziata Acireale",
+        "genre": "concert", "official_detail_url": "https://www.teatromassimobellini.it/eventi/il-natale-del-redentore/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/il-natale-del-redentore/",
+        "reason": "Official event category Concerti, in the Cathedral of Acireale.",
+    },
+    {
+        "source_key": "bellini-catania-opera-2026-27", "title": "Aimez – vous Brahms?",
+        "days": ["2026-11-07"], "venue": "Teatro Metropolitan.",
+        "genre": "concert", "official_detail_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "reason": "First-party event category Concerti.",
+    },
+    {
+        "source_key": "bellini-catania-opera-2026-27", "title": "Aimez – vous Brahms?",
+        "days": ["2026-11-08"], "venue": "Teatro Metropolitan.",
+        "genre": "concert", "official_detail_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "reason": "Second performance of an official concert event.",
+    },
+    {
+        "source_key": "bellini-catania-opera-2026-27", "title": "RECITAL House of Puccini",
+        "days": ["2026-11-28"], "venue": "Teatro Metropolitan.",
+        "genre": "recital", "official_detail_url": "https://www.teatromassimobellini.it/eventi/recital-house-of-puccini/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/recital-house-of-puccini/",
+        "reason": "Official event category Recital, not a staged Puccini opera.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Studenti all’opera! – Il flauto magico",
+        "days": ["2026-12-04"], "venue": "Teatro Auditorium Manzoni",
+        "genre": "educational_semi_staged_opera", "official_detail_url": "https://www.tcbo.it/en/evento/accademia/studenti-allopera-il-flauto-magico-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/studenti-allopera-il-flauto-magico-2026/",
+        "reason": "Official TCBO detail: 90-minute semi-staged Mozart opera with academy singers; editorial review needed, not a concert-only exclusion.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Angius, Grazia",
+        "days": ["2026-12-11"], "venue": "Teatro Auditorium Manzoni",
+        "genre": "symphonic_concert", "official_detail_url": "https://www.tcbo.it/evento/concerto/angius-grazia-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/concerto/angius-grazia-2026/",
+        "reason": "TCBO classifies it under Concerti / Stagione Sinfonica.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Sauer",
+        "days": ["2026-12-13"], "venue": "Teatro Auditorium Manzoni",
+        "genre": "symphonic_concert", "official_detail_url": "https://www.tcbo.it/en/evento/concerto/sauer-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/concerto/sauer-2026/",
+        "reason": "TCBO official event under concerto.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Concerto di Natale",
+        "days": ["2026-12-20"], "venue": "Teatro Auditorium Manzoni",
+        "genre": "concert", "official_detail_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-concerto-di-natale-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-concerto-di-natale-2026/",
+        "reason": "Official Domenica in Musica Christmas concert, not a staged opera.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Stenz",
+        "days": ["2026-12-31"], "venue": "Teatro Auditorium Manzoni",
+        "genre": "symphonic_concert", "official_detail_url": "https://www.tcbo.it/evento/concerto/stenz-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/concerto/stenz-2026/",
+        "reason": "Official TCBO symphonic concert: Panfili and Beethoven Symphony No. 9.",
+    },
+    {
+        "source_key": "piacenza-opera-2026-27", "title": "Prima di andare in Scena | Siberia",
+        "days": ["2026-12-13"], "venue": "Ridotto del Teatro Municipale",
+        "genre": "pre_opera_public_talk", "official_detail_url": "https://teatripiacenza.it/event/prima-di-andare-in-scena-26-27/",
+        "official_genre_url": "https://teatripiacenza.it/event/prima-di-andare-in-scena-26-27/",
+        "reason": "Official event is an introductory pre-opera talk and listening guide, not a performance of Siberia.",
+    },
+    {
+        "source_key": "piacenza-opera-2026-27", "title": "Siberia | #AperiOpera",
+        "days": ["2026-12-15"], "venue": "Foyer del Teatro Municipale",
+        "genre": "pre_opera_public_talk", "official_detail_url": "https://teatripiacenza.it/event/aperiopera-26-27/",
+        "official_genre_url": "https://teatripiacenza.it/event/aperiopera-26-27/",
+        "reason": "Official AperiOpera event with students discussing Siberia; 18 and 20 Dec are separate general-public operatic performances.",
+    },
+    {
+        "source_key": "pisa-verdi-opera-2026-27", "title": "L’occasione fa il ladro (Generale riservata alle Scuole)",
+        "days": ["2026-12-02"], "venue": None,
+        "genre": "school_only_rehearsal", "official_detail_url": "https://teatrodipisa.it/calendario/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/",
+        "reason": "Official Pisa programme explicitly marks 2 December as a school-only dress rehearsal, distinct from public 4 and 6 December shows.",
+    },
+    {
+        "source_key": "pisa-future-calendar", "title": "C’era una volta un re",
+        "days": ["2026-10-31"], "venue": None,
+        "genre": "musical_reading", "official_detail_url": "https://teatrodipisa.it/spettacolo/cera-una-volta-un-re-omaggio-a-carlo-collodi-per-i-200-anni-dalla-nascita/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/cera-una-volta-un-re-omaggio-a-carlo-collodi-per-i-200-anni-dalla-nascita/",
+        "reason": "Official Pisa programme categorizes this Sergio Rubini event as a musical reading for Collodi bicentenary.",
+    },
+    {
+        "source_key": "pisa-future-calendar", "title": "Pimpa. Il musical a pois",
+        "days": ["2026-11-07"], "venue": None,
+        "genre": "children_musical", "official_detail_url": "https://teatrodipisa.it/spettacolo/pimpa-il-musical-a-pois/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/pimpa-il-musical-a-pois/",
+        "reason": "First-party Pisa detail identifies a musical for families, not operatic performance.",
+    },
+    {
+        "source_key": "pisa-future-calendar", "title": "Prima del temporale",
+        "days": ["2026-11-14"], "venue": None,
+        "genre": "prose_theatre", "official_detail_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "reason": "Official Pisa event is categorized Prosa.",
+    },
+    {
+        "source_key": "pisa-future-calendar", "title": "Prima del temporale",
+        "days": ["2026-11-15"], "venue": None,
+        "genre": "prose_theatre", "official_detail_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "reason": "Second of two Prosa performances, not opera.",
+    },
+    {
+        "source_key": "pisa-future-calendar", "title": "Dido and Aeneas | Guida all’ascolto con Enrico Girardi",
+        "days": ["2026-10-22"], "venue": None,
+        "genre": "opera_introduction_talk", "official_detail_url": "https://teatrodipisa.it/en/calendario/dido-and-aeneas-guida-allascolto-con-enrico-girardi/",
+        "official_genre_url": "https://teatrodipisa.it/en/calendario/dido-and-aeneas-guida-allascolto-con-enrico-girardi/",
+        "reason": "Official Pisa listening guide precedes public opera dates 23/25 October and is not a recita.",
+    },
 )
 
 
@@ -352,7 +611,14 @@ def check(triage, catalog):
                 evidence=opera_evidence
             genre_evidence=official_genre_evidence(g)
             if genre_evidence is not None:
-                status="official_nonopera_first_party_detail"
+                genre=genre_evidence["genre"]
+                if genre=="cancelled_concert":
+                    status="official_cancelled_event_first_party"
+                elif genre in ("opera_semiscenic_reconstruction",
+                               "educational_semi_staged_opera"):
+                    status="official_opera_special_format_editorial_review"
+                else:
+                    status="official_nonopera_first_party_detail"
                 evidence=genre_evidence
             for (url, work), decision in OFFICIAL_NONOPERA.items():
                 if (g["event_title"]==work and url in g.get("source_urls",[])
