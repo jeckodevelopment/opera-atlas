@@ -1,0 +1,846 @@
+{
+  "schema_version": 1,
+  "composers": [
+    {
+      "id": "oa-c-000001",
+      "name": "Alberto Franchetti",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000002",
+      "name": "Alessandro Solbiati",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000003",
+      "name": "Alfredo Casella",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000004",
+      "name": "Antonio Cericola",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000005",
+      "name": "Antonio Smareglia",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000006",
+      "name": "Antonio Vivaldi",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000007",
+      "name": "Arthur Honegger",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000008",
+      "name": "Arturo Dal Bianco",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000009",
+      "name": "Baldassarre Galuppi",
+      "aliases": [
+        "Baldassare Galuppi"
+      ],
+      "url": null
+    },
+    {
+      "id": "oa-c-000010",
+      "name": "Benjamin Britten",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000011",
+      "name": "Camille Saint-Saëns",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000012",
+      "name": "Carlo Galante",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000013",
+      "name": "Christoph Willibald Gluck",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000014",
+      "name": "Claude Debussy",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000015",
+      "name": "Claudio Monteverdi",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000016",
+      "name": "Daniele Furlati",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000017",
+      "name": "Darius Milhaud",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000018",
+      "name": "Davide Tramontano",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000019",
+      "name": "Diana Buscemi",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000020",
+      "name": "Dmitrij Šostakovič",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000021",
+      "name": "Engelbert Humperdinck",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000022",
+      "name": "Fabio Vacchi",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000023",
+      "name": "Ferdinando Paër",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000024",
+      "name": "Ferruccio Busoni",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000025",
+      "name": "Francesco Cilea",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000026",
+      "name": "Francesco Filidei",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000027",
+      "name": "Francesco Provenzale",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000028",
+      "name": "Francis Poulenc",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000029",
+      "name": "Franco Casavola",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000030",
+      "name": "Franz Lehár",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000031",
+      "name": "Gaetano Donizetti",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000032",
+      "name": "Gaia Aloisi",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000033",
+      "name": "Georg Friedrich Händel",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000034",
+      "name": "Georges Bizet",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000035",
+      "name": "Giacomo Puccini",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000036",
+      "name": "Gioachino Rossini",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000037",
+      "name": "Giovanni Paisiello",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000038",
+      "name": "Giovanni Sollima",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000039",
+      "name": "Giuseppe Balducci",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000040",
+      "name": "Giuseppe Guerrera",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000041",
+      "name": "Giuseppe Verdi",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000042",
+      "name": "Hector Berlioz",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000043",
+      "name": "Henry Purcell",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000044",
+      "name": "Igor' Stravinskij",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000045",
+      "name": "Jacques Offenbach",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000046",
+      "name": "Joe Schittino",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000047",
+      "name": "Johann Strauss",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000048",
+      "name": "John Adams",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000049",
+      "name": "Jules Massenet",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000050",
+      "name": "Leonard Bernstein",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000051",
+      "name": "Leoš Janáček",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000052",
+      "name": "Ludwig van Beethoven",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000053",
+      "name": "Massimiliano Piscitello",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000054",
+      "name": "Matteo Musumeci",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000055",
+      "name": "Modest Petrovič Musorgskij",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000056",
+      "name": "Niccolò Piccinni",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000057",
+      "name": "Nicola Sani",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000058",
+      "name": "Orazio Sciortino",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000059",
+      "name": "Pietro Mascagni",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000060",
+      "name": "Pëtr Il'ič Čajkovskij",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000061",
+      "name": "Ralph Benatzky",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000062",
+      "name": "Richard Strauss",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000063",
+      "name": "Richard Wagner",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000064",
+      "name": "Ruggero Leoncavallo",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000065",
+      "name": "Salvatore Passantino",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000066",
+      "name": "Salvatore Sciarrino",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000067",
+      "name": "Samuel Barber",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000068",
+      "name": "Umberto Giordano",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000069",
+      "name": "Vincenzo Bellini",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000070",
+      "name": "Wolfgang Amadeus Mozart",
+      "aliases": [],
+      "url": null
+    },
+    {
+      "id": "oa-c-000071",
+      "name": "Zygmunt Krauze",
+      "aliases": [],
+      "url": null
+    }
+  ],
+  "work_composers": {
+    "oa-w-000001": [
+      "oa-c-000041"
+    ],
+    "oa-w-000002": [
+      "oa-c-000036"
+    ],
+    "oa-w-000003": [
+      "oa-c-000035"
+    ],
+    "oa-w-000004": [
+      "oa-c-000062"
+    ],
+    "oa-w-000005": [
+      "oa-c-000059"
+    ],
+    "oa-w-000006": [
+      "oa-c-000064"
+    ],
+    "oa-w-000007": [
+      "oa-c-000064"
+    ],
+    "oa-w-000008": [
+      "oa-c-000059"
+    ],
+    "oa-w-000009": [
+      "oa-c-000034"
+    ],
+    "oa-w-000010": [
+      "oa-c-000060"
+    ],
+    "oa-w-000011": [
+      "oa-c-000035"
+    ],
+    "oa-w-000012": [
+      "oa-c-000041"
+    ],
+    "oa-w-000013": [
+      "oa-c-000010"
+    ],
+    "oa-w-000014": [
+      "oa-c-000041"
+    ],
+    "oa-w-000015": [
+      "oa-c-000041"
+    ],
+    "oa-w-000016": [
+      "oa-c-000068"
+    ],
+    "oa-w-000017": [
+      "oa-c-000011"
+    ],
+    "oa-w-000018": [
+      "oa-c-000041"
+    ],
+    "oa-w-000019": [
+      "oa-c-000035"
+    ],
+    "oa-w-000020": [
+      "oa-c-000051"
+    ],
+    "oa-w-000021": [
+      "oa-c-000031"
+    ],
+    "oa-w-000022": [
+      "oa-c-000035"
+    ],
+    "oa-w-000023": [
+      "oa-c-000070"
+    ],
+    "oa-w-000024": [
+      "oa-c-000035"
+    ],
+    "oa-w-000025": [
+      "oa-c-000041"
+    ],
+    "oa-w-000026": [
+      "oa-c-000041"
+    ],
+    "oa-w-000027": [
+      "oa-c-000061"
+    ],
+    "oa-w-000028": [
+      "oa-c-000047"
+    ],
+    "oa-w-000029": [
+      "oa-c-000033"
+    ],
+    "oa-w-000030": [
+      "oa-c-000049"
+    ],
+    "oa-w-000031": [
+      "oa-c-000069"
+    ],
+    "oa-w-000032": [
+      "oa-c-000005"
+    ],
+    "oa-w-000033": [
+      "oa-c-000025"
+    ],
+    "oa-w-000034": [
+      "oa-c-000048"
+    ],
+    "oa-w-000035": [
+      "oa-c-000031"
+    ],
+    "oa-w-000036": [
+      "oa-c-000069"
+    ],
+    "oa-w-000037": [
+      "oa-c-000045"
+    ],
+    "oa-w-000038": [
+      "oa-c-000036"
+    ],
+    "oa-w-000039": [
+      "oa-c-000063"
+    ],
+    "oa-w-000040": [
+      "oa-c-000069"
+    ],
+    "oa-w-000041": [
+      "oa-c-000067"
+    ],
+    "oa-w-000042": [
+      "oa-c-000041"
+    ],
+    "oa-w-000043": [
+      "oa-c-000015"
+    ],
+    "oa-w-000044": [
+      "oa-c-000026"
+    ],
+    "oa-w-000045": [
+      "oa-c-000070"
+    ],
+    "oa-w-000046": [
+      "oa-c-000056"
+    ],
+    "oa-w-000047": [
+      "oa-c-000024"
+    ],
+    "oa-w-000048": [
+      "oa-c-000052"
+    ],
+    "oa-w-000049": [
+      "oa-c-000023"
+    ],
+    "oa-w-000050": [
+      "oa-c-000034"
+    ],
+    "oa-w-000051": [
+      "oa-c-000031"
+    ],
+    "oa-w-000052": [
+      "oa-c-000043"
+    ],
+    "oa-w-000053": [
+      "oa-c-000044"
+    ],
+    "oa-w-000054": [
+      "oa-c-000041"
+    ],
+    "oa-w-000055": [
+      "oa-c-000069"
+    ],
+    "oa-w-000056": [
+      "oa-c-000070"
+    ],
+    "oa-w-000057": [
+      "oa-c-000021"
+    ],
+    "oa-w-000058": [
+      "oa-c-000041"
+    ],
+    "oa-w-000059": [
+      "oa-c-000009"
+    ],
+    "oa-w-000060": [
+      "oa-c-000068"
+    ],
+    "oa-w-000061": [
+      "oa-c-000013"
+    ],
+    "oa-w-000062": [
+      "oa-c-000041"
+    ],
+    "oa-w-000063": [
+      "oa-c-000055"
+    ],
+    "oa-w-000064": [
+      "oa-c-000035"
+    ],
+    "oa-w-000065": [
+      "oa-c-000010"
+    ],
+    "oa-w-000066": [
+      "oa-c-000070"
+    ],
+    "oa-w-000067": [
+      "oa-c-000020"
+    ],
+    "oa-w-000068": [
+      "oa-c-000036"
+    ],
+    "oa-w-000069": [
+      "oa-c-000063"
+    ],
+    "oa-w-000070": [
+      "oa-c-000031"
+    ],
+    "oa-w-000071": [
+      "oa-c-000041"
+    ],
+    "oa-w-000072": [
+      "oa-c-000033"
+    ],
+    "oa-w-000073": [
+      "oa-c-000031"
+    ],
+    "oa-w-000074": [
+      "oa-c-000057"
+    ],
+    "oa-w-000075": [
+      "oa-c-000041"
+    ],
+    "oa-w-000076": [
+      "oa-c-000068"
+    ],
+    "oa-w-000077": [
+      "oa-c-000029"
+    ],
+    "oa-w-000078": [
+      "oa-c-000056"
+    ],
+    "oa-w-000079": [
+      "oa-c-000071"
+    ],
+    "oa-w-000080": [
+      "oa-c-000054"
+    ],
+    "oa-w-000081": [
+      "oa-c-000032"
+    ],
+    "oa-w-000082": [
+      "oa-c-000046"
+    ],
+    "oa-w-000083": [
+      "oa-c-000031"
+    ],
+    "oa-w-000084": [
+      "oa-c-000031"
+    ],
+    "oa-w-000085": [
+      "oa-c-000001"
+    ],
+    "oa-w-000086": [
+      "oa-c-000036"
+    ],
+    "oa-w-000087": [
+      "oa-c-000041"
+    ],
+    "oa-w-000088": [
+      "oa-c-000070"
+    ],
+    "oa-w-000089": [
+      "oa-c-000036"
+    ],
+    "oa-w-000090": [
+      "oa-c-000031"
+    ],
+    "oa-w-000091": [
+      "oa-c-000035"
+    ],
+    "oa-w-000092": [
+      "oa-c-000035"
+    ],
+    "oa-w-000093": [
+      "oa-c-000035"
+    ],
+    "oa-w-000094": [
+      "oa-c-000030"
+    ],
+    "oa-w-000095": [
+      "oa-c-000065"
+    ],
+    "oa-w-000096": [
+      "oa-c-000063"
+    ],
+    "oa-w-000097": [
+      "oa-c-000016"
+    ],
+    "oa-w-000098": [
+      "oa-c-000050"
+    ],
+    "oa-w-000099": [
+      "oa-c-000007"
+    ],
+    "oa-w-000100": [
+      "oa-c-000022"
+    ],
+    "oa-w-000101": [
+      "oa-c-000004"
+    ],
+    "oa-w-000102": [
+      "oa-c-000039"
+    ],
+    "oa-w-000103": [
+      "oa-c-000008",
+      "oa-c-000040",
+      "oa-c-000053"
+    ],
+    "oa-w-000104": [
+      "oa-c-000018"
+    ],
+    "oa-w-000105": [
+      "oa-c-000038"
+    ],
+    "oa-w-000106": [
+      "oa-c-000041"
+    ],
+    "oa-w-000107": [
+      "oa-c-000010"
+    ],
+    "oa-w-000108": [
+      "oa-c-000037"
+    ],
+    "oa-w-000109": [
+      "oa-c-000031"
+    ],
+    "oa-w-000110": [
+      "oa-c-000014",
+      "oa-c-000002"
+    ],
+    "oa-w-000111": [
+      "oa-c-000042"
+    ],
+    "oa-w-000112": [
+      "oa-c-000036"
+    ],
+    "oa-w-000113": [
+      "oa-c-000036"
+    ],
+    "oa-w-000114": [
+      "oa-c-000036"
+    ],
+    "oa-w-000115": [
+      "oa-c-000017"
+    ],
+    "oa-w-000116": [
+      "oa-c-000019"
+    ],
+    "oa-w-000117": [
+      "oa-c-000012"
+    ],
+    "oa-w-000118": [
+      "oa-c-000027"
+    ],
+    "oa-w-000119": [
+      "oa-c-000058"
+    ],
+    "oa-w-000120": [
+      "oa-c-000003"
+    ],
+    "oa-w-000121": [
+      "oa-c-000041"
+    ],
+    "oa-w-000122": [
+      "oa-c-000041"
+    ],
+    "oa-w-000123": [
+      "oa-c-000009"
+    ],
+    "oa-w-000124": [
+      "oa-c-000015"
+    ],
+    "oa-w-000125": [
+      "oa-c-000063"
+    ],
+    "oa-w-000126": [
+      "oa-c-000063"
+    ],
+    "oa-w-000127": [
+      "oa-c-000063"
+    ],
+    "oa-w-000128": [
+      "oa-c-000014"
+    ],
+    "oa-w-000129": [
+      "oa-c-000063"
+    ],
+    "oa-w-000130": [
+      "oa-c-000031"
+    ],
+    "oa-w-000131": [
+      "oa-c-000006"
+    ],
+    "oa-w-000132": [
+      "oa-c-000028"
+    ],
+    "oa-w-000133": [
+      "oa-c-000066"
+    ],
+    "oa-w-000134": [
+      "oa-c-000036"
+    ],
+    "oa-w-000135": [
+      "oa-c-000010"
+    ],
+    "oa-w-000136": [
+      "oa-c-000006"
+    ]
+  }
+}
