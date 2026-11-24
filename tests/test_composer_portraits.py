@@ -4,7 +4,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 from urllib.error import HTTPError
-from scripts.refresh_composer_portraits import WD, COMMONS, portrait, find_person, refresh, WikimediaError, api, PUBLIC_DOMAIN_URL
+from scripts.refresh_composer_portraits import WD, COMMONS, portrait, find_person, refresh, WikimediaError, api, PUBLIC_DOMAIN_URL, WIKIPEDIA, ENTITY_DATA
 
 def claim(value):
     return {"mainsnak":{"datavalue":{"value":value}}}
@@ -17,6 +17,8 @@ def person(name="Composer", occupation="Q36834"):
 def mock_call(entities=None, changes=None):
     entities = entities or {"Q123":person()}
     def call(endpoint, **params):
+        if endpoint in WIKIPEDIA:
+            return {"query":{"pages":{}}}
         if endpoint == WD:
             if params["action"] == "wbsearchentities":
                 return {"search":[{"id":key} for key in entities]}
@@ -83,6 +85,88 @@ class PortraitTests(unittest.TestCase):
             self.assertEqual(api(WD, action="wbsearchentities"), {"search":[]})
             self.assertEqual(call.call_count, 2)
 
+    def test_exact_wikipedia_lookup_bypasses_search(self):
+        def call(endpoint, **params):
+            if endpoint in WIKIPEDIA:
+                self.assertEqual(params["titles"], "Composer")
+                return {"query":{"pages":{"1":{"pageprops":{"wikibase_item":"Q123"}}}}}
+            self.assertNotEqual(params.get("action"), "wbsearchentities")
+            return mock_call()(endpoint, **params)
+        record, reason = portrait(self.composer, call)
+        self.assertIsNone(reason)
+        self.assertEqual(record["wikidata_id"], "Q123")
+
+    def test_entity_data_fallback_for_known_identifier(self):
+        def call(endpoint, **params):
+            if endpoint == WD:
+                self.assertEqual(params["action"], "wbgetentities")
+                raise WikimediaError("maxlag")
+            if endpoint == ENTITY_DATA:
+                self.assertEqual(params["qid"], "Q123")
+                return {"entities":{"Q123":person()}}
+            return mock_call()(endpoint, **params)
+        record, reason = portrait(dict(self.composer, wikidata_id="Q123"), call)
+        self.assertIsNone(reason)
+        self.assertEqual(record["wikidata_id"], "Q123")
+
+    def test_wikipedia_disambiguation_is_not_identity(self):
+        def call(endpoint, **params):
+            if endpoint in WIKIPEDIA:
+                return {"query":{"pages":{"1":{"pageprops":{"wikibase_item":"Q123","disambiguation":""}}}}}
+            if params.get("action") == "wbsearchentities":
+                return {"search":[]}
+            self.fail("Disambiguation item must not be read as a composer")
+        self.assertEqual(find_person(self.composer, call), (None, "not_found"))
+
+    def test_multiple_portraits_try_verified_alternative(self):
+        entity = person()
+        entity["claims"]["P18"].append(claim("Alternative.jpg"))
+        def call(endpoint, **params):
+            if endpoint == COMMONS and params["titles"] == "File:Portrait.jpg":
+                return mock_call(changes={"LicenseShortName":"Unknown"})(endpoint, **params)
+            return mock_call({"Q123":entity})(endpoint, **params)
+        record, reason = portrait(self.composer, call)
+        self.assertIsNone(reason)
+        self.assertEqual(record["commons_file"], "Alternative.jpg")
+
+    def test_cached_identity_survives_rights_review(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            data = root / "data"
+            data.mkdir()
+            (data / "composer-registry.json").write_text(json.dumps({"composers":[self.composer]}))
+            (data / "composer-portraits.json").write_text(json.dumps({"schema_version":1,"portraits":{}}))
+            refresh(root, mock_call(changes={"LicenseShortName":"Unknown"}))
+            report = json.loads((data / "composer-portrait-review.json").read_text())
+            self.assertEqual(report["identities"]["c1"]["wikidata_id"], "Q123")
+            self.assertEqual(report["status"], "completed")
+            def call(endpoint, **params):
+                self.assertNotIn(endpoint, WIKIPEDIA)
+                self.assertNotEqual(params.get("action"), "wbsearchentities")
+                return mock_call()(endpoint, **params)
+            refresh(root, call)
+            self.assertEqual(json.loads((data / "composer-portrait-review.json").read_text())["verified"], 1)
+
+    def test_blocked_run_and_next_batch(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            data = root / "data"
+            data.mkdir()
+            composers = [dict(id=f"c{i}", name=f"Composer {i}") for i in range(5)]
+            (data / "composer-registry.json").write_text(json.dumps({"composers":composers}))
+            (data / "composer-portraits.json").write_text(json.dumps({"schema_version":1,"portraits":{}}))
+            def unavailable(endpoint, **params):
+                raise WikimediaError("maxlag")
+            refresh(root, unavailable)
+            report = json.loads((data / "composer-portrait-review.json").read_text())
+            self.assertEqual(report["status"], "blocked")
+            self.assertEqual(report["api_errors"], 3)
+            self.assertEqual(report["unresolved"]["c3"]["reason"], "not_attempted")
+            refresh(root, unavailable)
+            report = json.loads((data / "composer-portrait-review.json").read_text())
+            self.assertEqual(report["unresolved"]["c3"]["reason"], "api_error")
+            self.assertEqual(report["unresolved"]["c4"]["reason"], "api_error")
+
     def test_partial_progress_survives_api_error(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)
@@ -103,6 +187,7 @@ class PortraitTests(unittest.TestCase):
             refresh(root, call)
             report = json.loads((data / "composer-portrait-review.json").read_text())
             self.assertEqual(report["verified"], 1)
+            self.assertEqual(report["status"], "partial")
             self.assertEqual(report["total"], 3)
             self.assertEqual(report["unresolved"]["c2"]["reason"], "api_error")
             self.assertEqual(report["unresolved"]["c3"]["reason"], "not_found")
