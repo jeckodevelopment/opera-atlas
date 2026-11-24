@@ -51,7 +51,14 @@ class OperaLombardiaFullCalendarTests(unittest.TestCase):
                       {s["url"] for s in graph["stagings"]})
     def test_original_stable_ids_and_unknown_hours_are_preserved(self):
         events={e["id"]:e for e in build(self.facts)["performances"]}
-        self.assertEqual(events["curated:lombardia-turandot-como:2026-09-24"]["starts_at"],None)
+        # The original day-only ID is retained; the theatre has since supplied
+        # a verified clock, independently of the circuit calendar.
+        for day,clock in (("2026-09-24","20:00"),("2026-09-26","20:00")):
+            event=events["curated:lombardia-turandot-como:"+day]
+            self.assertEqual(event["starts_at"],day+"T"+clock+":00+02:00")
+            self.assertTrue(event["time_known"])
+            self.assertIn("https://teatrosocialecomo.it/spettacoli/turandot-2/",event["sources"])
+            self.assertIn(SOURCE,event["sources"])
         self.assertEqual(events["curated:lombardia-death-venice-ravenna:2027-02-14"]["time_label"],
                          "Orario da confermare")
         self.assertEqual(self.registry["performances"]["regio-traviata-2027|2027-02-26"]["id"],
