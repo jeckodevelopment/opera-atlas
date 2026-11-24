@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "provenance": "First-party official performances verified 2026-11-24. Read-only discovery, no certification or automatic publication. Macerata clocks unverified and therefore null. School/under-30 and nonopera concerts excluded.",
+  "records": [
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "title": "Don Quichotte",
+      "composer": "Jules Massenet",
+      "official_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
+      "dates": [
+        [
+          "2026-01-16",
+          "20:00"
+        ],
+        [
+          "2026-01-18",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://teatrosocialecomo.it/spettacoli/turandot-2/",
+      "dates": [
+        [
+          "2026-09-24",
+          "20:00"
+        ],
+        [
+          "2026-09-26",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "dates": [
+        [
+          "2026-06-25",
+          "21:15"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "dates": [
+        [
+          "2026-06-26",
+          "21:15"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "dates": [
+        [
+          "2026-06-27",
+          "21:15"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "dates": [
+        [
+          "2026-07-17",
+          null
+        ],
+        [
+          "2026-07-26",
+          null
+        ],
+        [
+          "2026-08-01",
+          null
+        ],
+        [
+          "2026-08-09",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "dates": [
+        [
+          "2026-07-18",
+          null
+        ],
+        [
+          "2026-07-24",
+          null
+        ],
+        [
+          "2026-08-02",
+          null
+        ],
+        [
+          "2026-08-08",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
+      "dates": [
+        [
+          "2026-07-19",
+          null
+        ],
+        [
+          "2026-07-25",
+          null
+        ],
+        [
+          "2026-07-31",
+          null
+        ]
+      ]
+    }
+  ]
+}
