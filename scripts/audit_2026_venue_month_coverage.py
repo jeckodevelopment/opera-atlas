@@ -145,7 +145,16 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
     review_formats = {"il piccolo principe",
                       "piccolo orso e la montagna di ghiaccio"}
     for fact in h1.get("observations", []):
-        vid = fact.get("venue_id_candidate")
+        candidate_vid = fact.get("venue_id_candidate")
+        # The source-index belongs to the Fenice institution, but individual
+        # performance pages may explicitly identify Teatro Malibran, a
+        # separate canonical physical venue. The original matrix wrongly
+        # counted those as Fenice performances.
+        explicit = [v for v in venue_rows
+                    if canonical(v.get("name")) == canonical(fact.get("venue"))
+                    and candidate_vid in by_id
+                    and canonical(v.get("city")) == canonical(by_id[candidate_vid]["city"])]
+        vid = explicit[0]["id"] if len(explicit)==1 else candidate_vid
         slot = source_slot({"date": fact.get("date"),
                             "time": (fact.get("starts_at") or "")[11:16]})
         if vid not in by_id or not slot or slot[0] >= "2026-07-01":
