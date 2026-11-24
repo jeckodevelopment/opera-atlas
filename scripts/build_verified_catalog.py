@@ -113,9 +113,33 @@ def approved_historical_h1() -> dict[str, dict]:
                  and record.get("city") == "Torino"
                  and record.get("venue") == "Teatro Regio"
                  and record.get("source_venue") == "Teatro Regio di Torino")
+        # Pisa 2025/26 first-party opera production / official season press:
+        # Exact titles, composers, general-public clocks and venue only.
+        pisa_2026 = {
+            "https://teatrodipisa.it/spettacolo/carmen/":
+                ("Carmen", "Georges Bizet", [("2026-01-23","20:30"),("2026-01-25","15:30")]),
+            "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/":
+                ("The Turn of the Screw", "Benjamin Britten",
+                 [("2026-02-27","20:30"),("2026-03-01","15:30")]),
+            "https://teatrodipisa.it/spettacolo/lelisir-damore/":
+                ("L’elisir d’amore", "Gaetano Donizetti",
+                 [("2026-03-27","20:30"),("2026-03-29","15:30")]),
+        }
+        pisa = (url in pisa_2026 and parsed.hostname == "teatrodipisa.it"
+                and record.get("city") == "Pisa"
+                and record.get("venue") == "Teatro Verdi"
+                and record.get("source_venue") == "Teatro Verdi di Pisa"
+                and record.get("audience") == "general_public")
+        if pisa:
+            pisa_title, pisa_composer, pisa_dates = pisa_2026[url]
+            if (record.get("canonical_title") != pisa_title
+                    or record.get("official_source_title") != pisa_title
+                    or record.get("composer") != pisa_composer
+                    or sorted(record.get("dates",[])) != sorted(map(list,pisa_dates))):
+                raise ValueError("unverified Pisa 2026 H1 production or showtimes")
         if (parsed.scheme != "https" or parsed.query or parsed.fragment
                 or parsed.port is not None or parsed.username or parsed.password
-                or not (scala or fenice or regio) or url in result):
+                or not (scala or fenice or regio or pisa) or url in result):
             raise ValueError("unapproved historical opera source")
         title, original, composer = (record.get(k) for k in
                                      ("canonical_title", "official_source_title", "composer"))
