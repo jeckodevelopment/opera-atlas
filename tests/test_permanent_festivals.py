@@ -35,3 +35,37 @@ class PermanentFestivalTests(unittest.TestCase):
         self.editions["festivals"].append(dict(self.editions["festivals"][0]))
         with self.assertRaises(ValueError):
             build_festival_directory(self.identities, self.editions, self.registry)
+
+    def test_future_official_sources_associate_with_permanent_festivals(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import patch
+        from scripts import publish_catalog_v2 as publisher
+        registry = json.loads(publisher.REGISTRY.read_text(encoding="utf-8"))
+        cases = [
+            ("puccini", "festival-puccini", "2028",
+             "https://www.puccinifestival.it/en/74th-puccini-festival-2028/"),
+            ("trapani", "luglio-musicale-trapanese", "2027",
+             "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2027/tosca/"),
+        ]
+        for key, festival, year, url in cases:
+            registry["stagings"]["test-" + key] = {
+                "id": "test-" + key, "season": year, "source_url": url}
+            registry["stagings"]["wrong-" + key] = {
+                "id": "wrong-" + key, "season": "2029", "source_url": url}
+        with tempfile.TemporaryDirectory() as folder:
+            public = Path(folder)
+            index = public / "festival-index.json"
+            index.write_bytes((publisher.PUBLIC / index.name).read_bytes())
+            with patch.object(publisher, "PUBLIC", public):
+                publisher.sync_festival_index(registry)
+                publisher.sync_festival_identities(registry)
+                publisher.sync_festival_index(registry, check=True)
+                publisher.sync_festival_identities(registry, check=True)
+            directory = json.loads((public / "festival-directory.json").read_text())
+            for key, festival, year, url in cases:
+                record = next(f for f in directory["festivals"] if f["id"] == festival)
+                edition = next(e for e in record["editions"] if e["edition"] == year)
+                self.assertIn("test-" + key, edition["staging_ids"])
+                self.assertNotIn("wrong-" + key, record["staging_ids"])

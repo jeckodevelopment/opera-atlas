@@ -240,7 +240,15 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
                 continue
             if not any(
                 (url.scheme == "https" and url.hostname in hosts
-                 and any(url.path.startswith(prefix) for prefix in prefixes)
+                 and (
+                     (festival_id == "festival-puccini"
+                      and (match := re.fullmatch(r"/en/(\d{2,3})(?:st|nd|rd|th)-puccini-festival-(20\d{2})/?", url.path))
+                      and match[2] == season and int(match[1]) == int(season) - 1954)
+                     or (festival_id == "luglio-musicale-trapanese"
+                         and re.match(r"/it/luglio-musicale-stagioni/stagione-" + season + r"/", url.path))
+                     or (festival_id not in {"festival-puccini", "luglio-musicale-trapanese"}
+                         and any(url.path.startswith(prefix) for prefix in prefixes))
+                 )
                  and (not rule.get("official_event_urls")
                       or raw in rule["official_event_urls"]))
                 for raw in source_urls if isinstance(raw, str)

@@ -18,3 +18,20 @@ La directory e la scheda devono usare l'identità permanente e un URL canonico s
 Aggiornare routing, sitemap, metadati SEO e API di integrazione; verificare il comportamento delle vecchie URL e la continuità dei collegamenti con teatri e opere. Non rigenerare inutilmente i feed canonici.
 
 Il frontend usa `festival-directory.json`. URL canonico: `/atlas/directory.html?section=festival&id=<festival-id>`. Gli ID delle edizioni sono risolti tramite `location.replace` (redirect client-side, non HTTP 301). La sitemap include tutte le identità permanenti, anche senza recite future.
+
+
+## Continuità delle edizioni
+
+| Festival | Strategia di acquisizione configurata |
+| --- | --- |
+| Donizetti Opera | Rollover verificato |
+| Arena Opera Festival | Indice permanente |
+| Rossini Opera Festival | Rollover verificato |
+| Macerata Opera Festival | Rollover verificato |
+| Festival Puccini | Rollover, parser per calendari futuri con repertorio riconosciuto e orario esplicito |
+| Festival della Valle d'Itria | Rollover verificato |
+| Luglio Musicale Trapanese | Rollover, associazione con anno della fonte coerente |
+| Festival Verdi | Rollover e appartenenza verificata |
+| Vicenza in Lirica | Homepage permanente, parser dinamico per il Teatro Olimpico |
+
+Il riconoscimento delle edizioni future di Puccini e Trapani non dipende più dall'anno iniziale del registro. Il calendario Puccini 2027 mantiene i controlli storici, comprese le quarantene; per gli anni successivi il parser accetta variazioni nei titoli riconosciuti, nelle date e nell'orario comune esplicitamente pubblicato. Formati sconosciuti o composizioni ambigue restano soggetti a revisione. Per Vicenza il parser ordinario richiede ancora il Teatro Olimpico: altre sedi non sono automaticamente garantite. La configurazione e i test sintetici non costituiscono prova che una futura pagina non ancora annunciata sarà acquisita correttamente.

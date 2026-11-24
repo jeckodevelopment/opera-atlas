@@ -100,5 +100,14 @@ class PucciniOfficialCalendarTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_program(PROGRAMME,url=future)
 
+    def test_future_changed_repertoire_and_clock(self):
+        url=URL.replace("73rd","74th").replace("2027","2028")
+        page=PROGRAMME.split('<h2>The operas</h2>')[0].replace("73rd","74th").replace("2027","2028").replace("9.15 pm","8.30 pm")
+        page += '<h2>The operas</h2><p>12 July</p><h3>Manon Lescaut</h3><a>Explore the opera and cast</a><h2>The concerts</h2>'
+        self.assertEqual(parse_program(page,url=url),[("Manon Lescaut","Giacomo Puccini","Gran Teatro Giacomo Puccini","2028-07-12","20:30")])
+        self.assertEqual(extract(KEY,url,page,1),[url])
+        with self.assertRaises(ValueError):
+            parse_program(page.replace("Manon Lescaut","Unknown work"),url=url)
+
 if __name__=="__main__":
     unittest.main()
