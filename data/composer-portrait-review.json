@@ -1,0 +1,293 @@
+{
+  "attempted": 3,
+  "schema_version": 1,
+  "total": 71,
+  "unresolved": {
+    "oa-c-000001": {
+      "name": "Alberto Franchetti",
+      "reason": "api_error"
+    },
+    "oa-c-000002": {
+      "name": "Alessandro Solbiati",
+      "reason": "api_error"
+    },
+    "oa-c-000003": {
+      "name": "Alfredo Casella",
+      "reason": "api_error"
+    },
+    "oa-c-000004": {
+      "name": "Antonio Cericola",
+      "reason": "not_attempted"
+    },
+    "oa-c-000005": {
+      "name": "Antonio Smareglia",
+      "reason": "not_attempted"
+    },
+    "oa-c-000006": {
+      "name": "Antonio Vivaldi",
+      "reason": "not_attempted"
+    },
+    "oa-c-000007": {
+      "name": "Arthur Honegger",
+      "reason": "not_attempted"
+    },
+    "oa-c-000008": {
+      "name": "Arturo Dal Bianco",
+      "reason": "not_attempted"
+    },
+    "oa-c-000009": {
+      "name": "Baldassarre Galuppi",
+      "reason": "not_attempted"
+    },
+    "oa-c-000010": {
+      "name": "Benjamin Britten",
+      "reason": "not_attempted"
+    },
+    "oa-c-000011": {
+      "name": "Camille Saint-Saëns",
+      "reason": "not_attempted"
+    },
+    "oa-c-000012": {
+      "name": "Carlo Galante",
+      "reason": "not_attempted"
+    },
+    "oa-c-000013": {
+      "name": "Christoph Willibald Gluck",
+      "reason": "not_attempted"
+    },
+    "oa-c-000014": {
+      "name": "Claude Debussy",
+      "reason": "not_attempted"
+    },
+    "oa-c-000015": {
+      "name": "Claudio Monteverdi",
+      "reason": "not_attempted"
+    },
+    "oa-c-000016": {
+      "name": "Daniele Furlati",
+      "reason": "not_attempted"
+    },
+    "oa-c-000017": {
+      "name": "Darius Milhaud",
+      "reason": "not_attempted"
+    },
+    "oa-c-000018": {
+      "name": "Davide Tramontano",
+      "reason": "not_attempted"
+    },
+    "oa-c-000019": {
+      "name": "Diana Buscemi",
+      "reason": "not_attempted"
+    },
+    "oa-c-000020": {
+      "name": "Dmitrij Šostakovič",
+      "reason": "not_attempted"
+    },
+    "oa-c-000021": {
+      "name": "Engelbert Humperdinck",
+      "reason": "not_attempted"
+    },
+    "oa-c-000022": {
+      "name": "Fabio Vacchi",
+      "reason": "not_attempted"
+    },
+    "oa-c-000023": {
+      "name": "Ferdinando Paër",
+      "reason": "not_attempted"
+    },
+    "oa-c-000024": {
+      "name": "Ferruccio Busoni",
+      "reason": "not_attempted"
+    },
+    "oa-c-000025": {
+      "name": "Francesco Cilea",
+      "reason": "not_attempted"
+    },
+    "oa-c-000026": {
+      "name": "Francesco Filidei",
+      "reason": "not_attempted"
+    },
+    "oa-c-000027": {
+      "name": "Francesco Provenzale",
+      "reason": "not_attempted"
+    },
+    "oa-c-000028": {
+      "name": "Francis Poulenc",
+      "reason": "not_attempted"
+    },
+    "oa-c-000029": {
+      "name": "Franco Casavola",
+      "reason": "not_attempted"
+    },
+    "oa-c-000030": {
+      "name": "Franz Lehár",
+      "reason": "not_attempted"
+    },
+    "oa-c-000031": {
+      "name": "Gaetano Donizetti",
+      "reason": "not_attempted"
+    },
+    "oa-c-000032": {
+      "name": "Gaia Aloisi",
+      "reason": "not_attempted"
+    },
+    "oa-c-000033": {
+      "name": "Georg Friedrich Händel",
+      "reason": "not_attempted"
+    },
+    "oa-c-000034": {
+      "name": "Georges Bizet",
+      "reason": "not_attempted"
+    },
+    "oa-c-000035": {
+      "name": "Giacomo Puccini",
+      "reason": "not_attempted"
+    },
+    "oa-c-000036": {
+      "name": "Gioachino Rossini",
+      "reason": "not_attempted"
+    },
+    "oa-c-000037": {
+      "name": "Giovanni Paisiello",
+      "reason": "not_attempted"
+    },
+    "oa-c-000038": {
+      "name": "Giovanni Sollima",
+      "reason": "not_attempted"
+    },
+    "oa-c-000039": {
+      "name": "Giuseppe Balducci",
+      "reason": "not_attempted"
+    },
+    "oa-c-000040": {
+      "name": "Giuseppe Guerrera",
+      "reason": "not_attempted"
+    },
+    "oa-c-000041": {
+      "name": "Giuseppe Verdi",
+      "reason": "not_attempted"
+    },
+    "oa-c-000042": {
+      "name": "Hector Berlioz",
+      "reason": "not_attempted"
+    },
+    "oa-c-000043": {
+      "name": "Henry Purcell",
+      "reason": "not_attempted"
+    },
+    "oa-c-000044": {
+      "name": "Igor' Stravinskij",
+      "reason": "not_attempted"
+    },
+    "oa-c-000045": {
+      "name": "Jacques Offenbach",
+      "reason": "not_attempted"
+    },
+    "oa-c-000046": {
+      "name": "Joe Schittino",
+      "reason": "not_attempted"
+    },
+    "oa-c-000047": {
+      "name": "Johann Strauss",
+      "reason": "not_attempted"
+    },
+    "oa-c-000048": {
+      "name": "John Adams",
+      "reason": "not_attempted"
+    },
+    "oa-c-000049": {
+      "name": "Jules Massenet",
+      "reason": "not_attempted"
+    },
+    "oa-c-000050": {
+      "name": "Leonard Bernstein",
+      "reason": "not_attempted"
+    },
+    "oa-c-000051": {
+      "name": "Leoš Janáček",
+      "reason": "not_attempted"
+    },
+    "oa-c-000052": {
+      "name": "Ludwig van Beethoven",
+      "reason": "not_attempted"
+    },
+    "oa-c-000053": {
+      "name": "Massimiliano Piscitello",
+      "reason": "not_attempted"
+    },
+    "oa-c-000054": {
+      "name": "Matteo Musumeci",
+      "reason": "not_attempted"
+    },
+    "oa-c-000055": {
+      "name": "Modest Petrovič Musorgskij",
+      "reason": "not_attempted"
+    },
+    "oa-c-000056": {
+      "name": "Niccolò Piccinni",
+      "reason": "not_attempted"
+    },
+    "oa-c-000057": {
+      "name": "Nicola Sani",
+      "reason": "not_attempted"
+    },
+    "oa-c-000058": {
+      "name": "Orazio Sciortino",
+      "reason": "not_attempted"
+    },
+    "oa-c-000059": {
+      "name": "Pietro Mascagni",
+      "reason": "not_attempted"
+    },
+    "oa-c-000060": {
+      "name": "Pëtr Il'ič Čajkovskij",
+      "reason": "not_attempted"
+    },
+    "oa-c-000061": {
+      "name": "Ralph Benatzky",
+      "reason": "not_attempted"
+    },
+    "oa-c-000062": {
+      "name": "Richard Strauss",
+      "reason": "not_attempted"
+    },
+    "oa-c-000063": {
+      "name": "Richard Wagner",
+      "reason": "not_attempted"
+    },
+    "oa-c-000064": {
+      "name": "Ruggero Leoncavallo",
+      "reason": "not_attempted"
+    },
+    "oa-c-000065": {
+      "name": "Salvatore Passantino",
+      "reason": "not_attempted"
+    },
+    "oa-c-000066": {
+      "name": "Salvatore Sciarrino",
+      "reason": "not_attempted"
+    },
+    "oa-c-000067": {
+      "name": "Samuel Barber",
+      "reason": "not_attempted"
+    },
+    "oa-c-000068": {
+      "name": "Umberto Giordano",
+      "reason": "not_attempted"
+    },
+    "oa-c-000069": {
+      "name": "Vincenzo Bellini",
+      "reason": "not_attempted"
+    },
+    "oa-c-000070": {
+      "name": "Wolfgang Amadeus Mozart",
+      "reason": "not_attempted"
+    },
+    "oa-c-000071": {
+      "name": "Zygmunt Krauze",
+      "reason": "not_attempted"
+    }
+  },
+  "updated_at": "2026-11-24T22:46:05.787355+00:00",
+  "verified": 0
+}
