@@ -238,6 +238,10 @@ EXCLUDED_PATHS={
 }
 
 def excluded_nonopera(key:str,url:str)->bool:
+    # Exact editorial exclusion: this 90-minute 2026 academy adaptation is
+    # not a full opera production. Never exclude the complete Mozart opera.
+    if url.rstrip("/") == "https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026":
+        return True
     # Valle d'Itria individual entries end in an ISO date, so classification
     # must compare the full approved production URL rather than its final slug.
     if key=="martina-valle-itria-2026" and url in {

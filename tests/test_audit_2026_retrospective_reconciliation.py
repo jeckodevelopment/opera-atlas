@@ -132,6 +132,27 @@ class RetroReconciliationTests(unittest.TestCase):
                     {"productions":[]},{"programs":[]},{"records":[]},
                     decisions={"decisions":[d,d]})
 
+    def test_short_edition_is_excluded_without_blocking_full_opera(self):
+        from scripts.discover_season_indexes import excluded_nonopera
+        short="https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026/"
+        full="https://www.tcbo.it/evento/opera/il-flauto-magico-2026/"
+        self.assertTrue(excluded_nonopera("bologna-comunale-opera-2026",short))
+        self.assertFalse(excluded_nonopera("bologna-comunale-opera-2026",full))
+        review={"records":[{"source_url":short,
+            "event_title":"Il flauto magico – Short Edition",
+            "date":"2026-12-05","time":"16:00",
+            "venue":"Teatro Auditorium Manzoni",
+            "composer":"Wolfgang Amadeus Mozart",
+            "classification":"excluded_editorial_abbreviated_opera",
+            "official_detail_url":short,
+            "evidence":"Editorially excluded abbreviated adaptation"}]}
+        f=fact(short,"Il flauto magico – Short Edition",
+               "2026-12-05","2026-12-05T16:00:00+01:00")
+        x=reconcile({"year":2026,"read_only":True,
+                     "unverified_2026_facts":[f]},
+                    {"productions":[]},{"programs":[]},{"records":[]},review)
+        self.assertEqual({"excluded_by_approved_policy":1},x["observation_counts"])
+
     def test_non_2026_and_invalid_dates_rejected(self):
         x=make([fact("https://official.example/1","Macbeth","2027-03-04", "2027-03-04T20:00:00+01:00"),
                 fact("https://official.example/2","Macbeth","2026-02-31", "2026-02-31T20:00:00+01:00")])

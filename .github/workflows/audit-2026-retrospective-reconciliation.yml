@@ -51,7 +51,7 @@ jobs:
           assert x['observation_counts'].get('unmatched_requires_official_review',0)==0
           assert sum(v for k,v in x['observation_counts'].items()
                      if k.startswith('official_opera_candidate_needs_publication_review'))>=1
-          assert x['observation_counts'].get('semistaged_abbreviated_opera_needs_scope_review',0)>=1
+          assert x['observation_counts'].get('excluded_by_approved_policy',0)>=3
           print('Reconciled statuses:',x['observation_counts'])
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
