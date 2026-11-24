@@ -488,7 +488,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-12-19"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "symphonic_concert",
         "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
         "official_genre_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
@@ -512,7 +512,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-12-31"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "symphonic_concert",
         "official_detail_url": "https://teatripiacenza.it/event/concerto-di-san-silvestro-2026/",
         "official_genre_url": "https://teatripiacenza.it/event/concerto-di-san-silvestro-2026/",
@@ -524,7 +524,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-09-30"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "literary_meeting",
         "official_detail_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
         "official_genre_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
@@ -536,7 +536,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-10-01"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "storytelling_show",
         "official_detail_url": "https://teatrodipisa.it/calendario/italia-mundial-goal-festival/",
         "official_genre_url": "https://teatrodipisa.it/calendario/italia-mundial-goal-festival/",
@@ -548,7 +548,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-10-13"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "acting_training",
         "official_detail_url": "https://teatrodipisa.it/ru/verdiformazione-ripartono-i-corsi-di-recitazione-e-scrittura-creativa/",
         "official_genre_url": "https://teatrodipisa.it/ru/verdiformazione-ripartono-i-corsi-di-recitazione-e-scrittura-creativa/",
@@ -560,7 +560,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-10-14"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "literary_meeting",
         "official_detail_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
         "official_genre_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
@@ -572,7 +572,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-10-18"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "chamber_concert",
         "official_detail_url": "https://teatrodipisa.it/concerti/",
         "official_genre_url": "https://teatrodipisa.it/concerti/",
@@ -584,7 +584,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-10-28"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "literary_meeting",
         "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
         "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
@@ -596,7 +596,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-10-29"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "symphonic_concert",
         "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
         "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
@@ -608,7 +608,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-11-04"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "jazz_concert",
         "official_detail_url": "https://teatrodipisa.it/calendario/pisa-jazz-miles-davis-100/",
         "official_genre_url": "https://teatrodipisa.it/calendario/pisa-jazz-miles-davis-100/",
@@ -620,7 +620,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-11-11"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "standup_comedy",
         "official_detail_url": "https://teatrodipisa.it/en/calendario/stand-up-comedy-show/",
         "official_genre_url": "https://teatrodipisa.it/en/calendario/stand-up-comedy-show/",
@@ -632,7 +632,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-11-17"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "jazz_piano_concert",
         "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
         "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
@@ -644,7 +644,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-11-19"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "public_awareness_event",
         "official_detail_url": "https://teatrodipisa.it/calendario/nuove-rotte-la-liberta-di-scegliere/",
         "official_genre_url": "https://teatrodipisa.it/calendario/nuove-rotte-la-liberta-di-scegliere/",
@@ -656,7 +656,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-11-21"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "prose_theatre",
         "official_detail_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
         "official_genre_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
@@ -668,7 +668,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-11-22"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "prose_theatre",
         "official_detail_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
         "official_genre_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
@@ -680,7 +680,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-12-09"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "piano_recital",
         "official_detail_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
         "official_genre_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
@@ -692,7 +692,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-12-09"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "piano_recital",
         "official_detail_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
         "official_genre_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
@@ -704,7 +704,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-12-22"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "symphonic_concert",
         "official_detail_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
         "official_genre_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
@@ -716,7 +716,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         "days": [
             "2026-12-22"
         ],
-        "venue": null,
+        "venue": None,
         "genre": "symphonic_concert",
         "official_detail_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
         "official_genre_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
