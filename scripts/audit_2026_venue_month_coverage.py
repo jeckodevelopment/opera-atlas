@@ -75,6 +75,8 @@ def validated_venue_leads(document, venues):
         "oa-v-000007": ("Verona", "Arena di Verona", "www.arena.it"),
         "oa-vd-000036": ("Macerata", "Arena Sferisterio", "www.sferisterio.it"),
         "oa-vd-000019": ("Verona", "Teatro Filarmonico", "www.arena.it"),
+        "oa-vd-000034": ("Torre del Lago Puccini", "Gran Teatro Giacomo Puccini", "www.puccinifestival.it"),
+        "oa-vd-000047": ("Messina", "Teatro Vittorio Emanuele", "www.teatrovittorioemanuele.it"),
     }
     result=defaultdict(list)
     seen=set()
