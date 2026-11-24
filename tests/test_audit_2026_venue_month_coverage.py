@@ -53,12 +53,12 @@ class VenueMonthMatrixTests(unittest.TestCase):
                 and x["city"]=="Venezia"]
         self.assertEqual(30,sum(x["source_observed_opera_showtimes"] for x in fenice))
 
-    def test_regio_historical_published_dates_reconcile_except_new_work(self):
+    def test_regio_historical_published_dates_reconcile_after_source_verified_promotion(self):
         r=self.report
         regio=[x for x in r["rows"] if x["venue"]=="Teatro Regio di Torino"]
         self.assertEqual(25,sum(x["source_observed_opera_showtimes"] for x in regio))
-        self.assertEqual(19,sum(x["observed_already_published"] for x in regio))
-        self.assertEqual(6,sum(x["observed_not_in_publication"] for x in regio))
+        self.assertEqual(25,sum(x["observed_already_published"] for x in regio))
+        self.assertEqual(0,sum(x["observed_not_in_publication"] for x in regio))
 
     def test_family_and_nonopera_candidates_never_inflate_opera_denominator(self):
         r=self.report
