@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import html
 import re
 import unicodedata
 from collections import Counter, defaultdict
@@ -27,7 +28,7 @@ OUTPUT = ROOT / "public/diagnostics/atlas-2026-retrospective-reconciliation.json
 PRIORITY = ROOT / "data/retrospective-2026-priority-reviews.json"
 
 def norm(value):
-    value = unicodedata.normalize("NFKD", str(value or "").casefold())
+    value = unicodedata.normalize("NFKD", html.unescape(str(value or "")).casefold())
     return re.sub(r"[^a-z0-9]+", " ", "".join(
         c for c in value if not unicodedata.combining(c))).strip()
 
