@@ -3653,6 +3653,30 @@
       "slug": "simon-boccanegra",
       "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
       "season": "2025-2026"
+    },
+    "historical-2026h1-torino-la-cenerentola": {
+      "id": "oa-s-000297",
+      "work_id": "oa-w-000068",
+      "venue_id": "oa-v-000001",
+      "slug": "la-cenerentola",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-torino-macbeth": {
+      "id": "oa-s-000298",
+      "work_id": "oa-w-000018",
+      "venue_id": "oa-v-000001",
+      "slug": "macbeth",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-torino-i-puritani": {
+      "id": "oa-s-000299",
+      "work_id": "oa-w-000036",
+      "venue_id": "oa-v-000001",
+      "slug": "i-puritani",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "season": "2025-2026"
     }
   },
   "performances": {
@@ -10478,6 +10502,120 @@
       "staging_id": "oa-s-000296",
       "original_date": "2026-02-14",
       "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-torino-la-cenerentola|2026-01-20": {
+      "id": "oa-r-001165",
+      "staging_id": "oa-s-000297",
+      "original_date": "2026-01-20",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+    },
+    "historical-2026h1-torino-la-cenerentola|2026-01-21": {
+      "id": "oa-r-001166",
+      "staging_id": "oa-s-000297",
+      "original_date": "2026-01-21",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+    },
+    "historical-2026h1-torino-la-cenerentola|2026-01-22": {
+      "id": "oa-r-001167",
+      "staging_id": "oa-s-000297",
+      "original_date": "2026-01-22",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+    },
+    "historical-2026h1-torino-la-cenerentola|2026-01-23": {
+      "id": "oa-r-001168",
+      "staging_id": "oa-s-000297",
+      "original_date": "2026-01-23",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+    },
+    "historical-2026h1-torino-la-cenerentola|2026-01-24": {
+      "id": "oa-r-001169",
+      "staging_id": "oa-s-000297",
+      "original_date": "2026-01-24",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+    },
+    "historical-2026h1-torino-la-cenerentola|2026-01-25": {
+      "id": "oa-r-001170",
+      "staging_id": "oa-s-000297",
+      "original_date": "2026-01-25",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+    },
+    "historical-2026h1-torino-la-cenerentola|2026-01-27": {
+      "id": "oa-r-001171",
+      "staging_id": "oa-s-000297",
+      "original_date": "2026-01-27",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+    },
+    "historical-2026h1-torino-macbeth|2026-02-24": {
+      "id": "oa-r-001172",
+      "staging_id": "oa-s-000298",
+      "original_date": "2026-02-24",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+    },
+    "historical-2026h1-torino-macbeth|2026-02-26": {
+      "id": "oa-r-001173",
+      "staging_id": "oa-s-000298",
+      "original_date": "2026-02-26",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+    },
+    "historical-2026h1-torino-macbeth|2026-03-01": {
+      "id": "oa-r-001174",
+      "staging_id": "oa-s-000298",
+      "original_date": "2026-03-01",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+    },
+    "historical-2026h1-torino-macbeth|2026-03-03": {
+      "id": "oa-r-001175",
+      "staging_id": "oa-s-000298",
+      "original_date": "2026-03-03",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+    },
+    "historical-2026h1-torino-macbeth|2026-03-05": {
+      "id": "oa-r-001176",
+      "staging_id": "oa-s-000298",
+      "original_date": "2026-03-05",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+    },
+    "historical-2026h1-torino-macbeth|2026-03-07": {
+      "id": "oa-r-001177",
+      "staging_id": "oa-s-000298",
+      "original_date": "2026-03-07",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+    },
+    "historical-2026h1-torino-i-puritani|2026-05-06": {
+      "id": "oa-r-001178",
+      "staging_id": "oa-s-000299",
+      "original_date": "2026-05-06",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+    },
+    "historical-2026h1-torino-i-puritani|2026-05-08": {
+      "id": "oa-r-001179",
+      "staging_id": "oa-s-000299",
+      "original_date": "2026-05-08",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+    },
+    "historical-2026h1-torino-i-puritani|2026-05-10": {
+      "id": "oa-r-001180",
+      "staging_id": "oa-s-000299",
+      "original_date": "2026-05-10",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+    },
+    "historical-2026h1-torino-i-puritani|2026-05-13": {
+      "id": "oa-r-001181",
+      "staging_id": "oa-s-000299",
+      "original_date": "2026-05-13",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+    },
+    "historical-2026h1-torino-i-puritani|2026-05-15": {
+      "id": "oa-r-001182",
+      "staging_id": "oa-s-000299",
+      "original_date": "2026-05-15",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+    },
+    "historical-2026h1-torino-i-puritani|2026-05-17": {
+      "id": "oa-r-001183",
+      "staging_id": "oa-s-000299",
+      "original_date": "2026-05-17",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
     }
   },
   "reserved_works": {
