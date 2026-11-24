@@ -55,14 +55,14 @@ class VenueMonthMatrixTests(unittest.TestCase):
 
     def test_primary_source_leads_are_eighteen_and_never_auto_published(self):
         r=self.report
-        self.assertEqual(40,r["official_2026_opera_lead_count"])
-        self.assertEqual(6,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(40,r["official_unpublished_opera_lead_count"])
-        self.assertEqual(6,r["official_lead_venues_with_zero_published"])
+        self.assertEqual(81,r["official_2026_opera_lead_count"])
+        self.assertEqual(9,r["official_2026_opera_lead_venue_count"])
+        self.assertEqual(81,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(9,r["official_lead_venues_with_zero_published"])
         self.assertEqual(24,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
-        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele"},
+        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia"},
                          set(sources))
         for entry in sources.values():
             self.assertEqual("zero_published_with_official_opera_leads",
@@ -74,6 +74,19 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(4,sources["Teatro Filarmonico"]["official_unpublished_opera_lead_count"])
         self.assertEqual(16,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
         self.assertEqual(2,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(35,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(2,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(4,sources["Teatro Coccia"]["official_unpublished_opera_lead_count"])
+        forbidden_school={("2026-01-30","11:00"),("2026-03-20","11:00"),
+                          ("2026-04-21","11:00"),("2026-11-17","11:00"),
+                          ("2026-11-18","11:00")}
+        cagliari=[r for r in self.leads["records"] if r["city"]=="Cagliari"]
+        self.assertTrue(all((date,clock) not in forbidden_school for p in cagliari
+                            for date,clock in p["dates"]))
+        self.assertTrue(all(p["dates"] and all(clock is not None for date,clock in p["dates"]) for p in cagliari))
+        self.assertEqual(2,len([r for r in self.leads["records"] if r["city"]=="Novara"]))
+        self.assertEqual(2,len(next(r for r in self.leads["records"]
+                                   if r["title"].startswith("L’azzardo"))["dates"]))
         for row in r["rows"]:
             self.assertFalse(row["complete_month_verified"])
             for entry in row["official_unpublished_opera_leads"]:
