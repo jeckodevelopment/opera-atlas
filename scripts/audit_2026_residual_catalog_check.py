@@ -124,6 +124,69 @@ OFFICIAL_GENRE_EVIDENCE = (
         "official_genre_url":"https://teatripiacenza.it/event/siberia/",
         "reason":"Official Piacenza production reserves 16 December preview to young people turning 18 in 2026-27.",
     },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Passione e tormento",
+        "days": ["2026-11-08"], "venue": "Accademia Filarmonica",
+        "genre": "concert", "official_detail_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-ii-appuntamento-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-ii-appuntamento-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Follie, intrighi e virtuosismo",
+        "days": ["2026-11-22"], "venue": "Museo Internazionale e Biblioteca della Musica",
+        "genre": "concert", "official_detail_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-iii-appuntamento-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-iii-appuntamento-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Concerto di Gala del corso rossiniano",
+        "days": ["2026-11-26"], "venue": "Teatro Comunale di San Giovanni in Persiceto",
+        "genre": "concert", "official_detail_url": "https://www.tcbo.it/en/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "bologna-comunale-opera-2027", "title": "Viaggio nell’Elisir d’amore",
+        "days": ["2026-12-13"], "venue": "Circolo Culturale Lirico Bolognese",
+        "genre": "concert", "official_detail_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-iv-appuntamento-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-iv-appuntamento-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "maggio-fiorentino-calendar-2027", "title": "Verdi Game",
+        "days": ["2026-11-26"], "venue": "Istituto Baccio da Montelupo - Montelupo Fiorentino",
+        "genre": "interactive_educational_theatre", "official_detail_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "official_genre_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "maggio-fiorentino-calendar-2027", "title": "Verdi Game",
+        "days": ["2026-12-02"], "venue": "Istituto Comprensivo \"Anna Maria Luisa De' Medici\" - Calenzano",
+        "genre": "interactive_educational_theatre", "official_detail_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "official_genre_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "maggio-fiorentino-calendar-2027", "title": "Verdi Game",
+        "days": ["2026-12-09"], "venue": "Teatrodante \"Carlo Monni\" - Campi Bisenzio",
+        "genre": "interactive_educational_theatre", "official_detail_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "official_genre_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "pisa-future-calendar", "title": "Dido and Aeneas (Generale riservata alle Scuole)",
+        "days": ["2026-10-21"], "venue": None,
+        "genre": "school_only_rehearsal", "official_detail_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "official_genre_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
+    {
+        "source_key": "pisa-future-calendar", "title": "L’occasione fa il ladro (Generale riservata alle Scuole)",
+        "days": ["2026-12-02"], "venue": None,
+        "genre": "school_only_rehearsal", "official_detail_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "official_genre_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance.",
+    },
 )
 
 
@@ -152,6 +215,72 @@ def canonical_title(value):
                 continue
             return title
     return value
+
+
+# Exact 2026 Pisa productions reconciled against the Teatro di Pisa primary
+# programme. A missing venue in the *observation* must never become a certified
+# geographic match unless the official source, city, venue and published clock
+# all agree. The actual catalogue remains authoritative.
+PISA_SOURCE_KEYS = frozenset(("pisa-future-calendar", "pisa-verdi-opera-2026-27"))
+PISA_PUBLISHED_ALIASES = {
+    "dido and aeneas": "dido and aeneas",
+    "l occasione fa il ladro ossia il cambio della valigia": "l occasione fa il ladro",
+}
+PISA_OFFICIAL_OPERA_LEADS = (
+    ("Carmen", ("2026-01-23", "2026-01-25"),
+     ("20:30", "15:30"),
+     "https://teatrodipisa.it/de/carmen-liberta-e-dionisiaco-nella-nuova-produzione-con-la-regia-di-tonon-e-la-direzione-di-venezi/"),
+    ("The turn of the screw (il giro di vite)", ("2026-02-27", "2026-03-01"),
+     ("20:30", "15:30"),
+     "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/"),
+    ("L’elisir d’amore", ("2026-03-27", "2026-03-29"),
+     ("20:30", "15:30"),
+     "https://teatrodipisa.it/en/spettacolo/lelisir-damore/"),
+)
+
+
+def official_pisa_source(group):
+    from urllib.parse import urlsplit
+    return (group.get("source_key") in PISA_SOURCE_KEYS
+            and not norm(group.get("venue"))
+            and any(urlsplit(url).hostname == "teatrodipisa.it"
+                    for url in group.get("source_urls", []) if isinstance(url, str)))
+
+
+def pisa_published_title(value):
+    name = canonical_title(value)
+    return PISA_PUBLISHED_ALIASES.get(name, name)
+
+
+def pisa_catalog_without_observation_venue(group, rows):
+    """Recognize only exact published Pisa opera dates, clocks and title aliases."""
+    if not official_pisa_source(group):
+        return []
+    title=pisa_published_title(group.get("event_title"))
+    if title not in ("dido and aeneas", "l occasione fa il ladro"):
+        return []
+    matches=[p for p in rows
+             if p["date"]==group.get("date")
+             and p["clock"]==group.get("time")
+             and norm(p.get("city"))=="pisa"
+             and norm(p.get("venue"))=="teatro verdi"
+             and pisa_published_title(p.get("title"))==title]
+    return matches
+
+
+def pisa_official_missing_catalog_lead(group):
+    """Verified first-party opera observations, NOT permission to publish."""
+    if not official_pisa_source(group):
+        return None
+    for title, days, clocks, official_url in PISA_OFFICIAL_OPERA_LEADS:
+        if canonical_title(group.get("event_title")) != canonical_title(title):
+            continue
+        for day, clock in zip(days,clocks):
+            if group.get("date")==day and group.get("time")==clock:
+                return {"genre":"opera", "venue":"Teatro Verdi",
+                        "official_detail_url":official_url,
+                        "reason":"Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."}
+    return None
 
 
 def catalog_occurrences(catalog):
@@ -188,7 +317,14 @@ def check(triage, catalog):
         # while the audit source is a generic theatre index.
         # Same day, work, venue is strong evidence against an automatic
         # "missing" claim but is not proof of exact time matching.
-        if same_day:
+        pisa_confirmed = pisa_catalog_without_observation_venue(g, rows) if not same_day else []
+        if pisa_confirmed:
+            matches=[{"title":p["title"],"clock":p["clock"],
+                      "source_url":p["source_url"],"venue":p["venue"]}
+                     for p in pisa_confirmed]
+            status="catalog_same_work_day_clock_official_pisa_venue_unprovided"
+            evidence=None
+        elif same_day:
             matches=[{"title":p["title"],"clock":p["clock"],
                       "source_url":p["source_url"],"venue":p["venue"]}
                      for p in same_day]
@@ -201,6 +337,10 @@ def check(triage, catalog):
             matches=[]
             evidence=None
             status="requires_official_genre_and_catalog_review"
+            opera_evidence=pisa_official_missing_catalog_lead(g)
+            if opera_evidence is not None:
+                status="official_opera_unpublished_candidate_first_party_review"
+                evidence=opera_evidence
             genre_evidence=official_genre_evidence(g)
             if genre_evidence is not None:
                 status="official_nonopera_first_party_detail"
