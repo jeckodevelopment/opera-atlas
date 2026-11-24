@@ -1,7 +1,12 @@
 {
   "catalog_reviewed_on": "2026-11-24",
   "diagnostics": {
-    "unresolved_composer_works": []
+    "unresolved_composer_works": [
+      {
+        "composer": "Nino Rota",
+        "work_id": "oa-w-000139"
+      }
+    ]
   },
   "entities": [
     {
@@ -2692,6 +2697,43 @@
     {
       "aliases": [],
       "composer_ids": [
+        "oa-c-000031"
+      ],
+      "fallback_image": null,
+      "id": "oa-w-000137",
+      "image": null,
+      "subtitle": "Gaetano Donizetti",
+      "title": "Lucrezia Borgia",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/lucrezia-borgia/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000070"
+      ],
+      "fallback_image": null,
+      "id": "oa-w-000138",
+      "image": null,
+      "subtitle": "Wolfgang Amadeus Mozart",
+      "title": "Così fan tutte",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/cosi-fan-tutte/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-w-000139",
+      "image": null,
+      "subtitle": "Nino Rota",
+      "title": "Il cappello di paglia di Firenze",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/il-cappello-di-paglia-di-firenze/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
         "oa-c-000041"
       ],
       "fallback_image": null,
@@ -2870,6 +2912,20 @@
       "title": "Jeanne d’Arc au bûcher / Jeanne Dark",
       "type": "production",
       "url": "https://opera.plus/atlas/programmi/oa-p-ecf1fda1dc67738c/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000036"
+      ],
+      "fallback_image": null,
+      "id": "oa-p-f017f07675f24fa5",
+      "image": null,
+      "production_kind": "program",
+      "subtitle": "Teatro Coccia",
+      "title": "L’azzardo per un figlio / Il signor Bruschino",
+      "type": "production",
+      "url": "https://opera.plus/atlas/programmi/oa-p-f017f07675f24fa5/"
     },
     {
       "aliases": [],
@@ -7356,6 +7412,46 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000031"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000334",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Lirico di Cagliari",
+      "title": "Lucrezia Borgia",
+      "type": "production",
+      "url": "https://opera.plus/atlas/cagliari/teatro-lirico-di-cagliari/lucrezia-borgia/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000070"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000335",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Lirico di Cagliari",
+      "title": "Così fan tutte",
+      "type": "production",
+      "url": "https://opera.plus/atlas/cagliari/teatro-lirico-di-cagliari/cosi-fan-tutte/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-s-000336",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Lirico di Cagliari",
+      "title": "Il cappello di paglia di Firenze",
+      "type": "production",
+      "url": "https://opera.plus/atlas/cagliari/teatro-lirico-di-cagliari/il-cappello-di-paglia-di-firenze/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -8159,5 +8255,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "6bd27aa399d4d9fc4ecf2a55457ab5ebe1ad391f"
+  "source_revision": "a6e87a966ed002f1703f7ae0206c6802a44910ca"
 }
