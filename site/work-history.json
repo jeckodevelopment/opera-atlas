@@ -1237,6 +1237,16 @@
         "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
         "https://www.rohcollections.org.uk/work.aspx?work=1323"
       ]
+    },
+    "venere-e-adone": {
+      "librettist": "Fabio Casadei Turroni e Salvatore Sciarrino",
+      "premiere_year": 2023,
+      "premiere_venue": "Staatsoper Hamburg",
+      "premiere_city": "Amburgo",
+      "sources": [
+        "https://www.comune.venezia.it/it/content/venere-e-adone-sciarrino",
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
     }
   },
   "works_by_id": {
