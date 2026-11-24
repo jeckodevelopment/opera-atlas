@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "festivals": [
+    {
+      "id": "arena-opera-festival",
+      "name": "Arena Opera Festival",
+      "city": "Verona",
+      "region": "Veneto",
+      "description": "L’opera incontra il fascino dell’Arena di Verona: grandi titoli del repertorio lirico sotto le stelle, nel suggestivo anfiteatro romano.",
+      "photo_file": "Arena di Verona esterno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Arena_di_Verona_esterno.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Arena di Verona, sede del Arena Opera Festival",
+      "official_url": "https://www.arena.it/arena-opera-festival/",
+      "editions": [
+        {
+          "id": "arena-opera-festival-2027",
+          "edition": "2027",
+          "official_url": "https://www.arena.it/arena-opera-festival/aida-ed-gianfranco-de-bosio/",
+          "staging_ids": [
+            "oa-s-000020",
+            "oa-s-000053",
+            "oa-s-000054",
+            "oa-s-000056"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000020",
+        "oa-s-000053",
+        "oa-s-000054",
+        "oa-s-000056"
+      ]
+    },
+    {
+      "id": "donizetti-opera",
+      "name": "Donizetti Opera Festival",
+      "city": "Bergamo",
+      "region": "Lombardia",
+      "description": "A Bergamo, il festival dedicato a Gaetano Donizetti porta in scena opere del compositore nei teatri della città, fra riscoperte e nuove interpretazioni.",
+      "photo_file": "Teatro Donizetti Bergamo - Esterno.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Donizetti_Bergamo_-_Esterno.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Teatro Donizetti, sede del Donizetti Opera Festival",
+      "official_url": "https://www.donizettiopera.org/",
+      "editions": [
+        {
+          "id": "donizetti-opera-2026",
+          "edition": "2026",
+          "official_url": "https://www.donizettiopera.org/it/opere-2026/",
+          "staging_ids": [
+            "oa-s-000104",
+            "oa-s-000172",
+            "oa-s-000173"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000104",
+        "oa-s-000172",
+        "oa-s-000173"
+      ]
+    },
+    {
+      "id": "festival-puccini",
+      "name": "Festival Puccini",
+      "city": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "description": "A Torre del Lago, luogo profondamente legato a Giacomo Puccini, il festival propone le sue opere sul palcoscenico del Gran Teatro a lui dedicato.",
+      "photo_file": "Open-air Grand Theatre Puccini, Torre del Lago, Tuscany, Italy.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Open-air_Grand_Theatre_Puccini%2C_Torre_del_Lago%2C_Tuscany%2C_Italy.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Gran Teatro Giacomo Puccini, sede del Festival Puccini",
+      "official_url": "https://www.puccinifestival.it/",
+      "editions": [
+        {
+          "id": "festival-puccini-2027",
+          "edition": "2027",
+          "official_url": "https://www.puccinifestival.it/",
+          "staging_ids": [
+            "oa-s-000222",
+            "oa-s-000223",
+            "oa-s-000224",
+            "oa-s-000225"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000222",
+        "oa-s-000223",
+        "oa-s-000224",
+        "oa-s-000225"
+      ]
+    },
+    {
+      "id": "festival-valle-ditria",
+      "name": "Festival della Valle d’Itria",
+      "city": "Martina Franca",
+      "region": "Puglia",
+      "description": "Il festival di Martina Franca valorizza il teatro musicale e il repertorio lirico, con particolare attenzione alle riscoperte, ai titoli rari e alla ricerca interpretativa.",
+      "photo_file": "Palazzo Ducale di Martina Franca.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Palazzo_Ducale_di_Martina_Franca.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Palazzo Ducale di Martina Franca, sede del Festival della Valle d’Itria",
+      "official_url": "https://www.festivaldellavalleditria.it/",
+      "editions": [
+        {
+          "id": "festival-valle-ditria-2026",
+          "edition": "2026",
+          "official_url": "https://www.festivaldellavalleditria.it/",
+          "staging_ids": [
+            "oa-s-000253",
+            "oa-s-000277",
+            "oa-s-000279"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000253",
+        "oa-s-000277",
+        "oa-s-000279"
+      ]
+    },
+    {
+      "id": "festival-verdi",
+      "name": "Festival Verdi",
+      "city": "Parma e Busseto",
+      "region": "Emilia-Romagna",
+      "description": "Il Festival Verdi riunisce a Parma e Busseto produzioni liriche dedicate a Giuseppe Verdi, tra teatro e territorio.",
+      "photo_file": "Interior of Teatro Regio, Parma, Italy.JPG",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Teatro_Regio%2C_Parma%2C_Italy.JPG",
+      "photo_credit": "Viva-Verdi — CC BY-SA 3.0 — Wikimedia Commons",
+      "photo_alt": "Interno del Teatro Regio di Parma, sede principale del Festival Verdi",
+      "official_url": "https://teatroregioparma.it/",
+      "editions": [
+        {
+          "id": "festival-verdi-2026",
+          "edition": "2026",
+          "official_url": "https://teatroregioparma.it/categoria-spettacoli/edizione-26-festival-verdi/",
+          "staging_ids": [
+            "oa-s-000280",
+            "oa-s-000281",
+            "oa-s-000282"
+          ]
+        },
+        {
+          "id": "festival-verdi-2027",
+          "edition": "2027",
+          "official_url": "https://teatroregioparma.it/categoria-spettacoli/edizione-27-festival-verdi/",
+          "staging_ids": [
+            "oa-s-000286",
+            "oa-s-000287",
+            "oa-s-000288"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000280",
+        "oa-s-000281",
+        "oa-s-000282",
+        "oa-s-000286",
+        "oa-s-000287",
+        "oa-s-000288"
+      ]
+    },
+    {
+      "id": "luglio-musicale-trapanese",
+      "name": "Luglio Musicale Trapanese",
+      "city": "Trapani",
+      "region": "Sicilia",
+      "description": "A Trapani, il Luglio Musicale Trapanese propone spettacoli lirici e iniziative musicali, anche negli spazi del Teatro Giuseppe Di Stefano.",
+      "photo_file": "Trapani - Villa margherita - Luglio Musicale Trapanese - Botteghino - panoramio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Trapani_-_Villa_margherita_-_Luglio_Musicale_Trapanese_-_Botteghino_-_panoramio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Teatro Giuseppe Di Stefano e Villa Margherita, sede del Luglio Musicale Trapanese",
+      "official_url": "https://www.lugliomusicale.it/",
+      "editions": [
+        {
+          "id": "luglio-musicale-trapanese-2026",
+          "edition": "2026",
+          "official_url": "https://www.lugliomusicale.it/",
+          "staging_ids": [
+            "oa-s-000272",
+            "oa-s-000273",
+            "oa-s-000274",
+            "oa-s-000275",
+            "oa-s-000276",
+            "oa-s-000278"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000272",
+        "oa-s-000273",
+        "oa-s-000274",
+        "oa-s-000275",
+        "oa-s-000276",
+        "oa-s-000278"
+      ]
+    },
+    {
+      "id": "macerata-opera-festival",
+      "name": "Macerata Opera Festival",
+      "city": "Macerata",
+      "region": "Marche",
+      "description": "Nello Sferisterio di Macerata, il festival presenta ogni estate grandi opere liriche in un teatro all’aperto dalla caratteristica architettura monumentale.",
+      "photo_file": "Macerata - Sferisterio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Macerata_-_Sferisterio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Arena Sferisterio, sede del Macerata Opera Festival",
+      "official_url": "https://www.sferisterio.it/",
+      "editions": [
+        {
+          "id": "macerata-opera-festival-2027",
+          "edition": "2027",
+          "official_url": "https://www.sferisterio.it/",
+          "staging_ids": [
+            "oa-s-000161",
+            "oa-s-000166",
+            "oa-s-000198"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000161",
+        "oa-s-000166",
+        "oa-s-000198"
+      ]
+    },
+    {
+      "id": "rossini-opera-festival",
+      "name": "Rossini Opera Festival",
+      "city": "Pesaro",
+      "region": "Marche",
+      "description": "A Pesaro, città natale di Gioachino Rossini, il festival celebra ogni estate il compositore con nuove produzioni, grandi interpreti e appuntamenti musicali.",
+      "photo_file": "Teatro Rossini, Pesaro.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Rossini%2C_Pesaro.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Teatro Gioachino Rossini, sede del Rossini Opera Festival",
+      "official_url": "https://www.rossinioperafestival.it/",
+      "editions": [
+        {
+          "id": "rossini-opera-festival-2026",
+          "edition": "2026",
+          "official_url": "https://www.rossinioperafestival.it/",
+          "staging_ids": [
+            "oa-s-000254",
+            "oa-s-000267",
+            "oa-s-000268",
+            "oa-s-000269"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000254",
+        "oa-s-000267",
+        "oa-s-000268",
+        "oa-s-000269"
+      ]
+    },
+    {
+      "id": "vicenza-in-lirica",
+      "name": "Vicenza in Lirica",
+      "city": "Vicenza e territorio vicentino",
+      "region": "Veneto",
+      "description": "Dal Teatro Olimpico alle ville palladiane del territorio, Vicenza in Lirica propone produzioni operistiche e nuove collaborazioni tra artisti, conservatori e festival.",
+      "photo_file": "Teatro olimpico vicenza.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_olimpico_vicenza.jpg",
+      "photo_credit": "Nanni68 / Wikimedia Commons — CC BY-SA 4.0",
+      "photo_alt": "Teatro Olimpico di Vicenza, una delle sedi del festival Vicenza in Lirica",
+      "official_url": "https://www.vicenzainlirica.it/",
+      "editions": [
+        {
+          "id": "vicenza-in-lirica-2026",
+          "edition": "2026",
+          "official_url": "https://www.vicenzainlirica.it/",
+          "staging_ids": [
+            "oa-s-000283",
+            "oa-s-000284",
+            "oa-s-000285"
+          ]
+        }
+      ],
+      "staging_ids": [
+        "oa-s-000283",
+        "oa-s-000284",
+        "oa-s-000285"
+      ]
+    }
+  ]
+}
