@@ -861,6 +861,43 @@ def catalog_occurrences(catalog):
     return rows
 
 
+# Exact first-party Modena production details confirm catalogue clocks
+# over seven source-index observations that are consistently +60 minutes.
+# Record the discrepancy as source-clock normalization, never create a
+# duplicate or change the canonical showtime.
+OFFICIAL_MODENA_CLOCKS = {
+    ("macbeth","2026-10-30"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"},
+    ("macbeth","2026-11-01"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"},
+    ("der fliegende hollander","2026-11-20"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"},
+    ("der fliegende hollander","2026-11-22"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"},
+    ("l esecuzione","2026-11-28"): {"clock":"20:00","observed":"21:00","url":"https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"},
+    ("l esecuzione","2026-11-29"): {"clock":"15:30","observed":"16:30","url":"https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"},
+    ("i salvatori della mezzanotte","2026-12-13"): {"clock":"17:30","observed":"18:30","url":"https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"},
+}
+
+
+def official_modena_clock_match(group, rows):
+    from urllib.parse import urlsplit
+    if (group.get("source_key") != "modena-teatro-opera-2026-27"
+        or norm(group.get("venue")) != "teatro comunale pavarotti freni"
+        or not any(urlsplit(u).hostname=="www.teatrocomunalemodena.it"
+                   for u in group.get("source_urls",[]) if isinstance(u,str))):
+        return None
+    finding=OFFICIAL_MODENA_CLOCKS.get((canonical_title(group.get("event_title")),group.get("date")))
+    if not finding or group.get("time")!=finding["observed"]:
+        return None
+    verified=[p for p in rows if p["clock"]==finding["clock"]
+              and p["source_url"]==finding["url"]
+              and norm(p.get("city"))=="modena"]
+    if len(verified)!=1:
+        return None
+    return {"official_detail_url":finding["url"],
+            "verified_clock":finding["clock"],
+            "observed_clock":finding["observed"],
+            "source_clock_offset_minutes":60,
+            "reason":"Official Modena production detail confirms canonical clock; observed index clock is one hour later."}
+
+
 def check(triage, catalog):
     if (triage.get("year") != 2026 or triage.get("read_only") is not True
             or triage.get("catalog_updated") is not False
@@ -893,11 +930,16 @@ def check(triage, catalog):
             matches=[{"title":p["title"],"clock":p["clock"],
                       "source_url":p["source_url"],"venue":p["venue"]}
                      for p in same_day]
-            if g.get("time") is not None and any(g["time"]==p["clock"] for p in same_day):
+            evidence=None
+            if g.get("time") is None:
+                status="catalog_same_work_day_venue_observation_without_clock"
+            elif any(g["time"]==p["clock"] for p in same_day):
                 status="catalog_same_work_day_venue_exact_clock"
             else:
-                status="catalog_same_work_day_venue_clock_discrepancy"
-            evidence=None
+                evidence=official_modena_clock_match(g,same_day)
+                status=("catalog_official_clock_verified_index_offset"
+                        if evidence is not None else
+                        "catalog_same_work_day_venue_clock_discrepancy")
         else:
             matches=[]
             evidence=None
