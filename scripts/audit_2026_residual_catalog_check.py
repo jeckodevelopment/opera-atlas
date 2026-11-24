@@ -30,7 +30,13 @@ TITLE_PREFIXES = (
 )
 # Explicit official same-host source for three performances; no heuristic
 # decisions should be applied to unrelated future titles or dates.
-SOURCE_CITY = {"modena-teatro-opera-2026-27":"modena",\n               "piacenza-opera-2026-27":"piacenza",\n               "bellini-catania-opera-2026-27":"catania",\n               "bologna-comunale-opera-2027":"bologna",\n               "maggio-fiorentino-calendar-2027":"firenze"}\n\nOFFICIAL_NONOPERA = {
+SOURCE_CITY = {"modena-teatro-opera-2026-27":"modena",
+               "piacenza-opera-2026-27":"piacenza",
+               "bellini-catania-opera-2026-27":"catania",
+               "bologna-comunale-opera-2027":"bologna",
+               "maggio-fiorentino-calendar-2027":"firenze"}
+
+OFFICIAL_NONOPERA = {
     ("https://www.tcbo.it/evento/speciale/opera-guccini-2026/", "Opera Guccini"):
     {"days":["2026-10-29","2026-10-30","2026-10-31"],
      "reason":"The Teatro Comunale di Bologna describes the event as a concert-show of Guccini songs, not a staged opera.",
@@ -75,7 +81,9 @@ def check(triage, catalog):
         venue=norm(g.get("venue"))
         same_day=[p for p in rows if p["date"]==g["date"]
                   and canonical_title(p["title"])==title
-                  and venue and norm(p.get("venue"))==venue\n                  and (g["source_key"] not in SOURCE_CITY or\n                       norm(p.get("city"))==SOURCE_CITY[g["source_key"]])]
+                  and venue and norm(p.get("venue"))==venue
+                  and (g["source_key"] not in SOURCE_CITY or
+                       norm(p.get("city"))==SOURCE_CITY[g["source_key"]])]
         # Published records can be on a separately corroborated detail URL,
         # while the audit source is a generic theatre index.
         # Same day, work, venue is strong evidence against an automatic
@@ -128,7 +136,8 @@ def main():
     result=check(json.loads(TRIAGE.read_text(encoding="utf-8")),
                  json.loads(CATALOG.read_text(encoding="utf-8")))
     args.output.parent.mkdir(parents=True,exist_ok=True)
-    args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
     print("RESIDUAL_2026_COUNTERS "+json.dumps(result["counts"],ensure_ascii=False))
     for r in result["observations"]:
         if r["status"]=="catalog_same_work_day_venue_clock_discrepancy":
