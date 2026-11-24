@@ -2,7 +2,7 @@
 import unittest
 from unittest.mock import patch
 
-from scripts.audit_2026_jan_jun_official import detail_links, scan
+from scripts.audit_2026_jan_jun_official import detail_links, scan, validate_seeds
 
 
 class HistoricalJanJunTests(unittest.TestCase):
@@ -14,6 +14,30 @@ class HistoricalJanJunTests(unittest.TestCase):
             ["https://www.teatrolafenice.it/event/la-clemenza-di-tito/"],
             detail_links(html,"https://www.teatrolafenice.it/event-category/opera-2025-26/",
                          "https://www.teatrolafenice.it/"))
+
+    def test_already_reviewed_historical_regio_host_is_source_scoped(self):
+        s={"key":"regio-2025-26","venue_id":"v1","city":"Torino",
+           "season":"2025/26","official_url":"https://www.teatroregio.torino.it/",
+           "url":"https://www.teatroregio.torino.it/stagione25-26"}
+        historical={"records":[{"venue_id":"v1","city":"Torino",
+                   "source_type":"official_event_detail","audience":"general_public",
+                   "source_url":"https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+                   "dates":[{"date":"2026-02-24","time":"19:00"}]}]}
+        directory={"venues":[{"id":"v1","name":"Regio","city":"Torino"},
+                             {"id":"v2","name":"Other","city":"Milano"}]}
+        with patch('scripts.audit_2026_jan_jun_official.validate_config',
+                   return_value=[]):
+            self.assertEqual([s],validate_seeds({"schema_version":1,"year":2026,"seeds":[s]},
+                                                 {},directory,historical))
+            hostile={**s,"venue_id":"v2","city":"Milano"}
+            with self.assertRaises(ValueError):
+                validate_seeds({"schema_version":1,"year":2026,"seeds":[hostile]},
+                               {},directory,historical)
+            wrong={**s,"official_url":"https://other.example/",
+                   "url":"https://other.example/archive"}
+            with self.assertRaises(ValueError):
+                validate_seeds({"schema_version":1,"year":2026,"seeds":[wrong]},
+                               {},directory,historical)
 
     def test_no_network_error_never_certifies_complete(self):
         source={"key":"fenice-2025-26","venue_id":"v1","city":"Venezia",

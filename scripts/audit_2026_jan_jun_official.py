@@ -23,6 +23,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SEEDS=ROOT/"data/official-2026-retrospective-season-seeds.json"
 INDEX_CONFIG=ROOT/"data/season-index-config.json"
 DIRECTORY=ROOT/"data/venue-directory.json"
+HISTORICAL=ROOT/"data/historical-2026-official-evidence.json"
 OUTPUT=ROOT/"public/diagnostics/atlas-2026-jan-jun-official-archive.json"
 MAX_SEEDS=24
 MAX_DETAILS=240
@@ -48,7 +49,7 @@ class Anchors(HTMLParser):
             self.anchor=None
             self.parts=[]
 
-def validate_seeds(doc,config,directory):
+def validate_seeds(doc,config,directory,historical=None):
     if doc.get("schema_version")!=1 or doc.get("year")!=2026:
         raise ValueError("invalid seed document")
     seeds=doc.get("seeds")
@@ -57,6 +58,20 @@ def validate_seeds(doc,config,directory):
     approved={urlsplit(x["official_url"]).hostname for x in validate_config(config)
               if x["access_status"]=="approved"}
     by_id={v["id"]:v for v in directory["venues"]}
+    # The Regio 2025/26 archive is already independently reviewed for
+    # exact operatic performance dates, though it has no current-season
+    # source-index adapter. Do not permit arbitrary unapproved domains:
+    # allow only the venue-ID + official-host pairing from that signed-off
+    # historical provenance register.
+    historical_hosts=set()
+    for record in (historical or {}).get("records",[]):
+        vid=record.get("venue_id")
+        parsed=urlsplit(record.get("source_url",""))
+        if (vid in by_id and parsed.scheme=="https"
+                and parsed.hostname and record.get("source_type")=="official_event_detail"
+                and record.get("audience")=="general_public"
+                and record.get("dates") and record.get("city")==by_id[vid].get("city")):
+            historical_hosts.add((vid,parsed.hostname))
     seen=set()
     for s in seeds:
         if s["key"] in seen:
@@ -65,7 +80,8 @@ def validate_seeds(doc,config,directory):
         if (s.get("venue_id") not in by_id or
             s.get("city")!=by_id[s["venue_id"]].get("city") or
             s.get("season") not in ("2025/26","2026") or
-            urlsplit(s["official_url"]).hostname not in approved or
+            (urlsplit(s["official_url"]).hostname not in approved and
+             (s["venue_id"],urlsplit(s["official_url"]).hostname) not in historical_hosts) or
             not valid_official_url(s["url"],s["official_url"])):
             raise ValueError("unapproved historical seed or mismatched venue")
     return seeds
@@ -93,8 +109,8 @@ def detail_links(html,page_url,official_url):
                 found.add(url)
     return sorted(found)
 
-def scan(doc,config,directory,*,fetch_page=fetch,workers=MAX_WORKERS,max_details=MAX_DETAILS):
-    seeds=validate_seeds(doc,config,directory)
+def scan(doc,config,directory,*,historical=None,fetch_page=fetch,workers=MAX_WORKERS,max_details=MAX_DETAILS):
+    seeds=validate_seeds(doc,config,directory,historical)
     def index_one(seed):
         result={"key":seed["key"],"venue_id":seed["venue_id"],"url":seed["url"]}
         try:
@@ -174,7 +190,7 @@ def main():
         p.error("explicit network authorization and bounded limits required")
     def load(path):return json.loads(path.read_text(encoding="utf-8"))
     result=scan(load(SEEDS),load(INDEX_CONFIG),load(DIRECTORY),
-                workers=a.workers,max_details=a.max_details)
+                historical=load(HISTORICAL),workers=a.workers,max_details=a.max_details)
     a.output.parent.mkdir(parents=True,exist_ok=True)
     a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({k:result[k] for k in (
