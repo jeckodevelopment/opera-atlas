@@ -109,6 +109,54 @@ def detail_links(html,page_url,official_url):
                 found.add(url)
     return sorted(found)
 
+def credited_official_opera_facts(html, url):
+    """Reuse verified first-party Scala/Fenice/Bologna parsers, fail closed.
+
+    A webpage's generic Event markup is not required to display all actual
+    operatic performances. Only individually dated/timed credible opera
+    credits from known source-specific structures are accepted.
+    """
+    from scripts.build_verified_catalog import official_local_time
+    parsed=urlsplit(url)
+    path=parsed.path
+    if parsed.hostname=="www.teatrolafenice.it" and path.startswith("/event/"):
+        from opera_atlas.national_detail_parser import (
+            fenice_primary_credits, parse_national_showtimes,
+        )
+        title, composer, venue = fenice_primary_credits(html)
+        dates = parse_national_showtimes(
+            html, source_key="fenice-opera-2026-27", url=url,
+            title=title, composer=composer)
+    elif (parsed.hostname=="www.teatroallascala.org"
+          and re.fullmatch(r"/it/stagione/2025-2026/opera/[a-z0-9-]+\\.html",path)):
+        from opera_atlas.scala_credited_detail import FirstH1
+        from opera_atlas.national_detail_parser import clean
+        from opera_atlas.scala_arena_parser import parse_showtimes
+        heading=FirstH1()
+        heading.feed(html)
+        title=heading.value
+        if not title or len(title)>140:
+            raise ValueError("official Scala 2025/26 work heading absent")
+        text=clean(html)
+        m=re.search(r"\\bOpera\\s+"+re.escape(title)+
+                    r"\\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,4})"
+                    r"\\s+Dal\\s+\\d{1,2}\\s+",text)
+        if not m:
+            raise ValueError("official Scala 2025/26 work/composer header absent")
+        composer=m.group(1).strip()
+        venue="Teatro alla Scala"
+        dates=parse_showtimes(html,url=url,title=title,composer=composer,adapter="scala")
+    elif parsed.hostname=="www.tcbo.it" and path.startswith("/evento/opera/"):
+        from opera_atlas.bologna_detail_parser import parse_detail
+        title,composer,venue,dates=parse_detail(html,url=url)
+    else:
+        return []
+    return clean_facts([{
+        "event_title":title,"composer":composer,"venue":venue,
+        "date":day,"starts_at":official_local_time(day,hour),
+    } for day,hour in dates])
+
+
 def scan(doc,config,directory,*,historical=None,fetch_page=fetch,workers=MAX_WORKERS,max_details=MAX_DETAILS):
     seeds=validate_seeds(doc,config,directory,historical)
     def index_one(seed):
@@ -144,7 +192,24 @@ def scan(doc,config,directory,*,historical=None,fetch_page=fetch,workers=MAX_WOR
               "found_on":index_url}
         try:
             html=fetch_page(seed,url)
-            item.update(status="scanned",facts=clean_facts(parse_event_facts(html)))
+            generic=clean_facts(parse_event_facts(html))
+            try:
+                credited=credited_official_opera_facts(html,url)
+                parser_status="credited_opera_parsed" if credited else "no_credited_opera_dates"
+            except (ValueError,RuntimeError,TypeError) as exc:
+                credited=[]
+                parser_status="credited_opera_parser_unverified:" + type(exc).__name__
+            # Prefer source-credited dates to general-purpose Event JSON-LD.
+            # Preserve both when present, deduplicating identical timestamps
+            # by source, title and date in the downstream reconciliation.
+            fingerprints={(f["date"],f["event_title"],f.get("starts_at"))
+                          for f in credited}
+            facts=credited+[f for f in generic
+                            if (f["date"],f["event_title"],f.get("starts_at"))
+                            not in fingerprints]
+            item.update(status="scanned",facts=facts,
+                        credited_parser_status=parser_status,
+                        credited_fact_count=len(credited))
         except (ValueError,OSError,RuntimeError) as exc:
             item.update(status="unverified",failure=type(exc).__name__,facts=[])
         return item
@@ -173,6 +238,7 @@ def scan(doc,config,directory,*,historical=None,fetch_page=fetch,workers=MAX_WOR
         "seed_pages_acquired":sum(x["status"]=="scanned" for x in indexes),
         "detail_pages_attempted":len(details),
         "detail_pages_acquired":sum(x["status"]=="scanned" for x in details),
+        "credited_opera_observations":sum(x.get("credited_fact_count",0) for x in details),
         "jan_jun_unverified_event_observations":len(observed),
         "deferred_per_host":dict(sorted(deferred.items())),
         "seed_results":indexes,"detail_results":details,"observations":observed,
@@ -195,6 +261,6 @@ def main():
     a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({k:result[k] for k in (
         "historical_seed_count","venues_seeded","seed_pages_acquired",
-        "detail_pages_acquired","jan_jun_unverified_event_observations")}))
+        "detail_pages_acquired","credited_opera_observations","jan_jun_unverified_event_observations")}))
 if __name__=="__main__":
     main()
