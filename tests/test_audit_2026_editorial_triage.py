@@ -57,7 +57,8 @@ class EditorialTriageTests(unittest.TestCase):
         p={"records":[{"date":"2026-12-01","event_title":"Macbeth",
                        "classification":"official_opera_candidate_needs_publication_review",
                        "official_detail_url":"https://official.example/macbeth",
-                       "time":"20:30"}]}
+                       "source_url":"https://official.example/macbeth",
+                       "venue":"Teatro A","time":"20:30"}]}
         result=classify(source([a]),{"decisions":[]},p)
         self.assertEqual("official_opera_candidate_needs_editorial_review",
                          result["review_groups"][0]["bucket"])
