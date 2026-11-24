@@ -227,6 +227,7 @@ PISA_PUBLISHED_ALIASES = {
     "dido and æneas": "dido and aeneas",
     "dido and neas": "dido and aeneas",
     "l occasione fa il ladro ossia il cambio della valigia": "l occasione fa il ladro",
+    "the turn of the screw il giro di vite": "the turn of the screw",
 }
 PISA_OFFICIAL_OPERA_LEADS = (
     ("Carmen", ("2026-01-23", "2026-01-25"),
@@ -259,7 +260,13 @@ def pisa_catalog_without_observation_venue(group, rows):
     if not official_pisa_source(group):
         return []
     title=pisa_published_title(group.get("event_title"))
-    if title not in ("dido and aeneas", "l occasione fa il ladro"):
+    legacy_titles = ("dido and aeneas", "l occasione fa il ladro")
+    historical_titles = ("carmen", "the turn of the screw", "l elisir d amore")
+    if title not in legacy_titles + historical_titles:
+        return []
+    # Historical titles require the exact observed official showtime. Merely
+    # sharing a common opera title or same city does not prove a match.
+    if title in historical_titles and pisa_official_missing_catalog_lead(group) is None:
         return []
     matches=[p for p in rows
              if p["date"]==group.get("date")
