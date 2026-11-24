@@ -2,7 +2,7 @@
   "schema_version": 1,
   "year": 2026,
   "period": "2026-01-01/2026-06-30",
-  "checked_at": "2026-11-24T13:34:56+00:00",
+  "checked_at": "2026-11-24T13:50:35+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
@@ -11,8 +11,8 @@
   "seed_pages_acquired": 8,
   "detail_pages_attempted": 64,
   "detail_pages_acquired": 64,
-  "credited_opera_observations": 133,
-  "jan_jun_unverified_event_observations": 93,
+  "credited_opera_observations": 152,
+  "jan_jun_unverified_event_observations": 112,
   "deferred_per_host": {},
   "seed_results": [
     {
@@ -258,7 +258,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 10
+      "credited_fact_count": 10,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -289,7 +290,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 2
+      "credited_fact_count": 2,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -320,7 +322,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 2
+      "credited_fact_count": 2,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -401,7 +404,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 7
+      "credited_fact_count": 7,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -432,7 +436,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 2
+      "credited_fact_count": 2,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -493,7 +498,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 5
+      "credited_fact_count": 5,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -564,7 +570,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 6
+      "credited_fact_count": 6,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -695,7 +702,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 12
+      "credited_fact_count": 12,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -776,7 +784,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 7
+      "credited_fact_count": 7,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -877,7 +886,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 9
+      "credited_fact_count": 9,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -948,7 +958,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 6
+      "credited_fact_count": 6,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -979,7 +990,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 2
+      "credited_fact_count": 2,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -1090,7 +1102,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 10
+      "credited_fact_count": 10,
+      "credited_parser_error": null
     },
     {
       "source_key": "scala-2025-26",
@@ -1100,7 +1113,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": "official Scala 2025/26 work/composer header absent"
     },
     {
       "source_key": "scala-2025-26",
@@ -1110,7 +1124,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": "official Scala 2025/26 work/composer header absent"
     },
     {
       "source_key": "fenice-2025-26",
@@ -1120,7 +1135,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": "no unique primary composer credit at Fenice"
     },
     {
       "source_key": "fenice-2025-26",
@@ -1141,7 +1157,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 1
+      "credited_fact_count": 1,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1172,7 +1189,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 2
+      "credited_fact_count": 2,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1182,7 +1200,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1192,7 +1211,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": "no official Fenice performance venue"
     },
     {
       "source_key": "fenice-2025-26",
@@ -1283,7 +1303,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 8
+      "credited_fact_count": 8,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1344,7 +1365,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 5
+      "credited_fact_count": 5,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1405,7 +1427,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 5
+      "credited_fact_count": 5,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1456,7 +1479,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 4
+      "credited_fact_count": 4,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1517,7 +1541,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 5
+      "credited_fact_count": 5,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1578,7 +1603,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 5
+      "credited_fact_count": 5,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1639,7 +1665,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 5
+      "credited_fact_count": 5,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1730,7 +1757,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 8
+      "credited_fact_count": 8,
+      "credited_parser_error": null
     },
     {
       "source_key": "fenice-2025-26",
@@ -1740,7 +1768,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": "no official Fenice performance venue"
     },
     {
       "source_key": "fenice-2025-26",
@@ -1801,7 +1830,8 @@
         }
       ],
       "credited_parser_status": "credited_opera_parsed",
-      "credited_fact_count": 5
+      "credited_fact_count": 5,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1809,9 +1839,91 @@
       "url": "https://www.teatromassimo.it/event/aida/",
       "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "scanned",
-      "facts": [],
-      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "facts": [
+        {
+          "date": "2026-05-22",
+          "starts_at": "2026-05-22T20:00:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-05-23",
+          "starts_at": "2026-05-23T18:30:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-05-24",
+          "starts_at": "2026-05-24T17:30:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-05-27",
+          "starts_at": "2026-05-27T18:30:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-05-28",
+          "starts_at": "2026-05-28T20:00:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-05-29",
+          "starts_at": "2026-05-29T18:30:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-05-30",
+          "starts_at": "2026-05-30T20:00:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-05-31",
+          "starts_at": "2026-05-31T18:30:00+02:00",
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ],
+      "credited_parser_status": "credited_opera_parsed",
+      "credited_fact_count": 8,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1821,7 +1933,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1831,7 +1944,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1841,7 +1955,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1851,7 +1966,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1861,7 +1977,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1871,7 +1988,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1881,7 +1999,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1889,9 +2008,51 @@
       "url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
       "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "scanned",
-      "facts": [],
-      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "facts": [
+        {
+          "date": "2026-02-20",
+          "starts_at": "2026-02-20T20:00:00+01:00",
+          "event_title": "Dido and Aeneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-02-21",
+          "starts_at": "2026-02-21T18:30:00+01:00",
+          "event_title": "Dido and Aeneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-02-22",
+          "starts_at": "2026-02-22T17:30:00+01:00",
+          "event_title": "Dido and Aeneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-02-24",
+          "starts_at": "2026-02-24T18:30:00+01:00",
+          "event_title": "Dido and Aeneas",
+          "composer": "Henry Purcell",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ],
+      "credited_parser_status": "credited_opera_parsed",
+      "credited_fact_count": 4,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1901,7 +2062,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1911,7 +2073,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1921,7 +2084,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1931,7 +2095,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1941,7 +2106,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1951,7 +2117,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1961,7 +2128,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1971,7 +2139,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1981,7 +2150,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -1991,7 +2161,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -2001,7 +2172,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -2011,7 +2183,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -2021,7 +2194,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -2031,7 +2205,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "massimo-2025-26",
@@ -2039,9 +2214,81 @@
       "url": "https://www.teatromassimo.it/event/semiramide/",
       "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "scanned",
-      "facts": [],
-      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
+      "facts": [
+        {
+          "date": "2026-03-11",
+          "starts_at": "2026-03-11T20:00:00+01:00",
+          "event_title": "Semiramide",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-03-12",
+          "starts_at": "2026-03-12T18:30:00+01:00",
+          "event_title": "Semiramide",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-03-13",
+          "starts_at": "2026-03-13T18:30:00+01:00",
+          "event_title": "Semiramide",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-03-14",
+          "starts_at": "2026-03-14T20:00:00+01:00",
+          "event_title": "Semiramide",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-03-15",
+          "starts_at": "2026-03-15T17:30:00+01:00",
+          "event_title": "Semiramide",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-03-17",
+          "starts_at": "2026-03-17T18:30:00+01:00",
+          "event_title": "Semiramide",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        },
+        {
+          "date": "2026-03-18",
+          "starts_at": "2026-03-18T18:30:00+01:00",
+          "event_title": "Semiramide",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro Massimo",
+          "audience": "not_verified",
+          "genre": "not_verified",
+          "review_status": "needs_independent_validation"
+        }
+      ],
+      "credited_parser_status": "credited_opera_parsed",
+      "credited_fact_count": 7,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2051,7 +2298,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2061,7 +2309,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2071,7 +2320,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2081,7 +2331,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2091,7 +2342,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2101,7 +2353,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2111,7 +2364,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2121,7 +2375,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2131,7 +2386,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     },
     {
       "source_key": "regio-2025-26",
@@ -2141,7 +2397,8 @@
       "status": "scanned",
       "facts": [],
       "credited_parser_status": "no_credited_opera_dates",
-      "credited_fact_count": 0
+      "credited_fact_count": 0,
+      "credited_parser_error": null
     }
   ],
   "observations": [
@@ -3445,6 +3702,272 @@
       "venue_id_candidate": "oa-v-000008",
       "official_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
       "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-22",
+      "starts_at": "2026-05-22T20:00:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-23",
+      "starts_at": "2026-05-23T18:30:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-24",
+      "starts_at": "2026-05-24T17:30:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-27",
+      "starts_at": "2026-05-27T18:30:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-28",
+      "starts_at": "2026-05-28T20:00:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-29",
+      "starts_at": "2026-05-29T18:30:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-30",
+      "starts_at": "2026-05-30T20:00:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-05-31",
+      "starts_at": "2026-05-31T18:30:00+02:00",
+      "event_title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-02-20",
+      "starts_at": "2026-02-20T20:00:00+01:00",
+      "event_title": "Dido and Aeneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-02-21",
+      "starts_at": "2026-02-21T18:30:00+01:00",
+      "event_title": "Dido and Aeneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-02-22",
+      "starts_at": "2026-02-22T17:30:00+01:00",
+      "event_title": "Dido and Aeneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-02-24",
+      "starts_at": "2026-02-24T18:30:00+01:00",
+      "event_title": "Dido and Aeneas",
+      "composer": "Henry Purcell",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-03-11",
+      "starts_at": "2026-03-11T20:00:00+01:00",
+      "event_title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-03-12",
+      "starts_at": "2026-03-12T18:30:00+01:00",
+      "event_title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-03-13",
+      "starts_at": "2026-03-13T18:30:00+01:00",
+      "event_title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-03-14",
+      "starts_at": "2026-03-14T20:00:00+01:00",
+      "event_title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-03-15",
+      "starts_at": "2026-03-15T17:30:00+01:00",
+      "event_title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-03-17",
+      "starts_at": "2026-03-17T18:30:00+01:00",
+      "event_title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "needs_venue_work_audience_time_review"
+    },
+    {
+      "date": "2026-03-18",
+      "starts_at": "2026-03-18T18:30:00+01:00",
+      "event_title": "Semiramide",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Massimo",
+      "audience": "not_verified",
+      "genre": "not_verified",
+      "review_status": "needs_independent_validation",
+      "venue_id_candidate": "oa-v-000009",
+      "official_url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "needs_venue_work_audience_time_review"
     }
   ],
