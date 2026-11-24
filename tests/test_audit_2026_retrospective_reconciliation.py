@@ -82,6 +82,21 @@ class RetroReconciliationTests(unittest.TestCase):
         self.assertEqual(1,x["observation_counts"]["official_opera_candidate_needs_publication_review"])
         self.assertFalse(x["catalog_updated"])
 
+    def test_official_candidate_with_conflicting_aggregator_time_stays_visible(self):
+        url="https://www.teatrocomunalemodena.it/modena-belcanto-festival/"
+        f=fact(url,"La costanza trionfante","2026-09-25",
+               "2026-09-25T17:00:00+02:00")
+        review={"records":[{"source_url":url,"date":"2026-09-25",
+                "event_title":"La costanza trionfante","time":"20:30",
+                "classification":"official_opera_candidate_needs_publication_review",
+                "official_detail_url":"https://www.comune.modena.it/official-opera",
+                "composer":"Antonio Vivaldi","venue":"Teatro Comunale",
+                "evidence":"Official event detail 20:30"}]}
+        x=reconcile({"year":2026,"read_only":True,"unverified_2026_facts":[f]},
+                    {"productions":[]},{"programs":[]},{"records":[]},review)
+        self.assertEqual(1,x["observation_counts"][
+            "official_opera_candidate_needs_publication_review_time_conflict"])
+
     def test_multiwork_evening_only_partly_catalogued(self):
         url="https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
         p={"source_url":url,"title":"La favola di Orfeo","venue":"Palazzo Ducale",
