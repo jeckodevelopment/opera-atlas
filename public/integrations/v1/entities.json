@@ -7128,6 +7128,48 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000069"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000320",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Lirico di Cagliari",
+      "title": "Norma",
+      "type": "production",
+      "url": "https://opera.plus/atlas/cagliari/teatro-lirico-di-cagliari/norma/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000321",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Lirico di Cagliari",
+      "title": "Turandot",
+      "type": "production",
+      "url": "https://opera.plus/atlas/cagliari/teatro-lirico-di-cagliari/turandot/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000322",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Lirico di Cagliari",
+      "title": "Rigoletto",
+      "type": "production",
+      "url": "https://opera.plus/atlas/cagliari/teatro-lirico-di-cagliari/rigoletto/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -7931,5 +7973,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "f621175baaad4dc516709841f9b12bdb244f740a"
+  "source_revision": "595fcd72afb34e8a99cd8ab977be11d196ae7c54"
 }
