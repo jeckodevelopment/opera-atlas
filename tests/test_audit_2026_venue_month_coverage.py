@@ -31,6 +31,25 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertTrue(r["read_only"])
         self.assertFalse(r["catalog_updated"])
 
+    def test_zero_published_priorities_are_not_missing_recite_claims(self):
+        r=self.report
+        priorities=r["venue_audit_priorities"]
+        self.assertEqual(72,len(priorities))
+        self.assertEqual(72,len({x["venue_id"] for x in priorities}))
+        zero=[x for x in priorities if x["published_2026_showtimes"]==0]
+        self.assertEqual(len(zero),r["zero_published_venue_count"])
+        self.assertEqual(len(zero),sum(r["zero_published_by_calendar_status"].values()))
+        self.assertTrue(all(x["missing_recite_certified"] is False for x in priorities))
+        self.assertTrue(all(x["audit_priority"].startswith("zero_published") for x in zero))
+        # A calendar being acquired is not proof of a complete 2026 season.
+        acquired=[x for x in zero if x["calendar_status"]=="acquired"]
+        self.assertEqual(len(acquired),r["zero_published_by_calendar_status"].get("acquired",0))
+        self.assertTrue(all(x["audit_priority"]=="zero_published_acquired_calendar" for x in acquired))
+        self.assertTrue(any(x["venue"]=="Arena di Verona" for x in acquired))
+        bologna=next(x for x in zero if x["venue"]=="Teatro Comunale di Bologna")
+        self.assertGreater(bologna["historical_source_seed_count"],0)
+        self.assertFalse(bologna["missing_recite_certified"])
+
     def test_existing_2026_carmen_publications_are_not_reported_missing(self):
         r=self.report
         for name,city,month in (
