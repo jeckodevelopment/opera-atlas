@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "provenance": "First-party official performance audit (24 November 2026). Read-only leads covering eleven physical venues; no full-season certification or automatic publication. Unverified clocks remain null. School presentations, concerts, gala, ballet, film excluded.",
+  "provenance": "First-party official performance audit (24 November 2026). Read-only leads covering twelve physical venues; no full-season certification or automatic publication. Unverified clocks remain null. School presentations, concerts, gala, ballet, film excluded.",
   "records": [
     {
       "venue_id": "oa-v-000002",
@@ -622,6 +622,60 @@
         [
           "2026-12-20",
           "17:30"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "dates": [
+        [
+          "2026-01-30",
+          null
+        ],
+        [
+          "2026-02-01",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "dates": [
+        [
+          "2026-03-13",
+          null
+        ],
+        [
+          "2026-03-15",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
+      "dates": [
+        [
+          "2026-04-24",
+          null
+        ],
+        [
+          "2026-04-26",
+          null
         ]
       ]
     }
