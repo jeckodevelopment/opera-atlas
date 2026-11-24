@@ -972,6 +972,26 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     })
+    reconciled_2026.update({
+        "historical-2026-torre-del-lago-puccini-la-fanciulla-del-west": {
+            "title": "La fanciulla del West",
+            "composer": "Giacomo Puccini",
+            "venue": "Gran Teatro Giacomo Puccini",
+            "municipality": "Torre del Lago Puccini",
+            "region": "Toscana",
+            "source_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+            "dates": [
+                [
+                    "2026-08-29",
+                    "21:15"
+                ],
+                [
+                    "2026-09-05",
+                    "21:15"
+                ]
+            ]
+        }
+    })
     reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
     permitted.update(reconciled_urls)
     events = []
