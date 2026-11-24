@@ -14,6 +14,7 @@
 <div class="section"><div class="section-head"><h2>Tre livelli di verifica</h2><span class="muted">Fonti · Catalogazione · Pubblicazione online</span></div><p class="muted">Una scansione riuscita non dimostra che tutte le opere siano censite; una scheda nel repository non dimostra che sia già disponibile sul sito.</p><div class="grid cards3" id="process-status"></div></div>
 <div class="section"><div class="section-head"><h2>Il catalogo in numeri</h2><span class="muted">Dati verificabili nei feed disponibili</span></div><div class="grid" id="overview-metrics"></div></div>
 <div class="section"><h2>Copertura dei teatri</h2><div class="panel" id="coverage-overview"></div></div>
+<div class="section"><h2>Ritratti dei compositori</h2><div class="panel" id="portrait-coverage" aria-live="polite">Caricamento del registro dei ritratti…</div></div>
 <div class="section"><div class="section-head"><h2>Richiede attenzione</h2><button class="btn" data-goto="activity">Apri tutte le attività</button></div><div class="stack" id="overview-attention"></div></div>
 <div class="section"><div class="section-head"><h2>Ultime verifiche</h2><button class="btn" data-goto="tech">Dettagli tecnici</button></div><div class="panel" id="overview-timeline"></div></div>
 </section>
@@ -204,11 +205,31 @@ function renderTech(){
  const classes=data.auto.index_scan_attention?.classifications||{};const box=$("source-classifications");box.replaceChildren();for(const [k,v] of Object.entries(classes))box.append(line(k.replaceAll("_"," "),nf(num(v))));
  const feeds=$("feed-details");feeds.replaceChildren();for(const [k,p] of Object.entries(FEEDS))feeds.append(line(k,p+" · disponibile"));
 }
+async function renderPortraitCoverage(){
+ const box=$("portrait-coverage");
+ try{
+  const [registry,media,review]=await Promise.allSettled([
+   read("data/composer-registry.json"),read("data/composer-portraits.json"),read("data/composer-portrait-review.json")]);
+  if(registry.status!=="fulfilled"||media.status!=="fulfilled")throw Error("Registri non disponibili");
+  const composers=registry.value.composers, portraits=media.value.portraits;
+  if(!Array.isArray(composers)||!portraits||registry.value.schema_version!==1||media.value.schema_version!==1)throw Error("Registri non validi");
+  const covered=composers.filter(c=>{const p=portraits[c.id];return p&&p.verified===true&&["url","alt","source_url","author","license","license_url","credit"].every(k=>typeof p[k]==="string"&&p[k].trim())}).length;
+  const total=composers.length, percent=total?Math.round(100*covered/total):null;
+  box.replaceChildren(el("div",percent===null?"Non applicabile":percent+"%","metric"),el("p",nf(covered)+" ritratti verificati su "+nf(total)+" compositori censiti; "+nf(total-covered)+" senza ritratto.","muted"));
+  if(review.status==="fulfilled"&&review.value.schema_version===1){
+   const r=review.value, counts={};
+   for(const item of Object.values(r.unresolved||{}))counts[item.reason]=(counts[item.reason]||0)+1;
+   box.append(el("p","Ultima acquisizione: "+fmt(r.updated_at)+" · "+nf(num(r.attempted))+" tentativi.","muted"));
+   for(const [reason,count] of Object.entries(counts).sort())box.append(line(reason.replaceAll("_"," "),nf(count)));
+  }else box.append(el("p","Report di acquisizione non ancora disponibile.","muted"));
+ }catch(error){box.replaceChildren(el("p","Copertura non verificabile: registri non disponibili o non validi.","muted"))}
+}
 let loading=false;
 async function load(){
  if(loading)return;
  loading=true;
  $("reload").disabled=true;
+ void renderPortraitCoverage();
  $("freshness").textContent="Caricamento dei feed · 0 / "+Object.keys(FEEDS).length;
  $("freshness").className="pill neutral";
  try{
