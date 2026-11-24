@@ -233,7 +233,7 @@ def canonical_cc_url(value):
         u = urlsplit(value)
         if u.scheme not in ("https", "http") or u.netloc != "creativecommons.org" or u.query or u.fragment:
             return None
-        path = re.sub(r"/deed(?:\\.[a-zA-Z-]+)?/?$", "/", u.path)
+        path = re.sub(r"/deed(?:\.[a-zA-Z-]+)?/?$", "/", u.path)
         return "https://creativecommons.org" + path.rstrip("/") + "/"
     except ValueError:
         return None
