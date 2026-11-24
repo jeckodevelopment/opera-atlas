@@ -128,7 +128,7 @@ def credited_official_opera_facts(html, url):
             html, source_key="fenice-opera-2026-27", url=url,
             title=title, composer=composer)
     elif (parsed.hostname=="www.teatroallascala.org"
-          and re.fullmatch(r"/it/stagione/2025-2026/opera/[a-z0-9-]+\\.html",path)):
+          and re.fullmatch(r"/it/stagione/2025-2026/opera/[a-z0-9-]+\.html",path)):
         from opera_atlas.scala_credited_detail import FirstH1
         from opera_atlas.national_detail_parser import clean
         from opera_atlas.scala_arena_parser import parse_showtimes
@@ -138,9 +138,9 @@ def credited_official_opera_facts(html, url):
         if not title or len(title)>140:
             raise ValueError("official Scala 2025/26 work heading absent")
         text=clean(html)
-        m=re.search(r"\\bOpera\\s+"+re.escape(title)+
-                    r"\\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,4})"
-                    r"\\s+Dal\\s+\\d{1,2}\\s+",text)
+        m=re.search(r"\bOpera\s+"+re.escape(title)+
+                    r"\s+([A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,4})"
+                    r"\s+Dal\s+\d{1,2}\s+",text)
         if not m:
             raise ValueError("official Scala 2025/26 work/composer header absent")
         composer=m.group(1).strip()
