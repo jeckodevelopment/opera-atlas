@@ -2,15 +2,15 @@
   "schema_version": 1,
   "year": 2026,
   "period": "2026-01-01/2026-06-30",
-  "checked_at": "2026-11-24T07:24:05+00:00",
+  "checked_at": "2026-11-24T13:28:40+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
-  "historical_seed_count": 6,
-  "venues_seeded": 5,
-  "seed_pages_acquired": 5,
-  "detail_pages_attempted": 42,
-  "detail_pages_acquired": 42,
+  "historical_seed_count": 8,
+  "venues_seeded": 7,
+  "seed_pages_acquired": 8,
+  "detail_pages_attempted": 64,
+  "detail_pages_acquired": 64,
   "credited_opera_observations": 133,
   "jan_jun_unverified_event_observations": 93,
   "deferred_per_host": {},
@@ -67,7 +67,6 @@
         "https://www.teatrolafenice.it/event/concertoriccardofrizzasinopoliperosi/",
         "https://www.teatrolafenice.it/event/evento-25-26-il-piccolo-principe/",
         "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
-        "https://www.teatrolafenice.it/event/fedora/",
         "https://www.teatrolafenice.it/event/la-clemenza-di-tito/",
         "https://www.teatrolafenice.it/event/percorsi-della-danza-cinema-e-danza-il-musical/",
         "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
@@ -79,8 +78,7 @@
         "https://www.teatrolafenice.it/event/stagione-25-26-pagliacci/",
         "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
         "https://www.teatrolafenice.it/event/stagione-25-26-the-telephone-trouble-in-tahiti/",
-        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
-        "https://www.teatrolafenice.it/event/zsigmond-gerloczy/"
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
       ],
       "facts": []
     },
@@ -103,9 +101,49 @@
     {
       "key": "massimo-2025-26",
       "venue_id": "oa-v-000009",
-      "url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
-      "status": "unverified",
-      "failure": "FetchUnavailable",
+      "url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "links": [
+        "https://www.teatromassimo.it/event/aida/",
+        "https://www.teatromassimo.it/event/aleko-pagliacci/",
+        "https://www.teatromassimo.it/event/beethoven-missa-solemnis/",
+        "https://www.teatromassimo.it/event/beethoven-nona-sinfonia/",
+        "https://www.teatromassimo.it/event/beethoven-poulenc/",
+        "https://www.teatromassimo.it/event/caravaggio/",
+        "https://www.teatromassimo.it/event/cavalleria-rusticana-2/",
+        "https://www.teatromassimo.it/event/concerto-di-capodanno-2/",
+        "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+        "https://www.teatromassimo.it/event/don-quichotte/",
+        "https://www.teatromassimo.it/event/ferro-prokofiev-stravinsky/",
+        "https://www.teatromassimo.it/event/il-gattopardo/",
+        "https://www.teatromassimo.it/event/il-lago-dei-cigni/",
+        "https://www.teatromassimo.it/event/la-bella-addormentata/",
+        "https://www.teatromassimo.it/event/la-boheme-3/",
+        "https://www.teatromassimo.it/event/le-convenienze-e-inconvenienze-teatrali/",
+        "https://www.teatromassimo.it/event/mahler-il-titano/",
+        "https://www.teatromassimo.it/event/orchestra-del-conservatorio-scarlatti/",
+        "https://www.teatromassimo.it/event/orchestra-jazz-siciliana-the-brass-group-2/",
+        "https://www.teatromassimo.it/event/orchestra-nazionale-barocca-dei-conservatori-3/",
+        "https://www.teatromassimo.it/event/orchestra-nazionale-dei-conservatori/",
+        "https://www.teatromassimo.it/event/rigoletto-2/",
+        "https://www.teatromassimo.it/event/rossini-petite-messe-solennelle/",
+        "https://www.teatromassimo.it/event/semiramide/"
+      ],
+      "facts": []
+    },
+    {
+      "key": "bellini-catania-2025-26",
+      "venue_id": "oa-vd-000046",
+      "url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+      "status": "scanned",
+      "links": [],
+      "facts": []
+    },
+    {
+      "key": "filarmonico-verona-2026",
+      "venue_id": "oa-vd-000019",
+      "url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+      "status": "scanned",
       "links": [],
       "facts": []
     }
@@ -1139,16 +1177,6 @@
     {
       "source_key": "fenice-2025-26",
       "venue_id": "oa-v-000008",
-      "url": "https://www.teatrolafenice.it/event/fedora/",
-      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
-      "status": "scanned",
-      "facts": [],
-      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
-      "credited_fact_count": 0
-    },
-    {
-      "source_key": "fenice-2025-26",
-      "venue_id": "oa-v-000008",
       "url": "https://www.teatrolafenice.it/event/la-clemenza-di-tito/",
       "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
       "status": "scanned",
@@ -1776,13 +1804,243 @@
       "credited_fact_count": 5
     },
     {
-      "source_key": "fenice-2025-26",
-      "venue_id": "oa-v-000008",
-      "url": "https://www.teatrolafenice.it/event/zsigmond-gerloczy/",
-      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/aida/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "scanned",
       "facts": [],
-      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/aleko-pagliacci/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/beethoven-missa-solemnis/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/beethoven-nona-sinfonia/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/beethoven-poulenc/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/caravaggio/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/cavalleria-rusticana-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/concerto-di-capodanno-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/don-quichotte/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/ferro-prokofiev-stravinsky/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/il-gattopardo/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/il-lago-dei-cigni/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/la-bella-addormentata/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/la-boheme-3/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/le-convenienze-e-inconvenienze-teatrali/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/mahler-il-titano/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/orchestra-del-conservatorio-scarlatti/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/orchestra-jazz-siciliana-the-brass-group-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/orchestra-nazionale-barocca-dei-conservatori-3/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/orchestra-nazionale-dei-conservatori/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/rigoletto-2/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/rossini-petite-messe-solennelle/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
+      "credited_fact_count": 0
+    },
+    {
+      "source_key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/event/semiramide/",
+      "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+      "status": "scanned",
+      "facts": [],
+      "credited_parser_status": "no_credited_opera_dates",
       "credited_fact_count": 0
     },
     {
