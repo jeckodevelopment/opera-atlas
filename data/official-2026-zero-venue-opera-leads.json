@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "provenance": "First-party official performances verified 2026-11-24. Read-only discovery, no certification or automatic publication. Macerata clocks unverified and therefore null. School/under-30 and nonopera concerts excluded.",
+  "provenance": "First-party official performance audit (24 November 2026). Read-only leads covering six physical venues; no full-season certification, no automatic publication. Macerata and Torre del Lago clocks unverified and null. School presentations, concerts, gala, ballet, film excluded.",
   "records": [
     {
       "venue_id": "oa-v-000002",
@@ -178,6 +178,138 @@
         [
           "2026-01-25",
           "15:30"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "dates": [
+        [
+          "2026-07-17",
+          null
+        ],
+        [
+          "2026-07-24",
+          null
+        ],
+        [
+          "2026-08-01",
+          null
+        ],
+        [
+          "2026-08-09",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "dates": [
+        [
+          "2026-07-18",
+          null
+        ],
+        [
+          "2026-07-31",
+          null
+        ],
+        [
+          "2026-08-08",
+          null
+        ],
+        [
+          "2026-08-21",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "title": "La fanciulla del West",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "dates": [
+        [
+          "2026-08-29",
+          null
+        ],
+        [
+          "2026-09-05",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "dates": [
+        [
+          "2026-08-07",
+          null
+        ],
+        [
+          "2026-08-22",
+          null
+        ],
+        [
+          "2026-09-04",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.puccinifestival.it/edizione-2026/",
+      "dates": [
+        [
+          "2026-07-25",
+          null
+        ],
+        [
+          "2026-08-06",
+          null
+        ],
+        [
+          "2026-08-28",
+          null
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
+      "dates": [
+        [
+          "2026-02-13",
+          "21:00"
+        ],
+        [
+          "2026-02-15",
+          "17:30"
         ]
       ]
     }
