@@ -14,16 +14,16 @@ class HistoricalH1PublicationTests(unittest.TestCase):
         cls.approved=approved_historical_h1()
 
     def test_exact_111_dated_showtimes_and_stable_ids(self):
-        self.assertEqual(20,len(self.approved))
+        self.assertEqual(23,len(self.approved))
         records=[p for p in self.manifest["productions"] if p["source_url"] in self.approved]
-        self.assertEqual(20,len(records))
-        self.assertEqual(111,sum(len(p["dates"]) for p in records))
-        self.assertEqual(111,sum(len(a["dates"]) for a in self.approved.values()))
+        self.assertEqual(23,len(records))
+        self.assertEqual(117,sum(len(p["dates"]) for p in records))
+        self.assertEqual(117,sum(len(a["dates"]) for a in self.approved.values()))
         canonical=assemble(self.manifest,self.registry)
         published=[p for p in canonical["performances"]
                    if p["source_url"] in self.approved]
-        self.assertEqual(111,len(published))
-        self.assertEqual(111,len({p["id"] for p in published}))
+        self.assertEqual(117,len(published))
+        self.assertEqual(117,len({p["id"] for p in published}))
         self.assertTrue(all(p["time_known"] and p["starts_at"]
                             for p in published))
 
@@ -83,6 +83,42 @@ class HistoricalH1PublicationTests(unittest.TestCase):
                          (rows[0]["canonical_title"],rows[0]["official_source_title"],
                           rows[0]["composer"]))
         self.assertEqual(9,len(rows[0]["dates"]))
+
+    def test_pisa_2026_six_public_recite_frozen_and_unique(self):
+        urls={
+            "https://teatrodipisa.it/spettacolo/carmen/":
+                ("Carmen","Georges Bizet",[["2026-01-23","20:30"],["2026-01-25","15:30"]]),
+            "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/":
+                ("The Turn of the Screw","Benjamin Britten",
+                 [["2026-02-27","20:30"],["2026-03-01","15:30"]]),
+            "https://teatrodipisa.it/spettacolo/lelisir-damore/":
+                ("L’elisir d’amore","Gaetano Donizetti",
+                 [["2026-03-27","20:30"],["2026-03-29","15:30"]]),
+        }
+        rows=[p for p in self.manifest["productions"] if p["source_url"] in urls]
+        self.assertEqual(3,len(rows))
+        from scripts.build_verified_catalog import build
+        canon=assemble(self.manifest,self.registry)
+        for row in rows:
+            title,composer,dates=urls[row["source_url"]]
+            self.assertEqual((title,composer,dates,"Teatro Verdi","Pisa"),
+                             (row["title"],row["composer"],row["dates"],
+                              row["venue"],row["municipality"]))
+            pub=[p for p in canon["performances"] if p["source_url"]==row["source_url"]]
+            self.assertEqual(2,len(pub))
+            self.assertTrue(all(p["time_known"] for p in pub))
+            for field,value in (("venue","Other Theatre"),("composer","Other composer")):
+                changed=copy.deepcopy(self.manifest)
+                replacement=next(p for p in changed["productions"] if p["key"]==row["key"])
+                replacement[field]=value
+                with self.assertRaises(ValueError):
+                    build(changed)
+            changed=copy.deepcopy(self.manifest)
+            replacement=next(p for p in changed["productions"] if p["key"]==row["key"])
+            replacement["dates"][0][1]="22:30"
+            with self.assertRaises(ValueError):
+                build(changed)
+        self.assertEqual(6,sum(len(p["dates"]) for p in rows))
 
     def test_existing_2027_routes_remain_unchanged(self):
         fenice=[s for s in self.registry["stagings"].values()
