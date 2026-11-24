@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "note": "Frozen, exact-source observations from national retrospective batch. The 2026 initial programming can include dance, concerts, educational activities, films and prose. Decisions never affect a future event with a different URL, title, date or time.",
+  "decisions": [
+    {
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/in-orbita-in-quartetto-allopera",
+      "event_title": "In Orbita &#8211; In quartetto all&#8217;opera",
+      "date": "2026-07-12",
+      "time": "21:00",
+      "venue": "Villa del Carmine",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/insights/2026-07-18",
+      "event_title": "Rediscovering the ancient in the 20th century: myth and the Mediterranean in Stravinskij and Casella",
+      "date": "2026-07-18",
+      "time": "10:00",
+      "venue": "Auditorium della Fondazione Paolo Grassi, Martina Franca",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/concerto-sinfonico-2026",
+      "event_title": "Concerto sinfonico",
+      "date": "2026-07-19",
+      "time": "21:00",
+      "venue": "Palazzo Ducale, Martina Franca",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/vennero-da-ogni-dove/2026-07-20",
+      "event_title": "Vennero da ogni dove. Narrar cantando umanità in cammino",
+      "date": "2026-07-20",
+      "time": "21:00",
+      "venue": "Chiostro di San Domenico, Martina Franca",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Il cambiamento era incessante",
+      "date": "2026-09-16",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Kammermusik n. 1",
+      "date": "2026-09-26",
+      "time": "19:00",
+      "venue": "Galleria Estense, Sala dei Veneti",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Voci inaudite",
+      "date": "2026-09-26",
+      "time": "23:30",
+      "venue": "Chiesa di San Carlo",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Kattivissimi and friends… all&#8217;Opera",
+      "date": "2026-09-27",
+      "time": "19:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Letteralmente Verdi",
+      "date": "2026-09-27",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Ma l&#8217;amor mio non muore!",
+      "date": "2026-09-30",
+      "time": "23:00",
+      "venue": "Sala Truffaut",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Viva Verdi",
+      "date": "2026-10-02",
+      "time": "22:30",
+      "venue": "Teatro del Popolo, Concordia sulla Secchia (MO)",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Kammermusik n. 2",
+      "date": "2026-10-03",
+      "time": "19:00",
+      "venue": "Palazzo Ducale di Sassuolo",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Concerto di Gala",
+      "date": "2026-10-04",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "A casa Bononcini",
+      "date": "2026-10-09",
+      "time": "22:30",
+      "venue": "Chiesa di San Carlo",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Messa da Requiem",
+      "date": "2026-10-10",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "event_title": "Pierino e il lupo",
+      "date": "2026-10-10",
+      "time": "11:00",
+      "venue": "Accademia del Teatro Comunale",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Dalla Boemia al Ducato di Modena",
+      "date": "2026-10-11",
+      "time": "19:00",
+      "venue": "Temple Theater /Teatro A. Rompianesi, Sassuolo",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Mamma: tributo a Luciano Pavarotti e Henry Mancini",
+      "date": "2026-10-12",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Filarmonie Future",
+      "date": "2026-10-13",
+      "time": "22:30",
+      "venue": "Teatro Comunale di Carpi",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "La preghiera nell’opera lirica",
+      "date": "2026-10-17",
+      "time": "20:00",
+      "venue": "Chiesa di Sant'Agostino",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Le maschere allo specchio",
+      "date": "2026-10-17",
+      "time": "22:30",
+      "venue": "Ridotto del Teatro",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "event_title": "Pierino e il lupo",
+      "date": "2026-10-17",
+      "time": "11:00",
+      "venue": "Accademia del Teatro Comunale",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "Caterina Barbieri e Fontanamix ensemble",
+      "date": "2026-11-12",
+      "time": "21:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "event_title": "Pierino e il lupo",
+      "date": "2026-11-21",
+      "time": "11:00",
+      "venue": "Accademia del Teatro Comunale",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "event_title": "Verdi Game",
+      "date": "2026-11-25",
+      "time": "10:45",
+      "venue": "Teatro Garibaldi - Figline e Incisa Valdarno",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/",
+      "event_title": "Concerto di Gala del corso rossiniano",
+      "date": "2026-11-26",
+      "time": "20:30",
+      "venue": "Teatro Comunale di San Giovanni in Persiceto",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "event_title": "Verdi Game",
+      "date": "2026-11-27",
+      "time": "10:45",
+      "venue": "Sala Topical - Montespertoli",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatroalfieriasti.it/event/arrivato-a-questo-punto/",
+      "event_title": "Arrivato a questo punto",
+      "date": "2026-11-28",
+      "time": "21:00",
+      "venue": "Teatro Alfieri",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "event_title": "Pierino e il lupo",
+      "date": "2026-11-28",
+      "time": "11:00",
+      "venue": "Accademia del Teatro Comunale",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/professori-dellorchestra-del-maggio-grassina-2026",
+      "event_title": "Professori dell'Orchestra del Maggio",
+      "date": "2026-11-29",
+      "time": "17:00",
+      "venue": "Parrocchia di S. Michele Arcangelo - Grassina (Bagno a Ripoli)",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/professori-dellorchestra-del-maggio-greve-dicembre-2026",
+      "event_title": "Professori dell'Orchestra del Maggio",
+      "date": "2026-11-29",
+      "time": "16:30",
+      "venue": "Chiesa di Santa Maria Assunta - Panzano in Chianti (Greve in Chianti)",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "event_title": "Verdi Game",
+      "date": "2026-12-03",
+      "time": "11:00",
+      "venue": "Teatro Il Momento - Empoli",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatroalfieriasti.it/event/canzoni-animate/",
+      "event_title": "Canzoni animate",
+      "date": "2026-12-04",
+      "time": "21:00",
+      "venue": "Teatro Alfieri",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/studenti-allopera-il-flauto-magico-2026/",
+      "event_title": "Studenti all&#8217;opera! &#8211; Il flauto magico",
+      "date": "2026-12-04",
+      "time": "11:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "event_title": "Verdi Game",
+      "date": "2026-12-04",
+      "time": "10:00",
+      "venue": "Teatro Il Momento - Empoli",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "event_title": "Verdi Game",
+      "date": "2026-12-04",
+      "time": "11:30",
+      "venue": "Teatro Il Momento - Empoli",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/concerto-di-natale-2026",
+      "event_title": "Concerto di Natale",
+      "date": "2026-12-06",
+      "time": "18:00",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatroalfieriasti.it/event/orlando-la-commedia/",
+      "event_title": "Orlando. La commedia",
+      "date": "2026-12-10",
+      "time": "21:00",
+      "venue": "Teatro Alfieri",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "event_title": "Roberto Bolle and Friends",
+      "date": "2026-12-10",
+      "time": "20:00",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "decision": "exclude_nonopera",
+      "reason": "dance_gala_not_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/concerto/angius-grazia-2026/",
+      "event_title": "Angius, Grazia",
+      "date": "2026-12-11",
+      "time": "20:30",
+      "venue": "Teatro Auditorium Manzoni",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "event_title": "Roberto Bolle and Friends",
+      "date": "2026-12-11",
+      "time": "20:00",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "decision": "exclude_nonopera",
+      "reason": "dance_gala_not_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "event_title": "Pierino e il lupo",
+      "date": "2026-12-12",
+      "time": "11:00",
+      "venue": "Accademia del Teatro Comunale",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "event_title": "Roberto Bolle and Friends",
+      "date": "2026-12-12",
+      "time": "15:30",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "decision": "exclude_nonopera",
+      "reason": "dance_gala_not_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "event_title": "Roberto Bolle and Friends",
+      "date": "2026-12-12",
+      "time": "20:00",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "decision": "exclude_nonopera",
+      "reason": "dance_gala_not_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/concerto/sauer-2026/",
+      "event_title": "Sauer",
+      "date": "2026-12-13",
+      "time": "11:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-iv-appuntamento-2026/",
+      "event_title": "Viaggio nell&#8217;Elisir d&#8217;amore",
+      "date": "2026-12-13",
+      "time": "11:00",
+      "venue": "Circolo Culturale Lirico Bolognese",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/speciale/il-re-leone-live-in-concert-2026/",
+      "event_title": "Il Re Leone Live in Concert",
+      "date": "2026-12-18",
+      "time": "20:30",
+      "venue": "Teatro EuropAuditorium",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.teatroalfieriasti.it/event/concerto-gospel/",
+      "event_title": "Concerto Gospel",
+      "date": "2026-12-19",
+      "time": "21:00",
+      "venue": "Teatro Alfieri",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/speciale/il-re-leone-live-in-concert-2026/",
+      "event_title": "Il Re Leone Live in Concert",
+      "date": "2026-12-19",
+      "time": "16:00",
+      "venue": "Teatro EuropAuditorium",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/concerto-astrolabio-2026",
+      "event_title": "Concerto Astrolabio",
+      "date": "2026-12-20",
+      "time": "11:30",
+      "venue": "Teatro del Maggio - Auditorium",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-concerto-di-natale-2026/",
+      "event_title": "Concerto di Natale",
+      "date": "2026-12-20",
+      "time": "11:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/speciale/il-re-leone-live-in-concert-2026/",
+      "event_title": "Il Re Leone Live in Concert",
+      "date": "2026-12-20",
+      "time": "16:00",
+      "venue": "Teatro EuropAuditorium",
+      "decision": "exclude_nonopera",
+      "reason": "theatre_recital_film_or_other_nonopera_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "event_title": "Verdi Game",
+      "date": "2026-12-22",
+      "time": "10:30",
+      "venue": "Teatro delle Arti - Lastra a Signa",
+      "decision": "exclude_nonopera",
+      "reason": "academy_outreach_or_educational_program",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/concerto/stenz-2026/",
+      "event_title": "Stenz",
+      "date": "2026-12-31",
+      "time": "16:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "decision": "exclude_nonopera",
+      "reason": "concert_or_instrumental_program_not_staged_lyric_opera",
+      "provenance": "Original first-party event fact; exact source URL, name, day and clock. Source-scoped classification only."
+    }
+  ]
+}
