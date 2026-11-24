@@ -1308,6 +1308,16 @@
         "https://www.ninorota.com/il-cappello-di-paglia-di-firenze/",
         "https://corago.unibo.it/opera/Z000039311"
       ]
+    },
+    "la-fanciulla-del-west": {
+      "librettist": "Guelfo Civinini e Carlo Zangarini, dal dramma di David Belasco",
+      "premiere_year": 1910,
+      "premiere_venue": "Metropolitan Opera House",
+      "premiere_city": "New York",
+      "sources": [
+        "https://www.puccinimuseum.org/giacomo-puccini/le-opere/la-fanciulla-del-west/",
+        "https://archives.metopera.org/MetOperaSearch/record.jsp?dockey=0361448"
+      ]
     }
   },
   "works_by_id": {
