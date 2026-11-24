@@ -74,6 +74,7 @@ def validated_venue_leads(document, venues):
         "oa-v-000002": ("Como", "Teatro Sociale", "teatrosocialecomo.it"),
         "oa-v-000007": ("Verona", "Arena di Verona", "www.arena.it"),
         "oa-vd-000036": ("Macerata", "Arena Sferisterio", "www.sferisterio.it"),
+        "oa-vd-000019": ("Verona", "Teatro Filarmonico", "www.arena.it"),
     }
     result=defaultdict(list)
     seen=set()
