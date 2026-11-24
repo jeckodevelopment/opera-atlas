@@ -308,6 +308,7 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
     venue_priorities = []
     venue_status_counts = Counter()
     for v in venue_rows:
+        vid = v["id"]
         venue_months = [r for r in rows if r["venue_id"] == v["id"]]
         total = sum(r["published_showtimes"] for r in venue_months)
         status = v.get("calendar_status", "unknown")
