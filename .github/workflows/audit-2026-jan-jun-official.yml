@@ -1,0 +1,97 @@
+name: 2026 official archives — January to June
+
+on:
+  pull_request:
+    paths:
+      - 'data/official-2026-retrospective-season-seeds.json'
+      - 'scripts/audit_2026_jan_jun_official.py'
+      - 'tests/test_audit_2026_jan_jun_official.py'
+      - '.github/workflows/audit-2026-jan-jun-official.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_2026_jan_jun_official.py'
+      - '.github/workflows/audit-2026-jan-jun-official.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: opera-atlas-2026-first-half-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_audit_2026_jan_jun_official -v
+
+  scan:
+    needs: tests
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Scan confirmed 2025/26 official season indexes
+        run: |
+          python -m scripts.audit_2026_jan_jun_official --allow-network --workers 5 --max-details 240
+      - name: Verify read-only report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('public/diagnostics/atlas-2026-jan-jun-official-archive.json').read_text())
+          assert x['year']==2026 and x['read_only'] and not x['catalog_updated']
+          assert x['complete_seasons_certified']==0 and x['historical_seed_count']>=5
+          print('Seeds acquired:',x['seed_pages_acquired'])
+          print('Details acquired:',x['detail_pages_acquired'])
+          print('2026 Jan-Jun observations:',x['jan_jun_unverified_event_observations'])
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: opera-atlas-2026-jan-jun-official-archives
+          path: public/diagnostics/atlas-2026-jan-jun-official-archive.json
+          retention-days: 30
+
+  publish:
+    needs: scan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093a # v4
+        with:
+          name: opera-atlas-2026-jan-jun-official-archives
+          path: public/diagnostics
+      - name: Publish only read-only diagnostics, retry on updated main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp public/diagnostics/atlas-2026-jan-jun-official-archive.json /tmp/atlas-2026-jan-jun-official-archive.json
+          for attempt in 1 2 3 4 5 6 7 8; do
+            git fetch --no-tags origin main
+            git checkout -B publish-2026-first-half FETCH_HEAD
+            mkdir -p public/diagnostics
+            cp /tmp/atlas-2026-jan-jun-official-archive.json public/diagnostics/atlas-2026-jan-jun-official-archive.json
+            git add -- public/diagnostics/atlas-2026-jan-jun-official-archive.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'data(audit): scan first-half 2026 official archives [skip ci]'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
