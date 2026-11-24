@@ -5,6 +5,13 @@ on:
     types: [completed]
     branches: [main]
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/publish_integration_index.py'
+      - 'data/composer-registry.json'
+      - 'data/composer-portraits.json'
+      - '.github/workflows/publish-integration-index.yml'
   schedule:
     - cron: '43 10 * * *'
 permissions:
