@@ -84,3 +84,13 @@ class NovaraMixedProgramTests(unittest.TestCase):
 
 if __name__=="__main__":
     unittest.main()
+
+
+class Novara2026ReconciliationTests(unittest.TestCase):
+    def test_published_two_tickets_not_four(self):
+        from scripts.publish_programs import publish
+        item=next(p for p in publish(check=True)["programs"] if p["source_url"]=="https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html")
+        self.assertEqual(2,len(item["components"]))
+        self.assertEqual(2,len(item["performances"]))
+        self.assertEqual({"2026-12-11","2026-12-13"},{p["local_date"] for p in item["performances"]})
+        self.assertEqual("oa-w-000086",item["components"][1]["work_id"])
