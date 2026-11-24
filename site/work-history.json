@@ -1267,6 +1267,17 @@
         "https://www.brittenpearsarts.org/music/the-turn-of-the-screw",
         "https://www.boosey.com/opera/moreDetails?musicID=4880"
       ]
+    },
+    "la-costanza-trionfante": {
+      "librettist": "Antonio Marchi",
+      "premiere_year": 1716,
+      "premiere_venue": "Teatro San Moisè",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://corago.unibo.it/opera/APC0004700",
+        "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
+        "https://www.comune.modena.it/vivere-modena/eventi/2026/modena-belcanto-festival/la-costanza-trionfante"
+      ]
     }
   },
   "works_by_id": {
