@@ -1,17 +1,19 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T19:46:50+00:00",
+  "generated_at": "2026-11-24T20:40:01+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
   "input_event_groups": 121,
   "counts": {
+    "catalog_same_work_day_clock_official_pisa_venue_unprovided": 6,
     "catalog_same_work_day_venue_clock_discrepancy": 11,
     "catalog_same_work_day_venue_exact_clock": 2,
-    "official_nonopera_first_party_detail": 21,
+    "official_nonopera_first_party_detail": 31,
     "official_nonopera_source_scoped": 3,
-    "requires_official_genre_and_catalog_review": 84
+    "official_opera_unpublished_candidate_first_party_review": 6,
+    "requires_official_genre_and_catalog_review": 62
   },
   "by_source": {
     "bellini-catania-opera-2026-27": {
@@ -20,12 +22,12 @@
       "requires_official_genre_and_catalog_review": 6
     },
     "bologna-comunale-opera-2027": {
-      "official_nonopera_first_party_detail": 8,
+      "official_nonopera_first_party_detail": 12,
       "official_nonopera_source_scoped": 3,
-      "requires_official_genre_and_catalog_review": 9
+      "requires_official_genre_and_catalog_review": 5
     },
     "maggio-fiorentino-calendar-2027": {
-      "requires_official_genre_and_catalog_review": 4
+      "official_nonopera_first_party_detail": 4
     },
     "modena-teatro-opera-2026-27": {
       "catalog_same_work_day_venue_clock_discrepancy": 7,
@@ -38,10 +40,14 @@
       "requires_official_genre_and_catalog_review": 4
     },
     "pisa-future-calendar": {
-      "requires_official_genre_and_catalog_review": 32
+      "catalog_same_work_day_clock_official_pisa_venue_unprovided": 4,
+      "official_nonopera_first_party_detail": 2,
+      "official_opera_unpublished_candidate_first_party_review": 6,
+      "requires_official_genre_and_catalog_review": 20
     },
     "pisa-verdi-opera-2026-27": {
-      "requires_official_genre_and_catalog_review": 5
+      "catalog_same_work_day_clock_official_pisa_venue_unprovided": 2,
+      "requires_official_genre_and_catalog_review": 3
     }
   },
   "observations": [
@@ -488,9 +494,14 @@
         "https://www.tcbo.it/evento/accademia/domenica-in-musica-ii-appuntamento-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-ii-appuntamento-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-ii-appuntamento-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -525,9 +536,14 @@
         "https://www.tcbo.it/evento/accademia/domenica-in-musica-iii-appuntamento-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-iii-appuntamento-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-iii-appuntamento-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -541,9 +557,14 @@
         "https://www.tcbo.it/en/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.tcbo.it/en/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -647,9 +668,14 @@
         "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-iv-appuntamento-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-iv-appuntamento-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-iv-appuntamento-2026/",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -758,9 +784,14 @@
         "https://www.maggiofiorentino.com/events/verdi-game-2026"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "interactive_educational_theatre",
+        "official_detail_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "official_genre_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -774,9 +805,14 @@
         "https://www.maggiofiorentino.com/events/verdi-game-2026"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "interactive_educational_theatre",
+        "official_detail_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "official_genre_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -790,9 +826,14 @@
         "https://www.maggiofiorentino.com/events/verdi-game-2026"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "interactive_educational_theatre",
+        "official_detail_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "official_genre_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -806,9 +847,14 @@
         "https://www.maggiofiorentino.com/events/verdi-game-2026"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "interactive_educational_theatre",
+        "official_detail_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "official_genre_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1646,9 +1692,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_unpublished_candidate_first_party_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera",
+        "venue": "Teatro Verdi",
+        "official_detail_url": "https://teatrodipisa.it/de/carmen-liberta-e-dionisiaco-nella-nuova-produzione-con-la-regia-di-tonon-e-la-direzione-di-venezi/",
+        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1662,9 +1713,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_unpublished_candidate_first_party_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera",
+        "venue": "Teatro Verdi",
+        "official_detail_url": "https://teatrodipisa.it/de/carmen-liberta-e-dionisiaco-nella-nuova-produzione-con-la-regia-di-tonon-e-la-direzione-di-venezi/",
+        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1678,9 +1734,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_unpublished_candidate_first_party_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera",
+        "venue": "Teatro Verdi",
+        "official_detail_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
+        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1694,9 +1755,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_unpublished_candidate_first_party_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera",
+        "venue": "Teatro Verdi",
+        "official_detail_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
+        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1710,9 +1776,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_unpublished_candidate_first_party_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera",
+        "venue": "Teatro Verdi",
+        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/lelisir-damore/",
+        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1726,9 +1797,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_unpublished_candidate_first_party_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera",
+        "venue": "Teatro Verdi",
+        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/lelisir-damore/",
+        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1823,9 +1899,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "school_only_rehearsal",
+        "official_detail_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "official_genre_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1856,8 +1937,15 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
-      "catalog_matches": [],
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "Dido and Æneas",
+          "clock": "20:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
+          "venue": "Teatro Verdi"
+        }
+      ],
       "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
@@ -1873,8 +1961,15 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
-      "catalog_matches": [],
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "Dido and Æneas",
+          "clock": "15:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
+          "venue": "Teatro Verdi"
+        }
+      ],
       "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
@@ -2095,9 +2190,14 @@
         "https://teatrodipisa.it/zh/calendario/categoria/opera/elenco/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "school_only_rehearsal",
+        "official_detail_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "official_genre_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+        "reason": "Official first-party calendar classifies this as a concert, educational theatre or restricted school rehearsal rather than an ordinary public opera performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2122,8 +2222,15 @@
         "https://teatrodipisa.it/zh/calendario/categoria/opera/elenco/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
-      "catalog_matches": [],
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "L'occasione fa il ladro",
+          "clock": "20:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+          "venue": "Teatro Verdi"
+        }
+      ],
       "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
@@ -2149,8 +2256,15 @@
         "https://teatrodipisa.it/zh/calendario/categoria/opera/elenco/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
-      "catalog_matches": [],
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "L'occasione fa il ladro",
+          "clock": "15:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+          "venue": "Teatro Verdi"
+        }
+      ],
       "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
@@ -2213,8 +2327,15 @@
         "https://teatrodipisa.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
-      "catalog_matches": [],
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "L'occasione fa il ladro",
+          "clock": "20:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+          "venue": "Teatro Verdi"
+        }
+      ],
       "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
@@ -2229,8 +2350,15 @@
         "https://teatrodipisa.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
-      "catalog_matches": [],
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "L'occasione fa il ladro",
+          "clock": "15:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+          "venue": "Teatro Verdi"
+        }
+      ],
       "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
