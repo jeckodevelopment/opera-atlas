@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "provenance": "Each URL individually retrieved from the institution's official web presence, November 2026; no generated URL patterns",
+  "seeds": [
+    {
+      "venue_id": "oa-v-000001",
+      "city": "Torino",
+      "key": "regio-2025-26",
+      "official_url": "https://www.teatroregio.torino.it/",
+      "url": "https://www.teatroregio.torino.it/stagione25-26",
+      "season": "2025/26"
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "key": "scala-2025-26",
+      "official_url": "https://www.teatroallascala.org/",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "season": "2025/26"
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "key": "fenice-2025-26",
+      "official_url": "https://www.teatrolafenice.it/",
+      "url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "season": "2025/26"
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "city": "Bologna",
+      "key": "bologna-2026-opera",
+      "official_url": "https://www.tcbo.it/",
+      "url": "https://www.tcbo.it/stagione-presente/?_tipo=opera",
+      "season": "2026"
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "city": "Bologna",
+      "key": "bologna-2026-calendar",
+      "official_url": "https://www.tcbo.it/",
+      "url": "https://www.tcbo.it/stagione-presente/?vista=calendario",
+      "season": "2026"
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "city": "Palermo",
+      "key": "massimo-2025-26",
+      "official_url": "https://www.teatromassimo.it/",
+      "url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
+      "season": "2025/26"
+    }
+  ]
+}
