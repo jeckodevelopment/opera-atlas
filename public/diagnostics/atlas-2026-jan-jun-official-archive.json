@@ -2,7 +2,7 @@
   "schema_version": 1,
   "year": 2026,
   "period": "2026-01-01/2026-06-30",
-  "checked_at": "2026-11-24T13:28:40+00:00",
+  "checked_at": "2026-11-24T13:34:56+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
@@ -1810,7 +1810,7 @@
       "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "scanned",
       "facts": [],
-      "credited_parser_status": "no_credited_opera_dates",
+      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
       "credited_fact_count": 0
     },
     {
@@ -1890,7 +1890,7 @@
       "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "scanned",
       "facts": [],
-      "credited_parser_status": "no_credited_opera_dates",
+      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
       "credited_fact_count": 0
     },
     {
@@ -2040,7 +2040,7 @@
       "found_on": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "status": "scanned",
       "facts": [],
-      "credited_parser_status": "no_credited_opera_dates",
+      "credited_parser_status": "credited_opera_parser_unverified:ValueError",
       "credited_fact_count": 0
     },
     {
