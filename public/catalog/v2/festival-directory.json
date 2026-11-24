@@ -211,6 +211,16 @@
       "official_url": "https://www.sferisterio.it/",
       "editions": [
         {
+          "id": "macerata-opera-festival-2026",
+          "edition": "2026",
+          "official_url": "https://www.sferisterio.it/",
+          "staging_ids": [
+            "oa-s-000337",
+            "oa-s-000338",
+            "oa-s-000339"
+          ]
+        },
+        {
           "id": "macerata-opera-festival-2027",
           "edition": "2027",
           "official_url": "https://www.sferisterio.it/",
@@ -224,7 +234,10 @@
       "staging_ids": [
         "oa-s-000161",
         "oa-s-000166",
-        "oa-s-000198"
+        "oa-s-000198",
+        "oa-s-000337",
+        "oa-s-000338",
+        "oa-s-000339"
       ]
     },
     {

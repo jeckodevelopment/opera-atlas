@@ -632,6 +632,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-ravenna-macbeth:2026-01-30",
+      "starts_at": "2026-01-30T20:00:00+01:00",
+      "local_date": "2026-01-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-cagliari-lucrezia-borgia:2026-01-31",
       "starts_at": "2026-01-31T19:00:00+01:00",
       "local_date": "2026-01-31",
@@ -647,6 +665,24 @@
       "longitude": null,
       "sources": [
         "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-ravenna-macbeth:2026-02-01",
+      "starts_at": "2026-02-01T15:30:00+01:00",
+      "local_date": "2026-02-01",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/"
       ]
     },
     {
@@ -1550,6 +1586,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-ravenna-italiana-in-algeri:2026-03-13",
+      "starts_at": "2026-03-13T20:00:00+01:00",
+      "local_date": "2026-03-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/"
+      ]
+    },
+    {
       "id": "curated:auto-cde049d5c057e0c0:2026-03-13",
       "starts_at": "2026-03-13T20:30:00+01:00",
       "local_date": "2026-03-13",
@@ -1601,6 +1655,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/semiramide/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-ravenna-italiana-in-algeri:2026-03-15",
+      "starts_at": "2026-03-15T15:30:00+01:00",
+      "local_date": "2026-03-15",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "L’italiana in Algeri",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/"
       ]
     },
     {
@@ -2594,6 +2666,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-ravenna-carmen:2026-04-24",
+      "starts_at": "2026-04-24T20:00:00+02:00",
+      "local_date": "2026-04-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-turandot:2026-04-24",
       "starts_at": "2026-04-24T20:00:00+02:00",
       "local_date": "2026-04-24",
@@ -2663,6 +2753,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-ravenna-carmen:2026-04-26",
+      "starts_at": "2026-04-26T15:30:00+02:00",
+      "local_date": "2026-04-26",
+      "time_known": true,
+      "time_label": "15:30",
+      "status": "announced",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Dante Alighieri",
+      "municipality": "Ravenna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/"
       ]
     },
     {
@@ -4214,6 +4322,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-macerata-nabucco:2026-07-17",
+      "starts_at": "2026-07-17T21:00:00+02:00",
+      "local_date": "2026-07-17",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/nabucco"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-turandot:2026-07-17",
+      "starts_at": "2026-07-17T21:15:00+02:00",
+      "local_date": "2026-07-17",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
       "id": "curated:auto-86855eb33828e6cd:2026-07-17",
       "starts_at": "2026-07-17T22:00:00+02:00",
       "local_date": "2026-07-17",
@@ -4229,6 +4373,60 @@
       "longitude": null,
       "sources": [
         "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-macerata-il-barbiere-di-siviglia:2026-07-18",
+      "starts_at": "2026-07-18T21:00:00+02:00",
+      "local_date": "2026-07-18",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-tosca:2026-07-18",
+      "starts_at": "2026-07-18T21:15:00+02:00",
+      "local_date": "2026-07-18",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-macerata-il-trovatore:2026-07-19",
+      "starts_at": "2026-07-19T21:00:00+02:00",
+      "local_date": "2026-07-19",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/il-trovatore-2026"
       ]
     },
     {
@@ -4304,6 +4502,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-macerata-il-barbiere-di-siviglia:2026-07-24",
+      "starts_at": "2026-07-24T21:00:00+02:00",
+      "local_date": "2026-07-24",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-turandot:2026-07-24",
+      "starts_at": "2026-07-24T21:15:00+02:00",
+      "local_date": "2026-07-24",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
       "id": "curated:auto-4f3383615741e8be:2026-07-25",
       "starts_at": "2026-07-25T21:00:00+02:00",
       "local_date": "2026-07-25",
@@ -4322,6 +4556,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-macerata-il-trovatore:2026-07-25",
+      "starts_at": "2026-07-25T21:00:00+02:00",
+      "local_date": "2026-07-25",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/il-trovatore-2026"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-la-boheme:2026-07-25",
+      "starts_at": "2026-07-25T21:15:00+02:00",
+      "local_date": "2026-07-25",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
       "id": "curated:auto-ff9fb11ad20bd9d7:2026-07-26",
       "starts_at": "2026-07-26T21:00:00+02:00",
       "local_date": "2026-07-26",
@@ -4337,6 +4607,24 @@
       "longitude": null,
       "sources": [
         "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-macerata-nabucco:2026-07-26",
+      "starts_at": "2026-07-26T21:00:00+02:00",
+      "local_date": "2026-07-26",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/nabucco"
       ]
     },
     {
@@ -4448,6 +4736,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-macerata-il-trovatore:2026-07-31",
+      "starts_at": "2026-07-31T21:00:00+02:00",
+      "local_date": "2026-07-31",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il trovatore",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/il-trovatore-2026"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-tosca:2026-07-31",
+      "starts_at": "2026-07-31T21:15:00+02:00",
+      "local_date": "2026-07-31",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
       "id": "curated:auto-8115e400ae8706fd:2026-08-01",
       "starts_at": "2026-08-01T21:00:00+02:00",
       "local_date": "2026-08-01",
@@ -4484,6 +4808,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-macerata-nabucco:2026-08-01",
+      "starts_at": "2026-08-01T21:00:00+02:00",
+      "local_date": "2026-08-01",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/nabucco"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-turandot:2026-08-01",
+      "starts_at": "2026-08-01T21:15:00+02:00",
+      "local_date": "2026-08-01",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
       "id": "curated:auto-4f3383615741e8be:2026-08-02",
       "starts_at": "2026-08-02T21:00:00+02:00",
       "local_date": "2026-08-02",
@@ -4499,6 +4859,132 @@
       "longitude": null,
       "sources": [
         "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-macerata-il-barbiere-di-siviglia:2026-08-02",
+      "starts_at": "2026-08-02T21:00:00+02:00",
+      "local_date": "2026-08-02",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-la-boheme:2026-08-06",
+      "starts_at": "2026-08-06T21:15:00+02:00",
+      "local_date": "2026-08-06",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-madama-butterfly:2026-08-07",
+      "starts_at": "2026-08-07T21:15:00+02:00",
+      "local_date": "2026-08-07",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-macerata-il-barbiere-di-siviglia:2026-08-08",
+      "starts_at": "2026-08-08T21:00:00+02:00",
+      "local_date": "2026-08-08",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-tosca:2026-08-08",
+      "starts_at": "2026-08-08T21:15:00+02:00",
+      "local_date": "2026-08-08",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-macerata-nabucco:2026-08-09",
+      "starts_at": "2026-08-09T21:00:00+02:00",
+      "local_date": "2026-08-09",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Arena Sferisterio",
+      "municipality": "Macerata",
+      "region": "Marche",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.sferisterio.it/macerata-opera-festival/nabucco"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-turandot:2026-08-09",
+      "starts_at": "2026-08-09T21:15:00+02:00",
+      "local_date": "2026-08-09",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
       ]
     },
     {
@@ -4772,6 +5258,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-torre-del-lago-puccini-tosca:2026-08-21",
+      "starts_at": "2026-08-21T21:15:00+02:00",
+      "local_date": "2026-08-21",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
       "id": "curated:auto-b4ae738f2728d443:2026-08-22",
       "starts_at": "2026-08-22T20:00:00+02:00",
       "local_date": "2026-08-22",
@@ -4787,6 +5291,96 @@
       "longitude": null,
       "sources": [
         "https://www.rossinioperafestival.it/archivio/stagione-2026/la-scala-di-seta/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-madama-butterfly:2026-08-22",
+      "starts_at": "2026-08-22T21:15:00+02:00",
+      "local_date": "2026-08-22",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-la-boheme:2026-08-28",
+      "starts_at": "2026-08-28T21:15:00+02:00",
+      "local_date": "2026-08-28",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-la-fanciulla-del-west:2026-08-29",
+      "starts_at": "2026-08-29T21:15:00+02:00",
+      "local_date": "2026-08-29",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "La fanciulla del West",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-madama-butterfly:2026-09-04",
+      "starts_at": "2026-09-04T21:15:00+02:00",
+      "local_date": "2026-09-04",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Madama Butterfly",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-torre-del-lago-puccini-la-fanciulla-del-west:2026-09-05",
+      "starts_at": "2026-09-05T21:15:00+02:00",
+      "local_date": "2026-09-05",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "La fanciulla del West",
+      "composer": "Giacomo Puccini",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "municipality": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
       ]
     },
     {

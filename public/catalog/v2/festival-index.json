@@ -145,6 +145,26 @@
       "photo_alt": "Teatro Giuseppe Di Stefano e Villa Margherita, sede del Luglio Musicale Trapanese"
     },
     {
+      "id": "macerata-opera-festival-2026",
+      "name": "Macerata Opera Festival",
+      "edition": "2026",
+      "city": "Macerata",
+      "region": "Marche",
+      "official_url": "https://www.sferisterio.it/",
+      "staging_ids": [
+        "oa-s-000337",
+        "oa-s-000338",
+        "oa-s-000339"
+      ],
+      "description": "Nello Sferisterio di Macerata, il festival presenta ogni estate grandi opere liriche in un teatro all’aperto dalla caratteristica architettura monumentale.",
+      "festival_id": "macerata-opera-festival",
+      "photo_file": "Macerata - Sferisterio.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Macerata_-_Sferisterio.jpg",
+      "photo_credit": "Wikimedia Commons — autore e licenza riportati nella pagina del file",
+      "photo_alt": "Arena Sferisterio, sede del Macerata Opera Festival",
+      "automatically_generated": true
+    },
+    {
       "id": "macerata-opera-festival-2027",
       "name": "Macerata Opera Festival",
       "edition": "2027",
