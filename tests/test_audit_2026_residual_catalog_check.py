@@ -126,6 +126,42 @@ class ResidualTests(unittest.TestCase):
         self.assertEqual(check(inp(bad),catalog)["counts"],
                          {"requires_official_genre_and_catalog_review":5})
 
+    def test_pisa_six_historical_shows_are_now_published_after_source_bound_import(self):
+        # Exact real-world identity: six general-public Pisa performances,
+        # no school previews and no matching solely by date/title without clock.
+        rows=[
+            ("Carmen","Georges Bizet","Carmen","2026-01-23","20:30"),
+            ("Carmen","Georges Bizet","Carmen","2026-01-25","15:30"),
+            ("The turn of the screw (il giro di vite)","Benjamin Britten",
+             "The Turn of the Screw","2026-02-27","20:30"),
+            ("The turn of the screw (il giro di vite)","Benjamin Britten",
+             "The Turn of the Screw","2026-03-01","15:30"),
+            ("L’elisir d’amore","Gaetano Donizetti","L’elisir d’amore",
+             "2026-03-27","20:30"),
+            ("L’elisir d’amore","Gaetano Donizetti","L’elisir d’amore",
+             "2026-03-29","15:30")]
+        catalog={"productions":[]}
+        groups=[]
+        for observed,composer,canonical,day,clock in rows:
+            catalog["productions"].append({"title":canonical,"composer":composer,
+                "venue":"Teatro Verdi","municipality":"Pisa",
+                "source_url":"https://teatrodipisa.it/spettacolo/official/",
+                "dates":[[day,clock]]})
+            groups.append(dict(g(observed,day,clock,venue=None,
+                urls=["https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"]),
+                source_key="pisa-future-calendar"))
+        result=check(inp(groups),catalog)
+        self.assertEqual(result["counts"],
+                         {"catalog_same_work_day_clock_official_pisa_venue_unprovided":6})
+        self.assertTrue(all(row["catalog_matches"] and not row["automatic_publication"]
+                            for row in result["observations"]))
+        wrong=[dict(groups[0],time="18:30"),dict(groups[0],date="2026-01-24"),
+               dict(groups[0],source_key="unknown"),
+               dict(groups[0],venue="Other Theatre"),
+               dict(groups[0],source_urls=["https://example.net/"])]
+        self.assertEqual(check(inp(wrong),catalog)["counts"],
+                         {"requires_official_genre_and_catalog_review":5})
+
     def test_pisa_six_official_historical_opera_dates_remain_publication_review(self):
         examples=[
             ("Carmen","2026-01-23","20:30"),("Carmen","2026-01-25","15:30"),
