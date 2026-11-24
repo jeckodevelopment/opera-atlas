@@ -7517,6 +7517,37 @@
       ]
     },
     {
+      "key": "historical-2026-venezia-fenice-venere-e-adone",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+      "dates": [
+        [
+          "2026-06-26",
+          "19:00"
+        ],
+        [
+          "2026-06-27",
+          "17:00"
+        ],
+        [
+          "2026-06-28",
+          "17:00"
+        ],
+        [
+          "2026-06-30",
+          "19:00"
+        ],
+        [
+          "2026-07-01",
+          "19:00"
+        ]
+      ]
+    },
+    {
       "key": "historical-2026h1-venezia-teatro-la-fenice-carmen",
       "title": "Carmen",
       "composer": "Georges Bizet",
