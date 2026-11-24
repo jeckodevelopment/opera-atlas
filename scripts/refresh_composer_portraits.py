@@ -64,7 +64,8 @@ def api(endpoint, **params):
         time.sleep(0.3 if attempt == 0 else 2 ** attempt)
         try:
             with urlopen(request, timeout=20) as response:
-                data = json.loads(response.read(4_000_001))
+                raw = response.read(16_000_001 if endpoint == ENTITY_DATA else 4_000_001)
+                data = json.loads(raw)
             if "error" not in data:
                 return data
             last_code = data["error"].get("code", "unknown")
@@ -106,7 +107,7 @@ def wikipedia_ids(composer, call):
                     ids.add(qid)
         except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError) as exc:
             errors.append(exc)
-    if errors and not ids:
+    if errors:
         raise WikimediaError("wikipedia_lookup_unavailable")
     return ids
 
@@ -131,15 +132,22 @@ def find_person(composer, call=api):
             raise ValueError("Invalid pinned Wikidata ID")
         ids.add(pinned)
     else:
+        # Exact page titles resolve through MediaWiki's page index, avoiding
+        # the CirrusSearch service that has repeatedly failed in production.
+        lookup_error = False
         try:
-            for lang in ("it", "en"):
-                result = call(WD, action="wbsearchentities", search=composer["name"], language=lang, type="item", limit=20)
-                ids.update(x["id"] for x in result.get("search", []) if QID.fullmatch(x["id"]))
-        except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
-            # Avoid relying on an incomplete search result.
             ids = wikipedia_ids(composer, call)
-            if not ids:
-                raise WikimediaError("identity_search_unavailable")
+        except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+            lookup_error = True
+        if not ids:
+            try:
+                for lang in ("it", "en"):
+                    result = call(WD, action="wbsearchentities", search=composer["name"], language=lang, type="item", limit=20)
+                    ids.update(x["id"] for x in result.get("search", []) if QID.fullmatch(x["id"]))
+            except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError) as exc:
+                raise WikimediaError("identity_search_unavailable") from exc
+            if lookup_error and not ids:
+                raise WikimediaError("identity_lookup_incomplete")
     if not ids:
         return None, "not_found"
     entities = entity_records(ids, call)
@@ -199,7 +207,11 @@ def commons_portrait(composer, qid, filename, call):
         if field("Copyrighted").casefold() != "false":
             return None, "rights_review"
         license = ("Public Domain", PUBLIC_DOMAIN_URL)
-    if not license or field("LicenseUrl").rstrip("/") != license[1].rstrip("/"):
+    supplied_url = field("LicenseUrl")
+    # Some Commons records still use the canonical Creative Commons HTTP URL.
+    if supplied_url.startswith("http://creativecommons.org/"):
+        supplied_url = "https://" + supplied_url[len("http://"):]
+    if not license or supplied_url.rstrip("/") != license[1].rstrip("/"):
         return None, "license_review"
     if field("Restrictions") or field("Copyrighted").lower() not in ("true", "false"):
         return None, "rights_review"
