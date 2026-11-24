@@ -99,6 +99,73 @@ class ResidualTests(unittest.TestCase):
                                {"productions":[]})["counts"],
                          {"requires_official_genre_and_catalog_review":3})
 
+    def test_pisa_official_no_venue_does_not_duplicate_six_catalogued_showtimes(self):
+        catalog={"productions":[
+            {"title":"Dido and Æneas","venue":"Teatro Verdi",
+             "municipality":"Pisa","source_url":"https://teatrodipisa.it/spettacolo/dido-and-aeneas/",
+             "dates":[["2026-10-23","20:30"],["2026-10-25","15:30"]]},
+            {"title":"L'occasione fa il ladro","venue":"Teatro Verdi",
+             "municipality":"Pisa","source_url":"https://teatrodipisa.it/spettacolo/loccasione-fa-il-ladro/",
+             "dates":[["2026-12-04","20:30"],["2026-12-06","15:30"]]}]}
+        original=[
+            ("Dido and Aeneas","2026-10-23","20:30"),
+            ("Dido and Aeneas","2026-10-25","15:30"),
+            ("L’occasione fa il ladro ossia il Cambio della valigia","2026-12-04","20:30"),
+            ("L’occasione fa il ladro ossia il Cambio della valigia","2026-12-06","15:30")]
+        groups=[dict(g(title,day,clock,venue=None,
+                       urls=["https://teatrodipisa.it/calendario/"]),
+                     source_key="pisa-verdi-opera-2026-27") for title,day,clock in original]
+        x=check(inp(groups),catalog)
+        self.assertEqual(x["counts"],{
+            "catalog_same_work_day_clock_official_pisa_venue_unprovided":4})
+        self.assertTrue(all(z["catalog_matches"][0]["venue"]=="Teatro Verdi"
+                            and not z["automatic_publication"] for z in x["observations"]))
+        bad=[dict(groups[0],time="19:30"),dict(groups[0],source_key="other"),
+             dict(groups[0],venue="Other Theatre"),dict(groups[0],date="2027-10-23"),
+             dict(groups[0],source_urls=["https://different.example/"])]
+        self.assertEqual(check(inp(bad),catalog)["counts"],
+                         {"requires_official_genre_and_catalog_review":5})
+
+    def test_pisa_six_official_historical_opera_dates_remain_publication_review(self):
+        examples=[
+            ("Carmen","2026-01-23","20:30"),("Carmen","2026-01-25","15:30"),
+            ("The turn of the screw (il giro di vite)","2026-02-27","20:30"),
+            ("The turn of the screw (il giro di vite)","2026-03-01","15:30"),
+            ("L’elisir d’amore","2026-03-27","20:30"),
+            ("L’elisir d’amore","2026-03-29","15:30")]
+        groups=[dict(g(title,day,clock,venue=None,
+                       urls=["https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"]),
+                     source_key="pisa-future-calendar") for title,day,clock in examples]
+        x=check(inp(groups),{"productions":[]})
+        self.assertEqual(x["counts"],{
+            "official_opera_unpublished_candidate_first_party_review":6})
+        self.assertTrue(all(z["official_nonopera_evidence"]["genre"]=="opera"
+                            and not z["automatic_publication"] and not z["automatic_exclusion"]
+                            for z in x["observations"]))
+        bad=[dict(groups[0],date="2027-01-23"),dict(groups[0],time="22:30"),
+             dict(groups[0],source_key="other"),
+             dict(groups[0],source_urls=["https://different.example/"])]
+        self.assertEqual(check(inp(bad),{"productions":[]})["counts"],
+                         {"requires_official_genre_and_catalog_review":4})
+
+    def test_bologna_concerts_verdi_game_and_pisa_school_rehearsals(self):
+        from scripts.audit_2026_residual_catalog_check import OFFICIAL_GENRE_EVIDENCE
+        chosen=[e for e in OFFICIAL_GENRE_EVIDENCE
+                if e["genre"] in ("concert","interactive_educational_theatre")
+                or (e["source_key"]=="pisa-future-calendar"
+                    and e["genre"]=="school_only_rehearsal")]
+        groups=[]
+        for e in chosen:
+            for day in e["days"]:
+                groups.append(dict(g(e["title"],day,None,e["venue"],
+                        urls=["https://"+e["official_detail_url"].split("/")[2]+"/calendario/"]),
+                        source_key=e["source_key"]))
+        x=check(inp(groups),{"productions":[]})
+        self.assertEqual(10,len(groups))
+        self.assertEqual(x["counts"],{"official_nonopera_first_party_detail":10})
+        self.assertTrue(all(not v["automatic_exclusion"]
+                            and not v["automatic_publication"] for v in x["observations"]))
+
     def test_input_security(self):
         q=inp([])
         q["catalog_updated"]=True
