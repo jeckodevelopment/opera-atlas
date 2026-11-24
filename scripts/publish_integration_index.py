@@ -6,6 +6,8 @@ import os
 import re
 import tempfile
 from pathlib import Path
+from urllib.parse import urlsplit
+import unicodedata
 
 ROOT = "https://opera.plus/atlas/"
 SLUG = re.compile(r"[a-z0-9-]+")
@@ -41,6 +43,67 @@ def index(records):
         result[key] = item
     return result
 
+def normalized_name(value):
+    return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
+
+def resolve_mapping(works, composers, mapping):
+    """Use exact normalized names/aliases only, never fuzzy matches."""
+    lookup = {}
+    for key, composer in composers.items():
+        for name in [composer["name"], *composer.get("aliases", [])]:
+            lookup.setdefault(normalized_name(name), set()).add(key)
+    resolved = {}
+    unresolved = []
+    for key, work in works.items():
+        if key in mapping:
+            refs = mapping[key]
+            require(isinstance(refs, list) and len(refs) == len(set(refs)), "Invalid composer mapping")
+            require(all(ref in composers for ref in refs), "Unknown composer reference")
+            if refs:
+                resolved[key] = refs
+                continue
+        matches = lookup.get(normalized_name(work["composer"]), set())
+        if len(matches) == 1:
+            resolved[key] = sorted(matches)
+        else:
+            resolved[key] = []
+            unresolved.append({"work_id": key, "composer": work["composer"]})
+    return resolved, sorted(unresolved, key=lambda item: item["work_id"])
+
+def safe_https(value):
+    if not isinstance(value, str) or any(ord(ch) < 33 for ch in value):
+        return False
+    try:
+        u = urlsplit(value)
+        return (u.scheme == "https" and u.hostname in {
+            "commons.wikimedia.org", "upload.wikimedia.org", "creativecommons.org",
+            "rightsstatements.org", "opera.plus"
+        } and not u.username and not u.password and u.port in (None, 443)
+                and not u.fragment and "\\" not in value)
+    except ValueError:
+        return False
+
+def verified_image(record):
+    """Never infer reuse rights from a poster, credit or source URL."""
+    if not isinstance(record, dict) or record.get("verified") is not True:
+        return None
+    fields = ("url", "alt", "source_url", "author", "license", "license_url", "credit")
+    if not all(isinstance(record.get(k), str) and record[k].strip() for k in fields):
+        return None
+    if record["license"] not in {"Public Domain", "CC0-1.0", "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-3.0", "CC-BY-SA-3.0"}:
+        return None
+    if not all(safe_https(record[k]) for k in ("url", "source_url", "license_url")):
+        return None
+    return {k: record[k] for k in fields}
+
+def load_media(root, composers):
+    path = root / "data/composer-portraits.json"
+    registry = read(path) if path.is_file() else {"schema_version": 1, "portraits": {}}
+    require(registry["schema_version"] == 1, "Unsupported portrait registry")
+    require(isinstance(registry["portraits"], dict), "Invalid portrait registry")
+    require(all(key in composers for key in registry["portraits"]), "Unknown portrait composer")
+    return {key: verified_image(value) for key, value in registry["portraits"].items()}
+
 def build(root, revision):
     require(SHA.fullmatch(revision), "Expected full revision SHA")
     catalog = root / "public/catalog"
@@ -53,24 +116,26 @@ def build(root, revision):
     registry = read(root / "data/composer-registry.json")
     require(registry["schema_version"] == 1, "Unsupported composer registry")
     composers = index(registry["composers"])
-    mapping = registry["work_composers"]
+    mapping, unresolved = resolve_mapping(works, composers, registry["work_composers"])
+    portraits = load_media(root, composers)
     entities = []
 
-    def add(kind, key, title, subtitle=None, url=None, composer_ids=(), aliases=(), **extra):
+    def add(kind, key, title, subtitle=None, url=None, composer_ids=(), aliases=(), image=None, fallback_image=None, **extra):
         require(isinstance(title, str) and title.strip(), "Missing title")
         require(ID.fullmatch(key), "Invalid entity ID")
         require(all(c in composers for c in composer_ids), "Unknown composer reference")
         entities.append(dict(type=kind, id=key, title=title, subtitle=subtitle, url=url,
-                             composer_ids=list(composer_ids), image=None, fallback_image=None,
+                             composer_ids=list(composer_ids), image=image, fallback_image=fallback_image,
                              aliases=list(aliases), **extra))
 
     for key, c in composers.items():
         # No composer route is published yet.
-        add("composer", key, c["name"], aliases=c.get("aliases", []))
+        add("composer", key, c["name"], aliases=c.get("aliases", []), image=portraits.get(key))
     for key, w in works.items():
         refs = mapping.get(key, [])
         # New works must not prevent publication or acquire guessed composer IDs.
-        add("opera", key, w["title"], w["composer"], route("opere", w.get("route_slug") or w["slug"]), refs)
+        add("opera", key, w["title"], w["composer"], route("opere", w.get("route_slug") or w["slug"]), refs,
+            image=portraits.get(refs[0]) if len(refs) == 1 else None)
     directory = index(read(catalog / "venue-directory.json")["venues"])
     seen_venues = set()
     for key, v in directory.items():
@@ -110,7 +175,8 @@ def build(root, revision):
     keys = [(x["type"], x["id"]) for x in entities]
     require(len(keys) == len(set(keys)), "Duplicate entity")
     return dict(schema_version=1, source_revision=revision, catalog_reviewed_on=manifest["reviewed_on"],
-                entities=sorted(entities, key=lambda x: (x["type"], x["id"])))
+                entities=sorted(entities, key=lambda x: (x["type"], x["id"])),
+                diagnostics={"unresolved_composer_works": unresolved})
 
 def publish(root, revision):
     data = build(root, revision)
