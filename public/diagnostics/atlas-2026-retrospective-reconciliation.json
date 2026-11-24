@@ -10,11 +10,10 @@
   "duplicate_observations_collapsed": 20,
   "observation_counts": {
     "already_published_exact_source_day_work": 5,
-    "excluded_by_approved_policy": 2,
+    "excluded_by_approved_policy": 3,
     "official_opera_candidate_needs_publication_review_time_conflict": 1,
     "opera_component_published_ballet_companion": 1,
-    "screened_nonopera_exact_source": 54,
-    "semistaged_abbreviated_opera_needs_scope_review": 1
+    "screened_nonopera_exact_source": 54
   },
   "monthly_counts": {
     "2026-07": {
@@ -35,8 +34,8 @@
     },
     "2026-12": {
       "already_published_exact_source_day_work": 3,
-      "screened_nonopera_exact_source": 23,
-      "semistaged_abbreviated_opera_needs_scope_review": 1
+      "excluded_by_approved_policy": 1,
+      "screened_nonopera_exact_source": 23
     }
   },
   "scan_failures": {
@@ -1013,7 +1012,7 @@
       "source_key": "bologna-comunale-opera-2027",
       "venue": "Teatro Auditorium Manzoni",
       "composer": null,
-      "status": "semistaged_abbreviated_opera_needs_scope_review",
+      "status": "excluded_by_approved_policy",
       "duplicate_observations_collapsed": 0,
       "exact_source_decision": null,
       "official_review_evidence": {
@@ -1021,7 +1020,7 @@
         "composer": "Wolfgang Amadeus Mozart",
         "time": "16:00",
         "venue": "Teatro Auditorium Manzoni",
-        "evidence": "Teatro Comunale di Bologna official: 90-minute short edition, semi-staged, Mozart, 5 December 2026 16:00, ticketed. Differentiate abbreviated academy performance from complete canonical opera."
+        "evidence": "Teatro Comunale di Bologna official: 90-minute short edition, semi-staged, Mozart, 5 December 2026 16:00, ticketed. Differentiate abbreviated academy performance from complete canonical opera. Editorial decision 2026-11-24: exclude the abbreviated Short Edition from Opera+ Atlas opera catalogue; no effect on complete productions of Die Zauberflöte."
       },
       "discovered_from": [
         "https://www.tcbo.it/"
