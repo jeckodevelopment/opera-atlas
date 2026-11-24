@@ -61,6 +61,12 @@ def classify(summary, decisions, priority):
         source, date, clock, title, venue = key
         urls = sorted({r["source_url"] for r in rows})
         candidate = official.get((date, title))
+        if candidate and (not clock or not venue or not candidate.get("time")
+                          or norm(candidate.get("venue")) != venue
+                          or not any(urlsplit(u).hostname ==
+                                     urlsplit(candidate.get("source_url") or "").hostname
+                                     for u in urls)):
+            candidate = None
         support = []
         if clock and venue:
             support = [
