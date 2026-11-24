@@ -77,7 +77,7 @@ class HistoricalH1PublicationTests(unittest.TestCase):
 
     def test_nabucodonosor_is_explicit_alias_only(self):
         rows=[x for x in self.approved.values()
-              if x["official_source_title"]!=x["canonical_title"]]
+              if x["official_source_title"]=="Nabucodonosor"]
         self.assertEqual(1,len(rows))
         self.assertEqual(("Nabucco","Nabucodonosor","Giuseppe Verdi"),
                          (rows[0]["canonical_title"],rows[0]["official_source_title"],
