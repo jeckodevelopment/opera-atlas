@@ -454,6 +454,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         ],
         "venue": "Fiorano Modenese",
         "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
         "official_detail_url": "https://www.filarmonicamodena.it/orchestra/1-luglio-2026-la-notte-della-basilica/",
         "official_genre_url": "https://www.filarmonicamodena.it/orchestra/1-luglio-2026-la-notte-della-basilica/",
         "reason": "The official performing orchestra identifies this event as a concert at Fiorano, not a staged opera."
@@ -466,6 +467,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         ],
         "venue": "Teatro Comunale Pavarotti-Freni",
         "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
         "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena",
         "official_genre_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena",
         "reason": "Municipal first-party event is explicitly part of the 2026/27 concert season; Beethoven and Brahms."
@@ -478,6 +480,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         ],
         "venue": "Teatro Comunale Pavarotti-Freni",
         "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
         "official_detail_url": "https://coeurope.org/fr/coe-concerts/coe-projects-list/tournee-avec-sir-antonio-pappano-et-alexandre-kantorow/",
         "official_genre_url": "https://coeurope.org/fr/coe-concerts/coe-projects-list/tournee-avec-sir-antonio-pappano-et-alexandre-kantorow/",
         "reason": "Official performing orchestra tour includes concert of Brahms and Dvorak, Modena 10 November."
@@ -490,6 +493,7 @@ OFFICIAL_GENRE_EVIDENCE = (
         ],
         "venue": None,
         "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
         "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
         "official_genre_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
         "reason": "Municipal concert-season detail confirms 19 December, no opera staging; observation venue omitted."
@@ -747,7 +751,12 @@ def official_genre_evidence(group):
                 or norm(group.get("venue")) != norm(evidence["venue"])):
             continue
         target = urlsplit(evidence["official_detail_url"]).hostname
-        if not any(urlsplit(u).hostname == target
+        # Four explicitly verified Modena first-party ORGANIZER/municipal
+        # pages establish nonoperatic genre; the observation itself comes
+        # from the official TEATRO calendar rather than the organizer host.
+        # The exception is per frozen event/source/day/venue, not per domain.
+        observed_host=evidence.get("observed_index_host",target)
+        if not any(urlsplit(u).hostname == observed_host
                    for u in group.get("source_urls", []) if isinstance(u,str)):
             continue
         return {k:v for k,v in evidence.items() if k not in ("days","source_key","title","venue")}
