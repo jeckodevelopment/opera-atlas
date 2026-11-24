@@ -231,8 +231,7 @@ class AutoCatalogueTests(unittest.TestCase):
                 if v["staging_id"] not in removed}
             base_facts["productions"]=[
                 p for p in base_facts["productions"]
-                if not (p["title"]=="Don Pasquale"
-                        and p["municipality"]=="Jesi")]
+                if p["key"] not in stages]
         candidates["candidates"][0]["status"]="needs_review"
         facts,registry,urls,report=promote(base_facts,base_registry,rows,candidates,[],
                                            today=date(2026,11,22))
