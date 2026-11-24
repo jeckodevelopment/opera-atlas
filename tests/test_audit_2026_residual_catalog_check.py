@@ -221,7 +221,8 @@ class ResidualTests(unittest.TestCase):
         for item in chosen:
             for day in item["days"]:
                 rows.append(dict(g(item["title"],day,None,item["venue"],
-                    urls=["https://"+item["official_detail_url"].split("/")[2]+"/calendario/"]),
+                    urls=["https://"+item.get("observed_index_host",
+                        item["official_detail_url"].split("/")[2])+"/calendario/"]),
                     source_key=item["source_key"]))
         result=check(inp(rows),{"productions":[]})
         self.assertEqual(len(rows),sum(result["counts"].values()))
