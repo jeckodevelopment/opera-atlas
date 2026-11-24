@@ -1247,6 +1247,16 @@
         "https://www.comune.venezia.it/it/content/venere-e-adone-sciarrino",
         "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
       ]
+    },
+    "semiramide": {
+      "librettist": "Gaetano Rossi",
+      "premiere_year": 1823,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.rossinioperafestival.it/soggetti/semiramide/",
+        "https://www.teatromassimo.it/event/semiramide/"
+      ]
     }
   },
   "works_by_id": {
