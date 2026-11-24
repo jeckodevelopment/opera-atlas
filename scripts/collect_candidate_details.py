@@ -1539,8 +1539,9 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                    "rows":0})
                     continue
                 if (item["source_key"]=="coccia-novara-rolling-opera"
-                    and item["official_url"]==
-                    "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html"):
+                    and item["official_url"] in {
+                    "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
+                    "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html"}):
                     from opera_atlas.novara_program_parser import parse_program
                     components,venue,dates=parse_program(
                         page.html,url=item["official_url"])

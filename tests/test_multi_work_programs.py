@@ -130,6 +130,7 @@ class MultiWorkProgramTests(unittest.TestCase):
             ("jeanne dark","fabio vacchi"),
             ("aroldo","giuseppe verdi"),
             ("stiffelio","giuseppe verdi"),
+            ("l’azzardo per un figlio","claudio scannavini"),
         }
         self.assertEqual(set(reviewed),expected)
         for profile in reviewed.values():

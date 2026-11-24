@@ -53,10 +53,32 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
     # every refresh; finalization marks them catalogued, not permanently hidden.
     candidates_by_id={c["id"]:c for c in candidates["candidates"]
                       if c.get("status") in ("needs_review","already_catalogued")}
+    # Frozen, individually reviewed official 2026 evidence. The source was
+    # checked independently of the rolling 2027 index; do not invent HTML hashes.
+    # A refreshed verified adapter row takes precedence over this baseline.
+    historical_url="https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html"
+    historical_key="coccia-novara-rolling-opera"
+    historical_id="oa-index-f017f07675f24fa50e21"
+    historical_parts=[{"title":"L’azzardo per un figlio","composer":"Claudio Scannavini"},
+                      {"title":"Il signor Bruschino","composer":"Gioachino Rossini"}]
+    historical_heading="L’azzardo per un figlio/Il signor Bruschino di Claudio Scannavini/Gioachino Rossini"
+    historical_dates=[("2026-12-11","20:30"),("2026-12-13","16:00")]
+    rows=list(evidence.get("evidence",[]))
+    if not any(x.get("source_url")==historical_url for x in rows):
+        from scripts.build_verified_catalog import official_local_time
+        candidates_by_id[historical_id]={"id":historical_id,"source_key":historical_key,
+            "official_url":historical_url,"status":"needs_review"}
+        rows.append({"candidate_id":historical_id,"source_key":historical_key,
+            "source_url":historical_url,"status":"needs_program_review",
+            "program_heading":historical_heading,"program_heading_source_url":historical_url,
+            "program_components":historical_parts,
+            "event_facts":[{"event_title":p["title"],"composer":p["composer"],
+                "venue":"Teatro Coccia","date":day,"starts_at":official_local_time(day,clock)}
+                for day,clock in historical_dates for p in historical_parts]})
     program_ids=set()
     performances=set()
     items=[]
-    for item in sorted(evidence.get("evidence",[]),key=lambda x:x.get("candidate_id","")):
+    for item in sorted(rows,key=lambda x:x.get("candidate_id","")):
         if item.get("status")!="needs_program_review" or not item.get("program_heading"):
             continue
         key=item.get("source_key")

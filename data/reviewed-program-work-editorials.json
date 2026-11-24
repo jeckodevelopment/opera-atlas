@@ -129,6 +129,22 @@
           "https://teatroregioparma.it/spettacolo/stiffelio/"
         ]
       }
+    },
+    {
+      "title": "L’azzardo per un figlio",
+      "composer": "Claudio Scannavini",
+      "synopsis": "Prima delle vicende del Signor Bruschino, padre e figlio raggiungono la locanda di Filiberto. In attesa del contratto nuziale, incontri inattesi spingono il giovane a esplorare la propria libertà e il padre a ripensare le sue aspettative.",
+      "history": {
+        "librettist": "Alberto Jona",
+        "premiere_year": 2026,
+        "premiere_venue": "Teatro Coccia",
+        "premiere_city": "Novara",
+        "premiere_status": "announced",
+        "sources": [
+          "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
+          "https://artbonus.gov.it/fondazione-teatro-coccia-onlus.html"
+        ]
+      }
     }
   ]
 }
