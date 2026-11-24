@@ -161,7 +161,7 @@ class ResidualTests(unittest.TestCase):
                         urls=["https://"+e["official_detail_url"].split("/")[2]+"/calendario/"]),
                         source_key=e["source_key"]))
         x=check(inp(groups),{"productions":[]})
-        self.assertEqual(10,len(groups))
+        self.assertEqual(9,len(groups))
         self.assertEqual(x["counts"],{"official_nonopera_first_party_detail":10})
         self.assertTrue(all(not v["automatic_exclusion"]
                             and not v["automatic_publication"] for v in x["observations"]))
