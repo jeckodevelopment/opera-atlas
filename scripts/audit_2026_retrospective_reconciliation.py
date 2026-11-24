@@ -24,6 +24,7 @@ CATALOG = ROOT / "data/verified-launch-catalog.json"
 PROGRAMS = ROOT / "public/catalog/programs.json"
 HISTORICAL = ROOT / "data/historical-2026-official-evidence.json"
 OUTPUT = ROOT / "public/diagnostics/atlas-2026-retrospective-reconciliation.json"
+PRIORITY = ROOT / "data/retrospective-2026-priority-reviews.json"
 
 def norm(value):
     value = unicodedata.normalize("NFKD", str(value or "").casefold())
@@ -35,7 +36,12 @@ def url_key(url):
         p = urlsplit(url or "")
         if p.scheme != "https" or not p.hostname:
             return None
-        return (p.hostname.lower(), p.path.rstrip("/"))
+        path = p.path.rstrip("/")
+        # Locale-specific links for one verified bilingual official festival.
+        # No generic locale stripping across other organizations.
+        if p.hostname.lower() == "www.festivaldellavalleditria.it" and path.startswith("/en/spettacolo/"):
+            path = path[3:]
+        return (p.hostname.lower(), path)
     except (TypeError, ValueError):
         return None
 
@@ -89,10 +95,12 @@ def same_time(fact_hour, published_hour):
     # Time missing is not evidence of an exact showtime match.
     return fact_hour is not None and published_hour is not None and fact_hour == published_hour
 
-def reconcile(report, catalog, programs, historical):
+def reconcile(report, catalog, programs, historical, priority=None):
     if report.get("year") != 2026 or report.get("read_only") is not True:
         raise ValueError("invalid 2026 retrospective input")
     rows=catalog_rows(catalog,programs,historical)
+    reviews={(url_key(p.get("source_url")),p.get("date"),norm(p.get("event_title"))):p
+             for p in (priority or {}).get("records",[])}
     by_url_day=defaultdict(list)
     by_title_day=defaultdict(list)
     for row in rows:
@@ -131,8 +139,12 @@ def reconcile(report, catalog, programs, historical):
         hour=clock(fact.get("starts_at"),day)
         direct=by_url_day.get((url_key(source),day),[])
         candidates=by_title_day.get((title,day),[])
+        reviewed=reviews.get((url_key(source),day,title))
         if excluded_nonopera(source_key,source):
             status="excluded_by_approved_policy"
+            matched=[]
+        elif reviewed and (hour is None or hour == reviewed["time"]):
+            status=reviewed["classification"]
             matched=[]
         elif direct and any(norm(m["title"])==title and
                 (hour is None or same_time(hour,m["time"])) for m in direct):
@@ -143,8 +155,13 @@ def reconcile(report, catalog, programs, historical):
                     origins & {"verified_catalog","published_program"} else
                     "official_archive_already_documented")
         elif direct:
-            # An index may contain multiple different events on one date.
-            status="same_source_day_identity_or_time_conflict"
+            # A multi-work evening may be represented by a canonical component
+            # in the catalog. Keep it partial rather than calling it a conflict.
+            if any(norm(m["title"]) in title and norm(m["title"]) != title
+                   and (hour is None or same_time(hour,m["time"])) for m in direct):
+                status="partial_multiwork_catalogued_needs_review"
+            else:
+                status="same_source_day_identity_or_time_conflict"
             matched=direct
         elif candidates:
             # Same title/day across cities or sources is not sufficient to
@@ -159,6 +176,13 @@ def reconcile(report, catalog, programs, historical):
             "source_url":source,"source_key":source_key,"venue":fact.get("venue"),
             "composer":fact.get("composer"),"status":status,
             "duplicate_observations_collapsed":len(copies)-1,
+            "official_review_evidence":({
+                "official_detail_url":reviewed["official_detail_url"],
+                "composer":reviewed["composer"],
+                "time":reviewed["time"],
+                "venue":reviewed["venue"],
+                "evidence":reviewed["evidence"],
+            } if reviewed else None),
             "discovered_from":sorted({x.get("discovered_from") or source for x in copies}),
             "matched_catalog":[{"title":m["title"],"venue":m["venue"],
                                 "city":m["city"],"time":m["time"],
@@ -198,7 +222,8 @@ def main():
     args=parser.parse_args()
     def read(path):
         return json.loads(path.read_text(encoding="utf-8"))
-    result=reconcile(read(INPUT),read(CATALOG),read(PROGRAMS),read(HISTORICAL))
+    result=reconcile(read(INPUT),read(CATALOG),read(PROGRAMS),read(HISTORICAL),
+                     read(PRIORITY))
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",
                            encoding="utf-8")
@@ -211,7 +236,9 @@ def main():
     for row in result["observations"]:
         if row["status"] not in ("already_published_exact_source_day_work",
                                  "excluded_by_approved_policy",
-                                 "official_archive_already_documented"):
+                                 "official_archive_already_documented",
+                                 "official_opera_candidate_needs_publication_review",
+                                 "semistaged_abbreviated_opera_needs_scope_review"):
             print("REVIEW " + json.dumps({
                 "date":row["date"],"title":row["event_title"],
                 "venue":row["venue"],"status":row["status"],
