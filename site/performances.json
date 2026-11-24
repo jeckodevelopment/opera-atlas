@@ -2,6 +2,42 @@
   "schema_version": 1,
   "performances": [
     {
+      "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-20",
+      "starts_at": "2026-01-20T20:00:00+01:00",
+      "local_date": "2026-01-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-21",
+      "starts_at": "2026-01-21T20:00:00+01:00",
+      "local_date": "2026-01-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+      ]
+    },
+    {
       "id": "curated:auto-fcae59bb4ff1c516:2026-01-21",
       "starts_at": "2026-01-21T20:30:00+01:00",
       "local_date": "2026-01-21",
@@ -17,6 +53,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-22",
+      "starts_at": "2026-01-22T20:00:00+01:00",
+      "local_date": "2026-01-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
       ]
     },
     {
@@ -38,6 +92,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-23",
+      "starts_at": "2026-01-23T20:00:00+01:00",
+      "local_date": "2026-01-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+      ]
+    },
+    {
       "id": "curated:auto-fcae59bb4ff1c516:2026-01-23",
       "starts_at": "2026-01-23T20:30:00+01:00",
       "local_date": "2026-01-23",
@@ -53,6 +125,42 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-24",
+      "starts_at": "2026-01-24T15:00:00+01:00",
+      "local_date": "2026-01-24",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-25",
+      "starts_at": "2026-01-25T15:00:00+01:00",
+      "local_date": "2026-01-25",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
       ]
     },
     {
@@ -89,6 +197,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-27",
+      "starts_at": "2026-01-27T15:00:00+01:00",
+      "local_date": "2026-01-27",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
       ]
     },
     {
@@ -305,6 +431,114 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-macbeth:2026-02-24",
+      "starts_at": "2026-02-24T19:00:00+01:00",
+      "local_date": "2026-02-24",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-macbeth:2026-02-26",
+      "starts_at": "2026-02-26T20:00:00+01:00",
+      "local_date": "2026-02-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-macbeth:2026-03-01",
+      "starts_at": "2026-03-01T15:00:00+01:00",
+      "local_date": "2026-03-01",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-macbeth:2026-03-03",
+      "starts_at": "2026-03-03T20:00:00+01:00",
+      "local_date": "2026-03-03",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-macbeth:2026-03-05",
+      "starts_at": "2026-03-05T20:00:00+01:00",
+      "local_date": "2026-03-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-macbeth:2026-03-07",
+      "starts_at": "2026-03-07T15:00:00+01:00",
+      "local_date": "2026-03-07",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
       ]
     },
     {
@@ -848,6 +1082,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026h1-torino-i-puritani:2026-05-06",
+      "starts_at": "2026-05-06T19:30:00+02:00",
+      "local_date": "2026-05-06",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-i-puritani:2026-05-08",
+      "starts_at": "2026-05-08T19:30:00+02:00",
+      "local_date": "2026-05-08",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+      ]
+    },
+    {
       "id": "curated:auto-885beacc517cb454:2026-05-08",
       "starts_at": "2026-05-08T21:00:00+02:00",
       "local_date": "2026-05-08",
@@ -863,6 +1133,24 @@
       "longitude": null,
       "sources": [
         "https://cultura.comune.salerno.it/eventi/il-signor-bruschino-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-i-puritani:2026-05-10",
+      "starts_at": "2026-05-10T15:00:00+02:00",
+      "local_date": "2026-05-10",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
       ]
     },
     {
@@ -884,6 +1172,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026h1-torino-i-puritani:2026-05-13",
+      "starts_at": "2026-05-13T19:30:00+02:00",
+      "local_date": "2026-05-13",
+      "time_known": true,
+      "time_label": "19:30",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-i-puritani:2026-05-15",
+      "starts_at": "2026-05-15T15:00:00+02:00",
+      "local_date": "2026-05-15",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-nabucco:2026-05-16",
       "starts_at": "2026-05-16T20:00:00+02:00",
       "local_date": "2026-05-16",
@@ -899,6 +1223,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-i-puritani:2026-05-17",
+      "starts_at": "2026-05-17T15:00:00+02:00",
+      "local_date": "2026-05-17",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
       ]
     },
     {
