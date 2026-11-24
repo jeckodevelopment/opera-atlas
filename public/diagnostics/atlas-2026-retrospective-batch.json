@@ -1,17 +1,19 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "checked_at": "2026-11-24T06:27:32+00:00",
+  "checked_at": "2026-11-24T09:30:29+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
+  "archive_offset": 0,
+  "detail_host_offset": 0,
   "approved_hosts": 55,
   "seed_pages_attempted": 125,
-  "seed_pages_scanned": 97,
+  "seed_pages_scanned": 102,
   "historical_archives_attempted": 240,
   "historical_archives_scanned": 204,
-  "detail_pages_attempted": 595,
-  "detail_pages_scanned": 480,
+  "detail_pages_attempted": 605,
+  "detail_pages_scanned": 491,
   "unverified_2026_facts": [
     {
       "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/carmen/2026-07-25",
@@ -386,19 +388,6 @@
       "event_title": "Viaggio nell&#8217;Elisir d&#8217;amore",
       "composer": null,
       "venue": "Circolo Culturale Lirico Bolognese",
-      "audience": "not_verified",
-      "genre": "not_verified",
-      "review_status": "needs_independent_validation"
-    },
-    {
-      "source_url": "https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026/",
-      "source_key": "bologna-comunale-opera-2027",
-      "discovered_from": "https://www.tcbo.it/",
-      "date": "2026-12-05",
-      "starts_at": "2026-12-05T16:00:00+01:00",
-      "event_title": "Il flauto magico &#8211; Short Edition",
-      "composer": null,
-      "venue": "Teatro Auditorium Manzoni",
       "audience": "not_verified",
       "genre": "not_verified",
       "review_status": "needs_independent_validation"
@@ -1106,7 +1095,7 @@
       "review_status": "needs_independent_validation"
     }
   ],
-  "archive_queue_deferred": 566,
+  "archive_queue_deferred": 594,
   "detail_queue_deferred": {
     "per_host": {
       "cultura.comune.salerno.it": 107,
@@ -2669,25 +2658,310 @@
       "source_key": "pisa-verdi-opera-2026-27",
       "seed_url": "https://teatrodipisa.it/",
       "official_url": "https://teatrodipisa.it/",
-      "status": "unverified",
-      "failure": "FetchUnavailable",
-      "links": []
+      "status": "scanned",
+      "links": [
+        {
+          "url": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "",
+          "category": "historical_year"
+        },
+        {
+          "url": "https://teatrodipisa.it/30705-2/",
+          "label": "La Stagione di Prosa inaugura con Umberto Orsini in Prima del temporale",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-delle-stagioni/",
+          "label": "Archivio delle stagioni",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-storico-teatro-di-pisa/",
+          "label": "Archivio storico",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/",
+          "label": "Calendario",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/famiglie-allopera/",
+          "label": "Famiglie all’Opera",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/il-musical-della-pimpa-apre-la-stagione-per-le-famiglie/",
+          "label": "",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/loccasione-fa-il-ladro-teatro-verdi-e-accademia-del-maggio-presentano-alla-camera-dei-deputati-lopera-e-la-collaborazione/",
+          "label": "",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/memorie-darchivio/",
+          "label": "Memorie d’Archivio",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/opera-lirica-teatro-di-pisa/",
+          "label": "OPERA",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/tipologia-spettacolo/famiglie-all-opera/",
+          "label": "Famiglie all’Opera",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/tipologia-spettacolo/opera/",
+          "label": "Opera",
+          "category": "generic_opera_lead"
+        }
+      ]
     },
     {
       "source_key": "pisa-future-calendar",
       "seed_url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/",
       "official_url": "https://teatrodipisa.it/",
-      "status": "unverified",
-      "failure": "FetchUnavailable",
-      "links": []
+      "status": "scanned",
+      "links": [
+        {
+          "url": "https://teatrodipisa.it/ar/calendario/categoria/opera/elenco/",
+          "label": "🇸🇦العربية",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-delle-stagioni/",
+          "label": "Archivio delle stagioni",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-storico-teatro-di-pisa/",
+          "label": "Archivio storico",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/",
+          "label": "Calendario",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/aida/",
+          "label": "Aida",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past",
+          "label": "",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?ical=1",
+          "label": "Esporta il file .ics",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/categoria/opera/elenco/?outlook-ical=1",
+          "label": "Esporta file .ics di Outlook",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/categoria/opera/mese/",
+          "label": "Mese",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/dido-and-aeneas-generale-riservata-alle-scuole/",
+          "label": "L’occasione fa il ladro (Generale riservata alle Scuole)",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
+          "label": "La clemenza di Tito",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-riservato-alle-scuole/",
+          "label": "La clemenza di Tito (riservato alle Scuole)",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
+          "label": "La clemenza di Tito",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
+          "label": "L’occasione fa il ladro ossia il Cambio della valigia",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
+          "label": "L’occasione fa il ladro ossia il Cambio della valigia",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/otello-2/",
+          "label": "Aida",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/otello-3/",
+          "label": "Otello",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/otello/",
+          "label": "Otello",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/de/calendario/categoria/opera/elenco/",
+          "label": "🇩🇪Deutsch",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/en/calendario/categoria/opera/elenco/",
+          "label": "🇺🇸English",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/es/calendario/categoria/opera/elenco/",
+          "label": "🇪🇸Español",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/famiglie-allopera/",
+          "label": "Famiglie all’Opera",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/fr/calendario/categoria/opera/elenco/",
+          "label": "🇫🇷Français",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/ja/calendario/categoria/opera/elenco/",
+          "label": "🇯🇵日本語",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/memorie-darchivio/",
+          "label": "Memorie d’Archivio",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/opera-lirica-teatro-di-pisa/",
+          "label": "OPERA",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/pt/calendario/categoria/opera/elenco/",
+          "label": "🇧🇷Português",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/ru/calendario/categoria/opera/elenco/",
+          "label": "🇷🇺Русский",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/zh/calendario/categoria/opera/elenco/",
+          "label": "🇨🇳中文",
+          "category": "archive_or_season_lead"
+        }
+      ]
     },
     {
       "source_key": "pisa-verdi-opera-2026-27",
       "seed_url": "https://teatrodipisa.it/tipologia-spettacolo/opera/",
       "official_url": "https://teatrodipisa.it/",
-      "status": "unverified",
-      "failure": "FetchUnavailable",
-      "links": []
+      "status": "scanned",
+      "links": [
+        {
+          "url": "https://teatrodipisa.it/ar/tipologia-spettacolo/opera/",
+          "label": "🇸🇦العربية",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-delle-stagioni/",
+          "label": "Archivio delle stagioni",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-storico-teatro-di-pisa/",
+          "label": "Archivio storico",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/",
+          "label": "Calendario",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/de/tipologia-spettacolo/opera/",
+          "label": "🇩🇪Deutsch",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/en/tipologia-spettacolo/opera/",
+          "label": "🇺🇸English",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/es/tipologia-spettacolo/opera/",
+          "label": "🇪🇸Español",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/famiglie-allopera/",
+          "label": "Famiglie all’Opera",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/fr/tipologia-spettacolo/opera/",
+          "label": "🇫🇷Français",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/ja/tipologia-spettacolo/opera/",
+          "label": "🇯🇵日本語",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/memorie-darchivio/",
+          "label": "Memorie d’Archivio",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/opera-lirica-teatro-di-pisa/",
+          "label": "OPERA",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/pt/tipologia-spettacolo/opera/",
+          "label": "🇧🇷Português",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/ru/tipologia-spettacolo/opera/",
+          "label": "🇷🇺Русский",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/tipologia-spettacolo/opera/page/2/",
+          "label": "2",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/zh/tipologia-spettacolo/opera/",
+          "label": "🇨🇳中文",
+          "category": "generic_opera_lead"
+        }
+      ]
     },
     {
       "source_key": "teatro-grande-opera-2026",
@@ -2703,11 +2977,6 @@
       "official_url": "https://teatrogrande.it/",
       "status": "scanned",
       "links": [
-        {
-          "url": "https://teatrogrande.it/it/stagioni/2026/barocco-other-stories",
-          "label": "Scopri di più",
-          "category": "historical_year"
-        },
         {
           "url": "https://teatrogrande.it/it/stagioni/2026/canti-scuciti",
           "label": "Scopri di più",
@@ -8157,17 +8426,27 @@
       "source_key": "ravenna-alighieri-cherubini-2027",
       "seed_url": "https://www.orchestracherubini.it/",
       "official_url": "https://www.orchestracherubini.it/",
-      "status": "unverified",
-      "failure": "FetchUnavailable",
-      "links": []
+      "status": "scanned",
+      "links": [
+        {
+          "url": "https://www.orchestracherubini.it/eventi/tpl/calendar",
+          "label": "CALENDARIO",
+          "category": "generic_opera_lead"
+        }
+      ]
     },
     {
       "source_key": "ravenna-alighieri-cherubini-2027",
       "seed_url": "https://www.orchestracherubini.it/eventi/tpl/list/",
       "official_url": "https://www.orchestracherubini.it/",
-      "status": "unverified",
-      "failure": "FetchUnavailable",
-      "links": []
+      "status": "scanned",
+      "links": [
+        {
+          "url": "https://www.orchestracherubini.it/eventi/tpl/calendar",
+          "label": "CALENDARIO",
+          "category": "generic_opera_lead"
+        }
+      ]
     },
     {
       "source_key": "lecce-politeama-opera-2026",
@@ -24056,35 +24335,85 @@
       "event_facts": []
     },
     {
-      "source_key": "teatro-grande-opera-2026",
-      "archive_url": "https://teatrogrande.it/it/stagioni/2026/barocco-other-stories",
+      "source_key": "pisa-verdi-opera-2026-27",
+      "archive_url": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
       "rank": 1,
       "status": "scanned",
       "links": [
         {
-          "url": "https://teatrogrande.it/en/stagioni/2026/barocco-other-stories",
-          "label": "EN",
+          "url": "https://teatrodipisa.it/ar/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇸🇦العربية",
           "category": "historical_year"
         },
         {
-          "url": "https://teatrogrande.it/it/stagioni/2026/canti-scuciti",
-          "label": "Scopri di più",
+          "url": "https://teatrodipisa.it/de/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇩🇪Deutsch",
           "category": "historical_year"
         },
         {
-          "url": "https://teatrogrande.it/it/stagioni/2026/il-canto-degli-alberi",
-          "label": "Scopri di più",
+          "url": "https://teatrodipisa.it/en/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇺🇸English",
           "category": "historical_year"
         },
         {
-          "url": "https://teatrogrande.it/it/calendario",
+          "url": "https://teatrodipisa.it/es/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇪🇸Español",
+          "category": "historical_year"
+        },
+        {
+          "url": "https://teatrodipisa.it/fr/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇫🇷Français",
+          "category": "historical_year"
+        },
+        {
+          "url": "https://teatrodipisa.it/ja/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇯🇵日本語",
+          "category": "historical_year"
+        },
+        {
+          "url": "https://teatrodipisa.it/pt/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇧🇷Português",
+          "category": "historical_year"
+        },
+        {
+          "url": "https://teatrodipisa.it/ru/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇷🇺Русский",
+          "category": "historical_year"
+        },
+        {
+          "url": "https://teatrodipisa.it/zh/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+          "label": "🇨🇳中文",
+          "category": "historical_year"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-delle-stagioni/",
+          "label": "Archivio delle stagioni",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/archivio-storico-teatro-di-pisa/",
+          "label": "Archivio storico",
+          "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/calendario/",
           "label": "Calendario",
           "category": "archive_or_season_lead"
         },
         {
-          "url": "https://teatrogrande.it/it/stagione",
-          "label": "Stagione",
+          "url": "https://teatrodipisa.it/famiglie-allopera/",
+          "label": "Famiglie all’Opera",
+          "category": "generic_opera_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/memorie-darchivio/",
+          "label": "Memorie d’Archivio",
           "category": "archive_or_season_lead"
+        },
+        {
+          "url": "https://teatrodipisa.it/opera-lirica-teatro-di-pisa/",
+          "label": "OPERA",
+          "category": "generic_opera_lead"
         }
       ],
       "event_facts": []
@@ -33699,9 +34028,86 @@
       "facts": []
     },
     {
-      "source_url": "https://teatrogrande.it/en/stagioni/2026/barocco-other-stories",
-      "source_key": "teatro-grande-opera-2026",
-      "discovered_from": "https://teatrogrande.it/it/stagioni/2026/barocco-other-stories",
+      "source_url": "https://teatrodipisa.it/ar/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/de/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/en/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/es/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/famiglie-allopera/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/fr/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/ja/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/opera-lirica-teatro-di-pisa/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/pt/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/ru/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_url": "https://teatrodipisa.it/zh/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
+      "source_key": "pisa-future-calendar",
+      "discovered_from": "https://teatrodipisa.it/dido-and-aeneas-di-henry-purcell-inaugura-la-stagione-2026-27/",
       "status": "scanned",
       "facts": []
     },
@@ -33757,7 +34163,7 @@
     {
       "source_url": "https://teatrogrande.it/it/stagioni/2026/canti-scuciti",
       "source_key": "teatro-grande-opera-2026",
-      "discovered_from": "https://teatrogrande.it/it/stagioni/2026/barocco-other-stories",
+      "discovered_from": "https://teatrogrande.it/it/stagioni/2026/il-canto-degli-alberi",
       "status": "scanned",
       "facts": []
     },
@@ -33771,7 +34177,7 @@
     {
       "source_url": "https://teatrogrande.it/it/stagioni/2026/il-canto-degli-alberi",
       "source_key": "teatro-grande-opera-2026",
-      "discovered_from": "https://teatrogrande.it/it/stagioni/2026/barocco-other-stories",
+      "discovered_from": "https://teatrogrande.it/it/stagioni/2026/canti-scuciti",
       "status": "scanned",
       "facts": []
     },
@@ -34061,8 +34467,7 @@
       "source_url": "https://www.arena.it/history/",
       "source_key": "filarmonico-verona-rolling-opera",
       "discovered_from": "https://www.arena.it/teatro-filarmonico-verona/spettacoli/",
-      "status": "unverified",
-      "failure": "FetchUnavailable",
+      "status": "scanned",
       "facts": []
     },
     {
@@ -36641,24 +37046,6 @@
           "event_title": "Viaggio nell&#8217;Elisir d&#8217;amore",
           "composer": null,
           "venue": "Circolo Culturale Lirico Bolognese",
-          "audience": "not_verified",
-          "genre": "not_verified",
-          "review_status": "needs_independent_validation"
-        }
-      ]
-    },
-    {
-      "source_url": "https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026/",
-      "source_key": "bologna-comunale-opera-2027",
-      "discovered_from": "https://www.tcbo.it/",
-      "status": "scanned",
-      "facts": [
-        {
-          "date": "2026-12-05",
-          "starts_at": "2026-12-05T16:00:00+01:00",
-          "event_title": "Il flauto magico &#8211; Short Edition",
-          "composer": null,
-          "venue": "Teatro Auditorium Manzoni",
           "audience": "not_verified",
           "genre": "not_verified",
           "review_status": "needs_independent_validation"
