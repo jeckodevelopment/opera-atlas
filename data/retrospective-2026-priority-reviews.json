@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "note": "Explicitly checked first-party details for priority findings; review-only, never automatically published.",
+  "records": [
+    {
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "event_title": "La costanza trionfante",
+      "date": "2026-09-25",
+      "time": "20:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": "Antonio Vivaldi",
+      "classification": "official_opera_candidate_needs_publication_review",
+      "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/modena-belcanto-festival/la-costanza-trionfante",
+      "evidence": "Municipal official event: Opera di Vivaldi, semiscenic recovered music, general public, ticket price, Friday 25 September 2026 20:30. Verify canonical work identity and scope before publication."
+    },
+    {
+      "source_url": "https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026/",
+      "event_title": "Il flauto magico – Short Edition",
+      "date": "2026-12-05",
+      "time": "16:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "classification": "semistaged_abbreviated_opera_needs_scope_review",
+      "official_detail_url": "https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026/",
+      "evidence": "Teatro Comunale di Bologna official: 90-minute short edition, semi-staged, Mozart, 5 December 2026 16:00, ticketed. Differentiate abbreviated academy performance from complete canonical opera."
+    }
+  ]
+}
