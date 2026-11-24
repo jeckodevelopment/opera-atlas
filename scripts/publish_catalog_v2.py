@@ -281,11 +281,54 @@ def sync_festival_index(registry: dict, *, check: bool = False) -> None:
                         encoding="utf-8")
 
 
+def sync_festival_identities(registry: dict, *, check: bool = False) -> None:
+    """Publish stable identities separately from the backward-compatible edition index."""
+    identities = json.loads((ROOT / "data" / "festival-identities.json").read_text(encoding="utf-8"))
+    editions = json.loads((PUBLIC / "festival-index.json").read_text(encoding="utf-8"))
+    expected = build_festival_directory(identities, editions, registry)
+    path = PUBLIC / "festival-directory.json"
+    content = json.dumps(expected, ensure_ascii=False, indent=2) + "\n"
+    if check:
+        if not path.is_file() or path.read_text(encoding="utf-8") != content:
+            raise ValueError("festival directory differs from verified catalogue")
+    else:
+        path.write_text(content, encoding="utf-8")
+
+
+def build_festival_directory(identities: dict, editions: dict, registry: dict) -> dict:
+    if identities.get("schema_version") != 1 or editions.get("schema_version") != 1:
+        raise ValueError("unsupported festival schema")
+    result = {}
+    for identity in identities["festivals"]:
+        key = identity["id"]
+        if not re.fullmatch(r"[a-z0-9-]{3,80}", key) or key in result:
+            raise ValueError("invalid or duplicate festival identity: " + key)
+        result[key] = dict(identity, editions=[], staging_ids=[])
+    known = {s["id"] for s in registry["stagings"].values()}
+    seen_ids, seen_editions = set(), set()
+    for edition in sorted(editions["festivals"], key=lambda e: e["id"]):
+        key = edition["festival_id"]
+        pair = (key, edition["edition"])
+        if key not in result or pair in seen_editions or edition["id"] in seen_ids:
+            raise ValueError("unknown or duplicate festival edition: " + edition["id"])
+        ids = sorted(set(edition["staging_ids"]))
+        if not ids or set(ids) - known:
+            raise ValueError("invalid festival staging references: " + edition["id"])
+        seen_ids.add(edition["id"])
+        seen_editions.add(pair)
+        result[key]["editions"].append({"id": edition["id"], "edition": edition["edition"],
+                                         "official_url": edition["official_url"], "staging_ids": ids})
+    for festival in result.values():
+        festival["staging_ids"] = sorted({sid for e in festival["editions"] for sid in e["staging_ids"]})
+    return {"schema_version": 1, "festivals": sorted(result.values(), key=lambda f: f["id"])}
+
+
 def publish(*, check: bool = False) -> dict:
     facts = json.loads(MANIFEST.read_text(encoding="utf-8"))
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     blobs, manifest = release_parts(facts, registry)
     sync_festival_index(registry, check=check)
+    sync_festival_identities(registry, check=check)
     if check:
         for name, expected in blobs.items():
             if not (PUBLIC / name).is_file() or (PUBLIC / name).read_bytes() != expected:
