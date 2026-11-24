@@ -1,0 +1,1183 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "source_checked_at": "2026-11-24T06:27:32+00:00",
+  "read_only": true,
+  "catalog_updated": false,
+  "complete_seasons_certified": 0,
+  "raw_observation_count": 84,
+  "unique_observation_count": 64,
+  "duplicate_observations_collapsed": 20,
+  "observation_counts": {
+    "already_published_exact_source_day_work": 5,
+    "excluded_by_approved_policy": 2,
+    "official_opera_candidate_needs_publication_review_time_conflict": 1,
+    "partial_multiwork_catalogued_needs_review": 1,
+    "semistaged_abbreviated_opera_needs_scope_review": 1,
+    "unmatched_requires_official_review": 54
+  },
+  "monthly_counts": {
+    "2026-07": {
+      "already_published_exact_source_day_work": 2,
+      "excluded_by_approved_policy": 2,
+      "partial_multiwork_catalogued_needs_review": 1,
+      "unmatched_requires_official_review": 4
+    },
+    "2026-09": {
+      "official_opera_candidate_needs_publication_review_time_conflict": 1,
+      "unmatched_requires_official_review": 6
+    },
+    "2026-10": {
+      "unmatched_requires_official_review": 12
+    },
+    "2026-11": {
+      "unmatched_requires_official_review": 9
+    },
+    "2026-12": {
+      "already_published_exact_source_day_work": 3,
+      "semistaged_abbreviated_opera_needs_scope_review": 1,
+      "unmatched_requires_official_review": 23
+    }
+  },
+  "scan_failures": {
+    "seed": {
+      "attempted": 125,
+      "failed": 28,
+      "reason_counts": {
+        "AccessDenied": 11,
+        "FetchUnavailable": 17
+      }
+    },
+    "archive": {
+      "attempted": 240,
+      "failed": 36,
+      "reason_counts": {
+        "AccessDenied": 8,
+        "FetchUnavailable": 28
+      }
+    },
+    "detail": {
+      "attempted": 595,
+      "failed": 115,
+      "reason_counts": {
+        "AccessDenied": 47,
+        "FetchUnavailable": 68
+      }
+    }
+  },
+  "archives_checked": 204,
+  "details_checked": 480,
+  "observations": [
+    {
+      "date": "2026-07-10",
+      "time": "21:00",
+      "event_title": "In Orbita &#8211; Naufragi",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Martina Franca",
+      "composer": null,
+      "status": "excluded_by_approved_policy",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/spettacolo/in-orbita-naufragi/2026-07-10"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-07-12",
+      "time": "21:00",
+      "event_title": "In Orbita &#8211; In quartetto all&#8217;opera",
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/in-orbita-in-quartetto-allopera",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Villa del Carmine",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/en/program-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-07-14",
+      "time": "21:00",
+      "event_title": "Pulcinella / La favola di Orfeo (dittico)",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Palazzo Ducale, Martina Franca",
+      "composer": null,
+      "status": "partial_multiwork_catalogued_needs_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/programma-2026",
+        "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+      ],
+      "matched_catalog": [
+        {
+          "title": "La favola di Orfeo",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "city": "Martina Franca",
+          "time": "21:00",
+          "origin": "verified_catalog",
+          "source_url": "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "time": "10:00",
+      "event_title": "Rediscovering the ancient in the 20th century: myth and the Mediterranean in Stravinskij and Casella",
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/insights/2026-07-18",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Auditorium della Fondazione Paolo Grassi, Martina Franca",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/en/program-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-07-18",
+      "time": "10:00",
+      "event_title": "Riscoprire l’antico nel Novecento. Mito e Mediterraneo in Stravinskij e Casella",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Auditorium della Fondazione Paolo Grassi, Martina Franca",
+      "composer": null,
+      "status": "excluded_by_approved_policy",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/spettacolo/approfondimenti/2026-07-18"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-07-19",
+      "time": "21:00",
+      "event_title": "Concerto sinfonico",
+      "source_url": "https://www.festivaldellavalleditria.it/spettacolo/concerto-sinfonico-2026",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Palazzo Ducale, Martina Franca",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/programma-2026",
+        "https://www.festivaldellavalleditria.it/spettacolo/concerto-sinfonico-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-07-20",
+      "time": "21:00",
+      "event_title": "Vennero da ogni dove. Narrar cantando umanità in cammino",
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/vennero-da-ogni-dove/2026-07-20",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Chiostro di San Domenico, Martina Franca",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/en/program-2026",
+        "https://www.festivaldellavalleditria.it/spettacolo/vennero-da-ogni-dove/2026-07-20"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-07-24",
+      "time": "21:00",
+      "event_title": "Il schiavo di sua moglie",
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/il-schiavo-di-sua-moglie/2026-07-24",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Chiostro del Carmine, Martina Franca",
+      "composer": null,
+      "status": "already_published_exact_source_day_work",
+      "duplicate_observations_collapsed": 2,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/en/program-2026",
+        "https://www.festivaldellavalleditria.it/programma-2026",
+        "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+      ],
+      "matched_catalog": [
+        {
+          "title": "Il schiavo di sua moglie",
+          "venue": "Chiostro del Carmine",
+          "city": "Martina Franca",
+          "time": "21:00",
+          "origin": "verified_catalog",
+          "source_url": "https://www.festivaldellavalleditria.it/spettacolo/il-schiavo-di-sua-moglie/2026-07-24"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "time": "21:00",
+      "event_title": "Carmen",
+      "source_url": "https://www.festivaldellavalleditria.it/en/spettacolo/carmen/2026-07-25",
+      "source_key": "martina-valle-itria-2026",
+      "venue": "Palazzo Ducale, Martina Franca",
+      "composer": null,
+      "status": "already_published_exact_source_day_work",
+      "duplicate_observations_collapsed": 2,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.festivaldellavalleditria.it/en/program-2026",
+        "https://www.festivaldellavalleditria.it/programma-2026",
+        "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ],
+      "matched_catalog": [
+        {
+          "title": "Carmen",
+          "venue": "Palazzo Ducale di Martina Franca",
+          "city": "Martina Franca",
+          "time": "21:00",
+          "origin": "verified_catalog",
+          "source_url": "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "time": "22:30",
+      "event_title": "Il cambiamento era incessante",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-09-25",
+      "time": "22:30",
+      "event_title": "La costanza trionfante",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "official_opera_candidate_needs_publication_review_time_conflict",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": {
+        "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/modena-belcanto-festival/la-costanza-trionfante",
+        "composer": "Antonio Vivaldi",
+        "time": "20:30",
+        "venue": "Teatro Comunale Pavarotti-Freni",
+        "evidence": "Municipal official event: Opera di Vivaldi, semiscenic recovered music, general public, ticket price, Friday 25 September 2026 20:30. Verify canonical work identity and scope before publication."
+      },
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-09-26",
+      "time": "19:00",
+      "event_title": "Kammermusik n. 1",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Galleria Estense, Sala dei Veneti",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-09-26",
+      "time": "23:30",
+      "event_title": "Voci inaudite",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Chiesa di San Carlo",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-09-27",
+      "time": "19:30",
+      "event_title": "Kattivissimi and friends… all&#8217;Opera",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-09-27",
+      "time": "22:30",
+      "event_title": "Letteralmente Verdi",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-09-30",
+      "time": "23:00",
+      "event_title": "Ma l&#8217;amor mio non muore!",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Sala Truffaut",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-02",
+      "time": "22:30",
+      "event_title": "Viva Verdi",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro del Popolo, Concordia sulla Secchia (MO)",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-03",
+      "time": "19:00",
+      "event_title": "Kammermusik n. 2",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Palazzo Ducale di Sassuolo",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-04",
+      "time": "22:30",
+      "event_title": "Concerto di Gala",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-09",
+      "time": "22:30",
+      "event_title": "A casa Bononcini",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Chiesa di San Carlo",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-10",
+      "time": "22:30",
+      "event_title": "Messa da Requiem",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-10",
+      "time": "11:00",
+      "event_title": "Pierino e il lupo",
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Accademia del Teatro Comunale",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-11",
+      "time": "19:00",
+      "event_title": "Dalla Boemia al Ducato di Modena",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Temple Theater /Teatro A. Rompianesi, Sassuolo",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-12",
+      "time": "22:30",
+      "event_title": "Mamma: tributo a Luciano Pavarotti e Henry Mancini",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-13",
+      "time": "22:30",
+      "event_title": "Filarmonie Future",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale di Carpi",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-17",
+      "time": "20:00",
+      "event_title": "La preghiera nell’opera lirica",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Chiesa di Sant'Agostino",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-17",
+      "time": "22:30",
+      "event_title": "Le maschere allo specchio",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Ridotto del Teatro",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-10-17",
+      "time": "11:00",
+      "event_title": "Pierino e il lupo",
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Accademia del Teatro Comunale",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-12",
+      "time": "21:30",
+      "event_title": "Caterina Barbieri e Fontanamix ensemble",
+      "source_url": "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+      "source_key": "modena-teatro-opera-2026-27",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatrocomunalemodena.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-21",
+      "time": "11:00",
+      "event_title": "Pierino e il lupo",
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Accademia del Teatro Comunale",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-25",
+      "time": "10:45",
+      "event_title": "Verdi Game",
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro Garibaldi - Figline e Incisa Valdarno",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-26",
+      "time": "20:30",
+      "event_title": "Concerto di Gala del corso rossiniano",
+      "source_url": "https://www.tcbo.it/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro Comunale di San Giovanni in Persiceto",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-27",
+      "time": "10:45",
+      "event_title": "Verdi Game",
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Sala Topical - Montespertoli",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-28",
+      "time": "21:00",
+      "event_title": "Arrivato a questo punto",
+      "source_url": "https://www.teatroalfieriasti.it/event/arrivato-a-questo-punto/",
+      "source_key": "asti-alfieri-rolling-opera",
+      "venue": "Teatro Alfieri",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatroalfieriasti.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-28",
+      "time": "11:00",
+      "event_title": "Pierino e il lupo",
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Accademia del Teatro Comunale",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-29",
+      "time": "17:00",
+      "event_title": "Professori dell'Orchestra del Maggio",
+      "source_url": "https://www.maggiofiorentino.com/events/professori-dellorchestra-del-maggio-grassina-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Parrocchia di S. Michele Arcangelo - Grassina (Bagno a Ripoli)",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/events/concerto-di-natale-2026",
+        "https://www.maggiofiorentino.com/events/professori-dellorchestra-del-maggio-grassina-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-11-29",
+      "time": "16:30",
+      "event_title": "Professori dell'Orchestra del Maggio",
+      "source_url": "https://www.maggiofiorentino.com/events/professori-dellorchestra-del-maggio-greve-dicembre-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Chiesa di Santa Maria Assunta - Panzano in Chianti (Greve in Chianti)",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/events/concerto-di-natale-2026",
+        "https://www.maggiofiorentino.com/events/professori-dellorchestra-del-maggio-greve-dicembre-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-03",
+      "time": "11:00",
+      "event_title": "Verdi Game",
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro Il Momento - Empoli",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-04",
+      "time": "21:00",
+      "event_title": "Canzoni animate",
+      "source_url": "https://www.teatroalfieriasti.it/event/canzoni-animate/",
+      "source_key": "asti-alfieri-rolling-opera",
+      "venue": "Teatro Alfieri",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatroalfieriasti.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-04",
+      "time": "11:00",
+      "event_title": "Studenti all&#8217;opera! &#8211; Il flauto magico",
+      "source_url": "https://www.tcbo.it/evento/accademia/studenti-allopera-il-flauto-magico-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro Auditorium Manzoni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-04",
+      "time": "10:00",
+      "event_title": "Verdi Game",
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro Il Momento - Empoli",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-04",
+      "time": "11:30",
+      "event_title": "Verdi Game",
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro Il Momento - Empoli",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-05",
+      "time": "16:00",
+      "event_title": "Il flauto magico &#8211; Short Edition",
+      "source_url": "https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro Auditorium Manzoni",
+      "composer": null,
+      "status": "semistaged_abbreviated_opera_needs_scope_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": {
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/il-flauto-magico-short-edition-2026/",
+        "composer": "Wolfgang Amadeus Mozart",
+        "time": "16:00",
+        "venue": "Teatro Auditorium Manzoni",
+        "evidence": "Teatro Comunale di Bologna official: 90-minute short edition, semi-staged, Mozart, 5 December 2026 16:00, ticketed. Differentiate abbreviated academy performance from complete canonical opera."
+      },
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-06",
+      "time": "18:00",
+      "event_title": "Concerto di Natale",
+      "source_url": "https://www.maggiofiorentino.com/events/concerto-di-natale-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/concerto-di-natale-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-10",
+      "time": "21:00",
+      "event_title": "Orlando. La commedia",
+      "source_url": "https://www.teatroalfieriasti.it/event/orlando-la-commedia/",
+      "source_key": "asti-alfieri-rolling-opera",
+      "venue": "Teatro Alfieri",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatroalfieriasti.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-10",
+      "time": "20:00",
+      "event_title": "Roberto Bolle and Friends",
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-11",
+      "time": "20:30",
+      "event_title": "Angius, Grazia",
+      "source_url": "https://www.tcbo.it/evento/concerto/angius-grazia-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro Auditorium Manzoni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-11",
+      "time": "20:00",
+      "event_title": "Roberto Bolle and Friends",
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-12",
+      "time": "11:00",
+      "event_title": "Pierino e il lupo",
+      "source_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Accademia del Teatro Comunale",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-12",
+      "time": "15:30",
+      "event_title": "Roberto Bolle and Friends",
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-12",
+      "time": "20:00",
+      "event_title": "Roberto Bolle and Friends",
+      "source_url": "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/roberto-bolle-and-friends-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-13",
+      "time": "11:00",
+      "event_title": "Sauer",
+      "source_url": "https://www.tcbo.it/evento/concerto/sauer-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro Auditorium Manzoni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-13",
+      "time": "11:00",
+      "event_title": "Viaggio nell&#8217;Elisir d&#8217;amore",
+      "source_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-iv-appuntamento-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Circolo Culturale Lirico Bolognese",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-18",
+      "time": "20:30",
+      "event_title": "Il Re Leone Live in Concert",
+      "source_url": "https://www.tcbo.it/evento/speciale/il-re-leone-live-in-concert-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro EuropAuditorium",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-19",
+      "time": "21:00",
+      "event_title": "Concerto Gospel",
+      "source_url": "https://www.teatroalfieriasti.it/event/concerto-gospel/",
+      "source_key": "asti-alfieri-rolling-opera",
+      "venue": "Teatro Alfieri",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.teatroalfieriasti.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-19",
+      "time": "16:00",
+      "event_title": "Il Re Leone Live in Concert",
+      "source_url": "https://www.tcbo.it/evento/speciale/il-re-leone-live-in-concert-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro EuropAuditorium",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-20",
+      "time": "11:30",
+      "event_title": "Concerto Astrolabio",
+      "source_url": "https://www.maggiofiorentino.com/events/concerto-astrolabio-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Auditorium",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-20",
+      "time": "11:00",
+      "event_title": "Concerto di Natale",
+      "source_url": "https://www.tcbo.it/evento/accademia/domenica-in-musica-concerto-di-natale-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro Auditorium Manzoni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-20",
+      "time": "16:00",
+      "event_title": "Il Re Leone Live in Concert",
+      "source_url": "https://www.tcbo.it/evento/speciale/il-re-leone-live-in-concert-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro EuropAuditorium",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-20",
+      "time": "17:00",
+      "event_title": "Les contes d'Hoffmann",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "already_published_exact_source_day_work",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12"
+      ],
+      "matched_catalog": [
+        {
+          "title": "Les contes d'Hoffmann",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "city": "Firenze",
+          "time": "17:00",
+          "origin": "verified_catalog",
+          "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-22",
+      "time": "10:30",
+      "event_title": "Verdi Game",
+      "source_url": "https://www.maggiofiorentino.com/events/verdi-game-2026",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro delle Arti - Lastra a Signa",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 1,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12",
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "matched_catalog": []
+    },
+    {
+      "date": "2026-12-27",
+      "time": "15:30",
+      "event_title": "Les contes d'Hoffmann",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "already_published_exact_source_day_work",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12"
+      ],
+      "matched_catalog": [
+        {
+          "title": "Les contes d'Hoffmann",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "city": "Firenze",
+          "time": "15:30",
+          "origin": "verified_catalog",
+          "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-30",
+      "time": "20:00",
+      "event_title": "Les contes d'Hoffmann",
+      "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "venue": "Teatro del Maggio - Sala Grande",
+      "composer": null,
+      "status": "already_published_exact_source_day_work",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.maggiofiorentino.com/calendario/2026/12"
+      ],
+      "matched_catalog": [
+        {
+          "title": "Les contes d'Hoffmann",
+          "venue": "Teatro del Maggio Musicale Fiorentino",
+          "city": "Firenze",
+          "time": "20:00",
+          "origin": "verified_catalog",
+          "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-31",
+      "time": "16:00",
+      "event_title": "Stenz",
+      "source_url": "https://www.tcbo.it/evento/concerto/stenz-2026/",
+      "source_key": "bologna-comunale-opera-2027",
+      "venue": "Teatro Auditorium Manzoni",
+      "composer": null,
+      "status": "unmatched_requires_official_review",
+      "duplicate_observations_collapsed": 0,
+      "official_review_evidence": null,
+      "discovered_from": [
+        "https://www.tcbo.it/"
+      ],
+      "matched_catalog": []
+    }
+  ],
+  "warning": "Unmatched observations are not verified missing recite. In particular, generic event/season JSON-LD cannot certify opera, general audience, exact venue, or complete calendar. No automatic publication."
+}
