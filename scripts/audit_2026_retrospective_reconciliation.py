@@ -26,6 +26,7 @@ PROGRAMS = ROOT / "public/catalog/programs.json"
 HISTORICAL = ROOT / "data/historical-2026-official-evidence.json"
 OUTPUT = ROOT / "public/diagnostics/atlas-2026-retrospective-reconciliation.json"
 PRIORITY = ROOT / "data/retrospective-2026-priority-reviews.json"
+DECISIONS = ROOT / "data/retrospective-2026-source-specific-decisions.json"
 
 def norm(value):
     value = unicodedata.normalize("NFKD", html.unescape(str(value or "")).casefold())
@@ -96,12 +97,22 @@ def same_time(fact_hour, published_hour):
     # Time missing is not evidence of an exact showtime match.
     return fact_hour is not None and published_hour is not None and fact_hour == published_hour
 
-def reconcile(report, catalog, programs, historical, priority=None):
+def reconcile(report, catalog, programs, historical, priority=None, decisions=None):
     if report.get("year") != 2026 or report.get("read_only") is not True:
         raise ValueError("invalid 2026 retrospective input")
     rows=catalog_rows(catalog,programs,historical)
     reviews={(url_key(p.get("source_url")),p.get("date"),norm(p.get("event_title"))):p
              for p in (priority or {}).get("records",[])}
+    allowed={"exclude_nonopera","opera_component_published_ballet_companion"}
+    decision_map={}
+    for p in (decisions or {}).get("decisions",[]):
+        if p.get("decision") not in allowed or not p.get("time") or not p.get("venue"):
+            raise ValueError("incomplete retrospective source decision")
+        k=(url_key(p.get("source_url")),p.get("date"),norm(p.get("event_title")),
+           p.get("time"),norm(p.get("venue")))
+        if not k[0] or k in decision_map:
+            raise ValueError("duplicate or untraceable retrospective source decision")
+        decision_map[k]=p
     by_url_day=defaultdict(list)
     by_title_day=defaultdict(list)
     for row in rows:
@@ -141,8 +152,13 @@ def reconcile(report, catalog, programs, historical, priority=None):
         direct=by_url_day.get((url_key(source),day),[])
         candidates=by_title_day.get((title,day),[])
         reviewed=reviews.get((url_key(source),day,title))
+        editorial=decision_map.get((url_key(source),day,title,hour,venue))
         if excluded_nonopera(source_key,source):
             status="excluded_by_approved_policy"
+            matched=[]
+        elif editorial:
+            status=("screened_nonopera_exact_source" if editorial["decision"]=="exclude_nonopera"
+                    else "opera_component_published_ballet_companion")
             matched=[]
         elif reviewed:
             # The official independently checked event page may disagree with
@@ -181,6 +197,11 @@ def reconcile(report, catalog, programs, historical, priority=None):
             "source_url":source,"source_key":source_key,"venue":fact.get("venue"),
             "composer":fact.get("composer"),"status":status,
             "duplicate_observations_collapsed":len(copies)-1,
+            "exact_source_decision":({
+                "decision":editorial["decision"],"reason":editorial["reason"],
+                "provenance":editorial["provenance"],
+                "scope":"this exact official source, title, day, time and venue only"
+            } if editorial else None),
             "official_review_evidence":({
                 "official_detail_url":reviewed["official_detail_url"],
                 "composer":reviewed["composer"],
@@ -228,7 +249,7 @@ def main():
     def read(path):
         return json.loads(path.read_text(encoding="utf-8"))
     result=reconcile(read(INPUT),read(CATALOG),read(PROGRAMS),read(HISTORICAL),
-                     read(PRIORITY))
+                     read(PRIORITY),read(DECISIONS))
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",
                            encoding="utf-8")
@@ -243,7 +264,9 @@ def main():
                                  "excluded_by_approved_policy",
                                  "official_archive_already_documented",
                                  "official_opera_candidate_needs_publication_review",
-                                 "semistaged_abbreviated_opera_needs_scope_review"):
+                                 "semistaged_abbreviated_opera_needs_scope_review",
+                                 "screened_nonopera_exact_source",
+                                 "opera_component_published_ballet_companion"):
             print("REVIEW " + json.dumps({
                 "date":row["date"],"title":row["event_title"],
                 "venue":row["venue"],"status":row["status"],
