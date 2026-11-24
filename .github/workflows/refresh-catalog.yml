@@ -27,6 +27,8 @@ on:
       - '!scripts/push_pipeline_operations_health.py'
       - '!scripts/audit_public_atlas.py'
       - '!scripts/push_live_publication_audit.py'
+      # Joomla integration is a read-only export with its own workflow.
+      - '!scripts/publish_integration_index.py'
       # Tests still run on every PR in python-tests.yml; running a full
       # network crawl for arbitrary test edits creates dozens of redundant
       # queued jobs. Explicitly retained tests below are acquisition-critical.
