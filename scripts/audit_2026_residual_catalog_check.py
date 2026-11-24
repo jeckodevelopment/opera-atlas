@@ -68,6 +68,62 @@ OFFICIAL_GENRE_EVIDENCE = (
         "official_genre_url":"https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
         "reason":"The official programme categorizes all five dated performances as a narrated concert for children aged three to six.",
     },
+    {
+        "source_key":"modena-teatro-opera-2026-27", "title":"I love you, Schubert! / Play Bach – Balletto Teatro di Torino",
+        "days":["2026-07-24"], "venue":null,
+        "genre":"dance", "official_detail_url":"https://www.teatrocomunalemodena.it/spettacolo/play-bach-i-love-you-schubert-balletto-di-torino/",
+        "official_genre_url":"https://www.teatrocomunalemodena.it/spettacolo/play-bach-i-love-you-schubert-balletto-di-torino/",
+        "reason":"Teatro di Modena: Danza, Balletto Teatro di Torino; event 24 July.",
+    },
+    {
+        "source_key":"modena-teatro-opera-2026-27", "title":"I bislacchi – Artemis Danza",
+        "days":["2026-07-26"], "venue":"Parco dei Castagni",
+        "genre":"dance", "official_detail_url":"https://www.teatrocomunalemodena.it/spettacolo/i-bislacchi-artemis-danza/",
+        "official_genre_url":"https://www.teatrocomunalemodena.it/spettacolo/i-bislacchi-artemis-danza/",
+        "reason":"Official Modena event classifies Artemis Danza as dance, 26 July.",
+    },
+    {
+        "source_key":"modena-teatro-opera-2026-27", "title":"Compagnia Anželika Cholina Dance Theatre – Anna Karenina",
+        "days":["2026-11-06"], "venue":"Teatro Comunale Pavarotti-Freni",
+        "genre":"dance", "official_detail_url":"https://www.teatrocomunalemodena.it/spettacolo/compagnia-anzelika-cholina-dance-theatre-anna-karenina/",
+        "official_genre_url":"https://www.teatrocomunalemodena.it/spettacolo/compagnia-anzelika-cholina-dance-theatre-anna-karenina/",
+        "reason":"Official Modena page labels production Danza, 6 November.",
+    },
+    {
+        "source_key":"modena-teatro-opera-2026-27", "title":"Serbian National Theatre – Giselle",
+        "days":["2026-12-01"], "venue":"Teatro Comunale Pavarotti-Freni",
+        "genre":"ballet", "official_detail_url":"https://www.teatrocomunalemodena.it/spettacolo/serbian-national-theatre-giselle/",
+        "official_genre_url":"https://www.teatrocomunalemodena.it/spettacolo/serbian-national-theatre-giselle/",
+        "reason":"Official Modena event identifies Giselle as ballet on 1 December.",
+    },
+    {
+        "source_key":"modena-teatro-opera-2026-27", "title":"Compagnia Artemis Danza – Verdi/Shakespeare: Trilogia della brama",
+        "days":["2026-12-16"], "venue":"Teatro Comunale Pavarotti-Freni",
+        "genre":"dance", "official_detail_url":"https://www.teatrocomunalemodena.it/spettacolo/compagnia-artemis-danza-verdi-shakespeare-trilogia-della-brama/",
+        "official_genre_url":"https://www.teatrocomunalemodena.it/spettacolo/compagnia-artemis-danza-verdi-shakespeare-trilogia-della-brama/",
+        "reason":"Official Modena page classifies Verdi/Shakespeare as Danza, not staged opera.",
+    },
+    {
+        "source_key":"bologna-comunale-opera-2027", "title":"The Lion King Live in Concert",
+        "days":["2026-12-18","2026-12-19","2026-12-20"], "venue":"Teatro EuropAuditorium",
+        "genre":"film_with_live_orchestra", "official_detail_url":"https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "official_genre_url":"https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "reason":"Official TCBO categorizes all three dates as film projection with live orchestra.",
+    },
+    {
+        "source_key":"piacenza-opera-2026-27", "title":"Siberia | prova aperta alle scuole",
+        "days":["2026-12-14"], "venue":"Teatro Municipale",
+        "genre":"school_only_rehearsal", "official_detail_url":"https://teatripiacenza.it/event/siberia/",
+        "official_genre_url":"https://teatripiacenza.it/event/siberia/",
+        "reason":"Official Piacenza event restricts 14 December rehearsal to pupils and accompanying teachers.",
+    },
+    {
+        "source_key":"piacenza-opera-2026-27", "title":"Siberia | anteprima #Siberia18",
+        "days":["2026-12-16"], "venue":"Teatro Municipale",
+        "genre":"restricted_age_preview", "official_detail_url":"https://teatripiacenza.it/event/siberia/",
+        "official_genre_url":"https://teatripiacenza.it/event/siberia/",
+        "reason":"Official Piacenza production reserves 16 December preview to young people turning 18 in 2026-27.",
+    },
 )
 
 
