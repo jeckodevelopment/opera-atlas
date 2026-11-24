@@ -11,6 +11,9 @@ on:
     paths:
       - 'scripts/audit_2026_editorial_triage.py'
       - '.github/workflows/audit-2026-editorial-triage.yml'
+  workflow_run:
+    workflows: ['Audit 2026 — national four-batch reconciliation']
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -22,6 +25,7 @@ concurrency:
 
 jobs:
   triage:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -42,7 +46,8 @@ jobs:
           x=json.loads(Path('public/diagnostics/atlas-2026-editorial-triage.json').read_text())
           assert x['read_only'] is True and x['catalog_updated'] is False
           assert x['complete_seasons_certified'] == 0
-          assert x['input_review_count'] == 94
+          assert x['input_review_count'] >= 0
+          assert x['input_review_count'] == len(json.loads(Path('public/diagnostics/atlas-2026-national-reconciliation-summary.json').read_text())['review_queue'])
           assert x['event_groups'] <= x['input_review_count']
           assert sum(x['bucket_counts'].values()) == x['event_groups']
           assert all(not e['automatic_publication'] and not e['automatic_exclusion']
