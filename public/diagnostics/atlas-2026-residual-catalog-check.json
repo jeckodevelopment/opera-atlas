@@ -1,0 +1,1508 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "generated_at": "2026-11-24T11:25:06+00:00",
+  "read_only": true,
+  "catalog_updated": false,
+  "complete_seasons_certified": 0,
+  "input_event_groups": 84,
+  "counts": {
+    "catalog_same_work_day_venue_clock_discrepancy": 11,
+    "catalog_same_work_day_venue_exact_clock": 2,
+    "official_nonopera_source_scoped": 3,
+    "requires_official_genre_and_catalog_review": 68
+  },
+  "by_source": {
+    "bellini-catania-opera-2026-27": {
+      "catalog_same_work_day_venue_clock_discrepancy": 4,
+      "requires_official_genre_and_catalog_review": 12
+    },
+    "bologna-comunale-opera-2027": {
+      "official_nonopera_source_scoped": 3,
+      "requires_official_genre_and_catalog_review": 17
+    },
+    "maggio-fiorentino-calendar-2027": {
+      "requires_official_genre_and_catalog_review": 4
+    },
+    "modena-teatro-opera-2026-27": {
+      "catalog_same_work_day_venue_clock_discrepancy": 7,
+      "requires_official_genre_and_catalog_review": 29
+    },
+    "piacenza-opera-2026-27": {
+      "catalog_same_work_day_venue_exact_clock": 2,
+      "requires_official_genre_and_catalog_review": 6
+    }
+  },
+  "observations": [
+    {
+      "date": "2026-10-29",
+      "title": "¡QUÉ VIVA ESPAÑA",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-31",
+      "title": "¡QUÉ VIVA ESPAÑA",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Il Natale del Redentore",
+      "time": null,
+      "venue": "Cattedrale Maria SS Annunziata Acireale",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-07",
+      "title": "Aimez &#8211; vous Brahms?",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-08",
+      "title": "Aimez &#8211; vous Brahms?",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Il quinto moschettiere",
+      "time": null,
+      "venue": "Teatro Sangiorgi",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "possible_catalog_match_needs_confirmation",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Il quinto moschettiere",
+          "clock": "11:00",
+          "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+          "venue": "Teatro Sangiorgi"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-20",
+      "title": "Le nozze dell&#8217;Orso",
+      "time": null,
+      "venue": "Teatro Sangiorgi",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "possible_catalog_match_needs_confirmation",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Le nozze dell’orso",
+          "clock": "11:00",
+          "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+          "venue": "Teatro Sangiorgi"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-28",
+      "title": "RECITAL  House of Puccini",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/",
+        "https://www.teatromassimobellini.it/news/"
+      ],
+      "triage_bucket": "cross_index_duplicate_needs_genre_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-01",
+      "title": "La bella addormentata",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/",
+        "https://www.teatromassimobellini.it/news/",
+        "https://www.teatromassimobellini.it/opere-e-balletto/"
+      ],
+      "triage_bucket": "cross_index_duplicate_needs_genre_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-02",
+      "title": "La bella addormentata",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-03",
+      "title": "La bella addormentata",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-04",
+      "title": "La bella addormentata",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-05",
+      "title": "La bella addormentata",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-06",
+      "title": "La bella addormentata",
+      "time": null,
+      "venue": "Teatro Metropolitan.",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-10",
+      "title": "Le nozze dell&#8217;Orso",
+      "time": null,
+      "venue": "Teatro Sangiorgi",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/news/",
+        "https://www.teatromassimobellini.it/opere-e-balletto/"
+      ],
+      "triage_bucket": "possible_catalog_match_needs_confirmation",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Le nozze dell’orso",
+          "clock": "11:00",
+          "source_url": "https://www.teatromassimobellini.it/eventi/le-nozze-dellorso/",
+          "venue": "Teatro Sangiorgi"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-16",
+      "title": "Il quinto moschettiere",
+      "time": null,
+      "venue": "Teatro Sangiorgi",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_urls": [
+        "https://www.teatromassimobellini.it/news/",
+        "https://www.teatromassimobellini.it/opere-e-balletto/"
+      ],
+      "triage_bucket": "possible_catalog_match_needs_confirmation",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Il quinto moschettiere",
+          "clock": "11:00",
+          "source_url": "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/",
+          "venue": "Teatro Sangiorgi"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-10",
+      "title": "Pierino e il lupo",
+      "time": "11:00",
+      "venue": null,
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-17",
+      "title": "Pierino e il lupo",
+      "time": "11:00",
+      "venue": null,
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Opera Guccini",
+      "time": "21:00",
+      "venue": "Teatro Duse",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/evento/speciale/opera-guccini-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "official_nonopera_source_scoped",
+      "catalog_matches": [],
+      "official_nonopera_evidence": {
+        "days": [
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31"
+        ],
+        "reason": "The Teatro Comunale di Bologna describes the event as a concert-show of Guccini songs, not a staged opera.",
+        "official_detail_url": "https://www.tcbo.it/evento/speciale/opera-guccini-2026/"
+      },
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Opera Guccini",
+      "time": "21:00",
+      "venue": "Teatro Duse",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/evento/speciale/opera-guccini-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "official_nonopera_source_scoped",
+      "catalog_matches": [],
+      "official_nonopera_evidence": {
+        "days": [
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31"
+        ],
+        "reason": "The Teatro Comunale di Bologna describes the event as a concert-show of Guccini songs, not a staged opera.",
+        "official_detail_url": "https://www.tcbo.it/evento/speciale/opera-guccini-2026/"
+      },
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-31",
+      "title": "Opera Guccini",
+      "time": "18:00",
+      "venue": "Teatro Duse",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/evento/speciale/opera-guccini-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "official_nonopera_source_scoped",
+      "catalog_matches": [],
+      "official_nonopera_evidence": {
+        "days": [
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31"
+        ],
+        "reason": "The Teatro Comunale di Bologna describes the event as a concert-show of Guccini songs, not a staged opera.",
+        "official_detail_url": "https://www.tcbo.it/evento/speciale/opera-guccini-2026/"
+      },
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-08",
+      "title": "Passione e tormento",
+      "time": "11:00",
+      "venue": "Accademia Filarmonica",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/evento/accademia/domenica-in-musica-ii-appuntamento-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-21",
+      "title": "Pierino e il lupo",
+      "time": "11:00",
+      "venue": null,
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-22",
+      "title": "Follie, intrighi e virtuosismo",
+      "time": "11:00",
+      "venue": "Museo Internazionale e Biblioteca della Musica",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/evento/accademia/domenica-in-musica-iii-appuntamento-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-26",
+      "title": "Concerto di Gala del corso rossiniano",
+      "time": "20:30",
+      "venue": "Teatro Comunale di San Giovanni in Persiceto",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/concerto-di-gala-del-corso-rossiniano-2026/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-28",
+      "title": "Pierino e il lupo",
+      "time": "11:00",
+      "venue": null,
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-04",
+      "title": "Studenti all&#8217;opera! &#8211; Il flauto magico",
+      "time": "11:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/studenti-allopera-il-flauto-magico-2026/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-11",
+      "title": "Angius, Grazia",
+      "time": "20:30",
+      "venue": "Teatro Auditorium Manzoni",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/concerto/angius-grazia-2026/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-12",
+      "title": "Pierino e il lupo",
+      "time": "11:00",
+      "venue": null,
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-13",
+      "title": "Sauer",
+      "time": "11:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/concerto/sauer-2026/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-13",
+      "title": "Viaggio nell&#8217;Elisir d&#8217;amore",
+      "time": "11:00",
+      "venue": "Circolo Culturale Lirico Bolognese",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-iv-appuntamento-2026/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-18",
+      "title": "The Lion King Live in Concert",
+      "time": "20:30",
+      "venue": "Teatro EuropAuditorium",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-19",
+      "title": "The Lion King Live in Concert",
+      "time": "16:00",
+      "venue": "Teatro EuropAuditorium",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-20",
+      "title": "Concerto di Natale",
+      "time": "11:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-concerto-di-natale-2026/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-20",
+      "title": "The Lion King Live in Concert",
+      "time": "16:00",
+      "venue": "Teatro EuropAuditorium",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-31",
+      "title": "Stenz",
+      "time": "16:00",
+      "venue": "Teatro Auditorium Manzoni",
+      "source_key": "bologna-comunale-opera-2027",
+      "source_urls": [
+        "https://www.tcbo.it/en/evento/concerto/stenz-2026/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-26",
+      "title": "Verdi Game",
+      "time": "10:30",
+      "venue": "Istituto Baccio da Montelupo - Montelupo Fiorentino",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_urls": [
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-26",
+      "title": "Verdi Game",
+      "time": "12:00",
+      "venue": "Istituto Baccio da Montelupo - Montelupo Fiorentino",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_urls": [
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-02",
+      "title": "Verdi Game",
+      "time": "11:00",
+      "venue": "Istituto Comprensivo \"Anna Maria Luisa De' Medici\" - Calenzano",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_urls": [
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-09",
+      "title": "Verdi Game",
+      "time": "10:45",
+      "venue": "Teatrodante \"Carlo Monni\" - Campi Bisenzio",
+      "source_key": "maggio-fiorentino-calendar-2027",
+      "source_urls": [
+        "https://www.maggiofiorentino.com/events/verdi-game-2026"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-07-24",
+      "title": "I love you, Schubert! / Play Bach &#8211; Balletto Teatro di Torino",
+      "time": "21:00",
+      "venue": null,
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-07-26",
+      "title": "I bislacchi &#8211; Artemis Danza",
+      "time": "21:00",
+      "venue": "Parco dei Castagni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-09",
+      "title": "La Notte della Basilica",
+      "time": "23:00",
+      "venue": "Fiorano Modenese",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-16",
+      "title": "Il cambiamento era incessante",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-25",
+      "title": "La costanza trionfante",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/modena-belcanto-festival/",
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "official_opera_candidate_needs_editorial_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-26",
+      "title": "Kammermusik n. 1",
+      "time": "19:00",
+      "venue": "Galleria Estense, Sala dei Veneti",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-26",
+      "title": "Voci inaudite",
+      "time": "23:30",
+      "venue": "Chiesa di San Carlo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-27",
+      "title": "Kattivissimi and friends… all&#8217;Opera",
+      "time": "19:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-27",
+      "title": "Letteralmente Verdi",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Ma l&#8217;amor mio non muore!",
+      "time": "23:00",
+      "venue": "Sala Truffaut",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-02",
+      "title": "Viva Verdi",
+      "time": "22:30",
+      "venue": "Teatro del Popolo, Concordia sulla Secchia (MO)",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-03",
+      "title": "Kammermusik n. 2",
+      "time": "19:00",
+      "venue": "Palazzo Ducale di Sassuolo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-04",
+      "title": "Concerto di Gala",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-09",
+      "title": "A casa Bononcini",
+      "time": "22:30",
+      "venue": "Chiesa di San Carlo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-10",
+      "title": "Messa da Requiem",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-11",
+      "title": "Dalla Boemia al Ducato di Modena",
+      "time": "19:00",
+      "venue": "Temple Theater /Teatro A. Rompianesi, Sassuolo",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-12",
+      "title": "Mamma: tributo a Luciano Pavarotti e Henry Mancini",
+      "time": "22:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-13",
+      "title": "Filarmonie Future",
+      "time": "22:30",
+      "venue": "Teatro Comunale di Carpi",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-17",
+      "title": "La preghiera nell’opera lirica",
+      "time": "20:00",
+      "venue": "Chiesa di Sant'Agostino",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-17",
+      "title": "Le maschere allo specchio",
+      "time": "22:30",
+      "venue": "Ridotto del Teatro",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Giuseppe Verdi &#8211; Macbeth",
+      "time": "21:00",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/opera/",
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "cross_index_duplicate_needs_genre_review",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Macbeth",
+          "clock": "20:00",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-01",
+      "title": "Giuseppe Verdi &#8211; Macbeth",
+      "time": "16:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Macbeth",
+          "clock": "15:30",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Filarmonica del Teatro Comunale di Modena",
+      "time": "21:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-06",
+      "title": "Compagnia Anželika Cholina Dance Theatre  &#8211; Anna Karenina",
+      "time": "21:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Chamber Orchestra of Europe",
+      "time": "21:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-12",
+      "title": "Caterina Barbieri e Fontanamix ensemble",
+      "time": "21:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-20",
+      "title": "Richard Wagner &#8211; Der fliegende Holländer (L’olandese volante)",
+      "time": "21:00",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/opera/",
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "cross_index_duplicate_needs_genre_review",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Der fliegende Holländer",
+          "clock": "20:00",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-22",
+      "title": "Richard Wagner &#8211; Der fliegende Holländer (L’olandese volante)",
+      "time": "16:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "Der fliegende Holländer",
+          "clock": "15:30",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-28",
+      "title": "Salvatore Passantino &#8211; L’esecuzione",
+      "time": "21:00",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/opera/",
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "cross_index_duplicate_needs_genre_review",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "L'esecuzione",
+          "clock": "20:00",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-29",
+      "title": "Salvatore Passantino &#8211; L’esecuzione",
+      "time": "16:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "L'esecuzione",
+          "clock": "15:30",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-01",
+      "title": "Serbian National Theatre &#8211; Giselle",
+      "time": "21:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-13",
+      "title": "Daniele Furlati  &#8211; I salvatori della mezzanotte",
+      "time": "18:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/opera/",
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "cross_index_duplicate_needs_genre_review",
+      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "catalog_matches": [
+        {
+          "title": "I salvatori della mezzanotte",
+          "clock": "17:30",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-14",
+      "title": "Daniele Furlati  &#8211; I salvatori della mezzanotte",
+      "time": "10:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-14",
+      "title": "Daniele Furlati  &#8211; I salvatori della mezzanotte",
+      "time": "12:00",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-16",
+      "title": "Compagnia Artemis Danza &#8211; Verdi/Shakespeare: Trilogia della brama",
+      "time": "21:30",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-19",
+      "title": "Filarmonica del Teatro Comunale di Modena",
+      "time": "21:30",
+      "venue": null,
+      "source_key": "modena-teatro-opera-2026-27",
+      "source_urls": [
+        "https://www.teatrocomunalemodena.it/spettacoli/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-11-28",
+      "title": "Orchestra Sinfonica di Milano",
+      "time": "20:30",
+      "venue": "Teatro Municipale",
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-13",
+      "title": "Prima di andare in Scena | Siberia",
+      "time": "11:00",
+      "venue": "Ridotto del Teatro Municipale",
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-14",
+      "title": "Siberia | prova aperta alle scuole",
+      "time": "15:30",
+      "venue": "Teatro Municipale",
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-15",
+      "title": "Siberia | #AperiOpera",
+      "time": "18:00",
+      "venue": "Foyer del Teatro Municipale",
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-16",
+      "title": "Siberia | anteprima #Siberia18",
+      "time": "19:00",
+      "venue": "Teatro Municipale",
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-18",
+      "title": "Siberia",
+      "time": "20:00",
+      "venue": "Teatro Municipale",
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "possible_catalog_match_needs_confirmation",
+      "status": "catalog_same_work_day_venue_exact_clock",
+      "catalog_matches": [
+        {
+          "title": "Siberia",
+          "clock": "20:00",
+          "source_url": "https://teatripiacenza.it/event/siberia/",
+          "venue": "Teatro Municipale"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-20",
+      "title": "Siberia",
+      "time": "15:30",
+      "venue": "Teatro Municipale",
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "possible_catalog_match_needs_confirmation",
+      "status": "catalog_same_work_day_venue_exact_clock",
+      "catalog_matches": [
+        {
+          "title": "Siberia",
+          "clock": "15:30",
+          "source_url": "https://teatripiacenza.it/event/siberia/",
+          "venue": "Teatro Municipale"
+        }
+      ],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    },
+    {
+      "date": "2026-12-31",
+      "title": "Concerto di San Silvestro 2026",
+      "time": "18:00",
+      "venue": null,
+      "source_key": "piacenza-opera-2026-27",
+      "source_urls": [
+        "https://teatripiacenza.it/calendario/"
+      ],
+      "triage_bucket": "unclassified_requires_source_review",
+      "status": "requires_official_genre_and_catalog_review",
+      "catalog_matches": [],
+      "official_nonopera_evidence": null,
+      "automatic_publication": false,
+      "automatic_exclusion": false
+    }
+  ],
+  "warning": "Matching canonical title+day+venue is not proof that the reported clock is correct; preserve conflicts. Any non-opera decision is source-scoped. Other cases need primary-source review. No automatic publication."
+}
