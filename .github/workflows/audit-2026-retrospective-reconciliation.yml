@@ -1,0 +1,88 @@
+name: Audit 2026 — reconcile 84 retrospective observations
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/audit_2026_retrospective_reconciliation.py'
+      - 'tests/test_audit_2026_retrospective_reconciliation.py'
+      - 'data/retrospective-2026-priority-reviews.json'
+      - '.github/workflows/audit-2026-retrospective-reconciliation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_2026_retrospective_reconciliation.py'
+      - '.github/workflows/audit-2026-retrospective-reconciliation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-atlas-2026-retrospective-reconciliation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Verify reconciliation safeguards
+        run: python -m unittest tests.test_audit_2026_retrospective_reconciliation -v
+      - name: Reconcile stored 2026 observations in bulk, offline
+        run: |
+          python -m scripts.audit_2026_retrospective_reconciliation
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('public/diagnostics/atlas-2026-retrospective-reconciliation.json').read_text())
+          assert x['read_only'] is True and x['catalog_updated'] is False
+          assert x['complete_seasons_certified']==0
+          assert x['raw_observation_count']==84, 'Unexpected source snapshot; explicitly review before publication'
+          assert sum(x['observation_counts'].values()) == x['unique_observation_count']
+          assert sum(v for k,v in x['observation_counts'].items()
+                     if k.startswith('official_opera_candidate_needs_publication_review'))>=1
+          assert x['observation_counts'].get('semistaged_abbreviated_opera_needs_scope_review',0)>=1
+          print('Reconciled statuses:',x['observation_counts'])
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: opera-atlas-2026-retrospective-reconciliation
+          path: public/diagnostics/atlas-2026-retrospective-reconciliation.json
+          retention-days: 30
+
+  publish:
+    needs: reconcile
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093a # v4
+        with:
+          name: opera-atlas-2026-retrospective-reconciliation
+          path: public/diagnostics
+      - name: Publish only diagnostics with race-safe latest-main retry
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp public/diagnostics/atlas-2026-retrospective-reconciliation.json /tmp/atlas-2026-retrospective-reconciliation.json
+          for attempt in 1 2 3 4 5 6 7 8; do
+            git fetch --no-tags origin main
+            git checkout -B audit-retro-reconciliation-publish FETCH_HEAD
+            mkdir -p public/diagnostics
+            cp /tmp/atlas-2026-retrospective-reconciliation.json public/diagnostics/atlas-2026-retrospective-reconciliation.json
+            git add -- public/diagnostics/atlas-2026-retrospective-reconciliation.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'data(audit): 2026 historical retrospective reconciliation [skip ci]'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
