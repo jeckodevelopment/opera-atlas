@@ -56,7 +56,7 @@ def api(endpoint, **params):
                 data = json.loads(response.read(4_000_001))
             if "error" not in data:
                 return data
-            if data["error"].get("code") not in {"maxlag", "ratelimited", "readonly"}:
+            if data["error"].get("code") not in {"maxlag", "ratelimited", "readonly", "cirrussearch-too-busy-error"}:
                 raise WikimediaError("Wikimedia API rejected request")
         except HTTPError as exc:
             if exc.code not in TRANSIENT_CODES:
