@@ -83,7 +83,7 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(0,sources["Teatro Dante Alighieri"]["official_unpublished_opera_lead_count"])
         ravenna=[p for p in self.leads["records"] if p["city"]=="Ravenna"]
         self.assertEqual(3,len(ravenna))
-        self.assertTrue(all(clock is None for p in ravenna for day,clock in p["dates"]))
+        self.assertTrue(all(clock is not None for p in ravenna for day,clock in p["dates"]))
         self.assertEqual(0,sources["Teatro Alfieri"]["official_unpublished_opera_lead_count"])
         forbidden_school={("2026-01-30","11:00"),("2026-03-20","11:00"),
                           ("2026-04-21","11:00"),("2026-11-17","11:00"),
