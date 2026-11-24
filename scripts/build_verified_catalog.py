@@ -18,6 +18,7 @@ OUTPUT = ROOT / "site" / "performances.json"
 TIME_EVIDENCE = ROOT / "data" / "verified-time-evidence.json"
 APPROVED_PAGES = {
     "https://www.teatroallascala.org/it/stagione/2026-2027/opera/don-giovanni.html",
+    "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
     "https://www.teatroallascala.org/it/stagione/2026-2027/opera/la-boheme.html",
     "https://www.arena.it/arena-opera-festival/nabucco/",
     "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata",
@@ -341,6 +342,21 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
         url = production["source_url"]
         if url not in permitted:
             raise ValueError("non-reviewed source page")
+        # Modena Belcanto 2026: an opera, not a symphonic concert. The
+        # surviving RV 706-A music was staged semiscenically with missing
+        # sections narrated by Federico Maria Sardelli. One verified showtime,
+        # and no permission to infer further dates or an integral staging.
+        if url == "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/":
+            if (production.get("title") != "La costanza trionfante"
+                    or production.get("composer") != "Antonio Vivaldi"
+                    or production.get("municipality") != "Modena"
+                    or production.get("venue") != "Teatro Comunale Pavarotti-Freni"
+                    or production.get("region") != "Emilia-Romagna"
+                    or production.get("performance_format") !=
+                        "semiscenica_musica_superstite_parti_mancanti_narrate"
+                    or production.get("festival") != "Modena Belcanto Festival 2026"
+                    or production.get("dates") != [["2026-09-25","20:30"]]):
+                raise ValueError("La costanza trionfante: only reviewed 2026 semiscenic staging permitted")
         # Manually reviewed first Italian staging of Sciarrino's 2023 opera.
         # A single approved first-party URL MUST NOT license other dates, works
         # or venues; the fifth performance is 1 July, after the H1 boundary.

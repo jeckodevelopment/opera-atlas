@@ -866,6 +866,13 @@
       "title": "The Turn of the Screw",
       "composer": "Benjamin Britten",
       "authority_url": "https://www.brittenpearsarts.org/music/the-turn-of-the-screw"
+    },
+    "la costanza trionfante|antonio vivaldi": {
+      "id": "oa-w-000136",
+      "slug": "la-costanza-trionfante",
+      "title": "La costanza trionfante",
+      "composer": "Antonio Vivaldi",
+      "authority_url": "https://corago.unibo.it/opera/APC0004700"
     }
   },
   "venues": {
@@ -3897,6 +3904,16 @@
       "slug": "elisir-d-amore",
       "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/",
       "season": "2025-2026"
+    },
+    "historical-2026-modena-belcanto-la-costanza-trionfante": {
+      "id": "oa-s-000319",
+      "work_id": "oa-w-000136",
+      "venue_id": "oa-v-000044",
+      "slug": "la-costanza-trionfante",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
+      "season": "2026-2027",
+      "performance_format": "semiscenica_musica_superstite_parti_mancanti_narrate",
+      "festival": "Modena Belcanto Festival 2026"
     }
   },
   "performances": {
@@ -11352,6 +11369,12 @@
       "staging_id": "oa-s-000318",
       "original_date": "2026-03-29",
       "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/"
+    },
+    "historical-2026-modena-belcanto-la-costanza-trionfante|2026-09-25": {
+      "id": "oa-r-001270",
+      "staging_id": "oa-s-000319",
+      "original_date": "2026-09-25",
+      "source_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/"
     }
   },
   "reserved_works": {
