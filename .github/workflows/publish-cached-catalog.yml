@@ -14,6 +14,7 @@ on:
       - '!scripts/audit_public_atlas.py'
       - '!scripts/push_live_publication_audit.py'
       - '!scripts/audit_2026_jan_jun_official.py'
+      - '!scripts/audit_2026_jan_jun_reconciliation.py'
       - 'opera_atlas/**'
       - 'data/candidate-detail-evidence.json'
       - 'data/season-index-candidates.json'
