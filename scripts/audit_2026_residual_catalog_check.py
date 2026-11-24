@@ -446,6 +446,298 @@ OFFICIAL_GENRE_EVIDENCE = (
         "official_genre_url": "https://teatrodipisa.it/en/calendario/dido-and-aeneas-guida-allascolto-con-enrico-girardi/",
         "reason": "Official Pisa listening guide precedes public opera dates 23/25 October and is not a recita.",
     },
+    {
+        "source_key": "modena-teatro-opera-2026-27",
+        "title": "La Notte della Basilica",
+        "days": [
+            "2026-09-09"
+        ],
+        "venue": "Fiorano Modenese",
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://www.filarmonicamodena.it/orchestra/1-luglio-2026-la-notte-della-basilica/",
+        "official_genre_url": "https://www.filarmonicamodena.it/orchestra/1-luglio-2026-la-notte-della-basilica/",
+        "reason": "The official performing orchestra identifies this event as a concert at Fiorano, not a staged opera."
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27",
+        "title": "Filarmonica del Teatro Comunale di Modena",
+        "days": [
+            "2026-11-04"
+        ],
+        "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena",
+        "official_genre_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena",
+        "reason": "Municipal first-party event is explicitly part of the 2026/27 concert season; Beethoven and Brahms."
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27",
+        "title": "Chamber Orchestra of Europe",
+        "days": [
+            "2026-11-10"
+        ],
+        "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://coeurope.org/fr/coe-concerts/coe-projects-list/tournee-avec-sir-antonio-pappano-et-alexandre-kantorow/",
+        "official_genre_url": "https://coeurope.org/fr/coe-concerts/coe-projects-list/tournee-avec-sir-antonio-pappano-et-alexandre-kantorow/",
+        "reason": "Official performing orchestra tour includes concert of Brahms and Dvorak, Modena 10 November."
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27",
+        "title": "Filarmonica del Teatro Comunale di Modena",
+        "days": [
+            "2026-12-19"
+        ],
+        "venue": None,
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
+        "official_genre_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
+        "reason": "Municipal concert-season detail confirms 19 December, no opera staging; observation venue omitted."
+    },
+    {
+        "source_key": "piacenza-opera-2026-27",
+        "title": "Orchestra Sinfonica di Milano",
+        "days": [
+            "2026-11-28"
+        ],
+        "venue": "Teatro Municipale",
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatripiacenza.it/stagioni/stagione-26-27/",
+        "official_genre_url": "https://teatripiacenza.it/stagioni/stagione-26-27/",
+        "reason": "Official season lists it in Concerti, with orchestra and conductor."
+    },
+    {
+        "source_key": "piacenza-opera-2026-27",
+        "title": "Concerto di San Silvestro 2026",
+        "days": [
+            "2026-12-31"
+        ],
+        "venue": None,
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatripiacenza.it/event/concerto-di-san-silvestro-2026/",
+        "official_genre_url": "https://teatripiacenza.it/event/concerto-di-san-silvestro-2026/",
+        "reason": "First-party event is an orchestral New Year's Eve concert, not a staged opera."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Librinteatro | La musica in parole",
+        "days": [
+            "2026-09-30"
+        ],
+        "venue": None,
+        "genre": "literary_meeting",
+        "official_detail_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "official_genre_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "reason": "First-party theatre source describes literary book meetings, not staged lyric performances."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Italia Mundial | Goal Festival",
+        "days": [
+            "2026-10-01"
+        ],
+        "venue": None,
+        "genre": "storytelling_show",
+        "official_detail_url": "https://teatrodipisa.it/calendario/italia-mundial-goal-festival/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/italia-mundial-goal-festival/",
+        "reason": "Official theatre page describes a storytelling performance about the 1982 World Cup."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "VerdiFormazione, corsi di recitazione e scrittura creativa",
+        "days": [
+            "2026-10-13"
+        ],
+        "venue": None,
+        "genre": "acting_training",
+        "official_detail_url": "https://teatrodipisa.it/ru/verdiformazione-ripartono-i-corsi-di-recitazione-e-scrittura-creativa/",
+        "official_genre_url": "https://teatrodipisa.it/ru/verdiformazione-ripartono-i-corsi-di-recitazione-e-scrittura-creativa/",
+        "reason": "Theatre's VerdiFormazione event is an acting and creative writing course, not a public opera."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Librinteatro | La musica in parole",
+        "days": [
+            "2026-10-14"
+        ],
+        "venue": None,
+        "genre": "literary_meeting",
+        "official_detail_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "official_genre_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "reason": "Official event is a conversation about a Puccini book with author, not a performance of an opera."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Akademie fur Alte Musik Berlin",
+        "days": [
+            "2026-10-18"
+        ],
+        "venue": None,
+        "genre": "chamber_concert",
+        "official_detail_url": "https://teatrodipisa.it/concerti/",
+        "official_genre_url": "https://teatrodipisa.it/concerti/",
+        "reason": "Theatre concert programme identifies an orchestral chamber-music performance."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Librinteatro | La musica in parole",
+        "days": [
+            "2026-10-28"
+        ],
+        "venue": None,
+        "genre": "literary_meeting",
+        "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
+        "reason": "Official calendar says Cappelletto presents a book about Farinelli in the theatre foyer."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Concerto d’Autunno",
+        "days": [
+            "2026-10-29"
+        ],
+        "venue": None,
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
+        "reason": "Official theatre calendar lists the University of Pisa Orchestra performing Giuliani and Haydn."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Pisa Jazz | Miles Davis 100",
+        "days": [
+            "2026-11-04"
+        ],
+        "venue": None,
+        "genre": "jazz_concert",
+        "official_detail_url": "https://teatrodipisa.it/calendario/pisa-jazz-miles-davis-100/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/pisa-jazz-miles-davis-100/",
+        "reason": "First-party theatre calendar calls this jazz tribute Miles Davis 100."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Stand-Up Comedy Show",
+        "days": [
+            "2026-11-11"
+        ],
+        "venue": None,
+        "genre": "standup_comedy",
+        "official_detail_url": "https://teatrodipisa.it/en/calendario/stand-up-comedy-show/",
+        "official_genre_url": "https://teatrodipisa.it/en/calendario/stand-up-comedy-show/",
+        "reason": "Official category Altri eventi and detailed stand-up comedy programme."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Enrico Pieranunzi",
+        "days": [
+            "2026-11-17"
+        ],
+        "venue": None,
+        "genre": "jazz_piano_concert",
+        "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
+        "reason": "Official event is Normale in Jazz, a solo piano concert playing Morricone."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Nuove Rotte. La libertà di scegliere",
+        "days": [
+            "2026-11-19"
+        ],
+        "venue": None,
+        "genre": "public_awareness_event",
+        "official_detail_url": "https://teatrodipisa.it/calendario/nuove-rotte-la-liberta-di-scegliere/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/nuove-rotte-la-liberta-di-scegliere/",
+        "reason": "Theatre describes a public awareness event about violence against women."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Gaber. Mi fa male il mondo",
+        "days": [
+            "2026-11-21"
+        ],
+        "venue": None,
+        "genre": "prose_theatre",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "reason": "First-party theatre programme identifies theatre of song and prose by Neri Marcore, not a lyric opera."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Gaber. Mi fa male il mondo",
+        "days": [
+            "2026-11-22"
+        ],
+        "venue": None,
+        "genre": "prose_theatre",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "reason": "Second performance of the official Prosa production."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Andrea Lucchesini",
+        "days": [
+            "2026-12-09"
+        ],
+        "venue": None,
+        "genre": "piano_recital",
+        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "official_genre_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "reason": "Official programme identifies solo piano works, not opera."
+    },
+    {
+        "source_key": "pisa-verdi-opera-2026-27",
+        "title": "Andrea Lucchesini",
+        "days": [
+            "2026-12-09"
+        ],
+        "venue": None,
+        "genre": "piano_recital",
+        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "official_genre_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "reason": "Duplicate observation via the second Pisa calendar source; same 9 December piano recital."
+    },
+    {
+        "source_key": "pisa-future-calendar",
+        "title": "Concerto di Natale | Diego Ceretta dirige l’ORT",
+        "days": [
+            "2026-12-22"
+        ],
+        "venue": None,
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "official_genre_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "reason": "Official Christmas concert of the Orchestra della Toscana conducted by Diego Ceretta."
+    },
+    {
+        "source_key": "pisa-verdi-opera-2026-27",
+        "title": "Concerto di Natale | Diego Ceretta dirige l’ORT",
+        "days": [
+            "2026-12-22"
+        ],
+        "venue": None,
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "official_genre_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "reason": "Same official Christmas symphonic concert, observed by second Pisa calendar source."
+    },
+    {
+        "source_key": "modena-teatro-opera-2026-27",
+        "title": "Daniele Furlati – I salvatori della mezzanotte",
+        "days": [
+            "2026-12-14"
+        ],
+        "venue": "Teatro Comunale Pavarotti-Freni",
+        "genre": "school_session_not_confirmed",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "reason": "Two school-hour observations (10:30 and 12:00) of 14 December are not advertised as general-public opera shows by official theatre detail; no performance is automatically added."
+    },
 )
 
 
@@ -459,7 +751,12 @@ def official_genre_evidence(group):
                 or norm(group.get("venue")) != norm(evidence["venue"])):
             continue
         target = urlsplit(evidence["official_detail_url"]).hostname
-        if not any(urlsplit(u).hostname == target
+        # Four explicitly verified Modena first-party ORGANIZER/municipal
+        # pages establish nonoperatic genre; the observation itself comes
+        # from the official TEATRO calendar rather than the organizer host.
+        # The exception is per frozen event/source/day/venue, not per domain.
+        observed_host=evidence.get("observed_index_host",target)
+        if not any(urlsplit(u).hostname == observed_host
                    for u in group.get("source_urls", []) if isinstance(u,str)):
             continue
         return {k:v for k,v in evidence.items() if k not in ("days","source_key","title","venue")}
@@ -614,8 +911,13 @@ def check(triage, catalog):
                 genre=genre_evidence["genre"]
                 if genre=="cancelled_concert":
                     status="official_cancelled_event_first_party"
-                elif genre in ("opera_semiscenic_reconstruction",
-                               "educational_semi_staged_opera"):
+                elif genre=="educational_semi_staged_opera":
+                    # User-approved catalog scope: academy student presentations
+                    # are not included in the ordinary opera performances feed.
+                    status="official_out_of_scope_educational_opera"
+                elif genre=="school_session_not_confirmed":
+                    status="official_school_session_not_public_unverified"
+                elif genre=="opera_semiscenic_reconstruction":
                     status="official_opera_special_format_editorial_review"
                 else:
                     status="official_nonopera_first_party_detail"

@@ -221,12 +221,14 @@ class ResidualTests(unittest.TestCase):
         for item in chosen:
             for day in item["days"]:
                 rows.append(dict(g(item["title"],day,None,item["venue"],
-                    urls=["https://"+item["official_detail_url"].split("/")[2]+"/calendario/"]),
+                    urls=["https://"+item.get("observed_index_host",
+                        item["official_detail_url"].split("/")[2])+"/calendario/"]),
                     source_key=item["source_key"]))
         result=check(inp(rows),{"productions":[]})
         self.assertEqual(len(rows),sum(result["counts"].values()))
         self.assertEqual(1,result["counts"]["official_cancelled_event_first_party"])
-        self.assertEqual(2,result["counts"]["official_opera_special_format_editorial_review"])
+        self.assertEqual(1,result["counts"]["official_opera_special_format_editorial_review"])
+        self.assertEqual(1,result["counts"]["official_out_of_scope_educational_opera"])
         self.assertTrue(all(not x["automatic_publication"] and
                             not x["automatic_exclusion"] and x["official_nonopera_evidence"]
                             for x in result["observations"]))
@@ -248,6 +250,48 @@ class ResidualTests(unittest.TestCase):
                      "L’occasione fa il ladro (Generale"))
         self.assertEqual(check(inp([school]),{"productions":[]})["counts"],
                          {"official_nonopera_first_party_detail":1})
+
+    def test_final_2026_residual_25_only_proved_scoped_source_evidence(self):
+        from scripts.audit_2026_residual_catalog_check import OFFICIAL_GENRE_EVIDENCE
+        # Full source-scoped batch: 23 nonopera, two separate observations
+        # of school-hour opera (never general-public), not work deletions.
+        chosen=[e for e in OFFICIAL_GENRE_EVIDENCE
+                if e["genre"] in {
+                    "literary_meeting","storytelling_show","acting_training",
+                    "jazz_concert","standup_comedy","jazz_piano_concert",
+                    "public_awareness_event","piano_recital","school_session_not_confirmed"}]
+        records=[]
+        for e in chosen:
+            for day in e["days"]:
+                records.append(dict(g(e["title"],day,None,e["venue"],
+                    urls=["https://"+e["official_detail_url"].split("/")[2]+"/calendario/"]),
+                    source_key=e["source_key"]))
+        result=check(inp(records),{"productions":[]})
+        self.assertEqual(len(records),sum(result["counts"].values()))
+        self.assertEqual(1,result["counts"]["official_school_session_not_public_unverified"])
+        self.assertTrue(all(not x["automatic_publication"]
+                            and not x["automatic_exclusion"] for x in result["observations"]))
+        school=next(x for x in records if "I salvatori della mezzanotte" in x["event_title"])
+        for change in ({"date":"2026-12-15"},{"source_key":"unrelated"},
+                       {"venue":"Teatro Inventato"},
+                       {"source_urls":["https://unrelated.example/"]}):
+            out=check(inp([dict(school,**change)]),{"productions":[]})
+            self.assertEqual({"requires_official_genre_and_catalog_review":1},out["counts"])
+
+    def test_bologna_student_flauto_is_out_of_scope_but_vivaldi_still_review(self):
+        from scripts.audit_2026_residual_catalog_check import OFFICIAL_GENRE_EVIDENCE
+        matches=[e for e in OFFICIAL_GENRE_EVIDENCE if e["genre"] in (
+            "educational_semi_staged_opera","opera_semiscenic_reconstruction")]
+        self.assertEqual(2,len(matches))
+        records=[dict(g(e["title"],e["days"][0],None,e["venue"],
+                   urls=["https://"+e["official_detail_url"].split("/")[2]+"/calendario/"]),
+                   source_key=e["source_key"]) for e in matches]
+        result=check(inp(records),{"productions":[]})
+        self.assertEqual(result["counts"],{
+            "official_out_of_scope_educational_opera":1,
+            "official_opera_special_format_editorial_review":1})
+        self.assertTrue(all(not x["automatic_exclusion"]
+                            and not x["automatic_publication"] for x in result["observations"]))
 
     def test_input_security(self):
         q=inp([])
