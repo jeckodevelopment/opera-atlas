@@ -54,6 +54,37 @@ class RetroBatchTests(unittest.TestCase):
         self.assertEqual(5,len(second))
         self.assertFalse({x[1] for x in first} & {x[1] for x in second})
 
+    def test_modena_official_wall_clock_is_scoped_and_preserves_original(self):
+        from scripts.audit_2026_retrospective_batch import reconcile_verified_modena_clocks
+        source={"key":"modena-teatro-opera-2026-27"}
+        sample=[{"date":"2026-09-25","event_title":"La costanza trionfante",
+                 "starts_at":"2026-09-25T22:30:00+02:00","venue":"Teatro Comunale Pavarotti-Freni"},
+                {"date":"2026-10-03","event_title":"Kammermusik n. 2",
+                 "starts_at":"2026-10-03T19:00:00+02:00","venue":"Palazzo Ducale di Sassuolo"},
+                {"date":"2026-11-12","event_title":"Caterina Barbieri e Fontanamix ensemble",
+                 "starts_at":"2026-11-12T22:30:00+01:00"}]
+        result=reconcile_verified_modena_clocks(sample,source,
+                             "https://www.teatrocomunalemodena.it/spettacoli/")
+        self.assertEqual(["20:30","17:00","20:30"],
+                         [x["starts_at"][11:16] for x in result])
+        self.assertEqual(["+02:00","+02:00","+01:00"],
+                         [x["starts_at"][-6:] for x in result])
+        self.assertEqual(["2026-09-25T22:30:00+02:00", "2026-10-03T19:00:00+02:00"],
+                         [x["source_original_starts_at"] for x in result[:2]])
+        self.assertTrue(all(x["official_clock_evidence_url"] for x in result))
+        copy=[{"date":"2026-09-25","event_title":"La costanza trionfante",
+               "starts_at":"2026-09-25T22:30:00+02:00"}]
+        reconcile_verified_modena_clocks(copy,{"key":"another-source"},
+                                         "https://www.teatrocomunalemodena.it/spettacoli/")
+        self.assertEqual("2026-09-25T22:30:00+02:00",copy[0]["starts_at"])
+        reconcile_verified_modena_clocks(copy,source,"https://other.example/spettacoli/")
+        self.assertEqual("2026-09-25T22:30:00+02:00",copy[0]["starts_at"])
+        unknown=[{"date":"2027-09-25","event_title":"La costanza trionfante",
+                  "starts_at":"2027-09-25T22:30:00+02:00"}]
+        reconcile_verified_modena_clocks(unknown,source,
+                                         "https://www.teatrocomunalemodena.it/spettacoli/")
+        self.assertNotIn("source_original_starts_at",unknown[0])
+
     def test_unverified_source_not_claimed_complete(self):
         source = {"key":"one", "official_url":"https://official.example/",
                   "url":"https://official.example/archivio/", "access_status":"approved",
