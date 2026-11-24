@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T21:39:44+00:00",
+  "generated_at": "2026-11-24T21:43:21+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -303,12 +303,12 @@
       "monitoring_status": "anagrafica_censita",
       "published_2026_showtimes": 0,
       "published_months": 0,
-      "official_verified_opera_lead_count": 0,
-      "official_unpublished_opera_lead_count": 0,
-      "official_opera_lead_review_required": false,
+      "official_verified_opera_lead_count": 2,
+      "official_unpublished_opera_lead_count": 2,
+      "official_opera_lead_review_required": true,
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
-      "audit_priority": "zero_published_calendar_not_acquired",
+      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -405,12 +405,12 @@
       "monitoring_status": "anagrafica_censita",
       "published_2026_showtimes": 0,
       "published_months": 0,
-      "official_verified_opera_lead_count": 0,
-      "official_unpublished_opera_lead_count": 0,
-      "official_opera_lead_review_required": false,
+      "official_verified_opera_lead_count": 16,
+      "official_unpublished_opera_lead_count": 16,
+      "official_opera_lead_review_required": true,
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
-      "audit_priority": "zero_published_calendar_not_acquired",
+      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -1259,10 +1259,10 @@
       "missing_recite_certified": false
     }
   ],
-  "official_2026_opera_lead_venue_count": 4,
-  "official_2026_opera_lead_count": 22,
-  "official_unpublished_opera_lead_count": 22,
-  "official_lead_venues_with_zero_published": 4,
+  "official_2026_opera_lead_venue_count": 6,
+  "official_2026_opera_lead_count": 40,
+  "official_unpublished_opera_lead_count": 40,
+  "official_lead_venues_with_zero_published": 6,
   "published_2026_showtimes": 452,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
@@ -8898,8 +8898,59 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-07-17",
+          "time": null,
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-07-24",
+          "time": null,
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-07-18",
+          "time": null,
+          "title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-07-31",
+          "time": null,
+          "title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-07-25",
+          "time": null,
+          "title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 5,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -8916,8 +8967,99 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-08-01",
+          "time": null,
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-09",
+          "time": null,
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-08",
+          "time": null,
+          "title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-21",
+          "time": null,
+          "title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-29",
+          "time": null,
+          "title": "La fanciulla del West",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-07",
+          "time": null,
+          "title": "Madama Butterfly",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-22",
+          "time": null,
+          "title": "Madama Butterfly",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-06",
+          "time": null,
+          "title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-08-28",
+          "time": null,
+          "title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 9,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -8934,8 +9076,29 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-09-05",
+          "time": null,
+          "title": "La fanciulla del West",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-09-04",
+          "time": null,
+          "title": "Madama Butterfly",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.puccinifestival.it/edizione-2026/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 2,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -11794,8 +11957,29 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-02-13",
+          "time": "21:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-02-15",
+          "time": "17:30",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 2,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
