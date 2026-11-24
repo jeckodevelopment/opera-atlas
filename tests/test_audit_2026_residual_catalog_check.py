@@ -197,10 +197,56 @@ class ResidualTests(unittest.TestCase):
                         urls=["https://"+e["official_detail_url"].split("/")[2]+"/calendario/"]),
                         source_key=e["source_key"]))
         x=check(inp(groups),{"productions":[]})
-        self.assertEqual(9,len(groups))
-        self.assertEqual(x["counts"],{"official_nonopera_first_party_detail":9})
+        self.assertEqual(sum(len(e["days"]) for e in chosen),len(groups))
+        self.assertEqual(x["counts"],{"official_nonopera_first_party_detail":len(groups)})
         self.assertTrue(all(not v["automatic_exclusion"]
                             and not v["automatic_publication"] for v in x["observations"]))
+
+    def test_mass_first_party_evidence_scope_cancelled_and_special_opera(self):
+        from scripts.audit_2026_residual_catalog_check import OFFICIAL_GENRE_EVIDENCE
+        new_genres={
+            "opera_semiscenic_reconstruction","educational_semi_staged_opera",
+            "cancelled_concert","chamber_concert","contemporary_vocal_concert",
+            "educational_opera_encounter","narrated_music_event","silent_film_live_score",
+            "gala_concert","baroque_concert","sacred_concert","tribute_concert",
+            "opera_gala_concert","choral_concert","contemporary_chamber_concert",
+            "symphonic_concert","recital","pre_opera_public_talk","musical_reading",
+            "children_musical","prose_theatre","opera_introduction_talk"}
+        # The new source-scoped genre evidence is not a wildcard that
+        # automatically reclassifies another year, venue, title or host.
+        chosen=[e for e in OFFICIAL_GENRE_EVIDENCE
+                if e["genre"] in new_genres]
+        rows=[]
+        for item in chosen:
+            for day in item["days"]:
+                rows.append(dict(g(item["title"],day,None,item["venue"],
+                    urls=["https://"+item["official_detail_url"].split("/")[2]+"/calendario/"]),
+                    source_key=item["source_key"]))
+        result=check(inp(rows),{"productions":[]})
+        self.assertEqual(len(rows),sum(result["counts"].values()))
+        self.assertEqual(1,result["counts"]["official_cancelled_event_first_party"])
+        self.assertEqual(2,result["counts"]["official_opera_special_format_editorial_review"])
+        self.assertTrue(all(not x["automatic_publication"] and
+                            not x["automatic_exclusion"] and x["official_nonopera_evidence"]
+                            for x in result["observations"]))
+        modena=next(x for x in rows if x["event_title"]=="La costanza trionfante")
+        for update in ({"date":"2027-09-25"},{"source_key":"other-theatre"},
+                       {"venue":"Another venue"},
+                       {"event_title":"Un'altra opera"},
+                       {"source_urls":["https://other.example/"]}):
+            with self.subTest(update=update):
+                row=dict(modena,**update)
+                out=check(inp([row]),{"productions":[]})
+                self.assertEqual({"requires_official_genre_and_catalog_review":1},
+                                 out["counts"])
+        cancelled=next(x for x in rows if x["event_title"]==
+                       "Caterina Barbieri e Fontanamix ensemble")
+        self.assertEqual(check(inp([cancelled]),{"productions":[]})["counts"],
+                         {"official_cancelled_event_first_party":1})
+        school=next(x for x in rows if x["event_title"].startswith(
+                     "L’occasione fa il ladro (Generale"))
+        self.assertEqual(check(inp([school]),{"productions":[]})["counts"],
+                         {"official_nonopera_first_party_detail":1})
 
     def test_input_security(self):
         q=inp([])
