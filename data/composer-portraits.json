@@ -13,6 +13,55 @@
       "verified": true,
       "wikidata_id": "Q722975"
     },
+    "oa-c-000005": {
+      "alt": "Ritratto di Antonio Smareglia",
+      "author": "Rudolf Krziwanek",
+      "commons_file": "Rudolf Krziwanek - Antonio Smareglia.jpg",
+      "credit": "Rudolf Krziwanek — Wikimedia Commons — Public Domain",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Rudolf_Krziwanek_-_Antonio_Smareglia.jpg",
+      "reviewed_on": "2026-11-24",
+      "rights_categories": [
+        "Category:PD-old-100-expired"
+      ],
+      "rights_evidence": "commons_combined_public_domain_category",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rudolf_Krziwanek_-_Antonio_Smareglia.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Rudolf_Krziwanek_-_Antonio_Smareglia.jpg",
+      "verified": true,
+      "wikidata_id": "Q605191"
+    },
+    "oa-c-000023": {
+      "alt": "Ritratto di Ferdinando Paër",
+      "author": "Italian School",
+      "commons_file": "Ferdinando Paer.png",
+      "credit": "Italian School — Wikimedia Commons — CC0-1.0",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "reviewed_on": "2026-11-24",
+      "rights_categories": [],
+      "rights_evidence": "commons_license_metadata",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ferdinando_Paer.png",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Ferdinando_Paer.png",
+      "verified": true,
+      "wikidata_id": "Q533022"
+    },
+    "oa-c-000051": {
+      "alt": "Ritratto di Leoš Janáček",
+      "author": "Anonymous Unknown author",
+      "commons_file": "Leoš Janáček.jpg",
+      "credit": "Anonymous Unknown author — Wikimedia Commons — Public Domain",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Leo%C5%A1_Jan%C3%A1%C4%8Dek.jpg",
+      "reviewed_on": "2026-11-24",
+      "rights_categories": [
+        "Category:PD-old-70-expired"
+      ],
+      "rights_evidence": "commons_combined_public_domain_category",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Leo%C5%A1_Jan%C3%A1%C4%8Dek.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Leo%C5%A1_Jan%C3%A1%C4%8Dek.jpg",
+      "verified": true,
+      "wikidata_id": "Q184933"
+    },
     "oa-c-000054": {
       "alt": "Ritratto di Matteo Musumeci",
       "author": "La sonnambula",
@@ -25,6 +74,55 @@
       "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Matteo_Musumeci_-_compositore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
       "verified": true,
       "wikidata_id": "Q3852161"
+    },
+    "oa-c-000066": {
+      "alt": "Ritratto di Salvatore Sciarrino",
+      "author": "Pitichinaccio",
+      "commons_file": "SalvatoreSciarrino (cropped).jpg",
+      "credit": "Pitichinaccio — Wikimedia Commons — CC-BY-2.5",
+      "license": "CC-BY-2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5/",
+      "reviewed_on": "2026-11-24",
+      "rights_categories": [],
+      "rights_evidence": "commons_license_metadata",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SalvatoreSciarrino_(cropped).jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/SalvatoreSciarrino_%28cropped%29.jpg",
+      "verified": true,
+      "wikidata_id": "Q439786"
+    },
+    "oa-c-000068": {
+      "alt": "Ritratto di Umberto Giordano",
+      "author": "Gaetano Esposito",
+      "commons_file": "Umberto Giordano by Gaetano Esposito (color).jpg",
+      "credit": "Gaetano Esposito — Wikimedia Commons — Public Domain",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Umberto_Giordano_by_Gaetano_Esposito_(color).jpg",
+      "reviewed_on": "2026-11-24",
+      "rights_categories": [
+        "Category:PD-old-100-expired"
+      ],
+      "rights_evidence": "commons_combined_public_domain_category",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Umberto_Giordano_by_Gaetano_Esposito_(color).jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Umberto_Giordano_by_Gaetano_Esposito_%28color%29.jpg",
+      "verified": true,
+      "wikidata_id": "Q294826"
+    },
+    "oa-c-000069": {
+      "alt": "Ritratto di Vincenzo Bellini",
+      "author": "Pietro Luchini",
+      "commons_file": "Lucchini-Bellini.jpg",
+      "credit": "Pietro Luchini — Wikimedia Commons — Public Domain",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Lucchini-Bellini.jpg",
+      "reviewed_on": "2026-11-24",
+      "rights_categories": [
+        "Category:PD-old-100-expired"
+      ],
+      "rights_evidence": "commons_combined_public_domain_category",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lucchini-Bellini.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Lucchini-Bellini.jpg",
+      "verified": true,
+      "wikidata_id": "Q170209"
     }
   },
   "schema_version": 1
