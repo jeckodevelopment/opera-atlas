@@ -55,14 +55,14 @@ class VenueMonthMatrixTests(unittest.TestCase):
 
     def test_primary_source_leads_are_eighteen_and_never_auto_published(self):
         r=self.report
-        self.assertEqual(22,r["official_2026_opera_lead_count"])
-        self.assertEqual(4,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(22,r["official_unpublished_opera_lead_count"])
-        self.assertEqual(4,r["official_lead_venues_with_zero_published"])
+        self.assertEqual(40,r["official_2026_opera_lead_count"])
+        self.assertEqual(6,r["official_2026_opera_lead_venue_count"])
+        self.assertEqual(40,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(6,r["official_lead_venues_with_zero_published"])
         self.assertEqual(24,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
-        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico"},
+        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele"},
                          set(sources))
         for entry in sources.values():
             self.assertEqual("zero_published_with_official_opera_leads",
@@ -72,6 +72,8 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(3,sources["Arena di Verona"]["official_unpublished_opera_lead_count"])
         self.assertEqual(11,sources["Arena Sferisterio"]["official_unpublished_opera_lead_count"])
         self.assertEqual(4,sources["Teatro Filarmonico"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(16,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(2,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
         for row in r["rows"]:
             self.assertFalse(row["complete_month_verified"])
             for entry in row["official_unpublished_opera_leads"]:
