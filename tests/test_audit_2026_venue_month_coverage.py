@@ -5,7 +5,7 @@ import unittest
 
 from scripts.audit_2026_venue_month_coverage import (
     VENUES,REGISTRY,MANIFEST,PROGRAMS,HISTORICAL,H1,H2,SEEDS,SEED_SCAN,
-    build_matrix,source_slot,
+    OFFICIAL_ZERO_VENUE_LEADS,build_matrix,source_slot,validated_venue_leads,
 )
 
 PATHS=(VENUES,REGISTRY,MANIFEST,PROGRAMS,HISTORICAL,H1,H2,SEEDS,SEED_SCAN)
@@ -17,7 +17,8 @@ class VenueMonthMatrixTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.inputs=docs()
-        cls.report=build_matrix(*cls.inputs)
+        cls.leads=json.loads(OFFICIAL_ZERO_VENUE_LEADS.read_text(encoding="utf-8"))
+        cls.report=build_matrix(*cls.inputs,cls.leads)
 
     def test_complete_72_x_12_grid_without_certifying_any_missing_month(self):
         r=self.report
@@ -44,11 +45,60 @@ class VenueMonthMatrixTests(unittest.TestCase):
         # A calendar being acquired is not proof of a complete 2026 season.
         acquired=[x for x in zero if x["calendar_status"]=="acquired"]
         self.assertEqual(len(acquired),r["zero_published_by_calendar_status"].get("acquired",0))
-        self.assertTrue(all(x["audit_priority"]=="zero_published_acquired_calendar" for x in acquired))
+        self.assertTrue(all(x["audit_priority"] in
+            {"zero_published_acquired_calendar","zero_published_with_official_opera_leads"}
+            for x in acquired))
         self.assertTrue(any(x["venue"]=="Arena di Verona" for x in acquired))
         bologna=next(x for x in zero if x["venue"]=="Teatro Comunale di Bologna")
         self.assertGreater(bologna["historical_source_seed_count"],0)
         self.assertFalse(bologna["missing_recite_certified"])
+
+    def test_primary_source_leads_are_eighteen_and_never_auto_published(self):
+        r=self.report
+        self.assertEqual(18,r["official_2026_opera_lead_count"])
+        self.assertEqual(3,r["official_2026_opera_lead_venue_count"])
+        self.assertEqual(18,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(3,r["official_lead_venues_with_zero_published"])
+        self.assertEqual(24,r["zero_published_venue_count"])
+        sources={x["venue"]:x for x in r["venue_audit_priorities"]
+                 if x["official_verified_opera_lead_count"]}
+        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio"},
+                         set(sources))
+        for entry in sources.values():
+            self.assertEqual("zero_published_with_official_opera_leads",
+                             entry["audit_priority"])
+            self.assertFalse(entry["missing_recite_certified"])
+        self.assertEqual(4,sources["Teatro Sociale"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(3,sources["Arena di Verona"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(11,sources["Arena Sferisterio"]["official_unpublished_opera_lead_count"])
+        for row in r["rows"]:
+            self.assertFalse(row["complete_month_verified"])
+            for entry in row["official_unpublished_opera_leads"]:
+                self.assertTrue(entry["publication_review_required"])
+                self.assertFalse(entry["complete_month_verified"])
+                self.assertEqual(row["month"],entry["date"][:7])
+                if row["venue"]=="Arena Sferisterio":
+                    self.assertIsNone(entry["time"])
+
+    def test_official_leads_reject_mismatched_identity_and_duplicate_dates(self):
+        import copy
+        venues=self.inputs[0]["venues"]
+        for patch in (
+            {"venue_id":"oa-v-000999"},
+            {"city":"Milano"},
+            {"venue":"Teatro alla Scala"},
+            {"official_url":"https://random.example.org/aida"},
+            {"dates":[["2027-06-25","21:15"]]},
+            {"dates":[["2026-06-25","25:15"]]},
+        ):
+            changed=copy.deepcopy(self.leads)
+            changed["records"][0].update(patch)
+            with self.assertRaises(ValueError):
+                validated_venue_leads(changed,venues)
+        changed=copy.deepcopy(self.leads)
+        changed["records"].append(copy.deepcopy(changed["records"][0]))
+        with self.assertRaises(ValueError):
+            validated_venue_leads(changed,venues)
 
     def test_existing_2026_carmen_publications_are_not_reported_missing(self):
         r=self.report
