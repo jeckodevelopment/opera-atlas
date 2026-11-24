@@ -81,6 +81,14 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertIsNone(source_slot({"date":"2026-02-31","time":"20:00"}))
         self.assertIsNone(source_slot({"date":"2026-02-03","time":"TBD"}))
 
+    def test_coverage_refresh_is_linked_to_completed_cached_publication(self):
+        from pathlib import Path
+        workflow=(Path(__file__).resolve().parents[1]/".github"/"workflows"/
+                  "audit-2026-venue-month-coverage.yml").read_text(encoding="utf-8")
+        self.assertIn('workflows: ["Publish cached verified Opera Atlas recite"]',workflow)
+        self.assertIn("types: [completed]",workflow)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'",workflow)
+
     def test_does_not_read_or_change_live_published_records(self):
         before=json.dumps(self.inputs[2],sort_keys=True)
         build_matrix(*self.inputs)
