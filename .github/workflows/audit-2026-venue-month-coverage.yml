@@ -11,6 +11,12 @@ on:
     paths:
       - 'scripts/audit_2026_venue_month_coverage.py'
       - '.github/workflows/audit-2026-venue-month-coverage.yml'
+  # A GITHUB_TOKEN publication commit does not trigger ordinary push workflows.
+  # workflow_run is emitted after the cached public-feed publisher completes,
+  # so the coverage diagnostic can be rebuilt from actual published main.
+  workflow_run:
+    workflows: ["Publish cached verified Opera Atlas recite"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -21,6 +27,7 @@ concurrency:
 
 jobs:
   measure:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
