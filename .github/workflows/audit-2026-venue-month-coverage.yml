@@ -4,12 +4,14 @@ on:
   pull_request:
     paths:
       - 'scripts/audit_2026_venue_month_coverage.py'
+      - 'data/official-2026-zero-venue-opera-leads.json'
       - 'tests/test_audit_2026_venue_month_coverage.py'
       - '.github/workflows/audit-2026-venue-month-coverage.yml'
   push:
     branches: [main]
     paths:
       - 'scripts/audit_2026_venue_month_coverage.py'
+      - 'data/official-2026-zero-venue-opera-leads.json'
       - '.github/workflows/audit-2026-venue-month-coverage.yml'
   # A GITHUB_TOKEN publication commit does not trigger ordinary push workflows.
   # workflow_run is emitted after the cached public-feed publisher completes,
@@ -54,6 +56,9 @@ jobs:
           assert d['observed_2026_opera_showtimes']>0
           assert len(d['venue_audit_priorities'])==d['venue_count']
           assert d['zero_published_venue_count']==sum(d['zero_published_by_calendar_status'].values())
+          assert d['official_2026_opera_lead_count']==18
+          assert d['official_lead_venues_with_zero_published']==3
+          assert d['official_unpublished_opera_lead_count']<=18
           assert all(not p['missing_recite_certified'] for p in d['venue_audit_priorities'])
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
