@@ -44,6 +44,50 @@ OFFICIAL_NONOPERA = {
 }
 
 
+# Frozen 2026 first-party detail-page verification. Keys are restricted to an
+# existing source, canonical title, exact observed day and physical venue.
+# These *diagnostic* findings do not modify editorial decisions or catalogue.
+OFFICIAL_GENRE_EVIDENCE = (
+    {
+        "source_key":"bellini-catania-opera-2026-27",
+        "title":"La bella addormentata",
+        "days":tuple(f"2026-12-{d:02d}" for d in range(1,7)),
+        "venue":"Teatro Metropolitan.",
+        "genre":"ballet",
+        "official_detail_url":"https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+        "official_genre_url":"https://www.teatromassimobellini.it/al-via-i-lavori-di-riqualificazione-e-adeguamento-alla-sicurezza-del-monumentale-teatro-massimo-v-bellini/",
+        "reason":"The theatre explicitly identifies the 1-6 December performances as a ballet in three acts, not an opera.",
+    },
+    {
+        "source_key":"bologna-comunale-opera-2027",
+        "title":"Pierino e il lupo",
+        "days":("2026-10-10","2026-10-17","2026-11-21","2026-11-28","2026-12-12"),
+        "venue":None,
+        "genre":"children_concert",
+        "official_detail_url":"https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "official_genre_url":"https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "reason":"The official programme categorizes all five dated performances as a narrated concert for children aged three to six.",
+    },
+)
+
+
+def official_genre_evidence(group):
+    """Only explicit first-party day/work/venue evidence; never title-only."""
+    from urllib.parse import urlsplit
+    for evidence in OFFICIAL_GENRE_EVIDENCE:
+        if (group.get("source_key") != evidence["source_key"]
+                or canonical_title(group.get("event_title")) != canonical_title(evidence["title"])
+                or group.get("date") not in evidence["days"]
+                or norm(group.get("venue")) != norm(evidence["venue"])):
+            continue
+        target = urlsplit(evidence["official_detail_url"]).hostname
+        if not any(urlsplit(u).hostname == target
+                   for u in group.get("source_urls", []) if isinstance(u,str)):
+            continue
+        return {k:v for k,v in evidence.items() if k not in ("days","source_key","title","venue")}
+    return None
+
+
 def canonical_title(value):
     value=norm(html.unescape(value or ""))
     for composer, title in TITLE_PREFIXES:
@@ -101,6 +145,10 @@ def check(triage, catalog):
             matches=[]
             evidence=None
             status="requires_official_genre_and_catalog_review"
+            genre_evidence=official_genre_evidence(g)
+            if genre_evidence is not None:
+                status="official_nonopera_first_party_detail"
+                evidence=genre_evidence
             for (url, work), decision in OFFICIAL_NONOPERA.items():
                 if (g["event_title"]==work and url in g.get("source_urls",[])
                         and g["date"] in decision["days"]):
