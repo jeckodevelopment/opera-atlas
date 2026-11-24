@@ -140,7 +140,9 @@ def first_pass(config, *, fetch_page=fetch, workers=MAX_WORKERS):
         return list(pool.map(scan, seeds))
 
 
-def queue_historical_indexes(seeds, *, limit=MAX_INDEX_PAGES):
+def queue_historical_indexes(seeds, *, limit=MAX_INDEX_PAGES, offset=0):
+    if offset < 0 or limit < 1:
+        raise ValueError('invalid archive pagination')
     """Prioritize explicit years, then archive paths; never flood a host."""
     priorities = {}
     for row in seeds:
@@ -161,7 +163,7 @@ def queue_historical_indexes(seeds, *, limit=MAX_INDEX_PAGES):
                                     "access_status": "approved"})
     ordered = [(source, url, rank, key) for url, (rank, key, source)
                in sorted(priorities.items(), key=lambda kv: (kv[1][0], kv[0]))]
-    return ordered[:limit], max(0, len(ordered) - limit)
+    return ordered[offset:offset + limit], max(0, len(ordered) - offset - limit)
 
 
 def second_pass(queue, *, fetch_page=fetch, workers=MAX_WORKERS):
@@ -184,7 +186,10 @@ def second_pass(queue, *, fetch_page=fetch, workers=MAX_WORKERS):
         return list(pool.map(scan, queue))
 
 
-def queue_details(seed_rows, archive_rows, config, *, limit=MAX_DETAIL_PAGES):
+def queue_details(seed_rows, archive_rows, config, *, limit=MAX_DETAIL_PAGES,
+                  host_offset=0):
+    if host_offset < 0 or limit < 1:
+        raise ValueError('invalid detail pagination')
     by_host = {urlsplit(s["official_url"]).hostname:s
                for sources in approved_hosts(config).values() for s in sources}
     # Restrict to links discovered in a 2025/26 or 2026 archive page.
@@ -217,10 +222,12 @@ def queue_details(seed_rows, archive_rows, config, *, limit=MAX_DETAIL_PAGES):
     deferred_host=defaultdict(int)
     for source,url,discovered_from in sorted(candidates.values(), key=lambda x:x[1]):
         host=urlsplit(url).hostname
-        if counts[host] >= MAX_DETAIL_PER_HOST:
+        counts[host]+=1
+        if counts[host] <= host_offset:
+            continue
+        if counts[host] > host_offset + MAX_DETAIL_PER_HOST:
             deferred_host[host]+=1
             continue
-        counts[host]+=1
         selected.append((source,url,discovered_from))
     overflow = {"per_host":dict(sorted(deferred_host.items())),
                 "global":max(0,len(selected)-limit)}
@@ -245,11 +252,13 @@ def details_batch(queue, *, fetch_page=fetch, workers=MAX_WORKERS):
 
 
 def create_report(config, venues, *, fetch_page=fetch, workers=MAX_WORKERS,
-                  max_detail_pages=MAX_DETAIL_PAGES):
+                  max_detail_pages=MAX_DETAIL_PAGES,
+                  archive_offset=0, detail_host_offset=0):
     seeds=first_pass(config,fetch_page=fetch_page,workers=workers)
-    archives_queue,archive_overflow=queue_historical_indexes(seeds)
+    archives_queue,archive_overflow=queue_historical_indexes(seeds,offset=archive_offset)
     archives=second_pass(archives_queue,fetch_page=fetch_page,workers=workers)
-    details_queue,details_overflow=queue_details(seeds,archives,config,limit=max_detail_pages)
+    details_queue,details_overflow=queue_details(seeds,archives,config,limit=max_detail_pages,
+                                                host_offset=detail_host_offset)
     details=details_batch(details_queue,fetch_page=fetch_page,workers=workers)
     # Host association is tentative: multi-site venues and festivals are separate.
     source_hosts=set(approved_hosts(config))
@@ -268,6 +277,7 @@ def create_report(config, venues, *, fetch_page=fetch, workers=MAX_WORKERS,
         "schema_version":1,"year":2026,
         "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "read_only":True,"catalog_updated":False,"complete_seasons_certified":0,
+        "archive_offset":archive_offset,"detail_host_offset":detail_host_offset,
         "approved_hosts":len(source_hosts),
         "seed_pages_attempted":len(seeds),
         "seed_pages_scanned":sum(r["status"]=="scanned" for r in seeds),
@@ -288,16 +298,20 @@ def main():
     parser.add_argument("--allow-network",action="store_true")
     parser.add_argument("--workers",type=int,default=MAX_WORKERS)
     parser.add_argument("--max-detail-pages",type=int,default=MAX_DETAIL_PAGES)
+    parser.add_argument("--archive-offset",type=int,default=0)
+    parser.add_argument("--detail-host-offset",type=int,default=0)
     parser.add_argument("--output",type=Path,default=OUTPUT)
     args=parser.parse_args()
     if not args.allow_network:
         parser.error("Explicit --allow-network required")
-    if not 1 <= args.workers <= MAX_WORKERS or not 1 <= args.max_detail_pages <= MAX_DETAIL_PAGES:
+    if not 1 <= args.workers <= MAX_WORKERS or not 1 <= args.max_detail_pages <= MAX_DETAIL_PAGES or args.archive_offset < 0 or args.detail_host_offset < 0:
         parser.error("Limits exceeded")
     config=json.loads(SOURCES.read_text(encoding="utf-8"))
     venues=json.loads(VENUES.read_text(encoding="utf-8"))
     result=create_report(config,venues,workers=args.workers,
-                         max_detail_pages=args.max_detail_pages)
+                         max_detail_pages=args.max_detail_pages,
+                         archive_offset=args.archive_offset,
+                         detail_host_offset=args.detail_host_offset)
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({k:result[k] for k in ("approved_hosts","seed_pages_scanned",
