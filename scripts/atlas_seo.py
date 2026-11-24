@@ -153,13 +153,12 @@ def sitemap(path: Path, catalog: Path) -> None:
             if (re.fullmatch(r"oa-p-[0-9a-f]{16}",pid)
                 and program.get("performances")):
                 urls.add(BASE+"programmi/"+pid+"/")
-    festivals_file=catalog/"festival-index.json"
+    festivals_file=catalog/"festival-directory.json"
     if festivals_file.is_file():
         festivals=json.loads(festivals_file.read_text(encoding="utf-8"))
         for festival in festivals.get("festivals",[]):
             fid=festival.get("id","")
-            if (re.fullmatch(r"[a-z0-9-]+",fid)
-                and any(s in valid_stagings for s in festival.get("staging_ids",[]))):
+            if re.fullmatch(r"[a-z0-9-]+",fid):
                 urls.add(BASE+"directory.html?section=festival&id="+fid)
     lines=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for url in sorted(urls):

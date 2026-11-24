@@ -323,7 +323,7 @@ async function renderFestivals(){
       const future=catalog.filter(e=>festival.staging_ids.includes(e.staging_id)&&e.local_date>=todayInItaly());
       if(!future.length)continue;
       const url="./directory.html?section=festival&id="+encodeURIComponent(festival.id);
-      target.append(imageTile(url,festival.name,festival.city+(festival.edition?" · "+festival.edition:""),editorialImage("festival",festival,"discovery-image")));count++;
+      target.append(imageTile(url,festival.name,festival.city,editorialImage("festival",festival,"discovery-image")));count++;
     }
     if(!count)target.append(node("p",null,"Il prossimo festival da scoprire arriverà presto."));
     const all=node("a","detail-link","Esplora i festival");all.href="./directory.html?section=festival";target.append(all);

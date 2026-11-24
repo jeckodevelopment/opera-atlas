@@ -275,10 +275,13 @@ class AtlasInterfaceTests(unittest.TestCase):
                 self.assertEqual(restored["staging_ids"], ["oa-s-000104"])
                 publisher.sync_festival_index(registry, check=True)
 
-    def test_festival_directory_displays_historical_productions(self):
+    def test_festival_directory_hides_historical_productions(self):
         source = (SITE / "directory.js").read_text(encoding="utf-8")
-        self.assertIn("[...found.future,...found.associated]", source)
-        self.assertIn("Produzione dell’edizione", source)
+        self.assertNotIn("[...found.future,...found.associated]", source)
+        self.assertIn("for(const event of found.future)", source)
+        self.assertIn("location.replace(canonical.href)", source)
+        self.assertIn("x.item.editions.some(e=>e.id===focus)", source)
+        self.assertNotIn("Produzione dell’edizione", source)
         self.assertIn("recite future", source)
 
     def test_shared_production_ids_preserve_work_and_venue_specific_stagings(self):

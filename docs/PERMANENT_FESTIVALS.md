@@ -11,8 +11,10 @@ Il festival è un'entità editoriale permanente identificata da `festival_id` (e
 - `public/catalog/v2/festival-directory.json`: una voce per festival, con edizioni e unione deduplicata degli ID staging. Include anche anagrafiche senza edizioni.
 - Il publisher verifica riferimenti canonici, unicità delle identità e delle edizioni. Non altera i feed di opere, sedi, staging o recite.
 
-## Migrazione frontend (intervento successivo)
+## Migrazione frontend
 
 La directory e la scheda devono usare l'identità permanente e un URL canonico senza anno. Gli URL delle edizioni precedenti devono continuare a risolvere verso il festival. La programmazione mostra solo produzioni con recite ancora in programma, utilizzando la stessa regola temporale dei teatri. Una scheda senza recite future rimane accessibile. Lo storico resta nei dati, disponibile per l'Osservatorio, senza duplicazioni statistiche.
 
 Aggiornare routing, sitemap, metadati SEO e API di integrazione; verificare il comportamento delle vecchie URL e la continuità dei collegamenti con teatri e opere. Non rigenerare inutilmente i feed canonici.
+
+Il frontend usa `festival-directory.json`. URL canonico: `/atlas/directory.html?section=festival&id=<festival-id>`. Gli ID delle edizioni sono risolti tramite `location.replace` (redirect client-side, non HTTP 301). La sitemap include tutte le identità permanenti, anche senza recite future.
