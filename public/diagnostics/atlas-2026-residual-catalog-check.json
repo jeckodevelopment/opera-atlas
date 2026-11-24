@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T21:02:59+00:00",
+  "generated_at": "2026-11-24T21:12:34+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
@@ -11,10 +11,11 @@
     "catalog_same_work_day_venue_clock_discrepancy": 11,
     "catalog_same_work_day_venue_exact_clock": 2,
     "official_cancelled_event_first_party": 1,
-    "official_nonopera_first_party_detail": 65,
+    "official_nonopera_first_party_detail": 88,
     "official_nonopera_source_scoped": 3,
-    "official_opera_special_format_editorial_review": 2,
-    "requires_official_genre_and_catalog_review": 25
+    "official_opera_special_format_editorial_review": 1,
+    "official_out_of_scope_educational_opera": 1,
+    "official_school_session_not_public_unverified": 2
   },
   "by_source": {
     "bellini-catania-opera-2026-27": {
@@ -24,7 +25,7 @@
     "bologna-comunale-opera-2027": {
       "official_nonopera_first_party_detail": 16,
       "official_nonopera_source_scoped": 3,
-      "official_opera_special_format_editorial_review": 1
+      "official_out_of_scope_educational_opera": 1
     },
     "maggio-fiorentino-calendar-2027": {
       "official_nonopera_first_party_detail": 4
@@ -32,24 +33,21 @@
     "modena-teatro-opera-2026-27": {
       "catalog_same_work_day_venue_clock_discrepancy": 7,
       "official_cancelled_event_first_party": 1,
-      "official_nonopera_first_party_detail": 21,
+      "official_nonopera_first_party_detail": 25,
       "official_opera_special_format_editorial_review": 1,
-      "requires_official_genre_and_catalog_review": 6
+      "official_school_session_not_public_unverified": 2
     },
     "piacenza-opera-2026-27": {
       "catalog_same_work_day_venue_exact_clock": 2,
-      "official_nonopera_first_party_detail": 4,
-      "requires_official_genre_and_catalog_review": 2
+      "official_nonopera_first_party_detail": 6
     },
     "pisa-future-calendar": {
       "catalog_same_work_day_clock_official_pisa_venue_unprovided": 10,
-      "official_nonopera_first_party_detail": 7,
-      "requires_official_genre_and_catalog_review": 15
+      "official_nonopera_first_party_detail": 22
     },
     "pisa-verdi-opera-2026-27": {
       "catalog_same_work_day_clock_official_pisa_venue_unprovided": 2,
-      "official_nonopera_first_party_detail": 1,
-      "requires_official_genre_and_catalog_review": 2
+      "official_nonopera_first_party_detail": 3
     }
   },
   "observations": [
@@ -631,7 +629,7 @@
         "https://www.tcbo.it/en/evento/accademia/studenti-allopera-il-flauto-magico-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "official_opera_special_format_editorial_review",
+      "status": "official_out_of_scope_educational_opera",
       "catalog_matches": [],
       "official_nonopera_evidence": {
         "genre": "educational_semi_staged_opera",
@@ -967,9 +965,15 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://www.filarmonicamodena.it/orchestra/1-luglio-2026-la-notte-della-basilica/",
+        "official_genre_url": "https://www.filarmonicamodena.it/orchestra/1-luglio-2026-la-notte-della-basilica/",
+        "reason": "The official performing orchestra identifies this event as a concert at Fiorano, not a staged opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1404,9 +1408,15 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena",
+        "official_genre_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena",
+        "reason": "Municipal first-party event is explicitly part of the 2026/27 concert season; Beethoven and Brahms."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1441,9 +1451,15 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://coeurope.org/fr/coe-concerts/coe-projects-list/tournee-avec-sir-antonio-pappano-et-alexandre-kantorow/",
+        "official_genre_url": "https://coeurope.org/fr/coe-concerts/coe-projects-list/tournee-avec-sir-antonio-pappano-et-alexandre-kantorow/",
+        "reason": "Official performing orchestra tour includes concert of Brahms and Dvorak, Modena 10 November."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1618,9 +1634,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_school_session_not_public_unverified",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "school_session_not_confirmed",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "reason": "Two school-hour observations (10:30 and 12:00) of 14 December are not advertised as general-public opera shows by official theatre detail; no performance is automatically added."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1634,9 +1655,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_school_session_not_public_unverified",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "school_session_not_confirmed",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "reason": "Two school-hour observations (10:30 and 12:00) of 14 December are not advertised as general-public opera shows by official theatre detail; no performance is automatically added."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1671,9 +1697,15 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "observed_index_host": "www.teatrocomunalemodena.it",
+        "official_detail_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
+        "official_genre_url": "https://www.comune.modena.it/vivere-modena/eventi/2026/stagione-concerti-2026-2027/filarmonica-del-teatro-comunale-di-modena-1",
+        "reason": "Municipal concert-season detail confirms 19 December, no opera staging; observation venue omitted."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1687,9 +1719,14 @@
         "https://teatripiacenza.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatripiacenza.it/stagioni/stagione-26-27/",
+        "official_genre_url": "https://teatripiacenza.it/stagioni/stagione-26-27/",
+        "reason": "Official season lists it in Concerti, with orchestra and conductor."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1833,9 +1870,14 @@
         "https://teatripiacenza.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatripiacenza.it/event/concerto-di-san-silvestro-2026/",
+        "official_genre_url": "https://teatripiacenza.it/event/concerto-di-san-silvestro-2026/",
+        "reason": "First-party event is an orchestral New Year's Eve concert, not a staged opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1987,9 +2029,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "literary_meeting",
+        "official_detail_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "official_genre_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "reason": "First-party theatre source describes literary book meetings, not staged lyric performances."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2003,9 +2050,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "storytelling_show",
+        "official_detail_url": "https://teatrodipisa.it/calendario/italia-mundial-goal-festival/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/italia-mundial-goal-festival/",
+        "reason": "Official theatre page describes a storytelling performance about the 1982 World Cup."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2019,9 +2071,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "acting_training",
+        "official_detail_url": "https://teatrodipisa.it/ru/verdiformazione-ripartono-i-corsi-di-recitazione-e-scrittura-creativa/",
+        "official_genre_url": "https://teatrodipisa.it/ru/verdiformazione-ripartono-i-corsi-di-recitazione-e-scrittura-creativa/",
+        "reason": "Theatre's VerdiFormazione event is an acting and creative writing course, not a public opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2035,9 +2092,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "literary_meeting",
+        "official_detail_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "official_genre_url": "https://teatrodipisa.it/fr/librinteatro-saggisti-e-artisti-tra-musica-e-parola-scritta/",
+        "reason": "Official event is a conversation about a Puccini book with author, not a performance of an opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2051,9 +2113,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "chamber_concert",
+        "official_detail_url": "https://teatrodipisa.it/concerti/",
+        "official_genre_url": "https://teatrodipisa.it/concerti/",
+        "reason": "Theatre concert programme identifies an orchestral chamber-music performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2159,9 +2226,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "literary_meeting",
+        "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
+        "reason": "Official calendar says Cappelletto presents a book about Farinelli in the theatre foyer."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2176,9 +2248,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
+        "reason": "Official theatre calendar lists the University of Pisa Orchestra performing Giuliani and Haydn."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2214,9 +2291,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "jazz_concert",
+        "official_detail_url": "https://teatrodipisa.it/calendario/pisa-jazz-miles-davis-100/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/pisa-jazz-miles-davis-100/",
+        "reason": "First-party theatre calendar calls this jazz tribute Miles Davis 100."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2251,9 +2333,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "standup_comedy",
+        "official_detail_url": "https://teatrodipisa.it/en/calendario/stand-up-comedy-show/",
+        "official_genre_url": "https://teatrodipisa.it/en/calendario/stand-up-comedy-show/",
+        "reason": "Official category Altri eventi and detailed stand-up comedy programme."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2309,9 +2396,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "jazz_piano_concert",
+        "official_detail_url": "https://teatrodipisa.it/calendario/mese/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/mese/",
+        "reason": "Official event is Normale in Jazz, a solo piano concert playing Morricone."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2325,9 +2417,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "public_awareness_event",
+        "official_detail_url": "https://teatrodipisa.it/calendario/nuove-rotte-la-liberta-di-scegliere/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/nuove-rotte-la-liberta-di-scegliere/",
+        "reason": "Theatre describes a public awareness event about violence against women."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2341,9 +2438,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "prose_theatre",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "reason": "First-party theatre programme identifies theatre of song and prose by Neri Marcore, not a lyric opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2357,9 +2459,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "prose_theatre",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/gaber-mi-fa-male-il-mondo/",
+        "reason": "Second performance of the official Prosa production."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2473,9 +2580,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-12/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "piano_recital",
+        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "official_genre_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "reason": "Official programme identifies solo piano works, not opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2489,9 +2601,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-12/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "official_genre_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "reason": "Official Christmas concert of the Orchestra della Toscana conducted by Diego Ceretta."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2572,9 +2689,14 @@
         "https://teatrodipisa.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "piano_recital",
+        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "official_genre_url": "https://teatrodipisa.it/en/spettacolo/andrea-lucchesini/",
+        "reason": "Duplicate observation via the second Pisa calendar source; same 9 December piano recital."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2588,9 +2710,14 @@
         "https://teatrodipisa.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "official_genre_url": "https://teatrodipisa.it/fr/spettacolo/concerto-di-natale-diego-ceretta-dirige-lort/",
+        "reason": "Same official Christmas symphonic concert, observed by second Pisa calendar source."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     }
