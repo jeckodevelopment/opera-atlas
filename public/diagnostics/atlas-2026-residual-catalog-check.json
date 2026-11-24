@@ -1,18 +1,17 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T20:40:01+00:00",
+  "generated_at": "2026-11-24T20:56:21+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
   "input_event_groups": 121,
   "counts": {
-    "catalog_same_work_day_clock_official_pisa_venue_unprovided": 6,
+    "catalog_same_work_day_clock_official_pisa_venue_unprovided": 12,
     "catalog_same_work_day_venue_clock_discrepancy": 11,
     "catalog_same_work_day_venue_exact_clock": 2,
     "official_nonopera_first_party_detail": 31,
     "official_nonopera_source_scoped": 3,
-    "official_opera_unpublished_candidate_first_party_review": 6,
     "requires_official_genre_and_catalog_review": 62
   },
   "by_source": {
@@ -40,9 +39,8 @@
       "requires_official_genre_and_catalog_review": 4
     },
     "pisa-future-calendar": {
-      "catalog_same_work_day_clock_official_pisa_venue_unprovided": 4,
+      "catalog_same_work_day_clock_official_pisa_venue_unprovided": 10,
       "official_nonopera_first_party_detail": 2,
-      "official_opera_unpublished_candidate_first_party_review": 6,
       "requires_official_genre_and_catalog_review": 20
     },
     "pisa-verdi-opera-2026-27": {
@@ -1692,14 +1690,16 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "official_opera_unpublished_candidate_first_party_review",
-      "catalog_matches": [],
-      "official_nonopera_evidence": {
-        "genre": "opera",
-        "venue": "Teatro Verdi",
-        "official_detail_url": "https://teatrodipisa.it/de/carmen-liberta-e-dionisiaco-nella-nuova-produzione-con-la-regia-di-tonon-e-la-direzione-di-venezi/",
-        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
-      },
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "Carmen",
+          "clock": "20:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/carmen/",
+          "venue": "Teatro Verdi"
+        }
+      ],
+      "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1713,14 +1713,16 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "official_opera_unpublished_candidate_first_party_review",
-      "catalog_matches": [],
-      "official_nonopera_evidence": {
-        "genre": "opera",
-        "venue": "Teatro Verdi",
-        "official_detail_url": "https://teatrodipisa.it/de/carmen-liberta-e-dionisiaco-nella-nuova-produzione-con-la-regia-di-tonon-e-la-direzione-di-venezi/",
-        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
-      },
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "Carmen",
+          "clock": "15:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/carmen/",
+          "venue": "Teatro Verdi"
+        }
+      ],
+      "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1734,14 +1736,16 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "official_opera_unpublished_candidate_first_party_review",
-      "catalog_matches": [],
-      "official_nonopera_evidence": {
-        "genre": "opera",
-        "venue": "Teatro Verdi",
-        "official_detail_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
-        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
-      },
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "The Turn of the Screw",
+          "clock": "20:30",
+          "source_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
+          "venue": "Teatro Verdi"
+        }
+      ],
+      "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1755,14 +1759,16 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "official_opera_unpublished_candidate_first_party_review",
-      "catalog_matches": [],
-      "official_nonopera_evidence": {
-        "genre": "opera",
-        "venue": "Teatro Verdi",
-        "official_detail_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
-        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
-      },
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "The Turn of the Screw",
+          "clock": "15:30",
+          "source_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
+          "venue": "Teatro Verdi"
+        }
+      ],
+      "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1776,14 +1782,16 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "official_opera_unpublished_candidate_first_party_review",
-      "catalog_matches": [],
-      "official_nonopera_evidence": {
-        "genre": "opera",
-        "venue": "Teatro Verdi",
-        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/lelisir-damore/",
-        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
-      },
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "L’elisir d’amore",
+          "clock": "20:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/",
+          "venue": "Teatro Verdi"
+        }
+      ],
+      "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1797,14 +1805,16 @@
         "https://teatrodipisa.it/calendario/categoria/opera/elenco/?eventDisplay=past"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "official_opera_unpublished_candidate_first_party_review",
-      "catalog_matches": [],
-      "official_nonopera_evidence": {
-        "genre": "opera",
-        "venue": "Teatro Verdi",
-        "official_detail_url": "https://teatrodipisa.it/en/spettacolo/lelisir-damore/",
-        "reason": "Official Pisa 2025/26 full opera production; not found in the canonical catalog. Needs independent editorial publication review."
-      },
+      "status": "catalog_same_work_day_clock_official_pisa_venue_unprovided",
+      "catalog_matches": [
+        {
+          "title": "L’elisir d’amore",
+          "clock": "15:30",
+          "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/",
+          "venue": "Teatro Verdi"
+        }
+      ],
+      "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
     },
