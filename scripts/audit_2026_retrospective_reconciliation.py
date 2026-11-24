@@ -206,6 +206,16 @@ def main():
                       "unique":result["unique_observation_count"],
                       "counts":result["observation_counts"],
                       "failures":result["scan_failures"]},ensure_ascii=False))
+    # Review queue is deliberately readable directly from the job logs,
+    # even when the full JSON is too large for an API content preview.
+    for row in result["observations"]:
+        if row["status"] not in ("already_published_exact_source_day_work",
+                                 "excluded_by_approved_policy",
+                                 "official_archive_already_documented"):
+            print("REVIEW " + json.dumps({
+                "date":row["date"],"title":row["event_title"],
+                "venue":row["venue"],"status":row["status"],
+                "url":row["source_url"]},ensure_ascii=False))
 
 if __name__=="__main__":
     main()
