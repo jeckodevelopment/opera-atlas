@@ -873,6 +873,24 @@
       "title": "La costanza trionfante",
       "composer": "Antonio Vivaldi",
       "authority_url": "https://corago.unibo.it/opera/APC0004700"
+    },
+    "lucrezia borgia|gaetano donizetti": {
+      "id": "oa-w-000137",
+      "slug": "lucrezia-borgia",
+      "title": "Lucrezia Borgia",
+      "composer": "Gaetano Donizetti"
+    },
+    "così fan tutte|wolfgang amadeus mozart": {
+      "id": "oa-w-000138",
+      "slug": "cosi-fan-tutte",
+      "title": "Così fan tutte",
+      "composer": "Wolfgang Amadeus Mozart"
+    },
+    "il cappello di paglia di firenze|nino rota": {
+      "id": "oa-w-000139",
+      "slug": "il-cappello-di-paglia-di-firenze",
+      "title": "Il cappello di paglia di Firenze",
+      "composer": "Nino Rota"
     }
   },
   "venues": {
@@ -4043,6 +4061,30 @@
       "slug": "la-boheme",
       "source_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
       "season": "2026"
+    },
+    "historical-2026-cagliari-lucrezia-borgia": {
+      "id": "oa-s-000334",
+      "work_id": "oa-w-000137",
+      "venue_id": "oa-v-000023",
+      "slug": "lucrezia-borgia",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "season": "2025-2026"
+    },
+    "historical-2026-cagliari-cosi-fan-tutte": {
+      "id": "oa-s-000335",
+      "work_id": "oa-w-000138",
+      "venue_id": "oa-v-000023",
+      "slug": "cosi-fan-tutte",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "season": "2025-2026"
+    },
+    "historical-2026-cagliari-il-cappello-di-paglia-di-firenze": {
+      "id": "oa-s-000336",
+      "work_id": "oa-w-000139",
+      "venue_id": "oa-v-000023",
+      "slug": "il-cappello-di-paglia-di-firenze",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "season": "2026-2027"
     }
   },
   "performances": {
@@ -11738,6 +11780,96 @@
       "staging_id": "oa-s-000333",
       "original_date": "2026-02-14",
       "source_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini"
+    },
+    "historical-2026-cagliari-lucrezia-borgia|2026-01-28": {
+      "id": "oa-r-001310",
+      "staging_id": "oa-s-000334",
+      "original_date": "2026-01-28",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-lucrezia-borgia|2026-01-29": {
+      "id": "oa-r-001311",
+      "staging_id": "oa-s-000334",
+      "original_date": "2026-01-29",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-lucrezia-borgia|2026-01-30": {
+      "id": "oa-r-001312",
+      "staging_id": "oa-s-000334",
+      "original_date": "2026-01-30",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-lucrezia-borgia|2026-01-31": {
+      "id": "oa-r-001313",
+      "staging_id": "oa-s-000334",
+      "original_date": "2026-01-31",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-lucrezia-borgia|2026-02-01": {
+      "id": "oa-r-001314",
+      "staging_id": "oa-s-000334",
+      "original_date": "2026-02-01",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-cosi-fan-tutte|2026-04-17": {
+      "id": "oa-r-001315",
+      "staging_id": "oa-s-000335",
+      "original_date": "2026-04-17",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-cosi-fan-tutte|2026-04-18": {
+      "id": "oa-r-001316",
+      "staging_id": "oa-s-000335",
+      "original_date": "2026-04-18",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-cosi-fan-tutte|2026-04-19": {
+      "id": "oa-r-001317",
+      "staging_id": "oa-s-000335",
+      "original_date": "2026-04-19",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-cosi-fan-tutte|2026-04-21": {
+      "id": "oa-r-001318",
+      "staging_id": "oa-s-000335",
+      "original_date": "2026-04-21",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-cosi-fan-tutte|2026-04-22": {
+      "id": "oa-r-001319",
+      "staging_id": "oa-s-000335",
+      "original_date": "2026-04-22",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-il-cappello-di-paglia-di-firenze|2026-09-23": {
+      "id": "oa-r-001320",
+      "staging_id": "oa-s-000336",
+      "original_date": "2026-09-23",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-il-cappello-di-paglia-di-firenze|2026-09-24": {
+      "id": "oa-r-001321",
+      "staging_id": "oa-s-000336",
+      "original_date": "2026-09-24",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-il-cappello-di-paglia-di-firenze|2026-09-25": {
+      "id": "oa-r-001322",
+      "staging_id": "oa-s-000336",
+      "original_date": "2026-09-25",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-il-cappello-di-paglia-di-firenze|2026-09-26": {
+      "id": "oa-r-001323",
+      "staging_id": "oa-s-000336",
+      "original_date": "2026-09-26",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-il-cappello-di-paglia-di-firenze|2026-09-27": {
+      "id": "oa-r-001324",
+      "staging_id": "oa-s-000336",
+      "original_date": "2026-09-27",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
     }
   },
   "reserved_works": {
