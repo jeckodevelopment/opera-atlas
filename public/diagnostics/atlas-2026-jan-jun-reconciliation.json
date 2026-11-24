@@ -1,0 +1,5328 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "period": "2026-01/2026-06",
+  "source_checked_at": "2026-11-24T07:24:05+00:00",
+  "read_only": true,
+  "catalog_updated": false,
+  "complete_seasons_certified": 0,
+  "source_observations": 93,
+  "unique_reconciled": 93,
+  "status_counts": {
+    "audience_and_format_review": 3,
+    "source_credited_not_in_reviewed_catalog": 90
+  },
+  "monthly_venue_coverage": [
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000001",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000002",
+      "venue": "Teatro Sociale",
+      "city": "Como",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000003",
+      "venue": "Teatro Fraschini",
+      "city": "Pavia",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000003",
+      "venue": "Teatro Fraschini",
+      "city": "Pavia",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000003",
+      "venue": "Teatro Fraschini",
+      "city": "Pavia",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000003",
+      "venue": "Teatro Fraschini",
+      "city": "Pavia",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000003",
+      "venue": "Teatro Fraschini",
+      "city": "Pavia",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000003",
+      "venue": "Teatro Fraschini",
+      "city": "Pavia",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000004",
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000004",
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000004",
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000004",
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000004",
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000004",
+      "venue": "Teatro Grande",
+      "city": "Brescia",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000005",
+      "venue": "Teatro Ponchielli",
+      "city": "Cremona",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "venue": "Teatro alla Scala",
+      "city": "Milano",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "venue": "Teatro alla Scala",
+      "city": "Milano",
+      "month": "2026-02",
+      "official_source_observations": 5,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 5
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "venue": "Teatro alla Scala",
+      "city": "Milano",
+      "month": "2026-03",
+      "official_source_observations": 8,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 8
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "venue": "Teatro alla Scala",
+      "city": "Milano",
+      "month": "2026-04",
+      "official_source_observations": 13,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 13
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "venue": "Teatro alla Scala",
+      "city": "Milano",
+      "month": "2026-05",
+      "official_source_observations": 9,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 9
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "venue": "Teatro alla Scala",
+      "city": "Milano",
+      "month": "2026-06",
+      "official_source_observations": 15,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 15
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000007",
+      "venue": "Arena di Verona",
+      "city": "Verona",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "venue": "Teatro La Fenice",
+      "city": "Venezia",
+      "month": "2026-01",
+      "official_source_observations": 5,
+      "counts": {
+        "audience_and_format_review": 1,
+        "source_credited_not_in_reviewed_catalog": 4
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "venue": "Teatro La Fenice",
+      "city": "Venezia",
+      "month": "2026-02",
+      "official_source_observations": 10,
+      "counts": {
+        "audience_and_format_review": 1,
+        "source_credited_not_in_reviewed_catalog": 9
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "venue": "Teatro La Fenice",
+      "city": "Venezia",
+      "month": "2026-03",
+      "official_source_observations": 5,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 5
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "venue": "Teatro La Fenice",
+      "city": "Venezia",
+      "month": "2026-04",
+      "official_source_observations": 6,
+      "counts": {
+        "audience_and_format_review": 1,
+        "source_credited_not_in_reviewed_catalog": 5
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "venue": "Teatro La Fenice",
+      "city": "Venezia",
+      "month": "2026-05",
+      "official_source_observations": 7,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 7
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "venue": "Teatro La Fenice",
+      "city": "Venezia",
+      "month": "2026-06",
+      "official_source_observations": 10,
+      "counts": {
+        "source_credited_not_in_reviewed_catalog": 10
+      },
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "venue": "Teatro Massimo",
+      "city": "Palermo",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "venue": "Teatro Massimo",
+      "city": "Palermo",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "venue": "Teatro Massimo",
+      "city": "Palermo",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "venue": "Teatro Massimo",
+      "city": "Palermo",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "venue": "Teatro Massimo",
+      "city": "Palermo",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000009",
+      "venue": "Teatro Massimo",
+      "city": "Palermo",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000010",
+      "venue": "Teatro Regio di Parma",
+      "city": "Parma",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000010",
+      "venue": "Teatro Regio di Parma",
+      "city": "Parma",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000010",
+      "venue": "Teatro Regio di Parma",
+      "city": "Parma",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000010",
+      "venue": "Teatro Regio di Parma",
+      "city": "Parma",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000010",
+      "venue": "Teatro Regio di Parma",
+      "city": "Parma",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000010",
+      "venue": "Teatro Regio di Parma",
+      "city": "Parma",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000012",
+      "venue": "Teatro Donizetti",
+      "city": "Bergamo",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000012",
+      "venue": "Teatro Donizetti",
+      "city": "Bergamo",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000012",
+      "venue": "Teatro Donizetti",
+      "city": "Bergamo",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000012",
+      "venue": "Teatro Donizetti",
+      "city": "Bergamo",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000012",
+      "venue": "Teatro Donizetti",
+      "city": "Bergamo",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000012",
+      "venue": "Teatro Donizetti",
+      "city": "Bergamo",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000013",
+      "venue": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000013",
+      "venue": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000013",
+      "venue": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000013",
+      "venue": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000013",
+      "venue": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000013",
+      "venue": "Teatro Valli",
+      "city": "Reggio Emilia",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000016",
+      "venue": "Teatro Carlo Felice",
+      "city": "Genova",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000016",
+      "venue": "Teatro Carlo Felice",
+      "city": "Genova",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000016",
+      "venue": "Teatro Carlo Felice",
+      "city": "Genova",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000016",
+      "venue": "Teatro Carlo Felice",
+      "city": "Genova",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000016",
+      "venue": "Teatro Carlo Felice",
+      "city": "Genova",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000016",
+      "venue": "Teatro Carlo Felice",
+      "city": "Genova",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000017",
+      "venue": "Teatro Gabriello Chiabrera",
+      "city": "Savona",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000017",
+      "venue": "Teatro Gabriello Chiabrera",
+      "city": "Savona",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000017",
+      "venue": "Teatro Gabriello Chiabrera",
+      "city": "Savona",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000017",
+      "venue": "Teatro Gabriello Chiabrera",
+      "city": "Savona",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000017",
+      "venue": "Teatro Gabriello Chiabrera",
+      "city": "Savona",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000017",
+      "venue": "Teatro Gabriello Chiabrera",
+      "city": "Savona",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000018",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000018",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000018",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000018",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000018",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000018",
+      "venue": "Teatro Lirico Giuseppe Verdi",
+      "city": "Trieste",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000020",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000020",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000020",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000020",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000020",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000020",
+      "venue": "Teatro Comunale Mario del Monaco",
+      "city": "Treviso",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000021",
+      "venue": "Teatro Verdi",
+      "city": "Padova",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000021",
+      "venue": "Teatro Verdi",
+      "city": "Padova",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000021",
+      "venue": "Teatro Verdi",
+      "city": "Padova",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000021",
+      "venue": "Teatro Verdi",
+      "city": "Padova",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000021",
+      "venue": "Teatro Verdi",
+      "city": "Padova",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000021",
+      "venue": "Teatro Verdi",
+      "city": "Padova",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "venue": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "venue": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "venue": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "venue": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "venue": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "venue": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000024",
+      "venue": "Teatro Sociale",
+      "city": "Trento",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000024",
+      "venue": "Teatro Sociale",
+      "city": "Trento",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000024",
+      "venue": "Teatro Sociale",
+      "city": "Trento",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000024",
+      "venue": "Teatro Sociale",
+      "city": "Trento",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000024",
+      "venue": "Teatro Sociale",
+      "city": "Trento",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000024",
+      "venue": "Teatro Sociale",
+      "city": "Trento",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "venue": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "venue": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "venue": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "venue": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "venue": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "venue": "Teatro Comunale di Bologna",
+      "city": "Bologna",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000027",
+      "venue": "Teatro Municipale",
+      "city": "Piacenza",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000027",
+      "venue": "Teatro Municipale",
+      "city": "Piacenza",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000027",
+      "venue": "Teatro Municipale",
+      "city": "Piacenza",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000027",
+      "venue": "Teatro Municipale",
+      "city": "Piacenza",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000027",
+      "venue": "Teatro Municipale",
+      "city": "Piacenza",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000027",
+      "venue": "Teatro Municipale",
+      "city": "Piacenza",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000028",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000028",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000028",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000028",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000028",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000028",
+      "venue": "Teatro Comunale Pavarotti-Freni",
+      "city": "Modena",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000029",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "city": "Ferrara",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000029",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "city": "Ferrara",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000029",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "city": "Ferrara",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000029",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "city": "Ferrara",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000029",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "city": "Ferrara",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000029",
+      "venue": "Teatro Comunale Claudio Abbado",
+      "city": "Ferrara",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000030",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000030",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000030",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000030",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000030",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000030",
+      "venue": "Teatro del Maggio Musicale Fiorentino",
+      "city": "Firenze",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000031",
+      "venue": "Teatro del Giglio Giacomo Puccini",
+      "city": "Lucca",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000032",
+      "venue": "Teatro Verdi",
+      "city": "Pisa",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000032",
+      "venue": "Teatro Verdi",
+      "city": "Pisa",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000032",
+      "venue": "Teatro Verdi",
+      "city": "Pisa",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000032",
+      "venue": "Teatro Verdi",
+      "city": "Pisa",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000032",
+      "venue": "Teatro Verdi",
+      "city": "Pisa",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000032",
+      "venue": "Teatro Verdi",
+      "city": "Pisa",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000033",
+      "venue": "Teatro Goldoni",
+      "city": "Livorno",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000033",
+      "venue": "Teatro Goldoni",
+      "city": "Livorno",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000033",
+      "venue": "Teatro Goldoni",
+      "city": "Livorno",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000033",
+      "venue": "Teatro Goldoni",
+      "city": "Livorno",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000033",
+      "venue": "Teatro Goldoni",
+      "city": "Livorno",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000033",
+      "venue": "Teatro Goldoni",
+      "city": "Livorno",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000035",
+      "venue": "Teatro delle Muse",
+      "city": "Ancona",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000035",
+      "venue": "Teatro delle Muse",
+      "city": "Ancona",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000035",
+      "venue": "Teatro delle Muse",
+      "city": "Ancona",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000035",
+      "venue": "Teatro delle Muse",
+      "city": "Ancona",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000035",
+      "venue": "Teatro delle Muse",
+      "city": "Ancona",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000035",
+      "venue": "Teatro delle Muse",
+      "city": "Ancona",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000037",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000037",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000037",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000037",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000037",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000037",
+      "venue": "Teatro Giovan Battista Pergolesi",
+      "city": "Jesi",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000038",
+      "venue": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000038",
+      "venue": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000038",
+      "venue": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000038",
+      "venue": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000038",
+      "venue": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000038",
+      "venue": "Teatro Gioachino Rossini",
+      "city": "Pesaro",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000039",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000039",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000039",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000039",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000039",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000039",
+      "venue": "Teatro Nuovo Gian Carlo Menotti",
+      "city": "Spoleto",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000040",
+      "venue": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000040",
+      "venue": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000040",
+      "venue": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000040",
+      "venue": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000040",
+      "venue": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000040",
+      "venue": "Teatro dell'Opera di Roma",
+      "city": "Roma",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000041",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000041",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000041",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000041",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000041",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000041",
+      "venue": "Teatro di San Carlo",
+      "city": "Napoli",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000042",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000042",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000042",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000042",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000042",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000042",
+      "venue": "Teatro Municipale Giuseppe Verdi",
+      "city": "Salerno",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000043",
+      "venue": "Teatro Petruzzelli",
+      "city": "Bari",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000043",
+      "venue": "Teatro Petruzzelli",
+      "city": "Bari",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000043",
+      "venue": "Teatro Petruzzelli",
+      "city": "Bari",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000043",
+      "venue": "Teatro Petruzzelli",
+      "city": "Bari",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000043",
+      "venue": "Teatro Petruzzelli",
+      "city": "Bari",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000043",
+      "venue": "Teatro Petruzzelli",
+      "city": "Bari",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000044",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000044",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000044",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000044",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000044",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000044",
+      "venue": "Palazzo Ducale di Martina Franca",
+      "city": "Martina Franca",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000045",
+      "venue": "Teatro Marrucino",
+      "city": "Chieti",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000045",
+      "venue": "Teatro Marrucino",
+      "city": "Chieti",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000045",
+      "venue": "Teatro Marrucino",
+      "city": "Chieti",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000045",
+      "venue": "Teatro Marrucino",
+      "city": "Chieti",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000045",
+      "venue": "Teatro Marrucino",
+      "city": "Chieti",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000045",
+      "venue": "Teatro Marrucino",
+      "city": "Chieti",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "venue": "Teatro Massimo Bellini",
+      "city": "Catania",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "venue": "Teatro Massimo Bellini",
+      "city": "Catania",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "venue": "Teatro Massimo Bellini",
+      "city": "Catania",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "venue": "Teatro Massimo Bellini",
+      "city": "Catania",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "venue": "Teatro Massimo Bellini",
+      "city": "Catania",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "venue": "Teatro Massimo Bellini",
+      "city": "Catania",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000047",
+      "venue": "Teatro Vittorio Emanuele",
+      "city": "Messina",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000048",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000048",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000048",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000048",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000048",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000048",
+      "venue": "Teatro Giuseppe Di Stefano",
+      "city": "Trapani",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000050",
+      "venue": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000050",
+      "venue": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000050",
+      "venue": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000050",
+      "venue": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000050",
+      "venue": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000050",
+      "venue": "Teatro Comunale di Sassari",
+      "city": "Sassari",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000051",
+      "venue": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000051",
+      "venue": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000051",
+      "venue": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000051",
+      "venue": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000051",
+      "venue": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000051",
+      "venue": "Teatro Politeama Greco",
+      "city": "Lecce",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000052",
+      "venue": "Teatro Apollo",
+      "city": "Lecce",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000052",
+      "venue": "Teatro Apollo",
+      "city": "Lecce",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000052",
+      "venue": "Teatro Apollo",
+      "city": "Lecce",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000052",
+      "venue": "Teatro Apollo",
+      "city": "Lecce",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000052",
+      "venue": "Teatro Apollo",
+      "city": "Lecce",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000052",
+      "venue": "Teatro Apollo",
+      "city": "Lecce",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000021",
+      "venue": "Teatro Malibran",
+      "city": "Venezia",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000021",
+      "venue": "Teatro Malibran",
+      "city": "Venezia",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000021",
+      "venue": "Teatro Malibran",
+      "city": "Venezia",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000021",
+      "venue": "Teatro Malibran",
+      "city": "Venezia",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000021",
+      "venue": "Teatro Malibran",
+      "city": "Venezia",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000021",
+      "venue": "Teatro Malibran",
+      "city": "Venezia",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "venue": "Teatro Goldoni",
+      "city": "Firenze",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "venue": "Teatro Goldoni",
+      "city": "Firenze",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "venue": "Teatro Goldoni",
+      "city": "Firenze",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "venue": "Teatro Goldoni",
+      "city": "Firenze",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "venue": "Teatro Goldoni",
+      "city": "Firenze",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "venue": "Teatro Goldoni",
+      "city": "Firenze",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "venue": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "venue": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "venue": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "venue": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "venue": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "venue": "Teatro Valle Franca Valeri",
+      "city": "Roma",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000030",
+      "venue": "Teatro Sangiorgi",
+      "city": "Catania",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000030",
+      "venue": "Teatro Sangiorgi",
+      "city": "Catania",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000030",
+      "venue": "Teatro Sangiorgi",
+      "city": "Catania",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000030",
+      "venue": "Teatro Sangiorgi",
+      "city": "Catania",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000030",
+      "venue": "Teatro Sangiorgi",
+      "city": "Catania",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000030",
+      "venue": "Teatro Sangiorgi",
+      "city": "Catania",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000037",
+      "venue": "Teatro Sociale",
+      "city": "Bergamo",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000037",
+      "venue": "Teatro Sociale",
+      "city": "Bergamo",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000037",
+      "venue": "Teatro Sociale",
+      "city": "Bergamo",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000037",
+      "venue": "Teatro Sociale",
+      "city": "Bergamo",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000037",
+      "venue": "Teatro Sociale",
+      "city": "Bergamo",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000037",
+      "venue": "Teatro Sociale",
+      "city": "Bergamo",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000058",
+      "venue": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000058",
+      "venue": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000058",
+      "venue": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000058",
+      "venue": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000058",
+      "venue": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000058",
+      "venue": "Teatro Alfonso Rendano",
+      "city": "Cosenza",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000059",
+      "venue": "Teatro Olimpico",
+      "city": "Vicenza",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000059",
+      "venue": "Teatro Olimpico",
+      "city": "Vicenza",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000059",
+      "venue": "Teatro Olimpico",
+      "city": "Vicenza",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000059",
+      "venue": "Teatro Olimpico",
+      "city": "Vicenza",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000059",
+      "venue": "Teatro Olimpico",
+      "city": "Vicenza",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000059",
+      "venue": "Teatro Olimpico",
+      "city": "Vicenza",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000062",
+      "venue": "Auditorium Scavolini",
+      "city": "Pesaro",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000062",
+      "venue": "Auditorium Scavolini",
+      "city": "Pesaro",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000062",
+      "venue": "Auditorium Scavolini",
+      "city": "Pesaro",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000062",
+      "venue": "Auditorium Scavolini",
+      "city": "Pesaro",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000062",
+      "venue": "Auditorium Scavolini",
+      "city": "Pesaro",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000062",
+      "venue": "Auditorium Scavolini",
+      "city": "Pesaro",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000052",
+      "venue": "Forte della Maddalena",
+      "city": "Alghero",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000052",
+      "venue": "Forte della Maddalena",
+      "city": "Alghero",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000052",
+      "venue": "Forte della Maddalena",
+      "city": "Alghero",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000052",
+      "venue": "Forte della Maddalena",
+      "city": "Alghero",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000052",
+      "venue": "Forte della Maddalena",
+      "city": "Alghero",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000052",
+      "venue": "Forte della Maddalena",
+      "city": "Alghero",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000051",
+      "venue": "Piazza Goldoni",
+      "city": "Livorno",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000051",
+      "venue": "Piazza Goldoni",
+      "city": "Livorno",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000051",
+      "venue": "Piazza Goldoni",
+      "city": "Livorno",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000051",
+      "venue": "Piazza Goldoni",
+      "city": "Livorno",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000051",
+      "venue": "Piazza Goldoni",
+      "city": "Livorno",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000051",
+      "venue": "Piazza Goldoni",
+      "city": "Livorno",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000056",
+      "venue": "Giardini di Palazzo Natta",
+      "city": "Novara",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000056",
+      "venue": "Giardini di Palazzo Natta",
+      "city": "Novara",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000056",
+      "venue": "Giardini di Palazzo Natta",
+      "city": "Novara",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000056",
+      "venue": "Giardini di Palazzo Natta",
+      "city": "Novara",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000056",
+      "venue": "Giardini di Palazzo Natta",
+      "city": "Novara",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000056",
+      "venue": "Giardini di Palazzo Natta",
+      "city": "Novara",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000069",
+      "venue": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000069",
+      "venue": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000069",
+      "venue": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000069",
+      "venue": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000069",
+      "venue": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000069",
+      "venue": "Chiostro del Carmine",
+      "city": "Martina Franca",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000070",
+      "venue": "Teatro M° Tonino Pardo",
+      "city": "Trapani",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000070",
+      "venue": "Teatro M° Tonino Pardo",
+      "city": "Trapani",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000070",
+      "venue": "Teatro M° Tonino Pardo",
+      "city": "Trapani",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000070",
+      "venue": "Teatro M° Tonino Pardo",
+      "city": "Trapani",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000070",
+      "venue": "Teatro M° Tonino Pardo",
+      "city": "Trapani",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-vd-000070",
+      "venue": "Teatro M° Tonino Pardo",
+      "city": "Trapani",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000066",
+      "venue": "Teatro Giuseppe Verdi",
+      "city": "Busseto",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000066",
+      "venue": "Teatro Giuseppe Verdi",
+      "city": "Busseto",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000066",
+      "venue": "Teatro Giuseppe Verdi",
+      "city": "Busseto",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000066",
+      "venue": "Teatro Giuseppe Verdi",
+      "city": "Busseto",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000066",
+      "venue": "Teatro Giuseppe Verdi",
+      "city": "Busseto",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000066",
+      "venue": "Teatro Giuseppe Verdi",
+      "city": "Busseto",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000068",
+      "venue": "Villa Pisani Bonetti",
+      "city": "Lonigo",
+      "month": "2026-01",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000068",
+      "venue": "Villa Pisani Bonetti",
+      "city": "Lonigo",
+      "month": "2026-02",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000068",
+      "venue": "Villa Pisani Bonetti",
+      "city": "Lonigo",
+      "month": "2026-03",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000068",
+      "venue": "Villa Pisani Bonetti",
+      "city": "Lonigo",
+      "month": "2026-04",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000068",
+      "venue": "Villa Pisani Bonetti",
+      "city": "Lonigo",
+      "month": "2026-05",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    },
+    {
+      "venue_id": "oa-v-000068",
+      "venue": "Villa Pisani Bonetti",
+      "city": "Lonigo",
+      "month": "2026-06",
+      "official_source_observations": 0,
+      "counts": {},
+      "complete_month_verified": false
+    }
+  ],
+  "observations": [
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-08",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-10",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-12",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-16",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-18",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-20",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-22",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-23",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-25",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-27",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Das Rheingold (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-01",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Das Rheingold (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-10",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Die Walküre (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-03",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Die Walküre (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-11",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Götterdämmerung (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-07",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Götterdämmerung (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-15",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "date": "2026-02-01",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "date": "2026-02-04",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "date": "2026-02-08",
+      "time": "14:30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "date": "2026-02-12",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "date": "2026-02-17",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "date": "2026-06-26",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "date": "2026-06-30",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-05-16",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-05-19",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-05-22",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-05-26",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-05-29",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-05-31",
+      "time": "14:30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-06-04",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-06-06",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Nabucodonosor",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-06-09",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "date": "2026-04-22",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "date": "2026-04-26",
+      "time": "14:30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "date": "2026-04-30",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "date": "2026-05-03",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "date": "2026-05-06",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "date": "2026-05-09",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Siegfried (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-05",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Siegfried (Der Ring des Nibelungen)",
+      "composer": "Richard Wagner",
+      "date": "2026-03-13",
+      "time": "18:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-01",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-08",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-09",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-11",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-12",
+      "time": "14:30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-14",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-18",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-21",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-24",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000006",
+      "city": "Milano",
+      "venue_candidate": "Teatro alla Scala",
+      "title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "date": "2026-04-29",
+      "time": "20:00",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Il piccolo principe",
+      "composer": "Pierangelo Valtinoni",
+      "date": "2026-04-18",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/evento-25-26-il-piccolo-principe/",
+      "status": "audience_and_format_review",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Piccolo Orso e la Montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "date": "2026-01-31",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "status": "audience_and_format_review",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Piccolo Orso e la Montagna di ghiaccio",
+      "composer": "Giovanni Sollima",
+      "date": "2026-02-01",
+      "time": "11:00",
+      "source_url": "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "status": "audience_and_format_review",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-05-24",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-05-26",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-05-27",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-05-28",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-05-29",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-05-30",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-05-31",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "date": "2026-06-03",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti",
+      "date": "2026-06-12",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti",
+      "date": "2026-06-14",
+      "time": "17:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti",
+      "date": "2026-06-16",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti",
+      "date": "2026-06-18",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti",
+      "date": "2026-06-20",
+      "time": "17:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-08",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-11",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-13",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-15",
+      "time": "17:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-17",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "date": "2026-04-12",
+      "time": "18:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "date": "2026-04-15",
+      "time": "18:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "date": "2026-04-19",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "date": "2026-04-22",
+      "time": "18:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "date": "2026-04-26",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Ottone in villa",
+      "composer": "Antonio Vivaldi",
+      "date": "2026-03-20",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Ottone in villa",
+      "composer": "Antonio Vivaldi",
+      "date": "2026-03-22",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Ottone in villa",
+      "composer": "Antonio Vivaldi",
+      "date": "2026-03-24",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Ottone in villa",
+      "composer": "Antonio Vivaldi",
+      "date": "2026-03-26",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro Malibran",
+      "title": "Ottone in villa",
+      "composer": "Antonio Vivaldi",
+      "date": "2026-03-29",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-01-23",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-01-25",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-01-27",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-01-29",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-01",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-10",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-12",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "date": "2026-02-14",
+      "time": "15:30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "date": "2026-06-26",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "date": "2026-06-27",
+      "time": "17:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "date": "2026-06-28",
+      "time": "17:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    },
+    {
+      "venue_id": "oa-v-000008",
+      "city": "Venezia",
+      "venue_candidate": "Teatro La Fenice",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "date": "2026-06-30",
+      "time": "19:00",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+      "status": "source_credited_not_in_reviewed_catalog",
+      "public_catalog_updated": false,
+      "match_count": 0,
+      "possible_same_city_match_count": 0,
+      "editorial_note": "Not automatically publishable; verify general audience, aliases, staging and official cancellations."
+    }
+  ],
+  "warning": "Officially credited showtimes not in the reviewed launch manifest are NOT automatically published missing performances. Verify exclusions, venue, audience, edition and work identity."
+}
