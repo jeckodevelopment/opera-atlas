@@ -1,25 +1,25 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T21:12:34+00:00",
+  "generated_at": "2026-11-24T21:25:09+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
   "input_event_groups": 121,
   "counts": {
+    "catalog_official_clock_verified_index_offset": 7,
     "catalog_same_work_day_clock_official_pisa_venue_unprovided": 12,
-    "catalog_same_work_day_venue_clock_discrepancy": 11,
-    "catalog_same_work_day_venue_exact_clock": 2,
+    "catalog_same_work_day_venue_exact_clock": 3,
+    "catalog_same_work_day_venue_observation_without_clock": 4,
     "official_cancelled_event_first_party": 1,
     "official_nonopera_first_party_detail": 88,
     "official_nonopera_source_scoped": 3,
-    "official_opera_special_format_editorial_review": 1,
     "official_out_of_scope_educational_opera": 1,
     "official_school_session_not_public_unverified": 2
   },
   "by_source": {
     "bellini-catania-opera-2026-27": {
-      "catalog_same_work_day_venue_clock_discrepancy": 4,
+      "catalog_same_work_day_venue_observation_without_clock": 4,
       "official_nonopera_first_party_detail": 12
     },
     "bologna-comunale-opera-2027": {
@@ -31,10 +31,10 @@
       "official_nonopera_first_party_detail": 4
     },
     "modena-teatro-opera-2026-27": {
-      "catalog_same_work_day_venue_clock_discrepancy": 7,
+      "catalog_official_clock_verified_index_offset": 7,
+      "catalog_same_work_day_venue_exact_clock": 1,
       "official_cancelled_event_first_party": 1,
       "official_nonopera_first_party_detail": 25,
-      "official_opera_special_format_editorial_review": 1,
       "official_school_session_not_public_unverified": 2
     },
     "piacenza-opera-2026-27": {
@@ -166,7 +166,7 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "possible_catalog_match_needs_confirmation",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_same_work_day_venue_observation_without_clock",
       "catalog_matches": [
         {
           "title": "Il quinto moschettiere",
@@ -189,7 +189,7 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "possible_catalog_match_needs_confirmation",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_same_work_day_venue_observation_without_clock",
       "catalog_matches": [
         {
           "title": "Le nozze dell’orso",
@@ -363,7 +363,7 @@
         "https://www.teatromassimobellini.it/opere-e-balletto/"
       ],
       "triage_bucket": "possible_catalog_match_needs_confirmation",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_same_work_day_venue_observation_without_clock",
       "catalog_matches": [
         {
           "title": "Le nozze dell’orso",
@@ -387,7 +387,7 @@
         "https://www.teatromassimobellini.it/opere-e-balletto/"
       ],
       "triage_bucket": "possible_catalog_match_needs_confirmation",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_same_work_day_venue_observation_without_clock",
       "catalog_matches": [
         {
           "title": "Il quinto moschettiere",
@@ -1010,14 +1010,16 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "official_opera_candidate_needs_editorial_review",
-      "status": "official_opera_special_format_editorial_review",
-      "catalog_matches": [],
-      "official_nonopera_evidence": {
-        "genre": "opera_semiscenic_reconstruction",
-        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
-        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
-        "reason": "Vivaldi RV 706-A: only surviving music performed semi-staged with spoken narration of lost sections; requires editorial scope review."
-      },
+      "status": "catalog_same_work_day_venue_exact_clock",
+      "catalog_matches": [
+        {
+          "title": "La costanza trionfante",
+          "clock": "20:30",
+          "source_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
+          "venue": "Teatro Comunale Pavarotti-Freni"
+        }
+      ],
+      "official_nonopera_evidence": null,
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1362,7 +1364,7 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_official_clock_verified_index_offset",
       "catalog_matches": [
         {
           "title": "Macbeth",
@@ -1371,7 +1373,13 @@
           "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+        "verified_clock": "20:00",
+        "observed_clock": "21:00",
+        "source_clock_offset_minutes": 60,
+        "reason": "Official Modena production detail confirms canonical clock; observed index clock is one hour later."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1385,7 +1393,7 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_official_clock_verified_index_offset",
       "catalog_matches": [
         {
           "title": "Macbeth",
@@ -1394,7 +1402,13 @@
           "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/",
+        "verified_clock": "15:30",
+        "observed_clock": "16:30",
+        "source_clock_offset_minutes": 60,
+        "reason": "Official Modena production detail confirms canonical clock; observed index clock is one hour later."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1496,7 +1510,7 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_official_clock_verified_index_offset",
       "catalog_matches": [
         {
           "title": "Der fliegende Holländer",
@@ -1505,7 +1519,13 @@
           "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+        "verified_clock": "20:00",
+        "observed_clock": "21:00",
+        "source_clock_offset_minutes": 60,
+        "reason": "Official Modena production detail confirms canonical clock; observed index clock is one hour later."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1519,7 +1539,7 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_official_clock_verified_index_offset",
       "catalog_matches": [
         {
           "title": "Der fliegende Holländer",
@@ -1528,7 +1548,13 @@
           "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/",
+        "verified_clock": "15:30",
+        "observed_clock": "16:30",
+        "source_clock_offset_minutes": 60,
+        "reason": "Official Modena production detail confirms canonical clock; observed index clock is one hour later."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1543,7 +1569,7 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_official_clock_verified_index_offset",
       "catalog_matches": [
         {
           "title": "L'esecuzione",
@@ -1552,7 +1578,13 @@
           "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+        "verified_clock": "20:00",
+        "observed_clock": "21:00",
+        "source_clock_offset_minutes": 60,
+        "reason": "Official Modena production detail confirms canonical clock; observed index clock is one hour later."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1566,7 +1598,7 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_official_clock_verified_index_offset",
       "catalog_matches": [
         {
           "title": "L'esecuzione",
@@ -1575,7 +1607,13 @@
           "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/",
+        "verified_clock": "15:30",
+        "observed_clock": "16:30",
+        "source_clock_offset_minutes": 60,
+        "reason": "Official Modena production detail confirms canonical clock; observed index clock is one hour later."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1611,7 +1649,7 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "catalog_same_work_day_venue_clock_discrepancy",
+      "status": "catalog_official_clock_verified_index_offset",
       "catalog_matches": [
         {
           "title": "I salvatori della mezzanotte",
@@ -1620,7 +1658,13 @@
           "venue": "Teatro Comunale Pavarotti-Freni"
         }
       ],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/",
+        "verified_clock": "17:30",
+        "observed_clock": "18:30",
+        "source_clock_offset_minutes": 60,
+        "reason": "Official Modena production detail confirms canonical clock; observed index clock is one hour later."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
