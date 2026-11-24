@@ -2450,6 +2450,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-venezia-fenice-venere-e-adone:2026-06-26",
+      "starts_at": "2026-06-26T19:00:00+02:00",
+      "local_date": "2026-06-26",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-lucia-di-lammermoor:2026-06-26",
       "starts_at": "2026-06-26T20:00:00+02:00",
       "local_date": "2026-06-26",
@@ -2465,6 +2483,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-venezia-fenice-venere-e-adone:2026-06-27",
+      "starts_at": "2026-06-27T17:00:00+02:00",
+      "local_date": "2026-06-27",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
       ]
     },
     {
@@ -2486,6 +2522,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-venezia-fenice-venere-e-adone:2026-06-28",
+      "starts_at": "2026-06-28T17:00:00+02:00",
+      "local_date": "2026-06-28",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-venezia-fenice-venere-e-adone:2026-06-30",
+      "starts_at": "2026-06-30T19:00:00+02:00",
+      "local_date": "2026-06-30",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-lucia-di-lammermoor:2026-06-30",
       "starts_at": "2026-06-30T20:00:00+02:00",
       "local_date": "2026-06-30",
@@ -2501,6 +2573,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-venezia-fenice-venere-e-adone:2026-07-01",
+      "starts_at": "2026-07-01T19:00:00+02:00",
+      "local_date": "2026-07-01",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Venere e Adone",
+      "composer": "Salvatore Sciarrino",
+      "venue": "Teatro La Fenice",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
       ]
     },
     {
