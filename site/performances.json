@@ -974,6 +974,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026h1-torino-dialoghi-delle-carmelitane:2026-03-31",
+      "starts_at": "2026-03-31T20:00:00+02:00",
+      "local_date": "2026-03-31",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-turandot:2026-04-01",
       "starts_at": "2026-04-01T20:00:00+02:00",
       "local_date": "2026-04-01",
@@ -989,6 +1007,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-dialoghi-delle-carmelitane:2026-04-02",
+      "starts_at": "2026-04-02T20:00:00+02:00",
+      "local_date": "2026-04-02",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-dialoghi-delle-carmelitane:2026-04-04",
+      "starts_at": "2026-04-04T15:00:00+02:00",
+      "local_date": "2026-04-04",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
       ]
     },
     {
@@ -1010,6 +1064,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026h1-torino-dialoghi-delle-carmelitane:2026-04-08",
+      "starts_at": "2026-04-08T20:00:00+02:00",
+      "local_date": "2026-04-08",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-turandot:2026-04-09",
       "starts_at": "2026-04-09T20:00:00+02:00",
       "local_date": "2026-04-09",
@@ -1025,6 +1097,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-dialoghi-delle-carmelitane:2026-04-10",
+      "starts_at": "2026-04-10T15:00:00+02:00",
+      "local_date": "2026-04-10",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
       ]
     },
     {
@@ -1061,6 +1151,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026h1-torino-dialoghi-delle-carmelitane:2026-04-12",
+      "starts_at": "2026-04-12T15:00:00+02:00",
+      "local_date": "2026-04-12",
+      "time_known": true,
+      "time_label": "15:00",
+      "status": "announced",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane"
       ]
     },
     {
