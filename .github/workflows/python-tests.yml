@@ -18,6 +18,7 @@ jobs:
         run: |
           # Source-bound composite evidence may have been checkpointed since
           # the last public program snapshot; validate its derived feed first.
+          python -m scripts.build_verified_catalog
           python -m scripts.publish_catalog_v2
           python -m scripts.publish_work_editorial
           python -m scripts.publish_programs
