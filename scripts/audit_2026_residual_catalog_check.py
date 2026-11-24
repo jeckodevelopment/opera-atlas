@@ -224,6 +224,7 @@ def canonical_title(value):
 PISA_SOURCE_KEYS = frozenset(("pisa-future-calendar", "pisa-verdi-opera-2026-27"))
 PISA_PUBLISHED_ALIASES = {
     "dido and aeneas": "dido and aeneas",
+    "dido and æneas": "dido and aeneas",
     "l occasione fa il ladro ossia il cambio della valigia": "l occasione fa il ladro",
 }
 PISA_OFFICIAL_OPERA_LEADS = (
