@@ -1227,6 +1227,16 @@
       "sources": [
         "https://corago.unibo.it/opera/Z000030184"
       ]
+    },
+    "dialoghi-delle-carmelitane": {
+      "librettist": "Francis Poulenc, dal dramma di Georges Bernanos",
+      "premiere_year": 1957,
+      "premiere_venue": "Teatro alla Scala",
+      "premiere_city": "Milano",
+      "sources": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+        "https://www.rohcollections.org.uk/work.aspx?work=1323"
+      ]
     }
   },
   "works_by_id": {

@@ -13,17 +13,17 @@ class HistoricalH1PublicationTests(unittest.TestCase):
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.approved=approved_historical_h1()
 
-    def test_exact_105_dated_showtimes_and_stable_ids(self):
-        self.assertEqual(19,len(self.approved))
+    def test_exact_111_dated_showtimes_and_stable_ids(self):
+        self.assertEqual(20,len(self.approved))
         records=[p for p in self.manifest["productions"] if p["source_url"] in self.approved]
-        self.assertEqual(19,len(records))
-        self.assertEqual(105,sum(len(p["dates"]) for p in records))
-        self.assertEqual(105,sum(len(a["dates"]) for a in self.approved.values()))
+        self.assertEqual(20,len(records))
+        self.assertEqual(111,sum(len(p["dates"]) for p in records))
+        self.assertEqual(111,sum(len(a["dates"]) for a in self.approved.values()))
         canonical=assemble(self.manifest,self.registry)
         published=[p for p in canonical["performances"]
                    if p["source_url"] in self.approved]
-        self.assertEqual(105,len(published))
-        self.assertEqual(105,len({p["id"] for p in published}))
+        self.assertEqual(111,len(published))
+        self.assertEqual(111,len({p["id"] for p in published}))
         self.assertTrue(all(p["time_known"] and p["starts_at"]
                             for p in published))
 
@@ -42,8 +42,8 @@ class HistoricalH1PublicationTests(unittest.TestCase):
 
     def test_regio_2025_26_is_source_verified_and_youth_previews_excluded(self):
         urls=[x for x in self.approved.values() if x["city"]=="Torino"]
-        self.assertEqual(3,len(urls))
-        self.assertEqual(19,sum(len(x["dates"]) for x in urls))
+        self.assertEqual(4,len(urls))
+        self.assertEqual(25,sum(len(x["dates"]) for x in urls))
         self.assertTrue(all(x["source_venue"]=="Teatro Regio di Torino" for x in urls))
         # No historic opera source may be approved through a wildcard URL.
         self.assertTrue(all(x["source_url"].startswith(

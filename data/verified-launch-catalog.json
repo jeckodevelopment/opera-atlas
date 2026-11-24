@@ -7739,6 +7739,41 @@
       ]
     },
     {
+      "key": "historical-2026h1-torino-dialoghi-delle-carmelitane",
+      "title": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio",
+      "municipality": "Torino",
+      "region": "Piemonte",
+      "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "dates": [
+        [
+          "2026-03-31",
+          "20:00"
+        ],
+        [
+          "2026-04-02",
+          "20:00"
+        ],
+        [
+          "2026-04-04",
+          "15:00"
+        ],
+        [
+          "2026-04-08",
+          "20:00"
+        ],
+        [
+          "2026-04-10",
+          "15:00"
+        ],
+        [
+          "2026-04-12",
+          "15:00"
+        ]
+      ]
+    },
+    {
       "key": "historical-2026h1-torino-i-puritani",
       "title": "I puritani",
       "composer": "Vincenzo Bellini",
