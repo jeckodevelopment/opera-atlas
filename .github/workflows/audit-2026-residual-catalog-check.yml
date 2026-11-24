@@ -11,6 +11,9 @@ on:
     paths:
       - 'scripts/audit_2026_residual_catalog_check.py'
       - '.github/workflows/audit-2026-residual-catalog-check.yml'
+  workflow_run:
+    workflows: ['Audit 2026 — editorial mass triage']
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -22,6 +25,7 @@ concurrency:
 
 jobs:
   check:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -42,8 +46,8 @@ jobs:
           x=json.loads(Path('public/diagnostics/atlas-2026-residual-catalog-check.json').read_text())
           assert x['read_only'] is True and x['catalog_updated'] is False
           assert x['complete_seasons_certified']==0
-          assert x['input_event_groups']==84
-          assert sum(x['counts'].values())==84
+          assert x['input_event_groups'] == len(json.loads(Path('public/diagnostics/atlas-2026-editorial-triage.json').read_text())['review_groups'])
+          assert sum(x['counts'].values())==x['input_event_groups']
           assert all(not item['automatic_publication'] and not item['automatic_exclusion']
                      for item in x['observations'])
           print('Residual checked:',x['counts'])
