@@ -1,7 +1,7 @@
 name: Refresh composer portraits
 on:
   schedule:
-    - cron: '23 6 * * 1'
+    - cron: '23 6 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -41,3 +41,16 @@ jobs:
             git rebase origin/main
           done
           exit 1
+      - name: Assess acquisition outcome after persisting diagnostics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("data/composer-portrait-review.json").read_text())
+          status = report["status"]
+          if status == "blocked":
+              print("::error::Portrait acquisition blocked by upstream errors; diagnostics saved.")
+              raise SystemExit(1)
+          if status == "partial":
+              print("::warning::Portrait acquisition incomplete; verified progress and diagnostics saved.")
+          PY
