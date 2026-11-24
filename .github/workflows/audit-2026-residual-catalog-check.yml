@@ -1,0 +1,86 @@
+name: Audit 2026 — residual catalog check
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/audit_2026_residual_catalog_check.py'
+      - 'tests/test_audit_2026_residual_catalog_check.py'
+      - '.github/workflows/audit-2026-residual-catalog-check.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_2026_residual_catalog_check.py'
+      - '.github/workflows/audit-2026-residual-catalog-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-atlas-2026-residual-catalog-check-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Test catalog comparison and time safeguards
+        run: python -m unittest tests.test_audit_2026_residual_catalog_check -v
+      - name: Cross-check all national 2026 review groups
+        run: |
+          python -m scripts.audit_2026_residual_catalog_check
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('public/diagnostics/atlas-2026-residual-catalog-check.json').read_text())
+          assert x['read_only'] is True and x['catalog_updated'] is False
+          assert x['complete_seasons_certified']==0
+          assert x['input_event_groups']==84
+          assert sum(x['counts'].values())==84
+          assert all(not item['automatic_publication'] and not item['automatic_exclusion']
+                     for item in x['observations'])
+          print('Residual checked:',x['counts'])
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: opera-atlas-2026-residual-catalog-check
+          path: public/diagnostics/atlas-2026-residual-catalog-check.json
+          retention-days: 30
+
+  publish:
+    needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: opera-atlas-2026-residual-catalog-check
+          path: public/diagnostics
+      - name: Publish diagnostic output only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp public/diagnostics/atlas-2026-residual-catalog-check.json /tmp/atlas-2026-residual-catalog-check.json
+          for attempt in 1 2 3 4 5 6 7 8; do
+            git fetch --no-tags origin main
+            git checkout -B publish-2026-residual-check FETCH_HEAD
+            mkdir -p public/diagnostics
+            cp /tmp/atlas-2026-residual-catalog-check.json public/diagnostics/atlas-2026-residual-catalog-check.json
+            git add -- public/diagnostics/atlas-2026-residual-catalog-check.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'data(audit): residual 2026 canonical catalog comparison [skip ci]'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
