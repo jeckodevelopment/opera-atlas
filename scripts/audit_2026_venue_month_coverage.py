@@ -80,6 +80,8 @@ def validated_venue_leads(document, venues):
         "oa-vd-000049": ("Cagliari", "Teatro Lirico di Cagliari", "www.liricocagliari.it"),
         "oa-v-000005": ("Cremona", "Teatro Ponchielli", "www.comune.cremona.it"),
         "oa-v-000011": ("Novara", "Teatro Coccia", "www.fondazioneteatrococcia.it"),
+        "oa-vd-000031": ("Lucca", "Teatro del Giglio Giacomo Puccini", "www.teatrodelgigliogiacomopuccini.it"),
+        "oa-vd-000057": ("Mantova", "Teatro Sociale di Mantova", "www.teatrosocialemantova.it"),
     }
     result=defaultdict(list)
     seen=set()
