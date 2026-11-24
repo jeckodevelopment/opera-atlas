@@ -9,7 +9,15 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000001",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Alberto Franchetti",
+        "author": "Varischi e Artico",
+        "credit": "Varischi e Artico — Wikimedia Commons — CC-BY-SA-4.0",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Alberto_Franchetti_(1902)_-_Archivio_Storico_Ricordi_FOTO000791_C.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Alberto_Franchetti_%281902%29_-_Archivio_Storico_Ricordi_FOTO000791_C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+      },
       "subtitle": null,
       "title": "Alberto Franchetti",
       "type": "composer",
@@ -594,7 +602,15 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000054",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Matteo Musumeci",
+        "author": "La sonnambula",
+        "credit": "La sonnambula — Wikimedia Commons — CC-BY-SA-4.0",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Matteo_Musumeci_-_compositore.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Matteo_Musumeci_-_compositore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+      },
       "subtitle": null,
       "title": "Matteo Musumeci",
       "type": "composer",
@@ -1920,7 +1936,15 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000080",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Matteo Musumeci",
+        "author": "La sonnambula",
+        "credit": "La sonnambula — Wikimedia Commons — CC-BY-SA-4.0",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Matteo_Musumeci_-_compositore.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Matteo_Musumeci_-_compositore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+      },
       "subtitle": "Matteo Musumeci",
       "title": "Il quinto moschettiere",
       "type": "opera",
@@ -1985,7 +2009,15 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000085",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Alberto Franchetti",
+        "author": "Varischi e Artico",
+        "credit": "Varischi e Artico — Wikimedia Commons — CC-BY-SA-4.0",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Alberto_Franchetti_(1902)_-_Archivio_Storico_Ricordi_FOTO000791_C.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Alberto_Franchetti_%281902%29_-_Archivio_Storico_Ricordi_FOTO000791_C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+      },
       "subtitle": "Alberto Franchetti",
       "title": "Cristoforo Colombo",
       "type": "opera",
@@ -7170,6 +7202,160 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000049"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000323",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Sociale",
+      "title": "Don Quichotte",
+      "type": "production",
+      "url": "https://opera.plus/atlas/como/teatro-sociale/don-quichotte/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000324",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Arena di Verona",
+      "title": "Aida",
+      "type": "production",
+      "url": "https://opera.plus/atlas/verona/arena-di-verona/aida-2026/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000325",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Arena di Verona",
+      "title": "Nabucco",
+      "type": "production",
+      "url": "https://opera.plus/atlas/verona/arena-di-verona/nabucco-2026/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000326",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Arena di Verona",
+      "title": "La traviata",
+      "type": "production",
+      "url": "https://opera.plus/atlas/verona/arena-di-verona/la-traviata-2026/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000070"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000327",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Filarmonico",
+      "title": "Don Giovanni",
+      "type": "production",
+      "url": "https://opera.plus/atlas/verona/teatro-filarmonico/don-giovanni/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000328",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Vittorio Emanuele",
+      "title": "Turandot",
+      "type": "production",
+      "url": "https://opera.plus/atlas/messina/teatro-vittorio-emanuele/turandot/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000329",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro del Giglio Giacomo Puccini",
+      "title": "Nabucco",
+      "type": "production",
+      "url": "https://opera.plus/atlas/lucca/teatro-del-giglio-giacomo-puccini/nabucco/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000330",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro del Giglio Giacomo Puccini",
+      "title": "Turandot",
+      "type": "production",
+      "url": "https://opera.plus/atlas/lucca/teatro-del-giglio-giacomo-puccini/turandot/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000031"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000331",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Coccia",
+      "title": "Don Pasquale",
+      "type": "production",
+      "url": "https://opera.plus/atlas/novara/teatro-coccia/don-pasquale/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000332",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Sociale di Mantova",
+      "title": "La traviata",
+      "type": "production",
+      "url": "https://opera.plus/atlas/mantova/teatro-sociale-di-mantova/la-traviata/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000333",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Alfieri",
+      "title": "La bohème",
+      "type": "production",
+      "url": "https://opera.plus/atlas/asti/teatro-alfieri/la-boheme/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -7920,23 +8106,23 @@
       "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
+      "id": "oa-v-000069",
+      "image": null,
+      "subtitle": "Mantova",
+      "title": "Teatro Sociale di Mantova",
+      "type": "theatre",
+      "url": "https://opera.plus/atlas/mantova/teatro-sociale-di-mantova/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
       "id": "oa-vd-000023",
       "image": null,
       "subtitle": "Bolzano",
       "title": "Teatro Comunale di Bolzano",
       "type": "theatre",
       "url": "https://opera.plus/atlas/bolzano/teatro-comunale-di-bolzano/"
-    },
-    {
-      "aliases": [],
-      "composer_ids": [],
-      "fallback_image": null,
-      "id": "oa-vd-000057",
-      "image": null,
-      "subtitle": "Mantova",
-      "title": "Teatro Sociale di Mantova",
-      "type": "theatre",
-      "url": "https://opera.plus/atlas/mantova/teatro-sociale-di-mantova/"
     },
     {
       "aliases": [],
@@ -7973,5 +8159,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "57e15bcc01f82249c0f9712d3d5d8f2087a05c05"
+  "source_revision": "6bd27aa399d4d9fc4ecf2a55457ab5ebe1ad391f"
 }
