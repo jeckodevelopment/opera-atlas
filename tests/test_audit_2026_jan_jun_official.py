@@ -1,0 +1,57 @@
+"""First-half 2026 historical scan remains bounded and official-source-scoped."""
+import unittest
+from unittest.mock import patch
+
+from scripts.audit_2026_jan_jun_official import detail_links, scan
+
+
+class HistoricalJanJunTests(unittest.TestCase):
+    def test_links_discovered_from_official_site_only(self):
+        html = ('<a href="/event/la-clemenza-di-tito/">La clemenza di Tito</a>'
+                '<a href="https://other.example/event/carmen/">Carmen</a>'
+                '<a href="/privacy/">Privacy</a>')
+        self.assertEqual(
+            ["https://www.teatrolafenice.it/event/la-clemenza-di-tito/"],
+            detail_links(html,"https://www.teatrolafenice.it/event-category/opera-2025-26/",
+                         "https://www.teatrolafenice.it/"))
+
+    def test_no_network_error_never_certifies_complete(self):
+        source={"key":"fenice-2025-26","venue_id":"v1","city":"Venezia",
+                "season":"2025/26","official_url":"https://www.teatrolafenice.it/",
+                "url":"https://www.teatrolafenice.it/event-category/opera-2025-26/"}
+        config={"schema_version":1,"sources":[]}
+        directory={"venues":[{"id":"v1","name":"Fenice","city":"Venezia"}]}
+        from opera_atlas.controlled_fetch import AccessDenied
+        def denied(*args):
+            raise AccessDenied("robots")
+        with patch('scripts.audit_2026_jan_jun_official.validate_config',
+                   return_value=[{"official_url":source["official_url"],
+                                  "access_status":"approved"}]):
+            result=scan({"schema_version":1,"year":2026,"seeds":[source]},
+                        config,directory,fetch_page=denied,workers=1)
+        self.assertEqual(0,result["complete_seasons_certified"])
+        self.assertEqual(0,result["seed_pages_acquired"])
+        self.assertEqual([],result["observations"])
+        self.assertFalse(result["catalog_updated"])
+
+    def test_index_with_event_facts_is_restricted_to_first_half(self):
+        source={"key":"fenice-2025-26","venue_id":"v1","city":"Venezia",
+                "season":"2025/26","official_url":"https://www.teatrolafenice.it/",
+                "url":"https://www.teatrolafenice.it/event-category/opera-2025-26/"}
+        config={"schema_version":1,"sources":[]}
+        directory={"venues":[{"id":"v1","name":"Fenice","city":"Venezia"}]}
+        def fake(*args):
+            return ('<script type="application/ld+json">'
+                    '{"@context":"https://schema.org","@type":"Event",'
+                    '"name":"Example","startDate":"2026-03-02T20:00:00+01:00"}</script>')
+        with patch('scripts.audit_2026_jan_jun_official.validate_config',
+                   return_value=[{"official_url":source["official_url"],
+                                  "access_status":"approved"}]):
+            result=scan({"schema_version":1,"year":2026,"seeds":[source]},
+                        config,directory,fetch_page=fake,workers=1)
+        self.assertTrue(result["read_only"])
+        self.assertEqual(0,result["complete_seasons_certified"])
+
+
+if __name__=="__main__":
+    unittest.main()
