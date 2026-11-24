@@ -85,6 +85,11 @@ def validated_venue_leads(document, venues):
         "oa-v-000014": ("Ravenna", "Teatro Dante Alighieri", "artbonus.gov.it"),
         "oa-vd-000015": ("Asti", "Teatro Alfieri", "www.comune.asti.it"),
     }
+    # Exact institutional schedule supplements, scoped to the reviewed venue.
+    supplemental={
+        "oa-vd-000034":"https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+        "oa-v-000014":"https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+    }
     result=defaultdict(list)
     seen=set()
     for record in document["records"]:
@@ -99,7 +104,7 @@ def validated_venue_leads(document, venues):
             raise ValueError("2026 venue identity mismatch")
         url=record.get("official_url")
         parsed=urlsplit(url) if isinstance(url,str) else None
-        if (not parsed or parsed.scheme!="https" or parsed.hostname!=host
+        if (not parsed or parsed.scheme!="https" or (parsed.hostname!=host and url!=supplemental.get(vid))
                 or parsed.query or parsed.fragment or parsed.username or parsed.password):
             raise ValueError("2026 venue lead requires exact primary hostname")
         if (not isinstance(record.get("title"),str) or not record["title"]
