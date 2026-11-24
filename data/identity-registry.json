@@ -1661,7 +1661,10 @@
       "venue_id": "oa-v-000002",
       "slug": "turandot",
       "source_url": "https://www.operalombardia.it/calendario/",
-      "season": "2026-2027"
+      "season": "2026-2027",
+      "supporting_source_urls": [
+        "https://teatrosocialecomo.it/spettacoli/turandot-2/"
+      ]
     },
     "lombardia-turandot-cremona": {
       "id": "oa-s-000031",
@@ -1765,7 +1768,10 @@
       "venue_id": "oa-v-000005",
       "slug": "un-ballo-in-maschera",
       "source_url": "https://www.operalombardia.it/calendario/",
-      "season": "2026-2027"
+      "season": "2026-2027",
+      "supporting_source_urls": [
+        "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera"
+      ]
     },
     "lombardia-ballo-como": {
       "id": "oa-s-000047",
@@ -3938,6 +3944,73 @@
       "slug": "rigoletto",
       "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
       "season": "2026-2027"
+    },
+    "historical-2026-como-teatro-sociale-don-quichotte": {
+      "id": "oa-s-000323",
+      "work_id": "oa-w-000030",
+      "venue_id": "oa-v-000002",
+      "slug": "don-quichotte",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
+      "season": "2026"
+    },
+    "historical-2026-verona-arena-di-verona-aida": {
+      "id": "oa-s-000324",
+      "work_id": "oa-w-000015",
+      "venue_id": "oa-v-000007",
+      "slug": "aida",
+      "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "season": "2026",
+      "route_slug": "aida-2026"
+    },
+    "historical-2026-verona-arena-di-verona-nabucco": {
+      "id": "oa-s-000325",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000007",
+      "slug": "nabucco",
+      "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "season": "2026",
+      "route_slug": "nabucco-2026"
+    },
+    "historical-2026-verona-arena-di-verona-la-traviata": {
+      "id": "oa-s-000326",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000007",
+      "slug": "la-traviata",
+      "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+      "season": "2026",
+      "route_slug": "la-traviata-2026"
+    },
+    "historical-2026-verona-teatro-filarmonico-don-giovanni": {
+      "id": "oa-s-000327",
+      "work_id": "oa-w-000023",
+      "venue_id": "oa-v-000033",
+      "slug": "don-giovanni",
+      "source_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
+      "season": "2026"
+    },
+    "historical-2026-messina-teatro-vittorio-emanuele-turandot": {
+      "id": "oa-s-000328",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000042",
+      "slug": "turandot",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
+      "season": "2026"
+    },
+    "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-nabucco": {
+      "id": "oa-s-000329",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000045",
+      "slug": "nabucco",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "season": "2026"
+    },
+    "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-turandot": {
+      "id": "oa-s-000330",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000045",
+      "slug": "turandot",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -11519,6 +11592,96 @@
       "staging_id": "oa-s-000322",
       "original_date": "2026-11-21",
       "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-como-teatro-sociale-don-quichotte|2026-01-16": {
+      "id": "oa-r-001291",
+      "staging_id": "oa-s-000323",
+      "original_date": "2026-01-16",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/"
+    },
+    "historical-2026-como-teatro-sociale-don-quichotte|2026-01-18": {
+      "id": "oa-r-001292",
+      "staging_id": "oa-s-000323",
+      "original_date": "2026-01-18",
+      "source_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/"
+    },
+    "historical-2026-verona-arena-di-verona-aida|2026-06-25": {
+      "id": "oa-r-001293",
+      "staging_id": "oa-s-000324",
+      "original_date": "2026-06-25",
+      "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/"
+    },
+    "historical-2026-verona-arena-di-verona-nabucco|2026-06-26": {
+      "id": "oa-r-001294",
+      "staging_id": "oa-s-000325",
+      "original_date": "2026-06-26",
+      "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/"
+    },
+    "historical-2026-verona-arena-di-verona-la-traviata|2026-06-27": {
+      "id": "oa-r-001295",
+      "staging_id": "oa-s-000326",
+      "original_date": "2026-06-27",
+      "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/"
+    },
+    "historical-2026-verona-teatro-filarmonico-don-giovanni|2026-01-18": {
+      "id": "oa-r-001296",
+      "staging_id": "oa-s-000327",
+      "original_date": "2026-01-18",
+      "source_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/"
+    },
+    "historical-2026-verona-teatro-filarmonico-don-giovanni|2026-01-21": {
+      "id": "oa-r-001297",
+      "staging_id": "oa-s-000327",
+      "original_date": "2026-01-21",
+      "source_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/"
+    },
+    "historical-2026-verona-teatro-filarmonico-don-giovanni|2026-01-23": {
+      "id": "oa-r-001298",
+      "staging_id": "oa-s-000327",
+      "original_date": "2026-01-23",
+      "source_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/"
+    },
+    "historical-2026-verona-teatro-filarmonico-don-giovanni|2026-01-25": {
+      "id": "oa-r-001299",
+      "staging_id": "oa-s-000327",
+      "original_date": "2026-01-25",
+      "source_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/"
+    },
+    "historical-2026-messina-teatro-vittorio-emanuele-turandot|2026-02-13": {
+      "id": "oa-r-001300",
+      "staging_id": "oa-s-000328",
+      "original_date": "2026-02-13",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/turandot/"
+    },
+    "historical-2026-messina-teatro-vittorio-emanuele-turandot|2026-02-15": {
+      "id": "oa-r-001301",
+      "staging_id": "oa-s-000328",
+      "original_date": "2026-02-15",
+      "source_url": "https://www.teatrovittorioemanuele.it/evento/turandot/"
+    },
+    "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-nabucco|2026-01-04": {
+      "id": "oa-r-001302",
+      "staging_id": "oa-s-000329",
+      "original_date": "2026-01-04",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/"
+    },
+    "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-nabucco|2026-01-05": {
+      "id": "oa-r-001303",
+      "staging_id": "oa-s-000329",
+      "original_date": "2026-01-05",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/"
+    },
+    "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-turandot|2026-04-25": {
+      "id": "oa-r-001304",
+      "staging_id": "oa-s-000330",
+      "original_date": "2026-04-25",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/"
+    },
+    "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-turandot|2026-04-26": {
+      "id": "oa-r-001305",
+      "staging_id": "oa-s-000330",
+      "original_date": "2026-04-26",
+      "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/"
     }
   },
   "reserved_works": {

@@ -63,6 +63,8 @@ APPROVED_PAGES = {
 # Exact evidence URLs are reviewed manually against the specific showtime.
 # These are facts from the theatre/municipality, NOT crawler permissions.
 TIME_EVIDENCE_URLS = {
+    "lombardia-turandot-como": {"https://teatrosocialecomo.it/spettacoli/turandot-2/"},
+    "lombardia-ballo-cremona": {"https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera"},
     "lombardia-italiana-como": {
         "https://teatrosocialecomo.it/spettacoli/l-italiana-in-algeri/",
     },
@@ -438,10 +440,197 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
         }
     }
     permitted.add(cagliari_archive)
+    reconciled_2026 = {
+        "historical-2026-como-teatro-sociale-don-quichotte": {
+            "title": "Don Quichotte",
+            "composer": "Jules Massenet",
+            "venue": "Teatro Sociale",
+            "municipality": "Como",
+            "region": "Lombardia",
+            "source_url": "https://teatrosocialecomo.it/spettacoli/don-quichotte/",
+            "dates": [
+                [
+                    "2026-01-16",
+                    "20:00"
+                ],
+                [
+                    "2026-01-18",
+                    "15:30"
+                ]
+            ]
+        },
+        "historical-2026-verona-arena-di-verona-aida": {
+            "title": "Aida",
+            "composer": "Giuseppe Verdi",
+            "venue": "Arena di Verona",
+            "municipality": "Verona",
+            "region": "Veneto",
+            "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+            "dates": [
+                [
+                    "2026-06-25",
+                    "21:15"
+                ]
+            ]
+        },
+        "historical-2026-verona-arena-di-verona-nabucco": {
+            "title": "Nabucco",
+            "composer": "Giuseppe Verdi",
+            "venue": "Arena di Verona",
+            "municipality": "Verona",
+            "region": "Veneto",
+            "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+            "dates": [
+                [
+                    "2026-06-26",
+                    "21:15"
+                ]
+            ]
+        },
+        "historical-2026-verona-arena-di-verona-la-traviata": {
+            "title": "La traviata",
+            "composer": "Giuseppe Verdi",
+            "venue": "Arena di Verona",
+            "municipality": "Verona",
+            "region": "Veneto",
+            "source_url": "https://www.arena.it/magazine/news/arena-a-tutto-verdi-dal-25-al-27-giugno/",
+            "dates": [
+                [
+                    "2026-06-27",
+                    "21:15"
+                ]
+            ]
+        },
+        "historical-2026-verona-teatro-filarmonico-don-giovanni": {
+            "title": "Don Giovanni",
+            "composer": "Wolfgang Amadeus Mozart",
+            "venue": "Teatro Filarmonico",
+            "municipality": "Verona",
+            "region": "Veneto",
+            "source_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
+            "dates": [
+                [
+                    "2026-01-18",
+                    "15:30"
+                ],
+                [
+                    "2026-01-21",
+                    "19:00"
+                ],
+                [
+                    "2026-01-23",
+                    "20:00"
+                ],
+                [
+                    "2026-01-25",
+                    "15:30"
+                ]
+            ]
+        },
+        "historical-2026-messina-teatro-vittorio-emanuele-turandot": {
+            "title": "Turandot",
+            "composer": "Giacomo Puccini",
+            "venue": "Teatro Vittorio Emanuele",
+            "municipality": "Messina",
+            "region": "Sicilia",
+            "source_url": "https://www.teatrovittorioemanuele.it/evento/turandot/",
+            "dates": [
+                [
+                    "2026-02-13",
+                    "21:00"
+                ],
+                [
+                    "2026-02-15",
+                    "17:30"
+                ]
+            ]
+        },
+        "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-nabucco": {
+            "title": "Nabucco",
+            "composer": "Giuseppe Verdi",
+            "venue": "Teatro del Giglio Giacomo Puccini",
+            "municipality": "Lucca",
+            "region": "Toscana",
+            "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+            "dates": [
+                [
+                    "2026-01-04",
+                    "18:00"
+                ],
+                [
+                    "2026-01-05",
+                    "16:00"
+                ]
+            ]
+        },
+        "historical-2026-lucca-teatro-del-giglio-giacomo-puccini-turandot": {
+            "title": "Turandot",
+            "composer": "Giacomo Puccini",
+            "venue": "Teatro del Giglio Giacomo Puccini",
+            "municipality": "Lucca",
+            "region": "Toscana",
+            "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+            "dates": [
+                [
+                    "2026-04-25",
+                    "18:00"
+                ],
+                [
+                    "2026-04-26",
+                    "16:00"
+                ]
+            ]
+        },
+        "lombardia-turandot-como": {
+            "title": "Turandot",
+            "composer": "Giacomo Puccini",
+            "venue": "Teatro Sociale",
+            "municipality": "Como",
+            "region": "Lombardia",
+            "source_url": "https://www.operalombardia.it/calendario/",
+            "dates": [
+                [
+                    "2026-09-24",
+                    None
+                ],
+                [
+                    "2026-09-26",
+                    None
+                ]
+            ]
+        },
+        "lombardia-ballo-cremona": {
+            "title": "Un ballo in maschera",
+            "composer": "Giuseppe Verdi",
+            "venue": "Teatro Ponchielli",
+            "municipality": "Cremona",
+            "region": "Lombardia",
+            "source_url": "https://www.operalombardia.it/calendario/",
+            "dates": [
+                [
+                    "2026-11-27",
+                    None
+                ],
+                [
+                    "2026-11-29",
+                    None
+                ]
+            ]
+        }
+    }
+    reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
+    permitted.update(reconciled_urls)
     events = []
     keys = set()
     for production in manifest["productions"]:
         url = production["source_url"]
+        reviewed_2026 = reconciled_2026.get(production.get("key"))
+        if reviewed_2026 is not None:
+            if any(production.get(field) != reviewed_2026[field] for field in
+                   ("title", "composer", "venue", "municipality", "region", "source_url")) or sorted(production.get("dates", [])) != sorted(reviewed_2026["dates"]):
+                raise ValueError("unreviewed reconciled 2026 production")
+        elif url in reconciled_urls - {"https://www.operalombardia.it/calendario/"}:
+            raise ValueError("unreviewed reconciled 2026 source identity")
         if url == cagliari_archive:
             reviewed = cagliari_approved.get(production.get("key"))
             if (reviewed is None or production.get("title") != reviewed["title"]
@@ -633,7 +822,7 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                 raise ValueError("duplicate editorial performance")
             keys.add(uid)
             # The curated Regio dates are all outside Italy's DST period.
-            if hour is not None and url not in permitted - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
+            if (hour is not None and url not in permitted - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}):
                 raise ValueError("no verified time for this source")
             if hour is None and url not in {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
                 raise ValueError("expected exact Regio performance hour")

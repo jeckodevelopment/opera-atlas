@@ -48,7 +48,7 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertTrue(all(x["audit_priority"] in
             {"zero_published_acquired_calendar","zero_published_with_official_opera_leads"}
             for x in acquired))
-        self.assertTrue(any(x["venue"]=="Arena di Verona" for x in acquired))
+        self.assertFalse(any(x["venue"]=="Arena di Verona" for x in acquired))
         bologna=next(x for x in zero if x["venue"]=="Teatro Comunale di Bologna")
         self.assertGreater(bologna["historical_source_seed_count"],0)
         self.assertFalse(bologna["missing_recite_certified"])
@@ -57,28 +57,28 @@ class VenueMonthMatrixTests(unittest.TestCase):
         r=self.report
         self.assertEqual(93,r["official_2026_opera_lead_count"])
         self.assertEqual(13,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(73,r["official_unpublished_opera_lead_count"])
-        self.assertEqual(12,r["official_lead_venues_with_zero_published"])
-        self.assertEqual(23,r["zero_published_venue_count"])
+        self.assertEqual(54,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(6,r["official_lead_venues_with_zero_published"])
+        self.assertEqual(17,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
         self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri","Teatro Alfieri"},
                          set(sources))
         for entry in sources.values():
-            self.assertEqual("published_not_exhaustively_verified" if entry["venue"]=="Teatro Lirico di Cagliari" else "zero_published_with_official_opera_leads",
+            self.assertEqual("published_not_exhaustively_verified" if entry["venue"] in {"Teatro Lirico di Cagliari","Teatro Sociale","Arena di Verona","Teatro Filarmonico","Teatro Vittorio Emanuele","Teatro Ponchielli","Teatro del Giglio Giacomo Puccini"} else "zero_published_with_official_opera_leads",
                              entry["audit_priority"])
             self.assertFalse(entry["missing_recite_certified"])
-        self.assertEqual(4,sources["Teatro Sociale"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(3,sources["Arena di Verona"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Teatro Sociale"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Arena di Verona"]["official_unpublished_opera_lead_count"])
         self.assertEqual(11,sources["Arena Sferisterio"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(4,sources["Teatro Filarmonico"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Teatro Filarmonico"]["official_unpublished_opera_lead_count"])
         self.assertEqual(16,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(2,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
         self.assertEqual(15,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(20,r["official_lead_reconciliation_counts"]["exact_match"])
-        self.assertEqual(2,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(39,r["official_lead_reconciliation_counts"]["exact_match"])
+        self.assertEqual(0,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
         self.assertEqual(4,sources["Teatro Coccia"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(4,sources["Teatro del Giglio Giacomo Puccini"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(0,sources["Teatro del Giglio Giacomo Puccini"]["official_unpublished_opera_lead_count"])
         self.assertEqual(1,sources["Teatro Sociale di Mantova"]["official_unpublished_opera_lead_count"])
         self.assertEqual(6,sources["Teatro Dante Alighieri"]["official_unpublished_opera_lead_count"])
         ravenna=[p for p in self.leads["records"] if p["city"]=="Ravenna"]

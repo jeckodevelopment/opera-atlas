@@ -34,6 +34,22 @@
     "lombardia-italiana-brescia|2026-11-28": {
       "time": "15:30",
       "url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri"
+    },
+    "lombardia-turandot-como|2026-09-24": {
+      "time": "20:00",
+      "url": "https://teatrosocialecomo.it/spettacoli/turandot-2/"
+    },
+    "lombardia-turandot-como|2026-09-26": {
+      "time": "20:00",
+      "url": "https://teatrosocialecomo.it/spettacoli/turandot-2/"
+    },
+    "lombardia-ballo-cremona|2026-11-27": {
+      "time": "20:00",
+      "url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera"
+    },
+    "lombardia-ballo-cremona|2026-11-29": {
+      "time": "16:00",
+      "url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera"
     }
   }
 }

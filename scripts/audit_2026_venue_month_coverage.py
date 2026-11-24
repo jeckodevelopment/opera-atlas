@@ -174,6 +174,8 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
     published = defaultdict(lambda: defaultdict(set))
     published_sources = defaultdict(set)
     unresolved_published = []
+    from scripts.build_verified_catalog import TIME_EVIDENCE, validate_time_evidence
+    verified_times = validate_time_evidence(manifest,json.loads(TIME_EVIDENCE.read_text(encoding="utf-8")))
     reconciliation_candidates = []
     for production in manifest.get("productions", []):
         staging = registry["stagings"].get(production.get("key"))
@@ -188,7 +190,9 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
         for item in production.get("dates", []):
             if not isinstance(item, list) or len(item) != 2:
                 continue
-            slot = source_slot({"date": item[0], "time": item[1]})
+            from scripts.build_verified_catalog import replica_registry_key
+            rk = replica_registry_key(production,item[0],item[1])
+            slot = source_slot({"date": item[0], "time": verified_times.get(rk,{}).get("time",item[1])})
             if slot:
                 published[vid][slot[0][:7]].add(slot)
                 published_sources[(vid, slot)].add(url_identity(production["source_url"]))
