@@ -106,6 +106,32 @@ class RetroReconciliationTests(unittest.TestCase):
         x=make([f],[p])
         self.assertEqual({"partial_multiwork_catalogued_needs_review":1},x["observation_counts"])
 
+    def test_exact_source_specific_nonopera_decision_never_generalizes(self):
+        url="https://www.tcbo.it/evento/concerto/angius-grazia-2026/"
+        f=fact(url,"Angius, Grazia","2026-12-11","2026-12-11T20:30:00+01:00")
+        f["venue"]="Teatro Auditorium Manzoni"
+        decision={"decisions":[{"source_url":url,"event_title":"Angius, Grazia",
+            "date":"2026-12-11","time":"20:30","venue":"Teatro Auditorium Manzoni",
+            "decision":"exclude_nonopera","reason":"symphonic_concert",
+            "provenance":url}]}
+        report={"year":2026,"read_only":True,"unverified_2026_facts":[f]}
+        x=reconcile(report,{"productions":[]},{"programs":[]},{"records":[]},
+                    decisions=decision)
+        self.assertEqual({"screened_nonopera_exact_source":1},x["observation_counts"])
+        changed={**f,"date":"2026-12-12","starts_at":"2026-12-12T20:30:00+01:00"}
+        y=reconcile({"year":2026,"read_only":True,"unverified_2026_facts":[changed]},
+                    {"productions":[]},{"programs":[]},{"records":[]},decisions=decision)
+        self.assertEqual({"unmatched_requires_official_review":1},y["observation_counts"])
+
+    def test_duplicate_source_decision_fails_closed(self):
+        d={"source_url":"https://official.example/event/1","event_title":"Concert",
+           "date":"2026-12-11","time":"20:30","venue":"A",
+           "decision":"exclude_nonopera","reason":"concert","provenance":"official"}
+        with self.assertRaises(ValueError):
+            reconcile({"year":2026,"read_only":True,"unverified_2026_facts":[]},
+                    {"productions":[]},{"programs":[]},{"records":[]},
+                    decisions={"decisions":[d,d]})
+
     def test_non_2026_and_invalid_dates_rejected(self):
         x=make([fact("https://official.example/1","Macbeth","2027-03-04", "2027-03-04T20:00:00+01:00"),
                 fact("https://official.example/2","Macbeth","2026-02-31", "2026-02-31T20:00:00+01:00")])
