@@ -154,6 +154,32 @@
           null
         ]
       ]
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "venue": "Teatro Filarmonico",
+      "city": "Verona",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "official_url": "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/",
+      "dates": [
+        [
+          "2026-01-18",
+          "15:30"
+        ],
+        [
+          "2026-01-21",
+          "19:00"
+        ],
+        [
+          "2026-01-23",
+          "20:00"
+        ],
+        [
+          "2026-01-25",
+          "15:30"
+        ]
+      ]
     }
   ]
 }
