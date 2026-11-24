@@ -77,6 +77,9 @@ def validated_venue_leads(document, venues):
         "oa-vd-000019": ("Verona", "Teatro Filarmonico", "www.arena.it"),
         "oa-vd-000034": ("Torre del Lago Puccini", "Gran Teatro Giacomo Puccini", "www.puccinifestival.it"),
         "oa-vd-000047": ("Messina", "Teatro Vittorio Emanuele", "www.teatrovittorioemanuele.it"),
+        "oa-vd-000049": ("Cagliari", "Teatro Lirico di Cagliari", "www.liricocagliari.it"),
+        "oa-v-000005": ("Cremona", "Teatro Ponchielli", "www.comune.cremona.it"),
+        "oa-v-000011": ("Novara", "Teatro Coccia", "www.fondazioneteatrococcia.it"),
     }
     result=defaultdict(list)
     seen=set()
