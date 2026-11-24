@@ -70,7 +70,7 @@ OFFICIAL_GENRE_EVIDENCE = (
     },
     {
         "source_key":"modena-teatro-opera-2026-27", "title":"I love you, Schubert! / Play Bach – Balletto Teatro di Torino",
-        "days":["2026-07-24"], "venue":null,
+        "days":["2026-07-24"], "venue":None,
         "genre":"dance", "official_detail_url":"https://www.teatrocomunalemodena.it/spettacolo/play-bach-i-love-you-schubert-balletto-di-torino/",
         "official_genre_url":"https://www.teatrocomunalemodena.it/spettacolo/play-bach-i-love-you-schubert-balletto-di-torino/",
         "reason":"Teatro di Modena: Danza, Balletto Teatro di Torino; event 24 July.",
