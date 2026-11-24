@@ -53,16 +53,16 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertGreater(bologna["historical_source_seed_count"],0)
         self.assertFalse(bologna["missing_recite_certified"])
 
-    def test_primary_source_leads_are_eighteen_and_never_auto_published(self):
+    def test_primary_source_leads_are_never_auto_published(self):
         r=self.report
-        self.assertEqual(81,r["official_2026_opera_lead_count"])
-        self.assertEqual(9,r["official_2026_opera_lead_venue_count"])
-        self.assertEqual(81,r["official_unpublished_opera_lead_count"])
-        self.assertEqual(9,r["official_lead_venues_with_zero_published"])
+        self.assertEqual(86,r["official_2026_opera_lead_count"])
+        self.assertEqual(11,r["official_2026_opera_lead_venue_count"])
+        self.assertEqual(86,r["official_unpublished_opera_lead_count"])
+        self.assertEqual(11,r["official_lead_venues_with_zero_published"])
         self.assertEqual(24,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
-        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia"},
+        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova"},
                          set(sources))
         for entry in sources.values():
             self.assertEqual("zero_published_with_official_opera_leads",
@@ -77,6 +77,8 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(35,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
         self.assertEqual(2,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
         self.assertEqual(4,sources["Teatro Coccia"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(4,sources["Teatro del Giglio Giacomo Puccini"]["official_unpublished_opera_lead_count"])
+        self.assertEqual(1,sources["Teatro Sociale di Mantova"]["official_unpublished_opera_lead_count"])
         forbidden_school={("2026-01-30","11:00"),("2026-03-20","11:00"),
                           ("2026-04-21","11:00"),("2026-11-17","11:00"),
                           ("2026-11-18","11:00")}
