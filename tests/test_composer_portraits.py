@@ -1,5 +1,10 @@
 import unittest
-from scripts.refresh_composer_portraits import WD, COMMONS, portrait, find_person
+import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
+from urllib.error import HTTPError
+from scripts.refresh_composer_portraits import WD, COMMONS, portrait, find_person, refresh, WikimediaError, api, PUBLIC_DOMAIN_URL
 
 def claim(value):
     return {"mainsnak":{"datavalue":{"value":value}}}
@@ -52,6 +57,56 @@ class PortraitTests(unittest.TestCase):
             record, reason = portrait(self.composer, mock_call(changes=change))
             self.assertIsNone(record)
             self.assertTrue(reason)
+
+    def test_explicit_public_domain_mark(self):
+        changes = {"LicenseShortName":"Public domain","LicenseUrl":PUBLIC_DOMAIN_URL,
+                   "Copyrighted":"False"}
+        record, reason = portrait(self.composer, mock_call(changes=changes))
+        self.assertIsNone(reason)
+        self.assertEqual(record["license"], "Public Domain")
+        for change in ({"Copyrighted":"True"}, {"LicenseUrl":""}, {"Restrictions":"Restricted"}):
+            record, reason = portrait(self.composer, mock_call(changes=dict(changes, **change)))
+            self.assertIsNone(record)
+
+    def test_transient_http_retry(self):
+        failure = HTTPError(WD, 503, "temporary", {}, None)
+        with patch("scripts.refresh_composer_portraits.urlopen", side_effect=[failure, failure, failure]) as call, patch("scripts.refresh_composer_portraits.time.sleep"):
+            with self.assertRaises(WikimediaError):
+                api(WD, action="wbsearchentities")
+            self.assertEqual(call.call_count, 3)
+
+    def test_wikidata_search_busy_retry(self):
+        from io import BytesIO
+        busy = json.dumps({"error":{"code":"cirrussearch-too-busy-error"}}).encode()
+        success = json.dumps({"search":[]}).encode()
+        with patch("scripts.refresh_composer_portraits.urlopen", side_effect=[BytesIO(busy), BytesIO(success)]) as call, patch("scripts.refresh_composer_portraits.time.sleep"):
+            self.assertEqual(api(WD, action="wbsearchentities"), {"search":[]})
+            self.assertEqual(call.call_count, 2)
+
+    def test_partial_progress_survives_api_error(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            data = root / "data"
+            data.mkdir()
+            composers = [dict(id="c1", name="Composer"), dict(id="c2", name="Other"),
+                         dict(id="c3", name="Third")]
+            (data / "composer-registry.json").write_text(json.dumps({"composers":composers}))
+            path = data / "composer-portraits.json"
+            path.write_text(json.dumps({"schema_version":1,"portraits":{}}))
+            def call(endpoint, **params):
+                if params.get("search") == "Other":
+                    self.assertIn("c1", json.loads(path.read_text())["portraits"])
+                    raise WikimediaError("temporary")
+                if params.get("search") == "Third":
+                    return {"search":[]}
+                return mock_call()(endpoint, **params)
+            refresh(root, call)
+            report = json.loads((data / "composer-portrait-review.json").read_text())
+            self.assertEqual(report["verified"], 1)
+            self.assertEqual(report["total"], 3)
+            self.assertEqual(report["unresolved"]["c2"]["reason"], "api_error")
+            self.assertEqual(report["unresolved"]["c3"]["reason"], "not_found")
+            self.assertIn("c1", json.loads(path.read_text())["portraits"])
 
 if __name__ == "__main__":
     unittest.main()
