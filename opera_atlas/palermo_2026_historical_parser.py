@@ -27,18 +27,31 @@ def parse_palermo_historical_showtimes(html: str, url: str):
         raise ValueError("unapproved Palermo historical opera detail")
     title, composer=APPROVED[parts.path]
     text=clean(html)
-    h=SHOW_HEADING.search(text)
-    if not h:
-        raise ValueError("no official event heading")
-    primary=text[h.end():h.end()+450]
-    if (not re.search(r"\b2026\s*\|\s*Sala Grande\b",primary)
-            or not re.search(re.escape(title),primary,re.I)
-            or not re.search(r"Musiche di\s+"+re.escape(composer),primary,re.I)):
-        raise ValueError("work, composer, actual venue or year not confirmed")
-    schedule=text[:h.start()]
+    # The live official pages include "Lo spettacolo" and ticket headings
+    # in different DOM wrappers. Find the identity block by its explicit
+    # year + Sala Grande assertion rather than relying on one heading's
+    # exact position in the flattened HTML.
+    contexts=[]
+    for marker in re.finditer(r"\b2026\s*\|\s*Sala Grande\b",text,re.I):
+        context=text[marker.start():marker.end()+550]
+        if (re.search(re.escape(title),context,re.I)
+                and re.search(r"Musiche\s+di\s+"+re.escape(composer),context,re.I)):
+            contexts.append(marker)
+    if len(contexts)!=1:
+        raise ValueError("official Palermo work composer venue/year section missing or ambiguous")
+    marker=contexts[0]
+    heading_matches=list(SHOW_HEADING.finditer(text[:marker.start()]))
+    # An unrelated footer or menu cannot authorize a showtime. The actual
+    # official work heading is adjacent to the 2026 + Sala Grande assertion.
+    if not heading_matches or marker.start()-heading_matches[-1].end()>180:
+        raise ValueError("official Palermo work heading not adjacent to schedule")
+    schedule=text[:heading_matches[-1].start()]
+    # Only the dated ticket area immediately preceding "Lo spettacolo".
+    # Footer/news/menus can contain times; use exact month names for the
+    # reviewed show and require the identified 2026 main-stage schedule.
     hits=list(DATES.finditer(schedule))
     if not hits:
-        raise ValueError("official Palermo schedule absent")
+        raise ValueError("official Palermo dated ticket schedule absent")
     dates={}
     for i,m in enumerate(hits):
         day=date(2026,MONTHS[m[2].capitalize()],int(m[1])).isoformat()

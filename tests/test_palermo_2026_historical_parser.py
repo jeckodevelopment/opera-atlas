@@ -25,6 +25,21 @@ class Palermo2026ParserTests(unittest.TestCase):
         self.assertEqual(2,len(credits))
         self.assertEqual({x["date"] for x in credits},{"2026-05-22","2026-05-27"})
 
+    def test_menu_mentions_and_distinct_heading_are_not_a_source(self):
+        html=("<html><body><nav>Lo spettacolo | biglietteria | 2026</nav>"
+              "<div>Date</div>"
+              "<li>22 Maggio</li><span>20:00</span><p>Turno Prime</p>"
+              "<li>26 Maggio</li><span>18:30</span><p>Turno Scuola</p>"
+              "<li>27 Maggio</li><span>18:30</span><p>Turno C</p>"
+              "<h2>Lo spettacolo</h2>"
+              "<div>22, 26, 27 maggio 2026 | Sala Grande</div>"
+              "<h1>Aida</h1><div>Musiche di Giuseppe Verdi</div>"
+              "</body></html>")
+        title,composer,venue,dates=parse_palermo_historical_showtimes(
+            html,"https://www.teatromassimo.it/event/aida/")
+        self.assertEqual([("2026-05-22","20:00"),("2026-05-27","18:30")],dates)
+        self.assertEqual("Teatro Massimo",venue)
+
     def test_unreviewed_host_year_and_work_fail_closed(self):
         html=page("Semiramide","Gioachino Rossini",
                   [(11,"Marzo","20:00","Turno Prime")])
