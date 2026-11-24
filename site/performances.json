@@ -20,6 +20,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-aida:2026-01-20",
+      "starts_at": "2026-01-20T20:30:00+01:00",
+      "local_date": "2026-01-20",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/aida-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-aida:2026-01-21",
+      "starts_at": "2026-01-21T17:30:00+01:00",
+      "local_date": "2026-01-21",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/aida-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-21",
       "starts_at": "2026-01-21T20:00:00+01:00",
       "local_date": "2026-01-21",
@@ -53,6 +89,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-aida:2026-01-22",
+      "starts_at": "2026-01-22T17:30:00+01:00",
+      "local_date": "2026-01-22",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/aida-2026/"
       ]
     },
     {
@@ -146,6 +200,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-aida:2026-01-24",
+      "starts_at": "2026-01-24T17:30:00+01:00",
+      "local_date": "2026-01-24",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/aida-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-25",
       "starts_at": "2026-01-25T15:00:00+01:00",
       "local_date": "2026-01-25",
@@ -179,6 +251,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-aida:2026-01-25",
+      "starts_at": "2026-01-25T17:30:00+01:00",
+      "local_date": "2026-01-25",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/aida-2026/"
       ]
     },
     {
@@ -218,6 +308,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-aida:2026-01-27",
+      "starts_at": "2026-01-27T17:30:00+01:00",
+      "local_date": "2026-01-27",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/aida-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra:2026-01-27",
       "starts_at": "2026-01-27T19:00:00+01:00",
       "local_date": "2026-01-27",
@@ -251,6 +359,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/la-cecchina-piccinni-21-28-gennaio/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-aida:2026-01-28",
+      "starts_at": "2026-01-28T20:30:00+01:00",
+      "local_date": "2026-01-28",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/aida-2026/"
       ]
     },
     {
@@ -740,6 +866,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-06",
+      "starts_at": "2026-03-06T20:30:00+01:00",
+      "local_date": "2026-03-06",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-macbeth:2026-03-07",
       "starts_at": "2026-03-07T15:00:00+01:00",
       "local_date": "2026-03-07",
@@ -755,6 +899,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-07",
+      "starts_at": "2026-03-07T17:30:00+01:00",
+      "local_date": "2026-03-07",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
       ]
     },
     {
@@ -794,6 +956,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-08",
+      "starts_at": "2026-03-08T17:30:00+01:00",
+      "local_date": "2026-03-08",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-cde049d5c057e0c0:2026-03-08",
       "starts_at": "2026-03-08T18:00:00+01:00",
       "local_date": "2026-03-08",
@@ -809,6 +989,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/falstaff-verdi-7-15-marzo/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-10",
+      "starts_at": "2026-03-10T17:30:00+01:00",
+      "local_date": "2026-03-10",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
       ]
     },
     {
@@ -884,6 +1082,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-11",
+      "starts_at": "2026-03-11T20:30:00+01:00",
+      "local_date": "2026-03-11",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-12",
+      "starts_at": "2026-03-12T17:30:00+01:00",
+      "local_date": "2026-03-12",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-palermo-massimo-semiramide:2026-03-12",
       "starts_at": "2026-03-12T18:30:00+01:00",
       "local_date": "2026-03-12",
@@ -899,6 +1133,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/semiramide/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-13",
+      "starts_at": "2026-03-13T17:30:00+01:00",
+      "local_date": "2026-03-13",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "La vedova allegra",
+      "composer": "Franz Lehár",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
       ]
     },
     {
@@ -1316,6 +1568,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-10",
+      "starts_at": "2026-04-10T20:30:00+02:00",
+      "local_date": "2026-04-10",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-11",
+      "starts_at": "2026-04-11T17:30:00+02:00",
+      "local_date": "2026-04-11",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-turandot:2026-04-11",
       "starts_at": "2026-04-11T20:00:00+02:00",
       "local_date": "2026-04-11",
@@ -1370,6 +1658,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-12",
+      "starts_at": "2026-04-12T17:30:00+02:00",
+      "local_date": "2026-04-12",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-venezia-teatro-la-fenice-lohengrin:2026-04-12",
       "starts_at": "2026-04-12T18:00:00+02:00",
       "local_date": "2026-04-12",
@@ -1385,6 +1691,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-14",
+      "starts_at": "2026-04-14T17:30:00+02:00",
+      "local_date": "2026-04-14",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
       ]
     },
     {
@@ -1424,6 +1748,42 @@
       ]
     },
     {
+      "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-15",
+      "starts_at": "2026-04-15T20:30:00+02:00",
+      "local_date": "2026-04-15",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-16",
+      "starts_at": "2026-04-16T17:30:00+02:00",
+      "local_date": "2026-04-16",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
+      ]
+    },
+    {
       "id": "curated:auto-488fd79f628da89d:2026-04-16",
       "starts_at": "2026-04-16T21:00:00+02:00",
       "local_date": "2026-04-16",
@@ -1439,6 +1799,24 @@
       "longitude": null,
       "sources": [
         "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-catania-bellini-andrea-chenier:2026-04-18",
+      "starts_at": "2026-04-18T17:30:00+02:00",
+      "local_date": "2026-04-18",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Andrea Chénier",
+      "composer": "Umberto Giordano",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/"
       ]
     },
     {
