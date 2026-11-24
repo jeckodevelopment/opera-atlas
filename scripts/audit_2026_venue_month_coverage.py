@@ -82,6 +82,7 @@ def validated_venue_leads(document, venues):
         "oa-v-000011": ("Novara", "Teatro Coccia", "www.fondazioneteatrococcia.it"),
         "oa-vd-000031": ("Lucca", "Teatro del Giglio Giacomo Puccini", "www.teatrodelgigliogiacomopuccini.it"),
         "oa-vd-000057": ("Mantova", "Teatro Sociale di Mantova", "www.teatrosocialemantova.it"),
+        "oa-v-000014": ("Ravenna", "Teatro Dante Alighieri", "artbonus.gov.it"),
     }
     result=defaultdict(list)
     seen=set()
