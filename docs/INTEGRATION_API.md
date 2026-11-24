@@ -13,7 +13,7 @@ Each entity: type (opera|composer|theatre|festival|production), id (opaque stabl
 - opera: works channel, existing id, title, composer; canonical /atlas/opere/{route_slug or slug}/, validated by current routing; poster from existing work-posters companion if reuse rights verified.
 - theatre: use published venue directory (including directory-only theatres); reconcile IDs to venues channel where supported, persist mapping if needed, no title-derived ID regeneration; canonical city/venue route from existing prerender rules.
 - production: existing stagings (url), production-groups (existing group routes), published programs only when their public route and identity are verified. Keep distinct kinds.
-- festival: festival-index companion; distinguish festival_id from edition id; stable festival identity, existing public route only after checking frontend router. Use registered image subject to rights.
+- festival: festival-directory companion; use permanent id, never edition id; canonical /atlas/directory.html?section=festival&id={id}. Historical edition links resolve client-side to the permanent identity. Use registered image subject to rights.
 - composer: independent additive registry, stable ID and aliases; derive candidate list from all works, including joint composer credits with explicit editorial disambiguation. No assumptions that a public composer detail route exists. url=null until a verified public route is available. Consumers may select composers but must omit invalid CTA or hide box according to configuration.
 
 ## Portrait registry
