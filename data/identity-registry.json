@@ -1420,6 +1420,14 @@
       "name": "Villa Pisani Bonetti",
       "city": "Lonigo",
       "region": "Veneto"
+    },
+    "Mantova|Teatro Sociale di Mantova": {
+      "id": "oa-v-000069",
+      "slug": "teatro-sociale-di-mantova",
+      "city_slug": "mantova",
+      "name": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "region": "Lombardia"
     }
   },
   "stagings": {
@@ -4010,6 +4018,30 @@
       "venue_id": "oa-v-000045",
       "slug": "turandot",
       "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/",
+      "season": "2026"
+    },
+    "historical-2026-novara-don-pasquale": {
+      "id": "oa-s-000331",
+      "work_id": "oa-w-000090",
+      "venue_id": "oa-v-000011",
+      "slug": "don-pasquale",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
+      "season": "2026"
+    },
+    "historical-2026-mantova-la-traviata": {
+      "id": "oa-s-000332",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000069",
+      "slug": "la-traviata",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx",
+      "season": "2026"
+    },
+    "historical-2026-asti-la-boheme": {
+      "id": "oa-s-000333",
+      "work_id": "oa-w-000024",
+      "venue_id": "oa-v-000057",
+      "slug": "la-boheme",
+      "source_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
       "season": "2026"
     }
   },
@@ -11682,6 +11714,30 @@
       "staging_id": "oa-s-000330",
       "original_date": "2026-04-26",
       "source_url": "https://www.teatrodelgigliogiacomopuccini.it/it/cartellone/lirica/stagione-2025-2026/"
+    },
+    "historical-2026-novara-don-pasquale|2026-11-21": {
+      "id": "oa-r-001306",
+      "staging_id": "oa-s-000331",
+      "original_date": "2026-11-21",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html"
+    },
+    "historical-2026-novara-don-pasquale|2026-11-22": {
+      "id": "oa-r-001307",
+      "staging_id": "oa-s-000331",
+      "original_date": "2026-11-22",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html"
+    },
+    "historical-2026-mantova-la-traviata|2026-12-20": {
+      "id": "oa-r-001308",
+      "staging_id": "oa-s-000332",
+      "original_date": "2026-12-20",
+      "source_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx"
+    },
+    "historical-2026-asti-la-boheme|2026-02-14": {
+      "id": "oa-r-001309",
+      "staging_id": "oa-s-000333",
+      "original_date": "2026-02-14",
+      "source_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini"
     }
   },
   "reserved_works": {
