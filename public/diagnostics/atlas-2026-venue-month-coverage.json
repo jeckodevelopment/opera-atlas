@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T11:45:23+00:00",
+  "generated_at": "2026-11-24T13:15:23+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,13 +10,12 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 763,
-    "official_observations_require_reconciliation": 1,
-    "published_dates_not_exhaustively_verified": 100
+    "coverage_not_established": 762,
+    "published_dates_not_exhaustively_verified": 102
   },
-  "published_2026_showtimes": 400,
+  "published_2026_showtimes": 405,
   "observed_2026_opera_showtimes": 115,
-  "unmatched_source_showtimes": 4,
+  "unmatched_source_showtimes": 0,
   "h1_scope_review": [
     {
       "venue_id": "oa-v-000021",
@@ -1665,28 +1664,11 @@
       "city": "Venezia",
       "region": "Veneto",
       "month": "2026-06",
-      "published_showtimes": 1,
+      "published_showtimes": 5,
       "source_observed_opera_showtimes": 5,
-      "observed_already_published": 1,
-      "observed_not_in_publication": 4,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-06-26",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-06-27",
-          "time": "17:00"
-        },
-        {
-          "date": "2026-06-28",
-          "time": "17:00"
-        },
-        {
-          "date": "2026-06-30",
-          "time": "19:00"
-        }
-      ],
+      "observed_already_published": 5,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "fenice-2025-26",
@@ -1701,7 +1683,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000008",
@@ -1709,7 +1691,7 @@
       "city": "Venezia",
       "region": "Veneto",
       "month": "2026-07",
-      "published_showtimes": 0,
+      "published_showtimes": 1,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -1717,7 +1699,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000008",
