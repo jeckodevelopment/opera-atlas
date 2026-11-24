@@ -1164,6 +1164,69 @@
         "https://www.lacasadellamusica.it/it-IT/teca-d1.aspx",
         "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
       ]
+    },
+    "das-rheingold": {
+      "librettist": "Richard Wagner",
+      "premiere_year": 1869,
+      "premiere_venue": "Königliches Hof- und Nationaltheater",
+      "premiere_city": "Monaco di Baviera",
+      "sources": [
+        "https://www.rohcollections.org.uk/work.aspx?work=553"
+      ]
+    },
+    "die-walkure": {
+      "librettist": "Richard Wagner",
+      "premiere_year": 1870,
+      "premiere_venue": "Königliches Hof- und Nationaltheater",
+      "premiere_city": "Monaco di Baviera",
+      "sources": [
+        "https://www.staatsoper.de/stuecke/die-walkuere/"
+      ]
+    },
+    "siegfried": {
+      "librettist": "Richard Wagner",
+      "premiere_year": 1876,
+      "premiere_venue": "Festspielhaus",
+      "premiere_city": "Bayreuth",
+      "sources": [
+        "https://www.staatsoper.de/en/productions/siegfried"
+      ]
+    },
+    "gotterdammerung": {
+      "librettist": "Richard Wagner",
+      "premiere_year": 1876,
+      "premiere_venue": "Festspielhaus",
+      "premiere_city": "Bayreuth",
+      "sources": [
+        "https://www.staatsoper.de/en/productions/siegfried"
+      ]
+    },
+    "pelleas-et-melisande": {
+      "librettist": "Maurice Maeterlinck",
+      "premiere_year": 1902,
+      "premiere_venue": "Opéra-Comique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://catalogue.bnf.fr/ark:/12148/cb42253396j"
+      ]
+    },
+    "enrico-di-borgogna": {
+      "librettist": "Bartolomeo Merelli",
+      "premiere_year": 1818,
+      "premiere_venue": "Teatro San Luca",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://corago.unibo.it/libretto/MUS0317923"
+      ]
+    },
+    "ottone-in-villa": {
+      "librettist": "Domenico Lalli",
+      "premiere_year": 1713,
+      "premiere_venue": "Teatro delle Garzerie",
+      "premiere_city": "Vicenza",
+      "sources": [
+        "https://corago.unibo.it/opera/Z000030184"
+      ]
     }
   },
   "works_by_id": {
