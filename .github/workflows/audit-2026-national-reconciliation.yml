@@ -11,6 +11,11 @@ on:
     paths:
       - 'scripts/audit_2026_national_reconciliation.py'
       - '.github/workflows/audit-2026-national-reconciliation.yml'
+  workflow_run:
+    workflows:
+      - '2026 retrospective archives — national batch'
+      - '2026 retrospective archives — continuation batch'
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -35,14 +40,60 @@ jobs:
         run: |
           python -m unittest tests.test_audit_2026_national_reconciliation tests.test_audit_2026_retrospective_reconciliation -v
 
+  freshness:
+    if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      ready: ${{ steps.inspect.outputs.ready }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Confirm four fresh scan slices before reconciliation
+        id: inspect
+        env:
+          SOURCE_RUN_CREATED: ${{ github.event.workflow_run.created_at }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timedelta
+          from pathlib import Path
+          folder=Path("public/diagnostics")
+          names=["atlas-2026-retrospective-batch.json"]+[
+              f"atlas-2026-retrospective-batch-{offset}.json"
+              for offset in (240,480,720)]
+          event_created=os.environ.get("SOURCE_RUN_CREATED","")
+          if event_created:
+              threshold=datetime.fromisoformat(event_created.replace("Z","+00:00"))-timedelta(minutes=2)
+              verified=[]
+              for name in names:
+                  try:
+                      payload=json.loads((folder/name).read_text(encoding="utf-8"))
+                      stamp=datetime.fromisoformat(payload["checked_at"].replace("Z","+00:00"))
+                      verified.append(payload.get("read_only") is True
+                                      and payload.get("catalog_updated") is False
+                                      and stamp>=threshold)
+                  except (OSError, ValueError, KeyError, TypeError):
+                      verified.append(False)
+              ready=all(verified)
+              print("Fresh 2026 scan sources:",dict(zip(names,verified)))
+          else:
+              ready=True
+          with open(os.environ["GITHUB_OUTPUT"],"a",encoding="utf-8") as out:
+              out.write(f"ready={str(ready).lower()}\n")
+          PY
+
   reconcile:
-    needs: tests
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: [tests, freshness]
+    if: github.ref == 'refs/heads/main' && needs.freshness.outputs.ready == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
+          ref: main
           persist-credentials: false
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
