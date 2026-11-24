@@ -1,5 +1,8 @@
 {
   "catalog_reviewed_on": "2026-11-24",
+  "diagnostics": {
+    "unresolved_composer_works": []
+  },
   "entities": [
     {
       "aliases": [],
@@ -7928,5 +7931,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "cf3d61102b890af208cf6aa24afd6b8e72fbf3ad"
+  "source_revision": "a0ef7e782d480148e81f3f34df35b17dd5eb1038"
 }
