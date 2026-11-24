@@ -129,6 +129,21 @@
           "https://teatroregioparma.it/spettacolo/stiffelio/"
         ]
       }
+    },
+    {
+      "title": "The Turn of the Screw",
+      "composer": "Benjamin Britten",
+      "synopsis": "Una giovane istitutrice raggiunge la tenuta di Bly per accudire due bambini, Miles e Flora. Presenze inquietanti, legate a Peter Quint e Miss Jessel, incrinano la sua fiducia e trasformano il tentativo di proteggere i piccoli in un ambiguo confronto fra innocenza, paura e ossessione.",
+      "history": {
+        "librettist": "Myfanwy Piper, dal racconto di Henry James",
+        "premiere_year": 1954,
+        "premiere_venue": "Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.brittenpearsarts.org/music/the-turn-of-the-screw",
+          "https://www.boosey.com/pages/cr/catalogue/cat_detail?=&langid=1&musicid=4880"
+        ]
+      }
     }
   ]
 }
