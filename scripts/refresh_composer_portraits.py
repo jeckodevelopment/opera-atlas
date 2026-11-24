@@ -1,13 +1,16 @@
 """Incremental Wikimedia portrait discovery; never writes canonical catalog data."""
 import argparse
 import json
+import os
+import tempfile
 import re
 import time
-from datetime import date
+from datetime import datetime, timezone, date
 from html import unescape
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
 
 from scripts.publish_integration_index import normalized_name, verified_image
 
@@ -20,18 +23,47 @@ LICENSES = {
     "CC BY-SA 3.0": ("CC-BY-SA-3.0", "https://creativecommons.org/licenses/by-sa/3.0/"),
     "CC0": ("CC0-1.0", "https://creativecommons.org/publicdomain/zero/1.0/"),
 }
-# Public domain notices require case-specific review, not a guessed license.
+# Require an explicit Commons public-domain mark and a non-copyrighted file.
+PUBLIC_DOMAIN_URL = "https://creativecommons.org/publicdomain/mark/1.0/"
+TRANSIENT_CODES = {429, 500, 502, 503, 504}
+class WikimediaError(RuntimeError):
+    """A failed upstream request; never infer identity or rights from it."""
+
+def atomic_json(path, doc):
+    with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent, delete=False) as handle:
+        tmp = Path(handle.name)
+        try:
+            handle.write(json.dumps(doc, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        except BaseException:
+            tmp.unlink(missing_ok=True)
+            raise
+    try:
+        os.replace(tmp, path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
 def api(endpoint, **params):
     if endpoint not in (WD, COMMONS):
         raise ValueError("Unsupported API endpoint")
-    time.sleep(0.3)
     request = Request(endpoint + "?" + urlencode(dict(params, format="json", maxlag=5)),
                       headers={"User-Agent":"OperaAtlasPortraits/1.0 (https://github.com/jeckodevelopment/opera-atlas)"})
-    with urlopen(request, timeout=25) as response:
-        data = json.loads(response.read(4_000_001))
-    if "error" in data:
-        raise RuntimeError(str(data["error"]))
-    return data
+    for attempt in range(3):
+        time.sleep(0.3 if attempt == 0 else 2 ** attempt)
+        try:
+            with urlopen(request, timeout=20) as response:
+                data = json.loads(response.read(4_000_001))
+            if "error" not in data:
+                return data
+            if data["error"].get("code") not in {"maxlag", "ratelimited", "readonly"}:
+                raise WikimediaError("Wikimedia API rejected request")
+        except HTTPError as exc:
+            if exc.code not in TRANSIENT_CODES:
+                raise WikimediaError("Wikimedia HTTP request rejected") from exc
+        except (URLError, TimeoutError, json.JSONDecodeError):
+            pass
+    raise WikimediaError("Wikimedia temporarily unavailable")
 
 def values(entity, prop):
     return [c.get("mainsnak", {}).get("datavalue", {}).get("value")
@@ -92,6 +124,10 @@ def portrait(composer, call=api):
     def field(k):
         return plain(meta.get(k, {}).get("value", ""))
     license = LICENSES.get(field("LicenseShortName"))
+    if field("LicenseShortName").casefold() in {"public domain", "public domain mark"}:
+        if field("Copyrighted").casefold() != "false":
+            return None, "rights_review"
+        license = ("Public Domain", PUBLIC_DOMAIN_URL)
     if not license or field("LicenseUrl").rstrip("/") != license[1].rstrip("/"):
         return None, "license_review"
     if field("Restrictions") or field("Copyrighted").lower() not in ("true", "false"):
@@ -106,30 +142,56 @@ def portrait(composer, call=api):
                   wikidata_id=qid, commons_file=images[0], reviewed_on=date.today().isoformat())
     return (record, None) if verified_image(record) else (None, "metadata_review")
 
-def refresh(root, call=api):
+def refresh(root, call=api, max_seconds=900):
     composers = json.loads((root / "data/composer-registry.json").read_text())["composers"]
     path = root / "data/composer-portraits.json"
     doc = json.loads(path.read_text())
     if doc["schema_version"] != 1:
         raise ValueError("Unsupported portrait registry")
     portraits = doc["portraits"]
-    report = {}
+    report_path = root / "data/composer-portrait-review.json"
+    report = {c["id"]: {"name": c["name"], "reason": "not_attempted"}
+              for c in composers if not verified_image(portraits.get(c["id"]))}
+    started = time.monotonic()
+    consecutive_errors = 0
+    attempted = 0
+
+    def checkpoint():
+        total = len(composers)
+        verified = sum(bool(verified_image(portraits.get(c["id"]))) for c in composers)
+        atomic_json(path, doc)
+        atomic_json(report_path, {"schema_version": 1, "total": total,
+                    "verified": verified, "attempted": attempted,
+                    "updated_at": datetime.now(timezone.utc).isoformat(),
+                    "unresolved": report})
+
     for composer in composers:
         key = composer["id"]
         if verified_image(portraits.get(key)):
             continue
-        record, reason = portrait(composer, call)
+        if time.monotonic() - started >= max_seconds or consecutive_errors >= 3:
+            break
+        attempted += 1
+        try:
+            record, reason = portrait(composer, call)
+            consecutive_errors = 0
+        except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+            record, reason = None, "api_error"
+            consecutive_errors += 1
         if record:
             portraits[key] = record
+            report.pop(key, None)
         else:
-            report[key] = {"name":composer["name"], "reason":reason}
-    # Network/API exceptions abort before either file is written.
-    path.write_text(json.dumps(doc, ensure_ascii=False, indent=2, sort_keys=True)+"\n", encoding="utf-8")
-    report_path = root / "data/composer-portrait-review.json"
-    report_path.write_text(json.dumps({"schema_version":1,"unresolved":report}, ensure_ascii=False, indent=2, sort_keys=True)+"\n", encoding="utf-8")
-    print("Verified:", sum(bool(verified_image(p)) for p in portraits.values()), "Unresolved:", len(report))
+            report[key] = {"name": composer["name"], "reason": reason}
+        checkpoint()
+    checkpoint()
+    print("Verified:", sum(bool(verified_image(portraits.get(c["id"]))) for c in composers),
+          "Unresolved:", len(report), "Attempted:", attempted,
+          "API errors:", sum(v["reason"] == "api_error" for v in report.values()))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."))
-    refresh(parser.parse_args().root)
+    parser.add_argument("--max-seconds", type=int, default=900)
+    args = parser.parse_args()
+    refresh(args.root, max_seconds=args.max_seconds)
