@@ -76,7 +76,7 @@ def eligible_detail(url:str)->bool:
     match=EVENT.fullmatch(parsed.path)
     return bool(match and parsed.scheme=="https" and parsed.hostname==HOST
                 and parsed.port is None and not parsed.username and not parsed.password
-                and not parsed.query and not parsed.fragment and int(match[1])>=27
+                and not parsed.query and not parsed.fragment and (int(match[1])>=27 or parsed.path=="/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html")
                 and match[2] not in ("opera-gala","concerto-gala"))
 
 
