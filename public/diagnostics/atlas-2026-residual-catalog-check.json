@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T15:10:14+00:00",
+  "generated_at": "2026-11-24T15:48:00+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
@@ -9,9 +9,9 @@
   "counts": {
     "catalog_same_work_day_venue_clock_discrepancy": 11,
     "catalog_same_work_day_venue_exact_clock": 2,
-    "official_nonopera_first_party_detail": 11,
+    "official_nonopera_first_party_detail": 21,
     "official_nonopera_source_scoped": 3,
-    "requires_official_genre_and_catalog_review": 57
+    "requires_official_genre_and_catalog_review": 47
   },
   "by_source": {
     "bellini-catania-opera-2026-27": {
@@ -20,20 +20,22 @@
       "requires_official_genre_and_catalog_review": 6
     },
     "bologna-comunale-opera-2027": {
-      "official_nonopera_first_party_detail": 5,
+      "official_nonopera_first_party_detail": 8,
       "official_nonopera_source_scoped": 3,
-      "requires_official_genre_and_catalog_review": 12
+      "requires_official_genre_and_catalog_review": 9
     },
     "maggio-fiorentino-calendar-2027": {
       "requires_official_genre_and_catalog_review": 4
     },
     "modena-teatro-opera-2026-27": {
       "catalog_same_work_day_venue_clock_discrepancy": 7,
-      "requires_official_genre_and_catalog_review": 29
+      "official_nonopera_first_party_detail": 5,
+      "requires_official_genre_and_catalog_review": 24
     },
     "piacenza-opera-2026-27": {
       "catalog_same_work_day_venue_exact_clock": 2,
-      "requires_official_genre_and_catalog_review": 6
+      "official_nonopera_first_party_detail": 2,
+      "requires_official_genre_and_catalog_review": 4
     }
   },
   "observations": [
@@ -655,9 +657,14 @@
         "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "film_with_live_orchestra",
+        "official_detail_url": "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "reason": "Official TCBO categorizes all three dates as film projection with live orchestra."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -671,9 +678,14 @@
         "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "film_with_live_orchestra",
+        "official_detail_url": "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "reason": "Official TCBO categorizes all three dates as film projection with live orchestra."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -703,9 +715,14 @@
         "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "film_with_live_orchestra",
+        "official_detail_url": "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/speciale/the-lion-king-live-in-concert-2026/",
+        "reason": "Official TCBO categorizes all three dates as film projection with live orchestra."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -799,9 +816,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "dance",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/play-bach-i-love-you-schubert-balletto-di-torino/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/play-bach-i-love-you-schubert-balletto-di-torino/",
+        "reason": "Teatro di Modena: Danza, Balletto Teatro di Torino; event 24 July."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -815,9 +837,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "dance",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/i-bislacchi-artemis-danza/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/i-bislacchi-artemis-danza/",
+        "reason": "Official Modena event classifies Artemis Danza as dance, 26 July."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1183,9 +1210,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "dance",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/compagnia-anzelika-cholina-dance-theatre-anna-karenina/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/compagnia-anzelika-cholina-dance-theatre-anna-karenina/",
+        "reason": "Official Modena page labels production Danza, 6 November."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1325,9 +1357,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "ballet",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/serbian-national-theatre-giselle/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/serbian-national-theatre-giselle/",
+        "reason": "Official Modena event identifies Giselle as ballet on 1 December."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1397,9 +1434,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "dance",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/compagnia-artemis-danza-verdi-shakespeare-trilogia-della-brama/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/compagnia-artemis-danza-verdi-shakespeare-trilogia-della-brama/",
+        "reason": "Official Modena page classifies Verdi/Shakespeare as Danza, not staged opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1461,9 +1503,14 @@
         "https://teatripiacenza.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "school_only_rehearsal",
+        "official_detail_url": "https://teatripiacenza.it/event/siberia/",
+        "official_genre_url": "https://teatripiacenza.it/event/siberia/",
+        "reason": "Official Piacenza event restricts 14 December rehearsal to pupils and accompanying teachers."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1493,9 +1540,14 @@
         "https://teatripiacenza.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "restricted_age_preview",
+        "official_detail_url": "https://teatripiacenza.it/event/siberia/",
+        "official_genre_url": "https://teatripiacenza.it/event/siberia/",
+        "reason": "Official Piacenza production reserves 16 December preview to young people turning 18 in 2026-27."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
