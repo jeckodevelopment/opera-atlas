@@ -7772,6 +7772,210 @@
           "15:00"
         ]
       ]
+    },
+    {
+      "key": "historical-2026h1-milano-teatro-alla-scala-das-rheingold-der-ring-des-nibelungen",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html",
+      "dates": [
+        [
+          "2026-03-01",
+          "20:00"
+        ],
+        [
+          "2026-03-10",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-milano-teatro-alla-scala-die-walkure-der-ring-des-nibelungen",
+      "title": "Die Walküre",
+      "composer": "Richard Wagner",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html",
+      "dates": [
+        [
+          "2026-03-03",
+          "18:00"
+        ],
+        [
+          "2026-03-11",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-der-ring-des-nibelungen",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html",
+      "dates": [
+        [
+          "2026-03-07",
+          "18:00"
+        ],
+        [
+          "2026-03-15",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-febbraio",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "dates": [
+        [
+          "2026-02-01",
+          "18:00"
+        ],
+        [
+          "2026-02-04",
+          "18:00"
+        ],
+        [
+          "2026-02-08",
+          "14:30"
+        ],
+        [
+          "2026-02-12",
+          "18:00"
+        ],
+        [
+          "2026-02-17",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "dates": [
+        [
+          "2026-04-22",
+          "20:00"
+        ],
+        [
+          "2026-04-26",
+          "14:30"
+        ],
+        [
+          "2026-04-30",
+          "20:00"
+        ],
+        [
+          "2026-05-03",
+          "20:00"
+        ],
+        [
+          "2026-05-06",
+          "20:00"
+        ],
+        [
+          "2026-05-09",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-milano-teatro-alla-scala-siegfried-der-ring-des-nibelungen",
+      "title": "Siegfried",
+      "composer": "Richard Wagner",
+      "venue": "Teatro alla Scala",
+      "municipality": "Milano",
+      "region": "Lombardia",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html",
+      "dates": [
+        [
+          "2026-03-05",
+          "18:00"
+        ],
+        [
+          "2026-03-13",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna",
+      "title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "dates": [
+        [
+          "2026-06-12",
+          "19:00"
+        ],
+        [
+          "2026-06-14",
+          "17:00"
+        ],
+        [
+          "2026-06-16",
+          "19:00"
+        ],
+        [
+          "2026-06-18",
+          "19:00"
+        ],
+        [
+          "2026-06-20",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa",
+      "title": "Ottone in villa",
+      "composer": "Antonio Vivaldi",
+      "venue": "Teatro Malibran",
+      "municipality": "Venezia",
+      "region": "Veneto",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "dates": [
+        [
+          "2026-03-20",
+          "19:00"
+        ],
+        [
+          "2026-03-22",
+          "15:30"
+        ],
+        [
+          "2026-03-24",
+          "19:00"
+        ],
+        [
+          "2026-03-26",
+          "19:00"
+        ],
+        [
+          "2026-03-29",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

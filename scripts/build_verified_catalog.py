@@ -114,8 +114,17 @@ def approved_historical_h1() -> dict[str, dict]:
                                      ("canonical_title", "official_source_title", "composer"))
         if not all(isinstance(x,str) and x.strip() for x in (title,original,composer)):
             raise ValueError("historical work identity required")
+        # Parenthesized Ring cycle headings describe FOUR canonical operas,
+        # not four new titles containing the production-series heading.
+        exact_ring_aliases={
+            ("Das Rheingold","Das Rheingold (Der Ring des Nibelungen)","Richard Wagner"),
+            ("Die Walküre","Die Walküre (Der Ring des Nibelungen)","Richard Wagner"),
+            ("Siegfried","Siegfried (Der Ring des Nibelungen)","Richard Wagner"),
+            ("Götterdämmerung","Götterdämmerung (Der Ring des Nibelungen)","Richard Wagner"),
+        }
         if (title != original and
-                (title, original, composer) !=
+                (title, original, composer) not in exact_ring_aliases
+                and (title, original, composer) !=
                 ("Nabucco", "Nabucodonosor", "Giuseppe Verdi")):
             raise ValueError("unapproved historical work alias")
         dates = record.get("dates")
@@ -133,6 +142,23 @@ def approved_historical_h1() -> dict[str, dict]:
                     or (day,hour) in seen):
                 raise ValueError("unreviewed historical recita or time")
             seen.add((day,hour))
+        # Every newly admitted 2025/26 Scala/Fenice opera must match
+        # the already checked retrospective source-extracted showtimes.
+        # Do not authorize extra dates through a conveniently shaped URL.
+        if (scala or fenice) and title in {
+                "Das Rheingold","Die Walküre","Siegfried",
+                "Götterdämmerung","Pelléas et Mélisande",
+                "Enrico di Borgogna","Ottone in villa"}:
+            retrospective=json.loads((ROOT/"public"/"diagnostics"/
+                "atlas-2026-jan-jun-official-archive.json").read_text(encoding="utf-8"))
+            source_facts=[x for x in retrospective.get("observations",[])
+                          if x.get("official_url")==url
+                          and x.get("event_title")==original
+                          and x.get("composer")==composer
+                          and x.get("venue")==record.get("venue")]
+            verified=sorted([[x["date"],x["starts_at"][11:16]] for x in source_facts])
+            if verified != sorted(dates):
+                raise ValueError("historical 2026 production dates differ from official parser facts")
         if regio:
             # Independent official archive evidence is the ONLY authorization
             # for these exact Torino dates. No newly discovered or preview

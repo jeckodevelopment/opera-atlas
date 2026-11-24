@@ -419,6 +419,202 @@
           "15:00"
         ]
       ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html",
+      "official_source_title": "Das Rheingold (Der Ring des Nibelungen)",
+      "canonical_title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-03-01",
+          "20:00"
+        ],
+        [
+          "2026-03-10",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html",
+      "official_source_title": "Die Walküre (Der Ring des Nibelungen)",
+      "canonical_title": "Die Walküre",
+      "composer": "Richard Wagner",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-03-03",
+          "18:00"
+        ],
+        [
+          "2026-03-11",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html",
+      "official_source_title": "Götterdämmerung (Der Ring des Nibelungen)",
+      "canonical_title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-03-07",
+          "18:00"
+        ],
+        [
+          "2026-03-15",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "official_source_title": "Götterdämmerung",
+      "canonical_title": "Götterdämmerung",
+      "composer": "Richard Wagner",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-02-01",
+          "18:00"
+        ],
+        [
+          "2026-02-04",
+          "18:00"
+        ],
+        [
+          "2026-02-08",
+          "14:30"
+        ],
+        [
+          "2026-02-12",
+          "18:00"
+        ],
+        [
+          "2026-02-17",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "official_source_title": "Pelléas et Mélisande",
+      "canonical_title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-04-22",
+          "20:00"
+        ],
+        [
+          "2026-04-26",
+          "14:30"
+        ],
+        [
+          "2026-04-30",
+          "20:00"
+        ],
+        [
+          "2026-05-03",
+          "20:00"
+        ],
+        [
+          "2026-05-06",
+          "20:00"
+        ],
+        [
+          "2026-05-09",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html",
+      "official_source_title": "Siegfried (Der Ring des Nibelungen)",
+      "canonical_title": "Siegfried",
+      "composer": "Richard Wagner",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-03-05",
+          "18:00"
+        ],
+        [
+          "2026-03-13",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "official_source_title": "Enrico di Borgogna",
+      "canonical_title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti",
+      "city": "Venezia",
+      "venue": "Teatro Malibran",
+      "dates": [
+        [
+          "2026-06-12",
+          "19:00"
+        ],
+        [
+          "2026-06-14",
+          "17:00"
+        ],
+        [
+          "2026-06-16",
+          "19:00"
+        ],
+        [
+          "2026-06-18",
+          "19:00"
+        ],
+        [
+          "2026-06-20",
+          "17:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "official_source_title": "Ottone in villa",
+      "canonical_title": "Ottone in villa",
+      "composer": "Antonio Vivaldi",
+      "city": "Venezia",
+      "venue": "Teatro Malibran",
+      "dates": [
+        [
+          "2026-03-20",
+          "19:00"
+        ],
+        [
+          "2026-03-22",
+          "15:30"
+        ],
+        [
+          "2026-03-24",
+          "19:00"
+        ],
+        [
+          "2026-03-26",
+          "19:00"
+        ],
+        [
+          "2026-03-29",
+          "15:30"
+        ]
+      ]
     }
   ]
 }

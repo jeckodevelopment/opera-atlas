@@ -13,17 +13,17 @@ class HistoricalH1PublicationTests(unittest.TestCase):
         cls.registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.approved=approved_historical_h1()
 
-    def test_exact_76_dated_showtimes_and_stable_ids(self):
-        self.assertEqual(11,len(self.approved))
+    def test_exact_105_dated_showtimes_and_stable_ids(self):
+        self.assertEqual(19,len(self.approved))
         records=[p for p in self.manifest["productions"] if p["source_url"] in self.approved]
-        self.assertEqual(11,len(records))
-        self.assertEqual(76,sum(len(p["dates"]) for p in records))
-        self.assertEqual(76,sum(len(a["dates"]) for a in self.approved.values()))
+        self.assertEqual(19,len(records))
+        self.assertEqual(105,sum(len(p["dates"]) for p in records))
+        self.assertEqual(105,sum(len(a["dates"]) for a in self.approved.values()))
         canonical=assemble(self.manifest,self.registry)
         published=[p for p in canonical["performances"]
                    if p["source_url"] in self.approved]
-        self.assertEqual(76,len(published))
-        self.assertEqual(76,len({p["id"] for p in published}))
+        self.assertEqual(105,len(published))
+        self.assertEqual(105,len({p["id"] for p in published}))
         self.assertTrue(all(p["time_known"] and p["starts_at"]
                             for p in published))
 
@@ -50,9 +50,34 @@ class HistoricalH1PublicationTests(unittest.TestCase):
             "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/")
             for x in urls))
 
+    def test_2026_ring_aliases_canonicalized_without_duplicate_works(self):
+        w=self.registry["works"]
+        for title in ("Das Rheingold","Die Walküre","Siegfried","Götterdämmerung"):
+            found=[x for x in w.values() if x["title"]==title and x["composer"]=="Richard Wagner"]
+            self.assertEqual(1,len(found),title)
+        official=[x for x in self.approved.values() if "Der Ring des Nibelungen" in x["official_source_title"]]
+        self.assertEqual(4,len(official))
+        self.assertTrue(all(x["canonical_title"] in
+            {"Das Rheingold","Die Walküre","Siegfried","Götterdämmerung"}
+            for x in official))
+
+    def test_seven_new_historical_works_have_history_plot_and_copyright_safe_image(self):
+        from scripts.publish_work_editorial import HISTORY, EDITORIAL
+        from scripts.publish_work_posters import load_archival_art
+        history=json.loads(HISTORY.read_text(encoding="utf-8"))["works"]
+        summaries=json.loads(EDITORIAL.read_text(encoding="utf-8"))["synopses"]
+        slugs={"das-rheingold","die-walkure","siegfried","gotterdammerung",
+               "pelleas-et-melisande","enrico-di-borgogna","ottone-in-villa"}
+        images=load_archival_art(slugs)
+        for slug in slugs:
+            self.assertGreaterEqual(len(summaries[slug]),50)
+            self.assertTrue(history[slug]["sources"])
+            self.assertIn(slug,images)
+            self.assertEqual("archival_work_image",images[slug]["kind"])
+
     def test_nabucodonosor_is_explicit_alias_only(self):
         rows=[x for x in self.approved.values()
-              if x["official_source_title"]!=x["canonical_title"]]
+              if x["official_source_title"]=="Nabucodonosor"]
         self.assertEqual(1,len(rows))
         self.assertEqual(("Nabucco","Nabucodonosor","Giuseppe Verdi"),
                          (rows[0]["canonical_title"],rows[0]["official_source_title"],

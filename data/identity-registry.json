@@ -799,6 +799,48 @@
       "composer": "Giuseppe Verdi",
       "slug": "aroldo",
       "authority_url": "https://teatroregioparma.it/spettacolo/aroldo/"
+    },
+    "das rheingold|richard wagner": {
+      "id": "oa-w-000125",
+      "slug": "das-rheingold",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner"
+    },
+    "die walküre|richard wagner": {
+      "id": "oa-w-000126",
+      "slug": "die-walkure",
+      "title": "Die Walküre",
+      "composer": "Richard Wagner"
+    },
+    "götterdämmerung|richard wagner": {
+      "id": "oa-w-000127",
+      "slug": "gotterdammerung",
+      "title": "Götterdämmerung",
+      "composer": "Richard Wagner"
+    },
+    "pelléas et mélisande|claude debussy": {
+      "id": "oa-w-000128",
+      "slug": "pelleas-et-melisande",
+      "title": "Pelléas et Mélisande",
+      "composer": "Claude Debussy"
+    },
+    "siegfried|richard wagner": {
+      "id": "oa-w-000129",
+      "slug": "siegfried",
+      "title": "Siegfried",
+      "composer": "Richard Wagner"
+    },
+    "enrico di borgogna|gaetano donizetti": {
+      "id": "oa-w-000130",
+      "slug": "enrico-di-borgogna",
+      "title": "Enrico di Borgogna",
+      "composer": "Gaetano Donizetti"
+    },
+    "ottone in villa|antonio vivaldi": {
+      "id": "oa-w-000131",
+      "slug": "ottone-in-villa",
+      "title": "Ottone in villa",
+      "composer": "Antonio Vivaldi"
     }
   },
   "venues": {
@@ -3676,6 +3718,71 @@
       "venue_id": "oa-v-000001",
       "slug": "i-puritani",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-das-rheingold-der-ring-des-nibelungen": {
+      "id": "oa-s-000300",
+      "work_id": "oa-w-000125",
+      "venue_id": "oa-v-000006",
+      "slug": "das-rheingold",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-die-walkure-der-ring-des-nibelungen": {
+      "id": "oa-s-000301",
+      "work_id": "oa-w-000126",
+      "venue_id": "oa-v-000006",
+      "slug": "die-walkure",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-der-ring-des-nibelungen": {
+      "id": "oa-s-000302",
+      "work_id": "oa-w-000127",
+      "venue_id": "oa-v-000006",
+      "slug": "gotterdammerung",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-febbraio": {
+      "id": "oa-s-000303",
+      "work_id": "oa-w-000127",
+      "venue_id": "oa-v-000006",
+      "slug": "gotterdammerung",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "season": "2025-2026",
+      "route_slug": "gotterdammerung-gotterdammerung-febbraio"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande": {
+      "id": "oa-s-000304",
+      "work_id": "oa-w-000128",
+      "venue_id": "oa-v-000006",
+      "slug": "pelleas-et-melisande",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-siegfried-der-ring-des-nibelungen": {
+      "id": "oa-s-000305",
+      "work_id": "oa-w-000129",
+      "venue_id": "oa-v-000006",
+      "slug": "siegfried",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna": {
+      "id": "oa-s-000306",
+      "work_id": "oa-w-000130",
+      "venue_id": "oa-v-000021",
+      "slug": "enrico-di-borgogna",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa": {
+      "id": "oa-s-000307",
+      "work_id": "oa-w-000131",
+      "venue_id": "oa-v-000021",
+      "slug": "ottone-in-villa",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
       "season": "2025-2026"
     }
   },
@@ -10616,6 +10723,180 @@
       "staging_id": "oa-s-000299",
       "original_date": "2026-05-17",
       "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-das-rheingold-der-ring-des-nibelungen|2026-03-01": {
+      "id": "oa-r-001184",
+      "staging_id": "oa-s-000300",
+      "original_date": "2026-03-01",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-das-rheingold-der-ring-des-nibelungen|2026-03-10": {
+      "id": "oa-r-001185",
+      "staging_id": "oa-s-000300",
+      "original_date": "2026-03-10",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-die-walkure-der-ring-des-nibelungen|2026-03-03": {
+      "id": "oa-r-001186",
+      "staging_id": "oa-s-000301",
+      "original_date": "2026-03-03",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-die-walkure-der-ring-des-nibelungen|2026-03-11": {
+      "id": "oa-r-001187",
+      "staging_id": "oa-s-000301",
+      "original_date": "2026-03-11",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-der-ring-des-nibelungen|2026-03-07": {
+      "id": "oa-r-001188",
+      "staging_id": "oa-s-000302",
+      "original_date": "2026-03-07",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-der-ring-des-nibelungen|2026-03-15": {
+      "id": "oa-r-001189",
+      "staging_id": "oa-s-000302",
+      "original_date": "2026-03-15",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-febbraio|2026-02-01": {
+      "id": "oa-r-001190",
+      "staging_id": "oa-s-000303",
+      "original_date": "2026-02-01",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-febbraio|2026-02-04": {
+      "id": "oa-r-001191",
+      "staging_id": "oa-s-000303",
+      "original_date": "2026-02-04",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-febbraio|2026-02-08": {
+      "id": "oa-r-001192",
+      "staging_id": "oa-s-000303",
+      "original_date": "2026-02-08",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-febbraio|2026-02-12": {
+      "id": "oa-r-001193",
+      "staging_id": "oa-s-000303",
+      "original_date": "2026-02-12",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-gotterdammerung-febbraio|2026-02-17": {
+      "id": "oa-r-001194",
+      "staging_id": "oa-s-000303",
+      "original_date": "2026-02-17",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande|2026-04-22": {
+      "id": "oa-r-001195",
+      "staging_id": "oa-s-000304",
+      "original_date": "2026-04-22",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande|2026-04-26": {
+      "id": "oa-r-001196",
+      "staging_id": "oa-s-000304",
+      "original_date": "2026-04-26",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande|2026-04-30": {
+      "id": "oa-r-001197",
+      "staging_id": "oa-s-000304",
+      "original_date": "2026-04-30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande|2026-05-03": {
+      "id": "oa-r-001198",
+      "staging_id": "oa-s-000304",
+      "original_date": "2026-05-03",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande|2026-05-06": {
+      "id": "oa-r-001199",
+      "staging_id": "oa-s-000304",
+      "original_date": "2026-05-06",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande|2026-05-09": {
+      "id": "oa-r-001200",
+      "staging_id": "oa-s-000304",
+      "original_date": "2026-05-09",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-siegfried-der-ring-des-nibelungen|2026-03-05": {
+      "id": "oa-r-001201",
+      "staging_id": "oa-s-000305",
+      "original_date": "2026-03-05",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-siegfried-der-ring-des-nibelungen|2026-03-13": {
+      "id": "oa-r-001202",
+      "staging_id": "oa-s-000305",
+      "original_date": "2026-03-13",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna|2026-06-12": {
+      "id": "oa-r-001203",
+      "staging_id": "oa-s-000306",
+      "original_date": "2026-06-12",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna|2026-06-14": {
+      "id": "oa-r-001204",
+      "staging_id": "oa-s-000306",
+      "original_date": "2026-06-14",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna|2026-06-16": {
+      "id": "oa-r-001205",
+      "staging_id": "oa-s-000306",
+      "original_date": "2026-06-16",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna|2026-06-18": {
+      "id": "oa-r-001206",
+      "staging_id": "oa-s-000306",
+      "original_date": "2026-06-18",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna|2026-06-20": {
+      "id": "oa-r-001207",
+      "staging_id": "oa-s-000306",
+      "original_date": "2026-06-20",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa|2026-03-20": {
+      "id": "oa-r-001208",
+      "staging_id": "oa-s-000307",
+      "original_date": "2026-03-20",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa|2026-03-22": {
+      "id": "oa-r-001209",
+      "staging_id": "oa-s-000307",
+      "original_date": "2026-03-22",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa|2026-03-24": {
+      "id": "oa-r-001210",
+      "staging_id": "oa-s-000307",
+      "original_date": "2026-03-24",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa|2026-03-26": {
+      "id": "oa-r-001211",
+      "staging_id": "oa-s-000307",
+      "original_date": "2026-03-26",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
+    },
+    "historical-2026h1-venezia-teatro-malibran-stagione-25-26-ottone-in-villa|2026-03-29": {
+      "id": "oa-r-001212",
+      "staging_id": "oa-s-000307",
+      "original_date": "2026-03-29",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/"
     }
   },
   "reserved_works": {
