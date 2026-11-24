@@ -1106,6 +1106,69 @@
       "alt": "Frontespizio veneziano dell'edizione musicale del 1609 di L'Orfeo di Claudio Monteverdi; documento storico, non manifesto del festival 2026",
       "credit": "Frontespizio storico di L'Orfeo, Venezia 1609 / Wikimedia Commons",
       "license": "Public domain"
+    },
+    "oa-w-000125": {
+      "work_id": "oa-w-000125",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Illustration_to_Richard_Wagner's_%22Das_Rheingold%22.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Illustration_to_Richard_Wagner's_%22Das_Rheingold%22.jpg",
+      "alt": "Illustrazione d’epoca del Rheingold di Richard Wagner; immagine storica, non allestimento in calendario",
+      "credit": "Illustrazione storica del Rheingold di Richard Wagner, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "oa-w-000126": {
+      "work_id": "oa-w-000126",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Print%2C_book-illustration_(BM_1899%2C0420.178).jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Print%2C_book-illustration_(BM_1899%2C0420.178).jpg",
+      "alt": "Scena di Die Walküre, Siegmund e Sieglinde; immagine storica, non allestimento in calendario",
+      "credit": "Illustrazione d’epoca di Die Walküre, collezione British Museum via Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "oa-w-000127": {
+      "work_id": "oa-w-000127",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Heinrich_Lefler_G%C3%B6tterd%C3%A4mmerung_Br%C3%BCnnhilde_Act_III.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Heinrich_Lefler_G%C3%B6tterd%C3%A4mmerung_Br%C3%BCnnhilde_Act_III.jpg",
+      "alt": "Brünnhilde nel terzo atto di Götterdämmerung, Heinrich Lefler; immagine storica, non allestimento in calendario",
+      "credit": "Heinrich Lefler, illustrazione di Götterdämmerung, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "oa-w-000128": {
+      "work_id": "oa-w-000128",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Georges_Rochegrosse_-_Poster_for_the_pr%C3%A8miere_of_Claude_Debussy_and_Maurice_Maeterlinck's_Pell%C3%A9as_et_M%C3%A9lisande.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Georges_Rochegrosse_-_Poster_for_the_pr%C3%A8miere_of_Claude_Debussy_and_Maurice_Maeterlinck's_Pell%C3%A9as_et_M%C3%A9lisande.png",
+      "alt": "Manifesto della prima di Pelléas et Mélisande del 1902; immagine storica, non allestimento in calendario",
+      "credit": "Georges Rochegrosse, manifesto del 1902, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "oa-w-000129": {
+      "work_id": "oa-w-000129",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wagner_-_Siegfried%2C_act_II_-_Once_more_say_to_me%2C_Lovely_singer_-_Ferdinand_Leeke_-_The_Victrola_book_of_the_opera.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wagner_-_Siegfried%2C_act_II_-_Once_more_say_to_me%2C_Lovely_singer_-_Ferdinand_Leeke_-_The_Victrola_book_of_the_opera.jpg",
+      "alt": "Siegfried, illustrazione di Ferdinand Leeke; immagine storica, non allestimento in calendario",
+      "credit": "Ferdinand Leeke, illustrazione di Siegfried, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "oa-w-000130": {
+      "work_id": "oa-w-000130",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Donizetti_-_Enrico_di_Borgogna_-_title_page_of_the_libretto%2C_Venice_1818.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Donizetti_-_Enrico_di_Borgogna_-_title_page_of_the_libretto%2C_Venice_1818.png",
+      "alt": "Frontespizio del libretto veneziano di Enrico di Borgogna del 1818; immagine storica, non allestimento in calendario",
+      "credit": "Libretto originale di Enrico di Borgogna (1818), Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "oa-w-000131": {
+      "work_id": "oa-w-000131",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Antonio_Vivaldi_-_Ottone_in_villa_-_title_page_of_the_libretto_-_Vicenza_1713.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Vivaldi_-_Ottone_in_villa_-_title_page_of_the_libretto_-_Vicenza_1713.png",
+      "alt": "Frontespizio storico del libretto di Ottone in villa del 1713; immagine storica, non allestimento in calendario",
+      "credit": "Libretto originale di Ottone in villa (1713), Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
     }
   }
 }
