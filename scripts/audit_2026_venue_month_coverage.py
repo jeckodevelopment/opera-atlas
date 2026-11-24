@@ -230,6 +230,34 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
                 "complete_month_verified":False,
                 "status":status,
             })
+    # Audit priorities are evidence statuses, not declarations of missing recite.
+    # In particular, 'acquired' refers to catalogue acquisition status, not
+    # independent historical exhaustiveness of any monthly calendar.
+    venue_priorities = []
+    venue_status_counts = Counter()
+    for v in venue_rows:
+        venue_months = [r for r in rows if r["venue_id"] == v["id"]]
+        total = sum(r["published_showtimes"] for r in venue_months)
+        status = v.get("calendar_status", "unknown")
+        if total == 0:
+            venue_status_counts[status] += 1
+        venue_priorities.append({
+            "venue_id": v["id"], "venue": v["name"],
+            "city": v["city"], "region": v.get("region"),
+            "calendar_status": status,
+            "monitoring_status": v.get("monitoring_status"),
+            "published_2026_showtimes": total,
+            "published_months": sum(bool(r["published_showtimes"]) for r in venue_months),
+            "historical_source_seed_count": len(sources_by_venue[v["id"]]),
+            "official_historical_sources": [x["official_url"] for x in sources_by_venue[v["id"]]],
+            "audit_priority": ("zero_published_acquired_calendar" if total == 0 and status == "acquired"
+                               else "zero_published_calendar_not_acquired" if total == 0
+                               else "published_not_exhaustively_verified"),
+            "missing_recite_certified": False,
+        })
+    venue_priorities.sort(key=lambda v: (v["published_2026_showtimes"] != 0,
+                                         v["calendar_status"] != "acquired",
+                                         v["city"], v["venue"]))
     return {
         "schema_version":1, "year":2026,
         "generated_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -238,6 +266,9 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
         "cell_count":len(rows),
         "complete_venue_months":0,"complete_annual_venues":0,
         "status_counts":dict(sorted(counts.items())),
+        "zero_published_venue_count":sum(venue_status_counts.values()),
+        "zero_published_by_calendar_status":dict(sorted(venue_status_counts.items())),
+        "venue_audit_priorities":venue_priorities,
         "published_2026_showtimes":sum(x["published_showtimes"] for x in rows),
         "observed_2026_opera_showtimes":sum(x["source_observed_opera_showtimes"] for x in rows),
         "unmatched_source_showtimes":sum(x["observed_not_in_publication"] for x in rows),
