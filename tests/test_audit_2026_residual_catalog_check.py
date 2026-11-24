@@ -46,6 +46,34 @@ class ResidualTests(unittest.TestCase):
                 {"productions":[]})
         self.assertEqual(x["counts"],{"requires_official_genre_and_catalog_review":1})
 
+    def test_first_party_ballet_all_six_days_venue_scoped(self):
+        days=[f"2026-12-{x:02d}" for x in range(1,7)]
+        groups=[dict(g("La bella addormentata",day,clock=None,
+                       venue="Teatro Metropolitan.",
+                       urls=["https://www.teatromassimobellini.it/calendario/"]),
+                     source_key="bellini-catania-opera-2026-27") for day in days]
+        x=check(inp(groups),{"productions":[]})
+        self.assertEqual(x["counts"],{"official_nonopera_first_party_detail":6})
+        self.assertTrue(all(v["official_nonopera_evidence"]["genre"]=="ballet"
+                            and not v["automatic_exclusion"] for v in x["observations"]))
+        different=dict(groups[0],venue="Teatro Sangiorgi")
+        future=dict(groups[0],date="2027-12-01")
+        y=check(inp([different,future]),{"productions":[]})
+        self.assertEqual(y["counts"],{"requires_official_genre_and_catalog_review":2})
+
+    def test_pierino_five_dates_only_not_all_child_events(self):
+        days=["2026-10-10","2026-10-17","2026-11-21","2026-11-28","2026-12-12"]
+        groups=[dict(g("Pierino e il lupo",day,clock="11:00",venue=None,
+                       urls=["https://www.tcbo.it/stagione-presente/?vista=calendario"]),
+                     source_key="bologna-comunale-opera-2027") for day in days]
+        x=check(inp(groups),{"productions":[]})
+        self.assertEqual(x["counts"],{"official_nonopera_first_party_detail":5})
+        self.assertTrue(all(not row["automatic_publication"] for row in x["observations"]))
+        wrong_venue=dict(groups[0],venue="Teatro Auditorium Manzoni")
+        wrong_source=dict(groups[0],source_key="another-company")
+        self.assertEqual(check(inp([wrong_venue,wrong_source]),{"productions":[]})["counts"],
+                         {"requires_official_genre_and_catalog_review":2})
+
     def test_input_security(self):
         q=inp([])
         q["catalog_updated"]=True
