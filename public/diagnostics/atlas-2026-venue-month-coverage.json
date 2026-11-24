@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T22:28:04+00:00",
+  "generated_at": "2026-11-24T22:35:15+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,13 +10,13 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 752,
-    "published_dates_not_exhaustively_verified": 112
+    "coverage_not_established": 748,
+    "published_dates_not_exhaustively_verified": 116
   },
-  "zero_published_venue_count": 24,
+  "zero_published_venue_count": 23,
   "zero_published_by_calendar_status": {
     "acquired": 8,
-    "not_acquired": 16
+    "not_acquired": 15
   },
   "venue_audit_priorities": [
     {
@@ -224,23 +224,6 @@
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
       "audit_priority": "zero_published_calendar_not_acquired",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000049",
-      "venue": "Teatro Lirico di Cagliari",
-      "city": "Cagliari",
-      "region": "Sardegna",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 35,
-      "official_unpublished_opera_lead_count": 35,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -798,6 +781,23 @@
       "missing_recite_certified": false
     },
     {
+      "venue_id": "oa-vd-000049",
+      "venue": "Teatro Lirico di Cagliari",
+      "city": "Cagliari",
+      "region": "Sardegna",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 20,
+      "published_months": 4,
+      "official_verified_opera_lead_count": 35,
+      "official_unpublished_opera_lead_count": 15,
+      "official_opera_lead_review_required": true,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
       "venue_id": "oa-vd-000046",
       "venue": "Teatro Massimo Bellini",
       "city": "Catania",
@@ -1261,10 +1261,11 @@
   ],
   "official_2026_opera_lead_venue_count": 13,
   "official_2026_opera_lead_count": 93,
-  "official_unpublished_opera_lead_count": 93,
+  "official_unpublished_opera_lead_count": 73,
   "official_lead_reconciliation_counts": {
     "clock_review": 33,
-    "publication_candidate": 60
+    "exact_match": 20,
+    "publication_candidate": 40
   },
   "official_lead_reconciliation": [
     {
@@ -1813,11 +1814,11 @@
       "title": "Norma",
       "composer": "Vincenzo Bellini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-03-19",
@@ -1825,11 +1826,11 @@
       "title": "Norma",
       "composer": "Vincenzo Bellini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-03-20",
@@ -1837,11 +1838,11 @@
       "title": "Norma",
       "composer": "Vincenzo Bellini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-03-21",
@@ -1849,11 +1850,11 @@
       "title": "Norma",
       "composer": "Vincenzo Bellini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-03-22",
@@ -1861,11 +1862,11 @@
       "title": "Norma",
       "composer": "Vincenzo Bellini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-04-17",
@@ -1933,11 +1934,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-25",
@@ -1945,11 +1946,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-26",
@@ -1957,11 +1958,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-27",
@@ -1969,11 +1970,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-28",
@@ -1981,11 +1982,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-06-30",
@@ -1993,11 +1994,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-01",
@@ -2005,11 +2006,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-02",
@@ -2017,11 +2018,11 @@
       "title": "Turandot",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-09-23",
@@ -2089,11 +2090,11 @@
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-12",
@@ -2101,11 +2102,11 @@
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-13",
@@ -2113,11 +2114,11 @@
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-14",
@@ -2125,11 +2126,11 @@
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-15",
@@ -2137,11 +2138,11 @@
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-19",
@@ -2149,11 +2150,11 @@
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-21",
@@ -2161,11 +2162,11 @@
       "title": "Rigoletto",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000049",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-27",
@@ -2384,8 +2385,8 @@
       "reconciliation_status": "publication_candidate"
     }
   ],
-  "official_lead_venues_with_zero_published": 13,
-  "published_2026_showtimes": 452,
+  "official_lead_venues_with_zero_published": 12,
+  "published_2026_showtimes": 472,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -13901,78 +13902,17 @@
       "city": "Cagliari",
       "region": "Sardegna",
       "month": "2026-03",
-      "published_showtimes": 0,
+      "published_showtimes": 5,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-03-18",
-          "time": "20:00",
-          "title": "Norma",
-          "composer": "Vincenzo Bellini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-03-19",
-          "time": "19:00",
-          "title": "Norma",
-          "composer": "Vincenzo Bellini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-03-20",
-          "time": "20:00",
-          "title": "Norma",
-          "composer": "Vincenzo Bellini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-03-21",
-          "time": "19:00",
-          "title": "Norma",
-          "composer": "Vincenzo Bellini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-03-22",
-          "time": "17:00",
-          "title": "Norma",
-          "composer": "Vincenzo Bellini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 5,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000049",
@@ -14077,90 +14017,17 @@
       "city": "Cagliari",
       "region": "Sardegna",
       "month": "2026-06",
-      "published_showtimes": 0,
+      "published_showtimes": 6,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-06-24",
-          "time": "20:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-06-25",
-          "time": "19:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-06-26",
-          "time": "20:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-06-27",
-          "time": "19:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-06-28",
-          "time": "17:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-06-30",
-          "time": "20:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 6,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000049",
@@ -14168,42 +14035,17 @@
       "city": "Cagliari",
       "region": "Sardegna",
       "month": "2026-07",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-07-01",
-          "time": "20:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-07-02",
-          "time": "20:00",
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000049",
@@ -14326,102 +14168,17 @@
       "city": "Cagliari",
       "region": "Sardegna",
       "month": "2026-11",
-      "published_showtimes": 0,
+      "published_showtimes": 7,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-11-11",
-          "time": "20:00",
-          "title": "Rigoletto",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-12",
-          "time": "19:00",
-          "title": "Rigoletto",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-13",
-          "time": "20:00",
-          "title": "Rigoletto",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-14",
-          "time": "19:00",
-          "title": "Rigoletto",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-15",
-          "time": "17:00",
-          "title": "Rigoletto",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-19",
-          "time": "20:00",
-          "title": "Rigoletto",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-21",
-          "time": "19:00",
-          "title": "Rigoletto",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000049",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 7,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000049",
