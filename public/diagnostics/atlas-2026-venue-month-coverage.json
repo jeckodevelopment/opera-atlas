@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T23:11:38+00:00",
+  "generated_at": "2026-11-24T23:14:25+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,13 +10,13 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 728,
-    "published_dates_not_exhaustively_verified": 136
+    "coverage_not_established": 719,
+    "published_dates_not_exhaustively_verified": 145
   },
-  "zero_published_venue_count": 14,
+  "zero_published_venue_count": 11,
   "zero_published_by_calendar_status": {
-    "acquired": 4,
-    "not_acquired": 10
+    "acquired": 3,
+    "not_acquired": 8
   },
   "venue_audit_priorities": [
     {
@@ -51,23 +51,6 @@
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
       "audit_priority": "zero_published_acquired_calendar",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-v-000014",
-      "venue": "Teatro Dante Alighieri",
-      "city": "Ravenna",
-      "region": "Emilia-Romagna",
-      "calendar_status": "acquired",
-      "monitoring_status": "programma_censito",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 6,
-      "official_unpublished_opera_lead_count": 6,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -139,23 +122,6 @@
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
       "audit_priority": "zero_published_calendar_not_acquired",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000036",
-      "venue": "Arena Sferisterio",
-      "city": "Macerata",
-      "region": "Marche",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 11,
-      "official_unpublished_opera_lead_count": 11,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -241,23 +207,6 @@
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
       "audit_priority": "zero_published_calendar_not_acquired",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000034",
-      "venue": "Gran Teatro Giacomo Puccini",
-      "city": "Torre del Lago Puccini",
-      "region": "Toscana",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 16,
-      "official_unpublished_opera_lead_count": 16,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -546,6 +495,23 @@
       "published_2026_showtimes": 4,
       "published_months": 1,
       "official_verified_opera_lead_count": 0,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-v-000014",
+      "venue": "Teatro Dante Alighieri",
+      "city": "Ravenna",
+      "region": "Emilia-Romagna",
+      "calendar_status": "acquired",
+      "monitoring_status": "programma_censito",
+      "published_2026_showtimes": 6,
+      "published_months": 4,
+      "official_verified_opera_lead_count": 6,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
       "historical_source_seed_count": 0,
@@ -917,6 +883,23 @@
       "missing_recite_certified": false
     },
     {
+      "venue_id": "oa-vd-000036",
+      "venue": "Arena Sferisterio",
+      "city": "Macerata",
+      "region": "Marche",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 11,
+      "published_months": 2,
+      "official_verified_opera_lead_count": 11,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
       "venue_id": "oa-vd-000057",
       "venue": "Teatro Sociale di Mantova",
       "city": "Mantova",
@@ -1155,6 +1138,23 @@
       "missing_recite_certified": false
     },
     {
+      "venue_id": "oa-vd-000034",
+      "venue": "Gran Teatro Giacomo Puccini",
+      "city": "Torre del Lago Puccini",
+      "region": "Toscana",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 16,
+      "published_months": 3,
+      "official_verified_opera_lead_count": 16,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
       "venue_id": "oa-vd-000048",
       "venue": "Teatro Giuseppe Di Stefano",
       "city": "Trapani",
@@ -1261,10 +1261,9 @@
   ],
   "official_2026_opera_lead_venue_count": 13,
   "official_2026_opera_lead_count": 93,
-  "official_unpublished_opera_lead_count": 33,
+  "official_unpublished_opera_lead_count": 0,
   "official_lead_reconciliation_counts": {
-    "clock_review": 33,
-    "exact_match": 60
+    "exact_match": 93
   },
   "official_lead_reconciliation": [
     {
@@ -1353,135 +1352,135 @@
     },
     {
       "date": "2026-07-17",
-      "time": null,
+      "time": "21:00",
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/nabucco",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-26",
-      "time": null,
+      "time": "21:00",
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/nabucco",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-01",
-      "time": null,
+      "time": "21:00",
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/nabucco",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-09",
-      "time": null,
+      "time": "21:00",
       "title": "Nabucco",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/nabucco",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-18",
-      "time": null,
+      "time": "21:00",
       "title": "Il barbiere di Siviglia",
       "composer": "Gioachino Rossini",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-24",
-      "time": null,
+      "time": "21:00",
       "title": "Il barbiere di Siviglia",
       "composer": "Gioachino Rossini",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-02",
-      "time": null,
+      "time": "21:00",
       "title": "Il barbiere di Siviglia",
       "composer": "Gioachino Rossini",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-08",
-      "time": null,
+      "time": "21:00",
       "title": "Il barbiere di Siviglia",
       "composer": "Gioachino Rossini",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/il-barbiere-di-siviglia-2026",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-19",
-      "time": null,
+      "time": "21:00",
       "title": "Il trovatore",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/il-trovatore-2026",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-25",
-      "time": null,
+      "time": "21:00",
       "title": "Il trovatore",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/il-trovatore-2026",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-31",
-      "time": null,
+      "time": "21:00",
       "title": "Il trovatore",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-      "publication_review_required": true,
+      "official_url": "https://www.sferisterio.it/macerata-opera-festival/il-trovatore-2026",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000036",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-18",
@@ -1533,195 +1532,195 @@
     },
     {
       "date": "2026-07-17",
-      "time": null,
+      "time": "21:15",
       "title": "Turandot",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-24",
-      "time": null,
+      "time": "21:15",
       "title": "Turandot",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-01",
-      "time": null,
+      "time": "21:15",
       "title": "Turandot",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-09",
-      "time": null,
+      "time": "21:15",
       "title": "Turandot",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-18",
-      "time": null,
+      "time": "21:15",
       "title": "Tosca",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-31",
-      "time": null,
+      "time": "21:15",
       "title": "Tosca",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-08",
-      "time": null,
+      "time": "21:15",
       "title": "Tosca",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-21",
-      "time": null,
+      "time": "21:15",
       "title": "Tosca",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-29",
-      "time": null,
+      "time": "21:15",
       "title": "La fanciulla del West",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-09-05",
-      "time": null,
+      "time": "21:15",
       "title": "La fanciulla del West",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-07",
-      "time": null,
+      "time": "21:15",
       "title": "Madama Butterfly",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-22",
-      "time": null,
+      "time": "21:15",
       "title": "Madama Butterfly",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-09-04",
-      "time": null,
+      "time": "21:15",
       "title": "Madama Butterfly",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-07-25",
-      "time": null,
+      "time": "21:15",
       "title": "La bohème",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-06",
-      "time": null,
+      "time": "21:15",
       "title": "La bohème",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-08-28",
-      "time": null,
+      "time": "21:15",
       "title": "La bohème",
       "composer": "Giacomo Puccini",
-      "official_url": "https://www.puccinifestival.it/edizione-2026/",
-      "publication_review_required": true,
+      "official_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000034",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-02-13",
@@ -2301,75 +2300,75 @@
     },
     {
       "date": "2026-01-30",
-      "time": null,
+      "time": "20:00",
       "title": "Macbeth",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-      "publication_review_required": true,
+      "official_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000014",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-02-01",
-      "time": null,
+      "time": "15:30",
       "title": "Macbeth",
       "composer": "Giuseppe Verdi",
-      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-      "publication_review_required": true,
+      "official_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000014",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-03-13",
-      "time": null,
+      "time": "20:00",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
-      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-      "publication_review_required": true,
+      "official_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000014",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-03-15",
-      "time": null,
+      "time": "15:30",
       "title": "L’italiana in Algeri",
       "composer": "Gioachino Rossini",
-      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-      "publication_review_required": true,
+      "official_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000014",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-04-24",
-      "time": null,
+      "time": "20:00",
       "title": "Carmen",
       "composer": "Georges Bizet",
-      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-      "publication_review_required": true,
+      "official_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000014",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-04-26",
-      "time": null,
+      "time": "15:30",
       "title": "Carmen",
       "composer": "Georges Bizet",
-      "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-      "publication_review_required": true,
+      "official_url": "https://www.turismo.ra.it/eventi/teatro-opera-danza/stagione-opera-e-danza/",
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000014",
-      "reconciliation_status": "clock_review"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-02-14",
@@ -2384,8 +2383,8 @@
       "reconciliation_status": "exact_match"
     }
   ],
-  "official_lead_venues_with_zero_published": 3,
-  "published_2026_showtimes": 520,
+  "official_lead_venues_with_zero_published": 0,
+  "published_2026_showtimes": 553,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -5497,30 +5496,17 @@
       "city": "Ravenna",
       "region": "Emilia-Romagna",
       "month": "2026-01",
-      "published_showtimes": 0,
+      "published_showtimes": 1,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-01-30",
-          "time": null,
-          "title": "Macbeth",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000014",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 1,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000014",
@@ -5528,30 +5514,17 @@
       "city": "Ravenna",
       "region": "Emilia-Romagna",
       "month": "2026-02",
-      "published_showtimes": 0,
+      "published_showtimes": 1,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-02-01",
-          "time": null,
-          "title": "Macbeth",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000014",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 1,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000014",
@@ -5559,42 +5532,17 @@
       "city": "Ravenna",
       "region": "Emilia-Romagna",
       "month": "2026-03",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-03-13",
-          "time": null,
-          "title": "L’italiana in Algeri",
-          "composer": "Gioachino Rossini",
-          "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000014",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-03-15",
-          "time": null,
-          "title": "L’italiana in Algeri",
-          "composer": "Gioachino Rossini",
-          "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000014",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000014",
@@ -5602,42 +5550,17 @@
       "city": "Ravenna",
       "region": "Emilia-Romagna",
       "month": "2026-04",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-04-24",
-          "time": null,
-          "title": "Carmen",
-          "composer": "Georges Bizet",
-          "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000014",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-04-26",
-          "time": null,
-          "title": "Carmen",
-          "composer": "Georges Bizet",
-          "official_url": "https://artbonus.gov.it/fondazione-ravenna-manifestazioni.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000014",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000014",
@@ -9977,78 +9900,17 @@
       "city": "Torre del Lago Puccini",
       "region": "Toscana",
       "month": "2026-07",
-      "published_showtimes": 0,
+      "published_showtimes": 5,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-07-17",
-          "time": null,
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-24",
-          "time": null,
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-18",
-          "time": null,
-          "title": "Tosca",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-31",
-          "time": null,
-          "title": "Tosca",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-25",
-          "time": null,
-          "title": "La bohème",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 5,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000034",
@@ -10056,126 +9918,17 @@
       "city": "Torre del Lago Puccini",
       "region": "Toscana",
       "month": "2026-08",
-      "published_showtimes": 0,
+      "published_showtimes": 9,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-08-01",
-          "time": null,
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-09",
-          "time": null,
-          "title": "Turandot",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-08",
-          "time": null,
-          "title": "Tosca",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-21",
-          "time": null,
-          "title": "Tosca",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-29",
-          "time": null,
-          "title": "La fanciulla del West",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-07",
-          "time": null,
-          "title": "Madama Butterfly",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-22",
-          "time": null,
-          "title": "Madama Butterfly",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-06",
-          "time": null,
-          "title": "La bohème",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-28",
-          "time": null,
-          "title": "La bohème",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 9,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000034",
@@ -10183,42 +9936,17 @@
       "city": "Torre del Lago Puccini",
       "region": "Toscana",
       "month": "2026-09",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-09-05",
-          "time": null,
-          "title": "La fanciulla del West",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-09-04",
-          "time": null,
-          "title": "Madama Butterfly",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.puccinifestival.it/edizione-2026/",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000034",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000034",
@@ -10604,102 +10332,17 @@
       "city": "Macerata",
       "region": "Marche",
       "month": "2026-07",
-      "published_showtimes": 0,
+      "published_showtimes": 7,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-07-17",
-          "time": null,
-          "title": "Nabucco",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-26",
-          "time": null,
-          "title": "Nabucco",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-18",
-          "time": null,
-          "title": "Il barbiere di Siviglia",
-          "composer": "Gioachino Rossini",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-24",
-          "time": null,
-          "title": "Il barbiere di Siviglia",
-          "composer": "Gioachino Rossini",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-19",
-          "time": null,
-          "title": "Il trovatore",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-25",
-          "time": null,
-          "title": "Il trovatore",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-07-31",
-          "time": null,
-          "title": "Il trovatore",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 7,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000036",
@@ -10707,66 +10350,17 @@
       "city": "Macerata",
       "region": "Marche",
       "month": "2026-08",
-      "published_showtimes": 0,
+      "published_showtimes": 4,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-08-01",
-          "time": null,
-          "title": "Nabucco",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-09",
-          "time": null,
-          "title": "Nabucco",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-02",
-          "time": null,
-          "title": "Il barbiere di Siviglia",
-          "composer": "Gioachino Rossini",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        },
-        {
-          "date": "2026-08-08",
-          "time": null,
-          "title": "Il barbiere di Siviglia",
-          "composer": "Gioachino Rossini",
-          "official_url": "https://www.sferisterio.it/comunicati-stampa/macerata-opera-festival-2026-62a-edizione",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000036",
-          "reconciliation_status": "clock_review"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 4,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000036",
