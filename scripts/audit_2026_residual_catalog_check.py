@@ -136,8 +136,7 @@ def main():
     result=check(json.loads(TRIAGE.read_text(encoding="utf-8")),
                  json.loads(CATALOG.read_text(encoding="utf-8")))
     args.output.parent.mkdir(parents=True,exist_ok=True)
-    args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"
-",encoding="utf-8")
+    args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("RESIDUAL_2026_COUNTERS "+json.dumps(result["counts"],ensure_ascii=False))
     for r in result["observations"]:
         if r["status"]=="catalog_same_work_day_venue_clock_discrepancy":
