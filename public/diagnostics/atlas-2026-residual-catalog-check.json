@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T20:56:21+00:00",
+  "generated_at": "2026-11-24T21:02:59+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
@@ -10,42 +10,46 @@
     "catalog_same_work_day_clock_official_pisa_venue_unprovided": 12,
     "catalog_same_work_day_venue_clock_discrepancy": 11,
     "catalog_same_work_day_venue_exact_clock": 2,
-    "official_nonopera_first_party_detail": 31,
+    "official_cancelled_event_first_party": 1,
+    "official_nonopera_first_party_detail": 65,
     "official_nonopera_source_scoped": 3,
-    "requires_official_genre_and_catalog_review": 62
+    "official_opera_special_format_editorial_review": 2,
+    "requires_official_genre_and_catalog_review": 25
   },
   "by_source": {
     "bellini-catania-opera-2026-27": {
       "catalog_same_work_day_venue_clock_discrepancy": 4,
-      "official_nonopera_first_party_detail": 6,
-      "requires_official_genre_and_catalog_review": 6
+      "official_nonopera_first_party_detail": 12
     },
     "bologna-comunale-opera-2027": {
-      "official_nonopera_first_party_detail": 12,
+      "official_nonopera_first_party_detail": 16,
       "official_nonopera_source_scoped": 3,
-      "requires_official_genre_and_catalog_review": 5
+      "official_opera_special_format_editorial_review": 1
     },
     "maggio-fiorentino-calendar-2027": {
       "official_nonopera_first_party_detail": 4
     },
     "modena-teatro-opera-2026-27": {
       "catalog_same_work_day_venue_clock_discrepancy": 7,
-      "official_nonopera_first_party_detail": 5,
-      "requires_official_genre_and_catalog_review": 24
+      "official_cancelled_event_first_party": 1,
+      "official_nonopera_first_party_detail": 21,
+      "official_opera_special_format_editorial_review": 1,
+      "requires_official_genre_and_catalog_review": 6
     },
     "piacenza-opera-2026-27": {
       "catalog_same_work_day_venue_exact_clock": 2,
-      "official_nonopera_first_party_detail": 2,
-      "requires_official_genre_and_catalog_review": 4
+      "official_nonopera_first_party_detail": 4,
+      "requires_official_genre_and_catalog_review": 2
     },
     "pisa-future-calendar": {
       "catalog_same_work_day_clock_official_pisa_venue_unprovided": 10,
-      "official_nonopera_first_party_detail": 2,
-      "requires_official_genre_and_catalog_review": 20
+      "official_nonopera_first_party_detail": 7,
+      "requires_official_genre_and_catalog_review": 15
     },
     "pisa-verdi-opera-2026-27": {
       "catalog_same_work_day_clock_official_pisa_venue_unprovided": 2,
-      "requires_official_genre_and_catalog_review": 3
+      "official_nonopera_first_party_detail": 1,
+      "requires_official_genre_and_catalog_review": 2
     }
   },
   "observations": [
@@ -59,9 +63,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "reason": "Official event labeled Concerti and Concerto Sinfonico."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -75,9 +84,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/que-viva-espana/",
+        "reason": "Second dated performance of the same officially categorized symphonic concert."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -91,9 +105,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/il-natale-del-redentore/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/il-natale-del-redentore/",
+        "reason": "Official event category Concerti, in the Cathedral of Acireale."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -107,9 +126,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "reason": "First-party event category Concerti."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -123,9 +147,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/aimez-vous-brahms/",
+        "reason": "Second performance of an official concert event."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -186,9 +215,14 @@
         "https://www.teatromassimobellini.it/news/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "recital",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/recital-house-of-puccini/",
+        "official_genre_url": "https://www.teatromassimobellini.it/eventi/recital-house-of-puccini/",
+        "reason": "Official event category Recital, not a staged Puccini opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -597,9 +631,14 @@
         "https://www.tcbo.it/en/evento/accademia/studenti-allopera-il-flauto-magico-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_special_format_editorial_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "educational_semi_staged_opera",
+        "official_detail_url": "https://www.tcbo.it/en/evento/accademia/studenti-allopera-il-flauto-magico-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/studenti-allopera-il-flauto-magico-2026/",
+        "reason": "Official TCBO detail: 90-minute semi-staged Mozart opera with academy singers; editorial review needed, not a concert-only exclusion."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -613,9 +652,14 @@
         "https://www.tcbo.it/en/evento/concerto/angius-grazia-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://www.tcbo.it/evento/concerto/angius-grazia-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/concerto/angius-grazia-2026/",
+        "reason": "TCBO classifies it under Concerti / Stagione Sinfonica."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -650,9 +694,14 @@
         "https://www.tcbo.it/en/evento/concerto/sauer-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://www.tcbo.it/en/evento/concerto/sauer-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/concerto/sauer-2026/",
+        "reason": "TCBO official event under concerto."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -729,9 +778,14 @@
         "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-concerto-di-natale-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-concerto-di-natale-2026/",
+        "official_genre_url": "https://www.tcbo.it/en/evento/accademia/domenica-in-musica-concerto-di-natale-2026/",
+        "reason": "Official Domenica in Musica Christmas concert, not a staged opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -766,9 +820,14 @@
         "https://www.tcbo.it/en/evento/concerto/stenz-2026/"
       ],
       "triage_bucket": "previous_nonopera_decision_cross_url_corroboration",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "symphonic_concert",
+        "official_detail_url": "https://www.tcbo.it/evento/concerto/stenz-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/concerto/stenz-2026/",
+        "reason": "Official TCBO symphonic concert: Panfili and Beethoven Symphony No. 9."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -925,9 +984,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/il-cambiamento-era-incessante/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/il-cambiamento-era-incessante/",
+        "reason": "Official detail describes a concert of selected Handel arias, not a full opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -942,9 +1006,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "official_opera_candidate_needs_editorial_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_opera_special_format_editorial_review",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera_semiscenic_reconstruction",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/",
+        "reason": "Vivaldi RV 706-A: only surviving music performed semi-staged with spoken narration of lost sections; requires editorial scope review."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -959,9 +1028,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "chamber_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-1-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-1-2/",
+        "reason": "Festival detail explicitly calls this a masterclass concert."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -976,9 +1050,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "contemporary_vocal_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/voci-inaudite/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/voci-inaudite/",
+        "reason": "First-party page describes two-part vocal concert, not an opera staging."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -993,9 +1072,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "educational_opera_encounter",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/kattivissimi-and-friends-allopera/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/kattivissimi-and-friends-allopera/",
+        "reason": "Official detail describes a children and families illustrated introduction to opera characters."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1010,9 +1094,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "narrated_music_event",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/letteralmente-verdi/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/letteralmente-verdi/",
+        "reason": "First-party detail describes musical narration about Verdi and Il trovatore rather than staged Il trovatore."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1027,9 +1116,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "silent_film_live_score",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/ma-lamor-mio-non-muore/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/ma-lamor-mio-non-muore/",
+        "reason": "Official festival detail: screening of restored 1913 silent film with newly composed live music."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1044,9 +1138,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "dance",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/viva-verdi/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/viva-verdi/",
+        "reason": "Balletto di Milano performs choreography to Verdi ballet music, not staged opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1061,9 +1160,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "chamber_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-2-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/kammermusik-n-2-2/",
+        "reason": "Official festival programme describes a masterclass chamber concert."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1078,9 +1182,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "gala_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/concerto-di-gala-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/concerto-di-gala-2/",
+        "reason": "First-party description: gala concert featuring Anna Pirozzi celebrating Verdi."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1095,9 +1204,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "baroque_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/a-casa-bononcini/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/a-casa-bononcini/",
+        "reason": "Official page explicitly describes a baroque music concert."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1112,9 +1226,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "sacred_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/messa-da-requiem/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/messa-da-requiem/",
+        "reason": "Verdi Messa da Requiem is a concert performance of sacred work, not a theatrical opera staging."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1129,9 +1248,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "chamber_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/dalla-boemia-al-ducato-di-modena-3/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/dalla-boemia-al-ducato-di-modena-3/",
+        "reason": "Official programme for flautist and pianist, not opera staging."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1146,9 +1270,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "tribute_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/spettacolo-a-cura-della-fondazione-luciano-pavarotti/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/spettacolo-a-cura-della-fondazione-luciano-pavarotti/",
+        "reason": "Pavarotti and Mancini tribute musical programme, not a staged opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1163,9 +1292,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera_gala_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/filarmonie-future-2/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/filarmonie-future-2/",
+        "reason": "Official event describes an orchestral concert of excerpts from Mozart, Rossini, Verdi and Puccini."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1180,9 +1314,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "choral_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/la-preghiera-nellopera-lirica/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/la-preghiera-nellopera-lirica/",
+        "reason": "Official detail describes a choral concert of operatic prayer excerpts."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1197,9 +1336,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "contemporary_chamber_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/le-maschere-allo-specchio/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/le-maschere-allo-specchio/",
+        "reason": "Official programme presents selected contemporary chamber and vocal pieces, not a complete opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1314,9 +1458,14 @@
         "https://www.teatrocomunalemodena.it/spettacoli/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_cancelled_event_first_party",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "cancelled_concert",
+        "official_detail_url": "https://www.teatrocomunalemodena.it/spettacolo/caterina-barbieri-e-fontanamix-ensemble/",
+        "official_genre_url": "https://www.teatrocomunalemodena.it/spettacolo/caterina-barbieri-e-fontanamix-ensemble/",
+        "reason": "Official venue explicitly states that this concert was cancelled and tickets are refunded."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1554,9 +1703,14 @@
         "https://teatripiacenza.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "pre_opera_public_talk",
+        "official_detail_url": "https://teatripiacenza.it/event/prima-di-andare-in-scena-26-27/",
+        "official_genre_url": "https://teatripiacenza.it/event/prima-di-andare-in-scena-26-27/",
+        "reason": "Official event is an introductory pre-opera talk and listening guide, not a performance of Siberia."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1591,9 +1745,14 @@
         "https://teatripiacenza.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "pre_opera_public_talk",
+        "official_detail_url": "https://teatripiacenza.it/event/aperiopera-26-27/",
+        "official_genre_url": "https://teatripiacenza.it/event/aperiopera-26-27/",
+        "reason": "Official AperiOpera event with students discussing Siberia; 18 and 20 Dec are separate general-public operatic performances."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -1930,9 +2089,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "opera_introduction_talk",
+        "official_detail_url": "https://teatrodipisa.it/en/calendario/dido-and-aeneas-guida-allascolto-con-enrico-girardi/",
+        "official_genre_url": "https://teatrodipisa.it/en/calendario/dido-and-aeneas-guida-allascolto-con-enrico-girardi/",
+        "reason": "Official Pisa listening guide precedes public opera dates 23/25 October and is not a recita."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2029,9 +2193,14 @@
         "https://teatrodipisa.it/fr/calendario/categoria/opera/2026-10/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "musical_reading",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/cera-una-volta-un-re-omaggio-a-carlo-collodi-per-i-200-anni-dalla-nascita/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/cera-una-volta-un-re-omaggio-a-carlo-collodi-per-i-200-anni-dalla-nascita/",
+        "reason": "Official Pisa programme categorizes this Sergio Rubini event as a musical reading for Collodi bicentenary."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2061,9 +2230,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "children_musical",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/pimpa-il-musical-a-pois/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/pimpa-il-musical-a-pois/",
+        "reason": "First-party Pisa detail identifies a musical for families, not operatic performance."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2093,9 +2267,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "prose_theatre",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "reason": "Official Pisa event is categorized Prosa."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2109,9 +2288,14 @@
         "https://teatrodipisa.it/calendario/categoria/opera/mese/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "prose_theatre",
+        "official_detail_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "official_genre_url": "https://teatrodipisa.it/spettacolo/prima-del-temporale/",
+        "reason": "Second of two Prosa performances, not opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -2321,9 +2505,14 @@
         "https://teatrodipisa.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "school_only_rehearsal",
+        "official_detail_url": "https://teatrodipisa.it/calendario/",
+        "official_genre_url": "https://teatrodipisa.it/calendario/",
+        "reason": "Official Pisa programme explicitly marks 2 December as a school-only dress rehearsal, distinct from public 4 and 6 December shows."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
