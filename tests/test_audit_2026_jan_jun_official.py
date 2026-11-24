@@ -1,11 +1,34 @@
 """First-half 2026 historical scan remains bounded and official-source-scoped."""
 import unittest
+import json
+from scripts.audit_2026_jan_jun_official import SEEDS, INDEX_CONFIG, DIRECTORY, HISTORICAL
 from unittest.mock import patch
 
 from scripts.audit_2026_jan_jun_official import detail_links, scan, validate_seeds, credited_official_opera_facts
 
 
 class HistoricalJanJunTests(unittest.TestCase):
+    def test_official_2025_26_expansion_keeps_venue_source_identity(self):
+        def read(path):
+            return json.loads(path.read_text(encoding="utf-8"))
+        seeds=read(SEEDS)
+        approved=validate_seeds(seeds,read(INDEX_CONFIG),read(DIRECTORY),read(HISTORICAL))
+        self.assertEqual(8,len(approved))
+        self.assertEqual(7,len({x["venue_id"] for x in approved}))
+        by_key={x["key"]:x for x in approved}
+        self.assertEqual(
+            "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
+            by_key["massimo-2025-26"]["url"])
+        self.assertEqual(("oa-vd-000046","Catania","2025/26"),
+                         tuple(by_key["bellini-catania-2025-26"][k]
+                               for k in ("venue_id","city","season")))
+        self.assertEqual(("oa-vd-000019","Verona","2026"),
+                         tuple(by_key["filarmonico-verona-2026"][k]
+                               for k in ("venue_id","city","season")))
+        for key in ("bellini-catania-2025-26","filarmonico-verona-2026"):
+            self.assertTrue(by_key[key]["url"].startswith(by_key[key]["official_url"]))
+        self.assertTrue(all(x["season"] in {"2025/26","2026"} for x in approved))
+
     def test_links_discovered_from_official_site_only(self):
         html = ('<a href="/event/la-clemenza-di-tito/">La clemenza di Tito</a>'
                 '<a href="https://other.example/event/carmen/">Carmen</a>'

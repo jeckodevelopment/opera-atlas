@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "provenance": "Each URL individually retrieved from the institution's official web presence, November 2026; no generated URL patterns",
+  "provenance": "Official source pages individually verified 24 November 2026. Six existing 2025/26 seed entries retained (Palermo URL replaced with the full official opera-and-ballet calendar); Catania 2025/26 and Teatro Filarmonico 2026 official production announcements added. Acquisition is read-only, never certification of completeness.",
   "seeds": [
     {
       "venue_id": "oa-v-000001",
@@ -48,8 +48,24 @@
       "city": "Palermo",
       "key": "massimo-2025-26",
       "official_url": "https://www.teatromassimo.it/",
-      "url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
+      "url": "https://www.teatromassimo.it/la-stagione-2025-26-del-teatro-massimo/",
       "season": "2025/26"
+    },
+    {
+      "venue_id": "oa-vd-000046",
+      "city": "Catania",
+      "key": "bellini-catania-2025-26",
+      "official_url": "https://www.teatromassimobellini.it/",
+      "url": "https://www.teatromassimobellini.it/la-liberta-di-scegliere-la-bellezza-il-teatro-massimo-bellini-presenta-le-nuove-stagioni-di-opere-e-balletti-concerti-e-recital-2025-2026/",
+      "season": "2025/26"
+    },
+    {
+      "venue_id": "oa-vd-000019",
+      "city": "Verona",
+      "key": "filarmonico-verona-2026",
+      "official_url": "https://www.arena.it/",
+      "url": "https://www.arena.it/magazine/news/fondazione-arena-di-verona-al-teatro-filarmonico-presentata-la-stagione-artistica-2026/",
+      "season": "2026"
     }
   ]
 }
