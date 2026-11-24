@@ -159,6 +159,17 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertIn("types: [completed]",workflow)
         self.assertIn("github.event.workflow_run.conclusion == 'success'",workflow)
 
+    def test_publish_restores_downloaded_artifact_before_checkout_latest_main(self):
+        from pathlib import Path
+        workflow=(Path(__file__).resolve().parents[1]/".github"/"workflows"/
+                  "audit-2026-venue-month-coverage.yml").read_text(encoding="utf-8")
+        backup="cp public/diagnostics/atlas-2026-venue-month-coverage.json /tmp/atlas-2026-venue-month-coverage.json"
+        restore="git restore --worktree -- public/diagnostics/atlas-2026-venue-month-coverage.json"
+        switch="git checkout -B publish-2026-venue-month FETCH_HEAD"
+        replay="cp /tmp/atlas-2026-venue-month-coverage.json public/diagnostics/atlas-2026-venue-month-coverage.json"
+        self.assertTrue(workflow.index(backup)<workflow.index(restore)<
+                        workflow.index(switch)<workflow.index(replay))
+
     def test_does_not_read_or_change_live_published_records(self):
         before=json.dumps(self.inputs[2],sort_keys=True)
         build_matrix(*self.inputs)
