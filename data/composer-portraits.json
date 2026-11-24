@@ -1,4 +1,31 @@
 {
-  "portraits": {},
+  "portraits": {
+    "oa-c-000001": {
+      "alt": "Ritratto di Alberto Franchetti",
+      "author": "Varischi e Artico",
+      "commons_file": "Alberto Franchetti (1902) - Archivio Storico Ricordi FOTO000791 C.jpg",
+      "credit": "Varischi e Artico — Wikimedia Commons — CC-BY-SA-4.0",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "reviewed_on": "2026-11-24",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alberto_Franchetti_(1902)_-_Archivio_Storico_Ricordi_FOTO000791_C.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Alberto_Franchetti_%281902%29_-_Archivio_Storico_Ricordi_FOTO000791_C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "verified": true,
+      "wikidata_id": "Q722975"
+    },
+    "oa-c-000054": {
+      "alt": "Ritratto di Matteo Musumeci",
+      "author": "La sonnambula",
+      "commons_file": "Matteo Musumeci - compositore.jpg",
+      "credit": "La sonnambula — Wikimedia Commons — CC-BY-SA-4.0",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "reviewed_on": "2026-11-24",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Matteo_Musumeci_-_compositore.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Matteo_Musumeci_-_compositore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "verified": true,
+      "wikidata_id": "Q3852161"
+    }
+  },
   "schema_version": 1
 }
