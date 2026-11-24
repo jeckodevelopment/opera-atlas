@@ -49,6 +49,9 @@ APPROVED_PAGES = {
     "https://www.teatrofraschini.it/programma/cavalleria-rusticana-pagliacci/",
     "https://www.teatrofraschini.it/programma/un-ballo-in-maschera/",
     "https://www.teatrofraschini.it/programma/death-in-venice/",
+    "https://www.teatromassimobellini.it/eventi/aida-2026/",
+    "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/",
+    "https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/",
     "https://www.teatromassimo.it/event/dido-and-aeneas-2/",
     "https://www.teatromassimo.it/event/semiramide/",
     "https://www.teatromassimo.it/event/aida/",
@@ -436,6 +439,19 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                     or production.get("region")!="Sicilia"
                     or sorted(production.get("dates",[]))!=sorted(approved["dates"])):
                 raise ValueError("unverified 2026 Teatro Massimo Palermo production")
+        # Three first-party Catania 2026 work details have independently
+        # reviewed tickets for all seven dates. S1/S2 are general-public
+        # ticket categories at this theatre, not a school-only programme.
+        bellini_2026 = {"https://www.teatromassimobellini.it/eventi/aida-2026/":{"title":"Aida","composer":"Giuseppe Verdi","dates":[["2026-01-20","20:30"],["2026-01-21","17:30"],["2026-01-22","17:30"],["2026-01-24","17:30"],["2026-01-25","17:30"],["2026-01-27","17:30"],["2026-01-28","20:30"]]},"https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/":{"title":"La vedova allegra","composer":"Franz Lehár","dates":[["2026-03-06","20:30"],["2026-03-07","17:30"],["2026-03-08","17:30"],["2026-03-10","17:30"],["2026-03-11","20:30"],["2026-03-12","17:30"],["2026-03-13","17:30"]]},"https://www.teatromassimobellini.it/eventi/andrea-chenier-2026/":{"title":"Andrea Chénier","composer":"Umberto Giordano","dates":[["2026-04-10","20:30"],["2026-04-11","17:30"],["2026-04-12","17:30"],["2026-04-14","17:30"],["2026-04-15","20:30"],["2026-04-16","17:30"],["2026-04-18","17:30"]]}}
+        if url in bellini_2026:
+            reviewed=bellini_2026[url]
+            if (production.get("title")!=reviewed["title"]
+                    or production.get("composer")!=reviewed["composer"]
+                    or production.get("municipality")!="Catania"
+                    or production.get("venue")!="Teatro Massimo Bellini"
+                    or production.get("region")!="Sicilia"
+                    or sorted(production.get("dates",[]))!=sorted(reviewed["dates"])):
+                raise ValueError("unverified Teatro Massimo Bellini 2026 production")
         if url in historical_approved:
             reviewed = historical_approved[url]
             if (production.get("title") != reviewed["canonical_title"]
