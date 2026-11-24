@@ -1257,6 +1257,16 @@
         "https://www.rossinioperafestival.it/soggetti/semiramide/",
         "https://www.teatromassimo.it/event/semiramide/"
       ]
+    },
+    "the-turn-of-the-screw": {
+      "librettist": "Myfanwy Piper, dal racconto di Henry James",
+      "premiere_year": 1954,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.brittenpearsarts.org/music/the-turn-of-the-screw",
+        "https://www.boosey.com/opera/moreDetails?musicID=4880"
+      ]
     }
   },
   "works_by_id": {
