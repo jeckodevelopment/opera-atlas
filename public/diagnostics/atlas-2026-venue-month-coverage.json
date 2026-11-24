@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T08:17:36+00:00",
+  "generated_at": "2026-11-24T08:25:47+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,28 +10,28 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 764,
-    "official_observations_require_reconciliation": 11,
-    "published_dates_not_exhaustively_verified": 89
+    "coverage_not_established": 763,
+    "official_observations_require_reconciliation": 9,
+    "published_dates_not_exhaustively_verified": 92
   },
-  "published_2026_showtimes": 346,
+  "published_2026_showtimes": 365,
   "observed_2026_opera_showtimes": 115,
-  "unmatched_source_showtimes": 58,
+  "unmatched_source_showtimes": 39,
   "h1_scope_review": [
     {
-      "venue_id": "oa-v-000008",
+      "venue_id": "oa-v-000021",
       "date": "2026-04-18",
       "title": "Il piccolo principe",
       "reason": "family_or_school_scope_review"
     },
     {
-      "venue_id": "oa-v-000008",
+      "venue_id": "oa-v-000021",
       "date": "2026-01-31",
       "title": "Piccolo Orso e la Montagna di ghiaccio",
       "reason": "family_or_school_scope_review"
     },
     {
-      "venue_id": "oa-v-000008",
+      "venue_id": "oa-v-000021",
       "date": "2026-02-01",
       "title": "Piccolo Orso e la Montagna di ghiaccio",
       "reason": "family_or_school_scope_review"
@@ -54,40 +54,11 @@
       "city": "Torino",
       "region": "Piemonte",
       "month": "2026-01",
-      "published_showtimes": 0,
+      "published_showtimes": 7,
       "source_observed_opera_showtimes": 7,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 7,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-01-20",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-01-21",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-01-22",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-01-23",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-01-24",
-          "time": "15:00"
-        },
-        {
-          "date": "2026-01-25",
-          "time": "15:00"
-        },
-        {
-          "date": "2026-01-27",
-          "time": "15:00"
-        }
-      ],
+      "observed_already_published": 7,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "regio-2025-26",
@@ -102,7 +73,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000001",
@@ -110,20 +81,11 @@
       "city": "Torino",
       "region": "Piemonte",
       "month": "2026-02",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 2,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 2,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-02-24",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-02-26",
-          "time": "20:00"
-        }
-      ],
+      "observed_already_published": 2,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "regio-2025-26",
@@ -138,7 +100,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000001",
@@ -146,27 +108,11 @@
       "city": "Torino",
       "region": "Piemonte",
       "month": "2026-03",
-      "published_showtimes": 0,
+      "published_showtimes": 4,
       "source_observed_opera_showtimes": 5,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 5,
+      "observed_already_published": 4,
+      "observed_not_in_publication": 1,
       "observed_unpublished_dates": [
-        {
-          "date": "2026-03-01",
-          "time": "15:00"
-        },
-        {
-          "date": "2026-03-03",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-03-05",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-03-07",
-          "time": "15:00"
-        },
         {
           "date": "2026-03-31",
           "time": "20:00"
@@ -242,36 +188,11 @@
       "city": "Torino",
       "region": "Piemonte",
       "month": "2026-05",
-      "published_showtimes": 0,
+      "published_showtimes": 6,
       "source_observed_opera_showtimes": 6,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 6,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-05-06",
-          "time": "19:30"
-        },
-        {
-          "date": "2026-05-08",
-          "time": "19:30"
-        },
-        {
-          "date": "2026-05-10",
-          "time": "15:00"
-        },
-        {
-          "date": "2026-05-13",
-          "time": "19:30"
-        },
-        {
-          "date": "2026-05-15",
-          "time": "15:00"
-        },
-        {
-          "date": "2026-05-17",
-          "time": "15:00"
-        }
-      ],
+      "observed_already_published": 6,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "regio-2025-26",
@@ -286,7 +207,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000001",
@@ -1770,31 +1691,10 @@
       "region": "Veneto",
       "month": "2026-03",
       "published_showtimes": 0,
-      "source_observed_opera_showtimes": 5,
+      "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
-      "observed_not_in_publication": 5,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-03-20",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-03-22",
-          "time": "15:30"
-        },
-        {
-          "date": "2026-03-24",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-03-26",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-03-29",
-          "time": "15:30"
-        }
-      ],
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "fenice-2025-26",
@@ -1809,7 +1709,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "coverage_not_established"
     },
     {
       "venue_id": "oa-v-000008",
@@ -1872,30 +1772,10 @@
       "region": "Veneto",
       "month": "2026-06",
       "published_showtimes": 1,
-      "source_observed_opera_showtimes": 10,
+      "source_observed_opera_showtimes": 5,
       "observed_already_published": 1,
-      "observed_not_in_publication": 9,
+      "observed_not_in_publication": 4,
       "observed_unpublished_dates": [
-        {
-          "date": "2026-06-12",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-06-14",
-          "time": "17:00"
-        },
-        {
-          "date": "2026-06-16",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-06-18",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-06-20",
-          "time": "17:00"
-        },
         {
           "date": "2026-06-26",
           "time": "19:00"
@@ -10704,14 +10584,35 @@
       "region": "Veneto",
       "month": "2026-03",
       "published_showtimes": 0,
-      "source_observed_opera_showtimes": 0,
+      "source_observed_opera_showtimes": 5,
       "observed_already_published": 0,
-      "observed_not_in_publication": 0,
-      "observed_unpublished_dates": [],
+      "observed_not_in_publication": 5,
+      "observed_unpublished_dates": [
+        {
+          "date": "2026-03-20",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-03-22",
+          "time": "15:30"
+        },
+        {
+          "date": "2026-03-24",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-03-26",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-03-29",
+          "time": "15:30"
+        }
+      ],
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "official_observations_require_reconciliation"
     },
     {
       "venue_id": "oa-v-000021",
@@ -10752,14 +10653,35 @@
       "region": "Veneto",
       "month": "2026-06",
       "published_showtimes": 0,
-      "source_observed_opera_showtimes": 0,
+      "source_observed_opera_showtimes": 5,
       "observed_already_published": 0,
-      "observed_not_in_publication": 0,
-      "observed_unpublished_dates": [],
+      "observed_not_in_publication": 5,
+      "observed_unpublished_dates": [
+        {
+          "date": "2026-06-12",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-06-14",
+          "time": "17:00"
+        },
+        {
+          "date": "2026-06-16",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-06-18",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-06-20",
+          "time": "17:00"
+        }
+      ],
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "official_observations_require_reconciliation"
     },
     {
       "venue_id": "oa-v-000021",
