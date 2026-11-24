@@ -10,6 +10,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'data/official-2026-retrospective-season-seeds.json'
       - 'scripts/audit_2026_jan_jun_official.py'
       - '.github/workflows/audit-2026-jan-jun-official.yml'
   workflow_dispatch:
@@ -55,7 +56,7 @@ jobs:
           from pathlib import Path
           x=json.loads(Path('public/diagnostics/atlas-2026-jan-jun-official-archive.json').read_text())
           assert x['year']==2026 and x['read_only'] and not x['catalog_updated']
-          assert x['complete_seasons_certified']==0 and x['historical_seed_count']>=5
+          assert x['complete_seasons_certified']==0 and x['historical_seed_count']==8 and x['venues_seeded']==7
           print('Seeds acquired:',x['seed_pages_acquired'])
           print('Details acquired:',x['detail_pages_acquired'])
           print('2026 Jan-Jun observations:',x['jan_jun_unverified_event_observations'])
