@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T11:25:06+00:00",
+  "generated_at": "2026-11-24T15:10:14+00:00",
   "read_only": true,
   "catalog_updated": false,
   "complete_seasons_certified": 0,
@@ -9,17 +9,20 @@
   "counts": {
     "catalog_same_work_day_venue_clock_discrepancy": 11,
     "catalog_same_work_day_venue_exact_clock": 2,
+    "official_nonopera_first_party_detail": 11,
     "official_nonopera_source_scoped": 3,
-    "requires_official_genre_and_catalog_review": 68
+    "requires_official_genre_and_catalog_review": 57
   },
   "by_source": {
     "bellini-catania-opera-2026-27": {
       "catalog_same_work_day_venue_clock_discrepancy": 4,
-      "requires_official_genre_and_catalog_review": 12
+      "official_nonopera_first_party_detail": 6,
+      "requires_official_genre_and_catalog_review": 6
     },
     "bologna-comunale-opera-2027": {
+      "official_nonopera_first_party_detail": 5,
       "official_nonopera_source_scoped": 3,
-      "requires_official_genre_and_catalog_review": 17
+      "requires_official_genre_and_catalog_review": 12
     },
     "maggio-fiorentino-calendar-2027": {
       "requires_official_genre_and_catalog_review": 4
@@ -189,9 +192,14 @@
         "https://www.teatromassimobellini.it/opere-e-balletto/"
       ],
       "triage_bucket": "cross_index_duplicate_needs_genre_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "ballet",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+        "official_genre_url": "https://www.teatromassimobellini.it/al-via-i-lavori-di-riqualificazione-e-adeguamento-alla-sicurezza-del-monumentale-teatro-massimo-v-bellini/",
+        "reason": "The theatre explicitly identifies the 1-6 December performances as a ballet in three acts, not an opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -205,9 +213,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "ballet",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+        "official_genre_url": "https://www.teatromassimobellini.it/al-via-i-lavori-di-riqualificazione-e-adeguamento-alla-sicurezza-del-monumentale-teatro-massimo-v-bellini/",
+        "reason": "The theatre explicitly identifies the 1-6 December performances as a ballet in three acts, not an opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -221,9 +234,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "ballet",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+        "official_genre_url": "https://www.teatromassimobellini.it/al-via-i-lavori-di-riqualificazione-e-adeguamento-alla-sicurezza-del-monumentale-teatro-massimo-v-bellini/",
+        "reason": "The theatre explicitly identifies the 1-6 December performances as a ballet in three acts, not an opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -237,9 +255,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "ballet",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+        "official_genre_url": "https://www.teatromassimobellini.it/al-via-i-lavori-di-riqualificazione-e-adeguamento-alla-sicurezza-del-monumentale-teatro-massimo-v-bellini/",
+        "reason": "The theatre explicitly identifies the 1-6 December performances as a ballet in three acts, not an opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -253,9 +276,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "ballet",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+        "official_genre_url": "https://www.teatromassimobellini.it/al-via-i-lavori-di-riqualificazione-e-adeguamento-alla-sicurezza-del-monumentale-teatro-massimo-v-bellini/",
+        "reason": "The theatre explicitly identifies the 1-6 December performances as a ballet in three acts, not an opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -269,9 +297,14 @@
         "https://www.teatromassimobellini.it/calendario/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "ballet",
+        "official_detail_url": "https://www.teatromassimobellini.it/eventi/la-bella-addormentata-5/",
+        "official_genre_url": "https://www.teatromassimobellini.it/al-via-i-lavori-di-riqualificazione-e-adeguamento-alla-sicurezza-del-monumentale-teatro-massimo-v-bellini/",
+        "reason": "The theatre explicitly identifies the 1-6 December performances as a ballet in three acts, not an opera."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -333,9 +366,14 @@
         "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "children_concert",
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "reason": "The official programme categorizes all five dated performances as a narrated concert for children aged three to six."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -349,9 +387,14 @@
         "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "children_concert",
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "reason": "The official programme categorizes all five dated performances as a narrated concert for children aged three to six."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -453,9 +496,14 @@
         "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "children_concert",
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "reason": "The official programme categorizes all five dated performances as a narrated concert for children aged three to six."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -501,9 +549,14 @@
         "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "children_concert",
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "reason": "The official programme categorizes all five dated performances as a narrated concert for children aged three to six."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
@@ -549,9 +602,14 @@
         "https://www.tcbo.it/en/evento/accademia/pierino-e-il-lupo-2026/"
       ],
       "triage_bucket": "unclassified_requires_source_review",
-      "status": "requires_official_genre_and_catalog_review",
+      "status": "official_nonopera_first_party_detail",
       "catalog_matches": [],
-      "official_nonopera_evidence": null,
+      "official_nonopera_evidence": {
+        "genre": "children_concert",
+        "official_detail_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "official_genre_url": "https://www.tcbo.it/evento/accademia/pierino-e-il-lupo-2026/",
+        "reason": "The official programme categorizes all five dated performances as a narrated concert for children aged three to six."
+      },
       "automatic_publication": false,
       "automatic_exclusion": false
     },
