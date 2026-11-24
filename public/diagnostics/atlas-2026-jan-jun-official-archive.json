@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "period": "2026-01-01/2026-06-30",
+  "checked_at": "2026-11-24T07:19:03+00:00",
+  "read_only": true,
+  "catalog_updated": false,
+  "complete_seasons_certified": 0,
+  "historical_seed_count": 6,
+  "venues_seeded": 5,
+  "seed_pages_acquired": 5,
+  "detail_pages_attempted": 42,
+  "detail_pages_acquired": 42,
+  "jan_jun_unverified_event_observations": 0,
+  "deferred_per_host": {},
+  "seed_results": [
+    {
+      "key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "links": [
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/francesca-da-rimini",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/il-lago-dei-cigni",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/il-ratto-dal-serraglio",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/roberto-bolle-caravaggio",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/romeo-e-giulietta",
+        "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/tosca"
+      ],
+      "facts": []
+    },
+    {
+      "key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "links": [
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/faust.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/l-elisir-d-amore.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/la-traviata.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/una-lady-macbeth-del-distretto-di-mcensk-anteprima-under30.html",
+        "https://www.teatroallascala.org/it/stagione/2025-2026/opera/una-lady-macbeth-del-distretto-di-mcensk.html"
+      ],
+      "facts": []
+    },
+    {
+      "key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "links": [
+        "https://www.teatrolafenice.it/event/concertoriccardofrizzasinopoliperosi/",
+        "https://www.teatrolafenice.it/event/evento-25-26-il-piccolo-principe/",
+        "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
+        "https://www.teatrolafenice.it/event/fedora/",
+        "https://www.teatrolafenice.it/event/la-clemenza-di-tito/",
+        "https://www.teatrolafenice.it/event/percorsi-della-danza-cinema-e-danza-il-musical/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-lelisir-damore/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-pagliacci/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-the-telephone-trouble-in-tahiti/",
+        "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+        "https://www.teatrolafenice.it/event/zsigmond-gerloczy/"
+      ],
+      "facts": []
+    },
+    {
+      "key": "bologna-2026-opera",
+      "venue_id": "oa-vd-000025",
+      "url": "https://www.tcbo.it/stagione-presente/?_tipo=opera",
+      "status": "scanned",
+      "links": [],
+      "facts": []
+    },
+    {
+      "key": "bologna-2026-calendar",
+      "venue_id": "oa-vd-000025",
+      "url": "https://www.tcbo.it/stagione-presente/?vista=calendario",
+      "status": "scanned",
+      "links": [],
+      "facts": []
+    },
+    {
+      "key": "massimo-2025-26",
+      "venue_id": "oa-v-000009",
+      "url": "https://www.teatromassimo.it/abbonamenti-opere-e-balletti-2025-2026/",
+      "status": "unverified",
+      "failure": "FetchUnavailable",
+      "links": [],
+      "facts": []
+    }
+  ],
+  "detail_results": [
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/das-rheingold-der-ring-des-nibelungen.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/die-walkure-der-ring-des-nibelungen.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/faust.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-der-ring-des-nibelungen.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/gotterdammerung-febbraio.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/l-elisir-d-amore.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/la-traviata.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/siegfried-der-ring-des-nibelungen.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/una-lady-macbeth-del-distretto-di-mcensk-anteprima-under30.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "scala-2025-26",
+      "venue_id": "oa-v-000006",
+      "url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/una-lady-macbeth-del-distretto-di-mcensk.html",
+      "found_on": "https://www.teatroallascala.org/it/stagione/2025-2026/index.html",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/concertoriccardofrizzasinopoliperosi/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/evento-25-26-il-piccolo-principe/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/evento-25-26-piccolo-orso-e-la-montagna-di-ghiaccio/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/fedora/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/la-clemenza-di-tito/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/percorsi-della-danza-cinema-e-danza-il-musical/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-lelisir-damore/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-ottone-in-villa/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-pagliacci/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-the-telephone-trouble-in-tahiti/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "fenice-2025-26",
+      "venue_id": "oa-v-000008",
+      "url": "https://www.teatrolafenice.it/event/zsigmond-gerloczy/",
+      "found_on": "https://www.teatrolafenice.it/event-category/opera-2025-26/",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/francesca-da-rimini",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/il-lago-dei-cigni",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/il-ratto-dal-serraglio",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/roberto-bolle-caravaggio",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/romeo-e-giulietta",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    },
+    {
+      "source_key": "regio-2025-26",
+      "venue_id": "oa-v-000001",
+      "url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/tosca",
+      "found_on": "https://www.teatroregio.torino.it/stagione25-26",
+      "status": "scanned",
+      "facts": []
+    }
+  ],
+  "observations": [],
+  "warning": "Only independently verified historical seed links were crawled; no full calendar certified. Event JSON-LD is not sufficient to prove opera, audience, venue or missing recita."
+}
