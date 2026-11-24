@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T22:47:31+00:00",
+  "generated_at": "2026-11-24T22:50:44+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,13 +10,13 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 736,
-    "published_dates_not_exhaustively_verified": 128
+    "coverage_not_established": 733,
+    "published_dates_not_exhaustively_verified": 131
   },
-  "zero_published_venue_count": 17,
+  "zero_published_venue_count": 14,
   "zero_published_by_calendar_status": {
-    "acquired": 5,
-    "not_acquired": 12
+    "acquired": 4,
+    "not_acquired": 10
   },
   "venue_audit_priorities": [
     {
@@ -54,23 +54,6 @@
       "missing_recite_certified": false
     },
     {
-      "venue_id": "oa-v-000011",
-      "venue": "Teatro Coccia",
-      "city": "Novara",
-      "region": "Piemonte",
-      "calendar_status": "acquired",
-      "monitoring_status": "programma_censito",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 4,
-      "official_unpublished_opera_lead_count": 4,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
-    {
       "venue_id": "oa-v-000014",
       "venue": "Teatro Dante Alighieri",
       "city": "Ravenna",
@@ -102,23 +85,6 @@
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
       "audit_priority": "zero_published_acquired_calendar",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000015",
-      "venue": "Teatro Alfieri",
-      "city": "Asti",
-      "region": "Piemonte",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 1,
-      "official_unpublished_opera_lead_count": 1,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -186,23 +152,6 @@
       "published_months": 0,
       "official_verified_opera_lead_count": 11,
       "official_unpublished_opera_lead_count": 11,
-      "official_opera_lead_review_required": true,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_with_official_opera_leads",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000057",
-      "venue": "Teatro Sociale di Mantova",
-      "city": "Mantova",
-      "region": "Lombardia",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 1,
-      "official_unpublished_opera_lead_count": 1,
       "official_opera_lead_review_required": true,
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
@@ -518,6 +467,23 @@
       "missing_recite_certified": false
     },
     {
+      "venue_id": "oa-v-000011",
+      "venue": "Teatro Coccia",
+      "city": "Novara",
+      "region": "Piemonte",
+      "calendar_status": "acquired",
+      "monitoring_status": "programma_censito",
+      "published_2026_showtimes": 2,
+      "published_months": 1,
+      "official_verified_opera_lead_count": 4,
+      "official_unpublished_opera_lead_count": 2,
+      "official_opera_lead_review_required": true,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
       "venue_id": "oa-v-000009",
       "venue": "Teatro Massimo",
       "city": "Palermo",
@@ -703,6 +669,23 @@
       "published_2026_showtimes": 4,
       "published_months": 2,
       "official_verified_opera_lead_count": 0,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-vd-000015",
+      "venue": "Teatro Alfieri",
+      "city": "Asti",
+      "region": "Piemonte",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 1,
+      "published_months": 1,
+      "official_verified_opera_lead_count": 1,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
       "historical_source_seed_count": 0,
@@ -926,6 +909,23 @@
       "published_2026_showtimes": 4,
       "published_months": 2,
       "official_verified_opera_lead_count": 4,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-vd-000057",
+      "venue": "Teatro Sociale di Mantova",
+      "city": "Mantova",
+      "region": "Lombardia",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 1,
+      "published_months": 1,
+      "official_verified_opera_lead_count": 1,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
       "historical_source_seed_count": 0,
@@ -1261,11 +1261,11 @@
   ],
   "official_2026_opera_lead_venue_count": 13,
   "official_2026_opera_lead_count": 93,
-  "official_unpublished_opera_lead_count": 54,
+  "official_unpublished_opera_lead_count": 50,
   "official_lead_reconciliation_counts": {
     "clock_review": 33,
-    "exact_match": 39,
-    "publication_candidate": 21
+    "exact_match": 43,
+    "publication_candidate": 17
   },
   "official_lead_reconciliation": [
     {
@@ -2198,11 +2198,11 @@
       "title": "Don Pasquale",
       "composer": "Gaetano Donizetti",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000011",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-11-22",
@@ -2210,11 +2210,11 @@
       "title": "Don Pasquale",
       "composer": "Gaetano Donizetti",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-v-000011",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-12-11",
@@ -2294,11 +2294,11 @@
       "title": "La traviata",
       "composer": "Giuseppe Verdi",
       "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000057",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     },
     {
       "date": "2026-01-30",
@@ -2378,15 +2378,15 @@
       "title": "La bohème",
       "composer": "Giacomo Puccini",
       "official_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
-      "publication_review_required": true,
+      "publication_review_required": false,
       "official_source_verified": true,
       "complete_month_verified": false,
       "venue_id": "oa-vd-000015",
-      "reconciliation_status": "publication_candidate"
+      "reconciliation_status": "exact_match"
     }
   ],
-  "official_lead_venues_with_zero_published": 6,
-  "published_2026_showtimes": 499,
+  "official_lead_venues_with_zero_published": 3,
+  "published_2026_showtimes": 503,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -5030,42 +5030,17 @@
       "city": "Novara",
       "region": "Piemonte",
       "month": "2026-11",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-11-21",
-          "time": "20:30",
-          "title": "Don Pasquale",
-          "composer": "Gaetano Donizetti",
-          "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000011",
-          "reconciliation_status": "publication_candidate"
-        },
-        {
-          "date": "2026-11-22",
-          "time": "16:00",
-          "title": "Don Pasquale",
-          "composer": "Gaetano Donizetti",
-          "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-v-000011",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 2,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000011",
@@ -5858,30 +5833,17 @@
       "city": "Asti",
       "region": "Piemonte",
       "month": "2026-02",
-      "published_showtimes": 0,
+      "published_showtimes": 1,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-02-14",
-          "time": "21:00",
-          "title": "La bohème",
-          "composer": "Giacomo Puccini",
-          "official_url": "https://www.comune.asti.it/novita/comunicati/boheme-giacomo-puccini",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000015",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 1,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000015",
@@ -16542,30 +16504,17 @@
       "city": "Mantova",
       "region": "Lombardia",
       "month": "2026-12",
-      "published_showtimes": 0,
+      "published_showtimes": 1,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [
-        {
-          "date": "2026-12-20",
-          "time": "17:30",
-          "title": "La traviata",
-          "composer": "Giuseppe Verdi",
-          "official_url": "https://www.teatrosocialemantova.it/it-it/la-traviata-v3.aspx",
-          "publication_review_required": true,
-          "official_source_verified": true,
-          "complete_month_verified": false,
-          "venue_id": "oa-vd-000057",
-          "reconciliation_status": "publication_candidate"
-        }
-      ],
-      "official_unpublished_opera_lead_count": 1,
+      "official_unpublished_opera_leads": [],
+      "official_unpublished_opera_lead_count": 0,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000058",
