@@ -293,6 +293,60 @@ class ResidualTests(unittest.TestCase):
         self.assertTrue(all(not x["automatic_exclusion"]
                             and not x["automatic_publication"] for x in result["observations"]))
 
+    def test_catania_four_index_rows_have_no_observed_clock_not_conflict(self):
+        rows=[
+            ("Il quinto moschettiere","2026-11-13"),
+            ("Le nozze dell’orso","2026-11-20"),
+            ("Le nozze dell’orso","2026-12-10"),
+            ("Il quinto moschettiere","2026-12-16")]
+        source="https://www.teatromassimobellini.it/calendario/"
+        grouped=[dict(g(name,day,clock=None,venue="Teatro Sangiorgi",
+                        urls=[source]),source_key="bellini-catania-opera-2026-27")
+                 for name,day in rows]
+        catalog={"productions":[{
+            "title":name,"venue":"Teatro Sangiorgi","municipality":"Catania",
+            "source_url":"https://www.teatromassimobellini.it/eventi/official/",
+            "dates":[[day,"11:00"]]} for name,day in rows]}
+        result=check(inp(grouped),catalog)
+        self.assertEqual(result["counts"],{
+            "catalog_same_work_day_venue_observation_without_clock":4})
+        self.assertTrue(all(not x["automatic_publication"] for x in result["observations"]))
+
+    def test_seven_modena_official_clocks_preserved_against_one_hour_index_offset(self):
+        rows=[
+            ("Macbeth","2026-10-30","20:00","21:00","https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"),
+            ("Macbeth","2026-11-01","15:30","16:30","https://www.teatrocomunalemodena.it/spettacolo/giuseppe-verdi-macbeth-2/"),
+            ("Der fliegende Holländer","2026-11-20","20:00","21:00","https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"),
+            ("Der fliegende Holländer","2026-11-22","15:30","16:30","https://www.teatrocomunalemodena.it/spettacolo/richard-wagner-der-fliegender-hollander-lolandese-volante/"),
+            ("L'esecuzione","2026-11-28","20:00","21:00","https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"),
+            ("L'esecuzione","2026-11-29","15:30","16:30","https://www.teatrocomunalemodena.it/spettacolo/salvatore-passantino-lesecuzione/"),
+            ("I salvatori della mezzanotte","2026-12-13","17:30","18:30","https://www.teatrocomunalemodena.it/spettacolo/daniele-furlati-i-salvatori-della-mezzanotte/"),
+        ]
+        groups=[]; productions=[]
+        for title,day,correct,observed,source in rows:
+            shown={"Macbeth":"Giuseppe Verdi – Macbeth",
+                   "Der fliegende Holländer":"Richard Wagner – Der fliegende Holländer (L’olandese volante)",
+                   "L'esecuzione":"Salvatore Passantino – L’esecuzione",
+                   "I salvatori della mezzanotte":"Daniele Furlati – I salvatori della mezzanotte"}[title]
+            groups.append(dict(g(shown,day,clock=observed,
+                   venue="Teatro Comunale Pavarotti-Freni",
+                   urls=["https://www.teatrocomunalemodena.it/opera/"]),
+                   source_key="modena-teatro-opera-2026-27"))
+            productions.append({"title":title,"venue":"Teatro Comunale Pavarotti-Freni",
+                "municipality":"Modena","source_url":source,
+                "dates":[[day,correct]]})
+        x=check(inp(groups),{"productions":productions})
+        self.assertEqual(x["counts"],{"catalog_official_clock_verified_index_offset":7})
+        self.assertTrue(all(o["official_nonopera_evidence"]["source_clock_offset_minutes"]==60
+                            and not o["automatic_publication"] for o in x["observations"]))
+        first=groups[0]
+        invalid=[dict(first,time="22:00"),dict(first,date="2026-10-31"),
+                 dict(first,venue="Other Venue"),dict(first,source_key="other"),
+                 dict(first,source_urls=["https://unrelated.example/"])]
+        outcomes=[check(inp([row]),{"productions":productions})["counts"]
+                  for row in invalid]
+        self.assertNotIn({"catalog_official_clock_verified_index_offset":1},outcomes)
+
     def test_input_security(self):
         q=inp([])
         q["catalog_updated"]=True
