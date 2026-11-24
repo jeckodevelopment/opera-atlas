@@ -28,6 +28,7 @@ H2 = ROOT / "public/diagnostics/atlas-2026-retrospective-reconciliation.json"
 SEEDS = ROOT / "data/official-2026-retrospective-season-seeds.json"
 SEED_SCAN = ROOT / "public/diagnostics/atlas-2026-jan-jun-official-archive.json"
 OUTPUT = ROOT / "public/diagnostics/atlas-2026-venue-month-coverage.json"
+OFFICIAL_ZERO_VENUE_LEADS = ROOT / "data/official-2026-zero-venue-opera-leads.json"
 
 
 def canonical(text):
@@ -62,9 +63,62 @@ def source_slot(entry):
     return day, hour
 
 
+def validated_venue_leads(document, venues):
+    """Freeze primary opera showtimes without treating them as published."""
+    from urllib.parse import urlsplit
+    if (document.get("schema_version") != 1 or document.get("year") != 2026
+            or not isinstance(document.get("records"),list)):
+        raise ValueError("invalid 2026 zero-venue official lead evidence")
+    by_id={v["id"]:v for v in venues}
+    approved={
+        "oa-v-000002": ("Como", "Teatro Sociale", "teatrosocialecomo.it"),
+        "oa-v-000007": ("Verona", "Arena di Verona", "www.arena.it"),
+        "oa-vd-000036": ("Macerata", "Arena Sferisterio", "www.sferisterio.it"),
+    }
+    result=defaultdict(list)
+    seen=set()
+    for record in document["records"]:
+        vid=record.get("venue_id")
+        if vid not in approved:
+            raise ValueError("unreviewed venue for 2026 opera evidence")
+        city,venue,host=approved[vid]
+        entity=by_id.get(vid)
+        if (entity is None or record.get("city")!=city
+                or record.get("venue")!=venue or entity["city"]!=city
+                or entity["name"]!=venue):
+            raise ValueError("2026 venue identity mismatch")
+        url=record.get("official_url")
+        parsed=urlsplit(url) if isinstance(url,str) else None
+        if (not parsed or parsed.scheme!="https" or parsed.hostname!=host
+                or parsed.query or parsed.fragment or parsed.username or parsed.password):
+            raise ValueError("2026 venue lead requires exact primary hostname")
+        if (not isinstance(record.get("title"),str) or not record["title"]
+                or not isinstance(record.get("composer"),str) or not record["composer"]
+                or not isinstance(record.get("dates"),list) or not record["dates"]):
+            raise ValueError("unverified lead work or dates")
+        for day,clock in record["dates"]:
+            if (not isinstance(day,str) or date.fromisoformat(day).isoformat()!=day
+                    or not day.startswith("2026-") or
+                    (clock is not None and source_slot({"date":day,"time":clock}) is None)):
+                raise ValueError("unverified official venue lead date or clock")
+            key=(vid,canonical(record["title"]),day,clock)
+            if key in seen:raise ValueError("duplicate verified 2026 venue lead")
+            seen.add(key)
+            result[vid].append({"date":day,"time":clock,
+                "title":record["title"],"composer":record["composer"],
+                "official_url":url,"publication_review_required":True,
+                "official_source_verified":True,
+                "complete_month_verified":False})
+    return result
+
+
 def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
-                 seeds, seed_scan):
+                 seeds, seed_scan, venue_leads=None):
     venue_rows = venues.get("venues", [])
+    if venue_leads is None:
+        venue_leads={"schema_version":1,"year":2026,"records":[]}
+    verified_leads=validated_venue_leads(venue_leads,venue_rows)
+
     if len(venue_rows) != 72 or len({v["id"] for v in venue_rows}) != len(venue_rows):
         raise ValueError("expected 72 distinct reviewed venue IDs")
     by_id = {v["id"]: v for v in venue_rows}
@@ -196,6 +250,20 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
                       else "2026_calendar"),
             "source_exhaustiveness_verified": False,
         })
+    # Exact source leads are NOT included in observed/published denominators.
+    # With no officially supported start time, a calendar date is still
+    # useful evidence but never becomes a fabricated time-specific recita.
+    lead_counts=Counter()
+    unpublished_leads=defaultdict(list)
+    for vid, entries in verified_leads.items():
+        for lead in entries:
+            if lead["time"] is not None:
+                known=(lead["date"],lead["time"]) in published[vid][lead["date"][:7]]
+            else:
+                known=any(d==lead["date"] for d,h in published[vid][lead["date"][:7]])
+            if not known:
+                unpublished_leads[vid].append(lead)
+                lead_counts[vid]+=1
     rows = []
     counts = Counter()
     for v in venue_rows:
@@ -225,6 +293,10 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
                 "observed_not_in_publication":len(missing),
                 "observed_unpublished_dates":[{"date":d,"time":h}
                                               for d,h in missing],
+                "official_unpublished_opera_leads":[x for x in unpublished_leads[vid]
+                                                 if x["date"][:7]==month],
+                "official_unpublished_opera_lead_count":sum(
+                    x["date"][:7]==month for x in unpublished_leads[vid]),
                 "historical_sources_checked":sources_by_venue[vid] if m<=6 else [],
                 "source_exhaustiveness_verified":False,
                 "complete_month_verified":False,
@@ -248,9 +320,13 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
             "monitoring_status": v.get("monitoring_status"),
             "published_2026_showtimes": total,
             "published_months": sum(bool(r["published_showtimes"]) for r in venue_months),
+            "official_verified_opera_lead_count":len(verified_leads[vid]),
+            "official_unpublished_opera_lead_count":lead_counts[vid],
+            "official_opera_lead_review_required":lead_counts[vid]>0,
             "historical_source_seed_count": len(sources_by_venue[v["id"]]),
             "official_historical_sources": [x["official_url"] for x in sources_by_venue[v["id"]]],
-            "audit_priority": ("zero_published_acquired_calendar" if total == 0 and status == "acquired"
+            "audit_priority": ("zero_published_with_official_opera_leads" if total == 0 and lead_counts[vid]>0
+                               else "zero_published_acquired_calendar" if total == 0 and status == "acquired"
                                else "zero_published_calendar_not_acquired" if total == 0
                                else "published_not_exhaustively_verified"),
             "missing_recite_certified": False,
@@ -269,6 +345,14 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
         "zero_published_venue_count":sum(venue_status_counts.values()),
         "zero_published_by_calendar_status":dict(sorted(venue_status_counts.items())),
         "venue_audit_priorities":venue_priorities,
+        "official_2026_opera_lead_venue_count":sum(
+            bool(verified_leads[v["id"]]) for v in venue_rows),
+        "official_2026_opera_lead_count":sum(map(len,verified_leads.values())),
+        "official_unpublished_opera_lead_count":sum(lead_counts.values()),
+        "official_lead_venues_with_zero_published":sum(
+            bool(verified_leads[v["id"]]) and
+            not any(r["published_showtimes"] for r in rows if r["venue_id"]==v["id"])
+            for v in venue_rows),
         "published_2026_showtimes":sum(x["published_showtimes"] for x in rows),
         "observed_2026_opera_showtimes":sum(x["source_observed_opera_showtimes"] for x in rows),
         "unmatched_source_showtimes":sum(x["observed_not_in_publication"] for x in rows),
@@ -288,7 +372,8 @@ def main():
     args=ap.parse_args()
     def load(path): return json.loads(path.read_text(encoding="utf-8"))
     report=build_matrix(*(load(p) for p in (
-        VENUES,REGISTRY,MANIFEST,PROGRAMS,HISTORICAL,H1,H2,SEEDS,SEED_SCAN)))
+        VENUES,REGISTRY,MANIFEST,PROGRAMS,HISTORICAL,H1,H2,SEEDS,SEED_SCAN)),
+        load(OFFICIAL_ZERO_VENUE_LEADS))
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",
                            encoding="utf-8")
