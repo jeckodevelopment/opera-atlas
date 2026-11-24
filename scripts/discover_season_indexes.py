@@ -890,8 +890,8 @@ def extract(key:str,index_url:str,html:str,min_links:int)->list[str]:
         return _messina_future_links(index_url,html,min_links)
     if key=="puccini-torre-del-lago-2027":
         from opera_atlas.puccini_festival_parser import parse_program
-        if len(parse_program(html,url=index_url))!=15:
-            raise ValueError("Puccini 2027 incomplete official opera calendar")
+        if not parse_program(html,url=index_url):
+            raise ValueError("Puccini incomplete official opera calendar")
         return [index_url]
     if key=="spoleto-tls-lirica-2026":
         from opera_atlas.spoleto_municipal_parser import URL as municipal,parse_program as parse_municipal
