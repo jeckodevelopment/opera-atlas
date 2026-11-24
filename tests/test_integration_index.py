@@ -83,5 +83,37 @@ class IntegrationIndexTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build(self.root, REV)
 
+    def test_exact_alias_and_unknown_composer(self):
+        self.write("data/composer-registry.json", {"schema_version":1,"composers":[{"id":"c1","name":"Composer","aliases":["Alias"]}],"work_composers":{}})
+        self.channel("works", [{"id":"w1","title":"Opera","composer":"  ALIAS ","slug":"opera"},{"id":"w2","title":"New","composer":"Unknown","slug":"new"}])
+        self.manifest()
+        result = build(self.root, REV)
+        works = {e["id"]: e for e in result["entities"] if e["type"]=="opera"}
+        self.assertEqual(works["w1"]["composer_ids"], ["c1"])
+        self.assertEqual(works["w2"]["composer_ids"], [])
+        self.assertEqual(result["diagnostics"]["unresolved_composer_works"], [{"work_id":"w2","composer":"Unknown"}])
+
+    def test_ambiguous_alias_not_guessed(self):
+        self.write("data/composer-registry.json", {"schema_version":1,"composers":[{"id":"c1","name":"Composer"},{"id":"c2","name":"Other","aliases":["Composer"]}],"work_composers":{}})
+        result = build(self.root, REV)
+        self.assertEqual(next(e for e in result["entities"] if e["type"]=="opera")["composer_ids"], [])
+        self.assertEqual(len(result["diagnostics"]["unresolved_composer_works"]), 1)
+
+    def test_verified_portrait_and_unsafe_url(self):
+        portrait = {"verified":True,"url":"https://upload.wikimedia.org/example.jpg","alt":"Portrait","source_url":"https://commons.wikimedia.org/wiki/File:Example.jpg","author":"Example author","license":"CC-BY-4.0","license_url":"https://creativecommons.org/licenses/by/4.0/","credit":"Example credit"}
+        for change, expected in [({}, True), ({"verified":False}, False), ({"url":"https://evil.example/image.jpg"}, False), ({"license":"Unknown"}, False), ({"author":""}, False), ({"url":"https://upload.wikimedia.org@evil.example/image.jpg"}, False)]:
+            self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"c1":dict(portrait, **change)}})
+            entities = build(self.root, REV)["entities"]
+            for kind in ("composer","opera"):
+                image = next(e for e in entities if e["type"]==kind)["image"]
+                self.assertEqual(image is not None, expected)
+                if expected:
+                    self.assertEqual(image["credit"], "Example credit")
+
+    def test_unknown_portrait_id_rejected(self):
+        self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
+        with self.assertRaises(ValueError):
+            build(self.root, REV)
+
 if __name__ == "__main__":
     unittest.main()
