@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "scope": "Explicit first-party opera showtime + existing canonical work identity + reviewed stage; frozen official-source approval",
+  "records": [
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "official_source_title": "Carmen",
+      "canonical_title": "Carmen",
+      "composer": "Georges Bizet",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-06-08",
+          "20:00"
+        ],
+        [
+          "2026-06-10",
+          "20:00"
+        ],
+        [
+          "2026-06-12",
+          "20:00"
+        ],
+        [
+          "2026-06-16",
+          "20:00"
+        ],
+        [
+          "2026-06-18",
+          "20:00"
+        ],
+        [
+          "2026-06-20",
+          "20:00"
+        ],
+        [
+          "2026-06-22",
+          "20:00"
+        ],
+        [
+          "2026-06-23",
+          "20:00"
+        ],
+        [
+          "2026-06-25",
+          "20:00"
+        ],
+        [
+          "2026-06-27",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html",
+      "official_source_title": "Lucia di Lammermoor",
+      "canonical_title": "Lucia di Lammermoor",
+      "composer": "Gaetano Donizetti",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-06-26",
+          "20:00"
+        ],
+        [
+          "2026-06-30",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "official_source_title": "Nabucodonosor",
+      "canonical_title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-05-16",
+          "20:00"
+        ],
+        [
+          "2026-05-19",
+          "20:00"
+        ],
+        [
+          "2026-05-22",
+          "20:00"
+        ],
+        [
+          "2026-05-26",
+          "20:00"
+        ],
+        [
+          "2026-05-29",
+          "20:00"
+        ],
+        [
+          "2026-05-31",
+          "14:30"
+        ],
+        [
+          "2026-06-04",
+          "20:00"
+        ],
+        [
+          "2026-06-06",
+          "20:00"
+        ],
+        [
+          "2026-06-09",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "official_source_title": "Turandot",
+      "canonical_title": "Turandot",
+      "composer": "Giacomo Puccini",
+      "city": "Milano",
+      "venue": "Teatro alla Scala",
+      "dates": [
+        [
+          "2026-04-01",
+          "20:00"
+        ],
+        [
+          "2026-04-08",
+          "20:00"
+        ],
+        [
+          "2026-04-09",
+          "20:00"
+        ],
+        [
+          "2026-04-11",
+          "20:00"
+        ],
+        [
+          "2026-04-12",
+          "14:30"
+        ],
+        [
+          "2026-04-14",
+          "20:00"
+        ],
+        [
+          "2026-04-18",
+          "20:00"
+        ],
+        [
+          "2026-04-21",
+          "20:00"
+        ],
+        [
+          "2026-04-24",
+          "20:00"
+        ],
+        [
+          "2026-04-29",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "official_source_title": "Carmen",
+      "canonical_title": "Carmen",
+      "composer": "Georges Bizet",
+      "city": "Venezia",
+      "venue": "Teatro La Fenice",
+      "dates": [
+        [
+          "2026-05-24",
+          "19:00"
+        ],
+        [
+          "2026-05-26",
+          "19:00"
+        ],
+        [
+          "2026-05-27",
+          "19:00"
+        ],
+        [
+          "2026-05-28",
+          "19:00"
+        ],
+        [
+          "2026-05-29",
+          "19:00"
+        ],
+        [
+          "2026-05-30",
+          "15:30"
+        ],
+        [
+          "2026-05-31",
+          "15:30"
+        ],
+        [
+          "2026-06-03",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "official_source_title": "La traviata",
+      "canonical_title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "city": "Venezia",
+      "venue": "Teatro La Fenice",
+      "dates": [
+        [
+          "2026-02-08",
+          "19:00"
+        ],
+        [
+          "2026-02-11",
+          "19:00"
+        ],
+        [
+          "2026-02-13",
+          "19:00"
+        ],
+        [
+          "2026-02-15",
+          "17:00"
+        ],
+        [
+          "2026-02-17",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "official_source_title": "Lohengrin",
+      "canonical_title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "city": "Venezia",
+      "venue": "Teatro La Fenice",
+      "dates": [
+        [
+          "2026-04-12",
+          "18:00"
+        ],
+        [
+          "2026-04-15",
+          "18:00"
+        ],
+        [
+          "2026-04-19",
+          "15:30"
+        ],
+        [
+          "2026-04-22",
+          "18:00"
+        ],
+        [
+          "2026-04-26",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "official_source_title": "Simon Boccanegra",
+      "canonical_title": "Simon Boccanegra",
+      "composer": "Giuseppe Verdi",
+      "city": "Venezia",
+      "venue": "Teatro La Fenice",
+      "dates": [
+        [
+          "2026-01-23",
+          "19:00"
+        ],
+        [
+          "2026-01-25",
+          "15:30"
+        ],
+        [
+          "2026-01-27",
+          "19:00"
+        ],
+        [
+          "2026-01-29",
+          "19:00"
+        ],
+        [
+          "2026-02-01",
+          "15:30"
+        ],
+        [
+          "2026-02-10",
+          "19:00"
+        ],
+        [
+          "2026-02-12",
+          "19:00"
+        ],
+        [
+          "2026-02-14",
+          "15:30"
+        ]
+      ]
+    }
+  ]
+}

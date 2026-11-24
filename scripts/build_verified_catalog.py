@@ -71,6 +71,67 @@ TIME_EVIDENCE_URLS = {
 }
 
 
+HISTORICAL_H1_APPROVAL = ROOT / "data" / "approved-2026-h1-opera-recitals.json"
+
+
+def approved_historical_h1() -> dict[str, dict]:
+    """Exact, frozen, first-party 2025/26 opera recite already reviewed.
+
+    Never enable a whole hostname, path family, or unreviewed work. The
+    acceptance gate is per official production URL, title, composer, actual
+    performing theatre and *all* exact dates/times. The 2026 H1 archival
+    observations are not automatically promoted.
+    """
+    import re
+    document = json.loads(HISTORICAL_H1_APPROVAL.read_text(encoding="utf-8"))
+    if (document.get("schema_version") != 1 or document.get("year") != 2026
+            or not isinstance(document.get("records"), list)):
+        raise ValueError("invalid 2026 historical publication approval")
+    result = {}
+    for record in document["records"]:
+        url = record.get("source_url")
+        if not isinstance(url, str):
+            raise ValueError("missing historical opera source URL")
+        parsed = urlsplit(url)
+        scala = (parsed.hostname == "www.teatroallascala.org"
+                 and re.fullmatch(r"/it/stagione/2025-2026/opera/[a-z0-9-]+\.html", parsed.path)
+                 and record.get("city") == "Milano"
+                 and record.get("venue") == "Teatro alla Scala")
+        fenice = (parsed.hostname == "www.teatrolafenice.it"
+                  and re.fullmatch(r"/event/stagione-25-26-[a-z0-9-]+/", parsed.path)
+                  and record.get("city") == "Venezia"
+                  and record.get("venue") in {"Teatro La Fenice", "Teatro Malibran"})
+        if (parsed.scheme != "https" or parsed.query or parsed.fragment
+                or parsed.port is not None or parsed.username or parsed.password
+                or not (scala or fenice) or url in result):
+            raise ValueError("unapproved historical opera source")
+        title, original, composer = (record.get(k) for k in
+                                     ("canonical_title", "official_source_title", "composer"))
+        if not all(isinstance(x,str) and x.strip() for x in (title,original,composer)):
+            raise ValueError("historical work identity required")
+        if (title != original and
+                (title, original, composer) !=
+                ("Nabucco", "Nabucodonosor", "Giuseppe Verdi")):
+            raise ValueError("unapproved historical work alias")
+        dates = record.get("dates")
+        if not isinstance(dates,list) or not dates or len(dates)>40:
+            raise ValueError("invalid historical performance list")
+        seen = set()
+        for row in dates:
+            if not isinstance(row,list) or len(row)!=2:
+                raise ValueError("invalid historical date/time")
+            day,hour=row
+            if (not isinstance(day,str) or not ("2026-01-01" <= day <= "2026-06-30")
+                    or date.fromisoformat(day).isoformat()!=day
+                    or not isinstance(hour,str)
+                    or datetime.strptime(hour,"%H:%M").strftime("%H:%M")!=hour
+                    or (day,hour) in seen):
+                raise ValueError("unreviewed historical recita or time")
+            seen.add((day,hour))
+        result[url]=record
+    return result
+
+
 AUTO_SOURCE_URLS = ROOT / "data" / "auto-source-urls.json"
 
 def validate_auto_sources(urls: list[str]) -> set[str]:
@@ -191,13 +252,22 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
     # Extra in-memory URLs for the pending transaction must NOT replace the
     # already-persisted approved URLs: after a successful import tests rebuild
     # the expanded canonical catalog, not the original static launch seed.
-    permitted = APPROVED_PAGES | auto_approved_pages() | (approved_extra or set())
+    historical_approved = approved_historical_h1()
+    permitted = APPROVED_PAGES | auto_approved_pages() | set(historical_approved) | (approved_extra or set())
     events = []
     keys = set()
     for production in manifest["productions"]:
         url = production["source_url"]
         if url not in permitted:
             raise ValueError("non-reviewed source page")
+        if url in historical_approved:
+            reviewed = historical_approved[url]
+            if (production.get("title") != reviewed["canonical_title"]
+                    or production.get("composer") != reviewed["composer"]
+                    or production.get("municipality") != reviewed["city"]
+                    or production.get("venue") != reviewed["venue"]
+                    or sorted(production.get("dates",[])) != sorted(reviewed["dates"])):
+                raise ValueError("historical source identity, venue or exact showtimes changed")
         for field in ("key", "title", "composer", "venue", "municipality", "region"):
             if not isinstance(production.get(field), str) or not production[field].strip():
                 raise ValueError(f"missing verified {field}")

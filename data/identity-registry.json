@@ -3588,6 +3588,71 @@
       "festival_memberships": {
         "festival-verdi": "2027"
       }
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen": {
+      "id": "oa-s-000289",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000006",
+      "slug": "carmen",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-lucia-di-lammermoor": {
+      "id": "oa-s-000290",
+      "work_id": "oa-w-000021",
+      "venue_id": "oa-v-000006",
+      "slug": "lucia-di-lammermoor",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco": {
+      "id": "oa-s-000291",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000006",
+      "slug": "nabucco",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot": {
+      "id": "oa-s-000292",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000006",
+      "slug": "turandot",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen": {
+      "id": "oa-s-000293",
+      "work_id": "oa-w-000009",
+      "venue_id": "oa-v-000008",
+      "slug": "carmen",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/",
+      "season": "2025-2026",
+      "route_slug": "carmen-2025-2026"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-la-traviata": {
+      "id": "oa-s-000294",
+      "work_id": "oa-w-000001",
+      "venue_id": "oa-v-000008",
+      "slug": "la-traviata",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-lohengrin": {
+      "id": "oa-s-000295",
+      "work_id": "oa-w-000069",
+      "venue_id": "oa-v-000008",
+      "slug": "lohengrin",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/",
+      "season": "2025-2026"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra": {
+      "id": "oa-s-000296",
+      "work_id": "oa-w-000075",
+      "venue_id": "oa-v-000008",
+      "slug": "simon-boccanegra",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/",
+      "season": "2025-2026"
     }
   },
   "performances": {
@@ -10071,6 +10136,348 @@
       "staging_id": "oa-s-000288",
       "original_date": "2027-10-24",
       "source_url": "https://teatroregioparma.it/spettacolo/la-traviata/"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-08": {
+      "id": "oa-r-001108",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-08",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-10": {
+      "id": "oa-r-001109",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-10",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-12": {
+      "id": "oa-r-001110",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-12",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-16": {
+      "id": "oa-r-001111",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-16",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-18": {
+      "id": "oa-r-001112",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-18",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-20": {
+      "id": "oa-r-001113",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-20",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-22": {
+      "id": "oa-r-001114",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-22",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-23": {
+      "id": "oa-r-001115",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-23",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-25": {
+      "id": "oa-r-001116",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-25",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-carmen|2026-06-27": {
+      "id": "oa-r-001117",
+      "staging_id": "oa-s-000289",
+      "original_date": "2026-06-27",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-lucia-di-lammermoor|2026-06-26": {
+      "id": "oa-r-001118",
+      "staging_id": "oa-s-000290",
+      "original_date": "2026-06-26",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-lucia-di-lammermoor|2026-06-30": {
+      "id": "oa-r-001119",
+      "staging_id": "oa-s-000290",
+      "original_date": "2026-06-30",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/lucia-di-lammermoor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-05-16": {
+      "id": "oa-r-001120",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-05-16",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-05-19": {
+      "id": "oa-r-001121",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-05-19",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-05-22": {
+      "id": "oa-r-001122",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-05-22",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-05-26": {
+      "id": "oa-r-001123",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-05-26",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-05-29": {
+      "id": "oa-r-001124",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-05-29",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-05-31": {
+      "id": "oa-r-001125",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-05-31",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-06-04": {
+      "id": "oa-r-001126",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-06-04",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-06-06": {
+      "id": "oa-r-001127",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-06-06",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-nabucco|2026-06-09": {
+      "id": "oa-r-001128",
+      "staging_id": "oa-s-000291",
+      "original_date": "2026-06-09",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-01": {
+      "id": "oa-r-001129",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-01",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-08": {
+      "id": "oa-r-001130",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-08",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-09": {
+      "id": "oa-r-001131",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-09",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-11": {
+      "id": "oa-r-001132",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-11",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-12": {
+      "id": "oa-r-001133",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-12",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-14": {
+      "id": "oa-r-001134",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-14",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-18": {
+      "id": "oa-r-001135",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-18",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-21": {
+      "id": "oa-r-001136",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-21",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-24": {
+      "id": "oa-r-001137",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-24",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-milano-teatro-alla-scala-turandot|2026-04-29": {
+      "id": "oa-r-001138",
+      "staging_id": "oa-s-000292",
+      "original_date": "2026-04-29",
+      "source_url": "https://www.teatroallascala.org/it/stagione/2025-2026/opera/turandot.html"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-05-24": {
+      "id": "oa-r-001139",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-05-24",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-05-26": {
+      "id": "oa-r-001140",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-05-26",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-05-27": {
+      "id": "oa-r-001141",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-05-27",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-05-28": {
+      "id": "oa-r-001142",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-05-28",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-05-29": {
+      "id": "oa-r-001143",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-05-29",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-05-30": {
+      "id": "oa-r-001144",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-05-30",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-05-31": {
+      "id": "oa-r-001145",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-05-31",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-carmen|2026-06-03": {
+      "id": "oa-r-001146",
+      "staging_id": "oa-s-000293",
+      "original_date": "2026-06-03",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-la-traviata|2026-02-08": {
+      "id": "oa-r-001147",
+      "staging_id": "oa-s-000294",
+      "original_date": "2026-02-08",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-la-traviata|2026-02-11": {
+      "id": "oa-r-001148",
+      "staging_id": "oa-s-000294",
+      "original_date": "2026-02-11",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-la-traviata|2026-02-13": {
+      "id": "oa-r-001149",
+      "staging_id": "oa-s-000294",
+      "original_date": "2026-02-13",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-la-traviata|2026-02-15": {
+      "id": "oa-r-001150",
+      "staging_id": "oa-s-000294",
+      "original_date": "2026-02-15",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-la-traviata|2026-02-17": {
+      "id": "oa-r-001151",
+      "staging_id": "oa-s-000294",
+      "original_date": "2026-02-17",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-la-traviata/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-lohengrin|2026-04-12": {
+      "id": "oa-r-001152",
+      "staging_id": "oa-s-000295",
+      "original_date": "2026-04-12",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-lohengrin|2026-04-15": {
+      "id": "oa-r-001153",
+      "staging_id": "oa-s-000295",
+      "original_date": "2026-04-15",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-lohengrin|2026-04-19": {
+      "id": "oa-r-001154",
+      "staging_id": "oa-s-000295",
+      "original_date": "2026-04-19",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-lohengrin|2026-04-22": {
+      "id": "oa-r-001155",
+      "staging_id": "oa-s-000295",
+      "original_date": "2026-04-22",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-lohengrin|2026-04-26": {
+      "id": "oa-r-001156",
+      "staging_id": "oa-s-000295",
+      "original_date": "2026-04-26",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-lohengrin/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-01-23": {
+      "id": "oa-r-001157",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-01-23",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-01-25": {
+      "id": "oa-r-001158",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-01-25",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-01-27": {
+      "id": "oa-r-001159",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-01-27",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-01-29": {
+      "id": "oa-r-001160",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-01-29",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-02-01": {
+      "id": "oa-r-001161",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-02-01",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-02-10": {
+      "id": "oa-r-001162",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-02-10",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-02-12": {
+      "id": "oa-r-001163",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-02-12",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+    },
+    "historical-2026h1-venezia-teatro-la-fenice-simon-boccanegra|2026-02-14": {
+      "id": "oa-r-001164",
+      "staging_id": "oa-s-000296",
+      "original_date": "2026-02-14",
+      "source_url": "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
     }
   },
   "reserved_works": {
