@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from html import unescape
 from zoneinfo import ZoneInfo
 from html.parser import HTMLParser
+from http.client import IncompleteRead
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
 
@@ -189,7 +190,7 @@ def first_pass(config, *, fetch_page=fetch, workers=MAX_WORKERS):
             row.update(status="scanned",
                        links=candidate_links(html, url, source["official_url"]))
         except Exception as exc:
-            if not isinstance(exc, (ValueError, OSError, RuntimeError)):
+            if not isinstance(exc, (ValueError, OSError, RuntimeError, IncompleteRead)):
                 raise
             row.update(status="unverified", failure=type(exc).__name__, links=[])
         return row
@@ -235,7 +236,7 @@ def second_pass(queue, *, fetch_page=fetch, workers=MAX_WORKERS):
                        event_facts=reconcile_verified_modena_clocks(
                            clean_facts(parse_event_facts(html)),source,url))
         except Exception as exc:
-            if not isinstance(exc, (ValueError, OSError, RuntimeError)):
+            if not isinstance(exc, (ValueError, OSError, RuntimeError, IncompleteRead)):
                 raise
             row.update(status="unverified", failure=type(exc).__name__,
                        links=[], event_facts=[])
@@ -302,7 +303,7 @@ def details_batch(queue, *, fetch_page=fetch, workers=MAX_WORKERS):
                        facts=reconcile_verified_modena_clocks(
                            clean_facts(parse_event_facts(html)),source,url))
         except Exception as exc:
-            if not isinstance(exc,(ValueError,OSError,RuntimeError)):
+            if not isinstance(exc,(ValueError,OSError,RuntimeError,IncompleteRead)):
                 raise
             row.update(status="unverified",failure=type(exc).__name__,facts=[])
         return row
