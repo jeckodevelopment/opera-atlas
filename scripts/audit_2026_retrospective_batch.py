@@ -13,6 +13,8 @@ import threading
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
+from html import unescape
+from zoneinfo import ZoneInfo
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
@@ -44,6 +46,61 @@ NON_EVENT_RE = re.compile(
     r"registrazion|biglietteria|abbonamenti|newsletter|facebook|instagram|"
     r"youtube|linkedin|whatsapp|tel:|mailto:)"
 )
+
+
+# Independently checked first-party festival page; these are event-local wall
+# clocks, not inferred UTC offsets. Never extrapolate to other dates or sources.
+MODENA_2026_OFFICIAL_CLOCKS = {
+    ("2026-09-16", "Il cambiamento era incessante"): "20:30",
+    ("2026-09-25", "La costanza trionfante"): "20:30",
+    ("2026-09-26", "Kammermusik n. 1"): "17:00",
+    ("2026-09-26", "Voci inaudite"): "21:30",
+    ("2026-09-27", "Kattivissimi and friends… all’Opera"): "17:30",
+    ("2026-09-27", "Letteralmente Verdi"): "20:30",
+    ("2026-09-30", "Ma l’amor mio non muore!"): "21:00",
+    ("2026-10-02", "Viva Verdi"): "20:30",
+    ("2026-10-03", "Kammermusik n. 2"): "17:00",
+    ("2026-10-04", "Concerto di Gala"): "20:30",
+    ("2026-10-09", "A casa Bononcini"): "20:30",
+    ("2026-10-10", "Messa da Requiem"): "20:30",
+    ("2026-10-11", "Dalla Boemia al Ducato di Modena"): "17:00",
+    ("2026-10-12", "Mamma: tributo a Luciano Pavarotti e Henry Mancini"): "20:30",
+    ("2026-10-13", "Filarmonie Future"): "20:30",
+    ("2026-10-17", "La preghiera nell’opera lirica"): "18:00",
+    ("2026-10-17", "Le maschere allo specchio"): "20:30",
+    ("2026-11-12", "Caterina Barbieri e Fontanamix ensemble"): "20:30",
+}
+MODENA_2026_CLOCK_SOURCE = "https://www.teatrocomunalemodena.it/modena-belcanto-festival/"
+
+
+def reconcile_verified_modena_clocks(facts, source, page_url):
+    """Annotate scoped source-time errors without destroying the raw JSON-LD."""
+    if (source.get("key") != "modena-teatro-opera-2026-27"
+            or urlsplit(page_url).hostname != "www.teatrocomunalemodena.it"):
+        return facts
+    from scripts.audit_2026_retrospective_reconciliation import norm
+    verified = {(day, norm(title)): hour
+                for (day, title), hour in MODENA_2026_OFFICIAL_CLOCKS.items()}
+    for fact in facts:
+        key = (fact.get("date"), norm(unescape(fact.get("event_title") or "")))
+        hour = verified.get(key)
+        if hour is None or not isinstance(fact.get("starts_at"), str):
+            continue
+        old = fact["starts_at"]
+        try:
+            original = datetime.fromisoformat(old.replace("Z", "+00:00"))
+            if original.tzinfo is None or original.utcoffset() is None:
+                continue
+            local = datetime.fromisoformat(f'{key[0]}T{hour}:00').replace(
+                tzinfo=ZoneInfo("Europe/Rome"))
+        except (ValueError, TypeError):
+            continue
+        if old != local.isoformat(timespec="seconds"):
+            fact["source_original_starts_at"] = old
+            fact["starts_at"] = local.isoformat(timespec="seconds")
+            fact["official_clock_evidence_url"] = MODENA_2026_CLOCK_SOURCE
+            fact["official_clock_correction"] = "verified_local_wall_clock"
+    return facts
 
 
 class Anchors(HTMLParser):
@@ -175,7 +232,8 @@ def second_pass(queue, *, fetch_page=fetch, workers=MAX_WORKERS):
             links = candidate_links(html, url, source["official_url"])
             # Only the lead collection, never certify the archive as complete.
             row.update(status="scanned", links=links,
-                       event_facts=clean_facts(parse_event_facts(html)))
+                       event_facts=reconcile_verified_modena_clocks(
+                           clean_facts(parse_event_facts(html)),source,url))
         except Exception as exc:
             if not isinstance(exc, (ValueError, OSError, RuntimeError)):
                 raise
@@ -241,7 +299,8 @@ def details_batch(queue, *, fetch_page=fetch, workers=MAX_WORKERS):
         try:
             html=fetch_page(source,url)
             row.update(status="scanned",
-                       facts=clean_facts(parse_event_facts(html)))
+                       facts=reconcile_verified_modena_clocks(
+                           clean_facts(parse_event_facts(html)),source,url))
         except Exception as exc:
             if not isinstance(exc,(ValueError,OSError,RuntimeError)):
                 raise
