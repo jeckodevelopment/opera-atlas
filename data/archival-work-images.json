@@ -384,6 +384,48 @@
       "description": "Frontespizio veneziano dell'edizione musicale del 1609 di L'Orfeo di Claudio Monteverdi; documento storico, non manifesto del festival 2026",
       "credit": "Frontespizio storico di L'Orfeo, Venezia 1609 / Wikimedia Commons",
       "license": "Public domain"
+    },
+    "das-rheingold": {
+      "file": "Illustration to Richard Wagner's \"Das Rheingold\".jpg",
+      "description": "Illustrazione d’epoca del Rheingold di Richard Wagner; immagine storica, non allestimento in calendario",
+      "credit": "Illustrazione storica del Rheingold di Richard Wagner, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "die-walkure": {
+      "file": "Print, book-illustration (BM 1899,0420.178).jpg",
+      "description": "Scena di Die Walküre, Siegmund e Sieglinde; immagine storica, non allestimento in calendario",
+      "credit": "Illustrazione d’epoca di Die Walküre, collezione British Museum via Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "siegfried": {
+      "file": "Wagner - Siegfried, act II - Once more say to me, Lovely singer - Ferdinand Leeke - The Victrola book of the opera.jpg",
+      "description": "Siegfried, illustrazione di Ferdinand Leeke; immagine storica, non allestimento in calendario",
+      "credit": "Ferdinand Leeke, illustrazione di Siegfried, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "gotterdammerung": {
+      "file": "Heinrich Lefler Götterdämmerung Brünnhilde Act III.jpg",
+      "description": "Brünnhilde nel terzo atto di Götterdämmerung, Heinrich Lefler; immagine storica, non allestimento in calendario",
+      "credit": "Heinrich Lefler, illustrazione di Götterdämmerung, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "pelleas-et-melisande": {
+      "file": "Georges Rochegrosse - Poster for the prèmiere of Claude Debussy and Maurice Maeterlinck's Pelléas et Mélisande.png",
+      "description": "Manifesto della prima di Pelléas et Mélisande del 1902; immagine storica, non allestimento in calendario",
+      "credit": "Georges Rochegrosse, manifesto del 1902, Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "enrico-di-borgogna": {
+      "file": "Donizetti - Enrico di Borgogna - title page of the libretto, Venice 1818.png",
+      "description": "Frontespizio del libretto veneziano di Enrico di Borgogna del 1818; immagine storica, non allestimento in calendario",
+      "credit": "Libretto originale di Enrico di Borgogna (1818), Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
+    },
+    "ottone-in-villa": {
+      "file": "Antonio Vivaldi - Ottone in villa - title page of the libretto - Vicenza 1713.png",
+      "description": "Frontespizio storico del libretto di Ottone in villa del 1713; immagine storica, non allestimento in calendario",
+      "credit": "Libretto originale di Ottone in villa (1713), Wikimedia Commons",
+      "license": "Public domain; consultare la pagina Wikimedia Commons per la licenza e i crediti esatti"
     }
   },
   "works_by_id": {
