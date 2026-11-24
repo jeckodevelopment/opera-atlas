@@ -3914,6 +3914,30 @@
       "season": "2026-2027",
       "performance_format": "semiscenica_musica_superstite_parti_mancanti_narrate",
       "festival": "Modena Belcanto Festival 2026"
+    },
+    "historical-2026-cagliari-norma": {
+      "id": "oa-s-000320",
+      "work_id": "oa-w-000031",
+      "venue_id": "oa-v-000023",
+      "slug": "norma",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "season": "2025-2026"
+    },
+    "historical-2026-cagliari-turandot": {
+      "id": "oa-s-000321",
+      "work_id": "oa-w-000011",
+      "venue_id": "oa-v-000023",
+      "slug": "turandot",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "season": "2025-2026"
+    },
+    "historical-2026-cagliari-rigoletto": {
+      "id": "oa-s-000322",
+      "work_id": "oa-w-000026",
+      "venue_id": "oa-v-000023",
+      "slug": "rigoletto",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+      "season": "2026-2027"
     }
   },
   "performances": {
@@ -11375,6 +11399,126 @@
       "staging_id": "oa-s-000319",
       "original_date": "2026-09-25",
       "source_url": "https://www.teatrocomunalemodena.it/spettacolo/la-costanza-trionfante/"
+    },
+    "historical-2026-cagliari-norma|2026-03-18": {
+      "id": "oa-r-001271",
+      "staging_id": "oa-s-000320",
+      "original_date": "2026-03-18",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-norma|2026-03-19": {
+      "id": "oa-r-001272",
+      "staging_id": "oa-s-000320",
+      "original_date": "2026-03-19",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-norma|2026-03-20": {
+      "id": "oa-r-001273",
+      "staging_id": "oa-s-000320",
+      "original_date": "2026-03-20",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-norma|2026-03-21": {
+      "id": "oa-r-001274",
+      "staging_id": "oa-s-000320",
+      "original_date": "2026-03-21",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-norma|2026-03-22": {
+      "id": "oa-r-001275",
+      "staging_id": "oa-s-000320",
+      "original_date": "2026-03-22",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-06-24": {
+      "id": "oa-r-001276",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-06-24",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-06-25": {
+      "id": "oa-r-001277",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-06-25",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-06-26": {
+      "id": "oa-r-001278",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-06-26",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-06-27": {
+      "id": "oa-r-001279",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-06-27",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-06-28": {
+      "id": "oa-r-001280",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-06-28",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-06-30": {
+      "id": "oa-r-001281",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-06-30",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-07-01": {
+      "id": "oa-r-001282",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-07-01",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-turandot|2026-07-02": {
+      "id": "oa-r-001283",
+      "staging_id": "oa-s-000321",
+      "original_date": "2026-07-02",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-rigoletto|2026-11-11": {
+      "id": "oa-r-001284",
+      "staging_id": "oa-s-000322",
+      "original_date": "2026-11-11",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-rigoletto|2026-11-12": {
+      "id": "oa-r-001285",
+      "staging_id": "oa-s-000322",
+      "original_date": "2026-11-12",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-rigoletto|2026-11-13": {
+      "id": "oa-r-001286",
+      "staging_id": "oa-s-000322",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-rigoletto|2026-11-14": {
+      "id": "oa-r-001287",
+      "staging_id": "oa-s-000322",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-rigoletto|2026-11-15": {
+      "id": "oa-r-001288",
+      "staging_id": "oa-s-000322",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-rigoletto|2026-11-19": {
+      "id": "oa-r-001289",
+      "staging_id": "oa-s-000322",
+      "original_date": "2026-11-19",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+    },
+    "historical-2026-cagliari-rigoletto|2026-11-21": {
+      "id": "oa-r-001290",
+      "staging_id": "oa-s-000322",
+      "original_date": "2026-11-21",
+      "source_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
     }
   },
   "reserved_works": {
