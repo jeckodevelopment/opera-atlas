@@ -111,6 +111,40 @@ class PortraitTests(unittest.TestCase):
         self.assertIsNone(portrait(self.composer, mock_call(image_changes=dict(changes, thumburl=None)))[0])
         self.assertIsNone(portrait(self.composer, mock_call(image_changes=dict(changes, thumburl="https://evil.example/file.jpg")))[0])
 
+    def test_official_thumbnail_host_and_original_fallback(self):
+        thumb = "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Portrait.jpg/960px-Portrait.jpg"
+        record, reason = portrait(self.composer, mock_call(image_changes={"thumburl":thumb}))
+        self.assertIsNone(reason)
+        self.assertEqual(record["url"], thumb)
+        for invalid in ("https://thumb.wikimedia.org.evil.example/image.jpg",
+                        "https://thumb.wikimedia.org@evil.example/image.jpg"):
+            record, reason = portrait(self.composer, mock_call(image_changes={"thumburl":invalid}))
+            self.assertIsNone(reason)
+            self.assertEqual(record["url"], "https://upload.wikimedia.org/portrait.jpg")
+
+    def test_explicit_commons_pd_mark_and_other_expiry_categories(self):
+        changes = {"LicenseShortName":"Public domain","LicenseUrl":"",
+                   "Copyrighted":"False","License":"pd"}
+        for category in ("Category:CC-PD-Mark", "Category:PD-old-80-expired",
+                         "Category:PD-scan (PD-old-95-expired)"):
+            record, reason = portrait(self.composer, mock_call(changes=changes, categories=[category]))
+            self.assertIsNone(reason)
+            self.assertEqual(record["license"], "Public Domain")
+        for extra in ("Category:Template Unknown (source)", "Category:Template Unknown (author)"):
+            self.assertIsNone(portrait(self.composer, mock_call(changes=changes,
+                categories=["Category:CC-PD-Mark", extra]))[0])
+        for author in ("Unknown author Unknown author", "Anonymous Unknown author", "Unattributed"):
+            self.assertIsNone(portrait(self.composer, mock_call(changes=dict(changes, Artist=author),
+                categories=["Category:CC-PD-Mark"]))[0])
+
+    def test_german_ported_license(self):
+        record, reason = portrait(self.composer, mock_call(changes={
+            "LicenseShortName":"CC BY-SA 3.0 de",
+            "LicenseUrl":"https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"}))
+        self.assertIsNone(reason)
+        self.assertEqual(record["license"], "CC-BY-SA-3.0-DE")
+        self.assertEqual(record["license_url"], "https://creativecommons.org/licenses/by-sa/3.0/de/")
+
     def test_transient_http_retry(self):
         failure = HTTPError(WD, 503, "temporary", {}, None)
         with patch("scripts.refresh_composer_portraits.urlopen", side_effect=[failure, failure, failure]) as call, patch("scripts.refresh_composer_portraits.time.sleep"):
