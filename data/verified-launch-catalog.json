@@ -8268,6 +8268,63 @@
           "17:30"
         ]
       ]
+    },
+    {
+      "key": "historical-2026h1-pisa-verdi-carmen",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/spettacolo/carmen/",
+      "dates": [
+        [
+          "2026-01-23",
+          "20:30"
+        ],
+        [
+          "2026-01-25",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-pisa-verdi-turn-of-the-screw",
+      "title": "The Turn of the Screw",
+      "composer": "Benjamin Britten",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/the-turn-of-the-screw-a-50-anni-dalla-morte-di-britten-per-la-prima-volta-al-teatro-verdi/",
+      "dates": [
+        [
+          "2026-02-27",
+          "20:30"
+        ],
+        [
+          "2026-03-01",
+          "15:30"
+        ]
+      ]
+    },
+    {
+      "key": "historical-2026h1-pisa-verdi-elisir-d-amore",
+      "title": "L’elisir d’amore",
+      "composer": "Gaetano Donizetti",
+      "venue": "Teatro Verdi",
+      "municipality": "Pisa",
+      "region": "Toscana",
+      "source_url": "https://teatrodipisa.it/spettacolo/lelisir-damore/",
+      "dates": [
+        [
+          "2026-03-27",
+          "20:30"
+        ],
+        [
+          "2026-03-29",
+          "15:30"
+        ]
+      ]
     }
   ]
 }
