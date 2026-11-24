@@ -144,8 +144,12 @@ def reconcile(report, catalog, programs, historical, priority=None):
         if excluded_nonopera(source_key,source):
             status="excluded_by_approved_policy"
             matched=[]
-        elif reviewed and (hour is None or hour == reviewed["time"]):
-            status=reviewed["classification"]
+        elif reviewed:
+            # The official independently checked event page may disagree with
+            # a generic festival index JSON-LD timestamp; preserve the
+            # candidate and surface the discrepancy for manual verification.
+            status=(reviewed["classification"] if hour is None or hour == reviewed["time"]
+                    else reviewed["classification"] + "_time_conflict")
             matched=[]
         elif direct and any(norm(m["title"])==title and
                 (hour is None or same_time(hour,m["time"])) for m in direct):
