@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "generated_at": "2026-11-24T11:30:58+00:00",
+  "read_only": true,
+  "catalog_updated": false,
+  "complete_seasons_certified": 0,
+  "scope": "Only four individually reviewed first-semester official productions; NOT national calendar completeness",
+  "reviewed_productions": 4,
+  "reviewed_official_performances": 25,
+  "official_match_counts": {
+    "catalog_exact_day_time": 19,
+    "verified_official_recita_absent_from_catalog": 6
+  },
+  "catalog_first_half_performance_rows": 133,
+  "catalog_first_half_months": {
+    "2026-01": 15,
+    "2026-02": 16,
+    "2026-03": 23,
+    "2026-04": 27,
+    "2026-05": 30,
+    "2026-06": 22
+  },
+  "catalog_first_half_cities": {
+    "Bari": 21,
+    "Milano": 50,
+    "Salerno": 6,
+    "Savona": 1,
+    "Torino": 19,
+    "Venezia": 36
+  },
+  "venue_directory_count": 72,
+  "historical_reconciliation": [
+    {
+      "date": "2026-01-20",
+      "time": "20:00",
+      "opera": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "20:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-01-21",
+      "time": "20:00",
+      "opera": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "20:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-01-22",
+      "time": "20:00",
+      "opera": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "20:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-01-23",
+      "time": "20:00",
+      "opera": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "20:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-01-24",
+      "time": "15:00",
+      "opera": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-01-25",
+      "time": "15:00",
+      "opera": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-01-27",
+      "time": "15:00",
+      "opera": "La Cenerentola",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/la-cenerentola"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-02-24",
+      "time": "19:00",
+      "opera": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "19:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-02-26",
+      "time": "20:00",
+      "opera": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "20:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-03-01",
+      "time": "15:00",
+      "opera": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-03-03",
+      "time": "20:00",
+      "opera": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "20:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-03-05",
+      "time": "20:00",
+      "opera": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "20:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-03-07",
+      "time": "15:00",
+      "opera": "Macbeth",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-03-31",
+      "time": "20:00",
+      "opera": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "status": "verified_official_recita_absent_from_catalog",
+      "catalog_matches": [],
+      "editorial_publication_required": true,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-04-02",
+      "time": "20:00",
+      "opera": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "status": "verified_official_recita_absent_from_catalog",
+      "catalog_matches": [],
+      "editorial_publication_required": true,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-04-04",
+      "time": "15:00",
+      "opera": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "status": "verified_official_recita_absent_from_catalog",
+      "catalog_matches": [],
+      "editorial_publication_required": true,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-04-08",
+      "time": "20:00",
+      "opera": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "status": "verified_official_recita_absent_from_catalog",
+      "catalog_matches": [],
+      "editorial_publication_required": true,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-04-10",
+      "time": "15:00",
+      "opera": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "status": "verified_official_recita_absent_from_catalog",
+      "catalog_matches": [],
+      "editorial_publication_required": true,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-04-12",
+      "time": "15:00",
+      "opera": "Dialoghi delle carmelitane",
+      "composer": "Francis Poulenc",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/dialoghi-delle-carmelitane",
+      "status": "verified_official_recita_absent_from_catalog",
+      "catalog_matches": [],
+      "editorial_publication_required": true,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-05-06",
+      "time": "19:30",
+      "opera": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "19:30",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-05-08",
+      "time": "19:30",
+      "opera": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "19:30",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-05-10",
+      "time": "15:00",
+      "opera": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-05-13",
+      "time": "19:30",
+      "opera": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "19:30",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-05-15",
+      "time": "15:00",
+      "opera": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    },
+    {
+      "date": "2026-05-17",
+      "time": "15:00",
+      "opera": "I puritani",
+      "composer": "Vincenzo Bellini",
+      "venue": "Teatro Regio di Torino",
+      "city": "Torino",
+      "official_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani",
+      "status": "catalog_exact_day_time",
+      "catalog_matches": [
+        {
+          "time": "15:00",
+          "venue": "Teatro Regio",
+          "source_url": "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+        }
+      ],
+      "editorial_publication_required": false,
+      "automatically_published": false
+    }
+  ],
+  "warning": "The verified gap may be considered for a separately reviewed catalog change; no automated promotion. Counts do not establish national 2026 coverage."
+}
