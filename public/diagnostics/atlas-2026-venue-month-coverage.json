@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T21:44:38+00:00",
+  "generated_at": "2026-11-24T21:47:48+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -45,12 +45,12 @@
       "monitoring_status": "programma_censito",
       "published_2026_showtimes": 0,
       "published_months": 0,
-      "official_verified_opera_lead_count": 0,
-      "official_unpublished_opera_lead_count": 0,
-      "official_opera_lead_review_required": false,
+      "official_verified_opera_lead_count": 2,
+      "official_unpublished_opera_lead_count": 2,
+      "official_opera_lead_review_required": true,
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
-      "audit_priority": "zero_published_acquired_calendar",
+      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -96,12 +96,12 @@
       "monitoring_status": "programma_censito",
       "published_2026_showtimes": 0,
       "published_months": 0,
-      "official_verified_opera_lead_count": 0,
-      "official_unpublished_opera_lead_count": 0,
-      "official_opera_lead_review_required": false,
+      "official_verified_opera_lead_count": 4,
+      "official_unpublished_opera_lead_count": 4,
+      "official_opera_lead_review_required": true,
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
-      "audit_priority": "zero_published_acquired_calendar",
+      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -235,12 +235,12 @@
       "monitoring_status": "anagrafica_censita",
       "published_2026_showtimes": 0,
       "published_months": 0,
-      "official_verified_opera_lead_count": 0,
-      "official_unpublished_opera_lead_count": 0,
-      "official_opera_lead_review_required": false,
+      "official_verified_opera_lead_count": 35,
+      "official_unpublished_opera_lead_count": 35,
+      "official_opera_lead_review_required": true,
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
-      "audit_priority": "zero_published_calendar_not_acquired",
+      "audit_priority": "zero_published_with_official_opera_leads",
       "missing_recite_certified": false
     },
     {
@@ -1259,10 +1259,10 @@
       "missing_recite_certified": false
     }
   ],
-  "official_2026_opera_lead_venue_count": 6,
-  "official_2026_opera_lead_count": 40,
-  "official_unpublished_opera_lead_count": 40,
-  "official_lead_venues_with_zero_published": 6,
+  "official_2026_opera_lead_venue_count": 9,
+  "official_2026_opera_lead_count": 81,
+  "official_unpublished_opera_lead_count": 81,
+  "official_lead_venues_with_zero_published": 9,
   "published_2026_showtimes": 452,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
@@ -2460,8 +2460,29 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-11-27",
+          "time": "20:00",
+          "title": "Un ballo in maschera",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-29",
+          "time": "16:00",
+          "title": "Un ballo in maschera",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.comune.cremona.it/vivere-comune/eventi/stagione-dellopera-un-ballo-maschera",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 2,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -3985,8 +4006,29 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-11-21",
+          "time": "20:30",
+          "title": "Don Pasquale",
+          "composer": "Gaetano Donizetti",
+          "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-22",
+          "time": "16:00",
+          "title": "Don Pasquale",
+          "composer": "Gaetano Donizetti",
+          "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-don-pasquale.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 2,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -4003,8 +4045,29 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-12-11",
+          "time": "20:30",
+          "title": "L’azzardo per un figlio / Il signor Bruschino",
+          "composer": "Claudio Scannavini / Gioachino Rossini",
+          "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-12-13",
+          "time": "16:00",
+          "title": "L’azzardo per un figlio / Il signor Bruschino",
+          "composer": "Claudio Scannavini / Gioachino Rossini",
+          "official_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 2,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12392,8 +12455,49 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-01-28",
+          "time": "20:00",
+          "title": "Lucrezia Borgia",
+          "composer": "Gaetano Donizetti",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-01-29",
+          "time": "19:00",
+          "title": "Lucrezia Borgia",
+          "composer": "Gaetano Donizetti",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-01-30",
+          "time": "20:00",
+          "title": "Lucrezia Borgia",
+          "composer": "Gaetano Donizetti",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-01-31",
+          "time": "19:00",
+          "title": "Lucrezia Borgia",
+          "composer": "Gaetano Donizetti",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 4,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12410,8 +12514,19 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-02-01",
+          "time": "17:00",
+          "title": "Lucrezia Borgia",
+          "composer": "Gaetano Donizetti",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 1,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12428,8 +12543,59 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-03-18",
+          "time": "20:00",
+          "title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-03-19",
+          "time": "19:00",
+          "title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-03-20",
+          "time": "20:00",
+          "title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-03-21",
+          "time": "19:00",
+          "title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-03-22",
+          "time": "17:00",
+          "title": "Norma",
+          "composer": "Vincenzo Bellini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 5,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12446,8 +12612,59 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-04-17",
+          "time": "20:00",
+          "title": "Così fan tutte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-04-18",
+          "time": "19:00",
+          "title": "Così fan tutte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-04-19",
+          "time": "17:00",
+          "title": "Così fan tutte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-04-21",
+          "time": "20:00",
+          "title": "Così fan tutte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-04-22",
+          "time": "20:00",
+          "title": "Così fan tutte",
+          "composer": "Wolfgang Amadeus Mozart",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 5,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12482,8 +12699,69 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-06-24",
+          "time": "20:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-06-25",
+          "time": "19:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-06-26",
+          "time": "20:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-06-27",
+          "time": "19:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-06-28",
+          "time": "17:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-06-30",
+          "time": "20:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 6,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12500,8 +12778,29 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-07-01",
+          "time": "20:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-07-02",
+          "time": "20:00",
+          "title": "Turandot",
+          "composer": "Giacomo Puccini",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 2,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12536,8 +12835,59 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-09-23",
+          "time": "20:00",
+          "title": "Il cappello di paglia di Firenze",
+          "composer": "Nino Rota",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-09-24",
+          "time": "19:00",
+          "title": "Il cappello di paglia di Firenze",
+          "composer": "Nino Rota",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-09-25",
+          "time": "20:00",
+          "title": "Il cappello di paglia di Firenze",
+          "composer": "Nino Rota",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-09-26",
+          "time": "19:00",
+          "title": "Il cappello di paglia di Firenze",
+          "composer": "Nino Rota",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-09-27",
+          "time": "17:00",
+          "title": "Il cappello di paglia di Firenze",
+          "composer": "Nino Rota",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 5,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
@@ -12572,8 +12922,79 @@
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
       "observed_unpublished_dates": [],
-      "official_unpublished_opera_leads": [],
-      "official_unpublished_opera_lead_count": 0,
+      "official_unpublished_opera_leads": [
+        {
+          "date": "2026-11-11",
+          "time": "20:00",
+          "title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-12",
+          "time": "19:00",
+          "title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-13",
+          "time": "20:00",
+          "title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-14",
+          "time": "19:00",
+          "title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-15",
+          "time": "17:00",
+          "title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-19",
+          "time": "20:00",
+          "title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        },
+        {
+          "date": "2026-11-21",
+          "time": "19:00",
+          "title": "Rigoletto",
+          "composer": "Giuseppe Verdi",
+          "official_url": "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html",
+          "publication_review_required": true,
+          "official_source_verified": true,
+          "complete_month_verified": false
+        }
+      ],
+      "official_unpublished_opera_lead_count": 7,
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
