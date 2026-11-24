@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T08:25:47+00:00",
+  "generated_at": "2026-11-24T08:44:25+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -11,12 +11,12 @@
   "complete_annual_venues": 0,
   "status_counts": {
     "coverage_not_established": 763,
-    "official_observations_require_reconciliation": 9,
-    "published_dates_not_exhaustively_verified": 92
+    "official_observations_require_reconciliation": 3,
+    "published_dates_not_exhaustively_verified": 98
   },
-  "published_2026_showtimes": 365,
+  "published_2026_showtimes": 394,
   "observed_2026_opera_showtimes": 115,
-  "unmatched_source_showtimes": 39,
+  "unmatched_source_showtimes": 10,
   "h1_scope_review": [
     {
       "venue_id": "oa-v-000021",
@@ -1133,32 +1133,11 @@
       "city": "Milano",
       "region": "Lombardia",
       "month": "2026-02",
-      "published_showtimes": 0,
+      "published_showtimes": 5,
       "source_observed_opera_showtimes": 5,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 5,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-02-01",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-02-04",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-02-08",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-02-12",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-02-17",
-          "time": "18:00"
-        }
-      ],
+      "observed_already_published": 5,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "scala-2025-26",
@@ -1173,7 +1152,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000006",
@@ -1181,44 +1160,11 @@
       "city": "Milano",
       "region": "Lombardia",
       "month": "2026-03",
-      "published_showtimes": 0,
+      "published_showtimes": 8,
       "source_observed_opera_showtimes": 8,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 8,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-03-01",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-03-03",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-03-05",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-03-07",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-03-10",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-03-11",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-03-13",
-          "time": "18:00"
-        },
-        {
-          "date": "2026-03-15",
-          "time": "18:00"
-        }
-      ],
+      "observed_already_published": 8,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "scala-2025-26",
@@ -1233,7 +1179,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000006",
@@ -1241,24 +1187,11 @@
       "city": "Milano",
       "region": "Lombardia",
       "month": "2026-04",
-      "published_showtimes": 10,
+      "published_showtimes": 13,
       "source_observed_opera_showtimes": 13,
-      "observed_already_published": 10,
-      "observed_not_in_publication": 3,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-04-22",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-04-26",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-04-30",
-          "time": "20:00"
-        }
-      ],
+      "observed_already_published": 13,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "scala-2025-26",
@@ -1273,7 +1206,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000006",
@@ -1281,24 +1214,11 @@
       "city": "Milano",
       "region": "Lombardia",
       "month": "2026-05",
-      "published_showtimes": 6,
+      "published_showtimes": 9,
       "source_observed_opera_showtimes": 9,
-      "observed_already_published": 6,
-      "observed_not_in_publication": 3,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-05-03",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-05-06",
-          "time": "20:00"
-        },
-        {
-          "date": "2026-05-09",
-          "time": "20:00"
-        }
-      ],
+      "observed_already_published": 9,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [
         {
           "source_key": "scala-2025-26",
@@ -1313,7 +1233,7 @@
       ],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000006",
@@ -10583,36 +10503,15 @@
       "city": "Venezia",
       "region": "Veneto",
       "month": "2026-03",
-      "published_showtimes": 0,
+      "published_showtimes": 5,
       "source_observed_opera_showtimes": 5,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 5,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-03-20",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-03-22",
-          "time": "15:30"
-        },
-        {
-          "date": "2026-03-24",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-03-26",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-03-29",
-          "time": "15:30"
-        }
-      ],
+      "observed_already_published": 5,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000021",
@@ -10652,36 +10551,15 @@
       "city": "Venezia",
       "region": "Veneto",
       "month": "2026-06",
-      "published_showtimes": 0,
+      "published_showtimes": 5,
       "source_observed_opera_showtimes": 5,
-      "observed_already_published": 0,
-      "observed_not_in_publication": 5,
-      "observed_unpublished_dates": [
-        {
-          "date": "2026-06-12",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-06-14",
-          "time": "17:00"
-        },
-        {
-          "date": "2026-06-16",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-06-18",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-06-20",
-          "time": "17:00"
-        }
-      ],
+      "observed_already_published": 5,
+      "observed_not_in_publication": 0,
+      "observed_unpublished_dates": [],
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "official_observations_require_reconciliation"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-v-000021",
