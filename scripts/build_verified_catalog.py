@@ -820,7 +820,8 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                 raise ValueError("duplicate editorial performance")
             keys.add(uid)
             # The curated Regio dates are all outside Italy's DST period.
-            if hour is not None and url not in permitted - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
+            if (hour is not None and reviewed_2026 is None
+                    and url not in permitted - {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}):
                 raise ValueError("no verified time for this source")
             if hour is None and url not in {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
                 raise ValueError("expected exact Regio performance hour")
