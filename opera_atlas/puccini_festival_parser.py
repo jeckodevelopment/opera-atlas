@@ -63,13 +63,54 @@ def parse_program(html:str,*,url:str)->list[tuple[str,str,str,str,str]]:
     if not (re.search(r"(?i)\b"+str(edition)+re.escape(match[2])+r" Puccini Festival\b",body)
         and re.search(r"(?i)\b"+str(year)+r" programme\b",body)
         and re.search(r"(?i)\bGiacomo Puccini Open-Air Theatre\b",body)
-        and re.search(r"(?i)\bAll performances start at 9\.15 pm\b",body)):
+        and (year != 2027 or re.search(r"(?i)\bAll performances start at 9\.15 pm\b",body))):
         raise ValueError("Puccini programme/year/venue/clock unverified")
     start=re.search(r"(?i)\bThe operas\b",body)
     end=re.search(r"(?i)\bThe concerts\b",body)
     if start is None or end is None or end.start()<=start.end():
         raise ValueError("Puccini opera programme boundaries missing")
     panel=body[start.end():end.start()]
+    if year != 2027:
+        # Future programmes must expose complete, individually delimited cards.
+        # Do not assume the previous year's titles, counts or starting time.
+        clock_match = re.search(r"(?i)\bAll performances start at (\d{1,2})[.:](\d{2})\s*(am|pm)\b", body)
+        if not clock_match:
+            raise ValueError("Puccini official common clock missing")
+        hour, minute = int(clock_match[1]), int(clock_match[2])
+        if not 1 <= hour <= 12 or minute >= 60:
+            raise ValueError("invalid Puccini clock")
+        clock = f"{hour % 12 + (12 if clock_match[3].lower() == 'pm' else 0):02d}:{minute:02d}"
+        cards = re.split(r"(?i)Explore the opera and cast", panel)
+        if cards[-1].strip() or len(cards) < 2:
+            raise ValueError("incomplete Puccini programme cards")
+        result = []
+        known_titles = [title for title, _ in PROGRAM] + ["Manon Lescaut", "La fanciulla del West", "Edgar", "Le Villi"]
+        seen = set()
+        for card in cards[:-1]:
+            card = card.strip()
+            matches = [(title, m) for title in known_titles
+                       for m in [re.search(r"(?i)(?<!\w)" + re.escape(title) + r"(?!\w)", card)]
+                       if m]
+            if len(matches) != 1:
+                raise ValueError("unverified Puccini work or composite card")
+            title, heading = matches[0]
+            if title in seen:
+                raise ValueError("duplicate Puccini production heading")
+            seen.add(title)
+            days = _parse_days(card[:heading.start()].strip(), year=year)
+            if title == "Il Trittico":
+                if not all(re.search(r"(?i)\b" + re.escape(part) + r"\b", card[heading.end():])
+                           for part in ("Il tabarro", "Suor Angelica", "Gianni Schicchi")):
+                    raise ValueError("Puccini composite programme identity changed")
+                continue
+            # Retain the historical La rondine quarantine until a separate
+            # official-detail reconciliation is available for that work.
+            if title == "La rondine":
+                continue
+            result.extend((title, COMPOSER, VENUE, day, clock) for day in days)
+        if not result:
+            raise ValueError("empty verified Puccini programme")
+        return result
     heads=[]
     for title,count in PROGRAM:
         matches=list(re.finditer(r"(?i)(?<!\w)"+re.escape(title)+r"(?!\w)",panel))
