@@ -75,6 +75,14 @@ class PortraitTests(unittest.TestCase):
                 api(WD, action="wbsearchentities")
             self.assertEqual(call.call_count, 3)
 
+    def test_wikidata_search_busy_retry(self):
+        from io import BytesIO
+        busy = json.dumps({"error":{"code":"cirrussearch-too-busy-error"}}).encode()
+        success = json.dumps({"search":[]}).encode()
+        with patch("scripts.refresh_composer_portraits.urlopen", side_effect=[BytesIO(busy), BytesIO(success)]) as call, patch("scripts.refresh_composer_portraits.time.sleep"):
+            self.assertEqual(api(WD, action="wbsearchentities"), {"search":[]})
+            self.assertEqual(call.call_count, 2)
+
     def test_partial_progress_survives_api_error(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)
