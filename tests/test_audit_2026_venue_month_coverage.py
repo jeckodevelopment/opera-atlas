@@ -200,3 +200,23 @@ class VenueMonthMatrixTests(unittest.TestCase):
 
 if __name__=="__main__":
     unittest.main()
+
+
+class IdentityAwareLeadTests(unittest.TestCase):
+    def test_conservative_matching(self):
+        from scripts.audit_2026_venue_month_coverage import reconcile_lead
+        lead=dict(title="Carmen",composer="Georges Bizet",date="2026-04-24",time="20:00")
+        candidate=dict(lead,venue_id="a")
+        self.assertEqual("exact_match",reconcile_lead(lead,"a",[candidate]))
+        self.assertEqual("identity_review",reconcile_lead(lead,"a",[dict(candidate,composer="Other")]))
+        self.assertEqual("identity_review",reconcile_lead(lead,"a",[dict(candidate,title="Tosca")]))
+        self.assertEqual("clock_review",reconcile_lead(lead,"a",[dict(candidate,time="21:00")]))
+        self.assertEqual("clock_review",reconcile_lead(dict(lead,time=None),"a",[candidate]))
+        self.assertEqual("venue_review",reconcile_lead(lead,"b",[candidate]))
+        self.assertEqual("publication_candidate",reconcile_lead(lead,"a",[]))
+        self.assertEqual("clock_review",reconcile_lead(dict(lead,time=None),"a",[]))
+
+    def test_all_evidence_classified(self):
+        report=VenueMonthMatrixTests.report if hasattr(VenueMonthMatrixTests,"report") else build_matrix(*docs(),json.loads(OFFICIAL_ZERO_VENUE_LEADS.read_text(encoding="utf-8")))
+        self.assertEqual(93,sum(report["official_lead_reconciliation_counts"].values()))
+        self.assertEqual(93,len(report["official_lead_reconciliation"]))
