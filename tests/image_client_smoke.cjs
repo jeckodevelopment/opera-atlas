@@ -99,7 +99,7 @@ const theatreFeed=JSON.parse(fs.readFileSync(path.join(root,"public/catalog/venu
 const sanbapolis=theatreFeed.venues.find(v=>v.id==="oa-v-000072");
 assert.equal(sanbapolis.photo_license,"CC BY 4.0");
 const sanbapolisPhoto=lib.venue({...sanbapolis,venue:sanbapolis.name,municipality:sanbapolis.city});
-assert.equal(sanbapolisPhoto.src,"/atlas/sanbapolis-platea.jpg");
+assert.equal(sanbapolisPhoto.src,"/atlas/assets/images/venues/sanbapolis-platea.jpg");
 assert.equal(sanbapolisPhoto.sourceUrl,sanbapolis.photo_source_url);
 assert.equal(sanbapolisPhoto.credit,"Archivio Comune di Trento");
 assert.equal(lib.venue({venue:"Sanbàpolis",municipality:"Trento"}).src,sanbapolisPhoto.src);

@@ -87,7 +87,7 @@ class FullTheatreProfileTests(unittest.TestCase):
         self.assertNotIn("Bolzano|Teatro Studio",self.profiles)
         venue=next(v for v in self.directory if v["name"]=="Sanbàpolis")
         self.assertEqual(venue["photo_url"],self.profiles["Trento|Sanbàpolis"]["photo_url"])
-        self.assertIn("/atlas/sanbapolis-platea.jpg",(SITE/"image-client.js").read_text(encoding="utf-8"))
+        self.assertIn("/atlas/assets/images/venues/sanbapolis-platea.jpg",(SITE/"image-client.js").read_text(encoding="utf-8"))
         self.assertIn(venue["photo_source_url"],(SITE/"image-client.js").read_text(encoding="utf-8"))
 
     def test_no_unfinished_placeholder_and_theatre_detail_has_photo_history_map(self):

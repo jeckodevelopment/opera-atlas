@@ -91,7 +91,7 @@ jobs:
           from urllib.request import Request, urlopen
           from html import unescape
           url = "https://opera.plus/atlas/trento/sanbapolis/"
-          photo_url = "https://opera.plus/atlas/sanbapolis-platea.jpg"
+          photo_url = "https://opera.plus/atlas/assets/images/venues/sanbapolis-platea.jpg"
           headers = {"User-Agent": "Mozilla/5.0", "Cache-Control": "no-cache"}
           with urlopen(Request(url, headers=headers), timeout=30) as r:
               assert r.status == 200
