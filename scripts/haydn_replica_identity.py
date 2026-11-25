@@ -2,8 +2,8 @@
 from __future__ import annotations
 import copy
 import re
-from datetime import date
-from urllib.parse import urlsplit
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 
 TITLE = "La clemenza di Tito"
 COMPOSER = "Wolfgang Amadeus Mozart"
@@ -98,11 +98,16 @@ def same_replica_group(item, other, production, dates):
     rows=other.get("event_facts",[])
     if len(rows)!=1:return False
     row=rows[0]
+    if not isinstance(row,dict):return False
     if (row.get("event_title")!=production["title"] or row.get("composer")!=production["composer"]
         or row.get("venue")!=production["venue"] or row.get("date") not in dict(production["dates"])):
         return False
     try:
+        stamp=datetime.fromisoformat(row["starts_at"])
+        if stamp.tzinfo is None:return False
+        local=stamp.astimezone(ZoneInfo("Europe/Rome"))
+        if local.date().isoformat()!=row["date"] or local.strftime("%H:%M")!=dict(production["dates"])[row["date"]]:return False
         days=[date.fromisoformat(day) for day in list(dates)+[d for d,_ in production["dates"]]]
         return bool(days) and (max(days)-min(days)).days<=45
-    except (TypeError,ValueError):
+    except (KeyError,TypeError,ValueError):
         return False
