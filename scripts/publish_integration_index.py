@@ -107,6 +107,47 @@ def load_media(root, composers):
     require(all(key in composers for key in registry["portraits"]), "Unknown portrait composer")
     return {key: verified_image(value) for key, value in registry["portraits"].items()}
 
+def load_editorial_media(root, composers):
+    """Separate, opt-in editorial references; never promote to open-license image."""
+    path = root / "data/composer-editorial-images.json"
+    if not path.is_file():
+        return {}
+    doc = read(path)
+    require(doc.get("schema_version") == 1 and isinstance(doc.get("images"), dict),
+            "Invalid editorial image registry")
+    providers = {
+        "noncommercial_public_interest_information": (
+            "www.quirinale.it", "/APIRed/api/media/static/",
+            "https://www.quirinale.it/it/pagine/guida-navigazione",
+            "Institutional non-commercial editorial use"),
+        "press_and_media_editorial": (
+            "www.oraziosciortino.com", "/wp-content/uploads/",
+            "https://www.oraziosciortino.com/media/", "Press and media use"),
+    }
+    result = {}
+    fields = ("url", "alt", "source_url", "author", "license", "license_url",
+              "credit", "media_kind", "usage")
+    for key, record in doc["images"].items():
+        require(key in composers and isinstance(record, dict)
+                and record.get("name") == composers[key]["name"], "Editorial image identity mismatch")
+        require(all(isinstance(record.get(k), str) and record[k].strip() for k in fields),
+                "Missing editorial image fields")
+        provider = providers.get(record["usage"])
+        require(provider is not None and record.get("preserve_integrity") is True
+                and record["media_kind"] in {"portrait", "documentary_photo"}, "Invalid editorial usage")
+        host, prefix, terms, license_name = provider
+        require(record["license_url"] == terms and record["license"] == license_name,
+                "Editorial rights mismatch")
+        for field in ("url", "source_url"):
+            value = record[field]
+            parsed = urlsplit(value)
+            require(parsed.scheme == "https" and parsed.netloc == host
+                    and not parsed.fragment and not parsed.query and chr(92) not in value
+                    and not any(ord(ch) < 33 for ch in value), "Invalid editorial URL")
+        require(urlsplit(record["url"]).path.startswith(prefix), "Invalid editorial image path")
+        result[key] = {**{k: record[k] for k in fields}, "preserve_integrity": True}
+    return result
+
 def build(root, revision):
     require(SHA.fullmatch(revision), "Expected full revision SHA")
     catalog = root / "public/catalog"
@@ -121,6 +162,7 @@ def build(root, revision):
     composers = index(registry["composers"])
     mapping, unresolved = resolve_mapping(works, composers, registry["work_composers"])
     portraits = load_media(root, composers)
+    editorial = load_editorial_media(root, composers)
     entities = []
 
     def add(kind, key, title, subtitle=None, url=None, composer_ids=(), aliases=(), image=None, fallback_image=None, **extra):
@@ -133,7 +175,8 @@ def build(root, revision):
 
     for key, c in composers.items():
         # No composer route is published yet.
-        add("composer", key, c["name"], aliases=c.get("aliases", []), image=portraits.get(key))
+        add("composer", key, c["name"], aliases=c.get("aliases", []), image=portraits.get(key),
+            **({"editorial_image": editorial[key]} if key in editorial else {}))
     for key, w in works.items():
         refs = mapping.get(key, [])
         # New works must not prevent publication or acquire guessed composer IDs.
