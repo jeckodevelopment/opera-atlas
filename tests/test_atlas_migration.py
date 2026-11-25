@@ -67,7 +67,7 @@ class AtlasMigrationTests(unittest.TestCase):
             status=200
             headers=Message()
         Reply.headers["Content-Type"]="image/jpeg"
-        jpeg=b"\\xff\\xd8\\xff"+b"x"*2048+b"\\xff\\xd9"
+        jpeg=b"\xff\xd8\xff"+b"x"*2048+b"\xff\xd9"
         seen=[]
         def opener(request, timeout):
             seen.append(request.full_url)
