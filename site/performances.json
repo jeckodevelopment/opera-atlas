@@ -8937,6 +8937,25 @@
       ]
     },
     {
+      "id": "curated:auto-0e8fc70d8165e8a2:2026-11-27",
+      "starts_at": "2026-11-27T20:00:00+01:00",
+      "local_date": "2026-11-27",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La clemenza di Tito",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro Sociale",
+      "municipality": "Trento",
+      "region": "Trentino-Alto Adige",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.haydn.it/eventi/la-clemenza-di-tito",
+        "https://www.haydn.it/eventi/la-clemenza-di-tito-2"
+      ]
+    },
+    {
       "id": "curated:auto-1d35c5f06b99b17b:2026-11-27",
       "starts_at": "2026-11-27T20:00:00+01:00",
       "local_date": "2026-11-27",
@@ -8988,25 +9007,6 @@
       "longitude": null,
       "sources": [
         "https://www.carlofelice.it/spettacolo/i-capuleti-e-i-montecchi/"
-      ]
-    },
-    {
-      "id": "curated:auto-0e8fc70d8165e8a2:2026-11-27",
-      "starts_at": "2026-11-27T20:00:00+01:00",
-      "local_date": "2026-11-27",
-      "time_known": true,
-      "time_label": "20:00",
-      "status": "announced",
-      "title": "La clemenza di Tito",
-      "composer": "Wolfgang Amadeus Mozart",
-      "venue": "Teatro Sociale",
-      "municipality": "Trento",
-      "region": "Trentino-Alto Adige",
-      "latitude": null,
-      "longitude": null,
-      "sources": [
-        "https://www.haydn.it/eventi/la-clemenza-di-tito",
-        "https://www.haydn.it/eventi/la-clemenza-di-tito-2"
       ]
     },
     {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-25T07:35:08+00:00",
+  "checked_at": "2026-11-25T12:08:04+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-dd7baa45131b35e450b1",
@@ -9,6 +9,13 @@
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
       "title_hint": "l opera forse di francesco filidei infinito nero di salvatore sciarrino",
       "program_id": "oa-p-dd7baa45131b35e4"
+    },
+    {
+      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000066",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
@@ -1537,13 +1544,6 @@
       "work_id": "oa-w-000019",
       "source_key": "bologna-comunale-opera-2027",
       "official_url": "https://www.tcbo.it/evento/opera/madama-butterfly-2027/"
-    },
-    {
-      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
-      "status": "already_catalogued",
-      "work_id": "oa-w-000066",
-      "source_key": "haydn-rolling-opera",
-      "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
     },
     {
       "candidate_id": "oa-index-f58d3866160127ee1932",
