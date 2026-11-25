@@ -51,8 +51,8 @@ def build(source:dict, registry:dict)->dict:
                     venue.get("photo_credit") and
                     venue.get("photo_license","").startswith("Diritti non specificati")):
                 raise ValueError("unverified municipal theatre photograph")
-        elif venue.get("photo_url") and venue["id"] in ("oa-v-000071", "oa-v-000072"):
-            approved = {"oa-v-000071":["https://www.fondazioneteatro.bolzano.it/wp-content/uploads/2017/02/Teatro_Studio-Teatro_Comunale-1.jpg","https://www.fondazioneteatro.bolzano.it/le-nostre-sale/teatro-studio-teatro-comunale/","Da Riz — Fondazione Teatro Comunale e Auditorium Bolzano"],"oa-v-000072":["https://www.centrosantachiara.it/var/centrosantachiara/storage/images/_aliases/webpage_gallery_small_image/5/0/0/0/150005-1-ita-IT/MoniQue%20fSanb%C3%A0Polis%20web%202.jpg","https://www.centrosantachiara.it/it/spazi/teatri/teatro-sanbapolis-trento","Centro Servizi Culturali Santa Chiara — galleria ufficiale"]}
+        elif venue.get("photo_url") and venue["id"] == "oa-v-000072":
+            approved = {"oa-v-000072":["https://www.cultura.trentino.it/var/001/storage/images/media/images/teatro-sanbapolis/16381731-1-ita-IT/Teatro-Sanbapolis_imagefullwide.jpg","https://www.cultura.trentino.it/Luoghi/Tutti-i-luoghi-della-cultura/Teatri-e-sale/Teatro-Sanbapolis","Trentino Cultura — portale della Provincia autonoma di Trento"]}
             if ([venue["photo_url"], venue.get("photo_source_url"), venue.get("photo_credit")] != approved[venue["id"]]
                     or venue.get("photo_license") != "Diritti non specificati — immagine dal sito ufficiale"):
                 raise ValueError("unverified official venue photograph")

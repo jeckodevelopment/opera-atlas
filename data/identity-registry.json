@@ -1482,14 +1482,6 @@
       "city": "Sabbioneta",
       "region": "Lombardia"
     },
-    "Bolzano|Teatro Studio": {
-      "id": "oa-v-000071",
-      "slug": "teatro-studio",
-      "city_slug": "bolzano",
-      "name": "Teatro Studio",
-      "city": "Bolzano",
-      "region": "Trentino-Alto Adige"
-    },
     "Trento|Sanbàpolis": {
       "id": "oa-v-000072",
       "slug": "sanbapolis",
@@ -1505,6 +1497,14 @@
       "name": "Teatro Antico di Taormina",
       "city": "Taormina",
       "region": "Sicilia"
+    },
+    "Bolzano|Teatro Comunale di Bolzano": {
+      "id": "oa-v-000071",
+      "slug": "teatro-comunale-di-bolzano",
+      "city_slug": "bolzano",
+      "name": "Teatro Comunale di Bolzano",
+      "city": "Bolzano",
+      "region": "Trentino-Alto Adige"
     }
   },
   "stagings": {

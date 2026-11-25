@@ -222,6 +222,13 @@ window.OperaAtlasImages=Object.freeze((()=>{
         fallbackSrc:poster(title),sourceUrl:event.photo_source_url,
         credit:event.photo_credit,license:event.photo_license||""};
     }
+    if(city==="trento" && title==="Sanbàpolis" &&
+       external==="https://www.cultura.trentino.it/var/001/storage/images/media/images/teatro-sanbapolis/16381731-1-ita-IT/Teatro-Sanbapolis_imagefullwide.jpg" &&
+       event?.photo_source_url==="https://www.cultura.trentino.it/Luoghi/Tutti-i-luoghi-della-cultura/Teatri-e-sale/Teatro-Sanbapolis" && event?.photo_credit){
+      return {src:external,alt:"Platea del Teatro Sanbàpolis a Trento",
+        fallbackSrc:null,sourceUrl:event.photo_source_url,
+        credit:event.photo_credit,license:event.photo_license||""};
+    }
     const verified=event?.photo_file || knownVenueFile;
     // Never infer a photographed building from its city. A city can host
     // multiple theatres, including distinct historic and temporary venues.

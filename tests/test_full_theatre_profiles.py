@@ -56,9 +56,9 @@ class FullTheatreProfileTests(unittest.TestCase):
         # Newly verified Tonino Pardo has no independently licensed photo yet.
         # Never substitute an image from a different physical theatre.
         self.assertEqual(pending,[])
-        self.assertEqual(len(photos),len(self.directory)-5)
+        self.assertEqual(len(photos),len(self.directory)-4)
         external=[v for v in self.directory if v.get("photo_url")]
-        self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo","Teatro Studio","Sanbàpolis"})
+        self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo","Sanbàpolis"})
         self.assertEqual(next(v for v in external if v["name"]=="Teatro Politeama Greco")["photo_license"],"CC BY 4.0")
         municipal=next(v for v in external if v["name"]=="Teatro Nazionale")
         self.assertEqual(municipal["photo_url"],"https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg")
@@ -69,7 +69,7 @@ class FullTheatreProfileTests(unittest.TestCase):
             self.assertTrue(venue.get("photo_credit"),venue["id"])
         without=[v for v in self.directory if not v.get("photo_file") and v.get("photo_status")!="review_pending"]
         self.assertEqual({v["name"] for v in without},
-                         {"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo","Teatro Studio","Sanbàpolis"})
+                         {"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo","Sanbàpolis"})
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Politeama Greco")["photo_status"],"verified")
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Nazionale")["photo_status"],"verified")
         self.assertEqual(next(v for v in without if v["name"]=="Teatro M° Tonino Pardo")["photo_status"],"verified")
@@ -78,6 +78,16 @@ class FullTheatreProfileTests(unittest.TestCase):
                          {"Teatro Comunale di Bologna","Teatro Auditorium Manzoni"})
         self.assertNotEqual(next(v["photo_file"] for v in photos if v["name"]=="Arena di Verona"),
                             next(v["photo_file"] for v in photos if v["name"]=="Teatro Filarmonico"))
+
+    def test_bolzano_studio_is_canonical_and_sanbapolis_has_renderable_photo(self):
+        bolzano=[v for v in self.directory if v["city"]=="Bolzano"]
+        self.assertEqual(1,len(bolzano))
+        self.assertEqual("oa-v-000071",bolzano[0]["canonical_venue_id"])
+        self.assertIn("Teatro Studio",bolzano[0]["history"])
+        self.assertNotIn("Bolzano|Teatro Studio",self.profiles)
+        venue=next(v for v in self.directory if v["name"]=="Sanbàpolis")
+        self.assertEqual(venue["photo_url"],self.profiles["Trento|Sanbàpolis"]["photo_url"])
+        self.assertIn(venue["photo_url"],(SITE/"image-client.js").read_text(encoding="utf-8"))
 
     def test_no_unfinished_placeholder_and_theatre_detail_has_photo_history_map(self):
         detail=(SITE/"detail.js").read_text(encoding="utf-8")
