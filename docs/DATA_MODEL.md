@@ -47,3 +47,11 @@ La funzione `resolve_review` consente di scegliere esplicitamente una recita gi�
 - Le composizioni basate sullo stesso soggetto ma con titoli differenti (per esempio *Manon* e *Manon Lescaut*) rimangono distinte. Una relazione editoriale per soggetto richiederà evidenza esplicita e non può essere dedotta per somiglianza testuale.
 - Regressioni da coprire: *La bohème* (Puccini/Leoncavallo), *Il barbiere di Siviglia* (Paisiello/Rossini), *Manon Lescaut* (Auber/Puccini) e, per titoli differenti, *Manon* (Massenet). Gli ultimi casi non vanno inseriti nel catalogo pubblico in assenza di spettacoli e fonti verificati.
 
+
+## Identità delle produzioni e repliche Haydn — 25/11/2026
+
+L'URL di biglietteria non identifica necessariamente un allestimento. Le due pagine di *La clemenza di Tito* (Teatro Sociale, Trento, 27/29 novembre 2026) condividono il [gruppo ufficiale Repliche](https://www.haydn.it/eventi/area/opera?repliche=la-clemenza-di-tito). Conserviamo la produzione `oa-s-000245` e le recite `oa-r-000962`, `oa-r-000963`, con i rispettivi URL di acquisto. La produzione duplicata `oa-s-000246` è registrata come ritirata; il precedente percorso web reindirizza al canonico.
+
+Il connettore acquisisce il collegamento esplicito Repliche; il riconciliatore richiede due evidenze ufficiali indipendenti, stesso gruppo, composizione, sede e orari verificati, con date ravvicinate. Un gruppo ambiguo rimane in revisione, non genera una seconda produzione. Titolo identico, suffisso numerico nell'URL o prossimità temporale da soli non bastano. Le edizioni distinte restano separate.
+
+Audit sul catalogo di partenza: 343 produzioni, 10 gruppi con titolo/compositore/sede coincidenti. Il caso Tito è riconciliato. Götterdämmerung alla Scala (febbraio e cicli Ring di marzo 2026) merita una verifica dedicata della semantica di produzione e biglietteria; non è accorpato in questo intervento. Gli altri gruppi includono edizioni annuali o allestimenti distinti. Nessuna recita è rimossa.
