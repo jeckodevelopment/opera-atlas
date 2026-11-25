@@ -9,7 +9,7 @@ SITE=ROOT/"site"
 class FestivalArtworkTests(unittest.TestCase):
     def test_festival_performance_card_identified_as_work(self):
         source=(SITE/"directory.js").read_text(encoding="utf-8")
-        self.assertIn('imageKind:"work",work_slug:event.work_slug',source)
+        self.assertIn('imageKind:event.program_id?"program":"work",programEvent:event,work_slug:event.work_slug',source)
         self.assertIn('const type=item.imageKind||',source)
         self.assertIn('{title:item.title,work_slug:item.work_slug,work_id:item.work_id',source)
         self.assertIn('images[type](identity)',source)
