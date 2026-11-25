@@ -335,6 +335,24 @@
       "verified": true,
       "wikidata_id": "Q3082360"
     },
+    "oa-c-000030": {
+      "alt": "Ritratto di Franz Lehár",
+      "author": "Ludwig Gutmann",
+      "commons_file": "Lehar Ferenc.jpg",
+      "credit": "Ludwig Gutmann — Wikimedia Commons — Public Domain",
+      "identity_evidence": "editorial_source_review",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [
+        "Category:CC-PD-Mark"
+      ],
+      "rights_evidence": "commons_public_domain_mark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lehar_Ferenc.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Lehar_Ferenc.jpg/960px-Lehar_Ferenc.jpg",
+      "verified": true,
+      "wikidata_id": "Q191917"
+    },
     "oa-c-000031": {
       "alt": "Ritratto di Gaetano Donizetti",
       "author": "Rijksmuseum",
