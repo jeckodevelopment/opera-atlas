@@ -720,6 +720,54 @@
           "20:30"
         ]
       ]
+    },
+    {
+      "venue_id": "oa-vd-000022",
+      "venue": "Teatro Sociale",
+      "city": "Rovigo",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "official_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/pagliacci",
+      "dates": [
+        [
+          "2026-11-13",
+          "20:30"
+        ],
+        [
+          "2026-11-15",
+          "16:00"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000056",
+      "venue": "Teatro Nazionale",
+      "city": "Roma",
+      "title": "La vita nuda",
+      "composer": "Matteo D’Amico",
+      "official_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
+      "dates": [
+        [
+          "2026-10-20",
+          "20:00"
+        ],
+        [
+          "2026-10-22",
+          "20:00"
+        ],
+        [
+          "2026-10-23",
+          "20:00"
+        ],
+        [
+          "2026-10-24",
+          "18:00"
+        ],
+        [
+          "2026-10-25",
+          "16:30"
+        ]
+      ]
     }
   ]
 }

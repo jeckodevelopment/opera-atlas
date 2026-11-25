@@ -897,6 +897,13 @@
       "slug": "la-fanciulla-del-west",
       "title": "La fanciulla del West",
       "composer": "Giacomo Puccini"
+    },
+    "la vita nuda|matteo d’amico": {
+      "id": "oa-w-000141",
+      "slug": "la-vita-nuda",
+      "title": "La vita nuda",
+      "composer": "Matteo D’Amico",
+      "authority_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
     }
   },
   "venues": {
@@ -4206,6 +4213,22 @@
       "venue_id": "oa-v-000070",
       "slug": "il-barbiere-di-siviglia",
       "source_url": "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica",
+      "season": "2026"
+    },
+    "historical-2026-rovigo-pagliacci": {
+      "id": "oa-s-000350",
+      "work_id": "oa-w-000006",
+      "venue_id": "oa-v-000050",
+      "slug": "pagliacci",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/pagliacci",
+      "season": "2026"
+    },
+    "historical-2026-roma-la-vita-nuda": {
+      "id": "oa-s-000351",
+      "work_id": "oa-w-000141",
+      "venue_id": "oa-v-000029",
+      "slug": "la-vita-nuda",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
       "season": "2026"
     }
   },
@@ -12202,6 +12225,48 @@
       "staging_id": "oa-s-000349",
       "original_date": "2026-11-14",
       "source_url": "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica"
+    },
+    "historical-2026-rovigo-pagliacci|2026-11-13": {
+      "id": "oa-r-001360",
+      "staging_id": "oa-s-000350",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/pagliacci"
+    },
+    "historical-2026-rovigo-pagliacci|2026-11-15": {
+      "id": "oa-r-001361",
+      "staging_id": "oa-s-000350",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/pagliacci"
+    },
+    "historical-2026-roma-la-vita-nuda|2026-10-20": {
+      "id": "oa-r-001362",
+      "staging_id": "oa-s-000351",
+      "original_date": "2026-10-20",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
+    },
+    "historical-2026-roma-la-vita-nuda|2026-10-22": {
+      "id": "oa-r-001363",
+      "staging_id": "oa-s-000351",
+      "original_date": "2026-10-22",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
+    },
+    "historical-2026-roma-la-vita-nuda|2026-10-23": {
+      "id": "oa-r-001364",
+      "staging_id": "oa-s-000351",
+      "original_date": "2026-10-23",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
+    },
+    "historical-2026-roma-la-vita-nuda|2026-10-24": {
+      "id": "oa-r-001365",
+      "staging_id": "oa-s-000351",
+      "original_date": "2026-10-24",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
+    },
+    "historical-2026-roma-la-vita-nuda|2026-10-25": {
+      "id": "oa-r-001366",
+      "staging_id": "oa-s-000351",
+      "original_date": "2026-10-25",
+      "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
     }
   },
   "reserved_works": {

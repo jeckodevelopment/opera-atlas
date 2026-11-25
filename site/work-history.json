@@ -1318,6 +1318,16 @@
         "https://www.puccinimuseum.org/giacomo-puccini/le-opere/la-fanciulla-del-west/",
         "https://archives.metopera.org/MetOperaSearch/record.jsp?dockey=0361448"
       ]
+    },
+    "la-vita-nuda": {
+      "librettist": "Sandro Cappelletto, da Luigi Pirandello",
+      "premiere_year": 2026,
+      "premiere_venue": "Teatro Nazionale",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-vita-nuda/",
+        "https://culture.roma.it/appuntamento/la-vita-nuda/"
+      ]
     }
   },
   "works_by_id": {
