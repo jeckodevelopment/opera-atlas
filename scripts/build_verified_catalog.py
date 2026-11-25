@@ -1092,6 +1092,26 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     })
+    reconciled_2026.update({
+        "historical-2026-reggio-heure-espagnole": {
+            "title": "L’heure espagnole",
+            "composer": "Maurice Ravel",
+            "venue": "Teatro Ariosto",
+            "municipality": "Reggio Emilia",
+            "region": "Emilia-Romagna",
+            "source_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/",
+            "dates": [
+                [
+                    "2026-05-03",
+                    "18:00"
+                ],
+                [
+                    "2026-05-05",
+                    "20:00"
+                ]
+            ]
+        }
+    })
     reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
     permitted.update(reconciled_urls)
     events = []

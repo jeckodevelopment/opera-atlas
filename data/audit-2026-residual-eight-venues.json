@@ -91,10 +91,11 @@
               "2026-05-05",
               "20:00"
             ]
-          ]
+          ],
+          "disposition": "catalog_reconciliation_proposed"
         }
       ],
-      "note": "Veleno belongs to April 2027."
+      "note": "Veleno belongs to April 2027. Official event page confirms both public dates; preceded by Raveliana, a melologue not counted separately. Chamber orchestration by Gabriel Grovlez."
     },
     {
       "venue_id": "oa-vd-000023",
@@ -103,7 +104,10 @@
         "https://www.haydn.it/programmi/stagione-dopera-2025-26",
         "https://www.apemusicale.it/joomla/it/news/82-news2025/16337-bolzano-trento-la-stagione-2025-26-dell-orchestra-haydn?showall=1",
         "https://www.haydn.it/en/programmi/opera-season-2026-27",
-        "https://www.haydn.it/wp-content/uploads/2026/03/Haydn-2026-Stagione-25-26-Libretto-Note-to-a-Friend-04-web.pdf"
+        "https://www.haydn.it/wp-content/uploads/2026/03/Haydn-2026-Stagione-25-26-Libretto-Note-to-a-Friend-04-web.pdf",
+        "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
+        "https://davidlangmusic.com/events/note-to-a-friend-performed-by-i-solisti-dellorchestra-haydn-di-bolzano-e-trento/",
+        "https://www.haydn.it/eventi/note-to-a-friend-2"
       ],
       "productions": [
         {
@@ -117,7 +121,7 @@
           ]
         }
       ],
-      "note": "Published season announcement identifies Bolzano. February double bill Il segreto di Susanna / La notte di un nevrastenico requires physical venue verification; November Clemenza is Trento. Official Haydn booklet confirms 7 March 20:00 in Teatro Comunale (Studio), a separate room; venue identity and work editorial pending."
+      "note": "Published season announcement identifies Bolzano. February double bill Il segreto di Susanna / La notte di un nevrastenico requires physical venue verification; November Clemenza is Trento. Official Haydn booklet confirms 7 March 20:00 in Teatro Comunale (Studio), a separate room; venue identity and work editorial pending. Theatre and composer corroborate Studio showtime; additional Trento Sanbàpolis 11 March 20:00 confirmed by Haydn, pending venue registry and duplicate review."
     },
     {
       "venue_id": "oa-vd-000055",
@@ -133,7 +137,8 @@
       "status": "corroboration_required",
       "sources": [
         "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html",
-        "https://www.guidasicilia.it/evento/a-taormina-il-nabucco-di-verdi-per-il-festival-lirico-dei-teatri-di-pietra-2026-a-taormina-il-nabucco-di-verdi-per-il-festival-lirico-dei-teatri-di-pietra-2026/3031178"
+        "https://www.guidasicilia.it/evento/a-taormina-il-nabucco-di-verdi-per-il-festival-lirico-dei-teatri-di-pietra-2026-a-taormina-il-nabucco-di-verdi-per-il-festival-lirico-dei-teatri-di-pietra-2026/3031178",
+        "https://www.strettoweb.com/2026/08/taormina-nabucco-incanta-il-teatro-antico-sold-out-standing-ovation-e-letna-in-eruzione-sullo-sfondo-foto/2124658/amp/"
       ],
       "productions": [
         {
@@ -147,7 +152,7 @@
           ]
         }
       ],
-      "note": "Festival Lirico dei Teatri di Pietra coproduction, corroborating press reports; seek organizer evidence before publication."
+      "note": "Festival Lirico dei Teatri di Pietra coproduction, corroborating press reports; seek organizer evidence before publication. Post-event report confirms occurrence; primary organizer schedule still pending."
     }
   ]
 }

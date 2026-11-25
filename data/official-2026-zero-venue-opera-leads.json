@@ -786,6 +786,24 @@
           "16:00"
         ]
       ]
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "venue": "Teatro Ariosto",
+      "city": "Reggio Emilia",
+      "title": "L’heure espagnole",
+      "composer": "Maurice Ravel",
+      "official_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/",
+      "dates": [
+        [
+          "2026-05-03",
+          "18:00"
+        ],
+        [
+          "2026-05-05",
+          "20:00"
+        ]
+      ]
     }
   ]
 }
