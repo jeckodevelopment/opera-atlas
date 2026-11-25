@@ -26,6 +26,14 @@ Remaining leads (not publication approvals; no explicit reusable image license e
 
 No attribution alone establishes permission. Retain no-image fallback until a verified likeness and reuse rights are documented.
 
+## Follow-up: portrait suitability and licensing
+
+- Giovanni Sollima: [Comune di Trento](https://www.comune.trento.it/Vivere-il-Comune/Eventi/Ice-Cello-Giovanni-Sollima) explicitly credits Haydn Bolzano e Trento and CC BY 4.0. The actual linked image was inspected: it is an Ice-Cello promotional poster, with no visible face. Reject as an individual portrait.
+- Orazio Sciortino: [EEG piano duel](https://commons.wikimedia.org/wiki/File:EEG_piano_duel.jpg) depicts two performers. Do not assign an individual crop without reliable source identification of the subject and appropriate attribution for the derivative.
+- Francesco Filidei and Zygmunt Krauze: additional searches combining names and Creative Commons licensing did not establish a suitable portrait with explicit reuse rights. Retain existing permission leads.
+
+Keep all 54 verified portraits and the 17 unresolved records. Do not use event posters, unrelated licensed images, or general website licenses as portrait rights evidence. This closes the current candidate suitability review, not the acquisition of all remaining portraits.
+
 ## 2026-11-25 — remaining 12 after PR 878
 
 Gaia Aloisi: exact portrait on [GAI](https://www.giovaniartisti.it/artista/aloisi-gaia), with [published reproduction terms](https://www.giovaniartisti.it/note-legali) requiring attribution, same license and no modifications. Profile terms retain artist ownership; therefore this is a scoped editorial reference, not public domain or an unrestricted license. Photographer not identified. The image was opened successfully. No bulk access to the GAI database is implemented.
