@@ -39,9 +39,9 @@
 .mobile-nav{display:none}
 @media(max-width:700px){
   .primary-nav{display:none}
-  body{padding-bottom:78px}
-  .mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-top:1px solid var(--line);padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom));box-shadow:0 -3px 16px #0000000b}
-  .mobile-nav a{display:block;color:#555;text-align:center;text-decoration:none;padding:9px 2px;font-size:12px;border-radius:8px}
+  body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  .mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:#fff;border-top:1px solid var(--line);padding:5px max(4px,env(safe-area-inset-right)) calc(5px + env(safe-area-inset-bottom)) max(4px,env(safe-area-inset-left));box-shadow:0 -3px 16px #0000000b}
+  .mobile-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:44px;color:#555;text-align:center;text-decoration:none;padding:4px 0;font-size:clamp(10px,2.8vw,12px);line-height:1.2;white-space:nowrap;border-radius:8px}
   .mobile-nav a[aria-current]{color:#171717;background:#f5efdf;font-weight:700}
   .discovery-section{padding:26px 0}
 }
@@ -120,11 +120,13 @@
 .brief-synopsis{border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:20px}
 .brief-synopsis p{font-size:14px;line-height:1.7}
 @media(max-width:700px){
-.mobile-nav a::before{display:block;font-size:17px;line-height:1.2;margin-bottom:4px;color:#ad8120}
-.mobile-nav a[href*="spettacoli"]::before{content:"▣"}
+.mobile-nav a::before{display:block;width:18px;height:18px;flex:none;font-size:17px;line-height:18px;color:#ad8120}
+.mobile-nav a[href*="spettacoli"]::before,.mobile-nav a[href*="in-scena"]::before,.mobile-nav a[href*="festival"]::before{content:"";background:currentColor;-webkit-mask:var(--nav-icon) center/contain no-repeat;mask:var(--nav-icon) center/contain no-repeat}
+.mobile-nav a[href*="spettacoli"]::before{--nav-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M3%207h18v3a2%202%200%200%200%200%204v3H3v-3a2%202%200%200%200%200-4z%22%2F%3E%3Cpath%20d%3D%22M15%207v2m0%202v2m0%202v2%22%2F%3E%3C%2Fsvg%3E")}
+.mobile-nav a[href*="in-scena"]::before{--nav-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%2218%22%20height%3D%2216%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M16%203v4M8%203v4M3%2010h18%22%2F%3E%3Cpath%20d%3D%22m10%2013%205%202.5-5%202.5z%22%2F%3E%3C%2Fsvg%3E")}
+.mobile-nav a[href*="festival"]::before{--nav-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M3%204v16m18-16v16M3%206c5%206%2013%206%2018%200M5%208l1%205%204-3m4%200%204%203%201-5%22%2F%3E%3C%2Fsvg%3E")}
 .mobile-nav a[href*="opere"]::before{content:"♫"}
 .mobile-nav a[href*="teatri"]::before{content:"⌂"}
-.mobile-nav a[href*="festival"]::before{content:"▦"}
 }
 
 /* Editorial presentation: images + responsive multi-column catalogs. */
