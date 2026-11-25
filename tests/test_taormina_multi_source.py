@@ -32,6 +32,18 @@ class TaorminaMultiSourceTests(unittest.TestCase):
             self.assertFalse(eligible_detail(key,url+"#fragment"))
             self.assertFalse(eligible_detail(key,"https://evil.example/evento/nabucco/"))
 
+    def test_empty_index_is_diagnosed_as_missing_links_not_configuration(self):
+        from opera_atlas.controlled_fetch import FetchResult
+        from scripts.discover_season_indexes import scan
+        config=json.loads(CONFIG.read_text())
+        key="taormina-arte-rolling-opera"
+        def fetch(db, *, source_id, url, network_enabled):
+            return FetchResult(url,"<h1>Programma</h1>","a"*64,17)
+        _,health=scan(config,{"schema_version":1,"candidates":[]},
+                      fetcher=fetch,network_enabled=True,source_keys={key})
+        self.assertEqual(health[0]["diagnostic"],"index_incomplete_or_markup_changed")
+        self.assertEqual(health[0]["status"],"unavailable_or_invalid")
+
     def test_each_index_returns_candidates_not_published_operas(self):
         for key,url in (("taormina-fondazione-rolling-opera",NABUCCO),
                         ("taormina-opera-festival-rolling",TRAVIATA),
