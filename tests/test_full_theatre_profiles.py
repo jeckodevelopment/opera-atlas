@@ -55,10 +55,10 @@ class FullTheatreProfileTests(unittest.TestCase):
         pending=[v for v in self.directory if v.get("photo_status")=="review_pending"]
         # Newly verified Tonino Pardo has no independently licensed photo yet.
         # Never substitute an image from a different physical theatre.
-        self.assertEqual({v['id'] for v in pending},{'oa-v-000071','oa-v-000072'})
+        self.assertEqual(pending,[])
         self.assertEqual(len(photos),len(self.directory)-5)
         external=[v for v in self.directory if v.get("photo_url")]
-        self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo"})
+        self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo","Teatro Studio","Sanbàpolis"})
         self.assertEqual(next(v for v in external if v["name"]=="Teatro Politeama Greco")["photo_license"],"CC BY 4.0")
         municipal=next(v for v in external if v["name"]=="Teatro Nazionale")
         self.assertEqual(municipal["photo_url"],"https://www.comune.roma.it/web-resources/cms/images/teatro_nazionale_d0.jpg")
@@ -69,7 +69,7 @@ class FullTheatreProfileTests(unittest.TestCase):
             self.assertTrue(venue.get("photo_credit"),venue["id"])
         without=[v for v in self.directory if not v.get("photo_file") and v.get("photo_status")!="review_pending"]
         self.assertEqual({v["name"] for v in without},
-                         {"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo"})
+                         {"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo","Teatro Studio","Sanbàpolis"})
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Politeama Greco")["photo_status"],"verified")
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Nazionale")["photo_status"],"verified")
         self.assertEqual(next(v for v in without if v["name"]=="Teatro M° Tonino Pardo")["photo_status"],"verified")
