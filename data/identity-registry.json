@@ -907,7 +907,7 @@
     },
     "l’heure espagnole|maurice ravel": {
       "id": "oa-w-000142",
-      "slug": "l-heure-espagnole",
+      "slug": "heure-espagnole",
       "title": "L’heure espagnole",
       "composer": "Maurice Ravel",
       "authority_url": "https://ressources.ircam.fr/en/work/l%27heure-espagnole"
@@ -4250,7 +4250,7 @@
       "id": "oa-s-000353",
       "work_id": "oa-w-000142",
       "venue_id": "oa-v-000031",
-      "slug": "l-heure-espagnole",
+      "slug": "heure-espagnole",
       "source_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/",
       "season": "2026"
     }
