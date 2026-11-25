@@ -1328,6 +1328,16 @@
         "https://www.operaroma.it/spettacoli/la-vita-nuda/",
         "https://culture.roma.it/appuntamento/la-vita-nuda/"
       ]
+    },
+    "l-heure-espagnole": {
+      "librettist": "Franc-Nohain",
+      "premiere_year": 1911,
+      "premiere_venue": "Opéra-Comique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://archiviostorico.operaroma.it/opera/lora-spagnola-lheure-espagnole/",
+        "https://ressources.ircam.fr/en/work/l%27heure-espagnole"
+      ]
     }
   },
   "works_by_id": {
