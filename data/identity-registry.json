@@ -4230,6 +4230,14 @@
       "slug": "la-vita-nuda",
       "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
       "season": "2026"
+    },
+    "historical-2026-bologna-manzoni-samson-et-dalila": {
+      "id": "oa-s-000352",
+      "work_id": "oa-w-000017",
+      "venue_id": "oa-v-000020",
+      "slug": "samson-et-dalila",
+      "source_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -12267,6 +12275,18 @@
       "staging_id": "oa-s-000351",
       "original_date": "2026-10-25",
       "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
+    },
+    "historical-2026-bologna-manzoni-samson-et-dalila|2026-11-13": {
+      "id": "oa-r-001367",
+      "staging_id": "oa-s-000352",
+      "original_date": "2026-11-13",
+      "source_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/"
+    },
+    "historical-2026-bologna-manzoni-samson-et-dalila|2026-11-15": {
+      "id": "oa-r-001368",
+      "staging_id": "oa-s-000352",
+      "original_date": "2026-11-15",
+      "source_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/"
     }
   },
   "reserved_works": {
