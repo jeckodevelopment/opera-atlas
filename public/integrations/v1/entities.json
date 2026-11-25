@@ -481,7 +481,16 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000027",
-      "image": null,
+      "image": {
+        "alt": "Frontespizio del libretto La bisalba, Napoli 1667 — documento storico relativo a Francesco Provenzale, non ritratto",
+        "author": "Lodovico Cavallo (stampatore); UNC Italian Opera Libretto Collection, digitalizzazione Internet Archive",
+        "credit": "La bisalba, Napoli 1667 — UNC Italian Opera Libretto Collection / Internet Archive / Wikimedia Commons — pubblico dominio, frontespizio (non ritratto)",
+        "license": "Public Domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf",
+        "media_kind": "archival_document",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf/page3-330px-Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf.jpg"
+      },
       "subtitle": null,
       "title": "Francesco Provenzale",
       "type": "composer",
@@ -706,7 +715,16 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000039",
-      "image": null,
+      "image": {
+        "alt": "Prima pagina della partitura autografa di Boabdil, re di Granata (1827), Giuseppe Balducci — non ritratto",
+        "author": "Giuseppe Balducci",
+        "credit": "Giuseppe Balducci — Internet Culturale / Wikimedia Commons — partitura autografa di Boabdil, re di Granata (1827), Public Domain",
+        "license": "Public Domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "media_kind": "archival_document",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Balducci_-_Boabdil%2C_re_di_Granata_-_autograph_score_-_first_page.png",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Giuseppe_Balducci_-_Boabdil%2C_re_di_Granata_-_autograph_score_-_first_page.png"
+      },
       "subtitle": null,
       "title": "Giuseppe Balducci",
       "type": "composer",
@@ -1311,6 +1329,18 @@
     {
       "aliases": [],
       "composer_ids": [],
+      "editorial_image": {
+        "alt": "Ritratto di Zygmunt Krauze diffuso come materiale stampa nel 2013",
+        "author": "Materiali stampa (fotografo non indicato dalla fonte)",
+        "credit": "Materiali stampa — Ownetic / archivio O.pl, 14 febbraio 2013; fotografo non indicato. Fonte editoriale; nessuna licenza libera dichiarata.",
+        "license": "Press material (editorial source)",
+        "license_url": "https://ownetic.com/news/2013/02/14/memories-of-the-east-zygmunt-krauze-chiny/",
+        "media_kind": "portrait",
+        "preserve_integrity": true,
+        "source_url": "https://ownetic.com/news/2013/02/14/memories-of-the-east-zygmunt-krauze-chiny/",
+        "url": "https://ownetic.com/news/wp-content/uploads/2013/02/zygmunt-krauze-hong-kong-chiny-2013-02-12.jpg",
+        "usage": "press_material_noncommercial_editorial"
+      },
       "fallback_image": null,
       "id": "oa-c-000071",
       "image": null,
@@ -10144,5 +10174,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "7d5c52dccd74b623c3d2f0690ca61e4c30a4e699"
+  "source_revision": "91d34d9182fbe510568051c29e142fd7d1e54a88"
 }
