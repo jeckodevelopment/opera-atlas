@@ -1,21 +1,20 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-25T12:08:04+00:00",
+  "checked_at": "2026-11-25T18:15:55+00:00",
   "outcomes": [
     {
-      "candidate_id": "oa-index-dd7baa45131b35e450b1",
-      "status": "already_catalogued_program",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
-      "title_hint": "l opera forse di francesco filidei infinito nero di salvatore sciarrino",
-      "program_id": "oa-p-dd7baa45131b35e4"
+      "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
+      "title_hint": "madama butterfly carnival cocktail"
     },
     {
-      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
-      "status": "already_catalogued",
-      "work_id": "oa-w-000066",
-      "source_key": "haydn-rolling-opera",
-      "official_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
+      "candidate_id": "oa-index-4e733e128f3edf180b83",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "parma-opera-2027",
+      "official_url": "https://teatroregioparma.it/spettacolo/concerto-di-santa-lucia/",
+      "title_hint": "concerto di santa lucia"
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
@@ -305,12 +304,6 @@
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/la-traviata-verdi-18-26-aprile/"
     },
     {
-      "candidate_id": "oa-index-274f34ea2fb4f9a17a7e",
-      "status": "excluded_nonopera",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/lisistrata-cosenza"
-    },
-    {
       "candidate_id": "oa-index-2ab0ba26f1806086b52a",
       "status": "already_catalogued",
       "work_id": "oa-w-000031",
@@ -381,12 +374,6 @@
       "official_url": "https://www.tcbo.it/evento/opera/la-straniera-2027/"
     },
     {
-      "candidate_id": "oa-index-3d94833841692871c0a4",
-      "status": "excluded_nonopera",
-      "source_key": "vicenza-olimpico-rolling-opera",
-      "official_url": "https://www.vicenzainlirica.it/le-nozze-di-figaro-mozart/"
-    },
-    {
       "candidate_id": "oa-index-3f12fd23aa46c05bfd36",
       "status": "already_catalogued",
       "work_id": "oa-w-000116",
@@ -441,12 +428,6 @@
       "work_id": "oa-w-000062",
       "source_key": "salerno-verdi-opera-2026",
       "official_url": "https://cultura.comune.salerno.it/eventi/trovatore-2026/"
-    },
-    {
-      "candidate_id": "oa-index-4894aac582de2e291033",
-      "status": "excluded_nonopera",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/picchi-e-pero-cosenza"
     },
     {
       "candidate_id": "oa-index-4d1f34e8ade7fc6e36ea",
@@ -573,12 +554,6 @@
       "work_id": "oa-w-000104",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
-    },
-    {
-      "candidate_id": "oa-index-62cdedd35b9415dab0d9",
-      "status": "excluded_nonopera",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/l-anima-e-il-tempo-cosenza"
     },
     {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",
@@ -1146,12 +1121,6 @@
       "work_id": "oa-w-000014",
       "source_key": "pisa-verdi-opera-2026-27",
       "official_url": "https://teatrodipisa.it/spettacolo/otello/"
-    },
-    {
-      "candidate_id": "oa-index-b35be5b62db03774ea61",
-      "status": "excluded_nonopera",
-      "source_key": "cosenza-inprimafila-rolling-opera",
-      "official_url": "https://www.inprimafila.net/index.php/eventi/il-medico-dei-pazzi-cosenza"
     },
     {
       "candidate_id": "oa-index-b372b317894fe260b18e",
