@@ -158,6 +158,40 @@ def load_editorial_media(root, composers):
         result[key] = {**{k: record[k] for k in fields}, "preserve_integrity": True}
     return result
 
+def load_source_references(root, composers):
+    """Public source links, not permission to display or reproduce photographs."""
+    path = root / "data/composer-source-references.json"
+    if not path.is_file():
+        return {}
+    doc = read(path)
+    require(doc.get("schema_version") == 1 and isinstance(doc.get("references"), dict),
+            "Invalid composer source registry")
+    result = {}
+    for key, record in doc["references"].items():
+        require(key in composers and isinstance(record, dict)
+                and record.get("name") == composers[key]["name"], "Source reference identity mismatch")
+        require(record.get("usage") == "external_link_only"
+                and record.get("rights_status") == "reuse_not_established"
+                and record.get("kind") in {"profile", "portrait"}, "Invalid source reference")
+        fields = ["source_url", "source", "kind", "usage", "rights_status"]
+        if record["kind"] == "portrait":
+            fields.extend(("image_url", "author"))
+        else:
+            require("image_url" not in record, "Unexpected image reference")
+        require(all(isinstance(record.get(k), str) and record[k].strip() for k in fields),
+                "Missing source reference fields")
+        for field in ("source_url", "image_url"):
+            if field not in fields:
+                continue
+            value = record[field]
+            parsed = urlsplit(value)
+            require(parsed.scheme == "https" and bool(parsed.hostname)
+                    and not parsed.username and not parsed.password and parsed.port in (None, 443)
+                    and not parsed.fragment and chr(92) not in value
+                    and not any(ord(ch) < 33 for ch in value), "Invalid external source URL")
+        result[key] = {k: record[k] for k in fields}
+    return result
+
 def build(root, revision):
     require(SHA.fullmatch(revision), "Expected full revision SHA")
     catalog = root / "public/catalog"
@@ -173,6 +207,7 @@ def build(root, revision):
     mapping, unresolved = resolve_mapping(works, composers, registry["work_composers"])
     portraits = load_media(root, composers)
     editorial = load_editorial_media(root, composers)
+    source_references = load_source_references(root, composers)
     entities = []
 
     def add(kind, key, title, subtitle=None, url=None, composer_ids=(), aliases=(), image=None, fallback_image=None, **extra):
@@ -186,7 +221,8 @@ def build(root, revision):
     for key, c in composers.items():
         # No composer route is published yet.
         add("composer", key, c["name"], aliases=c.get("aliases", []), image=portraits.get(key),
-            **({"editorial_image": editorial[key]} if key in editorial else {}))
+            **({"editorial_image": editorial[key]} if key in editorial else {}),
+            **({"source_reference": source_references[key]} if key in source_references and not portraits.get(key) and key not in editorial else {}))
     for key, w in works.items():
         refs = mapping.get(key, [])
         # New works must not prevent publication or acquire guessed composer IDs.
