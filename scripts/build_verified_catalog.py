@@ -1370,7 +1370,7 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                 if (not eligible_detail(ticket_url) or not eligible_detail(url)
                     or ticket_url not in permitted):
                     raise ValueError("unapproved Haydn replica ticket URL")
-            source_links=list(dict.fromkeys([ticket_url,url]+([evidence_entry["url"]] if evidence_entry else [])))
+            source_links=([ticket_url,url] if ticket_url!=url else [url])+([evidence_entry["url"]] if evidence_entry else [])
             events.append({
                 "id": uid,
                 "starts_at": official_local_time(local_day, effective_hour) if effective_hour else None,
