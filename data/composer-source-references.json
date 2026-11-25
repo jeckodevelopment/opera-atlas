@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "references": {
+    "oa-c-000002": {
+      "name": "Alessandro Solbiati",
+      "source_url": "https://levivier.ca/en/artists/alessandro-solbiati",
+      "source": "Le Vivier",
+      "kind": "portrait",
+      "image_url": "https://levivier.ca/sites/default/files/styles/mt_member_photo/public/fiches-individuelles/Alessandro%20Solbiati.jpg.webp?itok=sA4aMc_A",
+      "author": "Fotografo non indicato",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000008": {
+      "name": "Arturo Dal Bianco",
+      "source_url": "https://www.bibliotecauniversitaria.ge.it/en/aggiornamenti/mostre-ed-eventi/eventi/briscola.html",
+      "source": "Biblioteca Universitaria di Genova",
+      "kind": "profile",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000012": {
+      "name": "Carlo Galante",
+      "source_url": "https://www.rockol.it/news-736812/il-disco-del-giorno-carlo-galante-yeliel",
+      "source": "Rockol",
+      "kind": "portrait",
+      "image_url": "https://images.rockol.it/jmc7MmYUoenwfYwoWFXuaGaMyFE%3D/1200x675/smart/rockol-img/img/foto/upload/carlo-galante.jpg",
+      "author": "Fotografo non indicato",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000016": {
+      "name": "Daniele Furlati",
+      "source_url": "https://www.musicapercinema.it/ospiti-2016/",
+      "source": "Festival Creuza de Mà",
+      "kind": "portrait",
+      "image_url": "https://i0.wp.com/www.musicapercinema.it/wp-content/uploads/2016/08/Daniele-Furlati2-300x300.jpg?resize=170%2C170",
+      "author": "Fotografo non indicato",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000018": {
+      "name": "Davide Tramontano",
+      "source_url": "https://davidetramontano.wordpress.com/",
+      "source": "Sito ufficiale del compositore",
+      "kind": "portrait",
+      "image_url": "https://davidetramontano.wordpress.com/wp-content/uploads/2026/05/015-cronaca-di-un-amore-callas-pasolini-.jpg?w=1024",
+      "author": "Nicola Allegri",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000019": {
+      "name": "Diana Buscemi",
+      "source_url": "https://www.lugliomusicale.it/it/teatro-news/fuori-fuoco-presentata-l-opera-da-camera-di-diana-buscemi-e-mariza-d-anna-sabato-28-novembre-il-debutto-al-teatro-tonino-pardo-di-trapani/",
+      "source": "Ente Luglio Musicale Trapanese",
+      "kind": "profile",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000026": {
+      "name": "Francesco Filidei",
+      "source_url": "https://www.opera-comique.com/en/francesco-filidei",
+      "source": "Opéra-Comique",
+      "kind": "portrait",
+      "image_url": "https://www.opera-comique.com/sites/default/files/styles/width_776px/public/2023-01/2023_bio_photos_Filidei%C2%A9Olivier-Roller_1620x1080.jpg.webp",
+      "author": "Olivier Roller",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000040": {
+      "name": "Giuseppe Guerrera",
+      "source_url": "https://www.fondazioneteatrococcia.it/opera-nuovi-corti-del-coccia.html",
+      "source": "Fondazione Teatro Coccia (classe 1989; non il pianista omonimo nato nel 1991)",
+      "kind": "profile",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000053": {
+      "name": "Massimiliano Piscitello",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-operitivo-turandot.html",
+      "source": "Fondazione Teatro Coccia",
+      "kind": "profile",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000057": {
+      "name": "Nicola Sani",
+      "source_url": "https://www.chigiana.org/team/",
+      "source": "Accademia Musicale Chigiana",
+      "kind": "portrait",
+      "image_url": "https://www.chigiana.org/wp-content/uploads/Nicola-Sani_foto-Hugues-Roussel_1-6.jpg",
+      "author": "Hugues Roussel",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    },
+    "oa-c-000065": {
+      "name": "Salvatore Passantino",
+      "source_url": "https://www.fondazionepergolesispontini.com/salvatore-passantino/",
+      "source": "Fondazione Pergolesi Spontini",
+      "kind": "portrait",
+      "image_url": "https://www.fondazionepergolesispontini.com/wp-content/uploads/2026/11/LAC_3910-3-200x300.jpg",
+      "author": "Fotografo non indicato",
+      "usage": "external_link_only",
+      "rights_status": "reuse_not_established"
+    }
+  }
+}
