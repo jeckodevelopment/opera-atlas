@@ -49,7 +49,7 @@ jobs:
           from pathlib import Path
           p=Path('public/diagnostics/atlas-2026-venue-month-coverage.json')
           d=json.loads(p.read_text(encoding='utf-8'))
-          assert d['cell_count']==888 and d['venue_count']==74
+          assert d['cell_count']==876 and d['venue_count']==73
           assert d['read_only'] and not d['catalog_updated']
           assert d['complete_venue_months']==0
           assert all(not row['complete_month_verified'] for row in d['rows'])
