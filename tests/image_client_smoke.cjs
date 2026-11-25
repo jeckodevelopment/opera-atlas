@@ -99,8 +99,10 @@ const theatreFeed=JSON.parse(fs.readFileSync(path.join(root,"public/catalog/venu
 const sanbapolis=theatreFeed.venues.find(v=>v.id==="oa-v-000072");
 assert.equal(sanbapolis.photo_license,"CC BY 4.0");
 const sanbapolisPhoto=lib.venue({...sanbapolis,venue:sanbapolis.name,municipality:sanbapolis.city});
-assert.equal(sanbapolisPhoto.src,sanbapolis.photo_url);
+assert.equal(sanbapolisPhoto.src,"/atlas/sanbapolis-platea.jpg");
 assert.equal(sanbapolisPhoto.sourceUrl,sanbapolis.photo_source_url);
 assert.equal(sanbapolisPhoto.credit,"Archivio Comune di Trento");
-assert.ok(sanbapolisPhoto.src.startsWith("https://flyimg.opencityitalia.it/"));
+assert.equal(lib.venue({venue:"Sanbàpolis",municipality:"Trento"}).src,sanbapolisPhoto.src);
+assert.equal(lib.venue({venue:"Teatro Sanbàpolis",municipality:"Trento"}).src,sanbapolisPhoto.src);
+assert.equal(sanbapolisPhoto.kind,"verified_local_venue");
 assert.equal(lib.venue({...sanbapolis,venue:"Teatro Sociale",municipality:"Trento"}).src===sanbapolisPhoto.src,false);
