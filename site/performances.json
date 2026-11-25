@@ -6412,6 +6412,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-roma-la-vita-nuda:2026-10-20",
+      "starts_at": "2026-10-20T20:00:00+02:00",
+      "local_date": "2026-10-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La vita nuda",
+      "composer": "Matteo D’Amico",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-vita-nuda/"
+      ]
+    },
+    {
       "id": "curated:auto-eedca6da108bd27e:2026-10-20",
       "starts_at": "2026-10-20T20:30:00+02:00",
       "local_date": "2026-10-20",
@@ -6463,6 +6481,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-roma-la-vita-nuda:2026-10-22",
+      "starts_at": "2026-10-22T20:00:00+02:00",
+      "local_date": "2026-10-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La vita nuda",
+      "composer": "Matteo D’Amico",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-vita-nuda/"
       ]
     },
     {
@@ -6571,6 +6607,24 @@
       "longitude": null,
       "sources": [
         "https://operagiocosa.it/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-roma-la-vita-nuda:2026-10-23",
+      "starts_at": "2026-10-23T20:00:00+02:00",
+      "local_date": "2026-10-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La vita nuda",
+      "composer": "Matteo D’Amico",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-vita-nuda/"
       ]
     },
     {
@@ -6697,6 +6751,24 @@
       "longitude": null,
       "sources": [
         "https://operagiocosa.it/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-roma-la-vita-nuda:2026-10-24",
+      "starts_at": "2026-10-24T18:00:00+02:00",
+      "local_date": "2026-10-24",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La vita nuda",
+      "composer": "Matteo D’Amico",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-vita-nuda/"
       ]
     },
     {
@@ -6841,6 +6913,24 @@
       "longitude": null,
       "sources": [
         "https://risorse.teatrostabileveneto.it/treviso-teatro-del-monaco-stagione-lirica-concertistica-26-27"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-roma-la-vita-nuda:2026-10-25",
+      "starts_at": "2026-10-25T16:30:00+01:00",
+      "local_date": "2026-10-25",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "La vita nuda",
+      "composer": "Matteo D’Amico",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-vita-nuda/"
       ]
     },
     {
@@ -7547,6 +7637,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-rovigo-pagliacci:2026-11-13",
+      "starts_at": "2026-11-13T20:30:00+01:00",
+      "local_date": "2026-11-13",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/pagliacci"
+      ]
+    },
+    {
       "id": "curated:auto-d670b7caf7b5d8f6:2026-11-13",
       "starts_at": "2026-11-13T20:45:00+01:00",
       "local_date": "2026-11-13",
@@ -7833,6 +7941,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-rovigo-pagliacci:2026-11-15",
+      "starts_at": "2026-11-15T16:00:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Pagliacci",
+      "composer": "Ruggero Leoncavallo",
+      "venue": "Teatro Sociale",
+      "municipality": "Rovigo",
+      "region": "Veneto",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/pagliacci"
       ]
     },
     {

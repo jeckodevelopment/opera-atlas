@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T20:15:24+00:00",
+  "checked_at": "2026-11-25T07:35:08+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-dd7baa45131b35e450b1",
@@ -1390,6 +1390,13 @@
       "work_id": "oa-w-000056",
       "source_key": "lirico-cagliari-opera-2027",
       "official_url": "https://www.liricocagliari.it/evento/die-zauberflote/"
+    },
+    {
+      "candidate_id": "oa-index-dcb294addc2abadaa6b0",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000141",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
     },
     {
       "candidate_id": "oa-index-dd11dbb7276e10032076",
