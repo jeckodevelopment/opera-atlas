@@ -242,7 +242,26 @@ def load_source_references(root, composers):
                     and not parsed.username and not parsed.password and parsed.port in (None, 443)
                     and not parsed.fragment and chr(92) not in value
                     and not any(ord(ch) < 33 for ch in value), "Invalid external source URL")
-        result[key] = {k: record[k] for k in fields}
+        entry = {k: record[k] for k in fields}
+        if "identity_status" in record:
+            require(record["identity_status"] == "confirmed_by_named_sources"
+                    and record["kind"] == "profile"
+                    and isinstance(record.get("media_review"), str)
+                    and bool(record["media_review"].strip()), "Invalid identity review")
+            for field in ("identity_evidence", "media_candidates"):
+                urls = record.get(field)
+                require(isinstance(urls, list) and bool(urls)
+                        and all(isinstance(u, str) for u in urls), "Missing review evidence")
+                for value in urls:
+                    parsed = urlsplit(value)
+                    require(parsed.scheme == "https" and bool(parsed.hostname)
+                            and not parsed.username and not parsed.password and parsed.port in (None, 443)
+                            and not parsed.fragment and chr(92) not in value
+                            and not any(ord(ch) < 33 for ch in value), "Invalid review evidence URL")
+                entry[field] = urls
+            entry["identity_status"] = record["identity_status"]
+            entry["media_review"] = record["media_review"]
+        result[key] = entry
     return result
 
 def build(root, revision):
