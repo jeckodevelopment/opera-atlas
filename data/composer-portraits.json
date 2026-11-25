@@ -13,6 +13,22 @@
       "verified": true,
       "wikidata_id": "Q722975"
     },
+    "oa-c-000003": {
+      "alt": "Ritratto di Alfredo Casella",
+      "author": "Pmk58",
+      "commons_file": "Alfredo Casella nascita.JPG",
+      "credit": "Pmk58 — Wikimedia Commons — CC-BY-SA-4.0",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [],
+      "rights_evidence": "commons_license_metadata",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alfredo_Casella_nascita.JPG",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Alfredo_Casella_nascita.JPG/960px-Alfredo_Casella_nascita.JPG",
+      "verified": true,
+      "wikidata_id": "Q337343"
+    },
     "oa-c-000005": {
       "alt": "Ritratto di Antonio Smareglia",
       "author": "Rudolf Krziwanek",
@@ -29,6 +45,24 @@
       "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Rudolf_Krziwanek_-_Antonio_Smareglia.jpg",
       "verified": true,
       "wikidata_id": "Q605191"
+    },
+    "oa-c-000006": {
+      "alt": "Ritratto di Antonio Vivaldi",
+      "author": "François Morellon la Cave",
+      "commons_file": "Antonio Vivaldi.jpg",
+      "credit": "François Morellon la Cave — Wikimedia Commons — Public Domain",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [
+        "Category:CC-PD-Mark"
+      ],
+      "rights_evidence": "commons_public_domain_mark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Vivaldi.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Antonio_Vivaldi.jpg",
+      "verified": true,
+      "wikidata_id": "Q1340"
     },
     "oa-c-000007": {
       "alt": "Ritratto di Arthur Honegger",
@@ -78,6 +112,25 @@
       "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Fortepan_137711_%28cropped%29.jpg/960px-Fortepan_137711_%28cropped%29.jpg",
       "verified": true,
       "wikidata_id": "Q150767"
+    },
+    "oa-c-000011": {
+      "alt": "Ritratto di Camille Saint-Saëns",
+      "author": "Petit, Pierre (1831-1909). Photographer Restored by Adam Cuerden",
+      "commons_file": "Camille Saint-Saëns in 1900 by Pierre Petit.jpg",
+      "credit": "Petit, Pierre (1831-1909). Photographer Restored by Adam Cuerden — Wikimedia Commons — Public Domain",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [
+        "Category:CC-PD-Mark",
+        "Category:PD-old-100-expired"
+      ],
+      "rights_evidence": "commons_public_domain_mark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Camille_Saint-Sa%C3%ABns_in_1900_by_Pierre_Petit.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Camille_Saint-Sa%C3%ABns_in_1900_by_Pierre_Petit.jpg/960px-Camille_Saint-Sa%C3%ABns_in_1900_by_Pierre_Petit.jpg",
+      "verified": true,
+      "wikidata_id": "Q150445"
     },
     "oa-c-000013": {
       "alt": "Ritratto di Christoph Willibald Gluck",
@@ -134,6 +187,24 @@
       "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Bernardo_Strozzi_-_Claudio_Monteverdi_%28c.1630%29.jpg/960px-Bernardo_Strozzi_-_Claudio_Monteverdi_%28c.1630%29.jpg",
       "verified": true,
       "wikidata_id": "Q53068"
+    },
+    "oa-c-000017": {
+      "alt": "Ritratto di Darius Milhaud",
+      "author": "Agence de presse Meurisse",
+      "commons_file": "Darius Milhaud 1923 (cropped).jpg",
+      "credit": "Agence de presse Meurisse — Wikimedia Commons — Public Domain",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [
+        "Category:CC-PD-Mark"
+      ],
+      "rights_evidence": "commons_public_domain_mark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Darius_Milhaud_1923_(cropped).jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Darius_Milhaud_1923_%28cropped%29.jpg/960px-Darius_Milhaud_1923_%28cropped%29.jpg",
+      "verified": true,
+      "wikidata_id": "Q186264"
     },
     "oa-c-000020": {
       "alt": "Ritratto di Dmitrij Šostakovič",
@@ -231,6 +302,22 @@
       "verified": true,
       "wikidata_id": "Q250952"
     },
+    "oa-c-000028": {
+      "alt": "Ritratto di Francis Poulenc",
+      "author": "Monceau from San Antonio",
+      "commons_file": "Francis Poulenc plaque - 5, rue de Médicis, Paris 6.jpg",
+      "credit": "Monceau from San Antonio — Wikimedia Commons — CC-BY-2.0",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [],
+      "rights_evidence": "commons_license_metadata",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Francis_Poulenc_plaque_-_5,_rue_de_M%C3%A9dicis,_Paris_6.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Francis_Poulenc_plaque_-_5%2C_rue_de_M%C3%A9dicis%2C_Paris_6.jpg/960px-Francis_Poulenc_plaque_-_5%2C_rue_de_M%C3%A9dicis%2C_Paris_6.jpg",
+      "verified": true,
+      "wikidata_id": "Q191408"
+    },
     "oa-c-000029": {
       "alt": "Ritratto di Franco Casavola",
       "author": "Sergio Perdomi",
@@ -299,6 +386,24 @@
       "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Georges_bizet.jpg/960px-Georges_bizet.jpg",
       "verified": true,
       "wikidata_id": "Q56158"
+    },
+    "oa-c-000035": {
+      "alt": "Ritratto di Giacomo Puccini",
+      "author": "Marchetti",
+      "commons_file": "Puccini nel 1910 (I).jpg",
+      "credit": "Marchetti — Wikimedia Commons — Public Domain",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [
+        "Category:CC-PD-Mark"
+      ],
+      "rights_evidence": "commons_public_domain_mark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Puccini_nel_1910_(I).jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Puccini_nel_1910_%28I%29.jpg",
+      "verified": true,
+      "wikidata_id": "Q7311"
     },
     "oa-c-000036": {
       "alt": "Ritratto di Gioachino Rossini",
@@ -372,6 +477,25 @@
       "verified": true,
       "wikidata_id": "Q1151"
     },
+    "oa-c-000043": {
+      "alt": "Ritratto di Henry Purcell",
+      "author": "John Closterman",
+      "commons_file": "Henry Purcell Closterman.jpg",
+      "credit": "John Closterman — Wikimedia Commons — Public Domain",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [
+        "Category:CC-PD-Mark",
+        "Category:PD-old-100-expired"
+      ],
+      "rights_evidence": "commons_public_domain_mark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Henry_Purcell_Closterman.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Henry_Purcell_Closterman.jpg",
+      "verified": true,
+      "wikidata_id": "Q9695"
+    },
     "oa-c-000045": {
       "alt": "Ritratto di Jacques Offenbach",
       "author": "Nadar",
@@ -420,6 +544,22 @@
       "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Johann_Strauss_II_%283%29.jpg",
       "verified": true,
       "wikidata_id": "Q83309"
+    },
+    "oa-c-000048": {
+      "alt": "Ritratto di John Adams",
+      "author": "The original uploader was Macror at English Wikipedia . ( Original text: Deborah O'Grady )",
+      "commons_file": "JA-portrait-1-LW.jpg",
+      "credit": "The original uploader was Macror at English Wikipedia . ( Original text: Deborah O'Grady ) — Wikimedia Commons — CC-BY-SA-3.0",
+      "identity_evidence": "wikidata_p18",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [],
+      "rights_evidence": "commons_license_metadata",
+      "source_url": "https://commons.wikimedia.org/wiki/File:JA-portrait-1-LW.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/JA-portrait-1-LW.jpg",
+      "verified": true,
+      "wikidata_id": "Q84114"
     },
     "oa-c-000049": {
       "alt": "Ritratto di Jules Massenet",
@@ -538,6 +678,24 @@
       "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Piccinni%2C_Niccol%C3%B2_1.JPG/960px-Piccinni%2C_Niccol%C3%B2_1.JPG",
       "verified": true,
       "wikidata_id": "Q310687"
+    },
+    "oa-c-000059": {
+      "alt": "Ritratto di Pietro Mascagni",
+      "author": "unknown, upload by Adrian Michael",
+      "commons_file": "PMascagni.jpg",
+      "credit": "unknown, upload by Adrian Michael — Wikimedia Commons — Public Domain",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [
+        "Category:CC-PD-Mark"
+      ],
+      "rights_evidence": "commons_public_domain_mark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:PMascagni.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/PMascagni.jpg/960px-PMascagni.jpg",
+      "verified": true,
+      "wikidata_id": "Q181894"
     },
     "oa-c-000060": {
       "alt": "Ritratto di Pëtr Il'ič Čajkovskij",

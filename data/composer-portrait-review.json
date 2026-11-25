@@ -1,6 +1,6 @@
 {
-  "api_errors": 6,
-  "attempted": 63,
+  "api_errors": 0,
+  "attempted": 31,
   "identities": {
     "oa-c-000001": {
       "name": "Alberto Franchetti",
@@ -150,10 +150,6 @@
       "name": "Henry Purcell",
       "wikidata_id": "Q9695"
     },
-    "oa-c-000044": {
-      "name": "Igor' Stravinskij",
-      "wikidata_id": "Q7314"
-    },
     "oa-c-000045": {
       "name": "Jacques Offenbach",
       "wikidata_id": "Q41555"
@@ -165,6 +161,10 @@
     "oa-c-000047": {
       "name": "Johann Strauss",
       "wikidata_id": "Q83309"
+    },
+    "oa-c-000048": {
+      "name": "John Adams",
+      "wikidata_id": "Q84114"
     },
     "oa-c-000049": {
       "name": "Jules Massenet",
@@ -249,79 +249,79 @@
   },
   "last_attempted": {
     "oa-c-000001": "2026-11-24T22:54:19.734589+00:00",
-    "oa-c-000002": "2026-11-24T23:22:30.779262+00:00",
-    "oa-c-000003": "2026-11-24T23:22:31.343277+00:00",
-    "oa-c-000004": "2026-11-24T23:16:41.809879+00:00",
+    "oa-c-000002": "2026-11-25T07:05:48.800354+00:00",
+    "oa-c-000003": "2026-11-25T07:05:49.536331+00:00",
+    "oa-c-000004": "2026-11-25T07:05:02.641826+00:00",
     "oa-c-000005": "2026-11-24T23:10:17.893512+00:00",
-    "oa-c-000006": "2026-11-24T23:16:49.649281+00:00",
+    "oa-c-000006": "2026-11-25T07:05:04.132535+00:00",
     "oa-c-000007": "2026-11-24T23:16:57.618551+00:00",
-    "oa-c-000008": "2026-11-24T23:17:06.369966+00:00",
+    "oa-c-000008": "2026-11-25T07:05:06.095813+00:00",
     "oa-c-000009": "2026-11-24T23:17:14.234058+00:00",
     "oa-c-000010": "2026-11-24T23:17:22.289168+00:00",
-    "oa-c-000011": "2026-11-24T23:17:30.247687+00:00",
-    "oa-c-000012": "2026-11-24T23:17:38.163824+00:00",
+    "oa-c-000011": "2026-11-25T07:05:07.624177+00:00",
+    "oa-c-000012": "2026-11-25T07:05:09.691500+00:00",
     "oa-c-000013": "2026-11-24T23:17:45.564893+00:00",
     "oa-c-000014": "2026-11-24T23:17:53.488883+00:00",
     "oa-c-000015": "2026-11-24T23:18:01.559880+00:00",
-    "oa-c-000016": "2026-11-24T23:18:09.520272+00:00",
-    "oa-c-000017": "2026-11-24T23:18:17.402533+00:00",
-    "oa-c-000018": "2026-11-24T23:18:25.344809+00:00",
-    "oa-c-000019": "2026-11-24T23:18:33.102357+00:00",
+    "oa-c-000016": "2026-11-25T07:05:10.456344+00:00",
+    "oa-c-000017": "2026-11-25T07:05:12.025427+00:00",
+    "oa-c-000018": "2026-11-25T07:05:14.086076+00:00",
+    "oa-c-000019": "2026-11-25T07:05:15.551142+00:00",
     "oa-c-000020": "2026-11-24T23:18:40.827376+00:00",
     "oa-c-000021": "2026-11-24T23:18:48.758150+00:00",
     "oa-c-000022": "2026-11-24T23:18:56.725818+00:00",
     "oa-c-000023": "2026-11-24T23:10:37.493409+00:00",
     "oa-c-000024": "2026-11-24T23:19:04.616517+00:00",
     "oa-c-000025": "2026-11-24T23:19:12.651448+00:00",
-    "oa-c-000026": "2026-11-24T23:19:21.346866+00:00",
-    "oa-c-000027": "2026-11-24T23:19:28.757119+00:00",
-    "oa-c-000028": "2026-11-24T23:19:36.274002+00:00",
+    "oa-c-000026": "2026-11-25T07:05:17.025368+00:00",
+    "oa-c-000027": "2026-11-25T07:05:17.770269+00:00",
+    "oa-c-000028": "2026-11-25T07:05:18.575354+00:00",
     "oa-c-000029": "2026-11-24T23:19:44.777217+00:00",
-    "oa-c-000030": "2026-11-24T23:19:52.627941+00:00",
+    "oa-c-000030": "2026-11-25T07:05:20.939565+00:00",
     "oa-c-000031": "2026-11-24T23:20:00.604262+00:00",
-    "oa-c-000032": "2026-11-24T23:20:08.634643+00:00",
+    "oa-c-000032": "2026-11-25T07:05:22.622799+00:00",
     "oa-c-000033": "2026-11-24T23:20:16.464893+00:00",
     "oa-c-000034": "2026-11-24T23:20:24.406309+00:00",
-    "oa-c-000035": "2026-11-24T23:20:32.329205+00:00",
+    "oa-c-000035": "2026-11-25T07:05:24.102023+00:00",
     "oa-c-000036": "2026-11-24T23:20:40.317440+00:00",
     "oa-c-000037": "2026-11-24T23:20:48.257822+00:00",
-    "oa-c-000038": "2026-11-24T23:20:57.125980+00:00",
-    "oa-c-000039": "2026-11-24T23:21:04.539681+00:00",
-    "oa-c-000040": "2026-11-24T23:21:11.879704+00:00",
+    "oa-c-000038": "2026-11-25T07:05:26.416237+00:00",
+    "oa-c-000039": "2026-11-25T07:05:27.559030+00:00",
+    "oa-c-000040": "2026-11-25T07:05:28.330067+00:00",
     "oa-c-000041": "2026-11-24T23:21:19.708256+00:00",
     "oa-c-000042": "2026-11-24T23:21:27.895991+00:00",
-    "oa-c-000043": "2026-11-24T23:21:35.873191+00:00",
-    "oa-c-000044": "2026-11-24T23:21:43.802513+00:00",
+    "oa-c-000043": "2026-11-25T07:05:30.397356+00:00",
+    "oa-c-000044": "2026-11-25T07:05:32.688295+00:00",
     "oa-c-000045": "2026-11-24T23:21:52.666367+00:00",
     "oa-c-000046": "2026-11-24T23:22:00.628721+00:00",
     "oa-c-000047": "2026-11-24T23:22:03.829120+00:00",
-    "oa-c-000048": "2026-11-24T23:22:05.094554+00:00",
+    "oa-c-000048": "2026-11-25T07:05:33.142889+00:00",
     "oa-c-000049": "2026-11-24T23:22:06.812083+00:00",
     "oa-c-000050": "2026-11-24T23:22:08.010909+00:00",
     "oa-c-000051": "2026-11-24T23:11:06.749370+00:00",
     "oa-c-000052": "2026-11-24T23:22:09.249582+00:00",
-    "oa-c-000053": "2026-11-24T23:22:10.513394+00:00",
+    "oa-c-000053": "2026-11-25T07:05:34.672494+00:00",
     "oa-c-000054": "2026-11-24T22:53:52.220005+00:00",
     "oa-c-000055": "2026-11-24T23:22:12.435293+00:00",
     "oa-c-000056": "2026-11-24T23:22:13.565813+00:00",
-    "oa-c-000057": "2026-11-24T23:22:14.746215+00:00",
-    "oa-c-000058": "2026-11-24T23:22:17.178404+00:00",
-    "oa-c-000059": "2026-11-24T23:22:17.704056+00:00",
+    "oa-c-000057": "2026-11-25T07:05:36.167447+00:00",
+    "oa-c-000058": "2026-11-25T07:05:38.013831+00:00",
+    "oa-c-000059": "2026-11-25T07:05:38.774595+00:00",
     "oa-c-000060": "2026-11-24T23:22:19.447451+00:00",
-    "oa-c-000061": "2026-11-24T23:22:20.814823+00:00",
+    "oa-c-000061": "2026-11-25T07:05:42.732069+00:00",
     "oa-c-000062": "2026-11-24T23:22:22.018344+00:00",
     "oa-c-000063": "2026-11-24T23:22:23.209545+00:00",
     "oa-c-000064": "2026-11-24T23:22:24.484829+00:00",
-    "oa-c-000065": "2026-11-24T23:22:25.735080+00:00",
+    "oa-c-000065": "2026-11-25T07:05:44.560950+00:00",
     "oa-c-000066": "2026-11-24T23:11:22.611233+00:00",
-    "oa-c-000067": "2026-11-24T23:22:27.703963+00:00",
+    "oa-c-000067": "2026-11-25T07:05:46.101374+00:00",
     "oa-c-000068": "2026-11-24T23:11:24.450481+00:00",
     "oa-c-000069": "2026-11-24T23:11:25.373260+00:00",
     "oa-c-000070": "2026-11-24T23:22:28.898736+00:00",
-    "oa-c-000071": "2026-11-24T23:22:30.189684+00:00"
+    "oa-c-000071": "2026-11-25T07:05:48.026301+00:00"
   },
   "schema_version": 1,
-  "status": "partial",
+  "status": "completed",
   "total": 71,
   "unresolved": {
     "oa-c-000002": {
@@ -329,48 +329,13 @@
       "name": "Alessandro Solbiati",
       "reason": "no_image"
     },
-    "oa-c-000003": {
-      "candidates": [
-        {
-          "author": "Unknown author Unknown author",
-          "commons_file": "Photo Portrait of the musician Alfredo Casella 1955 - Touring Club Italiano 11 5238.jpg",
-          "copyrighted": "True",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Photo_Portrait_of_the_musician_Alfredo_Casella_1955_-_Touring_Club_Italiano_11_5238.jpg/960px-Photo_Portrait_of_the_musician_Alfredo_Casella_1955_-_Touring_Club_Italiano_11_5238.jpg",
-          "license_code": "cc-by-sa-4.0",
-          "license_short_name": "CC BY-SA 4.0",
-          "license_url_reported": "https://creativecommons.org/licenses/by-sa/4.0",
-          "reason": "rights_review",
-          "restrictions": "",
-          "rights_categories": [
-            "Category:Template Unknown (author)"
-          ],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Photo_Portrait_of_the_musician_Alfredo_Casella_1955_-_Touring_Club_Italiano_11_5238.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        },
-        {
-          "author": "Bain News Service, publisher",
-          "commons_file": "Alfredo Casella.jpg",
-          "copyrighted": "False",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Alfredo_Casella.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Alfredo_Casella.jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        }
-      ],
-      "name": "Alfredo Casella",
-      "reason": "rights_review"
-    },
     "oa-c-000004": {
       "candidates": [
         {
           "author": "Antonio Cericola",
           "commons_file": "Antonio Cericola dirige l'orchestra.jpg",
           "copyrighted": "False",
+          "identity_evidence": "wikidata_p18",
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Antonio_Cericola_dirige_l%27orchestra.jpg",
           "license_code": "pd",
           "license_short_name": "Public domain",
@@ -385,53 +350,10 @@
       "name": "Antonio Cericola",
       "reason": "license_review"
     },
-    "oa-c-000006": {
-      "candidates": [
-        {
-          "author": "Unknown author Unknown author",
-          "commons_file": "Onbekend - Antonio Vivaldi - Bologna Museo Internationale e biblioteca della musica di bologna 28-04-2012 9-21-050.jpg",
-          "copyrighted": "False",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Onbekend_-_Antonio_Vivaldi_-_Bologna_Museo_Internationale_e_biblioteca_della_musica_di_bologna_28-04-2012_9-21-050.jpg/960px-Onbekend_-_Antonio_Vivaldi_-_Bologna_Museo_Internationale_e_biblioteca_della_musica_di_bologna_28-04-2012_9-21-050.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "rights_review",
-          "restrictions": "",
-          "rights_categories": [
-            "Category:CC-PD-Mark",
-            "Category:Template Unknown (author)"
-          ],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Onbekend_-_Antonio_Vivaldi_-_Bologna_Museo_Internationale_e_biblioteca_della_musica_di_bologna_28-04-2012_9-21-050.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        }
-      ],
-      "name": "Antonio Vivaldi",
-      "reason": "rights_review"
-    },
     "oa-c-000008": {
-      "detail": "identity_search_unavailable",
+      "candidates": [],
       "name": "Arturo Dal Bianco",
-      "reason": "api_error"
-    },
-    "oa-c-000011": {
-      "candidates": [
-        {
-          "author": "Agence de presse Meurisse",
-          "commons_file": "Camille Saint-Saens b Meurisse 1921.jpg",
-          "copyrighted": "False",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Camille_Saint-Saens_b_Meurisse_1921.jpg/960px-Camille_Saint-Saens_b_Meurisse_1921.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Camille_Saint-Saens_b_Meurisse_1921.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        }
-      ],
-      "name": "Camille Saint-Saëns",
-      "reason": "license_review"
+      "reason": "not_found"
     },
     "oa-c-000012": {
       "candidates": [],
@@ -439,39 +361,19 @@
       "reason": "no_image"
     },
     "oa-c-000016": {
-      "detail": "identity_search_unavailable",
+      "candidates": [],
       "name": "Daniele Furlati",
-      "reason": "api_error"
-    },
-    "oa-c-000017": {
-      "candidates": [
-        {
-          "author": "Agence de presse Meurisse",
-          "commons_file": "Darius Milhaud b Meurisse 1923.jpg",
-          "copyrighted": "False",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Darius_Milhaud_b_Meurisse_1923.jpg/960px-Darius_Milhaud_b_Meurisse_1923.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Darius_Milhaud_b_Meurisse_1923.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        }
-      ],
-      "name": "Darius Milhaud",
-      "reason": "license_review"
+      "reason": "not_found"
     },
     "oa-c-000018": {
-      "detail": "identity_search_unavailable",
+      "candidates": [],
       "name": "Davide Tramontano",
-      "reason": "api_error"
+      "reason": "not_found"
     },
     "oa-c-000019": {
-      "detail": "identity_search_unavailable",
+      "candidates": [],
       "name": "Diana Buscemi",
-      "reason": "api_error"
+      "reason": "not_found"
     },
     "oa-c-000026": {
       "candidates": [],
@@ -483,51 +385,13 @@
       "name": "Francesco Provenzale",
       "reason": "no_image"
     },
-    "oa-c-000028": {
-      "candidates": [
-        {
-          "author": "Unattributed",
-          "commons_file": "Francis Poulenc & Wanda Landowska.jpg",
-          "copyrighted": "False",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Francis_Poulenc_%26_Wanda_Landowska.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "author_review",
-          "restrictions": "",
-          "rights_categories": [
-            "Category:CC-PD-Mark"
-          ],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Francis_Poulenc_%26_Wanda_Landowska.jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        },
-        {
-          "author": "Unknown author Unknown author",
-          "commons_file": "Francis Poulenc and Wanda Landowska (cropped).jpg",
-          "copyrighted": "False",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Francis_Poulenc_and_Wanda_Landowska_%28cropped%29.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "rights_review",
-          "restrictions": "",
-          "rights_categories": [
-            "Category:CC-PD-Mark",
-            "Category:Template Unknown (author)"
-          ],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Francis_Poulenc_and_Wanda_Landowska_(cropped).jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        }
-      ],
-      "name": "Francis Poulenc",
-      "reason": "author_review"
-    },
     "oa-c-000030": {
       "candidates": [
         {
           "author": "Unknown (Bain News Service, publisher). Restoration by Adam Cuerden",
           "commons_file": "Bain News Service - Franz Lehár.jpg",
           "copyrighted": "False",
+          "identity_evidence": "wikidata_p18",
           "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Bain_News_Service_-_Franz_Leh%C3%A1r.jpg/960px-Bain_News_Service_-_Franz_Leh%C3%A1r.jpg",
           "license_code": "pd",
           "license_short_name": "Public domain",
@@ -543,33 +407,9 @@
       "reason": "license_review"
     },
     "oa-c-000032": {
-      "detail": "identity_search_unavailable",
+      "candidates": [],
       "name": "Gaia Aloisi",
-      "reason": "api_error"
-    },
-    "oa-c-000035": {
-      "candidates": [
-        {
-          "author": "Unknown author Unknown author",
-          "commons_file": "GiacomoPuccini.jpg",
-          "copyrighted": "False",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/GiacomoPuccini.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "rights_review",
-          "restrictions": "",
-          "rights_categories": [
-            "Category:CC-PD-Mark",
-            "Category:Template Unknown (author)",
-            "Category:Template Unknown (source)"
-          ],
-          "source_url": "https://commons.wikimedia.org/wiki/File:GiacomoPuccini.jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        }
-      ],
-      "name": "Giacomo Puccini",
-      "reason": "rights_review"
+      "reason": "not_found"
     },
     "oa-c-000038": {
       "candidates": [],
@@ -582,55 +422,13 @@
       "reason": "no_image"
     },
     "oa-c-000040": {
-      "detail": "identity_search_unavailable",
+      "candidates": [],
       "name": "Giuseppe Guerrera",
-      "reason": "api_error"
-    },
-    "oa-c-000043": {
-      "candidates": [
-        {
-          "author": "anonymous",
-          "commons_file": "Henry Purcell by John Closterman.jpg",
-          "copyrighted": "False",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Henry_Purcell_by_John_Closterman.jpg/960px-Henry_Purcell_by_John_Closterman.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "author_review",
-          "restrictions": "",
-          "rights_categories": [
-            "Category:CC-PD-Mark"
-          ],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Henry_Purcell_by_John_Closterman.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        }
-      ],
-      "name": "Henry Purcell",
-      "reason": "author_review"
+      "reason": "identity_unconfirmed"
     },
     "oa-c-000044": {
-      "candidates": [
-        {
-          "author": "George Grantham Bain Collection",
-          "commons_file": "Igor Stravinsky LOC 32392u.jpg",
-          "copyrighted": "False",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Igor_Stravinsky_LOC_32392u.jpg/960px-Igor_Stravinsky_LOC_32392u.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Igor_Stravinsky_LOC_32392u.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        }
-      ],
-      "name": "Igor' Stravinskij",
-      "reason": "license_review"
-    },
-    "oa-c-000048": {
       "candidates": [],
-      "name": "John Adams",
+      "name": "Igor' Stravinskij",
       "reason": "identity_unconfirmed"
     },
     "oa-c-000053": {
@@ -648,46 +446,13 @@
       "name": "Orazio Sciortino",
       "reason": "no_image"
     },
-    "oa-c-000059": {
-      "candidates": [
-        {
-          "author": "Gavo Studio; copyright expire",
-          "commons_file": "Pietro Mascagni 1.jpg",
-          "copyrighted": "False",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Pietro_Mascagni_1.jpg/960px-Pietro_Mascagni_1.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Pietro_Mascagni_1.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        },
-        {
-          "author": "Bushnell, San Francisco. Copyright expired.",
-          "commons_file": "Pietro Mascagni 2.jpg",
-          "copyrighted": "False",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Pietro_Mascagni_2.jpg/960px-Pietro_Mascagni_2.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Pietro_Mascagni_2.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        }
-      ],
-      "name": "Pietro Mascagni",
-      "reason": "license_review"
-    },
     "oa-c-000061": {
       "candidates": [
         {
           "author": "Anonymous Unknown author",
           "commons_file": "Ralph Benatzky (1884-1957).jpg",
           "copyrighted": "False",
+          "identity_evidence": "wikidata_p18",
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ralph_Benatzky_%281884-1957%29.jpg",
           "license_code": "pd",
           "license_short_name": "Public domain",
@@ -713,6 +478,7 @@
           "author": "Carl Van Vechten",
           "commons_file": "Samuel Barber.jpg",
           "copyrighted": "False",
+          "identity_evidence": "wikidata_p18",
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Samuel_Barber.jpg",
           "license_code": "pd",
           "license_short_name": "Public domain",
@@ -722,6 +488,21 @@
           "rights_categories": [],
           "source_url": "https://commons.wikimedia.org/wiki/File:Samuel_Barber.jpg",
           "thumbnail_host": "upload.wikimedia.org"
+        },
+        {
+          "author": "Carl Van Vechten",
+          "commons_file": "Samuelbarber.jpg",
+          "copyrighted": "False",
+          "identity_evidence": "commons_depicts_p180",
+          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Samuelbarber.jpg/960px-Samuelbarber.jpg",
+          "license_code": "pd",
+          "license_short_name": "Public domain",
+          "license_url_reported": "",
+          "reason": "license_review",
+          "restrictions": "",
+          "rights_categories": [],
+          "source_url": "https://commons.wikimedia.org/wiki/File:Samuelbarber.jpg",
+          "thumbnail_host": "thumb.wikimedia.org"
         }
       ],
       "name": "Samuel Barber",
@@ -733,6 +514,6 @@
       "reason": "no_image"
     }
   },
-  "updated_at": "2026-11-24T23:22:33.105212+00:00",
-  "verified": 40
+  "updated_at": "2026-11-25T07:05:51.793437+00:00",
+  "verified": 49
 }
