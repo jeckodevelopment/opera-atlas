@@ -39,7 +39,7 @@ class HaydnRollingOperaTests(unittest.TestCase):
                  if x["key"]==KEY)
         self.assertEqual(src["url"],INDEX)
         self.assertEqual(set(INDEX_VENUES[KEY]),
-                         {"Bolzano|Teatro Comunale di Bolzano","Trento|Teatro Sociale"})
+                         {"Bolzano|Teatro Comunale di Bolzano","Trento|Teatro Sociale", "Trento|Sanbàpolis"})
         self.assertEqual(VENUE_BY_SOURCE[KEY],("Bolzano","Teatro Comunale di Bolzano"))
         self.assertEqual(extract(KEY,INDEX,INDEX_HTML,2),
                          sorted((BOLZANO,TRENTO,CRONACA,
