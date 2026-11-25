@@ -337,27 +337,6 @@
       "name": "Alessandro Solbiati",
       "reason": "no_image"
     },
-    "oa-c-000004": {
-      "candidates": [
-        {
-          "author": "Antonio Cericola",
-          "commons_file": "Antonio Cericola dirige l'orchestra.jpg",
-          "copyrighted": "False",
-          "identity_evidence": "wikidata_p18",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Antonio_Cericola_dirige_l%27orchestra.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Cericola_dirige_l%27orchestra.jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        }
-      ],
-      "name": "Antonio Cericola",
-      "reason": "license_review"
-    },
     "oa-c-000008": {
       "candidates": [],
       "name": "Arturo Dal Bianco",
@@ -439,6 +418,6 @@
       "reason": "no_image"
     }
   },
-  "updated_at": "2026-11-25T07:57:13Z",
-  "verified": 53
+  "updated_at": "2026-11-25T08:03:00Z",
+  "verified": 54
 }
