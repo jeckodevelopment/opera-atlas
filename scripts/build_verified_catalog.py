@@ -1364,6 +1364,13 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                 raise ValueError("no verified time for this source")
             if hour is None and url not in {"https://www.operalombardia.it/l-italiana-in-algeri/", "https://www.operalombardia.it/calendario/"}:
                 raise ValueError("expected exact Regio performance hour")
+            ticket_url=production.get("ticket_source_urls",{}).get(local_day,url)
+            if ticket_url!=url:
+                from opera_atlas.haydn_rolling_opera import eligible_detail
+                if (not eligible_detail(ticket_url) or not eligible_detail(url)
+                    or ticket_url not in permitted):
+                    raise ValueError("unapproved Haydn replica ticket URL")
+            source_links=list(dict.fromkeys([ticket_url,url]+([evidence_entry["url"]] if evidence_entry else [])))
             events.append({
                 "id": uid,
                 "starts_at": official_local_time(local_day, effective_hour) if effective_hour else None,
@@ -1378,7 +1385,7 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                 "region": production["region"],
                 "latitude": None,
                 "longitude": None,
-                "sources": [url] + ([evidence_entry["url"]] if evidence_entry else []),
+                "sources": source_links,
             })
     events.sort(key=lambda e: (e["local_date"], e["starts_at"] or "", e["id"]))
     return {"schema_version": 1, "performances": events}
