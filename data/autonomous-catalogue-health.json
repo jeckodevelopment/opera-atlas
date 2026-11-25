@@ -23,18 +23,6 @@
       "title": "Pagliacci",
       "city": "Brescia",
       "reason": "identity_requires_more_evidence"
-    },
-    {
-      "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-b932c89149fad91c3518",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-feadef19a246de079ccb",
-      "reason": "incomplete_work_editorial"
     }
   ],
   "new_works": 0,
