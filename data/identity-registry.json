@@ -4304,6 +4304,14 @@
       "slug": "nabucco",
       "source_url": "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html",
       "season": "2026"
+    },
+    "chieti-pinocchio-2026": {
+      "id": "oa-s-000357",
+      "work_id": "oa-w-000101",
+      "venue_id": "oa-v-000047",
+      "slug": "le-avventure-di-pinocchio",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/",
+      "season": "2026"
     }
   },
   "performances": {
@@ -12384,6 +12392,12 @@
       "original_date": "2026-11-27",
       "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
       "original_ticket_source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
+    },
+    "chieti-pinocchio-2026|2026-09-26": {
+      "id": "oa-r-001374",
+      "staging_id": "oa-s-000357",
+      "original_date": "2026-09-26",
+      "source_url": "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
     }
   },
   "reserved_works": {
