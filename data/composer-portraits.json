@@ -496,6 +496,22 @@
       "verified": true,
       "wikidata_id": "Q9695"
     },
+    "oa-c-000044": {
+      "alt": "Ritratto di Igor' Stravinskij",
+      "author": "Comet Photo AG (Zürich)",
+      "commons_file": "Igor Stravinsky - ETH-BIB - Com L10-0300-0003-0001.jpg",
+      "credit": "Comet Photo AG (Zürich) — Wikimedia Commons — CC-BY-SA-4.0",
+      "identity_evidence": "commons_depicts_p180",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "reviewed_on": "2026-11-25",
+      "rights_categories": [],
+      "rights_evidence": "commons_license_metadata",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg/960px-Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg",
+      "verified": true,
+      "wikidata_id": "Q7314"
+    },
     "oa-c-000045": {
       "alt": "Ritratto di Jacques Offenbach",
       "author": "Nadar",
