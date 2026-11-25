@@ -116,6 +116,10 @@ def load_editorial_media(root, composers):
     require(doc.get("schema_version") == 1 and isinstance(doc.get("images"), dict),
             "Invalid editorial image registry")
     providers = {
+        "fenice_press_material_editorial": (
+            "www.teatrolafenice.it", "/wp-content/uploads/2026/05/IMG_8887-scaled.jpg",
+            "https://www.teatrolafenice.it/en/area-stampa-category/pictures/page/22/",
+            "Press material (editorial source)"),
         "gai_noncommercial_editorial": (
             "www.giovaniartisti.it", "/sites/default/files/styles/artisti_full/public/artisti/aloisi-gaia/",
             "https://www.giovaniartisti.it/note-legali", "GAI reproduction terms"),
