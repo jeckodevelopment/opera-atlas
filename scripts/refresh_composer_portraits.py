@@ -120,7 +120,8 @@ def wikipedia_ids(composer, call):
     """Resolve exact article titles and redirects, not full-text search."""
     ids = set()
     errors = []
-    titles = "|".join(dict.fromkeys([composer["name"], *composer.get("aliases", [])]))
+    names = [composer["name"], *composer.get("aliases", [])]
+    titles = "|".join(dict.fromkeys(names + [name + suffix for name in names for suffix in (" (composer)", " (compositore)")]))
     for endpoint in WIKIPEDIA:
         try:
             data = call(endpoint, action="query", titles=titles, redirects=1,
@@ -210,23 +211,82 @@ def portrait(composer, call=api):
 def portrait_for_identity(composer, match, call, audits=None):
     qid, entity = match
     images = list(dict.fromkeys(v for v in values(entity, "P18") if isinstance(v, str)))
-    if not images:
-        return None, "no_image"
     preferred = [claim.get("mainsnak", {}).get("datavalue", {}).get("value")
                  for claim in entity.get("claims", {}).get("P18", []) if claim.get("rank") == "preferred"]
     ordered = list(dict.fromkeys([v for v in preferred if v in images] + images))
-    if len(ordered) > 8:
-        return None, "multiple_images"
     reasons = []
-    for filename in ordered:
-        audit = {}
-        record, reason = commons_portrait(composer, qid, filename, call, audit)
-        if audits is not None:
-            audits.append(dict(audit, reason=reason or 'verified'))
-        if record:
-            return record, None
-        reasons.append(reason)
-    return None, reasons[0]
+    seen = set()
+    errors = []
+    def try_files(files, evidence):
+        for filename in files:
+            key = filename.replace("_", " ").casefold()
+            if key in seen:
+                continue
+            seen.add(key)
+            audit = {"identity_evidence": evidence, "commons_file": filename}
+            try:
+                record, reason = commons_portrait(composer, qid, filename, call, audit)
+            except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+                errors.append("candidate_api_error")
+                record, reason = None, "api_error"
+            if audits is not None:
+                audits.append(dict(audit, reason=reason or "verified"))
+            if record:
+                record["identity_evidence"] = evidence
+                return record
+            reasons.append(reason)
+        return None
+    record = try_files(ordered[:8], "wikidata_p18")
+    if record:
+        return record, None
+    # Only use Commons structured depicts (P180) for the exact verified QID.
+    # Do not publish results based solely on a matching filename or category.
+    try:
+        alternatives = depicted_files(qid, call)
+    except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+        alternatives = []
+        errors.append("depicts_lookup_unavailable")
+    record = try_files(alternatives, "commons_depicts_p180")
+    if record:
+        return record, None
+    if errors:
+        raise WikimediaError(errors[0])
+    return None, reasons[0] if reasons else "no_image"
+
+def depicted_files(qid, call):
+    if not QID.fullmatch(qid):
+        raise ValueError("Invalid depicts identifier")
+    data = call(COMMONS, action="query", list="search", srnamespace=6,
+                srsearch="haswbstatement:P180=" + qid, srlimit=20)
+    results = data.get("query", {}).get("search")
+    if not isinstance(results, list):
+        raise WikimediaError("invalid_depicts_response")
+    # Verify the structured claim independently; search indexes can be stale.
+    files = []
+    for hit in results:
+        title = hit.get("title", "")
+        pageid = hit.get("pageid")
+        if not title.startswith("File:") or not isinstance(pageid, int) or pageid <= 0:
+            continue
+        files.append((title[5:], "M" + str(pageid)))
+    if not files:
+        return []
+    verified = call(COMMONS, action="wbgetentities", ids="|".join(mid for _, mid in files),
+                    props="claims").get("entities")
+    if not isinstance(verified, dict):
+        raise WikimediaError("invalid_mediainfo_response")
+    candidates = []
+    for filename, mid in files:
+        entity = verified.get(mid, {})
+        # MediaInfo exposes statements rather than claims in some responses.
+        statements = entity.get("statements", entity.get("claims", {}))
+        if isinstance(statements, dict) and qid in item_ids({"claims": statements}, "P180"):
+            # Reject any other structured depiction. No filename-only fallback.
+            # This does not constitute visual verification of the file contents.
+            depicts = item_ids({"claims": statements}, "P180")
+            if depicts == {qid}:
+                candidates.append(filename)
+    return candidates[:8]
 
 def canonical_cc_url(value):
     # Accept only the canonical Creative Commons domain and license/deed paths.
@@ -396,7 +456,8 @@ def refresh(root, call=api, max_seconds=900):
             # Only known, sanitized diagnostics are published.
             detail = str(exc) if isinstance(exc, WikimediaError) else "transport_error"
             report[key] = {"name": composer["name"], "reason": reason,
-                           "detail": detail if re.fullmatch(r"[a-z0-9_-]{1,80}", detail) else "upstream_error"}
+                           "detail": detail if re.fullmatch(r"[a-z0-9_-]{1,80}", detail) else "upstream_error",
+                           "candidates": audits}
             checkpoint()
             continue
         if record:

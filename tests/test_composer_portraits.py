@@ -24,6 +24,8 @@ def mock_call(entities=None, changes=None, categories=(), image_changes=None):
                 return {"search":[{"id":key} for key in entities]}
             return {"entities":entities}
         assert endpoint == COMMONS
+        if params.get("list") == "search":
+            return {"query":{"search":[]}}
         meta = {"LicenseShortName":"CC BY 4.0","LicenseUrl":"https://creativecommons.org/licenses/by/4.0/",
                 "Artist":"<a>Author</a>","Copyrighted":"True"}
         meta.update(changes or {})
@@ -163,7 +165,7 @@ class PortraitTests(unittest.TestCase):
     def test_exact_wikipedia_lookup_bypasses_search(self):
         def call(endpoint, **params):
             if endpoint in WIKIPEDIA:
-                self.assertEqual(params["titles"], "Composer")
+                self.assertIn("Composer (composer)", params["titles"].split("|"))
                 return {"query":{"pages":{"1":{"pageprops":{"wikibase_item":"Q123"}}}}}
             self.assertNotEqual(params.get("action"), "wbsearchentities")
             return mock_call()(endpoint, **params)
@@ -199,6 +201,38 @@ class PortraitTests(unittest.TestCase):
         def call(endpoint, **params):
             if endpoint == COMMONS and params["titles"] == "File:Portrait.jpg":
                 return mock_call(changes={"LicenseShortName":"Unknown"})(endpoint, **params)
+            return mock_call({"Q123":entity})(endpoint, **params)
+        record, reason = portrait(self.composer, call)
+        self.assertIsNone(reason)
+        self.assertEqual(record["commons_file"], "Alternative.jpg")
+
+    def test_structured_depicts_fallback(self):
+        entity = person()
+        entity["claims"].pop("P18")
+        def call(endpoint, **params):
+            if endpoint == COMMONS and params.get("list") == "search":
+                self.assertEqual(params["srsearch"], "haswbstatement:P180=Q123")
+                return {"query":{"search":[{"title":"File:Alternative.jpg","pageid":42},
+                                           {"title":"File:Wrong.jpg","pageid":43},
+                                           {"title":"File:Group.jpg","pageid":44}]}}
+            if endpoint == COMMONS and params.get("action") == "wbgetentities":
+                return {"entities":{
+                    "M42":{"statements":{"P180":[claim({"id":"Q123"})]}},
+                    "M43":{"statements":{"P180":[claim({"id":"Q999"})]}},
+                    "M44":{"statements":{"P180":[claim({"id":"Q123"}),claim({"id":"Q999"})]}}}}
+            if endpoint == COMMONS:
+                self.assertEqual(params["titles"], "File:Alternative.jpg")
+            return mock_call({"Q123":entity})(endpoint, **params)
+        record, reason = portrait(self.composer, call)
+        self.assertIsNone(reason)
+        self.assertEqual(record["identity_evidence"], "commons_depicts_p180")
+
+    def test_candidate_error_does_not_prevent_alternative(self):
+        entity = person()
+        entity["claims"]["P18"].append(claim("Alternative.jpg"))
+        def call(endpoint, **params):
+            if endpoint == COMMONS and params.get("titles") == "File:Portrait.jpg":
+                raise WikimediaError("maxlag")
             return mock_call({"Q123":entity})(endpoint, **params)
         record, reason = portrait(self.composer, call)
         self.assertIsNone(reason)
