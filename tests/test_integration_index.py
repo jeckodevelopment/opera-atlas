@@ -174,6 +174,27 @@ class IntegrationIndexTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build(self.root, REV)
 
+    def test_confirmed_identity_with_unresolved_portrait_remains_link_only(self):
+        from scripts.publish_integration_index import load_source_references
+        ref = {"name": "Composer", "source_url": "https://example.org/profile",
+               "source": "Named institutional biography", "kind": "profile",
+               "usage": "external_link_only", "rights_status": "reuse_not_established",
+               "identity_status": "confirmed_by_named_sources",
+               "identity_evidence": ["https://example.org/program"],
+               "media_candidates": ["https://example.org/gallery"],
+               "media_review": "Photograph not individually identified"}
+        self.write("data/composer-source-references.json", {"schema_version": 1, "references": {"c1": ref}})
+        entity = next(e for e in build(self.root, REV)["entities"] if e["type"] == "composer")
+        self.assertEqual(entity["source_reference"]["identity_status"], ref["identity_status"])
+        self.assertEqual(entity["source_reference"]["identity_evidence"], ref["identity_evidence"])
+        self.assertIsNone(entity["image"])
+        self.assertNotIn("editorial_image", entity)
+        self.assertEqual(build(self.root, REV)["diagnostics"]["composer_media_coverage"]["missing"], ["c1"])
+        ref["media_candidates"] = ["javascript:alert(1)"]
+        self.write("data/composer-source-references.json", {"schema_version": 1, "references": {"c1": ref}})
+        with self.assertRaises(ValueError):
+            load_source_references(self.root, {"c1": {"name": "Composer"}})
+
     def test_source_reference_is_link_only(self):
         ref = {"name": "Composer", "source_url": "https://example.org/artist",
                "source": "Artist site", "kind": "portrait",
