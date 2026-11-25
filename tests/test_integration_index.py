@@ -238,6 +238,21 @@ class IntegrationIndexTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             load_editorial_media(self.root, composers)
 
+    def test_public_source_editorial_link_is_exact_and_not_open_license(self):
+        from scripts.publish_integration_index import load_editorial_media
+        photo = {"name":"Alessandro Solbiati","url":"https://levivier.ca/sites/default/files/styles/mt_member_photo/public/fiches-individuelles/Alessandro%20Solbiati.jpg.webp?itok=sA4aMc_A","alt":"Fotografia di Alessandro Solbiati pubblicata dalla fonte","source_url":"https://levivier.ca/en/artists/alessandro-solbiati","author":"Fotografo non indicato","license":"External editorial photograph — reuse rights not established","license_url":"https://levivier.ca/en/artists/alessandro-solbiati","credit":"Fotografo non indicato — Le Vivier. Immagine collegata alla fonte originale, nessuna licenza di riproduzione accertata.","media_kind":"portrait","usage":"public_source_editorial_link","preserve_integrity": True}
+        composers = {"oa-c-000002": {"name": "Alessandro Solbiati"}, "c1": {"name": "Alessandro Solbiati"}}
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"oa-c-000002": photo}})
+        entry = load_editorial_media(self.root, composers)["oa-c-000002"]
+        self.assertEqual(entry["rights_status"], "reuse_not_established")
+        for field in ("url", "source_url", "author", "license", "license_url"):
+            self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"oa-c-000002": dict(photo, **{field: photo[field] + "x"})}})
+            with self.assertRaises(ValueError):
+                load_editorial_media(self.root, composers)
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"c1": photo}})
+        with self.assertRaises(ValueError):
+            load_editorial_media(self.root, composers)
+
     def test_combined_media_coverage_does_not_count_source_links(self):
         ref = {"name": "Composer", "source_url": "https://example.org/artist",
                "source": "Artist site", "kind": "profile",
