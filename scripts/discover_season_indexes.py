@@ -1420,6 +1420,7 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                     enabled=check_next_season and network_enabled)
                 primary_unavailable=False
                 municipal_fallback=False
+                ferrara_fallback=False
                 index_url=item["url"]
                 min_links=item["min_links"]
                 try:
@@ -1427,7 +1428,16 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 except (FetchUnavailable, AccessDenied) as original:
                     if isinstance(original, AccessDenied) and item["key"]!="spoleto-tls-lirica-2026":
                         raise
-                    if item["key"]=="rovigo-sociale-opera-2026-27":
+                    if item["key"].startswith("ferrara-") and item["key"].endswith("-opera-2026-27"):
+                        from opera_atlas.ferrara_regional_parser import TOURISM_ORIGIN, TOURISM_URL, verify_tourism_calendar
+                        db.execute("INSERT OR IGNORE INTO sources(official_url,access_status) VALUES (?, 'approved')",(TOURISM_ORIGIN,))
+                        alternate_id=db.execute("SELECT id FROM sources WHERE official_url=?",(TOURISM_ORIGIN,)).fetchone()["id"]
+                        page=fetcher(db,source_id=alternate_id,url=TOURISM_URL,network_enabled=True)
+                        verify_tourism_calendar(page.html,url=TOURISM_URL,source_key=item["key"])
+                        if classify(item["key"],item["url"],reviewed)!="already_catalogued":
+                            raise ValueError("Ferrara fallback requires existing canonical production")
+                        ferrara_fallback=True
+                    elif item["key"]=="rovigo-sociale-opera-2026-27":
                         page,index_url,preverified_urls=_rovigo_verified_detail_fallback(
                             db,row["id"],fetcher)
                         min_links=1
@@ -1465,7 +1475,7 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                         min_links=1
                         primary_unavailable=True
                 try:
-                    urls=(preverified_urls if municipal_fallback and
+                    urls=([item["url"]] if ferrara_fallback else preverified_urls if municipal_fallback and
                           item["key"]=="rovigo-sociale-opera-2026-27"
                           else extract(item["key"],index_url,page.html,min_links))
                 except ValueError as exc:
@@ -1569,7 +1579,11 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                                  **future_health})
                 continue
             page_health={}
-            if municipal_fallback:
+            if ferrara_fallback:
+                page_health={"pages_checked":1,"pagination_complete":True,
+                             "fallback_official_source":"www.ferrarainfo.com",
+                             "fallback_role":"existing_recite_corroboration"}
+            elif municipal_fallback:
                 page_health={"pages_checked":1,"pagination_complete":True,
                              "fallback_official_source":(
                                  "comune.rovigo.it" if item["key"]=="rovigo-sociale-opera-2026-27"

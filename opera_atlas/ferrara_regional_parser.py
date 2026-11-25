@@ -22,7 +22,7 @@ SOURCE_PREFIX="ferrara-"
 
 def fold(value:str)->str:
     return " ".join("".join(c for c in unicodedata.normalize("NFKD",value.casefold())
-                           if not unicodedata.combining(c)).replace("’","'").split())
+                           if not unicodedata.combining(c)).replace("’","'").replace("æ","ae").split())
 
 
 class RegionalProgram(HTMLParser):
@@ -137,3 +137,33 @@ def verified_index_candidate(html:str,*,source_key:str,url:str)->bool:
     """Discover one real opera from an approved source; fail closed."""
     production(html,source_key=source_key,url=url)
     return True
+
+
+TOURISM_ORIGIN = "https://www.ferrarainfo.com/"
+TOURISM_URL = TOURISM_ORIGIN + "it/vivi-gli-eventi/tutti-gli-eventi/musica-teatro-danza/stagione-opera-danza"
+
+def verify_tourism_calendar(html: str, *, url: str, source_key: str) -> None:
+    """Corroborate exact existing dates from an independent institutional page."""
+    if url != TOURISM_URL:
+        raise ValueError("unapproved Ferrara tourism source")
+    from opera_atlas.national_detail_parser import clean
+    body = fold(clean(html))
+    if not (re.search(r"stagione opera\s*(?:&|e)\s*danza", body)
+            and "teatro comunale" in body and "ferrara" in body
+            and "2026" in body and "2027" in body):
+        raise ValueError("Ferrara tourism season or venue unverified")
+    source = records().get(source_key)
+    if source is None:
+        raise ValueError("unknown Ferrara tourism work")
+    months = {11:"novembre", 1:"gennaio", 2:"febbraio", 3:"marzo", 4:"aprile"}
+    dates = []
+    for day, clock in source["dates"]:
+        d = date.fromisoformat(day)
+        dates.append(r"\b0?"+str(d.day)+r"\s+"+months[d.month]+r"(?:\s+"+str(d.year)+r")?,?\s+ore\s+"+clock.replace(":",r"[.:]")+r"\b")
+    title = fold(source["title"])
+    title_pattern = r"dido\s*(?:&|and)\s*(?:aeneas|æneas)" if title=="dido and aeneas" else re.escape(title)
+    pattern = r"[\s,;–-]+".join(dates)+r"[\s,;–-]+"+title_pattern+r"\s+musica di\s+"+re.escape(fold(source["composer"]))+r"\b"
+    if len(re.findall(pattern, body)) != 1:
+        raise ValueError("Ferrara tourism work, composer or recite conflict")
+    if re.search(r"\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie])\b", body):
+        raise ValueError("Ferrara tourism cancellation requires review")
