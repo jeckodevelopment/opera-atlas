@@ -5890,6 +5890,24 @@
       ]
     },
     {
+      "id": "curated:chieti-pinocchio-2026:2026-09-26",
+      "starts_at": "2026-09-26T21:00:00+02:00",
+      "local_date": "2026-09-26",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Le avventure di Pinocchio",
+      "composer": "Antonio Cericola",
+      "venue": "Teatro Marrucino",
+      "municipality": "Chieti",
+      "region": "Abruzzo",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://comune.chieti.it/novita/presentata-la-stagione-lirica-2026-del-teatro-marrucino-tra-tradizione-innovazione-e-celebrazioni-culturali/"
+      ]
+    },
+    {
       "id": "curated:lombardia-death-venice-brescia:2026-09-27",
       "starts_at": null,
       "local_date": "2026-09-27",
