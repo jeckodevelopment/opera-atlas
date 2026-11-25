@@ -208,6 +208,34 @@ class IntegrationIndexTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             load_editorial_media(self.root, composers)
 
+    def test_pinned_municipal_image(self):
+        from scripts.publish_integration_index import PALERMO_MEDIA, verified_image
+        photo = dict(PALERMO_MEDIA, verified=True, alt="Cerimonia di consegna",
+                     author="Ufficio Stampa del Comune di Palermo", credit="Comune di Palermo — CC BY 4.0")
+        self.assertEqual(verified_image(photo, "oa-c-000065")["rights_source_url"],
+                         photo["rights_source_url"])
+        self.assertIsNone(verified_image(photo, "oa-c-000002"))
+        for key in PALERMO_MEDIA:
+            self.assertIsNone(verified_image(dict(photo, **{key: "https://evil.example/"}),
+                                             "oa-c-000065"))
+
+    def test_combined_media_coverage_does_not_count_source_links(self):
+        ref = {"name": "Composer", "source_url": "https://example.org/artist",
+               "source": "Artist site", "kind": "profile",
+               "usage": "external_link_only", "rights_status": "reuse_not_established"}
+        self.write("data/composer-source-references.json", {"schema_version": 1, "references": {"c1": ref}})
+        coverage = build(self.root, REV)["diagnostics"]["composer_media_coverage"]
+        self.assertEqual(coverage, {"total": 1, "with_image": 0, "default_image": 0,
+                                    "editorial_image": 0, "missing": ["c1"]})
+        photo = {"verified": True, "url": "https://upload.wikimedia.org/example.jpg",
+                 "alt": "Portrait", "source_url": "https://commons.wikimedia.org/wiki/File:Example.jpg",
+                 "author": "Photographer", "license": "CC-BY-4.0",
+                 "license_url": "https://creativecommons.org/licenses/by/4.0/", "credit": "Credit"}
+        self.write("data/composer-portraits.json", {"schema_version": 1, "portraits": {"c1": photo}})
+        coverage = build(self.root, REV)["diagnostics"]["composer_media_coverage"]
+        self.assertEqual(coverage, {"total": 1, "with_image": 1, "default_image": 1,
+                                    "editorial_image": 0, "missing": []})
+
     def test_unknown_portrait_id_rejected(self):
         self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
         with self.assertRaises(ValueError):

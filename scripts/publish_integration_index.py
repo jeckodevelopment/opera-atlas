@@ -83,7 +83,17 @@ def safe_https(value):
     except ValueError:
         return False
 
-def verified_image(record):
+# Exact reviewed institutional asset; no general host-level licence inference.
+PALERMO_MEDIA = {
+    "url": "https://www.comune.palermo.it/wp-content/uploads/2025/01/ed028fbe-7149-4fc8-8f34-9f0fd415ffb6.jpg",
+    "source_url": "https://www.comune.palermo.it/novita/consegnata-la-partitura-dellopera-la-sirena-di-palermo-scritta-dal-maestro-passantino-vincitore-del-concorso-bandito-dallassociazione-teatro-dei-ragazzi/",
+    "rights_source_url": "https://www.comune.palermo.it/note-legali/",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "media_kind": "documentary_photo",
+}
+
+def verified_image(record, composer_id=None):
     """Never infer reuse rights from a poster, credit or source URL."""
     if not isinstance(record, dict) or record.get("verified") is not True:
         return None
@@ -92,12 +102,15 @@ def verified_image(record):
         return None
     if record["license"] not in {"Public Domain", "CC0-1.0", "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-3.0", "CC-BY-SA-3.0", "CC-BY-2.0", "CC-BY-SA-2.0", "CC-BY-2.5", "CC-BY-SA-2.5", "CC-BY-SA-3.0-DE"}:
         return None
-    if not all(safe_https(record[k]) for k in ("url", "source_url", "license_url")):
+    institutional = (composer_id == "oa-c-000065" and
+                     all(record.get(k) == v for k, v in PALERMO_MEDIA.items()))
+    if not institutional and not all(safe_https(record[k]) for k in ("url", "source_url", "license_url")):
         return None
     kind = record.get("media_kind", "portrait")
     if kind not in {"portrait", "documentary_photo", "archival_document"}:
         return None
-    return {**{k: record[k] for k in fields}, "media_kind": kind}
+    return {**{k: record[k] for k in fields}, "media_kind": kind,
+            **({"rights_source_url": record["rights_source_url"]} if institutional else {})}
 
 def load_media(root, composers):
     path = root / "data/composer-portraits.json"
@@ -105,7 +118,7 @@ def load_media(root, composers):
     require(registry["schema_version"] == 1, "Unsupported portrait registry")
     require(isinstance(registry["portraits"], dict), "Invalid portrait registry")
     require(all(key in composers for key in registry["portraits"]), "Unknown portrait composer")
-    return {key: verified_image(value) for key, value in registry["portraits"].items()}
+    return {key: verified_image(value, key) for key, value in registry["portraits"].items()}
 
 def load_editorial_media(root, composers):
     """Separate, opt-in editorial references; never promote to open-license image."""
@@ -275,9 +288,16 @@ def build(root, revision):
         add("festival", key, f["name"], f["city"], ROOT + "directory.html?section=festival&id=" + f["id"])
     keys = [(x["type"], x["id"]) for x in entities]
     require(len(keys) == len(set(keys)), "Duplicate entity")
+    composer_entities = [e for e in entities if e["type"] == "composer"]
+    missing_media = [e for e in composer_entities if not e["image"] and not e.get("editorial_image")]
+    media_coverage = {"total": len(composer_entities),
+                      "with_image": len(composer_entities) - len(missing_media),
+                      "default_image": sum(bool(e["image"]) for e in composer_entities),
+                      "editorial_image": sum(bool(e.get("editorial_image")) for e in composer_entities),
+                      "missing": sorted(e["id"] for e in missing_media)}
     return dict(schema_version=1, source_revision=revision, catalog_reviewed_on=manifest["reviewed_on"],
                 entities=sorted(entities, key=lambda x: (x["type"], x["id"])),
-                diagnostics={"unresolved_composer_works": unresolved})
+                diagnostics={"unresolved_composer_works": unresolved, "composer_media_coverage": media_coverage})
 
 def publish(root, revision):
     data = build(root, revision)
