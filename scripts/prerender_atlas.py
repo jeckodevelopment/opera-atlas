@@ -161,7 +161,7 @@ def generate(destination: Path, catalog: Path) -> list[str]:
         elif safe_image(v.get("photo_url")) and safe_image(v.get("photo_source_url")) and v.get("photo_credit"):
             image,alt=v["photo_url"],"Fotografia del teatro "+title
         if v.get("id") == "oa-v-000072":
-            image,alt=ROOT_URL+"sanbapolis-platea.jpg","Platea del Teatro Sanbàpolis a Trento"
+            image,alt=ROOT_URL+"assets/images/venues/sanbapolis-platea.jpg","Platea del Teatro Sanbàpolis a Trento"
         add("/"+city+"/"+slug+"/", title=title+" — "+v["city"], heading=title,
             description=description, subtitle=v["city"]+" · "+v.get("region",""),
             summary=description, image=image,alt=alt,entity_type="Teatro")
