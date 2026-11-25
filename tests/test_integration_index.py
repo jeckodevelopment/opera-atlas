@@ -125,6 +125,26 @@ class IntegrationIndexTests(unittest.TestCase):
         self.write("data/composer-portraits.json", {"schema_version": 1, "portraits": {"c1": photo}})
         self.assertIsNone(next(e for e in build(self.root, REV)["entities"] if e["type"] == "composer")["image"])
 
+    def test_editorial_image_does_not_become_default_image(self):
+        photo = {"name": "Composer", "url": "https://www.quirinale.it/APIRed/api/media/static/6080",
+                 "alt": "Photo", "source_url": "https://www.quirinale.it/it/foto/example",
+                 "author": "Quirinale", "credit": "Quirinale — non-commercial",
+                 "license": "Institutional non-commercial editorial use",
+                 "license_url": "https://www.quirinale.it/it/pagine/guida-navigazione",
+                 "media_kind": "documentary_photo", "usage": "noncommercial_public_interest_information",
+                 "preserve_integrity": True}
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"c1": photo}})
+        entities = build(self.root, REV)["entities"]
+        composer = next(e for e in entities if e["type"] == "composer")
+        self.assertIsNone(composer["image"])
+        self.assertEqual(composer["editorial_image"]["url"], photo["url"])
+        self.assertTrue(composer["editorial_image"]["preserve_integrity"])
+        self.assertNotIn("editorial_image", next(e for e in entities if e["type"] == "opera"))
+        photo["url"] = "https://evil.example/image.jpg"
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"c1": photo}})
+        with self.assertRaises(ValueError):
+            build(self.root, REV)
+
     def test_unknown_portrait_id_rejected(self):
         self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
         with self.assertRaises(ValueError):
