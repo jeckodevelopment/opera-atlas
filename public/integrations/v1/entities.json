@@ -9603,6 +9603,20 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000004"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000357",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Marrucino",
+      "title": "Le avventure di Pinocchio",
+      "type": "production",
+      "url": "https://opera.plus/atlas/chieti/teatro-marrucino/le-avventure-di-pinocchio/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -10417,5 +10431,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "60faf8391ec337884350551959baf997a9a7c28e"
+  "source_revision": "d56593dabca32a5795d557099e6def48873612c2"
 }
