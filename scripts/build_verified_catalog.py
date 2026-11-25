@@ -1022,6 +1022,56 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     })
+    reconciled_2026.update({
+        "historical-2026-rovigo-pagliacci": {
+            "title": "Pagliacci",
+            "composer": "Ruggero Leoncavallo",
+            "venue": "Teatro Sociale",
+            "municipality": "Rovigo",
+            "region": "Veneto",
+            "source_url": "https://www.comune.rovigo.it/teatrosociale/dettaglio-teatro/eventi/pagliacci",
+            "dates": [
+                [
+                    "2026-11-13",
+                    "20:30"
+                ],
+                [
+                    "2026-11-15",
+                    "16:00"
+                ]
+            ]
+        },
+        "historical-2026-roma-la-vita-nuda": {
+            "title": "La vita nuda",
+            "composer": "Matteo D’Amico",
+            "venue": "Teatro Nazionale",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/",
+            "dates": [
+                [
+                    "2026-10-20",
+                    "20:00"
+                ],
+                [
+                    "2026-10-22",
+                    "20:00"
+                ],
+                [
+                    "2026-10-23",
+                    "20:00"
+                ],
+                [
+                    "2026-10-24",
+                    "18:00"
+                ],
+                [
+                    "2026-10-25",
+                    "16:30"
+                ]
+            ]
+        }
+    })
     reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
     permitted.update(reconciled_urls)
     events = []
