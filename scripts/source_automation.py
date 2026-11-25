@@ -32,7 +32,7 @@ INDEX_VENUES = {
     "taormina-opera-festival-rolling": ("Taormina|Teatro Antico di Taormina",),
     "taormina-fondazione-rolling-opera": ("Taormina|Teatro Antico di Taormina",),
     "sabbioneta-antica-rolling-opera": ("Sabbioneta|Teatro all\u0027Antica",),
-    "vicenza-olimpico-rolling-opera": ("Vicenza|Teatro Olimpico",),
+    "vicenza-olimpico-rolling-opera": ("Vicenza|Teatro Olimpico", "Lonigo|Villa Pisani Bonetti"),
     "cosenza-rendano-rolling-opera": ("Cosenza|Teatro Alfonso Rendano",),
     "mantova-sociale-rolling-opera": ("Mantova|Teatro Sociale di Mantova",),
     "napoli-san-carlo-rolling-opera": ("Napoli|Teatro di San Carlo",),
@@ -44,7 +44,7 @@ INDEX_VENUES = {
     # Do not infer additional venues solely from the shared festival organizer.
     "trapani-luglio-musicale-2026": ("Trapani|Teatro Giuseppe Di Stefano",
                                      "Trapani|Teatro M° Tonino Pardo"),
-    "haydn-rolling-opera": ("Bolzano|Teatro Comunale di Bolzano", "Trento|Teatro Sociale"),
+    "haydn-rolling-opera": ("Bolzano|Teatro Comunale di Bolzano", "Trento|Teatro Sociale", "Trento|Sanbàpolis"),
     "asti-alfieri-rolling-opera": ("Asti|Teatro Alfieri",),
     "savona-giocosa-rolling-opera": ("Savona|Teatro Gabriello Chiabrera",),
     "sassari-de-carolis-opera-2026": ("Sassari|Teatro Comunale di Sassari",),

@@ -4,7 +4,7 @@ import json
 import unittest
 from datetime import date
 
-from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable
+from opera_atlas.controlled_fetch import FetchResult,FetchUnavailable,AccessDenied
 from opera_atlas.spoleto_municipal_parser import URL,ORIGIN,parse_program
 from scripts.discover_season_indexes import CONFIG,eligible,extract,scan
 from scripts.collect_candidate_details import parse_known_opera_detail,selected_candidates
@@ -52,7 +52,7 @@ class SpoletoMunicipalFallbackTests(unittest.TestCase):
         requests=[]
         def fake(db,*,source_id,url,network_enabled):
             requests.append(url)
-            if url==THEATRE:raise FetchUnavailable("page unavailable")
+            if url==THEATRE:raise AccessDenied("primary robots denied")
             if url==URL:return FetchResult(url,HTML,"a"*64,len(HTML))
             raise AssertionError("unexpected unapproved URL: "+url)
         candidates,health=scan(conf,{"schema_version":1,"candidates":[]},

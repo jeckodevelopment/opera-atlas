@@ -4,6 +4,27 @@ from scripts.source_automation import build
 
 
 class SourceAutomationTests(unittest.TestCase):
+    def test_haydn_and_vicenza_secondary_venues(self):
+        import json
+        from scripts.source_automation import DIRECTORY, DAILY, INDEX
+        from opera_atlas.haydn_rolling_opera import parse_detail
+        html = """<h1>note to a friend</h1><p>David Lang</p><p>Opera</p>
+        <p>Musica di David Lang Libretto di David Lang</p>
+        <p>Mercoledì 11.03.2026 alle 20.00</p><p>Teatro SanbàPolis</p>
+        <p>Via della Malpensada, 80-88 - Trento</p>"""
+        self.assertEqual(parse_detail(html, url="https://www.haydn.it/eventi/note-to-a-friend-2"),
+                         ("note to a friend", "David Lang", "Sanbàpolis", [("2026-03-11", "20:00")]))
+        with self.assertRaises(ValueError):
+            parse_detail(html.replace("80-88 - Trento", "80-88 - Bolzano"),
+                         url="https://www.haydn.it/eventi/note-to-a-friend-2")
+        report = build(json.loads(DIRECTORY.read_text()), json.loads(DAILY.read_text()),
+                       {"sources":[]}, json.loads(INDEX.read_text()), {"sources":[
+                           {"key":key,"status":"success","current_scan_verified":True}
+                           for key in ("haydn-rolling-opera","vicenza-olimpico-rolling-opera")]})
+        rows = {v["venue"]:v for v in report["venues"]}
+        for venue in ("Sanbàpolis","Villa Pisani Bonetti"):
+            self.assertEqual(rows[venue]["status"], "operational")
+
     def test_actual_success_and_missing_sources(self):
         # Mapping integrity requires the complete reference directory.
         from scripts.source_automation import DIRECTORY, DAILY, INDEX

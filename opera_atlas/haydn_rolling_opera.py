@@ -133,6 +133,8 @@ def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     elif re.search(r"Teatro\s+Sociale\s+Via\s+Paolo\s+Oss[-–]Mazzurana"
                    r"\s+19\s*[-–]\s*Trento",programme,re.I):
         venue="Teatro Sociale"
+    elif re.search(r"Teatro\s+Sanbàpolis\s+Via\s+della\s+Malpensada,?\s+80\s*[-–]\s*88\s*[-–]\s*Trento", programme, re.I):
+        venue="Sanbàpolis"
     else:
         raise ValueError("Haydn official physical venue not verified")
     return title,composer,venue,[(iso,f"{hour:02d}:{minute:02d}")]
