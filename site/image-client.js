@@ -239,12 +239,12 @@ window.OperaAtlasImages=Object.freeze((()=>{
         fallbackSrc:poster(title),sourceUrl:event.photo_source_url,
         credit:event.photo_credit,license:event.photo_license||""};
     }
-    if(city==="trento" && normalize(title)==="sanbapolis" &&
-       external==="https://flyimg.opencityitalia.it/upload/rf_1%2Co_auto%2Cw_2500%2Ch_2500/https%3A%2F%2Fs3-eu-west-1.amazonaws.com%2Fstatic.opencity.opencontent.it%2Fvar%2Ftrento%2Fstorage%2Fimages%2Fmedia%2Fimages%2Fteatro-sanbapolis%2F37879-2-ita-IT%2FTeatro-Sanbapolis_reference.jpg" &&
-       event?.photo_source_url==="https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sanbapolis" && event?.photo_credit){
-      return {src:external,alt:"Platea del Teatro Sanbàpolis a Trento",
-        fallbackSrc:null,sourceUrl:event.photo_source_url,
-        credit:event.photo_credit,license:event.photo_license||""};
+    // Reviewed CC BY photograph is served by Atlas itself, independent of
+    // a stale directory feed or the browser's cross-origin image policy.
+    if(city==="trento" && ["sanbapolis","teatro-sanbapolis"].includes(normalize(title))){
+      return {src:"/atlas/sanbapolis-platea.jpg",alt:"Platea del Teatro Sanbàpolis a Trento",
+        fallbackSrc:null,sourceUrl:"https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sanbapolis",
+        credit:"Archivio Comune di Trento",license:"CC BY 4.0",kind:"verified_local_venue"};
     }
     const verified=event?.photo_file || knownVenueFile;
     // Never infer a photographed building from its city. A city can host
