@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-23T13:12:09+00:00",
+  "checked_at": "2026-11-25T18:08:30+00:00",
   "outcomes": [
     {
       "key": "spoleto-tls-lirica-2026",
       "status": "kept_last_known_good",
-      "reason": "FetchUnavailable"
+      "reason": "AccessDenied"
     },
     {
       "key": "trapani-luglio-musicale-2026",
