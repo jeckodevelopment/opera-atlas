@@ -13,7 +13,7 @@ import tempfile
 from pathlib import Path
 
 
-from scripts.deploy_atlas import FILES, PUBLIC_URL, build, verify_live
+from scripts.deploy_atlas import FILES, PUBLIC_URL, SANBAPOLIS_ASSET, build, stage_sanbapolis_photo, verify_live
 
 
 def configuration(env=None):
@@ -103,7 +103,8 @@ def publish(env=None, connector=make_client):
     with tempfile.TemporaryDirectory(prefix="atlas-sftp-") as tmp:
         folder = Path(tmp)
         build(folder)
-        expected=set(FILES)
+        stage_sanbapolis_photo(folder)
+        expected=set(FILES) | {SANBAPOLIS_ASSET}
         actual={p.name for p in folder.iterdir() if p.is_file()}
         if actual!=expected:
             raise ValueError("Unexpected root release files: "+str(sorted(actual.symmetric_difference(expected))))
@@ -125,6 +126,8 @@ def publish(env=None, connector=make_client):
                 else:
                     if not stat.S_ISDIR(info.st_mode):
                         raise ValueError("SFTP target exists but is not a directory")
+                # Publish the image before any JS or HTML can reference it.
+                sftp.put(str(folder / SANBAPOLIS_ASSET), posixpath.join(destination, SANBAPOLIS_ASSET), confirm=True)
                 for name in sorted(FILES):
                     sftp.put(str(folder / name), posixpath.join(destination, name), confirm=True)
                 # All paths were checked against the canonical manifest at build.
@@ -147,7 +150,7 @@ def publish(env=None, connector=make_client):
                                 raise ValueError("Canonical route is not a directory: "+directory)
                         made.add(directory)
                     sftp.put(str(folder/relative),posixpath.join(destination,relative),confirm=True)
-                print("Uploaded "+str(len(FILES))+" root files and "+str(len(generated))+" canonical HTML pages")
+                print("Uploaded "+str(len(expected))+" root files and "+str(len(generated))+" canonical HTML pages")
                 verify_live(folder)
                 print("Verified published Atlas files and deep routes over HTTPS")
         finally:
