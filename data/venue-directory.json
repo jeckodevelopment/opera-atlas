@@ -1400,7 +1400,10 @@
       "description": "Sala Studio del Teatro Comunale di Bolzano.",
       "address": "Piazza Verdi 40",
       "monitoring_status": "anagrafica_censita",
-      "calendar_status": "not_acquired"
+      "calendar_status": "not_acquired",
+      "history": "La sala Studio fa parte del complesso del Teatro Comunale di Bolzano e ospita spettacoli in uno spazio distinto dalla sala principale. Nel marzo 2026 ha accolto il monodramma di David Lang nella stagione della Fondazione Haydn.",
+      "photo_status": "review_pending",
+      "profile_key": "Bolzano|Teatro Studio"
     },
     {
       "id": "oa-v-000072",
@@ -1415,7 +1418,10 @@
       "description": "Spazio teatrale di Trento in via della Malpensada.",
       "address": "Via della Malpensada 80-88",
       "monitoring_status": "anagrafica_censita",
-      "calendar_status": "not_acquired"
+      "calendar_status": "not_acquired",
+      "history": "Sanbàpolis è uno spazio per spettacoli a Trento. Nel marzo 2026 la Fondazione Haydn vi ha presentato Note to a Friend di David Lang, in una replica distinta da quella di Bolzano.",
+      "photo_status": "review_pending",
+      "profile_key": "Trento|Sanbàpolis"
     }
   ],
   "related_organizations": [
