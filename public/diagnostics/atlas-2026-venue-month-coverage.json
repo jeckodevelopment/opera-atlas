@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-25T07:43:38+00:00",
+  "generated_at": "2026-11-25T07:54:24+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,13 +10,13 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 715,
-    "published_dates_not_exhaustively_verified": 149
+    "coverage_not_established": 714,
+    "published_dates_not_exhaustively_verified": 150
   },
-  "zero_published_venue_count": 8,
+  "zero_published_venue_count": 7,
   "zero_published_by_calendar_status": {
     "acquired": 3,
-    "not_acquired": 5
+    "not_acquired": 4
   },
   "venue_audit_priorities": [
     {
@@ -68,23 +68,6 @@
       "historical_source_seed_count": 0,
       "official_historical_sources": [],
       "audit_priority": "zero_published_acquired_calendar",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000053",
-      "venue": "Teatro Auditorium Manzoni",
-      "city": "Bologna",
-      "region": "Emilia-Romagna",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 0,
-      "official_unpublished_opera_lead_count": 0,
-      "official_opera_lead_review_required": false,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_calendar_not_acquired",
       "missing_recite_certified": false
     },
     {
@@ -618,6 +601,23 @@
       "published_2026_showtimes": 37,
       "published_months": 7,
       "official_verified_opera_lead_count": 0,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "region": "Emilia-Romagna",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 2,
+      "published_months": 1,
+      "official_verified_opera_lead_count": 2,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
       "historical_source_seed_count": 0,
@@ -1259,11 +1259,11 @@
       "missing_recite_certified": false
     }
   ],
-  "official_2026_opera_lead_venue_count": 16,
-  "official_2026_opera_lead_count": 102,
+  "official_2026_opera_lead_venue_count": 17,
+  "official_2026_opera_lead_count": 104,
   "official_unpublished_opera_lead_count": 0,
   "official_lead_reconciliation_counts": {
-    "exact_match": 102
+    "exact_match": 104
   },
   "official_lead_reconciliation": [
     {
@@ -2489,10 +2489,34 @@
       "complete_month_verified": false,
       "venue_id": "oa-vd-000056",
       "reconciliation_status": "exact_match"
+    },
+    {
+      "date": "2026-11-13",
+      "time": "20:00",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "official_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/",
+      "publication_review_required": false,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000053",
+      "reconciliation_status": "exact_match"
+    },
+    {
+      "date": "2026-11-15",
+      "time": "16:00",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "official_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/",
+      "publication_review_required": false,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000053",
+      "reconciliation_status": "exact_match"
     }
   ],
   "official_lead_venues_with_zero_published": 0,
-  "published_2026_showtimes": 562,
+  "published_2026_showtimes": 564,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -14250,7 +14274,7 @@
       "city": "Bologna",
       "region": "Emilia-Romagna",
       "month": "2026-11",
-      "published_showtimes": 0,
+      "published_showtimes": 2,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -14260,7 +14284,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000053",
