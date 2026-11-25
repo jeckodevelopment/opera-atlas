@@ -33,11 +33,11 @@
       "alt": "Ritratto di Zygmunt Krauze diffuso come materiale stampa nel 2013",
       "source_url": "https://ownetic.com/news/2013/02/14/memories-of-the-east-zygmunt-krauze-chiny/",
       "author": "Materiali stampa (fotografo non indicato dalla fonte)",
-      "license": "Press and media use",
+      "license": "Press material (editorial source)",
       "license_url": "https://ownetic.com/news/2013/02/14/memories-of-the-east-zygmunt-krauze-chiny/",
-      "credit": "Materiali stampa — Ownetic / archivio O.pl, 14 febbraio 2013; fotografo non indicato. Solo uso editoriale non commerciale; non licenza libera.",
+      "credit": "Materiali stampa — Ownetic / archivio O.pl, 14 febbraio 2013; fotografo non indicato. Fonte editoriale; nessuna licenza libera dichiarata.",
       "media_kind": "portrait",
-      "usage": "press_and_media_editorial",
+      "usage": "press_material_noncommercial_editorial",
       "preserve_integrity": true
     }
   }
