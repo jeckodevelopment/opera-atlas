@@ -174,6 +174,23 @@ class IntegrationIndexTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build(self.root, REV)
 
+    def test_source_reference_is_link_only(self):
+        ref = {"name": "Composer", "source_url": "https://example.org/artist",
+               "source": "Artist site", "kind": "portrait",
+               "image_url": "https://example.org/portrait.jpg", "author": "Photographer",
+               "usage": "external_link_only", "rights_status": "reuse_not_established"}
+        self.write("data/composer-source-references.json", {"schema_version": 1, "references": {"c1": ref}})
+        entities = build(self.root, REV)["entities"]
+        composer = next(e for e in entities if e["type"] == "composer")
+        self.assertIsNone(composer["image"])
+        self.assertNotIn("editorial_image", composer)
+        self.assertEqual(composer["source_reference"]["image_url"], ref["image_url"])
+        self.assertNotIn("source_reference", next(e for e in entities if e["type"] == "opera"))
+        ref["image_url"] = "javascript:alert(1)"
+        self.write("data/composer-source-references.json", {"schema_version": 1, "references": {"c1": ref}})
+        with self.assertRaises(ValueError):
+            build(self.root, REV)
+
     def test_unknown_portrait_id_rejected(self):
         self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
         with self.assertRaises(ValueError):
