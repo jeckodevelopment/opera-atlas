@@ -93,3 +93,14 @@ assert.equal(fallback.kind,"program_component_image");
 assert.match(fallback.src,/Pagliacci_Original_Score_Cover/);
 assert.equal(lib.program({program_components:[{title:"Pagliacci"}]}).kind,"unavailable");
 assert.equal(lib.program({program_components:[],program_artwork:novara.artwork,sources:["https://example.org/other"]}).kind,"unavailable");
+
+// Verify the actual published record is accepted by the runtime photo resolver.
+const theatreFeed=JSON.parse(fs.readFileSync(path.join(root,"public/catalog/venue-directory.json"),"utf8"));
+const sanbapolis=theatreFeed.venues.find(v=>v.id==="oa-v-000072");
+assert.equal(sanbapolis.photo_license,"CC BY 4.0");
+const sanbapolisPhoto=lib.venue({...sanbapolis,venue:sanbapolis.name,municipality:sanbapolis.city});
+assert.equal(sanbapolisPhoto.src,sanbapolis.photo_url);
+assert.equal(sanbapolisPhoto.sourceUrl,sanbapolis.photo_source_url);
+assert.equal(sanbapolisPhoto.credit,"Archivio Comune di Trento");
+assert.ok(sanbapolisPhoto.src.startsWith("https://flyimg.opencityitalia.it/"));
+assert.equal(lib.venue({...sanbapolis,venue:"Teatro Sociale",municipality:"Trento"}).src===sanbapolisPhoto.src,false);

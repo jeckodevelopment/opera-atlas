@@ -52,9 +52,9 @@ def build(source:dict, registry:dict)->dict:
                     venue.get("photo_license","").startswith("Diritti non specificati")):
                 raise ValueError("unverified municipal theatre photograph")
         elif venue.get("photo_url") and venue["id"] == "oa-v-000072":
-            approved = {"oa-v-000072":["https://www.cultura.trentino.it/var/001/storage/images/media/images/teatro-sanbapolis/16381731-1-ita-IT/Teatro-Sanbapolis_imagefullwide.jpg","https://www.cultura.trentino.it/Luoghi/Tutti-i-luoghi-della-cultura/Teatri-e-sale/Teatro-Sanbapolis","Trentino Cultura — portale della Provincia autonoma di Trento"]}
+            approved = {"oa-v-000072":["https://flyimg.opencityitalia.it/upload/rf_1%2Co_auto%2Cw_2500%2Ch_2500/https%3A%2F%2Fs3-eu-west-1.amazonaws.com%2Fstatic.opencity.opencontent.it%2Fvar%2Ftrento%2Fstorage%2Fimages%2Fmedia%2Fimages%2Fteatro-sanbapolis%2F37879-2-ita-IT%2FTeatro-Sanbapolis_reference.jpg","https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sanbapolis","Archivio Comune di Trento"]}
             if ([venue["photo_url"], venue.get("photo_source_url"), venue.get("photo_credit")] != approved[venue["id"]]
-                    or venue.get("photo_license") != "Diritti non specificati — immagine dal sito ufficiale"):
+                    or venue.get("photo_license") != "CC BY 4.0"):
                 raise ValueError("unverified official venue photograph")
         elif venue.get("photo_url"):
             # External images require reviewable HTTPS provenance, attribution
