@@ -1,6 +1,23 @@
 {
   "catalog_reviewed_on": "2026-11-24",
   "diagnostics": {
+    "composer_media_coverage": {
+      "default_image": 58,
+      "editorial_image": 5,
+      "missing": [
+        "oa-c-000002",
+        "oa-c-000008",
+        "oa-c-000012",
+        "oa-c-000016",
+        "oa-c-000019",
+        "oa-c-000026",
+        "oa-c-000040",
+        "oa-c-000053",
+        "oa-c-000057"
+      ],
+      "total": 71,
+      "with_image": 62
+    },
     "unresolved_composer_works": [
       {
         "composer": "Nino Rota",
@@ -1321,15 +1338,16 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000065",
-      "image": null,
-      "source_reference": {
-        "author": "Fotografo non indicato",
-        "image_url": "https://www.fondazionepergolesispontini.com/wp-content/uploads/2026/11/LAC_3910-3-200x300.jpg",
-        "kind": "portrait",
-        "rights_status": "reuse_not_established",
-        "source": "Fondazione Pergolesi Spontini",
-        "source_url": "https://www.fondazionepergolesispontini.com/salvatore-passantino/",
-        "usage": "external_link_only"
+      "image": {
+        "alt": "Consegna della partitura La sirena di Palermo a Palazzo Galletti, 3 gennaio 2024",
+        "author": "Ufficio Stampa del Comune di Palermo (fotografo non indicato)",
+        "credit": "Ufficio Stampa del Comune di Palermo — consegna della partitura La sirena di Palermo, 3 gennaio 2024 — CC BY 4.0 secondo le note legali del Comune; fotografo non indicato",
+        "license": "CC-BY-4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "media_kind": "documentary_photo",
+        "rights_source_url": "https://www.comune.palermo.it/note-legali/",
+        "source_url": "https://www.comune.palermo.it/novita/consegnata-la-partitura-dellopera-la-sirena-di-palermo-scritta-dal-maestro-passantino-vincitore-del-concorso-bandito-dallassociazione-teatro-dei-ragazzi/",
+        "url": "https://www.comune.palermo.it/wp-content/uploads/2025/01/ed028fbe-7149-4fc8-8f34-9f0fd415ffb6.jpg"
       },
       "subtitle": null,
       "title": "Salvatore Passantino",
@@ -3608,7 +3626,17 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000095",
-      "image": null,
+      "image": {
+        "alt": "Consegna della partitura La sirena di Palermo a Palazzo Galletti, 3 gennaio 2024",
+        "author": "Ufficio Stampa del Comune di Palermo (fotografo non indicato)",
+        "credit": "Ufficio Stampa del Comune di Palermo — consegna della partitura La sirena di Palermo, 3 gennaio 2024 — CC BY 4.0 secondo le note legali del Comune; fotografo non indicato",
+        "license": "CC-BY-4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "media_kind": "documentary_photo",
+        "rights_source_url": "https://www.comune.palermo.it/note-legali/",
+        "source_url": "https://www.comune.palermo.it/novita/consegnata-la-partitura-dellopera-la-sirena-di-palermo-scritta-dal-maestro-passantino-vincitore-del-concorso-bandito-dallassociazione-teatro-dei-ragazzi/",
+        "url": "https://www.comune.palermo.it/wp-content/uploads/2025/01/ed028fbe-7149-4fc8-8f34-9f0fd415ffb6.jpg"
+      },
       "subtitle": "Salvatore Passantino",
       "title": "L'esecuzione",
       "type": "opera",
@@ -10366,5 +10394,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "a27c1c903659b9b7328f5e4c43b13d882712e52d"
+  "source_revision": "742e863fecd7b9f3036c99de9a53181609172581"
 }
