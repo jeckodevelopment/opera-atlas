@@ -118,7 +118,21 @@
               "2026-03-07",
               "20:00"
             ]
-          ]
+          ],
+          "disposition": "catalog_reconciliation_proposed"
+        },
+        {
+          "title": "Note to a Friend",
+          "composer": "David Lang",
+          "venue": "Sanbàpolis",
+          "city": "Trento",
+          "dates": [
+            [
+              "2026-03-11",
+              "20:00"
+            ]
+          ],
+          "disposition": "catalog_reconciliation_proposed"
         }
       ],
       "note": "Published season announcement identifies Bolzano. February double bill Il segreto di Susanna / La notte di un nevrastenico requires physical venue verification; November Clemenza is Trento. Official Haydn booklet confirms 7 March 20:00 in Teatro Comunale (Studio), a separate room; venue identity and work editorial pending. Theatre and composer corroborate Studio showtime; additional Trento Sanbàpolis 11 March 20:00 confirmed by Haydn, pending venue registry and duplicate review."
@@ -149,10 +163,11 @@
               "2026-08-07",
               "21:00"
             ]
-          ]
+          ],
+          "disposition": "catalog_reconciliation_proposed"
         }
       ],
-      "note": "Festival Lirico dei Teatri di Pietra coproduction, corroborating press reports; seek organizer evidence before publication. Post-event report confirms occurrence; primary organizer schedule still pending."
+      "note": "Festival Lirico dei Teatri di Pietra coproduction, corroborating press reports; seek organizer evidence before publication. Post-event report confirms occurrence; primary organizer schedule still pending. ANSA announcement quotes festival artistic director; separate contemporary report confirms the actual staging. Primary organizer page remains unavailable; exact source exception proposed."
     }
   ]
 }
