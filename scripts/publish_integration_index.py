@@ -118,7 +118,7 @@ def load_editorial_media(root, composers):
     providers = {
         "fenice_press_material_editorial": (
             "www.teatrolafenice.it", "/wp-content/uploads/2026/05/IMG_8887-scaled.jpg",
-            "https://www.teatrolafenice.it/en/area-stampa-category/pictures/page/22/",
+            "https://www.teatrolafenice.it/en/press-lafenice/",
             "Press material (editorial source)"),
         "gai_noncommercial_editorial": (
             "www.giovaniartisti.it", "/sites/default/files/styles/artisti_full/public/artisti/aloisi-gaia/",
@@ -159,6 +159,10 @@ def load_editorial_media(root, composers):
                     and not parsed.fragment and (not parsed.query or allowed_query) and chr(92) not in value
                     and not any(ord(ch) < 33 for ch in value), "Invalid editorial URL")
         require(urlsplit(record["url"]).path.startswith(prefix), "Invalid editorial image path")
+        if record["usage"] == "fenice_press_material_editorial":
+            require(key == "oa-c-000018" and urlsplit(record["url"]).path == prefix
+                    and record["source_url"] == "https://www.teatrolafenice.it/event/premio-una-vita-nella-musica-2026/",
+                    "Fenice press image identity mismatch")
         result[key] = {**{k: record[k] for k in fields}, "preserve_integrity": True}
     return result
 
