@@ -219,6 +219,25 @@ class IntegrationIndexTests(unittest.TestCase):
             self.assertIsNone(verified_image(dict(photo, **{key: "https://evil.example/"}),
                                              "oa-c-000065"))
 
+    def test_furlati_press_photo_is_pinned_to_composer_and_asset(self):
+        from scripts.publish_integration_index import load_editorial_media
+        source = "https://www.unionesarda.it/cultura/creuza-de-ma-chiude-la-sua-19-edizione-a-cagliari-due-giorni-di-cinema-muto-e-musica-dal-vivo-f1duczxa"
+        image = {"name": "Daniele Furlati", "url": "https://immagini.unionesarda.it/version/c%3AZDhmNzY0ODctMTg0MS00%3AMTkzOWEyZTAtY2I4OC00/image.webp?f=3%3A2&q=0.75&w=3840",
+                 "source_url": source, "alt": "Press photo", "author": "Ufficio stampa",
+                 "license": "Press material (editorial source)", "license_url": source,
+                 "credit": "Press office; no open license declared", "media_kind": "portrait",
+                 "usage": "furlati_press_material_editorial", "preserve_integrity": True}
+        composers = {"oa-c-000016": {"name": "Daniele Furlati"}, "c1": {"name": "Daniele Furlati"}}
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"oa-c-000016": image}})
+        self.assertEqual(load_editorial_media(self.root, composers)["oa-c-000016"]["url"], image["url"])
+        for field in ("url", "source_url", "license_url", "license"):
+            self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"oa-c-000016": dict(image, **{field: image[field] + "x"})}})
+            with self.assertRaises(ValueError):
+                load_editorial_media(self.root, composers)
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"c1": image}})
+        with self.assertRaises(ValueError):
+            load_editorial_media(self.root, composers)
+
     def test_combined_media_coverage_does_not_count_source_links(self):
         ref = {"name": "Composer", "source_url": "https://example.org/artist",
                "source": "Artist site", "kind": "profile",
