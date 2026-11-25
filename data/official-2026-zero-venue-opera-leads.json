@@ -768,6 +768,24 @@
           "16:30"
         ]
       ]
+    },
+    {
+      "venue_id": "oa-vd-000053",
+      "venue": "Teatro Auditorium Manzoni",
+      "city": "Bologna",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "official_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/",
+      "dates": [
+        [
+          "2026-11-13",
+          "20:00"
+        ],
+        [
+          "2026-11-15",
+          "16:00"
+        ]
+      ]
     }
   ]
 }
