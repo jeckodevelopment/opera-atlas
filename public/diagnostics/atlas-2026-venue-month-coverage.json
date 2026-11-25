@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-24T23:18:59+00:00",
+  "generated_at": "2026-11-25T07:04:59+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 72,
@@ -10,13 +10,13 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 719,
-    "published_dates_not_exhaustively_verified": 145
+    "coverage_not_established": 717,
+    "published_dates_not_exhaustively_verified": 147
   },
-  "zero_published_venue_count": 11,
+  "zero_published_venue_count": 10,
   "zero_published_by_calendar_status": {
     "acquired": 3,
-    "not_acquired": 8
+    "not_acquired": 7
   },
   "venue_audit_priorities": [
     {
@@ -163,23 +163,6 @@
       "venue": "Teatro Sociale",
       "city": "Rovigo",
       "region": "Veneto",
-      "calendar_status": "not_acquired",
-      "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 0,
-      "published_months": 0,
-      "official_verified_opera_lead_count": 0,
-      "official_unpublished_opera_lead_count": 0,
-      "official_opera_lead_review_required": false,
-      "historical_source_seed_count": 0,
-      "official_historical_sources": [],
-      "audit_priority": "zero_published_calendar_not_acquired",
-      "missing_recite_certified": false
-    },
-    {
-      "venue_id": "oa-vd-000060",
-      "venue": "Teatro all'Antica",
-      "city": "Sabbioneta",
-      "region": "Lombardia",
       "calendar_status": "not_acquired",
       "monitoring_status": "anagrafica_censita",
       "published_2026_showtimes": 0,
@@ -1070,6 +1053,23 @@
       "missing_recite_certified": false
     },
     {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "region": "Lombardia",
+      "calendar_status": "not_acquired",
+      "monitoring_status": "anagrafica_censita",
+      "published_2026_showtimes": 2,
+      "published_months": 2,
+      "official_verified_opera_lead_count": 2,
+      "official_unpublished_opera_lead_count": 0,
+      "official_opera_lead_review_required": false,
+      "historical_source_seed_count": 0,
+      "official_historical_sources": [],
+      "audit_priority": "published_not_exhaustively_verified",
+      "missing_recite_certified": false
+    },
+    {
       "venue_id": "oa-vd-000042",
       "venue": "Teatro Municipale Giuseppe Verdi",
       "city": "Salerno",
@@ -1259,11 +1259,11 @@
       "missing_recite_certified": false
     }
   ],
-  "official_2026_opera_lead_venue_count": 13,
-  "official_2026_opera_lead_count": 93,
+  "official_2026_opera_lead_venue_count": 14,
+  "official_2026_opera_lead_count": 95,
   "official_unpublished_opera_lead_count": 0,
   "official_lead_reconciliation_counts": {
-    "exact_match": 93
+    "exact_match": 95
   },
   "official_lead_reconciliation": [
     {
@@ -2381,10 +2381,34 @@
       "complete_month_verified": false,
       "venue_id": "oa-vd-000015",
       "reconciliation_status": "exact_match"
+    },
+    {
+      "date": "2026-09-19",
+      "time": "20:30",
+      "title": "L'Orfeo",
+      "composer": "Claudio Monteverdi",
+      "official_url": "https://www.comune.sabbioneta.mn.it/index.php/it/news/2043432",
+      "publication_review_required": false,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000060",
+      "reconciliation_status": "exact_match"
+    },
+    {
+      "date": "2026-11-14",
+      "time": "20:30",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica",
+      "publication_review_required": false,
+      "official_source_verified": true,
+      "complete_month_verified": false,
+      "venue_id": "oa-vd-000060",
+      "reconciliation_status": "exact_match"
     }
   ],
   "official_lead_venues_with_zero_published": 0,
-  "published_2026_showtimes": 553,
+  "published_2026_showtimes": 555,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -16482,7 +16506,7 @@
       "city": "Sabbioneta",
       "region": "Lombardia",
       "month": "2026-09",
-      "published_showtimes": 0,
+      "published_showtimes": 1,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -16492,7 +16516,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000060",
@@ -16518,7 +16542,7 @@
       "city": "Sabbioneta",
       "region": "Lombardia",
       "month": "2026-11",
-      "published_showtimes": 0,
+      "published_showtimes": 1,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -16528,7 +16552,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000060",
