@@ -599,7 +599,7 @@ async function initialize() {
         const info=window.OperaAtlasImages?.program?.(first);
         if(info?.sourceUrl && safeSource(info.sourceUrl)){
           const caption=node("figcaption","work-image-credit");
-          const credit=node("a",null,(info.kind==="program_component_image"?"Immagine di una delle opere · ":"")+ (info.credit||"Fonte ufficiale"));
+          const credit=node("a",null,(info.kind==="program_component_image"?"Immagine di una delle opere · ":"")+ (info.credit||"Crediti dell’immagine"));
           credit.href=info.sourceUrl;credit.target="_blank";credit.rel="noopener noreferrer";
           caption.append(credit);figure.append(caption);
           if(info.fallbackArtwork)poster.addEventListener("error",()=>{
