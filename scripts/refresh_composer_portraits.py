@@ -136,7 +136,7 @@ def wikipedia_ids(composer, call):
                     ids.add(qid)
         except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError) as exc:
             errors.append(exc)
-    if errors and not ids:
+    if errors:
         raise WikimediaError("wikipedia_lookup_unavailable")
     return ids
 
@@ -280,9 +280,9 @@ def depicted_files(qid, call):
         entity = verified.get(mid, {})
         # MediaInfo exposes statements rather than claims in some responses.
         statements = entity.get("statements", entity.get("claims", {}))
-        if qid in item_ids({"claims": statements}, "P180"):
-            # Prefer explicitly prominent depictions and avoid known multi-person
-            # pictures. No filename-only fallback is allowed.
+        if isinstance(statements, dict) and qid in item_ids({"claims": statements}, "P180"):
+            # Reject any other structured depiction. No filename-only fallback.
+            # This does not constitute visual verification of the file contents.
             depicts = item_ids({"claims": statements}, "P180")
             if depicts == {qid}:
                 candidates.append(filename)
@@ -456,7 +456,8 @@ def refresh(root, call=api, max_seconds=900):
             # Only known, sanitized diagnostics are published.
             detail = str(exc) if isinstance(exc, WikimediaError) else "transport_error"
             report[key] = {"name": composer["name"], "reason": reason,
-                           "detail": detail if re.fullmatch(r"[a-z0-9_-]{1,80}", detail) else "upstream_error"}
+                           "detail": detail if re.fullmatch(r"[a-z0-9_-]{1,80}", detail) else "upstream_error",
+                           "candidates": audits}
             checkpoint()
             continue
         if record:
