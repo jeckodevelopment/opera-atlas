@@ -45,6 +45,23 @@
       "photo_alt": "Teatro Donizetti, sede del Donizetti Opera Festival"
     },
     {
+      "id": "festival-lirico-dei-teatri-di-pietra-2026",
+      "name": "Festival Lirico dei Teatri di Pietra",
+      "city": "Sicilia",
+      "region": "Sicilia",
+      "description": "Promosso dal Coro Lirico Siciliano, il festival porta l’opera e la musica nei siti archeologici e nei teatri storici della Sicilia.",
+      "official_url": "https://coroliricosiciliano.com/?page_id=15991",
+      "photo_file": "Teatro Antico di Taormina.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Antico_di_Taormina.jpg",
+      "photo_credit": "Maria Iaria — Wikimedia Commons, CC BY-SA 4.0",
+      "photo_alt": "Teatro Antico di Taormina, una delle sedi del festival",
+      "festival_id": "festival-lirico-dei-teatri-di-pietra",
+      "edition": "2026",
+      "staging_ids": [
+        "oa-s-000356"
+      ]
+    },
+    {
       "id": "festival-puccini-2027",
       "name": "Festival Puccini",
       "edition": "2027",
