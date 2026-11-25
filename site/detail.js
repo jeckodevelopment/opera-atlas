@@ -589,14 +589,26 @@ async function initialize() {
       if(!future.length)results.append(node("p","empty","Questa produzione non ha date future censite."));
     }
     if(selected.kind==="work")arrangeWorkOverview(first);
-    else if(selected.kind==="program"){
-      // A composite program has no single-work cover image.
-    }
-    else if(selected.kind==="staging" || selected.kind==="group"){
+    else if(selected.kind==="staging" || selected.kind==="group" || selected.kind==="program"){
       const figure=node("figure","production-cover-figure");
-      const poster=editorialImage("work",first);
+      const imageKind=selected.kind==="program"?"program":"work";
+      const poster=editorialImage(imageKind,first);
       poster.className="production-cover-image";
       figure.append(poster);
+      if(imageKind==="program"){
+        const info=window.OperaAtlasImages?.program?.(first);
+        if(info?.sourceUrl && safeSource(info.sourceUrl)){
+          const caption=node("figcaption","work-image-credit");
+          const credit=node("a",null,(info.kind==="program_component_image"?"Immagine di una delle opere · ":"")+ (info.credit||"Fonte ufficiale"));
+          credit.href=info.sourceUrl;credit.target="_blank";credit.rel="noopener noreferrer";
+          caption.append(credit);figure.append(caption);
+          if(info.fallbackArtwork)poster.addEventListener("error",()=>{
+            const fallback=info.fallbackArtwork;
+            credit.textContent="Immagine di una delle opere · "+(fallback.credit||"Fonte");
+            credit.href=fallback.sourceUrl;
+          },{once:true});
+        }
+      }
       content.prepend(figure);
       content.classList.add("production-detail");
     }
