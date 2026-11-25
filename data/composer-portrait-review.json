@@ -428,82 +428,10 @@
       "name": "Orazio Sciortino",
       "reason": "no_image"
     },
-    "oa-c-000061": {
-      "candidates": [
-        {
-          "author": "Anonymous Unknown author",
-          "commons_file": "Ralph Benatzky (1884-1957).jpg",
-          "copyrighted": "False",
-          "identity_evidence": "wikidata_p18",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ralph_Benatzky_%281884-1957%29.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        }
-      ],
-      "name": "Ralph Benatzky",
-      "reason": "license_review"
-    },
     "oa-c-000065": {
       "candidates": [],
       "name": "Salvatore Passantino",
       "reason": "not_found"
-    },
-    "oa-c-000067": {
-      "candidates": [
-        {
-          "author": "Carl Van Vechten",
-          "commons_file": "Portrait of Samuel Barber LCCN2004662567.jpg",
-          "copyrighted": "False",
-          "identity_evidence": "editorial_source_review",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        },
-        {
-          "author": "Carl Van Vechten",
-          "commons_file": "Samuel Barber.jpg",
-          "copyrighted": "False",
-          "identity_evidence": "wikidata_p18",
-          "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Samuel_Barber.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Samuel_Barber.jpg",
-          "thumbnail_host": "upload.wikimedia.org"
-        },
-        {
-          "author": "Carl Van Vechten",
-          "commons_file": "Samuelbarber.jpg",
-          "copyrighted": "False",
-          "identity_evidence": "commons_depicts_p180",
-          "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Samuelbarber.jpg/960px-Samuelbarber.jpg",
-          "license_code": "pd",
-          "license_short_name": "Public domain",
-          "license_url_reported": "",
-          "reason": "license_review",
-          "restrictions": "",
-          "rights_categories": [],
-          "source_url": "https://commons.wikimedia.org/wiki/File:Samuelbarber.jpg",
-          "thumbnail_host": "thumb.wikimedia.org"
-        }
-      ],
-      "name": "Samuel Barber",
-      "reason": "license_review"
     },
     "oa-c-000071": {
       "candidates": [],
@@ -511,6 +439,6 @@
       "reason": "no_image"
     }
   },
-  "updated_at": "2026-11-25T07:42:52.327003+00:00",
-  "verified": 51
+  "updated_at": "2026-11-25T07:57:13Z",
+  "verified": 53
 }

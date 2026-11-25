@@ -749,6 +749,21 @@
       "verified": true,
       "wikidata_id": "Q7315"
     },
+    "oa-c-000061": {
+      "verified": true,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ralph_Benatzky_%281884-1957%29.jpg",
+      "alt": "Ritratto di Ralph Benatzky",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg",
+      "author": "Autore anonimo",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg",
+      "credit": "Autore anonimo — Wikimedia Commons — Public Domain (verificare ambito territoriale)",
+      "commons_file": "Ralph Benatzky (1884-1957).jpg",
+      "reviewed_on": "2026-11-25",
+      "rights_evidence": "editorial_public_domain_approval",
+      "identity_evidence": "wikidata_p18",
+      "wikidata_id": "Q213592"
+    },
     "oa-c-000062": {
       "alt": "Ritratto di Richard Strauss",
       "author": "unidentified photograph",
@@ -813,6 +828,21 @@
       "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/SalvatoreSciarrino_%28cropped%29.jpg",
       "verified": true,
       "wikidata_id": "Q439786"
+    },
+    "oa-c-000067": {
+      "verified": true,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
+      "alt": "Ritratto di Samuel Barber",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
+      "author": "Carl Van Vechten",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
+      "credit": "Carl Van Vechten — Library of Congress / Wikimedia Commons — Public Domain secondo Commons; nessuna restrizione nota secondo LOC",
+      "commons_file": "Portrait of Samuel Barber LCCN2004662567.jpg",
+      "reviewed_on": "2026-11-25",
+      "rights_evidence": "editorial_public_domain_approval",
+      "identity_evidence": "editorial_source_review",
+      "wikidata_id": "Q216870"
     },
     "oa-c-000068": {
       "alt": "Ritratto di Umberto Giordano",
