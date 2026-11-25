@@ -94,7 +94,10 @@ def verified_image(record):
         return None
     if not all(safe_https(record[k]) for k in ("url", "source_url", "license_url")):
         return None
-    return {k: record[k] for k in fields}
+    kind = record.get("media_kind", "portrait")
+    if kind not in {"portrait", "documentary_photo"}:
+        return None
+    return {**{k: record[k] for k in fields}, "media_kind": kind}
 
 def load_media(root, composers):
     path = root / "data/composer-portraits.json"
