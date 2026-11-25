@@ -692,6 +692,34 @@
           "21:00"
         ]
       ]
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "title": "L'Orfeo",
+      "composer": "Claudio Monteverdi",
+      "official_url": "https://www.comune.sabbioneta.mn.it/index.php/it/news/2043432",
+      "dates": [
+        [
+          "2026-09-19",
+          "20:30"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000060",
+      "venue": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "official_url": "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica",
+      "dates": [
+        [
+          "2026-11-14",
+          "20:30"
+        ]
+      ]
     }
   ]
 }
