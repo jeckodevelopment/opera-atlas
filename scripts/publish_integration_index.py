@@ -116,6 +116,9 @@ def load_editorial_media(root, composers):
     require(doc.get("schema_version") == 1 and isinstance(doc.get("images"), dict),
             "Invalid editorial image registry")
     providers = {
+        "gai_noncommercial_editorial": (
+            "www.giovaniartisti.it", "/sites/default/files/styles/artisti_full/public/artisti/aloisi-gaia/",
+            "https://www.giovaniartisti.it/note-legali", "GAI reproduction terms"),
         "press_material_noncommercial_editorial": (
             "ownetic.com", "/news/wp-content/uploads/2013/02/",
             "https://ownetic.com/news/2013/02/14/memories-of-the-east-zygmunt-krauze-chiny/",
@@ -145,8 +148,11 @@ def load_editorial_media(root, composers):
         for field in ("url", "source_url"):
             value = record[field]
             parsed = urlsplit(value)
+            allowed_query = (record["usage"] == "gai_noncommercial_editorial" and field == "url"
+                             and parsed.path == "/sites/default/files/styles/artisti_full/public/artisti/aloisi-gaia/gaia-aloisi0.png"
+                             and parsed.query == "h=5871340f&itok=uJcpNeYj")
             require(parsed.scheme == "https" and parsed.netloc == host
-                    and not parsed.fragment and not parsed.query and chr(92) not in value
+                    and not parsed.fragment and (not parsed.query or allowed_query) and chr(92) not in value
                     and not any(ord(ch) < 33 for ch in value), "Invalid editorial URL")
         require(urlsplit(record["url"]).path.startswith(prefix), "Invalid editorial image path")
         result[key] = {**{k: record[k] for k in fields}, "preserve_integrity": True}
