@@ -1116,7 +1116,7 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
         "historical-2026-bolzano-note-to-a-friend": {
             "title": "Note to a Friend",
             "composer": "David Lang",
-            "venue": "Teatro Studio",
+            "venue": "Teatro Comunale di Bolzano",
             "municipality": "Bolzano",
             "region": "Trentino-Alto Adige",
             "source_url": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
