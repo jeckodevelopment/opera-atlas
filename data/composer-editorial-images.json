@@ -130,6 +130,19 @@
       "media_kind": "portrait",
       "usage": "public_source_editorial_link",
       "preserve_integrity": true
+    },
+    "oa-c-000019": {
+      "name": "Diana Buscemi",
+      "url": "https://kirart.org/wp-content/uploads/2018/02/GALLERY1-683x1024.jpg",
+      "alt": "Ritratto di Diana Buscemi nel profilo KirArt",
+      "source_url": "https://kirart.org/team/diana-buscemi/",
+      "author": "Fotografo non indicato",
+      "license": "External editorial photograph — reuse rights not established",
+      "license_url": "https://kirart.org/team/diana-buscemi/",
+      "credit": "KirArt — profilo artistico di Diana Buscemi; fotografo non indicato. Immagine collegata alla fonte originale, nessuna licenza di riproduzione accertata.",
+      "media_kind": "portrait",
+      "usage": "public_source_editorial_link",
+      "preserve_integrity": true
     }
   }
 }
