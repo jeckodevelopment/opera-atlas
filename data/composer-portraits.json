@@ -728,6 +728,22 @@
       "verified": true,
       "wikidata_id": "Q310687"
     },
+    "oa-c-000058": {
+      "verified": true,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/EEG_piano_duel.jpg/960px-EEG_piano_duel.jpg",
+      "alt": "Orazio Sciortino e Richard Rentsch durante un concerto di improvvisazione, 22 gennaio 2013",
+      "source_url": "https://commons.wikimedia.org/wiki/File:EEG_piano_duel.jpg",
+      "author": "Arbitrarily0",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Arbitrarily0 — Wikimedia Commons — CC BY-SA 3.0 — Orazio Sciortino e Richard Rentsch in concerto; fotografia documentaria, non ritratto individuale",
+      "commons_file": "EEG piano duel.jpg",
+      "wikidata_id": "Q17373254",
+      "reviewed_on": "2026-11-25",
+      "rights_evidence": "commons_license_metadata_editorial_review",
+      "identity_evidence": "commons_file_caption_both_performers",
+      "media_kind": "documentary_photo"
+    },
     "oa-c-000059": {
       "alt": "Ritratto di Pietro Mascagni",
       "author": "unknown, upload by Adrian Michael",
