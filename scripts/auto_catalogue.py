@@ -620,7 +620,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
     """Return all changes in memory; skip anomalies without publishing bad data."""
     from scripts.consolidate_goldoni_mascagni import consolidate
     facts,registry,consolidated_stagings=consolidate(facts,registry)
-    from scripts.haydn_replica_identity import consolidate as consolidate_tito, reviewed_match, same_replica_group
+    from scripts.haydn_replica_identity import (consolidate as consolidate_tito,
+        reviewed_match, same_replica_group, valid_group, TICKETS as TITO_TICKETS)
     facts,registry,tito_migrated=consolidate_tito(facts,registry)
     consolidated_stagings+=tito_migrated
     next_facts=copy.deepcopy(facts)
@@ -880,6 +881,11 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 continue
             if len(shared)==1:
                 exact=shared
+            elif colliding and (url in TITO_TICKETS.values() or valid_group(item.get("replica_group_url"))):
+                # A replica-labelled page without corroborated staging identity
+                # stays in review instead of creating a duplicate automatically.
+                issues.append({"candidate_id":cid,"reason":"unresolved_haydn_replica_group"})
+                continue
         # Distinct official productions of the same opera in the same
         # theatre are legitimate (e.g. two different Aida stagings at
         # Verona). Preserve the original route and assign an edition URL
@@ -985,6 +991,8 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 "work_id":work["id"],"venue_id":canonical_venue["id"],
                 "slug":work["slug"],"source_url":url,
                 "season":season_from_source(key,url,dates),
+                **({"replica_group_url":item["replica_group_url"]}
+                   if key=="haydn-rolling-opera" and valid_group(item.get("replica_group_url")) else {}),
                 **({"route_slug":edition_slug} if edition_slug else {})}
             next_facts["productions"].append(production)
             created_stagings+=1
