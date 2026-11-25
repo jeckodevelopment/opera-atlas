@@ -904,6 +904,13 @@
       "title": "La vita nuda",
       "composer": "Matteo D’Amico",
       "authority_url": "https://www.operaroma.it/spettacoli/la-vita-nuda/"
+    },
+    "l’heure espagnole|maurice ravel": {
+      "id": "oa-w-000142",
+      "slug": "l-heure-espagnole",
+      "title": "L’heure espagnole",
+      "composer": "Maurice Ravel",
+      "authority_url": "https://ressources.ircam.fr/en/work/l%27heure-espagnole"
     }
   },
   "venues": {
@@ -4237,6 +4244,14 @@
       "venue_id": "oa-v-000020",
       "slug": "samson-et-dalila",
       "source_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/",
+      "season": "2026"
+    },
+    "historical-2026-reggio-heure-espagnole": {
+      "id": "oa-s-000353",
+      "work_id": "oa-w-000142",
+      "venue_id": "oa-v-000031",
+      "slug": "l-heure-espagnole",
+      "source_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/",
       "season": "2026"
     }
   },
@@ -12287,6 +12302,18 @@
       "staging_id": "oa-s-000352",
       "original_date": "2026-11-15",
       "source_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/"
+    },
+    "historical-2026-reggio-heure-espagnole|2026-05-03": {
+      "id": "oa-r-001369",
+      "staging_id": "oa-s-000353",
+      "original_date": "2026-05-03",
+      "source_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/"
+    },
+    "historical-2026-reggio-heure-espagnole|2026-05-05": {
+      "id": "oa-r-001370",
+      "staging_id": "oa-s-000353",
+      "original_date": "2026-05-05",
+      "source_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/"
     }
   },
   "reserved_works": {
