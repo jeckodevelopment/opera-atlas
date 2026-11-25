@@ -242,7 +242,7 @@ window.OperaAtlasImages=Object.freeze((()=>{
     // Reviewed CC BY photograph is served by Atlas itself, independent of
     // a stale directory feed or the browser's cross-origin image policy.
     if(city==="trento" && ["sanbapolis","teatro-sanbapolis"].includes(normalize(title))){
-      return {src:"/atlas/sanbapolis-platea.jpg",alt:"Platea del Teatro Sanbàpolis a Trento",
+      return {src:"/atlas/assets/images/venues/sanbapolis-platea.jpg",alt:"Platea del Teatro Sanbàpolis a Trento",
         fallbackSrc:null,sourceUrl:"https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sanbapolis",
         credit:"Archivio Comune di Trento",license:"CC BY 4.0",kind:"verified_local_venue"};
     }
