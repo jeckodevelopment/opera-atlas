@@ -1032,7 +1032,15 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000061",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Ralph Benatzky",
+        "author": "Autore anonimo",
+        "credit": "Autore anonimo — Wikimedia Commons — Public Domain (verificare ambito territoriale)",
+        "license": "Public Domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ralph_Benatzky_%281884-1957%29.jpg"
+      },
       "subtitle": null,
       "title": "Ralph Benatzky",
       "type": "composer",
@@ -1130,7 +1138,15 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000067",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Samuel Barber",
+        "author": "Carl Van Vechten",
+        "credit": "Carl Van Vechten — Library of Congress / Wikimedia Commons — Public Domain secondo Commons; nessuna restrizione nota secondo LOC",
+        "license": "Public Domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Portrait_of_Samuel_Barber_LCCN2004662567.jpg"
+      },
       "subtitle": null,
       "title": "Samuel Barber",
       "type": "composer",
@@ -1856,7 +1872,15 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000027",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Ralph Benatzky",
+        "author": "Autore anonimo",
+        "credit": "Autore anonimo — Wikimedia Commons — Public Domain (verificare ambito territoriale)",
+        "license": "Public Domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ralph_Benatzky_%281884-1957%29.jpg"
+      },
       "subtitle": "Ralph Benatzky",
       "title": "Al cavallino bianco",
       "type": "opera",
@@ -2142,7 +2166,15 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000041",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Samuel Barber",
+        "author": "Carl Van Vechten",
+        "credit": "Carl Van Vechten — Library of Congress / Wikimedia Commons — Public Domain secondo Commons; nessuna restrizione nota secondo LOC",
+        "license": "Public Domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Samuel_Barber_LCCN2004662567.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Portrait_of_Samuel_Barber_LCCN2004662567.jpg"
+      },
       "subtitle": "Samuel Barber",
       "title": "Vanessa",
       "type": "opera",
@@ -9032,6 +9064,20 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000011"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000352",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Auditorium Manzoni",
+      "title": "Samson et Dalila",
+      "type": "production",
+      "url": "https://opera.plus/atlas/bologna/teatro-auditorium-manzoni/samson-et-dalila/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -9835,5 +9881,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "8c4ea1f7e463015a5e97e74cef972258dbccf3e3"
+  "source_revision": "a7bbff8fdd87404df5702a2078a7d5f8b12ac465"
 }
