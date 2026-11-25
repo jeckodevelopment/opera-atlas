@@ -154,6 +154,7 @@ def load_editorial_media(root, composers):
     furlati_source = "https://www.unionesarda.it/cultura/creuza-de-ma-chiude-la-sua-19-edizione-a-cagliari-due-giorni-di-cinema-muto-e-musica-dal-vivo-f1duczxa"
     # Explicit project opt-in to source-hosted editorial links; not a reuse licence.
     public_source_pins = {
+        "oa-c-000019": ("Diana Buscemi", "https://kirart.org/wp-content/uploads/2018/02/GALLERY1-683x1024.jpg", "https://kirart.org/team/diana-buscemi/", "Fotografo non indicato"),
         "oa-c-000002": ("Alessandro Solbiati", "https://levivier.ca/sites/default/files/styles/mt_member_photo/public/fiches-individuelles/Alessandro%20Solbiati.jpg.webp?itok=sA4aMc_A", "https://levivier.ca/en/artists/alessandro-solbiati", "Fotografo non indicato"),
         "oa-c-000012": ("Carlo Galante", "https://images.rockol.it/jmc7MmYUoenwfYwoWFXuaGaMyFE%3D/1200x675/smart/rockol-img/img/foto/upload/carlo-galante.jpg", "https://www.rockol.it/news-736812/il-disco-del-giorno-carlo-galante-yeliel", "Fotografo non indicato"),
         "oa-c-000026": ("Francesco Filidei", "https://www.opera-comique.com/sites/default/files/styles/width_776px/public/2023-01/2023_bio_photos_Filidei%C2%A9Olivier-Roller_1620x1080.jpg.webp", "https://www.opera-comique.com/en/francesco-filidei", "Olivier Roller"),
