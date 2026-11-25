@@ -625,11 +625,13 @@ async function initialize() {
       const figure=node("figure","theatre-cover-figure");
       const venuePicture=editorialImage("venue",venueImageEvent);
       figure.append(venuePicture);
-      const photoSource=venueImageEvent.photo_url && venuePicture?.src===venueImageEvent.photo_url
-        ? venueImageEvent.photo_source_url : null;
+      const verifiedImage=window.OperaAtlasImages?.venue?.(venueImageEvent);
+      const localPhoto=verifiedImage?.kind==="verified_local_venue";
+      const photoSource=localPhoto ? verifiedImage.sourceUrl : (venueImageEvent.photo_url && venuePicture?.src===venueImageEvent.photo_url
+        ? venueImageEvent.photo_source_url : null);
       if(photoSource && safeSource(photoSource)){
         const caption=node("figcaption","work-image-credit");
-        const attribution=link(venueImageEvent.photo_credit || "Fotografia del teatro · autore e licenza",photoSource,"");
+        const attribution=link((localPhoto ? verifiedImage.credit+" · "+verifiedImage.license : venueImageEvent.photo_credit) || "Fotografia del teatro · autore e licenza",photoSource,"");
         attribution.target="_blank";attribution.rel="noopener noreferrer";
         caption.append(attribution);figure.append(caption);
         venuePicture.addEventListener("error",()=>{caption.remove();},{once:true});

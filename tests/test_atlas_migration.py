@@ -59,6 +59,27 @@ class AtlasMigrationTests(unittest.TestCase):
             self.assertNotIn("/dev/opera-atlas",html)
             self.assertIn("RewriteBase /atlas/",(folder/".htaccess").read_text())
 
+    def test_sanbapolis_release_asset_is_a_real_jpeg_not_a_placeholder(self):
+        from scripts.deploy_atlas import stage_sanbapolis_photo, SANBAPOLIS_ASSET
+        from email.message import Message
+        from io import BytesIO
+        class Reply(BytesIO):
+            status=200
+            headers=Message()
+        Reply.headers["Content-Type"]="image/jpeg"
+        jpeg=b"\xff\xd8\xff"+b"x"*2048+b"\xff\xd9"
+        seen=[]
+        def opener(request, timeout):
+            seen.append(request.full_url)
+            return Reply(b"<html>not an image</html>" if len(seen)==1 else jpeg)
+        with tempfile.TemporaryDirectory() as path:
+            folder=Path(path)
+            stage_sanbapolis_photo(folder,opener=opener)
+            self.assertEqual((folder/SANBAPOLIS_ASSET).read_bytes(),jpeg)
+            self.assertEqual(len(seen),2)
+            with self.assertRaises(RuntimeError):
+                stage_sanbapolis_photo(folder,opener=lambda *args,**kwargs: Reply(b"not an image"))
+
     def test_settings_require_ftp_credentials_and_isolated_atlas_path(self):
         base={"ATLAS_FTP_HOST":"ftp.example.org",
               "ATLAS_FTP_USERNAME":"atlas",
