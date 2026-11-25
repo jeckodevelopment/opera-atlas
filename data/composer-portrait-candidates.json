@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "candidates": {
+    "oa-c-000030": {
+      "name": "Franz Lehár",
+      "files": [
+        "Lehar Ferenc.jpg",
+        "Lehár, Franz (1912).jpg"
+      ]
+    },
+    "oa-c-000067": {
+      "name": "Samuel Barber",
+      "files": [
+        "Portrait of Samuel Barber LCCN2004662567.jpg"
+      ]
+    }
+  }
+}

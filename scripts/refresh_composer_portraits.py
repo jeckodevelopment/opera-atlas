@@ -236,6 +236,11 @@ def portrait_for_identity(composer, match, call, audits=None):
                 return record
             reasons.append(reason)
         return None
+    # Editorially selected exact file titles are identity leads, not rights overrides.
+    editorial = composer.get("editorial_portrait_candidates", [])
+    record = try_files(editorial[:8], "editorial_source_review")
+    if record:
+        return record, None
     record = try_files(ordered[:8], "wikidata_p18")
     if record:
         return record, None
@@ -437,6 +442,19 @@ def refresh(root, call=api, max_seconds=900):
     identities = {c["id"]: identities[c["id"]] for c in composers
                   if c["id"] in identities and identities[c["id"]].get("name") == c["name"]
                   and QID.fullmatch(identities[c["id"]].get("wikidata_id", ""))}
+    editorial_path = root / "data/composer-portrait-candidates.json"
+    editorial = json.loads(editorial_path.read_text()) if editorial_path.is_file() else {"schema_version": 1, "candidates": {}}
+    if editorial.get("schema_version") != 1 or not isinstance(editorial.get("candidates"), dict):
+        raise ValueError("Invalid editorial portrait candidates")
+    known = {c["id"]: c["name"] for c in composers}
+    for key, entry in editorial["candidates"].items():
+        if key not in known or entry.get("name") != known[key]:
+            raise ValueError("Editorial candidate identity mismatch")
+        files = entry.get("files")
+        if not isinstance(files, list) or len(files) > 8 or any(
+            not isinstance(f, str) or not f.strip() or "|" in f or f.startswith("File:") for f in files
+        ):
+            raise ValueError("Invalid editorial portrait filenames")
     prior = previous.get("unresolved", {})
     history = previous.get("last_attempted", {})
     if not history:
@@ -472,12 +490,13 @@ def refresh(root, call=api, max_seconds=900):
         audits = []
         try:
             candidate = dict(composer)
+            candidate["editorial_portrait_candidates"] = editorial["candidates"].get(key, {}).get("files", [])
             if key in identities and not candidate.get("wikidata_id"):
                 candidate["wikidata_id"] = identities[key]["wikidata_id"]
             match, reason = find_person(candidate, call)
             if match:
                 identities[key] = {"name": composer["name"], "wikidata_id": match[0]}
-                record, reason = portrait_for_identity(composer, match, call, audits)
+                record, reason = portrait_for_identity(candidate, match, call, audits)
             else:
                 identities.pop(key, None)
                 record = None

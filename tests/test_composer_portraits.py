@@ -264,6 +264,16 @@ class PortraitTests(unittest.TestCase):
         self.assertIsNone(reason)
         self.assertEqual(match[0], "Q123")
 
+    def test_editorial_candidate_still_requires_rights(self):
+        candidate = dict(self.composer, editorial_portrait_candidates=["Editorial.jpg"])
+        record, reason = portrait(candidate, mock_call())
+        self.assertIsNone(reason)
+        self.assertEqual(record["commons_file"], "Editorial.jpg")
+        self.assertEqual(record["identity_evidence"], "editorial_source_review")
+        record, reason = portrait(candidate, mock_call(changes={"Restrictions":"Restricted"}))
+        self.assertIsNone(record)
+        self.assertEqual(reason, "rights_review")
+
     def test_cached_identity_survives_rights_review(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)

@@ -9,6 +9,7 @@ on:
       - 'scripts/refresh_composer_portraits.py'
       - '.github/workflows/refresh-composer-portraits.yml'
       - 'data/composer-registry.json'
+      - 'data/composer-portrait-candidates.json'
 permissions:
   contents: write
 concurrency:
