@@ -42,8 +42,8 @@
     const imageHost=node("div","today-image");
     try{
       const images=window.OperaAtlasImages;
-      if(!p.program_id && p.work_id && images?.element && images?.work){
-        const artwork=images.work(p);
+      if((p.program_id || p.work_id) && images?.element && images?.work){
+        const artwork=p.program_id?images.program(p):images.work(p);
         // Canonical identity + explicit source: title-only legacy matches are
         // not reliable when different composers share a title.
         if(artwork?.src && artwork?.sourceUrl && artwork.kind!=="unavailable")

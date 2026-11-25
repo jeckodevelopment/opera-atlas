@@ -151,6 +151,7 @@ window.OperaAtlasCatalog = (() => {
         ids.add(recita.id);byRoute.add(route+"|"+recita.local_date);
         out.push({id:recita.id,program_id:program.id,program_components:components,
           program_work_ids:components.filter(c=>c.work_id).map(c=>c.work_id),
+          program_artwork:program.artwork?.source_url===program.source_url ? program.artwork : null,
           staging_id:program.id,staging_url:route,venue_id:venue.id,
           title:program.title,composer:components.map(c=>c.composer).join(" · "),
           venue:program.venue,municipality:program.municipality,region:program.region,

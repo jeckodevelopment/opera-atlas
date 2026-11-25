@@ -203,10 +203,23 @@ def generate(destination: Path, catalog: Path) -> list[str]:
         title=program["title"]
         venue,city=program["venue"],program["municipality"]
         events=[dict(e,venue=venue) for e in program["performances"]]
+        artwork=program.get("artwork") or {}
+        image,alt=DEFAULT_IMAGE,"Opera+ Atlas — programma lirico"
+        if (artwork.get("kind")=="official_program_image" and artwork.get("credit")
+            and artwork.get("source_url")==program.get("source_url")
+            and safe_image(artwork.get("image_url")) and safe_image(artwork.get("source_url"))):
+            image,alt=artwork["image_url"],artwork.get("alt") or title
+        else:
+            for component in program["components"]:
+                if not component.get("work_id"):continue
+                candidate,caption=art(component["work_id"])
+                if candidate!=DEFAULT_IMAGE:
+                    image,alt=candidate,"Immagine di una delle opere del programma: "+caption
+                    break
         add("/programmi/"+pid+"/",title=title+" — "+venue,heading=title,
             description=title+" al "+venue+" di "+city+": date e programma su Opera+ Atlas.",
             subtitle=venue+" · "+city,summary=title+" è un programma di più opere presso "+venue+" a "+city+".",
-            image=DEFAULT_IMAGE,alt="Opera+ Atlas — programma lirico",
+            image=image,alt=alt,
             entity_type="Programma composto",events=events)
     result=[]
     for route,kwargs in sorted(items.items()):

@@ -82,3 +82,14 @@ for(const item of images){
 hero.error();
 assert.ok(hero.src.startsWith("data:image/svg+xml"),"hero should not be an empty image");
 console.log("theatre photos: 14 distinct; opera art: authentic sourced only; no fictitious covers");
+
+const programs=JSON.parse(fs.readFileSync(path.join(root,"public/catalog/programs.json"),"utf8")).programs;
+const novara=programs.find(p=>p.id==="oa-p-f017f07675f24fa5");
+const official=lib.program({program_components:novara.components,program_artwork:novara.artwork,sources:[novara.source_url]});
+assert.equal(official.src,novara.artwork.image_url);
+assert.equal(official.kind,"official_program_image");
+const fallback=lib.program({program_components:[{title:"Unknown",composer:"Unknown"},{title:"Pagliacci",composer:"Ruggero Leoncavallo",work_id:"oa-w-000006"}]});
+assert.equal(fallback.kind,"program_component_image");
+assert.match(fallback.src,/Pagliacci_Original_Score_Cover/);
+assert.equal(lib.program({program_components:[{title:"Pagliacci"}]}).kind,"unavailable");
+assert.equal(lib.program({program_components:[],program_artwork:novara.artwork,sources:["https://example.org/other"]}).kind,"unavailable");

@@ -41,6 +41,18 @@ class PublicMultiWorkTests(unittest.TestCase):
                          "2027-10-13T20:30:00+02:00")
         self.assertEqual(result,read(OUTPUT))
         self.assertEqual(publish(check=True),result)
+    def test_verified_program_artwork_has_exact_official_provenance(self):
+        bills=self.build()["programs"]
+        by_id={p["id"]:p for p in bills}
+        from scripts.publish_programs import PROGRAM_ARTWORK
+        self.assertEqual(set(PROGRAM_ARTWORK),{p["id"] for p in bills if p.get("artwork")})
+        for pid,artwork in PROGRAM_ARTWORK.items():
+            self.assertEqual(by_id[pid]["artwork"],artwork)
+            self.assertEqual(artwork["source_url"],by_id[pid]["source_url"])
+            self.assertTrue(artwork["credit"])
+            self.assertEqual(artwork["kind"],"official_program_image")
+        self.assertEqual(len(by_id["oa-p-f017f07675f24fa5"]["performances"]),2)
+
     def test_conflicting_heading_or_ticket_blocks_program(self):
         wrong=copy.deepcopy(self.evidence)
         row=next(x for x in wrong["evidence"]

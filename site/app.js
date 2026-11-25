@@ -120,7 +120,7 @@ function editorialImage(type,event,cls) {
 
 function createCard(event) {
   const article = node("article","event");
-  article.append(event.program_id?node("div","event-image image-placeholder"):editorialImage("work",event,"event-image"));
+  article.append(editorialImage(event.program_id?"program":"work",event,"event-image"));
   const main = node("div","event-main");
   main.append(node("div","event-meta",(event.program_id?"Programma composto":"Opera lirica")+" · "+event.municipality));
   const heading = node("h3");
@@ -177,7 +177,7 @@ function compactDate(event) {
 function createStagingCard(events) {
   const first = events[0];
   const article = node("article","event");
-  article.append(first.program_id?node("div","event-image image-placeholder"):editorialImage("work",first,"event-image"));
+  article.append(editorialImage(first.program_id?"program":"work",first,"event-image"));
   const main = node("div","event-main");
   main.append(node("div","event-meta",first.municipality+" · "+events.length+" repliche"));
   const heading = node("h3");

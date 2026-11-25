@@ -65,7 +65,7 @@ function imageFor(item){
   fallback.setAttribute("role","img");fallback.setAttribute("aria-label","Fotografia non disponibile");
   if(!images || typeof images.element!=="function")return fallback;
   const type=item.imageKind|| (section==="opere"?"work":section==="teatri"?"venue":"festival");
-  const identity=type==="work"
+  const identity=type==="program" ? item.programEvent : type==="work"
     ? {title:item.title,work_slug:item.work_slug,work_id:item.work_id,composer:item.composer}
     : type==="venue"
       ? {city:item.city,municipality:item.city,venue:item.title,
@@ -151,7 +151,7 @@ async function initialize(){
           const next=found.future.filter(e=>e.staging_id===event.staging_id)
             .sort((a,b)=>a.local_date.localeCompare(b.local_date))[0];
           const label="Prossima recita "+dateLabel(next.local_date);
-          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · "+label,city:event.municipality,imageKind:"work",work_slug:event.work_slug,work_id:event.work_id,composer:event.composer});
+          entries.push({url,title:event.title,subtitle:event.venue+" · "+event.municipality+" · "+label,city:event.municipality,imageKind:event.program_id?"program":"work",programEvent:event,work_slug:event.work_slug,work_id:event.work_id,composer:event.composer});
         }
         const footer=node("section","official-links");footer.append(node("h2",null,"Informazioni e biglietti"),official);grid.after(footer);
         if(!entries.length)status.textContent="Nessuna opera attualmente in programma.";
