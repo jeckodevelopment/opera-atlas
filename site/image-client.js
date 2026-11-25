@@ -277,7 +277,14 @@ window.OperaAtlasImages=Object.freeze((()=>{
     picture.decoding="async";
     picture.referrerPolicy="no-referrer";
     picture.addEventListener("error",()=>{
-      if(item.fallbackSrc && picture.src!==item.fallbackSrc)picture.src=item.fallbackSrc;
+      if(item.fallbackSrc && picture.src!==item.fallbackSrc){
+        picture.src=item.fallbackSrc;
+        if(item.fallbackArtwork){
+          const a=item.fallbackArtwork;
+          picture.alt="Immagine di una delle opere del programma: "+a.alt;
+          picture.title=(a.credit||"")+(a.license?" · "+a.license:"");
+        }
+      }
       else {picture.hidden=true;picture.removeAttribute("src");}
     },{once:true});
     if(item.credit)picture.title=item.credit+(item.license?" · "+item.license:"");
