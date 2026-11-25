@@ -22,7 +22,7 @@ SOURCE_PREFIX="ferrara-"
 
 def fold(value:str)->str:
     return " ".join("".join(c for c in unicodedata.normalize("NFKD",value.casefold())
-                           if not unicodedata.combining(c)).replace("’","'").split())
+                           if not unicodedata.combining(c)).replace("’","'").replace("æ","ae").split())
 
 
 class RegionalProgram(HTMLParser):
