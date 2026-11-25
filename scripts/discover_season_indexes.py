@@ -1424,7 +1424,9 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                 min_links=item["min_links"]
                 try:
                     page=fetcher(db,source_id=row["id"],url=index_url,network_enabled=True)
-                except FetchUnavailable as original:
+                except (FetchUnavailable, AccessDenied) as original:
+                    if isinstance(original, AccessDenied) and item["key"]!="spoleto-tls-lirica-2026":
+                        raise
                     if item["key"]=="rovigo-sociale-opera-2026-27":
                         page,index_url,preverified_urls=_rovigo_verified_detail_fallback(
                             db,row["id"],fetcher)
