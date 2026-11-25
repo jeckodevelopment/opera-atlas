@@ -238,6 +238,32 @@ class PortraitTests(unittest.TestCase):
         self.assertIsNone(reason)
         self.assertEqual(record["commons_file"], "Alternative.jpg")
 
+    def test_linked_category_requires_exact_depiction(self):
+        entity = person()
+        entity["claims"].pop("P18")
+        entity["claims"]["P373"] = [claim("Composer")]
+        def call(endpoint, **params):
+            if endpoint == COMMONS and params.get("list") == "categorymembers":
+                self.assertEqual(params["cmtitle"], "Category:Composer")
+                return {"query":{"categorymembers":[{"title":"File:Wrong.jpg","pageid":41},
+                                                     {"title":"File:Correct.jpg","pageid":42}]}}
+            if endpoint == COMMONS and params.get("action") == "wbgetentities":
+                return {"entities":{"M41":{"statements":{"P180":[claim({"id":"Q999"})]}},
+                                    "M42":{"statements":{"P180":[claim({"id":"Q123"})]}}}}
+            if endpoint == COMMONS and params.get("titles"):
+                self.assertEqual(params["titles"], "File:Correct.jpg")
+            return mock_call({"Q123":entity})(endpoint, **params)
+        record, reason = portrait(self.composer, call)
+        self.assertIsNone(reason)
+        self.assertEqual(record["identity_evidence"], "commons_category_verified_depicts")
+
+    def test_multilingual_identity_alias(self):
+        entity = person("Different spelling")
+        entity["aliases"] = {"de":[{"value":"Composer"}]}
+        match, reason = find_person(self.composer, mock_call({"Q123":entity}))
+        self.assertIsNone(reason)
+        self.assertEqual(match[0], "Q123")
+
     def test_cached_identity_survives_rights_review(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)

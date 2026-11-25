@@ -143,7 +143,7 @@ def wikipedia_ids(composer, call):
 def entity_records(ids, call):
     try:
         data = call(WD, action="wbgetentities", ids="|".join(sorted(ids)),
-                    props="labels|aliases|claims", languages="it|en")
+                    props="labels|aliases|claims|sitelinks")
         if not isinstance(data.get("entities"), dict):
             raise WikimediaError("invalid_wikidata_response")
         return data["entities"]
@@ -249,6 +249,14 @@ def portrait_for_identity(composer, match, call, audits=None):
     record = try_files(alternatives, "commons_depicts_p180")
     if record:
         return record, None
+    try:
+        category_files = linked_category_files(entity, qid, call)
+    except (WikimediaError, URLError, TimeoutError, json.JSONDecodeError):
+        category_files = []
+        errors.append("category_lookup_unavailable")
+    record = try_files(category_files, "commons_category_verified_depicts")
+    if record:
+        return record, None
     if errors:
         raise WikimediaError(errors[0])
     return None, reasons[0] if reasons else "no_image"
@@ -261,6 +269,9 @@ def depicted_files(qid, call):
     results = data.get("query", {}).get("search")
     if not isinstance(results, list):
         raise WikimediaError("invalid_depicts_response")
+    return verified_depictions(results, qid, call)
+
+def verified_depictions(results, qid, call):
     # Verify the structured claim independently; search indexes can be stale.
     files = []
     for hit in results:
@@ -287,6 +298,28 @@ def depicted_files(qid, call):
             if depicts == {qid}:
                 candidates.append(filename)
     return candidates[:8]
+
+def linked_category_files(entity, qid, call):
+    """Discover additional files through explicitly linked Commons categories."""
+    categories = [v for v in values(entity, "P373") if isinstance(v, str) and v.strip()]
+    sitelink = entity.get("sitelinks", {}).get("commonswiki", {}).get("title", "")
+    if sitelink.startswith("Category:"):
+        categories.append(sitelink[9:])
+    results = []
+    for category in list(dict.fromkeys(categories))[:2]:
+        data = call(COMMONS, action="query", list="categorymembers",
+                    cmtitle="Category:" + category.removeprefix("Category:"),
+                    cmnamespace=6, cmtype="file", cmlimit=50)
+        members = data.get("query", {}).get("categorymembers")
+        if not isinstance(members, list):
+            raise WikimediaError("invalid_category_response")
+        results.extend(members)
+    candidates = []
+    for start in range(0, len(results), 20):
+        candidates.extend(verified_depictions(results[start:start+20], qid, call))
+        if len(candidates) >= 8:
+            break
+    return list(dict.fromkeys(candidates))[:8]
 
 def canonical_cc_url(value):
     # Accept only the canonical Creative Commons domain and license/deed paths.
