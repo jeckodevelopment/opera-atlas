@@ -1432,6 +1432,12 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                             db,row["id"],fetcher)
                         min_links=1
                         municipal_fallback=True
+                    elif (item["key"]=="lecce-politeama-opera-2026"
+                          and str(original) in ("page unavailable","unexpected HTTP status","not an HTML page","HTML response too large")):
+                        # Same official host, explicit opera-category calendar; independent robots gate.
+                        index_url="https://www.politeamagreco.it/programmazione.asp?categoria=1"
+                        page=fetcher(db,source_id=row["id"],url=index_url,network_enabled=True)
+                        primary_unavailable=True
                     elif item["key"]=="spoleto-tls-lirica-2026" and (
                         item["url"]=="https://www.tls-belli.it/stagione-lirica-2026/"):
                         # The primary theatre calendar may reject the CI runner.
@@ -1536,7 +1542,8 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                     # "not verified yet", not a bad source configuration.
                     # Leave it unpublished and retain the diagnostic.
                     diagnostic="future_official_programme_unverified"
-                elif str(exc)=="season index incomplete or structure changed":
+                elif str(exc) in ("season index incomplete or structure changed",
+                                  "Taormina official event links missing or index incomplete"):
                     diagnostic="index_incomplete_or_markup_changed"
                 else:
                     diagnostic="invalid_index_or_source_config"

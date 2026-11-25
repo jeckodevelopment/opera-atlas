@@ -36,6 +36,28 @@ class LeccePoliteamaTests(unittest.TestCase):
                     "http://www.politeamagreco.it/scheda.asp?id=1147"):
             self.assertFalse(eligible("lecce-politeama-opera-2026",url))
         self.assertTrue(eligible("lecce-politeama-opera-2026",DETAIL(1148)))
+    def test_category_calendar_fallback_respects_access_denial(self):
+        import json
+        from opera_atlas.controlled_fetch import FetchResult, FetchUnavailable, AccessDenied
+        from scripts.discover_season_indexes import CONFIG, scan
+        config=json.loads(CONFIG.read_text())
+        key="lecce-politeama-opera-2026"
+        alternate=INDEX+"?categoria=1"
+        links=''.join(f'<a href="{DETAIL(i)}">Opera</a>' for i in (1147,1148,1149))
+        for failure,expected in ((FetchUnavailable("page unavailable"),"partial_pagination"),
+                                 (AccessDenied("robots denied"),"unavailable_or_invalid")):
+            requested=[]
+            def fetch(db, *, source_id, url, network_enabled):
+                requested.append(url)
+                if url==INDEX: raise failure
+                if url==alternate: return FetchResult(url,links,"a"*64,len(links))
+                raise AssertionError(url)
+            candidates,health=scan(config,{"schema_version":1,"candidates":[]},
+                                   fetcher=fetch,network_enabled=True,source_keys={key})
+            self.assertEqual(health[0]["status"],expected)
+            self.assertEqual(requested,[INDEX,alternate] if expected=="partial_pagination" else [INDEX])
+            self.assertEqual(len(candidates["candidates"]),3 if expected=="partial_pagination" else 0)
+
     def test_six_performances_and_attribution(self):
         self.assertEqual(parse_detail(html(1147),url=DETAIL(1147)),
             ("Turandot","Giacomo Puccini","Teatro Politeama Greco",
