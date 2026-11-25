@@ -20,12 +20,12 @@ class VenueMonthMatrixTests(unittest.TestCase):
         cls.leads=json.loads(OFFICIAL_ZERO_VENUE_LEADS.read_text(encoding="utf-8"))
         cls.report=build_matrix(*cls.inputs,cls.leads)
 
-    def test_complete_74_x_12_grid_without_certifying_any_missing_month(self):
+    def test_complete_73_x_12_grid_without_certifying_any_missing_month(self):
         r=self.report
-        self.assertEqual(74,r["venue_count"])
-        self.assertEqual(888,r["cell_count"])
-        self.assertEqual(888,len(r["rows"]))
-        self.assertEqual(888,len({(x["venue_id"],x["month"]) for x in r["rows"]}))
+        self.assertEqual(73,r["venue_count"])
+        self.assertEqual(876,r["cell_count"])
+        self.assertEqual(876,len(r["rows"]))
+        self.assertEqual(876,len({(x["venue_id"],x["month"]) for x in r["rows"]}))
         self.assertEqual(0,r["complete_venue_months"])
         self.assertEqual(0,r["complete_annual_venues"])
         self.assertTrue(all(x["complete_month_verified"] is False for x in r["rows"]))
@@ -35,8 +35,8 @@ class VenueMonthMatrixTests(unittest.TestCase):
     def test_zero_published_priorities_are_not_missing_recite_claims(self):
         r=self.report
         priorities=r["venue_audit_priorities"]
-        self.assertEqual(74,len(priorities))
-        self.assertEqual(74,len({x["venue_id"] for x in priorities}))
+        self.assertEqual(73,len(priorities))
+        self.assertEqual(73,len({x["venue_id"] for x in priorities}))
         zero=[x for x in priorities if x["published_2026_showtimes"]==0]
         self.assertEqual(len(zero),r["zero_published_venue_count"])
         self.assertEqual(len(zero),sum(r["zero_published_by_calendar_status"].values()))
@@ -59,13 +59,13 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(21,r["official_2026_opera_lead_venue_count"])
         self.assertEqual(0,r["official_unpublished_opera_lead_count"])
         self.assertEqual(0,r["official_lead_venues_with_zero_published"])
-        self.assertEqual(5,r["zero_published_venue_count"])
+        self.assertEqual(4,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
-        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri","Teatro Alfieri","Teatro all'Antica","Teatro Nazionale","Teatro Auditorium Manzoni","Teatro Ariosto","Teatro Studio","Sanbàpolis","Teatro Antico di Taormina"},
+        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri","Teatro Alfieri","Teatro all'Antica","Teatro Nazionale","Teatro Auditorium Manzoni","Teatro Ariosto","Teatro Comunale di Bolzano","Sanbàpolis","Teatro Antico di Taormina"},
                          set(sources))
         for entry in sources.values():
-            self.assertEqual("published_not_exhaustively_verified" if entry["venue"] in {"Teatro Lirico di Cagliari","Teatro Sociale","Arena di Verona","Teatro Filarmonico","Teatro Vittorio Emanuele","Teatro Ponchielli","Teatro del Giglio Giacomo Puccini","Teatro Coccia","Teatro Sociale di Mantova","Teatro Alfieri","Arena Sferisterio","Gran Teatro Giacomo Puccini","Teatro Dante Alighieri","Teatro all'Antica","Teatro Nazionale","Teatro Auditorium Manzoni","Teatro Ariosto","Teatro Studio","Sanbàpolis","Teatro Antico di Taormina"} else "zero_published_with_official_opera_leads",
+            self.assertEqual("published_not_exhaustively_verified" if entry["venue"] in {"Teatro Lirico di Cagliari","Teatro Sociale","Arena di Verona","Teatro Filarmonico","Teatro Vittorio Emanuele","Teatro Ponchielli","Teatro del Giglio Giacomo Puccini","Teatro Coccia","Teatro Sociale di Mantova","Teatro Alfieri","Arena Sferisterio","Gran Teatro Giacomo Puccini","Teatro Dante Alighieri","Teatro all'Antica","Teatro Nazionale","Teatro Auditorium Manzoni","Teatro Ariosto","Teatro Comunale di Bolzano","Sanbàpolis","Teatro Antico di Taormina"} else "zero_published_with_official_opera_leads",
                              entry["audit_priority"])
             self.assertFalse(entry["missing_recite_certified"])
         self.assertEqual(0,sources["Teatro Sociale"]["official_unpublished_opera_lead_count"])
