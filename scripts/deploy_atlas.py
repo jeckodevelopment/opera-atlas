@@ -37,6 +37,31 @@ CANONICAL = ("opere/la-traviata/", "torino/teatro-regio/",
              "produzioni/oa-g-lombardia-italiana-2026/", "trento/sanbapolis/")
 
 
+SANBAPOLIS_ASSET = "sanbapolis-platea.jpg"
+SANBAPOLIS_ORIGINAL = "https://s3-eu-west-1.amazonaws.com/static.opencity.opencontent.it/var/trento/storage/images/media/images/teatro-sanbapolis/37879-2-ita-IT/Teatro-Sanbapolis_reference.jpg"
+SANBAPOLIS_PROXY = "https://flyimg.opencityitalia.it/upload/rf_1,o_auto,w_2500,h_2500/https:%2F%2Fs3-eu-west-1.amazonaws.com%2Fstatic.opencity.opencontent.it%2Fvar%2Ftrento%2Fstorage%2Fimages%2Fmedia%2Fimages%2Fteatro-sanbapolis%2F37879-2-ita-IT%2FTeatro-Sanbapolis_reference.jpg"
+
+
+def stage_sanbapolis_photo(folder: Path, *, opener=None) -> None:
+    """Preserve a genuine CC BY JPEG locally; fail before upload if unavailable."""
+    opener = opener or urlopen
+    for url in (PUBLIC_URL + SANBAPOLIS_ASSET, SANBAPOLIS_ORIGINAL, SANBAPOLIS_PROXY):
+        try:
+            request = Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "image/jpeg", "Cache-Control": "no-cache"})
+            with opener(request, timeout=30) as response:
+                data = response.read(3_000_001)
+                if (response.status != 200 or response.headers.get_content_type() != "image/jpeg"
+                    or not 1024 < len(data) <= 3_000_000
+                    or not data.startswith(b"\\xff\\xd8\\xff") or not data.endswith(b"\\xff\\xd9")):
+                    continue
+            (folder / SANBAPOLIS_ASSET).write_bytes(data)
+            print("Staged credited Sanbàpolis JPEG:", len(data), "bytes")
+            return
+        except (OSError, ValueError):
+            continue
+    raise RuntimeError("Cannot acquire genuine Sanbàpolis JPEG; release stopped before upload")
+
+
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -146,7 +171,7 @@ def verify_live(folder: Path) -> None:
     for attempt in range(3):
         try:
             nonce=uuid.uuid4().hex
-            for file in sorted(FILES- {".htaccess"}):
+            for file in sorted((FILES | ({SANBAPOLIS_ASSET} if (folder / SANBAPOLIS_ASSET).is_file() else set())) - {".htaccess"}):
                 req=Request(PUBLIC_URL+file+"?release="+nonce,
                             headers={"Cache-Control":"no-cache","User-Agent":"OperaAtlasPublisher/1.0"})
                 with urlopen(req,timeout=20) as response:
