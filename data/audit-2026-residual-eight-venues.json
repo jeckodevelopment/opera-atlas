@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-25",
+  "scope": "Eight residual zero-published venues from diagnostic generated 2026-11-25T07:34:47Z",
+  "policy": "Evidence inventory only; no claim of exhaustive annual coverage, no automatic publication. Verify genre, complete schedules and canonical identity before reconciliation.",
+  "venues": [
+    {
+      "venue_id": "oa-vd-000053",
+      "status": "confirmed_leads",
+      "sources": [
+        "https://www.tcbo.it/evento/opera/semele-2026/",
+        "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/"
+      ],
+      "productions": [
+        {
+          "title": "Semele",
+          "composer": "Georg Friedrich Händel",
+          "dates": [
+            [
+              "2026-10-23",
+              "20:00"
+            ],
+            [
+              "2026-10-25",
+              "16:00"
+            ]
+          ]
+        },
+        {
+          "title": "Samson et Dalila",
+          "composer": "Camille Saint-Saëns",
+          "dates": [
+            [
+              "2026-11-13",
+              "20:00"
+            ],
+            [
+              "2026-11-15",
+              "16:00"
+            ]
+          ]
+        }
+      ],
+      "note": "Physical venue confirmed on individual event pages. Exclude Flauto magico Short Edition and school events."
+    },
+    {
+      "venue_id": "oa-vd-000025",
+      "status": "closure_documented",
+      "sources": [
+        "https://www.tcbo.it/piante-e-settori/",
+        "https://www.tcbo.it/?id=250"
+      ],
+      "note": "Historic venue closed for restoration; return announced February 14 2027. Temporary venues must be separately attributed."
+    },
+    {
+      "venue_id": "oa-vd-000054",
+      "status": "genre_review",
+      "sources": [
+        "https://www.maggiofiorentino.com/events/tragudia-il-canto-di-edipo"
+      ],
+      "note": "Tragùdia is a dramatic adaptation of Sophocles with vocal elements; no independently credited operatic score established. Do not publish as opera solely from category."
+    },
+    {
+      "venue_id": "oa-v-000056",
+      "status": "no_eligible_leads_found",
+      "sources": [
+        "https://www.newsnovara.it/2026/11/14/mobile/leggi-notizia/argomenti/eventi-19/articolo/novara-lopera-torna-nei-giardini-di-palazzo-natta-due-spettacoli-a-giugno-2027.html",
+        "https://www.newsnovara.it/2026/09/10/leggi-notizia/argomenti/eventi-19/articolo/le-notti-di-cabiria-a-palazzo-natta-la-magia-delle-ombre-con-lusignolo.html"
+      ],
+      "note": "2027 opera announcement outside scope; L'usignolo is shadow theatre, not Stravinsky opera. No exhaustive conclusion."
+    },
+    {
+      "venue_id": "oa-v-000031",
+      "status": "confirmed_leads",
+      "sources": [
+        "https://www.iteatri.re.it/rassegna/stagione-2025-2026/?month=all&type=opera",
+        "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/"
+      ],
+      "productions": [
+        {
+          "title": "L’heure espagnole",
+          "composer": "Maurice Ravel",
+          "dates": [
+            [
+              "2026-05-03",
+              "18:00"
+            ],
+            [
+              "2026-05-05",
+              "20:00"
+            ]
+          ]
+        }
+      ],
+      "note": "Veleno belongs to April 2027."
+    },
+    {
+      "venue_id": "oa-vd-000023",
+      "status": "corroboration_required",
+      "sources": [
+        "https://www.haydn.it/programmi/stagione-dopera-2025-26",
+        "https://www.apemusicale.it/joomla/it/news/82-news2025/16337-bolzano-trento-la-stagione-2025-26-dell-orchestra-haydn?showall=1",
+        "https://www.haydn.it/en/programmi/opera-season-2026-27"
+      ],
+      "productions": [
+        {
+          "title": "Note to a Friend",
+          "composer": "David Lang",
+          "dates": [
+            [
+              "2026-03-07",
+              "20:00"
+            ]
+          ]
+        }
+      ],
+      "note": "Published season announcement identifies Bolzano. February double bill Il segreto di Susanna / La notte di un nevrastenico requires physical venue verification; November Clemenza is Trento."
+    },
+    {
+      "venue_id": "oa-vd-000055",
+      "status": "no_eligible_leads_found",
+      "sources": [
+        "https://www.teatrodiroma.net/comunicazione/news/teatro-valle-restituito-alla-citta-e-alla-scena/",
+        "https://www.teatrodiroma.net/spettacoli/il-teatro-e-vita-la-stagione-2026-2027-del-teatro-di-roma/teatro-valle/"
+      ],
+      "note": "Reopened October 15 2026; no eligible 2026 opera located in reviewed programme."
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "status": "corroboration_required",
+      "sources": [
+        "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html",
+        "https://www.guidasicilia.it/evento/a-taormina-il-nabucco-di-verdi-per-il-festival-lirico-dei-teatri-di-pietra-2026-a-taormina-il-nabucco-di-verdi-per-il-festival-lirico-dei-teatri-di-pietra-2026/3031178"
+      ],
+      "productions": [
+        {
+          "title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "dates": [
+            [
+              "2026-08-07",
+              "21:00"
+            ]
+          ]
+        }
+      ],
+      "note": "Festival Lirico dei Teatri di Pietra coproduction, corroborating press reports; seek organizer evidence before publication."
+    }
+  ]
+}
