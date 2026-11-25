@@ -7564,6 +7564,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-bologna-manzoni-samson-et-dalila:2026-11-13",
+      "starts_at": "2026-11-13T20:00:00+01:00",
+      "local_date": "2026-11-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-cagliari-rigoletto:2026-11-13",
       "starts_at": "2026-11-13T20:00:00+01:00",
       "local_date": "2026-11-13",
@@ -7941,6 +7959,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-bologna-manzoni-samson-et-dalila:2026-11-15",
+      "starts_at": "2026-11-15T16:00:00+01:00",
+      "local_date": "2026-11-15",
+      "time_known": true,
+      "time_label": "16:00",
+      "status": "announced",
+      "title": "Samson et Dalila",
+      "composer": "Camille Saint-Saëns",
+      "venue": "Teatro Auditorium Manzoni",
+      "municipality": "Bologna",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/"
       ]
     },
     {
