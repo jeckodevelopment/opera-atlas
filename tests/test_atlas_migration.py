@@ -75,8 +75,11 @@ class AtlasMigrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as path:
             folder=Path(path)
             stage_sanbapolis_photo(folder,opener=opener)
+            self.assertEqual(SANBAPOLIS_ASSET,"assets/images/venues/sanbapolis-platea.jpg")
             self.assertEqual((folder/SANBAPOLIS_ASSET).read_bytes(),jpeg)
+            self.assertFalse((folder/"sanbapolis-platea.jpg").exists())
             self.assertEqual(len(seen),2)
+            self.assertTrue(seen[0].endswith("/assets/images/venues/sanbapolis-platea.jpg"))
             with self.assertRaises(RuntimeError):
                 stage_sanbapolis_photo(folder,opener=lambda *args,**kwargs: Reply(b"not an image"))
 
