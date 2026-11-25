@@ -317,6 +317,20 @@
       "verified": true,
       "wikidata_id": "Q250952"
     },
+    "oa-c-000027": {
+      "verified": true,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf/page3-330px-Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf.jpg",
+      "alt": "Frontespizio del libretto La bisalba, Napoli 1667 — documento storico relativo a Francesco Provenzale, non ritratto",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf",
+      "author": "Lodovico Cavallo (stampatore); UNC Italian Opera Libretto Collection, digitalizzazione Internet Archive",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Francesco_Provenzale_-_La_bisalba%2C_%C3%B2_vero%2C_Offendere_chi_piu_s%27ama_-_dramma_in_musica_-_libretto_%28IA_labisalbaoveroof20unse%29.pdf",
+      "credit": "La bisalba, Napoli 1667 — UNC Italian Opera Libretto Collection / Internet Archive / Wikimedia Commons — pubblico dominio, frontespizio (non ritratto)",
+      "reviewed_on": "2026-11-25",
+      "media_kind": "archival_document",
+      "rights_evidence": "editorial_historical_public_domain",
+      "wikidata_id": "Q934164"
+    },
     "oa-c-000028": {
       "alt": "Ritratto di Francis Poulenc",
       "author": "Monceau from San Antonio",
@@ -473,6 +487,20 @@
       "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/PaiselloVigeeLeBrun.jpg/960px-PaiselloVigeeLeBrun.jpg",
       "verified": true,
       "wikidata_id": "Q202303"
+    },
+    "oa-c-000039": {
+      "verified": true,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Giuseppe_Balducci_-_Boabdil%2C_re_di_Granata_-_autograph_score_-_first_page.png",
+      "alt": "Prima pagina della partitura autografa di Boabdil, re di Granata (1827), Giuseppe Balducci — non ritratto",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giuseppe_Balducci_-_Boabdil%2C_re_di_Granata_-_autograph_score_-_first_page.png",
+      "author": "Giuseppe Balducci",
+      "license": "Public Domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "credit": "Giuseppe Balducci — Internet Culturale / Wikimedia Commons — partitura autografa di Boabdil, re di Granata (1827), Public Domain",
+      "reviewed_on": "2026-11-25",
+      "media_kind": "archival_document",
+      "rights_evidence": "commons_public_domain_mark",
+      "wikidata_id": "Q1528143"
     },
     "oa-c-000041": {
       "alt": "Ritratto di Giuseppe Verdi",
