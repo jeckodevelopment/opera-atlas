@@ -24,7 +24,8 @@
               "2026-10-25",
               "16:00"
             ]
-          ]
+          ],
+          "disposition": "excluded: official page explicitly states concert performance"
         },
         {
           "title": "Samson et Dalila",
@@ -38,7 +39,8 @@
               "2026-11-15",
               "16:00"
             ]
-          ]
+          ],
+          "disposition": "reconciled_in_this_pr"
         }
       ],
       "note": "Physical venue confirmed on individual event pages. Exclude Flauto magico Short Edition and school events."
@@ -100,7 +102,8 @@
       "sources": [
         "https://www.haydn.it/programmi/stagione-dopera-2025-26",
         "https://www.apemusicale.it/joomla/it/news/82-news2025/16337-bolzano-trento-la-stagione-2025-26-dell-orchestra-haydn?showall=1",
-        "https://www.haydn.it/en/programmi/opera-season-2026-27"
+        "https://www.haydn.it/en/programmi/opera-season-2026-27",
+        "https://www.haydn.it/wp-content/uploads/2026/03/Haydn-2026-Stagione-25-26-Libretto-Note-to-a-Friend-04-web.pdf"
       ],
       "productions": [
         {
@@ -114,7 +117,7 @@
           ]
         }
       ],
-      "note": "Published season announcement identifies Bolzano. February double bill Il segreto di Susanna / La notte di un nevrastenico requires physical venue verification; November Clemenza is Trento."
+      "note": "Published season announcement identifies Bolzano. February double bill Il segreto di Susanna / La notte di un nevrastenico requires physical venue verification; November Clemenza is Trento. Official Haydn booklet confirms 7 March 20:00 in Teatro Comunale (Studio), a separate room; venue identity and work editorial pending."
     },
     {
       "venue_id": "oa-vd-000055",

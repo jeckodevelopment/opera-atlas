@@ -86,6 +86,7 @@ def validated_venue_leads(document, venues):
         "oa-vd-000060": ("Sabbioneta", "Teatro all'Antica", "www.comune.sabbioneta.mn.it"),
         "oa-vd-000022": ("Rovigo", "Teatro Sociale", "www.comune.rovigo.it"),
         "oa-vd-000056": ("Roma", "Teatro Nazionale", "www.operaroma.it"),
+        "oa-vd-000053": ("Bologna", "Teatro Auditorium Manzoni", "www.tcbo.it"),
         "oa-vd-000015": ("Asti", "Teatro Alfieri", "www.comune.asti.it"),
     }
     # Exact institutional schedule supplements, scoped to the reviewed venue.

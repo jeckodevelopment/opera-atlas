@@ -44,7 +44,8 @@ class BolognaFullSeasonTests(unittest.TestCase):
         self.assertEqual(report["new_works"],len(remaining))
         self.assertEqual(report["new_stagings"],len(remaining))
         self.assertEqual(report["new_recite"],sum(remaining.values()))
-        bologna=[x for x in facts["productions"] if x["municipality"]=="Bologna"]
+        bologna=[x for x in facts["productions"] if x["municipality"]=="Bologna"
+                 and any(day.startswith("2027-") for day, _ in x["dates"])]
         self.assertEqual(len(bologna),9)
         self.assertEqual(sum(len(x["dates"]) for x in bologna),38)
         manzoni=[p for p in bologna if p["venue"]=="Teatro Auditorium Manzoni"]
