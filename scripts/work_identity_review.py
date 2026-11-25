@@ -164,7 +164,7 @@ def main() -> None:
     parser.add_argument("--check",action="store_true")
     args=parser.parse_args()
     from scripts.reconcile_published_candidates import (
-        verified_pisa_recital_urls, verified_haydn_cronaca_urls,
+        verified_pisa_recital_urls, verified_haydn_cronaca_urls, verified_haydn_replica_urls,
         verified_livorno_recital_urls, verified_livorno_dido_programme_urls)
     from scripts.build_verified_catalog import MANIFEST
     evidence=json.loads(EVIDENCE.read_text(encoding="utf-8"))
@@ -172,6 +172,7 @@ def main() -> None:
     reconciled_urls=set().union(
         verified_pisa_recital_urls(manifest,evidence),
         verified_haydn_cronaca_urls(manifest,evidence),
+        verified_haydn_replica_urls(manifest,evidence),
         verified_livorno_recital_urls(manifest,evidence),
         verified_livorno_dido_programme_urls(manifest,evidence))
     report=evaluate(evidence,

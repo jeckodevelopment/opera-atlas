@@ -3390,16 +3390,12 @@
       "venue_id": "oa-v-000055",
       "slug": "la-clemenza-di-tito",
       "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
-      "season": "2026"
-    },
-    "auto-f3d0b1311d04c3e4": {
-      "id": "oa-s-000246",
-      "work_id": "oa-w-000066",
-      "venue_id": "oa-v-000055",
-      "slug": "la-clemenza-di-tito",
-      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
       "season": "2026",
-      "route_slug": "la-clemenza-di-tito-la-clemenza-di-tito"
+      "supporting_source_urls": [
+        "https://www.haydn.it/eventi/la-clemenza-di-tito",
+        "https://www.haydn.it/eventi/la-clemenza-di-tito-2"
+      ],
+      "replica_group_url": "https://www.haydn.it/eventi/area/opera?repliche=la-clemenza-di-tito"
     },
     "auto-a0178dcdf3cfff6d": {
       "id": "oa-s-000247",
@@ -9921,12 +9917,6 @@
       "original_date": "2026-11-29",
       "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2"
     },
-    "auto-f3d0b1311d04c3e4|2026-11-27": {
-      "id": "oa-r-000963",
-      "staging_id": "oa-s-000246",
-      "original_date": "2026-11-27",
-      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
-    },
     "auto-a0178dcdf3cfff6d|2027-06-17": {
       "id": "oa-r-000964",
       "staging_id": "oa-s-000247",
@@ -12387,6 +12377,13 @@
       "staging_id": "oa-s-000356",
       "original_date": "2026-08-07",
       "source_url": "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html"
+    },
+    "auto-0e8fc70d8165e8a2|2026-11-27": {
+      "id": "oa-r-000963",
+      "staging_id": "oa-s-000245",
+      "original_date": "2026-11-27",
+      "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito-2",
+      "original_ticket_source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito"
     }
   },
   "reserved_works": {
@@ -12429,6 +12426,12 @@
       "slug": "jeanne-dark",
       "status": "editorial_verified_pending_staging",
       "authority_url": "https://www.teatroverdi-trieste.com/it/spettacoli/jeanne-darc-au-bucher-jeanne-dark/"
+    }
+  },
+  "retired_stagings": {
+    "oa-s-000246": {
+      "canonical_id": "oa-s-000245",
+      "reason": "verified_haydn_replicas"
     }
   }
 }

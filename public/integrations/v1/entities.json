@@ -8071,20 +8071,6 @@
     {
       "aliases": [],
       "composer_ids": [
-        "oa-c-000070"
-      ],
-      "fallback_image": null,
-      "id": "oa-s-000246",
-      "image": null,
-      "production_kind": "staging",
-      "subtitle": "Teatro Sociale",
-      "title": "La clemenza di Tito",
-      "type": "production",
-      "url": "https://opera.plus/atlas/trento/teatro-sociale/la-clemenza-di-tito-la-clemenza-di-tito/"
-    },
-    {
-      "aliases": [],
-      "composer_ids": [
         "oa-c-000039"
       ],
       "fallback_image": null,

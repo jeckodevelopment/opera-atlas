@@ -63,6 +63,17 @@ def extract_index(html:str,*,url:str=INDEX,min_links:int=1)->list[str]:
         raise ValueError("season index incomplete or structure changed")
     return urls
 
+def replica_group_url(html:str,*,url:str)->str|None:
+    """Read the explicit first-party Repliche link, never infer from ticket slugs."""
+    if not eligible_detail(url):return None
+    from scripts.haydn_replica_identity import valid_group
+    reader=Reader()
+    reader.feed(html)
+    groups={absolute for link in reader.links
+            if valid_group(absolute:=urljoin(url,link))}
+    return next(iter(groups)) if len(groups)==1 else None
+
+
 def parse_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
     if not eligible_detail(url):raise ValueError("unapproved Haydn opera detail")
     reader=Reader()
