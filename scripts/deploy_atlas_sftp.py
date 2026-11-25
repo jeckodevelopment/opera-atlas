@@ -104,10 +104,12 @@ def publish(env=None, connector=make_client):
         folder = Path(tmp)
         build(folder)
         stage_sanbapolis_photo(folder)
-        expected=set(FILES) | {SANBAPOLIS_ASSET}
+        expected=set(FILES)
         actual={p.name for p in folder.iterdir() if p.is_file()}
         if actual!=expected:
             raise ValueError("Unexpected root release files: "+str(sorted(actual.symmetric_difference(expected))))
+        if not (folder / SANBAPOLIS_ASSET).is_file():
+            raise ValueError("Missing nested venue image")
         manifest=json.loads((folder/"seo-routes.json").read_text(encoding="utf-8"))
         generated=manifest.get("files",[])
         if not isinstance(generated,list) or len(generated)!=len(set(generated)) or not generated:
@@ -126,6 +128,17 @@ def publish(env=None, connector=make_client):
                 else:
                     if not stat.S_ISDIR(info.st_mode):
                         raise ValueError("SFTP target exists but is not a directory")
+                # Only the reviewed asset path is allowed; never follow remote symlinks.
+                asset_dir=destination
+                for part in SANBAPOLIS_ASSET.split("/")[:-1]:
+                    asset_dir=posixpath.join(asset_dir,part)
+                    try:
+                        info=sftp.lstat(asset_dir)
+                    except FileNotFoundError:
+                        sftp.mkdir(asset_dir)
+                    else:
+                        if not stat.S_ISDIR(info.st_mode):
+                            raise ValueError("Asset path is not a directory: "+asset_dir)
                 # Publish the image before any JS or HTML can reference it.
                 sftp.put(str(folder / SANBAPOLIS_ASSET), posixpath.join(destination, SANBAPOLIS_ASSET), confirm=True)
                 for name in sorted(FILES):
@@ -150,7 +163,7 @@ def publish(env=None, connector=make_client):
                                 raise ValueError("Canonical route is not a directory: "+directory)
                         made.add(directory)
                     sftp.put(str(folder/relative),posixpath.join(destination,relative),confirm=True)
-                print("Uploaded "+str(len(expected))+" root files and "+str(len(generated))+" canonical HTML pages")
+                print("Uploaded "+str(len(expected))+" root files, 1 nested venue image and "+str(len(generated))+" canonical HTML pages")
                 verify_live(folder)
                 print("Verified published Atlas files and deep routes over HTTPS")
         finally:
