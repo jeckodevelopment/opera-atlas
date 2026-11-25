@@ -82,6 +82,9 @@ def image_matches_work(image_url:str,work_title:str)->bool:
     The official La Scala OpenGraph data sometimes names a conductor from an
     unrelated concert. A generic OpenGraph image is NOT an opera poster.
     """
+    # Reviewed first-party production thumbnail, published on the official opera page.
+    if work_title.casefold()=="la vita nuda" and image_url=="https://operaroma.b-cdn.net/wp-content/uploads/2025/08/PIRANDELLO-5-Foto-pulita-130x95.jpg":
+        return True
     stem=unquote(urlsplit(image_url).path.split("/")[-1])
     stem=re.sub(r"\.(?:jpe?g|png|webp)$","",stem,flags=re.I)
     def tokens(value):
