@@ -8931,6 +8931,34 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000015"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000348",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro all'Antica",
+      "title": "L'Orfeo",
+      "type": "production",
+      "url": "https://opera.plus/atlas/sabbioneta/teatro-all-antica/orfeo/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000036"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000349",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro all'Antica",
+      "title": "Il barbiere di Siviglia",
+      "type": "production",
+      "url": "https://opera.plus/atlas/sabbioneta/teatro-all-antica/il-barbiere-di-siviglia/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -9734,5 +9762,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "e7df73c120ee2a04bb0209b3c8ffe307eda79551"
+  "source_revision": "2b7b4f8911b19bc6928ea32fd2bdacbfed243d92"
 }
