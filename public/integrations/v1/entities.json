@@ -67,7 +67,15 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000004",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Antonio Cericola",
+        "author": "Antonio Cericola (Arsmusica)",
+        "credit": "Antonio Cericola (Arsmusica) — Wikimedia Commons — Public Domain (rilascio dell’autore)",
+        "license": "Public Domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Antonio_Cericola_dirige_l%27orchestra.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Cericola_dirige_l%27orchestra.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Antonio_Cericola_dirige_l%27orchestra.jpg"
+      },
       "subtitle": null,
       "title": "Antonio Cericola",
       "type": "composer",
@@ -3378,7 +3386,15 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000101",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Antonio Cericola",
+        "author": "Antonio Cericola (Arsmusica)",
+        "credit": "Antonio Cericola (Arsmusica) — Wikimedia Commons — Public Domain (rilascio dell’autore)",
+        "license": "Public Domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Antonio_Cericola_dirige_l%27orchestra.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Cericola_dirige_l%27orchestra.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Antonio_Cericola_dirige_l%27orchestra.jpg"
+      },
       "subtitle": "Antonio Cericola",
       "title": "Le avventure di Pinocchio",
       "type": "opera",
@@ -9881,5 +9897,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "a7bbff8fdd87404df5702a2078a7d5f8b12ac465"
+  "source_revision": "a5afa3b2779fd508e33a666d8a1dfbc4c6aafa0f"
 }
