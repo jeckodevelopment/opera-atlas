@@ -37,7 +37,7 @@ CANONICAL = ("opere/la-traviata/", "torino/teatro-regio/",
              "produzioni/oa-g-lombardia-italiana-2026/", "trento/sanbapolis/")
 
 
-SANBAPOLIS_ASSET = "sanbapolis-platea.jpg"
+SANBAPOLIS_ASSET = "assets/images/venues/sanbapolis-platea.jpg"
 SANBAPOLIS_ORIGINAL = "https://s3-eu-west-1.amazonaws.com/static.opencity.opencontent.it/var/trento/storage/images/media/images/teatro-sanbapolis/37879-2-ita-IT/Teatro-Sanbapolis_reference.jpg"
 SANBAPOLIS_PROXY = "https://flyimg.opencityitalia.it/upload/rf_1,o_auto,w_2500,h_2500/https:%2F%2Fs3-eu-west-1.amazonaws.com%2Fstatic.opencity.opencontent.it%2Fvar%2Ftrento%2Fstorage%2Fimages%2Fmedia%2Fimages%2Fteatro-sanbapolis%2F37879-2-ita-IT%2FTeatro-Sanbapolis_reference.jpg"
 
@@ -45,7 +45,7 @@ SANBAPOLIS_PROXY = "https://flyimg.opencityitalia.it/upload/rf_1,o_auto,w_2500,h
 def stage_sanbapolis_photo(folder: Path, *, opener=None) -> None:
     """Preserve a genuine CC BY JPEG locally; fail before upload if unavailable."""
     opener = opener or urlopen
-    for url in (PUBLIC_URL + SANBAPOLIS_ASSET, SANBAPOLIS_ORIGINAL, SANBAPOLIS_PROXY):
+    for url in (PUBLIC_URL + SANBAPOLIS_ASSET, PUBLIC_URL + "sanbapolis-platea.jpg", SANBAPOLIS_ORIGINAL, SANBAPOLIS_PROXY):
         try:
             request = Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "image/jpeg", "Cache-Control": "no-cache"})
             with opener(request, timeout=30) as response:
@@ -54,7 +54,9 @@ def stage_sanbapolis_photo(folder: Path, *, opener=None) -> None:
                     or not 1024 < len(data) <= 3_000_000
                     or not data.startswith(b"\xff\xd8\xff") or not data.endswith(b"\xff\xd9")):
                     continue
-            (folder / SANBAPOLIS_ASSET).write_bytes(data)
+            asset = folder / SANBAPOLIS_ASSET
+            asset.parent.mkdir(parents=True, exist_ok=True)
+            asset.write_bytes(data)
             print("Staged credited Sanbàpolis JPEG:", len(data), "bytes")
             return
         except (OSError, ValueError):
