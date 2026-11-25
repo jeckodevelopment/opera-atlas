@@ -1887,11 +1887,16 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                 image=extract_official_poster(
                                     secondary.html,dedicated,title,
                                     verified_event_page=True)
+                replica_group=None
+                if item["source_key"]=="haydn-rolling-opera":
+                    from opera_atlas.haydn_rolling_opera import replica_group_url
+                    replica_group=replica_group_url(page.html,url=item["official_url"])
                 retained[item["id"]]={
                     "candidate_id":item["id"],"source_key":item["source_key"],
                     "source_url":item["official_url"],"content_sha256":page.sha256,
                     "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
                     "status":"needs_editorial_review","event_facts":facts,
+                    **({"replica_group_url":replica_group} if replica_group else {}),
                     **({"poster_evidence":image} if image else {}),
                 }
                 health.append({"candidate_id":item["id"],"outcome":"facts_found",
