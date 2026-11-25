@@ -65,6 +65,19 @@
       "media_kind": "documentary_photo",
       "usage": "fenice_press_material_editorial",
       "preserve_integrity": true
+    },
+    "oa-c-000016": {
+      "name": "Daniele Furlati",
+      "url": "https://immagini.unionesarda.it/version/c%3AZDhmNzY0ODctMTg0MS00%3AMTkzOWEyZTAtY2I4OC00/image.webp?f=3%3A2&q=0.75&w=3840",
+      "alt": "Fotografia di Daniele Furlati diffusa dall’ufficio stampa in occasione del festival Creuza de Mà 2025",
+      "source_url": "https://www.unionesarda.it/cultura/creuza-de-ma-chiude-la-sua-19-edizione-a-cagliari-due-giorni-di-cinema-muto-e-musica-dal-vivo-f1duczxa",
+      "author": "Ufficio stampa (fotografo non indicato dalla fonte)",
+      "license": "Press material (editorial source)",
+      "license_url": "https://www.unionesarda.it/cultura/creuza-de-ma-chiude-la-sua-19-edizione-a-cagliari-due-giorni-di-cinema-muto-e-musica-dal-vivo-f1duczxa",
+      "credit": "Foto ufficio stampa — Creuza de Mà 2025, pubblicata da L’Unione Sarda; fotografo non indicato. Fonte editoriale, nessuna licenza libera dichiarata.",
+      "media_kind": "portrait",
+      "usage": "furlati_press_material_editorial",
+      "preserve_integrity": true
     }
   }
 }
