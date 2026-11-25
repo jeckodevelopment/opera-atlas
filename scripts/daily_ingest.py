@@ -141,7 +141,7 @@ def _next_replica_id(registry: dict) -> int:
 def scan_approved(
     facts: dict, registry: dict, scheduled: list[dict], *,
     network_enabled: bool, fetcher=fetch_official_html,
-    today: date | None = None,
+    today: date | None = None, programs: dict | None = None,
 ) -> tuple[dict, dict, list[dict], int]:
     """Return updated copies; errors and anomalies preserve previous facts."""
     current = today or date.today()
@@ -184,6 +184,7 @@ def scan_approved(
             anomalies = []
             candidates = []
             mapped = {}
+            program_observed = set()
             for record in parsed:
                 if item["adapter"] == "operalombardia_calendar":
                     title, venue, city, day, hour = record
@@ -193,6 +194,33 @@ def scan_approved(
                         and p["venue"].casefold() == venue.casefold()
                         and p["municipality"].casefold() == city.casefold()
                     ]
+                    # A circuit calendar can list each component of a single
+                    # published multi-work ticket. Reconcile it without
+                    # creating solo stagings or changing authoritative hours.
+                    program_matches = [
+                        (p, r) for p in (programs or {}).get("programs", [])
+                        if p["venue"].casefold() == venue.casefold()
+                        and p["municipality"].casefold() == city.casefold()
+                        and any(c["title"].casefold() == title.casefold()
+                                for c in p["components"])
+                        for r in p["performances"] if r["local_date"] == day
+                    ]
+                    if program_matches:
+                        if matches or len(program_matches) != 1:
+                            anomalies.append({"kind":"unknown_or_ambiguous_staging",
+                                              "title":title,"venue":venue,"city":city})
+                            continue
+                        program, recita = program_matches[0]
+                        token = (program["id"], day, title.casefold())
+                        if token in program_observed:
+                            anomalies.append({"kind":"duplicate_or_conflicting_program_date",
+                                              "title":title,"venue":venue,"date":day})
+                        elif hour is not None and (not recita.get("starts_at")
+                                or recita["starts_at"][11:16] != hour):
+                            anomalies.append({"kind":"program_time_changed",
+                                              "title":title,"venue":venue,"date":day})
+                        program_observed.add(token)
+                        continue
                     if len(matches) != 1:
                         anomalies.append({"kind":"unknown_or_ambiguous_staging",
                                           "title":title,"venue":venue,"city":city})
@@ -300,8 +328,13 @@ def main() -> None:
     scheduled=validate_source_config(json.loads(CONFIG.read_text(encoding="utf-8")))
     facts=json.loads(MANIFEST.read_text(encoding="utf-8"))
     registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    from scripts.publish_programs import assemble_programs, CANDIDATES, EVIDENCE, CONFIG as INDEX_CONFIG, REVIEWED_WORKS
+    def read(path):
+        return json.loads(path.read_text(encoding="utf-8"))
+    programs=assemble_programs(read(CANDIDATES),read(EVIDENCE),registry,facts,
+                               read(INDEX_CONFIG),read(REVIEWED_WORKS))
     next_facts,next_registry,health,added=scan_approved(
-        facts,registry,scheduled,network_enabled=args.allow_network
+        facts,registry,scheduled,network_enabled=args.allow_network,programs=programs
     )
     if added:
         _write_atomic(MANIFEST,next_facts)

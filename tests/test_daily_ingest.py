@@ -43,6 +43,26 @@ class DailyIngestionTests(unittest.TestCase):
             network_enabled=True,fetcher=self.fetcher(html),today=date(2026,11,20),
         )
 
+    def test_circuit_composite_program_dates_do_not_create_solo_stagings(self):
+        from unittest.mock import patch
+        programs=json.loads((MANIFEST.parents[1]/"public/catalog/programs.json").read_text())
+        source=next(x for x in self.config["sources"]
+                    if x["adapter"]=="operalombardia_calendar")
+        rows=[(title,"Teatro Grande","Brescia",day,None)
+              for title in ("Cavalleria rusticana","Pagliacci")
+              for day in ("2026-12-11","2026-12-13")]
+        for records, expected in ((rows,"success"),
+                (rows+[("Pagliacci","Teatro Grande","Brescia","2026-12-14",None)],"review_required"),
+                (rows+[rows[0]],"review_required"),
+                ([(*rows[0][:4],"23:00")]+rows[1:],"review_required")):
+            with patch("scripts.daily_ingest._parse",return_value=records):
+                facts,registry,health,added=scan_approved(
+                    self.facts,self.registry,[source],network_enabled=True,
+                    fetcher=self.fetcher("calendar"),today=date(2026,11,25),
+                    programs=programs)
+            self.assertEqual(health[0]["outcome"],expected,health)
+            self.assertEqual((facts,registry,added),(self.facts,self.registry,0))
+
     def test_disabled_by_default_no_fetch(self):
         pending=copy.deepcopy(self.config)
         for item in pending["sources"]:
