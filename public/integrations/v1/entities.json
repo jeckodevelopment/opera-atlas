@@ -47,6 +47,15 @@
       "fallback_image": null,
       "id": "oa-c-000002",
       "image": null,
+      "source_reference": {
+        "author": "Fotografo non indicato",
+        "image_url": "https://levivier.ca/sites/default/files/styles/mt_member_photo/public/fiches-individuelles/Alessandro%20Solbiati.jpg.webp?itok=sA4aMc_A",
+        "kind": "portrait",
+        "rights_status": "reuse_not_established",
+        "source": "Le Vivier",
+        "source_url": "https://levivier.ca/en/artists/alessandro-solbiati",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Alessandro Solbiati",
       "type": "composer",
@@ -158,6 +167,13 @@
       "fallback_image": null,
       "id": "oa-c-000008",
       "image": null,
+      "source_reference": {
+        "kind": "profile",
+        "rights_status": "reuse_not_established",
+        "source": "Biblioteca Universitaria di Genova",
+        "source_url": "https://www.bibliotecauniversitaria.ge.it/en/aggiornamenti/mostre-ed-eventi/eventi/briscola.html",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Arturo Dal Bianco",
       "type": "composer",
@@ -231,6 +247,15 @@
       "fallback_image": null,
       "id": "oa-c-000012",
       "image": null,
+      "source_reference": {
+        "author": "Fotografo non indicato",
+        "image_url": "https://images.rockol.it/jmc7MmYUoenwfYwoWFXuaGaMyFE%3D/1200x675/smart/rockol-img/img/foto/upload/carlo-galante.jpg",
+        "kind": "portrait",
+        "rights_status": "reuse_not_established",
+        "source": "Rockol",
+        "source_url": "https://www.rockol.it/news-736812/il-disco-del-giorno-carlo-galante-yeliel",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Carlo Galante",
       "type": "composer",
@@ -302,6 +327,15 @@
       "fallback_image": null,
       "id": "oa-c-000016",
       "image": null,
+      "source_reference": {
+        "author": "Fotografo non indicato",
+        "image_url": "https://i0.wp.com/www.musicapercinema.it/wp-content/uploads/2016/08/Daniele-Furlati2-300x300.jpg?resize=170%2C170",
+        "kind": "portrait",
+        "rights_status": "reuse_not_established",
+        "source": "Festival Creuza de Mà",
+        "source_url": "https://www.musicapercinema.it/ospiti-2016/",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Daniele Furlati",
       "type": "composer",
@@ -333,6 +367,15 @@
       "fallback_image": null,
       "id": "oa-c-000018",
       "image": null,
+      "source_reference": {
+        "author": "Nicola Allegri",
+        "image_url": "https://davidetramontano.wordpress.com/wp-content/uploads/2026/05/015-cronaca-di-un-amore-callas-pasolini-.jpg?w=1024",
+        "kind": "portrait",
+        "rights_status": "reuse_not_established",
+        "source": "Sito ufficiale del compositore",
+        "source_url": "https://davidetramontano.wordpress.com/",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Davide Tramontano",
       "type": "composer",
@@ -344,6 +387,13 @@
       "fallback_image": null,
       "id": "oa-c-000019",
       "image": null,
+      "source_reference": {
+        "kind": "profile",
+        "rights_status": "reuse_not_established",
+        "source": "Ente Luglio Musicale Trapanese",
+        "source_url": "https://www.lugliomusicale.it/it/teatro-news/fuori-fuoco-presentata-l-opera-da-camera-di-diana-buscemi-e-mariza-d-anna-sabato-28-novembre-il-debutto-al-teatro-tonino-pardo-di-trapani/",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Diana Buscemi",
       "type": "composer",
@@ -475,6 +525,15 @@
       "fallback_image": null,
       "id": "oa-c-000026",
       "image": null,
+      "source_reference": {
+        "author": "Olivier Roller",
+        "image_url": "https://www.opera-comique.com/sites/default/files/styles/width_776px/public/2023-01/2023_bio_photos_Filidei%C2%A9Olivier-Roller_1620x1080.jpg.webp",
+        "kind": "portrait",
+        "rights_status": "reuse_not_established",
+        "source": "Opéra-Comique",
+        "source_url": "https://www.opera-comique.com/en/francesco-filidei",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Francesco Filidei",
       "type": "composer",
@@ -752,6 +811,13 @@
       "fallback_image": null,
       "id": "oa-c-000040",
       "image": null,
+      "source_reference": {
+        "kind": "profile",
+        "rights_status": "reuse_not_established",
+        "source": "Fondazione Teatro Coccia (classe 1989; non il pianista omonimo nato nel 1991)",
+        "source_url": "https://www.fondazioneteatrococcia.it/opera-nuovi-corti-del-coccia.html",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Giuseppe Guerrera",
       "type": "composer",
@@ -1003,6 +1069,13 @@
       "fallback_image": null,
       "id": "oa-c-000053",
       "image": null,
+      "source_reference": {
+        "kind": "profile",
+        "rights_status": "reuse_not_established",
+        "source": "Fondazione Teatro Coccia",
+        "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-operitivo-turandot.html",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Massimiliano Piscitello",
       "type": "composer",
@@ -1074,6 +1147,15 @@
       "fallback_image": null,
       "id": "oa-c-000057",
       "image": null,
+      "source_reference": {
+        "author": "Hugues Roussel",
+        "image_url": "https://www.chigiana.org/wp-content/uploads/Nicola-Sani_foto-Hugues-Roussel_1-6.jpg",
+        "kind": "portrait",
+        "rights_status": "reuse_not_established",
+        "source": "Accademia Musicale Chigiana",
+        "source_url": "https://www.chigiana.org/team/",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Nicola Sani",
       "type": "composer",
@@ -1237,6 +1319,15 @@
       "fallback_image": null,
       "id": "oa-c-000065",
       "image": null,
+      "source_reference": {
+        "author": "Fotografo non indicato",
+        "image_url": "https://www.fondazionepergolesispontini.com/wp-content/uploads/2026/11/LAC_3910-3-200x300.jpg",
+        "kind": "portrait",
+        "rights_status": "reuse_not_established",
+        "source": "Fondazione Pergolesi Spontini",
+        "source_url": "https://www.fondazionepergolesispontini.com/salvatore-passantino/",
+        "usage": "external_link_only"
+      },
       "subtitle": null,
       "title": "Salvatore Passantino",
       "type": "composer",
@@ -1386,6 +1477,17 @@
       "title": "Donizetti Opera Festival",
       "type": "festival",
       "url": "https://opera.plus/atlas/directory.html?section=festival&id=donizetti-opera-2026"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "festival-lirico-dei-teatri-di-pietra",
+      "image": null,
+      "subtitle": "Sicilia",
+      "title": "Festival Lirico dei Teatri di Pietra",
+      "type": "festival",
+      "url": "https://opera.plus/atlas/directory.html?section=festival&id=festival-lirico-dei-teatri-di-pietra-2026"
     },
     {
       "aliases": [],
@@ -10261,5 +10363,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "13774cb1b7260e070c0a1b130dcce2c29bd969af"
+  "source_revision": "0ea214c6ceb74e4b6efb57fe080778c1fdb94273"
 }
