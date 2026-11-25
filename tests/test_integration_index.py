@@ -191,6 +191,23 @@ class IntegrationIndexTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build(self.root, REV)
 
+    def test_fenice_press_photo_is_pinned_to_composer(self):
+        from scripts.publish_integration_index import load_editorial_media
+        image = {"name": "Davide Tramontano", "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/05/IMG_8887-scaled.jpg",
+                 "source_url": "https://www.teatrolafenice.it/event/premio-una-vita-nella-musica-2026/",
+                 "alt": "Award ceremony", "author": "Ufficio stampa Fondazione Teatro La Fenice",
+                 "license": "Press material (editorial source)",
+                 "license_url": "https://www.teatrolafenice.it/en/press-lafenice/",
+                 "credit": "Press office", "media_kind": "documentary_photo",
+                 "usage": "fenice_press_material_editorial", "preserve_integrity": True}
+        composers = {"oa-c-000018": {"name": "Davide Tramontano"}}
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"oa-c-000018": image}})
+        self.assertEqual(load_editorial_media(self.root, composers)["oa-c-000018"]["url"], image["url"])
+        image["url"] += ".jpg"
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"oa-c-000018": image}})
+        with self.assertRaises(ValueError):
+            load_editorial_media(self.root, composers)
+
     def test_unknown_portrait_id_rejected(self):
         self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
         with self.assertRaises(ValueError):
