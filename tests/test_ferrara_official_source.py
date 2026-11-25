@@ -38,6 +38,44 @@ def regional_html():
     return html
 
 class FerraraOfficialSourceTests(unittest.TestCase):
+    def test_independent_tourism_fallback_preserves_canonical_candidates(self):
+        from opera_atlas.ferrara_regional_parser import TOURISM_URL,verify_tourism_calendar
+        from opera_atlas.controlled_fetch import FetchUnavailable,FetchResult,AccessDenied
+        from scripts.discover_season_indexes import scan
+        from scripts.build_verified_catalog import MANIFEST
+        from datetime import date
+        months={11:"novembre",1:"gennaio",2:"febbraio",3:"marzo",4:"aprile"}
+        body="<h1>Stagione Opera &amp; Danza - Teatro Comunale Ferrara 2026 2027</h1>"
+        for row in records().values():
+            for day,clock in row["dates"]:
+                d=date.fromisoformat(day)
+                body+=f"<p>{d.day} {months[d.month]} ore {clock}</p>"
+            body+=f'<h2>{row["title"]}</h2><p>Musica di {row["composer"]}</p>'
+        for key in KEYS:
+            verify_tourism_calendar(body,url=TOURISM_URL,source_key=key)
+        with self.assertRaises(ValueError):
+            verify_tourism_calendar(body.replace("27 novembre ore 20:00","27 novembre ore 21:00"),
+                                    url=TOURISM_URL,source_key=KEYS[0])
+        config=json.loads(CONFIG.read_text())
+        requests=[]
+        def fetch(db,*,source_id,url,network_enabled):
+            requests.append(url)
+            if url==URL: raise FetchUnavailable("page unavailable")
+            if url==TOURISM_URL: return FetchResult(url,body,"a"*64,len(body))
+            raise AssertionError(url)
+        candidates,health=scan(config,{"schema_version":1,"candidates":[]},
+                               fetcher=fetch,network_enabled=True,source_keys=set(KEYS))
+        self.assertEqual(len(health),5)
+        self.assertTrue(all(x["status"]=="success" and x["fallback_official_source"]=="www.ferrarainfo.com" for x in health))
+        self.assertTrue(all(x["status"]=="already_catalogued" and x["official_url"]==URL for x in candidates["candidates"]))
+        self.assertEqual(len(candidates["candidates"]),5)
+        def denied(db,*,source_id,url,network_enabled):
+            self.assertEqual(url,URL)
+            raise AccessDenied("robots denied")
+        _,health=scan(config,{"schema_version":1,"candidates":[]},
+                      fetcher=denied,network_enabled=True,source_keys={KEYS[0]})
+        self.assertEqual(health[0]["status"],"unavailable_or_invalid")
+
     def test_five_approved_index_keys_and_distinct_work_evidence(self):
         document=json.loads(CONFIG.read_text(encoding="utf-8"))
         src=validate_config(document)
