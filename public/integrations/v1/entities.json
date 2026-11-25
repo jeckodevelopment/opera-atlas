@@ -9,6 +9,10 @@
       {
         "composer": "Matteo D’Amico",
         "work_id": "oa-w-000141"
+      },
+      {
+        "composer": "Maurice Ravel",
+        "work_id": "oa-w-000142"
       }
     ]
   },
@@ -677,6 +681,18 @@
     {
       "aliases": [],
       "composer_ids": [],
+      "editorial_image": {
+        "alt": "Giovanni Sollima durante le prove del concerto al Quirinale, 31 maggio 2017",
+        "author": "Presidenza della Repubblica — Quirinale",
+        "credit": "Presidenza della Repubblica — Quirinale, 31 maggio 2017. Uso informativo non commerciale, immagine integra; consultare le condizioni della fonte.",
+        "license": "Institutional non-commercial editorial use",
+        "license_url": "https://www.quirinale.it/it/pagine/guida-navigazione",
+        "media_kind": "documentary_photo",
+        "preserve_integrity": true,
+        "source_url": "https://www.quirinale.it/it/foto/maestro-giovanni-sollima-durante-prove-concerto-per-festa-nazionale-repubblica-onore-corpo-diplomatico-accreditato-presso-stato-italiano",
+        "url": "https://www.quirinale.it/APIRed/api/media/static/6080",
+        "usage": "noncommercial_public_interest_information"
+      },
       "fallback_image": null,
       "id": "oa-c-000038",
       "image": null,
@@ -1032,6 +1048,18 @@
     {
       "aliases": [],
       "composer_ids": [],
+      "editorial_image": {
+        "alt": "Ritratto ufficiale di Orazio Sciortino",
+        "author": "Marco Perulli",
+        "credit": "© Marco Perulli — fotogalleria ufficiale di Orazio Sciortino, materiale per stampa e media.",
+        "license": "Press and media use",
+        "license_url": "https://www.oraziosciortino.com/media/",
+        "media_kind": "portrait",
+        "preserve_integrity": true,
+        "source_url": "https://www.oraziosciortino.com/media/",
+        "url": "https://www.oraziosciortino.com/wp-content/uploads/2025/07/fotogallery-Orazio-Sciortino-3-scaled.jpg",
+        "usage": "press_and_media_editorial"
+      },
       "fallback_image": null,
       "id": "oa-c-000058",
       "image": {
@@ -4346,6 +4374,17 @@
       "title": "La vita nuda",
       "type": "opera",
       "url": "https://opera.plus/atlas/opere/la-vita-nuda/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-w-000142",
+      "image": null,
+      "subtitle": "Maurice Ravel",
+      "title": "L’heure espagnole",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/heure-espagnole/"
     },
     {
       "aliases": [],
@@ -9292,6 +9331,18 @@
       "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
+      "id": "oa-s-000353",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Ariosto",
+      "title": "L’heure espagnole",
+      "type": "production",
+      "url": "https://opera.plus/atlas/reggio-emilia/teatro-ariosto/heure-espagnole/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
       "id": "oa-v-000001",
       "image": null,
       "subtitle": "Torino",
@@ -10093,5 +10144,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "97ac6dc115cfc97b1e7ed1380c895200d7035224"
+  "source_revision": "c136b50ab4f8a805ff113080ea4ca112a39da5b3"
 }
