@@ -721,7 +721,15 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000044",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Igor' Stravinskij",
+        "author": "Comet Photo AG (Zürich)",
+        "credit": "Comet Photo AG (Zürich) — Wikimedia Commons — CC-BY-SA-4.0",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg/960px-Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg"
+      },
       "subtitle": null,
       "title": "Igor' Stravinskij",
       "type": "composer",
@@ -2358,7 +2366,15 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000053",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Igor' Stravinskij",
+        "author": "Comet Photo AG (Zürich)",
+        "credit": "Comet Photo AG (Zürich) — Wikimedia Commons — CC-BY-SA-4.0",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg/960px-Igor_Stravinsky_-_ETH-BIB_-_Com_L10-0300-0003-0001.jpg"
+      },
       "subtitle": "Igor' Stravinskij",
       "title": "The Rake's Progress",
       "type": "opera",
@@ -9762,5 +9778,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "2b7b4f8911b19bc6928ea32fd2bdacbfed243d92"
+  "source_revision": "11299650ece982e88f3bf4e5373b2214aca0fd85"
 }
