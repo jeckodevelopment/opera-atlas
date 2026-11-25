@@ -34,7 +34,7 @@ FINGERPRINT = frozenset(("styles.css", "app.js", "detail.js", "directory.js",
                          "catalog-client.js", "festival-client.js", "image-client.js", "in-scena.js", "in-scena.css"))
 CANONICAL = ("opere/la-traviata/", "torino/teatro-regio/",
              "torino/teatro-regio/la-traviata/",
-             "produzioni/oa-g-lombardia-italiana-2026/")
+             "produzioni/oa-g-lombardia-italiana-2026/", "trento/sanbapolis/")
 
 
 def sha(data: bytes) -> str:
