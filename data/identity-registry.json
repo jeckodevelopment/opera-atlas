@@ -1452,6 +1452,14 @@
       "name": "Teatro Sociale di Mantova",
       "city": "Mantova",
       "region": "Lombardia"
+    },
+    "Sabbioneta|Teatro all'Antica": {
+      "id": "oa-v-000070",
+      "slug": "teatro-all-antica",
+      "city_slug": "sabbioneta",
+      "name": "Teatro all'Antica",
+      "city": "Sabbioneta",
+      "region": "Lombardia"
     }
   },
   "stagings": {
@@ -4182,6 +4190,22 @@
       "venue_id": "oa-v-000049",
       "slug": "la-fanciulla-del-west",
       "source_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html",
+      "season": "2026"
+    },
+    "historical-2026-sabbioneta-orfeo": {
+      "id": "oa-s-000348",
+      "work_id": "oa-w-000124",
+      "venue_id": "oa-v-000070",
+      "slug": "orfeo",
+      "source_url": "https://www.comune.sabbioneta.mn.it/index.php/it/news/2043432",
+      "season": "2026"
+    },
+    "historical-2026-sabbioneta-il-barbiere-di-siviglia": {
+      "id": "oa-s-000349",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000070",
+      "slug": "il-barbiere-di-siviglia",
+      "source_url": "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica",
       "season": "2026"
     }
   },
@@ -12166,6 +12190,18 @@
       "staging_id": "oa-s-000347",
       "original_date": "2026-09-05",
       "source_url": "https://www.comune.viareggio.lu.it/eventi/CLT-Puccini-Festival-2031.html"
+    },
+    "historical-2026-sabbioneta-orfeo|2026-09-19": {
+      "id": "oa-r-001358",
+      "staging_id": "oa-s-000348",
+      "original_date": "2026-09-19",
+      "source_url": "https://www.comune.sabbioneta.mn.it/index.php/it/news/2043432"
+    },
+    "historical-2026-sabbioneta-il-barbiere-di-siviglia|2026-11-14": {
+      "id": "oa-r-001359",
+      "staging_id": "oa-s-000349",
+      "original_date": "2026-11-14",
+      "source_url": "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica"
     }
   },
   "reserved_works": {

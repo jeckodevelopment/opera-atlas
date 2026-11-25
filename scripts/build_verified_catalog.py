@@ -992,6 +992,36 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     })
+    reconciled_2026.update({
+        "historical-2026-sabbioneta-orfeo": {
+            "title": "L'Orfeo",
+            "composer": "Claudio Monteverdi",
+            "venue": "Teatro all'Antica",
+            "municipality": "Sabbioneta",
+            "region": "Lombardia",
+            "source_url": "https://www.comune.sabbioneta.mn.it/index.php/it/news/2043432",
+            "dates": [
+                [
+                    "2026-09-19",
+                    "20:30"
+                ]
+            ]
+        },
+        "historical-2026-sabbioneta-il-barbiere-di-siviglia": {
+            "title": "Il barbiere di Siviglia",
+            "composer": "Gioachino Rossini",
+            "venue": "Teatro all'Antica",
+            "municipality": "Sabbioneta",
+            "region": "Lombardia",
+            "source_url": "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica",
+            "dates": [
+                [
+                    "2026-11-14",
+                    "20:30"
+                ]
+            ]
+        }
+    })
     reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
     permitted.update(reconciled_urls)
     events = []

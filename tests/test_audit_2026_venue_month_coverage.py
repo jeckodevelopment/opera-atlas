@@ -55,17 +55,17 @@ class VenueMonthMatrixTests(unittest.TestCase):
 
     def test_primary_source_leads_are_never_auto_published(self):
         r=self.report
-        self.assertEqual(93,r["official_2026_opera_lead_count"])
-        self.assertEqual(13,r["official_2026_opera_lead_venue_count"])
+        self.assertEqual(95,r["official_2026_opera_lead_count"])
+        self.assertEqual(14,r["official_2026_opera_lead_venue_count"])
         self.assertEqual(0,r["official_unpublished_opera_lead_count"])
         self.assertEqual(0,r["official_lead_venues_with_zero_published"])
-        self.assertEqual(11,r["zero_published_venue_count"])
+        self.assertEqual(10,r["zero_published_venue_count"])
         sources={x["venue"]:x for x in r["venue_audit_priorities"]
                  if x["official_verified_opera_lead_count"]}
-        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri","Teatro Alfieri"},
+        self.assertEqual({"Teatro Sociale","Arena di Verona","Arena Sferisterio","Teatro Filarmonico","Gran Teatro Giacomo Puccini","Teatro Vittorio Emanuele","Teatro Lirico di Cagliari","Teatro Ponchielli","Teatro Coccia","Teatro del Giglio Giacomo Puccini","Teatro Sociale di Mantova","Teatro Dante Alighieri","Teatro Alfieri","Teatro all'Antica"},
                          set(sources))
         for entry in sources.values():
-            self.assertEqual("published_not_exhaustively_verified" if entry["venue"] in {"Teatro Lirico di Cagliari","Teatro Sociale","Arena di Verona","Teatro Filarmonico","Teatro Vittorio Emanuele","Teatro Ponchielli","Teatro del Giglio Giacomo Puccini","Teatro Coccia","Teatro Sociale di Mantova","Teatro Alfieri","Arena Sferisterio","Gran Teatro Giacomo Puccini","Teatro Dante Alighieri"} else "zero_published_with_official_opera_leads",
+            self.assertEqual("published_not_exhaustively_verified" if entry["venue"] in {"Teatro Lirico di Cagliari","Teatro Sociale","Arena di Verona","Teatro Filarmonico","Teatro Vittorio Emanuele","Teatro Ponchielli","Teatro del Giglio Giacomo Puccini","Teatro Coccia","Teatro Sociale di Mantova","Teatro Alfieri","Arena Sferisterio","Gran Teatro Giacomo Puccini","Teatro Dante Alighieri","Teatro all'Antica"} else "zero_published_with_official_opera_leads",
                              entry["audit_priority"])
             self.assertFalse(entry["missing_recite_certified"])
         self.assertEqual(0,sources["Teatro Sociale"]["official_unpublished_opera_lead_count"])
@@ -75,7 +75,7 @@ class VenueMonthMatrixTests(unittest.TestCase):
         self.assertEqual(0,sources["Gran Teatro Giacomo Puccini"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Vittorio Emanuele"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Lirico di Cagliari"]["official_unpublished_opera_lead_count"])
-        self.assertEqual(93,r["official_lead_reconciliation_counts"]["exact_match"])
+        self.assertEqual(95,r["official_lead_reconciliation_counts"]["exact_match"])
         self.assertEqual(0,sources["Teatro Ponchielli"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro Coccia"]["official_unpublished_opera_lead_count"])
         self.assertEqual(0,sources["Teatro del Giglio Giacomo Puccini"]["official_unpublished_opera_lead_count"])
@@ -219,8 +219,8 @@ class IdentityAwareLeadTests(unittest.TestCase):
 
     def test_all_evidence_classified(self):
         report=VenueMonthMatrixTests.report if hasattr(VenueMonthMatrixTests,"report") else build_matrix(*docs(),json.loads(OFFICIAL_ZERO_VENUE_LEADS.read_text(encoding="utf-8")))
-        self.assertEqual(93,sum(report["official_lead_reconciliation_counts"].values()))
-        self.assertEqual(93,len(report["official_lead_reconciliation"]))
+        self.assertEqual(95,sum(report["official_lead_reconciliation_counts"].values()))
+        self.assertEqual(95,len(report["official_lead_reconciliation"]))
 
 
 class CagliariReconciliationTests(unittest.TestCase):

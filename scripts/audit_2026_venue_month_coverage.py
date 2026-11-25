@@ -83,6 +83,7 @@ def validated_venue_leads(document, venues):
         "oa-vd-000031": ("Lucca", "Teatro del Giglio Giacomo Puccini", "www.teatrodelgigliogiacomopuccini.it"),
         "oa-vd-000057": ("Mantova", "Teatro Sociale di Mantova", "www.teatrosocialemantova.it"),
         "oa-v-000014": ("Ravenna", "Teatro Dante Alighieri", "artbonus.gov.it"),
+        "oa-vd-000060": ("Sabbioneta", "Teatro all'Antica", "www.comune.sabbioneta.mn.it"),
         "oa-vd-000015": ("Asti", "Teatro Alfieri", "www.comune.asti.it"),
     }
     # Exact institutional schedule supplements, scoped to the reviewed venue.
