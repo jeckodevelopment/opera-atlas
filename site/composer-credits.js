@@ -12,14 +12,16 @@
   fetch(new URL("integrations/v1/entities.json", document.baseURI))
     .then(response => { if (!response.ok) throw new Error("Index unavailable"); return response.json(); })
     .then(index => {
-      const entries = index.entities.filter(e => e.type === "composer" && e.image)
+      const entries = index.entities.filter(e => e.type === "composer" && (e.image || e.editorial_image))
         .sort((a,b) => a.title.localeCompare(b.title, "it"));
       const fragment = document.createDocumentFragment();
       for (const e of entries) {
-        const li = document.createElement("li");
-        li.append(e.title + ": " + e.image.credit + " — ",
-          link(e.image.source_url, "Fonte"), " · ", link(e.image.license_url, "Diritti"));
-        fragment.append(li);
+        for (const photo of [e.image, e.editorial_image].filter(Boolean)) {
+          const li = document.createElement("li");
+          li.append(e.title + ": " + photo.credit + " — ",
+            link(photo.source_url, "Fonte"), " · ", link(photo.license_url, "Diritti"));
+          fragment.append(li);
+        }
       }
       list.replaceChildren(fragment);
       if (!entries.length) list.textContent = "Nessun ritratto disponibile.";

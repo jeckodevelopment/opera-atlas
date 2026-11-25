@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "images": {
+    "oa-c-000038": {
+      "name": "Giovanni Sollima",
+      "url": "https://www.quirinale.it/APIRed/api/media/static/6080",
+      "alt": "Giovanni Sollima durante le prove del concerto al Quirinale, 31 maggio 2017",
+      "source_url": "https://www.quirinale.it/it/foto/maestro-giovanni-sollima-durante-prove-concerto-per-festa-nazionale-repubblica-onore-corpo-diplomatico-accreditato-presso-stato-italiano",
+      "author": "Presidenza della Repubblica — Quirinale",
+      "license": "Institutional non-commercial editorial use",
+      "license_url": "https://www.quirinale.it/it/pagine/guida-navigazione",
+      "credit": "Presidenza della Repubblica — Quirinale, 31 maggio 2017. Uso informativo non commerciale, immagine integra; consultare le condizioni della fonte.",
+      "media_kind": "documentary_photo",
+      "usage": "noncommercial_public_interest_information",
+      "preserve_integrity": true
+    },
+    "oa-c-000058": {
+      "name": "Orazio Sciortino",
+      "url": "https://www.oraziosciortino.com/wp-content/uploads/2025/07/fotogallery-Orazio-Sciortino-3-scaled.jpg",
+      "alt": "Ritratto ufficiale di Orazio Sciortino",
+      "source_url": "https://www.oraziosciortino.com/media/",
+      "author": "Marco Perulli",
+      "license": "Press and media use",
+      "license_url": "https://www.oraziosciortino.com/media/",
+      "credit": "© Marco Perulli — fotogalleria ufficiale di Orazio Sciortino, materiale per stampa e media.",
+      "media_kind": "portrait",
+      "usage": "press_and_media_editorial",
+      "preserve_integrity": true
+    }
+  }
+}
