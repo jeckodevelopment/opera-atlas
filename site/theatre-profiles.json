@@ -859,17 +859,25 @@
       "website": "https://teatro-bolzano.it/",
       "history": "La sala Studio fa parte del complesso del Teatro Comunale di Bolzano e ospita spettacoli in uno spazio distinto dalla sala principale. Nel marzo 2026 ha accolto il monodramma di David Lang nella stagione della Fondazione Haydn.",
       "source": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
-      "photo_status": "review_pending"
+      "photo_status": "verified",
+      "photo_url": "https://www.fondazioneteatro.bolzano.it/wp-content/uploads/2017/02/Teatro_Studio-Teatro_Comunale-1.jpg",
+      "photo_source_url": "https://www.fondazioneteatro.bolzano.it/le-nostre-sale/teatro-studio-teatro-comunale/",
+      "photo_credit": "Da Riz — Fondazione Teatro Comunale e Auditorium Bolzano",
+      "photo_license": "Diritti non specificati — immagine dal sito ufficiale"
     },
     "Trento|Sanbàpolis": {
       "city": "Trento",
       "name": "Sanbàpolis",
-      "address": "Via della Malpensada 80-88",
+      "address": "Via della Malpensada 82",
       "description": "Spazio teatrale di Trento in via della Malpensada.",
       "website": "https://www.haydn.it/",
       "history": "Sanbàpolis è uno spazio per spettacoli a Trento. Nel marzo 2026 la Fondazione Haydn vi ha presentato Note to a Friend di David Lang, in una replica distinta da quella di Bolzano.",
       "source": "https://www.haydn.it/eventi/note-to-a-friend-2",
-      "photo_status": "review_pending"
+      "photo_status": "verified",
+      "photo_url": "https://www.centrosantachiara.it/var/centrosantachiara/storage/images/_aliases/webpage_gallery_small_image/5/0/0/0/150005-1-ita-IT/MoniQue%20fSanb%C3%A0Polis%20web%202.jpg",
+      "photo_source_url": "https://www.centrosantachiara.it/it/spazi/teatri/teatro-sanbapolis-trento",
+      "photo_credit": "Centro Servizi Culturali Santa Chiara — galleria ufficiale",
+      "photo_license": "Diritti non specificati — immagine dal sito ufficiale"
     }
   }
 }
