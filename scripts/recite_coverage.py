@@ -18,6 +18,7 @@ from scripts.publish_catalog_v2 import ROOT, payload
 
 EVIDENCE = ROOT / "data/candidate-detail-evidence.json"
 OUT = ROOT / "public/catalog/recite-coverage.json"
+CANDIDATES = ROOT / "data/season-index-candidates.json"
 PROGRAMS = ROOT / "public/catalog/programs.json"
 
 # Explicit aliases only: never confuse Teatro Regio Torino with Regio Parma.
@@ -41,7 +42,7 @@ def normalized_url(value: str) -> str:
     return (parsed.hostname or "").lower().removeprefix("www.") + parsed.path.rstrip("/").lower()
 
 
-def detect(published: dict, observations: dict, programs: dict | None = None) -> dict:
+def detect(published: dict, observations: dict, programs: dict | None = None, candidates: dict | None = None) -> dict:
     # Only confirmed official dates with an identified physical venue qualify.
     # Index candidate count is NOT a performance count.
     state = defaultdict(lambda: {"published": set(), "observed": set(),
@@ -80,7 +81,11 @@ def detect(published: dict, observations: dict, programs: dict | None = None) ->
             s["published"].add((day, hour))
     # The same official performance can be found more than once or in a
     # multi-work programme: key by venue/date/time, not work title.
+    excluded = {item["id"] for item in (candidates or {}).get("candidates", [])
+                if item.get("status") == "excluded_nonopera"}
     for page in observations.get("evidence", []):
+        if page.get("candidate_id") in excluded:
+            continue
         if page.get("status") in {"excluded_nonopera", "invalid_source"}:
             continue
         seen = set()
@@ -148,7 +153,8 @@ def publish(check: bool = False) -> dict:
     published = json.loads(MANIFEST.read_text(encoding="utf-8"))
     observations = json.loads(EVIDENCE.read_text(encoding="utf-8"))
     programs = json.loads(PROGRAMS.read_text(encoding="utf-8"))
-    report = detect(published, observations, programs)
+    candidates = json.loads(CANDIDATES.read_text(encoding="utf-8"))
+    report = detect(published, observations, programs, candidates)
     expected = payload(report)
     if check:
         if not OUT.exists() or OUT.read_bytes() != expected:
