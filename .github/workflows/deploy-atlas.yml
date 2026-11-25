@@ -91,13 +91,13 @@ jobs:
           from urllib.request import Request, urlopen
           from html import unescape
           url = "https://opera.plus/atlas/trento/sanbapolis/"
-          photo = next(v for v in json.loads(Path("data/venue-directory.json").read_text())["venues"] if v["id"] == "oa-v-000072")
+          photo_url = "https://opera.plus/atlas/sanbapolis-platea.jpg"
           headers = {"User-Agent": "Mozilla/5.0", "Cache-Control": "no-cache"}
           with urlopen(Request(url, headers=headers), timeout=30) as r:
               assert r.status == 200
-              assert photo["photo_url"] in unescape(r.read().decode("utf-8")), "Published theatre page lacks current photo metadata"
-          with urlopen(Request(photo["photo_url"], headers=headers), timeout=30) as r:
-              assert r.status == 200 and r.headers.get_content_type().startswith("image/"), "Municipal image is not deliverable"
-              assert len(r.read(4096)) > 100, "Empty image"
+              assert photo_url in unescape(r.read().decode("utf-8")), "Published theatre page lacks current photo metadata"
+          with urlopen(Request(photo_url, headers=headers), timeout=30) as r:
+              assert r.status == 200 and r.headers.get_content_type() == "image/jpeg", "Local theatre image is not deliverable"
+              assert r.read(4096).startswith(b"\xff\xd8\xff"), "Invalid JPEG"
           print("Sanbàpolis: public page photo metadata and actual image response verified")
           PY
