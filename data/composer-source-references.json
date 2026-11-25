@@ -13,11 +13,21 @@
     },
     "oa-c-000008": {
       "name": "Arturo Dal Bianco",
-      "source_url": "https://www.bibliotecauniversitaria.ge.it/en/aggiornamenti/mostre-ed-eventi/eventi/briscola.html",
-      "source": "Biblioteca Universitaria di Genova — locandina Briscola (2025), fotografia non nominata",
+      "source_url": "https://www.pasqualeanfossi.it/calendario-eventi/briscola-2025/",
+      "source": "Associazione Culturale Pasquale Anfossi — biografia di Arturo Dal Bianco (2000), compositore di Briscola",
+      "identity_evidence": [
+        "https://scienzeumanistiche.unige.it/node/1308",
+        "https://www.fondazioneteatrococcia.it/stagione-26-io-ne-ho-viste-di-cose-5-novembre.html"
+      ],
+      "media_candidates": [
+        "https://www.bibliotecauniversitaria.ge.it/images/mostre_eventi/Briscola_del_14_aprile_2025.jpg"
+      ],
+      "media_review": "Poster with an unnamed photograph; do not extract or label it as an individual portrait.",
       "kind": "profile",
       "usage": "external_link_only",
-      "rights_status": "reuse_not_established"
+      "rights_status": "reuse_not_established",
+      "identity_status": "confirmed_by_named_sources",
+      "reviewed_on": "2026-11-25"
     },
     "oa-c-000012": {
       "name": "Carlo Galante",
@@ -70,18 +80,40 @@
     "oa-c-000040": {
       "name": "Giuseppe Guerrera",
       "source_url": "https://www.fondazioneteatrococcia.it/opera-nuovi-corti-del-coccia.html",
-      "source": "Fondazione Teatro Coccia (classe 1989; non il pianista omonimo nato nel 1991)",
+      "source": "Fondazione Teatro Coccia — Giuseppe Guerrera (1989), compositore del Barile di Amontillado; distinto da Giuseppe Guarrera",
+      "identity_evidence": [
+        "https://www.scuolateatromusicale.it/productions/professionali/musical-a-corte/",
+        "https://www.fondazioneteatrococcia.it/stagione-26-parlapiupiano-25-giugno.html"
+      ],
+      "media_candidates": [
+        "https://gottoweb.wordpress.com/2013/03/19/associazione-musicale-mandanici-1a-stagione-concertistica-citta-di-barcellona-p-g-in-scena-il-duo-beltrametti-poggi/"
+      ],
+      "media_review": "The article names Guerrera and Lia Santamaria in a caption for the 23 February 2013 concert; the exact photograph URL is not exposed by the retrieved page. Exclude Guarrera and unrelated visual artist results.",
       "kind": "profile",
       "usage": "external_link_only",
-      "rights_status": "reuse_not_established"
+      "rights_status": "reuse_not_established",
+      "identity_status": "confirmed_by_named_sources",
+      "reviewed_on": "2026-11-25"
     },
     "oa-c-000053": {
       "name": "Massimiliano Piscitello",
-      "source_url": "https://www.diocesifrosinone.it/prima-edizione-del-festival-del-creato/",
-      "source": "Diocesi di Frosinone — Festival del Creato 2024, galleria fotografica di Pietro Alviti",
+      "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-operitivo-turandot.html",
+      "source": "Fondazione Teatro Coccia — allievo AMO e autore della rielaborazione musicale per La principessa di ghiaccio",
+      "identity_evidence": [
+        "https://www.simc-italia.com/societa/soci-current/",
+        "https://www.diocesifrosinone.it/prima-edizione-del-festival-del-creato/",
+        "https://conservatorio-frosinone.it/notizie/news-2022-ottobre-concerto-nuove-creazioni.html"
+      ],
+      "media_candidates": [
+        "https://www.diocesifrosinone.it/prima-edizione-del-festival-del-creato/",
+        "https://pietroalviti.com/2024/05/28/festival-del-creato-i-giovani-cantano-la-bellezza-con-il-vescovo-al-conservatorio-di-frosinone/"
+      ],
+      "media_review": "Named composer at the 2024 Festival del Creato; the credited event gallery and recording have no verified individual still linked by name.",
       "kind": "profile",
       "usage": "external_link_only",
-      "rights_status": "reuse_not_established"
+      "rights_status": "reuse_not_established",
+      "identity_status": "confirmed_by_named_sources",
+      "reviewed_on": "2026-11-25"
     },
     "oa-c-000057": {
       "name": "Nicola Sani",
