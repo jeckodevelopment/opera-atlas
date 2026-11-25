@@ -1072,6 +1072,26 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     })
+    reconciled_2026.update({
+        "historical-2026-bologna-manzoni-samson-et-dalila": {
+            "title": "Samson et Dalila",
+            "composer": "Camille Saint-Saëns",
+            "venue": "Teatro Auditorium Manzoni",
+            "municipality": "Bologna",
+            "region": "Emilia-Romagna",
+            "source_url": "https://www.tcbo.it/evento/opera/samson-et-dalila-2026/",
+            "dates": [
+                [
+                    "2026-11-13",
+                    "20:00"
+                ],
+                [
+                    "2026-11-15",
+                    "16:00"
+                ]
+            ]
+        }
+    })
     reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
     permitted.update(reconciled_urls)
     events = []
