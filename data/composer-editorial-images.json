@@ -78,6 +78,58 @@
       "media_kind": "portrait",
       "usage": "furlati_press_material_editorial",
       "preserve_integrity": true
+    },
+    "oa-c-000002": {
+      "name": "Alessandro Solbiati",
+      "url": "https://levivier.ca/sites/default/files/styles/mt_member_photo/public/fiches-individuelles/Alessandro%20Solbiati.jpg.webp?itok=sA4aMc_A",
+      "alt": "Fotografia di Alessandro Solbiati pubblicata dalla fonte",
+      "source_url": "https://levivier.ca/en/artists/alessandro-solbiati",
+      "author": "Fotografo non indicato",
+      "license": "External editorial photograph — reuse rights not established",
+      "license_url": "https://levivier.ca/en/artists/alessandro-solbiati",
+      "credit": "Fotografo non indicato — Le Vivier. Immagine collegata alla fonte originale, nessuna licenza di riproduzione accertata.",
+      "media_kind": "portrait",
+      "usage": "public_source_editorial_link",
+      "preserve_integrity": true
+    },
+    "oa-c-000012": {
+      "name": "Carlo Galante",
+      "url": "https://images.rockol.it/jmc7MmYUoenwfYwoWFXuaGaMyFE%3D/1200x675/smart/rockol-img/img/foto/upload/carlo-galante.jpg",
+      "alt": "Fotografia di Carlo Galante pubblicata dalla fonte",
+      "source_url": "https://www.rockol.it/news-736812/il-disco-del-giorno-carlo-galante-yeliel",
+      "author": "Fotografo non indicato",
+      "license": "External editorial photograph — reuse rights not established",
+      "license_url": "https://www.rockol.it/news-736812/il-disco-del-giorno-carlo-galante-yeliel",
+      "credit": "Fotografo non indicato — Rockol. Immagine collegata alla fonte originale, nessuna licenza di riproduzione accertata.",
+      "media_kind": "portrait",
+      "usage": "public_source_editorial_link",
+      "preserve_integrity": true
+    },
+    "oa-c-000026": {
+      "name": "Francesco Filidei",
+      "url": "https://www.opera-comique.com/sites/default/files/styles/width_776px/public/2023-01/2023_bio_photos_Filidei%C2%A9Olivier-Roller_1620x1080.jpg.webp",
+      "alt": "Fotografia di Francesco Filidei pubblicata dalla fonte",
+      "source_url": "https://www.opera-comique.com/en/francesco-filidei",
+      "author": "Olivier Roller",
+      "license": "External editorial photograph — reuse rights not established",
+      "license_url": "https://www.opera-comique.com/en/francesco-filidei",
+      "credit": "Olivier Roller — Opéra-Comique. Immagine collegata alla fonte originale, nessuna licenza di riproduzione accertata.",
+      "media_kind": "portrait",
+      "usage": "public_source_editorial_link",
+      "preserve_integrity": true
+    },
+    "oa-c-000057": {
+      "name": "Nicola Sani",
+      "url": "https://finnegans.it/wp-content/uploads/2021/06/thumbnail-1.jpg",
+      "alt": "Fotografia di Nicola Sani pubblicata dalla fonte",
+      "source_url": "https://finnegans.it/veneto-contemporanea-unesposizione-di-suoni-e-linguaggi-testo-di-arianna-niero/",
+      "author": "OPV Press",
+      "license": "External editorial photograph — reuse rights not established",
+      "license_url": "https://finnegans.it/veneto-contemporanea-unesposizione-di-suoni-e-linguaggi-testo-di-arianna-niero/",
+      "credit": "OPV Press — Finnegans / OPV Press. Immagine collegata alla fonte originale, nessuna licenza di riproduzione accertata.",
+      "media_kind": "portrait",
+      "usage": "public_source_editorial_link",
+      "preserve_integrity": true
     }
   }
 }
