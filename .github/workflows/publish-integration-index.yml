@@ -12,6 +12,7 @@ on:
       - 'data/composer-registry.json'
       - 'data/composer-portraits.json'
       - 'data/composer-editorial-images.json'
+      - 'data/composer-source-references.json'
       - '.github/workflows/publish-integration-index.yml'
   schedule:
     - cron: '43 10 * * *'
