@@ -15,3 +15,7 @@ Le eventuali date già registrate nel circuito OperaLombardia non vengono modifi
 - Verificare `public/catalog/programs.json`: due componenti per programma, una sola recita di programma per data
 - Verificare `data/candidate-detail-health.json` dopo un nuovo refresh: il caso Brescia deve diventare `verified_composite_program`, se la pagina ufficiale conserva i crediti e gli orari
 - Nessun evento fittizio, nessun doppio conteggio della biglietteria; le schede canoniche delle opere non sono sostituite dal programma
+
+## Copertine dei programmi composti
+
+La grafica ufficiale dello spettacolo ha priorità, con ID del programma, URL della fonte ufficiale, credito e stato dei diritti. In assenza di grafica specifica, si usa la prima copertina autentica disponibile di una componente identificata tramite ID canonico; la didascalia distingue la copertina dell'opera da quella della produzione. Nessuna immagine generica o fittizia viene spacciata per manifesto. Il resolver condiviso serve homepage, dettaglio, In scena e festival; il prerender usa la stessa priorità per Open Graph. Il registro iniziale contiene i due dittici del Coccia e il dittico del Luglio Musicale Trapanese. Nessuna modifica alle recite o alle identità del repertorio.
