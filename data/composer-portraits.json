@@ -29,6 +29,21 @@
       "verified": true,
       "wikidata_id": "Q337343"
     },
+    "oa-c-000004": {
+      "verified": true,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Antonio_Cericola_dirige_l%27orchestra.jpg",
+      "alt": "Ritratto di Antonio Cericola",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Cericola_dirige_l%27orchestra.jpg",
+      "author": "Antonio Cericola (Arsmusica)",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Antonio_Cericola_dirige_l%27orchestra.jpg",
+      "credit": "Antonio Cericola (Arsmusica) — Wikimedia Commons — Public Domain (rilascio dell’autore)",
+      "commons_file": "Antonio Cericola dirige l'orchestra.jpg",
+      "wikidata_id": "Q3619404",
+      "reviewed_on": "2026-11-25",
+      "rights_evidence": "editorial_verified_pd_user",
+      "identity_evidence": "wikidata_p18"
+    },
     "oa-c-000005": {
       "alt": "Ritratto di Antonio Smareglia",
       "author": "Rudolf Krziwanek",
