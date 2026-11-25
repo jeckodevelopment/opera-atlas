@@ -2864,6 +2864,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-reggio-heure-espagnole:2026-05-03",
+      "starts_at": "2026-05-03T18:00:00+02:00",
+      "local_date": "2026-05-03",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "L’heure espagnole",
+      "composer": "Maurice Ravel",
+      "venue": "Teatro Ariosto",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande:2026-05-03",
       "starts_at": "2026-05-03T20:00:00+02:00",
       "local_date": "2026-05-03",
@@ -2879,6 +2897,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-reggio-heure-espagnole:2026-05-05",
+      "starts_at": "2026-05-05T20:00:00+02:00",
+      "local_date": "2026-05-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "L’heure espagnole",
+      "composer": "Maurice Ravel",
+      "venue": "Teatro Ariosto",
+      "municipality": "Reggio Emilia",
+      "region": "Emilia-Romagna",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/"
       ]
     },
     {

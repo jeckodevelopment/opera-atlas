@@ -1259,6 +1259,15 @@
       "alt": "Immagine ufficiale di La vita nuda",
       "kind": "official_production_image",
       "license": "Diritti riservati, immagine dal sito ufficiale"
+    },
+    "oa-w-000142": {
+      "work_id": "oa-w-000142",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/L'heure-espagnole-1911.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:L'heure-espagnole-1911.jpg",
+      "alt": "Disegni degli interpreti della prima rappresentazione di L’heure espagnole, Parigi, 1911.",
+      "credit": "Paul Charles Delaroche — Bibliothèque nationale de France / Wikimedia Commons",
+      "license": "Public domain (PDM 1.0)"
     }
   }
 }
