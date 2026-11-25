@@ -17,6 +17,34 @@ from scripts.discover_season_indexes import CONFIG,OUTPUT as CANDIDATES,validate
 from scripts.publish_catalog_v2 import REGISTRY,ROOT,slugify
 from scripts.daily_ingest import _write_atomic
 
+# Reviewed artwork is scoped to the permanent program ID and its official source.
+PROGRAM_ARTWORK = {
+    "oa-p-f017f07675f24fa5": {
+        "image_url": "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-26/1920x950_SIGNOR_BRUSCHINO.png",
+        "source_url": "https://www.fondazioneteatrococcia.it/stagione-26-dna-italia-azzardo-figlio-signor-bruschino.html",
+        "credit": "Fondazione Teatro Carlo Coccia di Novara",
+        "alt": "Grafica ufficiale di L’azzardo per un figlio / Il signor Bruschino",
+        "kind": "official_program_image",
+        "license": "Diritti non specificati — immagine dal sito ufficiale"
+    },
+    "oa-p-9837cf3a1cb8aa93": {
+        "image_url": "https://www.fondazioneteatrococcia.it/images/spettacoli/stagione-27/1920x950_L_AMOR_MIO.png",
+        "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
+        "credit": "Fondazione Teatro Carlo Coccia di Novara",
+        "alt": "Grafica ufficiale di L’amor mio / Il tabarro",
+        "kind": "official_program_image",
+        "license": "Diritti non specificati — immagine dal sito ufficiale"
+    },
+    "oa-p-dd7baa45131b35e4": {
+        "image_url": "https://www.lugliomusicale.it/public/360w/260617-lug-manifesti-generale-18.jpg",
+        "source_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/l-opera-forse-di-francesco-filidei-infinito-nero-di-salvatore-sciarrino/",
+        "credit": "Ente Luglio Musicale Trapanese",
+        "alt": "Manifesto ufficiale di L’opera (forse) / Infinito nero",
+        "kind": "official_program_image",
+        "license": "Diritti non specificati — immagine dal sito ufficiale"
+    }
+}
+
 OUTPUT=ROOT/"public"/"catalog"/"programs.json"
 REVIEWED_WORKS=ROOT/"data"/"reviewed-program-work-editorials.json"
 
@@ -159,6 +187,9 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
                    and date["local_date"] in {day for day,_ in p["dates"]}
                    for p in facts["productions"]):
                 raise ValueError("composite program already published as solo work")
+        artwork=PROGRAM_ARTWORK.get(program["id"])
+        if artwork and artwork["source_url"]==program["source_url"]:
+            program["artwork"]=dict(artwork)
         items.append(program)
     return {"schema_version":1,"programs":items}
 
