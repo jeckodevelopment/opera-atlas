@@ -110,6 +110,21 @@ class IntegrationIndexTests(unittest.TestCase):
                 if expected:
                     self.assertEqual(image["credit"], "Example credit")
 
+    def test_documentary_image_kind_is_preserved(self):
+        photo = {"verified": True, "url": "https://upload.wikimedia.org/example.jpg",
+                 "alt": "Two performers in concert",
+                 "source_url": "https://commons.wikimedia.org/wiki/File:Example.jpg",
+                 "author": "Photographer", "license": "CC-BY-SA-3.0",
+                 "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+                 "credit": "Photographer — documentary photograph",
+                 "media_kind": "documentary_photo"}
+        self.write("data/composer-portraits.json", {"schema_version": 1, "portraits": {"c1": photo}})
+        result = build(self.root, REV)["entities"]
+        self.assertEqual(next(e for e in result if e["type"] == "composer")["image"]["media_kind"], "documentary_photo")
+        photo["media_kind"] = "unknown"
+        self.write("data/composer-portraits.json", {"schema_version": 1, "portraits": {"c1": photo}})
+        self.assertIsNone(next(e for e in build(self.root, REV)["entities"] if e["type"] == "composer")["image"])
+
     def test_unknown_portrait_id_rejected(self):
         self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
         with self.assertRaises(ValueError):
