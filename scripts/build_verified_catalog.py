@@ -1112,6 +1112,50 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     })
+    reconciled_2026.update({
+        "historical-2026-bolzano-note-to-a-friend": {
+            "title": "Note to a Friend",
+            "composer": "David Lang",
+            "venue": "Teatro Studio",
+            "municipality": "Bolzano",
+            "region": "Trentino-Alto Adige",
+            "source_url": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
+            "dates": [
+                [
+                    "2026-03-07",
+                    "20:00"
+                ]
+            ]
+        },
+        "historical-2026-trento-note-to-a-friend": {
+            "title": "Note to a Friend",
+            "composer": "David Lang",
+            "venue": "Sanbàpolis",
+            "municipality": "Trento",
+            "region": "Trentino-Alto Adige",
+            "source_url": "https://www.haydn.it/eventi/note-to-a-friend-2",
+            "dates": [
+                [
+                    "2026-03-11",
+                    "20:00"
+                ]
+            ]
+        },
+        "historical-2026-taormina-nabucco": {
+            "title": "Nabucco",
+            "composer": "Giuseppe Verdi",
+            "venue": "Teatro Antico di Taormina",
+            "municipality": "Taormina",
+            "region": "Sicilia",
+            "source_url": "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html",
+            "dates": [
+                [
+                    "2026-08-07",
+                    "21:00"
+                ]
+            ]
+        }
+    })
     reconciled_urls = {row["source_url"] for row in reconciled_2026.values()}
     permitted.update(reconciled_urls)
     events = []
