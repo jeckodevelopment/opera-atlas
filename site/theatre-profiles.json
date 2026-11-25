@@ -244,7 +244,7 @@
       "address": "Piazza Verdi 40",
       "description": "Una grande struttura scenica contemporanea a Bolzano, dove convivono danza, musica e teatro nel contesto culturale plurilingue della città.",
       "website": "https://www.haydn.it/",
-      "history": "Il Teatro Comunale di Bolzano è un moderno complesso scenico che accoglie spettacoli musicali, danza e prosa. La sua attività si intreccia con la vita culturale plurilingue della città.",
+      "history": "Il Teatro Comunale di Bolzano è un moderno complesso scenico che accoglie spettacoli musicali, danza e prosa. Comprende la Sala Grande e il Teatro Studio, sala da 214 posti destinata anche a spettacoli di prosa, opera da camera e concerti. Nel marzo 2026 il Teatro Studio ha ospitato Note to a Friend di David Lang.",
       "source": "https://www.fondazioneteatro.bolzano.it/come-raggiungerci/",
       "photo_file": "Teatro Comunale Bolzano.jpg",
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Comunale_Bolzano.jpg",
@@ -851,20 +851,6 @@
       "photo_status": "verified",
       "photo_caption": "Facciata di Villa Pisani Bonetti a Bagnolo di Lonigo, progettata da Andrea Palladio"
     },
-    "Bolzano|Teatro Studio": {
-      "city": "Bolzano",
-      "name": "Teatro Studio",
-      "address": "Piazza Verdi 40",
-      "description": "Sala Studio del Teatro Comunale di Bolzano.",
-      "website": "https://teatro-bolzano.it/",
-      "history": "La sala Studio fa parte del complesso del Teatro Comunale di Bolzano e ospita spettacoli in uno spazio distinto dalla sala principale. Nel marzo 2026 ha accolto il monodramma di David Lang nella stagione della Fondazione Haydn.",
-      "source": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
-      "photo_status": "verified",
-      "photo_url": "https://www.fondazioneteatro.bolzano.it/wp-content/uploads/2017/02/Teatro_Studio-Teatro_Comunale-1.jpg",
-      "photo_source_url": "https://www.fondazioneteatro.bolzano.it/le-nostre-sale/teatro-studio-teatro-comunale/",
-      "photo_credit": "Da Riz — Fondazione Teatro Comunale e Auditorium Bolzano",
-      "photo_license": "Diritti non specificati — immagine dal sito ufficiale"
-    },
     "Trento|Sanbàpolis": {
       "city": "Trento",
       "name": "Sanbàpolis",
@@ -874,9 +860,9 @@
       "history": "Sanbàpolis è uno spazio per spettacoli a Trento. Nel marzo 2026 la Fondazione Haydn vi ha presentato Note to a Friend di David Lang, in una replica distinta da quella di Bolzano.",
       "source": "https://www.haydn.it/eventi/note-to-a-friend-2",
       "photo_status": "verified",
-      "photo_url": "https://www.centrosantachiara.it/var/centrosantachiara/storage/images/_aliases/webpage_gallery_small_image/5/0/0/0/150005-1-ita-IT/MoniQue%20fSanb%C3%A0Polis%20web%202.jpg",
-      "photo_source_url": "https://www.centrosantachiara.it/it/spazi/teatri/teatro-sanbapolis-trento",
-      "photo_credit": "Centro Servizi Culturali Santa Chiara — galleria ufficiale",
+      "photo_url": "https://www.cultura.trentino.it/var/001/storage/images/media/images/teatro-sanbapolis/16381731-1-ita-IT/Teatro-Sanbapolis_imagefullwide.jpg",
+      "photo_source_url": "https://www.cultura.trentino.it/Luoghi/Tutti-i-luoghi-della-cultura/Teatri-e-sale/Teatro-Sanbapolis",
+      "photo_credit": "Trentino Cultura — portale della Provincia autonoma di Trento",
       "photo_license": "Diritti non specificati — immagine dal sito ufficiale"
     }
   }
