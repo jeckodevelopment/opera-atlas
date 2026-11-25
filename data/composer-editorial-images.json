@@ -39,6 +39,19 @@
       "media_kind": "portrait",
       "usage": "press_material_noncommercial_editorial",
       "preserve_integrity": true
+    },
+    "oa-c-000032": {
+      "name": "Gaia Aloisi",
+      "url": "https://www.giovaniartisti.it/sites/default/files/styles/artisti_full/public/artisti/aloisi-gaia/gaia-aloisi0.png?h=5871340f&itok=uJcpNeYj",
+      "alt": "Ritratto di Gaia Aloisi pubblicato nel profilo professionale GAI",
+      "source_url": "https://www.giovaniartisti.it/artista/aloisi-gaia",
+      "author": "Fotografo non indicato nel profilo GAI",
+      "license": "GAI reproduction terms",
+      "license_url": "https://www.giovaniartisti.it/note-legali",
+      "credit": "Gaia Aloisi — Associazione per il Circuito dei Giovani Artisti Italiani (GAI); fotografo non indicato. Riproduzione secondo le note legali della fonte, senza modifiche; rispettare eventuali diritti di terzi.",
+      "media_kind": "portrait",
+      "usage": "gai_noncommercial_editorial",
+      "preserve_integrity": true
     }
   }
 }
