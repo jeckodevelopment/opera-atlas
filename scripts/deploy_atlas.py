@@ -52,7 +52,7 @@ def stage_sanbapolis_photo(folder: Path, *, opener=None) -> None:
                 data = response.read(3_000_001)
                 if (response.status != 200 or response.headers.get_content_type() != "image/jpeg"
                     or not 1024 < len(data) <= 3_000_000
-                    or not data.startswith(b"\\xff\\xd8\\xff") or not data.endswith(b"\\xff\\xd9")):
+                    or not data.startswith(b"\xff\xd8\xff") or not data.endswith(b"\xff\xd9")):
                     continue
             (folder / SANBAPOLIS_ASSET).write_bytes(data)
             print("Staged credited Sanbàpolis JPEG:", len(data), "bytes")
