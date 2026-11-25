@@ -44,7 +44,7 @@ class LeccePoliteamaTests(unittest.TestCase):
         key="lecce-politeama-opera-2026"
         alternate=INDEX+"?categoria=1"
         links=''.join(f'<a href="{DETAIL(i)}">Opera</a>' for i in (1147,1148,1149))
-        for failure,expected in ((FetchUnavailable("page unavailable"),"success"),
+        for failure,expected in ((FetchUnavailable("page unavailable"),"partial_pagination"),
                                  (AccessDenied("robots denied"),"unavailable_or_invalid")):
             requested=[]
             def fetch(db, *, source_id, url, network_enabled):
@@ -55,8 +55,8 @@ class LeccePoliteamaTests(unittest.TestCase):
             candidates,health=scan(config,{"schema_version":1,"candidates":[]},
                                    fetcher=fetch,network_enabled=True,source_keys={key})
             self.assertEqual(health[0]["status"],expected)
-            self.assertEqual(requested,[INDEX,alternate] if expected=="success" else [INDEX])
-            self.assertEqual(len(candidates["candidates"]),3 if expected=="success" else 0)
+            self.assertEqual(requested,[INDEX,alternate] if expected=="partial_pagination" else [INDEX])
+            self.assertEqual(len(candidates["candidates"]),3 if expected=="partial_pagination" else 0)
 
     def test_six_performances_and_attribution(self):
         self.assertEqual(parse_detail(html(1147),url=DETAIL(1147)),
