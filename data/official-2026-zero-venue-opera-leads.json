@@ -804,6 +804,49 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "venue_id": "oa-v-000071",
+      "venue": "Teatro Studio",
+      "city": "Bolzano",
+      "title": "Note to a Friend",
+      "composer": "David Lang",
+      "official_url": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
+      "dates": [
+        [
+          "2026-03-07",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-v-000072",
+      "venue": "Sanbàpolis",
+      "city": "Trento",
+      "title": "Note to a Friend",
+      "composer": "David Lang",
+      "official_url": "https://www.haydn.it/eventi/note-to-a-friend-2",
+      "dates": [
+        [
+          "2026-03-11",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "venue_id": "oa-vd-000061",
+      "venue": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "official_url": "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html",
+      "dates": [
+        [
+          "2026-08-07",
+          "21:00"
+        ]
+      ],
+      "evidence_note": "Press announcement quoting organizer; corroborated by post-event report; not primary source."
     }
   ]
 }

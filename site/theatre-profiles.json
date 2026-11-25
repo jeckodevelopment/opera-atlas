@@ -850,6 +850,26 @@
       "photo_license": "CC BY-SA 3.0",
       "photo_status": "verified",
       "photo_caption": "Facciata di Villa Pisani Bonetti a Bagnolo di Lonigo, progettata da Andrea Palladio"
+    },
+    "Bolzano|Teatro Studio": {
+      "city": "Bolzano",
+      "name": "Teatro Studio",
+      "address": "Piazza Verdi 40",
+      "description": "Sala Studio del Teatro Comunale di Bolzano.",
+      "website": "https://teatro-bolzano.it/",
+      "history": "La sala Studio fa parte del complesso del Teatro Comunale di Bolzano e ospita spettacoli in uno spazio distinto dalla sala principale. Nel marzo 2026 ha accolto il monodramma di David Lang nella stagione della Fondazione Haydn.",
+      "source": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
+      "photo_status": "review_pending"
+    },
+    "Trento|Sanbàpolis": {
+      "city": "Trento",
+      "name": "Sanbàpolis",
+      "address": "Via della Malpensada 80-88",
+      "description": "Spazio teatrale di Trento in via della Malpensada.",
+      "website": "https://www.haydn.it/",
+      "history": "Sanbàpolis è uno spazio per spettacoli a Trento. Nel marzo 2026 la Fondazione Haydn vi ha presentato Note to a Friend di David Lang, in una replica distinta da quella di Bolzano.",
+      "source": "https://www.haydn.it/eventi/note-to-a-friend-2",
+      "photo_status": "review_pending"
     }
   }
 }

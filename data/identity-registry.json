@@ -911,6 +911,13 @@
       "title": "L’heure espagnole",
       "composer": "Maurice Ravel",
       "authority_url": "https://ressources.ircam.fr/en/work/l%27heure-espagnole"
+    },
+    "note to a friend|david lang": {
+      "id": "oa-w-000143",
+      "slug": "note-to-a-friend",
+      "title": "Note to a Friend",
+      "composer": "David Lang",
+      "authority_url": "https://davidlangmusic.com/music/note-to-a-friend/"
     }
   },
   "venues": {
@@ -1474,6 +1481,30 @@
       "name": "Teatro all'Antica",
       "city": "Sabbioneta",
       "region": "Lombardia"
+    },
+    "Bolzano|Teatro Studio": {
+      "id": "oa-v-000071",
+      "slug": "teatro-studio",
+      "city_slug": "bolzano",
+      "name": "Teatro Studio",
+      "city": "Bolzano",
+      "region": "Trentino-Alto Adige"
+    },
+    "Trento|Sanbàpolis": {
+      "id": "oa-v-000072",
+      "slug": "sanbapolis",
+      "city_slug": "trento",
+      "name": "Sanbàpolis",
+      "city": "Trento",
+      "region": "Trentino-Alto Adige"
+    },
+    "Taormina|Teatro Antico di Taormina": {
+      "id": "oa-v-000073",
+      "slug": "teatro-antico-di-taormina",
+      "city_slug": "taormina",
+      "name": "Teatro Antico di Taormina",
+      "city": "Taormina",
+      "region": "Sicilia"
     }
   },
   "stagings": {
@@ -4252,6 +4283,30 @@
       "venue_id": "oa-v-000031",
       "slug": "heure-espagnole",
       "source_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/",
+      "season": "2026"
+    },
+    "historical-2026-bolzano-note-to-a-friend": {
+      "id": "oa-s-000354",
+      "work_id": "oa-w-000143",
+      "venue_id": "oa-v-000071",
+      "slug": "note-to-a-friend",
+      "source_url": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
+      "season": "2026"
+    },
+    "historical-2026-trento-note-to-a-friend": {
+      "id": "oa-s-000355",
+      "work_id": "oa-w-000143",
+      "venue_id": "oa-v-000072",
+      "slug": "note-to-a-friend",
+      "source_url": "https://www.haydn.it/eventi/note-to-a-friend-2",
+      "season": "2026"
+    },
+    "historical-2026-taormina-nabucco": {
+      "id": "oa-s-000356",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000073",
+      "slug": "nabucco",
+      "source_url": "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html",
       "season": "2026"
     }
   },
@@ -12314,6 +12369,24 @@
       "staging_id": "oa-s-000353",
       "original_date": "2026-05-05",
       "source_url": "https://www.iteatri.re.it/spettacolo/lheure-espagnole-nuova/"
+    },
+    "historical-2026-bolzano-note-to-a-friend|2026-03-07": {
+      "id": "oa-r-001371",
+      "staging_id": "oa-s-000354",
+      "original_date": "2026-03-07",
+      "source_url": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend"
+    },
+    "historical-2026-trento-note-to-a-friend|2026-03-11": {
+      "id": "oa-r-001372",
+      "staging_id": "oa-s-000355",
+      "original_date": "2026-03-11",
+      "source_url": "https://www.haydn.it/eventi/note-to-a-friend-2"
+    },
+    "historical-2026-taormina-nabucco|2026-08-07": {
+      "id": "oa-r-001373",
+      "staging_id": "oa-s-000356",
+      "original_date": "2026-08-07",
+      "source_url": "https://www.ansa.it/sicilia/notizie/2026/08/02/al-festival-lirico-dei-teatri-di-pietra-uno-spettacolo-in-lis_f66b5f5c-4d48-40b5-84f1-b9cbb03acd6b.html"
     }
   },
   "reserved_works": {

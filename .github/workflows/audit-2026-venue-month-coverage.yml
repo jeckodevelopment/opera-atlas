@@ -1,4 +1,4 @@
-name: Audit 2026 — 72 venues by 12 months
+name: Audit 2026 — 74 venues by 12 months
 
 on:
   pull_request:
@@ -49,16 +49,16 @@ jobs:
           from pathlib import Path
           p=Path('public/diagnostics/atlas-2026-venue-month-coverage.json')
           d=json.loads(p.read_text(encoding='utf-8'))
-          assert d['cell_count']==864 and d['venue_count']==72
+          assert d['cell_count']==888 and d['venue_count']==74
           assert d['read_only'] and not d['catalog_updated']
           assert d['complete_venue_months']==0
           assert all(not row['complete_month_verified'] for row in d['rows'])
           assert d['observed_2026_opera_showtimes']>0
           assert len(d['venue_audit_priorities'])==d['venue_count']
           assert d['zero_published_venue_count']==sum(d['zero_published_by_calendar_status'].values())
-          assert d['official_2026_opera_lead_count']==106
+          assert d['official_2026_opera_lead_count']==109
           assert d['official_lead_venues_with_zero_published']==0
-          assert d['official_unpublished_opera_lead_count']<=106
+          assert d['official_unpublished_opera_lead_count']<=109
           assert all(not p['missing_recite_certified'] for p in d['venue_audit_priorities'])
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -76,7 +76,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093a # v4
+      - uses: actions/download-artifact@d3f86a109a0bac45b974a628896c90dbdf5c8093a # v4
         with:
           name: atlas-2026-national-72x12-coverage
           path: public/diagnostics

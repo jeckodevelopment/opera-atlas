@@ -55,8 +55,8 @@ class FullTheatreProfileTests(unittest.TestCase):
         pending=[v for v in self.directory if v.get("photo_status")=="review_pending"]
         # Newly verified Tonino Pardo has no independently licensed photo yet.
         # Never substitute an image from a different physical theatre.
-        self.assertEqual(pending,[])
-        self.assertEqual(len(photos),len(self.directory)-3)
+        self.assertEqual({v['id'] for v in pending},{'oa-v-000071','oa-v-000072'})
+        self.assertEqual(len(photos),len(self.directory)-5)
         external=[v for v in self.directory if v.get("photo_url")]
         self.assertEqual({v["name"] for v in external},{"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo"})
         self.assertEqual(next(v for v in external if v["name"]=="Teatro Politeama Greco")["photo_license"],"CC BY 4.0")
@@ -67,7 +67,7 @@ class FullTheatreProfileTests(unittest.TestCase):
             self.assertTrue(venue["photo_source_url"].startswith(
                 "https://commons.wikimedia.org/wiki/File:"),venue["id"])
             self.assertTrue(venue.get("photo_credit"),venue["id"])
-        without=[v for v in self.directory if not v.get("photo_file")]
+        without=[v for v in self.directory if not v.get("photo_file") and v.get("photo_status")!="review_pending"]
         self.assertEqual({v["name"] for v in without},
                          {"Teatro Politeama Greco","Teatro Nazionale","Teatro M° Tonino Pardo"})
         self.assertEqual(next(v for v in without if v["name"]=="Teatro Politeama Greco")["photo_status"],"verified")
