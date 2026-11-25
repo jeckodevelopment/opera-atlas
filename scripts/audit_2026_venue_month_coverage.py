@@ -86,7 +86,7 @@ def validated_venue_leads(document, venues):
         "oa-vd-000060": ("Sabbioneta", "Teatro all'Antica", "www.comune.sabbioneta.mn.it"),
         "oa-vd-000022": ("Rovigo", "Teatro Sociale", "www.comune.rovigo.it"),
         "oa-vd-000056": ("Roma", "Teatro Nazionale", "www.operaroma.it"),
-        "oa-v-000071": ("Bolzano", "Teatro Studio", "teatro-bolzano.it"),
+        "oa-vd-000023": ("Bolzano", "Teatro Comunale di Bolzano", "teatro-bolzano.it"),
         "oa-v-000072": ("Trento", "Sanbàpolis", "www.haydn.it"),
         "oa-vd-000061": ("Taormina", "Teatro Antico di Taormina", "www.ansa.it"),
         "oa-v-000031": ("Reggio Emilia", "Teatro Ariosto", "www.iteatri.re.it"),
@@ -162,8 +162,8 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
         venue_leads={"schema_version":1,"year":2026,"records":[]}
     verified_leads=validated_venue_leads(venue_leads,venue_rows)
 
-    if len(venue_rows) != 74 or len({v["id"] for v in venue_rows}) != len(venue_rows):
-        raise ValueError("expected 74 distinct reviewed venue IDs")
+    if len(venue_rows) != 73 or len({v["id"] for v in venue_rows}) != len(venue_rows):
+        raise ValueError("expected 73 distinct reviewed venue IDs")
     by_id = {v["id"]: v for v in venue_rows}
     registry_venues = registry["venues"]
     registry_to_directory = {}
