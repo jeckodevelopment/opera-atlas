@@ -620,6 +620,9 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
     """Return all changes in memory; skip anomalies without publishing bad data."""
     from scripts.consolidate_goldoni_mascagni import consolidate
     facts,registry,consolidated_stagings=consolidate(facts,registry)
+    from scripts.haydn_replica_identity import consolidate as consolidate_tito, reviewed_match, same_replica_group
+    facts,registry,tito_migrated=consolidate_tito(facts,registry)
+    consolidated_stagings+=tito_migrated
     next_facts=copy.deepcopy(facts)
     next_registry=copy.deepcopy(registry)
     approved=set(authorized_urls)
@@ -866,6 +869,17 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                     or dict(shared[0]["dates"])[day]==hour
                     for day,hour in dates.items()):
                 exact=shared
+        # Haydn explicitly identifies replica groups on individual ticket pages.
+        # Both independent observations must agree on the group and identity.
+        if not exact and key=="haydn-rolling-opera":
+            shared=[p for p in colliding if reviewed_match(item,p,dates)
+                    or any(same_replica_group(item,other,p,dates)
+                           for other in evidence.get("evidence",[]))]
+            if len(shared)>1:
+                issues.append({"candidate_id":cid,"reason":"ambiguous_haydn_replica_group"})
+                continue
+            if len(shared)==1:
+                exact=shared
         # Distinct official productions of the same opera in the same
         # theatre are legitimate (e.g. two different Aida stagings at
         # Verona). Preserve the original route and assign an edition URL
@@ -924,6 +938,13 @@ def promote(facts:dict, registry:dict, evidence:dict, candidates:dict,
                 sources.add(production["source_url"])
                 sources.add(url)
                 staging["supporting_source_urls"]=sorted(sources)
+                if key=="haydn-rolling-opera" and (reviewed_match(item,production,dates)
+                    or any(same_replica_group(item,other,production,dates)
+                           for other in evidence.get("evidence",[]))):
+                    tickets=production.setdefault("ticket_source_urls",
+                        {day:production["source_url"] for day,_ in production["dates"]})
+                    for day in dates:
+                        tickets.setdefault(day,url)
         else:
             # One season document can announce several separate works.
             # The immutable staging identity must therefore include the
