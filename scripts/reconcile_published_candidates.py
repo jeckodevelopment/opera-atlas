@@ -217,6 +217,40 @@ def verified_haydn_cronaca_urls(manifest:dict,detail:dict)->set[str]:
     return matches
 
 
+def verified_haydn_replica_urls(manifest:dict,detail:dict)->set[str]:
+    """Close a replica candidate only if its exact verified ticket and time are published."""
+    import re
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    from scripts.publish_catalog_v2 import normalized
+    from opera_atlas.haydn_rolling_opera import eligible_detail
+    verified=set()
+    for row in detail.get("evidence",[]):
+        url=row.get("source_url","")
+        events=row.get("event_facts",[])
+        if (row.get("source_key")!="haydn-rolling-opera"
+            or row.get("status")!="needs_editorial_review" or not eligible_detail(url)
+            or not re.fullmatch(r"[0-9a-f]{64}",str(row.get("content_sha256","")))
+            or len(events)!=1):continue
+        fact=events[0]
+        try:
+            stamp=datetime.fromisoformat(fact["starts_at"])
+            if stamp.tzinfo is None:continue
+            local=stamp.astimezone(ZoneInfo("Europe/Rome"))
+            day=fact["date"]
+            if local.date().isoformat()!=day:continue
+            clock=local.strftime("%H:%M")
+        except (KeyError,ValueError,TypeError):continue
+        matches=[p for p in manifest.get("productions",[])
+                 if p.get("ticket_source_urls",{}).get(day)==url
+                 and normalized(p["title"])==normalized(fact.get("event_title",""))
+                 and normalized(p["composer"])==normalized(fact.get("composer",""))
+                 and p["venue"]==fact.get("venue")
+                 and dict(p["dates"]).get(day)==clock]
+        if len(matches)==1:verified.add(url)
+    return verified
+
+
 def verified_livorno_dido_programme_urls(manifest:dict,detail:dict)->set[str]:
     """Match a second official Dido ticket URL to the one published staging.
 
@@ -545,6 +579,7 @@ def run(*,check:bool=False):
     published.update(verified_livorno_recital_urls(manifest,detail))
     published.update(verified_livorno_dido_programme_urls(manifest,detail))
     published.update(verified_haydn_cronaca_urls(manifest,detail))
+    published.update(verified_haydn_replica_urls(manifest,detail))
     cagliari_2027=verified_cagliari_2027_brochure_urls()
     programs_path=ROOT/"public"/"catalog"/"programs.json"
     programs=json.loads(programs_path.read_text(encoding="utf-8")) if programs_path.exists() else {"programs":[]}
