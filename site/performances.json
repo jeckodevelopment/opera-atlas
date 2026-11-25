@@ -5546,6 +5546,24 @@
       ]
     },
     {
+      "id": "curated:historical-2026-sabbioneta-orfeo:2026-09-19",
+      "starts_at": "2026-09-19T20:30:00+02:00",
+      "local_date": "2026-09-19",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "L'Orfeo",
+      "composer": "Claudio Monteverdi",
+      "venue": "Teatro all'Antica",
+      "municipality": "Sabbioneta",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.sabbioneta.mn.it/index.php/it/news/2043432"
+      ]
+    },
+    {
       "id": "curated:auto-59b4a6e5b8f0087f:2026-09-20",
       "starts_at": "2026-09-20T17:00:00+02:00",
       "local_date": "2026-09-20",
@@ -7688,6 +7706,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/il-quinto-moschettiere-2/"
+      ]
+    },
+    {
+      "id": "curated:historical-2026-sabbioneta-il-barbiere-di-siviglia:2026-11-14",
+      "starts_at": "2026-11-14T20:30:00+01:00",
+      "local_date": "2026-11-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro all'Antica",
+      "municipality": "Sabbioneta",
+      "region": "Lombardia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.comune.sabbioneta.mn.it/it/news/il-barbiere-di-siviglia-al-teatro-allantica"
       ]
     },
     {
