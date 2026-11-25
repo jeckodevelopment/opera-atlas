@@ -148,6 +148,18 @@ def load_editorial_media(root, composers):
             "www.oraziosciortino.com", "/wp-content/uploads/",
             "https://www.oraziosciortino.com/media/", "Press and media use"),
     }
+    # The press photo is served from a newspaper CDN, not the article host.
+    # Pin the complete reviewed asset and source, including transformation query.
+    furlati_asset = "https://immagini.unionesarda.it/version/c%3AZDhmNzY0ODctMTg0MS00%3AMTkzOWEyZTAtY2I4OC00/image.webp?f=3%3A2&q=0.75&w=3840"
+    furlati_source = "https://www.unionesarda.it/cultura/creuza-de-ma-chiude-la-sua-19-edizione-a-cagliari-due-giorni-di-cinema-muto-e-musica-dal-vivo-f1duczxa"
+    # Explicit project opt-in to source-hosted editorial links; not a reuse licence.
+    public_source_pins = {
+        "oa-c-000019": ("Diana Buscemi", "https://kirart.org/wp-content/uploads/2018/02/GALLERY1-683x1024.jpg", "https://kirart.org/team/diana-buscemi/", "Fotografo non indicato"),
+        "oa-c-000002": ("Alessandro Solbiati", "https://levivier.ca/sites/default/files/styles/mt_member_photo/public/fiches-individuelles/Alessandro%20Solbiati.jpg.webp?itok=sA4aMc_A", "https://levivier.ca/en/artists/alessandro-solbiati", "Fotografo non indicato"),
+        "oa-c-000012": ("Carlo Galante", "https://images.rockol.it/jmc7MmYUoenwfYwoWFXuaGaMyFE%3D/1200x675/smart/rockol-img/img/foto/upload/carlo-galante.jpg", "https://www.rockol.it/news-736812/il-disco-del-giorno-carlo-galante-yeliel", "Fotografo non indicato"),
+        "oa-c-000026": ("Francesco Filidei", "https://www.opera-comique.com/sites/default/files/styles/width_776px/public/2023-01/2023_bio_photos_Filidei%C2%A9Olivier-Roller_1620x1080.jpg.webp", "https://www.opera-comique.com/en/francesco-filidei", "Olivier Roller"),
+        "oa-c-000057": ("Nicola Sani", "https://finnegans.it/wp-content/uploads/2021/06/thumbnail-1.jpg", "https://finnegans.it/veneto-contemporanea-unesposizione-di-suoni-e-linguaggi-testo-di-arianna-niero/", "OPV Press"),
+    }
     result = {}
     fields = ("url", "alt", "source_url", "author", "license", "license_url",
               "credit", "media_kind", "usage")
@@ -156,6 +168,26 @@ def load_editorial_media(root, composers):
                 and record.get("name") == composers[key]["name"], "Editorial image identity mismatch")
         require(all(isinstance(record.get(k), str) and record[k].strip() for k in fields),
                 "Missing editorial image fields")
+        if record["usage"] == "public_source_editorial_link":
+            require(public_source_pins.get(key) == (record["name"], record["url"], record["source_url"], record["author"])
+                    and record["license"] == "External editorial photograph — reuse rights not established"
+                    and record["license_url"] == record["source_url"]
+                    and record["media_kind"] == "portrait"
+                    and record.get("preserve_integrity") is True,
+                    "External editorial source identity or attribution mismatch")
+            result[key] = {**{k: record[k] for k in fields}, "preserve_integrity": True,
+                           "rights_status": "reuse_not_established"}
+            continue
+        if record["usage"] == "furlati_press_material_editorial":
+            require(key == "oa-c-000016" and record["name"] == "Daniele Furlati"
+                    and record["url"] == furlati_asset and record["source_url"] == furlati_source
+                    and record["license_url"] == furlati_source
+                    and record["license"] == "Press material (editorial source)"
+                    and record["media_kind"] == "portrait"
+                    and record.get("preserve_integrity") is True,
+                    "Furlati press image identity or source mismatch")
+            result[key] = {**{k: record[k] for k in fields}, "preserve_integrity": True}
+            continue
         provider = providers.get(record["usage"])
         require(provider is not None and record.get("preserve_integrity") is True
                 and record["media_kind"] in {"portrait", "documentary_photo"}, "Invalid editorial usage")
