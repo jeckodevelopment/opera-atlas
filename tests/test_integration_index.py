@@ -157,6 +157,23 @@ class IntegrationIndexTests(unittest.TestCase):
         self.assertEqual(next(e for e in entities if e["type"] == "composer")["image"]["media_kind"], "archival_document")
         self.assertIsNone(next(e for e in entities if e["type"] == "opera")["image"])
 
+    def test_gai_editorial_derivative_query_is_pinned(self):
+        photo = {"name": "Composer", "url": "https://www.giovaniartisti.it/sites/default/files/styles/artisti_full/public/artisti/aloisi-gaia/gaia-aloisi0.png?h=5871340f&itok=uJcpNeYj",
+                 "alt": "Profile portrait", "source_url": "https://www.giovaniartisti.it/artista/aloisi-gaia",
+                 "author": "Not specified", "credit": "GAI",
+                 "license": "GAI reproduction terms",
+                 "license_url": "https://www.giovaniartisti.it/note-legali",
+                 "media_kind": "portrait", "usage": "gai_noncommercial_editorial",
+                 "preserve_integrity": True}
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"c1": photo}})
+        composer = next(e for e in build(self.root, REV)["entities"] if e["type"] == "composer")
+        self.assertIsNone(composer["image"])
+        self.assertEqual(composer["editorial_image"]["url"], photo["url"])
+        photo["url"] += "&redirect=evil.example"
+        self.write("data/composer-editorial-images.json", {"schema_version": 1, "images": {"c1": photo}})
+        with self.assertRaises(ValueError):
+            build(self.root, REV)
+
     def test_unknown_portrait_id_rejected(self):
         self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
         with self.assertRaises(ValueError):
