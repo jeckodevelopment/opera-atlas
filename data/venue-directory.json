@@ -1215,7 +1215,8 @@
       "photo_file": "Teatro Antico di Taormina.jpg",
       "photo_source_url": "https://commons.wikimedia.org/wiki/File:Teatro_Antico_di_Taormina.jpg",
       "photo_credit": "Maria Iaria — Wikimedia Commons, CC BY-SA 4.0",
-      "photo_license": "CC BY-SA 4.0"
+      "photo_license": "CC BY-SA 4.0",
+      "canonical_venue_id": "oa-v-000073"
     },
     {
       "id": "oa-v-000062",
@@ -1385,6 +1386,36 @@
       "photo_license": "CC BY-SA 3.0",
       "photo_status": "verified",
       "photo_caption": "Facciata di Villa Pisani Bonetti a Bagnolo di Lonigo, progettata da Andrea Palladio"
+    },
+    {
+      "id": "oa-v-000071",
+      "canonical_venue_id": "oa-v-000071",
+      "name": "Teatro Studio",
+      "city": "Bolzano",
+      "region": "Trentino-Alto Adige",
+      "slug": "teatro-studio",
+      "city_slug": "bolzano",
+      "website": "https://teatro-bolzano.it/",
+      "source_url": "https://teatro-bolzano.it/spettacoli/1945-note-to-a-friend",
+      "description": "Sala Studio del Teatro Comunale di Bolzano.",
+      "address": "Piazza Verdi 40",
+      "monitoring_status": "anagrafica_censita",
+      "calendar_status": "not_acquired"
+    },
+    {
+      "id": "oa-v-000072",
+      "canonical_venue_id": "oa-v-000072",
+      "name": "Sanbàpolis",
+      "city": "Trento",
+      "region": "Trentino-Alto Adige",
+      "slug": "sanbapolis",
+      "city_slug": "trento",
+      "website": "https://www.haydn.it/",
+      "source_url": "https://www.haydn.it/eventi/note-to-a-friend-2",
+      "description": "Spazio teatrale di Trento in via della Malpensada.",
+      "address": "Via della Malpensada 80-88",
+      "monitoring_status": "anagrafica_censita",
+      "calendar_status": "not_acquired"
     }
   ],
   "related_organizations": [
