@@ -187,6 +187,23 @@ window.OperaAtlasImages=Object.freeze((()=>{
          fallbackSrc:null,kind:"archival_work_image"}
       : {src:"",alt:"Immagine autentica non disponibile",kind:"unavailable"};
   }
+  function program(event){
+    // Only verified component identities can supply a repertoire fallback.
+    const alternatives=(event?.program_components||[]).filter(c=>c.work_id)
+      .map(c=>work({...c,work_slug:normalize(c.title),work_route_slug:c.work_route_slug}))
+      .filter(a=>a.src && a.sourceUrl && a.kind!=="unavailable");
+    const fallback=alternatives[0];
+    const art=event?.program_artwork;
+    if(art?.kind==="official_program_image" && art.credit && art.source_url &&
+       event?.sources?.includes(art.source_url) && /^https:\/\//.test(art.image_url) &&
+       /^https:\/\//.test(art.source_url)){
+      return {src:art.image_url,alt:art.alt||"Grafica ufficiale del programma",
+        fallbackSrc:fallback?.src||null,sourceUrl:art.source_url,credit:art.credit,
+        license:art.license||"",kind:art.kind,fallbackArtwork:fallback};
+    }
+    return fallback ? {...fallback,alt:"Immagine di una delle opere del programma: "+fallback.alt,
+      kind:"program_component_image"} : {src:"",alt:"Immagine autentica del programma non disponibile",kind:"unavailable"};
+  }
   function venue(event){
     const city=commune(event?.municipality||event?.city);
     const title=event?.venue||event?.name||("Teatro di "+(event?.municipality||event?.city||"Italia"));
@@ -274,5 +291,5 @@ window.OperaAtlasImages=Object.freeze((()=>{
     hero.addEventListener("error",()=>{hero.src=poster("Il teatro d'opera");},{once:true});
   }
   bindHero();
-  return {work,venue,festival,element,poster,load,FILES,WORKS};
+  return {work,program,venue,festival,element,poster,load,FILES,WORKS};
 })());
