@@ -13,6 +13,10 @@
       {
         "composer": "Maurice Ravel",
         "work_id": "oa-w-000142"
+      },
+      {
+        "composer": "David Lang",
+        "work_id": "oa-w-000143"
       }
     ]
   },
@@ -579,6 +583,18 @@
     {
       "aliases": [],
       "composer_ids": [],
+      "editorial_image": {
+        "alt": "Ritratto di Gaia Aloisi pubblicato nel profilo professionale GAI",
+        "author": "Fotografo non indicato nel profilo GAI",
+        "credit": "Gaia Aloisi — Associazione per il Circuito dei Giovani Artisti Italiani (GAI); fotografo non indicato. Riproduzione secondo le note legali della fonte, senza modifiche; rispettare eventuali diritti di terzi.",
+        "license": "GAI reproduction terms",
+        "license_url": "https://www.giovaniartisti.it/note-legali",
+        "media_kind": "portrait",
+        "preserve_integrity": true,
+        "source_url": "https://www.giovaniartisti.it/artista/aloisi-gaia",
+        "url": "https://www.giovaniartisti.it/sites/default/files/styles/artisti_full/public/artisti/aloisi-gaia/gaia-aloisi0.png?h=5871340f&itok=uJcpNeYj",
+        "usage": "gai_noncommercial_editorial"
+      },
       "fallback_image": null,
       "id": "oa-c-000032",
       "image": null,
@@ -4415,6 +4431,17 @@
       "title": "L’heure espagnole",
       "type": "opera",
       "url": "https://opera.plus/atlas/opere/heure-espagnole/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-w-000143",
+      "image": null,
+      "subtitle": "David Lang",
+      "title": "Note to a Friend",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/note-to-a-friend/"
     },
     {
       "aliases": [],
@@ -9373,6 +9400,44 @@
       "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
+      "id": "oa-s-000354",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Studio",
+      "title": "Note to a Friend",
+      "type": "production",
+      "url": "https://opera.plus/atlas/bolzano/teatro-studio/note-to-a-friend/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-s-000355",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Sanbàpolis",
+      "title": "Note to a Friend",
+      "type": "production",
+      "url": "https://opera.plus/atlas/trento/sanbapolis/note-to-a-friend/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000356",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Antico di Taormina",
+      "title": "Nabucco",
+      "type": "production",
+      "url": "https://opera.plus/atlas/taormina/teatro-antico-di-taormina/nabucco/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
       "id": "oa-v-000001",
       "image": null,
       "subtitle": "Torino",
@@ -10143,23 +10208,45 @@
       "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
+      "id": "oa-v-000071",
+      "image": null,
+      "subtitle": "Bolzano",
+      "title": "Teatro Studio",
+      "type": "theatre",
+      "url": "https://opera.plus/atlas/bolzano/teatro-studio/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-v-000072",
+      "image": null,
+      "subtitle": "Trento",
+      "title": "Sanbàpolis",
+      "type": "theatre",
+      "url": "https://opera.plus/atlas/trento/sanbapolis/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-v-000073",
+      "image": null,
+      "subtitle": "Taormina",
+      "title": "Teatro Antico di Taormina",
+      "type": "theatre",
+      "url": "https://opera.plus/atlas/taormina/teatro-antico-di-taormina/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
       "id": "oa-vd-000023",
       "image": null,
       "subtitle": "Bolzano",
       "title": "Teatro Comunale di Bolzano",
       "type": "theatre",
       "url": "https://opera.plus/atlas/bolzano/teatro-comunale-di-bolzano/"
-    },
-    {
-      "aliases": [],
-      "composer_ids": [],
-      "fallback_image": null,
-      "id": "oa-vd-000061",
-      "image": null,
-      "subtitle": "Taormina",
-      "title": "Teatro Antico di Taormina",
-      "type": "theatre",
-      "url": "https://opera.plus/atlas/taormina/teatro-antico-di-taormina/"
     },
     {
       "aliases": [],
@@ -10174,5 +10261,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "91d34d9182fbe510568051c29e142fd7d1e54a88"
+  "source_revision": "13774cb1b7260e070c0a1b130dcce2c29bd969af"
 }
