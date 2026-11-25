@@ -5,6 +5,10 @@
       {
         "composer": "Nino Rota",
         "work_id": "oa-w-000139"
+      },
+      {
+        "composer": "Matteo D’Amico",
+        "work_id": "oa-w-000141"
       }
     ]
   },
@@ -495,7 +499,15 @@
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-c-000030",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Franz Lehár",
+        "author": "Ludwig Gutmann",
+        "credit": "Ludwig Gutmann — Wikimedia Commons — Public Domain",
+        "license": "Public Domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lehar_Ferenc.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Lehar_Ferenc.jpg/960px-Lehar_Ferenc.jpg"
+      },
       "subtitle": null,
       "title": "Franz Lehár",
       "type": "composer",
@@ -3203,7 +3215,15 @@
       ],
       "fallback_image": null,
       "id": "oa-w-000094",
-      "image": null,
+      "image": {
+        "alt": "Ritratto di Franz Lehár",
+        "author": "Ludwig Gutmann",
+        "credit": "Ludwig Gutmann — Wikimedia Commons — Public Domain",
+        "license": "Public Domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lehar_Ferenc.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Lehar_Ferenc.jpg/960px-Lehar_Ferenc.jpg"
+      },
       "subtitle": "Franz Lehár",
       "title": "La vedova allegra",
       "type": "opera",
@@ -4071,6 +4091,17 @@
       "title": "La fanciulla del West",
       "type": "opera",
       "url": "https://opera.plus/atlas/opere/la-fanciulla-del-west/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-w-000141",
+      "image": null,
+      "subtitle": "Matteo D’Amico",
+      "title": "La vita nuda",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/la-vita-nuda/"
     },
     {
       "aliases": [],
@@ -8975,6 +9006,32 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000064"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000350",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Sociale",
+      "title": "Pagliacci",
+      "type": "production",
+      "url": "https://opera.plus/atlas/rovigo/teatro-sociale/pagliacci/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-s-000351",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Nazionale",
+      "title": "La vita nuda",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-nazionale/la-vita-nuda/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -9778,5 +9835,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "11299650ece982e88f3bf4e5373b2214aca0fd85"
+  "source_revision": "e3226b10407ff8ae96bdf4e99b6b0dde1bd30857"
 }
