@@ -11,6 +11,7 @@ on:
       - 'scripts/publish_integration_index.py'
       - 'data/composer-registry.json'
       - 'data/composer-portraits.json'
+      - 'data/composer-editorial-images.json'
       - '.github/workflows/publish-integration-index.yml'
   schedule:
     - cron: '43 10 * * *'
