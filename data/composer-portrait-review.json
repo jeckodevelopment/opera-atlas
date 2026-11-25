@@ -367,11 +367,6 @@
       "name": "Francesco Filidei",
       "reason": "no_image"
     },
-    "oa-c-000027": {
-      "candidates": [],
-      "name": "Francesco Provenzale",
-      "reason": "no_image"
-    },
     "oa-c-000032": {
       "candidates": [],
       "name": "Gaia Aloisi",
@@ -380,11 +375,6 @@
     "oa-c-000038": {
       "candidates": [],
       "name": "Giovanni Sollima",
-      "reason": "no_image"
-    },
-    "oa-c-000039": {
-      "candidates": [],
-      "name": "Giuseppe Balducci",
       "reason": "no_image"
     },
     "oa-c-000040": {
@@ -413,6 +403,6 @@
       "reason": "no_image"
     }
   },
-  "updated_at": "2026-11-25T08:22:16Z",
-  "verified": 55
+  "updated_at": "2026-11-25T08:39:54Z",
+  "verified": 57
 }

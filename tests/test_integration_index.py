@@ -145,6 +145,18 @@ class IntegrationIndexTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build(self.root, REV)
 
+    def test_archival_document_is_composer_only(self):
+        photo = {"verified": True, "url": "https://upload.wikimedia.org/example.jpg",
+                 "alt": "Historical score, not a portrait",
+                 "source_url": "https://commons.wikimedia.org/wiki/File:Example.jpg",
+                 "author": "Composer", "license": "Public Domain",
+                 "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+                 "credit": "Autograph score", "media_kind": "archival_document"}
+        self.write("data/composer-portraits.json", {"schema_version": 1, "portraits": {"c1": photo}})
+        entities = build(self.root, REV)["entities"]
+        self.assertEqual(next(e for e in entities if e["type"] == "composer")["image"]["media_kind"], "archival_document")
+        self.assertIsNone(next(e for e in entities if e["type"] == "opera")["image"])
+
     def test_unknown_portrait_id_rejected(self):
         self.write("data/composer-portraits.json", {"schema_version":1,"portraits":{"unknown":{}}})
         with self.assertRaises(ValueError):

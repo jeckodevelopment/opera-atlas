@@ -95,7 +95,7 @@ def verified_image(record):
     if not all(safe_https(record[k]) for k in ("url", "source_url", "license_url")):
         return None
     kind = record.get("media_kind", "portrait")
-    if kind not in {"portrait", "documentary_photo"}:
+    if kind not in {"portrait", "documentary_photo", "archival_document"}:
         return None
     return {**{k: record[k] for k in fields}, "media_kind": kind}
 
@@ -116,6 +116,10 @@ def load_editorial_media(root, composers):
     require(doc.get("schema_version") == 1 and isinstance(doc.get("images"), dict),
             "Invalid editorial image registry")
     providers = {
+        "press_material_noncommercial_editorial": (
+            "ownetic.com", "/news/wp-content/uploads/2013/02/",
+            "https://ownetic.com/news/2013/02/14/memories-of-the-east-zygmunt-krauze-chiny/",
+            "Press material (editorial source)"),
         "noncommercial_public_interest_information": (
             "www.quirinale.it", "/APIRed/api/media/static/",
             "https://www.quirinale.it/it/pagine/guida-navigazione",
@@ -181,7 +185,8 @@ def build(root, revision):
         refs = mapping.get(key, [])
         # New works must not prevent publication or acquire guessed composer IDs.
         add("opera", key, w["title"], w["composer"], route("opere", w.get("route_slug") or w["slug"]), refs,
-            image=portraits.get(refs[0]) if len(refs) == 1 else None)
+            image=(portraits.get(refs[0]) if len(refs) == 1 and
+                   (portraits.get(refs[0]) or {}).get("media_kind") != "archival_document" else None))
     directory = index(read(catalog / "venue-directory.json")["venues"])
     seen_venues = set()
     for key, v in directory.items():
