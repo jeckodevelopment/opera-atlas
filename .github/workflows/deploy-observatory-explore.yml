@@ -1,0 +1,42 @@
+name: Publish Opera+ Explore
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'observatory-explore/**'
+      - 'scripts/deploy_observatory_explore.py'
+      - '.github/workflows/deploy-observatory-explore.yml'
+permissions:
+  contents: read
+concurrency:
+  group: opera-plus-observatory-explore-sftp
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment:
+      name: opera-plus-atlas
+      url: https://opera.plus/osservatorio/esplora/
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7cc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Tests and publication boundary checks
+        run: python -m unittest discover -s tests -v
+      - name: Install SFTP transport
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Publish only Explore via SFTP and verify HTTPS
+        env:
+          ATLAS_SFTP_HOST: ${{ secrets.ATLAS_SFTP_HOST }}
+          ATLAS_SFTP_USERNAME: ${{ secrets.ATLAS_SFTP_USERNAME }}
+          ATLAS_SFTP_REMOTE_DIR: ${{ secrets.ATLAS_SFTP_REMOTE_DIR }}
+          ATLAS_SFTP_PASSWORD: ${{ secrets.ATLAS_SFTP_PASSWORD }}
+          ATLAS_SFTP_PRIVATE_KEY: ${{ secrets.ATLAS_SFTP_PRIVATE_KEY }}
+          ATLAS_SFTP_KEY_PASSPHRASE: ${{ secrets.ATLAS_SFTP_KEY_PASSPHRASE }}
+          ATLAS_SFTP_KNOWN_HOSTS: ${{ secrets.ATLAS_SFTP_KNOWN_HOSTS }}
+        run: python -m scripts.deploy_observatory_explore
