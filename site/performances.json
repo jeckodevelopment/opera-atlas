@@ -2,6 +2,114 @@
   "schema_version": 1,
   "performances": [
     {
+      "id": "curated:auto-7475e8c93d79a7a7:2025-11-01",
+      "starts_at": "2025-11-01T20:15:00+01:00",
+      "local_date": "2025-11-01",
+      "time_known": true,
+      "time_label": "20:15",
+      "status": "announced",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/tosca-11/"
+      ]
+    },
+    {
+      "id": "curated:auto-e65064ef731a3097:2025-11-27",
+      "starts_at": "2025-11-27T17:00:00+01:00",
+      "local_date": "2025-11-27",
+      "time_known": true,
+      "time_label": "17:00",
+      "status": "announced",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lohengrin/"
+      ]
+    },
+    {
+      "id": "curated:auto-e65064ef731a3097:2025-11-30",
+      "starts_at": "2025-11-30T16:30:00+01:00",
+      "local_date": "2025-11-30",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lohengrin/"
+      ]
+    },
+    {
+      "id": "curated:auto-e65064ef731a3097:2025-12-02",
+      "starts_at": "2025-12-02T18:00:00+01:00",
+      "local_date": "2025-12-02",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lohengrin/"
+      ]
+    },
+    {
+      "id": "curated:auto-e65064ef731a3097:2025-12-05",
+      "starts_at": "2025-12-05T18:00:00+01:00",
+      "local_date": "2025-12-05",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lohengrin/"
+      ]
+    },
+    {
+      "id": "curated:auto-e65064ef731a3097:2025-12-07",
+      "starts_at": "2025-12-07T16:30:00+01:00",
+      "local_date": "2025-12-07",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/lohengrin/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-lucca-teatro-del-giglio-giacomo-puccini-nabucco:2026-01-04",
       "starts_at": "2026-01-04T18:00:00+01:00",
       "local_date": "2026-01-04",
@@ -38,6 +146,78 @@
       ]
     },
     {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-13",
+      "starts_at": "2026-01-13T20:00:00+01:00",
+      "local_date": "2026-01-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-14",
+      "starts_at": "2026-01-14T20:00:00+01:00",
+      "local_date": "2026-01-14",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-15",
+      "starts_at": "2026-01-15T20:00:00+01:00",
+      "local_date": "2026-01-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-16",
+      "starts_at": "2026-01-16T20:00:00+01:00",
+      "local_date": "2026-01-16",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-como-teatro-sociale-don-quichotte:2026-01-16",
       "starts_at": "2026-01-16T20:00:00+01:00",
       "local_date": "2026-01-16",
@@ -53,6 +233,24 @@
       "longitude": null,
       "sources": [
         "https://teatrosocialecomo.it/spettacoli/don-quichotte/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-17",
+      "starts_at": "2026-01-17T18:00:00+01:00",
+      "local_date": "2026-01-17",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
       ]
     },
     {
@@ -89,6 +287,42 @@
       "longitude": null,
       "sources": [
         "https://www.arena.it/magazine/news/don-giovanni-il-capolavoro-di-mozart-inaugura-la-stagione-2026-del-teatro-filarmonico/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-18",
+      "starts_at": "2026-01-18T16:30:00+01:00",
+      "local_date": "2026-01-18",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-20",
+      "starts_at": "2026-01-20T20:00:00+01:00",
+      "local_date": "2026-01-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
       ]
     },
     {
@@ -164,6 +398,24 @@
       ]
     },
     {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-21",
+      "starts_at": "2026-01-21T20:00:00+01:00",
+      "local_date": "2026-01-21",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-21",
       "starts_at": "2026-01-21T20:00:00+01:00",
       "local_date": "2026-01-21",
@@ -218,6 +470,24 @@
       ]
     },
     {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-22",
+      "starts_at": "2026-01-22T20:00:00+01:00",
+      "local_date": "2026-01-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-22",
       "starts_at": "2026-01-22T20:00:00+01:00",
       "local_date": "2026-01-22",
@@ -251,6 +521,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-23",
+      "starts_at": "2026-01-23T20:00:00+01:00",
+      "local_date": "2026-01-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
       ]
     },
     {
@@ -362,6 +650,24 @@
       ]
     },
     {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-24",
+      "starts_at": "2026-01-24T18:00:00+01:00",
+      "local_date": "2026-01-24",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-torino-la-cenerentola:2026-01-25",
       "starts_at": "2026-01-25T15:00:00+01:00",
       "local_date": "2026-01-25",
@@ -431,6 +737,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-simon-boccanegra/"
+      ]
+    },
+    {
+      "id": "curated:auto-97eff96f73c9d064:2026-01-25",
+      "starts_at": "2026-01-25T16:30:00+01:00",
+      "local_date": "2026-01-25",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-boheme-4/"
       ]
     },
     {
@@ -3908,6 +4232,24 @@
       ]
     },
     {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-21",
+      "starts_at": "2026-06-21T19:00:00+02:00",
+      "local_date": "2026-06-21",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-carmen:2026-06-22",
       "starts_at": "2026-06-22T20:00:00+02:00",
       "local_date": "2026-06-22",
@@ -3926,6 +4268,24 @@
       ]
     },
     {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-23",
+      "starts_at": "2026-06-23T20:00:00+02:00",
+      "local_date": "2026-06-23",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-carmen:2026-06-23",
       "starts_at": "2026-06-23T20:00:00+02:00",
       "local_date": "2026-06-23",
@@ -3941,6 +4301,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+      ]
+    },
+    {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-24",
+      "starts_at": "2026-06-24T20:00:00+02:00",
+      "local_date": "2026-06-24",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
       ]
     },
     {
@@ -3977,6 +4355,24 @@
       "longitude": null,
       "sources": [
         "https://www.liricocagliari.it/archivio/it/spettacoli/2026_lirica.html"
+      ]
+    },
+    {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-25",
+      "starts_at": "2026-06-25T20:00:00+02:00",
+      "local_date": "2026-06-25",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
       ]
     },
     {
@@ -4031,6 +4427,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
+    },
+    {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-26",
+      "starts_at": "2026-06-26T20:00:00+02:00",
+      "local_date": "2026-06-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
       ]
     },
     {
@@ -4106,6 +4520,24 @@
       ]
     },
     {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-27",
+      "starts_at": "2026-06-27T18:00:00+02:00",
+      "local_date": "2026-06-27",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-cagliari-turandot:2026-06-27",
       "starts_at": "2026-06-27T19:00:00+02:00",
       "local_date": "2026-06-27",
@@ -4160,6 +4592,24 @@
       ]
     },
     {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-28",
+      "starts_at": "2026-06-28T16:30:00+02:00",
+      "local_date": "2026-06-28",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-cagliari-turandot:2026-06-28",
       "starts_at": "2026-06-28T17:00:00+02:00",
       "local_date": "2026-06-28",
@@ -4211,6 +4661,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-venere-e-adone/"
+      ]
+    },
+    {
+      "id": "curated:auto-1faca6ee4cc8b648:2026-06-30",
+      "starts_at": "2026-06-30T20:00:00+02:00",
+      "local_date": "2026-06-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/la-traviata-12/"
       ]
     },
     {
@@ -4340,6 +4808,24 @@
       ]
     },
     {
+      "id": "curated:auto-b71caef92f53a984:2026-07-12",
+      "starts_at": "2026-07-12T21:00:00+02:00",
+      "local_date": "2026-07-12",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Circo Massimo",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/aida-6/"
+      ]
+    },
+    {
       "id": "curated:auto-f8122a2cac310944:2026-07-12",
       "starts_at": "2026-07-12T21:00:00+02:00",
       "local_date": "2026-07-12",
@@ -4394,6 +4880,24 @@
       ]
     },
     {
+      "id": "curated:auto-b71caef92f53a984:2026-07-15",
+      "starts_at": "2026-07-15T21:00:00+02:00",
+      "local_date": "2026-07-15",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Circo Massimo",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/aida-6/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-macerata-nabucco:2026-07-17",
       "starts_at": "2026-07-17T21:00:00+02:00",
       "local_date": "2026-07-17",
@@ -4445,6 +4949,24 @@
       "longitude": null,
       "sources": [
         "https://www.marialisadecarolis.it/opera-lirica.aspx?id=371"
+      ]
+    },
+    {
+      "id": "curated:auto-b71caef92f53a984:2026-07-18",
+      "starts_at": "2026-07-18T21:00:00+02:00",
+      "local_date": "2026-07-18",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Circo Massimo",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/aida-6/"
       ]
     },
     {
@@ -4535,6 +5057,24 @@
       "longitude": null,
       "sources": [
         "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/i-capuleti-e-i-montecchi/"
+      ]
+    },
+    {
+      "id": "curated:auto-b71caef92f53a984:2026-07-22",
+      "starts_at": "2026-07-22T21:00:00+02:00",
+      "local_date": "2026-07-22",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Circo Massimo",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/aida-6/"
       ]
     },
     {
@@ -4664,6 +5204,24 @@
       ]
     },
     {
+      "id": "curated:auto-b71caef92f53a984:2026-07-26",
+      "starts_at": "2026-07-26T21:00:00+02:00",
+      "local_date": "2026-07-26",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Circo Massimo",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/aida-6/"
+      ]
+    },
+    {
       "id": "curated:auto-ff9fb11ad20bd9d7:2026-07-26",
       "starts_at": "2026-07-26T21:00:00+02:00",
       "local_date": "2026-07-26",
@@ -4733,6 +5291,24 @@
       "longitude": null,
       "sources": [
         "https://www.festivaldellavalleditria.it/spettacolo/carmen/2026-07-25"
+      ]
+    },
+    {
+      "id": "curated:auto-b71caef92f53a984:2026-07-28",
+      "starts_at": "2026-07-28T21:00:00+02:00",
+      "local_date": "2026-07-28",
+      "time_known": true,
+      "time_label": "21:00",
+      "status": "announced",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Circo Massimo",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/aida-6/"
       ]
     },
     {
@@ -5564,6 +6140,42 @@
       ]
     },
     {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-15",
+      "starts_at": "2026-09-15T19:00:00+02:00",
+      "local_date": "2026-09-15",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-16",
+      "starts_at": "2026-09-16T19:00:00+02:00",
+      "local_date": "2026-09-16",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
+      ]
+    },
+    {
       "id": "curated:auto-207df538679e0065:2026-09-16",
       "starts_at": "2026-09-16T20:30:00+02:00",
       "local_date": "2026-09-16",
@@ -5582,6 +6194,24 @@
       ]
     },
     {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-17",
+      "starts_at": "2026-09-17T19:00:00+02:00",
+      "local_date": "2026-09-17",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
+      ]
+    },
+    {
       "id": "curated:auto-207df538679e0065:2026-09-18",
       "starts_at": "2026-09-18T18:00:00+02:00",
       "local_date": "2026-09-18",
@@ -5597,6 +6227,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-18",
+      "starts_at": "2026-09-18T19:00:00+02:00",
+      "local_date": "2026-09-18",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
       ]
     },
     {
@@ -5636,6 +6284,24 @@
       ]
     },
     {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-19",
+      "starts_at": "2026-09-19T18:00:00+02:00",
+      "local_date": "2026-09-19",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-sabbioneta-orfeo:2026-09-19",
       "starts_at": "2026-09-19T20:30:00+02:00",
       "local_date": "2026-09-19",
@@ -5651,6 +6317,24 @@
       "longitude": null,
       "sources": [
         "https://www.comune.sabbioneta.mn.it/index.php/it/news/2043432"
+      ]
+    },
+    {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-20",
+      "starts_at": "2026-09-20T16:30:00+02:00",
+      "local_date": "2026-09-20",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
       ]
     },
     {
@@ -5705,6 +6389,42 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+      ]
+    },
+    {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-22",
+      "starts_at": "2026-09-22T19:00:00+02:00",
+      "local_date": "2026-09-22",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-e0585c924c7d06c0:2026-09-23",
+      "starts_at": "2026-09-23T19:00:00+02:00",
+      "local_date": "2026-09-23",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
       ]
     },
     {
@@ -6214,6 +6934,42 @@
       ]
     },
     {
+      "id": "curated:auto-03fa95f1d0382ffe:2026-10-11",
+      "starts_at": "2026-10-11T19:00:00+02:00",
+      "local_date": "2026-10-11",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/falstaff/"
+      ]
+    },
+    {
+      "id": "curated:auto-03fa95f1d0382ffe:2026-10-13",
+      "starts_at": "2026-10-13T20:00:00+02:00",
+      "local_date": "2026-10-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/falstaff/"
+      ]
+    },
+    {
       "id": "curated:regio-cavalleria-rusticana-2026:2026-10-13",
       "starts_at": "2026-10-13T20:00:00+02:00",
       "local_date": "2026-10-13",
@@ -6247,6 +7003,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/pagliacci"
+      ]
+    },
+    {
+      "id": "curated:auto-03fa95f1d0382ffe:2026-10-15",
+      "starts_at": "2026-10-15T18:00:00+02:00",
+      "local_date": "2026-10-15",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/falstaff/"
       ]
     },
     {
@@ -6466,6 +7240,24 @@
       ]
     },
     {
+      "id": "curated:auto-03fa95f1d0382ffe:2026-10-18",
+      "starts_at": "2026-10-18T16:30:00+02:00",
+      "local_date": "2026-10-18",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/falstaff/"
+      ]
+    },
+    {
       "id": "curated:auto-59f9f415de71b2b4:2026-10-18",
       "starts_at": "2026-10-18T18:00:00+02:00",
       "local_date": "2026-10-18",
@@ -6517,6 +7309,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/il-trovatore-verdi-18-27-ottobre/"
+      ]
+    },
+    {
+      "id": "curated:auto-03fa95f1d0382ffe:2026-10-20",
+      "starts_at": "2026-10-20T20:00:00+02:00",
+      "local_date": "2026-10-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/falstaff/"
       ]
     },
     {
@@ -7363,6 +8173,24 @@
       "longitude": null,
       "sources": [
         "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
+      ]
+    },
+    {
+      "id": "curated:auto-03fa95f1d0382ffe:2026-11-01",
+      "starts_at": "2026-11-01T20:15:00+01:00",
+      "local_date": "2026-11-01",
+      "time_known": true,
+      "time_label": "20:15",
+      "status": "announced",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/falstaff/"
       ]
     },
     {

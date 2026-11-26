@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-24",
+  "reviewed_on": "2026-11-26",
   "editorial_policy": "Only individual recite explicitly shown by official source; unknown hours remain null; no third-party copy.",
   "productions": [
     {
@@ -9167,6 +9167,267 @@
         [
           "2026-09-26",
           "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-03fa95f1d0382ffe",
+      "title": "Falstaff",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/falstaff/",
+      "dates": [
+        [
+          "2026-10-11",
+          "19:00"
+        ],
+        [
+          "2026-10-13",
+          "20:00"
+        ],
+        [
+          "2026-10-15",
+          "18:00"
+        ],
+        [
+          "2026-10-18",
+          "16:30"
+        ],
+        [
+          "2026-10-20",
+          "20:00"
+        ],
+        [
+          "2026-11-01",
+          "20:15"
+        ]
+      ]
+    },
+    {
+      "key": "auto-1faca6ee4cc8b648",
+      "title": "La traviata",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/la-traviata-12/",
+      "dates": [
+        [
+          "2026-06-21",
+          "19:00"
+        ],
+        [
+          "2026-06-23",
+          "20:00"
+        ],
+        [
+          "2026-06-24",
+          "20:00"
+        ],
+        [
+          "2026-06-25",
+          "20:00"
+        ],
+        [
+          "2026-06-26",
+          "20:00"
+        ],
+        [
+          "2026-06-27",
+          "18:00"
+        ],
+        [
+          "2026-06-28",
+          "16:30"
+        ],
+        [
+          "2026-06-30",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-7475e8c93d79a7a7",
+      "title": "Tosca",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/tosca-11/",
+      "dates": [
+        [
+          "2025-11-01",
+          "20:15"
+        ]
+      ]
+    },
+    {
+      "key": "auto-97eff96f73c9d064",
+      "title": "La bohème",
+      "composer": "Giacomo Puccini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/la-boheme-4/",
+      "dates": [
+        [
+          "2026-01-13",
+          "20:00"
+        ],
+        [
+          "2026-01-14",
+          "20:00"
+        ],
+        [
+          "2026-01-15",
+          "20:00"
+        ],
+        [
+          "2026-01-16",
+          "20:00"
+        ],
+        [
+          "2026-01-17",
+          "18:00"
+        ],
+        [
+          "2026-01-18",
+          "16:30"
+        ],
+        [
+          "2026-01-20",
+          "20:00"
+        ],
+        [
+          "2026-01-21",
+          "20:00"
+        ],
+        [
+          "2026-01-22",
+          "20:00"
+        ],
+        [
+          "2026-01-23",
+          "20:00"
+        ],
+        [
+          "2026-01-24",
+          "18:00"
+        ],
+        [
+          "2026-01-25",
+          "16:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-b71caef92f53a984",
+      "title": "Aida",
+      "composer": "Giuseppe Verdi",
+      "venue": "Circo Massimo",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/aida-6/",
+      "dates": [
+        [
+          "2026-07-12",
+          "21:00"
+        ],
+        [
+          "2026-07-15",
+          "21:00"
+        ],
+        [
+          "2026-07-18",
+          "21:00"
+        ],
+        [
+          "2026-07-22",
+          "21:00"
+        ],
+        [
+          "2026-07-26",
+          "21:00"
+        ],
+        [
+          "2026-07-28",
+          "21:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-e0585c924c7d06c0",
+      "title": "Le nozze di Figaro",
+      "composer": "Wolfgang Amadeus Mozart",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/",
+      "dates": [
+        [
+          "2026-09-15",
+          "19:00"
+        ],
+        [
+          "2026-09-16",
+          "19:00"
+        ],
+        [
+          "2026-09-17",
+          "19:00"
+        ],
+        [
+          "2026-09-18",
+          "19:00"
+        ],
+        [
+          "2026-09-19",
+          "18:00"
+        ],
+        [
+          "2026-09-20",
+          "16:30"
+        ],
+        [
+          "2026-09-22",
+          "19:00"
+        ],
+        [
+          "2026-09-23",
+          "19:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-e65064ef731a3097",
+      "title": "Lohengrin",
+      "composer": "Richard Wagner",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/lohengrin/",
+      "dates": [
+        [
+          "2025-11-27",
+          "17:00"
+        ],
+        [
+          "2025-11-30",
+          "16:30"
+        ],
+        [
+          "2025-12-02",
+          "18:00"
+        ],
+        [
+          "2025-12-05",
+          "18:00"
+        ],
+        [
+          "2025-12-07",
+          "16:30"
         ]
       ]
     }

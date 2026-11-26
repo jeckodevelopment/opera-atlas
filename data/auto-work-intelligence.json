@@ -529,6 +529,26 @@
       "verified_at": "2026-11-21T19:24:51+00:00"
     },
     {
+      "candidate_id": "oa-index-9e6376b2390b65cc36be",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "synopsis": null,
+      "history": {
+        "librettist": "Hugo von Hofmannsthal",
+        "premiere_year": 1912,
+        "premiere_venue": "Staatsoper Stuttgart",
+        "premiere_city": "Stoccarda",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q654633"
+        ]
+      },
+      "wikidata_id": "Q654633",
+      "authority_url": "https://www.wikidata.org/wiki/Q654633",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Ariadne_auf_Naxos"
+    },
+    {
       "candidate_id": "oa-index-9fdcd7eba240da4540af",
       "source_key": "piacenza-opera-2026-27",
       "source_url": "https://teatripiacenza.it/event/siberia/",
@@ -587,6 +607,26 @@
       "wikidata_id": "Q318455",
       "authority_url": "https://www.wikidata.org/wiki/Q318455",
       "wikipedia_url": "https://it.wikipedia.org/wiki/Falstaff_(Verdi)"
+    },
+    {
+      "candidate_id": "oa-index-d23bf6d97c388939e0da",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "synopsis": null,
+      "history": {
+        "librettist": "Gaetano Rossi",
+        "premiere_year": 1813,
+        "premiere_venue": "Gran Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q911443"
+        ]
+      },
+      "wikidata_id": "Q911443",
+      "authority_url": "https://www.wikidata.org/wiki/Q911443",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Tancredi_(Rossini)"
     },
     {
       "candidate_id": "oa-index-d69ff42443cfe2ea9f41",
@@ -669,6 +709,26 @@
       "wikidata_id": "Q1071307",
       "authority_url": "https://www.wikidata.org/wiki/Q1071307",
       "wikipedia_url": "https://it.wikipedia.org/wiki/I_Capuleti_e_i_Montecchi"
+    },
+    {
+      "candidate_id": "oa-index-fe826556336a0e33bde5",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "synopsis": null,
+      "history": {
+        "librettist": "Jules Barbier; Michel Carré",
+        "premiere_year": 1867,
+        "premiere_venue": "Théâtre Lyrique",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q918714"
+        ]
+      },
+      "wikidata_id": "Q918714",
+      "authority_url": "https://www.wikidata.org/wiki/Q918714",
+      "wikipedia_url": "https://it.wikipedia.org/wiki/Romeo_e_Giulietta_(Gounod)"
     }
   ]
 }

@@ -1,13 +1,102 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-25T22:40:30+00:00",
+  "checked_at": "2026-11-26T09:11:28+00:00",
   "outcomes": [
     {
-      "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "fenice-opera-2026-27",
-      "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
-      "title_hint": "madama butterfly carnival cocktail"
+      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000022",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/tosca-11/",
+      "title_hint": "Tosca"
+    },
+    {
+      "candidate_id": "oa-index-e65064ef731a3097502a",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000069",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/lohengrin/",
+      "title_hint": "Lohengrin"
+    },
+    {
+      "candidate_id": "oa-index-97eff96f73c9d064a3f0",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000024",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-boheme-4/",
+      "title_hint": "La bohème"
+    },
+    {
+      "candidate_id": "oa-index-1faca6ee4cc8b6487c57",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000001",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-traviata-12/",
+      "title_hint": "La traviata"
+    },
+    {
+      "candidate_id": "oa-index-b71caef92f53a984ed36",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000015",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/aida-6/",
+      "title_hint": "Aida"
+    },
+    {
+      "candidate_id": "oa-index-e0585c924c7d06c0fa06",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000045",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/",
+      "title_hint": "Le nozze di Figaro"
+    },
+    {
+      "candidate_id": "oa-index-03fa95f1d0382ffee131",
+      "status": "existing_canonical_work",
+      "work_id": "oa-w-000054",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/falstaff/",
+      "title_hint": "Falstaff"
+    },
+    {
+      "candidate_id": "oa-index-202b74c6398e8db7c0b5",
+      "status": "automatic_retry",
+      "reason": "authority_not_unique",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/inferno/",
+      "title_hint": "Inferno"
+    },
+    {
+      "candidate_id": "oa-index-9e6376b2390b65cc36be",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/",
+      "title_hint": "Ariadne auf Naxos"
+    },
+    {
+      "candidate_id": "oa-index-a50d4128ef4b9605dc15",
+      "status": "automatic_retry",
+      "reason": "authority_not_unique",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
+      "title_hint": "Il Trionfo del Tempo e del Disinganno"
+    },
+    {
+      "candidate_id": "oa-index-fe826556336a0e33bde5",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
+      "title_hint": "Roméo et Juliette"
+    },
+    {
+      "candidate_id": "oa-index-d23bf6d97c388939e0da",
+      "status": "automatic_retry",
+      "reason": "verified_plot_unavailable",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/tancredi/",
+      "title_hint": "Tancredi"
     },
     {
       "candidate_id": "oa-index-4e733e128f3edf180b83",
@@ -15,6 +104,13 @@
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/concerto-di-santa-lucia/",
       "title_hint": "concerto di santa lucia"
+    },
+    {
+      "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
+      "title_hint": "madama butterfly carnival cocktail"
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
