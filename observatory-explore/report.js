@@ -166,7 +166,7 @@
   para("Versione catalogo: "+input.reviewedOn+" | Elaborazione: "+input.generatedOn);
   para("Filtri applicati: "+input.context);
   para("Raggruppamento: "+input.groupLabel+" | Indicatore: "+input.metricLabel);
-  if(y>530)start("Indicatori");
+  if(y>375)start("Indicatori");
   p.numbers(Object.entries(input.counts).map(([k,v])=>[input.labels[k]||k,v]),L,y,245);y+=385;
   if(y>680)start("Metodologia");
   para("Recite e produzioni contate per identità distinta. I programmi composti possono comparire in più gruppi. Zero indica assenza di dati rilevati, non assenza di attività. Le date trascorse non provano l'effettivo svolgimento. Annullamenti e rinvii esclusi.");
@@ -178,7 +178,7 @@
   table("Distribuzione mensile",["Mese","Recite","Produzioni"],[CW-150,75,75],input.months.map(g=>[g.label,num(g.performances),num(g.productions)]));
   table("Distribuzione territoriale",["Regione","Recite","Produzioni"],[CW-150,75,75],input.regions.map(g=>[g.label,num(g.performances),num(g.productions)]));
   table("Risultati aggregati",["Gruppo","Recite","Prod.","Sedi","Opere","Autori","Città","Reg.","Fest."],[CW-8*36,36,36,36,36,36,36,36,36],input.groups.map(g=>[g.label,...["performances","productions","venues","works","composers","cities","regions","festivals"].map(k=>num(g[k]))]));
-  table("Dettaglio produzioni",["Opera / programma","Teatro e sede","Prima / ultima","Recite"],[CW-235,130,70,35],input.productions.map(r=>[r.title,r.venue+" · "+r.city,r.first+" / "+r.last,num(r.performances)]));
+  table("Dettaglio produzioni",["Opera / programma","Teatro e sede","Prima / ultima","Recite"],[CW-265,130,100,35],input.productions.map(r=>[r.title,r.venue+" · "+r.city,r.first+" / "+r.last,num(r.performances)]));
   if(p)doc.addPage(p.ops);return new Blob([doc.binary()],{type:"application/pdf"});
  }
  return Object.freeze({create});
