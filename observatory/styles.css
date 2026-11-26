@@ -132,3 +132,9 @@ html,body{margin:0;padding:0;background:#101c2b}
 .top-inner .header-export:disabled{opacity:.45;cursor:not-allowed;border-bottom-color:transparent}
 .top-inner .header-export[aria-busy="true"]{opacity:.65;cursor:progress}
 @media(max-width:650px){.top-inner{gap:6px}.top-inner .header-export.pdf-export{margin-left:2px}.top-inner .header-export{font-size:10px;white-space:nowrap}.top-inner .header-export span{display:none}}
+
+/* Dedicated entry to the interactive analysis; preserve the existing toolbar. */
+.tabs a.explore-link{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap;background:#7e153b;color:#fff;border-radius:10px}
+.tabs a.explore-link:hover,.tabs a.explore-link:focus-visible{background:#64112f;color:#fff}
+.tabs a.explore-link svg{flex-shrink:0;width:1em;height:1em}
+@media(max-width:650px){.tabs a.explore-link{gap:4px}}
