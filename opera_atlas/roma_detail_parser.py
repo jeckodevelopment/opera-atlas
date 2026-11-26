@@ -18,6 +18,23 @@ PERFORMANCE=re.compile(
     r"\s+ORE\s+([01]?\d|2[0-3]):([0-5]\d)\b",re.I)
 CANCELLED=re.compile(r"(?i)\b(?:annullat[oaie]|rinviat[oaie]|cancellat[oaie]|sospes[oaie])\b")
 
+# Explicit first-party historic production pages confirmed in the 2025/26
+# programme and summer 2026 programme. Other seasons remain fail-closed.
+HISTORICAL_SLUGS=frozenset({
+    "tosca-11","lohengrin","la-boheme-4","inferno","ariadne-auf-naxos",
+    "il-trionfo-del-tempo-e-del-disinganno","romeo-et-juliette","tancredi",
+    "la-traviata-12","le-nozze-di-figaro-2","falstaff","aida-6",
+})
+HISTORICAL_URLS=frozenset(
+    f"https://www.operaroma.it/spettacoli/{slug}/" for slug in HISTORICAL_SLUGS)
+
+def expected_season(url:str)->tuple[int,int]:
+    return (2025,2026) if url in HISTORICAL_URLS else (2026,2027)
+
+def season_pattern(url:str)->str:
+    a,b=expected_season(url)
+    return rf"\bStagione\s+{a}\s*/\s*{b}\b"
+
 class Heading(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -50,9 +67,10 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
     if pos<0:
         raise ValueError("official Rome performance schedule missing")
     context=visible[:pos]
-    if not re.search(r"Stagione\s+2026\s*/\s*2027",context,re.I):
-        raise ValueError("Rome event not in verified 2026/27 season")
-    if not re.search(r"\bMusica\s+di\s+"+re.escape(composer)+r"\b",
+    if not re.search(season_pattern(url),context,re.I):
+        raise ValueError("Rome event not in verified source season")
+    credit=r"\bMusica\s+(?:di\s+)?" if url.endswith("/aida-6/") else r"\bMusica\s+di\s+"
+    if not re.search(credit+re.escape(composer)+r"\b",
                      context.replace("’","'"),re.I):
         raise ValueError("composer absent from official Rome production")
     # Read the actual auditorium declared under first-party "Dove"; never
@@ -60,8 +78,10 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
     official_venues={"Teatro Costanzi":"Teatro dell'Opera di Roma",
                      "Teatro Valle Franca Valeri":"Teatro Valle Franca Valeri",
                      "Teatro Nazionale":"Teatro Nazionale"}
+    if url.endswith("/aida-6/"):
+        official_venues["Circo Massimo"]="Circo Massimo"
     venues=re.findall(
-        r"\bDove\s+(Teatro Costanzi|Teatro Valle Franca Valeri|Teatro Nazionale)\b",context)
+        r"\bDove\s+("+ "|".join(map(re.escape,official_venues))+r")\b",context)
     if len(venues)!=1:
         raise ValueError("actual Rome auditorium not confirmed")
     venue=official_venues[venues[0]]
@@ -80,7 +100,8 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
         # 2027. Choose the uniquely matching calendar year from the theatre's
         # explicit weekday; never assume autumn performances are always 2026.
         possible=[]
-        for year in ((2026,2027) if month_number>=9 else (2027,)):
+        first_year,last_year=expected_season(url)
+        for year in ((first_year,last_year) if month_number>=9 else (last_year,)):
             try:
                 candidate=date(year,month_number,int(day))
             except ValueError:
@@ -123,7 +144,7 @@ class OfficialCredits(HTMLParser):
 
 
 
-def official_rome_other_season(html:str,*,url:str)->str|None:
+def official_rome_other_season(html:str,*,url:str, monitored_season:str="2026/2027")->str|None:
     """Return a conflicting *source-declared* season, not an inferred date.
 
     The Opera di Roma's genre index mixes multiple seasons. An event
@@ -181,7 +202,7 @@ def official_rome_other_season(html:str,*,url:str)->str|None:
     if b!=a+1:
         return None
     season=f"{a}/{b}"
-    return season if season!="2026/2027" else None
+    return season if season!=monitored_season else None
 
 
 def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
@@ -202,16 +223,18 @@ def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple
     lines=reader.lines
     first_date=next((i for i,x in enumerate(lines) if x=="Le date"),len(lines))
     intro=lines[:first_date]
-    if not any(re.search(r"\bStagione\s+2026\s*/\s*2027\b",line,re.I)
+    if not any(re.search(season_pattern(url),line,re.I)
                for line in intro):
-        raise ValueError("Rome event not in verified 2026/27 season")
+        raise ValueError("Rome event not in verified source season")
     title_ix=next((i for i,x in enumerate(intro)
                    if normalized(x)==normalized(title)),None)
     if title_ix is None:
         raise ValueError("official Rome title not in source heading")
     credits=[]
     for index,line in enumerate(intro[title_ix+1:],start=title_ix+1):
-        m=re.fullmatch(r"Musica\s+di\s+(.{4,100})",line,re.I)
+        credit_pattern=(r"Musica\s+(?:di\s+)?(.{4,100})"
+                        if url.endswith("/aida-6/") else r"Musica\s+di\s+(.{4,100})")
+        m=re.fullmatch(credit_pattern,line,re.I)
         if m:
             credits.append(m[1].strip())
         elif re.fullmatch(r"Musica\s+di",line,re.I) and index+1<len(intro):
