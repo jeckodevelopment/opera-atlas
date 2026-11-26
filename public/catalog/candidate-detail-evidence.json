@@ -139,10 +139,53 @@
       "candidate_id": "oa-index-03fa95f1d0382ffee131",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/falstaff/",
-      "content_sha256": "5fb6f94afea710a7c2331197ff421f4f159e01946079f142ccc109707253107b",
-      "checked_at": "2026-11-21T22:29:13+00:00",
-      "status": "out_of_monitored_season",
-      "official_season": "2025/2026"
+      "content_sha256": "8cd814a82d00fcd549e91f8838dcfd0505f21c5568388290df4aa33f29d3e0ff",
+      "checked_at": "2026-11-26T09:10:32+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-11",
+          "starts_at": "2026-10-11T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-13",
+          "starts_at": "2026-10-13T20:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-15",
+          "starts_at": "2026-10-15T18:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-18",
+          "starts_at": "2026-10-18T16:30:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-10-20",
+          "starts_at": "2026-10-20T20:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Falstaff",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-11-01",
+          "starts_at": "2026-11-01T20:15:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-04fc7625bab27446a05d",
@@ -1084,6 +1127,72 @@
       ]
     },
     {
+      "candidate_id": "oa-index-1faca6ee4cc8b6487c57",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-traviata-12/",
+      "content_sha256": "a616b94ad454c3e70d618c6413e205be859f6c2ba134daa0eec03fdbd9b61679",
+      "checked_at": "2026-11-26T09:11:13+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-21",
+          "starts_at": "2026-06-21T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-23",
+          "starts_at": "2026-06-23T20:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-24",
+          "starts_at": "2026-06-24T20:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-25",
+          "starts_at": "2026-06-25T20:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-26",
+          "starts_at": "2026-06-26T20:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-27",
+          "starts_at": "2026-06-27T18:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-28",
+          "starts_at": "2026-06-28T16:30:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "La traviata",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-06-30",
+          "starts_at": "2026-06-30T20:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-1fdf598fde99e1e32112",
       "source_key": "parma-opera-2027",
       "source_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/",
@@ -1097,6 +1206,51 @@
           "date": "2026-12-19",
           "starts_at": "2026-12-19T17:00:00+01:00",
           "venue": "Teatro Regio di Parma"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-202b74c6398e8db7c0b5",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/",
+      "content_sha256": "c9d5edc2951e8597148844f0d92b17ec7908cdd23877b60d92e8fce15524334b",
+      "checked_at": "2026-11-26T09:10:37+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Inferno",
+          "composer": "Lucia Ronchetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-02-19",
+          "starts_at": "2026-02-19T20:00:00+01:00"
+        },
+        {
+          "event_title": "Inferno",
+          "composer": "Lucia Ronchetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-02-22",
+          "starts_at": "2026-02-22T16:30:00+01:00"
+        },
+        {
+          "event_title": "Inferno",
+          "composer": "Lucia Ronchetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-02-28",
+          "starts_at": "2026-02-28T18:00:00+01:00"
+        },
+        {
+          "event_title": "Inferno",
+          "composer": "Lucia Ronchetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-03-03",
+          "starts_at": "2026-03-03T20:00:00+01:00"
+        },
+        {
+          "event_title": "Inferno",
+          "composer": "Lucia Ronchetti",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-03-07",
+          "starts_at": "2026-03-07T20:00:00+01:00"
         }
       ]
     },
@@ -3726,10 +3880,18 @@
       "candidate_id": "oa-index-7475e8c93d79a7a7d654",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/tosca-11/",
-      "content_sha256": "24630734dc8126dd6250515be4d86f0fd447deb3e179edddd7483a1e10fd4017",
-      "checked_at": "2026-11-21T22:29:20+00:00",
-      "status": "out_of_monitored_season",
-      "official_season": "2025/2026"
+      "content_sha256": "fa613c2d05ea6d4429177606251f177d19189dc5d65efb74dd8d2babb503496a",
+      "checked_at": "2026-11-26T09:10:40+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Tosca",
+          "composer": "Giacomo Puccini",
+          "date": "2025-11-01",
+          "starts_at": "2025-11-01T20:15:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
@@ -5300,6 +5462,100 @@
       }
     },
     {
+      "candidate_id": "oa-index-97eff96f73c9d064a3f0",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/la-boheme-4/",
+      "content_sha256": "88e480a7d9de8dff0c9e414a01de627643deebcbf1e51f6a5f17330e5f86493f",
+      "checked_at": "2026-11-26T09:10:43+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-13",
+          "starts_at": "2026-01-13T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-14",
+          "starts_at": "2026-01-14T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-15",
+          "starts_at": "2026-01-15T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-16",
+          "starts_at": "2026-01-16T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-17",
+          "starts_at": "2026-01-17T18:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-18",
+          "starts_at": "2026-01-18T16:30:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-20",
+          "starts_at": "2026-01-20T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-21",
+          "starts_at": "2026-01-21T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-22",
+          "starts_at": "2026-01-22T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-23",
+          "starts_at": "2026-01-23T20:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-24",
+          "starts_at": "2026-01-24T18:00:00+01:00"
+        },
+        {
+          "event_title": "La bohème",
+          "composer": "Giacomo Puccini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-01-25",
+          "starts_at": "2026-01-25T16:30:00+01:00"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-9837cf3a1cb8aa932ab3",
       "source_key": "coccia-novara-rolling-opera",
       "source_url": "https://www.fondazioneteatrococcia.it/stagione-27-l-amor-mio.html",
@@ -5555,6 +5811,51 @@
       "checked_at": "2026-11-26T03:38:38+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
+    },
+    {
+      "candidate_id": "oa-index-9e6376b2390b65cc36be",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/",
+      "content_sha256": "9c877c8f6ff81035cb71588c24205e903bca54d67f44899eb0e98b7d7f10b590",
+      "checked_at": "2026-11-26T09:10:48+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Ariadne auf Naxos",
+          "composer": "Richard Strauss",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-03-01",
+          "starts_at": "2026-03-01T19:00:00+01:00"
+        },
+        {
+          "event_title": "Ariadne auf Naxos",
+          "composer": "Richard Strauss",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-03-04",
+          "starts_at": "2026-03-04T20:00:00+01:00"
+        },
+        {
+          "event_title": "Ariadne auf Naxos",
+          "composer": "Richard Strauss",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-03-06",
+          "starts_at": "2026-03-06T18:00:00+01:00"
+        },
+        {
+          "event_title": "Ariadne auf Naxos",
+          "composer": "Richard Strauss",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-03-08",
+          "starts_at": "2026-03-08T16:30:00+01:00"
+        },
+        {
+          "event_title": "Ariadne auf Naxos",
+          "composer": "Richard Strauss",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-03-10",
+          "starts_at": "2026-03-10T20:00:00+01:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-9eea54a8395ff3d6c74e",
@@ -5875,6 +6176,51 @@
           "venue": "Teatro Chiabrera",
           "date": "2026-11-07",
           "starts_at": "2026-11-07T18:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-a50d4128ef4b9605dc15",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
+      "content_sha256": "38a6fae67d73fe84ddb080ea4d889566fe76f5229a2ca09d37c5a20ca8f977a2",
+      "checked_at": "2026-11-26T09:10:52+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Il Trionfo del Tempo e del Disinganno",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-04-07",
+          "starts_at": "2026-04-07T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il Trionfo del Tempo e del Disinganno",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-04-09",
+          "starts_at": "2026-04-09T20:00:00+02:00"
+        },
+        {
+          "event_title": "Il Trionfo del Tempo e del Disinganno",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-04-11",
+          "starts_at": "2026-04-11T18:00:00+02:00"
+        },
+        {
+          "event_title": "Il Trionfo del Tempo e del Disinganno",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-04-12",
+          "starts_at": "2026-04-12T16:30:00+02:00"
+        },
+        {
+          "event_title": "Il Trionfo del Tempo e del Disinganno",
+          "composer": "Georg Friedrich Händel",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-04-14",
+          "starts_at": "2026-04-14T20:00:00+02:00"
         }
       ]
     },
@@ -6580,10 +6926,53 @@
       "candidate_id": "oa-index-b71caef92f53a984ed36",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/aida-6/",
-      "content_sha256": "4f64e6ac9d121d8bd1041ac62ca4ceab043da777c454997690bf69569c846d8d",
-      "checked_at": "2026-11-21T22:29:28+00:00",
-      "status": "out_of_monitored_season",
-      "official_season": "2025/2026"
+      "content_sha256": "39b3a65986bce3e08159cada82406b6967bedbf25f3c7a138f71e1cf1b4f0eb1",
+      "checked_at": "2026-11-26T09:10:57+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-07-12",
+          "starts_at": "2026-07-12T21:00:00+02:00",
+          "venue": "Circo Massimo"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-07-15",
+          "starts_at": "2026-07-15T21:00:00+02:00",
+          "venue": "Circo Massimo"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-07-18",
+          "starts_at": "2026-07-18T21:00:00+02:00",
+          "venue": "Circo Massimo"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-07-22",
+          "starts_at": "2026-07-22T21:00:00+02:00",
+          "venue": "Circo Massimo"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-07-26",
+          "starts_at": "2026-07-26T21:00:00+02:00",
+          "venue": "Circo Massimo"
+        },
+        {
+          "event_title": "Aida",
+          "composer": "Giuseppe Verdi",
+          "date": "2026-07-28",
+          "starts_at": "2026-07-28T21:00:00+02:00",
+          "venue": "Circo Massimo"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-b756ca3bab6062c03ef8",
@@ -7303,6 +7692,51 @@
         "alt": "Immagine della produzione di Aida",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-d23bf6d97c388939e0da",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/",
+      "content_sha256": "a66ea081dbfe0cc8358cba1572c94b8e1c8861f9531d2a2cbd66e7fdb275aa8e",
+      "checked_at": "2026-11-26T09:11:00+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Tancredi",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-19",
+          "starts_at": "2026-05-19T20:00:00+02:00"
+        },
+        {
+          "event_title": "Tancredi",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-22",
+          "starts_at": "2026-05-22T20:00:00+02:00"
+        },
+        {
+          "event_title": "Tancredi",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-24",
+          "starts_at": "2026-05-24T16:30:00+02:00"
+        },
+        {
+          "event_title": "Tancredi",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-26",
+          "starts_at": "2026-05-26T20:00:00+02:00"
+        },
+        {
+          "event_title": "Tancredi",
+          "composer": "Gioachino Rossini",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-29",
+          "starts_at": "2026-05-29T18:00:00+02:00"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-d262c6e18193a53ee487",
@@ -8164,6 +8598,72 @@
       ]
     },
     {
+      "candidate_id": "oa-index-e0585c924c7d06c0fa06",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/",
+      "content_sha256": "072c60d3a7d3287b8eb09d71dfc5883e6643e60d573c839e4ff2a401752af7de",
+      "checked_at": "2026-11-26T09:11:05+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-15",
+          "starts_at": "2026-09-15T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-16",
+          "starts_at": "2026-09-16T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-17",
+          "starts_at": "2026-09-17T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-18",
+          "starts_at": "2026-09-18T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-19",
+          "starts_at": "2026-09-19T18:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-20",
+          "starts_at": "2026-09-20T16:30:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-22",
+          "starts_at": "2026-09-22T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Le nozze di Figaro",
+          "composer": "Wolfgang Amadeus Mozart",
+          "date": "2026-09-23",
+          "starts_at": "2026-09-23T19:00:00+02:00",
+          "venue": "Teatro dell'Opera di Roma"
+        }
+      ]
+    },
+    {
       "candidate_id": "oa-index-e093badade1f5650638e",
       "source_key": "goldoni-livorno-otello-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
@@ -8295,6 +8795,51 @@
       "checked_at": "2026-11-26T03:38:38+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
+    },
+    {
+      "candidate_id": "oa-index-e65064ef731a3097502a",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/lohengrin/",
+      "content_sha256": "14e8f20b9072cb2e482c195f08fad932f9187dfea114d808f2c10077621b2342",
+      "checked_at": "2026-11-26T09:10:29+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "date": "2025-11-27",
+          "starts_at": "2025-11-27T17:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "date": "2025-11-30",
+          "starts_at": "2025-11-30T16:30:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "date": "2025-12-02",
+          "starts_at": "2025-12-02T18:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "date": "2025-12-05",
+          "starts_at": "2025-12-05T18:00:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        },
+        {
+          "event_title": "Lohengrin",
+          "composer": "Richard Wagner",
+          "date": "2025-12-07",
+          "starts_at": "2025-12-07T16:30:00+01:00",
+          "venue": "Teatro dell'Opera di Roma"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
@@ -9267,6 +9812,58 @@
           "venue": "Teatro delle Muse",
           "date": "2026-10-04",
           "starts_at": "2026-10-04T16:30:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-fe826556336a0e33bde5",
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
+      "content_sha256": "6167bc7ef775f07552fc9be2a64ec85109fc9e830c20a6b507d592ce4d33c937",
+      "checked_at": "2026-11-26T09:11:10+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Roméo et Juliette",
+          "composer": "Charles Gounod",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-04-28",
+          "starts_at": "2026-04-28T20:00:00+02:00"
+        },
+        {
+          "event_title": "Roméo et Juliette",
+          "composer": "Charles Gounod",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-04-30",
+          "starts_at": "2026-04-30T20:00:00+02:00"
+        },
+        {
+          "event_title": "Roméo et Juliette",
+          "composer": "Charles Gounod",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-02",
+          "starts_at": "2026-05-02T18:00:00+02:00"
+        },
+        {
+          "event_title": "Roméo et Juliette",
+          "composer": "Charles Gounod",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-03",
+          "starts_at": "2026-05-03T16:30:00+02:00"
+        },
+        {
+          "event_title": "Roméo et Juliette",
+          "composer": "Charles Gounod",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-05",
+          "starts_at": "2026-05-05T20:00:00+02:00"
+        },
+        {
+          "event_title": "Roméo et Juliette",
+          "composer": "Charles Gounod",
+          "venue": "Teatro dell'Opera di Roma",
+          "date": "2026-05-06",
+          "starts_at": "2026-05-06T20:00:00+02:00"
         }
       ]
     },
