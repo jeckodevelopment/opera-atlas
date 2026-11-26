@@ -1169,6 +1169,91 @@
           "https://www.vicenzainlirica.it/lorfeo-monteverdi/"
         ]
       }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/",
+      "title": "Inferno",
+      "composer": "Lucia Ronchetti",
+      "synopsis": "Dante attraversa il regno dei dannati e incontra figure come Francesca, Ulisse e Ugolino. Le loro voci, il coro e gli strumenti trasformano il viaggio della Divina Commedia in un percorso teatrale e sonoro fino all'incontro con Lucifero.",
+      "history": {
+        "librettist": "Lucia Ronchetti da Dante Alighieri, con epilogo di Tiziano Scarpa",
+        "premiere_year": 2021,
+        "premiere_venue": "Bockenheimer Depot (prima in forma di concerto)",
+        "premiere_city": "Francoforte",
+        "sources": [
+          "https://www.schauspielfrankfurt.de/spielplan/archiv/i/inferno/",
+          "https://archiviostorico.operaroma.it/opera/inferno/"
+        ]
+      }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "synopsis": "In una dimora viennese, una compagnia seria e una comica devono esibirsi contemporaneamente. Sull'isola di Nasso Arianna piange l'abbandono di Teseo; Zerbinetta la invita a ritrovare l'amore, mentre l'arrivo di Bacco trasforma il suo destino.",
+      "history": {
+        "librettist": "Hugo von Hofmannsthal",
+        "premiere_year": 1912,
+        "premiere_venue": "Hoftheater (Kleines Haus)",
+        "premiere_city": "Stoccarda",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q654633",
+          "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+        ]
+      }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
+      "title": "Il trionfo del Tempo e del Disinganno",
+      "composer": "Georg Friedrich Händel",
+      "synopsis": "Bellezza cerca di conservare la propria giovinezza, incoraggiata da Piacere. Tempo e Disinganno le mostrano invece quanto siano effimeri i beni terreni. Il confronto allegorico la conduce a rinunciare alla vanità e a orientarsi verso la verità spirituale.",
+      "history": {
+        "librettist": "Benedetto Pamphilj",
+        "premiere_year": 1707,
+        "premiere_venue": "Sede non documentata",
+        "premiere_city": "Roma",
+        "sources": [
+          "https://www.hyperion-records.co.uk/dc.asp?dc=D_CDA67681%2F2",
+          "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+        ]
+      }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "synopsis": "Il cavaliere esiliato Tancredi ritorna a Siracusa, dove ama Amenaide. Una lettera equivocata fa accusare la giovane di tradimento; Tancredi la difende ma dubita della sua fedeltà. L'amore e il conflitto politico si intrecciano fino alla riconciliazione.",
+      "history": {
+        "librettist": "Gaetano Rossi",
+        "premiere_year": 1813,
+        "premiere_venue": "Teatro La Fenice",
+        "premiere_city": "Venezia",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q911443",
+          "https://www.operaroma.it/spettacoli/tancredi/"
+        ]
+      }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "synopsis": "Romeo e Giulietta si innamorano nonostante l'odio tra Montecchi e Capuleti e si sposano in segreto. La morte di Tebaldo provoca l'esilio di Romeo. Il piano di un finto decesso fallisce e i due amanti si ritrovano nella tomba, dove muoiono insieme.",
+      "history": {
+        "librettist": "Jules Barbier e Michel Carré",
+        "premiere_year": 1867,
+        "premiere_venue": "Théâtre-Lyrique",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://www.wikidata.org/wiki/Q918714",
+          "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+        ]
+      }
     }
   ]
 }
