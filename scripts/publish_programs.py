@@ -103,6 +103,25 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
             "event_facts":[{"event_title":p["title"],"composer":p["composer"],
                 "venue":"Teatro Coccia","date":day,"starts_at":official_local_time(day,clock)}
                 for day,clock in historical_dates for p in historical_parts]})
+    # Explicitly reviewed Rome 2025/26 operetta double bill. The archived
+    # exclusion was a season-index mismatch, not a genre exclusion.
+    rome_url="https://www.operaroma.it/spettacoli/fabbrica-offenbach/"
+    rome_key="opera-roma-season-2026-27"
+    rome_id="oa-index-67ef6842ba33e2d6015d"
+    rome_parts=[{"title":"La chatte métamorphosée en femme","composer":"Jacques Offenbach"},{"title":"Un mari à la porte","composer":"Jacques Offenbach"}]
+    rome_heading="La chatte métamorphosée en femme di Jacques Offenbach / Un mari à la porte di Jacques Offenbach"
+    if not any(x.get("source_url")==rome_url and x.get("status")=="needs_program_review" for x in rows):
+        from scripts.build_verified_catalog import official_local_time
+        candidates_by_id[rome_id]={"id":rome_id,"source_key":rome_key,
+            "official_url":rome_url,"status":"needs_review"}
+        rows.append({"candidate_id":rome_id,"source_key":rome_key,
+            "source_url":rome_url,"status":"needs_program_review",
+            "program_heading":rome_heading,"program_heading_source_url":rome_url,
+            "program_components":rome_parts,
+            "event_facts":[{"event_title":p["title"],"composer":p["composer"],
+                "venue":"Teatro Nazionale","date":day,
+                "starts_at":official_local_time(day,"20:00")}
+                for day in ("2026-01-22","2026-01-23") for p in rome_parts]})
     program_ids=set()
     performances=set()
     items=[]
@@ -122,12 +141,12 @@ def assemble_programs(candidates:dict,evidence:dict,registry:dict,
         # Trapani's approved opera/chamber-opera parser distinguishes the
         # outdoor Di Stefano theatre from the indoor Tonino Pardo. Never
         # silently attribute a verified chamber programme to the default.
-        if key=="trapani-luglio-musicale-2026":
+        if key in ("trapani-luglio-musicale-2026","opera-roma-season-2026-27"):
             from scripts.auto_catalogue import verified_venue
             physically_verified=verified_venue(
                 key,item.get("event_facts",[]),registry)
-            if physically_verified is None or physically_verified[0]!="Trapani":
-                raise ValueError("unverified Trapani programme venue")
+            if physically_verified is None or physically_verified[0]!=city:
+                raise ValueError("unverified programme venue")
             city,venue=physically_verified[:2]
         # The venue is independently canonical and must not be invented.
         venue_entries=[x for x in registry["venues"].values()
