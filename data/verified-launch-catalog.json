@@ -9430,6 +9430,103 @@
           "16:30"
         ]
       ]
+    },
+    {
+      "key": "auto-9e6376b2390b65cc",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/",
+      "dates": [
+        [
+          "2026-03-01",
+          "19:00"
+        ],
+        [
+          "2026-03-04",
+          "20:00"
+        ],
+        [
+          "2026-03-06",
+          "18:00"
+        ],
+        [
+          "2026-03-08",
+          "16:30"
+        ],
+        [
+          "2026-03-10",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-d23bf6d97c388939",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/",
+      "dates": [
+        [
+          "2026-05-19",
+          "20:00"
+        ],
+        [
+          "2026-05-22",
+          "20:00"
+        ],
+        [
+          "2026-05-24",
+          "16:30"
+        ],
+        [
+          "2026-05-26",
+          "20:00"
+        ],
+        [
+          "2026-05-29",
+          "18:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-fe826556336a0e33",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
+      "dates": [
+        [
+          "2026-04-28",
+          "20:00"
+        ],
+        [
+          "2026-04-30",
+          "20:00"
+        ],
+        [
+          "2026-05-02",
+          "18:00"
+        ],
+        [
+          "2026-05-03",
+          "16:30"
+        ],
+        [
+          "2026-05-05",
+          "20:00"
+        ],
+        [
+          "2026-05-06",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

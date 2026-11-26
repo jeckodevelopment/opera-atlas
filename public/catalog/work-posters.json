@@ -1277,6 +1277,33 @@
       "alt": "Fotografia di scena di Note to a Friend, produzione Haydn 2026",
       "kind": "official_production_image",
       "license": "Diritti riservati, immagine dal sito ufficiale"
+    },
+    "oa-w-000144": {
+      "work_id": "oa-w-000144",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ariadne_Auf_Naxos.jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ariadne_Auf_Naxos.jpg",
+      "alt": "Frontespizio della raccolta di bozzetti per la produzione originale del 1912 di Ariadne auf Naxos.",
+      "credit": "Ernst Stern, Boston Public Library / Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000145": {
+      "work_id": "oa-w-000145",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gioachino_Rossini_-_Tancredi_-_titlepage_of_the_libretto_-_Venice_1813.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gioachino_Rossini_-_Tancredi_-_titlepage_of_the_libretto_-_Venice_1813.png",
+      "alt": "Frontespizio del libretto di Tancredi, Venezia 1813.",
+      "credit": "Gioachino Rossini, Gaetano Rossi, Biblioteca Nazionale Braidense / Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000146": {
+      "work_id": "oa-w-000146",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rom%C3%A9o_et_Juliette_de_Charles_Gounod.png?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rom%C3%A9o_et_Juliette_de_Charles_Gounod.png",
+      "alt": "Manifesto storico di Roméo et Juliette di Charles Gounod.",
+      "credit": "Prudent Leray, Bibliothèque nationale de France / Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
     }
   }
 }

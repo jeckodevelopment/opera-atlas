@@ -1348,6 +1348,36 @@
         "https://davidlangmusic.com/music/note-to-a-friend/",
         "https://www.prototypefestival.org/shows/note-to-a-friend"
       ]
+    },
+    "ariadne-auf-naxos": {
+      "librettist": "Hugo von Hofmannsthal",
+      "premiere_year": 1912,
+      "premiere_venue": "Hoftheater (Kleines Haus)",
+      "premiere_city": "Stoccarda",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q654633",
+        "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+      ]
+    },
+    "tancredi": {
+      "librettist": "Gaetano Rossi",
+      "premiere_year": 1813,
+      "premiere_venue": "Teatro La Fenice",
+      "premiere_city": "Venezia",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q911443",
+        "https://www.operaroma.it/spettacoli/tancredi/"
+      ]
+    },
+    "romeo-et-juliette": {
+      "librettist": "Jules Barbier e Michel Carré",
+      "premiere_year": 1867,
+      "premiere_venue": "Théâtre-Lyrique",
+      "premiere_city": "Parigi",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q918714",
+        "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+      ]
     }
   },
   "works_by_id": {

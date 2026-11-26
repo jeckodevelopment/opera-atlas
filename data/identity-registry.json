@@ -918,6 +918,27 @@
       "title": "Note to a Friend",
       "composer": "David Lang",
       "authority_url": "https://davidlangmusic.com/music/note-to-a-friend/"
+    },
+    "ariadne auf naxos|richard strauss": {
+      "id": "oa-w-000144",
+      "slug": "ariadne-auf-naxos",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "wikidata_id": "Q654633"
+    },
+    "tancredi|gioachino rossini": {
+      "id": "oa-w-000145",
+      "slug": "tancredi",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "wikidata_id": "Q911443"
+    },
+    "roméo et juliette|charles gounod": {
+      "id": "oa-w-000146",
+      "slug": "romeo-et-juliette",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "wikidata_id": "Q918714"
     }
   },
   "venues": {
@@ -4375,6 +4396,30 @@
       "venue_id": "oa-v-000017",
       "slug": "lohengrin",
       "source_url": "https://www.operaroma.it/spettacoli/lohengrin/",
+      "season": "2025-2026"
+    },
+    "auto-9e6376b2390b65cc": {
+      "id": "oa-s-000365",
+      "work_id": "oa-w-000144",
+      "venue_id": "oa-v-000017",
+      "slug": "ariadne-auf-naxos",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/",
+      "season": "2025-2026"
+    },
+    "auto-d23bf6d97c388939": {
+      "id": "oa-s-000366",
+      "work_id": "oa-w-000145",
+      "venue_id": "oa-v-000017",
+      "slug": "tancredi",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/",
+      "season": "2025-2026"
+    },
+    "auto-fe826556336a0e33": {
+      "id": "oa-s-000367",
+      "work_id": "oa-w-000146",
+      "venue_id": "oa-v-000017",
+      "slug": "romeo-et-juliette",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
       "season": "2025-2026"
     }
   },
@@ -12738,6 +12783,102 @@
       "staging_id": "oa-s-000364",
       "original_date": "2025-12-07",
       "source_url": "https://www.operaroma.it/spettacoli/lohengrin/"
+    },
+    "auto-9e6376b2390b65cc|2026-03-01": {
+      "id": "oa-r-001421",
+      "staging_id": "oa-s-000365",
+      "original_date": "2026-03-01",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+    },
+    "auto-9e6376b2390b65cc|2026-03-04": {
+      "id": "oa-r-001422",
+      "staging_id": "oa-s-000365",
+      "original_date": "2026-03-04",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+    },
+    "auto-9e6376b2390b65cc|2026-03-06": {
+      "id": "oa-r-001423",
+      "staging_id": "oa-s-000365",
+      "original_date": "2026-03-06",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+    },
+    "auto-9e6376b2390b65cc|2026-03-08": {
+      "id": "oa-r-001424",
+      "staging_id": "oa-s-000365",
+      "original_date": "2026-03-08",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+    },
+    "auto-9e6376b2390b65cc|2026-03-10": {
+      "id": "oa-r-001425",
+      "staging_id": "oa-s-000365",
+      "original_date": "2026-03-10",
+      "source_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+    },
+    "auto-d23bf6d97c388939|2026-05-19": {
+      "id": "oa-r-001426",
+      "staging_id": "oa-s-000366",
+      "original_date": "2026-05-19",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/"
+    },
+    "auto-d23bf6d97c388939|2026-05-22": {
+      "id": "oa-r-001427",
+      "staging_id": "oa-s-000366",
+      "original_date": "2026-05-22",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/"
+    },
+    "auto-d23bf6d97c388939|2026-05-24": {
+      "id": "oa-r-001428",
+      "staging_id": "oa-s-000366",
+      "original_date": "2026-05-24",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/"
+    },
+    "auto-d23bf6d97c388939|2026-05-26": {
+      "id": "oa-r-001429",
+      "staging_id": "oa-s-000366",
+      "original_date": "2026-05-26",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/"
+    },
+    "auto-d23bf6d97c388939|2026-05-29": {
+      "id": "oa-r-001430",
+      "staging_id": "oa-s-000366",
+      "original_date": "2026-05-29",
+      "source_url": "https://www.operaroma.it/spettacoli/tancredi/"
+    },
+    "auto-fe826556336a0e33|2026-04-28": {
+      "id": "oa-r-001431",
+      "staging_id": "oa-s-000367",
+      "original_date": "2026-04-28",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+    },
+    "auto-fe826556336a0e33|2026-04-30": {
+      "id": "oa-r-001432",
+      "staging_id": "oa-s-000367",
+      "original_date": "2026-04-30",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+    },
+    "auto-fe826556336a0e33|2026-05-02": {
+      "id": "oa-r-001433",
+      "staging_id": "oa-s-000367",
+      "original_date": "2026-05-02",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+    },
+    "auto-fe826556336a0e33|2026-05-03": {
+      "id": "oa-r-001434",
+      "staging_id": "oa-s-000367",
+      "original_date": "2026-05-03",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+    },
+    "auto-fe826556336a0e33|2026-05-05": {
+      "id": "oa-r-001435",
+      "staging_id": "oa-s-000367",
+      "original_date": "2026-05-05",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+    },
+    "auto-fe826556336a0e33|2026-05-06": {
+      "id": "oa-r-001436",
+      "staging_id": "oa-s-000367",
+      "original_date": "2026-05-06",
+      "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
     }
   },
   "reserved_works": {

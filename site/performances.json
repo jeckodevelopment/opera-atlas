@@ -1496,6 +1496,24 @@
       ]
     },
     {
+      "id": "curated:auto-9e6376b2390b65cc:2026-03-01",
+      "starts_at": "2026-03-01T19:00:00+01:00",
+      "local_date": "2026-03-01",
+      "time_known": true,
+      "time_label": "19:00",
+      "status": "announced",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-das-rheingold-der-ring-des-nibelungen:2026-03-01",
       "starts_at": "2026-03-01T20:00:00+01:00",
       "local_date": "2026-03-01",
@@ -1550,6 +1568,24 @@
       ]
     },
     {
+      "id": "curated:auto-9e6376b2390b65cc:2026-03-04",
+      "starts_at": "2026-03-04T20:00:00+01:00",
+      "local_date": "2026-03-04",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-siegfried-der-ring-des-nibelungen:2026-03-05",
       "starts_at": "2026-03-05T18:00:00+01:00",
       "local_date": "2026-03-05",
@@ -1583,6 +1619,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/macbeth"
+      ]
+    },
+    {
+      "id": "curated:auto-9e6376b2390b65cc:2026-03-06",
+      "starts_at": "2026-03-06T18:00:00+01:00",
+      "local_date": "2026-03-06",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
       ]
     },
     {
@@ -1694,6 +1748,24 @@
       ]
     },
     {
+      "id": "curated:auto-9e6376b2390b65cc:2026-03-08",
+      "starts_at": "2026-03-08T16:30:00+01:00",
+      "local_date": "2026-03-08",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-catania-bellini-la-vedova-allegra:2026-03-08",
       "starts_at": "2026-03-08T17:30:00+01:00",
       "local_date": "2026-03-08",
@@ -1745,6 +1817,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimobellini.it/eventi/la-vedova-allegra-2026/"
+      ]
+    },
+    {
+      "id": "curated:auto-9e6376b2390b65cc:2026-03-10",
+      "starts_at": "2026-03-10T20:00:00+01:00",
+      "local_date": "2026-03-10",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Ariadne auf Naxos",
+      "composer": "Richard Strauss",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
       ]
     },
     {
@@ -3188,6 +3278,24 @@
       ]
     },
     {
+      "id": "curated:auto-fe826556336a0e33:2026-04-28",
+      "starts_at": "2026-04-28T20:00:00+02:00",
+      "local_date": "2026-04-28",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-turandot:2026-04-29",
       "starts_at": "2026-04-29T20:00:00+02:00",
       "local_date": "2026-04-29",
@@ -3206,6 +3314,24 @@
       ]
     },
     {
+      "id": "curated:auto-fe826556336a0e33:2026-04-30",
+      "starts_at": "2026-04-30T20:00:00+02:00",
+      "local_date": "2026-04-30",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-pelleas-et-melisande:2026-04-30",
       "starts_at": "2026-04-30T20:00:00+02:00",
       "local_date": "2026-04-30",
@@ -3221,6 +3347,42 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/pelleas-et-melisande.html"
+      ]
+    },
+    {
+      "id": "curated:auto-fe826556336a0e33:2026-05-02",
+      "starts_at": "2026-05-02T18:00:00+02:00",
+      "local_date": "2026-05-02",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+      ]
+    },
+    {
+      "id": "curated:auto-fe826556336a0e33:2026-05-03",
+      "starts_at": "2026-05-03T16:30:00+02:00",
+      "local_date": "2026-05-03",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
       ]
     },
     {
@@ -3260,6 +3422,24 @@
       ]
     },
     {
+      "id": "curated:auto-fe826556336a0e33:2026-05-05",
+      "starts_at": "2026-05-05T20:00:00+02:00",
+      "local_date": "2026-05-05",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-reggio-heure-espagnole:2026-05-05",
       "starts_at": "2026-05-05T20:00:00+02:00",
       "local_date": "2026-05-05",
@@ -3293,6 +3473,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2025-2026/i-puritani"
+      ]
+    },
+    {
+      "id": "curated:auto-fe826556336a0e33:2026-05-06",
+      "starts_at": "2026-05-06T20:00:00+02:00",
+      "local_date": "2026-05-06",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Roméo et Juliette",
+      "composer": "Charles Gounod",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
       ]
     },
     {
@@ -3476,6 +3674,24 @@
       ]
     },
     {
+      "id": "curated:auto-d23bf6d97c388939:2026-05-19",
+      "starts_at": "2026-05-19T20:00:00+02:00",
+      "local_date": "2026-05-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/tancredi/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-nabucco:2026-05-19",
       "starts_at": "2026-05-19T20:00:00+02:00",
       "local_date": "2026-05-19",
@@ -3509,6 +3725,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/il-gobbo-del-califfo-casavola-21-24-maggio/"
+      ]
+    },
+    {
+      "id": "curated:auto-d23bf6d97c388939:2026-05-22",
+      "starts_at": "2026-05-22T20:00:00+02:00",
+      "local_date": "2026-05-22",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/tancredi/"
       ]
     },
     {
@@ -3602,6 +3836,24 @@
       ]
     },
     {
+      "id": "curated:auto-d23bf6d97c388939:2026-05-24",
+      "starts_at": "2026-05-24T16:30:00+02:00",
+      "local_date": "2026-05-24",
+      "time_known": true,
+      "time_label": "16:30",
+      "status": "announced",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/tancredi/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-palermo-massimo-aida:2026-05-24",
       "starts_at": "2026-05-24T17:30:00+02:00",
       "local_date": "2026-05-24",
@@ -3671,6 +3923,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-carmen/"
+      ]
+    },
+    {
+      "id": "curated:auto-d23bf6d97c388939:2026-05-26",
+      "starts_at": "2026-05-26T20:00:00+02:00",
+      "local_date": "2026-05-26",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/tancredi/"
       ]
     },
     {
@@ -3761,6 +4031,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatromassimo.it/event/aida/"
+      ]
+    },
+    {
+      "id": "curated:auto-d23bf6d97c388939:2026-05-29",
+      "starts_at": "2026-05-29T18:00:00+02:00",
+      "local_date": "2026-05-29",
+      "time_known": true,
+      "time_label": "18:00",
+      "status": "announced",
+      "title": "Tancredi",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/tancredi/"
       ]
     },
     {
