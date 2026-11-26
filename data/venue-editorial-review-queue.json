@@ -1,1 +1,1 @@
-{"count":0,"purpose":"nonblocking_verified_venue_editorial","schema_version":1,"venues":[]}
+{"count":1,"purpose":"nonblocking_verified_venue_editorial","schema_version":1,"venues":[{"city":"Roma","missing":["editorial_profile","verified_address","venue_history","licensed_photo"],"name":"Circo Massimo","route_slug":"roma/circo-massimo","source_urls":["https://www.operaroma.it/spettacoli/aida-6/"],"status":"editorial_review_pending","venue_id":"oa-v-000074"}]}
