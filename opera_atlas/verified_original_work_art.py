@@ -51,6 +51,12 @@ APPROVED={
   "La favola di Orfeo","Alfredo Casella"):(
   "https://www.festivaldellavalleditria.it/spettacolo/pulcinella-la-favola-di-orfeo/2026-07-14",
   "https://www.festivaldellavalleditria.it/wp-content/uploads/2026/03/15.png"),
+ # Historical original score, held by the British Library; the exact
+ # archival reproduction is linked from the source that identifies HWV 46a.
+ ("https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
+  "Il trionfo del Tempo e del Disinganno","Georg Friedrich Händel"):(
+  "https://searcharchives.bl.uk/catalog/040-001948559",
+  "https://www.jarousskywiki.com/images/thumb/c/cc/First_page_il_trionfo.jpg/300px-First_page_il_trionfo.jpg"),
 }
 FIELDS=("image_url","source_url","original_source_url","credit","alt","kind")
 
