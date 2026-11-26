@@ -1443,8 +1443,10 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                        "rows":len(facts)})
                         continue
                 if item["source_key"]=="opera-roma-season-2026-27":
-                    from opera_atlas.roma_detail_parser import official_rome_other_season
-                    other=official_rome_other_season(page.html,url=item["official_url"])
+                    from opera_atlas.roma_detail_parser import official_rome_other_season, expected_season
+                    monitored="/".join(map(str,expected_season(item["official_url"])))
+                    other=official_rome_other_season(page.html,url=item["official_url"],
+                                                     monitored_season=monitored)
                     if other is not None:
                         # An explicit season on the exact official production
                         # page is positive evidence of a historical listing;

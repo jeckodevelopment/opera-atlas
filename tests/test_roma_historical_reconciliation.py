@@ -17,7 +17,7 @@ class HistoricRomeTests(unittest.TestCase):
             ("falstaff","Falstaff","Giuseppe Verdi","domenica 11 Ott","2026-10-11")):
             url=BASE+slug+"/"
             html=detail(title,composer,"Teatro Costanzi",[(day,"17:00")])
-            self.assertIsNone(official_rome_other_season(html,url=url))
+            self.assertIsNone(official_rome_other_season(html,url=url,monitored_season="2025/2026"))
             self.assertEqual(parse_roma_credited_detail(html,url=url)[-1],[(expected,"17:00")])
     def test_summer_aida_keeps_actual_venue(self):
         html=detail("Aida","Giuseppe Verdi","Circo Massimo",[("domenica 12 Lug","21:00")],credit="Musica")

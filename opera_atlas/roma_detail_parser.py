@@ -144,7 +144,7 @@ class OfficialCredits(HTMLParser):
 
 
 
-def official_rome_other_season(html:str,*,url:str)->str|None:
+def official_rome_other_season(html:str,*,url:str, monitored_season:str="2026/2027")->str|None:
     """Return a conflicting *source-declared* season, not an inferred date.
 
     The Opera di Roma's genre index mixes multiple seasons. An event
@@ -202,7 +202,7 @@ def official_rome_other_season(html:str,*,url:str)->str|None:
     if b!=a+1:
         return None
     season=f"{a}/{b}"
-    return season if season!="/".join(map(str,expected_season(url))) else None
+    return season if season!=monitored_season else None
 
 
 def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple[str,str]]]:
