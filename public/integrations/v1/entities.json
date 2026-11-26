@@ -1,5 +1,5 @@
 {
-  "catalog_reviewed_on": "2026-11-24",
+  "catalog_reviewed_on": "2026-11-26",
   "diagnostics": {
     "composer_media_coverage": {
       "default_image": 58,
@@ -28,6 +28,10 @@
       {
         "composer": "David Lang",
         "work_id": "oa-w-000143"
+      },
+      {
+        "composer": "Charles Gounod",
+        "work_id": "oa-w-000146"
       }
     ]
   },
@@ -4623,6 +4627,61 @@
       "title": "Note to a Friend",
       "type": "opera",
       "url": "https://opera.plus/atlas/opere/note-to-a-friend/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000062"
+      ],
+      "fallback_image": null,
+      "id": "oa-w-000144",
+      "image": {
+        "alt": "Ritratto di Richard Strauss",
+        "author": "unidentified photograph",
+        "credit": "unidentified photograph — Wikimedia Commons — Public Domain",
+        "license": "Public Domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "media_kind": "portrait",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Postcard-1910_Strauss_Richard.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Postcard-1910_Strauss_Richard.jpg/960px-Postcard-1910_Strauss_Richard.jpg"
+      },
+      "subtitle": "Richard Strauss",
+      "title": "Ariadne auf Naxos",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/ariadne-auf-naxos/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000036"
+      ],
+      "fallback_image": null,
+      "id": "oa-w-000145",
+      "image": {
+        "alt": "Ritratto di Gioachino Rossini",
+        "author": "Étienne Carjat",
+        "credit": "Étienne Carjat — Wikimedia Commons — Public Domain",
+        "license": "Public Domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "media_kind": "portrait",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Composer_Rossini_G_1865_by_Carjat.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Composer_Rossini_G_1865_by_Carjat.jpg/960px-Composer_Rossini_G_1865_by_Carjat.jpg"
+      },
+      "subtitle": "Gioachino Rossini",
+      "title": "Tancredi",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/tancredi/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-w-000146",
+      "image": null,
+      "subtitle": "Charles Gounod",
+      "title": "Roméo et Juliette",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/romeo-et-juliette/"
     },
     {
       "aliases": [],
@@ -9617,6 +9676,144 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000358",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Falstaff",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/falstaff/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000359",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "La traviata",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/la-traviata/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000360",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Tosca",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/tosca/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000035"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000361",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "La bohème",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/la-boheme/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000362",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Circo Massimo",
+      "title": "Aida",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/circo-massimo/aida/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000070"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000363",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Le nozze di Figaro",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/le-nozze-di-figaro/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000063"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000364",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Lohengrin",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/lohengrin/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000062"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000365",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Ariadne auf Naxos",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/ariadne-auf-naxos/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000036"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000366",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Tancredi",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/tancredi/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-s-000367",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Roméo et Juliette",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/romeo-et-juliette/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -10422,6 +10619,17 @@
       "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
+      "id": "oa-v-000074",
+      "image": null,
+      "subtitle": "Roma",
+      "title": "Circo Massimo",
+      "type": "theatre",
+      "url": "https://opera.plus/atlas/roma/circo-massimo/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
       "id": "oa-vd-000070",
       "image": null,
       "subtitle": "Trapani",
@@ -10431,5 +10639,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "e002ca8e0fa3b279d12a8708e0317e7efdcfab02"
+  "source_revision": "0a79289005e9840eec11721c2bf0898a1d79358e"
 }
