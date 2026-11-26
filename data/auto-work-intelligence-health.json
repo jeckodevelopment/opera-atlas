@@ -1,7 +1,21 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-26T13:15:33+00:00",
+  "checked_at": "2026-11-26T17:57:44+00:00",
   "outcomes": [
+    {
+      "candidate_id": "oa-index-40e3ddb58749ceda98dd",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/madame-tour-estate-2026/",
+      "title_hint": "madame tour estate 2026"
+    },
+    {
+      "candidate_id": "oa-index-476901a4f9f56161f30e",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/la-cena/",
+      "title_hint": "la cena"
+    },
     {
       "candidate_id": "oa-index-4e733e128f3edf180b83",
       "status": "awaiting_official_identity_evidence",
@@ -10,11 +24,39 @@
       "title_hint": "concerto di santa lucia"
     },
     {
+      "candidate_id": "oa-index-5f6478510dcfb84e4cd1",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/bellini-alla-norma/",
+      "title_hint": "bellini alla norma"
+    },
+    {
+      "candidate_id": "oa-index-6ae3cb7b4d77a89231d0",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/roberta-torre-masterclass/",
+      "title_hint": "roberta torre masterclass"
+    },
+    {
       "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
       "status": "awaiting_official_identity_evidence",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
       "title_hint": "madama butterfly carnival cocktail"
+    },
+    {
+      "candidate_id": "oa-index-07f902ab46b297c41013",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/blu-planetaria/",
+      "title_hint": "blu planetaria"
+    },
+    {
+      "candidate_id": "oa-index-38ec0e923196232fe754",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/interference/",
+      "title_hint": "interference"
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
