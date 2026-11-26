@@ -274,7 +274,8 @@
     const st=state();
     const blob=P.create({reviewedOn,generatedOn:appliedOn,context:$("query-context").textContent,
      groupLabel:E.fields[st.group],metricLabel:A.metrics[st.metric],metric:st.metric,counts:E.summary(selected),labels:metrics,
-     groups:reportGroups,months:reportMonths,regions:reportRegions,productions:X.productionRecords(selected,D.atlasRoute)});
+     groups:reportGroups,months:reportMonths,regions:reportRegions,secondary:st.secondary,view:st.view,
+     productions:X.productionRecords(selected,D.atlasRoute),performances:X.performanceRecords(selected)});
     download(blob,"opera-plus-esplora-report.pdf");$("export-status").textContent="";
    }catch(error){$("export-status").textContent="Impossibile generare il PDF: "+error.message}
   });
