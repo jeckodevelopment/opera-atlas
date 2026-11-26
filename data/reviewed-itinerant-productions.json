@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "productions": [
+    {
+      "season": "2025-2026",
+      "route_slug": "il-barbiere-di-siviglia-operacamion-2026",
+      "production": {
+        "key": "roma-operacamion-barbiere-2026",
+        "title": "Il barbiere di Siviglia",
+        "composer": "Gioachino Rossini",
+        "venue": "Teatro dell'Opera di Roma",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
+        "project_name": "OperaCamion",
+        "performance_format": "itinerante",
+        "dates": [
+          [
+            "2026-06-03",
+            "21:15"
+          ],
+          [
+            "2026-06-05",
+            "21:15"
+          ],
+          [
+            "2026-06-06",
+            "21:15"
+          ],
+          [
+            "2026-06-09",
+            "21:15"
+          ],
+          [
+            "2026-06-10",
+            "21:15"
+          ],
+          [
+            "2026-06-13",
+            "21:15"
+          ],
+          [
+            "2026-06-14",
+            "21:15"
+          ],
+          [
+            "2026-06-16",
+            "21:15"
+          ],
+          [
+            "2026-06-17",
+            "21:15"
+          ],
+          [
+            "2026-09-12",
+            "20:00"
+          ],
+          [
+            "2026-09-13",
+            "20:00"
+          ],
+          [
+            "2026-09-15",
+            "20:00"
+          ],
+          [
+            "2026-09-17",
+            "20:00"
+          ],
+          [
+            "2026-09-19",
+            "20:00"
+          ],
+          [
+            "2026-09-20",
+            "20:00"
+          ]
+        ],
+        "performance_locations": {
+          "2026-06-03": {
+            "venue": "Cortile parrocchiale del Corpus Domini, Massimina",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-05": {
+            "venue": "Parcheggio di via Leonida Repaci, Cinquina/Bufalotta",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-06": {
+            "venue": "Parcheggio municipale, via Benedetto Croce 50, Montagnola",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-09": {
+            "venue": "Piazza Mazzini",
+            "municipality": "Bracciano",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-10": {
+            "venue": "Parcheggio di via Fosso dell’Osa, civico 338, Villaggio Prenestino",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-13": {
+            "venue": "Rotonda di viale Antonio Gandin, Palmarola/Selva Candida",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-14": {
+            "venue": "Piazza Sirio, Lido di Ostia",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-16": {
+            "venue": "Parcheggio del mercato rionale, via Comte, Casal de’ Pazzi",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-06-17": {
+            "venue": "Largo Brodolini",
+            "municipality": "Valmontone",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+          },
+          "2026-09-12": {
+            "venue": "Parcheggio del mercato di via Borgo Ticino, Casalotti",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+          },
+          "2026-09-13": {
+            "venue": "Piazza Gaetano Mosca, Monte Cucco",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+          },
+          "2026-09-15": {
+            "venue": "Parcheggio di via della Stazione, Cesano",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+          },
+          "2026-09-17": {
+            "venue": "Piazza Tarantelli, Torrino/Decima",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+          },
+          "2026-09-19": {
+            "venue": "Largo Paolo Emilio Taviani, Cinecittà Est",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+          },
+          "2026-09-20": {
+            "venue": "Piazza Jan Palach, Villaggio Olimpico",
+            "municipality": "Roma",
+            "region": "Lazio",
+            "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+          }
+        }
+      }
+    }
+  ]
+}

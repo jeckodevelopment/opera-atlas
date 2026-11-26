@@ -69,7 +69,7 @@
    else if(key==="composer")r.works.forEach(w=>add(w.composer,w.composer));
    else if(key==="festival")r.festivals.forEach(f=>add(f.id,f.name));
    else if(key==="city"){if(r.city&&r.region)add(JSON.stringify([r.region,r.city]),r.city+" · "+r.region)}
-   else if(key==="venue")add(r.venueId,r.venue+(r.city?" · "+r.city:""));
+   else if(key==="venue")add(r.venueId,r.venue+((r.organizerCity||r.city)?" · "+(r.organizerCity||r.city):""));
    else add(r[key],r[key]);
   }
   return [...m].map(([id,label])=>({id,label})).sort((a,b)=>

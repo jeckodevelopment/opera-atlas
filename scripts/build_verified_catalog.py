@@ -519,6 +519,9 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
             ]
         }
     })
+    from opera_atlas.itinerant import reviewed, approved_urls, validate_production
+    touring=reviewed()
+    permitted.update(approved_urls(touring))
     permitted.add(cagliari_archive)
     reconciled_2026 = {
         "historical-2026-como-teatro-sociale-don-quichotte": {
@@ -1161,6 +1164,7 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
     events = []
     keys = set()
     for production in manifest["productions"]:
+        validate_production(production,touring)
         url = production["source_url"]
         reviewed_2026 = reconciled_2026.get(production.get("key"))
         if reviewed_2026 is not None:
@@ -1371,7 +1375,11 @@ def build(manifest: dict, evidence: dict | None = None, *, approved_extra: set[s
                     or ticket_url not in permitted):
                     raise ValueError("unapproved Haydn replica ticket URL")
             source_links=([ticket_url,url] if ticket_url!=url else [url])+([evidence_entry["url"]] if evidence_entry else [])
+            location=production.get("performance_locations",{}).get(local_day)
+            if location and location["source_url"] not in source_links:
+                source_links.insert(0,location["source_url"])
             events.append({
+                **({"project_name":production["project_name"],"actual_location":location} if location else {}),
                 "id": uid,
                 "starts_at": official_local_time(local_day, effective_hour) if effective_hour else None,
                 "local_date": local_day,

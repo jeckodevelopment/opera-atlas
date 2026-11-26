@@ -170,8 +170,8 @@ function setDetailSEO(selected,first) {
       e.status!=="cancelled" && e.status!=="canceled").slice(0,60);
     structured={"@context":"https://schema.org","@graph":recite.map(e=>({
       "@type":"Event","name":e.title,"startDate":e.starts_at,
-      "location":{"@type":"Place","name":e.venue,
-        "address":{"@type":"PostalAddress","addressLocality":e.municipality,"addressCountry":"IT"}},
+      "location":{"@type":"Place","name":e.actual_location?.venue||e.venue,
+        "address":{"@type":"PostalAddress","addressLocality":e.actual_location?.municipality||e.municipality,"addressCountry":"IT"}},
       "url":canonical
     }))};
   }
@@ -382,13 +382,14 @@ function dateSelector(events) {
     panel.append(node("strong","selected-replica-date",dateLabel(event.local_date)));
     panel.append(node("span","selected-replica-time",
       event.time_known?"Inizio alle ore "+event.starts_at.slice(11,16):"Orario da confermare"));
-    panel.append(node("span","selected-replica-venue",event.venue+" · "+event.municipality));
+    panel.append(node("span","selected-replica-venue",(event.actual_location?.venue||event.venue)+" · "+(event.actual_location?.municipality||event.municipality)));
+    if(event.project_name)panel.append(node("span","selected-replica-venue",event.project_name+" · "+event.venue));
   }
   sorted.forEach((event,i)=>{
     const p=miniDateParts(event.local_date);
     const button=node("button","mini-calendar");
     button.type="button";
-    button.setAttribute("aria-label",p.long+", "+event.venue+" a "+event.municipality);
+    button.setAttribute("aria-label",p.long+", "+(event.actual_location?.venue||event.venue)+" a "+(event.actual_location?.municipality||event.municipality));
     button.setAttribute("aria-pressed","false");
     button.append(node("span","mini-calendar-month",p.month));
     const middle=node("span","mini-calendar-day",p.day);
@@ -408,6 +409,7 @@ function stagingGroup(events,owner) {
     ? first.venue+" · "+first.municipality
     : first.title,window.OperaAtlasCatalog.urls(first).staging,""));
   section.append(heading);
+  if(first.project_name)section.append(node("p","staging-composer",first.project_name+" · Produzione itinerante"));
   if(owner==="venue" && first.composer)section.append(node("p","staging-composer",first.composer));
   section.append(dateSelector(events));
   section.append(link("Scopri la produzione",window.OperaAtlasCatalog.urls(first).production,"detail-link staging-action"));

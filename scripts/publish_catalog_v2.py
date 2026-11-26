@@ -116,6 +116,9 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
         route_keys.add(route)
         staging_record = dict(staging)
         staging_record["url"] = "/" + route + "/"
+        if product.get("project_name"):
+            staging_record["project_name"]=product["project_name"]
+            staging_record["performance_format"]=product["performance_format"]
         stagings[staging["id"]] = staging_record
         for day, time in product["dates"]:
             from scripts.build_verified_catalog import replica_registry_key
@@ -135,6 +138,8 @@ def assemble(facts: dict, registry: dict, *, approved_extra: set[str] | None = N
                 "sources": legacy_event["sources"],
                 "status": legacy_event["status"],
             })
+            if "actual_location" in legacy_event:
+                item["actual_location"]=legacy_event["actual_location"]
             performances.append(item)
     # Publish historically verified work identities without manufacturing a
     # staging or a separate ticket for each component of a multi-work program.

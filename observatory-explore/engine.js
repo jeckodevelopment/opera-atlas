@@ -36,7 +36,7 @@
    }
    const festivalList=[...(membership.get(e.staging_id)||new Map())].map(([id,name])=>({id,name}));
    out.push({id:e.id,stagingId:e.staging_id,venueId:e.venue_id,title:e.title||"",venue:e.venue||"",
-    city:e.municipality||"",region:e.region||"",date:e.local_date,year:e.local_date.slice(0,4),
+    city:e.actual_location?.municipality||e.municipality||"",region:e.actual_location?.region||e.region||"",organizerCity:e.municipality||"",date:e.local_date,year:e.local_date.slice(0,4),
     month:e.local_date.slice(0,7),season:e.season||"",status:e.status||"",url:e.staging_url||"",
     startsAt:e.starts_at||null,works:[...works.values()],festivals:festivalList,
     unresolvedComponents:source.filter(w=>!w.work_id).length});
@@ -93,7 +93,7 @@
  function productions(rows){
   const m=new Map();
   for(const r of rows){
-   if(!m.has(r.stagingId))m.set(r.stagingId,{id:r.stagingId,title:r.title,venue:r.venue,region:r.region,city:r.city,season:r.season,url:r.url,dates:[],ids:new Set()});
+   if(!m.has(r.stagingId))m.set(r.stagingId,{id:r.stagingId,title:r.title,venue:r.venue,region:r.region,city:r.organizerCity||r.city,season:r.season,url:r.url,dates:[],ids:new Set()});
    const p=m.get(r.stagingId);
    if(!p.ids.has(r.id)){p.ids.add(r.id);p.dates.push(r.date);}
   }
