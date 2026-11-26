@@ -9527,6 +9527,68 @@
           "20:00"
         ]
       ]
+    },
+    {
+      "key": "auto-202b74c6398e8db7",
+      "title": "Inferno",
+      "composer": "Lucia Ronchetti",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/",
+      "dates": [
+        [
+          "2026-02-19",
+          "20:00"
+        ],
+        [
+          "2026-02-22",
+          "16:30"
+        ],
+        [
+          "2026-02-28",
+          "18:00"
+        ],
+        [
+          "2026-03-03",
+          "20:00"
+        ],
+        [
+          "2026-03-07",
+          "20:00"
+        ]
+      ]
+    },
+    {
+      "key": "auto-a50d4128ef4b9605",
+      "title": "Il trionfo del Tempo e del Disinganno",
+      "composer": "Georg Friedrich Händel",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
+      "dates": [
+        [
+          "2026-04-07",
+          "20:00"
+        ],
+        [
+          "2026-04-09",
+          "20:00"
+        ],
+        [
+          "2026-04-11",
+          "18:00"
+        ],
+        [
+          "2026-04-12",
+          "16:30"
+        ],
+        [
+          "2026-04-14",
+          "20:00"
+        ]
+      ]
     }
   ]
 }

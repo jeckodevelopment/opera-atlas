@@ -939,6 +939,20 @@
       "title": "Roméo et Juliette",
       "composer": "Charles Gounod",
       "wikidata_id": "Q918714"
+    },
+    "inferno|lucia ronchetti": {
+      "id": "oa-w-000147",
+      "slug": "inferno",
+      "title": "Inferno",
+      "composer": "Lucia Ronchetti",
+      "authority_url": "https://www.operaroma.it/spettacoli/inferno/"
+    },
+    "il trionfo del tempo e del disinganno|georg friedrich händel": {
+      "id": "oa-w-000148",
+      "slug": "il-trionfo-del-tempo-e-del-disinganno",
+      "title": "Il trionfo del Tempo e del Disinganno",
+      "composer": "Georg Friedrich Händel",
+      "authority_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
     }
   },
   "venues": {
@@ -4420,6 +4434,22 @@
       "venue_id": "oa-v-000017",
       "slug": "romeo-et-juliette",
       "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
+      "season": "2025-2026"
+    },
+    "auto-202b74c6398e8db7": {
+      "id": "oa-s-000368",
+      "work_id": "oa-w-000147",
+      "venue_id": "oa-v-000017",
+      "slug": "inferno",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/",
+      "season": "2025-2026"
+    },
+    "auto-a50d4128ef4b9605": {
+      "id": "oa-s-000369",
+      "work_id": "oa-w-000148",
+      "venue_id": "oa-v-000017",
+      "slug": "il-trionfo-del-tempo-e-del-disinganno",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
       "season": "2025-2026"
     }
   },
@@ -12879,6 +12909,66 @@
       "staging_id": "oa-s-000367",
       "original_date": "2026-05-06",
       "source_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
+    },
+    "auto-202b74c6398e8db7|2026-02-19": {
+      "id": "oa-r-001437",
+      "staging_id": "oa-s-000368",
+      "original_date": "2026-02-19",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/"
+    },
+    "auto-202b74c6398e8db7|2026-02-22": {
+      "id": "oa-r-001438",
+      "staging_id": "oa-s-000368",
+      "original_date": "2026-02-22",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/"
+    },
+    "auto-202b74c6398e8db7|2026-02-28": {
+      "id": "oa-r-001439",
+      "staging_id": "oa-s-000368",
+      "original_date": "2026-02-28",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/"
+    },
+    "auto-202b74c6398e8db7|2026-03-03": {
+      "id": "oa-r-001440",
+      "staging_id": "oa-s-000368",
+      "original_date": "2026-03-03",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/"
+    },
+    "auto-202b74c6398e8db7|2026-03-07": {
+      "id": "oa-r-001441",
+      "staging_id": "oa-s-000368",
+      "original_date": "2026-03-07",
+      "source_url": "https://www.operaroma.it/spettacoli/inferno/"
+    },
+    "auto-a50d4128ef4b9605|2026-04-07": {
+      "id": "oa-r-001442",
+      "staging_id": "oa-s-000369",
+      "original_date": "2026-04-07",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+    },
+    "auto-a50d4128ef4b9605|2026-04-09": {
+      "id": "oa-r-001443",
+      "staging_id": "oa-s-000369",
+      "original_date": "2026-04-09",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+    },
+    "auto-a50d4128ef4b9605|2026-04-11": {
+      "id": "oa-r-001444",
+      "staging_id": "oa-s-000369",
+      "original_date": "2026-04-11",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+    },
+    "auto-a50d4128ef4b9605|2026-04-12": {
+      "id": "oa-r-001445",
+      "staging_id": "oa-s-000369",
+      "original_date": "2026-04-12",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+    },
+    "auto-a50d4128ef4b9605|2026-04-14": {
+      "id": "oa-r-001446",
+      "staging_id": "oa-s-000369",
+      "original_date": "2026-04-14",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
     }
   },
   "reserved_works": {

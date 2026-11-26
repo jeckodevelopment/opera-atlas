@@ -1,23 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-26T10:40:28+00:00",
+  "checked_at": "2026-11-26T10:58:55+00:00",
   "outcomes": [
-    {
-      "candidate_id": "oa-index-202b74c6398e8db7c0b5",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/inferno/",
-      "title_hint": "Inferno"
-    },
-    {
-      "candidate_id": "oa-index-a50d4128ef4b9605dc15",
-      "status": "automatic_retry",
-      "reason": "authority_not_unique",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
-      "title_hint": "Il Trionfo del Tempo e del Disinganno"
-    },
     {
       "candidate_id": "oa-index-4e733e128f3edf180b83",
       "status": "awaiting_official_identity_evidence",
@@ -283,6 +267,13 @@
       "work_id": "oa-w-000028",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/il-pipistrello/"
+    },
+    {
+      "candidate_id": "oa-index-202b74c6398e8db7c0b5",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000147",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/inferno/"
     },
     {
       "candidate_id": "oa-index-20463bc8c3334dacecf8",
@@ -1081,6 +1072,13 @@
       "work_id": "oa-w-000048",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/fidelio-di-ludwig-van-beethoven-19-25-novembre/"
+    },
+    {
+      "candidate_id": "oa-index-a50d4128ef4b9605dc15",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000148",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
     },
     {
       "candidate_id": "oa-index-a587b66c1f36bad78d65",

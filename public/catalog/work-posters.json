@@ -1304,6 +1304,24 @@
       "alt": "Manifesto storico di Roméo et Juliette di Charles Gounod.",
       "credit": "Prudent Leray, Bibliothèque nationale de France / Wikimedia Commons",
       "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000147": {
+      "work_id": "oa-w-000147",
+      "kind": "archival_work_image",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gustave_Dor%C3%A9_-_Dante_Alighieri_-_Inferno_-_Plate_4_(Dante_meets_Virgil).jpg?width=720",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gustave_Dor%C3%A9_-_Dante_Alighieri_-_Inferno_-_Plate_4_(Dante_meets_Virgil).jpg",
+      "alt": "Dante incontra Virgilio, illustrazione di Gustave Doré al canto I dell’Inferno di Dante, fonte letteraria dell’opera di Lucia Ronchetti; non è una fotografia dell’allestimento.",
+      "credit": "Gustave Doré / Wikimedia Commons",
+      "license": "Public domain · https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    "oa-w-000148": {
+      "work_id": "oa-w-000148",
+      "image_url": "https://www.jarousskywiki.com/images/thumb/c/cc/First_page_il_trionfo.jpg/300px-First_page_il_trionfo.jpg",
+      "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
+      "original_source_url": "https://searcharchives.bl.uk/catalog/040-001948559",
+      "credit": "British Library, Royal Music Collection, R.M.19.d.9 (copia manoscritta, circa 1710); riproduzione storica pubblicata su Jaroussky Wiki, https://www.jarousskywiki.com/index.php?title=Il_trionfo_del_Tempo_e_del_Disinganno",
+      "alt": "Prima pagina della partitura manoscritta di Il trionfo del Tempo e del Disinganno HWV 46a, non una locandina della produzione romana del 2026.",
+      "kind": "official_original_work_artwork"
     }
   }
 }

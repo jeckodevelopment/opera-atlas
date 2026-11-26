@@ -1378,6 +1378,26 @@
         "https://www.wikidata.org/wiki/Q918714",
         "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
       ]
+    },
+    "inferno": {
+      "librettist": "Lucia Ronchetti da Dante Alighieri, con epilogo di Tiziano Scarpa",
+      "premiere_year": 2021,
+      "premiere_venue": "Bockenheimer Depot (prima in forma di concerto)",
+      "premiere_city": "Francoforte",
+      "sources": [
+        "https://www.schauspielfrankfurt.de/spielplan/archiv/i/inferno/",
+        "https://archiviostorico.operaroma.it/opera/inferno/"
+      ]
+    },
+    "il-trionfo-del-tempo-e-del-disinganno": {
+      "librettist": "Benedetto Pamphilj",
+      "premiere_year": 1707,
+      "premiere_venue": "Sede non documentata",
+      "premiere_city": "Roma",
+      "sources": [
+        "https://www.hyperion-records.co.uk/dc.asp?dc=D_CDA67681%2F2",
+        "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+      ]
     }
   },
   "works_by_id": {
