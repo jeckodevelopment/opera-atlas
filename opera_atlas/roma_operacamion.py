@@ -53,7 +53,7 @@ def parse(html,*,url):
     owner=r"OperaCamion\s+è\s+un\s+progetto\s+del\s+Teatro\s+dell[’']Opera\s+di\s+Roma"
     if not re.search(owner,intro,re.I):raise ValueError("official tour organiser unconfirmed")
     # Explicit source credit, not the slug, casting or the adaptation credit.
-    credits=re.findall(r"\bda\s+(.{2,150}?)\s+di\s+(.{4,100}?)\s+adattamento\s+musicale\b",intro,re.I)
+    credits=re.findall(r"\bda\s+(.{2,150})\s+di\s+(.{4,100}?)\s+adattamento\s+musicale\b",intro,re.I)
     if len(credits)!=1:raise ValueError("unambiguous official opera credit missing")
     work,composer=credits[0]
     if not all(c.isalpha() or c in " .-'’" for c in composer):
