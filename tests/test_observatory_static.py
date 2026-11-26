@@ -45,6 +45,21 @@ class ObservatoryStaticTests(unittest.TestCase):
         self.assertIn('drawMonths(selected,year)', js)
         self.assertIn('.toolbar{gap:12px;', css)
 
+    def test_explore_link_is_last_in_existing_section_menu(self):
+        import re
+        html = (ROOT / "observatory/index.html").read_text(encoding="utf-8")
+        css = (ROOT / "observatory/styles.css").read_text(encoding="utf-8")
+        menu = re.search(r'<nav class="tabs"[^>]*>(.*?)</nav>', html, re.S).group(1)
+        self.assertEqual(re.findall(r'href="([^"]+)"', menu),
+                         ["#panoramica", "#repertorio", "#territorio", "#rare", "#analisi",
+                          "/osservatorio/esplora/"])
+        self.assertIn('class="explore-link" href="/osservatorio/esplora/"', menu)
+        self.assertIn('aria-hidden="true" focusable="false"', menu)
+        self.assertIn('Esplora i dati</a>', menu)
+        self.assertIn(".tabs a.explore-link{", css)
+        self.assertIn("background:#7e153b;color:#fff", css)
+        self.assertIn("white-space:nowrap", css)
+
     def test_insights_use_canonical_ids_and_active_filters(self):
         html = (ROOT / "observatory/index.html").read_text(encoding="utf-8")
         js = (ROOT / "observatory/app.js").read_text(encoding="utf-8")
