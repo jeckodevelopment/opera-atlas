@@ -6,7 +6,7 @@ Specifiche approvate il 26 novembre 2026.
 Nuova pagina pubblica /osservatorio/esplora/ con asset, script e test isolati. Non modificare observatory/index.html, styles.css, app.js, report-pdf.js, logo, grafici, filtri o report attuali. L'accesso dalla pagina esistente sarà valutato separatamente; la nuova pagina deve collegare la panoramica. Il rilascio deve scrivere esclusivamente nella sottodirectory esplora e non sovrascrivere file esistenti. Nessun nuovo database, login o servizio esterno.
 
 ## Lotti
-1. Motore puro di interrogazione (questa PR), unit test, regole statistiche.
+1. Motore puro di interrogazione (integrato con PR #901), unit test, regole statistiche.
 2. Interfaccia responsive, filtri combinabili, indicatori, dettaglio, caricamento feed verificato.
 3. Raggruppamenti, confronti, grafici, ricerche predefinite.
 4. CSV, PDF istituzionale, URL condivisibile, deploy isolato e collaudo.
@@ -24,3 +24,11 @@ node tests/observatory_explore_engine.cjs
 python -m unittest discover -s tests -v
 
 Il motore è indipendente dal DOM; il test include programmi composti, date a cavallo d'anno, filtri incrociati, festival multipli, duplicati e annullamenti. Nessuna pagina viene pubblicata dal lotto 1.
+
+## Lotto 2 — interfaccia e caricamento
+
+La nuova interfaccia in `observatory-explore/` riutilizza in sola lettura la grafica, il logo e il client pubblico Atlas già esistenti (`/atlas/catalog-client.js`). Il client valida digest e conteggi dei quattro canali; l'adattatore rifiuta il fallback locale non verificato e richiede anche programmi composti e festival allineati, con tentativo sul mirror. I canali complementari sono verificati per schema e riferimenti, non firmati dal manifesto v2. Una mancata verifica impedisce l'esposizione di statistiche incomplete.
+
+Filtri a caselle ricercabili (OR interno, AND fra categorie); città e sede dipendono dalla regione, con rimozione delle scelte non compatibili. Anno corrente in Italia se presente; Azzera filtri seleziona l'intero catalogo. Risultati ordinabili e paginati (30 righe), con due viste, link canonici e fonti delle singole recite. La prima e ultima data della produzione sono quelle comprese nei filtri, non dell'intero allestimento. Copertura temporale e data di aggiornamento sono esplicite. Nessuna modifica al sito pubblico né al workflow di pubblicazione in questo lotto.
+
+Test: `node tests/observatory_explore_ui.cjs` verifica anche il client Atlas sui file canonici effettivi versionati nel repository, senza accesso di rete. Restano da collaudare graficamente desktop/mobile e l'interazione nel browser durante il rilascio.
