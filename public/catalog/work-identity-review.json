@@ -1,17 +1,52 @@
 {
-  "checked_at": "2026-11-26T03:39:30+00:00",
-  "groups": [],
+  "checked_at": "2026-11-26T09:11:13+00:00",
+  "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-a50d4128ef4b9605dc15"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Georg Friedrich Händel",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 5,
+      "sources": [
+        {
+          "source_key": "opera-roma-season-2026-27",
+          "url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+        }
+      ],
+      "title": "Il Trionfo del Tempo e del Disinganno"
+    },
+    {
+      "candidate_ids": [
+        "oa-index-202b74c6398e8db7c0b5"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Lucia Ronchetti",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 5,
+      "sources": [
+        {
+          "source_key": "opera-roma-season-2026-27",
+          "url": "https://www.operaroma.it/spettacoli/inferno/"
+        }
+      ],
+      "title": "Inferno"
+    }
+  ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 0,
+    "candidates_checked": 2,
     "candidates_without_facts": 0,
-    "facts_examined": 0,
+    "facts_examined": 10,
     "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 0,
-    "unmatched_groups": 0
+    "unmatched_facts": 10,
+    "unmatched_groups": 2
   },
   "truncated": false
 }

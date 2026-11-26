@@ -1,63 +1,7 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-26T09:11:28+00:00",
+  "checked_at": "2026-11-26T10:40:28+00:00",
   "outcomes": [
-    {
-      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000022",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/tosca-11/",
-      "title_hint": "Tosca"
-    },
-    {
-      "candidate_id": "oa-index-e65064ef731a3097502a",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000069",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/lohengrin/",
-      "title_hint": "Lohengrin"
-    },
-    {
-      "candidate_id": "oa-index-97eff96f73c9d064a3f0",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000024",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/la-boheme-4/",
-      "title_hint": "La bohème"
-    },
-    {
-      "candidate_id": "oa-index-1faca6ee4cc8b6487c57",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000001",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/la-traviata-12/",
-      "title_hint": "La traviata"
-    },
-    {
-      "candidate_id": "oa-index-b71caef92f53a984ed36",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000015",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/aida-6/",
-      "title_hint": "Aida"
-    },
-    {
-      "candidate_id": "oa-index-e0585c924c7d06c0fa06",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000045",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/",
-      "title_hint": "Le nozze di Figaro"
-    },
-    {
-      "candidate_id": "oa-index-03fa95f1d0382ffee131",
-      "status": "existing_canonical_work",
-      "work_id": "oa-w-000054",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/falstaff/",
-      "title_hint": "Falstaff"
-    },
     {
       "candidate_id": "oa-index-202b74c6398e8db7c0b5",
       "status": "automatic_retry",
@@ -67,36 +11,12 @@
       "title_hint": "Inferno"
     },
     {
-      "candidate_id": "oa-index-9e6376b2390b65cc36be",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/",
-      "title_hint": "Ariadne auf Naxos"
-    },
-    {
       "candidate_id": "oa-index-a50d4128ef4b9605dc15",
       "status": "automatic_retry",
       "reason": "authority_not_unique",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
       "title_hint": "Il Trionfo del Tempo e del Disinganno"
-    },
-    {
-      "candidate_id": "oa-index-fe826556336a0e33bde5",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/",
-      "title_hint": "Roméo et Juliette"
-    },
-    {
-      "candidate_id": "oa-index-d23bf6d97c388939e0da",
-      "status": "automatic_retry",
-      "reason": "verified_plot_unavailable",
-      "source_key": "opera-roma-season-2026-27",
-      "official_url": "https://www.operaroma.it/spettacoli/tancredi/",
-      "title_hint": "Tancredi"
     },
     {
       "candidate_id": "oa-index-4e733e128f3edf180b83",
@@ -139,6 +59,13 @@
       "work_id": "oa-w-000045",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/le-nozze-di-figaro-di-wolfgang-amadeus-mozart-12-19-settembre/"
+    },
+    {
+      "candidate_id": "oa-index-03fa95f1d0382ffee131",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000054",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/falstaff/"
     },
     {
       "candidate_id": "oa-index-04fc7625bab27446a05d",
@@ -342,6 +269,13 @@
       "work_id": "oa-w-000086",
       "source_key": "filarmonico-verona-rolling-opera",
       "official_url": "https://www.arena.it/teatro-filarmonico-verona/2027/il-signor-bruschino/"
+    },
+    {
+      "candidate_id": "oa-index-1faca6ee4cc8b6487c57",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000001",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-traviata-12/"
     },
     {
       "candidate_id": "oa-index-1fdf598fde99e1e32112",
@@ -757,6 +691,13 @@
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=375"
     },
     {
+      "candidate_id": "oa-index-7475e8c93d79a7a7d654",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000022",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/tosca-11/"
+    },
+    {
       "candidate_id": "oa-index-74ce9c00c158699bd2cc",
       "status": "already_catalogued",
       "work_id": "oa-w-000026",
@@ -1044,6 +985,13 @@
       "official_url": "https://teatrodipisa.it/spettacolo/aida/"
     },
     {
+      "candidate_id": "oa-index-97eff96f73c9d064a3f0",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000024",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/la-boheme-4/"
+    },
+    {
       "candidate_id": "oa-index-991f446bf3f27044b019",
       "status": "already_catalogued",
       "work_id": "oa-w-000085",
@@ -1084,6 +1032,13 @@
       "work_id": "oa-w-000018",
       "source_key": "massimo-season-2026-27",
       "official_url": "https://www.teatromassimo.it/event/macbeth/"
+    },
+    {
+      "candidate_id": "oa-index-9e6376b2390b65cc36be",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000144",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/ariadne-auf-naxos/"
     },
     {
       "candidate_id": "oa-index-9eea54a8395ff3d6c74e",
@@ -1247,6 +1202,13 @@
       "official_url": "https://www.arena.it/arena-opera-festival/la-traviata/"
     },
     {
+      "candidate_id": "oa-index-b71caef92f53a984ed36",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000015",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/aida-6/"
+    },
+    {
       "candidate_id": "oa-index-b756ca3bab6062c03ef8",
       "status": "already_catalogued",
       "work_id": "oa-w-000084",
@@ -1385,6 +1347,13 @@
       "work_id": "oa-w-000006",
       "source_key": "napoli-san-carlo-rolling-opera",
       "official_url": "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+    },
+    {
+      "candidate_id": "oa-index-d23bf6d97c388939e0da",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000145",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/tancredi/"
     },
     {
       "candidate_id": "oa-index-d54e9b021b5167cfb735",
@@ -1527,6 +1496,13 @@
       "official_url": "https://www.operaroma.it/spettacoli/the-rakes-progress-la-carriera-di-un-libertino/"
     },
     {
+      "candidate_id": "oa-index-e0585c924c7d06c0fa06",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000045",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
+    },
+    {
       "candidate_id": "oa-index-e1c70abeff01f79bde7f",
       "status": "already_catalogued",
       "work_id": "oa-w-000042",
@@ -1539,6 +1515,13 @@
       "work_id": "oa-w-000019",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/madama-butterfly/"
+    },
+    {
+      "candidate_id": "oa-index-e65064ef731a3097502a",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000069",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/lohengrin/"
     },
     {
       "candidate_id": "oa-index-e6f08bbcef00e05cc2ee",
@@ -1672,6 +1655,13 @@
       "work_id": "oa-w-000073",
       "source_key": "ancona-elisir-opera-2026",
       "official_url": "https://www.fondazionemuse.org/stagione-lirica-2026/"
+    },
+    {
+      "candidate_id": "oa-index-fe826556336a0e33bde5",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000146",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
     },
     {
       "candidate_id": "oa-index-feadef19a246de079ccb",
