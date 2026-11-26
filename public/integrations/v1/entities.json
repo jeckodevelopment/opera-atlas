@@ -32,6 +32,10 @@
       {
         "composer": "Charles Gounod",
         "work_id": "oa-w-000146"
+      },
+      {
+        "composer": "Lucia Ronchetti",
+        "work_id": "oa-w-000147"
       }
     ]
   },
@@ -4685,6 +4689,39 @@
     },
     {
       "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-w-000147",
+      "image": null,
+      "subtitle": "Lucia Ronchetti",
+      "title": "Inferno",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/inferno/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000033"
+      ],
+      "fallback_image": null,
+      "id": "oa-w-000148",
+      "image": {
+        "alt": "Ritratto di Georg Friedrich Händel",
+        "author": "Attributed to Balthasar Denner",
+        "credit": "Attributed to Balthasar Denner — Wikimedia Commons — Public Domain",
+        "license": "Public Domain",
+        "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "media_kind": "portrait",
+        "source_url": "https://commons.wikimedia.org/wiki/File:George_Frideric_Handel_by_Balthasar_Denner.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/George_Frideric_Handel_by_Balthasar_Denner.jpg/960px-George_Frideric_Handel_by_Balthasar_Denner.jpg"
+      },
+      "subtitle": "Georg Friedrich Händel",
+      "title": "Il trionfo del Tempo e del Disinganno",
+      "type": "opera",
+      "url": "https://opera.plus/atlas/opere/il-trionfo-del-tempo-e-del-disinganno/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [
         "oa-c-000041"
       ],
@@ -4795,6 +4832,18 @@
       "title": "Il tabarro / Suor Angelica / Gianni Schicchi",
       "type": "production",
       "url": "https://opera.plus/atlas/programmi/oa-p-4277f285769ff880/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
+      "id": "oa-p-67ef6842ba33e2d6",
+      "image": null,
+      "production_kind": "program",
+      "subtitle": "Teatro Nazionale",
+      "title": "La chatte métamorphosée en femme / Un mari à la porte",
+      "type": "production",
+      "url": "https://opera.plus/atlas/programmi/oa-p-67ef6842ba33e2d6/"
     },
     {
       "aliases": [],
@@ -9816,6 +9865,32 @@
       "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
+      "id": "oa-s-000368",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Inferno",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/inferno/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000033"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000369",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Il trionfo del Tempo e del Disinganno",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/il-trionfo-del-tempo-e-del-disinganno/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [],
+      "fallback_image": null,
       "id": "oa-v-000001",
       "image": null,
       "subtitle": "Torino",
@@ -10639,5 +10714,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "0a79289005e9840eec11721c2bf0898a1d79358e"
+  "source_revision": "5e1ecae99f5275f40d6dabecc5b1c9c5cd223dd1"
 }
