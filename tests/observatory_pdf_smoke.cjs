@@ -53,3 +53,19 @@ assert.match(noYear,/Seleziona un singolo anno solare/);
 const zero=pdfBytes({...input,rows:[],allRows:[],editorials:new Map()});
 assert.equal((Buffer.from(zero).toString("latin1").match(/\/Type \/Page \/Parent/g)||[]).length,11);
 console.log("PDF smoke tests passed: 11 pages, xref, filtering, missing data, empty selection.");
+
+const E=require("../observatory-explore/engine.js");
+const normalized=E.normalize([
+ {id:"a",staging_id:"s1",venue_id:"v1",venue:"Teatro",municipality:"Jesi",region:"Marche",local_date:"2026-01-01",work_id:"w1",title:"Opera A",composer:"Autore"},
+ {id:"b",staging_id:"p1",venue_id:"v1",venue:"Teatro",municipality:"Jesi",region:"Marche",local_date:"2026-01-02",title:"Trittico",program_components:[{work_id:"w1",title:"Opera A",composer:"Autore"},{work_id:"w2",title:"Opera B",composer:"Autore"},{work_id:"w3",title:"Opera C",composer:"Altro"}]},
+ {id:"c",staging_id:"p2",venue_id:"v1",venue:"Teatro",municipality:"Jesi",region:"Marche",local_date:"2026-01-03",title:"Programma senza ID",program_components:[{title:"Opera D",composer:"Autore"}]}
+],[]);
+const result=summarize({rows:normalized,allRows:normalized,year:"2026"});
+const expected=E.summary(normalized);
+assert.deepEqual(result.counts,{recite:expected.performances,venues:expected.venues,works:expected.works,stagings:expected.productions});
+assert.equal(result.months.reduce((a,b)=>a+b,0),expected.performances);
+assert.equal(result.composers.find(x=>x[0]==="Autore")[1],2);
+assert.equal(result.works.find(x=>x[0]==="Opera A")[1],2);
+assert.equal(result.varied.find(x=>x[0]==="Marche")[1],3);
+assert.equal(result.staging.find(x=>x[0].startsWith("Trittico"))[1],1);
+console.log("Composite program parity with Explore passed");
