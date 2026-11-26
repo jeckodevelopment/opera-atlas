@@ -152,8 +152,13 @@
   }
   function summarize(input){
     const selected=input.rows||[],all=input.allRows||selected;
+    // One event per ticket; work and composer memberships are separate.
+    const members=r=>Array.isArray(r.works)?r.works:r.workId?[{id:r.workId,title:r.work,composer:r.composer}]:[];
+    const workRows=records=>records.flatMap(r=>members(r).map(w=>({...r,workId:w.id,work:w.title,composer:w.composer})));
+    const componentRows=workRows(selected);
+    const composerRows=selected.flatMap(r=>[...new Set(members(r).map(w=>w.composer).filter(c=>c&&c!=="Non indicato"))].map(composer=>({...r,composer})));
     const grouped=new Map();
-    for(const r of selected){
+    for(const r of componentRows){
       if(!grouped.has(r.workId))grouped.set(r.workId,{
         title:r.work,composer:r.composer,venues:new Set(),cities:new Set(),regions:new Set()});
       const g=grouped.get(r.workId);
@@ -175,15 +180,15 @@
       .map(([k,v])=>[JSON.parse(k)[1]+"  ("+JSON.parse(k)[0]+")",v]);
     const venues=countBy(selected,r=>r.venueId).map(([key,value])=>
       [selected.find(r=>r.venueId===key)?.venue||"Sede non indicata",value]);
-    const works=countBy(selected,r=>r.workId).map(([key,value])=>
-      [selected.find(r=>r.workId===key)?.work||"Opera non indicata",value]);
-    const composers=countBy(selected,r=>r.composer!=="Non indicato"?r.composer:null);
+    const works=countBy(componentRows,r=>r.workId).map(([key,value])=>
+      [componentRows.find(r=>r.workId===key)?.work||"Opera non indicata",value]);
+    const composers=countBy(composerRows,r=>r.composer);
     const staging=countBy(selected,r=>r.stagingId).map(([key,value])=>
-      [(selected.find(r=>r.stagingId===key)?.work||"Allestimento")+" - "+
+      [(selected.find(r=>r.stagingId===key)?.title||selected.find(r=>r.stagingId===key)?.work||"Allestimento")+" - "+
         (selected.find(r=>r.stagingId===key)?.venue||""),value]);
     const rare=works.filter(w=>w[1]<=3);
     const diversity=new Map();
-    for(const r of selected){
+    for(const r of componentRows){
       if(!diversity.has(r.region))diversity.set(r.region,new Set());
       diversity.get(r.region).add(r.workId);
     }
@@ -191,14 +196,14 @@
       .sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"it"));
     const year=String(input.year||"all"),season=String(input.season||"all"),region=String(input.region||"all");
     const filterRows=all.filter(r=>(season==="all"||r.season===season)&&(region==="all"||r.region===region));
-    const allowed=new Set(filterRows.map(r=>r.workId));
+    const allowed=new Set(workRows(filterRows).map(r=>r.workId));
     const editorials=input.editorials;
     const premieres=year!=="all" && editorials instanceof Map?
       [...editorials].filter(([id,x])=>allowed.has(id)&&Number(x.history?.premiere_year)===Number(year))
       .map(([,x])=>x).sort((a,b)=>a.work.title.localeCompare(b.work.title,"it")):null;
     return {selected,months,weekdays,regions,cities,venues,works,composers,staging,rare,varied,circulation,premieres,
       counts:{recite:selected.length,venues:unique(selected.map(r=>r.venueId)),
-        works:unique(selected.map(r=>r.workId)),stagings:unique(selected.map(r=>r.stagingId))},
+        works:unique(componentRows.map(r=>r.workId)),stagings:unique(selected.map(r=>r.stagingId))},
       year,season,region,reviewedOn:String(input.reviewedOn||"non indicata")};
   }
   function page(doc,label,index,fn){
