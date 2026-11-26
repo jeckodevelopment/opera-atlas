@@ -31,7 +31,7 @@ class OperaCamionAcquisitionTests(unittest.TestCase):
         self.assertEqual(tour["performances"][1]["starts_at"],"2026-09-13T20:00:00+02:00")
         self.assertTrue(eligible(URL))
         self.assertFalse(eligible(URL.replace("www.operaroma.it","example.com")))
-        with self.assertRaises(ValueError):parse(page.replace("martedì 09 Giu","lunedì 09 Giu"),url=URL)
+        with self.assertRaises(ValueError):parse(page.replace("martedì 09 Giu","mercoledì 09 Giu"),url=URL)
         with self.assertRaises(ValueError):parse(page.replace("INGRESSO LIBERO","SCUOLE"),url=URL)
         with self.assertRaises(ValueError):parse(page.replace("adattamento musicale","arrangiamento"),url=URL)
     def test_both_published_rounds_close(self):
