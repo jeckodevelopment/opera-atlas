@@ -1,0 +1,50 @@
+/* Only loaded by Esplora i dati; the Observatory overview is unchanged. */
+.explore-page{background:#faf9f7;color:#111a28}
+.explore-page [hidden]{display:none!important}
+.explore-main{max-width:1500px;margin:auto;padding:18px 34px 38px;min-height:60vh}
+.explore-crumb{display:flex;gap:10px;margin:0 0 20px}
+.explore-crumb a{padding:8px 14px;text-decoration:none;border-radius:8px;font-weight:700}
+.explore-crumb [aria-current]{background:#991b48;color:white}
+.explore-page .panel{margin-bottom:18px}
+.explore-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.explore-heading h2{font:normal 27px Georgia,serif;margin:0 0 6px}
+.explore-heading p{margin:0;line-height:1.5;color:#535a67}
+.explore-heading .explore-eyebrow{font-size:11px;font-weight:750;letter-spacing:.12em;color:#8d143e;margin-bottom:6px}
+.explore-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.explore-field,.explore-extra label{display:grid;gap:7px;min-width:0;font-weight:650}
+.explore-field details{min-width:0;position:relative;font-weight:400}
+.explore-field summary,.explore-extra input,.explore-extra select,.explore-view select{font:inherit;background:#fff;color:#111a28;border:1px solid #adb3bc;border-radius:8px;padding:10px;min-width:0;width:100%}
+.explore-field summary{cursor:pointer;overflow-wrap:anywhere}
+.explore-field details[open] summary{border-radius:8px 8px 0 0}
+.explore-options{background:#fff;border:1px solid #adb3bc;border-top:0;border-radius:0 0 8px 8px;padding:9px}
+.explore-options input[type=search]{font:inherit;width:100%;padding:7px;border:1px solid #adb3bc;border-radius:6px}
+.explore-choices{max-height:220px;overflow:auto;margin:8px 0 0}
+.explore-choices label{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:13px;font-weight:400;overflow-wrap:anywhere}
+.explore-choices input{flex:none;margin-top:3px;accent-color:#991b48}
+.explore-options p{font-size:13px;margin:8px 0 0}
+.explore-extra{margin-top:17px}
+.explore-actions{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+.explore-primary,.explore-secondary{font:inherit;font-weight:700;border-radius:8px;padding:10px 15px}
+.explore-primary{background:#991b48;border:1px solid #991b48;color:#fff}
+.explore-secondary{background:#fff;border:1px solid #aeb3bb;color:#222d3b}
+.explore-secondary:disabled{opacity:.5;cursor:default}
+.explore-primary:hover{background:#761337}
+.explore-page input:focus-visible,.explore-page summary:focus-visible{outline:3px solid #a51b4a;outline-offset:2px}
+#filter-error{color:#95133f}
+.explore-kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin:0 0 20px}
+.explore-kpis article{display:block;padding:16px;min-width:0}
+.explore-kpis p{font-size:13px}.explore-kpis strong{display:block}
+.explore-view{display:flex;gap:8px;align-items:center}
+.explore-table-wrap{overflow:auto;max-width:100%}
+.explore-table-wrap table{width:100%;border-collapse:collapse;font-size:14px;min-width:750px}
+.explore-table-wrap th,.explore-table-wrap td{text-align:left;padding:12px 10px;border-bottom:1px solid #e5e1df;vertical-align:top}
+.explore-table-wrap th{background:#f4f0ee;white-space:nowrap}
+.explore-table-wrap th button{border:0;background:transparent;color:inherit;font:inherit;font-weight:700;padding:0;text-align:left;cursor:pointer}
+.explore-table-wrap td a{color:#89143d;font-weight:650}
+.explore-table-wrap td small{display:block;color:#535a67;margin-top:5px}
+.explore-table-wrap td small a{font-weight:400;margin-right:8px}
+.explore-pagination{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap;margin-top:15px}
+#table-count{margin-right:auto;color:#535a67;font-size:13px}
+@media(max-width:1000px){.explore-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.explore-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.explore-main{padding:12px 12px 24px}.explore-page .top-inner{flex-wrap:wrap}.explore-page .top nav{flex-wrap:wrap;justify-content:flex-start}.explore-heading h2{font-size:23px}.explore-page .panel{padding:14px}.explore-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.explore-field summary,.explore-extra input,.explore-extra select{padding:8px;font-size:13px}.explore-kpis article{padding:12px}.explore-pagination{justify-content:space-between}#table-count{width:100%}}
+@media(max-width:360px){.explore-filter-grid{grid-template-columns:1fr}}
