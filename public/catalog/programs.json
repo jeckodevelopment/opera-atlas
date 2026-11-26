@@ -118,6 +118,70 @@
       ]
     },
     {
+      "id": "oa-p-67ef6842ba33e2d6",
+      "title": "La chatte métamorphosée en femme / Un mari à la porte",
+      "components": [
+        {
+          "title": "La chatte métamorphosée en femme",
+          "composer": "Jacques Offenbach",
+          "work_id": null,
+          "editorial": {
+            "synopsis": "Guido ama la propria gatta Minette. Un astuto servitore e una giovane innamorata organizzano un inganno, fingendo che l'animale si sia trasformato in donna per mettere alla prova le convinzioni di Guido.",
+            "history": {
+              "librettist": "Eugène Scribe e Mélesville",
+              "premiere_year": 1858,
+              "premiere_date": "1858-04-19",
+              "premiere_venue": "Théâtre des Bouffes-Parisiens",
+              "premiere_city": "Parigi",
+              "sources": [
+                "https://fr.wikisource.org/wiki/La_Chatte_m%C3%A9tamorphos%C3%A9e_en_femme_%28op%C3%A9ra-comique%29",
+                "https://lesarchivesduspectacle.net/s/112622-La-Chatte-metamorphosee-en-femme"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Un mari à la porte",
+          "composer": "Jacques Offenbach",
+          "work_id": null,
+          "editorial": {
+            "synopsis": "Il compositore Florestan, in fuga, entra per errore nella camera di Suzanne la sera delle sue nozze. L'arrivo del marito alla porta e l'intervento dell'amica Rosita danno origine a equivoci e a una soluzione matrimoniale inattesa.",
+            "history": {
+              "librettist": "Alfred Delacour e Léon Morand",
+              "premiere_year": 1859,
+              "premiere_date": "1859-06-22",
+              "premiere_venue": "Théâtre des Bouffes-Parisiens",
+              "premiere_city": "Parigi",
+              "sources": [
+                "https://fr.wikisource.org/wiki/Un_mari_%C3%A0_la_porte",
+                "https://www.boosey.com/pages/opera/moredetails?musicid=26444"
+              ]
+            }
+          }
+        }
+      ],
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/fabbrica-offenbach/",
+      "venue": "Teatro Nazionale",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "route_slug": "la-chatte-metamorphosee-en-femme-un-mari-a-la-porte",
+      "performances": [
+        {
+          "id": "oa-pr-de4aca4a9fc69455",
+          "program_id": "oa-p-67ef6842ba33e2d6",
+          "local_date": "2026-01-22",
+          "starts_at": "2026-01-22T20:00:00+01:00"
+        },
+        {
+          "id": "oa-pr-4156c3c7efb54602",
+          "program_id": "oa-p-67ef6842ba33e2d6",
+          "local_date": "2026-01-23",
+          "starts_at": "2026-01-23T20:00:00+01:00"
+        }
+      ]
+    },
+    {
       "id": "oa-p-9837cf3a1cb8aa93",
       "title": "L'amor mio / Il tabarro",
       "components": [
