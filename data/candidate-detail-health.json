@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-26T14:20:21+00:00",
+  "checked_at": "2026-11-26T16:56:11+00:00",
   "scope": "national",
-  "attempted": 24,
+  "attempted": 30,
   "outcomes": [
     {
       "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
@@ -22,12 +22,12 @@
       "rows": 2
     },
     {
-      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
+      "candidate_id": "oa-index-e831cbf742e2f848f44b",
       "outcome": "facts_found",
-      "rows": 2
+      "rows": 1
     },
     {
-      "candidate_id": "oa-index-b4aaa5341d6c996550c0",
+      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
       "outcome": "facts_found",
       "rows": 1
     },
@@ -54,9 +54,10 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-d1c1b3127d4e683424be",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-2583140715d654277a2b",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-a4402559616047a0367b",
@@ -64,19 +65,91 @@
       "rows": 5
     },
     {
+      "candidate_id": "oa-index-07f902ab46b297c41013",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Taormina detail does not independently verify opera genre"
+      ],
+      "rows": 0
+    },
+    {
       "candidate_id": "oa-index-795566dacc905fc5e7f2",
       "outcome": "facts_found",
       "rows": 2
     },
     {
-      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "candidate_id": "oa-index-f4226333be6c3f44d995",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-70313ef8895b42a91a5b",
+      "candidate_id": "oa-index-38ec0e923196232fe754",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Taormina detail does not independently verify opera genre"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-40e3ddb58749ceda98dd",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Taormina detail does not independently verify opera genre"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-476901a4f9f56161f30e",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Taormina detail does not independently verify opera genre"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-535b054411d3b3c9ea01",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
       "outcome": "facts_found",
-      "rows": 1
+      "rows": 2
+    },
+    {
+      "candidate_id": "oa-index-5f6478510dcfb84e4cd1",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Taormina detail does not independently verify opera genre"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-6ae3cb7b4d77a89231d0",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "no_verified_showtimes",
+      "diagnostic": [
+        "official_composer_credit:Taormina detail does not independently verify opera genre"
+      ],
+      "rows": 0
+    },
+    {
+      "candidate_id": "oa-index-70313ef8895b42a91a5b",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
@@ -85,8 +158,9 @@
     },
     {
       "candidate_id": "oa-index-9871aa4f1201e959bf0b",
-      "outcome": "facts_found",
-      "rows": 1
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-cab03dfcd8aeff155178",
@@ -95,8 +169,9 @@
     },
     {
       "candidate_id": "oa-index-cd6e3c395e6b5bbc1ff4",
-      "outcome": "facts_found",
-      "rows": 1
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
@@ -104,37 +179,24 @@
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-e831cbf742e2f848f44b",
+      "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "outcome": "facts_found",
       "rows": 1
     },
     {
-      "candidate_id": "oa-index-f4226333be6c3f44d995",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-41acaf1f090fbeedb4a7",
-      "outcome": "facts_found",
-      "rows": 1
+      "candidate_id": "oa-index-d1c1b3127d4e683424be",
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-df2fab0c88c0e4ca68c2",
-      "outcome": "facts_found",
-      "rows": 1
+      "outcome": "unavailable_or_unstructured",
+      "reason": "FetchUnavailable",
+      "rows": 0
     },
     {
       "candidate_id": "oa-index-e44f89c2a6d468342e8a",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
-      "outcome": "facts_found",
-      "rows": 1
-    },
-    {
-      "candidate_id": "oa-index-2583140715d654277a2b",
       "outcome": "facts_found",
       "rows": 1
     }
