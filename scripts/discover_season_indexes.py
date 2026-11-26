@@ -269,6 +269,14 @@ def reviewed_source_urls()->set[str]:
     from scripts.build_verified_catalog import MANIFEST
     document=json.loads(MANIFEST.read_text(encoding="utf-8"))
     reviewed={row["source_url"] for row in document["productions"]}
+    from opera_atlas.itinerant import reviewed as reviewed_tours,validate_production
+    tours=reviewed_tours()
+    for row in document["productions"]:
+        if row.get("key") in tours:
+            validate_production(row,tours)
+            # Both rounds actually have canonical performances, not merely
+            # a listing in the reviewed but unpublished tour registry.
+            reviewed.update(x["source_url"] for x in row["performance_locations"].values())
     programs=ROOT/"public"/"catalog"/"programs.json"
     if programs.exists():
         feed=json.loads(programs.read_text(encoding="utf-8"))

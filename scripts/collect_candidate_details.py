@@ -1443,6 +1443,20 @@ def collect(candidates:dict,previous:dict,*,network_enabled:bool,
                                        "rows":len(facts)})
                         continue
                 if item["source_key"]=="opera-roma-season-2026-27":
+                    from opera_atlas.roma_operacamion import eligible as tour_url, parse as parse_tour
+                    if tour_url(item["official_url"]):
+                        # Do not allow an itinerant work to fall through to
+                        # the fixed Costanzi venue or the ordinary promoter.
+                        tour=parse_tour(page.html,url=item["official_url"])
+                        retained[item["id"]]={
+                            "candidate_id":item["id"],"source_key":item["source_key"],
+                            "source_url":item["official_url"],"content_sha256":page.sha256,
+                            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                            "status":"needs_itinerant_review","itinerant_facts":tour}
+                        health.append({"candidate_id":item["id"],
+                                       "outcome":"verified_itinerant_schedule",
+                                       "rows":len(tour["performances"])})
+                        continue
                     from opera_atlas.roma_detail_parser import official_rome_other_season, expected_season
                     monitored="/".join(map(str,expected_season(item["official_url"])))
                     other=official_rome_other_season(page.html,url=item["official_url"],
