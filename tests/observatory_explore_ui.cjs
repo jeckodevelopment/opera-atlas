@@ -33,4 +33,35 @@ async function run(){
  assert.equal(mirror.mirror,true);
  console.log("Explore loader and filter helpers passed");
 }
-run().catch(error=>{console.error(error);process.exitCode=1});
+
+const fs=require("node:fs");
+const path=require("node:path");
+const vm=require("node:vm");
+const {webcrypto}=require("node:crypto");
+async function realCatalog(){
+ const root=path.resolve(__dirname,"..");
+ const localFetch=async url=>{
+  const relative=new URL(url).pathname.split("/public/catalog/")[1];
+  if(!relative)return {ok:false,status:404};
+  const filename=path.join(root,"public/catalog",relative);
+  if(!fs.existsSync(filename))return {ok:false,status:404};
+  const bytes=fs.readFileSync(filename);
+  return {ok:true,status:200,json:async()=>JSON.parse(bytes.toString("utf8")),
+    arrayBuffer:async()=>bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength)};
+ };
+ const sandbox={window:{},document:{baseURI:"https://opera.plus/atlas/"},URL,TextDecoder,crypto:webcrypto,fetch:localFetch,console};
+ vm.runInNewContext(fs.readFileSync(path.join(root,"site/catalog-client.js"),"utf8"),sandbox);
+ const loaded=await D.load(sandbox.window.OperaAtlasCatalog,localFetch);
+ const rows=E.normalize(loaded.data.performances,loaded.festivals);
+ assert.ok(rows.length>0);
+ assert.ok(rows.some(r=>r.works.length>1),"Composite events must be included");
+ assert.ok(rows.some(r=>r.festivals.length),"Festival links must be included");
+ assert.equal(E.summary(rows).performances,rows.length);
+ const rigoletto=D.options(rows,"work").find(x=>x.label.startsWith("Rigoletto · "));
+ assert.ok(rigoletto);
+ const result=E.select(rows,{work:[rigoletto.id]});
+ assert.ok(result.length>0&&result.every(r=>r.works.every(w=>w.id===rigoletto.id)));
+ console.log("Explore actual published catalog integration passed");
+}
+
+run().then(realCatalog).catch(error=>{console.error(error);process.exitCode=1});
