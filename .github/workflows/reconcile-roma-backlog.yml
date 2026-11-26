@@ -33,6 +33,7 @@ jobs:
           # This invokes the SAME shared robots-gated detail reader, not a
           # duplicate Rome importer. The approved source is limited to 24
           # pages and only unresolved candidates are considered.
+          python -m scripts.seed_roma_historical_candidates
           python -m scripts.collect_candidate_details --allow-network --source-key opera-roma-season-2026-27
           python -m scripts.reconcile_published_candidates
       - name: Checkpoint official evidence and closed historic candidates
@@ -59,6 +60,7 @@ jobs:
           # New Code: Unknown dates can only publish when the official
           # page supplies matching image evidence or a licensed archival
           # work image; the central promoter fails closed otherwise.
+          python -m scripts.auto_work_research --allow-network
           python -m scripts.auto_catalogue
           python -m scripts.publish_work_posters
           python -m scripts.publish_programs
@@ -84,6 +86,7 @@ jobs:
           git add data/verified-launch-catalog.json data/identity-registry.json data/auto-source-urls.json data/verified-time-evidence.json
           git add site/work-synopses.json site/work-history.json site/performances.json public/catalog/v2/ public/catalog/work-editorial.json
           git add public/catalog/coverage.json public/catalog/recite-coverage.json public/catalog/source-automation.json public/catalog/venue-directory.json
+          git add data/auto-work-intelligence.json data/auto-work-intelligence-health.json
           git add data/work-poster-evidence.json data/work-poster-health.json public/catalog/work-posters.json data/autonomous-catalogue-health.json
           git add public/catalog/programs.json data/season-index-candidates.json public/catalog/season-index-candidates.json data/candidate-reconciliation-health.json
           if git diff --cached --quiet; then

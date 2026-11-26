@@ -379,7 +379,7 @@ def verified_venue(source_key:str,rows:list[dict],registry:dict):
                if source_key in ("bologna-comunale-opera-2026","bologna-comunale-opera-2027") else
                {"Teatro La Fenice","Teatro Malibran"}
                if source_key=="fenice-opera-2026-27" else
-               {"Teatro dell'Opera di Roma","Teatro Valle Franca Valeri","Teatro Nazionale"}
+               {"Teatro dell'Opera di Roma","Teatro Valle Franca Valeri","Teatro Nazionale","Circo Massimo"}
                if source_key=="opera-roma-season-2026-27" else
                {"Teatro del Maggio Musicale Fiorentino","Teatro Goldoni"}
                if source_key=="maggio-fiorentino-calendar-2027" else
@@ -440,6 +440,10 @@ def season_from_source(source_key:str,url:str,days)->str:
     """Use the exact official season URL or observed dates, never 2026-27."""
     import re
     path=urlsplit(url).path
+    if source_key=="opera-roma-season-2026-27":
+        from opera_atlas.roma_detail_parser import HISTORICAL_URLS
+        if url in HISTORICAL_URLS:
+            return "2025-2026"
     if source_key=="scala-season-2026-27":
         match=re.search(r"/it/stagione/(20\d{2})-(20\d{2})/opera/",path)
         if match and int(match[2])==int(match[1])+1:
