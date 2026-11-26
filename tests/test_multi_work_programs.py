@@ -131,6 +131,8 @@ class MultiWorkProgramTests(unittest.TestCase):
             ("aroldo","giuseppe verdi"),
             ("stiffelio","giuseppe verdi"),
             ("l’azzardo per un figlio","claudio scannavini"),
+            ("un mari à la porte","jacques offenbach"),
+            ("la chatte métamorphosée en femme","jacques offenbach"),
         }
         self.assertEqual(set(reviewed),expected)
         for profile in reviewed.values():
